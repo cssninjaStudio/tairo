@@ -1,0 +1,156 @@
+<script setup lang="ts">
+import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
+</script>
+
+<template>
+  <div class="group text-right inline-flex justify-center items-center">
+    <Menu as="div" class="relative w-10 h-10 text-left">
+      <MenuButton as="template">
+        <button
+          class="w-10 h-10 rounded-full ring-1 ring-transparent group-hover:ring-offset-4 group-hover:ring-primary-500 inline-flex items-center justify-center transition-all duration-300"
+        >
+          <div
+            class="inline-flex justify-center items-center relative w-10 h-10 rounded-full"
+          >
+            <img
+              src="https://media.cssninja.io/shuriken/avatars/2.svg"
+              class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
+              alt="Avatar image"
+            />
+          </div>
+        </button>
+      </MenuButton>
+
+      <transition
+        enter-active-class="transition duration-100 ease-out"
+        enter-from-class="transform scale-95 opacity-0"
+        enter-to-class="transform scale-100 opacity-100"
+        leave-active-class="transition duration-75 ease-in"
+        leave-from-class="transform scale-100 opacity-100"
+        leave-to-class="transform scale-95 opacity-0"
+      >
+        <MenuItems
+          class="absolute bottom-0 -right-64 text-left mt-2 w-60 origin-bottom-right divide-y divide-gray-200 rounded-md bg-white border border-gray-200 shadow-lg focus:outline-none"
+        >
+          <div class="p-6">
+            <div class="flex items-center">
+              <div
+                class="inline-flex justify-center items-center relative w-14 h-14 rounded-full"
+              >
+                <img
+                  src="https://media.cssninja.io/shuriken/avatars/2.svg"
+                  class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
+                  alt="Avatar image"
+                />
+              </div>
+              <div class="ml-3">
+                <h6 class="font-main font-semibold text-sm text-slate-800">
+                  Maya Rosselini
+                </h6>
+                <p class="font-text text-xs text-slate-400">Product Manager</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-1.5">
+            <MenuItem v-slot="{ active }">
+              <NuxtLink
+                to="/"
+                class="group flex w-full items-center rounded-md p-2 text-sm transition-colors duration-300"
+                :class="[
+                  active ? 'bg-slate-100 text-primary-500' : 'text-slate-500',
+                ]"
+              >
+                <i class="i-ph-user-circle-duotone w-5 h-5"></i>
+                <div class="ml-3">
+                  <h6
+                    class="font-main font-semibold text-xs leading-none text-slate-800"
+                  >
+                    Profile
+                  </h6>
+                  <p class="font-text text-xs text-slate-400">
+                    View your profile
+                  </p>
+                </div>
+              </NuxtLink>
+            </MenuItem>
+          </div>
+          <div class="p-1.5">
+            <MenuItem v-slot="{ active }">
+              <NuxtLink
+                to="/"
+                class="group flex w-full items-center rounded-md p-2 text-sm transition-colors duration-300"
+                :class="[
+                  active ? 'bg-slate-100 text-primary-500' : 'text-slate-500',
+                ]"
+              >
+                <i class="i-ph-briefcase-duotone w-5 h-5"></i>
+                <div class="ml-3">
+                  <h6
+                    class="font-main font-semibold text-xs leading-none text-slate-800"
+                  >
+                    Projects
+                  </h6>
+                  <p class="font-text text-xs text-slate-400">
+                    All my projects
+                  </p>
+                </div>
+              </NuxtLink>
+            </MenuItem>
+            <MenuItem v-slot="{ active }">
+              <NuxtLink
+                to="/"
+                class="group flex w-full items-center rounded-md p-2 text-sm transition-colors duration-300"
+                :class="[
+                  active ? 'bg-slate-100 text-primary-500' : 'text-slate-500',
+                ]"
+              >
+                <i class="i-ph-users-three-duotone w-5 h-5"></i>
+                <div class="ml-3">
+                  <h6
+                    class="font-main font-semibold text-xs leading-none text-slate-800"
+                  >
+                    Team
+                  </h6>
+                  <p class="font-text text-xs text-slate-400">Manage my team</p>
+                </div>
+              </NuxtLink>
+            </MenuItem>
+          </div>
+
+          <div class="p-1.5">
+            <MenuItem v-slot="{ active }">
+              <NuxtLink
+                to="/"
+                class="group flex w-full items-center rounded-md p-2 text-sm transition-colors duration-300"
+                :class="[
+                  active ? 'bg-slate-100 text-primary-500' : 'text-slate-500',
+                ]"
+              >
+                <i class="i-ph-gear-six-duotone w-5 h-5"></i>
+                <div class="ml-3">
+                  <h6
+                    class="font-main font-semibold text-xs leading-none text-slate-800"
+                  >
+                    Settings
+                  </h6>
+                  <p class="font-text text-xs text-slate-400">
+                    Account settings
+                  </p>
+                </div>
+              </NuxtLink>
+            </MenuItem>
+          </div>
+
+          <div class="p-1.5">
+            <button
+              class="font-sub inline-flex items-center justify-center rounded-lg px-4 py-2 w-full bg-primary-600 hover:bg-primary-500 hover:shadow-lg hover:shadow-primary-600/20 focus:shadow-lg focus:shadow-primary-600/20 text-white transition-all duration-300"
+            >
+              <i class="i-ph-lock-duotone w-4 h-4 mr-1 -ml-2"></i>
+              <span>Logout</span>
+            </button>
+          </div>
+        </MenuItems>
+      </transition>
+    </Menu>
+  </div>
+</template>

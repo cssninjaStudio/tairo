@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* Scroll thumb styles */
+
+  .slimscroll::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .slimscroll::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: rgb(0 0 0 / 20%);
+  }
+}
