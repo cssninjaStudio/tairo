@@ -29,8 +29,11 @@ module.exports = {
         },
       },
       colors: {
-        primary: colors.violet,
-        accent: colors.teal,
+        primary: colors?.violet,
+        info: colors?.sky,
+        success: colors?.teal,
+        warning: colors?.amber,
+        danger: colors?.rose,
       },
       fontFamily: {
         main: ['inter', 'sans-serif'],

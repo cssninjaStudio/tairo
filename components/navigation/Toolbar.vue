@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
+import { usePageTitle } from '@/stores/usePageTitle'
 
 const props = defineProps<{
   toggled: boolean
@@ -7,6 +8,7 @@ const props = defineProps<{
 
 const emit = defineEmits(['toggled', 'language', 'activity'])
 
+const pageTitle = usePageTitle()
 const { toggleDark } = useDarkmode()
 const isChecked = ref(false)
 </script>
@@ -15,12 +17,14 @@ const isChecked = ref(false)
   <div class="relative flex items-center gap-2 h-16 mb-5 z-50">
     <NavigationBurger :open="props.toggled" @triggered="emit('toggled')" />
 
-    <h2 class="hidden md:block font-main text-2xl font-semibold text-slate-800">
-      Personal
+    <h2
+      class="hidden md:block font-main text-2xl font-semibold text-slate-800 dark:text-white"
+    >
+      {{ pageTitle.pageTitle }}
     </h2>
 
     <label
-      class="block w-9 h-9 overflow-hidden relative ml-auto rounded-full ring-1 ring-transparent hover:ring-offset-4 hover:ring-primary-500 transition-all duration-300"
+      class="block w-9 h-9 overflow-hidden relative ml-auto rounded-full ring-1 ring-transparent hover:ring-offset-4 hover:ring-primary-500 dark:ring-offset-slate-900 transition-all duration-300"
     >
       <input
         v-model="isChecked"
@@ -82,7 +86,7 @@ const isChecked = ref(false)
     </label>
 
     <button
-      class="flex items-center justify-center w-9 h-9 rounded-full bg-white border border-gray-200 ring-1 ring-transparent hover:ring-offset-4 hover:ring-primary-500 transition-all duration-300"
+      class="flex items-center justify-center w-9 h-9 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 ring-1 ring-transparent hover:ring-offset-4 hover:ring-primary-500 dark:ring-offset-slate-900 transition-all duration-300"
       @click="emit('language')"
     >
       <img
@@ -95,7 +99,7 @@ const isChecked = ref(false)
     <NavigationToolbarNotifications />
 
     <button
-      class="flex items-center justify-center w-9 h-9 rounded-full bg-white border border-gray-200 ring-1 ring-transparent hover:ring-offset-4 hover:ring-primary-500 transition-all duration-300"
+      class="flex items-center justify-center w-9 h-9 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 ring-1 ring-transparent hover:ring-offset-4 hover:ring-primary-500 dark:ring-offset-slate-900 transition-all duration-300"
       @click="emit('activity')"
     >
       <i class="i-ph-circles-four-duotone w-5 h-5 text-slate-400"></i>

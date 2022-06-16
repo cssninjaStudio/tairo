@@ -7,10 +7,10 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
     <Menu as="div" class="relative w-9 h-9 text-left">
       <MenuButton as="template">
         <button
-          class="w-9 h-9 rounded-full ring-1 ring-transparent group-hover:ring-offset-4 group-hover:ring-primary-500 inline-flex items-center justify-center transition-all duration-300"
+          class="w-9 h-9 rounded-full ring-1 ring-transparent group-hover:ring-offset-4 group-hover:ring-primary-500 dark:ring-offset-slate-900 inline-flex items-center justify-center transition-all duration-300"
         >
           <span
-            class="flex items-center justify-center w-9 h-9 rounded-full bg-white border border-gray-200"
+            class="flex items-center justify-center w-9 h-9 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700"
           >
             <i class="i-ph-bell-duotone w-5 h-5 text-slate-400"></i>
           </span>
@@ -26,11 +26,13 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
         leave-to-class="transform scale-95 opacity-0"
       >
         <MenuItems
-          class="absolute right-0 mt-2 w-72 origin-top-right divide-y divide-gray-100 rounded-md bg-white border border-gray-200 shadow-lg focus:outline-none"
+          class="absolute right-0 mt-2 w-72 origin-top-right divide-y divide-gray-100 dark:divide-slate-700 rounded-md bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 shadow-lg focus:outline-none"
         >
           <div class="p-4">
             <div class="flex justify-between items-center relative">
-              <h4 class="font-main uppercase text-xs text-slate-500">
+              <h4
+                class="font-main uppercase text-xs text-slate-500 dark:text-slate-200"
+              >
                 Notifications
               </h4>
               <NuxtLink
@@ -47,24 +49,28 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 to="/"
                 class="group flex w-full items-center rounded-md p-2 text-sm transition-colors duration-300"
                 :class="[
-                  active ? 'bg-slate-100 text-primary-500' : 'text-slate-500',
+                  active
+                    ? 'bg-slate-100 dark:bg-slate-700 text-primary-500'
+                    : 'text-slate-500',
                 ]"
               >
                 <div
                   class="inline-flex justify-center items-center relative w-9 h-9 rounded-full"
                 >
                   <img
-                    src="https://media.cssninja.io/shuriken/avatars/12.svg"
+                    src="/img/avatars/12.svg"
                     class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
                     alt="Avatar image"
                   />
                 </div>
                 <div class="ml-2">
                   <h6
-                    class="font-main font-semibold text-xs leading-tight text-slate-800"
+                    class="font-main font-semibold text-xs leading-tight text-slate-800 dark:text-white"
                   >
                     Helen Mariakis
-                    <span class="text-slate-500 font-normal">
+                    <span
+                      class="text-slate-500 dark:text-slate-400 font-normal"
+                    >
                       left a comment
                     </span>
                   </h6>
@@ -77,24 +83,28 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 to="/"
                 class="group flex w-full items-center rounded-md p-2 text-sm transition-colors duration-300"
                 :class="[
-                  active ? 'bg-slate-100 text-primary-500' : 'text-slate-500',
+                  active
+                    ? 'bg-slate-100 dark:bg-slate-700  text-primary-500'
+                    : 'text-slate-500',
                 ]"
               >
                 <div
                   class="inline-flex justify-center items-center relative w-9 h-9 rounded-full"
                 >
                   <img
-                    src="https://media.cssninja.io/shuriken/avatars/19.svg"
+                    src="/img/avatars/19.svg"
                     class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
                     alt="Avatar image"
                   />
                 </div>
                 <div class="ml-2">
                   <h6
-                    class="font-main font-semibold text-xs leading-tight text-slate-800"
+                    class="font-main font-semibold text-xs leading-tight text-slate-800 dark:text-white"
                   >
                     Clarissa Perez
-                    <span class="text-slate-500 font-normal">
+                    <span
+                      class="text-slate-500 dark:text-slate-400 font-normal"
+                    >
                       uploaded a file
                     </span>
                   </h6>
@@ -107,24 +117,28 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 to="/"
                 class="group flex w-full items-center rounded-md p-2 text-sm transition-colors duration-300"
                 :class="[
-                  active ? 'bg-slate-100 text-primary-500' : 'text-slate-500',
+                  active
+                    ? 'bg-slate-100 dark:bg-slate-700  text-primary-500'
+                    : 'text-slate-500',
                 ]"
               >
                 <div
                   class="inline-flex justify-center items-center relative w-9 h-9 rounded-full"
                 >
                   <img
-                    src="https://media.cssninja.io/shuriken/avatars/3.svg"
+                    src="/img/avatars/3.svg"
                     class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
                     alt="Avatar image"
                   />
                 </div>
                 <div class="ml-2">
                   <h6
-                    class="font-main font-semibold text-xs leading-tight text-slate-800"
+                    class="font-main font-semibold text-xs leading-tight text-slate-800 dark:text-white"
                   >
                     Mike Miller
-                    <span class="text-slate-500 font-normal">
+                    <span
+                      class="text-slate-500 dark:text-slate-400 font-normal"
+                    >
                       left a comment
                     </span>
                   </h6>
@@ -137,24 +151,28 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 to="/"
                 class="group flex w-full items-center rounded-md p-2 text-sm transition-colors duration-300"
                 :class="[
-                  active ? 'bg-slate-100 text-primary-500' : 'text-slate-500',
+                  active
+                    ? 'bg-slate-100 dark:bg-slate-700  text-primary-500'
+                    : 'text-slate-500',
                 ]"
               >
                 <div
                   class="inline-flex justify-center items-center relative w-9 h-9 rounded-full"
                 >
                   <img
-                    src="https://media.cssninja.io/shuriken/avatars/4.svg"
+                    src="/img/avatars/4.svg"
                     class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
                     alt="Avatar image"
                   />
                 </div>
                 <div class="ml-2">
                   <h6
-                    class="font-main font-semibold text-xs leading-tight text-slate-800"
+                    class="font-main font-semibold text-xs leading-tight text-slate-800 dark:text-white"
                   >
                     Lana Henriks
-                    <span class="text-slate-500 font-normal">
+                    <span
+                      class="text-slate-500 dark:text-slate-400 font-normal"
+                    >
                       sent you a message
                     </span>
                   </h6>
@@ -167,24 +185,28 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 to="/"
                 class="group flex w-full items-center rounded-md p-2 text-sm transition-colors duration-300"
                 :class="[
-                  active ? 'bg-slate-100 text-primary-500' : 'text-slate-500',
+                  active
+                    ? 'bg-slate-100 dark:bg-slate-700  text-primary-500'
+                    : 'text-slate-500',
                 ]"
               >
                 <div
                   class="inline-flex justify-center items-center relative w-9 h-9 rounded-full"
                 >
                   <img
-                    src="https://media.cssninja.io/shuriken/avatars/8.svg"
+                    src="/img/avatars/8.svg"
                     class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
                     alt="Avatar image"
                   />
                 </div>
                 <div class="ml-2">
                   <h6
-                    class="font-main font-semibold text-xs leading-tight text-slate-800"
+                    class="font-main font-semibold text-xs leading-tight text-slate-800 dark:text-white"
                   >
                     Dan Walker
-                    <span class="text-slate-500 font-normal">
+                    <span
+                      class="text-slate-500 dark:text-slate-400 font-normal"
+                    >
                       left a comment
                     </span>
                   </h6>

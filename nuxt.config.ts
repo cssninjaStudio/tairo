@@ -47,7 +47,10 @@ export default defineNuxtConfig({
       },
       colors: {
         primary: colors?.violet,
-        accent: colors?.teal,
+        info: colors?.sky,
+        success: colors?.teal,
+        warning: colors?.amber,
+        danger: colors?.rose,
       },
       fontFamily: {
         main: ['inter', 'sans-serif'],
@@ -56,6 +59,7 @@ export default defineNuxtConfig({
       },
       plugins: [],
     },
+    // safelist: ['w-24', 'h-24'],
     presets: [
       presetUno(),
       presetIcons(),

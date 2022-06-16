@@ -7,13 +7,13 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
     <Menu as="div" class="relative w-10 h-10 text-left">
       <MenuButton as="template">
         <button
-          class="w-10 h-10 rounded-full ring-1 ring-transparent group-hover:ring-offset-4 group-hover:ring-primary-500 inline-flex items-center justify-center transition-all duration-300"
+          class="w-10 h-10 rounded-full ring-1 ring-transparent group-hover:ring-offset-4 group-hover:ring-primary-500 dark:ring-offset-slate-800 inline-flex items-center justify-center transition-all duration-300"
         >
           <div
             class="inline-flex justify-center items-center relative w-10 h-10 rounded-full"
           >
             <img
-              src="https://media.cssninja.io/shuriken/avatars/2.svg"
+              src="/img/avatars/2.svg"
               class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
               alt="Avatar image"
             />
@@ -30,7 +30,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
         leave-to-class="transform scale-95 opacity-0"
       >
         <MenuItems
-          class="absolute bottom-0 -right-64 text-left mt-2 w-60 origin-bottom-right divide-y divide-gray-200 rounded-md bg-white border border-gray-200 shadow-lg focus:outline-none"
+          class="absolute bottom-0 -right-64 text-left mt-2 w-60 origin-bottom-right divide-y divide-gray-100 dark:divide-slate-700 rounded-md bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 shadow-lg focus:outline-none"
         >
           <div class="p-6">
             <div class="flex items-center">
@@ -38,13 +38,15 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 class="inline-flex justify-center items-center relative w-14 h-14 rounded-full"
               >
                 <img
-                  src="https://media.cssninja.io/shuriken/avatars/2.svg"
+                  src="/img/avatars/2.svg"
                   class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
                   alt="Avatar image"
                 />
               </div>
               <div class="ml-3">
-                <h6 class="font-main font-semibold text-sm text-slate-800">
+                <h6
+                  class="font-main font-semibold text-sm text-slate-800 dark:text-white"
+                >
                   Maya Rosselini
                 </h6>
                 <p class="font-text text-xs text-slate-400">Product Manager</p>
@@ -57,13 +59,15 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 to="/"
                 class="group flex w-full items-center rounded-md p-2 text-sm transition-colors duration-300"
                 :class="[
-                  active ? 'bg-slate-100 text-primary-500' : 'text-slate-500',
+                  active
+                    ? 'bg-slate-100 dark:bg-slate-700 text-primary-500'
+                    : 'text-slate-500',
                 ]"
               >
                 <i class="i-ph-user-circle-duotone w-5 h-5"></i>
                 <div class="ml-3">
                   <h6
-                    class="font-main font-semibold text-xs leading-none text-slate-800"
+                    class="font-main font-semibold text-xs leading-none text-slate-800 dark:text-white"
                   >
                     Profile
                   </h6>
@@ -80,13 +84,15 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 to="/"
                 class="group flex w-full items-center rounded-md p-2 text-sm transition-colors duration-300"
                 :class="[
-                  active ? 'bg-slate-100 text-primary-500' : 'text-slate-500',
+                  active
+                    ? 'bg-slate-100 dark:bg-slate-700 text-primary-500'
+                    : 'text-slate-500',
                 ]"
               >
                 <i class="i-ph-briefcase-duotone w-5 h-5"></i>
                 <div class="ml-3">
                   <h6
-                    class="font-main font-semibold text-xs leading-none text-slate-800"
+                    class="font-main font-semibold text-xs leading-none text-slate-800 dark:text-white"
                   >
                     Projects
                   </h6>
@@ -101,13 +107,15 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 to="/"
                 class="group flex w-full items-center rounded-md p-2 text-sm transition-colors duration-300"
                 :class="[
-                  active ? 'bg-slate-100 text-primary-500' : 'text-slate-500',
+                  active
+                    ? 'bg-slate-100 dark:bg-slate-700 text-primary-500'
+                    : 'text-slate-500',
                 ]"
               >
                 <i class="i-ph-users-three-duotone w-5 h-5"></i>
                 <div class="ml-3">
                   <h6
-                    class="font-main font-semibold text-xs leading-none text-slate-800"
+                    class="font-main font-semibold text-xs leading-none text-slate-800 dark:text-white"
                   >
                     Team
                   </h6>
@@ -123,13 +131,15 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 to="/"
                 class="group flex w-full items-center rounded-md p-2 text-sm transition-colors duration-300"
                 :class="[
-                  active ? 'bg-slate-100 text-primary-500' : 'text-slate-500',
+                  active
+                    ? 'bg-slate-100 dark:bg-slate-700 text-primary-500'
+                    : 'text-slate-500',
                 ]"
               >
                 <i class="i-ph-gear-six-duotone w-5 h-5"></i>
                 <div class="ml-3">
                   <h6
-                    class="font-main font-semibold text-xs leading-none text-slate-800"
+                    class="font-main font-semibold text-xs leading-none text-slate-800 dark:text-white"
                   >
                     Settings
                   </h6>

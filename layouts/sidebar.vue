@@ -13,9 +13,10 @@ const isCircularMenuOpened = ref(false)
     <Meta name="description" content="title" />
     <Link rel="icon" type="image/x-icon" href="/img/favicon.png" />
   </Head>
-  <div :class="isDark ? 'dark' : ''">
+  <div class="bg-slate-100 dark:bg-slate-900" :class="isDark ? 'dark' : ''">
     <NavigationSidebar
       :active="isSidebarOpened"
+      @open="isSidebarOpened = true"
       @close="isSidebarOpened = false"
       @search="isSearchPanelOpened = true"
     />

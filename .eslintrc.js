@@ -20,6 +20,7 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'vue/script-setup-uses-vars': 'error',
     'vue/multi-word-component-names': 'off',
+    'vue/define-macros-order': 'off',
     'tailwindcss/no-custom-classname': [
       'error',
       { whitelist: ['^i-(.*)$', '^aspect-(.*)$'] },

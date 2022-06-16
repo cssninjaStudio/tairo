@@ -17,7 +17,9 @@
     "lint:stylelint:fix": "stylelint ./**/*.{vue,css,scss} --fix"
   },
   "dependencies": {
-    "vue-scrollto": "^2.20.0"
+    "vue-scrollto": "^2.20.0",
+    "prism-theme-vars": "0.2.2",
+    "vue-prism-component": "2.0.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.23.0",

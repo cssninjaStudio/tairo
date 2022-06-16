@@ -9,15 +9,17 @@ const emit = defineEmits(['close'])
 <template>
   <div>
     <div
-      class="fixed top-0 right-0 h-full w-96 bg-white border border-gray-200 transition-all duration-300 z-[100]"
+      class="fixed top-0 right-0 h-full w-96 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 transition-all duration-300 z-[100]"
       :class="props.active ? '' : 'translate-x-full'"
     >
       <div class="flex items-center justify-between h-16 w-full px-10">
-        <h2 class="font-main text-lg font-semibold text-gray-700">
+        <h2
+          class="font-main text-lg font-semibold text-gray-700 dark:text-white"
+        >
           Select language
         </h2>
         <button
-          class="flex items-center justify-center h-10 w-10 rounded-full text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-colors duration-300"
+          class="flex items-center justify-center h-10 w-10 rounded-full text-slate-400 hover:text-slate-600 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors duration-300"
           @click="emit('close')"
         >
           <i class="i-feather-chevron-right w-6 h-6"></i>
@@ -36,7 +38,7 @@ const emit = defineEmits(['close'])
                 checked
               />
               <div
-                class="w-14 h-14 flex items-center justify-center border-2 border-gray-200 peer-checked:border-primary-500 shadow-lg rounded-full transition-all duration-300"
+                class="w-14 h-14 flex items-center justify-center border-2 border-gray-200 dark:border-gray-600 peer-checked:border-primary-500 shadow-lg rounded-full transition-all duration-300"
               >
                 <img
                   class="h-10 w-10 rounded-full"
@@ -45,7 +47,7 @@ const emit = defineEmits(['close'])
                 />
               </div>
               <div
-                class="absolute -top-1 -right-1 h-7 w-7 rounded-full hidden peer-checked:flex items-center justify-center bg-primary-500 text-white border-4 border-white"
+                class="absolute -top-1 -right-1 h-7 w-7 rounded-full hidden peer-checked:flex items-center justify-center bg-primary-500 text-white border-4 border-white dark:border-slate-800"
               >
                 <i class="i-feather-check w-3 h-3"></i>
               </div>
@@ -60,7 +62,7 @@ const emit = defineEmits(['close'])
                 class="peer absolute top-0 left-0 h-full w-full opacity-0 cursor-pointer z-20"
               />
               <div
-                class="w-14 h-14 flex items-center justify-center border-2 border-gray-200 peer-checked:border-primary-500 shadow-lg rounded-full transition-all duration-300"
+                class="w-14 h-14 flex items-center justify-center border-2 border-gray-200 dark:border-gray-600 peer-checked:border-primary-500 shadow-lg rounded-full transition-all duration-300"
               >
                 <img
                   class="h-10 w-10 rounded-full"
@@ -69,7 +71,7 @@ const emit = defineEmits(['close'])
                 />
               </div>
               <div
-                class="absolute -top-1 -right-1 h-7 w-7 rounded-full hidden peer-checked:flex items-center justify-center bg-primary-500 text-white border-4 border-white"
+                class="absolute -top-1 -right-1 h-7 w-7 rounded-full hidden peer-checked:flex items-center justify-center bg-primary-500 text-white border-4 border-white dark:border-slate-800"
               >
                 <i class="i-feather-check w-3 h-3"></i>
               </div>
@@ -84,7 +86,7 @@ const emit = defineEmits(['close'])
                 class="peer absolute top-0 left-0 h-full w-full opacity-0 cursor-pointer z-20"
               />
               <div
-                class="w-14 h-14 flex items-center justify-center border-2 border-gray-200 peer-checked:border-primary-500 shadow-lg rounded-full transition-all duration-300"
+                class="w-14 h-14 flex items-center justify-center border-2 border-gray-200 dark:border-gray-600 peer-checked:border-primary-500 shadow-lg rounded-full transition-all duration-300"
               >
                 <img
                   class="h-10 w-10 rounded-full"
@@ -93,7 +95,7 @@ const emit = defineEmits(['close'])
                 />
               </div>
               <div
-                class="absolute -top-1 -right-1 h-7 w-7 rounded-full hidden peer-checked:flex items-center justify-center bg-primary-500 text-white border-4 border-white"
+                class="absolute -top-1 -right-1 h-7 w-7 rounded-full hidden peer-checked:flex items-center justify-center bg-primary-500 text-white border-4 border-white dark:border-slate-800"
               >
                 <i class="i-feather-check w-3 h-3"></i>
               </div>
@@ -108,7 +110,7 @@ const emit = defineEmits(['close'])
                 class="peer absolute top-0 left-0 h-full w-full opacity-0 cursor-pointer z-20"
               />
               <div
-                class="w-14 h-14 flex items-center justify-center border-2 border-gray-200 peer-checked:border-primary-500 shadow-lg rounded-full transition-all duration-300"
+                class="w-14 h-14 flex items-center justify-center border-2 border-gray-200 dark:border-gray-600 peer-checked:border-primary-500 shadow-lg rounded-full transition-all duration-300"
               >
                 <img
                   class="h-10 w-10 rounded-full"
@@ -117,7 +119,7 @@ const emit = defineEmits(['close'])
                 />
               </div>
               <div
-                class="absolute -top-1 -right-1 h-7 w-7 rounded-full hidden peer-checked:flex items-center justify-center bg-primary-500 text-white border-4 border-white"
+                class="absolute -top-1 -right-1 h-7 w-7 rounded-full hidden peer-checked:flex items-center justify-center bg-primary-500 text-white border-4 border-white dark:border-slate-800"
               >
                 <i class="i-feather-check w-3 h-3"></i>
               </div>
@@ -132,7 +134,7 @@ const emit = defineEmits(['close'])
                 class="peer absolute top-0 left-0 h-full w-full opacity-0 cursor-pointer z-20"
               />
               <div
-                class="w-14 h-14 flex items-center justify-center border-2 border-gray-200 peer-checked:border-primary-500 shadow-lg rounded-full transition-all duration-300"
+                class="w-14 h-14 flex items-center justify-center border-2 border-gray-200 dark:border-gray-600 peer-checked:border-primary-500 shadow-lg rounded-full transition-all duration-300"
               >
                 <img
                   class="h-10 w-10 rounded-full"
@@ -141,7 +143,7 @@ const emit = defineEmits(['close'])
                 />
               </div>
               <div
-                class="absolute -top-1 -right-1 h-7 w-7 rounded-full hidden peer-checked:flex items-center justify-center bg-primary-500 text-white border-4 border-white"
+                class="absolute -top-1 -right-1 h-7 w-7 rounded-full hidden peer-checked:flex items-center justify-center bg-primary-500 text-white border-4 border-white dark:border-slate-800"
               >
                 <i class="i-feather-check w-3 h-3"></i>
               </div>
@@ -156,7 +158,7 @@ const emit = defineEmits(['close'])
                 class="peer absolute top-0 left-0 h-full w-full opacity-0 cursor-pointer z-20"
               />
               <div
-                class="w-14 h-14 flex items-center justify-center border-2 border-gray-200 peer-checked:border-primary-500 shadow-lg rounded-full transition-all duration-300"
+                class="w-14 h-14 flex items-center justify-center border-2 border-gray-200 dark:border-gray-600 peer-checked:border-primary-500 shadow-lg rounded-full transition-all duration-300"
               >
                 <img
                   class="h-10 w-10 rounded-full"
@@ -165,7 +167,7 @@ const emit = defineEmits(['close'])
                 />
               </div>
               <div
-                class="absolute -top-1 -right-1 h-7 w-7 rounded-full hidden peer-checked:flex items-center justify-center bg-primary-500 text-white border-4 border-white"
+                class="absolute -top-1 -right-1 h-7 w-7 rounded-full hidden peer-checked:flex items-center justify-center bg-primary-500 text-white border-4 border-white dark:border-slate-800"
               >
                 <i class="i-feather-check w-3 h-3"></i>
               </div>
@@ -176,7 +178,12 @@ const emit = defineEmits(['close'])
         <div>
           <img
             src="/img/illustrations/translation.svg"
-            class="w-full max-w-[280px] mx-auto"
+            class="w-full max-w-[280px] mx-auto dark:hidden"
+            alt="illustration"
+          />
+          <img
+            src="/img/illustrations/translation-dark.svg"
+            class="w-full max-w-[280px] mx-auto hidden dark:block"
             alt="illustration"
           />
         </div>
