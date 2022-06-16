@@ -17,14 +17,15 @@
     "lint:stylelint:fix": "stylelint ./**/*.{vue,css,scss} --fix"
   },
   "dependencies": {
-    "vue-scrollto": "^2.20.0",
     "prism-theme-vars": "0.2.2",
-    "vue-prism-component": "2.0.0"
+    "vue-prism-component": "2.0.0",
+    "vue-scrollto": "^2.20.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.23.0",
-    "@headlessui/vue": "1.6.1",
+    "@headlessui/vue": "1.6.4",
     "@iconify/json": "2.1.36",
+    "@nuxtjs/color-mode": "^3.1.4",
     "@nuxtjs/tailwindcss": "^5.0.3",
     "@pinia/nuxt": "0.1.8",
     "@tailwindcss/aspect-ratio": "0.4.0",

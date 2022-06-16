@@ -21,7 +21,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
           </a>
         </DisclosureButton>
 
-        <transition
+        <Transition
           enter-active-class="transition-all duration-300 ease-out"
           enter-from-class="opacity-0 -translate-y-5"
           enter-to-class=" opacity-100 translate-y-0"
@@ -62,7 +62,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
               </ul>
             </DisclosurePanel>
           </div>
-        </transition>
+        </Transition>
       </Disclosure>
     </li>
     <!-- Menu item -->
@@ -82,7 +82,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
           </a>
         </DisclosureButton>
 
-        <transition
+        <Transition
           enter-active-class="transition-all duration-300 ease-out"
           enter-from-class="opacity-0 -translate-y-5"
           enter-to-class=" opacity-100 translate-y-0"
@@ -123,7 +123,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
               </ul>
             </DisclosurePanel>
           </div>
-        </transition>
+        </Transition>
       </Disclosure>
     </li>
   </ul>

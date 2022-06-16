@@ -15,14 +15,14 @@ import {
   squareFakeColors,
   squareSize,
 } from '@@/documentation/components/avatar'
-import { usePageTitle } from '@/stores/usePageTitle'
 
-const pageTitle = usePageTitle()
-pageTitle.setPageTitle('Avatars')
+definePageMeta({
+  title: 'Avatars',
+})
 </script>
 
 <template>
-  <NuxtLayout name="sidebar">
+  <div>
     <!-- BreadCrumb -->
     <div class="flex items-center font-text mb-6">
       <NuxtLink
@@ -881,5 +881,5 @@ pageTitle.setPageTitle('Avatars')
         <DocToc :anchors="toc" />
       </template>
     </DocLayout>
-  </NuxtLayout>
+  </div>
 </template>

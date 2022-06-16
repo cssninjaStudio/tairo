@@ -1,19 +1,13 @@
 <script setup lang="ts">
-const { isDark } = useDarkmode()
-const isSidebarOpened = ref(false)
-const isLanguagePanelOpened = ref(false)
-const isActivityPanelOpened = ref(false)
-const isSearchPanelOpened = ref(false)
-const isCircularMenuOpened = ref(false)
+const isSidebarOpened = useSidebarOpened()
+const isLanguagePanelOpened = useLanguagePanelOpened()
+const isActivityPanelOpened = useActivityPanelOpened()
+const isSearchPanelOpened = useSearchPanelOpened()
+const isCircularMenuOpened = useCircularMenuOpened()
 </script>
 
 <template>
-  <Head>
-    <Title>Tairo</Title>
-    <Meta name="description" content="title" />
-    <Link rel="icon" type="image/x-icon" href="/img/favicon.png" />
-  </Head>
-  <div class="bg-slate-100 dark:bg-slate-900" :class="isDark ? 'dark' : ''">
+  <div class="bg-slate-100 dark:bg-slate-900">
     <NavigationSidebar
       :active="isSidebarOpened"
       @open="isSidebarOpened = true"

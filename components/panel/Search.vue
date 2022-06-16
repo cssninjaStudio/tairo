@@ -4,6 +4,7 @@ import {
   ComboboxInput,
   ComboboxOption,
   ComboboxOptions,
+  TransitionRoot,
 } from '@headlessui/vue'
 
 const props = defineProps<{

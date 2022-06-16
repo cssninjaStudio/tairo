@@ -1,4 +1,18 @@
 <script setup>
+const route = useRoute()
+useHead({
+  title: route.meta.title,
+  titleTemplate: (titleChunk) => {
+    return titleChunk ? `${titleChunk} - Tairo` : 'Tairo'
+  },
+  link: [
+    {
+      rel: 'icon',
+      type: 'image/x-icon',
+      href: '/img/favicon.png',
+    },
+  ],
+})
 </script>
 
 <template>

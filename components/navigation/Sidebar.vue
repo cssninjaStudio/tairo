@@ -152,7 +152,9 @@ const activeSidebarMenu = ref('dashboards')
         </button>
       </div>
       <!-- Body -->
-      <div class="relative h-[calc(100%_-_64px)] w-full overflow-y-auto px-5">
+      <div
+        class="relative h-[calc(100%_-_64px)] w-full overflow-y-auto slimscroll px-5"
+      >
         <!-- Menu list (Dashboards) -->
         <NavigationSidebarMenuDashboards
           v-if="activeSidebarMenu === 'dashboards'"

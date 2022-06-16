@@ -5,7 +5,7 @@
     <!-- Menu item -->
     <li class="min-h-[36px] mb-1">
       <NuxtLink
-        to="/"
+        to="/components"
         class="flex items-center text-slate-400 hover:text-primary-500 transition-colors duration-300"
       >
         <span class="font-text text-sm">Components Hub</span>

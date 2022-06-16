@@ -6,7 +6,15 @@ import presetWebFonts from '@unocss/preset-web-fonts'
 import { defineNuxtConfig } from 'nuxt'
 
 export default defineNuxtConfig({
-  buildModules: ['@vueuse/nuxt', '@pinia/nuxt', '@unocss/nuxt'],
+  modules: [
+    '@vueuse/nuxt',
+    '@pinia/nuxt',
+    '@unocss/nuxt',
+    '@nuxtjs/color-mode',
+  ],
+  colorMode: {
+    classSuffix: '',
+  },
   typescript: {
     shim: false,
     strict: true,
