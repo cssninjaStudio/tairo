@@ -1,4 +1,12 @@
 <script setup lang="ts">
+export interface ThemeToggleProps {
+  inverted?: boolean
+}
+
+const props = withDefaults(defineProps<ThemeToggleProps>(), {
+  inverted: false,
+})
+
 const colorMode = useColorMode()
 const isDark = computed({
   get() {
@@ -16,7 +24,12 @@ const isDark = computed({
 
 <template>
   <label
-    class="block w-9 h-9 overflow-hidden relative rounded-full ring-1 ring-transparent hover:ring-offset-4 hover:ring-primary-500 dark:ring-offset-slate-900 transition-all duration-300"
+    class="block w-9 h-9 overflow-hidden relative rounded-full ring-1 ring-transparent hover:ring-offset-4 hover:ring-primary-500 transition-all duration-300"
+    :class="
+      props.inverted
+        ? 'ring-offset-primary-700 dark:ring-offset-primary-700'
+        : 'dark:ring-offset-slate-900'
+    "
   >
     <input
       v-model="isDark"
@@ -24,7 +37,12 @@ const isDark = computed({
       class="absolute top-0 left-0 z-[2] w-full h-full opacity-0 cursor-pointer"
     />
     <span
-      class="block relative w-9 h-9 bg-white dark:bg-gray-800 rounded-full border border-gray-300 dark:border-gray-700"
+      class="block relative w-9 h-9 rounded-full"
+      :class="
+        props.inverted
+          ? 'bg-primary-700 '
+          : 'bg-white dark:bg-gray-800  border border-gray-300 dark:border-gray-700'
+      "
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

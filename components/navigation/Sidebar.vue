@@ -1,13 +1,11 @@
 <script setup lang="ts">
-import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
-import SidebarMenuDashboardsVue from './SidebarMenuDashboards.vue'
+const isSidebarMenuActive = useSidebarMenuActive()
 
 const props = defineProps<{
   active: boolean
 }>()
 
 const emit = defineEmits(['close', 'open', 'search'])
-const activeSidebarMenu = ref('dashboards')
 </script>
 
 <template>
@@ -36,11 +34,11 @@ const activeSidebarMenu = ref('dashboards')
           <button
             class="flex items-center justify-center w-12 h-12 rounded-2xl transition-colors duration-300"
             :class="
-              activeSidebarMenu === 'dashboards'
+              isSidebarMenuActive === 'dashboards'
                 ? 'bg-primary-100 text-primary-500 dark:bg-primary-500/10'
                 : 'text-gray-400'
             "
-            @click=";(activeSidebarMenu = 'dashboards'), emit('open')"
+            @click=";(isSidebarMenuActive = 'dashboards'), emit('open')"
           >
             <i class="i-ph-heartbeat-duotone w-5 h-5"></i>
           </button>
@@ -50,11 +48,11 @@ const activeSidebarMenu = ref('dashboards')
           <button
             class="flex items-center justify-center w-12 h-12 rounded-2xl transition-colors duration-300"
             :class="
-              activeSidebarMenu === 'layouts'
+              isSidebarMenuActive === 'layouts'
                 ? 'bg-primary-100 text-primary-500 dark:bg-primary-500/10'
                 : 'text-gray-400'
             "
-            @click=";(activeSidebarMenu = 'layouts'), emit('open')"
+            @click=";(isSidebarMenuActive = 'layouts'), emit('open')"
           >
             <i class="i-ph-grid-four-duotone w-5 h-5"></i>
           </button>
@@ -64,11 +62,11 @@ const activeSidebarMenu = ref('dashboards')
           <button
             class="flex items-center justify-center w-12 h-12 rounded-2xl transition-colors duration-300"
             :class="
-              activeSidebarMenu === 'elements'
+              isSidebarMenuActive === 'elements'
                 ? 'bg-primary-100 text-primary-500 dark:bg-primary-500/10'
                 : 'text-gray-400'
             "
-            @click=";(activeSidebarMenu = 'elements'), emit('open')"
+            @click=";(isSidebarMenuActive = 'elements'), emit('open')"
           >
             <i class="i-ph-nut-duotone w-5 h-5"></i>
           </button>
@@ -78,11 +76,11 @@ const activeSidebarMenu = ref('dashboards')
           <button
             class="flex items-center justify-center w-12 h-12 rounded-2xl transition-colors duration-300"
             :class="
-              activeSidebarMenu === 'components'
+              isSidebarMenuActive === 'components'
                 ? 'bg-primary-100 text-primary-500 dark:bg-primary-500/10'
                 : 'text-gray-400'
             "
-            @click=";(activeSidebarMenu = 'components'), emit('open')"
+            @click=";(isSidebarMenuActive = 'components'), emit('open')"
           >
             <i class="i-ph-app-window-duotone w-5 h-5"></i>
           </button>
@@ -142,7 +140,7 @@ const activeSidebarMenu = ref('dashboards')
         <h2
           class="font-main text-lg font-semibold text-gray-700 dark:text-white capitalize"
         >
-          {{ activeSidebarMenu }}
+          {{ isSidebarMenuActive }}
         </h2>
         <button
           class="flex xl:hidden items-center justify-center h-10 w-10 rounded-full ml-auto text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-colors duration-300"
@@ -157,22 +155,22 @@ const activeSidebarMenu = ref('dashboards')
       >
         <!-- Menu list (Dashboards) -->
         <NavigationSidebarMenuDashboards
-          v-if="activeSidebarMenu === 'dashboards'"
+          v-if="isSidebarMenuActive === 'dashboards'"
         />
 
         <!-- Menu list (Layouts) -->
         <NavigationSidebarMenuLayouts
-          v-else-if="activeSidebarMenu === 'layouts'"
+          v-else-if="isSidebarMenuActive === 'layouts'"
         />
 
         <!-- Menu list (Elements) -->
         <NavigationSidebarMenuElements
-          v-else-if="activeSidebarMenu === 'elements'"
+          v-else-if="isSidebarMenuActive === 'elements'"
         />
 
         <!-- Menu list (Components) -->
         <NavigationSidebarMenuComponents
-          v-else-if="activeSidebarMenu === 'components'"
+          v-else-if="isSidebarMenuActive === 'components'"
         />
       </div>
     </div>

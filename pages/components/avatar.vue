@@ -19,33 +19,36 @@ import {
 definePageMeta({
   title: 'Avatars',
 })
+
+const breadcrumb = [
+  {
+    label: 'Home',
+    hideLabel: true,
+    icon: 'i-lucide-home',
+    hideIcon: false,
+    to: '/',
+  },
+  {
+    label: 'Components',
+    hideLabel: false,
+    icon: '',
+    hideIcon: true,
+    to: '/components',
+  },
+  {
+    label: 'Avatar',
+    hideLabel: false,
+    icon: '',
+    hideIcon: true,
+    to: '/avatar',
+  },
+]
 </script>
 
 <template>
   <div>
     <!-- BreadCrumb -->
-    <div class="flex items-center font-text mb-6">
-      <NuxtLink
-        to="/"
-        class="block text-slate-500 hover:text-primary-500 transition-colors duration-300"
-      >
-        <i class="i-lucide-home block w-4 h-4"></i>
-      </NuxtLink>
-      <span class="px-2 text-slate-500">·</span>
-      <NuxtLink
-        to="/components"
-        class="block text-slate-500 hover:text-primary-500 transition-colors duration-300"
-      >
-        <span>Components</span>
-      </NuxtLink>
-      <span class="px-2 text-slate-500">·</span>
-      <NuxtLink
-        to="/components/avatar"
-        class="block text-slate-500 hover:text-primary-500 transition-colors duration-300"
-      >
-        <span>Avatars</span>
-      </NuxtLink>
-    </div>
+    <BaseBreadcrumb :items="breadcrumb" separator="dot" />
 
     <!-- Documentation Layout -->
     <DocLayout>

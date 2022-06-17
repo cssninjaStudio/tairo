@@ -1,5 +1,7 @@
 export const useSidebarOpened = () =>
   useState<boolean>('sidebar.opened', () => false)
+export const useSidebarMenuActive = () =>
+  useState<string>('sidebar.menu.active', () => 'dashboards')
 export const useLanguagePanelOpened = () =>
   useState<boolean>('panel.language', () => false)
 export const useActivityPanelOpened = () =>

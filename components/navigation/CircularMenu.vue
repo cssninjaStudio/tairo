@@ -15,7 +15,7 @@ const isScrolled = computed(() => {
 
 <template>
   <div
-    class="fixed top-[0.6em] right-[1em] z-[90] transition-transform duration-300 after:block after:content-[''] after:absolute after:top-0 after:right-0 after:bg-primary-600 after:shadow-lg after:shadow-primary-500/50 after:w-12 after:h-12 after:rounded-full after:transition-transform after:duration-300"
+    class="fixed top-[0.6em] right-[1em] z-[90] transition-transform duration-300 after:block after:content-[''] after:absolute after:top-0 after:right-0 after:bg-primary-600 after:shadow-lg after:shadow-primary-500/50 dark:after:shadow-gray-800/10 after:w-12 after:h-12 after:rounded-full after:transition-transform after:duration-300"
     :class="[
       props.active
         ? 'after:scale-x-[5.5] after:scale-y-[5.5] after:ease-[cubic-bezier(0.68, 1.55, 0.265, 1)]'
@@ -24,7 +24,7 @@ const isScrolled = computed(() => {
     ]"
   >
     <button
-      class="relative flex items-center justify-center w-12 h-12 rounded-full bg-primary-500 text-white shadow-lg shadow-primary-500/50 z-30"
+      class="relative flex items-center justify-center w-12 h-12 rounded-full bg-primary-500 text-white shadow-lg shadow-primary-500/50 dark:shadow-gray-800/10 z-30"
       @click="emit('triggered')"
     >
       <span
@@ -56,7 +56,7 @@ const isScrolled = computed(() => {
             : 'translate-x-0 translate-y-0'
         "
       >
-        <BaseThemeToggle class="ml-auto" />
+        <BaseThemeToggle class="ml-auto" inverted />
       </div>
 
       <!-- Language selection -->
