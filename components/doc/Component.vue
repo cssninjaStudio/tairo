@@ -18,7 +18,7 @@ const activeTab = ref('demo')
       <BaseParagraph
         size="md"
         lead="tight"
-        class="text-slate-500 dark:text-slate-400"
+        class="text-slate-500 dark:text-slate-400 hidden md:block"
       >
         {{ props.label }}
       </BaseParagraph>

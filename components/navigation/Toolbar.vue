@@ -12,7 +12,11 @@ const route = useRoute()
 
 <template>
   <div class="relative flex items-center gap-2 h-16 mb-5 z-50">
-    <NavigationBurger :open="props.toggled" @triggered="emit('toggled')" />
+    <NavigationBurger
+      class="-ml-3"
+      :open="props.toggled"
+      @triggered="emit('toggled')"
+    />
 
     <h2
       class="hidden md:block font-main text-2xl font-semibold text-slate-800 dark:text-white"

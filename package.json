@@ -24,7 +24,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "^0.23.0",
     "@headlessui/vue": "1.6.4",
-    "@iconify/json": "2.1.36",
+    "@iconify/json": "2.1.63",
     "@nuxtjs/color-mode": "^3.1.4",
     "@nuxtjs/tailwindcss": "^5.0.3",
     "@pinia/nuxt": "0.1.8",
@@ -35,7 +35,7 @@
     "@types/markdown-it": "^12.2.3",
     "@types/prismjs": "^1.26.0",
     "@unocss/nuxt": "^0.33.1",
-    "@unocss/preset-icons": "^0.33.1",
+    "@unocss/preset-icons": "^0.39.3",
     "@unocss/preset-typography": "^0.33.1",
     "@unocss/preset-uno": "^0.33.1",
     "@unocss/preset-web-fonts": "^0.33.1",

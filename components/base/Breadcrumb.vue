@@ -1,5 +1,5 @@
 <script setup lang="ts">
-export type BreadcrumbSeparator = 'slash' | 'dot'
+export type BreadcrumbSeparator = 'slash' | 'dot' | 'chevron' | 'arrow'
 export interface BreadcrumbItem {
   label: string
   hideLabel?: boolean
@@ -32,9 +32,9 @@ const props = withDefaults(defineProps<BreadcrumbsProps>(), {
       >
         <NuxtLink
           :to="item.to"
-          class="block text-slate-500 hover:text-primary-500 transition-colors duration-300"
+          class="flex items-center gap-x-1 text-slate-500 hover:text-primary-500 transition-colors duration-300"
         >
-          <i v-if="item.icon" class="block w-4 h-4" :class="item.icon"></i>
+          <i v-if="!item.hideIcon" class="block w-4 h-4" :class="item.icon"></i>
           <span v-if="!item.hideLabel">{{ item.label }}</span>
         </NuxtLink>
         <span
@@ -48,6 +48,18 @@ const props = withDefaults(defineProps<BreadcrumbsProps>(), {
           class="px-2 text-slate-500"
         >
           /
+        </span>
+        <span
+          v-else-if="props.separator === 'chevron' && index < items.length - 1"
+          class="px-2 text-slate-500"
+        >
+          <i class="i-lucide-chevron-right block w-3 h-3"></i>
+        </span>
+        <span
+          v-else-if="props.separator === 'arrow' && index < items.length - 1"
+          class="px-2 text-slate-500"
+        >
+          <i class="i-lucide-arrow-right block w-3 h-3"></i>
         </span>
       </li>
     </ul>

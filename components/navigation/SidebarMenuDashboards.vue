@@ -5,10 +5,10 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
 <template>
   <ul class="py-2.5">
     <!-- Menu item -->
-    <li class="group min-h-[36px] mb-1">
+    <li class="group min-h-[2rem] mb-1">
       <Disclosure v-slot="{ open }">
         <DisclosureButton class="w-full">
-          <a class="flex items-center">
+          <a class="relative top-0.5 flex items-center">
             <span
               class="font-text text-sm text-slate-400 group-hover:text-primary-500 transition-colors duration-300"
             >
@@ -66,10 +66,10 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
       </Disclosure>
     </li>
     <!-- Menu item -->
-    <li class="group min-h-[36px] mb-1">
+    <li class="group min-h-[2rem] mb-1">
       <Disclosure v-slot="{ open }">
         <DisclosureButton class="w-full">
-          <a class="flex items-center">
+          <a class="relative top-0.5 flex items-center">
             <span
               class="font-text text-sm text-slate-400 group-hover:text-primary-500 transition-colors duration-300"
             >
@@ -127,10 +127,10 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
       </Disclosure>
     </li>
     <!-- Menu item -->
-    <li class="group min-h-[36px] mb-1">
+    <li class="group min-h-[2rem] mb-1">
       <Disclosure v-slot="{ open }">
         <DisclosureButton class="w-full">
-          <a class="flex items-center">
+          <a class="relative top-0.5 flex items-center">
             <span
               class="font-text text-sm text-slate-400 group-hover:text-primary-500 transition-colors duration-300"
             >
@@ -188,7 +188,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
       </Disclosure>
     </li>
     <!-- Menu item -->
-    <li class="group min-h-[36px] mb-1">
+    <li class="group min-h-[2rem] mb-1">
       <Disclosure v-slot="{ open }">
         <DisclosureButton class="w-full">
           <a class="flex items-center">
@@ -267,10 +267,10 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
       </Disclosure>
     </li>
     <!-- Menu item -->
-    <li class="group min-h-[36px] mb-1">
+    <li class="group min-h-[2rem] mb-1">
       <Disclosure v-slot="{ open }">
         <DisclosureButton class="w-full">
-          <a class="flex items-center">
+          <a class="relative top-0.5 flex items-center">
             <span
               class="font-text text-sm text-slate-400 group-hover:text-primary-500 transition-colors duration-300"
             >
@@ -355,7 +355,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
       </Disclosure>
     </li>
     <!-- Menu item -->
-    <li class="group min-h-[36px] mb-1">
+    <li class="group min-h-[2rem] mb-1">
       <Disclosure v-slot="{ open }">
         <DisclosureButton class="w-full">
           <a class="flex items-center">
@@ -398,10 +398,10 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
       </Disclosure>
     </li>
     <!-- Menu item -->
-    <li class="group min-h-[36px] mb-1">
+    <li class="group min-h-[2rem] mb-1">
       <Disclosure v-slot="{ open }">
         <DisclosureButton class="w-full">
-          <a class="flex items-center">
+          <a class="relative top-0.5 flex items-center">
             <span
               class="font-text text-sm text-slate-400 group-hover:text-primary-500 transition-colors duration-300"
             >
@@ -478,10 +478,10 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
     </li>
     <!-- Menu divider -->
     <li
-      class="h-px w-full border-t border-gray-200 dark:border-slate-700 my-4"
+      class="h-px w-full border-t border-gray-200 dark:border-slate-700 my-3"
     ></li>
     <!-- Menu item -->
-    <li class="min-h-[36px] mb-1">
+    <li class="flex items-center min-h-[2rem] mb-1">
       <NuxtLink
         to="/"
         class="flex items-center text-slate-400 hover:text-primary-500 transition-colors duration-300"
@@ -491,13 +491,13 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
     </li>
     <!-- Menu divider -->
     <li
-      class="h-px w-full border-t border-gray-200 dark:border-slate-700 mb-4"
+      class="h-px w-full border-t border-gray-200 dark:border-slate-700 my-3"
     ></li>
     <!-- Menu item -->
-    <li class="group min-h-[36px] mb-1">
+    <li class="group min-h-[2rem] mb-1">
       <Disclosure v-slot="{ open }">
         <DisclosureButton class="w-full">
-          <a class="flex items-center">
+          <a class="relative top-0.5 flex items-center">
             <span
               class="font-text text-sm text-slate-400 group-hover:text-primary-500 transition-colors duration-300"
             >
@@ -537,10 +537,10 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
       </Disclosure>
     </li>
     <!-- Menu item -->
-    <li class="group min-h-[36px] mb-1">
+    <li class="group min-h-[2rem] mb-1">
       <Disclosure v-slot="{ open }">
         <DisclosureButton class="w-full">
-          <a class="flex items-center">
+          <a class="relative top-0.5 flex items-center">
             <span
               class="font-text text-sm text-slate-400 group-hover:text-primary-500 transition-colors duration-300"
             >
@@ -607,10 +607,10 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
       </Disclosure>
     </li>
     <!-- Menu item -->
-    <li class="group min-h-[36px] mb-1">
+    <li class="group min-h-[2rem] mb-1">
       <Disclosure v-slot="{ open }">
         <DisclosureButton class="w-full">
-          <a class="flex items-center">
+          <a class="relative top-0.5 flex items-center">
             <span
               class="font-text text-sm text-slate-400 group-hover:text-primary-500 transition-colors duration-300"
             >

@@ -1,0 +1,96 @@
+<script setup lang="ts">
+const props = withDefaults(
+  defineProps<{
+    value?: number
+    size?: number
+    thickness?: number
+  }>(),
+  {
+    value: 50,
+    size: 60,
+    thickness: 4,
+  }
+)
+</script>
+
+<template>
+  <svg
+    class="block"
+    viewBox="0 0 45 45"
+    :width="props.size"
+    :height="props.size"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle
+      class="text-slate-200 dark:text-slate-700 stroke-current"
+      :stroke-width="props.thickness"
+      fill="none"
+      cx="50%"
+      cy="50%"
+      r="15.91549431"
+    />
+    <circle
+      class="stroke-current transition-all duration-500"
+      :stroke-width="props.thickness"
+      :stroke-dasharray="`${props.value},100`"
+      stroke-linecap="round"
+      fill="none"
+      cx="50%"
+      cy="50%"
+      r="15.91549431"
+    />
+  </svg>
+</template>
+
+<style scoped>
+.block {
+  animation: circle-chart-fill 2.4s reverse;
+  transform: rotate(-90deg);
+  transform-origin: center;
+  animation-timing-function: cubic-bezier(0.78, 0.59, 0.19, 0.33);
+}
+
+.block svg circle:nth-child(2) {
+  animation: circle-chart-fill 2.4s reverse;
+  transform: rotate(-90deg);
+  transform-origin: center;
+  animation-timing-function: cubic-bezier(0.78, 0.59, 0.19, 0.33);
+}
+
+@keyframes circle-chart-fill {
+  50% {
+    stroke-dasharray: 0 0;
+  }
+
+  100% {
+    stroke-dasharray: 0 100;
+  }
+}
+
+@keyframes circle-chart-fill-2 {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    stroke-dasharray: 0 100;
+    opacity: 0;
+  }
+}
+
+@keyframes circle-chart-fill-3 {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 1;
+    stroke-dasharray: 0 100;
+  }
+
+  100% {
+    stroke-dasharray: 0 100;
+    opacity: 0;
+  }
+}
+</style>

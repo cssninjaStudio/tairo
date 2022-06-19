@@ -18,7 +18,7 @@ const props = withDefaults(defineProps<DocSectionProps>(), {
     <div class="flex items-center mb-4">
       <BaseHeading
         tag="h2"
-        size="2xl"
+        size="xl"
         weight="medium"
         class="text-slate-800 dark:text-white"
       >

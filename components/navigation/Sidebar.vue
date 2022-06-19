@@ -40,7 +40,7 @@ const emit = defineEmits(['close', 'open', 'search'])
             "
             @click=";(isSidebarMenuActive = 'dashboards'), emit('open')"
           >
-            <i class="i-ph-heartbeat-duotone w-5 h-5"></i>
+            <i class="i-ph-sidebar-duotone w-5 h-5"></i>
           </button>
         </div>
         <!-- Menu item -->
@@ -54,7 +54,7 @@ const emit = defineEmits(['close', 'open', 'search'])
             "
             @click=";(isSidebarMenuActive = 'layouts'), emit('open')"
           >
-            <i class="i-ph-grid-four-duotone w-5 h-5"></i>
+            <i class="i-ph-app-window-duotone w-5 h-5"></i>
           </button>
         </div>
         <!-- Menu item -->
@@ -82,7 +82,7 @@ const emit = defineEmits(['close', 'open', 'search'])
             "
             @click=";(isSidebarMenuActive = 'components'), emit('open')"
           >
-            <i class="i-ph-app-window-duotone w-5 h-5"></i>
+            <i class="i-ph-grid-four-duotone w-5 h-5"></i>
           </button>
         </div>
         <!-- Menu item -->
@@ -136,7 +136,7 @@ const emit = defineEmits(['close', 'open', 'search'])
       :class="props.active ? '' : '-translate-x-[calc(100%_-_80px)]'"
     >
       <!-- Header -->
-      <div class="flex items-center h-16 w-full px-5">
+      <div class="flex items-center h-16 w-full px-6">
         <h2
           class="font-main text-lg font-semibold text-gray-700 dark:text-white capitalize"
         >
@@ -151,7 +151,7 @@ const emit = defineEmits(['close', 'open', 'search'])
       </div>
       <!-- Body -->
       <div
-        class="relative h-[calc(100%_-_64px)] w-full overflow-y-auto slimscroll px-5"
+        class="relative h-[calc(100%_-_64px)] w-full overflow-y-auto slimscroll px-6"
       >
         <!-- Menu list (Dashboards) -->
         <NavigationSidebarMenuDashboards

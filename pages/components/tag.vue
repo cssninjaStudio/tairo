@@ -1,0 +1,148 @@
+<script setup lang="ts">
+import { toc } from '@@/documentation/elements/button/toc'
+import {
+  disabled,
+  group,
+  icons,
+  links,
+  loading,
+  outline,
+  pastel,
+  shapes,
+  solid,
+} from '@@/documentation/elements/button'
+
+definePageMeta({
+  title: 'Tags',
+})
+
+const breadcrumb = [
+  {
+    label: 'Home',
+    hideLabel: true,
+    icon: 'i-lucide-home',
+    hideIcon: false,
+    to: '/',
+  },
+  {
+    label: 'Components',
+    hideLabel: false,
+    icon: '',
+    hideIcon: true,
+    to: '/components',
+  },
+  {
+    label: 'Tag',
+    hideLabel: false,
+    icon: '',
+    hideIcon: true,
+    to: '/tag',
+  },
+]
+</script>
+
+<template>
+  <div>
+    <!-- BreadCrumb -->
+    <BaseBreadcrumb :items="breadcrumb" separator="dot" />
+
+    <!-- Documentation Layout -->
+    <DocLayout>
+      <!-- content -->
+      <template #content>
+        <!-- Tag shapes -->
+        <DocSection id="tag-shapes" title="Tag shapes" tag="1.0.0">
+          <DocComponent label="Default tag shapes">
+            <template #demo>
+              <div class="flex items-end flex-wrap gap-1">
+                <BaseTag shape="straight">Label</BaseTag>
+                <BaseTag shape="rounded">Label</BaseTag>
+                <BaseTag shape="curved">Label</BaseTag>
+                <BaseTag shape="full">Label</BaseTag>
+              </div>
+            </template>
+            <template #code>
+              <DocCode language="html" :code="shapes" />
+            </template>
+          </DocComponent>
+        </DocSection>
+
+        <!-- Tag solid -->
+        <DocSection id="tag-solid" title="Solid colors" tag="1.0.0">
+          <DocComponent label="Tag solid colors">
+            <template #demo>
+              <div class="flex items-end flex-wrap gap-1">
+                <BaseTag shape="rounded" color="default">Label</BaseTag>
+                <BaseTag shape="rounded" color="muted">Label</BaseTag>
+                <BaseTag shape="rounded" color="primary">Label</BaseTag>
+                <BaseTag shape="rounded" color="success">Label</BaseTag>
+                <BaseTag shape="rounded" color="info">Label</BaseTag>
+                <BaseTag shape="rounded" color="warning">Label</BaseTag>
+                <BaseTag shape="rounded" color="danger">Label</BaseTag>
+              </div>
+            </template>
+            <template #code>
+              <DocCode language="html" :code="shapes" />
+            </template>
+          </DocComponent>
+        </DocSection>
+
+        <!-- Tag outline -->
+        <DocSection id="tag-outline" title="Outline colors" tag="1.0.0">
+          <DocComponent label="Tag outline colors">
+            <template #demo>
+              <div class="flex items-end flex-wrap gap-1">
+                <BaseTag shape="rounded" color="primary" flavor="outline">
+                  Label
+                </BaseTag>
+                <BaseTag shape="rounded" color="success" flavor="outline">
+                  Label
+                </BaseTag>
+                <BaseTag shape="rounded" color="info" flavor="outline">
+                  Label
+                </BaseTag>
+                <BaseTag shape="rounded" color="warning" flavor="outline">
+                  Label
+                </BaseTag>
+                <BaseTag shape="rounded" color="danger" flavor="outline">
+                  Label
+                </BaseTag>
+              </div>
+            </template>
+            <template #code>
+              <DocCode language="html" :code="shapes" />
+            </template>
+          </DocComponent>
+        </DocSection>
+
+        <!-- Tag pastel -->
+        <DocSection id="tag-pastel" title="Pastel colors" tag="1.0.0">
+          <DocComponent label="Tag pastel colors">
+            <template #demo>
+              <div class="flex items-end flex-wrap gap-1">
+                <BaseTag shape="rounded" color="primary" flavor="pastel">
+                  Label
+                </BaseTag>
+                <BaseTag shape="rounded" color="success" flavor="pastel">
+                  Label
+                </BaseTag>
+                <BaseTag shape="rounded" color="info" flavor="pastel">
+                  Label
+                </BaseTag>
+                <BaseTag shape="rounded" color="warning" flavor="pastel">
+                  Label
+                </BaseTag>
+                <BaseTag shape="rounded" color="danger" flavor="pastel">
+                  Label
+                </BaseTag>
+              </div>
+            </template>
+            <template #code>
+              <DocCode language="html" :code="shapes" />
+            </template>
+          </DocComponent>
+        </DocSection>
+      </template>
+    </DocLayout>
+  </div>
+</template>

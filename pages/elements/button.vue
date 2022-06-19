@@ -1,4 +1,17 @@
 <script setup lang="ts">
+import { toc } from '@@/documentation/elements/button/toc'
+import {
+  disabled,
+  group,
+  icons,
+  links,
+  loading,
+  outline,
+  pastel,
+  shapes,
+  solid,
+} from '@@/documentation/elements/button'
+
 definePageMeta({
   title: 'Buttons',
 })
@@ -48,6 +61,9 @@ const breadcrumb = [
                 <BaseButton shape="full">Button</BaseButton>
               </div>
             </template>
+            <template #code>
+              <DocCode language="html" :code="shapes" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -70,6 +86,9 @@ const breadcrumb = [
                 </BaseButton>
               </div>
             </template>
+            <template #code>
+              <DocCode language="html" :code="links" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -85,6 +104,9 @@ const breadcrumb = [
                 <BaseButton shape="rounded" color="danger">Button</BaseButton>
                 <BaseButton shape="rounded" color="muted">Button</BaseButton>
               </div>
+            </template>
+            <template #code>
+              <DocCode language="html" :code="solid" />
             </template>
           </DocComponent>
         </DocSection>
@@ -111,6 +133,9 @@ const breadcrumb = [
                 </BaseButton>
               </div>
             </template>
+            <template #code>
+              <DocCode language="html" :code="pastel" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -135,6 +160,9 @@ const breadcrumb = [
                   Button
                 </BaseButton>
               </div>
+            </template>
+            <template #code>
+              <DocCode language="html" :code="outline" />
             </template>
           </DocComponent>
         </DocSection>
@@ -163,6 +191,9 @@ const breadcrumb = [
                   Button
                 </BaseButton>
               </div>
+            </template>
+            <template #code>
+              <DocCode language="html" :code="loading" />
             </template>
           </DocComponent>
         </DocSection>
@@ -198,6 +229,9 @@ const breadcrumb = [
                 </BaseButton>
               </div>
             </template>
+            <template #code>
+              <DocCode language="html" :code="icons" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -226,6 +260,9 @@ const breadcrumb = [
                 </BaseButton>
               </div>
             </template>
+            <template #code>
+              <DocCode language="html" :code="disabled" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -248,8 +285,15 @@ const breadcrumb = [
                 </BaseButton>
               </div>
             </template>
+            <template #code>
+              <DocCode language="html" :code="group" />
+            </template>
           </DocComponent>
         </DocSection>
+      </template>
+      <!-- Toc -->
+      <template #toc>
+        <DocToc :anchors="toc" />
       </template>
     </DocLayout>
   </div>
