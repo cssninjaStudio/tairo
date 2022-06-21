@@ -83,7 +83,7 @@ const filteredPeople = computed(() =>
           <div class="group relative">
             <ComboboxInput
               class="pl-10 pr-4 py-3 h-12 text-sm leading-5 font-text w-full bg-white text-gray-600 border border-gray-300 focus:border-primary-500 focus:shadow-lg focus:shadow-gray-300/50 dark:focus:shadow-gray-800/50 dark:placeholder:text-gray-600 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700 dark:focus:border-gray-600 !outline-none transition duration-300 rounded-lg"
-              :display-value="(person) => person.name"
+              :display-value="(person:any) => person.name"
               placeholder="Search..."
               @change="query = $event.target.value"
             />

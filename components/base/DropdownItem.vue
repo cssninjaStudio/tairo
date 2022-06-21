@@ -14,7 +14,7 @@ const props = defineProps<DropdownItemProps>()
   <MenuItem v-slot="{ active }">
     <NuxtLink
       to="/"
-      class="group flex w-full items-center rounded-md p-2 text-sm transition-colors duration-300"
+      class="group flex w-full items-center rounded-md py-2 px-3 text-sm transition-colors duration-300"
       :class="[
         active
           ? 'bg-slate-100 dark:bg-slate-700 text-primary-500'

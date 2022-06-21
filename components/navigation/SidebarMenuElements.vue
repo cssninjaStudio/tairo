@@ -360,14 +360,6 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                 </li>
                 <li class="flex items-center h-8">
                   <NuxtLink
-                    to="/elements/form/radio-group"
-                    class="flex items-center text-slate-400 hover:text-primary-500 transition-colors duration-300"
-                  >
-                    <span class="font-text text-[.85rem]">Radio group</span>
-                  </NuxtLink>
-                </li>
-                <li class="flex items-center h-8">
-                  <NuxtLink
                     to="/elements/form/slider"
                     class="flex items-center text-slate-400 hover:text-primary-500 transition-colors duration-300"
                   >

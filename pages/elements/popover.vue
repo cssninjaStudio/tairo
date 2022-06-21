@@ -39,7 +39,19 @@ const breadcrumb = [
     <!-- Documentation Layout -->
     <DocLayout>
       <!-- content -->
-      <template #content></template>
+      <template #content>
+        <!-- Popover -->
+        <DocSection id="popover-base" title="Popover box" tag="1.0.0">
+          <DocComponent label="Popover example">
+            <template #demo>
+              <div class="flex items-end max-w-xs">
+                <BasePopover />
+              </div>
+            </template>
+            <template #code></template>
+          </DocComponent>
+        </DocSection>
+      </template>
       <!-- Toc -->
       <template #toc></template>
     </DocLayout>

@@ -1,0 +1,13 @@
+<script setup lang="ts"></script>
+
+<template>
+  <div class="relative">
+    <div class="hidden md:flex md:items-center justify-between">
+      <slot name="header"></slot>
+    </div>
+
+    <div class="flex flex-col gap-y-4">
+      <slot name="body"></slot>
+    </div>
+  </div>
+</template>

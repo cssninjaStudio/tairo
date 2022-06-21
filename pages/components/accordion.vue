@@ -29,6 +29,21 @@ const breadcrumb = [
     to: '/components/accordion',
   },
 ]
+
+const accordion = [
+  {
+    title: 'Accordion Item 1',
+    content: 'Sed ut perspiciatis unde omnis iste ...',
+  },
+  {
+    title: 'Accordion Item 2',
+    content: 'Sed ut perspiciatis unde omnis iste ...',
+  },
+  {
+    title: 'Accordion Item 3',
+    content: 'Sed ut perspiciatis unde omnis iste ...',
+  },
+]
 </script>
 
 <template>
@@ -39,7 +54,31 @@ const breadcrumb = [
     <!-- Documentation Layout -->
     <DocLayout>
       <!-- content -->
-      <template #content></template>
+      <template #content>
+        <!-- Accordion -->
+        <DocSection id="accordion-inclusive" title="Accordion" tag="1.0.0">
+          <DocComponent label="Inclusive accordion example">
+            <template #demo>
+              <div class="flex flex-col gap-4">
+                <BaseAccordion :items="accordion" />
+              </div>
+            </template>
+            <template #code></template>
+          </DocComponent>
+        </DocSection>
+
+        <!-- Accordion -->
+        <DocSection id="accordion-exclusive" title="Accordion" tag="1.0.0">
+          <DocComponent label="Inclusive accordion example">
+            <template #demo>
+              <div class="flex flex-col gap-4">
+                <BaseAccordion :items="accordion" exclusive />
+              </div>
+            </template>
+            <template #code></template>
+          </DocComponent>
+        </DocSection>
+      </template>
       <!-- Toc -->
       <template #toc></template>
     </DocLayout>

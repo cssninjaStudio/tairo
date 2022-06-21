@@ -99,7 +99,7 @@ const props = withDefaults(defineProps<DropdownProps>(), {
               </h4>
             </div>
           </div>
-          <div class="p-4">
+          <div class="p-2">
             <slot></slot>
           </div>
         </MenuItems>

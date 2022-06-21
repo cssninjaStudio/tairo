@@ -39,7 +39,20 @@ const breadcrumb = [
     <!-- Documentation Layout -->
     <DocLayout>
       <!-- content -->
-      <template #content></template>
+      <template #content>
+        <!-- Card -->
+        <DocSection id="card-straight" title="Card" tag="1.0.0">
+          <DocComponent label="Inclusive accordion example">
+            <template #demo>
+              <div class="grid grid-cols-2 gap-4">
+                <BaseCard shape="straight" class="p-6">Iam a card</BaseCard>
+                <BaseCard shape="straight" class="p-6">Iam a card</BaseCard>
+              </div>
+            </template>
+            <template #code></template>
+          </DocComponent>
+        </DocSection>
+      </template>
       <!-- Toc -->
       <template #toc></template>
     </DocLayout>

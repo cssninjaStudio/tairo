@@ -39,7 +39,38 @@ const breadcrumb = [
     <!-- Documentation Layout -->
     <DocLayout>
       <!-- content -->
-      <template #content></template>
+      <template #content>
+        <!-- Accordion -->
+        <DocSection id="accordion-inclusive" title="Accordion" tag="1.0.0">
+          <DocComponent label="Inclusive accordion example">
+            <template #demo>
+              <BasePlaceholderPage
+                title="Looks like you are new!"
+                subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Erat enim Polemonis. Duo Reges."
+              >
+                <template #image>
+                  <img
+                    src="/img/illustrations/placeholders/people/2.svg"
+                    alt="placeholder-image"
+                  />
+                </template>
+                <template #actions>
+                  <div class="flex justify-center gap-2 mt-2">
+                    <BaseButton
+                      color="primary"
+                      shape="curved"
+                      class="h-11 w-40"
+                    >
+                      Take some action
+                    </BaseButton>
+                  </div>
+                </template>
+              </BasePlaceholderPage>
+            </template>
+            <template #code></template>
+          </DocComponent>
+        </DocSection>
+      </template>
       <!-- Toc -->
       <template #toc></template>
     </DocLayout>

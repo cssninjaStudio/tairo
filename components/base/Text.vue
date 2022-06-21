@@ -37,8 +37,8 @@ export interface TextProps {
 }
 
 const props = withDefaults(defineProps<TextProps>(), {
-  size: 'xl',
-  weight: 'semibold',
+  size: 'md',
+  weight: 'normal',
   lead: 'normal',
 })
 </script>

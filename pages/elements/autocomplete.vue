@@ -39,7 +39,19 @@ const breadcrumb = [
     <!-- Documentation Layout -->
     <DocLayout>
       <!-- content -->
-      <template #content></template>
+      <template #content>
+        <!-- Autocomplete -->
+        <DocSection id="autocomplete-base" title="Autocomplete" tag="1.0.0">
+          <DocComponent label="Autocomplete example">
+            <template #demo>
+              <div class="flex items-end max-w-xs">
+                <BaseFormAutocomplete />
+              </div>
+            </template>
+            <template #code></template>
+          </DocComponent>
+        </DocSection>
+      </template>
       <!-- Toc -->
       <template #toc></template>
     </DocLayout>

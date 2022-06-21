@@ -29,6 +29,14 @@ const breadcrumb = [
     to: '/components/pagination',
   },
 ]
+
+const route = useRoute()
+const currentPage = computed(() => {
+  try {
+    return Number.parseInt(route.query.page as string) || 1
+  } catch {}
+  return 1
+})
 </script>
 
 <template>
@@ -39,7 +47,22 @@ const breadcrumb = [
     <!-- Documentation Layout -->
     <DocLayout>
       <!-- content -->
-      <template #content></template>
+      <template #content>
+        <!-- Pagination -->
+        <DocSection id="pagination-base" title="Pagination" tag="1.0.0">
+          <DocComponent label="Pagination component example">
+            <template #demo>
+              <BasePagination
+                :item-per-page="8"
+                :total-items="512"
+                :current-page="currentPage"
+                :max-links-displayed="5"
+              />
+            </template>
+            <template #code></template>
+          </DocComponent>
+        </DocSection>
+      </template>
       <!-- Toc -->
       <template #toc></template>
     </DocLayout>

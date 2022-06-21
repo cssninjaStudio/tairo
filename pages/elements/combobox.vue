@@ -3,7 +3,7 @@
 // import { } from '@@/documentation/elements/combobox'
 
 definePageMeta({
-  title: 'Combo box',
+  title: 'Combobox',
 })
 
 const breadcrumb = [
@@ -22,7 +22,7 @@ const breadcrumb = [
     to: '/elements',
   },
   {
-    label: 'Combo box',
+    label: 'Combobox',
     hideLabel: false,
     icon: '',
     hideIcon: true,
@@ -39,7 +39,19 @@ const breadcrumb = [
     <!-- Documentation Layout -->
     <DocLayout>
       <!-- content -->
-      <template #content></template>
+      <template #content>
+        <!-- Combo box -->
+        <DocSection id="combo-box" title="Combo box" tag="1.0.0">
+          <DocComponent label="Combo box example">
+            <template #demo>
+              <div class="flex items-end max-w-xs">
+                <BaseFormComboBox />
+              </div>
+            </template>
+            <template #code></template>
+          </DocComponent>
+        </DocSection>
+      </template>
       <!-- Toc -->
       <template #toc></template>
     </DocLayout>
