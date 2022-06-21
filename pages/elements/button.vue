@@ -11,6 +11,7 @@ import {
   shapes,
   solid,
 } from '@@/documentation/elements/button'
+import { properties } from '@@/documentation/elements/button/properties'
 
 definePageMeta({
   title: 'Buttons',
@@ -290,6 +291,14 @@ const breadcrumb = [
             </template>
           </DocComponent>
         </DocSection>
+
+        <!-- Button properties -->
+        <DocProps
+          id="button-props"
+          component="Button"
+          :properties="properties.props"
+          :slots="properties.slots"
+        />
       </template>
       <!-- Toc -->
       <template #toc>

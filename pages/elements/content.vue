@@ -1,6 +1,11 @@
 <script setup lang="ts">
-// import { toc } from '@@/documentation/elements/content/toc'
-// import { } from '@@/documentation/elements/content'
+import { toc } from '@@/documentation/elements/content/toc'
+import { heading, paragraph, text } from '@@/documentation/elements/content'
+import {
+  headingProperties,
+  paragraphProperties,
+  textProperties,
+} from '@@/documentation/elements/content/properties'
 
 definePageMeta({
   title: 'Content',
@@ -79,9 +84,19 @@ const breadcrumb = [
                 </BaseHeading>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="heading" />
+            </template>
           </DocComponent>
         </DocSection>
+
+        <!-- Heading properties -->
+        <DocProps
+          id="heading-props"
+          component="Heading"
+          :properties="headingProperties.props"
+          :slots="headingProperties.slots"
+        />
 
         <!-- Content paragraph -->
         <DocSection id="content-paragraph" title="Paragraph" tag="1.0.0">
@@ -114,9 +129,19 @@ const breadcrumb = [
                 </div>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="paragraph" />
+            </template>
           </DocComponent>
         </DocSection>
+
+        <!-- Paragraph properties -->
+        <DocProps
+          id="paragraph-props"
+          component="Paragraph"
+          :properties="paragraphProperties.props"
+          :slots="paragraphProperties.slots"
+        />
 
         <!-- Content text -->
         <DocSection id="content-text" title="Text" tag="1.0.0">
@@ -145,12 +170,24 @@ const breadcrumb = [
                 </div>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="text" />
+            </template>
           </DocComponent>
         </DocSection>
+
+        <!-- Text properties -->
+        <DocProps
+          id="text-props"
+          component="Text"
+          :properties="textProperties.props"
+          :slots="textProperties.slots"
+        />
       </template>
       <!-- Toc -->
-      <template #toc></template>
+      <template #toc>
+        <DocToc :anchors="toc" />
+      </template>
     </DocLayout>
   </div>
 </template>

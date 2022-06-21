@@ -1,16 +1,7 @@
 <script setup lang="ts">
-import { toc } from '@@/documentation/elements/button/toc'
-import {
-  disabled,
-  group,
-  icons,
-  links,
-  loading,
-  outline,
-  pastel,
-  shapes,
-  solid,
-} from '@@/documentation/elements/button'
+import { toc } from '@@/documentation/elements/action/toc'
+import { group, loading, muted, shapes } from '@@/documentation/elements/action'
+import { properties } from '@@/documentation/elements/action/properties'
 
 definePageMeta({
   title: 'Actions',
@@ -79,7 +70,7 @@ const breadcrumb = [
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="shapes" />
+              <DocCode language="html" :code="muted" />
             </template>
           </DocComponent>
         </DocSection>
@@ -96,7 +87,7 @@ const breadcrumb = [
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="shapes" />
+              <DocCode language="html" :code="loading" />
             </template>
           </DocComponent>
         </DocSection>
@@ -124,10 +115,22 @@ const breadcrumb = [
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="shapes" />
+              <DocCode language="html" :code="group" />
             </template>
           </DocComponent>
         </DocSection>
+
+        <!-- Action properties -->
+        <DocProps
+          id="action-props"
+          component="Action"
+          :properties="properties.props"
+          :slots="properties.slots"
+        />
+      </template>
+      <!-- Toc -->
+      <template #toc>
+        <DocToc :anchors="toc" />
       </template>
     </DocLayout>
   </div>

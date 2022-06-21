@@ -1,6 +1,16 @@
 <script setup lang="ts">
-// import { toc } from '@@/documentation/elements/textarea/toc'
-// import { } from '@@/documentation/elements/textarea'
+import { toc } from '@@/documentation/elements/form/textarea/toc'
+import {
+  addon,
+  curved,
+  disabled,
+  focus,
+  invalid,
+  loading,
+  rounded,
+  straight,
+} from '@@/documentation/elements/form/textarea'
+import { properties } from '@@/documentation/elements/form/textarea/properties'
 
 definePageMeta({
   title: 'Textarea',
@@ -66,7 +76,9 @@ const textareaFull = ref('')
                 <DocState :state="textareaStraight" height="80px" />
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="straight" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -87,7 +99,9 @@ const textareaFull = ref('')
                 <DocState :state="textareaRounded" height="80px" />
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="rounded" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -108,12 +122,14 @@ const textareaFull = ref('')
                 <DocState :state="textareaCurved" height="80px" />
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="curved" />
+            </template>
           </DocComponent>
         </DocSection>
 
         <!-- Textarea focus -->
-        <DocSection id="textarea-rounded" title="Textarea focus" tag="1.0.0">
+        <DocSection id="textarea-focus" title="Textarea focus" tag="1.0.0">
           <DocComponent label="Primary focus variation">
             <template #demo>
               <div class="flex items-end gap-6">
@@ -127,7 +143,9 @@ const textareaFull = ref('')
                 </div>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="focus" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -146,7 +164,9 @@ const textareaFull = ref('')
                 </div>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="invalid" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -165,7 +185,9 @@ const textareaFull = ref('')
                 </div>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="loading" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -188,7 +210,9 @@ const textareaFull = ref('')
                 </div>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="disabled" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -232,13 +256,25 @@ const textareaFull = ref('')
                 </div>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="addon" />
+            </template>
           </DocComponent>
         </DocSection>
+
+        <!-- Textarea properties -->
+        <DocProps
+          id="textarea-props"
+          component="Textarea"
+          :properties="properties.props"
+          :slots="properties.slots"
+        />
       </template>
 
       <!-- Toc -->
-      <template #toc></template>
+      <template #toc>
+        <DocToc :anchors="toc" />
+      </template>
     </DocLayout>
   </div>
 </template>

@@ -1,16 +1,13 @@
 <script setup lang="ts">
-import { toc } from '@@/documentation/elements/button/toc'
+import { toc } from '@@/documentation/elements/icon-button/toc'
 import {
-  disabled,
   group,
-  icons,
-  links,
   loading,
-  outline,
-  pastel,
+  muted,
+  primary,
   shapes,
-  solid,
-} from '@@/documentation/elements/button'
+} from '@@/documentation/elements/icon-button'
+import { properties } from '@@/documentation/elements/icon-button/properties'
 
 definePageMeta({
   title: 'Icon buttons',
@@ -95,7 +92,7 @@ const breadcrumb = [
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="shapes" />
+              <DocCode language="html" :code="primary" />
             </template>
           </DocComponent>
         </DocSection>
@@ -120,7 +117,7 @@ const breadcrumb = [
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="shapes" />
+              <DocCode language="html" :code="muted" />
             </template>
           </DocComponent>
         </DocSection>
@@ -145,7 +142,7 @@ const breadcrumb = [
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="shapes" />
+              <DocCode language="html" :code="loading" />
             </template>
           </DocComponent>
         </DocSection>
@@ -176,10 +173,22 @@ const breadcrumb = [
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="shapes" />
+              <DocCode language="html" :code="group" />
             </template>
           </DocComponent>
         </DocSection>
+
+        <!-- properties -->
+        <DocProps
+          id="iconbutton-props"
+          component="Icon button"
+          :properties="properties.props"
+          :slots="properties.slots"
+        />
+      </template>
+      <!-- Toc -->
+      <template #toc>
+        <DocToc :anchors="toc" />
       </template>
     </DocLayout>
   </div>

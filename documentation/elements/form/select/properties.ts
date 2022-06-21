@@ -1,0 +1,81 @@
+export const properties = {
+  props: [
+    {
+      name: 'modelValue',
+      type: 'any',
+      required: 'true',
+      default: 'undefined',
+      values: ['any'],
+    },
+    {
+      name: 'shape',
+      type: 'string',
+      required: 'false',
+      default: 'text',
+      values: ['straight', 'rounded', 'curved', 'full'],
+    },
+    {
+      name: 'label',
+      type: 'string',
+      required: 'true',
+      default: 'undefined',
+      values: ['string'],
+    },
+    {
+      name: 'hideLabel',
+      type: 'boolean',
+      required: 'false',
+      default: 'false',
+      values: ['boolean'],
+    },
+    {
+      name: 'icon',
+      type: 'string',
+      required: 'false',
+      default: 'undefined',
+      values: ['string'],
+    },
+    {
+      name: 'errorText',
+      type: 'string',
+      required: 'false',
+      default: '',
+      values: ['string'],
+    },
+    {
+      name: 'loading',
+      type: 'boolean',
+      required: 'false',
+      default: 'false',
+      values: ['boolean'],
+    },
+    {
+      name: 'disabled',
+      type: 'boolean',
+      required: 'false',
+      default: 'false',
+      values: ['boolean'],
+    },
+    {
+      name: 'readonly',
+      type: 'boolean',
+      required: 'false',
+      default: 'false',
+      values: ['boolean'],
+    },
+    {
+      name: 'invalid',
+      type: 'boolean',
+      required: 'false',
+      default: 'false',
+      values: ['boolean'],
+    },
+  ],
+  slots: [
+    {
+      name: '#icon',
+      properties: ['null'],
+      description: 'Holds the select icon',
+    },
+  ],
+}

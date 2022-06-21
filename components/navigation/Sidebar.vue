@@ -132,7 +132,7 @@ const emit = defineEmits(['close', 'open', 'search'])
 
     <!-- Menu panel -->
     <div
-      class="relative w-60 h-full bg-white dark:bg-slate-800 border-r border-gray-200 dark:border-slate-700 z-10 transition-all duration-300 pointer-events-auto"
+      class="relative w-[220px] h-full bg-white dark:bg-slate-800 border-r border-gray-200 dark:border-slate-700 z-10 transition-all duration-300 pointer-events-auto"
       :class="props.active ? '' : '-translate-x-[calc(100%_-_80px)]'"
     >
       <!-- Header -->

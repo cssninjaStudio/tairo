@@ -15,6 +15,7 @@ export interface SelectProps {
   disabled?: boolean
   readonly?: boolean
   invalid?: boolean
+  errorText?: string
 }
 
 const emits = defineEmits<SelectEmits>()
@@ -23,6 +24,7 @@ const props = withDefaults(defineProps<SelectProps>(), {
   shape: 'rounded',
   icon: undefined,
   placeholder: '',
+  errorText: 'Please select a value',
 })
 
 const value = ref(props.modelValue)
@@ -98,7 +100,7 @@ watch(
         v-if="props.invalid"
         class="inline-block font-text text-[.8rem] text-pink-600"
       >
-        Please select a value
+        {{ props.errorText }}
       </span>
     </div>
   </div>

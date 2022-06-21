@@ -21,6 +21,7 @@ export interface InputProps {
   disabled?: boolean
   readonly?: boolean
   invalid?: boolean
+  errorText?: string
 }
 
 const emits = defineEmits<InputEmits>()
@@ -33,6 +34,7 @@ const props = withDefaults(defineProps<InputProps>(), {
   shape: 'rounded',
   icon: undefined,
   placeholder: '',
+  errorText: 'Please enter a valid value',
 })
 
 const value = ref(props.modelValue)
@@ -115,7 +117,7 @@ watch(
         v-if="props.invalid"
         class="inline-block font-text text-[.8rem] text-pink-600"
       >
-        Please enter a valid value
+        {{ props.errorText }}
       </span>
     </div>
   </div>

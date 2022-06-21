@@ -15,7 +15,7 @@ const props = withDefaults(defineProps<CardProps>(), {
     class="relative w-full bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700"
     :class="[
       props.shape === 'rounded' && 'rounded-md',
-      props.shape === 'curved' && 'rounded-lg',
+      props.shape === 'curved' && 'rounded-xl',
     ]"
   >
     <slot></slot>

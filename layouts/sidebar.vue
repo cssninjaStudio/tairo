@@ -18,7 +18,7 @@ const isCircularMenuOpened = useCircularMenuOpened()
       class="relative px-4 xl:px-16 min-h-screen w-full bg-slate-100 dark:bg-slate-900 transition-all duration-300"
       :class="
         isSidebarOpened
-          ? 'xl:max-w-[calc(100%_-_320px)] xl:ml-[320px]'
+          ? 'xl:max-w-[calc(100%_-_300px)] xl:ml-[300px]'
           : 'xl:max-w-[calc(100%_-_80px)] xl:ml-[80px]'
       "
     >

@@ -44,4 +44,9 @@ export const toc = [
     anchor: 'button-group',
     subItems: [],
   },
+  {
+    label: 'Props',
+    anchor: 'button-props',
+    subItems: [],
+  },
 ]

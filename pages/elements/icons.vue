@@ -1,6 +1,17 @@
 <script setup lang="ts">
-// import { toc } from '@@/documentation/elements/icons/toc'
-// import { } from '@@/documentation/elements/icons'
+import { toc } from '@@/documentation/elements/icons/toc'
+import {
+  carbon,
+  cil,
+  fa,
+  fab,
+  iconoir,
+  ion,
+  logos,
+  lucide,
+  material,
+  phosphor,
+} from '@@/documentation/elements/icons'
 
 definePageMeta({
   title: 'Icons',
@@ -65,7 +76,9 @@ const breadcrumb = [
                 ></i>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="phosphor" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -92,7 +105,9 @@ const breadcrumb = [
                 <i class="i-lucide-sofa w-12 h-12 block text-rose-500"></i>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="lucide" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -121,7 +136,9 @@ const breadcrumb = [
                 ></i>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="carbon" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -148,7 +165,9 @@ const breadcrumb = [
                 <i class="i-ion-gift-outline w-12 h-12 block text-pink-500"></i>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="ion" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -175,7 +194,9 @@ const breadcrumb = [
                 <i class="i-iconoir-arcade w-12 h-12 block text-lime-500"></i>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="iconoir" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -202,7 +223,9 @@ const breadcrumb = [
                 <i class="i-cil-boat-alt w-12 h-12 block text-indigo-500"></i>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="cil" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -231,7 +254,9 @@ const breadcrumb = [
                 ></i>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="fa" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -260,7 +285,9 @@ const breadcrumb = [
                 ></i>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="fab" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -289,7 +316,9 @@ const breadcrumb = [
                 ></i>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="material" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -306,12 +335,16 @@ const breadcrumb = [
                 <i class="i-logos-vue w-12 h-12 block"></i>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="logos" />
+            </template>
           </DocComponent>
         </DocSection>
       </template>
       <!-- Toc -->
-      <template #toc></template>
+      <template #toc>
+        <DocToc :anchors="toc" />
+      </template>
     </DocLayout>
   </div>
 </template>

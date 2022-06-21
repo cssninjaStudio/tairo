@@ -22,10 +22,10 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
     <!-- Menu item -->
     <li class="flex items-center min-h-[2rem] mb-1">
       <NuxtLink
-        to="/elements/colors"
+        to="/elements/overview"
         class="flex items-center text-slate-400 hover:text-primary-500 transition-colors duration-300"
       >
-        <span class="font-text text-sm">Colors</span>
+        <span class="font-text text-sm">Overview</span>
       </NuxtLink>
     </li>
     <!-- Menu item -->

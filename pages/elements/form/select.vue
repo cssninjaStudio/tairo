@@ -1,6 +1,16 @@
 <script setup lang="ts">
-// import { toc } from '@@/documentation/elements/select/toc'
-// import { } from '@@/documentation/elements/select'
+import { toc } from '@@/documentation/elements/form/select/toc'
+import {
+  curved,
+  full,
+  group,
+  icon,
+  invalid,
+  loading,
+  rounded,
+  straight,
+} from '@@/documentation/elements/form/select'
+import { properties } from '@@/documentation/elements/form/select/properties'
 
 definePageMeta({
   title: 'Selects',
@@ -47,7 +57,7 @@ const selectFull = ref('')
       <template #content>
         <!-- Select straight -->
         <DocSection id="select-straight" title="Select straight" tag="1.0.0">
-          <DocComponent label="Default select straight">
+          <DocComponent label="Straight select example">
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
@@ -68,13 +78,15 @@ const selectFull = ref('')
                 <DocState :state="selectStraight" height="80px" />
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="straight" />
+            </template>
           </DocComponent>
         </DocSection>
 
         <!-- Select rounded -->
         <DocSection id="select-rounded" title="Select rounded" tag="1.0.0">
-          <DocComponent label="Default select rounded">
+          <DocComponent label="Rounded select example">
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
@@ -95,13 +107,15 @@ const selectFull = ref('')
                 <DocState :state="selectRounded" height="80px" />
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="rounded" />
+            </template>
           </DocComponent>
         </DocSection>
 
         <!-- Select curved -->
         <DocSection id="select-curved" title="Select curved" tag="1.0.0">
-          <DocComponent label="Default select curved">
+          <DocComponent label="Curved select example">
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
@@ -122,13 +136,15 @@ const selectFull = ref('')
                 <DocState :state="selectCurved" height="80px" />
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="curved" />
+            </template>
           </DocComponent>
         </DocSection>
 
         <!-- Select full -->
         <DocSection id="select-full" title="Select full" tag="1.0.0">
-          <DocComponent label="Default select full">
+          <DocComponent label="Full select example">
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
@@ -149,13 +165,15 @@ const selectFull = ref('')
                 <DocState :state="selectFull" height="80px" />
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="full" />
+            </template>
           </DocComponent>
         </DocSection>
 
         <!-- Select icon -->
         <DocSection id="select-icon" title="Select icon" tag="1.0.0">
-          <DocComponent label="Default select icon">
+          <DocComponent label="Icon select example">
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
@@ -174,13 +192,15 @@ const selectFull = ref('')
                 </div>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="icon" />
+            </template>
           </DocComponent>
         </DocSection>
 
         <!-- Select group -->
         <DocSection id="select-group" title="Option group" tag="1.0.0">
-          <DocComponent label="Default select group">
+          <DocComponent label="Option group example">
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
@@ -199,13 +219,15 @@ const selectFull = ref('')
                 </div>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="group" />
+            </template>
           </DocComponent>
         </DocSection>
 
         <!-- Select loading -->
         <DocSection id="select-loading" title="Select loading" tag="1.0.0">
-          <DocComponent label="Default select loading">
+          <DocComponent label="Loading state example">
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
@@ -220,13 +242,15 @@ const selectFull = ref('')
                 </div>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="loading" />
+            </template>
           </DocComponent>
         </DocSection>
 
         <!-- Select invalid -->
         <DocSection id="select-invalid" title="Select invalid" tag="1.0.0">
-          <DocComponent label="Default select invalid">
+          <DocComponent label="Invalid state example">
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
@@ -242,12 +266,24 @@ const selectFull = ref('')
                 <!-- State box -->
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="invalid" />
+            </template>
           </DocComponent>
         </DocSection>
+
+        <!-- Select properties -->
+        <DocProps
+          id="select-props"
+          component="Select"
+          :properties="properties.props"
+          :slots="properties.slots"
+        />
       </template>
       <!-- Toc -->
-      <template #toc></template>
+      <template #toc>
+        <DocToc :anchors="toc" />
+      </template>
     </DocLayout>
   </div>
 </template>
