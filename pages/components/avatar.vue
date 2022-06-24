@@ -59,7 +59,9 @@ const breadcrumb = [
           <DocComponent label="Circle avatar sizes">
             <template #demo>
               <div class="flex items-end flex-wrap gap-4">
-                <BaseAvatar picture="/img/avatars/1.svg" size="xs" />
+                <BaseAvatar size="xs">
+                  <img src="/img/avatars/1.svg" />
+                </BaseAvatar>
                 <BaseAvatar picture="/img/avatars/5.svg" size="sm" />
                 <BaseAvatar picture="/img/avatars/4.svg" size="md" />
                 <BaseAvatar picture="/img/avatars/3.svg" size="lg" />
@@ -576,10 +578,15 @@ const breadcrumb = [
                 <BaseAvatar
                   initials="CT"
                   size="xs"
-                  badge="/img/icons/flags/united-states-of-america.svg"
                   shape="square"
                   class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300"
-                />
+                >
+                  CT
+
+                  <template #badge>
+                    <img src="/img/icons/flags/united-states-of-america.svg" />
+                  </template>
+                </BaseAvatar>
                 <BaseAvatar
                   initials="CT"
                   size="sm"
@@ -751,11 +758,12 @@ const breadcrumb = [
             <template #demo>
               <div class="flex items-end flex-wrap gap-2">
                 <BaseAvatar
-                  initials="CT"
                   size="md"
                   shape="square"
                   class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300"
-                />
+                >
+                  CT
+                </BaseAvatar>
                 <BaseAvatar
                   initials="CT"
                   size="md"
