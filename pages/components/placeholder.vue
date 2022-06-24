@@ -54,17 +54,12 @@ const breadcrumb = [
                     alt="placeholder-image"
                   />
                 </template>
-                <template #actions>
-                  <div class="flex justify-center gap-2 mt-2">
-                    <BaseButton
-                      color="primary"
-                      shape="curved"
-                      class="h-11 w-40"
-                    >
-                      Take some action
-                    </BaseButton>
-                  </div>
-                </template>
+
+                <div class="flex justify-center gap-2 mt-2">
+                  <BaseButton color="primary" shape="curved" class="h-11 w-40">
+                    Take some action
+                  </BaseButton>
+                </div>
               </BasePlaceholderPage>
             </template>
             <template #code></template>

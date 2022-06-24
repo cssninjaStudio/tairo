@@ -12,7 +12,7 @@ const props = withDefaults(defineProps<PlaceholderPageProps>(), {
 <template>
   <div class="flex justify-center items-center min-h-[400px]">
     <div class="w-full max-w-sm mx-auto text-center">
-      <div class="max-w-xs mx-auto">
+      <div v-if="$slots.image" class="max-w-xs mx-auto">
         <slot name="image"></slot>
       </div>
       <BaseHeading
@@ -26,7 +26,7 @@ const props = withDefaults(defineProps<PlaceholderPageProps>(), {
       <p v-if="props.subtitle" class="font-sub text-slate-400">
         {{ props.subtitle }}
       </p>
-      <slot name="actions"></slot>
+      <slot></slot>
     </div>
   </div>
 </template>
