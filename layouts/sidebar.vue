@@ -8,12 +8,7 @@ const isCircularMenuOpened = useCircularMenuOpened()
 
 <template>
   <div class="bg-slate-100 dark:bg-slate-900">
-    <NavigationSidebar
-      :active="isSidebarOpened"
-      @open="isSidebarOpened = true"
-      @close="isSidebarOpened = false"
-      @search="isSearchPanelOpened = true"
-    />
+    <NavigationSidebar />
     <div
       class="relative px-4 xl:px-16 min-h-screen w-full bg-slate-100 dark:bg-slate-900 transition-all duration-300"
       :class="

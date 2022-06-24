@@ -1,11 +1,56 @@
 <script setup lang="ts">
-const isSidebarMenuActive = useSidebarMenuActive()
+import type { Component } from 'vue'
+import {
+  NavigationSidebarMenuComponents,
+  NavigationSidebarMenuDashboards,
+  NavigationSidebarMenuElements,
+  NavigationSidebarMenuLayouts,
+} from '~~/.nuxt/components'
 
-const props = defineProps<{
-  active: boolean
-}>()
+interface NavigationSidebarItem {
+  name: string
+  icon: Component
+  panel?: Component
+  to?: string | object
+  activePath?: string
+}
 
-const emit = defineEmits(['close', 'open', 'search'])
+const sidebars: NavigationSidebarItem[] = [
+  {
+    name: 'Dashboards',
+    icon: () => h('i', { class: 'i-ph-sidebar-duotone w-5 h-5' }),
+    panel: NavigationSidebarMenuDashboards,
+    activePath: '/dashboards',
+  },
+  {
+    name: 'Layouts',
+    icon: () => h('i', { class: 'i-ph-app-window-duotone w-5 h-5' }),
+    panel: NavigationSidebarMenuLayouts,
+    activePath: '/layouts',
+  },
+  {
+    name: 'Elements',
+    icon: () => h('i', { class: 'i-ph-nut-duotone w-5 h-5' }),
+    panel: NavigationSidebarMenuElements,
+    activePath: '/elements',
+  },
+  {
+    name: 'Components',
+    icon: () => h('i', { class: 'i-ph-grid-four-duotone w-5 h-5' }),
+    panel: NavigationSidebarMenuComponents,
+    activePath: '/components',
+  },
+  {
+    name: 'Components',
+    icon: () => h('i', { class: 'i-ph-chat-circle-duotone w-5 h-5' }),
+    to: { path: '/' },
+  },
+]
+const route = useRoute()
+const sidebar = sidebars.find(
+  ({ activePath }) => activePath && route.path.startsWith(activePath)
+)
+const activeSidebar = ref<NavigationSidebarItem | null>(sidebar || null)
 </script>
 
 <template>
@@ -15,7 +60,7 @@ const emit = defineEmits(['close', 'open', 'search'])
     <!-- Icon sidebar -->
     <div
       class="relative flex flex-col w-[80px] h-full bg-white dark:bg-slate-800 border-r border-gray-200 dark:border-slate-700 z-20 transition-all duration-300 pointer-events-auto"
-      :class="props.active ? '' : '-translate-x-full xl:translate-x-0'"
+      :class="activeSidebar ? '' : '-translate-x-full xl:translate-x-0'"
     >
       <!-- Logo -->
       <div class="flex items-center justify-center w-full h-16">
@@ -29,90 +74,41 @@ const emit = defineEmits(['close', 'open', 'search'])
       </div>
       <!-- Top Menu -->
       <div>
-        <!-- Menu item -->
-        <div class="flex items-center justify-center w-full h-16">
-          <button
-            class="flex items-center justify-center w-12 h-12 rounded-2xl transition-colors duration-300"
-            :class="
-              isSidebarMenuActive === 'dashboards'
-                ? 'bg-primary-100 text-primary-500 dark:bg-primary-500/10'
-                : 'text-gray-400'
-            "
-            @click="
-              () => {
-                isSidebarMenuActive = 'dashboards'
-                emit('open')
-              }
-            "
-          >
-            <i class="i-ph-sidebar-duotone w-5 h-5"></i>
-          </button>
-        </div>
-        <!-- Menu item -->
-        <div class="flex items-center justify-center w-full h-16">
-          <button
-            class="flex items-center justify-center w-12 h-12 rounded-2xl transition-colors duration-300"
-            :class="
-              isSidebarMenuActive === 'layouts'
-                ? 'bg-primary-100 text-primary-500 dark:bg-primary-500/10'
-                : 'text-gray-400'
-            "
-            @click="
-              () => {
-                isSidebarMenuActive = 'layouts'
-                emit('open')
-              }
-            "
-          >
-            <i class="i-ph-app-window-duotone w-5 h-5"></i>
-          </button>
-        </div>
-        <!-- Menu item -->
-        <div class="flex items-center justify-center w-full h-16">
-          <button
-            class="flex items-center justify-center w-12 h-12 rounded-2xl transition-colors duration-300"
-            :class="
-              isSidebarMenuActive === 'elements'
-                ? 'bg-primary-100 text-primary-500 dark:bg-primary-500/10'
-                : 'text-gray-400'
-            "
-            @click="
-              () => {
-                isSidebarMenuActive = 'elements'
-                emit('open')
-              }
-            "
-          >
-            <i class="i-ph-nut-duotone w-5 h-5"></i>
-          </button>
-        </div>
-        <!-- Menu item -->
-        <div class="flex items-center justify-center w-full h-16">
-          <button
-            class="flex items-center justify-center w-12 h-12 rounded-2xl transition-colors duration-300"
-            :class="
-              isSidebarMenuActive === 'components'
-                ? 'bg-primary-100 text-primary-500 dark:bg-primary-500/10'
-                : 'text-gray-400'
-            "
-            @click="
-              () => {
-                isSidebarMenuActive = 'components'
-                emit('open')
-              }
-            "
-          >
-            <i class="i-ph-grid-four-duotone w-5 h-5"></i>
-          </button>
-        </div>
-        <!-- Menu item -->
-        <div class="flex items-center justify-center w-full h-16">
+        <div
+          v-for="sidebar of sidebars"
+          :key="sidebar.name"
+          class="flex items-center justify-center w-full h-16"
+        >
           <NuxtLink
-            to="/"
+            v-if="sidebar.to"
+            :to="sidebar.to"
             class="flex items-center justify-center w-12 h-12 rounded-2xl transition-colors duration-300 text-gray-400"
           >
-            <i class="i-ph-chat-circle-duotone w-5 h-5"></i>
+            <component :is="sidebar.icon" />
           </NuxtLink>
+
+          <button
+            v-else
+            class="flex items-center justify-center w-12 h-12 rounded-2xl transition-colors duration-300"
+            :class="
+              activeSidebar?.name === sidebar.name
+                ? 'bg-primary-100 text-primary-500 dark:bg-primary-500/10'
+                : 'text-gray-400'
+            "
+            @click="
+              () => {
+                if (activeSidebar?.name === sidebar.name) {
+                  activeSidebar = null
+                  // emit('close')
+                } else {
+                  activeSidebar = sidebar
+                  // emit('open')
+                }
+              }
+            "
+          >
+            <component :is="sidebar.icon" />
+          </button>
         </div>
       </div>
       <!-- Bottom Menu -->
@@ -129,7 +125,6 @@ const emit = defineEmits(['close', 'open', 'search'])
         <div class="flex items-center justify-center w-full h-16">
           <button
             class="flex items-center justify-center w-12 h-12 rounded-2xl transition-colors duration-300 text-gray-400"
-            @click="emit('search')"
           >
             <i class="i-ph-magnifying-glass-duotone w-5 h-5"></i>
           </button>
@@ -153,18 +148,18 @@ const emit = defineEmits(['close', 'open', 'search'])
     <!-- Menu panel -->
     <div
       class="relative w-[220px] h-full bg-white dark:bg-slate-800 border-r border-gray-200 dark:border-slate-700 z-10 transition-all duration-300 pointer-events-auto"
-      :class="props.active ? '' : '-translate-x-[calc(100%_-_80px)]'"
+      :class="activeSidebar ? '' : '-translate-x-[calc(100%_-_80px)]'"
     >
       <!-- Header -->
       <div class="flex items-center h-16 w-full px-6">
         <h2
           class="font-main text-lg font-semibold text-gray-700 dark:text-white capitalize"
         >
-          {{ isSidebarMenuActive }}
+          {{ activeSidebar?.name }}
         </h2>
         <button
           class="flex xl:hidden items-center justify-center h-10 w-10 rounded-full ml-auto text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-colors duration-300"
-          @click="emit('close')"
+          @click="activeSidebar = null"
         >
           <i class="i-feather-chevron-left w-6 h-6"></i>
         </button>
@@ -173,25 +168,10 @@ const emit = defineEmits(['close', 'open', 'search'])
       <div
         class="relative h-[calc(100%_-_64px)] w-full overflow-y-auto slimscroll px-6"
       >
-        <!-- Menu list (Dashboards) -->
-        <NavigationSidebarMenuDashboards
-          v-if="isSidebarMenuActive === 'dashboards'"
-        />
-
-        <!-- Menu list (Layouts) -->
-        <NavigationSidebarMenuLayouts
-          v-else-if="isSidebarMenuActive === 'layouts'"
-        />
-
-        <!-- Menu list (Elements) -->
-        <NavigationSidebarMenuElements
-          v-else-if="isSidebarMenuActive === 'elements'"
-        />
-
-        <!-- Menu list (Components) -->
-        <NavigationSidebarMenuComponents
-          v-else-if="isSidebarMenuActive === 'components'"
-        />
+        <component
+          :is="activeSidebar.panel"
+          v-if="activeSidebar?.panel"
+        ></component>
       </div>
     </div>
   </div>
