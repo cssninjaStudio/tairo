@@ -18,7 +18,7 @@
             <tbody
               class="bg-white divide-y divide-gray-200 dark:bg-slate-800 dark:divide-gray-700"
             >
-              <slot name="body"></slot>
+              <slot></slot>
             </tbody>
           </table>
         </div>
