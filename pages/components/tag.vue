@@ -19,24 +19,16 @@ definePageMeta({
 const breadcrumb = [
   {
     label: 'Home',
-    hideLabel: true,
     icon: 'i-lucide-home',
-    hideIcon: false,
     to: '/',
   },
   {
     label: 'Components',
-    hideLabel: false,
-    icon: '',
-    hideIcon: true,
     to: '/components',
   },
   {
     label: 'Tag',
-    hideLabel: false,
-    icon: '',
-    hideIcon: true,
-    to: '/tag',
+    to: '/components/tag',
   },
 ]
 </script>
