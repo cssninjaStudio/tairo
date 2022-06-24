@@ -35,12 +35,11 @@ definePageMeta({
             <template #demo>
               <div class="flex items-end flex-wrap gap-6">
                 <BasePopover size="sm">
-                  <template #trigger>
-                    <span class="flex items-center text-slate-500">
-                      <i class="i-lucide-help-circle w-4 h-4 mr-1"></i>
-                      <span class="font-text text-sm">Help text</span>
-                    </span>
-                  </template>
+                  <span class="flex items-center text-slate-500">
+                    <i class="i-lucide-help-circle w-4 h-4 mr-1"></i>
+                    <span class="font-text text-sm">Help text</span>
+                  </span>
+
                   <template #content>
                     <BasePopoverContentHelp
                       title="Cookies"
@@ -53,12 +52,11 @@ definePageMeta({
                 </BasePopover>
 
                 <BasePopover size="sm">
-                  <template #trigger>
-                    <span class="flex items-center text-slate-500">
-                      <i class="i-lucide-help-circle w-4 h-4 mr-1"></i>
-                      <span class="font-text text-sm">Help text</span>
-                    </span>
-                  </template>
+                  <span class="flex items-center text-slate-500">
+                    <i class="i-lucide-help-circle w-4 h-4 mr-1"></i>
+                    <span class="font-text text-sm">Help text</span>
+                  </span>
+
                   <template #content>
                     <BasePopoverContentHelp
                       title="Dashboard"
@@ -84,12 +82,11 @@ definePageMeta({
             <template #demo>
               <div class="flex items-end justify-end gap-6">
                 <BasePopover size="sm" orientation="end">
-                  <template #trigger>
-                    <span class="flex items-center text-slate-500">
-                      <i class="i-lucide-help-circle w-4 h-4 mr-1"></i>
-                      <span class="font-text text-sm">Help text</span>
-                    </span>
-                  </template>
+                  <span class="flex items-center text-slate-500">
+                    <i class="i-lucide-help-circle w-4 h-4 mr-1"></i>
+                    <span class="font-text text-sm">Help text</span>
+                  </span>
+
                   <template #content>
                     <BasePopoverContentHelp
                       title="New design"
@@ -103,12 +100,11 @@ definePageMeta({
                 </BasePopover>
 
                 <BasePopover size="sm" orientation="end">
-                  <template #trigger>
-                    <span class="flex items-center text-slate-500">
-                      <i class="i-lucide-help-circle w-4 h-4 mr-1"></i>
-                      <span class="font-text text-sm">Help text</span>
-                    </span>
-                  </template>
+                  <span class="flex items-center text-slate-500">
+                    <i class="i-lucide-help-circle w-4 h-4 mr-1"></i>
+                    <span class="font-text text-sm">Help text</span>
+                  </span>
+
                   <template #content>
                     <BasePopoverContentHelp
                       title="Error"
@@ -134,16 +130,15 @@ definePageMeta({
             <template #demo>
               <div class="flex items-end gap-6">
                 <BasePopover orientation="start">
-                  <template #trigger>
-                    <div class="flex items-center">
-                      <BaseAvatar picture="/img/avatars/3.svg" size="sm" />
-                      <span
-                        class="font-main text-sm font-semibold text-slate-800 dark:text-white ml-3"
-                      >
-                        Mike Miller
-                      </span>
-                    </div>
-                  </template>
+                  <div class="flex items-center">
+                    <BaseAvatar picture="/img/avatars/3.svg" size="sm" />
+                    <span
+                      class="font-main text-sm font-semibold text-slate-800 dark:text-white ml-3"
+                    >
+                      Mike Miller
+                    </span>
+                  </div>
+
                   <template #content>
                     <BasePopoverContentDual
                       :stats="[
@@ -183,16 +178,15 @@ definePageMeta({
             <template #demo>
               <div class="flex items-end justify-end gap-6">
                 <BasePopover orientation="end">
-                  <template #trigger>
-                    <div class="flex items-center">
-                      <BaseAvatar picture="/img/avatars/2.svg" size="sm" />
-                      <span
-                        class="font-main text-sm font-semibold text-slate-800 dark:text-white ml-3"
-                      >
-                        Maya Rosselini
-                      </span>
-                    </div>
-                  </template>
+                  <div class="flex items-center">
+                    <BaseAvatar picture="/img/avatars/2.svg" size="sm" />
+                    <span
+                      class="font-main text-sm font-semibold text-slate-800 dark:text-white ml-3"
+                    >
+                      Maya Rosselini
+                    </span>
+                  </div>
+
                   <template #content>
                     <BasePopoverContentDual
                       :stats="[
@@ -232,15 +226,14 @@ definePageMeta({
             <template #demo>
               <div class="flex items-end gap-6">
                 <BasePopover orientation="start">
-                  <template #trigger>
-                    <div class="flex items-center">
-                      <span
-                        class="font-main text-sm font-semibold text-slate-800 dark:text-white border border-slate-300 dark:border-slate-600 rounded-full py-1.5 px-3"
-                      >
-                        Beautiful house
-                      </span>
-                    </div>
-                  </template>
+                  <div class="flex items-center">
+                    <span
+                      class="font-main text-sm font-semibold text-slate-800 dark:text-white border border-slate-300 dark:border-slate-600 rounded-full py-1.5 px-3"
+                    >
+                      Beautiful house
+                    </span>
+                  </div>
+
                   <template #content>
                     <BasePopoverContentMedia
                       :images="[
@@ -272,15 +265,14 @@ definePageMeta({
             <template #demo>
               <div class="flex items-end justify-end gap-6">
                 <BasePopover orientation="end">
-                  <template #trigger>
-                    <div class="flex items-center">
-                      <span
-                        class="font-main text-sm font-semibold text-slate-800 dark:text-white border border-slate-300 dark:border-slate-600 rounded-full py-1.5 px-3"
-                      >
-                        Beautiful house
-                      </span>
-                    </div>
-                  </template>
+                  <div class="flex items-center">
+                    <span
+                      class="font-main text-sm font-semibold text-slate-800 dark:text-white border border-slate-300 dark:border-slate-600 rounded-full py-1.5 px-3"
+                    >
+                      Beautiful house
+                    </span>
+                  </div>
+
                   <template #content>
                     <BasePopoverContentMedia
                       :images="[

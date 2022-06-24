@@ -36,7 +36,6 @@ const isModalBodyOpen = ref(false)
   <BaseModal
     :open="isModalStartOpen"
     size="md"
-    footer
     footer-align="start"
     @close="isModalStartOpen = false"
   >
@@ -51,31 +50,29 @@ const isModalBodyOpen = ref(false)
         <BaseButtonClose @click="isModalStartOpen = false" />
       </div>
     </template>
-    <template #body>
-      <!-- Body -->
-      <div class="p-4 md:p-6">
-        <div class="text-center w-full max-w-xs mx-auto">
-          <div class="flex relative w-24 h-24 mx-auto mb-4">
-            <img
-              src="https://media.cssninja.io/shuriken/avatars/3.svg"
-              class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
-              alt="Avatar image"
-            />
-          </div>
-          <h3
-            class="font-main text-lg font-medium leading-6 text-gray-800 dark:text-white"
-          >
-            New Invite
-          </h3>
-          <p
-            class="font-sub text-sm leading-5 text-gray-500 dark:text-gray-400"
-          >
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod.
-          </p>
+
+    <!-- Body -->
+    <div class="p-4 md:p-6">
+      <div class="text-center w-full max-w-xs mx-auto">
+        <div class="flex relative w-24 h-24 mx-auto mb-4">
+          <img
+            src="https://media.cssninja.io/shuriken/avatars/3.svg"
+            class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
+            alt="Avatar image"
+          />
         </div>
+        <h3
+          class="font-main text-lg font-medium leading-6 text-gray-800 dark:text-white"
+        >
+          New Invite
+        </h3>
+        <p class="font-sub text-sm leading-5 text-gray-500 dark:text-gray-400">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod.
+        </p>
       </div>
-    </template>
+    </div>
+
     <template #footer>
       <!-- Footer -->
       <div class="p-4 md:p-6">
@@ -97,7 +94,6 @@ const isModalBodyOpen = ref(false)
   <BaseModal
     :open="isModalEndOpen"
     size="md"
-    footer
     footer-align="end"
     @close="isModalEndOpen = false"
   >
@@ -112,31 +108,29 @@ const isModalBodyOpen = ref(false)
         <BaseButtonClose @click="isModalEndOpen = false" />
       </div>
     </template>
-    <template #body>
-      <!-- Body -->
-      <div class="p-4 md:p-6">
-        <div class="text-center w-full max-w-xs mx-auto">
-          <div class="flex relative w-24 h-24 mx-auto mb-4">
-            <img
-              src="https://media.cssninja.io/shuriken/avatars/3.svg"
-              class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
-              alt="Avatar image"
-            />
-          </div>
-          <h3
-            class="font-main text-lg font-medium leading-6 text-gray-800 dark:text-white"
-          >
-            New Invite
-          </h3>
-          <p
-            class="font-sub text-sm leading-5 text-gray-500 dark:text-gray-400"
-          >
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod.
-          </p>
+
+    <!-- Body -->
+    <div class="p-4 md:p-6">
+      <div class="text-center w-full max-w-xs mx-auto">
+        <div class="flex relative w-24 h-24 mx-auto mb-4">
+          <img
+            src="https://media.cssninja.io/shuriken/avatars/3.svg"
+            class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
+            alt="Avatar image"
+          />
         </div>
+        <h3
+          class="font-main text-lg font-medium leading-6 text-gray-800 dark:text-white"
+        >
+          New Invite
+        </h3>
+        <p class="font-sub text-sm leading-5 text-gray-500 dark:text-gray-400">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod.
+        </p>
       </div>
-    </template>
+    </div>
+
     <template #footer>
       <!-- Footer -->
       <div class="p-4 md:p-6">
@@ -158,7 +152,6 @@ const isModalBodyOpen = ref(false)
   <BaseModal
     :open="isModalCenterOpen"
     size="md"
-    footer
     footer-align="center"
     @close="isModalCenterOpen = false"
   >
@@ -173,31 +166,29 @@ const isModalBodyOpen = ref(false)
         <BaseButtonClose @click="isModalCenterOpen = false" />
       </div>
     </template>
-    <template #body>
-      <!-- Body -->
-      <div class="p-4 md:p-6">
-        <div class="text-center w-full max-w-xs mx-auto">
-          <div class="flex relative w-24 h-24 mx-auto mb-4">
-            <img
-              src="https://media.cssninja.io/shuriken/avatars/3.svg"
-              class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
-              alt="Avatar image"
-            />
-          </div>
-          <h3
-            class="font-main text-lg font-medium leading-6 text-gray-800 dark:text-white"
-          >
-            New Invite
-          </h3>
-          <p
-            class="font-sub text-sm leading-5 text-gray-500 dark:text-gray-400"
-          >
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod.
-          </p>
+
+    <!-- Body -->
+    <div class="p-4 md:p-6">
+      <div class="text-center w-full max-w-xs mx-auto">
+        <div class="flex relative w-24 h-24 mx-auto mb-4">
+          <img
+            src="https://media.cssninja.io/shuriken/avatars/3.svg"
+            class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
+            alt="Avatar image"
+          />
         </div>
+        <h3
+          class="font-main text-lg font-medium leading-6 text-gray-800 dark:text-white"
+        >
+          New Invite
+        </h3>
+        <p class="font-sub text-sm leading-5 text-gray-500 dark:text-gray-400">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod.
+        </p>
       </div>
-    </template>
+    </div>
+
     <template #footer>
       <!-- Footer -->
       <div class="p-4 md:p-6">
@@ -219,7 +210,6 @@ const isModalBodyOpen = ref(false)
   <BaseModal
     :open="isModalBetweenOpen"
     size="md"
-    footer
     footer-align="between"
     @close="isModalBetweenOpen = false"
   >
@@ -234,31 +224,29 @@ const isModalBodyOpen = ref(false)
         <BaseButtonClose @click="isModalBetweenOpen = false" />
       </div>
     </template>
-    <template #body>
-      <!-- Body -->
-      <div class="p-4 md:p-6">
-        <div class="text-center w-full max-w-xs mx-auto">
-          <div class="flex relative w-24 h-24 mx-auto mb-4">
-            <img
-              src="https://media.cssninja.io/shuriken/avatars/3.svg"
-              class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
-              alt="Avatar image"
-            />
-          </div>
-          <h3
-            class="font-main text-lg font-medium leading-6 text-gray-800 dark:text-white"
-          >
-            New Invite
-          </h3>
-          <p
-            class="font-sub text-sm leading-5 text-gray-500 dark:text-gray-400"
-          >
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod.
-          </p>
+
+    <!-- Body -->
+    <div class="p-4 md:p-6">
+      <div class="text-center w-full max-w-xs mx-auto">
+        <div class="flex relative w-24 h-24 mx-auto mb-4">
+          <img
+            src="https://media.cssninja.io/shuriken/avatars/3.svg"
+            class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
+            alt="Avatar image"
+          />
         </div>
+        <h3
+          class="font-main text-lg font-medium leading-6 text-gray-800 dark:text-white"
+        >
+          New Invite
+        </h3>
+        <p class="font-sub text-sm leading-5 text-gray-500 dark:text-gray-400">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod.
+        </p>
       </div>
-    </template>
+    </div>
+
     <template #footer>
       <!-- Footer -->
       <div class="p-4 md:p-6">
@@ -293,30 +281,29 @@ const isModalBodyOpen = ref(false)
         <BaseButtonClose @click="isModalBodyOpen = false" />
       </div>
     </template>
-    <template #body>
-      <!-- Body -->
-      <div class="p-4 md:p-6">
-        <div class="text-center w-full max-w-xs mx-auto">
-          <div class="flex relative w-24 h-24 mx-auto mb-4">
-            <img
-              src="https://media.cssninja.io/shuriken/avatars/3.svg"
-              class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
-              alt="Avatar image"
-            />
-          </div>
-          <h3
-            class="font-main text-lg font-medium leading-6 text-gray-800 dark:text-white"
-          >
-            New Invite
-          </h3>
-          <p
-            class="font-sub text-sm leading-5 text-gray-500 dark:text-gray-400 mb-6"
-          >
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod.
-          </p>
+
+    <!-- Body -->
+    <div class="p-4 md:p-6">
+      <div class="text-center w-full max-w-xs mx-auto">
+        <div class="flex relative w-24 h-24 mx-auto mb-4">
+          <img
+            src="https://media.cssninja.io/shuriken/avatars/3.svg"
+            class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
+            alt="Avatar image"
+          />
         </div>
+        <h3
+          class="font-main text-lg font-medium leading-6 text-gray-800 dark:text-white"
+        >
+          New Invite
+        </h3>
+        <p
+          class="font-sub text-sm leading-5 text-gray-500 dark:text-gray-400 mb-6"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod.
+        </p>
       </div>
-    </template>
+    </div>
   </BaseModal>
 </template>

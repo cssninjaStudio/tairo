@@ -25,7 +25,7 @@ const props = withDefaults(defineProps<PopoverProps>(), {
         class="group inline-flex font-text focus:outline-none cursor-pointer"
         as="div"
       >
-        <slot name="trigger"></slot>
+        <slot></slot>
       </PopoverButton>
 
       <Transition

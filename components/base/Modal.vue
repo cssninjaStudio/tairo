@@ -14,7 +14,6 @@ export interface ModalProps {
   open: boolean
   size?: ModalSize
   shape?: ModalShape
-  footer?: boolean
   footerAlign?: ModalAlign
 }
 
@@ -71,10 +70,10 @@ const emit = defineEmits(['close'])
               >
                 <slot name="header"></slot>
 
-                <slot name="body"></slot>
+                <slot></slot>
 
                 <div
-                  v-if="props.footer"
+                  v-if="'footer' in $slots"
                   class="flex items-center gap-x-2 w-full"
                   :class="[
                     props.footerAlign === 'center' && 'justify-center',

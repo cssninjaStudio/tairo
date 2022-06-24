@@ -64,11 +64,11 @@ const breadcrumb = [
                   label="Dropdown"
                   orientation="start"
                 >
-                  <BaseDropdownItem
-                    to="/"
-                    title="Profile"
-                    text="View your profile"
-                  />
+                  <BaseDropdownItem>
+                    Profile
+
+                    <template #text>View your profile</template>
+                  </BaseDropdownItem>
                   <BaseDropdownItem
                     to="/"
                     title="Projects"
@@ -303,7 +303,7 @@ const breadcrumb = [
                     title="Profile"
                     text="View your profile"
                   >
-                    <template #media>
+                    <template #end>
                       <i class="i-ph-user-duotone w-5 h-5 block mr-2"></i>
                     </template>
                   </BaseDropdownItem>
@@ -312,12 +312,12 @@ const breadcrumb = [
                     title="Projects"
                     text="View your projects"
                   >
-                    <template #media>
+                    <template #end>
                       <i class="i-ph-briefcase-duotone w-5 h-5 block mr-2"></i>
                     </template>
                   </BaseDropdownItem>
                   <BaseDropdownItem to="/" title="Team" text="Manage your team">
-                    <template #media>
+                    <template #end>
                       <i class="i-ph-users-four-duotone w-5 h-5 block mr-2"></i>
                     </template>
                   </BaseDropdownItem>
@@ -327,7 +327,7 @@ const breadcrumb = [
                     title="Settings"
                     text="Set your preferences"
                   >
-                    <template #media>
+                    <template #end>
                       <i class="i-ph-gear-six-duotone w-5 h-5 block mr-2"></i>
                     </template>
                   </BaseDropdownItem>
@@ -355,7 +355,7 @@ const breadcrumb = [
                     title="Lana Jensen"
                     text="Software Engineer"
                   >
-                    <template #media>
+                    <template #start>
                       <BaseAvatar
                         picture="/img/avatars/4.svg"
                         size="xs"
@@ -368,7 +368,7 @@ const breadcrumb = [
                     title="Shawn Miller"
                     text="Product Manager"
                   >
-                    <template #media>
+                    <template #start>
                       <BaseAvatar
                         picture="/img/avatars/3.svg"
                         size="xs"
@@ -381,7 +381,7 @@ const breadcrumb = [
                     title="John Marynski"
                     text="Sales Manager"
                   >
-                    <template #media>
+                    <template #start>
                       <BaseAvatar
                         picture="/img/avatars/18.svg"
                         size="xs"
@@ -395,7 +395,7 @@ const breadcrumb = [
                     title="Garry Porter"
                     text="CEO - Founder"
                   >
-                    <template #media>
+                    <template #start>
                       <BaseAvatar
                         picture="/img/avatars/6.svg"
                         size="xs"
@@ -428,7 +428,7 @@ const breadcrumb = [
                     title="Lana Jensen"
                     text="Software Engineer"
                   >
-                    <template #media>
+                    <template #start>
                       <BaseAvatar
                         picture="/img/avatars/4.svg"
                         size="xs"
@@ -441,7 +441,7 @@ const breadcrumb = [
                     title="Shawn Miller"
                     text="Product Manager"
                   >
-                    <template #media>
+                    <template #start>
                       <BaseAvatar
                         picture="/img/avatars/3.svg"
                         size="xs"
@@ -454,7 +454,7 @@ const breadcrumb = [
                     title="John Marynski"
                     text="Sales Manager"
                   >
-                    <template #media>
+                    <template #start>
                       <BaseAvatar
                         picture="/img/avatars/18.svg"
                         size="xs"
@@ -468,7 +468,7 @@ const breadcrumb = [
                     title="Garry Porter"
                     text="CEO - Founder"
                   >
-                    <template #media>
+                    <template #start>
                       <BaseAvatar
                         picture="/img/avatars/6.svg"
                         size="xs"

@@ -69,98 +69,96 @@ const props = withDefaults(defineProps<AvatarProps>(), {
       props.shape === 'square' && props.size === '4xl' && 'rounded-3xl',
     ]"
   >
-    <slot name="avatar">
-      <img
-        v-if="props.picture"
-        :src="props.picture"
-        class="object-cover max-w-full dark:border-transparent shadow-sm"
-        :class="[
-          props.shape === 'circle' && 'rounded-full',
-          props.shape === 'square' && props.size === 'xs' && 'rounded-lg',
-          props.shape === 'square' && props.size === 'sm' && 'rounded-xl',
-          props.shape === 'square' && props.size === 'md' && 'rounded-2xl',
-          props.shape === 'square' && props.size === 'lg' && 'rounded-2xl',
-          props.shape === 'square' && props.size === 'xl' && 'rounded-3xl',
-          props.shape === 'square' && props.size === '2xl' && 'rounded-3xl',
-          props.shape === 'square' && props.size === '3xl' && 'rounded-3xl',
-          props.shape === 'square' && props.size === '4xl' && 'rounded-3xl',
-          props.pictureDark ? 'dark:hidden' : '',
-        ]"
-        alt="Avatar image"
-        @error.once="(event) => onceImageErrored(event, '150x150')"
-      />
+    <div
+      class="w-full overflow-hidden text-center"
+      :class="[
+        props.shape === 'circle' && 'rounded-full',
+        props.shape === 'square' && props.size === 'xs' && 'rounded-lg',
+        props.shape === 'square' && props.size === 'sm' && 'rounded-xl',
+        props.shape === 'square' && props.size === 'md' && 'rounded-2xl',
+        props.shape === 'square' && props.size === 'lg' && 'rounded-2xl',
+        props.shape === 'square' && props.size === 'xl' && 'rounded-3xl',
+        props.shape === 'square' && props.size === '2xl' && 'rounded-3xl',
+        props.shape === 'square' && props.size === '3xl' && 'rounded-3xl',
+        props.shape === 'square' && props.size === '4xl' && 'rounded-3xl',
+      ]"
+    >
+      <slot>
+        <img
+          v-if="props.picture"
+          :src="props.picture"
+          class="object-cover max-w-full dark:border-transparent shadow-sm"
+          :class="[props.pictureDark ? 'dark:hidden' : '']"
+          alt="Avatar image"
+          @error.once="(event) => onceImageErrored(event, '150x150')"
+        />
 
-      <img
-        v-if="props.picture && props.pictureDark"
-        :src="props.pictureDark"
-        class="object-cover max-w-full dark:border-transparent shadow-sm hidden dark:block"
-        :class="[props.shape === 'circle' && 'rounded-full']"
-        alt="Avatar image"
-        @error.once="(event) => onceImageErrored(event, '150x150')"
-      />
+        <img
+          v-if="props.picture && props.pictureDark"
+          :src="props.pictureDark"
+          class="object-cover max-w-full dark:border-transparent shadow-sm hidden dark:block"
+          alt="Avatar image"
+          @error.once="(event) => onceImageErrored(event, '150x150')"
+        />
 
-      <span
-        v-if="!props.picture && props.initials"
-        class="font-main uppercase font-medium"
-        :class="[
-          props.size === 'xs' && `text-sm`,
-          props.size === 'sm' && `text-sm`,
-          props.size === 'md' && `text-sm`,
-          props.size === 'lg' && `text-base`,
-          props.size === 'xl' && `text-lg`,
-          props.size === '2xl' && `text-xl`,
-          props.size === '3xl' && `text-2xl`,
-          props.size === '4xl' && `text-3xl`,
-        ]"
-      >
-        {{ props.initials }}
-      </span>
-    </slot>
+        <span
+          v-if="!props.picture && props.initials"
+          class="font-main uppercase font-medium text-center"
+          :class="[
+            props.size === 'xs' && `text-sm`,
+            props.size === 'sm' && `text-sm`,
+            props.size === 'md' && `text-sm`,
+            props.size === 'lg' && `text-base`,
+            props.size === 'xl' && `text-lg`,
+            props.size === '2xl' && `text-xl`,
+            props.size === '3xl' && `text-2xl`,
+            props.size === '4xl' && `text-3xl`,
+          ]"
+        >
+          {{ props.initials }}
+        </span>
+      </slot>
+    </div>
 
-    <slot name="badge">
-      <img
-        v-if="props.badge"
-        :src="props.badge"
-        class="block absolute bg-gray-100 dark:bg-gray-800 rounded-full border-2 border-white dark:border-slate-800"
-        :class="[
-          props.size === 'xs' && `w-4 h-4`,
-          props.size === 'sm' && `w-5 h-5`,
-          props.size === 'md' && `w-5 h-5`,
-          props.size === 'lg' && `w-6 h-6`,
-          props.size === 'xl' && `w-8 h-8`,
-          props.size === '2xl' && `w-10 h-10`,
-          props.size === '3xl' && `w-10 h-10`,
-          props.size === '4xl' && `w-12 h-12`,
-          props.shape === 'circle' && `right-0 bottom-0`,
-          props.shape === 'square' &&
-            props.size === 'xs' &&
-            `-bottom-1 -right-1`,
-          props.shape === 'square' &&
-            props.size === 'sm' &&
-            `-bottom-1 -right-1`,
-          props.shape === 'square' &&
-            props.size === 'md' &&
-            `-bottom-1 -right-1`,
-          props.shape === 'square' &&
-            props.size === 'lg' &&
-            `-bottom-1 -right-1`,
-          props.shape === 'square' &&
-            props.size === 'xl' &&
-            `-bottom-1 -right-1`,
-          props.shape === 'square' &&
-            props.size === '2xl' &&
-            `-bottom-1.5 -right-1.5`,
-          props.shape === 'square' &&
-            props.size === '3xl' &&
-            `-bottom-1.5 -right-1.5`,
-          props.shape === 'square' &&
-            props.size === '4xl' &&
-            `-bottom-2 -right-2`,
-        ]"
-        alt="Avatar badge"
-        @error.once="(event) => onceImageErrored(event, '150x150')"
-      />
-    </slot>
+    <div
+      v-if="'badge' in $slots || props.badge"
+      class="block absolute bg-gray-100 dark:bg-gray-800 rounded-full border-2 border-white dark:border-slate-800 overflow-hidden"
+      :class="[
+        props.size === 'xs' && `w-4 h-4`,
+        props.size === 'sm' && `w-5 h-5`,
+        props.size === 'md' && `w-5 h-5`,
+        props.size === 'lg' && `w-6 h-6`,
+        props.size === 'xl' && `w-8 h-8`,
+        props.size === '2xl' && `w-10 h-10`,
+        props.size === '3xl' && `w-10 h-10`,
+        props.size === '4xl' && `w-12 h-12`,
+        props.shape === 'circle' && `right-0 bottom-0`,
+        props.shape === 'square' && props.size === 'xs' && `-bottom-1 -right-1`,
+        props.shape === 'square' && props.size === 'sm' && `-bottom-1 -right-1`,
+        props.shape === 'square' && props.size === 'md' && `-bottom-1 -right-1`,
+        props.shape === 'square' && props.size === 'lg' && `-bottom-1 -right-1`,
+        props.shape === 'square' && props.size === 'xl' && `-bottom-1 -right-1`,
+        props.shape === 'square' &&
+          props.size === '2xl' &&
+          `-bottom-1.5 -right-1.5`,
+        props.shape === 'square' &&
+          props.size === '3xl' &&
+          `-bottom-1.5 -right-1.5`,
+        props.shape === 'square' &&
+          props.size === '4xl' &&
+          `-bottom-2 -right-2`,
+      ]"
+    >
+      <slot name="badge">
+        <img
+          v-if="props.badge"
+          :src="props.badge"
+          class=""
+          alt="Avatar badge"
+          @error.once="(event) => onceImageErrored(event, '150x150')"
+        />
+      </slot>
+    </div>
 
     <span
       v-if="props.dot"

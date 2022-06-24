@@ -196,7 +196,7 @@ export const iconSlot = `
       title="Profile"
       text="View your profile"
     >
-      <template #media>
+      <template #start>
         <i class="i-ph-user-duotone w-5 h-5 block mr-2"></i>
       </template>
     </BaseDropdownItem>
@@ -205,12 +205,12 @@ export const iconSlot = `
       title="Projects"
       text="View your projects"
     >
-      <template #media>
+      <template #start>
         <i class="i-ph-briefcase-duotone w-5 h-5 block mr-2"></i>
       </template>
     </BaseDropdownItem>
     <BaseDropdownItem to="/" title="Team" text="Manage your team">
-      <template #media>
+      <template #start>
         <i class="i-ph-users-four-duotone w-5 h-5 block mr-2"></i>
       </template>
     </BaseDropdownItem>
@@ -220,7 +220,7 @@ export const iconSlot = `
       title="Settings"
       text="Set your preferences"
     >
-      <template #media>
+      <template #start>
         <i class="i-ph-gear-six-duotone w-5 h-5 block mr-2"></i>
       </template>
     </BaseDropdownItem>
@@ -240,7 +240,7 @@ export const avatarSlot = `
       title="Lana Jensen"
       text="Software Engineer"
     >
-      <template #media>
+      <template #start>
         <BaseAvatar
           picture="/img/avatars/4.svg"
           size="xs"
@@ -253,7 +253,7 @@ export const avatarSlot = `
       title="Shawn Miller"
       text="Product Manager"
     >
-      <template #media>
+      <template #start>
         <BaseAvatar
           picture="/img/avatars/3.svg"
           size="xs"
@@ -266,7 +266,7 @@ export const avatarSlot = `
       title="John Marynski"
       text="Sales Manager"
     >
-      <template #media>
+      <template #start>
         <BaseAvatar
           picture="/img/avatars/18.svg"
           size="xs"
@@ -280,7 +280,7 @@ export const avatarSlot = `
       title="Garry Porter"
       text="CEO - Founder"
     >
-      <template #media>
+      <template #start>
         <BaseAvatar
           picture="/img/avatars/6.svg"
           size="xs"
@@ -305,7 +305,7 @@ export const header = `
       title="Lana Jensen"
       text="Software Engineer"
     >
-      <template #media>
+      <template #start>
         <BaseAvatar
           picture="/img/avatars/4.svg"
           size="xs"
@@ -318,7 +318,7 @@ export const header = `
       title="Shawn Miller"
       text="Product Manager"
     >
-      <template #media>
+      <template #start>
         <BaseAvatar
           picture="/img/avatars/3.svg"
           size="xs"
@@ -331,7 +331,7 @@ export const header = `
       title="John Marynski"
       text="Sales Manager"
     >
-      <template #media>
+      <template #start>
         <BaseAvatar
           picture="/img/avatars/18.svg"
           size="xs"
@@ -345,7 +345,7 @@ export const header = `
       title="Garry Porter"
       text="CEO - Founder"
     >
-      <template #media>
+      <template #start>
         <BaseAvatar
           picture="/img/avatars/6.svg"
           size="xs"

@@ -112,81 +112,80 @@ const team = [
                       Actions
                     </BaseFlexTableHeading>
                   </template>
-                  <template #body>
-                    <BaseFlexTableRow v-for="member in team" :key="member.id">
-                      <BaseFlexTableCell type="shrink" data-content="Selection">
-                        <div class="flex items-center">
-                          <BaseFormCheckbox
-                            :name="`member-checkbox-${member.id}`"
-                            shape="rounded"
-                            class="text-primary-500"
-                          />
+
+                  <BaseFlexTableRow v-for="member in team" :key="member.id">
+                    <BaseFlexTableCell type="shrink" data-content="Selection">
+                      <div class="flex items-center">
+                        <BaseFormCheckbox
+                          :name="`member-checkbox-${member.id}`"
+                          shape="rounded"
+                          class="text-primary-500"
+                        />
+                      </div>
+                    </BaseFlexTableCell>
+                    <BaseFlexTableCell type="grow" data-content="Member">
+                      <div class="flex items-center">
+                        <BaseAvatar :picture="member.picture" size="sm" />
+                        <div class="ml-3 leading-none">
+                          <h4 class="font-main text-sm font-semibold">
+                            {{ member.name }}
+                          </h4>
+                          <p class="font-sub text-xs text-slate-400">
+                            {{ member.role }}
+                          </p>
                         </div>
-                      </BaseFlexTableCell>
-                      <BaseFlexTableCell type="grow" data-content="Member">
-                        <div class="flex items-center">
-                          <BaseAvatar :picture="member.picture" size="sm" />
-                          <div class="ml-3 leading-none">
-                            <h4 class="font-main text-sm font-semibold">
-                              {{ member.name }}
-                            </h4>
-                            <p class="font-sub text-xs text-slate-400">
-                              {{ member.role }}
-                            </p>
-                          </div>
-                        </div>
-                      </BaseFlexTableCell>
-                      <BaseFlexTableCell
-                        type="stable"
-                        data-content="Expertise"
-                        light
+                      </div>
+                    </BaseFlexTableCell>
+                    <BaseFlexTableCell
+                      type="stable"
+                      data-content="Expertise"
+                      light
+                    >
+                      {{ member.expertise }}
+                    </BaseFlexTableCell>
+                    <BaseFlexTableCell type="stable" data-content="Rate">
+                      ${{ member.rate }}/hour
+                    </BaseFlexTableCell>
+                    <BaseFlexTableCell type="stable" data-content="Status">
+                      <BaseTag
+                        v-if="member.status === 'Available'"
+                        color="success"
+                        flavor="pastel"
+                        shape="full"
+                        class="font-medium"
                       >
-                        {{ member.expertise }}
-                      </BaseFlexTableCell>
-                      <BaseFlexTableCell type="stable" data-content="Rate">
-                        ${{ member.rate }}/hour
-                      </BaseFlexTableCell>
-                      <BaseFlexTableCell type="stable" data-content="Status">
-                        <BaseTag
-                          v-if="member.status === 'Available'"
-                          color="success"
-                          flavor="pastel"
-                          shape="full"
-                          class="font-medium"
-                        >
-                          {{ member.status }}
-                        </BaseTag>
-                        <BaseTag
-                          v-else-if="member.status === 'New'"
-                          color="info"
-                          flavor="pastel"
-                          shape="full"
-                          class="font-medium"
-                        >
-                          {{ member.status }}
-                        </BaseTag>
-                        <BaseTag
-                          v-else-if="member.status === 'Hired'"
-                          color="warning"
-                          flavor="pastel"
-                          shape="full"
-                          class="font-medium"
-                        >
-                          {{ member.status }}
-                        </BaseTag>
-                      </BaseFlexTableCell>
-                      <BaseFlexTableCell type="stable" data-content="Actions">
-                        <BaseButton
-                          color="primary"
-                          flavor="outline"
-                          shape="curved"
-                          class="scale-90"
-                        >
-                          View
-                        </BaseButton>
-                      </BaseFlexTableCell>
-                    </BaseFlexTableRow>
-                  </template>
+                        {{ member.status }}
+                      </BaseTag>
+                      <BaseTag
+                        v-else-if="member.status === 'New'"
+                        color="info"
+                        flavor="pastel"
+                        shape="full"
+                        class="font-medium"
+                      >
+                        {{ member.status }}
+                      </BaseTag>
+                      <BaseTag
+                        v-else-if="member.status === 'Hired'"
+                        color="warning"
+                        flavor="pastel"
+                        shape="full"
+                        class="font-medium"
+                      >
+                        {{ member.status }}
+                      </BaseTag>
+                    </BaseFlexTableCell>
+                    <BaseFlexTableCell type="stable" data-content="Actions">
+                      <BaseButton
+                        color="primary"
+                        flavor="outline"
+                        shape="curved"
+                        class="scale-90"
+                      >
+                        View
+                      </BaseButton>
+                    </BaseFlexTableCell>
+                  </BaseFlexTableRow>
                 </BaseFlexTable>
               </div>
             </template>

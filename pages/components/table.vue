@@ -103,63 +103,62 @@ const team = [
                       <span class="sr-only">View</span>
                     </BaseTableHeading>
                   </template>
-                  <template #body>
-                    <BaseTableRow v-for="member in team" :key="member.id">
-                      <BaseTableCell class="p-4">
-                        <div class="flex items-center">
-                          <BaseFormCheckbox
-                            :name="`member-checkbox-${member.id}`"
-                            shape="rounded"
-                            class="text-primary-500"
-                          />
-                        </div>
-                      </BaseTableCell>
-                      <BaseTableCell>
-                        {{ member.name }}
-                      </BaseTableCell>
-                      <BaseTableCell light>
-                        {{ member.expertise }}
-                      </BaseTableCell>
-                      <BaseTableCell>${{ member.rate }}/hour</BaseTableCell>
-                      <BaseTableCell>
-                        <BaseTag
-                          v-if="member.status === 'Available'"
-                          color="success"
-                          flavor="pastel"
-                          shape="full"
-                          class="font-medium"
-                        >
-                          {{ member.status }}
-                        </BaseTag>
-                        <BaseTag
-                          v-else-if="member.status === 'New'"
-                          color="info"
-                          flavor="pastel"
-                          shape="full"
-                          class="font-medium"
-                        >
-                          {{ member.status }}
-                        </BaseTag>
-                        <BaseTag
-                          v-else-if="member.status === 'Hired'"
-                          color="warning"
-                          flavor="pastel"
-                          shape="full"
-                          class="font-medium"
-                        >
-                          {{ member.status }}
-                        </BaseTag>
-                      </BaseTableCell>
-                      <BaseTableCell>
-                        <a
-                          href="#"
-                          class="text-violet-500 dark:text-violet-400 hover:opacity-75 transition-opacity duration-300"
-                        >
-                          View
-                        </a>
-                      </BaseTableCell>
-                    </BaseTableRow>
-                  </template>
+
+                  <BaseTableRow v-for="member in team" :key="member.id">
+                    <BaseTableCell class="p-4">
+                      <div class="flex items-center">
+                        <BaseFormCheckbox
+                          :name="`member-checkbox-${member.id}`"
+                          shape="rounded"
+                          class="text-primary-500"
+                        />
+                      </div>
+                    </BaseTableCell>
+                    <BaseTableCell>
+                      {{ member.name }}
+                    </BaseTableCell>
+                    <BaseTableCell light>
+                      {{ member.expertise }}
+                    </BaseTableCell>
+                    <BaseTableCell>${{ member.rate }}/hour</BaseTableCell>
+                    <BaseTableCell>
+                      <BaseTag
+                        v-if="member.status === 'Available'"
+                        color="success"
+                        flavor="pastel"
+                        shape="full"
+                        class="font-medium"
+                      >
+                        {{ member.status }}
+                      </BaseTag>
+                      <BaseTag
+                        v-else-if="member.status === 'New'"
+                        color="info"
+                        flavor="pastel"
+                        shape="full"
+                        class="font-medium"
+                      >
+                        {{ member.status }}
+                      </BaseTag>
+                      <BaseTag
+                        v-else-if="member.status === 'Hired'"
+                        color="warning"
+                        flavor="pastel"
+                        shape="full"
+                        class="font-medium"
+                      >
+                        {{ member.status }}
+                      </BaseTag>
+                    </BaseTableCell>
+                    <BaseTableCell>
+                      <a
+                        href="#"
+                        class="text-violet-500 dark:text-violet-400 hover:opacity-75 transition-opacity duration-300"
+                      >
+                        View
+                      </a>
+                    </BaseTableCell>
+                  </BaseTableRow>
                 </BaseTable>
               </div>
             </template>
@@ -191,73 +190,72 @@ const team = [
                       <span class="sr-only">View</span>
                     </BaseTableHeading>
                   </template>
-                  <template #body>
-                    <BaseTableRow v-for="member in team" :key="member.id">
-                      <BaseTableCell class="p-4">
-                        <div class="flex items-center">
-                          <BaseFormCheckbox
-                            :name="`member-checkbox-${member.id}`"
-                            shape="rounded"
-                            class="text-primary-500"
-                          />
+
+                  <BaseTableRow v-for="member in team" :key="member.id">
+                    <BaseTableCell class="p-4">
+                      <div class="flex items-center">
+                        <BaseFormCheckbox
+                          :name="`member-checkbox-${member.id}`"
+                          shape="rounded"
+                          class="text-primary-500"
+                        />
+                      </div>
+                    </BaseTableCell>
+                    <BaseTableCell>
+                      <div class="flex items-center">
+                        <BaseAvatar :picture="member.picture" size="sm" />
+                        <div class="ml-3 leading-none">
+                          <h4 class="font-main text-sm font-semibold">
+                            {{ member.name }}
+                          </h4>
+                          <p class="font-sub text-xs text-slate-400">
+                            {{ member.role }}
+                          </p>
                         </div>
-                      </BaseTableCell>
-                      <BaseTableCell>
-                        <div class="flex items-center">
-                          <BaseAvatar :picture="member.picture" size="sm" />
-                          <div class="ml-3 leading-none">
-                            <h4 class="font-main text-sm font-semibold">
-                              {{ member.name }}
-                            </h4>
-                            <p class="font-sub text-xs text-slate-400">
-                              {{ member.role }}
-                            </p>
-                          </div>
-                        </div>
-                      </BaseTableCell>
-                      <BaseTableCell light>
-                        {{ member.expertise }}
-                      </BaseTableCell>
-                      <BaseTableCell>${{ member.rate }}/hour</BaseTableCell>
-                      <BaseTableCell>
-                        <BaseTag
-                          v-if="member.status === 'Available'"
-                          color="success"
-                          flavor="pastel"
-                          shape="full"
-                          class="font-medium"
-                        >
-                          {{ member.status }}
-                        </BaseTag>
-                        <BaseTag
-                          v-else-if="member.status === 'New'"
-                          color="info"
-                          flavor="pastel"
-                          shape="full"
-                          class="font-medium"
-                        >
-                          {{ member.status }}
-                        </BaseTag>
-                        <BaseTag
-                          v-else-if="member.status === 'Hired'"
-                          color="warning"
-                          flavor="pastel"
-                          shape="full"
-                          class="font-medium"
-                        >
-                          {{ member.status }}
-                        </BaseTag>
-                      </BaseTableCell>
-                      <BaseTableCell>
-                        <a
-                          href="#"
-                          class="text-violet-500 dark:text-violet-400 hover:opacity-75 transition-opacity duration-300"
-                        >
-                          View
-                        </a>
-                      </BaseTableCell>
-                    </BaseTableRow>
-                  </template>
+                      </div>
+                    </BaseTableCell>
+                    <BaseTableCell light>
+                      {{ member.expertise }}
+                    </BaseTableCell>
+                    <BaseTableCell>${{ member.rate }}/hour</BaseTableCell>
+                    <BaseTableCell>
+                      <BaseTag
+                        v-if="member.status === 'Available'"
+                        color="success"
+                        flavor="pastel"
+                        shape="full"
+                        class="font-medium"
+                      >
+                        {{ member.status }}
+                      </BaseTag>
+                      <BaseTag
+                        v-else-if="member.status === 'New'"
+                        color="info"
+                        flavor="pastel"
+                        shape="full"
+                        class="font-medium"
+                      >
+                        {{ member.status }}
+                      </BaseTag>
+                      <BaseTag
+                        v-else-if="member.status === 'Hired'"
+                        color="warning"
+                        flavor="pastel"
+                        shape="full"
+                        class="font-medium"
+                      >
+                        {{ member.status }}
+                      </BaseTag>
+                    </BaseTableCell>
+                    <BaseTableCell>
+                      <a
+                        href="#"
+                        class="text-violet-500 dark:text-violet-400 hover:opacity-75 transition-opacity duration-300"
+                      >
+                        View
+                      </a>
+                    </BaseTableCell>
+                  </BaseTableRow>
                 </BaseTable>
               </div>
             </template>
