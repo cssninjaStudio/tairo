@@ -30,7 +30,6 @@ const props = withDefaults(defineProps<ButtonProps>(), {
 <template>
   <button
     v-if="!props.to"
-    type="button"
     :disabled="props.disabled"
     class="relative font-text font-normal inline-flex items-center justify-center outline-none leading-5 no-underline space-x-1 h-10 px-5 py-2 text-sm focus:outline-dashed focus:outline-gray-300 dark:focus:outline-gray-600 focus:outline-offset-2 transition-all duration-300"
     :class="[

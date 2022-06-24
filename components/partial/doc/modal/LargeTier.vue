@@ -18,12 +18,7 @@ const isModal3XlOpen = ref(false)
   </div>
 
   <!-- Modal component -->
-  <BaseModal
-    :open="isModal2XlOpen"
-    size="2xl"
-    footer
-    @close="isModal2XlOpen = false"
-  >
+  <BaseModal :open="isModal2XlOpen" size="2xl" @close="isModal2XlOpen = false">
     <template #header>
       <!-- Header -->
       <div class="w-full flex items-center justify-between p-4 md:p-6">
@@ -35,31 +30,29 @@ const isModal3XlOpen = ref(false)
         <BaseButtonClose @click="isModal2XlOpen = false" />
       </div>
     </template>
-    <template #body>
-      <!-- Body -->
-      <div class="p-4 md:p-6">
-        <div class="text-center w-full max-w-xs mx-auto">
-          <div class="flex relative w-24 h-24 mx-auto mb-4">
-            <img
-              src="https://media.cssninja.io/shuriken/avatars/13.svg"
-              class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
-              alt="Avatar image"
-            />
-          </div>
-          <h3
-            class="font-main text-lg font-medium leading-6 text-gray-800 dark:text-white"
-          >
-            New Invite
-          </h3>
-          <p
-            class="font-sub text-sm leading-5 text-gray-500 dark:text-gray-400"
-          >
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod.
-          </p>
+
+    <!-- Body -->
+    <div class="p-4 md:p-6">
+      <div class="text-center w-full max-w-xs mx-auto">
+        <div class="flex relative w-24 h-24 mx-auto mb-4">
+          <img
+            src="https://media.cssninja.io/shuriken/avatars/13.svg"
+            class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
+            alt="Avatar image"
+          />
         </div>
+        <h3
+          class="font-main text-lg font-medium leading-6 text-gray-800 dark:text-white"
+        >
+          New Invite
+        </h3>
+        <p class="font-sub text-sm leading-5 text-gray-500 dark:text-gray-400">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod.
+        </p>
       </div>
-    </template>
+    </div>
+
     <template #footer>
       <!-- Footer -->
       <div class="p-4 md:p-6">
@@ -78,12 +71,7 @@ const isModal3XlOpen = ref(false)
   </BaseModal>
 
   <!-- Modal component -->
-  <BaseModal
-    :open="isModal3XlOpen"
-    size="3xl"
-    footer
-    @close="isModal3XlOpen = false"
-  >
+  <BaseModal :open="isModal3XlOpen" size="3xl" @close="isModal3XlOpen = false">
     <template #header>
       <!-- Header -->
       <div class="w-full flex items-center justify-between p-4 md:p-6">

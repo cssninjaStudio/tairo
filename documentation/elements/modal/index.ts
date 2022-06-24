@@ -16,12 +16,11 @@ function openModal() {
     <template #header>
     <!-- Modal header content -->
     </template>
-    <template #body>
-      <!-- Modal body content -->
-    </template>
     <template #footer>
     <!-- Modal footer content -->
     </template>
+
+    <!-- Modal body content -->
   </BaseModal>
 </template>
 `
@@ -33,12 +32,11 @@ export const mediumTier = `
     <template #header>
     <!-- Modal header content -->
     </template>
-    <template #body>
-      <!-- Modal body content -->
-    </template>
     <template #footer>
     <!-- Modal footer content -->
     </template>
+    
+    <!-- Modal body content -->
   </BaseModal>
 
   <!-- Modal component -->
@@ -46,12 +44,11 @@ export const mediumTier = `
     <template #header>
     <!-- Modal header content -->
     </template>
-    <template #body>
-      <!-- Modal body content -->
-    </template>
     <template #footer>
     <!-- Modal footer content -->
     </template>
+
+    <!-- Modal body content -->
   </BaseModal>
 </template>
 `
@@ -63,12 +60,11 @@ export const largeTier = `
     <template #header>
     <!-- Modal header content -->
     </template>
-    <template #body>
-      <!-- Modal body content -->
-    </template>
     <template #footer>
     <!-- Modal footer content -->
     </template>
+
+    <!-- Modal body content -->
   </BaseModal>
 
   <!-- Modal component -->
@@ -76,29 +72,27 @@ export const largeTier = `
     <template #header>
     <!-- Modal header content -->
     </template>
-    <template #body>
-      <!-- Modal body content -->
-    </template>
     <template #footer>
     <!-- Modal footer content -->
     </template>
+
+    <!-- Modal body content -->
   </BaseModal>
 </template>
 `
 
 export const footerAlign = `
 <template>
-<!-- Modal component -->
-<BaseModal
-  :open="isModalStartOpen"
-  size="md"
-  footer
-  footer-align="start"
-  @close="isModalStartOpen = false"
->
-<!-- Modal content -->
-</BaseModal>
-
-<!-- footer-align="start | center | end | between" -->
+  <!-- Modal component -->
+  <!--   footer-align="start | center | end | between" -->
+  <BaseModal
+    :open="isModalStartOpen"
+    size="md"
+    footer
+    footer-align="start"
+    @close="isModalStartOpen = false"
+  >
+    <!-- Modal content -->
+  </BaseModal>
 </template>
 `
