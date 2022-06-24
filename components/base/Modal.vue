@@ -73,7 +73,7 @@ const emit = defineEmits(['close'])
                 <slot></slot>
 
                 <div
-                  v-if="$slots.footer"
+                  v-if="'footer' in $slots"
                   class="flex items-center gap-x-2 w-full"
                   :class="[
                     props.footerAlign === 'center' && 'justify-center',

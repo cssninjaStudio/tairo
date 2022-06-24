@@ -2,18 +2,20 @@
 import { MenuItem } from '@headlessui/vue'
 
 export interface DropdownItemProps {
-  to: string
-  title: string
-  text: string
+  to?: string
+  title?: string
+  text?: string
 }
 
+const NuxtLink = defineNuxtLink({})
 const props = defineProps<DropdownItemProps>()
 </script>
 
 <template>
   <MenuItem v-slot="{ active }">
-    <NuxtLink
-      to="/"
+    <component
+      :is="props.to ? NuxtLink : 'a'"
+      :to="props.to"
       class="group flex w-full items-center rounded-md py-2 px-3 text-sm transition-colors duration-300"
       :class="[
         active
@@ -21,17 +23,21 @@ const props = defineProps<DropdownItemProps>()
           : 'text-slate-500',
       ]"
     >
-      <slot name="media"></slot>
-      <slot name="content">
-        <div>
-          <h6
-            class="font-main font-semibold text-xs leading-tight text-slate-800 dark:text-white"
-          >
-            {{ props.title }}
-          </h6>
-          <p class="font-text text-xs text-slate-400">{{ props.text }}</p>
+      <slot name="start"></slot>
+      <div class="grow">
+        <div
+          class="font-main font-semibold text-xs leading-tight text-slate-800 dark:text-white"
+        >
+          <slot>{{ props.title }}</slot>
         </div>
-      </slot>
-    </NuxtLink>
+        <p
+          v-if="'text' in $slots || props.text"
+          class="font-text text-xs text-slate-400"
+        >
+          <slot name="text">{{ props.text }}</slot>
+        </p>
+      </div>
+      <slot name="end"></slot>
+    </component>
   </MenuItem>
 </template>

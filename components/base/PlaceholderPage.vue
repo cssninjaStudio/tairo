@@ -12,7 +12,7 @@ const props = withDefaults(defineProps<PlaceholderPageProps>(), {
 <template>
   <div class="flex justify-center items-center min-h-[400px]">
     <div class="w-full max-w-sm mx-auto text-center">
-      <div v-if="$slots.image" class="max-w-xs mx-auto">
+      <div v-if="'image' in $slots" class="max-w-xs mx-auto">
         <slot name="image"></slot>
       </div>
       <BaseHeading
