@@ -38,7 +38,12 @@ const emit = defineEmits(['close', 'open', 'search'])
                 ? 'bg-primary-100 text-primary-500 dark:bg-primary-500/10'
                 : 'text-gray-400'
             "
-            @click=";(isSidebarMenuActive = 'dashboards'), emit('open')"
+            @click="
+              () => {
+                isSidebarMenuActive = 'dashboards'
+                emit('open')
+              }
+            "
           >
             <i class="i-ph-sidebar-duotone w-5 h-5"></i>
           </button>
@@ -52,7 +57,12 @@ const emit = defineEmits(['close', 'open', 'search'])
                 ? 'bg-primary-100 text-primary-500 dark:bg-primary-500/10'
                 : 'text-gray-400'
             "
-            @click=";(isSidebarMenuActive = 'layouts'), emit('open')"
+            @click="
+              () => {
+                isSidebarMenuActive = 'layouts'
+                emit('open')
+              }
+            "
           >
             <i class="i-ph-app-window-duotone w-5 h-5"></i>
           </button>
@@ -66,7 +76,12 @@ const emit = defineEmits(['close', 'open', 'search'])
                 ? 'bg-primary-100 text-primary-500 dark:bg-primary-500/10'
                 : 'text-gray-400'
             "
-            @click=";(isSidebarMenuActive = 'elements'), emit('open')"
+            @click="
+              () => {
+                isSidebarMenuActive = 'elements'
+                emit('open')
+              }
+            "
           >
             <i class="i-ph-nut-duotone w-5 h-5"></i>
           </button>
@@ -80,7 +95,12 @@ const emit = defineEmits(['close', 'open', 'search'])
                 ? 'bg-primary-100 text-primary-500 dark:bg-primary-500/10'
                 : 'text-gray-400'
             "
-            @click=";(isSidebarMenuActive = 'components'), emit('open')"
+            @click="
+              () => {
+                isSidebarMenuActive = 'components'
+                emit('open')
+              }
+            "
           >
             <i class="i-ph-grid-four-duotone w-5 h-5"></i>
           </button>
