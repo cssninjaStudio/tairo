@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { Component } from 'vue'
+import type { RouteLocationRaw } from 'vue-router'
 import {
   NavigationSidebarMenuComponents,
   NavigationSidebarMenuDashboards,
@@ -11,7 +12,7 @@ interface NavigationSidebarItem {
   name: string
   icon: Component
   panel?: Component
-  to?: string | object
+  to?: RouteLocationRaw
   activePath?: string
 }
 
