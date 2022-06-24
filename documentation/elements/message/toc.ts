@@ -1,32 +1,22 @@
 export const toc = [
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Message types',
+    anchor: 'message-types',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Message icons',
+    anchor: 'message-icons',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
-    subItems: [],
-  },
-  {
-    label: 'Label',
-    anchor: 'link',
-    subItems: [],
-  },
-  {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Message shapes',
+    anchor: 'message-shapes',
     subItems: [],
   },
   {
     label: 'Props',
-    anchor: 'link',
+    anchor: 'message-props',
     subItems: [],
   },
 ]

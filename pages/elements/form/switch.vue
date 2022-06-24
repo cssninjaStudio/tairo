@@ -1,6 +1,15 @@
 <script setup lang="ts">
-// import { toc } from '@@/documentation/elements/switch/toc'
-// import { } from '@@/documentation/elements/switch'
+import { toc } from '@@/documentation/elements/form/switch/toc'
+import {
+  ballSublabel,
+  ballSwitch,
+  thinSublabel,
+  thinSwitch,
+} from '@@/documentation/elements/form/switch'
+import {
+  ballProperties,
+  thinProperties,
+} from '@@/documentation/elements/form/switch/properties'
 
 definePageMeta({
   title: 'Switches',
@@ -79,7 +88,9 @@ const breadcrumb = [
                 </div>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="thinSwitch" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -97,9 +108,19 @@ const breadcrumb = [
                 />
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="thinSublabel" />
+            </template>
           </DocComponent>
         </DocSection>
+
+        <!-- Thin switch properties -->
+        <DocProps
+          id="switch-thin-props"
+          component="Thin Switch"
+          :properties="thinProperties.props"
+          :slots="thinProperties.slots"
+        />
 
         <!-- Switch ball -->
         <DocSection id="switch-ball" title="Ball Switch" tag="1.0.0">
@@ -140,7 +161,9 @@ const breadcrumb = [
                 </div>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="ballSwitch" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -158,12 +181,24 @@ const breadcrumb = [
                 />
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="ballSublabel" />
+            </template>
           </DocComponent>
         </DocSection>
+
+        <!-- Ball switch properties -->
+        <DocProps
+          id="switch-ball-props"
+          component="Ball Switch"
+          :properties="ballProperties.props"
+          :slots="ballProperties.slots"
+        />
       </template>
       <!-- Toc -->
-      <template #toc></template>
+      <template #toc>
+        <DocToc :anchors="toc" />
+      </template>
     </DocLayout>
   </div>
 </template>

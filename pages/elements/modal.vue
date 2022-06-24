@@ -1,6 +1,12 @@
 <script setup lang="ts">
-// import { toc } from '@@/documentation/elements/modal/toc'
-// import { } from '@@/documentation/elements/modal'
+import { toc } from '@@/documentation/elements/modal/toc'
+import {
+  footerAlign,
+  largeTier,
+  mediumTier,
+  smallTier,
+} from '@@/documentation/elements/modal'
+import { properties } from '@@/documentation/elements/modal/properties'
 
 definePageMeta({
   title: 'Modals',
@@ -46,7 +52,9 @@ const breadcrumb = [
             <template #demo>
               <PartialDocModalSmallTier />
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="smallTier" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -56,7 +64,9 @@ const breadcrumb = [
             <template #demo>
               <PartialDocModalMediumTier />
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="mediumTier" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -66,7 +76,9 @@ const breadcrumb = [
             <template #demo>
               <PartialDocModalLargeTier />
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="largeTier" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -76,12 +88,24 @@ const breadcrumb = [
             <template #demo>
               <PartialDocModalFooter />
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="footerAlign" />
+            </template>
           </DocComponent>
         </DocSection>
+
+        <!-- Modal properties -->
+        <DocProps
+          id="modal-props"
+          component="Modal"
+          :properties="properties.props"
+          :slots="properties.slots"
+        />
       </template>
       <!-- Toc -->
-      <template #toc></template>
+      <template #toc>
+        <DocToc :anchors="toc" />
+      </template>
     </DocLayout>
   </div>
 </template>

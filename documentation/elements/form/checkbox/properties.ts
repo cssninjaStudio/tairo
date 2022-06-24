@@ -1,25 +1,61 @@
 export const properties = {
   props: [
     {
-      name: 'string',
+      name: 'modelValue',
+      type: 'any',
+      required: 'true',
+      default: 'undefined',
+      values: ['any'],
+    },
+    {
+      name: 'trueValue',
+      type: 'boolean',
+      required: 'false',
+      default: 'false',
+      values: ['boolean'],
+    },
+    {
+      name: 'falseValue',
+      type: 'boolean',
+      required: 'false',
+      default: 'false',
+      values: ['boolean'],
+    },
+    {
+      name: 'shape',
+      type: 'string',
+      required: 'false',
+      default: 'text',
+      values: ['straight', 'rounded', 'curved', 'full'],
+    },
+    {
+      name: 'label',
       type: 'string',
       required: 'false',
       default: 'rounded',
       values: ['string'],
     },
     {
-      name: 'boolean',
+      name: 'hideLabel',
       type: 'boolean',
       required: 'false',
       default: 'false',
       values: ['boolean'],
     },
-  ],
-  slots: [
     {
-      name: '#default',
-      properties: ['null'],
-      description: 'Component content',
+      name: 'raw',
+      type: 'boolean',
+      required: 'false',
+      default: 'false',
+      values: ['boolean'],
+    },
+    {
+      name: 'name',
+      type: 'string',
+      required: 'false',
+      default: 'undefined',
+      values: ['string'],
     },
   ],
+  slots: [],
 }

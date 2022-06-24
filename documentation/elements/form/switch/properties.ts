@@ -1,25 +1,81 @@
-export const properties = {
+export const thinProperties = {
   props: [
     {
-      name: 'string',
+      name: 'id',
       type: 'string',
-      required: 'false',
-      default: 'rounded',
+      required: 'true',
+      default: '',
       values: ['string'],
     },
     {
-      name: 'boolean',
-      type: 'boolean',
-      required: 'false',
-      default: 'false',
-      values: ['boolean'],
+      name: 'modelValue',
+      type: 'any',
+      required: 'true',
+      default: 'undefined',
+      values: ['any'],
     },
-  ],
-  slots: [
     {
-      name: '#default',
-      properties: ['null'],
-      description: 'Component content',
+      name: 'label',
+      type: 'string',
+      required: 'true',
+      default: 'undefined',
+      values: ['string'],
+    },
+    {
+      name: 'sublabel',
+      type: 'string',
+      required: 'true',
+      default: 'undefined',
+      values: ['string'],
+    },
+    {
+      name: 'colors',
+      type: 'ThinSwitchBlockColor',
+      required: 'false',
+      default: 'text',
+      values: ['primary', 'success', 'info', 'warning', 'danger'],
     },
   ],
+  slots: [],
+}
+
+export const ballProperties = {
+  props: [
+    {
+      name: 'id',
+      type: 'string',
+      required: 'true',
+      default: '',
+      values: ['string'],
+    },
+    {
+      name: 'modelValue',
+      type: 'any',
+      required: 'true',
+      default: 'undefined',
+      values: ['any'],
+    },
+    {
+      name: 'label',
+      type: 'string',
+      required: 'true',
+      default: 'undefined',
+      values: ['string'],
+    },
+    {
+      name: 'sublabel',
+      type: 'string',
+      required: 'true',
+      default: 'undefined',
+      values: ['string'],
+    },
+    {
+      name: 'colors',
+      type: 'BallSwitchColor',
+      required: 'false',
+      default: 'text',
+      values: ['primary', 'success', 'info', 'warning', 'danger'],
+    },
+  ],
+  slots: [],
 }

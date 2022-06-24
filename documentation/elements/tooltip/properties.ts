@@ -1,25 +1,19 @@
 export const properties = {
   props: [
     {
-      name: 'string',
+      name: 'data-tooltip',
       type: 'string',
-      required: 'false',
-      default: 'rounded',
+      required: 'true',
+      default: 'undefined',
       values: ['string'],
     },
     {
-      name: 'boolean',
-      type: 'boolean',
+      name: 'flow',
+      type: 'string',
       required: 'false',
-      default: 'false',
-      values: ['boolean'],
+      default: 'top',
+      values: ['top', 'left', 'right', 'down'],
     },
   ],
-  slots: [
-    {
-      name: '#default',
-      properties: ['null'],
-      description: 'Component content',
-    },
-  ],
+  slots: [],
 }

@@ -1,59 +1,18 @@
-export const example = `
+export const positions = `
 <template>
-  
+  <BaseButton tooltip="Top tooltip" flow="top">Tooltip</BaseButton>
+  <BaseButton tooltip="Left tooltip" flow="left">Tooltip</BaseButton>
+  <BaseButton tooltip="Right tooltip" flow="right">Tooltip</BaseButton>
+  <BaseButton tooltip="Bottom tooltip" flow="down">Tooltip</BaseButton>
 </template>
 `
 
-export const example2 = `
+export const avatar = `
 <template>
-  
-</template>
-`
-
-export const example3 = `
-<template>
-  
-</template>
-`
-
-export const example4 = `
-<template>
-  
-</template>
-`
-
-export const example5 = `
-<template>
-  
-</template>
-`
-
-export const example6 = `
-<template>
-  
-</template>
-`
-
-export const example7 = `
-<template>
-  
-</template>
-`
-
-export const example8 = `
-<template>
-  
-</template>
-`
-
-export const example9 = `
-<template>
-  
-</template>
-`
-
-export const example10 = `
-<template>
-  
+  <BaseAvatar
+    picture="/img/avatars/3.svg"
+    size="lg"
+    tooltip="Clarke Miller"
+  />
 </template>
 `

@@ -1,6 +1,7 @@
 <script setup lang="ts">
-// import { toc } from '@@/documentation/elements/tooltip/toc'
-// import { } from '@@/documentation/elements/tooltip'
+import { toc } from '@@/documentation/elements/tooltip/toc'
+import { avatar, positions } from '@@/documentation/elements/tooltip'
+import { properties } from '@@/documentation/elements/tooltip/properties'
 
 definePageMeta({
   title: 'Tooltips',
@@ -41,8 +42,8 @@ const breadcrumb = [
       <!-- content -->
       <template #content>
         <!-- Tooltip -->
-        <DocSection id="tooltip-base" title="Tooltip base" tag="1.0.0">
-          <DocComponent label="Default tooltip shapes">
+        <DocSection id="tooltip-flow" title="Tooltip flow" tag="1.0.0">
+          <DocComponent label="Default tooltip positions">
             <template #demo>
               <div class="flex items-end flex-wrap gap-2">
                 <BaseIconButton shape="curved" tooltip="Time for a nap!">
@@ -77,7 +78,9 @@ const breadcrumb = [
                 </BaseAction>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="positions" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -108,12 +111,24 @@ const breadcrumb = [
                 />
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="avatar" />
+            </template>
           </DocComponent>
         </DocSection>
+
+        <!-- Tooltip properties -->
+        <DocProps
+          id="tooltip-props"
+          component="Tooltip"
+          :properties="properties.props"
+          :slots="properties.slots"
+        />
       </template>
       <!-- Toc -->
-      <template #toc></template>
+      <template #toc>
+        <DocToc :anchors="toc" />
+      </template>
     </DocLayout>
   </div>
 </template>

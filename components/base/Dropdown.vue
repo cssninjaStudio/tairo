@@ -9,8 +9,6 @@ export interface DropdownProps {
   flavor?: DropdownFlavors
   shape?: DropdownShapes
   orientation?: DropdownOrientation
-  loading?: boolean
-  disabled?: boolean
   label?: string
   headerLabel?: string
 }

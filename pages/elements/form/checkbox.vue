@@ -1,6 +1,13 @@
 <script setup lang="ts">
-// import { toc } from '@@/documentation/elements/checkbox/toc'
-// import { } from '@@/documentation/elements/checkbox'
+import { toc } from '@@/documentation/elements/form/checkbox/toc'
+import {
+  circle,
+  colors,
+  curved,
+  rounded,
+  straight,
+} from '@@/documentation/elements/form/checkbox'
+import { properties } from '@@/documentation/elements/form/checkbox/properties'
 
 definePageMeta({
   title: 'Checkbox',
@@ -68,7 +75,9 @@ const demoStraight = ref(true)
                 <DocState :state="demoOne" height="80px" />
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="straight" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -90,7 +99,9 @@ const demoStraight = ref(true)
                 <DocState :state="demoTwo" height="80px" />
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="rounded" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -112,7 +123,9 @@ const demoStraight = ref(true)
                 <DocState :state="demoThree" height="80px" />
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="curved" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -134,13 +147,15 @@ const demoStraight = ref(true)
                 <DocState :state="demoFour" height="80px" />
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="circle" />
+            </template>
           </DocComponent>
         </DocSection>
 
         <!-- Checkbox straight -->
         <DocSection
-          id="checkbox-straight-colors"
+          id="Checkbox-straight-colors"
           title="Straight colors"
           tag="1.0.0"
         >
@@ -212,12 +227,24 @@ const demoStraight = ref(true)
                 />
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="colors" />
+            </template>
           </DocComponent>
         </DocSection>
+
+        <!-- Checkbox properties -->
+        <DocProps
+          id="checkbox-props"
+          component="Checkbox"
+          :properties="properties.props"
+          :slots="properties.slots"
+        />
       </template>
       <!-- Toc -->
-      <template #toc></template>
+      <template #toc>
+        <DocToc :anchors="toc" />
+      </template>
     </DocLayout>
   </div>
 </template>

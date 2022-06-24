@@ -1,6 +1,6 @@
 <script setup lang="ts">
-// import { toc } from '@@/documentation/elements/placeload/toc'
-// import { } from '@@/documentation/elements/placeload'
+import { toc } from '@@/documentation/elements/placeload/toc'
+import { composition, shape, text } from '@@/documentation/elements/placeload'
 
 definePageMeta({
   title: 'Placeloads',
@@ -49,7 +49,9 @@ const breadcrumb = [
                 <BasePlaceload class="h-4 w-[85%] rounded" />
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="text" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -63,7 +65,9 @@ const breadcrumb = [
                 <BasePlaceload class="h-16 w-16 rounded-full" />
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="shape" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -83,12 +87,16 @@ const breadcrumb = [
                 </BaseCard>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="composition" />
+            </template>
           </DocComponent>
         </DocSection>
       </template>
       <!-- Toc -->
-      <template #toc></template>
+      <template #toc>
+        <DocToc :anchors="toc" />
+      </template>
     </DocLayout>
   </div>
 </template>

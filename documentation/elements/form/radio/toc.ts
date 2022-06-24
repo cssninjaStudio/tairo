@@ -1,32 +1,17 @@
 export const toc = [
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Radio buttons',
+    anchor: 'radio-default',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
-    subItems: [],
-  },
-  {
-    label: 'Label',
-    anchor: 'link',
-    subItems: [],
-  },
-  {
-    label: 'Label',
-    anchor: 'link',
-    subItems: [],
-  },
-  {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Radio colors',
+    anchor: 'radio-colors',
     subItems: [],
   },
   {
     label: 'Props',
-    anchor: 'link',
+    anchor: 'radio-props',
     subItems: [],
   },
 ]

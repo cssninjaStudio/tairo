@@ -1,59 +1,33 @@
-export const example = `
-<template>
-  
-</template>
-`
+export const base = `
+<script setup lang="ts">
+const options = ref([
+  'Option 1',
+  'Option 2',
+  'Option 3',
+  'Option 4',
+])
+</script>
 
-export const example2 = `
 <template>
-  
-</template>
-`
-
-export const example3 = `
-<template>
-  
-</template>
-`
-
-export const example4 = `
-<template>
-  
-</template>
-`
-
-export const example5 = `
-<template>
-  
-</template>
-`
-
-export const example6 = `
-<template>
-  
-</template>
-`
-
-export const example7 = `
-<template>
-  
-</template>
-`
-
-export const example8 = `
-<template>
-  
-</template>
-`
-
-export const example9 = `
-<template>
-  
-</template>
-`
-
-export const example10 = `
-<template>
-  
+  <BaseFormAnimatedCheckbox
+    v-model="options"
+    value="Option 1"
+    class="text-primary-500"
+  />
+  <BaseFormAnimatedCheckbox
+    v-model="options"
+    value="Option 2"
+    class="text-lime-500"
+  />
+  <BaseFormAnimatedCheckbox
+    v-model="options"
+    value="Option 3"
+    class="text-green-500"
+  />
+  <BaseFormAnimatedCheckbox
+    v-model="options"
+    value="Option 4"
+    class="text-emerald-500"
+  />
 </template>
 `

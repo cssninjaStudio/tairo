@@ -1,32 +1,32 @@
 export const toc = [
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Progress bar',
+    anchor: 'progress-bar',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Progress circle',
+    anchor: 'progress-circle',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Progress sizes',
+    anchor: 'progress-sizes',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Indeterminate state',
+    anchor: 'progress-indeterminate',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Bar props',
+    anchor: 'progress-bar-props',
     subItems: [],
   },
   {
-    label: 'Props',
-    anchor: 'link',
+    label: 'Circle props',
+    anchor: 'progress-circle-props',
     subItems: [],
   },
 ]

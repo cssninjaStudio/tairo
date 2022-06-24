@@ -1,32 +1,76 @@
 export const toc = [
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Help left',
+    anchor: 'popover-help-left',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Help right',
+    anchor: 'popover-help-right',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Dual left',
+    anchor: 'popover-dual-left',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Dual right',
+    anchor: 'popover-dual-right',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Media left',
+    anchor: 'popover-media-left',
+    subItems: [],
+  },
+  {
+    label: 'Media right',
+    anchor: 'popover-media-right',
     subItems: [],
   },
   {
     label: 'Props',
-    anchor: 'link',
+    anchor: 'popover-props',
     subItems: [],
+  },
+  {
+    label: 'Help Props',
+    anchor: 'popover-content-help-props',
+    subItems: [],
+  },
+  {
+    label: 'Dual Props',
+    anchor: 'popover-content-dual-props',
+    subItems: [],
+  },
+  {
+    label: 'Media Props',
+    anchor: 'popover-content-media-props',
+    subItems: [],
+  },
+]
+
+export const breadcrumb = [
+  {
+    label: 'Home',
+    hideLabel: true,
+    icon: 'i-lucide-home',
+    hideIcon: false,
+    to: '/',
+  },
+  {
+    label: 'Elements',
+    hideLabel: false,
+    icon: '',
+    hideIcon: true,
+    to: '/elements',
+  },
+  {
+    label: 'Popover',
+    hideLabel: false,
+    icon: '',
+    hideIcon: true,
+    to: '/elements/popover',
   },
 ]

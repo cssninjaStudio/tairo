@@ -61,7 +61,7 @@ const textareaFull = ref('')
           title="Textarea straight"
           tag="1.0.0"
         >
-          <DocComponent label="Default textarea straight">
+          <DocComponent label="Straight textarea example">
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
@@ -84,7 +84,7 @@ const textareaFull = ref('')
 
         <!-- Textarea rounded -->
         <DocSection id="textarea-rounded" title="Textarea rounded" tag="1.0.0">
-          <DocComponent label="Default textarea rounded">
+          <DocComponent label="Rounded textarea example">
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
@@ -107,7 +107,7 @@ const textareaFull = ref('')
 
         <!-- Textarea curved -->
         <DocSection id="textarea-curved" title="Textarea curved" tag="1.0.0">
-          <DocComponent label="Default textarea curved">
+          <DocComponent label="Curved textarea example">
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
@@ -172,7 +172,7 @@ const textareaFull = ref('')
 
         <!-- Textarea loading -->
         <DocSection id="textarea-loading" title="Textarea loading" tag="1.0.0">
-          <DocComponent label="Primary loading variation">
+          <DocComponent label="Loading state example">
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
@@ -197,7 +197,7 @@ const textareaFull = ref('')
           title="Textarea disabled"
           tag="1.0.0"
         >
-          <DocComponent label="Primary disabled variation">
+          <DocComponent label="Disabled state example">
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
@@ -218,7 +218,7 @@ const textareaFull = ref('')
 
         <!-- Textarea addon -->
         <DocSection id="textarea-addon" title="Textarea addon" tag="1.0.0">
-          <DocComponent label="Default textarea addon">
+          <DocComponent label="Textarea with custom addon">
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">

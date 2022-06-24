@@ -1,32 +1,17 @@
 export const toc = [
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Tooltip positions',
+    anchor: 'tooltip-flow',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
-    subItems: [],
-  },
-  {
-    label: 'Label',
-    anchor: 'link',
-    subItems: [],
-  },
-  {
-    label: 'Label',
-    anchor: 'link',
-    subItems: [],
-  },
-  {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Avatar tooltips',
+    anchor: 'tooltip-avatars',
     subItems: [],
   },
   {
     label: 'Props',
-    anchor: 'link',
+    anchor: 'tooltip-props',
     subItems: [],
   },
 ]

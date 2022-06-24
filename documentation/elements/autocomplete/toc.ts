@@ -1,32 +1,62 @@
 export const toc = [
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Straight shape',
+    anchor: 'autocomplete-straight',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Rounded shape',
+    anchor: 'autocomplete-rounded',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Curved shape',
+    anchor: 'autocomplete-curved',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Full shape',
+    anchor: 'autocomplete-full',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Field icon',
+    anchor: 'autocomplete-icon',
+    subItems: [],
+  },
+  {
+    label: 'Clear button',
+    anchor: 'autocomplete-clear',
+    subItems: [],
+  },
+  {
+    label: 'Disabled state',
+    anchor: 'autocomplete-disabled',
+    subItems: [],
+  },
+  {
+    label: 'Loading state',
+    anchor: 'autocomplete-loading',
+    subItems: [],
+  },
+  {
+    label: 'Icon results',
+    anchor: 'autocomplete-icons',
+    subItems: [],
+  },
+  {
+    label: 'Media results',
+    anchor: 'autocomplete-media',
+    subItems: [],
+  },
+  {
+    label: 'Multiple selection',
+    anchor: 'autocomplete-multiple',
     subItems: [],
   },
   {
     label: 'Props',
-    anchor: 'link',
+    anchor: 'autocomplete-props',
     subItems: [],
   },
 ]

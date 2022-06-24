@@ -1,6 +1,7 @@
 <script setup lang="ts">
-// import { toc } from '@@/documentation/elements/message/toc'
-// import { } from '@@/documentation/elements/message'
+import { toc } from '@@/documentation/elements/message/toc'
+import { icons, shapes, types } from '@@/documentation/elements/message'
+import { properties } from '@@/documentation/elements/message/properties'
 
 definePageMeta({
   title: 'Messages',
@@ -51,7 +52,9 @@ const breadcrumb = [
                 <BaseMessage type="danger" message="A destructive message." />
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="types" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -78,7 +81,9 @@ const breadcrumb = [
                 />
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="icons" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -113,12 +118,24 @@ const breadcrumb = [
                 />
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="shapes" />
+            </template>
           </DocComponent>
         </DocSection>
+
+        <!-- Message properties -->
+        <DocProps
+          id="message-props"
+          component="Message"
+          :properties="properties.props"
+          :slots="properties.slots"
+        />
       </template>
       <!-- Toc -->
-      <template #toc></template>
+      <template #toc>
+        <DocToc :anchors="toc" />
+      </template>
     </DocLayout>
   </div>
 </template>

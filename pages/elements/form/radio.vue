@@ -1,6 +1,7 @@
 <script setup lang="ts">
-// import { toc } from '@@/documentation/elements/radio/toc'
-// import { } from '@@/documentation/elements/radio'
+import { toc } from '@@/documentation/elements/form/radio/toc'
+import { base, colors } from '@@/documentation/elements/form/radio'
+import { properties } from '@@/documentation/elements/form/radio/properties'
 
 definePageMeta({
   title: 'Radios',
@@ -81,13 +82,15 @@ const demoColors = ref('primary')
                 <DocState :state="radioSelected" height="80px" />
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="base" />
+            </template>
           </DocComponent>
         </DocSection>
 
         <!-- Radio colors -->
         <DocSection id="radio-colors" title="Radio colors" tag="1.0.0">
-          <DocComponent label="Radio colors example">
+          <DocComponent label="Radio colors examples">
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm flex items-end flex-wrap gap-6">
@@ -177,12 +180,24 @@ const demoColors = ref('primary')
                 <DocState :state="demoColors" height="80px" />
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="colors" />
+            </template>
           </DocComponent>
         </DocSection>
+
+        <!-- Radio properties -->
+        <DocProps
+          id="radio-props"
+          component="Radio"
+          :properties="properties.props"
+          :slots="properties.slots"
+        />
       </template>
       <!-- Toc -->
-      <template #toc></template>
+      <template #toc>
+        <DocToc :anchors="toc" />
+      </template>
     </DocLayout>
   </div>
 </template>

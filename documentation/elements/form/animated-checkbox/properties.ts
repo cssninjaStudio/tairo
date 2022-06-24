@@ -1,25 +1,19 @@
 export const properties = {
   props: [
     {
-      name: 'string',
-      type: 'string',
+      name: 'modelValue',
+      type: 'string | number',
       required: 'false',
-      default: 'rounded',
-      values: ['string'],
+      default: '() => [ ]',
+      values: ['string | number'],
     },
     {
-      name: 'boolean',
-      type: 'boolean',
+      name: 'value',
+      type: 'string | number',
       required: 'false',
-      default: 'false',
-      values: ['boolean'],
+      default: 'undefined',
+      values: ['string | number'],
     },
   ],
-  slots: [
-    {
-      name: '#default',
-      properties: ['null'],
-      description: 'Component content',
-    },
-  ],
+  slots: [],
 }

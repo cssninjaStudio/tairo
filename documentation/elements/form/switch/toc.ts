@@ -1,32 +1,32 @@
 export const toc = [
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Thin switch',
+    anchor: 'switch-thin',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'With sublabel',
+    anchor: 'switch-sublabel',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Thin switch props',
+    anchor: 'switch-thin-props',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Ball switch',
+    anchor: 'switch-ball',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'With sublabel',
+    anchor: 'switch-ball-sublabel',
     subItems: [],
   },
   {
-    label: 'Props',
-    anchor: 'link',
+    label: 'Ball switch props',
+    anchor: 'switch-ball-props',
     subItems: [],
   },
 ]

@@ -1,59 +1,94 @@
-export const example = `
+export const straight = `
+<script setup lang="ts">
+const inputRounded = ref('')
+</script>
+
 <template>
-  
+  <BaseFormCheckbox
+    v-model="demoOne"
+    name="demo-1"
+    label="Straight checkbox"
+    shape="straight"
+    class="text-gray-500"
+  />
 </template>
 `
 
-export const example2 = `
+export const rounded = `
+<script setup lang="ts">
+const inputRounded = ref('')
+</script>
+
 <template>
-  
+  <BaseFormCheckbox
+    v-model="demoTwo"
+    name="demo-2"
+    label="Rounded checkbox"
+    shape="rounded"
+    class="text-gray-500"
+  /> 
 </template>
 `
 
-export const example3 = `
+export const curved = `
+<script setup lang="ts">
+const inputRounded = ref('')
+</script>
+
 <template>
-  
+  <BaseFormCheckbox
+    v-model="demoThree"
+    name="demo-3"
+    label="Curved checkbox"
+    shape="curved"
+    class="text-gray-500"
+  />
 </template>
 `
 
-export const example4 = `
+export const circle = `
+<script setup lang="ts">
+const inputRounded = ref('')
+</script>
+
 <template>
-  
+  <BaseFormCheckbox
+    v-model="demoFour"
+    name="demo-4"
+    label="Circle checkbox"
+    shape="circle"
+    class="text-gray-500"
+  />
 </template>
 `
 
-export const example5 = `
+export const colors = `
 <template>
-  
-</template>
-`
+  <!-- Emerald color -->
+  <BaseFormCheckbox
+    v-model="demoStraight"
+    name="demo-6"
+    label="Straight"
+    shape="straight"
+    class="text-emerald-500"
+  />
 
-export const example6 = `
-<template>
-  
-</template>
-`
+  <!-- Yellow color -->
+  <BaseFormCheckbox
+    v-model="demoStraight"
+    name="demo-7"
+    label="Rounded"
+    shape="rounded"
+    class="text-yellow-500"
+  />
 
-export const example7 = `
-<template>
-  
-</template>
-`
-
-export const example8 = `
-<template>
-  
-</template>
-`
-
-export const example9 = `
-<template>
-  
-</template>
-`
-
-export const example10 = `
-<template>
-  
+  <!-- Pink color -->
+  <BaseFormCheckbox
+    v-model="demoStraight"
+    name="demo-8"
+    label="Rounded"
+    shape="rounded"
+    class="text-pink-500"
+  />
 </template>
 `

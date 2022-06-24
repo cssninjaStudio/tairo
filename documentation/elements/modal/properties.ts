@@ -1,25 +1,56 @@
 export const properties = {
   props: [
     {
-      name: 'string',
-      type: 'string',
-      required: 'false',
-      default: 'rounded',
-      values: ['string'],
-    },
-    {
-      name: 'boolean',
+      name: 'open',
       type: 'boolean',
       required: 'false',
       default: 'false',
       values: ['boolean'],
     },
+    {
+      name: 'size',
+      type: 'ModalSize',
+      required: 'false',
+      default: 'md',
+      values: ['sm', 'md', 'lg', 'xl', '2xl', '3xl'],
+    },
+    {
+      name: 'shape',
+      type: 'ModalShape',
+      required: 'false',
+      default: 'rounded',
+      values: ['straight', 'rounded', 'curved'],
+    },
+    {
+      name: 'footer',
+      type: 'boolean',
+      required: 'false',
+      default: 'false',
+      values: ['boolean'],
+    },
+    {
+      name: 'footerAlign',
+      type: 'ModalAlign',
+      required: 'false',
+      default: 'end',
+      footerAlign: ['start', 'end', 'center', 'between'],
+    },
   ],
   slots: [
     {
-      name: '#default',
+      name: '#header',
       properties: ['null'],
-      description: 'Component content',
+      description: 'Modal header content',
+    },
+    {
+      name: '#body',
+      properties: ['null'],
+      description: 'Modal body content',
+    },
+    {
+      name: '#footer',
+      properties: ['null'],
+      description: 'Modal footer content',
     },
   ],
 }

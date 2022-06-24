@@ -1,32 +1,32 @@
 export const toc = [
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Checkbox straight',
+    anchor: 'checkbox-straight',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Checkbox rounded',
+    anchor: 'checkbox-rounded',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Checkbox curved',
+    anchor: 'checkbox-curved',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Checkbox circle',
+    anchor: 'checkbox-circle',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Checkbox colors',
+    anchor: 'checkbox-straight-colors',
     subItems: [],
   },
   {
     label: 'Props',
-    anchor: 'link',
+    anchor: 'checkbox-props',
     subItems: [],
   },
 ]

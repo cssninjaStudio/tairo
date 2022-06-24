@@ -1,32 +1,12 @@
 export const toc = [
   {
     label: 'Label',
-    anchor: 'link',
-    subItems: [],
-  },
-  {
-    label: 'Label',
-    anchor: 'link',
-    subItems: [],
-  },
-  {
-    label: 'Label',
-    anchor: 'link',
-    subItems: [],
-  },
-  {
-    label: 'Label',
-    anchor: 'link',
-    subItems: [],
-  },
-  {
-    label: 'Label',
-    anchor: 'link',
+    anchor: 'animated-checkbox',
     subItems: [],
   },
   {
     label: 'Props',
-    anchor: 'link',
+    anchor: 'animated-checkbox-props',
     subItems: [],
   },
 ]

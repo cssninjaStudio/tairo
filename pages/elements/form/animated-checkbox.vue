@@ -1,6 +1,7 @@
 <script setup lang="ts">
-// import { toc } from '@@/documentation/elements/animated-checkbox/toc'
-// import { } from '@@/documentation/elements/animated-checkbox'
+import { toc } from '@@/documentation/elements/form/animated-checkbox/toc'
+import { base } from '@@/documentation/elements/form/animated-checkbox'
+import { properties } from '@@/documentation/elements/form/animated-checkbox/properties'
 
 definePageMeta({
   title: 'Animated checkbox',
@@ -169,12 +170,24 @@ const options = ref([
                 />
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="base" />
+            </template>
           </DocComponent>
         </DocSection>
+
+        <!-- Animated checkbox properties -->
+        <DocProps
+          id="animated-checkbox-props"
+          component="Animated checkbox"
+          :properties="properties.props"
+          :slots="properties.slots"
+        />
       </template>
       <!-- Toc -->
-      <template #toc></template>
+      <template #toc>
+        <DocToc :anchors="toc" />
+      </template>
     </DocLayout>
   </div>
 </template>

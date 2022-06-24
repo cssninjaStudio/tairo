@@ -1,32 +1,17 @@
 export const toc = [
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Text placeload',
+    anchor: 'placeload-text',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Shape placeload',
+    anchor: 'placeload-shape',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
-    subItems: [],
-  },
-  {
-    label: 'Label',
-    anchor: 'link',
-    subItems: [],
-  },
-  {
-    label: 'Label',
-    anchor: 'link',
-    subItems: [],
-  },
-  {
-    label: 'Props',
-    anchor: 'link',
+    label: 'Custom placeload',
+    anchor: 'placeload-composition',
     subItems: [],
   },
 ]

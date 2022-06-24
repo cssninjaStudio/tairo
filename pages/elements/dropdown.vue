@@ -1,6 +1,20 @@
 <script setup lang="ts">
-// import { toc } from '@@/documentation/elements/dropdown/toc'
-// import { } from '@@/documentation/elements/dropdown'
+import { toc } from '@@/documentation/elements/dropdown/toc'
+import {
+  avatarSlot,
+  buttonLeft,
+  buttonRight,
+  contextLeft,
+  contextRight,
+  header,
+  iconSlot,
+  textLeft,
+  textRight,
+} from '@@/documentation/elements/dropdown'
+import {
+  dropdownProperties,
+  itemProperties,
+} from '@@/documentation/elements/dropdown/properties'
 
 definePageMeta({
   title: 'Dropdowns',
@@ -73,7 +87,9 @@ const breadcrumb = [
                 </BaseDropdown>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="buttonLeft" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -110,7 +126,9 @@ const breadcrumb = [
                 </BaseDropdown>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="buttonRight" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -147,7 +165,9 @@ const breadcrumb = [
                 </BaseDropdown>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="contextLeft" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -188,7 +208,9 @@ const breadcrumb = [
                 </BaseDropdown>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="contextRight" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -225,7 +247,9 @@ const breadcrumb = [
                 </BaseDropdown>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="textLeft" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -258,7 +282,9 @@ const breadcrumb = [
                 </BaseDropdown>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="textRight" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -308,7 +334,9 @@ const breadcrumb = [
                 </BaseDropdown>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="iconSlot" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -378,7 +406,9 @@ const breadcrumb = [
                 </BaseDropdown>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="avatarSlot" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -449,14 +479,34 @@ const breadcrumb = [
                 </BaseDropdown>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="header" />
+            </template>
           </DocComponent>
         </DocSection>
+
+        <!-- Dropdown properties -->
+        <DocProps
+          id="dropdown-props"
+          component="Dropdown"
+          :properties="dropdownProperties.props"
+          :slots="dropdownProperties.slots"
+        />
+
+        <!-- Dropdown item properties -->
+        <DocProps
+          id="dropdown-item-props"
+          component="Dropdown item"
+          :properties="itemProperties.props"
+          :slots="itemProperties.slots"
+        />
 
         <div class="py-24"></div>
       </template>
       <!-- Toc -->
-      <template #toc></template>
+      <template #toc>
+        <DocToc :anchors="toc" />
+      </template>
     </DocLayout>
   </div>
 </template>

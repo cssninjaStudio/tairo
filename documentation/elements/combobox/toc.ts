@@ -1,32 +1,61 @@
 export const toc = [
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Box shapes',
+    anchor: 'combobox-shapes',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Disabled state',
+    anchor: 'combobox-disabled',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Loading state',
+    anchor: 'combobox-loading',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Text and sublabel',
+    anchor: 'combobox-sublabels',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Icon box',
+    anchor: 'combobox-icon',
+    subItems: [],
+  },
+  {
+    label: 'Media box',
+    anchor: 'combobox-media',
     subItems: [],
   },
   {
     label: 'Props',
-    anchor: 'link',
+    anchor: 'combobox-props',
     subItems: [],
+  },
+]
+
+export const breadcrumb = [
+  {
+    label: 'Home',
+    hideLabel: true,
+    icon: 'i-lucide-home',
+    hideIcon: false,
+    to: '/',
+  },
+  {
+    label: 'Elements',
+    hideLabel: false,
+    icon: '',
+    hideIcon: true,
+    to: '/elements',
+  },
+  {
+    label: 'Combobox',
+    hideLabel: false,
+    icon: '',
+    hideIcon: true,
+    to: '/elements/combobox',
   },
 ]

@@ -1,32 +1,57 @@
 export const toc = [
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Dropdown left',
+    anchor: 'dropdown-button-left',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Dropdown right',
+    anchor: 'dropdown-button-right',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Context left',
+    anchor: 'dropdown-context-left',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Context right',
+    anchor: 'dropdown-context-right',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Text left',
+    anchor: 'dropdown-text-left',
+    subItems: [],
+  },
+  {
+    label: 'Text right',
+    anchor: 'dropdown-text-right',
+    subItems: [],
+  },
+  {
+    label: 'Icon slot',
+    anchor: 'dropdown-icon-slot',
+    subItems: [],
+  },
+  {
+    label: 'Avatar slot',
+    anchor: 'dropdown-avatar-slot',
+    subItems: [],
+  },
+  {
+    label: 'Header',
+    anchor: 'dropdown-header',
     subItems: [],
   },
   {
     label: 'Props',
-    anchor: 'link',
+    anchor: 'dropdown-props',
+    subItems: [],
+  },
+  {
+    label: 'Item props',
+    anchor: 'dropdown-item-props',
     subItems: [],
   },
 ]

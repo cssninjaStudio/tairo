@@ -1,6 +1,16 @@
 <script setup lang="ts">
-// import { toc } from '@@/documentation/elements/progress/toc'
-// import { } from '@@/documentation/elements/progress'
+import { toc } from '@@/documentation/elements/progress/toc'
+import {
+  bar,
+  circle,
+  colors,
+  indeterminate,
+  sizes,
+} from '@@/documentation/elements/progress'
+import {
+  barProperties,
+  circleProperties,
+} from '@@/documentation/elements/progress/properties'
 
 definePageMeta({
   title: 'Progress',
@@ -86,7 +96,9 @@ const progressCircle = ref(25)
                 </div>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="bar" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -158,7 +170,9 @@ const progressCircle = ref(25)
                 </div>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="circle" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -174,7 +188,9 @@ const progressCircle = ref(25)
                 <BaseProgress size="xl" :value="78" color="primary" />
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="sizes" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -190,7 +206,9 @@ const progressCircle = ref(25)
                 <BaseProgress size="sm" :value="78" color="danger" />
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="colors" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -235,12 +253,32 @@ const progressCircle = ref(25)
                 />
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="indeterminate" />
+            </template>
           </DocComponent>
         </DocSection>
+
+        <!-- Progress bar properties -->
+        <DocProps
+          id="progress-bar-props"
+          component="Progress bar"
+          :properties="barProperties.props"
+          :slots="barProperties.slots"
+        />
+
+        <!-- Progress circle properties -->
+        <DocProps
+          id="progress-circle-props"
+          component="Progress circle"
+          :properties="circleProperties.props"
+          :slots="circleProperties.slots"
+        />
       </template>
       <!-- Toc -->
-      <template #toc></template>
+      <template #toc>
+        <DocToc :anchors="toc" />
+      </template>
     </DocLayout>
   </div>
 </template>

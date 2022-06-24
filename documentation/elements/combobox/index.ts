@@ -1,59 +1,191 @@
-export const example = `
+export const shapes = `
+<script setup lang="ts">
+const frameworks = [
+  {
+    id: 1,
+    name: 'Javascript',
+  },
+  ...
+  {
+    id: 5,
+    name: 'Alpine.js',
+  },
+]
+
+const selectedFramework = ref(frameworks[0])
+</script>
+
 <template>
-  
+  <BaseFormComboBox
+    v-model="selectedFramework"
+    label="Framework"
+    :items="frameworks"
+    shape="straight"
+  />
+
+  <BaseFormComboBox
+    v-model="selectedFramework"
+    label="Framework"
+    :items="frameworks"
+    shape="rounded"
+  />
+
+  <BaseFormComboBox
+    v-model="selectedFramework"
+    label="Framework"
+    :items="frameworks"
+    shape="curved"
+  />
+
+  <BaseFormComboBox
+    v-model="selectedFramework"
+    label="Framework"
+    :items="frameworks"
+    shape="full"
+  />
 </template>
 `
 
-export const example2 = `
+export const disabled = `
+<script setup lang="ts">
+const frameworks = [
+  {
+    id: 1,
+    name: 'Javascript',
+  },
+  ...
+  {
+    id: 5,
+    name: 'Alpine.js',
+  },
+]
+
+const selectedFramework = ref(frameworks[0])
+</script>
+
 <template>
-  
+  <BaseFormComboBox
+    v-model="selectedFramework"
+    label="Framework"
+    :items="frameworks"
+    shape="rounded"
+    disabled
+  />
 </template>
 `
 
-export const example3 = `
+export const loading = `
+<script setup lang="ts">
+const frameworks = [
+  {
+    id: 1,
+    name: 'Javascript',
+  },
+  ...
+  {
+    id: 5,
+    name: 'Alpine.js',
+  },
+]
+
+const selectedFramework = ref(frameworks[0])
+</script>
+
 <template>
-  
+  <BaseFormComboBox
+    v-model="selectedFramework"
+    label="Framework"
+    :items="frameworks"
+    shape="rounded"
+    loading
+  />
 </template>
 `
 
-export const example4 = `
+export const sublabels = `
+<script setup lang="ts">
+const peopleNames = [
+  {
+    id: 1,
+    name: 'Clarissa Perez',
+    text: 'Sales Manager',
+  },
+  ...
+  {
+    id: 5,
+    name: 'Maya Rosselini',
+    text: 'Product Manager',
+  },
+]
+
+const selectedPersonName = ref(peopleNames[0])
+</script>
+
 <template>
-  
+  <BaseFormComboBox
+    v-model="selectedPersonName"
+    label="Assignee"
+    :items="peopleNames"
+  />
 </template>
 `
 
-export const example5 = `
+export const icon = `
+<script setup lang="ts">
+const hobbies = [
+  {
+    id: 1,
+    name: 'Movies',
+    text: 'Cinema & shows',
+    icon: 'i-ph-sword-duotone',
+  },
+  ...
+  {
+    id: 5,
+    name: 'Karaoke',
+    text: 'singing with friends',
+    icon: 'i-ph-microphone-stage-duotone',
+  },
+]
+
+const selectedHobby = ref(hobbies[0])
+</script>
+
 <template>
-  
+  <BaseFormComboBox
+    v-model="selectedHobby"
+    label="Assignee"
+    :items="hobbies"
+  />
 </template>
 `
 
-export const example6 = `
-<template>
-  
-</template>
-`
+export const media = `
+<script setup lang="ts">
+const people = [
+  {
+    id: 1,
+    name: 'Clarissa Perez',
+    text: 'Sales Manager',
+    media: '/img/avatars/19.svg',
+  },
+  ...
+  {
+    id: 5,
+    name: 'Maya Rosselini',
+    text: 'Product Manager',
+    media: '/img/avatars/2.svg',
+  },
+]
 
-export const example7 = `
-<template>
-  
-</template>
-`
+const selectedPerson = ref(people[2])
+</script>
 
-export const example8 = `
 <template>
-  
-</template>
-`
-
-export const example9 = `
-<template>
-  
-</template>
-`
-
-export const example10 = `
-<template>
-  
+  <BaseFormComboBox
+    v-model="selectedPerson"
+    label="Assignee"
+    :items="people"
+  />
 </template>
 `

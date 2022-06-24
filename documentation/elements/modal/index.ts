@@ -1,59 +1,104 @@
-export const example = `
+export const smallTier = `
+<script setup lang="ts">
+const isModalOpen = ref(false)
+
+function closeModal() {
+  isModalOpen.value = false
+}
+function openModal() {
+  isModalOpen.value = true
+}
+</script>
+
 <template>
-  
+  <!-- Modal component -->
+  <BaseModal :open="isModalOpen" size="sm" footer @close="closeModal">
+    <template #header>
+    <!-- Modal header content -->
+    </template>
+    <template #body>
+      <!-- Modal body content -->
+    </template>
+    <template #footer>
+    <!-- Modal footer content -->
+    </template>
+  </BaseModal>
 </template>
 `
 
-export const example2 = `
+export const mediumTier = `
 <template>
-  
+  <!-- Modal component -->
+  <BaseModal :open="isModalLgOpen" size="lg" footer @close="closeModal">
+    <template #header>
+    <!-- Modal header content -->
+    </template>
+    <template #body>
+      <!-- Modal body content -->
+    </template>
+    <template #footer>
+    <!-- Modal footer content -->
+    </template>
+  </BaseModal>
+
+  <!-- Modal component -->
+  <BaseModal :open="isModalXlOpen" size="xl" footer @close="closeModal">
+    <template #header>
+    <!-- Modal header content -->
+    </template>
+    <template #body>
+      <!-- Modal body content -->
+    </template>
+    <template #footer>
+    <!-- Modal footer content -->
+    </template>
+  </BaseModal>
 </template>
 `
 
-export const example3 = `
+export const largeTier = `
 <template>
-  
+  <!-- Modal component -->
+  <BaseModal :open="isModal2xlOpen" size="2xl" footer @close="closeModal">
+    <template #header>
+    <!-- Modal header content -->
+    </template>
+    <template #body>
+      <!-- Modal body content -->
+    </template>
+    <template #footer>
+    <!-- Modal footer content -->
+    </template>
+  </BaseModal>
+
+  <!-- Modal component -->
+  <BaseModal :open="isModal3xlOpen" size="3xl" footer @close="closeModal">
+    <template #header>
+    <!-- Modal header content -->
+    </template>
+    <template #body>
+      <!-- Modal body content -->
+    </template>
+    <template #footer>
+    <!-- Modal footer content -->
+    </template>
+  </BaseModal>
 </template>
 `
 
-export const example4 = `
+export const footerAlign = `
 <template>
-  
-</template>
-`
+<!-- Modal component -->
+<BaseModal
+  :open="isModalStartOpen"
+  size="md"
+  footer
+  footer-align="start"
+  @close="isModalStartOpen = false"
+>
+<!-- Modal content -->
+</BaseModal>
 
-export const example5 = `
-<template>
-  
-</template>
-`
-
-export const example6 = `
-<template>
-  
-</template>
-`
-
-export const example7 = `
-<template>
-  
-</template>
-`
-
-export const example8 = `
-<template>
-  
-</template>
-`
-
-export const example9 = `
-<template>
-  
-</template>
-`
-
-export const example10 = `
-<template>
-  
+<!-- footer-align="start | center | end | between" -->
 </template>
 `

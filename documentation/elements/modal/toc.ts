@@ -1,32 +1,27 @@
 export const toc = [
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Small tier',
+    anchor: 'modal-small',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Medium tier',
+    anchor: 'modal-medium',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Large tier',
+    anchor: 'modal-large',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
-    subItems: [],
-  },
-  {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Modal footer',
+    anchor: 'modal-footer',
     subItems: [],
   },
   {
     label: 'Props',
-    anchor: 'link',
+    anchor: 'modal-props',
     subItems: [],
   },
 ]
