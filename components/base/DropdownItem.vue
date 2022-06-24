@@ -1,8 +1,9 @@
 <script setup lang="ts">
+import type { RouteLocationRaw } from 'vue-router'
 import { MenuItem } from '@headlessui/vue'
 
 export interface DropdownItemProps {
-  to?: string
+  to?: RouteLocationRaw
   title?: string
   text?: string
 }
