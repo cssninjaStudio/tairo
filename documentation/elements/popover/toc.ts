@@ -56,21 +56,16 @@ export const breadcrumb = [
     label: 'Home',
     hideLabel: true,
     icon: 'i-lucide-home',
-    hideIcon: false,
     to: '/',
   },
   {
     label: 'Elements',
     hideLabel: false,
-    icon: '',
-    hideIcon: true,
     to: '/elements',
   },
   {
     label: 'Popover',
     hideLabel: false,
-    icon: '',
-    hideIcon: true,
     to: '/elements/popover',
   },
 ]

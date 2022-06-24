@@ -33,7 +33,7 @@ export const properties = {
       type: 'ModalAlign',
       required: 'false',
       default: 'end',
-      footerAlign: ['start', 'end', 'center', 'between'],
+      values: ['start', 'end', 'center', 'between'],
     },
   ],
   slots: [
