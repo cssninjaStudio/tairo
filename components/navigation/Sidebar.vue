@@ -21,65 +21,19 @@ const endSidebars = sidebars.filter((sidebar) => sidebar.position === 'end')
 
       <!-- Top Menu -->
       <div>
-        <div
-          v-for="sidebar of startSidebars"
+        <NavigationSidebarItem
+          v-for="sidebar in startSidebars"
           :key="sidebar.name"
-          class="flex items-center justify-center w-full h-16"
-        >
-          <NuxtLink
-            v-if="sidebar.to"
-            :to="sidebar.to"
-            class="flex items-center justify-center w-12 h-12 rounded-2xl transition-colors duration-300 text-gray-400"
-            :title="sidebar.name"
-          >
-            <component :is="sidebar.icon" />
-          </NuxtLink>
-
-          <button
-            v-else
-            class="flex items-center justify-center w-12 h-12 rounded-2xl transition-colors duration-300"
-            :class="
-              activeSidebar?.name === sidebar.name
-                ? 'bg-primary-100 text-primary-500 dark:bg-primary-500/10'
-                : 'text-gray-400'
-            "
-            :title="sidebar.name"
-            @click="() => toggleActiveSidebar(sidebar)"
-          >
-            <component :is="sidebar.icon" />
-          </button>
-        </div>
+          :sidebar="sidebar"
+        />
       </div>
       <!-- Bottom Menu -->
       <div class="mt-auto">
-        <div
-          v-for="sidebar of endSidebars"
+        <NavigationSidebarItem
+          v-for="sidebar in endSidebars"
           :key="sidebar.name"
-          class="flex items-center justify-center w-full h-16"
-        >
-          <NuxtLink
-            v-if="sidebar.to"
-            :to="sidebar.to"
-            class="flex items-center justify-center w-12 h-12 rounded-2xl transition-colors duration-300 text-gray-400"
-            :title="sidebar.name"
-          >
-            <component :is="sidebar.icon" />
-          </NuxtLink>
-
-          <button
-            v-else
-            class="flex items-center justify-center w-12 h-12 rounded-2xl transition-colors duration-300"
-            :class="
-              activeSidebar?.name === sidebar.name
-                ? 'bg-primary-100 text-primary-500 dark:bg-primary-500/10'
-                : 'text-gray-400'
-            "
-            :title="sidebar.name"
-            @click="() => toggleActiveSidebar(sidebar)"
-          >
-            <component :is="sidebar.icon" />
-          </button>
-        </div>
+          :sidebar="sidebar"
+        />
 
         <slot name="end"></slot>
       </div>
