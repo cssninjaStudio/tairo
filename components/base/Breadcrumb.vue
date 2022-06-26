@@ -1,11 +1,12 @@
 <script setup lang="ts">
+import type { RouteLocationRaw } from 'vue-router'
+
 export type BreadcrumbSeparator = 'slash' | 'dot' | 'chevron' | 'arrow'
 export interface BreadcrumbItem {
   label: string
   hideLabel?: boolean
-  hideIcon?: boolean
   icon?: string
-  to?: any
+  to?: RouteLocationRaw
 }
 export interface BreadcrumbsProps {
   items: BreadcrumbItem[]
@@ -19,11 +20,7 @@ const props = withDefaults(defineProps<BreadcrumbsProps>(), {
 </script>
 
 <template>
-  <nav
-    role="navigation"
-    aria-label="breadcrumbs"
-    itemtype="https://schema.org/BreadcrumbList"
-  >
+  <nav>
     <ul class="flex items-center font-text text-sm mb-6">
       <li
         v-for="(item, index) in props.items"
@@ -34,8 +31,8 @@ const props = withDefaults(defineProps<BreadcrumbsProps>(), {
           :to="item.to"
           class="flex items-center gap-x-1 text-slate-500 hover:text-primary-500 transition-colors duration-300"
         >
-          <i v-if="!item.hideIcon" class="block w-4 h-4" :class="item.icon"></i>
-          <span v-if="!item.hideLabel">{{ item.label }}</span>
+          <i v-if="item.icon" class="block w-4 h-4" :class="item.icon"></i>
+          <span :class="[item.hideLabel && 'sr-only']">{{ item.label }}</span>
         </NuxtLink>
         <span
           v-if="props.separator === 'dot' && index < items.length - 1"

@@ -25,22 +25,17 @@ const breadcrumb = [
     label: 'Home',
     hideLabel: true,
     icon: 'i-lucide-home',
-    hideIcon: false,
     to: '/',
   },
   {
     label: 'Components',
     hideLabel: false,
-    icon: '',
-    hideIcon: true,
     to: '/components',
   },
   {
     label: 'Avatar',
     hideLabel: false,
-    icon: '',
-    hideIcon: true,
-    to: '/avatar',
+    to: '/components/avatar',
   },
 ]
 </script>
