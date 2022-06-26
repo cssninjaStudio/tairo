@@ -1,10 +1,6 @@
 <script setup lang="ts">
-const isLanguagePanelOpened = useLanguagePanelOpened()
-const isActivityPanelOpened = useActivityPanelOpened()
-const isSearchPanelOpened = useSearchPanelOpened()
-const isCircularMenuOpened = useCircularMenuOpened()
-
-const { isSidebarOpened, toggleSidebar } = useSidebar()
+const { isSidebarOpened } = useSidebar()
+const { activePanel, panelTransitionFrom, closePanel } = usePanels()
 </script>
 
 <template>
@@ -20,37 +16,44 @@ const { isSidebarOpened, toggleSidebar } = useSidebar()
       "
     >
       <div class="w-full max-w-6xl mx-auto">
-        <NavigationToolbar
-          :toggled="isSidebarOpened"
-          @toggled="toggleSidebar"
-          @language="isLanguagePanelOpened = true"
-          @activity="isActivityPanelOpened = true"
-        />
+        <NavigationToolbar />
         <slot></slot>
       </div>
     </div>
 
-    <PanelLanguage
-      :active="isLanguagePanelOpened"
-      @close="isLanguagePanelOpened = false"
-    />
+    <!-- Active Panel -->
+    <Transition
+      enter-active-class="transition-all duration-300 ease-out"
+      :enter-from-class="
+        panelTransitionFrom === 'left'
+          ? '-translate-x-full'
+          : 'translate-x-full'
+      "
+      leave-active-class="transition-all duration-300 ease-in"
+      :leave-to-class="
+        panelTransitionFrom === 'left'
+          ? '-translate-x-full'
+          : 'translate-x-full'
+      "
+    >
+      <component
+        :is="activePanel.component"
+        v-if="activePanel?.component"
+        :class="[activePanel.position === 'left' ? 'left-0' : 'right-0']"
+      />
+    </Transition>
 
-    <PanelActivity
-      :active="isActivityPanelOpened"
-      @close="isActivityPanelOpened = false"
-    />
+    <!-- Overlay -->
+    <div
+      class="fixed top-0 left-0 w-full h-full bg-slate-800/60 transition-opacity duration-300 z-[99] cursor-pointer"
+      :class="
+        activePanel
+          ? 'opacity-100 pointer-events-auto'
+          : 'opacity-0 pointer-events-none'
+      "
+      @click="closePanel"
+    ></div>
 
-    <PanelSearch
-      :active="isSearchPanelOpened"
-      @close="isSearchPanelOpened = false"
-    />
-
-    <NavigationCircularMenu
-      :active="isCircularMenuOpened"
-      @triggered="isCircularMenuOpened = !isCircularMenuOpened"
-      @closed="isCircularMenuOpened = false"
-      @language="isLanguagePanelOpened = true"
-      @activity="isActivityPanelOpened = true"
-    />
+    <NavigationCircularMenu />
   </div>
 </template>

@@ -1,13 +1,11 @@
 <script setup lang="ts">
-const props = defineProps<{
-  active: boolean
-}>()
+const isOpened = useCircularMenuOpened()
 
-const emit = defineEmits(['triggered', 'language', 'activity', 'closed'])
+const { openPanel } = usePanels()
 const { y } = useWindowScrollFixed()
 const isScrolled = computed(() => {
   if (y.value < 60) {
-    emit('closed')
+    isOpened.value = false
   }
   return y.value > 60
 })
@@ -17,7 +15,7 @@ const isScrolled = computed(() => {
   <div
     class="fixed top-[0.6em] right-[1em] z-[90] transition-transform duration-300 after:block after:content-[''] after:absolute after:top-0 after:right-0 after:bg-primary-600 after:shadow-lg after:shadow-primary-500/50 dark:after:shadow-gray-800/10 after:w-12 after:h-12 after:rounded-full after:transition-transform after:duration-300"
     :class="[
-      props.active
+      isOpened
         ? 'after:scale-x-[5.5] after:scale-y-[5.5] after:ease-[cubic-bezier(0.68, 1.55, 0.265, 1)]'
         : '',
       isScrolled ? '' : '-translate-y-24',
@@ -25,23 +23,23 @@ const isScrolled = computed(() => {
   >
     <button
       class="relative flex items-center justify-center w-12 h-12 rounded-full bg-primary-500 text-white shadow-lg shadow-primary-500/50 dark:shadow-gray-800/10 z-30"
-      @click="emit('triggered')"
+      @click="isOpened = !isOpened"
     >
       <span
         class="relative block w-3 h-3 transition-all duration-300"
-        :class="props.active ? 'scale-90 top-0' : '-top-0.5'"
+        :class="isOpened ? 'scale-90 top-0' : '-top-0.5'"
       >
         <span
           class="absolute block w-full h-0.5 bg-gray-50 transition-all duration-300"
-          :class="props.active ? '-rotate-45 top-1' : 'top-0.5'"
+          :class="isOpened ? '-rotate-45 top-1' : 'top-0.5'"
         ></span>
         <span
           class="absolute top-1/2 block w-full h-0.5 bg-gray-50 transition-all duration-300"
-          :class="props.active ? 'opacity-0 translate-x-4' : ''"
+          :class="isOpened ? 'opacity-0 translate-x-4' : ''"
         ></span>
         <span
           class="absolute block w-full h-0.5 bg-gray-50 transition-all duration-300"
-          :class="props.active ? 'rotate-45 bottom-1.5' : 'bottom-0'"
+          :class="isOpened ? 'rotate-45 bottom-1.5' : 'bottom-0'"
         ></span>
       </span>
     </button>
@@ -51,7 +49,7 @@ const isScrolled = computed(() => {
       <div
         class="flex items-center justify-center absolute top-[0.2em] right-[0.2em] z-20 transition-all duration-300"
         :class="
-          props.active
+          isOpened
             ? 'translate-x-[-6.5em] translate-y-[-0.25em]'
             : 'translate-x-0 translate-y-0'
         "
@@ -63,14 +61,14 @@ const isScrolled = computed(() => {
       <div
         class="flex items-center justify-center absolute top-[0.2em] right-[0.2em] z-20 transition-all duration-300"
         :class="
-          props.active
+          isOpened
             ? 'translate-x-[-5.75em] translate-y-[3em]'
             : 'translate-x-0 translate-y-0'
         "
       >
         <button
           class="flex items-center justify-center w-9 h-9 rounded-full bg-primary-700 transition-all duration-300"
-          @click="emit('language')"
+          @click="openPanel('language')"
         >
           <img
             class="h-7 w-7 rounded-full"
@@ -84,7 +82,7 @@ const isScrolled = computed(() => {
       <div
         class="flex items-center justify-center absolute top-[0.2em] right-[0.2em] z-20 transition-all duration-300"
         :class="
-          props.active
+          isOpened
             ? 'translate-x-[-3.15em] translate-y-[5.5em]'
             : 'translate-x-0 translate-y-0'
         "
@@ -105,14 +103,14 @@ const isScrolled = computed(() => {
       <div
         class="flex items-center justify-center absolute top-[0.2em] right-[0.2em] z-20 transition-all duration-300"
         :class="
-          props.active
+          isOpened
             ? 'translate-x-[0em] translate-y-[6.5em]'
             : 'translate-x-0 translate-y-0'
         "
       >
         <button
           class="flex items-center justify-center w-9 h-9 rounded-full bg-primary-700 transition-all duration-300"
-          @click="emit('activity')"
+          @click="openPanel('activity')"
         >
           <i class="i-ph-circles-four-duotone w-5 h-5 text-white"></i>
         </button>

@@ -1,6 +1,8 @@
 <script setup lang="ts">
 const { activeSidebar, sidebars, isSidebarOpened, toggleActiveSidebar } =
   useSidebar()
+
+const { openPanel } = usePanels()
 </script>
 
 <template>
@@ -65,6 +67,7 @@ const { activeSidebar, sidebars, isSidebarOpened, toggleActiveSidebar } =
         <div class="flex items-center justify-center w-full h-16">
           <button
             class="flex items-center justify-center w-12 h-12 rounded-2xl transition-colors duration-300 text-gray-400"
+            @click="openPanel('search')"
           >
             <i class="i-ph-magnifying-glass-duotone w-5 h-5"></i>
           </button>

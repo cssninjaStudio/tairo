@@ -1,12 +1,10 @@
 import type { Component } from 'vue'
 import type { RouteLocationRaw } from 'vue-router'
-// Lazy prefix is introduced by nuxt, it wrap the component with defineAsyncComponent
-import {
-  LazyNavigationSidebarMenuComponents,
-  LazyNavigationSidebarMenuDashboards,
-  LazyNavigationSidebarMenuElements,
-  LazyNavigationSidebarMenuLayouts,
-} from '~~/.nuxt/components'
+
+import SidebarMenuComponents from '~~/components/navigation/SidebarMenuComponents.vue'
+import SidebarMenuDashboards from '~~/components/navigation/SidebarMenuDashboards.vue'
+import SidebarMenuElements from '~~/components/navigation/SidebarMenuElements.vue'
+import SidebarMenuLayouts from '~~/components/navigation/SidebarMenuLayouts.vue'
 
 export interface NavigationSidebarItem {
   name: string
@@ -16,29 +14,30 @@ export interface NavigationSidebarItem {
   activePath?: string
 }
 
+// @unocss-include
 const sidebars: NavigationSidebarItem[] = [
   {
     name: 'Dashboards',
     icon: () => h('i', { class: 'i-ph-sidebar-duotone w-5 h-5' }),
-    subnav: LazyNavigationSidebarMenuDashboards,
+    subnav: SidebarMenuComponents,
     activePath: '/dashboards',
   },
   {
     name: 'Layouts',
     icon: () => h('i', { class: 'i-ph-app-window-duotone w-5 h-5' }),
-    subnav: LazyNavigationSidebarMenuLayouts,
+    subnav: SidebarMenuDashboards,
     activePath: '/layouts',
   },
   {
     name: 'Elements',
     icon: () => h('i', { class: 'i-ph-nut-duotone w-5 h-5' }),
-    subnav: LazyNavigationSidebarMenuElements,
+    subnav: SidebarMenuElements,
     activePath: '/elements',
   },
   {
     name: 'Components',
     icon: () => h('i', { class: 'i-ph-grid-four-duotone w-5 h-5' }),
-    subnav: LazyNavigationSidebarMenuComponents,
+    subnav: SidebarMenuLayouts,
     activePath: '/components',
   },
   {
