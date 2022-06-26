@@ -46,7 +46,7 @@
     "defu": "6.0.0",
     "eslint": "8.18.0",
     "eslint-config-prettier": "8.5.0",
-    "eslint-plugin-prettier-vue": "3.1.0",
+    "eslint-plugin-prettier-vue": "4.1.0",
     "eslint-plugin-tailwindcss": "3.5.2",
     "eslint-plugin-vuejs-accessibility": "1.2.0",
     "lint-staged": "12.5.0",
