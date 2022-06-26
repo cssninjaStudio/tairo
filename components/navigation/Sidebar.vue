@@ -2,7 +2,10 @@
 const { activeSidebar, sidebars, isSidebarOpened, toggleActiveSidebar } =
   useSidebar()
 
-const { openPanel } = usePanels()
+const startSidebars = sidebars.filter(
+  (sidebar) => !sidebar.position || sidebar.position === 'start'
+)
+const endSidebars = sidebars.filter((sidebar) => sidebar.position === 'end')
 </script>
 
 <template>
@@ -14,20 +17,12 @@ const { openPanel } = usePanels()
       class="relative flex flex-col w-[80px] h-full bg-white dark:bg-slate-800 border-r border-gray-200 dark:border-slate-700 z-20 transition-all duration-300 pointer-events-auto"
       :class="isSidebarOpened ? '' : '-translate-x-full xl:translate-x-0'"
     >
-      <!-- Logo -->
-      <div class="flex items-center justify-center w-full h-16">
-        <NuxtLink to="/" class="flex items-center justify-center">
-          <img
-            class="block h-10"
-            src="/img/logos/logo/logo.svg"
-            alt="Tairo logo"
-          />
-        </NuxtLink>
-      </div>
+      <slot></slot>
+
       <!-- Top Menu -->
       <div>
         <div
-          v-for="sidebar of sidebars"
+          v-for="sidebar of startSidebars"
           :key="sidebar.name"
           class="flex items-center justify-center w-full h-16"
         >
@@ -35,6 +30,7 @@ const { openPanel } = usePanels()
             v-if="sidebar.to"
             :to="sidebar.to"
             class="flex items-center justify-center w-12 h-12 rounded-2xl transition-colors duration-300 text-gray-400"
+            :title="sidebar.name"
           >
             <component :is="sidebar.icon" />
           </NuxtLink>
@@ -47,6 +43,7 @@ const { openPanel } = usePanels()
                 ? 'bg-primary-100 text-primary-500 dark:bg-primary-500/10'
                 : 'text-gray-400'
             "
+            :title="sidebar.name"
             @click="() => toggleActiveSidebar(sidebar)"
           >
             <component :is="sidebar.icon" />
@@ -55,36 +52,36 @@ const { openPanel } = usePanels()
       </div>
       <!-- Bottom Menu -->
       <div class="mt-auto">
-        <!-- Menu item -->
-        <div class="flex items-center justify-center w-full h-16">
-          <button
-            class="flex items-center justify-center w-12 h-12 rounded-2xl transition-colors duration-300 text-gray-400"
-          >
-            <i class="i-ph-square-half-duotone w-5 h-5"></i>
-          </button>
-        </div>
-        <!-- Menu item -->
-        <div class="flex items-center justify-center w-full h-16">
-          <button
-            class="flex items-center justify-center w-12 h-12 rounded-2xl transition-colors duration-300 text-gray-400"
-            @click="openPanel('search')"
-          >
-            <i class="i-ph-magnifying-glass-duotone w-5 h-5"></i>
-          </button>
-        </div>
-        <!-- Menu item -->
-        <div class="flex items-center justify-center w-full h-16">
+        <div
+          v-for="sidebar of endSidebars"
+          :key="sidebar.name"
+          class="flex items-center justify-center w-full h-16"
+        >
           <NuxtLink
-            to="/"
+            v-if="sidebar.to"
+            :to="sidebar.to"
             class="flex items-center justify-center w-12 h-12 rounded-2xl transition-colors duration-300 text-gray-400"
+            :title="sidebar.name"
           >
-            <i class="i-ph-gear-six-duotone w-5 h-5"></i>
+            <component :is="sidebar.icon" />
           </NuxtLink>
+
+          <button
+            v-else
+            class="flex items-center justify-center w-12 h-12 rounded-2xl transition-colors duration-300"
+            :class="
+              activeSidebar?.name === sidebar.name
+                ? 'bg-primary-100 text-primary-500 dark:bg-primary-500/10'
+                : 'text-gray-400'
+            "
+            :title="sidebar.name"
+            @click="() => toggleActiveSidebar(sidebar)"
+          >
+            <component :is="sidebar.icon" />
+          </button>
         </div>
-        <!-- Menu item -->
-        <div class="flex items-center justify-center w-full h-16">
-          <NavigationSidebarAccountMenu />
-        </div>
+
+        <slot name="end"></slot>
       </div>
     </div>
 

@@ -12,10 +12,17 @@ export interface NavigationSidebarItem {
   icon: Component
   subnav?: Component
   to?: RouteLocationRaw
+  click?: () => void | Promise<void>
   activePath?: string
+  /**
+   * @default 'start'
+   */
+  position?: 'start' | 'end'
 }
 
 export const useSidebar = createSharedComposable(() => {
+  const { openPanel } = usePanels()
+
   // @unocss-include
   const sidebars: NavigationSidebarItem[] = [
     {
@@ -47,6 +54,26 @@ export const useSidebar = createSharedComposable(() => {
       icon: () => h('i', { class: 'i-ph-chat-circle-duotone w-5 h-5' }),
       to: { path: '/' },
     },
+    {
+      name: 'Panels',
+      icon: () => h('i', { class: 'i-ph-square-half-duotone w-5 h-5' }),
+      to: { path: '/' },
+      position: 'end',
+    },
+    {
+      name: 'Search',
+      icon: () => h('i', { class: 'i-ph-magnifying-glass-duotone w-5 h-5' }),
+      click: () => {
+        openPanel('search')
+      },
+      position: 'end',
+    },
+    {
+      name: 'Settings',
+      icon: () => h('i', { class: 'i-ph-gear-six-duotone w-5 h-5' }),
+      to: { path: '/' },
+      position: 'end',
+    },
   ]
 
   const route = useRoute()
@@ -64,6 +91,10 @@ export const useSidebar = createSharedComposable(() => {
   }
 
   function toggleActiveSidebar(sidebar: NavigationSidebarItem) {
+    if (sidebar?.click) {
+      return sidebar?.click?.()
+    }
+
     if (activeSidebar.value?.name === sidebar.name) {
       toggleSidebar()
     } else {

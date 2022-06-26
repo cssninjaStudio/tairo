@@ -5,7 +5,25 @@ const { activePanel, panelTransitionFrom, closePanel } = usePanels()
 
 <template>
   <div class="bg-slate-100 dark:bg-slate-900">
-    <NavigationSidebar />
+    <NavigationSidebar>
+      <!-- Logo -->
+      <div class="flex items-center justify-center w-full h-16">
+        <NuxtLink to="/" class="flex items-center justify-center">
+          <img
+            class="block h-10"
+            src="/img/logos/logo/logo.svg"
+            alt="Tairo logo"
+          />
+        </NuxtLink>
+      </div>
+
+      <template #end>
+        <!-- Menu item -->
+        <div class="flex items-center justify-center w-full h-16">
+          <NavigationSidebarAccountMenu />
+        </div>
+      </template>
+    </NavigationSidebar>
 
     <div
       class="relative px-4 xl:px-16 min-h-screen w-full bg-slate-100 dark:bg-slate-900 transition-all duration-300"
@@ -23,13 +41,13 @@ const { activePanel, panelTransitionFrom, closePanel } = usePanels()
 
     <!-- Active Panel -->
     <Transition
-      enter-active-class="transition-all duration-300 ease-out"
+      enter-active-class="transition-transform duration-300 ease-out"
       :enter-from-class="
         panelTransitionFrom === 'left'
           ? '-translate-x-full'
           : 'translate-x-full'
       "
-      leave-active-class="transition-all duration-300 ease-in"
+      leave-active-class="transition-transform duration-300 ease-in"
       :leave-to-class="
         panelTransitionFrom === 'left'
           ? '-translate-x-full'
