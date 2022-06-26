@@ -2,11 +2,6 @@
 definePageMeta({
   layout: 'sidebar',
 })
-
-const isSidebarOpened = useSidebarOpened()
-onMounted(() => {
-  isSidebarOpened.value = true
-})
 </script>
 
 <template>

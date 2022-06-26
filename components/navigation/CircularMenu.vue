@@ -1,8 +1,8 @@
 <script setup lang="ts">
-const isOpened = useCircularMenuOpened()
-
 const { openPanel } = usePanels()
 const { y } = useWindowScrollFixed()
+
+const isOpened = ref(false)
 const isScrolled = computed(() => {
   if (y.value < 60) {
     isOpened.value = false
