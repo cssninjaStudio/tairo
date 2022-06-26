@@ -1,57 +1,6 @@
 <script setup lang="ts">
-import type { Component } from 'vue'
-import type { RouteLocationRaw } from 'vue-router'
-import {
-  NavigationSidebarMenuComponents,
-  NavigationSidebarMenuDashboards,
-  NavigationSidebarMenuElements,
-  NavigationSidebarMenuLayouts,
-} from '~~/.nuxt/components'
-
-interface NavigationSidebarItem {
-  name: string
-  icon: Component
-  panel?: Component
-  to?: RouteLocationRaw
-  activePath?: string
-}
-
-const sidebars: NavigationSidebarItem[] = [
-  {
-    name: 'Dashboards',
-    icon: () => h('i', { class: 'i-ph-sidebar-duotone w-5 h-5' }),
-    panel: NavigationSidebarMenuDashboards,
-    activePath: '/dashboards',
-  },
-  {
-    name: 'Layouts',
-    icon: () => h('i', { class: 'i-ph-app-window-duotone w-5 h-5' }),
-    panel: NavigationSidebarMenuLayouts,
-    activePath: '/layouts',
-  },
-  {
-    name: 'Elements',
-    icon: () => h('i', { class: 'i-ph-nut-duotone w-5 h-5' }),
-    panel: NavigationSidebarMenuElements,
-    activePath: '/elements',
-  },
-  {
-    name: 'Components',
-    icon: () => h('i', { class: 'i-ph-grid-four-duotone w-5 h-5' }),
-    panel: NavigationSidebarMenuComponents,
-    activePath: '/components',
-  },
-  {
-    name: 'Components',
-    icon: () => h('i', { class: 'i-ph-chat-circle-duotone w-5 h-5' }),
-    to: { path: '/' },
-  },
-]
-const route = useRoute()
-const sidebar = sidebars.find(
-  ({ activePath }) => activePath && route.path.startsWith(activePath)
-)
-const activeSidebar = ref<NavigationSidebarItem | null>(sidebar || null)
+const { activeSidebar, sidebars, isSidebarOpened, toggleActiveSidebar } =
+  useSidebar()
 </script>
 
 <template>
@@ -61,7 +10,7 @@ const activeSidebar = ref<NavigationSidebarItem | null>(sidebar || null)
     <!-- Icon sidebar -->
     <div
       class="relative flex flex-col w-[80px] h-full bg-white dark:bg-slate-800 border-r border-gray-200 dark:border-slate-700 z-20 transition-all duration-300 pointer-events-auto"
-      :class="activeSidebar ? '' : '-translate-x-full xl:translate-x-0'"
+      :class="isSidebarOpened ? '' : '-translate-x-full xl:translate-x-0'"
     >
       <!-- Logo -->
       <div class="flex items-center justify-center w-full h-16">
@@ -96,17 +45,7 @@ const activeSidebar = ref<NavigationSidebarItem | null>(sidebar || null)
                 ? 'bg-primary-100 text-primary-500 dark:bg-primary-500/10'
                 : 'text-gray-400'
             "
-            @click="
-              () => {
-                if (activeSidebar?.name === sidebar.name) {
-                  activeSidebar = null
-                  // emit('close')
-                } else {
-                  activeSidebar = sidebar
-                  // emit('open')
-                }
-              }
-            "
+            @click="() => toggleActiveSidebar(sidebar)"
           >
             <component :is="sidebar.icon" />
           </button>
@@ -148,19 +87,20 @@ const activeSidebar = ref<NavigationSidebarItem | null>(sidebar || null)
 
     <!-- Menu panel -->
     <div
+      v-if="activeSidebar"
       class="relative w-[220px] h-full bg-white dark:bg-slate-800 border-r border-gray-200 dark:border-slate-700 z-10 transition-all duration-300 pointer-events-auto"
-      :class="activeSidebar ? '' : '-translate-x-[calc(100%_-_80px)]'"
+      :class="isSidebarOpened ? '' : '-translate-x-[calc(100%_-_80px)]'"
     >
       <!-- Header -->
       <div class="flex items-center h-16 w-full px-6">
         <h2
           class="font-main text-lg font-semibold text-gray-700 dark:text-white capitalize"
         >
-          {{ activeSidebar?.name }}
+          {{ activeSidebar.name }}
         </h2>
         <button
           class="flex xl:hidden items-center justify-center h-10 w-10 rounded-full ml-auto text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-colors duration-300"
-          @click="activeSidebar = null"
+          @click="isSidebarOpened = false"
         >
           <i class="i-feather-chevron-left w-6 h-6"></i>
         </button>
@@ -170,8 +110,8 @@ const activeSidebar = ref<NavigationSidebarItem | null>(sidebar || null)
         class="relative h-[calc(100%_-_64px)] w-full overflow-y-auto slimscroll px-6"
       >
         <component
-          :is="activeSidebar.panel"
-          v-if="activeSidebar?.panel"
+          :is="activeSidebar.subnav"
+          v-if="activeSidebar?.subnav"
         ></component>
       </div>
     </div>

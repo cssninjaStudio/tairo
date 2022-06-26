@@ -1,14 +1,16 @@
 <script setup lang="ts">
-const isSidebarOpened = useSidebarOpened()
 const isLanguagePanelOpened = useLanguagePanelOpened()
 const isActivityPanelOpened = useActivityPanelOpened()
 const isSearchPanelOpened = useSearchPanelOpened()
 const isCircularMenuOpened = useCircularMenuOpened()
+
+const { isSidebarOpened, toggleSidebar } = useSidebar()
 </script>
 
 <template>
   <div class="bg-slate-100 dark:bg-slate-900">
     <NavigationSidebar />
+
     <div
       class="relative px-4 xl:px-16 min-h-screen w-full bg-slate-100 dark:bg-slate-900 transition-all duration-300"
       :class="
@@ -20,7 +22,7 @@ const isCircularMenuOpened = useCircularMenuOpened()
       <div class="w-full max-w-6xl mx-auto">
         <NavigationToolbar
           :toggled="isSidebarOpened"
-          @toggled="isSidebarOpened = !isSidebarOpened"
+          @toggled="toggleSidebar"
           @language="isLanguagePanelOpened = true"
           @activity="isActivityPanelOpened = true"
         />
