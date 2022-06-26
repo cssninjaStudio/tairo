@@ -1,10 +1,11 @@
 import type { Component } from 'vue'
 import type { RouteLocationRaw } from 'vue-router'
-
-import SidebarMenuComponents from '~~/components/navigation/SidebarMenuComponents.vue'
-import SidebarMenuDashboards from '~~/components/navigation/SidebarMenuDashboards.vue'
-import SidebarMenuElements from '~~/components/navigation/SidebarMenuElements.vue'
-import SidebarMenuLayouts from '~~/components/navigation/SidebarMenuLayouts.vue'
+import {
+  LazyNavigationSidebarMenuComponents,
+  LazyNavigationSidebarMenuDashboards,
+  LazyNavigationSidebarMenuElements,
+  LazyNavigationSidebarMenuLayouts,
+} from '#components'
 
 export interface NavigationSidebarItem {
   name: string
@@ -14,40 +15,40 @@ export interface NavigationSidebarItem {
   activePath?: string
 }
 
-// @unocss-include
-const sidebars: NavigationSidebarItem[] = [
-  {
-    name: 'Dashboards',
-    icon: () => h('i', { class: 'i-ph-sidebar-duotone w-5 h-5' }),
-    subnav: SidebarMenuComponents,
-    activePath: '/dashboards',
-  },
-  {
-    name: 'Layouts',
-    icon: () => h('i', { class: 'i-ph-app-window-duotone w-5 h-5' }),
-    subnav: SidebarMenuDashboards,
-    activePath: '/layouts',
-  },
-  {
-    name: 'Elements',
-    icon: () => h('i', { class: 'i-ph-nut-duotone w-5 h-5' }),
-    subnav: SidebarMenuElements,
-    activePath: '/elements',
-  },
-  {
-    name: 'Components',
-    icon: () => h('i', { class: 'i-ph-grid-four-duotone w-5 h-5' }),
-    subnav: SidebarMenuLayouts,
-    activePath: '/components',
-  },
-  {
-    name: 'Components',
-    icon: () => h('i', { class: 'i-ph-chat-circle-duotone w-5 h-5' }),
-    to: { path: '/' },
-  },
-]
-
 export const useSidebar = createSharedComposable(() => {
+  // @unocss-include
+  const sidebars: NavigationSidebarItem[] = [
+    {
+      name: 'Dashboards',
+      icon: () => h('i', { class: 'i-ph-sidebar-duotone w-5 h-5' }),
+      subnav: LazyNavigationSidebarMenuComponents,
+      activePath: '/dashboards',
+    },
+    {
+      name: 'Layouts',
+      icon: () => h('i', { class: 'i-ph-app-window-duotone w-5 h-5' }),
+      subnav: LazyNavigationSidebarMenuDashboards,
+      activePath: '/layouts',
+    },
+    {
+      name: 'Elements',
+      icon: () => h('i', { class: 'i-ph-nut-duotone w-5 h-5' }),
+      subnav: LazyNavigationSidebarMenuElements,
+      activePath: '/elements',
+    },
+    {
+      name: 'Components',
+      icon: () => h('i', { class: 'i-ph-grid-four-duotone w-5 h-5' }),
+      subnav: LazyNavigationSidebarMenuLayouts,
+      activePath: '/components',
+    },
+    {
+      name: 'Chat',
+      icon: () => h('i', { class: 'i-ph-chat-circle-duotone w-5 h-5' }),
+      to: { path: '/' },
+    },
+  ]
+
   const route = useRoute()
   const sidebar = sidebars.find(
     ({ activePath }) => activePath && route.path.startsWith(activePath)

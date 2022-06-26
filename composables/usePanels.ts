@@ -1,13 +1,9 @@
 import type { Component } from 'vue'
-// import {
-//   LazyPanelActivity,
-//   LazyPanelLanguage,
-//   LazyPanelSearch,
-// } from '~~/.nuxt/components'
-
-import PanelActivity from '~~/components/panel/Activity.vue'
-import PanelLanguage from '~~/components/panel/Language.vue'
-import PanelSearch from '~~/components/panel/Search.vue'
+import {
+  LazyPanelActivity,
+  LazyPanelLanguage,
+  LazyPanelSearch,
+} from '#components'
 
 export interface LayoutPanel {
   name: string
@@ -15,27 +11,27 @@ export interface LayoutPanel {
   position: 'right' | 'left'
 }
 
-const panels = [
-  {
-    name: 'language',
-    position: 'right',
-    component: PanelLanguage,
-  },
-  {
-    name: 'activity',
-    position: 'right',
-    component: PanelActivity,
-  },
-  {
-    name: 'search',
-    position: 'left',
-    component: PanelSearch,
-  },
-] as const
-
-type LayoutPanelNames = typeof panels[number]['name']
-
 export const usePanels = createSharedComposable(() => {
+  const panels = [
+    {
+      name: 'language',
+      position: 'right',
+      component: LazyPanelLanguage,
+    },
+    {
+      name: 'activity',
+      position: 'right',
+      component: LazyPanelActivity,
+    },
+    {
+      name: 'search',
+      position: 'left',
+      component: LazyPanelSearch,
+    },
+  ] as const
+
+  type LayoutPanelNames = typeof panels[number]['name']
+
   const activePanel = shallowRef<LayoutPanel | null>(null)
   const panelTransitionFrom = ref('left')
 
