@@ -91,29 +91,39 @@ const { activeSidebar, sidebars, isSidebarOpened, toggleActiveSidebar } =
       class="relative w-[220px] h-full bg-white dark:bg-slate-800 border-r border-gray-200 dark:border-slate-700 z-10 transition-all duration-300 pointer-events-auto"
       :class="isSidebarOpened ? '' : '-translate-x-[calc(100%_-_80px)]'"
     >
-      <!-- Header -->
-      <div class="flex items-center h-16 w-full px-6">
-        <h2
-          class="font-main text-lg font-semibold text-gray-700 dark:text-white capitalize"
-        >
-          {{ activeSidebar.name }}
-        </h2>
-        <button
-          class="flex xl:hidden items-center justify-center h-10 w-10 rounded-full ml-auto text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-colors duration-300"
-          @click="isSidebarOpened = false"
-        >
-          <i class="i-feather-chevron-left w-6 h-6"></i>
-        </button>
-      </div>
-      <!-- Body -->
-      <div
-        class="relative h-[calc(100%_-_64px)] w-full overflow-y-auto slimscroll px-6"
+      <slot
+        name="subnav"
+        v-bind="{
+          activeSidebar,
+          sidebars,
+          isSidebarOpened,
+          toggleActiveSidebar,
+        }"
       >
-        <component
-          :is="activeSidebar.subnav"
-          v-if="activeSidebar?.subnav"
-        ></component>
-      </div>
+        <!-- Header -->
+        <div class="flex items-center h-16 w-full px-6">
+          <h2
+            class="font-main text-lg font-semibold text-gray-700 dark:text-white capitalize"
+          >
+            {{ activeSidebar.name }}
+          </h2>
+          <button
+            class="flex xl:hidden items-center justify-center h-10 w-10 rounded-full ml-auto text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-colors duration-300"
+            @click="isSidebarOpened = false"
+          >
+            <i class="i-feather-chevron-left w-6 h-6"></i>
+          </button>
+        </div>
+        <!-- Body -->
+        <div
+          class="relative h-[calc(100%_-_64px)] w-full overflow-y-auto slimscroll px-6"
+        >
+          <component
+            :is="activeSidebar.subnav"
+            v-if="activeSidebar?.subnav"
+          ></component>
+        </div>
+      </slot>
     </div>
   </div>
 </template>
