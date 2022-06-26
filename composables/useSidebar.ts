@@ -21,13 +21,13 @@ export const useSidebar = createSharedComposable(() => {
     {
       name: 'Dashboards',
       icon: () => h('i', { class: 'i-ph-sidebar-duotone w-5 h-5' }),
-      subnav: LazyNavigationSidebarMenuComponents,
+      subnav: LazyNavigationSidebarMenuDashboards,
       activePath: '/dashboards',
     },
     {
       name: 'Layouts',
       icon: () => h('i', { class: 'i-ph-app-window-duotone w-5 h-5' }),
-      subnav: LazyNavigationSidebarMenuDashboards,
+      subnav: LazyNavigationSidebarMenuLayouts,
       activePath: '/layouts',
     },
     {
@@ -39,7 +39,7 @@ export const useSidebar = createSharedComposable(() => {
     {
       name: 'Components',
       icon: () => h('i', { class: 'i-ph-grid-four-duotone w-5 h-5' }),
-      subnav: LazyNavigationSidebarMenuLayouts,
+      subnav: LazyNavigationSidebarMenuComponents,
       activePath: '/components',
     },
     {
