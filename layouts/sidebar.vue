@@ -39,6 +39,7 @@ const { activePanel, panelTransitionFrom, closePanel } = usePanels()
       <component
         :is="activePanel.component"
         v-if="activePanel?.component"
+        class="fixed top-0 h-full w-96 z-[100]"
         :class="[activePanel.position === 'left' ? 'left-0' : 'right-0']"
       />
     </Transition>

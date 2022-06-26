@@ -5,7 +5,7 @@ const activeTab = ref('tab-1')
 
 <template>
   <div
-    class="fixed top-0 h-full w-96 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 transition-all duration-300 z-[100]"
+    class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700"
   >
     <div class="flex items-center justify-between h-16 w-full px-10">
       <h2 class="font-main text-lg font-semibold text-gray-700 dark:text-white">
