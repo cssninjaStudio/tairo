@@ -70,7 +70,7 @@ const toggle = (key: number) => {
           @click.prevent="() => toggle(key)"
         >
           <slot
-            name="accordion-header-content"
+            name="accordion-item-summary"
             :item="item"
             :index="key"
             :toggle="toggle"
