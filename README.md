@@ -4,7 +4,6 @@ We recommend to look at the [documentation](https://v3.nuxtjs.org).
 
 ## Preview
 
-
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/productdevbook/nuxt3-app)
 
 ## Deploy your own
@@ -18,7 +17,7 @@ This starter template also includes:
 - [Tailwind CSS v3](https://github.com/tailwindlabs/tailwindcss)
 - [Headless UI](https://headlessui.dev/vue/menu) - unstyled, fully accessible UI components, designed to integrate beautifully with Tailwind CSS
 - [Heroicons](https://github.com/tailwindlabs/heroicons#vue) - beautiful hand-crafted SVG icons,
-by the makers of Tailwind CSS
+  by the makers of Tailwind CSS
 
 First-party plugins needed for Tailwind UI:
 
@@ -27,8 +26,8 @@ First-party plugins needed for Tailwind UI:
 - [tailwindcss/line-clamp](https://github.com/tailwindlabs/tailwindcss-line-clamp)
 - [tailwindcss/aspect-ratio](https://github.com/tailwindlabs/tailwindcss-aspect-ratio)
 
-
 Best Nuxt with Plugins:
+
 - [Pinia](https://github.com/posva/pinia)
 
 ## Setup
@@ -66,22 +65,25 @@ If you want to update the libraries, I left a nice command for you. Select it wi
 ```bash
 yarn allupdate
 ```
+
 Example
+
 ```
 ➜  nuxt3-app git:(master) yarn allupdate
 yarn run v1.22.11
 $ yarn upgrade-interactive --latest
-info Color legend : 
- "<red>"    : Major Update backward-incompatible updates 
- "<yellow>" : Minor Update backward-compatible features 
+info Color legend :
+ "<red>"    : Major Update backward-incompatible updates
+ "<yellow>" : Minor Update backward-compatible features
  "<green>"  : Patch Update backward-compatible bug fixes
 ? Choose which packages to update. (Press <space> to select, <a> to toggle all, <i> to invert selection)
  devDependencies
    name   range   from                       to                      url
-❯◯ nuxt3  latest  3.0.0-27237303.6acfdcd  ❯  3.0.0-27238235.a1bcc53  
+❯◯ nuxt3  latest  3.0.0-27237303.6acfdcd  ❯  3.0.0-27238235.a1bcc53
 ```
 
 ## Stay in touch
+
 - Website - [https://productdevbook.com](https://productdevbook.com/)
 - Twitter - [@productdevbook](https://twitter.com/productdevbook)
 

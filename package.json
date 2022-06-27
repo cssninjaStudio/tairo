@@ -7,20 +7,14 @@
     "allupdate": "yarn upgrade-interactive",
     "test": "run-p test:*",
     "test:tsc": "vue-tsc --noEmit",
-    "test:lint": "run-s lint:eslint lint:stylelint lint:prettier",
-    "lint": "run-s lint:eslint:fix lint:stylelint:fix lint:prettier:fix",
-    "lint:prettier": "prettier --check \". /**/*.(ts|vue|css|scss|md)\"",
-    "lint:prettier:fix": "prettier --write \". /**/*.(ts|vue|css|scss|md)\"",
+    "test:lint": "run-s lint:eslint lint:prettier",
+    "lint": "run-s lint:eslint:fix lint:prettier:fix",
+    "lint:prettier": "prettier --check \"./**/*.(ts|vue|css|scss|md)\"",
+    "lint:prettier:fix": "prettier --write \"./**/*.(ts|vue|css|scss|md)\"",
     "lint:eslint": "eslint .",
-    "lint:eslint:fix": "eslint --fix .",
-    "lint:stylelint": "stylelint ./**/*.{vue,css,scss}",
-    "lint:stylelint:fix": "stylelint ./**/*.{vue,css,scss} --fix"
+    "lint:eslint:fix": "eslint --fix ."
   },
-  "dependencies": {
-    "prism-theme-vars": "0.2.3",
-    "vue-prism-component": "2.0.0",
-    "vue-scrollto": "2.20.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@antfu/eslint-config": "0.25.2",
     "@headlessui/vue": "1.6.5",
@@ -52,13 +46,16 @@
     "lint-staged": "13.0.3",
     "markdown-it": "13.0.1",
     "markdown-it-prism": "2.2.4",
+    "npm-run-all": "4.1.5",
     "nuxt": "3.0.0-rc.4",
     "pinia": "2.0.14",
     "prettier": "2.7.1",
     "prism-theme-vars": "0.2.3",
     "prismjs": "1.28.0",
     "typescript": "4.7.4",
-    "vue-prism-component": "2.0.0"
+    "vue-prism-component": "2.0.0",
+    "vue-scrollto": "2.20.0",
+    "vue-tsc": "0.38.2"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
