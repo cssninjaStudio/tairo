@@ -1,19 +1,30 @@
 <script setup lang="ts">
-const isSidebarOpened = useSidebarOpened()
-const isLanguagePanelOpened = useLanguagePanelOpened()
-const isActivityPanelOpened = useActivityPanelOpened()
-const isSearchPanelOpened = useSearchPanelOpened()
-const isCircularMenuOpened = useCircularMenuOpened()
+const { isSidebarOpened } = useSidebar()
+const { activePanel, panelTransitionFrom, closePanel } = usePanels()
 </script>
 
 <template>
   <div class="bg-slate-100 dark:bg-slate-900">
-    <NavigationSidebar
-      :active="isSidebarOpened"
-      @open="isSidebarOpened = true"
-      @close="isSidebarOpened = false"
-      @search="isSearchPanelOpened = true"
-    />
+    <NavigationSidebar>
+      <!-- Logo -->
+      <div class="flex items-center justify-center w-full h-16">
+        <NuxtLink to="/" class="flex items-center justify-center">
+          <img
+            class="block h-10"
+            src="/img/logos/logo/logo.svg"
+            alt="Tairo logo"
+          />
+        </NuxtLink>
+      </div>
+
+      <template #end>
+        <!-- Menu item -->
+        <div class="flex items-center justify-center w-full h-16">
+          <NavigationSidebarAccountMenu />
+        </div>
+      </template>
+    </NavigationSidebar>
+
     <div
       class="relative px-4 xl:px-16 min-h-screen w-full bg-slate-100 dark:bg-slate-900 transition-all duration-300"
       :class="
@@ -23,37 +34,45 @@ const isCircularMenuOpened = useCircularMenuOpened()
       "
     >
       <div class="w-full max-w-6xl mx-auto">
-        <NavigationToolbar
-          :toggled="isSidebarOpened"
-          @toggled="isSidebarOpened = !isSidebarOpened"
-          @language="isLanguagePanelOpened = true"
-          @activity="isActivityPanelOpened = true"
-        />
+        <NavigationToolbar />
         <slot></slot>
       </div>
     </div>
 
-    <PanelLanguage
-      :active="isLanguagePanelOpened"
-      @close="isLanguagePanelOpened = false"
-    />
+    <!-- Active Panel -->
+    <Transition
+      enter-active-class="transition-transform duration-300 ease-out"
+      :enter-from-class="
+        panelTransitionFrom === 'left'
+          ? '-translate-x-full'
+          : 'translate-x-full'
+      "
+      leave-active-class="transition-transform duration-300 ease-in"
+      :leave-to-class="
+        panelTransitionFrom === 'left'
+          ? '-translate-x-full'
+          : 'translate-x-full'
+      "
+    >
+      <component
+        :is="activePanel.component"
+        v-if="activePanel?.component"
+        class="fixed top-0 h-full w-96 z-[100]"
+        :class="[activePanel.position === 'left' ? 'left-0' : 'right-0']"
+      />
+    </Transition>
 
-    <PanelActivity
-      :active="isActivityPanelOpened"
-      @close="isActivityPanelOpened = false"
-    />
+    <!-- Overlay -->
+    <div
+      class="fixed top-0 left-0 w-full h-full bg-slate-800/60 transition-opacity duration-300 z-[99] cursor-pointer"
+      :class="
+        activePanel
+          ? 'opacity-100 pointer-events-auto'
+          : 'opacity-0 pointer-events-none'
+      "
+      @click="closePanel"
+    ></div>
 
-    <PanelSearch
-      :active="isSearchPanelOpened"
-      @close="isSearchPanelOpened = false"
-    />
-
-    <NavigationCircularMenu
-      :active="isCircularMenuOpened"
-      @triggered="isCircularMenuOpened = !isCircularMenuOpened"
-      @closed="isCircularMenuOpened = false"
-      @language="isLanguagePanelOpened = true"
-      @activity="isActivityPanelOpened = true"
-    />
+    <NavigationCircularMenu />
   </div>
 </template>

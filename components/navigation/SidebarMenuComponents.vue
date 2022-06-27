@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
+
+const route = useRoute()
 </script>
 
 <template>
@@ -21,7 +23,10 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
     </li>
     <!-- Menu item -->
     <li class="group min-h-[2rem] mb-1">
-      <Disclosure v-slot="{ open }">
+      <Disclosure
+        v-slot="{ open }"
+        :default-open="route.path.startsWith('/components/avatar')"
+      >
         <DisclosureButton class="w-full">
           <a class="relative top-0.5 flex items-center">
             <span
@@ -113,7 +118,10 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
     </li>
     <!-- Menu item -->
     <li class="group min-h-[2rem] mb-1">
-      <Disclosure v-slot="{ open }">
+      <Disclosure
+        v-slot="{ open }"
+        :default-open="route.path.startsWith('/components/tabs')"
+      >
         <DisclosureButton class="w-full">
           <a class="relative top-0.5 flex items-center">
             <span
