@@ -1,29 +1,21 @@
 <script setup lang="ts">
-// import { toc } from '@@/documentation/components/snack/toc'
-// import { } from '@@/documentation/components/snack'
+import { breadcrumb, toc } from '@@/documentation/components/snack/toc'
+import {
+  base,
+  baseLight,
+  icon,
+  iconLight,
+  iconSmall,
+  image,
+  imageLight,
+  imageSmall,
+  small,
+} from '@@/documentation/components/snack'
+import { properties } from '@@/documentation/components/snack/properties'
 
 definePageMeta({
   title: 'Snacks',
 })
-
-const breadcrumb = [
-  {
-    label: 'Home',
-    hideLabel: true,
-    icon: 'i-lucide-home',
-    to: '/',
-  },
-  {
-    label: 'Components',
-    hideLabel: false,
-    to: '/components',
-  },
-  {
-    label: 'Snack',
-    hideLabel: false,
-    to: '/components/snack',
-  },
-]
 </script>
 
 <template>
@@ -47,7 +39,9 @@ const breadcrumb = [
                 <BaseSnack label="Python" />
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="base" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -63,7 +57,9 @@ const breadcrumb = [
                 <BaseSnack label="Python" light />
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="baseLight" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -79,7 +75,9 @@ const breadcrumb = [
                 <BaseSnack label="Python" small />
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="small" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -95,7 +93,9 @@ const breadcrumb = [
                 <BaseSnack label="Python" icon="i-logos-python" />
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="icon" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -111,7 +111,9 @@ const breadcrumb = [
                 <BaseSnack label="Python" icon="i-logos-python" light />
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="iconLight" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -127,7 +129,9 @@ const breadcrumb = [
                 <BaseSnack label="Python" icon="i-logos-python" small />
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="iconSmall" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -143,7 +147,9 @@ const breadcrumb = [
                 <BaseSnack label="John" image="/img/avatars/11.svg" />
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="image" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -159,7 +165,9 @@ const breadcrumb = [
                 <BaseSnack label="John" image="/img/avatars/11.svg" light />
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="imageLight" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -175,12 +183,24 @@ const breadcrumb = [
                 <BaseSnack label="John" image="/img/avatars/11.svg" small />
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="imageSmall" />
+            </template>
           </DocComponent>
         </DocSection>
+
+        <!-- Snack props -->
+        <DocProps
+          id="snack-props"
+          component="Snack"
+          :properties="properties.props"
+          :slots="properties.slots"
+        />
       </template>
       <!-- Toc -->
-      <template #toc></template>
+      <template #toc>
+        <DocToc :anchors="toc" />
+      </template>
     </DocLayout>
   </div>
 </template>

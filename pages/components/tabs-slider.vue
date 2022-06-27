@@ -1,29 +1,19 @@
 <script setup lang="ts">
-// import { toc } from '@@/documentation/components/tabs-slider/toc'
-// import { } from '@@/documentation/components/tabs-slider'
+import { breadcrumb, toc } from '@@/documentation/components/tabs-slider/toc'
+import {
+  x2Full,
+  x2Rounded,
+  x3Full,
+  x3Rounded,
+} from '@@/documentation/components/tabs-slider'
+import {
+  itemProperties,
+  properties,
+} from '@@/documentation/components/tabs-slider/properties'
 
 definePageMeta({
   title: 'Slider Tabs',
 })
-
-const breadcrumb = [
-  {
-    label: 'Home',
-    hideLabel: true,
-    icon: 'i-lucide-home',
-    to: '/',
-  },
-  {
-    label: 'Components',
-    hideLabel: false,
-    to: '/components',
-  },
-  {
-    label: 'Slider tabs',
-    hideLabel: false,
-    to: '/components/tabs-slider',
-  },
-]
 </script>
 
 <template>
@@ -37,7 +27,7 @@ const breadcrumb = [
       <template #content>
         <!-- Tabs -->
         <DocSection id="tabs-slider-2x-rounded" title="Tabs" tag="1.0.0">
-          <DocComponent label="Left aligned example">
+          <DocComponent label="Rounded with two slots example">
             <template #demo>
               <div class="w-full max-w-sm">
                 <BaseTabSlider
@@ -80,13 +70,15 @@ const breadcrumb = [
                 </BaseTabSlider>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="x2Rounded" />
+            </template>
           </DocComponent>
         </DocSection>
 
         <!-- Tabs -->
         <DocSection id="tabs-slider-2x-full" title="Tabs" tag="1.0.0">
-          <DocComponent label="Left aligned example">
+          <DocComponent label="Full with two slots example">
             <template #demo>
               <div class="w-full max-w-sm">
                 <BaseTabSlider
@@ -130,13 +122,15 @@ const breadcrumb = [
                 </BaseTabSlider>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="x2Full" />
+            </template>
           </DocComponent>
         </DocSection>
 
         <!-- Tabs -->
         <DocSection id="tabs-slider-3x-rounded" title="Tabs" tag="1.0.0">
-          <DocComponent label="Left aligned example">
+          <DocComponent label="Rounded with three slots example">
             <template #demo>
               <div class="w-full max-w-sm">
                 <BaseTabSlider
@@ -180,13 +174,15 @@ const breadcrumb = [
                 </BaseTabSlider>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="x3Rounded" />
+            </template>
           </DocComponent>
         </DocSection>
 
         <!-- Tabs -->
         <DocSection id="tabs-slider-3x-full" title="Tabs" tag="1.0.0">
-          <DocComponent label="Left aligned example">
+          <DocComponent label="Full with three slots example">
             <template #demo>
               <div class="w-full max-w-sm">
                 <BaseTabSlider
@@ -231,12 +227,32 @@ const breadcrumb = [
                 </BaseTabSlider>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="x3Full" />
+            </template>
           </DocComponent>
         </DocSection>
+
+        <!-- Tabs slider props -->
+        <DocProps
+          id="tabs-slider-props"
+          component="Slider tabs"
+          :properties="properties.props"
+          :slots="properties.slots"
+        />
+
+        <!-- Tabs slider item props -->
+        <DocProps
+          id="tabs-slider-item-props"
+          component="Slider tabs item"
+          :properties="itemProperties.props"
+          :slots="itemProperties.slots"
+        />
       </template>
       <!-- Toc -->
-      <template #toc></template>
+      <template #toc>
+        <DocToc :anchors="toc" />
+      </template>
     </DocLayout>
   </div>
 </template>

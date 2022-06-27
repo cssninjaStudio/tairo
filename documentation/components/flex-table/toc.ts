@@ -1,32 +1,56 @@
 export const toc = [
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Straight shape',
+    anchor: 'flex-table-straight',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Rounded shape',
+    anchor: 'flex-table-rounded',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
-    subItems: [],
-  },
-  {
-    label: 'Label',
-    anchor: 'link',
-    subItems: [],
-  },
-  {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Curved shape',
+    anchor: 'flex-table-curved',
     subItems: [],
   },
   {
     label: 'Props',
-    anchor: 'link',
+    anchor: 'flex-table-props',
     subItems: [],
+  },
+  {
+    label: 'Row props',
+    anchor: 'flex-table-row-props',
+    subItems: [],
+  },
+  {
+    label: 'Heading props',
+    anchor: 'flex-table-heading-props',
+    subItems: [],
+  },
+  {
+    label: 'Cell props',
+    anchor: 'flex-table-cell-props',
+    subItems: [],
+  },
+]
+
+export const breadcrumb = [
+  {
+    label: 'Home',
+    hideLabel: true,
+    icon: 'i-lucide-home',
+    to: '/',
+  },
+  {
+    label: 'Components',
+    hideLabel: false,
+    to: '/components',
+  },
+  {
+    label: 'Flext table',
+    hideLabel: false,
+    to: '/components/flex-table',
   },
 ]

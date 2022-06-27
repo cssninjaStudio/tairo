@@ -1,32 +1,51 @@
 export const toc = [
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Dot separator',
+    anchor: 'breadcrumb-dot',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Slash separator',
+    anchor: 'breadcrumb-slash',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Chevron separator',
+    anchor: 'breadcrumb-chevron',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
-    subItems: [],
-  },
-  {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Arrow separator',
+    anchor: 'breadcrumb-arrow',
     subItems: [],
   },
   {
     label: 'Props',
-    anchor: 'link',
+    anchor: 'breadcrumb-props',
     subItems: [],
+  },
+  {
+    label: 'Item props',
+    anchor: 'breadcrumb-item-props',
+    subItems: [],
+  },
+]
+
+export const breadcrumb = [
+  {
+    label: 'Home',
+    hideLabel: true,
+    icon: 'i-lucide-home',
+    to: '/',
+  },
+  {
+    label: 'Components',
+    hideLabel: false,
+    to: '/components',
+  },
+  {
+    label: 'Colors',
+    hideLabel: false,
+    to: '/components/breadcrumb',
   },
 ]

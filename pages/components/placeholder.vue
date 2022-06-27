@@ -1,29 +1,11 @@
 <script setup lang="ts">
-// import { toc } from '@@/documentation/components/placeholder/toc'
-// import { } from '@@/documentation/components/placeholder'
+import { breadcrumb, toc } from '@@/documentation/components/placeholder/toc'
+import { base, variation } from '@@/documentation/components/placeholder'
+import { properties } from '@@/documentation/components/placeholder/properties'
 
 definePageMeta({
   title: 'Placeholders',
 })
-
-const breadcrumb = [
-  {
-    label: 'Home',
-    hideLabel: true,
-    icon: 'i-lucide-home',
-    to: '/',
-  },
-  {
-    label: 'Components',
-    hideLabel: false,
-    to: '/components',
-  },
-  {
-    label: 'Placeholder',
-    hideLabel: false,
-    to: '/components/placeholder',
-  },
-]
 </script>
 
 <template>
@@ -35,9 +17,9 @@ const breadcrumb = [
     <DocLayout>
       <!-- content -->
       <template #content>
-        <!-- Accordion -->
-        <DocSection id="accordion-inclusive" title="Accordion" tag="1.0.0">
-          <DocComponent label="Inclusive accordion example">
+        <!-- Placeholder -->
+        <DocSection id="placeholder-base" title="Placeholder" tag="1.0.0">
+          <DocComponent label="Page placeholder example">
             <template #demo>
               <BasePlaceholderPage
                 title="Looks like you are new!"
@@ -57,12 +39,55 @@ const breadcrumb = [
                 </div>
               </BasePlaceholderPage>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode langugage="html" :code="base" />
+            </template>
           </DocComponent>
         </DocSection>
+
+        <!-- Placeholder variation -->
+        <DocSection id="placeholder-variation" title="Placeholder" tag="1.0.0">
+          <DocComponent label="Page placeholder example">
+            <template #demo>
+              <BasePlaceholderPage
+                title="Looks like you are new!"
+                subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Erat enim Polemonis. Duo Reges."
+              >
+                <template #image>
+                  <img
+                    src="/img/illustrations/placeholders/people/1.svg"
+                    alt="placeholder-image"
+                  />
+                </template>
+
+                <div class="flex justify-center gap-2 mt-2">
+                  <BaseButton color="default" shape="curved" class="h-11 w-32">
+                    Go Home
+                  </BaseButton>
+                  <BaseButton color="primary" shape="curved" class="h-11 w-32">
+                    Edit Profile
+                  </BaseButton>
+                </div>
+              </BasePlaceholderPage>
+            </template>
+            <template #code>
+              <DocCode langugage="html" :code="variation" />
+            </template>
+          </DocComponent>
+        </DocSection>
+
+        <!-- Placeholder props -->
+        <DocProps
+          id="placeholder-props"
+          component="Placeholder"
+          :properties="properties.props"
+          :slots="properties.slots"
+        />
       </template>
       <!-- Toc -->
-      <template #toc></template>
+      <template #toc>
+        <DocToc :anchors="toc" />
+      </template>
     </DocLayout>
   </div>
 </template>

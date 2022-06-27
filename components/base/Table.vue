@@ -1,9 +1,23 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+export type TableShapes = 'straight' | 'rounded' | 'curved'
+
+export interface TableProps {
+  shape?: TableShapes
+}
+
+const props = withDefaults(defineProps<TableProps>(), {
+  shape: 'rounded',
+})
+</script>
 
 <template>
   <div class="flex flex-col">
     <div
-      class="overflow-x-auto rounded-md border border-gray-200 dark:border-gray-700"
+      class="overflow-x-auto border border-gray-200 dark:border-gray-700"
+      :class="[
+        props.shape === 'rounded' && 'rounded-md',
+        props.shape === 'curved' && 'rounded-xl',
+      ]"
     >
       <div class="inline-block min-w-full align-middle">
         <div class="overflow-hidden">

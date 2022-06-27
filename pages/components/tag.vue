@@ -1,36 +1,11 @@
 <script setup lang="ts">
-import { toc } from '@@/documentation/elements/button/toc'
-import {
-  disabled,
-  group,
-  icons,
-  links,
-  loading,
-  outline,
-  pastel,
-  shapes,
-  solid,
-} from '@@/documentation/elements/button'
+import { breadcrumb, toc } from '@@/documentation/components/tag/toc'
+import { outline, pastel, shapes, solid } from '@@/documentation/components/tag'
+import { properties } from '@@/documentation/components/tag/properties'
 
 definePageMeta({
   title: 'Tags',
 })
-
-const breadcrumb = [
-  {
-    label: 'Home',
-    icon: 'i-lucide-home',
-    to: '/',
-  },
-  {
-    label: 'Components',
-    to: '/components',
-  },
-  {
-    label: 'Tag',
-    to: '/components/tag',
-  },
-]
 </script>
 
 <template>
@@ -74,7 +49,7 @@ const breadcrumb = [
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="shapes" />
+              <DocCode language="html" :code="solid" />
             </template>
           </DocComponent>
         </DocSection>
@@ -102,7 +77,7 @@ const breadcrumb = [
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="shapes" />
+              <DocCode language="html" :code="outline" />
             </template>
           </DocComponent>
         </DocSection>
@@ -130,10 +105,22 @@ const breadcrumb = [
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="shapes" />
+              <DocCode language="html" :code="pastel" />
             </template>
           </DocComponent>
         </DocSection>
+
+        <!-- Tag props -->
+        <DocProps
+          id="tag-props"
+          component="Tag"
+          :properties="properties.props"
+          :slots="properties.slots"
+        />
+      </template>
+      <!-- Toc -->
+      <template #toc>
+        <DocToc :anchors="toc" />
       </template>
     </DocLayout>
   </div>

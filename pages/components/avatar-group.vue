@@ -1,29 +1,16 @@
 <script setup lang="ts">
-// import { toc } from '@@/documentation/components/avatar-group/toc'
-// import { } from '@@/documentation/components/avatar-group'
+import { breadcrumb, toc } from '@@/documentation/components/avatar-group/toc'
+import {
+  large,
+  medium,
+  small,
+  tiny,
+} from '@@/documentation/components/avatar-group'
+import { properties } from '@@/documentation/components/avatar-group/properties'
 
 definePageMeta({
   title: 'Avatar group',
 })
-
-const breadcrumb = [
-  {
-    label: 'Home',
-    hideLabel: true,
-    icon: 'i-lucide-home',
-    to: '/',
-  },
-  {
-    label: 'Components',
-    hideLabel: false,
-    to: '/components',
-  },
-  {
-    label: 'Avatar group',
-    hideLabel: false,
-    to: '/components/avatar-group',
-  },
-]
 
 const people = [
   {
@@ -76,7 +63,9 @@ const people = [
                 <BaseAvatarGroup size="xs" :avatars="people" />
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="tiny" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -88,7 +77,9 @@ const people = [
                 <BaseAvatarGroup size="sm" :avatars="people" />
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="small" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -100,7 +91,9 @@ const people = [
                 <BaseAvatarGroup size="md" :avatars="people" />
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="medium" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -112,12 +105,24 @@ const people = [
                 <BaseAvatarGroup size="lg" :avatars="people" />
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="large" />
+            </template>
           </DocComponent>
         </DocSection>
+
+        <!-- Avatar group toc -->
+        <DocProps
+          id="avatar-group-props"
+          component="Avatar group"
+          :properties="properties.props"
+          :slots="properties.slots"
+        />
       </template>
       <!-- Toc -->
-      <template #toc></template>
+      <template #toc>
+        <DocToc :anchors="toc" />
+      </template>
     </DocLayout>
   </div>
 </template>

@@ -1,25 +1,30 @@
 export const properties = {
   props: [
     {
-      name: 'string',
+      name: 'title',
       type: 'string',
       required: 'false',
-      default: 'rounded',
+      default: 'undefined',
       values: ['string'],
     },
     {
-      name: 'boolean',
-      type: 'boolean',
+      name: 'subtitle',
+      type: 'string',
       required: 'false',
-      default: 'false',
-      values: ['boolean'],
+      default: 'undefined',
+      values: ['string'],
     },
   ],
   slots: [
     {
       name: '#default',
       properties: ['null'],
-      description: 'Component content',
+      description: 'Placeholder actions',
+    },
+    {
+      name: '#image',
+      properties: ['null'],
+      description: 'Placeholder image',
     },
   ],
 }

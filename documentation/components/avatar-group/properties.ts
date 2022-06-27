@@ -1,18 +1,25 @@
 export const properties = {
   props: [
     {
-      name: 'string',
-      type: 'string',
+      name: 'limit',
+      type: 'number',
       required: 'false',
-      default: 'rounded',
-      values: ['string'],
+      default: '4',
+      values: ['number'],
     },
     {
-      name: 'boolean',
-      type: 'boolean',
+      name: 'size',
+      type: 'AvatarGroupSizes',
       required: 'false',
       default: 'false',
-      values: ['boolean'],
+      values: ['xs', 'sm', 'md', 'lg'],
+    },
+    {
+      name: 'avatars',
+      type: 'AvatarProps[ ]',
+      required: 'true',
+      default: '() => [ ]',
+      values: ['array'],
     },
   ],
   slots: [

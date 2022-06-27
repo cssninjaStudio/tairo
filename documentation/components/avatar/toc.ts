@@ -66,7 +66,7 @@ export const toc = [
   },
   {
     label: 'Props',
-    anchor: 'component-props',
+    anchor: 'avatar-props',
     subItems: [],
   },
 ]

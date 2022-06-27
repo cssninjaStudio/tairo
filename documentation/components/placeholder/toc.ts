@@ -1,32 +1,36 @@
 export const toc = [
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Placeholder base',
+    anchor: 'placeholder-base',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
-    subItems: [],
-  },
-  {
-    label: 'Label',
-    anchor: 'link',
-    subItems: [],
-  },
-  {
-    label: 'Label',
-    anchor: 'link',
-    subItems: [],
-  },
-  {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Content variation',
+    anchor: 'placeholder-variation',
     subItems: [],
   },
   {
     label: 'Props',
-    anchor: 'link',
+    anchor: 'placeholder-props',
     subItems: [],
+  },
+]
+
+export const breadcrumb = [
+  {
+    label: 'Home',
+    hideLabel: true,
+    icon: 'i-lucide-home',
+    to: '/',
+  },
+  {
+    label: 'Components',
+    hideLabel: false,
+    to: '/components',
+  },
+  {
+    label: 'Placeholder',
+    hideLabel: false,
+    to: '/components/placeholder',
   },
 ]

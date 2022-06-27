@@ -1,14 +1,21 @@
 export const properties = {
   props: [
     {
-      name: 'string',
-      type: 'string',
+      name: 'shape',
+      type: 'IconBoxShapes',
       required: 'false',
       default: 'rounded',
-      values: ['string'],
+      values: ['circle', 'rounded'],
     },
     {
-      name: 'boolean',
+      name: 'size',
+      type: 'IconBoxSizes',
+      required: 'false',
+      default: 'xs',
+      values: ['xs', 'sm', 'md', 'lg', 'xl', '2xl'],
+    },
+    {
+      name: 'bordered',
       type: 'boolean',
       required: 'false',
       default: 'false',
@@ -19,7 +26,7 @@ export const properties = {
     {
       name: '#default',
       properties: ['null'],
-      description: 'Component content',
+      description: 'Icon box content',
     },
   ],
 }

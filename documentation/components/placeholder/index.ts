@@ -1,59 +1,46 @@
-export const example = `
+export const base = `
 <template>
-  
+  <BasePlaceholderPage
+    title="Looks like you are new!"
+    subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Erat enim Polemonis. Duo Reges."
+    >
+    <template #image>
+      <img
+        src="/img/illustrations/placeholders/people/2.svg"
+        alt="placeholder-image"
+      />
+    </template>
+
+    <div class="flex justify-center gap-2 mt-2">
+      <BaseButton color="primary" shape="curved" class="h-11 w-40">
+        Take some action
+      </BaseButton>
+    </div>
+  </BasePlaceholderPage>
 </template>
 `
 
-export const example2 = `
+export const variation = `
 <template>
-  
-</template>
-`
+  <BasePlaceholderPage
+    title="Looks like you are new!"
+    subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Erat enim Polemonis. Duo Reges."
+    >
+    <template #image>
+      <img
+        src="/img/illustrations/placeholders/people/1.svg"
+        alt="placeholder-image"
+      />
+    </template>
 
-export const example3 = `
-<template>
-  
-</template>
-`
-
-export const example4 = `
-<template>
-  
-</template>
-`
-
-export const example5 = `
-<template>
-  
-</template>
-`
-
-export const example6 = `
-<template>
-  
-</template>
-`
-
-export const example7 = `
-<template>
-  
-</template>
-`
-
-export const example8 = `
-<template>
-  
-</template>
-`
-
-export const example9 = `
-<template>
-  
-</template>
-`
-
-export const example10 = `
-<template>
-  
+    <div class="flex justify-center gap-2 mt-2">
+      <BaseButton color="default" shape="curved" class="h-11 w-32">
+        Go Home
+      </BaseButton>
+      <BaseButton color="primary" shape="curved" class="h-11 w-32">
+        Edit Profile
+      </BaseButton>
+    </div>
+  </BasePlaceholderPage>
 </template>
 `

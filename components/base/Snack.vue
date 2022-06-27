@@ -46,7 +46,7 @@ const emit = defineEmits(['delete'])
       />
     </div>
     <span class="font-text text-sm text-slate-600 dark:text-slate-300">
-      {{ props.label }}
+      <slot>{{ props.label }}</slot>
     </span>
     <button
       class="pl-3 cursor-pointer"

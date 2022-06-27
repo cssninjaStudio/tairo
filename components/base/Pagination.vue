@@ -2,6 +2,8 @@
 import { computed } from 'vue'
 import type { RouteLocationOptions } from 'vue-router'
 
+export type PaginationShapes = 'straight' | 'rounded' | 'curved' | 'full'
+
 export interface PaginationProps {
   itemPerPage: number
   totalItems: number
@@ -9,6 +11,7 @@ export interface PaginationProps {
   maxLinksDisplayed?: number
   noRouter?: boolean
   routerQueryKey?: string
+  shape?: PaginationShapes
 }
 
 export interface PaginationEmits {
@@ -21,6 +24,7 @@ const props = withDefaults(defineProps<PaginationProps>(), {
   maxLinksDisplayed: 4,
   useRouter: true,
   routerQueryKey: 'page',
+  shape: 'rounded',
 })
 
 const route = useRoute()
@@ -96,15 +100,30 @@ const handleLinkClick = (e: MouseEvent, page = 1) => {
 </script>
 
 <template>
-  <div class="flex">
-    <ul class="flex">
+  <div class="inline-flex flex-col md:flex-row md:justify-between w-full">
+    <ul
+      class="inline-flex flex-wrap gap-2 md:gap-1 mb-4 md:mb-0 bg-slate-100 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 p-1"
+      :class="[
+        props.shape === 'rounded' && 'rounded-md',
+        props.shape === 'curved' && 'rounded-xl',
+        props.shape === 'full' && 'rounded-full',
+      ]"
+    >
       <slot name="before-pagination"></slot>
       <!-- Link -->
       <li>
         <NuxtLink
           :to="paginatedLink(1)"
           tabindex="0"
-          :class="[currentPage === 1 && 'is-current']"
+          class="flex items-center justify-center w-10 h-10 font-text text-sm border transition-all duration-300"
+          :class="[
+            currentPage === 1
+              ? 'bg-primary-500 text-white border-primary-500 shadow-lg shadow-primary-500/50 dark:shadow-primary-500/20'
+              : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-900 text-slate-500 hover:text-slate-700 dark:hover:text-slate-400',
+            props.shape === 'rounded' && 'rounded-md',
+            props.shape === 'curved' && 'rounded-xl',
+            props.shape === 'full' && 'rounded-full',
+          ]"
           @keydown.space.prevent="(e:any) => (e.target as HTMLAnchorElement).click()"
           @click="(e:any) => handleLinkClick(e, 1)"
         >
@@ -114,7 +133,16 @@ const handleLinkClick = (e: MouseEvent, page = 1) => {
 
       <!-- Ellipsis -->
       <li v-if="showLastLink && (pages.length === 0 || pages[0] > 2)">
-        <span>…</span>
+        <span
+          class="flex items-center justify-center w-10 h-10 font-text text-sm bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-500"
+          :class="[
+            props.shape === 'rounded' && 'rounded-md',
+            props.shape === 'curved' && 'rounded-xl',
+            props.shape === 'full' && 'rounded-full',
+          ]"
+        >
+          …
+        </span>
       </li>
 
       <!-- Link -->
@@ -123,7 +151,15 @@ const handleLinkClick = (e: MouseEvent, page = 1) => {
           :to="paginatedLink(page)"
           tabindex="0"
           :aria-current="currentPage === page ? 'page' : undefined"
-          :class="[currentPage === page && 'is-current']"
+          class="flex items-center justify-center w-10 h-10 font-text text-sm transition-all duration-300"
+          :class="[
+            currentPage === page
+              ? 'bg-primary-500 text-white border-primary-500 shadow-lg shadow-primary-500/50 dark:shadow-primary-500/20'
+              : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-900 text-slate-500 hover:text-slate-700 dark:hover:text-slate-400',
+            props.shape === 'rounded' && 'rounded-md',
+            props.shape === 'curved' && 'rounded-xl',
+            props.shape === 'full' && 'rounded-full',
+          ]"
           @keydown.space.prevent="(e:any) => (e.target as HTMLAnchorElement).click()"
           @click="(e:any) => handleLinkClick(e, page)"
         >
@@ -133,7 +169,16 @@ const handleLinkClick = (e: MouseEvent, page = 1) => {
 
       <!-- Ellipsis -->
       <li v-if="showLastLink && pages[pages.length - 1] < lastPage - 1">
-        <span>…</span>
+        <span
+          class="flex items-center justify-center w-10 h-10 font-text text-sm bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-500"
+          :class="[
+            props.shape === 'rounded' && 'rounded-md',
+            props.shape === 'curved' && 'rounded-xl',
+            props.shape === 'full' && 'rounded-full',
+          ]"
+        >
+          …
+        </span>
       </li>
 
       <!-- Link -->
@@ -141,7 +186,15 @@ const handleLinkClick = (e: MouseEvent, page = 1) => {
         <NuxtLink
           :to="paginatedLink(lastPage)"
           tabindex="0"
-          :class="[currentPage === lastPage && 'is-current']"
+          class="flex items-center justify-center w-10 h-10 font-text text-sm transition-all duration-300"
+          :class="[
+            currentPage === lastPage
+              ? 'bg-primary-500 text-white border-primary-500 shadow-lg shadow-primary-500/50 dark:shadow-primary-500/20'
+              : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-900 text-slate-500 hover:text-slate-700 dark:hover:text-slate-400',
+            props.shape === 'rounded' && 'rounded-md',
+            props.shape === 'curved' && 'rounded-xl',
+            props.shape === 'full' && 'rounded-full',
+          ]"
           @keydown.space.prevent="(e:any) => (e.target as HTMLAnchorElement).click()"
           @click="(e:any) => handleLinkClick(e, lastPage)"
         >
@@ -151,27 +204,48 @@ const handleLinkClick = (e: MouseEvent, page = 1) => {
       <slot name="after-pagination"></slot>
     </ul>
 
-    <slot name="before-navigation"></slot>
-
-    <!-- Previous -->
-    <NuxtLink
-      :to="paginatedLink(currentPage - 1)"
-      tabindex="0"
-      @keydown.space.prevent="(e:any) => (e.target as HTMLAnchorElement).click()"
-      @click="(e:any) => handleLinkClick(e, currentPage - 1)"
+    <div
+      class="flex items-center justify-end gap-1 bg-slate-100 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 p-1"
+      :class="[
+        props.shape === 'rounded' && 'rounded-md',
+        props.shape === 'curved' && 'rounded-xl',
+        props.shape === 'full' && 'rounded-full',
+      ]"
     >
-      <i aria-hidden="true" class="i-lucide-chevron-left w-5 h-5"></i>
-    </NuxtLink>
+      <slot name="before-navigation"></slot>
 
-    <!-- Next -->
-    <NuxtLink
-      :to="paginatedLink(currentPage + 1)"
-      tabindex="0"
-      @keydown.space.prevent="(e:any) => (e.target as HTMLAnchorElement).click()"
-      @click="(e:any) => handleLinkClick(e, currentPage + 1)"
-    >
-      <i aria-hidden="true" class="i-lucide-chevron-right w-5 h-5"></i>
-    </NuxtLink>
-    <slot name="after-navigation"></slot>
+      <!-- Previous -->
+      <NuxtLink
+        :to="paginatedLink(currentPage - 1)"
+        tabindex="0"
+        class="flex items-center justify-center w-full md:w-10 h-10 font-text text-sm bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-900 text-slate-500 hover:text-slate-700 dark:hover:text-slate-400 transition-all duration-300"
+        :class="[
+          props.shape === 'rounded' && 'rounded-md',
+          props.shape === 'curved' && 'rounded-xl',
+          props.shape === 'full' && 'rounded-full',
+        ]"
+        @keydown.space.prevent="(e:any) => (e.target as HTMLAnchorElement).click()"
+        @click="(e:any) => handleLinkClick(e, currentPage - 1)"
+      >
+        <i aria-hidden="true" class="i-lucide-chevron-left block w-4 h-4"></i>
+      </NuxtLink>
+
+      <!-- Next -->
+      <NuxtLink
+        :to="paginatedLink(currentPage + 1)"
+        tabindex="0"
+        class="flex items-center justify-center w-full md:w-10 h-10 font-text text-sm bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-900 text-slate-500 hover:text-slate-700 dark:hover:text-slate-400 transition-all duration-300"
+        :class="[
+          props.shape === 'rounded' && 'rounded-md',
+          props.shape === 'curved' && 'rounded-xl',
+          props.shape === 'full' && 'rounded-full',
+        ]"
+        @keydown.space.prevent="(e:any) => (e.target as HTMLAnchorElement).click()"
+        @click="(e:any) => handleLinkClick(e, currentPage + 1)"
+      >
+        <i aria-hidden="true" class="i-lucide-chevron-right block w-4 h-4"></i>
+      </NuxtLink>
+      <slot name="after-navigation"></slot>
+    </div>
   </div>
 </template>

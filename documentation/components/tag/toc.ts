@@ -1,32 +1,43 @@
 export const toc = [
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Tag shapes',
+    anchor: 'tag-shapes',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Solid colors',
+    anchor: 'tag-solid',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Outline colors',
+    anchor: 'tag-outline',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
-    subItems: [],
-  },
-  {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Pastel colors',
+    anchor: 'tag-pastel',
     subItems: [],
   },
   {
     label: 'Props',
-    anchor: 'link',
+    anchor: 'tag-props',
     subItems: [],
+  },
+]
+
+export const breadcrumb = [
+  {
+    label: 'Home',
+    icon: 'i-lucide-home',
+    to: '/',
+  },
+  {
+    label: 'Components',
+    to: '/components',
+  },
+  {
+    label: 'Tag',
+    to: '/components/tag',
   },
 ]

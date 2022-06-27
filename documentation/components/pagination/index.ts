@@ -1,59 +1,47 @@
-export const example = `
+export const straight = `
 <template>
-  
+  <BasePagination
+    :item-per-page="8"
+    :total-items="512"
+    :current-page="currentPage"
+    :max-links-displayed="5"
+    shape="straight"
+  />
 </template>
 `
 
-export const example2 = `
+export const rounded = `
 <template>
-  
+  <BasePagination
+    :item-per-page="8"
+    :total-items="512"
+    :current-page="currentPage"
+    :max-links-displayed="5"
+    shape="rounded"
+  />
 </template>
 `
 
-export const example3 = `
+export const curved = `
 <template>
-  
+  <BasePagination
+    :item-per-page="8"
+    :total-items="512"
+    :current-page="currentPage"
+    :max-links-displayed="5"
+    shape="curved"
+  />
 </template>
 `
 
-export const example4 = `
+export const full = `
 <template>
-  
-</template>
-`
-
-export const example5 = `
-<template>
-  
-</template>
-`
-
-export const example6 = `
-<template>
-  
-</template>
-`
-
-export const example7 = `
-<template>
-  
-</template>
-`
-
-export const example8 = `
-<template>
-  
-</template>
-`
-
-export const example9 = `
-<template>
-  
-</template>
-`
-
-export const example10 = `
-<template>
-  
+  <BasePagination
+    :item-per-page="8"
+    :total-items="512"
+    :current-page="currentPage"
+    :max-links-displayed="5"
+    shape="full"
+  />
 </template>
 `

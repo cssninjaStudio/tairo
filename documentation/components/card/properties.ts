@@ -1,14 +1,21 @@
 export const properties = {
   props: [
     {
-      name: 'string',
-      type: 'string',
+      name: 'shape',
+      type: 'CardShape',
       required: 'false',
       default: 'rounded',
-      values: ['string'],
+      values: ['straight', 'rounded', 'curved'],
     },
     {
-      name: 'boolean',
+      name: 'elevated',
+      type: 'boolean',
+      required: 'false',
+      default: 'false',
+      values: ['boolean'],
+    },
+    {
+      name: 'elevatedHover',
       type: 'boolean',
       required: 'false',
       default: 'false',

@@ -1,32 +1,46 @@
 export const toc = [
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Straight shape',
+    anchor: 'pagination-straight',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Rounded shape',
+    anchor: 'pagination-rounded',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Curved shape',
+    anchor: 'pagination-curved',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
-    subItems: [],
-  },
-  {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Full shape',
+    anchor: 'pagination-full',
     subItems: [],
   },
   {
     label: 'Props',
-    anchor: 'link',
+    anchor: 'pagination-props',
     subItems: [],
+  },
+]
+
+export const breadcrumb = [
+  {
+    label: 'Home',
+    hideLabel: true,
+    icon: 'i-lucide-home',
+    to: '/',
+  },
+  {
+    label: 'Components',
+    hideLabel: false,
+    to: '/components',
+  },
+  {
+    label: 'Pagination',
+    hideLabel: false,
+    to: '/components/pagination',
   },
 ]

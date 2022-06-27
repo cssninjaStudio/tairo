@@ -1,29 +1,21 @@
 <script setup lang="ts">
-// import { toc } from '@@/documentation/components/tabs/toc'
-// import { } from '@@/documentation/components/tabs'
+import { breadcrumb, toc } from '@@/documentation/components/tabs/toc'
+import {
+  boxed,
+  boxedIcons,
+  center,
+  end,
+  icons,
+  start,
+} from '@@/documentation/components/tabs'
+import {
+  itemProperties,
+  properties,
+} from '@@/documentation/components/tabs/properties'
 
 definePageMeta({
   title: 'Nav Tabs',
 })
-
-const breadcrumb = [
-  {
-    label: 'Home',
-    hideLabel: true,
-    icon: 'i-lucide-home',
-    to: '/',
-  },
-  {
-    label: 'Components',
-    hideLabel: false,
-    to: '/components',
-  },
-  {
-    label: 'Tabs',
-    hideLabel: false,
-    to: '/components/tabs',
-  },
-]
 </script>
 
 <template>
@@ -70,7 +62,9 @@ const breadcrumb = [
                 </BaseTabs>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="start" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -110,7 +104,9 @@ const breadcrumb = [
                 </BaseTabs>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="center" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -160,7 +156,9 @@ const breadcrumb = [
                 </BaseTabs>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="end" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -221,7 +219,9 @@ const breadcrumb = [
                 </BaseTabs>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="icons" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -280,7 +280,9 @@ const breadcrumb = [
                 </BaseTabs>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="boxed" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -342,12 +344,32 @@ const breadcrumb = [
                 </BaseTabs>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="boxedIcons" />
+            </template>
           </DocComponent>
         </DocSection>
+
+        <!-- Tabs props -->
+        <DocProps
+          id="tabs-props"
+          component="Tabs"
+          :properties="properties.props"
+          :slots="properties.slots"
+        />
+
+        <!-- Tabs item props -->
+        <DocProps
+          id="tabs-item-props"
+          component="Tabs item"
+          :properties="itemProperties.props"
+          :slots="itemProperties.slots"
+        />
       </template>
       <!-- Toc -->
-      <template #toc></template>
+      <template #toc>
+        <DocToc :anchors="toc" />
+      </template>
     </DocLayout>
   </div>
 </template>

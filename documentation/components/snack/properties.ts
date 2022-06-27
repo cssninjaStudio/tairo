@@ -1,14 +1,35 @@
 export const properties = {
   props: [
     {
-      name: 'string',
+      name: 'label',
       type: 'string',
-      required: 'false',
-      default: 'rounded',
+      required: 'true',
+      default: 'undefined',
       values: ['string'],
     },
     {
-      name: 'boolean',
+      name: 'icon',
+      type: 'string',
+      required: 'false',
+      default: 'undefined',
+      values: ['string'],
+    },
+    {
+      name: 'image',
+      type: 'string',
+      required: 'false',
+      default: 'undefined',
+      values: ['string'],
+    },
+    {
+      name: 'small',
+      type: 'boolean',
+      required: 'false',
+      default: 'false',
+      values: ['boolean'],
+    },
+    {
+      name: 'light',
       type: 'boolean',
       required: 'false',
       default: 'false',
@@ -19,7 +40,7 @@ export const properties = {
     {
       name: '#default',
       properties: ['null'],
-      description: 'Component content',
+      description: 'Snack text content',
     },
   ],
 }

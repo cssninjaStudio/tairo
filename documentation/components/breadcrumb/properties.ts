@@ -1,25 +1,53 @@
 export const properties = {
   props: [
     {
-      name: 'string',
-      type: 'string',
+      name: 'separator',
+      type: 'BreadcrumbSeparator',
       required: 'false',
-      default: 'rounded',
-      values: ['string'],
+      default: 'dot',
+      values: ['dot', 'slash', 'chevron', 'arrow'],
     },
     {
-      name: 'boolean',
+      name: 'items',
+      type: 'BreadcrumbItem[ ]',
+      required: 'true',
+      default: '() => [ ]',
+      values: ['array'],
+    },
+    {
+      name: 'withIcons',
       type: 'boolean',
       required: 'false',
       default: 'false',
       values: ['boolean'],
     },
   ],
-  slots: [
+  slots: [],
+}
+
+export const itemProperties = {
+  props: [
     {
-      name: '#default',
-      properties: ['null'],
-      description: 'Component content',
+      name: 'label',
+      type: 'string',
+      required: 'true',
+      default: 'undefined',
+      values: ['string'],
+    },
+    {
+      name: 'icon',
+      type: 'string',
+      required: 'false',
+      default: 'undefined',
+      values: ['string'],
+    },
+    {
+      name: 'to',
+      type: 'RouteLocationRaw',
+      required: 'false',
+      default: 'false',
+      values: ['string'],
     },
   ],
+  slots: [],
 }

@@ -1,59 +1,146 @@
-export const example = `
+export const shapes = `
 <template>
-  
+  <BaseCard shape="straight" class="p-6">
+    <BaseHeading
+      tag="h4"
+      size="sm"
+      weight="semibold"
+      lead="tight"
+      class="text-slate-800 dark:text-white mb-2"
+    >
+      Iam a card
+    </BaseHeading>
+    <BaseParagraph size="sm" lead="tight" class="text-slate-400">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </BaseParagraph>
+  </BaseCard>
+
+  <BaseCard shape="rounded" class="p-6">
+    <BaseHeading
+      tag="h4"
+      size="sm"
+      weight="semibold"
+      lead="tight"
+      class="text-slate-800 dark:text-white mb-2"
+    >
+      Iam a card
+    </BaseHeading>
+    <BaseParagraph size="sm" lead="tight" class="text-slate-400">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </BaseParagraph>
+  </BaseCard>
+
+  <BaseCard shape="curved" class="p-6">
+    <BaseHeading
+      tag="h4"
+      size="sm"
+      weight="semibold"
+      lead="tight"
+      class="text-slate-800 dark:text-white mb-2"
+    >
+      Iam a card
+    </BaseHeading>
+    <BaseParagraph size="sm" lead="tight" class="text-slate-400">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </BaseParagraph>
+  </BaseCard>
 </template>
 `
 
-export const example2 = `
+export const elevation = `
 <template>
-  
+  <BaseCard shape="straight" elevated class="p-6">
+    <BaseHeading
+      tag="h4"
+      size="sm"
+      weight="semibold"
+      lead="tight"
+      class="text-slate-800 dark:text-white mb-2"
+    >
+      Iam a card
+    </BaseHeading>
+    <BaseParagraph size="sm" lead="tight" class="text-slate-400">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </BaseParagraph>
+  </BaseCard>
+
+  <BaseCard shape="rounded" elevated class="p-6">
+    <BaseHeading
+      tag="h4"
+      size="sm"
+      weight="semibold"
+      lead="tight"
+      class="text-slate-800 dark:text-white mb-2"
+    >
+      Iam a card
+    </BaseHeading>
+    <BaseParagraph size="sm" lead="tight" class="text-slate-400">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </BaseParagraph>
+  </BaseCard>
+
+  <BaseCard shape="curved" elevated class="p-6">
+    <BaseHeading
+      tag="h4"
+      size="sm"
+      weight="semibold"
+      lead="tight"
+      class="text-slate-800 dark:text-white mb-2"
+    >
+      Iam a card
+    </BaseHeading>
+    <BaseParagraph size="sm" lead="tight" class="text-slate-400">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </BaseParagraph>
+  </BaseCard>
 </template>
 `
 
-export const example3 = `
+export const elevationHover = `
 <template>
-  
-</template>
-`
+  <BaseCard shape="straight" elevated-hover class="p-6">
+    <BaseHeading
+      tag="h4"
+      size="sm"
+      weight="semibold"
+      lead="tight"
+      class="text-slate-800 dark:text-white mb-2"
+    >
+      Iam a card
+    </BaseHeading>
+    <BaseParagraph size="sm" lead="tight" class="text-slate-400">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </BaseParagraph>
+  </BaseCard>
 
-export const example4 = `
-<template>
-  
-</template>
-`
+  <BaseCard shape="rounded" elevated-hover class="p-6">
+    <BaseHeading
+      tag="h4"
+      size="sm"
+      weight="semibold"
+      lead="tight"
+      class="text-slate-800 dark:text-white mb-2"
+    >
+      Iam a card
+    </BaseHeading>
+    <BaseParagraph size="sm" lead="tight" class="text-slate-400">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </BaseParagraph>
+  </BaseCard>
 
-export const example5 = `
-<template>
-  
-</template>
-`
-
-export const example6 = `
-<template>
-  
-</template>
-`
-
-export const example7 = `
-<template>
-  
-</template>
-`
-
-export const example8 = `
-<template>
-  
-</template>
-`
-
-export const example9 = `
-<template>
-  
-</template>
-`
-
-export const example10 = `
-<template>
-  
+  <BaseCard shape="curved" elevated-hover class="p-6">
+    <BaseHeading
+      tag="h4"
+      size="sm"
+      weight="semibold"
+      lead="tight"
+      class="text-slate-800 dark:text-white mb-2"
+    >
+      Iam a card
+    </BaseHeading>
+    <BaseParagraph size="sm" lead="tight" class="text-slate-400">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </BaseParagraph>
+  </BaseCard>
 </template>
 `

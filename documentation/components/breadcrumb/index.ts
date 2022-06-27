@@ -1,59 +1,199 @@
-export const example = `
+export const dot = `
+<script setup lang="ts">
+const demoBreadcrumbOne = [
+  {
+    label: 'Home',
+    hideLabel: false,
+    icon: 'i-lucide-home',
+    to: '/',
+  },
+  {
+    label: 'Products',
+    hideLabel: false,
+    to: '/',
+  },
+  {
+    label: 'Laptops',
+    hideLabel: false,
+    to: '/',
+  },
+]
+
+const demoBreadcrumbTwo = [
+  {
+    label: 'Home',
+    hideLabel: false,
+    icon: 'i-lucide-home',
+    to: '/',
+  },
+  {
+    label: 'Products',
+    hideLabel: false,
+    icon: 'i-lucide-layout-grid',
+    to: '/',
+  },
+  {
+    label: 'Laptops',
+    hideLabel: false,
+    icon: 'i-lucide-laptop',
+    to: '/',
+  },
+]
+</script>
+
 <template>
-  
+  <BaseBreadcrumb :items="demoBreadcrumbOne" separator="dot" />
+
+  <BaseBreadcrumb :items="demoBreadcrumbTwo" separator="dot" />
 </template>
 `
 
-export const example2 = `
+export const slash = `
+<script setup lang="ts">
+const demoBreadcrumbOne = [
+  {
+    label: 'Home',
+    hideLabel: false,
+    icon: 'i-lucide-home',
+    to: '/',
+  },
+  {
+    label: 'Products',
+    hideLabel: false,
+    to: '/',
+  },
+  {
+    label: 'Laptops',
+    hideLabel: false,
+    to: '/',
+  },
+]
+
+const demoBreadcrumbTwo = [
+  {
+    label: 'Home',
+    hideLabel: false,
+    icon: 'i-lucide-home',
+    to: '/',
+  },
+  {
+    label: 'Products',
+    hideLabel: false,
+    icon: 'i-lucide-layout-grid',
+    to: '/',
+  },
+  {
+    label: 'Laptops',
+    hideLabel: false,
+    icon: 'i-lucide-laptop',
+    to: '/',
+  },
+]
+</script>
+
 <template>
-  
+  <BaseBreadcrumb :items="demoBreadcrumbOne" separator="slash" />
+
+  <BaseBreadcrumb :items="demoBreadcrumbTwo" separator="slash" />
 </template>
 `
 
-export const example3 = `
+export const chevron = `
+<script setup lang="ts">
+const demoBreadcrumbOne = [
+  {
+    label: 'Home',
+    hideLabel: false,
+    icon: 'i-lucide-home',
+    to: '/',
+  },
+  {
+    label: 'Products',
+    hideLabel: false,
+    to: '/',
+  },
+  {
+    label: 'Laptops',
+    hideLabel: false,
+    to: '/',
+  },
+]
+
+const demoBreadcrumbTwo = [
+  {
+    label: 'Home',
+    hideLabel: false,
+    icon: 'i-lucide-home',
+    to: '/',
+  },
+  {
+    label: 'Products',
+    hideLabel: false,
+    icon: 'i-lucide-layout-grid',
+    to: '/',
+  },
+  {
+    label: 'Laptops',
+    hideLabel: false,
+    icon: 'i-lucide-laptop',
+    to: '/',
+  },
+]
+</script>
+
 <template>
-  
+  <BaseBreadcrumb :items="demoBreadcrumbOne" separator="chevron" />
+
+  <BaseBreadcrumb :items="demoBreadcrumbTwo" separator="chevron" />
 </template>
 `
 
-export const example4 = `
-<template>
-  
-</template>
-`
+export const arrow = `
+<script setup lang="ts">
+const demoBreadcrumbOne = [
+  {
+    label: 'Home',
+    hideLabel: false,
+    icon: 'i-lucide-home',
+    to: '/',
+  },
+  {
+    label: 'Products',
+    hideLabel: false,
+    to: '/',
+  },
+  {
+    label: 'Laptops',
+    hideLabel: false,
+    to: '/',
+  },
+]
 
-export const example5 = `
-<template>
-  
-</template>
-`
+const demoBreadcrumbTwo = [
+  {
+    label: 'Home',
+    hideLabel: false,
+    icon: 'i-lucide-home',
+    to: '/',
+  },
+  {
+    label: 'Products',
+    hideLabel: false,
+    icon: 'i-lucide-layout-grid',
+    to: '/',
+  },
+  {
+    label: 'Laptops',
+    hideLabel: false,
+    icon: 'i-lucide-laptop',
+    to: '/',
+  },
+]
+</script>
 
-export const example6 = `
 <template>
-  
-</template>
-`
+  <BaseBreadcrumb :items="demoBreadcrumbOne" separator="arrow" />
 
-export const example7 = `
-<template>
-  
-</template>
-`
-
-export const example8 = `
-<template>
-  
-</template>
-`
-
-export const example9 = `
-<template>
-  
-</template>
-`
-
-export const example10 = `
-<template>
-  
+  <BaseBreadcrumb :items="demoBreadcrumbTwo" separator="arrow" />
 </template>
 `

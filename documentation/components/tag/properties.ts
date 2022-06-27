@@ -1,25 +1,40 @@
 export const properties = {
   props: [
     {
-      name: 'string',
-      type: 'string',
+      name: 'color',
+      type: 'TagColors',
       required: 'false',
-      default: 'rounded',
-      values: ['string'],
+      default: 'default',
+      values: [
+        'default',
+        'muted',
+        'primary',
+        'info',
+        'success',
+        'warning',
+        'danger',
+      ],
     },
     {
-      name: 'boolean',
-      type: 'boolean',
+      name: 'flavor',
+      type: 'TagFlavors',
       required: 'false',
-      default: 'false',
-      values: ['boolean'],
+      default: 'solid',
+      values: ['solid', 'pastel', 'outline'],
+    },
+    {
+      name: 'shape',
+      type: 'TagShapes',
+      required: 'false',
+      default: 'rounded',
+      values: ['straight', 'rounded', 'curved', 'full'],
     },
   ],
   slots: [
     {
       name: '#default',
       properties: ['null'],
-      description: 'Component content',
+      description: 'Tag content',
     },
   ],
 }

@@ -1,14 +1,68 @@
 export const properties = {
-  props: [
+  props: [],
+  slots: [
     {
-      name: 'string',
-      type: 'string',
-      required: 'false',
-      default: 'rounded',
-      values: ['string'],
+      name: '#default',
+      properties: ['null'],
+      description: 'Table body content',
     },
     {
-      name: 'boolean',
+      name: '#header',
+      properties: ['null'],
+      description: 'Table header content',
+    },
+  ],
+}
+
+export const rowProperties = {
+  props: [
+    {
+      name: 'shape',
+      type: 'FlexRowShapes',
+      required: 'false',
+      default: 'rounded',
+      values: ['straight', 'rounded', 'curved'],
+    },
+  ],
+  slots: [
+    {
+      name: '#default',
+      properties: ['null'],
+      description: 'Table row content',
+    },
+  ],
+}
+
+export const headingProperties = {
+  props: [
+    {
+      name: 'type',
+      type: 'FlexTableHeadingType',
+      required: 'false',
+      default: 'stable',
+      values: ['stable', 'grow', 'shrink'],
+    },
+  ],
+  slots: [
+    {
+      name: '#default',
+      properties: ['null'],
+      description: 'Heading content',
+    },
+  ],
+}
+
+export const cellProperties = {
+  props: [
+    {
+      name: 'type',
+      type: 'FlexTableCellType',
+      required: 'false',
+      default: 'stable',
+      values: ['stable', 'grow', 'shrink'],
+    },
+    {
+      name: 'light',
       type: 'boolean',
       required: 'false',
       default: 'false',
@@ -19,7 +73,7 @@ export const properties = {
     {
       name: '#default',
       properties: ['null'],
-      description: 'Component content',
+      description: 'Cell content',
     },
   ],
 }

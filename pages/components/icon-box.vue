@@ -1,29 +1,18 @@
 <script setup lang="ts">
-// import { toc } from '@@/documentation/components/icon-box/toc'
-// import { } from '@@/documentation/components/icon-box'
+import { breadcrumb, toc } from '@@/documentation/components/iconbox/toc'
+import {
+  circleSizes,
+  elevation,
+  outline,
+  pastel,
+  roundedSizes,
+  solid,
+} from '@@/documentation/components/iconbox'
+import { properties } from '@@/documentation/components/iconbox/properties'
 
 definePageMeta({
   title: 'Icon Boxes',
 })
-
-const breadcrumb = [
-  {
-    label: 'Home',
-    hideLabel: true,
-    icon: 'i-lucide-home',
-    to: '/',
-  },
-  {
-    label: 'Components',
-    hideLabel: false,
-    to: '/components',
-  },
-  {
-    label: 'Icon box',
-    hideLabel: false,
-    to: '/components/icon-box',
-  },
-]
 </script>
 
 <template>
@@ -78,7 +67,9 @@ const breadcrumb = [
                 </BaseIconBox>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="roundedSizes" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -131,7 +122,9 @@ const breadcrumb = [
                 </BaseIconBox>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="circleSizes" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -282,7 +275,9 @@ const breadcrumb = [
                 </BaseIconBox>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="solid" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -395,7 +390,9 @@ const breadcrumb = [
                 </BaseIconBox>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="pastel" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -558,7 +555,9 @@ const breadcrumb = [
                 </BaseIconBox>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="outline" />
+            </template>
           </DocComponent>
         </DocSection>
 
@@ -702,12 +701,24 @@ const breadcrumb = [
                 </BaseIconBox>
               </div>
             </template>
-            <template #code></template>
+            <template #code>
+              <DocCode language="html" :code="elevation" />
+            </template>
           </DocComponent>
         </DocSection>
+
+        <!-- Icon box props -->
+        <DocProps
+          id="iconbox-props"
+          component="Icon box"
+          :properties="properties.props"
+          :slots="properties.slots"
+        />
       </template>
       <!-- Toc -->
-      <template #toc></template>
+      <template #toc>
+        <DocToc :anchors="toc" />
+      </template>
     </DocLayout>
   </div>
 </template>

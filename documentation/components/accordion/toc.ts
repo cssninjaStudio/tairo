@@ -1,32 +1,56 @@
 export const toc = [
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Inclusive type',
+    anchor: 'accordion-inclusive',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Exclusive type',
+    anchor: 'accordion-exclusive',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Accordion shapes',
+    anchor: 'accordion-shapes',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Chevron action',
+    anchor: 'accordion-chevron',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Plus action',
+    anchor: 'accordion-plus',
     subItems: [],
   },
   {
     label: 'Props',
-    anchor: 'link',
+    anchor: 'accordion-props',
     subItems: [],
+  },
+  {
+    label: 'Item props',
+    anchor: 'accordion-item-props',
+    subItems: [],
+  },
+]
+
+export const breadcrumb = [
+  {
+    label: 'Home',
+    hideLabel: true,
+    icon: 'i-lucide-home',
+    to: '/',
+  },
+  {
+    label: 'Components',
+    hideLabel: false,
+    to: '/components',
+  },
+  {
+    label: 'Accordion',
+    hideLabel: false,
+    to: '/components/accordion',
   },
 ]

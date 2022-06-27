@@ -1,32 +1,56 @@
 export const toc = [
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Rounded sizes',
+    anchor: 'iconbox-rounded-sizes',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Circle sizes',
+    anchor: 'iconbox-circle-sizes',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Solid colors',
+    anchor: 'iconbox-solid',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Pastel colors',
+    anchor: 'iconbox-pastel',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Outline colors',
+    anchor: 'iconbox-outline',
+    subItems: [],
+  },
+  {
+    label: 'Elevation',
+    anchor: 'iconbox-elevation',
     subItems: [],
   },
   {
     label: 'Props',
-    anchor: 'link',
+    anchor: 'iconbox-props',
     subItems: [],
+  },
+]
+
+export const breadcrumb = [
+  {
+    label: 'Home',
+    hideLabel: true,
+    icon: 'i-lucide-home',
+    to: '/',
+  },
+  {
+    label: 'Components',
+    hideLabel: false,
+    to: '/components',
+  },
+  {
+    label: 'Icon box',
+    hideLabel: false,
+    to: '/components/icon-box',
   },
 ]

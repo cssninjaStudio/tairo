@@ -1,32 +1,56 @@
 export const toc = [
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Start align',
+    anchor: 'tabs-start',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Center align',
+    anchor: 'tabs-center',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'End align',
+    anchor: 'tabs-end',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'With icons',
+    anchor: 'tabs-icons',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Boxed style',
+    anchor: 'tabs-boxed',
+    subItems: [],
+  },
+  {
+    label: 'Boxed icons',
+    anchor: 'tabs-icons-boxed',
     subItems: [],
   },
   {
     label: 'Props',
-    anchor: 'link',
+    anchor: 'tabs-props',
     subItems: [],
+  },
+]
+
+export const breadcrumb = [
+  {
+    label: 'Home',
+    hideLabel: true,
+    icon: 'i-lucide-home',
+    to: '/',
+  },
+  {
+    label: 'Components',
+    hideLabel: false,
+    to: '/components',
+  },
+  {
+    label: 'Tabs',
+    hideLabel: false,
+    to: '/components/tabs',
   },
 ]

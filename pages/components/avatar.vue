@@ -875,7 +875,9 @@ const breadcrumb = [
           </DocComponent>
         </DocSection>
 
+        <!-- Avatar props -->
         <DocProps
+          id="avatar-props"
           component="Avatar"
           :properties="properties.props"
           :slots="properties.slots"

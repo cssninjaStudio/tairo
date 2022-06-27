@@ -14,16 +14,12 @@ export interface TagProps {
   flavor?: TagFlavors
   color?: TagColors
   shape?: TagShapes
-  to?: string
-  loading?: boolean
-  disabled?: boolean
 }
 
 const props = withDefaults(defineProps<TagProps>(), {
   flavor: 'solid',
   color: 'default',
   shape: 'rounded',
-  to: undefined,
 })
 </script>
 
@@ -31,10 +27,6 @@ const props = withDefaults(defineProps<TagProps>(), {
   <span
     class="inline-block font-text text-xs py-1.5 px-3 m-1"
     :class="[
-      props.loading ? '!text-transparent' : '',
-      props.disabled
-        ? 'disabled:opacity-60 disabled:cursor-not-allowed hover:shadow-none'
-        : '',
       props.color === 'default' &&
         'border border-gray-300 bg-white text-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300',
       props.color === 'muted' &&

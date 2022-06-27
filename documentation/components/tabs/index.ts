@@ -1,59 +1,274 @@
-export const example = `
+export const start = `
 <template>
-  
+  <BaseTabs
+    selected="team"
+    :tabs="[
+      { label: 'Team', value: 'team' },
+      { label: 'Projects', value: 'projects' },
+    ]"
+    >
+    <template #tab="{ activeValue }">
+      <p
+        v-if="activeValue === 'team'"
+        class="font-text text-sm text-gray-500 dark:text-gray-400"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Quid iudicant sensus? Primum quid tu dicis breve? Etiam
+        beatissimum? Ne discipulum abducam, times.
+      </p>
+      <p
+        v-else-if="activeValue === 'projects'"
+        class="font-text text-sm text-gray-500 dark:text-gray-400"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Quid iudicant sensus? Primum quid tu dicis breve? Etiam
+        beatissimum? Ne discipulum abducam, times. Quae
+        diligentissime contra Aristonem dicuntur a Chryippo. Duo
+        Reges: constructio interrete.
+      </p>
+    </template>
+  </BaseTabs>
 </template>
 `
 
-export const example2 = `
+export const center = `
 <template>
-  
+  <BaseTabs
+    justify="center"
+    selected="team"
+    :tabs="[
+      { label: 'Team', value: 'team' },
+      { label: 'Projects', value: 'projects' },
+    ]"
+    >
+    <template #tab="{ activeValue }">
+      <p
+        v-if="activeValue === 'team'"
+        class="font-text text-sm text-gray-500 dark:text-gray-400"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Quid iudicant sensus? Primum quid tu dicis breve? Etiam
+        beatissimum? Ne discipulum abducam, times.
+      </p>
+      <p
+        v-else-if="activeValue === 'projects'"
+        class="font-text text-sm text-gray-500 dark:text-gray-400"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Quid iudicant sensus? Primum quid tu dicis breve? Etiam
+        beatissimum? Ne discipulum abducam, times. Quae
+        diligentissime contra Aristonem dicuntur a Chryippo. Duo
+        Reges: constructio interrete.
+      </p>
+    </template>
+  </BaseTabs>
 </template>
 `
 
-export const example3 = `
+export const end = `
 <template>
-  
+  <BaseTabs
+    justify="end"
+    selected="team"
+    :tabs="[
+      { label: 'Team', value: 'team' },
+      { label: 'Projects', value: 'projects' },
+      { label: 'Tasks', value: 'tasks' },
+    ]"
+    >
+    <template #tab="{ activeValue }">
+      <p
+        v-if="activeValue === 'team'"
+        class="font-text text-sm text-gray-500 dark:text-gray-400"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Quid iudicant sensus? Primum quid tu dicis breve? Etiam
+        beatissimum? Ne discipulum abducam, times.
+      </p>
+      <p
+        v-else-if="activeValue === 'projects'"
+        class="font-text text-sm text-gray-500 dark:text-gray-400"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Quid iudicant sensus? Primum quid tu dicis breve? Etiam
+        beatissimum? Ne discipulum abducam, times. Quae
+        diligentissime contra Aristonem dicuntur a Chryippo. Duo
+        Reges: constructio interrete.
+      </p>
+      <p
+        v-else-if="activeValue === 'tasks'"
+        class="font-text text-sm text-gray-500 dark:text-gray-400"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Quid iudicant sensus? Primum quid tu dicis breve? Etiam
+        beatissimum? Ne discipulum abducam, times. Quae
+        diligentissime contra.
+      </p>
+    </template>
+  </BaseTabs>
 </template>
 `
 
-export const example4 = `
+export const icons = `
 <template>
-  
+  <BaseTabs
+    selected="team"
+    :tabs="[
+      {
+        label: 'Team',
+        value: 'team',
+        icon: 'i-ph-users-three-duotone',
+      },
+      {
+        label: 'Projects',
+        value: 'projects',
+        icon: 'i-ph-briefcase-duotone',
+      },
+      {
+        label: 'Tasks',
+        value: 'tasks',
+        icon: 'i-ph-check-circle-duotone',
+      },
+    ]"
+    >
+    <template #tab="{ activeValue }">
+      <p
+        v-if="activeValue === 'team'"
+        class="font-text text-sm text-gray-500 dark:text-gray-400"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Quid iudicant sensus? Primum quid tu dicis breve? Etiam
+        beatissimum? Ne discipulum abducam, times.
+      </p>
+      <p
+        v-else-if="activeValue === 'projects'"
+        class="font-text text-sm text-gray-500 dark:text-gray-400"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Quid iudicant sensus? Primum quid tu dicis breve? Etiam
+        beatissimum? Ne discipulum abducam, times. Quae
+        diligentissime contra Aristonem dicuntur a Chryippo. Duo
+        Reges: constructio interrete.
+      </p>
+      <p
+        v-else-if="activeValue === 'tasks'"
+        class="font-text text-sm text-gray-500 dark:text-gray-400"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Quid iudicant sensus? Primum quid tu dicis breve? Etiam
+        beatissimum? Ne discipulum abducam, times. Quae
+        diligentissime contra.
+      </p>
+    </template>
+  </BaseTabs>
 </template>
 `
 
-export const example5 = `
+export const boxed = `
 <template>
-  
+  <BaseTabs
+    type="box"
+    selected="team"
+    :tabs="[
+      {
+        label: 'Team',
+        value: 'team',
+      },
+      {
+        label: 'Projects',
+        value: 'projects',
+      },
+      {
+        label: 'Tasks',
+        value: 'tasks',
+      },
+    ]"
+    >
+    <template #tab="{ activeValue }">
+      <p
+        v-if="activeValue === 'team'"
+        class="font-text text-sm text-gray-500 dark:text-gray-400"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Quid iudicant sensus? Primum quid tu dicis breve? Etiam
+        beatissimum? Ne discipulum abducam, times.
+      </p>
+      <p
+        v-else-if="activeValue === 'projects'"
+        class="font-text text-sm text-gray-500 dark:text-gray-400"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Quid iudicant sensus? Primum quid tu dicis breve? Etiam
+        beatissimum? Ne discipulum abducam, times. Quae
+        diligentissime contra Aristonem dicuntur a Chryippo. Duo
+        Reges: constructio interrete.
+      </p>
+      <p
+        v-else-if="activeValue === 'tasks'"
+        class="font-text text-sm text-gray-500 dark:text-gray-400"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Quid iudicant sensus? Primum quid tu dicis breve? Etiam
+        beatissimum? Ne discipulum abducam, times. Quae
+        diligentissime contra.
+      </p>
+    </template>
+  </BaseTabs>
 </template>
 `
 
-export const example6 = `
+export const boxedIcons = `
 <template>
-  
-</template>
-`
-
-export const example7 = `
-<template>
-  
-</template>
-`
-
-export const example8 = `
-<template>
-  
-</template>
-`
-
-export const example9 = `
-<template>
-  
-</template>
-`
-
-export const example10 = `
-<template>
-  
+  <BaseTabs
+    type="box"
+    selected="team"
+    :tabs="[
+      {
+        label: 'Team',
+        value: 'team',
+        icon: 'i-ph-users-three-duotone',
+      },
+      {
+        label: 'Projects',
+        value: 'projects',
+        icon: 'i-ph-briefcase-duotone',
+      },
+      {
+        label: 'Tasks',
+        value: 'tasks',
+        icon: 'i-ph-check-circle-duotone',
+      },
+    ]"
+    >
+    <template #tab="{ activeValue }">
+      <p
+        v-if="activeValue === 'team'"
+        class="font-text text-sm text-gray-500 dark:text-gray-400"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Quid iudicant sensus? Primum quid tu dicis breve? Etiam
+        beatissimum? Ne discipulum abducam, times.
+      </p>
+      <p
+        v-else-if="activeValue === 'projects'"
+        class="font-text text-sm text-gray-500 dark:text-gray-400"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Quid iudicant sensus? Primum quid tu dicis breve? Etiam
+        beatissimum? Ne discipulum abducam, times. Quae
+        diligentissime contra Aristonem dicuntur a Chryippo. Duo
+        Reges: constructio interrete.
+      </p>
+      <p
+        v-else-if="activeValue === 'tasks'"
+        class="font-text text-sm text-gray-500 dark:text-gray-400"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Quid iudicant sensus? Primum quid tu dicis breve? Etiam
+        beatissimum? Ne discipulum abducam, times. Quae
+        diligentissime contra.
+      </p>
+    </template>
+  </BaseTabs>
 </template>
 `
