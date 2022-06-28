@@ -1,4 +1,7 @@
 <script setup>
+import './assets/css/modules/variables.css'
+import './assets/css/modules/slider.css'
+
 const route = useRoute()
 useHead({
   title: route.meta.title,

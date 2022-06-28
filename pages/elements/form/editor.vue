@@ -1,10 +1,19 @@
 <script setup lang="ts">
-// import { toc } from '@@/documentation/elements/editor/toc'
-// import { } from '@@/documentation/elements/editor'
+/* import CKE from '@ckeditor/ckeditor5-vue'
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic'
+import {
+  editorConfig,
+  editorData,
+} from '@@/documentation/elements/form/editor/data' */
+
+// import { toc } from '@@/documentation/elements/form/editor/toc'
+// import { } from '@@/documentation/elements/form/editor'
 
 definePageMeta({
   title: 'Text Editor',
 })
+
+// const CKEditor = CKE.component
 
 const breadcrumb = [
   {
@@ -34,7 +43,25 @@ const breadcrumb = [
     <!-- Documentation Layout -->
     <DocLayout>
       <!-- content -->
-      <template #content></template>
+      <template #content>
+        <!-- CK editor -->
+        <DocSection id="editor-base" title="CK Editor" tag="1.0.0">
+          <DocComponent label="CK Editor example">
+            <template #demo>
+              <div class="flex flex-col">
+                <!-- ClientOnly>
+                  <CKEditor
+                    v-model="editorData"
+                    :editor="ClassicEditor"
+                    :config="editorConfig"
+                  ></CKEditor>
+                </ClientOnly -->
+              </div>
+            </template>
+            <template #code></template>
+          </DocComponent>
+        </DocSection>
+      </template>
       <!-- Toc -->
       <template #toc></template>
     </DocLayout>

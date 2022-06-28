@@ -11,18 +11,18 @@
 </style>
 <desc>Created with Sketch.</desc>
 <g id="sketch-symbol">
-	<polygon id="Path" class="st0" points="106.3,75.1 197,65.5 287.7,75.1 358,169.4 197,356.9 36,169.4 	"/>
+	<polygon id="Path" class="st0" points="130,96.4 197,89.3 264,96.4 316,166.1 197,304.7 78,166.1 	"/>
 	<g id="Group" transform="translate(0.000000, 126.881084)">
-		<polygon class="st1" points="101.2,42.5 197,230 36,42.5 		"/>
-		<polygon class="st1" points="292.8,42.5 197,230 358,42.5 		"/>
-		<polygon class="st2" points="101.2,42.5 292.8,42.5 197,230 		"/>
+		<polygon class="st1" points="126.2,39.2 197,177.8 78,39.2 		"/>
+		<polygon class="st1" points="267.8,39.2 197,177.8 316,39.2 		"/>
+		<polygon class="st2" points="126.2,39.2 267.8,39.2 197,177.8 		"/>
 	</g>
 	<g>
-		<polygon class="st3" points="197,65.5 106.3,75.1 101.2,169.4 		"/>
-		<polygon class="st3" points="197,65.5 287.7,75.1 292.8,169.4 		"/>
-		<polygon class="st2" points="358,169.4 287.7,75.1 292.8,169.4 		"/>
-		<polygon class="st2" points="36,169.4 106.3,75.1 101.2,169.4 		"/>
-		<polygon class="st4" points="197,65.5 101.2,169.4 292.8,169.4 		"/>
+		<polygon class="st3" points="197,89.3 130,96.4 126.2,166.1 		"/>
+		<polygon class="st3" points="197,89.3 264,96.4 267.8,166.1 		"/>
+		<polygon class="st2" points="316,166.1 264,96.4 267.8,166.1 		"/>
+		<polygon class="st2" points="78,166.1 130,96.4 126.2,166.1 		"/>
+		<polygon class="st4" points="197,89.3 126.2,166.1 267.8,166.1 		"/>
 	</g>
 </g>
 </svg>

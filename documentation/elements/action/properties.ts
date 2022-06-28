@@ -9,7 +9,7 @@ export const properties = {
     },
     {
       name: 'to',
-      type: 'string',
+      type: 'RouteLocationRaw',
       required: 'false',
       default: 'undefined',
       values: ['string'],

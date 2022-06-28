@@ -1,32 +1,66 @@
 export const toc = [
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Straight tooltip',
+    anchor: 'slider-straight',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Rounded tooltip',
+    anchor: 'slider-rounded',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Curved tooltip',
+    anchor: 'slider-curved',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Circle tooltip',
+    anchor: 'slider-circle',
     subItems: [],
   },
   {
-    label: 'Label',
-    anchor: 'link',
+    label: 'Slider colors',
+    anchor: 'slider-colors',
+    subItems: [],
+  },
+  {
+    label: 'Multiple handles',
+    anchor: 'slider-multiple',
+    subItems: [],
+  },
+  {
+    label: 'Tooltip format',
+    anchor: 'slider-format',
+    subItems: [],
+  },
+  {
+    label: 'Tooltip merge',
+    anchor: 'slider-merge',
     subItems: [],
   },
   {
     label: 'Props',
-    anchor: 'link',
+    anchor: 'slider-props',
     subItems: [],
+  },
+]
+
+export const breadcrumb = [
+  {
+    label: 'Home',
+    hideLabel: true,
+    icon: 'i-lucide-home',
+    to: '/',
+  },
+  {
+    label: 'Elements',
+    hideLabel: false,
+    to: '/elements',
+  },
+  {
+    label: 'Slider',
+    hideLabel: false,
+    to: '/elements/form/slider',
   },
 ]

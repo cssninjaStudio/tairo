@@ -1,32 +1,51 @@
 export const toc = [
   {
-    label: 'Label',
-    anchor: 'link',
-    subItems: [],
-  },
-  {
-    label: 'Label',
-    anchor: 'link',
-    subItems: [],
-  },
-  {
-    label: 'Label',
-    anchor: 'link',
-    subItems: [],
-  },
-  {
-    label: 'Label',
-    anchor: 'link',
-    subItems: [],
-  },
-  {
-    label: 'Label',
-    anchor: 'link',
+    label: 'User carousel',
+    anchor: 'carousel-user',
     subItems: [],
   },
   {
     label: 'Props',
-    anchor: 'link',
+    anchor: 'carousel-user-props',
     subItems: [],
+  },
+  {
+    label: 'Slide props',
+    anchor: 'carousel-user-item-props',
+    subItems: [],
+  },
+  {
+    label: 'Icon carousel',
+    anchor: 'carousel-icons',
+    subItems: [],
+  },
+  {
+    label: 'Props',
+    anchor: 'carousel-icons-props',
+    subItems: [],
+  },
+  {
+    label: 'Slide props',
+    anchor: 'carousel-icons-item-props',
+    subItems: [],
+  },
+]
+
+export const breadcrumb = [
+  {
+    label: 'Home',
+    hideLabel: true,
+    icon: 'i-lucide-home',
+    to: '/',
+  },
+  {
+    label: 'Elements',
+    hideLabel: false,
+    to: '/elements',
+  },
+  {
+    label: 'Carousel',
+    hideLabel: false,
+    to: '/elements/carousel',
   },
 ]

@@ -67,7 +67,7 @@ definePageMeta({
             class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-slate-700"
           >
             <NuxtLink
-              to="/"
+              to="/elements/button"
               class="font-text text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
             >
               Get Started
@@ -109,7 +109,7 @@ definePageMeta({
             class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-slate-700"
           >
             <NuxtLink
-              to="/"
+              to="/elements/icons"
               class="font-text text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
             >
               Get Started
@@ -151,7 +151,7 @@ definePageMeta({
             class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-slate-700"
           >
             <NuxtLink
-              to="/"
+              to="/elements/dropdown"
               class="font-text text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
             >
               Get Started
@@ -193,7 +193,7 @@ definePageMeta({
             class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-slate-700"
           >
             <NuxtLink
-              to="/"
+              to="/elements/modal"
               class="font-text text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
             >
               Get Started
@@ -235,7 +235,7 @@ definePageMeta({
             class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-slate-700"
           >
             <NuxtLink
-              to="/"
+              to="/elements/progress"
               class="font-text text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
             >
               Get Started
@@ -277,7 +277,7 @@ definePageMeta({
             class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-slate-700"
           >
             <NuxtLink
-              to="/"
+              to="/elements/form/input"
               class="font-text text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
             >
               Get Started
@@ -319,7 +319,7 @@ definePageMeta({
             class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-slate-700"
           >
             <NuxtLink
-              to="/"
+              to="/elements/form/checkbox"
               class="font-text text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
             >
               Get Started
@@ -361,7 +361,7 @@ definePageMeta({
             class="py-5 px-6 border-t-2 border-dashed border-gray-300 dark:border-slate-700"
           >
             <NuxtLink
-              to="/"
+              to="/elements/form/switch"
               class="font-text text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
             >
               Get Started
@@ -372,7 +372,7 @@ definePageMeta({
 
       <div class="text-center pt-12 pb-6">
         <NuxtLink
-          to="/"
+          to="https://docs.cssninja.io/tairo"
           class="font-text text-primary-500 border-b-2 border-dotted border-primary-500"
         >
           Online Documentation

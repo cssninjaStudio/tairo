@@ -1,0 +1,120 @@
+<script lang="ts">
+import 'vue3-carousel/dist/carousel.css'
+</script>
+
+<script setup lang="ts">
+import { Carousel, Navigation, Slide } from 'vue3-carousel'
+import type { RouteLocationRaw } from 'vue-router'
+
+export interface CarouselSlideItem {
+  icon?: string
+  title?: string
+  to?: RouteLocationRaw
+}
+
+export interface CarouselProps {
+  slidesToShow?: number
+  slides: CarouselSlideItem[]
+}
+
+const props = withDefaults(defineProps<CarouselProps>(), {
+  slidesToShow: 7,
+  slides: () => [],
+})
+</script>
+
+<template>
+  <div class="relative">
+    <Carousel
+      :items-to-show="slidesToShow"
+      :slides="props.slides"
+      :breakpoints="{
+        300: {
+          itemsToShow: 2.5,
+          snapAlign: 'start',
+        },
+        768: {
+          itemsToShow: 6,
+          snapAlign: 'start',
+        },
+        900: {
+          itemsToShow: 8,
+          snapAlign: 'start',
+        },
+        1024: {
+          itemsToShow: 7,
+          snapAlign: 'start',
+        },
+      }"
+    >
+      <Slide v-for="(slide, index) in props.slides" :key="index">
+        <NuxtLink :to="slide.to" class="cursor-pointer">
+          <BaseCard
+            shape="curved"
+            class="min-w-[100px] flex items-center justify-center py-6 px-2 text-slate-400 hover:text-purple-500 hover:border-primary-500 dark:hover:border-primary-500 hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+          >
+            <div class="text-center">
+              <i class="!block w-7 h-7 mx-auto mb-2" :class="slide.icon"></i>
+              <BaseHeading
+                tag="h3"
+                size="sm"
+                weight="medium"
+                lead="tight"
+                class="text-slate-800 dark:text-white"
+              >
+                {{ slide.title }}
+              </BaseHeading>
+            </div>
+          </BaseCard>
+        </NuxtLink>
+      </Slide>
+
+      <template #addons>
+        <navigation />
+      </template>
+    </Carousel>
+  </div>
+</template>
+
+<style lang="postcss" scoped>
+.carousel__slide {
+  @apply p-1;
+}
+
+:deep(.carousel__next--in-active),
+:deep(.carousel__prev--in-active) {
+  @apply opacity-70;
+}
+
+:deep(.carousel__next) {
+  @apply right-8;
+}
+
+:deep(.carousel__next) svg {
+  @apply -right-px;
+}
+
+:deep(.carousel__prev) {
+  @apply right-10;
+}
+
+:deep(.carousel__prev) svg {
+  @apply -left-px;
+}
+
+:deep(.carousel__next),
+:deep(.carousel__prev) {
+  @apply absolute -top-5 text-slate-400 transition-colors duration-300;
+  left: initial;
+}
+
+:deep(.carousel__next) svg,
+:deep(.carousel__prev) svg {
+  @appy relative w-3 h-3;
+}
+
+:deep(.carousel__next:hover),
+:deep(.carousel__prev:hover) {
+  @apply text-primary-500;
+}
+</style>

@@ -14,7 +14,12 @@
     "lint:eslint": "eslint .",
     "lint:eslint:fix": "eslint --fix ."
   },
-  "dependencies": {},
+  "dependencies": {
+    "vue3-carousel": "0.1.40",
+    "@vueform/slider": "2.0.10",
+    "@ckeditor/ckeditor5-build-classic": "34.0.0",
+    "@ckeditor/ckeditor5-vue": "4.0.0"
+  },
   "devDependencies": {
     "@antfu/eslint-config": "0.25.2",
     "@headlessui/vue": "1.6.5",

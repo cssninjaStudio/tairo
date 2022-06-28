@@ -1,25 +1,26 @@
 export const properties = {
   props: [
     {
-      name: 'string',
+      name: 'v-model',
+      type: 'number',
+      required: 'false',
+      default: '0',
+      values: ['number'],
+    },
+    {
+      name: 'format',
       type: 'string',
       required: 'false',
-      default: 'rounded',
+      default: 'undefined',
       values: ['string'],
     },
     {
-      name: 'boolean',
-      type: 'boolean',
+      name: 'merge',
+      type: 'number',
       required: 'false',
-      default: 'false',
-      values: ['boolean'],
+      default: 'undefined',
+      values: ['number'],
     },
   ],
-  slots: [
-    {
-      name: '#default',
-      properties: ['null'],
-      description: 'Component content',
-    },
-  ],
+  slots: [],
 }

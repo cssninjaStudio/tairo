@@ -3,6 +3,12 @@
 @tailwind utilities;
 
 @layer components {
+  /* Router Link */
+
+  .router-link-exact-active {
+    color: var(--primary) !important;
+  }
+
   /* Scrollbar helper class */
 
   .slimscroll::-webkit-scrollbar {

@@ -1,59 +1,79 @@
-export const example = `
+export const userCarousel = `
+<script setup lang="ts">
+const team = [
+  {
+    id: 0,
+    avatar: '/img/avatars/3.svg',
+    badge: '/img/icons/flags/united-states-of-america.svg',
+    name: 'Daniel Clarke',
+    role: 'Frontend developer',
+    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    skills: [
+      {
+        name: 'Vue.js',
+        logo: '/img/logos/stacks/vue.svg',
+      },
+      {
+        name: 'React.js',
+        logo: '/img/logos/stacks/react.svg',
+      },
+      {
+        name: 'Sass',
+        logo: '/img/logos/stacks/sass.svg',
+      },
+    ],
+    to: '/',
+  },
+  ...
+  {
+    id: 5,
+    avatar: '/img/avatars/14.svg',
+    badge: '/img/icons/flags/united-states-of-america.svg',
+    name: 'Raymond Perez',
+    role: 'Frontend developer',
+    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    skills: [
+      {
+        name: 'Vue.js',
+        logo: '/img/logos/stacks/vue.svg',
+      },
+      {
+        name: 'React.js',
+        logo: '/img/logos/stacks/react.svg',
+      },
+      {
+        name: 'Typescript',
+        logo: '/img/logos/stacks/typescript.svg',
+      },
+    ],
+    to: '/',
+  },
+]
+</script>
+
 <template>
-  
+  <BaseCarouselTeam :slides-to-show="3" :slides="team" />
 </template>
 `
 
-export const example2 = `
-<template>
-  
-</template>
-`
+export const iconCarousel = `
+<script setup lang="ts">
+export const topics = [
+  {
+    icon: 'i-ph-popcorn-duotone',
+    title: 'Marketing',
+    link: '/',
+  },
+  ...
+  {
+    icon: 'i-ph-buildings-duotone',
+    title: 'Enterprise',
+    link: '/',
+  },
+]
+</script>
 
-export const example3 = `
 <template>
-  
-</template>
-`
-
-export const example4 = `
-<template>
-  
-</template>
-`
-
-export const example5 = `
-<template>
-  
-</template>
-`
-
-export const example6 = `
-<template>
-  
-</template>
-`
-
-export const example7 = `
-<template>
-  
-</template>
-`
-
-export const example8 = `
-<template>
-  
-</template>
-`
-
-export const example9 = `
-<template>
-  
-</template>
-`
-
-export const example10 = `
-<template>
-  
+  <BaseCarouselIcons :slides-to-show="6" :slides="topics" />
 </template>
 `
