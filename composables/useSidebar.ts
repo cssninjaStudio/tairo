@@ -57,7 +57,9 @@ export const useSidebar = createSharedComposable(() => {
     {
       name: 'Panels',
       icon: () => h('i', { class: 'i-ph-square-half-duotone w-5 h-5' }),
-      to: { path: '/' },
+      click: () => {
+        toggleLayoutModal()
+      },
       position: 'end',
     },
     {
@@ -77,6 +79,12 @@ export const useSidebar = createSharedComposable(() => {
   ]
 
   const route = useRoute()
+  // Layout Modal
+  const isLayoutModalOpen = ref(false)
+  function toggleLayoutModal() {
+    isLayoutModalOpen.value = !isLayoutModalOpen.value
+  }
+  // Sidebar
   const sidebar = sidebars.find(
     ({ activePath }) => activePath && route.path.startsWith(activePath)
   )
@@ -116,5 +124,7 @@ export const useSidebar = createSharedComposable(() => {
     isSidebarOpened,
     toggleSidebar,
     toggleActiveSidebar,
+    isLayoutModalOpen,
+    toggleLayoutModal,
   }
 })

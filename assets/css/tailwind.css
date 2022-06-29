@@ -5,7 +5,7 @@
 @layer components {
   /* Router Link */
 
-  .router-link-exact-active {
+  .slimscroll ul li .router-link-exact-active {
     color: var(--primary) !important;
   }
 

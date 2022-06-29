@@ -49,7 +49,7 @@ export const breadcrumb = [
     to: '/components',
   },
   {
-    label: 'Flext table',
+    label: 'Flex table',
     hideLabel: false,
     to: '/components/flex-table',
   },

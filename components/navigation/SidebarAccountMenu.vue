@@ -152,12 +152,14 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
           </div>
 
           <div class="p-1.5">
-            <button
-              class="font-sub inline-flex items-center justify-center rounded-lg px-4 py-2 w-full bg-primary-600 hover:bg-primary-500 hover:shadow-lg hover:shadow-primary-600/20 focus:shadow-lg focus:shadow-primary-600/20 text-white transition-all duration-300"
+            <BaseButton
+              color="primary"
+              shape="curved"
+              icon="i-ph-lock-duotone"
+              class="w-full"
             >
-              <i class="i-ph-lock-duotone w-4 h-4 mr-1 -ml-2"></i>
               <span>Logout</span>
-            </button>
+            </BaseButton>
           </div>
         </MenuItems>
       </Transition>

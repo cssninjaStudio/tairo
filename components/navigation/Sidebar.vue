@@ -1,6 +1,12 @@
 <script setup lang="ts">
-const { activeSidebar, sidebars, isSidebarOpened, toggleActiveSidebar } =
-  useSidebar()
+const {
+  activeSidebar,
+  sidebars,
+  isSidebarOpened,
+  toggleActiveSidebar,
+  isLayoutModalOpen,
+  toggleLayoutModal,
+} = useSidebar()
 
 const startSidebars = sidebars.filter(
   (sidebar) => !sidebar.position || sidebar.position === 'start'
@@ -88,6 +94,148 @@ const endSidebars = sidebars.filter((sidebar) => sidebar.position === 'end')
           ></component>
         </div>
       </slot>
+
+      <BaseModal
+        :open="isLayoutModalOpen"
+        size="md"
+        footer
+        @close="toggleLayoutModal"
+      >
+        <template #header>
+          <div class="w-full flex items-center justify-between pt-4 pb-2 px-4">
+            <h3
+              class="font-main text-lg font-medium leading-6 text-gray-900 dark:text-white"
+            >
+              Select a Layout
+            </h3>
+            <BaseButtonClose @click="toggleLayoutModal" />
+          </div>
+        </template>
+
+        <BaseTabs
+          selected="sidebar"
+          :tabs="[
+            { label: 'Sidebar', value: 'sidebar' },
+            { label: 'Sideblock', value: 'sideblock' },
+          ]"
+        >
+          <template #tab="{ activeValue }">
+            <div v-if="activeValue === 'sidebar'">
+              <div class="grid grid-cols-2 gap-4 px-4 pb-4">
+                <!-- Layout 1 -->
+                <NuxtLink
+                  to="/"
+                  class="relative block text-center"
+                  @keydown.space.prevent="
+                    () => {
+                      toggleLayoutModal
+                    }
+                  "
+                  @click.passive="
+                    () => {
+                      toggleLayoutModal
+                    }
+                  "
+                >
+                  <div class="relative max-w-[110px] mx-auto">
+                    <img
+                      class="block dark:hidden"
+                      src="/img/icons/layouts/layout-1.svg"
+                      alt=""
+                    />
+                    <img
+                      class="hidden dark:block"
+                      src="/img/icons/layouts/layout-1-dark.svg"
+                      alt=""
+                    />
+                    <div
+                      class="absolute top-0 right-0 w-6 h-6 flex items-center justify-center bg-success-500 text-white rounded-full"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="i-lucide-check w-3 h-3 block"
+                      ></i>
+                    </div>
+                  </div>
+
+                  <BaseHeading
+                    tag="h4"
+                    weight="semibold"
+                    size="md"
+                    class="text-slate-800 dark:text-white"
+                  >
+                    Sidebar
+                  </BaseHeading>
+                  <BaseParagraph size="sm" class="text-slate-400">
+                    Dual sidebar default
+                  </BaseParagraph>
+                </NuxtLink>
+                <!-- Layout 1 -->
+                <NuxtLink
+                  to="/"
+                  class="relative block text-center"
+                  @keydown.space.prevent="
+                    () => {
+                      toggleLayoutModal
+                    }
+                  "
+                  @click.passive="
+                    () => {
+                      toggleLayoutModal
+                    }
+                  "
+                >
+                  <div class="relative max-w-[110px] mx-auto">
+                    <img
+                      class="block dark:hidden"
+                      src="/img/icons/layouts/layout-2.svg"
+                      alt=""
+                    />
+                    <img
+                      class="hidden dark:block"
+                      src="/img/icons/layouts/layout-2-dark.svg"
+                      alt=""
+                    />
+                    <div
+                      class="absolute top-0 right-0 w-6 h-6 flex items-center justify-center bg-success-500 text-white rounded-full"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="i-lucide-check w-3 h-3 block"
+                      ></i>
+                    </div>
+                  </div>
+
+                  <BaseHeading
+                    tag="h4"
+                    weight="semibold"
+                    size="md"
+                    class="text-slate-800 dark:text-white"
+                  >
+                    Sidebar
+                  </BaseHeading>
+                  <BaseParagraph size="sm" class="text-slate-400">
+                    Dual sidebar colored
+                  </BaseParagraph>
+                </NuxtLink>
+              </div>
+            </div>
+            <div
+              v-else-if="activeValue === 'sideblock'"
+              class="font-text text-sm text-gray-500 dark:text-gray-400"
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quid
+              iudicant sensus? Primum quid tu dicis breve? Etiam beatissimum? Ne
+              discipulum abducam, times. Quae diligentissime contra Aristonem
+              dicuntur a Chryippo. Duo Reges: constructio interrete.
+            </div>
+          </template>
+        </BaseTabs>
+
+        <template #footer>
+          <!-- Modal footer content -->
+        </template>
+      </BaseModal>
     </div>
   </div>
 </template>
