@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { toc } from '@@/documentation/elements/form/switch/toc'
+import { breadcrumb, toc } from '@@/documentation/elements/form/switch/toc'
 import {
   ballSublabel,
   ballSwitch,
@@ -14,25 +14,6 @@ import {
 definePageMeta({
   title: 'Switches',
 })
-
-const breadcrumb = [
-  {
-    label: 'Home',
-    hideLabel: true,
-    icon: 'i-lucide-home',
-    to: '/',
-  },
-  {
-    label: 'Elements',
-    hideLabel: false,
-    to: '/elements',
-  },
-  {
-    label: 'Switch',
-    hideLabel: false,
-    to: '/form/switch',
-  },
-]
 </script>
 
 <template>

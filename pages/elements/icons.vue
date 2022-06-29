@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { toc } from '@@/documentation/elements/icons/toc'
+import { breadcrumb, toc } from '@@/documentation/elements/icons/toc'
 import {
   carbon,
   cil,
@@ -16,25 +16,6 @@ import {
 definePageMeta({
   title: 'Icons',
 })
-
-const breadcrumb = [
-  {
-    label: 'Home',
-    hideLabel: true,
-    icon: 'i-lucide-home',
-    to: '/',
-  },
-  {
-    label: 'Elements',
-    hideLabel: false,
-    to: '/elements',
-  },
-  {
-    label: 'Icons',
-    hideLabel: false,
-    to: '/elements/icons',
-  },
-]
 </script>
 
 <template>

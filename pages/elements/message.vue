@@ -1,30 +1,11 @@
 <script setup lang="ts">
-import { toc } from '@@/documentation/elements/message/toc'
+import { breadcrumb, toc } from '@@/documentation/elements/message/toc'
 import { icons, shapes, types } from '@@/documentation/elements/message'
 import { properties } from '@@/documentation/elements/message/properties'
 
 definePageMeta({
   title: 'Messages',
 })
-
-const breadcrumb = [
-  {
-    label: 'Home',
-    hideLabel: true,
-    icon: 'i-lucide-home',
-    to: '/',
-  },
-  {
-    label: 'Elements',
-    hideLabel: false,
-    to: '/elements',
-  },
-  {
-    label: 'Message',
-    hideLabel: false,
-    to: '/elements/message',
-  },
-]
 </script>
 
 <template>

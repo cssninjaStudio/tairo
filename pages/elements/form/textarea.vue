@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { toc } from '@@/documentation/elements/form/textarea/toc'
+import { breadcrumb, toc } from '@@/documentation/elements/form/textarea/toc'
 import {
   addon,
   curved,
@@ -11,34 +11,16 @@ import {
   straight,
 } from '@@/documentation/elements/form/textarea'
 import { properties } from '@@/documentation/elements/form/textarea/properties'
+import {
+  textareaCurved,
+  textareaFull,
+  textareaRounded,
+  textareaStraight,
+} from '@@/documentation/elements/form/textarea/data'
 
 definePageMeta({
   title: 'Textarea',
 })
-
-const breadcrumb = [
-  {
-    label: 'Home',
-    hideLabel: true,
-    icon: 'i-lucide-home',
-    to: '/',
-  },
-  {
-    label: 'Elements',
-    hideLabel: false,
-    to: '/elements',
-  },
-  {
-    label: 'Textarea',
-    hideLabel: false,
-    to: '/form/textarea',
-  },
-]
-
-const textareaStraight = ref('')
-const textareaRounded = ref('')
-const textareaCurved = ref('')
-const textareaFull = ref('')
 </script>
 
 <template>

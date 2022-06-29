@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { toc } from '@@/documentation/elements/icon-button/toc'
+import { breadcrumb, toc } from '@@/documentation/elements/icon-button/toc'
 import {
   group,
   loading,
@@ -12,25 +12,6 @@ import { properties } from '@@/documentation/elements/icon-button/properties'
 definePageMeta({
   title: 'Icon buttons',
 })
-
-const breadcrumb = [
-  {
-    label: 'Home',
-    hideLabel: true,
-    icon: 'i-lucide-home',
-    to: '/',
-  },
-  {
-    label: 'Elements',
-    hideLabel: false,
-    to: '/elements',
-  },
-  {
-    label: 'Icon button',
-    hideLabel: false,
-    to: '/elements/iconbutton',
-  },
-]
 </script>
 
 <template>

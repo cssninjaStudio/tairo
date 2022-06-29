@@ -70,3 +70,22 @@ export const toc = [
     subItems: [],
   },
 ]
+
+export const breadcrumb = [
+  {
+    label: 'Home',
+    hideLabel: true,
+    icon: 'i-lucide-home',
+    to: '/',
+  },
+  {
+    label: 'Components',
+    hideLabel: false,
+    to: '/components',
+  },
+  {
+    label: 'Avatar',
+    hideLabel: false,
+    to: '/components/avatar',
+  },
+]

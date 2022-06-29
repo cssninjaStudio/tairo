@@ -1,30 +1,11 @@
 <script setup lang="ts">
-import { toc } from '@@/documentation/elements/tooltip/toc'
+import { breadcrumb, toc } from '@@/documentation/elements/tooltip/toc'
 import { avatar, positions } from '@@/documentation/elements/tooltip'
 import { properties } from '@@/documentation/elements/tooltip/properties'
 
 definePageMeta({
   title: 'Tooltips',
 })
-
-const breadcrumb = [
-  {
-    label: 'Home',
-    hideLabel: true,
-    icon: 'i-lucide-home',
-    to: '/',
-  },
-  {
-    label: 'Elements',
-    hideLabel: false,
-    to: '/elements',
-  },
-  {
-    label: 'Tooltip',
-    hideLabel: false,
-    to: '/elements/tooltip',
-  },
-]
 </script>
 
 <template>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { toc } from '@@/documentation/elements/dropdown/toc'
+import { breadcrumb, toc } from '@@/documentation/elements/dropdown/toc'
 import {
   avatarSlot,
   buttonLeft,
@@ -19,25 +19,6 @@ import {
 definePageMeta({
   title: 'Dropdowns',
 })
-
-const breadcrumb = [
-  {
-    label: 'Home',
-    hideLabel: true,
-    icon: 'i-lucide-home',
-    to: '/',
-  },
-  {
-    label: 'Elements',
-    hideLabel: false,
-    to: '/elements',
-  },
-  {
-    label: 'Dropdown',
-    hideLabel: false,
-    to: '/elements/dropdown',
-  },
-]
 </script>
 
 <template>

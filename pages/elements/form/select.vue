@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { toc } from '@@/documentation/elements/form/select/toc'
+import { breadcrumb, toc } from '@@/documentation/elements/form/select/toc'
 import {
   curved,
   full,
@@ -11,34 +11,16 @@ import {
   straight,
 } from '@@/documentation/elements/form/select'
 import { properties } from '@@/documentation/elements/form/select/properties'
+import {
+  selectCurved,
+  selectFull,
+  selectRounded,
+  selectStraight,
+} from '@@/documentation/elements/form/select/data'
 
 definePageMeta({
   title: 'Selects',
 })
-
-const breadcrumb = [
-  {
-    label: 'Home',
-    hideLabel: true,
-    icon: 'i-lucide-home',
-    to: '/',
-  },
-  {
-    label: 'Elements',
-    hideLabel: false,
-    to: '/elements',
-  },
-  {
-    label: 'Select',
-    hideLabel: false,
-    to: '/form/select',
-  },
-]
-
-const selectStraight = ref('')
-const selectRounded = ref('')
-const selectCurved = ref('')
-const selectFull = ref('')
 </script>
 
 <template>

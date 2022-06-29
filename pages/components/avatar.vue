@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { toc } from '@@/documentation/components/avatar/toc'
+import { breadcrumb, toc } from '@@/documentation/components/avatar/toc'
 import { properties } from '@@/documentation/components/avatar/props'
 import {
   circleBadge,
@@ -19,25 +19,6 @@ import {
 definePageMeta({
   title: 'Avatars',
 })
-
-const breadcrumb = [
-  {
-    label: 'Home',
-    hideLabel: true,
-    icon: 'i-lucide-home',
-    to: '/',
-  },
-  {
-    label: 'Components',
-    hideLabel: false,
-    to: '/components',
-  },
-  {
-    label: 'Avatar',
-    hideLabel: false,
-    to: '/components/avatar',
-  },
-]
 </script>
 
 <template>

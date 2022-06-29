@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { toc } from '@@/documentation/elements/autocomplete/toc'
+import { breadcrumb, toc } from '@@/documentation/elements/autocomplete/toc'
 import {
   clearable,
   curved,
@@ -14,123 +14,19 @@ import {
   straight,
 } from '@@/documentation/elements/autocomplete'
 import { properties } from '@@/documentation/elements/autocomplete/properties'
+import {
+  frameworks,
+  hobbies,
+  people,
+  selectedFramework,
+  selectedHobby,
+  selectedPeople,
+  selectedPerson,
+} from '@@/documentation/elements/autocomplete/data'
 
 definePageMeta({
   title: 'Autocomplete',
 })
-
-const breadcrumb = [
-  {
-    label: 'Home',
-    hideLabel: true,
-    icon: 'i-lucide-home',
-    to: '/',
-  },
-  {
-    label: 'Elements',
-    hideLabel: false,
-    to: '/elements',
-  },
-  {
-    label: 'Autocomplete',
-    hideLabel: false,
-    to: '/elements/autocomplete',
-  },
-]
-
-const frameworks = [
-  {
-    id: 1,
-    name: 'Javascript',
-  },
-  {
-    id: 2,
-    name: 'Vue.js',
-  },
-  {
-    id: 3,
-    name: 'React.js',
-  },
-  {
-    id: 4,
-    name: 'Angular',
-  },
-  {
-    id: 5,
-    name: 'Alpine.js',
-  },
-]
-
-const hobbies = [
-  {
-    id: 1,
-    name: 'Movies',
-    text: 'Cinema & shows',
-    icon: 'i-ph-sword-duotone',
-  },
-  {
-    id: 2,
-    name: 'Travel',
-    text: 'Tourism & travel',
-    icon: 'i-ph-airplane-duotone',
-  },
-  {
-    id: 3,
-    name: 'Drinks',
-    text: 'Wines & fine drinks',
-    icon: 'i-ph-brandy-duotone',
-  },
-  {
-    id: 4,
-    name: 'Arts',
-    text: 'Paintings & scultpure',
-    icon: 'i-ph-paint-brush-duotone',
-  },
-  {
-    id: 5,
-    name: 'Karaoke',
-    text: 'singing with friends',
-    icon: 'i-ph-microphone-stage-duotone',
-  },
-]
-
-const people = [
-  {
-    id: 1,
-    name: 'Clarissa Perez',
-    text: 'Sales Manager',
-    media: '/img/avatars/19.svg',
-  },
-  {
-    id: 2,
-    name: 'Aaron Splatter',
-    text: 'Project Manager',
-    media: '/img/avatars/16.svg',
-  },
-  {
-    id: 3,
-    name: 'Mike Miller',
-    text: 'UI/UX Designer',
-    media: '/img/avatars/3.svg',
-  },
-  {
-    id: 4,
-    name: 'Benedict Kessler',
-    text: 'Mobile Developer',
-    media: '/img/avatars/22.svg',
-  },
-  {
-    id: 5,
-    name: 'Maya Rosselini',
-    text: 'Product Manager',
-    media: '/img/avatars/2.svg',
-  },
-]
-
-const selectedFramework = ref('')
-const selectedHobby = ref('')
-const selectedPerson = ref('')
-const selectedPeople = ref([people[0], people[1]])
 </script>
 
 <template>

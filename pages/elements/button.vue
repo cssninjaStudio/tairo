@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { toc } from '@@/documentation/elements/button/toc'
+import { breadcrumb, toc } from '@@/documentation/elements/button/toc'
 import {
   disabled,
   group,
@@ -16,25 +16,6 @@ import { properties } from '@@/documentation/elements/button/properties'
 definePageMeta({
   title: 'Buttons',
 })
-
-const breadcrumb = [
-  {
-    label: 'Home',
-    hideLabel: true,
-    icon: 'i-lucide-home',
-    to: '/',
-  },
-  {
-    label: 'Elements',
-    hideLabel: false,
-    to: '/elements',
-  },
-  {
-    label: 'Button',
-    hideLabel: false,
-    to: '/elements/button',
-  },
-]
 </script>
 
 <template>

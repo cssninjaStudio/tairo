@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { toc } from '@@/documentation/elements/progress/toc'
+import { breadcrumb, toc } from '@@/documentation/elements/progress/toc'
 import {
   bar,
   circle,
@@ -11,32 +11,14 @@ import {
   barProperties,
   circleProperties,
 } from '@@/documentation/elements/progress/properties'
+import {
+  progress,
+  progressCircle,
+} from '@@/documentation/elements/progress/data'
 
 definePageMeta({
   title: 'Progress',
 })
-
-const breadcrumb = [
-  {
-    label: 'Home',
-    hideLabel: true,
-    icon: 'i-lucide-home',
-    to: '/',
-  },
-  {
-    label: 'Elements',
-    hideLabel: false,
-    to: '/elements',
-  },
-  {
-    label: 'Progress',
-    hideLabel: false,
-    to: '/elements/progress',
-  },
-]
-
-const progress = ref(25)
-const progressCircle = ref(25)
 </script>
 
 <template>

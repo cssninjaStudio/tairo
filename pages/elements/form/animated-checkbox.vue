@@ -1,53 +1,15 @@
 <script setup lang="ts">
-import { toc } from '@@/documentation/elements/form/animated-checkbox/toc'
+import {
+  breadcrumb,
+  toc,
+} from '@@/documentation/elements/form/animated-checkbox/toc'
 import { base } from '@@/documentation/elements/form/animated-checkbox'
 import { properties } from '@@/documentation/elements/form/animated-checkbox/properties'
+import { options } from '@@/documentation/elements/form/animated-checkbox/data'
 
 definePageMeta({
   title: 'Animated checkbox',
 })
-
-const breadcrumb = [
-  {
-    label: 'Home',
-    hideLabel: true,
-    icon: 'i-lucide-home',
-    to: '/',
-  },
-  {
-    label: 'Elements',
-    hideLabel: false,
-    to: '/elements',
-  },
-  {
-    label: 'Animated checkbox',
-    hideLabel: false,
-    to: '/form/animated-checkbox',
-  },
-]
-
-const options = ref([
-  'Option 1',
-  'Option 2',
-  'Option 3',
-  'Option 4',
-  'Option 5',
-  'Option 6',
-  'Option 7',
-  'Option 8',
-  'Option 9',
-  'Option 10',
-  'Option 11',
-  'Option 12',
-  'Option 13',
-  'Option 14',
-  'Option 15',
-  'Option 16',
-  'Option 17',
-  'Option 18',
-  'Option 19',
-  'Option 20',
-])
 </script>
 
 <template>

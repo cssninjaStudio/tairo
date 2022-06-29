@@ -1,29 +1,10 @@
 <script setup lang="ts">
-import { toc } from '@@/documentation/elements/placeload/toc'
+import { breadcrumb, toc } from '@@/documentation/elements/placeload/toc'
 import { composition, shape, text } from '@@/documentation/elements/placeload'
 
 definePageMeta({
   title: 'Placeloads',
 })
-
-const breadcrumb = [
-  {
-    label: 'Home',
-    hideLabel: true,
-    icon: 'i-lucide-home',
-    to: '/',
-  },
-  {
-    label: 'Elements',
-    hideLabel: false,
-    to: '/elements',
-  },
-  {
-    label: 'Placeload',
-    hideLabel: false,
-    to: '/elements/placeload',
-  },
-]
 </script>
 
 <template>

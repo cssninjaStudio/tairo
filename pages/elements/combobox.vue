@@ -9,132 +9,20 @@ import {
   sublabels,
 } from '@@/documentation/elements/combobox'
 import { properties } from '@@/documentation/elements/combobox/properties'
+import {
+  frameworks,
+  hobbies,
+  people,
+  peopleNames,
+  selectedFramework,
+  selectedHobby,
+  selectedPerson,
+  selectedPersonName,
+} from '@@/documentation/elements/combobox/data'
 
 definePageMeta({
   title: 'Combobox',
 })
-
-const frameworks = [
-  {
-    id: 1,
-    name: 'Javascript',
-  },
-  {
-    id: 2,
-    name: 'Vue.js',
-  },
-  {
-    id: 3,
-    name: 'React.js',
-  },
-  {
-    id: 4,
-    name: 'Angular',
-  },
-  {
-    id: 5,
-    name: 'Alpine.js',
-  },
-]
-
-const peopleNames = [
-  {
-    id: 1,
-    name: 'Clarissa Perez',
-    text: 'Sales Manager',
-  },
-  {
-    id: 2,
-    name: 'Aaron Splatter',
-    text: 'Project Manager',
-  },
-  {
-    id: 3,
-    name: 'Mike Miller',
-    text: 'UI/UX Designer',
-  },
-  {
-    id: 4,
-    name: 'Benedict Kessler',
-    text: 'Mobile Developer',
-  },
-  {
-    id: 5,
-    name: 'Maya Rosselini',
-    text: 'Product Manager',
-  },
-]
-
-const hobbies = [
-  {
-    id: 1,
-    name: 'Movies',
-    text: 'Cinema & shows',
-    icon: 'i-ph-sword-duotone',
-  },
-  {
-    id: 2,
-    name: 'Travel',
-    text: 'Tourism & travel',
-    icon: 'i-ph-airplane-duotone',
-  },
-  {
-    id: 3,
-    name: 'Drinks',
-    text: 'Wines & fine drinks',
-    icon: 'i-ph-brandy-duotone',
-  },
-  {
-    id: 4,
-    name: 'Arts',
-    text: 'Paintings & scultpure',
-    icon: 'i-ph-paint-brush-duotone',
-  },
-  {
-    id: 5,
-    name: 'Karaoke',
-    text: 'singing with friends',
-    icon: 'i-ph-microphone-stage-duotone',
-  },
-]
-
-const people = [
-  {
-    id: 1,
-    name: 'Clarissa Perez',
-    text: 'Sales Manager',
-    media: '/img/avatars/19.svg',
-  },
-  {
-    id: 2,
-    name: 'Aaron Splatter',
-    text: 'Project Manager',
-    media: '/img/avatars/16.svg',
-  },
-  {
-    id: 3,
-    name: 'Mike Miller',
-    text: 'UI/UX Designer',
-    media: '/img/avatars/3.svg',
-  },
-  {
-    id: 4,
-    name: 'Benedict Kessler',
-    text: 'Mobile Developer',
-    media: '/img/avatars/22.svg',
-  },
-  {
-    id: 5,
-    name: 'Maya Rosselini',
-    text: 'Product Manager',
-    media: '/img/avatars/2.svg',
-  },
-]
-
-const selectedFramework = ref(frameworks[0])
-const selectedPersonName = ref(peopleNames[0])
-const selectedHobby = ref(hobbies[1])
-const selectedPerson = ref(people[2])
 </script>
 
 <template>

@@ -45,3 +45,22 @@ export const toc = [
     subItems: [],
   },
 ]
+
+export const breadcrumb = [
+  {
+    label: 'Home',
+    hideLabel: true,
+    icon: 'i-lucide-home',
+    to: '/',
+  },
+  {
+    label: 'Elements',
+    hideLabel: false,
+    to: '/elements',
+  },
+  {
+    label: 'Overview',
+    hideLabel: false,
+    to: '/elements/overview',
+  },
+]

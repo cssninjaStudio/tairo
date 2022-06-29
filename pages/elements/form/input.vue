@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { toc } from '@@/documentation/elements/form/input/toc'
+import { breadcrumb, toc } from '@@/documentation/elements/form/input/toc'
 import {
   curved,
   disabled,
@@ -12,34 +12,16 @@ import {
   straight,
 } from '@@/documentation/elements/form/input'
 import { properties } from '@@/documentation/elements/form/input/properties'
+import {
+  inputCurved,
+  inputFull,
+  inputRounded,
+  inputStraight,
+} from '@@/documentation/elements/form/input/data'
 
 definePageMeta({
   title: 'Inputs',
 })
-
-const breadcrumb = [
-  {
-    label: 'Home',
-    hideLabel: true,
-    icon: 'i-lucide-home',
-    to: '/',
-  },
-  {
-    label: 'Elements',
-    hideLabel: false,
-    to: '/elements',
-  },
-  {
-    label: 'Input',
-    hideLabel: false,
-    to: '/form/input',
-  },
-]
-
-const inputStraight = ref('')
-const inputRounded = ref('')
-const inputCurved = ref('')
-const inputFull = ref('')
 </script>
 
 <template>

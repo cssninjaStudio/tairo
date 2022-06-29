@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { toc } from '@@/documentation/elements/form/checkbox/toc'
+import { breadcrumb, toc } from '@@/documentation/elements/form/checkbox/toc'
 import {
   circle,
   colors,
@@ -8,35 +8,17 @@ import {
   straight,
 } from '@@/documentation/elements/form/checkbox'
 import { properties } from '@@/documentation/elements/form/checkbox/properties'
+import {
+  demoFour,
+  demoOne,
+  demoStraight,
+  demoThree,
+  demoTwo,
+} from '@@/documentation/elements/form/checkbox/data'
 
 definePageMeta({
   title: 'Checkbox',
 })
-
-const breadcrumb = [
-  {
-    label: 'Home',
-    hideLabel: true,
-    icon: 'i-lucide-home',
-    to: '/',
-  },
-  {
-    label: 'Elements',
-    hideLabel: false,
-    to: '/elements',
-  },
-  {
-    label: 'Checkbox',
-    hideLabel: false,
-    to: '/form/checkbox',
-  },
-]
-
-const demoOne = ref(true)
-const demoTwo = ref(true)
-const demoThree = ref(true)
-const demoFour = ref(true)
-const demoStraight = ref(true)
 </script>
 
 <template>

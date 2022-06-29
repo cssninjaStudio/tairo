@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { toc } from '@@/documentation/elements/content/toc'
+import { breadcrumb, toc } from '@@/documentation/elements/content/toc'
 import { heading, paragraph, text } from '@@/documentation/elements/content'
 import {
   headingProperties,
@@ -10,25 +10,6 @@ import {
 definePageMeta({
   title: 'Content',
 })
-
-const breadcrumb = [
-  {
-    label: 'Home',
-    hideLabel: true,
-    icon: 'i-lucide-home',
-    to: '/',
-  },
-  {
-    label: 'Elements',
-    hideLabel: false,
-    to: '/elements',
-  },
-  {
-    label: 'Content',
-    hideLabel: false,
-    to: '/elements/content',
-  },
-]
 </script>
 
 <template>
