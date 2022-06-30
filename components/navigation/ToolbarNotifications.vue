@@ -10,7 +10,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
           class="w-9 h-9 rounded-full ring-1 ring-transparent group-hover:ring-offset-4 group-hover:ring-primary-500 dark:ring-offset-slate-900 inline-flex items-center justify-center transition-all duration-300"
         >
           <span
-            class="flex items-center justify-center w-9 h-9 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700"
+            class="flex items-center justify-center w-9 h-9 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700"
           >
             <i class="i-ph-bell-duotone w-5 h-5 text-slate-400"></i>
           </span>
@@ -26,7 +26,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
         leave-to-class="transform scale-95 opacity-0"
       >
         <MenuItems
-          class="absolute right-0 mt-2 w-72 origin-top-right divide-y divide-gray-100 dark:divide-slate-700 rounded-md bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 shadow-lg focus:outline-none"
+          class="absolute right-0 mt-2 w-72 origin-top-right divide-y divide-slate-100 dark:divide-slate-700 rounded-md bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-lg focus:outline-none"
         >
           <div class="p-4">
             <div class="flex justify-between items-center relative">

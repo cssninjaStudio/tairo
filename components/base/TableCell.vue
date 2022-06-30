@@ -13,8 +13,8 @@ const props = withDefaults(defineProps<TableCellProps>(), {
     class="font-sub py-4 text-sm whitespace-nowrap"
     :class="
       props.light
-        ? 'text-gray-500 dark:text-white'
-        : 'font-semibold text-gray-800 dark:text-white'
+        ? 'text-slate-500 dark:text-white'
+        : 'font-semibold text-slate-800 dark:text-white'
     "
   >
     <slot></slot>

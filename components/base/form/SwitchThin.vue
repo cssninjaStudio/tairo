@@ -49,10 +49,10 @@ watch(
         @change="emit('update:modelValue', !props.modelValue)"
       />
       <span
-        class="absolute flex items-center justify-center w-6 h-6 border border-gray-300 bg-white dark:bg-gray-700 dark:border-gray-600 rounded-full shadow -left-1 top-1/2 -translate-y-1/2 transition peer-checked:-translate-y-1/2 peer-checked:translate-x-full"
+        class="absolute flex items-center justify-center w-6 h-6 border border-slate-300 bg-white dark:bg-slate-700 dark:border-slate-600 rounded-full shadow -left-1 top-1/2 -translate-y-1/2 transition peer-checked:-translate-y-1/2 peer-checked:translate-x-full"
       ></span>
       <span
-        class="block w-10 h-4 bg-gray-300 dark:bg-gray-600 rounded-full shadow-inner peer-focus:ring-0 outline-1 outline-transparent peer-focus:outline-dashed peer-focus:outline-gray-300 dark:peer-focus:outline-gray-600 peer-focus:outline-offset-2 transition-all duration-300"
+        class="block w-10 h-4 bg-slate-300 dark:bg-slate-600 rounded-full shadow-inner peer-focus:ring-0 outline-1 outline-transparent peer-focus:outline-dashed peer-focus:outline-slate-300 dark:peer-focus:outline-slate-600 peer-focus:outline-offset-2 transition-all duration-300"
         :class="[
           props.color === 'primary' && 'peer-checked:bg-primary-400',
           props.color === 'info' && 'peer-checked:bg-info-400',
@@ -64,7 +64,7 @@ watch(
     </span>
     <span
       v-if="!props.sublabel"
-      class="relative cursor-pointer select-none ml-3 text-sm text-gray-400 font-text"
+      class="relative cursor-pointer select-none ml-3 text-sm text-slate-400 font-text"
     >
       {{ props.label }}
     </span>

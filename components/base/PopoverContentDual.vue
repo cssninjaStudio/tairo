@@ -48,7 +48,7 @@ const props = defineProps<PopoverContentDualProps>()
               size="xs"
               weight="semibold"
               lead="tight"
-              class="text-gray-800 dark:text-white"
+              class="text-slate-800 dark:text-white"
             >
               {{ stat.title }}
             </BaseHeading>
@@ -67,7 +67,7 @@ const props = defineProps<PopoverContentDualProps>()
               size="xs"
               weight="semibold"
               lead="tight"
-              class="text-gray-800 dark:text-white"
+              class="text-slate-800 dark:text-white"
             >
               {{ props.title }}
             </BaseHeading>
@@ -89,12 +89,12 @@ const props = defineProps<PopoverContentDualProps>()
           tag="h4"
           size="xs"
           weight="semibold"
-          class="text-gray-800 dark:text-white"
+          class="text-slate-800 dark:text-white"
           lead="tight"
         >
           {{ props.footerTitle }}
         </BaseHeading>
-        <BaseText size="xs" class="text-gray-400">
+        <BaseText size="xs" class="text-slate-400">
           {{ props.footerText }}
         </BaseText>
       </div>

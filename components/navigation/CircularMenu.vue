@@ -13,7 +13,7 @@ const isScrolled = computed(() => {
 
 <template>
   <div
-    class="fixed top-[0.6em] right-[1em] z-[90] transition-transform duration-300 after:block after:content-[''] after:absolute after:top-0 after:right-0 after:bg-primary-600 after:shadow-lg after:shadow-primary-500/50 dark:after:shadow-gray-800/10 after:w-12 after:h-12 after:rounded-full after:transition-transform after:duration-300"
+    class="fixed top-[0.6em] right-[1em] z-[90] transition-transform duration-300 after:block after:content-[''] after:absolute after:top-0 after:right-0 after:bg-primary-600 after:shadow-lg after:shadow-primary-500/50 dark:after:shadow-slate-800/10 after:w-12 after:h-12 after:rounded-full after:transition-transform after:duration-300"
     :class="[
       isOpened
         ? 'after:scale-x-[5.5] after:scale-y-[5.5] after:ease-[cubic-bezier(0.68, 1.55, 0.265, 1)]'
@@ -22,7 +22,7 @@ const isScrolled = computed(() => {
     ]"
   >
     <button
-      class="relative flex items-center justify-center w-12 h-12 rounded-full bg-primary-500 text-white shadow-lg shadow-primary-500/50 dark:shadow-gray-800/10 z-30"
+      class="relative flex items-center justify-center w-12 h-12 rounded-full bg-primary-500 text-white shadow-lg shadow-primary-500/50 dark:shadow-slate-800/10 z-30"
       @click="isOpened = !isOpened"
     >
       <span
@@ -30,15 +30,15 @@ const isScrolled = computed(() => {
         :class="isOpened ? 'scale-90 top-0' : '-top-0.5'"
       >
         <span
-          class="absolute block w-full h-0.5 bg-gray-50 transition-all duration-300"
+          class="absolute block w-full h-0.5 bg-slate-50 transition-all duration-300"
           :class="isOpened ? '-rotate-45 top-1' : 'top-0.5'"
         ></span>
         <span
-          class="absolute top-1/2 block w-full h-0.5 bg-gray-50 transition-all duration-300"
+          class="absolute top-1/2 block w-full h-0.5 bg-slate-50 transition-all duration-300"
           :class="isOpened ? 'opacity-0 translate-x-4' : ''"
         ></span>
         <span
-          class="absolute block w-full h-0.5 bg-gray-50 transition-all duration-300"
+          class="absolute block w-full h-0.5 bg-slate-50 transition-all duration-300"
           :class="isOpened ? 'rotate-45 bottom-1.5' : 'bottom-0'"
         ></span>
       </span>

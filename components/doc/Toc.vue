@@ -49,7 +49,7 @@ const scrollTo = VueScrollTo.scrollTo
               :class="
                 activeAnchor === index
                   ? ' border-primary-500 text-primary-500'
-                  : 'border-gray-200  dark:border-gray-800 text-slate-500 dark:text-slate-400 hover:text-slate-400'
+                  : 'border-slate-200  dark:border-slate-800 text-slate-500 dark:text-slate-400 hover:text-slate-400'
               "
               @click.prevent="
                 scrollTo(`#${item.anchor}`, 800, { offset: -100 }),
@@ -62,7 +62,7 @@ const scrollTo = VueScrollTo.scrollTo
               <li v-for="(subitem, i) in item.subItems" :key="i">
                 <a
                   href="javascript:void(0);"
-                  class="block text-sm py-2 border-r-2 border-gray-200 dark:border-gray-800 text-slate-400 hover:text-slate-300"
+                  class="block text-sm py-2 border-r-2 border-slate-200 dark:border-slate-800 text-slate-400 hover:text-slate-300"
                   @click.prevent="
                     scrollTo(`#${item.anchor}`, 800, { offset: -100 }),
                       (activeAnchor = index)

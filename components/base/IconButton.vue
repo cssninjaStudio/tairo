@@ -26,14 +26,14 @@ const iconButtonClasses = computed(() => [
     : '',
   props.muted &&
     !props.primary &&
-    'text-slate-500 bg-slate-200 dark:text-white dark:bg-gray-700 dark:hover:bg-gray-600 hover:bg-slate-100',
+    'text-slate-500 bg-slate-200 dark:text-white dark:bg-slate-700 dark:hover:bg-slate-600 hover:bg-slate-100',
 
   props.primary &&
     !props.muted &&
     'text-primary-500 border-2 border-primary-500 hover:bg-primary-500/20',
   !props.primary &&
     !props.muted &&
-    'text-gray-700 bg-white border border-gray-300 dark:text-white dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-600 hover:bg-gray-50',
+    'text-slate-700 bg-white border border-slate-300 dark:text-white dark:bg-slate-700 dark:hover:bg-slate-600 dark:border-slate-600 hover:bg-slate-50',
   props.shape === 'straight' && '',
   props.shape === 'rounded' && 'rounded-md',
   props.shape === 'curved' && 'rounded-xl',
@@ -53,7 +53,7 @@ const attributes = computed(() => {
   <component
     :is="props.to ? NuxtLink : 'button'"
     v-bind="attributes"
-    class="relative font-text font-normal inline-flex items-center justify-center outline-none leading-5 no-underline space-x-1 h-10 w-10 p-2 text-sm focus:outline-dashed focus:outline-gray-300 dark:focus:outline-gray-600 focus:outline-offset-2 transition-all duration-300"
+    class="relative font-text font-normal inline-flex items-center justify-center outline-none leading-5 no-underline space-x-1 h-10 w-10 p-2 text-sm focus:outline-dashed focus:outline-slate-300 dark:focus:outline-slate-600 focus:outline-offset-2 transition-all duration-300"
   >
     <slot v-if="!props.loading"></slot>
     <BasePlaceload v-else class="h-4 w-4 rounded-md" />

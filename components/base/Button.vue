@@ -30,15 +30,15 @@ const props = withDefaults(defineProps<ButtonProps>(), {
 
 const NuxtLink = defineNuxtLink({})
 const buttonClasses = computed(() => [
-  'relative font-text font-normal inline-flex items-center justify-center outline-none leading-5 no-underline space-x-1 h-10 px-5 py-2 text-sm focus:outline-dashed focus:outline-gray-300 dark:focus:outline-gray-600 focus:outline-offset-2 transition-all duration-300',
+  'relative font-text font-normal inline-flex items-center justify-center outline-none leading-5 no-underline space-x-1 h-10 px-5 py-2 text-sm focus:outline-dashed focus:outline-slate-300 dark:focus:outline-slate-600 focus:outline-offset-2 transition-all duration-300',
   props.loading ? '!text-transparent' : '',
   props.disabled
     ? 'disabled:opacity-60 disabled:cursor-not-allowed hover:shadow-none'
     : '',
   props.color === 'default' &&
-    'text-gray-700 bg-white border border-gray-300 dark:text-white dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-600 hover:bg-gray-50',
+    'text-slate-700 bg-white border border-slate-300 dark:text-white dark:bg-slate-700 dark:hover:bg-slate-600 dark:border-slate-600 hover:bg-slate-50',
   props.color === 'muted' &&
-    'text-slate-500 bg-slate-200 dark:text-white dark:bg-gray-700 dark:hover:bg-gray-600 hover:bg-slate-100',
+    'text-slate-500 bg-slate-200 dark:text-white dark:bg-slate-700 dark:hover:bg-slate-600 hover:bg-slate-100',
   props.color === 'primary' &&
     props.flavor === 'solid' &&
     'bg-primary-400 dark:bg-primary-500 hover:bg-primary-500 dark:hover:bg-primary-600 text-white hover:shadow-lg hover:shadow-primary-500/50 dark:hover:shadow-primary-800/20',

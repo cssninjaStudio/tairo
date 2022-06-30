@@ -1,9 +1,9 @@
 <template>
   <button
-    class="flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-slate-700 h-9 w-9 transition-colors duration-300"
+    class="flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-700 h-9 w-9 transition-colors duration-300"
   >
     <svg
-      class="fill-current h-5 w-5 text-gray-700 dark:text-gray-50"
+      class="fill-current h-5 w-5 text-slate-700 dark:text-slate-50"
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink"
       aria-hidden="true"

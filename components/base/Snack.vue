@@ -22,13 +22,13 @@ const emit = defineEmits(['delete'])
       !props.icon && !props.image && 'pl-4',
       props.small ? 'h-8' : 'h-10',
       props.light
-        ? 'bg-white dark:bg-slate-700 border border-gray-300 dark:border-slate-600'
+        ? 'bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600'
         : 'bg-slate-200 dark:bg-slate-700',
     ]"
   >
     <div
       v-if="props.icon && !props.image"
-      class="flex items-center justify-center rounded-full bg-white border border-gray-200 mr-2 -ml-0.5"
+      class="flex items-center justify-center rounded-full bg-white border border-slate-200 mr-2 -ml-0.5"
       :class="props.small ? 'h-8 w-8' : 'h-10 w-10'"
     >
       <i :class="[props.icon, props.small ? 'h-4 w-4' : 'h-5 w-5']"></i>

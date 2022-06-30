@@ -89,7 +89,7 @@ const removeItem = function (name: string) {
   >
     <ComboboxLabel
       v-if="!props.hideLabel"
-      class="font-text text-sm text-gray-400"
+      class="font-text text-sm text-slate-400"
     >
       {{ props.label }}
     </ComboboxLabel>
@@ -115,7 +115,7 @@ const removeItem = function (name: string) {
     </div>
     <div class="group relative">
       <ComboboxInput
-        class="peer h-10 text-sm leading-5 font-text w-full bg-white text-gray-600 border border-slate-300 focus:border-slate-300 focus:shadow-lg focus:shadow-gray-300/50 dark:focus:shadow-gray-800/50 placeholder:text-gray-300 dark:placeholder:text-gray-500 dark:bg-slate-900/75 dark:text-gray-200 dark:border-slate-700 dark:focus:border-slate-700 focus:ring-0 outline-transparent focus:outline-dashed focus:outline-gray-300 dark:focus:outline-gray-600 focus:outline-offset-2 disabled:opacity-75 disabled:cursor-not-allowed transition-all duration-300"
+        class="peer h-10 text-sm leading-5 font-text w-full bg-white text-slate-600 border border-slate-300 focus:border-slate-300 focus:shadow-lg focus:shadow-slate-300/50 dark:focus:shadow-slate-800/50 placeholder:text-slate-300 dark:placeholder:text-slate-500 dark:bg-slate-900/75 dark:text-slate-200 dark:border-slate-700 dark:focus:border-slate-700 focus:ring-0 outline-transparent focus:outline-dashed focus:outline-slate-300 dark:focus:outline-slate-600 focus:outline-offset-2 disabled:opacity-75 disabled:cursor-not-allowed transition-all duration-300"
         :class="[
           props.icon ? 'pl-9 pr-4' : 'px-4',
           props.shape === 'rounded' && 'rounded',
@@ -130,20 +130,20 @@ const removeItem = function (name: string) {
       />
       <div
         v-if="props.icon && !value.icon"
-        class="absolute top-0 left-0 h-10 w-10 flex justify-center items-center text-gray-400 group-focus-within:text-primary-500 transition-colors duration-300"
+        class="absolute top-0 left-0 h-10 w-10 flex justify-center items-center text-slate-400 group-focus-within:text-primary-500 transition-colors duration-300"
       >
         <i class="w-4 h-4" :class="props.icon"></i>
       </div>
       <div
         v-else-if="props.icon && value.icon"
-        class="absolute top-0 left-0 h-10 w-10 flex justify-center items-center text-gray-400 group-focus-within:text-primary-500 transition-colors duration-300"
+        class="absolute top-0 left-0 h-10 w-10 flex justify-center items-center text-slate-400 group-focus-within:text-primary-500 transition-colors duration-300"
       >
         <i class="w-4 h-4" :class="value.icon"></i>
       </div>
       <button
         v-if="props.clearable && value"
         type="button"
-        class="absolute top-0 right-0 h-10 w-10 flex justify-center items-center text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 transition-colors duration-300 z-10"
+        class="absolute top-0 right-0 h-10 w-10 flex justify-center items-center text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-colors duration-300 z-10"
         @click="clear"
       >
         <i class="i-lucide-x w-4 h-4"></i>
@@ -177,7 +177,7 @@ const removeItem = function (name: string) {
         <!-- Placeholder -->
         <div
           v-if="filteredItems.length === 0 && query !== ''"
-          class="relative cursor-default select-none py-2 px-4 text-gray-700"
+          class="relative cursor-default select-none py-2 px-4 text-slate-700"
         >
           Nothing found.
         </div>

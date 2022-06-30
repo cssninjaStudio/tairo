@@ -45,13 +45,13 @@ watch(
 
 <template>
   <div class="relative">
-    <label v-if="!props.hideLabel" class="font-text text-sm text-gray-400">
+    <label v-if="!props.hideLabel" class="font-text text-sm text-slate-400">
       {{ props.label }}
     </label>
     <div class="group relative flex flex-col">
       <textarea
         v-model="value"
-        class="peer font-text w-full border border-slate-300 bg-white placeholder:text-gray-300 focus:border-slate-300 focus:shadow-lg focus:shadow-gray-300/50 dark:focus:shadow-gray-800/50 dark:placeholder:text-gray-500 dark:bg-slate-900/75 dark:text-gray-200 dark:border-slate-700 dark:focus:border-slate-700 focus:ring-0 outline-transparent focus:outline-dashed focus:outline-gray-300 dark:focus:outline-gray-600 focus:outline-offset-2 disabled:opacity-75 disabled:cursor-not-allowed transition-all duration-300"
+        class="peer font-text w-full border border-slate-300 bg-white placeholder:text-slate-300 focus:border-slate-300 focus:shadow-lg focus:shadow-slate-300/50 dark:focus:shadow-slate-800/50 dark:placeholder:text-slate-500 dark:bg-slate-900/75 dark:text-slate-200 dark:border-slate-700 dark:focus:border-slate-700 focus:ring-0 outline-transparent focus:outline-dashed focus:outline-slate-300 dark:focus:outline-slate-600 focus:outline-offset-2 disabled:opacity-75 disabled:cursor-not-allowed transition-all duration-300"
         :class="[
           props.shape === 'rounded' && 'rounded',
           props.shape === 'curved' && 'rounded-xl',
@@ -77,7 +77,7 @@ watch(
       </div>
       <div
         v-if="props.addon"
-        class="absolute bottom-0 left-0 w-full flex items-center justify-between p-2 bg-slate-50 dark:bg-slate-900/50 border border-gray-300 dark:border-slate-700 peer-disabled:opacity-75 peer-disabled:cursor-not-allowed"
+        class="absolute bottom-0 left-0 w-full flex items-center justify-between p-2 bg-slate-50 dark:bg-slate-900/50 border border-slate-300 dark:border-slate-700 peer-disabled:opacity-75 peer-disabled:cursor-not-allowed"
         :class="[
           props.shape === 'rounded' && 'rounded-b',
           props.shape === 'curved' && 'rounded-b-xl',

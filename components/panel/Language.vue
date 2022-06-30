@@ -4,10 +4,12 @@ const { closePanel } = usePanels()
 
 <template>
   <div
-    class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700"
+    class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700"
   >
     <div class="flex items-center justify-between h-16 w-full px-10">
-      <h2 class="font-main text-lg font-semibold text-gray-700 dark:text-white">
+      <h2
+        class="font-main text-lg font-semibold text-slate-700 dark:text-white"
+      >
         Select language
       </h2>
       <button
@@ -30,7 +32,7 @@ const { closePanel } = usePanels()
               checked
             />
             <div
-              class="w-14 h-14 flex items-center justify-center border-2 border-gray-200 dark:border-gray-600 peer-checked:border-primary-500 shadow-lg rounded-full transition-all duration-300"
+              class="w-14 h-14 flex items-center justify-center border-2 border-slate-200 dark:border-slate-600 peer-checked:border-primary-500 shadow-lg rounded-full transition-all duration-300"
             >
               <img
                 class="h-10 w-10 rounded-full"
@@ -54,7 +56,7 @@ const { closePanel } = usePanels()
               class="peer absolute top-0 left-0 h-full w-full opacity-0 cursor-pointer z-20"
             />
             <div
-              class="w-14 h-14 flex items-center justify-center border-2 border-gray-200 dark:border-gray-600 peer-checked:border-primary-500 shadow-lg rounded-full transition-all duration-300"
+              class="w-14 h-14 flex items-center justify-center border-2 border-slate-200 dark:border-slate-600 peer-checked:border-primary-500 shadow-lg rounded-full transition-all duration-300"
             >
               <img
                 class="h-10 w-10 rounded-full"
@@ -78,7 +80,7 @@ const { closePanel } = usePanels()
               class="peer absolute top-0 left-0 h-full w-full opacity-0 cursor-pointer z-20"
             />
             <div
-              class="w-14 h-14 flex items-center justify-center border-2 border-gray-200 dark:border-gray-600 peer-checked:border-primary-500 shadow-lg rounded-full transition-all duration-300"
+              class="w-14 h-14 flex items-center justify-center border-2 border-slate-200 dark:border-slate-600 peer-checked:border-primary-500 shadow-lg rounded-full transition-all duration-300"
             >
               <img
                 class="h-10 w-10 rounded-full"
@@ -102,7 +104,7 @@ const { closePanel } = usePanels()
               class="peer absolute top-0 left-0 h-full w-full opacity-0 cursor-pointer z-20"
             />
             <div
-              class="w-14 h-14 flex items-center justify-center border-2 border-gray-200 dark:border-gray-600 peer-checked:border-primary-500 shadow-lg rounded-full transition-all duration-300"
+              class="w-14 h-14 flex items-center justify-center border-2 border-slate-200 dark:border-slate-600 peer-checked:border-primary-500 shadow-lg rounded-full transition-all duration-300"
             >
               <img
                 class="h-10 w-10 rounded-full"
@@ -126,7 +128,7 @@ const { closePanel } = usePanels()
               class="peer absolute top-0 left-0 h-full w-full opacity-0 cursor-pointer z-20"
             />
             <div
-              class="w-14 h-14 flex items-center justify-center border-2 border-gray-200 dark:border-gray-600 peer-checked:border-primary-500 shadow-lg rounded-full transition-all duration-300"
+              class="w-14 h-14 flex items-center justify-center border-2 border-slate-200 dark:border-slate-600 peer-checked:border-primary-500 shadow-lg rounded-full transition-all duration-300"
             >
               <img
                 class="h-10 w-10 rounded-full"
@@ -150,7 +152,7 @@ const { closePanel } = usePanels()
               class="peer absolute top-0 left-0 h-full w-full opacity-0 cursor-pointer z-20"
             />
             <div
-              class="w-14 h-14 flex items-center justify-center border-2 border-gray-200 dark:border-gray-600 peer-checked:border-primary-500 shadow-lg rounded-full transition-all duration-300"
+              class="w-14 h-14 flex items-center justify-center border-2 border-slate-200 dark:border-slate-600 peer-checked:border-primary-500 shadow-lg rounded-full transition-all duration-300"
             >
               <img
                 class="h-10 w-10 rounded-full"

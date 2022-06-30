@@ -41,7 +41,7 @@ const isDark = computed({
       :class="
         props.inverted
           ? 'bg-primary-700 '
-          : 'bg-white dark:bg-gray-800  border border-gray-300 dark:border-gray-700'
+          : 'bg-white dark:bg-slate-800  border border-slate-300 dark:border-slate-700'
       "
     >
       <svg

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+// @todo: implement CK editor. Got the setup from Vuero, but it seems it doesn't work under Nuxt, even inside a <client-only> tag.
+
 /* import CKE from '@ckeditor/ckeditor5-vue'
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic'
 import {

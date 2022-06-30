@@ -5,10 +5,12 @@ const activeTab = ref('tab-1')
 
 <template>
   <div
-    class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700"
+    class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700"
   >
     <div class="flex items-center justify-between h-16 w-full px-10">
-      <h2 class="font-main text-lg font-semibold text-gray-700 dark:text-white">
+      <h2
+        class="font-main text-lg font-semibold text-slate-700 dark:text-white"
+      >
         Activity
       </h2>
       <button
@@ -64,7 +66,7 @@ const activeTab = ref('tab-1')
         <div v-if="activeTab === 'tab-1'" class="space-y-4">
           <!-- Team member -->
           <div
-            class="flex items-center bg-white dark:bg-slate-700 border border-gray-200 dark:border-slate-600 rounded-lg p-4"
+            class="flex items-center bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-lg p-4"
           >
             <div
               class="inline-flex justify-center items-center relative w-9 h-9 rounded-full"
@@ -85,14 +87,14 @@ const activeTab = ref('tab-1')
             </div>
             <NuxtLink
               to="/"
-              class="flex items-center justify-center h-9 w-9 text-slate-400 hover:text-primary-500 border border-gray-200 dark:border-slate-500 hover:border-primary-500 dark:hover:border-primary-500 rounded-full ml-auto transition-colors duration-300"
+              class="flex items-center justify-center h-9 w-9 text-slate-400 hover:text-primary-500 border border-slate-200 dark:border-slate-500 hover:border-primary-500 dark:hover:border-primary-500 rounded-full ml-auto transition-colors duration-300"
             >
               <i class="i-feather-arrow-right w-4 h-4"></i>
             </NuxtLink>
           </div>
           <!-- Team member -->
           <div
-            class="flex items-center bg-white dark:bg-slate-700 border border-gray-200 dark:border-slate-600 rounded-lg p-4"
+            class="flex items-center bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-lg p-4"
           >
             <div
               class="inline-flex justify-center items-center relative w-9 h-9 rounded-full"
@@ -113,14 +115,14 @@ const activeTab = ref('tab-1')
             </div>
             <NuxtLink
               to="/"
-              class="flex items-center justify-center h-9 w-9 text-slate-400 hover:text-primary-500 border border-gray-200 dark:border-slate-500 hover:border-primary-500 dark:hover:border-primary-500 rounded-full ml-auto transition-colors duration-300"
+              class="flex items-center justify-center h-9 w-9 text-slate-400 hover:text-primary-500 border border-slate-200 dark:border-slate-500 hover:border-primary-500 dark:hover:border-primary-500 rounded-full ml-auto transition-colors duration-300"
             >
               <i class="i-feather-arrow-right w-4 h-4"></i>
             </NuxtLink>
           </div>
           <!-- Team member -->
           <div
-            class="flex items-center bg-white dark:bg-slate-700 border border-gray-200 dark:border-slate-600 rounded-lg p-4"
+            class="flex items-center bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-lg p-4"
           >
             <div
               class="inline-flex justify-center items-center relative w-9 h-9 rounded-full"
@@ -141,14 +143,14 @@ const activeTab = ref('tab-1')
             </div>
             <NuxtLink
               to="/"
-              class="flex items-center justify-center h-9 w-9 text-slate-400 hover:text-primary-500 border border-gray-200 dark:border-slate-500 hover:border-primary-500 dark:hover:border-primary-500 rounded-full ml-auto transition-colors duration-300"
+              class="flex items-center justify-center h-9 w-9 text-slate-400 hover:text-primary-500 border border-slate-200 dark:border-slate-500 hover:border-primary-500 dark:hover:border-primary-500 rounded-full ml-auto transition-colors duration-300"
             >
               <i class="i-feather-arrow-right w-4 h-4"></i>
             </NuxtLink>
           </div>
           <!-- Team member -->
           <div
-            class="flex items-center bg-white dark:bg-slate-700 border border-gray-200 dark:border-slate-600 rounded-lg p-4"
+            class="flex items-center bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-lg p-4"
           >
             <div
               class="inline-flex justify-center items-center relative w-9 h-9 rounded-full"
@@ -169,7 +171,7 @@ const activeTab = ref('tab-1')
             </div>
             <NuxtLink
               to="/"
-              class="flex items-center justify-center h-9 w-9 text-slate-400 hover:text-primary-500 border border-gray-200 dark:border-slate-500 hover:border-primary-500 dark:hover:border-primary-500 rounded-full ml-auto transition-colors duration-300"
+              class="flex items-center justify-center h-9 w-9 text-slate-400 hover:text-primary-500 border border-slate-200 dark:border-slate-500 hover:border-primary-500 dark:hover:border-primary-500 rounded-full ml-auto transition-colors duration-300"
             >
               <i class="i-feather-arrow-right w-4 h-4"></i>
             </NuxtLink>
@@ -180,7 +182,7 @@ const activeTab = ref('tab-1')
         <div v-else-if="activeTab === 'tab-2'" class="space-y-4">
           <!-- Project -->
           <div
-            class="bg-white dark:bg-slate-700 border border-gray-200 dark:border-slate-600 rounded-lg p-4"
+            class="bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-lg p-4"
           >
             <div class="flex items-center mb-4">
               <div
@@ -202,13 +204,13 @@ const activeTab = ref('tab-1')
               </div>
               <NuxtLink
                 to="/"
-                class="flex items-center justify-center h-9 w-9 text-slate-400 hover:text-primary-500 border border-gray-200 dark:border-slate-500 hover:border-primary-500 dark:hover:border-primary-500 rounded-full ml-auto transition-colors duration-300"
+                class="flex items-center justify-center h-9 w-9 text-slate-400 hover:text-primary-500 border border-slate-200 dark:border-slate-500 hover:border-primary-500 dark:hover:border-primary-500 rounded-full ml-auto transition-colors duration-300"
               >
                 <i class="i-feather-arrow-right w-4 h-4"></i>
               </NuxtLink>
             </div>
             <div
-              class="relative h-1 w-full bg-gray-200 dark:bg-gray-800 overflow-hidden rounded-lg mb-4"
+              class="relative h-1 w-full bg-slate-200 dark:bg-slate-800 overflow-hidden rounded-lg mb-4"
             >
               <div
                 class="absolute top-0 left-0 h-full transition duration-300 bg-primary-500 rounded-lg w-[34%]"
@@ -245,10 +247,10 @@ const activeTab = ref('tab-1')
                   />
                 </div>
                 <div
-                  class="inline-flex justify-center items-center relative w-8 h-8 rounded-full bg-gray-200 dark:bg-gray-800 border-2 border-white dark:border-slate-700 -ml-2"
+                  class="inline-flex justify-center items-center relative w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-800 border-2 border-white dark:border-slate-700 -ml-2"
                 >
                   <span
-                    class="text-sm font-sub uppercase text-gray-500 dark:text-gray-300 font-normal -ml-1"
+                    class="text-sm font-sub uppercase text-slate-500 dark:text-slate-300 font-normal -ml-1"
                   >
                     +3
                   </span>
@@ -258,7 +260,7 @@ const activeTab = ref('tab-1')
           </div>
           <!-- Project -->
           <div
-            class="bg-white dark:bg-slate-700 border border-gray-200 dark:border-slate-600 rounded-lg p-4"
+            class="bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-lg p-4"
           >
             <div class="flex items-center mb-4">
               <div
@@ -280,13 +282,13 @@ const activeTab = ref('tab-1')
               </div>
               <NuxtLink
                 to="/"
-                class="flex items-center justify-center h-9 w-9 text-slate-400 hover:text-primary-500 border border-gray-200 dark:border-slate-500 hover:border-primary-500 dark:hover:border-primary-500 rounded-full ml-auto transition-colors duration-300"
+                class="flex items-center justify-center h-9 w-9 text-slate-400 hover:text-primary-500 border border-slate-200 dark:border-slate-500 hover:border-primary-500 dark:hover:border-primary-500 rounded-full ml-auto transition-colors duration-300"
               >
                 <i class="i-feather-arrow-right w-4 h-4"></i>
               </NuxtLink>
             </div>
             <div
-              class="relative h-1 w-full bg-gray-200 dark:bg-gray-800 overflow-hidden rounded-lg mb-4"
+              class="relative h-1 w-full bg-slate-200 dark:bg-slate-800 overflow-hidden rounded-lg mb-4"
             >
               <div
                 class="absolute top-0 left-0 h-full transition duration-300 bg-primary-500 rounded-lg w-[88%]"
@@ -318,7 +320,7 @@ const activeTab = ref('tab-1')
           </div>
           <!-- Project -->
           <div
-            class="bg-white dark:bg-slate-700 border border-gray-200 dark:border-slate-600 rounded-lg p-4"
+            class="bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-lg p-4"
           >
             <div class="flex items-center mb-4">
               <div
@@ -340,13 +342,13 @@ const activeTab = ref('tab-1')
               </div>
               <NuxtLink
                 to="/"
-                class="flex items-center justify-center h-9 w-9 text-slate-400 hover:text-primary-500 border border-gray-200 dark:border-slate-500 hover:border-primary-500 dark:hover:border-primary-500 rounded-full ml-auto transition-colors duration-300"
+                class="flex items-center justify-center h-9 w-9 text-slate-400 hover:text-primary-500 border border-slate-200 dark:border-slate-500 hover:border-primary-500 dark:hover:border-primary-500 rounded-full ml-auto transition-colors duration-300"
               >
                 <i class="i-feather-arrow-right w-4 h-4"></i>
               </NuxtLink>
             </div>
             <div
-              class="relative h-1 w-full bg-gray-200 dark:bg-gray-800 overflow-hidden rounded-lg mb-4"
+              class="relative h-1 w-full bg-slate-200 dark:bg-slate-800 overflow-hidden rounded-lg mb-4"
             >
               <div
                 class="absolute top-0 left-0 h-full transition duration-300 bg-primary-500 rounded-lg w-[62%]"
@@ -384,10 +386,10 @@ const activeTab = ref('tab-1')
           <div>
             <!-- Item -->
             <div
-              class="relative flex pb-8 after:content-[''] after:absolute after:top-10 after:left-4 after:w-px after:h-[calc(100%_-_36px)] after:border-l after:border-gray-300 dark:after:border-slate-600"
+              class="relative flex pb-8 after:content-[''] after:absolute after:top-10 after:left-4 after:w-px after:h-[calc(100%_-_36px)] after:border-l after:border-slate-300 dark:after:border-slate-600"
             >
               <div
-                class="relative flex items-center justify-center h-9 w-9 rounded-full text-slate-400 bg-white dark:bg-slate-700 border border-gray-200 dark:border-slate-600 after:content-[''] after:absolute after:top-4 after:-right-8 after:w-5 after:h-px after:border-t after:border-gray-300 dark:after:border-slate-600 shadow-lg"
+                class="relative flex items-center justify-center h-9 w-9 rounded-full text-slate-400 bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 after:content-[''] after:absolute after:top-4 after:-right-8 after:w-5 after:h-px after:border-t after:border-slate-300 dark:after:border-slate-600 shadow-lg"
               >
                 <i class="i-ph-phone-duotone"></i>
               </div>
@@ -402,10 +404,10 @@ const activeTab = ref('tab-1')
             </div>
             <!-- Item -->
             <div
-              class="relative flex pb-8 after:content-[''] after:absolute after:top-10 after:left-4 after:w-px after:h-[calc(100%_-_36px)] after:border-l after:border-gray-300 dark:after:border-slate-600"
+              class="relative flex pb-8 after:content-[''] after:absolute after:top-10 after:left-4 after:w-px after:h-[calc(100%_-_36px)] after:border-l after:border-slate-300 dark:after:border-slate-600"
             >
               <div
-                class="relative flex items-center justify-center h-9 w-9 rounded-full text-slate-400 bg-white dark:bg-slate-700 border border-gray-200 dark:border-slate-600 after:content-[''] after:absolute after:top-4 after:-right-8 after:w-5 after:h-px after:border-t after:border-gray-300 dark:after:border-slate-600 shadow-lg"
+                class="relative flex items-center justify-center h-9 w-9 rounded-full text-slate-400 bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 after:content-[''] after:absolute after:top-4 after:-right-8 after:w-5 after:h-px after:border-t after:border-slate-300 dark:after:border-slate-600 shadow-lg"
               >
                 <div
                   class="inline-flex justify-center items-center relative w-7 h-7 rounded-full"
@@ -428,10 +430,10 @@ const activeTab = ref('tab-1')
             </div>
             <!-- Item -->
             <div
-              class="relative flex pb-8 after:content-[''] after:absolute after:top-10 after:left-4 after:w-px after:h-[calc(100%_-_36px)] after:border-l after:border-gray-300 dark:after:border-slate-600"
+              class="relative flex pb-8 after:content-[''] after:absolute after:top-10 after:left-4 after:w-px after:h-[calc(100%_-_36px)] after:border-l after:border-slate-300 dark:after:border-slate-600"
             >
               <div
-                class="relative flex items-center justify-center h-9 w-9 rounded-full text-slate-400 bg-white dark:bg-slate-700 border border-gray-200 dark:border-slate-600 after:content-[''] after:absolute after:top-4 after:-right-8 after:w-5 after:h-px after:border-t after:border-gray-300 dark:after:border-slate-600 shadow-lg"
+                class="relative flex items-center justify-center h-9 w-9 rounded-full text-slate-400 bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 after:content-[''] after:absolute after:top-4 after:-right-8 after:w-5 after:h-px after:border-t after:border-slate-300 dark:after:border-slate-600 shadow-lg"
               >
                 <i class="i-ph-chat-circle-duotone"></i>
               </div>
@@ -446,10 +448,10 @@ const activeTab = ref('tab-1')
             </div>
             <!-- Item -->
             <div
-              class="relative flex pb-8 after:content-[''] after:absolute after:top-10 after:left-4 after:w-px after:h-[calc(100%_-_36px)] after:border-l after:border-gray-300 dark:after:border-slate-600"
+              class="relative flex pb-8 after:content-[''] after:absolute after:top-10 after:left-4 after:w-px after:h-[calc(100%_-_36px)] after:border-l after:border-slate-300 dark:after:border-slate-600"
             >
               <div
-                class="relative flex items-center justify-center h-9 w-9 rounded-full text-slate-400 bg-white dark:bg-slate-700 border border-gray-200 dark:border-slate-600 after:content-[''] after:absolute after:top-4 after:-right-8 after:w-5 after:h-px after:border-t after:border-gray-300 dark:after:border-slate-600 shadow-lg"
+                class="relative flex items-center justify-center h-9 w-9 rounded-full text-slate-400 bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 after:content-[''] after:absolute after:top-4 after:-right-8 after:w-5 after:h-px after:border-t after:border-slate-300 dark:after:border-slate-600 shadow-lg"
               >
                 <div
                   class="inline-flex justify-center items-center relative w-7 h-7 rounded-full"
@@ -472,10 +474,10 @@ const activeTab = ref('tab-1')
             </div>
             <!-- Item -->
             <div
-              class="relative flex pb-8 after:content-[''] after:absolute after:top-10 after:left-4 after:w-px after:h-[calc(100%_-_36px)] after:border-l after:border-gray-300 dark:after:border-slate-600"
+              class="relative flex pb-8 after:content-[''] after:absolute after:top-10 after:left-4 after:w-px after:h-[calc(100%_-_36px)] after:border-l after:border-slate-300 dark:after:border-slate-600"
             >
               <div
-                class="relative flex items-center justify-center h-9 w-9 rounded-full text-slate-400 bg-white dark:bg-slate-700 border border-gray-200 dark:border-slate-600 after:content-[''] after:absolute after:top-4 after:-right-8 after:w-5 after:h-px after:border-t after:border-gray-300 dark:after:border-slate-600 shadow-lg"
+                class="relative flex items-center justify-center h-9 w-9 rounded-full text-slate-400 bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 after:content-[''] after:absolute after:top-4 after:-right-8 after:w-5 after:h-px after:border-t after:border-slate-300 dark:after:border-slate-600 shadow-lg"
               >
                 <i class="i-ph-envelope-duotone"></i>
               </div>
@@ -490,10 +492,10 @@ const activeTab = ref('tab-1')
             </div>
             <!-- Item -->
             <div
-              class="relative flex pb-8 after:content-[''] after:absolute after:top-10 after:left-4 after:w-px after:h-[calc(100%_-_36px)] after:border-l after:border-gray-300 dark:after:border-slate-600"
+              class="relative flex pb-8 after:content-[''] after:absolute after:top-10 after:left-4 after:w-px after:h-[calc(100%_-_36px)] after:border-l after:border-slate-300 dark:after:border-slate-600"
             >
               <div
-                class="relative flex items-center justify-center h-9 w-9 rounded-full text-slate-400 bg-white dark:bg-slate-700 border border-gray-200 dark:border-slate-600 after:content-[''] after:absolute after:top-4 after:-right-8 after:w-5 after:h-px after:border-t after:border-gray-300 dark:after:border-slate-600 shadow-lg"
+                class="relative flex items-center justify-center h-9 w-9 rounded-full text-slate-400 bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 after:content-[''] after:absolute after:top-4 after:-right-8 after:w-5 after:h-px after:border-t after:border-slate-300 dark:after:border-slate-600 shadow-lg"
               >
                 <i class="i-ph-selection-all-duotone"></i>
               </div>
@@ -508,10 +510,10 @@ const activeTab = ref('tab-1')
             </div>
             <!-- Item -->
             <div
-              class="relative flex pb-8 after:content-[''] after:absolute after:top-10 after:left-4 after:w-px after:h-[calc(100%_-_36px)] after:border-l after:border-gray-300 dark:after:border-slate-600"
+              class="relative flex pb-8 after:content-[''] after:absolute after:top-10 after:left-4 after:w-px after:h-[calc(100%_-_36px)] after:border-l after:border-slate-300 dark:after:border-slate-600"
             >
               <div
-                class="relative flex items-center justify-center h-9 w-9 rounded-full text-slate-400 bg-white dark:bg-slate-700 border border-gray-200 dark:border-slate-600 after:content-[''] after:absolute after:top-4 after:-right-8 after:w-5 after:h-px after:border-t after:border-gray-300 dark:after:border-slate-600 shadow-lg"
+                class="relative flex items-center justify-center h-9 w-9 rounded-full text-slate-400 bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 after:content-[''] after:absolute after:top-4 after:-right-8 after:w-5 after:h-px after:border-t after:border-slate-300 dark:after:border-slate-600 shadow-lg"
               >
                 <i class="i-ph-note-duotone"></i>
               </div>

@@ -18,7 +18,7 @@ const props = withDefaults(defineProps<DocCodeProps>(), {
 
 <template>
   <div
-    class="w-full transition-colors ease-linear rounded-xl border border-gray-200 bg-white dark:bg-slate-800 dark:border-slate-700"
+    class="w-full transition-colors ease-linear rounded-xl border border-slate-200 bg-white dark:bg-slate-800 dark:border-slate-700"
   >
     <div
       class="w-full h-12 rounded-t-lg flex justify-start items-center space-x-1.5 px-4"

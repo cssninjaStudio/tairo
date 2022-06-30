@@ -49,7 +49,7 @@ const props = withDefaults(defineProps<DropdownProps>(), {
             class="w-9 h-9 rounded-full ring-1 ring-transparent group-hover:ring-offset-4 group-hover:ring-primary-500 dark:ring-offset-slate-900 inline-flex items-center justify-center transition-all duration-300"
           >
             <span
-              class="flex items-center justify-center w-9 h-9 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700"
+              class="flex items-center justify-center w-9 h-9 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700"
             >
               <i
                 class="i-lucide-more-horizontal w-5 h-5 text-slate-400 transition-transform duration-300"
@@ -79,7 +79,7 @@ const props = withDefaults(defineProps<DropdownProps>(), {
         leave-to-class="transform scale-95 opacity-0"
       >
         <MenuItems
-          class="absolute mt-2 w-72 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 shadow-lg focus:outline-none"
+          class="absolute mt-2 w-72 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-lg focus:outline-none"
           :class="[
             props.orientation === 'start'
               ? 'left-0 origin-top-left'

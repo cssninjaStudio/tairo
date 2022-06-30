@@ -30,7 +30,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
         leave-to-class="transform scale-95 opacity-0"
       >
         <MenuItems
-          class="absolute right-0 mt-2 w-64 origin-top-right divide-y divide-gray-100 dark:divide-slate-700 rounded-md bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 shadow-lg focus:outline-none"
+          class="absolute right-0 mt-2 w-64 origin-top-right divide-y divide-slate-100 dark:divide-slate-700 rounded-md bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-lg focus:outline-none"
         >
           <div class="text-center p-6">
             <div
@@ -50,7 +50,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
               </h6>
               <p class="font-text text-xs text-slate-400 mb-4">maya@tairo.io</p>
               <button
-                class="font-sub inline-flex items-center justify-center rounded-lg px-4 py-2 w-full bg-white border border-gray-200 hover:shadow-md hover:shadow-gray-600/10 focus:shadow-md focus:shadow-gray-600/20 text-slate-800 transition-all duration-300"
+                class="font-sub inline-flex items-center justify-center rounded-lg px-4 py-2 w-full bg-white border border-slate-200 hover:shadow-md hover:shadow-slate-600/10 focus:shadow-md focus:shadow-slate-600/20 text-slate-800 transition-all duration-300"
               >
                 <span class="text-sm">Manage Account</span>
               </button>
@@ -150,7 +150,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
 
           <div class="p-6">
             <button
-              class="font-sub inline-flex items-center justify-center rounded-lg px-4 py-2 w-full bg-white border border-gray-200 hover:shadow-md hover:shadow-gray-600/10 focus:shadow-md focus:shadow-gray-600/20 text-slate-800 transition-all duration-300"
+              class="font-sub inline-flex items-center justify-center rounded-lg px-4 py-2 w-full bg-white border border-slate-200 hover:shadow-md hover:shadow-slate-600/10 focus:shadow-md focus:shadow-slate-600/20 text-slate-800 transition-all duration-300"
             >
               <span class="text-sm">Logout from all</span>
             </button>

@@ -13,7 +13,7 @@ const props = defineProps<{
     <NuxtLink
       v-if="props.sidebar.to"
       :to="props.sidebar.to"
-      class="flex items-center justify-center w-12 h-12 rounded-2xl transition-colors duration-300 text-gray-400"
+      class="flex items-center justify-center w-12 h-12 rounded-2xl transition-colors duration-300 text-slate-400"
       :title="props.sidebar.name"
     >
       <component :is="props.sidebar.icon" />
@@ -25,7 +25,7 @@ const props = defineProps<{
       :class="
         activeSidebar?.name === props.sidebar.name
           ? 'bg-primary-100 text-primary-500 dark:bg-primary-500/10'
-          : 'text-gray-400'
+          : 'text-slate-400'
       "
       :title="props.sidebar.name"
       @click="() => toggleActiveSidebar(props.sidebar)"

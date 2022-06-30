@@ -34,7 +34,7 @@ const props = withDefaults(defineProps<VAvatarStackProps>(), {
       />
       <div
         v-if="avatars.length > props.limit"
-        class="inline-flex justify-center items-center relative rounded-full bg-gray-200 dark:bg-slate-700 border-white dark:border-slate-800"
+        class="inline-flex justify-center items-center relative rounded-full bg-slate-200 dark:bg-slate-700 border-white dark:border-slate-800"
         :class="[
           props.size === 'xs' && 'w-8 h-8 -ml-2 border-2',
           props.size === 'sm' && 'w-10 h-10 -ml-3 border-2',
@@ -43,7 +43,7 @@ const props = withDefaults(defineProps<VAvatarStackProps>(), {
         ]"
       >
         <span
-          class="font-text uppercase text-gray-500 dark:text-gray-300 font-normal -ml-1"
+          class="font-text uppercase text-slate-500 dark:text-slate-300 font-normal -ml-1"
           :class="[
             props.size === 'xs' && 'text-sm',
             props.size === 'sm' && 'text-sm',

@@ -28,9 +28,9 @@ const props = withDefaults(defineProps<TagProps>(), {
     class="inline-block font-text text-xs py-1.5 px-3 m-1"
     :class="[
       props.color === 'default' &&
-        'border border-gray-300 bg-white text-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300',
+        'border border-slate-300 bg-white text-slate-600 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-300',
       props.color === 'muted' &&
-        'text-slate-500 bg-slate-200 dark:text-white dark:bg-gray-700',
+        'text-slate-500 bg-slate-200 dark:text-white dark:bg-slate-700',
       props.color === 'primary' &&
         props.flavor === 'solid' &&
         'bg-primary-400 dark:bg-primary-500 text-white hover:shadow-lg',

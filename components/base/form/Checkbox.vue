@@ -38,7 +38,7 @@ watch(
 <template>
   <div class="relative inline-flex items-center">
     <div
-      class="group relative overflow-hidden w-5 h-5 flex shrink-0 justify-center items-center outline-1 focus-within:ring-0 outline-transparent focus-within:outline-dashed focus-within:outline-gray-300 dark:focus-within:outline-gray-600 focus-within:outline-offset-2 cursor-pointer transition-all duration-300"
+      class="group relative overflow-hidden w-5 h-5 flex shrink-0 justify-center items-center outline-1 focus-within:ring-0 outline-transparent focus-within:outline-dashed focus-within:outline-slate-300 dark:focus-within:outline-slate-600 focus-within:outline-offset-2 cursor-pointer transition-all duration-300"
       :class="[
         props.shape === 'rounded' && 'rounded',
         props.shape === 'curved' && 'rounded-md',
@@ -54,7 +54,7 @@ watch(
         type="checkbox"
       />
       <div
-        class="absolute top-0 left-0 h-full w-full bg-white dark:bg-gray-700 dark:border-gray-700 border-2 border-gray-400 z-0 peer-checked:border-current peer-checked:dark:border-current"
+        class="absolute top-0 left-0 h-full w-full bg-white dark:bg-slate-700 dark:border-slate-700 border-2 border-slate-400 z-0 peer-checked:border-current peer-checked:dark:border-current"
         :class="[
           props.shape === 'rounded' && 'rounded',
           props.shape === 'curved' && 'rounded-md',
@@ -83,7 +83,7 @@ watch(
     <label
       v-if="!props.hideLabel"
       :for="`checkbox-${props.name}`"
-      class="cursor-pointer select-none text-gray-400 font-text text-sm ml-1"
+      class="cursor-pointer select-none text-slate-400 font-text text-sm ml-1"
     >
       {{ props.label }}
     </label>

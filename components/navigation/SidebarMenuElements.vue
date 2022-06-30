@@ -63,7 +63,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
               Buttons
             </span>
             <i
-              class="i-feather-chevron-down block w-4 h-4 text-gray-400 ml-auto transition-transform duration-300"
+              class="i-feather-chevron-down block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
               :class="open ? 'rotate-180' : ''"
             ></i>
           </a>
@@ -121,7 +121,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
               Forms
             </span>
             <i
-              class="i-feather-chevron-down block w-4 h-4 text-gray-400 ml-auto transition-transform duration-300"
+              class="i-feather-chevron-down block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
               :class="open ? 'rotate-180' : ''"
             ></i>
           </a>
@@ -203,7 +203,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
               Switches
             </span>
             <i
-              class="i-feather-chevron-down block w-4 h-4 text-gray-400 ml-auto transition-transform duration-300"
+              class="i-feather-chevron-down block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
               :class="open ? 'rotate-180' : ''"
             ></i>
           </a>
@@ -309,7 +309,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
               Addons
             </span>
             <i
-              class="i-feather-chevron-down block w-4 h-4 text-gray-400 ml-auto transition-transform duration-300"
+              class="i-feather-chevron-down block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
               :class="open ? 'rotate-180' : ''"
             ></i>
           </a>

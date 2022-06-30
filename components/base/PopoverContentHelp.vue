@@ -47,7 +47,7 @@ const props = withDefaults(defineProps<PopoverContentHelpProps>(), {
             size="xs"
             weight="semibold"
             lead="tight"
-            class="text-gray-800 dark:text-white"
+            class="text-slate-800 dark:text-white"
           >
             {{ props.title }}
           </BaseHeading>

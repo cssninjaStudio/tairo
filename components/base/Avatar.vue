@@ -122,7 +122,7 @@ const props = withDefaults(defineProps<AvatarProps>(), {
 
     <div
       v-if="'badge' in $slots || props.badge"
-      class="block absolute bg-gray-100 dark:bg-gray-800 rounded-full border-2 border-white dark:border-slate-800 overflow-hidden"
+      class="block absolute bg-slate-100 dark:bg-slate-800 rounded-full border-2 border-white dark:border-slate-800 overflow-hidden"
       :class="[
         props.size === 'xs' && `w-4 h-4`,
         props.size === 'sm' && `w-5 h-5`,

@@ -20,7 +20,7 @@ const endSidebars = sidebars.filter((sidebar) => sidebar.position === 'end')
   >
     <!-- Icon sidebar -->
     <div
-      class="relative flex flex-col w-[80px] h-full bg-white dark:bg-slate-800 border-r border-gray-200 dark:border-slate-700 z-20 transition-all duration-300 pointer-events-auto"
+      class="relative flex flex-col w-[80px] h-full bg-white dark:bg-slate-800 border-r border-slate-200 dark:border-slate-700 z-20 transition-all duration-300 pointer-events-auto"
       :class="isSidebarOpened ? '' : '-translate-x-full xl:translate-x-0'"
     >
       <slot></slot>
@@ -48,7 +48,7 @@ const endSidebars = sidebars.filter((sidebar) => sidebar.position === 'end')
     <!-- Menu panel -->
     <div
       v-if="activeSidebar"
-      class="relative w-[220px] h-full bg-white dark:bg-slate-800 border-r border-gray-200 dark:border-slate-700 z-10 transition-all duration-300 pointer-events-auto"
+      class="relative w-[220px] h-full bg-white dark:bg-slate-800 border-r border-slate-200 dark:border-slate-700 z-10 transition-all duration-300 pointer-events-auto"
       :class="isSidebarOpened ? '' : '-translate-x-[calc(100%_-_80px)]'"
     >
       <slot
@@ -72,7 +72,7 @@ const endSidebars = sidebars.filter((sidebar) => sidebar.position === 'end')
             }"
           >
             <h2
-              class="font-main text-lg font-semibold text-gray-700 dark:text-white capitalize"
+              class="font-main text-lg font-semibold text-slate-700 dark:text-white capitalize"
             >
               {{ activeSidebar.name }}
             </h2>
@@ -104,7 +104,7 @@ const endSidebars = sidebars.filter((sidebar) => sidebar.position === 'end')
         <template #header>
           <div class="w-full flex items-center justify-between pt-4 pb-2 px-4">
             <h3
-              class="font-main text-lg font-medium leading-6 text-gray-900 dark:text-white"
+              class="font-main text-lg font-medium leading-6 text-slate-900 dark:text-white"
             >
               Select a Layout
             </h3>
@@ -222,7 +222,7 @@ const endSidebars = sidebars.filter((sidebar) => sidebar.position === 'end')
             </div>
             <div
               v-else-if="activeValue === 'sideblock'"
-              class="font-text text-sm text-gray-500 dark:text-gray-400"
+              class="font-text text-sm text-slate-500 dark:text-slate-400"
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quid
               iudicant sensus? Primum quid tu dicis breve? Etiam beatissimum? Ne

@@ -12,7 +12,7 @@ const activeTab = ref('demo')
 
 <template>
   <div
-    class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-lg px-6 pt-6 pb-10 mb-4"
+    class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-6 pt-6 pb-10 mb-4"
   >
     <div class="flex items-center mb-10 whitespace-nowrap">
       <BaseParagraph
@@ -25,7 +25,7 @@ const activeTab = ref('demo')
 
       <div class="flex-none flex items-center ml-auto pl-4 sm:pl-6">
         <div
-          class="font-sub group p-0.5 rounded-xl flex bg-gray-100 dark:bg-gray-900"
+          class="font-sub group p-0.5 rounded-xl flex bg-slate-100 dark:bg-slate-900"
         >
           <button
             type="button"
@@ -36,7 +36,7 @@ const activeTab = ref('demo')
               class="py-1.5 pl-4 pr-5 rounded-lg flex items-center text-sm font-medium border"
               :class="
                 activeTab === 'demo'
-                  ? 'bg-white dark:bg-slate-700 shadow-sm text-gray-900 dark:text-gray-100 border-gray-200 dark:border-slate-600'
+                  ? 'bg-white dark:bg-slate-700 shadow-sm text-slate-900 dark:text-slate-100 border-slate-200 dark:border-slate-600'
                   : 'text-slate-600 border-transparent'
               "
             >
@@ -53,7 +53,7 @@ const activeTab = ref('demo')
               class="py-1.5 pl-4 pr-5 rounded-lg flex items-center text-sm font-medium border"
               :class="
                 activeTab === 'code'
-                  ? 'bg-white dark:bg-slate-700 shadow-sm text-gray-900 dark:text-gray-100 border-gray-200 dark:border-slate-600'
+                  ? 'bg-white dark:bg-slate-700 shadow-sm text-slate-900 dark:text-slate-100 border-slate-200 dark:border-slate-600'
                   : 'text-slate-600 border-transparent'
               "
             >

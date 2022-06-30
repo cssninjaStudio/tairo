@@ -55,10 +55,12 @@ const filteredPeople = computed(() =>
 
 <template>
   <div
-    class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700"
+    class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700"
   >
     <div class="flex items-center justify-between h-16 w-full px-10">
-      <h2 class="font-main text-lg font-semibold text-gray-700 dark:text-white">
+      <h2
+        class="font-main text-lg font-semibold text-slate-700 dark:text-white"
+      >
         Search
       </h2>
       <button
@@ -73,13 +75,13 @@ const filteredPeople = computed(() =>
       <Combobox v-model="selectedPerson" class="relative mt-5 z-10" as="div">
         <div class="group relative">
           <ComboboxInput
-            class="pl-10 pr-4 py-3 h-12 text-sm leading-5 font-text w-full bg-white text-gray-600 border border-gray-300 focus:border-primary-500 focus:shadow-lg focus:shadow-gray-300/50 dark:focus:shadow-gray-800/50 dark:placeholder:text-gray-600 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700 dark:focus:border-gray-600 !outline-none transition duration-300 rounded-lg"
+            class="pl-10 pr-4 py-3 h-12 text-sm leading-5 font-text w-full bg-white text-slate-600 border border-slate-300 focus:border-primary-500 focus:shadow-lg focus:shadow-slate-300/50 dark:focus:shadow-slate-800/50 dark:placeholder:text-slate-600 dark:bg-slate-800 dark:text-slate-200 dark:border-slate-700 dark:focus:border-slate-600 !outline-none transition duration-300 rounded-lg"
             :display-value="(person:any) => person.name"
             placeholder="Search..."
             @change="query = $event.target.value"
           />
           <div
-            class="absolute top-0 left-0 h-12 w-12 flex justify-center items-center text-gray-400 group-focus-within:text-primary-500 transition-colors duration-300"
+            class="absolute top-0 left-0 h-12 w-12 flex justify-center items-center text-slate-400 group-focus-within:text-primary-500 transition-colors duration-300"
           >
             <i class="i-feather-search w-5 h-5"></i>
           </div>
@@ -93,12 +95,12 @@ const filteredPeople = computed(() =>
         >
           <ComboboxOptions
             as="div"
-            class="absolute mt-1 max-h-60 w-full overflow-auto rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 divide-y divide-gray-100 dark:divide-gray-700 py-1 text-base shadow-lg outline-none sm:text-sm slimscroll"
+            class="absolute mt-1 max-h-60 w-full overflow-auto rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 divide-y divide-slate-100 dark:divide-slate-700 py-1 text-base shadow-lg outline-none sm:text-sm slimscroll"
           >
             <!-- Placeholder -->
             <div
               v-if="filteredPeople.length === 0 && query !== ''"
-              class="relative cursor-default select-none py-2 px-4 text-gray-700"
+              class="relative cursor-default select-none py-2 px-4 text-slate-700"
             >
               Nothing found.
             </div>
@@ -110,7 +112,7 @@ const filteredPeople = computed(() =>
               :value="person"
             >
               <div
-                class="flex items-center p-2 cursor-pointer rounded-lg hover:bg-slate-100 dark:hover:bg-gray-700 transition-colors duration-300"
+                class="flex items-center p-2 cursor-pointer rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors duration-300"
               >
                 <div
                   class="inline-flex justify-center items-center relative w-9 h-9 rounded-full"
@@ -232,7 +234,7 @@ const filteredPeople = computed(() =>
           <li>
             <NuxtLink to="/" class="flex items-center">
               <div
-                class="relative inline-flex justify-center items-center w-10 h-10 bg-emerald-100 text-emerald-600 dark:bg-emerald-500 dark:text-gray-50 rounded-full"
+                class="relative inline-flex justify-center items-center w-10 h-10 bg-emerald-100 text-emerald-600 dark:bg-emerald-500 dark:text-slate-50 rounded-full"
               >
                 <i class="i-feather-chrome"></i>
               </div>
@@ -250,7 +252,7 @@ const filteredPeople = computed(() =>
           <li>
             <NuxtLink to="/" class="flex items-center">
               <div
-                class="relative inline-flex justify-center items-center w-10 h-10 bg-amber-100 text-amber-600 dark:bg-amber-500 dark:text-gray-50 rounded-full"
+                class="relative inline-flex justify-center items-center w-10 h-10 bg-amber-100 text-amber-600 dark:bg-amber-500 dark:text-slate-50 rounded-full"
               >
                 <i class="i-feather-tv"></i>
               </div>
@@ -268,7 +270,7 @@ const filteredPeople = computed(() =>
           <li>
             <NuxtLink to="/" class="flex items-center">
               <div
-                class="relative inline-flex justify-center items-center w-10 h-10 bg-primary-100 text-primary-600 dark:bg-primary-500 dark:text-gray-50 rounded-full"
+                class="relative inline-flex justify-center items-center w-10 h-10 bg-primary-100 text-primary-600 dark:bg-primary-500 dark:text-slate-50 rounded-full"
               >
                 <i class="i-feather-twitter"></i>
               </div>

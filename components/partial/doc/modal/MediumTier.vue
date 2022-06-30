@@ -23,7 +23,7 @@ const isModalXlOpen = ref(false)
       <!-- Header -->
       <div class="w-full flex items-center justify-between p-4 md:p-6">
         <h3
-          class="font-main text-lg font-medium leading-6 text-gray-900 dark:text-white"
+          class="font-main text-lg font-medium leading-6 text-slate-900 dark:text-white"
         >
           Large dialog
         </h3>
@@ -42,11 +42,13 @@ const isModalXlOpen = ref(false)
           />
         </div>
         <h3
-          class="font-main text-lg font-medium leading-6 text-gray-800 dark:text-white"
+          class="font-main text-lg font-medium leading-6 text-slate-800 dark:text-white"
         >
           New Invite
         </h3>
-        <p class="font-sub text-sm leading-5 text-gray-500 dark:text-gray-400">
+        <p
+          class="font-sub text-sm leading-5 text-slate-500 dark:text-slate-400"
+        >
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod.
         </p>
@@ -76,7 +78,7 @@ const isModalXlOpen = ref(false)
       <!-- Header -->
       <div class="w-full flex items-center justify-between p-4 md:p-6">
         <h3
-          class="font-main text-lg font-medium leading-6 text-gray-900 dark:text-white"
+          class="font-main text-lg font-medium leading-6 text-slate-900 dark:text-white"
         >
           Xl dialog
         </h3>
@@ -94,11 +96,13 @@ const isModalXlOpen = ref(false)
           />
         </div>
         <h3
-          class="font-main text-lg font-medium leading-6 text-gray-800 dark:text-white"
+          class="font-main text-lg font-medium leading-6 text-slate-800 dark:text-white"
         >
           New Invite
         </h3>
-        <p class="font-sub text-sm leading-5 text-gray-500 dark:text-gray-400">
+        <p
+          class="font-sub text-sm leading-5 text-slate-500 dark:text-slate-400"
+        >
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod.
         </p>

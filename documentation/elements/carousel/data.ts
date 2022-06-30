@@ -1,3 +1,5 @@
+// @unocss-include
+
 export const team = [
   {
     id: 0,
@@ -141,12 +143,12 @@ export const team = [
 
 export const topics = [
   {
-    icon: 'i-ph-popcorn-duotone',
+    icon: 'i-ph-megaphone-simple-duotone',
     title: 'Marketing',
     link: '/',
   },
   {
-    icon: 'i-ph-chart-pie-slice-duotone',
+    icon: 'i-ph-chart-bar-duotone',
     title: 'Analytics',
     link: '/',
   },
@@ -191,7 +193,7 @@ export const topics = [
     link: '/',
   },
   {
-    icon: 'i-ph-fire-duotone',
+    icon: 'i-ph-leaf-duotone',
     title: 'Ecology',
     link: '/',
   },

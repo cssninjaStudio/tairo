@@ -15,7 +15,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
               Lists
             </span>
             <i
-              class="i-feather-chevron-down block w-4 h-4 text-gray-400 ml-auto transition-transform duration-300"
+              class="i-feather-chevron-down block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
               :class="open ? 'rotate-180' : ''"
             ></i>
           </a>
@@ -85,7 +85,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
               Flex lists
             </span>
             <i
-              class="i-feather-chevron-down block w-4 h-4 text-gray-400 ml-auto transition-transform duration-300"
+              class="i-feather-chevron-down block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
               :class="open ? 'rotate-180' : ''"
             ></i>
           </a>
@@ -146,7 +146,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
               Form layouts
             </span>
             <i
-              class="i-feather-chevron-down block w-4 h-4 text-gray-400 ml-auto transition-transform duration-300"
+              class="i-feather-chevron-down block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
               :class="open ? 'rotate-180' : ''"
             ></i>
           </a>
@@ -225,7 +225,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
               Placeloads
             </span>
             <i
-              class="i-feather-chevron-down block w-4 h-4 text-gray-400 ml-auto transition-transform duration-300"
+              class="i-feather-chevron-down block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
               :class="open ? 'rotate-180' : ''"
             ></i>
           </a>
@@ -286,7 +286,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
     </li>
     <!-- Menu divider -->
     <li
-      class="h-px w-full border-t border-gray-200 dark:border-slate-700 my-4"
+      class="h-px w-full border-t border-slate-200 dark:border-slate-700 my-4"
     ></li>
     <!-- Menu item -->
     <li class="group min-h-[2rem] mb-1">
@@ -299,7 +299,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
               Card grids
             </span>
             <i
-              class="i-feather-chevron-down block w-4 h-4 text-gray-400 ml-auto transition-transform duration-300"
+              class="i-feather-chevron-down block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
               :class="open ? 'rotate-180' : ''"
             ></i>
           </a>
@@ -369,7 +369,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
               Tile grids
             </span>
             <i
-              class="i-feather-chevron-down block w-4 h-4 text-gray-400 ml-auto transition-transform duration-300"
+              class="i-feather-chevron-down block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
               :class="open ? 'rotate-180' : ''"
             ></i>
           </a>
@@ -436,7 +436,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
               User grids
             </span>
             <i
-              class="i-feather-chevron-down block w-4 h-4 text-gray-400 ml-auto transition-transform duration-300"
+              class="i-feather-chevron-down block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
               :class="open ? 'rotate-180' : ''"
             ></i>
           </a>
@@ -497,7 +497,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
     </li>
     <!-- Menu divider -->
     <li
-      class="h-px w-full border-t border-gray-200 dark:border-slate-700 my-4"
+      class="h-px w-full border-t border-slate-200 dark:border-slate-700 my-4"
     ></li>
     <!-- Menu item -->
     <li class="group min-h-[2rem] mb-1">
@@ -510,7 +510,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
               Projects
             </span>
             <i
-              class="i-feather-chevron-down block w-4 h-4 text-gray-400 ml-auto transition-transform duration-300"
+              class="i-feather-chevron-down block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
               :class="open ? 'rotate-180' : ''"
             ></i>
           </a>
@@ -589,7 +589,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
               Auth
             </span>
             <i
-              class="i-feather-chevron-down block w-4 h-4 text-gray-400 ml-auto transition-transform duration-300"
+              class="i-feather-chevron-down block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
               :class="open ? 'rotate-180' : ''"
             ></i>
           </a>
@@ -668,7 +668,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
     </li>
     <!-- Menu divider -->
     <li
-      class="h-px w-full border-t border-gray-200 dark:border-slate-700 my-4"
+      class="h-px w-full border-t border-slate-200 dark:border-slate-700 my-4"
     ></li>
     <!-- Menu item -->
     <li class="group min-h-[2rem] mb-1">
@@ -681,7 +681,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
               Subpages
             </span>
             <i
-              class="i-feather-chevron-down block w-4 h-4 text-gray-400 ml-auto transition-transform duration-300"
+              class="i-feather-chevron-down block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
               :class="open ? 'rotate-180' : ''"
             ></i>
           </a>
@@ -796,7 +796,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
               Utility
             </span>
             <i
-              class="i-feather-chevron-down block w-4 h-4 text-gray-400 ml-auto transition-transform duration-300"
+              class="i-feather-chevron-down block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
               :class="open ? 'rotate-180' : ''"
             ></i>
           </a>
@@ -866,7 +866,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
               Onboarding
             </span>
             <i
-              class="i-feather-chevron-down block w-4 h-4 text-gray-400 ml-auto transition-transform duration-300"
+              class="i-feather-chevron-down block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
               :class="open ? 'rotate-180' : ''"
             ></i>
           </a>
@@ -945,7 +945,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
               Error
             </span>
             <i
-              class="i-feather-chevron-down block w-4 h-4 text-gray-400 ml-auto transition-transform duration-300"
+              class="i-feather-chevron-down block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
               :class="open ? 'rotate-180' : ''"
             ></i>
           </a>

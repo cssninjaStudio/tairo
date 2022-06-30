@@ -57,14 +57,14 @@ const items = ref(props.items)
     <Listbox v-slot="{ open }" v-model="value">
       <ListboxLabel
         v-if="!props.hideLabel"
-        class="font-text text-sm text-gray-400"
+        class="font-text text-sm text-slate-400"
       >
         {{ props.label }}
       </ListboxLabel>
       <div class="relative">
         <ListboxButton
           :disabled="props.disabled"
-          class="relative flex items-center peer pl-4 pr-12 h-10 text-sm leading-5 font-text w-full bg-white text-gray-600 border border-slate-300 focus:border-slate-300 focus:shadow-lg focus:shadow-gray-300/50 dark:focus:shadow-gray-800/50 placeholder:text-gray-300 dark:placeholder:text-gray-500 dark:bg-slate-900/75 dark:text-gray-200 dark:border-slate-700 dark:focus:border-slate-700 focus:ring-0 outline-transparent focus:outline-dashed focus:outline-gray-300 dark:focus:outline-gray-600 focus:outline-offset-2 disabled:opacity-75 disabled:cursor-not-allowed transition-all duration-300"
+          class="relative flex items-center peer pl-4 pr-12 h-10 text-sm leading-5 font-text w-full bg-white text-slate-600 border border-slate-300 focus:border-slate-300 focus:shadow-lg focus:shadow-slate-300/50 dark:focus:shadow-slate-800/50 placeholder:text-slate-300 dark:placeholder:text-slate-500 dark:bg-slate-900/75 dark:text-slate-200 dark:border-slate-700 dark:focus:border-slate-700 focus:ring-0 outline-transparent focus:outline-dashed focus:outline-slate-300 dark:focus:outline-slate-600 focus:outline-offset-2 disabled:opacity-75 disabled:cursor-not-allowed transition-all duration-300"
           :class="[
             props.shape === 'rounded' && 'rounded',
             props.shape === 'curved' && 'rounded-xl',
@@ -96,7 +96,7 @@ const items = ref(props.items)
             class="w-10 pointer-events-none absolute inset-y-0 right-0 border-l border-slate-300 dark:border-slate-700 flex items-center justify-center"
           >
             <i
-              class="i-lucide-chevron-down h-5 w-5 text-gray-400 transition-transform duration-300"
+              class="i-lucide-chevron-down h-5 w-5 text-slate-400 transition-transform duration-300"
               :class="open && 'rotate-180'"
             ></i>
           </span>
@@ -114,7 +114,7 @@ const items = ref(props.items)
           leave-to-class="opacity-0"
         >
           <ListboxOptions
-            class="absolute mt-1 max-h-60 w-full overflow-auto border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-700 p-2 text-base shadow-lg focus:ring-1 focus:ring-primary-500/50 focus:outline-none sm:text-sm slimscroll z-10"
+            class="absolute mt-1 max-h-60 w-full overflow-auto border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-700 p-2 text-base shadow-lg focus:ring-1 focus:ring-primary-500/50 focus:outline-none sm:text-sm slimscroll z-10"
             :class="[
               props.shape === 'rounded' && 'rounded-md',
               props.shape === 'curved' && 'rounded-xl',
