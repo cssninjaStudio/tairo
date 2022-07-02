@@ -36,7 +36,7 @@ definePageMeta({
 
         <!-- Message icons -->
         <DocSection id="message-icons" title="Message icons" tag="1.0.0">
-          <DocComponent label="?essage icons example">
+          <DocComponent label="Message icons example">
             <template #demo>
               <div class="space-y-4 max-w-xs">
                 <BaseMessage

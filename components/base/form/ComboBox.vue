@@ -95,10 +95,10 @@ const items = ref(props.items)
           <span
             class="w-10 pointer-events-none absolute inset-y-0 right-0 border-l border-slate-300 dark:border-slate-700 flex items-center justify-center"
           >
-            <i
-              class="i-lucide-chevron-down h-5 w-5 text-slate-400 transition-transform duration-300"
+            <BaseIcon
+              name="lucide:chevron-down" class="h-5 w-5 text-slate-400 transition-transform duration-300"
               :class="open && 'rotate-180'"
-            ></i>
+             />
           </span>
           <div
             v-if="props.loading"
@@ -173,7 +173,7 @@ const items = ref(props.items)
                   v-if="selected"
                   class="flex items-center ml-auto text-primary-600"
                 >
-                  <i class="i-lucide-check h-4 w-4"></i>
+                  <BaseIcon name="lucide:check" class="h-4 w-4" />
                 </span>
               </li>
             </ListboxOption>

@@ -101,6 +101,8 @@ export default defineNuxtConfig({
     },
     optimizeDeps: {
       include: [
+        '@iconify/vue/dist/offline',
+        '@iconify/vue',
         '@headlessui/vue',
         'vue',
         'pinia',

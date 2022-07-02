@@ -50,13 +50,13 @@ const props = withDefaults(defineProps<BreadcrumbsProps>(), {
           v-else-if="props.separator === 'chevron' && index < items.length - 1"
           class="px-2 text-slate-500"
         >
-          <i class="i-lucide-chevron-right block w-3 h-3"></i>
+          <BaseIcon name="lucide:chevron-right" class="block w-3 h-3" />
         </span>
         <span
           v-else-if="props.separator === 'arrow' && index < items.length - 1"
           class="px-2 text-slate-500"
         >
-          <i class="i-lucide-arrow-right block w-3 h-3"></i>
+          <BaseIcon name="lucide:arrow-right" class="block w-3 h-3" />
         </span>
       </li>
     </ul>

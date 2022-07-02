@@ -280,7 +280,7 @@ definePageMeta({
                     text="View your profile"
                   >
                     <template #end>
-                      <i class="i-ph-user-duotone w-5 h-5 block mr-2"></i>
+                      <BaseIcon name="ph:user-duotone" class="w-5 h-5 block mr-2" />
                     </template>
                   </BaseDropdownItem>
                   <BaseDropdownItem
@@ -289,12 +289,12 @@ definePageMeta({
                     text="View your projects"
                   >
                     <template #end>
-                      <i class="i-ph-briefcase-duotone w-5 h-5 block mr-2"></i>
+                      <BaseIcon name="ph:briefcase-duotone" class="w-5 h-5 block mr-2" />
                     </template>
                   </BaseDropdownItem>
                   <BaseDropdownItem to="/" title="Team" text="Manage your team">
                     <template #end>
-                      <i class="i-ph-users-four-duotone w-5 h-5 block mr-2"></i>
+                      <BaseIcon name="ph:users-four-duotone" class="w-5 h-5 block mr-2" />
                     </template>
                   </BaseDropdownItem>
                   <BaseDropdownDivide />
@@ -304,7 +304,7 @@ definePageMeta({
                     text="Set your preferences"
                   >
                     <template #end>
-                      <i class="i-ph-gear-six-duotone w-5 h-5 block mr-2"></i>
+                      <BaseIcon name="ph:gear-six-duotone" class="w-5 h-5 block mr-2" />
                     </template>
                   </BaseDropdownItem>
                 </BaseDropdown>

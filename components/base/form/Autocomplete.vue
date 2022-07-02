@@ -107,7 +107,7 @@ const removeItem = function (name: string) {
           >
             {{ item.name }}
             <button type="button" @click="removeItem(item.name)">
-              <i class="i-lucide-x block w-3 h-3 ml-1"></i>
+              <BaseIcon name="lucide:x" class="block w-3 h-3 ml-1" />
             </button>
           </div>
         </li>
@@ -146,7 +146,7 @@ const removeItem = function (name: string) {
         class="absolute top-0 right-0 h-10 w-10 flex justify-center items-center text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-colors duration-300 z-10"
         @click="clear"
       >
-        <i class="i-lucide-x w-4 h-4"></i>
+        <BaseIcon name="lucide:x" class="w-4 h-4" />
       </button>
       <div
         v-if="props.loading"
@@ -236,7 +236,7 @@ const removeItem = function (name: string) {
               class="flex items-center justify-center ml-auto"
               :class="[item.media && 'w-8 h-8', item.icon && 'w-8 h-8']"
             >
-              <i class="i-lucide-check block w-4 h-4 text-success-500"></i>
+              <BaseIcon name="lucide:check" class="block w-4 h-4 text-success-500" />
             </div>
           </div>
         </ComboboxOption>

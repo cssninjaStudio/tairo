@@ -23,7 +23,7 @@ const props = defineProps<PopoverContentMediaProps>()
               size="xs"
               class="bg-indigo-100 text-indigo-500 dark:bg-indigo-600 dark:text-white"
             >
-              <i class="i-ph-house-duotone w-4 h-4"></i>
+              <BaseIcon name="ph:house-duotone" class="w-4 h-4" />
             </BaseIconBox>
             <div class="ml-2">
               <BaseHeading

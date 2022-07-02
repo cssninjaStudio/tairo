@@ -82,7 +82,7 @@ const endSidebars = sidebars.filter((sidebar) => sidebar.position === 'end')
             class="flex xl:hidden items-center justify-center h-10 w-10 rounded-full ml-auto text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-colors duration-300"
             @click="isSidebarOpened = false"
           >
-            <i class="i-feather-chevron-left w-6 h-6"></i>
+            <BaseIcon name="feather:chevron-left" class="w-6 h-6" />
           </button>
         </div>
         <!-- Body -->

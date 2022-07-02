@@ -36,7 +36,7 @@ definePageMeta({
               <div class="flex items-end flex-wrap gap-6">
                 <BasePopover size="sm">
                   <span class="flex items-center text-slate-500">
-                    <i class="i-lucide-help-circle w-4 h-4 mr-1"></i>
+                    <BaseIcon name="lucide:help-circle" class="w-4 h-4 mr-1" />
                     <span class="font-text text-sm">Help text</span>
                   </span>
 
@@ -53,7 +53,7 @@ definePageMeta({
 
                 <BasePopover size="sm">
                   <span class="flex items-center text-slate-500">
-                    <i class="i-lucide-help-circle w-4 h-4 mr-1"></i>
+                    <BaseIcon name="lucide:help-circle" class="w-4 h-4 mr-1" />
                     <span class="font-text text-sm">Help text</span>
                   </span>
 
@@ -83,7 +83,7 @@ definePageMeta({
               <div class="flex items-end justify-end gap-6">
                 <BasePopover size="sm" orientation="end">
                   <span class="flex items-center text-slate-500">
-                    <i class="i-lucide-help-circle w-4 h-4 mr-1"></i>
+                    <BaseIcon name="lucide:help-circle" class="w-4 h-4 mr-1" />
                     <span class="font-text text-sm">Help text</span>
                   </span>
 
@@ -101,7 +101,7 @@ definePageMeta({
 
                 <BasePopover size="sm" orientation="end">
                   <span class="flex items-center text-slate-500">
-                    <i class="i-lucide-help-circle w-4 h-4 mr-1"></i>
+                    <BaseIcon name="lucide:help-circle" class="w-4 h-4 mr-1" />
                     <span class="font-text text-sm">Help text</span>
                   </span>
 

@@ -68,7 +68,7 @@ const filteredPeople = computed(() =>
         class="flex items-center justify-center h-10 w-10 rounded-full text-slate-400 hover:text-slate-600 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors duration-300"
         @click="closePanel"
       >
-        <i class="i-feather-chevron-left w-6 h-6"></i>
+        <BaseIcon name="feather:chevron-left" class="w-6 h-6" />
       </button>
     </div>
 
@@ -84,7 +84,7 @@ const filteredPeople = computed(() =>
           <div
             class="absolute top-0 left-0 h-12 w-12 flex justify-center items-center text-slate-400 group-focus-within:text-primary-500 transition-colors duration-300"
           >
-            <i class="i-feather-search w-5 h-5"></i>
+            <BaseIcon name="feather:search" class="w-5 h-5" />
           </div>
         </div>
 
@@ -237,7 +237,7 @@ const filteredPeople = computed(() =>
               <div
                 class="relative inline-flex justify-center items-center w-10 h-10 bg-emerald-100 text-emerald-600 dark:bg-emerald-500 dark:text-slate-50 rounded-full"
               >
-                <i class="i-feather-chrome"></i>
+                <BaseIcon name="feather:chrome" class="" />
               </div>
               <div class="ml-3">
                 <h6
@@ -255,7 +255,7 @@ const filteredPeople = computed(() =>
               <div
                 class="relative inline-flex justify-center items-center w-10 h-10 bg-amber-100 text-amber-600 dark:bg-amber-500 dark:text-slate-50 rounded-full"
               >
-                <i class="i-feather-tv"></i>
+                <BaseIcon name="feather:tv" class="" />
               </div>
               <div class="ml-3">
                 <h6
@@ -273,7 +273,7 @@ const filteredPeople = computed(() =>
               <div
                 class="relative inline-flex justify-center items-center w-10 h-10 bg-primary-100 text-primary-600 dark:bg-primary-500 dark:text-slate-50 rounded-full"
               >
-                <i class="i-feather-twitter"></i>
+                <BaseIcon name="feather:twitter" class="" />
               </div>
               <div class="ml-3">
                 <h6

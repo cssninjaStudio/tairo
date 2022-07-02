@@ -17,7 +17,7 @@ const { closePanel } = usePanels()
         class="flex items-center justify-center h-10 w-10 rounded-full text-slate-400 hover:text-slate-600 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors duration-300"
         @click="closePanel"
       >
-        <i class="i-feather-chevron-right w-6 h-6"></i>
+        <BaseIcon name="feather:chevron-right" class="w-6 h-6" />
       </button>
     </div>
 
@@ -44,7 +44,7 @@ const { closePanel } = usePanels()
             <div
               class="absolute -top-1 -right-1 h-7 w-7 rounded-full hidden peer-checked:flex items-center justify-center bg-primary-500 text-white border-4 border-white dark:border-slate-800"
             >
-              <i class="i-feather-check w-3 h-3"></i>
+              <BaseIcon name="feather:check" class="w-3 h-3" />
             </div>
           </div>
         </div>
@@ -68,7 +68,7 @@ const { closePanel } = usePanels()
             <div
               class="absolute -top-1 -right-1 h-7 w-7 rounded-full hidden peer-checked:flex items-center justify-center bg-primary-500 text-white border-4 border-white dark:border-slate-800"
             >
-              <i class="i-feather-check w-3 h-3"></i>
+              <BaseIcon name="feather:check" class="w-3 h-3" />
             </div>
           </div>
         </div>
@@ -92,7 +92,7 @@ const { closePanel } = usePanels()
             <div
               class="absolute -top-1 -right-1 h-7 w-7 rounded-full hidden peer-checked:flex items-center justify-center bg-primary-500 text-white border-4 border-white dark:border-slate-800"
             >
-              <i class="i-feather-check w-3 h-3"></i>
+              <BaseIcon name="feather:check" class="w-3 h-3" />
             </div>
           </div>
         </div>
@@ -116,7 +116,7 @@ const { closePanel } = usePanels()
             <div
               class="absolute -top-1 -right-1 h-7 w-7 rounded-full hidden peer-checked:flex items-center justify-center bg-primary-500 text-white border-4 border-white dark:border-slate-800"
             >
-              <i class="i-feather-check w-3 h-3"></i>
+              <BaseIcon name="feather:check" class="w-3 h-3" />
             </div>
           </div>
         </div>
@@ -140,7 +140,7 @@ const { closePanel } = usePanels()
             <div
               class="absolute -top-1 -right-1 h-7 w-7 rounded-full hidden peer-checked:flex items-center justify-center bg-primary-500 text-white border-4 border-white dark:border-slate-800"
             >
-              <i class="i-feather-check w-3 h-3"></i>
+              <BaseIcon name="feather:check" class="w-3 h-3" />
             </div>
           </div>
         </div>
@@ -164,7 +164,7 @@ const { closePanel } = usePanels()
             <div
               class="absolute -top-1 -right-1 h-7 w-7 rounded-full hidden peer-checked:flex items-center justify-center bg-primary-500 text-white border-4 border-white dark:border-slate-800"
             >
-              <i class="i-feather-check w-3 h-3"></i>
+              <BaseIcon name="feather:check" class="w-3 h-3" />
             </div>
           </div>
         </div>

@@ -84,7 +84,7 @@ const props = withDefaults(defineProps<MessageProps>(), {
         props.type === 'danger' && 'dark:text-danger-500',
       ]"
     >
-      <i class="i-lucide-x w-4 h-4"></i>
+      <BaseIcon name="lucide:x" class="w-4 h-4" />
     </button>
   </div>
 </template>
