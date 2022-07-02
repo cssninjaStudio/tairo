@@ -20,7 +20,7 @@ export default defineNuxtConfig({
     strict: true,
   },
   build: {
-    transpile: [''],
+    // transpile: [''],
   },
   postcss: {
     plugins: {
@@ -95,8 +95,22 @@ export default defineNuxtConfig({
   },
   vite: {
     logLevel: 'info',
+    build: {
+      chunkSizeWarningLimit: Infinity,
+      assetsInlineLimit: 4096 * 2,
+    },
     optimizeDeps: {
-      include: ['@headlessui/vue', 'vue', 'pinia', 'ufo'],
+      include: [
+        '@headlessui/vue',
+        'vue',
+        'pinia',
+        'ufo',
+        'vue3-carousel',
+        'vue-prism-component',
+        'prismjs',
+        'vue-scrollto',
+        '@vueform/slider',
+      ],
     },
   },
 })
