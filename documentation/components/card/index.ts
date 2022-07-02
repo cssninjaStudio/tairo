@@ -2,7 +2,7 @@ export const shapes = `
 <template>
   <BaseCard shape="straight" class="p-6">
     <BaseHeading
-      tag="h4"
+      as="h4"
       size="sm"
       weight="semibold"
       lead="tight"
@@ -17,7 +17,7 @@ export const shapes = `
 
   <BaseCard shape="rounded" class="p-6">
     <BaseHeading
-      tag="h4"
+      as="h4"
       size="sm"
       weight="semibold"
       lead="tight"
@@ -32,7 +32,7 @@ export const shapes = `
 
   <BaseCard shape="curved" class="p-6">
     <BaseHeading
-      tag="h4"
+      as="h4"
       size="sm"
       weight="semibold"
       lead="tight"
@@ -51,7 +51,7 @@ export const elevation = `
 <template>
   <BaseCard shape="straight" elevated class="p-6">
     <BaseHeading
-      tag="h4"
+      as="h4"
       size="sm"
       weight="semibold"
       lead="tight"
@@ -66,7 +66,7 @@ export const elevation = `
 
   <BaseCard shape="rounded" elevated class="p-6">
     <BaseHeading
-      tag="h4"
+      as="h4"
       size="sm"
       weight="semibold"
       lead="tight"
@@ -81,7 +81,7 @@ export const elevation = `
 
   <BaseCard shape="curved" elevated class="p-6">
     <BaseHeading
-      tag="h4"
+      as="h4"
       size="sm"
       weight="semibold"
       lead="tight"

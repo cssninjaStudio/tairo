@@ -56,7 +56,6 @@ const props = withDefaults(defineProps<CarouselProps>(), {
             <div class="text-center">
               <i class="!block w-7 h-7 mx-auto mb-2" :class="slide.icon"></i>
               <BaseHeading
-                tag="h3"
                 size="sm"
                 weight="medium"
                 lead="tight"

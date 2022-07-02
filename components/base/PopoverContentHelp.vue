@@ -43,7 +43,7 @@ const props = withDefaults(defineProps<PopoverContentHelpProps>(), {
         </BaseIconBox>
         <div class="ml-2">
           <BaseHeading
-            tag="h4"
+            as="h4"
             size="xs"
             weight="semibold"
             lead="tight"

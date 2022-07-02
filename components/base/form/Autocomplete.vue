@@ -220,7 +220,7 @@ const removeItem = function (name: string) {
             </BaseIconBox>
             <div>
               <BaseHeading
-                tag="h4"
+                as="h4"
                 :weight="selected ? 'semibold' : 'normal'"
                 size="sm"
                 class="text-slate-800 dark:text-white"

@@ -22,11 +22,11 @@ export const headingProperties = {
       ],
     },
     {
-      name: 'tag',
+      name: 'as',
       type: 'string',
       required: 'false',
       default: 'h3',
-      values: ['h1', 'h2', 'h3', 'h4'],
+      values: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
     },
     {
       name: 'weight',
@@ -74,6 +74,13 @@ export const paragraphProperties = {
         '8xl',
         '9xl',
       ],
+    },
+    {
+      name: 'as',
+      type: 'string',
+      required: 'false',
+      default: 'p',
+      values: ['string'],
     },
     {
       name: 'weight',

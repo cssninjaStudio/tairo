@@ -28,7 +28,7 @@ definePageMeta({
               <div class="grid md:grid-cols-3 gap-4">
                 <BaseCard shape="straight" class="p-6">
                   <BaseHeading
-                    tag="h4"
+                    as="h4"
                     size="sm"
                     weight="semibold"
                     lead="tight"
@@ -42,7 +42,7 @@ definePageMeta({
                 </BaseCard>
                 <BaseCard shape="rounded" class="p-6">
                   <BaseHeading
-                    tag="h4"
+                    as="h4"
                     size="sm"
                     weight="semibold"
                     lead="tight"
@@ -56,7 +56,7 @@ definePageMeta({
                 </BaseCard>
                 <BaseCard shape="curved" class="p-6">
                   <BaseHeading
-                    tag="h4"
+                    as="h4"
                     size="sm"
                     weight="semibold"
                     lead="tight"
@@ -83,7 +83,7 @@ definePageMeta({
               <div class="grid md:grid-cols-3 gap-4">
                 <BaseCard shape="straight" elevated class="p-6">
                   <BaseHeading
-                    tag="h4"
+                    as="h4"
                     size="sm"
                     weight="semibold"
                     lead="tight"
@@ -97,7 +97,7 @@ definePageMeta({
                 </BaseCard>
                 <BaseCard shape="rounded" elevated class="p-6">
                   <BaseHeading
-                    tag="h4"
+                    as="h4"
                     size="sm"
                     weight="semibold"
                     lead="tight"
@@ -111,7 +111,7 @@ definePageMeta({
                 </BaseCard>
                 <BaseCard shape="curved" elevated class="p-6">
                   <BaseHeading
-                    tag="h4"
+                    as="h4"
                     size="sm"
                     weight="semibold"
                     lead="tight"
@@ -142,7 +142,7 @@ definePageMeta({
               <div class="grid md:grid-cols-3 gap-4">
                 <BaseCard shape="straight" elevated-hover class="p-6">
                   <BaseHeading
-                    tag="h4"
+                    as="h4"
                     size="sm"
                     weight="semibold"
                     lead="tight"
@@ -156,7 +156,7 @@ definePageMeta({
                 </BaseCard>
                 <BaseCard shape="rounded" elevated-hover class="p-6">
                   <BaseHeading
-                    tag="h4"
+                    as="h4"
                     size="sm"
                     weight="semibold"
                     lead="tight"
@@ -170,7 +170,7 @@ definePageMeta({
                 </BaseCard>
                 <BaseCard shape="curved" elevated-hover class="p-6">
                   <BaseHeading
-                    tag="h4"
+                    as="h4"
                     size="sm"
                     weight="semibold"
                     lead="tight"

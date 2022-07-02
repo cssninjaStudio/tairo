@@ -44,7 +44,7 @@ const props = defineProps<PopoverContentDualProps>()
           />
           <div>
             <BaseHeading
-              tag="h4"
+              as="h4"
               size="xs"
               weight="semibold"
               lead="tight"
@@ -63,7 +63,7 @@ const props = defineProps<PopoverContentDualProps>()
           <BaseAvatar :picture="props.image" size="lg" class="!block mx-auto" />
           <div>
             <BaseHeading
-              tag="h4"
+              as="h4"
               size="xs"
               weight="semibold"
               lead="tight"
@@ -86,7 +86,7 @@ const props = defineProps<PopoverContentDualProps>()
         class="flow-root rounded-md transition duration-150 ease-in-out focus:outline-none"
       >
         <BaseHeading
-          tag="h4"
+          as="h4"
           size="xs"
           weight="semibold"
           class="text-slate-800 dark:text-white"

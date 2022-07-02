@@ -27,7 +27,7 @@ definePageMeta({
             <template #demo>
               <div class="flex flex-col space-y-3">
                 <BaseHeading
-                  tag="h2"
+                  as="h2"
                   size="3xl"
                   weight="extrabold"
                   class="text-slate-800 dark:text-white"
@@ -35,7 +35,7 @@ definePageMeta({
                   A huge heading
                 </BaseHeading>
                 <BaseHeading
-                  tag="h2"
+                  as="h2"
                   size="2xl"
                   weight="bold"
                   class="text-slate-800 dark:text-white"
@@ -43,7 +43,7 @@ definePageMeta({
                   A bold and very large heading
                 </BaseHeading>
                 <BaseHeading
-                  tag="h2"
+                  as="h2"
                   size="lg"
                   weight="semibold"
                   class="text-slate-800 dark:text-white"
@@ -51,7 +51,7 @@ definePageMeta({
                   A smaller and less thicker heading
                 </BaseHeading>
                 <BaseHeading
-                  tag="h2"
+                  as="h2"
                   size="md"
                   weight="medium"
                   class="text-slate-400"

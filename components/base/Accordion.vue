@@ -84,7 +84,7 @@ const toggle = (key: number) => {
               ]"
             >
               <BaseHeading
-                tag="h4"
+                as="h4"
                 size="sm"
                 weight="semibold"
                 lead="none"

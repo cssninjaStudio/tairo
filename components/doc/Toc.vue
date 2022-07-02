@@ -32,7 +32,6 @@ const scrollTo = VueScrollTo.scrollTo
   >
     <div class="mb-8">
       <BaseHeading
-        tag="h3"
         size="xs"
         weight="semibold"
         lead="tight"

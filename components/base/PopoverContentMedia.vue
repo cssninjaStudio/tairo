@@ -27,7 +27,7 @@ const props = defineProps<PopoverContentMediaProps>()
             </BaseIconBox>
             <div class="ml-2">
               <BaseHeading
-                tag="h4"
+                as="h4"
                 size="xs"
                 weight="semibold"
                 lead="tight"
@@ -81,7 +81,7 @@ const props = defineProps<PopoverContentMediaProps>()
         class="flow-root rounded-md transition duration-150 ease-in-out focus:outline-none"
       >
         <BaseHeading
-          tag="h4"
+          as="h4"
           size="xs"
           weight="semibold"
           class="text-slate-800 dark:text-white"

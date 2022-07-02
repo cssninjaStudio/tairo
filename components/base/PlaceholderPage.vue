@@ -16,7 +16,7 @@ const props = withDefaults(defineProps<PlaceholderPageProps>(), {
         <slot name="image"></slot>
       </div>
       <BaseHeading
-        tag="h4"
+        as="h4"
         weight="semibold"
         size="xl"
         class="text-slate-800 dark:text-white mt-4"

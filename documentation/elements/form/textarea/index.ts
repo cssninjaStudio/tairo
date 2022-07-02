@@ -105,7 +105,7 @@ export const addon = `
           class="mr-1"
         />
         <BaseHeading
-          tag="h4"
+          as="h4"
           size="sm"
           weight="semibold"
           class="text-slate-800 dark:text-white"

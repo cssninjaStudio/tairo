@@ -160,7 +160,7 @@ const endSidebars = sidebars.filter((sidebar) => sidebar.position === 'end')
                   </div>
 
                   <BaseHeading
-                    tag="h4"
+                    as="h4"
                     weight="semibold"
                     size="md"
                     class="text-slate-800 dark:text-white"
@@ -208,7 +208,7 @@ const endSidebars = sidebars.filter((sidebar) => sidebar.position === 'end')
                   </div>
 
                   <BaseHeading
-                    tag="h4"
+                    as="h4"
                     weight="semibold"
                     size="md"
                     class="text-slate-800 dark:text-white"

@@ -31,12 +31,14 @@ export type ParagraphLead =
   | 'loose'
 
 export interface ParagraphProps {
+  as?: string
   size?: ParagraphSize
   weight?: ParagraphWeight
   lead?: ParagraphLead
 }
 
 const props = withDefaults(defineProps<ParagraphProps>(), {
+  as: 'p',
   size: 'md',
   weight: 'normal',
   lead: 'normal',
@@ -44,7 +46,8 @@ const props = withDefaults(defineProps<ParagraphProps>(), {
 </script>
 
 <template>
-  <p
+  <component
+    :is="props.as"
     class="font-sub"
     :class="[
       props.size === 'xs' && 'text-xs',
@@ -75,5 +78,5 @@ const props = withDefaults(defineProps<ParagraphProps>(), {
     ]"
   >
     <slot></slot>
-  </p>
+  </component>
 </template>

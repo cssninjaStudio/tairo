@@ -30,17 +30,17 @@ export type HeadingLead =
   | 'relaxed'
   | 'loose'
 
-export type HeadingTag = 'h1' | 'h2' | 'h3' | 'h4'
+export type HeadingTag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 
 export interface HeadingProps {
-  tag?: HeadingTag
+  as?: HeadingTag
   size?: HeadingSize
   weight?: HeadingWeight
   lead?: HeadingLead
 }
 
 const props = withDefaults(defineProps<HeadingProps>(), {
-  tag: 'h3',
+  as: 'h3',
   size: 'xl',
   weight: 'semibold',
   lead: 'normal',
@@ -49,7 +49,7 @@ const props = withDefaults(defineProps<HeadingProps>(), {
 
 <template>
   <component
-    :is="props.tag"
+    :is="props.as"
     class="font-main"
     :class="[
       props.size === 'xs' && 'text-xs',

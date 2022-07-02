@@ -15,7 +15,7 @@ definePageMeta({
         badge="/img/logos/stacks/tailwind-purple.svg"
       />
       <BaseHeading
-        tag="h2"
+        as="h2"
         size="2xl"
         weight="normal"
         lead="tight"
@@ -36,13 +36,7 @@ definePageMeta({
         <BaseCard class="group">
           <div class="flex justify-between p-6 mb-2">
             <div class="grow pr-4">
-              <BaseHeading
-                tag="h3"
-                size="xl"
-                weight="normal"
-                lead="tight"
-                class="mb-2"
-              >
+              <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
                 <span class="text-slate-800 dark:text-white">Buttons</span>
               </BaseHeading>
               <BaseParagraph lead="tight" size="sm">
@@ -78,13 +72,7 @@ definePageMeta({
         <BaseCard class="group">
           <div class="flex justify-between p-6 mb-2">
             <div class="grow pr-4">
-              <BaseHeading
-                tag="h3"
-                size="xl"
-                weight="normal"
-                lead="tight"
-                class="mb-2"
-              >
+              <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
                 <span class="text-slate-800 dark:text-white">Icons</span>
               </BaseHeading>
               <BaseParagraph lead="tight" size="sm">
@@ -120,13 +108,7 @@ definePageMeta({
         <BaseCard class="group">
           <div class="flex justify-between p-6 mb-2">
             <div class="grow pr-4">
-              <BaseHeading
-                tag="h3"
-                size="xl"
-                weight="normal"
-                lead="tight"
-                class="mb-2"
-              >
+              <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
                 <span class="text-slate-800 dark:text-white">Dropdowns</span>
               </BaseHeading>
               <BaseParagraph lead="tight" size="sm">
@@ -162,13 +144,7 @@ definePageMeta({
         <BaseCard class="group">
           <div class="flex justify-between p-6 mb-2">
             <div class="grow pr-4">
-              <BaseHeading
-                tag="h3"
-                size="xl"
-                weight="normal"
-                lead="tight"
-                class="mb-2"
-              >
+              <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
                 <span class="text-slate-800 dark:text-white">Modals</span>
               </BaseHeading>
               <BaseParagraph lead="tight" size="sm">
@@ -204,13 +180,7 @@ definePageMeta({
         <BaseCard class="group">
           <div class="flex justify-between p-6 mb-2">
             <div class="grow pr-4">
-              <BaseHeading
-                tag="h3"
-                size="xl"
-                weight="normal"
-                lead="tight"
-                class="mb-2"
-              >
+              <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
                 <span class="text-slate-800 dark:text-white">Progress</span>
               </BaseHeading>
               <BaseParagraph lead="tight" size="sm">
@@ -246,13 +216,7 @@ definePageMeta({
         <BaseCard class="group">
           <div class="flex justify-between p-6 mb-2">
             <div class="grow pr-4">
-              <BaseHeading
-                tag="h3"
-                size="xl"
-                weight="normal"
-                lead="tight"
-                class="mb-2"
-              >
+              <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
                 <span class="text-slate-800 dark:text-white">Forms</span>
               </BaseHeading>
               <BaseParagraph lead="tight" size="sm">
@@ -288,13 +252,7 @@ definePageMeta({
         <BaseCard class="group">
           <div class="flex justify-between p-6 mb-2">
             <div class="grow pr-4">
-              <BaseHeading
-                tag="h3"
-                size="xl"
-                weight="normal"
-                lead="tight"
-                class="mb-2"
-              >
+              <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
                 <span class="text-slate-800 dark:text-white">Checkboxes</span>
               </BaseHeading>
               <BaseParagraph lead="tight" size="sm">
@@ -330,13 +288,7 @@ definePageMeta({
         <BaseCard class="group">
           <div class="flex justify-between p-6 mb-2">
             <div class="grow pr-4">
-              <BaseHeading
-                tag="h3"
-                size="xl"
-                weight="normal"
-                lead="tight"
-                class="mb-2"
-              >
+              <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
                 <span class="text-slate-800 dark:text-white">Switches</span>
               </BaseHeading>
               <BaseParagraph lead="tight" size="sm">

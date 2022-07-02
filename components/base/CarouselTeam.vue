@@ -65,7 +65,6 @@ const props = withDefaults(defineProps<CarouselProps>(), {
               class="mx-auto"
             />
             <BaseHeading
-              tag="h3"
               size="md"
               weight="semibold"
               class="text-slate-800 dark:text-white"

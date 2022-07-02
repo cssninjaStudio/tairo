@@ -32,7 +32,7 @@ definePageMeta({
           <div>
             <BaseCard shape="rounded" class="p-8">
               <BaseHeading
-                tag="h2"
+                as="h2"
                 size="2xl"
                 weight="bold"
                 class="text-slate-800 dark:text-white"
@@ -67,7 +67,7 @@ definePageMeta({
             <BaseCard shape="rounded" class="p-8 text-center">
               <i class="i-logos-nuxt-icon w-10 h-10 block mx-auto mb-2"></i>
               <BaseHeading
-                tag="h4"
+                as="h4"
                 size="sm"
                 weight="semibold"
                 class="text-slate-800 dark:text-white"
@@ -80,7 +80,7 @@ definePageMeta({
                 class="i-vscode-icons-folder-type-typescript w-10 h-10 block mx-auto mb-2"
               ></i>
               <BaseHeading
-                tag="h4"
+                as="h4"
                 size="sm"
                 weight="semibold"
                 class="text-slate-800 dark:text-white"
@@ -93,7 +93,7 @@ definePageMeta({
                 class="i-logos-tailwindcss-icon w-10 h-10 block mx-auto mb-2"
               ></i>
               <BaseHeading
-                tag="h4"
+                as="h4"
                 size="sm"
                 weight="semibold"
                 class="text-slate-800 dark:text-white"
@@ -106,7 +106,7 @@ definePageMeta({
                 class="i-logos-unocss w-10 h-10 block mx-auto scale-75 dark:invert mb-2"
               ></i>
               <BaseHeading
-                tag="h4"
+                as="h4"
                 size="sm"
                 weight="semibold"
                 class="text-slate-800 dark:text-white"
@@ -123,7 +123,7 @@ definePageMeta({
           class="pb-10 mb-10 border-b border-gray-200 dark:border-slate-800"
         >
           <BaseHeading
-            tag="h2"
+            as="h2"
             size="xl"
             weight="medium"
             class="text-slate-800 dark:text-white mb-5"
@@ -139,7 +139,7 @@ definePageMeta({
               </BaseIconBox>
               <div class="ml-3">
                 <BaseHeading
-                  tag="h4"
+                  as="h4"
                   size="sm"
                   weight="semibold"
                   class="text-slate-800 dark:text-white"
@@ -158,7 +158,7 @@ definePageMeta({
               </BaseIconBox>
               <div class="ml-3">
                 <BaseHeading
-                  tag="h4"
+                  as="h4"
                   size="sm"
                   weight="semibold"
                   class="text-slate-800 dark:text-white"
@@ -177,7 +177,7 @@ definePageMeta({
               </BaseIconBox>
               <div class="ml-3">
                 <BaseHeading
-                  tag="h4"
+                  as="h4"
                   size="sm"
                   weight="semibold"
                   class="text-slate-800 dark:text-white"
@@ -196,7 +196,7 @@ definePageMeta({
               </BaseIconBox>
               <div class="ml-3">
                 <BaseHeading
-                  tag="h4"
+                  as="h4"
                   size="sm"
                   weight="semibold"
                   class="text-slate-800 dark:text-white"
@@ -215,7 +215,7 @@ definePageMeta({
               </BaseIconBox>
               <div class="ml-3">
                 <BaseHeading
-                  tag="h4"
+                  as="h4"
                   size="sm"
                   weight="semibold"
                   class="text-slate-800 dark:text-white"
@@ -234,7 +234,7 @@ definePageMeta({
               </BaseIconBox>
               <div class="ml-3">
                 <BaseHeading
-                  tag="h4"
+                  as="h4"
                   size="sm"
                   weight="semibold"
                   class="text-slate-800 dark:text-white"
