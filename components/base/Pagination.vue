@@ -227,11 +227,7 @@ const handleLinkClick = (e: MouseEvent, page = 1) => {
         @keydown.space.prevent="(e:any) => (e.target as HTMLAnchorElement).click()"
         @click="(e:any) => handleLinkClick(e, currentPage - 1)"
       >
-        <BaseIcon
-          aria-hidden="true"
-          name="lucide:chevron-left"
-          class="block w-4 h-4"
-        />
+        <BaseIcon name="lucide:chevron-left" class="block w-4 h-4" />
       </NuxtLink>
 
       <!-- Next -->
@@ -247,11 +243,7 @@ const handleLinkClick = (e: MouseEvent, page = 1) => {
         @keydown.space.prevent="(e:any) => (e.target as HTMLAnchorElement).click()"
         @click="(e:any) => handleLinkClick(e, currentPage + 1)"
       >
-        <BaseIcon
-          aria-hidden="true"
-          name="lucide:chevron-right"
-          class="block w-4 h-4"
-        />
+        <BaseIcon name="lucide:chevron-right" class="block w-4 h-4" />
       </NuxtLink>
       <slot name="after-navigation"></slot>
     </div>

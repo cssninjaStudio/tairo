@@ -31,7 +31,10 @@ const emit = defineEmits(['delete'])
       class="flex items-center justify-center rounded-full bg-white border border-slate-200 mr-2 -ml-0.5"
       :class="props.small ? 'h-8 w-8' : 'h-10 w-10'"
     >
-      <i :class="[props.icon, props.small ? 'h-4 w-4' : 'h-5 w-5']"></i>
+      <BaseIcon
+        :name="props.icon"
+        :class="[props.small ? 'h-4 w-4' : 'h-5 w-5']"
+      />
     </div>
     <div
       v-else-if="props.image && !props.icon"

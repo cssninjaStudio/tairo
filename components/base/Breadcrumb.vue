@@ -31,7 +31,7 @@ const props = withDefaults(defineProps<BreadcrumbsProps>(), {
           :to="item.to"
           class="flex items-center gap-x-1 text-slate-500 hover:text-primary-500 transition-colors duration-300"
         >
-          <i v-if="item.icon" class="block w-4 h-4" :class="item.icon"></i>
+          <BaseIcon v-if="item.icon" :name="item.icon" class="block w-4 h-4" />
           <span :class="[item.hideLabel && 'sr-only']">{{ item.label }}</span>
         </NuxtLink>
         <span

@@ -33,7 +33,7 @@ export const icon = `
   <BaseSnack label="React" icon="logos:react" />
   <BaseSnack label="Angular" icon="logos:angular-icon" />
   <BaseSnack label="Vue" icon="logos:vue" />
-  <BaseSnack label="Html" icon="logos:html5" />
+  <BaseSnack label="Html" icon="logos:html-5" />
   <BaseSnack label="Python" icon="logos:python" />
 </template>
 `
@@ -43,7 +43,7 @@ export const iconLight = `
   <BaseSnack label="React" icon="logos:react" light />
   <BaseSnack label="Angular" icon="logos:angular-icon" light />
   <BaseSnack label="Vue" icon="logos:vue" light />
-  <BaseSnack label="Html" icon="logos:html5" light />
+  <BaseSnack label="Html" icon="logos:html-5" light />
   <BaseSnack label="Python" icon="logos:python" light />
 </template>
 `
@@ -53,7 +53,7 @@ export const iconSmall = `
   <BaseSnack label="React" icon="logos:react" small />
   <BaseSnack label="Angular" icon="logos:angular-icon" small />
   <BaseSnack label="Vue" icon="logos:vue" small />
-  <BaseSnack label="Html" icon="logos:html5" small />
+  <BaseSnack label="Html" icon="logos:html-5" small />
   <BaseSnack label="Python" icon="logos:python" small />
 </template>
 `
