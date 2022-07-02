@@ -1,91 +1,91 @@
 export const shapes = `
 <template>
-  <BaseIconButton shape="straight">
+  <BaseButtonIcon shape="straight">
     <i class="i-ph-moon-duotone w-5 h-5"></i>
-  </BaseIconButton>
-  <BaseIconButton shape="rounded">
+  </BaseButtonIcon>
+  <BaseButtonIcon shape="rounded">
     <i class="i-ph-github-logo-duotone w-5 h-5"></i>
-  </BaseIconButton>
-  <BaseIconButton shape="curved">
+  </BaseButtonIcon>
+  <BaseButtonIcon shape="curved">
     <i class="i-ph-game-controller-duotone w-5 h-5"></i>
-  </BaseIconButton>
-  <BaseIconButton shape="full">
+  </BaseButtonIcon>
+  <BaseButtonIcon shape="full">
     <i class="i-ph-heart-duotone w-5 h-5"></i>
-  </BaseIconButton>
+  </BaseButtonIcon>
 </template>
 `
 
 export const primary = `
 <template>
-  <BaseIconButton shape="straight" primary>
+  <BaseButtonIcon shape="straight" primary>
     <i class="i-ph-moon-duotone w-5 h-5"></i>
-  </BaseIconButton>
-  <BaseIconButton shape="rounded" primary>
+  </BaseButtonIcon>
+  <BaseButtonIcon shape="rounded" primary>
     <i class="i-ph-github-logo-duotone w-5 h-5"></i>
-  </BaseIconButton>
-  <BaseIconButton shape="curved" primary>
+  </BaseButtonIcon>
+  <BaseButtonIcon shape="curved" primary>
     <i class="i-ph-game-controller-duotone w-5 h-5"></i>
-  </BaseIconButton>
-  <BaseIconButton shape="full" primary>
+  </BaseButtonIcon>
+  <BaseButtonIcon shape="full" primary>
     <i class="i-ph-heart-duotone w-5 h-5"></i>
-  </BaseIconButton>
+  </BaseButtonIcon>
 </template>
 `
 
 export const muted = `
 <template>
-  <BaseIconButton shape="straight" muted>
+  <BaseButtonIcon shape="straight" muted>
     <i class="i-ph-moon-duotone w-5 h-5"></i>
-  </BaseIconButton>
-  <BaseIconButton shape="rounded" muted>
+  </BaseButtonIcon>
+  <BaseButtonIcon shape="rounded" muted>
     <i class="i-ph-github-logo-duotone w-5 h-5"></i>
-  </BaseIconButton>
-  <BaseIconButton shape="curved" muted>
+  </BaseButtonIcon>
+  <BaseButtonIcon shape="curved" muted>
     <i class="i-ph-game-controller-duotone w-5 h-5"></i>
-  </BaseIconButton>
-  <BaseIconButton shape="full" muted>
+  </BaseButtonIcon>
+  <BaseButtonIcon shape="full" muted>
     <i class="i-ph-heart-duotone w-5 h-5"></i>
-  </BaseIconButton>
+  </BaseButtonIcon>
 </template>
 `
 
 export const loading = `
 <template>
-  <BaseIconButton shape="straight" loading>
+  <BaseButtonIcon shape="straight" loading>
     <i class="i-ph-moon-duotone w-5 h-5"></i>
-  </BaseIconButton>
-  <BaseIconButton shape="rounded" loading>
+  </BaseButtonIcon>
+  <BaseButtonIcon shape="rounded" loading>
     <i class="i-ph-github-logo-duotone w-5 h-5"></i>
-  </BaseIconButton>
-  <BaseIconButton shape="curved" loading>
+  </BaseButtonIcon>
+  <BaseButtonIcon shape="curved" loading>
     <i class="i-ph-game-controller-duotone w-5 h-5"></i>
-  </BaseIconButton>
-  <BaseIconButton shape="full" loading>
+  </BaseButtonIcon>
+  <BaseButtonIcon shape="full" loading>
     <i class="i-ph-heart-duotone w-5 h-5"></i>
-  </BaseIconButton>
+  </BaseButtonIcon>
 </template>
 `
 export const group = `
 <template>
   <div class="flex items-end flex-wrap">
-    <BaseIconButton
+    <BaseButtonIcon
       shape="curved"
       class="focus:z-10 rounded-r-none border-r-0"
     >
       <i class="i-ph-moon-duotone w-5 h-5"></i>
-    </BaseIconButton>
-    <BaseIconButton shape="straight" class="focus:z-10">
+    </BaseButtonIcon>
+    <BaseButtonIcon shape="straight" class="focus:z-10">
       <i class="i-ph-github-logo-duotone w-5 h-5"></i>
-    </BaseIconButton>
-    <BaseIconButton shape="straight" class="focus:z-10 border-l-0">
+    </BaseButtonIcon>
+    <BaseButtonIcon shape="straight" class="focus:z-10 border-l-0">
       <i class="i-ph-game-controller-duotone w-5 h-5"></i>
-    </BaseIconButton>
-    <BaseIconButton
+    </BaseButtonIcon>
+    <BaseButtonIcon
       shape="curved"
       class="focus:z-10 rounded-l-none border-l-0"
     >
       <i class="i-ph-heart-duotone w-5 h-5"></i>
-    </BaseIconButton>
+    </BaseButtonIcon>
   </div>
 </template>
 `

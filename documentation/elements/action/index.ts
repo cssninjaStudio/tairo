@@ -1,41 +1,41 @@
 export const shapes = `
 <template>
-  <BaseAction shape="straight">Action</BaseAction>
-  <BaseAction shape="rounded">Action</BaseAction>
-  <BaseAction shape="curved">Action</BaseAction>
-  <BaseAction shape="full">Action</BaseAction>
+  <BaseButtonAction shape="straight">Action</BaseButtonAction>
+  <BaseButtonAction shape="rounded">Action</BaseButtonAction>
+  <BaseButtonAction shape="curved">Action</BaseButtonAction>
+  <BaseButtonAction shape="full">Action</BaseButtonAction>
 </template>
 `
 
 export const muted = `
 <template>
-  <BaseAction shape="straight" muted>Action</BaseAction>
-  <BaseAction shape="rounded" muted>Action</BaseAction>
-  <BaseAction shape="curved" muted>Action</BaseAction>
-  <BaseAction shape="full" muted>Action</BaseAction>
+  <BaseButtonAction shape="straight" muted>Action</BaseButtonAction>
+  <BaseButtonAction shape="rounded" muted>Action</BaseButtonAction>
+  <BaseButtonAction shape="curved" muted>Action</BaseButtonAction>
+  <BaseButtonAction shape="full" muted>Action</BaseButtonAction>
 </template>
 `
 
 export const loading = `
 <template>
-  <BaseAction shape="straight" loading>Action</BaseAction>
-  <BaseAction shape="rounded" loading>Action</BaseAction>
-  <BaseAction shape="curved" loading>Action</BaseAction>
-  <BaseAction shape="full" loading>Action</BaseAction>
+  <BaseButtonAction shape="straight" loading>Action</BaseButtonAction>
+  <BaseButtonAction shape="rounded" loading>Action</BaseButtonAction>
+  <BaseButtonAction shape="curved" loading>Action</BaseButtonAction>
+  <BaseButtonAction shape="full" loading>Action</BaseButtonAction>
 </template>
 `
 export const group = `
 <template>
   <div class="flex items-end">
-    <BaseAction shape="rounded" class="focus:z-10 rounded-r-none border-r-0">
+    <BaseButtonAction shape="rounded" class="focus:z-10 rounded-r-none border-r-0">
       View
-    </BaseAction>
-    <BaseAction shape="straight" class="focus:z-10">
+    </BaseButtonAction>
+    <BaseButtonAction shape="straight" class="focus:z-10">
       Edit
-    </BaseAction>
-    <BaseAction shape="rounded" class="focus:z-10 rounded-l-none border-l-0">
+    </BaseButtonAction>
+    <BaseButtonAction shape="rounded" class="focus:z-10 rounded-l-none border-l-0">
       Share
-    </BaseAction>
+    </BaseButtonAction>
   </div>
 </template>
 `

@@ -22,10 +22,10 @@ definePageMeta({
           <DocComponent label="Default action shapes">
             <template #demo>
               <div class="flex items-end flex-wrap gap-2">
-                <BaseAction shape="straight">Action</BaseAction>
-                <BaseAction shape="rounded">Action</BaseAction>
-                <BaseAction shape="curved">Action</BaseAction>
-                <BaseAction shape="full">Action</BaseAction>
+                <BaseButtonAction shape="straight">Action</BaseButtonAction>
+                <BaseButtonAction shape="rounded">Action</BaseButtonAction>
+                <BaseButtonAction shape="curved">Action</BaseButtonAction>
+                <BaseButtonAction shape="full">Action</BaseButtonAction>
               </div>
             </template>
             <template #code>
@@ -39,10 +39,14 @@ definePageMeta({
           <DocComponent label="Muted action variation">
             <template #demo>
               <div class="flex items-end flex-wrap gap-2">
-                <BaseAction shape="straight" muted>Action</BaseAction>
-                <BaseAction shape="rounded" muted>Action</BaseAction>
-                <BaseAction shape="curved" muted>Action</BaseAction>
-                <BaseAction shape="full" muted>Action</BaseAction>
+                <BaseButtonAction shape="straight" muted>
+                  Action
+                </BaseButtonAction>
+                <BaseButtonAction shape="rounded" muted>
+                  Action
+                </BaseButtonAction>
+                <BaseButtonAction shape="curved" muted>Action</BaseButtonAction>
+                <BaseButtonAction shape="full" muted>Action</BaseButtonAction>
               </div>
             </template>
             <template #code>
@@ -56,10 +60,16 @@ definePageMeta({
           <DocComponent label="Action loading variation">
             <template #demo>
               <div class="flex items-end flex-wrap gap-2">
-                <BaseAction shape="straight" loading>Action</BaseAction>
-                <BaseAction shape="rounded" loading>Action</BaseAction>
-                <BaseAction shape="curved" loading>Action</BaseAction>
-                <BaseAction shape="full" loading>Action</BaseAction>
+                <BaseButtonAction shape="straight" loading>
+                  Action
+                </BaseButtonAction>
+                <BaseButtonAction shape="rounded" loading>
+                  Action
+                </BaseButtonAction>
+                <BaseButtonAction shape="curved" loading>
+                  Action
+                </BaseButtonAction>
+                <BaseButtonAction shape="full" loading>Action</BaseButtonAction>
               </div>
             </template>
             <template #code>
@@ -73,21 +83,21 @@ definePageMeta({
           <DocComponent label="Actions inside a group">
             <template #demo>
               <div class="flex items-end">
-                <BaseAction
+                <BaseButtonAction
                   shape="rounded"
                   class="focus:z-10 rounded-r-none border-r-0"
                 >
                   View
-                </BaseAction>
-                <BaseAction shape="straight" class="focus:z-10">
+                </BaseButtonAction>
+                <BaseButtonAction shape="straight" class="focus:z-10">
                   Edit
-                </BaseAction>
-                <BaseAction
+                </BaseButtonAction>
+                <BaseButtonAction
                   shape="rounded"
                   class="focus:z-10 rounded-l-none border-l-0"
                 >
                   Share
-                </BaseAction>
+                </BaseButtonAction>
               </div>
             </template>
             <template #code>

@@ -78,6 +78,7 @@ const endSidebars = sidebars.filter((sidebar) => sidebar.position === 'end')
             </h2>
           </slot>
           <button
+            type="button"
             class="flex xl:hidden items-center justify-center h-10 w-10 rounded-full ml-auto text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-colors duration-300"
             @click="isSidebarOpened = false"
           >

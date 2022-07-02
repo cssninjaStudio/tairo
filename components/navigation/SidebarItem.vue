@@ -21,6 +21,7 @@ const props = defineProps<{
 
     <button
       v-else
+      type="button"
       class="flex items-center justify-center w-12 h-12 rounded-2xl transition-colors duration-300"
       :class="
         activeSidebar?.name === props.sidebar.name

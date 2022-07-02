@@ -62,6 +62,7 @@ watch(activeValue, (value) => {
         <button
           v-for="(tab, index) in tabs.slice(0, props.slots)"
           :key="index"
+          type="button"
           class="relative flex items-center justify-center flex-1 h-full z-20"
           :class="[
             activeValue === tab.value ? 'text-white' : 'text-slate-400',

@@ -8,6 +8,27 @@ export const properties = {
       values: ['straight', 'rounded', 'curved', 'full'],
     },
     {
+      name: 'type',
+      type: 'string',
+      required: 'false',
+      default: 'undefined',
+      values: ['button', 'submit', 'reset'],
+    },
+    {
+      name: 'rel',
+      type: 'string',
+      required: 'false',
+      default: 'undefined',
+      values: ['string'],
+    },
+    {
+      name: 'target',
+      type: 'string',
+      required: 'false',
+      default: 'undefined',
+      values: ['string'],
+    },
+    {
       name: 'to',
       type: 'RouteLocationRaw',
       required: 'false',

@@ -3,10 +3,14 @@ import type { RouteLocationRaw } from 'vue-router'
 export type IconButtonShapes = 'straight' | 'rounded' | 'curved' | 'full'
 
 export interface IconButtonProps {
-  shape?: IconButtonShapes
+  type?: 'button' | 'submit' | 'reset'
   to?: RouteLocationRaw
-  loading?: boolean
   disabled?: boolean
+  rel?: string
+  target?: string
+
+  shape?: IconButtonShapes
+  loading?: boolean
   primary?: boolean
   muted?: boolean
 }
@@ -16,9 +20,9 @@ const props = withDefaults(defineProps<IconButtonProps>(), {
   color: 'default',
   shape: 'rounded',
   to: undefined,
+  type: undefined,
 })
 
-const NuxtLink = defineNuxtLink({})
 const iconButtonClasses = computed(() => [
   props.loading ? '!text-transparent' : '',
   props.disabled
@@ -40,19 +44,14 @@ const iconButtonClasses = computed(() => [
   props.shape === 'full' && 'rounded-full',
 ])
 
-const attributes = computed(() => {
-  return {
-    to: props.disabled ? undefined : props.to,
-    disabled: props.disabled,
-    class: iconButtonClasses.value,
-  }
-})
+const { attributes, is } = useButton(props)
 </script>
 
 <template>
   <component
-    :is="props.to ? NuxtLink : 'button'"
+    :is="is"
     v-bind="attributes"
+    :class="iconButtonClasses"
     class="relative font-text font-normal inline-flex items-center justify-center outline-none leading-5 no-underline space-x-1 h-10 w-10 p-2 text-sm focus:outline-dashed focus:outline-slate-300 dark:focus:outline-slate-600 focus:outline-offset-2 transition-all duration-300"
   >
     <slot v-if="!props.loading"></slot>

@@ -42,31 +42,31 @@ definePageMeta({
                   color="primary"
                 />
                 <div class="flex justify-between gap-2">
-                  <BaseAction
+                  <BaseButtonAction
                     :class="
                       progress === 25 && '!border-primary-500 !text-primary-500'
                     "
                     @click="progress = 25"
                   >
                     25%
-                  </BaseAction>
-                  <BaseAction
+                  </BaseButtonAction>
+                  <BaseButtonAction
                     :class="
                       progress === 50 && '!border-primary-500 !text-primary-500'
                     "
                     @click="progress = 50"
                   >
                     50%
-                  </BaseAction>
-                  <BaseAction
+                  </BaseButtonAction>
+                  <BaseButtonAction
                     :class="
                       progress === 75 && '!border-primary-500 !text-primary-500'
                     "
                     @click="progress = 75"
                   >
                     75%
-                  </BaseAction>
-                  <BaseAction
+                  </BaseButtonAction>
+                  <BaseButtonAction
                     :class="
                       progress === 100 &&
                       '!border-primary-500 !text-primary-500'
@@ -74,7 +74,7 @@ definePageMeta({
                     @click="progress = 100"
                   >
                     100%
-                  </BaseAction>
+                  </BaseButtonAction>
                 </div>
               </div>
             </template>
@@ -117,7 +117,7 @@ definePageMeta({
                 </div>
 
                 <div class="flex justify-between gap-2">
-                  <BaseAction
+                  <BaseButtonAction
                     :class="
                       progressCircle === 25 &&
                       '!border-primary-500 !text-primary-500'
@@ -125,8 +125,8 @@ definePageMeta({
                     @click="progressCircle = 25"
                   >
                     25%
-                  </BaseAction>
-                  <BaseAction
+                  </BaseButtonAction>
+                  <BaseButtonAction
                     :class="
                       progressCircle === 50 &&
                       '!border-primary-500 !text-primary-500'
@@ -134,8 +134,8 @@ definePageMeta({
                     @click="progressCircle = 50"
                   >
                     50%
-                  </BaseAction>
-                  <BaseAction
+                  </BaseButtonAction>
+                  <BaseButtonAction
                     :class="
                       progressCircle === 75 &&
                       '!border-primary-500 !text-primary-500'
@@ -143,8 +143,8 @@ definePageMeta({
                     @click="progressCircle = 75"
                   >
                     75%
-                  </BaseAction>
-                  <BaseAction
+                  </BaseButtonAction>
+                  <BaseButtonAction
                     :class="
                       progressCircle === 100 &&
                       '!border-primary-500 !text-primary-500'
@@ -152,7 +152,7 @@ definePageMeta({
                     @click="progressCircle = 100"
                   >
                     100%
-                  </BaseAction>
+                  </BaseButtonAction>
                 </div>
               </div>
             </template>

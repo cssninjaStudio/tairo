@@ -22,36 +22,36 @@ definePageMeta({
           <DocComponent label="Default tooltip positions">
             <template #demo>
               <div class="flex items-end flex-wrap gap-2">
-                <BaseIconButton shape="curved" tooltip="Time for a nap!">
+                <BaseButtonIcon shape="curved" tooltip="Time for a nap!">
                   <i class="i-ph-timer-duotone w-5 h-5 text-sky-500"></i>
-                </BaseIconButton>
-                <BaseIconButton
+                </BaseButtonIcon>
+                <BaseButtonIcon
                   shape="curved"
                   flow="left"
                   tooltip="Unlock this now!"
                 >
                   <i class="i-ph-lock-duotone w-5 h-5 text-emerald-500"></i>
-                </BaseIconButton>
-                <BaseIconButton
+                </BaseButtonIcon>
+                <BaseButtonIcon
                   shape="curved"
                   flow="right"
                   tooltip="Give some love!"
                 >
                   <i class="i-ph-heartbeat-duotone w-5 h-5 text-rose-500"></i>
-                </BaseIconButton>
-                <BaseIconButton
+                </BaseButtonIcon>
+                <BaseButtonIcon
                   shape="curved"
                   flow="down"
                   tooltip="The King in the North!"
                 >
                   <i class="i-ph-crown-duotone w-5 h-5 text-yellow-500"></i>
-                </BaseIconButton>
-                <BaseAction shape="curved" tooltip="Here we go!">
+                </BaseButtonIcon>
+                <BaseButtonAction shape="curved" tooltip="Here we go!">
                   <i
                     class="i-ph-bell-ringing-duotone w-4 h-4 text-primary-500 -ml-1"
                   ></i>
                   <span class="py-2">Subscribe</span>
-                </BaseAction>
+                </BaseButtonAction>
               </div>
             </template>
             <template #code>

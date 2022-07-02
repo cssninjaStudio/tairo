@@ -49,6 +49,7 @@ const emit = defineEmits(['delete'])
       <slot>{{ props.label }}</slot>
     </span>
     <button
+      type="button"
       class="pl-3 cursor-pointer"
       :class="props.small ? 'pr-3' : 'pr-4'"
       @click="emit('delete')"

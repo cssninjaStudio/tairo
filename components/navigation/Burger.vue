@@ -4,6 +4,7 @@ const { isSidebarOpened, toggleSidebar } = useSidebar()
 
 <template>
   <button
+    type="button"
     class="w-10 h-10 flex items-center justify-center"
     @click="toggleSidebar"
   >

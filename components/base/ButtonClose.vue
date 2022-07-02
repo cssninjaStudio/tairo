@@ -1,5 +1,6 @@
 <template>
   <button
+    type="button"
     class="flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-700 h-9 w-9 transition-colors duration-300"
   >
     <svg

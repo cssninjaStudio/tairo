@@ -58,7 +58,12 @@ definePageMeta({
                 <BaseButton to="https://cssninja.io" shape="curved">
                   Button
                 </BaseButton>
-                <BaseButton to="https://google.com" shape="full">
+                <BaseButton
+                  rel=""
+                  target=""
+                  to="https://google.com"
+                  shape="full"
+                >
                   Button
                 </BaseButton>
               </div>

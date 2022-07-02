@@ -17,6 +17,7 @@ const route = useRoute()
     <BaseThemeToggle class="ml-auto" />
 
     <button
+      type="button"
       class="flex items-center justify-center w-9 h-9 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 ring-1 ring-transparent hover:ring-offset-4 hover:ring-primary-500 dark:ring-offset-slate-900 transition-all duration-300"
       @click="openPanel('language')"
     >
@@ -30,6 +31,7 @@ const route = useRoute()
     <NavigationToolbarNotifications />
 
     <button
+      type="button"
       class="flex items-center justify-center w-9 h-9 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 ring-1 ring-transparent hover:ring-offset-4 hover:ring-primary-500 dark:ring-offset-slate-900 transition-all duration-300"
       @click="openPanel('activity')"
     >

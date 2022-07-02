@@ -22,6 +22,7 @@ const isScrolled = computed(() => {
     ]"
   >
     <button
+      type="button"
       class="relative flex items-center justify-center w-12 h-12 rounded-full bg-primary-500 text-white shadow-lg shadow-primary-500/50 dark:shadow-slate-800/10 z-30"
       @click="isOpened = !isOpened"
     >
@@ -67,6 +68,7 @@ const isScrolled = computed(() => {
         "
       >
         <button
+          type="button"
           class="flex items-center justify-center w-9 h-9 rounded-full bg-primary-700 transition-all duration-300"
           @click="openPanel('language')"
         >
@@ -109,6 +111,7 @@ const isScrolled = computed(() => {
         "
       >
         <button
+          type="button"
           class="flex items-center justify-center w-9 h-9 rounded-full bg-primary-700 transition-all duration-300"
           @click="openPanel('activity')"
         >

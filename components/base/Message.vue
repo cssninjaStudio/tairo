@@ -75,6 +75,7 @@ const props = withDefaults(defineProps<MessageProps>(), {
       {{ props.message }}
     </span>
     <button
+      type="button"
       class="flex items-center justify-center text-slate-800 ml-auto mr-3 cursor-pointer"
       :class="[
         props.type === 'success' && 'dark:text-success-500',

@@ -14,6 +14,7 @@ const activeTab = ref('tab-1')
         Activity
       </h2>
       <button
+        type="button"
         class="flex items-center justify-center h-10 w-10 rounded-full text-slate-400 hover:text-slate-600 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors duration-300"
         @click="closePanel"
       >
@@ -27,6 +28,7 @@ const activeTab = ref('tab-1')
         class="relative flex items-center w-full h-10 bg-slate-100 dark:bg-slate-700 rounded-lg font-text text-sm"
       >
         <button
+          type="button"
           class="relative flex items-center justify-center flex-1 h-full z-20"
           :class="activeTab === 'tab-1' ? 'text-white' : 'text-slate-400'"
           @click="activeTab = 'tab-1'"
@@ -34,6 +36,7 @@ const activeTab = ref('tab-1')
           <span>Team</span>
         </button>
         <button
+          type="button"
           class="relative flex items-center justify-center flex-1 h-full z-20"
           :class="activeTab === 'tab-2' ? 'text-white' : 'text-slate-400'"
           @click="activeTab = 'tab-2'"
@@ -41,6 +44,7 @@ const activeTab = ref('tab-1')
           <span>Projects</span>
         </button>
         <button
+          type="button"
           class="relative flex items-center justify-center flex-1 h-full z-20"
           :class="activeTab === 'tab-3' ? 'text-white' : 'text-slate-400'"
           @click="activeTab = 'tab-3'"

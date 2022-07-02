@@ -106,7 +106,7 @@ const removeItem = function (name: string) {
             ]"
           >
             {{ item.name }}
-            <button @click="removeItem(item.name)">
+            <button type="button" @click="removeItem(item.name)">
               <i class="i-lucide-x block w-3 h-3 ml-1"></i>
             </button>
           </div>

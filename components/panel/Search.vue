@@ -64,6 +64,7 @@ const filteredPeople = computed(() =>
         Search
       </h2>
       <button
+        type="button"
         class="flex items-center justify-center h-10 w-10 rounded-full text-slate-400 hover:text-slate-600 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors duration-300"
         @click="closePanel"
       >

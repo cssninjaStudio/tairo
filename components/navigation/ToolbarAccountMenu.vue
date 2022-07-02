@@ -7,6 +7,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
     <Menu as="div" class="relative w-9 h-9 text-left">
       <MenuButton as="template">
         <button
+          type="button"
           class="w-9 h-9 rounded-full ring-1 ring-transparent group-hover:ring-offset-4 group-hover:ring-primary-500 dark:ring-offset-slate-900 inline-flex items-center justify-center transition-all duration-300"
         >
           <div
@@ -50,6 +51,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
               </h6>
               <p class="font-text text-xs text-slate-400 mb-4">maya@tairo.io</p>
               <button
+                type="button"
                 class="font-sub inline-flex items-center justify-center rounded-lg px-4 py-2 w-full bg-white border border-slate-200 hover:shadow-md hover:shadow-slate-600/10 focus:shadow-md focus:shadow-slate-600/20 text-slate-800 transition-all duration-300"
               >
                 <span class="text-sm">Manage Account</span>
@@ -150,6 +152,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
 
           <div class="p-6">
             <button
+              type="button"
               class="font-sub inline-flex items-center justify-center rounded-lg px-4 py-2 w-full bg-white border border-slate-200 hover:shadow-md hover:shadow-slate-600/10 focus:shadow-md focus:shadow-slate-600/20 text-slate-800 transition-all duration-300"
             >
               <span class="text-sm">Logout from all</span>
