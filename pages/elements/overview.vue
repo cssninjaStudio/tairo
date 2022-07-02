@@ -81,7 +81,7 @@ definePageMeta({
             </BaseCard>
             <BaseCard shape="rounded" class="p-8 text-center">
               <BaseIcon
-                name="vscode:icons-folder-type-typescript"
+                name="vscode-icons:folder-type-typescript"
                 class="w-10 h-10 block mx-auto mb-2"
               />
               <BaseHeading
