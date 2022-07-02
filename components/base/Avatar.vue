@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { onceImageErrored } from '@/utils/via-placeholder'
-
 export type AvatarSize =
   | 'xs'
   | 'sm'
@@ -36,7 +34,8 @@ export interface AvatarProps {
 const props = withDefaults(defineProps<AvatarProps>(), {
   picture: undefined,
   pictureDark: undefined,
-  placeholder: 'https://via.placeholder.com/50x50',
+  placeholder:
+    'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkMAYAADkANVKH3ScAAAAASUVORK5CYII=',
   initials: '?',
   badge: undefined,
   size: 'md',
@@ -90,7 +89,6 @@ const props = withDefaults(defineProps<AvatarProps>(), {
           class="object-cover max-w-full dark:border-transparent shadow-sm"
           :class="[props.pictureDark ? 'dark:hidden' : '']"
           alt="Avatar image"
-          @error.once="(event) => onceImageErrored(event, '150x150')"
         />
 
         <img
@@ -98,7 +96,6 @@ const props = withDefaults(defineProps<AvatarProps>(), {
           :src="props.pictureDark"
           class="object-cover max-w-full dark:border-transparent shadow-sm hidden dark:block"
           alt="Avatar image"
-          @error.once="(event) => onceImageErrored(event, '150x150')"
         />
 
         <span
@@ -155,7 +152,6 @@ const props = withDefaults(defineProps<AvatarProps>(), {
           :src="props.badge"
           class=""
           alt="Avatar badge"
-          @error.once="(event) => onceImageErrored(event, '150x150')"
         />
       </slot>
     </div>
