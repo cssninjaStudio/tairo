@@ -21,6 +21,7 @@ const props = withDefaults(defineProps<DocTocbarProps>(), {
   hidden: false,
 })
 
+const route = useRoute()
 const activeAnchor = ref(0)
 const scrollTo = VueScrollTo.scrollTo
 </script>
@@ -43,8 +44,8 @@ const scrollTo = VueScrollTo.scrollTo
       <nav class="font-text text-sm">
         <ul class>
           <li v-for="(item, index) in props.anchors" :key="index">
-            <a
-              href="javascript:void(0);"
+            <NuxtLink
+              :to="{ name: route.name!, hash: `#${item.anchor}` }"
               class="block py-2 border-r-2"
               :class="
                 activeAnchor === index
@@ -52,24 +53,31 @@ const scrollTo = VueScrollTo.scrollTo
                   : 'border-slate-200  dark:border-slate-800 text-slate-500 dark:text-slate-400 hover:text-slate-400'
               "
               @click.prevent="
-                scrollTo(`#${item.anchor}`, 800, { offset: -100 }),
-                  (activeAnchor = index)
+                () => {
+                  activeAnchor = index
+                  scrollTo(`#${item.anchor}`, 800, { offset: -100 })
+                }
               "
             >
               {{ item.label }}
-            </a>
+            </NuxtLink>
             <ul v-if="item.subItems.length > 0" class="pl-4">
               <li v-for="(subitem, i) in item.subItems" :key="i">
-                <a
-                  href="javascript:void(0);"
+                <NuxtLink
+                  :to="{
+                    name: route.name!,
+                    hash: `#${item.anchor}`,
+                  }"
                   class="block text-sm py-2 border-r-2 border-slate-200 dark:border-slate-800 text-slate-400 hover:text-slate-300"
                   @click.prevent="
-                    scrollTo(`#${item.anchor}`, 800, { offset: -100 }),
-                      (activeAnchor = index)
+                    () => {
+                      activeAnchor = index
+                      scrollTo(`#${item.anchor}`, 800, { offset: -100 })
+                    }
                   "
                 >
                   {{ subitem.label }}
-                </a>
+                </NuxtLink>
               </li>
             </ul>
           </li>
