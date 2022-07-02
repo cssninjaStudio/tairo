@@ -1,7 +1,3 @@
-<script lang="ts">
-let instances = 0
-</script>
-
 <script setup lang="ts">
 export interface AnimatedCheckboxEmits {
   (e: 'update:modelValue', value: (string | number)[]): void
@@ -17,7 +13,7 @@ const props = withDefaults(defineProps<AnimatedCheckboxProps>(), {
   modelValue: () => [],
 })
 
-const animatedCheckboxId = `animated-checkbox-${++instances}`
+const animatedCheckboxId = `animated-checkbox-${useId()}`
 const element = ref<HTMLElement>()
 const innerElement = ref<HTMLElement>()
 const checked = computed(() => props.modelValue.includes(props.value))

@@ -50,6 +50,7 @@ watch(
         v-model="value"
         :true-value="props.trueValue"
         :false-value="props.falseValue"
+        v-bind="$attrs"
         class="peer cursor-pointer opacity-0 absolute h-5 w-5 z-20"
         type="checkbox"
       />
