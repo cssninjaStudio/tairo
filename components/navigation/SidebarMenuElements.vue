@@ -63,9 +63,10 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
               Buttons
             </span>
             <BaseIcon
-              name="feather:chevron-down" class="block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
+              name="feather:chevron-down"
+              class="block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
               :class="open ? 'rotate-180' : ''"
-             />
+            />
           </a>
         </DisclosureButton>
 
@@ -121,9 +122,10 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
               Forms
             </span>
             <BaseIcon
-              name="feather:chevron-down" class="block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
+              name="feather:chevron-down"
+              class="block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
               :class="open ? 'rotate-180' : ''"
-             />
+            />
           </a>
         </DisclosureButton>
 
@@ -203,9 +205,10 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
               Switches
             </span>
             <BaseIcon
-              name="feather:chevron-down" class="block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
+              name="feather:chevron-down"
+              class="block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
               :class="open ? 'rotate-180' : ''"
-             />
+            />
           </a>
         </DisclosureButton>
 
@@ -309,9 +312,10 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
               Addons
             </span>
             <BaseIcon
-              name="feather:chevron-down" class="block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
+              name="feather:chevron-down"
+              class="block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
               :class="open ? 'rotate-180' : ''"
-             />
+            />
           </a>
         </DisclosureButton>
 

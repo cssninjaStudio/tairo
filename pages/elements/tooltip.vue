@@ -23,33 +23,46 @@ definePageMeta({
             <template #demo>
               <div class="flex items-end flex-wrap gap-2">
                 <BaseButtonIcon shape="curved" tooltip="Time for a nap!">
-                  <BaseIcon name="ph:timer-duotone" class="w-5 h-5 text-sky-500" />
+                  <BaseIcon
+                    name="ph:timer-duotone"
+                    class="w-5 h-5 text-sky-500"
+                  />
                 </BaseButtonIcon>
                 <BaseButtonIcon
                   shape="curved"
                   flow="left"
                   tooltip="Unlock this now!"
                 >
-                  <BaseIcon name="ph:lock-duotone" class="w-5 h-5 text-emerald-500" />
+                  <BaseIcon
+                    name="ph:lock-duotone"
+                    class="w-5 h-5 text-emerald-500"
+                  />
                 </BaseButtonIcon>
                 <BaseButtonIcon
                   shape="curved"
                   flow="right"
                   tooltip="Give some love!"
                 >
-                  <BaseIcon name="ph:heartbeat-duotone" class="w-5 h-5 text-rose-500" />
+                  <BaseIcon
+                    name="ph:heartbeat-duotone"
+                    class="w-5 h-5 text-rose-500"
+                  />
                 </BaseButtonIcon>
                 <BaseButtonIcon
                   shape="curved"
                   flow="down"
                   tooltip="The King in the North!"
                 >
-                  <BaseIcon name="ph:crown-duotone" class="w-5 h-5 text-yellow-500" />
+                  <BaseIcon
+                    name="ph:crown-duotone"
+                    class="w-5 h-5 text-yellow-500"
+                  />
                 </BaseButtonIcon>
                 <BaseButtonAction shape="curved" tooltip="Here we go!">
                   <BaseIcon
-                    name="ph:bell-ringing-duotone" class="w-4 h-4 text-primary-500 -ml-1"
-                   />
+                    name="ph:bell-ringing-duotone"
+                    class="w-4 h-4 text-primary-500 -ml-1"
+                  />
                   <span class="py-2">Subscribe</span>
                 </BaseButtonAction>
               </div>

@@ -58,14 +58,18 @@ definePageMeta({
               >
                 <span class="mr-1">Read the documentation</span>
                 <BaseIcon
-                  name="lucide:arrow-right" class="w-4 h-4 group-hover:translate-x-2 transition-transform duration-300"
-                 />
+                  name="lucide:arrow-right"
+                  class="w-4 h-4 group-hover:translate-x-2 transition-transform duration-300"
+                />
               </NuxtLink>
             </BaseCard>
           </div>
           <div class="grid grid-cols-2 gap-2 xl:gap-6">
             <BaseCard shape="rounded" class="p-8 text-center">
-              <BaseIcon name="logos:nuxt-icon" class="w-10 h-10 block mx-auto mb-2" />
+              <BaseIcon
+                name="logos:nuxt-icon"
+                class="w-10 h-10 block mx-auto mb-2"
+              />
               <BaseHeading
                 as="h4"
                 size="sm"
@@ -77,8 +81,9 @@ definePageMeta({
             </BaseCard>
             <BaseCard shape="rounded" class="p-8 text-center">
               <BaseIcon
-                name="vscode:icons-folder-type-typescript" class="w-10 h-10 block mx-auto mb-2"
-               />
+                name="vscode:icons-folder-type-typescript"
+                class="w-10 h-10 block mx-auto mb-2"
+              />
               <BaseHeading
                 as="h4"
                 size="sm"
@@ -90,8 +95,9 @@ definePageMeta({
             </BaseCard>
             <BaseCard shape="rounded" class="p-8 text-center">
               <BaseIcon
-                name="logos:tailwindcss-icon" class="w-10 h-10 block mx-auto mb-2"
-               />
+                name="logos:tailwindcss-icon"
+                class="w-10 h-10 block mx-auto mb-2"
+              />
               <BaseHeading
                 as="h4"
                 size="sm"
@@ -103,8 +109,9 @@ definePageMeta({
             </BaseCard>
             <BaseCard shape="rounded" class="p-8 text-center">
               <BaseIcon
-                name="logos:unocss" class="w-10 h-10 block mx-auto scale-75 dark:invert mb-2"
-               />
+                name="logos:unocss"
+                class="w-10 h-10 block mx-auto scale-75 dark:invert mb-2"
+              />
               <BaseHeading
                 as="h4"
                 size="sm"
@@ -154,7 +161,10 @@ definePageMeta({
             <!-- Feature -->
             <BaseCard shape="curved" class="flex items-center p-3">
               <BaseIconBox size="md" class="bg-yellow-100 text-yellow-500">
-                <BaseIcon name="teenyicons:typescript-outline" class="w-6 h-6" />
+                <BaseIcon
+                  name="teenyicons:typescript-outline"
+                  class="w-6 h-6"
+                />
               </BaseIconBox>
               <div class="ml-3">
                 <BaseHeading

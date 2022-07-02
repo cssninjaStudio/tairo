@@ -40,9 +40,10 @@ const props = withDefaults(defineProps<DropdownProps>(), {
           >
             <span>{{ props.label }}</span>
             <BaseIcon
-              name="lucide:chevron-down" class="w-4 h-4 text-slate-400 transition-transform duration-300"
+              name="lucide:chevron-down"
+              class="w-4 h-4 text-slate-400 transition-transform duration-300"
               :class="open && 'rotate-180'"
-             />
+            />
           </BaseButton>
           <button
             v-else-if="props.flavor === 'context'"
@@ -53,9 +54,10 @@ const props = withDefaults(defineProps<DropdownProps>(), {
               class="flex items-center justify-center w-9 h-9 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700"
             >
               <BaseIcon
-                name="lucide:more-horizontal" class="w-5 h-5 text-slate-400 transition-transform duration-300"
+                name="lucide:more-horizontal"
+                class="w-5 h-5 text-slate-400 transition-transform duration-300"
                 :class="open && 'rotate-90'"
-               />
+              />
             </span>
           </button>
           <button
@@ -65,9 +67,10 @@ const props = withDefaults(defineProps<DropdownProps>(), {
           >
             <span class="font-text text-slate-400">{{ props.label }}</span>
             <BaseIcon
-              name="lucide:chevron-down" class="w-4 h-4 text-slate-400 transition-transform duration-300"
+              name="lucide:chevron-down"
+              class="w-4 h-4 text-slate-400 transition-transform duration-300"
               :class="open && 'rotate-180'"
-             />
+            />
           </button>
         </div>
       </MenuButton>

@@ -57,7 +57,10 @@ const activeTab = ref('demo')
                   : 'text-slate-600 border-transparent'
               "
             >
-              <BaseIcon name="iconoir:terminal-outline" class="mr-1.5 h-4 w-4" />
+              <BaseIcon
+                name="iconoir:terminal-outline"
+                class="mr-1.5 h-4 w-4"
+              />
               <span class="sr-only lg:not-sr-only leading-6">Code</span>
             </span>
           </button>
