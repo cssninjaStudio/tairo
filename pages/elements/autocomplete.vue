@@ -147,7 +147,7 @@ definePageMeta({
                   <BaseFormAutocomplete
                     v-model="selectedFramework"
                     :items="frameworks"
-                    icon="i-lucide-search"
+                    icon="lucide:search"
                     shape="rounded"
                     placeholder="Select a framework"
                     label="Framework"
@@ -172,7 +172,7 @@ definePageMeta({
                   <BaseFormAutocomplete
                     v-model="selectedFramework"
                     :items="frameworks"
-                    icon="i-lucide-search"
+                    icon="lucide:search"
                     shape="rounded"
                     placeholder="Select a framework"
                     label="Framework"
@@ -202,7 +202,7 @@ definePageMeta({
                   <BaseFormAutocomplete
                     v-model="selectedFramework"
                     :items="frameworks"
-                    icon="i-lucide-search"
+                    icon="lucide:search"
                     shape="rounded"
                     placeholder="Select a framework"
                     label="Framework"
@@ -229,7 +229,7 @@ definePageMeta({
                   <BaseFormAutocomplete
                     v-model="selectedFramework"
                     :items="frameworks"
-                    icon="i-lucide-search"
+                    icon="lucide:search"
                     shape="rounded"
                     placeholder="Select a framework"
                     label="Framework"
@@ -256,7 +256,7 @@ definePageMeta({
                   <BaseFormAutocomplete
                     v-model="selectedHobby"
                     :items="hobbies"
-                    icon="i-ph-heartbeat-duotone"
+                    icon="ph:heartbeat-duotone"
                     shape="rounded"
                     placeholder="Select a hobby"
                     label="Hobbies"
@@ -282,7 +282,7 @@ definePageMeta({
                   <BaseFormAutocomplete
                     v-model="selectedPerson"
                     :items="people"
-                    icon="i-ph-users-three"
+                    icon="ph:users-three"
                     placeholder="Search..."
                     label="Assignee"
                     clearable
@@ -308,7 +308,7 @@ definePageMeta({
                     v-model="selectedPeople"
                     :items="people"
                     shape="rounded"
-                    icon="i-ph-users-three"
+                    icon="ph:users-three"
                     placeholder="Search..."
                     label="Assignee"
                     multiple

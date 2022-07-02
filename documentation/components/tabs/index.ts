@@ -117,17 +117,17 @@ export const icons = `
       {
         label: 'Team',
         value: 'team',
-        icon: 'i-ph-users-three-duotone',
+        icon: 'ph:users-three-duotone',
       },
       {
         label: 'Projects',
         value: 'projects',
-        icon: 'i-ph-briefcase-duotone',
+        icon: 'ph:briefcase-duotone',
       },
       {
         label: 'Tasks',
         value: 'tasks',
-        icon: 'i-ph-check-circle-duotone',
+        icon: 'ph:check-circle-duotone',
       },
     ]"
     >
@@ -226,17 +226,17 @@ export const boxedIcons = `
       {
         label: 'Team',
         value: 'team',
-        icon: 'i-ph-users-three-duotone',
+        icon: 'ph:users-three-duotone',
       },
       {
         label: 'Projects',
         value: 'projects',
-        icon: 'i-ph-briefcase-duotone',
+        icon: 'ph:briefcase-duotone',
       },
       {
         label: 'Tasks',
         value: 'tasks',
-        icon: 'i-ph-check-circle-duotone',
+        icon: 'ph:check-circle-duotone',
       },
     ]"
     >

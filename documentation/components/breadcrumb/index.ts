@@ -4,7 +4,7 @@ const demoBreadcrumbOne = [
   {
     label: 'Home',
     hideLabel: false,
-    icon: 'i-lucide-home',
+    icon: 'lucide:home',
     to: '/',
   },
   {
@@ -23,19 +23,19 @@ const demoBreadcrumbTwo = [
   {
     label: 'Home',
     hideLabel: false,
-    icon: 'i-lucide-home',
+    icon: 'lucide:home',
     to: '/',
   },
   {
     label: 'Products',
     hideLabel: false,
-    icon: 'i-lucide-layout-grid',
+    icon: 'lucide:layout-grid',
     to: '/',
   },
   {
     label: 'Laptops',
     hideLabel: false,
-    icon: 'i-lucide-laptop',
+    icon: 'lucide:laptop',
     to: '/',
   },
 ]
@@ -54,7 +54,7 @@ const demoBreadcrumbOne = [
   {
     label: 'Home',
     hideLabel: false,
-    icon: 'i-lucide-home',
+    icon: 'lucide:home',
     to: '/',
   },
   {
@@ -73,19 +73,19 @@ const demoBreadcrumbTwo = [
   {
     label: 'Home',
     hideLabel: false,
-    icon: 'i-lucide-home',
+    icon: 'lucide:home',
     to: '/',
   },
   {
     label: 'Products',
     hideLabel: false,
-    icon: 'i-lucide-layout-grid',
+    icon: 'lucide:layout-grid',
     to: '/',
   },
   {
     label: 'Laptops',
     hideLabel: false,
-    icon: 'i-lucide-laptop',
+    icon: 'lucide:laptop',
     to: '/',
   },
 ]
@@ -104,7 +104,7 @@ const demoBreadcrumbOne = [
   {
     label: 'Home',
     hideLabel: false,
-    icon: 'i-lucide-home',
+    icon: 'lucide:home',
     to: '/',
   },
   {
@@ -123,19 +123,19 @@ const demoBreadcrumbTwo = [
   {
     label: 'Home',
     hideLabel: false,
-    icon: 'i-lucide-home',
+    icon: 'lucide:home',
     to: '/',
   },
   {
     label: 'Products',
     hideLabel: false,
-    icon: 'i-lucide-layout-grid',
+    icon: 'lucide:layout-grid',
     to: '/',
   },
   {
     label: 'Laptops',
     hideLabel: false,
-    icon: 'i-lucide-laptop',
+    icon: 'lucide:laptop',
     to: '/',
   },
 ]
@@ -154,7 +154,7 @@ const demoBreadcrumbOne = [
   {
     label: 'Home',
     hideLabel: false,
-    icon: 'i-lucide-home',
+    icon: 'lucide:home',
     to: '/',
   },
   {
@@ -173,19 +173,19 @@ const demoBreadcrumbTwo = [
   {
     label: 'Home',
     hideLabel: false,
-    icon: 'i-lucide-home',
+    icon: 'lucide:home',
     to: '/',
   },
   {
     label: 'Products',
     hideLabel: false,
-    icon: 'i-lucide-layout-grid',
+    icon: 'lucide:layout-grid',
     to: '/',
   },
   {
     label: 'Laptops',
     hideLabel: false,
-    icon: 'i-lucide-laptop',
+    icon: 'lucide:laptop',
     to: '/',
   },
 ]

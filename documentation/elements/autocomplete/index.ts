@@ -131,7 +131,7 @@ const selectedFramework = ref('')
   <BaseFormAutocomplete
     v-model="selectedFramework"
     :items="frameworks"
-    icon="i-lucide-search"
+    icon="lucide:search"
     shape="full"
     placeholder="Select a framework"
     label="Framework"
@@ -160,7 +160,7 @@ const selectedFramework = ref('')
   <BaseFormAutocomplete
     v-model="selectedFramework"
     :items="frameworks"
-    icon="i-lucide-search"
+    icon="lucide:search"
     shape="full"
     placeholder="Select a framework"
     label="Framework"
@@ -190,7 +190,7 @@ const selectedFramework = ref('')
   <BaseFormAutocomplete
     v-model="selectedFramework"
     :items="frameworks"
-    icon="i-lucide-search"
+    icon="lucide:search"
     shape="full"
     placeholder="Select a framework"
     label="Framework"
@@ -220,7 +220,7 @@ const selectedFramework = ref('')
   <BaseFormAutocomplete
     v-model="selectedFramework"
     :items="frameworks"
-    icon="i-lucide-search"
+    icon="lucide:search"
     shape="full"
     placeholder="Select a framework"
     label="Framework"
@@ -236,14 +236,14 @@ const companies = [
     id: 1,
     name: 'Airbnb',
     text: 'Booking and travel',
-    icon: 'i-logos-airbnb',
+    icon: 'logos:airbnb',
   },
   ...
   {
     id: 5,
     name: 'Figma',
     text: 'Design software',
-    icon: 'i-logos-figma',
+    icon: 'logos:figma',
   },
 ]
 
@@ -254,7 +254,7 @@ const selectedCompany = ref('')
   <BaseFormAutocomplete
     v-model="selectedCompany"
     :items="companies"
-    icon="i-ph-buildings"
+    icon="ph:buildings"
     shape="rounded"
     placeholder="Select a company"
     label="Company"
@@ -305,7 +305,7 @@ const selectedPerson = ref('')
   <BaseFormAutocomplete
     v-model="selectedPerson"
     :items="people"
-    icon="i-ph-users-three"
+    icon="ph:users-three"
     placeholder="Search..."
     label="Assignee"
     clearable
@@ -356,7 +356,7 @@ const selectedPeople = ref([people[0], people[1]])
     v-model="selectedPeople"
     :items="people"
     shape="rounded"
-    icon="i-ph-users-three"
+    icon="ph:users-three"
     placeholder="Search..."
     label="Assignee"
     multiple

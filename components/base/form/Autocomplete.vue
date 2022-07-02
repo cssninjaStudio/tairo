@@ -129,16 +129,10 @@ const removeItem = function (name: string) {
         @change="query = $event.target.value"
       />
       <div
-        v-if="props.icon && !value.icon"
+        v-if="props.icon || value?.icon"
         class="absolute top-0 left-0 h-10 w-10 flex justify-center items-center text-slate-400 group-focus-within:text-primary-500 transition-colors duration-300"
       >
-        <i class="w-4 h-4" :class="props.icon"></i>
-      </div>
-      <div
-        v-else-if="props.icon && value.icon"
-        class="absolute top-0 left-0 h-10 w-10 flex justify-center items-center text-slate-400 group-focus-within:text-primary-500 transition-colors duration-300"
-      >
-        <i class="w-4 h-4" :class="value.icon"></i>
+        <BaseIcon :name="value?.icon ?? props.icon" class="w-4 h-4" />
       </div>
       <button
         v-if="props.clearable && value"
@@ -210,13 +204,11 @@ const removeItem = function (name: string) {
               shape="rounded"
               class="mr-1"
             >
-              <i
+              <BaseIcon
+                :name="item.icon"
                 class="w-4 h-4"
-                :class="[
-                  item.icon,
-                  selected ? 'text-primary-500' : 'text-slate-500',
-                ]"
-              ></i>
+                :class="[selected ? 'text-primary-500' : 'text-slate-500']"
+              />
             </BaseIconBox>
             <div>
               <BaseHeading
@@ -236,7 +228,10 @@ const removeItem = function (name: string) {
               class="flex items-center justify-center ml-auto"
               :class="[item.media && 'w-8 h-8', item.icon && 'w-8 h-8']"
             >
-              <BaseIcon name="lucide:check" class="block w-4 h-4 text-success-500" />
+              <BaseIcon
+                name="lucide:check"
+                class="block w-4 h-4 text-success-500"
+              />
             </div>
           </div>
         </ComboboxOption>

@@ -29,7 +29,7 @@ export const toc = [
 export const breadcrumb = [
   {
     label: 'Home',
-    icon: 'i-lucide-home',
+    icon: 'lucide:home',
     to: '/',
   },
   {

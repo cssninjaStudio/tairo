@@ -60,13 +60,13 @@ export const iconCarousel = `
 <script setup lang="ts">
 export const topics = [
   {
-    icon: 'i-ph-popcorn-duotone',
+    icon: 'ph:popcorn-duotone',
     title: 'Marketing',
     link: '/',
   },
   ...
   {
-    icon: 'i-ph-buildings-duotone',
+    icon: 'ph:buildings-duotone',
     title: 'Enterprise',
     link: '/',
   },

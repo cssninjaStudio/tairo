@@ -156,7 +156,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
             <BaseButton
               color="primary"
               shape="curved"
-              icon="i-ph-lock-duotone"
+              icon="ph:lock-duotone"
               class="w-full"
             >
               <span>Logout</span>

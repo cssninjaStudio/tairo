@@ -55,7 +55,7 @@ export const breadcrumb = [
   {
     label: 'Home',
     hideLabel: true,
-    icon: 'i-lucide-home',
+    icon: 'lucide:home',
     to: '/',
   },
   {

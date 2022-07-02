@@ -39,7 +39,7 @@ const props = withDefaults(defineProps<PopoverContentHelpProps>(), {
               'bg-danger-100 text-danger-500 dark:bg-danger-600',
           ]"
         >
-          <i class="w-5 h-5" :class="props.icon"></i>
+          <BaseIcon :name="props.icon" class="w-5 h-5" />
         </BaseIconBox>
         <div class="ml-2">
           <BaseHeading

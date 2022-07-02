@@ -84,7 +84,7 @@ const items = ref(props.items)
             shape="rounded"
             class="mr-2 -ml-2 !w-6 !h-6"
           >
-            <i class="w-4 h-4" :class="value.icon"></i>
+            <BaseIcon :name="value.icon" class="w-4 h-4" />
           </BaseIconBox>
           <span
             class="block text-left truncate"
@@ -96,9 +96,10 @@ const items = ref(props.items)
             class="w-10 pointer-events-none absolute inset-y-0 right-0 border-l border-slate-300 dark:border-slate-700 flex items-center justify-center"
           >
             <BaseIcon
-              name="lucide:chevron-down" class="h-5 w-5 text-slate-400 transition-transform duration-300"
+              name="lucide:chevron-down"
+              class="h-5 w-5 text-slate-400 transition-transform duration-300"
               :class="open && 'rotate-180'"
-             />
+            />
           </span>
           <div
             v-if="props.loading"
@@ -151,10 +152,11 @@ const items = ref(props.items)
                   shape="rounded"
                   class="mr-1 -ml-2 text-slate-500 dark:text-slate-400"
                 >
-                  <i
+                  <BaseIcon
+                    :name="item.icon"
                     class="w-5 h-5"
-                    :class="[item.icon, active && 'text-primary-500']"
-                  ></i>
+                    :class="[active && 'text-primary-500']"
+                  />
                 </BaseIconBox>
                 <div>
                   <BaseHeading

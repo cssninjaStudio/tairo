@@ -152,10 +152,11 @@ const endSidebars = sidebars.filter((sidebar) => sidebar.position === 'end')
                     <div
                       class="absolute top-0 right-0 w-6 h-6 flex items-center justify-center bg-success-500 text-white rounded-full"
                     >
-                      <i
+                      <BaseIcon
                         aria-hidden="true"
-                        class="i-lucide-check w-3 h-3 block"
-                      ></i>
+                        name="lucide:check"
+                        class="w-3 h-3 block"
+                      />
                     </div>
                   </div>
 
@@ -200,10 +201,11 @@ const endSidebars = sidebars.filter((sidebar) => sidebar.position === 'end')
                     <div
                       class="absolute top-0 right-0 w-6 h-6 flex items-center justify-center bg-success-500 text-white rounded-full"
                     >
-                      <i
+                      <BaseIcon
                         aria-hidden="true"
-                        class="i-lucide-check w-3 h-3 block"
-                      ></i>
+                        name="lucide:check"
+                        class="w-3 h-3 block"
+                      />
                     </div>
                   </div>
 

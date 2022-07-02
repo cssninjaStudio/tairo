@@ -137,14 +137,14 @@ const hobbies = [
     id: 1,
     name: 'Movies',
     text: 'Cinema & shows',
-    icon: 'i-ph-sword-duotone',
+    icon: 'ph:sword-duotone',
   },
   ...
   {
     id: 5,
     name: 'Karaoke',
     text: 'singing with friends',
-    icon: 'i-ph-microphone-stage-duotone',
+    icon: 'ph:microphone-stage-duotone',
   },
 ]
 

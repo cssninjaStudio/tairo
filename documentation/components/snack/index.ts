@@ -30,31 +30,31 @@ export const small = `
 
 export const icon = `
 <template>
-  <BaseSnack label="React" icon="i-logos-react" />
-  <BaseSnack label="Angular" icon="i-logos-angular-icon" />
-  <BaseSnack label="Vue" icon="i-logos-vue" />
-  <BaseSnack label="Html" icon="i-logos-html5" />
-  <BaseSnack label="Python" icon="i-logos-python" />
+  <BaseSnack label="React" icon="logos:react" />
+  <BaseSnack label="Angular" icon="logos:angular-icon" />
+  <BaseSnack label="Vue" icon="logos:vue" />
+  <BaseSnack label="Html" icon="logos:html5" />
+  <BaseSnack label="Python" icon="logos:python" />
 </template>
 `
 
 export const iconLight = `
 <template>
-  <BaseSnack label="React" icon="i-logos-react" light />
-  <BaseSnack label="Angular" icon="i-logos-angular-icon" light />
-  <BaseSnack label="Vue" icon="i-logos-vue" light />
-  <BaseSnack label="Html" icon="i-logos-html5" light />
-  <BaseSnack label="Python" icon="i-logos-python" light />
+  <BaseSnack label="React" icon="logos:react" light />
+  <BaseSnack label="Angular" icon="logos:angular-icon" light />
+  <BaseSnack label="Vue" icon="logos:vue" light />
+  <BaseSnack label="Html" icon="logos:html5" light />
+  <BaseSnack label="Python" icon="logos:python" light />
 </template>
 `
 
 export const iconSmall = `
 <template>
-  <BaseSnack label="React" icon="i-logos-react" small />
-  <BaseSnack label="Angular" icon="i-logos-angular-icon" small />
-  <BaseSnack label="Vue" icon="i-logos-vue" small />
-  <BaseSnack label="Html" icon="i-logos-html5" small />
-  <BaseSnack label="Python" icon="i-logos-python" small />
+  <BaseSnack label="React" icon="logos:react" small />
+  <BaseSnack label="Angular" icon="logos:angular-icon" small />
+  <BaseSnack label="Vue" icon="logos:vue" small />
+  <BaseSnack label="Html" icon="logos:html5" small />
+  <BaseSnack label="Python" icon="logos:python" small />
 </template>
 `
 

@@ -12,7 +12,7 @@ export const helpLeft = `
         subtitle="Managing cookies"
         text="Lorem ipsum dolor sit amet, consectetur adipiscing elit solor
         moranitur lobis em."
-        icon="i-lucide-cookie"
+        icon="lucide:cookie"
       />
     </template>
   </BasePopover>
@@ -33,7 +33,7 @@ export const helpRight = `
         subtitle="Managing cookies"
         text="Lorem ipsum dolor sit amet, consectetur adipiscing elit solor
         moranitur lobis em."
-        icon="i-lucide-cookie"
+        icon="lucide:cookie"
       />
     </template>
   </BasePopover>
@@ -64,7 +64,7 @@ export const dualLeft = `
           {
             title: 'Projects',
             subtitle: '154 projects',
-            icon: 'i-ph-briefcase-duotone',
+            icon: 'ph:briefcase-duotone',
           },
         ]"
         image="/img/avatars/3.svg"
@@ -104,7 +104,7 @@ export const dualRight = `
           {
             title: 'Projects',
             subtitle: '154 projects',
-            icon: 'i-ph-briefcase-duotone',
+            icon: 'ph:briefcase-duotone',
           },
         ]"
         image="/img/avatars/3.svg"
