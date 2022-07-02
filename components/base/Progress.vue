@@ -13,19 +13,31 @@ export interface ProgressProps {
   color?: ProgressColors
   shape?: ProgressShapes
   size?: ProgressSizes
-  value: number
-  indeterminate?: boolean
+  value?: number
+  max?: number
 }
 
 const props = withDefaults(defineProps<ProgressProps>(), {
   color: 'primary',
   shape: 'full',
   size: 'sm',
+  max: 100,
+})
+const value = computed(() => {
+  const { value, max } = props
+
+  if (max === 0) {
+    return 0
+  }
+  return typeof value === 'number' ? (value / max) * 100 : null
 })
 </script>
 
 <template>
   <div
+    role="progressbar"
+    :aria-valuenow="value"
+    :aria-valuemax="props.max"
     class="relative w-full bg-slate-200 dark:bg-slate-700 overflow-hidden"
     :class="[
       props.size === 'xs' && 'h-1',
@@ -49,9 +61,11 @@ const props = withDefaults(defineProps<ProgressProps>(), {
         props.shape === 'rounded' && 'rounded',
         props.shape === 'curved' && 'rounded-md',
         props.shape === 'full' && 'rounded-full',
-        props.indeterminate && 'animate-indeterminate',
+        value === null && 'animate-indeterminate w-full',
       ]"
-      :style="`width: ${props.value}%`"
-    ></div>
+      :style="value !== null ? `width: ${value}%` : ''"
+    >
+      {{ value }}
+    </div>
   </div>
 </template>

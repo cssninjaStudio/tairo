@@ -35,7 +35,12 @@ definePageMeta({
           <DocComponent label="Default progress bar">
             <template #demo>
               <div class="space-y-4 max-w-xs">
-                <BaseProgress size="sm" :value="progress" color="primary" />
+                <BaseProgress
+                  title="Default progress bar"
+                  size="sm"
+                  :value="progress"
+                  color="primary"
+                />
                 <div class="flex justify-between gap-2">
                   <BaseAction
                     :class="
@@ -86,21 +91,25 @@ definePageMeta({
               <div class="space-y-4 max-w-xs">
                 <div class="flex items-end gap-2">
                   <BaseProgressCircle
+                    title="Primary circle progress bar"
                     :size="45"
                     :value="progressCircle"
                     class="text-primary-500"
                   />
                   <BaseProgressCircle
+                    title="Yellow circle progress bar"
                     :size="55"
                     :value="progressCircle"
                     class="text-yellow-500"
                   />
                   <BaseProgressCircle
+                    title="Pink circle progress bar"
                     :size="75"
                     :value="progressCircle"
                     class="text-pink-500"
                   />
                   <BaseProgressCircle
+                    title="Indigo circle progress bar"
                     :size="85"
                     :value="progressCircle"
                     class="text-indigo-400"
@@ -158,11 +167,36 @@ definePageMeta({
           <DocComponent label="Default progress sizes">
             <template #demo>
               <div class="space-y-4 max-w-xs">
-                <BaseProgress size="xs" :value="78" color="primary" />
-                <BaseProgress size="sm" :value="78" color="primary" />
-                <BaseProgress size="md" :value="78" color="primary" />
-                <BaseProgress size="lg" :value="78" color="primary" />
-                <BaseProgress size="xl" :value="78" color="primary" />
+                <BaseProgress
+                  title="xs progress bar"
+                  size="xs"
+                  :value="78"
+                  color="primary"
+                />
+                <BaseProgress
+                  title="sm progress bar"
+                  size="sm"
+                  :value="78"
+                  color="primary"
+                />
+                <BaseProgress
+                  title="md progress bar"
+                  size="md"
+                  :value="78"
+                  color="primary"
+                />
+                <BaseProgress
+                  title="lg progress bar"
+                  size="lg"
+                  :value="78"
+                  color="primary"
+                />
+                <BaseProgress
+                  title="xl progress bar"
+                  size="xl"
+                  :value="78"
+                  color="primary"
+                />
               </div>
             </template>
             <template #code>
@@ -176,11 +210,36 @@ definePageMeta({
           <DocComponent label="Default progress colors">
             <template #demo>
               <div class="space-y-4 max-w-xs">
-                <BaseProgress size="sm" :value="78" color="primary" />
-                <BaseProgress size="sm" :value="78" color="success" />
-                <BaseProgress size="sm" :value="78" color="info" />
-                <BaseProgress size="sm" :value="78" color="warning" />
-                <BaseProgress size="sm" :value="78" color="danger" />
+                <BaseProgress
+                  title="primary progress bar"
+                  size="sm"
+                  :value="78"
+                  color="primary"
+                />
+                <BaseProgress
+                  title="success progress bar"
+                  size="sm"
+                  :value="78"
+                  color="success"
+                />
+                <BaseProgress
+                  title="info progress bar"
+                  size="sm"
+                  :value="78"
+                  color="info"
+                />
+                <BaseProgress
+                  title="warning progress bar"
+                  size="sm"
+                  :value="78"
+                  color="warning"
+                />
+                <BaseProgress
+                  title="danger progress bar"
+                  size="sm"
+                  :value="78"
+                  color="danger"
+                />
               </div>
             </template>
             <template #code>
@@ -199,34 +258,29 @@ definePageMeta({
             <template #demo>
               <div class="space-y-4 max-w-xs">
                 <BaseProgress
+                  title="indeterminate primary progress bar"
                   size="sm"
-                  :value="78"
                   color="primary"
-                  indeterminate
                 />
                 <BaseProgress
+                  title="indeterminate success progress bar"
                   size="sm"
-                  :value="78"
                   color="success"
-                  indeterminate
                 />
                 <BaseProgress
+                  title="indeterminate info progress bar"
                   size="sm"
-                  :value="78"
                   color="info"
-                  indeterminate
                 />
                 <BaseProgress
+                  title="indeterminate warning progress bar"
                   size="sm"
-                  :value="78"
                   color="warning"
-                  indeterminate
                 />
                 <BaseProgress
+                  title="indeterminate danger progress bar"
                   size="sm"
-                  :value="78"
                   color="danger"
-                  indeterminate
                 />
               </div>
             </template>

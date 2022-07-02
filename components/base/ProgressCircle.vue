@@ -2,19 +2,32 @@
 const props = withDefaults(
   defineProps<{
     value?: number
+    max?: number
     size?: number
     thickness?: number
   }>(),
   {
-    value: 50,
+    value: 0,
+    max: 100,
     size: 60,
     thickness: 4,
   }
 )
+const value = computed(() => {
+  const { value, max } = props
+
+  if (max === 0) {
+    return 0
+  }
+  return (value / max) * 100
+})
 </script>
 
 <template>
   <svg
+    role="progressbar"
+    :aria-valuenow="value"
+    :aria-valuemax="props.max"
     class="block"
     viewBox="0 0 45 45"
     :width="props.size"
@@ -32,7 +45,7 @@ const props = withDefaults(
     <circle
       class="stroke-current transition-all duration-500"
       :stroke-width="props.thickness"
-      :stroke-dasharray="`${props.value},100`"
+      :stroke-dasharray="`${value},100`"
       stroke-linecap="round"
       fill="none"
       cx="50%"

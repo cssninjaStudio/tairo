@@ -4,7 +4,7 @@ const progress = ref(25)
 </script>
 
 <template>
-  <BaseProgress size="sm" :value="progress" color="primary" />
+  <BaseProgress title="Upload progress" size="sm" :value="progress" color="primary" />
 </template>
 `
 
@@ -15,6 +15,7 @@ const progressCircle = ref(25)
 
 <template>
   <BaseProgressCircle
+    title="Upload progress"
     :size="45"
     :value="progressCircle"
     class="text-primary-500"
@@ -24,51 +25,56 @@ const progressCircle = ref(25)
 
 export const sizes = `
 <template>
-  <BaseProgress size="xs" :value="78" color="primary" />
-  <BaseProgress size="sm" :value="78" color="primary" />
-  <BaseProgress size="md" :value="78" color="primary" />
-  <BaseProgress size="lg" :value="78" color="primary" />
-  <BaseProgress size="xl" :value="78" color="primary" />
+  <BaseProgress aria-label="Upload progress" size="xs" :value="78" color="primary" />
+  <BaseProgress aria-label="Upload progress" size="sm" :value="78" color="primary" />
+  <BaseProgress aria-label="Upload progress" size="md" :value="78" color="primary" />
+  <BaseProgress aria-label="Upload progress" size="lg" :value="78" color="primary" />
+  <BaseProgress aria-label="Upload progress" size="xl" :value="78" color="primary" />
 </template>
 `
 
 export const colors = `
 <template>
-  <BaseProgress size="sm" :value="78" color="primary" />
-  <BaseProgress size="sm" :value="78" color="success" />
-  <BaseProgress size="sm" :value="78" color="info" />
-  <BaseProgress size="sm" :value="78" color="warning" />
-  <BaseProgress size="sm" :value="78" color="danger" />
+  <BaseProgress aria-label="Upload progress" size="sm" :value="78" color="primary" />
+  <BaseProgress aria-label="Upload progress" size="sm" :value="78" color="success" />
+  <BaseProgress aria-label="Upload progress" size="sm" :value="78" color="info" />
+  <BaseProgress aria-label="Upload progress" size="sm" :value="78" color="warning" />
+  <BaseProgress aria-label="Upload progress" size="sm" :value="78" color="danger" />
 </template>
 `
 
 export const indeterminate = `
 <template>
   <BaseProgress
+    aria-label="Upload progress"
     size="sm"
     :value="78"
     color="primary"
     indeterminate
   />
   <BaseProgress
+    aria-label="Upload progress"
     size="sm"
     :value="78"
     color="success"
     indeterminate
   />
   <BaseProgress
+    aria-label="Upload progress"
     size="sm"
     :value="78"
     color="info"
     indeterminate
   />
   <BaseProgress
+    aria-label="Upload progress"
     size="sm"
     :value="78"
     color="warning"
     indeterminate
   />
   <BaseProgress
+    aria-label="Upload progress"
     size="sm"
     :value="78"
     color="danger"
