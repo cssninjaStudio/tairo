@@ -76,7 +76,7 @@ definePageMeta({
                     </BaseFlexTableCell>
                     <BaseFlexTableCell type="grow" data-content="Member">
                       <div class="flex items-center">
-                        <BaseAvatar :picture="member.picture" size="sm" />
+                        <BaseAvatar :src="member.src" />
                         <div class="ml-3 leading-none">
                           <h4 class="font-main text-sm font-semibold">
                             {{ member.name }}
@@ -195,7 +195,7 @@ definePageMeta({
                     </BaseFlexTableCell>
                     <BaseFlexTableCell type="grow" data-content="Member">
                       <div class="flex items-center">
-                        <BaseAvatar :picture="member.picture" size="sm" />
+                        <BaseAvatar :src="member.src" />
                         <div class="ml-3 leading-none">
                           <h4 class="font-main text-sm font-semibold">
                             {{ member.name }}
@@ -314,7 +314,7 @@ definePageMeta({
                     </BaseFlexTableCell>
                     <BaseFlexTableCell type="grow" data-content="Member">
                       <div class="flex items-center">
-                        <BaseAvatar :picture="member.picture" size="sm" />
+                        <BaseAvatar :src="member.src" />
                         <div class="ml-3 leading-none">
                           <h4 class="font-main text-sm font-semibold">
                             {{ member.name }}

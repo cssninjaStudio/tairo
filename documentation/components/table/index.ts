@@ -3,7 +3,7 @@ export const straight = `
 const team = [
   {
     id: 0,
-    picture: '/img/avatars/22.svg',
+    src: '/img/avatars/22.svg',
     name: 'Anna Vrinkof',
     role: 'UI/UX designer',
     expertise: 'UX Design',
@@ -13,7 +13,7 @@ const team = [
   ...
   {
     id: 3,
-    picture: '/img/avatars/14.svg',
+    src: '/img/avatars/14.svg',
     name: 'Andrew Higgs',
     role: 'Project manager',
     expertise: 'Project',
@@ -108,7 +108,7 @@ export const rounded = `
 const team = [
   {
     id: 0,
-    picture: '/img/avatars/22.svg',
+    src: '/img/avatars/22.svg',
     name: 'Anna Vrinkof',
     role: 'UI/UX designer',
     expertise: 'UX Design',
@@ -118,7 +118,7 @@ const team = [
   ...
   {
     id: 3,
-    picture: '/img/avatars/14.svg',
+    src: '/img/avatars/14.svg',
     name: 'Andrew Higgs',
     role: 'Project manager',
     expertise: 'Project',
@@ -213,7 +213,7 @@ export const curved = `
 const team = [
   {
     id: 0,
-    picture: '/img/avatars/22.svg',
+    src: '/img/avatars/22.svg',
     name: 'Anna Vrinkof',
     role: 'UI/UX designer',
     expertise: 'UX Design',
@@ -223,7 +223,7 @@ const team = [
   ...
   {
     id: 3,
-    picture: '/img/avatars/14.svg',
+    src: '/img/avatars/14.svg',
     name: 'Andrew Higgs',
     role: 'Project manager',
     expertise: 'Project',
@@ -318,7 +318,7 @@ export const mediaStraight = `
 const team = [
   {
     id: 0,
-    picture: '/img/avatars/22.svg',
+    src: '/img/avatars/22.svg',
     name: 'Anna Vrinkof',
     role: 'UI/UX designer',
     expertise: 'UX Design',
@@ -328,7 +328,7 @@ const team = [
   ...
   {
     id: 3,
-    picture: '/img/avatars/14.svg',
+    src: '/img/avatars/14.svg',
     name: 'Andrew Higgs',
     role: 'Project manager',
     expertise: 'Project',
@@ -371,7 +371,7 @@ const team = [
       </BaseTableCell>
       <BaseTableCell>
         <div class="flex items-center">
-          <BaseAvatar :picture="member.picture" size="sm" />
+          <BaseAvatar :src="member.src" size="sm" />
           <div class="ml-3 leading-none">
             <h4 class="font-main text-sm font-semibold">
               {{ member.name }}
@@ -433,7 +433,7 @@ export const mediaRounded = `
 const team = [
   {
     id: 0,
-    picture: '/img/avatars/22.svg',
+    src: '/img/avatars/22.svg',
     name: 'Anna Vrinkof',
     role: 'UI/UX designer',
     expertise: 'UX Design',
@@ -443,7 +443,7 @@ const team = [
   ...
   {
     id: 3,
-    picture: '/img/avatars/14.svg',
+    src: '/img/avatars/14.svg',
     name: 'Andrew Higgs',
     role: 'Project manager',
     expertise: 'Project',
@@ -486,7 +486,7 @@ const team = [
       </BaseTableCell>
       <BaseTableCell>
         <div class="flex items-center">
-          <BaseAvatar :picture="member.picture" size="sm" />
+          <BaseAvatar :src="member.src" size="sm" />
           <div class="ml-3 leading-none">
             <h4 class="font-main text-sm font-semibold">
               {{ member.name }}
@@ -548,7 +548,7 @@ export const mediaCurved = `
 const team = [
   {
     id: 0,
-    picture: '/img/avatars/22.svg',
+    src: '/img/avatars/22.svg',
     name: 'Anna Vrinkof',
     role: 'UI/UX designer',
     expertise: 'UX Design',
@@ -558,7 +558,7 @@ const team = [
   ...
   {
     id: 3,
-    picture: '/img/avatars/14.svg',
+    src: '/img/avatars/14.svg',
     name: 'Andrew Higgs',
     role: 'Project manager',
     expertise: 'Project',
@@ -601,7 +601,7 @@ const team = [
       </BaseTableCell>
       <BaseTableCell>
         <div class="flex items-center">
-          <BaseAvatar :picture="member.picture" size="sm" />
+          <BaseAvatar :src="member.src" size="sm" />
           <div class="ml-3 leading-none">
             <h4 class="font-main text-sm font-semibold">
               {{ member.name }}

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-export type TabSlots = 2 | 3
+export type TabSize = 2 | 3
 export type TabsShapes = 'rounded' | 'full'
 export type TabsAlign = 'start' | 'center' | 'end'
 export interface TabsItem {
@@ -10,7 +10,7 @@ export interface TabsProps {
   tabs: TabsItem[]
   selected?: string
   justify?: TabsAlign
-  slots: TabSlots
+  size: TabSize
   shape: TabsShapes
 }
 
@@ -20,7 +20,7 @@ const emit = defineEmits<{
 const props = withDefaults(defineProps<TabsProps>(), {
   selected: undefined,
   justify: undefined,
-  slots: 2,
+  size: 2,
   shape: 'rounded',
 })
 
@@ -56,17 +56,17 @@ watch(activeValue, (value) => {
         :class="[
           props.shape === 'rounded' && 'rounded-lg',
           props.shape === 'full' && 'rounded-full',
-          props.slots === 2 ? 'max-w-[250px]' : 'max-w-[320px]',
+          props.size === 2 ? 'max-w-[250px]' : 'max-w-[320px]',
         ]"
       >
         <button
-          v-for="(tab, index) in tabs.slice(0, props.slots)"
+          v-for="(tab, index) in tabs.slice(0, props.size)"
           :key="index"
           type="button"
           class="relative flex items-center justify-center flex-1 h-full z-20"
           :class="[
             activeValue === tab.value ? 'text-white' : 'text-slate-400',
-            props.slots === 2 ? 'w-1/2' : 'w-1/3',
+            props.size === 2 ? 'w-1/2' : 'w-1/3',
           ]"
           @keydown.space.prevent="toggle(tab.value)"
           @click="toggle(tab.value)"
@@ -77,11 +77,11 @@ watch(activeValue, (value) => {
           class="absolute top-0 left-0 h-full bg-primary-600 z-10 transition-all duration-300"
           :class="[
             activeValue === tabs[0].value && 'ml-0',
-            activeValue === tabs[1].value && props.slots === 2
+            activeValue === tabs[1].value && props.size === 2
               ? 'ml-[50%]'
               : 'ml-[33.3%]',
             activeValue === tabs[2].value && 'ml-[66.6%]',
-            props.slots === 2 ? 'w-1/2' : 'w-1/3',
+            props.size === 2 ? 'w-1/2' : 'w-1/3',
             props.shape === 'rounded' && 'rounded-lg',
             props.shape === 'full' && 'rounded-full',
           ]"

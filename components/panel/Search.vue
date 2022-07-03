@@ -121,7 +121,7 @@ const filteredPeople = computed(() =>
                   <img
                     :src="person.avatar"
                     class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
-                    alt="Avatar image"
+                    alt=""
                   />
                 </div>
                 <div class="ml-3">
@@ -157,7 +157,7 @@ const filteredPeople = computed(() =>
                 <img
                   src="/img/avatars/3.svg"
                   class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
-                  alt="Avatar image"
+                  alt=""
                 />
               </div>
               <div class="ml-3">
@@ -181,7 +181,7 @@ const filteredPeople = computed(() =>
                 <img
                   src="/img/avatars/18.svg"
                   class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
-                  alt="Avatar image"
+                  alt=""
                 />
               </div>
               <div class="ml-3">
@@ -205,7 +205,7 @@ const filteredPeople = computed(() =>
                 <img
                   src="/img/avatars/11.svg"
                   class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
-                  alt="Avatar image"
+                  alt=""
                 />
               </div>
               <div class="ml-3">

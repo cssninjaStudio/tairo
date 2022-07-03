@@ -38,7 +38,7 @@ const props = defineProps<PopoverContentDualProps>()
           </BaseIconBox>
           <BaseAvatar
             v-if="stat.image && !stat.icon"
-            :picture="stat.image"
+            :src="stat.image"
             size="xs"
             class="mr-2"
           />
@@ -60,7 +60,7 @@ const props = defineProps<PopoverContentDualProps>()
       </div>
       <div class="w-1/2 flex items-center justify-center">
         <div class="flex flex-col items-center gap-2 text-center py-5">
-          <BaseAvatar :picture="props.image" size="lg" class="!block mx-auto" />
+          <BaseAvatar :src="props.image" size="lg" class="!block mx-auto" />
           <div>
             <BaseHeading
               as="h4"

@@ -16,7 +16,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
             <img
               src="/img/avatars/2.svg"
               class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
-              alt="Avatar image"
+              alt=""
             />
           </div>
         </button>
@@ -40,7 +40,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
               <img
                 src="/img/avatars/2.svg"
                 class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
-                alt="Avatar image"
+                alt=""
               />
             </div>
             <div class="mt-3">
@@ -75,7 +75,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                   <img
                     src="/img/avatars/3.svg"
                     class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
-                    alt="Avatar image"
+                    alt=""
                   />
                 </div>
                 <div class="ml-2">
@@ -104,7 +104,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                   <img
                     src="/img/avatars/9.svg"
                     class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
-                    alt="Avatar image"
+                    alt=""
                   />
                 </div>
                 <div class="ml-2">
@@ -135,7 +135,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                   <img
                     src="/img/avatars/14.svg"
                     class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
-                    alt="Avatar image"
+                    alt=""
                   />
                 </div>
                 <div class="ml-2">

@@ -1,32 +1,22 @@
 export const people = [
   {
-    id: 1,
-    name: 'Clarissa Perez',
-    role: 'Sales Manager',
-    picture: '/img/avatars/19.svg',
+    tooltip: 'Clarissa Perez',
+    src: '/img/avatars/19.svg',
   },
   {
-    id: 2,
-    name: 'Aaaron Splatter',
-    role: 'Project Manager',
-    picture: '/img/avatars/16.svg',
+    tooltip: 'Aaaron Splatter',
+    src: '/img/avatars/16.svg',
   },
   {
-    id: 3,
-    name: 'Mike Miller',
-    role: 'UI/UX Designer',
-    picture: '/img/avatars/3.svg',
+    tooltip: 'Mike Miller',
+    src: '/img/avatars/3.svg',
   },
   {
-    id: 4,
-    name: 'Benedict Kessler',
-    role: 'Mobile Developer',
-    picture: '/img/avatars/22.svg',
+    tooltip: 'Benedict Kessler',
+    src: '/img/avatars/22.svg',
   },
   {
-    id: 5,
-    name: 'Maya Rosselini',
-    role: 'Product Manager',
-    picture: '/img/avatars/2.svg',
+    tooltip: 'Maya Rosselini',
+    src: '/img/avatars/2.svg',
   },
 ]

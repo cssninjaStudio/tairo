@@ -61,7 +61,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                   <img
                     src="/img/avatars/12.svg"
                     class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
-                    alt="Avatar image"
+                    alt=""
                   />
                 </div>
                 <div class="ml-2">
@@ -95,7 +95,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                   <img
                     src="/img/avatars/19.svg"
                     class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
-                    alt="Avatar image"
+                    alt=""
                   />
                 </div>
                 <div class="ml-2">
@@ -129,7 +129,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                   <img
                     src="/img/avatars/3.svg"
                     class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
-                    alt="Avatar image"
+                    alt=""
                   />
                 </div>
                 <div class="ml-2">
@@ -163,7 +163,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                   <img
                     src="/img/avatars/4.svg"
                     class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
-                    alt="Avatar image"
+                    alt=""
                   />
                 </div>
                 <div class="ml-2">
@@ -197,7 +197,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                   <img
                     src="/img/avatars/8.svg"
                     class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
-                    alt="Avatar image"
+                    alt=""
                   />
                 </div>
                 <div class="ml-2">

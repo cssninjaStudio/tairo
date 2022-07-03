@@ -1,7 +1,7 @@
 export const team = [
   {
     id: 0,
-    picture: '/img/avatars/22.svg',
+    src: '/img/avatars/22.svg',
     name: 'Anna Vrinkof',
     role: 'UI/UX designer',
     expertise: 'UX Design',
@@ -10,7 +10,7 @@ export const team = [
   },
   {
     id: 1,
-    picture: '/img/avatars/3.svg',
+    src: '/img/avatars/3.svg',
     name: 'John Cambell',
     role: 'Sales manager',
     expertise: 'Management',
@@ -19,7 +19,7 @@ export const team = [
   },
   {
     id: 2,
-    picture: '/img/avatars/9.svg',
+    src: '/img/avatars/9.svg',
     name: 'Beth Delanoe',
     role: 'Product designer',
     expertise: 'Product',
@@ -28,7 +28,7 @@ export const team = [
   },
   {
     id: 3,
-    picture: '/img/avatars/14.svg',
+    src: '/img/avatars/14.svg',
     name: 'Andrew Higgs',
     role: 'Project manager',
     expertise: 'Project',

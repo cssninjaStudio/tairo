@@ -78,7 +78,7 @@ const activeTab = ref('tab-1')
               <img
                 src="/img/avatars/2.svg"
                 class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
-                alt="Avatar image"
+                alt=""
               />
             </div>
             <div class="ml-3">
@@ -106,7 +106,7 @@ const activeTab = ref('tab-1')
               <img
                 src="/img/avatars/16.svg"
                 class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
-                alt="Avatar image"
+                alt=""
               />
             </div>
             <div class="ml-3">
@@ -134,7 +134,7 @@ const activeTab = ref('tab-1')
               <img
                 src="/img/avatars/3.svg"
                 class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
-                alt="Avatar image"
+                alt=""
               />
             </div>
             <div class="ml-3">
@@ -162,7 +162,7 @@ const activeTab = ref('tab-1')
               <img
                 src="/img/avatars/19.svg"
                 class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
-                alt="Avatar image"
+                alt=""
               />
             </div>
             <div class="ml-3">
@@ -195,7 +195,7 @@ const activeTab = ref('tab-1')
                 <img
                   src="/img/icons/logos/slicer.svg"
                   class="object-cover max-w-full rounded-xl dark:border-transparent shadow-sm"
-                  alt="Avatar image"
+                  alt=""
                 />
               </div>
               <div class="ml-3">
@@ -229,7 +229,7 @@ const activeTab = ref('tab-1')
                   <img
                     src="/img/avatars/2.svg"
                     class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
-                    alt="Avatar image"
+                    alt=""
                   />
                 </div>
                 <div
@@ -238,7 +238,7 @@ const activeTab = ref('tab-1')
                   <img
                     src="/img/avatars/3.svg"
                     class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
-                    alt="Avatar image"
+                    alt=""
                   />
                 </div>
                 <div
@@ -247,7 +247,7 @@ const activeTab = ref('tab-1')
                   <img
                     src="/img/avatars/4.svg"
                     class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
-                    alt="Avatar image"
+                    alt=""
                   />
                 </div>
                 <div
@@ -273,7 +273,7 @@ const activeTab = ref('tab-1')
                 <img
                   src="/img/icons/logos/metamovies.svg"
                   class="object-cover max-w-full rounded-xl dark:border-transparent shadow-sm"
-                  alt="Avatar image"
+                  alt=""
                 />
               </div>
               <div class="ml-3">
@@ -307,7 +307,7 @@ const activeTab = ref('tab-1')
                   <img
                     src="/img/avatars/13.svg"
                     class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
-                    alt="Avatar image"
+                    alt=""
                   />
                 </div>
                 <div
@@ -316,7 +316,7 @@ const activeTab = ref('tab-1')
                   <img
                     src="/img/avatars/24.svg"
                     class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
-                    alt="Avatar image"
+                    alt=""
                   />
                 </div>
               </div>
@@ -333,7 +333,7 @@ const activeTab = ref('tab-1')
                 <img
                   src="/img/icons/logos/fastpizza.svg"
                   class="object-cover max-w-full rounded-xl dark:border-transparent shadow-sm"
-                  alt="Avatar image"
+                  alt=""
                 />
               </div>
               <div class="ml-3">
@@ -367,7 +367,7 @@ const activeTab = ref('tab-1')
                   <img
                     src="/img/avatars/11.svg"
                     class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
-                    alt="Avatar image"
+                    alt=""
                   />
                 </div>
                 <div
@@ -376,7 +376,7 @@ const activeTab = ref('tab-1')
                   <img
                     src="/img/avatars/3.svg"
                     class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
-                    alt="Avatar image"
+                    alt=""
                   />
                 </div>
               </div>
@@ -419,7 +419,7 @@ const activeTab = ref('tab-1')
                   <img
                     src="/img/avatars/3.svg"
                     class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
-                    alt="Avatar image"
+                    alt=""
                   />
                 </div>
               </div>
@@ -463,7 +463,7 @@ const activeTab = ref('tab-1')
                   <img
                     src="/img/avatars/18.svg"
                     class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
-                    alt="Avatar image"
+                    alt=""
                   />
                 </div>
               </div>

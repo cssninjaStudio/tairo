@@ -100,7 +100,7 @@ export const addon = `
     <template #addon>
       <div class="flex items-center gap-2">
         <BaseAvatar
-          picture="/img/avatars/2.svg"
+          src="/img/avatars/2.svg"
           size="sm"
           class="mr-1"
         />

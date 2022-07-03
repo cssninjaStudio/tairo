@@ -131,7 +131,7 @@ definePageMeta({
               <div class="flex items-end gap-6">
                 <BasePopover orientation="start">
                   <div class="flex items-center">
-                    <BaseAvatar picture="/img/avatars/3.svg" size="sm" />
+                    <BaseAvatar src="/img/avatars/3.svg" />
                     <span
                       class="font-main text-sm font-semibold text-slate-800 dark:text-white ml-3"
                     >
@@ -179,7 +179,7 @@ definePageMeta({
               <div class="flex items-end justify-end gap-6">
                 <BasePopover orientation="end">
                   <div class="flex items-center">
-                    <BaseAvatar picture="/img/avatars/2.svg" size="sm" />
+                    <BaseAvatar src="/img/avatars/2.svg" />
                     <span
                       class="font-main text-sm font-semibold text-slate-800 dark:text-white ml-3"
                     >

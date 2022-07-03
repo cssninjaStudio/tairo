@@ -59,7 +59,7 @@ const props = withDefaults(defineProps<CarouselProps>(), {
             class="px-4 py-6 hover:border-primary-500 dark:hover:border-primary-500 hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
           >
             <BaseAvatar
-              :picture="slide.avatar"
+              :src="slide.avatar"
               :badge="slide.badge"
               size="xl"
               class="mx-auto"
@@ -81,7 +81,7 @@ const props = withDefaults(defineProps<CarouselProps>(), {
               <BaseAvatar
                 v-for="(skill, s) in slide.skills"
                 :key="s"
-                :picture="skill.logo"
+                :src="skill.logo"
                 size="xs"
                 :tooltip="skill.name"
                 class="bg-slate-200 dark:bg-slate-700"

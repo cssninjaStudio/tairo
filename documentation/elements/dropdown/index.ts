@@ -242,7 +242,7 @@ export const avatarSlot = `
     >
       <template #start>
         <BaseAvatar
-          picture="/img/avatars/4.svg"
+          src="/img/avatars/4.svg"
           size="xs"
           class="mr-3"
         />
@@ -255,7 +255,7 @@ export const avatarSlot = `
     >
       <template #start>
         <BaseAvatar
-          picture="/img/avatars/3.svg"
+          src="/img/avatars/3.svg"
           size="xs"
           class="mr-3"
         />
@@ -268,7 +268,7 @@ export const avatarSlot = `
     >
       <template #start>
         <BaseAvatar
-          picture="/img/avatars/18.svg"
+          src="/img/avatars/18.svg"
           size="xs"
           class="mr-3"
         />
@@ -282,7 +282,7 @@ export const avatarSlot = `
     >
       <template #start>
         <BaseAvatar
-          picture="/img/avatars/6.svg"
+          src="/img/avatars/6.svg"
           size="xs"
           class="mr-3"
         />
@@ -307,7 +307,7 @@ export const header = `
     >
       <template #start>
         <BaseAvatar
-          picture="/img/avatars/4.svg"
+          src="/img/avatars/4.svg"
           size="xs"
           class="mr-3"
         />
@@ -320,7 +320,7 @@ export const header = `
     >
       <template #start>
         <BaseAvatar
-          picture="/img/avatars/3.svg"
+          src="/img/avatars/3.svg"
           size="xs"
           class="mr-3"
         />
@@ -333,7 +333,7 @@ export const header = `
     >
       <template #start>
         <BaseAvatar
-          picture="/img/avatars/18.svg"
+          src="/img/avatars/18.svg"
           size="xs"
           class="mr-3"
         />
@@ -347,7 +347,7 @@ export const header = `
     >
       <template #start>
         <BaseAvatar
-          picture="/img/avatars/6.svg"
+          src="/img/avatars/6.svg"
           size="xs"
           class="mr-3"
         />

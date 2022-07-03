@@ -44,7 +44,7 @@ export const dualLeft = `
 <template>
   <BasePopover orientation="start">
     <div class="flex items-center">
-      <BaseAvatar picture="/img/avatars/3.svg" size="sm" />
+      <BaseAvatar src="/img/avatars/3.svg" size="sm" />
       <span
         class="font-main text-sm font-semibold text-slate-800 dark:text-white ml-3"
       >
@@ -84,7 +84,7 @@ export const dualRight = `
 <template>
   <BasePopover orientation="end">
     <div class="flex items-center">
-      <BaseAvatar picture="/img/avatars/3.svg" size="sm" />
+      <BaseAvatar src="/img/avatars/3.svg" size="sm" />
       <span
         class="font-main text-sm font-semibold text-slate-800 dark:text-white ml-3"
       >

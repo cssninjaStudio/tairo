@@ -194,7 +194,7 @@ const removeItem = function (name: string) {
           >
             <BaseAvatar
               v-if="item.media && !item.icon"
-              :picture="item.media"
+              :src="item.media"
               size="sm"
               class="mr-3"
             />

@@ -1,28 +1,28 @@
 export const properties = {
   props: [
     {
-      name: 'picture',
+      name: 'src',
       type: 'string',
       required: 'false',
       default: 'undefined',
       values: ['string'],
     },
     {
-      name: 'pictureDark',
+      name: 'srcDark',
       type: 'string',
       required: 'false',
       default: 'undefined',
       values: ['string'],
     },
     {
-      name: 'badge',
+      name: 'badgeSrc',
       type: 'string',
       required: 'false',
       default: 'undefined',
       values: ['string'],
     },
     {
-      name: 'initials',
+      name: 'text',
       type: 'string',
       required: 'false',
       default: '?',
@@ -43,10 +43,10 @@ export const properties = {
       values: ['circle', 'square'],
     },
     {
-      name: 'dotColor',
-      type: 'AvatarDotColor',
+      name: 'dot',
+      type: 'boolean | AvatarDotColor',
       required: 'false',
-      default: 'success',
+      default: 'false',
       values: [
         'primary',
         'success',

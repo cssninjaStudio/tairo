@@ -209,11 +209,7 @@ definePageMeta({
                   >
                     <template #addon>
                       <div class="flex items-center gap-2">
-                        <BaseAvatar
-                          picture="/img/avatars/2.svg"
-                          size="sm"
-                          class="mr-1"
-                        />
+                        <BaseAvatar src="/img/avatars/2.svg" class="mr-1" />
                         <BaseHeading
                           as="h4"
                           size="sm"

@@ -29,8 +29,8 @@ export const properties = {
       values: ['string'],
     },
     {
-      name: 'slots',
-      type: 'tabSlots',
+      name: 'size',
+      type: 'TabSize',
       required: 'false',
       default: '2',
       values: ['2', '3'],

@@ -19,35 +19,29 @@ export type AvatarDotColor =
   | 'yellow'
 
 export interface AvatarProps {
-  picture?: string
-  pictureDark?: string
-  placeholder?: string
-  badge?: string
-  initials?: string
+  src?: string
+  srcDark?: string
+  badgeSrc?: string
+  text?: string
   size?: AvatarSize
   shape?: AvatarShape
-  dotColor?: AvatarDotColor
-  squared?: boolean
-  dot?: boolean
+  dot?: boolean | AvatarDotColor
 }
 
 const props = withDefaults(defineProps<AvatarProps>(), {
-  picture: undefined,
-  pictureDark: undefined,
-  placeholder:
-    'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkMAYAADkANVKH3ScAAAAASUVORK5CYII=',
-  initials: '?',
-  badge: undefined,
-  size: 'md',
+  src: undefined,
+  srcDark: undefined,
+  text: '?',
+  badgeSrc: undefined,
+  size: 'sm',
   shape: 'circle',
-  color: undefined,
-  dotColor: 'success',
+  dot: false,
 })
 </script>
 
 <template>
   <div
-    class="relative inline-flex justify-center items-center"
+    class="relative inline-flex justify-center items-center outline-none"
     :class="[
       props.size === 'xs' && `w-8 h-8`,
       props.size === 'sm' && `w-10 h-10`,
@@ -84,22 +78,20 @@ const props = withDefaults(defineProps<AvatarProps>(), {
     >
       <slot>
         <img
-          v-if="props.picture"
-          :src="props.picture"
+          v-if="props.src"
+          :src="props.src"
           class="object-cover max-w-full dark:border-transparent shadow-sm"
-          :class="[props.pictureDark ? 'dark:hidden' : '']"
-          alt="Avatar image"
+          :class="[props.srcDark ? 'dark:hidden' : '']"
         />
 
         <img
-          v-if="props.picture && props.pictureDark"
-          :src="props.pictureDark"
+          v-if="props.src && props.srcDark"
+          :src="props.srcDark"
           class="object-cover max-w-full dark:border-transparent shadow-sm hidden dark:block"
-          alt="Avatar image"
         />
 
         <span
-          v-if="!props.picture && props.initials"
+          v-if="!props.src"
           class="font-main uppercase font-medium text-center"
           :class="[
             props.size === 'xs' && `text-sm`,
@@ -112,13 +104,13 @@ const props = withDefaults(defineProps<AvatarProps>(), {
             props.size === '4xl' && `text-3xl`,
           ]"
         >
-          {{ props.initials }}
+          {{ props.text }}
         </span>
       </slot>
     </div>
 
     <div
-      v-if="'badge' in $slots || props.badge"
+      v-if="'badge' in $slots || props.badgeSrc"
       class="block absolute bg-slate-100 dark:bg-slate-800 rounded-full border-2 border-white dark:border-slate-800 overflow-hidden"
       :class="[
         props.size === 'xs' && `w-4 h-4`,
@@ -147,12 +139,7 @@ const props = withDefaults(defineProps<AvatarProps>(), {
       ]"
     >
       <slot name="badge">
-        <img
-          v-if="props.badge"
-          :src="props.badge"
-          class=""
-          alt="Avatar badge"
-        />
+        <img v-if="props.badgeSrc" :src="props.badgeSrc" alt="" />
       </slot>
     </div>
 
@@ -188,13 +175,13 @@ const props = withDefaults(defineProps<AvatarProps>(), {
         props.shape === 'square' && props.size === '2xl' && `-top-0 -right-0`,
         props.shape === 'square' && props.size === '3xl' && `-top-0 -right-0`,
         props.shape === 'square' && props.size === '4xl' && `-top-0 -right-0`,
-        props.dotColor === 'primary' && `bg-primary-500`,
-        props.dotColor === 'info' && `bg-info-500`,
-        props.dotColor === 'success' && `bg-success-500`,
-        props.dotColor === 'warning' && `bg-warning-500`,
-        props.dotColor === 'danger' && `bg-danger-500`,
-        props.dotColor === 'pink' && `bg-pink-500`,
-        props.dotColor === 'yellow' && `bg-yellow-500`,
+        (props.dot || props.dot === 'success') && `bg-success-500`,
+        props.dot === 'primary' && `bg-primary-500`,
+        props.dot === 'info' && `bg-info-500`,
+        props.dot === 'warning' && `bg-warning-500`,
+        props.dot === 'danger' && `bg-danger-500`,
+        props.dot === 'pink' && `bg-pink-500`,
+        props.dot === 'yellow' && `bg-yellow-500`,
       ]"
     ></span>
   </div>

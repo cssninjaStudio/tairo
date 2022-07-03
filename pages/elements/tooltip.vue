@@ -79,22 +79,22 @@ definePageMeta({
             <template #demo>
               <div class="flex items-end flex-wrap gap-2">
                 <BaseAvatar
-                  picture="/img/avatars/3.svg"
+                  src="/img/avatars/3.svg"
                   size="lg"
                   tooltip="Clarke Miller"
                 />
                 <BaseAvatar
-                  picture="/img/avatars/17.svg"
+                  src="/img/avatars/17.svg"
                   size="lg"
                   tooltip="Barry Weston"
                 />
                 <BaseAvatar
-                  picture="/img/avatars/16.svg"
+                  src="/img/avatars/16.svg"
                   size="lg"
                   tooltip="Carlos Perez"
                 />
                 <BaseAvatar
-                  picture="/img/avatars/15.svg"
+                  src="/img/avatars/15.svg"
                   size="lg"
                   tooltip="Albert Wesker"
                 />

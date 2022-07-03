@@ -1,19 +1,9 @@
 export const tiny = `
 <script setup lang="ts">
 const people = [
-  {
-    id: 1,
-    name: 'Clarissa Perez',
-    role: 'Sales Manager',
-    picture: '/img/avatars/19.svg',
-  },
-  ...
-  {
-    id: 5,
-    name: 'Maya Rosselini',
-    role: 'Product Manager',
-    picture: '/img/avatars/2.svg',
-  },
+  '/img/avatars/19.svg',
+  // ...
+  '/img/avatars/2.svg',
 ]
 </script>
 
@@ -25,19 +15,9 @@ const people = [
 export const small = `
 <script setup lang="ts">
 const people = [
-  {
-    id: 1,
-    name: 'Clarissa Perez',
-    role: 'Sales Manager',
-    picture: '/img/avatars/19.svg',
-  },
-  ...
-  {
-    id: 5,
-    name: 'Maya Rosselini',
-    role: 'Product Manager',
-    picture: '/img/avatars/2.svg',
-  },
+  '/img/avatars/19.svg',
+  // ...
+  '/img/avatars/2.svg',
 ]
 </script>
 
@@ -49,19 +29,9 @@ const people = [
 export const medium = `
 <script setup lang="ts">
 const people = [
-  {
-    id: 1,
-    name: 'Clarissa Perez',
-    role: 'Sales Manager',
-    picture: '/img/avatars/19.svg',
-  },
-  ...
-  {
-    id: 5,
-    name: 'Maya Rosselini',
-    role: 'Product Manager',
-    picture: '/img/avatars/2.svg',
-  },
+  '/img/avatars/19.svg',
+  // ...
+  '/img/avatars/2.svg',
 ]
 </script>
 
@@ -75,17 +45,13 @@ export const large = `
 <script setup lang="ts">
 const people = [
   {
-    id: 1,
-    name: 'Clarissa Perez',
-    role: 'Sales Manager',
-    picture: '/img/avatars/19.svg',
+    tooltip: 'Clarissa Perez',
+    src: '/img/avatars/19.svg',
   },
   ...
   {
-    id: 5,
-    name: 'Maya Rosselini',
-    role: 'Product Manager',
-    picture: '/img/avatars/2.svg',
+    tooltip: 'Maya Rosselini',
+    src: '/img/avatars/2.svg',
   },
 ]
 </script>

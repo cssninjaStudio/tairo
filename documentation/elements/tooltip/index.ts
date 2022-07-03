@@ -10,7 +10,7 @@ export const positions = `
 export const avatar = `
 <template>
   <BaseAvatar
-    picture="/img/avatars/3.svg"
+    src="/img/avatars/3.svg"
     size="lg"
     tooltip="Clarke Miller"
   />

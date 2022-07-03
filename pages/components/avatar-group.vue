@@ -42,7 +42,7 @@ definePageMeta({
           <DocComponent label="Sm avatar group">
             <template #demo>
               <div class="flex items-end flex-wrap gap-4">
-                <BaseAvatarGroup size="sm" :avatars="people" />
+                <BaseAvatarGroup :avatars="people" />
               </div>
             </template>
             <template #code>

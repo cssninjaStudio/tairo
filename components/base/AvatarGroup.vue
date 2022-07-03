@@ -1,17 +1,22 @@
 <script setup lang="ts">
-import type { AvatarProps } from './Avatar.vue'
-
 export type AvatarGroupSizes = 'xs' | 'sm' | 'md' | 'lg'
 
-export interface VAvatarStackProps {
-  limit?: number
-  size?: AvatarGroupSizes
-  avatars?: AvatarProps[]
+export interface AvatarGroupItem {
+  src?: string
+  srcDark?: string
+  text?: string
+  tooltip?: string
 }
 
-const props = withDefaults(defineProps<VAvatarStackProps>(), {
+export interface AvatarGroupProps {
+  limit?: number
+  size?: AvatarGroupSizes
+  avatars?: (string | AvatarGroupItem)[]
+}
+
+const props = withDefaults(defineProps<AvatarGroupProps>(), {
   limit: 4,
-  size: undefined,
+  size: 'sm',
   avatars: () => [],
 })
 </script>
@@ -21,15 +26,29 @@ const props = withDefaults(defineProps<VAvatarStackProps>(), {
     <slot>
       <BaseAvatar
         v-for="(avatar, index) in avatars.slice(0, props.limit)"
-        :key="index"
+        :key="typeof avatar === 'string' ? avatar : avatar.src"
+        v-bind="typeof avatar === 'string' ? { src: avatar } : avatar"
         :size="props.size"
-        :picture="avatar.picture"
-        class="border-white dark:border-slate-800"
+        tabindex="0"
+        class="border-white dark:border-slate-800 duration-100 transition-all ease-in"
         :class="[
-          props.size === 'xs' && '-ml-2 border-2',
-          props.size === 'sm' && '-ml-3 border-2',
-          props.size === 'md' && '-ml-4 border-4',
-          props.size === 'lg' && '-ml-5 border-4',
+          props.size === 'xs' &&
+            'border-2 hover:-ml-2 hover:mr-2 focus:-ml-2 focus:mr-2',
+          index !== 0 &&
+            props.size === 'xs' &&
+            '-ml-2 hover:-ml-4 hover:mr-2 focus:-ml-4 focus:mr-2',
+          props.size === 'sm' && 'border-4 hover:-ml-2 hover:mr-2 focus:mr-2',
+          index !== 0 &&
+            props.size === 'sm' &&
+            '-ml-3 hover:-ml-5 hover:mr-2 focus:-ml-5 focus:mr-2',
+          props.size === 'md' && 'border-4 hover:-ml-3 hover:mr-3 focus:mr-3',
+          index !== 0 &&
+            props.size === 'md' &&
+            '-ml-4 hover:-ml-7 hover:mr-3 focus:mr-3',
+          props.size === 'lg' && 'border-4 hover:-ml-4 hover:mr-4 focus:mr-4',
+          index !== 0 &&
+            props.size === 'lg' &&
+            '-ml-5 hover:-ml-9 hover:mr-4 focus:-ml-9 focus:mr-4',
         ]"
       />
       <div

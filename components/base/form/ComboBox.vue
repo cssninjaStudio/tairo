@@ -74,7 +74,7 @@ const items = ref(props.items)
         >
           <BaseAvatar
             v-if="value.media && !value.icon"
-            :picture="value.media"
+            :src="value.media"
             size="xs"
             class="mr-2 -ml-2 !w-6 !h-6"
           />
@@ -142,7 +142,7 @@ const items = ref(props.items)
               >
                 <BaseAvatar
                   v-if="item.media && !item.icon"
-                  :picture="item.media"
+                  :src="item.media"
                   size="xs"
                   class="mr-3"
                 />

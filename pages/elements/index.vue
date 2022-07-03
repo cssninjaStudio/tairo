@@ -9,8 +9,8 @@ definePageMeta({
     <div class="text-center">
       <BaseAvatar
         class="bg-yellow-100 dark:bg-yellow-100/50 text-yellow-500"
-        picture="/img/avatars/3.svg"
-        initials="J"
+        src="/img/avatars/3.svg"
+        text="J"
         size="2xl"
         badge="/img/logos/stacks/tailwind-purple.svg"
       />

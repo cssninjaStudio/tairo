@@ -58,7 +58,7 @@ const isModalBodyOpen = ref(false)
           <img
             src="https://media.cssninja.io/shuriken/avatars/3.svg"
             class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
-            alt="Avatar image"
+            alt=""
           />
         </div>
         <h3
@@ -118,7 +118,7 @@ const isModalBodyOpen = ref(false)
           <img
             src="https://media.cssninja.io/shuriken/avatars/3.svg"
             class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
-            alt="Avatar image"
+            alt=""
           />
         </div>
         <h3
@@ -178,7 +178,7 @@ const isModalBodyOpen = ref(false)
           <img
             src="https://media.cssninja.io/shuriken/avatars/3.svg"
             class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
-            alt="Avatar image"
+            alt=""
           />
         </div>
         <h3
@@ -238,7 +238,7 @@ const isModalBodyOpen = ref(false)
           <img
             src="https://media.cssninja.io/shuriken/avatars/3.svg"
             class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
-            alt="Avatar image"
+            alt=""
           />
         </div>
         <h3
@@ -297,7 +297,7 @@ const isModalBodyOpen = ref(false)
           <img
             src="https://media.cssninja.io/shuriken/avatars/3.svg"
             class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
-            alt="Avatar image"
+            alt=""
           />
         </div>
         <h3
