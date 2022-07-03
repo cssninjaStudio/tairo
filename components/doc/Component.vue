@@ -8,6 +8,19 @@ const props = withDefaults(defineProps<DocComponentProps>(), {
 })
 
 const activeTab = ref('demo')
+const hasFocusActive = ref(false)
+
+onKeyStroke(['ArrowRight'], () => {
+  if (hasFocusActive.value && activeTab.value === 'demo') {
+    activeTab.value = 'code'
+  }
+})
+
+onKeyStroke(['ArrowLeft'], () => {
+  if (hasFocusActive.value && activeTab.value === 'code') {
+    activeTab.value = 'demo'
+  }
+})
 </script>
 
 <template>
@@ -24,46 +37,29 @@ const activeTab = ref('demo')
       </BaseParagraph>
 
       <div class="flex-none flex items-center ml-auto pl-4 sm:pl-6">
-        <div
-          class="font-sub group p-0.5 rounded-xl flex bg-slate-100 dark:bg-slate-900"
-        >
-          <button
-            type="button"
-            class="flex focus-visible:ring-2 rounded-lg"
+        <div class="flex items-end">
+          <BaseButtonAction
+            shape="rounded"
+            class="focus:z-10 rounded-r-none border-r-0"
+            :muted="activeTab !== 'demo'"
             @click="activeTab = 'demo'"
+            @focus="hasFocusActive = true"
+            @focusout="hasFocusActive = false"
           >
-            <span
-              class="py-1.5 pl-4 pr-5 rounded-lg flex items-center text-sm font-medium border"
-              :class="
-                activeTab === 'demo'
-                  ? 'bg-white dark:bg-slate-700 shadow-sm text-slate-900 dark:text-slate-100 border-slate-200 dark:border-slate-600'
-                  : 'text-slate-600 border-transparent'
-              "
-            >
-              <BaseIcon name="cil:applications" class="mr-1.5 h-4 w-4" />
-              <span class="sr-only lg:not-sr-only leading-6">Demo</span>
-            </span>
-          </button>
-          <button
-            type="button"
-            class="flex focus-visible:ring-2 rounded-lg"
+            <BaseIcon name="cil:applications" class="mr-1.5 h-4 w-4" />
+            <span>Demo</span>
+          </BaseButtonAction>
+          <BaseButtonAction
+            shape="rounded"
+            class="focus:z-10 rounded-l-none border-l-0"
+            :muted="activeTab !== 'code'"
             @click="activeTab = 'code'"
+            @focus="hasFocusActive = true"
+            @focusout="hasFocusActive = false"
           >
-            <span
-              class="py-1.5 pl-4 pr-5 rounded-lg flex items-center text-sm font-medium border"
-              :class="
-                activeTab === 'code'
-                  ? 'bg-white dark:bg-slate-700 shadow-sm text-slate-900 dark:text-slate-100 border-slate-200 dark:border-slate-600'
-                  : 'text-slate-600 border-transparent'
-              "
-            >
-              <BaseIcon
-                name="iconoir:terminal-outline"
-                class="mr-1.5 h-4 w-4"
-              />
-              <span class="sr-only lg:not-sr-only leading-6">Code</span>
-            </span>
-          </button>
+            <BaseIcon name="iconoir:terminal-outline" class="mr-1.5 h-4 w-4" />
+            <span>Code</span>
+          </BaseButtonAction>
         </div>
       </div>
     </div>
@@ -73,7 +69,7 @@ const activeTab = ref('demo')
         <slot name="demo"></slot>
       </div>
 
-      <div v-if="activeTab === 'code'">
+      <div v-else-if="activeTab === 'code'">
         <slot name="code"></slot>
       </div>
     </div>
