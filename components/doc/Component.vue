@@ -9,22 +9,22 @@ const props = withDefaults(defineProps<DocComponentProps>(), {
   label: undefined,
 })
 
-const demoSwitcher = ref<ComponentPublicInstance | null>(null)
-const codeSwitcher = ref<ComponentPublicInstance | null>(null)
+// const demoSwitcher = ref<ComponentPublicInstance | null>(null)
+// const codeSwitcher = ref<ComponentPublicInstance | null>(null)
 const activeTab = ref('demo')
-const focusActive = ref('')
+// const focusActive = ref('')
 
-onKeyStroke(['ArrowRight'], () => {
-  if (focusActive.value && focusActive.value === 'demo') {
-    codeSwitcher.value?.$el?.focus()
-  }
-})
+// onKeyStroke(['ArrowRight'], () => {
+//   if (focusActive.value && focusActive.value === 'demo') {
+//     codeSwitcher.value?.$el?.focus()
+//   }
+// })
 
-onKeyStroke(['ArrowLeft'], () => {
-  if (focusActive.value && focusActive.value === 'code') {
-    demoSwitcher.value?.$el?.focus()
-  }
-})
+// onKeyStroke(['ArrowLeft'], () => {
+//   if (focusActive.value && focusActive.value === 'code') {
+//     demoSwitcher.value?.$el?.focus()
+//   }
+// })
 </script>
 
 <template>
@@ -41,32 +41,26 @@ onKeyStroke(['ArrowLeft'], () => {
       </BaseParagraph>
 
       <div class="flex-none flex items-center ml-auto pl-4 sm:pl-6">
-        <div class="flex items-end">
+        <FocusLoop class="flex items-end">
           <BaseButtonAction
-            ref="demoSwitcher"
             shape="rounded"
             class="focus:z-10 rounded-r-none border-r-0"
             :muted="activeTab !== 'demo'"
             @click="activeTab = 'demo'"
-            @focus="focusActive = 'demo'"
-            @focusout="focusActive = ''"
           >
             <BaseIcon name="cil:applications" class="mr-1.5 h-4 w-4" />
             <span>Demo</span>
           </BaseButtonAction>
           <BaseButtonAction
-            ref="codeSwitcher"
             shape="rounded"
             class="focus:z-10 rounded-l-none border-l-0"
             :muted="activeTab !== 'code'"
             @click="activeTab = 'code'"
-            @focus="focusActive = 'code'"
-            @focusout="focusActive = ''"
           >
             <BaseIcon name="iconoir:terminal-outline" class="mr-1.5 h-4 w-4" />
             <span>Code</span>
           </BaseButtonAction>
-        </div>
+        </FocusLoop>
       </div>
     </div>
 

@@ -163,7 +163,6 @@ const closeButtonClasses = computed(() => {
       class="flex items-center justify-center text-slate-800 ml-auto mr-2 cursor-pointer p-1 outline-none"
       :class="[shapeClass, ...closeButtonClasses]"
       @click="emit('close')"
-      @keydown.space="emit('close')"
     >
       <slot name="close-button">
         <BaseIcon name="lucide:x" class="w-4 h-4" />

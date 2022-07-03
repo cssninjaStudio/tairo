@@ -124,19 +124,10 @@ const endSidebars = sidebars.filter((sidebar) => sidebar.position === 'end')
             <div v-if="activeValue === 'sidebar'">
               <div class="grid grid-cols-2 gap-4 px-4 pb-4">
                 <!-- Layout 1 -->
-                <NuxtLink
-                  to="/"
+                <button
+                  type="button"
                   class="relative block text-center"
-                  @keydown.space="
-                    () => {
-                      toggleLayoutModal
-                    }
-                  "
-                  @click.passive="
-                    () => {
-                      toggleLayoutModal
-                    }
-                  "
+                  @click="toggleLayoutModal"
                 >
                   <div class="relative max-w-[110px] mx-auto">
                     <img
@@ -167,21 +158,12 @@ const endSidebars = sidebars.filter((sidebar) => sidebar.position === 'end')
                   <BaseParagraph size="sm" class="text-slate-400">
                     Dual sidebar default
                   </BaseParagraph>
-                </NuxtLink>
+                </button>
                 <!-- Layout 1 -->
-                <NuxtLink
-                  to="/"
+                <button
+                  type="button"
                   class="relative block text-center"
-                  @keydown.space="
-                    () => {
-                      toggleLayoutModal
-                    }
-                  "
-                  @click.passive="
-                    () => {
-                      toggleLayoutModal
-                    }
-                  "
+                  @click="toggleLayoutModal"
                 >
                   <div class="relative max-w-[110px] mx-auto">
                     <img
@@ -212,7 +194,7 @@ const endSidebars = sidebars.filter((sidebar) => sidebar.position === 'end')
                   <BaseParagraph size="sm" class="text-slate-400">
                     Dual sidebar colored
                   </BaseParagraph>
-                </NuxtLink>
+                </button>
               </div>
             </div>
             <div

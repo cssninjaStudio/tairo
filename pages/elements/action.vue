@@ -3,6 +3,8 @@ import { breadcrumb, toc } from '@@/documentation/elements/action/toc'
 import { group, loading, muted, shapes } from '@@/documentation/elements/action'
 import { properties } from '@@/documentation/elements/action/properties'
 
+const disabled = ref(true)
+
 definePageMeta({
   title: 'Actions',
 })
@@ -21,12 +23,12 @@ definePageMeta({
         <DocSection id="action-shapes" title="Actions shapes" tag="1.0.0">
           <DocComponent label="Default action shapes">
             <template #demo>
-              <div class="flex items-end flex-wrap gap-2">
+              <FocusLoop class="flex items-end flex-wrap gap-2">
                 <BaseButtonAction shape="straight">Action</BaseButtonAction>
                 <BaseButtonAction shape="rounded">Action</BaseButtonAction>
                 <BaseButtonAction shape="curved">Action</BaseButtonAction>
                 <BaseButtonAction shape="full">Action</BaseButtonAction>
-              </div>
+              </FocusLoop>
             </template>
             <template #code>
               <DocCode language="html" :code="shapes" />
@@ -38,7 +40,7 @@ definePageMeta({
         <DocSection id="action-muted" title="Muted actions" tag="1.0.0">
           <DocComponent label="Muted action variation">
             <template #demo>
-              <div class="flex items-end flex-wrap gap-2">
+              <FocusLoop class="flex items-end flex-wrap gap-2">
                 <BaseButtonAction shape="straight" muted>
                   Action
                 </BaseButtonAction>
@@ -47,7 +49,7 @@ definePageMeta({
                 </BaseButtonAction>
                 <BaseButtonAction shape="curved" muted>Action</BaseButtonAction>
                 <BaseButtonAction shape="full" muted>Action</BaseButtonAction>
-              </div>
+              </FocusLoop>
             </template>
             <template #code>
               <DocCode language="html" :code="muted" />
@@ -59,7 +61,7 @@ definePageMeta({
         <DocSection id="action-loading" title="Loading state" tag="1.0.0">
           <DocComponent label="Action loading variation">
             <template #demo>
-              <div class="flex items-end flex-wrap gap-2">
+              <FocusLoop class="flex items-end flex-wrap gap-2">
                 <BaseButtonAction shape="straight" loading>
                   Action
                 </BaseButtonAction>
@@ -70,7 +72,7 @@ definePageMeta({
                   Action
                 </BaseButtonAction>
                 <BaseButtonAction shape="full" loading>Action</BaseButtonAction>
-              </div>
+              </FocusLoop>
             </template>
             <template #code>
               <DocCode language="html" :code="loading" />
@@ -81,10 +83,11 @@ definePageMeta({
         <DocSection id="action-group" title="Actions group" tag="1.0.0">
           <DocComponent label="Actions inside a group">
             <template #demo>
-              <div class="flex items-end">
+              <FocusLoop class="flex items-end">
                 <BaseButtonAction
                   shape="rounded"
                   class="focus:z-10 rounded-r-none border-r-0"
+                  @click="disabled = !disabled"
                 >
                   View
                 </BaseButtonAction>
@@ -94,7 +97,11 @@ definePageMeta({
                 <BaseButtonAction muted shape="straight" class="focus:z-10">
                   Muted
                 </BaseButtonAction>
-                <BaseButtonAction disabled shape="straight" class="focus:z-10">
+                <BaseButtonAction
+                  :disabled="disabled"
+                  shape="straight"
+                  class="focus:z-10"
+                >
                   Disabled
                 </BaseButtonAction>
                 <BaseButtonAction
@@ -103,7 +110,7 @@ definePageMeta({
                 >
                   Share
                 </BaseButtonAction>
-              </div>
+              </FocusLoop>
             </template>
             <template #code>
               <DocCode language="html" :code="group" />

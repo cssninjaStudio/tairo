@@ -29,7 +29,7 @@ definePageMeta({
         >
           <DocComponent label="A nice and friendly checkbox">
             <template #demo>
-              <div class="flex items-end flex-wrap gap-4">
+              <FocusLoop class="flex items-end flex-wrap gap-4">
                 <BaseFormAnimatedCheckbox
                   v-model="options"
                   value="Option 1"
@@ -125,7 +125,7 @@ definePageMeta({
                   value="Option 19"
                   class="text-gray-400 dark:text-gray-500"
                 />
-              </div>
+              </FocusLoop>
             </template>
             <template #code>
               <DocCode language="html" :code="base" />

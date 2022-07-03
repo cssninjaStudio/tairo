@@ -44,7 +44,7 @@ const toggle = (key: number) => {
 </script>
 
 <template>
-  <div
+  <FocusLoop
     class="block bg-white border border-slate-200 overflow-hidden"
     :class="[
       exclusive && 'is-exclusive',
@@ -66,8 +66,7 @@ const toggle = (key: number) => {
         <summary
           class="list-none"
           tabindex="0"
-          @keydown.space="() => toggle(key)"
-          @click="() => toggle(key)"
+          @click.prevent="() => toggle(key)"
         >
           <slot
             name="accordion-item-summary"
@@ -145,5 +144,5 @@ const toggle = (key: number) => {
         </div>
       </slot>
     </details>
-  </div>
+  </FocusLoop>
 </template>

@@ -15,26 +15,12 @@ export default defineNuxtConfig({
   colorMode: {
     classSuffix: '',
   },
-  typescript: {
-    shim: false,
-    strict: true,
-  },
-  build: {
-    // transpile: [''],
-  },
+  css: ['~/assets/css/tailwind.css', '~/assets/css/tooltips.css'],
   postcss: {
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
     },
-  },
-  app: {
-    head: {
-      link: [{ rel: 'stylesheet', href: '/assets/css/tailwind.css' }],
-    },
-  },
-  vueuse: {
-    ssrHandlers: true,
   },
   unocss: {
     preflight: true,
@@ -92,6 +78,13 @@ export default defineNuxtConfig({
         },
       }),
     ],
+  },
+  vueuse: {
+    ssrHandlers: true,
+  },
+  typescript: {
+    shim: false,
+    strict: true,
   },
   vite: {
     logLevel: 'info',

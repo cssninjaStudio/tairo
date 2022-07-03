@@ -52,7 +52,7 @@ const { attributes, is } = useButton(props)
     :is="is"
     v-bind="attributes"
     :class="iconButtonClasses"
-    class="relative font-text font-normal inline-flex items-center justify-center outline-none leading-5 no-underline space-x-1 h-10 w-10 p-2 text-sm focus:outline-dashed focus:outline-slate-300 dark:focus:outline-slate-600 focus:outline-offset-2 transition-all duration-300"
+    class="relative font-text font-normal inline-flex items-center justify-center outline-none leading-5 no-underline space-x-1 h-10 w-10 p-2 text-sm tairo-focus transition-all duration-300"
   >
     <slot v-if="!props.loading"></slot>
     <BasePlaceload v-else class="h-4 w-4 rounded-md" />

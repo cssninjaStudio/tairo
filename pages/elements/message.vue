@@ -21,12 +21,12 @@ definePageMeta({
         <DocSection id="message-types" title="Message types" tag="1.0.0">
           <DocComponent label="Default message types">
             <template #demo>
-              <div class="space-y-4 max-w-xs">
+              <FocusLoop class="space-y-4 max-w-xs">
                 <BaseMessage>A successful message.</BaseMessage>
                 <BaseMessage type="info">An information message.</BaseMessage>
                 <BaseMessage type="warning">A warning message.</BaseMessage>
                 <BaseMessage type="danger">A destructive message.</BaseMessage>
-              </div>
+              </FocusLoop>
             </template>
             <template #code>
               <DocCode language="html" :code="types" />
@@ -38,7 +38,7 @@ definePageMeta({
         <DocSection id="message-icons" title="Message icons" tag="1.0.0">
           <DocComponent label="Message icons example">
             <template #demo>
-              <div class="space-y-4 max-w-xs">
+              <FocusLoop class="space-y-4 max-w-xs">
                 <BaseMessage icon>A successful message.</BaseMessage>
                 <BaseMessage type="info" icon>
                   An information message.
@@ -49,7 +49,7 @@ definePageMeta({
                 <BaseMessage type="danger" icon>
                   A destructive message.
                 </BaseMessage>
-              </div>
+              </FocusLoop>
             </template>
             <template #code>
               <DocCode language="html" :code="icons" />
@@ -61,7 +61,7 @@ definePageMeta({
         <DocSection id="message-shapes" title="Message shapes" tag="1.0.0">
           <DocComponent label="Default message shapes">
             <template #demo>
-              <div class="space-y-4 max-w-xs">
+              <FocusLoop class="space-y-4 max-w-xs">
                 <BaseMessage shape="straight" icon>
                   A successful message.
                 </BaseMessage>
@@ -77,7 +77,7 @@ definePageMeta({
                 <BaseMessage type="danger" shape="full" icon>
                   A destructive message.
                 </BaseMessage>
-              </div>
+              </FocusLoop>
             </template>
             <template #code>
               <DocCode language="html" :code="shapes" />

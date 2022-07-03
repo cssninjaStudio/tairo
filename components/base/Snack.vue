@@ -17,13 +17,13 @@ const emit = defineEmits(['delete'])
 
 <template>
   <div
-    class="inline-flex items-center rounded-full group focus-within:ring-0 outline-transparent focus-within:outline-dashed focus-within:outline-offset-2"
+    class="inline-flex items-center rounded-full group outline-transparent tairo-focus"
     :class="[
       !props.icon && !props.image && 'pl-4',
       props.small ? 'h-8' : 'h-10',
       props.light
-        ? 'bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 focus-within:outline-slate-100 dark:focus-within:outline-slate-700/50'
-        : 'bg-slate-200 dark:bg-slate-700 focus-within:outline-slate-200/50 dark:focus-within:outline-slate-700',
+        ? 'bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600'
+        : 'bg-slate-200 dark:bg-slate-700',
     ]"
   >
     <div

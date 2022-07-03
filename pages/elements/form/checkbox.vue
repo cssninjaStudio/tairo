@@ -138,7 +138,7 @@ definePageMeta({
         >
           <DocComponent label="Straight checkbox example">
             <template #demo>
-              <div class="flex items-end flex-wrap gap-4">
+              <FocusLoop class="flex items-end flex-wrap gap-4">
                 <BaseFormCheckbox
                   v-model="demoStraight"
                   name="demo-5"
@@ -202,7 +202,7 @@ definePageMeta({
                   shape="circle"
                   class="text-rose-500"
                 />
-              </div>
+              </FocusLoop>
             </template>
             <template #code>
               <DocCode language="html" :code="colors" />

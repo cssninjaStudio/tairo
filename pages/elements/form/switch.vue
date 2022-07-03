@@ -32,7 +32,7 @@ definePageMeta({
           <DocComponent label="Thin switch example">
             <template #demo>
               <div class="flex items-end gap-6">
-                <div class="w-full flex flex-wrap gap-8">
+                <FocusLoop class="w-full flex flex-wrap gap-8">
                   <BaseFormSwitchThin
                     id="demo-thin-1"
                     :checked="true"
@@ -63,7 +63,7 @@ definePageMeta({
                     label="Danger"
                     color="danger"
                   />
-                </div>
+                </FocusLoop>
               </div>
             </template>
             <template #code>
@@ -105,7 +105,7 @@ definePageMeta({
           <DocComponent label="Thin switch example">
             <template #demo>
               <div class="flex items-end gap-6">
-                <div class="w-full flex flex-wrap gap-8">
+                <FocusLoop class="w-full flex flex-wrap gap-8">
                   <BaseFormSwitchBall
                     id="demo-ball-1"
                     :checked="true"
@@ -136,7 +136,7 @@ definePageMeta({
                     label="Danger"
                     color="danger"
                   />
-                </div>
+                </FocusLoop>
               </div>
             </template>
             <template #code>

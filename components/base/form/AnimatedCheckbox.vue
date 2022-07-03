@@ -51,7 +51,7 @@ watchEffect(updateCheckbox)
 </script>
 
 <template>
-  <div ref="element" class="block tairo-focus">
+  <div ref="element" class="block tairo-focus-current">
     <input
       :id="animatedCheckboxId"
       type="checkbox"
