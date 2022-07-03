@@ -4,9 +4,7 @@ export interface CheckboxEmits {
   (e: 'update:modelValue', value: string | number | boolean): void
 }
 export interface CheckboxProps {
-  raw?: boolean
   label?: string
-  hideLabel?: boolean
   trueValue?: string | number | boolean
   falseValue?: string | number | boolean
   modelValue?: any
@@ -82,7 +80,7 @@ watch(
       </svg>
     </div>
     <label
-      v-if="!props.hideLabel"
+      v-if="!props.label"
       :for="`checkbox-${props.name}`"
       class="cursor-pointer select-none text-slate-400 font-text text-sm ml-1"
     >

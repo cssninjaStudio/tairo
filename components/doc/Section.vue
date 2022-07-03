@@ -11,7 +11,7 @@ const props = withDefaults(defineProps<DocSectionProps>(), {
 </script>
 
 <template>
-  <div
+  <section
     :id="props.id"
     class="py-6 mb-10 border-b border-slate-200 dark:border-slate-800"
   >
@@ -33,5 +33,5 @@ const props = withDefaults(defineProps<DocSectionProps>(), {
     </div>
 
     <slot></slot>
-  </div>
+  </section>
 </template>
