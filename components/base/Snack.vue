@@ -62,26 +62,7 @@ const emit = defineEmits(['delete'])
       ]"
       @click="emit('delete')"
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-        aria-hidden="true"
-        role="img"
-        class="w-4 h-4 text-slate-600 dark:text-slate-300"
-        width="32"
-        height="32"
-        preserveAspectRatio="xMidYMid meet"
-        viewBox="0 0 24 24"
-      >
-        <path
-          fill="none"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M18 6L6 18M6 6l12 12"
-        ></path>
-      </svg>
+      <IconClose class="w-4 h-4 text-slate-600 dark:text-slate-300" />
     </button>
   </div>
 </template>

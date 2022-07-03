@@ -5,15 +5,7 @@ export const properties = {
       type: 'string',
       required: 'false',
       default: 'default',
-      values: [
-        'default',
-        'muted',
-        'primary',
-        'info',
-        'success',
-        'warning',
-        'danger',
-      ],
+      values: ['default', 'primary', 'info', 'success', 'warning', 'danger'],
     },
     {
       name: 'flavor',
@@ -66,6 +58,13 @@ export const properties = {
     },
     {
       name: 'disabled',
+      type: 'boolean',
+      required: 'false',
+      default: 'false',
+      values: ['boolean'],
+    },
+    {
+      name: 'muted',
       type: 'boolean',
       required: 'false',
       default: 'false',

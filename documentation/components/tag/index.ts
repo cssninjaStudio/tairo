@@ -10,7 +10,7 @@ export const shapes = `
 export const solid = `
 <template>
   <BaseTag shape="rounded" color="default">Label</BaseTag>
-  <BaseTag shape="rounded" color="muted">Label</BaseTag>
+  <BaseTag shape="rounded" muted>Label</BaseTag>
   <BaseTag shape="rounded" color="primary">Label</BaseTag>
   <BaseTag shape="rounded" color="success">Label</BaseTag>
   <BaseTag shape="rounded" color="info">Label</BaseTag>

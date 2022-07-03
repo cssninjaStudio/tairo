@@ -124,7 +124,7 @@ const handleLinkClick = (e: MouseEvent, page = 1) => {
             props.shape === 'curved' && 'rounded-xl',
             props.shape === 'full' && 'rounded-full',
           ]"
-          @keydown.space.prevent="(e:any) => (e.target as HTMLAnchorElement).click()"
+          @keydown.space="(e:any) => (e.target as HTMLAnchorElement).click()"
           @click="(e:any) => handleLinkClick(e, 1)"
         >
           1
@@ -160,7 +160,7 @@ const handleLinkClick = (e: MouseEvent, page = 1) => {
             props.shape === 'curved' && 'rounded-xl',
             props.shape === 'full' && 'rounded-full',
           ]"
-          @keydown.space.prevent="(e:any) => (e.target as HTMLAnchorElement).click()"
+          @keydown.space="(e:any) => (e.target as HTMLAnchorElement).click()"
           @click="(e:any) => handleLinkClick(e, page)"
         >
           {{ page }}
@@ -195,7 +195,7 @@ const handleLinkClick = (e: MouseEvent, page = 1) => {
             props.shape === 'curved' && 'rounded-xl',
             props.shape === 'full' && 'rounded-full',
           ]"
-          @keydown.space.prevent="(e:any) => (e.target as HTMLAnchorElement).click()"
+          @keydown.space="(e:any) => (e.target as HTMLAnchorElement).click()"
           @click="(e:any) => handleLinkClick(e, lastPage)"
         >
           {{ lastPage }}
@@ -224,7 +224,7 @@ const handleLinkClick = (e: MouseEvent, page = 1) => {
           props.shape === 'curved' && 'rounded-xl',
           props.shape === 'full' && 'rounded-full',
         ]"
-        @keydown.space.prevent="(e:any) => (e.target as HTMLAnchorElement).click()"
+        @keydown.space="(e:any) => (e.target as HTMLAnchorElement).click()"
         @click="(e:any) => handleLinkClick(e, currentPage - 1)"
       >
         <BaseIcon name="lucide:chevron-left" class="block w-4 h-4" />
@@ -240,7 +240,7 @@ const handleLinkClick = (e: MouseEvent, page = 1) => {
           props.shape === 'curved' && 'rounded-xl',
           props.shape === 'full' && 'rounded-full',
         ]"
-        @keydown.space.prevent="(e:any) => (e.target as HTMLAnchorElement).click()"
+        @keydown.space="(e:any) => (e.target as HTMLAnchorElement).click()"
         @click="(e:any) => handleLinkClick(e, currentPage + 1)"
       >
         <BaseIcon name="lucide:chevron-right" class="block w-4 h-4" />

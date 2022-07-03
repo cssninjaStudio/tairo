@@ -69,7 +69,7 @@ watch(activeValue, (value) => {
           props.type === 'box' && !tab.icon && 'py-2',
         ]"
         tabindex="0"
-        @keydown.space.prevent="toggle(tab.value)"
+        @keydown.space="toggle(tab.value)"
         @click="toggle(tab.value)"
       >
         <BaseIcon v-if="tab.icon" :name="tab.icon" class="block w-5 h-5 mr-1" />

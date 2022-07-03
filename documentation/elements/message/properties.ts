@@ -17,17 +17,28 @@ export const properties = {
     {
       name: 'message',
       type: 'string',
-      required: 'true',
+      required: 'false',
       default: 'undefined',
       values: ['string'],
     },
     {
       name: 'icon',
-      type: 'boolean',
+      type: 'boolean | string',
       required: 'false',
       default: 'false',
-      values: ['boolean'],
+      values: ['boolean', 'string'],
     },
   ],
-  slots: [],
+  slots: [
+    {
+      name: '#default',
+      properties: ['null'],
+      description: 'Message content',
+    },
+    {
+      name: '#close-button',
+      properties: ['null'],
+      description: 'Close button content',
+    },
+  ],
 }

@@ -33,7 +33,7 @@ definePageMeta({
             <template #demo>
               <div class="flex items-end flex-wrap gap-4">
                 <BaseButton shape="straight">Button</BaseButton>
-                <BaseButton shape="rounded">Button</BaseButton>
+                <BaseButton>Button</BaseButton>
                 <BaseButton shape="curved">Button</BaseButton>
                 <BaseButton shape="full">Button</BaseButton>
               </div>
@@ -52,9 +52,7 @@ definePageMeta({
                 <BaseButton to="/elements/button" shape="straight">
                   Button
                 </BaseButton>
-                <BaseButton to="/elements/button" shape="rounded">
-                  Button
-                </BaseButton>
+                <BaseButton to="/elements/button">Button</BaseButton>
                 <BaseButton to="https://cssninja.io" shape="curved">
                   Button
                 </BaseButton>
@@ -79,12 +77,13 @@ definePageMeta({
           <DocComponent label="Solid button colors">
             <template #demo>
               <div class="flex items-end flex-wrap gap-4">
-                <BaseButton shape="rounded" color="primary">Button</BaseButton>
-                <BaseButton shape="rounded" color="success">Button</BaseButton>
-                <BaseButton shape="rounded" color="info">Button</BaseButton>
-                <BaseButton shape="rounded" color="warning">Button</BaseButton>
-                <BaseButton shape="rounded" color="danger">Button</BaseButton>
-                <BaseButton shape="rounded" color="muted">Button</BaseButton>
+                <BaseButton>Button</BaseButton>
+                <BaseButton color="primary">Button</BaseButton>
+                <BaseButton color="success">Button</BaseButton>
+                <BaseButton color="info">Button</BaseButton>
+                <BaseButton color="warning">Button</BaseButton>
+                <BaseButton color="danger">Button</BaseButton>
+                <BaseButton muted>Button</BaseButton>
               </div>
             </template>
             <template #code>
@@ -98,21 +97,11 @@ definePageMeta({
           <DocComponent label="Pastel button colors">
             <template #demo>
               <div class="flex items-end flex-wrap gap-4">
-                <BaseButton shape="rounded" color="primary" flavor="pastel">
-                  Button
-                </BaseButton>
-                <BaseButton shape="rounded" color="success" flavor="pastel">
-                  Button
-                </BaseButton>
-                <BaseButton shape="rounded" color="info" flavor="pastel">
-                  Button
-                </BaseButton>
-                <BaseButton shape="rounded" color="warning" flavor="pastel">
-                  Button
-                </BaseButton>
-                <BaseButton shape="rounded" color="danger" flavor="pastel">
-                  Button
-                </BaseButton>
+                <BaseButton color="primary" flavor="pastel">Button</BaseButton>
+                <BaseButton color="success" flavor="pastel">Button</BaseButton>
+                <BaseButton color="info" flavor="pastel">Button</BaseButton>
+                <BaseButton color="warning" flavor="pastel">Button</BaseButton>
+                <BaseButton color="danger" flavor="pastel">Button</BaseButton>
               </div>
             </template>
             <template #code>
@@ -126,21 +115,11 @@ definePageMeta({
           <DocComponent label="Outline button colors">
             <template #demo>
               <div class="flex items-end flex-wrap gap-4">
-                <BaseButton shape="rounded" color="primary" flavor="outline">
-                  Button
-                </BaseButton>
-                <BaseButton shape="rounded" color="success" flavor="outline">
-                  Button
-                </BaseButton>
-                <BaseButton shape="rounded" color="info" flavor="outline">
-                  Button
-                </BaseButton>
-                <BaseButton shape="rounded" color="warning" flavor="outline">
-                  Button
-                </BaseButton>
-                <BaseButton shape="rounded" color="danger" flavor="outline">
-                  Button
-                </BaseButton>
+                <BaseButton color="primary" flavor="outline">Button</BaseButton>
+                <BaseButton color="success" flavor="outline">Button</BaseButton>
+                <BaseButton color="info" flavor="outline">Button</BaseButton>
+                <BaseButton color="warning" flavor="outline">Button</BaseButton>
+                <BaseButton color="danger" flavor="outline">Button</BaseButton>
               </div>
             </template>
             <template #code>
@@ -154,24 +133,12 @@ definePageMeta({
           <DocComponent label="Button placeload insertion">
             <template #demo>
               <div class="flex items-end flex-wrap gap-4">
-                <BaseButton shape="rounded" color="default" loading>
-                  Button
-                </BaseButton>
-                <BaseButton shape="rounded" color="primary" loading>
-                  Button
-                </BaseButton>
-                <BaseButton shape="rounded" color="success" loading>
-                  Button
-                </BaseButton>
-                <BaseButton shape="rounded" color="info" loading>
-                  Button
-                </BaseButton>
-                <BaseButton shape="rounded" color="warning" loading>
-                  Button
-                </BaseButton>
-                <BaseButton shape="rounded" color="danger" loading>
-                  Button
-                </BaseButton>
+                <BaseButton color="default" loading>Button</BaseButton>
+                <BaseButton color="primary" loading>Button</BaseButton>
+                <BaseButton color="success" loading>Button</BaseButton>
+                <BaseButton color="info" loading>Button</BaseButton>
+                <BaseButton color="warning" loading>Button</BaseButton>
+                <BaseButton color="danger" loading>Button</BaseButton>
               </div>
             </template>
             <template #code>
@@ -185,27 +152,27 @@ definePageMeta({
           <DocComponent label="Button icons insertion">
             <template #demo>
               <div class="flex items-end flex-wrap gap-4">
-                <BaseButton shape="rounded" color="default">
+                <BaseButton color="default">
                   <BaseIcon name="lucide:moon" class="w-4 h-4 -ml-1" />
                   <span>Button</span>
                 </BaseButton>
-                <BaseButton shape="rounded" color="primary">
+                <BaseButton color="primary">
                   <span>Button</span>
                   <BaseIcon name="lucide:arrow-right" class="w-4 h-4 mr-1" />
                 </BaseButton>
-                <BaseButton shape="rounded" color="success">
+                <BaseButton color="success">
                   <BaseIcon name="cib:envato" class="w-4 h-4 -ml-1" />
                   <span>Button</span>
                 </BaseButton>
-                <BaseButton shape="rounded" color="info">
+                <BaseButton color="info">
                   <BaseIcon name="fa:twitter" class="w-4 h-4 -ml-1" />
                   <span>Button</span>
                 </BaseButton>
-                <BaseButton shape="rounded" color="warning">
+                <BaseButton color="warning">
                   <BaseIcon name="ion:shapes" class="w-4 h-4 -ml-1" />
                   <span>Button</span>
                 </BaseButton>
-                <BaseButton shape="rounded" color="danger">
+                <BaseButton color="danger">
                   <BaseIcon name="ph:heart-duotone" class="w-4 h-4 -ml-1" />
                   <span>Button</span>
                 </BaseButton>
@@ -222,24 +189,12 @@ definePageMeta({
           <DocComponent label="Button disabled state">
             <template #demo>
               <div class="flex items-end flex-wrap gap-4">
-                <BaseButton shape="rounded" color="default" disabled>
-                  Button
-                </BaseButton>
-                <BaseButton shape="rounded" color="primary" disabled>
-                  Button
-                </BaseButton>
-                <BaseButton shape="rounded" color="success" disabled>
-                  Button
-                </BaseButton>
-                <BaseButton shape="rounded" color="info" disabled>
-                  Button
-                </BaseButton>
-                <BaseButton shape="rounded" color="warning" disabled>
-                  Button
-                </BaseButton>
-                <BaseButton shape="rounded" color="danger" disabled>
-                  Button
-                </BaseButton>
+                <BaseButton color="default" disabled>Button</BaseButton>
+                <BaseButton color="primary" disabled>Button</BaseButton>
+                <BaseButton color="success" disabled>Button</BaseButton>
+                <BaseButton color="info" disabled>Button</BaseButton>
+                <BaseButton color="warning" disabled>Button</BaseButton>
+                <BaseButton color="danger" disabled>Button</BaseButton>
               </div>
             </template>
             <template #code>
@@ -253,15 +208,15 @@ definePageMeta({
           <DocComponent label="Setting a button group">
             <template #demo>
               <div class="flex items-end flex-wrap gap-2">
-                <BaseButton shape="rounded" color="default">
+                <BaseButton color="default">
                   <BaseIcon name="lucide:edit-3" class="w-3 h-3 -ml-1" />
                   <span>Edit</span>
                 </BaseButton>
-                <BaseButton shape="rounded" color="default">
+                <BaseButton color="default">
                   <BaseIcon name="lucide:eye" class="w-3 h-3 -ml-1" />
                   <span>View</span>
                 </BaseButton>
-                <BaseButton shape="rounded" color="primary" flavor="outline">
+                <BaseButton color="primary" flavor="outline">
                   <BaseIcon name="lucide:share-2" class="w-3 h-3 -ml-1" />
                   <span>Share</span>
                 </BaseButton>

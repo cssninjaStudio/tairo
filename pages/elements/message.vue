@@ -22,10 +22,10 @@ definePageMeta({
           <DocComponent label="Default message types">
             <template #demo>
               <div class="space-y-4 max-w-xs">
-                <BaseMessage type="success" message="A successful message." />
-                <BaseMessage type="info" message="An information message." />
-                <BaseMessage type="warning" message="A warning message." />
-                <BaseMessage type="danger" message="A destructive message." />
+                <BaseMessage>A successful message.</BaseMessage>
+                <BaseMessage type="info">An information message.</BaseMessage>
+                <BaseMessage type="warning">A warning message.</BaseMessage>
+                <BaseMessage type="danger">A destructive message.</BaseMessage>
               </div>
             </template>
             <template #code>
@@ -39,22 +39,16 @@ definePageMeta({
           <DocComponent label="Message icons example">
             <template #demo>
               <div class="space-y-4 max-w-xs">
-                <BaseMessage
-                  type="success"
-                  message="A successful message."
-                  icon
-                />
-                <BaseMessage
-                  type="info"
-                  message="An information message."
-                  icon
-                />
-                <BaseMessage type="warning" message="A warning message." icon />
-                <BaseMessage
-                  type="danger"
-                  message="A destructive message."
-                  icon
-                />
+                <BaseMessage icon>A successful message.</BaseMessage>
+                <BaseMessage type="info" icon>
+                  An information message.
+                </BaseMessage>
+                <BaseMessage type="warning" icon>
+                  A warning message.
+                </BaseMessage>
+                <BaseMessage type="danger" icon>
+                  A destructive message.
+                </BaseMessage>
               </div>
             </template>
             <template #code>
@@ -68,30 +62,21 @@ definePageMeta({
           <DocComponent label="Default message shapes">
             <template #demo>
               <div class="space-y-4 max-w-xs">
-                <BaseMessage
-                  type="success"
-                  message="A successful message."
-                  shape="straight"
-                  icon
-                />
-                <BaseMessage
-                  type="info"
-                  message="An information message."
-                  shape="rounded"
-                  icon
-                />
+                <BaseMessage shape="straight" icon>
+                  A successful message.
+                </BaseMessage>
+                <BaseMessage type="info" shape="rounded" icon>
+                  An information message.
+                </BaseMessage>
                 <BaseMessage
                   type="warning"
                   message="A warning message."
                   shape="curved"
                   icon
                 />
-                <BaseMessage
-                  type="danger"
-                  message="A destructive message."
-                  shape="full"
-                  icon
-                />
+                <BaseMessage type="danger" shape="full" icon>
+                  A destructive message.
+                </BaseMessage>
               </div>
             </template>
             <template #code>

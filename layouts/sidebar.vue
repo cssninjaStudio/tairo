@@ -9,7 +9,7 @@ const { activePanel, panelTransitionFrom, closePanel } = usePanels()
       <!-- Logo -->
       <div class="flex items-center justify-center w-full h-16">
         <NuxtLink to="/" class="flex items-center justify-center">
-          <Logo class="h-10 text-primary-500" />
+          <IconLogo class="h-10 text-primary-500" />
         </NuxtLink>
       </div>
 

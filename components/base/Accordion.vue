@@ -66,8 +66,8 @@ const toggle = (key: number) => {
         <summary
           class="list-none"
           tabindex="0"
-          @keydown.space.prevent="() => toggle(key)"
-          @click.prevent="() => toggle(key)"
+          @keydown.space="() => toggle(key)"
+          @click="() => toggle(key)"
         >
           <slot
             name="accordion-item-summary"
@@ -111,26 +111,7 @@ const toggle = (key: number) => {
                     : 'text-slate-400'
                 "
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                  aria-hidden="true"
-                  role="img"
-                  class="w-4 h-4"
-                  width="32"
-                  height="32"
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="m6 9l6 6l6-6"
-                  ></path>
-                </svg>
+                <IconChevronDown class="w-4 h-4" />
               </div>
               <div
                 v-else-if="props.action === 'plus'"
@@ -141,26 +122,7 @@ const toggle = (key: number) => {
                     : 'text-slate-400'
                 "
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                  aria-hidden="true"
-                  role="img"
-                  class="w-4 h-4"
-                  width="32"
-                  height="32"
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M12 5v14m-7-7h14"
-                  ></path>
-                </svg>
+                <IconPlus class="w-4 h-4" />
               </div>
             </div>
           </slot>

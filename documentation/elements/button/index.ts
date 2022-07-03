@@ -9,47 +9,48 @@ export const shapes = `
 
 export const links = `
 <template>
-<BaseButton to="/elements/button" shape="straight">
+  <BaseButton to="/elements/button" shape="straight">
     Button
-</BaseButton>
-<BaseButton to="/elements/button" shape="rounded">
+  </BaseButton>
+  <BaseButton to="/elements/button">
     Button
-</BaseButton>
-<BaseButton to="https://cssninja.io" shape="curved">
+  </BaseButton>
+  <BaseButton to="https://cssninja.io" shape="curved">
     Button
-</BaseButton>
-<BaseButton to="https://google.com" shape="full">
+  </BaseButton>
+  <BaseButton to="https://google.com" target="" rel="" shape="full">
     Button
-</BaseButton>
+  </BaseButton>
 </template>
 `
 
 export const solid = `
 <template>
-  <BaseButton shape="rounded" color="primary">Button</BaseButton>
-  <BaseButton shape="rounded" color="success">Button</BaseButton>
-  <BaseButton shape="rounded" color="info">Button</BaseButton>
-  <BaseButton shape="rounded" color="warning">Button</BaseButton>
-  <BaseButton shape="rounded" color="danger">Button</BaseButton>
-  <BaseButton shape="rounded" color="muted">Button</BaseButton>
+  <BaseButton>Button</BaseButton>
+  <BaseButton color="primary">Button</BaseButton>
+  <BaseButton color="success">Button</BaseButton>
+  <BaseButton color="info">Button</BaseButton>
+  <BaseButton color="warning">Button</BaseButton>
+  <BaseButton color="danger">Button</BaseButton>
+  <BaseButton muted>Button</BaseButton>
 </template>
 `
 
 export const pastel = `
 <template>
-  <BaseButton shape="rounded" color="primary" flavor="pastel">
+  <BaseButton color="primary" flavor="pastel">
     Button
   </BaseButton>
-  <BaseButton shape="rounded" color="success" flavor="pastel">
+  <BaseButton color="success" flavor="pastel">
     Button
   </BaseButton>
-  <BaseButton shape="rounded" color="info" flavor="pastel">
+  <BaseButton color="info" flavor="pastel">
     Button
   </BaseButton>
-  <BaseButton shape="rounded" color="warning" flavor="pastel">
+  <BaseButton color="warning" flavor="pastel">
     Button
   </BaseButton>
-  <BaseButton shape="rounded" color="danger" flavor="pastel">
+  <BaseButton color="danger" flavor="pastel">
     Button
   </BaseButton>
 </template>
@@ -57,19 +58,19 @@ export const pastel = `
 
 export const outline = `
 <template>
-  <BaseButton shape="rounded" color="primary" flavor="outline">
+  <BaseButton color="primary" flavor="outline">
     Button
   </BaseButton>
-  <BaseButton shape="rounded" color="success" flavor="outline">
+  <BaseButton color="success" flavor="outline">
     Button
   </BaseButton>
-  <BaseButton shape="rounded" color="info" flavor="outline">
+  <BaseButton color="info" flavor="outline">
     Button
   </BaseButton>
-  <BaseButton shape="rounded" color="warning" flavor="outline">
+  <BaseButton color="warning" flavor="outline">
     Button
   </BaseButton>
-  <BaseButton shape="rounded" color="danger" flavor="outline">
+  <BaseButton color="danger" flavor="outline">
     Button
   </BaseButton>
 </template>
@@ -77,22 +78,22 @@ export const outline = `
 
 export const loading = `
 <template>
-  <BaseButton shape="rounded" color="default" loading>
+  <BaseButton color="default" loading>
     Button
   </BaseButton>
-  <BaseButton shape="rounded" color="primary" loading>
+  <BaseButton color="primary" loading>
     Button
   </BaseButton>
-  <BaseButton shape="rounded" color="success" loading>
+  <BaseButton color="success" loading>
     Button
   </BaseButton>
-  <BaseButton shape="rounded" color="info" loading>
+  <BaseButton color="info" loading>
     Button
   </BaseButton>
-  <BaseButton shape="rounded" color="warning" loading>
+  <BaseButton color="warning" loading>
     Button
   </BaseButton>
-  <BaseButton shape="rounded" color="danger" loading>
+  <BaseButton color="danger" loading>
     Button
   </BaseButton>
 </template>
@@ -100,27 +101,27 @@ export const loading = `
 
 export const icons = `
 <template>
-  <BaseButton shape="rounded" color="default">
+  <BaseButton color="default">
     <BaseIcon name="lucide:moon" class="w-4 h-4 -ml-1" />
     <span>Button</span>
   </BaseButton>
-  <BaseButton shape="rounded" color="primary">
+  <BaseButton color="primary">
     <span>Button</span>
     <BaseIcon name="lucide:arrow-right" class="w-4 h-4 mr-1" />
   </BaseButton>
-  <BaseButton shape="rounded" color="success">
+  <BaseButton color="success">
     <BaseIcon name="cib:envato" class="w-4 h-4 -ml-1" />
     <span>Button</span>
   </BaseButton>
-  <BaseButton shape="rounded" color="info">
+  <BaseButton color="info">
     <BaseIcon name="fa:twitter" class="w-4 h-4 -ml-1" />
     <span>Button</span>
   </BaseButton>
-  <BaseButton shape="rounded" color="warning">
+  <BaseButton color="warning">
     <BaseIcon name="ion:shapes" class="w-4 h-4 -ml-1" />
     <span>Button</span>
   </BaseButton>
-  <BaseButton shape="rounded" color="danger">
+  <BaseButton color="danger">
     <BaseIcon name="ph:heart-duotone" class="w-4 h-4 -ml-1" />
     <span>Button</span>
   </BaseButton>
@@ -129,22 +130,22 @@ export const icons = `
 
 export const disabled = `
 <template>
-  <BaseButton shape="rounded" color="default" disabled>
+  <BaseButton color="default" disabled>
     Button
   </BaseButton>
-  <BaseButton shape="rounded" color="primary" disabled>
+  <BaseButton color="primary" disabled>
     Button
   </BaseButton>
-  <BaseButton shape="rounded" color="success" disabled>
+  <BaseButton color="success" disabled>
     Button
   </BaseButton>
-  <BaseButton shape="rounded" color="info" disabled>
+  <BaseButton color="info" disabled>
     Button
   </BaseButton>
-  <BaseButton shape="rounded" color="warning" disabled>
+  <BaseButton color="warning" disabled>
     Button
   </BaseButton>
-  <BaseButton shape="rounded" color="danger" disabled>
+  <BaseButton color="danger" disabled>
     Button
   </BaseButton>
 </template>
@@ -152,15 +153,15 @@ export const disabled = `
 
 export const group = `
 <template>
-  <BaseButton shape="rounded" color="default">
+  <BaseButton color="default">
     <BaseIcon name="lucide:edit-3" class="w-3 h-3 -ml-1" />
     <span>Edit</span>
   </BaseButton>
-  <BaseButton shape="rounded" color="default">
+  <BaseButton color="default">
     <BaseIcon name="lucide:eye" class="w-3 h-3 -ml-1" />
     <span>View</span>
   </BaseButton>
-  <BaseButton shape="rounded" color="primary" flavor="outline">
+  <BaseButton color="primary" flavor="outline">
     <BaseIcon name="lucide:share-2" class="w-3 h-3 -ml-1" />
     <span>Share</span>
   </BaseButton>

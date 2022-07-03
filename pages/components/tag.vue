@@ -40,7 +40,7 @@ definePageMeta({
             <template #demo>
               <div class="flex items-end flex-wrap gap-1">
                 <BaseTag shape="rounded" color="default">Label</BaseTag>
-                <BaseTag shape="rounded" color="muted">Label</BaseTag>
+                <BaseTag shape="rounded" muted>Label</BaseTag>
                 <BaseTag shape="rounded" color="primary">Label</BaseTag>
                 <BaseTag shape="rounded" color="success">Label</BaseTag>
                 <BaseTag shape="rounded" color="info">Label</BaseTag>

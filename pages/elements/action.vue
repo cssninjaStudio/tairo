@@ -77,7 +77,6 @@ definePageMeta({
             </template>
           </DocComponent>
         </DocSection>
-
         <!-- Action group -->
         <DocSection id="action-group" title="Actions group" tag="1.0.0">
           <DocComponent label="Actions inside a group">
@@ -90,7 +89,13 @@ definePageMeta({
                   View
                 </BaseButtonAction>
                 <BaseButtonAction shape="straight" class="focus:z-10">
-                  Edit
+                  <BaseIcon name="ph:pen" class="h-4 w-4" />
+                </BaseButtonAction>
+                <BaseButtonAction muted shape="straight" class="focus:z-10">
+                  Muted
+                </BaseButtonAction>
+                <BaseButtonAction disabled shape="straight" class="focus:z-10">
+                  Disabled
                 </BaseButtonAction>
                 <BaseButtonAction
                   shape="rounded"

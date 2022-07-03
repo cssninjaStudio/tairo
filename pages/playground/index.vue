@@ -1,89 +1,7 @@
 <script setup lang="ts">
 import { useBaseComponentMeta } from '~/documentation'
 
-const meta = useBaseComponentMeta()
-
-const toHyphen = (pascalCase: string) => {
-  return pascalCase.replace(/([A-Z])/g, '-$1').toLowerCase()
-}
-const formatPropName = (propName: string) => {
-  return propName === 'modelValue' ? 'v-model' : `${toHyphen(propName)}`
-}
-const formatPropValue = (defaultValue: any) => {
-  if (typeof defaultValue === 'undefined') {
-    return ''
-  }
-  return typeof defaultValue === 'string' ? `${defaultValue}` : defaultValue
-}
-const formatVBindShorthand = (propName: string, prop: any) => {
-  if (prop.type === Boolean) {
-    return ''
-  }
-
-  return propName !== 'modelValue' && typeof prop.default !== 'string'
-    ? ':'
-    : ''
-}
-
-const formatProp = (propName: string, prop: any) => {
-  let value = ''
-  // const value = formatPropValue(prop.default)
-
-  if (prop.type === Array) {
-    value = `="[]"`
-  } else if (prop.type !== Boolean) {
-    value = `="${formatPropValue(prop.default)}"`
-  }
-
-  // console.log(prop.type)
-
-  return `${formatVBindShorthand(propName, prop)}${formatPropName(
-    propName
-  )}${value}`
-}
-
-const getCompoCode = (component) => {
-  let code = `<${component.name}`
-  const props = component?.props ?? {}
-  const emits = (component?.emits ?? []).filter(
-    (event) => event !== 'update:modelValue'
-  )
-
-  const requiredProps = Object.keys(props).filter(
-    (prop) => props[prop].required
-  )
-  const optionalProps = Object.keys(props).filter(
-    (prop) => !props[prop].required
-  )
-
-  for (const prop of requiredProps) {
-    code += `\n  ${formatProp(prop, props[prop])}`
-  }
-
-  if (requiredProps.length > 0) {
-    code += '\n'
-  }
-
-  for (const prop of optionalProps) {
-    code += `\n  ${formatProp(prop, props[prop])}`
-  }
-
-  if (optionalProps.length > 0) {
-    code += '\n'
-  }
-
-  for (const event of emits) {
-    code += `\n  @${toHyphen(event)}="(value) => {}"`
-  }
-
-  if (emits.length > 0) {
-    code += '\n'
-  }
-
-  code += '/>'
-
-  return code
-}
+const { meta, getCode } = useBaseComponentMeta()
 
 const input = ref('')
 const filtered = computed(() => {
@@ -142,7 +60,7 @@ definePageMeta({
             <div class="grow pr-4">
               <BaseHeading size="md" weight="normal" lead="tight" class="mb-2">
                 <span class="text-slate-800 dark:text-white font-mono">
-                  <pre>{{ getCompoCode(compo) }}</pre>
+                  <pre>{{ getCode(compo) }}</pre>
                 </span>
               </BaseHeading>
             </div>

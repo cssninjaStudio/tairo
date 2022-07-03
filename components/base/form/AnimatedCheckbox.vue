@@ -62,14 +62,7 @@ watchEffect(updateCheckbox)
     />
     <label :for="animatedCheckboxId">
       <div ref="innerElement"></div>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 52 52"
-        class="text-current stroke-current"
-      >
-        <circle cx="26" cy="26" r="25" fill="none" />
-        <path fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
-      </svg>
+      <IconCheckCircle />
     </label>
   </div>
 </template>
@@ -126,7 +119,7 @@ watchEffect(updateCheckbox)
   opacity: 0;
 }
 
-.block label svg circle {
+.block label:deep(svg circle) {
   height: 32px;
   width: 32px;
   stroke-dasharray: 166;
@@ -137,7 +130,7 @@ watchEffect(updateCheckbox)
   fill: none;
 }
 
-.block label svg {
+.block label:deep(svg) {
   width: 32px;
   height: 32px;
   border-radius: 50%;
@@ -150,26 +143,26 @@ watchEffect(updateCheckbox)
   box-shadow: inset 0 0 0 currentColor;
 }
 
-.block label svg path {
+.block label:deep(svg path) {
   transform-origin: 50% 50%;
   stroke-dasharray: 48;
   stroke-dashoffset: 48;
   stroke: currentColor;
 }
 
-.block.is-checked label svg circle {
+.block.is-checked label:deep(svg circle) {
   animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) both;
 }
 
-.block.is-checked label svg path {
+.block.is-checked label:deep(svg path) {
   animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s both;
 }
 
-.block.is-unchecked label svg circle {
+.block.is-unchecked label:deep(svg circle) {
   animation: reverseCircle 0.6s cubic-bezier(0.65, 0, 0.45, 1) 0.2s both;
 }
 
-.block.is-unchecked label svg path {
+.block.is-unchecked label:deep(svg path) {
   animation: reverseCheck 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.1s both;
 }
 

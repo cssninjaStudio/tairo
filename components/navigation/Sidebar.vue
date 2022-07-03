@@ -127,7 +127,7 @@ const endSidebars = sidebars.filter((sidebar) => sidebar.position === 'end')
                 <NuxtLink
                   to="/"
                   class="relative block text-center"
-                  @keydown.space.prevent="
+                  @keydown.space="
                     () => {
                       toggleLayoutModal
                     }
@@ -172,7 +172,7 @@ const endSidebars = sidebars.filter((sidebar) => sidebar.position === 'end')
                 <NuxtLink
                   to="/"
                   class="relative block text-center"
-                  @keydown.space.prevent="
+                  @keydown.space="
                     () => {
                       toggleLayoutModal
                     }

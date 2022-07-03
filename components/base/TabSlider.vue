@@ -68,7 +68,7 @@ watch(activeValue, (value) => {
             activeValue === tab.value ? 'text-white' : 'text-slate-400',
             props.size === 2 ? 'w-1/2' : 'w-1/3',
           ]"
-          @keydown.space.prevent="toggle(tab.value)"
+          @keydown.space="toggle(tab.value)"
           @click="toggle(tab.value)"
         >
           <span>{{ tab.label }}</span>

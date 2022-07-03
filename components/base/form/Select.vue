@@ -81,20 +81,7 @@ watch(
       <div
         class="absolute top-0 right-0 h-10 w-10 flex justify-center items-center text-slate-400 transition-transform duration-300 group-focus-within:-rotate-180"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="h-4 w-4"
-        >
-          <polyline points="6 9 12 15 18 9"></polyline>
-        </svg>
+        <IconChevronDown class="h-4 w-4" />
       </div>
       <span
         v-if="props.invalid"

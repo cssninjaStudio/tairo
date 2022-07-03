@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { ComponentPublicInstance } from 'vue'
+
 export interface DocComponentProps {
   label?: string
 }
@@ -7,18 +9,20 @@ const props = withDefaults(defineProps<DocComponentProps>(), {
   label: undefined,
 })
 
+const demoSwitcher = ref<ComponentPublicInstance | null>(null)
+const codeSwitcher = ref<ComponentPublicInstance | null>(null)
 const activeTab = ref('demo')
-const hasFocusActive = ref(false)
+const focusActive = ref('')
 
 onKeyStroke(['ArrowRight'], () => {
-  if (hasFocusActive.value && activeTab.value === 'demo') {
-    activeTab.value = 'code'
+  if (focusActive.value && focusActive.value === 'demo') {
+    codeSwitcher.value?.$el?.focus()
   }
 })
 
 onKeyStroke(['ArrowLeft'], () => {
-  if (hasFocusActive.value && activeTab.value === 'code') {
-    activeTab.value = 'demo'
+  if (focusActive.value && focusActive.value === 'code') {
+    demoSwitcher.value?.$el?.focus()
   }
 })
 </script>
@@ -39,23 +43,25 @@ onKeyStroke(['ArrowLeft'], () => {
       <div class="flex-none flex items-center ml-auto pl-4 sm:pl-6">
         <div class="flex items-end">
           <BaseButtonAction
+            ref="demoSwitcher"
             shape="rounded"
             class="focus:z-10 rounded-r-none border-r-0"
             :muted="activeTab !== 'demo'"
             @click="activeTab = 'demo'"
-            @focus="hasFocusActive = true"
-            @focusout="hasFocusActive = false"
+            @focus="focusActive = 'demo'"
+            @focusout="focusActive = ''"
           >
             <BaseIcon name="cil:applications" class="mr-1.5 h-4 w-4" />
             <span>Demo</span>
           </BaseButtonAction>
           <BaseButtonAction
+            ref="codeSwitcher"
             shape="rounded"
             class="focus:z-10 rounded-l-none border-l-0"
             :muted="activeTab !== 'code'"
             @click="activeTab = 'code'"
-            @focus="hasFocusActive = true"
-            @focusout="hasFocusActive = false"
+            @focus="focusActive = 'code'"
+            @focusout="focusActive = ''"
           >
             <BaseIcon name="iconoir:terminal-outline" class="mr-1.5 h-4 w-4" />
             <span>Code</span>
