@@ -96,7 +96,7 @@ const isScrolled = computed(() => {
           <span
             class="flex items-center justify-center w-9 h-9 rounded-full bg-primary-700"
           >
-            <i class="i-ph-bell-duotone w-5 h-5 text-white"></i>
+            <BaseIcon name="ph:bell-duotone" class="w-5 h-5 text-white" />
           </span>
         </NuxtLink>
       </div>
@@ -115,7 +115,7 @@ const isScrolled = computed(() => {
           class="flex items-center justify-center w-9 h-9 rounded-full bg-primary-700 transition-all duration-300"
           @click="openPanel('activity')"
         >
-          <i class="i-ph-circles-four-duotone w-5 h-5 text-white"></i>
+          <BaseIcon name="ph:circles-four-duotone" class="w-5 h-5 text-white" />
         </button>
       </div>
     </div>

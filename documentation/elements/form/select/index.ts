@@ -87,7 +87,7 @@ export const icon = `
   <BaseFormSelect
     shape="rounded"
     label="Select a hero"
-    icon="i-icon-park-outline-muscle"
+    icon="icon-park-outline:muscle"
     >
     <option value="">Select a hero</option>
     <option value="Superman">Superman</option>

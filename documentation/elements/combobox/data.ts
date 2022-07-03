@@ -54,31 +54,31 @@ export const hobbies = [
     id: 1,
     name: 'Movies',
     text: 'Cinema & shows',
-    icon: 'i-ph-sword-duotone',
+    icon: 'ph:sword-duotone',
   },
   {
     id: 2,
     name: 'Travel',
     text: 'Tourism & travel',
-    icon: 'i-ph-airplane-duotone',
+    icon: 'ph:airplane-duotone',
   },
   {
     id: 3,
     name: 'Drinks',
     text: 'Wines & fine drinks',
-    icon: 'i-ph-brandy-duotone',
+    icon: 'ph:brandy-duotone',
   },
   {
     id: 4,
     name: 'Arts',
     text: 'Paintings & scultpure',
-    icon: 'i-ph-paint-brush-duotone',
+    icon: 'ph:paint-brush-duotone',
   },
   {
     id: 5,
     name: 'Karaoke',
     text: 'singing with friends',
-    icon: 'i-ph-microphone-stage-duotone',
+    icon: 'ph:microphone-stage-duotone',
   },
 ]
 

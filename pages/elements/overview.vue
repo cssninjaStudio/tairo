@@ -57,15 +57,19 @@ definePageMeta({
                 class="group inline-flex items-center font-text font-medium text-sm text-primary-500 mt-7 hover:opacity-90 transition-opacity"
               >
                 <span class="mr-1">Read the documentation</span>
-                <i
-                  class="i-lucide-arrow-right w-4 h-4 group-hover:translate-x-2 transition-transform duration-300"
-                ></i>
+                <BaseIcon
+                  name="lucide:arrow-right"
+                  class="w-4 h-4 group-hover:translate-x-2 transition-transform duration-300"
+                />
               </NuxtLink>
             </BaseCard>
           </div>
           <div class="grid grid-cols-2 gap-2 xl:gap-6">
             <BaseCard shape="rounded" class="p-8 text-center">
-              <i class="i-logos-nuxt-icon w-10 h-10 block mx-auto mb-2"></i>
+              <BaseIcon
+                name="logos:nuxt-icon"
+                class="w-10 h-10 block mx-auto mb-2"
+              />
               <BaseHeading
                 as="h4"
                 size="sm"
@@ -76,9 +80,10 @@ definePageMeta({
               </BaseHeading>
             </BaseCard>
             <BaseCard shape="rounded" class="p-8 text-center">
-              <i
-                class="i-vscode-icons-folder-type-typescript w-10 h-10 block mx-auto mb-2"
-              ></i>
+              <BaseIcon
+                name="vscode:icons-folder-type-typescript"
+                class="w-10 h-10 block mx-auto mb-2"
+              />
               <BaseHeading
                 as="h4"
                 size="sm"
@@ -89,9 +94,10 @@ definePageMeta({
               </BaseHeading>
             </BaseCard>
             <BaseCard shape="rounded" class="p-8 text-center">
-              <i
-                class="i-logos-tailwindcss-icon w-10 h-10 block mx-auto mb-2"
-              ></i>
+              <BaseIcon
+                name="logos:tailwindcss-icon"
+                class="w-10 h-10 block mx-auto mb-2"
+              />
               <BaseHeading
                 as="h4"
                 size="sm"
@@ -102,9 +108,10 @@ definePageMeta({
               </BaseHeading>
             </BaseCard>
             <BaseCard shape="rounded" class="p-8 text-center">
-              <i
-                class="i-logos-unocss w-10 h-10 block mx-auto scale-75 dark:invert mb-2"
-              ></i>
+              <BaseIcon
+                name="logos:unocss"
+                class="w-10 h-10 block mx-auto scale-75 dark:invert mb-2"
+              />
               <BaseHeading
                 as="h4"
                 size="sm"
@@ -135,7 +142,7 @@ definePageMeta({
             <!-- Feature -->
             <BaseCard shape="curved" class="flex items-center p-3">
               <BaseIconBox size="md" class="bg-success-100 text-success-500">
-                <i class="i-simple-icons-nuxtdotjs w-6 h-6"></i>
+                <BaseIcon name="simple-icons:nuxtdotjs" class="w-6 h-6" />
               </BaseIconBox>
               <div class="ml-3">
                 <BaseHeading
@@ -154,7 +161,10 @@ definePageMeta({
             <!-- Feature -->
             <BaseCard shape="curved" class="flex items-center p-3">
               <BaseIconBox size="md" class="bg-yellow-100 text-yellow-500">
-                <i class="i-teenyicons-typescript-outline w-6 h-6"></i>
+                <BaseIcon
+                  name="teenyicons:typescript-outline"
+                  class="w-6 h-6"
+                />
               </BaseIconBox>
               <div class="ml-3">
                 <BaseHeading
@@ -173,7 +183,7 @@ definePageMeta({
             <!-- Feature -->
             <BaseCard shape="curved" class="flex items-center p-3">
               <BaseIconBox size="md" class="bg-primary-100 text-primary-500">
-                <i class="i-simple-icons-vite w-6 h-6"></i>
+                <BaseIcon name="simple-icons:vite" class="w-6 h-6" />
               </BaseIconBox>
               <div class="ml-3">
                 <BaseHeading
@@ -192,7 +202,7 @@ definePageMeta({
             <!-- Feature -->
             <BaseCard shape="curved" class="flex items-center p-3">
               <BaseIconBox size="md" class="bg-sky-100 text-sky-500">
-                <i class="i-simple-icons-tailwindcss w-6 h-6"></i>
+                <BaseIcon name="simple-icons:tailwindcss" class="w-6 h-6" />
               </BaseIconBox>
               <div class="ml-3">
                 <BaseHeading
@@ -211,7 +221,7 @@ definePageMeta({
             <!-- Feature -->
             <BaseCard shape="curved" class="flex items-center p-3">
               <BaseIconBox size="md" class="bg-pink-100 text-pink-500">
-                <i class="i-ph-storefront-duotone w-6 h-6"></i>
+                <BaseIcon name="ph:storefront-duotone" class="w-6 h-6" />
               </BaseIconBox>
               <div class="ml-3">
                 <BaseHeading
@@ -230,7 +240,7 @@ definePageMeta({
             <!-- Feature -->
             <BaseCard shape="curved" class="flex items-center p-3">
               <BaseIconBox size="md" class="bg-lime-100 text-lime-500">
-                <i class="i-simple-icons-eslint w-6 h-6"></i>
+                <BaseIcon name="simple-icons:eslint" class="w-6 h-6" />
               </BaseIconBox>
               <div class="ml-3">
                 <BaseHeading

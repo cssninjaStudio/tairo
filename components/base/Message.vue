@@ -46,22 +46,26 @@ const props = withDefaults(defineProps<MessageProps>(), {
         props.type === 'danger' && 'bg-danger-500',
       ]"
     >
-      <i
+      <BaseIcon
         v-if="props.type === 'success'"
-        class="i-carbon-checkmark-filled w-5 h-5 text-white"
-      ></i>
-      <i
+        name="carbon:checkmark-filled"
+        class="w-5 h-5 text-white"
+      />
+      <BaseIcon
         v-else-if="props.type === 'info'"
-        class="i-akar-icons-info-fill w-5 h-5 text-white"
-      ></i>
-      <i
+        name="akar-icons:info-fill"
+        class="w-5 h-5 text-white"
+      />
+      <BaseIcon
         v-else-if="props.type === 'warning'"
-        class="i-ci-warning w-5 h-5 text-white"
-      ></i>
-      <i
+        name="ci:warning"
+        class="w-5 h-5 text-white"
+      />
+      <BaseIcon
         v-else-if="props.type === 'danger'"
-        class="i-ph-warning-octagon-fill w-5 h-5 text-white"
-      ></i>
+        name="ph:warning-octagon-fill"
+        class="w-5 h-5 text-white"
+      />
     </div>
     <span
       class="font-text text-sm text-slate-800 ml-3"
@@ -84,7 +88,7 @@ const props = withDefaults(defineProps<MessageProps>(), {
         props.type === 'danger' && 'dark:text-danger-500',
       ]"
     >
-      <i class="i-lucide-x w-4 h-4"></i>
+      <BaseIcon name="lucide:x" class="w-4 h-4" />
     </button>
   </div>
 </template>

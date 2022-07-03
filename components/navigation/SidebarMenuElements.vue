@@ -62,17 +62,18 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
             >
               Buttons
             </span>
-            <i
-              class="i-feather-chevron-down block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
+            <BaseIcon
+              name="feather:chevron-down"
+              class="block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
               :class="open ? 'rotate-180' : ''"
-            ></i>
+            />
           </a>
         </DisclosureButton>
 
         <Transition
           enter-active-class="transition-all duration-300 ease-out"
           enter-from-class="opacity-0 -translate-y-5"
-          enter-to-class=" opacity-100 translate-y-0"
+          enter-to-class="opacity-100 translate-y-0"
           leave-active-class="transition-all duration-300 ease-out"
           leave-from-class="opacity-100 translate-y-0"
           leave-to-class="opacity-0 -translate-y-5"
@@ -120,17 +121,18 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
             >
               Forms
             </span>
-            <i
-              class="i-feather-chevron-down block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
+            <BaseIcon
+              name="feather:chevron-down"
+              class="block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
               :class="open ? 'rotate-180' : ''"
-            ></i>
+            />
           </a>
         </DisclosureButton>
 
         <Transition
           enter-active-class="transition-all duration-300 ease-out"
           enter-from-class="opacity-0 -translate-y-5"
-          enter-to-class=" opacity-100 translate-y-0"
+          enter-to-class="opacity-100 translate-y-0"
           leave-active-class="transition-all duration-300 ease-out"
           leave-from-class="opacity-100 translate-y-0"
           leave-to-class="opacity-0 -translate-y-5"
@@ -202,17 +204,18 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
             >
               Switches
             </span>
-            <i
-              class="i-feather-chevron-down block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
+            <BaseIcon
+              name="feather:chevron-down"
+              class="block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
               :class="open ? 'rotate-180' : ''"
-            ></i>
+            />
           </a>
         </DisclosureButton>
 
         <Transition
           enter-active-class="transition-all duration-300 ease-out"
           enter-from-class="opacity-0 -translate-y-5"
-          enter-to-class=" opacity-100 translate-y-0"
+          enter-to-class="opacity-100 translate-y-0"
           leave-active-class="transition-all duration-300 ease-out"
           leave-from-class="opacity-100 translate-y-0"
           leave-to-class="opacity-0 -translate-y-5"
@@ -308,17 +311,18 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
             >
               Addons
             </span>
-            <i
-              class="i-feather-chevron-down block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
+            <BaseIcon
+              name="feather:chevron-down"
+              class="block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
               :class="open ? 'rotate-180' : ''"
-            ></i>
+            />
           </a>
         </DisclosureButton>
 
         <Transition
           enter-active-class="transition-all duration-300 ease-out"
           enter-from-class="opacity-0 -translate-y-5"
-          enter-to-class=" opacity-100 translate-y-0"
+          enter-to-class="opacity-100 translate-y-0"
           leave-active-class="transition-all duration-300 ease-out"
           leave-from-class="opacity-100 translate-y-0"
           leave-to-class="opacity-0 -translate-y-5"

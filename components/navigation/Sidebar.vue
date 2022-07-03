@@ -82,7 +82,7 @@ const endSidebars = sidebars.filter((sidebar) => sidebar.position === 'end')
             class="flex xl:hidden items-center justify-center h-10 w-10 rounded-full ml-auto text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-colors duration-300"
             @click="isSidebarOpened = false"
           >
-            <i class="i-feather-chevron-left w-6 h-6"></i>
+            <BaseIcon name="feather:chevron-left" class="w-6 h-6" />
           </button>
         </div>
         <!-- Body -->
@@ -152,10 +152,7 @@ const endSidebars = sidebars.filter((sidebar) => sidebar.position === 'end')
                     <div
                       class="absolute top-0 right-0 w-6 h-6 flex items-center justify-center bg-success-500 text-white rounded-full"
                     >
-                      <i
-                        aria-hidden="true"
-                        class="i-lucide-check w-3 h-3 block"
-                      ></i>
+                      <BaseIcon name="lucide:check" class="w-3 h-3 block" />
                     </div>
                   </div>
 
@@ -200,10 +197,7 @@ const endSidebars = sidebars.filter((sidebar) => sidebar.position === 'end')
                     <div
                       class="absolute top-0 right-0 w-6 h-6 flex items-center justify-center bg-success-500 text-white rounded-full"
                     >
-                      <i
-                        aria-hidden="true"
-                        class="i-lucide-check w-3 h-3 block"
-                      ></i>
+                      <BaseIcon name="lucide:check" class="w-3 h-3 block" />
                     </div>
                   </div>
 

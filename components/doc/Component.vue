@@ -40,7 +40,7 @@ const activeTab = ref('demo')
                   : 'text-slate-600 border-transparent'
               "
             >
-              <i class="i-cil-applications mr-1.5 h-4 w-4"></i>
+              <BaseIcon name="cil:applications" class="mr-1.5 h-4 w-4" />
               <span class="sr-only lg:not-sr-only leading-6">Demo</span>
             </span>
           </button>
@@ -57,7 +57,10 @@ const activeTab = ref('demo')
                   : 'text-slate-600 border-transparent'
               "
             >
-              <i class="i-iconoir-terminal-outline mr-1.5 h-4 w-4"></i>
+              <BaseIcon
+                name="iconoir:terminal-outline"
+                class="mr-1.5 h-4 w-4"
+              />
               <span class="sr-only lg:not-sr-only leading-6">Code</span>
             </span>
           </button>

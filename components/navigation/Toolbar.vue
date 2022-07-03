@@ -35,7 +35,7 @@ const route = useRoute()
       class="flex items-center justify-center w-9 h-9 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 ring-1 ring-transparent hover:ring-offset-4 hover:ring-primary-500 dark:ring-offset-slate-900 transition-all duration-300"
       @click="openPanel('activity')"
     >
-      <i class="i-ph-circles-four-duotone w-5 h-5 text-slate-400"></i>
+      <BaseIcon name="ph:circles-four-duotone" class="w-5 h-5 text-slate-400" />
     </button>
 
     <NavigationToolbarAccountMenu />

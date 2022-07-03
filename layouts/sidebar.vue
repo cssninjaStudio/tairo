@@ -9,11 +9,7 @@ const { activePanel, panelTransitionFrom, closePanel } = usePanels()
       <!-- Logo -->
       <div class="flex items-center justify-center w-full h-16">
         <NuxtLink to="/" class="flex items-center justify-center">
-          <img
-            class="block h-10"
-            src="/img/logos/logo/logo.svg"
-            alt="Tairo logo"
-          />
+          <Logo class="h-10 text-primary-500" />
         </NuxtLink>
       </div>
 

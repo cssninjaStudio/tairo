@@ -13,7 +13,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
           <span
             class="flex items-center justify-center w-9 h-9 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700"
           >
-            <i class="i-ph-bell-duotone w-5 h-5 text-slate-400"></i>
+            <BaseIcon name="ph:bell-duotone" class="w-5 h-5 text-slate-400" />
           </span>
         </button>
       </MenuButton>

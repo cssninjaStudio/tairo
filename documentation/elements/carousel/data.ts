@@ -143,72 +143,72 @@ export const team = [
 
 export const topics = [
   {
-    icon: 'i-ph-megaphone-simple-duotone',
+    icon: 'ph:megaphone-simple-duotone',
     title: 'Marketing',
     link: '/',
   },
   {
-    icon: 'i-ph-chart-bar-duotone',
+    icon: 'ph:chart-bar-duotone',
     title: 'Analytics',
     link: '/',
   },
   {
-    icon: 'i-ph-storefront-duotone',
+    icon: 'ph:storefront-duotone',
     title: 'Ecommerce',
     link: '/',
   },
   {
-    icon: 'i-ph-rocket-duotone',
+    icon: 'ph:rocket-duotone',
     title: 'Startups',
     link: '/',
   },
   {
-    icon: 'i-ph-bank-duotone',
+    icon: 'ph:bank-duotone',
     title: 'Funding',
     link: '/',
   },
   {
-    icon: 'i-ph-app-window-duotone',
+    icon: 'ph:app-window-duotone',
     title: 'SEO',
     link: '/',
   },
   {
-    icon: 'i-ph-sketch-logo-duotone',
+    icon: 'ph:sketch-logo-duotone',
     title: 'Product',
     link: '/',
   },
   {
-    icon: 'i-ph-heartbeat-duotone',
+    icon: 'ph:heartbeat-duotone',
     title: 'Health',
     link: '/',
   },
   {
-    icon: 'i-ph-pen-nib-duotone',
+    icon: 'ph:pen-nib-duotone',
     title: 'Content',
     link: '/',
   },
   {
-    icon: 'i-ph-briefcase-duotone',
+    icon: 'ph:briefcase-duotone',
     title: 'Business',
     link: '/',
   },
   {
-    icon: 'i-ph-leaf-duotone',
+    icon: 'ph:leaf-duotone',
     title: 'Ecology',
     link: '/',
   },
   {
-    icon: 'i-ph-flask-duotone',
+    icon: 'ph:flask-duotone',
     title: 'Experiments',
     link: '/',
   },
   {
-    icon: 'i-ph-users-three-duotone',
+    icon: 'ph:users-three-duotone',
     title: 'Jobs',
     link: '/',
   },
   {
-    icon: 'i-ph-buildings-duotone',
+    icon: 'ph:buildings-duotone',
     title: 'Enterprise',
     link: '/',
   },

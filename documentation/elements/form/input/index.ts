@@ -64,7 +64,7 @@ export const icon = `
     shape="straight"
     label="Search"
     placeholder="Enter search terms..."
-    icon="i-lucide-search"
+    icon="lucide:search"
   />
 </template>
 `
@@ -76,7 +76,7 @@ export const focus = `
     shape="rounded"
     label="Email Address"
     placeholder="Enter your email..."
-    icon="i-lucide-mail"
+    icon="lucide:mail"
     color-focus
   />
 </template>
@@ -88,7 +88,7 @@ export const loading = `
     shape="rounded"
     label="Email Address"
     placeholder="Enter your email..."
-    icon="i-lucide-mail"
+    icon="lucide:mail"
     loading
   />
 </template>
@@ -100,7 +100,7 @@ export const disabled = `
     shape="rounded"
     label="Email Address"
     placeholder="Enter your email..."
-    icon="i-lucide-mail"
+    icon="lucide:mail"
     disabled
   />
 </template>
@@ -112,7 +112,7 @@ export const invalid = `
   shape="rounded"
   label="Email Address"
   placeholder="Enter your email..."
-  icon="i-lucide-mail"
+  icon="lucide:mail"
   invalid
 />
 </template>

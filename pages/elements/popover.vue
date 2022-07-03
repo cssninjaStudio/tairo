@@ -36,7 +36,7 @@ definePageMeta({
               <div class="flex items-end flex-wrap gap-6">
                 <BasePopover size="sm">
                   <span class="flex items-center text-slate-500">
-                    <i class="i-lucide-help-circle w-4 h-4 mr-1"></i>
+                    <BaseIcon name="lucide:help-circle" class="w-4 h-4 mr-1" />
                     <span class="font-text text-sm">Help text</span>
                   </span>
 
@@ -46,14 +46,14 @@ definePageMeta({
                       subtitle="Managing cookies"
                       text="Lorem ipsum dolor sit amet, consectetur adipiscing elit solor
                       moranitur lobis em."
-                      icon="i-lucide-cookie"
+                      icon="lucide:cookie"
                     />
                   </template>
                 </BasePopover>
 
                 <BasePopover size="sm">
                   <span class="flex items-center text-slate-500">
-                    <i class="i-lucide-help-circle w-4 h-4 mr-1"></i>
+                    <BaseIcon name="lucide:help-circle" class="w-4 h-4 mr-1" />
                     <span class="font-text text-sm">Help text</span>
                   </span>
 
@@ -63,7 +63,7 @@ definePageMeta({
                       subtitle="Adding new widgets"
                       text="Lorem ipsum dolor sit amet, consectetur adipiscing elit solor
                       moranitur lobis em."
-                      icon="i-lucide-layout-dashboard"
+                      icon="lucide:layout-dashboard"
                       icon-color="success"
                     />
                   </template>
@@ -83,7 +83,7 @@ definePageMeta({
               <div class="flex items-end justify-end gap-6">
                 <BasePopover size="sm" orientation="end">
                   <span class="flex items-center text-slate-500">
-                    <i class="i-lucide-help-circle w-4 h-4 mr-1"></i>
+                    <BaseIcon name="lucide:help-circle" class="w-4 h-4 mr-1" />
                     <span class="font-text text-sm">Help text</span>
                   </span>
 
@@ -93,7 +93,7 @@ definePageMeta({
                       subtitle="Adding new designs"
                       text="Lorem ipsum dolor sit amet, consectetur adipiscing elit solor
                       moranitur lobis em."
-                      icon="i-lucide-gem"
+                      icon="lucide:gem"
                       icon-color="info"
                     />
                   </template>
@@ -101,7 +101,7 @@ definePageMeta({
 
                 <BasePopover size="sm" orientation="end">
                   <span class="flex items-center text-slate-500">
-                    <i class="i-lucide-help-circle w-4 h-4 mr-1"></i>
+                    <BaseIcon name="lucide:help-circle" class="w-4 h-4 mr-1" />
                     <span class="font-text text-sm">Help text</span>
                   </span>
 
@@ -111,7 +111,7 @@ definePageMeta({
                       subtitle="Handling errors"
                       text="Lorem ipsum dolor sit amet, consectetur adipiscing elit solor
                       moranitur lobis em."
-                      icon="i-lucide-x-octagon"
+                      icon="lucide:x-octagon"
                       icon-color="danger"
                     />
                   </template>
@@ -151,7 +151,7 @@ definePageMeta({
                         {
                           title: 'Projects',
                           subtitle: '154 projects',
-                          icon: 'i-ph-briefcase-duotone',
+                          icon: 'ph:briefcase-duotone',
                         },
                       ]"
                       image="/img/avatars/3.svg"
@@ -199,7 +199,7 @@ definePageMeta({
                         {
                           title: 'Projects',
                           subtitle: '56 projects',
-                          icon: 'i-ph-briefcase-duotone',
+                          icon: 'ph:briefcase-duotone',
                         },
                       ]"
                       image="/img/avatars/2.svg"

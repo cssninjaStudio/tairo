@@ -34,7 +34,7 @@ const props = defineProps<PopoverContentDualProps>()
             size="xs"
             class="bg-primary-100 text-primary-500 dark:bg-primary-600 dark:text-white mr-2"
           >
-            <i class="w-4 h-4" :class="stat.icon"></i>
+            <BaseIcon :name="stat.icon" class="w-4 h-4" />
           </BaseIconBox>
           <BaseAvatar
             v-if="stat.image && !stat.icon"

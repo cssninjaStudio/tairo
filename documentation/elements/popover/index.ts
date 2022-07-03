@@ -2,7 +2,7 @@ export const helpLeft = `
 <template>
   <BasePopover size="sm">
     <span class="flex items-center text-slate-500">
-      <i class="i-lucide-help-circle w-4 h-4 mr-1"></i>
+      <BaseIcon name="lucide:help-circle" class="w-4 h-4 mr-1" />
       <span class="font-text text-sm">Help text</span>
     </span>
 
@@ -12,7 +12,7 @@ export const helpLeft = `
         subtitle="Managing cookies"
         text="Lorem ipsum dolor sit amet, consectetur adipiscing elit solor
         moranitur lobis em."
-        icon="i-lucide-cookie"
+        icon="lucide:cookie"
       />
     </template>
   </BasePopover>
@@ -23,7 +23,7 @@ export const helpRight = `
 <template>
   <BasePopover size="sm" orientation="end">
     <span class="flex items-center justify-end text-slate-500">
-      <i class="i-lucide-help-circle w-4 h-4 mr-1"></i>
+      <BaseIcon name="lucide:help-circle" class="w-4 h-4 mr-1" />
       <span class="font-text text-sm">Help text</span>
     </span>
 
@@ -33,7 +33,7 @@ export const helpRight = `
         subtitle="Managing cookies"
         text="Lorem ipsum dolor sit amet, consectetur adipiscing elit solor
         moranitur lobis em."
-        icon="i-lucide-cookie"
+        icon="lucide:cookie"
       />
     </template>
   </BasePopover>
@@ -64,7 +64,7 @@ export const dualLeft = `
           {
             title: 'Projects',
             subtitle: '154 projects',
-            icon: 'i-ph-briefcase-duotone',
+            icon: 'ph:briefcase-duotone',
           },
         ]"
         image="/img/avatars/3.svg"
@@ -104,7 +104,7 @@ export const dualRight = `
           {
             title: 'Projects',
             subtitle: '154 projects',
-            icon: 'i-ph-briefcase-duotone',
+            icon: 'ph:briefcase-duotone',
           },
         ]"
         image="/img/avatars/3.svg"

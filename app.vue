@@ -28,6 +28,9 @@ useHead({
       href: '/img/favicon.png',
     },
   ],
+  htmlAttrs: {
+    lang: 'en',
+  },
 })
 </script>
 

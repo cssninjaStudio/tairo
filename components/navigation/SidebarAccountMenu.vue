@@ -65,7 +65,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                     : 'text-slate-500',
                 ]"
               >
-                <i class="i-ph-user-circle-duotone w-5 h-5"></i>
+                <BaseIcon name="ph:user-circle-duotone" class="w-5 h-5" />
                 <div class="ml-3">
                   <h6
                     class="font-main font-semibold text-xs leading-none text-slate-800 dark:text-white"
@@ -90,7 +90,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                     : 'text-slate-500',
                 ]"
               >
-                <i class="i-ph-briefcase-duotone w-5 h-5"></i>
+                <BaseIcon name="ph:briefcase-duotone" class="w-5 h-5" />
                 <div class="ml-3">
                   <h6
                     class="font-main font-semibold text-xs leading-none text-slate-800 dark:text-white"
@@ -113,7 +113,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                     : 'text-slate-500',
                 ]"
               >
-                <i class="i-ph-users-three-duotone w-5 h-5"></i>
+                <BaseIcon name="ph:users-three-duotone" class="w-5 h-5" />
                 <div class="ml-3">
                   <h6
                     class="font-main font-semibold text-xs leading-none text-slate-800 dark:text-white"
@@ -137,7 +137,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                     : 'text-slate-500',
                 ]"
               >
-                <i class="i-ph-gear-six-duotone w-5 h-5"></i>
+                <BaseIcon name="ph:gear-six-duotone" class="w-5 h-5" />
                 <div class="ml-3">
                   <h6
                     class="font-main font-semibold text-xs leading-none text-slate-800 dark:text-white"
@@ -156,7 +156,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
             <BaseButton
               color="primary"
               shape="curved"
-              icon="i-ph-lock-duotone"
+              icon="ph:lock-duotone"
               class="w-full"
             >
               <span>Logout</span>

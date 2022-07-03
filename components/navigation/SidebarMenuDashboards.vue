@@ -14,17 +14,18 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
             >
               Personal
             </span>
-            <i
-              class="i-feather-chevron-down block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
+            <BaseIcon
+              name="feather:chevron-down"
+              class="block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
               :class="open ? 'rotate-180' : ''"
-            ></i>
+            />
           </a>
         </DisclosureButton>
 
         <Transition
           enter-active-class="transition-all duration-300 ease-out"
           enter-from-class="opacity-0 -translate-y-5"
-          enter-to-class=" opacity-100 translate-y-0"
+          enter-to-class="opacity-100 translate-y-0"
           leave-active-class="transition-all duration-300 ease-out"
           leave-from-class="opacity-100 translate-y-0"
           leave-to-class="opacity-0 -translate-y-5"
@@ -37,7 +38,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                     to="/"
                     class="flex items-center text-slate-400 hover:text-primary-500 transition-colors duration-300"
                   >
-                    <i class="i-ph-coffee-duotone w-5 h-5 mr-2"></i>
+                    <BaseIcon name="ph:coffee-duotone" class="w-5 h-5 mr-2" />
                     <span class="font-text text-xs">Personal V1</span>
                   </NuxtLink>
                 </li>
@@ -46,7 +47,10 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                     to="/"
                     class="flex items-center text-slate-400 hover:text-primary-500 transition-colors duration-300"
                   >
-                    <i class="i-ph-chart-pie-slice-duotone w-5 h-5 mr-2"></i>
+                    <BaseIcon
+                      name="ph:chart-pie-slice-duotone"
+                      class="w-5 h-5 mr-2"
+                    />
                     <span class="font-text text-xs">Personal V2</span>
                   </NuxtLink>
                 </li>
@@ -55,7 +59,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                     to="/"
                     class="flex items-center text-slate-400 hover:text-primary-500 transition-colors duration-300"
                   >
-                    <i class="i-ph-cactus-duotone w-5 h-5 mr-2"></i>
+                    <BaseIcon name="ph:cactus-duotone" class="w-5 h-5 mr-2" />
                     <span class="font-text text-xs">Personal V3</span>
                   </NuxtLink>
                 </li>
@@ -75,17 +79,18 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
             >
               Finance
             </span>
-            <i
-              class="i-feather-chevron-down block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
+            <BaseIcon
+              name="feather:chevron-down"
+              class="block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
               :class="open ? 'rotate-180' : ''"
-            ></i>
+            />
           </a>
         </DisclosureButton>
 
         <Transition
           enter-active-class="transition-all duration-300 ease-out"
           enter-from-class="opacity-0 -translate-y-5"
-          enter-to-class=" opacity-100 translate-y-0"
+          enter-to-class="opacity-100 translate-y-0"
           leave-active-class="transition-all duration-300 ease-out"
           leave-from-class="opacity-100 translate-y-0"
           leave-to-class="opacity-0 -translate-y-5"
@@ -98,7 +103,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                     to="/"
                     class="flex items-center text-slate-400 hover:text-primary-500 transition-colors duration-300"
                   >
-                    <i class="i-ph-gauge-duotone w-5 h-5 mr-2"></i>
+                    <BaseIcon name="ph:gauge-duotone" class="w-5 h-5 mr-2" />
                     <span class="font-text text-xs">Analytics dashboard</span>
                   </NuxtLink>
                 </li>
@@ -107,7 +112,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                     to="/"
                     class="flex items-center text-slate-400 hover:text-primary-500 transition-colors duration-300"
                   >
-                    <i class="i-ph-coins-duotone w-5 h-5 mr-2"></i>
+                    <BaseIcon name="ph:coins-duotone" class="w-5 h-5 mr-2" />
                     <span class="font-text text-xs">Stocks dashboard</span>
                   </NuxtLink>
                 </li>
@@ -116,7 +121,10 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                     to="/"
                     class="flex items-center text-slate-400 hover:text-primary-500 transition-colors duration-300"
                   >
-                    <i class="i-ph-shopping-cart-duotone w-5 h-5 mr-2"></i>
+                    <BaseIcon
+                      name="ph:shopping-cart-duotone"
+                      class="w-5 h-5 mr-2"
+                    />
                     <span class="font-text text-xs">Sales dashboard</span>
                   </NuxtLink>
                 </li>
@@ -136,17 +144,18 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
             >
               Banking
             </span>
-            <i
-              class="i-feather-chevron-down block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
+            <BaseIcon
+              name="feather:chevron-down"
+              class="block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
               :class="open ? 'rotate-180' : ''"
-            ></i>
+            />
           </a>
         </DisclosureButton>
 
         <Transition
           enter-active-class="transition-all duration-300 ease-out"
           enter-from-class="opacity-0 -translate-y-5"
-          enter-to-class=" opacity-100 translate-y-0"
+          enter-to-class="opacity-100 translate-y-0"
           leave-active-class="transition-all duration-300 ease-out"
           leave-from-class="opacity-100 translate-y-0"
           leave-to-class="opacity-0 -translate-y-5"
@@ -159,7 +168,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                     to="/"
                     class="flex items-center text-slate-400 hover:text-primary-500 transition-colors duration-300"
                   >
-                    <i class="i-ph-bank-duotone w-5 h-5 mr-2"></i>
+                    <BaseIcon name="ph:bank-duotone" class="w-5 h-5 mr-2" />
                     <span class="font-text text-xs">Banking V1</span>
                   </NuxtLink>
                 </li>
@@ -168,7 +177,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                     to="/"
                     class="flex items-center text-slate-400 hover:text-primary-500 transition-colors duration-300"
                   >
-                    <i class="i-ph-bank-duotone w-5 h-5 mr-2"></i>
+                    <BaseIcon name="ph:bank-duotone" class="w-5 h-5 mr-2" />
                     <span class="font-text text-xs">Banking V2</span>
                   </NuxtLink>
                 </li>
@@ -177,7 +186,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                     to="/"
                     class="flex items-center text-slate-400 hover:text-primary-500 transition-colors duration-300"
                   >
-                    <i class="i-ph-bank-duotone w-5 h-5 mr-2"></i>
+                    <BaseIcon name="ph:bank-duotone" class="w-5 h-5 mr-2" />
                     <span class="font-text text-xs">Banking V3</span>
                   </NuxtLink>
                 </li>
@@ -197,17 +206,18 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
             >
               Business
             </span>
-            <i
-              class="i-feather-chevron-down block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
+            <BaseIcon
+              name="feather:chevron-down"
+              class="block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
               :class="open ? 'rotate-180' : ''"
-            ></i>
+            />
           </a>
         </DisclosureButton>
 
         <Transition
           enter-active-class="transition-all duration-300 ease-out"
           enter-from-class="opacity-0 -translate-y-5"
-          enter-to-class=" opacity-100 translate-y-0"
+          enter-to-class="opacity-100 translate-y-0"
           leave-active-class="transition-all duration-300 ease-out"
           leave-from-class="opacity-100 translate-y-0"
           leave-to-class="opacity-0 -translate-y-5"
@@ -220,7 +230,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                     to="/"
                     class="flex items-center text-slate-400 hover:text-primary-500 transition-colors duration-300"
                   >
-                    <i class="i-ph-airplane-duotone w-5 h-5 mr-2"></i>
+                    <BaseIcon name="ph:airplane-duotone" class="w-5 h-5 mr-2" />
                     <span class="font-text text-xs">Flights booking</span>
                   </NuxtLink>
                 </li>
@@ -229,7 +239,10 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                     to="/"
                     class="flex items-center text-slate-400 hover:text-primary-500 transition-colors duration-300"
                   >
-                    <i class="i-ph-buildings-duotone w-5 h-5 mr-2"></i>
+                    <BaseIcon
+                      name="ph:buildings-duotone"
+                      class="w-5 h-5 mr-2"
+                    />
                     <span class="font-text text-xs">Company board</span>
                   </NuxtLink>
                 </li>
@@ -238,7 +251,10 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                     to="/"
                     class="flex items-center text-slate-400 hover:text-primary-500 transition-colors duration-300"
                   >
-                    <i class="i-ph-users-four-duotone w-5 h-5 mr-2"></i>
+                    <BaseIcon
+                      name="ph:users-four-duotone"
+                      class="w-5 h-5 mr-2"
+                    />
                     <span class="font-text text-xs">HR board</span>
                   </NuxtLink>
                 </li>
@@ -247,7 +263,10 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                     to="/"
                     class="flex items-center text-slate-400 hover:text-primary-500 transition-colors duration-300"
                   >
-                    <i class="i-ph-graduation-cap-duotone w-5 h-5 mr-2"></i>
+                    <BaseIcon
+                      name="ph:graduation-cap-duotone"
+                      class="w-5 h-5 mr-2"
+                    />
                     <span class="font-text text-xs">Course dashboard</span>
                   </NuxtLink>
                 </li>
@@ -256,7 +275,10 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                     to="/"
                     class="flex items-center text-slate-400 hover:text-primary-500 transition-colors duration-300"
                   >
-                    <i class="i-ph-briefcase-duotone w-5 h-5 mr-2"></i>
+                    <BaseIcon
+                      name="ph:briefcase-duotone"
+                      class="w-5 h-5 mr-2"
+                    />
                     <span class="font-text text-xs">Jobs dashboard</span>
                   </NuxtLink>
                 </li>
@@ -276,17 +298,18 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
             >
               Lifestyle
             </span>
-            <i
-              class="i-feather-chevron-down block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
+            <BaseIcon
+              name="feather:chevron-down"
+              class="block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
               :class="open ? 'rotate-180' : ''"
-            ></i>
+            />
           </a>
         </DisclosureButton>
 
         <Transition
           enter-active-class="transition-all duration-300 ease-out"
           enter-from-class="opacity-0 -translate-y-5"
-          enter-to-class=" opacity-100 translate-y-0"
+          enter-to-class="opacity-100 translate-y-0"
           leave-active-class="transition-all duration-300 ease-out"
           leave-from-class="opacity-100 translate-y-0"
           leave-to-class="opacity-0 -translate-y-5"
@@ -299,7 +322,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                     to="/"
                     class="flex items-center text-slate-400 hover:text-primary-500 transition-colors duration-300"
                   >
-                    <i class="i-ph-crown-duotone w-5 h-5 mr-2"></i>
+                    <BaseIcon name="ph:crown-duotone" class="w-5 h-5 mr-2" />
                     <span class="font-text text-xs">Influencer</span>
                   </NuxtLink>
                 </li>
@@ -308,7 +331,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                     to="/"
                     class="flex items-center text-slate-400 hover:text-primary-500 transition-colors duration-300"
                   >
-                    <i class="i-ph-confetti-duotone w-5 h-5 mr-2"></i>
+                    <BaseIcon name="ph:confetti-duotone" class="w-5 h-5 mr-2" />
                     <span class="font-text text-xs">Hobbies</span>
                   </NuxtLink>
                 </li>
@@ -317,7 +340,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                     to="/"
                     class="flex items-center text-slate-400 hover:text-primary-500 transition-colors duration-300"
                   >
-                    <i class="i-ph-pill-duotone w-5 h-5 mr-2"></i>
+                    <BaseIcon name="ph:pill-duotone" class="w-5 h-5 mr-2" />
                     <span class="font-text text-xs">Health</span>
                   </NuxtLink>
                 </li>
@@ -326,7 +349,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                     to="/"
                     class="flex items-center text-slate-400 hover:text-primary-500 transition-colors duration-300"
                   >
-                    <i class="i-ph-pen-nib-duotone w-5 h-5 mr-2"></i>
+                    <BaseIcon name="ph:pen-nib-duotone" class="w-5 h-5 mr-2" />
                     <span class="font-text text-xs">Writer</span>
                   </NuxtLink>
                 </li>
@@ -335,7 +358,10 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                     to="/"
                     class="flex items-center text-slate-400 hover:text-primary-500 transition-colors duration-300"
                   >
-                    <i class="i-ph-video-camera-duotone w-5 h-5 mr-2"></i>
+                    <BaseIcon
+                      name="ph:video-camera-duotone"
+                      class="w-5 h-5 mr-2"
+                    />
                     <span class="font-text text-xs">Video</span>
                   </NuxtLink>
                 </li>
@@ -344,7 +370,10 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                     to="/"
                     class="flex items-center text-slate-400 hover:text-primary-500 transition-colors duration-300"
                   >
-                    <i class="i-ph-soccer-ball-duotone w-5 h-5 mr-2"></i>
+                    <BaseIcon
+                      name="ph:soccer-ball-duotone"
+                      class="w-5 h-5 mr-2"
+                    />
                     <span class="font-text text-xs">Soccer</span>
                   </NuxtLink>
                 </li>
@@ -364,17 +393,18 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
             >
               Ecommerce
             </span>
-            <i
-              class="i-feather-chevron-down block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
+            <BaseIcon
+              name="feather:chevron-down"
+              class="block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
               :class="open ? 'rotate-180' : ''"
-            ></i>
+            />
           </a>
         </DisclosureButton>
 
         <Transition
           enter-active-class="transition-all duration-300 ease-out"
           enter-from-class="opacity-0 -translate-y-5"
-          enter-to-class=" opacity-100 translate-y-0"
+          enter-to-class="opacity-100 translate-y-0"
           leave-active-class="transition-all duration-300 ease-out"
           leave-from-class="opacity-100 translate-y-0"
           leave-to-class="opacity-0 -translate-y-5"
@@ -387,7 +417,10 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                     to="/"
                     class="flex items-center text-slate-400 hover:text-primary-500 transition-colors duration-300"
                   >
-                    <i class="i-ph-storefront-duotone w-5 h-5 mr-2"></i>
+                    <BaseIcon
+                      name="ph:storefront-duotone"
+                      class="w-5 h-5 mr-2"
+                    />
                     <span class="font-text text-xs">Ecommerce V1</span>
                   </NuxtLink>
                 </li>
@@ -407,17 +440,18 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
             >
               Apps
             </span>
-            <i
-              class="i-feather-chevron-down block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
+            <BaseIcon
+              name="feather:chevron-down"
+              class="block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
               :class="open ? 'rotate-180' : ''"
-            ></i>
+            />
           </a>
         </DisclosureButton>
 
         <Transition
           enter-active-class="transition-all duration-300 ease-out"
           enter-from-class="opacity-0 -translate-y-5"
-          enter-to-class=" opacity-100 translate-y-0"
+          enter-to-class="opacity-100 translate-y-0"
           leave-active-class="transition-all duration-300 ease-out"
           leave-from-class="opacity-100 translate-y-0"
           leave-to-class="opacity-0 -translate-y-5"
@@ -430,7 +464,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                     to="/"
                     class="flex items-center text-slate-400 hover:text-primary-500 transition-colors duration-300"
                   >
-                    <i class="i-ph-cookie-duotone w-5 h-5 mr-2"></i>
+                    <BaseIcon name="ph:cookie-duotone" class="w-5 h-5 mr-2" />
                     <span class="font-text text-xs">Food delivery</span>
                   </NuxtLink>
                 </li>
@@ -439,7 +473,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                     to="/"
                     class="flex items-center text-slate-400 hover:text-primary-500 transition-colors duration-300"
                   >
-                    <i class="i-ph-map-pin-duotone w-5 h-5 mr-2"></i>
+                    <BaseIcon name="ph:map-pin-duotone" class="w-5 h-5 mr-2" />
                     <span class="font-text text-xs">Maps v1</span>
                   </NuxtLink>
                 </li>
@@ -448,7 +482,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                     to="/"
                     class="flex items-center text-slate-400 hover:text-primary-500 transition-colors duration-300"
                   >
-                    <i class="i-ph-map-pin-duotone w-5 h-5 mr-2"></i>
+                    <BaseIcon name="ph:map-pin-duotone" class="w-5 h-5 mr-2" />
                     <span class="font-text text-xs">Maps v2</span>
                   </NuxtLink>
                 </li>
@@ -457,7 +491,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                     to="/"
                     class="flex items-center text-slate-400 hover:text-primary-500 transition-colors duration-300"
                   >
-                    <i class="i-ph-envelope-duotone w-5 h-5 mr-2"></i>
+                    <BaseIcon name="ph:envelope-duotone" class="w-5 h-5 mr-2" />
                     <span class="font-text text-xs">Inbox</span>
                   </NuxtLink>
                 </li>
@@ -466,7 +500,10 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                     to="/"
                     class="flex items-center text-slate-400 hover:text-primary-500 transition-colors duration-300"
                   >
-                    <i class="i-ph-chat-circle-duotone w-5 h-5 mr-2"></i>
+                    <BaseIcon
+                      name="ph:chat-circle-duotone"
+                      class="w-5 h-5 mr-2"
+                    />
                     <span class="font-text text-xs">Messaging</span>
                   </NuxtLink>
                 </li>
@@ -503,17 +540,18 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
             >
               Charts
             </span>
-            <i
-              class="i-feather-chevron-down block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
+            <BaseIcon
+              name="feather:chevron-down"
+              class="block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
               :class="open ? 'rotate-180' : ''"
-            ></i>
+            />
           </a>
         </DisclosureButton>
 
         <Transition
           enter-active-class="transition-all duration-300 ease-out"
           enter-from-class="opacity-0 -translate-y-5"
-          enter-to-class=" opacity-100 translate-y-0"
+          enter-to-class="opacity-100 translate-y-0"
           leave-active-class="transition-all duration-300 ease-out"
           leave-from-class="opacity-100 translate-y-0"
           leave-to-class="opacity-0 -translate-y-5"
@@ -526,7 +564,10 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                     to="/"
                     class="flex items-center text-slate-400 hover:text-primary-500 transition-colors duration-300"
                   >
-                    <i class="i-ph-chart-pie-slice-duotone w-5 h-5 mr-2"></i>
+                    <BaseIcon
+                      name="ph:chart-pie-slice-duotone"
+                      class="w-5 h-5 mr-2"
+                    />
                     <span class="font-text text-xs">Apex Charts</span>
                   </NuxtLink>
                 </li>
@@ -546,17 +587,18 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
             >
               Widgets
             </span>
-            <i
-              class="i-feather-chevron-down block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
+            <BaseIcon
+              name="feather:chevron-down"
+              class="block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
               :class="open ? 'rotate-180' : ''"
-            ></i>
+            />
           </a>
         </DisclosureButton>
 
         <Transition
           enter-active-class="transition-all duration-300 ease-out"
           enter-from-class="opacity-0 -translate-y-5"
-          enter-to-class=" opacity-100 translate-y-0"
+          enter-to-class="opacity-100 translate-y-0"
           leave-active-class="transition-all duration-300 ease-out"
           leave-from-class="opacity-100 translate-y-0"
           leave-to-class="opacity-0 -translate-y-5"
@@ -569,7 +611,10 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                     to="/"
                     class="flex items-center text-slate-400 hover:text-primary-500 transition-colors duration-300"
                   >
-                    <i class="i-ph-square-half-duotone w-5 h-5 mr-2"></i>
+                    <BaseIcon
+                      name="ph:square-half-duotone"
+                      class="w-5 h-5 mr-2"
+                    />
                     <span class="font-text text-xs">UI Widgets</span>
                   </NuxtLink>
                 </li>
@@ -578,7 +623,10 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                     to="/"
                     class="flex items-center text-slate-400 hover:text-primary-500 transition-colors duration-300"
                   >
-                    <i class="i-ph-square-half-bottom-duotone w-5 h-5 mr-2"></i>
+                    <BaseIcon
+                      name="ph:square-half-bottom-duotone"
+                      class="w-5 h-5 mr-2"
+                    />
                     <span class="font-text text-xs">Creative Widgets</span>
                   </NuxtLink>
                 </li>
@@ -587,7 +635,10 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                     to="/"
                     class="flex items-center text-slate-400 hover:text-primary-500 transition-colors duration-300"
                   >
-                    <i class="i-ph-square-half-duotone w-5 h-5 mr-2"></i>
+                    <BaseIcon
+                      name="ph:square-half-duotone"
+                      class="w-5 h-5 mr-2"
+                    />
                     <span class="font-text text-xs">List Widgets</span>
                   </NuxtLink>
                 </li>
@@ -596,7 +647,10 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                     to="/"
                     class="flex items-center text-slate-400 hover:text-primary-500 transition-colors duration-300"
                   >
-                    <i class="i-ph-square-half-bottom-duotone w-5 h-5 mr-2"></i>
+                    <BaseIcon
+                      name="ph:square-half-bottom-duotone"
+                      class="w-5 h-5 mr-2"
+                    />
                     <span class="font-text text-xs">Stat Widgets</span>
                   </NuxtLink>
                 </li>
@@ -616,17 +670,18 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
             >
               Starters
             </span>
-            <i
-              class="i-feather-chevron-down block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
+            <BaseIcon
+              name="feather:chevron-down"
+              class="block w-4 h-4 text-slate-400 ml-auto transition-transform duration-300"
               :class="open ? 'rotate-180' : ''"
-            ></i>
+            />
           </a>
         </DisclosureButton>
 
         <Transition
           enter-active-class="transition-all duration-300 ease-out"
           enter-from-class="opacity-0 -translate-y-5"
-          enter-to-class=" opacity-100 translate-y-0"
+          enter-to-class="opacity-100 translate-y-0"
           leave-active-class="transition-all duration-300 ease-out"
           leave-from-class="opacity-100 translate-y-0"
           leave-to-class="opacity-0 -translate-y-5"
@@ -639,7 +694,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                     to="/"
                     class="flex items-center text-slate-400 hover:text-primary-500 transition-colors duration-300"
                   >
-                    <i class="i-ph-sidebar-duotone w-5 h-5 mr-2"></i>
+                    <BaseIcon name="ph:sidebar-duotone" class="w-5 h-5 mr-2" />
                     <span class="font-text text-xs">Regular sidebar</span>
                   </NuxtLink>
                 </li>
@@ -648,7 +703,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                     to="/"
                     class="flex items-center text-slate-400 hover:text-primary-500 transition-colors duration-300"
                   >
-                    <i class="i-ph-sidebar-duotone w-5 h-5 mr-2"></i>
+                    <BaseIcon name="ph:sidebar-duotone" class="w-5 h-5 mr-2" />
                     <span class="font-text text-xs">Curved sidebar</span>
                   </NuxtLink>
                 </li>
@@ -657,7 +712,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                     to="/"
                     class="flex items-center text-slate-400 hover:text-primary-500 transition-colors duration-300"
                   >
-                    <i class="i-ph-sidebar-duotone w-5 h-5 mr-2"></i>
+                    <BaseIcon name="ph:sidebar-duotone" class="w-5 h-5 mr-2" />
                     <span class="font-text text-xs">Colored sidebar</span>
                   </NuxtLink>
                 </li>
@@ -666,7 +721,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                     to="/"
                     class="flex items-center text-slate-400 hover:text-primary-500 transition-colors duration-300"
                   >
-                    <i class="i-ph-sidebar-duotone w-5 h-5 mr-2"></i>
+                    <BaseIcon name="ph:sidebar-duotone" class="w-5 h-5 mr-2" />
                     <span class="font-text text-xs">
                       Curved Colored sidebar
                     </span>
@@ -677,7 +732,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                     to="/"
                     class="flex items-center text-slate-400 hover:text-primary-500 transition-colors duration-300"
                   >
-                    <i class="i-ph-sidebar-duotone w-5 h-5 mr-2"></i>
+                    <BaseIcon name="ph:sidebar-duotone" class="w-5 h-5 mr-2" />
                     <span class="font-text text-xs">Labels sidebar</span>
                   </NuxtLink>
                 </li>
@@ -686,7 +741,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                     to="/"
                     class="flex items-center text-slate-400 hover:text-primary-500 transition-colors duration-300"
                   >
-                    <i class="i-ph-sidebar-duotone w-5 h-5 mr-2"></i>
+                    <BaseIcon name="ph:sidebar-duotone" class="w-5 h-5 mr-2" />
                     <span class="font-text text-xs">Hover labels sidebar</span>
                   </NuxtLink>
                 </li>
@@ -695,7 +750,10 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                     to="/"
                     class="flex items-center text-slate-400 hover:text-primary-500 transition-colors duration-300"
                   >
-                    <i class="i-ph-sidebar-simple-duotone w-5 h-5 mr-2"></i>
+                    <BaseIcon
+                      name="ph:sidebar-simple-duotone"
+                      class="w-5 h-5 mr-2"
+                    />
                     <span class="font-text text-xs">Regular sideblock</span>
                   </NuxtLink>
                 </li>
@@ -704,7 +762,10 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                     to="/"
                     class="flex items-center text-slate-400 hover:text-primary-500 transition-colors duration-300"
                   >
-                    <i class="i-ph-sidebar-simple-duotone w-5 h-5 mr-2"></i>
+                    <BaseIcon
+                      name="ph:sidebar-simple-duotone"
+                      class="w-5 h-5 mr-2"
+                    />
                     <span class="font-text text-xs">Curved sideblock</span>
                   </NuxtLink>
                 </li>
@@ -713,7 +774,10 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                     to="/"
                     class="flex items-center text-slate-400 hover:text-primary-500 transition-colors duration-300"
                   >
-                    <i class="i-ph-sidebar-simple-duotone w-5 h-5 mr-2"></i>
+                    <BaseIcon
+                      name="ph:sidebar-simple-duotone"
+                      class="w-5 h-5 mr-2"
+                    />
                     <span class="font-text text-xs">Colored sideblock</span>
                   </NuxtLink>
                 </li>
@@ -722,7 +786,10 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                     to="/"
                     class="flex items-center text-slate-400 hover:text-primary-500 transition-colors duration-300"
                   >
-                    <i class="i-ph-sidebar-simple-duotone w-5 h-5 mr-2"></i>
+                    <BaseIcon
+                      name="ph:sidebar-simple-duotone"
+                      class="w-5 h-5 mr-2"
+                    />
                     <span class="font-text text-xs">
                       Curved Colored sideblock
                     </span>

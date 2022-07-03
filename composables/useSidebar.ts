@@ -1,6 +1,7 @@
 import type { Component } from 'vue'
 import type { RouteLocationRaw } from 'vue-router'
 import {
+  BaseIcon,
   LazyNavigationSidebarMenuComponents,
   LazyNavigationSidebarMenuDashboards,
   LazyNavigationSidebarMenuElements,
@@ -27,36 +28,40 @@ export const useSidebar = createSharedComposable(() => {
   const sidebars: NavigationSidebarItem[] = [
     {
       name: 'Dashboards',
-      icon: () => h('i', { class: 'i-ph-sidebar-duotone w-5 h-5' }),
+      icon: () => h(BaseIcon, { name: 'ph:sidebar-duotone', class: 'w-5 h-5' }),
       subnav: LazyNavigationSidebarMenuDashboards,
       activePath: '/dashboards',
     },
     {
       name: 'Layouts',
-      icon: () => h('i', { class: 'i-ph-app-window-duotone w-5 h-5' }),
+      icon: () =>
+        h(BaseIcon, { name: 'ph:app-window-duotone', class: 'w-5 h-5' }),
       subnav: LazyNavigationSidebarMenuLayouts,
       activePath: '/layouts',
     },
     {
       name: 'Elements',
-      icon: () => h('i', { class: 'i-ph-nut-duotone w-5 h-5' }),
+      icon: () => h(BaseIcon, { name: 'ph:nut-duotone', class: 'w-5 h-5' }),
       subnav: LazyNavigationSidebarMenuElements,
       activePath: '/elements',
     },
     {
       name: 'Components',
-      icon: () => h('i', { class: 'i-ph-grid-four-duotone w-5 h-5' }),
+      icon: () =>
+        h(BaseIcon, { name: 'ph:grid-four-duotone', class: 'w-5 h-5' }),
       subnav: LazyNavigationSidebarMenuComponents,
       activePath: '/components',
     },
     {
       name: 'Chat',
-      icon: () => h('i', { class: 'i-ph-chat-circle-duotone w-5 h-5' }),
+      icon: () =>
+        h(BaseIcon, { name: 'ph:chat-circle-duotone', class: 'w-5 h-5' }),
       to: { path: '/' },
     },
     {
       name: 'Panels',
-      icon: () => h('i', { class: 'i-ph-square-half-duotone w-5 h-5' }),
+      icon: () =>
+        h(BaseIcon, { name: 'ph:square-half-duotone', class: 'w-5 h-5' }),
       click: () => {
         toggleLayoutModal()
       },
@@ -64,7 +69,8 @@ export const useSidebar = createSharedComposable(() => {
     },
     {
       name: 'Search',
-      icon: () => h('i', { class: 'i-ph-magnifying-glass-duotone w-5 h-5' }),
+      icon: () =>
+        h(BaseIcon, { name: 'ph:magnifying-glass-duotone', class: 'w-5 h-5' }),
       click: () => {
         openPanel('search')
       },
@@ -72,7 +78,8 @@ export const useSidebar = createSharedComposable(() => {
     },
     {
       name: 'Settings',
-      icon: () => h('i', { class: 'i-ph-gear-six-duotone w-5 h-5' }),
+      icon: () =>
+        h(BaseIcon, { name: 'ph:gear-six-duotone', class: 'w-5 h-5' }),
       to: { path: '/' },
       position: 'end',
     },

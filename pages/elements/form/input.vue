@@ -137,13 +137,13 @@ definePageMeta({
                     shape="straight"
                     label="Search"
                     placeholder="Enter search terms..."
-                    icon="i-lucide-search"
+                    icon="lucide:search"
                   />
                   <BaseFormInput
                     shape="rounded"
                     label="Email Address"
                     placeholder="Your email..."
-                    icon="i-lucide-mail"
+                    icon="lucide:mail"
                   />
                 </div>
                 <div class="w-full max-w-sm space-y-4">
@@ -151,14 +151,14 @@ definePageMeta({
                     shape="curved"
                     label="Username"
                     placeholder="Your username..."
-                    icon="i-lucide-user"
+                    icon="lucide:user"
                   />
                   <BaseFormInput
                     type="password"
                     shape="full"
                     label="Password"
                     placeholder="Enter password..."
-                    icon="i-lucide-lock"
+                    icon="lucide:lock"
                   />
                 </div>
               </div>
@@ -180,7 +180,7 @@ definePageMeta({
                     shape="rounded"
                     label="Email Address"
                     placeholder="Enter your email..."
-                    icon="i-lucide-mail"
+                    icon="lucide:mail"
                     color-focus
                   />
                 </div>
@@ -204,7 +204,7 @@ definePageMeta({
                     shape="rounded"
                     label="Email Address"
                     placeholder="Enter your email..."
-                    icon="i-lucide-mail"
+                    icon="lucide:mail"
                     loading
                   />
                 </div>
@@ -226,7 +226,7 @@ definePageMeta({
                     shape="rounded"
                     label="Email Address"
                     placeholder="Enter your email..."
-                    icon="i-lucide-mail"
+                    icon="lucide:mail"
                     disabled
                   />
                 </div>
@@ -248,7 +248,7 @@ definePageMeta({
                     shape="rounded"
                     label="Email Address"
                     placeholder="Enter your email..."
-                    icon="i-lucide-mail"
+                    icon="lucide:mail"
                     invalid
                   />
                 </div>

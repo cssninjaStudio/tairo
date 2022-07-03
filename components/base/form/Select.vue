@@ -75,7 +75,7 @@ watch(
         ]"
       >
         <slot name="icon">
-          <i class="w-[1.15rem] h-[1.15rem]" :class="props.icon"></i>
+          <BaseIcon :name="props.icon" class="w-[1.15rem] h-[1.15rem]" />
         </slot>
       </div>
       <div

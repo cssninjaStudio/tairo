@@ -18,7 +18,7 @@ const activeTab = ref('tab-1')
         class="flex items-center justify-center h-10 w-10 rounded-full text-slate-400 hover:text-slate-600 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors duration-300"
         @click="closePanel"
       >
-        <i class="i-feather-chevron-right w-6 h-6"></i>
+        <BaseIcon name="feather:chevron-right" class="w-6 h-6" />
       </button>
     </div>
 
@@ -93,7 +93,7 @@ const activeTab = ref('tab-1')
               to="/"
               class="flex items-center justify-center h-9 w-9 text-slate-400 hover:text-primary-500 border border-slate-200 dark:border-slate-500 hover:border-primary-500 dark:hover:border-primary-500 rounded-full ml-auto transition-colors duration-300"
             >
-              <i class="i-feather-arrow-right w-4 h-4"></i>
+              <BaseIcon name="feather:arrow-right" class="w-4 h-4" />
             </NuxtLink>
           </div>
           <!-- Team member -->
@@ -121,7 +121,7 @@ const activeTab = ref('tab-1')
               to="/"
               class="flex items-center justify-center h-9 w-9 text-slate-400 hover:text-primary-500 border border-slate-200 dark:border-slate-500 hover:border-primary-500 dark:hover:border-primary-500 rounded-full ml-auto transition-colors duration-300"
             >
-              <i class="i-feather-arrow-right w-4 h-4"></i>
+              <BaseIcon name="feather:arrow-right" class="w-4 h-4" />
             </NuxtLink>
           </div>
           <!-- Team member -->
@@ -149,7 +149,7 @@ const activeTab = ref('tab-1')
               to="/"
               class="flex items-center justify-center h-9 w-9 text-slate-400 hover:text-primary-500 border border-slate-200 dark:border-slate-500 hover:border-primary-500 dark:hover:border-primary-500 rounded-full ml-auto transition-colors duration-300"
             >
-              <i class="i-feather-arrow-right w-4 h-4"></i>
+              <BaseIcon name="feather:arrow-right" class="w-4 h-4" />
             </NuxtLink>
           </div>
           <!-- Team member -->
@@ -177,7 +177,7 @@ const activeTab = ref('tab-1')
               to="/"
               class="flex items-center justify-center h-9 w-9 text-slate-400 hover:text-primary-500 border border-slate-200 dark:border-slate-500 hover:border-primary-500 dark:hover:border-primary-500 rounded-full ml-auto transition-colors duration-300"
             >
-              <i class="i-feather-arrow-right w-4 h-4"></i>
+              <BaseIcon name="feather:arrow-right" class="w-4 h-4" />
             </NuxtLink>
           </div>
         </div>
@@ -210,7 +210,7 @@ const activeTab = ref('tab-1')
                 to="/"
                 class="flex items-center justify-center h-9 w-9 text-slate-400 hover:text-primary-500 border border-slate-200 dark:border-slate-500 hover:border-primary-500 dark:hover:border-primary-500 rounded-full ml-auto transition-colors duration-300"
               >
-                <i class="i-feather-arrow-right w-4 h-4"></i>
+                <BaseIcon name="feather:arrow-right" class="w-4 h-4" />
               </NuxtLink>
             </div>
             <div
@@ -288,7 +288,7 @@ const activeTab = ref('tab-1')
                 to="/"
                 class="flex items-center justify-center h-9 w-9 text-slate-400 hover:text-primary-500 border border-slate-200 dark:border-slate-500 hover:border-primary-500 dark:hover:border-primary-500 rounded-full ml-auto transition-colors duration-300"
               >
-                <i class="i-feather-arrow-right w-4 h-4"></i>
+                <BaseIcon name="feather:arrow-right" class="w-4 h-4" />
               </NuxtLink>
             </div>
             <div
@@ -348,7 +348,7 @@ const activeTab = ref('tab-1')
                 to="/"
                 class="flex items-center justify-center h-9 w-9 text-slate-400 hover:text-primary-500 border border-slate-200 dark:border-slate-500 hover:border-primary-500 dark:hover:border-primary-500 rounded-full ml-auto transition-colors duration-300"
               >
-                <i class="i-feather-arrow-right w-4 h-4"></i>
+                <BaseIcon name="feather:arrow-right" class="w-4 h-4" />
               </NuxtLink>
             </div>
             <div
@@ -395,7 +395,7 @@ const activeTab = ref('tab-1')
               <div
                 class="relative flex items-center justify-center h-9 w-9 rounded-full text-slate-400 bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 after:content-[''] after:absolute after:top-4 after:-right-8 after:w-5 after:h-px after:border-t after:border-slate-300 dark:after:border-slate-600 shadow-lg"
               >
-                <i class="i-ph-phone-duotone"></i>
+                <BaseIcon name="ph:phone-duotone" class="" />
               </div>
               <div class="ml-10">
                 <h6
@@ -439,7 +439,7 @@ const activeTab = ref('tab-1')
               <div
                 class="relative flex items-center justify-center h-9 w-9 rounded-full text-slate-400 bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 after:content-[''] after:absolute after:top-4 after:-right-8 after:w-5 after:h-px after:border-t after:border-slate-300 dark:after:border-slate-600 shadow-lg"
               >
-                <i class="i-ph-chat-circle-duotone"></i>
+                <BaseIcon name="ph:chat-circle-duotone" class="" />
               </div>
               <div class="ml-10">
                 <h6
@@ -483,7 +483,7 @@ const activeTab = ref('tab-1')
               <div
                 class="relative flex items-center justify-center h-9 w-9 rounded-full text-slate-400 bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 after:content-[''] after:absolute after:top-4 after:-right-8 after:w-5 after:h-px after:border-t after:border-slate-300 dark:after:border-slate-600 shadow-lg"
               >
-                <i class="i-ph-envelope-duotone"></i>
+                <BaseIcon name="ph:envelope-duotone" class="" />
               </div>
               <div class="ml-10">
                 <h6
@@ -501,7 +501,7 @@ const activeTab = ref('tab-1')
               <div
                 class="relative flex items-center justify-center h-9 w-9 rounded-full text-slate-400 bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 after:content-[''] after:absolute after:top-4 after:-right-8 after:w-5 after:h-px after:border-t after:border-slate-300 dark:after:border-slate-600 shadow-lg"
               >
-                <i class="i-ph-selection-all-duotone"></i>
+                <BaseIcon name="ph:selection-all-duotone" class="" />
               </div>
               <div class="ml-10">
                 <h6
@@ -519,7 +519,7 @@ const activeTab = ref('tab-1')
               <div
                 class="relative flex items-center justify-center h-9 w-9 rounded-full text-slate-400 bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 after:content-[''] after:absolute after:top-4 after:-right-8 after:w-5 after:h-px after:border-t after:border-slate-300 dark:after:border-slate-600 shadow-lg"
               >
-                <i class="i-ph-note-duotone"></i>
+                <BaseIcon name="ph:note-duotone" class="" />
               </div>
               <div class="ml-10">
                 <h6
