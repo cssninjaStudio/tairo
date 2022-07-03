@@ -17,7 +17,7 @@ const props = withDefaults(defineProps<DropdownProps>(), {
   flavor: 'button',
   shape: 'rounded',
   orientation: 'start',
-  label: 'Dropdown',
+  label: '',
   headerLabel: undefined,
 })
 </script>
@@ -38,7 +38,9 @@ const props = withDefaults(defineProps<DropdownProps>(), {
             :shape="props.shape"
             class="!pr-3 !pl-4"
           >
-            <span>{{ props.label }}</span>
+            <slot name="label">
+              <span>{{ props.label }}</span>
+            </slot>
             <BaseIcon
               name="lucide:chevron-down"
               class="w-4 h-4 text-slate-400 transition-transform duration-300"
@@ -65,7 +67,10 @@ const props = withDefaults(defineProps<DropdownProps>(), {
             type="button"
             class="flex items-center space-x-1"
           >
-            <span class="font-text text-slate-400">{{ props.label }}</span>
+            <slot name="label">
+              <span class="font-text text-slate-400">{{ props.label }}</span>
+            </slot>
+
             <BaseIcon
               name="lucide:chevron-down"
               class="w-4 h-4 text-slate-400 transition-transform duration-300"

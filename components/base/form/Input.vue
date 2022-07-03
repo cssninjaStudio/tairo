@@ -7,19 +7,12 @@ export interface InputEmits {
 
 export interface InputProps {
   modelValue?: any
-  trueValue?: boolean
-  falseValue?: boolean
   type?: string
-  name?: string
   shape?: InputShapes
-  label: string
-  hideLabel?: boolean
+  label?: string
   icon?: string
   colorFocus?: boolean
-  placeholder?: string
   loading?: boolean
-  disabled?: boolean
-  readonly?: boolean
   invalid?: boolean
   errorText?: string
 }
@@ -27,13 +20,10 @@ export interface InputProps {
 const emits = defineEmits<InputEmits>()
 const props = withDefaults(defineProps<InputProps>(), {
   modelValue: '',
-  trueValue: true,
-  falseValue: false,
   type: 'text',
   name: undefined,
   shape: 'rounded',
   icon: undefined,
-  placeholder: '',
   errorText: 'Please enter a valid value',
 })
 
@@ -51,13 +41,14 @@ watch(
 
 <template>
   <div class="relative">
-    <label v-if="!props.hideLabel" class="font-text text-sm text-slate-400">
+    <label v-if="!props.label" class="font-text text-sm text-slate-400">
       {{ props.label }}
     </label>
     <div class="group relative">
       <input
         v-model="value"
         :type="props.type"
+        v-bind="$attrs"
         class="peer py-2 h-10 text-sm leading-5 font-text w-full bg-white text-slate-600 border border-slate-300 focus:border-slate-300 focus:shadow-lg focus:shadow-slate-300/50 dark:focus:shadow-slate-800/50 placeholder:text-slate-300 dark:placeholder:text-slate-500 dark:bg-slate-900/75 dark:text-slate-200 dark:border-slate-700 dark:focus:border-slate-700 focus:ring-0 outline-transparent focus:outline-dashed focus:outline-slate-300 dark:focus:outline-slate-600 focus:outline-offset-2 disabled:opacity-75 disabled:cursor-not-allowed transition-all duration-300"
         :class="[
           props.shape === 'rounded' && 'rounded',
@@ -68,10 +59,6 @@ watch(
           props.loading && '!text-transparent placeholder:!text-transparent',
           props.invalid && !props.loading && '!border-danger-500',
         ]"
-        :name="props.name"
-        :placeholder="props.placeholder"
-        :readonly="props.readonly"
-        :disabled="props.disabled"
       />
       <div
         v-if="props.loading"

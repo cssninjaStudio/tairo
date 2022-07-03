@@ -17,13 +17,13 @@ const emit = defineEmits(['delete'])
 
 <template>
   <div
-    class="inline-flex items-center rounded-full"
+    class="inline-flex items-center rounded-full group focus-within:ring-0 outline-transparent focus-within:outline-dashed focus-within:outline-offset-2"
     :class="[
       !props.icon && !props.image && 'pl-4',
       props.small ? 'h-8' : 'h-10',
       props.light
-        ? 'bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600'
-        : 'bg-slate-200 dark:bg-slate-700',
+        ? 'bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 focus-within:outline-slate-100 dark:focus-within:outline-slate-700/50'
+        : 'bg-slate-200 dark:bg-slate-700 focus-within:outline-slate-200/50 dark:focus-within:outline-slate-700',
     ]"
   >
     <div
@@ -53,8 +53,13 @@ const emit = defineEmits(['delete'])
     </span>
     <button
       type="button"
-      class="pl-3 cursor-pointer"
-      :class="props.small ? 'pr-3' : 'pr-4'"
+      class="ml-2 p-1 cursor-pointer rounded-full outline-none"
+      :class="[
+        props.small ? 'mr-1' : 'mr-2',
+        props.light
+          ? 'hover:bg-slate-100 !active:bg-slate-200 focus:bg-slate-100 !dark:active:bg-slate-500/50 dark:focus:bg-slate-600 dark:hover:bg-slate-600 '
+          : 'hover:bg-slate-300 !active:bg-slate-400/50 focus:bg-slate-300 !dark:active:bg-slate-500/50 dark:focus:bg-slate-600 dark:hover:bg-slate-600 ',
+      ]"
       @click="emit('delete')"
     >
       <svg

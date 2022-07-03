@@ -131,7 +131,9 @@
 
   /* Make the tooltips respond to hover */
   [tooltip]:hover::before,
-  [tooltip]:hover::after {
+  [tooltip]:hover::after,
+  [tooltip]:focus::before,
+  [tooltip]:focus::after {
     display: block;
   }
 
@@ -228,14 +230,24 @@
   [tooltip][flow^='up']:hover::before,
   [tooltip][flow^='up']:hover::after,
   [tooltip][flow^='down']:hover::before,
-  [tooltip][flow^='down']:hover::after {
+  [tooltip][flow^='down']:hover::after,
+  [tooltip]:not([flow]):focus::before,
+  [tooltip]:not([flow]):focus::after,
+  [tooltip][flow^='up']:focus::before,
+  [tooltip][flow^='up']:focus::after,
+  [tooltip][flow^='down']:focus::before,
+  [tooltip][flow^='down']:focus::after {
     animation: tooltips-vert 300ms ease-out forwards;
   }
 
   [tooltip][flow^='left']:hover::before,
   [tooltip][flow^='left']:hover::after,
   [tooltip][flow^='right']:hover::before,
-  [tooltip][flow^='right']:hover::after {
+  [tooltip][flow^='right']:hover::after,
+  [tooltip][flow^='left']:focus::before,
+  [tooltip][flow^='left']:focus::after,
+  [tooltip][flow^='right']:focus::before,
+  [tooltip][flow^='right']:focus::after {
     animation: tooltips-horz 300ms ease-out forwards;
   }
 }

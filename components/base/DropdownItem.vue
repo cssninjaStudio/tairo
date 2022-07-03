@@ -3,21 +3,26 @@ import type { RouteLocationRaw } from 'vue-router'
 import { MenuItem } from '@headlessui/vue'
 
 export interface DropdownItemProps {
+  type?: 'button' | 'submit' | 'reset'
   to?: RouteLocationRaw
+  disabled?: boolean
+  rel?: string
+  target?: string
+
   title?: string
   text?: string
 }
 
-const NuxtLink = defineNuxtLink({})
 const props = defineProps<DropdownItemProps>()
+const { is, attributes } = useButton(props)
 </script>
 
 <template>
   <MenuItem v-slot="{ active }">
     <component
-      :is="props.to ? NuxtLink : 'a'"
-      :to="props.to"
-      class="group flex w-full items-center rounded-md py-2 px-3 text-sm transition-colors duration-300"
+      :is="is"
+      v-bind="attributes"
+      class="group flex w-full items-center text-left justify-start rounded-md py-2 px-3 text-sm transition-colors duration-300"
       :class="[
         active
           ? 'bg-slate-100 dark:bg-slate-700 text-primary-500'
