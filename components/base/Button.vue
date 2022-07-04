@@ -57,9 +57,11 @@ const colorClasses = computed(() => {
       'dark:bg-slate-700',
       'dark:border-slate-700',
       'dark:hover:bg-slate-600',
-      'dark:focus:bg-slate-600',
+      'dark:focus-visible:bg-slate-600',
       'hover:bg-slate-100',
-      'focus:bg-slate-100',
+      'focus-visible:bg-slate-100',
+      'active:bg-slate-200',
+      'dark:active:bg-slate-700',
     ]
   }
 
@@ -74,11 +76,11 @@ const colorClasses = computed(() => {
       'dark:border-slate-600',
       'dark:border-slate-600',
       'dark:hover:bg-slate-600',
-      'dark:focus:bg-slate-600',
-      'dark:active:bg-slate-700/90',
+      'dark:focus-visible:bg-slate-600',
+      'dark:active:bg-slate-700',
       'hover:bg-slate-50',
-      'focus:bg-slate-50',
-      'active:bg-slate-100',
+      'focus-visible:bg-slate-50',
+      'active:bg-white',
     ]
   }
 
@@ -89,12 +91,19 @@ const colorClasses = computed(() => {
           'bg-sky-400',
           'dark:bg-sky-500',
           'text-white',
-          'dark:text-white',
           'hover:bg-sky-500',
           'dark:hover:bg-sky-600',
           'hover:shadow-lg',
           'hover:shadow-sky-500/50',
           'dark:hover:shadow-sky-800/20',
+          'focus-visible:outline-sky-400/70',
+          'focus-within:outline-sky-400/70',
+          'focus-visible:bg-sky-500',
+          'active:bg-sky-400',
+          'dark:focus-visible:outline-sky-400/70',
+          'dark:focus-within:outline-sky-400/70',
+          'dark:focus-visible:bg-sky-600',
+          'dark:active:bg-sky-500',
         ]
       case 'success':
         return [
@@ -106,6 +115,14 @@ const colorClasses = computed(() => {
           'hover:shadow-lg',
           'hover:shadow-teal-500/50',
           'dark:hover:shadow-teal-800/20',
+          'focus-visible:outline-teal-400/70',
+          'focus-within:outline-teal-400/70',
+          'focus-visible:bg-teal-500',
+          'active:bg-teal-400',
+          'dark:focus-visible:outline-teal-400/70',
+          'dark:focus-within:outline-teal-400/70',
+          'dark:focus-visible:bg-teal-600',
+          'dark:active:bg-teal-500',
         ]
       case 'warning':
         return [
@@ -117,6 +134,14 @@ const colorClasses = computed(() => {
           'hover:shadow-lg',
           'hover:shadow-amber-500/50',
           'dark:hover:shadow-amber-800/20',
+          'focus-visible:outline-amber-400/70',
+          'focus-within:outline-amber-400/70',
+          'focus-visible:bg-amber-500',
+          'active:bg-amber-400',
+          'dark:focus-visible:outline-amber-400',
+          'dark:focus-within:outline-amber-400',
+          'dark:focus-visible:bg-amber-600',
+          'dark:active:bg-amber-500',
         ]
       case 'danger':
         return [
@@ -128,6 +153,14 @@ const colorClasses = computed(() => {
           'hover:shadow-lg',
           'hover:shadow-rose-500/50',
           'dark:hover:shadow-rose-800/20',
+          'focus-visible:outline-rose-400/70',
+          'focus-within:outline-rose-400/70',
+          'focus-visible:bg-rose-500',
+          'active:bg-rose-400',
+          'dark:focus-visible:outline-rose-400',
+          'dark:focus-within:outline-rose-400',
+          'dark:focus-visible:bg-rose-600',
+          'dark:active:bg-rose-500',
         ]
       case 'primary':
       default:
@@ -140,6 +173,14 @@ const colorClasses = computed(() => {
           'hover:shadow-lg',
           'hover:shadow-primary-500/50',
           'dark:hover:shadow-primary-800/20',
+          'focus-visible:outline-primary-400/70',
+          'focus-within:outline-primary-400/70',
+          'focus-visible:bg-primary-500',
+          'active:bg-primary-400',
+          'dark:focus-visible:outline-primary-400',
+          'dark:focus-within:outline-primary-400',
+          'dark:focus-visible:bg-primary-600',
+          'dark:active:bg-primary-500',
         ]
     }
   } else if (props.flavor === 'pastel') {
@@ -155,6 +196,14 @@ const colorClasses = computed(() => {
           'dark:bg-transparent',
           'dark:text-sky-500',
           'dark:hover:bg-sky-500/10',
+          'focus-visible:outline-sky-400/70',
+          'focus-within:outline-sky-400/70',
+          'focus-visible:bg-sky-200',
+          'active:bg-sky-100',
+          'dark:focus-visible:outline-sky-400/70',
+          'dark:focus-within:outline-sky-400/70',
+          'dark:focus-visible:bg-sky-500/10',
+          'dark:active:bg-transparent',
         ]
       case 'success':
         return [
@@ -167,6 +216,14 @@ const colorClasses = computed(() => {
           'dark:bg-transparent',
           'dark:text-teal-500',
           'dark:hover:bg-teal-500/10',
+          'focus-visible:outline-teal-400/70',
+          'focus-within:outline-teal-400/70',
+          'focus-visible:bg-teal-200',
+          'active:bg-teal-100',
+          'dark:focus-visible:outline-teal-400/70',
+          'dark:focus-within:outline-teal-400/70',
+          'dark:focus-visible:bg-teal-500/10',
+          'dark:active:bg-transparent',
         ]
       case 'warning':
         return [
@@ -179,6 +236,14 @@ const colorClasses = computed(() => {
           'dark:bg-transparent',
           'dark:text-amber-500',
           'dark:hover:bg-amber-500/10',
+          'focus-visible:outline-amber-400/70',
+          'focus-within:outline-amber-400/70',
+          'focus-visible:bg-amber-200',
+          'active:bg-amber-100',
+          'dark:focus-visible:outline-amber-400/70',
+          'dark:focus-within:outline-amber-400/70',
+          'dark:focus-visible:bg-amber-500/10',
+          'dark:active:bg-transparent',
         ]
       case 'danger':
         return [
@@ -191,6 +256,14 @@ const colorClasses = computed(() => {
           'dark:bg-transparent',
           'dark:text-rose-500',
           'dark:hover:bg-rose-500/10',
+          'focus-visible:outline-rose-400/70',
+          'focus-within:outline-rose-400/70',
+          'focus-visible:bg-rose-200',
+          'active:bg-rose-100',
+          'dark:focus-visible:outline-rose-400/70',
+          'dark:focus-within:outline-rose-400/70',
+          'dark:focus-visible:bg-rose-500/10',
+          'dark:active:bg-transparent',
         ]
       case 'primary':
       default:
@@ -204,6 +277,14 @@ const colorClasses = computed(() => {
           'dark:bg-transparent',
           'dark:text-primary-500',
           'dark:hover:bg-primary-500/10',
+          'focus-visible:outline-primary-400/70',
+          'focus-within:outline-primary-400/70',
+          'focus-visible:bg-primary-200',
+          'active:bg-primary-100',
+          'dark:focus-visible:outline-primary-400/70',
+          'dark:focus-within:outline-primary-400/70',
+          'dark:focus-visible:bg-primary-500/10',
+          'dark:active:bg-transparent',
         ]
     }
   } else if (props.flavor === 'outline') {
@@ -215,6 +296,12 @@ const colorClasses = computed(() => {
           'border-2',
           'border-sky-500',
           'hover:bg-sky-500',
+          'focus-within:outline-sky-400/70',
+          'focus-visible:outline-sky-400/70',
+          'focus-visible:bg-sky-500',
+          'focus-visible:text-white',
+          'active:text-sky-500',
+          'active:bg-transparent',
         ]
       case 'success':
         return [
@@ -223,6 +310,12 @@ const colorClasses = computed(() => {
           'border-2',
           'border-teal-500',
           'hover:bg-teal-500',
+          'focus-within:outline-teal-400/70',
+          'focus-visible:outline-teal-400/70',
+          'focus-visible:bg-teal-500',
+          'focus-visible:text-white',
+          'active:text-teal-500',
+          'active:bg-transparent',
         ]
       case 'warning':
         return [
@@ -231,6 +324,12 @@ const colorClasses = computed(() => {
           'border-2',
           'border-amber-500',
           'hover:bg-amber-500',
+          'focus-within:outline-amber-400/70',
+          'focus-visible:outline-amber-400/70',
+          'focus-visible:bg-amber-500',
+          'focus-visible:text-white',
+          'active:text-amber-500',
+          'active:bg-transparent',
         ]
       case 'danger':
         return [
@@ -239,6 +338,12 @@ const colorClasses = computed(() => {
           'border-2',
           'border-rose-500',
           'hover:bg-rose-500',
+          'focus-within:outline-rose-400/70',
+          'focus-visible:outline-rose-400/70',
+          'focus-visible:bg-rose-500',
+          'focus-visible:text-white',
+          'active:text-rose-500',
+          'active:bg-transparent',
         ]
       case 'primary':
       default:
@@ -248,6 +353,12 @@ const colorClasses = computed(() => {
           'border-2',
           'border-primary-500',
           'hover:bg-primary-500',
+          'focus-within:outline-primary-400/70',
+          'focus-visible:outline-primary-400/70',
+          'focus-visible:bg-primary-500',
+          'focus-visible:text-white',
+          'active:text-primary-500',
+          'active:bg-transparent',
         ]
     }
   }
@@ -261,7 +372,7 @@ const buttonClasses = computed(() => [
   'leading-5',
   'h-10',
   'px-5 py-2 space-x-1',
-  'tairo-focus focus-within:outline-2',
+  'tairo-focus',
   'transition-colors transition-shadow',
   'duration-300',
   props.loading && '!text-transparent',

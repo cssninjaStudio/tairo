@@ -63,6 +63,9 @@ module.exports = {
             '@apply outline-gray-300 dark:outline-gray-600': {},
             '@apply outline-dashed ring-0': {},
           },
+          '&:focus-visible': {
+            '@apply outline-2': {},
+          },
         },
       })
     }),
