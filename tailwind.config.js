@@ -1,16 +1,19 @@
 const colors = require('tailwindcss/colors')
+const plugin = require('tailwindcss/plugin')
 // const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
   darkMode: 'class',
   content: [
-    './components/**/*.{js,vue,ts}',
-    './layouts/**/*.vue',
-    './pages/**/*.vue',
-    './plugins/**/*.{js,ts}',
-    './app.vue',
-    './assets/**/*.scss',
-    './assets/**/*.css',
+    /**
+     * components/** /*.{vue,js}`,
+     * layouts/** /*.vue`,
+     * pages/** /*.vue`,
+     * composables/** /*.{js,ts}`,
+     * plugins/** /*.{js,ts}`,
+     * App.{js,ts,vue}`,
+     * app.{js,ts,vue}`
+     */
   ],
   theme: {
     extend: {
@@ -29,7 +32,7 @@ module.exports = {
         },
       },
       colors: {
-        primary: colors?.violet,
+        primary: colors?.purple,
         info: colors?.sky,
         success: colors?.teal,
         warning: colors?.amber,
@@ -50,5 +53,18 @@ module.exports = {
     require('@tailwindcss/typography'),
     require('@tailwindcss/line-clamp'),
     require('@tailwindcss/aspect-ratio'),
+
+    plugin(({ addComponents }) => {
+      addComponents({
+        '.tairo-focus': {
+          '@apply outline-1 outline-dashed outline-offset-2': {},
+          '@apply outline-transparent': {},
+          '&:focus-within': {
+            '@apply outline-gray-300 dark:outline-gray-600': {},
+            '@apply outline-dashed ring-0': {},
+          },
+        },
+      })
+    }),
   ],
 }

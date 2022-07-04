@@ -88,30 +88,30 @@ const closeButtonClasses = computed(() => {
         'dark:text-info-500',
         'hover:bg-info-300/50',
         'focus:bg-info-300/50',
-        '!active:bg-info-300/20',
+        'active:bg-info-300/20',
         'dark:hover:bg-info-500/30',
         'dark:focus:bg-info-500/30',
-        '!dark:active:bg-info-500/20',
+        'dark:active:bg-info-500/20',
       ]
     case 'warning':
       return [
         'dark:text-warning-500',
         'hover:bg-warning-300/50',
         'focus:bg-warning-300/50',
-        '!active:bg-warning-300/20',
+        'active:bg-warning-300/20',
         'dark:hover:bg-warning-500/30',
         'dark:focus:bg-warning-500/30',
-        '!dark:active:bg-warning-500/20',
+        'dark:active:bg-warning-500/20',
       ]
     case 'danger':
       return [
         'dark:text-danger-500',
         'hover:bg-danger-300/50',
         'focus:bg-danger-300/50',
-        '!active:bg-danger-300/20',
+        'active:bg-danger-300/20',
         'dark:hover:bg-danger-500/30',
         'dark:focus:bg-danger-500/30',
-        '!dark:active:bg-danger-500/20',
+        'dark:active:bg-danger-500/20',
       ]
     case 'success':
     default:
@@ -119,10 +119,10 @@ const closeButtonClasses = computed(() => {
         'dark:text-success-500',
         'hover:bg-success-300/50',
         'focus:bg-success-300/50',
-        '!active:bg-success-300/20',
+        'active:bg-success-300/20',
         'dark:hover:bg-success-500/30',
         'dark:focus:bg-success-500/30',
-        '!dark:active:bg-success-500/20',
+        'dark:active:bg-success-500/20',
       ]
   }
 })

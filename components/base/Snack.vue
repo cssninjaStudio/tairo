@@ -57,8 +57,8 @@ const emit = defineEmits(['delete'])
       :class="[
         props.small ? 'mr-1' : 'mr-2',
         props.light
-          ? 'hover:bg-slate-100 !active:bg-slate-200 focus:bg-slate-100 !dark:active:bg-slate-500/50 dark:focus:bg-slate-600 dark:hover:bg-slate-600 '
-          : 'hover:bg-slate-300 !active:bg-slate-400/50 focus:bg-slate-300 !dark:active:bg-slate-500/50 dark:focus:bg-slate-600 dark:hover:bg-slate-600 ',
+          ? 'hover:bg-slate-100 active:bg-slate-200 focus:bg-slate-100 !dark:active:bg-slate-500/50 dark:focus:bg-slate-600 dark:hover:bg-slate-600 '
+          : 'hover:bg-slate-300 active:bg-slate-400/50 focus:bg-slate-300 !dark:active:bg-slate-500/50 dark:focus:bg-slate-600 dark:hover:bg-slate-600 ',
       ]"
       @click="emit('delete')"
     >

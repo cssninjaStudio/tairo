@@ -98,7 +98,7 @@ const props = withDefaults(defineProps<CarouselProps>(), {
   </div>
 </template>
 
-<style lang="postcss" scoped>
+<style lang="pcss" scoped>
 .carousel__slide {
   @apply p-2;
 }

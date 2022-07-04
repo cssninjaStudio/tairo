@@ -1,0 +1,14 @@
+  /* Router Link */
+  .slimscroll ul li .router-link-exact-active {
+    @apply text-primary-500;
+  }
+
+  /* Scrollbar helper class */
+
+  .slimscroll::-webkit-scrollbar {
+    @apply w-[6px];
+  }
+
+  .slimscroll::-webkit-scrollbar-thumb {
+    @apply rounded-lg bg-black/20;
+  }

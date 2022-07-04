@@ -75,10 +75,10 @@ const colorClasses = computed(() => {
       'dark:border-slate-600',
       'dark:hover:bg-slate-600',
       'dark:focus:bg-slate-600',
-      '!dark:active:bg-slate-700/90',
+      'dark:active:bg-slate-700/90',
       'hover:bg-slate-50',
       'focus:bg-slate-50',
-      '!active:bg-slate-100',
+      'active:bg-slate-100',
     ]
   }
 
@@ -256,21 +256,13 @@ const colorClasses = computed(() => {
 })
 const buttonClasses = computed(() => [
   'relative',
-  'font-text',
-  'font-normal',
-  'inline-flex',
-  'items-center',
-  'justify-center',
-  'outline-none',
+  'font-text font-normal text-sm no-underline',
+  'inline-flex justify-center items-center',
   'leading-5',
-  'no-underline',
-  'space-x-1',
   'h-10',
-  'px-5',
-  'py-2',
-  'text-sm',
-  'tairo-focus',
-  'transition-all',
+  'px-5 py-2 space-x-1',
+  'tairo-focus focus-within:outline-2',
+  'transition-colors transition-shadow',
   'duration-300',
   props.loading && '!text-transparent',
   props.disabled &&
