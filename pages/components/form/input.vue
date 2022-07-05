@@ -1,0 +1,277 @@
+<script setup lang="ts">
+// @todo: implement form validation like in Vuero
+
+import { breadcrumb, toc } from '@@/documentation/components/form/input/toc'
+import {
+  curved,
+  disabled,
+  focus,
+  full,
+  icon,
+  invalid,
+  loading,
+  rounded,
+  straight,
+} from '@@/documentation/components/form/input'
+import { properties } from '@@/documentation/components/form/input/properties'
+import {
+  inputCurved,
+  inputFull,
+  inputRounded,
+  inputStraight,
+} from '@@/documentation/components/form/input/data'
+
+definePageMeta({
+  title: 'Inputs',
+})
+</script>
+
+<template>
+  <div>
+    <!-- BreadCrumb -->
+    <BaseBreadcrumb :items="breadcrumb" separator="dot" />
+
+    <!-- Documentation Layout -->
+    <DocLayout>
+      <!-- content -->
+      <template #content>
+        <!-- Input straight -->
+        <DocSection id="input-straight" title="Input straight" tag="1.0.0">
+          <DocComponent label="Straight input example">
+            <template #demo>
+              <div class="flex flex-col md:flex-row md:items-end gap-6">
+                <div class="w-full max-w-sm space-y-4">
+                  <BaseFormInput
+                    v-model="inputStraight"
+                    shape="straight"
+                    label="Short description"
+                    placeholder="Enter a few words..."
+                  />
+                </div>
+                <!-- State box -->
+                <DocState :state="inputStraight" height="80px" />
+              </div>
+            </template>
+            <template #code>
+              <DocCode language="html" :code="straight" />
+            </template>
+          </DocComponent>
+        </DocSection>
+
+        <!-- Input rounded -->
+        <DocSection id="input-rounded" title="Input rounded" tag="1.0.0">
+          <DocComponent label="Rounded input example">
+            <template #demo>
+              <div class="flex flex-col md:flex-row md:items-end gap-6">
+                <div class="w-full max-w-sm space-y-4">
+                  <BaseFormInput
+                    v-model="inputRounded"
+                    shape="rounded"
+                    label="Short description"
+                    placeholder="Enter a few words..."
+                  />
+                </div>
+                <!-- State box -->
+                <DocState :state="inputRounded" height="80px" />
+              </div>
+            </template>
+            <template #code>
+              <DocCode language="html" :code="rounded" />
+            </template>
+          </DocComponent>
+        </DocSection>
+
+        <!-- Input curved -->
+        <DocSection id="input-curved" title="Input curved" tag="1.0.0">
+          <DocComponent label="Curved input example">
+            <template #demo>
+              <div class="flex flex-col md:flex-row md:items-end gap-6">
+                <div class="w-full max-w-sm space-y-4">
+                  <BaseFormInput
+                    v-model="inputCurved"
+                    shape="curved"
+                    label="Short description"
+                    placeholder="Enter a few words..."
+                  />
+                </div>
+                <!-- State box -->
+                <DocState :state="inputCurved" height="80px" />
+              </div>
+            </template>
+            <template #code>
+              <DocCode language="html" :code="curved" />
+            </template>
+          </DocComponent>
+        </DocSection>
+
+        <!-- Input full -->
+        <DocSection id="input-full" title="Input full" tag="1.0.0">
+          <DocComponent label="Full input example">
+            <template #demo>
+              <div class="flex flex-col md:flex-row md:items-end gap-6">
+                <div class="w-full max-w-sm space-y-4">
+                  <BaseFormInput
+                    v-model="inputFull"
+                    shape="full"
+                    label="Short description"
+                    placeholder="Enter a few words..."
+                  />
+                </div>
+                <!-- State box -->
+                <DocState :state="inputFull" height="80px" />
+              </div>
+            </template>
+            <template #code>
+              <DocCode language="html" :code="full" />
+            </template>
+          </DocComponent>
+        </DocSection>
+
+        <!-- Input icon -->
+        <DocSection id="input-icon" title="Input icon" tag="1.0.0">
+          <DocComponent label="Icon input example">
+            <template #demo>
+              <div class="flex flex-col md:flex-row md:items-end gap-6">
+                <div class="w-full max-w-sm space-y-4">
+                  <BaseFormInput
+                    shape="straight"
+                    label="Search"
+                    placeholder="Enter search terms..."
+                    icon="lucide:search"
+                  />
+                  <BaseFormInput
+                    shape="rounded"
+                    label="Email Address"
+                    placeholder="Your email..."
+                    icon="lucide:mail"
+                  />
+                </div>
+                <div class="w-full max-w-sm space-y-4">
+                  <BaseFormInput
+                    shape="curved"
+                    label="Username"
+                    placeholder="Your username..."
+                    icon="lucide:user"
+                  />
+                  <BaseFormInput
+                    type="password"
+                    shape="full"
+                    label="Password"
+                    placeholder="Enter password..."
+                    icon="lucide:lock"
+                  />
+                </div>
+              </div>
+            </template>
+            <template #code>
+              <DocCode language="html" :code="icon" />
+            </template>
+          </DocComponent>
+        </DocSection>
+
+        <!-- Input focus -->
+        <DocSection id="input-focus" title="Colored focus" tag="1.0.0">
+          <DocComponent label="Input primary focus example">
+            <template #demo>
+              <div class="flex flex-col md:flex-row md:items-end gap-6">
+                <div class="w-full max-w-sm space-y-4">
+                  <BaseFormInput
+                    v-model="inputRounded"
+                    shape="rounded"
+                    label="Email Address"
+                    placeholder="Enter your email..."
+                    icon="lucide:mail"
+                    color-focus
+                  />
+                </div>
+                <!-- State box -->
+                <DocState :state="inputRounded" height="80px" />
+              </div>
+            </template>
+            <template #code>
+              <DocCode language="html" :code="focus" />
+            </template>
+          </DocComponent>
+        </DocSection>
+
+        <!-- Input loading -->
+        <DocSection id="input-loading" title="Loading state" tag="1.0.0">
+          <DocComponent label="Input loading state example">
+            <template #demo>
+              <div class="flex items-end gap-6">
+                <div class="w-full max-w-sm space-y-4">
+                  <BaseFormInput
+                    shape="rounded"
+                    label="Email Address"
+                    placeholder="Enter your email..."
+                    icon="lucide:mail"
+                    loading
+                  />
+                </div>
+              </div>
+            </template>
+            <template #code>
+              <DocCode language="html" :code="loading" />
+            </template>
+          </DocComponent>
+        </DocSection>
+
+        <!-- Input disabled -->
+        <DocSection id="input-disabled" title="Disabled state" tag="1.0.0">
+          <DocComponent label="Input disabled state example">
+            <template #demo>
+              <div class="flex items-end gap-6">
+                <div class="w-full max-w-sm space-y-4">
+                  <BaseFormInput
+                    shape="rounded"
+                    label="Email Address"
+                    placeholder="Enter your email..."
+                    icon="lucide:mail"
+                    disabled
+                  />
+                </div>
+              </div>
+            </template>
+            <template #code>
+              <DocCode language="html" :code="disabled" />
+            </template>
+          </DocComponent>
+        </DocSection>
+
+        <!-- Input invalid -->
+        <DocSection id="input-invalid" title="Colored invalid" tag="1.0.0">
+          <DocComponent label="Input invalid state example">
+            <template #demo>
+              <div class="flex items-end gap-6">
+                <div class="w-full max-w-sm space-y-4">
+                  <BaseFormInput
+                    shape="rounded"
+                    label="Email Address"
+                    placeholder="Enter your email..."
+                    icon="lucide:mail"
+                    invalid
+                  />
+                </div>
+              </div>
+            </template>
+            <template #code>
+              <DocCode language="html" :code="invalid" />
+            </template>
+          </DocComponent>
+        </DocSection>
+
+        <!-- Input properties -->
+        <DocProps
+          id="input-props"
+          component="Input"
+          :properties="properties.props"
+          :slots="properties.slots"
+        />
+      </template>
+      <!-- Toc -->
+      <template #toc>
+        <DocToc :anchors="toc" />
+      </template>
+    </DocLayout>
+  </div>
+</template>

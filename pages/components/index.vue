@@ -61,7 +61,7 @@ definePageMeta({
             class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-slate-700"
           >
             <NuxtLink
-              to="/elements/content"
+              to="/components/content"
               class="font-text text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
             >
               Get Started

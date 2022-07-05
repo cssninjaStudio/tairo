@@ -4,7 +4,6 @@ import {
   BaseIcon,
   LazyNavigationSidebarMenuComponents,
   LazyNavigationSidebarMenuDashboards,
-  LazyNavigationSidebarMenuElements,
   LazyNavigationSidebarMenuLayouts,
 } from '#components'
 
@@ -38,12 +37,6 @@ export const useSidebar = createSharedComposable(() => {
         h(BaseIcon, { name: 'ph:app-window-duotone', class: 'w-5 h-5' }),
       subnav: LazyNavigationSidebarMenuLayouts,
       activePath: '/layouts',
-    },
-    {
-      name: 'Elements',
-      icon: () => h(BaseIcon, { name: 'ph:nut-duotone', class: 'w-5 h-5' }),
-      subnav: LazyNavigationSidebarMenuElements,
-      activePath: '/elements',
     },
     {
       name: 'Components',
