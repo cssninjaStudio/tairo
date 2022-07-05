@@ -49,14 +49,14 @@ watch(
         v-model="value"
         :type="props.type"
         v-bind="$attrs"
-        class="peer py-2 h-10 text-sm leading-5 font-text w-full bg-white text-slate-600 border border-slate-300 focus:border-slate-300 focus:shadow-lg focus:shadow-slate-300/50 dark:focus:shadow-slate-800/50 placeholder:text-slate-300 dark:placeholder:text-slate-500 dark:bg-slate-900/75 dark:text-slate-200 dark:border-slate-700 dark:focus:border-slate-700 tairo-focus disabled:opacity-75 disabled:cursor-not-allowed transition-all duration-300"
+        class="peer py-2 h-10 text-sm leading-5 font-text w-full bg-white text-slate-600 border border-slate-300 placeholder:text-slate-300 dark:placeholder:text-slate-500 dark:bg-slate-900/75 dark:text-slate-200 dark:border-slate-700 dark:focus:border-slate-700 tairo-focus disabled:opacity-75 disabled:cursor-not-allowed transition-all duration-300"
         :class="[
           props.shape === 'rounded' && 'rounded',
           props.shape === 'curved' && 'rounded-xl',
           props.shape === 'full' && 'rounded-full',
-          props.colorFocus && '!focus:border-primary-500',
+          props.colorFocus && 'focus:border-primary-500',
           props.icon !== undefined ? 'pl-9 pr-4' : 'px-3',
-          props.loading && '!text-transparent placeholder:!text-transparent',
+          props.loading && 'text-transparent placeholder:text-transparent',
           props.invalid && !props.loading && '!border-danger-500',
         ]"
       />

@@ -46,11 +46,11 @@ const colorClass = computed(() => {
       'dark:text-white',
       'dark:bg-slate-700/40',
       'dark:border-slate-700/40',
-      'dark:hover:bg-slate-700/60',
-      'hover:bg-slate-100',
-      'dark:active:border-slate-800',
-      'dark:active:bg-slate-800',
-      'active:bg-slate-200/50',
+      'dark:hover:enabled:bg-slate-700/60',
+      'hover:enabled:bg-slate-100',
+      'dark:active:enabled:border-slate-800',
+      'dark:active:enabled:bg-slate-800',
+      'active:enabled:bg-slate-200/50',
     ]
   }
 
@@ -61,10 +61,10 @@ const colorClass = computed(() => {
     'dark:text-white',
     'dark:bg-slate-700',
     'dark:border-slate-600',
-    'dark:hover:bg-slate-600',
-    'hover:bg-slate-50',
-    'dark:active:bg-slate-700/70',
-    'active:bg-slate-100',
+    'dark:hover:enabled:bg-slate-600',
+    'hover:enabled:bg-slate-50',
+    'dark:active:enabled:bg-slate-700/70',
+    'active:enabled:bg-slate-100',
   ]
 })
 
@@ -80,7 +80,7 @@ const buttonClasses = computed(() => [
   'transition-colors transition-shadow duration-300',
   props.loading && '!text-transparent',
   props.disabled &&
-    'disabled:opacity-60 disabled:cursor-not-allowed hover:shadow-none',
+    'disabled:opacity-60 disabled:cursor-not-allowed hover:enabled:shadow-none',
   ...colorClass.value,
   shapeClass.value,
 ])

@@ -86,43 +86,43 @@ const closeButtonClasses = computed(() => {
     case 'info':
       return [
         'dark:text-info-500',
-        'hover:bg-info-300/50',
-        'focus:bg-info-300/50',
-        'active:bg-info-300/20',
-        'dark:hover:bg-info-500/30',
-        'dark:focus:bg-info-500/30',
-        'dark:active:bg-info-500/20',
+        'hover:enabled:bg-info-300/50',
+        'focus-visible:bg-info-300/50',
+        'active:enabled:bg-info-300/20',
+        'dark:hover:enabled:bg-info-500/30',
+        'dark:focus-visible:bg-info-500/30',
+        'dark:active:enabled:bg-info-500/20',
       ]
     case 'warning':
       return [
         'dark:text-warning-500',
-        'hover:bg-warning-300/50',
-        'focus:bg-warning-300/50',
-        'active:bg-warning-300/20',
-        'dark:hover:bg-warning-500/30',
-        'dark:focus:bg-warning-500/30',
+        'hover:enabled:bg-warning-300/50',
+        'focus-visible:bg-warning-300/50',
+        'active:enabled:bg-warning-300/20',
+        'dark:hover:enabled:bg-warning-500/30',
+        'dark:focus-visible:bg-warning-500/30',
         'dark:active:bg-warning-500/20',
       ]
     case 'danger':
       return [
         'dark:text-danger-500',
-        'hover:bg-danger-300/50',
-        'focus:bg-danger-300/50',
-        'active:bg-danger-300/20',
+        'hover:enabled:bg-danger-300/50',
+        'focus-visible:bg-danger-300/50',
+        'active:enabled:bg-danger-300/20',
         'dark:hover:bg-danger-500/30',
-        'dark:focus:bg-danger-500/30',
-        'dark:active:bg-danger-500/20',
+        'dark:focus-visible:bg-danger-500/30',
+        'dark:active:enabled:bg-danger-500/20',
       ]
     case 'success':
     default:
       return [
         'dark:text-success-500',
-        'hover:bg-success-300/50',
-        'focus:bg-success-300/50',
-        'active:bg-success-300/20',
-        'dark:hover:bg-success-500/30',
-        'dark:focus:bg-success-500/30',
-        'dark:active:bg-success-500/20',
+        'hover:enabled:bg-success-300/50',
+        'focus-visible:bg-success-300/50',
+        'active:enabled:bg-success-300/20',
+        'dark:hover:enabled:bg-success-500/30',
+        'dark:focus-visible:bg-success-500/30',
+        'dark:active:enabled:bg-success-500/20',
       ]
   }
 })
@@ -130,7 +130,7 @@ const closeButtonClasses = computed(() => {
 
 <template>
   <div
-    class="flex items-center p-1 min-h-[3rem] border"
+    class="flex items-center p-1 min-h-[3rem] border tairo-focus"
     :class="[shapeClass, ...messageClasses]"
   >
     <div

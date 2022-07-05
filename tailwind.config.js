@@ -1,11 +1,13 @@
 const colors = require('tailwindcss/colors')
 const plugin = require('tailwindcss/plugin')
-// const defaultTheme = require('tailwindcss/defaultTheme')
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: 'class',
   content: [
     /**
+     * Default content inherited from Tailwind Nuxt module
+     *
      * components/** /*.{vue,js}`,
      * layouts/** /*.vue`,
      * pages/** /*.vue`,
