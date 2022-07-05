@@ -10,7 +10,7 @@ import {
 import { properties } from '@@/documentation/components/icon-button/properties'
 
 definePageMeta({
-  title: 'Button icon',
+  title: 'Button Icon',
   documentation: {
     category: 'Interaction',
     components: ['BaseButtonIcon'],

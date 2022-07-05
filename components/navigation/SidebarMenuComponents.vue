@@ -133,15 +133,26 @@ const hightlightSearch = (text?: string, search?: string): string => {
                 "
               >
                 <div
-                  v-for="(component, index) in route.meta?.documentation
-                    ?.components"
+                  v-for="(
+                    component, index
+                  ) in route.meta?.documentation?.components?.filter(
+                    (item, index) => (isSearching ? true : index === 0)
+                  )"
                   :key="component"
-                  class="truncate font-mono before:content-['<'] after:content-['_/>']"
-                  :class="
-                    index === 0
-                      ? 'text-sm'
-                      : 'text-xs text-slate-300 group-hover:text-primary-300 dark:text-slate-500 dark:group-hover:text-primary-400/50'
-                  "
+                  class="truncate font-mono after:content-['_/>']"
+                  :class="[
+                    index !== 0 &&
+                      'text-xs text-slate-300 group-hover:text-primary-300 dark:text-slate-500 dark:group-hover:text-primary-400/50',
+                    index === 0 && `text-sm before:content-['<']`,
+                    index !== 0 &&
+                      index ===
+                        route.meta?.documentation?.components?.length - 1 &&
+                      `before:content-['└─_<']`,
+                    index !== 0 &&
+                      index !==
+                        route.meta?.documentation?.components?.length - 1 &&
+                      `before:content-['├─_<']`,
+                  ]"
                   :title="`<${component} />`"
                   v-html="hightlightSearch(component, filter)"
                 ></div>

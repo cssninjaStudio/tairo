@@ -1,14 +1,16 @@
-  /* Router Link */
-  .slimscroll ul li .router-link-exact-active {
-    @apply text-primary-500;
-  }
+/* Router Link */
+.slimscroll ul li .router-link-exact-active {
+  @apply text-primary-500;
+}
 
-  /* Scrollbar helper class */
+/* Scrollbar helper class */
 
-  .slimscroll::-webkit-scrollbar {
-    @apply w-[6px];
-  }
-
-  .slimscroll::-webkit-scrollbar-thumb {
-    @apply rounded-lg bg-black/20;
-  }
+.slimscroll::-webkit-scrollbar {
+  @apply w-[6px];
+}
+.slimscroll::-webkit-scrollbar-thumb {
+  @apply rounded-lg bg-black/5 dark:bg-white/5 duration-300 transition-all;
+}
+.slimscroll:hover::-webkit-scrollbar-thumb {
+  @apply bg-black/20 dark:bg-white/20;
+}
