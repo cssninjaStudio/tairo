@@ -1,25 +1,11 @@
 export const properties = {
   props: [
     {
-      name: 'separator',
-      type: 'BreadcrumbSeparator',
-      required: 'false',
-      default: 'dot',
-      values: ['dot', 'slash', 'chevron', 'arrow'],
-    },
-    {
       name: 'items',
       type: 'BreadcrumbItem[ ]',
-      required: 'true',
+      required: 'false',
       default: '() => [ ]',
       values: ['array'],
-    },
-    {
-      name: 'withIcons',
-      type: 'boolean',
-      required: 'false',
-      default: 'false',
-      values: ['boolean'],
     },
   ],
   slots: [],
@@ -33,6 +19,13 @@ export const itemProperties = {
       required: 'true',
       default: 'undefined',
       values: ['string'],
+    },
+    {
+      name: 'hideLabel',
+      type: 'boolean',
+      required: 'false',
+      default: 'false',
+      values: ['boolean'],
     },
     {
       name: 'icon',
@@ -49,5 +42,11 @@ export const itemProperties = {
       values: ['string'],
     },
   ],
-  slots: [],
+  slots: [
+    {
+      name: '#default',
+      properties: ['null'],
+      description: 'Separator between items',
+    },
+  ],
 }

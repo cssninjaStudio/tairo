@@ -9,24 +9,61 @@ export interface BreadcrumbItem {
   to?: RouteLocationRaw
 }
 export interface BreadcrumbsProps {
-  items: BreadcrumbItem[]
-  separator?: BreadcrumbSeparator
-  withIcons?: boolean
+  items?: BreadcrumbItem[]
 }
 
-const props = withDefaults(defineProps<BreadcrumbsProps>(), {
-  separator: 'dot',
+const props = withDefaults(defineProps<BreadcrumbsProps>(), {})
+const route = useRoute()
+const router = useRouter()
+
+const items = computed(() => {
+  if (props.items) {
+    return props.items
+  }
+
+  const breadcrumbItems: BreadcrumbItem[] = []
+  const indexRoute = router.resolve('/')
+
+  if (indexRoute.meta.breadcrumb === false) {
+    // skip breadcrumb item
+  } else if (indexRoute.meta.breadcrumb) {
+    const breadcrumbItem = indexRoute.meta.breadcrumb
+    breadcrumbItems.push({
+      to: indexRoute.path,
+      ...breadcrumbItem,
+    })
+  } else if (indexRoute.meta.title) {
+    breadcrumbItems.push({
+      label: indexRoute.meta.title,
+      to: indexRoute.path,
+    })
+  }
+
+  route.matched.forEach((route) => {
+    if (route.meta.breadcrumb === false) {
+      // skip breadcrumb item
+    } else if (route.meta.breadcrumb) {
+      const breadcrumbItem = route.meta.breadcrumb
+      breadcrumbItems.push({
+        to: route.path,
+        ...breadcrumbItem,
+      })
+    } else if (route.meta.title) {
+      breadcrumbItems.push({
+        label: route.meta.title,
+        to: route.path,
+      })
+    }
+  })
+
+  return breadcrumbItems
 })
 </script>
 
 <template>
   <nav>
     <ul class="flex items-center font-text text-sm mb-6">
-      <li
-        v-for="(item, index) in props.items"
-        :key="index"
-        class="flex items-center"
-      >
+      <li v-for="(item, index) in items" :key="index" class="flex items-center">
         <NuxtLink
           :to="item.to"
           class="flex items-center gap-x-1 text-slate-500 hover:text-primary-500 transition-colors duration-300"
@@ -34,29 +71,8 @@ const props = withDefaults(defineProps<BreadcrumbsProps>(), {
           <BaseIcon v-if="item.icon" :name="item.icon" class="block w-4 h-4" />
           <span :class="[item.hideLabel && 'sr-only']">{{ item.label }}</span>
         </NuxtLink>
-        <span
-          v-if="props.separator === 'dot' && index < items.length - 1"
-          class="px-2 text-slate-500"
-        >
-          ·
-        </span>
-        <span
-          v-else-if="props.separator === 'slash' && index < items.length - 1"
-          class="px-2 text-slate-500"
-        >
-          /
-        </span>
-        <span
-          v-else-if="props.separator === 'chevron' && index < items.length - 1"
-          class="px-2 text-slate-500"
-        >
-          <BaseIcon name="lucide:chevron-right" class="block w-3 h-3" />
-        </span>
-        <span
-          v-else-if="props.separator === 'arrow' && index < items.length - 1"
-          class="px-2 text-slate-500"
-        >
-          <BaseIcon name="lucide:arrow-right" class="block w-3 h-3" />
+        <span v-if="index < items.length - 1" class="px-2 text-slate-500">
+          <slot>·</slot>
         </span>
       </li>
     </ul>

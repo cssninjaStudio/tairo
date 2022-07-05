@@ -12,7 +12,7 @@ definePageMeta({
 <template>
   <div>
     <!-- BreadCrumb -->
-    <BaseBreadcrumb :items="breadcrumb" separator="dot" />
+    <BaseBreadcrumb />
 
     <!-- Documentation Layout -->
     <DocLayout>

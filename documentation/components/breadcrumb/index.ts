@@ -92,9 +92,9 @@ const demoBreadcrumbTwo = [
 </script>
 
 <template>
-  <BaseBreadcrumb :items="demoBreadcrumbOne" separator="slash" />
+  <BaseBreadcrumb :items="demoBreadcrumbOne">/</BaseBreadcrumb>
 
-  <BaseBreadcrumb :items="demoBreadcrumbTwo" separator="slash" />
+  <BaseBreadcrumb :items="demoBreadcrumbTwo">/</BaseBreadcrumb>
 </template>
 `
 
@@ -142,9 +142,13 @@ const demoBreadcrumbTwo = [
 </script>
 
 <template>
-  <BaseBreadcrumb :items="demoBreadcrumbOne" separator="chevron" />
+  <BaseBreadcrumb :items="demoBreadcrumbOne">
+    <BaseIcon name="lucide:chevron-right" class="block w-3 h-3" />
+  </BaseBreadcrumb>
 
-  <BaseBreadcrumb :items="demoBreadcrumbTwo" separator="chevron" />
+  <BaseBreadcrumb :items="demoBreadcrumbTwo">
+    <BaseIcon name="lucide:chevron-right" class="block w-3 h-3" />
+  </BaseBreadcrumb>
 </template>
 `
 
@@ -192,8 +196,12 @@ const demoBreadcrumbTwo = [
 </script>
 
 <template>
-  <BaseBreadcrumb :items="demoBreadcrumbOne" separator="arrow" />
+  <BaseBreadcrumb :items="demoBreadcrumbOne">
+    <BaseIcon name="lucide:arrow-right" class="block w-3 h-3" />
+  </BaseBreadcrumb>
 
-  <BaseBreadcrumb :items="demoBreadcrumbTwo" separator="arrow" />
+  <BaseBreadcrumb :items="demoBreadcrumbTwo">
+    <BaseIcon name="lucide:arrow-right" class="block w-3 h-3" />
+  </BaseBreadcrumb>
 </template>
 `

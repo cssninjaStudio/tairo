@@ -23,7 +23,7 @@ definePageMeta({
 <template>
   <div>
     <!-- BreadCrumb -->
-    <BaseBreadcrumb :items="breadcrumb" separator="dot" />
+    <BaseBreadcrumb />
 
     <!-- Documentation Layout -->
     <DocLayout>
@@ -34,9 +34,9 @@ definePageMeta({
           <DocComponent label="Breadcrumb dot separator">
             <template #demo>
               <div class="flex flex-col gap-4">
-                <BaseBreadcrumb :items="demoBreadcrumbOne" separator="dot" />
+                <BaseBreadcrumb :items="demoBreadcrumbOne" />
 
-                <BaseBreadcrumb :items="demoBreadcrumbTwo" separator="dot" />
+                <BaseBreadcrumb :items="demoBreadcrumbTwo" />
               </div>
             </template>
             <template #code>
@@ -50,9 +50,9 @@ definePageMeta({
           <DocComponent label="Breadcrumb slash separator">
             <template #demo>
               <div class="flex flex-col gap-4">
-                <BaseBreadcrumb :items="demoBreadcrumbOne" separator="slash" />
+                <BaseBreadcrumb :items="demoBreadcrumbOne">/</BaseBreadcrumb>
 
-                <BaseBreadcrumb :items="demoBreadcrumbTwo" separator="slash" />
+                <BaseBreadcrumb :items="demoBreadcrumbTwo">/</BaseBreadcrumb>
               </div>
             </template>
             <template #code>
@@ -70,15 +70,13 @@ definePageMeta({
           <DocComponent label="Breadcrumb chevron separator">
             <template #demo>
               <div class="flex flex-col gap-4">
-                <BaseBreadcrumb
-                  :items="demoBreadcrumbOne"
-                  separator="chevron"
-                />
+                <BaseBreadcrumb :items="demoBreadcrumbOne">
+                  <BaseIcon name="lucide:chevron-right" class="block w-3 h-3" />
+                </BaseBreadcrumb>
 
-                <BaseBreadcrumb
-                  :items="demoBreadcrumbTwo"
-                  separator="chevron"
-                />
+                <BaseBreadcrumb :items="demoBreadcrumbTwo">
+                  <BaseIcon name="lucide:chevron-right" class="block w-3 h-3" />
+                </BaseBreadcrumb>
               </div>
             </template>
             <template #code>
@@ -92,9 +90,13 @@ definePageMeta({
           <DocComponent label="Breadcrumb arrow separator">
             <template #demo>
               <div class="flex flex-col gap-4">
-                <BaseBreadcrumb :items="demoBreadcrumbOne" separator="arrow" />
+                <BaseBreadcrumb :items="demoBreadcrumbOne">
+                  <BaseIcon name="lucide:arrow-right" class="block w-3 h-3" />
+                </BaseBreadcrumb>
 
-                <BaseBreadcrumb :items="demoBreadcrumbTwo" separator="arrow" />
+                <BaseBreadcrumb :items="demoBreadcrumbTwo">
+                  <BaseIcon name="lucide:arrow-right" class="block w-3 h-3" />
+                </BaseBreadcrumb>
               </div>
             </template>
             <template #code>
