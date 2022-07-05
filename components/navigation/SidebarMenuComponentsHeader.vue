@@ -42,7 +42,11 @@ onKeyStroke(['Escape'], () => {
         v-model="filter"
         v-focus
         icon="lucide:search"
-        placeholder="ex: BaseInput, BaseCard, ..."
+        :placeholder="
+          displayMode === 'component'
+            ? 'ex: BaseInput, BaseCard, ...'
+            : 'ex: Icons, Typography...'
+        "
         condensed
         @blur="
           () => {
