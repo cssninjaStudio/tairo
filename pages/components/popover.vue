@@ -17,6 +17,15 @@ import {
 
 definePageMeta({
   title: 'Popover',
+  documentation: {
+    category: 'Interaction',
+    components: [
+      'BasePopover',
+      'BasePopoverContentHelp',
+      'BasePopoverContentDual',
+      'BasePopoverContentMedia',
+    ],
+  },
 })
 </script>
 

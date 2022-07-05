@@ -23,6 +23,10 @@ import {
 
 definePageMeta({
   title: 'Inputs',
+  documentation: {
+    category: 'Forms',
+    components: ['BaseFormInput'],
+  },
 })
 </script>
 

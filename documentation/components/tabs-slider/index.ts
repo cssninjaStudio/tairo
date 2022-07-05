@@ -88,7 +88,7 @@ export const x2Full = `
 export const x3Rounded = `
 <template>
   <BaseTabSlider
-    :slots="3"
+    :size="3"
     selected="team"
     :tabs="[
       { label: 'Team', value: 'team' },
@@ -133,7 +133,7 @@ export const x3Full = `
 <template>
   <BaseTabSlider
     shape="full"
-    :slots="3"
+    :size="3"
     selected="team"
     :tabs="[
       { label: 'Team', value: 'team' },

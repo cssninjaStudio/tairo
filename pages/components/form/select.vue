@@ -20,6 +20,10 @@ import {
 
 definePageMeta({
   title: 'Selects',
+  documentation: {
+    category: 'Forms',
+    components: ['BaseFormSelect'],
+  },
 })
 </script>
 

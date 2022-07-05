@@ -18,6 +18,10 @@ import {
 
 definePageMeta({
   title: 'Progress',
+  documentation: {
+    category: 'Display',
+    components: ['BaseProgress', 'BaseProgressCircle'],
+  },
 })
 </script>
 

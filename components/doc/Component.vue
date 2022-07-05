@@ -9,22 +9,7 @@ const props = withDefaults(defineProps<DocComponentProps>(), {
   label: undefined,
 })
 
-// const demoSwitcher = ref<ComponentPublicInstance | null>(null)
-// const codeSwitcher = ref<ComponentPublicInstance | null>(null)
 const activeTab = ref('demo')
-// const focusActive = ref('')
-
-// onKeyStroke(['ArrowRight'], () => {
-//   if (focusActive.value && focusActive.value === 'demo') {
-//     codeSwitcher.value?.$el?.focus()
-//   }
-// })
-
-// onKeyStroke(['ArrowLeft'], () => {
-//   if (focusActive.value && focusActive.value === 'code') {
-//     demoSwitcher.value?.$el?.focus()
-//   }
-// })
 </script>
 
 <template>

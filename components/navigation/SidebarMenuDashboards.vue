@@ -3,7 +3,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
 </script>
 
 <template>
-  <ul class="py-2.5">
+  <ul>
     <!-- Menu item -->
     <li class="group min-h-[2rem] mb-1">
       <Disclosure v-slot="{ open }">

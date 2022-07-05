@@ -22,6 +22,10 @@ import {
 
 definePageMeta({
   title: 'Combobox',
+  documentation: {
+    category: 'Forms',
+    components: ['BaseFormComboBox'],
+  },
 })
 </script>
 

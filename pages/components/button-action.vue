@@ -1,12 +1,21 @@
 <script setup lang="ts">
 import { breadcrumb, toc } from '@@/documentation/components/action/toc'
-import { group, loading, muted, shapes } from '@@/documentation/components/action'
+import {
+  group,
+  loading,
+  muted,
+  shapes,
+} from '@@/documentation/components/action'
 import { properties } from '@@/documentation/components/action/properties'
 
 const disabled = ref(true)
 
 definePageMeta({
-  title: 'Actions',
+  title: 'Button Action',
+  documentation: {
+    category: 'Interaction',
+    components: ['BaseButtonAction'],
+  },
 })
 </script>
 

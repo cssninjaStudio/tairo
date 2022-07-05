@@ -15,6 +15,10 @@ import { properties } from '@@/documentation/components/snack/properties'
 
 definePageMeta({
   title: 'Snacks',
+  documentation: {
+    category: 'Interaction',
+    components: ['BaseSnack'],
+  },
 })
 </script>
 

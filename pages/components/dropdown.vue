@@ -18,6 +18,10 @@ import {
 
 definePageMeta({
   title: 'Dropdowns',
+  documentation: {
+    category: 'Interaction',
+    components: ['BaseDropdown', 'BaseDropdownItem'],
+  },
 })
 </script>
 

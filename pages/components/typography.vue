@@ -1,14 +1,22 @@
 <script setup lang="ts">
-import { breadcrumb, toc } from '@@/documentation/components/content/toc'
-import { heading, paragraph, text } from '@@/documentation/components/content'
+import { breadcrumb, toc } from '@@/documentation/components/typography/toc'
+import {
+  heading,
+  paragraph,
+  text,
+} from '@@/documentation/components/typography'
 import {
   headingProperties,
   paragraphProperties,
   textProperties,
-} from '@@/documentation/components/content/properties'
+} from '@@/documentation/components/typography/properties'
 
 definePageMeta({
-  title: 'Content',
+  title: 'Typography',
+  documentation: {
+    category: 'Content',
+    components: ['BaseHeading', 'BaseParagraph'],
+  },
 })
 </script>
 

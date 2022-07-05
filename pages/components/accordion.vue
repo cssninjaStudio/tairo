@@ -15,6 +15,10 @@ import { accordion } from '@@/documentation/components/accordion/data'
 
 definePageMeta({
   title: 'Accordions',
+  documentation: {
+    category: 'Interaction',
+    components: ['BaseAccordion'],
+  },
 })
 </script>
 

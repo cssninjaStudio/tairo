@@ -4,6 +4,10 @@ import { composition, shape, text } from '@@/documentation/components/placeload'
 
 definePageMeta({
   title: 'Placeloads',
+  documentation: {
+    category: 'Display',
+    components: ['BasePlaceload'],
+  },
 })
 </script>
 

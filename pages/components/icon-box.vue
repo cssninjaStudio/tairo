@@ -12,6 +12,10 @@ import { properties } from '@@/documentation/components/iconbox/properties'
 
 definePageMeta({
   title: 'Icon Boxes',
+  documentation: {
+    category: 'Display',
+    components: ['BaseIconBox'],
+  },
 })
 </script>
 

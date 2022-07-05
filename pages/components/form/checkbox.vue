@@ -18,6 +18,10 @@ import {
 
 definePageMeta({
   title: 'Checkbox',
+  documentation: {
+    category: 'Forms',
+    components: ['BaseFormCheckbox'],
+  },
 })
 </script>
 

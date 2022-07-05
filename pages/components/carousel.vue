@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { breadcrumb, toc } from '@@/documentation/components/carousel/toc'
-import { iconCarousel, userCarousel } from '@@/documentation/components/carousel'
+import {
+  iconCarousel,
+  userCarousel,
+} from '@@/documentation/components/carousel'
 import {
   iconItemProps,
   iconProps,
@@ -11,6 +14,10 @@ import { team, topics } from '@@/documentation/components/carousel/data'
 
 definePageMeta({
   title: 'Carousel',
+  documentation: {
+    category: 'Interaction',
+    components: ['BaseCarouselTeam', 'BaseCarouselIcons'],
+  },
 })
 </script>
 

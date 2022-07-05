@@ -14,6 +14,7 @@ export interface InputProps {
   colorFocus?: boolean
   loading?: boolean
   invalid?: boolean
+  condensed?: boolean
   errorText?: string
 }
 
@@ -21,7 +22,6 @@ const emits = defineEmits<InputEmits>()
 const props = withDefaults(defineProps<InputProps>(), {
   modelValue: '',
   type: 'text',
-  name: undefined,
   shape: 'rounded',
   icon: undefined,
   errorText: 'Please enter a valid value',
@@ -41,21 +41,31 @@ watch(
 
 <template>
   <div class="relative">
-    <label v-if="!props.label" class="font-text text-sm text-slate-400">
-      {{ props.label }}
-    </label>
+    <BaseLabel
+      v-if="'label' in $slots || props.label"
+      class="w-full"
+      :class="[
+        props.condensed && 'text-xs pb-1',
+        !props.condensed && 'text-sm pb-2',
+      ]"
+    >
+      <slot name="label">{{ props.label }}</slot>
+    </BaseLabel>
     <div class="group relative">
       <input
         v-model="value"
         :type="props.type"
         v-bind="$attrs"
-        class="peer py-2 h-10 text-sm leading-5 font-text w-full bg-white text-slate-600 border border-slate-300 placeholder:text-slate-300 dark:placeholder:text-slate-500 dark:bg-slate-900/75 dark:text-slate-200 dark:border-slate-700 dark:focus:border-slate-700 tairo-focus disabled:opacity-75 disabled:cursor-not-allowed transition-all duration-300"
+        class="peer focus-within:outline-1 font-text w-full bg-white text-slate-600 border border-slate-300 placeholder:text-slate-300 dark:placeholder:text-slate-500 dark:bg-slate-900/75 dark:text-slate-200 dark:border-slate-700 dark:focus:border-slate-700 tairo-focus disabled:opacity-75 disabled:cursor-not-allowed transition-all duration-300"
         :class="[
+          props.condensed && 'text-xs leading-4 py-1 h-8',
+          props.condensed && props.icon !== undefined ? 'pl-7 pr-3' : 'px-2',
+          !props.condensed && 'text-sm leading-5 py-2 h-10',
+          !props.condensed && props.icon !== undefined ? 'pl-9 pr-4' : 'px-3',
           props.shape === 'rounded' && 'rounded',
           props.shape === 'curved' && 'rounded-xl',
           props.shape === 'full' && 'rounded-full',
           props.colorFocus && 'focus:border-primary-500',
-          props.icon !== undefined ? 'pl-9 pr-4' : 'px-3',
           props.loading && 'text-transparent placeholder:text-transparent',
           props.invalid && !props.loading && '!border-danger-500',
         ]"
@@ -68,14 +78,22 @@ watch(
       </div>
       <div
         v-if="props.icon"
-        class="absolute top-0 left-0 h-10 w-10 flex justify-center items-center text-slate-400 group-focus-within:text-violet-500 peer-disabled:opacity-75 peer-disabled:cursor-not-allowed transition-colors duration-300"
+        class="absolute top-0 left-0 flex justify-center items-center text-slate-400 group-focus-within:text-violet-500 peer-disabled:opacity-75 peer-disabled:cursor-not-allowed transition-colors duration-300"
         :class="[
+          props.condensed && 'w-8 h-8',
+          !props.condensed && 'h-10 w-10',
           props.loading && 'opacity-0',
           props.invalid && !props.loading && '!text-danger-500',
         ]"
       >
         <slot name="icon">
-          <BaseIcon :name="props.icon" class="w-[1.15rem] h-[1.15rem]" />
+          <BaseIcon
+            :name="props.icon"
+            :class="[
+              props.condensed && 'w-[1rem] h-[1rem]',
+              !props.condensed && 'w-[1.15rem] h-[1.15rem]',
+            ]"
+          />
         </slot>
       </div>
       <div

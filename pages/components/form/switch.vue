@@ -15,6 +15,10 @@ import {
 
 definePageMeta({
   title: 'Switches',
+  documentation: {
+    category: 'Forms',
+    components: ['BaseFormSwitchThin', 'BaseFormSwitchBall'],
+  },
 })
 </script>
 

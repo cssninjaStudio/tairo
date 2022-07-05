@@ -5,6 +5,10 @@ import { properties } from '@@/documentation/components/tag/properties'
 
 definePageMeta({
   title: 'Tags',
+  documentation: {
+    category: 'Display',
+    components: ['BaseTag'],
+  },
 })
 </script>
 

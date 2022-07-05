@@ -15,6 +15,15 @@ import { team } from '@@/documentation/components/flex-table/data'
 
 definePageMeta({
   title: 'Flex Tables',
+  documentation: {
+    category: 'Display',
+    components: [
+      'BaseFlexTable',
+      'BaseFlexTableHeading',
+      'BaseFlexTableRow',
+      'BaseFlexTableCell',
+    ],
+  },
 })
 </script>
 

@@ -10,6 +10,10 @@ import { properties } from '@@/documentation/components/modal/properties'
 
 definePageMeta({
   title: 'Modals',
+  documentation: {
+    category: 'Interaction',
+    components: ['BaseModal'],
+  },
 })
 </script>
 

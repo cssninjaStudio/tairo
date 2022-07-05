@@ -18,6 +18,15 @@ import { team } from '@@/documentation/components/table/data'
 
 definePageMeta({
   title: 'Tables',
+  documentation: {
+    category: 'Display',
+    components: [
+      'BaseTable',
+      'BaseTableHeading',
+      'BaseTableRow',
+      'BaseTableCell',
+    ],
+  },
 })
 </script>
 

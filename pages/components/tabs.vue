@@ -15,6 +15,10 @@ import {
 
 definePageMeta({
   title: 'Nav Tabs',
+  documentation: {
+    category: 'Interaction',
+    components: ['BaseTabs'],
+  },
 })
 </script>
 

@@ -11,6 +11,10 @@ import { people } from '@@/documentation/components/avatar-group/data'
 
 definePageMeta({
   title: 'Avatar group',
+  documentation: {
+    category: 'Display',
+    components: ['BaseAvatarGroup'],
+  },
 })
 </script>
 

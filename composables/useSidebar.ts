@@ -3,14 +3,17 @@ import type { RouteLocationRaw } from 'vue-router'
 import {
   BaseIcon,
   LazyNavigationSidebarMenuComponents,
+  LazyNavigationSidebarMenuComponentsHeader,
   LazyNavigationSidebarMenuDashboards,
+  LazyNavigationSidebarMenuHeader,
   LazyNavigationSidebarMenuLayouts,
 } from '#components'
 
-export interface NavigationSidebarItem {
+export interface LazyNavigationSidebarItem {
   name: string
   icon: Component
   subnav?: Component
+  subnavHeader?: Component | false
   to?: RouteLocationRaw
   click?: () => void | Promise<void>
   activePath?: string
@@ -23,12 +26,12 @@ export interface NavigationSidebarItem {
 export const useSidebar = createSharedComposable(() => {
   const { openPanel } = usePanels()
 
-  // @unocss-include
-  const sidebars: NavigationSidebarItem[] = [
+  const sidebars: LazyNavigationSidebarItem[] = [
     {
       name: 'Dashboards',
       icon: () => h(BaseIcon, { name: 'ph:sidebar-duotone', class: 'w-5 h-5' }),
       subnav: LazyNavigationSidebarMenuDashboards,
+      subnavHeader: LazyNavigationSidebarMenuHeader,
       activePath: '/dashboards',
     },
     {
@@ -36,6 +39,7 @@ export const useSidebar = createSharedComposable(() => {
       icon: () =>
         h(BaseIcon, { name: 'ph:app-window-duotone', class: 'w-5 h-5' }),
       subnav: LazyNavigationSidebarMenuLayouts,
+      subnavHeader: LazyNavigationSidebarMenuHeader,
       activePath: '/layouts',
     },
     {
@@ -43,6 +47,7 @@ export const useSidebar = createSharedComposable(() => {
       icon: () =>
         h(BaseIcon, { name: 'ph:grid-four-duotone', class: 'w-5 h-5' }),
       subnav: LazyNavigationSidebarMenuComponents,
+      subnavHeader: LazyNavigationSidebarMenuComponentsHeader,
       activePath: '/components',
     },
     {
@@ -89,7 +94,7 @@ export const useSidebar = createSharedComposable(() => {
     ({ activePath }) => activePath && route.path.startsWith(activePath)
   )
   // use shallowRef to avoid deeply reactive watch
-  const activeSidebar = shallowRef<NavigationSidebarItem | null>(
+  const activeSidebar = shallowRef<LazyNavigationSidebarItem | null>(
     sidebar || null
   )
   const isSidebarOpened = ref(activeSidebar.value !== null)
@@ -98,7 +103,7 @@ export const useSidebar = createSharedComposable(() => {
     isSidebarOpened.value = !isSidebarOpened.value
   }
 
-  function toggleActiveSidebar(sidebar: NavigationSidebarItem) {
+  function toggleActiveSidebar(sidebar: LazyNavigationSidebarItem) {
     if (sidebar?.click) {
       return sidebar?.click?.()
     }

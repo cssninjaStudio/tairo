@@ -10,6 +10,10 @@ import { properties } from '@@/documentation/components/pagination/properties'
 
 definePageMeta({
   title: 'Pagination',
+  documentation: {
+    category: 'Interaction',
+    components: ['BasePagination'],
+  },
 })
 
 const route = useRoute()

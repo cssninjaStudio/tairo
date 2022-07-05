@@ -15,6 +15,10 @@ import { properties } from '@@/documentation/components/button/properties'
 
 definePageMeta({
   title: 'Buttons',
+  documentation: {
+    category: 'Interaction',
+    components: ['BaseButton'],
+  },
 })
 </script>
 

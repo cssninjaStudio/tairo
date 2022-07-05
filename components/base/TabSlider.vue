@@ -10,8 +10,8 @@ export interface TabsProps {
   tabs: TabsItem[]
   selected?: string
   justify?: TabsAlign
-  size: TabSize
-  shape: TabsShapes
+  size?: TabSize
+  shape?: TabsShapes
 }
 
 const emit = defineEmits<{

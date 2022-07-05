@@ -41,9 +41,9 @@ module.exports = {
         danger: colors?.rose,
       },
       fontFamily: {
-        main: ['inter', 'sans-serif'],
-        sub: ['karla', 'sans-serif'],
-        text: ['Roboto', 'sans-serif'],
+        main: ['Inter', 'sans-serif'],
+        sub: ['Karla', 'sans-serif'],
+        text: ['Roboto Flex', 'sans-serif'],
       },
     },
   },

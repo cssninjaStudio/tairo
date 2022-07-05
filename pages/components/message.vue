@@ -5,6 +5,10 @@ import { properties } from '@@/documentation/components/message/properties'
 
 definePageMeta({
   title: 'Messages',
+  documentation: {
+    category: 'Interaction',
+    components: ['BaseMessage'],
+  },
 })
 </script>
 

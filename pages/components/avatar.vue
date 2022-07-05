@@ -18,6 +18,10 @@ import {
 
 definePageMeta({
   title: 'Avatars',
+  documentation: {
+    category: 'Display',
+    components: ['BaseAvatar'],
+  },
 })
 </script>
 

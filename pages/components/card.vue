@@ -9,6 +9,10 @@ import { properties } from '@@/documentation/components/card/properties'
 
 definePageMeta({
   title: 'Cards',
+  documentation: {
+    category: 'Display',
+    components: ['BaseCard'],
+  },
 })
 </script>
 

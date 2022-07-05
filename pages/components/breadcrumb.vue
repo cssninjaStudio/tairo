@@ -17,6 +17,10 @@ import {
 
 definePageMeta({
   title: 'Breadcrumbs',
+  documentation: {
+    category: 'Content',
+    components: ['BaseBreadcrumb'],
+  },
 })
 </script>
 

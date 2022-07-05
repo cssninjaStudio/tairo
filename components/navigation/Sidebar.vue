@@ -60,39 +60,25 @@ const endSidebars = sidebars.filter((sidebar) => sidebar.position === 'end')
           toggleActiveSidebar,
         }"
       >
-        <!-- Header -->
-        <div class="flex items-center h-16 w-full px-6">
-          <slot
-            name="subnav-header"
-            v-bind="{
-              activeSidebar,
-              sidebars,
-              isSidebarOpened,
-              toggleActiveSidebar,
-            }"
-          >
-            <h2
-              class="font-main text-lg font-semibold text-slate-700 dark:text-white capitalize"
-            >
-              {{ activeSidebar.name }}
-            </h2>
-          </slot>
-          <button
-            type="button"
-            class="flex xl:hidden items-center justify-center h-10 w-10 rounded-full ml-auto text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-colors duration-300"
-            @click="isSidebarOpened = false"
-          >
-            <BaseIcon name="feather:chevron-left" class="w-6 h-6" />
-          </button>
-        </div>
-        <!-- Body -->
-        <div
-          class="relative h-[calc(100%_-_64px)] w-full overflow-y-auto slimscroll px-6"
-        >
+        <div class="flex flex-col h-screen">
           <component
-            :is="activeSidebar.subnav"
-            v-if="activeSidebar?.subnav"
+            :is="activeSidebar.subnavHeader"
+            v-if="activeSidebar.subnavHeader"
           ></component>
+
+          <!-- Body -->
+          <div
+            v-if="activeSidebar?.subnav"
+            class="relative h-full w-full overflow-y-auto slimscroll"
+          >
+            <div class="px-6 pb-8">
+              <component :is="activeSidebar.subnav"></component>
+            </div>
+
+            <div
+              class="fixed bottom-0 w-[212px] h-10 z-10 bg-gradient-to-t from-white dark:from-slate-800 to-transparent pointer-events-none"
+            ></div>
+          </div>
         </div>
       </slot>
 

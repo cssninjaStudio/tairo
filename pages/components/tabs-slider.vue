@@ -13,6 +13,10 @@ import {
 
 definePageMeta({
   title: 'Slider Tabs',
+  documentation: {
+    category: 'Interaction',
+    components: ['BaseTabSlider'],
+  },
 })
 </script>
 
@@ -134,7 +138,7 @@ definePageMeta({
             <template #demo>
               <div class="w-full max-w-sm">
                 <BaseTabSlider
-                  :slots="3"
+                  :size="3"
                   selected="team"
                   :tabs="[
                     { label: 'Team', value: 'team' },
@@ -187,7 +191,7 @@ definePageMeta({
               <div class="w-full max-w-sm">
                 <BaseTabSlider
                   shape="full"
-                  :slots="3"
+                  :size="3"
                   selected="team"
                   :tabs="[
                     { label: 'Team', value: 'team' },

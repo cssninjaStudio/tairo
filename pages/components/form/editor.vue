@@ -13,6 +13,10 @@ import {
 
 definePageMeta({
   title: 'Text Editor',
+  documentation: {
+    category: 'Forms',
+    components: ['CKEditor'],
+  },
 })
 
 // const CKEditor = CKE.component

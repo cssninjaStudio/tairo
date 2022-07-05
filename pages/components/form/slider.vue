@@ -26,6 +26,10 @@ import {
 
 definePageMeta({
   title: 'Sliders',
+  documentation: {
+    category: 'Forms',
+    components: ['Slider'],
+  },
 })
 </script>
 

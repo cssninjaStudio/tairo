@@ -15,6 +15,10 @@ import {
 
 definePageMeta({
   title: 'Icons',
+  documentation: {
+    category: 'Content',
+    components: ['BaseIcon'],
+  },
 })
 </script>
 

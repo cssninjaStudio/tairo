@@ -9,6 +9,10 @@ import { options } from '@@/documentation/components/form/animated-checkbox/data
 
 definePageMeta({
   title: 'Animated checkbox',
+  documentation: {
+    category: 'Forms',
+    components: ['BaseFormAnimatedCheckbox'],
+  },
 })
 </script>
 

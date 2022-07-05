@@ -20,6 +20,10 @@ import {
 
 definePageMeta({
   title: 'Textarea',
+  documentation: {
+    category: 'Forms',
+    components: ['BaseFormTextarea'],
+  },
 })
 </script>
 

@@ -46,6 +46,6 @@ export const breadcrumb = [
   {
     label: 'Content',
     hideLabel: false,
-    to: '/components/content',
+    to: '/components/typography',
   },
 ]

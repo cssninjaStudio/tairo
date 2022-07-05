@@ -26,6 +26,10 @@ import {
 
 definePageMeta({
   title: 'Autocomplete',
+  documentation: {
+    category: 'Forms',
+    components: ['BaseFormAutocomplete'],
+  },
 })
 </script>
 

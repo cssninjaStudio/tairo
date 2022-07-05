@@ -9,6 +9,10 @@ import {
 
 definePageMeta({
   title: 'Radios',
+  documentation: {
+    category: 'Forms',
+    components: ['BaseFormRadio'],
+  },
 })
 </script>
 

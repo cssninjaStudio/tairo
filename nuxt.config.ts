@@ -15,6 +15,22 @@ export default defineNuxtConfig({
     '~/assets/css/slimscroll.css',
     '~/assets/css/keyframes.css',
   ],
+  app: {
+    head: {
+      link: [
+        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+        {
+          rel: 'preconnect',
+          href: 'https://fonts.gstatic.com',
+          crossorigin: true,
+        },
+        {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/css2?family=Inter:wght@200..800&family=Karla:wght@200..800&family=Roboto+Flex:wght@200..800&display=swap',
+        },
+      ],
+    },
+  },
   postcss: {
     plugins: {
       tailwindcss: {},

@@ -5,6 +5,10 @@ import { properties } from '@@/documentation/components/placeholder/properties'
 
 definePageMeta({
   title: 'Placeholders',
+  documentation: {
+    category: 'Interaction',
+    components: ['BasePlaceholderPage'],
+  },
 })
 </script>
 
