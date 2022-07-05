@@ -392,6 +392,293 @@ definePageMeta({
             </NuxtLink>
           </div>
         </BaseCard>
+        <BaseCard class="group">
+          <div class="flex justify-between p-6 mb-2">
+            <div class="grow pr-4">
+              <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
+                <span class="text-slate-800 dark:text-white">Buttons</span>
+              </BaseHeading>
+              <BaseParagraph lead="tight" size="sm">
+                <span class="text-slate-400">
+                  Get familiar with the Tairo button styles. Code examples
+                  included.
+                </span>
+              </BaseParagraph>
+            </div>
+            <img
+              class="max-w-[100px] dark:hidden opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              src="/img/illustrations/components/buttons.svg"
+              alt="Component image"
+            />
+            <img
+              class="max-w-[100px] hidden dark:block opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              src="/img/illustrations/components/buttons-dark.svg"
+              alt="Component image"
+            />
+          </div>
+          <div
+            class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-slate-700"
+          >
+            <NuxtLink
+              to="/elements/button"
+              class="font-text text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
+            >
+              Get Started
+            </NuxtLink>
+          </div>
+        </BaseCard>
+        <!-- Hub Card -->
+        <BaseCard class="group">
+          <div class="flex justify-between p-6 mb-2">
+            <div class="grow pr-4">
+              <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
+                <span class="text-slate-800 dark:text-white">Icons</span>
+              </BaseHeading>
+              <BaseParagraph lead="tight" size="sm">
+                <span class="text-slate-400">
+                  Get familiar with the Tairo icon libraries. Code examples
+                  included.
+                </span>
+              </BaseParagraph>
+            </div>
+            <img
+              class="max-w-[100px] dark:hidden opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              src="/img/illustrations/components/icons.svg"
+              alt="Component image"
+            />
+            <img
+              class="max-w-[100px] hidden dark:block opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              src="/img/illustrations/components/icons-dark.svg"
+              alt="Component image"
+            />
+          </div>
+          <div
+            class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-slate-700"
+          >
+            <NuxtLink
+              to="/elements/icons"
+              class="font-text text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
+            >
+              Get Started
+            </NuxtLink>
+          </div>
+        </BaseCard>
+        <!-- Hub Card -->
+        <BaseCard class="group">
+          <div class="flex justify-between p-6 mb-2">
+            <div class="grow pr-4">
+              <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
+                <span class="text-slate-800 dark:text-white">Dropdowns</span>
+              </BaseHeading>
+              <BaseParagraph lead="tight" size="sm">
+                <span class="text-slate-400">
+                  Get familiar with the Vuero dropdown styles. Code examples
+                  included.
+                </span>
+              </BaseParagraph>
+            </div>
+            <img
+              class="max-w-[100px] dark:hidden opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              src="/img/illustrations/components/dropdown.svg"
+              alt="Component image"
+            />
+            <img
+              class="max-w-[100px] hidden dark:block opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              src="/img/illustrations/components/dropdown-dark.svg"
+              alt="Component image"
+            />
+          </div>
+          <div
+            class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-slate-700"
+          >
+            <NuxtLink
+              to="/elements/dropdown"
+              class="font-text text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
+            >
+              Get Started
+            </NuxtLink>
+          </div>
+        </BaseCard>
+        <!-- Hub Card -->
+        <BaseCard class="group">
+          <div class="flex justify-between p-6 mb-2">
+            <div class="grow pr-4">
+              <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
+                <span class="text-slate-800 dark:text-white">Modals</span>
+              </BaseHeading>
+              <BaseParagraph lead="tight" size="sm">
+                <span class="text-slate-400">
+                  Get familiar with the Vuero modal styles. Code examples
+                  included.
+                </span>
+              </BaseParagraph>
+            </div>
+            <img
+              class="max-w-[100px] dark:hidden opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              src="/img/illustrations/components/modal.svg"
+              alt="Component image"
+            />
+            <img
+              class="max-w-[100px] hidden dark:block opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              src="/img/illustrations/components/modal-dark.svg"
+              alt="Component image"
+            />
+          </div>
+          <div
+            class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-slate-700"
+          >
+            <NuxtLink
+              to="/elements/modal"
+              class="font-text text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
+            >
+              Get Started
+            </NuxtLink>
+          </div>
+        </BaseCard>
+        <!-- Hub Card -->
+        <BaseCard class="group">
+          <div class="flex justify-between p-6 mb-2">
+            <div class="grow pr-4">
+              <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
+                <span class="text-slate-800 dark:text-white">Progress</span>
+              </BaseHeading>
+              <BaseParagraph lead="tight" size="sm">
+                <span class="text-slate-400">
+                  Get familiar with the Vuero progress bar styles. Code examples
+                  included.
+                </span>
+              </BaseParagraph>
+            </div>
+            <img
+              class="max-w-[100px] dark:hidden opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              src="/img/illustrations/components/progress.svg"
+              alt="Component image"
+            />
+            <img
+              class="max-w-[100px] hidden dark:block opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              src="/img/illustrations/components/progress-dark.svg"
+              alt="Component image"
+            />
+          </div>
+          <div
+            class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-slate-700"
+          >
+            <NuxtLink
+              to="/elements/progress"
+              class="font-text text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
+            >
+              Get Started
+            </NuxtLink>
+          </div>
+        </BaseCard>
+        <!-- Hub Card -->
+        <BaseCard class="group">
+          <div class="flex justify-between p-6 mb-2">
+            <div class="grow pr-4">
+              <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
+                <span class="text-slate-800 dark:text-white">Forms</span>
+              </BaseHeading>
+              <BaseParagraph lead="tight" size="sm">
+                <span class="text-slate-400">
+                  Get familiar with the Vuero form elements. Code examples
+                  included.
+                </span>
+              </BaseParagraph>
+            </div>
+            <img
+              class="max-w-[100px] dark:hidden opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              src="/img/illustrations/components/forms.svg"
+              alt="Component image"
+            />
+            <img
+              class="max-w-[100px] hidden dark:block opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              src="/img/illustrations/components/forms-dark.svg"
+              alt="Component image"
+            />
+          </div>
+          <div
+            class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-slate-700"
+          >
+            <NuxtLink
+              to="/elements/form/input"
+              class="font-text text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
+            >
+              Get Started
+            </NuxtLink>
+          </div>
+        </BaseCard>
+        <!-- Hub Card -->
+        <BaseCard class="group">
+          <div class="flex justify-between p-6 mb-2">
+            <div class="grow pr-4">
+              <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
+                <span class="text-slate-800 dark:text-white">Checkboxes</span>
+              </BaseHeading>
+              <BaseParagraph lead="tight" size="sm">
+                <span class="text-slate-400">
+                  Get familiar with the Vuero checkboxes styles. Code examples
+                  included.
+                </span>
+              </BaseParagraph>
+            </div>
+            <img
+              class="max-w-[100px] dark:hidden opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              src="/img/illustrations/components/checkboxes.svg"
+              alt="Component image"
+            />
+            <img
+              class="max-w-[100px] hidden dark:block opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              src="/img/illustrations/components/checkboxes-dark.svg"
+              alt="Component image"
+            />
+          </div>
+          <div
+            class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-slate-700"
+          >
+            <NuxtLink
+              to="/elements/form/checkbox"
+              class="font-text text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
+            >
+              Get Started
+            </NuxtLink>
+          </div>
+        </BaseCard>
+        <!-- Hub Card -->
+        <BaseCard class="group">
+          <div class="flex justify-between p-6 mb-2">
+            <div class="grow pr-4">
+              <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
+                <span class="text-slate-800 dark:text-white">Switches</span>
+              </BaseHeading>
+              <BaseParagraph lead="tight" size="sm">
+                <span class="text-slate-400">
+                  Get familiar with the Vuero switch styles. Code examples
+                  included.
+                </span>
+              </BaseParagraph>
+            </div>
+            <img
+              class="max-w-[100px] dark:hidden opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              src="/img/illustrations/components/switches.svg"
+              alt="Component image"
+            />
+            <img
+              class="max-w-[100px] hidden dark:block opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              src="/img/illustrations/components/switches-dark.svg"
+              alt="Component image"
+            />
+          </div>
+          <div
+            class="py-5 px-6 border-t-2 border-dashed border-gray-300 dark:border-slate-700"
+          >
+            <NuxtLink
+              to="/elements/form/switch"
+              class="font-text text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
+            >
+              Get Started
+            </NuxtLink>
+          </div>
+        </BaseCard>
       </div>
 
       <div class="text-center pt-12 pb-6">
