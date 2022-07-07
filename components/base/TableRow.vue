@@ -1,6 +1,6 @@
 <template>
   <tr
-    class="hover:bg-muted-50 dark:hover:bg-muted-900 transition-colors duration-300"
+    class="transition-colors duration-300 hover:bg-muted-50 dark:hover:bg-muted-900"
   >
     <slot></slot>
   </tr>

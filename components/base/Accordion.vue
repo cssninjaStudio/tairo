@@ -45,7 +45,7 @@ const toggle = (key: number) => {
 
 <template>
   <FocusLoop
-    class="block bg-white border border-muted-200 overflow-hidden"
+    class="block overflow-hidden border border-muted-200 bg-white"
     :class="[
       exclusive && 'is-exclusive',
       props.shape === 'rounded' && 'rounded-md',
@@ -103,25 +103,25 @@ const toggle = (key: number) => {
               ></div>
               <div
                 v-else-if="props.action === 'chevron'"
-                class="flex items-center justify-center h-8 w-8 rounded-full bg-white border border-muted-200 transition-all duration-300"
+                class="flex h-8 w-8 items-center justify-center rounded-full border border-muted-200 bg-white transition-all duration-300"
                 :class="
                   internalOpenItems?.includes(key)
                     ? 'text-primary-500 rotate-180'
                     : 'text-muted-400'
                 "
               >
-                <IconChevronDown class="w-4 h-4" />
+                <IconChevronDown class="h-4 w-4" />
               </div>
               <div
                 v-else-if="props.action === 'plus'"
-                class="flex items-center justify-center h-8 w-8 rounded-full bg-white border border-muted-200 transition-all duration-300"
+                class="flex h-8 w-8 items-center justify-center rounded-full border border-muted-200 bg-white transition-all duration-300"
                 :class="
                   internalOpenItems?.includes(key)
                     ? 'text-primary-500 rotate-45'
                     : 'text-muted-400'
                 "
               >
-                <IconPlus class="w-4 h-4" />
+                <IconPlus class="h-4 w-4" />
               </div>
             </div>
           </slot>

@@ -23,7 +23,7 @@ const props = withDefaults(defineProps<DropdownProps>(), {
 </script>
 
 <template>
-  <div class="group text-right inline-flex justify-center items-center">
+  <div class="group inline-flex items-center justify-center text-right">
     <Menu
       v-slot="{ open }"
       as="div"
@@ -43,21 +43,21 @@ const props = withDefaults(defineProps<DropdownProps>(), {
             </slot>
             <BaseIcon
               name="lucide:chevron-down"
-              class="w-4 h-4 text-muted-400 transition-transform duration-300"
+              class="h-4 w-4 text-muted-400 transition-transform duration-300"
               :class="open && 'rotate-180'"
             />
           </BaseButton>
           <button
             v-else-if="props.flavor === 'context'"
             type="button"
-            class="w-9 h-9 rounded-full ring-1 ring-transparent group-hover:ring-offset-4 group-hover:ring-primary-500 dark:ring-offset-muted-900 inline-flex items-center justify-center transition-all duration-300"
+            class="inline-flex h-9 w-9 items-center justify-center rounded-full ring-1 ring-transparent transition-all duration-300 group-hover:ring-primary-500 group-hover:ring-offset-4 dark:ring-offset-muted-900"
           >
             <span
-              class="flex items-center justify-center w-9 h-9 rounded-full bg-white dark:bg-muted-800 border border-muted-200 dark:border-muted-700"
+              class="flex h-9 w-9 items-center justify-center rounded-full border border-muted-200 bg-white dark:border-muted-700 dark:bg-muted-800"
             >
               <BaseIcon
                 name="lucide:more-horizontal"
-                class="w-5 h-5 text-muted-400 transition-transform duration-300"
+                class="h-5 w-5 text-muted-400 transition-transform duration-300"
                 :class="open && 'rotate-90'"
               />
             </span>
@@ -73,7 +73,7 @@ const props = withDefaults(defineProps<DropdownProps>(), {
 
             <BaseIcon
               name="lucide:chevron-down"
-              class="w-4 h-4 text-muted-400 transition-transform duration-300"
+              class="h-4 w-4 text-muted-400 transition-transform duration-300"
               :class="open && 'rotate-180'"
             />
           </button>
@@ -89,7 +89,7 @@ const props = withDefaults(defineProps<DropdownProps>(), {
         leave-to-class="transform scale-95 opacity-0"
       >
         <MenuItems
-          class="absolute mt-2 w-72 bg-white dark:bg-muted-800 border border-muted-200 dark:border-muted-700 shadow-lg focus:outline-none"
+          class="absolute mt-2 w-72 border border-muted-200 bg-white shadow-lg focus:outline-none dark:border-muted-700 dark:bg-muted-800"
           :class="[
             props.orientation === 'start'
               ? 'left-0 origin-top-left'
@@ -99,9 +99,9 @@ const props = withDefaults(defineProps<DropdownProps>(), {
           ]"
         >
           <div v-if="props.headerLabel" class="px-4 pt-5">
-            <div class="flex justify-between items-center relative">
+            <div class="relative flex items-center justify-between">
               <h4
-                class="font-heading uppercase text-xs text-muted-500 dark:text-muted-200"
+                class="font-heading text-xs uppercase text-muted-500 dark:text-muted-200"
               >
                 {{ props.headerLabel }}
               </h4>

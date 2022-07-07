@@ -41,7 +41,7 @@ const props = withDefaults(defineProps<AvatarProps>(), {
 
 <template>
   <div
-    class="relative inline-flex justify-center items-center outline-none"
+    class="relative inline-flex items-center justify-center outline-none"
     :class="[
       props.size === 'xs' && `w-8 h-8`,
       props.size === 'sm' && `w-10 h-10`,
@@ -80,19 +80,19 @@ const props = withDefaults(defineProps<AvatarProps>(), {
         <img
           v-if="props.src"
           :src="props.src"
-          class="object-cover max-w-full dark:border-transparent shadow-sm"
+          class="max-w-full object-cover shadow-sm dark:border-transparent"
           :class="[props.srcDark ? 'dark:hidden' : '']"
         />
 
         <img
           v-if="props.src && props.srcDark"
           :src="props.srcDark"
-          class="object-cover max-w-full dark:border-transparent shadow-sm hidden dark:block"
+          class="hidden max-w-full object-cover shadow-sm dark:block dark:border-transparent"
         />
 
         <span
           v-if="!props.src"
-          class="font-heading uppercase font-medium text-center"
+          class="text-center font-heading font-medium uppercase"
           :class="[
             props.size === 'xs' && `text-sm`,
             props.size === 'sm' && `text-sm`,
@@ -111,7 +111,7 @@ const props = withDefaults(defineProps<AvatarProps>(), {
 
     <div
       v-if="'badge' in $slots || props.badgeSrc"
-      class="block absolute bg-muted-100 dark:bg-muted-800 rounded-full border-2 border-white dark:border-muted-800 overflow-hidden"
+      class="absolute block overflow-hidden rounded-full border-2 border-white bg-muted-100 dark:border-muted-800 dark:bg-muted-800"
       :class="[
         props.size === 'xs' && `w-4 h-4`,
         props.size === 'sm' && `w-5 h-5`,
@@ -145,7 +145,7 @@ const props = withDefaults(defineProps<AvatarProps>(), {
 
     <span
       v-if="props.dot"
-      class="block absolute border border-white rounded-full dark:border-muted-800"
+      class="absolute block rounded-full border border-white dark:border-muted-800"
       :class="[
         props.size === 'xs' && `w-2 h-2`,
         props.size === 'sm' && `w-2 h-2`,

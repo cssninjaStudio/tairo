@@ -51,7 +51,7 @@ watchEffect(updateCheckbox)
 </script>
 
 <template>
-  <div ref="element" class="block ninja-focus focus-within:outline-current">
+  <div ref="element" class="ninja-focus block focus-within:outline-current">
     <input
       :id="animatedCheckboxId"
       type="checkbox"

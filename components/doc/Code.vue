@@ -18,22 +18,22 @@ const props = withDefaults(defineProps<DocCodeProps>(), {
 
 <template>
   <div
-    class="w-full transition-colors ease-linear rounded-xl border border-muted-200 bg-white dark:bg-muted-800 dark:border-muted-700"
+    class="w-full rounded-xl border border-muted-200 bg-white transition-colors ease-linear dark:border-muted-700 dark:bg-muted-800"
   >
     <div
-      class="w-full h-12 rounded-t-lg flex justify-start items-center space-x-1.5 px-4"
+      class="flex h-12 w-full items-center justify-start space-x-1.5 rounded-t-lg px-4"
     >
       <span
-        class="w-3 h-3 border-2 border-transparent dark:border-red-400 rounded-full bg-red-400 dark:bg-transparent"
+        class="h-3 w-3 rounded-full border-2 border-transparent bg-red-400 dark:border-red-400 dark:bg-transparent"
       ></span>
       <span
-        class="w-3 h-3 border-2 border-transparent dark:border-yellow-400 rounded-full bg-yellow-400 dark:bg-transparent"
+        class="h-3 w-3 rounded-full border-2 border-transparent bg-yellow-400 dark:border-yellow-400 dark:bg-transparent"
       ></span>
       <span
-        class="w-3 h-3 border-2 border-transparent dark:border-green-400 rounded-full bg-green-400 dark:bg-transparent"
+        class="h-3 w-3 rounded-full border-2 border-transparent bg-green-400 dark:border-green-400 dark:bg-transparent"
       ></span>
     </div>
-    <div class="border-t-0 w-full rounded-b-lg -mt-6">
+    <div class="-mt-6 w-full rounded-b-lg border-t-0">
       <Prism :language="props.language">{{ props.code }}</Prism>
     </div>
   </div>

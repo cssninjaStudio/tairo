@@ -22,7 +22,7 @@ const { is, attributes } = useButton(props)
     <component
       :is="is"
       v-bind="attributes"
-      class="group flex w-full items-center text-left justify-start rounded-md py-2 px-3 text-sm transition-colors duration-300"
+      class="group flex w-full items-center justify-start rounded-md py-2 px-3 text-left text-sm transition-colors duration-300"
       :class="[
         active
           ? 'bg-muted-100 dark:bg-muted-700 text-primary-500'
@@ -32,7 +32,7 @@ const { is, attributes } = useButton(props)
       <slot name="start"></slot>
       <div class="grow">
         <div
-          class="font-heading font-semibold text-xs leading-tight text-muted-800 dark:text-white"
+          class="font-heading text-xs font-semibold leading-tight text-muted-800 dark:text-white"
         >
           <slot>{{ props.title }}</slot>
         </div>

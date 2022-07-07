@@ -5,13 +5,13 @@ const route = useRoute()
 </script>
 
 <template>
-  <div class="relative flex items-center gap-2 h-16 mb-5 z-50">
+  <div class="relative z-50 mb-5 flex h-16 items-center gap-2">
     <NavigationBurger class="-ml-3" />
 
     <BaseHeading
       as="h1"
       size="2xl"
-      class="hidden md:block text-muted-800 dark:text-white"
+      class="hidden text-muted-800 dark:text-white md:block"
     >
       {{ route.meta.title }}
     </BaseHeading>
@@ -20,7 +20,7 @@ const route = useRoute()
 
     <button
       type="button"
-      class="flex items-center justify-center w-9 h-9 rounded-full bg-white dark:bg-muted-800 border border-muted-200 dark:border-muted-700 ring-1 ring-transparent hover:ring-offset-4 hover:ring-primary-500 dark:ring-offset-muted-900 transition-all duration-300"
+      class="flex h-9 w-9 items-center justify-center rounded-full border border-muted-200 bg-white ring-1 ring-transparent transition-all duration-300 hover:ring-primary-500 hover:ring-offset-4 dark:border-muted-700 dark:bg-muted-800 dark:ring-offset-muted-900"
       @click="openPanel('language')"
     >
       <img
@@ -34,10 +34,10 @@ const route = useRoute()
 
     <button
       type="button"
-      class="flex items-center justify-center w-9 h-9 rounded-full bg-white dark:bg-muted-800 border border-muted-200 dark:border-muted-700 ring-1 ring-transparent hover:ring-offset-4 hover:ring-primary-500 dark:ring-offset-muted-900 transition-all duration-300"
+      class="flex h-9 w-9 items-center justify-center rounded-full border border-muted-200 bg-white ring-1 ring-transparent transition-all duration-300 hover:ring-primary-500 hover:ring-offset-4 dark:border-muted-700 dark:bg-muted-800 dark:ring-offset-muted-900"
       @click="openPanel('activity')"
     >
-      <BaseIcon name="ph:circles-four-duotone" class="w-5 h-5 text-muted-400" />
+      <BaseIcon name="ph:circles-four-duotone" class="h-5 w-5 text-muted-400" />
     </button>
 
     <NavigationToolbarAccountMenu />

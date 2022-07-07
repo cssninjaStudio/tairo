@@ -14,22 +14,22 @@ const activeTab = ref('demo')
 
 <template>
   <div
-    class="bg-white dark:bg-muted-800 border border-muted-200 dark:border-muted-700 rounded-lg px-6 pt-6 pb-10 mb-4"
+    class="mb-4 rounded-lg border border-muted-200 bg-white px-6 pt-6 pb-10 dark:border-muted-700 dark:bg-muted-800"
   >
-    <div class="flex items-center mb-10 whitespace-nowrap">
+    <div class="mb-10 flex items-center whitespace-nowrap">
       <BaseParagraph
         size="md"
         lead="tight"
-        class="text-muted-500 dark:text-muted-400 hidden md:block"
+        class="hidden text-muted-500 dark:text-muted-400 md:block"
       >
         {{ props.label }}
       </BaseParagraph>
 
-      <div class="flex-none flex items-center ml-auto pl-4 sm:pl-6">
+      <div class="ml-auto flex flex-none items-center pl-4 sm:pl-6">
         <FocusLoop class="flex items-end">
           <BaseButtonAction
             shape="rounded"
-            class="focus:z-10 rounded-r-none border-r-0"
+            class="rounded-r-none border-r-0 focus:z-10"
             :muted="activeTab !== 'demo'"
             @click="activeTab = 'demo'"
           >
@@ -38,7 +38,7 @@ const activeTab = ref('demo')
           </BaseButtonAction>
           <BaseButtonAction
             shape="rounded"
-            class="focus:z-10 rounded-l-none border-l-0"
+            class="rounded-l-none border-l-0 focus:z-10"
             :muted="activeTab !== 'code'"
             @click="activeTab = 'code'"
           >

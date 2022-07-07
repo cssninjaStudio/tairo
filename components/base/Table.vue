@@ -22,7 +22,7 @@ const props = withDefaults(defineProps<TableProps>(), {
       <div class="inline-block min-w-full align-middle">
         <div class="overflow-hidden">
           <table
-            class="min-w-full divide-y divide-muted-200 table-fixed dark:divide-muted-700"
+            class="min-w-full table-fixed divide-y divide-muted-200 dark:divide-muted-700"
           >
             <thead class="bg-muted-50 dark:bg-muted-800">
               <tr>
@@ -30,7 +30,7 @@ const props = withDefaults(defineProps<TableProps>(), {
               </tr>
             </thead>
             <tbody
-              class="bg-white divide-y divide-muted-200 dark:bg-muted-800 dark:divide-muted-700"
+              class="divide-y divide-muted-200 bg-white dark:divide-muted-700 dark:bg-muted-800"
             >
               <slot></slot>
             </tbody>

@@ -25,7 +25,7 @@ const props = withDefaults(defineProps<TagProps>(), {
 
 <template>
   <span
-    class="inline-block font-sans text-xs py-1.5 px-3 m-1"
+    class="m-1 inline-block py-1.5 px-3 font-sans text-xs"
     :class="[
       props.color === 'default' &&
         'border border-muted-300 bg-white text-muted-600 dark:bg-muted-800 dark:border-muted-700 dark:text-muted-300',

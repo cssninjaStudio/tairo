@@ -1,6 +1,6 @@
 <template>
   <label
-    class="font-alt inline-block leading-none text-muted-400 dark:text-muted-400/80"
+    class="inline-block font-alt leading-none text-muted-400 dark:text-muted-400/80"
   >
     <slot />
   </label>

@@ -24,7 +24,7 @@ const isDark = computed({
 
 <template>
   <label
-    class="block w-9 h-9 overflow-hidden relative rounded-full ring-1 ring-transparent hover:ring-offset-4 hover:ring-primary-500 transition-all duration-300"
+    class="relative block h-9 w-9 overflow-hidden rounded-full ring-1 ring-transparent transition-all duration-300 hover:ring-primary-500 hover:ring-offset-4"
     :class="
       props.inverted
         ? 'ring-offset-primary-700 dark:ring-offset-primary-700'
@@ -34,10 +34,10 @@ const isDark = computed({
     <input
       v-model="isDark"
       type="checkbox"
-      class="absolute top-0 left-0 z-[2] w-full h-full opacity-0 cursor-pointer"
+      class="absolute top-0 left-0 z-[2] h-full w-full cursor-pointer opacity-0"
     />
     <span
-      class="block relative w-9 h-9 rounded-full"
+      class="relative block h-9 w-9 rounded-full"
       :class="
         props.inverted
           ? 'bg-primary-700 '
@@ -45,7 +45,7 @@ const isDark = computed({
       "
     >
       <IconSun
-        class="block absolute top-1/2 left-1/2 w-5 h-5 text-yellow-400 transition-all duration-300 pointer-events-none"
+        class="pointer-events-none absolute top-1/2 left-1/2 block h-5 w-5 text-yellow-400 transition-all duration-300"
         :class="[
           !isDark
             ? 'opacity-100 -translate-x-[50%] -translate-y-1/2'
@@ -54,7 +54,7 @@ const isDark = computed({
       />
 
       <IconMoon
-        class="block absolute top-1/2 left-1/2 w-5 h-5 text-yellow-400 transition-all duration-300 pointer-events-none"
+        class="pointer-events-none absolute top-1/2 left-1/2 block h-5 w-5 text-yellow-400 transition-all duration-300"
         :class="[
           !isDark
             ? 'opacity-0 -translate-x-[45%] -translate-y-[150%]'

@@ -11,7 +11,7 @@ const isModalBodyOpen = ref(false)
 <template>
   <!-- Element to trigger the modal -->
   <div class="flex gap-x-2">
-    <div class="flex items-end flex-wrap gap-4">
+    <div class="flex flex-wrap items-end gap-4">
       <BaseButton @click="isModalStartOpen = true">Start Align</BaseButton>
     </div>
 
@@ -41,7 +41,7 @@ const isModalBodyOpen = ref(false)
   >
     <template #header>
       <!-- Header -->
-      <div class="w-full flex items-center justify-between p-4 md:p-6">
+      <div class="flex w-full items-center justify-between p-4 md:p-6">
         <h3
           class="font-heading text-lg font-medium leading-6 text-muted-900 dark:text-white"
         >
@@ -53,11 +53,11 @@ const isModalBodyOpen = ref(false)
 
     <!-- Body -->
     <div class="p-4 md:p-6">
-      <div class="text-center w-full max-w-xs mx-auto">
-        <div class="flex relative w-24 h-24 mx-auto mb-4">
+      <div class="mx-auto w-full max-w-xs text-center">
+        <div class="relative mx-auto mb-4 flex h-24 w-24">
           <img
             src="https://media.cssninja.io/shuriken/avatars/3.svg"
-            class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
+            class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
             alt=""
           />
         </div>
@@ -101,7 +101,7 @@ const isModalBodyOpen = ref(false)
   >
     <template #header>
       <!-- Header -->
-      <div class="w-full flex items-center justify-between p-4 md:p-6">
+      <div class="flex w-full items-center justify-between p-4 md:p-6">
         <h3
           class="font-heading text-lg font-medium leading-6 text-muted-900 dark:text-white"
         >
@@ -113,11 +113,11 @@ const isModalBodyOpen = ref(false)
 
     <!-- Body -->
     <div class="p-4 md:p-6">
-      <div class="text-center w-full max-w-xs mx-auto">
-        <div class="flex relative w-24 h-24 mx-auto mb-4">
+      <div class="mx-auto w-full max-w-xs text-center">
+        <div class="relative mx-auto mb-4 flex h-24 w-24">
           <img
             src="https://media.cssninja.io/shuriken/avatars/3.svg"
-            class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
+            class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
             alt=""
           />
         </div>
@@ -161,7 +161,7 @@ const isModalBodyOpen = ref(false)
   >
     <template #header>
       <!-- Header -->
-      <div class="w-full flex items-center justify-between p-4 md:p-6">
+      <div class="flex w-full items-center justify-between p-4 md:p-6">
         <h3
           class="font-heading text-lg font-medium leading-6 text-muted-900 dark:text-white"
         >
@@ -173,11 +173,11 @@ const isModalBodyOpen = ref(false)
 
     <!-- Body -->
     <div class="p-4 md:p-6">
-      <div class="text-center w-full max-w-xs mx-auto">
-        <div class="flex relative w-24 h-24 mx-auto mb-4">
+      <div class="mx-auto w-full max-w-xs text-center">
+        <div class="relative mx-auto mb-4 flex h-24 w-24">
           <img
             src="https://media.cssninja.io/shuriken/avatars/3.svg"
-            class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
+            class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
             alt=""
           />
         </div>
@@ -221,7 +221,7 @@ const isModalBodyOpen = ref(false)
   >
     <template #header>
       <!-- Header -->
-      <div class="w-full flex items-center justify-between p-4 md:p-6">
+      <div class="flex w-full items-center justify-between p-4 md:p-6">
         <h3
           class="font-heading text-lg font-medium leading-6 text-muted-900 dark:text-white"
         >
@@ -233,11 +233,11 @@ const isModalBodyOpen = ref(false)
 
     <!-- Body -->
     <div class="p-4 md:p-6">
-      <div class="text-center w-full max-w-xs mx-auto">
-        <div class="flex relative w-24 h-24 mx-auto mb-4">
+      <div class="mx-auto w-full max-w-xs text-center">
+        <div class="relative mx-auto mb-4 flex h-24 w-24">
           <img
             src="https://media.cssninja.io/shuriken/avatars/3.svg"
-            class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
+            class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
             alt=""
           />
         </div>
@@ -280,7 +280,7 @@ const isModalBodyOpen = ref(false)
   <BaseModal :open="isModalBodyOpen" size="md" @close="isModalBodyOpen = false">
     <template #header>
       <!-- Header -->
-      <div class="w-full flex items-center justify-between p-4 md:p-6">
+      <div class="flex w-full items-center justify-between p-4 md:p-6">
         <h3
           class="font-heading text-lg font-medium leading-6 text-muted-900 dark:text-white"
         >
@@ -292,11 +292,11 @@ const isModalBodyOpen = ref(false)
 
     <!-- Body -->
     <div class="p-4 md:p-6">
-      <div class="text-center w-full max-w-xs mx-auto">
-        <div class="flex relative w-24 h-24 mx-auto mb-8">
+      <div class="mx-auto w-full max-w-xs text-center">
+        <div class="relative mx-auto mb-8 flex h-24 w-24">
           <img
             src="https://media.cssninja.io/shuriken/avatars/3.svg"
-            class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
+            class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
             alt=""
           />
         </div>
@@ -306,7 +306,7 @@ const isModalBodyOpen = ref(false)
           New Invite
         </h3>
         <p
-          class="font-alt text-sm leading-5 text-muted-500 dark:text-muted-400 mb-6"
+          class="mb-6 font-alt text-sm leading-5 text-muted-500 dark:text-muted-400"
         >
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod.

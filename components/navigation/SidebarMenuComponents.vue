@@ -91,7 +91,7 @@ const hightlightSearch = (text?: string, search?: string): string => {
         <button
           v-if="category !== 'Uncategorized'"
           type="button"
-          class="group flex justify-between items-center min-h-[2rem] mt-4 mb-1 w-full ninja-focus focus-within:outline-0 focus-visible:outline-1"
+          class="group ninja-focus mt-4 mb-1 flex min-h-[2rem] w-full items-center justify-between focus-within:outline-0 focus-visible:outline-1"
           @click="show[category] = !show[category]"
         >
           <span
@@ -101,21 +101,21 @@ const hightlightSearch = (text?: string, search?: string): string => {
           </span>
           <div
             v-if="!filter"
-            class="text-muted-400 dark:text-muted-500 group-hover:text-primary-400 group-focus-visible:text-primary-400"
+            class="text-muted-400 group-hover:text-primary-400 group-focus-visible:text-primary-400 dark:text-muted-500"
           >
             <BaseIcon
               v-if="!show[category]"
               name="mdi:minus-box-outline"
-              class="w-4 h-4"
+              class="h-4 w-4"
             />
-            <BaseIcon v-else name="mdi:plus-box-outline" class="w-4 h-4" />
+            <BaseIcon v-else name="mdi:plus-box-outline" class="h-4 w-4" />
           </div>
         </button>
         <ul v-show="filter || show[category]">
           <li
             v-for="route in componentChildRoutes[category]"
             :key="route.name"
-            class="flex items-center min-h-[2rem] mb-1 w-full"
+            class="mb-1 flex min-h-[2rem] w-full items-center"
           >
             <NuxtLink
               :to="{ name: route.name }"
@@ -124,7 +124,7 @@ const hightlightSearch = (text?: string, search?: string): string => {
                   ? 'flex-col'
                   : 'flex-row items-center'
               "
-              class="flex group w-full text-muted-400 hover:text-primary-500 focus-visible:text-primary-500 transition-colors duration-300 ninja-focus focus-within:outline-0 focus-visible:outline-1"
+              class="group ninja-focus flex w-full text-muted-400 transition-colors duration-300 focus-within:outline-0 hover:text-primary-500 focus-visible:text-primary-500 focus-visible:outline-1"
             >
               <template
                 v-if="
@@ -177,7 +177,7 @@ const hightlightSearch = (text?: string, search?: string): string => {
                   >
                     <BaseIcon
                       name="ri:parentheses-line"
-                      class="w-4 h-4 inline-block mr-2"
+                      class="mr-2 inline-block h-4 w-4"
                     />
                     <span v-html="hightlightSearch(composable, filter)"></span>
                   </div>
@@ -189,7 +189,7 @@ const hightlightSearch = (text?: string, search?: string): string => {
                   >
                     <BaseIcon
                       name="ri:parentheses-line"
-                      class="w-4 h-4 inline-block mr-2"
+                      class="mr-2 inline-block h-4 w-4"
                     />
                     <span v-html="hightlightSearch(item, filter)"></span>
                   </div>

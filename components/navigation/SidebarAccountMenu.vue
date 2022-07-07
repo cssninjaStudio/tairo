@@ -3,19 +3,19 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
 </script>
 
 <template>
-  <div class="group text-right inline-flex justify-center items-center">
-    <Menu as="div" class="relative w-10 h-10 text-left">
+  <div class="group inline-flex items-center justify-center text-right">
+    <Menu as="div" class="relative h-10 w-10 text-left">
       <MenuButton as="template">
         <button
           type="button"
-          class="w-10 h-10 rounded-full ring-1 ring-transparent group-hover:ring-offset-4 group-hover:ring-primary-500 dark:ring-offset-muted-800 inline-flex items-center justify-center transition-all duration-300"
+          class="inline-flex h-10 w-10 items-center justify-center rounded-full ring-1 ring-transparent transition-all duration-300 group-hover:ring-primary-500 group-hover:ring-offset-4 dark:ring-offset-muted-800"
         >
           <div
-            class="inline-flex justify-center items-center relative w-10 h-10 rounded-full"
+            class="relative inline-flex h-10 w-10 items-center justify-center rounded-full"
           >
             <img
               src="/img/avatars/2.svg"
-              class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
+              class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
               alt=""
             />
           </div>
@@ -31,22 +31,22 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
         leave-to-class="transform scale-95 opacity-0"
       >
         <MenuItems
-          class="absolute bottom-0 -right-64 text-left mt-2 w-60 origin-bottom-right divide-y divide-muted-100 dark:divide-muted-700 rounded-md bg-white dark:bg-muted-800 border border-muted-200 dark:border-muted-700 shadow-lg focus:outline-none"
+          class="absolute bottom-0 -right-64 mt-2 w-60 origin-bottom-right divide-y divide-muted-100 rounded-md border border-muted-200 bg-white text-left shadow-lg focus:outline-none dark:divide-muted-700 dark:border-muted-700 dark:bg-muted-800"
         >
           <div class="p-6">
             <div class="flex items-center">
               <div
-                class="inline-flex justify-center items-center relative w-14 h-14 rounded-full"
+                class="relative inline-flex h-14 w-14 items-center justify-center rounded-full"
               >
                 <img
                   src="/img/avatars/2.svg"
-                  class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
+                  class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                   alt=""
                 />
               </div>
               <div class="ml-3">
                 <h6
-                  class="font-heading font-semibold text-sm text-muted-800 dark:text-white"
+                  class="font-heading text-sm font-semibold text-muted-800 dark:text-white"
                 >
                   Maya Rosselini
                 </h6>
@@ -65,10 +65,10 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                     : 'text-muted-500',
                 ]"
               >
-                <BaseIcon name="ph:user-circle-duotone" class="w-5 h-5" />
+                <BaseIcon name="ph:user-circle-duotone" class="h-5 w-5" />
                 <div class="ml-3">
                   <h6
-                    class="font-heading font-semibold text-xs leading-none text-muted-800 dark:text-white"
+                    class="font-heading text-xs font-semibold leading-none text-muted-800 dark:text-white"
                   >
                     Profile
                   </h6>
@@ -90,10 +90,10 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                     : 'text-muted-500',
                 ]"
               >
-                <BaseIcon name="ph:briefcase-duotone" class="w-5 h-5" />
+                <BaseIcon name="ph:briefcase-duotone" class="h-5 w-5" />
                 <div class="ml-3">
                   <h6
-                    class="font-heading font-semibold text-xs leading-none text-muted-800 dark:text-white"
+                    class="font-heading text-xs font-semibold leading-none text-muted-800 dark:text-white"
                   >
                     Projects
                   </h6>
@@ -113,10 +113,10 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                     : 'text-muted-500',
                 ]"
               >
-                <BaseIcon name="ph:users-three-duotone" class="w-5 h-5" />
+                <BaseIcon name="ph:users-three-duotone" class="h-5 w-5" />
                 <div class="ml-3">
                   <h6
-                    class="font-heading font-semibold text-xs leading-none text-muted-800 dark:text-white"
+                    class="font-heading text-xs font-semibold leading-none text-muted-800 dark:text-white"
                   >
                     Team
                   </h6>
@@ -137,10 +137,10 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                     : 'text-muted-500',
                 ]"
               >
-                <BaseIcon name="ph:gear-six-duotone" class="w-5 h-5" />
+                <BaseIcon name="ph:gear-six-duotone" class="h-5 w-5" />
                 <div class="ml-3">
                   <h6
-                    class="font-heading font-semibold text-xs leading-none text-muted-800 dark:text-white"
+                    class="font-heading text-xs font-semibold leading-none text-muted-800 dark:text-white"
                   >
                     Settings
                   </h6>

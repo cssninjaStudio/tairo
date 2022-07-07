@@ -45,14 +45,14 @@ watch(activeValue, (value) => {
 <template>
   <div class="relative">
     <div
-      class="flex font-alt mb-6"
+      class="mb-6 flex font-alt"
       :class="[
         props.justify === 'center' && 'justify-center',
         props.justify === 'end' && 'justify-end',
       ]"
     >
       <div
-        class="relative flex items-center w-full h-10 bg-muted-100 dark:bg-muted-700 font-sans text-sm"
+        class="relative flex h-10 w-full items-center bg-muted-100 font-sans text-sm dark:bg-muted-700"
         :class="[
           props.shape === 'rounded' && 'rounded-lg',
           props.shape === 'full' && 'rounded-full',
@@ -63,7 +63,7 @@ watch(activeValue, (value) => {
           v-for="(tab, index) in tabs.slice(0, props.size)"
           :key="index"
           type="button"
-          class="relative flex items-center justify-center flex-1 h-full z-20"
+          class="relative z-20 flex h-full flex-1 items-center justify-center"
           :class="[
             activeValue === tab.value ? 'text-white' : 'text-muted-400',
             props.size === 2 ? 'w-1/2' : 'w-1/3',
@@ -74,7 +74,7 @@ watch(activeValue, (value) => {
           <span>{{ tab.label }}</span>
         </button>
         <div
-          class="absolute top-0 left-0 h-full bg-primary-600 z-10 transition-all duration-300"
+          class="absolute top-0 left-0 z-10 h-full bg-primary-600 transition-all duration-300"
           :class="[
             activeValue === tabs[0].value && 'ml-0',
             activeValue === tabs[1].value && props.size === 2
@@ -89,7 +89,7 @@ watch(activeValue, (value) => {
       </div>
     </div>
 
-    <div class="block relative">
+    <div class="relative block">
       <slot name="tab" :active-value="activeValue"></slot>
     </div>
   </div>

@@ -10,7 +10,7 @@ const props = withDefaults(defineProps<TableCellProps>(), {
 
 <template>
   <td
-    class="font-alt py-4 text-sm whitespace-nowrap"
+    class="whitespace-nowrap py-4 font-alt text-sm"
     :class="
       props.light
         ? 'text-muted-500 dark:text-white'

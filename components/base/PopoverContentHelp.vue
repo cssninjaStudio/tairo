@@ -20,7 +20,7 @@ const props = withDefaults(defineProps<PopoverContentHelpProps>(), {
 </script>
 
 <template>
-  <div class="w-full flex flex-col gap-1 p-4">
+  <div class="flex w-full flex-col gap-1 p-4">
     <div class="relative mb-1">
       <div class="flex w-full">
         <BaseIconBox
@@ -39,7 +39,7 @@ const props = withDefaults(defineProps<PopoverContentHelpProps>(), {
               'bg-danger-100 text-danger-500 dark:bg-danger-600',
           ]"
         >
-          <BaseIcon :name="props.icon" class="w-5 h-5" />
+          <BaseIcon :name="props.icon" class="h-5 w-5" />
         </BaseIconBox>
         <div class="ml-2">
           <BaseHeading

@@ -23,10 +23,10 @@ definePageMeta({
 </script>
 
 <template>
-  <div class="w-full max-w-[840px] mx-auto pb-20">
+  <div class="mx-auto w-full max-w-[840px] pb-20">
     <div class="text-center">
       <BaseAvatar
-        class="bg-yellow-100 dark:bg-yellow-100/50 text-yellow-500"
+        class="bg-yellow-100 text-yellow-500 dark:bg-yellow-100/50"
         src="/img/avatars/18.svg"
         text="J"
         size="2xl"
@@ -46,20 +46,20 @@ definePageMeta({
       </BaseParagraph>
     </div>
 
-    <div class="py-4 w-full max-w-3xl mx-auto">
+    <div class="mx-auto w-full max-w-3xl py-4">
       <BaseFormInput v-model="input" />
     </div>
-    <div class="py-4 w-full max-w-3xl mx-auto">
-      <div class="grid md:grid-cols-2 gap-5">
+    <div class="mx-auto w-full max-w-3xl py-4">
+      <div class="grid gap-5 md:grid-cols-2">
         <BaseCard
           v-for="compo in filtered"
           :key="compo.name"
           class="group overflow-x-auto"
         >
-          <div class="flex justify-between p-6 mb-2">
+          <div class="mb-2 flex justify-between p-6">
             <div class="grow pr-4">
               <BaseHeading size="md" weight="normal" lead="tight" class="mb-2">
-                <span class="text-muted-800 dark:text-white font-mono">
+                <span class="font-mono text-muted-800 dark:text-white">
                   <pre>{{ getCode(compo) }}</pre>
                 </span>
               </BaseHeading>
@@ -68,10 +68,10 @@ definePageMeta({
         </BaseCard>
       </div>
 
-      <div class="text-center pt-12 pb-6">
+      <div class="pt-12 pb-6 text-center">
         <NuxtLink
           to="https://docs.cssninja.io/tairo"
-          class="font-sans text-primary-500 border-b-2 border-dotted border-primary-500"
+          class="border-b-2 border-dotted border-primary-500 font-sans text-primary-500"
         >
           Online Documentation
         </NuxtLink>

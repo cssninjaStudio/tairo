@@ -4,9 +4,9 @@ const { closePanel } = usePanels()
 
 <template>
   <div
-    class="bg-white dark:bg-muted-800 border border-muted-200 dark:border-muted-700"
+    class="border border-muted-200 bg-white dark:border-muted-700 dark:bg-muted-800"
   >
-    <div class="flex items-center justify-between h-16 w-full px-10">
+    <div class="flex h-16 w-full items-center justify-between px-10">
       <h2
         class="font-heading text-lg font-semibold text-muted-700 dark:text-white"
       >
@@ -14,26 +14,26 @@ const { closePanel } = usePanels()
       </h2>
       <button
         type="button"
-        class="flex items-center justify-center h-10 w-10 rounded-full text-muted-400 hover:text-muted-600 dark:hover:text-white hover:bg-muted-100 dark:hover:bg-muted-700 transition-colors duration-300"
+        class="flex h-10 w-10 items-center justify-center rounded-full text-muted-400 transition-colors duration-300 hover:bg-muted-100 hover:text-muted-600 dark:hover:bg-muted-700 dark:hover:text-white"
         @click="closePanel"
       >
-        <BaseIcon name="feather:chevron-right" class="w-6 h-6" />
+        <BaseIcon name="feather:chevron-right" class="h-6 w-6" />
       </button>
     </div>
 
     <div class="relative h-[calc(100%_-_64px)] w-full px-10">
       <div class="grid grid-cols-3 py-6">
         <!-- Radio box -->
-        <div class="relative flex items-center justify-center my-4">
+        <div class="relative my-4 flex items-center justify-center">
           <div class="relative">
             <input
               type="radio"
               name="language_selection"
-              class="peer absolute top-0 left-0 h-full w-full opacity-0 cursor-pointer z-20"
+              class="peer absolute top-0 left-0 z-20 h-full w-full cursor-pointer opacity-0"
               checked
             />
             <div
-              class="w-14 h-14 flex items-center justify-center border-2 border-muted-200 dark:border-muted-600 peer-checked:border-primary-500 shadow-lg rounded-full transition-all duration-300"
+              class="flex h-14 w-14 items-center justify-center rounded-full border-2 border-muted-200 shadow-lg transition-all duration-300 peer-checked:border-primary-500 dark:border-muted-600"
             >
               <img
                 class="h-10 w-10 rounded-full"
@@ -42,22 +42,22 @@ const { closePanel } = usePanels()
               />
             </div>
             <div
-              class="absolute -top-1 -right-1 h-7 w-7 rounded-full hidden peer-checked:flex items-center justify-center bg-primary-500 text-white border-4 border-white dark:border-muted-800"
+              class="absolute -top-1 -right-1 hidden h-7 w-7 items-center justify-center rounded-full border-4 border-white bg-primary-500 text-white peer-checked:flex dark:border-muted-800"
             >
-              <BaseIcon name="feather:check" class="w-3 h-3" />
+              <BaseIcon name="feather:check" class="h-3 w-3" />
             </div>
           </div>
         </div>
         <!-- Radio box -->
-        <div class="relative flex items-center justify-center my-4">
+        <div class="relative my-4 flex items-center justify-center">
           <div class="relative">
             <input
               type="radio"
               name="language_selection"
-              class="peer absolute top-0 left-0 h-full w-full opacity-0 cursor-pointer z-20"
+              class="peer absolute top-0 left-0 z-20 h-full w-full cursor-pointer opacity-0"
             />
             <div
-              class="w-14 h-14 flex items-center justify-center border-2 border-muted-200 dark:border-muted-600 peer-checked:border-primary-500 shadow-lg rounded-full transition-all duration-300"
+              class="flex h-14 w-14 items-center justify-center rounded-full border-2 border-muted-200 shadow-lg transition-all duration-300 peer-checked:border-primary-500 dark:border-muted-600"
             >
               <img
                 class="h-10 w-10 rounded-full"
@@ -66,22 +66,22 @@ const { closePanel } = usePanels()
               />
             </div>
             <div
-              class="absolute -top-1 -right-1 h-7 w-7 rounded-full hidden peer-checked:flex items-center justify-center bg-primary-500 text-white border-4 border-white dark:border-muted-800"
+              class="absolute -top-1 -right-1 hidden h-7 w-7 items-center justify-center rounded-full border-4 border-white bg-primary-500 text-white peer-checked:flex dark:border-muted-800"
             >
-              <BaseIcon name="feather:check" class="w-3 h-3" />
+              <BaseIcon name="feather:check" class="h-3 w-3" />
             </div>
           </div>
         </div>
         <!-- Radio box -->
-        <div class="relative flex items-center justify-center my-4">
+        <div class="relative my-4 flex items-center justify-center">
           <div class="relative">
             <input
               type="radio"
               name="language_selection"
-              class="peer absolute top-0 left-0 h-full w-full opacity-0 cursor-pointer z-20"
+              class="peer absolute top-0 left-0 z-20 h-full w-full cursor-pointer opacity-0"
             />
             <div
-              class="w-14 h-14 flex items-center justify-center border-2 border-muted-200 dark:border-muted-600 peer-checked:border-primary-500 shadow-lg rounded-full transition-all duration-300"
+              class="flex h-14 w-14 items-center justify-center rounded-full border-2 border-muted-200 shadow-lg transition-all duration-300 peer-checked:border-primary-500 dark:border-muted-600"
             >
               <img
                 class="h-10 w-10 rounded-full"
@@ -90,22 +90,22 @@ const { closePanel } = usePanels()
               />
             </div>
             <div
-              class="absolute -top-1 -right-1 h-7 w-7 rounded-full hidden peer-checked:flex items-center justify-center bg-primary-500 text-white border-4 border-white dark:border-muted-800"
+              class="absolute -top-1 -right-1 hidden h-7 w-7 items-center justify-center rounded-full border-4 border-white bg-primary-500 text-white peer-checked:flex dark:border-muted-800"
             >
-              <BaseIcon name="feather:check" class="w-3 h-3" />
+              <BaseIcon name="feather:check" class="h-3 w-3" />
             </div>
           </div>
         </div>
         <!-- Radio box -->
-        <div class="relative flex items-center justify-center my-4">
+        <div class="relative my-4 flex items-center justify-center">
           <div class="relative">
             <input
               type="radio"
               name="language_selection"
-              class="peer absolute top-0 left-0 h-full w-full opacity-0 cursor-pointer z-20"
+              class="peer absolute top-0 left-0 z-20 h-full w-full cursor-pointer opacity-0"
             />
             <div
-              class="w-14 h-14 flex items-center justify-center border-2 border-muted-200 dark:border-muted-600 peer-checked:border-primary-500 shadow-lg rounded-full transition-all duration-300"
+              class="flex h-14 w-14 items-center justify-center rounded-full border-2 border-muted-200 shadow-lg transition-all duration-300 peer-checked:border-primary-500 dark:border-muted-600"
             >
               <img
                 class="h-10 w-10 rounded-full"
@@ -114,22 +114,22 @@ const { closePanel } = usePanels()
               />
             </div>
             <div
-              class="absolute -top-1 -right-1 h-7 w-7 rounded-full hidden peer-checked:flex items-center justify-center bg-primary-500 text-white border-4 border-white dark:border-muted-800"
+              class="absolute -top-1 -right-1 hidden h-7 w-7 items-center justify-center rounded-full border-4 border-white bg-primary-500 text-white peer-checked:flex dark:border-muted-800"
             >
-              <BaseIcon name="feather:check" class="w-3 h-3" />
+              <BaseIcon name="feather:check" class="h-3 w-3" />
             </div>
           </div>
         </div>
         <!-- Radio box -->
-        <div class="relative flex items-center justify-center my-4">
+        <div class="relative my-4 flex items-center justify-center">
           <div class="relative">
             <input
               type="radio"
               name="language_selection"
-              class="peer absolute top-0 left-0 h-full w-full opacity-0 cursor-pointer z-20"
+              class="peer absolute top-0 left-0 z-20 h-full w-full cursor-pointer opacity-0"
             />
             <div
-              class="w-14 h-14 flex items-center justify-center border-2 border-muted-200 dark:border-muted-600 peer-checked:border-primary-500 shadow-lg rounded-full transition-all duration-300"
+              class="flex h-14 w-14 items-center justify-center rounded-full border-2 border-muted-200 shadow-lg transition-all duration-300 peer-checked:border-primary-500 dark:border-muted-600"
             >
               <img
                 class="h-10 w-10 rounded-full"
@@ -138,22 +138,22 @@ const { closePanel } = usePanels()
               />
             </div>
             <div
-              class="absolute -top-1 -right-1 h-7 w-7 rounded-full hidden peer-checked:flex items-center justify-center bg-primary-500 text-white border-4 border-white dark:border-muted-800"
+              class="absolute -top-1 -right-1 hidden h-7 w-7 items-center justify-center rounded-full border-4 border-white bg-primary-500 text-white peer-checked:flex dark:border-muted-800"
             >
-              <BaseIcon name="feather:check" class="w-3 h-3" />
+              <BaseIcon name="feather:check" class="h-3 w-3" />
             </div>
           </div>
         </div>
         <!-- Radio box -->
-        <div class="relative flex items-center justify-center my-4">
+        <div class="relative my-4 flex items-center justify-center">
           <div class="relative">
             <input
               type="radio"
               name="language_selection"
-              class="peer absolute top-0 left-0 h-full w-full opacity-0 cursor-pointer z-20"
+              class="peer absolute top-0 left-0 z-20 h-full w-full cursor-pointer opacity-0"
             />
             <div
-              class="w-14 h-14 flex items-center justify-center border-2 border-muted-200 dark:border-muted-600 peer-checked:border-primary-500 shadow-lg rounded-full transition-all duration-300"
+              class="flex h-14 w-14 items-center justify-center rounded-full border-2 border-muted-200 shadow-lg transition-all duration-300 peer-checked:border-primary-500 dark:border-muted-600"
             >
               <img
                 class="h-10 w-10 rounded-full"
@@ -162,9 +162,9 @@ const { closePanel } = usePanels()
               />
             </div>
             <div
-              class="absolute -top-1 -right-1 h-7 w-7 rounded-full hidden peer-checked:flex items-center justify-center bg-primary-500 text-white border-4 border-white dark:border-muted-800"
+              class="absolute -top-1 -right-1 hidden h-7 w-7 items-center justify-center rounded-full border-4 border-white bg-primary-500 text-white peer-checked:flex dark:border-muted-800"
             >
-              <BaseIcon name="feather:check" class="w-3 h-3" />
+              <BaseIcon name="feather:check" class="h-3 w-3" />
             </div>
           </div>
         </div>
@@ -173,12 +173,12 @@ const { closePanel } = usePanels()
       <div>
         <img
           src="/img/illustrations/translation.svg"
-          class="w-full max-w-[280px] mx-auto dark:hidden"
+          class="mx-auto w-full max-w-[280px] dark:hidden"
           alt="illustration"
         />
         <img
           src="/img/illustrations/translation-dark.svg"
-          class="w-full max-w-[280px] mx-auto hidden dark:block"
+          class="mx-auto hidden w-full max-w-[280px] dark:block"
           alt="illustration"
         />
       </div>

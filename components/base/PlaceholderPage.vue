@@ -10,16 +10,16 @@ const props = withDefaults(defineProps<PlaceholderPageProps>(), {
 </script>
 
 <template>
-  <div class="flex justify-center items-center min-h-[400px]">
-    <div class="w-full max-w-sm mx-auto text-center">
-      <div v-if="'image' in $slots" class="max-w-xs mx-auto">
+  <div class="flex min-h-[400px] items-center justify-center">
+    <div class="mx-auto w-full max-w-sm text-center">
+      <div v-if="'image' in $slots" class="mx-auto max-w-xs">
         <slot name="image"></slot>
       </div>
       <BaseHeading
         as="h4"
         weight="semibold"
         size="xl"
-        class="text-muted-800 dark:text-white mt-4"
+        class="mt-4 text-muted-800 dark:text-white"
       >
         {{ props.title }}
       </BaseHeading>

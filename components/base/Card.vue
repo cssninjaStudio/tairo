@@ -14,7 +14,7 @@ const props = withDefaults(defineProps<CardProps>(), {
 
 <template>
   <div
-    class="relative w-full bg-white dark:bg-muted-800 border border-muted-200 dark:border-muted-700 transition-all duration-300"
+    class="relative w-full border border-muted-200 bg-white transition-all duration-300 dark:border-muted-700 dark:bg-muted-800"
     :class="[
       props.shape === 'rounded' && 'rounded-md',
       props.shape === 'curved' && 'rounded-xl',

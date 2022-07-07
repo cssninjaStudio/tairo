@@ -1,5 +1,7 @@
 /* Scrollbar helper class */
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 .slimscroll::-webkit-scrollbar {
   @apply w-[6px];

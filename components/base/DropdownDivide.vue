@@ -1,5 +1,5 @@
 <template>
   <div
-    class="block w-full h-px border-t border-muted-200 dark:border-muted-600 my-2"
+    class="my-2 block h-px w-full border-t border-muted-200 dark:border-muted-600"
   ></div>
 </template>

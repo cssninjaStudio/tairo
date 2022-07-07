@@ -17,7 +17,7 @@ const emit = defineEmits(['delete'])
 
 <template>
   <div
-    class="inline-flex items-center rounded-full group outline-transparent ninja-focus"
+    class="group ninja-focus inline-flex items-center rounded-full outline-transparent"
     :class="[
       !props.icon && !props.image && 'pl-4',
       props.small ? 'h-8' : 'h-10',
@@ -28,7 +28,7 @@ const emit = defineEmits(['delete'])
   >
     <div
       v-if="props.icon && !props.image"
-      class="flex items-center justify-center rounded-full bg-white border border-muted-200 mr-2 -ml-0.5"
+      class="mr-2 -ml-0.5 flex items-center justify-center rounded-full border border-muted-200 bg-white"
       :class="props.small ? 'h-8 w-8' : 'h-10 w-10'"
     >
       <BaseIcon
@@ -38,7 +38,7 @@ const emit = defineEmits(['delete'])
     </div>
     <div
       v-else-if="props.image && !props.icon"
-      class="flex items-center justify-center rounded-full mr-2 -ml-0.5"
+      class="mr-2 -ml-0.5 flex items-center justify-center rounded-full"
       :class="props.small ? 'h-8 w-8' : 'h-10 w-10'"
     >
       <img
@@ -53,7 +53,7 @@ const emit = defineEmits(['delete'])
     </span>
     <button
       type="button"
-      class="ml-2 p-1 cursor-pointer rounded-full outline-none"
+      class="ml-2 cursor-pointer rounded-full p-1 outline-none"
       :class="[
         props.small ? 'mr-1' : 'mr-2',
         props.light
@@ -62,7 +62,7 @@ const emit = defineEmits(['delete'])
       ]"
       @click="emit('delete')"
     >
-      <IconClose class="w-4 h-4 text-muted-600 dark:text-muted-300" />
+      <IconClose class="h-4 w-4 text-muted-600 dark:text-muted-300" />
     </button>
   </div>
 </template>

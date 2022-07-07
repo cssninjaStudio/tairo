@@ -44,11 +44,11 @@ watch(
     <label v-if="!props.hideLabel" class="font-sans text-sm text-muted-400">
       {{ props.label }}
     </label>
-    <div class="relative group">
+    <div class="group relative">
       <select
         v-model="value"
         title="select"
-        class="appearance-none px-3 py-2 h-10 text-sm leading-5 font-sans w-full border border-muted-300 bg-white text-muted-600 placeholder:text-muted-300 focus:border-muted-300 focus:shadow-lg focus:shadow-muted-300/50 dark:focus:shadow-muted-800/50 dark:placeholder:text-muted-600 dark:bg-muted-900/75 dark:text-muted-200 dark:border-muted-700 dark:focus:border-muted-700 ninja-focus"
+        class="ninja-focus h-10 w-full appearance-none border border-muted-300 bg-white px-3 py-2 font-sans text-sm leading-5 text-muted-600 placeholder:text-muted-300 focus:border-muted-300 focus:shadow-lg focus:shadow-muted-300/50 dark:border-muted-700 dark:bg-muted-900/75 dark:text-muted-200 dark:placeholder:text-muted-600 dark:focus:border-muted-700 dark:focus:shadow-muted-800/50"
         :class="[
           props.shape === 'rounded' && 'rounded',
           props.shape === 'curved' && 'rounded-xl',
@@ -62,24 +62,24 @@ watch(
       </select>
       <div
         v-if="props.loading"
-        class="absolute top-0 left-0 flex items-center h-10 w-full px-4"
+        class="absolute top-0 left-0 flex h-10 w-full items-center px-4"
       >
         <BasePlaceload class="h-3 w-full max-w-[75%] rounded" />
       </div>
       <div
         v-if="props.icon"
-        class="absolute top-0 left-0 h-10 w-10 flex justify-center items-center text-muted-400 group-focus-within:text-violet-500 peer-disabled:opacity-75 peer-disabled:cursor-not-allowed transition-colors duration-300"
+        class="absolute top-0 left-0 flex h-10 w-10 items-center justify-center text-muted-400 transition-colors duration-300 group-focus-within:text-violet-500 peer-disabled:cursor-not-allowed peer-disabled:opacity-75"
         :class="[
           props.loading && 'opacity-0',
           props.invalid && !props.loading && '!text-danger-500',
         ]"
       >
         <slot name="icon">
-          <BaseIcon :name="props.icon" class="w-[1.15rem] h-[1.15rem]" />
+          <BaseIcon :name="props.icon" class="h-[1.15rem] w-[1.15rem]" />
         </slot>
       </div>
       <div
-        class="absolute top-0 right-0 h-10 w-10 flex justify-center items-center text-muted-400 transition-transform duration-300 group-focus-within:-rotate-180"
+        class="absolute top-0 right-0 flex h-10 w-10 items-center justify-center text-muted-400 transition-transform duration-300 group-focus-within:-rotate-180"
       >
         <IconChevronDown class="h-4 w-4" />
       </div>

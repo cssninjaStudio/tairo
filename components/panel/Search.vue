@@ -55,9 +55,9 @@ const filteredPeople = computed(() =>
 
 <template>
   <div
-    class="bg-white dark:bg-muted-800 border border-muted-200 dark:border-muted-700"
+    class="border border-muted-200 bg-white dark:border-muted-700 dark:bg-muted-800"
   >
-    <div class="flex items-center justify-between h-16 w-full px-10">
+    <div class="flex h-16 w-full items-center justify-between px-10">
       <h2
         class="font-heading text-lg font-semibold text-muted-700 dark:text-white"
       >
@@ -65,26 +65,26 @@ const filteredPeople = computed(() =>
       </h2>
       <button
         type="button"
-        class="flex items-center justify-center h-10 w-10 rounded-full text-muted-400 hover:text-muted-600 dark:hover:text-white hover:bg-muted-100 dark:hover:bg-muted-700 transition-colors duration-300"
+        class="flex h-10 w-10 items-center justify-center rounded-full text-muted-400 transition-colors duration-300 hover:bg-muted-100 hover:text-muted-600 dark:hover:bg-muted-700 dark:hover:text-white"
         @click="closePanel"
       >
-        <BaseIcon name="feather:chevron-left" class="w-6 h-6" />
+        <BaseIcon name="feather:chevron-left" class="h-6 w-6" />
       </button>
     </div>
 
     <div class="relative h-[calc(100%_-_64px)] w-full px-10">
-      <Combobox v-model="selectedPerson" class="relative mt-5 z-10" as="div">
+      <Combobox v-model="selectedPerson" class="relative z-10 mt-5" as="div">
         <div class="group relative">
           <ComboboxInput
-            class="pl-10 pr-4 py-3 h-12 text-sm leading-5 font-sans w-full bg-white text-muted-600 border border-muted-300 focus:border-primary-500 focus:shadow-lg focus:shadow-muted-300/50 dark:focus:shadow-muted-800/50 dark:placeholder:text-muted-600 dark:bg-muted-800 dark:text-muted-200 dark:border-muted-700 dark:focus:border-muted-600 !outline-none transition duration-300 rounded-lg"
+            class="h-12 w-full rounded-lg border border-muted-300 bg-white py-3 pl-10 pr-4 font-sans text-sm leading-5 text-muted-600 !outline-none transition duration-300 focus:border-primary-500 focus:shadow-lg focus:shadow-muted-300/50 dark:border-muted-700 dark:bg-muted-800 dark:text-muted-200 dark:placeholder:text-muted-600 dark:focus:border-muted-600 dark:focus:shadow-muted-800/50"
             :display-value="(person:any) => person.name"
             placeholder="Search..."
             @change="query = $event.target.value"
           />
           <div
-            class="absolute top-0 left-0 h-12 w-12 flex justify-center items-center text-muted-400 group-focus-within:text-primary-500 transition-colors duration-300"
+            class="absolute top-0 left-0 flex h-12 w-12 items-center justify-center text-muted-400 transition-colors duration-300 group-focus-within:text-primary-500"
           >
-            <BaseIcon name="feather:search" class="w-5 h-5" />
+            <BaseIcon name="feather:search" class="h-5 w-5" />
           </div>
         </div>
 
@@ -96,7 +96,7 @@ const filteredPeople = computed(() =>
         >
           <ComboboxOptions
             as="div"
-            class="absolute mt-1 max-h-60 w-full overflow-auto rounded-lg bg-white dark:bg-muted-800 border border-muted-200 dark:border-muted-700 divide-y divide-muted-100 dark:divide-muted-700 py-1 text-base shadow-lg outline-none sm:text-sm slimscroll"
+            class="slimscroll absolute mt-1 max-h-60 w-full divide-y divide-muted-100 overflow-auto rounded-lg border border-muted-200 bg-white py-1 text-base shadow-lg outline-none dark:divide-muted-700 dark:border-muted-700 dark:bg-muted-800 sm:text-sm"
           >
             <!-- Placeholder -->
             <div
@@ -113,20 +113,20 @@ const filteredPeople = computed(() =>
               :value="person"
             >
               <div
-                class="flex items-center p-2 cursor-pointer rounded-lg hover:bg-muted-100 dark:hover:bg-muted-700 transition-colors duration-300"
+                class="flex cursor-pointer items-center rounded-lg p-2 transition-colors duration-300 hover:bg-muted-100 dark:hover:bg-muted-700"
               >
                 <div
-                  class="inline-flex justify-center items-center relative w-9 h-9 rounded-full"
+                  class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
                 >
                   <img
                     :src="person.avatar"
-                    class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
+                    class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""
                   />
                 </div>
                 <div class="ml-3">
                   <h6
-                    class="font-heading font-semibold text-sm text-muted-800 dark:text-white"
+                    class="font-heading text-sm font-semibold text-muted-800 dark:text-white"
                   >
                     {{ person.name }}
                   </h6>
@@ -143,7 +143,7 @@ const filteredPeople = computed(() =>
       <!-- Suggestions -->
       <div class="py-6">
         <h4
-          class="font-alt font-semibold uppercase text-sm text-muted-400 mb-4"
+          class="mb-4 font-alt text-sm font-semibold uppercase text-muted-400"
         >
           People
         </h4>
@@ -152,17 +152,17 @@ const filteredPeople = computed(() =>
           <li>
             <NuxtLink to="/" class="flex items-center">
               <div
-                class="inline-flex justify-center items-center relative w-9 h-9 rounded-full"
+                class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
               >
                 <img
                   src="/img/avatars/3.svg"
-                  class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
+                  class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                   alt=""
                 />
               </div>
               <div class="ml-3">
                 <h6
-                  class="font-heading font-semibold text-sm text-muted-800 dark:text-white"
+                  class="font-heading text-sm font-semibold text-muted-800 dark:text-white"
                 >
                   Mike Miller
                 </h6>
@@ -176,17 +176,17 @@ const filteredPeople = computed(() =>
           <li>
             <NuxtLink to="/" class="flex items-center">
               <div
-                class="inline-flex justify-center items-center relative w-9 h-9 rounded-full"
+                class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
               >
                 <img
                   src="/img/avatars/18.svg"
-                  class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
+                  class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                   alt=""
                 />
               </div>
               <div class="ml-3">
                 <h6
-                  class="font-heading font-semibold text-sm text-muted-800 dark:text-white"
+                  class="font-heading text-sm font-semibold text-muted-800 dark:text-white"
                 >
                   John Sabierski
                 </h6>
@@ -200,17 +200,17 @@ const filteredPeople = computed(() =>
           <li>
             <NuxtLink to="/" class="flex items-center">
               <div
-                class="inline-flex justify-center items-center relative w-9 h-9 rounded-full"
+                class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
               >
                 <img
                   src="/img/avatars/11.svg"
-                  class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
+                  class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                   alt=""
                 />
               </div>
               <div class="ml-3">
                 <h6
-                  class="font-heading font-semibold text-sm text-muted-800 dark:text-white"
+                  class="font-heading text-sm font-semibold text-muted-800 dark:text-white"
                 >
                   Ronald Cardine
                 </h6>
@@ -226,7 +226,7 @@ const filteredPeople = computed(() =>
       <!-- Suggestions -->
       <div class="py-6">
         <h4
-          class="font-alt font-semibold uppercase text-sm text-muted-400 mb-4"
+          class="mb-4 font-alt text-sm font-semibold uppercase text-muted-400"
         >
           Recent
         </h4>
@@ -235,13 +235,13 @@ const filteredPeople = computed(() =>
           <li>
             <NuxtLink to="/" class="flex items-center">
               <div
-                class="relative inline-flex justify-center items-center w-10 h-10 bg-emerald-100 text-emerald-600 dark:bg-emerald-500 dark:text-muted-50 rounded-full"
+                class="relative inline-flex h-10 w-10 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-500 dark:text-muted-50"
               >
                 <BaseIcon name="feather:chrome" class="" />
               </div>
               <div class="ml-3">
                 <h6
-                  class="font-heading font-semibold text-sm text-muted-800 dark:text-white"
+                  class="font-heading text-sm font-semibold text-muted-800 dark:text-white"
                 >
                   Browser Support
                 </h6>
@@ -253,13 +253,13 @@ const filteredPeople = computed(() =>
           <li>
             <NuxtLink to="/" class="flex items-center">
               <div
-                class="relative inline-flex justify-center items-center w-10 h-10 bg-warning-100 text-warning-600 dark:bg-warning-500 dark:text-muted-50 rounded-full"
+                class="relative inline-flex h-10 w-10 items-center justify-center rounded-full bg-warning-100 text-warning-600 dark:bg-warning-500 dark:text-muted-50"
               >
                 <BaseIcon name="feather:tv" class="" />
               </div>
               <div class="ml-3">
                 <h6
-                  class="font-heading font-semibold text-sm text-muted-800 dark:text-white"
+                  class="font-heading text-sm font-semibold text-muted-800 dark:text-white"
                 >
                   Twitch new API
                 </h6>
@@ -271,13 +271,13 @@ const filteredPeople = computed(() =>
           <li>
             <NuxtLink to="/" class="flex items-center">
               <div
-                class="relative inline-flex justify-center items-center w-10 h-10 bg-primary-100 text-primary-600 dark:bg-primary-500 dark:text-muted-50 rounded-full"
+                class="relative inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary-100 text-primary-600 dark:bg-primary-500 dark:text-muted-50"
               >
                 <BaseIcon name="feather:twitter" class="" />
               </div>
               <div class="ml-3">
                 <h6
-                  class="font-heading font-semibold text-sm text-muted-800 dark:text-white"
+                  class="font-heading text-sm font-semibold text-muted-800 dark:text-white"
                 >
                   Social integrations
                 </h6>

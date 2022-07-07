@@ -3,19 +3,19 @@ const { activeSidebar, isSidebarOpened } = useSidebar()
 </script>
 
 <template>
-  <div class="flex items-center h-16 w-full px-6">
+  <div class="flex h-16 w-full items-center px-6">
     <div
       v-if="activeSidebar"
-      class="font-heading text-lg font-semibold text-muted-700 dark:text-white capitalize"
+      class="font-heading text-lg font-semibold capitalize text-muted-700 dark:text-white"
     >
       {{ activeSidebar.name }}
     </div>
     <button
       type="button"
-      class="flex xl:hidden items-center justify-center h-10 w-10 rounded-full ml-auto text-muted-400 hover:text-muted-600 hover:bg-muted-100 transition-colors duration-300"
+      class="ml-auto flex h-10 w-10 items-center justify-center rounded-full text-muted-400 transition-colors duration-300 hover:bg-muted-100 hover:text-muted-600 xl:hidden"
       @click="isSidebarOpened = false"
     >
-      <BaseIcon name="feather:chevron-left" class="w-6 h-6" />
+      <BaseIcon name="feather:chevron-left" class="h-6 w-6" />
     </button>
   </div>
 </template>

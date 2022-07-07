@@ -56,7 +56,7 @@ const props = withDefaults(defineProps<CarouselProps>(), {
         <NuxtLink :to="slide.to">
           <BaseCard
             shape="curved"
-            class="px-4 py-6 hover:border-primary-500 dark:hover:border-primary-500 hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+            class="px-4 py-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary-500 hover:shadow-lg dark:hover:border-primary-500"
           >
             <BaseAvatar
               :src="slide.avatar"

@@ -10,7 +10,7 @@ const props = withDefaults(defineProps<TableHeadingProps>(), {
 
 <template>
   <th
-    class="font-heading py-3 font-semibold tracking-wider text-left text-muted-700 dark:text-muted-400"
+    class="py-3 text-left font-heading font-semibold tracking-wider text-muted-700 dark:text-muted-400"
     :class="props.uppercase ? 'uppercase text-xs' : 'text-sm'"
   >
     <slot></slot>

@@ -35,7 +35,7 @@ const value = computed(() => {
     xmlns="http://www.w3.org/2000/svg"
   >
     <circle
-      class="text-muted-200 dark:text-muted-700 stroke-current"
+      class="stroke-current text-muted-200 dark:text-muted-700"
       :stroke-width="props.thickness"
       fill="none"
       cx="50%"

@@ -5,10 +5,10 @@ definePageMeta({
 </script>
 
 <template>
-  <div class="w-full max-w-[840px] mx-auto pb-20">
+  <div class="mx-auto w-full max-w-[840px] pb-20">
     <div class="text-center">
       <BaseAvatar
-        class="bg-yellow-100 dark:bg-yellow-100/50 text-yellow-500"
+        class="bg-yellow-100 text-yellow-500 dark:bg-yellow-100/50"
         src="/img/avatars/18.svg"
         text="J"
         size="2xl"
@@ -30,11 +30,11 @@ definePageMeta({
       </BaseParagraph>
     </div>
 
-    <div class="py-4 w-full max-w-3xl mx-auto">
-      <div class="grid md:grid-cols-2 gap-5">
+    <div class="mx-auto w-full max-w-3xl py-4">
+      <div class="grid gap-5 md:grid-cols-2">
         <!-- Hub Card -->
         <BaseCard class="group">
-          <div class="flex justify-between p-6 mb-2">
+          <div class="mb-2 flex justify-between p-6">
             <div class="grow pr-4">
               <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
                 <span class="text-muted-800 dark:text-white">Content</span>
@@ -47,22 +47,22 @@ definePageMeta({
               </BaseParagraph>
             </div>
             <img
-              class="max-w-[100px] dark:hidden opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              class="max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
               src="/img/illustrations/components/lists.svg"
               alt="Component image"
             />
             <img
-              class="max-w-[100px] hidden dark:block opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              class="hidden max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
               src="/img/illustrations/components/lists-dark.svg"
               alt="Component image"
             />
           </div>
           <div
-            class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-muted-700"
+            class="border-t-2 border-dashed border-gray-300 py-4 px-6 dark:border-muted-700"
           >
             <NuxtLink
               to="/components/typography"
-              class="font-sans text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
+              class="font-sans text-sm font-medium text-primary-500 opacity-60 transition-opacity duration-300 hover:opacity-100"
             >
               Get Started
             </NuxtLink>
@@ -70,7 +70,7 @@ definePageMeta({
         </BaseCard>
         <!-- Hub Card -->
         <BaseCard class="group">
-          <div class="flex justify-between p-6 mb-2">
+          <div class="mb-2 flex justify-between p-6">
             <div class="grow pr-4">
               <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
                 <span class="text-muted-800 dark:text-white">Tags</span>
@@ -83,22 +83,22 @@ definePageMeta({
               </BaseParagraph>
             </div>
             <img
-              class="max-w-[100px] dark:hidden opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              class="max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
               src="/img/illustrations/components/tags.svg"
               alt="Component image"
             />
             <img
-              class="max-w-[100px] hidden dark:block opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              class="hidden max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
               src="/img/illustrations/components/tags-dark.svg"
               alt="Component image"
             />
           </div>
           <div
-            class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-muted-700"
+            class="border-t-2 border-dashed border-gray-300 py-4 px-6 dark:border-muted-700"
           >
             <NuxtLink
               to="/components/tag"
-              class="font-sans text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
+              class="font-sans text-sm font-medium text-primary-500 opacity-60 transition-opacity duration-300 hover:opacity-100"
             >
               Get Started
             </NuxtLink>
@@ -106,7 +106,7 @@ definePageMeta({
         </BaseCard>
         <!-- Hub Card -->
         <BaseCard class="group">
-          <div class="flex justify-between p-6 mb-2">
+          <div class="mb-2 flex justify-between p-6">
             <div class="grow pr-4">
               <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
                 <span class="text-muted-800 dark:text-white">Tabs</span>
@@ -119,22 +119,22 @@ definePageMeta({
               </BaseParagraph>
             </div>
             <img
-              class="max-w-[100px] dark:hidden opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              class="max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
               src="/img/illustrations/components/tabs.svg"
               alt="Component image"
             />
             <img
-              class="max-w-[100px] hidden dark:block opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              class="hidden max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
               src="/img/illustrations/components/tabs-dark.svg"
               alt="Component image"
             />
           </div>
           <div
-            class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-muted-700"
+            class="border-t-2 border-dashed border-gray-300 py-4 px-6 dark:border-muted-700"
           >
             <NuxtLink
               to="/components/tabs"
-              class="font-sans text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
+              class="font-sans text-sm font-medium text-primary-500 opacity-60 transition-opacity duration-300 hover:opacity-100"
             >
               Get Started
             </NuxtLink>
@@ -142,7 +142,7 @@ definePageMeta({
         </BaseCard>
         <!-- Hub Card -->
         <BaseCard class="group">
-          <div class="flex justify-between p-6 mb-2">
+          <div class="mb-2 flex justify-between p-6">
             <div class="grow pr-4">
               <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
                 <span class="text-muted-800 dark:text-white">Cards</span>
@@ -155,22 +155,22 @@ definePageMeta({
               </BaseParagraph>
             </div>
             <img
-              class="max-w-[100px] dark:hidden opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              class="max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
               src="/img/illustrations/components/cards.svg"
               alt="Component image"
             />
             <img
-              class="max-w-[100px] hidden dark:block opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              class="hidden max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
               src="/img/illustrations/components/cards-dark.svg"
               alt="Component image"
             />
           </div>
           <div
-            class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-muted-700"
+            class="border-t-2 border-dashed border-gray-300 py-4 px-6 dark:border-muted-700"
           >
             <NuxtLink
               to="/components/card"
-              class="font-sans text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
+              class="font-sans text-sm font-medium text-primary-500 opacity-60 transition-opacity duration-300 hover:opacity-100"
             >
               Get Started
             </NuxtLink>
@@ -178,7 +178,7 @@ definePageMeta({
         </BaseCard>
         <!-- Hub Card -->
         <BaseCard class="group">
-          <div class="flex justify-between p-6 mb-2">
+          <div class="mb-2 flex justify-between p-6">
             <div class="grow pr-4">
               <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
                 <span class="text-muted-800 dark:text-white">Avatars</span>
@@ -191,22 +191,22 @@ definePageMeta({
               </BaseParagraph>
             </div>
             <img
-              class="max-w-[100px] dark:hidden opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              class="max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
               src="/img/illustrations/components/avatar.svg"
               alt="Component image"
             />
             <img
-              class="max-w-[100px] hidden dark:block opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              class="hidden max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
               src="/img/illustrations/components/avatar-dark.svg"
               alt="Component image"
             />
           </div>
           <div
-            class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-muted-700"
+            class="border-t-2 border-dashed border-gray-300 py-4 px-6 dark:border-muted-700"
           >
             <NuxtLink
               to="/components/avatar"
-              class="font-sans text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
+              class="font-sans text-sm font-medium text-primary-500 opacity-60 transition-opacity duration-300 hover:opacity-100"
             >
               Get Started
             </NuxtLink>
@@ -214,7 +214,7 @@ definePageMeta({
         </BaseCard>
         <!-- Hub Card -->
         <BaseCard class="group">
-          <div class="flex justify-between p-6 mb-2">
+          <div class="mb-2 flex justify-between p-6">
             <div class="grow pr-4">
               <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
                 <span class="text-muted-800 dark:text-white">Accordions</span>
@@ -227,22 +227,22 @@ definePageMeta({
               </BaseParagraph>
             </div>
             <img
-              class="max-w-[100px] dark:hidden opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              class="max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
               src="/img/illustrations/components/accordion.svg"
               alt="Component image"
             />
             <img
-              class="max-w-[100px] hidden dark:block opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              class="hidden max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
               src="/img/illustrations/components/accordion-dark.svg"
               alt="Component image"
             />
           </div>
           <div
-            class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-muted-700"
+            class="border-t-2 border-dashed border-gray-300 py-4 px-6 dark:border-muted-700"
           >
             <NuxtLink
               to="/components/accordion"
-              class="font-sans text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
+              class="font-sans text-sm font-medium text-primary-500 opacity-60 transition-opacity duration-300 hover:opacity-100"
             >
               Get Started
             </NuxtLink>
@@ -250,7 +250,7 @@ definePageMeta({
         </BaseCard>
         <!-- Hub Card -->
         <BaseCard class="group">
-          <div class="flex justify-between p-6 mb-2">
+          <div class="mb-2 flex justify-between p-6">
             <div class="grow pr-4">
               <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
                 <span class="text-muted-800 dark:text-white">Breadcrumbs</span>
@@ -263,22 +263,22 @@ definePageMeta({
               </BaseParagraph>
             </div>
             <img
-              class="max-w-[100px] dark:hidden opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              class="max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
               src="/img/illustrations/components/breadcrumb.svg"
               alt="Component image"
             />
             <img
-              class="max-w-[100px] hidden dark:block opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              class="hidden max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
               src="/img/illustrations/components/breadcrumb-dark.svg"
               alt="Component image"
             />
           </div>
           <div
-            class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-muted-700"
+            class="border-t-2 border-dashed border-gray-300 py-4 px-6 dark:border-muted-700"
           >
             <NuxtLink
               to="/components/breadcrumb"
-              class="font-sans text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
+              class="font-sans text-sm font-medium text-primary-500 opacity-60 transition-opacity duration-300 hover:opacity-100"
             >
               Get Started
             </NuxtLink>
@@ -286,7 +286,7 @@ definePageMeta({
         </BaseCard>
         <!-- Hub Card -->
         <BaseCard class="group">
-          <div class="flex justify-between p-6 mb-2">
+          <div class="mb-2 flex justify-between p-6">
             <div class="grow pr-4">
               <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
                 <span class="text-muted-800 dark:text-white">Icon Box</span>
@@ -299,22 +299,22 @@ definePageMeta({
               </BaseParagraph>
             </div>
             <img
-              class="max-w-[100px] dark:hidden opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              class="max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
               src="/img/illustrations/components/icon-box.svg"
               alt="Component image"
             />
             <img
-              class="max-w-[100px] hidden dark:block opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              class="hidden max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
               src="/img/illustrations/components/icon-box-dark.svg"
               alt="Component image"
             />
           </div>
           <div
-            class="py-5 px-6 border-t-2 border-dashed border-gray-300 dark:border-muted-700"
+            class="border-t-2 border-dashed border-gray-300 py-5 px-6 dark:border-muted-700"
           >
             <NuxtLink
               to="/components/icon-box"
-              class="font-sans text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
+              class="font-sans text-sm font-medium text-primary-500 opacity-60 transition-opacity duration-300 hover:opacity-100"
             >
               Get Started
             </NuxtLink>
@@ -322,7 +322,7 @@ definePageMeta({
         </BaseCard>
         <!-- Hub Card -->
         <BaseCard class="group">
-          <div class="flex justify-between p-6 mb-2">
+          <div class="mb-2 flex justify-between p-6">
             <div class="grow pr-4">
               <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
                 <span class="text-muted-800 dark:text-white">Flex Table</span>
@@ -335,22 +335,22 @@ definePageMeta({
               </BaseParagraph>
             </div>
             <img
-              class="max-w-[100px] dark:hidden opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              class="max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
               src="/img/illustrations/components/table.svg"
               alt="Component image"
             />
             <img
-              class="max-w-[100px] hidden dark:block opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              class="hidden max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
               src="/img/illustrations/components/table-dark.svg"
               alt="Component image"
             />
           </div>
           <div
-            class="py-5 px-6 border-t-2 border-dashed border-gray-300 dark:border-muted-700"
+            class="border-t-2 border-dashed border-gray-300 py-5 px-6 dark:border-muted-700"
           >
             <NuxtLink
               to="/components/flex-table"
-              class="font-sans text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
+              class="font-sans text-sm font-medium text-primary-500 opacity-60 transition-opacity duration-300 hover:opacity-100"
             >
               Get Started
             </NuxtLink>
@@ -358,7 +358,7 @@ definePageMeta({
         </BaseCard>
         <!-- Hub Card -->
         <BaseCard class="group">
-          <div class="flex justify-between p-6 mb-2">
+          <div class="mb-2 flex justify-between p-6">
             <div class="grow pr-4">
               <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
                 <span class="text-muted-800 dark:text-white">Snacks</span>
@@ -371,29 +371,29 @@ definePageMeta({
               </BaseParagraph>
             </div>
             <img
-              class="max-w-[100px] dark:hidden opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              class="max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
               src="/img/illustrations/components/snacks.svg"
               alt="Component image"
             />
             <img
-              class="max-w-[100px] hidden dark:block opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              class="hidden max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
               src="/img/illustrations/components/snacks-dark.svg"
               alt="Component image"
             />
           </div>
           <div
-            class="py-5 px-6 border-t-2 border-dashed border-gray-300 dark:border-muted-700"
+            class="border-t-2 border-dashed border-gray-300 py-5 px-6 dark:border-muted-700"
           >
             <NuxtLink
               to="/components/snack"
-              class="font-sans text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
+              class="font-sans text-sm font-medium text-primary-500 opacity-60 transition-opacity duration-300 hover:opacity-100"
             >
               Get Started
             </NuxtLink>
           </div>
         </BaseCard>
         <BaseCard class="group">
-          <div class="flex justify-between p-6 mb-2">
+          <div class="mb-2 flex justify-between p-6">
             <div class="grow pr-4">
               <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
                 <span class="text-muted-800 dark:text-white">Buttons</span>
@@ -406,22 +406,22 @@ definePageMeta({
               </BaseParagraph>
             </div>
             <img
-              class="max-w-[100px] dark:hidden opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              class="max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
               src="/img/illustrations/components/buttons.svg"
               alt="Component image"
             />
             <img
-              class="max-w-[100px] hidden dark:block opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              class="hidden max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
               src="/img/illustrations/components/buttons-dark.svg"
               alt="Component image"
             />
           </div>
           <div
-            class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-muted-700"
+            class="border-t-2 border-dashed border-gray-300 py-4 px-6 dark:border-muted-700"
           >
             <NuxtLink
               to="/components/button"
-              class="font-sans text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
+              class="font-sans text-sm font-medium text-primary-500 opacity-60 transition-opacity duration-300 hover:opacity-100"
             >
               Get Started
             </NuxtLink>
@@ -429,7 +429,7 @@ definePageMeta({
         </BaseCard>
         <!-- Hub Card -->
         <BaseCard class="group">
-          <div class="flex justify-between p-6 mb-2">
+          <div class="mb-2 flex justify-between p-6">
             <div class="grow pr-4">
               <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
                 <span class="text-muted-800 dark:text-white">Icons</span>
@@ -442,22 +442,22 @@ definePageMeta({
               </BaseParagraph>
             </div>
             <img
-              class="max-w-[100px] dark:hidden opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              class="max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
               src="/img/illustrations/components/icons.svg"
               alt="Component image"
             />
             <img
-              class="max-w-[100px] hidden dark:block opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              class="hidden max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
               src="/img/illustrations/components/icons-dark.svg"
               alt="Component image"
             />
           </div>
           <div
-            class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-muted-700"
+            class="border-t-2 border-dashed border-gray-300 py-4 px-6 dark:border-muted-700"
           >
             <NuxtLink
               to="/components/icons"
-              class="font-sans text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
+              class="font-sans text-sm font-medium text-primary-500 opacity-60 transition-opacity duration-300 hover:opacity-100"
             >
               Get Started
             </NuxtLink>
@@ -465,7 +465,7 @@ definePageMeta({
         </BaseCard>
         <!-- Hub Card -->
         <BaseCard class="group">
-          <div class="flex justify-between p-6 mb-2">
+          <div class="mb-2 flex justify-between p-6">
             <div class="grow pr-4">
               <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
                 <span class="text-muted-800 dark:text-white">Dropdowns</span>
@@ -478,22 +478,22 @@ definePageMeta({
               </BaseParagraph>
             </div>
             <img
-              class="max-w-[100px] dark:hidden opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              class="max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
               src="/img/illustrations/components/dropdown.svg"
               alt="Component image"
             />
             <img
-              class="max-w-[100px] hidden dark:block opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              class="hidden max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
               src="/img/illustrations/components/dropdown-dark.svg"
               alt="Component image"
             />
           </div>
           <div
-            class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-muted-700"
+            class="border-t-2 border-dashed border-gray-300 py-4 px-6 dark:border-muted-700"
           >
             <NuxtLink
               to="/components/dropdown"
-              class="font-sans text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
+              class="font-sans text-sm font-medium text-primary-500 opacity-60 transition-opacity duration-300 hover:opacity-100"
             >
               Get Started
             </NuxtLink>
@@ -501,7 +501,7 @@ definePageMeta({
         </BaseCard>
         <!-- Hub Card -->
         <BaseCard class="group">
-          <div class="flex justify-between p-6 mb-2">
+          <div class="mb-2 flex justify-between p-6">
             <div class="grow pr-4">
               <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
                 <span class="text-muted-800 dark:text-white">Modals</span>
@@ -514,22 +514,22 @@ definePageMeta({
               </BaseParagraph>
             </div>
             <img
-              class="max-w-[100px] dark:hidden opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              class="max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
               src="/img/illustrations/components/modal.svg"
               alt="Component image"
             />
             <img
-              class="max-w-[100px] hidden dark:block opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              class="hidden max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
               src="/img/illustrations/components/modal-dark.svg"
               alt="Component image"
             />
           </div>
           <div
-            class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-muted-700"
+            class="border-t-2 border-dashed border-gray-300 py-4 px-6 dark:border-muted-700"
           >
             <NuxtLink
               to="/components/modal"
-              class="font-sans text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
+              class="font-sans text-sm font-medium text-primary-500 opacity-60 transition-opacity duration-300 hover:opacity-100"
             >
               Get Started
             </NuxtLink>
@@ -537,7 +537,7 @@ definePageMeta({
         </BaseCard>
         <!-- Hub Card -->
         <BaseCard class="group">
-          <div class="flex justify-between p-6 mb-2">
+          <div class="mb-2 flex justify-between p-6">
             <div class="grow pr-4">
               <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
                 <span class="text-muted-800 dark:text-white">Progress</span>
@@ -550,22 +550,22 @@ definePageMeta({
               </BaseParagraph>
             </div>
             <img
-              class="max-w-[100px] dark:hidden opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              class="max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
               src="/img/illustrations/components/progress.svg"
               alt="Component image"
             />
             <img
-              class="max-w-[100px] hidden dark:block opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              class="hidden max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
               src="/img/illustrations/components/progress-dark.svg"
               alt="Component image"
             />
           </div>
           <div
-            class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-muted-700"
+            class="border-t-2 border-dashed border-gray-300 py-4 px-6 dark:border-muted-700"
           >
             <NuxtLink
               to="/components/progress"
-              class="font-sans text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
+              class="font-sans text-sm font-medium text-primary-500 opacity-60 transition-opacity duration-300 hover:opacity-100"
             >
               Get Started
             </NuxtLink>
@@ -573,7 +573,7 @@ definePageMeta({
         </BaseCard>
         <!-- Hub Card -->
         <BaseCard class="group">
-          <div class="flex justify-between p-6 mb-2">
+          <div class="mb-2 flex justify-between p-6">
             <div class="grow pr-4">
               <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
                 <span class="text-muted-800 dark:text-white">Forms</span>
@@ -586,22 +586,22 @@ definePageMeta({
               </BaseParagraph>
             </div>
             <img
-              class="max-w-[100px] dark:hidden opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              class="max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
               src="/img/illustrations/components/forms.svg"
               alt="Component image"
             />
             <img
-              class="max-w-[100px] hidden dark:block opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              class="hidden max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
               src="/img/illustrations/components/forms-dark.svg"
               alt="Component image"
             />
           </div>
           <div
-            class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-muted-700"
+            class="border-t-2 border-dashed border-gray-300 py-4 px-6 dark:border-muted-700"
           >
             <NuxtLink
               to="/components/form/input"
-              class="font-sans text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
+              class="font-sans text-sm font-medium text-primary-500 opacity-60 transition-opacity duration-300 hover:opacity-100"
             >
               Get Started
             </NuxtLink>
@@ -609,7 +609,7 @@ definePageMeta({
         </BaseCard>
         <!-- Hub Card -->
         <BaseCard class="group">
-          <div class="flex justify-between p-6 mb-2">
+          <div class="mb-2 flex justify-between p-6">
             <div class="grow pr-4">
               <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
                 <span class="text-muted-800 dark:text-white">Checkboxes</span>
@@ -622,22 +622,22 @@ definePageMeta({
               </BaseParagraph>
             </div>
             <img
-              class="max-w-[100px] dark:hidden opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              class="max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
               src="/img/illustrations/components/checkboxes.svg"
               alt="Component image"
             />
             <img
-              class="max-w-[100px] hidden dark:block opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              class="hidden max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
               src="/img/illustrations/components/checkboxes-dark.svg"
               alt="Component image"
             />
           </div>
           <div
-            class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-muted-700"
+            class="border-t-2 border-dashed border-gray-300 py-4 px-6 dark:border-muted-700"
           >
             <NuxtLink
               to="/components/form/checkbox"
-              class="font-sans text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
+              class="font-sans text-sm font-medium text-primary-500 opacity-60 transition-opacity duration-300 hover:opacity-100"
             >
               Get Started
             </NuxtLink>
@@ -645,7 +645,7 @@ definePageMeta({
         </BaseCard>
         <!-- Hub Card -->
         <BaseCard class="group">
-          <div class="flex justify-between p-6 mb-2">
+          <div class="mb-2 flex justify-between p-6">
             <div class="grow pr-4">
               <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
                 <span class="text-muted-800 dark:text-white">Switches</span>
@@ -658,22 +658,22 @@ definePageMeta({
               </BaseParagraph>
             </div>
             <img
-              class="max-w-[100px] dark:hidden opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              class="max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
               src="/img/illustrations/components/switches.svg"
               alt="Component image"
             />
             <img
-              class="max-w-[100px] hidden dark:block opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              class="hidden max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
               src="/img/illustrations/components/switches-dark.svg"
               alt="Component image"
             />
           </div>
           <div
-            class="py-5 px-6 border-t-2 border-dashed border-gray-300 dark:border-muted-700"
+            class="border-t-2 border-dashed border-gray-300 py-5 px-6 dark:border-muted-700"
           >
             <NuxtLink
               to="/components/form/switch"
-              class="font-sans text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
+              class="font-sans text-sm font-medium text-primary-500 opacity-60 transition-opacity duration-300 hover:opacity-100"
             >
               Get Started
             </NuxtLink>
@@ -681,10 +681,10 @@ definePageMeta({
         </BaseCard>
       </div>
 
-      <div class="text-center pt-12 pb-6">
+      <div class="pt-12 pb-6 text-center">
         <NuxtLink
           to="https://docs.cssninja.io/tairo"
-          class="font-sans text-primary-500 border-b-2 border-dotted border-primary-500"
+          class="border-b-2 border-dotted border-primary-500 font-sans text-primary-500"
         >
           Online Documentation
         </NuxtLink>

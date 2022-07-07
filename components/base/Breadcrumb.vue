@@ -62,13 +62,13 @@ const items = computed(() => {
 
 <template>
   <nav>
-    <ul class="flex items-center font-sans text-sm mb-6">
+    <ul class="mb-6 flex items-center font-sans text-sm">
       <li v-for="(item, index) in items" :key="index" class="flex items-center">
         <NuxtLink
           :to="item.to"
-          class="flex items-center gap-x-1 text-muted-500 hover:text-primary-500 transition-colors duration-300"
+          class="flex items-center gap-x-1 text-muted-500 transition-colors duration-300 hover:text-primary-500"
         >
-          <BaseIcon v-if="item.icon" :name="item.icon" class="block w-4 h-4" />
+          <BaseIcon v-if="item.icon" :name="item.icon" class="block h-4 w-4" />
           <span :class="[item.hideLabel && 'sr-only']">{{ item.label }}</span>
         </NuxtLink>
         <span v-if="index < items.length - 1" class="px-2 text-muted-500">

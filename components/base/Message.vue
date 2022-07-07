@@ -130,12 +130,12 @@ const closeButtonClasses = computed(() => {
 
 <template>
   <div
-    class="flex items-center p-1 min-h-[3rem] border ninja-focus"
+    class="ninja-focus flex min-h-[3rem] items-center border p-1"
     :class="[shapeClass, ...messageClasses]"
   >
     <div
       v-if="props.icon"
-      class="flex items-center justify-center h-10 w-10"
+      class="flex h-10 w-10 items-center justify-center"
       :class="[
         shapeClass,
         props.type === 'success' && 'bg-success-500',
@@ -144,10 +144,10 @@ const closeButtonClasses = computed(() => {
         props.type === 'danger' && 'bg-danger-500',
       ]"
     >
-      <BaseIcon v-if="icon" :name="icon" class="w-5 h-5 text-white" />
+      <BaseIcon v-if="icon" :name="icon" class="h-5 w-5 text-white" />
     </div>
     <span
-      class="font-sans text-sm text-muted-800 ml-3"
+      class="ml-3 font-sans text-sm text-muted-800"
       :class="[
         props.type === 'success' && 'dark:text-success-500',
         props.type === 'info' && 'dark:text-info-500',
@@ -160,12 +160,12 @@ const closeButtonClasses = computed(() => {
     <button
       type="button"
       tabindex="0"
-      class="flex items-center justify-center text-muted-800 ml-auto mr-2 cursor-pointer p-1 outline-none"
+      class="ml-auto mr-2 flex cursor-pointer items-center justify-center p-1 text-muted-800 outline-none"
       :class="[shapeClass, ...closeButtonClasses]"
       @click="emit('close')"
     >
       <slot name="close-button">
-        <BaseIcon name="lucide:x" class="w-4 h-4" />
+        <BaseIcon name="lucide:x" class="h-4 w-4" />
       </slot>
     </button>
   </div>

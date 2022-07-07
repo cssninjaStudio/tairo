@@ -1,6 +1,6 @@
 <template>
   <div class="relative">
-    <div class="hidden md:flex md:items-center justify-between">
+    <div class="hidden justify-between md:flex md:items-center">
       <slot name="header"></slot>
     </div>
 

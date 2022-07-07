@@ -52,7 +52,7 @@ const { attributes, is } = useButton(props)
     :is="is"
     v-bind="attributes"
     :class="iconButtonClasses"
-    class="relative font-sans font-normal inline-flex items-center justify-center outline-none leading-5 no-underline space-x-1 h-10 w-10 p-2 text-sm ninja-focus transition-all duration-300"
+    class="ninja-focus relative inline-flex h-10 w-10 items-center justify-center space-x-1 p-2 font-sans text-sm font-normal leading-5 no-underline outline-none transition-all duration-300"
   >
     <slot v-if="!props.loading"></slot>
     <BasePlaceload v-else class="h-4 w-4 rounded-md" />

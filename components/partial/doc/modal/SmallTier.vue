@@ -27,7 +27,7 @@ const isModalMdOpen = ref(false)
   <BaseModal :open="isModalOpen" size="sm" @close="closeModal">
     <template #header>
       <!-- Header -->
-      <div class="w-full flex items-center justify-between p-4 md:p-6">
+      <div class="flex w-full items-center justify-between p-4 md:p-6">
         <h3
           class="font-heading text-lg font-medium leading-6 text-muted-900 dark:text-white"
         >
@@ -39,11 +39,11 @@ const isModalMdOpen = ref(false)
 
     <!-- Body -->
     <div class="p-4 md:p-6">
-      <div class="text-center w-full max-w-xs mx-auto">
-        <div class="flex relative w-24 h-24 mx-auto mb-4">
+      <div class="mx-auto w-full max-w-xs text-center">
+        <div class="relative mx-auto mb-4 flex h-24 w-24">
           <img
             src="https://media.cssninja.io/shuriken/avatars/3.svg"
-            class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
+            class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
             alt=""
           />
         </div>
@@ -78,7 +78,7 @@ const isModalMdOpen = ref(false)
   <BaseModal :open="isModalMdOpen" size="md" @close="isModalMdOpen = false">
     <template #header>
       <!-- Header -->
-      <div class="w-full flex items-center justify-between p-4 md:p-6">
+      <div class="flex w-full items-center justify-between p-4 md:p-6">
         <h3
           class="font-heading text-lg font-medium leading-6 text-muted-900 dark:text-white"
         >
@@ -90,11 +90,11 @@ const isModalMdOpen = ref(false)
 
     <!-- Body -->
     <div class="p-4 md:p-6">
-      <div class="text-center w-full max-w-xs mx-auto">
-        <div class="flex relative w-24 h-24 mx-auto mb-4">
+      <div class="mx-auto w-full max-w-xs text-center">
+        <div class="relative mx-auto mb-4 flex h-24 w-24">
           <img
             src="https://media.cssninja.io/shuriken/avatars/7.svg"
-            class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
+            class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
             alt=""
           />
         </div>

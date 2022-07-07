@@ -35,7 +35,7 @@ watch(
 <template>
   <div class="relative inline-flex items-center">
     <div
-      class="group relative overflow-hidden w-5 h-5 flex shrink-0 justify-center items-center ninja-focus cursor-pointer rounded-full"
+      class="group ninja-focus relative flex h-5 w-5 shrink-0 cursor-pointer items-center justify-center overflow-hidden rounded-full"
     >
       <input
         :id="props.id"
@@ -43,19 +43,19 @@ watch(
         type="radio"
         :value="props.value"
         :name="props.name"
-        class="peer cursor-pointer opacity-0 absolute h-5 w-5 z-20"
+        class="peer absolute z-20 h-5 w-5 cursor-pointer opacity-0"
       />
       <div
-        class="absolute top-0 left-0 h-full w-full bg-white dark:bg-muted-700 dark:border-muted-600 border-2 border-muted-400 z-0 peer-checked:border-current rounded-full"
+        class="absolute top-0 left-0 z-0 h-full w-full rounded-full border-2 border-muted-400 bg-white peer-checked:border-current dark:border-muted-600 dark:bg-muted-700"
       ></div>
       <div
-        class="block bg-current w-1 h-1 rounded-full pointer-events-none transition duration-300 scale-0 peer-checked:scale-100 z-10"
+        class="pointer-events-none z-10 block h-1 w-1 scale-0 rounded-full bg-current transition duration-300 peer-checked:scale-100"
       ></div>
     </div>
     <label
       v-if="!props.hideLabel"
       :for="props.id"
-      class="cursor-pointer select-none text-muted-400 font-sans text-sm ml-1"
+      class="ml-1 cursor-pointer select-none font-sans text-sm text-muted-400"
     >
       {{ props.label }}
     </label>

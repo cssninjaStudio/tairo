@@ -51,7 +51,7 @@ watch(
     <div class="group relative flex flex-col">
       <textarea
         v-model="value"
-        class="peer font-sans w-full border border-muted-300 bg-white placeholder:text-muted-300 focus:border-muted-300 focus:shadow-lg focus:shadow-muted-300/50 dark:focus:shadow-muted-800/50 dark:placeholder:text-muted-500 dark:bg-muted-900/75 dark:text-muted-200 dark:border-muted-700 dark:focus:border-muted-700 ninja-focus disabled:opacity-75 disabled:cursor-not-allowed"
+        class="peer ninja-focus w-full border border-muted-300 bg-white font-sans placeholder:text-muted-300 focus:border-muted-300 focus:shadow-lg focus:shadow-muted-300/50 disabled:cursor-not-allowed disabled:opacity-75 dark:border-muted-700 dark:bg-muted-900/75 dark:text-muted-200 dark:placeholder:text-muted-500 dark:focus:border-muted-700 dark:focus:shadow-muted-800/50"
         :class="[
           props.shape === 'rounded' && 'rounded',
           props.shape === 'curved' && 'rounded-xl',
@@ -69,7 +69,7 @@ watch(
       ></textarea>
       <div
         v-if="props.loading"
-        class="absolute top-4 left-0 flex flex-col space-y-2 h-full w-full px-3"
+        class="absolute top-4 left-0 flex h-full w-full flex-col space-y-2 px-3"
       >
         <BasePlaceload class="h-3 w-full max-w-[85%] rounded" />
         <BasePlaceload class="h-3 w-full max-w-[65%] rounded" />
@@ -77,7 +77,7 @@ watch(
       </div>
       <div
         v-if="props.addon"
-        class="absolute bottom-0 left-0 w-full flex items-center justify-between p-2 bg-muted-50 dark:bg-muted-900/50 border border-muted-300 dark:border-muted-700 peer-disabled:opacity-75 peer-disabled:cursor-not-allowed"
+        class="absolute bottom-0 left-0 flex w-full items-center justify-between border border-muted-300 bg-muted-50 p-2 peer-disabled:cursor-not-allowed peer-disabled:opacity-75 dark:border-muted-700 dark:bg-muted-900/50"
         :class="[
           props.shape === 'rounded' && 'rounded-b',
           props.shape === 'curved' && 'rounded-b-xl',

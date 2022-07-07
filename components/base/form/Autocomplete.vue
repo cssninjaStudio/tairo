@@ -95,10 +95,10 @@ const removeItem = function (name: string) {
     </ComboboxLabel>
 
     <div v-if="props.multiple" class="block">
-      <ul v-if="filteredItems.length > 0" class="flex flex-wrap gap-1 my-2">
+      <ul v-if="filteredItems.length > 0" class="my-2 flex flex-wrap gap-1">
         <li v-for="item in value" :key="item.id">
           <div
-            class="flex items-center font-sans text-xs font-medium py-2 pr-2 pl-3 text-muted-400 bg-muted-100 dark:bg-muted-700"
+            class="flex items-center bg-muted-100 py-2 pr-2 pl-3 font-sans text-xs font-medium text-muted-400 dark:bg-muted-700"
             :class="[
               props.shape === 'rounded' && 'rounded-lg',
               props.shape === 'curved' && 'rounded-xl',
@@ -107,7 +107,7 @@ const removeItem = function (name: string) {
           >
             {{ item.name }}
             <button type="button" @click="removeItem(item.name)">
-              <BaseIcon name="lucide:x" class="block w-3 h-3 ml-1" />
+              <BaseIcon name="lucide:x" class="ml-1 block h-3 w-3" />
             </button>
           </div>
         </li>
@@ -115,7 +115,7 @@ const removeItem = function (name: string) {
     </div>
     <div class="group relative">
       <ComboboxInput
-        class="peer h-10 text-sm leading-5 font-sans w-full bg-white text-muted-600 border border-muted-300 focus:border-muted-300 focus:shadow-lg focus:shadow-muted-300/50 dark:focus:shadow-muted-800/50 placeholder:text-muted-300 dark:placeholder:text-muted-500 dark:bg-muted-900/75 dark:text-muted-200 dark:border-muted-700 dark:focus:border-muted-700 focus:ring-0 outline-transparent ninja-focus disabled:opacity-75 disabled:cursor-not-allowed transition-all duration-300"
+        class="peer ninja-focus h-10 w-full border border-muted-300 bg-white font-sans text-sm leading-5 text-muted-600 outline-transparent transition-all duration-300 placeholder:text-muted-300 focus:border-muted-300 focus:shadow-lg focus:shadow-muted-300/50 focus:ring-0 disabled:cursor-not-allowed disabled:opacity-75 dark:border-muted-700 dark:bg-muted-900/75 dark:text-muted-200 dark:placeholder:text-muted-500 dark:focus:border-muted-700 dark:focus:shadow-muted-800/50"
         :class="[
           props.icon ? 'pl-9 pr-4' : 'px-4',
           props.shape === 'rounded' && 'rounded',
@@ -130,21 +130,21 @@ const removeItem = function (name: string) {
       />
       <div
         v-if="props.icon || value?.icon"
-        class="absolute top-0 left-0 h-10 w-10 flex justify-center items-center text-muted-400 group-focus-within:text-primary-500 transition-colors duration-300"
+        class="absolute top-0 left-0 flex h-10 w-10 items-center justify-center text-muted-400 transition-colors duration-300 group-focus-within:text-primary-500"
       >
-        <BaseIcon :name="value?.icon ?? props.icon" class="w-4 h-4" />
+        <BaseIcon :name="value?.icon ?? props.icon" class="h-4 w-4" />
       </div>
       <button
         v-if="props.clearable && value"
         type="button"
-        class="absolute top-0 right-0 h-10 w-10 flex justify-center items-center text-muted-400 hover:text-muted-700 dark:hover:text-muted-200 transition-colors duration-300 z-10"
+        class="absolute top-0 right-0 z-10 flex h-10 w-10 items-center justify-center text-muted-400 transition-colors duration-300 hover:text-muted-700 dark:hover:text-muted-200"
         @click="clear"
       >
-        <BaseIcon name="lucide:x" class="w-4 h-4" />
+        <BaseIcon name="lucide:x" class="h-4 w-4" />
       </button>
       <div
         v-if="props.loading"
-        class="absolute top-0 left-0 flex items-center h-10 w-full px-4"
+        class="absolute top-0 left-0 flex h-10 w-full items-center px-4"
       >
         <BasePlaceload
           class="h-3 w-full max-w-[75%] rounded"
@@ -161,7 +161,7 @@ const removeItem = function (name: string) {
     >
       <ComboboxOptions
         as="div"
-        class="absolute mt-1 max-h-[265px] w-full overflow-auto bg-white dark:bg-muted-800 border border-muted-200 dark:border-muted-700 py-1 text-base shadow-lg outline-none sm:text-sm slimscroll"
+        class="slimscroll absolute mt-1 max-h-[265px] w-full overflow-auto border border-muted-200 bg-white py-1 text-base shadow-lg outline-none dark:border-muted-700 dark:bg-muted-800 sm:text-sm"
         :class="[
           props.shape === 'rounded' && 'rounded-lg',
           props.shape === 'curved' && 'rounded-xl',
@@ -184,7 +184,7 @@ const removeItem = function (name: string) {
           :value="item"
         >
           <div
-            class="flex items-center p-2 cursor-pointer transition-colors duration-300"
+            class="flex cursor-pointer items-center p-2 transition-colors duration-300"
             :class="[
               active ? 'bg-muted-100 dark:bg-muted-700' : '',
               props.shape === 'rounded' && 'rounded-md',
@@ -206,7 +206,7 @@ const removeItem = function (name: string) {
             >
               <BaseIcon
                 :name="item.icon"
-                class="w-4 h-4"
+                class="h-4 w-4"
                 :class="[selected ? 'text-primary-500' : 'text-muted-500']"
               />
             </BaseIconBox>
@@ -225,12 +225,12 @@ const removeItem = function (name: string) {
             </div>
             <div
               v-show="selected"
-              class="flex items-center justify-center ml-auto"
+              class="ml-auto flex items-center justify-center"
               :class="[item.media && 'w-8 h-8', item.icon && 'w-8 h-8']"
             >
               <BaseIcon
                 name="lucide:check"
-                class="block w-4 h-4 text-success-500"
+                class="block h-4 w-4 text-success-500"
               />
             </div>
           </div>

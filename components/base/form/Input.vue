@@ -56,7 +56,7 @@ watch(
         v-model="value"
         :type="props.type"
         v-bind="$attrs"
-        class="peer focus-within:outline-1 font-sans w-full bg-white text-muted-600 border border-muted-300 placeholder:text-muted-300 dark:placeholder:text-muted-500 dark:bg-muted-900/75 dark:text-muted-200 dark:border-muted-700 dark:focus:border-muted-700 ninja-focus disabled:opacity-75 disabled:cursor-not-allowed transition-all duration-300"
+        class="peer ninja-focus w-full border border-muted-300 bg-white font-sans text-muted-600 transition-all duration-300 placeholder:text-muted-300 focus-within:outline-1 disabled:cursor-not-allowed disabled:opacity-75 dark:border-muted-700 dark:bg-muted-900/75 dark:text-muted-200 dark:placeholder:text-muted-500 dark:focus:border-muted-700"
         :class="[
           props.condensed && 'text-xs leading-4 py-1 h-8',
           props.condensed && props.icon !== undefined ? 'pl-7 pr-3' : 'px-2',
@@ -72,13 +72,13 @@ watch(
       />
       <div
         v-if="props.loading"
-        class="absolute top-0 left-0 flex items-center h-10 w-full px-4"
+        class="absolute top-0 left-0 flex h-10 w-full items-center px-4"
       >
         <BasePlaceload class="h-3 w-full max-w-[75%] rounded" />
       </div>
       <div
         v-if="props.icon"
-        class="absolute top-0 left-0 flex justify-center items-center text-muted-400 group-focus-within:text-violet-500 peer-disabled:opacity-75 peer-disabled:cursor-not-allowed transition-colors duration-300"
+        class="absolute top-0 left-0 flex items-center justify-center text-muted-400 transition-colors duration-300 group-focus-within:text-violet-500 peer-disabled:cursor-not-allowed peer-disabled:opacity-75"
         :class="[
           props.condensed && 'w-8 h-8',
           !props.condensed && 'h-10 w-10',
@@ -98,10 +98,10 @@ watch(
       </div>
       <div
         v-if="props.invalid"
-        class="absolute top-0 right-0 h-10 w-10 flex justify-center items-center transition-colors duration-300"
+        class="absolute top-0 right-0 flex h-10 w-10 items-center justify-center transition-colors duration-300"
       >
         <slot name="error-icon">
-          <IconClose class="w-4 h-4 text-danger-500" />
+          <IconClose class="h-4 w-4 text-danger-500" />
         </slot>
       </div>
       <span

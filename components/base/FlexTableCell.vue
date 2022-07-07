@@ -13,7 +13,7 @@ const props = withDefaults(defineProps<FlexTableCellProps>(), {
 
 <template>
   <div
-    class="font-alt text-sm flex items-center justify-between md:justify-start p-5 md:p-4 before:content-[attr(data-content)] md:before:hidden before:font-sans before:font-medium before:text-xs before:uppercase before:text-muted-400"
+    class="flex items-center justify-between p-5 font-alt text-sm before:font-sans before:text-xs before:font-medium before:uppercase before:text-muted-400 before:content-[attr(data-content)] md:justify-start md:p-4 md:before:hidden"
     :class="[
       props.type === 'grow' && 'md:grow',
       props.type === 'shrink' && 'md:shrink',

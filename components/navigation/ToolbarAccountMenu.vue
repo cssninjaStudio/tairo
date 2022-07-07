@@ -3,19 +3,19 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
 </script>
 
 <template>
-  <div class="group text-right inline-flex justify-center items-center">
-    <Menu as="div" class="relative w-9 h-9 text-left">
+  <div class="group inline-flex items-center justify-center text-right">
+    <Menu as="div" class="relative h-9 w-9 text-left">
       <MenuButton as="template">
         <button
           type="button"
-          class="w-9 h-9 rounded-full ring-1 ring-transparent group-hover:ring-offset-4 group-hover:ring-primary-500 dark:ring-offset-muted-900 inline-flex items-center justify-center transition-all duration-300"
+          class="inline-flex h-9 w-9 items-center justify-center rounded-full ring-1 ring-transparent transition-all duration-300 group-hover:ring-primary-500 group-hover:ring-offset-4 dark:ring-offset-muted-900"
         >
           <div
-            class="inline-flex justify-center items-center relative w-9 h-9 rounded-full"
+            class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
           >
             <img
               src="/img/avatars/2.svg"
-              class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
+              class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
               alt=""
             />
           </div>
@@ -31,28 +31,28 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
         leave-to-class="transform scale-95 opacity-0"
       >
         <MenuItems
-          class="absolute right-0 mt-2 w-64 origin-top-right divide-y divide-muted-100 dark:divide-muted-700 rounded-md bg-white dark:bg-muted-800 border border-muted-200 dark:border-muted-700 shadow-lg focus:outline-none"
+          class="absolute right-0 mt-2 w-64 origin-top-right divide-y divide-muted-100 rounded-md border border-muted-200 bg-white shadow-lg focus:outline-none dark:divide-muted-700 dark:border-muted-700 dark:bg-muted-800"
         >
-          <div class="text-center p-6">
+          <div class="p-6 text-center">
             <div
-              class="flex justify-center items-center relative w-20 h-20 mx-auto rounded-full"
+              class="relative mx-auto flex h-20 w-20 items-center justify-center rounded-full"
             >
               <img
                 src="/img/avatars/2.svg"
-                class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
+                class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                 alt=""
               />
             </div>
             <div class="mt-3">
               <h6
-                class="font-heading font-semibold text-sm text-muted-800 dark:text-white"
+                class="font-heading text-sm font-semibold text-muted-800 dark:text-white"
               >
                 Maya Rosselini
               </h6>
-              <p class="font-sans text-xs text-muted-400 mb-4">maya@tairo.io</p>
+              <p class="mb-4 font-sans text-xs text-muted-400">maya@tairo.io</p>
               <button
                 type="button"
-                class="font-alt inline-flex items-center justify-center rounded-lg px-4 py-2 w-full bg-white border border-muted-200 hover:shadow-md hover:shadow-muted-600/10 focus:shadow-md focus:shadow-muted-600/20 text-muted-800 transition-all duration-300"
+                class="inline-flex w-full items-center justify-center rounded-lg border border-muted-200 bg-white px-4 py-2 font-alt text-muted-800 transition-all duration-300 hover:shadow-md hover:shadow-muted-600/10 focus:shadow-md focus:shadow-muted-600/20"
               >
                 <span class="text-sm">Manage Account</span>
               </button>
@@ -70,17 +70,17 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 ]"
               >
                 <div
-                  class="inline-flex justify-center items-center relative w-9 h-9 rounded-full"
+                  class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
                 >
                   <img
                     src="/img/avatars/3.svg"
-                    class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
+                    class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""
                   />
                 </div>
                 <div class="ml-2">
                   <h6
-                    class="font-heading font-semibold text-xs leading-none text-muted-800 dark:text-white"
+                    class="font-heading text-xs font-semibold leading-none text-muted-800 dark:text-white"
                   >
                     Mike Miller
                   </h6>
@@ -99,17 +99,17 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 ]"
               >
                 <div
-                  class="inline-flex justify-center items-center relative w-9 h-9 rounded-full"
+                  class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
                 >
                   <img
                     src="/img/avatars/9.svg"
-                    class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
+                    class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""
                   />
                 </div>
                 <div class="ml-2">
                   <h6
-                    class="font-heading font-semibold text-xs leading-none text-muted-800 dark:text-white"
+                    class="font-heading text-xs font-semibold leading-none text-muted-800 dark:text-white"
                   >
                     Claire Baker
                   </h6>
@@ -130,17 +130,17 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 ]"
               >
                 <div
-                  class="inline-flex justify-center items-center relative w-9 h-9 rounded-full"
+                  class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
                 >
                   <img
                     src="/img/avatars/14.svg"
-                    class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
+                    class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""
                   />
                 </div>
                 <div class="ml-2">
                   <h6
-                    class="font-heading font-semibold text-xs leading-none text-muted-800 dark:text-white"
+                    class="font-heading text-xs font-semibold leading-none text-muted-800 dark:text-white"
                   >
                     Alan Baxter
                   </h6>
@@ -153,7 +153,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
           <div class="p-6">
             <button
               type="button"
-              class="font-alt inline-flex items-center justify-center rounded-lg px-4 py-2 w-full bg-white border border-muted-200 hover:shadow-md hover:shadow-muted-600/10 focus:shadow-md focus:shadow-muted-600/20 text-muted-800 transition-all duration-300"
+              class="inline-flex w-full items-center justify-center rounded-lg border border-muted-200 bg-white px-4 py-2 font-alt text-muted-800 transition-all duration-300 hover:shadow-md hover:shadow-muted-600/10 focus:shadow-md focus:shadow-muted-600/20"
             >
               <span class="text-sm">Logout from all</span>
             </button>

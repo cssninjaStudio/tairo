@@ -64,7 +64,7 @@ const items = ref(props.items)
       <div class="relative">
         <ListboxButton
           :disabled="props.disabled"
-          class="relative flex items-center peer pl-4 pr-12 h-10 text-sm leading-5 font-sans w-full bg-white text-muted-600 border border-muted-300 focus:border-muted-300 focus:shadow-lg focus:shadow-muted-300/50 dark:focus:shadow-muted-800/50 placeholder:text-muted-300 dark:placeholder:text-muted-500 dark:bg-muted-900/75 dark:text-muted-200 dark:border-muted-700 dark:focus:border-muted-700 ninja-focus disabled:opacity-75 disabled:cursor-not-allowed"
+          class="peer ninja-focus relative flex h-10 w-full items-center border border-muted-300 bg-white pl-4 pr-12 font-sans text-sm leading-5 text-muted-600 placeholder:text-muted-300 focus:border-muted-300 focus:shadow-lg focus:shadow-muted-300/50 disabled:cursor-not-allowed disabled:opacity-75 dark:border-muted-700 dark:bg-muted-900/75 dark:text-muted-200 dark:placeholder:text-muted-500 dark:focus:border-muted-700 dark:focus:shadow-muted-800/50"
           :class="[
             props.shape === 'rounded' && 'rounded',
             props.shape === 'curved' && 'rounded-xl',
@@ -76,24 +76,24 @@ const items = ref(props.items)
             v-if="value.media && !value.icon"
             :src="value.media"
             size="xs"
-            class="mr-2 -ml-2 !w-6 !h-6"
+            class="mr-2 -ml-2 !h-6 !w-6"
           />
           <BaseIconBox
             v-else-if="value.icon && !value.media"
             size="xs"
             shape="rounded"
-            class="mr-2 -ml-2 !w-6 !h-6"
+            class="mr-2 -ml-2 !h-6 !w-6"
           >
-            <BaseIcon :name="value.icon" class="w-4 h-4" />
+            <BaseIcon :name="value.icon" class="h-4 w-4" />
           </BaseIconBox>
           <span
-            class="block text-left truncate"
+            class="block truncate text-left"
             :class="props.loading && 'text-transparent'"
           >
             {{ value.name }}
           </span>
           <span
-            class="w-10 pointer-events-none absolute inset-y-0 right-0 border-l border-muted-300 dark:border-muted-700 flex items-center justify-center"
+            class="pointer-events-none absolute inset-y-0 right-0 flex w-10 items-center justify-center border-l border-muted-300 dark:border-muted-700"
           >
             <BaseIcon
               name="lucide:chevron-down"
@@ -103,7 +103,7 @@ const items = ref(props.items)
           </span>
           <div
             v-if="props.loading"
-            class="absolute top-0 left-0 flex items-center h-10 w-full px-4"
+            class="absolute top-0 left-0 flex h-10 w-full items-center px-4"
           >
             <BasePlaceload class="h-3 w-full max-w-[75%] rounded" />
           </div>
@@ -115,7 +115,7 @@ const items = ref(props.items)
           leave-to-class="opacity-0"
         >
           <ListboxOptions
-            class="absolute mt-1 max-h-60 w-full overflow-auto border border-muted-200 dark:border-muted-600 bg-white dark:bg-muted-700 p-2 text-base shadow-lg focus:ring-1 focus:ring-primary-500/50 focus:outline-none sm:text-sm slimscroll z-10"
+            class="slimscroll absolute z-10 mt-1 max-h-60 w-full overflow-auto border border-muted-200 bg-white p-2 text-base shadow-lg focus:outline-none focus:ring-1 focus:ring-primary-500/50 dark:border-muted-600 dark:bg-muted-700 sm:text-sm"
             :class="[
               props.shape === 'rounded' && 'rounded-md',
               props.shape === 'curved' && 'rounded-xl',
@@ -130,7 +130,7 @@ const items = ref(props.items)
               as="template"
             >
               <li
-                class="relative flex items-center cursor-pointer select-none py-2 px-3"
+                class="relative flex cursor-pointer select-none items-center py-2 px-3"
                 :class="[
                   active
                     ? 'bg-primary-100 text-primary-900 dark:bg-muted-800'
@@ -154,7 +154,7 @@ const items = ref(props.items)
                 >
                   <BaseIcon
                     :name="item.icon"
-                    class="w-5 h-5"
+                    class="h-5 w-5"
                     :class="[active && 'text-primary-500']"
                   />
                 </BaseIconBox>
@@ -173,7 +173,7 @@ const items = ref(props.items)
                 </div>
                 <span
                   v-if="selected"
-                  class="flex items-center ml-auto text-primary-600"
+                  class="ml-auto flex items-center text-primary-600"
                 >
                   <BaseIcon name="lucide:check" class="h-4 w-4" />
                 </span>

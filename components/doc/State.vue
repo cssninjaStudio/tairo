@@ -11,7 +11,7 @@ const props = withDefaults(defineProps<DocStateProps>(), {
 
 <template>
   <div
-    class="grow bg-muted-100 dark:bg-muted-700 p-4 space-y-2 rounded-md"
+    class="grow space-y-2 rounded-md bg-muted-100 p-4 dark:bg-muted-700"
     :style="`min-height:${props.height}`"
   >
     <div class="flex">
@@ -19,7 +19,7 @@ const props = withDefaults(defineProps<DocStateProps>(), {
     </div>
     <div class="flex flex-col gap-y-4">
       <div
-        class="flex font-sans text-sm text-muted-500 dark:text-muted-200 break-words"
+        class="flex break-words font-sans text-sm text-muted-500 dark:text-muted-200"
       >
         <span>{{ props.state }}</span>
       </div>

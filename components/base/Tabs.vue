@@ -45,7 +45,7 @@ watch(activeValue, (value) => {
 <template>
   <div class="relative">
     <div
-      class="flex font-alt mb-6"
+      class="mb-6 flex font-alt"
       :class="[
         props.justify === 'center' && 'justify-center',
         props.justify === 'end' && 'justify-end',
@@ -54,7 +54,7 @@ watch(activeValue, (value) => {
       <a
         v-for="(tab, key) in tabs"
         :key="key"
-        class="text-base cursor-pointer transition-all duration-300"
+        class="cursor-pointer text-base transition-all duration-300"
         :class="[
           activeValue === tab.value && props.type === 'tabs'
             ? 'border-violet-500 text-muted-800 dark:text-muted-100'
@@ -71,14 +71,14 @@ watch(activeValue, (value) => {
         tabindex="0"
         @click="toggle(tab.value)"
       >
-        <BaseIcon v-if="tab.icon" :name="tab.icon" class="block w-5 h-5 mr-1" />
+        <BaseIcon v-if="tab.icon" :name="tab.icon" class="mr-1 block h-5 w-5" />
         <span :class="props.type === 'box' && tab.icon && 'text-[.85rem]'">
           {{ tab.label }}
         </span>
       </a>
     </div>
 
-    <div class="block relative">
+    <div class="relative block">
       <slot name="tab" :active-value="activeValue"></slot>
     </div>
   </div>

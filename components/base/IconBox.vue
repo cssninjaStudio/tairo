@@ -16,7 +16,7 @@ const props = withDefaults(defineProps<IconBoxProps>(), {
 
 <template>
   <div
-    class="relative inline-flex justify-center items-center"
+    class="relative inline-flex items-center justify-center"
     :class="[
       props.size === 'xs' && 'w-8 h-8',
       props.size === 'sm' && 'w-10 h-10',

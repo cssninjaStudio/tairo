@@ -3,17 +3,17 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
 </script>
 
 <template>
-  <div class="group text-right inline-flex justify-center items-center">
-    <Menu as="div" class="relative w-9 h-9 text-left">
+  <div class="group inline-flex items-center justify-center text-right">
+    <Menu as="div" class="relative h-9 w-9 text-left">
       <MenuButton as="template">
         <button
           type="button"
-          class="w-9 h-9 rounded-full ring-1 ring-transparent group-hover:ring-offset-4 group-hover:ring-primary-500 dark:ring-offset-muted-900 inline-flex items-center justify-center transition-all duration-300"
+          class="inline-flex h-9 w-9 items-center justify-center rounded-full ring-1 ring-transparent transition-all duration-300 group-hover:ring-primary-500 group-hover:ring-offset-4 dark:ring-offset-muted-900"
         >
           <span
-            class="flex items-center justify-center w-9 h-9 rounded-full bg-white dark:bg-muted-800 border border-muted-200 dark:border-muted-700"
+            class="flex h-9 w-9 items-center justify-center rounded-full border border-muted-200 bg-white dark:border-muted-700 dark:bg-muted-800"
           >
-            <BaseIcon name="ph:bell-duotone" class="w-5 h-5 text-muted-400" />
+            <BaseIcon name="ph:bell-duotone" class="h-5 w-5 text-muted-400" />
           </span>
         </button>
       </MenuButton>
@@ -27,12 +27,12 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
         leave-to-class="transform scale-95 opacity-0"
       >
         <MenuItems
-          class="absolute right-0 mt-2 w-72 origin-top-right divide-y divide-muted-100 dark:divide-muted-700 rounded-md bg-white dark:bg-muted-800 border border-muted-200 dark:border-muted-700 shadow-lg focus:outline-none"
+          class="absolute right-0 mt-2 w-72 origin-top-right divide-y divide-muted-100 rounded-md border border-muted-200 bg-white shadow-lg focus:outline-none dark:divide-muted-700 dark:border-muted-700 dark:bg-muted-800"
         >
           <div class="p-4">
-            <div class="flex justify-between items-center relative">
+            <div class="relative flex items-center justify-between">
               <h4
-                class="font-heading uppercase text-xs text-muted-500 dark:text-muted-200"
+                class="font-heading text-xs uppercase text-muted-500 dark:text-muted-200"
               >
                 Notifications
               </h4>
@@ -56,21 +56,21 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 ]"
               >
                 <div
-                  class="inline-flex justify-center items-center relative w-9 h-9 rounded-full"
+                  class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
                 >
                   <img
                     src="/img/avatars/12.svg"
-                    class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
+                    class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""
                   />
                 </div>
                 <div class="ml-2">
                   <h6
-                    class="font-heading font-semibold text-xs leading-tight text-muted-800 dark:text-white"
+                    class="font-heading text-xs font-semibold leading-tight text-muted-800 dark:text-white"
                   >
                     Helen Mariakis
                     <span
-                      class="text-muted-500 dark:text-muted-400 font-normal"
+                      class="font-normal text-muted-500 dark:text-muted-400"
                     >
                       left a comment
                     </span>
@@ -90,21 +90,21 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 ]"
               >
                 <div
-                  class="inline-flex justify-center items-center relative w-9 h-9 rounded-full"
+                  class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
                 >
                   <img
                     src="/img/avatars/19.svg"
-                    class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
+                    class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""
                   />
                 </div>
                 <div class="ml-2">
                   <h6
-                    class="font-heading font-semibold text-xs leading-tight text-muted-800 dark:text-white"
+                    class="font-heading text-xs font-semibold leading-tight text-muted-800 dark:text-white"
                   >
                     Clarissa Perez
                     <span
-                      class="text-muted-500 dark:text-muted-400 font-normal"
+                      class="font-normal text-muted-500 dark:text-muted-400"
                     >
                       uploaded a file
                     </span>
@@ -124,21 +124,21 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 ]"
               >
                 <div
-                  class="inline-flex justify-center items-center relative w-9 h-9 rounded-full"
+                  class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
                 >
                   <img
                     src="/img/avatars/3.svg"
-                    class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
+                    class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""
                   />
                 </div>
                 <div class="ml-2">
                   <h6
-                    class="font-heading font-semibold text-xs leading-tight text-muted-800 dark:text-white"
+                    class="font-heading text-xs font-semibold leading-tight text-muted-800 dark:text-white"
                   >
                     Mike Miller
                     <span
-                      class="text-muted-500 dark:text-muted-400 font-normal"
+                      class="font-normal text-muted-500 dark:text-muted-400"
                     >
                       left a comment
                     </span>
@@ -158,21 +158,21 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 ]"
               >
                 <div
-                  class="inline-flex justify-center items-center relative w-9 h-9 rounded-full"
+                  class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
                 >
                   <img
                     src="/img/avatars/4.svg"
-                    class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
+                    class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""
                   />
                 </div>
                 <div class="ml-2">
                   <h6
-                    class="font-heading font-semibold text-xs leading-tight text-muted-800 dark:text-white"
+                    class="font-heading text-xs font-semibold leading-tight text-muted-800 dark:text-white"
                   >
                     Lana Henriks
                     <span
-                      class="text-muted-500 dark:text-muted-400 font-normal"
+                      class="font-normal text-muted-500 dark:text-muted-400"
                     >
                       sent you a message
                     </span>
@@ -192,21 +192,21 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 ]"
               >
                 <div
-                  class="inline-flex justify-center items-center relative w-9 h-9 rounded-full"
+                  class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
                 >
                   <img
                     src="/img/avatars/8.svg"
-                    class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
+                    class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""
                   />
                 </div>
                 <div class="ml-2">
                   <h6
-                    class="font-heading font-semibold text-xs leading-tight text-muted-800 dark:text-white"
+                    class="font-heading text-xs font-semibold leading-tight text-muted-800 dark:text-white"
                   >
                     Dan Walker
                     <span
-                      class="text-muted-500 dark:text-muted-400 font-normal"
+                      class="font-normal text-muted-500 dark:text-muted-400"
                     >
                       left a comment
                     </span>

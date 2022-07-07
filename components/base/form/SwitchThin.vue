@@ -39,20 +39,20 @@ watch(
 </script>
 
 <template>
-  <label :for="props.id" class="flex items-center cursor-pointer">
-    <span class="block relative h-4">
+  <label :for="props.id" class="flex cursor-pointer items-center">
+    <span class="relative block h-4">
       <input
         :id="props.id"
         :checked="props.modelValue"
         type="checkbox"
-        class="peer cursor-pointer opacity-0 absolute h-full w-full z-20"
+        class="peer absolute z-20 h-full w-full cursor-pointer opacity-0"
         @change="emit('update:modelValue', !props.modelValue)"
       />
       <span
-        class="absolute flex items-center justify-center w-6 h-6 border border-muted-300 bg-white dark:bg-muted-700 dark:border-muted-600 rounded-full shadow -left-1 top-1/2 -translate-y-1/2 transition peer-checked:-translate-y-1/2 peer-checked:translate-x-full"
+        class="absolute -left-1 top-1/2 flex h-6 w-6 -translate-y-1/2 items-center justify-center rounded-full border border-muted-300 bg-white shadow transition peer-checked:-translate-y-1/2 peer-checked:translate-x-full dark:border-muted-600 dark:bg-muted-700"
       ></span>
       <span
-        class="block w-10 h-4 bg-muted-300 dark:bg-muted-600 rounded-full shadow-inner peer-focus:ring-0 outline-1 outline-transparent peer-focus:outline-dashed peer-focus:outline-muted-300 dark:peer-focus:outline-muted-600 peer-focus:outline-offset-2 transition-all duration-300"
+        class="block h-4 w-10 rounded-full bg-muted-300 shadow-inner outline-1 outline-transparent transition-all duration-300 peer-focus:outline-dashed peer-focus:outline-offset-2 peer-focus:outline-muted-300 peer-focus:ring-0 dark:bg-muted-600 dark:peer-focus:outline-muted-600"
         :class="[
           props.color === 'primary' && 'peer-checked:bg-primary-400',
           props.color === 'info' && 'peer-checked:bg-info-400',
@@ -64,7 +64,7 @@ watch(
     </span>
     <span
       v-if="!props.sublabel"
-      class="relative cursor-pointer select-none ml-3 text-sm text-muted-400 font-sans"
+      class="relative ml-3 cursor-pointer select-none font-sans text-sm text-muted-400"
     >
       {{ props.label }}
     </span>

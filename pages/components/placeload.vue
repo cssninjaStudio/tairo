@@ -39,7 +39,7 @@ definePageMeta({
         <DocSection title="Shape placeload" tag="1.0.0">
           <DocComponent label="Shape placeload example">
             <template #demo>
-              <div class="flex items-end flex-wrap gap-2">
+              <div class="flex flex-wrap items-end gap-2">
                 <BasePlaceload class="h-10 w-10 rounded" />
                 <BasePlaceload class="h-12 w-12 rounded-xl" />
                 <BasePlaceload class="h-16 w-16 rounded-full" />
@@ -59,7 +59,7 @@ definePageMeta({
                 <BaseCard shape="rounded" class="p-4 md:p-6">
                   <div class="flex items-center">
                     <BasePlaceload class="h-10 w-10 rounded-full" />
-                    <div class="grow space-y-2 ml-3">
+                    <div class="ml-3 grow space-y-2">
                       <BasePlaceload class="h-3 w-full rounded" />
                       <BasePlaceload class="h-3 w-[85%] rounded" />
                     </div>

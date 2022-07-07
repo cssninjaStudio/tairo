@@ -39,20 +39,20 @@ watch(
 </script>
 
 <template>
-  <label :for="props.id" class="flex items-center cursor-pointer">
-    <span class="block relative">
+  <label :for="props.id" class="flex cursor-pointer items-center">
+    <span class="relative block">
       <input
         :id="props.id"
         :checked="props.modelValue"
         type="checkbox"
-        class="peer cursor-pointer opacity-0 absolute h-full w-full z-0"
+        class="peer absolute z-0 h-full w-full cursor-pointer opacity-0"
         @change="emit('update:modelValue', !props.modelValue)"
       />
       <span
-        class="absolute z-10 flex items-center justify-center w-5 h-5 focus:w-6 border border-muted-300 bg-white dark:bg-muted-700 dark:border-muted-600 rounded-full shadow left-0.5 top-1/2 -translate-y-1/2 transition peer-checked:-translate-y-1/2 peer-checked:translate-x-full"
+        class="absolute left-0.5 top-1/2 z-10 flex h-5 w-5 -translate-y-1/2 items-center justify-center rounded-full border border-muted-300 bg-white shadow transition focus:w-6 peer-checked:-translate-y-1/2 peer-checked:translate-x-full dark:border-muted-600 dark:bg-muted-700"
       ></span>
       <span
-        class="block w-11 h-6 bg-muted-300 dark:bg-muted-600 rounded-full shadow-inner peer-focus:ring-0 outline-1 outline-transparent peer-focus:outline-dashed peer-focus:outline-muted-300 dark:peer-focus:outline-muted-600 peer-focus:outline-offset-2 transition-all duration-300"
+        class="block h-6 w-11 rounded-full bg-muted-300 shadow-inner outline-1 outline-transparent transition-all duration-300 peer-focus:outline-dashed peer-focus:outline-offset-2 peer-focus:outline-muted-300 peer-focus:ring-0 dark:bg-muted-600 dark:peer-focus:outline-muted-600"
         :class="[
           props.color === 'primary' && 'peer-checked:bg-primary-400',
           props.color === 'info' && 'peer-checked:bg-info-400',
@@ -62,12 +62,12 @@ watch(
         ]"
       ></span>
       <IconCheck
-        class="absolute top-1/2 left-2 text-white fill-current opacity-0 w-2.5 h-2.5 pointer-events-none transition duration-300 translate-y-0 peer-checked:opacity-100 peer-checked:-translate-y-1/2 z-10"
+        class="pointer-events-none absolute top-1/2 left-2 z-10 h-2.5 w-2.5 translate-y-0 fill-current text-white opacity-0 transition duration-300 peer-checked:-translate-y-1/2 peer-checked:opacity-100"
       />
     </span>
     <span
       v-if="!props.sublabel"
-      class="relative cursor-pointer select-none ml-3 text-sm text-muted-400 font-sans"
+      class="relative ml-3 cursor-pointer select-none font-sans text-sm text-muted-400"
     >
       {{ props.label }}
     </span>

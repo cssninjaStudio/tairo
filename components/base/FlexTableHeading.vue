@@ -12,7 +12,7 @@ const props = withDefaults(defineProps<FlexTableHeadingProps>(), {
 
 <template>
   <div
-    class="font-sans font-medium text-xs uppercase text-muted-400 p-4"
+    class="p-4 font-sans text-xs font-medium uppercase text-muted-400"
     :class="[
       props.type === 'grow' && 'md:grow',
       props.type === 'shrink' && 'md:shrink',

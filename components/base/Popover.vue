@@ -22,7 +22,7 @@ const props = withDefaults(defineProps<PopoverProps>(), {
   <div class="relative">
     <Popover class="relative">
       <PopoverButton
-        class="group inline-flex font-sans focus:outline-none cursor-pointer"
+        class="group inline-flex cursor-pointer font-sans focus:outline-none"
         as="div"
       >
         <slot></slot>
@@ -46,7 +46,7 @@ const props = withDefaults(defineProps<PopoverProps>(), {
           ]"
         >
           <div
-            class="relative w-full rounded-lg shadow-lg bg-white dark:bg-muted-700 border border-muted-200 dark:border-muted-600 after:absolute after:-top-2 after:content-[''] after:w-4 after:h-4 after:rotate-[-135deg] after:bg-white dark:after:bg-muted-700 after:border-r after:border-b after:border-muted-200 dark:after:border-muted-600"
+            class="relative w-full rounded-lg border border-muted-200 bg-white shadow-lg after:absolute after:-top-2 after:h-4 after:w-4 after:rotate-[-135deg] after:border-r after:border-b after:border-muted-200 after:bg-white after:content-[''] dark:border-muted-600 dark:bg-muted-700 dark:after:border-muted-600 dark:after:bg-muted-700"
             :class="[
               props.orientation === 'start' && 'after:left-6',
               props.orientation === 'end' && 'after:right-6',
