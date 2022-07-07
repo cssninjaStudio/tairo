@@ -40,14 +40,14 @@ const { activePanel, panelTransitionFrom, closePanel } = usePanels()
       enter-active-class="transition-transform duration-300 ease-out"
       :enter-from-class="
         panelTransitionFrom === 'left'
-          ? '-tranmuted-x-full'
-          : 'tranmuted-x-full'
+          ? '-translate-x-full'
+          : 'translate-x-full'
       "
       leave-active-class="transition-transform duration-300 ease-in"
       :leave-to-class="
         panelTransitionFrom === 'left'
-          ? '-tranmuted-x-full'
-          : 'tranmuted-x-full'
+          ? '-translate-x-full'
+          : 'translate-x-full'
       "
     >
       <component

@@ -21,7 +21,7 @@ const endSidebars = sidebars.filter((sidebar) => sidebar.position === 'end')
     <!-- Icon sidebar -->
     <div
       class="relative flex flex-col w-[80px] h-full bg-white dark:bg-muted-800 border-r border-muted-200 dark:border-muted-700 z-20 transition-all duration-300 pointer-events-auto"
-      :class="isSidebarOpened ? '' : '-tranmuted-x-full xl:tranmuted-x-0'"
+      :class="isSidebarOpened ? '' : '-translate-x-full xl:translate-x-0'"
     >
       <slot></slot>
 
@@ -49,7 +49,7 @@ const endSidebars = sidebars.filter((sidebar) => sidebar.position === 'end')
     <div
       v-if="activeSidebar"
       class="relative w-[220px] h-full bg-white dark:bg-muted-800 border-r border-muted-200 dark:border-muted-700 z-10 transition-all duration-300 pointer-events-auto"
-      :class="isSidebarOpened ? '' : '-tranmuted-x-[calc(100%_-_80px)]'"
+      :class="isSidebarOpened ? '' : '-translate-x-[calc(100%_-_80px)]'"
     >
       <slot
         name="subnav"

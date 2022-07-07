@@ -51,7 +51,7 @@ const props = withDefaults(defineProps<CarouselProps>(), {
         <NuxtLink :to="slide.to" class="cursor-pointer">
           <BaseCard
             shape="curved"
-            class="min-w-[100px] flex items-center justify-center py-6 px-2 text-muted-400 hover:text-primary-500 hover:border-primary-500 dark:hover:border-primary-500 hover:-tranmuted-y-1 hover:shadow-lg transition-all duration-300"
+            class="min-w-[100px] flex items-center justify-center py-6 px-2 text-muted-400 hover:text-primary-500 hover:border-primary-500 dark:hover:border-primary-500 hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
           >
             <div class="text-center">
               <BaseIcon

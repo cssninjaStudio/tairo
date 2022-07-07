@@ -49,7 +49,7 @@ watch(
         @change="emit('update:modelValue', !props.modelValue)"
       />
       <span
-        class="absolute flex items-center justify-center w-6 h-6 border border-muted-300 bg-white dark:bg-muted-700 dark:border-muted-600 rounded-full shadow -left-1 top-1/2 -tranmuted-y-1/2 transition peer-checked:-tranmuted-y-1/2 peer-checked:tranmuted-x-full"
+        class="absolute flex items-center justify-center w-6 h-6 border border-muted-300 bg-white dark:bg-muted-700 dark:border-muted-600 rounded-full shadow -left-1 top-1/2 -translate-y-1/2 transition peer-checked:-translate-y-1/2 peer-checked:translate-x-full"
       ></span>
       <span
         class="block w-10 h-4 bg-muted-300 dark:bg-muted-600 rounded-full shadow-inner peer-focus:ring-0 outline-1 outline-transparent peer-focus:outline-dashed peer-focus:outline-muted-300 dark:peer-focus:outline-muted-600 peer-focus:outline-offset-2 transition-all duration-300"

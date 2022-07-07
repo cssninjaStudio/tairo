@@ -61,7 +61,7 @@ watch(
         ]"
       ></div>
       <IconCheck
-        class="relative fill-current opacity-0 w-2.5 h-2.5 pointer-events-none transition duration-300 tranmuted-y-6 peer-checked:opacity-100 peer-checked:tranmuted-y-0 z-10"
+        class="relative fill-current opacity-0 w-2.5 h-2.5 pointer-events-none transition duration-300 translate-y-6 peer-checked:opacity-100 peer-checked:translate-y-0 z-10"
       />
     </div>
     <label

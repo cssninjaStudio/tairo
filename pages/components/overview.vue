@@ -59,7 +59,7 @@ definePageMeta({
                 <span class="mr-1">Read the documentation</span>
                 <BaseIcon
                   name="lucide:arrow-right"
-                  class="w-4 h-4 group-hover:tranmuted-x-2 transition-transform duration-300"
+                  class="w-4 h-4 group-hover:translate-x-2 transition-transform duration-300"
                 />
               </NuxtLink>
             </BaseCard>

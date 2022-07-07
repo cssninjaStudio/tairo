@@ -30,11 +30,11 @@ const props = withDefaults(defineProps<PopoverProps>(), {
 
       <Transition
         enter-active-class="transition-all duration-200 ease-out"
-        enter-from-class="tranmuted-y-1 opacity-0"
-        enter-to-class="tranmuted-y-0 opacity-100"
+        enter-from-class="translate-y-1 opacity-0"
+        enter-to-class="translate-y-0 opacity-100"
         leave-active-class="transition duration-150 ease-in"
-        leave-from-class="tranmuted-y-0 opacity-100"
-        leave-to-class="tranmuted-y-1 opacity-0"
+        leave-from-class="translate-y-0 opacity-100"
+        leave-to-class="translate-y-1 opacity-0"
       >
         <PopoverPanel
           class="absolute z-10 mt-3 w-screen"
