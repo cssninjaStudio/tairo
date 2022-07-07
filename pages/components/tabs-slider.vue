@@ -30,7 +30,7 @@ definePageMeta({
       <!-- content -->
       <template #content>
         <!-- Tabs -->
-        <DocSection id="tabs-slider-2x-rounded" title="Tabs" tag="1.0.0">
+        <DocSection title="Tabs" tag="1.0.0">
           <DocComponent label="Rounded with two slots example">
             <template #demo>
               <div class="w-full max-w-sm">
@@ -81,7 +81,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Tabs -->
-        <DocSection id="tabs-slider-2x-full" title="Tabs" tag="1.0.0">
+        <DocSection title="Tabs" tag="1.0.0">
           <DocComponent label="Full with two slots example">
             <template #demo>
               <div class="w-full max-w-sm">
@@ -133,7 +133,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Tabs -->
-        <DocSection id="tabs-slider-3x-rounded" title="Tabs" tag="1.0.0">
+        <DocSection title="Tabs" tag="1.0.0">
           <DocComponent label="Rounded with three slots example">
             <template #demo>
               <div class="w-full max-w-sm">
@@ -185,7 +185,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Tabs -->
-        <DocSection id="tabs-slider-3x-full" title="Tabs" tag="1.0.0">
+        <DocSection title="Tabs" tag="1.0.0">
           <DocComponent label="Full with three slots example">
             <template #demo>
               <div class="w-full max-w-sm">
@@ -239,23 +239,14 @@ definePageMeta({
 
         <!-- Tabs slider props -->
         <DocProps
-          id="tabs-slider-props"
-          component="Slider tabs"
+          component="BaseTabSlider"
           :properties="properties.props"
           :slots="properties.slots"
-        />
-
-        <!-- Tabs slider item props -->
-        <DocProps
-          id="tabs-slider-item-props"
-          component="Slider tabs item"
-          :properties="itemProperties.props"
-          :slots="itemProperties.slots"
         />
       </template>
       <!-- Toc -->
       <template #toc>
-        <DocToc :anchors="toc" />
+        <DocToc />
       </template>
     </DocLayout>
   </div>

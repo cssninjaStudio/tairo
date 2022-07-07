@@ -33,7 +33,7 @@ definePageMeta({
         >
           <DocComponent label="A nice and friendly checkbox">
             <template #demo>
-              <FocusLoop class="flex items-end flex-wrap gap-4">
+              <FocusLoop class="flex flex-wrap items-end gap-4">
                 <BaseFormAnimatedCheckbox
                   v-model="options"
                   value="Option 1"
@@ -139,15 +139,14 @@ definePageMeta({
 
         <!-- Animated checkbox properties -->
         <DocProps
-          id="animated-checkbox-props"
-          component="Animated checkbox"
+          component="BaseFormAnimatedCheckbox"
           :properties="properties.props"
           :slots="properties.slots"
         />
       </template>
       <!-- Toc -->
       <template #toc>
-        <DocToc :anchors="toc" />
+        <DocToc />
       </template>
     </DocLayout>
   </div>

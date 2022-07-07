@@ -35,7 +35,7 @@ definePageMeta({
       <!-- content -->
       <template #content>
         <!-- Dropdown button -->
-        <DocSection id="dropdown-button-left" title="Button left" tag="1.0.0">
+        <DocSection title="Button left" tag="1.0.0">
           <DocComponent label="Dropdown left example">
             <template #demo>
               <div class="flex items-end">
@@ -74,7 +74,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Dropdown button right -->
-        <DocSection id="dropdown-button-right" title="Button right" tag="1.0.0">
+        <DocSection title="Button right" tag="1.0.0">
           <DocComponent label="Dropdown right example">
             <template #demo>
               <div class="flex items-end justify-end">
@@ -113,7 +113,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Dropdown context left -->
-        <DocSection id="dropdown-context-left" title="Context left" tag="1.0.0">
+        <DocSection title="Context left" tag="1.0.0">
           <DocComponent label="Dropdown left example">
             <template #demo>
               <div class="flex items-end">
@@ -195,7 +195,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Dropdown text left -->
-        <DocSection id="dropdown-text-left" title="Text left" tag="1.0.0">
+        <DocSection title="Text left" tag="1.0.0">
           <DocComponent label="Dropdown left example">
             <template #demo>
               <div class="flex items-end">
@@ -234,7 +234,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Dropdown text right -->
-        <DocSection id="dropdown-text-right" title="Text right" tag="1.0.0">
+        <DocSection title="Text right" tag="1.0.0">
           <DocComponent label="Dropdown right example">
             <template #demo>
               <div class="flex items-end justify-end">
@@ -269,7 +269,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Dropdown icon slot -->
-        <DocSection id="dropdown-icon-slot" title="Icon slot" tag="1.0.0">
+        <DocSection title="Icon slot" tag="1.0.0">
           <DocComponent label="Icon slot example">
             <template #demo>
               <div class="flex items-end">
@@ -286,7 +286,7 @@ definePageMeta({
                     <template #end>
                       <BaseIcon
                         name="ph:user-duotone"
-                        class="w-5 h-5 block mr-2"
+                        class="mr-2 block h-5 w-5"
                       />
                     </template>
                   </BaseDropdownItem>
@@ -298,7 +298,7 @@ definePageMeta({
                     <template #end>
                       <BaseIcon
                         name="ph:briefcase-duotone"
-                        class="w-5 h-5 block mr-2"
+                        class="mr-2 block h-5 w-5"
                       />
                     </template>
                   </BaseDropdownItem>
@@ -306,7 +306,7 @@ definePageMeta({
                     <template #end>
                       <BaseIcon
                         name="ph:users-four-duotone"
-                        class="w-5 h-5 block mr-2"
+                        class="mr-2 block h-5 w-5"
                       />
                     </template>
                   </BaseDropdownItem>
@@ -319,7 +319,7 @@ definePageMeta({
                     <template #end>
                       <BaseIcon
                         name="ph:gear-six-duotone"
-                        class="w-5 h-5 block mr-2"
+                        class="mr-2 block h-5 w-5"
                       />
                     </template>
                   </BaseDropdownItem>
@@ -333,7 +333,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Dropdown avatar slot -->
-        <DocSection id="dropdown-avatar-slot" title="Avatar slot" tag="1.0.0">
+        <DocSection title="Avatar slot" tag="1.0.0">
           <DocComponent label="Avatar slot example">
             <template #demo>
               <div class="flex items-end">
@@ -405,7 +405,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Dropdown header -->
-        <DocSection id="dropdown-header" title="Header" tag="1.0.0">
+        <DocSection title="Header" tag="1.0.0">
           <DocComponent label="Dropdown header example">
             <template #demo>
               <div class="flex items-end">
@@ -479,16 +479,14 @@ definePageMeta({
 
         <!-- Dropdown properties -->
         <DocProps
-          id="dropdown-props"
-          component="Dropdown"
+          component="BaseDropdown"
           :properties="dropdownProperties.props"
           :slots="dropdownProperties.slots"
         />
 
         <!-- Dropdown item properties -->
         <DocProps
-          id="dropdown-item-props"
-          component="Dropdown item"
+          component="BaseDropdownItem"
           :properties="itemProperties.props"
           :slots="itemProperties.slots"
         />
@@ -497,7 +495,7 @@ definePageMeta({
       </template>
       <!-- Toc -->
       <template #toc>
-        <DocToc :anchors="toc" />
+        <DocToc />
       </template>
     </DocLayout>
   </div>

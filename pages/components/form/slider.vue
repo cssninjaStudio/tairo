@@ -43,10 +43,10 @@ definePageMeta({
       <!-- content -->
       <template #content>
         <!-- Slider straight -->
-        <DocSection id="slider-straight" title="Straight tooltip" tag="1.0.0">
+        <DocSection title="Straight tooltip" tag="1.0.0">
           <DocComponent label="Straight tooltip example">
             <template #demo>
-              <div class="flex flex-col md:flex-row md:items-end gap-6">
+              <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4 px-4">
                   <Slider v-model="value" class="straight-tooltip" />
                 </div>
@@ -61,10 +61,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Slider rounded -->
-        <DocSection id="slider-rounded" title="Rounded tooltip" tag="1.0.0">
+        <DocSection title="Rounded tooltip" tag="1.0.0">
           <DocComponent label="Rounded tooltip example">
             <template #demo>
-              <div class="flex flex-col md:flex-row md:items-end gap-6">
+              <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4 px-4">
                   <Slider v-model="value" class="rounded-tooltip" />
                 </div>
@@ -79,10 +79,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Slider curved -->
-        <DocSection id="slider-curved" title="Curved tooltip" tag="1.0.0">
+        <DocSection title="Curved tooltip" tag="1.0.0">
           <DocComponent label="Curved tooltip example">
             <template #demo>
-              <div class="flex flex-col md:flex-row md:items-end gap-6">
+              <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4 px-4">
                   <Slider v-model="value" class="curved-tooltip" />
                 </div>
@@ -97,10 +97,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Slider circle -->
-        <DocSection id="slider-circle" title="Circle tooltip" tag="1.0.0">
+        <DocSection title="Circle tooltip" tag="1.0.0">
           <DocComponent label="Circle tooltip example">
             <template #demo>
-              <div class="flex flex-col md:flex-row md:items-end gap-6">
+              <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4 px-4">
                   <Slider v-model="value" class="circle-tooltip" />
                 </div>
@@ -115,10 +115,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Slider colors -->
-        <DocSection id="slider-colors" title="Slider colors" tag="1.0.0">
+        <DocSection title="Slider colors" tag="1.0.0">
           <DocComponent label="Slider colors example">
             <template #demo>
-              <div class="grid md:grid-cols-2 gap-4">
+              <div class="grid gap-4 md:grid-cols-2">
                 <div class="px-4 py-6">
                   <Slider v-model="info" class="slider-info circle-tooltip" />
                 </div>
@@ -152,10 +152,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Slider multiple -->
-        <DocSection id="slider-multiple" title="Multiple handles" tag="1.0.0">
+        <DocSection title="Multiple handles" tag="1.0.0">
           <DocComponent label="Multiple handles example">
             <template #demo>
-              <div class="flex flex-col md:flex-row md:items-end gap-6">
+              <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4 px-4">
                   <Slider v-model="multiple" class="circle-tooltip" />
                 </div>
@@ -170,10 +170,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Slider format -->
-        <DocSection id="slider-format" title="Tooltip format" tag="1.0.0">
+        <DocSection title="Tooltip format" tag="1.0.0">
           <DocComponent label="Tooltip format example">
             <template #demo>
-              <div class="flex flex-col md:flex-row md:items-end gap-6">
+              <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4 px-4">
                   <Slider
                     v-model="value"
@@ -192,10 +192,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Slider merge -->
-        <DocSection id="slider-merge" title="Tooltip merging" tag="1.0.0">
+        <DocSection title="Tooltip merging" tag="1.0.0">
           <DocComponent label="Tooltip merging example">
             <template #demo>
-              <div class="flex flex-col md:flex-row md:items-end gap-6">
+              <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4 px-4">
                   <Slider
                     v-model="mergeValue"
@@ -215,7 +215,6 @@ definePageMeta({
 
         <!-- Slider properties -->
         <DocProps
-          id="slider-props"
           component="Slider"
           :properties="properties.props"
           :slots="properties.slots"
@@ -223,7 +222,7 @@ definePageMeta({
       </template>
       <!-- Toc -->
       <template #toc>
-        <DocToc :anchors="toc" />
+        <DocToc />
       </template>
     </DocLayout>
   </div>

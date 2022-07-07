@@ -39,13 +39,13 @@ definePageMeta({
       <!-- content -->
       <template #content>
         <!-- Popover -->
-        <DocSection id="popover-help-left" title="Help left" tag="1.0.0">
+        <DocSection title="Help left" tag="1.0.0">
           <DocComponent label="Click the elements below">
             <template #demo>
-              <div class="flex items-end flex-wrap gap-6">
+              <div class="flex flex-wrap items-end gap-6">
                 <BasePopover size="sm">
                   <span class="flex items-center text-muted-500">
-                    <BaseIcon name="lucide:help-circle" class="w-4 h-4 mr-1" />
+                    <BaseIcon name="lucide:help-circle" class="mr-1 h-4 w-4" />
                     <span class="font-sans text-sm">Help text</span>
                   </span>
 
@@ -62,7 +62,7 @@ definePageMeta({
 
                 <BasePopover size="sm">
                   <span class="flex items-center text-muted-500">
-                    <BaseIcon name="lucide:help-circle" class="w-4 h-4 mr-1" />
+                    <BaseIcon name="lucide:help-circle" class="mr-1 h-4 w-4" />
                     <span class="font-sans text-sm">Help text</span>
                   </span>
 
@@ -86,13 +86,13 @@ definePageMeta({
         </DocSection>
 
         <!-- Popover -->
-        <DocSection id="popover-help-right" title="Help right" tag="1.0.0">
+        <DocSection title="Help right" tag="1.0.0">
           <DocComponent label="Click the elements below">
             <template #demo>
               <div class="flex items-end justify-end gap-6">
                 <BasePopover size="sm" orientation="end">
                   <span class="flex items-center text-muted-500">
-                    <BaseIcon name="lucide:help-circle" class="w-4 h-4 mr-1" />
+                    <BaseIcon name="lucide:help-circle" class="mr-1 h-4 w-4" />
                     <span class="font-sans text-sm">Help text</span>
                   </span>
 
@@ -110,7 +110,7 @@ definePageMeta({
 
                 <BasePopover size="sm" orientation="end">
                   <span class="flex items-center text-muted-500">
-                    <BaseIcon name="lucide:help-circle" class="w-4 h-4 mr-1" />
+                    <BaseIcon name="lucide:help-circle" class="mr-1 h-4 w-4" />
                     <span class="font-sans text-sm">Help text</span>
                   </span>
 
@@ -134,7 +134,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Popover -->
-        <DocSection id="popover-dual-left" title="Dual left" tag="1.0.0">
+        <DocSection title="Dual left" tag="1.0.0">
           <DocComponent label="Click the elements below">
             <template #demo>
               <div class="flex items-end gap-6">
@@ -142,7 +142,7 @@ definePageMeta({
                   <div class="flex items-center">
                     <BaseAvatar src="/img/avatars/3.svg" />
                     <span
-                      class="font-heading text-sm font-semibold text-muted-800 dark:text-white ml-3"
+                      class="ml-3 font-heading text-sm font-semibold text-muted-800 dark:text-white"
                     >
                       Mike Miller
                     </span>
@@ -182,7 +182,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Popover -->
-        <DocSection id="popover-dual-right" title="Dual right" tag="1.0.0">
+        <DocSection title="Dual right" tag="1.0.0">
           <DocComponent label="Click the elements below">
             <template #demo>
               <div class="flex items-end justify-end gap-6">
@@ -190,7 +190,7 @@ definePageMeta({
                   <div class="flex items-center">
                     <BaseAvatar src="/img/avatars/2.svg" />
                     <span
-                      class="font-heading text-sm font-semibold text-muted-800 dark:text-white ml-3"
+                      class="ml-3 font-heading text-sm font-semibold text-muted-800 dark:text-white"
                     >
                       Maya Rosselini
                     </span>
@@ -230,14 +230,14 @@ definePageMeta({
         </DocSection>
 
         <!-- Popover -->
-        <DocSection id="popover-media-left" title="Media left" tag="1.0.0">
+        <DocSection title="Media left" tag="1.0.0">
           <DocComponent label="Click the elements below">
             <template #demo>
               <div class="flex items-end gap-6">
                 <BasePopover orientation="start">
                   <div class="flex items-center">
                     <span
-                      class="font-heading text-sm font-semibold text-muted-800 dark:text-white border border-muted-300 dark:border-muted-600 rounded-full py-1.5 px-3"
+                      class="rounded-full border border-muted-300 py-1.5 px-3 font-heading text-sm font-semibold text-muted-800 dark:border-muted-600 dark:text-white"
                     >
                       Beautiful house
                     </span>
@@ -269,14 +269,14 @@ definePageMeta({
         </DocSection>
 
         <!-- Popover -->
-        <DocSection id="popover-media-right" title="Media right" tag="1.0.0">
+        <DocSection title="Media right" tag="1.0.0">
           <DocComponent label="Click the elements below">
             <template #demo>
               <div class="flex items-end justify-end gap-6">
                 <BasePopover orientation="end">
                   <div class="flex items-center">
                     <span
-                      class="font-heading text-sm font-semibold text-muted-800 dark:text-white border border-muted-300 dark:border-muted-600 rounded-full py-1.5 px-3"
+                      class="rounded-full border border-muted-300 py-1.5 px-3 font-heading text-sm font-semibold text-muted-800 dark:border-muted-600 dark:text-white"
                     >
                       Beautiful house
                     </span>
@@ -310,38 +310,35 @@ definePageMeta({
         <!-- Popover properties -->
         <DocProps
           id="popover-props"
-          component="Popover"
+          component="BasePopover"
           :properties="properties.props"
           :slots="properties.slots"
         />
 
         <!-- Help properties -->
         <DocProps
-          id="popover-content-help-props"
-          component="Help content"
+          component="BasePopoverContentHelp"
           :properties="helpProperties.props"
           :slots="helpProperties.slots"
         />
 
         <!-- Dual properties -->
         <DocProps
-          id="popover-content-dual-props"
-          component="Dual content"
+          component="BasePopoverContentDual"
           :properties="dualProperties.props"
           :slots="dualProperties.slots"
         />
 
         <!-- Media properties -->
         <DocProps
-          id="popover-content-media-props"
-          component="Media content"
+          component="BasePopoverContentMedia"
           :properties="mediaProperties.props"
           :slots="mediaProperties.slots"
         />
       </template>
       <!-- Toc -->
       <template #toc>
-        <DocToc :anchors="toc" />
+        <DocToc />
       </template>
     </DocLayout>
   </div>

@@ -22,7 +22,7 @@ definePageMeta({
       <!-- content -->
       <template #content>
         <!-- Placeholder -->
-        <DocSection id="placeholder-base" title="Placeholder" tag="1.0.0">
+        <DocSection title="Placeholder" tag="1.0.0">
           <DocComponent label="Page placeholder example">
             <template #demo>
               <BasePlaceholderPage
@@ -36,7 +36,7 @@ definePageMeta({
                   />
                 </template>
 
-                <div class="flex justify-center gap-2 mt-2">
+                <div class="mt-2 flex justify-center gap-2">
                   <BaseButton color="primary" shape="curved" class="h-11 w-40">
                     Take some action
                   </BaseButton>
@@ -50,7 +50,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Placeholder variation -->
-        <DocSection id="placeholder-variation" title="Placeholder" tag="1.0.0">
+        <DocSection title="Placeholder" tag="1.0.0">
           <DocComponent label="Page placeholder example">
             <template #demo>
               <BasePlaceholderPage
@@ -64,7 +64,7 @@ definePageMeta({
                   />
                 </template>
 
-                <div class="flex justify-center gap-2 mt-2">
+                <div class="mt-2 flex justify-center gap-2">
                   <BaseButton color="default" shape="curved" class="h-11 w-32">
                     Go Home
                   </BaseButton>
@@ -82,15 +82,14 @@ definePageMeta({
 
         <!-- Placeholder props -->
         <DocProps
-          id="placeholder-props"
-          component="Placeholder"
+          component="BasePlaceholderPage"
           :properties="properties.props"
           :slots="properties.slots"
         />
       </template>
       <!-- Toc -->
       <template #toc>
-        <DocToc :anchors="toc" />
+        <DocToc />
       </template>
     </DocLayout>
   </div>

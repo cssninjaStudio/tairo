@@ -11,7 +11,7 @@ export type ModalShape = 'straight' | 'rounded' | 'curved'
 export type ModalAlign = 'start' | 'end' | 'center' | 'between'
 
 export interface ModalProps {
-  open: boolean
+  open?: boolean
   size?: ModalSize
   shape?: ModalShape
   footerAlign?: ModalAlign
@@ -28,7 +28,7 @@ const emit = defineEmits(['close'])
 
 <template>
   <TransitionRoot appear :show="props.open" as="template">
-    <div class="fixed inset-0 flex items-center justify-center z-[9999]">
+    <div class="fixed inset-0 z-[9999] flex items-center justify-center">
       <Dialog class="relative z-[9999]" as="div" @close="emit('close')">
         <TransitionChild
           as="template"
@@ -56,7 +56,7 @@ const emit = defineEmits(['close'])
               leave-to="opacity-0 scale-95"
             >
               <DialogPanel
-                class="w-full overflow-hidden bg-white dark:bg-muted-800 text-left align-middle shadow-xl transition-all"
+                class="w-full overflow-hidden bg-white text-left align-middle shadow-xl transition-all dark:bg-muted-800"
                 :class="[
                   props.shape === 'rounded' && 'rounded-lg',
                   props.shape === 'curved' && 'rounded-xl',
@@ -74,7 +74,7 @@ const emit = defineEmits(['close'])
 
                 <div
                   v-if="'footer' in $slots"
-                  class="flex items-center gap-x-2 w-full"
+                  class="flex w-full items-center gap-x-2"
                   :class="[
                     props.footerAlign === 'center' && 'justify-center',
                     props.footerAlign === 'end' && 'justify-end',

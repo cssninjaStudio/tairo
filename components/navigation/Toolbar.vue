@@ -8,11 +8,13 @@ const route = useRoute()
   <div class="relative flex items-center gap-2 h-16 mb-5 z-50">
     <NavigationBurger class="-ml-3" />
 
-    <h2
-      class="hidden md:block font-heading text-2xl font-semibold text-muted-800 dark:text-white"
+    <BaseHeading
+      as="h1"
+      size="2xl"
+      class="hidden md:block text-muted-800 dark:text-white"
     >
       {{ route.meta.title }}
-    </h2>
+    </BaseHeading>
 
     <BaseThemeToggle class="ml-auto" />
 

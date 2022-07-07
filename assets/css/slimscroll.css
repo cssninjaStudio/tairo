@@ -1,9 +1,5 @@
-/* Router Link */
-.slimscroll ul li .router-link-exact-active {
-  @apply text-primary-500;
-}
-
 /* Scrollbar helper class */
+html { scroll-behavior: smooth; }
 
 .slimscroll::-webkit-scrollbar {
   @apply w-[6px];

@@ -32,10 +32,10 @@ definePageMeta({
       <!-- content -->
       <template #content>
         <!-- Snack -->
-        <DocSection id="snack-base" title="Snack" tag="1.0.0">
+        <DocSection title="Snack" tag="1.0.0">
           <DocComponent label="Snack base example">
             <template #demo>
-              <div class="flex items-end flex-wrap gap-4">
+              <div class="flex flex-wrap items-end gap-4">
                 <BaseSnack label="React" />
                 <BaseSnack label="Angular" />
                 <BaseSnack label="Vue" />
@@ -50,10 +50,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Snack -->
-        <DocSection id="snack-base-light" title="Snack" tag="1.0.0">
+        <DocSection title="Snack" tag="1.0.0">
           <DocComponent label="Snack base example">
             <template #demo>
-              <div class="flex items-end flex-wrap gap-4">
+              <div class="flex flex-wrap items-end gap-4">
                 <BaseSnack label="React" light />
                 <BaseSnack label="Angular" light />
                 <BaseSnack label="Vue" light />
@@ -68,10 +68,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Snack small -->
-        <DocSection id="snack-small" title="Snack" tag="1.0.0">
+        <DocSection title="Snack" tag="1.0.0">
           <DocComponent label="Snack base small example">
             <template #demo>
-              <div class="flex items-end flex-wrap gap-4">
+              <div class="flex flex-wrap items-end gap-4">
                 <BaseSnack label="React" small />
                 <BaseSnack label="Angular" small />
                 <BaseSnack label="Vue" small />
@@ -86,10 +86,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Snack -->
-        <DocSection id="snack-icon" title="Snack" tag="1.0.0">
+        <DocSection title="Snack" tag="1.0.0">
           <DocComponent label="Snack icons example">
             <template #demo>
-              <div class="flex items-end flex-wrap gap-4">
+              <div class="flex flex-wrap items-end gap-4">
                 <BaseSnack label="React" icon="logos:react" />
                 <BaseSnack label="Angular" icon="logos:angular-icon" />
                 <BaseSnack label="Vue" icon="logos:vue" />
@@ -104,10 +104,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Snack -->
-        <DocSection id="snack-icon-light" title="Snack" tag="1.0.0">
+        <DocSection title="Snack" tag="1.0.0">
           <DocComponent label="Snack icons example">
             <template #demo>
-              <div class="flex items-end flex-wrap gap-4">
+              <div class="flex flex-wrap items-end gap-4">
                 <BaseSnack label="React" icon="logos:react" light />
                 <BaseSnack label="Angular" icon="logos:angular-icon" light />
                 <BaseSnack label="Vue" icon="logos:vue" light />
@@ -122,10 +122,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Snack -->
-        <DocSection id="snack-icon-small" title="Snack" tag="1.0.0">
+        <DocSection title="Snack" tag="1.0.0">
           <DocComponent label="Snack icons small example">
             <template #demo>
-              <div class="flex items-end flex-wrap gap-4">
+              <div class="flex flex-wrap items-end gap-4">
                 <BaseSnack label="React" icon="logos:react" small />
                 <BaseSnack label="Angular" icon="logos:angular-icon" small />
                 <BaseSnack label="Vue" icon="logos:vue" small />
@@ -140,10 +140,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Snack -->
-        <DocSection id="snack-image" title="Snack" tag="1.0.0">
+        <DocSection title="Snack" tag="1.0.0">
           <DocComponent label="Snack images example">
             <template #demo>
-              <div class="flex items-end flex-wrap gap-4">
+              <div class="flex flex-wrap items-end gap-4">
                 <BaseSnack label="Lana" image="/img/avatars/4.svg" />
                 <BaseSnack label="Harry" image="/img/avatars/7.svg" />
                 <BaseSnack label="Mike" image="/img/avatars/3.svg" />
@@ -158,10 +158,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Snack -->
-        <DocSection id="snack-image-light" title="Snack" tag="1.0.0">
+        <DocSection title="Snack" tag="1.0.0">
           <DocComponent label="Snack images example">
             <template #demo>
-              <div class="flex items-end flex-wrap gap-4">
+              <div class="flex flex-wrap items-end gap-4">
                 <BaseSnack label="Lana" image="/img/avatars/4.svg" light />
                 <BaseSnack label="Harry" image="/img/avatars/7.svg" light />
                 <BaseSnack label="Mike" image="/img/avatars/3.svg" light />
@@ -176,10 +176,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Snack -->
-        <DocSection id="snack-image-small" title="Snack" tag="1.0.0">
+        <DocSection title="Snack" tag="1.0.0">
           <DocComponent label="Snack images small example">
             <template #demo>
-              <div class="flex items-end flex-wrap gap-4">
+              <div class="flex flex-wrap items-end gap-4">
                 <BaseSnack label="Lana" image="/img/avatars/4.svg" small />
                 <BaseSnack label="Harry" image="/img/avatars/7.svg" small />
                 <BaseSnack label="Mike" image="/img/avatars/3.svg" small />
@@ -195,15 +195,14 @@ definePageMeta({
 
         <!-- Snack props -->
         <DocProps
-          id="snack-props"
-          component="Snack"
+          component="BaseSnack"
           :properties="properties.props"
           :slots="properties.slots"
         />
       </template>
       <!-- Toc -->
       <template #toc>
-        <DocToc :anchors="toc" />
+        <DocToc />
       </template>
     </DocLayout>
   </div>

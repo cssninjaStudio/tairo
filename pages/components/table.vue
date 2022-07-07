@@ -40,7 +40,7 @@ definePageMeta({
       <!-- content -->
       <template #content>
         <!-- Straight table -->
-        <DocSection id="table-straight" title="Straight shape" tag="1.0.0">
+        <DocSection title="Straight shape" tag="1.0.0">
           <DocComponent label="Straight table example">
             <template #demo>
               <div class="w-full">
@@ -113,7 +113,7 @@ definePageMeta({
                     <BaseTableCell>
                       <a
                         href="#"
-                        class="text-violet-500 dark:text-violet-400 hover:opacity-75 transition-opacity duration-300"
+                        class="text-violet-500 transition-opacity duration-300 hover:opacity-75 dark:text-violet-400"
                       >
                         View
                       </a>
@@ -129,7 +129,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Rounded table -->
-        <DocSection id="table-rounded" title="Rounded shape" tag="1.0.0">
+        <DocSection title="Rounded shape" tag="1.0.0">
           <DocComponent label="Rounded table example">
             <template #demo>
               <div class="w-full">
@@ -202,7 +202,7 @@ definePageMeta({
                     <BaseTableCell>
                       <a
                         href="#"
-                        class="text-violet-500 dark:text-violet-400 hover:opacity-75 transition-opacity duration-300"
+                        class="text-violet-500 transition-opacity duration-300 hover:opacity-75 dark:text-violet-400"
                       >
                         View
                       </a>
@@ -218,7 +218,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Curved table -->
-        <DocSection id="table-curved" title="Curved shape" tag="1.0.0">
+        <DocSection title="Curved shape" tag="1.0.0">
           <DocComponent label="Curved table example">
             <template #demo>
               <div class="w-full">
@@ -291,7 +291,7 @@ definePageMeta({
                     <BaseTableCell>
                       <a
                         href="#"
-                        class="text-violet-500 dark:text-violet-400 hover:opacity-75 transition-opacity duration-300"
+                        class="text-violet-500 transition-opacity duration-300 hover:opacity-75 dark:text-violet-400"
                       >
                         View
                       </a>
@@ -394,7 +394,7 @@ definePageMeta({
                     <BaseTableCell>
                       <a
                         href="#"
-                        class="text-violet-500 dark:text-violet-400 hover:opacity-75 transition-opacity duration-300"
+                        class="text-violet-500 transition-opacity duration-300 hover:opacity-75 dark:text-violet-400"
                       >
                         View
                       </a>
@@ -410,7 +410,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Rounded media table -->
-        <DocSection id="table-media-rounded" title="Rounded media" tag="1.0.0">
+        <DocSection title="Rounded media" tag="1.0.0">
           <DocComponent label="Media rounded table example">
             <template #demo>
               <div class="w-full">
@@ -493,7 +493,7 @@ definePageMeta({
                     <BaseTableCell>
                       <a
                         href="#"
-                        class="text-violet-500 dark:text-violet-400 hover:opacity-75 transition-opacity duration-300"
+                        class="text-violet-500 transition-opacity duration-300 hover:opacity-75 dark:text-violet-400"
                       >
                         View
                       </a>
@@ -509,7 +509,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Curved media table -->
-        <DocSection id="table-media-curved" title="Curved media" tag="1.0.0">
+        <DocSection title="Curved media" tag="1.0.0">
           <DocComponent label="Media curved table example">
             <template #demo>
               <div class="w-full">
@@ -592,7 +592,7 @@ definePageMeta({
                     <BaseTableCell>
                       <a
                         href="#"
-                        class="text-violet-500 dark:text-violet-400 hover:opacity-75 transition-opacity duration-300"
+                        class="text-violet-500 transition-opacity duration-300 hover:opacity-75 dark:text-violet-400"
                       >
                         View
                       </a>
@@ -609,39 +609,35 @@ definePageMeta({
 
         <!-- Table props -->
         <DocProps
-          id="table-props"
-          component="Table"
+          component="BaseTable"
           :properties="properties.props"
           :slots="properties.slots"
         />
 
-        <!-- Row props -->
-        <DocProps
-          id="table-row-props"
-          component="Row"
-          :properties="rowProperties.props"
-          :slots="rowProperties.slots"
-        />
-
         <!-- Heading props -->
         <DocProps
-          id="table-heading-props"
-          component="Heading"
+          component="BaseTableHeading"
           :properties="headingProperties.props"
           :slots="headingProperties.slots"
         />
 
+        <!-- Row props -->
+        <DocProps
+          component="BaseTableRow"
+          :properties="rowProperties.props"
+          :slots="rowProperties.slots"
+        />
+
         <!-- Cell props -->
         <DocProps
-          id="cell-props"
-          component="Cell"
+          component="BaseTableCell"
           :properties="cellProperties.props"
           :slots="cellProperties.slots"
         />
       </template>
       <!-- Toc -->
       <template #toc>
-        <DocToc :anchors="toc" />
+        <DocToc />
       </template>
     </DocLayout>
   </div>

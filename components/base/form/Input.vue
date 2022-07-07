@@ -56,7 +56,7 @@ watch(
         v-model="value"
         :type="props.type"
         v-bind="$attrs"
-        class="peer focus-within:outline-1 font-sans w-full bg-white text-muted-600 border border-muted-300 placeholder:text-muted-300 dark:placeholder:text-muted-500 dark:bg-muted-900/75 dark:text-muted-200 dark:border-muted-700 dark:focus:border-muted-700 tairo-focus disabled:opacity-75 disabled:cursor-not-allowed transition-all duration-300"
+        class="peer focus-within:outline-1 font-sans w-full bg-white text-muted-600 border border-muted-300 placeholder:text-muted-300 dark:placeholder:text-muted-500 dark:bg-muted-900/75 dark:text-muted-200 dark:border-muted-700 dark:focus:border-muted-700 ninja-focus disabled:opacity-75 disabled:cursor-not-allowed transition-all duration-300"
         :class="[
           props.condensed && 'text-xs leading-4 py-1 h-8',
           props.condensed && props.icon !== undefined ? 'pl-7 pr-3' : 'px-2',

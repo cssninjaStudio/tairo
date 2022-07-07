@@ -1,84 +1,50 @@
 <script setup lang="ts">
-import VueScrollTo from 'vue-scrollto'
+const { toc } = useToc()
+const route = useRoute()
+const activeAnchor = ref('')
 
-export interface DocTocbarLink {
-  label: string
-  anchor: string
-}
-
-export interface DocTocbarItem {
-  label: string
-  anchor: string
-  subItems: DocTocbarLink[]
-}
-
-export interface DocTocbarProps {
-  anchors: DocTocbarItem[]
-  hidden?: boolean
-}
-
-const props = withDefaults(defineProps<DocTocbarProps>(), {
-  hidden: false,
+onMounted(() => {
+  if (route.hash) {
+    activeAnchor.value = route.hash.slice(1)
+  }
 })
 
-const route = useRoute()
-const activeAnchor = ref(0)
-const scrollTo = VueScrollTo.scrollTo
+watch(
+  () => route.fullPath,
+  () => {
+    if (route.hash) {
+      activeAnchor.value = route.hash.slice(1)
+    }
+  }
+)
 </script>
 
 <template>
   <div
-    class="flex flex-col justify-between overflow-y-auto sticky max-h-screen pt-10 pb-6 pl-20 top-12"
+    class="slimscroll sticky top-12 flex max-h-screen flex-col justify-between overflow-y-auto pt-10 pb-6 pl-20 pr-1"
   >
     <div class="mb-8">
-      <BaseHeading
-        size="xs"
-        weight="semibold"
-        lead="tight"
-        class="uppercase mb-6 text-muted-800 dark:text-white"
+      <div
+        class="mb-6 font-heading text-xs font-semibold uppercase leading-tight text-muted-800 dark:text-white"
       >
         <span>On this page</span>
-      </BaseHeading>
+      </div>
 
       <nav class="font-sans text-sm">
-        <ul class>
-          <li v-for="(item, index) in props.anchors" :key="index">
+        <ul>
+          <li v-for="item in toc" :key="item.id">
             <NuxtLink
-              :to="{ name: route.name!, hash: `#${item.anchor}` }"
-              class="block py-2 border-r-2"
-              :class="
-                activeAnchor === index
+              :to="{ name: route.name!, hash: `#${item.id}` }"
+              class="block border-r-2 py-2"
+              :class="[
+                item.level > 2 ? 'ml-3 text-xs' : '',
+                activeAnchor === item.id
                   ? ' border-primary-500 text-primary-500'
-                  : 'border-muted-200  dark:border-muted-800 text-muted-500 dark:text-muted-400 hover:text-muted-400'
-              "
-              @click.prevent="
-                () => {
-                  activeAnchor = index
-                  scrollTo(`#${item.anchor}`, 800, { offset: -100 })
-                }
-              "
+                  : 'border-muted-200  dark:border-muted-800 text-muted-500 dark:text-muted-400 hover:text-muted-400',
+              ]"
             >
               {{ item.label }}
             </NuxtLink>
-            <ul v-if="item.subItems.length > 0" class="pl-4">
-              <li v-for="(subitem, i) in item.subItems" :key="i">
-                <NuxtLink
-                  :to="{
-                    name: route.name!,
-                    hash: `#${item.anchor}`,
-                  }"
-                  class="block text-sm py-2 border-r-2 border-muted-200 dark:border-muted-800 text-muted-400 hover:text-muted-300"
-                  @click.prevent="
-                    () => {
-                      activeAnchor = index
-                      scrollTo(`#${item.anchor}`, 800, { offset: -100 })
-                    }
-                  "
-                >
-                  {{ subitem.label }}
-                </NuxtLink>
-              </li>
-            </ul>
           </li>
         </ul>
       </nav>

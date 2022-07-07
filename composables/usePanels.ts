@@ -11,7 +11,7 @@ export interface LayoutPanel {
   position: 'right' | 'left'
 }
 
-export const usePanels = createSharedComposable(() => {
+export const usePanels = () => {
   const panels = [
     {
       name: 'language',
@@ -32,18 +32,26 @@ export const usePanels = createSharedComposable(() => {
 
   type LayoutPanelNames = typeof panels[number]['name']
 
-  const activePanel = shallowRef<LayoutPanel | null>(null)
-  const panelTransitionFrom = ref('left')
+  const activePanelName = useState('panels-active', () => '')
+  const panelTransitionFrom = useState('panels-transition-from', () => 'left')
+
+  const activePanel = computed(() => {
+    if (!activePanelName.value) {
+      return undefined
+    }
+
+    return panels.find((panel) => panel.name === activePanelName.value)
+  })
 
   function openPanel(name: LayoutPanelNames) {
     const panel = panels.find(({ name: panelName }) => panelName === name)
     if (panel) {
       panelTransitionFrom.value = panel.position
-      activePanel.value = panel
+      activePanelName.value = panel.name
     }
   }
   function closePanel() {
-    activePanel.value = null
+    activePanelName.value = ''
   }
 
   return {
@@ -53,4 +61,4 @@ export const usePanels = createSharedComposable(() => {
     openPanel,
     closePanel,
   }
-})
+}

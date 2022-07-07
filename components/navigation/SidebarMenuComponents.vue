@@ -91,7 +91,7 @@ const hightlightSearch = (text?: string, search?: string): string => {
         <button
           v-if="category !== 'Uncategorized'"
           type="button"
-          class="group flex justify-between items-center min-h-[2rem] mt-4 mb-1 w-full tairo-focus focus-within:outline-0 focus-visible:outline-1"
+          class="group flex justify-between items-center min-h-[2rem] mt-4 mb-1 w-full ninja-focus focus-within:outline-0 focus-visible:outline-1"
           @click="show[category] = !show[category]"
         >
           <span
@@ -124,7 +124,7 @@ const hightlightSearch = (text?: string, search?: string): string => {
                   ? 'flex-col'
                   : 'flex-row items-center'
               "
-              class="flex group w-full text-muted-400 hover:text-primary-500 focus-visible:text-primary-500 transition-colors duration-300 tairo-focus focus-within:outline-0 focus-visible:outline-1"
+              class="flex group w-full text-muted-400 hover:text-primary-500 focus-visible:text-primary-500 transition-colors duration-300 ninja-focus focus-within:outline-0 focus-visible:outline-1"
             >
               <template
                 v-if="

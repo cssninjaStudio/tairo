@@ -1,7 +1,10 @@
-export const useDocumentationMenu = createSharedComposable(() => {
-  const displayMode = ref<'category' | 'component'>('category')
-  const isSearching = ref(false)
-  const filter = ref('')
+export const useDocumentationMenu = () => {
+  const isSearching = useState('dm-is-searching', () => false)
+  const filter = useState('dm-filter', () => '')
+  const displayMode = useState<'category' | 'component'>(
+    'dm-display-mode',
+    () => 'category'
+  )
 
   const reset = () => {
     isSearching.value = false
@@ -14,4 +17,4 @@ export const useDocumentationMenu = createSharedComposable(() => {
     filter,
     reset,
   }
-})
+}

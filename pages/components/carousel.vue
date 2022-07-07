@@ -31,7 +31,7 @@ definePageMeta({
       <!-- content -->
       <template #content>
         <!-- User carousel -->
-        <DocSection id="carousel-user" title="User Carousel" tag="1.0.0">
+        <DocSection title="User Carousel" tag="1.0.0">
           <DocComponent label="User carousel example">
             <template #demo>
               <div class="pt-5">
@@ -47,7 +47,7 @@ definePageMeta({
         <!-- User carousel properties -->
         <DocProps
           id="carousel-user-props"
-          component="User Carousel"
+          component="BaseCarouselTeam"
           :properties="userProps.props"
           :slots="userProps.slots"
         />
@@ -55,13 +55,13 @@ definePageMeta({
         <!-- User carousel item properties -->
         <DocProps
           id="carousel-user-item-props"
-          component="User slide"
+          component="BaseCarouselTeam slide"
           :properties="userItemProps.props"
           :slots="userItemProps.slots"
         />
 
         <!-- Icon carousel -->
-        <DocSection id="carousel-icons" title="Icon Carousel" tag="1.0.0">
+        <DocSection title="Icon Carousel" tag="1.0.0">
           <DocComponent label="Icon carousel example">
             <template #demo>
               <div class="pt-5">
@@ -76,23 +76,21 @@ definePageMeta({
 
         <!-- Icon carousel properties -->
         <DocProps
-          id="carousel-icons-props"
-          component="Icon Carousel"
+          component="BaseCarouselIcons"
           :properties="iconProps.props"
           :slots="iconProps.slots"
         />
 
         <!-- Icon carousel item properties -->
         <DocProps
-          id="carousel-icons-item-props"
-          component="Icon slide"
+          component="BaseCarouselIcons slide"
           :properties="iconItemProps.props"
           :slots="iconItemProps.slots"
         />
       </template>
       <!-- Toc -->
       <template #toc>
-        <DocToc :anchors="toc" />
+        <DocToc />
       </template>
     </DocLayout>
   </div>

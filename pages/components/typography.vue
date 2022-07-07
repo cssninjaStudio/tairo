@@ -15,7 +15,7 @@ definePageMeta({
   title: 'Typography',
   documentation: {
     category: 'Content',
-    components: ['BaseHeading', 'BaseParagraph'],
+    components: ['BaseHeading', 'BaseParagraph', 'BaseText'],
   },
 })
 </script>
@@ -30,7 +30,7 @@ definePageMeta({
       <!-- content -->
       <template #content>
         <!-- Content heading -->
-        <DocSection id="content-heading" title="Heading" tag="1.0.0">
+        <DocSection title="Heading" tag="1.0.0">
           <DocComponent label="Heading component examples">
             <template #demo>
               <div class="flex flex-col space-y-3">
@@ -76,17 +76,16 @@ definePageMeta({
 
         <!-- Heading properties -->
         <DocProps
-          id="heading-props"
-          component="Heading"
+          component="BaseHeading"
           :properties="headingProperties.props"
           :slots="headingProperties.slots"
         />
 
         <!-- Content paragraph -->
-        <DocSection id="content-paragraph" title="Paragraph" tag="1.0.0">
+        <DocSection title="Paragraph" tag="1.0.0">
           <DocComponent label="Paragraph component examples">
             <template #demo>
-              <div class="grid md:grid-cols-2 gap-6">
+              <div class="grid gap-6 md:grid-cols-2">
                 <div class="flex flex-col">
                   <BaseParagraph class="text-muted-400 dark:text-muted-400">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -121,17 +120,16 @@ definePageMeta({
 
         <!-- Paragraph properties -->
         <DocProps
-          id="paragraph-props"
-          component="Paragraph"
+          component="BaseParagraph"
           :properties="paragraphProperties.props"
           :slots="paragraphProperties.slots"
         />
 
         <!-- Content text -->
-        <DocSection id="content-text" title="Text" tag="1.0.0">
+        <DocSection title="Text" tag="1.0.0">
           <DocComponent label="Text component examples">
             <template #demo>
-              <div class="grid md:grid-cols-2 gap-6">
+              <div class="grid gap-6 md:grid-cols-2">
                 <div class="flex flex-col">
                   <BaseText class="text-muted-500 dark:text-muted-400">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -162,15 +160,14 @@ definePageMeta({
 
         <!-- Text properties -->
         <DocProps
-          id="text-props"
-          component="Text"
+          component="BaseText"
           :properties="textProperties.props"
           :slots="textProperties.slots"
         />
       </template>
       <!-- Toc -->
       <template #toc>
-        <DocToc :anchors="toc" />
+        <DocToc />
       </template>
     </DocLayout>
   </div>

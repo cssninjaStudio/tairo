@@ -36,7 +36,7 @@ watch(
 <template>
   <div class="relative inline-flex items-center">
     <div
-      class="group relative overflow-hidden w-5 h-5 flex shrink-0 justify-center items-center tairo-focus cursor-pointer"
+      class="group relative overflow-hidden w-5 h-5 flex shrink-0 justify-center items-center ninja-focus cursor-pointer"
       :class="[
         props.shape === 'rounded' && 'rounded',
         props.shape === 'curved' && 'rounded-md',

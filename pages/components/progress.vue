@@ -35,10 +35,10 @@ definePageMeta({
       <!-- content -->
       <template #content>
         <!-- Progress bar -->
-        <DocSection id="progress-bar" title="Progress bar" tag="1.0.0">
+        <DocSection title="Progress bar" tag="1.0.0">
           <DocComponent label="Default progress bar">
             <template #demo>
-              <div class="space-y-4 max-w-xs">
+              <div class="max-w-xs space-y-4">
                 <BaseProgress
                   title="Default progress bar"
                   size="sm"
@@ -89,10 +89,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Progress circle -->
-        <DocSection id="progress-circle" title="Progress circle" tag="1.0.0">
+        <DocSection title="Progress circle" tag="1.0.0">
           <DocComponent label="Default progress circle">
             <template #demo>
-              <div class="space-y-4 max-w-xs">
+              <div class="max-w-xs space-y-4">
                 <div class="flex items-end gap-2">
                   <BaseProgressCircle
                     title="Primary circle progress bar"
@@ -167,10 +167,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Progress sizes -->
-        <DocSection id="progress-sizes" title="Progress sizes" tag="1.0.0">
+        <DocSection title="Progress sizes" tag="1.0.0">
           <DocComponent label="Default progress sizes">
             <template #demo>
-              <div class="space-y-4 max-w-xs">
+              <div class="max-w-xs space-y-4">
                 <BaseProgress
                   title="xs progress bar"
                   size="xs"
@@ -210,10 +210,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Progress colors -->
-        <DocSection id="progress-colors" title="Progress colors" tag="1.0.0">
+        <DocSection title="Progress colors" tag="1.0.0">
           <DocComponent label="Default progress colors">
             <template #demo>
-              <div class="space-y-4 max-w-xs">
+              <div class="max-w-xs space-y-4">
                 <BaseProgress
                   title="primary progress bar"
                   size="sm"
@@ -260,7 +260,7 @@ definePageMeta({
         >
           <DocComponent label="indeterminate progress animation">
             <template #demo>
-              <div class="space-y-4 max-w-xs">
+              <div class="max-w-xs space-y-4">
                 <BaseProgress
                   title="indeterminate primary progress bar"
                   size="sm"
@@ -296,23 +296,21 @@ definePageMeta({
 
         <!-- Progress bar properties -->
         <DocProps
-          id="progress-bar-props"
-          component="Progress bar"
+          component="BaseProgress"
           :properties="barProperties.props"
           :slots="barProperties.slots"
         />
 
         <!-- Progress circle properties -->
         <DocProps
-          id="progress-circle-props"
-          component="Progress circle"
+          component="BaseProgressCircle"
           :properties="circleProperties.props"
           :slots="circleProperties.slots"
         />
       </template>
       <!-- Toc -->
       <template #toc>
-        <DocToc :anchors="toc" />
+        <DocToc />
       </template>
     </DocLayout>
   </div>

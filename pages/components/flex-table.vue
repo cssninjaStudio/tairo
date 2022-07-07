@@ -37,7 +37,7 @@ definePageMeta({
       <!-- content -->
       <template #content>
         <!-- Flex table straight -->
-        <DocSection id="flex-table-straight" title="Straight shape" tag="1.0.0">
+        <DocSection title="Straight shape" tag="1.0.0">
           <DocComponent label="Straight table shape example">
             <template #demo>
               <div class="w-full">
@@ -156,7 +156,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Flex table rounded -->
-        <DocSection id="flex-table-rounded" title="Rounded shape" tag="1.0.0">
+        <DocSection title="Rounded shape" tag="1.0.0">
           <DocComponent label="Rounded table shape example">
             <template #demo>
               <div class="w-full">
@@ -275,7 +275,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Flex table curved -->
-        <DocSection id="flex-table-curved" title="Curved shape" tag="1.0.0">
+        <DocSection title="Curved shape" tag="1.0.0">
           <DocComponent label="Curved table shape example">
             <template #demo>
               <div class="w-full">
@@ -395,39 +395,35 @@ definePageMeta({
 
         <!-- Flex table props -->
         <DocProps
-          id="flex-table-props"
-          component="Table"
+          component="BaseFlexTable"
           :properties="properties.props"
           :slots="properties.slots"
         />
 
-        <!-- Flex table row props -->
-        <DocProps
-          id="flex-table-row-props"
-          component="Row"
-          :properties="rowProperties.props"
-          :slots="rowProperties.slots"
-        />
-
         <!-- Flex table heading props -->
         <DocProps
-          id="flex-table-heading-props"
-          component="Heading"
+          component="BaseFlexTableHeading"
           :properties="headingProperties.props"
           :slots="headingProperties.slots"
         />
 
+        <!-- Flex table row props -->
+        <DocProps
+          component="BaseFlexTableRow"
+          :properties="rowProperties.props"
+          :slots="rowProperties.slots"
+        />
+
         <!-- Flex table cell props -->
         <DocProps
-          id="flex-table-cell-props"
-          component="Cell"
+          component="BaseFlexTableCell"
           :properties="cellProperties.props"
           :slots="cellProperties.slots"
         />
       </template>
       <!-- Toc -->
       <template #toc>
-        <DocToc :anchors="toc" />
+        <DocToc />
       </template>
     </DocLayout>
   </div>

@@ -52,7 +52,6 @@
     "prismjs": "1.28.0",
     "typescript": "4.7.4",
     "vue-prism-component": "2.0.0",
-    "vue-scrollto": "2.20.0",
     "vue-tsc": "0.38.2",
     "vue3-carousel": "0.1.40"
   },

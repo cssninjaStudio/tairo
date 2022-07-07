@@ -23,9 +23,9 @@ module.exports = {
     'vue/define-macros-order': 'off',
     'tailwindcss/no-custom-classname': [
       'error',
-      { whitelist: ['^i-(.*)$', '^aspect-(.*)$'] },
+      { whitelist: ['^ninja-(.*)$'] },
     ],
-    'tailwindcss/classnames-order': 'off',
+    // 'tailwindcss/classnames-order': 'off',
     'prettier-vue/prettier': [
       'error',
       {

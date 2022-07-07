@@ -372,7 +372,7 @@ const buttonClasses = computed(() => [
   'leading-5',
   'h-10',
   'px-5 py-2 space-x-1',
-  'tairo-focus',
+  'ninja-focus',
   'transition-colors transition-shadow',
   'duration-300',
   props.loading && '!text-transparent',

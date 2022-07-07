@@ -35,7 +35,7 @@ const currentPage = computed(() => {
       <!-- content -->
       <template #content>
         <!-- Pagination straight -->
-        <DocSection id="pagination-straight" title="Straight shape" tag="1.0.0">
+        <DocSection title="Straight shape" tag="1.0.0">
           <DocComponent label="Straight pagination example">
             <template #demo>
               <BasePagination
@@ -53,7 +53,7 @@ const currentPage = computed(() => {
         </DocSection>
 
         <!-- Pagination rounded -->
-        <DocSection id="pagination-rounded" title="Rounded shape" tag="1.0.0">
+        <DocSection title="Rounded shape" tag="1.0.0">
           <DocComponent label="Rounded pagination example">
             <template #demo>
               <BasePagination
@@ -71,7 +71,7 @@ const currentPage = computed(() => {
         </DocSection>
 
         <!-- Pagination curved -->
-        <DocSection id="pagination-curved" title="Curved shape" tag="1.0.0">
+        <DocSection title="Curved shape" tag="1.0.0">
           <DocComponent label="Curved pagination example">
             <template #demo>
               <BasePagination
@@ -89,7 +89,7 @@ const currentPage = computed(() => {
         </DocSection>
 
         <!-- Pagination full -->
-        <DocSection id="pagination-full" title="Full shape" tag="1.0.0">
+        <DocSection title="Full shape" tag="1.0.0">
           <DocComponent label="Full pagination example">
             <template #demo>
               <BasePagination
@@ -108,15 +108,14 @@ const currentPage = computed(() => {
 
         <!-- Pagination props -->
         <DocProps
-          id="pagination-props"
-          component="Pagination"
+          component="BasePagination"
           :properties="properties.props"
           :slots="properties.slots"
         />
       </template>
       <!-- Toc -->
       <template #toc>
-        <DocToc :anchors="toc" />
+        <DocToc />
       </template>
     </DocLayout>
   </div>

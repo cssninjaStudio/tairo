@@ -35,13 +35,8 @@ export const toc = [
     subItems: [],
   },
   {
-    label: 'Slate color',
+    label: 'Muted color',
     anchor: 'muted-color',
-    subItems: [],
-  },
-  {
-    label: 'Gray color',
-    anchor: 'gray-color',
     subItems: [],
   },
 ]

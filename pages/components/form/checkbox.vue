@@ -63,7 +63,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Checkbox rounded -->
-        <DocSection id="checkbox-rounded" title="Checkbox rounded" tag="1.0.0">
+        <DocSection title="Checkbox rounded" tag="1.0.0">
           <DocComponent label="Rounded checkbox example">
             <template #demo>
               <div class="flex items-end gap-6">
@@ -87,7 +87,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Checkbox curved -->
-        <DocSection id="checkbox-curved" title="Checkbox curved" tag="1.0.0">
+        <DocSection title="Checkbox curved" tag="1.0.0">
           <DocComponent label="Curved checkbox example">
             <template #demo>
               <div class="flex items-end gap-6">
@@ -111,7 +111,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Checkbox circle -->
-        <DocSection id="checkbox-circle" title="Checkbox circle" tag="1.0.0">
+        <DocSection title="Checkbox circle" tag="1.0.0">
           <DocComponent label="Circle checkbox example">
             <template #demo>
               <div class="flex items-end gap-6">
@@ -142,7 +142,7 @@ definePageMeta({
         >
           <DocComponent label="Straight checkbox example">
             <template #demo>
-              <FocusLoop class="flex items-end flex-wrap gap-4">
+              <FocusLoop class="flex flex-wrap items-end gap-4">
                 <BaseFormCheckbox
                   v-model="demoStraight"
                   name="demo-5"
@@ -216,15 +216,14 @@ definePageMeta({
 
         <!-- Checkbox properties -->
         <DocProps
-          id="checkbox-props"
-          component="Checkbox"
+          component="BaseFormCheckbox"
           :properties="properties.props"
           :slots="properties.slots"
         />
       </template>
       <!-- Toc -->
       <template #toc>
-        <DocToc :anchors="toc" />
+        <DocToc />
       </template>
     </DocLayout>
   </div>

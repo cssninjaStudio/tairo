@@ -26,17 +26,17 @@ definePageMeta({
       <!-- content -->
       <template #content>
         <!-- Card shapes -->
-        <DocSection id="card-shapes" title="Card shapes" tag="1.0.0">
+        <DocSection title="Card shapes" tag="1.0.0">
           <DocComponent label="Card shapes example">
             <template #demo>
-              <div class="grid md:grid-cols-3 gap-4">
+              <div class="grid gap-4 md:grid-cols-3">
                 <BaseCard shape="straight" class="p-6">
                   <BaseHeading
                     as="h4"
                     size="sm"
                     weight="semibold"
                     lead="tight"
-                    class="text-muted-800 dark:text-white mb-2"
+                    class="mb-2 text-muted-800 dark:text-white"
                   >
                     Iam a card
                   </BaseHeading>
@@ -50,7 +50,7 @@ definePageMeta({
                     size="sm"
                     weight="semibold"
                     lead="tight"
-                    class="text-muted-800 dark:text-white mb-2"
+                    class="mb-2 text-muted-800 dark:text-white"
                   >
                     Iam a card
                   </BaseHeading>
@@ -64,7 +64,7 @@ definePageMeta({
                     size="sm"
                     weight="semibold"
                     lead="tight"
-                    class="text-muted-800 dark:text-white mb-2"
+                    class="mb-2 text-muted-800 dark:text-white"
                   >
                     Iam a card
                   </BaseHeading>
@@ -81,17 +81,17 @@ definePageMeta({
         </DocSection>
 
         <!-- Card elevation -->
-        <DocSection id="card-elevation" title="Card elevation" tag="1.0.0">
+        <DocSection title="Card elevation" tag="1.0.0">
           <DocComponent label="Card elevations example">
             <template #demo>
-              <div class="grid md:grid-cols-3 gap-4">
+              <div class="grid gap-4 md:grid-cols-3">
                 <BaseCard shape="straight" elevated class="p-6">
                   <BaseHeading
                     as="h4"
                     size="sm"
                     weight="semibold"
                     lead="tight"
-                    class="text-muted-800 dark:text-white mb-2"
+                    class="mb-2 text-muted-800 dark:text-white"
                   >
                     Iam a card
                   </BaseHeading>
@@ -105,7 +105,7 @@ definePageMeta({
                     size="sm"
                     weight="semibold"
                     lead="tight"
-                    class="text-muted-800 dark:text-white mb-2"
+                    class="mb-2 text-muted-800 dark:text-white"
                   >
                     Iam a card
                   </BaseHeading>
@@ -119,7 +119,7 @@ definePageMeta({
                     size="sm"
                     weight="semibold"
                     lead="tight"
-                    class="text-muted-800 dark:text-white mb-2"
+                    class="mb-2 text-muted-800 dark:text-white"
                   >
                     Iam a card
                   </BaseHeading>
@@ -143,14 +143,14 @@ definePageMeta({
         >
           <DocComponent label="Hover elevations example">
             <template #demo>
-              <div class="grid md:grid-cols-3 gap-4">
+              <div class="grid gap-4 md:grid-cols-3">
                 <BaseCard shape="straight" elevated-hover class="p-6">
                   <BaseHeading
                     as="h4"
                     size="sm"
                     weight="semibold"
                     lead="tight"
-                    class="text-muted-800 dark:text-white mb-2"
+                    class="mb-2 text-muted-800 dark:text-white"
                   >
                     Iam a card
                   </BaseHeading>
@@ -164,7 +164,7 @@ definePageMeta({
                     size="sm"
                     weight="semibold"
                     lead="tight"
-                    class="text-muted-800 dark:text-white mb-2"
+                    class="mb-2 text-muted-800 dark:text-white"
                   >
                     Iam a card
                   </BaseHeading>
@@ -178,7 +178,7 @@ definePageMeta({
                     size="sm"
                     weight="semibold"
                     lead="tight"
-                    class="text-muted-800 dark:text-white mb-2"
+                    class="mb-2 text-muted-800 dark:text-white"
                   >
                     Iam a card
                   </BaseHeading>
@@ -196,15 +196,14 @@ definePageMeta({
 
         <!-- Card props -->
         <DocProps
-          id="card-props"
-          component="Card"
+          component="BaseCard"
           :properties="properties.props"
           :slots="properties.slots"
         />
       </template>
       <!-- Toc -->
       <template #toc>
-        <DocToc :anchors="toc" />
+        <DocToc />
       </template>
     </DocLayout>
   </div>

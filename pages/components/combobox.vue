@@ -39,10 +39,10 @@ definePageMeta({
       <!-- content -->
       <template #content>
         <!-- Combobox shapes -->
-        <DocSection id="combobox-shapes" title="Combobox shapes" tag="1.0.0">
+        <DocSection title="Combobox shapes" tag="1.0.0">
           <DocComponent label="Combobox shapes example">
             <template #demo>
-              <div class="grid md:grid-cols-2 gap-4">
+              <div class="grid gap-4 md:grid-cols-2">
                 <BaseFormComboBox
                   v-model="selectedFramework"
                   label="Framework"
@@ -79,10 +79,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Combobox disabled -->
-        <DocSection id="combobox-disabled" title="Disabled state" tag="1.0.0">
+        <DocSection title="Disabled state" tag="1.0.0">
           <DocComponent label="Disabled state example">
             <template #demo>
-              <div class="flex items-end max-w-xs">
+              <div class="flex max-w-xs items-end">
                 <BaseFormComboBox
                   v-model="selectedPersonName"
                   label="Assignee"
@@ -98,10 +98,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Combobox loading -->
-        <DocSection id="combobox-loading" title="Loading state" tag="1.0.0">
+        <DocSection title="Loading state" tag="1.0.0">
           <DocComponent label="Loading state example">
             <template #demo>
-              <div class="flex items-end max-w-xs">
+              <div class="flex max-w-xs items-end">
                 <BaseFormComboBox
                   v-model="selectedPersonName"
                   label="Assignee"
@@ -117,10 +117,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Combobox sublabels -->
-        <DocSection id="combobox-sublabels" title="Combobox" tag="1.0.0">
+        <DocSection title="Combobox" tag="1.0.0">
           <DocComponent label="Text with sublabels example">
             <template #demo>
-              <div class="flex items-end max-w-xs">
+              <div class="flex max-w-xs items-end">
                 <BaseFormComboBox
                   v-model="selectedPersonName"
                   label="Assignee"
@@ -135,10 +135,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Combobox icon -->
-        <DocSection id="combobox-icon" title="Combobox icon" tag="1.0.0">
+        <DocSection title="Combobox icon" tag="1.0.0">
           <DocComponent label="Combobox icon example">
             <template #demo>
-              <div class="flex items-end max-w-xs">
+              <div class="flex max-w-xs items-end">
                 <BaseFormComboBox
                   v-model="selectedHobby"
                   label="Hobbies"
@@ -153,10 +153,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Combobox media -->
-        <DocSection id="combobox-media" title="Combobox" tag="1.0.0">
+        <DocSection title="Combobox" tag="1.0.0">
           <DocComponent label="Combo media example">
             <template #demo>
-              <div class="flex items-end max-w-xs">
+              <div class="flex max-w-xs items-end">
                 <BaseFormComboBox
                   v-model="selectedPerson"
                   label="Assignee"
@@ -172,15 +172,14 @@ definePageMeta({
 
         <!-- Combobox properties -->
         <DocProps
-          id="combobox-props"
-          component="Combobox"
+          component="BaseFormComboBox"
           :properties="properties.props"
           :slots="properties.slots"
         />
       </template>
       <!-- Toc -->
       <template #toc>
-        <DocToc :anchors="toc" />
+        <DocToc />
       </template>
     </DocLayout>
   </div>

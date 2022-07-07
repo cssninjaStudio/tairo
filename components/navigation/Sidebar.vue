@@ -1,12 +1,6 @@
 <script setup lang="ts">
-const {
-  activeSidebar,
-  sidebars,
-  isSidebarOpened,
-  toggleActiveSidebar,
-  isLayoutModalOpen,
-  toggleLayoutModal,
-} = useSidebar()
+const { activeSidebar, sidebars, isSidebarOpened, toggleActiveSidebar } =
+  useSidebar()
 
 const startSidebars = sidebars.filter(
   (sidebar) => !sidebar.position || sidebar.position === 'start'
@@ -16,11 +10,11 @@ const endSidebars = sidebars.filter((sidebar) => sidebar.position === 'end')
 
 <template>
   <div
-    class="flex fixed top-0 left-0 h-full z-[60] xl:z-10 pointer-events-none"
+    class="pointer-events-none fixed top-0 left-0 z-[60] flex h-full xl:z-10"
   >
     <!-- Icon sidebar -->
     <div
-      class="relative flex flex-col w-[80px] h-full bg-white dark:bg-muted-800 border-r border-muted-200 dark:border-muted-700 z-20 transition-all duration-300 pointer-events-auto"
+      class="pointer-events-auto relative z-20 flex h-full w-[80px] flex-col border-r border-muted-200 bg-white transition-all duration-300 dark:border-muted-700 dark:bg-muted-800"
       :class="isSidebarOpened ? '' : '-translate-x-full xl:translate-x-0'"
     >
       <slot></slot>
@@ -48,7 +42,7 @@ const endSidebars = sidebars.filter((sidebar) => sidebar.position === 'end')
     <!-- Menu panel -->
     <div
       v-if="activeSidebar"
-      class="relative w-[220px] h-full bg-white dark:bg-muted-800 border-r border-muted-200 dark:border-muted-700 z-10 transition-all duration-300 pointer-events-auto"
+      class="pointer-events-auto relative z-10 h-full w-[220px] border-r border-muted-200 bg-white transition-all duration-300 dark:border-muted-700 dark:bg-muted-800"
       :class="isSidebarOpened ? '' : '-translate-x-[calc(100%_-_80px)]'"
     >
       <slot
@@ -60,7 +54,7 @@ const endSidebars = sidebars.filter((sidebar) => sidebar.position === 'end')
           toggleActiveSidebar,
         }"
       >
-        <div class="flex flex-col h-screen">
+        <div class="flex h-screen flex-col">
           <component
             :is="activeSidebar.subnavHeader"
             v-if="activeSidebar.subnavHeader"
@@ -69,19 +63,19 @@ const endSidebars = sidebars.filter((sidebar) => sidebar.position === 'end')
           <!-- Body -->
           <div
             v-if="activeSidebar?.subnav"
-            class="relative h-full w-full overflow-y-auto slimscroll"
+            class="slimscroll relative h-full w-full overflow-y-auto"
           >
             <div class="px-6 pb-8">
               <component :is="activeSidebar.subnav"></component>
             </div>
 
             <div
-              class="fixed bottom-0 w-[212px] h-10 z-10 bg-gradient-to-t from-white dark:from-muted-800 to-transparent pointer-events-none"
+              class="pointer-events-none fixed bottom-0 z-10 h-10 w-[212px] bg-gradient-to-t from-white to-transparent dark:from-muted-800"
             ></div>
           </div>
         </div>
       </slot>
-
+      <!-- 
       <BaseModal
         :open="isLayoutModalOpen"
         size="md"
@@ -89,7 +83,7 @@ const endSidebars = sidebars.filter((sidebar) => sidebar.position === 'end')
         @close="toggleLayoutModal"
       >
         <template #header>
-          <div class="w-full flex items-center justify-between pt-4 pb-2 px-4">
+          <div class="flex w-full items-center justify-between px-4 pt-4 pb-2">
             <h3
               class="font-heading text-lg font-medium leading-6 text-muted-900 dark:text-white"
             >
@@ -109,96 +103,100 @@ const endSidebars = sidebars.filter((sidebar) => sidebar.position === 'end')
           <template #tab="{ activeValue }">
             <div v-if="activeValue === 'sidebar'">
               <div class="grid grid-cols-2 gap-4 px-4 pb-4">
-                <!-- Layout 1 -->
-                <button
-                  type="button"
-                  class="relative block text-center"
-                  @click="toggleLayoutModal"
-                >
-                  <div class="relative max-w-[110px] mx-auto">
-                    <img
-                      class="block dark:hidden"
-                      src="/img/icons/layouts/layout-1.svg"
-                      alt=""
-                    />
-                    <img
-                      class="hidden dark:block"
-                      src="/img/icons/layouts/layout-1-dark.svg"
-                      alt=""
-                    />
-                    <div
-                      class="absolute top-0 right-0 w-6 h-6 flex items-center justify-center bg-success-500 text-white rounded-full"
-                    >
-                      <BaseIcon name="lucide:check" class="w-3 h-3 block" />
-                    </div>
-                  </div>
-
-                  <BaseHeading
-                    as="h4"
-                    weight="semibold"
-                    size="md"
-                    class="text-muted-800 dark:text-white"
+              <button
+                type="button"
+                class="relative block text-center"
+                @click="toggleLayoutModal"
+              >
+                <div class="relative mx-auto max-w-[110px]">
+                  <img
+                    class="block dark:hidden"
+                    src="/img/icons/layouts/layout-1.svg"
+                    alt=""
+                  />
+                  <img
+                    class="hidden dark:block"
+                    src="/img/icons/layouts/layout-1-dark.svg"
+                    alt=""
+                  />
+                  <div
+                    class="absolute top-0 right-0 flex h-6 w-6 items-center justify-center rounded-full bg-success-500 text-white"
                   >
-                    Sidebar
-                  </BaseHeading>
-                  <BaseParagraph size="sm" class="text-muted-400">
-                    Dual sidebar default
-                  </BaseParagraph>
-                </button>
-                <!-- Layout 1 -->
-                <button
-                  type="button"
-                  class="relative block text-center"
-                  @click="toggleLayoutModal"
-                >
-                  <div class="relative max-w-[110px] mx-auto">
-                    <img
-                      class="block dark:hidden"
-                      src="/img/icons/layouts/layout-2.svg"
-                      alt=""
-                    />
-                    <img
-                      class="hidden dark:block"
-                      src="/img/icons/layouts/layout-2-dark.svg"
-                      alt=""
-                    />
-                    <div
-                      class="absolute top-0 right-0 w-6 h-6 flex items-center justify-center bg-success-500 text-white rounded-full"
-                    >
-                      <BaseIcon name="lucide:check" class="w-3 h-3 block" />
-                    </div>
+                    <BaseIcon name="lucide:check" class="block h-3 w-3" />
                   </div>
+                </div>
 
-                  <BaseHeading
-                    as="h4"
-                    weight="semibold"
-                    size="md"
-                    class="text-muted-800 dark:text-white"
+                <BaseHeading
+                  as="h4"
+                  weight="semibold"
+                  size="md"
+                  class="text-muted-800 dark:text-white"
+                >
+                  Sidebar
+                </BaseHeading>
+                <BaseParagraph size="sm" class="text-muted-400">
+                  Dual sidebar default
+                </BaseParagraph>
+              </button>
+              <button
+                type="button"
+                class="relative block text-center"
+                @click="toggleLayoutModal"
+              >
+                <div class="relative mx-auto max-w-[110px]">
+                  <img
+                    class="block dark:hidden"
+                    src="/img/icons/layouts/layout-2.svg"
+                    alt=""
+                  />
+                  <img
+                    class="hidden dark:block"
+                    src="/img/icons/layouts/layout-2-dark.svg"
+                    alt=""
+                  />
+                  <div
+                    class="absolute top-0 right-0 flex h-6 w-6 items-center justify-center rounded-full bg-success-500 text-white"
                   >
-                    Sidebar
-                  </BaseHeading>
-                  <BaseParagraph size="sm" class="text-muted-400">
-                    Dual sidebar colored
-                  </BaseParagraph>
-                </button>
-              </div>
+                    <BaseIcon name="lucide:check" class="block h-3 w-3" />
+                  </div>
+                </div>
+
+                <BaseHeading
+                  as="h4"
+                  weight="semibold"
+                  size="md"
+                  class="text-muted-800 dark:text-white"
+                >
+                  Sidebar
+                </BaseHeading>
+                <BaseParagraph size="sm" class="text-muted-400">
+                  Dual sidebar colored
+                </BaseParagraph>
+              </button>
             </div>
-            <div
-              v-else-if="activeValue === 'sideblock'"
-              class="font-sans text-sm text-muted-500 dark:text-muted-400"
-            >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quid
-              iudicant sensus? Primum quid tu dicis breve? Etiam beatissimum? Ne
-              discipulum abducam, times. Quae diligentissime contra Aristonem
-              dicuntur a Chryippo. Duo Reges: constructio interrete.
-            </div>
-          </template>
+          </div>
+          <div
+            v-else-if="activeValue === 'sideblock'"
+            class="font-sans text-sm text-muted-500 dark:text-muted-400"
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quid iudicant
+            sensus? Primum quid tu dicis breve? Etiam beatissimum? Ne discipulum
+            abducam, times. Quae diligentissime contra Aristonem dicuntur a Chryippo.
+            Duo Reges: constructio interrete.
+          </div>
+        </template>
         </BaseTabs>
 
         <template #footer>
-          <!-- Modal footer content -->
         </template>
-      </BaseModal>
+      </BaseModal> -->
     </div>
   </div>
 </template>
+
+<style scoped>
+/* Router Link */
+.slimscroll :deep(.router-link-exact-active) {
+  @apply text-primary-500;
+}
+</style>

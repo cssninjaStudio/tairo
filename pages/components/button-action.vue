@@ -30,10 +30,10 @@ definePageMeta({
       <!-- content -->
       <template #content>
         <!-- Action shapes -->
-        <DocSection id="action-shapes" title="Actions shapes" tag="1.0.0">
+        <DocSection title="Actions shapes" tag="1.0.0">
           <DocComponent label="Default action shapes">
             <template #demo>
-              <FocusLoop class="flex items-end flex-wrap gap-2">
+              <FocusLoop class="flex flex-wrap items-end gap-2">
                 <BaseButtonAction shape="straight">Action</BaseButtonAction>
                 <BaseButtonAction shape="rounded">Action</BaseButtonAction>
                 <BaseButtonAction shape="curved">Action</BaseButtonAction>
@@ -47,10 +47,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Action muted -->
-        <DocSection id="action-muted" title="Muted actions" tag="1.0.0">
+        <DocSection title="Muted actions" tag="1.0.0">
           <DocComponent label="Muted action variation">
             <template #demo>
-              <FocusLoop class="flex items-end flex-wrap gap-2">
+              <FocusLoop class="flex flex-wrap items-end gap-2">
                 <BaseButtonAction shape="straight" muted>
                   Action
                 </BaseButtonAction>
@@ -68,10 +68,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Action loading -->
-        <DocSection id="action-loading" title="Loading state" tag="1.0.0">
+        <DocSection title="Loading state" tag="1.0.0">
           <DocComponent label="Action loading variation">
             <template #demo>
-              <FocusLoop class="flex items-end flex-wrap gap-2">
+              <FocusLoop class="flex flex-wrap items-end gap-2">
                 <BaseButtonAction shape="straight" loading>
                   Action
                 </BaseButtonAction>
@@ -90,13 +90,13 @@ definePageMeta({
           </DocComponent>
         </DocSection>
         <!-- Action group -->
-        <DocSection id="action-group" title="Actions group" tag="1.0.0">
+        <DocSection title="Actions group" tag="1.0.0">
           <DocComponent label="Actions inside a group">
             <template #demo>
               <FocusLoop class="flex items-end">
                 <BaseButtonAction
                   shape="rounded"
-                  class="focus:z-10 rounded-r-none border-r-0"
+                  class="rounded-r-none border-r-0 focus:z-10"
                   @click="disabled = !disabled"
                 >
                   View
@@ -116,7 +116,7 @@ definePageMeta({
                 </BaseButtonAction>
                 <BaseButtonAction
                   shape="rounded"
-                  class="focus:z-10 rounded-l-none border-l-0"
+                  class="rounded-l-none border-l-0 focus:z-10"
                 >
                   Share
                 </BaseButtonAction>
@@ -130,15 +130,14 @@ definePageMeta({
 
         <!-- Action properties -->
         <DocProps
-          id="action-props"
-          component="Action"
+          component="BaseButtonAction"
           :properties="properties.props"
           :slots="properties.slots"
         />
       </template>
       <!-- Toc -->
       <template #toc>
-        <DocToc :anchors="toc" />
+        <DocToc />
       </template>
     </DocLayout>
   </div>

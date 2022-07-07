@@ -22,10 +22,10 @@ definePageMeta({
       <!-- content -->
       <template #content>
         <!-- Tag shapes -->
-        <DocSection id="tag-shapes" title="Tag shapes" tag="1.0.0">
+        <DocSection title="Tag shapes" tag="1.0.0">
           <DocComponent label="Default tag shapes">
             <template #demo>
-              <div class="flex items-end flex-wrap gap-1">
+              <div class="flex flex-wrap items-end gap-1">
                 <BaseTag shape="straight">Label</BaseTag>
                 <BaseTag shape="rounded">Label</BaseTag>
                 <BaseTag shape="curved">Label</BaseTag>
@@ -39,10 +39,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Tag solid -->
-        <DocSection id="tag-solid" title="Solid colors" tag="1.0.0">
+        <DocSection title="Solid colors" tag="1.0.0">
           <DocComponent label="Tag solid colors">
             <template #demo>
-              <div class="flex items-end flex-wrap gap-1">
+              <div class="flex flex-wrap items-end gap-1">
                 <BaseTag shape="rounded" color="default">Label</BaseTag>
                 <BaseTag shape="rounded" muted>Label</BaseTag>
                 <BaseTag shape="rounded" color="primary">Label</BaseTag>
@@ -59,10 +59,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Tag outline -->
-        <DocSection id="tag-outline" title="Outline colors" tag="1.0.0">
+        <DocSection title="Outline colors" tag="1.0.0">
           <DocComponent label="Tag outline colors">
             <template #demo>
-              <div class="flex items-end flex-wrap gap-1">
+              <div class="flex flex-wrap items-end gap-1">
                 <BaseTag shape="rounded" color="primary" flavor="outline">
                   Label
                 </BaseTag>
@@ -87,10 +87,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Tag pastel -->
-        <DocSection id="tag-pastel" title="Pastel colors" tag="1.0.0">
+        <DocSection title="Pastel colors" tag="1.0.0">
           <DocComponent label="Tag pastel colors">
             <template #demo>
-              <div class="flex items-end flex-wrap gap-1">
+              <div class="flex flex-wrap items-end gap-1">
                 <BaseTag shape="rounded" color="primary" flavor="pastel">
                   Label
                 </BaseTag>
@@ -116,15 +116,14 @@ definePageMeta({
 
         <!-- Tag props -->
         <DocProps
-          id="tag-props"
-          component="Tag"
+          component="BaseTag"
           :properties="properties.props"
           :slots="properties.slots"
         />
       </template>
       <!-- Toc -->
       <template #toc>
-        <DocToc :anchors="toc" />
+        <DocToc />
       </template>
     </DocLayout>
   </div>

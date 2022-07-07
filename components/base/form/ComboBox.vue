@@ -64,7 +64,7 @@ const items = ref(props.items)
       <div class="relative">
         <ListboxButton
           :disabled="props.disabled"
-          class="relative flex items-center peer pl-4 pr-12 h-10 text-sm leading-5 font-sans w-full bg-white text-muted-600 border border-muted-300 focus:border-muted-300 focus:shadow-lg focus:shadow-muted-300/50 dark:focus:shadow-muted-800/50 placeholder:text-muted-300 dark:placeholder:text-muted-500 dark:bg-muted-900/75 dark:text-muted-200 dark:border-muted-700 dark:focus:border-muted-700 tairo-focus disabled:opacity-75 disabled:cursor-not-allowed"
+          class="relative flex items-center peer pl-4 pr-12 h-10 text-sm leading-5 font-sans w-full bg-white text-muted-600 border border-muted-300 focus:border-muted-300 focus:shadow-lg focus:shadow-muted-300/50 dark:focus:shadow-muted-800/50 placeholder:text-muted-300 dark:placeholder:text-muted-500 dark:bg-muted-900/75 dark:text-muted-200 dark:border-muted-700 dark:focus:border-muted-700 ninja-focus disabled:opacity-75 disabled:cursor-not-allowed"
           :class="[
             props.shape === 'rounded' && 'rounded',
             props.shape === 'curved' && 'rounded-xl',

@@ -76,7 +76,7 @@ const buttonClasses = computed(() => [
   'h-8',
   'px-4 py-2 space-x-1',
   'border',
-  'tairo-focus',
+  'ninja-focus',
   'transition-colors transition-shadow duration-300',
   props.loading && '!text-transparent',
   props.disabled &&

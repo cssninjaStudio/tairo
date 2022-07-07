@@ -50,7 +50,7 @@ definePageMeta({
         >
           <DocComponent label="Straight autocomplete example">
             <template #demo>
-              <div class="flex flex-col md:flex-row md:items-end gap-6">
+              <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4">
                   <BaseFormAutocomplete
                     v-model="selectedFramework"
@@ -71,10 +71,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Autocomplete rounded -->
-        <DocSection id="autocomplete-rounded" title="Rounded shape" tag="1.0.0">
+        <DocSection title="Rounded shape" tag="1.0.0">
           <DocComponent label="Rounded autocomplete example">
             <template #demo>
-              <div class="flex flex-col md:flex-row md:items-end gap-6">
+              <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4">
                   <BaseFormAutocomplete
                     v-model="selectedFramework"
@@ -95,10 +95,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Autocomplete curved -->
-        <DocSection id="autocomplete-curved" title="Curved shape" tag="1.0.0">
+        <DocSection title="Curved shape" tag="1.0.0">
           <DocComponent label="Curved autocomplete example">
             <template #demo>
-              <div class="flex flex-col md:flex-row md:items-end gap-6">
+              <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4">
                   <BaseFormAutocomplete
                     v-model="selectedFramework"
@@ -119,10 +119,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Autocomplete full -->
-        <DocSection id="autocomplete-full" title="Full shape" tag="1.0.0">
+        <DocSection title="Full shape" tag="1.0.0">
           <DocComponent label="Full autocomplete example">
             <template #demo>
-              <div class="flex flex-col md:flex-row md:items-end gap-6">
+              <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4">
                   <BaseFormAutocomplete
                     v-model="selectedFramework"
@@ -143,10 +143,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Autocomplete icon -->
-        <DocSection id="autocomplete-icon" title="With icon" tag="1.0.0">
+        <DocSection title="With icon" tag="1.0.0">
           <DocComponent label="Icon autocomplete example">
             <template #demo>
-              <div class="flex flex-col md:flex-row md:items-end gap-6">
+              <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4">
                   <BaseFormAutocomplete
                     v-model="selectedFramework"
@@ -168,10 +168,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Autocomplete clear -->
-        <DocSection id="autocomplete-clear" title="Clearable" tag="1.0.0">
+        <DocSection title="Clearable" tag="1.0.0">
           <DocComponent label="Clear button example">
             <template #demo>
-              <div class="flex flex-col md:flex-row md:items-end gap-6">
+              <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4">
                   <BaseFormAutocomplete
                     v-model="selectedFramework"
@@ -201,7 +201,7 @@ definePageMeta({
         >
           <DocComponent label="Disabled state example">
             <template #demo>
-              <div class="flex flex-col md:flex-row md:items-end gap-6">
+              <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4">
                   <BaseFormAutocomplete
                     v-model="selectedFramework"
@@ -225,10 +225,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Autocomplete loading -->
-        <DocSection id="autocomplete-loading" title="Loading state" tag="1.0.0">
+        <DocSection title="Loading state" tag="1.0.0">
           <DocComponent label="Loading state example">
             <template #demo>
-              <div class="flex flex-col md:flex-row md:items-end gap-6">
+              <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4">
                   <BaseFormAutocomplete
                     v-model="selectedFramework"
@@ -252,10 +252,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Autocomplete icons -->
-        <DocSection id="autocomplete-icons" title="Icon results" tag="1.0.0">
+        <DocSection title="Icon results" tag="1.0.0">
           <DocComponent label="Results with icons example">
             <template #demo>
-              <div class="flex flex-col md:flex-row md:items-end gap-6">
+              <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4">
                   <BaseFormAutocomplete
                     v-model="selectedHobby"
@@ -278,10 +278,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Autocomplete media -->
-        <DocSection id="autocomplete-media" title="Media results" tag="1.0.0">
+        <DocSection title="Media results" tag="1.0.0">
           <DocComponent label="Results with media example">
             <template #demo>
-              <div class="flex flex-col md:flex-row md:items-end gap-6">
+              <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4">
                   <BaseFormAutocomplete
                     v-model="selectedPerson"
@@ -303,10 +303,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Autocomplete multiple -->
-        <DocSection id="autocomplete-multiple" title="Multiple" tag="1.0.0">
+        <DocSection title="Multiple" tag="1.0.0">
           <DocComponent label="Multiple selection example">
             <template #demo>
-              <div class="flex flex-col max-w-lg gap-6">
+              <div class="flex max-w-lg flex-col gap-6">
                 <div class="w-full space-y-4">
                   <BaseFormAutocomplete
                     v-model="selectedPeople"
@@ -330,15 +330,14 @@ definePageMeta({
 
         <!-- Autocomplete properties -->
         <DocProps
-          id="autocomplete-props"
-          component="Autocomplete"
+          component="BaseFormAutocomplete"
           :properties="properties.props"
           :slots="properties.slots"
         />
       </template>
       <!-- Toc -->
       <template #toc>
-        <DocToc :anchors="toc" />
+        <DocToc />
       </template>
     </DocLayout>
   </div>

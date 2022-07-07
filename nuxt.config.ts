@@ -61,7 +61,6 @@ export default defineNuxtConfig({
         'vue3-carousel',
         'vue-prism-component',
         'prismjs',
-        'vue-scrollto',
         '@vueform/slider',
       ],
     },

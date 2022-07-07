@@ -32,11 +32,11 @@ definePageMeta({
       <!-- content -->
       <template #content>
         <!-- Switch thin -->
-        <DocSection id="switch-thin" title="Thin Switch" tag="1.0.0">
+        <DocSection title="Thin Switch" tag="1.0.0">
           <DocComponent label="Thin switch example">
             <template #demo>
               <div class="flex items-end gap-6">
-                <FocusLoop class="w-full flex flex-wrap gap-8">
+                <FocusLoop class="flex w-full flex-wrap gap-8">
                   <BaseFormSwitchThin
                     id="demo-thin-1"
                     :checked="true"
@@ -77,7 +77,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Switch thin -->
-        <DocSection id="switch-sublabel" title="Thin Sublabel" tag="1.0.0">
+        <DocSection title="Thin Sublabel" tag="1.0.0">
           <DocComponent label="Thin switch example">
             <template #demo>
               <div class="w-full">
@@ -99,17 +99,17 @@ definePageMeta({
         <!-- Thin switch properties -->
         <DocProps
           id="switch-thin-props"
-          component="Thin Switch"
+          component="BaseFormSwitchThin"
           :properties="thinProperties.props"
           :slots="thinProperties.slots"
         />
 
         <!-- Switch ball -->
-        <DocSection id="switch-ball" title="Ball Switch" tag="1.0.0">
+        <DocSection title="Ball Switch" tag="1.0.0">
           <DocComponent label="Thin switch example">
             <template #demo>
               <div class="flex items-end gap-6">
-                <FocusLoop class="w-full flex flex-wrap gap-8">
+                <FocusLoop class="flex w-full flex-wrap gap-8">
                   <BaseFormSwitchBall
                     id="demo-ball-1"
                     :checked="true"
@@ -150,7 +150,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Switch ball -->
-        <DocSection id="switch-ball-sublabel" title="Ball Sublabel" tag="1.0.0">
+        <DocSection title="Ball Sublabel" tag="1.0.0">
           <DocComponent label="Ball switch example">
             <template #demo>
               <div class="w-full">
@@ -171,15 +171,14 @@ definePageMeta({
 
         <!-- Ball switch properties -->
         <DocProps
-          id="switch-ball-props"
-          component="Ball Switch"
+          component="BaseFormSwitchBall"
           :properties="ballProperties.props"
           :slots="ballProperties.slots"
         />
       </template>
       <!-- Toc -->
       <template #toc>
-        <DocToc :anchors="toc" />
+        <DocToc />
       </template>
     </DocLayout>
   </div>

@@ -26,11 +26,11 @@ definePageMeta({
       <!-- content -->
       <template #content>
         <!-- Radio straight -->
-        <DocSection id="radio-default" title="Radio buttons" tag="1.0.0">
+        <DocSection title="Radio buttons" tag="1.0.0">
           <DocComponent label="Radio buttons example">
             <template #demo>
               <div class="flex items-end gap-6">
-                <div class="w-full max-w-sm flex items-end gap-6">
+                <div class="flex w-full max-w-sm items-end gap-6">
                   <BaseFormRadio
                     id="demo-options-1"
                     v-model="radioSelected"
@@ -70,11 +70,11 @@ definePageMeta({
         </DocSection>
 
         <!-- Radio colors -->
-        <DocSection id="radio-colors" title="Radio colors" tag="1.0.0">
+        <DocSection title="Radio colors" tag="1.0.0">
           <DocComponent label="Radio colors examples">
             <template #demo>
               <div class="flex items-end gap-6">
-                <div class="w-full max-w-sm flex items-end flex-wrap gap-6">
+                <div class="flex w-full max-w-sm flex-wrap items-end gap-6">
                   <BaseFormRadio
                     id="demo-colors-primary"
                     v-model="demoColors"
@@ -169,15 +169,14 @@ definePageMeta({
 
         <!-- Radio properties -->
         <DocProps
-          id="radio-props"
-          component="Radio"
+          component="BaseFormRadio"
           :properties="properties.props"
           :slots="properties.slots"
         />
       </template>
       <!-- Toc -->
       <template #toc>
-        <DocToc :anchors="toc" />
+        <DocToc />
       </template>
     </DocLayout>
   </div>

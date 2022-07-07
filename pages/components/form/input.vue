@@ -40,10 +40,10 @@ definePageMeta({
       <!-- content -->
       <template #content>
         <!-- Input straight -->
-        <DocSection id="input-straight" title="Input straight" tag="1.0.0">
+        <DocSection title="Input straight" tag="1.0.0">
           <DocComponent label="Straight input example">
             <template #demo>
-              <div class="flex flex-col md:flex-row md:items-end gap-6">
+              <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4">
                   <BaseFormInput
                     v-model="inputStraight"
@@ -63,10 +63,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Input rounded -->
-        <DocSection id="input-rounded" title="Input rounded" tag="1.0.0">
+        <DocSection title="Input rounded" tag="1.0.0">
           <DocComponent label="Rounded input example">
             <template #demo>
-              <div class="flex flex-col md:flex-row md:items-end gap-6">
+              <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4">
                   <BaseFormInput
                     v-model="inputRounded"
@@ -86,10 +86,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Input curved -->
-        <DocSection id="input-curved" title="Input curved" tag="1.0.0">
+        <DocSection title="Input curved" tag="1.0.0">
           <DocComponent label="Curved input example">
             <template #demo>
-              <div class="flex flex-col md:flex-row md:items-end gap-6">
+              <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4">
                   <BaseFormInput
                     v-model="inputCurved"
@@ -109,10 +109,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Input full -->
-        <DocSection id="input-full" title="Input full" tag="1.0.0">
+        <DocSection title="Input full" tag="1.0.0">
           <DocComponent label="Full input example">
             <template #demo>
-              <div class="flex flex-col md:flex-row md:items-end gap-6">
+              <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4">
                   <BaseFormInput
                     v-model="inputFull"
@@ -132,10 +132,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Input icon -->
-        <DocSection id="input-icon" title="Input icon" tag="1.0.0">
+        <DocSection title="Input icon" tag="1.0.0">
           <DocComponent label="Icon input example">
             <template #demo>
-              <div class="flex flex-col md:flex-row md:items-end gap-6">
+              <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4">
                   <BaseFormInput
                     shape="straight"
@@ -174,10 +174,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Input focus -->
-        <DocSection id="input-focus" title="Colored focus" tag="1.0.0">
+        <DocSection title="Colored focus" tag="1.0.0">
           <DocComponent label="Input primary focus example">
             <template #demo>
-              <div class="flex flex-col md:flex-row md:items-end gap-6">
+              <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4">
                   <BaseFormInput
                     v-model="inputRounded"
@@ -199,7 +199,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Input loading -->
-        <DocSection id="input-loading" title="Loading state" tag="1.0.0">
+        <DocSection title="Loading state" tag="1.0.0">
           <DocComponent label="Input loading state example">
             <template #demo>
               <div class="flex items-end gap-6">
@@ -221,7 +221,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Input disabled -->
-        <DocSection id="input-disabled" title="Disabled state" tag="1.0.0">
+        <DocSection title="Disabled state" tag="1.0.0">
           <DocComponent label="Input disabled state example">
             <template #demo>
               <div class="flex items-end gap-6">
@@ -243,7 +243,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Input invalid -->
-        <DocSection id="input-invalid" title="Colored invalid" tag="1.0.0">
+        <DocSection title="Colored invalid" tag="1.0.0">
           <DocComponent label="Input invalid state example">
             <template #demo>
               <div class="flex items-end gap-6">
@@ -266,15 +266,14 @@ definePageMeta({
 
         <!-- Input properties -->
         <DocProps
-          id="input-props"
-          component="Input"
+          component="BaseFormInput"
           :properties="properties.props"
           :slots="properties.slots"
         />
       </template>
       <!-- Toc -->
       <template #toc>
-        <DocToc :anchors="toc" />
+        <DocToc />
       </template>
     </DocLayout>
   </div>

@@ -17,7 +17,7 @@ const emit = defineEmits(['delete'])
 
 <template>
   <div
-    class="inline-flex items-center rounded-full group outline-transparent tairo-focus"
+    class="inline-flex items-center rounded-full group outline-transparent ninja-focus"
     :class="[
       !props.icon && !props.image && 'pl-4',
       props.small ? 'h-8' : 'h-10',

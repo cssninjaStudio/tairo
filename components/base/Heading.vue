@@ -37,6 +37,17 @@ export interface HeadingProps {
   size?: HeadingSize
   weight?: HeadingWeight
   lead?: HeadingLead
+  anchor?:
+    | boolean
+    | {
+        id?: string
+        label?: string
+        level?: number
+        prefix?: string
+        prefixClasses?: string
+        suffix?: string
+        suffixClasses?: string
+      }
 }
 
 const props = withDefaults(defineProps<HeadingProps>(), {
@@ -44,6 +55,14 @@ const props = withDefaults(defineProps<HeadingProps>(), {
   size: 'xl',
   weight: 'semibold',
   lead: 'normal',
+})
+
+const anchorProps = computed(() => {
+  const level = parseInt(props.as.replace('h', ''))
+
+  return props.anchor && typeof props.anchor === 'object'
+    ? { level, ...props.anchor }
+    : { level }
 })
 </script>
 
@@ -79,6 +98,9 @@ const props = withDefaults(defineProps<HeadingProps>(), {
       props.lead === 'loose' && 'leading-loose',
     ]"
   >
-    <slot></slot>
+    <BaseTocAnchor v-if="props.anchor" v-bind="anchorProps">
+      <slot></slot>
+    </BaseTocAnchor>
+    <slot v-else></slot>
   </component>
 </template>

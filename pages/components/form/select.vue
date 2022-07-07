@@ -37,7 +37,7 @@ definePageMeta({
       <!-- content -->
       <template #content>
         <!-- Select straight -->
-        <DocSection id="select-straight" title="Select straight" tag="1.0.0">
+        <DocSection title="Select straight" tag="1.0.0">
           <DocComponent label="Straight select example">
             <template #demo>
               <div class="flex items-end gap-6">
@@ -66,7 +66,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Select rounded -->
-        <DocSection id="select-rounded" title="Select rounded" tag="1.0.0">
+        <DocSection title="Select rounded" tag="1.0.0">
           <DocComponent label="Rounded select example">
             <template #demo>
               <div class="flex items-end gap-6">
@@ -95,7 +95,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Select curved -->
-        <DocSection id="select-curved" title="Select curved" tag="1.0.0">
+        <DocSection title="Select curved" tag="1.0.0">
           <DocComponent label="Curved select example">
             <template #demo>
               <div class="flex items-end gap-6">
@@ -124,7 +124,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Select full -->
-        <DocSection id="select-full" title="Select full" tag="1.0.0">
+        <DocSection title="Select full" tag="1.0.0">
           <DocComponent label="Full select example">
             <template #demo>
               <div class="flex items-end gap-6">
@@ -153,7 +153,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Select icon -->
-        <DocSection id="select-icon" title="Select icon" tag="1.0.0">
+        <DocSection title="Select icon" tag="1.0.0">
           <DocComponent label="Icon select example">
             <template #demo>
               <div class="flex items-end gap-6">
@@ -180,7 +180,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Select group -->
-        <DocSection id="select-group" title="Option group" tag="1.0.0">
+        <DocSection title="Option group" tag="1.0.0">
           <DocComponent label="Option group example">
             <template #demo>
               <div class="flex items-end gap-6">
@@ -207,7 +207,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Select loading -->
-        <DocSection id="select-loading" title="Select loading" tag="1.0.0">
+        <DocSection title="Select loading" tag="1.0.0">
           <DocComponent label="Loading state example">
             <template #demo>
               <div class="flex items-end gap-6">
@@ -230,7 +230,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Select invalid -->
-        <DocSection id="select-invalid" title="Select invalid" tag="1.0.0">
+        <DocSection title="Select invalid" tag="1.0.0">
           <DocComponent label="Invalid state example">
             <template #demo>
               <div class="flex items-end gap-6">
@@ -255,15 +255,14 @@ definePageMeta({
 
         <!-- Select properties -->
         <DocProps
-          id="select-props"
-          component="Select"
+          component="BaseFormSelect"
           :properties="properties.props"
           :slots="properties.slots"
         />
       </template>
       <!-- Toc -->
       <template #toc>
-        <DocToc :anchors="toc" />
+        <DocToc />
       </template>
     </DocLayout>
   </div>

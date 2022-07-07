@@ -115,7 +115,7 @@ const removeItem = function (name: string) {
     </div>
     <div class="group relative">
       <ComboboxInput
-        class="peer h-10 text-sm leading-5 font-sans w-full bg-white text-muted-600 border border-muted-300 focus:border-muted-300 focus:shadow-lg focus:shadow-muted-300/50 dark:focus:shadow-muted-800/50 placeholder:text-muted-300 dark:placeholder:text-muted-500 dark:bg-muted-900/75 dark:text-muted-200 dark:border-muted-700 dark:focus:border-muted-700 focus:ring-0 outline-transparent tairo-focus disabled:opacity-75 disabled:cursor-not-allowed transition-all duration-300"
+        class="peer h-10 text-sm leading-5 font-sans w-full bg-white text-muted-600 border border-muted-300 focus:border-muted-300 focus:shadow-lg focus:shadow-muted-300/50 dark:focus:shadow-muted-800/50 placeholder:text-muted-300 dark:placeholder:text-muted-500 dark:bg-muted-900/75 dark:text-muted-200 dark:border-muted-700 dark:focus:border-muted-700 focus:ring-0 outline-transparent ninja-focus disabled:opacity-75 disabled:cursor-not-allowed transition-all duration-300"
         :class="[
           props.icon ? 'pl-9 pr-4' : 'px-4',
           props.shape === 'rounded' && 'rounded',

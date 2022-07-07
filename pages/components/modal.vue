@@ -27,7 +27,7 @@ definePageMeta({
       <!-- content -->
       <template #content>
         <!-- Modal small -->
-        <DocSection id="modal-small" title="Small tier" tag="1.0.0">
+        <DocSection title="Small tier" tag="1.0.0">
           <DocComponent label="Small modals example">
             <template #demo>
               <PartialDocModalSmallTier />
@@ -39,7 +39,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Modal medium -->
-        <DocSection id="modal-medium" title="Medium tier" tag="1.0.0">
+        <DocSection title="Medium tier" tag="1.0.0">
           <DocComponent label="Medium modals example">
             <template #demo>
               <PartialDocModalMediumTier />
@@ -51,7 +51,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Modal large -->
-        <DocSection id="modal-large" title="Large tier" tag="1.0.0">
+        <DocSection title="Large tier" tag="1.0.0">
           <DocComponent label="Large modals example">
             <template #demo>
               <PartialDocModalLargeTier />
@@ -63,7 +63,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Modal footer -->
-        <DocSection id="modal-footer" title="Modal footer" tag="1.0.0">
+        <DocSection title="Modal footer" tag="1.0.0">
           <DocComponent label="Footer options example">
             <template #demo>
               <PartialDocModalFooter />
@@ -76,15 +76,14 @@ definePageMeta({
 
         <!-- Modal properties -->
         <DocProps
-          id="modal-props"
-          component="Modal"
+          component="BaseModal"
           :properties="properties.props"
           :slots="properties.slots"
         />
       </template>
       <!-- Toc -->
       <template #toc>
-        <DocToc :anchors="toc" />
+        <DocToc />
       </template>
     </DocLayout>
   </div>

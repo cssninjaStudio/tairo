@@ -23,7 +23,7 @@ export interface LazyNavigationSidebarItem {
   position?: 'start' | 'end'
 }
 
-export const useSidebar = createSharedComposable(() => {
+export const useSidebar = () => {
   const { openPanel } = usePanels()
 
   const sidebars: LazyNavigationSidebarItem[] = [
@@ -61,7 +61,7 @@ export const useSidebar = createSharedComposable(() => {
       icon: () =>
         h(BaseIcon, { name: 'ph:square-half-duotone', class: 'w-5 h-5' }),
       click: () => {
-        toggleLayoutModal()
+        // toggleLayoutModal()
       },
       position: 'end',
     },
@@ -84,20 +84,25 @@ export const useSidebar = createSharedComposable(() => {
   ]
 
   const route = useRoute()
-  // Layout Modal
-  const isLayoutModalOpen = ref(false)
-  function toggleLayoutModal() {
-    isLayoutModalOpen.value = !isLayoutModalOpen.value
-  }
+
   // Sidebar
   const sidebar = sidebars.find(
     ({ activePath }) => activePath && route.path.startsWith(activePath)
   )
-  // use shallowRef to avoid deeply reactive watch
-  const activeSidebar = shallowRef<LazyNavigationSidebarItem | null>(
-    sidebar || null
+  const activeSidebarName = useState<string>(
+    'sidebar-name',
+    () => sidebar?.name || ''
   )
-  const isSidebarOpened = ref(activeSidebar.value !== null)
+  const activeSidebar = computed(() => {
+    if (!activeSidebarName.value) {
+      return undefined
+    }
+    return sidebars.find(({ name }) => name === activeSidebarName.value)
+  })
+  const isSidebarOpened = useState(
+    'sidebar-is-open',
+    () => activeSidebar.value !== null
+  )
 
   function toggleSidebar() {
     isSidebarOpened.value = !isSidebarOpened.value
@@ -111,7 +116,7 @@ export const useSidebar = createSharedComposable(() => {
     if (activeSidebar.value?.name === sidebar.name) {
       toggleSidebar()
     } else {
-      activeSidebar.value = sidebar
+      activeSidebarName.value = sidebar.name
     }
   }
 
@@ -129,7 +134,5 @@ export const useSidebar = createSharedComposable(() => {
     isSidebarOpened,
     toggleSidebar,
     toggleActiveSidebar,
-    isLayoutModalOpen,
-    toggleLayoutModal,
   }
-})
+}

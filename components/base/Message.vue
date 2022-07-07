@@ -130,7 +130,7 @@ const closeButtonClasses = computed(() => {
 
 <template>
   <div
-    class="flex items-center p-1 min-h-[3rem] border tairo-focus"
+    class="flex items-center p-1 min-h-[3rem] border ninja-focus"
     :class="[shapeClass, ...messageClasses]"
   >
     <div

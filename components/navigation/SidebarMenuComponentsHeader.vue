@@ -65,7 +65,7 @@ onKeyStroke(['Escape'], () => {
     </form>
     <template v-else>
       <div class="flex items-center w-full pt-[8px] pb-[4px] px-6">
-        <h2
+        <div
           class="flex items-center font-heading text-lg font-semibold text-muted-700 dark:text-white capitalize"
         >
           <BaseButtonIcon
@@ -76,7 +76,7 @@ onKeyStroke(['Escape'], () => {
           </BaseButtonIcon>
 
           <span>Components</span>
-        </h2>
+        </div>
         <button
           type="button"
           class="flex xl:hidden items-center justify-center h-10 w-10 rounded-full ml-auto text-muted-400 hover:text-muted-600 hover:bg-muted-100 transition-colors duration-300"

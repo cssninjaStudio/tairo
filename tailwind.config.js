@@ -44,7 +44,7 @@ module.exports = {
       fontFamily: {
         sans: ['Roboto Flex', 'sans-serif'],
         heading: ['Inter', 'sans-serif'],
-        sub: ['Karla', 'sans-serif'],
+        alt: ['Karla', 'sans-serif'],
       },
     },
   },
@@ -58,11 +58,11 @@ module.exports = {
 
     plugin(({ addComponents }) => {
       addComponents({
-        '.tairo-focus': {
+        '.ninja-focus': {
           '@apply outline-1 outline-dashed outline-offset-2': {},
           '@apply outline-transparent': {},
           '&:focus-within': {
-            '@apply outline-gray-300 dark:outline-gray-600': {},
+            '@apply outline-muted-300 dark:outline-muted-600': {},
             '@apply outline-dashed ring-0': {},
           },
           '&:focus-visible': {

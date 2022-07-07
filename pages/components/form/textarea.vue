@@ -64,7 +64,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Textarea rounded -->
-        <DocSection id="textarea-rounded" title="Textarea rounded" tag="1.0.0">
+        <DocSection title="Textarea rounded" tag="1.0.0">
           <DocComponent label="Rounded textarea example">
             <template #demo>
               <div class="flex items-end gap-6">
@@ -87,7 +87,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Textarea curved -->
-        <DocSection id="textarea-curved" title="Textarea curved" tag="1.0.0">
+        <DocSection title="Textarea curved" tag="1.0.0">
           <DocComponent label="Curved textarea example">
             <template #demo>
               <div class="flex items-end gap-6">
@@ -110,7 +110,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Textarea focus -->
-        <DocSection id="textarea-focus" title="Textarea focus" tag="1.0.0">
+        <DocSection title="Textarea focus" tag="1.0.0">
           <DocComponent label="Primary focus variation">
             <template #demo>
               <div class="flex items-end gap-6">
@@ -131,7 +131,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Textarea validation -->
-        <DocSection id="textarea-invalid" title="Textarea invalid" tag="1.0.0">
+        <DocSection title="Textarea invalid" tag="1.0.0">
           <DocComponent label="Invalid validation variation">
             <template #demo>
               <div class="flex items-end gap-6">
@@ -152,7 +152,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Textarea loading -->
-        <DocSection id="textarea-loading" title="Textarea loading" tag="1.0.0">
+        <DocSection title="Textarea loading" tag="1.0.0">
           <DocComponent label="Loading state example">
             <template #demo>
               <div class="flex items-end gap-6">
@@ -198,7 +198,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Textarea addon -->
-        <DocSection id="textarea-addon" title="Textarea addon" tag="1.0.0">
+        <DocSection title="Textarea addon" tag="1.0.0">
           <DocComponent label="Textarea with custom addon">
             <template #demo>
               <div class="flex items-end gap-6">
@@ -241,8 +241,7 @@ definePageMeta({
 
         <!-- Textarea properties -->
         <DocProps
-          id="textarea-props"
-          component="Textarea"
+          component="BaseFormTextarea"
           :properties="properties.props"
           :slots="properties.slots"
         />
@@ -250,7 +249,7 @@ definePageMeta({
 
       <!-- Toc -->
       <template #toc>
-        <DocToc :anchors="toc" />
+        <DocToc />
       </template>
     </DocLayout>
   </div>

@@ -21,7 +21,7 @@ definePageMeta({
       <!-- content -->
       <template #content>
         <!-- Text placeload -->
-        <DocSection id="placeload-text" title="Text placeload" tag="1.0.0">
+        <DocSection title="Text placeload" tag="1.0.0">
           <DocComponent label="Text placeload example">
             <template #demo>
               <div class="max-w-sm space-y-2">
@@ -36,7 +36,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Shape placeload -->
-        <DocSection id="placeload-shape" title="Shape placeload" tag="1.0.0">
+        <DocSection title="Shape placeload" tag="1.0.0">
           <DocComponent label="Shape placeload example">
             <template #demo>
               <div class="flex items-end flex-wrap gap-2">
@@ -52,7 +52,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Composition placeload -->
-        <DocSection id="placeload-composition" title="Composition" tag="1.0.0">
+        <DocSection title="Composition" tag="1.0.0">
           <DocComponent label="Custom placeload example">
             <template #demo>
               <div class="max-w-sm">
@@ -75,7 +75,7 @@ definePageMeta({
       </template>
       <!-- Toc -->
       <template #toc>
-        <DocToc :anchors="toc" />
+        <DocToc />
       </template>
     </DocLayout>
   </div>

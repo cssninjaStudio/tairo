@@ -26,8 +26,7 @@ definePageMeta({
       <template #content>
         <!-- Custom section -->
         <div
-          id="tairo-overview"
-          class="grid md:grid-cols-2 gap-4 xl:gap-8 pb-10 mb-10 border-b border-gray-200 dark:border-muted-800"
+          class="mb-10 grid gap-4 border-b border-gray-200 pb-10 dark:border-muted-800 md:grid-cols-2 xl:gap-8"
         >
           <div>
             <BaseCard shape="rounded" class="p-8">
@@ -35,13 +34,15 @@ definePageMeta({
                 as="h2"
                 size="2xl"
                 weight="bold"
+                :anchor="{ prefix: '' }"
                 class="text-muted-800 dark:text-white"
               >
-                Tairo Overview
+                <strong>Tairo</strong>
+                Overview
               </BaseHeading>
               <BaseParagraph
                 size="sm"
-                class="text-muted-500 dark:text-muted-400 mb-4"
+                class="mb-4 text-muted-500 dark:text-muted-400"
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Erat
                 enim Polemonis.
@@ -54,12 +55,12 @@ definePageMeta({
 
               <NuxtLink
                 to="https://docs.cssninja.io/tairo"
-                class="group inline-flex items-center font-sans font-medium text-sm text-primary-500 mt-7 hover:opacity-90 transition-opacity"
+                class="group mt-7 inline-flex items-center font-sans text-sm font-medium text-primary-500 transition-opacity hover:opacity-90"
               >
                 <span class="mr-1">Read the documentation</span>
                 <BaseIcon
                   name="lucide:arrow-right"
-                  class="w-4 h-4 group-hover:translate-x-2 transition-transform duration-300"
+                  class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-2"
                 />
               </NuxtLink>
             </BaseCard>
@@ -68,7 +69,7 @@ definePageMeta({
             <BaseCard shape="rounded" class="p-8 text-center">
               <BaseIcon
                 name="logos:nuxt-icon"
-                class="w-10 h-10 block mx-auto mb-2"
+                class="mx-auto mb-2 block h-10 w-10"
               />
               <BaseHeading
                 as="h4"
@@ -82,7 +83,7 @@ definePageMeta({
             <BaseCard shape="rounded" class="p-8 text-center">
               <BaseIcon
                 name="vscode-icons:folder-type-typescript"
-                class="w-10 h-10 block mx-auto mb-2"
+                class="mx-auto mb-2 block h-10 w-10"
               />
               <BaseHeading
                 as="h4"
@@ -96,7 +97,7 @@ definePageMeta({
             <BaseCard shape="rounded" class="p-8 text-center">
               <BaseIcon
                 name="logos:tailwindcss-icon"
-                class="w-10 h-10 block mx-auto mb-2"
+                class="mx-auto mb-2 block h-10 w-10"
               />
               <BaseHeading
                 as="h4"
@@ -110,7 +111,7 @@ definePageMeta({
             <BaseCard shape="rounded" class="p-8 text-center">
               <BaseIcon
                 name="logos:unocss"
-                class="w-10 h-10 block mx-auto scale-75 dark:invert mb-2"
+                class="mx-auto mb-2 block h-10 w-10 scale-75 dark:invert"
               />
               <BaseHeading
                 as="h4"
@@ -125,24 +126,22 @@ definePageMeta({
         </div>
 
         <!-- Custom section -->
-        <div
-          id="tairo-features"
-          class="pb-10 mb-10 border-b border-gray-200 dark:border-muted-800"
-        >
+        <div class="mb-10 border-b border-gray-200 pb-10 dark:border-muted-800">
           <BaseHeading
             as="h2"
             size="xl"
+            anchor
             weight="medium"
-            class="text-muted-800 dark:text-white mb-5"
+            class="mb-5 text-muted-800 dark:text-white"
           >
             Features
           </BaseHeading>
 
-          <div class="grid md:grid-cols-3 gap-4">
+          <div class="grid gap-4 md:grid-cols-3">
             <!-- Feature -->
             <BaseCard shape="curved" class="flex items-center p-3">
               <BaseIconBox size="md" class="bg-success-100 text-success-500">
-                <BaseIcon name="simple-icons:nuxtdotjs" class="w-6 h-6" />
+                <BaseIcon name="simple-icons:nuxtdotjs" class="h-6 w-6" />
               </BaseIconBox>
               <div class="ml-3">
                 <BaseHeading
@@ -163,7 +162,7 @@ definePageMeta({
               <BaseIconBox size="md" class="bg-yellow-100 text-yellow-500">
                 <BaseIcon
                   name="teenyicons:typescript-outline"
-                  class="w-6 h-6"
+                  class="h-6 w-6"
                 />
               </BaseIconBox>
               <div class="ml-3">
@@ -183,7 +182,7 @@ definePageMeta({
             <!-- Feature -->
             <BaseCard shape="curved" class="flex items-center p-3">
               <BaseIconBox size="md" class="bg-primary-100 text-primary-500">
-                <BaseIcon name="simple-icons:vite" class="w-6 h-6" />
+                <BaseIcon name="simple-icons:vite" class="h-6 w-6" />
               </BaseIconBox>
               <div class="ml-3">
                 <BaseHeading
@@ -202,7 +201,7 @@ definePageMeta({
             <!-- Feature -->
             <BaseCard shape="curved" class="flex items-center p-3">
               <BaseIconBox size="md" class="bg-sky-100 text-sky-500">
-                <BaseIcon name="simple-icons:tailwindcss" class="w-6 h-6" />
+                <BaseIcon name="simple-icons:tailwindcss" class="h-6 w-6" />
               </BaseIconBox>
               <div class="ml-3">
                 <BaseHeading
@@ -221,7 +220,7 @@ definePageMeta({
             <!-- Feature -->
             <BaseCard shape="curved" class="flex items-center p-3">
               <BaseIconBox size="md" class="bg-pink-100 text-pink-500">
-                <BaseIcon name="ph:storefront-duotone" class="w-6 h-6" />
+                <BaseIcon name="ph:storefront-duotone" class="h-6 w-6" />
               </BaseIconBox>
               <div class="ml-3">
                 <BaseHeading
@@ -240,7 +239,7 @@ definePageMeta({
             <!-- Feature -->
             <BaseCard shape="curved" class="flex items-center p-3">
               <BaseIconBox size="md" class="bg-lime-100 text-lime-500">
-                <BaseIcon name="simple-icons:eslint" class="w-6 h-6" />
+                <BaseIcon name="simple-icons:eslint" class="h-6 w-6" />
               </BaseIconBox>
               <div class="ml-3">
                 <BaseHeading
@@ -260,10 +259,10 @@ definePageMeta({
         </div>
 
         <!-- Primary color -->
-        <DocSection id="primary-color" title="Primary color" tag="1.0.0">
+        <DocSection title="Primary color" tag="1.0.0">
           <DocComponent label="Primary color variations">
             <template #demo>
-              <div class="flex items-end flex-wrap gap-2">
+              <div class="flex flex-wrap items-end gap-2">
                 <div
                   class="h-8 w-8 rounded-lg bg-primary-50"
                   tooltip="bg-primary-50"
@@ -313,10 +312,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Info color -->
-        <DocSection id="info-color" title="Info color" tag="1.0.0">
+        <DocSection title="Info color" tag="1.0.0">
           <DocComponent label="Info color variations">
             <template #demo>
-              <div class="flex items-end flex-wrap gap-2">
+              <div class="flex flex-wrap items-end gap-2">
                 <div
                   class="h-8 w-8 rounded-lg bg-info-50"
                   tooltip="bg-info-50"
@@ -366,10 +365,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Success color -->
-        <DocSection id="success-color" title="Success color" tag="1.0.0">
+        <DocSection title="Success color" tag="1.0.0">
           <DocComponent label="Success color variations">
             <template #demo>
-              <div class="flex items-end flex-wrap gap-2">
+              <div class="flex flex-wrap items-end gap-2">
                 <div
                   class="h-8 w-8 rounded-lg bg-success-50"
                   tooltip="bg-success-50"
@@ -419,10 +418,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Warning color -->
-        <DocSection id="warning-color" title="Warning color" tag="1.0.0">
+        <DocSection title="Warning color" tag="1.0.0">
           <DocComponent label="Success color variations">
             <template #demo>
-              <div class="flex items-end flex-wrap gap-2">
+              <div class="flex flex-wrap items-end gap-2">
                 <div
                   class="h-8 w-8 rounded-lg bg-warning-50"
                   tooltip="bg-warning-50"
@@ -472,10 +471,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Danger color -->
-        <DocSection id="danger-color" title="Danger color" tag="1.0.0">
+        <DocSection title="Danger color" tag="1.0.0">
           <DocComponent label="Success color variations">
             <template #demo>
-              <div class="flex items-end flex-wrap gap-2">
+              <div class="flex flex-wrap items-end gap-2">
                 <div
                   class="h-8 w-8 rounded-lg bg-danger-50"
                   tooltip="bg-danger-50"
@@ -525,10 +524,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Slate color -->
-        <DocSection id="muted-color" title="Slate color" tag="1.0.0">
+        <DocSection title="Muted color" tag="1.0.0">
           <DocComponent label="Success color variations">
             <template #demo>
-              <div class="flex items-end flex-wrap gap-2">
+              <div class="flex flex-wrap items-end gap-2">
                 <div
                   class="h-8 w-8 rounded-lg bg-muted-50"
                   tooltip="bg-muted-50"
@@ -576,63 +575,10 @@ definePageMeta({
             </template>
           </DocComponent>
         </DocSection>
-
-        <!-- Gray color -->
-        <DocSection id="gray-color" title="Gray color" tag="1.0.0">
-          <DocComponent label="Success color variations">
-            <template #demo>
-              <div class="flex items-end flex-wrap gap-2">
-                <div
-                  class="h-8 w-8 rounded-lg bg-gray-50"
-                  tooltip="bg-gray-50"
-                ></div>
-                <div
-                  class="h-8 w-8 rounded-lg bg-gray-100"
-                  tooltip="bg-gray-100"
-                ></div>
-                <div
-                  class="h-8 w-8 rounded-lg bg-gray-200"
-                  tooltip="bg-gray-200"
-                ></div>
-                <div
-                  class="h-8 w-8 rounded-lg bg-gray-300"
-                  tooltip="bg-gray-300"
-                ></div>
-                <div
-                  class="h-8 w-8 rounded-lg bg-gray-400"
-                  tooltip="bg-gray-400"
-                ></div>
-                <div
-                  class="h-8 w-8 rounded-lg bg-gray-500"
-                  tooltip="bg-gray-500"
-                ></div>
-                <div
-                  class="h-8 w-8 rounded-lg bg-gray-600"
-                  tooltip="bg-gray-600"
-                ></div>
-                <div
-                  class="h-8 w-8 rounded-lg bg-gray-700"
-                  tooltip="bg-gray-700"
-                ></div>
-                <div
-                  class="h-8 w-8 rounded-lg bg-gray-800"
-                  tooltip="bg-gray-800"
-                ></div>
-                <div
-                  class="h-8 w-8 rounded-lg bg-gray-900"
-                  tooltip="bg-gray-900"
-                ></div>
-              </div>
-            </template>
-            <template #code>
-              <DocCode language="html" :code="grayColor" />
-            </template>
-          </DocComponent>
-        </DocSection>
       </template>
       <!-- Toc -->
       <template #toc>
-        <DocToc :anchors="toc" />
+        <DocToc />
       </template>
     </DocLayout>
   </div>

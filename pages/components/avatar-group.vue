@@ -28,10 +28,10 @@ definePageMeta({
       <!-- content -->
       <template #content>
         <!-- Avatar group -->
-        <DocSection id="avatar-group-xs" title="Avatar group" tag="1.0.0">
+        <DocSection title="Avatar group" tag="1.0.0">
           <DocComponent label="Xs avatar group">
             <template #demo>
-              <div class="flex items-end flex-wrap gap-4">
+              <div class="flex flex-wrap items-end gap-4">
                 <BaseAvatarGroup size="xs" :avatars="people" />
               </div>
             </template>
@@ -42,10 +42,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Avatar group -->
-        <DocSection id="avatar-group-sm" title="Avatar group" tag="1.0.0">
+        <DocSection title="Avatar group" tag="1.0.0">
           <DocComponent label="Sm avatar group">
             <template #demo>
-              <div class="flex items-end flex-wrap gap-4">
+              <div class="flex flex-wrap items-end gap-4">
                 <BaseAvatarGroup :avatars="people" />
               </div>
             </template>
@@ -56,10 +56,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Avatar group -->
-        <DocSection id="avatar-group-md" title="Avatar group" tag="1.0.0">
+        <DocSection title="Avatar group" tag="1.0.0">
           <DocComponent label="Md avatar group">
             <template #demo>
-              <div class="flex items-end flex-wrap gap-4">
+              <div class="flex flex-wrap items-end gap-4">
                 <BaseAvatarGroup size="md" :avatars="people" />
               </div>
             </template>
@@ -70,10 +70,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Avatar group -->
-        <DocSection id="avatar-group-lg" title="Avatar group" tag="1.0.0">
+        <DocSection title="Avatar group" tag="1.0.0">
           <DocComponent label="Lg avatar group">
             <template #demo>
-              <div class="flex items-end flex-wrap gap-4">
+              <div class="flex flex-wrap items-end gap-4">
                 <BaseAvatarGroup size="lg" :avatars="people" />
               </div>
             </template>
@@ -85,15 +85,14 @@ definePageMeta({
 
         <!-- Avatar group toc -->
         <DocProps
-          id="avatar-group-props"
-          component="Avatar group"
+          component="BaseAvatarGroup"
           :properties="properties.props"
           :slots="properties.slots"
         />
       </template>
       <!-- Toc -->
       <template #toc>
-        <DocToc :anchors="toc" />
+        <DocToc />
       </template>
     </DocLayout>
   </div>

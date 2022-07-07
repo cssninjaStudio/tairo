@@ -51,7 +51,7 @@ const breadcrumb = [
       <!-- content -->
       <template #content>
         <!-- CK editor -->
-        <DocSection id="editor-base" title="CK Editor" tag="1.0.0">
+        <DocSection title="CK Editor" tag="1.0.0">
           <DocComponent label="CK Editor example">
             <template #demo>
               <div class="flex flex-col">

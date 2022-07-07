@@ -17,7 +17,7 @@ definePageMeta({
   title: 'Accordions',
   documentation: {
     category: 'Interaction',
-    components: ['BaseAccordion'],
+    components: ['BaseAccordion', 'BaseAccordionItem'],
   },
 })
 </script>
@@ -32,7 +32,7 @@ definePageMeta({
       <!-- content -->
       <template #content>
         <!-- Accordion inclusive -->
-        <DocSection id="accordion-inclusive" title="Inclusive type" tag="1.0.0">
+        <DocSection title="Inclusive type" tag="1.0.0">
           <DocComponent label="Inclusive accordion example">
             <template #demo>
               <div class="flex flex-col gap-4">
@@ -46,7 +46,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Accordion exclusive -->
-        <DocSection id="accordion-exclusive" title="Exclusive type" tag="1.0.0">
+        <DocSection title="Exclusive type" tag="1.0.0">
           <DocComponent label="Exclusive accordion example">
             <template #demo>
               <div class="flex flex-col gap-4">
@@ -60,10 +60,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Accordion shapes -->
-        <DocSection id="accordion-shapes" title="Accordion shapes" tag="1.0.0">
+        <DocSection title="Accordion shapes" tag="1.0.0">
           <DocComponent label="Accordion shapes examples">
             <template #demo>
-              <div class="grid md:grid-cols-3 gap-4">
+              <div class="grid gap-4 md:grid-cols-3">
                 <BaseAccordion :items="accordion" exclusive shape="straight" />
                 <BaseAccordion :items="accordion" shape="rounded" />
                 <BaseAccordion :items="accordion" exclusive shape="curved" />
@@ -76,7 +76,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Accordion chevron -->
-        <DocSection id="accordion-chevron" title="Chevron action" tag="1.0.0">
+        <DocSection title="Chevron action" tag="1.0.0">
           <DocComponent label="Chevron accordion example">
             <template #demo>
               <div class="flex flex-col gap-4">
@@ -90,7 +90,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Accordion plus -->
-        <DocSection id="accordion-plus" title="Plus action" tag="1.0.0">
+        <DocSection title="Plus action" tag="1.0.0">
           <DocComponent label="Plus accordion example">
             <template #demo>
               <div class="flex flex-col gap-4">
@@ -105,23 +105,21 @@ definePageMeta({
 
         <!-- Accordion props -->
         <DocProps
-          id="accordion-props"
-          component="Accordion"
+          component="BaseAccordion"
           :properties="properties.props"
           :slots="properties.slots"
         />
 
         <!-- Accordion item props -->
         <DocProps
-          id="accordion-item-props"
-          component="Accordion item"
+          component="BaseAccordionItem"
           :properties="itemProperties.props"
           :slots="itemProperties.slots"
         />
       </template>
       <!-- Toc -->
       <template #toc>
-        <DocToc :anchors="toc" />
+        <DocToc />
       </template>
     </DocLayout>
   </div>

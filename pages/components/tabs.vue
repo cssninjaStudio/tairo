@@ -32,7 +32,7 @@ definePageMeta({
       <!-- content -->
       <template #content>
         <!-- Tabs -->
-        <DocSection id="tabs-start" title="Tabs" tag="1.0.0">
+        <DocSection title="Tabs" tag="1.0.0">
           <DocComponent label="Left aligned example">
             <template #demo>
               <div class="w-full max-w-sm">
@@ -73,7 +73,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Tabs -->
-        <DocSection id="tabs-center" title="Tabs" tag="1.0.0">
+        <DocSection title="Tabs" tag="1.0.0">
           <DocComponent label="Center aligned example">
             <template #demo>
               <div class="w-full max-w-sm">
@@ -115,7 +115,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Tabs -->
-        <DocSection id="tabs-end" title="Tabs" tag="1.0.0">
+        <DocSection title="Tabs" tag="1.0.0">
           <DocComponent label="Right aligned example">
             <template #demo>
               <div class="w-full max-w-sm">
@@ -167,7 +167,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Tabs -->
-        <DocSection id="tabs-icons" title="Tabs" tag="1.0.0">
+        <DocSection title="Tabs" tag="1.0.0">
           <DocComponent label="Tabs with icons example">
             <template #demo>
               <div class="w-full max-w-sm">
@@ -230,7 +230,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Tabs -->
-        <DocSection id="tabs-boxed" title="Tabs" tag="1.0.0">
+        <DocSection title="Tabs" tag="1.0.0">
           <DocComponent label="Tabs boxed example">
             <template #demo>
               <div class="w-full max-w-sm">
@@ -291,7 +291,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Tabs -->
-        <DocSection id="tabs-icons-boxed" title="Tabs" tag="1.0.0">
+        <DocSection title="Tabs" tag="1.0.0">
           <DocComponent label="Tabs with icons example">
             <template #demo>
               <div class="w-full max-w-sm">
@@ -356,23 +356,14 @@ definePageMeta({
 
         <!-- Tabs props -->
         <DocProps
-          id="tabs-props"
-          component="Tabs"
+          component="BaseTabs"
           :properties="properties.props"
           :slots="properties.slots"
-        />
-
-        <!-- Tabs item props -->
-        <DocProps
-          id="tabs-item-props"
-          component="Tabs item"
-          :properties="itemProperties.props"
-          :slots="itemProperties.slots"
         />
       </template>
       <!-- Toc -->
       <template #toc>
-        <DocToc :anchors="toc" />
+        <DocToc />
       </template>
     </DocLayout>
   </div>
