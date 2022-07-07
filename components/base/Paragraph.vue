@@ -48,7 +48,7 @@ const props = withDefaults(defineProps<ParagraphProps>(), {
 <template>
   <component
     :is="props.as"
-    class="font-sub"
+    class="font-alt"
     :class="[
       props.size === 'xs' && 'text-xs',
       props.size === 'sm' && 'text-sm',

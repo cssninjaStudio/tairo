@@ -11,7 +11,7 @@ export const x2Rounded = `
     <template #tab="{ activeValue }">
       <p
         v-if="activeValue === 'team'"
-        class="font-text text-sm text-gray-500 dark:text-gray-400"
+        class="font-sans text-sm text-gray-500 dark:text-gray-400"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Quid iudicant sensus? Primum quid tu dicis breve? Etiam
@@ -19,7 +19,7 @@ export const x2Rounded = `
       </p>
       <p
         v-else-if="activeValue === 'projects'"
-        class="font-text text-sm text-gray-500 dark:text-gray-400"
+        class="font-sans text-sm text-gray-500 dark:text-gray-400"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Quid iudicant sensus? Primum quid tu dicis breve? Etiam
@@ -29,7 +29,7 @@ export const x2Rounded = `
       </p>
       <p
         v-else-if="activeValue === 'tasks'"
-        class="font-text text-sm text-gray-500 dark:text-gray-400"
+        class="font-sans text-sm text-gray-500 dark:text-gray-400"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Quid iudicant sensus? Primum quid tu dicis breve? Etiam
@@ -55,7 +55,7 @@ export const x2Full = `
     <template #tab="{ activeValue }">
       <p
         v-if="activeValue === 'team'"
-        class="font-text text-sm text-gray-500 dark:text-gray-400"
+        class="font-sans text-sm text-gray-500 dark:text-gray-400"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Quid iudicant sensus? Primum quid tu dicis breve? Etiam
@@ -63,7 +63,7 @@ export const x2Full = `
       </p>
       <p
         v-else-if="activeValue === 'projects'"
-        class="font-text text-sm text-gray-500 dark:text-gray-400"
+        class="font-sans text-sm text-gray-500 dark:text-gray-400"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Quid iudicant sensus? Primum quid tu dicis breve? Etiam
@@ -73,7 +73,7 @@ export const x2Full = `
       </p>
       <p
         v-else-if="activeValue === 'tasks'"
-        class="font-text text-sm text-gray-500 dark:text-gray-400"
+        class="font-sans text-sm text-gray-500 dark:text-gray-400"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Quid iudicant sensus? Primum quid tu dicis breve? Etiam
@@ -99,7 +99,7 @@ export const x3Rounded = `
     <template #tab="{ activeValue }">
       <p
         v-if="activeValue === 'team'"
-        class="font-text text-sm text-gray-500 dark:text-gray-400"
+        class="font-sans text-sm text-gray-500 dark:text-gray-400"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Quid iudicant sensus? Primum quid tu dicis breve? Etiam
@@ -107,7 +107,7 @@ export const x3Rounded = `
       </p>
       <p
         v-else-if="activeValue === 'projects'"
-        class="font-text text-sm text-gray-500 dark:text-gray-400"
+        class="font-sans text-sm text-gray-500 dark:text-gray-400"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Quid iudicant sensus? Primum quid tu dicis breve? Etiam
@@ -117,7 +117,7 @@ export const x3Rounded = `
       </p>
       <p
         v-else-if="activeValue === 'tasks'"
-        class="font-text text-sm text-gray-500 dark:text-gray-400"
+        class="font-sans text-sm text-gray-500 dark:text-gray-400"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Quid iudicant sensus? Primum quid tu dicis breve? Etiam
@@ -144,7 +144,7 @@ export const x3Full = `
     <template #tab="{ activeValue }">
       <p
         v-if="activeValue === 'team'"
-        class="font-text text-sm text-gray-500 dark:text-gray-400"
+        class="font-sans text-sm text-gray-500 dark:text-gray-400"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Quid iudicant sensus? Primum quid tu dicis breve? Etiam
@@ -152,7 +152,7 @@ export const x3Full = `
       </p>
       <p
         v-else-if="activeValue === 'projects'"
-        class="font-text text-sm text-gray-500 dark:text-gray-400"
+        class="font-sans text-sm text-gray-500 dark:text-gray-400"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Quid iudicant sensus? Primum quid tu dicis breve? Etiam
@@ -162,7 +162,7 @@ export const x3Full = `
       </p>
       <p
         v-else-if="activeValue === 'tasks'"
-        class="font-text text-sm text-gray-500 dark:text-gray-400"
+        class="font-sans text-sm text-gray-500 dark:text-gray-400"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Quid iudicant sensus? Primum quid tu dicis breve? Etiam

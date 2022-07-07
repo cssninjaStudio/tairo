@@ -4,17 +4,17 @@ const { closePanel } = usePanels()
 
 <template>
   <div
-    class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700"
+    class="bg-white dark:bg-muted-800 border border-muted-200 dark:border-muted-700"
   >
     <div class="flex items-center justify-between h-16 w-full px-10">
       <h2
-        class="font-main text-lg font-semibold text-slate-700 dark:text-white"
+        class="font-heading text-lg font-semibold text-muted-700 dark:text-white"
       >
         Select language
       </h2>
       <button
         type="button"
-        class="flex items-center justify-center h-10 w-10 rounded-full text-slate-400 hover:text-slate-600 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors duration-300"
+        class="flex items-center justify-center h-10 w-10 rounded-full text-muted-400 hover:text-muted-600 dark:hover:text-white hover:bg-muted-100 dark:hover:bg-muted-700 transition-colors duration-300"
         @click="closePanel"
       >
         <BaseIcon name="feather:chevron-right" class="w-6 h-6" />
@@ -33,7 +33,7 @@ const { closePanel } = usePanels()
               checked
             />
             <div
-              class="w-14 h-14 flex items-center justify-center border-2 border-slate-200 dark:border-slate-600 peer-checked:border-primary-500 shadow-lg rounded-full transition-all duration-300"
+              class="w-14 h-14 flex items-center justify-center border-2 border-muted-200 dark:border-muted-600 peer-checked:border-primary-500 shadow-lg rounded-full transition-all duration-300"
             >
               <img
                 class="h-10 w-10 rounded-full"
@@ -42,7 +42,7 @@ const { closePanel } = usePanels()
               />
             </div>
             <div
-              class="absolute -top-1 -right-1 h-7 w-7 rounded-full hidden peer-checked:flex items-center justify-center bg-primary-500 text-white border-4 border-white dark:border-slate-800"
+              class="absolute -top-1 -right-1 h-7 w-7 rounded-full hidden peer-checked:flex items-center justify-center bg-primary-500 text-white border-4 border-white dark:border-muted-800"
             >
               <BaseIcon name="feather:check" class="w-3 h-3" />
             </div>
@@ -57,7 +57,7 @@ const { closePanel } = usePanels()
               class="peer absolute top-0 left-0 h-full w-full opacity-0 cursor-pointer z-20"
             />
             <div
-              class="w-14 h-14 flex items-center justify-center border-2 border-slate-200 dark:border-slate-600 peer-checked:border-primary-500 shadow-lg rounded-full transition-all duration-300"
+              class="w-14 h-14 flex items-center justify-center border-2 border-muted-200 dark:border-muted-600 peer-checked:border-primary-500 shadow-lg rounded-full transition-all duration-300"
             >
               <img
                 class="h-10 w-10 rounded-full"
@@ -66,7 +66,7 @@ const { closePanel } = usePanels()
               />
             </div>
             <div
-              class="absolute -top-1 -right-1 h-7 w-7 rounded-full hidden peer-checked:flex items-center justify-center bg-primary-500 text-white border-4 border-white dark:border-slate-800"
+              class="absolute -top-1 -right-1 h-7 w-7 rounded-full hidden peer-checked:flex items-center justify-center bg-primary-500 text-white border-4 border-white dark:border-muted-800"
             >
               <BaseIcon name="feather:check" class="w-3 h-3" />
             </div>
@@ -81,7 +81,7 @@ const { closePanel } = usePanels()
               class="peer absolute top-0 left-0 h-full w-full opacity-0 cursor-pointer z-20"
             />
             <div
-              class="w-14 h-14 flex items-center justify-center border-2 border-slate-200 dark:border-slate-600 peer-checked:border-primary-500 shadow-lg rounded-full transition-all duration-300"
+              class="w-14 h-14 flex items-center justify-center border-2 border-muted-200 dark:border-muted-600 peer-checked:border-primary-500 shadow-lg rounded-full transition-all duration-300"
             >
               <img
                 class="h-10 w-10 rounded-full"
@@ -90,7 +90,7 @@ const { closePanel } = usePanels()
               />
             </div>
             <div
-              class="absolute -top-1 -right-1 h-7 w-7 rounded-full hidden peer-checked:flex items-center justify-center bg-primary-500 text-white border-4 border-white dark:border-slate-800"
+              class="absolute -top-1 -right-1 h-7 w-7 rounded-full hidden peer-checked:flex items-center justify-center bg-primary-500 text-white border-4 border-white dark:border-muted-800"
             >
               <BaseIcon name="feather:check" class="w-3 h-3" />
             </div>
@@ -105,7 +105,7 @@ const { closePanel } = usePanels()
               class="peer absolute top-0 left-0 h-full w-full opacity-0 cursor-pointer z-20"
             />
             <div
-              class="w-14 h-14 flex items-center justify-center border-2 border-slate-200 dark:border-slate-600 peer-checked:border-primary-500 shadow-lg rounded-full transition-all duration-300"
+              class="w-14 h-14 flex items-center justify-center border-2 border-muted-200 dark:border-muted-600 peer-checked:border-primary-500 shadow-lg rounded-full transition-all duration-300"
             >
               <img
                 class="h-10 w-10 rounded-full"
@@ -114,7 +114,7 @@ const { closePanel } = usePanels()
               />
             </div>
             <div
-              class="absolute -top-1 -right-1 h-7 w-7 rounded-full hidden peer-checked:flex items-center justify-center bg-primary-500 text-white border-4 border-white dark:border-slate-800"
+              class="absolute -top-1 -right-1 h-7 w-7 rounded-full hidden peer-checked:flex items-center justify-center bg-primary-500 text-white border-4 border-white dark:border-muted-800"
             >
               <BaseIcon name="feather:check" class="w-3 h-3" />
             </div>
@@ -129,7 +129,7 @@ const { closePanel } = usePanels()
               class="peer absolute top-0 left-0 h-full w-full opacity-0 cursor-pointer z-20"
             />
             <div
-              class="w-14 h-14 flex items-center justify-center border-2 border-slate-200 dark:border-slate-600 peer-checked:border-primary-500 shadow-lg rounded-full transition-all duration-300"
+              class="w-14 h-14 flex items-center justify-center border-2 border-muted-200 dark:border-muted-600 peer-checked:border-primary-500 shadow-lg rounded-full transition-all duration-300"
             >
               <img
                 class="h-10 w-10 rounded-full"
@@ -138,7 +138,7 @@ const { closePanel } = usePanels()
               />
             </div>
             <div
-              class="absolute -top-1 -right-1 h-7 w-7 rounded-full hidden peer-checked:flex items-center justify-center bg-primary-500 text-white border-4 border-white dark:border-slate-800"
+              class="absolute -top-1 -right-1 h-7 w-7 rounded-full hidden peer-checked:flex items-center justify-center bg-primary-500 text-white border-4 border-white dark:border-muted-800"
             >
               <BaseIcon name="feather:check" class="w-3 h-3" />
             </div>
@@ -153,7 +153,7 @@ const { closePanel } = usePanels()
               class="peer absolute top-0 left-0 h-full w-full opacity-0 cursor-pointer z-20"
             />
             <div
-              class="w-14 h-14 flex items-center justify-center border-2 border-slate-200 dark:border-slate-600 peer-checked:border-primary-500 shadow-lg rounded-full transition-all duration-300"
+              class="w-14 h-14 flex items-center justify-center border-2 border-muted-200 dark:border-muted-600 peer-checked:border-primary-500 shadow-lg rounded-full transition-all duration-300"
             >
               <img
                 class="h-10 w-10 rounded-full"
@@ -162,7 +162,7 @@ const { closePanel } = usePanels()
               />
             </div>
             <div
-              class="absolute -top-1 -right-1 h-7 w-7 rounded-full hidden peer-checked:flex items-center justify-center bg-primary-500 text-white border-4 border-white dark:border-slate-800"
+              class="absolute -top-1 -right-1 h-7 w-7 rounded-full hidden peer-checked:flex items-center justify-center bg-primary-500 text-white border-4 border-white dark:border-muted-800"
             >
               <BaseIcon name="feather:check" class="w-3 h-3" />
             </div>

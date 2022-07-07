@@ -31,11 +31,11 @@ const props = defineProps<PopoverContentMediaProps>()
                 size="xs"
                 weight="semibold"
                 lead="tight"
-                class="text-slate-800 dark:text-white"
+                class="text-muted-800 dark:text-white"
               >
                 {{ props.title }}
               </BaseHeading>
-              <BaseText size="xs" class="text-slate-400">
+              <BaseText size="xs" class="text-muted-400">
                 {{ props.subtitle }}
               </BaseText>
             </div>
@@ -44,7 +44,7 @@ const props = defineProps<PopoverContentMediaProps>()
         <BaseText
           size="xs"
           lead="tight"
-          class="text-slate-400 pl-2 line-clamp-3"
+          class="text-muted-400 pl-2 line-clamp-3"
         >
           {{ props.text }}
         </BaseText>
@@ -54,18 +54,18 @@ const props = defineProps<PopoverContentMediaProps>()
           <div class="flex flex-col gap-2">
             <img
               :src="props.images[0]"
-              class="h-16 bg-slate-100 object-cover rounded"
+              class="h-16 bg-muted-100 object-cover rounded"
               alt="popover image"
             />
             <div class="grid grid-cols-2 gap-x-2">
               <img
                 :src="props.images[1]"
-                class="h-12 bg-slate-100 object-cover rounded"
+                class="h-12 bg-muted-100 object-cover rounded"
                 alt="popover image"
               />
               <img
                 :src="props.images[2]"
-                class="h-12 bg-slate-100 object-cover rounded"
+                class="h-12 bg-muted-100 object-cover rounded"
                 alt="popover image"
               />
             </div>
@@ -75,7 +75,7 @@ const props = defineProps<PopoverContentMediaProps>()
     </div>
     <NuxtLink
       :to="props.link"
-      class="group flex items-center justify-between bg-slate-100 dark:bg-slate-800 p-4 rounded-b-lg"
+      class="group flex items-center justify-between bg-muted-100 dark:bg-muted-800 p-4 rounded-b-lg"
     >
       <div
         class="flow-root rounded-md transition duration-150 ease-in-out focus:outline-none"
@@ -84,18 +84,18 @@ const props = defineProps<PopoverContentMediaProps>()
           as="h4"
           size="xs"
           weight="semibold"
-          class="text-slate-800 dark:text-white"
+          class="text-muted-800 dark:text-white"
           lead="tight"
         >
           {{ props.footerTitle }}
         </BaseHeading>
-        <BaseText size="xs" class="text-slate-400">
+        <BaseText size="xs" class="text-muted-400">
           {{ props.footerText }}
         </BaseText>
       </div>
       <span class="flex items-center">
         <span
-          class="text-sm font-sub font-semibold mr-1 text-primary-500 transition-colors"
+          class="text-sm font-alt font-semibold mr-1 text-primary-500 transition-colors"
         >
           {{ props.linkLabel }}
         </span>

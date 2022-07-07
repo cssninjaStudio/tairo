@@ -36,7 +36,7 @@ export const toc = [
   },
   {
     label: 'Slate color',
-    anchor: 'slate-color',
+    anchor: 'muted-color',
     subItems: [],
   },
   {

@@ -41,14 +41,14 @@ watch(
 
 <template>
   <div class="relative">
-    <label v-if="!props.hideLabel" class="font-text text-sm text-slate-400">
+    <label v-if="!props.hideLabel" class="font-sans text-sm text-muted-400">
       {{ props.label }}
     </label>
     <div class="relative group">
       <select
         v-model="value"
         title="select"
-        class="appearance-none px-3 py-2 h-10 text-sm leading-5 font-text w-full border border-slate-300 bg-white text-slate-600 placeholder:text-slate-300 focus:border-slate-300 focus:shadow-lg focus:shadow-slate-300/50 dark:focus:shadow-slate-800/50 dark:placeholder:text-slate-600 dark:bg-slate-900/75 dark:text-slate-200 dark:border-slate-700 dark:focus:border-slate-700 tairo-focus"
+        class="appearance-none px-3 py-2 h-10 text-sm leading-5 font-sans w-full border border-muted-300 bg-white text-muted-600 placeholder:text-muted-300 focus:border-muted-300 focus:shadow-lg focus:shadow-muted-300/50 dark:focus:shadow-muted-800/50 dark:placeholder:text-muted-600 dark:bg-muted-900/75 dark:text-muted-200 dark:border-muted-700 dark:focus:border-muted-700 tairo-focus"
         :class="[
           props.shape === 'rounded' && 'rounded',
           props.shape === 'curved' && 'rounded-xl',
@@ -68,7 +68,7 @@ watch(
       </div>
       <div
         v-if="props.icon"
-        class="absolute top-0 left-0 h-10 w-10 flex justify-center items-center text-slate-400 group-focus-within:text-violet-500 peer-disabled:opacity-75 peer-disabled:cursor-not-allowed transition-colors duration-300"
+        class="absolute top-0 left-0 h-10 w-10 flex justify-center items-center text-muted-400 group-focus-within:text-violet-500 peer-disabled:opacity-75 peer-disabled:cursor-not-allowed transition-colors duration-300"
         :class="[
           props.loading && 'opacity-0',
           props.invalid && !props.loading && '!text-danger-500',
@@ -79,13 +79,13 @@ watch(
         </slot>
       </div>
       <div
-        class="absolute top-0 right-0 h-10 w-10 flex justify-center items-center text-slate-400 transition-transform duration-300 group-focus-within:-rotate-180"
+        class="absolute top-0 right-0 h-10 w-10 flex justify-center items-center text-muted-400 transition-transform duration-300 group-focus-within:-rotate-180"
       >
         <IconChevronDown class="h-4 w-4" />
       </div>
       <span
         v-if="props.invalid"
-        class="inline-block font-text text-[.8rem] text-pink-600"
+        class="inline-block font-sans text-[.8rem] text-pink-600"
       >
         {{ props.errorText }}
       </span>

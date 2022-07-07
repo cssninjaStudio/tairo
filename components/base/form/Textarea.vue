@@ -45,13 +45,13 @@ watch(
 
 <template>
   <div class="relative">
-    <label v-if="!props.hideLabel" class="font-text text-sm text-slate-400">
+    <label v-if="!props.hideLabel" class="font-sans text-sm text-muted-400">
       {{ props.label }}
     </label>
     <div class="group relative flex flex-col">
       <textarea
         v-model="value"
-        class="peer font-text w-full border border-slate-300 bg-white placeholder:text-slate-300 focus:border-slate-300 focus:shadow-lg focus:shadow-slate-300/50 dark:focus:shadow-slate-800/50 dark:placeholder:text-slate-500 dark:bg-slate-900/75 dark:text-slate-200 dark:border-slate-700 dark:focus:border-slate-700 tairo-focus disabled:opacity-75 disabled:cursor-not-allowed"
+        class="peer font-sans w-full border border-muted-300 bg-white placeholder:text-muted-300 focus:border-muted-300 focus:shadow-lg focus:shadow-muted-300/50 dark:focus:shadow-muted-800/50 dark:placeholder:text-muted-500 dark:bg-muted-900/75 dark:text-muted-200 dark:border-muted-700 dark:focus:border-muted-700 tairo-focus disabled:opacity-75 disabled:cursor-not-allowed"
         :class="[
           props.shape === 'rounded' && 'rounded',
           props.shape === 'curved' && 'rounded-xl',
@@ -77,7 +77,7 @@ watch(
       </div>
       <div
         v-if="props.addon"
-        class="absolute bottom-0 left-0 w-full flex items-center justify-between p-2 bg-slate-50 dark:bg-slate-900/50 border border-slate-300 dark:border-slate-700 peer-disabled:opacity-75 peer-disabled:cursor-not-allowed"
+        class="absolute bottom-0 left-0 w-full flex items-center justify-between p-2 bg-muted-50 dark:bg-muted-900/50 border border-muted-300 dark:border-muted-700 peer-disabled:opacity-75 peer-disabled:cursor-not-allowed"
         :class="[
           props.shape === 'rounded' && 'rounded-b',
           props.shape === 'curved' && 'rounded-b-xl',
@@ -87,7 +87,7 @@ watch(
       </div>
       <span
         v-if="props.invalid"
-        class="inline-block font-text text-[.8rem] text-danger-500"
+        class="inline-block font-sans text-[.8rem] text-danger-500"
       >
         Minimum of 50 characters
       </span>

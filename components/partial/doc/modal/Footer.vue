@@ -43,7 +43,7 @@ const isModalBodyOpen = ref(false)
       <!-- Header -->
       <div class="w-full flex items-center justify-between p-4 md:p-6">
         <h3
-          class="font-main text-lg font-medium leading-6 text-slate-900 dark:text-white"
+          class="font-heading text-lg font-medium leading-6 text-muted-900 dark:text-white"
         >
           Medium dialog
         </h3>
@@ -62,12 +62,12 @@ const isModalBodyOpen = ref(false)
           />
         </div>
         <h3
-          class="font-main text-lg font-medium leading-6 text-slate-800 dark:text-white"
+          class="font-heading text-lg font-medium leading-6 text-muted-800 dark:text-white"
         >
           New Invite
         </h3>
         <p
-          class="font-sub text-sm leading-5 text-slate-500 dark:text-slate-400"
+          class="font-alt text-sm leading-5 text-muted-500 dark:text-muted-400"
         >
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod.
@@ -103,7 +103,7 @@ const isModalBodyOpen = ref(false)
       <!-- Header -->
       <div class="w-full flex items-center justify-between p-4 md:p-6">
         <h3
-          class="font-main text-lg font-medium leading-6 text-slate-900 dark:text-white"
+          class="font-heading text-lg font-medium leading-6 text-muted-900 dark:text-white"
         >
           Medium dialog
         </h3>
@@ -122,12 +122,12 @@ const isModalBodyOpen = ref(false)
           />
         </div>
         <h3
-          class="font-main text-lg font-medium leading-6 text-slate-800 dark:text-white"
+          class="font-heading text-lg font-medium leading-6 text-muted-800 dark:text-white"
         >
           New Invite
         </h3>
         <p
-          class="font-sub text-sm leading-5 text-slate-500 dark:text-slate-400"
+          class="font-alt text-sm leading-5 text-muted-500 dark:text-muted-400"
         >
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod.
@@ -163,7 +163,7 @@ const isModalBodyOpen = ref(false)
       <!-- Header -->
       <div class="w-full flex items-center justify-between p-4 md:p-6">
         <h3
-          class="font-main text-lg font-medium leading-6 text-slate-900 dark:text-white"
+          class="font-heading text-lg font-medium leading-6 text-muted-900 dark:text-white"
         >
           Medium dialog
         </h3>
@@ -182,12 +182,12 @@ const isModalBodyOpen = ref(false)
           />
         </div>
         <h3
-          class="font-main text-lg font-medium leading-6 text-slate-800 dark:text-white"
+          class="font-heading text-lg font-medium leading-6 text-muted-800 dark:text-white"
         >
           New Invite
         </h3>
         <p
-          class="font-sub text-sm leading-5 text-slate-500 dark:text-slate-400"
+          class="font-alt text-sm leading-5 text-muted-500 dark:text-muted-400"
         >
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod.
@@ -223,7 +223,7 @@ const isModalBodyOpen = ref(false)
       <!-- Header -->
       <div class="w-full flex items-center justify-between p-4 md:p-6">
         <h3
-          class="font-main text-lg font-medium leading-6 text-slate-900 dark:text-white"
+          class="font-heading text-lg font-medium leading-6 text-muted-900 dark:text-white"
         >
           Medium dialog
         </h3>
@@ -242,12 +242,12 @@ const isModalBodyOpen = ref(false)
           />
         </div>
         <h3
-          class="font-main text-lg font-medium leading-6 text-slate-800 dark:text-white"
+          class="font-heading text-lg font-medium leading-6 text-muted-800 dark:text-white"
         >
           New Invite
         </h3>
         <p
-          class="font-sub text-sm leading-5 text-slate-500 dark:text-slate-400"
+          class="font-alt text-sm leading-5 text-muted-500 dark:text-muted-400"
         >
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod.
@@ -282,7 +282,7 @@ const isModalBodyOpen = ref(false)
       <!-- Header -->
       <div class="w-full flex items-center justify-between p-4 md:p-6">
         <h3
-          class="font-main text-lg font-medium leading-6 text-slate-900 dark:text-white"
+          class="font-heading text-lg font-medium leading-6 text-muted-900 dark:text-white"
         >
           Medium dialog
         </h3>
@@ -301,12 +301,12 @@ const isModalBodyOpen = ref(false)
           />
         </div>
         <h3
-          class="font-main text-lg font-medium leading-6 text-slate-800 dark:text-white"
+          class="font-heading text-lg font-medium leading-6 text-muted-800 dark:text-white"
         >
           New Invite
         </h3>
         <p
-          class="font-sub text-sm leading-5 text-slate-500 dark:text-slate-400 mb-6"
+          class="font-alt text-sm leading-5 text-muted-500 dark:text-muted-400 mb-6"
         >
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod.

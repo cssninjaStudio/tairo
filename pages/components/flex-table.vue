@@ -87,10 +87,10 @@ definePageMeta({
                       <div class="flex items-center">
                         <BaseAvatar :src="member.src" />
                         <div class="ml-3 leading-none">
-                          <h4 class="font-main text-sm font-semibold">
+                          <h4 class="font-heading text-sm font-semibold">
                             {{ member.name }}
                           </h4>
-                          <p class="font-sub text-xs text-slate-400">
+                          <p class="font-alt text-xs text-muted-400">
                             {{ member.role }}
                           </p>
                         </div>
@@ -206,10 +206,10 @@ definePageMeta({
                       <div class="flex items-center">
                         <BaseAvatar :src="member.src" />
                         <div class="ml-3 leading-none">
-                          <h4 class="font-main text-sm font-semibold">
+                          <h4 class="font-heading text-sm font-semibold">
                             {{ member.name }}
                           </h4>
-                          <p class="font-sub text-xs text-slate-400">
+                          <p class="font-alt text-xs text-muted-400">
                             {{ member.role }}
                           </p>
                         </div>
@@ -325,10 +325,10 @@ definePageMeta({
                       <div class="flex items-center">
                         <BaseAvatar :src="member.src" />
                         <div class="ml-3 leading-none">
-                          <h4 class="font-main text-sm font-semibold">
+                          <h4 class="font-heading text-sm font-semibold">
                             {{ member.name }}
                           </h4>
-                          <p class="font-sub text-xs text-slate-400">
+                          <p class="font-alt text-xs text-muted-400">
                             {{ member.role }}
                           </p>
                         </div>

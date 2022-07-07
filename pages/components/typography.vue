@@ -38,7 +38,7 @@ definePageMeta({
                   as="h2"
                   size="3xl"
                   weight="extrabold"
-                  class="text-slate-800 dark:text-white"
+                  class="text-muted-800 dark:text-white"
                 >
                   A huge heading
                 </BaseHeading>
@@ -46,7 +46,7 @@ definePageMeta({
                   as="h2"
                   size="2xl"
                   weight="bold"
-                  class="text-slate-800 dark:text-white"
+                  class="text-muted-800 dark:text-white"
                 >
                   A bold and very large heading
                 </BaseHeading>
@@ -54,7 +54,7 @@ definePageMeta({
                   as="h2"
                   size="lg"
                   weight="semibold"
-                  class="text-slate-800 dark:text-white"
+                  class="text-muted-800 dark:text-white"
                 >
                   A smaller and less thicker heading
                 </BaseHeading>
@@ -62,7 +62,7 @@ definePageMeta({
                   as="h2"
                   size="md"
                   weight="medium"
-                  class="text-slate-400"
+                  class="text-muted-400"
                 >
                   Smaller and using another color
                 </BaseHeading>
@@ -88,7 +88,7 @@ definePageMeta({
             <template #demo>
               <div class="grid md:grid-cols-2 gap-6">
                 <div class="flex flex-col">
-                  <BaseParagraph class="text-slate-400 dark:text-slate-400">
+                  <BaseParagraph class="text-muted-400 dark:text-muted-400">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Erat enim Polemonis. Duo Reges: constructio interrete.
                     Philosophi autem in suis lectulis plerumque moriuntur.
@@ -97,7 +97,7 @@ definePageMeta({
                 <div class="flex flex-col space-y-2">
                   <BaseParagraph
                     size="sm"
-                    class="text-slate-400 dark:text-slate-400"
+                    class="text-muted-400 dark:text-muted-400"
                   >
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Erat enim Polemonis. Duo Reges: constructio interrete.
@@ -133,7 +133,7 @@ definePageMeta({
             <template #demo>
               <div class="grid md:grid-cols-2 gap-6">
                 <div class="flex flex-col">
-                  <BaseText class="text-slate-500 dark:text-slate-400">
+                  <BaseText class="text-muted-500 dark:text-muted-400">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Erat enim Polemonis. Duo Reges: constructio interrete.
                     Philosophi autem in suis lectulis plerumque moriuntur.
@@ -142,7 +142,7 @@ definePageMeta({
                 <div class="flex flex-col space-y-2">
                   <BaseText
                     size="sm"
-                    class="text-slate-400 dark:text-slate-400"
+                    class="text-muted-400 dark:text-muted-400"
                   >
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Erat enim Polemonis. Duo Reges: constructio interrete.

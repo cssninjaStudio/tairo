@@ -22,13 +22,13 @@ const emit = defineEmits(['delete'])
       !props.icon && !props.image && 'pl-4',
       props.small ? 'h-8' : 'h-10',
       props.light
-        ? 'bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600'
-        : 'bg-slate-200 dark:bg-slate-700',
+        ? 'bg-white dark:bg-muted-700 border border-muted-300 dark:border-muted-600'
+        : 'bg-muted-200 dark:bg-muted-700',
     ]"
   >
     <div
       v-if="props.icon && !props.image"
-      class="flex items-center justify-center rounded-full bg-white border border-slate-200 mr-2 -ml-0.5"
+      class="flex items-center justify-center rounded-full bg-white border border-muted-200 mr-2 -ml-0.5"
       :class="props.small ? 'h-8 w-8' : 'h-10 w-10'"
     >
       <BaseIcon
@@ -48,7 +48,7 @@ const emit = defineEmits(['delete'])
         alt="snack image"
       />
     </div>
-    <span class="font-text text-sm text-slate-600 dark:text-slate-300">
+    <span class="font-sans text-sm text-muted-600 dark:text-muted-300">
       <slot>{{ props.label }}</slot>
     </span>
     <button
@@ -57,12 +57,12 @@ const emit = defineEmits(['delete'])
       :class="[
         props.small ? 'mr-1' : 'mr-2',
         props.light
-          ? 'hover:bg-slate-100 active:bg-slate-200 focus-visible:bg-slate-100 !dark:active:bg-slate-500/50 dark:focus-visible:bg-slate-600 dark:hover:bg-slate-600 '
-          : 'hover:bg-slate-300 active:bg-slate-400/50 focus-visible:bg-slate-300 !dark:active:bg-slate-500/50 dark:focus-visible:bg-slate-600 dark:hover:bg-slate-600 ',
+          ? 'hover:bg-muted-100 active:bg-muted-200 focus-visible:bg-muted-100 !dark:active:bg-muted-500/50 dark:focus-visible:bg-muted-600 dark:hover:bg-muted-600 '
+          : 'hover:bg-muted-300 active:bg-muted-400/50 focus-visible:bg-muted-300 !dark:active:bg-muted-500/50 dark:focus-visible:bg-muted-600 dark:hover:bg-muted-600 ',
       ]"
       @click="emit('delete')"
     >
-      <IconClose class="w-4 h-4 text-slate-600 dark:text-slate-300" />
+      <IconClose class="w-4 h-4 text-muted-600 dark:text-muted-300" />
     </button>
   </div>
 </template>

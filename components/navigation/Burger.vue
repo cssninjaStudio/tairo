@@ -15,7 +15,7 @@ const { isSidebarOpened, toggleSidebar } = useSidebar()
       ></span>
       <span
         class="absolute top-1/2 block w-full max-w-[50%] h-0.5 bg-primary-500 transition-all duration-300"
-        :class="isSidebarOpened ? 'opacity-0 translate-x-4' : ''"
+        :class="isSidebarOpened ? 'opacity-0 tranmuted-x-4' : ''"
       ></span>
       <span
         class="absolute block w-full h-0.5 bg-primary-500 transition-all duration-300"

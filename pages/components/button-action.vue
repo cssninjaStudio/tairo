@@ -15,6 +15,7 @@ definePageMeta({
   documentation: {
     category: 'Interaction',
     components: ['BaseButtonAction'],
+    composables: ['useButton'],
   },
 })
 </script>

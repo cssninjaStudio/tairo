@@ -50,7 +50,7 @@ const props = withDefaults(defineProps<HeadingProps>(), {
 <template>
   <component
     :is="props.as"
-    class="font-main"
+    class="font-heading"
     :class="[
       props.size === 'xs' && 'text-xs',
       props.size === 'sm' && 'text-sm',

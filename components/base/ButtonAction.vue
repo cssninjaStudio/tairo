@@ -40,37 +40,37 @@ const shapeClass = computed(() => {
 const colorClass = computed(() => {
   if (props.muted) {
     return [
-      'text-slate-500',
-      'bg-slate-200',
-      'border-slate-200',
+      'text-muted-500',
+      'bg-muted-200',
+      'border-muted-200',
       'dark:text-white',
-      'dark:bg-slate-700/40',
-      'dark:border-slate-700/40',
-      'dark:hover:enabled:bg-slate-700/60',
-      'hover:enabled:bg-slate-100',
-      'dark:active:enabled:border-slate-800',
-      'dark:active:enabled:bg-slate-800',
-      'active:enabled:bg-slate-200/50',
+      'dark:bg-muted-700/40',
+      'dark:border-muted-700/40',
+      'dark:hover:enabled:bg-muted-700/60',
+      'hover:enabled:bg-muted-100',
+      'dark:active:enabled:border-muted-800',
+      'dark:active:enabled:bg-muted-800',
+      'active:enabled:bg-muted-200/50',
     ]
   }
 
   return [
-    'text-slate-700',
+    'text-muted-700',
     'bg-white',
-    'border-slate-300',
+    'border-muted-300',
     'dark:text-white',
-    'dark:bg-slate-700',
-    'dark:border-slate-600',
-    'dark:hover:enabled:bg-slate-600',
-    'hover:enabled:bg-slate-50',
-    'dark:active:enabled:bg-slate-700/70',
-    'active:enabled:bg-slate-100',
+    'dark:bg-muted-700',
+    'dark:border-muted-600',
+    'dark:hover:enabled:bg-muted-600',
+    'hover:enabled:bg-muted-50',
+    'dark:active:enabled:bg-muted-700/70',
+    'active:enabled:bg-muted-100',
   ]
 })
 
 const buttonClasses = computed(() => [
   'relative',
-  'font-text font-normal text-sm',
+  'font-sans font-normal text-sm',
   'inline-flex items-center justify-center',
   'leading-5 no-underline',
   'h-8',

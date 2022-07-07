@@ -20,8 +20,8 @@ const endSidebars = sidebars.filter((sidebar) => sidebar.position === 'end')
   >
     <!-- Icon sidebar -->
     <div
-      class="relative flex flex-col w-[80px] h-full bg-white dark:bg-slate-800 border-r border-slate-200 dark:border-slate-700 z-20 transition-all duration-300 pointer-events-auto"
-      :class="isSidebarOpened ? '' : '-translate-x-full xl:translate-x-0'"
+      class="relative flex flex-col w-[80px] h-full bg-white dark:bg-muted-800 border-r border-muted-200 dark:border-muted-700 z-20 transition-all duration-300 pointer-events-auto"
+      :class="isSidebarOpened ? '' : '-tranmuted-x-full xl:tranmuted-x-0'"
     >
       <slot></slot>
 
@@ -48,8 +48,8 @@ const endSidebars = sidebars.filter((sidebar) => sidebar.position === 'end')
     <!-- Menu panel -->
     <div
       v-if="activeSidebar"
-      class="relative w-[220px] h-full bg-white dark:bg-slate-800 border-r border-slate-200 dark:border-slate-700 z-10 transition-all duration-300 pointer-events-auto"
-      :class="isSidebarOpened ? '' : '-translate-x-[calc(100%_-_80px)]'"
+      class="relative w-[220px] h-full bg-white dark:bg-muted-800 border-r border-muted-200 dark:border-muted-700 z-10 transition-all duration-300 pointer-events-auto"
+      :class="isSidebarOpened ? '' : '-tranmuted-x-[calc(100%_-_80px)]'"
     >
       <slot
         name="subnav"
@@ -76,7 +76,7 @@ const endSidebars = sidebars.filter((sidebar) => sidebar.position === 'end')
             </div>
 
             <div
-              class="fixed bottom-0 w-[212px] h-10 z-10 bg-gradient-to-t from-white dark:from-slate-800 to-transparent pointer-events-none"
+              class="fixed bottom-0 w-[212px] h-10 z-10 bg-gradient-to-t from-white dark:from-muted-800 to-transparent pointer-events-none"
             ></div>
           </div>
         </div>
@@ -91,7 +91,7 @@ const endSidebars = sidebars.filter((sidebar) => sidebar.position === 'end')
         <template #header>
           <div class="w-full flex items-center justify-between pt-4 pb-2 px-4">
             <h3
-              class="font-main text-lg font-medium leading-6 text-slate-900 dark:text-white"
+              class="font-heading text-lg font-medium leading-6 text-muted-900 dark:text-white"
             >
               Select a Layout
             </h3>
@@ -137,11 +137,11 @@ const endSidebars = sidebars.filter((sidebar) => sidebar.position === 'end')
                     as="h4"
                     weight="semibold"
                     size="md"
-                    class="text-slate-800 dark:text-white"
+                    class="text-muted-800 dark:text-white"
                   >
                     Sidebar
                   </BaseHeading>
-                  <BaseParagraph size="sm" class="text-slate-400">
+                  <BaseParagraph size="sm" class="text-muted-400">
                     Dual sidebar default
                   </BaseParagraph>
                 </button>
@@ -173,11 +173,11 @@ const endSidebars = sidebars.filter((sidebar) => sidebar.position === 'end')
                     as="h4"
                     weight="semibold"
                     size="md"
-                    class="text-slate-800 dark:text-white"
+                    class="text-muted-800 dark:text-white"
                   >
                     Sidebar
                   </BaseHeading>
-                  <BaseParagraph size="sm" class="text-slate-400">
+                  <BaseParagraph size="sm" class="text-muted-400">
                     Dual sidebar colored
                   </BaseParagraph>
                 </button>
@@ -185,7 +185,7 @@ const endSidebars = sidebars.filter((sidebar) => sidebar.position === 'end')
             </div>
             <div
               v-else-if="activeValue === 'sideblock'"
-              class="font-text text-sm text-slate-500 dark:text-slate-400"
+              class="font-sans text-sm text-muted-500 dark:text-muted-400"
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quid
               iudicant sensus? Primum quid tu dicis breve? Etiam beatissimum? Ne

@@ -46,7 +46,7 @@ watch(
         class="peer cursor-pointer opacity-0 absolute h-5 w-5 z-20"
       />
       <div
-        class="absolute top-0 left-0 h-full w-full bg-white dark:bg-slate-700 dark:border-slate-600 border-2 border-slate-400 z-0 peer-checked:border-current rounded-full"
+        class="absolute top-0 left-0 h-full w-full bg-white dark:bg-muted-700 dark:border-muted-600 border-2 border-muted-400 z-0 peer-checked:border-current rounded-full"
       ></div>
       <div
         class="block bg-current w-1 h-1 rounded-full pointer-events-none transition duration-300 scale-0 peer-checked:scale-100 z-10"
@@ -55,7 +55,7 @@ watch(
     <label
       v-if="!props.hideLabel"
       :for="props.id"
-      class="cursor-pointer select-none text-slate-400 font-text text-sm ml-1"
+      class="cursor-pointer select-none text-muted-400 font-sans text-sm ml-1"
     >
       {{ props.label }}
     </label>

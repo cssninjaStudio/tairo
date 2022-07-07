@@ -10,7 +10,7 @@ const props = defineProps<FlexRowProps>()
 
 <template>
   <div
-    class="flex flex-col md:flex-row md:items-center md:justify-between bg-white border border-slate-300"
+    class="flex flex-col md:flex-row md:items-center md:justify-between bg-white border border-muted-300"
     :class="[
       props.shape === 'rounded' && 'rounded-md',
       props.shape === 'curved' && 'rounded-xl',

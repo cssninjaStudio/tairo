@@ -36,11 +36,11 @@ definePageMeta({
                     size="sm"
                     weight="semibold"
                     lead="tight"
-                    class="text-slate-800 dark:text-white mb-2"
+                    class="text-muted-800 dark:text-white mb-2"
                   >
                     Iam a card
                   </BaseHeading>
-                  <BaseParagraph size="sm" lead="tight" class="text-slate-400">
+                  <BaseParagraph size="sm" lead="tight" class="text-muted-400">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   </BaseParagraph>
                 </BaseCard>
@@ -50,11 +50,11 @@ definePageMeta({
                     size="sm"
                     weight="semibold"
                     lead="tight"
-                    class="text-slate-800 dark:text-white mb-2"
+                    class="text-muted-800 dark:text-white mb-2"
                   >
                     Iam a card
                   </BaseHeading>
-                  <BaseParagraph size="sm" lead="tight" class="text-slate-400">
+                  <BaseParagraph size="sm" lead="tight" class="text-muted-400">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   </BaseParagraph>
                 </BaseCard>
@@ -64,11 +64,11 @@ definePageMeta({
                     size="sm"
                     weight="semibold"
                     lead="tight"
-                    class="text-slate-800 dark:text-white mb-2"
+                    class="text-muted-800 dark:text-white mb-2"
                   >
                     Iam a card
                   </BaseHeading>
-                  <BaseParagraph size="sm" lead="tight" class="text-slate-400">
+                  <BaseParagraph size="sm" lead="tight" class="text-muted-400">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   </BaseParagraph>
                 </BaseCard>
@@ -91,11 +91,11 @@ definePageMeta({
                     size="sm"
                     weight="semibold"
                     lead="tight"
-                    class="text-slate-800 dark:text-white mb-2"
+                    class="text-muted-800 dark:text-white mb-2"
                   >
                     Iam a card
                   </BaseHeading>
-                  <BaseParagraph size="sm" lead="tight" class="text-slate-400">
+                  <BaseParagraph size="sm" lead="tight" class="text-muted-400">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   </BaseParagraph>
                 </BaseCard>
@@ -105,11 +105,11 @@ definePageMeta({
                     size="sm"
                     weight="semibold"
                     lead="tight"
-                    class="text-slate-800 dark:text-white mb-2"
+                    class="text-muted-800 dark:text-white mb-2"
                   >
                     Iam a card
                   </BaseHeading>
-                  <BaseParagraph size="sm" lead="tight" class="text-slate-400">
+                  <BaseParagraph size="sm" lead="tight" class="text-muted-400">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   </BaseParagraph>
                 </BaseCard>
@@ -119,11 +119,11 @@ definePageMeta({
                     size="sm"
                     weight="semibold"
                     lead="tight"
-                    class="text-slate-800 dark:text-white mb-2"
+                    class="text-muted-800 dark:text-white mb-2"
                   >
                     Iam a card
                   </BaseHeading>
-                  <BaseParagraph size="sm" lead="tight" class="text-slate-400">
+                  <BaseParagraph size="sm" lead="tight" class="text-muted-400">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   </BaseParagraph>
                 </BaseCard>
@@ -150,11 +150,11 @@ definePageMeta({
                     size="sm"
                     weight="semibold"
                     lead="tight"
-                    class="text-slate-800 dark:text-white mb-2"
+                    class="text-muted-800 dark:text-white mb-2"
                   >
                     Iam a card
                   </BaseHeading>
-                  <BaseParagraph size="sm" lead="tight" class="text-slate-400">
+                  <BaseParagraph size="sm" lead="tight" class="text-muted-400">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   </BaseParagraph>
                 </BaseCard>
@@ -164,11 +164,11 @@ definePageMeta({
                     size="sm"
                     weight="semibold"
                     lead="tight"
-                    class="text-slate-800 dark:text-white mb-2"
+                    class="text-muted-800 dark:text-white mb-2"
                   >
                     Iam a card
                   </BaseHeading>
-                  <BaseParagraph size="sm" lead="tight" class="text-slate-400">
+                  <BaseParagraph size="sm" lead="tight" class="text-muted-400">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   </BaseParagraph>
                 </BaseCard>
@@ -178,11 +178,11 @@ definePageMeta({
                     size="sm"
                     weight="semibold"
                     lead="tight"
-                    class="text-slate-800 dark:text-white mb-2"
+                    class="text-muted-800 dark:text-white mb-2"
                   >
                     Iam a card
                   </BaseHeading>
-                  <BaseParagraph size="sm" lead="tight" class="text-slate-400">
+                  <BaseParagraph size="sm" lead="tight" class="text-muted-400">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   </BaseParagraph>
                 </BaseCard>

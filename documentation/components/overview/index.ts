@@ -75,16 +75,16 @@ export const dangerColor = `
 
 export const slateColor = `
 <template>
-  <div class="h-8 w-8 rounded-lg bg-slate-50" tooltip="bg-slate-50"></div>
-  <div class="h-8 w-8 rounded-lg bg-slate-100" tooltip="bg-slate-100"></div>
-  <div class="h-8 w-8 rounded-lg bg-slate-200" tooltip="bg-slate-200"></div>
-  <div class="h-8 w-8 rounded-lg bg-slate-300" tooltip="bg-slate-300"></div>
-  <div class="h-8 w-8 rounded-lg bg-slate-400" tooltip="bg-slate-400"></div>
-  <div class="h-8 w-8 rounded-lg bg-slate-500" tooltip="bg-slate-500"></div>
-  <div class="h-8 w-8 rounded-lg bg-slate-600" tooltip="bg-slate-600"></div>
-  <div class="h-8 w-8 rounded-lg bg-slate-700" tooltip="bg-slate-700"></div>
-  <div class="h-8 w-8 rounded-lg bg-slate-800" tooltip="bg-slate-800"></div>
-  <div class="h-8 w-8 rounded-lg bg-slate-900" tooltip="bg-slate-900"></div>
+  <div class="h-8 w-8 rounded-lg bg-muted-50" tooltip="bg-muted-50"></div>
+  <div class="h-8 w-8 rounded-lg bg-muted-100" tooltip="bg-muted-100"></div>
+  <div class="h-8 w-8 rounded-lg bg-muted-200" tooltip="bg-muted-200"></div>
+  <div class="h-8 w-8 rounded-lg bg-muted-300" tooltip="bg-muted-300"></div>
+  <div class="h-8 w-8 rounded-lg bg-muted-400" tooltip="bg-muted-400"></div>
+  <div class="h-8 w-8 rounded-lg bg-muted-500" tooltip="bg-muted-500"></div>
+  <div class="h-8 w-8 rounded-lg bg-muted-600" tooltip="bg-muted-600"></div>
+  <div class="h-8 w-8 rounded-lg bg-muted-700" tooltip="bg-muted-700"></div>
+  <div class="h-8 w-8 rounded-lg bg-muted-800" tooltip="bg-muted-800"></div>
+  <div class="h-8 w-8 rounded-lg bg-muted-900" tooltip="bg-muted-900"></div>
 </template>
 `
 

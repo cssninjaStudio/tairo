@@ -28,7 +28,7 @@ const isDark = computed({
     :class="
       props.inverted
         ? 'ring-offset-primary-700 dark:ring-offset-primary-700'
-        : 'dark:ring-offset-slate-900'
+        : 'dark:ring-offset-muted-900'
     "
   >
     <input
@@ -41,15 +41,15 @@ const isDark = computed({
       :class="
         props.inverted
           ? 'bg-primary-700 '
-          : 'bg-white dark:bg-slate-800  border border-slate-300 dark:border-slate-700'
+          : 'bg-white dark:bg-muted-800  border border-muted-300 dark:border-muted-700'
       "
     >
       <IconSun
         class="block absolute top-1/2 left-1/2 w-5 h-5 text-yellow-400 transition-all duration-300 pointer-events-none"
         :class="[
           !isDark
-            ? 'opacity-100 -translate-x-[50%] -translate-y-1/2'
-            : 'opacity-0  -translate-x-[50%] -translate-y-[150%]',
+            ? 'opacity-100 -tranmuted-x-[50%] -tranmuted-y-1/2'
+            : 'opacity-0  -tranmuted-x-[50%] -tranmuted-y-[150%]',
         ]"
       />
 
@@ -57,8 +57,8 @@ const isDark = computed({
         class="block absolute top-1/2 left-1/2 w-5 h-5 text-yellow-400 transition-all duration-300 pointer-events-none"
         :class="[
           !isDark
-            ? 'opacity-0 -translate-x-[45%] -translate-y-[150%]'
-            : 'opacity-100 -translate-x-[45%] -translate-y-1/2',
+            ? 'opacity-0 -tranmuted-x-[45%] -tranmuted-y-[150%]'
+            : 'opacity-100 -tranmuted-x-[45%] -tranmuted-y-1/2',
         ]"
       />
     </span>

@@ -38,23 +38,23 @@ definePageMeta({
               <div class="flex items-end gap-4">
                 <BaseIcon
                   name="ph:crown-duotone"
-                  class="w-6 h-6 block text-slate-400 dark:text-slate-500"
+                  class="w-6 h-6 block text-muted-400 dark:text-muted-500"
                 />
                 <BaseIcon
                   name="ph:crown-duotone"
-                  class="w-7 h-7 block text-slate-400 dark:text-slate-500"
+                  class="w-7 h-7 block text-muted-400 dark:text-muted-500"
                 />
                 <BaseIcon
                   name="ph:crown-duotone"
-                  class="w-8 h-8 block text-slate-400 dark:text-slate-500"
+                  class="w-8 h-8 block text-muted-400 dark:text-muted-500"
                 />
                 <BaseIcon
                   name="ph:crown-duotone"
-                  class="w-9 h-9 block text-slate-400 dark:text-slate-500"
+                  class="w-9 h-9 block text-muted-400 dark:text-muted-500"
                 />
                 <BaseIcon
                   name="ph:crown-duotone"
-                  class="w-10 h-10 block text-slate-400 dark:text-slate-500"
+                  class="w-10 h-10 block text-muted-400 dark:text-muted-500"
                 />
                 <BaseIcon
                   name="ph:crown-duotone"
@@ -75,23 +75,23 @@ definePageMeta({
               <div class="flex items-end gap-4">
                 <BaseIcon
                   name="lucide:sofa"
-                  class="w-6 h-6 block text-slate-400 dark:text-slate-500"
+                  class="w-6 h-6 block text-muted-400 dark:text-muted-500"
                 />
                 <BaseIcon
                   name="lucide:sofa"
-                  class="w-7 h-7 block text-slate-400 dark:text-slate-500"
+                  class="w-7 h-7 block text-muted-400 dark:text-muted-500"
                 />
                 <BaseIcon
                   name="lucide:sofa"
-                  class="w-8 h-8 block text-slate-400 dark:text-slate-500"
+                  class="w-8 h-8 block text-muted-400 dark:text-muted-500"
                 />
                 <BaseIcon
                   name="lucide:sofa"
-                  class="w-9 h-9 block text-slate-400 dark:text-slate-500"
+                  class="w-9 h-9 block text-muted-400 dark:text-muted-500"
                 />
                 <BaseIcon
                   name="lucide:sofa"
-                  class="w-10 h-10 block text-slate-400 dark:text-slate-500"
+                  class="w-10 h-10 block text-muted-400 dark:text-muted-500"
                 />
                 <BaseIcon
                   name="lucide:sofa"
@@ -112,23 +112,23 @@ definePageMeta({
               <div class="flex items-end gap-4">
                 <BaseIcon
                   name="carbon:tropical-storm-tracks"
-                  class="w-6 h-6 block text-slate-400 dark:text-slate-500"
+                  class="w-6 h-6 block text-muted-400 dark:text-muted-500"
                 />
                 <BaseIcon
                   name="carbon:tropical-storm-tracks"
-                  class="w-7 h-7 block text-slate-400 dark:text-slate-500"
+                  class="w-7 h-7 block text-muted-400 dark:text-muted-500"
                 />
                 <BaseIcon
                   name="carbon:tropical-storm-tracks"
-                  class="w-8 h-8 block text-slate-400 dark:text-slate-500"
+                  class="w-8 h-8 block text-muted-400 dark:text-muted-500"
                 />
                 <BaseIcon
                   name="carbon:tropical-storm-tracks"
-                  class="w-9 h-9 block text-slate-400 dark:text-slate-500"
+                  class="w-9 h-9 block text-muted-400 dark:text-muted-500"
                 />
                 <BaseIcon
                   name="carbon:tropical-storm-tracks"
-                  class="w-10 h-10 block text-slate-400 dark:text-slate-500"
+                  class="w-10 h-10 block text-muted-400 dark:text-muted-500"
                 />
                 <BaseIcon
                   name="carbon:tropical-storm-tracks"
@@ -149,23 +149,23 @@ definePageMeta({
               <div class="flex items-end gap-4">
                 <BaseIcon
                   name="ion:gift-outline"
-                  class="w-6 h-6 block text-slate-400 dark:text-slate-500"
+                  class="w-6 h-6 block text-muted-400 dark:text-muted-500"
                 />
                 <BaseIcon
                   name="ion:gift-outline"
-                  class="w-7 h-7 block text-slate-400 dark:text-slate-500"
+                  class="w-7 h-7 block text-muted-400 dark:text-muted-500"
                 />
                 <BaseIcon
                   name="ion:gift-outline"
-                  class="w-8 h-8 block text-slate-400 dark:text-slate-500"
+                  class="w-8 h-8 block text-muted-400 dark:text-muted-500"
                 />
                 <BaseIcon
                   name="ion:gift-outline"
-                  class="w-9 h-9 block text-slate-400 dark:text-slate-500"
+                  class="w-9 h-9 block text-muted-400 dark:text-muted-500"
                 />
                 <BaseIcon
                   name="ion:gift-outline"
-                  class="w-10 h-10 block text-slate-400 dark:text-slate-500"
+                  class="w-10 h-10 block text-muted-400 dark:text-muted-500"
                 />
                 <BaseIcon
                   name="ion:gift-outline"
@@ -186,23 +186,23 @@ definePageMeta({
               <div class="flex items-end gap-4">
                 <BaseIcon
                   name="iconoir:arcade"
-                  class="w-6 h-6 block text-slate-400 dark:text-slate-500"
+                  class="w-6 h-6 block text-muted-400 dark:text-muted-500"
                 />
                 <BaseIcon
                   name="iconoir:arcade"
-                  class="w-7 h-7 block text-slate-400 dark:text-slate-500"
+                  class="w-7 h-7 block text-muted-400 dark:text-muted-500"
                 />
                 <BaseIcon
                   name="iconoir:arcade"
-                  class="w-8 h-8 block text-slate-400 dark:text-slate-500"
+                  class="w-8 h-8 block text-muted-400 dark:text-muted-500"
                 />
                 <BaseIcon
                   name="iconoir:arcade"
-                  class="w-9 h-9 block text-slate-400 dark:text-slate-500"
+                  class="w-9 h-9 block text-muted-400 dark:text-muted-500"
                 />
                 <BaseIcon
                   name="iconoir:arcade"
-                  class="w-10 h-10 block text-slate-400 dark:text-slate-500"
+                  class="w-10 h-10 block text-muted-400 dark:text-muted-500"
                 />
                 <BaseIcon
                   name="iconoir:arcade"
@@ -223,23 +223,23 @@ definePageMeta({
               <div class="flex items-end gap-4">
                 <BaseIcon
                   name="cil:boat-alt"
-                  class="w-6 h-6 block text-slate-400 dark:text-slate-500"
+                  class="w-6 h-6 block text-muted-400 dark:text-muted-500"
                 />
                 <BaseIcon
                   name="cil:boat-alt"
-                  class="w-7 h-7 block text-slate-400 dark:text-slate-500"
+                  class="w-7 h-7 block text-muted-400 dark:text-muted-500"
                 />
                 <BaseIcon
                   name="cil:boat-alt"
-                  class="w-8 h-8 block text-slate-400 dark:text-slate-500"
+                  class="w-8 h-8 block text-muted-400 dark:text-muted-500"
                 />
                 <BaseIcon
                   name="cil:boat-alt"
-                  class="w-9 h-9 block text-slate-400 dark:text-slate-500"
+                  class="w-9 h-9 block text-muted-400 dark:text-muted-500"
                 />
                 <BaseIcon
                   name="cil:boat-alt"
-                  class="w-10 h-10 block text-slate-400 dark:text-slate-500"
+                  class="w-10 h-10 block text-muted-400 dark:text-muted-500"
                 />
                 <BaseIcon
                   name="cil:boat-alt"
@@ -260,23 +260,23 @@ definePageMeta({
               <div class="flex items-end gap-4">
                 <BaseIcon
                   name="fa6-solid:computer-mouse"
-                  class="w-6 h-6 block text-slate-400 dark:text-slate-500"
+                  class="w-6 h-6 block text-muted-400 dark:text-muted-500"
                 />
                 <BaseIcon
                   name="fa6-solid:computer-mouse"
-                  class="w-7 h-7 block text-slate-400 dark:text-slate-500"
+                  class="w-7 h-7 block text-muted-400 dark:text-muted-500"
                 />
                 <BaseIcon
                   name="fa6-solid:computer-mouse"
-                  class="w-8 h-8 block text-slate-400 dark:text-slate-500"
+                  class="w-8 h-8 block text-muted-400 dark:text-muted-500"
                 />
                 <BaseIcon
                   name="fa6-solid:computer-mouse"
-                  class="w-9 h-9 block text-slate-400 dark:text-slate-500"
+                  class="w-9 h-9 block text-muted-400 dark:text-muted-500"
                 />
                 <BaseIcon
                   name="fa6-solid:computer-mouse"
-                  class="w-10 h-10 block text-slate-400 dark:text-slate-500"
+                  class="w-10 h-10 block text-muted-400 dark:text-muted-500"
                 />
                 <BaseIcon
                   name="fa6-solid:computer-mouse"
@@ -297,23 +297,23 @@ definePageMeta({
               <div class="flex items-end gap-4">
                 <BaseIcon
                   name="fa6-brands:behance"
-                  class="w-6 h-6 block text-slate-400 dark:text-slate-500"
+                  class="w-6 h-6 block text-muted-400 dark:text-muted-500"
                 />
                 <BaseIcon
                   name="fa6-brands:behance"
-                  class="w-7 h-7 block text-slate-400 dark:text-slate-500"
+                  class="w-7 h-7 block text-muted-400 dark:text-muted-500"
                 />
                 <BaseIcon
                   name="fa6-brands:behance"
-                  class="w-8 h-8 block text-slate-400 dark:text-slate-500"
+                  class="w-8 h-8 block text-muted-400 dark:text-muted-500"
                 />
                 <BaseIcon
                   name="fa6-brands:behance"
-                  class="w-9 h-9 block text-slate-400 dark:text-slate-500"
+                  class="w-9 h-9 block text-muted-400 dark:text-muted-500"
                 />
                 <BaseIcon
                   name="fa6-brands:behance"
-                  class="w-10 h-10 block text-slate-400 dark:text-slate-500"
+                  class="w-10 h-10 block text-muted-400 dark:text-muted-500"
                 />
                 <BaseIcon
                   name="fa6-brands:behance"
@@ -334,23 +334,23 @@ definePageMeta({
               <div class="flex items-end gap-4">
                 <BaseIcon
                   name="ic:baseline-forest"
-                  class="w-6 h-6 block text-slate-400 dark:text-slate-500"
+                  class="w-6 h-6 block text-muted-400 dark:text-muted-500"
                 />
                 <BaseIcon
                   name="ic:baseline-forest"
-                  class="w-7 h-7 block text-slate-400 dark:text-slate-500"
+                  class="w-7 h-7 block text-muted-400 dark:text-muted-500"
                 />
                 <BaseIcon
                   name="ic:baseline-forest"
-                  class="w-8 h-8 block text-slate-400 dark:text-slate-500"
+                  class="w-8 h-8 block text-muted-400 dark:text-muted-500"
                 />
                 <BaseIcon
                   name="ic:baseline-forest"
-                  class="w-9 h-9 block text-slate-400 dark:text-slate-500"
+                  class="w-9 h-9 block text-muted-400 dark:text-muted-500"
                 />
                 <BaseIcon
                   name="ic:baseline-forest"
-                  class="w-10 h-10 block text-slate-400 dark:text-slate-500"
+                  class="w-10 h-10 block text-muted-400 dark:text-muted-500"
                 />
                 <BaseIcon
                   name="ic:baseline-forest"

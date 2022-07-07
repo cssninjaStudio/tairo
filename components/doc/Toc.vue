@@ -35,12 +35,12 @@ const scrollTo = VueScrollTo.scrollTo
         size="xs"
         weight="semibold"
         lead="tight"
-        class="uppercase mb-6 text-slate-800 dark:text-white"
+        class="uppercase mb-6 text-muted-800 dark:text-white"
       >
         <span>On this page</span>
       </BaseHeading>
 
-      <nav class="font-text text-sm">
+      <nav class="font-sans text-sm">
         <ul class>
           <li v-for="(item, index) in props.anchors" :key="index">
             <NuxtLink
@@ -49,7 +49,7 @@ const scrollTo = VueScrollTo.scrollTo
               :class="
                 activeAnchor === index
                   ? ' border-primary-500 text-primary-500'
-                  : 'border-slate-200  dark:border-slate-800 text-slate-500 dark:text-slate-400 hover:text-slate-400'
+                  : 'border-muted-200  dark:border-muted-800 text-muted-500 dark:text-muted-400 hover:text-muted-400'
               "
               @click.prevent="
                 () => {
@@ -67,7 +67,7 @@ const scrollTo = VueScrollTo.scrollTo
                     name: route.name!,
                     hash: `#${item.anchor}`,
                   }"
-                  class="block text-sm py-2 border-r-2 border-slate-200 dark:border-slate-800 text-slate-400 hover:text-slate-300"
+                  class="block text-sm py-2 border-r-2 border-muted-200 dark:border-muted-800 text-muted-400 hover:text-muted-300"
                   @click.prevent="
                     () => {
                       activeAnchor = index

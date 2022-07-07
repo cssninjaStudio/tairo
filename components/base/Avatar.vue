@@ -92,7 +92,7 @@ const props = withDefaults(defineProps<AvatarProps>(), {
 
         <span
           v-if="!props.src"
-          class="font-main uppercase font-medium text-center"
+          class="font-heading uppercase font-medium text-center"
           :class="[
             props.size === 'xs' && `text-sm`,
             props.size === 'sm' && `text-sm`,
@@ -111,7 +111,7 @@ const props = withDefaults(defineProps<AvatarProps>(), {
 
     <div
       v-if="'badge' in $slots || props.badgeSrc"
-      class="block absolute bg-slate-100 dark:bg-slate-800 rounded-full border-2 border-white dark:border-slate-800 overflow-hidden"
+      class="block absolute bg-muted-100 dark:bg-muted-800 rounded-full border-2 border-white dark:border-muted-800 overflow-hidden"
       :class="[
         props.size === 'xs' && `w-4 h-4`,
         props.size === 'sm' && `w-5 h-5`,
@@ -145,7 +145,7 @@ const props = withDefaults(defineProps<AvatarProps>(), {
 
     <span
       v-if="props.dot"
-      class="block absolute border border-white rounded-full dark:border-slate-800"
+      class="block absolute border border-white rounded-full dark:border-muted-800"
       :class="[
         props.size === 'xs' && `w-2 h-2`,
         props.size === 'sm' && `w-2 h-2`,

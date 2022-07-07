@@ -8,7 +8,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
       <MenuButton as="template">
         <button
           type="button"
-          class="w-10 h-10 rounded-full ring-1 ring-transparent group-hover:ring-offset-4 group-hover:ring-primary-500 dark:ring-offset-slate-800 inline-flex items-center justify-center transition-all duration-300"
+          class="w-10 h-10 rounded-full ring-1 ring-transparent group-hover:ring-offset-4 group-hover:ring-primary-500 dark:ring-offset-muted-800 inline-flex items-center justify-center transition-all duration-300"
         >
           <div
             class="inline-flex justify-center items-center relative w-10 h-10 rounded-full"
@@ -31,7 +31,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
         leave-to-class="transform scale-95 opacity-0"
       >
         <MenuItems
-          class="absolute bottom-0 -right-64 text-left mt-2 w-60 origin-bottom-right divide-y divide-slate-100 dark:divide-slate-700 rounded-md bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-lg focus:outline-none"
+          class="absolute bottom-0 -right-64 text-left mt-2 w-60 origin-bottom-right divide-y divide-muted-100 dark:divide-muted-700 rounded-md bg-white dark:bg-muted-800 border border-muted-200 dark:border-muted-700 shadow-lg focus:outline-none"
         >
           <div class="p-6">
             <div class="flex items-center">
@@ -46,11 +46,11 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
               </div>
               <div class="ml-3">
                 <h6
-                  class="font-main font-semibold text-sm text-slate-800 dark:text-white"
+                  class="font-heading font-semibold text-sm text-muted-800 dark:text-white"
                 >
                   Maya Rosselini
                 </h6>
-                <p class="font-text text-xs text-slate-400">Product Manager</p>
+                <p class="font-sans text-xs text-muted-400">Product Manager</p>
               </div>
             </div>
           </div>
@@ -61,18 +61,18 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 class="group flex w-full items-center rounded-md p-2 text-sm transition-colors duration-300"
                 :class="[
                   active
-                    ? 'bg-slate-100 dark:bg-slate-700 text-primary-500'
-                    : 'text-slate-500',
+                    ? 'bg-muted-100 dark:bg-muted-700 text-primary-500'
+                    : 'text-muted-500',
                 ]"
               >
                 <BaseIcon name="ph:user-circle-duotone" class="w-5 h-5" />
                 <div class="ml-3">
                   <h6
-                    class="font-main font-semibold text-xs leading-none text-slate-800 dark:text-white"
+                    class="font-heading font-semibold text-xs leading-none text-muted-800 dark:text-white"
                   >
                     Profile
                   </h6>
-                  <p class="font-text text-xs text-slate-400">
+                  <p class="font-sans text-xs text-muted-400">
                     View your profile
                   </p>
                 </div>
@@ -86,18 +86,18 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 class="group flex w-full items-center rounded-md p-2 text-sm transition-colors duration-300"
                 :class="[
                   active
-                    ? 'bg-slate-100 dark:bg-slate-700 text-primary-500'
-                    : 'text-slate-500',
+                    ? 'bg-muted-100 dark:bg-muted-700 text-primary-500'
+                    : 'text-muted-500',
                 ]"
               >
                 <BaseIcon name="ph:briefcase-duotone" class="w-5 h-5" />
                 <div class="ml-3">
                   <h6
-                    class="font-main font-semibold text-xs leading-none text-slate-800 dark:text-white"
+                    class="font-heading font-semibold text-xs leading-none text-muted-800 dark:text-white"
                   >
                     Projects
                   </h6>
-                  <p class="font-text text-xs text-slate-400">
+                  <p class="font-sans text-xs text-muted-400">
                     All my projects
                   </p>
                 </div>
@@ -109,18 +109,18 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 class="group flex w-full items-center rounded-md p-2 text-sm transition-colors duration-300"
                 :class="[
                   active
-                    ? 'bg-slate-100 dark:bg-slate-700 text-primary-500'
-                    : 'text-slate-500',
+                    ? 'bg-muted-100 dark:bg-muted-700 text-primary-500'
+                    : 'text-muted-500',
                 ]"
               >
                 <BaseIcon name="ph:users-three-duotone" class="w-5 h-5" />
                 <div class="ml-3">
                   <h6
-                    class="font-main font-semibold text-xs leading-none text-slate-800 dark:text-white"
+                    class="font-heading font-semibold text-xs leading-none text-muted-800 dark:text-white"
                   >
                     Team
                   </h6>
-                  <p class="font-text text-xs text-slate-400">Manage my team</p>
+                  <p class="font-sans text-xs text-muted-400">Manage my team</p>
                 </div>
               </NuxtLink>
             </MenuItem>
@@ -133,18 +133,18 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 class="group flex w-full items-center rounded-md p-2 text-sm transition-colors duration-300"
                 :class="[
                   active
-                    ? 'bg-slate-100 dark:bg-slate-700 text-primary-500'
-                    : 'text-slate-500',
+                    ? 'bg-muted-100 dark:bg-muted-700 text-primary-500'
+                    : 'text-muted-500',
                 ]"
               >
                 <BaseIcon name="ph:gear-six-duotone" class="w-5 h-5" />
                 <div class="ml-3">
                   <h6
-                    class="font-main font-semibold text-xs leading-none text-slate-800 dark:text-white"
+                    class="font-heading font-semibold text-xs leading-none text-muted-800 dark:text-white"
                   >
                     Settings
                   </h6>
-                  <p class="font-text text-xs text-slate-400">
+                  <p class="font-sans text-xs text-muted-400">
                     Account settings
                   </p>
                 </div>

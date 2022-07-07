@@ -1,9 +1,9 @@
 export const helpLeft = `
 <template>
   <BasePopover size="sm">
-    <span class="flex items-center text-slate-500">
+    <span class="flex items-center text-muted-500">
       <BaseIcon name="lucide:help-circle" class="w-4 h-4 mr-1" />
-      <span class="font-text text-sm">Help text</span>
+      <span class="font-sans text-sm">Help text</span>
     </span>
 
     <template #content>
@@ -22,9 +22,9 @@ export const helpLeft = `
 export const helpRight = `
 <template>
   <BasePopover size="sm" orientation="end">
-    <span class="flex items-center justify-end text-slate-500">
+    <span class="flex items-center justify-end text-muted-500">
       <BaseIcon name="lucide:help-circle" class="w-4 h-4 mr-1" />
-      <span class="font-text text-sm">Help text</span>
+      <span class="font-sans text-sm">Help text</span>
     </span>
 
     <template #content>
@@ -46,7 +46,7 @@ export const dualLeft = `
     <div class="flex items-center">
       <BaseAvatar src="/img/avatars/3.svg" size="sm" />
       <span
-        class="font-main text-sm font-semibold text-slate-800 dark:text-white ml-3"
+        class="font-heading text-sm font-semibold text-muted-800 dark:text-white ml-3"
       >
         Mike Miller
       </span>
@@ -86,7 +86,7 @@ export const dualRight = `
     <div class="flex items-center">
       <BaseAvatar src="/img/avatars/3.svg" size="sm" />
       <span
-        class="font-main text-sm font-semibold text-slate-800 dark:text-white ml-3"
+        class="font-heading text-sm font-semibold text-muted-800 dark:text-white ml-3"
       >
         Mike Miller
       </span>
@@ -125,7 +125,7 @@ export const mediaLeft = `
   <BasePopover orientation="start">
     <div class="flex items-center">
       <span
-        class="font-main text-sm font-semibold text-slate-800 dark:text-white border border-slate-300 dark:border-slate-600 rounded-full py-1.5 px-3"
+        class="font-heading text-sm font-semibold text-muted-800 dark:text-white border border-muted-300 dark:border-muted-600 rounded-full py-1.5 px-3"
       >
         Beautiful house
       </span>
@@ -156,7 +156,7 @@ export const mediaRight = `
   <BasePopover orientation="end">
     <div class="flex items-center">
       <span
-        class="font-main text-sm font-semibold text-slate-800 dark:text-white border border-slate-300 dark:border-slate-600 rounded-full py-1.5 px-3"
+        class="font-heading text-sm font-semibold text-muted-800 dark:text-white border border-muted-300 dark:border-muted-600 rounded-full py-1.5 px-3"
       >
         Beautiful house
       </span>

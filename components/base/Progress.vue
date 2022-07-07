@@ -38,7 +38,7 @@ const value = computed(() => {
     role="progressbar"
     :aria-valuenow="value"
     :aria-valuemax="props.max"
-    class="relative w-full bg-slate-200 dark:bg-slate-700 overflow-hidden"
+    class="relative w-full bg-muted-200 dark:bg-muted-700 overflow-hidden"
     :class="[
       props.size === 'xs' && 'h-1',
       props.size === 'sm' && 'h-2',

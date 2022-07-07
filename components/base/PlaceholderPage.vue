@@ -19,11 +19,11 @@ const props = withDefaults(defineProps<PlaceholderPageProps>(), {
         as="h4"
         weight="semibold"
         size="xl"
-        class="text-slate-800 dark:text-white mt-4"
+        class="text-muted-800 dark:text-white mt-4"
       >
         {{ props.title }}
       </BaseHeading>
-      <p v-if="props.subtitle" class="font-sub text-slate-400">
+      <p v-if="props.subtitle" class="font-alt text-muted-400">
         {{ props.subtitle }}
       </p>
       <slot></slot>

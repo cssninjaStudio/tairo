@@ -37,12 +37,12 @@ definePageMeta({
         size="2xl"
         weight="normal"
         lead="tight"
-        class="text-slate-800 dark:text-white"
+        class="text-muted-800 dark:text-white"
       >
         <span>Tairo Playground</span>
       </BaseHeading>
       <BaseParagraph>
-        <span class="text-slate-500">This is the Tairo Playground.</span>
+        <span class="text-muted-500">This is the Tairo Playground.</span>
       </BaseParagraph>
     </div>
 
@@ -59,7 +59,7 @@ definePageMeta({
           <div class="flex justify-between p-6 mb-2">
             <div class="grow pr-4">
               <BaseHeading size="md" weight="normal" lead="tight" class="mb-2">
-                <span class="text-slate-800 dark:text-white font-mono">
+                <span class="text-muted-800 dark:text-white font-mono">
                   <pre>{{ getCode(compo) }}</pre>
                 </span>
               </BaseHeading>
@@ -71,7 +71,7 @@ definePageMeta({
       <div class="text-center pt-12 pb-6">
         <NuxtLink
           to="https://docs.cssninja.io/tairo"
-          class="font-text text-primary-500 border-b-2 border-dotted border-primary-500"
+          class="font-sans text-primary-500 border-b-2 border-dotted border-primary-500"
         >
           Online Documentation
         </NuxtLink>

@@ -45,14 +45,14 @@ watch(activeValue, (value) => {
 <template>
   <div class="relative">
     <div
-      class="flex font-sub mb-6"
+      class="flex font-alt mb-6"
       :class="[
         props.justify === 'center' && 'justify-center',
         props.justify === 'end' && 'justify-end',
       ]"
     >
       <div
-        class="relative flex items-center w-full h-10 bg-slate-100 dark:bg-slate-700 font-text text-sm"
+        class="relative flex items-center w-full h-10 bg-muted-100 dark:bg-muted-700 font-sans text-sm"
         :class="[
           props.shape === 'rounded' && 'rounded-lg',
           props.shape === 'full' && 'rounded-full',
@@ -65,7 +65,7 @@ watch(activeValue, (value) => {
           type="button"
           class="relative flex items-center justify-center flex-1 h-full z-20"
           :class="[
-            activeValue === tab.value ? 'text-white' : 'text-slate-400',
+            activeValue === tab.value ? 'text-white' : 'text-muted-400',
             props.size === 2 ? 'w-1/2' : 'w-1/3',
           ]"
           @keydown.space="toggle(tab.value)"

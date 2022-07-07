@@ -48,11 +48,11 @@ const props = defineProps<PopoverContentDualProps>()
               size="xs"
               weight="semibold"
               lead="tight"
-              class="text-slate-800 dark:text-white"
+              class="text-muted-800 dark:text-white"
             >
               {{ stat.title }}
             </BaseHeading>
-            <BaseText size="xs" class="text-slate-400">
+            <BaseText size="xs" class="text-muted-400">
               {{ stat.subtitle }}
             </BaseText>
           </div>
@@ -67,11 +67,11 @@ const props = defineProps<PopoverContentDualProps>()
               size="xs"
               weight="semibold"
               lead="tight"
-              class="text-slate-800 dark:text-white"
+              class="text-muted-800 dark:text-white"
             >
               {{ props.title }}
             </BaseHeading>
-            <BaseText size="xs" class="text-slate-400">
+            <BaseText size="xs" class="text-muted-400">
               {{ props.subtitle }}
             </BaseText>
           </div>
@@ -80,7 +80,7 @@ const props = defineProps<PopoverContentDualProps>()
     </div>
     <NuxtLink
       :to="props.link"
-      class="group flex items-center justify-between bg-slate-100 dark:bg-slate-800 p-4 rounded-b-lg"
+      class="group flex items-center justify-between bg-muted-100 dark:bg-muted-800 p-4 rounded-b-lg"
     >
       <div
         class="flow-root rounded-md transition duration-150 ease-in-out focus:outline-none"
@@ -89,18 +89,18 @@ const props = defineProps<PopoverContentDualProps>()
           as="h4"
           size="xs"
           weight="semibold"
-          class="text-slate-800 dark:text-white"
+          class="text-muted-800 dark:text-white"
           lead="tight"
         >
           {{ props.footerTitle }}
         </BaseHeading>
-        <BaseText size="xs" class="text-slate-400">
+        <BaseText size="xs" class="text-muted-400">
           {{ props.footerText }}
         </BaseText>
       </div>
       <span class="flex items-center">
         <span
-          class="text-sm font-sub font-semibold mr-1 text-primary-500 transition-colors"
+          class="text-sm font-alt font-semibold mr-1 text-primary-500 transition-colors"
         >
           {{ props.linkLabel }}
         </span>

@@ -57,14 +57,14 @@ const items = ref(props.items)
     <Listbox v-slot="{ open }" v-model="value">
       <ListboxLabel
         v-if="!props.hideLabel"
-        class="font-text text-sm text-slate-400"
+        class="font-sans text-sm text-muted-400"
       >
         {{ props.label }}
       </ListboxLabel>
       <div class="relative">
         <ListboxButton
           :disabled="props.disabled"
-          class="relative flex items-center peer pl-4 pr-12 h-10 text-sm leading-5 font-text w-full bg-white text-slate-600 border border-slate-300 focus:border-slate-300 focus:shadow-lg focus:shadow-slate-300/50 dark:focus:shadow-slate-800/50 placeholder:text-slate-300 dark:placeholder:text-slate-500 dark:bg-slate-900/75 dark:text-slate-200 dark:border-slate-700 dark:focus:border-slate-700 tairo-focus disabled:opacity-75 disabled:cursor-not-allowed"
+          class="relative flex items-center peer pl-4 pr-12 h-10 text-sm leading-5 font-sans w-full bg-white text-muted-600 border border-muted-300 focus:border-muted-300 focus:shadow-lg focus:shadow-muted-300/50 dark:focus:shadow-muted-800/50 placeholder:text-muted-300 dark:placeholder:text-muted-500 dark:bg-muted-900/75 dark:text-muted-200 dark:border-muted-700 dark:focus:border-muted-700 tairo-focus disabled:opacity-75 disabled:cursor-not-allowed"
           :class="[
             props.shape === 'rounded' && 'rounded',
             props.shape === 'curved' && 'rounded-xl',
@@ -93,11 +93,11 @@ const items = ref(props.items)
             {{ value.name }}
           </span>
           <span
-            class="w-10 pointer-events-none absolute inset-y-0 right-0 border-l border-slate-300 dark:border-slate-700 flex items-center justify-center"
+            class="w-10 pointer-events-none absolute inset-y-0 right-0 border-l border-muted-300 dark:border-muted-700 flex items-center justify-center"
           >
             <BaseIcon
               name="lucide:chevron-down"
-              class="h-5 w-5 text-slate-400 transition-transform duration-300"
+              class="h-5 w-5 text-muted-400 transition-transform duration-300"
               :class="open && 'rotate-180'"
             />
           </span>
@@ -115,7 +115,7 @@ const items = ref(props.items)
           leave-to-class="opacity-0"
         >
           <ListboxOptions
-            class="absolute mt-1 max-h-60 w-full overflow-auto border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-700 p-2 text-base shadow-lg focus:ring-1 focus:ring-primary-500/50 focus:outline-none sm:text-sm slimscroll z-10"
+            class="absolute mt-1 max-h-60 w-full overflow-auto border border-muted-200 dark:border-muted-600 bg-white dark:bg-muted-700 p-2 text-base shadow-lg focus:ring-1 focus:ring-primary-500/50 focus:outline-none sm:text-sm slimscroll z-10"
             :class="[
               props.shape === 'rounded' && 'rounded-md',
               props.shape === 'curved' && 'rounded-xl',
@@ -133,7 +133,7 @@ const items = ref(props.items)
                 class="relative flex items-center cursor-pointer select-none py-2 px-3"
                 :class="[
                   active
-                    ? 'bg-primary-100 text-primary-900 dark:bg-slate-800'
+                    ? 'bg-primary-100 text-primary-900 dark:bg-muted-800'
                     : '',
                   props.shape === 'rounded' && 'rounded',
                   props.shape === 'curved' && 'rounded-md',
@@ -150,7 +150,7 @@ const items = ref(props.items)
                   v-else-if="item.icon && !item.media"
                   size="sm"
                   shape="rounded"
-                  class="mr-1 -ml-2 text-slate-500 dark:text-slate-400"
+                  class="mr-1 -ml-2 text-muted-500 dark:text-muted-400"
                 >
                   <BaseIcon
                     :name="item.icon"
@@ -163,11 +163,11 @@ const items = ref(props.items)
                     as="h4"
                     :weight="selected ? 'semibold' : 'normal'"
                     size="sm"
-                    class="block truncate text-slate-800 dark:text-white"
+                    class="block truncate text-muted-800 dark:text-white"
                   >
                     {{ item.name }}
                   </BaseHeading>
-                  <BaseText v-if="item.text" size="xs" class="text-slate-400">
+                  <BaseText v-if="item.text" size="xs" class="text-muted-400">
                     {{ item.text }}
                   </BaseText>
                 </div>

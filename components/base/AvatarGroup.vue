@@ -30,7 +30,7 @@ const props = withDefaults(defineProps<AvatarGroupProps>(), {
         v-bind="typeof avatar === 'string' ? { src: avatar } : avatar"
         :size="props.size"
         tabindex="0"
-        class="border-white dark:border-slate-800 duration-100 transition-all ease-in"
+        class="border-white dark:border-muted-800 duration-100 transition-all ease-in"
         :class="[
           props.size === 'xs' &&
             'border-2 hover:-ml-2 hover:mr-2 focus:-ml-2 focus:mr-2',
@@ -53,7 +53,7 @@ const props = withDefaults(defineProps<AvatarGroupProps>(), {
       />
       <div
         v-if="avatars.length > props.limit"
-        class="inline-flex justify-center items-center relative rounded-full bg-slate-200 dark:bg-slate-700 border-white dark:border-slate-800"
+        class="inline-flex justify-center items-center relative rounded-full bg-muted-200 dark:bg-muted-700 border-white dark:border-muted-800"
         :class="[
           props.size === 'xs' && 'w-8 h-8 -ml-2 border-2',
           props.size === 'sm' && 'w-10 h-10 -ml-3 border-2',
@@ -62,7 +62,7 @@ const props = withDefaults(defineProps<AvatarGroupProps>(), {
         ]"
       >
         <span
-          class="font-text uppercase text-slate-500 dark:text-slate-300 font-normal -ml-1"
+          class="font-sans uppercase text-muted-500 dark:text-muted-300 font-normal -ml-1"
           :class="[
             props.size === 'xs' && 'text-sm',
             props.size === 'sm' && 'text-sm',

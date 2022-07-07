@@ -95,13 +95,13 @@ const hightlightSearch = (text?: string, search?: string): string => {
           @click="show[category] = !show[category]"
         >
           <span
-            class="font-text text-[.7rem] font-medium uppercase text-slate-500"
+            class="font-sans text-[.7rem] font-medium uppercase text-muted-500"
           >
             {{ category }}
           </span>
           <div
             v-if="!filter"
-            class="text-slate-400 dark:text-slate-500 group-hover:text-primary-400 group-focus-visible:text-primary-400"
+            class="text-muted-400 dark:text-muted-500 group-hover:text-primary-400 group-focus-visible:text-primary-400"
           >
             <BaseIcon
               v-if="!show[category]"
@@ -124,7 +124,7 @@ const hightlightSearch = (text?: string, search?: string): string => {
                   ? 'flex-col'
                   : 'flex-row items-center'
               "
-              class="flex group w-full text-slate-400 hover:text-primary-500 focus-visible:text-primary-500 transition-colors duration-300 tairo-focus focus-within:outline-0 focus-visible:outline-1"
+              class="flex group w-full text-muted-400 hover:text-primary-500 focus-visible:text-primary-500 transition-colors duration-300 tairo-focus focus-within:outline-0 focus-visible:outline-1"
             >
               <template
                 v-if="
@@ -139,27 +139,65 @@ const hightlightSearch = (text?: string, search?: string): string => {
                     (item, index) => (isSearching ? true : index === 0)
                   )"
                   :key="component"
-                  class="truncate font-mono after:content-['_/>']"
+                  class="truncate font-mono"
                   :class="[
-                    index !== 0 &&
-                      'text-xs text-slate-300 group-hover:text-primary-300 dark:text-slate-500 dark:group-hover:text-primary-400/50',
-                    index === 0 && `text-sm before:content-['<']`,
-                    index !== 0 &&
-                      index ===
-                        route.meta?.documentation?.components?.length - 1 &&
-                      `before:content-['└─_<']`,
-                    index !== 0 &&
-                      index !==
-                        route.meta?.documentation?.components?.length - 1 &&
-                      `before:content-['├─_<']`,
+                    index !== 0 && 'text-xs opacity-50',
+                    index === 0 && `text-sm`,
                   ]"
                   :title="`<${component} />`"
-                  v-html="hightlightSearch(component, filter)"
-                ></div>
+                >
+                  <span
+                    v-if="
+                      index !== 0 &&
+                      index !==
+                        route.meta?.documentation?.components?.length - 1
+                    "
+                  >
+                    ├─
+                  </span>
+                  <span
+                    v-else-if="
+                      index !== 0 &&
+                      index ===
+                        route.meta?.documentation?.components?.length - 1
+                    "
+                  >
+                    └─
+                  </span>
+                  <span>&lt;</span>
+                  <span v-html="hightlightSearch(component, filter)"></span>
+                  <span>&gt;</span>
+                </div>
+                <template v-if="isSearching">
+                  <div
+                    v-for="composable in route.meta?.documentation?.composables"
+                    :key="composable"
+                    class="truncate font-mono text-xs opacity-50"
+                    :title="composable"
+                  >
+                    <BaseIcon
+                      name="ri:parentheses-line"
+                      class="w-4 h-4 inline-block mr-2"
+                    />
+                    <span v-html="hightlightSearch(composable, filter)"></span>
+                  </div>
+                  <div
+                    v-for="item in route.meta?.documentation?.interfaces"
+                    :key="item"
+                    class="truncate font-mono text-xs opacity-50"
+                    :title="item"
+                  >
+                    <BaseIcon
+                      name="ri:parentheses-line"
+                      class="w-4 h-4 inline-block mr-2"
+                    />
+                    <span v-html="hightlightSearch(item, filter)"></span>
+                  </div>
+                </template>
               </template>
               <span
                 v-else
-                class="font-text text-sm"
+                class="font-sans text-sm"
                 v-html="hightlightSearch(route.meta?.title, filter)"
               ></span>
             </NuxtLink>

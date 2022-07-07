@@ -19,12 +19,12 @@ definePageMeta({
         size="2xl"
         weight="normal"
         lead="tight"
-        class="text-slate-800 dark:text-white"
+        class="text-muted-800 dark:text-white"
       >
         <span>Tairo Components</span>
       </BaseHeading>
       <BaseParagraph>
-        <span class="text-slate-500">
+        <span class="text-muted-500">
           This is the Tairo components library with detailed code examples.
         </span>
       </BaseParagraph>
@@ -37,10 +37,10 @@ definePageMeta({
           <div class="flex justify-between p-6 mb-2">
             <div class="grow pr-4">
               <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
-                <span class="text-slate-800 dark:text-white">Content</span>
+                <span class="text-muted-800 dark:text-white">Content</span>
               </BaseHeading>
               <BaseParagraph lead="tight" size="sm">
-                <span class="text-slate-400">
+                <span class="text-muted-400">
                   Get familiar with the Tairo content styles. Code examples
                   included.
                 </span>
@@ -58,11 +58,11 @@ definePageMeta({
             />
           </div>
           <div
-            class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-slate-700"
+            class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-muted-700"
           >
             <NuxtLink
               to="/components/typography"
-              class="font-text text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
+              class="font-sans text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
             >
               Get Started
             </NuxtLink>
@@ -73,10 +73,10 @@ definePageMeta({
           <div class="flex justify-between p-6 mb-2">
             <div class="grow pr-4">
               <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
-                <span class="text-slate-800 dark:text-white">Tags</span>
+                <span class="text-muted-800 dark:text-white">Tags</span>
               </BaseHeading>
               <BaseParagraph lead="tight" size="sm">
-                <span class="text-slate-400">
+                <span class="text-muted-400">
                   Get familiar with the Tairo tag styles. Code examples
                   included.
                 </span>
@@ -94,11 +94,11 @@ definePageMeta({
             />
           </div>
           <div
-            class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-slate-700"
+            class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-muted-700"
           >
             <NuxtLink
               to="/components/tag"
-              class="font-text text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
+              class="font-sans text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
             >
               Get Started
             </NuxtLink>
@@ -109,10 +109,10 @@ definePageMeta({
           <div class="flex justify-between p-6 mb-2">
             <div class="grow pr-4">
               <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
-                <span class="text-slate-800 dark:text-white">Tabs</span>
+                <span class="text-muted-800 dark:text-white">Tabs</span>
               </BaseHeading>
               <BaseParagraph lead="tight" size="sm">
-                <span class="text-slate-400">
+                <span class="text-muted-400">
                   Get familiar with the Vuero tab styles. Code examples
                   included.
                 </span>
@@ -130,11 +130,11 @@ definePageMeta({
             />
           </div>
           <div
-            class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-slate-700"
+            class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-muted-700"
           >
             <NuxtLink
               to="/components/tabs"
-              class="font-text text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
+              class="font-sans text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
             >
               Get Started
             </NuxtLink>
@@ -145,10 +145,10 @@ definePageMeta({
           <div class="flex justify-between p-6 mb-2">
             <div class="grow pr-4">
               <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
-                <span class="text-slate-800 dark:text-white">Cards</span>
+                <span class="text-muted-800 dark:text-white">Cards</span>
               </BaseHeading>
               <BaseParagraph lead="tight" size="sm">
-                <span class="text-slate-400">
+                <span class="text-muted-400">
                   Get familiar with the Vuero card styles. Code examples
                   included.
                 </span>
@@ -166,11 +166,11 @@ definePageMeta({
             />
           </div>
           <div
-            class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-slate-700"
+            class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-muted-700"
           >
             <NuxtLink
               to="/components/card"
-              class="font-text text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
+              class="font-sans text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
             >
               Get Started
             </NuxtLink>
@@ -181,10 +181,10 @@ definePageMeta({
           <div class="flex justify-between p-6 mb-2">
             <div class="grow pr-4">
               <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
-                <span class="text-slate-800 dark:text-white">Avatars</span>
+                <span class="text-muted-800 dark:text-white">Avatars</span>
               </BaseHeading>
               <BaseParagraph lead="tight" size="sm">
-                <span class="text-slate-400">
+                <span class="text-muted-400">
                   Get familiar with the Vuero avatar styles. Code examples
                   included.
                 </span>
@@ -202,11 +202,11 @@ definePageMeta({
             />
           </div>
           <div
-            class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-slate-700"
+            class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-muted-700"
           >
             <NuxtLink
               to="/components/avatar"
-              class="font-text text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
+              class="font-sans text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
             >
               Get Started
             </NuxtLink>
@@ -217,10 +217,10 @@ definePageMeta({
           <div class="flex justify-between p-6 mb-2">
             <div class="grow pr-4">
               <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
-                <span class="text-slate-800 dark:text-white">Accordions</span>
+                <span class="text-muted-800 dark:text-white">Accordions</span>
               </BaseHeading>
               <BaseParagraph lead="tight" size="sm">
-                <span class="text-slate-400">
+                <span class="text-muted-400">
                   Get familiar with the Vuero accordions styles. Code examples
                   included.
                 </span>
@@ -238,11 +238,11 @@ definePageMeta({
             />
           </div>
           <div
-            class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-slate-700"
+            class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-muted-700"
           >
             <NuxtLink
               to="/components/accordion"
-              class="font-text text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
+              class="font-sans text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
             >
               Get Started
             </NuxtLink>
@@ -253,10 +253,10 @@ definePageMeta({
           <div class="flex justify-between p-6 mb-2">
             <div class="grow pr-4">
               <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
-                <span class="text-slate-800 dark:text-white">Breadcrumbs</span>
+                <span class="text-muted-800 dark:text-white">Breadcrumbs</span>
               </BaseHeading>
               <BaseParagraph lead="tight" size="sm">
-                <span class="text-slate-400">
+                <span class="text-muted-400">
                   Get familiar with the Vuero breadcrumb styles. Code examples
                   included.
                 </span>
@@ -274,11 +274,11 @@ definePageMeta({
             />
           </div>
           <div
-            class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-slate-700"
+            class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-muted-700"
           >
             <NuxtLink
               to="/components/breadcrumb"
-              class="font-text text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
+              class="font-sans text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
             >
               Get Started
             </NuxtLink>
@@ -289,10 +289,10 @@ definePageMeta({
           <div class="flex justify-between p-6 mb-2">
             <div class="grow pr-4">
               <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
-                <span class="text-slate-800 dark:text-white">Icon Box</span>
+                <span class="text-muted-800 dark:text-white">Icon Box</span>
               </BaseHeading>
               <BaseParagraph lead="tight" size="sm">
-                <span class="text-slate-400">
+                <span class="text-muted-400">
                   Get familiar with the Vuero icon boxes styles. Code examples
                   included.
                 </span>
@@ -310,11 +310,11 @@ definePageMeta({
             />
           </div>
           <div
-            class="py-5 px-6 border-t-2 border-dashed border-gray-300 dark:border-slate-700"
+            class="py-5 px-6 border-t-2 border-dashed border-gray-300 dark:border-muted-700"
           >
             <NuxtLink
               to="/components/icon-box"
-              class="font-text text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
+              class="font-sans text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
             >
               Get Started
             </NuxtLink>
@@ -325,10 +325,10 @@ definePageMeta({
           <div class="flex justify-between p-6 mb-2">
             <div class="grow pr-4">
               <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
-                <span class="text-slate-800 dark:text-white">Flex Table</span>
+                <span class="text-muted-800 dark:text-white">Flex Table</span>
               </BaseHeading>
               <BaseParagraph lead="tight" size="sm">
-                <span class="text-slate-400">
+                <span class="text-muted-400">
                   Get familiar with the Vuero flex table styles. Code examples
                   included.
                 </span>
@@ -346,11 +346,11 @@ definePageMeta({
             />
           </div>
           <div
-            class="py-5 px-6 border-t-2 border-dashed border-gray-300 dark:border-slate-700"
+            class="py-5 px-6 border-t-2 border-dashed border-gray-300 dark:border-muted-700"
           >
             <NuxtLink
               to="/components/flex-table"
-              class="font-text text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
+              class="font-sans text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
             >
               Get Started
             </NuxtLink>
@@ -361,10 +361,10 @@ definePageMeta({
           <div class="flex justify-between p-6 mb-2">
             <div class="grow pr-4">
               <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
-                <span class="text-slate-800 dark:text-white">Snacks</span>
+                <span class="text-muted-800 dark:text-white">Snacks</span>
               </BaseHeading>
               <BaseParagraph lead="tight" size="sm">
-                <span class="text-slate-400">
+                <span class="text-muted-400">
                   Get familiar with the Vuero snack styles. Code examples
                   included.
                 </span>
@@ -382,11 +382,11 @@ definePageMeta({
             />
           </div>
           <div
-            class="py-5 px-6 border-t-2 border-dashed border-gray-300 dark:border-slate-700"
+            class="py-5 px-6 border-t-2 border-dashed border-gray-300 dark:border-muted-700"
           >
             <NuxtLink
               to="/components/snack"
-              class="font-text text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
+              class="font-sans text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
             >
               Get Started
             </NuxtLink>
@@ -396,10 +396,10 @@ definePageMeta({
           <div class="flex justify-between p-6 mb-2">
             <div class="grow pr-4">
               <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
-                <span class="text-slate-800 dark:text-white">Buttons</span>
+                <span class="text-muted-800 dark:text-white">Buttons</span>
               </BaseHeading>
               <BaseParagraph lead="tight" size="sm">
-                <span class="text-slate-400">
+                <span class="text-muted-400">
                   Get familiar with the Tairo button styles. Code examples
                   included.
                 </span>
@@ -417,11 +417,11 @@ definePageMeta({
             />
           </div>
           <div
-            class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-slate-700"
+            class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-muted-700"
           >
             <NuxtLink
               to="/components/button"
-              class="font-text text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
+              class="font-sans text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
             >
               Get Started
             </NuxtLink>
@@ -432,10 +432,10 @@ definePageMeta({
           <div class="flex justify-between p-6 mb-2">
             <div class="grow pr-4">
               <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
-                <span class="text-slate-800 dark:text-white">Icons</span>
+                <span class="text-muted-800 dark:text-white">Icons</span>
               </BaseHeading>
               <BaseParagraph lead="tight" size="sm">
-                <span class="text-slate-400">
+                <span class="text-muted-400">
                   Get familiar with the Tairo icon libraries. Code examples
                   included.
                 </span>
@@ -453,11 +453,11 @@ definePageMeta({
             />
           </div>
           <div
-            class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-slate-700"
+            class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-muted-700"
           >
             <NuxtLink
               to="/components/icons"
-              class="font-text text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
+              class="font-sans text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
             >
               Get Started
             </NuxtLink>
@@ -468,10 +468,10 @@ definePageMeta({
           <div class="flex justify-between p-6 mb-2">
             <div class="grow pr-4">
               <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
-                <span class="text-slate-800 dark:text-white">Dropdowns</span>
+                <span class="text-muted-800 dark:text-white">Dropdowns</span>
               </BaseHeading>
               <BaseParagraph lead="tight" size="sm">
-                <span class="text-slate-400">
+                <span class="text-muted-400">
                   Get familiar with the Vuero dropdown styles. Code examples
                   included.
                 </span>
@@ -489,11 +489,11 @@ definePageMeta({
             />
           </div>
           <div
-            class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-slate-700"
+            class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-muted-700"
           >
             <NuxtLink
               to="/components/dropdown"
-              class="font-text text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
+              class="font-sans text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
             >
               Get Started
             </NuxtLink>
@@ -504,10 +504,10 @@ definePageMeta({
           <div class="flex justify-between p-6 mb-2">
             <div class="grow pr-4">
               <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
-                <span class="text-slate-800 dark:text-white">Modals</span>
+                <span class="text-muted-800 dark:text-white">Modals</span>
               </BaseHeading>
               <BaseParagraph lead="tight" size="sm">
-                <span class="text-slate-400">
+                <span class="text-muted-400">
                   Get familiar with the Vuero modal styles. Code examples
                   included.
                 </span>
@@ -525,11 +525,11 @@ definePageMeta({
             />
           </div>
           <div
-            class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-slate-700"
+            class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-muted-700"
           >
             <NuxtLink
               to="/components/modal"
-              class="font-text text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
+              class="font-sans text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
             >
               Get Started
             </NuxtLink>
@@ -540,10 +540,10 @@ definePageMeta({
           <div class="flex justify-between p-6 mb-2">
             <div class="grow pr-4">
               <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
-                <span class="text-slate-800 dark:text-white">Progress</span>
+                <span class="text-muted-800 dark:text-white">Progress</span>
               </BaseHeading>
               <BaseParagraph lead="tight" size="sm">
-                <span class="text-slate-400">
+                <span class="text-muted-400">
                   Get familiar with the Vuero progress bar styles. Code examples
                   included.
                 </span>
@@ -561,11 +561,11 @@ definePageMeta({
             />
           </div>
           <div
-            class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-slate-700"
+            class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-muted-700"
           >
             <NuxtLink
               to="/components/progress"
-              class="font-text text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
+              class="font-sans text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
             >
               Get Started
             </NuxtLink>
@@ -576,10 +576,10 @@ definePageMeta({
           <div class="flex justify-between p-6 mb-2">
             <div class="grow pr-4">
               <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
-                <span class="text-slate-800 dark:text-white">Forms</span>
+                <span class="text-muted-800 dark:text-white">Forms</span>
               </BaseHeading>
               <BaseParagraph lead="tight" size="sm">
-                <span class="text-slate-400">
+                <span class="text-muted-400">
                   Get familiar with the Vuero form elements. Code examples
                   included.
                 </span>
@@ -597,11 +597,11 @@ definePageMeta({
             />
           </div>
           <div
-            class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-slate-700"
+            class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-muted-700"
           >
             <NuxtLink
               to="/components/form/input"
-              class="font-text text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
+              class="font-sans text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
             >
               Get Started
             </NuxtLink>
@@ -612,10 +612,10 @@ definePageMeta({
           <div class="flex justify-between p-6 mb-2">
             <div class="grow pr-4">
               <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
-                <span class="text-slate-800 dark:text-white">Checkboxes</span>
+                <span class="text-muted-800 dark:text-white">Checkboxes</span>
               </BaseHeading>
               <BaseParagraph lead="tight" size="sm">
-                <span class="text-slate-400">
+                <span class="text-muted-400">
                   Get familiar with the Vuero checkboxes styles. Code examples
                   included.
                 </span>
@@ -633,11 +633,11 @@ definePageMeta({
             />
           </div>
           <div
-            class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-slate-700"
+            class="py-4 px-6 border-t-2 border-dashed border-gray-300 dark:border-muted-700"
           >
             <NuxtLink
               to="/components/form/checkbox"
-              class="font-text text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
+              class="font-sans text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
             >
               Get Started
             </NuxtLink>
@@ -648,10 +648,10 @@ definePageMeta({
           <div class="flex justify-between p-6 mb-2">
             <div class="grow pr-4">
               <BaseHeading size="xl" weight="normal" lead="tight" class="mb-2">
-                <span class="text-slate-800 dark:text-white">Switches</span>
+                <span class="text-muted-800 dark:text-white">Switches</span>
               </BaseHeading>
               <BaseParagraph lead="tight" size="sm">
-                <span class="text-slate-400">
+                <span class="text-muted-400">
                   Get familiar with the Vuero switch styles. Code examples
                   included.
                 </span>
@@ -669,11 +669,11 @@ definePageMeta({
             />
           </div>
           <div
-            class="py-5 px-6 border-t-2 border-dashed border-gray-300 dark:border-slate-700"
+            class="py-5 px-6 border-t-2 border-dashed border-gray-300 dark:border-muted-700"
           >
             <NuxtLink
               to="/components/form/switch"
-              class="font-text text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
+              class="font-sans text-primary-500 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-300"
             >
               Get Started
             </NuxtLink>
@@ -684,7 +684,7 @@ definePageMeta({
       <div class="text-center pt-12 pb-6">
         <NuxtLink
           to="https://docs.cssninja.io/tairo"
-          class="font-text text-primary-500 border-b-2 border-dotted border-primary-500"
+          class="font-sans text-primary-500 border-b-2 border-dotted border-primary-500"
         >
           Online Documentation
         </NuxtLink>

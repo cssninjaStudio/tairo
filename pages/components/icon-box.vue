@@ -140,7 +140,7 @@ definePageMeta({
                 <BaseIconBox
                   size="md"
                   shape="circle"
-                  class="bg-white border border-slate-200 text-gray-500 dark:bg-slate-700 dark:border-slate-600"
+                  class="bg-white border border-muted-200 text-gray-500 dark:bg-muted-700 dark:border-muted-600"
                 >
                   <BaseIcon name="ph:nut-duotone" class="w-5 h-5" />
                 </BaseIconBox>
@@ -276,7 +276,7 @@ definePageMeta({
                 <BaseIconBox
                   size="md"
                   shape="circle"
-                  class="bg-slate-800 text-white"
+                  class="bg-muted-800 text-white"
                 >
                   <BaseIcon name="ph:moon-duotone" class="w-5 h-5" />
                 </BaseIconBox>
@@ -561,7 +561,7 @@ definePageMeta({
                 <BaseIconBox
                   size="md"
                   shape="circle"
-                  class="text-slate-800 dark:text-slate-500"
+                  class="text-muted-800 dark:text-muted-500"
                   bordered
                 >
                   <BaseIcon name="ph:toilet-paper-duotone" class="w-5 h-5" />
@@ -582,7 +582,7 @@ definePageMeta({
                 <BaseIconBox
                   size="md"
                   shape="circle"
-                  class="bg-white border border-slate-200 text-gray-500 dark:bg-slate-700 dark:border-slate-600 shadow-lg"
+                  class="bg-white border border-muted-200 text-gray-500 dark:bg-muted-700 dark:border-muted-600 shadow-lg"
                 >
                   <BaseIcon name="ph:nut-duotone" class="w-5 h-5" />
                 </BaseIconBox>
@@ -711,7 +711,7 @@ definePageMeta({
                 <BaseIconBox
                   size="md"
                   shape="circle"
-                  class="bg-slate-800 text-white shadow-lg shadow-slate-500/50"
+                  class="bg-muted-800 text-white shadow-lg shadow-muted-500/50"
                 >
                   <BaseIcon name="ph:moon-duotone" class="w-5 h-5" />
                 </BaseIconBox>

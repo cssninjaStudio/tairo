@@ -14,13 +14,13 @@ const activeTab = ref('demo')
 
 <template>
   <div
-    class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-6 pt-6 pb-10 mb-4"
+    class="bg-white dark:bg-muted-800 border border-muted-200 dark:border-muted-700 rounded-lg px-6 pt-6 pb-10 mb-4"
   >
     <div class="flex items-center mb-10 whitespace-nowrap">
       <BaseParagraph
         size="md"
         lead="tight"
-        class="text-slate-500 dark:text-slate-400 hidden md:block"
+        class="text-muted-500 dark:text-muted-400 hidden md:block"
       >
         {{ props.label }}
       </BaseParagraph>

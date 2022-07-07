@@ -33,7 +33,7 @@
   Let the content set the size of the tooltips 
   but this will also keep them from being obnoxious
   */
-  @apply text-white font-text text-xs bg-slate-800 dark:bg-pink-500 shadow-lg shadow-slate-800/20 dark:shadow-pink-500/10;
+  @apply text-white font-sans text-xs bg-muted-800 dark:bg-pink-500 shadow-lg shadow-muted-800/20 dark:shadow-pink-500/10;
   min-width: 3em;
   max-width: 21em;
   white-space: nowrap;
@@ -61,7 +61,7 @@
 /* FLOW: UP */
 [tooltip]:not([flow])::before,
 [tooltip][flow^='up']::before {
-  @apply text-slate-800 dark:text-pink-500;
+  @apply text-muted-800 dark:text-pink-500;
   bottom: calc(100% + 10px);
   border-bottom-width: 0;
   border-top-color: currentColor;
@@ -80,7 +80,7 @@
 
 /* FLOW: DOWN */
 [tooltip][flow^='down']::before {
-  @apply text-slate-800 dark:text-pink-500;
+  @apply text-muted-800 dark:text-pink-500;
   top: 100%;
   border-top-width: 0;
   border-bottom-color: currentColor;
@@ -96,7 +96,7 @@
 
 /* FLOW: LEFT */
 [tooltip][flow^='left']::before {
-  @apply text-slate-800 dark:text-pink-500;
+  @apply text-muted-800 dark:text-pink-500;
   top: 50%;
   border-right-width: 0;
   border-left-color: currentColor;
@@ -111,7 +111,7 @@
 
 /* FLOW: RIGHT */
 [tooltip][flow^='right']::before {
-  @apply text-slate-800 dark:text-pink-500;
+  @apply text-muted-800 dark:text-pink-500;
   top: 50%;
   border-left-width: 0;
   border-right-color: currentColor;

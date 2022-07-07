@@ -45,7 +45,7 @@ const toggle = (key: number) => {
 
 <template>
   <FocusLoop
-    class="block bg-white border border-slate-200 overflow-hidden"
+    class="block bg-white border border-muted-200 overflow-hidden"
     :class="[
       exclusive && 'is-exclusive',
       props.shape === 'rounded' && 'rounded-md',
@@ -59,7 +59,7 @@ const toggle = (key: number) => {
       :open="internalOpenItems?.includes(key) ?? undefined"
       :class="[
         internalOpenItems?.includes(key) && 'is-active',
-        key > 0 && 'border-t border-slate-200',
+        key > 0 && 'border-t border-muted-200',
       ]"
     >
       <slot name="accordion-item" :item="item" :index="key" :toggle="toggle">
@@ -87,7 +87,7 @@ const toggle = (key: number) => {
                 size="sm"
                 weight="semibold"
                 lead="none"
-                class="text-slate-800 dark:text-white"
+                class="text-muted-800 dark:text-white"
               >
                 {{ item.title }}
               </BaseHeading>
@@ -98,27 +98,27 @@ const toggle = (key: number) => {
                 :class="
                   internalOpenItems?.includes(key)
                     ? 'bg-primary-500'
-                    : 'bg-slate-200'
+                    : 'bg-muted-200'
                 "
               ></div>
               <div
                 v-else-if="props.action === 'chevron'"
-                class="flex items-center justify-center h-8 w-8 rounded-full bg-white border border-slate-200 transition-all duration-300"
+                class="flex items-center justify-center h-8 w-8 rounded-full bg-white border border-muted-200 transition-all duration-300"
                 :class="
                   internalOpenItems?.includes(key)
                     ? 'text-primary-500 rotate-180'
-                    : 'text-slate-400'
+                    : 'text-muted-400'
                 "
               >
                 <IconChevronDown class="w-4 h-4" />
               </div>
               <div
                 v-else-if="props.action === 'plus'"
-                class="flex items-center justify-center h-8 w-8 rounded-full bg-white border border-slate-200 transition-all duration-300"
+                class="flex items-center justify-center h-8 w-8 rounded-full bg-white border border-muted-200 transition-all duration-300"
                 :class="
                   internalOpenItems?.includes(key)
                     ? 'text-primary-500 rotate-45'
-                    : 'text-slate-400'
+                    : 'text-muted-400'
                 "
               >
                 <IconPlus class="w-4 h-4" />
@@ -136,7 +136,7 @@ const toggle = (key: number) => {
             <BaseParagraph
               size="md"
               lead="tight"
-              class="text-slate-500 dark:text-slate-400"
+              class="text-muted-500 dark:text-muted-400"
             >
               {{ item.content }}
             </BaseParagraph>

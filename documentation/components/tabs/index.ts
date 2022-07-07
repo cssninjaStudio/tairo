@@ -10,7 +10,7 @@ export const start = `
     <template #tab="{ activeValue }">
       <p
         v-if="activeValue === 'team'"
-        class="font-text text-sm text-gray-500 dark:text-gray-400"
+        class="font-sans text-sm text-gray-500 dark:text-gray-400"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Quid iudicant sensus? Primum quid tu dicis breve? Etiam
@@ -18,7 +18,7 @@ export const start = `
       </p>
       <p
         v-else-if="activeValue === 'projects'"
-        class="font-text text-sm text-gray-500 dark:text-gray-400"
+        class="font-sans text-sm text-gray-500 dark:text-gray-400"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Quid iudicant sensus? Primum quid tu dicis breve? Etiam
@@ -44,7 +44,7 @@ export const center = `
     <template #tab="{ activeValue }">
       <p
         v-if="activeValue === 'team'"
-        class="font-text text-sm text-gray-500 dark:text-gray-400"
+        class="font-sans text-sm text-gray-500 dark:text-gray-400"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Quid iudicant sensus? Primum quid tu dicis breve? Etiam
@@ -52,7 +52,7 @@ export const center = `
       </p>
       <p
         v-else-if="activeValue === 'projects'"
-        class="font-text text-sm text-gray-500 dark:text-gray-400"
+        class="font-sans text-sm text-gray-500 dark:text-gray-400"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Quid iudicant sensus? Primum quid tu dicis breve? Etiam
@@ -79,7 +79,7 @@ export const end = `
     <template #tab="{ activeValue }">
       <p
         v-if="activeValue === 'team'"
-        class="font-text text-sm text-gray-500 dark:text-gray-400"
+        class="font-sans text-sm text-gray-500 dark:text-gray-400"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Quid iudicant sensus? Primum quid tu dicis breve? Etiam
@@ -87,7 +87,7 @@ export const end = `
       </p>
       <p
         v-else-if="activeValue === 'projects'"
-        class="font-text text-sm text-gray-500 dark:text-gray-400"
+        class="font-sans text-sm text-gray-500 dark:text-gray-400"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Quid iudicant sensus? Primum quid tu dicis breve? Etiam
@@ -97,7 +97,7 @@ export const end = `
       </p>
       <p
         v-else-if="activeValue === 'tasks'"
-        class="font-text text-sm text-gray-500 dark:text-gray-400"
+        class="font-sans text-sm text-gray-500 dark:text-gray-400"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Quid iudicant sensus? Primum quid tu dicis breve? Etiam
@@ -134,7 +134,7 @@ export const icons = `
     <template #tab="{ activeValue }">
       <p
         v-if="activeValue === 'team'"
-        class="font-text text-sm text-gray-500 dark:text-gray-400"
+        class="font-sans text-sm text-gray-500 dark:text-gray-400"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Quid iudicant sensus? Primum quid tu dicis breve? Etiam
@@ -142,7 +142,7 @@ export const icons = `
       </p>
       <p
         v-else-if="activeValue === 'projects'"
-        class="font-text text-sm text-gray-500 dark:text-gray-400"
+        class="font-sans text-sm text-gray-500 dark:text-gray-400"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Quid iudicant sensus? Primum quid tu dicis breve? Etiam
@@ -152,7 +152,7 @@ export const icons = `
       </p>
       <p
         v-else-if="activeValue === 'tasks'"
-        class="font-text text-sm text-gray-500 dark:text-gray-400"
+        class="font-sans text-sm text-gray-500 dark:text-gray-400"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Quid iudicant sensus? Primum quid tu dicis breve? Etiam
@@ -187,7 +187,7 @@ export const boxed = `
     <template #tab="{ activeValue }">
       <p
         v-if="activeValue === 'team'"
-        class="font-text text-sm text-gray-500 dark:text-gray-400"
+        class="font-sans text-sm text-gray-500 dark:text-gray-400"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Quid iudicant sensus? Primum quid tu dicis breve? Etiam
@@ -195,7 +195,7 @@ export const boxed = `
       </p>
       <p
         v-else-if="activeValue === 'projects'"
-        class="font-text text-sm text-gray-500 dark:text-gray-400"
+        class="font-sans text-sm text-gray-500 dark:text-gray-400"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Quid iudicant sensus? Primum quid tu dicis breve? Etiam
@@ -205,7 +205,7 @@ export const boxed = `
       </p>
       <p
         v-else-if="activeValue === 'tasks'"
-        class="font-text text-sm text-gray-500 dark:text-gray-400"
+        class="font-sans text-sm text-gray-500 dark:text-gray-400"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Quid iudicant sensus? Primum quid tu dicis breve? Etiam
@@ -243,7 +243,7 @@ export const boxedIcons = `
     <template #tab="{ activeValue }">
       <p
         v-if="activeValue === 'team'"
-        class="font-text text-sm text-gray-500 dark:text-gray-400"
+        class="font-sans text-sm text-gray-500 dark:text-gray-400"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Quid iudicant sensus? Primum quid tu dicis breve? Etiam
@@ -251,7 +251,7 @@ export const boxedIcons = `
       </p>
       <p
         v-else-if="activeValue === 'projects'"
-        class="font-text text-sm text-gray-500 dark:text-gray-400"
+        class="font-sans text-sm text-gray-500 dark:text-gray-400"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Quid iudicant sensus? Primum quid tu dicis breve? Etiam
@@ -261,7 +261,7 @@ export const boxedIcons = `
       </p>
       <p
         v-else-if="activeValue === 'tasks'"
-        class="font-text text-sm text-gray-500 dark:text-gray-400"
+        class="font-sans text-sm text-gray-500 dark:text-gray-400"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Quid iudicant sensus? Primum quid tu dicis breve? Etiam

@@ -44,9 +44,9 @@ definePageMeta({
             <template #demo>
               <div class="flex items-end flex-wrap gap-6">
                 <BasePopover size="sm">
-                  <span class="flex items-center text-slate-500">
+                  <span class="flex items-center text-muted-500">
                     <BaseIcon name="lucide:help-circle" class="w-4 h-4 mr-1" />
-                    <span class="font-text text-sm">Help text</span>
+                    <span class="font-sans text-sm">Help text</span>
                   </span>
 
                   <template #content>
@@ -61,9 +61,9 @@ definePageMeta({
                 </BasePopover>
 
                 <BasePopover size="sm">
-                  <span class="flex items-center text-slate-500">
+                  <span class="flex items-center text-muted-500">
                     <BaseIcon name="lucide:help-circle" class="w-4 h-4 mr-1" />
-                    <span class="font-text text-sm">Help text</span>
+                    <span class="font-sans text-sm">Help text</span>
                   </span>
 
                   <template #content>
@@ -91,9 +91,9 @@ definePageMeta({
             <template #demo>
               <div class="flex items-end justify-end gap-6">
                 <BasePopover size="sm" orientation="end">
-                  <span class="flex items-center text-slate-500">
+                  <span class="flex items-center text-muted-500">
                     <BaseIcon name="lucide:help-circle" class="w-4 h-4 mr-1" />
-                    <span class="font-text text-sm">Help text</span>
+                    <span class="font-sans text-sm">Help text</span>
                   </span>
 
                   <template #content>
@@ -109,9 +109,9 @@ definePageMeta({
                 </BasePopover>
 
                 <BasePopover size="sm" orientation="end">
-                  <span class="flex items-center text-slate-500">
+                  <span class="flex items-center text-muted-500">
                     <BaseIcon name="lucide:help-circle" class="w-4 h-4 mr-1" />
-                    <span class="font-text text-sm">Help text</span>
+                    <span class="font-sans text-sm">Help text</span>
                   </span>
 
                   <template #content>
@@ -142,7 +142,7 @@ definePageMeta({
                   <div class="flex items-center">
                     <BaseAvatar src="/img/avatars/3.svg" />
                     <span
-                      class="font-main text-sm font-semibold text-slate-800 dark:text-white ml-3"
+                      class="font-heading text-sm font-semibold text-muted-800 dark:text-white ml-3"
                     >
                       Mike Miller
                     </span>
@@ -190,7 +190,7 @@ definePageMeta({
                   <div class="flex items-center">
                     <BaseAvatar src="/img/avatars/2.svg" />
                     <span
-                      class="font-main text-sm font-semibold text-slate-800 dark:text-white ml-3"
+                      class="font-heading text-sm font-semibold text-muted-800 dark:text-white ml-3"
                     >
                       Maya Rosselini
                     </span>
@@ -237,7 +237,7 @@ definePageMeta({
                 <BasePopover orientation="start">
                   <div class="flex items-center">
                     <span
-                      class="font-main text-sm font-semibold text-slate-800 dark:text-white border border-slate-300 dark:border-slate-600 rounded-full py-1.5 px-3"
+                      class="font-heading text-sm font-semibold text-muted-800 dark:text-white border border-muted-300 dark:border-muted-600 rounded-full py-1.5 px-3"
                     >
                       Beautiful house
                     </span>
@@ -276,7 +276,7 @@ definePageMeta({
                 <BasePopover orientation="end">
                   <div class="flex items-center">
                     <span
-                      class="font-main text-sm font-semibold text-slate-800 dark:text-white border border-slate-300 dark:border-slate-600 rounded-full py-1.5 px-3"
+                      class="font-heading text-sm font-semibold text-muted-800 dark:text-white border border-muted-300 dark:border-muted-600 rounded-full py-1.5 px-3"
                     >
                       Beautiful house
                     </span>

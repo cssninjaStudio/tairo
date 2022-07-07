@@ -147,7 +147,7 @@ const closeButtonClasses = computed(() => {
       <BaseIcon v-if="icon" :name="icon" class="w-5 h-5 text-white" />
     </div>
     <span
-      class="font-text text-sm text-slate-800 ml-3"
+      class="font-sans text-sm text-muted-800 ml-3"
       :class="[
         props.type === 'success' && 'dark:text-success-500',
         props.type === 'info' && 'dark:text-info-500',
@@ -160,7 +160,7 @@ const closeButtonClasses = computed(() => {
     <button
       type="button"
       tabindex="0"
-      class="flex items-center justify-center text-slate-800 ml-auto mr-2 cursor-pointer p-1 outline-none"
+      class="flex items-center justify-center text-muted-800 ml-auto mr-2 cursor-pointer p-1 outline-none"
       :class="[shapeClass, ...closeButtonClasses]"
       @click="emit('close')"
     >

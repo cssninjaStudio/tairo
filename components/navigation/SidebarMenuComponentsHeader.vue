@@ -18,6 +18,14 @@ const vFocus: Directive = {
   },
 }
 
+const onBlur = () => {
+  setTimeout(() => {
+    if (!filter.value) {
+      isSearching.value = false
+    }
+  }, 61)
+}
+
 onKeyStroke(['Escape'], () => {
   if (isSearching.value) {
     reset()
@@ -27,17 +35,7 @@ onKeyStroke(['Escape'], () => {
 
 <template>
   <div>
-    <form
-      v-if="isSearching"
-      class="px-6 py-4"
-      @submit.prevent="
-        () => {
-          if (!filter) {
-            isSearching = false
-          }
-        }
-      "
-    >
+    <form v-if="isSearching" class="px-6 py-4" @submit.prevent="onBlur">
       <BaseFormInput
         v-model="filter"
         v-focus
@@ -48,13 +46,7 @@ onKeyStroke(['Escape'], () => {
             : 'ex: Icons, Typography...'
         "
         condensed
-        @blur="
-          () => {
-            if (!filter) {
-              isSearching = false
-            }
-          }
-        "
+        @blur="onBlur"
       >
         <template #label>
           <div class="flex justify-between">
@@ -72,9 +64,9 @@ onKeyStroke(['Escape'], () => {
       </BaseFormInput>
     </form>
     <template v-else>
-      <div class="flex items-center w-full h-16 px-6">
+      <div class="flex items-center w-full pt-[8px] pb-[4px] px-6">
         <h2
-          class="flex items-center font-main text-lg font-semibold text-slate-700 dark:text-white capitalize"
+          class="flex items-center font-heading text-lg font-semibold text-muted-700 dark:text-white capitalize"
         >
           <BaseButtonIcon
             class="focus:z-10 p-0 w-6 h-6 border-0 mr-2"
@@ -87,7 +79,7 @@ onKeyStroke(['Escape'], () => {
         </h2>
         <button
           type="button"
-          class="flex xl:hidden items-center justify-center h-10 w-10 rounded-full ml-auto text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-colors duration-300"
+          class="flex xl:hidden items-center justify-center h-10 w-10 rounded-full ml-auto text-muted-400 hover:text-muted-600 hover:bg-muted-100 transition-colors duration-300"
           @click="toggleSidebar"
         >
           <BaseIcon name="feather:chevron-left" class="w-6 h-6" />

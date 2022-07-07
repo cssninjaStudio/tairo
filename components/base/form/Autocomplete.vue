@@ -89,7 +89,7 @@ const removeItem = function (name: string) {
   >
     <ComboboxLabel
       v-if="!props.hideLabel"
-      class="font-text text-sm text-slate-400"
+      class="font-sans text-sm text-muted-400"
     >
       {{ props.label }}
     </ComboboxLabel>
@@ -98,7 +98,7 @@ const removeItem = function (name: string) {
       <ul v-if="filteredItems.length > 0" class="flex flex-wrap gap-1 my-2">
         <li v-for="item in value" :key="item.id">
           <div
-            class="flex items-center font-text text-xs font-medium py-2 pr-2 pl-3 text-slate-400 bg-slate-100 dark:bg-slate-700"
+            class="flex items-center font-sans text-xs font-medium py-2 pr-2 pl-3 text-muted-400 bg-muted-100 dark:bg-muted-700"
             :class="[
               props.shape === 'rounded' && 'rounded-lg',
               props.shape === 'curved' && 'rounded-xl',
@@ -115,7 +115,7 @@ const removeItem = function (name: string) {
     </div>
     <div class="group relative">
       <ComboboxInput
-        class="peer h-10 text-sm leading-5 font-text w-full bg-white text-slate-600 border border-slate-300 focus:border-slate-300 focus:shadow-lg focus:shadow-slate-300/50 dark:focus:shadow-slate-800/50 placeholder:text-slate-300 dark:placeholder:text-slate-500 dark:bg-slate-900/75 dark:text-slate-200 dark:border-slate-700 dark:focus:border-slate-700 focus:ring-0 outline-transparent tairo-focus disabled:opacity-75 disabled:cursor-not-allowed transition-all duration-300"
+        class="peer h-10 text-sm leading-5 font-sans w-full bg-white text-muted-600 border border-muted-300 focus:border-muted-300 focus:shadow-lg focus:shadow-muted-300/50 dark:focus:shadow-muted-800/50 placeholder:text-muted-300 dark:placeholder:text-muted-500 dark:bg-muted-900/75 dark:text-muted-200 dark:border-muted-700 dark:focus:border-muted-700 focus:ring-0 outline-transparent tairo-focus disabled:opacity-75 disabled:cursor-not-allowed transition-all duration-300"
         :class="[
           props.icon ? 'pl-9 pr-4' : 'px-4',
           props.shape === 'rounded' && 'rounded',
@@ -130,14 +130,14 @@ const removeItem = function (name: string) {
       />
       <div
         v-if="props.icon || value?.icon"
-        class="absolute top-0 left-0 h-10 w-10 flex justify-center items-center text-slate-400 group-focus-within:text-primary-500 transition-colors duration-300"
+        class="absolute top-0 left-0 h-10 w-10 flex justify-center items-center text-muted-400 group-focus-within:text-primary-500 transition-colors duration-300"
       >
         <BaseIcon :name="value?.icon ?? props.icon" class="w-4 h-4" />
       </div>
       <button
         v-if="props.clearable && value"
         type="button"
-        class="absolute top-0 right-0 h-10 w-10 flex justify-center items-center text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-colors duration-300 z-10"
+        class="absolute top-0 right-0 h-10 w-10 flex justify-center items-center text-muted-400 hover:text-muted-700 dark:hover:text-muted-200 transition-colors duration-300 z-10"
         @click="clear"
       >
         <BaseIcon name="lucide:x" class="w-4 h-4" />
@@ -161,7 +161,7 @@ const removeItem = function (name: string) {
     >
       <ComboboxOptions
         as="div"
-        class="absolute mt-1 max-h-[265px] w-full overflow-auto bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 py-1 text-base shadow-lg outline-none sm:text-sm slimscroll"
+        class="absolute mt-1 max-h-[265px] w-full overflow-auto bg-white dark:bg-muted-800 border border-muted-200 dark:border-muted-700 py-1 text-base shadow-lg outline-none sm:text-sm slimscroll"
         :class="[
           props.shape === 'rounded' && 'rounded-lg',
           props.shape === 'curved' && 'rounded-xl',
@@ -171,7 +171,7 @@ const removeItem = function (name: string) {
         <!-- Placeholder -->
         <div
           v-if="filteredItems.length === 0 && query !== ''"
-          class="relative cursor-default select-none py-2 px-4 text-slate-700"
+          class="relative cursor-default select-none py-2 px-4 text-muted-700"
         >
           Nothing found.
         </div>
@@ -186,7 +186,7 @@ const removeItem = function (name: string) {
           <div
             class="flex items-center p-2 cursor-pointer transition-colors duration-300"
             :class="[
-              active ? 'bg-slate-100 dark:bg-slate-700' : '',
+              active ? 'bg-muted-100 dark:bg-muted-700' : '',
               props.shape === 'rounded' && 'rounded-md',
               props.shape === 'curved' && 'rounded-lg',
               props.shape === 'full' && 'rounded-xl',
@@ -207,7 +207,7 @@ const removeItem = function (name: string) {
               <BaseIcon
                 :name="item.icon"
                 class="w-4 h-4"
-                :class="[selected ? 'text-primary-500' : 'text-slate-500']"
+                :class="[selected ? 'text-primary-500' : 'text-muted-500']"
               />
             </BaseIconBox>
             <div>
@@ -215,11 +215,11 @@ const removeItem = function (name: string) {
                 as="h4"
                 :weight="selected ? 'semibold' : 'normal'"
                 size="sm"
-                class="text-slate-800 dark:text-white"
+                class="text-muted-800 dark:text-white"
               >
                 {{ item.name }}
               </BaseHeading>
-              <BaseText v-if="item.text" size="xs" class="text-slate-400">
+              <BaseText v-if="item.text" size="xs" class="text-muted-400">
                 {{ item.text }}
               </BaseText>
             </div>

@@ -34,6 +34,7 @@ module.exports = {
         },
       },
       colors: {
+        muted: colors?.slate,
         primary: colors?.purple,
         info: colors?.sky,
         success: colors?.teal,
@@ -41,9 +42,9 @@ module.exports = {
         danger: colors?.rose,
       },
       fontFamily: {
-        main: ['Inter', 'sans-serif'],
+        sans: ['Roboto Flex', 'sans-serif'],
+        heading: ['Inter', 'sans-serif'],
         sub: ['Karla', 'sans-serif'],
-        text: ['Roboto Flex', 'sans-serif'],
       },
     },
   },
@@ -51,7 +52,6 @@ module.exports = {
     extend: {},
   },
   plugins: [
-    // require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),
     require('@tailwindcss/line-clamp'),
     require('@tailwindcss/aspect-ratio'),

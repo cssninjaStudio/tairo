@@ -10,11 +10,11 @@ const props = withDefaults(defineProps<TableCellProps>(), {
 
 <template>
   <td
-    class="font-sub py-4 text-sm whitespace-nowrap"
+    class="font-alt py-4 text-sm whitespace-nowrap"
     :class="
       props.light
-        ? 'text-slate-500 dark:text-white'
-        : 'font-semibold text-slate-800 dark:text-white'
+        ? 'text-muted-500 dark:text-white'
+        : 'font-semibold text-muted-800 dark:text-white'
     "
   >
     <slot></slot>

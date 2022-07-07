@@ -22,7 +22,7 @@ const props = withDefaults(defineProps<PopoverProps>(), {
   <div class="relative">
     <Popover class="relative">
       <PopoverButton
-        class="group inline-flex font-text focus:outline-none cursor-pointer"
+        class="group inline-flex font-sans focus:outline-none cursor-pointer"
         as="div"
       >
         <slot></slot>
@@ -30,11 +30,11 @@ const props = withDefaults(defineProps<PopoverProps>(), {
 
       <Transition
         enter-active-class="transition-all duration-200 ease-out"
-        enter-from-class="translate-y-1 opacity-0"
-        enter-to-class="translate-y-0 opacity-100"
+        enter-from-class="tranmuted-y-1 opacity-0"
+        enter-to-class="tranmuted-y-0 opacity-100"
         leave-active-class="transition duration-150 ease-in"
-        leave-from-class="translate-y-0 opacity-100"
-        leave-to-class="translate-y-1 opacity-0"
+        leave-from-class="tranmuted-y-0 opacity-100"
+        leave-to-class="tranmuted-y-1 opacity-0"
       >
         <PopoverPanel
           class="absolute z-10 mt-3 w-screen"
@@ -46,7 +46,7 @@ const props = withDefaults(defineProps<PopoverProps>(), {
           ]"
         >
           <div
-            class="relative w-full rounded-lg shadow-lg bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 after:absolute after:-top-2 after:content-[''] after:w-4 after:h-4 after:rotate-[-135deg] after:bg-white dark:after:bg-slate-700 after:border-r after:border-b after:border-slate-200 dark:after:border-slate-600"
+            class="relative w-full rounded-lg shadow-lg bg-white dark:bg-muted-700 border border-muted-200 dark:border-muted-600 after:absolute after:-top-2 after:content-[''] after:w-4 after:h-4 after:rotate-[-135deg] after:bg-white dark:after:bg-muted-700 after:border-r after:border-b after:border-muted-200 dark:after:border-muted-600"
             :class="[
               props.orientation === 'start' && 'after:left-6',
               props.orientation === 'end' && 'after:right-6',

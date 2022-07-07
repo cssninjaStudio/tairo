@@ -51,7 +51,7 @@ const props = withDefaults(defineProps<CarouselProps>(), {
         <NuxtLink :to="slide.to" class="cursor-pointer">
           <BaseCard
             shape="curved"
-            class="min-w-[100px] flex items-center justify-center py-6 px-2 text-slate-400 hover:text-purple-500 hover:border-primary-500 dark:hover:border-primary-500 hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+            class="min-w-[100px] flex items-center justify-center py-6 px-2 text-muted-400 hover:text-primary-500 hover:border-primary-500 dark:hover:border-primary-500 hover:-tranmuted-y-1 hover:shadow-lg transition-all duration-300"
           >
             <div class="text-center">
               <BaseIcon
@@ -63,7 +63,7 @@ const props = withDefaults(defineProps<CarouselProps>(), {
                 size="sm"
                 weight="medium"
                 lead="tight"
-                class="text-slate-800 dark:text-white"
+                class="text-muted-800 dark:text-white"
               >
                 {{ slide.title }}
               </BaseHeading>
@@ -107,7 +107,7 @@ const props = withDefaults(defineProps<CarouselProps>(), {
 
 :deep(.carousel__next),
 :deep(.carousel__prev) {
-  @apply absolute -top-5 text-slate-400 transition-colors duration-300;
+  @apply absolute -top-5 text-muted-400 transition-colors duration-300;
   left: initial;
 }
 

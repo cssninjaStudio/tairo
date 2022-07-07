@@ -4,7 +4,7 @@ const { activePanel, panelTransitionFrom, closePanel } = usePanels()
 </script>
 
 <template>
-  <div class="bg-slate-100 dark:bg-slate-900">
+  <div class="bg-muted-100 dark:bg-muted-900">
     <NavigationSidebar>
       <!-- Logo -->
       <div class="flex items-center justify-center w-full h-16">
@@ -22,7 +22,7 @@ const { activePanel, panelTransitionFrom, closePanel } = usePanels()
     </NavigationSidebar>
 
     <div
-      class="relative px-4 xl:px-16 min-h-screen w-full bg-slate-100 dark:bg-slate-900 transition-all duration-300"
+      class="relative px-4 xl:px-16 min-h-screen w-full bg-muted-100 dark:bg-muted-900 transition-all duration-300"
       :class="
         isSidebarOpened
           ? 'xl:max-w-[calc(100%_-_300px)] xl:ml-[300px]'
@@ -40,14 +40,14 @@ const { activePanel, panelTransitionFrom, closePanel } = usePanels()
       enter-active-class="transition-transform duration-300 ease-out"
       :enter-from-class="
         panelTransitionFrom === 'left'
-          ? '-translate-x-full'
-          : 'translate-x-full'
+          ? '-tranmuted-x-full'
+          : 'tranmuted-x-full'
       "
       leave-active-class="transition-transform duration-300 ease-in"
       :leave-to-class="
         panelTransitionFrom === 'left'
-          ? '-translate-x-full'
-          : 'translate-x-full'
+          ? '-tranmuted-x-full'
+          : 'tranmuted-x-full'
       "
     >
       <component
@@ -60,7 +60,7 @@ const { activePanel, panelTransitionFrom, closePanel } = usePanels()
 
     <!-- Overlay -->
     <div
-      class="fixed top-0 left-0 w-full h-full bg-slate-800/60 transition-opacity duration-300 z-[99] cursor-pointer"
+      class="fixed top-0 left-0 w-full h-full bg-muted-800/60 transition-opacity duration-300 z-[99] cursor-pointer"
       :class="
         activePanel
           ? 'opacity-100 pointer-events-auto'

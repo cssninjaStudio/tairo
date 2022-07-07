@@ -45,7 +45,7 @@ definePageMeta({
                   <template #tab="{ activeValue }">
                     <p
                       v-if="activeValue === 'team'"
-                      class="font-text text-sm text-gray-500 dark:text-gray-400"
+                      class="font-sans text-sm text-gray-500 dark:text-gray-400"
                     >
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                       Quid iudicant sensus? Primum quid tu dicis breve? Etiam
@@ -53,7 +53,7 @@ definePageMeta({
                     </p>
                     <p
                       v-else-if="activeValue === 'projects'"
-                      class="font-text text-sm text-gray-500 dark:text-gray-400"
+                      class="font-sans text-sm text-gray-500 dark:text-gray-400"
                     >
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                       Quid iudicant sensus? Primum quid tu dicis breve? Etiam
@@ -63,7 +63,7 @@ definePageMeta({
                     </p>
                     <p
                       v-else-if="activeValue === 'tasks'"
-                      class="font-text text-sm text-gray-500 dark:text-gray-400"
+                      class="font-sans text-sm text-gray-500 dark:text-gray-400"
                     >
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                       Quid iudicant sensus? Primum quid tu dicis breve? Etiam
@@ -97,7 +97,7 @@ definePageMeta({
                   <template #tab="{ activeValue }">
                     <p
                       v-if="activeValue === 'team'"
-                      class="font-text text-sm text-gray-500 dark:text-gray-400"
+                      class="font-sans text-sm text-gray-500 dark:text-gray-400"
                     >
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                       Quid iudicant sensus? Primum quid tu dicis breve? Etiam
@@ -105,7 +105,7 @@ definePageMeta({
                     </p>
                     <p
                       v-else-if="activeValue === 'projects'"
-                      class="font-text text-sm text-gray-500 dark:text-gray-400"
+                      class="font-sans text-sm text-gray-500 dark:text-gray-400"
                     >
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                       Quid iudicant sensus? Primum quid tu dicis breve? Etiam
@@ -115,7 +115,7 @@ definePageMeta({
                     </p>
                     <p
                       v-else-if="activeValue === 'tasks'"
-                      class="font-text text-sm text-gray-500 dark:text-gray-400"
+                      class="font-sans text-sm text-gray-500 dark:text-gray-400"
                     >
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                       Quid iudicant sensus? Primum quid tu dicis breve? Etiam
@@ -149,7 +149,7 @@ definePageMeta({
                   <template #tab="{ activeValue }">
                     <p
                       v-if="activeValue === 'team'"
-                      class="font-text text-sm text-gray-500 dark:text-gray-400"
+                      class="font-sans text-sm text-gray-500 dark:text-gray-400"
                     >
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                       Quid iudicant sensus? Primum quid tu dicis breve? Etiam
@@ -157,7 +157,7 @@ definePageMeta({
                     </p>
                     <p
                       v-else-if="activeValue === 'projects'"
-                      class="font-text text-sm text-gray-500 dark:text-gray-400"
+                      class="font-sans text-sm text-gray-500 dark:text-gray-400"
                     >
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                       Quid iudicant sensus? Primum quid tu dicis breve? Etiam
@@ -167,7 +167,7 @@ definePageMeta({
                     </p>
                     <p
                       v-else-if="activeValue === 'tasks'"
-                      class="font-text text-sm text-gray-500 dark:text-gray-400"
+                      class="font-sans text-sm text-gray-500 dark:text-gray-400"
                     >
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                       Quid iudicant sensus? Primum quid tu dicis breve? Etiam
@@ -202,7 +202,7 @@ definePageMeta({
                   <template #tab="{ activeValue }">
                     <p
                       v-if="activeValue === 'team'"
-                      class="font-text text-sm text-gray-500 dark:text-gray-400"
+                      class="font-sans text-sm text-gray-500 dark:text-gray-400"
                     >
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                       Quid iudicant sensus? Primum quid tu dicis breve? Etiam
@@ -210,7 +210,7 @@ definePageMeta({
                     </p>
                     <p
                       v-else-if="activeValue === 'projects'"
-                      class="font-text text-sm text-gray-500 dark:text-gray-400"
+                      class="font-sans text-sm text-gray-500 dark:text-gray-400"
                     >
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                       Quid iudicant sensus? Primum quid tu dicis breve? Etiam
@@ -220,7 +220,7 @@ definePageMeta({
                     </p>
                     <p
                       v-else-if="activeValue === 'tasks'"
-                      class="font-text text-sm text-gray-500 dark:text-gray-400"
+                      class="font-sans text-sm text-gray-500 dark:text-gray-400"
                     >
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                       Quid iudicant sensus? Primum quid tu dicis breve? Etiam

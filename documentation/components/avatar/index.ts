@@ -79,59 +79,59 @@ export const squareBadge = `
 
 export const circleFake = `
 <template>
-  <BaseAvatar text="CT" size="xs" class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300" />
-  <BaseAvatar text="CT" size="sm" class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300" />
-  <BaseAvatar text="CT" size="md" class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300" />
-  <BaseAvatar text="CT" size="lg" class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300" />
-  <BaseAvatar text="CT" size="xl" class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300" />
-  <BaseAvatar text="CT" size="2xl" class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300" />
-  <BaseAvatar text="CT" size="3xl" class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300" />
-  <BaseAvatar text="CT" size="4xl" class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300" />
+  <BaseAvatar text="CT" size="xs" class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300" />
+  <BaseAvatar text="CT" size="sm" class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300" />
+  <BaseAvatar text="CT" size="md" class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300" />
+  <BaseAvatar text="CT" size="lg" class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300" />
+  <BaseAvatar text="CT" size="xl" class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300" />
+  <BaseAvatar text="CT" size="2xl" class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300" />
+  <BaseAvatar text="CT" size="3xl" class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300" />
+  <BaseAvatar text="CT" size="4xl" class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300" />
 </template>
 `
 
 export const squareFake = `
 <template>
-  <BaseAvatar text="CT" size="xs" shape="square" class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300" />
-  <BaseAvatar text="CT" size="sm" shape="square"  class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300" />
-  <BaseAvatar text="CT" size="md" shape="square"  class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300" />
-  <BaseAvatar text="CT" size="lg" shape="square"  class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300" />
-  <BaseAvatar text="CT" size="xl" shape="square"  class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300" />
-  <BaseAvatar text="CT" size="2xl" shape="square"  class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300" />
-  <BaseAvatar text="CT" size="3xl" shape="square"  class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300" />
-  <BaseAvatar text="CT" size="4xl" shape="square"  class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300" />
+  <BaseAvatar text="CT" size="xs" shape="square" class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300" />
+  <BaseAvatar text="CT" size="sm" shape="square"  class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300" />
+  <BaseAvatar text="CT" size="md" shape="square"  class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300" />
+  <BaseAvatar text="CT" size="lg" shape="square"  class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300" />
+  <BaseAvatar text="CT" size="xl" shape="square"  class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300" />
+  <BaseAvatar text="CT" size="2xl" shape="square"  class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300" />
+  <BaseAvatar text="CT" size="3xl" shape="square"  class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300" />
+  <BaseAvatar text="CT" size="4xl" shape="square"  class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300" />
 </template>
 `
 
 export const circleFakeBadge = `
 <template>
-  <BaseAvatar text="CT" size="xs" badge="/img/icons/flags/united-states-of-america.svg" class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300" />
-  <BaseAvatar text="CT" size="sm" badge="/img/icons/flags/united-states-of-america.svg" class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300" />
-  <BaseAvatar text="CT" size="md" badge="/img/icons/flags/united-states-of-america.svg" class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300" />
-  <BaseAvatar text="CT" size="lg" badge="/img/icons/flags/united-states-of-america.svg" class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300" />
-  <BaseAvatar text="CT" size="xl" badge="/img/icons/flags/united-states-of-america.svg" class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300" />
-  <BaseAvatar text="CT" size="2xl" badge="/img/icons/flags/united-states-of-america.svg" class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300" />
-  <BaseAvatar text="CT" size="3xl" badge="/img/icons/flags/united-states-of-america.svg" class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300" />
-  <BaseAvatar text="CT" size="4xl" badge="/img/icons/flags/united-states-of-america.svg" class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300" />
+  <BaseAvatar text="CT" size="xs" badge="/img/icons/flags/united-states-of-america.svg" class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300" />
+  <BaseAvatar text="CT" size="sm" badge="/img/icons/flags/united-states-of-america.svg" class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300" />
+  <BaseAvatar text="CT" size="md" badge="/img/icons/flags/united-states-of-america.svg" class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300" />
+  <BaseAvatar text="CT" size="lg" badge="/img/icons/flags/united-states-of-america.svg" class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300" />
+  <BaseAvatar text="CT" size="xl" badge="/img/icons/flags/united-states-of-america.svg" class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300" />
+  <BaseAvatar text="CT" size="2xl" badge="/img/icons/flags/united-states-of-america.svg" class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300" />
+  <BaseAvatar text="CT" size="3xl" badge="/img/icons/flags/united-states-of-america.svg" class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300" />
+  <BaseAvatar text="CT" size="4xl" badge="/img/icons/flags/united-states-of-america.svg" class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300" />
 </template>
 `
 
 export const squareFakeBadge = `
 <template>
-  <BaseAvatar text="CT" size="xs" badge="/img/icons/flags/united-states-of-america.svg" shape="square" class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300" />
-  <BaseAvatar text="CT" size="sm" badge="/img/icons/flags/united-states-of-america.svg" shape="square"  class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300" />
-  <BaseAvatar text="CT" size="md" badge="/img/icons/flags/united-states-of-america.svg" shape="square"  class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300" />
-  <BaseAvatar text="CT" size="lg" badge="/img/icons/flags/united-states-of-america.svg" shape="square"  class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300" />
-  <BaseAvatar text="CT" size="xl" badge="/img/icons/flags/united-states-of-america.svg" shape="square"  class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300" />
-  <BaseAvatar text="CT" size="2xl" badge="/img/icons/flags/united-states-of-america.svg" shape="square"  class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300" />
-  <BaseAvatar text="CT" size="3xl" badge="/img/icons/flags/united-states-of-america.svg" shape="square"  class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300" />
-  <BaseAvatar text="CT" size="4xl" badge="/img/icons/flags/united-states-of-america.svg" shape="square"  class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300" />
+  <BaseAvatar text="CT" size="xs" badge="/img/icons/flags/united-states-of-america.svg" shape="square" class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300" />
+  <BaseAvatar text="CT" size="sm" badge="/img/icons/flags/united-states-of-america.svg" shape="square"  class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300" />
+  <BaseAvatar text="CT" size="md" badge="/img/icons/flags/united-states-of-america.svg" shape="square"  class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300" />
+  <BaseAvatar text="CT" size="lg" badge="/img/icons/flags/united-states-of-america.svg" shape="square"  class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300" />
+  <BaseAvatar text="CT" size="xl" badge="/img/icons/flags/united-states-of-america.svg" shape="square"  class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300" />
+  <BaseAvatar text="CT" size="2xl" badge="/img/icons/flags/united-states-of-america.svg" shape="square"  class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300" />
+  <BaseAvatar text="CT" size="3xl" badge="/img/icons/flags/united-states-of-america.svg" shape="square"  class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300" />
+  <BaseAvatar text="CT" size="4xl" badge="/img/icons/flags/united-states-of-america.svg" shape="square"  class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300" />
 </template>
 `
 
 export const circleFakeColors = `
 <template>
-  <BaseAvatar text="CT" size="md" class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300" />
+  <BaseAvatar text="CT" size="md" class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300" />
   <BaseAvatar text="CT" size="md" class="bg-primary-100 dark:bg-primary-500 text-primary-500 dark:text-white" />
   <BaseAvatar text="CT" size="md" class="bg-lime-100 dark:bg-lime-500 text-lime-500 dark:text-white" />
   <BaseAvatar text="CT" size="md" class="bg-green-100 dark:bg-green-500 text-green-500 dark:text-white" />
@@ -155,7 +155,7 @@ export const circleFakeColors = `
 
 export const squareFakeColors = `
 <template>
-  <BaseAvatar text="CT" size="md" shape="square" class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300" />
+  <BaseAvatar text="CT" size="md" shape="square" class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300" />
   <BaseAvatar text="CT" size="md" shape="square" class="bg-primary-100 dark:bg-primary-500 text-primary-500 dark:text-white" />
   <BaseAvatar text="CT" size="md" shape="square" class="bg-lime-100 dark:bg-lime-500 text-lime-500 dark:text-white" />
   <BaseAvatar text="CT" size="md" shape="square" class="bg-green-100 dark:bg-green-500 text-green-500 dark:text-white" />

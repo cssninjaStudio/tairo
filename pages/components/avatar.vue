@@ -312,41 +312,41 @@ definePageMeta({
                 <BaseAvatar
                   text="CT"
                   size="xs"
-                  class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300"
+                  class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
                 />
                 <BaseAvatar
                   text="CT"
-                  class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300"
+                  class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
                 />
                 <BaseAvatar
                   text="CT"
                   size="md"
-                  class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300"
+                  class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
                 />
                 <BaseAvatar
                   text="CT"
                   size="lg"
-                  class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300"
+                  class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
                 />
                 <BaseAvatar
                   text="CT"
                   size="xl"
-                  class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300"
+                  class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
                 />
                 <BaseAvatar
                   text="CT"
                   size="2xl"
-                  class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300"
+                  class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
                 />
                 <BaseAvatar
                   text="CT"
                   size="3xl"
-                  class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300"
+                  class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
                 />
                 <BaseAvatar
                   text="CT"
                   size="4xl"
-                  class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300"
+                  class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
                 />
               </div>
             </template>
@@ -365,48 +365,48 @@ definePageMeta({
                   text="CT"
                   size="xs"
                   shape="square"
-                  class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300"
+                  class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
                 />
                 <BaseAvatar
                   text="CT"
                   shape="square"
-                  class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300"
+                  class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
                 />
                 <BaseAvatar
                   text="CT"
                   size="md"
                   shape="square"
-                  class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300"
+                  class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
                 />
                 <BaseAvatar
                   text="CT"
                   size="lg"
                   shape="square"
-                  class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300"
+                  class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
                 />
                 <BaseAvatar
                   text="CT"
                   size="xl"
                   shape="square"
-                  class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300"
+                  class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
                 />
                 <BaseAvatar
                   text="CT"
                   size="2xl"
                   shape="square"
-                  class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300"
+                  class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
                 />
                 <BaseAvatar
                   text="CT"
                   size="3xl"
                   shape="square"
-                  class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300"
+                  class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
                 />
                 <BaseAvatar
                   text="CT"
                   size="4xl"
                   shape="square"
-                  class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300"
+                  class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
                 />
               </div>
             </template>
@@ -425,48 +425,48 @@ definePageMeta({
                   text="CT"
                   size="xs"
                   badge="/img/icons/flags/united-states-of-america.svg"
-                  class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300"
+                  class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
                 />
                 <BaseAvatar
                   text="CT"
                   badge="/img/icons/flags/united-states-of-america.svg"
-                  class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300"
+                  class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
                 />
                 <BaseAvatar
                   text="CT"
                   size="md"
                   badge="/img/icons/flags/united-states-of-america.svg"
-                  class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300"
+                  class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
                 />
                 <BaseAvatar
                   text="CT"
                   size="lg"
                   badge="/img/icons/flags/united-states-of-america.svg"
-                  class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300"
+                  class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
                 />
                 <BaseAvatar
                   text="CT"
                   size="xl"
                   badge="/img/icons/flags/united-states-of-america.svg"
-                  class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300"
+                  class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
                 />
                 <BaseAvatar
                   text="CT"
                   size="2xl"
                   badge="/img/icons/flags/united-states-of-america.svg"
-                  class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300"
+                  class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
                 />
                 <BaseAvatar
                   text="CT"
                   size="3xl"
                   badge="/img/icons/flags/united-states-of-america.svg"
-                  class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300"
+                  class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
                 />
                 <BaseAvatar
                   text="CT"
                   size="4xl"
                   badge="/img/icons/flags/united-states-of-america.svg"
-                  class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300"
+                  class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
                 />
               </div>
             </template>
@@ -485,55 +485,55 @@ definePageMeta({
                   text="CT"
                   size="xs"
                   shape="square"
-                  class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300"
+                  class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
                 />
                 <BaseAvatar
                   text="CT"
                   badge="/img/icons/flags/united-states-of-america.svg"
                   shape="square"
-                  class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300"
+                  class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
                 />
                 <BaseAvatar
                   text="CT"
                   size="md"
                   badge="/img/icons/flags/united-states-of-america.svg"
                   shape="square"
-                  class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300"
+                  class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
                 />
                 <BaseAvatar
                   text="CT"
                   size="lg"
                   badge="/img/icons/flags/united-states-of-america.svg"
                   shape="square"
-                  class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300"
+                  class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
                 />
                 <BaseAvatar
                   text="CT"
                   size="xl"
                   badge="/img/icons/flags/united-states-of-america.svg"
                   shape="square"
-                  class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300"
+                  class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
                 />
                 <BaseAvatar
                   text="CT"
                   size="2xl"
                   badge="/img/icons/flags/united-states-of-america.svg"
                   shape="square"
-                  class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300"
+                  class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
                 />
                 <BaseAvatar
                   text="CT"
                   size="3xl"
                   badge="/img/icons/flags/united-states-of-america.svg"
                   shape="square"
-                  class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300"
+                  class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
                 />
                 <BaseAvatar
                   text="CT"
                   size="4xl"
                   badge="/img/icons/flags/united-states-of-america.svg"
                   shape="square"
-                  class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300"
+                  class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
                 />
               </div>
             </template>
@@ -551,7 +551,7 @@ definePageMeta({
                 <BaseAvatar
                   text="CT"
                   size="md"
-                  class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300"
+                  class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
                 />
                 <BaseAvatar
                   text="CT"
@@ -659,7 +659,7 @@ definePageMeta({
                 <BaseAvatar
                   size="md"
                   shape="square"
-                  class="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300"
+                  class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
                 >
                   CT
                 </BaseAvatar>

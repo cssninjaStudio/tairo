@@ -103,7 +103,7 @@ const handleLinkClick = (e: MouseEvent, page = 1) => {
   <div class="inline-flex flex-col md:flex-row md:justify-between w-full">
     <FocusLoop
       as="ul"
-      class="inline-flex flex-wrap gap-2 md:gap-1 mb-4 md:mb-0 bg-slate-100 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 p-1"
+      class="inline-flex flex-wrap gap-2 md:gap-1 mb-4 md:mb-0 bg-muted-100 dark:bg-muted-700 border border-muted-200 dark:border-muted-600 p-1"
       :class="[
         props.shape === 'rounded' && 'rounded-md',
         props.shape === 'curved' && 'rounded-xl',
@@ -116,11 +116,11 @@ const handleLinkClick = (e: MouseEvent, page = 1) => {
         <NuxtLink
           :to="paginatedLink(1)"
           tabindex="0"
-          class="flex items-center justify-center w-10 h-10 font-text text-sm border transition-all duration-300"
+          class="flex items-center justify-center w-10 h-10 font-sans text-sm border transition-all duration-300"
           :class="[
             currentPage === 1
               ? 'bg-primary-500 text-white border-primary-500 shadow-lg shadow-primary-500/50 dark:shadow-primary-500/20'
-              : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-900 text-slate-500 hover:text-slate-700 dark:hover:text-slate-400',
+              : 'bg-white dark:bg-muted-800 border-muted-200 dark:border-muted-700 hover:bg-muted-100 dark:hover:bg-muted-900 text-muted-500 hover:text-muted-700 dark:hover:text-muted-400',
             props.shape === 'rounded' && 'rounded-md',
             props.shape === 'curved' && 'rounded-xl',
             props.shape === 'full' && 'rounded-full',
@@ -135,7 +135,7 @@ const handleLinkClick = (e: MouseEvent, page = 1) => {
       <!-- Ellipsis -->
       <li v-if="showLastLink && (pages.length === 0 || pages[0] > 2)">
         <span
-          class="flex items-center justify-center w-10 h-10 font-text text-sm bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-500"
+          class="flex items-center justify-center w-10 h-10 font-sans text-sm bg-white dark:bg-muted-800 border-muted-200 dark:border-muted-700 text-muted-500"
           :class="[
             props.shape === 'rounded' && 'rounded-md',
             props.shape === 'curved' && 'rounded-xl',
@@ -152,11 +152,11 @@ const handleLinkClick = (e: MouseEvent, page = 1) => {
           :to="paginatedLink(page)"
           tabindex="0"
           :aria-current="currentPage === page ? 'page' : undefined"
-          class="flex items-center justify-center w-10 h-10 font-text text-sm transition-all duration-300"
+          class="flex items-center justify-center w-10 h-10 font-sans text-sm transition-all duration-300"
           :class="[
             currentPage === page
               ? 'bg-primary-500 text-white border-primary-500 shadow-lg shadow-primary-500/50 dark:shadow-primary-500/20'
-              : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-900 text-slate-500 hover:text-slate-700 dark:hover:text-slate-400',
+              : 'bg-white dark:bg-muted-800 border-muted-200 dark:border-muted-700 hover:bg-muted-100 dark:hover:bg-muted-900 text-muted-500 hover:text-muted-700 dark:hover:text-muted-400',
             props.shape === 'rounded' && 'rounded-md',
             props.shape === 'curved' && 'rounded-xl',
             props.shape === 'full' && 'rounded-full',
@@ -171,7 +171,7 @@ const handleLinkClick = (e: MouseEvent, page = 1) => {
       <!-- Ellipsis -->
       <li v-if="showLastLink && pages[pages.length - 1] < lastPage - 1">
         <span
-          class="flex items-center justify-center w-10 h-10 font-text text-sm bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-500"
+          class="flex items-center justify-center w-10 h-10 font-sans text-sm bg-white dark:bg-muted-800 border-muted-200 dark:border-muted-700 text-muted-500"
           :class="[
             props.shape === 'rounded' && 'rounded-md',
             props.shape === 'curved' && 'rounded-xl',
@@ -187,11 +187,11 @@ const handleLinkClick = (e: MouseEvent, page = 1) => {
         <NuxtLink
           :to="paginatedLink(lastPage)"
           tabindex="0"
-          class="flex items-center justify-center w-10 h-10 font-text text-sm transition-all duration-300"
+          class="flex items-center justify-center w-10 h-10 font-sans text-sm transition-all duration-300"
           :class="[
             currentPage === lastPage
               ? 'bg-primary-500 text-white border-primary-500 shadow-lg shadow-primary-500/50 dark:shadow-primary-500/20'
-              : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-900 text-slate-500 hover:text-slate-700 dark:hover:text-slate-400',
+              : 'bg-white dark:bg-muted-800 border-muted-200 dark:border-muted-700 hover:bg-muted-100 dark:hover:bg-muted-900 text-muted-500 hover:text-muted-700 dark:hover:text-muted-400',
             props.shape === 'rounded' && 'rounded-md',
             props.shape === 'curved' && 'rounded-xl',
             props.shape === 'full' && 'rounded-full',
@@ -206,7 +206,7 @@ const handleLinkClick = (e: MouseEvent, page = 1) => {
     </FocusLoop>
 
     <FocusLoop
-      class="flex items-center justify-end gap-1 bg-slate-100 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 p-1"
+      class="flex items-center justify-end gap-1 bg-muted-100 dark:bg-muted-700 border border-muted-200 dark:border-muted-600 p-1"
       :class="[
         props.shape === 'rounded' && 'rounded-md',
         props.shape === 'curved' && 'rounded-xl',
@@ -219,7 +219,7 @@ const handleLinkClick = (e: MouseEvent, page = 1) => {
       <NuxtLink
         :to="paginatedLink(currentPage - 1)"
         tabindex="0"
-        class="flex items-center justify-center w-full md:w-10 h-10 font-text text-sm bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-900 text-slate-500 hover:text-slate-700 dark:hover:text-slate-400 transition-all duration-300"
+        class="flex items-center justify-center w-full md:w-10 h-10 font-sans text-sm bg-white dark:bg-muted-800 border-muted-200 dark:border-muted-700 hover:bg-muted-100 dark:hover:bg-muted-900 text-muted-500 hover:text-muted-700 dark:hover:text-muted-400 transition-all duration-300"
         :class="[
           props.shape === 'rounded' && 'rounded-md',
           props.shape === 'curved' && 'rounded-xl',
@@ -235,7 +235,7 @@ const handleLinkClick = (e: MouseEvent, page = 1) => {
       <NuxtLink
         :to="paginatedLink(currentPage + 1)"
         tabindex="0"
-        class="flex items-center justify-center w-full md:w-10 h-10 font-text text-sm bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-900 text-slate-500 hover:text-slate-700 dark:hover:text-slate-400 transition-all duration-300"
+        class="flex items-center justify-center w-full md:w-10 h-10 font-sans text-sm bg-white dark:bg-muted-800 border-muted-200 dark:border-muted-700 hover:bg-muted-100 dark:hover:bg-muted-900 text-muted-500 hover:text-muted-700 dark:hover:text-muted-400 transition-all duration-300"
         :class="[
           props.shape === 'rounded' && 'rounded-md',
           props.shape === 'curved' && 'rounded-xl',

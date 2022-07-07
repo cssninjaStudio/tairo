@@ -45,7 +45,7 @@ watch(activeValue, (value) => {
 <template>
   <div class="relative">
     <div
-      class="flex font-sub mb-6"
+      class="flex font-alt mb-6"
       :class="[
         props.justify === 'center' && 'justify-center',
         props.justify === 'end' && 'justify-end',
@@ -57,11 +57,11 @@ watch(activeValue, (value) => {
         class="text-base cursor-pointer transition-all duration-300"
         :class="[
           activeValue === tab.value && props.type === 'tabs'
-            ? 'border-violet-500 text-slate-800 dark:text-slate-100'
-            : 'border-transparent text-slate-400',
+            ? 'border-violet-500 text-muted-800 dark:text-muted-100'
+            : 'border-transparent text-muted-400',
           activeValue === tab.value && props.type === 'box'
             ? 'bg-violet-500 !text-white shadow-lg shadow-primary-500/50'
-            : 'text-slate-400',
+            : 'text-muted-400',
           tab.icon && 'flex items-center',
           props.type === 'tabs' && 'px-4 py-3 border-b-2',
           props.type === 'box' && 'flex flex-col text-center px-5 rounded-xl',

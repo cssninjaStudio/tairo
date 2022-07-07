@@ -25,57 +25,57 @@ const props = withDefaults(defineProps<TagProps>(), {
 
 <template>
   <span
-    class="inline-block font-text text-xs py-1.5 px-3 m-1"
+    class="inline-block font-sans text-xs py-1.5 px-3 m-1"
     :class="[
       props.color === 'default' &&
-        'border border-slate-300 bg-white text-slate-600 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-300',
+        'border border-muted-300 bg-white text-muted-600 dark:bg-muted-800 dark:border-muted-700 dark:text-muted-300',
       props.color === 'muted' &&
-        'text-slate-500 bg-slate-200 dark:text-white dark:bg-slate-700',
+        'text-muted-500 bg-muted-200 dark:text-white dark:bg-muted-700',
       props.color === 'primary' &&
         props.flavor === 'solid' &&
         'bg-primary-400 dark:bg-primary-500 text-white hover:shadow-lg',
       props.color === 'info' &&
         props.flavor === 'solid' &&
-        'bg-sky-400 dark:bg-sky-500   text-white hover:shadow-lg',
+        'bg-info-400 dark:bg-info-500   text-white hover:shadow-lg',
       props.color === 'success' &&
         props.flavor === 'solid' &&
-        'bg-teal-400 dark:bg-teal-500  text-white hover:shadow-lg',
+        'bg-success-400 dark:bg-success-500  text-white hover:shadow-lg',
       props.color === 'warning' &&
         props.flavor === 'solid' &&
-        'bg-amber-400 dark:bg-amber-500 text-white hover:shadow-lg',
+        'bg-warning-400 dark:bg-warning-500 text-white hover:shadow-lg',
       props.color === 'danger' &&
         props.flavor === 'solid' &&
-        'bg-rose-400 dark:bg-rose-500 text-white hover:shadow-lg',
+        'bg-danger-400 dark:bg-danger-500 text-white hover:shadow-lg',
       props.color === 'primary' &&
         props.flavor === 'pastel' &&
         'bg-primary-100  text-primary-500 border border-primary-100 dark:border-primary-500 dark:bg-transparent dark:text-primary-500',
       props.color === 'info' &&
         props.flavor === 'pastel' &&
-        'bg-sky-100  text-sky-500 border border-sky-100 dark:border-sky-500 dark:bg-transparent dark:text-sky-500',
+        'bg-info-100  text-info-500 border border-info-100 dark:border-info-500 dark:bg-transparent dark:text-info-500',
       props.color === 'success' &&
         props.flavor === 'pastel' &&
-        'bg-teal-100  text-teal-500 border border-teal-100 dark:border-teal-500 dark:bg-transparent dark:text-teal-500',
+        'bg-success-100  text-success-500 border border-success-100 dark:border-success-500 dark:bg-transparent dark:text-success-500',
       props.color === 'warning' &&
         props.flavor === 'pastel' &&
-        'bg-amber-100  text-amber-500 border border-amber-100 dark:border-amber-500 dark:bg-transparent dark:text-amber-500',
+        'bg-warning-100  text-warning-500 border border-warning-100 dark:border-warning-500 dark:bg-transparent dark:text-warning-500',
       props.color === 'danger' &&
         props.flavor === 'pastel' &&
-        'bg-rose-100  text-rose-500 border border-rose-100 dark:border-rose-500 dark:bg-transparent dark:text-rose-500',
+        'bg-danger-100  text-danger-500 border border-danger-100 dark:border-danger-500 dark:bg-transparent dark:text-danger-500',
       props.color === 'primary' &&
         props.flavor === 'outline' &&
         ' text-primary-500  border border-primary-500 ',
       props.color === 'info' &&
         props.flavor === 'outline' &&
-        'text-sky-500  border border-sky-500',
+        'text-info-500  border border-info-500',
       props.color === 'success' &&
         props.flavor === 'outline' &&
-        'text-teal-500  border border-teal-500',
+        'text-success-500  border border-success-500',
       props.color === 'warning' &&
         props.flavor === 'outline' &&
-        'text-amber-500  border border-amber-500',
+        'text-warning-500  border border-warning-500',
       props.color === 'danger' &&
         props.flavor === 'outline' &&
-        'text-rose-500  border border-rose-500',
+        'text-danger-500  border border-danger-500',
       props.shape === 'straight' && '',
       props.shape === 'rounded' && 'rounded-md',
       props.shape === 'curved' && 'rounded-xl',

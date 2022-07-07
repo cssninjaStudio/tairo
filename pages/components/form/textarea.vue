@@ -218,7 +218,7 @@ definePageMeta({
                           as="h4"
                           size="sm"
                           weight="semibold"
-                          class="text-slate-800 dark:text-white"
+                          class="text-muted-800 dark:text-white"
                         >
                           Maya
                         </BaseHeading>

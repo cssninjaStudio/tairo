@@ -45,7 +45,7 @@ const props = withDefaults(defineProps<TextProps>(), {
 
 <template>
   <p
-    class="font-text"
+    class="font-sans"
     :class="[
       props.size === 'xs' && 'text-xs',
       props.size === 'sm' && 'text-sm',

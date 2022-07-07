@@ -56,7 +56,7 @@ const props = withDefaults(defineProps<CarouselProps>(), {
         <NuxtLink :to="slide.to">
           <BaseCard
             shape="curved"
-            class="px-4 py-6 hover:border-primary-500 dark:hover:border-primary-500 hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+            class="px-4 py-6 hover:border-primary-500 dark:hover:border-primary-500 hover:-tranmuted-y-1 hover:shadow-lg transition-all duration-300"
           >
             <BaseAvatar
               :src="slide.avatar"
@@ -67,14 +67,14 @@ const props = withDefaults(defineProps<CarouselProps>(), {
             <BaseHeading
               size="md"
               weight="semibold"
-              class="text-slate-800 dark:text-white"
+              class="text-muted-800 dark:text-white"
             >
               {{ slide.name }}
             </BaseHeading>
-            <BaseText size="xs" class="mb-2 text-slate-400">
+            <BaseText size="xs" class="mb-2 text-muted-400">
               {{ slide.role }}
             </BaseText>
-            <BaseParagraph size="sm" class="text-slate-500">
+            <BaseParagraph size="sm" class="text-muted-500">
               {{ slide.text }}
             </BaseParagraph>
             <div class="flex justify-center gap-4 pt-4">
@@ -84,7 +84,7 @@ const props = withDefaults(defineProps<CarouselProps>(), {
                 :src="skill.logo"
                 size="xs"
                 :tooltip="skill.name"
-                class="bg-slate-200 dark:bg-slate-700"
+                class="bg-muted-200 dark:bg-muted-700"
               />
             </div>
           </BaseCard>
@@ -126,7 +126,7 @@ const props = withDefaults(defineProps<CarouselProps>(), {
 
 :deep(.carousel__next),
 :deep(.carousel__prev) {
-  @apply absolute -top-5 text-slate-400 transition-colors duration-300;
+  @apply absolute -top-5 text-muted-400 transition-colors duration-300;
   left: initial;
 }
 

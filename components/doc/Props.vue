@@ -26,26 +26,26 @@ const props = withDefaults(defineProps<DocProperties>(), {
 
 <template>
   <div id="component-props">
-    <div class="pb-10 mb-10 border-b border-slate-200 dark:border-slate-800">
+    <div class="pb-10 mb-10 border-b border-muted-200 dark:border-muted-800">
       <!-- Props display -->
       <div
         v-if="props.properties.length > 0"
-        class="w-full mx-auto bg-white dark:bg-slate-800 rounded-md hover:shadow-lg border border-slate-200 dark:border-slate-700 transition-shadow duration-300"
+        class="w-full mx-auto bg-white dark:bg-muted-800 rounded-md hover:shadow-lg border border-muted-200 dark:border-muted-700 transition-shadow duration-300"
       >
         <header
-          class="px-5 py-4 border-b border-slate-100 dark:border-slate-800"
+          class="px-5 py-4 border-b border-muted-100 dark:border-muted-800"
         >
           <h2
-            class="font-main font-semibold text-slate-800 dark:text-slate-200"
+            class="font-heading font-semibold text-muted-800 dark:text-muted-200"
           >
             {{ props.component }} Props
           </h2>
         </header>
         <div class="p-3">
           <div class="overflow-x-auto">
-            <table class="table-auto w-full font-sub">
+            <table class="table-auto w-full font-alt">
               <thead
-                class="text-xs font-semibold uppercase text-slate-400 bg-slate-50 dark:bg-slate-800"
+                class="text-xs font-semibold uppercase text-muted-400 bg-muted-50 dark:bg-muted-800"
               >
                 <tr>
                   <th class="p-2 whitespace-nowrap">
@@ -66,28 +66,28 @@ const props = withDefaults(defineProps<DocProperties>(), {
                 </tr>
               </thead>
               <tbody
-                class="text-sm divide-y divide-slate-100 dark:divide-slate-800"
+                class="text-sm divide-y divide-muted-100 dark:divide-muted-800"
               >
                 <tr v-for="(prop, index) in props.properties" :key="index">
                   <td class="p-2 whitespace-nowrap">
                     <div class="flex items-center">
                       <div
-                        class="font-medium text-slate-800 dark:text-slate-100"
+                        class="font-medium text-muted-800 dark:text-muted-100"
                       >
                         {{ prop.name }}
                       </div>
                     </div>
                   </td>
                   <td class="p-2 whitespace-nowrap">
-                    <div class="text-left text-teal-500">{{ prop.type }}</div>
+                    <div class="text-left text-success-500">{{ prop.type }}</div>
                   </td>
                   <td class="p-2 whitespace-nowrap">
-                    <div class="text-left text-slate-400">
+                    <div class="text-left text-muted-400">
                       {{ prop.required }}
                     </div>
                   </td>
                   <td class="p-2 whitespace-nowrap">
-                    <div class="text-left font-medium text-slate-400">
+                    <div class="text-left font-medium text-muted-400">
                       {{ prop.default }}
                     </div>
                   </td>
@@ -99,7 +99,7 @@ const props = withDefaults(defineProps<DocProperties>(), {
                     >
                       <span v-if="v === 0">{{ value }}</span>
                       <span v-else>
-                        <span class="text-slate-400">,</span>
+                        <span class="text-muted-400">,</span>
                         {{ value }}
                       </span>
                     </span>
@@ -114,22 +114,22 @@ const props = withDefaults(defineProps<DocProperties>(), {
       <!-- Slots display -->
       <div
         v-if="props.slots.length > 0"
-        class="w-full mx-auto mt-10 bg-white dark:bg-slate-800 rounded-md hover:shadow-lg border border-slate-200 dark:border-slate-700 transition-shadow duration-300"
+        class="w-full mx-auto mt-10 bg-white dark:bg-muted-800 rounded-md hover:shadow-lg border border-muted-200 dark:border-muted-700 transition-shadow duration-300"
       >
         <header
-          class="px-5 py-4 border-b border-slate-100 dark:border-slate-800"
+          class="px-5 py-4 border-b border-muted-100 dark:border-muted-800"
         >
           <h2
-            class="font-main font-semibold text-slate-800 dark:text-slate-200"
+            class="font-heading font-semibold text-muted-800 dark:text-muted-200"
           >
             {{ props.component }} Slots
           </h2>
         </header>
         <div class="p-3">
           <div class="overflow-x-auto">
-            <table class="table-auto w-full font-sub">
+            <table class="table-auto w-full font-alt">
               <thead
-                class="text-xs font-semibold uppercase text-slate-400 bg-slate-50 dark:bg-slate-800"
+                class="text-xs font-semibold uppercase text-muted-400 bg-muted-50 dark:bg-muted-800"
               >
                 <tr>
                   <th class="p-2 whitespace-nowrap">
@@ -144,13 +144,13 @@ const props = withDefaults(defineProps<DocProperties>(), {
                 </tr>
               </thead>
               <tbody
-                class="text-sm divide-y divide-slate-100 dark:divide-slate-800"
+                class="text-sm divide-y divide-muted-100 dark:divide-muted-800"
               >
                 <tr v-for="(slot, index) in props.slots" :key="index">
                   <td class="p-2 whitespace-nowrap">
                     <div class="flex items-center">
                       <div
-                        class="font-medium text-slate-800 dark:text-slate-100"
+                        class="font-medium text-muted-800 dark:text-muted-100"
                       >
                         {{ slot.name }}
                       </div>
@@ -164,13 +164,13 @@ const props = withDefaults(defineProps<DocProperties>(), {
                     >
                       <span v-if="v === 0">{{ value }}</span>
                       <span v-else>
-                        <span class="text-slate-400">,</span>
+                        <span class="text-muted-400">,</span>
                         {{ value }}
                       </span>
                     </span>
                   </td>
                   <td class="p-2 whitespace-nowrap">
-                    <div class="text-left text-slate-400">
+                    <div class="text-left text-muted-400">
                       {{ slot.description }}
                     </div>
                   </td>

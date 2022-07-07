@@ -39,7 +39,7 @@ const emit = defineEmits(['close'])
           leave-from="opacity-100"
           leave-to="opacity-0"
         >
-          <div class="fixed inset-0 bg-slate-800/70 dark:bg-slate-900/80"></div>
+          <div class="fixed inset-0 bg-muted-800/70 dark:bg-muted-900/80"></div>
         </TransitionChild>
 
         <div class="fixed inset-0 overflow-y-auto">
@@ -56,7 +56,7 @@ const emit = defineEmits(['close'])
               leave-to="opacity-0 scale-95"
             >
               <DialogPanel
-                class="w-full overflow-hidden bg-white dark:bg-slate-800 text-left align-middle shadow-xl transition-all"
+                class="w-full overflow-hidden bg-white dark:bg-muted-800 text-left align-middle shadow-xl transition-all"
                 :class="[
                   props.shape === 'rounded' && 'rounded-lg',
                   props.shape === 'curved' && 'rounded-xl',

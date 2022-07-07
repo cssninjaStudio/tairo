@@ -91,7 +91,7 @@ export const solid = `
   <BaseIconBox
     size="md"
     shape="circle"
-    class="bg-white border border-slate-200 text-gray-500 dark:bg-slate-700 dark:border-slate-600"
+    class="bg-white border border-muted-200 text-gray-500 dark:bg-muted-700 dark:border-muted-600"
     >
     <BaseIcon name="ph:nut-duotone" class="w-5 h-5" />
   </BaseIconBox>
@@ -211,7 +211,7 @@ export const elevation = `
   <BaseIconBox
     size="md"
     shape="circle"
-    class="bg-white border border-slate-200 text-gray-500 dark:bg-slate-700 dark:border-slate-600 shadow-lg"
+    class="bg-white border border-muted-200 text-gray-500 dark:bg-muted-700 dark:border-muted-600 shadow-lg"
     >
     <BaseIcon name="ph:nut-duotone" class="w-5 h-5" />
   </BaseIconBox>

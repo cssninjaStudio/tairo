@@ -55,17 +55,17 @@ const filteredPeople = computed(() =>
 
 <template>
   <div
-    class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700"
+    class="bg-white dark:bg-muted-800 border border-muted-200 dark:border-muted-700"
   >
     <div class="flex items-center justify-between h-16 w-full px-10">
       <h2
-        class="font-main text-lg font-semibold text-slate-700 dark:text-white"
+        class="font-heading text-lg font-semibold text-muted-700 dark:text-white"
       >
         Search
       </h2>
       <button
         type="button"
-        class="flex items-center justify-center h-10 w-10 rounded-full text-slate-400 hover:text-slate-600 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors duration-300"
+        class="flex items-center justify-center h-10 w-10 rounded-full text-muted-400 hover:text-muted-600 dark:hover:text-white hover:bg-muted-100 dark:hover:bg-muted-700 transition-colors duration-300"
         @click="closePanel"
       >
         <BaseIcon name="feather:chevron-left" class="w-6 h-6" />
@@ -76,13 +76,13 @@ const filteredPeople = computed(() =>
       <Combobox v-model="selectedPerson" class="relative mt-5 z-10" as="div">
         <div class="group relative">
           <ComboboxInput
-            class="pl-10 pr-4 py-3 h-12 text-sm leading-5 font-text w-full bg-white text-slate-600 border border-slate-300 focus:border-primary-500 focus:shadow-lg focus:shadow-slate-300/50 dark:focus:shadow-slate-800/50 dark:placeholder:text-slate-600 dark:bg-slate-800 dark:text-slate-200 dark:border-slate-700 dark:focus:border-slate-600 !outline-none transition duration-300 rounded-lg"
+            class="pl-10 pr-4 py-3 h-12 text-sm leading-5 font-sans w-full bg-white text-muted-600 border border-muted-300 focus:border-primary-500 focus:shadow-lg focus:shadow-muted-300/50 dark:focus:shadow-muted-800/50 dark:placeholder:text-muted-600 dark:bg-muted-800 dark:text-muted-200 dark:border-muted-700 dark:focus:border-muted-600 !outline-none transition duration-300 rounded-lg"
             :display-value="(person:any) => person.name"
             placeholder="Search..."
             @change="query = $event.target.value"
           />
           <div
-            class="absolute top-0 left-0 h-12 w-12 flex justify-center items-center text-slate-400 group-focus-within:text-primary-500 transition-colors duration-300"
+            class="absolute top-0 left-0 h-12 w-12 flex justify-center items-center text-muted-400 group-focus-within:text-primary-500 transition-colors duration-300"
           >
             <BaseIcon name="feather:search" class="w-5 h-5" />
           </div>
@@ -96,12 +96,12 @@ const filteredPeople = computed(() =>
         >
           <ComboboxOptions
             as="div"
-            class="absolute mt-1 max-h-60 w-full overflow-auto rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 divide-y divide-slate-100 dark:divide-slate-700 py-1 text-base shadow-lg outline-none sm:text-sm slimscroll"
+            class="absolute mt-1 max-h-60 w-full overflow-auto rounded-lg bg-white dark:bg-muted-800 border border-muted-200 dark:border-muted-700 divide-y divide-muted-100 dark:divide-muted-700 py-1 text-base shadow-lg outline-none sm:text-sm slimscroll"
           >
             <!-- Placeholder -->
             <div
               v-if="filteredPeople.length === 0 && query !== ''"
-              class="relative cursor-default select-none py-2 px-4 text-slate-700"
+              class="relative cursor-default select-none py-2 px-4 text-muted-700"
             >
               Nothing found.
             </div>
@@ -113,7 +113,7 @@ const filteredPeople = computed(() =>
               :value="person"
             >
               <div
-                class="flex items-center p-2 cursor-pointer rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors duration-300"
+                class="flex items-center p-2 cursor-pointer rounded-lg hover:bg-muted-100 dark:hover:bg-muted-700 transition-colors duration-300"
               >
                 <div
                   class="inline-flex justify-center items-center relative w-9 h-9 rounded-full"
@@ -126,11 +126,11 @@ const filteredPeople = computed(() =>
                 </div>
                 <div class="ml-3">
                   <h6
-                    class="font-main font-semibold text-sm text-slate-800 dark:text-white"
+                    class="font-heading font-semibold text-sm text-muted-800 dark:text-white"
                   >
                     {{ person.name }}
                   </h6>
-                  <p class="font-text text-xs text-slate-400">
+                  <p class="font-sans text-xs text-muted-400">
                     {{ person.role }}
                   </p>
                 </div>
@@ -143,7 +143,7 @@ const filteredPeople = computed(() =>
       <!-- Suggestions -->
       <div class="py-6">
         <h4
-          class="font-sub font-semibold uppercase text-sm text-slate-400 mb-4"
+          class="font-alt font-semibold uppercase text-sm text-muted-400 mb-4"
         >
           People
         </h4>
@@ -162,11 +162,11 @@ const filteredPeople = computed(() =>
               </div>
               <div class="ml-3">
                 <h6
-                  class="font-main font-semibold text-sm text-slate-800 dark:text-white"
+                  class="font-heading font-semibold text-sm text-muted-800 dark:text-white"
                 >
                   Mike Miller
                 </h6>
-                <p class="font-text text-xs text-slate-400">
+                <p class="font-sans text-xs text-muted-400">
                   Frontend Developer
                 </p>
               </div>
@@ -186,11 +186,11 @@ const filteredPeople = computed(() =>
               </div>
               <div class="ml-3">
                 <h6
-                  class="font-main font-semibold text-sm text-slate-800 dark:text-white"
+                  class="font-heading font-semibold text-sm text-muted-800 dark:text-white"
                 >
                   John Sabierski
                 </h6>
-                <p class="font-text text-xs text-slate-400">
+                <p class="font-sans text-xs text-muted-400">
                   Backend Developer
                 </p>
               </div>
@@ -210,11 +210,11 @@ const filteredPeople = computed(() =>
               </div>
               <div class="ml-3">
                 <h6
-                  class="font-main font-semibold text-sm text-slate-800 dark:text-white"
+                  class="font-heading font-semibold text-sm text-muted-800 dark:text-white"
                 >
                   Ronald Cardine
                 </h6>
-                <p class="font-text text-xs text-slate-400">
+                <p class="font-sans text-xs text-muted-400">
                   Frontend Developer
                 </p>
               </div>
@@ -226,7 +226,7 @@ const filteredPeople = computed(() =>
       <!-- Suggestions -->
       <div class="py-6">
         <h4
-          class="font-sub font-semibold uppercase text-sm text-slate-400 mb-4"
+          class="font-alt font-semibold uppercase text-sm text-muted-400 mb-4"
         >
           Recent
         </h4>
@@ -235,17 +235,17 @@ const filteredPeople = computed(() =>
           <li>
             <NuxtLink to="/" class="flex items-center">
               <div
-                class="relative inline-flex justify-center items-center w-10 h-10 bg-emerald-100 text-emerald-600 dark:bg-emerald-500 dark:text-slate-50 rounded-full"
+                class="relative inline-flex justify-center items-center w-10 h-10 bg-emerald-100 text-emerald-600 dark:bg-emerald-500 dark:text-muted-50 rounded-full"
               >
                 <BaseIcon name="feather:chrome" class="" />
               </div>
               <div class="ml-3">
                 <h6
-                  class="font-main font-semibold text-sm text-slate-800 dark:text-white"
+                  class="font-heading font-semibold text-sm text-muted-800 dark:text-white"
                 >
                   Browser Support
                 </h6>
-                <p class="font-text text-xs text-slate-400">Blog article</p>
+                <p class="font-sans text-xs text-muted-400">Blog article</p>
               </div>
             </NuxtLink>
           </li>
@@ -253,17 +253,17 @@ const filteredPeople = computed(() =>
           <li>
             <NuxtLink to="/" class="flex items-center">
               <div
-                class="relative inline-flex justify-center items-center w-10 h-10 bg-amber-100 text-amber-600 dark:bg-amber-500 dark:text-slate-50 rounded-full"
+                class="relative inline-flex justify-center items-center w-10 h-10 bg-warning-100 text-warning-600 dark:bg-warning-500 dark:text-muted-50 rounded-full"
               >
                 <BaseIcon name="feather:tv" class="" />
               </div>
               <div class="ml-3">
                 <h6
-                  class="font-main font-semibold text-sm text-slate-800 dark:text-white"
+                  class="font-heading font-semibold text-sm text-muted-800 dark:text-white"
                 >
                   Twitch new API
                 </h6>
-                <p class="font-text text-xs text-slate-400">Blog article</p>
+                <p class="font-sans text-xs text-muted-400">Blog article</p>
               </div>
             </NuxtLink>
           </li>
@@ -271,17 +271,17 @@ const filteredPeople = computed(() =>
           <li>
             <NuxtLink to="/" class="flex items-center">
               <div
-                class="relative inline-flex justify-center items-center w-10 h-10 bg-primary-100 text-primary-600 dark:bg-primary-500 dark:text-slate-50 rounded-full"
+                class="relative inline-flex justify-center items-center w-10 h-10 bg-primary-100 text-primary-600 dark:bg-primary-500 dark:text-muted-50 rounded-full"
               >
                 <BaseIcon name="feather:twitter" class="" />
               </div>
               <div class="ml-3">
                 <h6
-                  class="font-main font-semibold text-sm text-slate-800 dark:text-white"
+                  class="font-heading font-semibold text-sm text-muted-800 dark:text-white"
                 >
                   Social integrations
                 </h6>
-                <p class="font-text text-xs text-slate-400">Blog article</p>
+                <p class="font-sans text-xs text-muted-400">Blog article</p>
               </div>
             </NuxtLink>
           </li>

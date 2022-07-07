@@ -27,7 +27,7 @@ definePageMeta({
         <!-- Custom section -->
         <div
           id="tairo-overview"
-          class="grid md:grid-cols-2 gap-4 xl:gap-8 pb-10 mb-10 border-b border-gray-200 dark:border-slate-800"
+          class="grid md:grid-cols-2 gap-4 xl:gap-8 pb-10 mb-10 border-b border-gray-200 dark:border-muted-800"
         >
           <div>
             <BaseCard shape="rounded" class="p-8">
@@ -35,18 +35,18 @@ definePageMeta({
                 as="h2"
                 size="2xl"
                 weight="bold"
-                class="text-slate-800 dark:text-white"
+                class="text-muted-800 dark:text-white"
               >
                 Tairo Overview
               </BaseHeading>
               <BaseParagraph
                 size="sm"
-                class="text-slate-500 dark:text-slate-400 mb-4"
+                class="text-muted-500 dark:text-muted-400 mb-4"
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Erat
                 enim Polemonis.
               </BaseParagraph>
-              <BaseText size="sm" class="text-slate-400 dark:text-slate-400">
+              <BaseText size="sm" class="text-muted-400 dark:text-muted-400">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Erat
                 enim Polemonis. Duo Reges: constructio interrete. Philosophi
                 autem in suis lectulis plerumque moriuntur.
@@ -54,12 +54,12 @@ definePageMeta({
 
               <NuxtLink
                 to="https://docs.cssninja.io/tairo"
-                class="group inline-flex items-center font-text font-medium text-sm text-primary-500 mt-7 hover:opacity-90 transition-opacity"
+                class="group inline-flex items-center font-sans font-medium text-sm text-primary-500 mt-7 hover:opacity-90 transition-opacity"
               >
                 <span class="mr-1">Read the documentation</span>
                 <BaseIcon
                   name="lucide:arrow-right"
-                  class="w-4 h-4 group-hover:translate-x-2 transition-transform duration-300"
+                  class="w-4 h-4 group-hover:tranmuted-x-2 transition-transform duration-300"
                 />
               </NuxtLink>
             </BaseCard>
@@ -74,7 +74,7 @@ definePageMeta({
                 as="h4"
                 size="sm"
                 weight="semibold"
-                class="text-slate-800 dark:text-white"
+                class="text-muted-800 dark:text-white"
               >
                 Nuxt JS
               </BaseHeading>
@@ -88,7 +88,7 @@ definePageMeta({
                 as="h4"
                 size="sm"
                 weight="semibold"
-                class="text-slate-800 dark:text-white"
+                class="text-muted-800 dark:text-white"
               >
                 Typescript
               </BaseHeading>
@@ -102,7 +102,7 @@ definePageMeta({
                 as="h4"
                 size="sm"
                 weight="semibold"
-                class="text-slate-800 dark:text-white"
+                class="text-muted-800 dark:text-white"
               >
                 Tailwind CSS
               </BaseHeading>
@@ -116,7 +116,7 @@ definePageMeta({
                 as="h4"
                 size="sm"
                 weight="semibold"
-                class="text-slate-800 dark:text-white"
+                class="text-muted-800 dark:text-white"
               >
                 UnoCSS
               </BaseHeading>
@@ -127,13 +127,13 @@ definePageMeta({
         <!-- Custom section -->
         <div
           id="tairo-features"
-          class="pb-10 mb-10 border-b border-gray-200 dark:border-slate-800"
+          class="pb-10 mb-10 border-b border-gray-200 dark:border-muted-800"
         >
           <BaseHeading
             as="h2"
             size="xl"
             weight="medium"
-            class="text-slate-800 dark:text-white mb-5"
+            class="text-muted-800 dark:text-white mb-5"
           >
             Features
           </BaseHeading>
@@ -149,11 +149,11 @@ definePageMeta({
                   as="h4"
                   size="sm"
                   weight="semibold"
-                  class="text-slate-800 dark:text-white"
+                  class="text-muted-800 dark:text-white"
                 >
                   Nuxt 3
                 </BaseHeading>
-                <BaseText size="xs" class="text-slate-400">
+                <BaseText size="xs" class="text-muted-400">
                   Robust and solid vue app
                 </BaseText>
               </div>
@@ -171,11 +171,11 @@ definePageMeta({
                   as="h4"
                   size="sm"
                   weight="semibold"
-                  class="text-slate-800 dark:text-white"
+                  class="text-muted-800 dark:text-white"
                 >
                   Typescript
                 </BaseHeading>
-                <BaseText size="xs" class="text-slate-400">
+                <BaseText size="xs" class="text-muted-400">
                   Types and auto-discovery
                 </BaseText>
               </div>
@@ -190,11 +190,11 @@ definePageMeta({
                   as="h4"
                   size="sm"
                   weight="semibold"
-                  class="text-slate-800 dark:text-white"
+                  class="text-muted-800 dark:text-white"
                 >
                   Vite
                 </BaseHeading>
-                <BaseText size="xs" class="text-slate-400">
+                <BaseText size="xs" class="text-muted-400">
                   Bundling & hot reloading
                 </BaseText>
               </div>
@@ -209,11 +209,11 @@ definePageMeta({
                   as="h4"
                   size="sm"
                   weight="semibold"
-                  class="text-slate-800 dark:text-white"
+                  class="text-muted-800 dark:text-white"
                 >
                   TailwindCSS
                 </BaseHeading>
-                <BaseText size="xs" class="text-slate-400">
+                <BaseText size="xs" class="text-muted-400">
                   For precise and clean styles
                 </BaseText>
               </div>
@@ -228,11 +228,11 @@ definePageMeta({
                   as="h4"
                   size="sm"
                   weight="semibold"
-                  class="text-slate-800 dark:text-white"
+                  class="text-muted-800 dark:text-white"
                 >
                   Pinia
                 </BaseHeading>
-                <BaseText size="xs" class="text-slate-400">
+                <BaseText size="xs" class="text-muted-400">
                   To handle store data
                 </BaseText>
               </div>
@@ -247,11 +247,11 @@ definePageMeta({
                   as="h4"
                   size="sm"
                   weight="semibold"
-                  class="text-slate-800 dark:text-white"
+                  class="text-muted-800 dark:text-white"
                 >
                   ESlint
                 </BaseHeading>
-                <BaseText size="xs" class="text-slate-400">
+                <BaseText size="xs" class="text-muted-400">
                   For standardized code
                 </BaseText>
               </div>
@@ -525,49 +525,49 @@ definePageMeta({
         </DocSection>
 
         <!-- Slate color -->
-        <DocSection id="slate-color" title="Slate color" tag="1.0.0">
+        <DocSection id="muted-color" title="Slate color" tag="1.0.0">
           <DocComponent label="Success color variations">
             <template #demo>
               <div class="flex items-end flex-wrap gap-2">
                 <div
-                  class="h-8 w-8 rounded-lg bg-slate-50"
-                  tooltip="bg-slate-50"
+                  class="h-8 w-8 rounded-lg bg-muted-50"
+                  tooltip="bg-muted-50"
                 ></div>
                 <div
-                  class="h-8 w-8 rounded-lg bg-slate-100"
-                  tooltip="bg-slate-100"
+                  class="h-8 w-8 rounded-lg bg-muted-100"
+                  tooltip="bg-muted-100"
                 ></div>
                 <div
-                  class="h-8 w-8 rounded-lg bg-slate-200"
-                  tooltip="bg-slate-200"
+                  class="h-8 w-8 rounded-lg bg-muted-200"
+                  tooltip="bg-muted-200"
                 ></div>
                 <div
-                  class="h-8 w-8 rounded-lg bg-slate-300"
-                  tooltip="bg-slate-300"
+                  class="h-8 w-8 rounded-lg bg-muted-300"
+                  tooltip="bg-muted-300"
                 ></div>
                 <div
-                  class="h-8 w-8 rounded-lg bg-slate-400"
-                  tooltip="bg-slate-400"
+                  class="h-8 w-8 rounded-lg bg-muted-400"
+                  tooltip="bg-muted-400"
                 ></div>
                 <div
-                  class="h-8 w-8 rounded-lg bg-slate-500"
-                  tooltip="bg-slate-500"
+                  class="h-8 w-8 rounded-lg bg-muted-500"
+                  tooltip="bg-muted-500"
                 ></div>
                 <div
-                  class="h-8 w-8 rounded-lg bg-slate-600"
-                  tooltip="bg-slate-600"
+                  class="h-8 w-8 rounded-lg bg-muted-600"
+                  tooltip="bg-muted-600"
                 ></div>
                 <div
-                  class="h-8 w-8 rounded-lg bg-slate-700"
-                  tooltip="bg-slate-700"
+                  class="h-8 w-8 rounded-lg bg-muted-700"
+                  tooltip="bg-muted-700"
                 ></div>
                 <div
-                  class="h-8 w-8 rounded-lg bg-slate-800"
-                  tooltip="bg-slate-800"
+                  class="h-8 w-8 rounded-lg bg-muted-800"
+                  tooltip="bg-muted-800"
                 ></div>
                 <div
-                  class="h-8 w-8 rounded-lg bg-slate-900"
-                  tooltip="bg-slate-900"
+                  class="h-8 w-8 rounded-lg bg-muted-900"
+                  tooltip="bg-muted-900"
                 ></div>
               </div>
             </template>

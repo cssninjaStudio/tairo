@@ -122,7 +122,7 @@ definePageMeta({
                 <BaseFormAnimatedCheckbox
                   v-model="options"
                   value="Option 18"
-                  class="text-slate-800 dark:text-slate-200"
+                  class="text-muted-800 dark:text-muted-200"
                 />
                 <BaseFormAnimatedCheckbox
                   v-model="options"

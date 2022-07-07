@@ -53,7 +53,7 @@ watch(
         type="checkbox"
       />
       <div
-        class="absolute top-0 left-0 h-full w-full bg-white dark:bg-slate-700 dark:border-slate-700 border-2 border-slate-400 z-0 peer-checked:border-current peer-checked:dark:border-current"
+        class="absolute top-0 left-0 h-full w-full bg-white dark:bg-muted-700 dark:border-muted-700 border-2 border-muted-400 z-0 peer-checked:border-current peer-checked:dark:border-current"
         :class="[
           props.shape === 'rounded' && 'rounded',
           props.shape === 'curved' && 'rounded-md',
@@ -61,13 +61,13 @@ watch(
         ]"
       ></div>
       <IconCheck
-        class="relative fill-current opacity-0 w-2.5 h-2.5 pointer-events-none transition duration-300 translate-y-6 peer-checked:opacity-100 peer-checked:translate-y-0 z-10"
+        class="relative fill-current opacity-0 w-2.5 h-2.5 pointer-events-none transition duration-300 tranmuted-y-6 peer-checked:opacity-100 peer-checked:tranmuted-y-0 z-10"
       />
     </div>
     <label
       v-if="!props.label"
       :for="`checkbox-${props.name}`"
-      class="cursor-pointer select-none text-slate-400 font-text text-sm ml-1"
+      class="cursor-pointer select-none text-muted-400 font-sans text-sm ml-1"
     >
       {{ props.label }}
     </label>
