@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { breadcrumb, toc } from '@@/documentation/components/placeload/toc'
 import { composition, shape, text } from '@@/documentation/components/placeload'
 
 definePageMeta({

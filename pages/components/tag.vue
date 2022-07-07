@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { breadcrumb, toc } from '@@/documentation/components/tag/toc'
 import { outline, pastel, shapes, solid } from '@@/documentation/components/tag'
 import { properties } from '@@/documentation/components/tag/properties'
 

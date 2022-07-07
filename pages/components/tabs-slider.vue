@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { breadcrumb, toc } from '@@/documentation/components/tabs-slider/toc'
 import {
   x2Full,
   x2Rounded,

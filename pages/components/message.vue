@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { breadcrumb, toc } from '@@/documentation/components/message/toc'
 import { icons, shapes, types } from '@@/documentation/components/message'
 import { properties } from '@@/documentation/components/message/properties'
 

@@ -1,7 +1,6 @@
 <script setup lang="ts">
 // @todo: implement form validation like in Vuero
 
-import { breadcrumb, toc } from '@@/documentation/components/form/input/toc'
 import {
   curved,
   disabled,

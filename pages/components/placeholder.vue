@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { breadcrumb, toc } from '@@/documentation/components/placeholder/toc'
 import { base, variation } from '@@/documentation/components/placeholder'
 import { properties } from '@@/documentation/components/placeholder/properties'
 

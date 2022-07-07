@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { breadcrumb, toc } from '@@/documentation/components/form/checkbox/toc'
 import {
   circle,
   colors,

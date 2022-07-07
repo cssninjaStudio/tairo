@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { breadcrumb, toc } from '@@/documentation/components/card/toc'
 import {
   elevation,
   elevationHover,

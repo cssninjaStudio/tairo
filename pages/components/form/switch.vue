@@ -1,7 +1,6 @@
 <script setup lang="ts">
 // @todo: fix switch checked / unchecked states that don't seem to work properly.
 
-import { breadcrumb, toc } from '@@/documentation/components/form/switch/toc'
 import {
   ballSublabel,
   ballSwitch,

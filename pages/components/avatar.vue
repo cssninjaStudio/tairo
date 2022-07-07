@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { breadcrumb, toc } from '@@/documentation/components/avatar/toc'
 import { properties } from '@@/documentation/components/avatar/props'
 import {
   circleBadge,

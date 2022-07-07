@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { breadcrumb, toc } from '@@/documentation/components/dropdown/toc'
 import {
   avatarSlot,
   buttonLeft,

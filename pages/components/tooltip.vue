@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { breadcrumb, toc } from '@@/documentation/components/tooltip/toc'
 import { avatar, positions } from '@@/documentation/components/tooltip'
 import { properties } from '@@/documentation/components/tooltip/properties'
 

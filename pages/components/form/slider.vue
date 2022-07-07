@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import Slider from '@vueform/slider'
-import { breadcrumb, toc } from '@@/documentation/components/form/slider/toc'
 import {
   circle,
   colors,
