@@ -1,7 +1,16 @@
 <script setup lang="ts">
+import type { TocItem } from '~~/composables/useToc'
+
 const { toc } = useToc()
 const route = useRoute()
 const activeAnchor = ref('')
+const ids = toc.value.map(({ id }) => `#${id}`)
+const { activeIds } = useScrollspy(
+  {
+    rootMargin: '0px 0px -90% 0px',
+  },
+  ids
+)
 
 onMounted(() => {
   if (route.hash) {
@@ -17,6 +26,38 @@ watch(
     }
   }
 )
+
+const getTocItemClass = (item: TocItem) => {
+  const classes = []
+
+  if (item.level > 2) {
+    classes.push('ml-3 text-xs')
+  }
+
+  if (activeAnchor.value === item.id) {
+    classes.push('border-primary-500 text-primary-500')
+  } else {
+    if (activeIds.value.includes(item.id)) {
+      classes.push(
+        'border-primary-400 dark:border-primary-600 text-muted-500 dark:text-muted-400 hover:text-muted-400'
+      )
+    } else {
+      classes.push(
+        'border-muted-200 dark:border-muted-800 text-muted-500 dark:text-muted-400 hover:text-muted-400'
+      )
+    }
+  }
+
+  // [
+  //   item.level > 2 ? 'ml-3 text-xs' : '',
+  //   activeAnchor === item.id &&
+  //     'border-primary-500 text-primary-500',
+  //   activeAnchor !== item.id
+  //   activeIds.includes(item.id) ? 'border-primary-400' : '',
+  //     'border-muted-200  dark:border-muted-800 text-muted-500 dark:text-muted-400 hover:text-muted-400',
+  // ]
+  return classes
+}
 </script>
 
 <template>
@@ -36,12 +77,7 @@ watch(
             <NuxtLink
               :to="{ name: route.name!, hash: `#${item.id}` }"
               class="block border-r-2 py-2"
-              :class="[
-                item.level > 2 ? 'ml-3 text-xs' : '',
-                activeAnchor === item.id
-                  ? ' border-primary-500 text-primary-500'
-                  : 'border-muted-200  dark:border-muted-800 text-muted-500 dark:text-muted-400 hover:text-muted-400',
-              ]"
+              :class="getTocItemClass(item)"
             >
               {{ item.label }}
             </NuxtLink>
