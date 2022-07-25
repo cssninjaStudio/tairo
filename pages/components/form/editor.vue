@@ -14,7 +14,7 @@ import {
 definePageMeta({
   title: 'Text Editor',
   documentation: {
-    category: 'Forms',
+    category: 'Addons',
     components: ['CKEditor'],
   },
 })
