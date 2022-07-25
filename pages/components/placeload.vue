@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { composition, shape, text } from '@@/documentation/components/placeload'
 
+import { BasePlaceloadMeta } from 'virtual:vue-component-meta'
+
 definePageMeta({
   title: 'Placeloads',
   documentation: {
@@ -71,6 +73,8 @@ definePageMeta({
             </template>
           </DocComponent>
         </DocSection>
+
+        <DocComponentMeta :meta="BasePlaceloadMeta" />
       </template>
       <!-- Toc -->
       <template #toc>

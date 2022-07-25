@@ -7,6 +7,9 @@ export interface TextareaEmits {
 
 export interface TextareaProps {
   modelValue?: any
+  /**
+   * Name used to identify the textarea.
+   */
   name?: string
   shape?: TextareaShapes
   label: string

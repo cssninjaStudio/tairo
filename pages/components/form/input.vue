@@ -12,13 +12,14 @@ import {
   rounded,
   straight,
 } from '@@/documentation/components/form/input'
-import { properties } from '@@/documentation/components/form/input/properties'
 import {
   inputCurved,
   inputFull,
   inputRounded,
   inputStraight,
 } from '@@/documentation/components/form/input/data'
+
+import { BaseFormInputMeta } from 'virtual:vue-component-meta'
 
 definePageMeta({
   title: 'Inputs',
@@ -264,11 +265,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Input properties -->
-        <DocProps
-          component="BaseFormInput"
-          :properties="properties.props"
-          :slots="properties.slots"
-        />
+        <DocComponentMeta :meta="BaseFormInputMeta" />
       </template>
       <!-- Toc -->
       <template #toc>

@@ -10,7 +10,8 @@ import {
   imageSmall,
   small,
 } from '@@/documentation/components/snack'
-import { properties } from '@@/documentation/components/snack/properties'
+
+import { BaseSnackMeta } from 'virtual:vue-component-meta'
 
 definePageMeta({
   title: 'Snacks',
@@ -193,11 +194,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Snack props -->
-        <DocProps
-          component="BaseSnack"
-          :properties="properties.props"
-          :slots="properties.slots"
-        />
+        <DocComponentMeta :meta="BaseSnackMeta" />
       </template>
       <!-- Toc -->
       <template #toc>

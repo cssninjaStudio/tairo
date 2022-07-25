@@ -7,7 +7,6 @@ import {
   shapes,
   sublabels,
 } from '@@/documentation/components/combobox'
-import { properties } from '@@/documentation/components/combobox/properties'
 import {
   frameworks,
   hobbies,
@@ -18,6 +17,8 @@ import {
   selectedPerson,
   selectedPersonName,
 } from '@@/documentation/components/combobox/data'
+
+import { BaseFormComboBoxMeta } from 'virtual:vue-component-meta'
 
 definePageMeta({
   title: 'Combobox',
@@ -170,11 +171,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Combobox properties -->
-        <DocProps
-          component="BaseFormComboBox"
-          :properties="properties.props"
-          :slots="properties.slots"
-        />
+        <DocComponentMeta :meta="BaseFormComboBoxMeta" />
       </template>
       <!-- Toc -->
       <template #toc>

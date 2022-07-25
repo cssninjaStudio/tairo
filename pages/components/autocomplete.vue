@@ -12,7 +12,6 @@ import {
   rounded,
   straight,
 } from '@@/documentation/components/autocomplete'
-import { properties } from '@@/documentation/components/autocomplete/properties'
 import {
   frameworks,
   hobbies,
@@ -22,6 +21,8 @@ import {
   selectedPeople,
   selectedPerson,
 } from '@@/documentation/components/autocomplete/data'
+
+import { BaseFormAutocompleteMeta } from 'virtual:vue-component-meta'
 
 definePageMeta({
   title: 'Autocomplete',
@@ -327,12 +328,7 @@ definePageMeta({
           </DocComponent>
         </DocSection>
 
-        <!-- Autocomplete properties -->
-        <DocProps
-          component="BaseFormAutocomplete"
-          :properties="properties.props"
-          :slots="properties.slots"
-        />
+        <DocComponentMeta :meta="BaseFormAutocompleteMeta" />
       </template>
       <!-- Toc -->
       <template #toc>

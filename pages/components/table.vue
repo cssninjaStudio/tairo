@@ -7,13 +7,14 @@ import {
   rounded,
   straight,
 } from '@@/documentation/components/table'
-import {
-  cellProperties,
-  headingProperties,
-  properties,
-  rowProperties,
-} from '@@/documentation/components/table/properties'
 import { team } from '@@/documentation/components/table/data'
+
+import {
+  BaseTableCellMeta,
+  BaseTableHeadingMeta,
+  BaseTableMeta,
+  BaseTableRowMeta,
+} from 'virtual:vue-component-meta'
 
 definePageMeta({
   title: 'Tables',
@@ -607,32 +608,16 @@ definePageMeta({
         </DocSection>
 
         <!-- Table props -->
-        <DocProps
-          component="BaseTable"
-          :properties="properties.props"
-          :slots="properties.slots"
-        />
+        <DocComponentMeta :meta="BaseTableMeta" />
 
         <!-- Heading props -->
-        <DocProps
-          component="BaseTableHeading"
-          :properties="headingProperties.props"
-          :slots="headingProperties.slots"
-        />
+        <DocComponentMeta :meta="BaseTableHeadingMeta" />
 
         <!-- Row props -->
-        <DocProps
-          component="BaseTableRow"
-          :properties="rowProperties.props"
-          :slots="rowProperties.slots"
-        />
+        <DocComponentMeta :meta="BaseTableRowMeta" />
 
         <!-- Cell props -->
-        <DocProps
-          component="BaseTableCell"
-          :properties="cellProperties.props"
-          :slots="cellProperties.slots"
-        />
+        <DocComponentMeta :meta="BaseTableCellMeta" />
       </template>
       <!-- Toc -->
       <template #toc>

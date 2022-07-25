@@ -2,6 +2,8 @@
 /* eslint-disable tailwindcss/no-custom-classname */
 </script>
 
+<script setup lang="ts"></script>
+
 <template>
   <div class="placeload animate-placeload"></div>
 </template>

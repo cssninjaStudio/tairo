@@ -5,10 +5,8 @@ import {
   x3Full,
   x3Rounded,
 } from '@@/documentation/components/tabs-slider'
-import {
-  itemProperties,
-  properties,
-} from '@@/documentation/components/tabs-slider/properties'
+
+import { BaseTabSliderMeta } from 'virtual:vue-component-meta'
 
 definePageMeta({
   title: 'Slider Tabs',
@@ -237,11 +235,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Tabs slider props -->
-        <DocProps
-          component="BaseTabSlider"
-          :properties="properties.props"
-          :slots="properties.slots"
-        />
+        <DocComponentMeta :meta="BaseTabSliderMeta" />
       </template>
       <!-- Toc -->
       <template #toc>

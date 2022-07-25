@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { outline, pastel, shapes, solid } from '@@/documentation/components/tag'
-import { properties } from '@@/documentation/components/tag/properties'
+
+import { BaseTagMeta } from 'virtual:vue-component-meta'
 
 definePageMeta({
   title: 'Tags',
@@ -114,11 +115,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Tag props -->
-        <DocProps
-          component="BaseTag"
-          :properties="properties.props"
-          :slots="properties.slots"
-        />
+        <DocComponentMeta :meta="BaseTagMeta" />
       </template>
       <!-- Toc -->
       <template #toc>

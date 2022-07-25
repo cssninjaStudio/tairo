@@ -7,7 +7,9 @@ import {
   roundedSizes,
   solid,
 } from '@@/documentation/components/iconbox'
-import { properties } from '@@/documentation/components/iconbox/properties'
+// import { properties } from '@@/documentation/components/iconbox/properties'
+
+import { BaseIconBoxMeta } from 'virtual:vue-component-meta'
 
 definePageMeta({
   title: 'Icon Boxes',
@@ -723,11 +725,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Icon box props -->
-        <DocProps
-          component="BaseIconBox"
-          :properties="properties.props"
-          :slots="properties.slots"
-        />
+        <DocComponentMeta :meta="BaseIconBoxMeta" />
       </template>
       <!-- Toc -->
       <template #toc>

@@ -9,13 +9,14 @@ import {
   rounded,
   straight,
 } from '@@/documentation/components/form/select'
-import { properties } from '@@/documentation/components/form/select/properties'
 import {
   selectCurved,
   selectFull,
   selectRounded,
   selectStraight,
 } from '@@/documentation/components/form/select/data'
+
+import { BaseFormSelectMeta } from 'virtual:vue-component-meta'
 
 definePageMeta({
   title: 'Selects',
@@ -253,11 +254,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Select properties -->
-        <DocProps
-          component="BaseFormSelect"
-          :properties="properties.props"
-          :slots="properties.slots"
-        />
+        <DocComponentMeta :meta="BaseFormSelectMeta" />
       </template>
       <!-- Toc -->
       <template #toc>

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { properties } from '@@/documentation/components/avatar/props'
 import {
   circleBadge,
   circleDot,
@@ -14,6 +13,8 @@ import {
   squareFakeColors,
   squareSize,
 } from '@@/documentation/components/avatar'
+
+import { BaseAvatarMeta } from 'virtual:vue-component-meta'
 
 definePageMeta({
   title: 'Avatars',
@@ -778,12 +779,7 @@ definePageMeta({
           </DocComponent>
         </DocSection>
 
-        <!-- Avatar props -->
-        <DocProps
-          component="BaseAvatar"
-          :properties="properties.props"
-          :slots="properties.slots"
-        />
+        <DocComponentMeta :meta="BaseAvatarMeta" />
       </template>
 
       <!-- Toc -->

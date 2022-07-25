@@ -55,7 +55,10 @@ if (defaultSlot) {
 }
 
 const innerText = texts.join('').trim()
-const slug = innerText.toLowerCase().replace(/\s+/g, '-')
+const slug = innerText
+  .toLowerCase()
+  .replace(/\s+/g, '-')
+  .replace(/[^\w-]+/g, '')
 const id = props.id ?? slug
 const label = props.label ?? innerText
 const level = props.level ?? 1

@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { base, colors } from '@@/documentation/components/form/radio'
-import { properties } from '@@/documentation/components/form/radio/properties'
 import {
   demoColors,
   radioSelected,
 } from '@@/documentation/components/form/radio/data'
+
+import { BaseFormRadioMeta } from 'virtual:vue-component-meta'
 
 definePageMeta({
   title: 'Radios',
@@ -167,11 +168,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Radio properties -->
-        <DocProps
-          component="BaseFormRadio"
-          :properties="properties.props"
-          :slots="properties.slots"
-        />
+        <DocComponentMeta :meta="BaseFormRadioMeta" />
       </template>
       <!-- Toc -->
       <template #toc>

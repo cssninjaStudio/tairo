@@ -4,7 +4,8 @@ import {
   elevationHover,
   shapes,
 } from '@@/documentation/components/card'
-import { properties } from '@@/documentation/components/card/properties'
+
+import { BaseCardMeta } from 'virtual:vue-component-meta'
 
 definePageMeta({
   title: 'Cards',
@@ -193,12 +194,7 @@ definePageMeta({
           </DocComponent>
         </DocSection>
 
-        <!-- Card props -->
-        <DocProps
-          component="BaseCard"
-          :properties="properties.props"
-          :slots="properties.slots"
-        />
+        <DocComponentMeta :meta="BaseCardMeta" />
       </template>
       <!-- Toc -->
       <template #toc>

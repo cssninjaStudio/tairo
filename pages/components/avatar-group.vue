@@ -5,8 +5,9 @@ import {
   small,
   tiny,
 } from '@@/documentation/components/avatar-group'
-import { properties } from '@@/documentation/components/avatar-group/properties'
 import { people } from '@@/documentation/components/avatar-group/data'
+
+import { BaseAvatarGroupMeta } from 'virtual:vue-component-meta'
 
 definePageMeta({
   title: 'Avatar group',
@@ -82,12 +83,7 @@ definePageMeta({
           </DocComponent>
         </DocSection>
 
-        <!-- Avatar group toc -->
-        <DocProps
-          component="BaseAvatarGroup"
-          :properties="properties.props"
-          :slots="properties.slots"
-        />
+        <DocComponentMeta :meta="BaseAvatarGroupMeta" />
       </template>
       <!-- Toc -->
       <template #toc>

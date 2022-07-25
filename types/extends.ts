@@ -12,6 +12,7 @@ declare module 'nuxt/dist/pages/runtime/composables' {
         | 'Interaction'
         | 'Display'
         | 'Forms'
+        | 'Addons'
       components?: string[]
       composables?: string[]
       interfaces?: string[]

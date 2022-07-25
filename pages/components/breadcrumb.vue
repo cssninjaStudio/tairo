@@ -6,13 +6,11 @@ import {
   slash,
 } from '@@/documentation/components/breadcrumb'
 import {
-  itemProperties,
-  properties,
-} from '@@/documentation/components/breadcrumb/properties'
-import {
   demoBreadcrumbOne,
   demoBreadcrumbTwo,
 } from '@@/documentation/components/breadcrumb/data'
+
+import { BaseBreadcrumbMeta } from 'virtual:vue-component-meta'
 
 definePageMeta({
   title: 'Breadcrumbs',
@@ -108,12 +106,7 @@ definePageMeta({
           </DocComponent>
         </DocSection>
 
-        <!-- Breadcrumb props -->
-        <DocProps
-          component="BaseBreadcrumb"
-          :properties="properties.props"
-          :slots="properties.slots"
-        />
+        <DocComponentMeta :meta="BaseBreadcrumbMeta" />
       </template>
       <!-- Toc -->
       <template #toc>

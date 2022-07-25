@@ -7,10 +7,11 @@ import {
   thinSublabel,
   thinSwitch,
 } from '@@/documentation/components/form/switch'
+
 import {
-  ballProperties,
-  thinProperties,
-} from '@@/documentation/components/form/switch/properties'
+  BaseFormSwitchBallMeta,
+  BaseFormSwitchThinMeta,
+} from 'virtual:vue-component-meta'
 
 definePageMeta({
   title: 'Switches',
@@ -96,12 +97,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Thin switch properties -->
-        <DocProps
-          id="switch-thin-props"
-          component="BaseFormSwitchThin"
-          :properties="thinProperties.props"
-          :slots="thinProperties.slots"
-        />
+        <DocComponentMeta :meta="BaseFormSwitchThinMeta" />
 
         <!-- Switch ball -->
         <DocSection title="Ball Switch" tag="1.0.0">
@@ -169,11 +165,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Ball switch properties -->
-        <DocProps
-          component="BaseFormSwitchBall"
-          :properties="ballProperties.props"
-          :slots="ballProperties.slots"
-        />
+        <DocComponentMeta :meta="BaseFormSwitchBallMeta" />
       </template>
       <!-- Toc -->
       <template #toc>

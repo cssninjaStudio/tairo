@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { all } from 'virtual:vue-component-meta'
 import { useBaseComponentMeta } from '~/documentation'
 
 const { meta, getCode } = useBaseComponentMeta()
@@ -46,6 +47,11 @@ definePageMeta({
       </BaseParagraph>
     </div>
 
+    <BaseCard>
+      <span class="whitespace-pre font-mono text-muted-800 dark:text-white">
+        {{ all }}
+      </span>
+    </BaseCard>
     <div class="mx-auto w-full max-w-3xl py-4">
       <BaseFormInput v-model="input" />
     </div>

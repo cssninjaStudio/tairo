@@ -5,7 +5,8 @@ import {
   muted,
   shapes,
 } from '@@/documentation/components/action'
-import { properties } from '@@/documentation/components/action/properties'
+
+import { BaseButtonActionMeta } from 'virtual:vue-component-meta'
 
 const disabled = ref(true)
 
@@ -127,12 +128,7 @@ definePageMeta({
           </DocComponent>
         </DocSection>
 
-        <!-- Action properties -->
-        <DocProps
-          component="BaseButtonAction"
-          :properties="properties.props"
-          :slots="properties.slots"
-        />
+        <DocComponentMeta :meta="BaseButtonActionMeta" />
       </template>
       <!-- Toc -->
       <template #toc>

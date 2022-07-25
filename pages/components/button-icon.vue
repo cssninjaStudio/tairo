@@ -6,7 +6,8 @@ import {
   primary,
   shapes,
 } from '@@/documentation/components/icon-button'
-import { properties } from '@@/documentation/components/icon-button/properties'
+
+import { BaseButtonIconMeta } from 'virtual:vue-component-meta'
 
 definePageMeta({
   title: 'Button Icon',
@@ -159,11 +160,7 @@ definePageMeta({
         </DocSection>
 
         <!-- properties -->
-        <DocProps
-          component="BaseButtonIcon"
-          :properties="properties.props"
-          :slots="properties.slots"
-        />
+        <DocComponentMeta :meta="BaseButtonIconMeta" />
       </template>
       <!-- Toc -->
       <template #toc>

@@ -1,3 +1,5 @@
+<script setup lang="ts"></script>
+
 <template>
   <div class="relative">
     <div class="hidden justify-between md:flex md:items-center">

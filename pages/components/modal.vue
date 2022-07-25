@@ -5,7 +5,9 @@ import {
   mediumTier,
   smallTier,
 } from '@@/documentation/components/modal'
-import { properties } from '@@/documentation/components/modal/properties'
+// import { properties } from '@@/documentation/components/modal/properties'
+
+import { BaseModalMeta } from 'virtual:vue-component-meta'
 
 definePageMeta({
   title: 'Modals',
@@ -74,11 +76,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Modal properties -->
-        <DocProps
-          component="BaseModal"
-          :properties="properties.props"
-          :slots="properties.slots"
-        />
+        <DocComponentMeta :meta="BaseModalMeta" />
       </template>
       <!-- Toc -->
       <template #toc>

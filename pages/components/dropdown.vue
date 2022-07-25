@@ -10,10 +10,11 @@ import {
   textLeft,
   textRight,
 } from '@@/documentation/components/dropdown'
+
 import {
-  dropdownProperties,
-  itemProperties,
-} from '@@/documentation/components/dropdown/properties'
+  BaseDropdownItemMeta,
+  BaseDropdownMeta,
+} from 'virtual:vue-component-meta'
 
 definePageMeta({
   title: 'Dropdowns',
@@ -477,18 +478,8 @@ definePageMeta({
         </DocSection>
 
         <!-- Dropdown properties -->
-        <DocProps
-          component="BaseDropdown"
-          :properties="dropdownProperties.props"
-          :slots="dropdownProperties.slots"
-        />
-
-        <!-- Dropdown item properties -->
-        <DocProps
-          component="BaseDropdownItem"
-          :properties="itemProperties.props"
-          :slots="itemProperties.slots"
-        />
+        <DocComponentMeta :meta="BaseDropdownMeta" />
+        <DocComponentMeta :meta="BaseDropdownItemMeta" />
 
         <div class="py-24"></div>
       </template>

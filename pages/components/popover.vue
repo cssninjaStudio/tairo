@@ -7,12 +7,13 @@ import {
   mediaLeft,
   mediaRight,
 } from '@@/documentation/components/popover'
+
 import {
-  dualProperties,
-  helpProperties,
-  mediaProperties,
-  properties,
-} from '@@/documentation/components/popover/properties'
+  BasePopoverContentDualMeta,
+  BasePopoverContentHelpMeta,
+  BasePopoverContentMediaMeta,
+  BasePopoverMeta,
+} from 'virtual:vue-component-meta'
 
 definePageMeta({
   title: 'Popover',
@@ -307,33 +308,16 @@ definePageMeta({
         </DocSection>
 
         <!-- Popover properties -->
-        <DocProps
-          id="popover-props"
-          component="BasePopover"
-          :properties="properties.props"
-          :slots="properties.slots"
-        />
+        <DocComponentMeta :meta="BasePopoverMeta" />
 
         <!-- Help properties -->
-        <DocProps
-          component="BasePopoverContentHelp"
-          :properties="helpProperties.props"
-          :slots="helpProperties.slots"
-        />
+        <DocComponentMeta :meta="BasePopoverContentHelpMeta" />
 
         <!-- Dual properties -->
-        <DocProps
-          component="BasePopoverContentDual"
-          :properties="dualProperties.props"
-          :slots="dualProperties.slots"
-        />
+        <DocComponentMeta :meta="BasePopoverContentDualMeta" />
 
         <!-- Media properties -->
-        <DocProps
-          component="BasePopoverContentMedia"
-          :properties="mediaProperties.props"
-          :slots="mediaProperties.slots"
-        />
+        <DocComponentMeta :meta="BasePopoverContentMediaMeta" />
       </template>
       <!-- Toc -->
       <template #toc>

@@ -9,13 +9,24 @@ export interface AccordionItem {
 export interface AccordionProps {
   items: AccordionItem[]
   openItems?: number[]
+  /**
+   * Whether if multiple elements in the accordion can be opened at same time or not.
+   * @default false
+   */
   exclusive?: boolean
+  /**
+   * Define the shape of the accordion
+   * @default 'rounded'
+   */
   shape?: AccordionShapes
+  /**
+   * Define the icon used for accordion item toggle action
+   * @default 'dot'
+   */
   action?: AccordionAction
 }
 
 const props = withDefaults(defineProps<AccordionProps>(), {
-  items: () => [],
   openItems: () => [],
   shape: 'rounded',
   action: 'dot',

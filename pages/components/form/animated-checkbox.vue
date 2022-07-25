@@ -1,11 +1,9 @@
 <script setup lang="ts">
-import {
-  breadcrumb,
-  toc,
-} from '@@/documentation/components/form/animated-checkbox/toc'
 import { base } from '@@/documentation/components/form/animated-checkbox'
-import { properties } from '@@/documentation/components/form/animated-checkbox/properties'
+// import { properties } from '@@/documentation/components/form/animated-checkbox/properties'
 import { options } from '@@/documentation/components/form/animated-checkbox/data'
+
+import { BaseFormAnimatedCheckboxMeta } from 'virtual:vue-component-meta'
 
 definePageMeta({
   title: 'Animated checkbox',
@@ -138,11 +136,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Animated checkbox properties -->
-        <DocProps
-          component="BaseFormAnimatedCheckbox"
-          :properties="properties.props"
-          :slots="properties.slots"
-        />
+        <DocComponentMeta :meta="BaseFormAnimatedCheckboxMeta" />
       </template>
       <!-- Toc -->
       <template #toc>

@@ -5,7 +5,8 @@ import {
   rounded,
   straight,
 } from '@@/documentation/components/pagination'
-import { properties } from '@@/documentation/components/pagination/properties'
+
+import { BasePaginationMeta } from 'virtual:vue-component-meta'
 
 definePageMeta({
   title: 'Pagination',
@@ -106,11 +107,7 @@ const currentPage = computed(() => {
         </DocSection>
 
         <!-- Pagination props -->
-        <DocProps
-          component="BasePagination"
-          :properties="properties.props"
-          :slots="properties.slots"
-        />
+        <DocComponentMeta :meta="BasePaginationMeta" />
       </template>
       <!-- Toc -->
       <template #toc>

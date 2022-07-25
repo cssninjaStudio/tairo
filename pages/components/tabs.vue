@@ -7,10 +7,8 @@ import {
   icons,
   start,
 } from '@@/documentation/components/tabs'
-import {
-  itemProperties,
-  properties,
-} from '@@/documentation/components/tabs/properties'
+
+import { BaseTabsMeta } from 'virtual:vue-component-meta'
 
 definePageMeta({
   title: 'Nav Tabs',
@@ -354,11 +352,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Tabs props -->
-        <DocProps
-          component="BaseTabs"
-          :properties="properties.props"
-          :slots="properties.slots"
-        />
+        <DocComponentMeta :meta="BaseTabsMeta" />
       </template>
       <!-- Toc -->
       <template #toc>

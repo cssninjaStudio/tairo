@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { base, variation } from '@@/documentation/components/placeholder'
-import { properties } from '@@/documentation/components/placeholder/properties'
+// import { properties } from '@@/documentation/components/placeholder/properties'
+
+import { BasePlaceholderPageMeta } from 'virtual:vue-component-meta'
 
 definePageMeta({
   title: 'Placeholders',
@@ -80,11 +82,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Placeholder props -->
-        <DocProps
-          component="BasePlaceholderPage"
-          :properties="properties.props"
-          :slots="properties.slots"
-        />
+        <DocComponentMeta :meta="BasePlaceholderPageMeta" />
       </template>
       <!-- Toc -->
       <template #toc>

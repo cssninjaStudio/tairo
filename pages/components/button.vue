@@ -10,7 +10,8 @@ import {
   shapes,
   solid,
 } from '@@/documentation/components/button'
-import { properties } from '@@/documentation/components/button/properties'
+
+import { BaseButtonMeta } from 'virtual:vue-component-meta'
 
 definePageMeta({
   title: 'Buttons',
@@ -232,12 +233,7 @@ definePageMeta({
           </DocComponent>
         </DocSection>
 
-        <!-- Button properties -->
-        <DocProps
-          component="BaseButton"
-          :properties="properties.props"
-          :slots="properties.slots"
-        />
+        <DocComponentMeta :meta="BaseButtonMeta" />
       </template>
       <!-- Toc -->
       <template #toc>

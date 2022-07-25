@@ -9,13 +9,14 @@ import {
   rounded,
   straight,
 } from '@@/documentation/components/form/textarea'
-import { properties } from '@@/documentation/components/form/textarea/properties'
 import {
   textareaCurved,
   textareaFull,
   textareaRounded,
   textareaStraight,
 } from '@@/documentation/components/form/textarea/data'
+
+import { BaseFormTextareaMeta } from 'virtual:vue-component-meta'
 
 definePageMeta({
   title: 'Textarea',
@@ -239,11 +240,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Textarea properties -->
-        <DocProps
-          component="BaseFormTextarea"
-          :properties="properties.props"
-          :slots="properties.slots"
-        />
+        <DocComponentMeta :meta="BaseFormTextareaMeta" />
       </template>
 
       <!-- Toc -->

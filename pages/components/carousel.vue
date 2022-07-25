@@ -3,13 +3,12 @@ import {
   iconCarousel,
   userCarousel,
 } from '@@/documentation/components/carousel'
-import {
-  iconItemProps,
-  iconProps,
-  userItemProps,
-  userProps,
-} from '@@/documentation/components/carousel/properties'
 import { team, topics } from '@@/documentation/components/carousel/data'
+
+import {
+  BaseCarouselIconsMeta,
+  BaseCarouselTeamMeta,
+} from 'virtual:vue-component-meta'
 
 definePageMeta({
   title: 'Carousel',
@@ -43,21 +42,21 @@ definePageMeta({
           </DocComponent>
         </DocSection>
 
+        <DocComponentMeta :meta="BaseCarouselTeamMeta" />
         <!-- User carousel properties -->
-        <DocProps
+        <!-- <DocProps
           id="carousel-user-props"
           component="BaseCarouselTeam"
           :properties="userProps.props"
           :slots="userProps.slots"
         />
 
-        <!-- User carousel item properties -->
         <DocProps
           id="carousel-user-item-props"
           component="BaseCarouselTeam slide"
           :properties="userItemProps.props"
           :slots="userItemProps.slots"
-        />
+        /> -->
 
         <!-- Icon carousel -->
         <DocSection title="Icon Carousel" tag="1.0.0">
@@ -74,18 +73,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Icon carousel properties -->
-        <DocProps
-          component="BaseCarouselIcons"
-          :properties="iconProps.props"
-          :slots="iconProps.slots"
-        />
-
-        <!-- Icon carousel item properties -->
-        <DocProps
-          component="BaseCarouselIcons slide"
-          :properties="iconItemProps.props"
-          :slots="iconItemProps.slots"
-        />
+        <DocComponentMeta :meta="BaseCarouselIconsMeta" />
       </template>
       <!-- Toc -->
       <template #toc>

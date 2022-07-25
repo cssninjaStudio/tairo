@@ -4,11 +4,12 @@ import {
   paragraph,
   text,
 } from '@@/documentation/components/typography'
+
 import {
-  headingProperties,
-  paragraphProperties,
-  textProperties,
-} from '@@/documentation/components/typography/properties'
+  BaseHeadingMeta,
+  BaseParagraphMeta,
+  BaseTextMeta,
+} from 'virtual:vue-component-meta'
 
 definePageMeta({
   title: 'Typography',
@@ -74,11 +75,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Heading properties -->
-        <DocProps
-          component="BaseHeading"
-          :properties="headingProperties.props"
-          :slots="headingProperties.slots"
-        />
+        <DocComponentMeta :meta="BaseHeadingMeta" />
 
         <!-- Content paragraph -->
         <DocSection title="Paragraph" tag="1.0.0">
@@ -118,11 +115,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Paragraph properties -->
-        <DocProps
-          component="BaseParagraph"
-          :properties="paragraphProperties.props"
-          :slots="paragraphProperties.slots"
-        />
+        <DocComponentMeta :meta="BaseParagraphMeta" />
 
         <!-- Content text -->
         <DocSection title="Text" tag="1.0.0">
@@ -158,11 +151,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Text properties -->
-        <DocProps
-          component="BaseText"
-          :properties="textProperties.props"
-          :slots="textProperties.slots"
-        />
+        <DocComponentMeta :meta="BaseTextMeta" />
       </template>
       <!-- Toc -->
       <template #toc>

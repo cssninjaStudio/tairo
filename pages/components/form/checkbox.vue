@@ -6,7 +6,6 @@ import {
   rounded,
   straight,
 } from '@@/documentation/components/form/checkbox'
-import { properties } from '@@/documentation/components/form/checkbox/properties'
 import {
   demoFour,
   demoOne,
@@ -14,6 +13,8 @@ import {
   demoThree,
   demoTwo,
 } from '@@/documentation/components/form/checkbox/data'
+
+import { BaseFormCheckboxMeta } from 'virtual:vue-component-meta'
 
 definePageMeta({
   title: 'Checkbox',
@@ -214,11 +215,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Checkbox properties -->
-        <DocProps
-          component="BaseFormCheckbox"
-          :properties="properties.props"
-          :slots="properties.slots"
-        />
+        <DocComponentMeta :meta="BaseFormCheckboxMeta" />
       </template>
       <!-- Toc -->
       <template #toc>

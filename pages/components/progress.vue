@@ -7,13 +7,14 @@ import {
   sizes,
 } from '@@/documentation/components/progress'
 import {
-  barProperties,
-  circleProperties,
-} from '@@/documentation/components/progress/properties'
-import {
   progress,
   progressCircle,
 } from '@@/documentation/components/progress/data'
+
+import {
+  BaseProgressCircleMeta,
+  BaseProgressMeta,
+} from 'virtual:vue-component-meta'
 
 definePageMeta({
   title: 'Progress',
@@ -294,18 +295,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Progress bar properties -->
-        <DocProps
-          component="BaseProgress"
-          :properties="barProperties.props"
-          :slots="barProperties.slots"
-        />
+        <DocComponentMeta :meta="BaseProgressMeta" />
 
         <!-- Progress circle properties -->
-        <DocProps
-          component="BaseProgressCircle"
-          :properties="circleProperties.props"
-          :slots="circleProperties.slots"
-        />
+        <DocComponentMeta :meta="BaseProgressCircleMeta" />
       </template>
       <!-- Toc -->
       <template #toc>

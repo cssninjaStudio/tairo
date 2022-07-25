@@ -6,11 +6,9 @@ import {
   plus,
   shapes,
 } from '@@/documentation/components/accordion'
-import {
-  itemProperties,
-  properties,
-} from '@@/documentation/components/accordion/properties'
 import { accordion } from '@@/documentation/components/accordion/data'
+
+import { BaseAccordionMeta } from 'virtual:vue-component-meta'
 
 definePageMeta({
   title: 'Accordions',
@@ -102,19 +100,19 @@ definePageMeta({
           </DocComponent>
         </DocSection>
 
-        <!-- Accordion props -->
-        <DocProps
+        <DocComponentMeta :meta="BaseAccordionMeta" />
+
+        <!-- <DocProps
           component="BaseAccordion"
           :properties="properties.props"
           :slots="properties.slots"
         />
 
-        <!-- Accordion item props -->
         <DocProps
           component="BaseAccordionItem"
           :properties="itemProperties.props"
           :slots="itemProperties.slots"
-        />
+        /> -->
       </template>
       <!-- Toc -->
       <template #toc>

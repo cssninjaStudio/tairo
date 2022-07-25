@@ -6,3 +6,5 @@ declare module '*?raw' {
   const snippet: string
   export default snippet
 }
+
+declare module 'virtual:vue-component-meta'

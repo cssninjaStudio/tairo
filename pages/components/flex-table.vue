@@ -4,13 +4,14 @@ import {
   rounded,
   straight,
 } from '@@/documentation/components/flex-table'
-import {
-  cellProperties,
-  headingProperties,
-  properties,
-  rowProperties,
-} from '@@/documentation/components/flex-table/properties'
 import { team } from '@@/documentation/components/flex-table/data'
+
+import {
+  BaseFlexTableCellMeta,
+  BaseFlexTableHeadingMeta,
+  BaseFlexTableMeta,
+  BaseFlexTableRowMeta,
+} from 'virtual:vue-component-meta'
 
 definePageMeta({
   title: 'Flex Tables',
@@ -393,32 +394,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Flex table props -->
-        <DocProps
-          component="BaseFlexTable"
-          :properties="properties.props"
-          :slots="properties.slots"
-        />
-
-        <!-- Flex table heading props -->
-        <DocProps
-          component="BaseFlexTableHeading"
-          :properties="headingProperties.props"
-          :slots="headingProperties.slots"
-        />
-
-        <!-- Flex table row props -->
-        <DocProps
-          component="BaseFlexTableRow"
-          :properties="rowProperties.props"
-          :slots="rowProperties.slots"
-        />
-
-        <!-- Flex table cell props -->
-        <DocProps
-          component="BaseFlexTableCell"
-          :properties="cellProperties.props"
-          :slots="cellProperties.slots"
-        />
+        <DocComponentMeta :meta="BaseFlexTableMeta" />
+        <DocComponentMeta :meta="BaseFlexTableHeadingMeta" />
+        <DocComponentMeta :meta="BaseFlexTableRowMeta" />
+        <DocComponentMeta :meta="BaseFlexTableCellMeta" />
       </template>
       <!-- Toc -->
       <template #toc>

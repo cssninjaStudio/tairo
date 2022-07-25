@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { icons, shapes, types } from '@@/documentation/components/message'
-import { properties } from '@@/documentation/components/message/properties'
+
+import { BaseMessageMeta } from 'virtual:vue-component-meta'
 
 definePageMeta({
   title: 'Messages',
@@ -89,11 +90,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Message properties -->
-        <DocProps
-          component="BaseMessage"
-          :properties="properties.props"
-          :slots="properties.slots"
-        />
+        <DocComponentMeta :meta="BaseMessageMeta" />
       </template>
       <!-- Toc -->
       <template #toc>

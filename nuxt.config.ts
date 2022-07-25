@@ -6,6 +6,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
+    './modules/components-meta',
   ],
   colorMode: {
     classSuffix: '',

@@ -12,6 +12,8 @@ import {
   phosphor,
 } from '@@/documentation/components/icons'
 
+import { BaseIconMeta } from 'virtual:vue-component-meta'
+
 definePageMeta({
   title: 'Icons',
   documentation: {
@@ -381,6 +383,8 @@ definePageMeta({
             </template>
           </DocComponent>
         </DocSection>
+
+        <DocComponentMeta :meta="BaseIconMeta" />
       </template>
       <!-- Toc -->
       <template #toc>
