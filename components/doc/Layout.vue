@@ -1,3 +1,6 @@
+<script setup lang="ts">
+</script>
+
 <template>
   <div class="flex">
     <div class="w-full xl:w-3/4">

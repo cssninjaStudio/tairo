@@ -9,6 +9,7 @@ const categoryOrders = [
   'Interaction',
   'Display',
   'Forms',
+  'Addons',
 ] as const
 
 const { displayMode, isSearching, filter, reset } = useDocumentationMenu()
@@ -20,6 +21,7 @@ const show = reactive({
   Interaction: true,
   Display: true,
   Forms: true,
+  Addons: true,
 })
 
 const componentHubRoute = router.resolve('/components')

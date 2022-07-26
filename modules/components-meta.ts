@@ -52,17 +52,6 @@ export default defineNuxtModule<ModuleOptions>({
               global: Boolean(component.global),
               props: vueMeta.props
                 .filter((prop) => !internalProps.includes(prop.name))
-                .map((prop) => {
-                  let type = prop.type
-                  if (prop.isOptional) {
-                    type = type.replace(' | undefined', '')
-                  }
-
-                  return {
-                    ...prop,
-                    type,
-                  }
-                })
                 .sort((a, b) => {
                   if (a.isOptional && !b.isOptional) {
                     return 1
