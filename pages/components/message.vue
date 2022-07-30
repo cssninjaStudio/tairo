@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { icons, shapes, types } from '@@/documentation/components/message'
 
-import { BaseMessageMeta } from 'virtual:vue-component-meta'
+import { BaseMessageMeta } from '#vue-component-meta'
 
 definePageMeta({
   title: 'Messages',

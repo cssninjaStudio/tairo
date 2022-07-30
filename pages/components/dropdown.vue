@@ -14,7 +14,7 @@ import {
 import {
   BaseDropdownItemMeta,
   BaseDropdownMeta,
-} from 'virtual:vue-component-meta'
+} from '#vue-component-meta'
 
 definePageMeta({
   title: 'Dropdowns',

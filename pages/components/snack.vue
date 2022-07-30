@@ -11,7 +11,7 @@ import {
   small,
 } from '@@/documentation/components/snack'
 
-import { BaseSnackMeta } from 'virtual:vue-component-meta'
+import { BaseSnackMeta } from '#vue-component-meta'
 
 definePageMeta({
   title: 'Snacks',

@@ -14,7 +14,7 @@ import {
 import {
   BaseProgressCircleMeta,
   BaseProgressMeta,
-} from 'virtual:vue-component-meta'
+} from '#vue-component-meta'
 
 definePageMeta({
   title: 'Progress',

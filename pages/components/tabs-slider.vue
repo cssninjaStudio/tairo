@@ -6,7 +6,7 @@ import {
   x3Rounded,
 } from '@@/documentation/components/tabs-slider'
 
-import { BaseTabSliderMeta } from 'virtual:vue-component-meta'
+import { BaseTabSliderMeta } from '#vue-component-meta'
 
 definePageMeta({
   title: 'Slider Tabs',

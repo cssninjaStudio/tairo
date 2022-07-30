@@ -11,7 +11,7 @@ import {
 import {
   BaseFormSwitchBallMeta,
   BaseFormSwitchThinMeta,
-} from 'virtual:vue-component-meta'
+} from '#vue-component-meta'
 
 definePageMeta({
   title: 'Switches',

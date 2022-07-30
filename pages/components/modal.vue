@@ -7,7 +7,7 @@ import {
 } from '@@/documentation/components/modal'
 // import { properties } from '@@/documentation/components/modal/properties'
 
-import { BaseModalMeta } from 'virtual:vue-component-meta'
+import { BaseModalMeta } from '#vue-component-meta'
 
 definePageMeta({
   title: 'Modals',

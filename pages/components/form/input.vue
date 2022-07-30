@@ -19,7 +19,7 @@ import {
   inputStraight,
 } from '@@/documentation/components/form/input/data'
 
-import { BaseFormInputMeta } from 'virtual:vue-component-meta'
+import { BaseFormInputMeta } from '#vue-component-meta'
 
 definePageMeta({
   title: 'Inputs',

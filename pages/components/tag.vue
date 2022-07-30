@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { outline, pastel, shapes, solid } from '@@/documentation/components/tag'
 
-import { BaseTagMeta } from 'virtual:vue-component-meta'
+import { BaseTagMeta } from '#vue-component-meta'
 
 definePageMeta({
   title: 'Tags',

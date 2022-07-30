@@ -18,7 +18,7 @@ import {
   selectedPersonName,
 } from '@@/documentation/components/combobox/data'
 
-import { BaseFormComboBoxMeta } from 'virtual:vue-component-meta'
+import { BaseFormComboBoxMeta } from '#vue-component-meta'
 
 definePageMeta({
   title: 'Combobox',

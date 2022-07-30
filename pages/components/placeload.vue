@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { composition, shape, text } from '@@/documentation/components/placeload'
 
-import { BasePlaceloadMeta } from 'virtual:vue-component-meta'
+import { BasePlaceloadMeta } from '#vue-component-meta'
 
 definePageMeta({
   title: 'Placeloads',

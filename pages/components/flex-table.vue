@@ -11,7 +11,7 @@ import {
   BaseFlexTableHeadingMeta,
   BaseFlexTableMeta,
   BaseFlexTableRowMeta,
-} from 'virtual:vue-component-meta'
+} from '#vue-component-meta'
 
 definePageMeta({
   title: 'Flex Tables',

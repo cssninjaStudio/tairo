@@ -12,7 +12,7 @@ import {
   phosphor,
 } from '@@/documentation/components/icons'
 
-import { BaseIconMeta } from 'virtual:vue-component-meta'
+import { BaseIconMeta } from '#vue-component-meta'
 
 definePageMeta({
   title: 'Icons',

@@ -7,7 +7,7 @@ import {
   shapes,
 } from '@@/documentation/components/icon-button'
 
-import { BaseButtonIconMeta } from 'virtual:vue-component-meta'
+import { BaseButtonIconMeta } from '#vue-component-meta'
 
 definePageMeta({
   title: 'Button Icon',

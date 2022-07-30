@@ -11,7 +11,7 @@ import {
   solid,
 } from '@@/documentation/components/button'
 
-import { BaseButtonMeta } from 'virtual:vue-component-meta'
+import { BaseButtonMeta } from '#vue-component-meta'
 
 definePageMeta({
   title: 'Buttons',

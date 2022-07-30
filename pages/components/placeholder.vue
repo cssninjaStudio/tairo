@@ -2,7 +2,7 @@
 import { base, variation } from '@@/documentation/components/placeholder'
 // import { properties } from '@@/documentation/components/placeholder/properties'
 
-import { BasePlaceholderPageMeta } from 'virtual:vue-component-meta'
+import { BasePlaceholderPageMeta } from '#vue-component-meta'
 
 definePageMeta({
   title: 'Placeholders',

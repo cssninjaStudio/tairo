@@ -8,7 +8,7 @@ import { team, topics } from '@@/documentation/components/carousel/data'
 import {
   BaseCarouselIconsMeta,
   BaseCarouselTeamMeta,
-} from 'virtual:vue-component-meta'
+} from '#vue-component-meta'
 
 definePageMeta({
   title: 'Carousel',

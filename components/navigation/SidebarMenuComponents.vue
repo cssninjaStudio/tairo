@@ -84,6 +84,10 @@ const hightlightSearch = (text?: string, search?: string): string => {
     return `<mark class="bg-primary-100 text-primary-800 dark:bg-primary-800 dark:text-primary-200">${part}</mark>`
   })
 }
+
+defineEmits<{
+  (event: 'close'): void
+}>()
 </script>
 
 <template>

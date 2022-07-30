@@ -8,7 +8,7 @@ import {
 } from '@@/documentation/components/accordion'
 import { accordion } from '@@/documentation/components/accordion/data'
 
-import { BaseAccordionMeta } from 'virtual:vue-component-meta'
+import { BaseAccordionMeta } from '#vue-component-meta'
 
 definePageMeta({
   title: 'Accordions',

@@ -22,7 +22,7 @@ import {
   selectedPerson,
 } from '@@/documentation/components/autocomplete/data'
 
-import { BaseFormAutocompleteMeta } from 'virtual:vue-component-meta'
+import { BaseFormAutocompleteMeta } from '#vue-component-meta'
 
 definePageMeta({
   title: 'Autocomplete',

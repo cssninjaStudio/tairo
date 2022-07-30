@@ -14,7 +14,7 @@ import {
   squareSize,
 } from '@@/documentation/components/avatar'
 
-import { BaseAvatarMeta } from 'virtual:vue-component-meta'
+import { BaseAvatarMeta } from '#vue-component-meta'
 
 definePageMeta({
   title: 'Avatars',

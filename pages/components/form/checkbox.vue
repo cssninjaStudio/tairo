@@ -14,7 +14,7 @@ import {
   demoTwo,
 } from '@@/documentation/components/form/checkbox/data'
 
-import { BaseFormCheckboxMeta } from 'virtual:vue-component-meta'
+import { BaseFormCheckboxMeta } from '#vue-component-meta'
 
 definePageMeta({
   title: 'Checkbox',

@@ -16,7 +16,7 @@ import {
   textareaStraight,
 } from '@@/documentation/components/form/textarea/data'
 
-import { BaseFormTextareaMeta } from 'virtual:vue-component-meta'
+import { BaseFormTextareaMeta } from '#vue-component-meta'
 
 definePageMeta({
   title: 'Textarea',

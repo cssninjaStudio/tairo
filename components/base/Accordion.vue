@@ -3,7 +3,13 @@ export type AccordionShapes = 'straight' | 'rounded' | 'curved'
 export type AccordionAction = 'dot' | 'chevron' | 'plus'
 
 export interface AccordionItem {
+  /**
+   * The title of the accordion item.
+   */
   title: string
+  /**
+   * The content of the accordion item.
+   */
   content: string
 }
 export interface AccordionProps {
@@ -26,6 +32,9 @@ export interface AccordionProps {
   action?: AccordionAction
 }
 
+const emits = defineEmits<{
+  (event: 'open', item: AccordionItem): void
+}>()
 const props = withDefaults(defineProps<AccordionProps>(), {
   openItems: () => [],
   shape: 'rounded',
@@ -40,6 +49,7 @@ const toggle = (key: number) => {
     internalOpenItems.value.splice(0, internalOpenItems.value.length)
 
     if (!wasOpen) {
+      emits('open', props.items[key])
       internalOpenItems.value.push(key)
     }
 
@@ -49,6 +59,7 @@ const toggle = (key: number) => {
   if (wasOpen) {
     internalOpenItems.value.splice(internalOpenItems.value.indexOf(key), 1)
   } else {
+    emits('open', props.items[key])
     internalOpenItems.value.push(key)
   }
 }

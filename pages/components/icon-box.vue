@@ -9,7 +9,7 @@ import {
 } from '@@/documentation/components/iconbox'
 // import { properties } from '@@/documentation/components/iconbox/properties'
 
-import { BaseIconBoxMeta } from 'virtual:vue-component-meta'
+import { BaseIconBoxMeta } from '#vue-component-meta'
 
 definePageMeta({
   title: 'Icon Boxes',

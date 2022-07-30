@@ -5,7 +5,7 @@ import {
   radioSelected,
 } from '@@/documentation/components/form/radio/data'
 
-import { BaseFormRadioMeta } from 'virtual:vue-component-meta'
+import { BaseFormRadioMeta } from '#vue-component-meta'
 
 definePageMeta({
   title: 'Radios',

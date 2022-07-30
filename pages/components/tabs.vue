@@ -8,7 +8,7 @@ import {
   start,
 } from '@@/documentation/components/tabs'
 
-import { BaseTabsMeta } from 'virtual:vue-component-meta'
+import { BaseTabsMeta } from '#vue-component-meta'
 
 definePageMeta({
   title: 'Nav Tabs',

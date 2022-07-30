@@ -5,7 +5,7 @@ import {
   shapes,
 } from '@@/documentation/components/card'
 
-import { BaseCardMeta } from 'virtual:vue-component-meta'
+import { BaseCardMeta } from '#vue-component-meta'
 
 definePageMeta({
   title: 'Cards',

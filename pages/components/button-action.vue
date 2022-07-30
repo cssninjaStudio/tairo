@@ -6,7 +6,7 @@ import {
   shapes,
 } from '@@/documentation/components/action'
 
-import { BaseButtonActionMeta } from 'virtual:vue-component-meta'
+import { BaseButtonActionMeta } from '#vue-component-meta'
 
 const disabled = ref(true)
 

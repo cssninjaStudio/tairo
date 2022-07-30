@@ -3,7 +3,7 @@ import { base } from '@@/documentation/components/form/animated-checkbox'
 // import { properties } from '@@/documentation/components/form/animated-checkbox/properties'
 import { options } from '@@/documentation/components/form/animated-checkbox/data'
 
-import { BaseFormAnimatedCheckboxMeta } from 'virtual:vue-component-meta'
+import { BaseFormAnimatedCheckboxMeta } from '#vue-component-meta'
 
 definePageMeta({
   title: 'Animated checkbox',

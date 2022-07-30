@@ -10,8 +10,34 @@ import {
 
 export type AutocompleteShapes = 'straight' | 'rounded' | 'curved' | 'full'
 
-export interface AutocompleteEmits {
-  (event: 'update:modelValue', value?: any): void
+export type OnShapeEvent = (event: 'shape', value?: AutocompleteShapes) => void
+
+/**
+ * emit update:modelValue on input change
+ *
+ * @default 'rounded'
+ * @since v1.0.0
+ * @see https://v3.nuxtjs.org/
+ * @example
+ * ```vue
+ * <template>
+ *   <BaseAutocomplete shape="straight" />
+ *   <BaseAutocomplete />
+ *   <BaseAutocomplete shape="curved" />
+ *   <BaseAutocomplete shape="full" />
+ * </template>
+ * ```
+ */
+export type OnUpdateModelValueEvent = (
+  event: 'update:modelValue',
+  value?: any
+) => void
+
+export interface AutocompleteEmits
+  extends OnShapeEvent,
+    OnUpdateModelValueEvent {
+  (event: 'shapeRequired', value: AutocompleteShapes): void
+  (event: 'nested', value?: { shape: string; foo: number[] }): void
 }
 
 export interface AutocompleteItem {
@@ -25,9 +51,26 @@ export interface AutocompleteItem {
 export interface AutocompleteProps {
   modelValue?: any
   items: AutocompleteItem[]
+  /**
+   * The shape of the autocomplete input.
+   *
+   * @default 'rounded'
+   * @since v1.0.0
+   * @see https://v3.nuxtjs.org/
+   * @example
+   * ```vue
+   * <template>
+   *   <BaseAutocomplete shape="straight" />
+   *   <BaseAutocomplete />
+   *   <BaseAutocomplete shape="curved" />
+   *   <BaseAutocomplete shape="full" />
+   * </template>
+   * ```
+   */
   shape?: AutocompleteShapes
   label: string
   hideLabel?: boolean
+  iconee: string
   icon?: string
   placeholder?: string
   loading?: boolean

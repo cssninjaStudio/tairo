@@ -13,7 +13,7 @@ import {
   BasePopoverContentHelpMeta,
   BasePopoverContentMediaMeta,
   BasePopoverMeta,
-} from 'virtual:vue-component-meta'
+} from '#vue-component-meta'
 
 definePageMeta({
   title: 'Popover',

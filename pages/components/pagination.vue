@@ -6,7 +6,7 @@ import {
   straight,
 } from '@@/documentation/components/pagination'
 
-import { BasePaginationMeta } from 'virtual:vue-component-meta'
+import { BasePaginationMeta } from '#vue-component-meta'
 
 definePageMeta({
   title: 'Pagination',

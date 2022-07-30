@@ -16,7 +16,7 @@ import {
   selectStraight,
 } from '@@/documentation/components/form/select/data'
 
-import { BaseFormSelectMeta } from 'virtual:vue-component-meta'
+import { BaseFormSelectMeta } from '#vue-component-meta'
 
 definePageMeta({
   title: 'Selects',

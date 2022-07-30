@@ -14,7 +14,7 @@ import {
   BaseTableHeadingMeta,
   BaseTableMeta,
   BaseTableRowMeta,
-} from 'virtual:vue-component-meta'
+} from '#vue-component-meta'
 
 definePageMeta({
   title: 'Tables',

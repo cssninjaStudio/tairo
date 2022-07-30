@@ -7,34 +7,10 @@ import '~/assets/css/modules/prism.css'
 
 <script setup lang="ts">
 import Prism from 'vue-prism-component'
+import type { VueComponentMeta } from '#vue-component-meta'
 
 export interface DocProperties {
-  meta: {
-    name: string
-    global: boolean
-    props: {
-      name: string
-      type: string
-      typeResolved: string
-      isOptional: boolean
-      documentationComment: string
-      defaultValue?: string
-    }[]
-    events: {
-      parametersType: string
-      documentationComment: string
-      parameters: {
-        name: string
-        type: string
-        isOptional: boolean
-      }[]
-    }[]
-    slots: {
-      name: string
-      propsType: string
-      documentationComment: string
-    }[]
-  }
+  meta: VueComponentMeta
 }
 
 const props = defineProps<DocProperties>()
@@ -71,14 +47,11 @@ const props = defineProps<DocProperties>()
                   <th class="whitespace-nowrap p-2">
                     <div class="text-left font-semibold">Type</div>
                   </th>
-                  <th class="whitespace-nowrap p-2">
-                    <div class="text-left font-semibold">Default</div>
-                  </th>
                   <th class="w-1/3 whitespace-nowrap p-2">
                     <div class="text-left font-semibold">Values</div>
                   </th>
                   <th class="whitespace-nowrap p-2">
-                    <div class="text-left font-semibold">Description</div>
+                    <div class="text-left font-semibold">Default</div>
                   </th>
                 </tr>
               </thead>
@@ -86,32 +59,56 @@ const props = defineProps<DocProperties>()
                 class="divide-y divide-muted-100 text-sm dark:divide-muted-800"
               >
                 <tr v-for="prop in props.meta.props" :key="prop.name">
-                  <td class="whitespace-nowrap p-2">
+                  <td class="p-2">
                     <div class="flex items-center">
                       <div
                         class="font-medium text-muted-800 dark:text-muted-100"
                       >
                         {{ prop.name
-                        }}<sup
-                          v-if="!prop.isOptional"
-                          class="ml-1 text-rose-500"
+                        }}<sup v-if="prop.required" class="ml-1 text-rose-500"
                           >Required</sup
                         >
                       </div>
                     </div>
+                    <p
+                      class="max-w-[200px] text-left font-medium text-muted-400"
+                    >
+                      {{ prop.description }}
+                    </p>
                   </td>
-                  <td class="whitespace-nowrap p-2">
+                  <td class="p-2">
                     <div class="text-left text-success-500">
                       {{ prop.type }}
                     </div>
                   </td>
-                  <td class="whitespace-nowrap p-2">
-                    <div class="text-left font-medium text-muted-400">
-                      {{ prop.defaultValue ?? 'unknown' }}
-                    </div>
-                  </td>
                   <td class="p-2">
-                    {{ prop.typeResolved ?? 'unknown' }}
+                    <DocObjectMeta
+                      v-if="
+                        typeof prop.schema !== 'string' &&
+                        prop.schema?.kind === 'object'
+                      "
+                      :schema="prop.schema"
+                    />
+                    <DocArrayMeta
+                      v-if="
+                        typeof prop.schema !== 'string' &&
+                        prop.schema?.kind === 'array'
+                      "
+                      :schema="prop.schema"
+                    />
+                    <DocEnumMeta
+                      v-if="
+                        typeof prop.schema !== 'string' &&
+                        prop.schema?.kind === 'enum'
+                      "
+                      :schema="prop.schema"
+                    />
+                    <div
+                      v-else-if="typeof prop.schema === 'string'"
+                      class="text-left text-success-500"
+                    >
+                      {{ prop.schema }}
+                    </div>
                     <!-- <span
                     v-for="(value, index) in prop.typeArray"
                     :key="index"
@@ -124,9 +121,9 @@ const props = defineProps<DocProperties>()
                     </span>
                   </span> -->
                   </td>
-                  <td class="whitespace-nowrap p-2">
+                  <td class="p-2">
                     <div class="text-left font-medium text-muted-400">
-                      {{ prop.documentationComment }}
+                      {{ prop.default }}
                     </div>
                   </td>
                 </tr>
@@ -156,13 +153,13 @@ const props = defineProps<DocProperties>()
                 class="bg-muted-50 text-xs font-semibold uppercase text-muted-400 dark:bg-muted-800"
               >
                 <tr>
-                  <th class="whitespace-nowrap p-2">
+                  <th class="p-2">
                     <div class="text-left font-semibold">Event</div>
                   </th>
-                  <th class="w-1/3 whitespace-nowrap p-2">
+                  <th class="w-1/3 p-2">
                     <div class="text-left font-semibold">Emitted Value</div>
                   </th>
-                  <th class="whitespace-nowrap p-2">
+                  <th class="p-2">
                     <div class="text-left font-semibold">Description</div>
                   </th>
                 </tr>
@@ -170,34 +167,42 @@ const props = defineProps<DocProperties>()
               <tbody
                 class="divide-y divide-muted-100 text-sm dark:divide-muted-800"
               >
-                <tr
-                  v-for="event in props.meta.events"
-                  :key="event.parametersType"
-                >
-                  <td class="whitespace-nowrap p-2">
+                <tr v-for="event in props.meta.events" :key="event.type">
+                  <td class="p-2">
                     <div class="flex items-center">
                       <div
                         class="font-medium text-muted-800 dark:text-muted-100"
                       >
-                        @{{ event.parametersType }}
+                        @{{ event.name }}
                       </div>
                     </div>
                   </td>
                   <td class="p-2">
-                    <span
-                      v-for="param in event.parameters"
-                      :key="param.name"
+                    <span class="text-left font-medium text-primary-500">
+                      {{ event.type }}
+                    </span>
+                    <!-- <span
                       class="text-left font-medium text-primary-500"
                     >
                       <span
                         >{{ param.name }}: {{ param.type }}
                         {{ param.isOptional ? 'Optional' : 'Required' }}</span
                       >
-                    </span>
+                    </span> -->
                   </td>
-                  <td class="whitespace-nowrap p-2">
-                    <div class="text-left text-success-500">
-                      {{ event.documentationComment }}
+                  <td class="p-2">
+                    <DocObjectMeta
+                      v-if="
+                        typeof event.schema?.[0] !== 'string' &&
+                        event.schema?.[0].kind === 'object'
+                      "
+                      :schema="event.schema?.[0]"
+                    />
+                    <div
+                      v-else-if="typeof event.schema?.[0] === 'string'"
+                      class="text-left text-success-500"
+                    >
+                      {{ event.schema?.[0] }}
                     </div>
                   </td>
                 </tr>
@@ -264,12 +269,24 @@ const props = defineProps<DocProperties>()
                     </span>
                   </span> -->
                     <span>
-                      <Prism language="typescript">{{ slot.propsType }}</Prism>
+                      <DocObjectMeta
+                        v-if="
+                          typeof slot.schema !== 'string' &&
+                          slot.schema?.kind === 'object'
+                        "
+                        :schema="slot.schema"
+                      />
+                      <div
+                        v-else-if="typeof slot.schema === 'string'"
+                        class="text-left text-success-500"
+                      >
+                        {{ slot.schema }}
+                      </div>
                     </span>
                   </td>
                   <td class="whitespace-nowrap p-2">
                     <div class="text-left text-muted-400">
-                      {{ slot.documentationComment }}
+                      {{ slot.description }}
                     </div>
                   </td>
                 </tr>

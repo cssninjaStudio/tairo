@@ -10,7 +10,7 @@ import {
   demoBreadcrumbTwo,
 } from '@@/documentation/components/breadcrumb/data'
 
-import { BaseBreadcrumbMeta } from 'virtual:vue-component-meta'
+import { BaseBreadcrumbMeta } from '#vue-component-meta'
 
 definePageMeta({
   title: 'Breadcrumbs',

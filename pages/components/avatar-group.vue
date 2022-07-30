@@ -7,7 +7,7 @@ import {
 } from '@@/documentation/components/avatar-group'
 import { people } from '@@/documentation/components/avatar-group/data'
 
-import { BaseAvatarGroupMeta } from 'virtual:vue-component-meta'
+import { BaseAvatarGroupMeta } from '#vue-component-meta'
 
 definePageMeta({
   title: 'Avatar group',
