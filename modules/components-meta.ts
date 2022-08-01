@@ -20,13 +20,19 @@ export default defineNuxtModule<ModuleOptions>({
 
     const tsconfigPath = resolver.resolve(nuxt.options.rootDir, 'tsconfig.json')
     const checker = createComponentMetaChecker(tsconfigPath, {
+      forceUseTs: true,
       schema: {
-        enabled: true,
-        ignore: ['RouteLocationRaw'],
+        // enabled: true,
+        ignore: [
+          'RouteLocationRaw',
+          'PropertyMetaSchema',
+          'PropertyMeta',
+          'VueComponentMeta',
+        ],
       },
     })
 
-    const defaultProps = checker.getGlobalPropNames()
+    // const defaultProps = checker.getGlobalPropNames()
 
     function reducer(acc: any, component: any) {
       if (component.name) {
@@ -36,29 +42,30 @@ export default defineNuxtModule<ModuleOptions>({
       return acc
     }
 
-    function mapper(component: any) {
+    async function mapper(component: any) {
       const path = resolveModule(component.filePath, {
         paths: nuxt.options.rootDir,
       })
 
       const data = {
         meta: {} as any,
+        path,
       }
       try {
-        // if (path.includes('Autocomplete.vue')) {
-        //   console.log(path)
         const vueMeta = checker.getComponentMeta(path)
         data.meta = {
           name: component.pascalName,
           props: vueMeta.props
-            .filter((prop) => !defaultProps.includes(prop.name))
+            .filter((prop) => !prop.global)
             .sort((a, b) => {
+              // sort required properties first
               if (!a.required && b.required) {
                 return 1
               }
               if (a.required && !b.required) {
                 return -1
               }
+              // then ensure boolean properties are sorted last
               if (a.type === 'boolean' && b.type !== 'boolean') {
                 return 1
               }
@@ -72,7 +79,9 @@ export default defineNuxtModule<ModuleOptions>({
           slots: vueMeta.slots,
           exposed: vueMeta.exposed,
         }
-        // }
+
+        // @ts-expect-error 'component-meta:parsed' is a custom hook
+        await nuxt.callHook('component-meta:parsed', data)
       } catch (error: any) {
         console.error(`Unable to parse component "${path}": ${error}`)
         data.meta = {}
@@ -84,40 +93,46 @@ export default defineNuxtModule<ModuleOptions>({
     let componentMeta: any
     let script = 'export const all = {}\nexport default all'
     let dts = `import type { ComponentMeta } from 'vue-component-meta'`
-    dts += `\nexport type VueComponentMeta = ComponentMeta & { name: string, global?: boolean }`
-    dts += `\ndeclare const all: Record<string, VueComponentMeta>`
+    dts += `\nexport type NuxtComponentMeta = ComponentMeta & { name: string, global?: boolean }`
 
-    nuxt.hook('components:extend', (components) => {
-      componentMeta = components.map(mapper).reduce(reducer, {})
+    nuxt.hook('components:extend', async (components) => {
+      componentMeta = (await Promise.all(components.map(mapper))).reduce(
+        reducer,
+        {}
+      )
 
       script = `export const all = ${JSON.stringify(componentMeta)}`
       script += `\nexport default all`
 
       for (const key in componentMeta) {
-        script += `\nexport const ${key}Meta = ${JSON.stringify(
+        script += `\nexport const meta${key} = ${JSON.stringify(
           componentMeta[key]
         )}`
       }
 
-      const metaComponentNames = Object.keys(componentMeta).map(
-        (key) => `${key}Meta`
-      )
-      for (const name of metaComponentNames) {
-        dts += `\ndeclare const ${name}: VueComponentMeta`
+      dts += `\ntype NuxtComponentMetaNames = ${Object.keys(componentMeta)
+        .map((name) => `"${name}"`)
+        .join(' | ')}`
+      dts += `\ndeclare const all: Record<NuxtComponentMetaNames, NuxtComponentMeta>`
+
+      for (const key in componentMeta) {
+        dts += `\ndeclare const meta${key}: NuxtComponentMeta`
       }
-      dts += `\nexport { all as default, all, ${metaComponentNames.join(',')} }`
+      dts += `\nexport { all as default, ${Object.keys(componentMeta)
+        .map((name) => `meta${name}`)
+        .join(' ,')} }`
     })
 
     const template = addTemplate({
-      filename: 'vue-component-meta.mjs',
+      filename: 'nuxt-component-meta.mjs',
       getContents: () => script,
     })
     addTemplate({
-      filename: 'vue-component-meta.d.ts',
+      filename: 'nuxt-component-meta.d.ts',
       getContents: () => dts,
       write: true,
     })
-    nuxt.options.alias['#vue-component-meta'] = template.dst!
+    nuxt.options.alias['#nuxt-component-meta'] = template.dst!
 
     // addVitePlugin({
     //   name: 'vue-component-meta-loader',

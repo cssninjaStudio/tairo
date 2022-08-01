@@ -14,7 +14,7 @@ import {
   demoTwo,
 } from '@@/documentation/components/form/checkbox/data'
 
-import { BaseFormCheckboxMeta } from '#vue-component-meta'
+import { metaBaseFormCheckbox } from '#nuxt-component-meta'
 
 definePageMeta({
   title: 'Checkbox',
@@ -215,7 +215,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Checkbox properties -->
-        <DocComponentMeta :meta="BaseFormCheckboxMeta" />
+        <DocComponentMeta :meta="metaBaseFormCheckbox" />
       </template>
       <!-- Toc -->
       <template #toc>

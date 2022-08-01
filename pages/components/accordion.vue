@@ -8,7 +8,7 @@ import {
 } from '@@/documentation/components/accordion'
 import { accordion } from '@@/documentation/components/accordion/data'
 
-import { BaseAccordionMeta } from '#vue-component-meta'
+import { metaBaseAccordion } from '#nuxt-component-meta'
 
 definePageMeta({
   title: 'Accordions',
@@ -100,7 +100,7 @@ definePageMeta({
           </DocComponent>
         </DocSection>
 
-        <DocComponentMeta :meta="BaseAccordionMeta" />
+        <DocComponentMeta :meta="metaBaseAccordion" />
 
         <!-- <DocProps
           component="BaseAccordion"

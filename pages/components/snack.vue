@@ -11,7 +11,7 @@ import {
   small,
 } from '@@/documentation/components/snack'
 
-import { BaseSnackMeta } from '#vue-component-meta'
+import { metaBaseSnack } from '#nuxt-component-meta'
 
 definePageMeta({
   title: 'Snacks',
@@ -194,7 +194,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Snack props -->
-        <DocComponentMeta :meta="BaseSnackMeta" />
+        <DocComponentMeta :meta="metaBaseSnack" />
       </template>
       <!-- Toc -->
       <template #toc>

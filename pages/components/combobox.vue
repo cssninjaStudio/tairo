@@ -18,7 +18,7 @@ import {
   selectedPersonName,
 } from '@@/documentation/components/combobox/data'
 
-import { BaseFormComboBoxMeta } from '#vue-component-meta'
+import { metaBaseFormComboBox } from '#nuxt-component-meta'
 
 definePageMeta({
   title: 'Combobox',
@@ -171,7 +171,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Combobox properties -->
-        <DocComponentMeta :meta="BaseFormComboBoxMeta" />
+        <DocComponentMeta :meta="metaBaseFormComboBox" />
       </template>
       <!-- Toc -->
       <template #toc>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { all } from '#vue-component-meta'
+import all from '#nuxt-component-meta'
 import { useBaseComponentMeta } from '~/documentation'
 
 const { meta, getCode } = useBaseComponentMeta()

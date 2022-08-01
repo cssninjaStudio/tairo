@@ -51,7 +51,7 @@
     "prism-theme-vars": "0.2.4",
     "prismjs": "1.28.0",
     "typescript": "4.7.4",
-    "vue-component-meta": "^0.39.0",
+    "vue-component-meta": "^0.39.4",
     "vue-prism-component": "2.0.0",
     "vue-tsc": "0.39.0",
     "vue3-carousel": "0.1.40"

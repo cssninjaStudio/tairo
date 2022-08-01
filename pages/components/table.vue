@@ -14,7 +14,7 @@ import {
   BaseTableHeadingMeta,
   BaseTableMeta,
   BaseTableRowMeta,
-} from '#vue-component-meta'
+} from '#nuxt-component-meta'
 
 definePageMeta({
   title: 'Tables',
@@ -608,16 +608,16 @@ definePageMeta({
         </DocSection>
 
         <!-- Table props -->
-        <DocComponentMeta :meta="BaseTableMeta" />
+        <DocComponentMeta :meta="metaBaseTable" />
 
         <!-- Heading props -->
-        <DocComponentMeta :meta="BaseTableHeadingMeta" />
+        <DocComponentMeta :meta="metaBaseTableHeading" />
 
         <!-- Row props -->
-        <DocComponentMeta :meta="BaseTableRowMeta" />
+        <DocComponentMeta :meta="metaBaseTableRow" />
 
         <!-- Cell props -->
-        <DocComponentMeta :meta="BaseTableCellMeta" />
+        <DocComponentMeta :meta="metaBaseTableCell" />
       </template>
       <!-- Toc -->
       <template #toc>

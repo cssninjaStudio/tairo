@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { icons, shapes, types } from '@@/documentation/components/message'
 
-import { BaseMessageMeta } from '#vue-component-meta'
+import { metaBaseMessage } from '#nuxt-component-meta'
 
 definePageMeta({
   title: 'Messages',
@@ -90,7 +90,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Message properties -->
-        <DocComponentMeta :meta="BaseMessageMeta" />
+        <DocComponentMeta :meta="metaBaseMessage" />
       </template>
       <!-- Toc -->
       <template #toc>

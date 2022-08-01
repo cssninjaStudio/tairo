@@ -16,7 +16,7 @@ import {
   textareaStraight,
 } from '@@/documentation/components/form/textarea/data'
 
-import { BaseFormTextareaMeta } from '#vue-component-meta'
+import { metaBaseFormTextarea } from '#nuxt-component-meta'
 
 definePageMeta({
   title: 'Textarea',
@@ -240,7 +240,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Textarea properties -->
-        <DocComponentMeta :meta="BaseFormTextareaMeta" />
+        <DocComponentMeta :meta="metaBaseFormTextarea" />
       </template>
 
       <!-- Toc -->

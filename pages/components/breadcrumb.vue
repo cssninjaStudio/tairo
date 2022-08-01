@@ -10,7 +10,7 @@ import {
   demoBreadcrumbTwo,
 } from '@@/documentation/components/breadcrumb/data'
 
-import { BaseBreadcrumbMeta } from '#vue-component-meta'
+import { metaBaseBreadcrumb } from '#nuxt-component-meta'
 
 definePageMeta({
   title: 'Breadcrumbs',
@@ -106,7 +106,7 @@ definePageMeta({
           </DocComponent>
         </DocSection>
 
-        <DocComponentMeta :meta="BaseBreadcrumbMeta" />
+        <DocComponentMeta :meta="metaBaseBreadcrumb" />
       </template>
       <!-- Toc -->
       <template #toc>

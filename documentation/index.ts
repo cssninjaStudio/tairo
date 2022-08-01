@@ -101,9 +101,6 @@ export const useBaseComponentMeta = () => {
 
       name += basename(path, '.vue')
 
-      if (name === 'BaseMessage') {
-        console.log(name, basename(path, '.vue'), component)
-      }
       //
       return {
         name,

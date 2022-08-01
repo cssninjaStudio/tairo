@@ -11,7 +11,7 @@ import {
   solid,
 } from '@@/documentation/components/button'
 
-import { BaseButtonMeta } from '#vue-component-meta'
+import { metaBaseButton } from '#nuxt-component-meta'
 
 definePageMeta({
   title: 'Buttons',
@@ -233,7 +233,7 @@ definePageMeta({
           </DocComponent>
         </DocSection>
 
-        <DocComponentMeta :meta="BaseButtonMeta" />
+        <DocComponentMeta :meta="metaBaseButton" />
       </template>
       <!-- Toc -->
       <template #toc>

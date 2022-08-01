@@ -5,7 +5,7 @@ import {
   shapes,
 } from '@@/documentation/components/card'
 
-import { BaseCardMeta } from '#vue-component-meta'
+import { metaBaseCard } from '#nuxt-component-meta'
 
 definePageMeta({
   title: 'Cards',
@@ -194,7 +194,7 @@ definePageMeta({
           </DocComponent>
         </DocSection>
 
-        <DocComponentMeta :meta="BaseCardMeta" />
+        <DocComponentMeta :meta="metaBaseCard" />
       </template>
       <!-- Toc -->
       <template #toc>

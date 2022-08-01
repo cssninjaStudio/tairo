@@ -8,7 +8,7 @@ import {
   start,
 } from '@@/documentation/components/tabs'
 
-import { BaseTabsMeta } from '#vue-component-meta'
+import { metaBaseTabs } from '#nuxt-component-meta'
 
 definePageMeta({
   title: 'Nav Tabs',
@@ -352,7 +352,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Tabs props -->
-        <DocComponentMeta :meta="BaseTabsMeta" />
+        <DocComponentMeta :meta="metaBaseTabs" />
       </template>
       <!-- Toc -->
       <template #toc>

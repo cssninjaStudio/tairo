@@ -3,7 +3,7 @@ import { base } from '@@/documentation/components/form/animated-checkbox'
 // import { properties } from '@@/documentation/components/form/animated-checkbox/properties'
 import { options } from '@@/documentation/components/form/animated-checkbox/data'
 
-import { BaseFormAnimatedCheckboxMeta } from '#vue-component-meta'
+import { metaBaseFormAnimatedCheckbox } from '#nuxt-component-meta'
 
 definePageMeta({
   title: 'Animated checkbox',
@@ -136,7 +136,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Animated checkbox properties -->
-        <DocComponentMeta :meta="BaseFormAnimatedCheckboxMeta" />
+        <DocComponentMeta :meta="metaBaseFormAnimatedCheckbox" />
       </template>
       <!-- Toc -->
       <template #toc>

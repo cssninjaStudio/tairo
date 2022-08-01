@@ -11,10 +11,7 @@ import {
   textRight,
 } from '@@/documentation/components/dropdown'
 
-import {
-  BaseDropdownItemMeta,
-  BaseDropdownMeta,
-} from '#vue-component-meta'
+import { BaseDropdownItemMeta, BaseDropdownMeta } from '#nuxt-component-meta'
 
 definePageMeta({
   title: 'Dropdowns',
@@ -478,8 +475,8 @@ definePageMeta({
         </DocSection>
 
         <!-- Dropdown properties -->
-        <DocComponentMeta :meta="BaseDropdownMeta" />
-        <DocComponentMeta :meta="BaseDropdownItemMeta" />
+        <DocComponentMeta :meta="metaBaseDropdown" />
+        <DocComponentMeta :meta="metaBaseDropdownItem" />
 
         <div class="py-24"></div>
       </template>

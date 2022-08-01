@@ -19,7 +19,7 @@ import {
   inputStraight,
 } from '@@/documentation/components/form/input/data'
 
-import { BaseFormInputMeta } from '#vue-component-meta'
+import { metaBaseFormInput } from '#nuxt-component-meta'
 
 definePageMeta({
   title: 'Inputs',
@@ -265,7 +265,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Input properties -->
-        <DocComponentMeta :meta="BaseFormInputMeta" />
+        <DocComponentMeta :meta="metaBaseFormInput" />
       </template>
       <!-- Toc -->
       <template #toc>

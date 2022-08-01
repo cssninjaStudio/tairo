@@ -14,19 +14,6 @@ export type OnShapeEvent = (event: 'shape', value?: AutocompleteShapes) => void
 
 /**
  * emit update:modelValue on input change
- *
- * @default 'rounded'
- * @since v1.0.0
- * @see https://v3.nuxtjs.org/
- * @example
- * ```vue
- * <template>
- *   <BaseAutocomplete shape="straight" />
- *   <BaseAutocomplete />
- *   <BaseAutocomplete shape="curved" />
- *   <BaseAutocomplete shape="full" />
- * </template>
- * ```
  */
 export type OnUpdateModelValueEvent = (
   event: 'update:modelValue',
@@ -43,6 +30,22 @@ export interface AutocompleteEmits
 export interface AutocompleteItem {
   id: number
   name: string
+  /**
+   * The text
+   *
+   * @default 'rounded'
+   * @since v1.0.0
+   * @see https://v3.nuxtjs.org/
+   * @example
+   * ```vue
+   * <template>
+   *   <BaseAutocomplete shape="straight" />
+   *   <BaseAutocomplete />
+   *   <BaseAutocomplete shape="curved" />
+   *   <BaseAutocomplete shape="full" />
+   * </template>
+   * ```
+   */
   text?: string | undefined
   media?: string | undefined
   icon?: string | undefined
@@ -70,7 +73,6 @@ export interface AutocompleteProps {
   shape?: AutocompleteShapes
   label: string
   hideLabel?: boolean
-  iconee: string
   icon?: string
   placeholder?: string
   loading?: boolean

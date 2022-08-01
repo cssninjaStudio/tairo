@@ -2,7 +2,7 @@
 import { base, variation } from '@@/documentation/components/placeholder'
 // import { properties } from '@@/documentation/components/placeholder/properties'
 
-import { BasePlaceholderPageMeta } from '#vue-component-meta'
+import { metaBasePlaceholderPage } from '#nuxt-component-meta'
 
 definePageMeta({
   title: 'Placeholders',
@@ -82,7 +82,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Placeholder props -->
-        <DocComponentMeta :meta="BasePlaceholderPageMeta" />
+        <DocComponentMeta :meta="metaBasePlaceholderPage" />
       </template>
       <!-- Toc -->
       <template #toc>

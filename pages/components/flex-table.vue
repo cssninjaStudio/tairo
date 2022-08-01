@@ -11,7 +11,7 @@ import {
   BaseFlexTableHeadingMeta,
   BaseFlexTableMeta,
   BaseFlexTableRowMeta,
-} from '#vue-component-meta'
+} from '#nuxt-component-meta'
 
 definePageMeta({
   title: 'Flex Tables',
@@ -394,10 +394,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Flex table props -->
-        <DocComponentMeta :meta="BaseFlexTableMeta" />
-        <DocComponentMeta :meta="BaseFlexTableHeadingMeta" />
-        <DocComponentMeta :meta="BaseFlexTableRowMeta" />
-        <DocComponentMeta :meta="BaseFlexTableCellMeta" />
+        <DocComponentMeta :meta="metaBaseFlexTable" />
+        <DocComponentMeta :meta="metaBaseFlexTableHeading" />
+        <DocComponentMeta :meta="metaBaseFlexTableRow" />
+        <DocComponentMeta :meta="metaBaseFlexTableCell" />
       </template>
       <!-- Toc -->
       <template #toc>

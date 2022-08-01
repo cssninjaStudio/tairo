@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { outline, pastel, shapes, solid } from '@@/documentation/components/tag'
 
-import { BaseTagMeta } from '#vue-component-meta'
+import { metaBaseTag } from '#nuxt-component-meta'
 
 definePageMeta({
   title: 'Tags',
@@ -115,7 +115,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Tag props -->
-        <DocComponentMeta :meta="BaseTagMeta" />
+        <DocComponentMeta :meta="metaBaseTag" />
       </template>
       <!-- Toc -->
       <template #toc>

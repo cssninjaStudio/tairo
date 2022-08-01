@@ -22,7 +22,7 @@ import {
   selectedPerson,
 } from '@@/documentation/components/autocomplete/data'
 
-import { BaseFormAutocompleteMeta } from '#vue-component-meta'
+import { metaBaseFormAutocomplete } from '#nuxt-component-meta'
 
 definePageMeta({
   title: 'Autocomplete',
@@ -328,7 +328,7 @@ definePageMeta({
           </DocComponent>
         </DocSection>
 
-        <DocComponentMeta :meta="BaseFormAutocompleteMeta" />
+        <DocComponentMeta :meta="metaBaseFormAutocomplete" />
       </template>
       <!-- Toc -->
       <template #toc>

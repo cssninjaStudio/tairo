@@ -8,7 +8,7 @@ import { team, topics } from '@@/documentation/components/carousel/data'
 import {
   BaseCarouselIconsMeta,
   BaseCarouselTeamMeta,
-} from '#vue-component-meta'
+} from '#nuxt-component-meta'
 
 definePageMeta({
   title: 'Carousel',
@@ -42,7 +42,7 @@ definePageMeta({
           </DocComponent>
         </DocSection>
 
-        <DocComponentMeta :meta="BaseCarouselTeamMeta" />
+        <DocComponentMeta :meta="metaBaseCarouselTeam" />
         <!-- User carousel properties -->
         <!-- <DocProps
           id="carousel-user-props"
@@ -73,7 +73,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Icon carousel properties -->
-        <DocComponentMeta :meta="BaseCarouselIconsMeta" />
+        <DocComponentMeta :meta="metaBaseCarouselIcons" />
       </template>
       <!-- Toc -->
       <template #toc>

@@ -6,7 +6,7 @@ import {
   shapes,
 } from '@@/documentation/components/action'
 
-import { BaseButtonActionMeta } from '#vue-component-meta'
+import { metaBaseButtonAction } from '#nuxt-component-meta'
 
 const disabled = ref(true)
 
@@ -128,7 +128,7 @@ definePageMeta({
           </DocComponent>
         </DocSection>
 
-        <DocComponentMeta :meta="BaseButtonActionMeta" />
+        <DocComponentMeta :meta="metaBaseButtonAction" />
       </template>
       <!-- Toc -->
       <template #toc>

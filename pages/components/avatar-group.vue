@@ -7,7 +7,7 @@ import {
 } from '@@/documentation/components/avatar-group'
 import { people } from '@@/documentation/components/avatar-group/data'
 
-import { BaseAvatarGroupMeta } from '#vue-component-meta'
+import { metaBaseAvatarGroup } from '#nuxt-component-meta'
 
 definePageMeta({
   title: 'Avatar group',
@@ -83,7 +83,7 @@ definePageMeta({
           </DocComponent>
         </DocSection>
 
-        <DocComponentMeta :meta="BaseAvatarGroupMeta" />
+        <DocComponentMeta :meta="metaBaseAvatarGroup" />
       </template>
       <!-- Toc -->
       <template #toc>

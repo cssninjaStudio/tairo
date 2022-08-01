@@ -13,7 +13,7 @@ import {
   BasePopoverContentHelpMeta,
   BasePopoverContentMediaMeta,
   BasePopoverMeta,
-} from '#vue-component-meta'
+} from '#nuxt-component-meta'
 
 definePageMeta({
   title: 'Popover',
@@ -308,16 +308,16 @@ definePageMeta({
         </DocSection>
 
         <!-- Popover properties -->
-        <DocComponentMeta :meta="BasePopoverMeta" />
+        <DocComponentMeta :meta="metaBasePopover" />
 
         <!-- Help properties -->
-        <DocComponentMeta :meta="BasePopoverContentHelpMeta" />
+        <DocComponentMeta :meta="metaBasePopoverContentHelp" />
 
         <!-- Dual properties -->
-        <DocComponentMeta :meta="BasePopoverContentDualMeta" />
+        <DocComponentMeta :meta="metaBasePopoverContentDual" />
 
         <!-- Media properties -->
-        <DocComponentMeta :meta="BasePopoverContentMediaMeta" />
+        <DocComponentMeta :meta="metaBasePopoverContentMedia" />
       </template>
       <!-- Toc -->
       <template #toc>

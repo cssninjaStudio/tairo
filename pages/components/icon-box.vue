@@ -9,7 +9,7 @@ import {
 } from '@@/documentation/components/iconbox'
 // import { properties } from '@@/documentation/components/iconbox/properties'
 
-import { BaseIconBoxMeta } from '#vue-component-meta'
+import { metaBaseIconBox } from '#nuxt-component-meta'
 
 definePageMeta({
   title: 'Icon Boxes',
@@ -725,7 +725,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Icon box props -->
-        <DocComponentMeta :meta="BaseIconBoxMeta" />
+        <DocComponentMeta :meta="metaBaseIconBox" />
       </template>
       <!-- Toc -->
       <template #toc>

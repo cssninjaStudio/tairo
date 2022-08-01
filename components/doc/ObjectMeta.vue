@@ -2,6 +2,7 @@
 import type { PropertyMeta } from 'vue-component-meta'
 
 const props = defineProps<{
+  repeatable?: boolean
   schema: {
     kind: 'object'
     type: string
@@ -34,7 +35,13 @@ const isInterface = computed(() => {
           class="italic text-[color:var(--prism-comment)]"
         >
           <p>/**</p>
-          <p>&nbsp;*&nbsp;{{ schema.description }}</p>
+          <p v-if="schema.description">&nbsp;*&nbsp;{{ schema.description }}</p>
+          <!-- <p v-for="tag in schema.tags" :key="tag.name">
+            &nbsp;*&nbsp;@{{ tag.name
+            }}<span v-if="tag.text" class="whitespace-pre pl-1">{{
+              tag.text
+            }}</span>
+          </p> -->
           <p>&nbsp;*/</p>
         </div>
         <p>
@@ -48,6 +55,9 @@ const isInterface = computed(() => {
         </p>
       </div>
     </template>
-    <span class="text-[color:var(--prism-punctuation)]">}</span>
+    <span class="text-[color:var(--prism-punctuation)]">
+      <span>}</span>
+      <span v-if="props.repeatable">[]</span>
+    </span>
   </div>
 </template>

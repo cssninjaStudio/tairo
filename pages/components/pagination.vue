@@ -6,7 +6,7 @@ import {
   straight,
 } from '@@/documentation/components/pagination'
 
-import { BasePaginationMeta } from '#vue-component-meta'
+import { metaBasePagination } from '#nuxt-component-meta'
 
 definePageMeta({
   title: 'Pagination',
@@ -107,7 +107,7 @@ const currentPage = computed(() => {
         </DocSection>
 
         <!-- Pagination props -->
-        <DocComponentMeta :meta="BasePaginationMeta" />
+        <DocComponentMeta :meta="metaBasePagination" />
       </template>
       <!-- Toc -->
       <template #toc>

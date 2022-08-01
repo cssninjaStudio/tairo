@@ -14,7 +14,7 @@ import {
 import {
   BaseProgressCircleMeta,
   BaseProgressMeta,
-} from '#vue-component-meta'
+} from '#nuxt-component-meta'
 
 definePageMeta({
   title: 'Progress',
@@ -295,10 +295,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Progress bar properties -->
-        <DocComponentMeta :meta="BaseProgressMeta" />
+        <DocComponentMeta :meta="metaBaseProgress" />
 
         <!-- Progress circle properties -->
-        <DocComponentMeta :meta="BaseProgressCircleMeta" />
+        <DocComponentMeta :meta="metaBaseProgressCircle" />
       </template>
       <!-- Toc -->
       <template #toc>

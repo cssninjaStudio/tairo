@@ -12,7 +12,7 @@ import {
   phosphor,
 } from '@@/documentation/components/icons'
 
-import { BaseIconMeta } from '#vue-component-meta'
+import { metaBaseIcon } from '#nuxt-component-meta'
 
 definePageMeta({
   title: 'Icons',
@@ -384,7 +384,7 @@ definePageMeta({
           </DocComponent>
         </DocSection>
 
-        <DocComponentMeta :meta="BaseIconMeta" />
+        <DocComponentMeta :meta="metaBaseIcon" />
       </template>
       <!-- Toc -->
       <template #toc>

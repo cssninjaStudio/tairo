@@ -11,7 +11,7 @@ import {
 import {
   BaseFormSwitchBallMeta,
   BaseFormSwitchThinMeta,
-} from '#vue-component-meta'
+} from '#nuxt-component-meta'
 
 definePageMeta({
   title: 'Switches',
@@ -97,7 +97,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Thin switch properties -->
-        <DocComponentMeta :meta="BaseFormSwitchThinMeta" />
+        <DocComponentMeta :meta="metaBaseFormSwitchThin" />
 
         <!-- Switch ball -->
         <DocSection title="Ball Switch" tag="1.0.0">
@@ -165,7 +165,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Ball switch properties -->
-        <DocComponentMeta :meta="BaseFormSwitchBallMeta" />
+        <DocComponentMeta :meta="metaBaseFormSwitchBall" />
       </template>
       <!-- Toc -->
       <template #toc>

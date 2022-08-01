@@ -9,7 +9,7 @@ import {
   BaseHeadingMeta,
   BaseParagraphMeta,
   BaseTextMeta,
-} from '#vue-component-meta'
+} from '#nuxt-component-meta'
 
 definePageMeta({
   title: 'Typography',
@@ -75,7 +75,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Heading properties -->
-        <DocComponentMeta :meta="BaseHeadingMeta" />
+        <DocComponentMeta :meta="metaBaseHeading" />
 
         <!-- Content paragraph -->
         <DocSection title="Paragraph" tag="1.0.0">
@@ -115,7 +115,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Paragraph properties -->
-        <DocComponentMeta :meta="BaseParagraphMeta" />
+        <DocComponentMeta :meta="metaBaseParagraph" />
 
         <!-- Content text -->
         <DocSection title="Text" tag="1.0.0">
@@ -151,7 +151,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Text properties -->
-        <DocComponentMeta :meta="BaseTextMeta" />
+        <DocComponentMeta :meta="metaBaseText" />
       </template>
       <!-- Toc -->
       <template #toc>
