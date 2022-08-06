@@ -16,8 +16,6 @@ export interface ActionProps {
 }
 
 const props = withDefaults(defineProps<ActionProps>(), {
-  flavor: 'solid',
-  color: 'default',
   shape: 'rounded',
   to: undefined,
   type: undefined,
@@ -74,7 +72,7 @@ const buttonClasses = computed(() => [
   'inline-flex items-center justify-center',
   'leading-5 no-underline',
   'h-8',
-  'px-4 py-2 space-x-1',
+  'px-2 py-2 space-x-1',
   'border',
   'ninja-focus',
   'transition-colors transition-shadow duration-300',

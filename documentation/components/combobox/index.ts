@@ -16,28 +16,28 @@ const selectedFramework = ref(frameworks[0])
 </script>
 
 <template>
-  <BaseFormComboBox
+  <BaseComboBox
     v-model="selectedFramework"
     label="Framework"
     :items="frameworks"
     shape="straight"
   />
 
-  <BaseFormComboBox
+  <BaseComboBox
     v-model="selectedFramework"
     label="Framework"
     :items="frameworks"
     shape="rounded"
   />
 
-  <BaseFormComboBox
+  <BaseComboBox
     v-model="selectedFramework"
     label="Framework"
     :items="frameworks"
     shape="curved"
   />
 
-  <BaseFormComboBox
+  <BaseComboBox
     v-model="selectedFramework"
     label="Framework"
     :items="frameworks"
@@ -64,7 +64,7 @@ const selectedFramework = ref(frameworks[0])
 </script>
 
 <template>
-  <BaseFormComboBox
+  <BaseComboBox
     v-model="selectedFramework"
     label="Framework"
     :items="frameworks"
@@ -92,7 +92,7 @@ const selectedFramework = ref(frameworks[0])
 </script>
 
 <template>
-  <BaseFormComboBox
+  <BaseComboBox
     v-model="selectedFramework"
     label="Framework"
     :items="frameworks"
@@ -122,7 +122,7 @@ const selectedPersonName = ref(peopleNames[0])
 </script>
 
 <template>
-  <BaseFormComboBox
+  <BaseComboBox
     v-model="selectedPersonName"
     label="Assignee"
     :items="peopleNames"
@@ -152,7 +152,7 @@ const selectedHobby = ref(hobbies[0])
 </script>
 
 <template>
-  <BaseFormComboBox
+  <BaseComboBox
     v-model="selectedHobby"
     label="Assignee"
     :items="hobbies"
@@ -182,7 +182,7 @@ const selectedPerson = ref(people[2])
 </script>
 
 <template>
-  <BaseFormComboBox
+  <BaseComboBox
     v-model="selectedPerson"
     label="Assignee"
     :items="people"

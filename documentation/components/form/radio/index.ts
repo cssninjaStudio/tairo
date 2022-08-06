@@ -4,7 +4,7 @@ const radioSelected = ref('option_1')
 </script>
 
 <template>
-  <BaseFormRadio
+  <BaseRadio
     id="demo-options-1"
     v-model="radioSelected"
     name="demo_options"
@@ -13,7 +13,7 @@ const radioSelected = ref('option_1')
     class="text-gray-500"
   />
 
-  <BaseFormRadio
+  <BaseRadio
     id="demo-options-2"
     v-model="radioSelected"
     name="demo_options"
@@ -22,7 +22,7 @@ const radioSelected = ref('option_1')
     class="text-gray-500"
   />
 
-  <BaseFormRadio
+  <BaseRadio
     id="demo-options-3"
     v-model="radioSelected"
     name="demo_options"
@@ -39,7 +39,7 @@ const demoColors = ref('primary')
 </script>
 
 <template>
-  <BaseFormRadio
+  <BaseRadio
     id="demo-colors-primary"
     v-model="demoColors"
     name="demo_colors"
@@ -48,7 +48,7 @@ const demoColors = ref('primary')
     class="text-primary-500"
   />
 
-  <BaseFormRadio
+  <BaseRadio
     id="demo-colors-lime"
     v-model="demoColors"
     name="demo_colors"
@@ -57,7 +57,7 @@ const demoColors = ref('primary')
     class="text-lime-500"
   />
 
-  <BaseFormRadio
+  <BaseRadio
     id="demo-colors-pink"
     v-model="demoColors"
     name="demo_colors"

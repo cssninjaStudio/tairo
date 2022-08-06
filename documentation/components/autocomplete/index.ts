@@ -16,7 +16,7 @@ const selectedFramework = ref('')
 </script>
 
 <template>
-  <BaseFormAutocomplete
+  <BaseAutocomplete
     v-model="selectedFramework"
     :items="frameworks"
     shape="straight"
@@ -44,7 +44,7 @@ const selectedFramework = ref('')
 </script>
 
 <template>
-  <BaseFormAutocomplete
+  <BaseAutocomplete
     v-model="selectedFramework"
     :items="frameworks"
     shape="rounded"
@@ -72,7 +72,7 @@ const selectedFramework = ref('')
 </script>
 
 <template>
-  <BaseFormAutocomplete
+  <BaseAutocomplete
     v-model="selectedFramework"
     :items="frameworks"
     shape="curved"
@@ -100,7 +100,7 @@ const selectedFramework = ref('')
 </script>
 
 <template>
-  <BaseFormAutocomplete
+  <BaseAutocomplete
     v-model="selectedFramework"
     :items="frameworks"
     shape="full"
@@ -128,7 +128,7 @@ const selectedFramework = ref('')
 </script>
 
 <template>
-  <BaseFormAutocomplete
+  <BaseAutocomplete
     v-model="selectedFramework"
     :items="frameworks"
     icon="lucide:search"
@@ -157,7 +157,7 @@ const selectedFramework = ref('')
 </script>
 
 <template>
-  <BaseFormAutocomplete
+  <BaseAutocomplete
     v-model="selectedFramework"
     :items="frameworks"
     icon="lucide:search"
@@ -187,7 +187,7 @@ const selectedFramework = ref('')
 </script>
 
 <template>
-  <BaseFormAutocomplete
+  <BaseAutocomplete
     v-model="selectedFramework"
     :items="frameworks"
     icon="lucide:search"
@@ -217,7 +217,7 @@ const selectedFramework = ref('')
 </script>
 
 <template>
-  <BaseFormAutocomplete
+  <BaseAutocomplete
     v-model="selectedFramework"
     :items="frameworks"
     icon="lucide:search"
@@ -251,7 +251,7 @@ const selectedCompany = ref('')
 </script>
 
 <template>
-  <BaseFormAutocomplete
+  <BaseAutocomplete
     v-model="selectedCompany"
     :items="companies"
     icon="ph:buildings"
@@ -302,7 +302,7 @@ const selectedPerson = ref('')
 </script>
 
 <template>
-  <BaseFormAutocomplete
+  <BaseAutocomplete
     v-model="selectedPerson"
     :items="people"
     icon="ph:users-three"
@@ -352,7 +352,7 @@ const selectedPeople = ref([people[0], people[1]])
 </script>
 
 <template>
-  <BaseFormAutocomplete
+  <BaseAutocomplete
     v-model="selectedPeople"
     :items="people"
     shape="rounded"

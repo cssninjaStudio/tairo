@@ -26,7 +26,7 @@ const activeTab = ref('demo')
       </BaseParagraph>
 
       <div class="ml-auto flex flex-none items-center pl-4 sm:pl-6">
-        <FocusLoop class="flex items-end">
+        <BaseFocusLoop class="flex items-end">
           <BaseButtonAction
             shape="rounded"
             class="rounded-r-none border-r-0 focus:z-10"
@@ -45,7 +45,7 @@ const activeTab = ref('demo')
             <BaseIcon name="iconoir:terminal-outline" class="mr-1.5 h-4 w-4" />
             <span>Code</span>
           </BaseButtonAction>
-        </FocusLoop>
+        </BaseFocusLoop>
       </div>
     </div>
 

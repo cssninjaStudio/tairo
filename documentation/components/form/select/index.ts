@@ -4,7 +4,7 @@ const selectStraight = ref('')
 </script>
 
 <template>
-  <BaseFormSelect
+  <BaseSelect
     v-model="selectStraight"
     shape="straight"
     label="Select a hero"
@@ -15,7 +15,7 @@ const selectStraight = ref('')
     <option value="Iron man">Iron man</option>
     <option value="Magneto">Magneto</option>
     <option value="Cyclops">Cyclops</option>
-  </BaseFormSelect>
+  </BaseSelect>
 </template>
 `
 
@@ -25,7 +25,7 @@ const selectRounded = ref('')
 </script>
 
 <template>
-  <BaseFormSelect
+  <BaseSelect
     v-model="selectRounded"
     shape="rounded"
     label="Select a hero"
@@ -36,7 +36,7 @@ const selectRounded = ref('')
     <option value="Iron man">Iron man</option>
     <option value="Magneto">Magneto</option>
     <option value="Cyclops">Cyclops</option>
-  </BaseFormSelect>
+  </BaseSelect>
 </template>
 `
 
@@ -46,7 +46,7 @@ const selectCurved = ref('')
 </script>
 
 <template>
-  <BaseFormSelect
+  <BaseSelect
     v-model="selectCurved"
     shape="curved"
     label="Select a hero"
@@ -57,7 +57,7 @@ const selectCurved = ref('')
     <option value="Iron man">Iron man</option>
     <option value="Magneto">Magneto</option>
     <option value="Cyclops">Cyclops</option>
-  </BaseFormSelect>
+  </BaseSelect>
 </template>
 `
 
@@ -67,7 +67,7 @@ const selectFull = ref('')
 </script>
 
 <template>
-  <BaseFormSelect
+  <BaseSelect
     v-model="selectFull"
     shape="full"
     label="Select a hero"
@@ -78,13 +78,13 @@ const selectFull = ref('')
     <option value="Iron man">Iron man</option>
     <option value="Magneto">Magneto</option>
     <option value="Cyclops">Cyclops</option>
-  </BaseFormSelect>
+  </BaseSelect>
 </template>
 `
 
 export const icon = `
 <template>
-  <BaseFormSelect
+  <BaseSelect
     shape="rounded"
     label="Select a hero"
     icon="icon-park-outline:muscle"
@@ -95,13 +95,13 @@ export const icon = `
     <option value="Iron man">Iron man</option>
     <option value="Magneto">Magneto</option>
     <option value="Cyclops">Cyclops</option>
-  </BaseFormSelect>
+  </BaseSelect>
 </template>
 `
 
 export const group = `
 <template>
-  <BaseFormSelect shape="rounded" label="Select a hero">
+  <BaseSelect shape="rounded" label="Select a hero">
     <option value="">Select a hero</option>
     <optgroup label="Marvel">
       <option value="Iron man">Iron man</option>
@@ -112,32 +112,32 @@ export const group = `
       <option value="Superman">Superman</option>
       <option value="Batman">Batman</option>
     </optgroup>
-  </BaseFormSelect>
+  </BaseSelect>
 </template>
 `
 
 export const loading = `
 <template>
-  <BaseFormSelect shape="rounded" label="Select a hero" loading>
+  <BaseSelect shape="rounded" label="Select a hero" loading>
     <option value="">Select a hero</option>
     <option value="Superman">Superman</option>
     <option value="Batman">Batman</option>
     <option value="Iron man">Iron man</option>
     <option value="Magneto">Magneto</option>
     <option value="Cyclops">Cyclops</option>
-  </BaseFormSelect>
+  </BaseSelect>
 </template>
 `
 
 export const invalid = `
 <template>
-  <BaseFormSelect shape="curved" label="Select a hero" invalid>
+  <BaseSelect shape="curved" label="Select a hero" invalid>
     <option value="">Select a hero</option>
     <option value="Superman">Superman</option>
     <option value="Batman">Batman</option>
     <option value="Iron man">Iron man</option>
     <option value="Magneto">Magneto</option>
     <option value="Cyclops">Cyclops</option>
-  </BaseFormSelect>
+  </BaseSelect>
 </template>
 `

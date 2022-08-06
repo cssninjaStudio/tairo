@@ -8,16 +8,13 @@ import {
   thinSwitch,
 } from '@@/documentation/components/form/switch'
 
-import {
-  BaseFormSwitchBallMeta,
-  BaseFormSwitchThinMeta,
-} from '#nuxt-component-meta'
+import { metaBaseSwitchBall, metaBaseSwitchThin } from '#nuxt-component-meta'
 
 definePageMeta({
   title: 'Switches',
   documentation: {
     category: 'Forms',
-    components: ['BaseFormSwitchThin', 'BaseFormSwitchBall'],
+    components: ['BaseSwitchThin', 'BaseSwitchBall'],
   },
 })
 </script>
@@ -36,38 +33,38 @@ definePageMeta({
           <DocComponent label="Thin switch example">
             <template #demo>
               <div class="flex items-end gap-6">
-                <FocusLoop class="flex w-full flex-wrap gap-8">
-                  <BaseFormSwitchThin
+                <BaseFocusLoop class="flex w-full flex-wrap gap-8">
+                  <BaseSwitchThin
                     id="demo-thin-1"
                     :checked="true"
                     label="Primary"
                     color="primary"
                   />
-                  <BaseFormSwitchThin
+                  <BaseSwitchThin
                     id="demo-thin-2"
                     :checked="true"
                     label="Info"
                     color="info"
                   />
-                  <BaseFormSwitchThin
+                  <BaseSwitchThin
                     id="demo-thin-3"
                     :checked="true"
                     label="Success"
                     color="success"
                   />
-                  <BaseFormSwitchThin
+                  <BaseSwitchThin
                     id="demo-thin-4"
                     :checked="true"
                     label="Warning"
                     color="warning"
                   />
-                  <BaseFormSwitchThin
+                  <BaseSwitchThin
                     id="demo-thin-5"
                     :checked="true"
                     label="Danger"
                     color="danger"
                   />
-                </FocusLoop>
+                </BaseFocusLoop>
               </div>
             </template>
             <template #code>
@@ -81,7 +78,7 @@ definePageMeta({
           <DocComponent label="Thin switch example">
             <template #demo>
               <div class="w-full">
-                <BaseFormSwitchThin
+                <BaseSwitchThin
                   id="demo-thin-6"
                   :checked="true"
                   label="Primary"
@@ -97,45 +94,45 @@ definePageMeta({
         </DocSection>
 
         <!-- Thin switch properties -->
-        <DocComponentMeta :meta="metaBaseFormSwitchThin" />
+        <DocComponentMeta :meta="metaBaseSwitchThin" />
 
         <!-- Switch ball -->
         <DocSection title="Ball Switch" tag="1.0.0">
           <DocComponent label="Thin switch example">
             <template #demo>
               <div class="flex items-end gap-6">
-                <FocusLoop class="flex w-full flex-wrap gap-8">
-                  <BaseFormSwitchBall
+                <BaseFocusLoop class="flex w-full flex-wrap gap-8">
+                  <BaseSwitchBall
                     id="demo-ball-1"
                     :checked="true"
                     label="Primary"
                     color="primary"
                   />
-                  <BaseFormSwitchBall
+                  <BaseSwitchBall
                     id="demo-ball-2"
                     :checked="true"
                     label="Info"
                     color="info"
                   />
-                  <BaseFormSwitchBall
+                  <BaseSwitchBall
                     id="demo-ball-3"
                     :checked="true"
                     label="Success"
                     color="success"
                   />
-                  <BaseFormSwitchBall
+                  <BaseSwitchBall
                     id="demo-ball-4"
                     :checked="true"
                     label="Warning"
                     color="warning"
                   />
-                  <BaseFormSwitchBall
+                  <BaseSwitchBall
                     id="demo-ball-5"
                     :checked="true"
                     label="Danger"
                     color="danger"
                   />
-                </FocusLoop>
+                </BaseFocusLoop>
               </div>
             </template>
             <template #code>
@@ -149,7 +146,7 @@ definePageMeta({
           <DocComponent label="Ball switch example">
             <template #demo>
               <div class="w-full">
-                <BaseFormSwitchBall
+                <BaseSwitchBall
                   id="demo-ball-6"
                   :checked="true"
                   label="Primary"
@@ -165,7 +162,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Ball switch properties -->
-        <DocComponentMeta :meta="metaBaseFormSwitchBall" />
+        <DocComponentMeta :meta="metaBaseSwitchBall" />
       </template>
       <!-- Toc -->
       <template #toc>

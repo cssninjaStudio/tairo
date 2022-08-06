@@ -6,8 +6,8 @@ import {
 import { team, topics } from '@@/documentation/components/carousel/data'
 
 import {
-  BaseCarouselIconsMeta,
-  BaseCarouselTeamMeta,
+  metaBaseCarouselIcons,
+  metaBaseCarouselTeam,
 } from '#nuxt-component-meta'
 
 definePageMeta({

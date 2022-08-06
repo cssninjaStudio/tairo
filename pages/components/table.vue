@@ -10,10 +10,10 @@ import {
 import { team } from '@@/documentation/components/table/data'
 
 import {
-  BaseTableCellMeta,
-  BaseTableHeadingMeta,
-  BaseTableMeta,
-  BaseTableRowMeta,
+  metaBaseTable,
+  metaBaseTableCell,
+  metaBaseTableHeading,
+  metaBaseTableRow,
 } from '#nuxt-component-meta'
 
 definePageMeta({
@@ -48,7 +48,7 @@ definePageMeta({
                   <template #header>
                     <BaseTableHeading uppercase class="p-4">
                       <div class="flex items-center">
-                        <BaseFormCheckbox
+                        <BaseCheckbox
                           name="table-1-main"
                           shape="straight"
                           class="text-primary-500"
@@ -67,7 +67,7 @@ definePageMeta({
                   <BaseTableRow v-for="member in team" :key="member.id">
                     <BaseTableCell class="p-4">
                       <div class="flex items-center">
-                        <BaseFormCheckbox
+                        <BaseCheckbox
                           :name="`member-checkbox-${member.id}`"
                           shape="straight"
                           class="text-primary-500"
@@ -137,7 +137,7 @@ definePageMeta({
                   <template #header>
                     <BaseTableHeading uppercase class="p-4">
                       <div class="flex items-center">
-                        <BaseFormCheckbox
+                        <BaseCheckbox
                           name="table-1-main"
                           shape="rounded"
                           class="text-primary-500"
@@ -156,7 +156,7 @@ definePageMeta({
                   <BaseTableRow v-for="member in team" :key="member.id">
                     <BaseTableCell class="p-4">
                       <div class="flex items-center">
-                        <BaseFormCheckbox
+                        <BaseCheckbox
                           :name="`member-checkbox-${member.id}`"
                           shape="rounded"
                           class="text-primary-500"
@@ -226,7 +226,7 @@ definePageMeta({
                   <template #header>
                     <BaseTableHeading uppercase class="p-4">
                       <div class="flex items-center">
-                        <BaseFormCheckbox
+                        <BaseCheckbox
                           name="table-1-main"
                           shape="curved"
                           class="text-primary-500"
@@ -245,7 +245,7 @@ definePageMeta({
                   <BaseTableRow v-for="member in team" :key="member.id">
                     <BaseTableCell class="p-4">
                       <div class="flex items-center">
-                        <BaseFormCheckbox
+                        <BaseCheckbox
                           :name="`member-checkbox-${member.id}`"
                           shape="curved"
                           class="text-primary-500"
@@ -319,7 +319,7 @@ definePageMeta({
                   <template #header>
                     <BaseTableHeading uppercase class="p-4">
                       <div class="flex items-center">
-                        <BaseFormCheckbox
+                        <BaseCheckbox
                           name="table-1-main"
                           shape="straight"
                           class="text-primary-500"
@@ -338,7 +338,7 @@ definePageMeta({
                   <BaseTableRow v-for="member in team" :key="member.id">
                     <BaseTableCell class="p-4">
                       <div class="flex items-center">
-                        <BaseFormCheckbox
+                        <BaseCheckbox
                           :name="`member-checkbox-${member.id}`"
                           shape="straight"
                           class="text-primary-500"
@@ -418,7 +418,7 @@ definePageMeta({
                   <template #header>
                     <BaseTableHeading uppercase class="p-4">
                       <div class="flex items-center">
-                        <BaseFormCheckbox
+                        <BaseCheckbox
                           name="table-1-main"
                           shape="rounded"
                           class="text-primary-500"
@@ -437,7 +437,7 @@ definePageMeta({
                   <BaseTableRow v-for="member in team" :key="member.id">
                     <BaseTableCell class="p-4">
                       <div class="flex items-center">
-                        <BaseFormCheckbox
+                        <BaseCheckbox
                           :name="`member-checkbox-${member.id}`"
                           shape="rounded"
                           class="text-primary-500"
@@ -517,7 +517,7 @@ definePageMeta({
                   <template #header>
                     <BaseTableHeading uppercase class="p-4">
                       <div class="flex items-center">
-                        <BaseFormCheckbox
+                        <BaseCheckbox
                           name="table-1-main"
                           shape="curved"
                           class="text-primary-500"
@@ -536,7 +536,7 @@ definePageMeta({
                   <BaseTableRow v-for="member in team" :key="member.id">
                     <BaseTableCell class="p-4">
                       <div class="flex items-center">
-                        <BaseFormCheckbox
+                        <BaseCheckbox
                           :name="`member-checkbox-${member.id}`"
                           shape="curved"
                           class="text-primary-500"

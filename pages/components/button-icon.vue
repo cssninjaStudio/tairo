@@ -32,7 +32,7 @@ definePageMeta({
         <DocSection title="Button shapes" tag="1.0.0">
           <DocComponent label="Default button shapes">
             <template #demo>
-              <FocusLoop class="flex flex-wrap items-end gap-2">
+              <BaseFocusLoop class="flex flex-wrap items-end gap-2">
                 <BaseButtonIcon shape="straight">
                   <BaseIcon name="ph:moon-duotone" class="h-5 w-5" />
                 </BaseButtonIcon>
@@ -45,7 +45,7 @@ definePageMeta({
                 <BaseButtonIcon shape="full">
                   <BaseIcon name="ph:heart-duotone" class="h-5 w-5" />
                 </BaseButtonIcon>
-              </FocusLoop>
+              </BaseFocusLoop>
             </template>
             <template #code>
               <DocCode language="html" :code="shapes" />
@@ -57,7 +57,7 @@ definePageMeta({
         <DocSection title="Primary color" tag="1.0.0">
           <DocComponent label="Icon button primary color">
             <template #demo>
-              <FocusLoop class="flex flex-wrap items-end gap-2">
+              <BaseFocusLoop class="flex flex-wrap items-end gap-2">
                 <BaseButtonIcon shape="straight" primary>
                   <BaseIcon name="ph:moon-duotone" class="h-5 w-5" />
                 </BaseButtonIcon>
@@ -70,7 +70,7 @@ definePageMeta({
                 <BaseButtonIcon shape="full" primary>
                   <BaseIcon name="ph:heart-duotone" class="h-5 w-5" />
                 </BaseButtonIcon>
-              </FocusLoop>
+              </BaseFocusLoop>
             </template>
             <template #code>
               <DocCode language="html" :code="primary" />
@@ -82,7 +82,7 @@ definePageMeta({
         <DocSection title="Button muted" tag="1.0.0">
           <DocComponent label="Button muted variation">
             <template #demo>
-              <FocusLoop class="flex flex-wrap items-end gap-2">
+              <BaseFocusLoop class="flex flex-wrap items-end gap-2">
                 <BaseButtonIcon shape="straight" muted>
                   <BaseIcon name="ph:moon-duotone" class="h-5 w-5" />
                 </BaseButtonIcon>
@@ -95,7 +95,7 @@ definePageMeta({
                 <BaseButtonIcon shape="full" muted>
                   <BaseIcon name="ph:heart-duotone" class="h-5 w-5" />
                 </BaseButtonIcon>
-              </FocusLoop>
+              </BaseFocusLoop>
             </template>
             <template #code>
               <DocCode language="html" :code="muted" />
@@ -107,7 +107,7 @@ definePageMeta({
         <DocSection title="Button loading" tag="1.0.0">
           <DocComponent label="Icon button loading">
             <template #demo>
-              <FocusLoop class="flex flex-wrap items-end gap-2">
+              <BaseFocusLoop class="flex flex-wrap items-end gap-2">
                 <BaseButtonIcon shape="straight" loading>
                   <BaseIcon name="ph:moon-duotone" class="h-5 w-5" />
                 </BaseButtonIcon>
@@ -120,7 +120,7 @@ definePageMeta({
                 <BaseButtonIcon shape="full" loading>
                   <BaseIcon name="ph:heart-duotone" class="h-5 w-5" />
                 </BaseButtonIcon>
-              </FocusLoop>
+              </BaseFocusLoop>
             </template>
             <template #code>
               <DocCode language="html" :code="loading" />
@@ -132,7 +132,7 @@ definePageMeta({
         <DocSection title="Button group" tag="1.0.0">
           <DocComponent label="icon buttons inside a group">
             <template #demo>
-              <FocusLoop class="flex flex-wrap items-end">
+              <BaseFocusLoop class="flex flex-wrap items-end">
                 <BaseButtonIcon
                   shape="curved"
                   class="rounded-r-none border-r-0 focus:z-10"
@@ -151,7 +151,7 @@ definePageMeta({
                 >
                   <BaseIcon name="ph:heart-duotone" class="h-5 w-5" />
                 </BaseButtonIcon>
-              </FocusLoop>
+              </BaseFocusLoop>
             </template>
             <template #code>
               <DocCode language="html" :code="group" />

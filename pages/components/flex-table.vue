@@ -7,10 +7,10 @@ import {
 import { team } from '@@/documentation/components/flex-table/data'
 
 import {
-  BaseFlexTableCellMeta,
-  BaseFlexTableHeadingMeta,
-  BaseFlexTableMeta,
-  BaseFlexTableRowMeta,
+  metaBaseFlexTable,
+  metaBaseFlexTableCell,
+  metaBaseFlexTableHeading,
+  metaBaseFlexTableRow,
 } from '#nuxt-component-meta'
 
 definePageMeta({
@@ -45,7 +45,7 @@ definePageMeta({
                   <template #header>
                     <BaseFlexTableHeading type="shrink">
                       <div class="flex items-center">
-                        <BaseFormCheckbox
+                        <BaseCheckbox
                           name="table-1-main"
                           shape="straight"
                           class="text-primary-500"
@@ -76,7 +76,7 @@ definePageMeta({
                   >
                     <BaseFlexTableCell type="shrink" data-content="Selection">
                       <div class="flex items-center">
-                        <BaseFormCheckbox
+                        <BaseCheckbox
                           :name="`member-checkbox-${member.id}`"
                           shape="straight"
                           class="text-primary-500"
@@ -164,7 +164,7 @@ definePageMeta({
                   <template #header>
                     <BaseFlexTableHeading type="shrink">
                       <div class="flex items-center">
-                        <BaseFormCheckbox
+                        <BaseCheckbox
                           name="table-1-main"
                           shape="rounded"
                           class="text-primary-500"
@@ -195,7 +195,7 @@ definePageMeta({
                   >
                     <BaseFlexTableCell type="shrink" data-content="Selection">
                       <div class="flex items-center">
-                        <BaseFormCheckbox
+                        <BaseCheckbox
                           :name="`member-checkbox-${member.id}`"
                           shape="rounded"
                           class="text-primary-500"
@@ -283,7 +283,7 @@ definePageMeta({
                   <template #header>
                     <BaseFlexTableHeading type="shrink">
                       <div class="flex items-center">
-                        <BaseFormCheckbox
+                        <BaseCheckbox
                           name="table-1-main"
                           shape="curved"
                           class="text-primary-500"
@@ -314,7 +314,7 @@ definePageMeta({
                   >
                     <BaseFlexTableCell type="shrink" data-content="Selection">
                       <div class="flex items-center">
-                        <BaseFormCheckbox
+                        <BaseCheckbox
                           :name="`member-checkbox-${member.id}`"
                           shape="curved"
                           class="text-primary-500"

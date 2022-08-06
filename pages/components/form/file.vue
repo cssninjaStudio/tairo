@@ -7,7 +7,7 @@ definePageMeta({
   title: 'File inputs',
   documentation: {
     category: 'Forms',
-    components: ['BaseFormInputFile'],
+    components: ['BaseInputFile'],
   },
 })
 </script>

@@ -4,7 +4,7 @@ const inputRounded = ref('')
 </script>
 
 <template>
-  <BaseFormCheckbox
+  <BaseCheckbox
     v-model="demoOne"
     name="demo-1"
     label="Straight checkbox"
@@ -20,7 +20,7 @@ const inputRounded = ref('')
 </script>
 
 <template>
-  <BaseFormCheckbox
+  <BaseCheckbox
     v-model="demoTwo"
     name="demo-2"
     label="Rounded checkbox"
@@ -36,7 +36,7 @@ const inputRounded = ref('')
 </script>
 
 <template>
-  <BaseFormCheckbox
+  <BaseCheckbox
     v-model="demoThree"
     name="demo-3"
     label="Curved checkbox"
@@ -52,7 +52,7 @@ const inputRounded = ref('')
 </script>
 
 <template>
-  <BaseFormCheckbox
+  <BaseCheckbox
     v-model="demoFour"
     name="demo-4"
     label="Circle checkbox"
@@ -65,7 +65,7 @@ const inputRounded = ref('')
 export const colors = `
 <template>
   <!-- Emerald color -->
-  <BaseFormCheckbox
+  <BaseCheckbox
     v-model="demoStraight"
     name="demo-6"
     label="Straight"
@@ -74,7 +74,7 @@ export const colors = `
   />
 
   <!-- Yellow color -->
-  <BaseFormCheckbox
+  <BaseCheckbox
     v-model="demoStraight"
     name="demo-7"
     label="Rounded"
@@ -83,7 +83,7 @@ export const colors = `
   />
 
   <!-- Pink color -->
-  <BaseFormCheckbox
+  <BaseCheckbox
     v-model="demoStraight"
     name="demo-8"
     label="Rounded"

@@ -1,38 +1,35 @@
+import type { MetaCheckerOptions } from 'vue-component-meta'
 import {
-  // addServerHandler,
-  // addVitePlugin,
+  addServerHandler,
   addTemplate,
   createResolver,
   defineNuxtModule,
   resolveModule,
 } from '@nuxt/kit'
-import { createComponentMetaChecker } from 'vue-component-meta'
 
-export interface ModuleOptions {}
+import { createComponentMetaChecker } from 'vue-component-meta'
+import type { HookData } from './types'
+
+export interface ModuleOptions {
+  checkerOptions?: MetaCheckerOptions
+}
+export interface ModuleHooks {
+  'component-meta:parsed'(data: HookData): void
+}
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
-    name: 'vue-component-meta',
-    configKey: 'vueComponentMeta',
+    name: 'nuxt-component-meta',
+    configKey: 'componentMeta',
   },
-  setup(_options, nuxt) {
+  setup(options, nuxt) {
     const resolver = createResolver(import.meta.url)
 
     const tsconfigPath = resolver.resolve(nuxt.options.rootDir, 'tsconfig.json')
-    const checker = createComponentMetaChecker(tsconfigPath, {
-      forceUseTs: true,
-      schema: {
-        // enabled: true,
-        ignore: [
-          'RouteLocationRaw',
-          'PropertyMetaSchema',
-          'PropertyMeta',
-          'VueComponentMeta',
-        ],
-      },
-    })
-
-    // const defaultProps = checker.getGlobalPropNames()
+    const checker = createComponentMetaChecker(
+      tsconfigPath,
+      options.checkerOptions
+    )
 
     function reducer(acc: any, component: any) {
       if (component.name) {
@@ -42,49 +39,54 @@ export default defineNuxtModule<ModuleOptions>({
       return acc
     }
 
-    async function mapper(component: any) {
+    async function mapper(component: any): Promise<HookData['meta']> {
       const path = resolveModule(component.filePath, {
         paths: nuxt.options.rootDir,
       })
 
       const data = {
-        meta: {} as any,
-        path,
-      }
-      try {
-        const vueMeta = checker.getComponentMeta(path)
-        data.meta = {
+        meta: {
           name: component.pascalName,
-          props: vueMeta.props
-            .filter((prop) => !prop.global)
-            .sort((a, b) => {
-              // sort required properties first
-              if (!a.required && b.required) {
-                return 1
-              }
-              if (a.required && !b.required) {
-                return -1
-              }
-              // then ensure boolean properties are sorted last
-              if (a.type === 'boolean' && b.type !== 'boolean') {
-                return 1
-              }
-              if (a.type !== 'boolean' && b.type === 'boolean') {
-                return -1
-              }
+          props: [],
+          slots: [],
+          events: [],
+          exposed: [],
+        },
+        path,
+        source: '',
+      } as HookData
 
-              return 0
-            }),
-          events: vueMeta.events,
-          slots: vueMeta.slots,
-          exposed: vueMeta.exposed,
-        }
+      try {
+        const { props, slots, events, exposed } = checker.getComponentMeta(path)
+
+        data.meta.slots = slots
+        data.meta.events = events
+        data.meta.exposed = exposed
+        data.meta.props = props
+          .filter((prop) => !prop.global)
+          .sort((a, b) => {
+            // sort required properties first
+            if (!a.required && b.required) {
+              return 1
+            }
+            if (a.required && !b.required) {
+              return -1
+            }
+            // then ensure boolean properties are sorted last
+            if (a.type === 'boolean' && b.type !== 'boolean') {
+              return 1
+            }
+            if (a.type !== 'boolean' && b.type === 'boolean') {
+              return -1
+            }
+
+            return 0
+          })
 
         // @ts-expect-error 'component-meta:parsed' is a custom hook
         await nuxt.callHook('component-meta:parsed', data)
       } catch (error: any) {
         console.error(`Unable to parse component "${path}": ${error}`)
-        data.meta = {}
       }
 
       return data.meta
@@ -101,8 +103,8 @@ export default defineNuxtModule<ModuleOptions>({
         {}
       )
 
-      script = `export const all = ${JSON.stringify(componentMeta)}`
-      script += `\nexport default all`
+      script = `export const components = ${JSON.stringify(componentMeta)}`
+      script += `\nexport default components`
 
       for (const key in componentMeta) {
         script += `\nexport const meta${key} = ${JSON.stringify(
@@ -113,14 +115,16 @@ export default defineNuxtModule<ModuleOptions>({
       dts += `\ntype NuxtComponentMetaNames = ${Object.keys(componentMeta)
         .map((name) => `"${name}"`)
         .join(' | ')}`
-      dts += `\ndeclare const all: Record<NuxtComponentMetaNames, NuxtComponentMeta>`
+      dts += `\ndeclare const components: Record<NuxtComponentMetaNames, NuxtComponentMeta>`
 
       for (const key in componentMeta) {
         dts += `\ndeclare const meta${key}: NuxtComponentMeta`
       }
-      dts += `\nexport { all as default, ${Object.keys(componentMeta)
+      dts += `\nexport { components as default, components, ${Object.keys(
+        componentMeta
+      )
         .map((name) => `meta${name}`)
-        .join(' ,')} }`
+        .join(', ')} }`
     })
 
     const template = addTemplate({
@@ -134,26 +138,26 @@ export default defineNuxtModule<ModuleOptions>({
     })
     nuxt.options.alias['#nuxt-component-meta'] = template.dst!
 
-    // addVitePlugin({
-    //   name: 'vue-component-meta-loader',
-    //   resolveId(id) {
-    //     if (id === 'virtual:vue-component-meta') {
-    //       return '\0virtual:vue-component-meta'
-    //     }
-    //   },
-    //   load(id) {
-    //     if (id === '\0virtual:vue-component-meta') {
-    // let script = `export const all = ${JSON.stringify(componentMeta)}`
+    nuxt.hook('nitro:config', (nitroConfig) => {
+      nitroConfig.handlers = nitroConfig.handlers || []
+      nitroConfig.virtual = nitroConfig.virtual || {}
 
-    // for (const key in componentMeta) {
-    //   script += `\nexport const ${key}Meta = ${JSON.stringify(
-    //     componentMeta[key]
-    //   )}`
-    // }
+      nitroConfig.virtual['#meta/virtual/meta'] = () =>
+        `export const components = ${JSON.stringify(
+          componentMeta
+        )}\nexport default components`
+    })
 
-    //       return script
-    //     }
-    //   },
-    // })
+    addServerHandler({
+      method: 'get',
+      route: '/api/component-meta',
+      handler: resolver.resolve('./runtime/server/api/component-meta.get'),
+    })
+
+    addServerHandler({
+      method: 'get',
+      route: '/api/component-meta/:component?',
+      handler: resolver.resolve('./runtime/server/api/component-meta.get'),
+    })
   },
 })

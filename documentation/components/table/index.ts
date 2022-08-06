@@ -28,7 +28,7 @@ const team = [
     <template #header>
       <BaseTableHeading uppercase class="p-4">
         <div class="flex items-center">
-          <BaseFormCheckbox
+          <BaseCheckbox
             name="table-1-main"
             shape="straight"
             class="text-primary-500"
@@ -47,7 +47,7 @@ const team = [
     <BaseTableRow v-for="member in team" :key="member.id">
       <BaseTableCell class="p-4">
         <div class="flex items-center">
-          <BaseFormCheckbox
+          <BaseCheckbox
             :name="member.id"
             shape="straight"
             class="text-primary-500"
@@ -133,7 +133,7 @@ const team = [
     <template #header>
       <BaseTableHeading uppercase class="p-4">
         <div class="flex items-center">
-          <BaseFormCheckbox
+          <BaseCheckbox
             name="table-1-main"
             shape="rounded"
             class="text-primary-500"
@@ -152,7 +152,7 @@ const team = [
     <BaseTableRow v-for="member in team" :key="member.id">
       <BaseTableCell class="p-4">
         <div class="flex items-center">
-          <BaseFormCheckbox
+          <BaseCheckbox
             :name="member.id"
             shape="rounded"
             class="text-primary-500"
@@ -238,7 +238,7 @@ const team = [
     <template #header>
       <BaseTableHeading uppercase class="p-4">
         <div class="flex items-center">
-          <BaseFormCheckbox
+          <BaseCheckbox
             name="table-1-main"
             shape="curved"
             class="text-primary-500"
@@ -257,7 +257,7 @@ const team = [
     <BaseTableRow v-for="member in team" :key="member.id">
       <BaseTableCell class="p-4">
         <div class="flex items-center">
-          <BaseFormCheckbox
+          <BaseCheckbox
             :name="member.id"
             shape="curved"
             class="text-primary-500"
@@ -343,7 +343,7 @@ const team = [
     <template #header>
       <BaseTableHeading uppercase class="p-4">
         <div class="flex items-center">
-          <BaseFormCheckbox
+          <BaseCheckbox
             name="table-1-main"
             shape="straight"
             class="text-primary-500"
@@ -362,7 +362,7 @@ const team = [
     <BaseTableRow v-for="member in team" :key="member.id">
       <BaseTableCell class="p-4">
         <div class="flex items-center">
-          <BaseFormCheckbox
+          <BaseCheckbox
             :name="member.id"
             shape="straight"
             class="text-primary-500"
@@ -458,7 +458,7 @@ const team = [
     <template #header>
       <BaseTableHeading uppercase class="p-4">
         <div class="flex items-center">
-          <BaseFormCheckbox
+          <BaseCheckbox
             name="table-1-main"
             shape="rounded"
             class="text-primary-500"
@@ -477,7 +477,7 @@ const team = [
     <BaseTableRow v-for="member in team" :key="member.id">
       <BaseTableCell class="p-4">
         <div class="flex items-center">
-          <BaseFormCheckbox
+          <BaseCheckbox
             :name="member.id"
             shape="rounded"
             class="text-primary-500"
@@ -573,7 +573,7 @@ const team = [
     <template #header>
       <BaseTableHeading uppercase class="p-4">
         <div class="flex items-center">
-          <BaseFormCheckbox
+          <BaseCheckbox
             name="table-1-main"
             shape="curved"
             class="text-primary-500"
@@ -592,7 +592,7 @@ const team = [
     <BaseTableRow v-for="member in team" :key="member.id">
       <BaseTableCell class="p-4">
         <div class="flex items-center">
-          <BaseFormCheckbox
+          <BaseCheckbox
             :name="member.id"
             shape="curved"
             class="text-primary-500"

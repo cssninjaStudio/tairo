@@ -11,6 +11,11 @@ export default defineNuxtConfig({
   colorMode: {
     classSuffix: '',
   },
+  componentMeta: {
+    checkerOptions: {
+      schema: [],
+    },
+  },
   css: [
     '~/assets/css/tooltips.css',
     '~/assets/css/slimscroll.css',

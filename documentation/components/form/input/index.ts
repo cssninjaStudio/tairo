@@ -4,7 +4,7 @@ const inputStraight = ref('')
 </script>
 
 <template>
-  <BaseFormInput
+  <BaseInput
     v-model="inputStraight"
     shape="straight"
     label="Short description"
@@ -19,7 +19,7 @@ const inputRounded = ref('')
 </script>
 
 <template>
-  <BaseFormInput
+  <BaseInput
     v-model="inputRounded"
     shape="rounded"
     label="Short description"
@@ -34,7 +34,7 @@ const inputCurved = ref('')
 </script>
 
 <template>
-  <BaseFormInput
+  <BaseInput
     v-model="inputCurved"
     shape="curved"
     label="Short description"
@@ -49,7 +49,7 @@ const inputFull = ref('')
 </script>
 
 <template>
-  <BaseFormInput
+  <BaseInput
     v-model="inputFull"
     shape="full"
     label="Short description"
@@ -60,7 +60,7 @@ const inputFull = ref('')
 
 export const icon = `
 <template>
-  <BaseFormInput
+  <BaseInput
     shape="straight"
     label="Search"
     placeholder="Enter search terms..."
@@ -71,7 +71,7 @@ export const icon = `
 
 export const focus = `
 <template>
-  <BaseFormInput
+  <BaseInput
     v-model="inputRounded"
     shape="rounded"
     label="Email Address"
@@ -84,7 +84,7 @@ export const focus = `
 
 export const loading = `
 <template>
-  <BaseFormInput
+  <BaseInput
     shape="rounded"
     label="Email Address"
     placeholder="Enter your email..."
@@ -96,7 +96,7 @@ export const loading = `
 
 export const disabled = `
 <template>
-  <BaseFormInput
+  <BaseInput
     shape="rounded"
     label="Email Address"
     placeholder="Enter your email..."
@@ -108,7 +108,7 @@ export const disabled = `
 
 export const invalid = `
 <template>
-<BaseFormInput
+<BaseInput
   shape="rounded"
   label="Email Address"
   placeholder="Enter your email..."

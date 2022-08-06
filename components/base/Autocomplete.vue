@@ -10,42 +10,12 @@ import {
 
 export type AutocompleteShapes = 'straight' | 'rounded' | 'curved' | 'full'
 
-export type OnShapeEvent = (event: 'shape', value?: AutocompleteShapes) => void
-
-/**
- * emit update:modelValue on input change
- */
-export type OnUpdateModelValueEvent = (
-  event: 'update:modelValue',
-  value?: any
-) => void
-
-export interface AutocompleteEmits
-  extends OnShapeEvent,
-    OnUpdateModelValueEvent {
-  (event: 'shapeRequired', value: AutocompleteShapes): void
-  (event: 'nested', value?: { shape: string; foo: number[] }): void
+export interface AutocompleteEmits {
+  (event: 'update:modelValue', value?: any): void
 }
 
 export interface AutocompleteItem {
-  id: number
   name: string
-  /**
-   * The text
-   *
-   * @default 'rounded'
-   * @since v1.0.0
-   * @see https://v3.nuxtjs.org/
-   * @example
-   * ```vue
-   * <template>
-   *   <BaseAutocomplete shape="straight" />
-   *   <BaseAutocomplete />
-   *   <BaseAutocomplete shape="curved" />
-   *   <BaseAutocomplete shape="full" />
-   * </template>
-   * ```
-   */
   text?: string | undefined
   media?: string | undefined
   icon?: string | undefined
@@ -54,22 +24,6 @@ export interface AutocompleteItem {
 export interface AutocompleteProps {
   modelValue?: any
   items: AutocompleteItem[]
-  /**
-   * The shape of the autocomplete input.
-   *
-   * @default 'rounded'
-   * @since v1.0.0
-   * @see https://v3.nuxtjs.org/
-   * @example
-   * ```vue
-   * <template>
-   *   <BaseAutocomplete shape="straight" />
-   *   <BaseAutocomplete />
-   *   <BaseAutocomplete shape="curved" />
-   *   <BaseAutocomplete shape="full" />
-   * </template>
-   * ```
-   */
   shape?: AutocompleteShapes
   label: string
   hideLabel?: boolean
@@ -206,7 +160,7 @@ const removeItem = function (name: string) {
     >
       <ComboboxOptions
         as="div"
-        class="slimscroll absolute mt-1 max-h-[265px] w-full overflow-auto border border-muted-200 bg-white py-1 text-base shadow-lg outline-none dark:border-muted-700 dark:bg-muted-800 sm:text-sm"
+        class="slimscroll absolute z-20 mt-1 max-h-[265px] w-full overflow-auto border border-muted-200 bg-white py-1 text-base shadow-lg outline-none dark:border-muted-700 dark:bg-muted-800 sm:text-sm"
         :class="[
           props.shape === 'rounded' && 'rounded-lg',
           props.shape === 'curved' && 'rounded-xl',
@@ -223,7 +177,7 @@ const removeItem = function (name: string) {
         <ComboboxOption
           v-for="item in filteredItems"
           v-slot="{ active, selected }"
-          :key="item.id"
+          :key="item.name"
           class="py-1 px-2"
           as="div"
           :value="item"

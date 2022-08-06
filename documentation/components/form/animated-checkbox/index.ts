@@ -9,22 +9,22 @@ const options = ref([
 </script>
 
 <template>
-  <BaseFormAnimatedCheckbox
+  <BaseAnimatedCheckbox
     v-model="options"
     value="Option 1"
     class="text-primary-500"
   />
-  <BaseFormAnimatedCheckbox
+  <BaseAnimatedCheckbox
     v-model="options"
     value="Option 2"
     class="text-lime-500"
   />
-  <BaseFormAnimatedCheckbox
+  <BaseAnimatedCheckbox
     v-model="options"
     value="Option 3"
     class="text-green-500"
   />
-  <BaseFormAnimatedCheckbox
+  <BaseAnimatedCheckbox
     v-model="options"
     value="Option 4"
     class="text-emerald-500"

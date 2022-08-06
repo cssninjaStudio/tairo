@@ -4,7 +4,7 @@ const selectStraight = ref('')
 </script>
 
 <template>
-  <BaseFormTextarea
+  <BaseTextarea
     v-model="textareaStraight"
     label="Message"
     shape="straight"
@@ -19,7 +19,7 @@ const selectStraight = ref('')
 </script>
 
 <template>
-  <BaseFormTextarea
+  <BaseTextarea
     v-model="textareaRounded"
     label="Message"
     shape="rounded"
@@ -34,7 +34,7 @@ const selectStraight = ref('')
 </script>
 
 <template>
-  <BaseFormTextarea
+  <BaseTextarea
     v-model="textareaCurved"
     label="Message"
     shape="curved"
@@ -45,7 +45,7 @@ const selectStraight = ref('')
 
 export const focus = `
 <template>
-  <BaseFormTextarea
+  <BaseTextarea
     label="Message"
     shape="rounded"
     placeholder="Write a message..."
@@ -56,7 +56,7 @@ export const focus = `
 
 export const invalid = `
 <template>
-  <BaseFormTextarea
+  <BaseTextarea
     label="Message"
     shape="rounded"
     placeholder="Write a message..."
@@ -67,7 +67,7 @@ export const invalid = `
 
 export const loading = `
 <template>
-  <BaseFormTextarea
+  <BaseTextarea
     label="Description"
     shape="rounded"
     placeholder="Write a message..."
@@ -78,7 +78,7 @@ export const loading = `
 
 export const disabled = `
 <template>
-  <BaseFormTextarea
+  <BaseTextarea
     label="Description"
     shape="rounded"
     placeholder="Write a message..."
@@ -89,7 +89,7 @@ export const disabled = `
 
 export const addon = `
 <template>
-  <BaseFormTextarea
+  <BaseTextarea
   v-model="textareaRounded"
     label="Message"
     shape="curved"
@@ -119,6 +119,6 @@ export const addon = `
         </BaseButton>
       </div>
     </template>
-  </BaseFormTextarea>
+  </BaseTextarea>
 </template>
 `

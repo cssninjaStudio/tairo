@@ -11,10 +11,7 @@ import {
   progressCircle,
 } from '@@/documentation/components/progress/data'
 
-import {
-  BaseProgressCircleMeta,
-  BaseProgressMeta,
-} from '#nuxt-component-meta'
+import { metaBaseProgress, metaBaseProgressCircle } from '#nuxt-component-meta'
 
 definePageMeta({
   title: 'Progress',

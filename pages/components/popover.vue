@@ -9,10 +9,10 @@ import {
 } from '@@/documentation/components/popover'
 
 import {
-  BasePopoverContentDualMeta,
-  BasePopoverContentHelpMeta,
-  BasePopoverContentMediaMeta,
-  BasePopoverMeta,
+  metaBasePopover,
+  metaBasePopoverContentDual,
+  metaBasePopoverContentHelp,
+  metaBasePopoverContentMedia,
 } from '#nuxt-component-meta'
 
 definePageMeta({

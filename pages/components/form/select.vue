@@ -16,13 +16,13 @@ import {
   selectStraight,
 } from '@@/documentation/components/form/select/data'
 
-import { metaBaseFormSelect } from '#nuxt-component-meta'
+import { metaBaseSelect } from '#nuxt-component-meta'
 
 definePageMeta({
   title: 'Selects',
   documentation: {
     category: 'Forms',
-    components: ['BaseFormSelect'],
+    components: ['BaseSelect'],
   },
 })
 </script>
@@ -42,7 +42,7 @@ definePageMeta({
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseFormSelect
+                  <BaseSelect
                     v-model="selectStraight"
                     shape="straight"
                     label="Select a hero"
@@ -53,7 +53,7 @@ definePageMeta({
                     <option value="Iron man">Iron man</option>
                     <option value="Magneto">Magneto</option>
                     <option value="Cyclops">Cyclops</option>
-                  </BaseFormSelect>
+                  </BaseSelect>
                 </div>
                 <!-- State box -->
                 <DocState :state="selectStraight" height="80px" />
@@ -71,7 +71,7 @@ definePageMeta({
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseFormSelect
+                  <BaseSelect
                     v-model="selectRounded"
                     shape="rounded"
                     label="Select a hero"
@@ -82,7 +82,7 @@ definePageMeta({
                     <option value="Iron man">Iron man</option>
                     <option value="Magneto">Magneto</option>
                     <option value="Cyclops">Cyclops</option>
-                  </BaseFormSelect>
+                  </BaseSelect>
                 </div>
                 <!-- State box -->
                 <DocState :state="selectRounded" height="80px" />
@@ -100,7 +100,7 @@ definePageMeta({
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseFormSelect
+                  <BaseSelect
                     v-model="selectCurved"
                     shape="curved"
                     label="Select a hero"
@@ -111,7 +111,7 @@ definePageMeta({
                     <option value="Iron man">Iron man</option>
                     <option value="Magneto">Magneto</option>
                     <option value="Cyclops">Cyclops</option>
-                  </BaseFormSelect>
+                  </BaseSelect>
                 </div>
                 <!-- State box -->
                 <DocState :state="selectCurved" height="80px" />
@@ -129,7 +129,7 @@ definePageMeta({
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseFormSelect
+                  <BaseSelect
                     v-model="selectFull"
                     shape="full"
                     label="Select a hero"
@@ -140,7 +140,7 @@ definePageMeta({
                     <option value="Iron man">Iron man</option>
                     <option value="Magneto">Magneto</option>
                     <option value="Cyclops">Cyclops</option>
-                  </BaseFormSelect>
+                  </BaseSelect>
                 </div>
                 <!-- State box -->
                 <DocState :state="selectFull" height="80px" />
@@ -158,7 +158,7 @@ definePageMeta({
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseFormSelect
+                  <BaseSelect
                     shape="rounded"
                     label="Select a hero"
                     icon="icon-park-outline:muscle"
@@ -169,7 +169,7 @@ definePageMeta({
                     <option value="Iron man">Iron man</option>
                     <option value="Magneto">Magneto</option>
                     <option value="Cyclops">Cyclops</option>
-                  </BaseFormSelect>
+                  </BaseSelect>
                 </div>
               </div>
             </template>
@@ -185,7 +185,7 @@ definePageMeta({
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseFormSelect shape="rounded" label="Select a hero">
+                  <BaseSelect shape="rounded" label="Select a hero">
                     <option value="">Select a hero</option>
                     <optgroup label="Marvel">
                       <option value="Iron man">Iron man</option>
@@ -196,7 +196,7 @@ definePageMeta({
                       <option value="Superman">Superman</option>
                       <option value="Batman">Batman</option>
                     </optgroup>
-                  </BaseFormSelect>
+                  </BaseSelect>
                 </div>
               </div>
             </template>
@@ -212,14 +212,14 @@ definePageMeta({
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseFormSelect shape="rounded" label="Select a hero" loading>
+                  <BaseSelect shape="rounded" label="Select a hero" loading>
                     <option value="">Select a hero</option>
                     <option value="Superman">Superman</option>
                     <option value="Batman">Batman</option>
                     <option value="Iron man">Iron man</option>
                     <option value="Magneto">Magneto</option>
                     <option value="Cyclops">Cyclops</option>
-                  </BaseFormSelect>
+                  </BaseSelect>
                 </div>
               </div>
             </template>
@@ -235,14 +235,14 @@ definePageMeta({
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseFormSelect shape="curved" label="Select a hero" invalid>
+                  <BaseSelect shape="curved" label="Select a hero" invalid>
                     <option value="">Select a hero</option>
                     <option value="Superman">Superman</option>
                     <option value="Batman">Batman</option>
                     <option value="Iron man">Iron man</option>
                     <option value="Magneto">Magneto</option>
                     <option value="Cyclops">Cyclops</option>
-                  </BaseFormSelect>
+                  </BaseSelect>
                 </div>
                 <!-- State box -->
               </div>
@@ -254,7 +254,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Select properties -->
-        <DocComponentMeta :meta="metaBaseFormSelect" />
+        <DocComponentMeta :meta="metaBaseSelect" />
       </template>
       <!-- Toc -->
       <template #toc>

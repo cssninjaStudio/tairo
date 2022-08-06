@@ -6,9 +6,9 @@ import {
 } from '@@/documentation/components/typography'
 
 import {
-  BaseHeadingMeta,
-  BaseParagraphMeta,
-  BaseTextMeta,
+  metaBaseHeading,
+  metaBaseParagraph,
+  metaBaseText,
 } from '#nuxt-component-meta'
 
 definePageMeta({

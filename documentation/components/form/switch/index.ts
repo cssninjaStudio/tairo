@@ -1,30 +1,30 @@
 export const thinSwitch = `
 <template>
-  <BaseFormSwitchThin
+  <BaseSwitchThin
     id="demo-thin-1"
     :checked="true"
     label="Primary"
     color="primary"
   />
-  <BaseFormSwitchThin
+  <BaseSwitchThin
     id="demo-thin-2"
     :checked="true"
     label="Info"
     color="info"
   />
-  <BaseFormSwitchThin
+  <BaseSwitchThin
     id="demo-thin-3"
     :checked="true"
     label="Success"
     color="success"
   />
-  <BaseFormSwitchThin
+  <BaseSwitchThin
     id="demo-thin-4"
     :checked="true"
     label="Warning"
     color="warning"
   />
-  <BaseFormSwitchThin
+  <BaseSwitchThin
     id="demo-thin-5"
     :checked="true"
     label="Danger"
@@ -35,7 +35,7 @@ export const thinSwitch = `
 
 export const thinSublabel = `
 <template>
-  <BaseFormSwitchThin
+  <BaseSwitchThin
     id="demo-thin-6"
     :checked="true"
     label="Primary"
@@ -47,31 +47,31 @@ export const thinSublabel = `
 
 export const ballSwitch = `
 <template>
-  <BaseFormSwitchBall
+  <BaseSwitchBall
     id="demo-ball-1"
     :checked="true"
     label="Primary"
     color="primary"
   />
-  <BaseFormSwitchBall
+  <BaseSwitchBall
     id="demo-ball-2"
     :checked="true"
     label="Info"
     color="info"
   />
-  <BaseFormSwitchBall
+  <BaseSwitchBall
     id="demo-ball-3"
     :checked="true"
     label="Success"
     color="success"
   />
-  <BaseFormSwitchBall
+  <BaseSwitchBall
     id="demo-ball-4"
     :checked="true"
     label="Warning"
     color="warning"
   />
-  <BaseFormSwitchBall
+  <BaseSwitchBall
     id="demo-ball-5"
     :checked="true"
     label="Danger"
@@ -82,7 +82,7 @@ export const ballSwitch = `
 
 export const ballSublabel = `
 <template>
-  <BaseFormSwitchBall
+  <BaseSwitchBall
     id="demo-ball-6"
     :checked="true"
     label="Primary"

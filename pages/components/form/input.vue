@@ -19,13 +19,13 @@ import {
   inputStraight,
 } from '@@/documentation/components/form/input/data'
 
-import { metaBaseFormInput } from '#nuxt-component-meta'
+import { metaBaseInput } from '#nuxt-component-meta'
 
 definePageMeta({
   title: 'Inputs',
   documentation: {
     category: 'Forms',
-    components: ['BaseFormInput'],
+    components: ['BaseInput'],
   },
 })
 </script>
@@ -45,7 +45,7 @@ definePageMeta({
             <template #demo>
               <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseFormInput
+                  <BaseInput
                     v-model="inputStraight"
                     shape="straight"
                     label="Short description"
@@ -68,7 +68,7 @@ definePageMeta({
             <template #demo>
               <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseFormInput
+                  <BaseInput
                     v-model="inputRounded"
                     shape="rounded"
                     label="Short description"
@@ -91,7 +91,7 @@ definePageMeta({
             <template #demo>
               <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseFormInput
+                  <BaseInput
                     v-model="inputCurved"
                     shape="curved"
                     label="Short description"
@@ -114,7 +114,7 @@ definePageMeta({
             <template #demo>
               <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseFormInput
+                  <BaseInput
                     v-model="inputFull"
                     shape="full"
                     label="Short description"
@@ -137,13 +137,13 @@ definePageMeta({
             <template #demo>
               <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseFormInput
+                  <BaseInput
                     shape="straight"
                     label="Search"
                     placeholder="Enter search terms..."
                     icon="lucide:search"
                   />
-                  <BaseFormInput
+                  <BaseInput
                     shape="rounded"
                     label="Email Address"
                     placeholder="Your email..."
@@ -151,13 +151,13 @@ definePageMeta({
                   />
                 </div>
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseFormInput
+                  <BaseInput
                     shape="curved"
                     label="Username"
                     placeholder="Your username..."
                     icon="lucide:user"
                   />
-                  <BaseFormInput
+                  <BaseInput
                     type="password"
                     shape="full"
                     label="Password"
@@ -179,7 +179,7 @@ definePageMeta({
             <template #demo>
               <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseFormInput
+                  <BaseInput
                     v-model="inputRounded"
                     shape="rounded"
                     label="Email Address"
@@ -204,7 +204,7 @@ definePageMeta({
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseFormInput
+                  <BaseInput
                     shape="rounded"
                     label="Email Address"
                     placeholder="Enter your email..."
@@ -226,7 +226,7 @@ definePageMeta({
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseFormInput
+                  <BaseInput
                     shape="rounded"
                     label="Email Address"
                     placeholder="Enter your email..."
@@ -248,7 +248,7 @@ definePageMeta({
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseFormInput
+                  <BaseInput
                     shape="rounded"
                     label="Email Address"
                     placeholder="Enter your email..."
@@ -265,7 +265,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Input properties -->
-        <DocComponentMeta :meta="metaBaseFormInput" />
+        <DocComponentMeta :meta="metaBaseInput" />
       </template>
       <!-- Toc -->
       <template #toc>

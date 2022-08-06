@@ -53,7 +53,7 @@ definePageMeta({
       </span>
     </BaseCard>
     <div class="mx-auto w-full max-w-3xl py-4">
-      <BaseFormInput v-model="input" />
+      <BaseInput v-model="input" />
     </div>
     <div class="mx-auto w-full max-w-3xl py-4">
       <div class="grid gap-5 md:grid-cols-2">

@@ -5,13 +5,13 @@ import {
   radioSelected,
 } from '@@/documentation/components/form/radio/data'
 
-import { metaBaseFormRadio } from '#nuxt-component-meta'
+import { metaBaseRadio } from '#nuxt-component-meta'
 
 definePageMeta({
   title: 'Radios',
   documentation: {
     category: 'Forms',
-    components: ['BaseFormRadio'],
+    components: ['BaseRadio'],
   },
 })
 </script>
@@ -31,7 +31,7 @@ definePageMeta({
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="flex w-full max-w-sm items-end gap-6">
-                  <BaseFormRadio
+                  <BaseRadio
                     id="demo-options-1"
                     v-model="radioSelected"
                     name="demo_options"
@@ -40,7 +40,7 @@ definePageMeta({
                     class="text-gray-500"
                   />
 
-                  <BaseFormRadio
+                  <BaseRadio
                     id="demo-options-2"
                     v-model="radioSelected"
                     name="demo_options"
@@ -49,7 +49,7 @@ definePageMeta({
                     class="text-gray-500"
                   />
 
-                  <BaseFormRadio
+                  <BaseRadio
                     id="demo-options-3"
                     v-model="radioSelected"
                     name="demo_options"
@@ -75,7 +75,7 @@ definePageMeta({
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="flex w-full max-w-sm flex-wrap items-end gap-6">
-                  <BaseFormRadio
+                  <BaseRadio
                     id="demo-colors-primary"
                     v-model="demoColors"
                     name="demo_colors"
@@ -84,7 +84,7 @@ definePageMeta({
                     class="text-primary-500"
                   />
 
-                  <BaseFormRadio
+                  <BaseRadio
                     id="demo-colors-lime"
                     v-model="demoColors"
                     name="demo_colors"
@@ -93,7 +93,7 @@ definePageMeta({
                     class="text-lime-500"
                   />
 
-                  <BaseFormRadio
+                  <BaseRadio
                     id="demo-colors-pink"
                     v-model="demoColors"
                     name="demo_colors"
@@ -102,7 +102,7 @@ definePageMeta({
                     class="text-pink-500"
                   />
 
-                  <BaseFormRadio
+                  <BaseRadio
                     id="demo-colors-sky"
                     v-model="demoColors"
                     name="demo_colors"
@@ -111,7 +111,7 @@ definePageMeta({
                     class="text-sky-500"
                   />
 
-                  <BaseFormRadio
+                  <BaseRadio
                     id="demo-colors-yellow"
                     v-model="demoColors"
                     name="demo_colors"
@@ -120,7 +120,7 @@ definePageMeta({
                     class="text-yellow-500"
                   />
 
-                  <BaseFormRadio
+                  <BaseRadio
                     id="demo-colors-indigo"
                     v-model="demoColors"
                     name="demo_colors"
@@ -129,7 +129,7 @@ definePageMeta({
                     class="text-indigo-500"
                   />
 
-                  <BaseFormRadio
+                  <BaseRadio
                     id="demo-colors-emerald"
                     v-model="demoColors"
                     name="demo_colors"
@@ -138,7 +138,7 @@ definePageMeta({
                     class="text-emerald-500"
                   />
 
-                  <BaseFormRadio
+                  <BaseRadio
                     id="demo-colors-fuchsia"
                     v-model="demoColors"
                     name="demo_colors"
@@ -147,7 +147,7 @@ definePageMeta({
                     class="text-fuchsia-500"
                   />
 
-                  <BaseFormRadio
+                  <BaseRadio
                     id="demo-colors-rose"
                     v-model="demoColors"
                     name="demo_colors"
@@ -168,7 +168,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Radio properties -->
-        <DocComponentMeta :meta="metaBaseFormRadio" />
+        <DocComponentMeta :meta="metaBaseRadio" />
       </template>
       <!-- Toc -->
       <template #toc>

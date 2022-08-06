@@ -36,7 +36,7 @@ onKeyStroke(['Escape'], () => {
 <template>
   <div>
     <form v-if="isSearching" class="px-6 py-4" @submit.prevent="onBlur">
-      <BaseFormInput
+      <BaseInput
         v-model="filter"
         v-focus
         icon="lucide:search"
@@ -61,7 +61,7 @@ onKeyStroke(['Escape'], () => {
             </button>
           </div>
         </template>
-      </BaseFormInput>
+      </BaseInput>
     </form>
     <template v-else>
       <div class="flex w-full items-center px-6 pt-[8px] pb-[4px]">
@@ -85,7 +85,7 @@ onKeyStroke(['Escape'], () => {
           <BaseIcon name="feather:chevron-left" class="h-6 w-6" />
         </button>
       </div>
-      <FocusLoop class="flex items-end px-6 pb-4">
+      <BaseFocusLoop class="flex items-end px-6 pb-4">
         <BaseButtonAction
           shape="rounded"
           class="rounded-r-none border-r-0 focus:z-10"
@@ -102,7 +102,7 @@ onKeyStroke(['Escape'], () => {
         >
           <span class="text-xs">By names</span>
         </BaseButtonAction>
-      </FocusLoop>
+      </BaseFocusLoop>
     </template>
   </div>
 </template>

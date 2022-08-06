@@ -11,7 +11,7 @@ import {
   textRight,
 } from '@@/documentation/components/dropdown'
 
-import { BaseDropdownItemMeta, BaseDropdownMeta } from '#nuxt-component-meta'
+import { metaBaseDropdown, metaBaseDropdownItem } from '#nuxt-component-meta'
 
 definePageMeta({
   title: 'Dropdowns',

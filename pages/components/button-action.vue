@@ -33,12 +33,12 @@ definePageMeta({
         <DocSection title="Actions shapes" tag="1.0.0">
           <DocComponent label="Default action shapes">
             <template #demo>
-              <FocusLoop class="flex flex-wrap items-end gap-2">
+              <BaseFocusLoop class="flex flex-wrap items-end gap-2">
                 <BaseButtonAction shape="straight">Action</BaseButtonAction>
                 <BaseButtonAction shape="rounded">Action</BaseButtonAction>
                 <BaseButtonAction shape="curved">Action</BaseButtonAction>
                 <BaseButtonAction shape="full">Action</BaseButtonAction>
-              </FocusLoop>
+              </BaseFocusLoop>
             </template>
             <template #code>
               <DocCode language="html" :code="shapes" />
@@ -50,7 +50,7 @@ definePageMeta({
         <DocSection title="Muted actions" tag="1.0.0">
           <DocComponent label="Muted action variation">
             <template #demo>
-              <FocusLoop class="flex flex-wrap items-end gap-2">
+              <BaseFocusLoop class="flex flex-wrap items-end gap-2">
                 <BaseButtonAction shape="straight" muted>
                   Action
                 </BaseButtonAction>
@@ -59,7 +59,7 @@ definePageMeta({
                 </BaseButtonAction>
                 <BaseButtonAction shape="curved" muted>Action</BaseButtonAction>
                 <BaseButtonAction shape="full" muted>Action</BaseButtonAction>
-              </FocusLoop>
+              </BaseFocusLoop>
             </template>
             <template #code>
               <DocCode language="html" :code="muted" />
@@ -71,7 +71,7 @@ definePageMeta({
         <DocSection title="Loading state" tag="1.0.0">
           <DocComponent label="Action loading variation">
             <template #demo>
-              <FocusLoop class="flex flex-wrap items-end gap-2">
+              <BaseFocusLoop class="flex flex-wrap items-end gap-2">
                 <BaseButtonAction shape="straight" loading>
                   Action
                 </BaseButtonAction>
@@ -82,7 +82,7 @@ definePageMeta({
                   Action
                 </BaseButtonAction>
                 <BaseButtonAction shape="full" loading>Action</BaseButtonAction>
-              </FocusLoop>
+              </BaseFocusLoop>
             </template>
             <template #code>
               <DocCode language="html" :code="loading" />
@@ -93,7 +93,7 @@ definePageMeta({
         <DocSection title="Actions group" tag="1.0.0">
           <DocComponent label="Actions inside a group">
             <template #demo>
-              <FocusLoop class="flex items-end">
+              <BaseFocusLoop class="flex items-end">
                 <BaseButtonAction
                   shape="rounded"
                   class="rounded-r-none border-r-0 focus:z-10"
@@ -120,7 +120,7 @@ definePageMeta({
                 >
                   Share
                 </BaseButtonAction>
-              </FocusLoop>
+              </BaseFocusLoop>
             </template>
             <template #code>
               <DocCode language="html" :code="group" />

@@ -22,13 +22,13 @@ import {
   selectedPerson,
 } from '@@/documentation/components/autocomplete/data'
 
-import { metaBaseFormAutocomplete } from '#nuxt-component-meta'
+import { metaBaseAutocomplete } from '#nuxt-component-meta'
 
 definePageMeta({
   title: 'Autocomplete',
   documentation: {
     category: 'Forms',
-    components: ['BaseFormAutocomplete'],
+    components: ['BaseAutocomplete'],
   },
 })
 </script>
@@ -52,7 +52,7 @@ definePageMeta({
             <template #demo>
               <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseFormAutocomplete
+                  <BaseAutocomplete
                     v-model="selectedFramework"
                     :items="frameworks"
                     shape="straight"
@@ -76,7 +76,7 @@ definePageMeta({
             <template #demo>
               <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseFormAutocomplete
+                  <BaseAutocomplete
                     v-model="selectedFramework"
                     :items="frameworks"
                     shape="rounded"
@@ -100,7 +100,7 @@ definePageMeta({
             <template #demo>
               <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseFormAutocomplete
+                  <BaseAutocomplete
                     v-model="selectedFramework"
                     :items="frameworks"
                     shape="curved"
@@ -124,7 +124,7 @@ definePageMeta({
             <template #demo>
               <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseFormAutocomplete
+                  <BaseAutocomplete
                     v-model="selectedFramework"
                     :items="frameworks"
                     shape="full"
@@ -148,7 +148,7 @@ definePageMeta({
             <template #demo>
               <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseFormAutocomplete
+                  <BaseAutocomplete
                     v-model="selectedFramework"
                     :items="frameworks"
                     icon="lucide:search"
@@ -173,7 +173,7 @@ definePageMeta({
             <template #demo>
               <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseFormAutocomplete
+                  <BaseAutocomplete
                     v-model="selectedFramework"
                     :items="frameworks"
                     icon="lucide:search"
@@ -203,7 +203,7 @@ definePageMeta({
             <template #demo>
               <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseFormAutocomplete
+                  <BaseAutocomplete
                     v-model="selectedFramework"
                     :items="frameworks"
                     icon="lucide:search"
@@ -230,7 +230,7 @@ definePageMeta({
             <template #demo>
               <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseFormAutocomplete
+                  <BaseAutocomplete
                     v-model="selectedFramework"
                     :items="frameworks"
                     icon="lucide:search"
@@ -257,7 +257,7 @@ definePageMeta({
             <template #demo>
               <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseFormAutocomplete
+                  <BaseAutocomplete
                     v-model="selectedHobby"
                     :items="hobbies"
                     icon="ph:heartbeat-duotone"
@@ -283,7 +283,7 @@ definePageMeta({
             <template #demo>
               <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseFormAutocomplete
+                  <BaseAutocomplete
                     v-model="selectedPerson"
                     :items="people"
                     icon="ph:users-three"
@@ -308,7 +308,7 @@ definePageMeta({
             <template #demo>
               <div class="flex max-w-lg flex-col gap-6">
                 <div class="w-full space-y-4">
-                  <BaseFormAutocomplete
+                  <BaseAutocomplete
                     v-model="selectedPeople"
                     :items="people"
                     shape="rounded"
@@ -328,7 +328,7 @@ definePageMeta({
           </DocComponent>
         </DocSection>
 
-        <DocComponentMeta :meta="metaBaseFormAutocomplete" />
+        <DocComponentMeta :meta="metaBaseAutocomplete" />
       </template>
       <!-- Toc -->
       <template #toc>

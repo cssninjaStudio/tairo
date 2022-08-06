@@ -101,7 +101,7 @@ const handleLinkClick = (e: MouseEvent, page = 1) => {
 
 <template>
   <div class="inline-flex w-full flex-col md:flex-row md:justify-between">
-    <FocusLoop
+    <BaseFocusLoop
       as="ul"
       class="mb-4 inline-flex flex-wrap gap-2 border border-muted-200 bg-muted-100 p-1 dark:border-muted-600 dark:bg-muted-700 md:mb-0 md:gap-1"
       :class="[
@@ -203,9 +203,9 @@ const handleLinkClick = (e: MouseEvent, page = 1) => {
         </NuxtLink>
       </li>
       <slot name="after-pagination"></slot>
-    </FocusLoop>
+    </BaseFocusLoop>
 
-    <FocusLoop
+    <BaseFocusLoop
       class="flex items-center justify-end gap-1 border border-muted-200 bg-muted-100 p-1 dark:border-muted-600 dark:bg-muted-700"
       :class="[
         props.shape === 'rounded' && 'rounded-md',
@@ -247,6 +247,6 @@ const handleLinkClick = (e: MouseEvent, page = 1) => {
         <BaseIcon name="lucide:chevron-right" class="block h-4 w-4" />
       </NuxtLink>
       <slot name="after-navigation"></slot>
-    </FocusLoop>
+    </BaseFocusLoop>
   </div>
 </template>

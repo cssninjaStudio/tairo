@@ -33,19 +33,19 @@ const props = withDefaults(defineProps<TagProps>(), {
         'text-muted-500 bg-muted-200 dark:text-white dark:bg-muted-700',
       props.color === 'primary' &&
         props.flavor === 'solid' &&
-        'bg-primary-400 dark:bg-primary-500 text-white hover:shadow-lg',
+        'bg-primary-400 dark:bg-primary-500 text-white',
       props.color === 'info' &&
         props.flavor === 'solid' &&
-        'bg-info-400 dark:bg-info-500   text-white hover:shadow-lg',
+        'bg-info-400 dark:bg-info-500   text-white',
       props.color === 'success' &&
         props.flavor === 'solid' &&
-        'bg-success-400 dark:bg-success-500  text-white hover:shadow-lg',
+        'bg-success-400 dark:bg-success-500  text-white',
       props.color === 'warning' &&
         props.flavor === 'solid' &&
-        'bg-warning-400 dark:bg-warning-500 text-white hover:shadow-lg',
+        'bg-warning-400 dark:bg-warning-500 text-white',
       props.color === 'danger' &&
         props.flavor === 'solid' &&
-        'bg-danger-400 dark:bg-danger-500 text-white hover:shadow-lg',
+        'bg-danger-400 dark:bg-danger-500 text-white',
       props.color === 'primary' &&
         props.flavor === 'pastel' &&
         'bg-primary-100  text-primary-500 border border-primary-100 dark:border-primary-500 dark:bg-transparent dark:text-primary-500',

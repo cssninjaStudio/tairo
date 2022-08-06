@@ -16,13 +16,13 @@ import {
   textareaStraight,
 } from '@@/documentation/components/form/textarea/data'
 
-import { metaBaseFormTextarea } from '#nuxt-component-meta'
+import { metaBaseTextarea } from '#nuxt-component-meta'
 
 definePageMeta({
   title: 'Textarea',
   documentation: {
     category: 'Forms',
-    components: ['BaseFormTextarea'],
+    components: ['BaseTextarea'],
   },
 })
 </script>
@@ -46,7 +46,7 @@ definePageMeta({
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseFormTextarea
+                  <BaseTextarea
                     v-model="textareaStraight"
                     label="Message"
                     shape="straight"
@@ -69,7 +69,7 @@ definePageMeta({
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseFormTextarea
+                  <BaseTextarea
                     v-model="textareaRounded"
                     label="Message"
                     shape="rounded"
@@ -92,7 +92,7 @@ definePageMeta({
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseFormTextarea
+                  <BaseTextarea
                     v-model="textareaCurved"
                     label="Message"
                     shape="curved"
@@ -115,7 +115,7 @@ definePageMeta({
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseFormTextarea
+                  <BaseTextarea
                     label="Message"
                     shape="rounded"
                     placeholder="Write a message..."
@@ -136,7 +136,7 @@ definePageMeta({
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseFormTextarea
+                  <BaseTextarea
                     label="Message"
                     shape="rounded"
                     placeholder="Write a message..."
@@ -157,7 +157,7 @@ definePageMeta({
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseFormTextarea
+                  <BaseTextarea
                     label="Description"
                     shape="rounded"
                     placeholder="Write a message..."
@@ -182,7 +182,7 @@ definePageMeta({
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseFormTextarea
+                  <BaseTextarea
                     label="Description"
                     shape="rounded"
                     placeholder="Write a message..."
@@ -203,7 +203,7 @@ definePageMeta({
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseFormTextarea
+                  <BaseTextarea
                     v-model="textareaRounded"
                     label="Message"
                     shape="curved"
@@ -229,7 +229,7 @@ definePageMeta({
                         </BaseButton>
                       </div>
                     </template>
-                  </BaseFormTextarea>
+                  </BaseTextarea>
                 </div>
               </div>
             </template>
@@ -240,7 +240,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Textarea properties -->
-        <DocComponentMeta :meta="metaBaseFormTextarea" />
+        <DocComponentMeta :meta="metaBaseTextarea" />
       </template>
 
       <!-- Toc -->

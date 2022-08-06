@@ -14,13 +14,13 @@ import {
   demoTwo,
 } from '@@/documentation/components/form/checkbox/data'
 
-import { metaBaseFormCheckbox } from '#nuxt-component-meta'
+import { metaBaseCheckbox } from '#nuxt-component-meta'
 
 definePageMeta({
   title: 'Checkbox',
   documentation: {
     category: 'Forms',
-    components: ['BaseFormCheckbox'],
+    components: ['BaseCheckbox'],
   },
 })
 </script>
@@ -44,7 +44,7 @@ definePageMeta({
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseFormCheckbox
+                  <BaseCheckbox
                     v-model="demoOne"
                     name="demo-1"
                     label="Straight checkbox"
@@ -68,7 +68,7 @@ definePageMeta({
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseFormCheckbox
+                  <BaseCheckbox
                     v-model="demoTwo"
                     name="demo-2"
                     label="Rounded checkbox"
@@ -92,7 +92,7 @@ definePageMeta({
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseFormCheckbox
+                  <BaseCheckbox
                     v-model="demoThree"
                     name="demo-3"
                     label="Curved checkbox"
@@ -116,7 +116,7 @@ definePageMeta({
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseFormCheckbox
+                  <BaseCheckbox
                     v-model="demoFour"
                     name="demo-4"
                     label="Circle checkbox"
@@ -142,8 +142,8 @@ definePageMeta({
         >
           <DocComponent label="Straight checkbox example">
             <template #demo>
-              <FocusLoop class="flex flex-wrap items-end gap-4">
-                <BaseFormCheckbox
+              <BaseFocusLoop class="flex flex-wrap items-end gap-4">
+                <BaseCheckbox
                   v-model="demoStraight"
                   name="demo-5"
                   label="Straight"
@@ -151,7 +151,7 @@ definePageMeta({
                   class="text-gray-500"
                 />
 
-                <BaseFormCheckbox
+                <BaseCheckbox
                   v-model="demoStraight"
                   name="demo-6"
                   label="Straight"
@@ -159,7 +159,7 @@ definePageMeta({
                   class="text-emerald-500"
                 />
 
-                <BaseFormCheckbox
+                <BaseCheckbox
                   v-model="demoStraight"
                   name="demo-7"
                   label="Rounded"
@@ -167,7 +167,7 @@ definePageMeta({
                   class="text-yellow-500"
                 />
 
-                <BaseFormCheckbox
+                <BaseCheckbox
                   v-model="demoStraight"
                   name="demo-8"
                   label="Rounded"
@@ -175,7 +175,7 @@ definePageMeta({
                   class="text-pink-500"
                 />
 
-                <BaseFormCheckbox
+                <BaseCheckbox
                   v-model="demoStraight"
                   name="demo-9"
                   label="Curved"
@@ -183,7 +183,7 @@ definePageMeta({
                   class="text-indigo-500"
                 />
 
-                <BaseFormCheckbox
+                <BaseCheckbox
                   v-model="demoStraight"
                   name="demo-10"
                   label="Curved"
@@ -191,7 +191,7 @@ definePageMeta({
                   class="text-primary-500"
                 />
 
-                <BaseFormCheckbox
+                <BaseCheckbox
                   v-model="demoStraight"
                   name="demo-11"
                   label="Circle"
@@ -199,14 +199,14 @@ definePageMeta({
                   class="text-amber-500"
                 />
 
-                <BaseFormCheckbox
+                <BaseCheckbox
                   v-model="demoStraight"
                   name="demo-12"
                   label="Circle"
                   shape="circle"
                   class="text-rose-500"
                 />
-              </FocusLoop>
+              </BaseFocusLoop>
             </template>
             <template #code>
               <DocCode language="html" :code="colors" />
@@ -215,7 +215,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Checkbox properties -->
-        <DocComponentMeta :meta="metaBaseFormCheckbox" />
+        <DocComponentMeta :meta="metaBaseCheckbox" />
       </template>
       <!-- Toc -->
       <template #toc>

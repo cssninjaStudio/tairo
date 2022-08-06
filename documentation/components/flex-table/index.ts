@@ -28,7 +28,7 @@ const team = [
     <template #header>
       <BaseFlexTableHeading type="shrink">
         <div class="flex items-center">
-          <BaseFormCheckbox
+          <BaseCheckbox
             name="table-1-main"
             shape="straight"
             class="text-primary-500"
@@ -59,7 +59,7 @@ const team = [
     >
       <BaseFlexTableCell type="shrink" data-content="Selection">
         <div class="flex items-center">
-          <BaseFormCheckbox
+          <BaseCheckbox
             :name="member.id"
             shape="straight"
             class="text-primary-500"
@@ -163,7 +163,7 @@ const team = [
     <template #header>
       <BaseFlexTableHeading type="shrink">
         <div class="flex items-center">
-          <BaseFormCheckbox
+          <BaseCheckbox
             name="table-1-main"
             shape="rounded"
             class="text-primary-500"
@@ -194,7 +194,7 @@ const team = [
     >
       <BaseFlexTableCell type="shrink" data-content="Selection">
         <div class="flex items-center">
-          <BaseFormCheckbox
+          <BaseCheckbox
             :name="member.id"
             shape="rounded"
             class="text-primary-500"
@@ -298,7 +298,7 @@ const team = [
     <template #header>
       <BaseFlexTableHeading type="shrink">
         <div class="flex items-center">
-          <BaseFormCheckbox
+          <BaseCheckbox
             name="table-1-main"
             shape="curved"
             class="text-primary-500"
@@ -329,7 +329,7 @@ const team = [
     >
       <BaseFlexTableCell type="shrink" data-content="Selection">
         <div class="flex items-center">
-          <BaseFormCheckbox
+          <BaseCheckbox
             :name="member.id"
             shape="curved"
             class="text-primary-500"

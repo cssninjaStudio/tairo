@@ -36,12 +36,12 @@ definePageMeta({
         <DocSection title="Buttons shapes" tag="1.0.0">
           <DocComponent label="Default button shapes">
             <template #demo>
-              <FocusLoop class="flex flex-wrap items-end gap-4">
+              <BaseFocusLoop class="flex flex-wrap items-end gap-4">
                 <BaseButton shape="straight">Button</BaseButton>
                 <BaseButton>Button</BaseButton>
                 <BaseButton shape="curved">Button</BaseButton>
                 <BaseButton shape="full">Button</BaseButton>
-              </FocusLoop>
+              </BaseFocusLoop>
             </template>
             <template #code>
               <DocCode language="html" :code="shapes" />
@@ -53,7 +53,7 @@ definePageMeta({
         <DocSection title="Link buttons" tag="1.0.0">
           <DocComponent label="Button shaped links">
             <template #demo>
-              <FocusLoop class="flex flex-wrap items-end gap-4">
+              <BaseFocusLoop class="flex flex-wrap items-end gap-4">
                 <BaseButton to="/components/button" shape="straight">
                   Button
                 </BaseButton>
@@ -69,7 +69,7 @@ definePageMeta({
                 >
                   Button
                 </BaseButton>
-              </FocusLoop>
+              </BaseFocusLoop>
             </template>
             <template #code>
               <DocCode language="html" :code="links" />
@@ -81,7 +81,7 @@ definePageMeta({
         <DocSection title="Solid colors" tag="1.0.0">
           <DocComponent label="Solid button colors">
             <template #demo>
-              <FocusLoop class="flex flex-wrap items-end gap-4">
+              <BaseFocusLoop class="flex flex-wrap items-end gap-4">
                 <BaseButton>Button</BaseButton>
                 <BaseButton color="primary">Button</BaseButton>
                 <BaseButton color="success">Button</BaseButton>
@@ -89,7 +89,7 @@ definePageMeta({
                 <BaseButton color="warning">Button</BaseButton>
                 <BaseButton color="danger">Button</BaseButton>
                 <BaseButton muted>Button</BaseButton>
-              </FocusLoop>
+              </BaseFocusLoop>
             </template>
             <template #code>
               <DocCode language="html" :code="solid" />
@@ -101,13 +101,13 @@ definePageMeta({
         <DocSection title="Pastel colors" tag="1.0.0">
           <DocComponent label="Pastel button colors">
             <template #demo>
-              <FocusLoop class="flex flex-wrap items-end gap-4">
+              <BaseFocusLoop class="flex flex-wrap items-end gap-4">
                 <BaseButton color="primary" flavor="pastel">Button</BaseButton>
                 <BaseButton color="success" flavor="pastel">Button</BaseButton>
                 <BaseButton color="info" flavor="pastel">Button</BaseButton>
                 <BaseButton color="warning" flavor="pastel">Button</BaseButton>
                 <BaseButton color="danger" flavor="pastel">Button</BaseButton>
-              </FocusLoop>
+              </BaseFocusLoop>
             </template>
             <template #code>
               <DocCode language="html" :code="pastel" />
@@ -119,13 +119,13 @@ definePageMeta({
         <DocSection title="Outline colors" tag="1.0.0">
           <DocComponent label="Outline button colors">
             <template #demo>
-              <FocusLoop class="flex flex-wrap items-end gap-4">
+              <BaseFocusLoop class="flex flex-wrap items-end gap-4">
                 <BaseButton color="primary" flavor="outline">Button</BaseButton>
                 <BaseButton color="success" flavor="outline">Button</BaseButton>
                 <BaseButton color="info" flavor="outline">Button</BaseButton>
                 <BaseButton color="warning" flavor="outline">Button</BaseButton>
                 <BaseButton color="danger" flavor="outline">Button</BaseButton>
-              </FocusLoop>
+              </BaseFocusLoop>
             </template>
             <template #code>
               <DocCode language="html" :code="outline" />
@@ -137,14 +137,14 @@ definePageMeta({
         <DocSection title="Loading state" tag="1.0.0">
           <DocComponent label="Button placeload insertion">
             <template #demo>
-              <FocusLoop class="flex flex-wrap items-end gap-4">
+              <BaseFocusLoop class="flex flex-wrap items-end gap-4">
                 <BaseButton color="default" loading>Button</BaseButton>
                 <BaseButton color="primary" loading>Button</BaseButton>
                 <BaseButton color="success" loading>Button</BaseButton>
                 <BaseButton color="info" loading>Button</BaseButton>
                 <BaseButton color="warning" loading>Button</BaseButton>
                 <BaseButton color="danger" loading>Button</BaseButton>
-              </FocusLoop>
+              </BaseFocusLoop>
             </template>
             <template #code>
               <DocCode language="html" :code="loading" />
@@ -156,7 +156,7 @@ definePageMeta({
         <DocSection title="With icons" tag="1.0.0">
           <DocComponent label="Button icons insertion">
             <template #demo>
-              <FocusLoop class="flex flex-wrap items-end gap-4">
+              <BaseFocusLoop class="flex flex-wrap items-end gap-4">
                 <BaseButton color="default">
                   <BaseIcon name="lucide:moon" class="-ml-1 h-4 w-4" />
                   <span>Button</span>
@@ -181,7 +181,7 @@ definePageMeta({
                   <BaseIcon name="ph:heart-duotone" class="-ml-1 h-4 w-4" />
                   <span>Button</span>
                 </BaseButton>
-              </FocusLoop>
+              </BaseFocusLoop>
             </template>
             <template #code>
               <DocCode language="html" :code="icons" />
@@ -193,14 +193,14 @@ definePageMeta({
         <DocSection title="Disabled state" tag="1.0.0">
           <DocComponent label="Button disabled state">
             <template #demo>
-              <FocusLoop class="flex flex-wrap items-end gap-4">
+              <BaseFocusLoop class="flex flex-wrap items-end gap-4">
                 <BaseButton color="default" disabled>Button</BaseButton>
                 <BaseButton color="primary" disabled>Button</BaseButton>
                 <BaseButton color="success" disabled>Button</BaseButton>
                 <BaseButton color="info" disabled>Button</BaseButton>
                 <BaseButton color="warning" disabled>Button</BaseButton>
                 <BaseButton color="danger" disabled>Button</BaseButton>
-              </FocusLoop>
+              </BaseFocusLoop>
             </template>
             <template #code>
               <DocCode language="html" :code="disabled" />
@@ -212,7 +212,7 @@ definePageMeta({
         <DocSection title="Button group" tag="1.0.0">
           <DocComponent label="Setting a button group">
             <template #demo>
-              <FocusLoop class="flex flex-wrap items-end gap-2">
+              <BaseFocusLoop class="flex flex-wrap items-end gap-2">
                 <BaseButton color="default">
                   <BaseIcon name="lucide:edit-3" class="-ml-1 h-3 w-3" />
                   <span>Edit</span>
@@ -225,7 +225,7 @@ definePageMeta({
                   <BaseIcon name="lucide:share-2" class="-ml-1 h-3 w-3" />
                   <span>Share</span>
                 </BaseButton>
-              </FocusLoop>
+              </BaseFocusLoop>
             </template>
             <template #code>
               <DocCode language="html" :code="group" />

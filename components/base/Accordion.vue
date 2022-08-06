@@ -66,7 +66,7 @@ const toggle = (key: number) => {
 </script>
 
 <template>
-  <FocusLoop
+  <BaseFocusLoop
     class="block overflow-hidden border border-muted-200 bg-white"
     :class="[
       exclusive && 'is-exclusive',
@@ -166,5 +166,5 @@ const toggle = (key: number) => {
         </div>
       </slot>
     </details>
-  </FocusLoop>
+  </BaseFocusLoop>
 </template>
