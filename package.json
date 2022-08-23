@@ -33,7 +33,7 @@
     "@types/prismjs": "1.26.0",
     "@vueform/slider": "2.0.10",
     "@vueuse/core": "8.7.5",
-    "@vueuse/nuxt": "8.7.5",
+    "@vueuse/nuxt": "9.1.1",
     "autoprefixer": "10.4.7",
     "defu": "6.0.0",
     "eslint": "8.19.0",
