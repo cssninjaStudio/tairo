@@ -32,7 +32,7 @@
     "@types/markdown-it": "12.2.3",
     "@types/prismjs": "1.26.0",
     "@vueform/slider": "2.0.10",
-    "@vueuse/core": "8.7.5",
+    "@vueuse/core": "9.1.1",
     "@vueuse/nuxt": "8.7.5",
     "autoprefixer": "10.4.7",
     "defu": "6.0.0",
