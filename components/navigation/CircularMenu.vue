@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const { openPanel } = usePanels()
-const { y } = useWindowScrollFixed()
+const { y } = useWindowScroll()
 
 const isOpened = ref(false)
 const isScrolled = computed(() => {

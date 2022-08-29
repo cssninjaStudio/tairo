@@ -1,6 +1,6 @@
 <script lang="ts">
 import 'prismjs'
-import 'prismjs/components/prism-typescript'
+// import 'prismjs/components/prism-typescript'
 import 'prism-theme-vars/base.css'
 import '~/assets/css/modules/prism.css'
 </script>

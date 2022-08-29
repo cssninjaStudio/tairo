@@ -2,19 +2,15 @@ import { defineNuxtConfig } from 'nuxt'
 
 export default defineNuxtConfig({
   modules: [
-    '@vueuse/nuxt',
+    '@cssninja/nuxt-ui',
     '@pinia/nuxt',
-    '@nuxtjs/tailwindcss',
-    '@nuxtjs/color-mode',
-    './modules/components-meta',
+    'nuxt-component-meta',
   ],
   colorMode: {
     classSuffix: '',
   },
   componentMeta: {
-    checkerOptions: {
-      schema: [],
-    },
+    checkerOptions: {},
   },
   css: [
     '~/assets/css/tooltips.css',
