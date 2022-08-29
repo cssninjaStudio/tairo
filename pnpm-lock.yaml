@@ -5,7 +5,7 @@ specifiers:
   '@ckeditor/ckeditor5-build-classic': 34.2.0
   '@ckeditor/ckeditor5-vue': 4.0.1
   '@cssninja/nuxt-ui': 0.0.9
-  '@iconify/json': 2.1.82
+  '@iconify/json': 2.1.100
   '@pinia/nuxt': 0.4.1
   '@types/markdown-it': 12.2.3
   '@types/prismjs': 1.26.0
@@ -18,9 +18,9 @@ specifiers:
   eslint-plugin-vuejs-accessibility: 1.2.0
   lint-staged: 13.0.3
   markdown-it: 13.0.1
-  markdown-it-prism: 2.2.4
+  markdown-it-prism: 2.2.5
   npm-run-all: 4.1.5
-  nuxt: 3.0.0-rc.6
+  nuxt: 3.0.0-rc.8
   nuxt-component-meta: 0.2.1
   pinia: 2.0.21
   prettier: 2.7.1
@@ -29,14 +29,14 @@ specifiers:
   typescript: 4.8.2
   vue-prism-component: 2.0.0
   vue-tsc: 0.40.4
-  vue3-carousel: 0.1.40
+  vue3-carousel: 0.1.46
 
 devDependencies:
   '@antfu/eslint-config': 0.26.2_yqf6kl63nyoq5megxukfnom5rm
   '@ckeditor/ckeditor5-build-classic': 34.2.0
   '@ckeditor/ckeditor5-vue': 4.0.1
   '@cssninja/nuxt-ui': 0.0.9
-  '@iconify/json': 2.1.82
+  '@iconify/json': 2.1.100
   '@pinia/nuxt': 0.4.1_typescript@4.8.2
   '@types/markdown-it': 12.2.3
   '@types/prismjs': 1.26.0
@@ -49,9 +49,9 @@ devDependencies:
   eslint-plugin-vuejs-accessibility: 1.2.0_eslint@8.23.0
   lint-staged: 13.0.3
   markdown-it: 13.0.1
-  markdown-it-prism: 2.2.4
+  markdown-it-prism: 2.2.5
   npm-run-all: 4.1.5
-  nuxt: 3.0.0-rc.6
+  nuxt: 3.0.0-rc.8
   nuxt-component-meta: 0.2.1_typescript@4.8.2
   pinia: 2.0.21_typescript@4.8.2
   prettier: 2.7.1
@@ -60,7 +60,7 @@ devDependencies:
   typescript: 4.8.2
   vue-prism-component: 2.0.0
   vue-tsc: 0.40.4_typescript@4.8.2
-  vue3-carousel: 0.1.40
+  vue3-carousel: 0.1.46
 
 packages:
 
@@ -866,8 +866,8 @@ packages:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
     dev: true
 
-  /@iconify/json/2.1.82:
-    resolution: {integrity: sha512-0ruqhpYSqUwLbxVTGdfPw4QkAhl0i3aK3uuXbV++WS/QTCz7WndNnfXsyFJI07WqWyuH7NqPZMpK4R264/bqUQ==}
+  /@iconify/json/2.1.100:
+    resolution: {integrity: sha512-ztPJgsoqJQ2T216O0Wl94YmK085kLWeu25SekkwZaaTVZ5XaByER/h84AWGaKz7sBnnvdWJ+8ExAGyBGdr44bg==}
     dependencies:
       '@iconify/types': 1.1.0
       pathe: 0.3.5
@@ -1177,8 +1177,8 @@ packages:
       - webpack
     dev: true
 
-  /@nuxt/ui-templates/0.2.2:
-    resolution: {integrity: sha512-M6/x5Rvz/+YiYdEQISEXuVstu2S71lu2Q9rlQv/SQG3gm+u0O7ZNxvQDx8RFMCYitf99MhOYUArXz36UtjwyHw==}
+  /@nuxt/ui-templates/0.3.2:
+    resolution: {integrity: sha512-o0KRB0Mna/M5QxqMe+XvlfKczFz3CQMlkEr6Ztyphp+00jq1Ti0AXdq1XAt9hXI3LoZRh4+2vVX331UaIZQQzQ==}
     dev: true
 
   /@nuxt/vite-builder/3.0.0-rc.8_vue@3.2.37:
@@ -2299,12 +2299,6 @@ packages:
       semver: 7.3.7
     dev: true
 
-  /bundle-runner/0.0.1:
-    resolution: {integrity: sha512-xevhXw77nJ7wjCRTyo1JYumUNUiZmD0CJEummyLUJbdhub4bZWuplS+Y7nlMq5V9sKJQW+dV/LZR/SlxS5f4LQ==}
-    dependencies:
-      source-map: 0.7.4
-    dev: true
-
   /c12/0.2.9:
     resolution: {integrity: sha512-6jYdexgAKr+3kYoTmvC5eDtDHUg7GmFQSdeQqZzAKiPlFAN1heGUoXDbAYYwUCfefZy+WgVJbmAej5TTQpp3jA==}
     dependencies:
@@ -2609,7 +2603,7 @@ packages:
     dev: true
 
   /concat-map/0.0.1:
-    resolution: {integrity: sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=}
+    resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
     dev: true
 
   /consola/2.15.3:
@@ -3074,7 +3068,7 @@ packages:
     dev: true
 
   /ee-first/1.1.1:
-    resolution: {integrity: sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=}
+    resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==}
     dev: true
 
   /electron-to-chromium/1.4.233:
@@ -5387,11 +5381,11 @@ packages:
       semver: 6.3.0
     dev: true
 
-  /markdown-it-prism/2.2.4:
-    resolution: {integrity: sha512-7oQVppKjiZqVQo7s7eLTIs3o/0hdvqAWDW8lvRel6eUCGD4iXjKbSZjvdHZFA2ZnCkQUF47kbvtWZDVQrv7zyQ==}
+  /markdown-it-prism/2.2.5:
+    resolution: {integrity: sha512-joodcO4elSJeeQGzf47hPxFDlzDpYme7aaJ/0TyTcAAKq7oSzaodJ2VpwRMy1rfoup8+v8CwEDcf8QKn08ixSw==}
     engines: {node: '>=6.0.0'}
     dependencies:
-      prismjs: 1.28.0
+      prismjs: 1.29.0
     dev: true
 
   /markdown-it/13.0.1:
@@ -5864,8 +5858,8 @@ packages:
       - webpack
     dev: true
 
-  /nuxt/3.0.0-rc.6:
-    resolution: {integrity: sha512-Ko/LBIUBf25bSXKoRnPEplMngw2dHU8qkV5Twdm7yZ0DfdFkwaTVzTtwvbWsFt+H9vh1aUUTCSyEWnmNorkkxQ==}
+  /nuxt/3.0.0-rc.8:
+    resolution: {integrity: sha512-4LLs/I4BJz8j20mHfPEMDhnYV2GJGK8jE7pHqJ3L0r2QZg4JrCHSUWXi07+gERvHcKCnv6zGyTmPspJx/9A9Qw==}
     engines: {node: ^14.16.0 || ^16.11.0 || ^17.0.0 || ^18.0.0}
     hasBin: true
     dependencies:
@@ -5873,7 +5867,7 @@ packages:
       '@nuxt/kit': 3.0.0-rc.8
       '@nuxt/schema': 3.0.0-rc.8
       '@nuxt/telemetry': 2.1.4
-      '@nuxt/ui-templates': 0.2.2
+      '@nuxt/ui-templates': 0.3.2
       '@nuxt/vite-builder': 3.0.0-rc.8_vue@3.2.37
       '@vue/reactivity': 3.2.37
       '@vue/shared': 3.2.37
@@ -5897,16 +5891,16 @@ packages:
       ohmyfetch: 0.4.18
       pathe: 0.3.5
       perfect-debounce: 0.1.3
-      scule: 0.2.1
+      scule: 0.3.2
       strip-literal: 0.4.0
       ufo: 0.8.5
-      unctx: 1.2.0
+      unctx: 2.0.2
       unenv: 0.5.4
-      unimport: 0.4.7
-      unplugin: 0.7.2
+      unimport: 0.6.7
+      unplugin: 0.9.5
       untyped: 0.4.7
       vue: 3.2.37
-      vue-bundle-renderer: 0.3.9
+      vue-bundle-renderer: 0.4.2
       vue-router: 4.1.5_vue@3.2.37
     transitivePeerDependencies:
       - bufferutil
@@ -6932,11 +6926,6 @@ packages:
 
   /prism-theme-vars/0.2.4:
     resolution: {integrity: sha512-B3Pht+GCT87sZph7hMRLlCQXzCM0awW7Rhk08RavpqRW4LEQOeqN0uMG4QCWkul2tr8PB61YAOJGUrEW+1uuJA==}
-    dev: true
-
-  /prismjs/1.28.0:
-    resolution: {integrity: sha512-8aaXdYvl1F7iC7Xm1spqSaY/OJBpYW3v+KJ+F17iYxvdc8sfjW194COK5wVhMZX45tGteiBQgdvD/nhxcRwylw==}
-    engines: {node: '>=6'}
     dev: true
 
   /prismjs/1.29.0:
@@ -8382,12 +8371,6 @@ packages:
     resolution: {integrity: sha512-EcswR2S8bpR7fD0YPeS7r2xXExrScVMxg4MedACaWHEtx9ftCF/qHG1xGkolzTPcEmjTavCQgbVzHUIdTMzFGA==}
     dev: true
 
-  /vue-bundle-renderer/0.3.9:
-    resolution: {integrity: sha512-jhkyS2Zaey9OAp2xVyGnN0//lLfNtT2elFq1NevaY4JwQEw27DFS970rQbNYPds2WXeq2H/O2HM+qCPcsimJGg==}
-    dependencies:
-      bundle-runner: 0.0.1
-    dev: true
-
   /vue-bundle-renderer/0.4.2:
     resolution: {integrity: sha512-HwWd/qw3QBQvZXlK7xQbOViCoDzSaodSueao0Yt3VUxReLDt90FAaufXjv2hfpHQKvYCo5Rez8z1zHOEo3fhAg==}
     dependencies:
@@ -8473,8 +8456,8 @@ packages:
       '@vue/shared': 3.2.37
     dev: true
 
-  /vue3-carousel/0.1.40:
-    resolution: {integrity: sha512-rPIfBxFhsY6W6qKNGsjgzPJdngt07ov06/Ql1lKsTr8gBx73gUxCIIQo/7M3QCx3KU94CDGBbLugF5YGdEPefg==}
+  /vue3-carousel/0.1.46:
+    resolution: {integrity: sha512-bBZRpt5vuaS3SYkyt3pF5N+VWTKrDlYeNnLKKwePcrGu77AKqZjofFR113tZi4aFF7rblvk8WqFdBWTNX+yZcg==}
     peerDependencies:
       vue: ^3.2.0
     peerDependenciesMeta:
