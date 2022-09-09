@@ -5,7 +5,7 @@ const { toc } = useToc()
 const route = useRoute()
 const activeAnchor = ref('')
 const ids = toc.value.map(({ id }) => `#${id}`)
-const { activeIds } = useScrollspy(
+const { activeIds } = useNinjaScrollspy(
   {
     rootMargin: '0px 0px -90% 0px',
   },

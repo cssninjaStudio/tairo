@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { onKeyStroke } from '@vueuse/core';
 import type { Directive } from 'vue'
 
 const { toggleSidebar } = useSidebar()

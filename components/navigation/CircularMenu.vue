@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const { openPanel } = usePanels()
-const { y } = useWindowScroll()
+const { y } = useNinjaWindowScroll()
 
 const isOpened = ref(false)
 const isScrolled = computed(() => {

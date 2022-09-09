@@ -3,6 +3,8 @@
 
 // import { } from '@@/documentation/components/form/file'
 
+import { metaBaseInputFile } from '#nuxt-component-meta'
+
 definePageMeta({
   title: 'File inputs',
   documentation: {
@@ -20,9 +22,14 @@ definePageMeta({
     <!-- Documentation Layout -->
     <DocLayout>
       <!-- content -->
-      <template #content></template>
+      <template #content>
+        <!-- Input properties -->
+        <DocComponentMeta :meta="metaBaseInputFile" />
+      </template>
       <!-- Toc -->
-      <template #toc></template>
+      <template #toc>
+        <DocToc />
+      </template>
     </DocLayout>
   </div>
 </template>
