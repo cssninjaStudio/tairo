@@ -15,7 +15,7 @@ specifiers:
   eslint-config-prettier: 8.5.0
   eslint-plugin-prettier-vue: 4.2.0
   eslint-plugin-tailwindcss: 3.6.0
-  eslint-plugin-vuejs-accessibility: 1.2.0
+  eslint-plugin-vuejs-accessibility: 2.0.0
   lint-staged: 13.0.3
   markdown-it: 13.0.1
   markdown-it-prism: 2.2.5
@@ -46,7 +46,7 @@ devDependencies:
   eslint-config-prettier: 8.5.0_eslint@8.23.0
   eslint-plugin-prettier-vue: 4.2.0
   eslint-plugin-tailwindcss: 3.6.0
-  eslint-plugin-vuejs-accessibility: 1.2.0_eslint@8.23.0
+  eslint-plugin-vuejs-accessibility: 2.0.0_eslint@8.23.0
   lint-staged: 13.0.3
   markdown-it: 13.0.1
   markdown-it-prism: 2.2.5
@@ -3951,8 +3951,8 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-plugin-vuejs-accessibility/1.2.0_eslint@8.23.0:
-    resolution: {integrity: sha512-wF7kT22lS2VOmIpDeI65bnFFKFgESEEpI+CWKr43mdfDRywA4sCk7cKhtZsvfbPOtKO0GDlnpFxZbOIGsFn7IQ==}
+  /eslint-plugin-vuejs-accessibility/2.0.0_eslint@8.23.0:
+    resolution: {integrity: sha512-mjbXnncDT9+5K+/QXXhOVWhEU6OOJck/JNlC6tewo3R+Kzsbaecyq3ylN1NqmyKo78vsgun34JLd+vGdxSPFWQ==}
     peerDependencies:
       eslint: ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0
     dependencies:
