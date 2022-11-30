@@ -34,17 +34,19 @@ const isInterface = computed(() => {
           v-if="schema.description"
           class="italic text-[color:var(--prism-comment)]"
         >
-          <p>/**</p>
-          <p v-if="schema.description">&nbsp;*&nbsp;{{ schema.description }}</p>
-          <!-- <p v-for="tag in schema.tags" :key="tag.name">
+          <div>/**</div>
+          <div v-if="schema.description">
+            &nbsp;*&nbsp;{{ schema.description }}
+          </div>
+          <!-- <div v-for="tag in schema.tags" :key="tag.name">
             &nbsp;*&nbsp;@{{ tag.name
             }}<span v-if="tag.text" class="whitespace-pre pl-1">{{
               tag.text
             }}</span>
-          </p> -->
-          <p>&nbsp;*/</p>
+          </div> -->
+          <div>&nbsp;*/</div>
         </div>
-        <p>
+        <div>
           <span class="text-[color:var(--prism-property)]">{{
             schema.name
           }}</span
@@ -52,7 +54,7 @@ const isInterface = computed(() => {
           <span class="text-[color:var(--prism-keyword)]">{{
             schema.type
           }}</span>
-        </p>
+        </div>
       </div>
     </template>
     <span class="text-[color:var(--prism-punctuation)]">

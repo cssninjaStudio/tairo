@@ -5,7 +5,7 @@ import {
   radioSelected,
 } from '@@/documentation/components/form/radio/data'
 
-import { metaBaseRadio } from '#nuxt-component-meta'
+
 
 definePageMeta({
   title: 'Radios',
@@ -168,7 +168,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Radio properties -->
-        <DocComponentMeta :meta="metaBaseRadio" />
+        <DocComponentMeta name="BaseRadio" />
       </template>
       <!-- Toc -->
       <template #toc>

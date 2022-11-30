@@ -3,7 +3,7 @@ export const useDocumentationMenu = () => {
   const filter = useState('dm-filter', () => '')
   const displayMode = useState<'category' | 'component'>(
     'dm-display-mode',
-    () => 'category'
+    () => 'category',
   )
 
   const reset = () => {

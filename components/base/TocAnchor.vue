@@ -22,25 +22,9 @@ const props = withDefaults(defineProps<TocAnchorProps>(), {
 })
 
 const { register } = useToc()
+const route = useRoute()
 const slots = useSlots()
 const defaultSlot = slots?.default?.()
-const route = useRoute()
-
-function visit(vnode: VNode | VNode[], fn: (vnode: VNode) => void): void {
-  if (Array.isArray(vnode)) {
-    return vnode.forEach((node) => visit(node, fn))
-  }
-
-  fn(vnode)
-
-  if (Array.isArray(vnode.children)) {
-    vnode.children.forEach((child) => {
-      if (child && typeof child === 'object' && !Array.isArray(child)) {
-        visit(child, fn)
-      }
-    })
-  }
-}
 
 const texts: string[] = []
 if (defaultSlot) {
@@ -62,8 +46,25 @@ const slug = innerText
 const id = props.id ?? slug
 const label = props.label ?? innerText
 const level = props.level ?? 1
+function visit(vnode: VNode | VNode[], fn: (vnode: VNode) => void): void {
+  if (Array.isArray(vnode)) {
+    return vnode.forEach((node) => visit(node, fn))
+  }
 
-register({ id, label, level })
+  fn(vnode)
+
+  if (Array.isArray(vnode.children)) {
+    vnode.children.forEach((child) => {
+      if (child && typeof child === 'object' && !Array.isArray(child)) {
+        visit(child, fn)
+      }
+    })
+  }
+}
+
+onMounted(() => {
+  register({ id, label, level })
+})
 </script>
 
 <template>

@@ -87,11 +87,11 @@ export const useSidebar = () => {
 
   // Sidebar
   const sidebar = sidebars.find(
-    ({ activePath }) => activePath && route.path.startsWith(activePath)
+    ({ activePath }) => activePath && route.path.startsWith(activePath),
   )
   const activeSidebarName = useState<string>(
     'sidebar-name',
-    () => sidebar?.name || ''
+    () => sidebar?.name || '',
   )
   const activeSidebar = computed(() => {
     if (!activeSidebarName.value) {
@@ -101,7 +101,7 @@ export const useSidebar = () => {
   })
   const isSidebarOpened = useState(
     'sidebar-is-open',
-    () => activeSidebar.value !== null
+    () => activeSidebar.value !== null,
   )
 
   function toggleSidebar() {

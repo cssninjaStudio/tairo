@@ -5,7 +5,7 @@ import {
   shapes,
 } from '@@/documentation/components/card'
 
-import { metaBaseCard } from '#nuxt-component-meta'
+
 
 definePageMeta({
   title: 'Cards',
@@ -36,7 +36,7 @@ definePageMeta({
                     size="sm"
                     weight="semibold"
                     lead="tight"
-                    class="mb-2 text-muted-800 dark:text-white"
+                    class="text-muted-800 mb-2 dark:text-white"
                   >
                     Iam a card
                   </BaseHeading>
@@ -50,7 +50,7 @@ definePageMeta({
                     size="sm"
                     weight="semibold"
                     lead="tight"
-                    class="mb-2 text-muted-800 dark:text-white"
+                    class="text-muted-800 mb-2 dark:text-white"
                   >
                     Iam a card
                   </BaseHeading>
@@ -64,7 +64,7 @@ definePageMeta({
                     size="sm"
                     weight="semibold"
                     lead="tight"
-                    class="mb-2 text-muted-800 dark:text-white"
+                    class="text-muted-800 mb-2 dark:text-white"
                   >
                     Iam a card
                   </BaseHeading>
@@ -91,7 +91,7 @@ definePageMeta({
                     size="sm"
                     weight="semibold"
                     lead="tight"
-                    class="mb-2 text-muted-800 dark:text-white"
+                    class="text-muted-800 mb-2 dark:text-white"
                   >
                     Iam a card
                   </BaseHeading>
@@ -105,7 +105,7 @@ definePageMeta({
                     size="sm"
                     weight="semibold"
                     lead="tight"
-                    class="mb-2 text-muted-800 dark:text-white"
+                    class="text-muted-800 mb-2 dark:text-white"
                   >
                     Iam a card
                   </BaseHeading>
@@ -119,7 +119,7 @@ definePageMeta({
                     size="sm"
                     weight="semibold"
                     lead="tight"
-                    class="mb-2 text-muted-800 dark:text-white"
+                    class="text-muted-800 mb-2 dark:text-white"
                   >
                     Iam a card
                   </BaseHeading>
@@ -150,7 +150,7 @@ definePageMeta({
                     size="sm"
                     weight="semibold"
                     lead="tight"
-                    class="mb-2 text-muted-800 dark:text-white"
+                    class="text-muted-800 mb-2 dark:text-white"
                   >
                     Iam a card
                   </BaseHeading>
@@ -164,7 +164,7 @@ definePageMeta({
                     size="sm"
                     weight="semibold"
                     lead="tight"
-                    class="mb-2 text-muted-800 dark:text-white"
+                    class="text-muted-800 mb-2 dark:text-white"
                   >
                     Iam a card
                   </BaseHeading>
@@ -178,7 +178,7 @@ definePageMeta({
                     size="sm"
                     weight="semibold"
                     lead="tight"
-                    class="mb-2 text-muted-800 dark:text-white"
+                    class="text-muted-800 mb-2 dark:text-white"
                   >
                     Iam a card
                   </BaseHeading>
@@ -194,7 +194,7 @@ definePageMeta({
           </DocComponent>
         </DocSection>
 
-        <DocComponentMeta :meta="metaBaseCard" />
+        <DocComponentMeta name="BaseCard" />
       </template>
       <!-- Toc -->
       <template #toc>

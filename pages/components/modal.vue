@@ -7,8 +7,6 @@ import {
 } from '@@/documentation/components/modal'
 // import { properties } from '@@/documentation/components/modal/properties'
 
-import { metaBaseModal } from '#nuxt-component-meta'
-
 definePageMeta({
   title: 'Modals',
   documentation: {
@@ -76,7 +74,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Modal properties -->
-        <DocComponentMeta :meta="metaBaseModal" />
+        <DocComponentMeta name="BaseModal" />
       </template>
       <!-- Toc -->
       <template #toc>

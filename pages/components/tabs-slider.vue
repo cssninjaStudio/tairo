@@ -6,7 +6,7 @@ import {
   x3Rounded,
 } from '@@/documentation/components/tabs-slider'
 
-import { metaBaseTabSlider } from '#nuxt-component-meta'
+
 
 definePageMeta({
   title: 'Slider Tabs',
@@ -235,7 +235,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Tabs slider props -->
-        <DocComponentMeta :meta="metaBaseTabSlider" />
+        <DocComponentMeta name="BaseTabSlider" />
       </template>
       <!-- Toc -->
       <template #toc>

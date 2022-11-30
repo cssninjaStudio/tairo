@@ -1,11 +1,21 @@
 {
+  "css.validate": true,
+  "less.validate": false,
+  "scss.validate": false,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
     "source.fixAll": true
-  }
-  // "[html]": {
-  //   "editor.formatOnSave": true,
-  //   "editor.codeActionsOnSave": {
-  //     "source.fixAll": true
-  //   }
-  // }
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[js]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "prettier.enable": true,
+  "eslint.alwaysShowStatus": true,
+  "eslint.packageManager": "yarn",
+  "eslint.validate": ["javascript", "javascriptreact", "vue"],
 }

@@ -22,8 +22,6 @@ import {
   selectedPerson,
 } from '@@/documentation/components/autocomplete/data'
 
-import { metaBaseAutocomplete } from '#nuxt-component-meta'
-
 definePageMeta({
   title: 'Autocomplete',
   documentation: {
@@ -328,7 +326,7 @@ definePageMeta({
           </DocComponent>
         </DocSection>
 
-        <DocComponentMeta :meta="metaBaseAutocomplete" />
+        <DocComponentMeta name="BaseAutocomplete" />
       </template>
       <!-- Toc -->
       <template #toc>

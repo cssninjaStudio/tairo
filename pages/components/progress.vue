@@ -11,8 +11,6 @@ import {
   progressCircle,
 } from '@@/documentation/components/progress/data'
 
-import { metaBaseProgress, metaBaseProgressCircle } from '#nuxt-component-meta'
-
 definePageMeta({
   title: 'Progress',
   documentation: {
@@ -292,10 +290,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Progress bar properties -->
-        <DocComponentMeta :meta="metaBaseProgress" />
+        <DocComponentMeta name="BaseProgress" />
 
         <!-- Progress circle properties -->
-        <DocComponentMeta :meta="metaBaseProgressCircle" />
+        <DocComponentMeta name="BaseProgressCircle" />
       </template>
       <!-- Toc -->
       <template #toc>

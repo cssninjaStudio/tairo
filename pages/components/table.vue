@@ -9,13 +9,6 @@ import {
 } from '@@/documentation/components/table'
 import { team } from '@@/documentation/components/table/data'
 
-import {
-  metaBaseTable,
-  metaBaseTableCell,
-  metaBaseTableHeading,
-  metaBaseTableRow,
-} from '#nuxt-component-meta'
-
 definePageMeta({
   title: 'Tables',
   documentation: {
@@ -55,10 +48,12 @@ definePageMeta({
                         />
                       </div>
                     </BaseTableHeading>
-                    <BaseTableHeading uppercase>Collaborator</BaseTableHeading>
-                    <BaseTableHeading uppercase>Expertise</BaseTableHeading>
-                    <BaseTableHeading uppercase>Rate</BaseTableHeading>
-                    <BaseTableHeading uppercase>Status</BaseTableHeading>
+                    <BaseTableHeading uppercase>
+                      Collaborator
+                    </BaseTableHeading>
+                    <BaseTableHeading uppercase> Expertise </BaseTableHeading>
+                    <BaseTableHeading uppercase> Rate </BaseTableHeading>
+                    <BaseTableHeading uppercase> Status </BaseTableHeading>
                     <BaseTableHeading uppercase class="p-4">
                       <span class="sr-only">View</span>
                     </BaseTableHeading>
@@ -144,10 +139,12 @@ definePageMeta({
                         />
                       </div>
                     </BaseTableHeading>
-                    <BaseTableHeading uppercase>Collaborator</BaseTableHeading>
-                    <BaseTableHeading uppercase>Expertise</BaseTableHeading>
-                    <BaseTableHeading uppercase>Rate</BaseTableHeading>
-                    <BaseTableHeading uppercase>Status</BaseTableHeading>
+                    <BaseTableHeading uppercase>
+                      Collaborator
+                    </BaseTableHeading>
+                    <BaseTableHeading uppercase> Expertise </BaseTableHeading>
+                    <BaseTableHeading uppercase> Rate </BaseTableHeading>
+                    <BaseTableHeading uppercase> Status </BaseTableHeading>
                     <BaseTableHeading uppercase class="p-4">
                       <span class="sr-only">View</span>
                     </BaseTableHeading>
@@ -233,10 +230,12 @@ definePageMeta({
                         />
                       </div>
                     </BaseTableHeading>
-                    <BaseTableHeading uppercase>Collaborator</BaseTableHeading>
-                    <BaseTableHeading uppercase>Expertise</BaseTableHeading>
-                    <BaseTableHeading uppercase>Rate</BaseTableHeading>
-                    <BaseTableHeading uppercase>Status</BaseTableHeading>
+                    <BaseTableHeading uppercase>
+                      Collaborator
+                    </BaseTableHeading>
+                    <BaseTableHeading uppercase> Expertise </BaseTableHeading>
+                    <BaseTableHeading uppercase> Rate </BaseTableHeading>
+                    <BaseTableHeading uppercase> Status </BaseTableHeading>
                     <BaseTableHeading uppercase class="p-4">
                       <span class="sr-only">View</span>
                     </BaseTableHeading>
@@ -326,10 +325,12 @@ definePageMeta({
                         />
                       </div>
                     </BaseTableHeading>
-                    <BaseTableHeading uppercase>Collaborator</BaseTableHeading>
-                    <BaseTableHeading uppercase>Expertise</BaseTableHeading>
-                    <BaseTableHeading uppercase>Rate</BaseTableHeading>
-                    <BaseTableHeading uppercase>Status</BaseTableHeading>
+                    <BaseTableHeading uppercase>
+                      Collaborator
+                    </BaseTableHeading>
+                    <BaseTableHeading uppercase> Expertise </BaseTableHeading>
+                    <BaseTableHeading uppercase> Rate </BaseTableHeading>
+                    <BaseTableHeading uppercase> Status </BaseTableHeading>
                     <BaseTableHeading uppercase class="p-4">
                       <span class="sr-only">View</span>
                     </BaseTableHeading>
@@ -425,10 +426,12 @@ definePageMeta({
                         />
                       </div>
                     </BaseTableHeading>
-                    <BaseTableHeading uppercase>Collaborator</BaseTableHeading>
-                    <BaseTableHeading uppercase>Expertise</BaseTableHeading>
-                    <BaseTableHeading uppercase>Rate</BaseTableHeading>
-                    <BaseTableHeading uppercase>Status</BaseTableHeading>
+                    <BaseTableHeading uppercase>
+                      Collaborator
+                    </BaseTableHeading>
+                    <BaseTableHeading uppercase> Expertise </BaseTableHeading>
+                    <BaseTableHeading uppercase> Rate </BaseTableHeading>
+                    <BaseTableHeading uppercase> Status </BaseTableHeading>
                     <BaseTableHeading uppercase class="p-4">
                       <span class="sr-only">View</span>
                     </BaseTableHeading>
@@ -524,10 +527,12 @@ definePageMeta({
                         />
                       </div>
                     </BaseTableHeading>
-                    <BaseTableHeading uppercase>Collaborator</BaseTableHeading>
-                    <BaseTableHeading uppercase>Expertise</BaseTableHeading>
-                    <BaseTableHeading uppercase>Rate</BaseTableHeading>
-                    <BaseTableHeading uppercase>Status</BaseTableHeading>
+                    <BaseTableHeading uppercase>
+                      Collaborator
+                    </BaseTableHeading>
+                    <BaseTableHeading uppercase> Expertise </BaseTableHeading>
+                    <BaseTableHeading uppercase> Rate </BaseTableHeading>
+                    <BaseTableHeading uppercase> Status </BaseTableHeading>
                     <BaseTableHeading uppercase class="p-4">
                       <span class="sr-only">View</span>
                     </BaseTableHeading>
@@ -608,16 +613,16 @@ definePageMeta({
         </DocSection>
 
         <!-- Table props -->
-        <DocComponentMeta :meta="metaBaseTable" />
+        <DocComponentMeta name="BaseTable" />
 
         <!-- Heading props -->
-        <DocComponentMeta :meta="metaBaseTableHeading" />
+        <DocComponentMeta name="BaseTableHeading" />
 
         <!-- Row props -->
-        <DocComponentMeta :meta="metaBaseTableRow" />
+        <DocComponentMeta name="BaseTableRow" />
 
         <!-- Cell props -->
-        <DocComponentMeta :meta="metaBaseTableCell" />
+        <DocComponentMeta name="BaseTableCell" />
       </template>
       <!-- Toc -->
       <template #toc>

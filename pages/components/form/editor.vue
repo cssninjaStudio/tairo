@@ -21,24 +21,24 @@ definePageMeta({
 
 // const CKEditor = CKE.component
 
-const breadcrumb = [
-  {
-    label: 'Home',
-    hideLabel: true,
-    icon: 'lucide:home',
-    to: '/',
-  },
-  {
-    label: 'Elements',
-    hideLabel: false,
-    to: '/components',
-  },
-  {
-    label: 'Rich text',
-    hideLabel: false,
-    to: '/form/editor',
-  },
-]
+// const breadcrumb = [
+//   {
+//     label: 'Home',
+//     hideLabel: true,
+//     icon: 'lucide:home',
+//     to: '/'
+//   },
+//   {
+//     label: 'Elements',
+//     hideLabel: false,
+//     to: '/components'
+//   },
+//   {
+//     label: 'Rich text',
+//     hideLabel: false,
+//     to: '/form/editor'
+//   }
+// ]
 </script>
 
 <template>
@@ -64,12 +64,12 @@ const breadcrumb = [
                 </ClientOnly -->
               </div>
             </template>
-            <template #code></template>
+            <template #code />
           </DocComponent>
         </DocSection>
       </template>
       <!-- Toc -->
-      <template #toc></template>
+      <template #toc />
     </DocLayout>
   </div>
 </template>

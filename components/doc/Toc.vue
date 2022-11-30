@@ -9,7 +9,7 @@ const { activeIds } = useNinjaScrollspy(
   {
     rootMargin: '0px 0px -90% 0px',
   },
-  ids
+  ids,
 )
 
 onMounted(() => {
@@ -24,7 +24,7 @@ watch(
     if (route.hash) {
       activeAnchor.value = route.hash.slice(1)
     }
-  }
+  },
 )
 
 const getTocItemClass = (item: TocItem) => {
@@ -36,16 +36,14 @@ const getTocItemClass = (item: TocItem) => {
 
   if (activeAnchor.value === item.id) {
     classes.push('border-primary-500 text-primary-500')
+  } else if (activeIds.value.includes(item.id)) {
+    classes.push(
+      'border-primary-400 dark:border-primary-600 text-muted-500 dark:text-muted-400 hover:text-muted-400',
+    )
   } else {
-    if (activeIds.value.includes(item.id)) {
-      classes.push(
-        'border-primary-400 dark:border-primary-600 text-muted-500 dark:text-muted-400 hover:text-muted-400'
-      )
-    } else {
-      classes.push(
-        'border-muted-200 dark:border-muted-800 text-muted-500 dark:text-muted-400 hover:text-muted-400'
-      )
-    }
+    classes.push(
+      'border-muted-200 dark:border-muted-800 text-muted-500 dark:text-muted-400 hover:text-muted-400',
+    )
   }
 
   // [
@@ -62,7 +60,7 @@ const getTocItemClass = (item: TocItem) => {
 
 <template>
   <div
-    class="slimscroll sticky top-12 flex max-h-screen flex-col justify-between overflow-y-auto pt-10 pb-6 pl-20 pr-1"
+    class="slimscroll sticky top-12 flex max-h-screen flex-col justify-between overflow-y-auto pt-10 pb-20 pl-20 pr-1"
   >
     <div class="mb-8">
       <div

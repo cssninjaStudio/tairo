@@ -5,12 +5,6 @@ import {
   text,
 } from '@@/documentation/components/typography'
 
-import {
-  metaBaseHeading,
-  metaBaseParagraph,
-  metaBaseText,
-} from '#nuxt-component-meta'
-
 definePageMeta({
   title: 'Typography',
   documentation: {
@@ -75,7 +69,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Heading properties -->
-        <DocComponentMeta :meta="metaBaseHeading" />
+        <DocComponentMeta name="BaseHeading" />
 
         <!-- Content paragraph -->
         <DocSection title="Paragraph" tag="1.0.0">
@@ -115,7 +109,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Paragraph properties -->
-        <DocComponentMeta :meta="metaBaseParagraph" />
+        <DocComponentMeta name="BaseParagraph" />
 
         <!-- Content text -->
         <DocSection title="Text" tag="1.0.0">
@@ -151,7 +145,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Text properties -->
-        <DocComponentMeta :meta="metaBaseText" />
+        <DocComponentMeta name="BaseText" />
       </template>
       <!-- Toc -->
       <template #toc>

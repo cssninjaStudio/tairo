@@ -58,11 +58,11 @@ definePageMeta({
             />
           </div>
           <div
-            class="border-t-2 border-dashed border-gray-300 py-4 px-6 dark:border-muted-700"
+            class="dark:border-muted-700 border-t-2 border-dashed border-gray-300 py-4 px-6"
           >
             <NuxtLink
               to="/components/typography"
-              class="font-sans text-sm font-medium text-primary-500 opacity-60 transition-opacity duration-300 hover:opacity-100"
+              class="text-primary-500 font-sans text-sm font-medium opacity-60 transition-opacity duration-300 hover:opacity-100"
             >
               Get Started
             </NuxtLink>
@@ -94,11 +94,11 @@ definePageMeta({
             />
           </div>
           <div
-            class="border-t-2 border-dashed border-gray-300 py-4 px-6 dark:border-muted-700"
+            class="dark:border-muted-700 border-t-2 border-dashed border-gray-300 py-4 px-6"
           >
             <NuxtLink
               to="/components/tag"
-              class="font-sans text-sm font-medium text-primary-500 opacity-60 transition-opacity duration-300 hover:opacity-100"
+              class="text-primary-500 font-sans text-sm font-medium opacity-60 transition-opacity duration-300 hover:opacity-100"
             >
               Get Started
             </NuxtLink>
@@ -130,11 +130,11 @@ definePageMeta({
             />
           </div>
           <div
-            class="border-t-2 border-dashed border-gray-300 py-4 px-6 dark:border-muted-700"
+            class="dark:border-muted-700 border-t-2 border-dashed border-gray-300 py-4 px-6"
           >
             <NuxtLink
               to="/components/tabs"
-              class="font-sans text-sm font-medium text-primary-500 opacity-60 transition-opacity duration-300 hover:opacity-100"
+              class="text-primary-500 font-sans text-sm font-medium opacity-60 transition-opacity duration-300 hover:opacity-100"
             >
               Get Started
             </NuxtLink>
@@ -166,11 +166,11 @@ definePageMeta({
             />
           </div>
           <div
-            class="border-t-2 border-dashed border-gray-300 py-4 px-6 dark:border-muted-700"
+            class="dark:border-muted-700 border-t-2 border-dashed border-gray-300 py-4 px-6"
           >
             <NuxtLink
               to="/components/card"
-              class="font-sans text-sm font-medium text-primary-500 opacity-60 transition-opacity duration-300 hover:opacity-100"
+              class="text-primary-500 font-sans text-sm font-medium opacity-60 transition-opacity duration-300 hover:opacity-100"
             >
               Get Started
             </NuxtLink>
@@ -202,11 +202,11 @@ definePageMeta({
             />
           </div>
           <div
-            class="border-t-2 border-dashed border-gray-300 py-4 px-6 dark:border-muted-700"
+            class="dark:border-muted-700 border-t-2 border-dashed border-gray-300 py-4 px-6"
           >
             <NuxtLink
               to="/components/avatar"
-              class="font-sans text-sm font-medium text-primary-500 opacity-60 transition-opacity duration-300 hover:opacity-100"
+              class="text-primary-500 font-sans text-sm font-medium opacity-60 transition-opacity duration-300 hover:opacity-100"
             >
               Get Started
             </NuxtLink>
@@ -238,11 +238,11 @@ definePageMeta({
             />
           </div>
           <div
-            class="border-t-2 border-dashed border-gray-300 py-4 px-6 dark:border-muted-700"
+            class="dark:border-muted-700 border-t-2 border-dashed border-gray-300 py-4 px-6"
           >
             <NuxtLink
               to="/components/accordion"
-              class="font-sans text-sm font-medium text-primary-500 opacity-60 transition-opacity duration-300 hover:opacity-100"
+              class="text-primary-500 font-sans text-sm font-medium opacity-60 transition-opacity duration-300 hover:opacity-100"
             >
               Get Started
             </NuxtLink>
@@ -274,11 +274,11 @@ definePageMeta({
             />
           </div>
           <div
-            class="border-t-2 border-dashed border-gray-300 py-4 px-6 dark:border-muted-700"
+            class="dark:border-muted-700 border-t-2 border-dashed border-gray-300 py-4 px-6"
           >
             <NuxtLink
               to="/components/breadcrumb"
-              class="font-sans text-sm font-medium text-primary-500 opacity-60 transition-opacity duration-300 hover:opacity-100"
+              class="text-primary-500 font-sans text-sm font-medium opacity-60 transition-opacity duration-300 hover:opacity-100"
             >
               Get Started
             </NuxtLink>
@@ -310,11 +310,11 @@ definePageMeta({
             />
           </div>
           <div
-            class="border-t-2 border-dashed border-gray-300 py-5 px-6 dark:border-muted-700"
+            class="dark:border-muted-700 border-t-2 border-dashed border-gray-300 py-5 px-6"
           >
             <NuxtLink
               to="/components/icon-box"
-              class="font-sans text-sm font-medium text-primary-500 opacity-60 transition-opacity duration-300 hover:opacity-100"
+              class="text-primary-500 font-sans text-sm font-medium opacity-60 transition-opacity duration-300 hover:opacity-100"
             >
               Get Started
             </NuxtLink>
@@ -346,11 +346,11 @@ definePageMeta({
             />
           </div>
           <div
-            class="border-t-2 border-dashed border-gray-300 py-5 px-6 dark:border-muted-700"
+            class="dark:border-muted-700 border-t-2 border-dashed border-gray-300 py-5 px-6"
           >
             <NuxtLink
               to="/components/flex-table"
-              class="font-sans text-sm font-medium text-primary-500 opacity-60 transition-opacity duration-300 hover:opacity-100"
+              class="text-primary-500 font-sans text-sm font-medium opacity-60 transition-opacity duration-300 hover:opacity-100"
             >
               Get Started
             </NuxtLink>
@@ -382,11 +382,11 @@ definePageMeta({
             />
           </div>
           <div
-            class="border-t-2 border-dashed border-gray-300 py-5 px-6 dark:border-muted-700"
+            class="dark:border-muted-700 border-t-2 border-dashed border-gray-300 py-5 px-6"
           >
             <NuxtLink
               to="/components/snack"
-              class="font-sans text-sm font-medium text-primary-500 opacity-60 transition-opacity duration-300 hover:opacity-100"
+              class="text-primary-500 font-sans text-sm font-medium opacity-60 transition-opacity duration-300 hover:opacity-100"
             >
               Get Started
             </NuxtLink>
@@ -417,11 +417,11 @@ definePageMeta({
             />
           </div>
           <div
-            class="border-t-2 border-dashed border-gray-300 py-4 px-6 dark:border-muted-700"
+            class="dark:border-muted-700 border-t-2 border-dashed border-gray-300 py-4 px-6"
           >
             <NuxtLink
               to="/components/button"
-              class="font-sans text-sm font-medium text-primary-500 opacity-60 transition-opacity duration-300 hover:opacity-100"
+              class="text-primary-500 font-sans text-sm font-medium opacity-60 transition-opacity duration-300 hover:opacity-100"
             >
               Get Started
             </NuxtLink>
@@ -453,11 +453,11 @@ definePageMeta({
             />
           </div>
           <div
-            class="border-t-2 border-dashed border-gray-300 py-4 px-6 dark:border-muted-700"
+            class="dark:border-muted-700 border-t-2 border-dashed border-gray-300 py-4 px-6"
           >
             <NuxtLink
               to="/components/icons"
-              class="font-sans text-sm font-medium text-primary-500 opacity-60 transition-opacity duration-300 hover:opacity-100"
+              class="text-primary-500 font-sans text-sm font-medium opacity-60 transition-opacity duration-300 hover:opacity-100"
             >
               Get Started
             </NuxtLink>
@@ -489,11 +489,11 @@ definePageMeta({
             />
           </div>
           <div
-            class="border-t-2 border-dashed border-gray-300 py-4 px-6 dark:border-muted-700"
+            class="dark:border-muted-700 border-t-2 border-dashed border-gray-300 py-4 px-6"
           >
             <NuxtLink
               to="/components/dropdown"
-              class="font-sans text-sm font-medium text-primary-500 opacity-60 transition-opacity duration-300 hover:opacity-100"
+              class="text-primary-500 font-sans text-sm font-medium opacity-60 transition-opacity duration-300 hover:opacity-100"
             >
               Get Started
             </NuxtLink>
@@ -525,11 +525,11 @@ definePageMeta({
             />
           </div>
           <div
-            class="border-t-2 border-dashed border-gray-300 py-4 px-6 dark:border-muted-700"
+            class="dark:border-muted-700 border-t-2 border-dashed border-gray-300 py-4 px-6"
           >
             <NuxtLink
               to="/components/modal"
-              class="font-sans text-sm font-medium text-primary-500 opacity-60 transition-opacity duration-300 hover:opacity-100"
+              class="text-primary-500 font-sans text-sm font-medium opacity-60 transition-opacity duration-300 hover:opacity-100"
             >
               Get Started
             </NuxtLink>
@@ -561,11 +561,11 @@ definePageMeta({
             />
           </div>
           <div
-            class="border-t-2 border-dashed border-gray-300 py-4 px-6 dark:border-muted-700"
+            class="dark:border-muted-700 border-t-2 border-dashed border-gray-300 py-4 px-6"
           >
             <NuxtLink
               to="/components/progress"
-              class="font-sans text-sm font-medium text-primary-500 opacity-60 transition-opacity duration-300 hover:opacity-100"
+              class="text-primary-500 font-sans text-sm font-medium opacity-60 transition-opacity duration-300 hover:opacity-100"
             >
               Get Started
             </NuxtLink>
@@ -597,11 +597,11 @@ definePageMeta({
             />
           </div>
           <div
-            class="border-t-2 border-dashed border-gray-300 py-4 px-6 dark:border-muted-700"
+            class="dark:border-muted-700 border-t-2 border-dashed border-gray-300 py-4 px-6"
           >
             <NuxtLink
               to="/components/form/input"
-              class="font-sans text-sm font-medium text-primary-500 opacity-60 transition-opacity duration-300 hover:opacity-100"
+              class="text-primary-500 font-sans text-sm font-medium opacity-60 transition-opacity duration-300 hover:opacity-100"
             >
               Get Started
             </NuxtLink>
@@ -633,11 +633,11 @@ definePageMeta({
             />
           </div>
           <div
-            class="border-t-2 border-dashed border-gray-300 py-4 px-6 dark:border-muted-700"
+            class="dark:border-muted-700 border-t-2 border-dashed border-gray-300 py-4 px-6"
           >
             <NuxtLink
               to="/components/form/checkbox"
-              class="font-sans text-sm font-medium text-primary-500 opacity-60 transition-opacity duration-300 hover:opacity-100"
+              class="text-primary-500 font-sans text-sm font-medium opacity-60 transition-opacity duration-300 hover:opacity-100"
             >
               Get Started
             </NuxtLink>
@@ -669,11 +669,11 @@ definePageMeta({
             />
           </div>
           <div
-            class="border-t-2 border-dashed border-gray-300 py-5 px-6 dark:border-muted-700"
+            class="dark:border-muted-700 border-t-2 border-dashed border-gray-300 py-5 px-6"
           >
             <NuxtLink
               to="/components/form/switch"
-              class="font-sans text-sm font-medium text-primary-500 opacity-60 transition-opacity duration-300 hover:opacity-100"
+              class="text-primary-500 font-sans text-sm font-medium opacity-60 transition-opacity duration-300 hover:opacity-100"
             >
               Get Started
             </NuxtLink>
@@ -684,7 +684,7 @@ definePageMeta({
       <div class="pt-12 pb-6 text-center">
         <NuxtLink
           to="https://docs.cssninja.io/tairo"
-          class="border-b-2 border-dotted border-primary-500 font-sans text-primary-500"
+          class="border-primary-500 text-primary-500 border-b-2 border-dotted font-sans"
         >
           Online Documentation
         </NuxtLink>

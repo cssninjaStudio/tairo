@@ -8,13 +8,6 @@ import {
   mediaRight,
 } from '@@/documentation/components/popover'
 
-import {
-  metaBasePopover,
-  metaBasePopoverContentDual,
-  metaBasePopoverContentHelp,
-  metaBasePopoverContentMedia,
-} from '#nuxt-component-meta'
-
 definePageMeta({
   title: 'Popover',
   documentation: {
@@ -308,16 +301,16 @@ definePageMeta({
         </DocSection>
 
         <!-- Popover properties -->
-        <DocComponentMeta :meta="metaBasePopover" />
+        <DocComponentMeta name="BasePopover" />
 
         <!-- Help properties -->
-        <DocComponentMeta :meta="metaBasePopoverContentHelp" />
+        <DocComponentMeta name="BasePopoverContentHelp" />
 
         <!-- Dual properties -->
-        <DocComponentMeta :meta="metaBasePopoverContentDual" />
+        <DocComponentMeta name="BasePopoverContentDual" />
 
         <!-- Media properties -->
-        <DocComponentMeta :meta="metaBasePopoverContentMedia" />
+        <DocComponentMeta name="BasePopoverContentMedia" />
       </template>
       <!-- Toc -->
       <template #toc>

@@ -7,7 +7,7 @@ import {
   shapes,
 } from '@@/documentation/components/icon-button'
 
-import { metaBaseButtonIcon } from '#nuxt-component-meta'
+
 
 definePageMeta({
   title: 'Button Icon',
@@ -160,7 +160,7 @@ definePageMeta({
         </DocSection>
 
         <!-- properties -->
-        <DocComponentMeta :meta="metaBaseButtonIcon" />
+        <DocComponentMeta name="BaseButtonIcon" />
       </template>
       <!-- Toc -->
       <template #toc>

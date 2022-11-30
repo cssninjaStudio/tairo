@@ -14,7 +14,7 @@ import {
   squareSize,
 } from '@@/documentation/components/avatar'
 
-import { metaBaseAvatar } from '#nuxt-component-meta'
+
 
 definePageMeta({
   title: 'Avatars',
@@ -779,7 +779,7 @@ definePageMeta({
           </DocComponent>
         </DocSection>
 
-        <DocComponentMeta :meta="metaBaseAvatar" />
+        <DocComponentMeta name="BaseAvatar" />
       </template>
 
       <!-- Toc -->
