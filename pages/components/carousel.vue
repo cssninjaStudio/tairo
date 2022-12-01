@@ -5,11 +5,6 @@ import {
 } from '@@/documentation/components/carousel'
 import { team, topics } from '@@/documentation/components/carousel/data'
 
-import {
-  metaBaseCarouselIcons,
-  metaBaseCarouselTeam,
-} from '#nuxt-component-meta'
-
 definePageMeta({
   title: 'Carousel',
   documentation: {
@@ -42,21 +37,7 @@ definePageMeta({
           </DocComponent>
         </DocSection>
 
-        <DocComponentMeta :meta="metaBaseCarouselTeam" />
-        <!-- User carousel properties -->
-        <!-- <DocProps
-          id="carousel-user-props"
-          component="BaseCarouselTeam"
-          :properties="userProps.props"
-          :slots="userProps.slots"
-        />
-
-        <DocProps
-          id="carousel-user-item-props"
-          component="BaseCarouselTeam slide"
-          :properties="userItemProps.props"
-          :slots="userItemProps.slots"
-        /> -->
+        <DocComponentMeta name="BaseCarouselTeam" />
 
         <!-- Icon carousel -->
         <DocSection title="Icon Carousel" tag="1.0.0">
@@ -73,7 +54,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Icon carousel properties -->
-        <DocComponentMeta :meta="metaBaseCarouselIcons" />
+        <DocComponentMeta name="BaseCarouselIcons" />
       </template>
       <!-- Toc -->
       <template #toc>

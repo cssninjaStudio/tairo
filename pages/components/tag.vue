@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { outline, pastel, shapes, solid } from '@@/documentation/components/tag'
 
-import { metaBaseTag } from '#nuxt-component-meta'
+
 
 definePageMeta({
   title: 'Tags',
@@ -26,10 +26,10 @@ definePageMeta({
           <DocComponent label="Default tag shapes">
             <template #demo>
               <div class="flex flex-wrap items-end gap-1">
-                <BaseTag shape="straight">Label</BaseTag>
-                <BaseTag shape="rounded">Label</BaseTag>
-                <BaseTag shape="curved">Label</BaseTag>
-                <BaseTag shape="full">Label</BaseTag>
+                <BaseTag shape="straight"> Label </BaseTag>
+                <BaseTag shape="rounded"> Label </BaseTag>
+                <BaseTag shape="curved"> Label </BaseTag>
+                <BaseTag shape="full"> Label </BaseTag>
               </div>
             </template>
             <template #code>
@@ -43,13 +43,13 @@ definePageMeta({
           <DocComponent label="Tag solid colors">
             <template #demo>
               <div class="flex flex-wrap items-end gap-1">
-                <BaseTag shape="rounded" color="default">Label</BaseTag>
-                <BaseTag shape="rounded" muted>Label</BaseTag>
-                <BaseTag shape="rounded" color="primary">Label</BaseTag>
-                <BaseTag shape="rounded" color="success">Label</BaseTag>
-                <BaseTag shape="rounded" color="info">Label</BaseTag>
-                <BaseTag shape="rounded" color="warning">Label</BaseTag>
-                <BaseTag shape="rounded" color="danger">Label</BaseTag>
+                <BaseTag shape="rounded" color="default"> Label </BaseTag>
+                <BaseTag shape="rounded" muted> Label </BaseTag>
+                <BaseTag shape="rounded" color="primary"> Label </BaseTag>
+                <BaseTag shape="rounded" color="success"> Label </BaseTag>
+                <BaseTag shape="rounded" color="info"> Label </BaseTag>
+                <BaseTag shape="rounded" color="warning"> Label </BaseTag>
+                <BaseTag shape="rounded" color="danger"> Label </BaseTag>
               </div>
             </template>
             <template #code>
@@ -115,7 +115,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Tag props -->
-        <DocComponentMeta :meta="metaBaseTag" />
+        <DocComponentMeta name="BaseTag" />
       </template>
       <!-- Toc -->
       <template #toc>

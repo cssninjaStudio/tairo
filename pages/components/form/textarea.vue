@@ -11,12 +11,9 @@ import {
 } from '@@/documentation/components/form/textarea'
 import {
   textareaCurved,
-  textareaFull,
   textareaRounded,
   textareaStraight,
 } from '@@/documentation/components/form/textarea/data'
-
-import { metaBaseTextarea } from '#nuxt-component-meta'
 
 definePageMeta({
   title: 'Textarea',
@@ -240,7 +237,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Textarea properties -->
-        <DocComponentMeta :meta="metaBaseTextarea" />
+        <DocComponentMeta name="BaseTextarea" />
       </template>
 
       <!-- Toc -->

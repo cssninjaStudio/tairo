@@ -6,13 +6,6 @@ import {
 } from '@@/documentation/components/flex-table'
 import { team } from '@@/documentation/components/flex-table/data'
 
-import {
-  metaBaseFlexTable,
-  metaBaseFlexTableCell,
-  metaBaseFlexTableHeading,
-  metaBaseFlexTableRow,
-} from '#nuxt-component-meta'
-
 definePageMeta({
   title: 'Flex Tables',
   documentation: {
@@ -394,10 +387,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Flex table props -->
-        <DocComponentMeta :meta="metaBaseFlexTable" />
-        <DocComponentMeta :meta="metaBaseFlexTableHeading" />
-        <DocComponentMeta :meta="metaBaseFlexTableRow" />
-        <DocComponentMeta :meta="metaBaseFlexTableCell" />
+        <DocComponentMeta name="BaseFlexTable" />
+        <DocComponentMeta name="BaseFlexTableHeading" />
+        <DocComponentMeta name="BaseFlexTableRow" />
+        <DocComponentMeta name="BaseFlexTableCell" />
       </template>
       <!-- Toc -->
       <template #toc>

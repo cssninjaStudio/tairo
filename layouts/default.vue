@@ -8,7 +8,7 @@
       <Link rel="icon" type="image/x-icon" href="/img/favicon.png" />
     </Head>
     <div>
-      <slot></slot>
+      <slot />
     </div>
   </div>
 </template>

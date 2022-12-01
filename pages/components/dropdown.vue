@@ -11,8 +11,6 @@ import {
   textRight,
 } from '@@/documentation/components/dropdown'
 
-import { metaBaseDropdown, metaBaseDropdownItem } from '#nuxt-component-meta'
-
 definePageMeta({
   title: 'Dropdowns',
   documentation: {
@@ -44,7 +42,7 @@ definePageMeta({
                   <BaseDropdownItem>
                     Profile
 
-                    <template #text>View your profile</template>
+                    <template #text> View your profile </template>
                   </BaseDropdownItem>
                   <BaseDropdownItem
                     to="/"
@@ -475,10 +473,10 @@ definePageMeta({
         </DocSection>
 
         <!-- Dropdown properties -->
-        <DocComponentMeta :meta="metaBaseDropdown" />
-        <DocComponentMeta :meta="metaBaseDropdownItem" />
+        <DocComponentMeta name="BaseDropdown" />
+        <DocComponentMeta name="BaseDropdownItem" />
 
-        <div class="py-24"></div>
+        <div class="py-24" />
       </template>
       <!-- Toc -->
       <template #toc>

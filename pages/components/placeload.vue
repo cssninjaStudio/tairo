@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { composition, shape, text } from '@@/documentation/components/placeload'
 
-import { metaBasePlaceload } from '#nuxt-component-meta'
+
 
 definePageMeta({
   title: 'Placeloads',
@@ -74,7 +74,7 @@ definePageMeta({
           </DocComponent>
         </DocSection>
 
-        <DocComponentMeta :meta="metaBasePlaceload" />
+        <DocComponentMeta name="BasePlaceload" />
       </template>
       <!-- Toc -->
       <template #toc>

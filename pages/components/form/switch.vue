@@ -8,8 +8,6 @@ import {
   thinSwitch,
 } from '@@/documentation/components/form/switch'
 
-import { metaBaseSwitchBall, metaBaseSwitchThin } from '#nuxt-component-meta'
-
 definePageMeta({
   title: 'Switches',
   documentation: {
@@ -94,7 +92,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Thin switch properties -->
-        <DocComponentMeta :meta="metaBaseSwitchThin" />
+        <DocComponentMeta name="BaseSwitchThin" />
 
         <!-- Switch ball -->
         <DocSection title="Ball Switch" tag="1.0.0">
@@ -162,7 +160,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Ball switch properties -->
-        <DocComponentMeta :meta="metaBaseSwitchBall" />
+        <DocComponentMeta name="BaseSwitchBall" />
       </template>
       <!-- Toc -->
       <template #toc>

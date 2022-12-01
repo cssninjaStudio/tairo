@@ -11,8 +11,6 @@ import {
   small,
 } from '@@/documentation/components/snack'
 
-import { metaBaseSnack } from '#nuxt-component-meta'
-
 definePageMeta({
   title: 'Snacks',
   documentation: {
@@ -194,7 +192,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Snack props -->
-        <DocComponentMeta :meta="metaBaseSnack" />
+        <DocComponentMeta name="BaseSnack" />
       </template>
       <!-- Toc -->
       <template #toc>

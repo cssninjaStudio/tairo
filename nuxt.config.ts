@@ -1,16 +1,21 @@
-import { defineNuxtConfig } from 'nuxt'
-
 export default defineNuxtConfig({
-  modules: [
-    '@cssninja/nuxt-ui',
-    '@pinia/nuxt',
-    'nuxt-component-meta',
-  ],
+  modules: ['@cssninja/nuxt-ui', '@pinia/nuxt', 'nuxt-component-meta'],
   colorMode: {
     classSuffix: '',
   },
   componentMeta: {
-    checkerOptions: {},
+    checkerOptions: {
+      forceUseTs: true,
+      schema: {
+        ignore: [
+          'RouteLocationRaw',
+          'ComponentData',
+          'NuxtComponentMetaNames',
+          'RouteLocationPathRaw',
+          'RouteLocationNamedRaw',
+        ],
+      },
+    },
   },
   css: [
     '~/assets/css/tooltips.css',
@@ -24,7 +29,6 @@ export default defineNuxtConfig({
         {
           rel: 'preconnect',
           href: 'https://fonts.gstatic.com',
-          crossorigin: true,
         },
         {
           rel: 'stylesheet',

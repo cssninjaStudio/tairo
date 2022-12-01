@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import type { NavigationSidebarItem } from '~~/composables/useSidebar'
+import type { LazyNavigationSidebarItem } from '~~/composables/useSidebar'
 
 const { activeSidebar, toggleActiveSidebar } = useSidebar()
 
 const props = defineProps<{
-  sidebar: NavigationSidebarItem
+  sidebar: LazyNavigationSidebarItem
 }>()
 </script>
 

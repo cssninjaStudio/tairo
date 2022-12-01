@@ -10,7 +10,7 @@ import {
   demoBreadcrumbTwo,
 } from '@@/documentation/components/breadcrumb/data'
 
-import { metaBaseBreadcrumb } from '#nuxt-component-meta'
+
 
 definePageMeta({
   title: 'Breadcrumbs',
@@ -51,9 +51,9 @@ definePageMeta({
           <DocComponent label="Breadcrumb slash separator">
             <template #demo>
               <div class="flex flex-col gap-4">
-                <BaseBreadcrumb :items="demoBreadcrumbOne">/</BaseBreadcrumb>
+                <BaseBreadcrumb :items="demoBreadcrumbOne"> / </BaseBreadcrumb>
 
-                <BaseBreadcrumb :items="demoBreadcrumbTwo">/</BaseBreadcrumb>
+                <BaseBreadcrumb :items="demoBreadcrumbTwo"> / </BaseBreadcrumb>
               </div>
             </template>
             <template #code>
@@ -106,7 +106,7 @@ definePageMeta({
           </DocComponent>
         </DocSection>
 
-        <DocComponentMeta :meta="metaBaseBreadcrumb" />
+        <DocComponentMeta name="BaseBreadcrumb" />
       </template>
       <!-- Toc -->
       <template #toc>

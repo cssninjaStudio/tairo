@@ -9,7 +9,7 @@ import {
 } from '@@/documentation/components/iconbox'
 // import { properties } from '@@/documentation/components/iconbox/properties'
 
-import { metaBaseIconBox } from '#nuxt-component-meta'
+
 
 definePageMeta({
   title: 'Icon Boxes',
@@ -141,7 +141,7 @@ definePageMeta({
                 <BaseIconBox
                   size="md"
                   shape="circle"
-                  class="border border-muted-200 bg-white text-gray-500 dark:border-muted-600 dark:bg-muted-700"
+                  class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 border bg-white text-gray-500"
                 >
                   <BaseIcon name="ph:nut-duotone" class="h-5 w-5" />
                 </BaseIconBox>
@@ -296,7 +296,7 @@ definePageMeta({
               <div class="flex flex-wrap items-end gap-2">
                 <BaseIconBox
                   size="md"
-                  class="bg-primary-100 text-primary-500 dark:border-2 dark:border-primary-500 dark:bg-primary-500/20 dark:text-primary-400"
+                  class="bg-primary-100 text-primary-500 dark:border-primary-500 dark:bg-primary-500/20 dark:text-primary-400 dark:border-2"
                 >
                   <BaseIcon name="ph:nut-duotone" class="h-5 w-5" />
                 </BaseIconBox>
@@ -583,14 +583,14 @@ definePageMeta({
                 <BaseIconBox
                   size="md"
                   shape="circle"
-                  class="border border-muted-200 bg-white text-gray-500 shadow-lg dark:border-muted-600 dark:bg-muted-700"
+                  class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 border bg-white text-gray-500 shadow-lg"
                 >
                   <BaseIcon name="ph:nut-duotone" class="h-5 w-5" />
                 </BaseIconBox>
                 <BaseIconBox
                   size="md"
                   shape="circle"
-                  class="bg-primary-500 text-white shadow-lg shadow-primary-500/50"
+                  class="bg-primary-500 shadow-primary-500/50 text-white shadow-lg"
                 >
                   <BaseIcon name="ph:ghost-duotone" class="h-5 w-5" />
                 </BaseIconBox>
@@ -712,7 +712,7 @@ definePageMeta({
                 <BaseIconBox
                   size="md"
                   shape="circle"
-                  class="bg-muted-800 text-white shadow-lg shadow-muted-500/50"
+                  class="bg-muted-800 shadow-muted-500/50 text-white shadow-lg"
                 >
                   <BaseIcon name="ph:moon-duotone" class="h-5 w-5" />
                 </BaseIconBox>
@@ -725,7 +725,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Icon box props -->
-        <DocComponentMeta :meta="metaBaseIconBox" />
+        <DocComponentMeta name="BaseIconBox" />
       </template>
       <!-- Toc -->
       <template #toc>

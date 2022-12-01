@@ -6,19 +6,13 @@ export interface TocItem {
 
 export const useToc = () => {
   const toc = useState<TocItem[]>('toc', () => [])
-  const route = useRoute()
 
-  watch(
-    () => route.path,
-    () => {
-      toc.value = []
-    }
-  )
-
-  const register = (item: TocItem) => {
-    if (!toc.value.some((i) => i.id === item.id)) {
-      toc.value.push(item)
-    }
+  function register(item: TocItem) {
+    nextTick(() => {
+      if (!toc.value.some((i) => i.id === item.id)) {
+        toc.value.push(item)
+      }
+    })
   }
 
   return {

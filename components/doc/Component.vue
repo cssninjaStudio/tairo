@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { ComponentPublicInstance } from 'vue'
+// import type { ComponentPublicInstance } from 'vue'
 
 export interface DocComponentProps {
   label?: string

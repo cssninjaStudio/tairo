@@ -60,7 +60,7 @@ definePageMeta({
                 <BaseButtonAction shape="curved" tooltip="Here we go!">
                   <BaseIcon
                     name="ph:bell-ringing-duotone"
-                    class="-ml-1 h-4 w-4 text-primary-500"
+                    class="text-primary-500 -ml-1 h-4 w-4"
                   />
                   <span class="py-2">Subscribe</span>
                 </BaseButtonAction>

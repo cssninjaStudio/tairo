@@ -16,7 +16,7 @@ import {
   selectStraight,
 } from '@@/documentation/components/form/select/data'
 
-import { metaBaseSelect } from '#nuxt-component-meta'
+
 
 definePageMeta({
   title: 'Selects',
@@ -254,7 +254,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Select properties -->
-        <DocComponentMeta :meta="metaBaseSelect" />
+        <DocComponentMeta name="BaseSelect" />
       </template>
       <!-- Toc -->
       <template #toc>

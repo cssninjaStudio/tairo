@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import {
   dangerColor,
-  grayColor,
   infoColor,
   primaryColor,
   slateColor,
@@ -25,7 +24,7 @@ definePageMeta({
       <template #content>
         <!-- Custom section -->
         <div
-          class="mb-10 grid gap-4 border-b border-gray-200 pb-10 dark:border-muted-800 md:grid-cols-2 xl:gap-8"
+          class="dark:border-muted-800 mb-10 grid gap-4 border-b border-gray-200 pb-10 md:grid-cols-2 xl:gap-8"
         >
           <div>
             <BaseCard shape="rounded" class="p-8">
@@ -41,7 +40,7 @@ definePageMeta({
               </BaseHeading>
               <BaseParagraph
                 size="sm"
-                class="mb-4 text-muted-500 dark:text-muted-400"
+                class="text-muted-500 dark:text-muted-400 mb-4"
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Erat
                 enim Polemonis.
@@ -54,7 +53,7 @@ definePageMeta({
 
               <NuxtLink
                 to="https://docs.cssninja.io/tairo"
-                class="group mt-7 inline-flex items-center font-sans text-sm font-medium text-primary-500 transition-opacity hover:opacity-90"
+                class="text-primary-500 group mt-7 inline-flex items-center font-sans text-sm font-medium transition-opacity hover:opacity-90"
               >
                 <span class="mr-1">Read the documentation</span>
                 <BaseIcon
@@ -125,13 +124,13 @@ definePageMeta({
         </div>
 
         <!-- Custom section -->
-        <div class="mb-10 border-b border-gray-200 pb-10 dark:border-muted-800">
+        <div class="dark:border-muted-800 mb-10 border-b border-gray-200 pb-10">
           <BaseHeading
             as="h2"
             size="xl"
             anchor
             weight="medium"
-            class="mb-5 text-muted-800 dark:text-white"
+            class="text-muted-800 mb-5 dark:text-white"
           >
             Features
           </BaseHeading>
@@ -263,45 +262,45 @@ definePageMeta({
             <template #demo>
               <div class="flex flex-wrap items-end gap-2">
                 <div
-                  class="h-8 w-8 rounded-lg bg-primary-50"
+                  class="bg-primary-50 h-8 w-8 rounded-lg"
                   tooltip="bg-primary-50"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-primary-100"
+                  class="bg-primary-100 h-8 w-8 rounded-lg"
                   tooltip="bg-primary-100"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-primary-200"
+                  class="bg-primary-200 h-8 w-8 rounded-lg"
                   tooltip="bg-primary-200"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-primary-300"
+                  class="bg-primary-300 h-8 w-8 rounded-lg"
                   tooltip="bg-primary-300"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-primary-400"
+                  class="bg-primary-400 h-8 w-8 rounded-lg"
                   tooltip="bg-primary-400"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-primary-500"
+                  class="bg-primary-500 h-8 w-8 rounded-lg"
                   tooltip="bg-primary-500"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-primary-600"
+                  class="bg-primary-600 h-8 w-8 rounded-lg"
                   tooltip="bg-primary-600"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-primary-700"
+                  class="bg-primary-700 h-8 w-8 rounded-lg"
                   tooltip="bg-primary-700"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-primary-800"
+                  class="bg-primary-800 h-8 w-8 rounded-lg"
                   tooltip="bg-primary-800"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-primary-900"
+                  class="bg-primary-900 h-8 w-8 rounded-lg"
                   tooltip="bg-primary-900"
-                ></div>
+                />
               </div>
             </template>
             <template #code>
@@ -316,45 +315,45 @@ definePageMeta({
             <template #demo>
               <div class="flex flex-wrap items-end gap-2">
                 <div
-                  class="h-8 w-8 rounded-lg bg-info-50"
+                  class="bg-info-50 h-8 w-8 rounded-lg"
                   tooltip="bg-info-50"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-info-100"
+                  class="bg-info-100 h-8 w-8 rounded-lg"
                   tooltip="bg-info-100"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-info-200"
+                  class="bg-info-200 h-8 w-8 rounded-lg"
                   tooltip="bg-info-200"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-info-300"
+                  class="bg-info-300 h-8 w-8 rounded-lg"
                   tooltip="bg-info-300"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-info-400"
+                  class="bg-info-400 h-8 w-8 rounded-lg"
                   tooltip="bg-info-400"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-info-500"
+                  class="bg-info-500 h-8 w-8 rounded-lg"
                   tooltip="bg-info-500"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-info-600"
+                  class="bg-info-600 h-8 w-8 rounded-lg"
                   tooltip="bg-info-600"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-info-700"
+                  class="bg-info-700 h-8 w-8 rounded-lg"
                   tooltip="bg-info-700"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-info-800"
+                  class="bg-info-800 h-8 w-8 rounded-lg"
                   tooltip="bg-info-800"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-info-900"
+                  class="bg-info-900 h-8 w-8 rounded-lg"
                   tooltip="bg-info-900"
-                ></div>
+                />
               </div>
             </template>
             <template #code>
@@ -369,45 +368,45 @@ definePageMeta({
             <template #demo>
               <div class="flex flex-wrap items-end gap-2">
                 <div
-                  class="h-8 w-8 rounded-lg bg-success-50"
+                  class="bg-success-50 h-8 w-8 rounded-lg"
                   tooltip="bg-success-50"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-success-100"
+                  class="bg-success-100 h-8 w-8 rounded-lg"
                   tooltip="bg-success-100"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-success-200"
+                  class="bg-success-200 h-8 w-8 rounded-lg"
                   tooltip="bg-success-200"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-success-300"
+                  class="bg-success-300 h-8 w-8 rounded-lg"
                   tooltip="bg-success-300"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-success-400"
+                  class="bg-success-400 h-8 w-8 rounded-lg"
                   tooltip="bg-success-400"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-success-500"
+                  class="bg-success-500 h-8 w-8 rounded-lg"
                   tooltip="bg-success-500"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-success-600"
+                  class="bg-success-600 h-8 w-8 rounded-lg"
                   tooltip="bg-success-600"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-success-700"
+                  class="bg-success-700 h-8 w-8 rounded-lg"
                   tooltip="bg-success-700"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-success-800"
+                  class="bg-success-800 h-8 w-8 rounded-lg"
                   tooltip="bg-success-800"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-success-900"
+                  class="bg-success-900 h-8 w-8 rounded-lg"
                   tooltip="bg-success-900"
-                ></div>
+                />
               </div>
             </template>
             <template #code>
@@ -422,45 +421,45 @@ definePageMeta({
             <template #demo>
               <div class="flex flex-wrap items-end gap-2">
                 <div
-                  class="h-8 w-8 rounded-lg bg-warning-50"
+                  class="bg-warning-50 h-8 w-8 rounded-lg"
                   tooltip="bg-warning-50"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-warning-100"
+                  class="bg-warning-100 h-8 w-8 rounded-lg"
                   tooltip="bg-warning-100"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-warning-200"
+                  class="bg-warning-200 h-8 w-8 rounded-lg"
                   tooltip="bg-warning-200"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-warning-300"
+                  class="bg-warning-300 h-8 w-8 rounded-lg"
                   tooltip="bg-warning-300"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-warning-400"
+                  class="bg-warning-400 h-8 w-8 rounded-lg"
                   tooltip="bg-warning-400"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-warning-500"
+                  class="bg-warning-500 h-8 w-8 rounded-lg"
                   tooltip="bg-warning-500"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-warning-600"
+                  class="bg-warning-600 h-8 w-8 rounded-lg"
                   tooltip="bg-warning-600"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-warning-700"
+                  class="bg-warning-700 h-8 w-8 rounded-lg"
                   tooltip="bg-warning-700"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-warning-800"
+                  class="bg-warning-800 h-8 w-8 rounded-lg"
                   tooltip="bg-warning-800"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-warning-900"
+                  class="bg-warning-900 h-8 w-8 rounded-lg"
                   tooltip="bg-warning-900"
-                ></div>
+                />
               </div>
             </template>
             <template #code>
@@ -475,45 +474,45 @@ definePageMeta({
             <template #demo>
               <div class="flex flex-wrap items-end gap-2">
                 <div
-                  class="h-8 w-8 rounded-lg bg-danger-50"
+                  class="bg-danger-50 h-8 w-8 rounded-lg"
                   tooltip="bg-danger-50"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-danger-100"
+                  class="bg-danger-100 h-8 w-8 rounded-lg"
                   tooltip="bg-danger-100"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-danger-200"
+                  class="bg-danger-200 h-8 w-8 rounded-lg"
                   tooltip="bg-danger-200"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-danger-300"
+                  class="bg-danger-300 h-8 w-8 rounded-lg"
                   tooltip="bg-danger-300"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-danger-400"
+                  class="bg-danger-400 h-8 w-8 rounded-lg"
                   tooltip="bg-danger-400"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-danger-500"
+                  class="bg-danger-500 h-8 w-8 rounded-lg"
                   tooltip="bg-danger-500"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-danger-600"
+                  class="bg-danger-600 h-8 w-8 rounded-lg"
                   tooltip="bg-danger-600"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-danger-700"
+                  class="bg-danger-700 h-8 w-8 rounded-lg"
                   tooltip="bg-danger-700"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-danger-800"
+                  class="bg-danger-800 h-8 w-8 rounded-lg"
                   tooltip="bg-danger-800"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-danger-900"
+                  class="bg-danger-900 h-8 w-8 rounded-lg"
                   tooltip="bg-danger-900"
-                ></div>
+                />
               </div>
             </template>
             <template #code>
@@ -528,45 +527,45 @@ definePageMeta({
             <template #demo>
               <div class="flex flex-wrap items-end gap-2">
                 <div
-                  class="h-8 w-8 rounded-lg bg-muted-50"
+                  class="bg-muted-50 h-8 w-8 rounded-lg"
                   tooltip="bg-muted-50"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-muted-100"
+                  class="bg-muted-100 h-8 w-8 rounded-lg"
                   tooltip="bg-muted-100"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-muted-200"
+                  class="bg-muted-200 h-8 w-8 rounded-lg"
                   tooltip="bg-muted-200"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-muted-300"
+                  class="bg-muted-300 h-8 w-8 rounded-lg"
                   tooltip="bg-muted-300"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-muted-400"
+                  class="bg-muted-400 h-8 w-8 rounded-lg"
                   tooltip="bg-muted-400"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-muted-500"
+                  class="bg-muted-500 h-8 w-8 rounded-lg"
                   tooltip="bg-muted-500"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-muted-600"
+                  class="bg-muted-600 h-8 w-8 rounded-lg"
                   tooltip="bg-muted-600"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-muted-700"
+                  class="bg-muted-700 h-8 w-8 rounded-lg"
                   tooltip="bg-muted-700"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-muted-800"
+                  class="bg-muted-800 h-8 w-8 rounded-lg"
                   tooltip="bg-muted-800"
-                ></div>
+                />
                 <div
-                  class="h-8 w-8 rounded-lg bg-muted-900"
+                  class="bg-muted-900 h-8 w-8 rounded-lg"
                   tooltip="bg-muted-900"
-                ></div>
+                />
               </div>
             </template>
             <template #code>

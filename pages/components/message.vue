@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { icons, shapes, types } from '@@/documentation/components/message'
 
-import { metaBaseMessage } from '#nuxt-component-meta'
-
 definePageMeta({
   title: 'Messages',
   documentation: {
@@ -27,9 +25,11 @@ definePageMeta({
             <template #demo>
               <BaseFocusLoop class="max-w-xs space-y-4">
                 <BaseMessage>A successful message.</BaseMessage>
-                <BaseMessage type="info">An information message.</BaseMessage>
-                <BaseMessage type="warning">A warning message.</BaseMessage>
-                <BaseMessage type="danger">A destructive message.</BaseMessage>
+                <BaseMessage type="info"> An information message. </BaseMessage>
+                <BaseMessage type="warning"> A warning message. </BaseMessage>
+                <BaseMessage type="danger">
+                  A destructive message.
+                </BaseMessage>
               </BaseFocusLoop>
             </template>
             <template #code>
@@ -43,7 +43,7 @@ definePageMeta({
           <DocComponent label="Message icons example">
             <template #demo>
               <BaseFocusLoop class="max-w-xs space-y-4">
-                <BaseMessage icon>A successful message.</BaseMessage>
+                <BaseMessage icon> A successful message. </BaseMessage>
                 <BaseMessage type="info" icon>
                   An information message.
                 </BaseMessage>
@@ -90,7 +90,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Message properties -->
-        <DocComponentMeta :meta="metaBaseMessage" />
+        <DocComponentMeta name="BaseMessage" />
       </template>
       <!-- Toc -->
       <template #toc>

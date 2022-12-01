@@ -18,13 +18,11 @@ import {
   selectedPersonName,
 } from '@@/documentation/components/combobox/data'
 
-import { metaBaseComboBox } from '#nuxt-component-meta'
-
 definePageMeta({
   title: 'Combobox',
   documentation: {
     category: 'Forms',
-    components: ['BaseComboBox'],
+    components: ['BaseListbox'],
   },
 })
 </script>
@@ -43,28 +41,28 @@ definePageMeta({
           <DocComponent label="Combobox shapes example">
             <template #demo>
               <div class="grid gap-4 md:grid-cols-2">
-                <BaseComboBox
+                <BaseListbox
                   v-model="selectedFramework"
                   label="Framework"
                   :items="frameworks"
                   shape="straight"
                 />
 
-                <BaseComboBox
+                <BaseListbox
                   v-model="selectedFramework"
                   label="Framework"
                   :items="frameworks"
                   shape="rounded"
                 />
 
-                <BaseComboBox
+                <BaseListbox
                   v-model="selectedFramework"
                   label="Framework"
                   :items="frameworks"
                   shape="curved"
                 />
 
-                <BaseComboBox
+                <BaseListbox
                   v-model="selectedFramework"
                   label="Framework"
                   :items="frameworks"
@@ -83,7 +81,7 @@ definePageMeta({
           <DocComponent label="Disabled state example">
             <template #demo>
               <div class="flex max-w-xs items-end">
-                <BaseComboBox
+                <BaseListbox
                   v-model="selectedPersonName"
                   label="Assignee"
                   :items="peopleNames"
@@ -102,7 +100,7 @@ definePageMeta({
           <DocComponent label="Loading state example">
             <template #demo>
               <div class="flex max-w-xs items-end">
-                <BaseComboBox
+                <BaseListbox
                   v-model="selectedPersonName"
                   label="Assignee"
                   :items="peopleNames"
@@ -121,7 +119,7 @@ definePageMeta({
           <DocComponent label="Text with sublabels example">
             <template #demo>
               <div class="flex max-w-xs items-end">
-                <BaseComboBox
+                <BaseListbox
                   v-model="selectedPersonName"
                   label="Assignee"
                   :items="peopleNames"
@@ -139,7 +137,7 @@ definePageMeta({
           <DocComponent label="Combobox icon example">
             <template #demo>
               <div class="flex max-w-xs items-end">
-                <BaseComboBox
+                <BaseListbox
                   v-model="selectedHobby"
                   label="Hobbies"
                   :items="hobbies"
@@ -157,7 +155,7 @@ definePageMeta({
           <DocComponent label="Combo media example">
             <template #demo>
               <div class="flex max-w-xs items-end">
-                <BaseComboBox
+                <BaseListbox
                   v-model="selectedPerson"
                   label="Assignee"
                   :items="people"
@@ -171,7 +169,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Combobox properties -->
-        <DocComponentMeta :meta="metaBaseComboBox" />
+        <DocComponentMeta name="BaseListbox" />
       </template>
       <!-- Toc -->
       <template #toc>

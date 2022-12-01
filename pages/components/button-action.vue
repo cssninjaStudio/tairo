@@ -6,8 +6,6 @@ import {
   shapes,
 } from '@@/documentation/components/action'
 
-import { metaBaseButtonAction } from '#nuxt-component-meta'
-
 const disabled = ref(true)
 
 definePageMeta({
@@ -34,10 +32,10 @@ definePageMeta({
           <DocComponent label="Default action shapes">
             <template #demo>
               <BaseFocusLoop class="flex flex-wrap items-end gap-2">
-                <BaseButtonAction shape="straight">Action</BaseButtonAction>
-                <BaseButtonAction shape="rounded">Action</BaseButtonAction>
-                <BaseButtonAction shape="curved">Action</BaseButtonAction>
-                <BaseButtonAction shape="full">Action</BaseButtonAction>
+                <BaseButtonAction shape="straight"> Action </BaseButtonAction>
+                <BaseButtonAction shape="rounded"> Action </BaseButtonAction>
+                <BaseButtonAction shape="curved"> Action </BaseButtonAction>
+                <BaseButtonAction shape="full"> Action </BaseButtonAction>
               </BaseFocusLoop>
             </template>
             <template #code>
@@ -57,8 +55,10 @@ definePageMeta({
                 <BaseButtonAction shape="rounded" muted>
                   Action
                 </BaseButtonAction>
-                <BaseButtonAction shape="curved" muted>Action</BaseButtonAction>
-                <BaseButtonAction shape="full" muted>Action</BaseButtonAction>
+                <BaseButtonAction shape="curved" muted>
+                  Action
+                </BaseButtonAction>
+                <BaseButtonAction shape="full" muted> Action </BaseButtonAction>
               </BaseFocusLoop>
             </template>
             <template #code>
@@ -81,7 +81,9 @@ definePageMeta({
                 <BaseButtonAction shape="curved" loading>
                   Action
                 </BaseButtonAction>
-                <BaseButtonAction shape="full" loading>Action</BaseButtonAction>
+                <BaseButtonAction shape="full" loading>
+                  Action
+                </BaseButtonAction>
               </BaseFocusLoop>
             </template>
             <template #code>
@@ -128,7 +130,7 @@ definePageMeta({
           </DocComponent>
         </DocSection>
 
-        <DocComponentMeta :meta="metaBaseButtonAction" />
+        <DocComponentMeta name="BaseButtonAction" />
       </template>
       <!-- Toc -->
       <template #toc>
