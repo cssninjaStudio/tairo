@@ -11,7 +11,7 @@ export const editorData = ref(`
 
   <p>Like all the great things on earth travelling teaches us by example. Here are some of the most precious lessons I’ve learned over the years of travelling.</p>
 
-  <figure class="image image-style-side"><img src="https://images.pexels.com/photos/2335126/pexels-photo-2335126.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="A lone wanderer looking at Mount Bromo volcano in Indonesia.">
+  <figure class="image image-style-side"><NuxtImg src="https://images.pexels.com/photos/2335126/pexels-photo-2335126.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="A lone wanderer looking at Mount Bromo volcano in Indonesia.">
     <figcaption>Leaving your comfort zone might lead you to such beautiful sceneries like this one.</figcaption>
   </figure>
 
@@ -33,7 +33,7 @@ export const editorData = ref(`
     <li>start your adventure</li>
   </ul>
 
-  <figure class="image image-style-side"><img src="https://images.pexels.com/photos/2967596/pexels-photo-2967596.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Three Monks walking on ancient temple.">
+  <figure class="image image-style-side"><NuxtImg src="https://images.pexels.com/photos/2967596/pexels-photo-2967596.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Three Monks walking on ancient temple.">
     <figcaption>Leaving your comfort zone might lead you to such beautiful sceneries like this one.</figcaption>
   </figure>
 

@@ -143,11 +143,11 @@ const demoBreadcrumbTwo = [
 
 <template>
   <BaseBreadcrumb :items="demoBreadcrumbOne">
-    <BaseIcon name="lucide:chevron-right" class="block w-3 h-3" />
+    <Icon name="lucide:chevron-right" class="block w-3 h-3" />
   </BaseBreadcrumb>
 
   <BaseBreadcrumb :items="demoBreadcrumbTwo">
-    <BaseIcon name="lucide:chevron-right" class="block w-3 h-3" />
+    <Icon name="lucide:chevron-right" class="block w-3 h-3" />
   </BaseBreadcrumb>
 </template>
 `
@@ -197,11 +197,11 @@ const demoBreadcrumbTwo = [
 
 <template>
   <BaseBreadcrumb :items="demoBreadcrumbOne">
-    <BaseIcon name="lucide:arrow-right" class="block w-3 h-3" />
+    <Icon name="lucide:arrow-right" class="block w-3 h-3" />
   </BaseBreadcrumb>
 
   <BaseBreadcrumb :items="demoBreadcrumbTwo">
-    <BaseIcon name="lucide:arrow-right" class="block w-3 h-3" />
+    <Icon name="lucide:arrow-right" class="block w-3 h-3" />
   </BaseBreadcrumb>
 </template>
 `

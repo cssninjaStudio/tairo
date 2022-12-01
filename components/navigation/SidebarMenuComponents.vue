@@ -12,7 +12,7 @@ const categoryOrders = [
   'Addons',
 ] as const
 
-const { displayMode, isSearching, filter, reset } = useDocumentationMenu()
+const { displayMode, isSearching, filter } = useDocumentationMenu()
 const router = useRouter()
 
 const show = reactive({
@@ -39,7 +39,7 @@ const componentChildRoutes = computed(() => {
       }
 
       return route.meta?.documentation?.components?.some((component) =>
-        component?.toLowerCase().includes(filter.value.toLowerCase())
+        component?.toLowerCase().includes(filter.value.toLowerCase()),
       )
     })
     ?.reduce<ComponentsTree>((acc, child) => {
@@ -109,12 +109,12 @@ defineEmits<{
             v-if="!filter"
             class="text-muted-400 group-hover:text-primary-400 group-focus-visible:text-primary-400 dark:text-muted-500"
           >
-            <BaseIcon
+            <Icon
               v-if="!show[category]"
               name="mdi:minus-box-outline"
               class="h-4 w-4"
             />
-            <BaseIcon v-else name="mdi:plus-box-outline" class="h-4 w-4" />
+            <Icon v-else name="mdi:plus-box-outline" class="h-4 w-4" />
           </div>
         </button>
         <ul v-show="filter || show[category]">
@@ -142,7 +142,7 @@ defineEmits<{
                   v-for="(
                     component, index
                   ) in route.meta?.documentation?.components?.filter(
-                    (item, index) => (isSearching ? true : index === 0)
+                    (item, index) => (isSearching ? true : index === 0),
                   )"
                   :key="component"
                   class="truncate font-mono"
@@ -181,7 +181,7 @@ defineEmits<{
                     class="truncate font-mono text-xs opacity-50"
                     :title="composable"
                   >
-                    <BaseIcon
+                    <Icon
                       name="ri:parentheses-line"
                       class="mr-2 inline-block h-4 w-4"
                     />
@@ -193,7 +193,7 @@ defineEmits<{
                     class="truncate font-mono text-xs opacity-50"
                     :title="item"
                   >
-                    <BaseIcon
+                    <Icon
                       name="ri:parentheses-line"
                       class="mr-2 inline-block h-4 w-4"
                     />

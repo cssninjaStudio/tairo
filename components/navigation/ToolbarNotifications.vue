@@ -13,7 +13,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
           <span
             class="flex h-9 w-9 items-center justify-center rounded-full border border-muted-200 bg-white dark:border-muted-700 dark:bg-muted-800"
           >
-            <BaseIcon name="ph:bell-duotone" class="h-5 w-5 text-muted-400" />
+            <Icon name="ph:bell-duotone" class="h-5 w-5 text-muted-400" />
           </span>
         </button>
       </MenuButton>
@@ -58,7 +58,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 <div
                   class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
                 >
-                  <img
+                  <NuxtImg
                     src="/img/avatars/12.svg"
                     class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""
@@ -92,7 +92,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 <div
                   class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
                 >
-                  <img
+                  <NuxtImg
                     src="/img/avatars/19.svg"
                     class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""
@@ -126,7 +126,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 <div
                   class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
                 >
-                  <img
+                  <NuxtImg
                     src="/img/avatars/3.svg"
                     class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""
@@ -160,7 +160,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 <div
                   class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
                 >
-                  <img
+                  <NuxtImg
                     src="/img/avatars/4.svg"
                     class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""
@@ -194,7 +194,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 <div
                   class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
                 >
-                  <img
+                  <NuxtImg
                     src="/img/avatars/8.svg"
                     class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""

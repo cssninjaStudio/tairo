@@ -197,7 +197,7 @@ export const iconSlot = `
       text="View your profile"
     >
       <template #start>
-        <BaseIcon name="ph:user-duotone" class="w-5 h-5 block mr-2" />
+        <Icon name="ph:user-duotone" class="w-5 h-5 block mr-2" />
       </template>
     </BaseDropdownItem>
     <BaseDropdownItem
@@ -206,12 +206,12 @@ export const iconSlot = `
       text="View your projects"
     >
       <template #start>
-        <BaseIcon name="ph:briefcase-duotone" class="w-5 h-5 block mr-2" />
+        <Icon name="ph:briefcase-duotone" class="w-5 h-5 block mr-2" />
       </template>
     </BaseDropdownItem>
     <BaseDropdownItem to="/" title="Team" text="Manage your team">
       <template #start>
-        <BaseIcon name="ph:users-four-duotone" class="w-5 h-5 block mr-2" />
+        <Icon name="ph:users-four-duotone" class="w-5 h-5 block mr-2" />
       </template>
     </BaseDropdownItem>
     <BaseDropdownDivide />
@@ -221,7 +221,7 @@ export const iconSlot = `
       text="Set your preferences"
     >
       <template #start>
-        <BaseIcon name="ph:gear-six-duotone" class="w-5 h-5 block mr-2" />
+        <Icon name="ph:gear-six-duotone" class="w-5 h-5 block mr-2" />
       </template>
     </BaseDropdownItem>
   </BaseDropdown> 

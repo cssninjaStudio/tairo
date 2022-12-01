@@ -54,7 +54,7 @@ const props = withDefaults(defineProps<CarouselProps>(), {
             class="flex min-w-[100px] items-center justify-center py-6 px-2 text-muted-400 transition-all duration-300 hover:-translate-y-1 hover:border-primary-500 hover:text-primary-500 hover:shadow-lg dark:hover:border-primary-500"
           >
             <div class="text-center">
-              <BaseIcon
+              <Icon
                 v-if="slide.icon"
                 :name="slide.icon"
                 class="mx-auto mb-2 !block h-7 w-7"

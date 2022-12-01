@@ -18,7 +18,7 @@ const activeTab = ref('tab-1')
         class="flex h-10 w-10 items-center justify-center rounded-full text-muted-400 transition-colors duration-300 hover:bg-muted-100 hover:text-muted-600 dark:hover:bg-muted-700 dark:hover:text-white"
         @click="closePanel"
       >
-        <BaseIcon name="feather:chevron-right" class="h-6 w-6" />
+        <Icon name="feather:chevron-right" class="h-6 w-6" />
       </button>
     </div>
 
@@ -75,7 +75,7 @@ const activeTab = ref('tab-1')
             <div
               class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
             >
-              <img
+              <NuxtImg
                 src="/img/avatars/2.svg"
                 class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                 alt=""
@@ -93,7 +93,7 @@ const activeTab = ref('tab-1')
               to="/"
               class="ml-auto flex h-9 w-9 items-center justify-center rounded-full border border-muted-200 text-muted-400 transition-colors duration-300 hover:border-primary-500 hover:text-primary-500 dark:border-muted-500 dark:hover:border-primary-500"
             >
-              <BaseIcon name="feather:arrow-right" class="h-4 w-4" />
+              <Icon name="feather:arrow-right" class="h-4 w-4" />
             </NuxtLink>
           </div>
           <!-- Team member -->
@@ -103,7 +103,7 @@ const activeTab = ref('tab-1')
             <div
               class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
             >
-              <img
+              <NuxtImg
                 src="/img/avatars/16.svg"
                 class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                 alt=""
@@ -121,7 +121,7 @@ const activeTab = ref('tab-1')
               to="/"
               class="ml-auto flex h-9 w-9 items-center justify-center rounded-full border border-muted-200 text-muted-400 transition-colors duration-300 hover:border-primary-500 hover:text-primary-500 dark:border-muted-500 dark:hover:border-primary-500"
             >
-              <BaseIcon name="feather:arrow-right" class="h-4 w-4" />
+              <Icon name="feather:arrow-right" class="h-4 w-4" />
             </NuxtLink>
           </div>
           <!-- Team member -->
@@ -131,7 +131,7 @@ const activeTab = ref('tab-1')
             <div
               class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
             >
-              <img
+              <NuxtImg
                 src="/img/avatars/3.svg"
                 class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                 alt=""
@@ -149,7 +149,7 @@ const activeTab = ref('tab-1')
               to="/"
               class="ml-auto flex h-9 w-9 items-center justify-center rounded-full border border-muted-200 text-muted-400 transition-colors duration-300 hover:border-primary-500 hover:text-primary-500 dark:border-muted-500 dark:hover:border-primary-500"
             >
-              <BaseIcon name="feather:arrow-right" class="h-4 w-4" />
+              <Icon name="feather:arrow-right" class="h-4 w-4" />
             </NuxtLink>
           </div>
           <!-- Team member -->
@@ -159,7 +159,7 @@ const activeTab = ref('tab-1')
             <div
               class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
             >
-              <img
+              <NuxtImg
                 src="/img/avatars/19.svg"
                 class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                 alt=""
@@ -177,7 +177,7 @@ const activeTab = ref('tab-1')
               to="/"
               class="ml-auto flex h-9 w-9 items-center justify-center rounded-full border border-muted-200 text-muted-400 transition-colors duration-300 hover:border-primary-500 hover:text-primary-500 dark:border-muted-500 dark:hover:border-primary-500"
             >
-              <BaseIcon name="feather:arrow-right" class="h-4 w-4" />
+              <Icon name="feather:arrow-right" class="h-4 w-4" />
             </NuxtLink>
           </div>
         </div>
@@ -192,7 +192,7 @@ const activeTab = ref('tab-1')
               <div
                 class="relative inline-flex h-9 w-9 items-center justify-center rounded-xl"
               >
-                <img
+                <NuxtImg
                   src="/img/icons/logos/slicer.svg"
                   class="max-w-full rounded-xl object-cover shadow-sm dark:border-transparent"
                   alt=""
@@ -210,7 +210,7 @@ const activeTab = ref('tab-1')
                 to="/"
                 class="ml-auto flex h-9 w-9 items-center justify-center rounded-full border border-muted-200 text-muted-400 transition-colors duration-300 hover:border-primary-500 hover:text-primary-500 dark:border-muted-500 dark:hover:border-primary-500"
               >
-                <BaseIcon name="feather:arrow-right" class="h-4 w-4" />
+                <Icon name="feather:arrow-right" class="h-4 w-4" />
               </NuxtLink>
             </div>
             <div
@@ -226,7 +226,7 @@ const activeTab = ref('tab-1')
                 <div
                   class="relative -ml-2 inline-flex h-8 w-8 items-center justify-center rounded-full border-2 border-white dark:border-muted-700"
                 >
-                  <img
+                  <NuxtImg
                     src="/img/avatars/2.svg"
                     class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""
@@ -235,7 +235,7 @@ const activeTab = ref('tab-1')
                 <div
                   class="relative -ml-2 inline-flex h-8 w-8 items-center justify-center rounded-full border-2 border-white dark:border-muted-700"
                 >
-                  <img
+                  <NuxtImg
                     src="/img/avatars/3.svg"
                     class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""
@@ -244,7 +244,7 @@ const activeTab = ref('tab-1')
                 <div
                   class="relative -ml-2 inline-flex h-8 w-8 items-center justify-center rounded-full border-2 border-white dark:border-muted-700"
                 >
-                  <img
+                  <NuxtImg
                     src="/img/avatars/4.svg"
                     class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""
@@ -270,7 +270,7 @@ const activeTab = ref('tab-1')
               <div
                 class="relative inline-flex h-9 w-9 items-center justify-center rounded-xl"
               >
-                <img
+                <NuxtImg
                   src="/img/icons/logos/metamovies.svg"
                   class="max-w-full rounded-xl object-cover shadow-sm dark:border-transparent"
                   alt=""
@@ -288,7 +288,7 @@ const activeTab = ref('tab-1')
                 to="/"
                 class="ml-auto flex h-9 w-9 items-center justify-center rounded-full border border-muted-200 text-muted-400 transition-colors duration-300 hover:border-primary-500 hover:text-primary-500 dark:border-muted-500 dark:hover:border-primary-500"
               >
-                <BaseIcon name="feather:arrow-right" class="h-4 w-4" />
+                <Icon name="feather:arrow-right" class="h-4 w-4" />
               </NuxtLink>
             </div>
             <div
@@ -304,7 +304,7 @@ const activeTab = ref('tab-1')
                 <div
                   class="relative -ml-2 inline-flex h-8 w-8 items-center justify-center rounded-full border-2 border-white dark:border-muted-700"
                 >
-                  <img
+                  <NuxtImg
                     src="/img/avatars/13.svg"
                     class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""
@@ -313,7 +313,7 @@ const activeTab = ref('tab-1')
                 <div
                   class="relative -ml-2 inline-flex h-8 w-8 items-center justify-center rounded-full border-2 border-white dark:border-muted-700"
                 >
-                  <img
+                  <NuxtImg
                     src="/img/avatars/24.svg"
                     class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""
@@ -330,7 +330,7 @@ const activeTab = ref('tab-1')
               <div
                 class="relative inline-flex h-9 w-9 items-center justify-center rounded-xl"
               >
-                <img
+                <NuxtImg
                   src="/img/icons/logos/fastpizza.svg"
                   class="max-w-full rounded-xl object-cover shadow-sm dark:border-transparent"
                   alt=""
@@ -348,7 +348,7 @@ const activeTab = ref('tab-1')
                 to="/"
                 class="ml-auto flex h-9 w-9 items-center justify-center rounded-full border border-muted-200 text-muted-400 transition-colors duration-300 hover:border-primary-500 hover:text-primary-500 dark:border-muted-500 dark:hover:border-primary-500"
               >
-                <BaseIcon name="feather:arrow-right" class="h-4 w-4" />
+                <Icon name="feather:arrow-right" class="h-4 w-4" />
               </NuxtLink>
             </div>
             <div
@@ -364,7 +364,7 @@ const activeTab = ref('tab-1')
                 <div
                   class="relative -ml-2 inline-flex h-8 w-8 items-center justify-center rounded-full border-2 border-white dark:border-muted-700"
                 >
-                  <img
+                  <NuxtImg
                     src="/img/avatars/11.svg"
                     class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""
@@ -373,7 +373,7 @@ const activeTab = ref('tab-1')
                 <div
                   class="relative -ml-2 inline-flex h-8 w-8 items-center justify-center rounded-full border-2 border-white dark:border-muted-700"
                 >
-                  <img
+                  <NuxtImg
                     src="/img/avatars/3.svg"
                     class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""
@@ -395,7 +395,7 @@ const activeTab = ref('tab-1')
               <div
                 class="relative flex h-9 w-9 items-center justify-center rounded-full border border-muted-200 bg-white text-muted-400 shadow-lg after:absolute after:top-4 after:-right-8 after:h-px after:w-5 after:border-t after:border-muted-300 after:content-[''] dark:border-muted-600 dark:bg-muted-700 dark:after:border-muted-600"
               >
-                <BaseIcon name="ph:phone-duotone" class="" />
+                <Icon name="ph:phone-duotone" class="" />
               </div>
               <div class="ml-10">
                 <h6
@@ -416,7 +416,7 @@ const activeTab = ref('tab-1')
                 <div
                   class="relative inline-flex h-7 w-7 items-center justify-center rounded-full"
                 >
-                  <img
+                  <NuxtImg
                     src="/img/avatars/3.svg"
                     class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""
@@ -439,7 +439,7 @@ const activeTab = ref('tab-1')
               <div
                 class="relative flex h-9 w-9 items-center justify-center rounded-full border border-muted-200 bg-white text-muted-400 shadow-lg after:absolute after:top-4 after:-right-8 after:h-px after:w-5 after:border-t after:border-muted-300 after:content-[''] dark:border-muted-600 dark:bg-muted-700 dark:after:border-muted-600"
               >
-                <BaseIcon name="ph:chat-circle-duotone" class="" />
+                <Icon name="ph:chat-circle-duotone" class="" />
               </div>
               <div class="ml-10">
                 <h6
@@ -460,7 +460,7 @@ const activeTab = ref('tab-1')
                 <div
                   class="relative inline-flex h-7 w-7 items-center justify-center rounded-full"
                 >
-                  <img
+                  <NuxtImg
                     src="/img/avatars/18.svg"
                     class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""
@@ -483,7 +483,7 @@ const activeTab = ref('tab-1')
               <div
                 class="relative flex h-9 w-9 items-center justify-center rounded-full border border-muted-200 bg-white text-muted-400 shadow-lg after:absolute after:top-4 after:-right-8 after:h-px after:w-5 after:border-t after:border-muted-300 after:content-[''] dark:border-muted-600 dark:bg-muted-700 dark:after:border-muted-600"
               >
-                <BaseIcon name="ph:envelope-duotone" class="" />
+                <Icon name="ph:envelope-duotone" class="" />
               </div>
               <div class="ml-10">
                 <h6
@@ -501,7 +501,7 @@ const activeTab = ref('tab-1')
               <div
                 class="relative flex h-9 w-9 items-center justify-center rounded-full border border-muted-200 bg-white text-muted-400 shadow-lg after:absolute after:top-4 after:-right-8 after:h-px after:w-5 after:border-t after:border-muted-300 after:content-[''] dark:border-muted-600 dark:bg-muted-700 dark:after:border-muted-600"
               >
-                <BaseIcon name="ph:selection-all-duotone" class="" />
+                <Icon name="ph:selection-all-duotone" class="" />
               </div>
               <div class="ml-10">
                 <h6
@@ -519,7 +519,7 @@ const activeTab = ref('tab-1')
               <div
                 class="relative flex h-9 w-9 items-center justify-center rounded-full border border-muted-200 bg-white text-muted-400 shadow-lg after:absolute after:top-4 after:-right-8 after:h-px after:w-5 after:border-t after:border-muted-300 after:content-[''] dark:border-muted-600 dark:bg-muted-700 dark:after:border-muted-600"
               >
-                <BaseIcon name="ph:note-duotone" class="" />
+                <Icon name="ph:note-duotone" class="" />
               </div>
               <div class="ml-10">
                 <h6

@@ -72,11 +72,11 @@ definePageMeta({
             <template #demo>
               <div class="flex flex-col gap-4">
                 <BaseBreadcrumb :items="demoBreadcrumbOne">
-                  <BaseIcon name="lucide:chevron-right" class="block h-3 w-3" />
+                  <Icon name="lucide:chevron-right" class="block h-3 w-3" />
                 </BaseBreadcrumb>
 
                 <BaseBreadcrumb :items="demoBreadcrumbTwo">
-                  <BaseIcon name="lucide:chevron-right" class="block h-3 w-3" />
+                  <Icon name="lucide:chevron-right" class="block h-3 w-3" />
                 </BaseBreadcrumb>
               </div>
             </template>
@@ -92,11 +92,11 @@ definePageMeta({
             <template #demo>
               <div class="flex flex-col gap-4">
                 <BaseBreadcrumb :items="demoBreadcrumbOne">
-                  <BaseIcon name="lucide:arrow-right" class="block h-3 w-3" />
+                  <Icon name="lucide:arrow-right" class="block h-3 w-3" />
                 </BaseBreadcrumb>
 
                 <BaseBreadcrumb :items="demoBreadcrumbTwo">
-                  <BaseIcon name="lucide:arrow-right" class="block h-3 w-3" />
+                  <Icon name="lucide:arrow-right" class="block h-3 w-3" />
                 </BaseBreadcrumb>
               </div>
             </template>

@@ -1,7 +1,7 @@
 import type { Component } from 'vue'
 import type { RouteLocationRaw } from 'vue-router'
 import {
-  BaseIcon,
+  Icon,
   LazyNavigationSidebarMenuComponents,
   LazyNavigationSidebarMenuComponentsHeader,
   LazyNavigationSidebarMenuDashboards,
@@ -26,40 +26,37 @@ export interface LazyNavigationSidebarItem {
 export const useSidebar = () => {
   const { openPanel } = usePanels()
 
+  // @todo: use app config
   const sidebars: LazyNavigationSidebarItem[] = [
     {
       name: 'Dashboards',
-      icon: () => h(BaseIcon, { name: 'ph:sidebar-duotone', class: 'w-5 h-5' }),
+      icon: () => h(Icon, { name: 'ph:sidebar-duotone', class: 'w-5 h-5' }),
       subnav: LazyNavigationSidebarMenuDashboards,
       subnavHeader: LazyNavigationSidebarMenuHeader,
       activePath: '/dashboards',
     },
     {
       name: 'Layouts',
-      icon: () =>
-        h(BaseIcon, { name: 'ph:app-window-duotone', class: 'w-5 h-5' }),
+      icon: () => h(Icon, { name: 'ph:app-window-duotone', class: 'w-5 h-5' }),
       subnav: LazyNavigationSidebarMenuLayouts,
       subnavHeader: LazyNavigationSidebarMenuHeader,
       activePath: '/layouts',
     },
     {
       name: 'Components',
-      icon: () =>
-        h(BaseIcon, { name: 'ph:grid-four-duotone', class: 'w-5 h-5' }),
+      icon: () => h(Icon, { name: 'ph:grid-four-duotone', class: 'w-5 h-5' }),
       subnav: LazyNavigationSidebarMenuComponents,
       subnavHeader: LazyNavigationSidebarMenuComponentsHeader,
       activePath: '/components',
     },
     {
       name: 'Chat',
-      icon: () =>
-        h(BaseIcon, { name: 'ph:chat-circle-duotone', class: 'w-5 h-5' }),
+      icon: () => h(Icon, { name: 'ph:chat-circle-duotone', class: 'w-5 h-5' }),
       to: { path: '/' },
     },
     {
       name: 'Panels',
-      icon: () =>
-        h(BaseIcon, { name: 'ph:square-half-duotone', class: 'w-5 h-5' }),
+      icon: () => h(Icon, { name: 'ph:square-half-duotone', class: 'w-5 h-5' }),
       click: () => {
         // toggleLayoutModal()
       },
@@ -68,7 +65,7 @@ export const useSidebar = () => {
     {
       name: 'Search',
       icon: () =>
-        h(BaseIcon, { name: 'ph:magnifying-glass-duotone', class: 'w-5 h-5' }),
+        h(Icon, { name: 'ph:magnifying-glass-duotone', class: 'w-5 h-5' }),
       click: () => {
         openPanel('search')
       },
@@ -76,8 +73,7 @@ export const useSidebar = () => {
     },
     {
       name: 'Settings',
-      icon: () =>
-        h(BaseIcon, { name: 'ph:gear-six-duotone', class: 'w-5 h-5' }),
+      icon: () => h(Icon, { name: 'ph:gear-six-duotone', class: 'w-5 h-5' }),
       to: { path: '/' },
       position: 'end',
     },

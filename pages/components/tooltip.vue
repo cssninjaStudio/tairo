@@ -22,7 +22,7 @@ definePageMeta({
             <template #demo>
               <div class="flex flex-wrap items-end gap-2">
                 <BaseButtonIcon shape="curved" tooltip="Time for a nap!">
-                  <BaseIcon
+                  <Icon
                     name="ph:timer-duotone"
                     class="h-5 w-5 text-sky-500"
                   />
@@ -32,7 +32,7 @@ definePageMeta({
                   flow="left"
                   tooltip="Unlock this now!"
                 >
-                  <BaseIcon
+                  <Icon
                     name="ph:lock-duotone"
                     class="h-5 w-5 text-emerald-500"
                   />
@@ -42,7 +42,7 @@ definePageMeta({
                   flow="right"
                   tooltip="Give some love!"
                 >
-                  <BaseIcon
+                  <Icon
                     name="ph:heartbeat-duotone"
                     class="h-5 w-5 text-rose-500"
                   />
@@ -52,13 +52,13 @@ definePageMeta({
                   flow="down"
                   tooltip="The King in the North!"
                 >
-                  <BaseIcon
+                  <Icon
                     name="ph:crown-duotone"
                     class="h-5 w-5 text-yellow-500"
                   />
                 </BaseButtonIcon>
                 <BaseButtonAction shape="curved" tooltip="Here we go!">
-                  <BaseIcon
+                  <Icon
                     name="ph:bell-ringing-duotone"
                     class="text-primary-500 -ml-1 h-4 w-4"
                   />

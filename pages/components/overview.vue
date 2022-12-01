@@ -56,7 +56,7 @@ definePageMeta({
                 class="text-primary-500 group mt-7 inline-flex items-center font-sans text-sm font-medium transition-opacity hover:opacity-90"
               >
                 <span class="mr-1">Read the documentation</span>
-                <BaseIcon
+                <Icon
                   name="lucide:arrow-right"
                   class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-2"
                 />
@@ -65,7 +65,7 @@ definePageMeta({
           </div>
           <div class="grid grid-cols-2 gap-2 xl:gap-6">
             <BaseCard shape="rounded" class="p-8 text-center">
-              <BaseIcon
+              <Icon
                 name="logos:nuxt-icon"
                 class="mx-auto mb-2 block h-10 w-10"
               />
@@ -79,7 +79,7 @@ definePageMeta({
               </BaseHeading>
             </BaseCard>
             <BaseCard shape="rounded" class="p-8 text-center">
-              <BaseIcon
+              <Icon
                 name="vscode-icons:folder-type-typescript"
                 class="mx-auto mb-2 block h-10 w-10"
               />
@@ -93,7 +93,7 @@ definePageMeta({
               </BaseHeading>
             </BaseCard>
             <BaseCard shape="rounded" class="p-8 text-center">
-              <BaseIcon
+              <Icon
                 name="logos:tailwindcss-icon"
                 class="mx-auto mb-2 block h-10 w-10"
               />
@@ -107,7 +107,7 @@ definePageMeta({
               </BaseHeading>
             </BaseCard>
             <BaseCard shape="rounded" class="p-8 text-center">
-              <BaseIcon
+              <Icon
                 name="logos:unocss"
                 class="mx-auto mb-2 block h-10 w-10 scale-75 dark:invert"
               />
@@ -139,7 +139,7 @@ definePageMeta({
             <!-- Feature -->
             <BaseCard shape="curved" class="flex items-center p-3">
               <BaseIconBox size="md" class="bg-success-100 text-success-500">
-                <BaseIcon name="simple-icons:nuxtdotjs" class="h-6 w-6" />
+                <Icon name="simple-icons:nuxtdotjs" class="h-6 w-6" />
               </BaseIconBox>
               <div class="ml-3">
                 <BaseHeading
@@ -158,7 +158,7 @@ definePageMeta({
             <!-- Feature -->
             <BaseCard shape="curved" class="flex items-center p-3">
               <BaseIconBox size="md" class="bg-yellow-100 text-yellow-500">
-                <BaseIcon
+                <Icon
                   name="teenyicons:typescript-outline"
                   class="h-6 w-6"
                 />
@@ -180,7 +180,7 @@ definePageMeta({
             <!-- Feature -->
             <BaseCard shape="curved" class="flex items-center p-3">
               <BaseIconBox size="md" class="bg-primary-100 text-primary-500">
-                <BaseIcon name="simple-icons:vite" class="h-6 w-6" />
+                <Icon name="simple-icons:vite" class="h-6 w-6" />
               </BaseIconBox>
               <div class="ml-3">
                 <BaseHeading
@@ -199,7 +199,7 @@ definePageMeta({
             <!-- Feature -->
             <BaseCard shape="curved" class="flex items-center p-3">
               <BaseIconBox size="md" class="bg-sky-100 text-sky-500">
-                <BaseIcon name="simple-icons:tailwindcss" class="h-6 w-6" />
+                <Icon name="simple-icons:tailwindcss" class="h-6 w-6" />
               </BaseIconBox>
               <div class="ml-3">
                 <BaseHeading
@@ -218,7 +218,7 @@ definePageMeta({
             <!-- Feature -->
             <BaseCard shape="curved" class="flex items-center p-3">
               <BaseIconBox size="md" class="bg-pink-100 text-pink-500">
-                <BaseIcon name="ph:storefront-duotone" class="h-6 w-6" />
+                <Icon name="ph:storefront-duotone" class="h-6 w-6" />
               </BaseIconBox>
               <div class="ml-3">
                 <BaseHeading
@@ -237,7 +237,7 @@ definePageMeta({
             <!-- Feature -->
             <BaseCard shape="curved" class="flex items-center p-3">
               <BaseIconBox size="md" class="bg-lime-100 text-lime-500">
-                <BaseIcon name="simple-icons:eslint" class="h-6 w-6" />
+                <Icon name="simple-icons:eslint" class="h-6 w-6" />
               </BaseIconBox>
               <div class="ml-3">
                 <BaseHeading

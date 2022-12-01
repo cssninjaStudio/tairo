@@ -4,7 +4,6 @@
     "dev": "nuxi dev",
     "build": "nuxi build",
     "start": "node .output/server/index.mjs",
-    "allupdate": "yarn upgrade-interactive",
     "test": "run-p test:*",
     "test:tsc": "vue-tsc --noEmit",
     "test:lint": "run-s lint:eslint lint:prettier",
@@ -18,15 +17,15 @@
     "@antfu/eslint-config": "0.33.1",
     "@ckeditor/ckeditor5-build-classic": "35.3.2",
     "@ckeditor/ckeditor5-vue": "4.0.1",
-    "@cssninja/nuxt-ui": "0.1.0",
+    "@cssninja/nuxt-ui": "0.2.0",
     "@iconify/json": "2.1.146",
+    "@nuxt/image-edge": "1.0.0-27827328.bc9ddc0",
     "@nuxtjs/eslint-config": "^12.0.0",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@pinia/nuxt": "0.4.6",
     "@types/markdown-it": "12.2.3",
     "@types/prismjs": "1.26.0",
     "@vueform/slider": "2.1.5",
-    "defu": "6.1.1",
     "eslint": "8.28.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-prettier-vue": "4.2.0",
@@ -58,18 +57,5 @@
     "*.md": [
       "prettier --write"
     ]
-  },
-  "engines": {
-    "node": "^14.16.0 || ^16.11.0 || ^17.0.0 || ^18.0.0"
-  },
-  "pnpm": {
-    "peerDependencyRules": {
-      "ignoreMissing": [
-        "vue",
-        "webpack",
-        "postcss",
-        "tailwindcss"
-      ]
-    }
   }
 }

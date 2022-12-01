@@ -34,7 +34,7 @@ export const group = `
       View
     </BaseButtonAction>
     <BaseButtonAction shape="straight" class="focus:z-10">
-      <BaseIcon name="ph:pen" class="h-4 w-4" />
+      <Icon name="ph:pen" class="h-4 w-4" />
     </BaseButtonAction>
     <BaseButtonAction muted shape="straight" class="focus:z-10">
       Muted

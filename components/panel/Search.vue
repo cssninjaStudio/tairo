@@ -49,7 +49,7 @@ const filteredPeople = computed(() =>
     ? people
     : people.filter((person) => {
         return person.name.toLowerCase().includes(query.value.toLowerCase())
-      })
+      }),
 )
 </script>
 
@@ -68,7 +68,7 @@ const filteredPeople = computed(() =>
         class="flex h-10 w-10 items-center justify-center rounded-full text-muted-400 transition-colors duration-300 hover:bg-muted-100 hover:text-muted-600 dark:hover:bg-muted-700 dark:hover:text-white"
         @click="closePanel"
       >
-        <BaseIcon name="feather:chevron-left" class="h-6 w-6" />
+        <Icon name="feather:chevron-left" class="h-6 w-6" />
       </button>
     </div>
 
@@ -84,7 +84,7 @@ const filteredPeople = computed(() =>
           <div
             class="absolute top-0 left-0 flex h-12 w-12 items-center justify-center text-muted-400 transition-colors duration-300 group-focus-within:text-primary-500"
           >
-            <BaseIcon name="feather:search" class="h-5 w-5" />
+            <Icon name="feather:search" class="h-5 w-5" />
           </div>
         </div>
 
@@ -118,7 +118,7 @@ const filteredPeople = computed(() =>
                 <div
                   class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
                 >
-                  <img
+                  <NuxtImg
                     :src="person.avatar"
                     class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""
@@ -154,7 +154,7 @@ const filteredPeople = computed(() =>
               <div
                 class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
               >
-                <img
+                <NuxtImg
                   src="/img/avatars/3.svg"
                   class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                   alt=""
@@ -178,7 +178,7 @@ const filteredPeople = computed(() =>
               <div
                 class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
               >
-                <img
+                <NuxtImg
                   src="/img/avatars/18.svg"
                   class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                   alt=""
@@ -202,7 +202,7 @@ const filteredPeople = computed(() =>
               <div
                 class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
               >
-                <img
+                <NuxtImg
                   src="/img/avatars/11.svg"
                   class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                   alt=""
@@ -237,7 +237,7 @@ const filteredPeople = computed(() =>
               <div
                 class="relative inline-flex h-10 w-10 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-500 dark:text-muted-50"
               >
-                <BaseIcon name="feather:chrome" class="" />
+                <Icon name="feather:chrome" class="" />
               </div>
               <div class="ml-3">
                 <h6
@@ -255,7 +255,7 @@ const filteredPeople = computed(() =>
               <div
                 class="relative inline-flex h-10 w-10 items-center justify-center rounded-full bg-warning-100 text-warning-600 dark:bg-warning-500 dark:text-muted-50"
               >
-                <BaseIcon name="feather:tv" class="" />
+                <Icon name="feather:tv" class="" />
               </div>
               <div class="ml-3">
                 <h6
@@ -273,7 +273,7 @@ const filteredPeople = computed(() =>
               <div
                 class="relative inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary-100 text-primary-600 dark:bg-primary-500 dark:text-muted-50"
               >
-                <BaseIcon name="feather:twitter" class="" />
+                <Icon name="feather:twitter" class="" />
               </div>
               <div class="ml-3">
                 <h6

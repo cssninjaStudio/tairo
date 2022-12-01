@@ -170,27 +170,27 @@ definePageMeta({
             <template #demo>
               <BaseFocusLoop class="flex flex-wrap items-end gap-4">
                 <BaseButton color="default">
-                  <BaseIcon name="lucide:moon" class="-ml-1 h-4 w-4" />
+                  <Icon name="lucide:moon" class="-ml-1 h-4 w-4" />
                   <span>Button</span>
                 </BaseButton>
                 <BaseButton color="primary">
                   <span>Button</span>
-                  <BaseIcon name="lucide:arrow-right" class="mr-1 h-4 w-4" />
+                  <Icon name="lucide:arrow-right" class="mr-1 h-4 w-4" />
                 </BaseButton>
                 <BaseButton color="success">
-                  <BaseIcon name="cib:envato" class="-ml-1 h-4 w-4" />
+                  <Icon name="cib:envato" class="-ml-1 h-4 w-4" />
                   <span>Button</span>
                 </BaseButton>
                 <BaseButton color="info">
-                  <BaseIcon name="fa:twitter" class="-ml-1 h-4 w-4" />
+                  <Icon name="fa:twitter" class="-ml-1 h-4 w-4" />
                   <span>Button</span>
                 </BaseButton>
                 <BaseButton color="warning">
-                  <BaseIcon name="ion:shapes" class="-ml-1 h-4 w-4" />
+                  <Icon name="ion:shapes" class="-ml-1 h-4 w-4" />
                   <span>Button</span>
                 </BaseButton>
                 <BaseButton color="danger">
-                  <BaseIcon name="ph:heart-duotone" class="-ml-1 h-4 w-4" />
+                  <Icon name="ph:heart-duotone" class="-ml-1 h-4 w-4" />
                   <span>Button</span>
                 </BaseButton>
               </BaseFocusLoop>
@@ -226,15 +226,15 @@ definePageMeta({
             <template #demo>
               <BaseFocusLoop class="flex flex-wrap items-end gap-2">
                 <BaseButton color="default">
-                  <BaseIcon name="lucide:edit-3" class="-ml-1 h-3 w-3" />
+                  <Icon name="lucide:edit-3" class="-ml-1 h-3 w-3" />
                   <span>Edit</span>
                 </BaseButton>
                 <BaseButton color="default">
-                  <BaseIcon name="lucide:eye" class="-ml-1 h-3 w-3" />
+                  <Icon name="lucide:eye" class="-ml-1 h-3 w-3" />
                   <span>View</span>
                 </BaseButton>
                 <BaseButton color="primary" flavor="outline">
-                  <BaseIcon name="lucide:share-2" class="-ml-1 h-3 w-3" />
+                  <Icon name="lucide:share-2" class="-ml-1 h-3 w-3" />
                   <span>Share</span>
                 </BaseButton>
               </BaseFocusLoop>
