@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onKeyStroke } from '@vueuse/core';
+import { onKeyStroke } from '@vueuse/core'
 import type { Directive } from 'vue'
 
 const { toggleSidebar } = useSidebar()
@@ -73,7 +73,7 @@ onKeyStroke(['Escape'], () => {
             class="mr-2 h-6 w-6 border-0 p-0 focus:z-10"
             @click="isSearching = true"
           >
-            <BaseIcon name="lucide:search" class="h-4 w-4" />
+            <Icon name="lucide:search" class="h-4 w-4" />
           </BaseButtonIcon>
 
           <span>Components</span>
@@ -83,7 +83,7 @@ onKeyStroke(['Escape'], () => {
           class="ml-auto flex h-10 w-10 items-center justify-center rounded-full text-muted-400 transition-colors duration-300 hover:bg-muted-100 hover:text-muted-600 xl:hidden"
           @click="toggleSidebar"
         >
-          <BaseIcon name="feather:chevron-left" class="h-6 w-6" />
+          <Icon name="feather:chevron-left" class="h-6 w-6" />
         </button>
       </div>
       <BaseFocusLoop class="flex items-end px-6 pb-4">

@@ -3,7 +3,7 @@ const { activeSidebar, sidebars, isSidebarOpened, toggleActiveSidebar } =
   useSidebar()
 
 const startSidebars = sidebars.filter(
-  (sidebar) => !sidebar.position || sidebar.position === 'start'
+  (sidebar) => !sidebar.position || sidebar.position === 'start',
 )
 const endSidebars = sidebars.filter((sidebar) => sidebar.position === 'end')
 </script>
@@ -109,12 +109,12 @@ const endSidebars = sidebars.filter((sidebar) => sidebar.position === 'end')
                 @click="toggleLayoutModal"
               >
                 <div class="relative mx-auto max-w-[110px]">
-                  <img
+                  <NuxtImg
                     class="block dark:hidden"
                     src="/img/icons/layouts/layout-1.svg"
                     alt=""
                   />
-                  <img
+                  <NuxtImg
                     class="hidden dark:block"
                     src="/img/icons/layouts/layout-1-dark.svg"
                     alt=""
@@ -122,7 +122,7 @@ const endSidebars = sidebars.filter((sidebar) => sidebar.position === 'end')
                   <div
                     class="absolute top-0 right-0 flex h-6 w-6 items-center justify-center rounded-full bg-success-500 text-white"
                   >
-                    <BaseIcon name="lucide:check" class="block h-3 w-3" />
+                    <Icon name="lucide:check" class="block h-3 w-3" />
                   </div>
                 </div>
 
@@ -144,12 +144,12 @@ const endSidebars = sidebars.filter((sidebar) => sidebar.position === 'end')
                 @click="toggleLayoutModal"
               >
                 <div class="relative mx-auto max-w-[110px]">
-                  <img
+                  <NuxtImg
                     class="block dark:hidden"
                     src="/img/icons/layouts/layout-2.svg"
                     alt=""
                   />
-                  <img
+                  <NuxtImg
                     class="hidden dark:block"
                     src="/img/icons/layouts/layout-2-dark.svg"
                     alt=""
@@ -157,7 +157,7 @@ const endSidebars = sidebars.filter((sidebar) => sidebar.position === 'end')
                   <div
                     class="absolute top-0 right-0 flex h-6 w-6 items-center justify-center rounded-full bg-success-500 text-white"
                   >
-                    <BaseIcon name="lucide:check" class="block h-3 w-3" />
+                    <Icon name="lucide:check" class="block h-3 w-3" />
                   </div>
                 </div>
 

@@ -72,7 +72,7 @@ const isScrolled = computed(() => {
           class="flex h-9 w-9 items-center justify-center rounded-full bg-primary-700 transition-all duration-300"
           @click="openPanel('language')"
         >
-          <img
+          <NuxtImg
             class="h-7 w-7 rounded-full"
             src="/img/icons/flags/united-states-of-america.svg"
             alt="flag icon"
@@ -96,7 +96,7 @@ const isScrolled = computed(() => {
           <span
             class="flex h-9 w-9 items-center justify-center rounded-full bg-primary-700"
           >
-            <BaseIcon name="ph:bell-duotone" class="h-5 w-5 text-white" />
+            <Icon name="ph:bell-duotone" class="h-5 w-5 text-white" />
           </span>
         </NuxtLink>
       </div>
@@ -115,7 +115,7 @@ const isScrolled = computed(() => {
           class="flex h-9 w-9 items-center justify-center rounded-full bg-primary-700 transition-all duration-300"
           @click="openPanel('activity')"
         >
-          <BaseIcon name="ph:circles-four-duotone" class="h-5 w-5 text-white" />
+          <Icon name="ph:circles-four-duotone" class="h-5 w-5 text-white" />
         </button>
       </div>
     </div>

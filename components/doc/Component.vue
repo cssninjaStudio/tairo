@@ -1,6 +1,4 @@
 <script setup lang="ts">
-// import type { ComponentPublicInstance } from 'vue'
-
 export interface DocComponentProps {
   label?: string
 }
@@ -33,7 +31,7 @@ const activeTab = ref('demo')
             :muted="activeTab !== 'demo'"
             @click="activeTab = 'demo'"
           >
-            <BaseIcon name="cil:applications" class="mr-1.5 h-4 w-4" />
+            <Icon name="cil:applications" class="mr-1.5 h-4 w-4" />
             <span>Demo</span>
           </BaseButtonAction>
           <BaseButtonAction
@@ -42,7 +40,7 @@ const activeTab = ref('demo')
             :muted="activeTab !== 'code'"
             @click="activeTab = 'code'"
           >
-            <BaseIcon name="iconoir:terminal-outline" class="mr-1.5 h-4 w-4" />
+            <Icon name="iconoir:terminal-outline" class="mr-1.5 h-4 w-4" />
             <span>Code</span>
           </BaseButtonAction>
         </BaseFocusLoop>

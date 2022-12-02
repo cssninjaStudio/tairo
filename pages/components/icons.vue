@@ -16,7 +16,7 @@ definePageMeta({
   title: 'Icons',
   documentation: {
     category: 'Content',
-    components: ['BaseIcon'],
+    components: ['Icon'],
   },
 })
 </script>
@@ -35,27 +35,27 @@ definePageMeta({
           <DocComponent label="Phosphor icons example">
             <template #demo>
               <div class="flex items-end gap-4">
-                <BaseIcon
+                <Icon
                   name="ph:crown-duotone"
                   class="block h-6 w-6 text-muted-400 dark:text-muted-500"
                 />
-                <BaseIcon
+                <Icon
                   name="ph:crown-duotone"
                   class="block h-7 w-7 text-muted-400 dark:text-muted-500"
                 />
-                <BaseIcon
+                <Icon
                   name="ph:crown-duotone"
                   class="block h-8 w-8 text-muted-400 dark:text-muted-500"
                 />
-                <BaseIcon
+                <Icon
                   name="ph:crown-duotone"
                   class="block h-9 w-9 text-muted-400 dark:text-muted-500"
                 />
-                <BaseIcon
+                <Icon
                   name="ph:crown-duotone"
                   class="block h-10 w-10 text-muted-400 dark:text-muted-500"
                 />
-                <BaseIcon
+                <Icon
                   name="ph:crown-duotone"
                   class="block h-12 w-12 text-yellow-500"
                 />
@@ -72,27 +72,27 @@ definePageMeta({
           <DocComponent label="Lucide icons example">
             <template #demo>
               <div class="flex items-end gap-4">
-                <BaseIcon
+                <Icon
                   name="lucide:sofa"
                   class="block h-6 w-6 text-muted-400 dark:text-muted-500"
                 />
-                <BaseIcon
+                <Icon
                   name="lucide:sofa"
                   class="block h-7 w-7 text-muted-400 dark:text-muted-500"
                 />
-                <BaseIcon
+                <Icon
                   name="lucide:sofa"
                   class="block h-8 w-8 text-muted-400 dark:text-muted-500"
                 />
-                <BaseIcon
+                <Icon
                   name="lucide:sofa"
                   class="block h-9 w-9 text-muted-400 dark:text-muted-500"
                 />
-                <BaseIcon
+                <Icon
                   name="lucide:sofa"
                   class="block h-10 w-10 text-muted-400 dark:text-muted-500"
                 />
-                <BaseIcon
+                <Icon
                   name="lucide:sofa"
                   class="block h-12 w-12 text-rose-500"
                 />
@@ -109,27 +109,27 @@ definePageMeta({
           <DocComponent label="Carbon icons example">
             <template #demo>
               <div class="flex items-end gap-4">
-                <BaseIcon
+                <Icon
                   name="carbon:tropical-storm-tracks"
                   class="block h-6 w-6 text-muted-400 dark:text-muted-500"
                 />
-                <BaseIcon
+                <Icon
                   name="carbon:tropical-storm-tracks"
                   class="block h-7 w-7 text-muted-400 dark:text-muted-500"
                 />
-                <BaseIcon
+                <Icon
                   name="carbon:tropical-storm-tracks"
                   class="block h-8 w-8 text-muted-400 dark:text-muted-500"
                 />
-                <BaseIcon
+                <Icon
                   name="carbon:tropical-storm-tracks"
                   class="block h-9 w-9 text-muted-400 dark:text-muted-500"
                 />
-                <BaseIcon
+                <Icon
                   name="carbon:tropical-storm-tracks"
                   class="block h-10 w-10 text-muted-400 dark:text-muted-500"
                 />
-                <BaseIcon
+                <Icon
                   name="carbon:tropical-storm-tracks"
                   class="block h-12 w-12 text-primary-500"
                 />
@@ -146,27 +146,27 @@ definePageMeta({
           <DocComponent label="Ion icons example">
             <template #demo>
               <div class="flex items-end gap-4">
-                <BaseIcon
+                <Icon
                   name="ion:gift-outline"
                   class="block h-6 w-6 text-muted-400 dark:text-muted-500"
                 />
-                <BaseIcon
+                <Icon
                   name="ion:gift-outline"
                   class="block h-7 w-7 text-muted-400 dark:text-muted-500"
                 />
-                <BaseIcon
+                <Icon
                   name="ion:gift-outline"
                   class="block h-8 w-8 text-muted-400 dark:text-muted-500"
                 />
-                <BaseIcon
+                <Icon
                   name="ion:gift-outline"
                   class="block h-9 w-9 text-muted-400 dark:text-muted-500"
                 />
-                <BaseIcon
+                <Icon
                   name="ion:gift-outline"
                   class="block h-10 w-10 text-muted-400 dark:text-muted-500"
                 />
-                <BaseIcon
+                <Icon
                   name="ion:gift-outline"
                   class="block h-12 w-12 text-pink-500"
                 />
@@ -183,27 +183,27 @@ definePageMeta({
           <DocComponent label="Iconoir icons example">
             <template #demo>
               <div class="flex items-end gap-4">
-                <BaseIcon
+                <Icon
                   name="iconoir:arcade"
                   class="block h-6 w-6 text-muted-400 dark:text-muted-500"
                 />
-                <BaseIcon
+                <Icon
                   name="iconoir:arcade"
                   class="block h-7 w-7 text-muted-400 dark:text-muted-500"
                 />
-                <BaseIcon
+                <Icon
                   name="iconoir:arcade"
                   class="block h-8 w-8 text-muted-400 dark:text-muted-500"
                 />
-                <BaseIcon
+                <Icon
                   name="iconoir:arcade"
                   class="block h-9 w-9 text-muted-400 dark:text-muted-500"
                 />
-                <BaseIcon
+                <Icon
                   name="iconoir:arcade"
                   class="block h-10 w-10 text-muted-400 dark:text-muted-500"
                 />
-                <BaseIcon
+                <Icon
                   name="iconoir:arcade"
                   class="block h-12 w-12 text-lime-500"
                 />
@@ -220,27 +220,27 @@ definePageMeta({
           <DocComponent label="Core UI icons example">
             <template #demo>
               <div class="flex items-end gap-4">
-                <BaseIcon
+                <Icon
                   name="cil:boat-alt"
                   class="block h-6 w-6 text-muted-400 dark:text-muted-500"
                 />
-                <BaseIcon
+                <Icon
                   name="cil:boat-alt"
                   class="block h-7 w-7 text-muted-400 dark:text-muted-500"
                 />
-                <BaseIcon
+                <Icon
                   name="cil:boat-alt"
                   class="block h-8 w-8 text-muted-400 dark:text-muted-500"
                 />
-                <BaseIcon
+                <Icon
                   name="cil:boat-alt"
                   class="block h-9 w-9 text-muted-400 dark:text-muted-500"
                 />
-                <BaseIcon
+                <Icon
                   name="cil:boat-alt"
                   class="block h-10 w-10 text-muted-400 dark:text-muted-500"
                 />
-                <BaseIcon
+                <Icon
                   name="cil:boat-alt"
                   class="block h-12 w-12 text-indigo-500"
                 />
@@ -257,27 +257,27 @@ definePageMeta({
           <DocComponent label="Font Awesome icons example">
             <template #demo>
               <div class="flex items-end gap-4">
-                <BaseIcon
+                <Icon
                   name="fa6-solid:computer-mouse"
                   class="block h-6 w-6 text-muted-400 dark:text-muted-500"
                 />
-                <BaseIcon
+                <Icon
                   name="fa6-solid:computer-mouse"
                   class="block h-7 w-7 text-muted-400 dark:text-muted-500"
                 />
-                <BaseIcon
+                <Icon
                   name="fa6-solid:computer-mouse"
                   class="block h-8 w-8 text-muted-400 dark:text-muted-500"
                 />
-                <BaseIcon
+                <Icon
                   name="fa6-solid:computer-mouse"
                   class="block h-9 w-9 text-muted-400 dark:text-muted-500"
                 />
-                <BaseIcon
+                <Icon
                   name="fa6-solid:computer-mouse"
                   class="block h-10 w-10 text-muted-400 dark:text-muted-500"
                 />
-                <BaseIcon
+                <Icon
                   name="fa6-solid:computer-mouse"
                   class="block h-12 w-12 text-fuchsia-500"
                 />
@@ -294,27 +294,27 @@ definePageMeta({
           <DocComponent label="Font Awesome brands example">
             <template #demo>
               <div class="flex items-end gap-4">
-                <BaseIcon
+                <Icon
                   name="fa6-brands:behance"
                   class="block h-6 w-6 text-muted-400 dark:text-muted-500"
                 />
-                <BaseIcon
+                <Icon
                   name="fa6-brands:behance"
                   class="block h-7 w-7 text-muted-400 dark:text-muted-500"
                 />
-                <BaseIcon
+                <Icon
                   name="fa6-brands:behance"
                   class="block h-8 w-8 text-muted-400 dark:text-muted-500"
                 />
-                <BaseIcon
+                <Icon
                   name="fa6-brands:behance"
                   class="block h-9 w-9 text-muted-400 dark:text-muted-500"
                 />
-                <BaseIcon
+                <Icon
                   name="fa6-brands:behance"
                   class="block h-10 w-10 text-muted-400 dark:text-muted-500"
                 />
-                <BaseIcon
+                <Icon
                   name="fa6-brands:behance"
                   class="block h-12 w-12 text-indigo-500"
                 />
@@ -331,27 +331,27 @@ definePageMeta({
           <DocComponent label="Material icons example">
             <template #demo>
               <div class="flex items-end gap-4">
-                <BaseIcon
+                <Icon
                   name="ic:baseline-forest"
                   class="block h-6 w-6 text-muted-400 dark:text-muted-500"
                 />
-                <BaseIcon
+                <Icon
                   name="ic:baseline-forest"
                   class="block h-7 w-7 text-muted-400 dark:text-muted-500"
                 />
-                <BaseIcon
+                <Icon
                   name="ic:baseline-forest"
                   class="block h-8 w-8 text-muted-400 dark:text-muted-500"
                 />
-                <BaseIcon
+                <Icon
                   name="ic:baseline-forest"
                   class="block h-9 w-9 text-muted-400 dark:text-muted-500"
                 />
-                <BaseIcon
+                <Icon
                   name="ic:baseline-forest"
                   class="block h-10 w-10 text-muted-400 dark:text-muted-500"
                 />
-                <BaseIcon
+                <Icon
                   name="ic:baseline-forest"
                   class="block h-12 w-12 text-teal-500"
                 />
@@ -368,12 +368,12 @@ definePageMeta({
           <DocComponent label="Logo icons example">
             <template #demo>
               <div class="flex items-end gap-4">
-                <BaseIcon name="logos:vue" class="block h-6 w-6" />
-                <BaseIcon name="logos:vue" class="block h-7 w-7" />
-                <BaseIcon name="logos:vue" class="block h-8 w-8" />
-                <BaseIcon name="logos:vue" class="block h-9 w-9" />
-                <BaseIcon name="logos:vue" class="block h-10 w-10" />
-                <BaseIcon name="logos:vue" class="block h-12 w-12" />
+                <Icon name="logos:vue" class="block h-6 w-6" />
+                <Icon name="logos:vue" class="block h-7 w-7" />
+                <Icon name="logos:vue" class="block h-8 w-8" />
+                <Icon name="logos:vue" class="block h-9 w-9" />
+                <Icon name="logos:vue" class="block h-10 w-10" />
+                <Icon name="logos:vue" class="block h-12 w-12" />
               </div>
             </template>
             <template #code>
@@ -381,7 +381,7 @@ definePageMeta({
             </template>
           </DocComponent>
         </DocSection>
-        <DocComponentMeta name="BaseIcon" />
+        <DocComponentMeta name="Icon" />
       </template>
       <!-- Toc -->
       <template #toc>

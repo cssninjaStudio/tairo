@@ -102,27 +102,27 @@ export const loading = `
 export const icons = `
 <template>
   <BaseButton color="default">
-    <BaseIcon name="lucide:moon" class="w-4 h-4 -ml-1" />
+    <Icon name="lucide:moon" class="w-4 h-4 -ml-1" />
     <span>Button</span>
   </BaseButton>
   <BaseButton color="primary">
     <span>Button</span>
-    <BaseIcon name="lucide:arrow-right" class="w-4 h-4 mr-1" />
+    <Icon name="lucide:arrow-right" class="w-4 h-4 mr-1" />
   </BaseButton>
   <BaseButton color="success">
-    <BaseIcon name="cib:envato" class="w-4 h-4 -ml-1" />
+    <Icon name="cib:envato" class="w-4 h-4 -ml-1" />
     <span>Button</span>
   </BaseButton>
   <BaseButton color="info">
-    <BaseIcon name="fa:twitter" class="w-4 h-4 -ml-1" />
+    <Icon name="fa:twitter" class="w-4 h-4 -ml-1" />
     <span>Button</span>
   </BaseButton>
   <BaseButton color="warning">
-    <BaseIcon name="ion:shapes" class="w-4 h-4 -ml-1" />
+    <Icon name="ion:shapes" class="w-4 h-4 -ml-1" />
     <span>Button</span>
   </BaseButton>
   <BaseButton color="danger">
-    <BaseIcon name="ph:heart-duotone" class="w-4 h-4 -ml-1" />
+    <Icon name="ph:heart-duotone" class="w-4 h-4 -ml-1" />
     <span>Button</span>
   </BaseButton>
 </template>
@@ -154,15 +154,15 @@ export const disabled = `
 export const group = `
 <template>
   <BaseButton color="default">
-    <BaseIcon name="lucide:edit-3" class="w-3 h-3 -ml-1" />
+    <Icon name="lucide:edit-3" class="w-3 h-3 -ml-1" />
     <span>Edit</span>
   </BaseButton>
   <BaseButton color="default">
-    <BaseIcon name="lucide:eye" class="w-3 h-3 -ml-1" />
+    <Icon name="lucide:eye" class="w-3 h-3 -ml-1" />
     <span>View</span>
   </BaseButton>
   <BaseButton color="primary" flavor="outline">
-    <BaseIcon name="lucide:share-2" class="w-3 h-3 -ml-1" />
+    <Icon name="lucide:share-2" class="w-3 h-3 -ml-1" />
     <span>Share</span>
   </BaseButton>
 </template>

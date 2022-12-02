@@ -31,7 +31,7 @@ definePageMeta({
                 subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Erat enim Polemonis. Duo Reges."
               >
                 <template #image>
-                  <img
+                  <NuxtImg
                     src="/img/illustrations/placeholders/people/2.svg"
                     alt="placeholder-image"
                   />
@@ -59,7 +59,7 @@ definePageMeta({
                 subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Erat enim Polemonis. Duo Reges."
               >
                 <template #image>
-                  <img
+                  <NuxtImg
                     src="/img/illustrations/placeholders/people/1.svg"
                     alt="placeholder-image"
                   />

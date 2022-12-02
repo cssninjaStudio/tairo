@@ -1,25 +1,33 @@
+import colors from 'tailwindcss/colors.js'
+
 export default defineNuxtConfig({
-  modules: ['@cssninja/nuxt-ui', '@pinia/nuxt', 'nuxt-component-meta'],
-  colorMode: {
-    classSuffix: '',
-  },
-  componentMeta: {
-    checkerOptions: {
-      forceUseTs: true,
-      schema: {
-        ignore: [
-          'RouteLocationRaw',
-          'ComponentData',
-          'NuxtComponentMetaNames',
-          'RouteLocationPathRaw',
-          'RouteLocationNamedRaw',
-        ],
+  extends: '@cssninja/nuxt-ui',
+  modules: ['@nuxt/image-edge', '@pinia/nuxt', 'nuxt-component-meta'],
+  tailwindcss: {
+    config: {
+      content: [],
+      theme: {
+        extend: {
+          colors: {
+            muted: colors?.slate,
+            primary: colors?.purple,
+            info: colors?.sky,
+            success: colors?.teal,
+            warning: colors?.amber,
+            danger: colors?.rose,
+          },
+          fontFamily: {
+            sans: ['Roboto Flex', 'sans-serif'],
+            heading: ['Inter', 'sans-serif'],
+            alt: ['Karla', 'sans-serif'],
+          },
+        },
       },
     },
   },
   css: [
-    '~/assets/css/tooltips.css',
-    '~/assets/css/slimscroll.css',
+    '~/assets/css/modules/variables.css',
+    '~/assets/css/modules/slider.css',
     '~/assets/css/keyframes.css',
   ],
   app: {
@@ -39,16 +47,8 @@ export default defineNuxtConfig({
   },
   postcss: {
     plugins: {
-      tailwindcss: {},
       autoprefixer: {},
     },
-  },
-  vueuse: {
-    ssrHandlers: true,
-  },
-  typescript: {
-    shim: false,
-    strict: true,
   },
   vite: {
     logLevel: 'info',
@@ -56,19 +56,22 @@ export default defineNuxtConfig({
       chunkSizeWarningLimit: Infinity,
       assetsInlineLimit: 4096 * 2,
     },
-    optimizeDeps: {
-      include: [
-        '@iconify/vue/dist/offline',
-        '@iconify/vue',
-        '@headlessui/vue',
-        'vue',
-        'pinia',
-        'ufo',
-        'vue3-carousel',
-        'vue-prism-component',
-        'prismjs',
-        '@vueform/slider',
-      ],
+  },
+  typescript: {
+    shim: false,
+  },
+  componentMeta: {
+    checkerOptions: {
+      forceUseTs: true,
+      schema: {
+        ignore: [
+          'RouteLocationRaw',
+          'ComponentData',
+          'NuxtComponentMetaNames',
+          'RouteLocationPathRaw',
+          'RouteLocationNamedRaw',
+        ],
+      },
     },
   },
 })

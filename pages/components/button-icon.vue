@@ -34,16 +34,16 @@ definePageMeta({
             <template #demo>
               <BaseFocusLoop class="flex flex-wrap items-end gap-2">
                 <BaseButtonIcon shape="straight">
-                  <BaseIcon name="ph:moon-duotone" class="h-5 w-5" />
+                  <Icon name="ph:moon-duotone" class="h-5 w-5" />
                 </BaseButtonIcon>
                 <BaseButtonIcon shape="rounded">
-                  <BaseIcon name="ph:github-logo-duotone" class="h-5 w-5" />
+                  <Icon name="ph:github-logo-duotone" class="h-5 w-5" />
                 </BaseButtonIcon>
                 <BaseButtonIcon shape="curved">
-                  <BaseIcon name="ph:game-controller-duotone" class="h-5 w-5" />
+                  <Icon name="ph:game-controller-duotone" class="h-5 w-5" />
                 </BaseButtonIcon>
                 <BaseButtonIcon shape="full">
-                  <BaseIcon name="ph:heart-duotone" class="h-5 w-5" />
+                  <Icon name="ph:heart-duotone" class="h-5 w-5" />
                 </BaseButtonIcon>
               </BaseFocusLoop>
             </template>
@@ -59,16 +59,16 @@ definePageMeta({
             <template #demo>
               <BaseFocusLoop class="flex flex-wrap items-end gap-2">
                 <BaseButtonIcon shape="straight" primary>
-                  <BaseIcon name="ph:moon-duotone" class="h-5 w-5" />
+                  <Icon name="ph:moon-duotone" class="h-5 w-5" />
                 </BaseButtonIcon>
                 <BaseButtonIcon shape="rounded" primary>
-                  <BaseIcon name="ph:github-logo-duotone" class="h-5 w-5" />
+                  <Icon name="ph:github-logo-duotone" class="h-5 w-5" />
                 </BaseButtonIcon>
                 <BaseButtonIcon shape="curved" primary>
-                  <BaseIcon name="ph:game-controller-duotone" class="h-5 w-5" />
+                  <Icon name="ph:game-controller-duotone" class="h-5 w-5" />
                 </BaseButtonIcon>
                 <BaseButtonIcon shape="full" primary>
-                  <BaseIcon name="ph:heart-duotone" class="h-5 w-5" />
+                  <Icon name="ph:heart-duotone" class="h-5 w-5" />
                 </BaseButtonIcon>
               </BaseFocusLoop>
             </template>
@@ -84,16 +84,16 @@ definePageMeta({
             <template #demo>
               <BaseFocusLoop class="flex flex-wrap items-end gap-2">
                 <BaseButtonIcon shape="straight" muted>
-                  <BaseIcon name="ph:moon-duotone" class="h-5 w-5" />
+                  <Icon name="ph:moon-duotone" class="h-5 w-5" />
                 </BaseButtonIcon>
                 <BaseButtonIcon shape="rounded" muted>
-                  <BaseIcon name="ph:github-logo-duotone" class="h-5 w-5" />
+                  <Icon name="ph:github-logo-duotone" class="h-5 w-5" />
                 </BaseButtonIcon>
                 <BaseButtonIcon shape="curved" muted>
-                  <BaseIcon name="ph:game-controller-duotone" class="h-5 w-5" />
+                  <Icon name="ph:game-controller-duotone" class="h-5 w-5" />
                 </BaseButtonIcon>
                 <BaseButtonIcon shape="full" muted>
-                  <BaseIcon name="ph:heart-duotone" class="h-5 w-5" />
+                  <Icon name="ph:heart-duotone" class="h-5 w-5" />
                 </BaseButtonIcon>
               </BaseFocusLoop>
             </template>
@@ -109,16 +109,16 @@ definePageMeta({
             <template #demo>
               <BaseFocusLoop class="flex flex-wrap items-end gap-2">
                 <BaseButtonIcon shape="straight" loading>
-                  <BaseIcon name="ph:moon-duotone" class="h-5 w-5" />
+                  <Icon name="ph:moon-duotone" class="h-5 w-5" />
                 </BaseButtonIcon>
                 <BaseButtonIcon shape="rounded" loading>
-                  <BaseIcon name="ph:github-logo-duotone" class="h-5 w-5" />
+                  <Icon name="ph:github-logo-duotone" class="h-5 w-5" />
                 </BaseButtonIcon>
                 <BaseButtonIcon shape="curved" loading>
-                  <BaseIcon name="ph:game-controller-duotone" class="h-5 w-5" />
+                  <Icon name="ph:game-controller-duotone" class="h-5 w-5" />
                 </BaseButtonIcon>
                 <BaseButtonIcon shape="full" loading>
-                  <BaseIcon name="ph:heart-duotone" class="h-5 w-5" />
+                  <Icon name="ph:heart-duotone" class="h-5 w-5" />
                 </BaseButtonIcon>
               </BaseFocusLoop>
             </template>
@@ -137,19 +137,19 @@ definePageMeta({
                   shape="curved"
                   class="rounded-r-none border-r-0 focus:z-10"
                 >
-                  <BaseIcon name="ph:moon-duotone" class="h-5 w-5" />
+                  <Icon name="ph:moon-duotone" class="h-5 w-5" />
                 </BaseButtonIcon>
                 <BaseButtonIcon shape="straight" class="focus:z-10">
-                  <BaseIcon name="ph:github-logo-duotone" class="h-5 w-5" />
+                  <Icon name="ph:github-logo-duotone" class="h-5 w-5" />
                 </BaseButtonIcon>
                 <BaseButtonIcon shape="straight" class="border-l-0 focus:z-10">
-                  <BaseIcon name="ph:game-controller-duotone" class="h-5 w-5" />
+                  <Icon name="ph:game-controller-duotone" class="h-5 w-5" />
                 </BaseButtonIcon>
                 <BaseButtonIcon
                   shape="curved"
                   class="rounded-l-none border-l-0 focus:z-10"
                 >
-                  <BaseIcon name="ph:heart-duotone" class="h-5 w-5" />
+                  <Icon name="ph:heart-duotone" class="h-5 w-5" />
                 </BaseButtonIcon>
               </BaseFocusLoop>
             </template>

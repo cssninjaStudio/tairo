@@ -2,7 +2,7 @@ export const helpLeft = `
 <template>
   <BasePopover size="sm">
     <span class="flex items-center text-muted-500">
-      <BaseIcon name="lucide:help-circle" class="w-4 h-4 mr-1" />
+      <Icon name="lucide:help-circle" class="w-4 h-4 mr-1" />
       <span class="font-sans text-sm">Help text</span>
     </span>
 
@@ -23,7 +23,7 @@ export const helpRight = `
 <template>
   <BasePopover size="sm" orientation="end">
     <span class="flex items-center justify-end text-muted-500">
-      <BaseIcon name="lucide:help-circle" class="w-4 h-4 mr-1" />
+      <Icon name="lucide:help-circle" class="w-4 h-4 mr-1" />
       <span class="font-sans text-sm">Help text</span>
     </span>
 

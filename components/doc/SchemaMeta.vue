@@ -1,5 +1,4 @@
 <script setup lang="ts">
-// import Prism from 'vue-prism-component'
 import type { PropertyMetaSchema } from 'vue-component-meta'
 
 export interface DocProperties {

@@ -13,7 +13,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
           <div
             class="relative inline-flex h-10 w-10 items-center justify-center rounded-full"
           >
-            <img
+            <NuxtImg
               src="/img/avatars/2.svg"
               class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
               alt=""
@@ -38,7 +38,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
               <div
                 class="relative inline-flex h-14 w-14 items-center justify-center rounded-full"
               >
-                <img
+                <NuxtImg
                   src="/img/avatars/2.svg"
                   class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                   alt=""
@@ -65,7 +65,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                     : 'text-muted-500',
                 ]"
               >
-                <BaseIcon name="ph:user-circle-duotone" class="h-5 w-5" />
+                <Icon name="ph:user-circle-duotone" class="h-5 w-5" />
                 <div class="ml-3">
                   <h6
                     class="font-heading text-xs font-semibold leading-none text-muted-800 dark:text-white"
@@ -90,7 +90,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                     : 'text-muted-500',
                 ]"
               >
-                <BaseIcon name="ph:briefcase-duotone" class="h-5 w-5" />
+                <Icon name="ph:briefcase-duotone" class="h-5 w-5" />
                 <div class="ml-3">
                   <h6
                     class="font-heading text-xs font-semibold leading-none text-muted-800 dark:text-white"
@@ -113,7 +113,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                     : 'text-muted-500',
                 ]"
               >
-                <BaseIcon name="ph:users-three-duotone" class="h-5 w-5" />
+                <Icon name="ph:users-three-duotone" class="h-5 w-5" />
                 <div class="ml-3">
                   <h6
                     class="font-heading text-xs font-semibold leading-none text-muted-800 dark:text-white"
@@ -137,7 +137,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                     : 'text-muted-500',
                 ]"
               >
-                <BaseIcon name="ph:gear-six-duotone" class="h-5 w-5" />
+                <Icon name="ph:gear-six-duotone" class="h-5 w-5" />
                 <div class="ml-3">
                   <h6
                     class="font-heading text-xs font-semibold leading-none text-muted-800 dark:text-white"

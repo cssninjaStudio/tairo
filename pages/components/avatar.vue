@@ -40,7 +40,7 @@ definePageMeta({
             <template #demo>
               <div class="flex flex-wrap items-end gap-4">
                 <BaseAvatar size="xs">
-                  <img src="/img/avatars/1.svg" />
+                  <NuxtImg src="/img/avatars/1.svg" />
                 </BaseAvatar>
                 <BaseAvatar src="/img/avatars/5.svg" />
                 <BaseAvatar src="/img/avatars/4.svg" size="md" />
