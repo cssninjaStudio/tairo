@@ -1,34 +1,18 @@
-import colors from 'tailwindcss/colors.js'
+import { createResolver, logger } from '@nuxt/kit'
+
+import { name, version } from './package.json'
+
+const { resolve } = createResolver(import.meta.url)
+
+logger.success(`Using ${name} v${version}`)
 
 export default defineNuxtConfig({
   extends: '@cssninja/nuxt-ui',
   modules: ['@nuxt/image-edge', '@pinia/nuxt', 'nuxt-component-meta'],
-  tailwindcss: {
-    config: {
-      content: [],
-      theme: {
-        extend: {
-          colors: {
-            muted: colors?.slate,
-            primary: colors?.purple,
-            info: colors?.sky,
-            success: colors?.teal,
-            warning: colors?.amber,
-            danger: colors?.rose,
-          },
-          fontFamily: {
-            sans: ['Roboto Flex', 'sans-serif'],
-            heading: ['Inter', 'sans-serif'],
-            alt: ['Karla', 'sans-serif'],
-          },
-        },
-      },
-    },
-  },
   css: [
-    '~/assets/css/modules/variables.css',
-    '~/assets/css/modules/slider.css',
-    '~/assets/css/keyframes.css',
+    resolve('./assets/css/modules/variables.css'),
+    resolve('./assets/css/modules/slider.css'),
+    resolve('./assets/css/keyframes.css'),
   ],
   app: {
     head: {
@@ -55,23 +39,6 @@ export default defineNuxtConfig({
     build: {
       chunkSizeWarningLimit: Infinity,
       assetsInlineLimit: 4096 * 2,
-    },
-  },
-  typescript: {
-    shim: false,
-  },
-  componentMeta: {
-    checkerOptions: {
-      forceUseTs: true,
-      schema: {
-        ignore: [
-          'RouteLocationRaw',
-          'ComponentData',
-          'NuxtComponentMetaNames',
-          'RouteLocationPathRaw',
-          'RouteLocationNamedRaw',
-        ],
-      },
     },
   },
 })
