@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { TocItem } from '~~/composables/useToc'
+import { TocItem } from '../../../composables/useToc';
 
 const { toc } = useToc()
 const route = useRoute()

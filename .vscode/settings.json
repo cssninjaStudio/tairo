@@ -17,5 +17,6 @@
   "prettier.enable": true,
   "eslint.alwaysShowStatus": true,
   "eslint.packageManager": "yarn",
-  "eslint.validate": ["javascript", "javascriptreact", "vue"]
+  "eslint.validate": ["javascript", "javascriptreact", "vue"],
+  "tailwindCSS.experimental.configFile": ".demo/tailwind.config.cjs"
 }

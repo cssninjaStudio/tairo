@@ -9,5 +9,5 @@ definePageMeta({
 </script>
 
 <template>
-  <div />
+  <div>Tairo quickstarter</div>
 </template>

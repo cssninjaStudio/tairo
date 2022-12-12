@@ -29,7 +29,7 @@ definePageMeta({
         <DocSection title="Small tier" tag="1.0.0">
           <DocComponent label="Small modals example">
             <template #demo>
-              <PartialDocModalSmallTier />
+              <ExampleModalSmallTier />
             </template>
             <template #code>
               <DocCode language="html" :code="smallTier" />
@@ -41,7 +41,7 @@ definePageMeta({
         <DocSection title="Medium tier" tag="1.0.0">
           <DocComponent label="Medium modals example">
             <template #demo>
-              <PartialDocModalMediumTier />
+              <ExampleModalMediumTier />
             </template>
             <template #code>
               <DocCode language="html" :code="mediumTier" />
@@ -53,7 +53,7 @@ definePageMeta({
         <DocSection title="Large tier" tag="1.0.0">
           <DocComponent label="Large modals example">
             <template #demo>
-              <PartialDocModalLargeTier />
+              <ExampleModalLargeTier />
             </template>
             <template #code>
               <DocCode language="html" :code="largeTier" />
@@ -65,7 +65,7 @@ definePageMeta({
         <DocSection title="Modal footer" tag="1.0.0">
           <DocComponent label="Footer options example">
             <template #demo>
-              <PartialDocModalFooter />
+              <ExampleModalFooter />
             </template>
             <template #code>
               <DocCode language="html" :code="footerAlign" />

@@ -4,19 +4,7 @@ const plugin = require('tailwindcss/plugin')
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: 'class',
-  content: [
-    /**
-     * Default content inherited from Tailwind Nuxt module
-     *
-     * components/** /*.{vue,js}`,
-     * layouts/** /*.vue`,
-     * pages/** /*.vue`,
-     * composables/** /*.{js,ts}`,
-     * plugins/** /*.{js,ts}`,
-     * App.{js,ts,vue}`,
-     * app.{js,ts,vue}`
-     */
-  ],
+  content: [],
   theme: {
     extend: {
       screens: {
