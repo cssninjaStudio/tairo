@@ -97,7 +97,7 @@ defineEmits<{
         <button
           v-if="category !== 'Uncategorized'"
           type="button"
-          class="group ninja-focus mt-4 mb-1 flex min-h-[2rem] w-full items-center justify-between focus-within:outline-0 focus-visible:outline-1"
+          class="group ninja-focus mt-8 mb-1 flex min-h-[2rem] w-full items-center justify-between focus-within:outline-0 focus-visible:outline-1"
           @click="show[category] = !show[category]"
         >
           <span

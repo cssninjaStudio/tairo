@@ -67,16 +67,15 @@ onKeyStroke(['Escape'], () => {
     <template v-else>
       <div class="flex w-full items-center px-6 pt-[8px] pb-[4px]">
         <div
-          class="flex items-center font-heading text-lg font-semibold capitalize text-muted-700 dark:text-white"
+          class="w-full flex items-center font-heading text-lg font-semibold capitalize text-muted-700 dark:text-white"
         >
+          <span>Components</span>
           <BaseButtonIcon
-            class="mr-2 h-6 w-6 border-0 p-0 focus:z-10"
+            class="ml-auto h-6 w-6 border-0 p-0 focus:z-10"
             @click="isSearching = true"
           >
             <Icon name="lucide:search" class="h-4 w-4" />
           </BaseButtonIcon>
-
-          <span>Components</span>
         </div>
         <button
           type="button"
@@ -86,14 +85,14 @@ onKeyStroke(['Escape'], () => {
           <Icon name="feather:chevron-left" class="h-6 w-6" />
         </button>
       </div>
-      <BaseFocusLoop class="flex items-end px-6 pb-4">
+      <BaseFocusLoop class="flex items-end px-6 pb-4 pt-2">
         <BaseButtonAction
           shape="rounded"
           class="rounded-r-none border-r-0 focus:z-10"
           :muted="displayMode !== 'category'"
           @click="displayMode = 'category'"
         >
-          <span class="text-xs">By theme</span>
+          <span class="text-xs">By topic</span>
         </BaseButtonAction>
         <BaseButtonAction
           shape="rounded"

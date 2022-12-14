@@ -43,7 +43,7 @@ const endSidebars = sidebars.filter((sidebar) => sidebar.position === 'end')
     <div
       v-if="activeSidebar"
       class="pointer-events-auto relative z-10 h-full w-[220px] border-r border-muted-200 bg-white transition-all duration-300 dark:border-muted-700 dark:bg-muted-800"
-      :class="isSidebarOpened ? '' : '-translate-x-[calc(100%_-_80px)]'"
+      :class="isSidebarOpened ? '' : 'translate-x-[calc(-100%_-_80px)]'"
     >
       <slot
         name="subnav"

@@ -1,5 +1,11 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+definePageMeta({
+  title: 'Personal 1',
+})
+</script>
 
 <template>
-  <div />
+  <div>
+    <PageDashboardPersonalOne />
+  </div>
 </template>

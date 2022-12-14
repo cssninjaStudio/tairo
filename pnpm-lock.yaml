@@ -13,6 +13,7 @@ specifiers:
   '@types/markdown-it': 12.2.3
   '@types/prismjs': 1.26.0
   '@vueform/slider': 2.1.5
+  apexcharts: ^3.36.3
   eslint: 8.28.0
   eslint-config-prettier: 8.5.0
   eslint-plugin-prettier-vue: 4.2.0
@@ -31,7 +32,12 @@ specifiers:
   typescript: 4.9.3
   vue-prism-component: 2.0.0
   vue-tsc: 1.0.10
+  vue3-apexcharts: ^1.4.1
   vue3-carousel: 0.2.8
+
+dependencies:
+  apexcharts: 3.36.3
+  vue3-apexcharts: 1.4.1_apexcharts@3.36.3
 
 devDependencies:
   '@antfu/eslint-config': 0.33.1_hsf322ms6xhhd4b5ne6lb74y4a
@@ -771,9 +777,6 @@ packages:
     peerDependencies:
       postcss: ^8.2
       postcss-selector-parser: ^6.0.10
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       postcss: 8.4.19
       postcss-selector-parser: 6.0.11
@@ -829,9 +832,6 @@ packages:
     engines: {node: '>=10'}
     peerDependencies:
       vue: ^3.2.0
-    peerDependenciesMeta:
-      vue:
-        optional: true
     dev: true
 
   /@humanwhocodes/config-array/0.11.7:
@@ -869,9 +869,6 @@ packages:
     resolution: {integrity: sha512-k4VwcSQpGqJpoyqENRRviFuXlVcquLvQ6BKLNJ6o2amZo7u+3HyALSO79Xyz7Sg68szQGstOk6weaKUF0DJbog==}
     peerDependencies:
       vue: '>=3'
-    peerDependenciesMeta:
-      vue:
-        optional: true
     dependencies:
       '@iconify/types': 2.0.0
     dev: true
@@ -1157,9 +1154,6 @@ packages:
     engines: {node: ^14.16.0 || ^16.10.0 || ^17.0.0 || ^18.0.0 || ^19.0.0}
     peerDependencies:
       vue: ^3.2.45
-    peerDependenciesMeta:
-      vue:
-        optional: true
     dependencies:
       '@nuxt/kit': 3.0.0_rollup@2.79.1
       '@rollup/plugin-replace': 5.0.1_rollup@2.79.1
@@ -1465,9 +1459,6 @@ packages:
     resolution: {integrity: sha512-8QPrypskfBa7QIMuKHg2TA7BqES6vhBrDLOv8Unb6FcFyd3TjKbc6lcmb9UPQHxfl24sXoJ41ux/H7qQQvfaSQ==}
     peerDependencies:
       tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
-    peerDependenciesMeta:
-      tailwindcss:
-        optional: true
     dependencies:
       tailwindcss: 3.2.4
     dev: true
@@ -1476,9 +1467,6 @@ packages:
     resolution: {integrity: sha512-y5mb86JUoiUgBjY/o6FJSFZSEttfb3Q5gllE4xoKjAAD+vBrnIhE4dViwUuow3va8mpH4s9jyUbUbrRGoRdc2Q==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || >= 3.0.0-alpha.1'
-    peerDependenciesMeta:
-      tailwindcss:
-        optional: true
     dependencies:
       mini-svg-data-uri: 1.4.4
       tailwindcss: 3.2.4
@@ -1488,9 +1476,6 @@ packages:
     resolution: {integrity: sha512-HFzAQuqYCjyy/SX9sLGB1lroPzmcnWv1FHkIpmypte10hptf4oPUfucryMKovZh2u0uiS9U5Ty3GghWfEJGwVw==}
     peerDependencies:
       tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
-    peerDependenciesMeta:
-      tailwindcss:
-        optional: true
     dependencies:
       tailwindcss: 3.2.4
     dev: true
@@ -1499,9 +1484,6 @@ packages:
     resolution: {integrity: sha512-xGQEp8KXN8Sd8m6R4xYmwxghmswrd0cPnNI2Lc6fmrC3OojysTBJJGSIVwPV56q4t6THFUK3HJ0EaWwpglSxWw==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders'
-    peerDependenciesMeta:
-      tailwindcss:
-        optional: true
     dependencies:
       lodash.castarray: 4.4.0
       lodash.isplainobject: 4.0.6
@@ -1732,9 +1714,6 @@ packages:
     resolution: {integrity: sha512-dW4FY4SRNaoGcFXuk6dU2Fp7fFHluBZqdOxpekMKO3q4zn+sOcnqHdzDmSnXPgoqr4huumnG8zNjVsuyRQ0+Mg==}
     peerDependencies:
       vue: '>=2.7 || >=3'
-    peerDependenciesMeta:
-      vue:
-        optional: true
     dependencies:
       '@unhead/schema': 1.0.4
       hookable: 5.4.2
@@ -1767,9 +1746,6 @@ packages:
     peerDependencies:
       vite: ^3.0.0
       vue: ^3.0.0
-    peerDependenciesMeta:
-      vue:
-        optional: true
     dependencies:
       '@babel/core': 7.20.5
       '@babel/plugin-transform-typescript': 7.20.2_@babel+core@7.20.5
@@ -1786,9 +1762,6 @@ packages:
     peerDependencies:
       vite: ^3.0.0
       vue: ^3.2.25
-    peerDependenciesMeta:
-      vue:
-        optional: true
     dependencies:
       vite: 3.2.4
       vue: 3.2.45
@@ -1932,9 +1905,6 @@ packages:
     resolution: {integrity: sha512-ebiMq7q24WBU1D6uhPK//2OTR1iRIyxjF5iVq/1a5I1SDMDyDu4Ts6fJaMnjrvD3MqnaiFkKQj+LKAgz5WIK3g==}
     peerDependencies:
       vue: 3.2.45
-    peerDependenciesMeta:
-      vue:
-        optional: true
     dependencies:
       '@vue/compiler-ssr': 3.2.45
       '@vue/shared': 3.2.45
@@ -1965,9 +1935,6 @@ packages:
     resolution: {integrity: sha512-V3EuLoZFrMgvCQYSE0pJupYglZ0ID3rr/8ATIgnZNn+fjRrIEn8oAwAe8FRFAUKgBb0rZt+QY94PaDF6/HOLOQ==}
     peerDependencies:
       vue: '>=2.7 || >=3'
-    peerDependenciesMeta:
-      vue:
-        optional: true
     dependencies:
       '@unhead/dom': 1.0.4
       '@unhead/schema': 1.0.4
@@ -2141,6 +2108,17 @@ packages:
       picomatch: 2.3.1
     dev: true
 
+  /apexcharts/3.36.3:
+    resolution: {integrity: sha512-8/FXEs0ohXMff07Gv28XjhPwEJphIUdq2/wii/pcvi54Tw6z1mjrV8ydN8rlWi/ve8BAPBefJkLmRWv7UOBsLw==}
+    dependencies:
+      svg.draggable.js: 2.2.2
+      svg.easing.js: 2.0.0
+      svg.filter.js: 2.0.2
+      svg.pathmorphing.js: 0.1.3
+      svg.resize.js: 1.4.3
+      svg.select.js: 3.0.1
+    dev: false
+
   /aproba/2.0.0:
     resolution: {integrity: sha512-lYe4Gx7QT+MKGbDsA+Z+he/Wtef0BiwDOlK/XkBrdfsh9J/jPPXbX0tE9x9cl27Tmu5gg3QUbUrQYa/y+KOHPQ==}
     dev: true
@@ -2256,9 +2234,6 @@ packages:
     hasBin: true
     peerDependencies:
       postcss: ^8.1.0
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       browserslist: 4.21.4
       caniuse-lite: 1.0.30001435
@@ -2274,9 +2249,6 @@ packages:
     hasBin: true
     peerDependencies:
       postcss: ^8.1.0
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       browserslist: 4.21.4
       caniuse-lite: 1.0.30001435
@@ -2827,9 +2799,6 @@ packages:
     engines: {node: ^10 || ^12 || >=14}
     peerDependencies:
       postcss: ^8.0.9
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       postcss: 8.4.19
     dev: true
@@ -2839,9 +2808,6 @@ packages:
     engines: {node: '>= 10.13.0'}
     peerDependencies:
       webpack: ^4.27.0 || ^5.0.0
-    peerDependenciesMeta:
-      webpack:
-        optional: true
     dependencies:
       icss-utils: 5.1.0_postcss@8.4.19
       loader-utils: 2.0.4
@@ -2894,9 +2860,6 @@ packages:
     engines: {node: ^10 || ^12 || >=14.0}
     peerDependencies:
       postcss: ^8.2.15
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       css-declaration-sorter: 6.3.1_postcss@8.4.19
       cssnano-utils: 3.1.0_postcss@8.4.19
@@ -2935,9 +2898,6 @@ packages:
     engines: {node: ^10 || ^12 || >=14.0}
     peerDependencies:
       postcss: ^8.2.15
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       postcss: 8.4.19
     dev: true
@@ -2947,9 +2907,6 @@ packages:
     engines: {node: ^10 || ^12 || >=14.0}
     peerDependencies:
       postcss: ^8.2.15
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       cssnano-preset-default: 5.2.13_postcss@8.4.19
       lilconfig: 2.0.6
@@ -4850,9 +4807,6 @@ packages:
     engines: {node: ^10 || ^12 || >= 14}
     peerDependencies:
       postcss: ^8.1.0
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       postcss: 8.4.19
     dev: true
@@ -6625,8 +6579,6 @@ packages:
         optional: true
       typescript:
         optional: true
-      vue:
-        optional: true
     dependencies:
       '@vue/devtools-api': 6.4.5
       typescript: 4.9.3
@@ -6661,9 +6613,6 @@ packages:
     resolution: {integrity: sha512-SmWMSJmB8MRnnULldx0lQIyhSNvuDl9HfrZkaqqE/WHAhToYsAvDq+yAsA/kIyINDszOp3Rh0GFoNuH5Ypsm3Q==}
     peerDependencies:
       postcss: ^8.2.2
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       postcss: 8.4.19
       postcss-selector-parser: 6.0.11
@@ -6675,9 +6624,6 @@ packages:
     engines: {node: ^10 || ^12 || >=14.0}
     peerDependencies:
       postcss: ^8.2.15
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       browserslist: 4.21.4
       caniuse-api: 3.0.0
@@ -6691,9 +6637,6 @@ packages:
     engines: {node: ^10 || ^12 || >=14.0}
     peerDependencies:
       postcss: ^8.2.15
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       browserslist: 4.21.4
       postcss: 8.4.19
@@ -6705,9 +6648,6 @@ packages:
     engines: {node: ^12 || ^14 || >=16}
     peerDependencies:
       postcss: ^8.2
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       postcss: 8.4.19
       postcss-value-parser: 4.2.0
@@ -6718,9 +6658,6 @@ packages:
     engines: {node: ^10 || ^12 || >=14.0}
     peerDependencies:
       postcss: ^8.2.15
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       postcss: 8.4.19
     dev: true
@@ -6730,9 +6667,6 @@ packages:
     engines: {node: ^10 || ^12 || >=14.0}
     peerDependencies:
       postcss: ^8.2.15
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       postcss: 8.4.19
     dev: true
@@ -6742,9 +6676,6 @@ packages:
     engines: {node: ^10 || ^12 || >=14.0}
     peerDependencies:
       postcss: ^8.2.15
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       postcss: 8.4.19
     dev: true
@@ -6754,9 +6685,6 @@ packages:
     engines: {node: ^10 || ^12 || >=14.0}
     peerDependencies:
       postcss: ^8.2.15
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       postcss: 8.4.19
     dev: true
@@ -6772,9 +6700,6 @@ packages:
     engines: {node: '>=10.0.0'}
     peerDependencies:
       postcss: ^8.0.0
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       postcss: 8.4.19
       postcss-value-parser: 4.2.0
@@ -6787,9 +6712,6 @@ packages:
     engines: {node: '>=10.0.0'}
     peerDependencies:
       postcss: ^8.0.0
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       postcss: 8.4.19
       postcss-value-parser: 4.2.0
@@ -6802,9 +6724,6 @@ packages:
     engines: {node: '>=14.0.0'}
     peerDependencies:
       postcss: ^8.0.0
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       postcss: 8.4.19
       postcss-value-parser: 4.2.0
@@ -6817,9 +6736,6 @@ packages:
     engines: {node: ^12 || ^14 || >= 16}
     peerDependencies:
       postcss: ^8.3.3
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       camelcase-css: 2.0.1
       postcss: 8.4.19
@@ -6848,11 +6764,6 @@ packages:
     peerDependencies:
       postcss: ^7.0.0 || ^8.0.1
       webpack: ^4.0.0 || ^5.0.0
-    peerDependenciesMeta:
-      postcss:
-        optional: true
-      webpack:
-        optional: true
     dependencies:
       cosmiconfig: 7.1.0
       klona: 2.0.5
@@ -6867,9 +6778,6 @@ packages:
     engines: {node: ^10 || ^12 || >=14.0}
     peerDependencies:
       postcss: ^8.2.15
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       postcss: 8.4.19
       postcss-value-parser: 4.2.0
@@ -6881,9 +6789,6 @@ packages:
     engines: {node: ^10 || ^12 || >=14.0}
     peerDependencies:
       postcss: ^8.2.15
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       browserslist: 4.21.4
       caniuse-api: 3.0.0
@@ -6897,9 +6802,6 @@ packages:
     engines: {node: ^10 || ^12 || >=14.0}
     peerDependencies:
       postcss: ^8.2.15
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       postcss: 8.4.19
       postcss-value-parser: 4.2.0
@@ -6910,9 +6812,6 @@ packages:
     engines: {node: ^10 || ^12 || >=14.0}
     peerDependencies:
       postcss: ^8.2.15
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       colord: 2.9.3
       cssnano-utils: 3.1.0_postcss@8.4.19
@@ -6925,9 +6824,6 @@ packages:
     engines: {node: ^10 || ^12 || >=14.0}
     peerDependencies:
       postcss: ^8.2.15
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       browserslist: 4.21.4
       cssnano-utils: 3.1.0_postcss@8.4.19
@@ -6940,9 +6836,6 @@ packages:
     engines: {node: ^10 || ^12 || >=14.0}
     peerDependencies:
       postcss: ^8.2.15
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       postcss: 8.4.19
       postcss-selector-parser: 6.0.11
@@ -6953,9 +6846,6 @@ packages:
     engines: {node: ^10 || ^12 || >= 14}
     peerDependencies:
       postcss: ^8.1.0
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       postcss: 8.4.19
     dev: true
@@ -6965,9 +6855,6 @@ packages:
     engines: {node: ^10 || ^12 || >= 14}
     peerDependencies:
       postcss: ^8.1.0
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       icss-utils: 5.1.0_postcss@8.4.19
       postcss: 8.4.19
@@ -6980,9 +6867,6 @@ packages:
     engines: {node: ^10 || ^12 || >= 14}
     peerDependencies:
       postcss: ^8.1.0
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       postcss: 8.4.19
       postcss-selector-parser: 6.0.11
@@ -6993,9 +6877,6 @@ packages:
     engines: {node: ^10 || ^12 || >= 14}
     peerDependencies:
       postcss: ^8.1.0
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       icss-utils: 5.1.0_postcss@8.4.19
       postcss: 8.4.19
@@ -7006,9 +6887,6 @@ packages:
     engines: {node: '>=12.0'}
     peerDependencies:
       postcss: ^8.2.14
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       postcss: 8.4.19
       postcss-selector-parser: 6.0.11
@@ -7019,9 +6897,6 @@ packages:
     engines: {node: ^12 || ^14 || >=16}
     peerDependencies:
       postcss: ^8.2
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       '@csstools/selector-specificity': 2.0.2_tbwh2mpcdwdeb2slx6bobindua
       postcss: 8.4.19
@@ -7033,9 +6908,6 @@ packages:
     engines: {node: ^10 || ^12 || >=14.0}
     peerDependencies:
       postcss: ^8.2.15
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       postcss: 8.4.19
     dev: true
@@ -7045,9 +6917,6 @@ packages:
     engines: {node: ^10 || ^12 || >=14.0}
     peerDependencies:
       postcss: ^8.2.15
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       postcss: 8.4.19
       postcss-value-parser: 4.2.0
@@ -7058,9 +6927,6 @@ packages:
     engines: {node: ^10 || ^12 || >=14.0}
     peerDependencies:
       postcss: ^8.2.15
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       postcss: 8.4.19
       postcss-value-parser: 4.2.0
@@ -7071,9 +6937,6 @@ packages:
     engines: {node: ^10 || ^12 || >=14.0}
     peerDependencies:
       postcss: ^8.2.15
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       postcss: 8.4.19
       postcss-value-parser: 4.2.0
@@ -7084,9 +6947,6 @@ packages:
     engines: {node: ^10 || ^12 || >=14.0}
     peerDependencies:
       postcss: ^8.2.15
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       postcss: 8.4.19
       postcss-value-parser: 4.2.0
@@ -7097,9 +6957,6 @@ packages:
     engines: {node: ^10 || ^12 || >=14.0}
     peerDependencies:
       postcss: ^8.2.15
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       postcss: 8.4.19
       postcss-value-parser: 4.2.0
@@ -7110,9 +6967,6 @@ packages:
     engines: {node: ^10 || ^12 || >=14.0}
     peerDependencies:
       postcss: ^8.2.15
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       browserslist: 4.21.4
       postcss: 8.4.19
@@ -7124,9 +6978,6 @@ packages:
     engines: {node: ^10 || ^12 || >=14.0}
     peerDependencies:
       postcss: ^8.2.15
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       normalize-url: 6.1.0
       postcss: 8.4.19
@@ -7138,9 +6989,6 @@ packages:
     engines: {node: ^10 || ^12 || >=14.0}
     peerDependencies:
       postcss: ^8.2.15
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       postcss: 8.4.19
       postcss-value-parser: 4.2.0
@@ -7151,9 +6999,6 @@ packages:
     engines: {node: ^10 || ^12 || >=14.0}
     peerDependencies:
       postcss: ^8.2.15
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       cssnano-utils: 3.1.0_postcss@8.4.19
       postcss: 8.4.19
@@ -7165,9 +7010,6 @@ packages:
     engines: {node: ^10 || ^12 || >=14.0}
     peerDependencies:
       postcss: ^8.2.15
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       browserslist: 4.21.4
       caniuse-api: 3.0.0
@@ -7179,9 +7021,6 @@ packages:
     engines: {node: ^10 || ^12 || >=14.0}
     peerDependencies:
       postcss: ^8.2.15
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       postcss: 8.4.19
       postcss-value-parser: 4.2.0
@@ -7208,9 +7047,6 @@ packages:
     engines: {node: ^10 || ^12 || >=14.0}
     peerDependencies:
       postcss: ^8.2.15
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       postcss: 8.4.19
       postcss-value-parser: 4.2.0
@@ -7222,9 +7058,6 @@ packages:
     engines: {node: ^10 || ^12 || >=14.0}
     peerDependencies:
       postcss: ^8.2.15
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       postcss: 8.4.19
       postcss-selector-parser: 6.0.11
@@ -7235,9 +7068,6 @@ packages:
     engines: {node: '>=10'}
     peerDependencies:
       postcss: ^8.0.0
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       make-dir: 3.1.0
       mime: 2.5.2
@@ -8048,9 +7878,6 @@ packages:
     engines: {node: ^10 || ^12 || >=14.0}
     peerDependencies:
       postcss: ^8.2.15
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       browserslist: 4.21.4
       postcss: 8.4.19
@@ -8080,6 +7907,60 @@ packages:
     resolution: {integrity: sha512-ovssysQTa+luh7A5Weu3Rta6FJlFBBbInjOh722LIt6klpU2/HtdUbszju/G4devcvk8PGt7FCLv5wftu3THUA==}
     dev: true
 
+  /svg.draggable.js/2.2.2:
+    resolution: {integrity: sha512-JzNHBc2fLQMzYCZ90KZHN2ohXL0BQJGQimK1kGk6AvSeibuKcIdDX9Kr0dT9+UJ5O8nYA0RB839Lhvk4CY4MZw==}
+    engines: {node: '>= 0.8.0'}
+    dependencies:
+      svg.js: 2.7.1
+    dev: false
+
+  /svg.easing.js/2.0.0:
+    resolution: {integrity: sha512-//ctPdJMGy22YoYGV+3HEfHbm6/69LJUTAqI2/5qBvaNHZ9uUFVC82B0Pl299HzgH13rKrBgi4+XyXXyVWWthA==}
+    engines: {node: '>= 0.8.0'}
+    dependencies:
+      svg.js: 2.7.1
+    dev: false
+
+  /svg.filter.js/2.0.2:
+    resolution: {integrity: sha512-xkGBwU+dKBzqg5PtilaTb0EYPqPfJ9Q6saVldX+5vCRy31P6TlRCP3U9NxH3HEufkKkpNgdTLBJnmhDHeTqAkw==}
+    engines: {node: '>= 0.8.0'}
+    dependencies:
+      svg.js: 2.7.1
+    dev: false
+
+  /svg.js/2.7.1:
+    resolution: {integrity: sha512-ycbxpizEQktk3FYvn/8BH+6/EuWXg7ZpQREJvgacqn46gIddG24tNNe4Son6omdXCnSOaApnpZw6MPCBA1dODA==}
+    dev: false
+
+  /svg.pathmorphing.js/0.1.3:
+    resolution: {integrity: sha512-49HWI9X4XQR/JG1qXkSDV8xViuTLIWm/B/7YuQELV5KMOPtXjiwH4XPJvr/ghEDibmLQ9Oc22dpWpG0vUDDNww==}
+    engines: {node: '>= 0.8.0'}
+    dependencies:
+      svg.js: 2.7.1
+    dev: false
+
+  /svg.resize.js/1.4.3:
+    resolution: {integrity: sha512-9k5sXJuPKp+mVzXNvxz7U0uC9oVMQrrf7cFsETznzUDDm0x8+77dtZkWdMfRlmbkEEYvUn9btKuZ3n41oNA+uw==}
+    engines: {node: '>= 0.8.0'}
+    dependencies:
+      svg.js: 2.7.1
+      svg.select.js: 2.1.2
+    dev: false
+
+  /svg.select.js/2.1.2:
+    resolution: {integrity: sha512-tH6ABEyJsAOVAhwcCjF8mw4crjXSI1aa7j2VQR8ZuJ37H2MBUbyeqYr5nEO7sSN3cy9AR9DUwNg0t/962HlDbQ==}
+    engines: {node: '>= 0.8.0'}
+    dependencies:
+      svg.js: 2.7.1
+    dev: false
+
+  /svg.select.js/3.0.1:
+    resolution: {integrity: sha512-h5IS/hKkuVCbKSieR9uQCj9w+zLHoPh+ce19bBYyqF53g6mnPB8sAtIbe1s9dh2S2fCmYX2xel1Ln3PJBbK4kw==}
+    engines: {node: '>= 0.8.0'}
+    dependencies:
+      svg.js: 2.7.1
+    dev: false
+
   /svgo/2.8.0:
     resolution: {integrity: sha512-+N/Q9kV1+F+UeWYoSiULYo4xYSDQlTgb+ayMobAXPwMnLvop7oxKMo9OzIrX5x3eS4L4f2UHhc9axXwY8DpChg==}
     engines: {node: '>=10.13.0'}
@@ -8108,9 +7989,6 @@ packages:
     hasBin: true
     peerDependencies:
       tailwindcss: 1 || 2 || 2.0.1-compat || 3
-    peerDependenciesMeta:
-      tailwindcss:
-        optional: true
     dependencies:
       '@koa/router': 9.4.0
       commander: 6.2.1
@@ -8707,8 +8585,6 @@ packages:
     peerDependenciesMeta:
       '@vue/composition-api':
         optional: true
-      vue:
-        optional: true
     dev: true
 
   /vue-devtools-stub/0.1.0:
@@ -8741,9 +8617,6 @@ packages:
     resolution: {integrity: sha512-DYWYwsG6xNPmLq/FmZn8Ip+qrhFEzA14EI12MsMgVxvHFDYvlr4NXpVF5hrRH1wVcDP8fGi5F4rxuJSl8/r+EQ==}
     peerDependencies:
       vue: ^3.2.0
-    peerDependenciesMeta:
-      vue:
-        optional: true
     dependencies:
       '@vue/devtools-api': 6.4.5
       vue: 3.2.45
@@ -8777,13 +8650,19 @@ packages:
       '@vue/shared': 3.2.45
     dev: true
 
+  /vue3-apexcharts/1.4.1_apexcharts@3.36.3:
+    resolution: {integrity: sha512-96qP8JDqB9vwU7bkG5nVU+E0UGQn7yYQVqUUCLQMYWDuQyu2vE77H/UFZ1yI+hwzlSTBKT9BqnNG8JsFegB3eg==}
+    peerDependencies:
+      apexcharts: '> 3.0.0'
+      vue: '> 3.0.0'
+    dependencies:
+      apexcharts: 3.36.3
+    dev: false
+
   /vue3-carousel/0.2.8:
     resolution: {integrity: sha512-G3wty+O4iXPXeZksXvVdNR7EsHXLSIh3IYqz5N5GYRUA7PQ6x9nAtfPqZIfLAyadH4AdeLgMVfMXJhRZlsvyVg==}
     peerDependencies:
       vue: ^3.2.0
-    peerDependenciesMeta:
-      vue:
-        optional: true
     dev: true
 
   /wcwidth/1.0.1:

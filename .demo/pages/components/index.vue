@@ -47,12 +47,12 @@ definePageMeta({
               </BaseParagraph>
             </div>
             <NuxtImg
-              class="max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
+              class="h-20 flex-shrink-0 opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
               src="/img/illustrations/components/lists.svg"
               alt="Component image"
             />
             <NuxtImg
-              class="hidden max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
+              class="hidden h-20 flex-shrink-0 opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
               src="/img/illustrations/components/lists-dark.svg"
               alt="Component image"
             />
@@ -83,12 +83,12 @@ definePageMeta({
               </BaseParagraph>
             </div>
             <NuxtImg
-              class="max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
+              class="h-20 flex-shrink-0 opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
               src="/img/illustrations/components/tags.svg"
               alt="Component image"
             />
             <NuxtImg
-              class="hidden max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
+              class="hidden h-20 flex-shrink-0 opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
               src="/img/illustrations/components/tags-dark.svg"
               alt="Component image"
             />
@@ -119,12 +119,12 @@ definePageMeta({
               </BaseParagraph>
             </div>
             <NuxtImg
-              class="max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
+              class="h-20 flex-shrink-0 opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
               src="/img/illustrations/components/tabs.svg"
               alt="Component image"
             />
             <NuxtImg
-              class="hidden max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
+              class="hidden h-20 flex-shrink-0 opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
               src="/img/illustrations/components/tabs-dark.svg"
               alt="Component image"
             />
@@ -155,12 +155,12 @@ definePageMeta({
               </BaseParagraph>
             </div>
             <NuxtImg
-              class="max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
+              class="h-20 flex-shrink-0 opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
               src="/img/illustrations/components/cards.svg"
               alt="Component image"
             />
             <NuxtImg
-              class="hidden max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
+              class="hidden h-20 flex-shrink-0 opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
               src="/img/illustrations/components/cards-dark.svg"
               alt="Component image"
             />
@@ -191,12 +191,12 @@ definePageMeta({
               </BaseParagraph>
             </div>
             <NuxtImg
-              class="max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
+              class="h-20 flex-shrink-0 opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
               src="/img/illustrations/components/avatar.svg"
               alt="Component image"
             />
             <NuxtImg
-              class="hidden max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
+              class="hidden h-20 flex-shrink-0 opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
               src="/img/illustrations/components/avatar-dark.svg"
               alt="Component image"
             />
@@ -227,12 +227,12 @@ definePageMeta({
               </BaseParagraph>
             </div>
             <NuxtImg
-              class="max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
+              class="h-20 flex-shrink-0 opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
               src="/img/illustrations/components/accordion.svg"
               alt="Component image"
             />
             <NuxtImg
-              class="hidden max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
+              class="hidden h-20 flex-shrink-0 opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
               src="/img/illustrations/components/accordion-dark.svg"
               alt="Component image"
             />
@@ -263,12 +263,12 @@ definePageMeta({
               </BaseParagraph>
             </div>
             <NuxtImg
-              class="max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
+              class="h-20 flex-shrink-0 opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
               src="/img/illustrations/components/breadcrumb.svg"
               alt="Component image"
             />
             <NuxtImg
-              class="hidden max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
+              class="hidden h-20 flex-shrink-0 opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
               src="/img/illustrations/components/breadcrumb-dark.svg"
               alt="Component image"
             />
@@ -299,12 +299,12 @@ definePageMeta({
               </BaseParagraph>
             </div>
             <NuxtImg
-              class="max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
+              class="h-20 flex-shrink-0 opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
               src="/img/illustrations/components/icon-box.svg"
               alt="Component image"
             />
             <NuxtImg
-              class="hidden max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
+              class="hidden h-20 flex-shrink-0 opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
               src="/img/illustrations/components/icon-box-dark.svg"
               alt="Component image"
             />
@@ -335,12 +335,12 @@ definePageMeta({
               </BaseParagraph>
             </div>
             <NuxtImg
-              class="max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
+              class="h-20 flex-shrink-0 opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
               src="/img/illustrations/components/table.svg"
               alt="Component image"
             />
             <NuxtImg
-              class="hidden max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
+              class="hidden h-20 flex-shrink-0 opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
               src="/img/illustrations/components/table-dark.svg"
               alt="Component image"
             />
@@ -371,12 +371,12 @@ definePageMeta({
               </BaseParagraph>
             </div>
             <NuxtImg
-              class="max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
+              class="h-20 flex-shrink-0 opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
               src="/img/illustrations/components/snacks.svg"
               alt="Component image"
             />
             <NuxtImg
-              class="hidden max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
+              class="hidden h-20 flex-shrink-0 opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
               src="/img/illustrations/components/snacks-dark.svg"
               alt="Component image"
             />
@@ -406,12 +406,12 @@ definePageMeta({
               </BaseParagraph>
             </div>
             <NuxtImg
-              class="max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
+              class="h-20 flex-shrink-0 opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
               src="/img/illustrations/components/buttons.svg"
               alt="Component image"
             />
             <NuxtImg
-              class="hidden max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
+              class="hidden h-20 flex-shrink-0 opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
               src="/img/illustrations/components/buttons-dark.svg"
               alt="Component image"
             />
@@ -442,12 +442,12 @@ definePageMeta({
               </BaseParagraph>
             </div>
             <NuxtImg
-              class="max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
+              class="h-20 flex-shrink-0 opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
               src="/img/illustrations/components/icons.svg"
               alt="Component image"
             />
             <NuxtImg
-              class="hidden max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
+              class="hidden h-20 flex-shrink-0 opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
               src="/img/illustrations/components/icons-dark.svg"
               alt="Component image"
             />
@@ -478,12 +478,12 @@ definePageMeta({
               </BaseParagraph>
             </div>
             <NuxtImg
-              class="max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
+              class="h-20 flex-shrink-0 opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
               src="/img/illustrations/components/dropdown.svg"
               alt="Component image"
             />
             <NuxtImg
-              class="hidden max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
+              class="hidden h-20 flex-shrink-0 opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
               src="/img/illustrations/components/dropdown-dark.svg"
               alt="Component image"
             />
@@ -514,12 +514,12 @@ definePageMeta({
               </BaseParagraph>
             </div>
             <NuxtImg
-              class="max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
+              class="h-20 flex-shrink-0 opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
               src="/img/illustrations/components/modal.svg"
               alt="Component image"
             />
             <NuxtImg
-              class="hidden max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
+              class="hidden h-20 flex-shrink-0 opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
               src="/img/illustrations/components/modal-dark.svg"
               alt="Component image"
             />
@@ -550,12 +550,12 @@ definePageMeta({
               </BaseParagraph>
             </div>
             <NuxtImg
-              class="max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
+              class="h-20 flex-shrink-0 opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
               src="/img/illustrations/components/progress.svg"
               alt="Component image"
             />
             <NuxtImg
-              class="hidden max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
+              class="hidden h-20 flex-shrink-0 opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
               src="/img/illustrations/components/progress-dark.svg"
               alt="Component image"
             />
@@ -586,12 +586,12 @@ definePageMeta({
               </BaseParagraph>
             </div>
             <NuxtImg
-              class="max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
+              class="h-20 flex-shrink-0 opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
               src="/img/illustrations/components/forms.svg"
               alt="Component image"
             />
             <NuxtImg
-              class="hidden max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
+              class="hidden h-20 flex-shrink-0 opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
               src="/img/illustrations/components/forms-dark.svg"
               alt="Component image"
             />
@@ -622,12 +622,12 @@ definePageMeta({
               </BaseParagraph>
             </div>
             <NuxtImg
-              class="max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
+              class="h-20 flex-shrink-0 opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
               src="/img/illustrations/components/checkboxes.svg"
               alt="Component image"
             />
             <NuxtImg
-              class="hidden max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
+              class="hidden h-20 flex-shrink-0 opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
               src="/img/illustrations/components/checkboxes-dark.svg"
               alt="Component image"
             />
@@ -658,12 +658,12 @@ definePageMeta({
               </BaseParagraph>
             </div>
             <NuxtImg
-              class="max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
+              class="h-20 flex-shrink-0 opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
               src="/img/illustrations/components/switches.svg"
               alt="Component image"
             />
             <NuxtImg
-              class="hidden max-w-[100px] opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
+              class="hidden h-20 flex-shrink-0 opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
               src="/img/illustrations/components/switches-dark.svg"
               alt="Component image"
             />
