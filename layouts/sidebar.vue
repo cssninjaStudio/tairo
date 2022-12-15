@@ -9,7 +9,7 @@ const { activePanel, panelTransitionFrom, closePanel } = usePanels()
       <!-- Logo: @todo: use app config -->
       <div class="flex h-16 w-full items-center justify-center">
         <NuxtLink to="/" class="flex items-center justify-center">
-          <IconLogo class="h-10 text-primary-500" />
+          <IconLogo class="text-primary-500 h-10" />
         </NuxtLink>
       </div>
 
@@ -22,7 +22,7 @@ const { activePanel, panelTransitionFrom, closePanel } = usePanels()
     </NavigationSidebar>
 
     <div
-      class="relative min-h-screen w-full bg-muted-100 px-4 transition-all duration-300 dark:bg-muted-900 xl:px-16"
+      class="bg-muted-100 dark:bg-muted-900 relative min-h-screen w-full px-4 transition-all duration-300 xl:px-16"
       :class="
         isSidebarOpened
           ? 'xl:max-w-[calc(100%_-_300px)] xl:ml-[300px]'
@@ -60,7 +60,7 @@ const { activePanel, panelTransitionFrom, closePanel } = usePanels()
 
     <!-- Overlay -->
     <div
-      class="fixed top-0 left-0 z-[99] h-full w-full cursor-pointer bg-muted-800/60 transition-opacity duration-300"
+      class="bg-muted-800/60 fixed top-0 left-0 z-[99] h-full w-full cursor-pointer transition-opacity duration-300"
       :class="
         activePanel
           ? 'opacity-100 pointer-events-auto'

@@ -1,18 +1,6 @@
 <script setup lang="ts">
-/* const chartOptions = {
-  chart: {
-    id: 'vuechart-example',
-  },
-  xaxis: {
-    categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998],
-  },
-};
-const series = [
-  {
-    name: 'series-1',
-    data: [30, 40, 35, 50, 49, 60, 70, 91],
-  },
-]; */
+import VueApexCharts from "vue3-apexcharts";
+import { customersOptions } from '~/data/charts/dashboards/personal-1/customersChart'
 </script>
 
 <template>
@@ -65,7 +53,7 @@ const series = [
           </div>
           <div class="grid grid-cols-2 gap-4">
             <!-- Grid item -->
-            <div class="flex items-center gap-2 py-8 px-5 rounded-md bg-muted-100/80 dark:bg-muted-700">
+            <div class="flex items-center gap-2 py-10 px-5 rounded-md bg-muted-100/80 dark:bg-muted-700">
               <BaseIconBox
                 size="md"
                 class="bg-primary-100 text-primary-500 dark:bg-primary-500/20 dark:text-primary-400 dark:border-2 dark:border-primary-500"
@@ -91,7 +79,7 @@ const series = [
               </div>
             </div>
             <!-- Grid item -->
-            <div class="flex items-center gap-2 py-8 px-5 rounded-md bg-muted-100/80 dark:bg-muted-700">
+            <div class="flex items-center gap-2 py-10 px-5 rounded-md bg-muted-100/80 dark:bg-muted-700">
               <BaseIconBox
                 size="md"
                 class="bg-amber-100 text-amber-500 dark:bg-amber-500/20 dark:text-amber-400 dark:border-2 dark:border-amber-500"
@@ -117,7 +105,7 @@ const series = [
               </div>
             </div>
             <!-- Grid item -->
-            <div class="flex items-center gap-2 py-8 px-5 rounded-md bg-muted-100/80 dark:bg-muted-700">
+            <div class="flex items-center gap-2 py-10 px-5 rounded-md bg-muted-100/80 dark:bg-muted-700">
               <BaseIconBox
                 size="md"
                 class="bg-green-100 text-green-500 dark:bg-green-500/20 dark:text-green-400 dark:border-2 dark:border-green-500"
@@ -143,7 +131,7 @@ const series = [
               </div>
             </div>
             <!-- Grid item -->
-            <div class="flex items-center gap-2 py-8 px-5 rounded-md bg-muted-100/80 dark:bg-muted-700">
+            <div class="flex items-center gap-2 py-10 px-5 rounded-md bg-muted-100/80 dark:bg-muted-700">
               <BaseIconBox
                 size="md"
                 class="bg-indigo-100 text-indigo-500 dark:bg-indigo-500/20 dark:text-indigo-400 dark:border-2 dark:border-indigo-500"
@@ -186,12 +174,12 @@ const series = [
             </BaseHeading>
           </div>
           <ClientOnly>
-            <!--apexchart
-              width="500"
-              type="bar"
-              :options="chartOptions"
-              :series="series"
-            ></apexchart-->
+            <VueApexCharts 
+              :height="customersOptions.chart.height"
+              :type="customersOptions.chart.type"
+              :options="customersOptions"
+              :series="customersOptions.series"
+            ></VueApexCharts>
           </ClientOnly>
         </BaseCard>
       </div>

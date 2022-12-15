@@ -12,6 +12,7 @@ export default defineNuxtConfig({
   css: [
     resolve('./assets/css/modules/variables.css'),
     resolve('./assets/css/modules/slider.css'),
+    resolve('./assets/css/modules/apex.css'),
     resolve('./assets/css/keyframes.css'),
   ],
   app: {
