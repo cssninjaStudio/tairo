@@ -1,13 +1,15 @@
 <script setup lang="ts">
 import VueApexCharts from "vue3-apexcharts";
 import { customersOptions } from '~/data/charts/dashboards/personal-1/customersChart'
+import { teamGaugeOptions } from '~/data/charts/dashboards/personal-1/teamGaugeChart'
+import { profitChartOptions } from '~/data/charts/dashboards/personal-1/profitChart'
 </script>
 
 <template>
   <div>
     <!-- Header -->
-    <div class="flex items-center justify-between mb-8">
-      <div class="flex items-center gap-2">
+    <div class="flex flex-col md:flex-row md:items-center justify-between mb-8">
+      <div class="flex flex-col md:flex-row items-center gap-4 text-center md:text-left max-w-[425px] ltablet:max-w-full lg:max-w-full">
         <BaseAvatar src="/img/avatars/2.svg" size="lg" />
         <div>
           <BaseHeading
@@ -21,12 +23,12 @@ import { customersOptions } from '~/data/charts/dashboards/personal-1/customersC
         </BaseHeading>
         <BaseParagraph size="base">
           <span class="text-muted-500">
-            We're very happy to see you again on your personal dashboard.
+            Happy to see you again on your dashboard.
           </span>
         </BaseParagraph>
         </div>
       </div>
-      <div class="flex items-center gap-2">
+      <div class="flex items-center justify-center md:justify-start gap-2 mt-4 md:mt-0">
         <BaseButton>
           <span>View Reports</span>
         </BaseButton>
@@ -38,7 +40,7 @@ import { customersOptions } from '~/data/charts/dashboards/personal-1/customersC
     <!-- Grid -->
     <div class="grid grid-cols-12 gap-6">
       <!-- Quick stats -->
-      <div class="col-span-6">
+      <div class="col-span-12 ltablet:col-span-6 lg:col-span-6">
         <BaseCard class="p-6">
           <div class="mb-6">
             <BaseHeading
@@ -51,7 +53,7 @@ import { customersOptions } from '~/data/charts/dashboards/personal-1/customersC
               <span>Your Quick Stats</span>
             </BaseHeading>
           </div>
-          <div class="grid grid-cols-2 gap-4">
+          <div class="grid md:grid-cols-2 gap-4">
             <!-- Grid item -->
             <div class="flex items-center gap-2 py-10 px-5 rounded-md bg-muted-100/80 dark:bg-muted-700">
               <BaseIconBox
@@ -160,7 +162,7 @@ import { customersOptions } from '~/data/charts/dashboards/personal-1/customersC
         </BaseCard>
       </div>
       <!-- Chart -->
-      <div class="col-span-6">
+      <div class="col-span-12 ltablet:col-span-6 lg:col-span-6">
         <BaseCard class="p-6">
           <div class="mb-6">
             <BaseHeading
@@ -179,6 +181,84 @@ import { customersOptions } from '~/data/charts/dashboards/personal-1/customersC
               :type="customersOptions.chart.type"
               :options="customersOptions"
               :series="customersOptions.series"
+            ></VueApexCharts>
+          </ClientOnly>
+        </BaseCard>
+      </div>
+      <!-- CTA card -->
+      <div class="col-span-12 ptablet:col-span-6 ltablet:col-span-4 lg:col-span-4">
+        <BaseCard class="relative h-full flex items-center justify-center p-6 bg-gradient-to-br from-success-500 to-success-600">
+          <div class="relative flex flex-col gap-3 py-10 text-center z-20">
+            <BaseHeading
+              as="h4"
+              size="lg"
+              weight="semibold"
+              lead="tight"
+              class="text-white"
+            >
+              <span>Hey Maya, you're doing great.</span>
+            </BaseHeading>
+            <BaseParagraph size="md">
+              <span class="text-white/80">
+                Start using our team and project management tools
+              </span>
+            </BaseParagraph>
+            <NuxtLink class="font-sans text-white hover:underline underline-offset-4" to="/">Learn More</NuxtLink>
+          </div>
+          <div class="absolute bottom-4 right-4 w-14 h-14 flex items-center justify-center z-10">
+            <Icon name="ph:crown-duotone" class="w-14 h-14 text-success-900/50"></Icon>
+          </div>
+        </BaseCard>
+      </div>
+      <!-- Gauge card -->
+      <div class="col-span-12 ptablet:col-span-6 ltablet:col-span-4 lg:col-span-4">
+        <BaseCard class="relative p-6">
+          <div class="mb-6">
+            <BaseHeading
+              as="h3"
+              size="md"
+              weight="semibold"
+              lead="tight"
+              class="text-muted-800 dark:text-white"
+            >
+              <span>Team Efficiency</span>
+            </BaseHeading>
+          </div>
+          <div class="absolute top-24 inset-x-0 flex items-center justify-center gap-4">
+            <BaseAvatar src="/img/avatars/4.svg" />
+            <BaseAvatar text="H" class="bg-yellow-100 dark:bg-yellow-500 text-yellow-500 dark:text-white" />
+            <BaseAvatar src="/img/avatars/3.svg" />
+          </div>
+          <ClientOnly>
+            <VueApexCharts 
+              :height="teamGaugeOptions.chart.height"
+              :type="teamGaugeOptions.chart.type"
+              :options="teamGaugeOptions"
+              :series="teamGaugeOptions.series"
+            ></VueApexCharts>
+          </ClientOnly>
+        </BaseCard>
+      </div>
+      <!-- Bar chart card -->
+      <div class="col-span-12 ltablet:col-span-4 lg:col-span-4">
+        <BaseCard class="relative p-6">
+          <div class="mb-6">
+            <BaseHeading
+              as="h3"
+              size="md"
+              weight="semibold"
+              lead="tight"
+              class="text-muted-800 dark:text-white"
+            >
+              <span>Profit Evolution</span>
+            </BaseHeading>
+          </div>
+          <ClientOnly>
+            <VueApexCharts 
+              :height="profitChartOptions.chart.height"
+              :type="profitChartOptions.chart.type"
+              :options="profitChartOptions"
+              :series="profitChartOptions.series"
             ></VueApexCharts>
           </ClientOnly>
         </BaseCard>

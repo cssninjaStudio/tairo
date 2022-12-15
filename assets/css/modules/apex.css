@@ -1,4 +1,5 @@
 .apexcharts-text,
+.apexcharts-datalabels text,
 .apexcharts-datalabel-value,
 .apexcharts-xaxis-label,
 .apexcharts-yaxis-label,
@@ -11,9 +12,9 @@
   @apply text-muted-200 dark:text-muted-700 stroke-current;
 }
 
-.apexcharts-bar-area {
-  @apply text-white dark:text-muted-900 stroke-current fill-current;
-}
+/* .apexcharts-bar-area {
+  @apply stroke-current fill-current;
+} */
 
 .apexcharts-xaxis line,
 .apexcharts-yaxis line {
@@ -41,7 +42,7 @@
 
 .apexcharts-radialbar-track .apexcharts-radialbar-area,
 .apexcharts-track .apexcharts-radialbar-area {
-  @apply text-white dark:text-muted-900 stroke-current;
+  @apply text-muted-200 dark:text-muted-900 stroke-current;
 }
 
 .apexcharts-radar-series > polygon,

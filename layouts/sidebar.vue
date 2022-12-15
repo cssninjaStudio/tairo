@@ -4,7 +4,7 @@ const { activePanel, panelTransitionFrom, closePanel } = usePanels()
 </script>
 
 <template>
-  <div class="bg-muted-100 dark:bg-muted-900">
+  <div class="bg-muted-100 dark:bg-muted-900 pb-20">
     <NavigationSidebar>
       <!-- Logo: @todo: use app config -->
       <div class="flex h-16 w-full items-center justify-center">
