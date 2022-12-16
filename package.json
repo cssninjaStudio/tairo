@@ -22,7 +22,7 @@
     "@antfu/eslint-config": "0.34.0",
     "@ckeditor/ckeditor5-build-classic": "35.4.0",
     "@ckeditor/ckeditor5-vue": "4.0.1",
-    "@cssninja/nuxt-ui": "0.2.4",
+    "@cssninja/nuxt-ui": "0.2.6",
     "@iconify/json": "2.1.152",
     "@nuxt/image-edge": "1.0.0-27840416.dc1ed65",
     "@nuxtjs/eslint-config": "^12.0.0",

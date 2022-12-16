@@ -1,0 +1,115 @@
+<script setup lang="ts">
+const { primary } = useTailwindColors()
+
+/**
+ * Use `defineAsyncComponent` to lazy load the component only when needed
+ * This improves the initial load time of the page when the component is not needed
+ * 
+ * @todo loadingComponent - https://github.com/nuxt/framework/issues/9765
+ */
+const LazyVueApexCharts = defineAsyncComponent(() => import('vue3-apexcharts'))
+
+/**
+ * This is example data for the area chart
+ * @see https://apexcharts.com/docs/chart-types/radialbar-gauge/
+ * 
+ * @note the `as const` is to make sure the type is inlined in the compiled code
+ * instead of being a reference to the object in memory.
+ */
+const radialBarOptions = {
+  series: [76],
+  title: {
+    text: undefined,
+  },
+  chart: {
+    height: 455,
+    type: 'radialBar',
+    sparkline: {
+      enabled: true,
+    },
+    toolbar: {
+      show: false,
+    },
+  },
+  colors: [primary.value],
+  plotOptions: {
+    radialBar: {
+      startAngle: -90,
+      endAngle: 90,
+      track: {
+        background: '#e7e7e7',
+        strokeWidth: '97%',
+        margin: 5, // margin is in pixels
+        dropShadow: {
+          enabled: false,
+          top: 2,
+          left: 0,
+          color: '#999',
+          opacity: 1,
+          blur: 2,
+        },
+      },
+      hollow: {
+        margin: 0,
+        size: '40%',
+      },
+      dataLabels: {
+        name: {
+          show: false,
+        },
+        value: {
+          offsetY: -2,
+          fontSize: '22px',
+        },
+      },
+    },
+  },
+  grid: {
+    padding: {
+      top: 80,
+    },
+  },
+  fill: {
+    type: 'gradient',
+    gradient: {
+      shade: 'light',
+      shadeIntensity: 0.1,
+      inverseColors: false,
+      opacityFrom: 1,
+      opacityTo: 1,
+      stops: [0, 50, 53, 91],
+    },
+  },
+  labels: ['Average Results'],
+} as const
+</script>
+
+
+<template>
+  <BaseCard class="relative">
+    <div class="mb-6">
+      <BaseHeading
+        as="h3"
+        size="md"
+        weight="semibold"
+        lead="tight"
+        class="text-muted-800 dark:text-white"
+      >
+        <span>Team Efficiency</span>
+      </BaseHeading>
+    </div>
+    <div class="absolute top-24 inset-x-0 flex items-center justify-center gap-4">
+      <BaseAvatar src="/img/avatars/4.svg" />
+      <BaseAvatar text="H" class="bg-yellow-100 dark:bg-yellow-500 text-yellow-500 dark:text-white" />
+      <BaseAvatar src="/img/avatars/3.svg" />
+    </div>
+    <ClientOnly>
+      <LazyVueApexCharts 
+        :height="radialBarOptions.chart.height"
+        :type="radialBarOptions.chart.type"
+        :options="radialBarOptions"
+        :series="radialBarOptions.series"
+      />
+    </ClientOnly>
+  </BaseCard>
+</template>

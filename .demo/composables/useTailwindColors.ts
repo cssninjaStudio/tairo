@@ -1,30 +1,28 @@
 import { reactive } from 'vue'
 import { useCssVar } from '@vueuse/core'
 
-export const useThemeColors = () => {
-  const primary = import.meta.env.SSR
+export const useTailwindColors = () => {
+  const primary = process.server
     ? ref('transparent')
     : useCssVar('--primary', document.documentElement)
-  const success = import.meta.env.SSR
+  const success = process.server
     ? ref('transparent')
     : useCssVar('--success', document.documentElement)
-  const info = import.meta.env.SSR
+  const info = process.server
     ? ref('transparent')
     : useCssVar('--info', document.documentElement)
-  const warning = import.meta.env.SSR
+  const warning = process.server
     ? ref('transparent')
     : useCssVar('--warning', document.documentElement)
-  const danger = import.meta.env.SSR
+  const danger = process.server
     ? ref('transparent')
     : useCssVar('--danger', document.documentElement)
 
-  const themeColors = reactive({
+  return {
     primary,
     info,
     success,
     warning,
     danger,
-  } as const)
-
-  return themeColors
+  }
 }

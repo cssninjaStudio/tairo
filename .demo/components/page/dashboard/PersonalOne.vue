@@ -1,10 +1,3 @@
-<script setup lang="ts">
-import VueApexCharts from "vue3-apexcharts";
-import { customersOptions } from '~/data/charts/dashboards/personal-1/customersChart'
-import { teamGaugeOptions } from '~/data/charts/dashboards/personal-1/teamGaugeChart'
-import { profitChartOptions } from '~/data/charts/dashboards/personal-1/profitChart'
-</script>
-
 <template>
   <div>
     <!-- Header -->
@@ -21,7 +14,7 @@ import { profitChartOptions } from '~/data/charts/dashboards/personal-1/profitCh
         >
           <span>Welcome back, Maya</span>
         </BaseHeading>
-        <BaseParagraph size="base">
+        <BaseParagraph>
           <span class="text-muted-500">
             Happy to see you again on your dashboard.
           </span>
@@ -161,29 +154,9 @@ import { profitChartOptions } from '~/data/charts/dashboards/personal-1/profitCh
           </div>
         </BaseCard>
       </div>
-      <!-- Chart -->
+      <!-- Area Chart card -->
       <div class="col-span-12 ltablet:col-span-6 lg:col-span-6">
-        <BaseCard class="p-6">
-          <div class="mb-6">
-            <BaseHeading
-              as="h3"
-              size="md"
-              weight="semibold"
-              lead="tight"
-              class="text-muted-800 dark:text-white"
-            >
-              <span>Customers</span>
-            </BaseHeading>
-          </div>
-          <ClientOnly>
-            <VueApexCharts 
-              :height="customersOptions.chart.height"
-              :type="customersOptions.chart.type"
-              :options="customersOptions"
-              :series="customersOptions.series"
-            ></VueApexCharts>
-          </ClientOnly>
-        </BaseCard>
+        <ExampleApexchartAreaCustomer class="p-6" />
       </div>
       <!-- CTA card -->
       <div class="col-span-12 ptablet:col-span-6 ltablet:col-span-4 lg:col-span-4">
@@ -210,58 +183,13 @@ import { profitChartOptions } from '~/data/charts/dashboards/personal-1/profitCh
           </div>
         </BaseCard>
       </div>
-      <!-- Gauge card -->
+      <!-- Radial Bar card -->
       <div class="col-span-12 ptablet:col-span-6 ltablet:col-span-4 lg:col-span-4">
-        <BaseCard class="relative p-6">
-          <div class="mb-6">
-            <BaseHeading
-              as="h3"
-              size="md"
-              weight="semibold"
-              lead="tight"
-              class="text-muted-800 dark:text-white"
-            >
-              <span>Team Efficiency</span>
-            </BaseHeading>
-          </div>
-          <div class="absolute top-24 inset-x-0 flex items-center justify-center gap-4">
-            <BaseAvatar src="/img/avatars/4.svg" />
-            <BaseAvatar text="H" class="bg-yellow-100 dark:bg-yellow-500 text-yellow-500 dark:text-white" />
-            <BaseAvatar src="/img/avatars/3.svg" />
-          </div>
-          <ClientOnly>
-            <VueApexCharts 
-              :height="teamGaugeOptions.chart.height"
-              :type="teamGaugeOptions.chart.type"
-              :options="teamGaugeOptions"
-              :series="teamGaugeOptions.series"
-            ></VueApexCharts>
-          </ClientOnly>
-        </BaseCard>
+        <ExampleApexchartRadialBarTeam class="p-6" />
       </div>
       <!-- Bar chart card -->
       <div class="col-span-12 ltablet:col-span-4 lg:col-span-4">
-        <BaseCard class="relative p-6">
-          <div class="mb-6">
-            <BaseHeading
-              as="h3"
-              size="md"
-              weight="semibold"
-              lead="tight"
-              class="text-muted-800 dark:text-white"
-            >
-              <span>Profit Evolution</span>
-            </BaseHeading>
-          </div>
-          <ClientOnly>
-            <VueApexCharts 
-              :height="profitChartOptions.chart.height"
-              :type="profitChartOptions.chart.type"
-              :options="profitChartOptions"
-              :series="profitChartOptions.series"
-            ></VueApexCharts>
-          </ClientOnly>
-        </BaseCard>
+        <ExampleApexchartBarProfit class="p-6" />
       </div>
     </div>
   </div>
