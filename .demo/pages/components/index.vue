@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const app = useAppConfig()
+
 definePageMeta({
   title: 'Components Hub',
 })
@@ -21,11 +23,11 @@ definePageMeta({
         lead="tight"
         class="text-muted-800 dark:text-white"
       >
-        <span>Tairo Components</span>
+        <span>{{ app.tairo.title }} Components</span>
       </BaseHeading>
       <BaseParagraph>
         <span class="text-muted-500">
-          This is the Tairo components library with detailed code examples.
+          This is the {{ app.tairo.title }} components library with detailed code examples.
         </span>
       </BaseParagraph>
     </div>
@@ -41,7 +43,7 @@ definePageMeta({
               </BaseHeading>
               <BaseParagraph lead="tight" size="sm">
                 <span class="text-muted-400">
-                  Get familiar with the Tairo content styles. Code examples
+                  Get familiar with the {{ app.tairo.title }} content styles. Code examples
                   included.
                 </span>
               </BaseParagraph>
@@ -77,7 +79,7 @@ definePageMeta({
               </BaseHeading>
               <BaseParagraph lead="tight" size="sm">
                 <span class="text-muted-400">
-                  Get familiar with the Tairo tag styles. Code examples
+                  Get familiar with the {{ app.tairo.title }} tag styles. Code examples
                   included.
                 </span>
               </BaseParagraph>
@@ -400,7 +402,7 @@ definePageMeta({
               </BaseHeading>
               <BaseParagraph lead="tight" size="sm">
                 <span class="text-muted-400">
-                  Get familiar with the Tairo button styles. Code examples
+                  Get familiar with the {{ app.tairo.title }} button styles. Code examples
                   included.
                 </span>
               </BaseParagraph>
@@ -436,7 +438,7 @@ definePageMeta({
               </BaseHeading>
               <BaseParagraph lead="tight" size="sm">
                 <span class="text-muted-400">
-                  Get familiar with the Tairo icon libraries. Code examples
+                  Get familiar with the {{ app.tairo.title }} icon libraries. Code examples
                   included.
                 </span>
               </BaseParagraph>

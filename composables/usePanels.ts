@@ -1,36 +1,24 @@
-import type { Component } from 'vue'
-import {
-  LazyPanelActivity,
-  LazyPanelLanguage,
-  LazyPanelSearch,
-} from '#components'
+import type { Component, ConcreteComponent } from 'vue'
+import type { TairoPanelConfig } from '../nuxt.schema'
 
 export interface LayoutPanel {
   name: string
-  component: Component
+  component: Component | ConcreteComponent | string
   position: 'right' | 'left'
 }
 
 export const usePanels = () => {
-  const panels = [
-    {
-      name: 'language',
-      position: 'right',
-      component: LazyPanelLanguage,
-    },
-    {
-      name: 'activity',
-      position: 'right',
-      component: LazyPanelActivity,
-    },
-    {
-      name: 'search',
-      position: 'left',
-      component: LazyPanelSearch,
-    },
-  ] as const
+  const app = useAppConfig()
 
-  type LayoutPanelNames = typeof panels[number]['name']
+  const panels =
+    (app.tairo?.panels as TairoPanelConfig[]).map((panel) => {
+      const item: LayoutPanel = {
+        name: panel.name,
+        position: panel.position ?? 'left',
+        component: resolveComponent(panel.component),
+      }
+      return item
+    }) ?? []
 
   const activePanelName = useState('panels-active', () => '')
   const panelTransitionFrom = useState('panels-transition-from', () => 'left')
@@ -43,7 +31,7 @@ export const usePanels = () => {
     return panels.find((panel) => panel.name === activePanelName.value)
   })
 
-  function openPanel(name: LayoutPanelNames) {
+  function openPanel(name: string) {
     const panel = panels.find(({ name: panelName }) => panelName === name)
     if (panel) {
       panelTransitionFrom.value = panel.position

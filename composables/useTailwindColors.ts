@@ -1,4 +1,3 @@
-import { reactive } from 'vue'
 import { useCssVar } from '@vueuse/core'
 
 export const useTailwindColors = () => {

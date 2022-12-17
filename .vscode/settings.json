@@ -1,5 +1,6 @@
 {
   "css.validate": true,
+  "css.lint.unknownAtRules": "ignore",
   "less.validate": false,
   "scss.validate": false,
   "editor.formatOnSave": true,

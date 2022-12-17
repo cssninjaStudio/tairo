@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const app = useAppConfig()
+
 definePageMeta({
   breadcrumb: {
     label: 'Home',
@@ -9,5 +11,5 @@ definePageMeta({
 </script>
 
 <template>
-  <div>Tairo quickstarter</div>
+  <div>{{ app.tairo.title }} quickstarter</div>
 </template>

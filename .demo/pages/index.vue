@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const app = useAppConfig()
 definePageMeta({
   breadcrumb: {
     label: 'Home',
@@ -9,5 +10,5 @@ definePageMeta({
 </script>
 
 <template>
-  <div>Tairo demo - <NuxtLink to="/components">View components</NuxtLink></div>
+  <div>{{ app.tairo.title }} demo - <NuxtLink to="/components">View components</NuxtLink></div>
 </template>
