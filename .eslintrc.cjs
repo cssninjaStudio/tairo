@@ -21,7 +21,7 @@ module.exports = {
     'vue/multi-word-component-names': 'off',
     //   'vue/define-macros-order': 'off',
     'tailwindcss/no-custom-classname': 'off',
-    //   // 'tailwindcss/classnames-order': 'off',
+    'tailwindcss/classnames-order': 'off',
     'prettier-vue/prettier': [
       'error',
       {

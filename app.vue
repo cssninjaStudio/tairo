@@ -1,9 +1,10 @@
-<script setup>
+<script setup lang="ts">
 const route = useRoute()
+const app = useAppConfig()
 useHead({
   title: route.meta.title,
   titleTemplate: (titleChunk) => {
-    return titleChunk ? `${titleChunk} - Tairo` : 'Tairo' // @todo: use app config
+    return titleChunk ? `${titleChunk} - ${app.tairo.title}` : app.tairo.title
   },
   link: [
     {

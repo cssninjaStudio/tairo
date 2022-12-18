@@ -43,7 +43,7 @@ const endSidebars = sidebars.filter((sidebar) => sidebar.position === 'end')
     <div
       v-if="activeSidebar"
       class="pointer-events-auto relative z-10 h-full w-[220px] border-r border-muted-200 bg-white transition-all duration-300 dark:border-muted-700 dark:bg-muted-800"
-      :class="isSidebarOpened ? '' : '-translate-x-[calc(100%_-_80px)]'"
+      :class="isSidebarOpened ? '' : 'translate-x-[calc(-100%_-_80px)]'"
     >
       <slot
         name="subnav"
@@ -56,17 +56,17 @@ const endSidebars = sidebars.filter((sidebar) => sidebar.position === 'end')
       >
         <div class="flex h-screen flex-col">
           <component
-            :is="activeSidebar.subnavHeader"
-            v-if="activeSidebar.subnavHeader"
+            :is="activeSidebar.componentHeader"
+            v-if="activeSidebar.componentHeader"
           ></component>
 
           <!-- Body -->
           <div
-            v-if="activeSidebar?.subnav"
+            v-if="activeSidebar?.component"
             class="slimscroll relative h-full w-full overflow-y-auto"
           >
             <div class="px-6 pb-8">
-              <component :is="activeSidebar.subnav"></component>
+              <component :is="activeSidebar.component"></component>
             </div>
 
             <div
@@ -75,121 +75,6 @@ const endSidebars = sidebars.filter((sidebar) => sidebar.position === 'end')
           </div>
         </div>
       </slot>
-      <!-- 
-      <BaseModal
-        :open="isLayoutModalOpen"
-        size="md"
-        footer
-        @close="toggleLayoutModal"
-      >
-        <template #header>
-          <div class="flex w-full items-center justify-between px-4 pt-4 pb-2">
-            <h3
-              class="font-heading text-lg font-medium leading-6 text-muted-900 dark:text-white"
-            >
-              Select a Layout
-            </h3>
-            <BaseButtonClose @click="toggleLayoutModal" />
-          </div>
-        </template>
-
-        <BaseTabs
-          selected="sidebar"
-          :tabs="[
-            { label: 'Sidebar', value: 'sidebar' },
-            { label: 'Sideblock', value: 'sideblock' },
-          ]"
-        >
-          <template #tab="{ activeValue }">
-            <div v-if="activeValue === 'sidebar'">
-              <div class="grid grid-cols-2 gap-4 px-4 pb-4">
-              <button
-                type="button"
-                class="relative block text-center"
-                @click="toggleLayoutModal"
-              >
-                <div class="relative mx-auto max-w-[110px]">
-                  <NuxtImg
-                    class="block dark:hidden"
-                    src="/img/icons/layouts/layout-1.svg"
-                    alt=""
-                  />
-                  <NuxtImg
-                    class="hidden dark:block"
-                    src="/img/icons/layouts/layout-1-dark.svg"
-                    alt=""
-                  />
-                  <div
-                    class="absolute top-0 right-0 flex h-6 w-6 items-center justify-center rounded-full bg-success-500 text-white"
-                  >
-                    <Icon name="lucide:check" class="block h-3 w-3" />
-                  </div>
-                </div>
-
-                <BaseHeading
-                  as="h4"
-                  weight="semibold"
-                  size="md"
-                  class="text-muted-800 dark:text-white"
-                >
-                  Sidebar
-                </BaseHeading>
-                <BaseParagraph size="sm" class="text-muted-400">
-                  Dual sidebar default
-                </BaseParagraph>
-              </button>
-              <button
-                type="button"
-                class="relative block text-center"
-                @click="toggleLayoutModal"
-              >
-                <div class="relative mx-auto max-w-[110px]">
-                  <NuxtImg
-                    class="block dark:hidden"
-                    src="/img/icons/layouts/layout-2.svg"
-                    alt=""
-                  />
-                  <NuxtImg
-                    class="hidden dark:block"
-                    src="/img/icons/layouts/layout-2-dark.svg"
-                    alt=""
-                  />
-                  <div
-                    class="absolute top-0 right-0 flex h-6 w-6 items-center justify-center rounded-full bg-success-500 text-white"
-                  >
-                    <Icon name="lucide:check" class="block h-3 w-3" />
-                  </div>
-                </div>
-
-                <BaseHeading
-                  as="h4"
-                  weight="semibold"
-                  size="md"
-                  class="text-muted-800 dark:text-white"
-                >
-                  Sidebar
-                </BaseHeading>
-                <BaseParagraph size="sm" class="text-muted-400">
-                  Dual sidebar colored
-                </BaseParagraph>
-              </button>
-            </div>
-          </div>
-          <div
-            v-else-if="activeValue === 'sideblock'"
-            class="font-sans text-sm text-muted-500 dark:text-muted-400"
-          >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quid iudicant
-            sensus? Primum quid tu dicis breve? Etiam beatissimum? Ne discipulum
-            abducam, times. Quae diligentissime contra Aristonem dicuntur a Chryippo.
-            Duo Reges: constructio interrete.
-          </div>
-        </template>
-        </BaseTabs>
-
-        <template #footer>
-        </template>
-      </BaseModal> -->
     </div>
   </div>
 </template>

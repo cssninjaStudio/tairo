@@ -8,6 +8,8 @@ import {
   warningColor,
 } from '@@/documentation/components/overview'
 
+const app = useAppConfig()
+
 definePageMeta({
   title: 'Overview',
 })
@@ -35,7 +37,7 @@ definePageMeta({
                 :anchor="{ prefix: '' }"
                 class="text-muted-800 dark:text-white"
               >
-                <strong>Tairo</strong>
+                <strong>{{ app.tairo.title }}</strong>
                 Overview
               </BaseHeading>
               <BaseParagraph

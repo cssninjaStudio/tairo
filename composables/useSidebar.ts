@@ -1,19 +1,14 @@
-import type { Component } from 'vue'
+import type { ConcreteComponent, Component } from 'vue'
 import type { RouteLocationRaw } from 'vue-router'
-import {
-  Icon,
-  LazyNavigationSidebarMenuComponents,
-  LazyNavigationSidebarMenuComponentsHeader,
-  LazyNavigationSidebarMenuDashboards,
-  LazyNavigationSidebarMenuHeader,
-  LazyNavigationSidebarMenuLayouts,
-} from '#components'
 
-export interface LazyNavigationSidebarItem {
+import type { TairoSidebarConfig } from '../nuxt.schema'
+import { Icon } from '#components'
+
+export interface SidebarItem {
   name: string
   icon: Component
-  subnav?: Component
-  subnavHeader?: Component | false
+  component?: Component | ConcreteComponent | string
+  componentHeader?: Component | ConcreteComponent | string
   to?: RouteLocationRaw
   click?: () => void | Promise<void>
   activePath?: string
@@ -24,62 +19,34 @@ export interface LazyNavigationSidebarItem {
 }
 
 export const useSidebar = () => {
-  const { openPanel } = usePanels()
-
-  // @todo: use app config
-  const sidebars: LazyNavigationSidebarItem[] = [
-    {
-      name: 'Dashboards',
-      icon: () => h(Icon, { name: 'ph:sidebar-duotone', class: 'w-5 h-5' }),
-      subnav: LazyNavigationSidebarMenuDashboards,
-      subnavHeader: LazyNavigationSidebarMenuHeader,
-      activePath: '/dashboards',
-    },
-    {
-      name: 'Layouts',
-      icon: () => h(Icon, { name: 'ph:app-window-duotone', class: 'w-5 h-5' }),
-      subnav: LazyNavigationSidebarMenuLayouts,
-      subnavHeader: LazyNavigationSidebarMenuHeader,
-      activePath: '/layouts',
-    },
-    {
-      name: 'Components',
-      icon: () => h(Icon, { name: 'ph:grid-four-duotone', class: 'w-5 h-5' }),
-      subnav: LazyNavigationSidebarMenuComponents,
-      subnavHeader: LazyNavigationSidebarMenuComponentsHeader,
-      activePath: '/components',
-    },
-    {
-      name: 'Chat',
-      icon: () => h(Icon, { name: 'ph:chat-circle-duotone', class: 'w-5 h-5' }),
-      to: { path: '/' },
-    },
-    {
-      name: 'Panels',
-      icon: () => h(Icon, { name: 'ph:square-half-duotone', class: 'w-5 h-5' }),
-      click: () => {
-        // toggleLayoutModal()
-      },
-      position: 'end',
-    },
-    {
-      name: 'Search',
-      icon: () =>
-        h(Icon, { name: 'ph:magnifying-glass-duotone', class: 'w-5 h-5' }),
-      click: () => {
-        openPanel('search')
-      },
-      position: 'end',
-    },
-    {
-      name: 'Settings',
-      icon: () => h(Icon, { name: 'ph:gear-six-duotone', class: 'w-5 h-5' }),
-      to: { path: '/' },
-      position: 'end',
-    },
-  ]
-
+  const app = useAppConfig()
   const route = useRoute()
+
+  const sidebars = (app.tairo.sidebars as TairoSidebarConfig[]).map(
+    (sidebar) => {
+      const item: SidebarItem = {
+        name: sidebar.name,
+        to: sidebar.to,
+        activePath: sidebar.activePath,
+        click: sidebar.click,
+        position: sidebar.position ?? 'start',
+        icon: () =>
+          h(
+            Icon,
+            typeof sidebar.icon === 'string'
+              ? { name: sidebar.icon, class: 'w-5 h-5' }
+              : sidebar.icon,
+          ),
+        component: sidebar.component
+          ? resolveComponent(sidebar.component)
+          : undefined,
+        componentHeader: sidebar.componentHeader
+          ? resolveComponent(sidebar.componentHeader)
+          : undefined,
+      }
+      return item
+    },
+  )
 
   // Sidebar
   const sidebar = sidebars.find(
@@ -104,7 +71,7 @@ export const useSidebar = () => {
     isSidebarOpened.value = !isSidebarOpened.value
   }
 
-  function toggleActiveSidebar(sidebar: LazyNavigationSidebarItem) {
+  function toggleActiveSidebar(sidebar: SidebarItem) {
     if (sidebar?.click) {
       return sidebar?.click?.()
     }
