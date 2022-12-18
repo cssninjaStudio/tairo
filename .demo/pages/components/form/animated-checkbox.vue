@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { base } from '@@/documentation/components/form/animated-checkbox'
-// import { properties } from '@@/documentation/components/form/animated-checkbox/properties'
-import { options } from '@@/documentation/components/form/animated-checkbox/data'
+import { base } from '@@/documentation/form/animated-checkbox'
+// import { properties } from '@@/documentation/form/animated-checkbox/properties'
+import { options } from '@@/documentation/form/animated-checkbox/data'
 
 
 

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { outline, pastel, shapes, solid } from '@@/documentation/components/tag'
+import { outline, pastel, shapes, solid } from '@@/documentation/tag'
 
 
 

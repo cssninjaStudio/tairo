@@ -9,7 +9,7 @@ import {
   iconSlot,
   textLeft,
   textRight,
-} from '@@/documentation/components/dropdown'
+} from '@@/documentation/dropdown'
 
 definePageMeta({
   title: 'Dropdowns',

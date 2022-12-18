@@ -8,13 +8,13 @@ import {
   loading,
   rounded,
   straight,
-} from '@@/documentation/components/form/select'
+} from '@@/documentation/form/select'
 import {
   selectCurved,
   selectFull,
   selectRounded,
   selectStraight,
-} from '@@/documentation/components/form/select/data'
+} from '@@/documentation/form/select/data'
 
 
 

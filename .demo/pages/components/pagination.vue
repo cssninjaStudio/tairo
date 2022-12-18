@@ -4,7 +4,7 @@ import {
   full,
   rounded,
   straight,
-} from '@@/documentation/components/pagination'
+} from '@@/documentation/pagination'
 
 
 

@@ -11,13 +11,13 @@ import {
   loading,
   rounded,
   straight,
-} from '@@/documentation/components/form/input'
+} from '@@/documentation/form/input'
 import {
   inputCurved,
   inputFull,
   inputRounded,
   inputStraight,
-} from '@@/documentation/components/form/input/data'
+} from '@@/documentation/form/input/data'
 
 
 

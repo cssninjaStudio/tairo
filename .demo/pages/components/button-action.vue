@@ -4,7 +4,7 @@ import {
   loading,
   muted,
   shapes,
-} from '@@/documentation/components/action'
+} from '@@/documentation/action'
 
 const disabled = ref(true)
 

@@ -6,10 +6,10 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic'
 import {
   editorConfig,
   editorData,
-} from '@@/documentation/components/form/editor/data' */
+} from '@@/documentation/form/editor/data' */
 
-// import { toc } from '@@/documentation/components/form/editor/toc'
-// import { } from '@@/documentation/components/form/editor'
+// import { toc } from '@@/documentation/form/editor/toc'
+// import { } from '@@/documentation/form/editor'
 
 definePageMeta({
   title: 'Text Editor',

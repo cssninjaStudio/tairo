@@ -8,12 +8,12 @@ import {
   loading,
   rounded,
   straight,
-} from '@@/documentation/components/form/textarea'
+} from '@@/documentation/form/textarea'
 import {
   textareaCurved,
   textareaRounded,
   textareaStraight,
-} from '@@/documentation/components/form/textarea/data'
+} from '@@/documentation/form/textarea/data'
 
 definePageMeta({
   title: 'Textarea',

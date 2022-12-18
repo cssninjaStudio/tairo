@@ -6,7 +6,7 @@ import {
   ballSwitch,
   thinSublabel,
   thinSwitch,
-} from '@@/documentation/components/form/switch'
+} from '@@/documentation/form/switch'
 
 definePageMeta({
   title: 'Switches',

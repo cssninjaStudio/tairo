@@ -2,14 +2,14 @@
 import {
   iconCarousel,
   userCarousel,
-} from '@@/documentation/components/carousel'
-import { team, topics } from '@@/documentation/components/carousel/data'
+} from '@@/documentation/carousel'
+import { team, topics } from '@@/documentation/carousel/data'
 
 definePageMeta({
   title: 'Carousel',
   documentation: {
     category: 'Interaction',
-    components: ['BaseCarouselTeam', 'BaseCarouselIcons'],
+    components: ['CarouselTeam', 'CarouselIcons'],
   },
 })
 </script>
@@ -28,7 +28,7 @@ definePageMeta({
           <DocComponent label="User carousel example">
             <template #demo>
               <div class="pt-5">
-                <BaseCarouselTeam :slides-to-show="3" :slides="team" />
+                <CarouselTeam :slides-to-show="3" :slides="team" />
               </div>
             </template>
             <template #code>
@@ -37,14 +37,14 @@ definePageMeta({
           </DocComponent>
         </DocSection>
 
-        <DocComponentMeta name="BaseCarouselTeam" />
+        <DocComponentMeta name="CarouselTeam" />
 
         <!-- Icon carousel -->
         <DocSection title="Icon Carousel" tag="1.0.0">
           <DocComponent label="Icon carousel example">
             <template #demo>
               <div class="pt-5">
-                <BaseCarouselIcons :slides-to-show="6" :slides="topics" />
+                <CarouselIcons :slides-to-show="6" :slides="topics" />
               </div>
             </template>
             <template #code>
@@ -54,7 +54,7 @@ definePageMeta({
         </DocSection>
 
         <!-- Icon carousel properties -->
-        <DocComponentMeta name="BaseCarouselIcons" />
+        <DocComponentMeta name="CarouselIcons" />
       </template>
       <!-- Toc -->
       <template #toc>

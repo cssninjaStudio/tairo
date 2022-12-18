@@ -5,7 +5,7 @@ import {
   muted,
   primary,
   shapes,
-} from '@@/documentation/components/icon-button'
+} from '~/documentation/icon-button'
 
 
 

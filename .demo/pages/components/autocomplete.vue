@@ -11,7 +11,7 @@ import {
   multiple,
   rounded,
   straight,
-} from '@@/documentation/components/autocomplete'
+} from '@@/documentation/autocomplete'
 import {
   frameworks,
   hobbies,
@@ -20,7 +20,7 @@ import {
   selectedHobby,
   selectedPeople,
   selectedPerson,
-} from '@@/documentation/components/autocomplete/data'
+} from '@@/documentation/autocomplete/data'
 
 definePageMeta({
   title: 'Autocomplete',

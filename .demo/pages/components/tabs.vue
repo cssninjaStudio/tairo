@@ -6,7 +6,7 @@ import {
   end,
   icons,
   start,
-} from '@@/documentation/components/tabs'
+} from '@@/documentation/tabs'
 
 definePageMeta({
   title: 'Nav Tabs',

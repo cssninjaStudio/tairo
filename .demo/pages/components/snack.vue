@@ -9,7 +9,7 @@ import {
   imageLight,
   imageSmall,
   small,
-} from '@@/documentation/components/snack'
+} from '@@/documentation/snack'
 
 definePageMeta({
   title: 'Snacks',

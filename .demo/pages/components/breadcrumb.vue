@@ -4,11 +4,11 @@ import {
   chevron,
   dot,
   slash,
-} from '@@/documentation/components/breadcrumb'
+} from '@@/documentation/breadcrumb'
 import {
   demoBreadcrumbOne,
   demoBreadcrumbTwo,
-} from '@@/documentation/components/breadcrumb/data'
+} from '@@/documentation/breadcrumb/data'
 
 
 

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { icons, shapes, types } from '@@/documentation/components/message'
+import { icons, shapes, types } from '@@/documentation/message'
 
 definePageMeta({
   title: 'Messages',

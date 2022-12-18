@@ -19,7 +19,7 @@ const props = withDefaults(defineProps<DocSectionProps>(), {
         weight="medium"
         class="text-muted-800 dark:text-white"
       >
-        <BaseTocAnchor>{{ props.title }}</BaseTocAnchor>
+        <TocAnchor>{{ props.title }}</TocAnchor>
       </BaseHeading>
       <span
         v-if="props.tag"

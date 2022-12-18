@@ -9,8 +9,8 @@ import {
   multipleHandle,
   rounded,
   straight,
-} from '@@/documentation/components/form/slider'
-import { properties } from '@@/documentation/components/form/slider/properties'
+} from '@@/documentation/form/slider'
+import { properties } from '@@/documentation/form/slider/properties'
 import {
   danger,
   format,
@@ -21,7 +21,7 @@ import {
   success,
   value,
   warning,
-} from '@@/documentation/components/form/slider/data'
+} from '@@/documentation/form/slider/data'
 
 definePageMeta({
   title: 'Sliders',

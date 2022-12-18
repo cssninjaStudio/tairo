@@ -6,8 +6,8 @@ import {
   pastel,
   roundedSizes,
   solid,
-} from '@@/documentation/components/iconbox'
-// import { properties } from '@@/documentation/components/iconbox/properties'
+} from '@@/documentation/iconbox'
+// import { properties } from '@@/documentation/iconbox/properties'
 
 
 

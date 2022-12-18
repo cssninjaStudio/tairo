@@ -3,7 +3,7 @@ import {
   elevation,
   elevationHover,
   shapes,
-} from '@@/documentation/components/card'
+} from '@@/documentation/card'
 
 
 

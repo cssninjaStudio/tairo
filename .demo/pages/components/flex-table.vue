@@ -3,8 +3,8 @@ import {
   curved,
   rounded,
   straight,
-} from '@@/documentation/components/flex-table'
-import { team } from '@@/documentation/components/flex-table/data'
+} from '@@/documentation/flex-table'
+import { team } from '@@/documentation/flex-table/data'
 
 definePageMeta({
   title: 'Flex Tables',

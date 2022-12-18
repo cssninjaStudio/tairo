@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { composition, shape, text } from '@@/documentation/components/placeload'
+import { composition, shape, text } from '@@/documentation/placeload'
 
 
 

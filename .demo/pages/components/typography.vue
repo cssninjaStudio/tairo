@@ -3,7 +3,7 @@ import {
   heading,
   paragraph,
   text,
-} from '@@/documentation/components/typography'
+} from '@@/documentation/typography'
 
 definePageMeta({
   title: 'Typography',

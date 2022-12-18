@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { base, colors } from '@@/documentation/components/form/radio'
+import { base, colors } from '@@/documentation/form/radio'
 import {
   demoColors,
   radioSelected,
-} from '@@/documentation/components/form/radio/data'
+} from '@@/documentation/form/radio/data'
 
 
 

@@ -52,7 +52,7 @@ const team = [
 </script>
 
 <template>
-  <BaseCarouselTeam :slides-to-show="3" :slides="team" />
+  <CarouselTeam :slides-to-show="3" :slides="team" />
 </template>
 `
 
@@ -74,6 +74,6 @@ export const topics = [
 </script>
 
 <template>
-  <BaseCarouselIcons :slides-to-show="6" :slides="topics" />
+  <CarouselIcons :slides-to-show="6" :slides="topics" />
 </template>
 `

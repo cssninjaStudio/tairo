@@ -9,7 +9,7 @@ import {
   pastel,
   shapes,
   solid,
-} from '@@/documentation/components/button'
+} from '@@/documentation/button'
 
 definePageMeta({
   title: 'Buttons',

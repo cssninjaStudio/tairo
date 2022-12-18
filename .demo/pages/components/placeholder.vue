@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { base, variation } from '@@/documentation/components/placeholder'
-// import { properties } from '@@/documentation/components/placeholder/properties'
+import { base, variation } from '@@/documentation/placeholder'
+// import { properties } from '@@/documentation/placeholder/properties'
 
 
 

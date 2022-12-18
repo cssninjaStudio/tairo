@@ -5,11 +5,11 @@ import {
   colors,
   indeterminate,
   sizes,
-} from '@@/documentation/components/progress'
+} from '@@/documentation/progress'
 import {
   progress,
   progressCircle,
-} from '@@/documentation/components/progress/data'
+} from '@@/documentation/progress/data'
 
 definePageMeta({
   title: 'Progress',

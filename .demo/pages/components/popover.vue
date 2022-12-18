@@ -6,7 +6,7 @@ import {
   helpRight,
   mediaLeft,
   mediaRight,
-} from '@@/documentation/components/popover'
+} from '@@/documentation/popover'
 
 definePageMeta({
   title: 'Popover',

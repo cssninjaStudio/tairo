@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { avatar, positions } from '@@/documentation/components/tooltip'
-import { properties } from '@@/documentation/components/tooltip/properties'
+import { avatar, positions } from '@@/documentation/tooltip'
+import { properties } from '@@/documentation/tooltip/properties'
 
 definePageMeta({
   title: 'Tooltips',

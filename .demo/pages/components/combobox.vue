@@ -6,7 +6,7 @@ import {
   media,
   shapes,
   sublabels,
-} from '@@/documentation/components/combobox'
+} from '@@/documentation/combobox'
 import {
   frameworks,
   hobbies,
@@ -16,7 +16,7 @@ import {
   selectedHobby,
   selectedPerson,
   selectedPersonName,
-} from '@@/documentation/components/combobox/data'
+} from '@@/documentation/combobox/data'
 
 definePageMeta({
   title: 'Combobox',

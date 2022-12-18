@@ -10,7 +10,7 @@ import {
   lucide,
   material,
   phosphor,
-} from '@@/documentation/components/icons'
+} from '@@/documentation/icons'
 
 definePageMeta({
   title: 'Icons',

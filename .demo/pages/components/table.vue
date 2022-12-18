@@ -6,8 +6,8 @@ import {
   mediaStraight,
   rounded,
   straight,
-} from '@@/documentation/components/table'
-import { team } from '@@/documentation/components/table/data'
+} from '@@/documentation/table'
+import { team } from '@@/documentation/table/data'
 
 definePageMeta({
   title: 'Tables',

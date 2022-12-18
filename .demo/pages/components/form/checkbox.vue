@@ -5,14 +5,14 @@ import {
   curved,
   rounded,
   straight,
-} from '@@/documentation/components/form/checkbox'
+} from '@@/documentation/form/checkbox'
 import {
   demoFour,
   demoOne,
   demoStraight,
   demoThree,
   demoTwo,
-} from '@@/documentation/components/form/checkbox/data'
+} from '@@/documentation/form/checkbox/data'
 
 
 

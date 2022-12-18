@@ -12,7 +12,7 @@ import {
   squareFakeBadge,
   squareFakeColors,
   squareSize,
-} from '@@/documentation/components/avatar'
+} from '@@/documentation/avatar'
 
 
 

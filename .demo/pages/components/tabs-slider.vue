@@ -4,7 +4,7 @@ import {
   x2Rounded,
   x3Full,
   x3Rounded,
-} from '@@/documentation/components/tabs-slider'
+} from '@@/documentation/tabs-slider'
 
 
 

@@ -4,8 +4,8 @@ import {
   medium,
   small,
   tiny,
-} from '@@/documentation/components/avatar-group'
-import { people } from '@@/documentation/components/avatar-group/data'
+} from '@@/documentation/avatar-group'
+import { people } from '@@/documentation/avatar-group/data'
 
 definePageMeta({
   title: 'Avatar group',

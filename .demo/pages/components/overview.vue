@@ -6,7 +6,7 @@ import {
   slateColor,
   successColor,
   warningColor,
-} from '@@/documentation/components/overview'
+} from '@@/documentation/overview'
 
 const app = useAppConfig()
 

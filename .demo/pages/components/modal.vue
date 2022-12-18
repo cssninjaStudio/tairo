@@ -4,8 +4,8 @@ import {
   largeTier,
   mediumTier,
   smallTier,
-} from '@@/documentation/components/modal'
-// import { properties } from '@@/documentation/components/modal/properties'
+} from '@@/documentation/modal'
+// import { properties } from '@@/documentation/modal/properties'
 
 definePageMeta({
   title: 'Modals',

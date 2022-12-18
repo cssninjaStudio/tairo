@@ -5,8 +5,8 @@ import {
   inclusive,
   plus,
   shapes,
-} from '@@/documentation/components/accordion'
-import { accordion } from '@@/documentation/components/accordion/data'
+} from '@@/documentation/accordion'
+import { accordion } from '@@/documentation/accordion/data'
 
 definePageMeta({
   title: 'Accordions',
