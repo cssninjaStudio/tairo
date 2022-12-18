@@ -114,7 +114,8 @@ const radialBarOptions = {
     </div>
     <BasePlaceload class="w-[90%] mx-auto h-32 mt-36 mb-4" v-if="!apexLoaded" />
     <ClientOnly>
-      <LazyVueApexCharts 
+      <LazyVueApexCharts
+        v-show="apexLoaded"
         :height="radialBarOptions.chart.height"
         :type="radialBarOptions.chart.type"
         :options="radialBarOptions"

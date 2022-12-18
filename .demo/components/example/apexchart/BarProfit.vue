@@ -119,7 +119,8 @@ const profitBarOptions = {
     </div>
     <BasePlaceload class="w-[90%] mx-auto h-64 my-4" v-if="!apexLoaded" />
     <ClientOnly>
-      <LazyVueApexCharts 
+      <LazyVueApexCharts
+        v-show="apexLoaded"
         :height="profitBarOptions.chart.height"
         :type="profitBarOptions.chart.type"
         :options="profitBarOptions"
