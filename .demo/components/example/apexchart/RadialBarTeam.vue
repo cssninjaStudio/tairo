@@ -5,9 +5,18 @@ const { primary } = useTailwindColors()
  * Use `defineAsyncComponent` to lazy load the component only when needed
  * This improves the initial load time of the page when the component is not needed
  * 
- * @todo loadingComponent - https://github.com/nuxt/framework/issues/9765
+ * Using a ref to track when the component is loaded is not necessary, but it's
+ * a good practice to be able to show a loading state while the component is loading.
  */
-const LazyVueApexCharts = defineAsyncComponent(() => import('vue3-apexcharts'))
+const apexLoaded = ref(false)
+const LazyVueApexCharts = defineAsyncComponent({
+  loader: () => import('vue3-apexcharts').then((module) => {
+    nextTick(() => {
+      apexLoaded.value = true
+    })
+    return module.default
+  }),
+})
 
 /**
  * This is example data for the area chart
@@ -103,8 +112,10 @@ const radialBarOptions = {
       <BaseAvatar text="H" class="bg-yellow-100 dark:bg-yellow-500 text-yellow-500 dark:text-white" />
       <BaseAvatar src="/img/avatars/3.svg" />
     </div>
+    <BasePlaceload class="w-[90%] mx-auto h-32 mt-36 mb-4" v-if="!apexLoaded" />
     <ClientOnly>
-      <LazyVueApexCharts 
+      <LazyVueApexCharts
+        v-show="apexLoaded"
         :height="radialBarOptions.chart.height"
         :type="radialBarOptions.chart.type"
         :options="radialBarOptions"
