@@ -1,3 +1,9 @@
+<script setup lang="ts">
+definePageMeta({
+  title: 'Personal 1',
+})
+</script>
+
 <template>
   <div>
     <!-- Header -->
@@ -6,19 +12,19 @@
         <BaseAvatar src="/img/avatars/2.svg" size="lg" />
         <div>
           <BaseHeading
-          as="h2"
-          size="xl"
-          weight="semibold"
-          lead="tight"
-          class="text-muted-800 dark:text-white"
-        >
-          <span>Welcome back, Maya</span>
-        </BaseHeading>
-        <BaseParagraph>
-          <span class="text-muted-500">
-            Happy to see you again on your dashboard.
-          </span>
-        </BaseParagraph>
+            as="h2"
+            size="xl"
+            weight="semibold"
+            lead="tight"
+            class="text-muted-800 dark:text-white"
+          >
+            <span>Welcome back, Maya</span>
+          </BaseHeading>
+          <BaseParagraph>
+            <span class="text-muted-500">
+              Happy to see you again on your dashboard.
+            </span>
+          </BaseParagraph>
         </div>
       </div>
       <div class="flex items-center justify-center md:justify-start gap-2 mt-4 md:mt-0">
