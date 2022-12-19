@@ -50,15 +50,25 @@ export default defineComponent({
       type: String,
       default: '',
     },
-    hint: {
-      type: Boolean,
-      default: false,
-    },
   },
   setup(props) {
     const processor = ref<Processor>()
+    const colorMode = useColorMode()
+    const isDark = computed({
+      get() {
+        return colorMode.value === 'dark'
+      },
+      set(value) {
+        if (value) {
+          colorMode.preference = 'dark'
+        } else {
+          colorMode.preference = 'light'
+        }
+      },
+    })
 
     watchEffect(async () => {
+      const theme = isDark.value ? 'material-ocean' : 'material-lighter'
       const {
         remarkShiki,
         rehypeExternalLinks,
@@ -73,8 +83,8 @@ export default defineComponent({
         unified,
       } = await loadModules()
       const highlighter = await getHighlighter({
-        theme: 'one-dark-pro',
-        langs: ['vue', 'html', 'js', 'ts', 'json', 'bash', 'css', 'scss'],
+        theme,
+        langs: ['vue', 'html', 'js', 'ts', 'json', 'bash', 'css'],
       })
 
       processor.value = unified()
@@ -102,7 +112,6 @@ export default defineComponent({
               ...(defaultSchema.attributes?.span || []),
               ['className'],
               ['style'],
-              ['dataHint'],
             ],
           },
         })
@@ -114,24 +123,7 @@ export default defineComponent({
       if (!processor.value) return ''
       if (!props.source) return ''
 
-      let source = props.source
-      if (props.hint) {
-        try {
-          const regex = /hint="([^"]+)" icon="([^"]+)" (.+)/g
-          const matches = [...props.source.matchAll(regex)]
-          if (matches.length) {
-            matches.forEach((match) => {
-              const [, hint, icon, text] = match
-              const replacement = `<span data-hint="${hint}" class="hint hint--top-right hint--rounded hint--primary"><i class="${icon}"></i>${text}</span>`
-              source = source.replace(match[0], replacement)
-            })
-          }
-        } catch (e) {
-          //
-        }
-      }
-
-      return processor.value.processSync(source).toString()
+      return processor.value.processSync(props.source).toString()
     })
 
     return () =>

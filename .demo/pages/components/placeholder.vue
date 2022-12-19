@@ -43,7 +43,7 @@ definePageMeta({
               </BasePlaceholderPage>
             </template>
             <template #code>
-              <DocCode langugage="html" :code="base" />
+              <DocMarkdown :source="base" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -74,7 +74,7 @@ definePageMeta({
               </BasePlaceholderPage>
             </template>
             <template #code>
-              <DocCode langugage="html" :code="variation" />
+              <DocMarkdown :source="variation" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
