@@ -84,7 +84,7 @@ export default defineComponent({
       } = await loadModules()
       const highlighter = await getHighlighter({
         theme,
-        langs: ['vue', 'html', 'js', 'ts', 'json', 'bash', 'css'],
+        langs: ['vue', 'html', 'vue-html', 'javascript', 'typescript', 'json', 'jsonc', 'bash', 'css'],
       })
 
       processor.value = unified()
