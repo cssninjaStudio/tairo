@@ -225,7 +225,22 @@ const candidates = [
     </div>
     <!--Grid item-->
     <div>
-      <WidgetTrendingSkills />
+      <BaseCard class="p-6" shape="curved">
+        <!-- Title -->
+        <div class="flex items-center justify-between mb-8">
+          <BaseHeading
+            as="h3"
+            size="md"
+            weight="semibold"
+            lead="tight"
+            class="text-muted-800 dark:text-white"
+          >
+            <span>Trending skills</span>
+          </BaseHeading>
+          <RouterLink to="/" class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300">View All</RouterLink>
+        </div>
+        <WidgetTrendingSkills />
+      </BaseCard>
     </div>
   </div>
 </template>

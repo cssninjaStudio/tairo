@@ -85,7 +85,7 @@ const customersOptions = {
 </script>
 
 <template>
-  <BaseCard>
+  <div>
     <div class="mb-6">
       <BaseHeading
         as="h3"
@@ -107,5 +107,5 @@ const customersOptions = {
         :series="customersOptions.series"
       />
     </ClientOnly>
-  </BaseCard>
+  </div>
 </template>

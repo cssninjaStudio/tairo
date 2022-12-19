@@ -175,7 +175,9 @@ definePageMeta({
       </div>
       <!-- Area Chart card -->
       <div class="col-span-12 ltablet:col-span-6 lg:col-span-6">
-        <ExampleApexchartAreaCustomer class="p-6" />
+        <BaseCard class="p-6">
+          <ExampleApexchartAreaCustomer />
+        </BaseCard>
       </div>
       <!-- CTA card -->
       <div class="col-span-12 ptablet:col-span-6 ltablet:col-span-4 lg:col-span-4">
@@ -206,7 +208,7 @@ definePageMeta({
           >
             <Icon
               name="ph:crown-duotone"
-              class="w-14 h-14 text-success-900/50"
+              class="w-14 h-14 text-primary-900/50"
             ></Icon>
           </div>
         </BaseCard>
@@ -215,11 +217,15 @@ definePageMeta({
       <div
         class="col-span-12 ptablet:col-span-6 ltablet:col-span-4 lg:col-span-4"
       >
-        <ExampleApexchartRadialBarTeam class="p-6" />
+        <BaseCard class="relative p-6">
+          <ExampleApexchartRadialBarTeam />
+        </BaseCard>
       </div>
       <!-- Bar chart card -->
       <div class="col-span-12 ltablet:col-span-4 lg:col-span-4">
-        <ExampleApexchartBarProfit class="p-6" />
+        <BaseCard class="relative p-6">
+          <ExampleApexchartBarProfit />
+        </BaseCard>
       </div>
     </div>
   </div>

@@ -95,7 +95,7 @@ const radialBarOptions = {
 </script>
 
 <template>
-  <BaseCard class="relative">
+  <div>
     <div class="mb-6">
       <BaseHeading
         as="h3"
@@ -127,5 +127,5 @@ const radialBarOptions = {
         :series="radialBarOptions.series"
       />
     </ClientOnly>
-  </BaseCard>
+  </div>
 </template>

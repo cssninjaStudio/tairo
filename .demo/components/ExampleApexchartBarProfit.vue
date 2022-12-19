@@ -106,7 +106,7 @@ const profitBarOptions = {
 </script>
 
 <template>
-  <BaseCard class="relative">
+  <div>
     <div class="mb-6">
       <BaseHeading
         as="h3"
@@ -128,5 +128,5 @@ const profitBarOptions = {
         :series="profitBarOptions.series"
       />
     </ClientOnly>
-  </BaseCard>
+  </div>
 </template>

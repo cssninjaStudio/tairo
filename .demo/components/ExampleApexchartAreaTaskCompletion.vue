@@ -79,7 +79,7 @@ const completionOptions = {
 </script>
 
 <template>
-  <BaseCard class="p-6">
+  <div>
     <div class="flex items-center justify-between mb-6">
       <BaseHeading
         as="h3"
@@ -102,5 +102,5 @@ const completionOptions = {
         :series="completionOptions.series"
       />
     </ClientOnly>
-  </BaseCard>
+  </div>
 </template>
