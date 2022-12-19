@@ -1,15 +1,10 @@
 <script setup lang="ts">
-import {
-  circleSizes,
-  elevation,
-  outline,
-  pastel,
-  roundedSizes,
-  solid,
-} from '@@/documentation/iconbox'
-// import { properties } from '@@/documentation/iconbox/properties'
-
-
+import circleSizes from '~/documentation/iconbox/circle-sizes.md?raw'
+import elevation from '~/documentation/iconbox/elevation.md?raw'
+import outline from '~/documentation/iconbox/outline.md?raw'
+import pastel from '~/documentation/iconbox/pastel.md?raw'
+import roundedSizes from '~/documentation/iconbox/rounded-sizes.md?raw'
+import solid from '~/documentation/iconbox/solid.md?raw'
 
 definePageMeta({
   title: 'Icon Boxes',
@@ -73,7 +68,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="roundedSizes" />
+              <DocMarkdown :source="roundedSizes" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -128,7 +123,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="circleSizes" />
+              <DocMarkdown :source="circleSizes" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -185,10 +180,7 @@ definePageMeta({
                   shape="circle"
                   class="bg-teal-500 text-white"
                 >
-                  <Icon
-                    name="ph:paint-brush-broad-duotone"
-                    class="h-5 w-5"
-                  />
+                  <Icon name="ph:paint-brush-broad-duotone" class="h-5 w-5" />
                 </BaseIconBox>
                 <BaseIconBox
                   size="md"
@@ -284,7 +276,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="solid" />
+              <DocMarkdown :source="solid" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -340,10 +332,7 @@ definePageMeta({
                   size="md"
                   class="bg-blue-100 text-blue-500 dark:border-2 dark:border-blue-500 dark:bg-blue-500/20 dark:text-blue-400"
                 >
-                  <Icon
-                    name="ph:chat-circle-dots-duotone"
-                    class="h-5 w-5"
-                  />
+                  <Icon name="ph:chat-circle-dots-duotone" class="h-5 w-5" />
                 </BaseIconBox>
                 <BaseIconBox
                   size="md"
@@ -402,7 +391,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="pastel" />
+              <DocMarkdown :source="pastel" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -426,10 +415,7 @@ definePageMeta({
                   class="text-primary-500"
                   bordered
                 >
-                  <Icon
-                    name="ph:presentation-chart-duotone"
-                    class="h-5 w-5"
-                  />
+                  <Icon name="ph:presentation-chart-duotone" class="h-5 w-5" />
                 </BaseIconBox>
                 <BaseIconBox
                   size="md"
@@ -570,7 +556,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="outline" />
+              <DocMarkdown :source="outline" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -620,10 +606,7 @@ definePageMeta({
                   shape="circle"
                   class="bg-teal-500 text-white shadow-lg shadow-teal-500/50"
                 >
-                  <Icon
-                    name="ph:paint-brush-broad-duotone"
-                    class="h-5 w-5"
-                  />
+                  <Icon name="ph:paint-brush-broad-duotone" class="h-5 w-5" />
                 </BaseIconBox>
                 <BaseIconBox
                   size="md"
@@ -719,7 +702,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="elevation" />
+              <DocMarkdown :source="elevation" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>

@@ -48,11 +48,11 @@ const activeTab = ref('demo')
     </div>
 
     <div>
-      <div v-if="activeTab === 'demo'">
+      <div v-show="activeTab === 'demo'">
         <slot name="demo"></slot>
       </div>
 
-      <div v-else-if="activeTab === 'code'">
+      <div v-show="activeTab === 'code'">
         <slot name="code"></slot>
       </div>
     </div>

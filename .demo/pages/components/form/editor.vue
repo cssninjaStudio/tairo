@@ -1,16 +1,4 @@
 <script setup lang="ts">
-// @todo: implement CK editor. Got the setup from Vuero, but it seems it doesn't work under Nuxt, even inside a <client-only> tag.
-
-/* import CKE from '@ckeditor/ckeditor5-vue'
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic'
-import {
-  editorConfig,
-  editorData,
-} from '@@/documentation/form/editor/data' */
-
-// import { toc } from '@@/documentation/form/editor/toc'
-// import { } from '@@/documentation/form/editor'
-
 definePageMeta({
   title: 'Text Editor',
   documentation: {
@@ -18,27 +6,6 @@ definePageMeta({
     components: ['CKEditor'],
   },
 })
-
-// const CKEditor = CKE.component
-
-// const breadcrumb = [
-//   {
-//     label: 'Home',
-//     hideLabel: true,
-//     icon: 'lucide:home',
-//     to: '/'
-//   },
-//   {
-//     label: 'Elements',
-//     hideLabel: false,
-//     to: '/components'
-//   },
-//   {
-//     label: 'Rich text',
-//     hideLabel: false,
-//     to: '/form/editor'
-//   }
-// ]
 </script>
 
 <template>

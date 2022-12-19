@@ -1,27 +1,53 @@
 <script setup lang="ts">
 import Slider from '@vueform/slider'
-import {
-  circle,
-  colors,
-  curved,
-  formatTooltip,
-  mergeTooltip,
-  multipleHandle,
-  rounded,
-  straight,
-} from '@@/documentation/form/slider'
-import { properties } from '@@/documentation/form/slider/properties'
-import {
-  danger,
-  format,
-  info,
-  merge,
-  mergeValue,
-  multiple,
-  success,
-  value,
-  warning,
-} from '@@/documentation/form/slider/data'
+
+import circle from '~/documentation/form/slider/circle.md?raw'
+import colors from '~/documentation/form/slider/colors.md?raw'
+import curved from '~/documentation/form/slider/curved.md?raw'
+import formatTooltip from '~/documentation/form/slider/format-tooltip.md?raw'
+import mergeTooltip from '~/documentation/form/slider/merge-tooltip.md?raw'
+import multipleHandle from '~/documentation/form/slider/multiple-handle.md?raw'
+import rounded from '~/documentation/form/slider/rounded.md?raw'
+import straight from '~/documentation/form/slider/straight.md?raw'
+
+const properties = {
+  props: [
+    {
+      name: 'v-model',
+      type: 'number',
+      required: 'false',
+      default: '0',
+      values: ['number'],
+    },
+    {
+      name: 'format',
+      type: 'string',
+      required: 'false',
+      default: 'undefined',
+      values: ['string'],
+    },
+    {
+      name: 'merge',
+      type: 'number',
+      required: 'false',
+      default: 'undefined',
+      values: ['number'],
+    },
+  ],
+  slots: [],
+}
+
+const value = ref(20)
+const info = ref(38)
+const success = ref(84)
+const warning = ref(53)
+const danger = ref(67)
+const multiple = ref([16, 84])
+const format = (value: any) => {
+  return `${value}%`
+}
+const mergeValue = ref([20, 50, 80])
+const merge = ref(10)
 
 definePageMeta({
   title: 'Sliders',
@@ -54,7 +80,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="straight" />
+              <DocMarkdown :source="straight" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -72,7 +98,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="rounded" />
+              <DocMarkdown :source="rounded" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -90,7 +116,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="curved" />
+              <DocMarkdown :source="curved" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -108,7 +134,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="circle" />
+              <DocMarkdown :source="circle" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -145,7 +171,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="colors" />
+              <DocMarkdown :source="colors" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -163,7 +189,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="multipleHandle" />
+              <DocMarkdown :source="multipleHandle" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -185,7 +211,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="formatTooltip" />
+              <DocMarkdown :source="formatTooltip" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -207,7 +233,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="mergeTooltip" />
+              <DocMarkdown :source="mergeTooltip" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>

@@ -1,13 +1,49 @@
 <script setup lang="ts">
-import {
-  curved,
-  mediaCurved,
-  mediaRounded,
-  mediaStraight,
-  rounded,
-  straight,
-} from '@@/documentation/table'
-import { team } from '@@/documentation/table/data'
+import curved from '~/documentation/table/curved.md?raw'
+import mediaCurved from '~/documentation/table/media-curved.md?raw'
+import mediaRounded from '~/documentation/table/media-rounded.md?raw'
+import mediaStraight from '~/documentation/table/media-straight.md?raw'
+import rounded from '~/documentation/table/rounded.md?raw'
+import straight from '~/documentation/table/straight.md?raw'
+
+const team = [
+  {
+    id: 0,
+    src: '/img/avatars/22.svg',
+    name: 'Anna Vrinkof',
+    role: 'UI/UX designer',
+    expertise: 'UX Design',
+    rate: 49,
+    status: 'Available',
+  },
+  {
+    id: 1,
+    src: '/img/avatars/3.svg',
+    name: 'John Cambell',
+    role: 'Sales manager',
+    expertise: 'Management',
+    rate: 74,
+    status: 'Hired',
+  },
+  {
+    id: 2,
+    src: '/img/avatars/9.svg',
+    name: 'Beth Delanoe',
+    role: 'Product designer',
+    expertise: 'Product',
+    rate: 43,
+    status: 'Available',
+  },
+  {
+    id: 3,
+    src: '/img/avatars/14.svg',
+    name: 'Andrew Higgs',
+    role: 'Project manager',
+    expertise: 'Project',
+    rate: 69,
+    status: 'New',
+  },
+]
 
 definePageMeta({
   title: 'Tables',
@@ -118,7 +154,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="straight" />
+              <DocMarkdown :source="straight" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -209,7 +245,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="rounded" />
+              <DocMarkdown :source="rounded" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -300,7 +336,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="curved" />
+              <DocMarkdown :source="curved" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -405,7 +441,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="mediaStraight" />
+              <DocMarkdown :source="mediaStraight" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -506,7 +542,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="mediaRounded" />
+              <DocMarkdown :source="mediaRounded" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -607,7 +643,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="mediaCurved" />
+              <DocMarkdown :source="mediaCurved" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>

@@ -1,6 +1,26 @@
 <script setup lang="ts">
-import { avatar, positions } from '@@/documentation/tooltip'
-import { properties } from '@@/documentation/tooltip/properties'
+import avatar from '~/documentation/tooltip/avatar.md?raw'
+import positions from '~/documentation/tooltip/positions.md?raw'
+
+const properties = {
+  props: [
+    {
+      name: 'data-tooltip',
+      type: 'string',
+      required: 'true',
+      default: 'undefined',
+      values: ['string'],
+    },
+    {
+      name: 'flow',
+      type: 'string',
+      required: 'false',
+      default: 'top',
+      values: ['top', 'left', 'right', 'down'],
+    },
+  ],
+  slots: [],
+}
 
 definePageMeta({
   title: 'Tooltips',
@@ -22,10 +42,7 @@ definePageMeta({
             <template #demo>
               <div class="flex flex-wrap items-end gap-2">
                 <BaseButtonIcon shape="curved" tooltip="Time for a nap!">
-                  <Icon
-                    name="ph:timer-duotone"
-                    class="h-5 w-5 text-sky-500"
-                  />
+                  <Icon name="ph:timer-duotone" class="h-5 w-5 text-sky-500" />
                 </BaseButtonIcon>
                 <BaseButtonIcon
                   shape="curved"
@@ -67,7 +84,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="positions" />
+              <DocMarkdown :source="positions" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -100,7 +117,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="avatar" />
+              <DocMarkdown :source="avatar" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>

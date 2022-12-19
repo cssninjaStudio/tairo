@@ -1,20 +1,16 @@
 <script setup lang="ts">
-import {
-  circleBadge,
-  circleDot,
-  circleFake,
-  circleFakeBadge,
-  circleFakeColors,
-  circleSize,
-  squareBadge,
-  squareDot,
-  squareFake,
-  squareFakeBadge,
-  squareFakeColors,
-  squareSize,
-} from '@@/documentation/avatar'
-
-
+import circleBadge from '~/documentation/avatar/circle-badge.md?raw'
+import circleDot from '~/documentation/avatar/circle-dot.md?raw'
+import circleFake from '~/documentation/avatar/circle-fake.md?raw'
+import circleFakeBadge from '~/documentation/avatar/circle-fake-badge.md?raw'
+import circleFakeColors from '~/documentation/avatar/circle-fake-colors.md?raw'
+import circleSize from '~/documentation/avatar/circle-size.md?raw'
+import squareBadge from '~/documentation/avatar/square-badge.md?raw'
+import squareDot from '~/documentation/avatar/square-dot.md?raw'
+import squareFake from '~/documentation/avatar/square-fake.md?raw'
+import squareFakeBadge from '~/documentation/avatar/square-fake-badge.md?raw'
+import squareFakeColors from '~/documentation/avatar/square-fake-colors.md?raw'
+import squareSize from '~/documentation/avatar/square-size.md?raw'
 
 definePageMeta({
   title: 'Avatars',
@@ -52,7 +48,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="circleSize" />
+              <DocMarkdown :source="circleSize" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -85,7 +81,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="squareSize" />
+              <DocMarkdown :source="squareSize" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -106,7 +102,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="squareSize" />
+              <DocMarkdown :source="squareSize" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection -->
@@ -127,7 +123,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="circleDot" />
+              <DocMarkdown :source="circleDot" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -187,7 +183,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="squareDot" />
+              <DocMarkdown :source="squareDot" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -239,7 +235,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="circleBadge" />
+              <DocMarkdown :source="circleBadge" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -299,7 +295,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="squareBadge" />
+              <DocMarkdown :source="squareBadge" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -351,7 +347,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="circleFake" />
+              <DocMarkdown :source="circleFake" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -411,7 +407,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="squareFake" />
+              <DocMarkdown :source="squareFake" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -471,7 +467,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="circleFakeBadge" />
+              <DocMarkdown :source="circleFakeBadge" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -538,7 +534,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="squareFakeBadge" />
+              <DocMarkdown :source="squareFakeBadge" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -646,7 +642,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="circleFakeColors" />
+              <DocMarkdown :source="circleFakeColors" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -774,7 +770,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="squareFakeColors" />
+              <DocMarkdown :source="squareFakeColors" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>

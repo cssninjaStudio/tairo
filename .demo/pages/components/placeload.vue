@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { composition, shape, text } from '@@/documentation/placeload'
-
-
+import composition from '~/documentation/placeload/composition.md?raw'
+import shape from '~/documentation/placeload/shape.md?raw'
+import text from '~/documentation/placeload/text.md?raw'
 
 definePageMeta({
   title: 'Placeloads',
@@ -31,7 +31,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="text" />
+              <DocMarkdown :source="text" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -47,7 +47,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="shape" />
+              <DocMarkdown :source="shape" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -69,7 +69,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="composition" />
+              <DocMarkdown :source="composition" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>

@@ -1,12 +1,10 @@
 <script setup lang="ts">
-import {
-  dualLeft,
-  dualRight,
-  helpLeft,
-  helpRight,
-  mediaLeft,
-  mediaRight,
-} from '@@/documentation/popover'
+import dualLeft from '~/documentation/popover/dual-left.md?raw'
+import dualRight from '~/documentation/popover/dual-right.md?raw'
+import helpLeft from '~/documentation/popover/help-left.md?raw'
+import helpRight from '~/documentation/popover/help-right.md?raw'
+import mediaLeft from '~/documentation/popover/media-left.md?raw'
+import mediaRight from '~/documentation/popover/media-right.md?raw'
 
 definePageMeta({
   title: 'Popover',
@@ -73,7 +71,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="helpLeft" />
+              <DocMarkdown :source="helpLeft" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -121,7 +119,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="helpRight" />
+              <DocMarkdown :source="helpRight" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -169,7 +167,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="dualLeft" />
+              <DocMarkdown :source="dualLeft" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -217,7 +215,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="dualRight" />
+              <DocMarkdown :source="dualRight" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -256,7 +254,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="mediaLeft" />
+              <DocMarkdown :source="mediaLeft" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -295,7 +293,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="mediaRight" />
+              <DocMarkdown :source="mediaRight" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>

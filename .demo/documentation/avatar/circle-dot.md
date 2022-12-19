@@ -1,0 +1,30 @@
+```vue
+<template>
+  <BaseAvatar
+    src="https://dummyimage.com/150x150"
+    size="xs"
+    dot
+  />
+  <BaseAvatar
+    src="https://dummyimage.com/150x150"
+    size="sm"
+    dot="info"
+  />
+  <BaseAvatar
+    src="https://dummyimage.com/150x150"
+    size="md"
+    dot="pink"
+  />
+  <BaseAvatar
+    src="https://dummyimage.com/150x150"
+    size="lg"
+    dot="warning"
+  />
+  <BaseAvatar
+    src="https://dummyimage.com/150x150"
+    size="xl"
+    dot="danger"
+  />
+  <!-- ...2xl, 3xl, 4xl -->
+</template>
+```

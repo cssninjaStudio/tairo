@@ -1,12 +1,10 @@
 <script setup lang="ts">
-import {
-  dangerColor,
-  infoColor,
-  primaryColor,
-  slateColor,
-  successColor,
-  warningColor,
-} from '@@/documentation/overview'
+import dangerColor from '~/documentation/overview/danger-color.md?raw'
+import infoColor from '~/documentation/overview/info-color.md?raw'
+import primaryColor from '~/documentation/overview/primary-color.md?raw'
+import mutedColor from '~/documentation/overview/muted-color.md?raw'
+import successColor from '~/documentation/overview/success-color.md?raw'
+import warningColor from '~/documentation/overview/warning-color.md?raw'
 
 const app = useAppConfig()
 
@@ -160,10 +158,7 @@ definePageMeta({
             <!-- Feature -->
             <BaseCard shape="curved" class="flex items-center p-3">
               <BaseIconBox size="md" class="bg-yellow-100 text-yellow-500">
-                <Icon
-                  name="teenyicons:typescript-outline"
-                  class="h-6 w-6"
-                />
+                <Icon name="teenyicons:typescript-outline" class="h-6 w-6" />
               </BaseIconBox>
               <div class="ml-3">
                 <BaseHeading
@@ -306,7 +301,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="primaryColor" />
+              <DocMarkdown :source="primaryColor" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -359,7 +354,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="infoColor" />
+              <DocMarkdown :source="infoColor" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -412,7 +407,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="successColor" />
+              <DocMarkdown :source="successColor" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -465,7 +460,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="warningColor" />
+              <DocMarkdown :source="warningColor" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -518,7 +513,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="dangerColor" />
+              <DocMarkdown :source="dangerColor" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -571,7 +566,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="slateColor" />
+              <DocMarkdown :source="mutedColor" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>

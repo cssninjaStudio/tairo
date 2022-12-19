@@ -1,12 +1,8 @@
 <script setup lang="ts">
-import {
-  x2Full,
-  x2Rounded,
-  x3Full,
-  x3Rounded,
-} from '@@/documentation/tabs-slider'
-
-
+import x2Full from '~/documentation/tabs-slider/full-x2.md?raw'
+import x2Rounded from '~/documentation/tabs-slider/rounded-x2.md?raw'
+import x3Full from '~/documentation/tabs-slider/full-x3.md?raw'
+import x3Rounded from '~/documentation/tabs-slider/rounded-x3.md?raw'
 
 definePageMeta({
   title: 'Slider Tabs',
@@ -72,7 +68,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="x2Rounded" />
+              <DocMarkdown :source="x2Rounded" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -124,7 +120,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="x2Full" />
+              <DocMarkdown :source="x2Full" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -176,7 +172,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="x3Rounded" />
+              <DocMarkdown :source="x3Rounded" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -229,7 +225,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="x3Full" />
+              <DocMarkdown :source="x3Full" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>

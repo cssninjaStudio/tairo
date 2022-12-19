@@ -1,12 +1,4 @@
-<script lang="ts">
-import 'prismjs'
-import 'prism-theme-vars/base.css'
-import '~/assets/css/modules/prism.css'
-</script>
-
 <script setup lang="ts">
-import Prism from 'vue-prism-component'
-
 export interface DocCodeProps {
   code: string
   language?: string
@@ -18,6 +10,7 @@ const props = withDefaults(defineProps<DocCodeProps>(), {
 </script>
 
 <template>
+  <DocMarkdown :source="'```vue\n' + props.code + '\n```'" class="prose" />
   <div
     class="w-full rounded-xl border border-muted-200 bg-white transition-colors ease-linear dark:border-muted-700 dark:bg-muted-800"
   >

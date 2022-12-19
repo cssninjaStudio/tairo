@@ -1,11 +1,31 @@
 <script setup lang="ts">
-import {
-  large,
-  medium,
-  small,
-  tiny,
-} from '@@/documentation/avatar-group'
-import { people } from '@@/documentation/avatar-group/data'
+import large from '~/documentation/avatar-group/large.md?raw'
+import medium from '~/documentation/avatar-group/medium.md?raw'
+import small from '~/documentation/avatar-group/small.md?raw'
+import tiny from '~/documentation/avatar-group/tiny.md?raw'
+
+const people = [
+  {
+    tooltip: 'Clarissa Perez',
+    src: '/img/avatars/19.svg',
+  },
+  {
+    tooltip: 'Aaaron Splatter',
+    src: '/img/avatars/16.svg',
+  },
+  {
+    tooltip: 'Mike Miller',
+    src: '/img/avatars/3.svg',
+  },
+  {
+    tooltip: 'Benedict Kessler',
+    src: '/img/avatars/22.svg',
+  },
+  {
+    tooltip: 'Maya Rosselini',
+    src: '/img/avatars/2.svg',
+  },
+]
 
 definePageMeta({
   title: 'Avatar group',
@@ -34,7 +54,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="tiny" />
+              <DocMarkdown :source="tiny" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -48,7 +68,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="small" />
+              <DocMarkdown :source="small" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -62,7 +82,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="medium" />
+              <DocMarkdown :source="medium" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -76,7 +96,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="large" />
+              <DocMarkdown :source="large" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>

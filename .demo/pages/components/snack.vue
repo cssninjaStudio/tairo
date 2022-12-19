@@ -1,15 +1,13 @@
 <script setup lang="ts">
-import {
-  base,
-  baseLight,
-  icon,
-  iconLight,
-  iconSmall,
-  image,
-  imageLight,
-  imageSmall,
-  small,
-} from '@@/documentation/snack'
+import base from '~/documentation/snack/base.md?raw'
+import baseLight from '~/documentation/snack/base-light.md?raw'
+import icon from '~/documentation/snack/icon.md?raw'
+import iconLight from '~/documentation/snack/icon-light.md?raw'
+import iconSmall from '~/documentation/snack/icon-small.md?raw'
+import image from '~/documentation/snack/image.md?raw'
+import imageLight from '~/documentation/snack/image-light.md?raw'
+import imageSmall from '~/documentation/snack/image-small.md?raw'
+import small from '~/documentation/snack/small.md?raw'
 
 definePageMeta({
   title: 'Snacks',
@@ -42,7 +40,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="base" />
+              <DocMarkdown :source="base" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -60,7 +58,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="baseLight" />
+              <DocMarkdown :source="baseLight" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -78,7 +76,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="small" />
+              <DocMarkdown :source="small" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -96,7 +94,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="icon" />
+              <DocMarkdown :source="icon" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -114,7 +112,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="iconLight" />
+              <DocMarkdown :source="iconLight" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -132,7 +130,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="iconSmall" />
+              <DocMarkdown :source="iconSmall" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -150,7 +148,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="image" />
+              <DocMarkdown :source="image" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -168,7 +166,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="imageLight" />
+              <DocMarkdown :source="imageLight" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -186,7 +184,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="imageSmall" />
+              <DocMarkdown :source="imageSmall" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>

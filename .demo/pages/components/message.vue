@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import { icons, shapes, types } from '@@/documentation/message'
+import icons from '~/documentation/message/icons.md?raw'
+import shapes from '~/documentation/message/shapes.md?raw'
+import types from '~/documentation/message/types.md?raw'
 
 definePageMeta({
   title: 'Messages',
@@ -33,7 +35,7 @@ definePageMeta({
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocCode language="html" :code="types" />
+              <DocMarkdown :source="types" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -56,7 +58,7 @@ definePageMeta({
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocCode language="html" :code="icons" />
+              <DocMarkdown :source="icons" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -84,7 +86,7 @@ definePageMeta({
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocCode language="html" :code="shapes" />
+              <DocMarkdown :source="shapes" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>

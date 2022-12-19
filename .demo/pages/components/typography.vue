@@ -1,9 +1,7 @@
 <script setup lang="ts">
-import {
-  heading,
-  paragraph,
-  text,
-} from '@@/documentation/typography'
+import heading from '~/documentation/typography/heading.md?raw'
+import paragraph from '~/documentation/typography/paragraph.md?raw'
+import text from '~/documentation/typography/text.md?raw'
 
 definePageMeta({
   title: 'Typography',
@@ -63,7 +61,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="heading" />
+              <DocMarkdown :source="heading" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -103,7 +101,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="paragraph" />
+              <DocMarkdown :source="paragraph" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -139,7 +137,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="text" />
+              <DocMarkdown :source="text" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>

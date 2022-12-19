@@ -1,8 +1,4 @@
 <script setup lang="ts">
-// import { } from '@@/documentation/form/file'
-
-
-
 definePageMeta({
   title: 'File inputs',
   documentation: {

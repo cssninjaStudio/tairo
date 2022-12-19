@@ -1,16 +1,48 @@
 <script setup lang="ts">
-import {
-  arrow,
-  chevron,
-  dot,
-  slash,
-} from '@@/documentation/breadcrumb'
-import {
-  demoBreadcrumbOne,
-  demoBreadcrumbTwo,
-} from '@@/documentation/breadcrumb/data'
+import arrow from '~/documentation/breadcrumb/arrow.md?raw'
+import chevron from '~/documentation/breadcrumb/chevron.md?raw'
+import dot from '~/documentation/breadcrumb/dot.md?raw'
+import slash from '~/documentation/breadcrumb/slash.md?raw'
 
+const demoBreadcrumbOne = [
+  {
+    label: 'Home',
+    hideLabel: false,
+    icon: 'lucide:home',
+    to: '/',
+  },
+  {
+    label: 'Products',
+    hideLabel: false,
+    to: '/',
+  },
+  {
+    label: 'Laptops',
+    hideLabel: false,
+    to: '/',
+  },
+]
 
+const demoBreadcrumbTwo = [
+  {
+    label: 'Home',
+    hideLabel: false,
+    icon: 'lucide:home',
+    to: '/',
+  },
+  {
+    label: 'Products',
+    hideLabel: false,
+    icon: 'lucide:layout-grid',
+    to: '/',
+  },
+  {
+    label: 'Laptops',
+    hideLabel: false,
+    icon: 'lucide:laptop',
+    to: '/',
+  },
+]
 
 definePageMeta({
   title: 'Breadcrumbs',
@@ -41,7 +73,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="dot" />
+              <DocMarkdown :source="dot" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -57,7 +89,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="slash" />
+              <DocMarkdown :source="slash" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -81,7 +113,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="chevron" />
+              <DocMarkdown :source="chevron" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -101,7 +133,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="arrow" />
+              <DocMarkdown :source="arrow" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>

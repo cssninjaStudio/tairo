@@ -1,16 +1,14 @@
 <script setup lang="ts">
-import {
-  carbon,
-  cil,
-  fa,
-  fab,
-  iconoir,
-  ion,
-  logos,
-  lucide,
-  material,
-  phosphor,
-} from '@@/documentation/icons'
+import carbon from '~/documentation/icons/carbon.md?raw'
+import cil from '~/documentation/icons/cil.md?raw'
+import fa from '~/documentation/icons/fa.md?raw'
+import fab from '~/documentation/icons/fab.md?raw'
+import iconoir from '~/documentation/icons/iconoir.md?raw'
+import ion from '~/documentation/icons/ion.md?raw'
+import logos from '~/documentation/icons/logos.md?raw'
+import lucide from '~/documentation/icons/lucide.md?raw'
+import material from '~/documentation/icons/material.md?raw'
+import phosphor from '~/documentation/icons/phosphor.md?raw'
 
 definePageMeta({
   title: 'Icons',
@@ -62,7 +60,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="phosphor" />
+              <DocMarkdown :source="phosphor" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -99,7 +97,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="lucide" />
+              <DocMarkdown :source="lucide" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -136,7 +134,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="carbon" />
+              <DocMarkdown :source="carbon" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -173,7 +171,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="ion" />
+              <DocMarkdown :source="ion" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -210,7 +208,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="iconoir" />
+              <DocMarkdown :source="iconoir" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -247,7 +245,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="cil" />
+              <DocMarkdown :source="cil" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -284,7 +282,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="fa" />
+              <DocMarkdown :source="fa" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -321,7 +319,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="fab" />
+              <DocMarkdown :source="fab" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -358,7 +356,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="material" />
+              <DocMarkdown :source="material" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -377,7 +375,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="logos" />
+              <DocMarkdown :source="logos" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>

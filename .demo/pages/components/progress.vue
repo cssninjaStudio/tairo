@@ -1,15 +1,12 @@
 <script setup lang="ts">
-import {
-  bar,
-  circle,
-  colors,
-  indeterminate,
-  sizes,
-} from '@@/documentation/progress'
-import {
-  progress,
-  progressCircle,
-} from '@@/documentation/progress/data'
+import bar from '~/documentation/progress/bar.md?raw'
+import circle from '~/documentation/progress/circle.md?raw'
+import colors from '~/documentation/progress/colors.md?raw'
+import indeterminate from '~/documentation/progress/indeterminate.md?raw'
+import sizes from '~/documentation/progress/sizes.md?raw'
+
+const progress = ref(25)
+const progressCircle = ref(25)
 
 definePageMeta({
   title: 'Progress',
@@ -78,7 +75,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="bar" />
+              <DocMarkdown :source="bar" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -156,7 +153,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="circle" />
+              <DocMarkdown :source="circle" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -199,7 +196,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="sizes" />
+              <DocMarkdown :source="sizes" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -242,7 +239,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="colors" />
+              <DocMarkdown :source="colors" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -284,7 +281,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="indeterminate" />
+              <DocMarkdown :source="indeterminate" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>

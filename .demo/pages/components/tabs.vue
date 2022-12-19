@@ -1,12 +1,10 @@
 <script setup lang="ts">
-import {
-  boxed,
-  boxedIcons,
-  center,
-  end,
-  icons,
-  start,
-} from '@@/documentation/tabs'
+import boxed from '~/documentation/tabs/boxed.md?raw'
+import boxedIcons from '~/documentation/tabs/boxed-icons.md?raw'
+import center from '~/documentation/tabs/center.md?raw'
+import end from '~/documentation/tabs/end.md?raw'
+import icons from '~/documentation/tabs/icons.md?raw'
+import start from '~/documentation/tabs/start.md?raw'
 
 definePageMeta({
   title: 'Nav Tabs',
@@ -62,7 +60,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="start" />
+              <DocMarkdown :source="start" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -104,7 +102,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="center" />
+              <DocMarkdown :source="center" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -156,7 +154,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="end" />
+              <DocMarkdown :source="end" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -219,7 +217,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="icons" />
+              <DocMarkdown :source="icons" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -280,7 +278,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="boxed" />
+              <DocMarkdown :source="boxed" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -344,7 +342,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="boxedIcons" />
+              <DocMarkdown :source="boxedIcons" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>

@@ -1,8 +1,6 @@
 <script setup lang="ts">
-import { base, variation } from '@@/documentation/placeholder'
-// import { properties } from '@@/documentation/placeholder/properties'
-
-
+import base from '~/documentation/placeholder/base.md?raw'
+import variation from '~/documentation/placeholder/variation.md?raw'
 
 definePageMeta({
   title: 'Placeholders',

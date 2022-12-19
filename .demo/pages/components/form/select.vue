@@ -1,22 +1,17 @@
 <script setup lang="ts">
-import {
-  curved,
-  full,
-  group,
-  icon,
-  invalid,
-  loading,
-  rounded,
-  straight,
-} from '@@/documentation/form/select'
-import {
-  selectCurved,
-  selectFull,
-  selectRounded,
-  selectStraight,
-} from '@@/documentation/form/select/data'
+import curved from '~/documentation/form/select/curved.md?raw'
+import full from '~/documentation/form/select/full.md?raw'
+import group from '~/documentation/form/select/group.md?raw'
+import icon from '~/documentation/form/select/icon.md?raw'
+import invalid from '~/documentation/form/select/invalid.md?raw'
+import rounded from '~/documentation/form/select/rounded.md?raw'
+import loading from '~/documentation/form/select/loading.md?raw'
+import straight from '~/documentation/form/select/straight.md?raw'
 
-
+const selectStraight = ref('')
+const selectRounded = ref('')
+const selectCurved = ref('')
+const selectFull = ref('')
 
 definePageMeta({
   title: 'Selects',
@@ -60,7 +55,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="straight" />
+              <DocMarkdown :source="straight" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -89,7 +84,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="rounded" />
+              <DocMarkdown :source="rounded" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -118,7 +113,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="curved" />
+              <DocMarkdown :source="curved" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -147,7 +142,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="full" />
+              <DocMarkdown :source="full" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -174,7 +169,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="icon" />
+              <DocMarkdown :source="icon" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -201,7 +196,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="group" />
+              <DocMarkdown :source="group" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -224,7 +219,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="loading" />
+              <DocMarkdown :source="loading" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -248,7 +243,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="invalid" />
+              <DocMarkdown :source="invalid" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
