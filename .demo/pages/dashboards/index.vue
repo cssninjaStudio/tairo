@@ -176,6 +176,18 @@ definePageMeta({
       <!-- Area Chart card -->
       <div class="col-span-12 ltablet:col-span-6 lg:col-span-6">
         <BaseCard class="p-6">
+          <!-- Title -->
+          <div class="mb-6">
+            <BaseHeading
+              as="h3"
+              size="md"
+              weight="semibold"
+              lead="tight"
+              class="text-muted-800 dark:text-white"
+            >
+              <span>Customers</span>
+            </BaseHeading>
+          </div>
           <ExampleApexchartAreaCustomer />
         </BaseCard>
       </div>
@@ -218,12 +230,44 @@ definePageMeta({
         class="col-span-12 ptablet:col-span-6 ltablet:col-span-4 lg:col-span-4"
       >
         <BaseCard class="relative p-6">
+          <div class="mb-6">
+            <BaseHeading
+              as="h3"
+              size="md"
+              weight="semibold"
+              lead="tight"
+              class="text-muted-800 dark:text-white"
+            >
+              <span>Team Efficiency</span>
+            </BaseHeading>
+          </div>
+          <div
+            class="absolute top-24 inset-x-0 flex items-center justify-center gap-4"
+          >
+            <BaseAvatar src="/img/avatars/4.svg" />
+            <BaseAvatar
+              text="H"
+              class="bg-yellow-100 dark:bg-yellow-500 text-yellow-500 dark:text-white"
+            />
+            <BaseAvatar src="/img/avatars/3.svg" />
+          </div>
           <ExampleApexchartRadialBarTeam />
         </BaseCard>
       </div>
       <!-- Bar chart card -->
       <div class="col-span-12 ltablet:col-span-4 lg:col-span-4">
         <BaseCard class="relative p-6">
+          <div class="mb-6">
+            <BaseHeading
+              as="h3"
+              size="md"
+              weight="semibold"
+              lead="tight"
+              class="text-muted-800 dark:text-white"
+            >
+              <span>Profit Evolution</span>
+            </BaseHeading>
+          </div>
           <ExampleApexchartBarProfit />
         </BaseCard>
       </div>

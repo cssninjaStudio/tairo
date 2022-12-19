@@ -80,18 +80,6 @@ const completionOptions = {
 
 <template>
   <div>
-    <div class="flex items-center justify-between mb-6">
-      <BaseHeading
-        as="h3"
-        size="md"
-        weight="semibold"
-        lead="tight"
-        class="text-muted-800 dark:text-white"
-      >
-        <span>Completion</span>
-      </BaseHeading>
-      <RouterLink to="/" class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300">Reports</RouterLink>
-    </div>
     <BasePlaceload class="w-[90%] mx-auto h-64 my-4" v-if="!apexLoaded" />
     <ClientOnly>
       <LazyVueApexCharts 
