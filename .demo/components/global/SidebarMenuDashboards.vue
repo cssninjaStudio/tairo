@@ -56,7 +56,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                 </li>
                 <li class="flex h-8 items-center">
                   <NuxtLink
-                    to="/"
+                    to="/dashboards/personal-3"
                     class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
                   >
                     <Icon name="ph:cactus-duotone" class="mr-2 h-5 w-5" />
