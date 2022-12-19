@@ -1,13 +1,9 @@
 <script setup lang="ts">
-import {
-  group,
-  loading,
-  muted,
-  primary,
-  shapes,
-} from '@@/documentation/components/icon-button'
-
-
+import group from '~/documentation/icon-button/group.md?raw'
+import loading from '~/documentation/icon-button/loading.md?raw'
+import muted from '~/documentation/icon-button/muted.md?raw'
+import primary from '~/documentation/icon-button/primary.md?raw'
+import shapes from '~/documentation/icon-button/shapes.md?raw'
 
 definePageMeta({
   title: 'Button Icon',
@@ -48,7 +44,7 @@ definePageMeta({
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocCode language="html" :code="shapes" />
+              <DocMarkdown :source="shapes" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -73,7 +69,7 @@ definePageMeta({
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocCode language="html" :code="primary" />
+              <DocMarkdown :source="primary" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -98,7 +94,7 @@ definePageMeta({
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocCode language="html" :code="muted" />
+              <DocMarkdown :source="muted" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -123,7 +119,7 @@ definePageMeta({
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocCode language="html" :code="loading" />
+              <DocMarkdown :source="loading" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -154,7 +150,7 @@ definePageMeta({
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocCode language="html" :code="group" />
+              <DocMarkdown :source="group" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>

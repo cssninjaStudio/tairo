@@ -1,20 +1,15 @@
 <script setup lang="ts">
-import {
-  circle,
-  colors,
-  curved,
-  rounded,
-  straight,
-} from '@@/documentation/components/form/checkbox'
-import {
-  demoFour,
-  demoOne,
-  demoStraight,
-  demoThree,
-  demoTwo,
-} from '@@/documentation/components/form/checkbox/data'
+import circle from '~/documentation/form/checkbox/circle.md?raw'
+import colors from '~/documentation/form/checkbox/colors.md?raw'
+import curved from '~/documentation/form/checkbox/curved.md?raw'
+import rounded from '~/documentation/form/checkbox/rounded.md?raw'
+import straight from '~/documentation/form/checkbox/straight.md?raw'
 
-
+const demoOne = ref(true)
+const demoTwo = ref(true)
+const demoThree = ref(true)
+const demoFour = ref(true)
+const demoStraight = ref(true)
 
 definePageMeta({
   title: 'Checkbox',
@@ -57,7 +52,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="straight" />
+              <DocMarkdown :source="straight" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -81,7 +76,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="rounded" />
+              <DocMarkdown :source="rounded" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -105,7 +100,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="curved" />
+              <DocMarkdown :source="curved" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -129,7 +124,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="circle" />
+              <DocMarkdown :source="circle" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -209,7 +204,7 @@ definePageMeta({
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocCode language="html" :code="colors" />
+              <DocMarkdown :source="colors" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>

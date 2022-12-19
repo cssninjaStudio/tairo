@@ -9,7 +9,9 @@ definePageMeta({
   <div>
     <!-- Header -->
     <div class="flex flex-col md:flex-row md:items-center justify-between mb-8">
-      <div class="flex flex-col md:flex-row items-center gap-4 text-center md:text-left max-w-[425px] ltablet:max-w-full lg:max-w-full">
+      <div
+        class="flex flex-col md:flex-row items-center gap-4 text-center md:text-left max-w-[425px] ltablet:max-w-full lg:max-w-full"
+      >
         <BaseAvatar src="/img/avatars/2.svg" size="lg" />
         <div>
           <BaseHeading
@@ -28,7 +30,9 @@ definePageMeta({
           </BaseParagraph>
         </div>
       </div>
-      <div class="flex items-center justify-center md:justify-start gap-2 mt-4 md:mt-0">
+      <div
+        class="flex items-center justify-center md:justify-start gap-2 mt-4 md:mt-0"
+      >
         <BaseButton>
           <span>View Reports</span>
         </BaseButton>
@@ -55,12 +59,14 @@ definePageMeta({
           </div>
           <div class="grid md:grid-cols-2 gap-4">
             <!-- Grid item -->
-            <div class="flex items-center gap-2 py-10 px-5 rounded-md bg-muted-100/80 dark:bg-muted-700">
+            <div
+              class="flex items-center gap-2 py-10 px-5 rounded-md bg-muted-100/80 dark:bg-muted-700"
+            >
               <BaseIconBox
                 size="md"
                 class="bg-primary-100 text-primary-500 dark:bg-primary-500/20 dark:text-primary-400 dark:border-2 dark:border-primary-500"
                 shape="circle"
-                >
+              >
                 <Icon name="ph:nut-duotone" class="w-5 h-5" />
               </BaseIconBox>
               <div>
@@ -81,12 +87,14 @@ definePageMeta({
               </div>
             </div>
             <!-- Grid item -->
-            <div class="flex items-center gap-2 py-10 px-5 rounded-md bg-muted-100/80 dark:bg-muted-700">
+            <div
+              class="flex items-center gap-2 py-10 px-5 rounded-md bg-muted-100/80 dark:bg-muted-700"
+            >
               <BaseIconBox
                 size="md"
                 class="bg-amber-100 text-amber-500 dark:bg-amber-500/20 dark:text-amber-400 dark:border-2 dark:border-amber-500"
                 shape="circle"
-                >
+              >
                 <Icon name="ph:handshake-duotone" class="w-5 h-5" />
               </BaseIconBox>
               <div>
@@ -107,12 +115,14 @@ definePageMeta({
               </div>
             </div>
             <!-- Grid item -->
-            <div class="flex items-center gap-2 py-10 px-5 rounded-md bg-muted-100/80 dark:bg-muted-700">
+            <div
+              class="flex items-center gap-2 py-10 px-5 rounded-md bg-muted-100/80 dark:bg-muted-700"
+            >
               <BaseIconBox
                 size="md"
                 class="bg-green-100 text-green-500 dark:bg-green-500/20 dark:text-green-400 dark:border-2 dark:border-green-500"
                 shape="circle"
-                >
+              >
                 <Icon name="ph:sketch-logo-duotone" class="w-5 h-5" />
               </BaseIconBox>
               <div>
@@ -133,12 +143,14 @@ definePageMeta({
               </div>
             </div>
             <!-- Grid item -->
-            <div class="flex items-center gap-2 py-10 px-5 rounded-md bg-muted-100/80 dark:bg-muted-700">
+            <div
+              class="flex items-center gap-2 py-10 px-5 rounded-md bg-muted-100/80 dark:bg-muted-700"
+            >
               <BaseIconBox
                 size="md"
                 class="bg-indigo-100 text-indigo-500 dark:bg-indigo-500/20 dark:text-indigo-400 dark:border-2 dark:border-indigo-500"
                 shape="circle"
-                >
+              >
                 <Icon name="ph:sketch-logo-duotone" class="w-5 h-5" />
               </BaseIconBox>
               <div>
@@ -183,15 +195,26 @@ definePageMeta({
                 Start using our team and project management tools
               </span>
             </BaseParagraph>
-            <NuxtLink class="font-sans text-white hover:underline underline-offset-4" to="/">Learn More</NuxtLink>
+            <NuxtLink
+              class="font-sans text-white hover:underline underline-offset-4"
+              to="/"
+              >Learn More</NuxtLink
+            >
           </div>
-          <div class="absolute bottom-4 right-4 w-14 h-14 flex items-center justify-center z-10">
-            <Icon name="ph:crown-duotone" class="w-14 h-14 text-primary-900/50"></Icon>
+          <div
+            class="absolute bottom-4 right-4 w-14 h-14 flex items-center justify-center z-10"
+          >
+            <Icon
+              name="ph:crown-duotone"
+              class="w-14 h-14 text-success-900/50"
+            ></Icon>
           </div>
         </BaseCard>
       </div>
       <!-- Radial Bar card -->
-      <div class="col-span-12 ptablet:col-span-6 ltablet:col-span-4 lg:col-span-4">
+      <div
+        class="col-span-12 ptablet:col-span-6 ltablet:col-span-4 lg:col-span-4"
+      >
         <ExampleApexchartRadialBarTeam class="p-6" />
       </div>
       <!-- Bar chart card -->

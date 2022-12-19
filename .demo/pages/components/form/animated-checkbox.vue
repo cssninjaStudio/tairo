@@ -1,9 +1,28 @@
 <script setup lang="ts">
-import { base } from '@@/documentation/components/form/animated-checkbox'
-// import { properties } from '@@/documentation/components/form/animated-checkbox/properties'
-import { options } from '@@/documentation/components/form/animated-checkbox/data'
+import base from '~/documentation/form/animated-checkbox/base.md?raw'
 
-
+const options = ref([
+  'Option 1',
+  'Option 2',
+  'Option 3',
+  'Option 4',
+  'Option 5',
+  'Option 6',
+  'Option 7',
+  'Option 8',
+  'Option 9',
+  'Option 10',
+  'Option 11',
+  'Option 12',
+  'Option 13',
+  'Option 14',
+  'Option 15',
+  'Option 16',
+  'Option 17',
+  'Option 18',
+  'Option 19',
+  'Option 20',
+])
 
 definePageMeta({
   title: 'Animated checkbox',
@@ -130,7 +149,7 @@ definePageMeta({
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocCode language="html" :code="base" />
+              <DocMarkdown :source="base" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>

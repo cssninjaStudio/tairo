@@ -1,12 +1,8 @@
 <script setup lang="ts">
-import {
-  curved,
-  full,
-  rounded,
-  straight,
-} from '@@/documentation/components/pagination'
-
-
+import curved from '~/documentation/pagination/curved.md?raw'
+import full from '~/documentation/pagination/full.md?raw'
+import rounded from '~/documentation/pagination/rounded.md?raw'
+import straight from '~/documentation/pagination/straight.md?raw'
 
 definePageMeta({
   title: 'Pagination',
@@ -47,7 +43,7 @@ const currentPage = computed(() => {
               />
             </template>
             <template #code>
-              <DocCode language="html" :code="straight" />
+              <DocMarkdown :source="straight" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -65,7 +61,7 @@ const currentPage = computed(() => {
               />
             </template>
             <template #code>
-              <DocCode language="html" :code="rounded" />
+              <DocMarkdown :source="rounded" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -83,7 +79,7 @@ const currentPage = computed(() => {
               />
             </template>
             <template #code>
-              <DocCode language="html" :code="curved" />
+              <DocMarkdown :source="curved" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -101,7 +97,7 @@ const currentPage = computed(() => {
               />
             </template>
             <template #code>
-              <DocCode language="html" :code="full" />
+              <DocMarkdown :source="full" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>

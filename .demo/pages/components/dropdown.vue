@@ -1,15 +1,13 @@
 <script setup lang="ts">
-import {
-  avatarSlot,
-  buttonLeft,
-  buttonRight,
-  contextLeft,
-  contextRight,
-  header,
-  iconSlot,
-  textLeft,
-  textRight,
-} from '@@/documentation/components/dropdown'
+import avatarSlot from '~/documentation/dropdown/avatar-slot.md?raw'
+import buttonLeft from '~/documentation/dropdown/button-left.md?raw'
+import buttonRight from '~/documentation/dropdown/button-right.md?raw'
+import contextLeft from '~/documentation/dropdown/context-left.md?raw'
+import contextRight from '~/documentation/dropdown/context-right.md?raw'
+import header from '~/documentation/dropdown/header.md?raw'
+import iconSlot from '~/documentation/dropdown/icon-slot.md?raw'
+import textLeft from '~/documentation/dropdown/text-left.md?raw'
+import textRight from '~/documentation/dropdown/text-right.md?raw'
 
 definePageMeta({
   title: 'Dropdowns',
@@ -63,7 +61,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="buttonLeft" />
+              <DocMarkdown :source="buttonLeft" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -102,7 +100,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="buttonRight" />
+              <DocMarkdown :source="buttonRight" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -141,7 +139,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="contextLeft" />
+              <DocMarkdown :source="contextLeft" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -184,7 +182,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="contextRight" />
+              <DocMarkdown :source="contextRight" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -223,7 +221,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="textLeft" />
+              <DocMarkdown :source="textLeft" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -258,7 +256,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="textRight" />
+              <DocMarkdown :source="textRight" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -279,10 +277,7 @@ definePageMeta({
                     text="View your profile"
                   >
                     <template #end>
-                      <Icon
-                        name="ph:user-duotone"
-                        class="mr-2 block h-5 w-5"
-                      />
+                      <Icon name="ph:user-duotone" class="mr-2 block h-5 w-5" />
                     </template>
                   </BaseDropdownItem>
                   <BaseDropdownItem
@@ -322,7 +317,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="iconSlot" />
+              <DocMarkdown :source="iconSlot" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -394,7 +389,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="avatarSlot" />
+              <DocMarkdown :source="avatarSlot" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -467,7 +462,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="header" />
+              <DocMarkdown :source="header" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>

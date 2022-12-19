@@ -1,8 +1,6 @@
 <script setup lang="ts">
-import { base, variation } from '@@/documentation/components/placeholder'
-// import { properties } from '@@/documentation/components/placeholder/properties'
-
-
+import base from '~/documentation/placeholder/base.md?raw'
+import variation from '~/documentation/placeholder/variation.md?raw'
 
 definePageMeta({
   title: 'Placeholders',
@@ -45,7 +43,7 @@ definePageMeta({
               </BasePlaceholderPage>
             </template>
             <template #code>
-              <DocCode langugage="html" :code="base" />
+              <DocMarkdown :source="base" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -76,7 +74,7 @@ definePageMeta({
               </BasePlaceholderPage>
             </template>
             <template #code>
-              <DocCode langugage="html" :code="variation" />
+              <DocMarkdown :source="variation" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>

@@ -1,10 +1,8 @@
 <script setup lang="ts">
-import {
-  group,
-  loading,
-  muted,
-  shapes,
-} from '@@/documentation/components/action'
+import group from '~/documentation/action/group.md?raw'
+import loading from '~/documentation/action/loading.md?raw'
+import muted from '~/documentation/action/muted.md?raw'
+import shapes from '~/documentation/action/shapes.md?raw'
 
 const disabled = ref(true)
 
@@ -39,7 +37,7 @@ definePageMeta({
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocCode language="html" :code="shapes" />
+              <DocMarkdown :source="shapes" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -62,7 +60,7 @@ definePageMeta({
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocCode language="html" :code="muted" />
+              <DocMarkdown :source="muted" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -87,7 +85,7 @@ definePageMeta({
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocCode language="html" :code="loading" />
+              <DocMarkdown :source="loading" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -125,7 +123,7 @@ definePageMeta({
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocCode language="html" :code="group" />
+              <DocMarkdown :source="group" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>

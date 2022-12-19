@@ -1,12 +1,27 @@
 <script setup lang="ts">
-import {
-  chevron,
-  exclusive,
-  inclusive,
-  plus,
-  shapes,
-} from '@@/documentation/components/accordion'
-import { accordion } from '@@/documentation/components/accordion/data'
+import chevron from '~/documentation/accordion/chevron.md?raw'
+import exclusive from '~/documentation/accordion/exclusive.md?raw'
+import inclusive from '~/documentation/accordion/inclusive.md?raw'
+import plus from '~/documentation/accordion/plus.md?raw'
+import shapes from '~/documentation/accordion/shapes.md?raw'
+
+const accordion = [
+  {
+    title: 'Accordion Item 1',
+    content:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quo tandem modo? Inde igitur, inquit, ordiendum est. Primum quid tu dicis breve? Duo Reges: constructio interrete.',
+  },
+  {
+    title: 'Accordion Item 2',
+    content:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quo tandem modo? Inde igitur, inquit, ordiendum est. Primum quid tu dicis breve? Duo Reges: constructio interrete.',
+  },
+  {
+    title: 'Accordion Item 3',
+    content:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quo tandem modo? Inde igitur, inquit, ordiendum est. Primum quid tu dicis breve? Duo Reges: constructio interrete.',
+  },
+]
 
 definePageMeta({
   title: 'Accordions',
@@ -35,7 +50,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="inclusive" />
+              <DocMarkdown :source="inclusive" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -49,7 +64,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="exclusive" />
+              <DocMarkdown :source="exclusive" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -65,7 +80,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="shapes" />
+              <DocMarkdown :source="shapes" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -79,7 +94,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="chevron" />
+              <DocMarkdown :source="chevron" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -93,7 +108,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="plus" />
+              <DocMarkdown :source="plus" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>

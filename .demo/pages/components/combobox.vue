@@ -1,22 +1,132 @@
 <script setup lang="ts">
-import {
-  disabled,
-  icon,
-  loading,
-  media,
-  shapes,
-  sublabels,
-} from '@@/documentation/components/combobox'
-import {
-  frameworks,
-  hobbies,
-  people,
-  peopleNames,
-  selectedFramework,
-  selectedHobby,
-  selectedPerson,
-  selectedPersonName,
-} from '@@/documentation/components/combobox/data'
+import disabled from '~/documentation/combobox/disabled.md?raw'
+import icon from '~/documentation/combobox/icon.md?raw'
+import loading from '~/documentation/combobox/loading.md?raw'
+import media from '~/documentation/combobox/media.md?raw'
+import shapes from '~/documentation/combobox/shapes.md?raw'
+import sublabels from '~/documentation/combobox/sublabels.md?raw'
+
+const frameworks = [
+  {
+    id: 1,
+    name: 'Javascript',
+  },
+  {
+    id: 2,
+    name: 'Vue.js',
+  },
+  {
+    id: 3,
+    name: 'React.js',
+  },
+  {
+    id: 4,
+    name: 'Angular',
+  },
+  {
+    id: 5,
+    name: 'Alpine.js',
+  },
+]
+
+const peopleNames = [
+  {
+    id: 1,
+    name: 'Clarissa Perez',
+    text: 'Sales Manager',
+  },
+  {
+    id: 2,
+    name: 'Aaron Splatter',
+    text: 'Project Manager',
+  },
+  {
+    id: 3,
+    name: 'Mike Miller',
+    text: 'UI/UX Designer',
+  },
+  {
+    id: 4,
+    name: 'Benedict Kessler',
+    text: 'Mobile Developer',
+  },
+  {
+    id: 5,
+    name: 'Maya Rosselini',
+    text: 'Product Manager',
+  },
+]
+
+const hobbies = [
+  {
+    id: 1,
+    name: 'Movies',
+    text: 'Cinema & shows',
+    icon: 'ph:sword-duotone',
+  },
+  {
+    id: 2,
+    name: 'Travel',
+    text: 'Tourism & travel',
+    icon: 'ph:airplane-duotone',
+  },
+  {
+    id: 3,
+    name: 'Drinks',
+    text: 'Wines & fine drinks',
+    icon: 'ph:brandy-duotone',
+  },
+  {
+    id: 4,
+    name: 'Arts',
+    text: 'Paintings & scultpure',
+    icon: 'ph:paint-brush-duotone',
+  },
+  {
+    id: 5,
+    name: 'Karaoke',
+    text: 'singing with friends',
+    icon: 'ph:microphone-stage-duotone',
+  },
+]
+
+const people = [
+  {
+    id: 1,
+    name: 'Clarissa Perez',
+    text: 'Sales Manager',
+    media: '/img/avatars/19.svg',
+  },
+  {
+    id: 2,
+    name: 'Aaron Splatter',
+    text: 'Project Manager',
+    media: '/img/avatars/16.svg',
+  },
+  {
+    id: 3,
+    name: 'Mike Miller',
+    text: 'UI/UX Designer',
+    media: '/img/avatars/3.svg',
+  },
+  {
+    id: 4,
+    name: 'Benedict Kessler',
+    text: 'Mobile Developer',
+    media: '/img/avatars/22.svg',
+  },
+  {
+    id: 5,
+    name: 'Maya Rosselini',
+    text: 'Product Manager',
+    media: '/img/avatars/2.svg',
+  },
+]
+
+const selectedFramework = ref(frameworks[0])
+const selectedPersonName = ref(peopleNames[0])
+const selectedHobby = ref(hobbies[1])
+const selectedPerson = ref(people[2])
 
 definePageMeta({
   title: 'Combobox',
@@ -71,7 +181,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="shapes" />
+              <DocMarkdown :source="shapes" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -90,7 +200,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="disabled" />
+              <DocMarkdown :source="disabled" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -109,7 +219,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="loading" />
+              <DocMarkdown :source="loading" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -127,7 +237,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="sublabels" />
+              <DocMarkdown :source="sublabels" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -145,7 +255,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="icon" />
+              <DocMarkdown :source="icon" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -163,7 +273,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="media" />
+              <DocMarkdown :source="media" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>

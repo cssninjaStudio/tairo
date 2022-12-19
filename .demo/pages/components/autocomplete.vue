@@ -1,26 +1,109 @@
 <script setup lang="ts">
-import {
-  clearable,
-  curved,
-  disabled,
-  full,
-  icon,
-  iconResult,
-  loading,
-  mediaResult,
-  multiple,
-  rounded,
-  straight,
-} from '@@/documentation/components/autocomplete'
-import {
-  frameworks,
-  hobbies,
-  people,
-  selectedFramework,
-  selectedHobby,
-  selectedPeople,
-  selectedPerson,
-} from '@@/documentation/components/autocomplete/data'
+import clearable from '~/documentation/autocomplete/clearable.md?raw'
+import curved from '~/documentation/autocomplete/curved.md?raw'
+import disabled from '~/documentation/autocomplete/disabled.md?raw'
+import full from '~/documentation/autocomplete/full.md?raw'
+import icon from '~/documentation/autocomplete/icon.md?raw'
+import iconResult from '~/documentation/autocomplete/icon-result.md?raw'
+import loading from '~/documentation/autocomplete/loading.md?raw'
+import mediaResult from '~/documentation/autocomplete/media-result.md?raw'
+import multiple from '~/documentation/autocomplete/multiple.md?raw'
+import rounded from '~/documentation/autocomplete/rounded.md?raw'
+import straight from '~/documentation/autocomplete/straight.md?raw'
+
+const frameworks = [
+  {
+    id: 1,
+    name: 'Javascript',
+  },
+  {
+    id: 2,
+    name: 'Vue.js',
+  },
+  {
+    id: 3,
+    name: 'React.js',
+  },
+  {
+    id: 4,
+    name: 'Angular',
+  },
+  {
+    id: 5,
+    name: 'Alpine.js',
+  },
+]
+
+const hobbies = [
+  {
+    id: 1,
+    name: 'Movies',
+    text: 'Cinema & shows',
+    icon: 'ph:sword-duotone',
+  },
+  {
+    id: 2,
+    name: 'Travel',
+    text: 'Tourism & travel',
+    icon: 'ph:airplane-duotone',
+  },
+  {
+    id: 3,
+    name: 'Drinks',
+    text: 'Wines & fine drinks',
+    icon: 'ph:brandy-duotone',
+  },
+  {
+    id: 4,
+    name: 'Arts',
+    text: 'Paintings & scultpure',
+    icon: 'ph:paint-brush-duotone',
+  },
+  {
+    id: 5,
+    name: 'Karaoke',
+    text: 'singing with friends',
+    icon: 'ph:microphone-stage-duotone',
+  },
+]
+
+const people = [
+  {
+    id: 1,
+    name: 'Clarissa Perez',
+    text: 'Sales Manager',
+    media: '/img/avatars/19.svg',
+  },
+  {
+    id: 2,
+    name: 'Aaron Splatter',
+    text: 'Project Manager',
+    media: '/img/avatars/16.svg',
+  },
+  {
+    id: 3,
+    name: 'Mike Miller',
+    text: 'UI/UX Designer',
+    media: '/img/avatars/3.svg',
+  },
+  {
+    id: 4,
+    name: 'Benedict Kessler',
+    text: 'Mobile Developer',
+    media: '/img/avatars/22.svg',
+  },
+  {
+    id: 5,
+    name: 'Maya Rosselini',
+    text: 'Product Manager',
+    media: '/img/avatars/2.svg',
+  },
+]
+
+const selectedFramework = ref('')
+const selectedHobby = ref('')
+const selectedPerson = ref('')
+const selectedPeople = ref([people[0], people[1]])
 
 definePageMeta({
   title: 'Autocomplete',
@@ -63,7 +146,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="straight" />
+              <DocMarkdown :source="straight" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -87,7 +170,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="rounded" />
+              <DocMarkdown :source="rounded" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -111,7 +194,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="curved" />
+              <DocMarkdown :source="curved" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -135,7 +218,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="full" />
+              <DocMarkdown :source="full" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -160,7 +243,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="icon" />
+              <DocMarkdown :source="icon" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -186,7 +269,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="clearable" />
+              <DocMarkdown :source="clearable" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -217,7 +300,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="disabled" />
+              <DocMarkdown :source="disabled" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -244,7 +327,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="loading" />
+              <DocMarkdown :source="loading" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -270,7 +353,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="iconResult" />
+              <DocMarkdown :source="iconResult" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -295,7 +378,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="mediaResult" />
+              <DocMarkdown :source="mediaResult" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -321,7 +404,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="multiple" />
+              <DocMarkdown :source="multiple" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>

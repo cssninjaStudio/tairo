@@ -1,11 +1,9 @@
 <script setup lang="ts">
-import { base, colors } from '@@/documentation/components/form/radio'
-import {
-  demoColors,
-  radioSelected,
-} from '@@/documentation/components/form/radio/data'
+import base from '~/documentation/form/radio/base.md?raw'
+import colors from '~/documentation/form/radio/colors.md?raw'
 
-
+const radioSelected = ref('option_1')
+const demoColors = ref('primary')
 
 definePageMeta({
   title: 'Radios',
@@ -64,7 +62,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="base" />
+              <DocMarkdown :source="base" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -162,7 +160,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="colors" />
+              <DocMarkdown :source="colors" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>

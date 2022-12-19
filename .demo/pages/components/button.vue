@@ -1,15 +1,13 @@
 <script setup lang="ts">
-import {
-  disabled,
-  group,
-  icons,
-  links,
-  loading,
-  outline,
-  pastel,
-  shapes,
-  solid,
-} from '@@/documentation/components/button'
+import disabled from '~/documentation/button/disabled.md?raw'
+import group from '~/documentation/button/group.md?raw'
+import icons from '~/documentation/button/icons.md?raw'
+import links from '~/documentation/button/links.md?raw'
+import loading from '~/documentation/button/loading.md?raw'
+import outline from '~/documentation/button/outline.md?raw'
+import pastel from '~/documentation/button/pastel.md?raw'
+import shapes from '~/documentation/button/shapes.md?raw'
+import solid from '~/documentation/button/solid.md?raw'
 
 definePageMeta({
   title: 'Buttons',
@@ -42,7 +40,7 @@ definePageMeta({
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocCode language="html" :code="shapes" />
+              <DocMarkdown :source="shapes" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -70,7 +68,7 @@ definePageMeta({
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocCode language="html" :code="links" />
+              <DocMarkdown :source="links" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -90,7 +88,7 @@ definePageMeta({
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocCode language="html" :code="solid" />
+              <DocMarkdown :source="solid" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -114,7 +112,7 @@ definePageMeta({
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocCode language="html" :code="pastel" />
+              <DocMarkdown :source="pastel" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -140,7 +138,7 @@ definePageMeta({
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocCode language="html" :code="outline" />
+              <DocMarkdown :source="outline" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -159,7 +157,7 @@ definePageMeta({
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocCode language="html" :code="loading" />
+              <DocMarkdown :source="loading" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -196,7 +194,7 @@ definePageMeta({
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocCode language="html" :code="icons" />
+              <DocMarkdown :source="icons" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -215,7 +213,7 @@ definePageMeta({
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocCode language="html" :code="disabled" />
+              <DocMarkdown :source="disabled" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -240,7 +238,7 @@ definePageMeta({
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocCode language="html" :code="group" />
+              <DocMarkdown :source="group" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>

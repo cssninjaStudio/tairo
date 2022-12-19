@@ -1,19 +1,17 @@
 <script setup lang="ts">
-import {
-  addon,
-  curved,
-  disabled,
-  focus,
-  invalid,
-  loading,
-  rounded,
-  straight,
-} from '@@/documentation/components/form/textarea'
-import {
-  textareaCurved,
-  textareaRounded,
-  textareaStraight,
-} from '@@/documentation/components/form/textarea/data'
+import addon from '~/documentation/form/textarea/addon.md?raw'
+import curved from '~/documentation/form/textarea/curved.md?raw'
+import disabled from '~/documentation/form/textarea/disabled.md?raw'
+import invalid from '~/documentation/form/textarea/invalid.md?raw'
+import loading from '~/documentation/form/textarea/loading.md?raw'
+import rounded from '~/documentation/form/textarea/rounded.md?raw'
+import focus from '~/documentation/form/textarea/focus.md?raw'
+import straight from '~/documentation/form/textarea/straight.md?raw'
+
+const textareaStraight = ref('')
+const textareaRounded = ref('')
+const textareaCurved = ref('')
+const textareaFull = ref('')
 
 definePageMeta({
   title: 'Textarea',
@@ -55,7 +53,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="straight" />
+              <DocMarkdown :source="straight" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -78,7 +76,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="rounded" />
+              <DocMarkdown :source="rounded" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -101,7 +99,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="curved" />
+              <DocMarkdown :source="curved" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -122,7 +120,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="focus" />
+              <DocMarkdown :source="focus" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -143,7 +141,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="invalid" />
+              <DocMarkdown :source="invalid" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -164,7 +162,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="loading" />
+              <DocMarkdown :source="loading" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -189,7 +187,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="disabled" />
+              <DocMarkdown :source="disabled" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -231,7 +229,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="addon" />
+              <DocMarkdown :source="addon" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>

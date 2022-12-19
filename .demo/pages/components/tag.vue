@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { outline, pastel, shapes, solid } from '@@/documentation/components/tag'
-
-
+import outline from '~/documentation/tag/outline.md?raw'
+import pastel from '~/documentation/tag/pastel.md?raw'
+import shapes from '~/documentation/tag/shapes.md?raw'
+import solid from '~/documentation/tag/solid.md?raw'
 
 definePageMeta({
   title: 'Tags',
@@ -33,7 +34,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="shapes" />
+              <DocMarkdown :source="shapes" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -53,7 +54,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="solid" />
+              <DocMarkdown :source="solid" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -81,7 +82,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="outline" />
+              <DocMarkdown :source="outline" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -109,7 +110,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="pastel" />
+              <DocMarkdown :source="pastel" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>

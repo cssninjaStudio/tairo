@@ -1,11 +1,7 @@
 <script setup lang="ts">
-import {
-  elevation,
-  elevationHover,
-  shapes,
-} from '@@/documentation/components/card'
-
-
+import elevation from '~/documentation/card/elevation.md?raw'
+import elevationHover from '~/documentation/card/elevation-hover.md?raw'
+import shapes from '~/documentation/card/shapes.md?raw'
 
 definePageMeta({
   title: 'Cards',
@@ -75,7 +71,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="shapes" />
+              <DocMarkdown :source="shapes" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -130,7 +126,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="elevation" />
+              <DocMarkdown :source="elevation" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -189,7 +185,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="elevationHover" />
+              <DocMarkdown :source="elevationHover" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>

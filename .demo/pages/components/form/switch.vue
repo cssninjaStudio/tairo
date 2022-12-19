@@ -1,12 +1,10 @@
 <script setup lang="ts">
 // @todo: fix switch checked / unchecked states that don't seem to work properly.
 
-import {
-  ballSublabel,
-  ballSwitch,
-  thinSublabel,
-  thinSwitch,
-} from '@@/documentation/components/form/switch'
+import ballSublabel from '~/documentation/form/switch/ball-sublabel.md?raw'
+import ballSwitch from '~/documentation/form/switch/ball-switch.md?raw'
+import thinSublabel from '~/documentation/form/switch/thin-sublabel.md?raw'
+import thinSwitch from '~/documentation/form/switch/thin-switch.md?raw'
 
 definePageMeta({
   title: 'Switches',
@@ -66,7 +64,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="thinSwitch" />
+              <DocMarkdown :source="thinSwitch" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -86,7 +84,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="thinSublabel" />
+              <DocMarkdown :source="thinSublabel" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -134,7 +132,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="ballSwitch" />
+              <DocMarkdown :source="ballSwitch" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -154,7 +152,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="ballSublabel" />
+              <DocMarkdown :source="ballSublabel" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>

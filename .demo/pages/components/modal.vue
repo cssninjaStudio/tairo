@@ -1,11 +1,8 @@
 <script setup lang="ts">
-import {
-  footerAlign,
-  largeTier,
-  mediumTier,
-  smallTier,
-} from '@@/documentation/components/modal'
-// import { properties } from '@@/documentation/components/modal/properties'
+import footerAlign from '~/documentation/modal/footer-align.md?raw'
+import largeTier from '~/documentation/modal/large-tier.md?raw'
+import mediumTier from '~/documentation/modal/medium-tier.md?raw'
+import smallTier from '~/documentation/modal/small-tier.md?raw'
 
 definePageMeta({
   title: 'Modals',
@@ -32,7 +29,7 @@ definePageMeta({
               <ExampleModalSmallTier />
             </template>
             <template #code>
-              <DocCode language="html" :code="smallTier" />
+              <DocMarkdown :source="smallTier" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -44,7 +41,7 @@ definePageMeta({
               <ExampleModalMediumTier />
             </template>
             <template #code>
-              <DocCode language="html" :code="mediumTier" />
+              <DocMarkdown :source="mediumTier" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -56,7 +53,7 @@ definePageMeta({
               <ExampleModalLargeTier />
             </template>
             <template #code>
-              <DocCode language="html" :code="largeTier" />
+              <DocMarkdown :source="largeTier" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -68,7 +65,7 @@ definePageMeta({
               <ExampleModalFooter />
             </template>
             <template #code>
-              <DocCode language="html" :code="footerAlign" />
+              <DocMarkdown :source="footerAlign" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>

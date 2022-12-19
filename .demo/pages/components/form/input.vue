@@ -1,25 +1,18 @@
 <script setup lang="ts">
-// @todo: implement form validation like in Vuero
+import curved from '~/documentation/form/input/curved.md?raw'
+import disabled from '~/documentation/form/input/disabled.md?raw'
+import focus from '~/documentation/form/input/focus.md?raw'
+import full from '~/documentation/form/input/full.md?raw'
+import icon from '~/documentation/form/input/icon.md?raw'
+import invalid from '~/documentation/form/input/invalid.md?raw'
+import loading from '~/documentation/form/input/loading.md?raw'
+import rounded from '~/documentation/form/input/rounded.md?raw'
+import straight from '~/documentation/form/input/straight.md?raw'
 
-import {
-  curved,
-  disabled,
-  focus,
-  full,
-  icon,
-  invalid,
-  loading,
-  rounded,
-  straight,
-} from '@@/documentation/components/form/input'
-import {
-  inputCurved,
-  inputFull,
-  inputRounded,
-  inputStraight,
-} from '@@/documentation/components/form/input/data'
-
-
+const inputStraight = ref('')
+const inputRounded = ref('')
+const inputCurved = ref('')
+const inputFull = ref('')
 
 definePageMeta({
   title: 'Inputs',
@@ -57,7 +50,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="straight" />
+              <DocMarkdown :source="straight" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -80,7 +73,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="rounded" />
+              <DocMarkdown :source="rounded" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -103,7 +96,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="curved" />
+              <DocMarkdown :source="curved" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -126,7 +119,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="full" />
+              <DocMarkdown :source="full" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -168,7 +161,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="icon" />
+              <DocMarkdown :source="icon" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -193,7 +186,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="focus" />
+              <DocMarkdown :source="focus" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -215,7 +208,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="loading" />
+              <DocMarkdown :source="loading" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -237,7 +230,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="disabled" />
+              <DocMarkdown :source="disabled" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
@@ -259,7 +252,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocCode language="html" :code="invalid" />
+              <DocMarkdown :source="invalid" class="prose max-w-2xl" />
             </template>
           </DocComponent>
         </DocSection>
