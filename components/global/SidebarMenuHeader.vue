@@ -6,7 +6,7 @@ const { activeSidebar, isSidebarOpened } = useSidebar()
   <div class="flex h-16 w-full items-center px-6">
     <div
       v-if="activeSidebar"
-      class="font-heading text-lg font-semibold capitalize text-muted-700 dark:text-white"
+      class="font-heading text-lg font-light capitalize text-muted-700 dark:text-white"
     >
       {{ activeSidebar.name }}
     </div>

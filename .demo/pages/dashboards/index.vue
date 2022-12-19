@@ -1,6 +1,7 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Personal 1',
+  layout:'sidebar',
 })
 </script>
 
@@ -14,7 +15,7 @@ definePageMeta({
           <BaseHeading
             as="h2"
             size="xl"
-            weight="semibold"
+            weight="light"
             lead="tight"
             class="text-muted-800 dark:text-white"
           >
@@ -166,7 +167,7 @@ definePageMeta({
       </div>
       <!-- CTA card -->
       <div class="col-span-12 ptablet:col-span-6 ltablet:col-span-4 lg:col-span-4">
-        <BaseCard class="relative h-full flex items-center justify-center p-6 bg-gradient-to-br from-success-500 to-success-600">
+        <BaseCard class="relative h-full flex items-center justify-center p-6 bg-gradient-to-br from-primary-600 to-primary-700">
           <div class="relative flex flex-col gap-3 py-10 text-center z-20">
             <BaseHeading
               as="h4"
@@ -185,7 +186,7 @@ definePageMeta({
             <NuxtLink class="font-sans text-white hover:underline underline-offset-4" to="/">Learn More</NuxtLink>
           </div>
           <div class="absolute bottom-4 right-4 w-14 h-14 flex items-center justify-center z-10">
-            <Icon name="ph:crown-duotone" class="w-14 h-14 text-success-900/50"></Icon>
+            <Icon name="ph:crown-duotone" class="w-14 h-14 text-primary-900/50"></Icon>
           </div>
         </BaseCard>
       </div>

@@ -11,6 +11,7 @@ const route = useRoute()
     <BaseHeading
       as="h1"
       size="2xl"
+      weight="light"
       class="hidden text-muted-800 dark:text-white md:block"
     >
       {{ route.meta.title }}
