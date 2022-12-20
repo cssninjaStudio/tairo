@@ -22,14 +22,14 @@ const { activePanel, panelTransitionFrom, closePanel } = usePanels()
     </NavigationSidebar>
 
     <div
-      class="bg-muted-100 dark:bg-muted-900 relative min-h-screen w-full px-4 transition-all duration-300 xl:px-16"
+      class="bg-muted-100 dark:bg-muted-900 relative min-h-screen w-full px-4 transition-all duration-300 xl:px-10"
       :class="
         isSidebarOpened
           ? 'xl:max-w-[calc(100%_-_300px)] xl:ml-[300px]'
           : 'xl:max-w-[calc(100%_-_80px)] xl:ml-[80px]'
       "
     >
-      <div class="mx-auto w-full max-w-6xl">
+      <div class="mx-auto w-full max-w-7xl">
         <NavigationToolbar />
         <slot />
       </div>

@@ -100,7 +100,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
               <ul class="py-2 pl-5">
                 <li class="flex h-8 items-center">
                   <NuxtLink
-                    to="/"
+                    to="/dashboards/analytics"
                     class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
                   >
                     <Icon name="ph:gauge-duotone" class="mr-2 h-5 w-5" />

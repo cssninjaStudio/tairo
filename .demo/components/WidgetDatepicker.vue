@@ -124,7 +124,7 @@ onMounted(() => {
 
     <div class="w-full">
       <div class="flex justify-between items-center mb-6">
-        <div class="text-lg font-medium space-x-2 text-muted-800 dark:text-muted-100">
+        <div class="text-base font-medium space-x-2 text-muted-800 dark:text-muted-100">
           <span>{{ MONTH_NAMES[month] }}</span>
           <span>{{ year }}</span>
         </div>

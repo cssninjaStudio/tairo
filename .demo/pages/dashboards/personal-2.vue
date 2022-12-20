@@ -37,19 +37,19 @@ definePageMeta({
             <div class="flex flex-col ltablet:flex-row ltablet:items-center lg:flex-row lg:items-center gap-6 ml-auto text-center md:text-left">
               <div class="flex-1">
                 <BaseHeading
-                as="h3"
-                size="3xl"
-                weight="semibold"
-                lead="tight"
-                class="text-muted-800 dark:text-white"
-              >
-                <span>31 <small class="text-base font-medium">Tasks</small></span>
-              </BaseHeading>
-              <BaseParagraph>
-                <span class="text-sm text-muted-400">
-                  Are currently pending
-                </span>
-              </BaseParagraph>
+                  as="h3"
+                  size="3xl"
+                  weight="semibold"
+                  lead="tight"
+                  class="text-muted-800 dark:text-white"
+                >
+                  <span>31 <small class="text-base font-medium">Tasks</small></span>
+                </BaseHeading>
+                <BaseParagraph>
+                  <span class="text-sm text-muted-400">
+                    Are currently pending
+                  </span>
+                </BaseParagraph>
               </div>
               <BaseCard class="relative flex-1 flex items-center justify-center p-5 bg-gradient-to-br from-primary-600 to-primary-700 shadow-xl shadow-primary-500/20">
                 <div class="relative flex flex-col gap-3 z-20">
