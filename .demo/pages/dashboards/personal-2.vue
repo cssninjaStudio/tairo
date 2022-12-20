@@ -60,7 +60,7 @@ definePageMeta({
                   </BaseParagraph>
                   <NuxtLink class="font-sans text-white text-sm hover:underline underline-offset-4" to="/">Learn More</NuxtLink>
                 </div>
-                <div class="absolute bottom-4 right-4 w-14 h-14 flex items-center justify-center z-10">
+                <div class="absolute bottom-0 right-2 w-14 h-14 flex items-center justify-center z-10">
                   <Icon name="ph:crown-duotone" class="w-10 h-10 text-primary-900/50"></Icon>
                 </div>
             </BaseCard>

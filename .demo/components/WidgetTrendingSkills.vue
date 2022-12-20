@@ -30,7 +30,7 @@ const skills = [
 <template>
   <div class="space-y-5 mb-2">
     <div v-for="skill in skills" :key="skill.id" class="flex items-center gap-3">
-      <div class="h-10 w-10 flex items-center justify-center rounded-full border border-muted-200">
+      <div class="h-10 w-10 flex items-center justify-center rounded-full border border-muted-200 dark:border-muted-700">
         <Icon :name="skill.icon" class="w-5 h-5" />
       </div>
       <div>
