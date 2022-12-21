@@ -31,7 +31,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="text" class="prose max-w-2xl" />
+              <DocMarkdown :source="text" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -47,7 +47,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="shape" class="prose max-w-2xl" />
+              <DocMarkdown :source="shape" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -69,7 +69,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="composition" class="prose max-w-2xl" />
+              <DocMarkdown :source="composition" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>

@@ -64,7 +64,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="thinSwitch" class="prose max-w-2xl" />
+              <DocMarkdown :source="thinSwitch" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -84,7 +84,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="thinSublabel" class="prose max-w-2xl" />
+              <DocMarkdown :source="thinSublabel" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -132,7 +132,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="ballSwitch" class="prose max-w-2xl" />
+              <DocMarkdown :source="ballSwitch" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -152,7 +152,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="ballSublabel" class="prose max-w-2xl" />
+              <DocMarkdown :source="ballSublabel" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>

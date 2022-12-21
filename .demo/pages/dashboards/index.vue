@@ -204,7 +204,7 @@ definePageMeta({
             >
               <span>Hey Maya, you're doing great.</span>
             </BaseHeading>
-            <BaseParagraph size="md">
+            <BaseParagraph size="md" class="max-w-[280px] mx-auto">
               <span class="text-white/80">
                 Start using our team and project management tools
               </span>

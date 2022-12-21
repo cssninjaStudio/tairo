@@ -149,7 +149,7 @@ definePageMeta({
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocMarkdown :source="base" class="prose max-w-2xl" />
+              <DocMarkdown :source="base" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>

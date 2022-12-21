@@ -181,7 +181,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="shapes" class="prose max-w-2xl" />
+              <DocMarkdown :source="shapes" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -200,7 +200,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="disabled" class="prose max-w-2xl" />
+              <DocMarkdown :source="disabled" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -219,7 +219,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="loading" class="prose max-w-2xl" />
+              <DocMarkdown :source="loading" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -237,7 +237,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="sublabels" class="prose max-w-2xl" />
+              <DocMarkdown :source="sublabels" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -255,7 +255,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="icon" class="prose max-w-2xl" />
+              <DocMarkdown :source="icon" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -273,7 +273,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="media" class="prose max-w-2xl" />
+              <DocMarkdown :source="media" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>

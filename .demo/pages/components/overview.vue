@@ -301,7 +301,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="primaryColor" class="prose max-w-2xl" />
+              <DocMarkdown :source="primaryColor" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -354,7 +354,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="infoColor" class="prose max-w-2xl" />
+              <DocMarkdown :source="infoColor" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -407,7 +407,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="successColor" class="prose max-w-2xl" />
+              <DocMarkdown :source="successColor" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -460,7 +460,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="warningColor" class="prose max-w-2xl" />
+              <DocMarkdown :source="warningColor" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -513,7 +513,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="dangerColor" class="prose max-w-2xl" />
+              <DocMarkdown :source="dangerColor" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -566,7 +566,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="mutedColor" class="prose max-w-2xl" />
+              <DocMarkdown :source="mutedColor" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>

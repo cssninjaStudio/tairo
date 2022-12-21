@@ -80,7 +80,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="straight" class="prose max-w-2xl" />
+              <DocMarkdown :source="straight" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -98,7 +98,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="rounded" class="prose max-w-2xl" />
+              <DocMarkdown :source="rounded" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -116,7 +116,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="curved" class="prose max-w-2xl" />
+              <DocMarkdown :source="curved" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -134,7 +134,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="circle" class="prose max-w-2xl" />
+              <DocMarkdown :source="circle" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -171,7 +171,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="colors" class="prose max-w-2xl" />
+              <DocMarkdown :source="colors" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -189,7 +189,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="multipleHandle" class="prose max-w-2xl" />
+              <DocMarkdown :source="multipleHandle" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -211,7 +211,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="formatTooltip" class="prose max-w-2xl" />
+              <DocMarkdown :source="formatTooltip" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -233,7 +233,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="mergeTooltip" class="prose max-w-2xl" />
+              <DocMarkdown :source="mergeTooltip" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>

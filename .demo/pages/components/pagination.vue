@@ -43,7 +43,7 @@ const currentPage = computed(() => {
               />
             </template>
             <template #code>
-              <DocMarkdown :source="straight" class="prose max-w-2xl" />
+              <DocMarkdown :source="straight" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -61,7 +61,7 @@ const currentPage = computed(() => {
               />
             </template>
             <template #code>
-              <DocMarkdown :source="rounded" class="prose max-w-2xl" />
+              <DocMarkdown :source="rounded" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -79,7 +79,7 @@ const currentPage = computed(() => {
               />
             </template>
             <template #code>
-              <DocMarkdown :source="curved" class="prose max-w-2xl" />
+              <DocMarkdown :source="curved" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -97,7 +97,7 @@ const currentPage = computed(() => {
               />
             </template>
             <template #code>
-              <DocMarkdown :source="full" class="prose max-w-2xl" />
+              <DocMarkdown :source="full" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>

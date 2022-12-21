@@ -68,7 +68,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="roundedSizes" class="prose max-w-2xl" />
+              <DocMarkdown :source="roundedSizes" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -123,7 +123,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="circleSizes" class="prose max-w-2xl" />
+              <DocMarkdown :source="circleSizes" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -276,7 +276,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="solid" class="prose max-w-2xl" />
+              <DocMarkdown :source="solid" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -391,7 +391,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="pastel" class="prose max-w-2xl" />
+              <DocMarkdown :source="pastel" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -556,7 +556,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="outline" class="prose max-w-2xl" />
+              <DocMarkdown :source="outline" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -702,7 +702,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="elevation" class="prose max-w-2xl" />
+              <DocMarkdown :source="elevation" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>

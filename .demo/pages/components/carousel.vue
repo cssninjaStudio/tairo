@@ -244,7 +244,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="userCarousel" class="prose max-w-2xl" />
+              <DocMarkdown :source="userCarousel" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -260,7 +260,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="iconCarousel" class="prose max-w-2xl" />
+              <DocMarkdown :source="iconCarousel" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
