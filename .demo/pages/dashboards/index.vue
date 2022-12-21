@@ -188,7 +188,7 @@ definePageMeta({
               <span>Customers</span>
             </BaseHeading>
           </div>
-          <ExampleApexchartAreaCustomer />
+          <ExampleApexchartAreaCustomer :legend="true" />
         </BaseCard>
       </div>
       <!-- CTA card -->

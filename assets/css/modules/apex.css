@@ -12,9 +12,9 @@
   @apply text-muted-200 dark:text-muted-700 stroke-current;
 }
 
-/* .apexcharts-bar-area {
-  @apply stroke-current fill-current;
-} */
+.apexcharts-subtitle-text {
+  @apply text-muted-800 dark:!text-muted-100 !fill-current;
+}
 
 .apexcharts-xaxis line,
 .apexcharts-yaxis line {

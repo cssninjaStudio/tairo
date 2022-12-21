@@ -32,7 +32,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
         >
           <div v-show="open">
             <DisclosurePanel static>
-              <ul class="py-2 pl-5">
+              <ul class="py-2 pl-3">
                 <li class="flex h-8 items-center">
                   <NuxtLink
                     to="/dashboards"
@@ -97,7 +97,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
         >
           <div v-show="open">
             <DisclosurePanel static>
-              <ul class="py-2 pl-5">
+              <ul class="py-2 pl-3">
                 <li class="flex h-8 items-center">
                   <NuxtLink
                     to="/dashboards/analytics"
@@ -118,7 +118,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                 </li>
                 <li class="flex h-8 items-center">
                   <NuxtLink
-                    to="/"
+                    to="/dashboards/sales"
                     class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
                   >
                     <Icon
@@ -162,7 +162,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
         >
           <div v-show="open">
             <DisclosurePanel static>
-              <ul class="py-2 pl-5">
+              <ul class="py-2 pl-3">
                 <li class="flex h-8 items-center">
                   <NuxtLink
                     to="/"
@@ -224,7 +224,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
         >
           <div v-show="open">
             <DisclosurePanel static>
-              <ul class="py-2 pl-5">
+              <ul class="py-2 pl-3">
                 <li class="flex h-8 items-center">
                   <NuxtLink
                     to="/"
@@ -307,7 +307,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
         >
           <div v-show="open">
             <DisclosurePanel static>
-              <ul class="py-2 pl-5">
+              <ul class="py-2 pl-3">
                 <li class="flex h-8 items-center">
                   <NuxtLink
                     to="/"
@@ -396,7 +396,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
         >
           <div v-show="open">
             <DisclosurePanel static>
-              <ul class="py-2 pl-5">
+              <ul class="py-2 pl-3">
                 <li class="flex h-8 items-center">
                   <NuxtLink
                     to="/"
@@ -440,7 +440,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
         >
           <div v-show="open">
             <DisclosurePanel static>
-              <ul class="py-2 pl-5">
+              <ul class="py-2 pl-3">
                 <li class="flex h-8 items-center">
                   <NuxtLink
                     to="/"
@@ -537,7 +537,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
         >
           <div v-show="open">
             <DisclosurePanel static>
-              <ul class="py-2 pl-5">
+              <ul class="py-2 pl-3">
                 <li class="flex h-8 items-center">
                   <NuxtLink
                     to="/"
@@ -584,7 +584,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
         >
           <div v-show="open">
             <DisclosurePanel static>
-              <ul class="py-2 pl-5">
+              <ul class="py-2 pl-3">
                 <li class="flex h-8 items-center">
                   <NuxtLink
                     to="/"
@@ -661,7 +661,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
         >
           <div v-show="open">
             <DisclosurePanel static>
-              <ul class="py-2 pl-5">
+              <ul class="py-2 pl-3">
                 <li class="flex h-8 items-center">
                   <NuxtLink
                     to="/"
