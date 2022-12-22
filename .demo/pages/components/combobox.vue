@@ -155,6 +155,7 @@ definePageMeta({
                   v-model="selectedFramework"
                   label="Framework"
                   :items="frameworks"
+                  value-property="name"
                   shape="straight"
                 />
 
@@ -251,6 +252,9 @@ definePageMeta({
                   v-model="selectedHobby"
                   label="Hobbies"
                   :items="hobbies"
+                  value-property="name"
+                  text-property="text"
+                  icon-property="icon"
                 />
               </div>
             </template>
@@ -269,6 +273,9 @@ definePageMeta({
                   v-model="selectedPerson"
                   label="Assignee"
                   :items="people"
+                  value-property="name"
+                  text-property="text"
+                  media-property="media"
                 />
               </div>
             </template>

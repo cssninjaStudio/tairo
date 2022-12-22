@@ -7,8 +7,147 @@ definePageMeta({
 
 <template>
   <div>
+    <!-- Investments -->
+    <div class="flex justify-around gap-6 pb-8 overflow-x-auto ltablet:overflow-visible lg:overflow-visible">
+      <!-- Item -->
+      <NuxtLink to="/" class="group flex-1 flex flex-col text-center">
+        <div class="h-16 w-16 mx-auto flex items-center justify-center mask mask-hexed bg-muted-200 dark:bg-muted-700 group-hover:bg-yellow-400 dark:group-hover:bg-yellow-400 scale-90 group-hover:scale-90 group-hover:-translate-y-1 transition-all duration-300">
+          <div class="h-16 w-16 scale-95 flex items-center justify-center mask mask-hexed bg-white dark:bg-muted-800">
+            <Icon name="ph:lightning-duotone" class="w-6 h-6 text-yellow-400" />
+          </div>
+        </div>
+        <BaseHeading
+          as="h5"
+          size="md"
+          weight="medium"
+          lead="tight"
+          class="text-muted-400 dark:text-muted-400 group-hover:text-muted-600 dark:group-hover:text-muted-200"
+        >
+          <span class="font-sans text-sm">Energy</span>
+        </BaseHeading>
+      </NuxtLink>
+      <!-- Item -->
+      <NuxtLink to="/" class="group flex-1 flex flex-col text-center">
+        <div class="h-16 w-16 mx-auto flex items-center justify-center mask mask-hexed bg-muted-200 dark:bg-muted-700 group-hover:bg-primary-500 dark:group-hover:bg-primary-500 scale-90 group-hover:scale-90 group-hover:-translate-y-1 transition-all duration-300">
+          <div class="h-16 w-16 scale-95 flex items-center justify-center mask mask-hexed bg-white dark:bg-muted-800">
+            <Icon name="ph:buildings-duotone" class="w-6 h-6 text-primary-500" />
+          </div>
+        </div>
+        <BaseHeading
+          as="h5"
+          size="md"
+          weight="medium"
+          lead="tight"
+          class="text-muted-400 dark:text-muted-400 group-hover:text-muted-600 dark:group-hover:text-muted-200"
+        >
+          <span class="font-sans text-sm">Estate</span>
+        </BaseHeading>
+      </NuxtLink>
+      <!-- Item -->
+      <NuxtLink to="/" class="group flex-1 flex flex-col text-center">
+        <div class="h-16 w-16 mx-auto flex items-center justify-center mask mask-hexed bg-muted-200 dark:bg-muted-700 group-hover:bg-success-500 dark:group-hover:bg-success-500 scale-90 group-hover:scale-90 group-hover:-translate-y-1 transition-all duration-300">
+          <div class="h-16 w-16 scale-95 flex items-center justify-center mask mask-hexed bg-white dark:bg-muted-800">
+            <Icon name="ph:leaf-duotone" class="w-6 h-6 text-success-500" />
+          </div>
+        </div>
+        <BaseHeading
+          as="h5"
+          size="md"
+          weight="medium"
+          lead="tight"
+          class="text-muted-400 dark:text-muted-400 group-hover:text-muted-600 dark:group-hover:text-muted-200"
+        >
+          <span class="font-sans text-sm">Agriculture</span>
+        </BaseHeading>
+      </NuxtLink>
+      <!-- Item -->
+      <NuxtLink to="/" class="group flex-1 flex flex-col text-center">
+        <div class="h-16 w-16 mx-auto flex items-center justify-center mask mask-hexed bg-muted-200 dark:bg-muted-700 group-hover:bg-indigo-500 dark:group-hover:bg-indigo-500 scale-90 group-hover:scale-90 group-hover:-translate-y-1 transition-all duration-300">
+          <div class="h-16 w-16 scale-95 flex items-center justify-center mask mask-hexed bg-white dark:bg-muted-800">
+            <Icon name="ph:bank-duotone" class="w-6 h-6 text-indigo-500" />
+          </div>
+        </div>
+        <BaseHeading
+          as="h5"
+          size="md"
+          weight="medium"
+          lead="tight"
+          class="text-muted-400 dark:text-muted-400 group-hover:text-muted-600 dark:group-hover:text-muted-200"
+        >
+          <span class="font-sans text-sm">Finance</span>
+        </BaseHeading>
+      </NuxtLink>
+      <!-- Item -->
+      <NuxtLink to="/" class="group flex-1 flex flex-col text-center">
+        <div class="h-16 w-16 mx-auto flex items-center justify-center mask mask-hexed bg-muted-200 dark:bg-muted-700 group-hover:bg-lime-500 dark:group-hover:bg-lime-500 scale-90 group-hover:scale-90 group-hover:-translate-y-1 transition-all duration-300">
+          <div class="h-16 w-16 scale-95 flex items-center justify-center mask mask-hexed bg-white dark:bg-muted-800">
+            <Icon name="ph:sketch-logo-duotone" class="w-6 h-6 text-lime-500" />
+          </div>
+        </div>
+        <BaseHeading
+          as="h5"
+          size="md"
+          weight="medium"
+          lead="tight"
+          class="text-muted-400 dark:text-muted-400 group-hover:text-muted-600 dark:group-hover:text-muted-200"
+        >
+          <span class="font-sans text-sm">Diamonds</span>
+        </BaseHeading>
+      </NuxtLink>
+      <!-- Item -->
+      <NuxtLink to="/" class="group flex-1 flex flex-col text-center">
+        <div class="h-16 w-16 mx-auto flex items-center justify-center mask mask-hexed bg-muted-200 dark:bg-muted-700 group-hover:bg-sky-500 dark:group-hover:bg-sky-500 scale-90 group-hover:scale-90 group-hover:-translate-y-1 transition-all duration-300">
+          <div class="h-16 w-16 scale-95 flex items-center justify-center mask mask-hexed bg-white dark:bg-muted-800">
+            <Icon name="ph:atom-duotone" class="w-6 h-6 text-sky-500" />
+          </div>
+        </div>
+        <BaseHeading
+          as="h5"
+          size="md"
+          weight="medium"
+          lead="tight"
+          class="text-muted-400 dark:text-muted-400 group-hover:text-muted-600 dark:group-hover:text-muted-200"
+        >
+          <span class="font-sans text-sm">Research</span>
+        </BaseHeading>
+      </NuxtLink>
+      <!-- Item -->
+      <NuxtLink to="/" class="group flex-1 flex flex-col text-center">
+        <div class="h-16 w-16 mx-auto flex items-center justify-center mask mask-hexed bg-muted-200 dark:bg-muted-700 group-hover:bg-orange-500 dark:group-hover:bg-orange-500 scale-90 group-hover:scale-90 group-hover:-translate-y-1 transition-all duration-300">
+          <div class="h-16 w-16 scale-95 flex items-center justify-center mask mask-hexed bg-white dark:bg-muted-800">
+            <Icon name="ph:monitor-duotone" class="w-6 h-6 text-orange-500" />
+          </div>
+        </div>
+        <BaseHeading
+          as="h5"
+          size="md"
+          weight="medium"
+          lead="tight"
+          class="text-muted-400 dark:text-muted-400 group-hover:text-muted-600 dark:group-hover:text-muted-200"
+        >
+          <span class="font-sans text-sm">Technology</span>
+        </BaseHeading>
+      </NuxtLink>
+      <!-- Item -->
+      <NuxtLink to="/" class="group flex-1 flex flex-col text-center">
+        <div class="h-16 w-16 mx-auto flex items-center justify-center mask mask-hexed bg-muted-200 dark:bg-muted-700 group-hover:bg-rose-500 dark:group-hover:bg-rose-500 scale-90 group-hover:scale-90 group-hover:-translate-y-1 transition-all duration-300">
+          <div class="h-16 w-16 scale-95 flex items-center justify-center mask mask-hexed bg-white dark:bg-muted-800">
+            <Icon name="ph:pill-duotone" class="w-6 h-6 text-rose-500" />
+          </div>
+        </div>
+        <BaseHeading
+          as="h5"
+          size="md"
+          weight="medium"
+          lead="tight"
+          class="text-muted-400 dark:text-muted-400 group-hover:text-muted-600 dark:group-hover:text-muted-200"
+        >
+          <span class="font-sans text-sm">Healthcare</span>
+        </BaseHeading>
+      </NuxtLink>
+    </div>
     <!-- Tile grid -->
-    <div class="grid md:grid-cols-2 ltablet:grid-cols-3 lg:grid-cols-3 gap-6">
+    <div class="grid md:grid-cols-2 ltablet:grid-cols-3 lg:grid-cols-3 gap-6 mb-6">
       <!-- Tile -->
       <div class="relative">
         <BaseCard shape="curved" class="p-6">
@@ -294,145 +433,6 @@ definePageMeta({
           </div>
         </BaseCard>
       </div>
-    </div>
-    <!-- Investments -->
-    <div class="flex justify-around gap-6 py-8 overflow-x-auto ltablet:overflow-visible lg:overflow-visible">
-      <!-- Item -->
-      <NuxtLink to="/" class="group flex-1 flex flex-col text-center">
-        <div class="h-16 w-16 mx-auto flex items-center justify-center mask mask-hexed bg-muted-200 dark:bg-muted-700 group-hover:bg-yellow-400 dark:group-hover:bg-yellow-400 scale-90 group-hover:scale-90 group-hover:-translate-y-1 transition-all duration-300">
-          <div class="h-16 w-16 scale-95 flex items-center justify-center mask mask-hexed bg-white dark:bg-muted-800">
-            <Icon name="ph:lightning-duotone" class="w-6 h-6 text-yellow-400" />
-          </div>
-        </div>
-        <BaseHeading
-          as="h5"
-          size="md"
-          weight="medium"
-          lead="tight"
-          class="text-muted-400 dark:text-muted-400 group-hover:text-muted-600 dark:group-hover:text-muted-200"
-        >
-          <span class="font-sans text-sm">Energy</span>
-        </BaseHeading>
-      </NuxtLink>
-      <!-- Item -->
-      <NuxtLink to="/" class="group flex-1 flex flex-col text-center">
-        <div class="h-16 w-16 mx-auto flex items-center justify-center mask mask-hexed bg-muted-200 dark:bg-muted-700 group-hover:bg-primary-500 dark:group-hover:bg-primary-500 scale-90 group-hover:scale-90 group-hover:-translate-y-1 transition-all duration-300">
-          <div class="h-16 w-16 scale-95 flex items-center justify-center mask mask-hexed bg-white dark:bg-muted-800">
-            <Icon name="ph:buildings-duotone" class="w-6 h-6 text-primary-500" />
-          </div>
-        </div>
-        <BaseHeading
-          as="h5"
-          size="md"
-          weight="medium"
-          lead="tight"
-          class="text-muted-400 dark:text-muted-400 group-hover:text-muted-600 dark:group-hover:text-muted-200"
-        >
-          <span class="font-sans text-sm">Estate</span>
-        </BaseHeading>
-      </NuxtLink>
-      <!-- Item -->
-      <NuxtLink to="/" class="group flex-1 flex flex-col text-center">
-        <div class="h-16 w-16 mx-auto flex items-center justify-center mask mask-hexed bg-muted-200 dark:bg-muted-700 group-hover:bg-success-500 dark:group-hover:bg-success-500 scale-90 group-hover:scale-90 group-hover:-translate-y-1 transition-all duration-300">
-          <div class="h-16 w-16 scale-95 flex items-center justify-center mask mask-hexed bg-white dark:bg-muted-800">
-            <Icon name="ph:leaf-duotone" class="w-6 h-6 text-success-500" />
-          </div>
-        </div>
-        <BaseHeading
-          as="h5"
-          size="md"
-          weight="medium"
-          lead="tight"
-          class="text-muted-400 dark:text-muted-400 group-hover:text-muted-600 dark:group-hover:text-muted-200"
-        >
-          <span class="font-sans text-sm">Agriculture</span>
-        </BaseHeading>
-      </NuxtLink>
-      <!-- Item -->
-      <NuxtLink to="/" class="group flex-1 flex flex-col text-center">
-        <div class="h-16 w-16 mx-auto flex items-center justify-center mask mask-hexed bg-muted-200 dark:bg-muted-700 group-hover:bg-indigo-500 dark:group-hover:bg-indigo-500 scale-90 group-hover:scale-90 group-hover:-translate-y-1 transition-all duration-300">
-          <div class="h-16 w-16 scale-95 flex items-center justify-center mask mask-hexed bg-white dark:bg-muted-800">
-            <Icon name="ph:bank-duotone" class="w-6 h-6 text-indigo-500" />
-          </div>
-        </div>
-        <BaseHeading
-          as="h5"
-          size="md"
-          weight="medium"
-          lead="tight"
-          class="text-muted-400 dark:text-muted-400 group-hover:text-muted-600 dark:group-hover:text-muted-200"
-        >
-          <span class="font-sans text-sm">Finance</span>
-        </BaseHeading>
-      </NuxtLink>
-      <!-- Item -->
-      <NuxtLink to="/" class="group flex-1 flex flex-col text-center">
-        <div class="h-16 w-16 mx-auto flex items-center justify-center mask mask-hexed bg-muted-200 dark:bg-muted-700 group-hover:bg-lime-500 dark:group-hover:bg-lime-500 scale-90 group-hover:scale-90 group-hover:-translate-y-1 transition-all duration-300">
-          <div class="h-16 w-16 scale-95 flex items-center justify-center mask mask-hexed bg-white dark:bg-muted-800">
-            <Icon name="ph:sketch-logo-duotone" class="w-6 h-6 text-lime-500" />
-          </div>
-        </div>
-        <BaseHeading
-          as="h5"
-          size="md"
-          weight="medium"
-          lead="tight"
-          class="text-muted-400 dark:text-muted-400 group-hover:text-muted-600 dark:group-hover:text-muted-200"
-        >
-          <span class="font-sans text-sm">Diamonds</span>
-        </BaseHeading>
-      </NuxtLink>
-      <!-- Item -->
-      <NuxtLink to="/" class="group flex-1 flex flex-col text-center">
-        <div class="h-16 w-16 mx-auto flex items-center justify-center mask mask-hexed bg-muted-200 dark:bg-muted-700 group-hover:bg-sky-500 dark:group-hover:bg-sky-500 scale-90 group-hover:scale-90 group-hover:-translate-y-1 transition-all duration-300">
-          <div class="h-16 w-16 scale-95 flex items-center justify-center mask mask-hexed bg-white dark:bg-muted-800">
-            <Icon name="ph:atom-duotone" class="w-6 h-6 text-sky-500" />
-          </div>
-        </div>
-        <BaseHeading
-          as="h5"
-          size="md"
-          weight="medium"
-          lead="tight"
-          class="text-muted-400 dark:text-muted-400 group-hover:text-muted-600 dark:group-hover:text-muted-200"
-        >
-          <span class="font-sans text-sm">Research</span>
-        </BaseHeading>
-      </NuxtLink>
-      <!-- Item -->
-      <NuxtLink to="/" class="group flex-1 flex flex-col text-center">
-        <div class="h-16 w-16 mx-auto flex items-center justify-center mask mask-hexed bg-muted-200 dark:bg-muted-700 group-hover:bg-orange-500 dark:group-hover:bg-orange-500 scale-90 group-hover:scale-90 group-hover:-translate-y-1 transition-all duration-300">
-          <div class="h-16 w-16 scale-95 flex items-center justify-center mask mask-hexed bg-white dark:bg-muted-800">
-            <Icon name="ph:monitor-duotone" class="w-6 h-6 text-orange-500" />
-          </div>
-        </div>
-        <BaseHeading
-          as="h5"
-          size="md"
-          weight="medium"
-          lead="tight"
-          class="text-muted-400 dark:text-muted-400 group-hover:text-muted-600 dark:group-hover:text-muted-200"
-        >
-          <span class="font-sans text-sm">Technology</span>
-        </BaseHeading>
-      </NuxtLink>
-      <!-- Item -->
-      <NuxtLink to="/" class="group flex-1 flex flex-col text-center">
-        <div class="h-16 w-16 mx-auto flex items-center justify-center mask mask-hexed bg-muted-200 dark:bg-muted-700 group-hover:bg-rose-500 dark:group-hover:bg-rose-500 scale-90 group-hover:scale-90 group-hover:-translate-y-1 transition-all duration-300">
-          <div class="h-16 w-16 scale-95 flex items-center justify-center mask mask-hexed bg-white dark:bg-muted-800">
-            <Icon name="ph:pill-duotone" class="w-6 h-6 text-rose-500" />
-          </div>
-        </div>
-        <BaseHeading
-          as="h5"
-          size="md"
-          weight="medium"
-          lead="tight"
-          class="text-muted-400 dark:text-muted-400 group-hover:text-muted-600 dark:group-hover:text-muted-200"
-        >
-          <span class="font-sans text-sm">Healthcare</span>
-        </BaseHeading>
-      </NuxtLink>
     </div>
     <!-- Card grid -->
     <div class="grid grid-cols-12 gap-6">

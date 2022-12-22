@@ -11,9 +11,9 @@ const envModules = {
 }
 
 export default defineNuxtConfig({
-  // extends: envModules.ui,
+  extends: envModules.ui,
   // extends: '../nuxt-ui',
-  extends: '@cssninja/nuxt-ui',
+  // extends: '@cssninja/nuxt-ui',
   modules: ['nuxt-config-schema', '@nuxt/image-edge'],
   css: [
     resolve('./assets/css/modules/variables.css'),
