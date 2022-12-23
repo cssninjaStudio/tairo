@@ -35,7 +35,7 @@ definePageMeta({
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocMarkdown :source="types" class="prose max-w-2xl" />
+              <DocMarkdown :source="types" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -58,7 +58,7 @@ definePageMeta({
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocMarkdown :source="icons" class="prose max-w-2xl" />
+              <DocMarkdown :source="icons" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -86,7 +86,7 @@ definePageMeta({
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocMarkdown :source="shapes" class="prose max-w-2xl" />
+              <DocMarkdown :source="shapes" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>

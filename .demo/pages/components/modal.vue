@@ -29,7 +29,7 @@ definePageMeta({
               <ExampleModalSmallTier />
             </template>
             <template #code>
-              <DocMarkdown :source="smallTier" class="prose max-w-2xl" />
+              <DocMarkdown :source="smallTier" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -41,7 +41,7 @@ definePageMeta({
               <ExampleModalMediumTier />
             </template>
             <template #code>
-              <DocMarkdown :source="mediumTier" class="prose max-w-2xl" />
+              <DocMarkdown :source="mediumTier" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -53,7 +53,7 @@ definePageMeta({
               <ExampleModalLargeTier />
             </template>
             <template #code>
-              <DocMarkdown :source="largeTier" class="prose max-w-2xl" />
+              <DocMarkdown :source="largeTier" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -65,7 +65,7 @@ definePageMeta({
               <ExampleModalFooter />
             </template>
             <template #code>
-              <DocMarkdown :source="footerAlign" class="prose max-w-2xl" />
+              <DocMarkdown :source="footerAlign" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>

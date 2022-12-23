@@ -106,18 +106,7 @@ const profitBarOptions = {
 </script>
 
 <template>
-  <BaseCard class="relative">
-    <div class="mb-6">
-      <BaseHeading
-        as="h3"
-        size="md"
-        weight="semibold"
-        lead="tight"
-        class="text-muted-800 dark:text-white"
-      >
-        <span>Profit Evolution</span>
-      </BaseHeading>
-    </div>
+  <div>
     <BasePlaceload class="w-[90%] mx-auto h-64 my-4" v-if="!apexLoaded" />
     <ClientOnly>
       <LazyVueApexCharts
@@ -128,5 +117,5 @@ const profitBarOptions = {
         :series="profitBarOptions.series"
       />
     </ClientOnly>
-  </BaseCard>
+  </div>
 </template>

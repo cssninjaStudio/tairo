@@ -4,4 +4,10 @@
   --success: #14b8a6;
   --warning: #f59e0b;
   --danger: #f43f5e;
+  --title: var(--color-muted-800);
+  --subtitle: var(--color-muted-400);
+}
+
+.dark {
+  --title: var(--color-white);
 }

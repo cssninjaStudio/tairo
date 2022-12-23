@@ -12,7 +12,7 @@ const activeTab = ref('demo')
 
 <template>
   <div
-    class="mb-4 rounded-lg border border-muted-200 bg-white px-6 pt-6 pb-10 dark:border-muted-700 dark:bg-muted-800"
+    class="doc-component mb-4 rounded-lg border border-muted-200 bg-white px-6 pt-6 pb-10 dark:border-muted-700 dark:bg-muted-800"
   >
     <div class="mb-10 flex items-center whitespace-nowrap">
       <BaseParagraph
@@ -24,23 +24,25 @@ const activeTab = ref('demo')
       </BaseParagraph>
 
       <div class="ml-auto flex flex-none items-center pl-4 sm:pl-6">
-        <BaseFocusLoop class="flex items-end">
+        <BaseFocusLoop class="flex items-end gap-1 p-1 rounded-lg bg-muted-200 dark:bg-muted-700">
           <BaseButtonAction
             shape="rounded"
-            class="rounded-r-none border-r-0 focus:z-10"
+            class="h-[2.35rem] pr-3 focus:z-10"
+            :class="activeTab === 'demo' && 'dark:!bg-muted-800'"
             :muted="activeTab !== 'demo'"
             @click="activeTab = 'demo'"
           >
-            <Icon name="cil:applications" class="mr-1.5 h-4 w-4" />
+            <Icon name="ph:circles-four-duotone" class="h-4 w-4" />
             <span>Demo</span>
           </BaseButtonAction>
           <BaseButtonAction
             shape="rounded"
-            class="rounded-l-none border-l-0 focus:z-10"
+            class="h-[2.35rem] pr-3 focus:z-10"
+            :class="activeTab === 'code' && 'dark:!bg-muted-800'"
             :muted="activeTab !== 'code'"
             @click="activeTab = 'code'"
           >
-            <Icon name="iconoir:terminal-outline" class="mr-1.5 h-4 w-4" />
+            <Icon name="ph:terminal-duotone" class="h-4 w-4" />
             <span>Code</span>
           </BaseButtonAction>
         </BaseFocusLoop>
@@ -58,3 +60,13 @@ const activeTab = ref('demo')
     </div>
   </div>
 </template>
+
+<style>
+.doc-component pre.shiki {
+  background: var(--color-muted-100) !important;
+}
+
+.dark .doc-component pre.shiki {
+  background: var(--color-muted-900) !important;
+}
+</style>

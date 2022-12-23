@@ -16,6 +16,15 @@ export const useTailwindColors = () => {
   const danger = process.server
     ? ref('transparent')
     : useCssVar('--danger', document.documentElement)
+  const yellow = process.server
+    ? ref('transparent')
+    : useCssVar('--color-yellow-400', document.documentElement)
+  const title = process.server
+    ? ref('transparent')
+    : useCssVar('--title', document.documentElement)
+  const subtitle = process.server
+    ? ref('transparent')
+    : useCssVar('--subtitle', document.documentElement)
 
   return {
     primary,
@@ -23,5 +32,8 @@ export const useTailwindColors = () => {
     success,
     warning,
     danger,
+    yellow,
+    title,
+    subtitle,
   }
 }

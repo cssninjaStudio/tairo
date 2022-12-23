@@ -194,7 +194,7 @@ const candidates = [
       </BaseCard>
       <!-- Inner item -->
       <div class="col-span-2">
-        <div class="h-full flex items-end justify-between mt-auto">
+        <div class="h-full flex items-end justify-between mt-auto pb-4">
           <div>
             <BaseHeading
               as="h2"
@@ -225,7 +225,119 @@ const candidates = [
     </div>
     <!--Grid item-->
     <div>
-      <WidgetTrendingSkills />
+      <BaseCard class="p-6" shape="curved">
+        <!-- Title -->
+        <div class="flex items-center justify-between mb-8">
+          <BaseHeading
+            as="h3"
+            size="md"
+            weight="semibold"
+            lead="tight"
+            class="text-muted-800 dark:text-white"
+          >
+            <span>Trending skills</span>
+          </BaseHeading>
+          <RouterLink to="/" class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300">View All</RouterLink>
+        </div>
+        <WidgetTrendingSkills />
+      </BaseCard>
+    </div>
+    <!-- Grid item -->
+    <div>
+      <!-- Chart -->
+      <BaseCard shape="curved" class="p-6">
+        <div class="flex items-center justify-between mb-6">
+          <BaseHeading
+            as="h3"
+            size="md"
+            weight="semibold"
+            lead="tight"
+            class="text-muted-800 dark:text-white"
+          >
+            <span>Interviews</span>
+          </BaseHeading>
+          <RouterLink to="/" class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300">Reports</RouterLink>
+        </div>
+        <ExampleApexchartAreaInterviews />
+      </BaseCard>
+    </div>
+    <!-- Grid item -->
+    <div class="flex flex-col gap-4">
+      <!-- Card -->
+      <BaseCard shape="curved" class="flex items-center gap-3 p-4">
+        <BaseAvatar src="/img/avatars/11.svg" size="md" />
+        <div>
+          <BaseHeading
+            as="h4"
+            size="sm"
+            weight="light"
+            lead="tight"
+            class="text-muted-800 dark:text-white"
+          >
+            <span>Jonathan K.</span>
+          </BaseHeading>
+          <BaseParagraph size="xs">
+            <span class="text-muted-400">
+              8:00 am — 9:00 am
+            </span>
+          </BaseParagraph>
+        </div>
+        <div class="flex items-center ml-auto">
+          <BaseButtonIcon shape="curved" muted class="scale-75">
+            <Icon name="lucide:arrow-right" class="w-5 h-5" />
+          </BaseButtonIcon>
+        </div>
+      </BaseCard>
+      <!-- Card -->
+      <BaseCard shape="curved" class="flex items-center gap-3 p-4">
+        <BaseAvatar src="/img/avatars/16.svg" size="md" />
+        <div>
+          <BaseHeading
+            as="h4"
+            size="sm"
+            weight="light"
+            lead="tight"
+            class="text-muted-800 dark:text-white"
+          >
+            <span>Erwin S.</span>
+          </BaseHeading>
+          <BaseParagraph size="xs">
+            <span class="text-muted-400">
+              10:30 am — 11:30 am
+            </span>
+          </BaseParagraph>
+        </div>
+        <div class="flex items-center ml-auto">
+          <BaseButtonIcon shape="curved" muted class="scale-75">
+            <Icon name="lucide:arrow-right" class="w-5 h-5" />
+          </BaseButtonIcon>
+        </div>
+      </BaseCard>
+      <!-- Card -->
+      <BaseCard shape="curved" class="flex items-center gap-3 p-4">
+        <BaseAvatar src="/img/avatars/5.svg" size="md" />
+        <div>
+          <BaseHeading
+            as="h4"
+            size="sm"
+            weight="light"
+            lead="tight"
+            class="text-muted-800 dark:text-white"
+          >
+            <span>Jennifer M.</span>
+          </BaseHeading>
+          <BaseParagraph size="xs">
+            <span class="text-muted-400">
+              2:00 pm — 3:00 pm
+            </span>
+          </BaseParagraph>
+        </div>
+        <div class="flex items-center ml-auto">
+          <BaseButtonIcon shape="curved" muted class="scale-75">
+            <Icon name="lucide:arrow-right" class="w-5 h-5" />
+          </BaseButtonIcon>
+        </div>
+      </BaseCard>
     </div>
   </div>
 </template>

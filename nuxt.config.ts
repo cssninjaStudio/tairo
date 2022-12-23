@@ -6,8 +6,14 @@ const { resolve } = createResolver(import.meta.url)
 
 logger.success(`Using ${name} v${version}`)
 
+const envModules = {
+  ui: process?.env?.THEME_DEV_UI_PATH || '@cssninja/nuxt-ui',
+}
+
 export default defineNuxtConfig({
-  extends: '@cssninja/nuxt-ui',
+  extends: envModules.ui,
+  // extends: '../nuxt-ui',
+  // extends: '@cssninja/nuxt-ui',
   modules: ['nuxt-config-schema', '@nuxt/image-edge'],
   css: [
     resolve('./assets/css/modules/variables.css'),

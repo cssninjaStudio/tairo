@@ -2,6 +2,15 @@
 const { primary, info, success } = useTailwindColors()
 
 /**
+ * Define props for component only when needed
+ * This improves the chart rendering options
+ */
+
+ const props = defineProps<{
+  legend?: boolean
+ }>()
+
+/**
  * Use `defineAsyncComponent` to lazy load the component only when needed
  * This improves the initial load time of the page when the component is not needed
  *
@@ -55,6 +64,7 @@ const customersOptions = {
     align: 'left',
   },
   legend: {
+    show: props.legend,
     position: 'top',
   },
   dataLabels: {
@@ -85,18 +95,7 @@ const customersOptions = {
 </script>
 
 <template>
-  <BaseCard>
-    <div class="mb-6">
-      <BaseHeading
-        as="h3"
-        size="md"
-        weight="semibold"
-        lead="tight"
-        class="text-muted-800 dark:text-white"
-      >
-        <span>Customers</span>
-      </BaseHeading>
-    </div>
+  <div>
     <BasePlaceload class="w-[90%] mx-auto h-64 my-4" v-if="!apexLoaded" />
     <ClientOnly>
       <LazyVueApexCharts
@@ -105,7 +104,8 @@ const customersOptions = {
         :type="customersOptions.chart.type"
         :options="customersOptions"
         :series="customersOptions.series"
+        class="-ml-3"
       />
     </ClientOnly>
-  </BaseCard>
+  </div>
 </template>

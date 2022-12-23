@@ -4,6 +4,7 @@ import loading from '~/documentation/icon-button/loading.md?raw'
 import muted from '~/documentation/icon-button/muted.md?raw'
 import primary from '~/documentation/icon-button/primary.md?raw'
 import shapes from '~/documentation/icon-button/shapes.md?raw'
+import small from '~/documentation/icon-button/small.md?raw'
 
 definePageMeta({
   title: 'Button Icon',
@@ -44,7 +45,32 @@ definePageMeta({
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocMarkdown :source="shapes" class="prose max-w-2xl" />
+              <DocMarkdown :source="shapes" class="prose max-w-full" />
+            </template>
+          </DocComponent>
+        </DocSection>
+
+        <!-- Icon button small size -->
+        <DocSection title="Small size" tag="1.0.0">
+          <DocComponent label="Smaller icon buttons">
+            <template #demo>
+              <BaseFocusLoop class="flex flex-wrap items-end gap-2">
+                <BaseButtonIcon shape="straight" small>
+                  <Icon name="ph:moon-duotone" class="h-5 w-5" />
+                </BaseButtonIcon>
+                <BaseButtonIcon shape="rounded" small>
+                  <Icon name="ph:github-logo-duotone" class="h-5 w-5" />
+                </BaseButtonIcon>
+                <BaseButtonIcon shape="curved" small>
+                  <Icon name="ph:game-controller-duotone" class="h-5 w-5" />
+                </BaseButtonIcon>
+                <BaseButtonIcon shape="full" small>
+                  <Icon name="ph:heart-duotone" class="h-5 w-5" />
+                </BaseButtonIcon>
+              </BaseFocusLoop>
+            </template>
+            <template #code>
+              <DocMarkdown :source="small" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -69,7 +95,7 @@ definePageMeta({
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocMarkdown :source="primary" class="prose max-w-2xl" />
+              <DocMarkdown :source="primary" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -94,7 +120,7 @@ definePageMeta({
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocMarkdown :source="muted" class="prose max-w-2xl" />
+              <DocMarkdown :source="muted" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -119,7 +145,7 @@ definePageMeta({
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocMarkdown :source="loading" class="prose max-w-2xl" />
+              <DocMarkdown :source="loading" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -150,7 +176,7 @@ definePageMeta({
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocMarkdown :source="group" class="prose max-w-2xl" />
+              <DocMarkdown :source="group" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>

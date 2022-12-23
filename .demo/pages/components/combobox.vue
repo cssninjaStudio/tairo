@@ -155,6 +155,7 @@ definePageMeta({
                   v-model="selectedFramework"
                   label="Framework"
                   :items="frameworks"
+                  value-property="name"
                   shape="straight"
                 />
 
@@ -181,7 +182,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="shapes" class="prose max-w-2xl" />
+              <DocMarkdown :source="shapes" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -200,7 +201,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="disabled" class="prose max-w-2xl" />
+              <DocMarkdown :source="disabled" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -219,7 +220,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="loading" class="prose max-w-2xl" />
+              <DocMarkdown :source="loading" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -237,7 +238,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="sublabels" class="prose max-w-2xl" />
+              <DocMarkdown :source="sublabels" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -251,11 +252,14 @@ definePageMeta({
                   v-model="selectedHobby"
                   label="Hobbies"
                   :items="hobbies"
+                  value-property="name"
+                  text-property="text"
+                  icon-property="icon"
                 />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="icon" class="prose max-w-2xl" />
+              <DocMarkdown :source="icon" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -269,11 +273,14 @@ definePageMeta({
                   v-model="selectedPerson"
                   label="Assignee"
                   :items="people"
+                  value-property="name"
+                  text-property="text"
+                  media-property="media"
                 />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="media" class="prose max-w-2xl" />
+              <DocMarkdown :source="media" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>

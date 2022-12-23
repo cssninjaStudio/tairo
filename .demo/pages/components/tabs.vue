@@ -60,7 +60,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="start" class="prose max-w-2xl" />
+              <DocMarkdown :source="start" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -102,7 +102,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="center" class="prose max-w-2xl" />
+              <DocMarkdown :source="center" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -154,7 +154,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="end" class="prose max-w-2xl" />
+              <DocMarkdown :source="end" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -217,7 +217,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="icons" class="prose max-w-2xl" />
+              <DocMarkdown :source="icons" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -278,7 +278,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="boxed" class="prose max-w-2xl" />
+              <DocMarkdown :source="boxed" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -342,7 +342,7 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="boxedIcons" class="prose max-w-2xl" />
+              <DocMarkdown :source="boxedIcons" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>

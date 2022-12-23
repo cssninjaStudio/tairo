@@ -65,9 +65,9 @@ onKeyStroke(['Escape'], () => {
       </BaseInput>
     </form>
     <template v-else>
-      <div class="flex w-full items-center px-6 pt-[8px] pb-[4px]">
+      <div class="flex w-full items-center px-6">
         <div
-          class="w-full flex items-center font-heading text-lg font-semibold capitalize text-muted-700 dark:text-white"
+          class="w-full h-16 flex items-center font-heading text-lg font-light capitalize text-muted-700 dark:text-white"
         >
           <span>Components</span>
           <BaseButtonIcon
@@ -85,24 +85,28 @@ onKeyStroke(['Escape'], () => {
           <Icon name="feather:chevron-left" class="h-6 w-6" />
         </button>
       </div>
-      <BaseFocusLoop class="flex items-end px-6 pb-4 pt-2">
-        <BaseButtonAction
-          shape="rounded"
-          class="rounded-r-none border-r-0 focus:z-10"
-          :muted="displayMode !== 'category'"
-          @click="displayMode = 'category'"
-        >
-          <span class="text-xs">By topic</span>
-        </BaseButtonAction>
-        <BaseButtonAction
-          shape="rounded"
-          class="rounded-l-none border-l-0 focus:z-10"
-          :muted="displayMode !== 'component'"
-          @click="displayMode = 'component'"
-        >
-          <span class="text-xs">By names</span>
-        </BaseButtonAction>
-      </BaseFocusLoop>
+      <div class="pb-5">
+        <BaseFocusLoop class="ml-6 max-w-[160px] flex items-end p-1 rounded-lg bg-muted-200 dark:bg-muted-700">
+          <BaseButtonAction
+            shape="rounded"
+            class="flex-1 focus:z-10"
+            :class="displayMode === 'category' && 'dark:!bg-muted-800'"
+            :muted="displayMode !== 'category'"
+            @click="displayMode = 'category'"
+          >
+            <span class="text-xs">By topic</span>
+          </BaseButtonAction>
+          <BaseButtonAction
+            shape="rounded"
+            class="flex-1 focus:z-10"
+            :class="displayMode === 'component' && 'dark:!bg-muted-800'"
+            :muted="displayMode !== 'component'"
+            @click="displayMode = 'component'"
+          >
+            <span class="text-xs">By names</span>
+          </BaseButtonAction>
+        </BaseFocusLoop>
+      </div>
     </template>
   </div>
 </template>

@@ -95,28 +95,7 @@ const radialBarOptions = {
 </script>
 
 <template>
-  <BaseCard class="relative">
-    <div class="mb-6">
-      <BaseHeading
-        as="h3"
-        size="md"
-        weight="semibold"
-        lead="tight"
-        class="text-muted-800 dark:text-white"
-      >
-        <span>Team Efficiency</span>
-      </BaseHeading>
-    </div>
-    <div
-      class="absolute top-24 inset-x-0 flex items-center justify-center gap-4"
-    >
-      <BaseAvatar src="/img/avatars/4.svg" />
-      <BaseAvatar
-        text="H"
-        class="bg-yellow-100 dark:bg-yellow-500 text-yellow-500 dark:text-white"
-      />
-      <BaseAvatar src="/img/avatars/3.svg" />
-    </div>
+  <div>
     <BasePlaceload class="w-[90%] mx-auto h-32 mt-36 mb-4" v-if="!apexLoaded" />
     <ClientOnly>
       <LazyVueApexCharts
@@ -127,5 +106,5 @@ const radialBarOptions = {
         :series="radialBarOptions.series"
       />
     </ClientOnly>
-  </BaseCard>
+  </div>
 </template>

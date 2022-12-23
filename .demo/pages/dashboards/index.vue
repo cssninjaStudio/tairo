@@ -175,7 +175,21 @@ definePageMeta({
       </div>
       <!-- Area Chart card -->
       <div class="col-span-12 ltablet:col-span-6 lg:col-span-6">
-        <ExampleApexchartAreaCustomer class="p-6" />
+        <BaseCard class="p-6">
+          <!-- Title -->
+          <div class="mb-6">
+            <BaseHeading
+              as="h3"
+              size="md"
+              weight="semibold"
+              lead="tight"
+              class="text-muted-800 dark:text-white"
+            >
+              <span>Customers</span>
+            </BaseHeading>
+          </div>
+          <ExampleApexchartAreaCustomer :legend="true" />
+        </BaseCard>
       </div>
       <!-- CTA card -->
       <div class="col-span-12 ptablet:col-span-6 ltablet:col-span-4 lg:col-span-4">
@@ -190,7 +204,7 @@ definePageMeta({
             >
               <span>Hey Maya, you're doing great.</span>
             </BaseHeading>
-            <BaseParagraph size="md">
+            <BaseParagraph size="md" class="max-w-[280px] mx-auto">
               <span class="text-white/80">
                 Start using our team and project management tools
               </span>
@@ -206,7 +220,7 @@ definePageMeta({
           >
             <Icon
               name="ph:crown-duotone"
-              class="w-14 h-14 text-success-900/50"
+              class="w-14 h-14 text-primary-900/50"
             ></Icon>
           </div>
         </BaseCard>
@@ -215,11 +229,47 @@ definePageMeta({
       <div
         class="col-span-12 ptablet:col-span-6 ltablet:col-span-4 lg:col-span-4"
       >
-        <ExampleApexchartRadialBarTeam class="p-6" />
+        <BaseCard class="relative p-6">
+          <div class="mb-6">
+            <BaseHeading
+              as="h3"
+              size="md"
+              weight="semibold"
+              lead="tight"
+              class="text-muted-800 dark:text-white"
+            >
+              <span>Team Efficiency</span>
+            </BaseHeading>
+          </div>
+          <div
+            class="absolute top-24 inset-x-0 flex items-center justify-center gap-4"
+          >
+            <BaseAvatar src="/img/avatars/4.svg" />
+            <BaseAvatar
+              text="H"
+              class="bg-yellow-100 dark:bg-yellow-500 text-yellow-500 dark:text-white"
+            />
+            <BaseAvatar src="/img/avatars/3.svg" />
+          </div>
+          <ExampleApexchartRadialBarTeam />
+        </BaseCard>
       </div>
       <!-- Bar chart card -->
       <div class="col-span-12 ltablet:col-span-4 lg:col-span-4">
-        <ExampleApexchartBarProfit class="p-6" />
+        <BaseCard class="relative p-6">
+          <div class="mb-6">
+            <BaseHeading
+              as="h3"
+              size="md"
+              weight="semibold"
+              lead="tight"
+              class="text-muted-800 dark:text-white"
+            >
+              <span>Profit Evolution</span>
+            </BaseHeading>
+          </div>
+          <ExampleApexchartBarProfit />
+        </BaseCard>
       </div>
     </div>
   </div>
