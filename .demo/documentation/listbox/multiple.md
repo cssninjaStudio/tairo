@@ -1,4 +1,4 @@
-```vue
+```vue {highlight: '18..19,33'}
 <script setup lang="ts">
 const people = [
   {
@@ -7,7 +7,7 @@ const people = [
     text: 'Sales Manager',
     media: '/img/avatars/19.svg',
   },
-  //...
+  // ...
   {
     id: 5,
     name: 'Maya Rosselini',
@@ -16,14 +16,22 @@ const people = [
   },
 ]
 
-const selectedPerson = ref(people[2])
+// the v-model should be an array
+const selectedPersonMutliple = ref([])
 </script>
 
 <template>
-  <BaseComboBox
-    v-model="selectedPerson"
+  <BaseListbox
+    v-model="selectedPersonMutliple"
     label="Assignee"
     :items="people"
+    :properties="{
+      value: 'id',
+      label: 'name',
+      sublabel: 'text',
+      media: 'media',
+    }"
+    multiple
   />
 </template>
 ```

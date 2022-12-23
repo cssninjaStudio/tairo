@@ -1,4 +1,4 @@
-```vue
+```vue {highlight: '7,14,30'}
 <script setup lang="ts">
 const hobbies = [
   {
@@ -20,10 +20,16 @@ const selectedHobby = ref(hobbies[0])
 </script>
 
 <template>
-  <BaseComboBox
+  <BaseListbox
     v-model="selectedHobby"
-    label="Assignee"
+    label="Hobbies"
     :items="hobbies"
+    :properties="{
+      value: 'id',
+      label: 'name',
+      sublabel: 'text',
+      icon: 'icon',
+    }"
   />
 </template>
 ```

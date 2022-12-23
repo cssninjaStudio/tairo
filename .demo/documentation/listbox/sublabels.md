@@ -1,4 +1,4 @@
-```vue
+```vue {highlight: '6,12,27'}
 <script setup lang="ts">
 const peopleNames = [
   {
@@ -18,10 +18,15 @@ const selectedPersonName = ref(peopleNames[0])
 </script>
 
 <template>
-  <BaseComboBox
+  <BaseListbox
     v-model="selectedPersonName"
     label="Assignee"
     :items="peopleNames"
+    :properties="{
+      value: 'id',
+      label: 'name',
+      sublabel: 'text',
+    }"
   />
 </template>
 ```
