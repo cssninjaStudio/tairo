@@ -1,30 +1,67 @@
 ```vue
 <template>
-  <!-- Emerald color -->
   <BaseCheckbox
-    v-model="demoStraight"
+    checked
+    name="demo-5"
+    label="Straight"
+    shape="straight"
+    :classes="{ wrapper: 'text-gray-500' }"
+  />
+
+  <BaseCheckbox
+    checked
     name="demo-6"
     label="Straight"
     shape="straight"
-    class="text-emerald-500"
+    :classes="{ wrapper: 'text-emerald-500' }"
   />
 
-  <!-- Yellow color -->
   <BaseCheckbox
-    v-model="demoStraight"
+    checked
     name="demo-7"
     label="Rounded"
     shape="rounded"
-    class="text-yellow-500"
+    :classes="{ wrapper: 'text-yellow-500' }"
   />
 
-  <!-- Pink color -->
   <BaseCheckbox
-    v-model="demoStraight"
+    checked
     name="demo-8"
     label="Rounded"
     shape="rounded"
-    class="text-pink-500"
+    :classes="{ wrapper: 'text-pink-500' }"
+  />
+
+  <BaseCheckbox
+    checked
+    name="demo-9"
+    label="Curved"
+    shape="curved"
+    :classes="{ wrapper: 'text-indigo-500' }"
+  />
+
+  <BaseCheckbox
+    checked
+    name="demo-10"
+    label="Curved"
+    shape="curved"
+    :classes="{ wrapper: 'text-primary-500' }"
+  />
+
+  <BaseCheckbox
+    checked
+    name="demo-11"
+    label="Circle"
+    shape="circle"
+    :classes="{ wrapper: 'text-amber-500' }"
+  />
+
+  <BaseCheckbox
+    checked
+    name="demo-12"
+    label="Circle"
+    shape="circle"
+    :classes="{ wrapper: 'text-rose-500' }"
   />
 </template>
 ```

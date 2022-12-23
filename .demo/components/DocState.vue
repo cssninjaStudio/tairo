@@ -21,7 +21,7 @@ const props = withDefaults(defineProps<DocStateProps>(), {
       <div
         class="flex break-words font-sans text-sm text-muted-500 dark:text-muted-200"
       >
-        <span>{{ props.state }}</span>
+        <pre>{{ props.state }}</pre>
       </div>
     </div>
   </div>

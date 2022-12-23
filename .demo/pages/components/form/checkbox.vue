@@ -7,8 +7,8 @@ import straight from '~/documentation/form/checkbox/straight.md?raw'
 
 const demoOne = ref(true)
 const demoTwo = ref(true)
-const demoThree = ref(true)
-const demoFour = ref(true)
+const demoThree = ref([])
+const demoFour = ref('')
 const demoStraight = ref(true)
 
 definePageMeta({
@@ -44,7 +44,7 @@ definePageMeta({
                     name="demo-1"
                     label="Straight checkbox"
                     shape="straight"
-                    class="text-gray-500"
+                    :classes="{ 'wrapper': 'text-gray-500' }"
                   />
                 </div>
                 <!-- State box -->
@@ -68,7 +68,7 @@ definePageMeta({
                     name="demo-2"
                     label="Rounded checkbox"
                     shape="rounded"
-                    class="text-gray-500"
+                    :classes="{ 'wrapper': 'text-gray-500' }"
                   />
                 </div>
                 <!-- State box -->
@@ -85,14 +85,23 @@ definePageMeta({
         <DocSection title="Checkbox curved" tag="1.0.0">
           <DocComponent label="Curved checkbox example">
             <template #demo>
-              <div class="flex items-end gap-6">
-                <div class="w-full max-w-sm space-y-4">
+              <div class="flex items-start gap-6">
+                <div class="w-full max-w-sm space-x-2">
                   <BaseCheckbox
                     v-model="demoThree"
-                    name="demo-3"
+                    value="Option 1"
+                    name="demo-3-1"
                     label="Curved checkbox"
                     shape="curved"
-                    class="text-gray-500"
+                    :classes="{ 'wrapper': 'text-gray-500' }"
+                  />
+                  <BaseCheckbox
+                    v-model="demoThree"
+                    value="Option 2"
+                    name="demo-3-2"
+                    label="Curved checkbox"
+                    shape="curved"
+                    :classes="{ 'wrapper': 'text-gray-500' }"
                   />
                 </div>
                 <!-- State box -->
@@ -116,7 +125,9 @@ definePageMeta({
                     name="demo-4"
                     label="Circle checkbox"
                     shape="circle"
-                    class="text-gray-500"
+                    :true-value="'checked'"
+                    :false-value="'not-checked'"
+                    :classes="{ 'wrapper': 'text-gray-500' }"
                   />
                 </div>
                 <!-- State box -->
@@ -139,67 +150,67 @@ definePageMeta({
             <template #demo>
               <BaseFocusLoop class="flex flex-wrap items-end gap-4">
                 <BaseCheckbox
-                  v-model="demoStraight"
+                  checked
                   name="demo-5"
                   label="Straight"
                   shape="straight"
-                  class="text-gray-500"
+                  :classes="{ 'wrapper': 'text-gray-500' }"
                 />
 
                 <BaseCheckbox
-                  v-model="demoStraight"
+                  checked
                   name="demo-6"
                   label="Straight"
                   shape="straight"
-                  class="text-emerald-500"
+                  :classes="{ 'wrapper': 'text-emerald-500' }"
                 />
 
                 <BaseCheckbox
-                  v-model="demoStraight"
+                  checked
                   name="demo-7"
                   label="Rounded"
                   shape="rounded"
-                  class="text-yellow-500"
+                  :classes="{ 'wrapper': 'text-yellow-500' }"
                 />
 
                 <BaseCheckbox
-                  v-model="demoStraight"
+                  checked
                   name="demo-8"
                   label="Rounded"
                   shape="rounded"
-                  class="text-pink-500"
+                  :classes="{ 'wrapper': 'text-pink-500' }"
                 />
 
                 <BaseCheckbox
-                  v-model="demoStraight"
+                  checked
                   name="demo-9"
                   label="Curved"
                   shape="curved"
-                  class="text-indigo-500"
+                  :classes="{ 'wrapper': 'text-indigo-500' }"
                 />
 
                 <BaseCheckbox
-                  v-model="demoStraight"
+                  checked
                   name="demo-10"
                   label="Curved"
                   shape="curved"
-                  class="text-primary-500"
+                  :classes="{ 'wrapper': 'text-primary-500' }"
                 />
 
                 <BaseCheckbox
-                  v-model="demoStraight"
+                  checked
                   name="demo-11"
                   label="Circle"
                   shape="circle"
-                  class="text-amber-500"
+                  :classes="{ 'wrapper': 'text-amber-500' }"
                 />
 
                 <BaseCheckbox
-                  v-model="demoStraight"
+                  checked
                   name="demo-12"
                   label="Circle"
                   shape="circle"
-                  class="text-rose-500"
+                  :classes="{ 'wrapper': 'text-rose-500' }"
                 />
               </BaseFocusLoop>
             </template>
