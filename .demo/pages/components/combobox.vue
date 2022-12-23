@@ -163,6 +163,7 @@ definePageMeta({
                   v-model="selectedFramework"
                   label="Framework"
                   :items="frameworks"
+                  value-property="name"
                   shape="rounded"
                 />
 
@@ -170,6 +171,7 @@ definePageMeta({
                   v-model="selectedFramework"
                   label="Framework"
                   :items="frameworks"
+                  value-property="name"
                   shape="curved"
                 />
 
@@ -177,6 +179,7 @@ definePageMeta({
                   v-model="selectedFramework"
                   label="Framework"
                   :items="frameworks"
+                  value-property="name"
                   shape="full"
                 />
               </div>
@@ -273,6 +276,28 @@ definePageMeta({
                   v-model="selectedPerson"
                   label="Assignee"
                   :items="people"
+                  value-property="name"
+                  text-property="text"
+                  media-property="media"
+                />
+              </div>
+            </template>
+            <template #code>
+              <DocMarkdown :source="media" class="prose max-w-full" />
+            </template>
+          </DocComponent>
+        </DocSection>
+
+        <!-- Combobox multiple -->
+        <DocSection title="Combobox" tag="1.0.0">
+          <DocComponent label="Combo multiple example">
+            <template #demo>
+              <div class="flex max-w-xs items-end">
+                <BaseListbox
+                  v-model="selectedPerson"
+                  label="Assignee"
+                  :items="people"
+                  multiple
                   value-property="name"
                   text-property="text"
                   media-property="media"

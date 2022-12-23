@@ -21,6 +21,7 @@ export default defineNuxtConfig({
     },
   },
   componentMeta: {
+    exclude: ['nuxt/dist', '@nuxt/ui-templates/dist', 'tairo/.demo/components'],
     checkerOptions: {
       forceUseTs: true,
       schema: {
