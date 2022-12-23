@@ -2,6 +2,7 @@
 import avatarSlot from '~/documentation/dropdown/avatar-slot.md?raw'
 import buttonLeft from '~/documentation/dropdown/button-left.md?raw'
 import buttonRight from '~/documentation/dropdown/button-right.md?raw'
+import compact from '~/documentation/dropdown/compact.md?raw'
 import contextLeft from '~/documentation/dropdown/context-left.md?raw'
 import contextRight from '~/documentation/dropdown/context-right.md?raw'
 import header from '~/documentation/dropdown/header.md?raw'
@@ -101,6 +102,46 @@ definePageMeta({
             </template>
             <template #code>
               <DocMarkdown :source="buttonRight" class="prose max-w-full" />
+            </template>
+          </DocComponent>
+        </DocSection>
+
+        <!-- Dropdown menu compact -->
+        <DocSection title="Compact menu" tag="1.0.0">
+          <DocComponent label="Dropdown with compact menu">
+            <template #demo>
+              <div class="flex items-end">
+                <BaseDropdown
+                  flavor="button"
+                  label="Dropdown"
+                  orientation="start"
+                  compact
+                >
+                  <BaseDropdownItem>
+                    Profile
+
+                    <template #text> View your profile </template>
+                  </BaseDropdownItem>
+                  <BaseDropdownItem
+                    to="/"
+                    title="Projects"
+                    text="View your projects"
+                  />
+                  <BaseDropdownItem
+                    to="/"
+                    title="Team"
+                    text="Manage your team"
+                  />
+                  <BaseDropdownItem
+                    to="/"
+                    title="Settings"
+                    text="Set your preferences"
+                  />
+                </BaseDropdown>
+              </div>
+            </template>
+            <template #code>
+              <DocMarkdown :source="compact" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
