@@ -157,9 +157,14 @@ export default defineComponent({
 }
 
 .markdown :deep(.shiki .highlighted-line) {
-  background-color: #3d4148;
-  padding: 2px 2px 4px 0;
-  border-radius: 0.1rem;
+  /* border: dotted 1px; */
+  background-color: var(--color-primary-100);
+  padding: 4px 4px 4px 6px;
+  margin-left: -6px;
+  /* border-radius: 1rem; */
+}
+:global(.dark .markdown .shiki .highlighted-line) {
+  background-color: #0d0e14;
 }
 
 .markdown :deep(.shiki code) {
