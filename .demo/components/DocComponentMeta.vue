@@ -1,21 +1,61 @@
-<script lang="ts">
-import 'prismjs'
-// import 'prismjs/components/prism-typescript'
-import 'prism-theme-vars/base.css'
-import '~/assets/css/modules/prism.css'
-</script>
-
 <script setup lang="ts">
+import { kebabCase } from 'scule'
 import type { ComponentMeta } from 'vue-component-meta'
 import { Component } from '@nuxt/schema'
 import type { NuxtComponentMetaNames } from '#nuxt-component-meta/types'
-export type ComponentData = Component & { meta: ComponentMeta }
+export type Componendivata = Component & { meta: ComponentMeta }
 
 export interface DocProperties {
   name: NuxtComponentMetaNames
 }
 const props = defineProps<DocProperties>()
 const componentMeta = await useComponentMeta(props.name)
+
+function getPropertySnippet (prop: ComponentMeta['props'][0]) {
+  return [
+    '```vue',
+    `\u003Cscript setup lang="ts"\u003E`,
+    `const ${prop.name} = ref\u003C${prop.type}\u003E(${prop.default})`,
+    `\u003C/script\u003E`,
+    ``,
+    `\u003Ctemplate\u003E`,
+    `  \u003C${props.name}`,
+    `    :${kebabCase(prop.name)}="${prop.name}"`,
+    `  /\u003E`,
+    `\u003C/template\u003E`,
+    '```',
+  ].join('\n')
+}
+function getSlotSnippet (slot: ComponentMeta['slots'][0]) {
+  return [
+    '```vue',
+    `\u003Ctemplate\u003E`,
+    `  \u003C${props.name}\u003E`,
+    `    \u003Ctemplate #${slot.name}="values: ${slot.type}"\u003E`,
+    `      \u003C!-- Slot content --\u003E`,
+    `    \u003C/template\u003E`,
+    `  \u003C/${props.name}\u003E`,
+    `\u003C/template\u003E`,
+    '```',
+  ].join('\n')
+}
+function getEventsSnippet (event: ComponentMeta['events'][0]) {
+  return [
+    '```vue',
+    `\u003Cscript setup lang="ts"\u003E`,
+    `const handler = (${event.type.substring(1, event.type.length - 1)}) =\u003E {`,
+    `  // ...`,
+    `}`,
+    `\u003C/script\u003E`,
+    ``,
+    `\u003Ctemplate\u003E`,
+    `  \u003C${props.name}`,
+    `    @${event.name}="handler"`,
+    `  /\u003E`,
+    `\u003C/template\u003E`,
+    '```',
+  ].join('\n')
+}
 </script>
 
 <template>
@@ -25,7 +65,7 @@ const componentMeta = await useComponentMeta(props.name)
       :title="`<${componentMeta?.pascalName}>`"
     >
       <div
-        class="rounded-md border border-muted-200 bg-white transition-shadow duration-300 hover:shadow-lg dark:border-muted-700 dark:bg-muted-800"
+        class="rounded-md border border-muted-200 bg-white divansition-shadow duration-300 hover:shadow-lg dark:border-muted-700 dark:bg-muted-800"
       >
         <!-- Props display -->
         <div v-if="componentMeta.meta.props.length > 0" class="mx-auto w-full">
@@ -37,41 +77,35 @@ const componentMeta = await useComponentMeta(props.name)
               :anchor="{ prefix: '', suffix: '#' }"
               class="text-muted-800 dark:text-muted-200"
             >
-              {{ componentMeta.pascalName }}Props
+              <TocAnchor :level="3" prefix="" suffix="¶" :id="`${componentMeta.kebabName}-properties`">Properties</TocAnchor>
             </BaseHeading>
           </header>
           <div class="p-3">
             <div class="overflow-x-auto">
-              <table class="w-full table-auto font-alt">
-                <thead
-                  class="bg-muted-50 text-xs font-semibold uppercase text-muted-400 dark:bg-muted-800"
+              <div class="w-full div-auto font-alt">
+                <div
+                  class="hidden md:block bg-muted-50 text-xs font-semibold uppercase text-muted-400 dark:bg-muted-800"
                 >
-                  <tr>
-                    <th class="whitespace-nowrap p-2">
+                  <div class="flex">
+                    <div class="whitespace-nowrap p-2 w-4/12">
                       <div class="text-left font-semibold">Name</div>
-                    </th>
-                    <th class="whitespace-nowrap p-2">
-                      <div class="text-left font-semibold">Type</div>
-                    </th>
-                    <th class="w-1/3 whitespace-nowrap p-2">
-                      <div class="text-left font-semibold">Value schema</div>
-                    </th>
-                    <th class="whitespace-nowrap p-2">
-                      <div class="text-left font-semibold">Default</div>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody
-                  class="divide-y divide-muted-100 text-sm dark:divide-muted-800"
+                    </div>
+                    <div class="whitespace-nowrap p-2 w-8/12">
+                      <div class="text-left font-semibold">Example</div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="divide-y divide-muted-100 text-sm dark:divide-muted-700"
                 >
-                  <tr v-for="prop in componentMeta.meta.props" :key="prop.name">
-                    <td class="p-2">
-                      <div class="flex items-center">
+                  <div class="flex flex-col md:flex-row py-4" v-for="prop in componentMeta.meta.props" :key="prop.name">
+                    <div class="p-2 md:w-4/12">
+                      <div class="flex">
                         <div
                           class="font-medium text-muted-800 dark:text-muted-100"
                         >
-                          <span>{{ prop.name }}</span>
-                          <sup v-if="prop.required" class="ml-1 text-rose-500"
+                          <span class="font-medium text-muted-800 dark:text-muted-100 font-mono">{{ prop.name }}</span>
+                          <sup v-if="prop.required" class="ml-1 text-rose-500 font-mono"
                             >Required</sup
                           >
                         </div>
@@ -88,45 +122,16 @@ const componentMeta = await useComponentMeta(props.name)
                           class="text-xs text-muted-400"
                         >
                           <span class="font-semibold">@{{ tag.name }}</span>
-                          <span
-                            v-if="tag.text"
-                            :class="
-                              tag.text.indexOf('\n') > -1
-                                ? 'block whitespace-pre'
-                                : 'pl-1'
-                            "
-                            >{{ tag.text }}</span
-                          >
+                          <span v-if="tag.text" class="block whitespace-pre" >{{ tag.text }}</span>
                         </div>
                       </div>
-                    </td>
-                    <td class="p-2">
-                      <div class="text-left text-success-500">
-                        {{ prop.type }}
-                      </div>
-                    </td>
-                    <td class="p-2">
-                      <DocSchemaMeta v-if="prop.schema" :schema="prop.schema" />
-                      <!-- <span
-                    v-for="(value, index) in prop.typeArray"
-                    :key="index"
-                    class="text-left font-medium text-primary-500"
-                  >
-                    <span v-if="index === 0">{{ value }}</span>
-                    <span v-else>
-                      <span class="text-muted-400">,</span>
-                      {{ value }}
-                    </span>
-                  </span> -->
-                    </td>
-                    <td class="p-2">
-                      <div class="text-left font-medium text-muted-400">
-                        {{ prop.default }}
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                    </div>
+                    <div class="p-2 md:w-8/12">
+                      <DocMarkdown no-lines no-highlight class="prose max-w-none text-sm" :source="getPropertySnippet(prop)" />
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -144,65 +149,47 @@ const componentMeta = await useComponentMeta(props.name)
               :anchor="{ prefix: '', suffix: '#' }"
               class="text-muted-800 dark:text-muted-200"
             >
-              {{ componentMeta.pascalName }}Events
+              <TocAnchor :level="3" prefix="" suffix="¶" :id="`${componentMeta.kebabName}-events`">Events</TocAnchor>
             </BaseHeading>
           </header>
           <div class="p-3">
             <div class="overflow-x-auto">
-              <table class="w-full table-auto font-alt">
-                <thead
-                  class="bg-muted-50 text-xs font-semibold uppercase text-muted-400 dark:bg-muted-800"
+              <div class="w-full div-auto font-alt">
+                <div
+                  class="hidden md:block bg-muted-50 text-xs font-semibold uppercase text-muted-400 dark:bg-muted-800"
                 >
-                  <tr>
-                    <th class="p-2">
-                      <div class="text-left font-semibold">Event</div>
-                    </th>
-                    <th class="w-1/3 p-2">
-                      <div class="text-left font-semibold">Emitted Value</div>
-                    </th>
-                    <th class="p-2">
-                      <div class="text-left font-semibold">Value schema</div>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody
+                  <div class="flex">
+                    <div class="p-2 w-4/12">
+                      <div class="text-left font-semibold">Name</div>
+                    </div>
+                    <div class="p-2 w-8/12">
+                      <div class="text-left font-semibold">Example</div>
+                    </div>
+                  </div>
+                </div>
+                <div
                   class="divide-y divide-muted-100 text-sm dark:divide-muted-800"
                 >
-                  <tr
+                  <div
+                    class="flex flex-col md:flex-row py-4"
                     v-for="event in componentMeta.meta.events"
                     :key="event.type"
                   >
-                    <td class="p-2">
+                    <div class="p-2 md:w-4/12">
                       <div class="flex items-center">
                         <div
-                          class="font-medium text-muted-800 dark:text-muted-100"
+                          class="font-medium text-muted-800 dark:text-muted-100 font-mono"
                         >
                           @{{ event.name }}
                         </div>
                       </div>
-                    </td>
-                    <td class="p-2">
-                      <span class="text-left font-medium text-primary-500">
-                        {{ event.type }}
-                      </span>
-                      <!-- <span
-                      class="text-left font-medium text-primary-500"
-                    >
-                      <span
-                        >{{ param.name }}: {{ param.type }}
-                        {{ param.isOptional ? 'Optional' : 'Required' }}</span
-                      >
-                    </span> -->
-                    </td>
-                    <td class="p-2">
-                      <DocSchemaMeta
-                        v-if="event.schema"
-                        :schema="event.schema[0]"
-                      />
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                    </div>
+                    <div class="p-2 md:w-8/12">
+                      <DocMarkdown no-lines no-highlight class="prose max-w-none text-sm" :source="getEventsSnippet(event)" />
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -220,59 +207,43 @@ const componentMeta = await useComponentMeta(props.name)
               :anchor="{ prefix: '', suffix: '#' }"
               class="text-muted-800 dark:text-muted-200"
             >
-              {{ componentMeta.pascalName }}Slots
+              <TocAnchor :level="3" prefix="" suffix="¶" :id="`${componentMeta.kebabName}-slots`">Slots</TocAnchor>
             </BaseHeading>
           </header>
           <div class="p-3">
             <div class="overflow-x-auto">
-              <table class="w-full table-auto font-alt">
-                <thead
-                  class="bg-muted-50 text-xs font-semibold uppercase text-muted-400 dark:bg-muted-800"
+              <div class="w-full div-auto font-alt">
+                <div
+                  class="hidden md:block bg-muted-50 text-xs font-semibold uppercase text-muted-400 dark:bg-muted-800"
                 >
-                  <tr>
-                    <th class="whitespace-nowrap p-2">
-                      <div class="text-left font-semibold">Slot</div>
-                    </th>
-                    <th class="whitespace-nowrap p-2">
-                      <div class="text-left font-semibold">v-slot Schema</div>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody
+                  <div class="flex">
+                    <div class="p-2 w-4/12">
+                      <div class="text-left font-semibold">Name</div>
+                    </div>
+                    <div class="p-2 w-8/12">
+                      <div class="text-left font-semibold">Example</div>
+                    </div>
+                  </div>
+                </div>
+                <div
                   class="divide-y divide-muted-100 text-sm dark:divide-muted-800"
                 >
-                  <tr v-for="slot in componentMeta.meta.slots" :key="slot.name">
-                    <td class="whitespace-nowrap p-2">
+                  <div class="flex flex-col md:flex-row py-4" v-for="slot in componentMeta.meta.slots" :key="slot.name">
+                    <div class="p-2 md:w-4/12">
                       <div class="flex items-center">
                         <div
-                          class="font-medium text-muted-800 dark:text-muted-100"
+                          class="font-medium text-muted-800 dark:text-muted-100 font-mono"
                         >
                           #{{ slot.name }}
                         </div>
                       </div>
-                    </td>
-                    <td class="p-2">
-                      <!-- <span
-                    v-for="(value, v) in slot.properties"
-                    :key="v"
-                    class="text-left font-medium text-primary-500"
-                  >
-                    <span v-if="v === 0">{{ value }}</span>
-                    <span v-else>
-                      <span class="text-muted-400">,</span>
-                      {{ value }}
-                    </span>
-                  </span> -->
-                      <span>
-                        <DocSchemaMeta
-                          v-if="slot.schema"
-                          :schema="slot.schema"
-                        />
-                      </span>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                    </div>
+                    <div class="p-2 md:w-8/12">
+                      <DocMarkdown no-lines no-highlight class="prose max-w-none text-sm" :source="getSlotSnippet(slot)" />
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -280,11 +251,3 @@ const componentMeta = await useComponentMeta(props.name)
     </DocSection>
   </div>
 </template>
-
-<style scoped>
-:deep(pre[class*='language-']) {
-  --prism-background: transparent;
-  --prism-block-padding-x: 0;
-  --prism-block-padding-y: 0.3rem;
-}
-</style>

@@ -18,7 +18,7 @@ const props = withDefaults(defineProps<TocAnchorProps>(), {
     'hidden group-hover:inline-block group-focus:inline-block group-visible:inline-block leading-6 text-primary-300 absolute -left-5 top-0',
   suffix: '',
   suffixClasses:
-    'hidden group-hover:inline-block group-focus:inline-block group-visible:inline-block leading-6 text-primary-300 absolute -right-5 top-0',
+    'hidden group-hover:inline-block group-focus:inline-block group-visible:inline-block leading-6 text-primary-300 absolute -right-5 -top-1',
 })
 
 const { register } = useToc()

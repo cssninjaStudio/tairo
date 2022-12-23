@@ -50,23 +50,13 @@ const activeTab = ref('demo')
     </div>
 
     <div>
-      <div v-show="activeTab === 'demo'">
+      <div v-if="activeTab === 'demo'">
         <slot name="demo"></slot>
       </div>
 
-      <div v-show="activeTab === 'code'">
+      <div v-else-if="activeTab === 'code'">
         <slot name="code"></slot>
       </div>
     </div>
   </div>
 </template>
-
-<style>
-.doc-component pre.shiki {
-  background: var(--color-muted-100) !important;
-}
-
-.dark .doc-component pre.shiki {
-  background: var(--color-muted-900) !important;
-}
-</style>

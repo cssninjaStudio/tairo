@@ -50,10 +50,18 @@ export default defineComponent({
       type: String,
       default: '',
     },
+    noLines: {
+      type: Boolean,
+    },
+    noHighlight: {
+      type: Boolean,
+    },
   },
   setup(props) {
     const processor = ref<Processor>()
     const colorMode = useColorMode()
+    const loaded = ref(false)
+    const html = ref('')
     const isDark = computed({
       get() {
         return colorMode.value === 'dark'
@@ -119,18 +127,21 @@ export default defineComponent({
         .use(rehypeStringify)
     })
 
-    const html = computed(() => {
-      if (!processor.value) return ''
-      if (!props.source) return ''
+    watchEffect(async () => {
+      const _processor = unref(processor)
+      if (!props.source) return
+      if (!_processor) return
 
-      return processor.value.processSync(props.source).toString()
+      html.value = (await _processor.process(props.source)).toString()
+      loaded.value = true
     })
-
-    return () =>
-      h('div', {
-        class: 'markdown',
+    return () => {
+      if (!loaded.value) return h(resolveComponent('BasePlaceload'), { class: 'h-24 w-full rounded' })
+      return h('div', {
+        class: 'markdown' + (props.noLines ? '' : ' with-line-number') + (props.noHighlight ? '' : ' with-highlight'),
         innerHTML: html.value,
       })
+    }
   },
 })
 </script>
@@ -156,23 +167,27 @@ export default defineComponent({
   opacity: 1;
 }
 
-.markdown :deep(.shiki .highlighted-line) {
-  /* border: dotted 1px; */
+.markdown.with-highlight :deep(.shiki .highlighted-line) {
   background-color: var(--color-primary-100);
   padding: 4px 4px 4px 6px;
   margin-left: -6px;
-  /* border-radius: 1rem; */
 }
-:global(.dark .markdown .shiki .highlighted-line) {
+.markdown :deep(.shiki) {
+  background: var(--color-muted-100) !important;
+}
+:global(.dark .markdown .shiki) {
+  background: var(--color-muted-900) !important;
+}
+:global(.dark .markdown.with-highlight .shiki .highlighted-line) {
   background-color: #0d0e14;
 }
 
-.markdown :deep(.shiki code) {
+.markdown.with-line-number :deep(.shiki code) {
   counter-reset: step;
   counter-increment: step 0;
 }
 
-.markdown :deep(.shiki code .line::before) {
+.markdown.with-line-number :deep(.shiki code .line::before) {
   content: counter(step);
   counter-increment: step;
   width: 1rem;
