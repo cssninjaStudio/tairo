@@ -12,16 +12,13 @@ const envModules = {
 
 export default defineNuxtConfig({
   extends: envModules.ui,
-  modules: ['nuxt-config-schema', /* '@pinia/nuxt', */ '@nuxt/image-edge'],
+  modules: ['nuxt-config-schema', '@nuxt/image-edge'],
   css: [
     resolve('./assets/css/modules/variables.css'),
     resolve('./assets/css/modules/slider.css'),
     resolve('./assets/css/modules/apex.css'), // @todo: this should be lazy loaded
     resolve('./assets/css/keyframes.css'),
   ],
-  // imports: {
-  //   dirs: [resolve('./stores')],
-  // },
   postcss: {
     plugins: {
       autoprefixer: {},
