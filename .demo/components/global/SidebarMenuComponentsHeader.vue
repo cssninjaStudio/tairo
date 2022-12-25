@@ -2,7 +2,7 @@
 import { onKeyStroke } from '@vueuse/core'
 import type { Directive } from 'vue'
 
-const { toggleSidebar } = useSidebar()
+const sidebar = reactive(useSidebar())
 const { displayMode, isSearching, filter, reset } = useDocumentationMenu()
 
 // this is a dynamic directive only available in this component with v-focus
@@ -80,7 +80,7 @@ onKeyStroke(['Escape'], () => {
         <button
           type="button"
           class="ml-auto flex h-10 w-10 items-center justify-center rounded-full text-muted-400 transition-colors duration-300 hover:bg-muted-100 hover:text-muted-600 xl:hidden"
-          @click="toggleSidebar"
+          @click="sidebar.toggle"
         >
           <Icon name="feather:chevron-left" class="h-6 w-6" />
         </button>

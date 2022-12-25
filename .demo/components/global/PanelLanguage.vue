@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { closePanel } = usePanels()
+const { close } = usePanels()
 </script>
 
 <template>
@@ -15,7 +15,7 @@ const { closePanel } = usePanels()
       <button
         type="button"
         class="flex h-10 w-10 items-center justify-center rounded-full text-muted-400 transition-colors duration-300 hover:bg-muted-100 hover:text-muted-600 dark:hover:bg-muted-700 dark:hover:text-white"
-        @click="closePanel"
+        @click="close"
       >
         <Icon name="feather:chevron-right" class="h-6 w-6" />
       </button>

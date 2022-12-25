@@ -1,52 +1,87 @@
-import type { Component, ConcreteComponent } from 'vue'
 import type { TairoPanelConfig } from '../nuxt.schema'
 
 export interface LayoutPanel {
   name: string
-  component: Component | ConcreteComponent | string
+  component: string
   position: 'right' | 'left'
 }
 
+/**
+ * Composable to manage panels
+ *
+ * You can define panels in your app.config.ts
+ *
+ * ```ts
+ * export default defineAppConfig({
+ *   tairo: {
+ *     panels: [
+ *       {
+ *         // Unique name of the panel, used to open it
+ *         name: 'panel-name',
+ *         // The component name of the panel
+ *         // It should be registered in the app as a global component
+ *         component: 'PanelComponent',
+ *         // The position of the panel
+ *         position: 'left',
+ *       },
+ *     ],
+ *   },
+ * })
+ * ```
+ *
+ * @example
+ * ```vue
+ * <script setup lang="ts">
+ * const { open } = usePanels()
+ * </script>
+ *
+ * <template>
+ *   <button @click="open('panel-name')">Open panel</button>
+ * </template>
+ * ```
+ */
 export const usePanels = () => {
   const app = useAppConfig()
 
-  const panels =
-    (app.tairo?.panels as TairoPanelConfig[]).map((panel) => {
-      const item: LayoutPanel = {
+  const panels = computed(
+    () =>
+      (app.tairo?.panels as TairoPanelConfig[]).map((panel) => ({
         name: panel.name,
         position: panel.position ?? 'left',
-        component: resolveComponent(panel.component),
-      }
-      return item
-    }) ?? []
+        component: panel.component,
+      })) ?? [],
+  )
 
-  const activePanelName = useState('panels-active', () => '')
-  const panelTransitionFrom = useState('panels-transition-from', () => 'left')
+  const currentName = useState('panels-current-name', () => '')
 
-  const activePanel = computed(() => {
-    if (!activePanelName.value) {
+  // we need to know from which side the panel is coming from
+  // and preserve it in the state so we can animate it when it's closing
+  const transitionFrom = useState('panels-transition-from', () => 'left')
+
+  const current = computed(() => {
+    if (!currentName.value) {
       return undefined
     }
 
-    return panels.find((panel) => panel.name === activePanelName.value)
+    return panels.value.find((panel) => panel.name === currentName.value)
   })
 
-  function openPanel(name: string) {
-    const panel = panels.find(({ name: panelName }) => panelName === name)
+  function open(name: string) {
+    const panel = panels.value.find(({ name: panelName }) => panelName === name)
     if (panel) {
-      panelTransitionFrom.value = panel.position
-      activePanelName.value = panel.name
+      transitionFrom.value = panel.position
+      currentName.value = panel.name
     }
   }
-  function closePanel() {
-    activePanelName.value = ''
+  function close() {
+    currentName.value = ''
   }
 
   return {
-    panels: markRaw(panels), // markRaw is used to prevent Vue to set reactive if used in template
-    activePanel,
-    panelTransitionFrom,
-    openPanel,
-    closePanel,
+    panels,
+    current,
+    transitionFrom,
+    open,
+    close,
   }
 }

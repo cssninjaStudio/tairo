@@ -1,11 +1,14 @@
 <script setup lang="ts">
-const { activeSidebar, sidebars, isSidebarOpened, toggleActiveSidebar } =
-  useSidebar()
+const sidebar = reactive(useSidebar())
 
-const startSidebars = sidebars.filter(
-  (sidebar) => !sidebar.position || sidebar.position === 'start',
+const startSidebars = computed(() =>
+  sidebar.sidebars?.filter(
+    (sidebar) => !sidebar.position || sidebar.position === 'start',
+  ),
 )
-const endSidebars = sidebars.filter((sidebar) => sidebar.position === 'end')
+const endSidebars = computed(() =>
+  sidebar.sidebars?.filter((sidebar) => sidebar.position === 'end'),
+)
 </script>
 
 <template>
@@ -15,7 +18,7 @@ const endSidebars = sidebars.filter((sidebar) => sidebar.position === 'end')
     <!-- Icon sidebar -->
     <div
       class="pointer-events-auto relative z-20 flex h-full w-[80px] flex-col border-r border-muted-200 bg-white transition-all duration-300 dark:border-muted-700 dark:bg-muted-800"
-      :class="isSidebarOpened ? '' : '-translate-x-full xl:translate-x-0'"
+      :class="sidebar.isOpen ? '' : '-translate-x-full xl:translate-x-0'"
     >
       <slot></slot>
 
@@ -41,32 +44,23 @@ const endSidebars = sidebars.filter((sidebar) => sidebar.position === 'end')
 
     <!-- Menu panel -->
     <div
-      v-if="activeSidebar"
+      v-if="sidebar.current && sidebar.current?.component"
       class="pointer-events-auto relative z-10 h-full w-[220px] border-r border-muted-200 bg-white transition-all duration-300 dark:border-muted-700 dark:bg-muted-800"
-      :class="isSidebarOpened ? '' : 'translate-x-[calc(-100%_-_80px)]'"
+      :class="sidebar.isOpen ? '' : 'translate-x-[calc(-100%_-_80px)]'"
     >
-      <slot
-        name="subnav"
-        v-bind="{
-          activeSidebar,
-          sidebars,
-          isSidebarOpened,
-          toggleActiveSidebar,
-        }"
-      >
+      <slot name="subnav">
         <div class="flex h-screen flex-col">
           <component
-            :is="activeSidebar.componentHeader"
-            v-if="activeSidebar.componentHeader"
+            :is="resolveComponent(sidebar.current.componentHeader)"
+            v-if="sidebar.current.componentHeader"
           ></component>
 
           <!-- Body -->
-          <div
-            v-if="activeSidebar?.component"
-            class="slimscroll relative h-full w-full overflow-y-auto"
-          >
+          <div class="slimscroll relative h-full w-full overflow-y-auto">
             <div class="px-6 pb-8">
-              <component :is="activeSidebar.component"></component>
+              <component
+                :is="resolveComponent(sidebar.current.component)"
+              ></component>
             </div>
 
             <div

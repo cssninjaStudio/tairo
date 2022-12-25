@@ -127,7 +127,7 @@ definePageMeta({
             <template #demo>
               <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4 px-4">
-                  <Slider v-model="value" class="circle-tooltip" />
+                  <Slider v-model="value" classes="circle-tooltip" />
                 </div>
                 <!-- State box -->
                 <DocState :state="value" height="80px" />
@@ -239,11 +239,11 @@ definePageMeta({
         </DocSection>
 
         <!-- Slider properties -->
-        <DocProps
+        <!-- <DocProps
           component="Slider"
           :properties="properties.props"
           :slots="properties.slots"
-        />
+        /> -->
       </template>
       <!-- Toc -->
       <template #toc>

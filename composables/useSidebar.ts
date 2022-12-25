@@ -1,14 +1,15 @@
-import type { ConcreteComponent, Component } from 'vue'
 import type { RouteLocationRaw } from 'vue-router'
 
 import type { TairoSidebarConfig } from '../nuxt.schema'
-import { Icon } from '#components'
 
 export interface SidebarItem {
   name: string
-  icon: Component
-  component?: Component | ConcreteComponent | string
-  componentHeader?: Component | ConcreteComponent | string
+  icon: {
+    name: string
+    class?: string
+  }
+  component?: string
+  componentHeader?: string | false
   to?: RouteLocationRaw
   click?: () => void | Promise<void>
   activePath?: string
@@ -18,84 +19,95 @@ export interface SidebarItem {
   position?: 'start' | 'end'
 }
 
+/**
+ * Composable to manage navigation of the sidebar layout
+ *
+ * You can define sidebar items in your app.config.ts
+ *
+ * ```ts
+ * export default defineAppConfig({
+ *   tairo: {
+ *     sidebars: [
+ *       {
+ *         name: 'Dashboards',
+ *         icon: { name: 'ph:sidebar-duotone', class: 'w-5 h-5' },
+ *
+ *         // You can define an active path to highlight the item
+ *         activePath: '/dashboards',
+ *
+ *         // You can chose to display a subsidebar by defining a component name
+ *         // It should be registered in the app as a global component
+ *         component: 'SidebarMenuDashboards',
+ *         componentHeader: 'SidebarMenuHeader',
+ *
+ *         // Or you can define a route to navigate to*
+ *         to: '/dashboards',
+ *
+ *         // Or you can define a click handler (eg. to open a panel)
+ *         click: () => {
+ *           const { open } = usePanels()
+ *           open('panel-name')
+ *         },
+ *       },
+ *     ],
+ *   },
+ * })
+ * ```
+ */
 export const useSidebar = () => {
-  const app = useAppConfig()
   const route = useRoute()
+  const app = useAppConfig()
 
-  const sidebars = (app.tairo.sidebars as TairoSidebarConfig[]).map(
-    (sidebar) => {
-      const item: SidebarItem = {
-        name: sidebar.name,
-        to: sidebar.to,
-        activePath: sidebar.activePath,
-        click: sidebar.click,
+  const sidebars = computed(
+    () =>
+      (app.tairo.sidebars as TairoSidebarConfig[]).map((sidebar) => ({
+        ...sidebar,
         position: sidebar.position ?? 'start',
-        icon: () =>
-          h(
-            Icon,
-            typeof sidebar.icon === 'string'
-              ? { name: sidebar.icon, class: 'w-5 h-5' }
-              : sidebar.icon,
-          ),
-        component: sidebar.component
-          ? resolveComponent(sidebar.component)
-          : undefined,
-        componentHeader: sidebar.componentHeader
-          ? resolveComponent(sidebar.componentHeader)
-          : undefined,
-      }
-      return item
-    },
+        icon:
+          typeof sidebar.icon === 'string'
+            ? { name: sidebar.icon, class: 'w-5 h-5' }
+            : sidebar.icon,
+      })) ?? [],
   )
 
-  // Sidebar
-  const sidebar = sidebars.find(
-    ({ activePath }) => activePath && route.path.startsWith(activePath),
-  )
-  const activeSidebarName = useState<string>(
-    'sidebar-name',
-    () => sidebar?.name || '',
-  )
-  const activeSidebar = computed(() => {
-    if (!activeSidebarName.value) {
+  const isOpen = useState('sidebar-open', () => false)
+  const currentName = useState('sidebar-name', () => '')
+
+  const current = computed(() => {
+    if (!currentName.value) {
       return undefined
     }
-    return sidebars.find(({ name }) => name === activeSidebarName.value)
+    return sidebars.value?.find(({ name }) => name === currentName.value)
   })
-  const isSidebarOpened = useState(
-    'sidebar-is-open',
-    () => activeSidebar.value !== null,
+
+  function toggle() {
+    isOpen.value = !isOpen.value
+  }
+
+  watch(
+    () => route.path,
+    () => {
+      const item = sidebars.value?.find(
+        ({ activePath }) => activePath && route.fullPath.startsWith(activePath),
+      )
+      currentName.value = item?.name || ''
+    },
+    { immediate: true },
   )
 
-  function toggleSidebar() {
-    isSidebarOpened.value = !isSidebarOpened.value
-  }
-
-  function toggleActiveSidebar(sidebar: SidebarItem) {
-    if (sidebar?.click) {
-      return sidebar?.click?.()
-    }
-
-    if (activeSidebar.value?.name === sidebar.name) {
-      toggleSidebar()
-    } else {
-      activeSidebarName.value = sidebar.name
-    }
-  }
-
   watchEffect(() => {
-    if (activeSidebar.value) {
-      isSidebarOpened.value = true
+    if (currentName.value) {
+      isOpen.value = true
     } else {
-      isSidebarOpened.value = false
+      isOpen.value = false
     }
   })
 
   return {
-    sidebars: markRaw(sidebars), // markRaw is used to prevent Vue to set reactive if used in template
-    activeSidebar,
-    isSidebarOpened,
-    toggleSidebar,
-    toggleActiveSidebar,
+    sidebars,
+    current,
+    currentName,
+    isOpen,
+    toggle,
   }
 }

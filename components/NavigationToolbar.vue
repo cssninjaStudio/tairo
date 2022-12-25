@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { openPanel } = usePanels()
+const { open } = usePanels()
 
 const route = useRoute()
 </script>
@@ -22,7 +22,7 @@ const route = useRoute()
     <button
       type="button"
       class="flex h-9 w-9 items-center justify-center rounded-full border border-muted-200 bg-white ring-1 ring-transparent transition-all duration-300 hover:ring-primary-500 hover:ring-offset-4 dark:border-muted-700 dark:bg-muted-800 dark:ring-offset-muted-900"
-      @click="openPanel('language')"
+      @click="open('language')"
     >
       <NuxtImg
         class="h-7 w-7 rounded-full"
@@ -36,7 +36,7 @@ const route = useRoute()
     <button
       type="button"
       class="flex h-9 w-9 items-center justify-center rounded-full border border-muted-200 bg-white ring-1 ring-transparent transition-all duration-300 hover:ring-primary-500 hover:ring-offset-4 dark:border-muted-700 dark:bg-muted-800 dark:ring-offset-muted-900"
-      @click="openPanel('activity')"
+      @click="open('activity')"
     >
       <Icon name="ph:circles-four-duotone" class="h-5 w-5 text-muted-400" />
     </button>

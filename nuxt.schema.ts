@@ -25,8 +25,28 @@ export default defineNuxtConfigSchema({
   appConfig: {
     tairo: {
       title: 'Tairo',
-      sidebars: [] as TairoSidebarConfig[],
+      sidebars: {
+        $schema: {
+          type: 'array',
+          items: {
+            type: 'object',
+            properties: {
+              name: { type: 'string' },
+            },
+          },
+        },
+      },
       panels: [] as TairoPanelConfig[],
     },
   },
 })
+
+// declare module '@nuxt/schema' {
+//   interface AppConfigInput {
+//     tairo?: {
+//       title?: string
+//       sidebars?: TairoSidebarConfig[]
+//       panels?: TairoPanelConfig[]
+//     }
+//   }
+// }

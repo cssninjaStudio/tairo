@@ -1,19 +1,19 @@
 <script setup lang="ts">
-const { activeSidebar, isSidebarOpened } = useSidebar()
+const sidebar = reactive(useSidebar())
 </script>
 
 <template>
   <div class="flex h-16 w-full items-center px-6">
     <div
-      v-if="activeSidebar"
+      v-if="sidebar.current"
       class="font-heading text-lg font-light capitalize text-muted-700 dark:text-white"
     >
-      {{ activeSidebar.name }}
+      {{ sidebar.current.name }}
     </div>
     <button
       type="button"
       class="ml-auto flex h-10 w-10 items-center justify-center rounded-full text-muted-400 transition-colors duration-300 hover:bg-muted-100 hover:text-muted-600 xl:hidden"
-      @click="isSidebarOpened = false"
+      @click="sidebar.isOpen = false"
     >
       <Icon name="feather:chevron-left" class="h-6 w-6" />
     </button>
