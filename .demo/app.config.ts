@@ -31,17 +31,17 @@ export default defineAppConfig({
       {
         name: 'Panels',
         icon: { name: 'ph:square-half-duotone', class: 'w-5 h-5' },
-        // click: () => {
-        //   // toggleLayoutModal()
-        // },
+        click: () => {
+          alert('clicked on layouts')
+        },
         position: 'end',
       },
       {
         name: 'Search',
         icon: { name: 'ph:magnifying-glass-duotone', class: 'w-5 h-5' },
         click: () => {
-          const { openPanel } = usePanels()
-          openPanel('search')
+          const { open } = usePanels()
+          open('search')
         },
         position: 'end',
       },

@@ -7,7 +7,7 @@ import {
   TransitionRoot,
 } from '@headlessui/vue'
 
-const { closePanel } = usePanels()
+const { close } = usePanels()
 
 const people = [
   {
@@ -66,7 +66,7 @@ const filteredPeople = computed(() =>
       <button
         type="button"
         class="flex h-10 w-10 items-center justify-center rounded-full text-muted-400 transition-colors duration-300 hover:bg-muted-100 hover:text-muted-600 dark:hover:bg-muted-700 dark:hover:text-white"
-        @click="closePanel"
+        @click="close"
       >
         <Icon name="feather:chevron-left" class="h-6 w-6" />
       </button>

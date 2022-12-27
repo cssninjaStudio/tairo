@@ -1,6 +1,6 @@
 <script setup lang="ts">
-const { isSidebarOpened } = useSidebar()
-const { activePanel, panelTransitionFrom, closePanel } = usePanels()
+const sidebar = reactive(useSidebar())
+const panels = reactive(usePanels())
 </script>
 
 <template>
@@ -24,7 +24,7 @@ const { activePanel, panelTransitionFrom, closePanel } = usePanels()
     <div
       class="bg-muted-100 dark:bg-muted-900 relative min-h-screen w-full px-4 transition-all duration-300 xl:px-10"
       :class="
-        isSidebarOpened
+        sidebar.isOpen
           ? 'xl:max-w-[calc(100%_-_300px)] xl:ml-[300px]'
           : 'xl:max-w-[calc(100%_-_80px)] xl:ml-[80px]'
       "
@@ -39,22 +39,22 @@ const { activePanel, panelTransitionFrom, closePanel } = usePanels()
     <Transition
       enter-active-class="transition-transform duration-300 ease-out"
       :enter-from-class="
-        panelTransitionFrom === 'left'
+        panels.transitionFrom === 'left'
           ? '-translate-x-full'
           : 'translate-x-full'
       "
       leave-active-class="transition-transform duration-300 ease-in"
       :leave-to-class="
-        panelTransitionFrom === 'left'
+        panels.transitionFrom === 'left'
           ? '-translate-x-full'
           : 'translate-x-full'
       "
     >
       <component
-        :is="activePanel.component"
-        v-if="activePanel?.component"
+        :is="resolveComponent(panels.current.component)"
+        v-if="panels.current?.component"
         class="fixed top-0 z-[100] h-full w-96"
-        :class="[activePanel.position === 'left' ? 'left-0' : 'right-0']"
+        :class="[panels.current.position === 'left' ? 'left-0' : 'right-0']"
       />
     </Transition>
 
@@ -62,11 +62,11 @@ const { activePanel, panelTransitionFrom, closePanel } = usePanels()
     <div
       class="bg-muted-800/60 fixed top-0 left-0 z-[99] h-full w-full cursor-pointer transition-opacity duration-300"
       :class="
-        activePanel
+        panels.current
           ? 'opacity-100 pointer-events-auto'
           : 'opacity-0 pointer-events-none'
       "
-      @click="closePanel"
+      @click="panels.close"
     />
 
     <NavigationCircularMenu />

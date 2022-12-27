@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { openPanel } = usePanels()
+const { open } = usePanels()
 const { y } = useNinjaWindowScroll()
 
 const isOpened = ref(false)
@@ -70,7 +70,7 @@ const isScrolled = computed(() => {
         <button
           type="button"
           class="flex h-9 w-9 items-center justify-center rounded-full bg-primary-700 transition-all duration-300"
-          @click="openPanel('language')"
+          @click="open('language')"
         >
           <NuxtImg
             class="h-7 w-7 rounded-full"
@@ -113,7 +113,7 @@ const isScrolled = computed(() => {
         <button
           type="button"
           class="flex h-9 w-9 items-center justify-center rounded-full bg-primary-700 transition-all duration-300"
-          @click="openPanel('activity')"
+          @click="open('activity')"
         >
           <Icon name="ph:circles-four-duotone" class="h-5 w-5 text-white" />
         </button>

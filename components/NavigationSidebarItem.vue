@@ -1,11 +1,21 @@
 <script setup lang="ts">
-import type { LazyNavigationSidebarItem } from '~~/composables/useSidebar'
+// import type { SidebarItem } from '../stores/sidebar'
+import type { SidebarItem } from '../composables/useSidebar'
 
-const { activeSidebar, toggleActiveSidebar } = useSidebar()
+const sidebar = reactive(useSidebar())
 
 const props = defineProps<{
-  sidebar: LazyNavigationSidebarItem
+  sidebar: SidebarItem
 }>()
+
+function onSidebarItemClick() {
+  if (typeof props.sidebar.click === 'function') {
+    return props.sidebar.click()
+  }
+
+  sidebar.currentName = props.sidebar.name
+  sidebar.isOpen = true
+}
 </script>
 
 <template>
@@ -16,7 +26,7 @@ const props = defineProps<{
       class="flex h-12 w-12 items-center justify-center rounded-2xl text-muted-400 transition-colors duration-300"
       :title="props.sidebar.name"
     >
-      <component :is="props.sidebar.icon" />
+      <Icon v-bind="props.sidebar.icon" />
     </NuxtLink>
 
     <button
@@ -24,14 +34,14 @@ const props = defineProps<{
       type="button"
       class="flex h-12 w-12 items-center justify-center rounded-2xl transition-colors duration-300"
       :class="
-        activeSidebar?.name === props.sidebar.name
+        sidebar.currentName === props.sidebar.name
           ? 'bg-primary-100 text-primary-500 dark:bg-primary-500/10'
           : 'text-muted-400'
       "
       :title="props.sidebar.name"
-      @click="() => toggleActiveSidebar(props.sidebar)"
+      @click="onSidebarItemClick"
     >
-      <component :is="props.sidebar.icon" />
+      <Icon v-bind="props.sidebar.icon" />
     </button>
   </div>
 </template>

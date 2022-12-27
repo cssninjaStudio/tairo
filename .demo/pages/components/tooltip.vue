@@ -123,11 +123,11 @@ definePageMeta({
         </DocSection>
 
         <!-- Tooltip properties -->
-        <DocProps
+        <!-- <DocProps
           component="Tooltip"
           :properties="properties.props"
           :slots="properties.slots"
-        />
+        /> -->
       </template>
       <!-- Toc -->
       <template #toc>
