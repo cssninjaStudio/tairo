@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   typescript: {
     includeWorkspace: true,
   },
-  modules: ['nuxt-component-meta'],
+  modules: ['nuxt-component-meta', 'nuxt-swiper'],
   tailwindcss: {
     config: tailwindConfig,
   },

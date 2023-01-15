@@ -76,6 +76,7 @@
   },
   "dependencies": {
     "apexcharts": "3.36.3",
+    "nuxt-swiper": "^0.1.6",
     "vue3-apexcharts": "1.4.1"
   }
 }

@@ -1,23 +1,15 @@
 {
-  "css.validate": true,
-  "css.lint.unknownAtRules": "ignore",
-  "less.validate": false,
-  "scss.validate": false,
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {
-    "source.fixAll": false,
-    "source.fixAll.eslint": true
+    // "source.fixAll": true,
+    "source.organizeImports": false
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[vue]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[js]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  },
-  "prettier.enable": true,
-  "eslint.alwaysShowStatus": true,
-  "eslint.packageManager": "yarn",
-  "eslint.validate": ["javascript", "javascriptreact", "vue"],
-  "tailwindCSS.experimental.configFile": ".demo/tailwind.config.cjs"
+  "tailwindCSS.experimental.configFile": ".demo/tailwind.config.cjs",
+  "typescript.tsdk": "node_modules/typescript/lib"
 }
