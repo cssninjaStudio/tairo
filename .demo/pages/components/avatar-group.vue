@@ -4,6 +4,25 @@ import medium from '~/documentation/avatar-group/medium.md?raw'
 import small from '~/documentation/avatar-group/small.md?raw'
 import tiny from '~/documentation/avatar-group/tiny.md?raw'
 
+const demoBreadcrumb = [
+  {
+    label: 'Home',
+    hideLabel: true,
+    icon: 'lucide:home',
+    to: '/',
+  },
+  {
+    label: 'Components Hub',
+    hideLabel: false,
+    to: '/',
+  },
+  {
+    label: 'Avatar group',
+    hideLabel: false,
+    to: '/',
+  },
+]
+
 const people = [
   {
     tooltip: 'Clarissa Perez',
@@ -39,7 +58,7 @@ definePageMeta({
 <template>
   <div>
     <!-- BreadCrumb -->
-    <BaseBreadcrumb />
+    <BaseBreadcrumb :items="demoBreadcrumb" />
 
     <!-- Documentation Layout -->
     <DocLayout>

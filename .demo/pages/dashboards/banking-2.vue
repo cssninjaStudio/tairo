@@ -147,7 +147,7 @@ const selectedBank = ref(banks[0])
                     sublabel: 'text',
                     media: 'media',
                   }"
-                  hide-label
+                  hideLabel
                 />
               </div>
             </div>

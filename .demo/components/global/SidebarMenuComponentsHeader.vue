@@ -86,7 +86,9 @@ onKeyStroke(['Escape'], () => {
         </button>
       </div>
       <div class="pb-5">
-        <BaseFocusLoop class="ml-6 max-w-[160px] flex items-end p-1 rounded-lg bg-muted-200 dark:bg-muted-700">
+        <BaseFocusLoop
+          class="ml-6 max-w-[160px] flex items-end p-1 rounded-lg bg-muted-200 dark:bg-muted-700"
+        >
           <BaseButtonAction
             shape="rounded"
             class="flex-1 focus:z-10"
@@ -94,7 +96,7 @@ onKeyStroke(['Escape'], () => {
             :muted="displayMode !== 'category'"
             @click="displayMode = 'category'"
           >
-            <span class="text-xs">By topic</span>
+            <span class="text-xs">Topics</span>
           </BaseButtonAction>
           <BaseButtonAction
             shape="rounded"
@@ -103,7 +105,7 @@ onKeyStroke(['Escape'], () => {
             :muted="displayMode !== 'component'"
             @click="displayMode = 'component'"
           >
-            <span class="text-xs">By names</span>
+            <span class="text-xs">Names</span>
           </BaseButtonAction>
         </BaseFocusLoop>
       </div>

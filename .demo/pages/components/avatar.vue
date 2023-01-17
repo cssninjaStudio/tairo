@@ -19,12 +19,31 @@ definePageMeta({
     components: ['BaseAvatar'],
   },
 })
+
+const demoBreadcrumb = [
+  {
+    label: 'Home',
+    hideLabel: true,
+    icon: 'lucide:home',
+    to: '/',
+  },
+  {
+    label: 'Components Hub',
+    hideLabel: false,
+    to: '/',
+  },
+  {
+    label: 'Avatars',
+    hideLabel: false,
+    to: '/',
+  },
+]
 </script>
 
 <template>
   <div>
     <!-- BreadCrumb -->
-    <BaseBreadcrumb />
+    <BaseBreadcrumb :items="demoBreadcrumb" />
 
     <!-- Documentation Layout -->
     <DocLayout>
@@ -196,41 +215,41 @@ definePageMeta({
                 <BaseAvatar
                   src="/img/avatars/1.svg"
                   size="xs"
-                  badge="/img/icons/flags/united-states-of-america.svg"
+                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
                 />
                 <BaseAvatar
                   src="/img/avatars/5.svg"
-                  badge="/img/icons/flags/united-states-of-america.svg"
+                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
                 />
                 <BaseAvatar
                   src="/img/avatars/4.svg"
                   size="md"
-                  badge="/img/icons/flags/united-states-of-america.svg"
+                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
                 />
                 <BaseAvatar
                   src="/img/avatars/3.svg"
                   size="lg"
-                  badge="/img/icons/flags/united-states-of-america.svg"
+                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
                 />
                 <BaseAvatar
                   src="/img/avatars/8.svg"
                   size="xl"
-                  badge="/img/icons/flags/united-states-of-america.svg"
+                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
                 />
                 <BaseAvatar
                   src="/img/avatars/16.svg"
                   size="2xl"
-                  badge="/img/icons/flags/united-states-of-america.svg"
+                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
                 />
                 <BaseAvatar
                   src="/img/avatars/2.svg"
                   size="3xl"
-                  badge="/img/icons/flags/united-states-of-america.svg"
+                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
                 />
                 <BaseAvatar
                   src="/img/avatars/20.svg"
                   size="4xl"
-                  badge="/img/icons/flags/united-states-of-america.svg"
+                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
                 />
               </div>
             </template>
@@ -249,48 +268,48 @@ definePageMeta({
                   src="/img/avatars/1.svg"
                   size="xs"
                   shape="square"
-                  badge="/img/icons/flags/united-states-of-america.svg"
+                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
                 />
                 <BaseAvatar
                   src="/img/avatars/5.svg"
                   shape="square"
-                  badge="/img/icons/flags/united-states-of-america.svg"
+                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
                 />
                 <BaseAvatar
                   src="/img/avatars/4.svg"
                   size="md"
                   shape="square"
-                  badge="/img/icons/flags/united-states-of-america.svg"
+                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
                 />
                 <BaseAvatar
                   src="/img/avatars/3.svg"
                   size="lg"
                   shape="square"
-                  badge="/img/icons/flags/united-states-of-america.svg"
+                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
                 />
                 <BaseAvatar
                   src="/img/avatars/8.svg"
                   size="xl"
                   shape="square"
-                  badge="/img/icons/flags/united-states-of-america.svg"
+                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
                 />
                 <BaseAvatar
                   src="/img/avatars/16.svg"
                   size="2xl"
                   shape="square"
-                  badge="/img/icons/flags/united-states-of-america.svg"
+                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
                 />
                 <BaseAvatar
                   src="/img/avatars/2.svg"
                   size="3xl"
                   shape="square"
-                  badge="/img/icons/flags/united-states-of-america.svg"
+                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
                 />
                 <BaseAvatar
                   src="/img/avatars/20.svg"
                   size="4xl"
                   shape="square"
-                  badge="/img/icons/flags/united-states-of-america.svg"
+                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
                 />
               </div>
             </template>
@@ -420,48 +439,48 @@ definePageMeta({
                 <BaseAvatar
                   text="CT"
                   size="xs"
-                  badge="/img/icons/flags/united-states-of-america.svg"
+                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
                   class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
                 />
                 <BaseAvatar
                   text="CT"
-                  badge="/img/icons/flags/united-states-of-america.svg"
+                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
                   class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
                 />
                 <BaseAvatar
                   text="CT"
                   size="md"
-                  badge="/img/icons/flags/united-states-of-america.svg"
+                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
                   class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
                 />
                 <BaseAvatar
                   text="CT"
                   size="lg"
-                  badge="/img/icons/flags/united-states-of-america.svg"
+                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
                   class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
                 />
                 <BaseAvatar
                   text="CT"
                   size="xl"
-                  badge="/img/icons/flags/united-states-of-america.svg"
+                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
                   class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
                 />
                 <BaseAvatar
                   text="CT"
                   size="2xl"
-                  badge="/img/icons/flags/united-states-of-america.svg"
+                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
                   class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
                 />
                 <BaseAvatar
                   text="CT"
                   size="3xl"
-                  badge="/img/icons/flags/united-states-of-america.svg"
+                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
                   class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
                 />
                 <BaseAvatar
                   text="CT"
                   size="4xl"
-                  badge="/img/icons/flags/united-states-of-america.svg"
+                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
                   class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
                 />
               </div>
@@ -479,55 +498,56 @@ definePageMeta({
               <div class="flex flex-wrap items-end gap-4">
                 <BaseAvatar
                   text="CT"
+                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
                   size="xs"
                   shape="square"
                   class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
                 />
                 <BaseAvatar
                   text="CT"
-                  badge="/img/icons/flags/united-states-of-america.svg"
+                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
                   shape="square"
                   class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
                 />
                 <BaseAvatar
                   text="CT"
                   size="md"
-                  badge="/img/icons/flags/united-states-of-america.svg"
+                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
                   shape="square"
                   class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
                 />
                 <BaseAvatar
                   text="CT"
                   size="lg"
-                  badge="/img/icons/flags/united-states-of-america.svg"
+                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
                   shape="square"
                   class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
                 />
                 <BaseAvatar
                   text="CT"
                   size="xl"
-                  badge="/img/icons/flags/united-states-of-america.svg"
+                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
                   shape="square"
                   class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
                 />
                 <BaseAvatar
                   text="CT"
                   size="2xl"
-                  badge="/img/icons/flags/united-states-of-america.svg"
+                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
                   shape="square"
                   class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
                 />
                 <BaseAvatar
                   text="CT"
                   size="3xl"
-                  badge="/img/icons/flags/united-states-of-america.svg"
+                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
                   shape="square"
                   class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
                 />
                 <BaseAvatar
                   text="CT"
                   size="4xl"
-                  badge="/img/icons/flags/united-states-of-america.svg"
+                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
                   shape="square"
                   class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
                 />
@@ -642,7 +662,10 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="circleFakeColors" class="prose max-w-full" />
+              <DocMarkdown
+                :source="circleFakeColors"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -770,7 +793,10 @@ definePageMeta({
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="squareFakeColors" class="prose max-w-full" />
+              <DocMarkdown
+                :source="squareFakeColors"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>

@@ -6,13 +6,13 @@ const sidebar = reactive(useSidebar())
   <div class="flex h-16 w-full items-center px-6">
     <div
       v-if="sidebar.current"
-      class="font-heading text-lg font-light capitalize text-muted-700 dark:text-white"
+      class="font-heading text-muted-700 text-lg font-light capitalize dark:text-white"
     >
       {{ sidebar.current.name }}
     </div>
     <button
       type="button"
-      class="ml-auto flex h-10 w-10 items-center justify-center rounded-full text-muted-400 transition-colors duration-300 hover:bg-muted-100 hover:text-muted-600 xl:hidden"
+      class="text-muted-400 hover:bg-muted-100 hover:text-muted-600 ml-auto flex h-10 w-10 items-center justify-center rounded-full transition-colors duration-300 xl:hidden"
       @click="sidebar.isOpen = false"
     >
       <Icon name="feather:chevron-left" class="h-6 w-6" />

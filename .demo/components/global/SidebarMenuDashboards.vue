@@ -227,7 +227,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
               <ul class="py-2 pl-3">
                 <li class="flex h-8 items-center">
                   <NuxtLink
-                    to="/"
+                    to="/dashboards/flights"
                     class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
                   >
                     <Icon name="ph:airplane-duotone" class="mr-2 h-5 w-5" />
@@ -236,7 +236,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                 </li>
                 <li class="flex h-8 items-center">
                   <NuxtLink
-                    to="/"
+                    to="/dashboards/company"
                     class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
                   >
                     <Icon name="ph:buildings-duotone" class="mr-2 h-5 w-5" />
@@ -245,7 +245,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                 </li>
                 <li class="flex h-8 items-center">
                   <NuxtLink
-                    to="/"
+                    to="/dashboards/human-resources"
                     class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
                   >
                     <Icon name="ph:users-four-duotone" class="mr-2 h-5 w-5" />
@@ -254,7 +254,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                 </li>
                 <li class="flex h-8 items-center">
                   <NuxtLink
-                    to="/"
+                    to="/dashboards/course"
                     class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
                   >
                     <Icon
@@ -266,7 +266,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                 </li>
                 <li class="flex h-8 items-center">
                   <NuxtLink
-                    to="/"
+                    to="/dashboards/jobs"
                     class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
                   >
                     <Icon name="ph:briefcase-duotone" class="mr-2 h-5 w-5" />

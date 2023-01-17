@@ -9,7 +9,7 @@ const panels = reactive(usePanels())
       <!-- Logo: @todo: use app config -->
       <div class="flex h-16 w-full items-center justify-center">
         <NuxtLink to="/" class="flex items-center justify-center">
-          <IconLogo class="text-primary-500 h-10" />
+          <IconLogo class="text-primary-600 h-10" />
         </NuxtLink>
       </div>
 

@@ -4,6 +4,25 @@ import chevron from '~/documentation/breadcrumb/chevron.md?raw'
 import dot from '~/documentation/breadcrumb/dot.md?raw'
 import slash from '~/documentation/breadcrumb/slash.md?raw'
 
+const demoBreadcrumb = [
+  {
+    label: 'Home',
+    hideLabel: true,
+    icon: 'lucide:home',
+    to: '/',
+  },
+  {
+    label: 'Components Hub',
+    hideLabel: false,
+    to: '/',
+  },
+  {
+    label: 'Breadcrumbs',
+    hideLabel: false,
+    to: '/',
+  },
+]
+
 const demoBreadcrumbOne = [
   {
     label: 'Home',
@@ -56,7 +75,7 @@ definePageMeta({
 <template>
   <div>
     <!-- BreadCrumb -->
-    <BaseBreadcrumb />
+    <BaseBreadcrumb :items="demoBreadcrumb" />
 
     <!-- Documentation Layout -->
     <DocLayout>
