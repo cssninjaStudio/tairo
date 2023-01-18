@@ -1,4 +1,10 @@
 import type { MaybeRef } from '@vueuse/shared'
+import { format, parseISO, isDate } from 'date-fns'
+
+export enum DateFormats {
+  Short = 'MMM do, yyyy',
+  Long = 'cccc, LLLL do, yyyy h:mm aa',
+}
 
 const formatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
@@ -11,4 +17,17 @@ const formatter = new Intl.NumberFormat('en-US', {
 
 export function formatPrice(price?: MaybeRef<number>) {
   return formatter.format(unref(price ?? 0)).replace('.00', '')
+}
+
+export function formatDate(
+  date?: any,
+  pattern: DateFormats = DateFormats.Short,
+) {
+  if (!date) return ''
+  if (isDate(date)) return format(date, pattern)
+  return format(parseISO(date), pattern)
+}
+
+export function capitalize(str: string) {
+  return str.charAt(0).toUpperCase() + str.slice(1)
 }

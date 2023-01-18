@@ -22,7 +22,7 @@
     "@antfu/eslint-config": "0.34.0",
     "@ckeditor/ckeditor5-build-classic": "35.4.0",
     "@ckeditor/ckeditor5-vue": "4.0.1",
-    "@cssninja/nuxt-ui": "0.3.5",
+    "@cssninja/nuxt-ui": "0.3.7",
     "@iconify/json": "2.1.154",
     "@nuxt/image-edge": "1.0.0-27840416.dc1ed65",
     "@nuxtjs/eslint-config": "12.0.0",
@@ -76,6 +76,7 @@
   },
   "dependencies": {
     "apexcharts": "3.36.3",
+    "date-fns": "^2.29.3",
     "nuxt-swiper": "^0.1.6",
     "vue3-apexcharts": "1.4.1"
   }
