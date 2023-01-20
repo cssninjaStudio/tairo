@@ -1,6 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
-  title: 'Personal 2',
+  title: 'My Projects',
   layout: 'sidebar',
 })
 </script>

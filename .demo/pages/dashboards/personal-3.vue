@@ -1,7 +1,7 @@
 <script setup lang="ts">
 definePageMeta({
-  title: 'Personal 3',
-  layout:'sidebar',
+  title: 'Interviews',
+  layout: 'sidebar',
 })
 
 const candidates = [
@@ -40,7 +40,10 @@ const candidates = [
   <div class="grid grid-cols-3 gap-6">
     <!--Grid item-->
     <div>
-      <BaseCard class="h-full flex flex-col p-8 border-0 bg-muted-200" shape="curved">
+      <BaseCard
+        class="h-full flex flex-col p-8 border-0 bg-muted-200"
+        shape="curved"
+      >
         <div class="mb-5">
           <BaseHeading
             as="h2"
@@ -53,8 +56,9 @@ const candidates = [
           </BaseHeading>
           <BaseParagraph size="sm">
             <span class="text-muted-400">
-              You have 6 interviews to conduct during this week. Your current progress is great.
-              Check your schedule and don't miss any activity.
+              You have 6 interviews to conduct during this week. Your current
+              progress is great. Check your schedule and don't miss any
+              activity.
             </span>
           </BaseParagraph>
         </div>
@@ -64,9 +68,7 @@ const candidates = [
           </div>
           <div>
             <BaseParagraph size="xs">
-              <span class="text-muted-400 mb-2">
-                Your Progress
-              </span>
+              <span class="text-muted-400 mb-2"> Your Progress </span>
             </BaseParagraph>
             <BaseHeading
               as="h4"
@@ -94,7 +96,7 @@ const candidates = [
           size="sm"
           class="bg-info-100 text-info-500 dark:bg-info-500/20 dark:text-info-400 dark:border-2 dark:border-info-500"
           shape="circle"
-          >
+        >
           <Icon name="ph:timer-duotone" class="w-5 h-5" />
         </BaseIconBox>
         <div>
@@ -108,9 +110,7 @@ const candidates = [
             <span>62K</span>
           </BaseHeading>
           <BaseParagraph size="xs">
-            <span class="text-muted-500 dark:text-muted-400">
-              Minutes
-            </span>
+            <span class="text-muted-500 dark:text-muted-400"> Minutes </span>
           </BaseParagraph>
         </div>
       </BaseCard>
@@ -120,7 +120,7 @@ const candidates = [
           size="sm"
           class="bg-primary-100 text-primary-500 dark:bg-primary-500/20 dark:text-primary-400 dark:border-2 dark:border-primary-500"
           shape="circle"
-          >
+        >
           <Icon name="ph:broadcast-duotone" class="w-5 h-5" />
         </BaseIconBox>
         <div>
@@ -134,9 +134,7 @@ const candidates = [
             <span>263</span>
           </BaseHeading>
           <BaseParagraph size="xs">
-            <span class="text-muted-500 dark:text-muted-400">
-              Interviews
-            </span>
+            <span class="text-muted-500 dark:text-muted-400"> Interviews </span>
           </BaseParagraph>
         </div>
       </BaseCard>
@@ -146,7 +144,7 @@ const candidates = [
           size="sm"
           class="bg-lime-100 text-lime-500 dark:bg-lime-500/20 dark:text-lime-400 dark:border-2 dark:border-lime-500"
           shape="circle"
-          >
+        >
           <Icon name="ph:user-plus-duotone" class="w-5 h-5" />
         </BaseIconBox>
         <div>
@@ -160,9 +158,7 @@ const candidates = [
             <span>49</span>
           </BaseHeading>
           <BaseParagraph size="xs">
-            <span class="text-muted-500 dark:text-muted-400">
-              Approved
-            </span>
+            <span class="text-muted-500 dark:text-muted-400"> Approved </span>
           </BaseParagraph>
         </div>
       </BaseCard>
@@ -172,7 +168,7 @@ const candidates = [
           size="sm"
           class="bg-amber-100 text-amber-500 dark:bg-amber-500/20 dark:text-amber-400 dark:border-2 dark:border-amber-500"
           shape="circle"
-          >
+        >
           <Icon name="ph:door-duotone" class="w-5 h-5" />
         </BaseIconBox>
         <div>
@@ -186,9 +182,7 @@ const candidates = [
             <span>214</span>
           </BaseHeading>
           <BaseParagraph size="xs">
-            <span class="text-muted-500 dark:text-muted-400">
-              Rejected
-            </span>
+            <span class="text-muted-500 dark:text-muted-400"> Rejected </span>
           </BaseParagraph>
         </div>
       </BaseCard>
@@ -220,7 +214,7 @@ const candidates = [
     <!--Grid item-->
     <div>
       <BaseCard shape="curved" class="p-6">
-        <WidgetDatepicker />
+        <WidgetDatepicker expanded />
       </BaseCard>
     </div>
     <!--Grid item-->
@@ -237,7 +231,11 @@ const candidates = [
           >
             <span>Trending skills</span>
           </BaseHeading>
-          <RouterLink to="/" class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300">View All</RouterLink>
+          <RouterLink
+            to="/"
+            class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
+            >View All</RouterLink
+          >
         </div>
         <WidgetTrendingSkills />
       </BaseCard>
@@ -256,7 +254,11 @@ const candidates = [
           >
             <span>Interviews</span>
           </BaseHeading>
-          <RouterLink to="/" class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300">Reports</RouterLink>
+          <RouterLink
+            to="/"
+            class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
+            >Reports</RouterLink
+          >
         </div>
         <ExampleApexchartAreaInterviews />
       </BaseCard>
@@ -277,9 +279,7 @@ const candidates = [
             <span>Jonathan K.</span>
           </BaseHeading>
           <BaseParagraph size="xs">
-            <span class="text-muted-400">
-              8:00 am — 9:00 am
-            </span>
+            <span class="text-muted-400"> 8:00 am — 9:00 am </span>
           </BaseParagraph>
         </div>
         <div class="flex items-center ml-auto">
@@ -302,9 +302,7 @@ const candidates = [
             <span>Erwin S.</span>
           </BaseHeading>
           <BaseParagraph size="xs">
-            <span class="text-muted-400">
-              10:30 am — 11:30 am
-            </span>
+            <span class="text-muted-400"> 10:30 am — 11:30 am </span>
           </BaseParagraph>
         </div>
         <div class="flex items-center ml-auto">
@@ -327,9 +325,7 @@ const candidates = [
             <span>Jennifer M.</span>
           </BaseHeading>
           <BaseParagraph size="xs">
-            <span class="text-muted-400">
-              2:00 pm — 3:00 pm
-            </span>
+            <span class="text-muted-400"> 2:00 pm — 3:00 pm </span>
           </BaseParagraph>
         </div>
         <div class="flex items-center ml-auto">

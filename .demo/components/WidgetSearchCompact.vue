@@ -1,4 +1,8 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const props = defineProps<{
+  shape?: 'straight' | 'rounded' | 'curved'
+}>()
+</script>
 
 <template>
   <div class="w-full">
@@ -6,6 +10,7 @@
       <BaseInput
         icon="lucide:search"
         placeholder="Search"
+        :shape="props.shape"
         :classes="{
           wrapper: 'w-full',
           input: 'pr-24 bg-muted-100 focus:bg-white dark:focus:bg-muted-900',
@@ -13,7 +18,11 @@
       />
       <button
         type="button"
-        class="absolute top-1 right-1 h-8 inline-flex items-center justify-center px-4 rounded font-sans text-sm text-white bg-primary-500"
+        class="absolute top-1 right-1 h-8 inline-flex items-center justify-center px-4 font-sans text-sm text-white bg-primary-500"
+        :class="[
+          props.shape === 'rounded' ? 'rounded' : '',
+          props.shape === 'curved' ? 'rounded-lg' : '',
+        ]"
       >
         <span>Go</span>
       </button>

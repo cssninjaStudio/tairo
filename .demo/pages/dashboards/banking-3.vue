@@ -2,7 +2,7 @@
 import ExampleApexchartRadialEvolution from '~~/components/ExampleApexchartRadialEvolution.vue'
 
 definePageMeta({
-  title: 'Banking 3',
+  title: 'Cryptocurrency',
   layout: 'sidebar',
 })
 
@@ -32,27 +32,27 @@ const activePeriod = ref('week')
       </div>
       <div class="flex sm:justify-end gap-2">
         <BaseButtonAction
-          :active="activePeriod === 'hour'"
+          :color="activePeriod === 'hour' ? 'primary' : 'default'"
           @click="activePeriod = 'hour'"
           >Hour</BaseButtonAction
         >
         <BaseButtonAction
-          :active="activePeriod === 'day'"
+          :color="activePeriod === 'day' ? 'primary' : 'default'"
           @click="activePeriod = 'day'"
           >Day</BaseButtonAction
         >
         <BaseButtonAction
-          :active="activePeriod === 'week'"
+          :color="activePeriod === 'week' ? 'primary' : 'default'"
           @click="activePeriod = 'week'"
           >Week</BaseButtonAction
         >
         <BaseButtonAction
-          :active="activePeriod === 'month'"
+          :color="activePeriod === 'month' ? 'primary' : 'default'"
           @click="activePeriod = 'month'"
           >Month</BaseButtonAction
         >
         <BaseButtonAction
-          :active="activePeriod === 'year'"
+          :color="activePeriod === 'year' ? 'primary' : 'default'"
           @click="activePeriod = 'year'"
           >Year</BaseButtonAction
         >

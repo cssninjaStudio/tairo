@@ -30,7 +30,11 @@ const tasks = [
 <template>
   <div class="space-y-5 mb-2">
     <div v-for="task in tasks" :key="task.id" class="flex items-center gap-3">
-      <BaseAnimatedCheckbox  v-model="tasks" :value="`Option ${task.id}`" />
+      <BaseAnimatedCheckbox
+        v-model="tasks"
+        :value="`Option ${task.id}`"
+        class="text-success-500"
+      />
       <div>
         <BaseHeading
           as="h4"
@@ -43,7 +47,7 @@ const tasks = [
         </BaseHeading>
         <BaseParagraph size="xs">
           <span class="text-muted-400">
-            {{  task.description  }}
+            {{ task.description }}
           </span>
         </BaseParagraph>
       </div>

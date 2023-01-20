@@ -1,7 +1,7 @@
 <script setup lang="ts">
 definePageMeta({
-  title: 'Personal 1',
-  layout:'sidebar',
+  title: 'Activity',
+  layout: 'sidebar',
 })
 </script>
 
@@ -192,8 +192,12 @@ definePageMeta({
         </BaseCard>
       </div>
       <!-- CTA card -->
-      <div class="col-span-12 ptablet:col-span-6 ltablet:col-span-4 lg:col-span-4">
-        <BaseCard class="relative h-full flex items-center justify-center p-6 bg-gradient-to-br from-primary-600 to-primary-700">
+      <div
+        class="col-span-12 ptablet:col-span-6 ltablet:col-span-4 lg:col-span-4"
+      >
+        <BaseCard
+          class="relative h-full flex items-center justify-center p-6 bg-gradient-to-br from-primary-600 to-primary-700"
+        >
           <div class="relative flex flex-col gap-3 py-10 text-center z-20">
             <BaseHeading
               as="h4"

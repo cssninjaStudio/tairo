@@ -47,16 +47,18 @@ definePageMeta({
           <DocComponent label="Muted action variation">
             <template #demo>
               <BaseFocusLoop class="flex flex-wrap items-end gap-2">
-                <BaseButtonAction shape="straight" muted>
+                <BaseButtonAction shape="straight" color="muted">
                   Action
                 </BaseButtonAction>
-                <BaseButtonAction shape="rounded" muted>
+                <BaseButtonAction shape="rounded" color="muted">
                   Action
                 </BaseButtonAction>
-                <BaseButtonAction shape="curved" muted>
+                <BaseButtonAction shape="curved" color="muted">
                   Action
                 </BaseButtonAction>
-                <BaseButtonAction shape="full" muted> Action </BaseButtonAction>
+                <BaseButtonAction shape="full" color="muted">
+                  Action
+                </BaseButtonAction>
               </BaseFocusLoop>
             </template>
             <template #code>

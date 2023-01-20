@@ -1,6 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
-  title: 'Banking 2',
+  title: 'Credit Cards',
   layout: 'sidebar',
 })
 

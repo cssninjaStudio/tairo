@@ -1,16 +1,19 @@
 ```vue
 <template>
-  <BaseButtonAction shape="straight" muted
-    >Action</BaseButtonAction
+  <BaseButtonAction
+    shape="straight"
+    color="muted"
   >
-  <BaseButtonAction shape="rounded" muted
-    >Action</BaseButtonAction
-  >
-  <BaseButtonAction shape="curved" muted
-    >Action</BaseButtonAction
-  >
-  <BaseButtonAction shape="full" muted
-    >Action</BaseButtonAction
-  >
+    Action
+  </BaseButtonAction>
+  <BaseButtonAction shape="rounded" color="muted">
+    Action
+  </BaseButtonAction>
+  <BaseButtonAction shape="curved" color="muted">
+    Action
+  </BaseButtonAction>
+  <BaseButtonAction shape="full" color="muted">
+    Action
+  </BaseButtonAction>
 </template>
 ```

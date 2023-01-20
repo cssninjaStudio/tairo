@@ -1,6 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
-  title: 'Banking 1',
+  title: 'Overview',
   layout: 'sidebar',
 })
 
