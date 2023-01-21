@@ -24,7 +24,7 @@ const props = defineProps<{
     <BaseAvatar
       v-if="props.image && !props.icon"
       :src="props.image"
-      size="sm"
+      size="md"
     />
     <BaseIconBox
       v-if="props.icon && !props.image"
