@@ -310,7 +310,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
               <ul class="py-2 pl-3">
                 <li class="flex h-8 items-center">
                   <NuxtLink
-                    to="/"
+                    to="/dashboards/influencer"
                     class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
                   >
                     <Icon name="ph:crown-duotone" class="mr-2 h-5 w-5" />
@@ -319,7 +319,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                 </li>
                 <li class="flex h-8 items-center">
                   <NuxtLink
-                    to="/"
+                    to="/dashboards/hobbies"
                     class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
                   >
                     <Icon name="ph:confetti-duotone" class="mr-2 h-5 w-5" />
@@ -328,7 +328,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                 </li>
                 <li class="flex h-8 items-center">
                   <NuxtLink
-                    to="/"
+                    to="/dashboards/health"
                     class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
                   >
                     <Icon name="ph:pill-duotone" class="mr-2 h-5 w-5" />
@@ -337,7 +337,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                 </li>
                 <li class="flex h-8 items-center">
                   <NuxtLink
-                    to="/"
+                    to="/dashboards/writer"
                     class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
                   >
                     <Icon name="ph:pen-nib-duotone" class="mr-2 h-5 w-5" />
@@ -346,7 +346,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                 </li>
                 <li class="flex h-8 items-center">
                   <NuxtLink
-                    to="/"
+                    to="/dashboards/video"
                     class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
                   >
                     <Icon name="ph:video-camera-duotone" class="mr-2 h-5 w-5" />
@@ -355,7 +355,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                 </li>
                 <li class="flex h-8 items-center">
                   <NuxtLink
-                    to="/"
+                    to="/dashboards/soccer"
                     class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
                   >
                     <Icon name="ph:soccer-ball-duotone" class="mr-2 h-5 w-5" />
@@ -399,11 +399,11 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
               <ul class="py-2 pl-3">
                 <li class="flex h-8 items-center">
                   <NuxtLink
-                    to="/"
+                    to="/dashboards/ecommerce"
                     class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
                   >
                     <Icon name="ph:storefront-duotone" class="mr-2 h-5 w-5" />
-                    <span class="font-sans text-xs">Ecommerce V1</span>
+                    <span class="font-sans text-xs">Ecommerce</span>
                   </NuxtLink>
                 </li>
               </ul>
@@ -443,7 +443,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
               <ul class="py-2 pl-3">
                 <li class="flex h-8 items-center">
                   <NuxtLink
-                    to="/"
+                    to="/dashboards/delivery"
                     class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
                   >
                     <Icon name="ph:cookie-duotone" class="mr-2 h-5 w-5" />
@@ -452,7 +452,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                 </li>
                 <li class="flex h-8 items-center">
                   <NuxtLink
-                    to="/"
+                    to="/dashboards/map-left"
                     class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
                   >
                     <Icon name="ph:map-pin-duotone" class="mr-2 h-5 w-5" />
@@ -461,7 +461,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                 </li>
                 <li class="flex h-8 items-center">
                   <NuxtLink
-                    to="/"
+                    to="/dashboards/map-right"
                     class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
                   >
                     <Icon name="ph:map-pin-duotone" class="mr-2 h-5 w-5" />
@@ -470,7 +470,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                 </li>
                 <li class="flex h-8 items-center">
                   <NuxtLink
-                    to="/"
+                    to="/dashboards/inbox"
                     class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
                   >
                     <Icon name="ph:envelope-duotone" class="mr-2 h-5 w-5" />
@@ -479,7 +479,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                 </li>
                 <li class="flex h-8 items-center">
                   <NuxtLink
-                    to="/"
+                    to="/dashboards/messaging"
                     class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
                   >
                     <Icon name="ph:chat-circle-duotone" class="mr-2 h-5 w-5" />

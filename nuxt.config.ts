@@ -16,6 +16,7 @@ export default defineNuxtConfig({
   css: [
     resolve('./assets/css/modules/variables.css'),
     resolve('./assets/css/modules/slider.css'),
+    resolve('./assets/css/modules/popper.css'),
     resolve('./assets/css/modules/apex.css'), // @todo: this should be lazy loaded
     resolve('./assets/css/keyframes.css'),
   ],
