@@ -16,6 +16,7 @@ specifiers:
   '@vueform/slider': 2.1.7
   apexcharts: 3.36.3
   date-fns: 2.29.3
+  dayjs: ^1.11.7
   eslint: 8.32.0
   eslint-config-prettier: 8.6.0
   eslint-plugin-prettier-vue: 4.2.0
@@ -52,6 +53,7 @@ specifiers:
 dependencies:
   apexcharts: 3.36.3
   date-fns: 2.29.3
+  dayjs: 1.11.7
   nuxt-swiper: 0.1.9
   vue3-apexcharts: 1.4.1_apexcharts@3.36.3
   vue3-popper: 1.5.0
@@ -3305,6 +3307,10 @@ packages:
   /date-fns/2.29.3:
     resolution: {integrity: sha512-dDCnyH2WnnKusqvZZ6+jA1O51Ibt8ZMRNkDZdyAyK4YfbDwa/cEmuztzG5pk6hqlp9aSBPYcjOlktquahGwGeA==}
     engines: {node: '>=0.11'}
+    dev: false
+
+  /dayjs/1.11.7:
+    resolution: {integrity: sha512-+Yw9U6YO5TQohxLcIkrXBeY73WP3ejHWVvx8XCk3gxvQDCTEmS48ZrSZCKciI7Bhl/uCMyxYtE9UqRILmFphkQ==}
     dev: false
 
   /de-indent/1.0.2:

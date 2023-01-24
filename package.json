@@ -77,6 +77,7 @@
   "dependencies": {
     "apexcharts": "3.36.3",
     "date-fns": "2.29.3",
+    "dayjs": "^1.11.7",
     "nuxt-swiper": "0.1.9",
     "vue3-apexcharts": "1.4.1",
     "vue3-popper": "^1.5.0"

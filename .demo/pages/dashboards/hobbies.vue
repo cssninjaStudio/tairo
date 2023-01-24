@@ -94,10 +94,10 @@ const popular = [
     <!-- Grid -->
     <div class="grid grid-cols-12 gap-4">
       <!-- Column -->
-      <div class="col-span-8">
+      <div class="col-span-12 ltablet:col-span-8 lg:col-span-8">
         <div class="grid grid-cols-12 gap-4">
           <!-- Grid item -->
-          <div class="col-span-3">
+          <div class="col-span-6 sm:col-span-3">
             <RouterLink
               to="/"
               class="group relative w-full flex flex-col overflow-hidden rounded-2xl"
@@ -139,7 +139,7 @@ const popular = [
             </RouterLink>
           </div>
           <!-- Grid item -->
-          <div class="col-span-3">
+          <div class="col-span-6 sm:col-span-3">
             <RouterLink
               to="/"
               class="group relative w-full flex flex-col overflow-hidden rounded-2xl"
@@ -181,7 +181,7 @@ const popular = [
             </RouterLink>
           </div>
           <!-- Grid item -->
-          <div class="col-span-3">
+          <div class="col-span-6 sm:col-span-3">
             <RouterLink
               to="/"
               class="group relative w-full flex flex-col overflow-hidden rounded-2xl"
@@ -223,7 +223,7 @@ const popular = [
             </RouterLink>
           </div>
           <!-- Grid item -->
-          <div class="col-span-3">
+          <div class="col-span-6 sm:col-span-3">
             <RouterLink
               to="/"
               class="group relative w-full flex flex-col overflow-hidden rounded-2xl"
@@ -265,7 +265,7 @@ const popular = [
             </RouterLink>
           </div>
           <!-- Grid item -->
-          <div class="col-span-6">
+          <div class="col-span-12 sm:col-span-6">
             <div class="my-4">
               <BaseHeading
                 as="h2"
@@ -321,7 +321,7 @@ const popular = [
             </div>
           </div>
           <!-- Grid item -->
-          <div class="col-span-6">
+          <div class="col-span-12 sm:col-span-6">
             <div class="my-4">
               <BaseHeading
                 as="h2"
@@ -379,7 +379,7 @@ const popular = [
         </div>
       </div>
       <!-- Column -->
-      <div class="col-span-4">
+      <div class="col-span-12 ltablet:col-span-4 lg:col-span-4">
         <div class="flex flex-col gap-6">
           <!-- Widget -->
           <BaseCard class="p-6" shape="curved">
