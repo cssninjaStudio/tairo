@@ -22,7 +22,7 @@ const panels = reactive(usePanels())
     </NavigationSidebar>
 
     <div
-      class="bg-muted-100 dark:bg-muted-900 relative min-h-screen w-full px-4 transition-all duration-300 xl:px-10"
+      class="bg-muted-100 dark:bg-muted-900 relative min-h-screen w-full overflow-x-hidden px-4 transition-all duration-300 xl:px-10"
       :class="
         sidebar.isOpen
           ? 'xl:max-w-[calc(100%_-_300px)] xl:ml-[300px]'

@@ -3,8 +3,419 @@ definePageMeta({
   title: 'Soccer',
   layout: 'sidebar',
 })
+
+const matches = [
+  {
+    id: 1,
+    status: 'live',
+    time: '11:30',
+    stadium: 'Camp Nou',
+    match: {
+      home: {
+        name: 'Barcelona',
+        logo: '/img/icons/soccer/teams/barcelona.svg',
+        score: 4,
+      },
+      away: {
+        name: 'PSG',
+        logo: '/img/icons/soccer/teams/psg.svg',
+        score: 0,
+      },
+    },
+  },
+  {
+    id: 2,
+    status: 'scheduled',
+    time: '14:30',
+    stadium: 'Bernabeu',
+    match: {
+      home: {
+        name: 'Real Madrid',
+        logo: '/img/icons/soccer/teams/madrid.svg',
+        score: 1,
+      },
+      away: {
+        name: 'Liverpool',
+        logo: '/img/icons/soccer/teams/liverpool.svg',
+        score: 0,
+      },
+    },
+  },
+  {
+    id: 3,
+    status: 'scheduled',
+    time: '16:30',
+    stadium: 'Arsenal',
+    match: {
+      home: {
+        name: 'Arsenal',
+        logo: '/img/icons/soccer/teams/arsenal.svg',
+        score: undefined,
+      },
+      away: {
+        name: 'Chelsea',
+        logo: '/img/icons/soccer/teams/chelsea.svg',
+        score: undefined,
+      },
+    },
+  },
+  {
+    id: 4,
+    status: 'scheduled',
+    time: '18:30',
+    stadium: 'Goodison Park',
+    match: {
+      home: {
+        name: 'Everton',
+        logo: '/img/icons/soccer/teams/everton.svg',
+        score: undefined,
+      },
+      away: {
+        name: 'Liverpool',
+        logo: '/img/icons/soccer/teams/liverpool.svg',
+        score: undefined,
+      },
+    },
+  },
+  {
+    id: 5,
+    status: 'scheduled',
+    time: '20:30',
+    stadium: 'José Zorrilla',
+    match: {
+      home: {
+        name: 'Valladolid',
+        logo: '/img/icons/soccer/teams/valladolid.svg',
+        score: undefined,
+      },
+      away: {
+        name: 'Zagreb',
+        logo: '/img/icons/soccer/teams/zagreb.svg',
+        score: undefined,
+      },
+    },
+  },
+  {
+    id: 6,
+    status: 'scheduled',
+    time: '22:30',
+    stadium: 'Parc des Princes',
+    match: {
+      home: {
+        name: 'PSG',
+        logo: '/img/icons/soccer/teams/psg.svg',
+        score: undefined,
+      },
+      away: {
+        name: 'Chelsea',
+        logo: '/img/icons/soccer/teams/chelsea.svg',
+        score: undefined,
+      },
+    },
+  },
+]
 </script>
 
 <template>
-  <div></div>
+  <div class="relative mt-12">
+    <!-- Grid -->
+    <div class="grid grid-cols-12 gap-6">
+      <!-- Column -->
+      <div class="col-span-12 ltablet:col-span-4 lg:col-span-4">
+        <div class="flex flex-col ptablet:flex-row gap-6">
+          <!-- Widget -->
+          <BaseCard shape="curved" class="p-8">
+            <!-- Title -->
+            <div class="flex items-center justify-between mb-6">
+              <BaseHeading
+                as="h3"
+                size="lg"
+                weight="semibold"
+                lead="tight"
+                class="text-muted-800 dark:text-white"
+              >
+                <span>UEFA Champions League</span>
+              </BaseHeading>
+            </div>
+            <!-- Subtitle -->
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <BaseHeading
+                  as="h4"
+                  size="sm"
+                  weight="light"
+                  lead="tight"
+                  class="mb-1 text-muted-800 dark:text-white"
+                >
+                  <span>Group C</span>
+                </BaseHeading>
+                <BaseParagraph size="xs">
+                  <span class="text-muted-400"> Match 3 of 6 </span>
+                </BaseParagraph>
+              </div>
+              <div>
+                <BaseTag
+                  shape="full"
+                  color="danger"
+                  class="inline-flex items-center justify-center gap-1"
+                  compact
+                >
+                  <Icon name="lucide:video" class="w-3 h-3" />
+                  <span>Live now</span>
+                </BaseTag>
+              </div>
+            </div>
+            <!-- Results -->
+            <div class="flex items-center justify-between mb-6">
+              <div class="flex flex-col text-center">
+                <img
+                  class="w-12 h-12 mx-auto"
+                  src="/img/icons/soccer/teams/barcelona.svg"
+                  alt="Team logo"
+                />
+                <BaseHeading
+                  as="h4"
+                  size="sm"
+                  weight="light"
+                  lead="tight"
+                  class="mt-2 text-muted-500 dark:text-muted-400"
+                >
+                  <span>Barcelona</span>
+                </BaseHeading>
+              </div>
+              <div
+                class="flex items-center justify-center gap-2 font-sans text-center text-muted-800 dark:text-muted-100"
+              >
+                <span class="text-5xl font-bold">4</span>
+                <span class="text-4xl font-bold">:</span>
+                <span class="text-5xl font-bold">0</span>
+              </div>
+              <div class="flex flex-col text-center">
+                <img
+                  class="w-12 h-12 mx-auto"
+                  src="/img/icons/soccer/teams/psg.svg"
+                  alt="Team logo"
+                />
+                <BaseHeading
+                  as="h4"
+                  size="sm"
+                  weight="light"
+                  lead="tight"
+                  class="mt-2 text-muted-500 dark:text-muted-400"
+                >
+                  <span>PSG</span>
+                </BaseHeading>
+              </div>
+            </div>
+            <!-- Action -->
+            <div>
+              <BaseButton color="primary" shape="curved" class="w-full !h-12">
+                <span>Watch Now</span>
+              </BaseButton>
+            </div>
+          </BaseCard>
+          <!-- Widget -->
+          <BaseCard shape="curved" class="p-8">
+            <!-- Title -->
+            <div class="flex items-center justify-between mb-6">
+              <BaseHeading
+                as="h3"
+                size="lg"
+                weight="semibold"
+                lead="tight"
+                class="text-muted-800 dark:text-white"
+              >
+                <span>Available Leagues</span>
+              </BaseHeading>
+            </div>
+            <WidgetLeagueListCompact />
+          </BaseCard>
+        </div>
+      </div>
+      <!-- Column -->
+      <div class="col-span-12 ltablet:col-span-8 lg:col-span-8">
+        <div class="flex flex-col gap-6">
+          <!-- Header -->
+          <div class="col-span-12">
+            <div
+              class="flex flex-col sm:flex-row items-center rounded-2xl bg-primary-800"
+            >
+              <div class="grow mt-6 sm:mt-0 pl-6 pr-6 sm:pl-10 sm:pr-0">
+                <div class="text-center sm:text-left pb-4 sm:pb-0">
+                  <BaseHeading tag="h1" class="text-white opacity-90">
+                    <span>Win awesome prizes in our contest</span>
+                  </BaseHeading>
+                  <BaseParagraph size="sm" class="text-white opacity-70">
+                    <span
+                      >Predict who will win and how a match will end and get a
+                      chance to win incredible cash prizes.</span
+                    >
+                  </BaseParagraph>
+                  <div class="mt-2">
+                    <BaseButton
+                      size="sm"
+                      color="light"
+                      flavor="outline"
+                      class="w-full sm:w-auto"
+                    >
+                      <span>Learn More</span>
+                      <Icon name="lucide:arrow-right" class="w-4 h-4" />
+                    </BaseButton>
+                  </div>
+                </div>
+              </div>
+              <div class="relative shrink-0 h-[280px] sm:h-[225px] w-[320px]">
+                <img
+                  class="absolute bottom-0 right-6 sm:-right-10 pointer-events-none"
+                  src="/img/illustrations/dashboards/soccer/soccer-player.svg"
+                  alt="Soccer Player"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- Table -->
+          <BaseCard shape="curved" class="p-8">
+            <div class="flex gap-4 font-sans mb-6">
+              <button
+                class="pb-4 border-b-2 border-primary-500 text-muted-800 dark:text-muted-100"
+              >
+                All
+              </button>
+              <button
+                class="pb-4 border-b-2 border-transparent text-muted-400 dark:text-muted-500"
+              >
+                Live
+              </button>
+              <button
+                class="pb-4 border-b-2 border-transparent text-muted-400 dark:text-muted-500"
+              >
+                Finished
+              </button>
+              <button
+                class="pb-4 border-b-2 border-transparent text-muted-400 dark:text-muted-500"
+              >
+                Scheduled
+              </button>
+            </div>
+            <div class="overflow-x-auto">
+              <div class="inline-block min-w-full align-middle">
+                <div class="overflow-hidden">
+                  <table
+                    class="text-left min-w-full divide-y divide-slate-200 table-fixed dark:divide-slate-700"
+                  >
+                    <thead>
+                      <th class="py-3 font-sans uppercase text-xs">Time</th>
+                      <th
+                        class="xs:px-8 py-3 font-sans uppercase text-xs text-center"
+                      >
+                        Match
+                      </th>
+                      <th class="xs:px-4 py-3 font-sans uppercase text-xs">
+                        Stadium
+                      </th>
+                      <th class="xs:px-4 py-3 font-sans uppercase text-xs">
+                        Details
+                      </th>
+                    </thead>
+                    <tbody>
+                      <tr v-for="match in matches" :key="match.id">
+                        <td class="py-4 align-middle">
+                          <div
+                            class="flex items-center gap-2 font-sans text-sm text-muted-500 dark:text-muted-400"
+                            :tooltip="capitalize(match.status)"
+                          >
+                            <div
+                              class="h-2 w-2 rounded-full"
+                              :class="
+                                match.status === 'live'
+                                  ? 'bg-rose-500'
+                                  : 'bg-muted-300 dark:bg-muted-600'
+                              "
+                            ></div>
+                            <span>{{ match.time }}</span>
+                          </div>
+                        </td>
+                        <td class="xs:px-8 py-4">
+                          <div class="flex items-center justify-center gap-4">
+                            <div
+                              class="w-[120px] flex items-center justify-end gap-2"
+                            >
+                              <BaseHeading
+                                as="h4"
+                                size="sm"
+                                weight="light"
+                                lead="none"
+                                class="text-muted-500 dark:text-muted-400"
+                              >
+                                <span>{{ match.match.home.name }}</span>
+                              </BaseHeading>
+                              <img
+                                class="w-8 h-8"
+                                :src="match.match.home.logo"
+                                :alt="match.match.home.name"
+                              />
+                            </div>
+                            <div
+                              class="flex items-center justify-center gap-2 font-sans text-center text-muted-800 dark:text-muted-100"
+                            >
+                              <span class="text-sm font-bold">{{
+                                match.match.home.score !== undefined
+                                  ? match.match.home.score
+                                  : '-'
+                              }}</span>
+                              <span class="text-xs font-bold">:</span>
+                              <span class="text-sm font-bold">{{
+                                match.match.away.score !== undefined
+                                  ? match.match.away.score
+                                  : '-'
+                              }}</span>
+                            </div>
+                            <div class="w-[120px] flex items-center gap-2">
+                              <img
+                                class="w-8 h-8"
+                                :src="match.match.away.logo"
+                                :alt="match.match.away.name"
+                              />
+                              <BaseHeading
+                                as="h4"
+                                size="sm"
+                                weight="light"
+                                lead="none"
+                                class="text-muted-500 dark:text-muted-400"
+                              >
+                                <span>{{ match.match.away.name }}</span>
+                              </BaseHeading>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="xs:px-4 py-4">
+                          <div
+                            class="font-sans text-sm text-muted-500 dark:text-muted-400"
+                          >
+                            <span class="whitespace-nowrap">{{
+                              match.stadium
+                            }}</span>
+                          </div>
+                        </td>
+                        <td class="xs:px-4 py-4">
+                          <div>
+                            <BaseButtonIcon small muted>
+                              <Icon
+                                name="lucide:more-horizontal"
+                                class="w-4 h-4"
+                              />
+                            </BaseButtonIcon>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </BaseCard>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
