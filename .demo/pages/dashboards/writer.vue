@@ -32,7 +32,10 @@ const activePosts = ref('recent')
                   <BaseHeading tag="h1" class="text-white opacity-90">
                     <span>Hello, Maya</span>
                   </BaseHeading>
-                  <BaseParagraph size="sm" class="text-white opacity-70">
+                  <BaseParagraph
+                    size="sm"
+                    class="max-w-xs text-white opacity-70"
+                  >
                     <span
                       >Have any ideas for a new article? If not, you should
                       definitely check the feed for some inspiration.</span
