@@ -1,5 +1,9 @@
 <script setup lang="ts">
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
+
+const props = defineProps<{
+  horizontal?: boolean
+}>()
 </script>
 
 <template>
@@ -8,7 +12,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
       <MenuButton as="template">
         <button
           type="button"
-          class="inline-flex h-10 w-10 items-center justify-center rounded-full ring-1 ring-transparent transition-all duration-300 group-hover:ring-primary-500 group-hover:ring-offset-4 dark:ring-offset-muted-800"
+          class="group-hover:ring-primary-500 dark:ring-offset-muted-800 inline-flex h-10 w-10 items-center justify-center rounded-full ring-1 ring-transparent transition-all duration-300 group-hover:ring-offset-4"
         >
           <div
             class="relative inline-flex h-10 w-10 items-center justify-center rounded-full"
@@ -31,7 +35,8 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
         leave-to-class="transform scale-95 opacity-0"
       >
         <MenuItems
-          class="absolute bottom-0 -right-64 mt-2 w-60 origin-bottom-right divide-y divide-muted-100 rounded-md border border-muted-200 bg-white text-left shadow-lg focus:outline-none dark:divide-muted-700 dark:border-muted-700 dark:bg-muted-800"
+          class="divide-muted-100 border-muted-200 dark:divide-muted-700 dark:border-muted-700 dark:bg-muted-800 absolute mt-2 w-60 origin-bottom-right divide-y rounded-md border bg-white text-left shadow-lg focus:outline-none"
+          :class="props.horizontal ? 'top-10 right-0' : 'bottom-0 -right-64'"
         >
           <div class="p-6">
             <div class="flex items-center">
@@ -46,11 +51,11 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
               </div>
               <div class="ml-3">
                 <h6
-                  class="font-heading text-sm font-semibold text-muted-800 dark:text-white"
+                  class="font-heading text-muted-800 text-sm font-semibold dark:text-white"
                 >
                   Maya Rosselini
                 </h6>
-                <p class="font-sans text-xs text-muted-400">Product Manager</p>
+                <p class="text-muted-400 font-sans text-xs">Product Manager</p>
               </div>
             </div>
           </div>
@@ -68,11 +73,11 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 <Icon name="ph:user-circle-duotone" class="h-5 w-5" />
                 <div class="ml-3">
                   <h6
-                    class="font-heading text-xs font-semibold leading-none text-muted-800 dark:text-white"
+                    class="font-heading text-muted-800 text-xs font-semibold leading-none dark:text-white"
                   >
                     Profile
                   </h6>
-                  <p class="font-sans text-xs text-muted-400">
+                  <p class="text-muted-400 font-sans text-xs">
                     View your profile
                   </p>
                 </div>
@@ -93,11 +98,11 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 <Icon name="ph:briefcase-duotone" class="h-5 w-5" />
                 <div class="ml-3">
                   <h6
-                    class="font-heading text-xs font-semibold leading-none text-muted-800 dark:text-white"
+                    class="font-heading text-muted-800 text-xs font-semibold leading-none dark:text-white"
                   >
                     Projects
                   </h6>
-                  <p class="font-sans text-xs text-muted-400">
+                  <p class="text-muted-400 font-sans text-xs">
                     All my projects
                   </p>
                 </div>
@@ -116,11 +121,11 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 <Icon name="ph:users-three-duotone" class="h-5 w-5" />
                 <div class="ml-3">
                   <h6
-                    class="font-heading text-xs font-semibold leading-none text-muted-800 dark:text-white"
+                    class="font-heading text-muted-800 text-xs font-semibold leading-none dark:text-white"
                   >
                     Team
                   </h6>
-                  <p class="font-sans text-xs text-muted-400">Manage my team</p>
+                  <p class="text-muted-400 font-sans text-xs">Manage my team</p>
                 </div>
               </NuxtLink>
             </MenuItem>
@@ -140,11 +145,11 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 <Icon name="ph:gear-six-duotone" class="h-5 w-5" />
                 <div class="ml-3">
                   <h6
-                    class="font-heading text-xs font-semibold leading-none text-muted-800 dark:text-white"
+                    class="font-heading text-muted-800 text-xs font-semibold leading-none dark:text-white"
                   >
                     Settings
                   </h6>
-                  <p class="font-sans text-xs text-muted-400">
+                  <p class="text-muted-400 font-sans text-xs">
                     Account settings
                   </p>
                 </div>

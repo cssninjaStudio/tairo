@@ -271,10 +271,10 @@ definePageMeta({
                         Your overall condition is very good. Make it even
                         better.
                       </span>
-                      <RouterLink
+                      <NuxtLink
                         to="/"
                         class="text-primary-500 underline-offset-4 hover:underline"
-                        >Read how</RouterLink
+                        >Read how</NuxtLink
                       >
                     </BaseParagraph>
                   </div>
@@ -304,10 +304,10 @@ definePageMeta({
                       <span>
                         Your energy seems a bit unstable. You can improve it.
                       </span>
-                      <RouterLink
+                      <NuxtLink
                         to="/"
                         class="text-primary-500 underline-offset-4 hover:underline"
-                        >Read how</RouterLink
+                        >Read how</NuxtLink
                       >
                     </BaseParagraph>
                   </div>
@@ -337,10 +337,10 @@ definePageMeta({
                       <span>
                         Your oxygen seems a bit unstable. You can improve it.
                       </span>
-                      <RouterLink
+                      <NuxtLink
                         to="/"
                         class="text-primary-500 underline-offset-4 hover:underline"
-                        >Read how</RouterLink
+                        >Read how</NuxtLink
                       >
                     </BaseParagraph>
                   </div>
@@ -370,10 +370,10 @@ definePageMeta({
                       <span>
                         Your overall progress is very good. Make it even better.
                       </span>
-                      <RouterLink
+                      <NuxtLink
                         to="/"
                         class="text-primary-500 underline-offset-4 hover:underline"
-                        >Read how</RouterLink
+                        >Read how</NuxtLink
                       >
                     </BaseParagraph>
                   </div>

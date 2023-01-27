@@ -1,10 +1,12 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Map',
-  layout: 'sidebar',
+  layout: 'default',
 })
 </script>
 
 <template>
-  <div></div>
+  <div>
+    <MapPanel reversed />
+  </div>
 </template>

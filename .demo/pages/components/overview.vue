@@ -215,7 +215,7 @@ definePageMeta({
             <!-- Feature -->
             <BaseCard shape="curved" class="flex items-center p-3">
               <BaseIconBox size="md" class="bg-pink-100 text-pink-500">
-                <Icon name="ph:storefront-duotone" class="h-6 w-6" />
+                <Icon name="icon-park-outline:pineapple" class="h-6 w-6" />
               </BaseIconBox>
               <div class="ml-3">
                 <BaseHeading

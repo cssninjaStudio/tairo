@@ -255,10 +255,10 @@ const selectedCurrency = ref('usd')
               <span>Transactions</span>
             </BaseHeading>
             <div>
-              <RouterLink
+              <NuxtLink
                 to="/"
                 class="font-sans text-sm underline-offset-4 text-muted-400 hover:text-primary-500 hover:underline transition-colors duration-300"
-                >View All</RouterLink
+                >View All</NuxtLink
               >
             </div>
           </div>
@@ -398,10 +398,10 @@ const selectedCurrency = ref('usd')
                     transfer cannot exceed 20% of your balance.
                   </p>
                   <div class="flex justify-end mt-2">
-                    <RouterLink
+                    <NuxtLink
                       to="/"
                       class="font-sans text-sm underline-offset-4 text-primary-500 hover:underline"
-                      >Confirm and send</RouterLink
+                      >Confirm and send</NuxtLink
                     >
                   </div>
                 </div>
@@ -435,10 +435,10 @@ const selectedCurrency = ref('usd')
                     to unlock achievements, special gifts, and more.
                   </p>
                   <div class="flex justify-end mt-2">
-                    <RouterLink
+                    <NuxtLink
                       to="/"
                       class="font-sans text-sm underline-offset-4 text-primary-500 hover:underline"
-                      >Details</RouterLink
+                      >Details</NuxtLink
                     >
                   </div>
                 </div>
@@ -462,10 +462,10 @@ const selectedCurrency = ref('usd')
                   <span>Send Money To</span>
                 </BaseHeading>
                 <div>
-                  <RouterLink
+                  <NuxtLink
                     to="/"
                     class="font-sans text-sm underline-offset-4 text-muted-400 hover:text-primary-500 hover:underline transition-colors duration-300"
-                    >See All</RouterLink
+                    >See All</NuxtLink
                   >
                 </div>
               </div>
@@ -484,10 +484,10 @@ const selectedCurrency = ref('usd')
                     class="bg-indigo-400/20 text-indigo-400"
                   />
                 </div>
-                <RouterLink
+                <NuxtLink
                   to="/"
                   class="font-sans text-sm underline-offset-4 text-muted-400 hover:text-primary-500 hover:underline"
-                  >See all contacts</RouterLink
+                  >See all contacts</NuxtLink
                 >
               </div>
               <form class="mt-auto">
@@ -561,10 +561,10 @@ const selectedCurrency = ref('usd')
                   <span>History</span>
                 </BaseHeading>
                 <div>
-                  <RouterLink
+                  <NuxtLink
                     to="/"
                     class="font-sans text-sm underline-offset-4 text-muted-400 hover:text-primary-500 hover:underline transition-colors duration-300"
-                    >View Reports</RouterLink
+                    >View Reports</NuxtLink
                   >
                 </div>
               </div>

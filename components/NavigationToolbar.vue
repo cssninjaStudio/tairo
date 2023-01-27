@@ -12,7 +12,7 @@ const route = useRoute()
       as="h1"
       size="2xl"
       weight="light"
-      class="hidden text-muted-800 dark:text-white md:block"
+      class="text-muted-800 hidden dark:text-white md:block"
     >
       {{ route.meta.title }}
     </BaseHeading>
@@ -21,7 +21,7 @@ const route = useRoute()
 
     <button
       type="button"
-      class="flex h-9 w-9 items-center justify-center rounded-full border border-muted-200 bg-white ring-1 ring-transparent transition-all duration-300 hover:ring-primary-500 hover:ring-offset-4 dark:border-muted-700 dark:bg-muted-800 dark:ring-offset-muted-900"
+      class="border-muted-200 hover:ring-muted-200 dark:hover:ring-muted-700 dark:border-muted-700 dark:bg-muted-800 dark:ring-offset-muted-900 flex h-9 w-9 items-center justify-center rounded-full border bg-white ring-1 ring-transparent transition-all duration-300 hover:ring-offset-4"
       @click="open('language')"
     >
       <NuxtImg
@@ -35,10 +35,10 @@ const route = useRoute()
 
     <button
       type="button"
-      class="flex h-9 w-9 items-center justify-center rounded-full border border-muted-200 bg-white ring-1 ring-transparent transition-all duration-300 hover:ring-primary-500 hover:ring-offset-4 dark:border-muted-700 dark:bg-muted-800 dark:ring-offset-muted-900"
+      class="border-muted-200 hover:ring-muted-200 dark:hover:ring-muted-700 dark:border-muted-700 dark:bg-muted-800 dark:ring-offset-muted-900 flex h-9 w-9 items-center justify-center rounded-full border bg-white ring-1 ring-transparent transition-all duration-300 hover:ring-offset-4"
       @click="open('activity')"
     >
-      <Icon name="ph:circles-four-duotone" class="h-5 w-5 text-muted-400" />
+      <Icon name="ph:circles-four-duotone" class="text-muted-400 h-5 w-5" />
     </button>
 
     <NavigationToolbarAccountMenu />

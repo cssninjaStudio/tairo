@@ -297,7 +297,7 @@ const total = computed(() => {
             <!-- Meals -->
             <div class="grid sm:grid-cols-3 gap-x-3 gap-y-6">
               <!-- Grid item -->
-              <RouterLink
+              <NuxtLink
                 v-for="meal in meals"
                 :key="meal.id"
                 to="/"
@@ -360,7 +360,7 @@ const total = computed(() => {
                     </div>
                   </div>
                 </BaseCard>
-              </RouterLink>
+              </NuxtLink>
             </div>
             <!-- Load more -->
             <div class="flex items-center justify-center my-16">

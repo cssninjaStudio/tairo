@@ -98,7 +98,7 @@ const popular = [
         <div class="grid grid-cols-12 gap-4">
           <!-- Grid item -->
           <div class="col-span-6 sm:col-span-3">
-            <RouterLink
+            <NuxtLink
               to="/"
               class="group relative w-full flex flex-col overflow-hidden rounded-2xl"
             >
@@ -136,11 +136,11 @@ const popular = [
                   />
                 </div>
               </div>
-            </RouterLink>
+            </NuxtLink>
           </div>
           <!-- Grid item -->
           <div class="col-span-6 sm:col-span-3">
-            <RouterLink
+            <NuxtLink
               to="/"
               class="group relative w-full flex flex-col overflow-hidden rounded-2xl"
             >
@@ -178,11 +178,11 @@ const popular = [
                   />
                 </div>
               </div>
-            </RouterLink>
+            </NuxtLink>
           </div>
           <!-- Grid item -->
           <div class="col-span-6 sm:col-span-3">
-            <RouterLink
+            <NuxtLink
               to="/"
               class="group relative w-full flex flex-col overflow-hidden rounded-2xl"
             >
@@ -220,11 +220,11 @@ const popular = [
                   />
                 </div>
               </div>
-            </RouterLink>
+            </NuxtLink>
           </div>
           <!-- Grid item -->
           <div class="col-span-6 sm:col-span-3">
-            <RouterLink
+            <NuxtLink
               to="/"
               class="group relative w-full flex flex-col overflow-hidden rounded-2xl"
             >
@@ -262,7 +262,7 @@ const popular = [
                   />
                 </div>
               </div>
-            </RouterLink>
+            </NuxtLink>
           </div>
           <!-- Grid item -->
           <div class="col-span-12 sm:col-span-6">
@@ -406,7 +406,7 @@ const popular = [
             </div>
             <div class="space-y-1">
               <!-- Item -->
-              <RouterLink
+              <NuxtLink
                 to="/"
                 class="flex items-center gap-3 rounded-xl hover:bg-muted-100 dark:hover:bg-muted-700/50 py-3 px-2 transition-colors duration-300"
               >
@@ -434,9 +434,9 @@ const popular = [
                     <Icon name="lucide:arrow-right" class="w-5 h-5" />
                   </BaseButtonIcon>
                 </div>
-              </RouterLink>
+              </NuxtLink>
               <!-- Item -->
-              <RouterLink
+              <NuxtLink
                 to="/"
                 class="flex items-center gap-3 rounded-xl hover:bg-muted-100 dark:hover:bg-muted-700/50 py-3 px-2 transition-colors duration-300"
               >
@@ -464,9 +464,9 @@ const popular = [
                     <Icon name="lucide:arrow-right" class="w-5 h-5" />
                   </BaseButtonIcon>
                 </div>
-              </RouterLink>
+              </NuxtLink>
               <!-- Item -->
-              <RouterLink
+              <NuxtLink
                 to="/"
                 class="flex items-center gap-3 rounded-xl hover:bg-muted-100 dark:hover:bg-muted-700/50 py-3 px-2 transition-colors duration-300"
               >
@@ -494,7 +494,7 @@ const popular = [
                     <Icon name="lucide:arrow-right" class="w-5 h-5" />
                   </BaseButtonIcon>
                 </div>
-              </RouterLink>
+              </NuxtLink>
             </div>
           </BaseCard>
         </div>

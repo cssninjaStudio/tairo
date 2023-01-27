@@ -8,7 +8,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
       <MenuButton as="template">
         <button
           type="button"
-          class="inline-flex h-9 w-9 items-center justify-center rounded-full ring-1 ring-transparent transition-all duration-300 group-hover:ring-primary-500 group-hover:ring-offset-4 dark:ring-offset-muted-900"
+          class="inline-flex h-9 w-9 items-center justify-center rounded-full ring-1 ring-transparent transition-all duration-300 group-hover:ring-muted-200 dark:group-hover:ring-muted-700 group-hover:ring-offset-4 dark:ring-offset-muted-900"
         >
           <span
             class="flex h-9 w-9 items-center justify-center rounded-full border border-muted-200 bg-white dark:border-muted-700 dark:bg-muted-800"

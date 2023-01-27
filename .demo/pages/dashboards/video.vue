@@ -247,15 +247,15 @@ const videos = [
                 class="absolute inset-0 w-full h-full flex flex-col justify-between z-20"
               >
                 <div class="p-6 ptablet:p-10">
-                  <RouterLink
+                  <NuxtLink
                     to="/"
                     class="h-14 w-14 flex items-center justify-center border-2 border-transparent group-hover:border-primary-500 text-muted-300 group-hover:text-primary-500 rounded-full bg-white shadow-2xl shadow-muted-300/30 dark:shadow-muted-900/20 transition-colors duration-300"
                   >
                     <Icon name="ic:round-play-arrow" class="w-7 h-7" />
-                  </RouterLink>
+                  </NuxtLink>
                 </div>
                 <div class="p-6 ptablet:p-10">
-                  <RouterLink to="/">
+                  <NuxtLink to="/">
                     <BaseHeading
                       as="h3"
                       size="3xl"
@@ -265,7 +265,7 @@ const videos = [
                     >
                       <span>{{ video.title }}</span>
                     </BaseHeading>
-                  </RouterLink>
+                  </NuxtLink>
                   <div class="flex gap-3">
                     <BaseAvatar
                       :src="video.author.avatar"
@@ -274,7 +274,7 @@ const videos = [
                       class="flex-shrink-0 bg-primary-100 dark:bg-primary-500/20 text-primary-500"
                     />
                     <div>
-                      <RouterLink to="/">
+                      <NuxtLink to="/">
                         <BaseHeading
                           as="h4"
                           size="xs"
@@ -284,7 +284,7 @@ const videos = [
                         >
                           <span>{{ video.author.name }}</span>
                         </BaseHeading>
-                      </RouterLink>
+                      </NuxtLink>
 
                       <BaseParagraph size="xs">
                         <span class="text-muted-400">{{ video.uploaded }}</span>
@@ -327,15 +327,15 @@ const videos = [
                       class="absolute inset-0 w-full h-full flex flex-col justify-between z-20"
                     >
                       <div class="p-4">
-                        <RouterLink
+                        <NuxtLink
                           to="/"
                           class="h-10 w-10 flex items-center justify-center border-2 border-transparent group-hover:border-primary-500 text-muted-300 group-hover:text-primary-500 rounded-full bg-white shadow-2xl shadow-muted-300/30 dark:shadow-muted-900/20 transition-colors duration-300"
                         >
                           <Icon name="ic:round-play-arrow" class="w-5 h-5" />
-                        </RouterLink>
+                        </NuxtLink>
                       </div>
                       <div class="p-4">
-                        <RouterLink to="/">
+                        <NuxtLink to="/">
                           <BaseHeading
                             as="h3"
                             size="md"
@@ -345,7 +345,7 @@ const videos = [
                           >
                             <span>{{ video.title }}</span>
                           </BaseHeading>
-                        </RouterLink>
+                        </NuxtLink>
                         <div class="flex gap-3">
                           <BaseAvatar
                             :src="video.author.avatar"
@@ -354,7 +354,7 @@ const videos = [
                             class="flex-shrink-0 bg-primary-100 dark:bg-primary-500/20 text-primary-500"
                           />
                           <div>
-                            <RouterLink to="/">
+                            <NuxtLink to="/">
                               <BaseHeading
                                 as="h4"
                                 size="xs"
@@ -364,7 +364,7 @@ const videos = [
                               >
                                 <span>{{ video.author.name }}</span>
                               </BaseHeading>
-                            </RouterLink>
+                            </NuxtLink>
 
                             <BaseParagraph size="xs">
                               <span class="text-muted-400">{{
@@ -449,15 +449,15 @@ const videos = [
               class="absolute inset-0 w-full flex flex-col justify-between z-20"
             >
               <div class="p-4">
-                <RouterLink
+                <NuxtLink
                   to="/"
                   class="h-10 w-10 flex items-center justify-center border-2 border-transparent group-hover:border-primary-500 text-muted-300 group-hover:text-primary-500 rounded-full bg-white shadow-2xl shadow-muted-300/30 dark:shadow-muted-900/20 transition-colors duration-300"
                 >
                   <Icon name="ic:round-play-arrow" class="w-5 h-5" />
-                </RouterLink>
+                </NuxtLink>
               </div>
               <div class="p-4">
-                <RouterLink to="/">
+                <NuxtLink to="/">
                   <BaseHeading
                     as="h3"
                     size="xl"
@@ -467,7 +467,7 @@ const videos = [
                   >
                     <span>{{ video.title }}</span>
                   </BaseHeading>
-                </RouterLink>
+                </NuxtLink>
 
                 <div class="flex gap-3">
                   <BaseAvatar
@@ -477,7 +477,7 @@ const videos = [
                     class="flex-shrink-0 bg-primary-100 dark:bg-primary-500/20 text-primary-500"
                   />
                   <div>
-                    <RouterLink to="/">
+                    <NuxtLink to="/">
                       <BaseHeading
                         as="h4"
                         size="xs"
@@ -487,7 +487,7 @@ const videos = [
                       >
                         <span>{{ video.author.name }}</span>
                       </BaseHeading>
-                    </RouterLink>
+                    </NuxtLink>
 
                     <BaseParagraph size="xs">
                       <span class="text-muted-400">{{ video.uploaded }}</span>

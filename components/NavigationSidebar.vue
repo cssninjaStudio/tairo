@@ -73,7 +73,7 @@ const endSidebars = computed(() =>
   </div>
 </template>
 
-<style scoped>
+<style lang="pcss" scoped>
 /* Router Link */
 .slimscroll :deep(.router-link-exact-active) {
   @apply text-primary-500;
