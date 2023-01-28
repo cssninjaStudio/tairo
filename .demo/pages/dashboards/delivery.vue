@@ -277,7 +277,7 @@ const total = computed(() => {
                   <img
                     :src="genre.icon"
                     alt="Food type icon"
-                    class="h-12 w-12"
+                    class="h-12 w-12 scale-[0.8]"
                     :class="activeGenre === genre.id ? '' : 'dark:invert'"
                   />
                 </div>
