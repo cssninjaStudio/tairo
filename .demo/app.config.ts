@@ -26,7 +26,7 @@ export default defineAppConfig({
       {
         name: 'Chat',
         icon: { name: 'ph:chat-circle-duotone', class: 'w-5 h-5' },
-        to: '/',
+        to: '/dashboards/messaging',
       },
       {
         name: 'Panels',

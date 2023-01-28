@@ -384,13 +384,14 @@ watch(
             <div
               class="flex h-16 w-16 ltablet:w-full lg:w-full items-center justify-center shrink-0"
             >
-              <NuxtLink
-                to="/dashboards"
+              <a
+                href="#"
                 class="text-muted-400 hover:text-primary-500 flex h-12 w-12 items-center justify-center rounded-2xl hover:bg-primary-500/20 transition-colors duration-300"
                 title="Back"
+                @click.prevent="$router.back()"
               >
                 <Icon name="lucide:arrow-left" class="h-5 w-5" />
-              </NuxtLink>
+              </a>
             </div>
           </div>
           <div

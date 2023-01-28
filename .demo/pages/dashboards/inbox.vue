@@ -225,6 +225,18 @@ const panelActive = ref(false)
           </div>
         </NuxtLink>
         <div class="mt-auto flex flex-col items-center">
+          <a
+            href="#"
+            class="relative w-16 h-16 flex items-center justify-center"
+            title="Back"
+            @click.prevent="$router.back()"
+          >
+            <div
+              class="relative h-12 w-12 flex items-center justify-center rounded-xl bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400"
+            >
+              <Icon name="lucide:arrow-left" class="w-5 h-5" />
+            </div>
+          </a>
           <button
             type="button"
             class="relative w-16 h-16 flex items-center justify-center"
