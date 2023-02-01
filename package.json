@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "0.35.1",
-    "@ckeditor/ckeditor5-build-classic": "35.4.0",
+    "@ckeditor/ckeditor5-build-classic": "36.0.0",
     "@ckeditor/ckeditor5-vue": "4.0.1",
     "@cssninja/nuxt-ui": "0.3.12",
     "@iconify/json": "2.2.14",
