@@ -13,11 +13,15 @@ const envModules = {
 export default defineNuxtConfig({
   extends: envModules.ui,
   modules: ['nuxt-config-schema', '@nuxt/image-edge'],
+  alias: {
+    '@': '/<rootDir>',
+  },
   css: [
     resolve('./assets/css/modules/variables.css'),
     resolve('./assets/css/modules/slider.css'),
     resolve('./assets/css/modules/popper.css'),
     resolve('./assets/css/modules/apex.css'), // @todo: this should be lazy loaded
+    resolve('./assets/css/modules/vcalendar.css'),
     resolve('./assets/css/keyframes.css'),
   ],
   postcss: {

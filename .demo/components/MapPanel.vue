@@ -299,53 +299,56 @@ onMounted(() => {
 })
 
 // watchPostEffect(() => {
-watchEffect(() => {
-  if (!selectedFeature.value || !popupElement.value || !map.value) {
-    return
-  }
-
-  const feature = selectedFeature.value
-  const { geometry, properties } = feature
-  const { name } = properties
-  const coordinates = geometry.coordinates.slice()
-  // const logo = selectedFeature.value.properties.logo
-  // const openingCount = selectedFeature.value.properties.openingCount
-  // const description = selectedFeature.value.properties.description
-
-  console.log('zooming at: ', properties, coordinates)
-
-  // Ensure that if the map is zoomed out such that multiple
-  // copies of the feature are visible, the popup appears
-  // over the copy being pointed to.
-  if (selectedFeatureLatLng.value) {
-    while (Math.abs(selectedFeatureLatLng.value.lng - coordinates[0]) > 180) {
-      coordinates[0] +=
-        selectedFeatureLatLng.value.lng > coordinates[0] ? 360 : -360
+watchEffect(
+  () => {
+    if (!selectedFeature.value || !popupElement.value || !map.value) {
+      return
     }
-  }
 
-  map.value.flyTo({
-    center: coordinates,
-    zoom: 15,
-    bearing: 0,
-    essential: true, // this animation is considered essential with respect to prefers-reduced-motion
-  })
+    const feature = selectedFeature.value
+    const { geometry, properties } = feature
+    const { name } = properties
+    const coordinates = geometry.coordinates.slice()
+    // const logo = selectedFeature.value.properties.logo
+    // const openingCount = selectedFeature.value.properties.openingCount
+    // const description = selectedFeature.value.properties.description
 
-  if (popup.value) {
-    popup.value.remove()
-  }
+    console.log('zooming at: ', properties, coordinates)
 
-  popup.value = new Popup()
-    .on('open', () => {
-      selectedFeatureName.value = name
+    // Ensure that if the map is zoomed out such that multiple
+    // copies of the feature are visible, the popup appears
+    // over the copy being pointed to.
+    if (selectedFeatureLatLng.value) {
+      while (Math.abs(selectedFeatureLatLng.value.lng - coordinates[0]) > 180) {
+        coordinates[0] +=
+          selectedFeatureLatLng.value.lng > coordinates[0] ? 360 : -360
+      }
+    }
+
+    map.value.flyTo({
+      center: coordinates,
+      zoom: 15,
+      bearing: 0,
+      essential: true, // this animation is considered essential with respect to prefers-reduced-motion
     })
-    .on('close', () => {
-      selectedFeatureName.value = ''
-    })
-    .setLngLat(coordinates)
-    .setHTML(popupElement.value.innerHTML)
-    .addTo(map.value)
-})
+
+    if (popup.value) {
+      popup.value.remove()
+    }
+
+    popup.value = new Popup()
+      .on('open', () => {
+        selectedFeatureName.value = name
+      })
+      .on('close', () => {
+        selectedFeatureName.value = ''
+      })
+      .setLngLat(coordinates)
+      .setHTML(popupElement.value.innerHTML)
+      .addTo(map.value)
+  },
+  { flush: 'post' },
+)
 
 watch(
   () => colorMode.value === 'dark',

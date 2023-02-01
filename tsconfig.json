@@ -9,8 +9,11 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@utils/*": [
+      "@/utils/*": [
         "utils/*"
+      ],
+      "@/types/*": [
+        "types/*"
       ],
     }
   }

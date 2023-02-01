@@ -19,11 +19,11 @@
     "lint:eslint:fix": "eslint --fix ."
   },
   "devDependencies": {
-    "@antfu/eslint-config": "0.34.1",
+    "@antfu/eslint-config": "0.35.1",
     "@ckeditor/ckeditor5-build-classic": "35.4.0",
     "@ckeditor/ckeditor5-vue": "4.0.1",
-    "@cssninja/nuxt-ui": "0.3.10",
-    "@iconify/json": "2.2.12",
+    "@cssninja/nuxt-ui": "0.3.12",
+    "@iconify/json": "2.2.14",
     "@nuxt/image-edge": "1.0.0-27840416.dc1ed65",
     "@nuxtjs/eslint-config": "12.0.0",
     "@nuxtjs/eslint-config-typescript": "12.0.0",
@@ -33,10 +33,10 @@
     "@types/markdown-it": "12.2.3",
     "@types/prismjs": "1.26.0",
     "@vueform/slider": "2.1.7",
-    "eslint": "8.32.0",
+    "eslint": "8.33.0",
     "eslint-config-prettier": "8.6.0",
     "eslint-plugin-prettier-vue": "4.2.0",
-    "eslint-plugin-tailwindcss": "3.8.0",
+    "eslint-plugin-tailwindcss": "3.8.2",
     "eslint-plugin-vuejs-accessibility": "2.1.0",
     "lint-staged": "13.1.0",
     "markdown-it": "13.0.1",
@@ -78,10 +78,14 @@
   "dependencies": {
     "@mapbox/mapbox-gl-geocoder": "5.0.1",
     "apexcharts": "3.36.3",
+    "compressorjs": "^1.1.1",
+    "cropperjs": "^1.5.13",
     "date-fns": "2.29.3",
     "dayjs": "1.11.7",
     "mapbox-gl": "2.12.0",
     "nuxt-swiper": "0.1.9",
+    "v-calendar": "3.0.0-alpha.8",
+    "vue-upload-component": "^3.1.6",
     "vue3-apexcharts": "1.4.1",
     "vue3-popper": "1.5.0"
   }

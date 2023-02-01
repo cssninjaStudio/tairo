@@ -499,7 +499,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
     <!-- Menu item -->
     <li class="mb-1 flex min-h-[2rem] items-center">
       <NuxtLink
-        to="/"
+        to="/wizard"
         class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
       >
         <span class="font-sans text-sm">Wizard</span>
