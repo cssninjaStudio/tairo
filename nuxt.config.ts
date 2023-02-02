@@ -35,5 +35,10 @@ export default defineNuxtConfig({
       chunkSizeWarningLimit: Infinity,
       assetsInlineLimit: 4096 * 2,
     },
+    define: {
+      'process.env': {
+        VSCODE_TEXTMATE_DEBUG: false,
+      },
+    },
   },
 })
