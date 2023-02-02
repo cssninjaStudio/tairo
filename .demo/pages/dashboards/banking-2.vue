@@ -157,11 +157,12 @@ const selectedBank = ref(banks[0])
               <div class="leading-relaxed mb-6 ptablet:mb-0">
                 <span
                   class="block font-sans font-semibold text-3xl text-muted-800 dark:text-muted-100"
-                  >{{ formatPrice(6341.14) }}</span
                 >
-                <span class="block font-sans text-sm text-muted-400"
-                  >**** **** **** 4986</span
-                >
+                  {{ formatPrice(6341.14) }}
+                </span>
+                <span class="block font-sans text-sm text-muted-400">
+                  **** **** **** 4986
+                </span>
               </div>
               <div class="flex items-center gap-12">
                 <div class="card-balance-stat">
@@ -306,8 +307,9 @@ const selectedBank = ref(banks[0])
                     <div class="ml-auto">
                       <span
                         class="font-sans font-semibold text-sm text-muted-800 dark:text-muted-100"
-                        >- {{ formatPrice(41.49) }}</span
                       >
+                        - {{ formatPrice(41.49) }}
+                      </span>
                     </div>
                   </div>
                   <!-- Item -->
@@ -336,8 +338,9 @@ const selectedBank = ref(banks[0])
                     <div class="ml-auto">
                       <span
                         class="font-sans font-semibold text-sm text-muted-800 dark:text-muted-100"
-                        >+ {{ formatPrice(263.39) }}</span
                       >
+                        + {{ formatPrice(263.39) }}
+                      </span>
                     </div>
                   </div>
                   <!-- Item -->
@@ -366,8 +369,9 @@ const selectedBank = ref(banks[0])
                     <div class="ml-auto">
                       <span
                         class="font-sans font-semibold text-sm text-muted-800 dark:text-muted-100"
-                        >- {{ formatPrice(92.17) }}</span
                       >
+                        - {{ formatPrice(92.17) }}
+                      </span>
                     </div>
                   </div>
                 </div>

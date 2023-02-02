@@ -84,12 +84,10 @@ definePageMeta({
                         />
                       </div>
                     </BaseTableHeading>
-                    <BaseTableHeading uppercase>
-                      Collaborator
-                    </BaseTableHeading>
-                    <BaseTableHeading uppercase> Expertise </BaseTableHeading>
-                    <BaseTableHeading uppercase> Rate </BaseTableHeading>
-                    <BaseTableHeading uppercase> Status </BaseTableHeading>
+                    <BaseTableHeading uppercase>Collaborator</BaseTableHeading>
+                    <BaseTableHeading uppercase>Expertise</BaseTableHeading>
+                    <BaseTableHeading uppercase>Rate</BaseTableHeading>
+                    <BaseTableHeading uppercase>Status</BaseTableHeading>
                     <BaseTableHeading uppercase class="p-4">
                       <span class="sr-only">View</span>
                     </BaseTableHeading>
@@ -175,12 +173,10 @@ definePageMeta({
                         />
                       </div>
                     </BaseTableHeading>
-                    <BaseTableHeading uppercase>
-                      Collaborator
-                    </BaseTableHeading>
-                    <BaseTableHeading uppercase> Expertise </BaseTableHeading>
-                    <BaseTableHeading uppercase> Rate </BaseTableHeading>
-                    <BaseTableHeading uppercase> Status </BaseTableHeading>
+                    <BaseTableHeading uppercase>Collaborator</BaseTableHeading>
+                    <BaseTableHeading uppercase>Expertise</BaseTableHeading>
+                    <BaseTableHeading uppercase>Rate</BaseTableHeading>
+                    <BaseTableHeading uppercase>Status</BaseTableHeading>
                     <BaseTableHeading uppercase class="p-4">
                       <span class="sr-only">View</span>
                     </BaseTableHeading>
@@ -266,12 +262,10 @@ definePageMeta({
                         />
                       </div>
                     </BaseTableHeading>
-                    <BaseTableHeading uppercase>
-                      Collaborator
-                    </BaseTableHeading>
-                    <BaseTableHeading uppercase> Expertise </BaseTableHeading>
-                    <BaseTableHeading uppercase> Rate </BaseTableHeading>
-                    <BaseTableHeading uppercase> Status </BaseTableHeading>
+                    <BaseTableHeading uppercase>Collaborator</BaseTableHeading>
+                    <BaseTableHeading uppercase>Expertise</BaseTableHeading>
+                    <BaseTableHeading uppercase>Rate</BaseTableHeading>
+                    <BaseTableHeading uppercase>Status</BaseTableHeading>
                     <BaseTableHeading uppercase class="p-4">
                       <span class="sr-only">View</span>
                     </BaseTableHeading>
@@ -361,12 +355,10 @@ definePageMeta({
                         />
                       </div>
                     </BaseTableHeading>
-                    <BaseTableHeading uppercase>
-                      Collaborator
-                    </BaseTableHeading>
-                    <BaseTableHeading uppercase> Expertise </BaseTableHeading>
-                    <BaseTableHeading uppercase> Rate </BaseTableHeading>
-                    <BaseTableHeading uppercase> Status </BaseTableHeading>
+                    <BaseTableHeading uppercase>Collaborator</BaseTableHeading>
+                    <BaseTableHeading uppercase>Expertise</BaseTableHeading>
+                    <BaseTableHeading uppercase>Rate</BaseTableHeading>
+                    <BaseTableHeading uppercase>Status</BaseTableHeading>
                     <BaseTableHeading uppercase class="p-4">
                       <span class="sr-only">View</span>
                     </BaseTableHeading>
@@ -462,12 +454,10 @@ definePageMeta({
                         />
                       </div>
                     </BaseTableHeading>
-                    <BaseTableHeading uppercase>
-                      Collaborator
-                    </BaseTableHeading>
-                    <BaseTableHeading uppercase> Expertise </BaseTableHeading>
-                    <BaseTableHeading uppercase> Rate </BaseTableHeading>
-                    <BaseTableHeading uppercase> Status </BaseTableHeading>
+                    <BaseTableHeading uppercase>Collaborator</BaseTableHeading>
+                    <BaseTableHeading uppercase>Expertise</BaseTableHeading>
+                    <BaseTableHeading uppercase>Rate</BaseTableHeading>
+                    <BaseTableHeading uppercase>Status</BaseTableHeading>
                     <BaseTableHeading uppercase class="p-4">
                       <span class="sr-only">View</span>
                     </BaseTableHeading>
@@ -563,12 +553,10 @@ definePageMeta({
                         />
                       </div>
                     </BaseTableHeading>
-                    <BaseTableHeading uppercase>
-                      Collaborator
-                    </BaseTableHeading>
-                    <BaseTableHeading uppercase> Expertise </BaseTableHeading>
-                    <BaseTableHeading uppercase> Rate </BaseTableHeading>
-                    <BaseTableHeading uppercase> Status </BaseTableHeading>
+                    <BaseTableHeading uppercase>Collaborator</BaseTableHeading>
+                    <BaseTableHeading uppercase>Expertise</BaseTableHeading>
+                    <BaseTableHeading uppercase>Rate</BaseTableHeading>
+                    <BaseTableHeading uppercase>Status</BaseTableHeading>
                     <BaseTableHeading uppercase class="p-4">
                       <span class="sr-only">View</span>
                     </BaseTableHeading>

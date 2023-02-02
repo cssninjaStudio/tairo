@@ -19,8 +19,9 @@ const props = defineProps<{
       :class="
         props.hideLabel ? 'sm:hidden' : 'text-muted-500 dark:text-muted-400'
       "
-      >{{ props.label }}</span
     >
+      {{ props.label }}
+    </span>
     <BaseAvatar
       v-if="props.image && !props.icon"
       :src="props.image"

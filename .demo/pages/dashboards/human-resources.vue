@@ -134,20 +134,23 @@ const items = [
                 shape="curved"
                 :color="activeSetting === 'all' ? 'primary' : 'default'"
                 @click="activeSetting = 'all'"
-                >All</BaseButtonAction
               >
+                All
+              </BaseButtonAction>
               <BaseButtonAction
                 shape="curved"
                 :color="activeSetting === 'candidates' ? 'primary' : 'default'"
                 @click="activeSetting = 'candidates'"
-                >Candidates</BaseButtonAction
               >
+                Candidates
+              </BaseButtonAction>
               <BaseButtonAction
                 shape="curved"
                 :color="activeSetting === 'companies' ? 'primary' : 'default'"
                 @click="activeSetting = 'companies'"
-                >Companies</BaseButtonAction
               >
+                Companies
+              </BaseButtonAction>
             </div>
           </div>
           <!-- Details -->
@@ -206,8 +209,9 @@ const items = [
                     >
                       <span
                         class="font-sans text-sm text-muted-500 dark:text-muted-400"
-                        >{{ item.count }}</span
                       >
+                        {{ item.count }}
+                      </span>
                     </WidgetFlexTableCell>
                     <WidgetFlexTableCell
                       label="status"
@@ -224,9 +228,9 @@ const items = [
                       </BaseTag>
                     </WidgetFlexTableCell>
                     <WidgetFlexTableCell label="action" :hideLabel="index > 0">
-                      <span class="font-sans text-xs sm:pr-2 text-primary-500"
-                        >Action</span
-                      >
+                      <span class="font-sans text-xs sm:pr-2 text-primary-500">
+                        Action
+                      </span>
                     </WidgetFlexTableCell>
                   </template>
                 </WidgetFlexTableRow>
@@ -250,8 +254,9 @@ const items = [
               <NuxtLink
                 to="/"
                 class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-white hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
-                >View All</NuxtLink
               >
+                View All
+              </NuxtLink>
             </div>
           </div>
           <!-- Grid -->
@@ -286,7 +291,8 @@ const items = [
                         shape="curved"
                         color="default"
                         class="w-full"
-                        ><span>View Profile</span>
+                      >
+                        <span>View Profile</span>
                       </BaseButton>
                     </div>
                   </div>
@@ -323,7 +329,8 @@ const items = [
                         shape="curved"
                         color="default"
                         class="w-full"
-                        ><span>View Profile</span>
+                      >
+                        <span>View Profile</span>
                       </BaseButton>
                     </div>
                   </div>
@@ -360,7 +367,8 @@ const items = [
                         shape="curved"
                         color="default"
                         class="w-full"
-                        ><span>View Profile</span>
+                      >
+                        <span>View Profile</span>
                       </BaseButton>
                     </div>
                   </div>

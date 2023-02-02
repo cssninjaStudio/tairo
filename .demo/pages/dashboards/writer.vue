@@ -36,10 +36,10 @@ const activePosts = ref('recent')
                     size="sm"
                     class="max-w-xs text-white opacity-70"
                   >
-                    <span
-                      >Have any ideas for a new article? If not, you should
-                      definitely check the feed for some inspiration.</span
-                    >
+                    <span>
+                      Have any ideas for a new article? If not, you should
+                      definitely check the feed for some inspiration.
+                    </span>
                   </BaseParagraph>
                   <div class="mt-2">
                     <BaseButton
@@ -77,8 +77,9 @@ const activePosts = ref('recent')
                         </BaseParagraph>
                         <span
                           class="block font-sans font-bold text-2xl text-muted-800 dark:text-muted-100"
-                          >138</span
                         >
+                          138
+                        </span>
                       </BaseCard>
                     </div>
                     <!-- Tile -->
@@ -93,8 +94,9 @@ const activePosts = ref('recent')
                         </BaseParagraph>
                         <span
                           class="block font-sans font-bold text-2xl text-muted-800 dark:text-muted-100"
-                          >921</span
                         >
+                          921
+                        </span>
                       </BaseCard>
                     </div>
                     <!-- Tile -->
@@ -109,8 +111,9 @@ const activePosts = ref('recent')
                         </BaseParagraph>
                         <span
                           class="block font-sans font-bold text-2xl text-muted-800 dark:text-muted-100"
-                          >279</span
                         >
+                          279
+                        </span>
                       </BaseCard>
                     </div>
                   </div>
@@ -130,8 +133,9 @@ const activePosts = ref('recent')
                       <NuxtLink
                         to="/"
                         class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
-                        >View All</NuxtLink
                       >
+                        View All
+                      </NuxtLink>
                     </div>
                     <WidgetAuthorsListCompact />
                   </BaseCard>
@@ -155,8 +159,9 @@ const activePosts = ref('recent')
                     <NuxtLink
                       to="/"
                       class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
-                      >View All</NuxtLink
                     >
+                      View All
+                    </NuxtLink>
                   </div>
                   <WidgetCommentListCompact />
                 </BaseCard>
@@ -184,14 +189,16 @@ const activePosts = ref('recent')
                 small
                 :color="activePosts === 'recent' ? 'primary' : 'default'"
                 @click="activePosts = 'recent'"
-                >Recent</BaseButtonAction
               >
+                Recent
+              </BaseButtonAction>
               <BaseButtonAction
                 small
                 :color="activePosts === 'popular' ? 'primary' : 'default'"
                 @click="activePosts = 'popular'"
-                >Popular</BaseButtonAction
               >
+                Popular
+              </BaseButtonAction>
             </div>
           </div>
           <!-- Posts-->

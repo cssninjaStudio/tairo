@@ -12,10 +12,10 @@
           <span>Maya R.</span>
         </BaseHeading>
         <BaseParagraph lead="none">
-          <span class="text-xs text-primary-500"> Tairo HQ </span>
+          <span class="text-xs text-primary-500">Tairo HQ</span>
         </BaseParagraph>
         <BaseParagraph lead="none">
-          <span class="text-xs text-muted-400"> UI/UX designer </span>
+          <span class="text-xs text-muted-400">UI/UX designer</span>
         </BaseParagraph>
       </div>
       <div class="flex-1 flex-shrink-0">
@@ -40,8 +40,9 @@
       <a
         href="mailto:maya@tairo.io"
         class="font-sans text-sm underline-offset-4 hover:underline text-primary-500"
-        >maya@tairo.io</a
       >
+        maya@tairo.io
+      </a>
       <Icon name="ph:envelope-duotone" class="w-4 h-4 text-muted-400" />
     </div>
   </div>

@@ -68,7 +68,7 @@ const candidates = [
           </div>
           <div>
             <BaseParagraph size="xs">
-              <span class="text-muted-400 mb-2"> Your Progress </span>
+              <span class="text-muted-400 mb-2">Your Progress</span>
             </BaseParagraph>
             <BaseHeading
               as="h4"
@@ -110,7 +110,7 @@ const candidates = [
             <span>62K</span>
           </BaseHeading>
           <BaseParagraph size="xs">
-            <span class="text-muted-500 dark:text-muted-400"> Minutes </span>
+            <span class="text-muted-500 dark:text-muted-400">Minutes</span>
           </BaseParagraph>
         </div>
       </BaseCard>
@@ -134,7 +134,7 @@ const candidates = [
             <span>263</span>
           </BaseHeading>
           <BaseParagraph size="xs">
-            <span class="text-muted-500 dark:text-muted-400"> Interviews </span>
+            <span class="text-muted-500 dark:text-muted-400">Interviews</span>
           </BaseParagraph>
         </div>
       </BaseCard>
@@ -158,7 +158,7 @@ const candidates = [
             <span>49</span>
           </BaseHeading>
           <BaseParagraph size="xs">
-            <span class="text-muted-500 dark:text-muted-400"> Approved </span>
+            <span class="text-muted-500 dark:text-muted-400">Approved</span>
           </BaseParagraph>
         </div>
       </BaseCard>
@@ -182,7 +182,7 @@ const candidates = [
             <span>214</span>
           </BaseHeading>
           <BaseParagraph size="xs">
-            <span class="text-muted-500 dark:text-muted-400"> Rejected </span>
+            <span class="text-muted-500 dark:text-muted-400">Rejected</span>
           </BaseParagraph>
         </div>
       </BaseCard>
@@ -234,8 +234,9 @@ const candidates = [
           <NuxtLink
             to="/"
             class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
-            >View All</NuxtLink
           >
+            View All
+          </NuxtLink>
         </div>
         <WidgetTrendingSkills />
       </BaseCard>
@@ -257,8 +258,9 @@ const candidates = [
           <NuxtLink
             to="/"
             class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
-            >Reports</NuxtLink
           >
+            Reports
+          </NuxtLink>
         </div>
         <ExampleApexchartAreaInterviews />
       </BaseCard>
@@ -279,7 +281,7 @@ const candidates = [
             <span>Jonathan K.</span>
           </BaseHeading>
           <BaseParagraph size="xs">
-            <span class="text-muted-400"> 8:00 am — 9:00 am </span>
+            <span class="text-muted-400">8:00 am — 9:00 am</span>
           </BaseParagraph>
         </div>
         <div class="flex items-center ml-auto">
@@ -302,7 +304,7 @@ const candidates = [
             <span>Erwin S.</span>
           </BaseHeading>
           <BaseParagraph size="xs">
-            <span class="text-muted-400"> 10:30 am — 11:30 am </span>
+            <span class="text-muted-400">10:30 am — 11:30 am</span>
           </BaseParagraph>
         </div>
         <div class="flex items-center ml-auto">
@@ -325,7 +327,7 @@ const candidates = [
             <span>Jennifer M.</span>
           </BaseHeading>
           <BaseParagraph size="xs">
-            <span class="text-muted-400"> 2:00 pm — 3:00 pm </span>
+            <span class="text-muted-400">2:00 pm — 3:00 pm</span>
           </BaseParagraph>
         </div>
         <div class="flex items-center ml-auto">

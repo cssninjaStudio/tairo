@@ -16,9 +16,9 @@ const activePeriod = ref('week')
       class="flex flex-col sm:flex-row sm:items-center justify-between gap-y-4 mb-6"
     >
       <div>
-        <BaseParagraph size="sm" class="text-muted-500 dark:text-muted-400"
-          >Latest Bitcoin (BTC) Price Chart</BaseParagraph
-        >
+        <BaseParagraph size="sm" class="text-muted-500 dark:text-muted-400">
+          Latest Bitcoin (BTC) Price Chart
+        </BaseParagraph>
         <BaseHeading
           size="3xl"
           weight="bold"
@@ -26,36 +26,42 @@ const activePeriod = ref('week')
         >
           <span
             class="after:content-['+3.4%'] after:relative after:-top-3 after:-right-2 after:text-sm after:text-success-500"
-            >{{ formatPrice(10584.3) }}</span
           >
+            {{ formatPrice(10584.3) }}
+          </span>
         </BaseHeading>
       </div>
       <div class="flex sm:justify-end gap-2">
         <BaseButtonAction
           :color="activePeriod === 'hour' ? 'primary' : 'default'"
           @click="activePeriod = 'hour'"
-          >Hour</BaseButtonAction
         >
+          Hour
+        </BaseButtonAction>
         <BaseButtonAction
           :color="activePeriod === 'day' ? 'primary' : 'default'"
           @click="activePeriod = 'day'"
-          >Day</BaseButtonAction
         >
+          Day
+        </BaseButtonAction>
         <BaseButtonAction
           :color="activePeriod === 'week' ? 'primary' : 'default'"
           @click="activePeriod = 'week'"
-          >Week</BaseButtonAction
         >
+          Week
+        </BaseButtonAction>
         <BaseButtonAction
           :color="activePeriod === 'month' ? 'primary' : 'default'"
           @click="activePeriod = 'month'"
-          >Month</BaseButtonAction
         >
+          Month
+        </BaseButtonAction>
         <BaseButtonAction
           :color="activePeriod === 'year' ? 'primary' : 'default'"
           @click="activePeriod = 'year'"
-          >Year</BaseButtonAction
         >
+          Year
+        </BaseButtonAction>
       </div>
     </div>
     <!-- Grid -->
@@ -71,8 +77,9 @@ const activePeriod = ref('week')
                 <BaseParagraph
                   size="xs"
                   class="text-muted-500 dark:text-muted-400"
-                  >Market Cap</BaseParagraph
                 >
+                  Market Cap
+                </BaseParagraph>
                 <BaseHeading
                   size="lg"
                   weight="semibold"
@@ -88,8 +95,9 @@ const activePeriod = ref('week')
                 <BaseParagraph
                   size="xs"
                   class="text-muted-500 dark:text-muted-400"
-                  >Volume 24h</BaseParagraph
                 >
+                  Volume 24h
+                </BaseParagraph>
                 <BaseHeading
                   size="lg"
                   weight="semibold"
@@ -105,16 +113,17 @@ const activePeriod = ref('week')
                 <BaseParagraph
                   size="xs"
                   class="text-muted-500 dark:text-muted-400"
-                  >Low/high 24h</BaseParagraph
                 >
+                  Low/high 24h
+                </BaseParagraph>
                 <BaseHeading
                   size="lg"
                   weight="semibold"
                   class="text-muted-800 dark:text-white"
                 >
-                  <span
-                    >{{ formatPrice(10212) }} - {{ formatPrice(10584) }}</span
-                  >
+                  <span>
+                    {{ formatPrice(10212) }} - {{ formatPrice(10584) }}
+                  </span>
                 </BaseHeading>
               </BaseCard>
             </div>
@@ -152,8 +161,9 @@ const activePeriod = ref('week')
                   <NuxtLink
                     to="/"
                     class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
-                    >Buy BTC</NuxtLink
                   >
+                    Buy BTC
+                  </NuxtLink>
                 </div>
                 <ExampleApexchartRadialEvolution />
               </BaseCard>
@@ -174,8 +184,9 @@ const activePeriod = ref('week')
                   <NuxtLink
                     to="/"
                     class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
-                    >Buy BTC</NuxtLink
                   >
+                    Buy BTC
+                  </NuxtLink>
                 </div>
                 <ExampleApexchartRadialPopularity />
               </BaseCard>
@@ -208,22 +219,25 @@ const activePeriod = ref('week')
                     size="xs"
                     weight="semibold"
                     class="text-muted-500 dark:text-muted-400"
-                    >BTC</BaseParagraph
                   >
+                    BTC
+                  </BaseParagraph>
                 </div>
                 <div class="ml-auto">
                   <BaseButtonAction
                     size="sm"
                     class="text-muted-500 dark:text-muted-400"
-                    >Currencies</BaseButtonAction
                   >
+                    Currencies
+                  </BaseButtonAction>
                 </div>
               </div>
               <div>
                 <BaseParagraph
                   size="sm"
                   class="text-muted-500 dark:text-muted-400"
-                  >Bitcoin is a cryptocurrency invented in 2008 by an unknown
+                >
+                  Bitcoin is a cryptocurrency invented in 2008 by an unknown
                   person or group of people using the name Satoshi Nakamoto. It
                   was launched anonymously, with no central bank or single
                   administrator, and is peer-to-peer. Lorem ipsum dolor sit
@@ -257,8 +271,9 @@ const activePeriod = ref('week')
                 <NuxtLink
                   to="/"
                   class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
-                  >View All</NuxtLink
                 >
+                  View All
+                </NuxtLink>
               </div>
               <WidgetTeamListCompact />
             </BaseCard>
@@ -280,8 +295,9 @@ const activePeriod = ref('week')
                 <NuxtLink
                   to="/"
                   class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
-                  >View All</NuxtLink
                 >
+                  View All
+                </NuxtLink>
               </div>
               <WidgetPopularCryptos />
             </BaseCard>

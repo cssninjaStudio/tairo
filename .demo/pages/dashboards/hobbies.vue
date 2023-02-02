@@ -426,7 +426,7 @@ const popular = [
                     <span>Mt Wilbur</span>
                   </BaseHeading>
                   <BaseParagraph size="xs">
-                    <span class="text-muted-400"> Oregon · Lvl 3 </span>
+                    <span class="text-muted-400">Oregon · Lvl 3</span>
                   </BaseParagraph>
                 </div>
                 <div class="flex items-center ml-auto">
@@ -456,7 +456,7 @@ const popular = [
                     <span>Devil's Lair</span>
                   </BaseHeading>
                   <BaseParagraph size="xs">
-                    <span class="text-muted-400"> Alabama · Lvl 7 </span>
+                    <span class="text-muted-400">Alabama · Lvl 7</span>
                   </BaseParagraph>
                 </div>
                 <div class="flex items-center ml-auto">
@@ -486,7 +486,7 @@ const popular = [
                     <span>Dragon's Den</span>
                   </BaseHeading>
                   <BaseParagraph size="xs">
-                    <span class="text-muted-400"> Missouri · Lvl 4 </span>
+                    <span class="text-muted-400">Missouri · Lvl 4</span>
                   </BaseParagraph>
                 </div>
                 <div class="flex items-center ml-auto">

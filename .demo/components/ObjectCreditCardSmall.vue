@@ -10,9 +10,9 @@
       <Icon name="cib:visa" class="w-7 h-7 text-white" />
     </div>
     <div class="flex items-center justify-between">
-      <span class="block font-sans font-medium text-xs text-white"
-        >Credit Card</span
-      >
+      <span class="block font-sans font-medium text-xs text-white">
+        Credit Card
+      </span>
     </div>
   </div>
 </template>

@@ -209,19 +209,19 @@ const total = computed(() => {
               <div class="grow mt-6 sm:mt-0">
                 <div class="text-center sm:text-left pb-4 sm:pb-0">
                   <BaseHeading tag="h1" class="text-white opacity-90 mb-2">
-                    <span
-                      >Free delivery for 30 days!
-                      <span class="text-3xl">🎉</span></span
-                    >
+                    <span>
+                      Free delivery for 30 days!
+                      <span class="text-3xl">🎉</span>
+                    </span>
                   </BaseHeading>
                   <BaseParagraph
                     size="sm"
                     class="max-w-xs text-white opacity-70"
                   >
-                    <span
-                      >Don't miss out our $0 delivery fee for orders over $10
-                      for 30 days. This one's for you!</span
-                    >
+                    <span>
+                      Don't miss out our $0 delivery fee for orders over $10 for
+                      30 days. This one's for you!
+                    </span>
                   </BaseParagraph>
                   <div class="mt-2">
                     <BaseButton
@@ -248,7 +248,7 @@ const total = computed(() => {
                 class="inline-flex items-center justify-center gap-x-1 rounded-full py-2 pl-2 pr-4 font-sans bg-primary-500/10 hover:bg-primary-500/20 text-primary-600 cursor-pointer text-sm transition-all duration-300"
               >
                 <Icon name="ph:timer-duotone" class="w-5 h-5" />
-                <span class="text-sm">Delivery: </span>
+                <span class="text-sm">Delivery:</span>
                 <span>~ 25min</span>
               </button>
             </div>
@@ -339,17 +339,18 @@ const total = computed(() => {
                       <div class="pr-4">
                         <span
                           class="font-sans font-bold text-muted-800 dark:text-muted-100"
-                          >${{ meal.price }}</span
                         >
+                          ${{ meal.price }}
+                        </span>
                       </div>
                       <div class="flex items-center gap-1 pl-4">
                         <Icon
                           name="uiw:star-on"
                           class="w-3 h-3 text-yellow-400"
                         />
-                        <span class="font-sans text-xs text-muted-400"
-                          >{{ meal.rating }} ({{ meal.reviews }})</span
-                        >
+                        <span class="font-sans text-xs text-muted-400">
+                          {{ meal.rating }} ({{ meal.reviews }})
+                        </span>
                       </div>
                     </div>
 
@@ -392,7 +393,7 @@ const total = computed(() => {
                   <span>Maya Rosselini</span>
                 </BaseHeading>
                 <BaseParagraph size="xs">
-                  <span class="text-white/70"> Complete your order </span>
+                  <span class="text-white/70">Complete your order</span>
                 </BaseParagraph>
               </div>
             </div>
@@ -477,8 +478,9 @@ const total = computed(() => {
                   <span class="text-sm">Subtotal:</span>
                   <span
                     class="font-medium text-sm text-muted-500 dark:text-muted-400"
-                    >${{ subTotal.toFixed(2) }}</span
                   >
+                    ${{ subTotal.toFixed(2) }}
+                  </span>
                 </div>
               </li>
               <li>
@@ -486,8 +488,9 @@ const total = computed(() => {
                   <span class="text-sm">Taxes:</span>
                   <span
                     class="font-medium text-sm text-muted-500 dark:text-muted-400"
-                    >${{ taxes.toFixed(2) }}</span
                   >
+                    ${{ taxes.toFixed(2) }}
+                  </span>
                 </div>
               </li>
               <li>
@@ -495,8 +498,9 @@ const total = computed(() => {
                   <span>Total:</span>
                   <span
                     class="text-xl font-semibold text-muted-800 dark:text-muted-100"
-                    >${{ total.toFixed(2) }}</span
                   >
+                    ${{ total.toFixed(2) }}
+                  </span>
                 </div>
               </li>
             </ul>

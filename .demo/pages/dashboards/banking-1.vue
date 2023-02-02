@@ -55,7 +55,7 @@ const selectedCurrency = ref('usd')
             <ObjectCreditCardSmall class="text-primary-500" />
             <div>
               <BaseParagraph size="sm" weight="medium">
-                <span class="text-muted-400"> Card Balance </span>
+                <span class="text-muted-400">Card Balance</span>
               </BaseParagraph>
               <BaseHeading
                 as="h4"
@@ -130,8 +130,9 @@ const selectedCurrency = ref('usd')
               <NuxtLink
                 to="/"
                 class="font-sans text-sm underline-offset-4 text-primary-500 hover:underline"
-                >Edit</NuxtLink
               >
+                Edit
+              </NuxtLink>
             </div>
             <div class="flex items-center justify-between">
               <BaseHeading
@@ -182,7 +183,7 @@ const selectedCurrency = ref('usd')
             <ObjectCreditCardSmall class="text-success-500" />
             <div>
               <BaseParagraph size="sm" weight="medium">
-                <span class="text-muted-400"> Card Balance </span>
+                <span class="text-muted-400">Card Balance</span>
               </BaseParagraph>
               <BaseHeading
                 as="h4"
@@ -258,8 +259,9 @@ const selectedCurrency = ref('usd')
               <NuxtLink
                 to="/"
                 class="font-sans text-sm underline-offset-4 text-muted-400 hover:text-primary-500 hover:underline transition-colors duration-300"
-                >View All</NuxtLink
               >
+                View All
+              </NuxtLink>
             </div>
           </div>
           <div class="space-y-4">
@@ -289,8 +291,9 @@ const selectedCurrency = ref('usd')
               <div class="ml-auto">
                 <span
                   class="font-sans font-semibold text-sm text-muted-800 dark:text-muted-100"
-                  >- $41.49</span
                 >
+                  - $41.49
+                </span>
               </div>
             </div>
             <!-- Item -->
@@ -319,8 +322,9 @@ const selectedCurrency = ref('usd')
               <div class="ml-auto">
                 <span
                   class="font-sans font-semibold text-sm text-muted-800 dark:text-muted-100"
-                  >+ $263.39</span
                 >
+                  + $263.39
+                </span>
               </div>
             </div>
             <!-- Item -->
@@ -349,8 +353,9 @@ const selectedCurrency = ref('usd')
               <div class="ml-auto">
                 <span
                   class="font-sans font-semibold text-sm text-muted-800 dark:text-muted-100"
-                  >- $92.00</span
                 >
+                  - $92.00
+                </span>
               </div>
             </div>
           </div>
@@ -401,8 +406,9 @@ const selectedCurrency = ref('usd')
                     <NuxtLink
                       to="/"
                       class="font-sans text-sm underline-offset-4 text-primary-500 hover:underline"
-                      >Confirm and send</NuxtLink
                     >
+                      Confirm and send
+                    </NuxtLink>
                   </div>
                 </div>
               </div>
@@ -438,8 +444,9 @@ const selectedCurrency = ref('usd')
                     <NuxtLink
                       to="/"
                       class="font-sans text-sm underline-offset-4 text-primary-500 hover:underline"
-                      >Details</NuxtLink
                     >
+                      Details
+                    </NuxtLink>
                   </div>
                 </div>
               </div>
@@ -465,8 +472,9 @@ const selectedCurrency = ref('usd')
                   <NuxtLink
                     to="/"
                     class="font-sans text-sm underline-offset-4 text-muted-400 hover:text-primary-500 hover:underline transition-colors duration-300"
-                    >See All</NuxtLink
                   >
+                    See All
+                  </NuxtLink>
                 </div>
               </div>
               <div>
@@ -487,8 +495,9 @@ const selectedCurrency = ref('usd')
                 <NuxtLink
                   to="/"
                   class="font-sans text-sm underline-offset-4 text-muted-400 hover:text-primary-500 hover:underline"
-                  >See all contacts</NuxtLink
                 >
+                  See all contacts
+                </NuxtLink>
               </div>
               <form class="mt-auto">
                 <div class="space-y-3">
@@ -564,8 +573,9 @@ const selectedCurrency = ref('usd')
                   <NuxtLink
                     to="/"
                     class="font-sans text-sm underline-offset-4 text-muted-400 hover:text-primary-500 hover:underline transition-colors duration-300"
-                    >View Reports</NuxtLink
                   >
+                    View Reports
+                  </NuxtLink>
                 </div>
               </div>
               <ExampleApexchartIncomeHistory />

@@ -101,8 +101,9 @@ function getEventsSnippet(event: ComponentMeta['events'][0]) {
                 prefix=""
                 suffix="¶"
                 :id="`${componentMeta.kebabName}-properties`"
-                >Properties</TocAnchor
               >
+                Properties
+              </TocAnchor>
             </BaseHeading>
           </header>
           <div class="p-3">
@@ -135,13 +136,15 @@ function getEventsSnippet(event: ComponentMeta['events'][0]) {
                         >
                           <span
                             class="font-medium text-muted-800 dark:text-muted-100 font-mono"
-                            >{{ prop.name }}</span
                           >
+                            {{ prop.name }}
+                          </span>
                           <sup
                             v-if="prop.required"
                             class="ml-1 text-rose-500 font-mono"
-                            >Required</sup
                           >
+                            Required
+                          </sup>
                         </div>
                       </div>
                       <div
@@ -156,9 +159,9 @@ function getEventsSnippet(event: ComponentMeta['events'][0]) {
                           class="text-xs text-muted-400"
                         >
                           <span class="font-semibold">@{{ tag.name }}</span>
-                          <span v-if="tag.text" class="block whitespace-pre">{{
-                            tag.text
-                          }}</span>
+                          <span v-if="tag.text" class="block whitespace-pre">
+                            {{ tag.text }}
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -195,8 +198,9 @@ function getEventsSnippet(event: ComponentMeta['events'][0]) {
                 prefix=""
                 suffix="¶"
                 :id="`${componentMeta.kebabName}-events`"
-                >Events</TocAnchor
               >
+                Events
+              </TocAnchor>
             </BaseHeading>
           </header>
           <div class="p-3">
@@ -264,8 +268,9 @@ function getEventsSnippet(event: ComponentMeta['events'][0]) {
                 prefix=""
                 suffix="¶"
                 :id="`${componentMeta.kebabName}-slots`"
-                >Slots</TocAnchor
               >
+                Slots
+              </TocAnchor>
             </BaseHeading>
           </header>
           <div class="p-3">

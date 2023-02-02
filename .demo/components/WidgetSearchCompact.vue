@@ -30,16 +30,19 @@ const props = defineProps<{
     <div class="flex flex-wrap gap-2 mt-2">
       <span
         class="font-sans font-medium text-xs inline-flex justify-center items-center h-6 px-3 rounded-full text-muted-500 dark:text-muted-400 bg-muted-200 dark:bg-muted-700/40"
-        >#Europe</span
       >
+        #Europe
+      </span>
       <span
         class="font-sans font-medium text-xs inline-flex justify-center items-center h-6 px-3 rounded-full text-muted-500 dark:text-muted-400 bg-muted-200 dark:bg-muted-700/40"
-        >#Asia</span
       >
+        #Asia
+      </span>
       <span
         class="font-sans font-medium text-xs inline-flex justify-center items-center h-6 px-3 rounded-full text-muted-500 dark:text-muted-400 bg-muted-200 dark:bg-muted-700/40"
-        >#America</span
       >
+        #America
+      </span>
     </div>
   </div>
 </template>

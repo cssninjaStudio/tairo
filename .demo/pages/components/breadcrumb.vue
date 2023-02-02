@@ -102,9 +102,9 @@ definePageMeta({
           <DocComponent label="Breadcrumb slash separator">
             <template #demo>
               <div class="flex flex-col gap-4">
-                <BaseBreadcrumb :items="demoBreadcrumbOne"> / </BaseBreadcrumb>
+                <BaseBreadcrumb :items="demoBreadcrumbOne">/</BaseBreadcrumb>
 
-                <BaseBreadcrumb :items="demoBreadcrumbTwo"> / </BaseBreadcrumb>
+                <BaseBreadcrumb :items="demoBreadcrumbTwo">/</BaseBreadcrumb>
               </div>
             </template>
             <template #code>

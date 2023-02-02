@@ -30,10 +30,10 @@ definePageMeta({
           <DocComponent label="Default action shapes">
             <template #demo>
               <BaseFocusLoop class="flex flex-wrap items-end gap-2">
-                <BaseButtonAction shape="straight"> Action </BaseButtonAction>
-                <BaseButtonAction shape="rounded"> Action </BaseButtonAction>
-                <BaseButtonAction shape="curved"> Action </BaseButtonAction>
-                <BaseButtonAction shape="full"> Action </BaseButtonAction>
+                <BaseButtonAction shape="straight">Action</BaseButtonAction>
+                <BaseButtonAction shape="rounded">Action</BaseButtonAction>
+                <BaseButtonAction shape="curved">Action</BaseButtonAction>
+                <BaseButtonAction shape="full">Action</BaseButtonAction>
               </BaseFocusLoop>
             </template>
             <template #code>
@@ -81,9 +81,7 @@ definePageMeta({
                 <BaseButtonAction shape="curved" loading>
                   Action
                 </BaseButtonAction>
-                <BaseButtonAction shape="full" loading>
-                  Action
-                </BaseButtonAction>
+                <BaseButtonAction shape="full" loading>Action</BaseButtonAction>
               </BaseFocusLoop>
             </template>
             <template #code>

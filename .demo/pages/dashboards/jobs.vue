@@ -262,11 +262,11 @@ const jobs = [
                 <span>Create job alert</span>
               </BaseHeading>
               <BaseParagraph size="xs">
-                <span class="text-muted-500"
-                  >Create a job alert matching the following keywords and get
+                <span class="text-muted-500">
+                  Create a job alert matching the following keywords and get
                   notified as soon as a new offer matching your criteria is
-                  posted.</span
-                >
+                  posted.
+                </span>
               </BaseParagraph>
             </div>
             <!-- Form -->
@@ -307,9 +307,9 @@ const jobs = [
                     shape="rounded"
                     :classes="{ wrapper: 'text-primary-500' }"
                   />
-                  <BaseTag color="default" shape="full" class="text-xs" compact
-                    >67</BaseTag
-                  >
+                  <BaseTag color="default" shape="full" class="text-xs" compact>
+                    67
+                  </BaseTag>
                 </div>
                 <div class="flex items-center justify-between">
                   <BaseCheckbox
@@ -319,9 +319,9 @@ const jobs = [
                     shape="rounded"
                     :classes="{ wrapper: 'text-primary-500' }"
                   />
-                  <BaseTag color="default" shape="full" class="text-xs" compact
-                    >31</BaseTag
-                  >
+                  <BaseTag color="default" shape="full" class="text-xs" compact>
+                    31
+                  </BaseTag>
                 </div>
                 <div class="flex items-center justify-between">
                   <BaseCheckbox
@@ -331,9 +331,9 @@ const jobs = [
                     shape="rounded"
                     :classes="{ wrapper: 'text-primary-500' }"
                   />
-                  <BaseTag color="default" shape="full" class="text-xs" compact
-                    >49</BaseTag
-                  >
+                  <BaseTag color="default" shape="full" class="text-xs" compact>
+                    49
+                  </BaseTag>
                 </div>
                 <div class="flex items-center justify-between">
                   <BaseCheckbox
@@ -343,9 +343,9 @@ const jobs = [
                     shape="rounded"
                     :classes="{ wrapper: 'text-primary-500' }"
                   />
-                  <BaseTag color="default" shape="full" class="text-xs" compact
-                    >17</BaseTag
-                  >
+                  <BaseTag color="default" shape="full" class="text-xs" compact>
+                    17
+                  </BaseTag>
                 </div>
               </div>
             </div>
@@ -373,9 +373,9 @@ const jobs = [
                     shape="rounded"
                     :classes="{ wrapper: 'text-primary-500' }"
                   />
-                  <BaseTag color="default" shape="full" class="text-xs" compact
-                    >56</BaseTag
-                  >
+                  <BaseTag color="default" shape="full" class="text-xs" compact>
+                    56
+                  </BaseTag>
                 </div>
                 <div class="flex items-center justify-between">
                   <BaseCheckbox
@@ -385,9 +385,9 @@ const jobs = [
                     shape="rounded"
                     :classes="{ wrapper: 'text-primary-500' }"
                   />
-                  <BaseTag color="default" shape="full" class="text-xs" compact
-                    >84</BaseTag
-                  >
+                  <BaseTag color="default" shape="full" class="text-xs" compact>
+                    84
+                  </BaseTag>
                 </div>
                 <div class="flex items-center justify-between">
                   <BaseCheckbox
@@ -397,9 +397,9 @@ const jobs = [
                     shape="rounded"
                     :classes="{ wrapper: 'text-primary-500' }"
                   />
-                  <BaseTag color="default" shape="full" class="text-xs" compact
-                    >31</BaseTag
-                  >
+                  <BaseTag color="default" shape="full" class="text-xs" compact>
+                    31
+                  </BaseTag>
                 </div>
                 <div class="flex items-center justify-between">
                   <BaseCheckbox
@@ -409,9 +409,9 @@ const jobs = [
                     shape="rounded"
                     :classes="{ wrapper: 'text-primary-500' }"
                   />
-                  <BaseTag color="default" shape="full" class="text-xs" compact
-                    >59</BaseTag
-                  >
+                  <BaseTag color="default" shape="full" class="text-xs" compact>
+                    59
+                  </BaseTag>
                 </div>
                 <div class="flex items-center justify-between">
                   <BaseCheckbox
@@ -421,9 +421,9 @@ const jobs = [
                     shape="rounded"
                     :classes="{ wrapper: 'text-primary-500' }"
                   />
-                  <BaseTag color="default" shape="full" class="text-xs" compact
-                    >11</BaseTag
-                  >
+                  <BaseTag color="default" shape="full" class="text-xs" compact>
+                    11
+                  </BaseTag>
                 </div>
               </div>
             </div>
@@ -451,9 +451,9 @@ const jobs = [
                     shape="rounded"
                     :classes="{ wrapper: 'text-primary-500' }"
                   />
-                  <BaseTag color="default" shape="full" class="text-xs" compact
-                    >61</BaseTag
-                  >
+                  <BaseTag color="default" shape="full" class="text-xs" compact>
+                    61
+                  </BaseTag>
                 </div>
                 <div class="flex items-center justify-between">
                   <BaseCheckbox
@@ -463,9 +463,9 @@ const jobs = [
                     shape="rounded"
                     :classes="{ wrapper: 'text-primary-500' }"
                   />
-                  <BaseTag color="default" shape="full" class="text-xs" compact
-                    >28</BaseTag
-                  >
+                  <BaseTag color="default" shape="full" class="text-xs" compact>
+                    28
+                  </BaseTag>
                 </div>
                 <div class="flex items-center justify-between">
                   <BaseCheckbox
@@ -475,9 +475,9 @@ const jobs = [
                     shape="rounded"
                     :classes="{ wrapper: 'text-primary-500' }"
                   />
-                  <BaseTag color="default" shape="full" class="text-xs" compact
-                    >112</BaseTag
-                  >
+                  <BaseTag color="default" shape="full" class="text-xs" compact>
+                    112
+                  </BaseTag>
                 </div>
                 <div class="flex items-center justify-between">
                   <BaseCheckbox
@@ -487,9 +487,9 @@ const jobs = [
                     shape="rounded"
                     :classes="{ wrapper: 'text-primary-500' }"
                   />
-                  <BaseTag color="default" shape="full" class="text-xs" compact
-                    >58</BaseTag
-                  >
+                  <BaseTag color="default" shape="full" class="text-xs" compact>
+                    58
+                  </BaseTag>
                 </div>
               </div>
             </div>
@@ -512,9 +512,9 @@ const jobs = [
             <span>Showing 46 Jobs</span>
           </BaseHeading>
           <BaseParagraph size="sm">
-            <span class="text-muted-500"
-              >These are the matching jobs that we found</span
-            >
+            <span class="text-muted-500">
+              These are the matching jobs that we found
+            </span>
           </BaseParagraph>
         </div>
         <!-- Inner jobs grid -->
@@ -538,8 +538,9 @@ const jobs = [
                   <BaseParagraph size="sm">
                     <span
                       class="line-clamp-4 text-muted-500 dark:text-muted-400"
-                      >{{ job.description }}</span
                     >
+                      {{ job.description }}
+                    </span>
                   </BaseParagraph>
                   <div class="flex items-center flex-wrap gap-2 py-4">
                     <BaseTag

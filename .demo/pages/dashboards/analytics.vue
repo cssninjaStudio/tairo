@@ -150,8 +150,9 @@ definePageMeta({
               <NuxtLink
                 to="/"
                 class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
-                >Details</NuxtLink
               >
+                Details
+              </NuxtLink>
             </div>
             <div class="flex gap-8">
               <div>
@@ -196,9 +197,9 @@ definePageMeta({
                 <div
                   class="flex-1 px-2 border-r border-muted-200 dark:border-muted-700"
                 >
-                  <span class="font-sans text-xs text-muted-400"
-                    >Completed</span
-                  >
+                  <span class="font-sans text-xs text-muted-400">
+                    Completed
+                  </span>
                   <p
                     class="font-sans font-medium text-lg text-muted-800 dark:text-muted-100"
                   >
@@ -206,9 +207,9 @@ definePageMeta({
                   </p>
                 </div>
                 <div class="flex-1 px-2">
-                  <span class="font-sans text-xs text-muted-400"
-                    >In Progress</span
-                  >
+                  <span class="font-sans text-xs text-muted-400">
+                    In Progress
+                  </span>
                   <p
                     class="font-sans font-medium text-lg text-muted-800 dark:text-muted-100"
                   >
@@ -250,7 +251,7 @@ definePageMeta({
                     <span>Shopify</span>
                   </BaseHeading>
                   <BaseParagraph size="xs">
-                    <span class="text-muted-400"> Best selling channel </span>
+                    <span class="text-muted-400">Best selling channel</span>
                   </BaseParagraph>
                 </div>
               </div>

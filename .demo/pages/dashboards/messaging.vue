@@ -843,8 +843,9 @@ const selectConversation = (id: number) => {
                   <div class="relative flex justify-center">
                     <span
                       class="font-sans text-xs uppercase bg-muted-100 dark:bg-muted-900 px-3 text-muted-400"
-                      >{{ message.time }}</span
                     >
+                      {{ message.time }}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -959,25 +960,25 @@ const selectConversation = (id: number) => {
                     name="ph:timer-duotone"
                     class="h-4 w-4 text-muted-400"
                   />
-                  <span class="font-sans text-xs text-muted-400"
-                    >Age: {{ selectedConversation?.user.age }}</span
-                  >
+                  <span class="font-sans text-xs text-muted-400">
+                    Age: {{ selectedConversation?.user.age }}
+                  </span>
                 </div>
                 <div class="flex items-center justify-center gap-2 px-4">
                   <Icon
                     name="ph:map-pin-duotone"
                     class="h-4 w-4 text-muted-400"
                   />
-                  <span class="font-sans text-xs text-muted-400">{{
-                    selectedConversation?.user.location
-                  }}</span>
+                  <span class="font-sans text-xs text-muted-400">
+                    {{ selectedConversation?.user.location }}
+                  </span>
                 </div>
               </div>
               <div class="mt-6">
                 <BaseButton shape="curved" class="w-full">
-                  <span
-                    >View {{ selectedConversation?.user.name }}'s profile</span
-                  >
+                  <span>
+                    View {{ selectedConversation?.user.name }}'s profile
+                  </span>
                 </BaseButton>
                 <button
                   type="button"

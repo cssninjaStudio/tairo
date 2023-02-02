@@ -206,9 +206,9 @@ const videos = [
         </div>
       </div>
       <div class="space-y-2 xs:text-center xs:mt-2">
-        <span class="font-sans text-xs uppercase font-medium text-muted-400"
-          >My Team</span
-        >
+        <span class="font-sans text-xs uppercase font-medium text-muted-400">
+          My Team
+        </span>
         <div class="flex items-center justify-center md:justify-start gap-2">
           <BaseButtonIcon small>
             <Icon name="lucide:plus" class="w-4 h-4" />
@@ -367,9 +367,9 @@ const videos = [
                             </NuxtLink>
 
                             <BaseParagraph size="xs">
-                              <span class="text-muted-400">{{
-                                video.uploaded
-                              }}</span>
+                              <span class="text-muted-400">
+                                {{ video.uploaded }}
+                              </span>
                             </BaseParagraph>
                           </div>
                           <div class="ml-auto">

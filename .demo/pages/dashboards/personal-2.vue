@@ -33,9 +33,7 @@ definePageMeta({
                   <span>Welcome back, Maya</span>
                 </BaseHeading>
                 <BaseParagraph>
-                  <span class="text-muted-400">
-                    It's nice to see you again
-                  </span>
+                  <span class="text-muted-400">It's nice to see you again</span>
                 </BaseParagraph>
               </div>
             </div>
@@ -51,9 +49,10 @@ definePageMeta({
                   lead="tight"
                   class="text-muted-800 dark:text-white"
                 >
-                  <span
-                    >31 <small class="text-base font-medium">Tasks</small></span
-                  >
+                  <span>
+                    31
+                    <small class="text-base font-medium">Tasks</small>
+                  </span>
                 </BaseHeading>
                 <BaseParagraph>
                   <span class="text-sm text-muted-400">
@@ -73,8 +72,9 @@ definePageMeta({
                   <NuxtLink
                     class="font-sans text-white text-sm hover:underline underline-offset-4"
                     to="/"
-                    >Learn More</NuxtLink
                   >
+                    Learn More
+                  </NuxtLink>
                 </div>
                 <div
                   class="absolute bottom-0 right-2 w-14 h-14 flex items-center justify-center z-10"
@@ -108,8 +108,9 @@ definePageMeta({
               <NuxtLink
                 to="/"
                 class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
-                >View All</NuxtLink
               >
+                View All
+              </NuxtLink>
             </div>
             <WidgetProjectListCompact />
           </BaseCard>
@@ -128,8 +129,9 @@ definePageMeta({
               <NuxtLink
                 to="/"
                 class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
-                >Reports</NuxtLink
               >
+                Reports
+              </NuxtLink>
             </div>
             <ExampleApexchartAreaTaskCompletion />
           </BaseCard>
@@ -148,8 +150,9 @@ definePageMeta({
               <NuxtLink
                 to="/"
                 class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
-                >Reports</NuxtLink
               >
+                Reports
+              </NuxtLink>
             </div>
             <ExampleApexchartBarTeamEfficiency />
           </BaseCard>
@@ -175,8 +178,9 @@ definePageMeta({
               <NuxtLink
                 to="/"
                 class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
-                >View All</NuxtLink
               >
+                View All
+              </NuxtLink>
             </div>
             <WidgetTeamListCompact />
           </BaseCard>
@@ -196,8 +200,9 @@ definePageMeta({
               <NuxtLink
                 to="/"
                 class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
-                >View All</NuxtLink
               >
+                View All
+              </NuxtLink>
             </div>
             <WidgetTodoListCompact />
           </BaseCard>

@@ -49,15 +49,17 @@ const props = withDefaults(
         :class="
           props.active ? 'text-white' : 'text-muted-800 dark:text-muted-200'
         "
-        >{{ formatPrice(props.balance) }}</span
       >
+        {{ formatPrice(props.balance) }}
+      </span>
       <span
         class="block font-sans text-sm"
         :class="
           props.active ? 'text-white' : 'text-muted-500 dark:text-muted-400'
         "
-        >**** **** **** {{ props.endingNumber }}</span
       >
+        **** **** **** {{ props.endingNumber }}
+      </span>
     </div>
   </div>
 </template>

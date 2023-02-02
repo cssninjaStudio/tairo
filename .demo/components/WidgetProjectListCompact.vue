@@ -107,9 +107,7 @@ const projects = [
           <span>{{ project.name }}</span>
         </BaseHeading>
         <BaseParagraph size="xs">
-          <span class="text-muted-400">
-            Last updated {{ project.updated }}
-          </span>
+          <span class="text-muted-400">Last updated {{ project.updated }}</span>
         </BaseParagraph>
       </div>
       <div class="hidden md:block ml-auto">

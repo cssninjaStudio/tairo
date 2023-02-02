@@ -36,19 +36,23 @@ const followers = [
           <NuxtLink
             to="/"
             class="underline-offset-2 hover:underline text-primary-500"
-            >Clarke</NuxtLink
-          >,
+          >
+            Clarke
+          </NuxtLink>
+          ,
           <NuxtLink
             to="/"
             class="underline-offset-2 hover:underline text-primary-500"
-            >John</NuxtLink
           >
+            John
+          </NuxtLink>
           and
           <NuxtLink
             to="/"
             class="underline-offset-2 hover:underline text-primary-500"
-            >Maggie</NuxtLink
           >
+            Maggie
+          </NuxtLink>
           are now following you. Take some time to look at their profile.
         </span>
       </BaseParagraph>

@@ -57,9 +57,9 @@ const comments = [
           lead="tight"
           class="text-muted-800 dark:text-white"
         >
-          <span
-            >{{ comment.firstName }} {{ comment.lastName.slice(0, 1) }}.</span
-          >
+          <span>
+            {{ comment.firstName }} {{ comment.lastName.slice(0, 1) }}.
+          </span>
         </BaseHeading>
         <BaseParagraph size="xs">
           <span class="text-muted-400">

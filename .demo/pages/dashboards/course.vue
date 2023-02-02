@@ -178,7 +178,7 @@ const students = [
             <span>Week 6 classes</span>
           </BaseHeading>
           <BaseParagraph>
-            <span class="text-muted-500"> Classes from January 6 to 10 </span>
+            <span class="text-muted-500">Classes from January 6 to 10</span>
           </BaseParagraph>
         </div>
       </div>
@@ -215,9 +215,9 @@ const students = [
               lead="tight"
               class="mb-2"
             >
-              <span class="text-muted-800 dark:text-muted-100">{{
-                course.title
-              }}</span>
+              <span class="text-muted-800 dark:text-muted-100">
+                {{ course.title }}
+              </span>
             </BaseHeading>
             <BaseParagraph size="sm" class="text-muted-500 dark:text-muted-400">
               <span>{{ course.description }}</span>
@@ -248,9 +248,9 @@ const students = [
               </div>
               <div class="flex items-center gap-1 text-muted-400">
                 <Icon name="ph:chat-circle-dots-duotone" class="w-5 h-5" />
-                <span class="font-sans text-sm"
-                  >{{ course.comments }} comments</span
-                >
+                <span class="font-sans text-sm">
+                  {{ course.comments }} comments
+                </span>
               </div>
             </div>
           </div>
@@ -267,9 +267,9 @@ const students = [
             <div class="flex gap-6">
               <div class="flex items-center gap-1 text-muted-400">
                 <Icon name="ph:calendar-check-duotone" class="w-5 h-5" />
-                <span class="font-sans text-sm"
-                  >{{ course.date }} — {{ course.time }}</span
-                >
+                <span class="font-sans text-sm">
+                  {{ course.date }} — {{ course.time }}
+                </span>
               </div>
             </div>
           </div>
@@ -352,7 +352,7 @@ const students = [
             <span>Students</span>
           </BaseHeading>
           <BaseParagraph size="sm">
-            <span class="text-muted-500"> Summary of attending students </span>
+            <span class="text-muted-500">Summary of attending students</span>
           </BaseParagraph>
         </div>
         <div class="space-y-2">
@@ -379,8 +379,9 @@ const students = [
               >
                 <span
                   class="line-clamp-1 font-sans text-sm text-muted-500 dark:text-muted-400"
-                  >{{ student.location }}</span
                 >
+                  {{ student.location }}
+                </span>
               </WidgetFlexTableCell>
               <WidgetFlexTableCell
                 label="status"
@@ -403,8 +404,9 @@ const students = [
               >
                 <span
                   class="font-sans text-sm text-muted-500 dark:text-muted-400"
-                  >{{ student.presence }}</span
                 >
+                  {{ student.presence }}
+                </span>
               </WidgetFlexTableCell>
               <WidgetFlexTableCell label="action" hideLabel>
                 <BaseButtonAction>Chat</BaseButtonAction>

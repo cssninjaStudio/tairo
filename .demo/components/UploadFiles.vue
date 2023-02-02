@@ -226,18 +226,19 @@ export default {
               <div class="font-sans">
                 <span
                   class="block text-sm line-clamp-1 text-muted-800 dark:text-muted-100"
-                  >{{ file.name }}</span
                 >
-                <span class="block text-xs text-muted-400">{{
-                  formatFileSize(file.size)
-                }}</span>
+                  {{ file.name }}
+                </span>
+                <span class="block text-xs text-muted-400">
+                  {{ formatFileSize(file.size) }}
+                </span>
               </div>
             </div>
             <div class="w-40 flex items-center justify-center">
               <div v-if="file.error">
-                <BaseTag color="danger" shape="full" compact>{{
-                  file.error
-                }}</BaseTag>
+                <BaseTag color="danger" shape="full" compact>
+                  {{ file.error }}
+                </BaseTag>
               </div>
               <div v-else-if="file.success">
                 <BaseTag color="success" shape="full" compact>Success</BaseTag>
@@ -354,14 +355,16 @@ export default {
             <div>
               <span
                 class="font-sans font-semibold text-xs uppercase text-muted-400"
-                >Or</span
               >
+                Or
+              </span>
             </div>
             <label
               for="file"
               class="font-sans text-base underline underline-offset-4 text-muted-400 hover:text-primary-500 transition-colors duration-300 cursor-pointer"
-              >Select files</label
             >
+              Select files
+            </label>
           </div>
         </div>
       </div>

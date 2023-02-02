@@ -312,54 +312,56 @@ const activeTab = ref('tab-1')
             <span class="text-muted-800 dark:text-white">Sweet_Mango12</span>
             <Icon name="uiw:star-on" class="w-4 h-4 text-yellow-400" />
           </BaseHeading>
-          <span class="block mb-4 font-sans text-base text-muted-400"
-            >Clarissa Miller</span
-          >
+          <span class="block mb-4 font-sans text-base text-muted-400">
+            Clarissa Miller
+          </span>
           <div class="flex items-center gap-x-6 mb-6">
             <div
               class="flex flex-col ltablet:flex-row lg:flex-row flex-1 ltablet:flex-auto lg:flex-auto gap-x-2 font-sans"
             >
-              <span class="font-semibold text-muted-800 dark:text-muted-100"
-                >1512</span
-              >
+              <span class="font-semibold text-muted-800 dark:text-muted-100">
+                1512
+              </span>
               <span
                 class="text-muted-400 text-xs sm:text-sm ltablet:text-base lg:text-base"
-                >Posts</span
               >
+                Posts
+              </span>
             </div>
             <div
               class="flex flex-col ltablet:flex-row lg:flex-row flex-1 ltablet:flex-auto lg:flex-auto gap-x-2 font-sans"
             >
-              <span class="font-semibold text-muted-800 dark:text-muted-100"
-                >38.3K</span
-              >
+              <span class="font-semibold text-muted-800 dark:text-muted-100">
+                38.3K
+              </span>
               <span
                 class="text-muted-400 text-xs sm:text-sm ltablet:text-base lg:text-base"
-                >Followers</span
               >
+                Followers
+              </span>
             </div>
             <div
               class="flex flex-col ltablet:flex-row lg:flex-row flex-1 ltablet:flex-auto lg:flex-auto gap-x-2 font-sans"
             >
-              <span class="font-semibold text-muted-800 dark:text-muted-100"
-                >329</span
-              >
+              <span class="font-semibold text-muted-800 dark:text-muted-100">
+                329
+              </span>
               <span
                 class="text-muted-400 text-xs sm:text-sm ltablet:text-base lg:text-base"
-                >Following</span
               >
+                Following
+              </span>
             </div>
           </div>
           <BaseParagraph
             size="sm"
             class="max-w-xl mx-auto ltablet:mx-0 lg:mx-0 mb-6 text-muted-500 dark:text-muted-400"
           >
-            <span class="line-clamp-3"
-              >Artist, musician, songwriter, influencer, these are the many
-              names people give me. But for you Iam simply Clarissa. *Forever
-              with all my friends* // Latest video can be found here
-              youtu.be/8Tcee5Cyz</span
-            >
+            <span class="line-clamp-3">
+              Artist, musician, songwriter, influencer, these are the many names
+              people give me. But for you Iam simply Clarissa. *Forever with all
+              my friends* // Latest video can be found here youtu.be/8Tcee5Cyz
+            </span>
           </BaseParagraph>
           <div
             class="flex justify-center ltablet:justify-start lg:justify-start gap-4"
@@ -381,10 +383,10 @@ const activeTab = ref('tab-1')
                   icon="ri:fire-fill"
                   class="text-rose-500 bg-rose-500/20"
                 />
-                <PopoverContent
-                  >You have been on fire for the last 7 days. Keep up the good
-                  work!</PopoverContent
-                >
+                <PopoverContent>
+                  You have been on fire for the last 7 days. Keep up the good
+                  work!
+                </PopoverContent>
               </template>
             </Popover>
             <Popover arrow hover placement="top">
@@ -404,10 +406,9 @@ const activeTab = ref('tab-1')
                   icon="ri:medal-fill"
                   class="text-emerald-500 bg-emerald-500/20"
                 />
-                <PopoverContent
-                  >You posted more than 250 posts. You are now a post
-                  veteran!</PopoverContent
-                >
+                <PopoverContent>
+                  You posted more than 250 posts. You are now a post veteran!
+                </PopoverContent>
               </template>
             </Popover>
             <Popover arrow hover placement="top">
@@ -427,10 +428,9 @@ const activeTab = ref('tab-1')
                   icon="ri:trophy-fill"
                   class="text-yellow-500 bg-yellow-500/20"
                 />
-                <PopoverContent
-                  >You have more than 100k followers. You are a
-                  champion!</PopoverContent
-                >
+                <PopoverContent>
+                  You have more than 100k followers. You are a champion!
+                </PopoverContent>
               </template>
             </Popover>
           </div>
@@ -496,8 +496,8 @@ const activeTab = ref('tab-1')
                   class="mb-2"
                 >
                   <span class="text-muted-800 dark:text-muted-100">
-                    Instagram stats</span
-                  >
+                    Instagram stats
+                  </span>
                 </BaseHeading>
                 <BaseParagraph
                   size="sm"
@@ -534,12 +534,14 @@ const activeTab = ref('tab-1')
                   <div class="pt-4 pb-6">
                     <span
                       class="font-sans font-semibold text-4xl leading-none text-muted-800 dark:text-muted-100"
-                      >119
+                    >
+                      119
                       <small
                         class="font-medium text-sm text-muted-500 dark:text-muted-400"
-                        >posts published</small
-                      ></span
-                    >
+                      >
+                        posts published
+                      </small>
+                    </span>
                   </div>
                   <div class="flex items-center gap-2 font-sans mb-2">
                     <div
@@ -574,12 +576,14 @@ const activeTab = ref('tab-1')
                   <div class="pt-4 pb-6">
                     <span
                       class="font-sans font-semibold text-4xl leading-none text-muted-800 dark:text-muted-100"
-                      >14.3k
+                    >
+                      14.3k
                       <small
                         class="font-medium text-sm text-muted-500 dark:text-muted-400"
-                        >following you</small
-                      ></span
-                    >
+                      >
+                        following you
+                      </small>
+                    </span>
                   </div>
                   <div class="flex items-center gap-2 font-sans mb-2">
                     <div
@@ -614,12 +618,14 @@ const activeTab = ref('tab-1')
                   <div class="pt-4 pb-6">
                     <span
                       class="font-sans font-semibold text-4xl leading-none text-muted-800 dark:text-muted-100"
-                      >224
+                    >
+                      224
                       <small
                         class="font-medium text-sm text-muted-500 dark:text-muted-400"
-                        >followed by you</small
-                      ></span
-                    >
+                      >
+                        followed by you
+                      </small>
+                    </span>
                   </div>
                   <div class="flex items-center gap-2 font-sans mb-2">
                     <div
@@ -651,12 +657,14 @@ const activeTab = ref('tab-1')
                   <div class="pt-4 pb-6">
                     <span
                       class="font-sans font-semibold text-4xl leading-none text-muted-800 dark:text-muted-100"
-                      >129.7k
+                    >
+                      129.7k
                       <small
                         class="font-medium text-sm text-muted-500 dark:text-muted-400"
-                        >likes of your content</small
-                      ></span
-                    >
+                      >
+                        likes of your content
+                      </small>
+                    </span>
                   </div>
                   <div class="flex items-center gap-2 font-sans mb-2">
                     <div
@@ -665,9 +673,9 @@ const activeTab = ref('tab-1')
                       <Icon name="lucide:arrow-up-right" class="w-4 h-4" />
                       <span>+25.7%</span>
                     </div>
-                    <span class="text-sm text-muted-400"
-                      >engagement growth</span
-                    >
+                    <span class="text-sm text-muted-400">
+                      engagement growth
+                    </span>
                   </div>
                 </BaseCard>
               </div>
@@ -693,12 +701,14 @@ const activeTab = ref('tab-1')
                   <div class="pt-4 pb-6">
                     <span
                       class="font-sans font-semibold text-4xl leading-none text-muted-800 dark:text-muted-100"
-                      >5.2k
+                    >
+                      5.2k
                       <small
                         class="font-medium text-sm text-muted-500 dark:text-muted-400"
-                        >comments published</small
-                      ></span
-                    >
+                      >
+                        comments published
+                      </small>
+                    </span>
                   </div>
                   <div class="flex items-center gap-2 font-sans mb-2">
                     <div
@@ -707,9 +717,9 @@ const activeTab = ref('tab-1')
                       <Icon name="lucide:arrow-up-right" class="w-4 h-4" />
                       <span>+11.3%</span>
                     </div>
-                    <span class="text-sm text-muted-400"
-                      >engagement growth</span
-                    >
+                    <span class="text-sm text-muted-400">
+                      engagement growth
+                    </span>
                   </div>
                 </BaseCard>
               </div>
@@ -732,12 +742,14 @@ const activeTab = ref('tab-1')
                   <div class="pt-4 pb-6">
                     <span
                       class="font-sans font-semibold text-4xl leading-none text-muted-800 dark:text-muted-100"
-                      >12.7k
+                    >
+                      12.7k
                       <small
                         class="font-medium text-sm text-muted-500 dark:text-muted-400"
-                        >views of profile</small
-                      ></span
-                    >
+                      >
+                        views of profile
+                      </small>
+                    </span>
                   </div>
                   <div class="flex items-center gap-2 font-sans mb-2">
                     <div
@@ -746,9 +758,9 @@ const activeTab = ref('tab-1')
                       <Icon name="lucide:arrow-up-right" class="w-4 h-4" />
                       <span>+8.5%</span>
                     </div>
-                    <span class="text-sm text-muted-400"
-                      >engagement growth</span
-                    >
+                    <span class="text-sm text-muted-400">
+                      engagement growth
+                    </span>
                   </div>
                 </BaseCard>
               </div>
@@ -767,8 +779,8 @@ const activeTab = ref('tab-1')
                   class="mb-2"
                 >
                   <span class="text-muted-800 dark:text-muted-100">
-                    Tik Tok stats</span
-                  >
+                    Tik Tok stats
+                  </span>
                 </BaseHeading>
                 <BaseParagraph
                   size="sm"
@@ -802,12 +814,14 @@ const activeTab = ref('tab-1')
                   <div class="pt-4 pb-6">
                     <span
                       class="font-sans font-semibold text-4xl leading-none text-muted-800 dark:text-muted-100"
-                      >248
+                    >
+                      248
                       <small
                         class="font-medium text-sm text-muted-500 dark:text-muted-400"
-                        >posts published</small
-                      ></span
-                    >
+                      >
+                        posts published
+                      </small>
+                    </span>
                   </div>
                   <div class="flex items-center gap-2 font-sans mb-2">
                     <div
@@ -842,12 +856,14 @@ const activeTab = ref('tab-1')
                   <div class="pt-4 pb-6">
                     <span
                       class="font-sans font-semibold text-4xl leading-none text-muted-800 dark:text-muted-100"
-                      >5.7k
+                    >
+                      5.7k
                       <small
                         class="font-medium text-sm text-muted-500 dark:text-muted-400"
-                        >following you</small
-                      ></span
-                    >
+                      >
+                        following you
+                      </small>
+                    </span>
                   </div>
                   <div class="flex items-center gap-2 font-sans mb-2">
                     <div
@@ -882,12 +898,14 @@ const activeTab = ref('tab-1')
                   <div class="pt-4 pb-6">
                     <span
                       class="font-sans font-semibold text-4xl leading-none text-muted-800 dark:text-muted-100"
-                      >29
+                    >
+                      29
                       <small
                         class="font-medium text-sm text-muted-500 dark:text-muted-400"
-                        >followed by you</small
-                      ></span
-                    >
+                      >
+                        followed by you
+                      </small>
+                    </span>
                   </div>
                   <div class="flex items-center gap-2 font-sans mb-2">
                     <div
@@ -919,12 +937,14 @@ const activeTab = ref('tab-1')
                   <div class="pt-4 pb-6">
                     <span
                       class="font-sans font-semibold text-4xl leading-none text-muted-800 dark:text-muted-100"
-                      >80.4k
+                    >
+                      80.4k
                       <small
                         class="font-medium text-sm text-muted-500 dark:text-muted-400"
-                        >likes of your content</small
-                      ></span
-                    >
+                      >
+                        likes of your content
+                      </small>
+                    </span>
                   </div>
                   <div class="flex items-center gap-2 font-sans mb-2">
                     <div
@@ -933,9 +953,9 @@ const activeTab = ref('tab-1')
                       <Icon name="lucide:arrow-up-right" class="w-4 h-4" />
                       <span>+65.7%</span>
                     </div>
-                    <span class="text-sm text-muted-400"
-                      >engagement growth</span
-                    >
+                    <span class="text-sm text-muted-400">
+                      engagement growth
+                    </span>
                   </div>
                 </BaseCard>
               </div>
@@ -961,12 +981,14 @@ const activeTab = ref('tab-1')
                   <div class="pt-4 pb-6">
                     <span
                       class="font-sans font-semibold text-4xl leading-none text-muted-800 dark:text-muted-100"
-                      >22.8k
+                    >
+                      22.8k
                       <small
                         class="font-medium text-sm text-muted-500 dark:text-muted-400"
-                        >comments published</small
-                      ></span
-                    >
+                      >
+                        comments published
+                      </small>
+                    </span>
                   </div>
                   <div class="flex items-center gap-2 font-sans mb-2">
                     <div
@@ -975,9 +997,9 @@ const activeTab = ref('tab-1')
                       <Icon name="lucide:arrow-up-right" class="w-4 h-4" />
                       <span>+49.3%</span>
                     </div>
-                    <span class="text-sm text-muted-400"
-                      >engagement growth</span
-                    >
+                    <span class="text-sm text-muted-400">
+                      engagement growth
+                    </span>
                   </div>
                 </BaseCard>
               </div>
@@ -1000,12 +1022,14 @@ const activeTab = ref('tab-1')
                   <div class="pt-4 pb-6">
                     <span
                       class="font-sans font-semibold text-4xl leading-none text-muted-800 dark:text-muted-100"
-                      >48.3k
+                    >
+                      48.3k
                       <small
                         class="font-medium text-sm text-muted-500 dark:text-muted-400"
-                        >views of profile</small
-                      ></span
-                    >
+                      >
+                        views of profile
+                      </small>
+                    </span>
                   </div>
                   <div class="flex items-center gap-2 font-sans mb-2">
                     <div
@@ -1014,9 +1038,9 @@ const activeTab = ref('tab-1')
                       <Icon name="lucide:arrow-up-right" class="w-4 h-4" />
                       <span>+34.2%</span>
                     </div>
-                    <span class="text-sm text-muted-400"
-                      >engagement growth</span
-                    >
+                    <span class="text-sm text-muted-400">
+                      engagement growth
+                    </span>
                   </div>
                 </BaseCard>
               </div>
@@ -1053,8 +1077,9 @@ const activeTab = ref('tab-1')
                   <BaseParagraph size="sm">
                     <span
                       class="line-clamp-4 text-muted-500 dark:text-muted-400"
-                      >{{ company.description }}</span
                     >
+                      {{ company.description }}
+                    </span>
                   </BaseParagraph>
                   <div
                     class="mt-auto flex items-center justify-center py-4 divide-x divide-muted-200 dark:divide-muted-700"
@@ -1066,15 +1091,16 @@ const activeTab = ref('tab-1')
                     >
                       <span
                         class="block font-semibold text-muted-800 dark:text-muted-100"
-                        >{{
+                      >
+                        {{
                           stat.label === 'Income'
                             ? `$${stat.value}k`
                             : stat.value
-                        }}</span
-                      >
-                      <span class="block text-xs text-muted-400">{{
-                        stat.label
-                      }}</span>
+                        }}
+                      </span>
+                      <span class="block text-xs text-muted-400">
+                        {{ stat.label }}
+                      </span>
                     </div>
                   </div>
                   <div class="flex items-center justify-between">

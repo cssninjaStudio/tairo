@@ -74,9 +74,9 @@ onBeforeUnmount(() => {
                   </BaseButtonIcon>
                 </div>
                 <BaseHeading size="xs" class="uppercase mb-4">
-                  <span class="text-muted-500 dark:text-muted-400"
-                    >Project description</span
-                  >
+                  <span class="text-muted-500 dark:text-muted-400">
+                    Project description
+                  </span>
                 </BaseHeading>
                 <div>
                   <BaseParagraph
@@ -147,11 +147,13 @@ onBeforeUnmount(() => {
                     <div
                       class="text-sm font-medium capitalize text-muted-800 dark:text-muted-100"
                     >
-                      <span>{{
-                        project.type === undefined
-                          ? 'No type selected'
-                          : project.type
-                      }}</span>
+                      <span>
+                        {{
+                          project.type === undefined
+                            ? 'No type selected'
+                            : project.type
+                        }}
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -193,11 +195,13 @@ onBeforeUnmount(() => {
                     <div
                       class="text-sm font-medium text-muted-800 dark:text-muted-100"
                     >
-                      <span>{{
-                        project.customer?.name === undefined
-                          ? 'No customer selected'
-                          : project.customer?.name
-                      }}</span>
+                      <span>
+                        {{
+                          project.customer?.name === undefined
+                            ? 'No customer selected'
+                            : project.customer?.name
+                        }}
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -226,12 +230,13 @@ onBeforeUnmount(() => {
                   <div>
                     <span
                       class="block font-sans font-semibold text-2xl mb-2 text-muted-800 dark:text-muted-100"
-                      >{{ project.budget }}</span
                     >
+                      {{ project.budget }}
+                    </span>
                     <BaseHeading size="xs" class="uppercase mb-4 scale-90">
-                      <span class="text-muted-500 dark:text-muted-400"
-                        >Estimate budget</span
-                      >
+                      <span class="text-muted-500 dark:text-muted-400">
+                        Estimate budget
+                      </span>
                     </BaseHeading>
                   </div>
                 </div>
@@ -260,16 +265,17 @@ onBeforeUnmount(() => {
                   <div>
                     <span
                       class="block font-sans font-medium text-sm mb-3 text-muted-800 dark:text-muted-100"
-                      >{{
+                    >
+                      {{
                         project.endDate === undefined
                           ? '--'
                           : formatDate(project.endDate)
-                      }}</span
-                    >
+                      }}
+                    </span>
                     <BaseHeading size="xs" class="uppercase mb-4 scale-90">
-                      <span class="text-muted-500 dark:text-muted-400"
-                        >Due date</span
-                      >
+                      <span class="text-muted-500 dark:text-muted-400">
+                        Due date
+                      </span>
                     </BaseHeading>
                   </div>
                 </div>
@@ -298,12 +304,13 @@ onBeforeUnmount(() => {
                   <div>
                     <span
                       class="block font-sans font-semibold text-2xl mb-2 text-muted-800 dark:text-muted-100"
-                      >0</span
                     >
+                      0
+                    </span>
                     <BaseHeading size="xs" class="uppercase mb-4 scale-90">
-                      <span class="text-muted-500 dark:text-muted-400"
-                        >Attached files</span
-                      >
+                      <span class="text-muted-500 dark:text-muted-400">
+                        Attached files
+                      </span>
                     </BaseHeading>
                   </div>
                 </div>
@@ -327,9 +334,9 @@ onBeforeUnmount(() => {
                   </BaseButtonIcon>
                 </div>
                 <BaseHeading size="xs" class="uppercase mb-4">
-                  <span class="text-muted-500 dark:text-muted-400"
-                    >Project team</span
-                  >
+                  <span class="text-muted-500 dark:text-muted-400">
+                    Project team
+                  </span>
                 </BaseHeading>
                 <div>
                   <div
@@ -382,9 +389,9 @@ onBeforeUnmount(() => {
                   </BaseButtonIcon>
                 </div>
                 <BaseHeading size="xs" class="uppercase mb-4">
-                  <span class="text-muted-500 dark:text-muted-400"
-                    >Project tools</span
-                  >
+                  <span class="text-muted-500 dark:text-muted-400">
+                    Project tools
+                  </span>
                 </BaseHeading>
                 <div>
                   <div

@@ -216,8 +216,9 @@ definePageMeta({
             <NuxtLink
               class="font-sans text-white hover:underline underline-offset-4"
               to="/"
-              >Learn More</NuxtLink
             >
+              Learn More
+            </NuxtLink>
           </div>
           <div
             class="absolute bottom-4 right-4 w-14 h-14 flex items-center justify-center z-10"

@@ -186,17 +186,20 @@ const results = [
                 <div class="w-full flex items-center gap-3">
                   <span
                     class="block font-sans font-semibold text-3xl text-muted-800 dark:text-muted-100"
-                    >$290</span
                   >
+                    $290
+                  </span>
                   <div>
                     <span
                       class="block font-sans font-medium text-[0.65rem] uppercase leading-snug text-muted-400"
-                      >Cheapest</span
                     >
+                      Cheapest
+                    </span>
                     <span
                       class="block font-sans text-sm leading-none text-muted-500 dark:text-muted-100"
-                      >7h32min</span
                     >
+                      7h32min
+                    </span>
                   </div>
                 </div>
               </BaseCard>
@@ -207,17 +210,20 @@ const results = [
                 <div class="w-full flex items-center gap-3">
                   <span
                     class="block font-sans font-semibold text-3xl text-white"
-                    >$439</span
                   >
+                    $439
+                  </span>
                   <div>
                     <span
                       class="block font-sans font-medium text-[0.65rem] uppercase leading-snug text-muted-200"
-                      >Best</span
                     >
+                      Best
+                    </span>
                     <span
                       class="block font-sans text-sm leading-none text-muted-100"
-                      >7h11min</span
                     >
+                      7h11min
+                    </span>
                   </div>
                 </div>
               </BaseCard>
@@ -226,17 +232,20 @@ const results = [
                 <div class="w-full flex items-center gap-3">
                   <span
                     class="block font-sans font-semibold text-3xl text-muted-800 dark:text-muted-100"
-                    >$549</span
                   >
+                    $549
+                  </span>
                   <div>
                     <span
                       class="block font-sans font-medium text-[0.65rem] uppercase leading-snug text-muted-400"
-                      >Fastest</span
                     >
+                      Fastest
+                    </span>
                     <span
                       class="block font-sans text-sm leading-none text-muted-500 dark:text-muted-100"
-                      >5h36min</span
                     >
+                      5h36min
+                    </span>
                   </div>
                 </div>
               </BaseCard>
@@ -263,17 +272,20 @@ const results = [
                     <div>
                       <span
                         class="block font-sans text-sm text-muted-500 dark:text-muted-400"
-                        >{{ result.departure.time }}</span
                       >
+                        {{ result.departure.time }}
+                      </span>
                       <span
                         class="block font-sans text-xs font-semibold text-primary-600"
-                        >{{ result.departure.city }}
-                        {{ result.departure.airport }}</span
                       >
+                        {{ result.departure.city }}
+                        {{ result.departure.airport }}
+                      </span>
                       <span
                         class="block font-sans text-sm text-muted-500 dark:text-muted-400"
-                        >{{ result.departure.date }}</span
                       >
+                        {{ result.departure.date }}
+                      </span>
                     </div>
                   </div>
                   <div
@@ -378,23 +390,26 @@ const results = [
                     <div>
                       <span
                         class="block font-sans text-sm text-muted-500 dark:text-muted-400"
-                        >{{ result.arrival.time }}</span
                       >
+                        {{ result.arrival.time }}
+                      </span>
                       <span
                         class="block font-sans text-xs font-semibold text-primary-600"
-                        >{{ result.arrival.city }}
-                        {{ result.arrival.airport }}</span
                       >
+                        {{ result.arrival.city }} {{ result.arrival.airport }}
+                      </span>
                       <span
                         class="block font-sans text-sm text-muted-500 dark:text-muted-400"
-                        >{{ result.arrival.date }}</span
                       >
+                        {{ result.arrival.date }}
+                      </span>
                     </div>
                     <div>
                       <span
                         class="block font-sans font-semibold text-xl text-muted-800 dark:text-muted-100"
-                        >{{ formatPrice(result.price) }}</span
                       >
+                        {{ formatPrice(result.price) }}
+                      </span>
                     </div>
                   </div>
                 </div>

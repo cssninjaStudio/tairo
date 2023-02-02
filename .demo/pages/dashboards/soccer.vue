@@ -150,7 +150,7 @@ const matches = [
                   <span>Group C</span>
                 </BaseHeading>
                 <BaseParagraph size="xs">
-                  <span class="text-muted-400"> Match 3 of 6 </span>
+                  <span class="text-muted-400">Match 3 of 6</span>
                 </BaseParagraph>
               </div>
               <div>
@@ -246,10 +246,10 @@ const matches = [
                     <span>Win awesome prizes in our contest</span>
                   </BaseHeading>
                   <BaseParagraph size="sm" class="text-white opacity-70">
-                    <span
-                      >Predict who will win and how a match will end and get a
-                      chance to win incredible cash prizes.</span
-                    >
+                    <span>
+                      Predict who will win and how a match will end and get a
+                      chance to win incredible cash prizes.
+                    </span>
                   </BaseParagraph>
                   <div class="mt-2">
                     <BaseButton
@@ -358,17 +358,21 @@ const matches = [
                             <div
                               class="flex items-center justify-center gap-2 font-sans text-center text-muted-800 dark:text-muted-100"
                             >
-                              <span class="text-sm font-bold">{{
-                                match.match.home.score !== undefined
-                                  ? match.match.home.score
-                                  : '-'
-                              }}</span>
+                              <span class="text-sm font-bold">
+                                {{
+                                  match.match.home.score !== undefined
+                                    ? match.match.home.score
+                                    : '-'
+                                }}
+                              </span>
                               <span class="text-xs font-bold">:</span>
-                              <span class="text-sm font-bold">{{
-                                match.match.away.score !== undefined
-                                  ? match.match.away.score
-                                  : '-'
-                              }}</span>
+                              <span class="text-sm font-bold">
+                                {{
+                                  match.match.away.score !== undefined
+                                    ? match.match.away.score
+                                    : '-'
+                                }}
+                              </span>
                             </div>
                             <div class="w-[120px] flex items-center gap-2">
                               <img
@@ -392,9 +396,9 @@ const matches = [
                           <div
                             class="font-sans text-sm text-muted-500 dark:text-muted-400"
                           >
-                            <span class="whitespace-nowrap">{{
-                              match.stadium
-                            }}</span>
+                            <span class="whitespace-nowrap">
+                              {{ match.stadium }}
+                            </span>
                           </div>
                         </td>
                         <td class="xs:px-4 py-4">

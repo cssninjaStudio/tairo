@@ -27,10 +27,9 @@ definePageMeta({
                 <span>Today's Summary</span>
               </BaseHeading>
               <BaseParagraph size="sm" class="text-white opacity-70">
-                <span
-                  >Monitor your activity and keep improving your weak
-                  points.</span
-                >
+                <span>
+                  Monitor your activity and keep improving your weak points.
+                </span>
               </BaseParagraph>
               <div
                 class="flex flex-wrap gap-y-6 sm:gap-x-8 text-center sm:text-left mt-6 sm:mt-4 pb-4 sm:pb-0"
@@ -113,9 +112,9 @@ definePageMeta({
               <Icon name="ph:drop-duotone" class="w-5 h-5 text-primary-500" />
             </BaseIconBox>
             <div class="flex items-center gap-1 font-sans">
-              <span class="font-semibold text-muted-800 dark:text-muted-100"
-                >114/90</span
-              >
+              <span class="font-semibold text-muted-800 dark:text-muted-100">
+                114/90
+              </span>
               <span class="text-sm text-muted-400">Min/Max</span>
             </div>
           </div>
@@ -129,10 +128,10 @@ definePageMeta({
               <span>Blood quality</span>
             </BaseHeading>
             <BaseParagraph size="xs" class="text-muted-400">
-              <span
-                >Lorem ipsum dolor sit amet, consectetur adipiscing elit Illis
-                videtur.</span
-              >
+              <span>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit Illis
+                videtur.
+              </span>
             </BaseParagraph>
           </div>
         </div>
@@ -148,9 +147,9 @@ definePageMeta({
               />
             </BaseIconBox>
             <div class="flex items-center gap-1 font-sans">
-              <span class="font-semibold text-muted-800 dark:text-muted-100"
-                >112</span
-              >
+              <span class="font-semibold text-muted-800 dark:text-muted-100">
+                112
+              </span>
               <span class="text-sm text-muted-400">Bpm</span>
             </div>
           </div>
@@ -164,10 +163,10 @@ definePageMeta({
               <span>Heart rate</span>
             </BaseHeading>
             <BaseParagraph size="xs" class="text-muted-400">
-              <span
-                >Lorem ipsum dolor sit amet, consectetur adipiscing elit Illis
-                videtur.</span
-              >
+              <span>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit Illis
+                videtur.
+              </span>
             </BaseParagraph>
           </div>
         </div>
@@ -183,9 +182,9 @@ definePageMeta({
               />
             </BaseIconBox>
             <div class="flex items-center gap-1 font-sans">
-              <span class="font-semibold text-muted-800 dark:text-muted-100"
-                >12/14</span
-              >
+              <span class="font-semibold text-muted-800 dark:text-muted-100">
+                12/14
+              </span>
               <span class="text-sm text-muted-400">Units</span>
             </div>
           </div>
@@ -199,10 +198,10 @@ definePageMeta({
               <span>Blood pressure</span>
             </BaseHeading>
             <BaseParagraph size="xs" class="text-muted-400">
-              <span
-                >Lorem ipsum dolor sit amet, consectetur adipiscing elit Illis
-                videtur.</span
-              >
+              <span>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit Illis
+                videtur.
+              </span>
             </BaseParagraph>
           </div>
         </div>
@@ -215,9 +214,9 @@ definePageMeta({
               <Icon name="ph:gauge-duotone" class="w-5 h-5 text-primary-500" />
             </BaseIconBox>
             <div class="flex items-center gap-1 font-sans">
-              <span class="font-semibold text-muted-800 dark:text-muted-100"
-                >60.4</span
-              >
+              <span class="font-semibold text-muted-800 dark:text-muted-100">
+                60.4
+              </span>
               <span class="text-sm text-muted-400">Lbs</span>
             </div>
           </div>
@@ -231,10 +230,10 @@ definePageMeta({
               <span>Weight</span>
             </BaseHeading>
             <BaseParagraph size="xs" class="text-muted-400">
-              <span
-                >Lorem ipsum dolor sit amet, consectetur adipiscing elit Illis
-                videtur.</span
-              >
+              <span>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit Illis
+                videtur.
+              </span>
             </BaseParagraph>
           </div>
         </div>
@@ -274,8 +273,9 @@ definePageMeta({
                       <NuxtLink
                         to="/"
                         class="text-primary-500 underline-offset-4 hover:underline"
-                        >Read how</NuxtLink
                       >
+                        Read how
+                      </NuxtLink>
                     </BaseParagraph>
                   </div>
                   <ExampleApexchartAreaCondition />
@@ -307,8 +307,9 @@ definePageMeta({
                       <NuxtLink
                         to="/"
                         class="text-primary-500 underline-offset-4 hover:underline"
-                        >Read how</NuxtLink
                       >
+                        Read how
+                      </NuxtLink>
                     </BaseParagraph>
                   </div>
                   <ExampleApexchartScatterEnergy />
@@ -340,8 +341,9 @@ definePageMeta({
                       <NuxtLink
                         to="/"
                         class="text-primary-500 underline-offset-4 hover:underline"
-                        >Read how</NuxtLink
                       >
+                        Read how
+                      </NuxtLink>
                     </BaseParagraph>
                   </div>
                   <ExampleApexchartBarOxygen />
@@ -373,8 +375,9 @@ definePageMeta({
                       <NuxtLink
                         to="/"
                         class="text-primary-500 underline-offset-4 hover:underline"
-                        >Read how</NuxtLink
                       >
+                        Read how
+                      </NuxtLink>
                     </BaseParagraph>
                   </div>
                   <ExampleApexchartAreaProgress />

@@ -74,11 +74,12 @@ onMounted(() => {
     class="group ninja-focus relative"
     :style="{ scrollMarginTop: '1.5rem' }"
   >
-    <span v-if="props.prefix" :class="props.prefixClasses">{{
-      props.prefix
-    }}</span
-    ><slot /><span v-if="props.suffix" :class="props.suffixClasses">{{
-      props.suffix
-    }}</span>
+    <span v-if="props.prefix" :class="props.prefixClasses">
+      {{ props.prefix }}
+    </span>
+    <slot />
+    <span v-if="props.suffix" :class="props.suffixClasses">
+      {{ props.suffix }}
+    </span>
   </NuxtLink>
 </template>

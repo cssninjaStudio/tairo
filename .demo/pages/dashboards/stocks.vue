@@ -193,9 +193,9 @@ definePageMeta({
           <div class="flex items-center justify-between mb-2">
             <div class="flex items-center gap-2">
               <span class="block h-2 w-2 rounded-full bg-emerald-500"></span>
-              <span class="font-sans font-medium text-xs text-muted-400"
-                >Open to transactions</span
-              >
+              <span class="font-sans font-medium text-xs text-muted-400">
+                Open to transactions
+              </span>
             </div>
             <BaseDropdown
               flavor="context"
@@ -257,7 +257,7 @@ definePageMeta({
                 <span>TSL</span>
               </BaseHeading>
               <BaseParagraph lead="none" size="sm">
-                <span class="text-muted-400"> Tesla Motors </span>
+                <span class="text-muted-400">Tesla Motors</span>
               </BaseParagraph>
             </div>
             <div class="flex items-center gap-1 ml-auto">
@@ -267,8 +267,9 @@ definePageMeta({
               />
               <span
                 class="font-sans font-medium text-sm text-muted-600 dark:text-muted-400"
-                >$3,876.21</span
               >
+                $3,876.21
+              </span>
             </div>
           </div>
         </BaseCard>
@@ -279,9 +280,9 @@ definePageMeta({
           <div class="flex items-center justify-between mb-2">
             <div class="flex items-center gap-2">
               <span class="block h-2 w-2 rounded-full bg-emerald-500"></span>
-              <span class="font-sans font-medium text-xs text-muted-400"
-                >Open to transactions</span
-              >
+              <span class="font-sans font-medium text-xs text-muted-400">
+                Open to transactions
+              </span>
             </div>
             <BaseDropdown
               flavor="context"
@@ -343,7 +344,7 @@ definePageMeta({
                 <span>FCB</span>
               </BaseHeading>
               <BaseParagraph lead="none" size="sm">
-                <span class="text-muted-400"> Facebook Inc </span>
+                <span class="text-muted-400">Facebook Inc</span>
               </BaseParagraph>
             </div>
             <div class="flex items-center gap-1 ml-auto">
@@ -353,8 +354,9 @@ definePageMeta({
               />
               <span
                 class="font-sans font-medium text-sm text-muted-600 dark:text-muted-400"
-                >$5,214.87</span
               >
+                $5,214.87
+              </span>
             </div>
           </div>
         </BaseCard>
@@ -367,9 +369,9 @@ definePageMeta({
               <span
                 class="block h-2 w-2 rounded-full bg-muted-300 dark:bg-muted-700/60"
               ></span>
-              <span class="font-sans font-medium text-xs text-muted-400"
-                >Closed to transactions</span
-              >
+              <span class="font-sans font-medium text-xs text-muted-400">
+                Closed to transactions
+              </span>
             </div>
             <BaseDropdown
               flavor="context"
@@ -431,7 +433,7 @@ definePageMeta({
                 <span>TWT</span>
               </BaseHeading>
               <BaseParagraph lead="none" size="sm">
-                <span class="text-muted-400"> Twitter Inc </span>
+                <span class="text-muted-400">Twitter Inc</span>
               </BaseParagraph>
             </div>
             <div class="flex items-center gap-1 ml-auto">
@@ -441,8 +443,9 @@ definePageMeta({
               />
               <span
                 class="font-sans font-medium text-sm text-muted-600 dark:text-muted-400"
-                >$1,657.12</span
               >
+                $1,657.12
+              </span>
             </div>
           </div>
         </BaseCard>
@@ -466,8 +469,9 @@ definePageMeta({
             <NuxtLink
               to="/"
               class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
-              >View All</NuxtLink
             >
+              View All
+            </NuxtLink>
           </div>
           <div class="space-y-5 mb-2">
             <!-- List item -->
@@ -490,7 +494,7 @@ definePageMeta({
                   <span>LKN</span>
                 </BaseHeading>
                 <BaseParagraph lead="none" size="xs">
-                  <span class="text-muted-400"> Linkedin Corp. </span>
+                  <span class="text-muted-400">Linkedin Corp.</span>
                 </BaseParagraph>
               </div>
               <div class="flex items-center gap-1 ml-auto">
@@ -500,8 +504,9 @@ definePageMeta({
                 />
                 <span
                   class="font-sans font-medium text-sm text-muted-600 dark:text-muted-400"
-                  >$1,478.32</span
                 >
+                  $1,478.32
+                </span>
               </div>
             </div>
             <!-- List item -->
@@ -524,7 +529,7 @@ definePageMeta({
                   <span>GTB</span>
                 </BaseHeading>
                 <BaseParagraph lead="none" size="xs">
-                  <span class="text-muted-400"> Github Inc. </span>
+                  <span class="text-muted-400">Github Inc.</span>
                 </BaseParagraph>
               </div>
               <div class="flex items-center gap-1 ml-auto">
@@ -534,8 +539,9 @@ definePageMeta({
                 />
                 <span
                   class="font-sans font-medium text-sm text-muted-600 dark:text-muted-400"
-                  >$978.21</span
                 >
+                  $978.21
+                </span>
               </div>
             </div>
             <!-- List item -->
@@ -558,7 +564,7 @@ definePageMeta({
                   <span>INV</span>
                 </BaseHeading>
                 <BaseParagraph lead="none" size="xs">
-                  <span class="text-muted-400"> Invision Corp. </span>
+                  <span class="text-muted-400">Invision Corp.</span>
                 </BaseParagraph>
               </div>
               <div class="flex items-center gap-1 ml-auto">
@@ -568,8 +574,9 @@ definePageMeta({
                 />
                 <span
                   class="font-sans font-medium text-sm text-muted-600 dark:text-muted-400"
-                  >$1,671.89</span
                 >
+                  $1,671.89
+                </span>
               </div>
             </div>
             <!-- List item -->
@@ -592,7 +599,7 @@ definePageMeta({
                   <span>TLG</span>
                 </BaseHeading>
                 <BaseParagraph lead="none" size="xs">
-                  <span class="text-muted-400"> Telegram Inc. </span>
+                  <span class="text-muted-400">Telegram Inc.</span>
                 </BaseParagraph>
               </div>
               <div class="flex items-center gap-1 ml-auto">
@@ -602,8 +609,9 @@ definePageMeta({
                 />
                 <span
                   class="font-sans font-medium text-sm text-muted-600 dark:text-muted-400"
-                  >$491.54</span
                 >
+                  $491.54
+                </span>
               </div>
             </div>
             <!-- List item -->
@@ -626,7 +634,7 @@ definePageMeta({
                   <span>KCK</span>
                 </BaseHeading>
                 <BaseParagraph lead="none" size="xs">
-                  <span class="text-muted-400"> Kickstarter Inc. </span>
+                  <span class="text-muted-400">Kickstarter Inc.</span>
                 </BaseParagraph>
               </div>
               <div class="flex items-center gap-1 ml-auto">
@@ -636,8 +644,9 @@ definePageMeta({
                 />
                 <span
                   class="font-sans font-medium text-sm text-muted-600 dark:text-muted-400"
-                  >$1115.68</span
                 >
+                  $1115.68
+                </span>
               </div>
             </div>
             <!-- List item -->
@@ -660,7 +669,7 @@ definePageMeta({
                   <span>GGL</span>
                 </BaseHeading>
                 <BaseParagraph lead="none" size="xs">
-                  <span class="text-muted-400"> Google Corp. </span>
+                  <span class="text-muted-400">Google Corp.</span>
                 </BaseParagraph>
               </div>
               <div class="flex items-center gap-1 ml-auto">
@@ -670,8 +679,9 @@ definePageMeta({
                 />
                 <span
                   class="font-sans font-medium text-sm text-muted-600 dark:text-muted-400"
-                  >$2514.51</span
                 >
+                  $2514.51
+                </span>
               </div>
             </div>
           </div>

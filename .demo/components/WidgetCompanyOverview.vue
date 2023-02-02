@@ -25,10 +25,10 @@
         size="sm"
         class="max-w-[320px] mx-auto text-muted-500 dark:text-muted-400"
       >
-        <span
-          >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fac ista
-          esse non inportuna.</span
-        >
+        <span>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fac ista
+          esse non inportuna.
+        </span>
       </BaseParagraph>
     </div>
     <div

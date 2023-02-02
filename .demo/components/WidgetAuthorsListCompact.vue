@@ -69,9 +69,9 @@ const authors = [
         </BaseParagraph>
       </div>
       <div class="flex items-center gap-1 ml-auto">
-        <span class="font-sans text-xs text-muted-400"
-          >{{ author.articles }} articles</span
-        >
+        <span class="font-sans text-xs text-muted-400">
+          {{ author.articles }} articles
+        </span>
         <BaseButtonIcon shape="curved" muted class="scale-75">
           <Icon name="lucide:arrow-right" class="w-4 h-4" />
         </BaseButtonIcon>

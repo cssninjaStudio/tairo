@@ -170,8 +170,9 @@ const panelActive = ref(false)
             <Icon name="ph:tray-duotone" class="w-5 h-5" />
             <span
               class="absolute -top-1 -right-1 bg-pink-600 h-5 w-5 flex justify-center items-center rounded-full font-sans text-xs text-white"
-              >3</span
             >
+              3
+            </span>
           </div>
         </NuxtLink>
         <NuxtLink
@@ -289,15 +290,15 @@ const panelActive = ref(false)
                 <span>{{ message.sender.name }}</span>
               </BaseHeading>
               <BaseParagraph size="sm" lead="none">
-                <span class="text-muted-500 dark:text-muted-400">{{
-                  message.sender.email
-                }}</span>
+                <span class="text-muted-500 dark:text-muted-400">
+                  {{ message.sender.email }}
+                </span>
               </BaseParagraph>
             </div>
             <div class="ml-auto pointer-events-none">
-              <span class="font-sans text-xs text-muted-400">{{
-                message.time
-              }}</span>
+              <span class="font-sans text-xs text-muted-400">
+                {{ message.time }}
+              </span>
             </div>
           </div>
           <div
@@ -463,11 +464,12 @@ const panelActive = ref(false)
               <span class="block font-sans">
                 <span
                   class="block font-semibold text-sm text-muted-800 dark:text-muted-100"
-                  >{{ file.name }}</span
                 >
-                <span class="block text-xs text-muted-400">{{
-                  file.size
-                }}</span>
+                  {{ file.name }}
+                </span>
+                <span class="block text-xs text-muted-400">
+                  {{ file.size }}
+                </span>
               </span>
               <span class="block ml-auto">
                 <span

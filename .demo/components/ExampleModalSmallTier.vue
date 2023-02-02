@@ -15,11 +15,11 @@ const isModalMdOpen = ref(false)
   <!-- Element to trigger the modal -->
   <div class="flex gap-x-2">
     <div class="flex items-end gap-4">
-      <BaseButton @click="openModal"> Small dialog </BaseButton>
+      <BaseButton @click="openModal">Small dialog</BaseButton>
     </div>
 
     <div class="flex items-end gap-4">
-      <BaseButton @click="isModalMdOpen = true"> Medium dialog </BaseButton>
+      <BaseButton @click="isModalMdOpen = true">Medium dialog</BaseButton>
     </div>
   </div>
 
@@ -65,7 +65,7 @@ const isModalMdOpen = ref(false)
       <!-- Footer -->
       <div class="p-4 md:p-6">
         <div class="flex gap-x-2">
-          <BaseButton @click="closeModal"> Decline </BaseButton>
+          <BaseButton @click="closeModal">Decline</BaseButton>
           <BaseButton color="primary" flavor="solid" @click="closeModal">
             Accept
           </BaseButton>
@@ -116,7 +116,7 @@ const isModalMdOpen = ref(false)
       <!-- Footer -->
       <div class="p-4 md:p-6">
         <div class="flex gap-x-2">
-          <BaseButton @click="isModalMdOpen = false"> Decline </BaseButton>
+          <BaseButton @click="isModalMdOpen = false">Decline</BaseButton>
           <BaseButton
             color="primary"
             flavor="solid"

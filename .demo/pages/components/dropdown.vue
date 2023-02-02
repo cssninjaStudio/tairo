@@ -41,7 +41,7 @@ definePageMeta({
                   <BaseDropdownItem>
                     Profile
 
-                    <template #text> View your profile </template>
+                    <template #text>View your profile</template>
                   </BaseDropdownItem>
                   <BaseDropdownItem
                     to="/"
@@ -120,7 +120,7 @@ definePageMeta({
                   <BaseDropdownItem>
                     Profile
 
-                    <template #text> View your profile </template>
+                    <template #text>View your profile</template>
                   </BaseDropdownItem>
                   <BaseDropdownItem
                     to="/"

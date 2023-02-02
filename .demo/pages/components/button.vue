@@ -33,10 +33,10 @@ definePageMeta({
           <DocComponent label="Default button shapes">
             <template #demo>
               <BaseFocusLoop class="flex flex-wrap items-end gap-4">
-                <BaseButton shape="straight"> Button </BaseButton>
+                <BaseButton shape="straight">Button</BaseButton>
                 <BaseButton>Button</BaseButton>
-                <BaseButton shape="curved"> Button </BaseButton>
-                <BaseButton shape="full"> Button </BaseButton>
+                <BaseButton shape="curved">Button</BaseButton>
+                <BaseButton shape="full">Button</BaseButton>
               </BaseFocusLoop>
             </template>
             <template #code>
@@ -53,7 +53,7 @@ definePageMeta({
                 <BaseButton to="/components/button" shape="straight">
                   Button
                 </BaseButton>
-                <BaseButton to="/components/button"> Button </BaseButton>
+                <BaseButton to="/components/button">Button</BaseButton>
                 <BaseButton to="https://cssninja.io" shape="curved">
                   Button
                 </BaseButton>
@@ -79,12 +79,12 @@ definePageMeta({
             <template #demo>
               <BaseFocusLoop class="flex flex-wrap items-end gap-4">
                 <BaseButton>Button</BaseButton>
-                <BaseButton color="primary"> Button </BaseButton>
-                <BaseButton color="success"> Button </BaseButton>
-                <BaseButton color="info"> Button </BaseButton>
-                <BaseButton color="warning"> Button </BaseButton>
-                <BaseButton color="danger"> Button </BaseButton>
-                <BaseButton muted> Button </BaseButton>
+                <BaseButton color="primary">Button</BaseButton>
+                <BaseButton color="success">Button</BaseButton>
+                <BaseButton color="info">Button</BaseButton>
+                <BaseButton color="warning">Button</BaseButton>
+                <BaseButton color="danger">Button</BaseButton>
+                <BaseButton muted>Button</BaseButton>
               </BaseFocusLoop>
             </template>
             <template #code>
@@ -98,17 +98,11 @@ definePageMeta({
           <DocComponent label="Pastel button colors">
             <template #demo>
               <BaseFocusLoop class="flex flex-wrap items-end gap-4">
-                <BaseButton color="primary" flavor="pastel">
-                  Button
-                </BaseButton>
-                <BaseButton color="success" flavor="pastel">
-                  Button
-                </BaseButton>
-                <BaseButton color="info" flavor="pastel"> Button </BaseButton>
-                <BaseButton color="warning" flavor="pastel">
-                  Button
-                </BaseButton>
-                <BaseButton color="danger" flavor="pastel"> Button </BaseButton>
+                <BaseButton color="primary" flavor="pastel">Button</BaseButton>
+                <BaseButton color="success" flavor="pastel">Button</BaseButton>
+                <BaseButton color="info" flavor="pastel">Button</BaseButton>
+                <BaseButton color="warning" flavor="pastel">Button</BaseButton>
+                <BaseButton color="danger" flavor="pastel">Button</BaseButton>
               </BaseFocusLoop>
             </template>
             <template #code>
@@ -122,19 +116,11 @@ definePageMeta({
           <DocComponent label="Outline button colors">
             <template #demo>
               <BaseFocusLoop class="flex flex-wrap items-end gap-4">
-                <BaseButton color="primary" flavor="outline">
-                  Button
-                </BaseButton>
-                <BaseButton color="success" flavor="outline">
-                  Button
-                </BaseButton>
-                <BaseButton color="info" flavor="outline"> Button </BaseButton>
-                <BaseButton color="warning" flavor="outline">
-                  Button
-                </BaseButton>
-                <BaseButton color="danger" flavor="outline">
-                  Button
-                </BaseButton>
+                <BaseButton color="primary" flavor="outline">Button</BaseButton>
+                <BaseButton color="success" flavor="outline">Button</BaseButton>
+                <BaseButton color="info" flavor="outline">Button</BaseButton>
+                <BaseButton color="warning" flavor="outline">Button</BaseButton>
+                <BaseButton color="danger" flavor="outline">Button</BaseButton>
               </BaseFocusLoop>
             </template>
             <template #code>
@@ -148,12 +134,12 @@ definePageMeta({
           <DocComponent label="Button placeload insertion">
             <template #demo>
               <BaseFocusLoop class="flex flex-wrap items-end gap-4">
-                <BaseButton color="default" loading> Button </BaseButton>
-                <BaseButton color="primary" loading> Button </BaseButton>
-                <BaseButton color="success" loading> Button </BaseButton>
-                <BaseButton color="info" loading> Button </BaseButton>
-                <BaseButton color="warning" loading> Button </BaseButton>
-                <BaseButton color="danger" loading> Button </BaseButton>
+                <BaseButton color="default" loading>Button</BaseButton>
+                <BaseButton color="primary" loading>Button</BaseButton>
+                <BaseButton color="success" loading>Button</BaseButton>
+                <BaseButton color="info" loading>Button</BaseButton>
+                <BaseButton color="warning" loading>Button</BaseButton>
+                <BaseButton color="danger" loading>Button</BaseButton>
               </BaseFocusLoop>
             </template>
             <template #code>
@@ -204,12 +190,12 @@ definePageMeta({
           <DocComponent label="Button disabled state">
             <template #demo>
               <BaseFocusLoop class="flex flex-wrap items-end gap-4">
-                <BaseButton color="default" disabled> Button </BaseButton>
-                <BaseButton color="primary" disabled> Button </BaseButton>
-                <BaseButton color="success" disabled> Button </BaseButton>
-                <BaseButton color="info" disabled> Button </BaseButton>
-                <BaseButton color="warning" disabled> Button </BaseButton>
-                <BaseButton color="danger" disabled> Button </BaseButton>
+                <BaseButton color="default" disabled>Button</BaseButton>
+                <BaseButton color="primary" disabled>Button</BaseButton>
+                <BaseButton color="success" disabled>Button</BaseButton>
+                <BaseButton color="info" disabled>Button</BaseButton>
+                <BaseButton color="warning" disabled>Button</BaseButton>
+                <BaseButton color="danger" disabled>Button</BaseButton>
               </BaseFocusLoop>
             </template>
             <template #code>

@@ -50,7 +50,7 @@ const currencies = [
           <span>{{ currency.name }}</span>
         </BaseHeading>
         <BaseParagraph size="xs">
-          <span class="text-muted-400"> {{ currency.fullName }} token </span>
+          <span class="text-muted-400">{{ currency.fullName }} token</span>
         </BaseParagraph>
       </div>
       <div class="flex items-center ml-auto">
