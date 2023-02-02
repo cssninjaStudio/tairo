@@ -122,7 +122,7 @@ export default {
     </div>
 
     <BaseCard
-      class="!absolute -top-8 inset-x-0 z-10 max-w-[304px] mx-auto p-3 shadow-xl shadow-muted-300 dark:shadow-muted-800/30"
+      class="!absolute -top-8 inset-x-0 z-50 max-w-[304px] mx-auto p-3 shadow-xl shadow-muted-300 dark:shadow-muted-800/30"
       v-show="files.length && edit"
     >
       <div class="relative max-w-[280px]" v-if="files.length">

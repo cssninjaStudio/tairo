@@ -1,10 +1,11 @@
 <script setup lang="ts">
-const { currentStep, project } = useWizardContext()
+import type { Project, ProjectStepData } from '../../types'
+
+const { project } = useMultiStepForm<Project, ProjectStepData>()
+
 useHead({
   title: 'Project info',
 })
-
-currentStep.value = 2
 </script>
 
 <template>

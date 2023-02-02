@@ -44,7 +44,7 @@ definePageMeta({
                     name="demo-1"
                     label="Straight checkbox"
                     shape="straight"
-                    :classes="{ 'wrapper': 'text-gray-500' }"
+                    :classes="{ wrapper: 'text-gray-500' }"
                   />
                 </div>
                 <!-- State box -->
@@ -68,7 +68,7 @@ definePageMeta({
                     name="demo-2"
                     label="Rounded checkbox"
                     shape="rounded"
-                    :classes="{ 'wrapper': 'text-gray-500' }"
+                    :classes="{ wrapper: 'text-gray-500' }"
                   />
                 </div>
                 <!-- State box -->
@@ -93,7 +93,7 @@ definePageMeta({
                     name="demo-3-1"
                     label="Curved checkbox"
                     shape="curved"
-                    :classes="{ 'wrapper': 'text-gray-500' }"
+                    :classes="{ wrapper: 'text-gray-500' }"
                   />
                   <BaseCheckbox
                     v-model="demoThree"
@@ -101,7 +101,7 @@ definePageMeta({
                     name="demo-3-2"
                     label="Curved checkbox"
                     shape="curved"
-                    :classes="{ 'wrapper': 'text-gray-500' }"
+                    :classes="{ wrapper: 'text-gray-500' }"
                   />
                 </div>
                 <!-- State box -->
@@ -127,7 +127,7 @@ definePageMeta({
                     shape="circle"
                     :true-value="'checked'"
                     :false-value="'not-checked'"
-                    :classes="{ 'wrapper': 'text-gray-500' }"
+                    :classes="{ wrapper: 'text-gray-500' }"
                   />
                 </div>
                 <!-- State box -->
@@ -154,7 +154,7 @@ definePageMeta({
                   name="demo-5"
                   label="Straight"
                   shape="straight"
-                  :classes="{ 'wrapper': 'text-gray-500' }"
+                  :classes="{ wrapper: 'text-gray-500' }"
                 />
 
                 <BaseCheckbox
@@ -162,7 +162,7 @@ definePageMeta({
                   name="demo-6"
                   label="Straight"
                   shape="straight"
-                  :classes="{ 'wrapper': 'text-emerald-500' }"
+                  :classes="{ wrapper: 'text-emerald-500' }"
                 />
 
                 <BaseCheckbox
@@ -170,7 +170,7 @@ definePageMeta({
                   name="demo-7"
                   label="Rounded"
                   shape="rounded"
-                  :classes="{ 'wrapper': 'text-yellow-500' }"
+                  :classes="{ wrapper: 'text-yellow-500' }"
                 />
 
                 <BaseCheckbox
@@ -178,7 +178,7 @@ definePageMeta({
                   name="demo-8"
                   label="Rounded"
                   shape="rounded"
-                  :classes="{ 'wrapper': 'text-pink-500' }"
+                  :classes="{ wrapper: 'text-pink-500' }"
                 />
 
                 <BaseCheckbox
@@ -186,7 +186,7 @@ definePageMeta({
                   name="demo-9"
                   label="Curved"
                   shape="curved"
-                  :classes="{ 'wrapper': 'text-indigo-500' }"
+                  :classes="{ wrapper: 'text-indigo-500' }"
                 />
 
                 <BaseCheckbox
@@ -194,7 +194,7 @@ definePageMeta({
                   name="demo-10"
                   label="Curved"
                   shape="curved"
-                  :classes="{ 'wrapper': 'text-primary-500' }"
+                  :classes="{ wrapper: 'text-primary-500' }"
                 />
 
                 <BaseCheckbox
@@ -202,7 +202,7 @@ definePageMeta({
                   name="demo-11"
                   label="Circle"
                   shape="circle"
-                  :classes="{ 'wrapper': 'text-amber-500' }"
+                  :classes="{ wrapper: 'text-amber-500' }"
                 />
 
                 <BaseCheckbox
@@ -210,7 +210,7 @@ definePageMeta({
                   name="demo-12"
                   label="Circle"
                   shape="circle"
-                  :classes="{ 'wrapper': 'text-rose-500' }"
+                  :classes="{ wrapper: 'text-rose-500' }"
                 />
               </BaseFocusLoop>
             </template>

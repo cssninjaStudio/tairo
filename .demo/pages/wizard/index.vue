@@ -1,10 +1,21 @@
 <script setup lang="ts">
-const { currentStep, nextStep, project } = useWizardContext()
+import type { Project, ProjectStepData, ProjectType } from '../../types'
+
+const { getNextStep, project, goToStep } = useMultiStepForm<
+  Project,
+  ProjectStepData
+>()
 useHead({
   title: 'Project type',
 })
 
-currentStep.value = 1
+function onSelectType(type: ProjectType) {
+  const next = getNextStep()
+  if (next) {
+    project.type = type
+    goToStep(next)
+  }
+}
 </script>
 
 <template>
@@ -39,11 +50,11 @@ currentStep.value = 1
           </div>
           <div class="flex flex-col items-center mb-5">
             <BaseButton
-              to="/wizard/step-2"
+              :to="getNextStep()?.path"
               color="primary"
               shape="curved"
               class="w-36"
-              @click.native="nextStep(), (project.type = 'design')"
+              @click.prevent="() => onSelectType('design')"
             >
               <span>Continue</span>
             </BaseButton>
@@ -84,11 +95,11 @@ currentStep.value = 1
           </div>
           <div class="flex flex-col items-center mb-5">
             <BaseButton
-              to="/wizard/step-2"
+              :to="getNextStep()?.path"
               color="primary"
               shape="curved"
               class="w-36"
-              @click.native="nextStep(), (project.type = 'development')"
+              @click.prevent="() => onSelectType('development')"
             >
               <span>Continue</span>
             </BaseButton>
@@ -128,11 +139,11 @@ currentStep.value = 1
           </div>
           <div class="flex flex-col items-center mb-5">
             <BaseButton
-              to="/wizard/step-2"
+              :to="getNextStep()?.path"
               color="primary"
               shape="curved"
               class="w-36"
-              @click.native="nextStep(), (project.type = 'marketing')"
+              @click.prevent="() => onSelectType('marketing')"
             >
               <span>Continue</span>
             </BaseButton>

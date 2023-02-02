@@ -1,10 +1,7 @@
 <script setup lang="ts">
-const { currentStep } = useWizardContext()
 useHead({
   title: 'Project files',
 })
-
-currentStep.value = 4
 
 const toggled = ref(false)
 </script>

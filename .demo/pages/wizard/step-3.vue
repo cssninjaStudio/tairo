@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { DatePicker } from 'v-calendar'
 import 'v-calendar/dist/style.css'
-import type { Customer } from '@/types/index'
 
-const { currentStep, project } = useWizardContext()
+import type { Customer, Project, ProjectStepData } from '../../types'
+
+const { project } = useMultiStepForm<Project, ProjectStepData>()
+
 useHead({
   title: 'Project details',
 })
@@ -60,8 +62,6 @@ const customers: Customer[] = [
     location: 'Los Angeles, CA',
   },
 ]
-
-currentStep.value = 3
 
 const search = ref('')
 const itemSelected = ref(false)

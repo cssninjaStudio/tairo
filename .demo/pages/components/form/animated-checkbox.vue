@@ -52,7 +52,6 @@ definePageMeta({
         >
           <DocComponent label="A nice and friendly checkbox">
             <template #demo>
-              
               <div class="flex flex-col gap-6 md:flex-row md:items-start">
                 <BaseFocusLoop class="flex flex-wrap items-end gap-4 w-3/5">
                   <BaseAnimatedCheckbox
@@ -170,7 +169,6 @@ definePageMeta({
         >
           <DocComponent label="Use an array or a boolean as model">
             <template #demo>
-              
               <div class="flex flex-col gap-6 md:flex-row md:items-start">
                 <BaseFocusLoop class="flex flex-wrap items-end gap-4 w-3/5">
                   <BaseAnimatedCheckbox
@@ -189,16 +187,16 @@ definePageMeta({
           </DocComponent>
         </DocSection>
 
-
         <!-- Animated boolean -->
         <DocSection
           id="animated-checkbox"
           title="Animated checkbox with custom value"
           tag="1.0.0"
         >
-          <DocComponent label="Use true-value/false-value to create custom behavior">
+          <DocComponent
+            label="Use true-value/false-value to create custom behavior"
+          >
             <template #demo>
-              
               <div class="flex flex-col gap-6 md:flex-row md:items-start">
                 <div class="flex flex-wrap items-end gap-4 w-3/5">
                   <BaseAnimatedCheckbox
@@ -225,14 +223,13 @@ definePageMeta({
           title="Animated checkbox with static value"
           tag="1.0.0"
         >
-          <DocComponent label="Use true-value/false-value to create custom behavior">
+          <DocComponent
+            label="Use true-value/false-value to create custom behavior"
+          >
             <template #demo>
-              
               <div class="flex flex-col gap-6 md:flex-row md:items-start">
                 <div class="flex flex-wrap items-end gap-4 w-3/5">
-                  <BaseAnimatedCheckbox
-                    class="text-primary-500"
-                  />
+                  <BaseAnimatedCheckbox class="text-primary-500" />
                   <BaseAnimatedCheckbox
                     :model-value="true"
                     class="text-primary-500"
@@ -263,5 +260,4 @@ definePageMeta({
       </template>
     </DocLayout>
   </div>
-  
 </template>

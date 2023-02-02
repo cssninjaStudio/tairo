@@ -1,11 +1,16 @@
 <script setup lang="ts">
-import type { TeamMember, TeamMemberRole } from '@/types/index'
-const { currentStep, project } = useWizardContext()
+import type {
+  Project,
+  ProjectStepData,
+  TeamMember,
+  TeamMemberRole,
+} from '../../types'
+
+const { project } = useMultiStepForm<Project, ProjectStepData>()
+
 useHead({
   title: 'Team members',
 })
-
-currentStep.value = 5
 
 const toggled = ref(false)
 

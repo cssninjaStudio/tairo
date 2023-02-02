@@ -1,11 +1,17 @@
 <script setup lang="ts">
-const { currentStep, project, preview, complete, goToStep } = useWizardContext()
+import type { Project, ProjectStepData } from '../../types'
+
+const { project, complete, getStep } = useMultiStepForm<
+  Project,
+  ProjectStepData
+>()
 useHead({
   title: 'Submit project',
 })
 
-currentStep.value = 7
-preview.value = true
+onBeforeUnmount(() => {
+  complete.value = false
+})
 </script>
 
 <template>
@@ -13,7 +19,7 @@ preview.value = true
     <div v-if="!complete">
       <WizardStepTitle />
 
-      <div class="flex flex-col px-4 pb-32">
+      <div class="flex flex-col px-4">
         <div
           class="group relative w-16 mx-auto flex items-center justify-center mb-2"
         >
@@ -35,7 +41,7 @@ preview.value = true
               small
               shape="full"
               class="opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500"
-              @click="goToStep(2)"
+              :to="getStep(1).path"
             >
               <Icon name="lucide:edit-2" class="w-3 h-3 pointer-events-none" />
             </BaseButtonIcon>
@@ -59,7 +65,7 @@ preview.value = true
                     small
                     shape="full"
                     class="opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500"
-                    @click="goToStep(2)"
+                    :to="getStep(1).path"
                   >
                     <Icon
                       name="lucide:edit-2"
@@ -97,7 +103,7 @@ preview.value = true
                     small
                     shape="full"
                     class="opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500"
-                    @click="goToStep(1)"
+                    :to="getStep(0).path"
                   >
                     <Icon
                       name="lucide:edit-2"
@@ -160,7 +166,7 @@ preview.value = true
                     small
                     shape="full"
                     class="opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500"
-                    @click="goToStep(3)"
+                    :to="getStep(2).path"
                   >
                     <Icon
                       name="lucide:edit-2"
@@ -206,7 +212,7 @@ preview.value = true
                     small
                     shape="full"
                     class="opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500"
-                    @click="goToStep(3)"
+                    :to="getStep(2).path"
                   >
                     <Icon
                       name="lucide:edit-2"
@@ -240,7 +246,7 @@ preview.value = true
                     small
                     shape="full"
                     class="opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500"
-                    @click="goToStep(3)"
+                    :to="getStep(2).path"
                   >
                     <Icon
                       name="lucide:edit-2"
@@ -278,7 +284,7 @@ preview.value = true
                     small
                     shape="full"
                     class="opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500"
-                    @click="goToStep(4)"
+                    :to="getStep(3).path"
                   >
                     <Icon
                       name="lucide:edit-2"
@@ -312,7 +318,7 @@ preview.value = true
                     small
                     shape="full"
                     class="opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500"
-                    @click="goToStep(5)"
+                    :to="getStep(4).path"
                   >
                     <Icon
                       name="lucide:edit-2"
@@ -367,7 +373,7 @@ preview.value = true
                     small
                     shape="full"
                     class="opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500"
-                    @click="goToStep(6)"
+                    :to="getStep(5).path"
                   >
                     <Icon
                       name="lucide:edit-2"

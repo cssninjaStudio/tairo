@@ -7,9 +7,7 @@ import shapes from '~/documentation/listbox/shapes.md?raw'
 import sublabels from '~/documentation/listbox/sublabels.md?raw'
 import multiple from '~/documentation/listbox/multiple.md?raw'
 
-const frameworks = [
-  'Javascript', 'Vue.js', 'React.js', 'Angular', 'Alpine.js',
-]
+const frameworks = ['Javascript', 'Vue.js', 'React.js', 'Angular', 'Alpine.js']
 
 const peopleNames = [
   {
@@ -209,7 +207,7 @@ definePageMeta({
                     value: 'id',
                     label: 'name',
                     sublabel: 'text',
-                    media: 'media'
+                    media: 'media',
                   }"
                 />
               </div>
@@ -233,7 +231,7 @@ definePageMeta({
                     value: 'id',
                     label: 'name',
                     sublabel: 'text',
-                    icon: 'icon'
+                    icon: 'icon',
                   }"
                 />
               </div>

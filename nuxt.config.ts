@@ -13,9 +13,9 @@ const envModules = {
 export default defineNuxtConfig({
   extends: envModules.ui,
   modules: ['nuxt-config-schema', '@nuxt/image-edge'],
-  alias: {
-    '@': '/<rootDir>',
-  },
+  // alias: {
+  //   '@': '/<rootDir>',
+  // },
   css: [
     resolve('./assets/css/modules/variables.css'),
     resolve('./assets/css/modules/slider.css'),

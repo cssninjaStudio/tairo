@@ -1,11 +1,10 @@
 <script setup lang="ts">
-import type { Tool } from '@/types/index'
-const { currentStep, project } = useWizardContext()
+import type { Project, ProjectStepData, Tool } from '../../types'
+
+const { project } = useMultiStepForm<Project, ProjectStepData>()
 useHead({
   title: 'Project tools',
 })
-
-currentStep.value = 6
 
 const tools: Tool[] = [
   {
@@ -75,7 +74,7 @@ const tools: Tool[] = [
   <div>
     <WizardStepTitle />
 
-    <div class="grid sm:grid-cols-3 gap-4 max-w-4xl mx-auto px-4 pb-32">
+    <div class="grid sm:grid-cols-3 gap-4 max-w-4xl mx-auto px-4">
       <!-- Tools -->
       <div v-for="tool in tools" :key="tool.name" class="relative">
         <BaseCheckboxCustom

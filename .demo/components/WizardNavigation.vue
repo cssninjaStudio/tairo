@@ -1,9 +1,13 @@
 <script setup lang="ts">
-const { steps, currentStep, progress, preview, goToStep } = useWizardContext()
+import type { Project, ProjectStepData } from '../types'
+const { steps, currentStep, progress, preview, goToStep } = useMultiStepForm<
+  Project,
+  ProjectStepData
+>()
 
 const currentStepName = computed(() => {
   const stepData = steps.value.find((step) => step.id === currentStep.value)
-  return stepData?.name
+  return stepData?.data?.name
 })
 
 const target = ref(null)
@@ -27,7 +31,7 @@ onClickOutside(target, () => (open.value = false))
         </NuxtLink>
         <div class="hidden sm:flex items-center gap-2 pl-6 font-sans">
           <p class="text-muted-500 dark:text-muted-400">
-            Step {{ currentStep }}:
+            Step {{ currentStep + 1 }}:
           </p>
           <h2 class="font-semibold text-muted-800 dark:text-white">
             {{ currentStepName }}
@@ -55,17 +59,21 @@ onClickOutside(target, () => (open.value = false))
           >
             <div class="space-y-1">
               <button
-                v-for="(step, index) in steps"
+                v-for="step in steps"
                 type="button"
                 class="w-full flex items-center gap-2 font-sans py-2 px-3 rounded-lg hover:bg-muted-100 dark:hover:bg-muted-700 disabled:opacity-70 disabled:cursor-not-allowed"
-                :disabled="index + 1 > currentStep && preview"
-                @click="goToStep(index + 1), (open = false)"
+                @click="
+                  () => {
+                    open = false
+                    goToStep(step)
+                  }
+                "
               >
                 <p class="text-xs text-muted-500 dark:text-muted-400">
-                  Step {{ index + 1 }}:
+                  Step {{ step.id + 1 }}:
                 </p>
                 <h4 class="text-xs font-medium text-muted-800 dark:text-white">
-                  {{ step.name }}
+                  {{ step.data.name }}
                 </h4>
               </button>
             </div>

@@ -252,7 +252,7 @@ export default {
               :class="file.progress !== 0 ? 'opacity-100' : 'opacity-0'"
             >
               <BaseProgress
-                :value="file.progress"
+                :value="Number(file.progress)"
                 size="xs"
                 :color="file.error ? 'danger' : 'success'"
               />

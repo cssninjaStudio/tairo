@@ -1,5 +1,6 @@
 <script setup lang="ts">
-const { steps, currentStep } = useWizardContext()
+import type { Project, ProjectStepData } from '../types'
+const { steps, currentStep } = useMultiStepForm<Project, ProjectStepData>()
 
 const currentStepData = computed(() => {
   const stepData = steps.value.find((step) => step.id === currentStep.value)
@@ -10,10 +11,10 @@ const currentStepData = computed(() => {
 <template>
   <div class="text-center mb-10">
     <BaseHeading tag="h1" size="2xl" class="text-muted-800 dark:text-white">
-      <span>{{ currentStepData?.title }}</span>
+      <span>{{ currentStepData?.data?.title }}</span>
     </BaseHeading>
     <BaseParagraph size="sm" class="text-muted-500 dark:text-muted-400">
-      <span>{{ currentStepData?.subtitle }}</span>
+      <span>{{ currentStepData?.data?.subtitle }}</span>
     </BaseParagraph>
   </div>
 </template>
