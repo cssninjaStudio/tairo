@@ -1,5 +1,11 @@
 <template>
-  <svg id="stock-chart-3" data-vivus viewBox="0 0 250 60" width="250" height="90">
+  <svg
+    id="stock-chart-3"
+    data-vivus
+    viewBox="0 0 250 60"
+    width="250"
+    height="90"
+  >
     <path
       fill="none"
       vector-effect="non-scaling-stroke"

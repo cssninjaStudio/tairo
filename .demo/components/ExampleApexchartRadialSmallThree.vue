@@ -26,7 +26,7 @@ const LazyVueApexCharts = defineAsyncComponent({
  * @note the `as const` is to make sure the type is inlined in the compiled code
  * instead of being a reference to the object in memory.
  */
- const radialSmallOptions = {
+const radialSmallOptions = {
   series: [84],
   chart: {
     height: 100,

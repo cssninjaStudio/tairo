@@ -35,18 +35,18 @@ const team = [
           />
         </div>
       </BaseTableHeading>
-      <BaseTableHeading uppercase
-        >Collaborator</BaseTableHeading
-      >
-      <BaseTableHeading uppercase
-        >Expertise</BaseTableHeading
-      >
-      <BaseTableHeading uppercase
-        >Rate</BaseTableHeading
-      >
-      <BaseTableHeading uppercase
-        >Status</BaseTableHeading
-      >
+      <BaseTableHeading uppercase>
+        Collaborator
+      </BaseTableHeading>
+      <BaseTableHeading uppercase>
+        Expertise
+      </BaseTableHeading>
+      <BaseTableHeading uppercase>
+        Rate
+      </BaseTableHeading>
+      <BaseTableHeading uppercase>
+        Status
+      </BaseTableHeading>
       <BaseTableHeading uppercase class="p-4">
         <span class="sr-only">View</span>
       </BaseTableHeading>
@@ -88,9 +88,9 @@ const team = [
       <BaseTableCell light>
         {{ member.expertise }}
       </BaseTableCell>
-      <BaseTableCell
-        >\${{ member.rate }}/hour</BaseTableCell
-      >
+      <BaseTableCell>
+        \${{ member.rate }}/hour
+      </BaseTableCell>
       <BaseTableCell>
         <BaseTag
           v-if="member.status === 'Available'"

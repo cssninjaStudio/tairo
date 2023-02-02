@@ -1,5 +1,11 @@
 <template>
-  <svg id="stock-chart-2" data-vivus viewBox="0 0 250 60" width="250" height="90">
+  <svg
+    id="stock-chart-2"
+    data-vivus
+    viewBox="0 0 250 60"
+    width="250"
+    height="90"
+  >
     <path
       vector-effect="non-scaling-stroke"
       d="M209.3,32.3c12.6,0.2,25.9,15.3,40.7,5"
@@ -10,7 +16,11 @@
       stroke-linecap="round"
       stroke-miterlimit="3"
     />
-    <text transform="matrix(1 0 0 1 195 20)" stroke="none" fill="rgb(30 64 175)">
+    <text
+      transform="matrix(1 0 0 1 195 20)"
+      stroke="none"
+      fill="rgb(30 64 175)"
+    >
       -5%
     </text>
     <linearGradient id="_lgradient_2" x1="0%" y1="50%" x2="100%" y2="50%">

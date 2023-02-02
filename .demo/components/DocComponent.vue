@@ -24,7 +24,9 @@ const activeTab = ref('demo')
       </BaseParagraph>
 
       <div class="ml-auto flex flex-none items-center pl-4 sm:pl-6">
-        <BaseFocusLoop class="flex items-end gap-1 p-1 rounded-lg bg-muted-200 dark:bg-muted-700">
+        <BaseFocusLoop
+          class="flex items-end gap-1 p-1 rounded-lg bg-muted-200 dark:bg-muted-700"
+        >
           <BaseButtonAction
             shape="rounded"
             class="h-[2.35rem] pr-3 focus:z-10"

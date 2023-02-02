@@ -42,12 +42,12 @@ const demoBreadcrumbTwo = [
 </script>
 
 <template>
-  <BaseBreadcrumb :items="demoBreadcrumbOne"
-    >/</BaseBreadcrumb
-  >
+  <BaseBreadcrumb :items="demoBreadcrumbOne">
+    /
+  </BaseBreadcrumb>
 
-  <BaseBreadcrumb :items="demoBreadcrumbTwo"
-    >/</BaseBreadcrumb
-  >
+  <BaseBreadcrumb :items="demoBreadcrumbTwo">
+    /
+  </BaseBreadcrumb>
 </template>
 ```

@@ -2,15 +2,15 @@
 const followers = [
   {
     tooltip: 'Clarke Smith',
-    src: '/img/avatars/3.svg'
+    src: '/img/avatars/3.svg',
   },
   {
     tooltip: 'John Rowner',
-    src: '/img/avatars/6.svg'
+    src: '/img/avatars/6.svg',
   },
   {
     tooltip: 'Maggie Pitts',
-    src: '/img/avatars/9.svg'
+    src: '/img/avatars/9.svg',
   },
 ]
 </script>
@@ -32,10 +32,24 @@ const followers = [
     <div>
       <BaseParagraph size="xs">
         <span class="text-muted-400">
-          Great News! <NuxtLink to="/" class="underline-offset-2 hover:underline text-primary-500">Clarke</NuxtLink>, 
-          <NuxtLink to="/" class="underline-offset-2 hover:underline text-primary-500">John</NuxtLink> and 
-          <NuxtLink to="/" class="underline-offset-2 hover:underline text-primary-500">Maggie</NuxtLink> are now following you. 
-          Take some time to look at their profile.
+          Great News!
+          <NuxtLink
+            to="/"
+            class="underline-offset-2 hover:underline text-primary-500"
+            >Clarke</NuxtLink
+          >,
+          <NuxtLink
+            to="/"
+            class="underline-offset-2 hover:underline text-primary-500"
+            >John</NuxtLink
+          >
+          and
+          <NuxtLink
+            to="/"
+            class="underline-offset-2 hover:underline text-primary-500"
+            >Maggie</NuxtLink
+          >
+          are now following you. Take some time to look at their profile.
         </span>
       </BaseParagraph>
     </div>

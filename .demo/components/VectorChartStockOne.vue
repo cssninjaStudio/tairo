@@ -1,5 +1,11 @@
 <template>
-  <svg id="stock-chart-1" data-vivus viewBox="0 0 250 60" width="250" height="90">
+  <svg
+    id="stock-chart-1"
+    data-vivus
+    viewBox="0 0 250 60"
+    width="250"
+    height="90"
+  >
     <path
       d="M 209.328 17.34 C 221.956 17.588 235.264 32.599 250 22.328"
       fill="none"
@@ -36,11 +42,7 @@
       d="M 206.649 17.218 C 206.649 15.739 207.85 14.538 209.328 14.538 C 210.807 14.538 212.008 15.739 212.008 17.218 C 212.008 18.696 210.807 19.897 209.328 19.897 C 207.85 19.897 206.649 18.696 206.649 17.218 Z"
       fill="rgb(204, 0, 0)"
     ></path>
-    <text
-      transform="matrix(1,0,0,1,195,5)"
-      stroke="none"
-      fill="rgb(204, 0, 0)"
-    >
+    <text transform="matrix(1,0,0,1,195,5)" stroke="none" fill="rgb(204, 0, 0)">
       +14%
     </text>
   </svg>

@@ -8,9 +8,9 @@
         name="lucide:help-circle"
         class="w-4 h-4 mr-1"
       />
-      <span class="font-sans text-sm"
-        >Help text</span
-      >
+      <span class="font-sans text-sm">
+        Help text
+      </span>
     </span>
 
     <template #content>

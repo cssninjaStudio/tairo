@@ -37,8 +37,16 @@ const members = [
 
 <template>
   <div class="space-y-5 mb-2">
-    <div v-for="member in members" :key="member.id" class="flex items-center gap-3">
-      <BaseAvatar :src="member.image" :text="member.text" class="flex-shrink-0 bg-primary-100 dark:bg-primary-500/20 text-primary-500" />
+    <div
+      v-for="member in members"
+      :key="member.id"
+      class="flex items-center gap-3"
+    >
+      <BaseAvatar
+        :src="member.image"
+        :text="member.text"
+        class="flex-shrink-0 bg-primary-100 dark:bg-primary-500/20 text-primary-500"
+      />
       <div>
         <BaseHeading
           as="h4"
@@ -47,11 +55,11 @@ const members = [
           lead="tight"
           class="text-muted-800 dark:text-white"
         >
-          <span>{{ member.firstName }} {{  member.lastName.slice(0, 1) }}.</span>
+          <span>{{ member.firstName }} {{ member.lastName.slice(0, 1) }}.</span>
         </BaseHeading>
         <BaseParagraph size="xs">
           <span class="text-muted-400">
-            {{  member.role  }}
+            {{ member.role }}
           </span>
         </BaseParagraph>
       </div>

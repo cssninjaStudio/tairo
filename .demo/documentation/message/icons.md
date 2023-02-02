@@ -1,8 +1,8 @@
 ```vue
 <template>
-  <BaseMessage icon
-    >A successful message.</BaseMessage
-  >
+  <BaseMessage icon>
+    A successful message.
+  </BaseMessage>
   <BaseMessage type="info" icon>
     An information message.
   </BaseMessage>

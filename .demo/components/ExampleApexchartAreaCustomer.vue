@@ -6,9 +6,9 @@ const { primary, info, success } = useTailwindColors()
  * This improves the chart rendering options
  */
 
- const props = defineProps<{
+const props = defineProps<{
   legend?: boolean
- }>()
+}>()
 
 /**
  * Use `defineAsyncComponent` to lazy load the component only when needed
