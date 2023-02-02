@@ -4,7 +4,7 @@ specifiers:
   '@antfu/eslint-config': 0.35.1
   '@ckeditor/ckeditor5-build-classic': 36.0.0
   '@ckeditor/ckeditor5-vue': 4.0.1
-  '@cssninja/nuxt-ui': 0.3.12
+  '@cssninja/nuxt-ui': 0.3.13
   '@iconify/json': 2.2.15
   '@mapbox/mapbox-gl-geocoder': 5.0.1
   '@nuxt/image-edge': 1.0.0-27919678.2f5b64b
@@ -75,7 +75,7 @@ devDependencies:
   '@antfu/eslint-config': 0.35.1_4vsywjlpuriuw3tl5oq6zy5a64
   '@ckeditor/ckeditor5-build-classic': 36.0.0
   '@ckeditor/ckeditor5-vue': 4.0.1
-  '@cssninja/nuxt-ui': 0.3.12_nuxt@3.1.1
+  '@cssninja/nuxt-ui': 0.3.13_nuxt@3.1.1
   '@iconify/json': 2.2.15
   '@nuxt/image-edge': 1.0.0-27919678.2f5b64b
   '@nuxtjs/eslint-config': 12.0.0_eslint@8.33.0
@@ -797,8 +797,8 @@ packages:
       mime: 3.0.0
     dev: true
 
-  /@cssninja/nuxt-ui/0.3.12_nuxt@3.1.1:
-    resolution: {integrity: sha512-sZ3k3eEtZbpb8ExmAQMO/Dad8doqsfjTw1Aa/nCEjqFYub3CHr88AyJfEpR7qjqHvOj/916Y0w2YYDb4NMhbEQ==}
+  /@cssninja/nuxt-ui/0.3.13_nuxt@3.1.1:
+    resolution: {integrity: sha512-WCtRSDKSW8XVkY3Q015wfZFcGciBt3/2DCbKJSY8QBkMYajBaFSTxfG30/37EFFQgyvF/9m1+CFp5A7kz/XbUA==}
     dependencies:
       '@headlessui/vue': 1.7.8
       '@iconify/vue': 4.1.0

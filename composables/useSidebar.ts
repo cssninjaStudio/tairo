@@ -71,7 +71,12 @@ export const useSidebar = () => {
   )
 
   const isOpen = useState('sidebar-open', () => false)
-  const currentName = useState('sidebar-name', () => '')
+  const currentName = useState('sidebar-name', () => {
+    const item = sidebars.value?.find(
+      ({ activePath }) => activePath && route.fullPath.startsWith(activePath),
+    )
+    return item?.name || ''
+  })
 
   const current = computed(() => {
     if (!currentName.value) {
@@ -83,17 +88,6 @@ export const useSidebar = () => {
   function toggle() {
     isOpen.value = !isOpen.value
   }
-
-  watch(
-    () => route.path,
-    () => {
-      const item = sidebars.value?.find(
-        ({ activePath }) => activePath && route.fullPath.startsWith(activePath),
-      )
-      currentName.value = item?.name || ''
-    },
-    { immediate: true },
-  )
 
   watchEffect(() => {
     if (currentName.value) {
