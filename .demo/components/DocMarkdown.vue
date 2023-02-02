@@ -7,34 +7,27 @@ import rehypeStringify from 'rehype-stringify'
 import remarkGfm from 'remark-gfm'
 import remarkParse from 'remark-parse'
 import remarkRehype from 'remark-rehype'
-import { getHighlighter, setCDN } from 'shiki-es'
+import {
+  getHighlighter,
+  setCDN,
+  type HighlighterOptions,
+  type Lang,
+} from 'shiki-es'
 import { unified, type Processor } from 'unified'
 
-let processor: Processor
-let processorPromise: Promise<Processor> | null = null
+type ProcessorThemes = Record<string, Processor>
 
-async function createProcessor() {
+let _processors: ProcessorThemes
+let _processorsPromise: Promise<ProcessorThemes> | null = null
+
+async function createProcessor(options: HighlighterOptions) {
   if (process.client) {
     setCDN('https://unpkg.com/shiki@0.12.1/')
   }
 
-  const highlighter = await getHighlighter({
-    theme: 'material-lighter',
-    langs: [
-      'vue',
-      'vue-html',
-      'json',
-      'javascript',
-      'typescript',
-      'bash',
-      'css',
-      'scss',
-      'diff',
-      'astro',
-    ],
-  })
+  const highlighter = await getHighlighter(options)
 
-  const _processor = unified()
+  return unified()
     .use(remarkParse)
     .use(remarkGfm)
     .use(remarkShiki, { highlighter })
@@ -68,71 +61,38 @@ async function createProcessor() {
       target: '_blank',
     })
     .use(rehypeStringify)
-
-  return _processor
 }
 
-export function getProcessor() {
-  if (processor) {
-    return Promise.resolve(processor)
+export function getProcessors(
+  themes: Record<string, string> = {},
+  langs: Lang[] = [],
+) {
+  if (_processors) {
+    return Promise.resolve(_processors)
   }
 
-  if (processorPromise) {
-    return processorPromise
+  if (_processorsPromise) {
+    return _processorsPromise
   }
 
-  processorPromise = createProcessor()
+  _processorsPromise = new Promise(async (resolve, reject) => {
+    try {
+      const processors: ProcessorThemes = {}
+      for (const theme in themes) {
+        const processor = await createProcessor({
+          langs,
+          theme: themes[theme],
+        })
+        processors[theme] = processor
+      }
+      resolve(processors)
+    } catch (error) {
+      reject(error)
+    }
+  })
 
-  return processorPromise
+  return _processorsPromise
 }
-
-// import type { Processor } from 'unified'
-
-// async function loadModules() {
-//   if (process.client) {
-//     setCDN('https://unpkg.com/shiki@0.12.1/')
-//   }
-
-//   const [
-//     remarkShiki,
-//     rehypeExternalLinks,
-//     rehypeRaw,
-//     [rehypeSanitize, defaultSchema],
-//     rehypeStringify,
-//     remarkGfm,
-//     remarkParse,
-//     remarkRehype,
-//     getHighlighter,
-//     unified,
-//   ] = await Promise.all([
-//     import('@stefanprobst/remark-shiki').then((m) => m.default),
-//     import('rehype-external-links').then((m) => m.default),
-//     import('rehype-raw').then((m) => m.default),
-//     import('rehype-sanitize').then(
-//       (m) => [m.default, m.defaultSchema] as const,
-//     ),
-//     import('rehype-stringify').then((m) => m.default),
-//     import('remark-gfm').then((m) => m.default),
-//     import('remark-parse').then((m) => m.default),
-//     import('remark-rehype').then((m) => m.default),
-//     import('shiki-es').then((m) => m.getHighlighter),
-//     import('unified').then((m) => m.unified),
-//   ])
-
-//   return {
-//     remarkShiki,
-//     rehypeExternalLinks,
-//     rehypeRaw,
-//     rehypeSanitize,
-//     defaultSchema,
-//     rehypeStringify,
-//     remarkGfm,
-//     remarkParse,
-//     remarkRehype,
-//     getHighlighter,
-//     unified,
-//   }
-// }
 
 export default defineComponent({
   name: 'BaseMarkdown',
@@ -149,9 +109,13 @@ export default defineComponent({
     },
   },
   setup(props) {
+    const processors = shallowRef<ProcessorThemes>()
     const colorMode = useColorMode()
     const loaded = ref(false)
-    const html = ref('')
+    const htmlTheme = ref<Record<string, string>>({
+      light: '',
+      dark: '',
+    })
     const isDark = computed({
       get() {
         return colorMode.value === 'dark'
@@ -164,15 +128,39 @@ export default defineComponent({
         }
       },
     })
+    const theme = computed(() => (isDark.value ? 'dark' : 'light'))
+
+    watchEffect(async () => {
+      if (processors.value) return
+      processors.value = await getProcessors(
+        {
+          light: 'material-lighter',
+          dark: 'material-ocean',
+        },
+        [
+          'vue',
+          'html',
+          'vue-html',
+          'json',
+          'javascript',
+          'typescript',
+          'bash',
+          'css',
+          'scss',
+          'diff',
+          'astro',
+        ],
+      )
+    })
 
     watchEffect(async () => {
       let source = props.source
-      if (!source) return
-      const processor = await getProcessor()
-      if (!processor) return
+      const _theme = theme.value
+      if (!source || !processors.value || htmlTheme.value[_theme]) return
+      console.log('set markdown', theme)
 
-      const vfile = await processor.process(source)
-      html.value = vfile.toString()
+      const vfile = await processors.value[_theme].process(source)
+      htmlTheme.value[_theme] = vfile.toString()
       loaded.value = true
     })
 
@@ -186,110 +174,9 @@ export default defineComponent({
           'markdown' +
           (props.noLines ? '' : ' with-line-number') +
           (props.noHighlight ? '' : ' with-highlight'),
-        innerHTML: html.value,
+        innerHTML: htmlTheme.value[theme.value],
       })
     }
-
-    // const processor = ref<Processor>()
-    // const colorMode = useColorMode()
-    // const loaded = ref(false)
-    // const html = ref('')
-    // const isDark = computed({
-    //   get() {
-    //     return colorMode.value === 'dark'
-    //   },
-    //   set(value) {
-    //     if (value) {
-    //       colorMode.preference = 'dark'
-    //     } else {
-    //       colorMode.preference = 'light'
-    //     }
-    //   },
-    // })
-
-    // watchEffect(async () => {
-    //   const theme = isDark.value ? 'material-ocean' : 'material-lighter'
-    //   const {
-    //     remarkShiki,
-    //     rehypeExternalLinks,
-    //     rehypeRaw,
-    //     rehypeSanitize,
-    //     defaultSchema,
-    //     rehypeStringify,
-    //     remarkGfm,
-    //     remarkParse,
-    //     remarkRehype,
-    //     getHighlighter,
-    //     unified,
-    //   } = await loadModules()
-    //   const highlighter = await getHighlighter({
-    //     theme,
-    //     langs: [
-    //       'vue',
-    //       'html',
-    //       'vue-html',
-    //       'javascript',
-    //       'typescript',
-    //       'json',
-    //       'jsonc',
-    //       'bash',
-    //       'css',
-    //     ],
-    //   })
-
-    //   processor.value = unified()
-    //     .use(remarkParse)
-    //     .use(remarkGfm)
-    //     .use(remarkShiki, { highlighter })
-    //     .use(remarkRehype, { allowDangerousHtml: true })
-    //     .use(rehypeRaw)
-    //     .use(rehypeSanitize, {
-    //       ...defaultSchema,
-    //       attributes: {
-    //         ...defaultSchema.attributes,
-    //         pre: [
-    //           ...(defaultSchema.attributes?.pre || []),
-    //           ['className'],
-    //           ['style'],
-    //         ],
-    //         code: [
-    //           ...(defaultSchema.attributes?.code || []),
-    //           ['className'],
-    //           ['style'],
-    //         ],
-    //         i: [...(defaultSchema.attributes?.i || []), ['className']],
-    //         span: [
-    //           ...(defaultSchema.attributes?.span || []),
-    //           ['className'],
-    //           ['style'],
-    //         ],
-    //       },
-    //     })
-    //     .use(rehypeExternalLinks, { rel: ['nofollow'], target: '_blank' })
-    //     .use(rehypeStringify)
-    // })
-
-    // watchEffect(async () => {
-    //   const _processor = unref(processor)
-    //   if (!props.source) return
-    //   if (!_processor) return
-
-    //   html.value = (await _processor.process(props.source)).toString()
-    //   loaded.value = true
-    // })
-    // return () => {
-    //   if (!loaded.value)
-    //     return h(resolveComponent('BasePlaceload'), {
-    //       class: 'h-24 w-full rounded',
-    //     })
-    //   return h('div', {
-    //     class:
-    //       'markdown' +
-    //       (props.noLines ? '' : ' with-line-number') +
-    //       (props.noHighlight ? '' : ' with-highlight'),
-    //     innerHTML: html.value,
-    //   })
-    // }
   },
 })
 </script>
@@ -320,12 +207,12 @@ export default defineComponent({
   padding: 4px 4px 4px 6px;
   margin-left: -6px;
 }
-.markdown :deep(.shiki) {
+/* .markdown :deep(.shiki) {
   background: var(--color-muted-100) !important;
 }
 :global(.dark .markdown .shiki) {
   background: var(--color-muted-900) !important;
-}
+} */
 :global(.dark .markdown.with-highlight .shiki .highlighted-line) {
   background-color: #0d0e14;
 }

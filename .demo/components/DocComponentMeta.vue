@@ -2,6 +2,7 @@
 import { kebabCase } from 'scule'
 import type { ComponentMeta } from 'vue-component-meta'
 import { Component } from '@nuxt/schema'
+// @ts-ignore
 import type { NuxtComponentMetaNames } from '#nuxt-component-meta/types'
 export type Componendivata = Component & { meta: ComponentMeta }
 
@@ -11,11 +12,23 @@ export interface DocProperties {
 const props = defineProps<DocProperties>()
 const componentMeta = await useComponentMeta(props.name)
 
-function getPropertySnippet (prop: ComponentMeta['props'][0]) {
+function capitalize(str: string) {
+  return str[0].toUpperCase() + str.slice(1)
+}
+
+function getPropertySnippet(prop: ComponentMeta['props'][0]) {
   return [
     '```vue',
     `\u003Cscript setup lang="ts"\u003E`,
-    `const ${prop.name} = ref\u003C${prop.type}\u003E(${prop.default})`,
+    prop.type.length > 40
+      ? `type ${capitalize(prop.name)}Data = ${prop.type
+          .replace(/{ /g, '{\n ')
+          // .replace(/}/g, '\n}')
+          .replace(/; ([a-z])/g, ';\n $1')
+          .replace(/; /g, ';\n')}\nconst ${prop.name} = ref\u003C${capitalize(
+          prop.name,
+        )}Data\u003E(${prop.default})`
+      : `const ${prop.name} = ref\u003C${prop.type}\u003E(${prop.default})`,
     `\u003C/script\u003E`,
     ``,
     `\u003Ctemplate\u003E`,
@@ -26,7 +39,7 @@ function getPropertySnippet (prop: ComponentMeta['props'][0]) {
     '```',
   ].join('\n')
 }
-function getSlotSnippet (slot: ComponentMeta['slots'][0]) {
+function getSlotSnippet(slot: ComponentMeta['slots'][0]) {
   return [
     '```vue',
     `\u003Ctemplate\u003E`,
@@ -39,18 +52,24 @@ function getSlotSnippet (slot: ComponentMeta['slots'][0]) {
     '```',
   ].join('\n')
 }
-function getEventsSnippet (event: ComponentMeta['events'][0]) {
+function getEventsSnippet(event: ComponentMeta['events'][0]) {
+  const handlerName = capitalize(event.name).replace(/:([a-z])/g, (v) =>
+    v.replace(':', '').toUpperCase(),
+  )
+  const handlerProps = event.type.startsWith('[')
+    ? event.type.slice(1, -1)
+    : event.type
   return [
     '```vue',
     `\u003Cscript setup lang="ts"\u003E`,
-    `const handler = (${event.type.substring(1, event.type.length - 1)}) =\u003E {`,
+    `const on${handlerName} = (${handlerProps}) =\u003E {`,
     `  // ...`,
     `}`,
     `\u003C/script\u003E`,
     ``,
     `\u003Ctemplate\u003E`,
     `  \u003C${props.name}`,
-    `    @${event.name}="handler"`,
+    `    @${event.name}="on${handlerName}"`,
     `  /\u003E`,
     `\u003C/template\u003E`,
     '```',
@@ -77,7 +96,13 @@ function getEventsSnippet (event: ComponentMeta['events'][0]) {
               :anchor="{ prefix: '', suffix: '#' }"
               class="text-muted-800 dark:text-muted-200"
             >
-              <TocAnchor :level="3" prefix="" suffix="¶" :id="`${componentMeta.kebabName}-properties`">Properties</TocAnchor>
+              <TocAnchor
+                :level="3"
+                prefix=""
+                suffix="¶"
+                :id="`${componentMeta.kebabName}-properties`"
+                >Properties</TocAnchor
+              >
             </BaseHeading>
           </header>
           <div class="p-3">
@@ -98,14 +123,23 @@ function getEventsSnippet (event: ComponentMeta['events'][0]) {
                 <div
                   class="divide-y divide-muted-100 text-sm dark:divide-muted-700"
                 >
-                  <div class="flex flex-col md:flex-row py-4" v-for="prop in componentMeta.meta.props" :key="prop.name">
+                  <div
+                    class="flex flex-col md:flex-row py-4"
+                    v-for="prop in componentMeta.meta.props"
+                    :key="prop.name"
+                  >
                     <div class="p-2 md:w-4/12">
                       <div class="flex">
                         <div
                           class="font-medium text-muted-800 dark:text-muted-100"
                         >
-                          <span class="font-medium text-muted-800 dark:text-muted-100 font-mono">{{ prop.name }}</span>
-                          <sup v-if="prop.required" class="ml-1 text-rose-500 font-mono"
+                          <span
+                            class="font-medium text-muted-800 dark:text-muted-100 font-mono"
+                            >{{ prop.name }}</span
+                          >
+                          <sup
+                            v-if="prop.required"
+                            class="ml-1 text-rose-500 font-mono"
                             >Required</sup
                           >
                         </div>
@@ -122,12 +156,19 @@ function getEventsSnippet (event: ComponentMeta['events'][0]) {
                           class="text-xs text-muted-400"
                         >
                           <span class="font-semibold">@{{ tag.name }}</span>
-                          <span v-if="tag.text" class="block whitespace-pre" >{{ tag.text }}</span>
+                          <span v-if="tag.text" class="block whitespace-pre">{{
+                            tag.text
+                          }}</span>
                         </div>
                       </div>
                     </div>
                     <div class="p-2 md:w-8/12">
-                      <DocMarkdown no-lines no-highlight class="prose max-w-none text-sm" :source="getPropertySnippet(prop)" />
+                      <DocMarkdown
+                        no-lines
+                        no-highlight
+                        class="prose max-w-none text-sm"
+                        :source="getPropertySnippet(prop)"
+                      />
                     </div>
                   </div>
                 </div>
@@ -149,7 +190,13 @@ function getEventsSnippet (event: ComponentMeta['events'][0]) {
               :anchor="{ prefix: '', suffix: '#' }"
               class="text-muted-800 dark:text-muted-200"
             >
-              <TocAnchor :level="3" prefix="" suffix="¶" :id="`${componentMeta.kebabName}-events`">Events</TocAnchor>
+              <TocAnchor
+                :level="3"
+                prefix=""
+                suffix="¶"
+                :id="`${componentMeta.kebabName}-events`"
+                >Events</TocAnchor
+              >
             </BaseHeading>
           </header>
           <div class="p-3">
@@ -185,7 +232,12 @@ function getEventsSnippet (event: ComponentMeta['events'][0]) {
                       </div>
                     </div>
                     <div class="p-2 md:w-8/12">
-                      <DocMarkdown no-lines no-highlight class="prose max-w-none text-sm" :source="getEventsSnippet(event)" />
+                      <DocMarkdown
+                        no-lines
+                        no-highlight
+                        class="prose max-w-none text-sm"
+                        :source="getEventsSnippet(event)"
+                      />
                     </div>
                   </div>
                 </div>
@@ -207,7 +259,13 @@ function getEventsSnippet (event: ComponentMeta['events'][0]) {
               :anchor="{ prefix: '', suffix: '#' }"
               class="text-muted-800 dark:text-muted-200"
             >
-              <TocAnchor :level="3" prefix="" suffix="¶" :id="`${componentMeta.kebabName}-slots`">Slots</TocAnchor>
+              <TocAnchor
+                :level="3"
+                prefix=""
+                suffix="¶"
+                :id="`${componentMeta.kebabName}-slots`"
+                >Slots</TocAnchor
+              >
             </BaseHeading>
           </header>
           <div class="p-3">
@@ -228,7 +286,11 @@ function getEventsSnippet (event: ComponentMeta['events'][0]) {
                 <div
                   class="divide-y divide-muted-100 text-sm dark:divide-muted-800"
                 >
-                  <div class="flex flex-col md:flex-row py-4" v-for="slot in componentMeta.meta.slots" :key="slot.name">
+                  <div
+                    class="flex flex-col md:flex-row py-4"
+                    v-for="slot in componentMeta.meta.slots"
+                    :key="slot.name"
+                  >
                     <div class="p-2 md:w-4/12">
                       <div class="flex items-center">
                         <div
@@ -239,7 +301,12 @@ function getEventsSnippet (event: ComponentMeta['events'][0]) {
                       </div>
                     </div>
                     <div class="p-2 md:w-8/12">
-                      <DocMarkdown no-lines no-highlight class="prose max-w-none text-sm" :source="getSlotSnippet(slot)" />
+                      <DocMarkdown
+                        no-lines
+                        no-highlight
+                        class="prose max-w-none text-sm"
+                        :source="getSlotSnippet(slot)"
+                      />
                     </div>
                   </div>
                 </div>
