@@ -1,7 +1,12 @@
 <script setup lang="ts">
-const props = defineProps<{
-  shape?: 'straight' | 'rounded' | 'curved'
-}>()
+const props = withDefaults(
+  defineProps<{
+    shape?: 'straight' | 'rounded' | 'curved'
+  }>(),
+  {
+    shape: 'rounded',
+  },
+)
 </script>
 
 <template>
@@ -13,7 +18,8 @@ const props = defineProps<{
         :shape="props.shape"
         :classes="{
           wrapper: 'w-full',
-          input: 'pr-24 bg-muted-100 focus:bg-white dark:focus:bg-muted-900',
+          input:
+            'pr-24 !bg-muted-100 dark:!bg-muted-700 focus:!bg-white dark:focus:!bg-muted-900',
         }"
       />
       <button

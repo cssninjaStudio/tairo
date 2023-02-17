@@ -91,7 +91,10 @@ const gaugeOptions = {
 
 <template>
   <div>
-    <BasePlaceload class="w-[90%] mx-auto h-56 mt-36 mb-4" v-if="!apexLoaded" />
+    <BasePlaceload
+      class="w-[90%] mx-auto h-10 mb-4 rounded-lg"
+      v-if="!apexLoaded"
+    />
     <ClientOnly>
       <LazyVueApexCharts
         v-show="apexLoaded"

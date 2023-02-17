@@ -275,7 +275,7 @@ const activePeriod = ref('week')
                   View All
                 </NuxtLink>
               </div>
-              <WidgetTeamListCompact />
+              <WidgetTeamListCompact actions />
             </BaseCard>
           </div>
           <!--Grid item-->

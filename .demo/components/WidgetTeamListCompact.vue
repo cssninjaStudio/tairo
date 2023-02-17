@@ -1,4 +1,8 @@
 <script setup lang="ts">
+const props = defineProps<{
+  actions?: boolean
+}>()
+
 const members = [
   {
     id: 0,
@@ -63,7 +67,7 @@ const members = [
           </span>
         </BaseParagraph>
       </div>
-      <div class="flex items-center ml-auto">
+      <div v-if="props.actions" class="flex items-center ml-auto">
         <BaseButtonIcon shape="curved" muted class="scale-75">
           <Icon name="ph:phone-duotone" class="w-5 h-5" />
         </BaseButtonIcon>
