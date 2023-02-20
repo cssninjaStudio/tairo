@@ -1,5 +1,21 @@
 <script setup lang="ts">
-const tasks = [
+const props = withDefaults(
+  defineProps<{
+    color?:
+      | 'success'
+      | 'info'
+      | 'warning'
+      | 'danger'
+      | 'primary'
+      | 'lime'
+      | 'sky'
+  }>(),
+  {
+    color: 'success',
+  },
+)
+
+const todos = [
   {
     id: 0,
     title: 'Call Mr. Markstrom',
@@ -24,16 +40,32 @@ const tasks = [
     description: 'Send project invoice to client',
     completed: false,
   },
+  {
+    id: 4,
+    title: 'Approve components',
+    description: 'Review complete design system',
+    completed: true,
+  },
 ]
+
+const tasks = ref<string[]>(['Option 0', 'Option 1', 'Option 2'])
 </script>
 
 <template>
-  <div class="space-y-5 mb-2">
-    <div v-for="task in tasks" :key="task.id" class="flex items-center gap-3">
+  <div class="space-y-6 mb-2">
+    <div v-for="task in todos" :key="task.id" class="flex items-center gap-3">
       <BaseAnimatedCheckbox
         v-model="tasks"
         :value="`Option ${task.id}`"
-        class="text-success-500"
+        :class="[
+          props.color === 'success' && 'text-success-500',
+          props.color === 'info' && 'text-info-500',
+          props.color === 'warning' && 'text-warning-500',
+          props.color === 'danger' && 'text-danger-500',
+          props.color === 'primary' && 'text-primary-500',
+          props.color === 'lime' && 'text-lime-500',
+          props.color === 'sky' && 'text-sky-500',
+        ]"
       />
       <div>
         <BaseHeading
