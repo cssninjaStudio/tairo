@@ -3,12 +3,12 @@ export default defineEventHandler(async () => {
     {
       id: 0,
       name: 'Introduction to Html5',
-      picture: '/img/photos/courses/1.jpg',
+      picture: '/img/illustrations/layouts/course-1.jpg',
       category: 'Web Development',
       difficulty: 1,
       price: 26,
       skill: {
-        icon: 'lnil lnil-html5',
+        icon: 'uiw:html5',
         name: 'Html5',
       },
       author: {
@@ -22,13 +22,13 @@ export default defineEventHandler(async () => {
     {
       id: 1,
       name: 'Mastering VueJS and Typescript',
-      picture: '/img/photos/courses/2.png',
+      picture: '/img/illustrations/layouts/course-2.png',
       category: 'Web Development',
       difficulty: 4,
       price: 12,
       skill: {
-        icon: 'lnir lnir-nodejs',
-        name: 'NodeJS',
+        icon: 'uiw:html5',
+        name: 'Html5',
       },
       author: {
         id: 12,
@@ -41,13 +41,13 @@ export default defineEventHandler(async () => {
     {
       id: 2,
       name: 'Discovering CSS3 and Stylesheets',
-      picture: '/img/photos/courses/3.jpg',
+      picture: '/img/illustrations/layouts/course-3.jpg',
       category: 'Web Development',
       difficulty: 2,
       price: 16,
       skill: {
-        icon: 'lnir lnir-css3',
-        name: 'CSS3',
+        icon: 'uiw:html5',
+        name: 'Html5',
       },
       author: {
         id: 12,
@@ -60,13 +60,13 @@ export default defineEventHandler(async () => {
     {
       id: 3,
       name: 'Get Started with Laravel 6',
-      picture: '/img/photos/courses/4.png',
+      picture: '/img/illustrations/layouts/course-4.png',
       category: 'Web Development',
       difficulty: 3,
       price: 0,
       skill: {
-        icon: 'lnir lnir-laravel',
-        name: 'Laravel',
+        icon: 'uiw:html5',
+        name: 'Html5',
       },
       author: {
         id: 18,
@@ -79,13 +79,13 @@ export default defineEventHandler(async () => {
     {
       id: 4,
       name: 'Python Basics for Beginners',
-      picture: '/img/photos/courses/5.jpeg',
+      picture: '/img/illustrations/layouts/course-5.jpeg',
       category: 'Web Development',
       difficulty: 1,
       price: 8,
       skill: {
-        icon: 'lnir lnir-python',
-        name: 'Python',
+        icon: 'uiw:html5',
+        name: 'Html5',
       },
       author: {
         id: 18,
@@ -98,13 +98,13 @@ export default defineEventHandler(async () => {
     {
       id: 5,
       name: 'Mastering State with React Hooks',
-      picture: '/img/photos/courses/6.jpg',
+      picture: '/img/illustrations/layouts/course-6.jpg',
       category: 'Web Development',
       difficulty: 4,
       price: 25,
       skill: {
-        icon: 'lnir lnir-react',
-        name: 'ReactJS',
+        icon: 'uiw:html5',
+        name: 'Html5',
       },
       author: {
         id: 30,
@@ -117,13 +117,13 @@ export default defineEventHandler(async () => {
     {
       id: 6,
       name: 'Setting up an Express Server',
-      picture: '/img/photos/courses/7.png',
+      picture: '/img/illustrations/layouts/course-7.png',
       category: 'Web Development',
       difficulty: 3,
       price: 12,
       skill: {
-        icon: 'lnir lnir-nodejs',
-        name: 'NodeJS',
+        icon: 'uiw:html5',
+        name: 'Html5',
       },
       author: {
         id: 38,
@@ -136,13 +136,13 @@ export default defineEventHandler(async () => {
     {
       id: 7,
       name: 'Learning to use Kubernetes',
-      picture: '/img/photos/courses/9.jpg',
+      picture: '/img/illustrations/layouts/course-9.jpg',
       category: 'Web Development',
       difficulty: 5,
       price: 34,
       skill: {
-        icon: 'lnir lnir-chrome',
-        name: 'Kubernetes',
+        icon: 'uiw:html5',
+        name: 'Html5',
       },
       author: {
         id: 30,
@@ -155,13 +155,13 @@ export default defineEventHandler(async () => {
     {
       id: 8,
       name: 'Another Angular Crash Course',
-      picture: '/img/photos/courses/11.jpg',
+      picture: '/img/illustrations/layouts/course-11.jpg',
       category: 'Web Development',
       difficulty: 4,
       price: 22,
       skill: {
-        icon: 'lnir lnir-angular',
-        name: 'Angular',
+        icon: 'uiw:html5',
+        name: 'Html5',
       },
       author: {
         id: 34,
@@ -174,13 +174,13 @@ export default defineEventHandler(async () => {
     {
       id: 9,
       name: 'learning Advanced Docker Concepts',
-      picture: '/img/photos/courses/12.jpg',
+      picture: '/img/illustrations/layouts/course-12.jpg',
       category: 'Web Development',
       difficulty: 5,
       price: 35,
       skill: {
-        icon: 'lnir lnir-docker',
-        name: 'Docker',
+        icon: 'uiw:html5',
+        name: 'Html5',
       },
       author: {
         id: 30,

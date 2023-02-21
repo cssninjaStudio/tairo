@@ -2,6 +2,7 @@
 const props = defineProps<{
   shape?: 'straight' | 'rounded' | 'curved'
   spaced?: boolean
+  compact?: boolean
 }>()
 </script>
 
@@ -9,7 +10,12 @@ const props = defineProps<{
   <BaseCard
     :shape="props.shape"
     class="relative"
-    :class="props.spaced ? 'py-6 sm:py-4 px-2' : 'py-6 sm:py-2'"
+    :class="[
+      props.spaced ? 'py-6 sm:py-4 px-2' : 'py-6 sm:py-2',
+      props.compact
+        ? 'first:rounded-t-lg last:rounded-b-lg top-px [&:not(:first-child)]:border-t-0'
+        : '',
+    ]"
   >
     <slot></slot>
     <div class="w-full flex flex-col sm:flex-row sm:items-center">
