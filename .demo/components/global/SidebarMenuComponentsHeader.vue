@@ -71,10 +71,10 @@ onKeyStroke(['Escape'], () => {
         >
           <span>Components</span>
           <BaseButtonIcon
-            class="ml-auto h-6 w-6 border-0 p-0 focus:z-10"
+            class="ml-auto h-6 w-6 shrink-0 border-0 !p-0 !bg-transparent focus:z-10"
             @click="isSearching = true"
           >
-            <Icon name="lucide:search" class="h-4 w-4" />
+            <Icon name="lucide:search" class="h-4 w-4 text-muted-400" />
           </BaseButtonIcon>
         </div>
         <button
