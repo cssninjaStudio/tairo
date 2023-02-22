@@ -6,6 +6,19 @@ import mediaStraight from '~/documentation/table/media-straight.md?raw'
 import rounded from '~/documentation/table/rounded.md?raw'
 import straight from '~/documentation/table/straight.md?raw'
 
+definePageMeta({
+  title: 'Tables',
+  documentation: {
+    category: 'Display',
+    components: [
+      'BaseTable',
+      'BaseTableHeading',
+      'BaseTableRow',
+      'BaseTableCell',
+    ],
+  },
+})
+
 const team = [
   {
     id: 0,
@@ -44,19 +57,6 @@ const team = [
     status: 'New',
   },
 ]
-
-definePageMeta({
-  title: 'Tables',
-  documentation: {
-    category: 'Display',
-    components: [
-      'BaseTable',
-      'BaseTableHeading',
-      'BaseTableRow',
-      'BaseTableCell',
-    ],
-  },
-})
 </script>
 
 <template>

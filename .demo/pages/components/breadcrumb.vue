@@ -4,6 +4,14 @@ import chevron from '~/documentation/breadcrumb/chevron.md?raw'
 import dot from '~/documentation/breadcrumb/dot.md?raw'
 import slash from '~/documentation/breadcrumb/slash.md?raw'
 
+definePageMeta({
+  title: 'Breadcrumbs',
+  documentation: {
+    category: 'Content',
+    components: ['BaseBreadcrumb'],
+  },
+})
+
 const demoBreadcrumb = [
   {
     label: 'Home',
@@ -62,14 +70,6 @@ const demoBreadcrumbTwo = [
     to: '/',
   },
 ]
-
-definePageMeta({
-  title: 'Breadcrumbs',
-  documentation: {
-    category: 'Content',
-    components: ['BaseBreadcrumb'],
-  },
-})
 </script>
 
 <template>

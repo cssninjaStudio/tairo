@@ -1,4 +1,11 @@
 <script setup lang="ts">
+definePageMeta({
+  layout: 'sidebar',
+  breadcrumb: {
+    label: 'Components Hub',
+  },
+})
+
 const route = useRoute()
 const toc = useToc()
 
@@ -11,13 +18,6 @@ watch(
     immediate: true,
   },
 )
-
-definePageMeta({
-  layout: 'sidebar',
-  breadcrumb: {
-    label: 'Components Hub',
-  },
-})
 </script>
 
 <template>

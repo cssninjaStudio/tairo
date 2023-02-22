@@ -3,6 +3,19 @@ import curved from '~/documentation/flex-table/curved.md?raw'
 import rounded from '~/documentation/flex-table/rounded.md?raw'
 import straight from '~/documentation/flex-table/straight.md?raw'
 
+definePageMeta({
+  title: 'Flex Tables',
+  documentation: {
+    category: 'Display',
+    components: [
+      'BaseFlexTable',
+      'BaseFlexTableHeading',
+      'BaseFlexTableRow',
+      'BaseFlexTableCell',
+    ],
+  },
+})
+
 const team = [
   {
     id: 0,
@@ -41,19 +54,6 @@ const team = [
     status: 'New',
   },
 ]
-
-definePageMeta({
-  title: 'Flex Tables',
-  documentation: {
-    category: 'Display',
-    components: [
-      'BaseFlexTable',
-      'BaseFlexTableHeading',
-      'BaseFlexTableRow',
-      'BaseFlexTableCell',
-    ],
-  },
-})
 </script>
 
 <template>

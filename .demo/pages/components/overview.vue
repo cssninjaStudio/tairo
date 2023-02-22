@@ -6,11 +6,11 @@ import mutedColor from '~/documentation/overview/muted-color.md?raw'
 import successColor from '~/documentation/overview/success-color.md?raw'
 import warningColor from '~/documentation/overview/warning-color.md?raw'
 
-const app = useAppConfig()
-
 definePageMeta({
   title: 'Overview',
 })
+
+const app = useAppConfig()
 </script>
 
 <template>

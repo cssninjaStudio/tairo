@@ -4,6 +4,14 @@ import medium from '~/documentation/avatar-group/medium.md?raw'
 import small from '~/documentation/avatar-group/small.md?raw'
 import tiny from '~/documentation/avatar-group/tiny.md?raw'
 
+definePageMeta({
+  title: 'Avatar group',
+  documentation: {
+    category: 'Display',
+    components: ['BaseAvatarGroup'],
+  },
+})
+
 const demoBreadcrumb = [
   {
     label: 'Home',
@@ -45,14 +53,6 @@ const people = [
     src: '/img/avatars/2.svg',
   },
 ]
-
-definePageMeta({
-  title: 'Avatar group',
-  documentation: {
-    category: 'Display',
-    components: ['BaseAvatarGroup'],
-  },
-})
 </script>
 
 <template>

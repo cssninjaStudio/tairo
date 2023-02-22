@@ -1,9 +1,9 @@
 <script setup lang="ts">
-const app = useAppConfig()
-
 definePageMeta({
   title: 'Components Hub',
 })
+
+const app = useAppConfig()
 </script>
 
 <template>

@@ -1,6 +1,15 @@
 <script setup lang="ts">
 import iconCarousel from '~/documentation/carousel/icon.md?raw'
 import userCarousel from '~/documentation/carousel/user.md?raw'
+
+definePageMeta({
+  title: 'Carousel',
+  documentation: {
+    category: 'Interaction',
+    components: ['CarouselTeam', 'CarouselIcons'],
+  },
+})
+
 // @unocss-include
 
 const team = [
@@ -216,14 +225,6 @@ const topics = [
     link: '/',
   },
 ]
-
-definePageMeta({
-  title: 'Carousel',
-  documentation: {
-    category: 'Interaction',
-    components: ['CarouselTeam', 'CarouselIcons'],
-  },
-})
 </script>
 
 <template>

@@ -4,8 +4,6 @@ import loading from '~/documentation/action/loading.md?raw'
 import muted from '~/documentation/action/muted.md?raw'
 import shapes from '~/documentation/action/shapes.md?raw'
 
-const disabled = ref(true)
-
 definePageMeta({
   title: 'Button Action',
   documentation: {
@@ -14,6 +12,8 @@ definePageMeta({
     composables: ['useButton'],
   },
 })
+
+const disabled = ref(true)
 </script>
 
 <template>

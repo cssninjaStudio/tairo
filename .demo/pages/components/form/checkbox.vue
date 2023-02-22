@@ -5,12 +5,6 @@ import curved from '~/documentation/form/checkbox/curved.md?raw'
 import rounded from '~/documentation/form/checkbox/rounded.md?raw'
 import straight from '~/documentation/form/checkbox/straight.md?raw'
 
-const demoOne = ref(true)
-const demoTwo = ref(true)
-const demoThree = ref([])
-const demoFour = ref('')
-const demoStraight = ref(true)
-
 definePageMeta({
   title: 'Checkbox',
   documentation: {
@@ -18,6 +12,12 @@ definePageMeta({
     components: ['BaseCheckbox'],
   },
 })
+
+const demoOne = ref(true)
+const demoTwo = ref(true)
+const demoThree = ref([])
+const demoFour = ref('')
+const demoStraight = ref(true)
 </script>
 
 <template>

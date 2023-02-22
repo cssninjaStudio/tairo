@@ -5,6 +5,14 @@ import inclusive from '~/documentation/accordion/inclusive.md?raw'
 import plus from '~/documentation/accordion/plus.md?raw'
 import shapes from '~/documentation/accordion/shapes.md?raw'
 
+definePageMeta({
+  title: 'Accordions',
+  documentation: {
+    category: 'Interaction',
+    components: ['BaseAccordion', 'BaseAccordionItem'],
+  },
+})
+
 const accordion = [
   {
     title: 'Accordion Item 1',
@@ -23,13 +31,6 @@ const accordion = [
   },
 ]
 
-definePageMeta({
-  title: 'Accordions',
-  documentation: {
-    category: 'Interaction',
-    components: ['BaseAccordion', 'BaseAccordionItem'],
-  },
-})
 </script>
 
 <template>

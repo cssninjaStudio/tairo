@@ -1,11 +1,11 @@
 <script setup lang="ts">
-const { open } = usePanels()
-const panels = reactive(usePanels())
-
 definePageMeta({
   title: 'Messaging',
   layout: 'default',
 })
+
+const { open } = usePanels()
+const panels = reactive(usePanels())
 
 const conversations = ref([
   {

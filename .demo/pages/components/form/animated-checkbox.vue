@@ -1,6 +1,14 @@
 <script setup lang="ts">
 import base from '~/documentation/form/animated-checkbox/base.md?raw'
 
+definePageMeta({
+  title: 'Animated checkbox',
+  documentation: {
+    category: 'Forms',
+    components: ['BaseAnimatedCheckbox'],
+  },
+})
+
 const options = ref([
   'Option 1',
   'Option 2',
@@ -25,14 +33,6 @@ const options = ref([
 
 const checked = ref(false)
 const customValue = ref()
-
-definePageMeta({
-  title: 'Animated checkbox',
-  documentation: {
-    category: 'Forms',
-    components: ['BaseAnimatedCheckbox'],
-  },
-})
 </script>
 
 <template>

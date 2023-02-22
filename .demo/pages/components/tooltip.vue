@@ -2,6 +2,10 @@
 import avatar from '~/documentation/tooltip/avatar.md?raw'
 import positions from '~/documentation/tooltip/positions.md?raw'
 
+definePageMeta({
+  title: 'Tooltips',
+})
+
 const properties = {
   props: [
     {
@@ -21,10 +25,6 @@ const properties = {
   ],
   slots: [],
 }
-
-definePageMeta({
-  title: 'Tooltips',
-})
 </script>
 
 <template>

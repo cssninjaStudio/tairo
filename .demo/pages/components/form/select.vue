@@ -8,11 +8,6 @@ import rounded from '~/documentation/form/select/rounded.md?raw'
 import loading from '~/documentation/form/select/loading.md?raw'
 import straight from '~/documentation/form/select/straight.md?raw'
 
-const selectStraight = ref('')
-const selectRounded = ref('')
-const selectCurved = ref('')
-const selectFull = ref('')
-
 definePageMeta({
   title: 'Selects',
   documentation: {
@@ -20,6 +15,11 @@ definePageMeta({
     components: ['BaseSelect'],
   },
 })
+
+const selectStraight = ref('')
+const selectRounded = ref('')
+const selectCurved = ref('')
+const selectFull = ref('')
 </script>
 
 <template>

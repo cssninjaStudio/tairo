@@ -5,9 +5,6 @@ import colors from '~/documentation/progress/colors.md?raw'
 import indeterminate from '~/documentation/progress/indeterminate.md?raw'
 import sizes from '~/documentation/progress/sizes.md?raw'
 
-const progress = ref(25)
-const progressCircle = ref(25)
-
 definePageMeta({
   title: 'Progress',
   documentation: {
@@ -15,6 +12,9 @@ definePageMeta({
     components: ['BaseProgress', 'BaseProgressCircle'],
   },
 })
+
+const progress = ref(25)
+const progressCircle = ref(25)
 </script>
 
 <template>
