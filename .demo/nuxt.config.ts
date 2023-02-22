@@ -5,11 +5,16 @@ export default defineNuxtConfig({
   extends: '..',
   typescript: {
     includeWorkspace: true,
-    shims: false,
+    // shims: false,
     strict: true,
   },
-  modules: ['nuxt-component-meta', 'nuxt-swiper'],
+  modules: [
+    '@nuxt/devtools',
+    'nuxt-component-meta', 
+    'nuxt-swiper'
+  ],
   app: {
+    // keepalive: true,
     layoutTransition: {
       enterActiveClass: 'transition-opacity duration-400 ease-out',
       enterFromClass: 'opacity-0',
@@ -17,7 +22,7 @@ export default defineNuxtConfig({
       leaveActiveClass: 'transition-opacity duration-200 ease-in',
       leaveFromClass: 'opacity-100',
       leaveToClass: 'opacity-0',
-      mode: 'out-in',
+      // mode: 'out-in',
     },
     pageTransition: {
       enterActiveClass: 'transition-opacity duration-300 ease-out',
@@ -26,7 +31,7 @@ export default defineNuxtConfig({
       leaveActiveClass: 'transition-opacity duration-200 ease-in',
       leaveFromClass: 'opacity-100',
       leaveToClass: 'opacity-0',
-      mode: 'out-in',
+      // mode: 'out-in',
     },
   },
   tailwindcss: {
@@ -43,7 +48,11 @@ export default defineNuxtConfig({
     },
   },
   componentMeta: {
+    // componentDirs: [
+    //   '@cssninja/nuxt-ui/components'
+    // ],
     exclude: ['nuxt/dist', '@nuxt/ui-templates/dist', 'tairo/.demo/components'],
+    debug: 2,
     checkerOptions: {
       forceUseTs: true,
       schema: {
