@@ -1,12 +1,262 @@
 <script setup lang="ts">
-import ExampleApexchartRadialEvolution from '~~/components/ExampleApexchartRadialEvolution.vue'
-
 definePageMeta({
   title: 'Cryptocurrency',
   layout: 'sidebar',
 })
 
 const activePeriod = ref('week')
+
+const areaBtcPrice = reactive(useAreaBtcPrice())
+const radialEvolution = reactive(useRadialEvolution())
+const radialPopularity = reactive(useRadialPopularity())
+
+/**
+ * This is example data for the area chart
+ * @see https://apexcharts.com/docs/chart-types/area-chart/
+ */
+function useAreaBtcPrice() {
+  const { primary, info, success } = useTailwindColors()
+
+  const type = 'area'
+  const height = 350
+
+  const options = shallowRef({
+    chart: {
+      // type: 'area',
+      // height: 350,
+      foreColor: '#999',
+      stacked: true,
+      toolbar: {
+        show: false,
+      },
+      dropShadow: {
+        enabled: true,
+        enabledSeries: [0],
+        top: -2,
+        left: 2,
+        blur: 5,
+        opacity: 0.06,
+      },
+    },
+    colors: [success.value, primary.value, info.value],
+    stroke: {
+      curve: 'smooth',
+      width: 3,
+    },
+    title: {
+      text: '',
+      align: 'left',
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    markers: {
+      size: 0,
+      strokeColor: '#fff',
+      strokeWidth: 3,
+      strokeOpacity: 1,
+      fillOpacity: 1,
+      hover: {
+        size: 6,
+      },
+    },
+    xaxis: {
+      type: 'datetime',
+      axisBorder: {
+        show: false,
+      },
+      axisTicks: {
+        show: false,
+      },
+    },
+    yaxis: {
+      labels: {
+        offsetX: 0,
+        offsetY: -5,
+      },
+      tooltip: {
+        enabled: true,
+      },
+    },
+    grid: {
+      show: false,
+      padding: {
+        left: -5,
+        right: 5,
+      },
+    },
+    tooltip: {
+      x: {
+        format: 'dd MMM yyyy',
+      },
+      y: {
+        formatter: function (val: number) {
+          return val + '%'
+        },
+      },
+    },
+    legend: {
+      position: 'top',
+      horizontalAlign: 'center',
+    },
+    fill: {
+      type: 'solid',
+      fillOpacity: 0.7,
+    },
+  })
+
+  const series = ref([
+    {
+      name: 'Expected',
+      data: generateDayWiseTimeSeries(0, 18),
+    },
+    {
+      name: 'Real',
+      data: generateDayWiseTimeSeries(1, 18),
+    },
+  ])
+
+  function generateDayWiseTimeSeries(s: number, count: number) {
+    const values = [
+      [
+        0.4, 0.3, 1, 0.9, 2.9, 1.9, 2.5, 0.9, 1.2, 0.7, 1.9, 0.5, 1.3, 0.9, 1.7,
+        0.2, 0.7, 0.5,
+      ],
+      [
+        0.2, 0.3, 0.8, 0.7, 2.2, 1.6, 2.3, 0.7, 1.1, 0.5, 1.2, 0.5, 1, 0.4, 1.5,
+        0.2, 0.6, 2,
+      ],
+    ]
+    let i = 0
+    const series = []
+    let x = new Date('11 Nov 2022').getTime()
+    while (i < count) {
+      series.push([x, values[s][i]])
+      x += 86400000
+      i++
+    }
+    return series
+  }
+
+  return {
+    type,
+    height,
+    options,
+    series,
+  }
+}
+
+function useRadialEvolution() {
+  const { primary, info, success } = useTailwindColors()
+  const type = 'radialBar'
+  const height = 220
+
+  const series = ref([54])
+
+  const options = {
+    colors: [primary.value, success.value, info.value],
+    title: {
+      text: '',
+      align: 'left',
+    },
+    plotOptions: {
+      radialBar: {
+        dataLabels: {
+          name: {
+            offsetY: 15,
+            fontSize: '13px',
+            fontFamily: 'Roboto, sans-serif',
+            color: 'var(--color-muted-400)',
+            formatter: function () {
+              return ['(30 days)']
+            },
+          },
+          value: {
+            color: 'var(--color-muted-400)',
+            offsetY: -20,
+            fontSize: '16px',
+            fontFamily: 'Roboto, sans-serif',
+            fontWeight: '500',
+          },
+        },
+      },
+    },
+    labels: ['Median Ratio'],
+  } as const
+
+  return {
+    type,
+    height,
+    series,
+    options,
+  }
+}
+
+function useRadialPopularity() {
+  const { primary, success } = useTailwindColors()
+  const type = 'radialBar'
+  const height = 225
+
+  const options = {
+    title: {
+      text: '',
+    },
+    chart: {
+      toolbar: {
+        show: false,
+      },
+    },
+    colors: [primary.value, success.value],
+    plotOptions: {
+      radialBar: {
+        startAngle: -135,
+        endAngle: 135,
+        dataLabels: {
+          name: {
+            fontSize: '13px',
+            fontWeight: '600',
+            color: 'var(--color-muted-400)',
+            offsetY: 80,
+          },
+          value: {
+            offsetY: 40,
+            fontSize: '18px',
+            fontFamily: 'Roboto, sans-serif',
+            fontWeight: '500',
+            color: undefined,
+            formatter: function (val: number) {
+              return val + '%'
+            },
+          },
+        },
+      },
+    },
+    fill: {
+      type: 'gradient',
+      gradient: {
+        shade: 'dark',
+        shadeIntensity: 0.15,
+        inverseColors: false,
+        opacityFrom: 1,
+        opacityTo: 1,
+        stops: [0, 50, 65, 91],
+      },
+    },
+    stroke: {
+      dashArray: 4,
+    },
+    labels: ['(30 days)'],
+  } as const
+
+  const series = ref([67])
+
+  return {
+    type,
+    height,
+    options,
+    series,
+  }
+}
 </script>
 
 <template>
@@ -141,7 +391,8 @@ const activePeriod = ref('week')
                 <span>BTC Price Chart</span>
               </BaseHeading>
             </div>
-            <ExampleApexchartAreaBtcPrice />
+
+            <TairoApexcharts v-bind="areaBtcPrice" />
           </BaseCard>
           <!-- Subgrid -->
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -165,7 +416,7 @@ const activePeriod = ref('week')
                     Buy BTC
                   </NuxtLink>
                 </div>
-                <ExampleApexchartRadialEvolution />
+                <TairoApexcharts v-bind="radialEvolution" />
               </BaseCard>
             </div>
             <!-- Chart -->
@@ -188,7 +439,7 @@ const activePeriod = ref('week')
                     Buy BTC
                   </NuxtLink>
                 </div>
-                <ExampleApexchartRadialPopularity />
+                <TairoApexcharts v-bind="radialPopularity" />
               </BaseCard>
             </div>
           </div>
