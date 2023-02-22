@@ -11,6 +11,28 @@ export default defineEventHandler(async () => {
       position: 'Software Engineer',
       completed: 12,
       bio: 'This is a nice user description that we can use as demo content.',
+      socialProfiles: [
+        {
+          name: 'Facebook',
+          icon: 'fa6-brands:facebook-f',
+          url: 'https://facebook.com',
+        },
+        {
+          name: 'Twitter',
+          icon: 'fa6-brands:twitter',
+          url: 'https://twitter.com',
+        },
+        {
+          name: 'Linkedin',
+          icon: 'fa6-brands:linkedin-in',
+          url: 'https://linkedin.com',
+        },
+        {
+          name: 'Github',
+          icon: 'fa6-brands:github',
+          url: 'https://github.com',
+        },
+      ],
     },
     {
       id: 21,
@@ -23,6 +45,28 @@ export default defineEventHandler(async () => {
       position: 'Mobile Developer',
       completed: 49,
       bio: 'This is a nice user description that we can use as demo content.',
+      socialProfiles: [
+        {
+          name: 'Facebook',
+          icon: 'fa6-brands:facebook-f',
+          url: 'https://facebook.com',
+        },
+        {
+          name: 'Twitter',
+          icon: 'fa6-brands:twitter',
+          url: 'https://twitter.com',
+        },
+        {
+          name: 'Linkedin',
+          icon: 'fa6-brands:linkedin-in',
+          url: 'https://linkedin.com',
+        },
+        {
+          name: 'Github',
+          icon: 'fa6-brands:github',
+          url: 'https://github.com',
+        },
+      ],
     },
     {
       id: 8,
@@ -35,6 +79,28 @@ export default defineEventHandler(async () => {
       position: 'Software Engineer',
       completed: 61,
       bio: 'This is a nice user description that we can use as demo content.',
+      socialProfiles: [
+        {
+          name: 'Facebook',
+          icon: 'fa6-brands:facebook-f',
+          url: 'https://facebook.com',
+        },
+        {
+          name: 'Twitter',
+          icon: 'fa6-brands:twitter',
+          url: 'https://twitter.com',
+        },
+        {
+          name: 'Linkedin',
+          icon: 'fa6-brands:linkedin-in',
+          url: 'https://linkedin.com',
+        },
+        {
+          name: 'Github',
+          icon: 'fa6-brands:github',
+          url: 'https://github.com',
+        },
+      ],
     },
     {
       id: 7,
@@ -47,6 +113,28 @@ export default defineEventHandler(async () => {
       position: 'Software Engineer',
       completed: 28,
       bio: 'This is a nice user description that we can use as demo content.',
+      socialProfiles: [
+        {
+          name: 'Facebook',
+          icon: 'fa6-brands:facebook-f',
+          url: 'https://facebook.com',
+        },
+        {
+          name: 'Twitter',
+          icon: 'fa6-brands:twitter',
+          url: 'https://twitter.com',
+        },
+        {
+          name: 'Linkedin',
+          icon: 'fa6-brands:linkedin-in',
+          url: 'https://linkedin.com',
+        },
+        {
+          name: 'Github',
+          icon: 'fa6-brands:github',
+          url: 'https://github.com',
+        },
+      ],
     },
     {
       id: 122,
@@ -60,6 +148,28 @@ export default defineEventHandler(async () => {
       position: 'Product Manager',
       completed: 36,
       bio: 'This is a nice user description that we can use as demo content.',
+      socialProfiles: [
+        {
+          name: 'Facebook',
+          icon: 'fa6-brands:facebook-f',
+          url: 'https://facebook.com',
+        },
+        {
+          name: 'Twitter',
+          icon: 'fa6-brands:twitter',
+          url: 'https://twitter.com',
+        },
+        {
+          name: 'Linkedin',
+          icon: 'fa6-brands:linkedin-in',
+          url: 'https://linkedin.com',
+        },
+        {
+          name: 'Github',
+          icon: 'fa6-brands:github',
+          url: 'https://github.com',
+        },
+      ],
     },
     {
       id: 23,
@@ -72,6 +182,28 @@ export default defineEventHandler(async () => {
       position: 'Project Manager',
       completed: 71,
       bio: 'This is a nice user description that we can use as demo content.',
+      socialProfiles: [
+        {
+          name: 'Facebook',
+          icon: 'fa6-brands:facebook-f',
+          url: 'https://facebook.com',
+        },
+        {
+          name: 'Twitter',
+          icon: 'fa6-brands:twitter',
+          url: 'https://twitter.com',
+        },
+        {
+          name: 'Linkedin',
+          icon: 'fa6-brands:linkedin-in',
+          url: 'https://linkedin.com',
+        },
+        {
+          name: 'Github',
+          icon: 'fa6-brands:github',
+          url: 'https://github.com',
+        },
+      ],
     },
     {
       id: 37,
@@ -84,6 +216,28 @@ export default defineEventHandler(async () => {
       position: 'Product Manager',
       completed: 32,
       bio: 'This is a nice user description that we can use as demo content.',
+      socialProfiles: [
+        {
+          name: 'Facebook',
+          icon: 'fa6-brands:facebook-f',
+          url: 'https://facebook.com',
+        },
+        {
+          name: 'Twitter',
+          icon: 'fa6-brands:twitter',
+          url: 'https://twitter.com',
+        },
+        {
+          name: 'Linkedin',
+          icon: 'fa6-brands:linkedin-in',
+          url: 'https://linkedin.com',
+        },
+        {
+          name: 'Github',
+          icon: 'fa6-brands:github',
+          url: 'https://github.com',
+        },
+      ],
     },
     {
       id: 25,
@@ -96,6 +250,28 @@ export default defineEventHandler(async () => {
       position: 'Web Developer',
       completed: 49,
       bio: 'This is a nice user description that we can use as demo content.',
+      socialProfiles: [
+        {
+          name: 'Facebook',
+          icon: 'fa6-brands:facebook-f',
+          url: 'https://facebook.com',
+        },
+        {
+          name: 'Twitter',
+          icon: 'fa6-brands:twitter',
+          url: 'https://twitter.com',
+        },
+        {
+          name: 'Linkedin',
+          icon: 'fa6-brands:linkedin-in',
+          url: 'https://linkedin.com',
+        },
+        {
+          name: 'Github',
+          icon: 'fa6-brands:github',
+          url: 'https://github.com',
+        },
+      ],
     },
     {
       id: 39,
@@ -108,6 +284,28 @@ export default defineEventHandler(async () => {
       position: 'Business Analyst',
       completed: 58,
       bio: 'This is a nice user description that we can use as demo content.',
+      socialProfiles: [
+        {
+          name: 'Facebook',
+          icon: 'fa6-brands:facebook-f',
+          url: 'https://facebook.com',
+        },
+        {
+          name: 'Twitter',
+          icon: 'fa6-brands:twitter',
+          url: 'https://twitter.com',
+        },
+        {
+          name: 'Linkedin',
+          icon: 'fa6-brands:linkedin-in',
+          url: 'https://linkedin.com',
+        },
+        {
+          name: 'Github',
+          icon: 'fa6-brands:github',
+          url: 'https://github.com',
+        },
+      ],
     },
     {
       id: 19,
@@ -120,6 +318,28 @@ export default defineEventHandler(async () => {
       position: 'Sales Manager',
       completed: 19,
       bio: 'This is a nice user description that we can use as demo content.',
+      socialProfiles: [
+        {
+          name: 'Facebook',
+          icon: 'fa6-brands:facebook-f',
+          url: 'https://facebook.com',
+        },
+        {
+          name: 'Twitter',
+          icon: 'fa6-brands:twitter',
+          url: 'https://twitter.com',
+        },
+        {
+          name: 'Linkedin',
+          icon: 'fa6-brands:linkedin-in',
+          url: 'https://linkedin.com',
+        },
+        {
+          name: 'Github',
+          icon: 'fa6-brands:github',
+          url: 'https://github.com',
+        },
+      ],
     },
     {
       id: 9,
@@ -132,6 +352,28 @@ export default defineEventHandler(async () => {
       position: 'UI/UX Designer',
       completed: 49,
       bio: 'This is a nice user description that we can use as demo content.',
+      socialProfiles: [
+        {
+          name: 'Facebook',
+          icon: 'fa6-brands:facebook-f',
+          url: 'https://facebook.com',
+        },
+        {
+          name: 'Twitter',
+          icon: 'fa6-brands:twitter',
+          url: 'https://twitter.com',
+        },
+        {
+          name: 'Linkedin',
+          icon: 'fa6-brands:linkedin-in',
+          url: 'https://linkedin.com',
+        },
+        {
+          name: 'Github',
+          icon: 'fa6-brands:github',
+          url: 'https://github.com',
+        },
+      ],
     },
     {
       id: 124,
@@ -144,6 +386,28 @@ export default defineEventHandler(async () => {
       position: 'Software Engineer',
       completed: 56,
       bio: 'This is a nice user description that we can use as demo content.',
+      socialProfiles: [
+        {
+          name: 'Facebook',
+          icon: 'fa6-brands:facebook-f',
+          url: 'https://facebook.com',
+        },
+        {
+          name: 'Twitter',
+          icon: 'fa6-brands:twitter',
+          url: 'https://twitter.com',
+        },
+        {
+          name: 'Linkedin',
+          icon: 'fa6-brands:linkedin-in',
+          url: 'https://linkedin.com',
+        },
+        {
+          name: 'Github',
+          icon: 'fa6-brands:github',
+          url: 'https://github.com',
+        },
+      ],
     },
     {
       id: 120,
@@ -156,6 +420,28 @@ export default defineEventHandler(async () => {
       position: 'UI/UX Designer',
       completed: 35,
       bio: 'This is a nice user description that we can use as demo content.',
+      socialProfiles: [
+        {
+          name: 'Facebook',
+          icon: 'fa6-brands:facebook-f',
+          url: 'https://facebook.com',
+        },
+        {
+          name: 'Twitter',
+          icon: 'fa6-brands:twitter',
+          url: 'https://twitter.com',
+        },
+        {
+          name: 'Linkedin',
+          icon: 'fa6-brands:linkedin-in',
+          url: 'https://linkedin.com',
+        },
+        {
+          name: 'Github',
+          icon: 'fa6-brands:github',
+          url: 'https://github.com',
+        },
+      ],
     },
     {
       id: 32,
@@ -168,6 +454,28 @@ export default defineEventHandler(async () => {
       position: 'Product Manager',
       completed: 24,
       bio: 'This is a nice user description that we can use as demo content.',
+      socialProfiles: [
+        {
+          name: 'Facebook',
+          icon: 'fa6-brands:facebook-f',
+          url: 'https://facebook.com',
+        },
+        {
+          name: 'Twitter',
+          icon: 'fa6-brands:twitter',
+          url: 'https://twitter.com',
+        },
+        {
+          name: 'Linkedin',
+          icon: 'fa6-brands:linkedin-in',
+          url: 'https://linkedin.com',
+        },
+        {
+          name: 'Github',
+          icon: 'fa6-brands:github',
+          url: 'https://github.com',
+        },
+      ],
     },
     {
       id: 36,
@@ -180,6 +488,28 @@ export default defineEventHandler(async () => {
       position: 'Software Engineer',
       completed: 41,
       bio: 'This is a nice user description that we can use as demo content.',
+      socialProfiles: [
+        {
+          name: 'Facebook',
+          icon: 'fa6-brands:facebook-f',
+          url: 'https://facebook.com',
+        },
+        {
+          name: 'Twitter',
+          icon: 'fa6-brands:twitter',
+          url: 'https://twitter.com',
+        },
+        {
+          name: 'Linkedin',
+          icon: 'fa6-brands:linkedin-in',
+          url: 'https://linkedin.com',
+        },
+        {
+          name: 'Github',
+          icon: 'fa6-brands:github',
+          url: 'https://github.com',
+        },
+      ],
     },
     {
       id: 38,
@@ -192,6 +522,28 @@ export default defineEventHandler(async () => {
       position: 'Web Developer',
       completed: 36,
       bio: 'This is a nice user description that we can use as demo content.',
+      socialProfiles: [
+        {
+          name: 'Facebook',
+          icon: 'fa6-brands:facebook-f',
+          url: 'https://facebook.com',
+        },
+        {
+          name: 'Twitter',
+          icon: 'fa6-brands:twitter',
+          url: 'https://twitter.com',
+        },
+        {
+          name: 'Linkedin',
+          icon: 'fa6-brands:linkedin-in',
+          url: 'https://linkedin.com',
+        },
+        {
+          name: 'Github',
+          icon: 'fa6-brands:github',
+          url: 'https://github.com',
+        },
+      ],
     },
     {
       id: 26,
@@ -204,6 +556,28 @@ export default defineEventHandler(async () => {
       position: 'Web Developer',
       completed: 64,
       bio: 'This is a nice user description that we can use as demo content.',
+      socialProfiles: [
+        {
+          name: 'Facebook',
+          icon: 'fa6-brands:facebook-f',
+          url: 'https://facebook.com',
+        },
+        {
+          name: 'Twitter',
+          icon: 'fa6-brands:twitter',
+          url: 'https://twitter.com',
+        },
+        {
+          name: 'Linkedin',
+          icon: 'fa6-brands:linkedin-in',
+          url: 'https://linkedin.com',
+        },
+        {
+          name: 'Github',
+          icon: 'fa6-brands:github',
+          url: 'https://github.com',
+        },
+      ],
     },
     {
       id: 16,
@@ -216,6 +590,28 @@ export default defineEventHandler(async () => {
       position: 'Business Analyst',
       completed: 85,
       bio: 'This is a nice user description that we can use as demo content.',
+      socialProfiles: [
+        {
+          name: 'Facebook',
+          icon: 'fa6-brands:facebook-f',
+          url: 'https://facebook.com',
+        },
+        {
+          name: 'Twitter',
+          icon: 'fa6-brands:twitter',
+          url: 'https://twitter.com',
+        },
+        {
+          name: 'Linkedin',
+          icon: 'fa6-brands:linkedin-in',
+          url: 'https://linkedin.com',
+        },
+        {
+          name: 'Github',
+          icon: 'fa6-brands:github',
+          url: 'https://github.com',
+        },
+      ],
     },
     {
       id: 28,
@@ -228,6 +624,28 @@ export default defineEventHandler(async () => {
       position: 'Web Developer',
       completed: 14,
       bio: 'This is a nice user description that we can use as demo content.',
+      socialProfiles: [
+        {
+          name: 'Facebook',
+          icon: 'fa6-brands:facebook-f',
+          url: 'https://facebook.com',
+        },
+        {
+          name: 'Twitter',
+          icon: 'fa6-brands:twitter',
+          url: 'https://twitter.com',
+        },
+        {
+          name: 'Linkedin',
+          icon: 'fa6-brands:linkedin-in',
+          url: 'https://linkedin.com',
+        },
+        {
+          name: 'Github',
+          icon: 'fa6-brands:github',
+          url: 'https://github.com',
+        },
+      ],
     },
     {
       id: 22,
@@ -240,6 +658,28 @@ export default defineEventHandler(async () => {
       position: 'Product Manager',
       completed: 29,
       bio: 'This is a nice user description that we can use as demo content.',
+      socialProfiles: [
+        {
+          name: 'Facebook',
+          icon: 'fa6-brands:facebook-f',
+          url: 'https://facebook.com',
+        },
+        {
+          name: 'Twitter',
+          icon: 'fa6-brands:twitter',
+          url: 'https://twitter.com',
+        },
+        {
+          name: 'Linkedin',
+          icon: 'fa6-brands:linkedin-in',
+          url: 'https://linkedin.com',
+        },
+        {
+          name: 'Github',
+          icon: 'fa6-brands:github',
+          url: 'https://github.com',
+        },
+      ],
     },
     {
       id: 13,
@@ -252,6 +692,28 @@ export default defineEventHandler(async () => {
       position: 'UI/UX Designer',
       completed: 57,
       bio: 'This is a nice user description that we can use as demo content.',
+      socialProfiles: [
+        {
+          name: 'Facebook',
+          icon: 'fa6-brands:facebook-f',
+          url: 'https://facebook.com',
+        },
+        {
+          name: 'Twitter',
+          icon: 'fa6-brands:twitter',
+          url: 'https://twitter.com',
+        },
+        {
+          name: 'Linkedin',
+          icon: 'fa6-brands:linkedin-in',
+          url: 'https://linkedin.com',
+        },
+        {
+          name: 'Github',
+          icon: 'fa6-brands:github',
+          url: 'https://github.com',
+        },
+      ],
     },
     {
       id: 24,
@@ -264,6 +726,28 @@ export default defineEventHandler(async () => {
       position: 'HR Manager',
       completed: 61,
       bio: 'This is a nice user description that we can use as demo content.',
+      socialProfiles: [
+        {
+          name: 'Facebook',
+          icon: 'fa6-brands:facebook-f',
+          url: 'https://facebook.com',
+        },
+        {
+          name: 'Twitter',
+          icon: 'fa6-brands:twitter',
+          url: 'https://twitter.com',
+        },
+        {
+          name: 'Linkedin',
+          icon: 'fa6-brands:linkedin-in',
+          url: 'https://linkedin.com',
+        },
+        {
+          name: 'Github',
+          icon: 'fa6-brands:github',
+          url: 'https://github.com',
+        },
+      ],
     },
     {
       id: 27,
@@ -276,6 +760,28 @@ export default defineEventHandler(async () => {
       position: 'HR Manager',
       completed: 41,
       bio: 'This is a nice user description that we can use as demo content.',
+      socialProfiles: [
+        {
+          name: 'Facebook',
+          icon: 'fa6-brands:facebook-f',
+          url: 'https://facebook.com',
+        },
+        {
+          name: 'Twitter',
+          icon: 'fa6-brands:twitter',
+          url: 'https://twitter.com',
+        },
+        {
+          name: 'Linkedin',
+          icon: 'fa6-brands:linkedin-in',
+          url: 'https://linkedin.com',
+        },
+        {
+          name: 'Github',
+          icon: 'fa6-brands:github',
+          url: 'https://github.com',
+        },
+      ],
     },
     {
       id: 11,
@@ -288,6 +794,28 @@ export default defineEventHandler(async () => {
       position: 'HR Manager',
       completed: 52,
       bio: 'This is a nice user description that we can use as demo content.',
+      socialProfiles: [
+        {
+          name: 'Facebook',
+          icon: 'fa6-brands:facebook-f',
+          url: 'https://facebook.com',
+        },
+        {
+          name: 'Twitter',
+          icon: 'fa6-brands:twitter',
+          url: 'https://twitter.com',
+        },
+        {
+          name: 'Linkedin',
+          icon: 'fa6-brands:linkedin-in',
+          url: 'https://linkedin.com',
+        },
+        {
+          name: 'Github',
+          icon: 'fa6-brands:github',
+          url: 'https://github.com',
+        },
+      ],
     },
     {
       id: 15,
@@ -300,6 +828,28 @@ export default defineEventHandler(async () => {
       position: 'Software Engineer',
       completed: 37,
       bio: 'This is a nice user description that we can use as demo content.',
+      socialProfiles: [
+        {
+          name: 'Facebook',
+          icon: 'fa6-brands:facebook-f',
+          url: 'https://facebook.com',
+        },
+        {
+          name: 'Twitter',
+          icon: 'fa6-brands:twitter',
+          url: 'https://twitter.com',
+        },
+        {
+          name: 'Linkedin',
+          icon: 'fa6-brands:linkedin-in',
+          url: 'https://linkedin.com',
+        },
+        {
+          name: 'Github',
+          icon: 'fa6-brands:github',
+          url: 'https://github.com',
+        },
+      ],
     },
     {
       id: 14,
@@ -312,6 +862,28 @@ export default defineEventHandler(async () => {
       position: 'Web Developer',
       completed: 89,
       bio: 'This is a nice user description that we can use as demo content.',
+      socialProfiles: [
+        {
+          name: 'Facebook',
+          icon: 'fa6-brands:facebook-f',
+          url: 'https://facebook.com',
+        },
+        {
+          name: 'Twitter',
+          icon: 'fa6-brands:twitter',
+          url: 'https://twitter.com',
+        },
+        {
+          name: 'Linkedin',
+          icon: 'fa6-brands:linkedin-in',
+          url: 'https://linkedin.com',
+        },
+        {
+          name: 'Github',
+          icon: 'fa6-brands:github',
+          url: 'https://github.com',
+        },
+      ],
     },
     {
       id: 10,
@@ -324,6 +896,28 @@ export default defineEventHandler(async () => {
       position: 'Business Analyst',
       completed: 56,
       bio: 'This is a nice user description that we can use as demo content.',
+      socialProfiles: [
+        {
+          name: 'Facebook',
+          icon: 'fa6-brands:facebook-f',
+          url: 'https://facebook.com',
+        },
+        {
+          name: 'Twitter',
+          icon: 'fa6-brands:twitter',
+          url: 'https://twitter.com',
+        },
+        {
+          name: 'Linkedin',
+          icon: 'fa6-brands:linkedin-in',
+          url: 'https://linkedin.com',
+        },
+        {
+          name: 'Github',
+          icon: 'fa6-brands:github',
+          url: 'https://github.com',
+        },
+      ],
     },
     {
       id: 18,
@@ -336,6 +930,28 @@ export default defineEventHandler(async () => {
       position: 'UI/UX Designer',
       completed: 81,
       bio: 'This is a nice user description that we can use as demo content.',
+      socialProfiles: [
+        {
+          name: 'Facebook',
+          icon: 'fa6-brands:facebook-f',
+          url: 'https://facebook.com',
+        },
+        {
+          name: 'Twitter',
+          icon: 'fa6-brands:twitter',
+          url: 'https://twitter.com',
+        },
+        {
+          name: 'Linkedin',
+          icon: 'fa6-brands:linkedin-in',
+          url: 'https://linkedin.com',
+        },
+        {
+          name: 'Github',
+          icon: 'fa6-brands:github',
+          url: 'https://github.com',
+        },
+      ],
     },
   ]
 

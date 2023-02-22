@@ -5,10 +5,10 @@ export default defineEventHandler(async () => {
       name: 'Delivery App Project',
       dueDate: 'August 2020',
       updated: '3m ago',
-      image: '/demo/photos/apps/1.jpg',
+      image: '/img/apps/1.jpg',
       owner: {
         id: 7,
-        avatar: '/demo/avatars/7.jpg',
+        avatar: '/img/avatars/7.svg',
         name: 'Alice C.',
         initials: 'AC',
         color: 'info',
@@ -16,21 +16,21 @@ export default defineEventHandler(async () => {
       team: [
         {
           id: 27,
-          picture: '/demo/avatars/27.jpg',
+          picture: '/img/avatars/27.svg',
           name: 'Carmen E.',
           initials: 'CE',
           color: 'h-yellow',
         },
         {
           id: 15,
-          picture: '/demo/avatars/15.jpg',
+          picture: '/img/avatars/15.svg',
           name: 'Hilde V.',
           initials: 'HV',
           color: 'h-purple',
         },
         {
           id: 12,
-          picture: '/demo/avatars/12.jpg',
+          picture: '/img/avatars/12.svg',
           name: 'Joshua S.',
           initials: 'JS',
           color: 'success',
@@ -42,10 +42,10 @@ export default defineEventHandler(async () => {
       name: 'Health and Fitness Dashboard',
       dueDate: 'October 2020',
       updated: '5h ago',
-      image: '/demo/photos/apps/2.png',
+      image: '/img/apps/2.png',
       owner: {
         id: 8,
-        avatar: '/images/avatars/svg/vuero-1.svg',
+        avatar: '/img/avatars/12.svg',
         name: 'Erik K.',
         initials: 'EK',
         color: 'info',
@@ -53,14 +53,14 @@ export default defineEventHandler(async () => {
       team: [
         {
           id: 13,
-          picture: '/demo/avatars/13.jpg',
+          picture: '/img/avatars/13.svg',
           name: 'Tara S.',
           initials: 'TS',
           color: 'danger',
         },
         {
           id: 21,
-          picture: '/demo/avatars/21.jpg',
+          picture: '/img/avatars/21.svg',
           name: 'Elizabet F.',
           initials: 'EF',
           color: 'warning',
@@ -72,10 +72,10 @@ export default defineEventHandler(async () => {
       name: 'Learning Tracker Dashboard',
       dueDate: 'September 2020',
       updated: '5h ago',
-      image: '/demo/photos/apps/3.png',
+      image: '/img/apps/3.png',
       owner: {
         id: 25,
-        avatar: '/demo/avatars/25.jpg',
+        avatar: '/img/avatars/25.svg',
         name: 'Melany W.',
         initials: 'MW',
         color: 'info',
@@ -83,7 +83,7 @@ export default defineEventHandler(async () => {
       team: [
         {
           id: 14,
-          picture: '/demo/avatars/14.jpg',
+          picture: '/img/avatars/14.svg',
           name: 'Ryan B.',
           initials: 'RB',
           color: 'info',
@@ -95,10 +95,10 @@ export default defineEventHandler(async () => {
       name: 'Banking and Finance Dashboard',
       dueDate: 'October 2020',
       updated: '5h ago',
-      image: '/demo/photos/apps/4.png',
+      image: '/img/apps/4.png',
       owner: {
         id: 23,
-        avatar: '/demo/avatars/23.jpg',
+        avatar: '/img/avatars/23.svg',
         name: 'Irina V.',
         initials: 'IV',
         color: 'success',
@@ -106,14 +106,14 @@ export default defineEventHandler(async () => {
       team: [
         {
           id: 13,
-          picture: '/demo/avatars/13.jpg',
+          picture: '/img/avatars/13.svg',
           name: 'Tara S.',
           initials: 'TS',
           color: 'danger',
         },
         {
           id: 21,
-          picture: '/demo/avatars/21.jpg',
+          picture: '/img/avatars/21.svg',
           name: 'Elizabet F.',
           initials: 'EF',
           color: 'warning',
@@ -125,10 +125,10 @@ export default defineEventHandler(async () => {
       name: 'Resume Management Mobile App',
       dueDate: 'October 2020',
       updated: '2h ago',
-      image: '/demo/photos/apps/5.png',
+      image: '/img/apps/5.png',
       owner: {
         id: 11,
-        avatar: '/demo/avatars/11.jpg',
+        avatar: '/img/avatars/11.svg',
         name: 'Kelly M.',
         initials: 'KM',
         color: 'h-orange',
@@ -136,14 +136,14 @@ export default defineEventHandler(async () => {
       team: [
         {
           id: 30,
-          picture: '/demo/avatars/30.jpg',
+          picture: '/img/avatars/30.svg',
           name: 'Clément D.',
           initials: 'CD',
           color: 'info',
         },
         {
           id: 39,
-          picture: '/demo/avatars/39.jpg',
+          picture: '/img/avatars/39.svg',
           name: 'Alejandro B.',
           initials: 'AB',
           color: 'h-purple',
@@ -155,10 +155,10 @@ export default defineEventHandler(async () => {
       name: 'Banking Landing Page',
       dueDate: 'December 2020',
       updated: '3d ago',
-      image: '/demo/photos/apps/6.png',
+      image: '/img/apps/6.png',
       owner: {
         id: 9,
-        avatar: '/demo/avatars/9.jpg',
+        avatar: '/img/avatars/9.svg',
         name: 'Ana B.',
         initials: 'AB',
         color: 'success',
@@ -166,21 +166,21 @@ export default defineEventHandler(async () => {
       team: [
         {
           id: 15,
-          picture: '/demo/avatars/15.jpg',
+          picture: '/img/avatars/15.svg',
           name: 'Hilde V.',
           initials: 'HV',
           color: 'info',
         },
         {
           id: 40,
-          picture: '/demo/avatars/40.jpg',
+          picture: '/img/avatars/40.svg',
           name: 'Jeanne M.',
           initials: 'JM',
           color: 'success',
         },
         {
           id: 8,
-          picture: '/images/avatars/svg/vuero-1.svg',
+          picture: '/img/avatars/11.svg',
           name: 'Erik K.',
           initials: 'EK',
           color: 'h-purple',
@@ -192,10 +192,10 @@ export default defineEventHandler(async () => {
       name: 'Learning App Design',
       dueDate: 'November 2020',
       updated: '1h ago',
-      image: '/demo/photos/apps/7.png',
+      image: '/img/apps/7.png',
       owner: {
         id: 25,
-        avatar: '/demo/avatars/25.jpg',
+        avatar: '/img/avatars/25.svg',
         name: 'Melany W.',
         initials: 'MW',
         color: 'info',
@@ -203,7 +203,7 @@ export default defineEventHandler(async () => {
       team: [
         {
           id: 11,
-          picture: '/demo/avatars/11.jpg',
+          picture: '/img/avatars/11.svg',
           name: 'Kelly M.',
           initials: 'KM',
           color: 'success',
@@ -215,10 +215,10 @@ export default defineEventHandler(async () => {
       name: 'Educational App Design',
       dueDate: 'November 2020',
       updated: '4d ago',
-      image: '/demo/photos/apps/8.png',
+      image: '/img/apps/8.png',
       owner: {
         id: 5,
-        avatar: '/demo/avatars/5.jpg',
+        avatar: '/img/avatars/5.svg',
         name: 'Mary L.',
         initials: 'ML',
         color: 'info',
@@ -226,21 +226,21 @@ export default defineEventHandler(async () => {
       team: [
         {
           id: 21,
-          picture: '/demo/avatars/21.jpg',
+          picture: '/img/avatars/21.svg',
           name: 'Elizabeth F.',
           initials: 'EF',
           color: 'warning',
         },
         {
           id: 29,
-          picture: '/demo/avatars/29.jpg',
+          picture: '/img/avatars/29.svg',
           name: 'Hakeem C.',
           initials: 'HC',
           color: 'danger',
         },
         {
           id: 33,
-          picture: '/demo/avatars/33.jpg',
+          picture: '/img/avatars/33.svg',
           name: 'Harvey M.',
           initials: 'HM',
           color: 'success',
@@ -252,10 +252,10 @@ export default defineEventHandler(async () => {
       name: 'Banking Solution Website',
       dueDate: 'October 2020',
       updated: '2h ago',
-      image: '/demo/photos/apps/9.png',
+      image: '/img/apps/9.png',
       owner: {
         id: 27,
-        avatar: '/demo/avatars/27.jpg',
+        avatar: '/img/avatars/27.svg',
         name: 'Carmen E.',
         initials: 'CE',
         color: 'info',
@@ -263,14 +263,14 @@ export default defineEventHandler(async () => {
       team: [
         {
           id: 30,
-          picture: '/demo/avatars/30.jpg',
+          picture: '/img/avatars/30.svg',
           name: 'Clément D.',
           initials: 'CD',
           color: 'h-purple',
         },
         {
           id: 19,
-          picture: '/demo/avatars/19.jpg',
+          picture: '/img/avatars/19.svg',
           name: 'Greta K.',
           initials: 'GK',
           color: 'info',
@@ -282,10 +282,10 @@ export default defineEventHandler(async () => {
       name: 'HR Webapp Design',
       dueDate: 'August 2020',
       updated: '2h ago',
-      image: '/demo/photos/apps/10.png',
+      image: '/img/apps/10.png',
       owner: {
         id: 27,
-        avatar: '/demo/avatars/27.jpg',
+        avatar: '/img/avatars/27.svg',
         name: 'Carmen E.',
         initials: 'CE',
         color: 'info',
@@ -293,14 +293,14 @@ export default defineEventHandler(async () => {
       team: [
         {
           id: 24,
-          picture: '/demo/avatars/24.jpg',
+          picture: '/img/avatars/24.svg',
           name: 'Sandrine C.',
           initials: 'SC',
           color: 'success',
         },
         {
           id: 22,
-          picture: '/demo/avatars/22.jpg',
+          picture: '/img/avatars/22.svg',
           name: 'Jimmy H.',
           initials: 'JH',
           color: 'info',
@@ -312,10 +312,10 @@ export default defineEventHandler(async () => {
       name: 'Ice Cream Delivery Dashboard',
       dueDate: 'January 2021',
       updated: '2h ago',
-      image: '/demo/photos/apps/11.png',
+      image: '/img/apps/11.png',
       owner: {
         id: 13,
-        avatar: '/demo/avatars/13.jpg',
+        avatar: '/img/avatars/13.svg',
         name: 'Tara S.',
         initials: 'TS',
         color: 'danger',
@@ -323,7 +323,7 @@ export default defineEventHandler(async () => {
       team: [
         {
           id: 28,
-          picture: '/demo/avatars/28.jpg',
+          picture: '/img/avatars/28.svg',
           name: 'Edouard F.',
           initials: 'EF',
           color: 'info',
@@ -335,10 +335,10 @@ export default defineEventHandler(async () => {
       name: 'Mobile App Landing Page',
       dueDate: 'November 2020',
       updated: '4d ago',
-      image: '/demo/photos/apps/12.jpg',
+      image: '/img/apps/12.jpg',
       owner: {
         id: 12,
-        avatar: '/demo/avatars/12.jpg',
+        avatar: '/img/avatars/12.svg',
         name: 'Joshua S.',
         initials: 'JS',
         color: 'info',
@@ -358,10 +358,10 @@ export default defineEventHandler(async () => {
       name: 'Web Marketing Landing Page',
       dueDate: 'November 2020',
       updated: '3m ago',
-      image: '/demo/photos/apps/13.png',
+      image: '/img/apps/13.png',
       owner: {
         id: 12,
-        avatar: '/demo/avatars/12.jpg',
+        avatar: '/img/avatars/12.svg',
         name: 'Joshua S.',
         initials: 'JS',
         color: 'info',
@@ -369,21 +369,21 @@ export default defineEventHandler(async () => {
       team: [
         {
           id: 8,
-          picture: '/images/avatars/svg/vuero-1.svg',
+          picture: '/img/avatars/13.svg',
           name: 'Erik K.',
           initials: 'EK',
           color: 'h-purple',
         },
         {
           id: 15,
-          picture: '/demo/avatars/15.jpg',
+          picture: '/img/avatars/15.svg',
           name: 'Hilde V.',
           initials: 'HV',
           color: 'h-orange',
         },
         {
           id: 12,
-          picture: '/demo/avatars/40.jpg',
+          picture: '/img/avatars/40.svg',
           name: 'Jeanne M.',
           initials: 'JM',
           color: 'success',
@@ -395,10 +395,10 @@ export default defineEventHandler(async () => {
       name: 'Startup Landing Page',
       dueDate: 'November 2020',
       updated: '3m ago',
-      image: '/demo/photos/apps/14.jpg',
+      image: '/img/apps/14.jpg',
       owner: {
         id: 15,
-        avatar: '/demo/avatars/15.jpg',
+        avatar: '/img/avatars/15.svg',
         name: 'Hilde V.',
         initials: 'HV',
         color: 'danger',
@@ -406,7 +406,7 @@ export default defineEventHandler(async () => {
       team: [
         {
           id: 31,
-          picture: '/demo/avatars/31.jpg',
+          picture: '/img/avatars/31.svg',
           name: 'Yasseen A.',
           initials: 'YA',
           color: 'info',
@@ -418,10 +418,10 @@ export default defineEventHandler(async () => {
       name: 'Expense Management System',
       dueDate: 'January 2021',
       updated: '2d ago',
-      image: '/demo/photos/apps/15.png',
+      image: '/img/apps/15.png',
       owner: {
         id: 39,
-        avatar: '/demo/avatars/39.jpg',
+        avatar: '/img/avatars/39.svg',
         name: 'Alejandro B.',
         initials: 'AB',
         color: 'info',
@@ -429,14 +429,14 @@ export default defineEventHandler(async () => {
       team: [
         {
           id: 5,
-          picture: '/demo/avatars/5.jpg',
+          picture: '/img/avatars/5.svg',
           name: 'Mary L.',
           initials: 'ML',
           color: 'info',
         },
         {
           id: 24,
-          picture: '/demo/avatars/24.jpg',
+          picture: '/img/avatars/24.svg',
           name: 'Sandrine C.',
           initials: 'SC',
           color: 'success',
