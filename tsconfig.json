@@ -1,4 +1,10 @@
 {
   // https://v3.nuxtjs.org/concepts/typescript
-  "extends": "./.demo/.nuxt/tsconfig.json"
+  "extends": "./.demo/.nuxt/tsconfig.json",
+  "compilerOptions": {
+    "types": [
+      "vite/client",
+      "@pinia/nuxt"
+    ]
+  }
 }
