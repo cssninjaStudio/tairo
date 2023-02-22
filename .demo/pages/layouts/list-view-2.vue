@@ -1,0 +1,253 @@
+<script setup lang="ts">
+definePageMeta({
+  title: 'List View',
+})
+
+const filter = ref('')
+
+const { data, pending, error, refresh } = await useAsyncData(async () => {
+  try {
+    // Create an artificial delay
+    await new Promise((resolve) => setTimeout(resolve, 1000))
+    // after the delay is over
+    return $fetch('/api/rentals/')
+  } catch (error: any) {
+    // log error and re-throw error
+    console.log('An error occured while retreiving rentals info')
+    throw error
+  }
+})
+
+// Simplified useFetch() method as a superset of useAsyncData()
+// const { data, pending, error, refresh } = await useFetch('/api/rentals/')
+
+const filteredItems = computed(() => {
+  if (data.value) {
+    if (!filter.value) {
+      return data.value
+    }
+    const filterRe = new RegExp(filter.value, 'i')
+    return data.value.filter((item) => {
+      return [item.name, item.location].some((item) => item.match(filterRe))
+    })
+  }
+})
+</script>
+
+<template>
+  <div>
+    <ContentWrapperTabbed :labels="['Active', 'Inactive']">
+      <template #left>
+        <BaseInput
+          v-model="filter"
+          icon="lucide:search"
+          placeholder="Filter properties..."
+          :classes="{
+            wrapper: 'w-full sm:w-auto',
+          }"
+        />
+      </template>
+      <template #tab-1>
+        <div>
+          <div v-if="filteredItems?.length === 0">
+            <BasePlaceholderPage
+              title="No matching results"
+              subtitle="Looks like we couldn't find any matching results for your search terms. Try other search terms."
+            >
+              <template #image>
+                <NuxtImg
+                  class="block dark:hidden"
+                  src="/img/illustrations/placeholders/flat/placeholder-search-2.svg"
+                  alt="Placeholder image"
+                />
+                <NuxtImg
+                  class="hidden dark:block"
+                  src="/img/illustrations/placeholders/flat/placeholder-search-2-dark.svg"
+                  alt="Placeholder image"
+                />
+              </template>
+            </BasePlaceholderPage>
+          </div>
+          <div v-else class="space-y-4">
+            <TransitionGroup
+              enter-active-class="transform-gpu"
+              enter-from-class="opacity-0 -translate-x-full"
+              enter-to-class="opacity-100 translate-x-0"
+              leave-active-class="absolute transform-gpu"
+              leave-from-class="opacity-100 translate-x-0"
+              leave-to-class="opacity-0 -translate-x-full"
+            >
+              <BaseCard
+                v-for="item in filteredItems"
+                :key="item.id"
+                shape="curved"
+                class="flex flex-col sm:flex-row sm:items-center p-5"
+              >
+                <div
+                  class="flex flex-col sm:flex-row justify-center sm:justify-start gap-3 text-center sm:text-left"
+                >
+                  <NuxtImg
+                    class="w-full sm:max-w-[130px] bg-muted-100 dark:bg-muted-700/60 rounded-lg"
+                    :src="item.picture"
+                    :alt="item.name"
+                    :height="190"
+                    :width="130"
+                  />
+                  <div>
+                    <div
+                      class="flex flex-col sm:flex-row sm:items-center text-left gap-2"
+                    >
+                      <BaseHeading
+                        tag="h3"
+                        size="sm"
+                        weight="medium"
+                        class="text-muted-800 dark:text-muted-100"
+                      >
+                        {{ item.name }}
+                      </BaseHeading>
+                      <div class="flex items-center gap-2">
+                        <Icon
+                          name="uiw:star-on"
+                          class="w-3 h-3"
+                          :class="
+                            item.rating > 0
+                              ? 'text-yellow-400'
+                              : 'text-muted-400'
+                          "
+                        />
+                        <Icon
+                          name="uiw:star-on"
+                          class="w-3 h-3"
+                          :class="
+                            item.rating >= 2
+                              ? 'text-yellow-400'
+                              : 'text-muted-400'
+                          "
+                        />
+                        <Icon
+                          name="uiw:star-on"
+                          class="w-3 h-3"
+                          :class="
+                            item.rating >= 3
+                              ? 'text-yellow-400'
+                              : 'text-muted-400'
+                          "
+                        />
+                        <Icon
+                          name="uiw:star-on"
+                          class="w-3 h-3"
+                          :class="
+                            item.rating >= 4
+                              ? 'text-yellow-400'
+                              : 'text-muted-400'
+                          "
+                        />
+                        <Icon
+                          name="uiw:star-on"
+                          class="w-3 h-3"
+                          :class="
+                            item.rating === 5
+                              ? 'text-yellow-400'
+                              : 'text-muted-400'
+                          "
+                        />
+                      </div>
+                    </div>
+                    <BaseParagraph
+                      size="xs"
+                      lead="none"
+                      class="flex sm:items-end gap-1 text-sm mt-3 sm:mt-0 text-left text-muted-400"
+                    >
+                      <Icon name="lucide:map-pin" class="w-3 h-3" />
+                      <span>{{ item.location }}</span>
+                    </BaseParagraph>
+                    <div class="flex items-center gap-2 my-2 text-primary-500">
+                      <span class="font-sans text-xs">
+                        {{ item.details.rooms }} rooms
+                      </span>
+                      <span class="text-muted-400">&middot;</span>
+                      <span class="font-sans text-xs">
+                        {{ item.details.beds }} beds
+                      </span>
+                      <span class="text-muted-400">&middot;</span>
+                      <span class="font-sans text-xs">
+                        {{ item.details.bathrooms }} bathrooms
+                      </span>
+                    </div>
+                    <div class="flex items-center gap-6 mt-auto text-muted-400">
+                      <div
+                        v-if="item.amenities.parking"
+                        class="flex items-center gap-1"
+                      >
+                        <Icon name="ph:car-duotone" class="w-4 h-4" />
+                        <span class="font-sans text-xs">Parking</span>
+                      </div>
+                      <div
+                        v-if="item.amenities.wifi"
+                        class="flex items-center gap-1"
+                      >
+                        <Icon name="ph:broadcast-duotone" class="w-4 h-4" />
+                        <span class="font-sans text-xs">Wifi</span>
+                      </div>
+                      <div
+                        v-if="item.amenities.heater"
+                        class="flex items-center gap-1"
+                      >
+                        <Icon name="ph:thermometer-duotone" class="w-4 h-4" />
+                        <span class="font-sans text-xs">Heater</span>
+                      </div>
+                      <div
+                        v-if="item.amenities.cleaning"
+                        class="flex items-center gap-1"
+                      >
+                        <Icon name="ph:waves-duotone" class="w-4 h-4" />
+                        <span class="font-sans text-xs">Cleaning</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="sm:ml-auto flex ptablet:flex-col items-center justify-end gap-2 mt-4 sm:mt-4"
+                >
+                  <BaseButton class="w-full sm:w-28">More Info</BaseButton>
+                  <BaseButton color="primary" class="w-full sm:w-28">
+                    <span>Book Now</span>
+                  </BaseButton>
+                </div>
+              </BaseCard>
+            </TransitionGroup>
+            <div class="mt-6">
+              <BasePagination
+                :total="100"
+                :item-per-page="10"
+                :total-items="100"
+                :current="1"
+                :limit="10"
+                shape="full"
+              />
+            </div>
+          </div>
+        </div>
+      </template>
+      <template #tab-2>
+        <BasePlaceholderPage
+          title="There are no inactive properties."
+          subtitle="Looks like there are no inactive properties to display. Please check your property settings."
+        >
+          <template #image>
+            <NuxtImg
+              class="block dark:hidden"
+              src="/img/illustrations/placeholders/flat/placeholder-having-coffee.svg"
+              alt="Placeholder image"
+            />
+            <NuxtImg
+              class="hidden dark:block"
+              src="/img/illustrations/placeholders/flat/placeholder-having-coffee-dark.svg"
+              alt="Placeholder image"
+            />
+          </template>
+        </BasePlaceholderPage>
+      </template>
+    </ContentWrapperTabbed>
+  </div>
+</template>

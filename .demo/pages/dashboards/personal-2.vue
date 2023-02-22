@@ -182,7 +182,7 @@ definePageMeta({
                 View All
               </NuxtLink>
             </div>
-            <WidgetTeamListCompact />
+            <WidgetTeamListCompact actions />
           </BaseCard>
           <!-- Widget -->
           <BaseCard class="p-6">

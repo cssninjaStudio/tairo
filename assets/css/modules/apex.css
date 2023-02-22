@@ -4,12 +4,23 @@
 .apexcharts-xaxis-label,
 .apexcharts-yaxis-label,
 .apexcharts-legend-text {
-  @apply font-sans font-medium !text-muted-500 dark:!text-muted-400 fill-current;
+  @apply font-sans font-normal !text-muted-500 dark:!text-muted-400 fill-current;
+}
+
+.apexcharts-bar-series .apexcharts-datalabels,
+.apexcharts-rangebar-series .apexcharts-datalabels {
+  @apply !font-thin;
+}
+
+.apexcharts-bar-series .apexcharts-datalabels text,
+.apexcharts-rangebar-series .apexcharts-datalabels text {
+  @apply !text-white fill-current;
+  font-weight: 400 !important;
 }
 
 .apexcharts-gridline,
 .apexcharts-gridline + line {
-  @apply text-muted-200 dark:text-muted-700 stroke-current;
+  @apply !text-muted-200 dark:!text-muted-700 !stroke-current;
 }
 
 .apexcharts-subtitle-text {
@@ -31,13 +42,17 @@
   @apply text-white dark:text-muted-900 stroke-current;
 }
 
+.apexcharts-bar-area {
+  @apply text-white dark:text-muted-900 stroke-current;
+}
+
 .apexcharts-pie-area,
 .apexcharts-pie-slice-0 {
   @apply text-white dark:text-muted-900 stroke-current;
 }
 
 .apexcharts-slices .apexcharts-pie-label {
-  @apply text-muted-50 fill-current;
+  @apply !text-muted-50 dark:!text-muted-100 !stroke-none !fill-current;
 }
 
 .apexcharts-radialbar-track .apexcharts-radialbar-area,
@@ -49,7 +64,7 @@
 .apexcharts-plot-series > polygon,
 .apexcharts-radar-series > line,
 .apexcharts-plot-series > line {
-  @apply fill-transparent text-white dark:text-muted-900 stroke-current;
+  @apply fill-transparent text-muted-200 dark:text-muted-700 stroke-current;
 }
 
 .apexcharts-tooltip {

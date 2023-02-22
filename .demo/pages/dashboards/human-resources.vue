@@ -400,7 +400,7 @@ const items = [
             >
               <template #tab="{ activeValue }">
                 <div v-if="activeValue === 'team'">
-                  <WidgetTeamListCompact />
+                  <WidgetTeamListCompact actions />
                 </div>
                 <div v-else-if="activeValue === 'tasks'">
                   <WidgetTodoListCompact />

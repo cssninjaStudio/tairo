@@ -11,10 +11,10 @@ definePageMeta({
     <div class="text-center">
       <BaseAvatar
         class="bg-yellow-100 text-yellow-500 dark:bg-yellow-100/50"
-        src="/img/avatars/18.svg"
+        src="/img/avatars/3.svg"
         text="J"
         size="2xl"
-        badge="/img/logos/stacks/tailwind-purple.svg"
+        badge-src="/img/logos/stacks/tailwind-purple.svg"
       />
       <BaseHeading
         as="h2"
@@ -116,7 +116,7 @@ definePageMeta({
               </BaseHeading>
               <BaseParagraph lead="tight" size="sm">
                 <span class="text-muted-400">
-                  Get familiar with the Vuero tab styles. Code examples
+                  Get familiar with the Tairo tab styles. Code examples
                   included.
                 </span>
               </BaseParagraph>
@@ -152,7 +152,7 @@ definePageMeta({
               </BaseHeading>
               <BaseParagraph lead="tight" size="sm">
                 <span class="text-muted-400">
-                  Get familiar with the Vuero card styles. Code examples
+                  Get familiar with the Tairo card styles. Code examples
                   included.
                 </span>
               </BaseParagraph>
@@ -188,7 +188,7 @@ definePageMeta({
               </BaseHeading>
               <BaseParagraph lead="tight" size="sm">
                 <span class="text-muted-400">
-                  Get familiar with the Vuero avatar styles. Code examples
+                  Get familiar with the Tairo avatar styles. Code examples
                   included.
                 </span>
               </BaseParagraph>
@@ -224,7 +224,7 @@ definePageMeta({
               </BaseHeading>
               <BaseParagraph lead="tight" size="sm">
                 <span class="text-muted-400">
-                  Get familiar with the Vuero accordions styles. Code examples
+                  Get familiar with the Tairo accordions styles. Code examples
                   included.
                 </span>
               </BaseParagraph>
@@ -260,7 +260,7 @@ definePageMeta({
               </BaseHeading>
               <BaseParagraph lead="tight" size="sm">
                 <span class="text-muted-400">
-                  Get familiar with the Vuero breadcrumb styles. Code examples
+                  Get familiar with the Tairo breadcrumb styles. Code examples
                   included.
                 </span>
               </BaseParagraph>
@@ -296,7 +296,7 @@ definePageMeta({
               </BaseHeading>
               <BaseParagraph lead="tight" size="sm">
                 <span class="text-muted-400">
-                  Get familiar with the Vuero icon boxes styles. Code examples
+                  Get familiar with the Tairo icon boxes styles. Code examples
                   included.
                 </span>
               </BaseParagraph>
@@ -332,7 +332,7 @@ definePageMeta({
               </BaseHeading>
               <BaseParagraph lead="tight" size="sm">
                 <span class="text-muted-400">
-                  Get familiar with the Vuero flex table styles. Code examples
+                  Get familiar with the Tairo flex table styles. Code examples
                   included.
                 </span>
               </BaseParagraph>
@@ -368,7 +368,7 @@ definePageMeta({
               </BaseHeading>
               <BaseParagraph lead="tight" size="sm">
                 <span class="text-muted-400">
-                  Get familiar with the Vuero snack styles. Code examples
+                  Get familiar with the Tairo snack styles. Code examples
                   included.
                 </span>
               </BaseParagraph>
@@ -475,7 +475,7 @@ definePageMeta({
               </BaseHeading>
               <BaseParagraph lead="tight" size="sm">
                 <span class="text-muted-400">
-                  Get familiar with the Vuero dropdown styles. Code examples
+                  Get familiar with the Tairo dropdown styles. Code examples
                   included.
                 </span>
               </BaseParagraph>
@@ -511,7 +511,7 @@ definePageMeta({
               </BaseHeading>
               <BaseParagraph lead="tight" size="sm">
                 <span class="text-muted-400">
-                  Get familiar with the Vuero modal styles. Code examples
+                  Get familiar with the Tairo modal styles. Code examples
                   included.
                 </span>
               </BaseParagraph>
@@ -547,7 +547,7 @@ definePageMeta({
               </BaseHeading>
               <BaseParagraph lead="tight" size="sm">
                 <span class="text-muted-400">
-                  Get familiar with the Vuero progress bar styles. Code examples
+                  Get familiar with the Tairo progress bar styles. Code examples
                   included.
                 </span>
               </BaseParagraph>
@@ -583,7 +583,7 @@ definePageMeta({
               </BaseHeading>
               <BaseParagraph lead="tight" size="sm">
                 <span class="text-muted-400">
-                  Get familiar with the Vuero form elements. Code examples
+                  Get familiar with the Tairo form elements. Code examples
                   included.
                 </span>
               </BaseParagraph>
@@ -619,7 +619,7 @@ definePageMeta({
               </BaseHeading>
               <BaseParagraph lead="tight" size="sm">
                 <span class="text-muted-400">
-                  Get familiar with the Vuero checkboxes styles. Code examples
+                  Get familiar with the Tairo checkboxes styles. Code examples
                   included.
                 </span>
               </BaseParagraph>
@@ -655,7 +655,7 @@ definePageMeta({
               </BaseHeading>
               <BaseParagraph lead="tight" size="sm">
                 <span class="text-muted-400">
-                  Get familiar with the Vuero switch styles. Code examples
+                  Get familiar with the Tairo switch styles. Code examples
                   included.
                 </span>
               </BaseParagraph>

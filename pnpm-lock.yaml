@@ -17,7 +17,7 @@ specifiers:
   '@types/markdown-it': 12.2.3
   '@types/prismjs': 1.26.0
   '@vueform/slider': 2.1.7
-  apexcharts: 3.26.1
+  apexcharts: 3.37.0
   compressorjs: 1.1.1
   cropperjs: 1.5.13
   date-fns: 2.29.3
@@ -48,6 +48,7 @@ specifiers:
   remark-parse: 10.0.1
   remark-rehype: 10.1.0
   shiki-es: 0.2.0
+  tailwindcss: 3.2.7
   typescript: 4.9.5
   unified: 10.1.2
   v-calendar: 3.0.0-alpha.8
@@ -62,7 +63,7 @@ devDependencies:
   '@antfu/eslint-config': 0.35.2_7kw3g6rralp5ps6mg3uyzz6azm
   '@ckeditor/ckeditor5-build-classic': 36.0.1
   '@ckeditor/ckeditor5-vue': 4.0.1
-  '@cssninja/nuxt-ui': 0.3.18_nuxt@3.2.2
+  '@cssninja/nuxt-ui': 0.3.18_q4bq2ga2at6myafstdn3t6gco4
   '@iconify/json': 2.2.26
   '@mapbox/mapbox-gl-geocoder': 5.0.1_mapbox-gl@2.13.0
   '@nuxt/devtools': 0.1.5_nuxt@3.2.2
@@ -75,7 +76,7 @@ devDependencies:
   '@types/markdown-it': 12.2.3
   '@types/prismjs': 1.26.0
   '@vueform/slider': 2.1.7
-  apexcharts: 3.26.1
+  apexcharts: 3.37.0
   compressorjs: 1.1.1
   cropperjs: 1.5.13
   date-fns: 2.29.3
@@ -83,7 +84,7 @@ devDependencies:
   eslint: 8.34.0
   eslint-config-prettier: 8.6.0_eslint@8.34.0
   eslint-plugin-prettier-vue: 4.2.0
-  eslint-plugin-tailwindcss: 3.9.0
+  eslint-plugin-tailwindcss: 3.9.0_tailwindcss@3.2.7
   eslint-plugin-vuejs-accessibility: 2.1.0_eslint@8.34.0
   lint-staged: 13.1.2
   mapbox-gl: 2.13.0
@@ -106,13 +107,14 @@ devDependencies:
   remark-parse: 10.0.1
   remark-rehype: 10.1.0
   shiki-es: 0.2.0
+  tailwindcss: 3.2.7
   typescript: 4.9.5
   unified: 10.1.2
   v-calendar: 3.0.0-alpha.8
   vue-prism-component: 2.0.0
   vue-tsc: 1.1.7_typescript@4.9.5
   vue-upload-component: 3.1.6
-  vue3-apexcharts: 1.4.1_apexcharts@3.26.1
+  vue3-apexcharts: 1.4.1_apexcharts@3.37.0
   vue3-carousel: 0.2.9
   vue3-popper: 1.5.0
 
@@ -824,17 +826,17 @@ packages:
       mime: 3.0.0
     dev: true
 
-  /@cssninja/nuxt-ui/0.3.18_nuxt@3.2.2:
+  /@cssninja/nuxt-ui/0.3.18_q4bq2ga2at6myafstdn3t6gco4:
     resolution: {integrity: sha512-rg8e7ds3tY7uf4SQSeeyAPcCSoAboJEpJMGooAHSb9z46xEXirhQvUh3RezwUxLA2UBXZR7dLzCbwWvzJZ/xyw==}
     dependencies:
       '@headlessui/vue': 1.7.10
       '@iconify/vue': 4.1.0
       '@nuxtjs/color-mode': 3.2.0
       '@nuxtjs/tailwindcss': 6.4.1
-      '@tailwindcss/aspect-ratio': 0.4.2
-      '@tailwindcss/forms': 0.5.3
-      '@tailwindcss/line-clamp': 0.4.2
-      '@tailwindcss/typography': 0.5.9
+      '@tailwindcss/aspect-ratio': 0.4.2_tailwindcss@3.2.7
+      '@tailwindcss/forms': 0.5.3_tailwindcss@3.2.7
+      '@tailwindcss/line-clamp': 0.4.2_tailwindcss@3.2.7
+      '@tailwindcss/typography': 0.5.9_tailwindcss@3.2.7
       '@vueuse/nuxt': 9.13.0_nuxt@3.2.2
       autoprefixer: 10.4.13
       nuxt-icon: 0.3.2
@@ -2247,27 +2249,32 @@ packages:
       defer-to-connect: 2.0.1
     dev: true
 
-  /@tailwindcss/aspect-ratio/0.4.2:
+  /@tailwindcss/aspect-ratio/0.4.2_tailwindcss@3.2.7:
     resolution: {integrity: sha512-8QPrypskfBa7QIMuKHg2TA7BqES6vhBrDLOv8Unb6FcFyd3TjKbc6lcmb9UPQHxfl24sXoJ41ux/H7qQQvfaSQ==}
     peerDependencies:
       tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
+    dependencies:
+      tailwindcss: 3.2.7
     dev: true
 
-  /@tailwindcss/forms/0.5.3:
+  /@tailwindcss/forms/0.5.3_tailwindcss@3.2.7:
     resolution: {integrity: sha512-y5mb86JUoiUgBjY/o6FJSFZSEttfb3Q5gllE4xoKjAAD+vBrnIhE4dViwUuow3va8mpH4s9jyUbUbrRGoRdc2Q==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || >= 3.0.0-alpha.1'
     dependencies:
       mini-svg-data-uri: 1.4.4
+      tailwindcss: 3.2.7
     dev: true
 
-  /@tailwindcss/line-clamp/0.4.2:
+  /@tailwindcss/line-clamp/0.4.2_tailwindcss@3.2.7:
     resolution: {integrity: sha512-HFzAQuqYCjyy/SX9sLGB1lroPzmcnWv1FHkIpmypte10hptf4oPUfucryMKovZh2u0uiS9U5Ty3GghWfEJGwVw==}
     peerDependencies:
       tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
+    dependencies:
+      tailwindcss: 3.2.7
     dev: true
 
-  /@tailwindcss/typography/0.5.9:
+  /@tailwindcss/typography/0.5.9_tailwindcss@3.2.7:
     resolution: {integrity: sha512-t8Sg3DyynFysV9f4JDOVISGsjazNb48AeIYQwcL+Bsq5uf4RYL75C1giZ43KISjeDGBaTN3Kxh7Xj/vRSMJUUg==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders'
@@ -2276,6 +2283,7 @@ packages:
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       postcss-selector-parser: 6.0.10
+      tailwindcss: 3.2.7
     dev: true
 
   /@tootallnate/once/2.0.0:
@@ -2999,8 +3007,8 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /apexcharts/3.26.1:
-    resolution: {integrity: sha512-Z/pfGTsL4YUm1tHd6a0d0G2hX4XUmhEI0b/5BxVK69dEB/XXvVMX9hKCkcIx+kPyVqVFCuo91ZjCdqjMcmSVBA==}
+  /apexcharts/3.37.0:
+    resolution: {integrity: sha512-0mg1gDKUo3JG00Q//LK0jEXBS6OLjpuglqZ8ec9cqfA5oP8owopD9n5EhfARbWROb5o8GSPzFuohTJiCm2ecWw==}
     dependencies:
       svg.draggable.js: 2.2.2
       svg.easing.js: 2.0.0
@@ -5007,7 +5015,7 @@ packages:
       eslint: 8.34.0
     dev: true
 
-  /eslint-plugin-tailwindcss/3.9.0:
+  /eslint-plugin-tailwindcss/3.9.0_tailwindcss@3.2.7:
     resolution: {integrity: sha512-uA2/Q0g22i1uGFI/FTBkLCvpc5VpzMZjAJn3/hPqhongG0V7aaRHrFx4LyfOje/b9Q/t9iarx40InrXKf2jC6w==}
     engines: {node: '>=12.13.0'}
     peerDependencies:
@@ -5015,6 +5023,7 @@ packages:
     dependencies:
       fast-glob: 3.2.12
       postcss: 8.4.21
+      tailwindcss: 3.2.7
     dev: true
 
   /eslint-plugin-unicorn/44.0.2_eslint@8.34.0:
@@ -11506,7 +11515,7 @@ packages:
       '@vue/shared': 3.2.47
     dev: true
 
-  /vue3-apexcharts/1.4.1_apexcharts@3.26.1:
+  /vue3-apexcharts/1.4.1_apexcharts@3.37.0:
     resolution: {integrity: sha512-96qP8JDqB9vwU7bkG5nVU+E0UGQn7yYQVqUUCLQMYWDuQyu2vE77H/UFZ1yI+hwzlSTBKT9BqnNG8JsFegB3eg==}
     peerDependencies:
       apexcharts: '> 3.0.0'
@@ -11515,7 +11524,7 @@ packages:
       vue:
         optional: true
     dependencies:
-      apexcharts: 3.26.1
+      apexcharts: 3.37.0
     dev: true
 
   /vue3-carousel/0.2.9:

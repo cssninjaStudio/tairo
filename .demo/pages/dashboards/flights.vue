@@ -205,7 +205,7 @@ const results = [
               </BaseCard>
               <!-- Item -->
               <BaseCard
-                class="p-6 bg-primary-600 dark:bg-primary-600 border-primary-600"
+                class="p-6 !bg-primary-600 !dark:bg-primary-600 !border-primary-600"
               >
                 <div class="w-full flex items-center gap-3">
                   <span
