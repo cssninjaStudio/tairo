@@ -27,8 +27,8 @@ export default defineEventHandler(async () => {
       difficulty: 4,
       price: 12,
       skill: {
-        icon: 'uiw:html5',
-        name: 'Html5',
+        icon: 'teenyicons:vue-solid',
+        name: 'Vue',
       },
       author: {
         id: 12,
@@ -46,8 +46,8 @@ export default defineEventHandler(async () => {
       difficulty: 2,
       price: 16,
       skill: {
-        icon: 'uiw:html5',
-        name: 'Html5',
+        icon: 'simple-icons:css3',
+        name: 'CSS3',
       },
       author: {
         id: 12,
@@ -59,14 +59,14 @@ export default defineEventHandler(async () => {
     },
     {
       id: 3,
-      name: 'Get Started with Laravel 6',
+      name: 'Get Started with Laravel 10',
       picture: '/img/illustrations/layouts/course-4.png',
       category: 'Web Development',
       difficulty: 3,
       price: 0,
       skill: {
-        icon: 'uiw:html5',
-        name: 'Html5',
+        icon: 'teenyicons:laravel-solid',
+        name: 'Laravel',
       },
       author: {
         id: 18,
@@ -84,8 +84,8 @@ export default defineEventHandler(async () => {
       difficulty: 1,
       price: 8,
       skill: {
-        icon: 'uiw:html5',
-        name: 'Html5',
+        icon: 'akar-icons:python-fill',
+        name: 'Python',
       },
       author: {
         id: 18,
@@ -103,8 +103,8 @@ export default defineEventHandler(async () => {
       difficulty: 4,
       price: 25,
       skill: {
-        icon: 'uiw:html5',
-        name: 'Html5',
+        icon: 'teenyicons:react-solid',
+        name: 'React.js',
       },
       author: {
         id: 30,
@@ -122,8 +122,8 @@ export default defineEventHandler(async () => {
       difficulty: 3,
       price: 12,
       skill: {
-        icon: 'uiw:html5',
-        name: 'Html5',
+        icon: 'akar-icons:node-fill',
+        name: 'Node.js',
       },
       author: {
         id: 38,
@@ -141,8 +141,8 @@ export default defineEventHandler(async () => {
       difficulty: 5,
       price: 34,
       skill: {
-        icon: 'uiw:html5',
-        name: 'Html5',
+        icon: 'pajamas:kubernetes',
+        name: 'Kubernetes',
       },
       author: {
         id: 30,
@@ -160,8 +160,8 @@ export default defineEventHandler(async () => {
       difficulty: 4,
       price: 22,
       skill: {
-        icon: 'uiw:html5',
-        name: 'Html5',
+        icon: 'simple-icons:angular',
+        name: 'Angular',
       },
       author: {
         id: 34,
@@ -179,8 +179,8 @@ export default defineEventHandler(async () => {
       difficulty: 5,
       price: 35,
       skill: {
-        icon: 'uiw:html5',
-        name: 'Html5',
+        icon: 'simple-icons:docker',
+        name: 'Docker',
       },
       author: {
         id: 30,
