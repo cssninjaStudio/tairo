@@ -3,6 +3,477 @@ definePageMeta({
   title: 'Sales',
   layout: 'sidebar',
 })
+
+const sparkSalesOne = reactive(useSparkSalesOne())
+const sparkSalesTwo = reactive(useSparkSalesTwo())
+const sparkSalesThree = reactive(useSparkSalesThree())
+const sparkSalesFour = reactive(useSparkSalesFour())
+
+function useSparkSalesOne() {
+  const { primary, title, subtitle } = useTailwindColors()
+  const type = 'area'
+  const height = 130
+
+  const options = {
+    chart: {
+      id: 'sparkline1',
+      group: 'sparklines',
+      sparkline: {
+        enabled: true,
+      },
+    },
+    colors: [primary.value],
+    stroke: {
+      width: [2],
+      curve: 'straight',
+    },
+    fill: {
+      opacity: 1,
+    },
+    labels: [...Array(24).keys()].map((n) => `2020-10-0${n + 1}`),
+    yaxis: {
+      min: 0,
+      labels: {
+        minWidth: 100,
+      },
+    },
+    xaxis: {
+      type: 'datetime',
+    },
+    title: {
+      text: 'Total Sales',
+      offsetX: 5,
+      style: {
+        fontFamily: 'Roboto, sans-serif',
+        fontSize: '12px',
+        fontWeight: '500',
+        color: subtitle.value,
+        cssClass: 'apexcharts-spark-title',
+      },
+    },
+    subtitle: {
+      text: '9,374',
+      offsetX: 5,
+      offsetY: 15,
+      style: {
+        fontFamily: 'Roboto, sans-serif',
+        fontSize: '22px',
+        fontWeight: '500',
+        color: title.value,
+        cssClass: 'apexcharts-spark-subtitle',
+      },
+    },
+  } as const
+
+  const series = ref([
+    {
+      name: 'Total Sales',
+      data: randomizeArray([
+        472, 454, 547, 385, 562, 247, 652, 318, 379, 391, 622, 515, 355, 415, 358,
+        271, 932, 534, 615, 278, 546, 435, 192, 465,
+      ]),
+    },
+  ])
+
+  let timeout: any
+
+  onMounted(() => {
+    radomizeTimeout()
+  })
+  onBeforeUnmount(() => {
+    clearTimeout(timeout)
+  })
+
+  function radomizeTimeout() {
+    if (timeout) {
+      clearTimeout(timeout)
+    }
+    timeout = setTimeout(() => {
+      series.value[0].data.push(randomNumber(200, 600))
+      series.value[0].data.shift()
+      radomizeTimeout()
+    }, 2000)
+  }
+
+  function randomNumber(min: number, max: number) {
+    return Math.floor(Math.random() * (max - min + 1) + min)
+  }
+
+  function randomizeArray (arg: number[]) {
+    const array = arg.slice()
+    let currentIndex = array.length,
+      temporaryValue,
+      randomIndex
+
+    while (0 !== currentIndex) {
+      randomIndex = Math.floor(Math.random() * currentIndex)
+      currentIndex -= 1
+
+      temporaryValue = array[currentIndex]
+      array[currentIndex] = array[randomIndex]
+      array[randomIndex] = temporaryValue
+    }
+
+    return array
+  }
+
+  return {
+    type,
+    height,
+    options,
+    series,
+  }
+}
+
+function useSparkSalesTwo() {
+  const { success, title, subtitle } = useTailwindColors()
+
+  const type = 'area'
+  const height = 130
+
+  const options = {
+    chart: {
+      id: 'sparkline1',
+      group: 'sparklines',
+      sparkline: {
+        enabled: true,
+      },
+    },
+    colors: [success.value],
+    stroke: {
+      width: [2],
+      curve: 'straight',
+    },
+    fill: {
+      opacity: 1,
+    },
+    labels: [...Array(24).keys()].map((n) => `2020-10-0${n + 1}`),
+    yaxis: {
+      min: 0,
+      labels: {
+        minWidth: 100,
+      },
+    },
+    xaxis: {
+      type: 'datetime',
+    },
+    title: {
+      text: 'Total Profit',
+      offsetX: 5,
+      style: {
+        fontFamily: 'Roboto, sans-serif',
+        fontSize: '12px',
+        fontWeight: '500',
+        color: subtitle.value,
+        cssClass: 'apexcharts-spark-title',
+      },
+    },
+    subtitle: {
+      text: '$24,273.31',
+      offsetX: 5,
+      offsetY: 15,
+      style: {
+        fontFamily: 'Roboto, sans-serif',
+        fontSize: '22px',
+        fontWeight: '500',
+        color: title.value,
+        cssClass: 'apexcharts-spark-subtitle',
+      },
+    },
+  } as const
+
+  const series = ref([
+    {
+      name: 'Total Profit',
+      data: randomizeArray([
+        472, 454, 547, 385, 562, 247, 652, 318, 379, 391, 622, 515, 355, 415, 358,
+        271, 932, 534, 615, 278, 546, 435, 192, 465,
+      ]),
+    },
+  ])
+
+  let timeout: any
+
+  onMounted(() => {
+    radomizeTimeout()
+  })
+  onBeforeUnmount(() => {
+    clearTimeout(timeout)
+  })
+
+  function radomizeTimeout() {
+    if (timeout) {
+      clearTimeout(timeout)
+    }
+    timeout = setTimeout(() => {
+      series.value[0].data.push(randomNumber(200, 600))
+      series.value[0].data.shift()
+      radomizeTimeout()
+    }, 2000)
+  }
+
+  function randomNumber(min: number, max: number) {
+    return Math.floor(Math.random() * (max - min + 1) + min)
+  }
+
+  function randomizeArray(arg: number[]) {
+    const array = arg.slice()
+    let currentIndex = array.length,
+      temporaryValue,
+      randomIndex
+
+    while (0 !== currentIndex) {
+      randomIndex = Math.floor(Math.random() * currentIndex)
+      currentIndex -= 1
+
+      temporaryValue = array[currentIndex]
+      array[currentIndex] = array[randomIndex]
+      array[randomIndex] = temporaryValue
+    }
+
+    return array
+  }
+
+  return {
+    type,
+    height,
+    options,
+    series,
+  }
+}
+
+function useSparkSalesThree() {
+  const { yellow, title, subtitle } = useTailwindColors()
+  const type = 'area'
+  const height = 130
+
+  const options = {
+    chart: {
+      id: 'sparkline1',
+      group: 'sparklines',
+      sparkline: {
+        enabled: true,
+      },
+    },
+    colors: [yellow.value],
+    stroke: {
+      width: [2],
+      curve: 'straight',
+    },
+    fill: {
+      opacity: 1,
+    },
+    labels: [...Array(24).keys()].map((n) => `2020-10-0${n + 1}`),
+    yaxis: {
+      min: 0,
+      labels: {
+        minWidth: 100,
+      },
+    },
+    xaxis: {
+      type: 'datetime',
+    },
+    title: {
+      text: 'Total Orders',
+      offsetX: 5,
+      style: {
+        fontFamily: 'Roboto, sans-serif',
+        fontSize: '12px',
+        fontWeight: '500',
+        color: subtitle.value,
+        cssClass: 'apexcharts-spark-title',
+      },
+    },
+    subtitle: {
+      text: '3912',
+      offsetX: 5,
+      offsetY: 15,
+      style: {
+        fontFamily: 'Roboto, sans-serif',
+        fontSize: '22px',
+        fontWeight: '500',
+        color: title.value,
+        cssClass: 'apexcharts-spark-subtitle',
+      },
+    },
+  } as const
+
+  const series = ref([
+    {
+      name: 'Total Orders',
+      data: randomizeArray([
+        472, 454, 547, 385, 562, 247, 652, 318, 379, 391, 622, 515, 355, 415, 358,
+        271, 932, 534, 615, 278, 546, 435, 192, 465,
+      ]),
+    },
+  ])
+
+  let timeout: any
+
+  onMounted(() => {
+    radomizeTimeout()
+  })
+  onBeforeUnmount(() => {
+    clearTimeout(timeout)
+  })
+
+  function radomizeTimeout() {
+    if (timeout) {
+      clearTimeout(timeout)
+    }
+    timeout = setTimeout(() => {
+      series.value[0].data.push(randomNumber(200, 600))
+      series.value[0].data.shift()
+      radomizeTimeout()
+    }, 2000)
+  }
+
+  function randomNumber(min: number, max: number) {
+    return Math.floor(Math.random() * (max - min + 1) + min)
+  }
+
+  function randomizeArray(arg: number[]) {
+    const array = arg.slice()
+    let currentIndex = array.length,
+      temporaryValue,
+      randomIndex
+
+    while (0 !== currentIndex) {
+      randomIndex = Math.floor(Math.random() * currentIndex)
+      currentIndex -= 1
+
+      temporaryValue = array[currentIndex]
+      array[currentIndex] = array[randomIndex]
+      array[randomIndex] = temporaryValue
+    }
+
+    return array
+  }
+
+  return {
+    type,
+    height,
+    options,
+    series,
+  }
+}
+
+function useSparkSalesFour() {
+  const { info, title, subtitle } = useTailwindColors()
+
+  const type = 'area'
+  const height = 130
+
+  const options = {
+    chart: {
+      id: 'sparkline1',
+      group: 'sparklines',
+      sparkline: {
+        enabled: true,
+      },
+    },
+    colors: [info.value],
+    stroke: {
+      width: [2],
+      curve: 'straight',
+    },
+    fill: {
+      opacity: 1,
+    },
+    labels: [...Array(24).keys()].map((n) => `2020-10-0${n + 1}`),
+    yaxis: {
+      min: 0,
+      labels: {
+        minWidth: 100,
+      },
+    },
+    xaxis: {
+      type: 'datetime',
+    },
+    title: {
+      text: 'Consolidated',
+      offsetX: 5,
+      style: {
+        fontFamily: 'Roboto, sans-serif',
+        fontSize: '12px',
+        fontWeight: '500',
+        color: subtitle.value,
+        cssClass: 'apexcharts-spark-title',
+      },
+    },
+    subtitle: {
+      text: '$17,865.29',
+      offsetX: 5,
+      offsetY: 15,
+      style: {
+        fontFamily: 'Roboto, sans-serif',
+        fontSize: '22px',
+        fontWeight: '500',
+        color: title.value,
+        cssClass: 'apexcharts-spark-subtitle',
+      },
+    },
+  } as const
+
+  const series = ref([
+    {
+      name: 'Consolidated',
+      data: randomizeArray([
+        472, 454, 547, 385, 562, 247, 652, 318, 379, 391, 622, 515, 355, 415, 358,
+        271, 932, 534, 615, 278, 546, 435, 192, 465,
+      ]),
+    },
+  ])
+
+  let timeout: any
+
+  onMounted(() => {
+    radomizeTimeout()
+  })
+  onBeforeUnmount(() => {
+    clearTimeout(timeout)
+  })
+
+  function radomizeTimeout() {
+    if (timeout) {
+      clearTimeout(timeout)
+    }
+    timeout = setTimeout(() => {
+      series.value[0].data.push(randomNumber(200, 600))
+      series.value[0].data.shift()
+      radomizeTimeout()
+    }, 2000)
+  }
+
+  function randomNumber(min: number, max: number) {
+    return Math.floor(Math.random() * (max - min + 1) + min)
+  }
+
+  function randomizeArray(arg: number[]) {
+    const array = arg.slice()
+    let currentIndex = array.length,
+      temporaryValue,
+      randomIndex
+
+    while (0 !== currentIndex) {
+      randomIndex = Math.floor(Math.random() * currentIndex)
+      currentIndex -= 1
+
+      temporaryValue = array[currentIndex]
+      array[currentIndex] = array[randomIndex]
+      array[randomIndex] = temporaryValue
+    }
+
+    return array
+  }
+
+  return {
+    type,
+    height,
+    options,
+    series,
+  }
+}
 </script>
 
 <template>
@@ -48,7 +519,7 @@ definePageMeta({
         class="relative col-span-12 md:col-span-6 ltablet:col-span-3 lg:col-span-3"
       >
         <BaseCard class="pt-4">
-          <ExampleApexChartSparkSalesOne />
+          <TairoApexcharts v-bind="sparkSalesOne" />
         </BaseCard>
       </div>
       <!-- Sparkline -->
@@ -56,7 +527,7 @@ definePageMeta({
         class="relative col-span-12 md:col-span-6 ltablet:col-span-3 lg:col-span-3"
       >
         <BaseCard class="pt-4">
-          <ExampleApexChartSparkSalesTwo />
+          <TairoApexcharts v-bind="sparkSalesTwo" />
         </BaseCard>
       </div>
       <!-- Sparkline -->
@@ -64,7 +535,7 @@ definePageMeta({
         class="relative col-span-12 md:col-span-6 ltablet:col-span-3 lg:col-span-3"
       >
         <BaseCard class="pt-4">
-          <ExampleApexChartSparkSalesThree />
+          <TairoApexcharts v-bind="sparkSalesThree" />
         </BaseCard>
       </div>
       <!-- Sparkline -->
@@ -72,7 +543,7 @@ definePageMeta({
         class="relative col-span-12 md:col-span-6 ltablet:col-span-3 lg:col-span-3"
       >
         <BaseCard class="pt-4">
-          <ExampleApexChartSparkSalesFour />
+          <TairoApexcharts v-bind="sparkSalesFour" />
         </BaseCard>
       </div>
       <!-- Chart -->
