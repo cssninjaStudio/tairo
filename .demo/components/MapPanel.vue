@@ -253,7 +253,20 @@ function selectFeature(feature: any) {
   selectedFeature.value = feature
 }
 
+const accessToken = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN as string
+if (process.dev) {
+  // this block will be removed in production build
+
+  if (!accessToken) {
+    console.warn('VITE_MAPBOX_ACCESS_TOKEN environment variable is not defined, mapbox features are disabled')
+  }
+}
+
 onMounted(() => {
+  if (!accessToken) {
+    return
+  }
+
   Promise.all([
     import('mapbox-gl').then((m) => m.default),
     import('@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.min.js').then(
@@ -298,7 +311,6 @@ onMounted(() => {
   })
 })
 
-// watchPostEffect(() => {
 watchEffect(
   () => {
     if (!selectedFeature.value || !popupElement.value || !map.value) {
