@@ -3,6 +3,382 @@ definePageMeta({
   title: 'Health',
   layout: 'sidebar',
 })
+
+const areaCondition = reactive(useAreaCondition())
+const scatterEnergy = reactive(useScatterEnergy())
+const barOxygen = reactive(useBarOxygen())
+const areaProgress = reactive(useAreaProgress())
+const gaugePersonal = reactive(useGaugePersonal())
+
+function useAreaCondition() {
+  const { primary } = useTailwindColors()
+  const type = 'area'
+  const height = 280
+
+  const options = {
+    chart: {
+      offsetX: 20,
+      zoom: {
+        enabled: false,
+      },
+      toolbar: {
+        show: false,
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    grid: {
+      show: false,
+    },
+    stroke: {
+      width: [2, 2, 2],
+      curve: 'straight',
+    },
+    colors: [primary.value],
+    labels: ['Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    yaxis: {
+      opposite: true,
+    },
+    legend: {
+      horizontalAlign: 'left',
+    },
+  }
+
+  const series = ref([
+    {
+      name: 'Condition (pt)',
+      data: [31, 40, 28, 51, 42, 109, 100],
+    },
+  ])
+
+  return {
+    type,
+    height,
+    options,
+    series,
+  }
+}
+
+function useScatterEnergy() {
+  const { primary, info, success } = useTailwindColors()
+  const height = 280
+  const type = 'scatter'
+
+  const options = {
+    chart: {
+      height: 280,
+      type: 'scatter',
+      zoom: {
+        type: 'xy',
+      },
+      toolbar: {
+        show: false,
+      },
+    },
+    colors: [primary.value, success.value, info.value],
+    dataLabels: {
+      enabled: false,
+      show: false,
+    },
+    grid: {
+      show: false,
+      xaxis: {
+        lines: {
+          show: false,
+        },
+      },
+      yaxis: {
+        lines: {
+          show: false,
+        },
+      },
+    },
+    xaxis: {
+      show: false,
+      type: 'datetime',
+    },
+    yaxis: {
+      show: false,
+      max: 70,
+    },
+    legend: {
+      show: false,
+      position: 'top',
+      horizontalAlign: 'center',
+    },
+  }
+
+  const series = ref([
+    {
+      name: 'Tonic',
+      data: generateDayWiseTimeSeries(
+        new Date('Oct 11 2020 GMT').getTime(),
+        20,
+        {
+          min: 10,
+          max: 60,
+        },
+      ),
+    },
+    {
+      name: 'Tantra',
+      data: generateDayWiseTimeSeries(
+        new Date('Oct 11 2020 GMT').getTime(),
+        20,
+        {
+          min: 10,
+          max: 60,
+        },
+      ),
+    },
+    {
+      name: 'Vital',
+      data: generateDayWiseTimeSeries(
+        new Date('Oct 11 2020 GMT').getTime(),
+        30,
+        {
+          min: 10,
+          max: 60,
+        },
+      ),
+    },
+  ])
+
+  function generateDayWiseTimeSeries(
+    baseval: number,
+    count: number,
+    yrange: { min: number; max: number },
+  ) {
+    let i = 0
+    const series = []
+    while (i < count) {
+      const y =
+        Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min
+
+      series.push([baseval, y])
+      baseval += 86400000
+      i++
+    }
+    return series
+  }
+
+  return {
+    type,
+    height,
+    options,
+    series,
+  }
+}
+
+function useBarOxygen() {
+  const { primary } = useTailwindColors()
+  const height = 280
+  const type = 'bar'
+
+  const options = {
+    chart: {
+      toolbar: {
+        show: false,
+      },
+    },
+    plotOptions: {
+      bar: {
+        dataLabels: {
+          position: 'top', // top, center, bottom
+        },
+      },
+    },
+    dataLabels: {
+      enabled: true,
+      formatter: asPercent,
+      offsetY: -20,
+      style: {
+        fontSize: '12px',
+        colors: ['#304758'],
+      },
+    },
+    grid: {
+      show: false,
+    },
+    xaxis: {
+      categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+      position: 'top',
+      axisBorder: {
+        show: false,
+      },
+      axisTicks: {
+        show: false,
+      },
+      crosshairs: {
+        fill: {
+          type: 'gradient',
+          gradient: {
+            colorFrom: '#D8E3F0',
+            colorTo: '#BED1E6',
+            stops: [0, 100],
+            opacityFrom: 0.4,
+            opacityTo: 0.5,
+          },
+        },
+      },
+      tooltip: {
+        enabled: true,
+      },
+    },
+    yaxis: {
+      axisBorder: {
+        show: false,
+      },
+      axisTicks: {
+        show: false,
+      },
+      labels: {
+        show: false,
+        formatter: asPercent,
+      },
+    },
+    colors: [primary.value],
+  }
+
+  const series = ref([
+    {
+      name: 'Variation (pt)',
+      data: [23, 26, 10, 7, 11, 18, 16],
+    },
+  ])
+
+  return {
+    type,
+    height,
+    options,
+    series,
+  }
+}
+
+function useAreaProgress() {
+  const { primary } = useTailwindColors()
+  const type = 'area'
+  const height = 280
+
+  const options = {
+    chart: {
+      offsetX: 20,
+      zoom: {
+        enabled: false,
+      },
+      toolbar: {
+        show: false,
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    grid: {
+      show: false,
+    },
+    stroke: {
+      width: [2, 2, 2],
+      curve: 'smooth',
+    },
+    colors: [primary.value],
+    labels: ['Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    yaxis: {
+      opposite: true,
+    },
+    legend: {
+      horizontalAlign: 'left',
+    },
+  } as const
+
+  const series = ref([
+    {
+      name: 'Progress (pt)',
+      data: [31, 40, 28, 51, 42, 109, 100],
+    },
+  ])
+
+  return {
+    type,
+    height,
+    options,
+    series,
+  }
+}
+
+function useGaugePersonal() {
+  const { primary } = useTailwindColors()
+  const type = 'radialBar'
+  const height = 220
+
+  const options = {
+    title: {
+      text: undefined,
+    },
+    chart: {
+      sparkline: {
+        enabled: true,
+      },
+      toolbar: {
+        show: false,
+      },
+    },
+    colors: [primary.value],
+    plotOptions: {
+      radialBar: {
+        startAngle: -90,
+        endAngle: 90,
+        track: {
+          background: '#e7e7e7',
+          strokeWidth: '97%',
+          margin: 5, // margin is in pixels
+          dropShadow: {
+            enabled: false,
+            top: 2,
+            left: 0,
+            color: '#999',
+            opacity: 1,
+            blur: 2,
+          },
+        },
+        hollow: {
+          margin: 0,
+          size: '35%',
+        },
+        dataLabels: {
+          name: {
+            show: false,
+          },
+          value: {
+            offsetY: -2,
+            fontSize: '22px',
+          },
+        },
+      },
+    },
+    fill: {
+      type: 'gradient',
+      gradient: {
+        shade: 'light',
+        shadeIntensity: 0.1,
+        inverseColors: false,
+        opacityFrom: 1,
+        opacityTo: 1,
+        stops: [0, 50, 53, 91],
+      },
+    },
+    labels: ['Average Results'],
+  }
+
+  const series = ref([76])
+
+  return {
+    type,
+    height,
+    options,
+    series,
+  }
+}
 </script>
 
 <template>
@@ -278,7 +654,10 @@ definePageMeta({
                       </NuxtLink>
                     </BaseParagraph>
                   </div>
-                  <ExampleApexchartAreaCondition />
+                  <TairoApexcharts
+                    v-bind="areaCondition"
+                    class="relative -left-5"
+                  />
                 </BaseCard>
               </div>
               <!-- Chart -->
@@ -312,7 +691,7 @@ definePageMeta({
                       </NuxtLink>
                     </BaseParagraph>
                   </div>
-                  <ExampleApexchartScatterEnergy />
+                  <TairoApexcharts v-bind="scatterEnergy" />
                 </BaseCard>
               </div>
               <!-- Chart -->
@@ -346,7 +725,10 @@ definePageMeta({
                       </NuxtLink>
                     </BaseParagraph>
                   </div>
-                  <ExampleApexchartBarOxygen />
+                  <TairoApexcharts
+                    v-bind="barOxygen"
+                    class="relative -left-5"
+                  />
                 </BaseCard>
               </div>
               <!-- Chart -->
@@ -380,7 +762,10 @@ definePageMeta({
                       </NuxtLink>
                     </BaseParagraph>
                   </div>
-                  <ExampleApexchartAreaProgress />
+                  <TairoApexcharts
+                    v-bind="areaProgress"
+                    class="relative -left-5"
+                  />
                 </BaseCard>
               </div>
             </div>
@@ -412,7 +797,7 @@ definePageMeta({
                   </BaseHeading>
                 </div>
                 <div class="py-16">
-                  <ExampleApexchartGaugePersonal />
+                  <TairoApexcharts v-bind="gaugePersonal" class="-mt-14" />
                 </div>
                 <div class="text-center mt-auto">
                   <BaseParagraph size="sm">

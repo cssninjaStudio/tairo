@@ -3,6 +3,98 @@ definePageMeta({
   title: 'Stocks',
   layout: 'sidebar',
 })
+
+const barProfit = reactive(useBarProfit())
+
+function useBarProfit() {
+  const { primary } = useTailwindColors()
+  const type = 'bar'
+  const height = 255
+
+  const options = {
+    chart: {
+      toolbar: {
+        show: false,
+      },
+    },
+    plotOptions: {
+      bar: {
+        dataLabels: {
+          position: 'top', // top, center, bottom
+        },
+      },
+    },
+    dataLabels: {
+      enabled: true,
+      formatter: function (val: string) {
+        return val + '%'
+      },
+      offsetY: -20,
+      style: {
+        fontSize: '12px',
+        colors: ['#304758'],
+      },
+    },
+    xaxis: {
+      categories: ['May', 'Jun', 'Jul', 'Aug', 'Sep'],
+      position: 'top',
+      axisBorder: {
+        show: false,
+      },
+      axisTicks: {
+        show: false,
+      },
+      crosshairs: {
+        fill: {
+          type: 'gradient',
+          gradient: {
+            colorFrom: '#D8E3F0',
+            colorTo: '#BED1E6',
+            stops: [0, 100],
+            opacityFrom: 0.4,
+            opacityTo: 0.5,
+          },
+        },
+      },
+      tooltip: {
+        enabled: true,
+      },
+    },
+    yaxis: {
+      axisBorder: {
+        show: false,
+      },
+      axisTicks: {
+        show: false,
+      },
+      labels: {
+        show: false,
+        formatter: function (val: string) {
+          return val + '%'
+        },
+      },
+    },
+    colors: [primary.value],
+    title: {
+      text: undefined,
+      align: 'left',
+    },
+  }
+
+  const series = ref([
+    {
+      name: 'Ratio',
+      data: [2.3, 3.1, 4.0, 10.1, 4.0],
+    },
+  ])
+
+  return {
+    type,
+    height,
+    options,
+    series,
+  }
+}
 </script>
 
 <template>
@@ -226,7 +318,11 @@ definePageMeta({
                 </template>
               </BaseDropdownItem>
               <BaseDropdownDivide />
-              <BaseDropdownItem to="#/" title="Wallet" text="Manage your wallet">
+              <BaseDropdownItem
+                to="#/"
+                title="Wallet"
+                text="Manage your wallet"
+              >
                 <template #start>
                   <Icon name="ph:wallet-duotone" class="w-5 h-5 block mr-2" />
                 </template>
@@ -313,7 +409,11 @@ definePageMeta({
                 </template>
               </BaseDropdownItem>
               <BaseDropdownDivide />
-              <BaseDropdownItem to="#/" title="Wallet" text="Manage your wallet">
+              <BaseDropdownItem
+                to="#/"
+                title="Wallet"
+                text="Manage your wallet"
+              >
                 <template #start>
                   <Icon name="ph:wallet-duotone" class="w-5 h-5 block mr-2" />
                 </template>
@@ -402,7 +502,11 @@ definePageMeta({
                 </template>
               </BaseDropdownItem>
               <BaseDropdownDivide />
-              <BaseDropdownItem to="#/" title="Wallet" text="Manage your wallet">
+              <BaseDropdownItem
+                to="#/"
+                title="Wallet"
+                text="Manage your wallet"
+              >
                 <template #start>
                   <Icon name="ph:wallet-duotone" class="w-5 h-5 block mr-2" />
                 </template>
@@ -701,7 +805,7 @@ definePageMeta({
               <span>Profit Evolution</span>
             </BaseHeading>
           </div>
-          <ExampleApexchartBarProfit />
+          <TairoApexcharts v-bind="barProfit" />
         </BaseCard>
       </div>
       <!-- Grid item -->

@@ -4,6 +4,70 @@ definePageMeta({
   layout: 'sidebar',
 })
 
+const areaInterviews = reactive(useAreaInterviews())
+
+function useAreaInterviews() {
+  const { primary, info, success } = useTailwindColors()
+  const type = 'area'
+  const height = 220
+
+  const options = {
+    chart: {
+      height: 220,
+      type: 'area',
+      toolbar: {
+        show: false,
+      },
+    },
+    colors: [primary.value, info.value, success.value],
+    title: {
+      text: undefined,
+      align: 'left',
+    },
+    legend: {
+      position: 'top',
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      width: [2, 2, 2],
+      curve: 'smooth',
+    },
+    xaxis: {
+      type: 'datetime',
+      categories: [
+        '2020-09-19T00:00:00.000Z',
+        '2020-09-20T01:30:00.000Z',
+        '2020-09-21T02:30:00.000Z',
+        '2020-09-22T03:30:00.000Z',
+        '2020-09-23T04:30:00.000Z',
+        '2020-09-24T05:30:00.000Z',
+        '2020-09-25T06:30:00.000Z',
+      ],
+    },
+    tooltip: {
+      x: {
+        format: 'dd/MM/yy HH:mm',
+      },
+    },
+  }
+
+  const series = ref([
+    {
+      name: 'Interviews',
+      data: [31, 40, 28, 51, 42, 109, 100],
+    },
+  ])
+
+  return {
+    type,
+    height,
+    options,
+    series,
+  }
+}
+
 const candidates = [
   {
     id: 0,
@@ -262,7 +326,7 @@ const candidates = [
             Reports
           </NuxtLink>
         </div>
-        <ExampleApexchartAreaInterviews />
+        <TairoApexcharts v-bind="areaInterviews" />
       </BaseCard>
     </div>
     <!-- Grid item -->

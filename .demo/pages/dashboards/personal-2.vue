@@ -3,6 +3,158 @@ definePageMeta({
   title: 'My Projects',
   layout: 'sidebar',
 })
+
+const areaTaskCompletion = reactive(useAreaTaskCompletion())
+const barTeamEfficiency = reactive(useBarTeamEfficiency())
+
+function useAreaTaskCompletion() {
+  const { primary, info, success } = useTailwindColors()
+  const type = 'area'
+  const height = 295
+
+  const options = {
+    chart: {
+      toolbar: {
+        show: false,
+      },
+    },
+    colors: [success.value, info.value, primary.value],
+    legend: {
+      position: 'top',
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      width: [2, 2, 2],
+      curve: 'smooth',
+    },
+    xaxis: {
+      type: 'datetime',
+      categories: [
+        '2020-09-19T00:00:00.000Z',
+        '2020-09-20T01:30:00.000Z',
+        '2020-09-21T02:30:00.000Z',
+        '2020-09-22T03:30:00.000Z',
+        '2020-09-23T04:30:00.000Z',
+        '2020-09-24T05:30:00.000Z',
+        '2020-09-25T06:30:00.000Z',
+      ],
+    },
+    tooltip: {
+      x: {
+        format: 'dd/MM/yy HH:mm',
+      },
+    },
+  }
+
+  const series = ref([
+    {
+      name: 'Pending',
+      data: [31, 40, 28, 51, 42, 109, 100],
+    },
+    {
+      name: 'Completed',
+      data: [11, 32, 45, 32, 34, 52, 41],
+    },
+    {
+      name: 'Blocked',
+      data: [78, 53, 36, 10, 14, 5, 2],
+    },
+  ])
+
+  return {
+    type,
+    height,
+    options,
+    series,
+  }
+}
+
+function useBarTeamEfficiency() {
+  const { primary, info, success } = useTailwindColors()
+  const type = 'bar'
+  const height = 250
+
+  const options = {
+    chart: {
+      toolbar: {
+        show: false,
+      },
+    },
+    colors: [success.value, info.value, primary.value],
+    legend: {
+      position: 'top',
+    },
+    plotOptions: {
+      bar: {
+        horizontal: false,
+        endingShape: 'rounded',
+        columnWidth: '55%',
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      show: true,
+      width: 2,
+      colors: ['transparent'],
+    },
+    xaxis: {
+      categories: [
+        'Feb',
+        'Mar',
+        'Apr',
+        'May',
+        'Jun',
+        'Jul',
+        'Aug',
+        'Sep',
+        'Oct',
+      ],
+    },
+    yaxis: {
+      labels: {
+        formatter: function (val: string) {
+          return val + 70
+        },
+      },
+    },
+    fill: {
+      opacity: 1,
+    },
+    tooltip: {
+      y: {
+        formatter: function (val: string) {
+          return val + 'hrs'
+        },
+      },
+    },
+  }
+
+  const series = ref([
+    {
+      name: 'Design',
+      data: [-26, -15, -13, -14, -9, -12, -7, -10, -4],
+    },
+    {
+      name: 'Development',
+      data: [6, 15, 31, 28, 17, 35, 21, 44, 24],
+    },
+    {
+      name: 'Management',
+      data: [-35, -29, -34, -44, -25, -22, -18, -17, -29],
+    },
+  ])
+
+  return {
+    type,
+    height,
+    options,
+    series,
+  }
+}
 </script>
 
 <template>
@@ -133,7 +285,7 @@ definePageMeta({
                 Reports
               </NuxtLink>
             </div>
-            <ExampleApexchartAreaTaskCompletion />
+            <TairoApexcharts v-bind="areaTaskCompletion" />
           </BaseCard>
           <!-- Chart -->
           <BaseCard class="p-6">
@@ -154,7 +306,7 @@ definePageMeta({
                 Reports
               </NuxtLink>
             </div>
-            <ExampleApexchartBarTeamEfficiency />
+            <TairoApexcharts v-bind="barTeamEfficiency" />
           </BaseCard>
         </div>
       </div>

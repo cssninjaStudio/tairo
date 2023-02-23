@@ -128,7 +128,7 @@ function useAreaExpenses() {
       type: 'solid',
       fillOpacity: 0.7,
     },
-  } as const
+  }
 
   const series = ref([
     {
@@ -335,7 +335,7 @@ function useAreaExpenses() {
         </div>
       </BaseCard>
       <BaseCard
-        class="flex flex-col ltablet:flex-row lg:flex-row gap-y-10 p-6 sm:p-10 bg-muted-200 dark:bg-muted-800"
+        class="flex flex-col ltablet:flex-row lg:flex-row gap-y-10 p-6 sm:p-10 !bg-muted-200 dark:!bg-muted-800"
       >
         <div
           class="w-full ltablet:w-3/5 lg:w-3/5 ltablet:border-r lg:border-r border-muted-300 dark:border-muted-700"

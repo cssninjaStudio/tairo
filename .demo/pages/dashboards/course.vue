@@ -368,7 +368,7 @@ const students = [
                 hideLabel
                 :title="student.name"
                 :subtitle="student.completion"
-                :image="student.avatar"
+                :avatar="student.avatar"
               />
             </template>
             <template #end>

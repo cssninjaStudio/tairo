@@ -10,10 +10,6 @@ const areaBtcPrice = reactive(useAreaBtcPrice())
 const radialEvolution = reactive(useRadialEvolution())
 const radialPopularity = reactive(useRadialPopularity())
 
-/**
- * This is example data for the area chart
- * @see https://apexcharts.com/docs/chart-types/area-chart/
- */
 function useAreaBtcPrice() {
   const { primary, info, success } = useTailwindColors()
 
@@ -22,8 +18,6 @@ function useAreaBtcPrice() {
 
   const options = shallowRef({
     chart: {
-      // type: 'area',
-      // height: 350,
       foreColor: '#999',
       stacked: true,
       toolbar: {
@@ -79,7 +73,7 @@ function useAreaBtcPrice() {
       },
     },
     grid: {
-      show: false,
+      show: true,
       padding: {
         left: -5,
         right: 5,
@@ -182,7 +176,7 @@ function useRadialEvolution() {
       },
     },
     labels: ['Median Ratio'],
-  } as const
+  }
 
   return {
     type,
@@ -246,7 +240,7 @@ function useRadialPopularity() {
       dashArray: 4,
     },
     labels: ['(30 days)'],
-  } as const
+  }
 
   const series = ref([67])
 

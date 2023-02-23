@@ -8,6 +8,13 @@ const sparkSalesOne = reactive(useSparkSalesOne())
 const sparkSalesTwo = reactive(useSparkSalesTwo())
 const sparkSalesThree = reactive(useSparkSalesThree())
 const sparkSalesFour = reactive(useSparkSalesFour())
+const areaCustomers = reactive(useAreaCustomers())
+const radialSalesRevenue = reactive(useRadialSalesRevenue())
+const radialSmallOne = reactive(useRadialSmallOne())
+const radialSmallTwo = reactive(useRadialSmallTwo())
+const radialSmallThree = reactive(useRadialSmallThree())
+const gaugePersonal = reactive(useGaugePersonal())
+const barOrders = reactive(useBarOrders())
 
 function useSparkSalesOne() {
   const { primary, title, subtitle } = useTailwindColors()
@@ -63,7 +70,7 @@ function useSparkSalesOne() {
         cssClass: 'apexcharts-spark-subtitle',
       },
     },
-  } as const
+  }
 
   const series = ref([
     {
@@ -180,7 +187,7 @@ function useSparkSalesTwo() {
         cssClass: 'apexcharts-spark-subtitle',
       },
     },
-  } as const
+  }
 
   const series = ref([
     {
@@ -296,7 +303,7 @@ function useSparkSalesThree() {
         cssClass: 'apexcharts-spark-subtitle',
       },
     },
-  } as const
+  }
 
   const series = ref([
     {
@@ -413,7 +420,7 @@ function useSparkSalesFour() {
         cssClass: 'apexcharts-spark-subtitle',
       },
     },
-  } as const
+  }
 
   const series = ref([
     {
@@ -466,6 +473,476 @@ function useSparkSalesFour() {
 
     return array
   }
+
+  return {
+    type,
+    height,
+    options,
+    series,
+  }
+}
+
+function useAreaCustomers() {
+  const { primary, info, success } = useTailwindColors()
+  const type = 'area'
+  const height = 258
+
+  const options = {
+    chart: {
+      toolbar: {
+        show: false,
+      },
+    },
+    colors: [primary.value, info.value, success.value],
+    title: {
+      show: false,
+      text: undefined,
+      align: 'left',
+    },
+    legend: {
+      show: true,
+      position: 'top',
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      width: [2, 2, 2],
+      curve: 'smooth',
+    },
+    xaxis: {
+      type: 'datetime',
+      categories: [
+        '2020-09-19T00:00:00.000Z',
+        '2020-09-20T01:30:00.000Z',
+        '2020-09-21T02:30:00.000Z',
+        '2020-09-22T03:30:00.000Z',
+        '2020-09-23T04:30:00.000Z',
+        '2020-09-24T05:30:00.000Z',
+        '2020-09-25T06:30:00.000Z',
+      ],
+    },
+    tooltip: {
+      x: {
+        format: 'dd/MM/yy HH:mm',
+      },
+    },
+  }
+
+  const series = ref([
+    {
+      name: 'Returning',
+      data: [31, 40, 28, 51, 42, 109, 100],
+    },
+    {
+      name: 'Newcomers',
+      data: [11, 32, 45, 32, 34, 52, 41],
+    },
+    {
+      name: 'Abandonned',
+      data: [78, 53, 36, 10, 14, 5, 2],
+    },
+  ])
+
+  return {
+    type,
+    height,
+    options,
+    series,
+  }
+}
+
+function useRadialSalesRevenue() {
+  const { primary } = useTailwindColors()
+  const type = 'radialBar'
+  const height = 155
+
+  const options = {
+    chart: {
+      toolbar: {
+        show: false,
+      },
+    },
+    colors: [primary.value],
+    plotOptions: {
+      radialBar: {
+        hollow: {
+          size: '75%',
+        },
+        dataLabels: {
+          show: true,
+          name: {
+            show: false,
+            fontSize: '12px',
+            fontFamily: 'Roboto, sans-serif',
+            fontWeight: 400,
+            offsetY: 5,
+          },
+          value: {
+            show: true,
+            fontWeight: 600,
+            fontFamily: 'Roboto, sans-serif',
+            fontSize: '16px',
+            offsetY: 5,
+          },
+        },
+      },
+    },
+    labels: ['Progress'],
+  }
+
+  const series = ref([65])
+
+  return {
+    type,
+    height,
+    options,
+    series,
+  }
+}
+
+function useRadialSmallOne() {
+  const { primary } = useTailwindColors()
+  const type = 'radialBar'
+  const height = 100
+
+  const options = {
+    chart: {
+      height: 100,
+      type: 'radialBar',
+      offsetY: -10,
+      toolbar: {
+        show: false,
+      },
+    },
+    colors: [primary.value],
+    plotOptions: {
+      radialBar: {
+        hollow: {
+          size: '35%',
+        },
+        dataLabels: {
+          show: false,
+        },
+      },
+    },
+    labels: [''],
+  }
+
+  const series = ref([31])
+
+  return {
+    type,
+    height,
+    options,
+    series,
+  }
+}
+
+function useRadialSmallTwo() {
+  const { success } = useTailwindColors()
+  const type = 'radialBar'
+  const height = 100
+
+  const options = {
+    chart: {
+      height: 100,
+      type: 'radialBar',
+      offsetY: -10,
+      toolbar: {
+        show: false,
+      },
+    },
+    colors: [success.value],
+    plotOptions: {
+      radialBar: {
+        hollow: {
+          size: '35%',
+        },
+        dataLabels: {
+          show: false,
+        },
+      },
+    },
+    labels: [''],
+  }
+
+  const series = ref([53])
+
+  return {
+    type,
+    height,
+    options,
+    series,
+  }
+}
+
+function useRadialSmallThree() {
+  const { danger } = useTailwindColors()
+  const type = 'radialBar'
+  const height = 100
+
+  const options = {
+    chart: {
+      height: 100,
+      type: 'radialBar',
+      offsetY: -10,
+      toolbar: {
+        show: false,
+      },
+    },
+    colors: [danger.value],
+    plotOptions: {
+      radialBar: {
+        hollow: {
+          size: '35%',
+        },
+        dataLabels: {
+          show: false,
+        },
+      },
+    },
+    labels: [''],
+  }
+
+  const series = ref([84])
+
+  return {
+    type,
+    height,
+    options,
+    series,
+  }
+}
+
+function useGaugePersonal() {
+  const { primary } = useTailwindColors()
+  const type = 'radialBar'
+  const height = 220
+
+  const options = {
+    title: {
+      text: undefined,
+    },
+    chart: {
+      sparkline: {
+        enabled: true,
+      },
+      toolbar: {
+        show: false,
+      },
+    },
+    colors: [primary.value],
+    plotOptions: {
+      radialBar: {
+        startAngle: -90,
+        endAngle: 90,
+        track: {
+          background: '#e7e7e7',
+          strokeWidth: '97%',
+          margin: 5, // margin is in pixels
+          dropShadow: {
+            enabled: false,
+            top: 2,
+            left: 0,
+            color: '#999',
+            opacity: 1,
+            blur: 2,
+          },
+        },
+        hollow: {
+          margin: 0,
+          size: '35%',
+        },
+        dataLabels: {
+          name: {
+            show: false,
+          },
+          value: {
+            offsetY: -2,
+            fontSize: '22px',
+          },
+        },
+      },
+    },
+    fill: {
+      type: 'gradient',
+      gradient: {
+        shade: 'light',
+        shadeIntensity: 0.1,
+        inverseColors: false,
+        opacityFrom: 1,
+        opacityTo: 1,
+        stops: [0, 50, 53, 91],
+      },
+    },
+    labels: ['Average Results'],
+  }
+
+  const series = ref([76])
+
+  return {
+    type,
+    height,
+    options,
+    series,
+  }
+}
+
+function useBarOrders() {
+  const { primary, success } = useTailwindColors()
+  const type = 'bar'
+  const height = 210
+
+  const series = ref<any[]>([])
+
+  const options = {
+    chart: {
+      toolbar: {
+        show: false,
+      },
+    },
+    colors: [primary.value, success.value],
+    dataLabels: {
+      enabled: false,
+    },
+    noData: {
+      text: 'Loading...',
+    },
+    xaxis: {
+      type: 'category',
+      tickPlacement: 'on',
+      labels: {
+        rotate: -45,
+        rotateAlways: true,
+      },
+    },
+  }
+
+  // delay the data loading
+  let timeout: any
+  let timeout2: any
+
+  onMounted(() => {
+    const { series } = useBarOrders()
+
+    timeout = setTimeout(() => {
+      series.value.push({
+        name: 'Orders',
+        data: [
+          {
+            x: 'Jan',
+            y: 322,
+          },
+          {
+            x: 'Feb',
+            y: 459,
+          },
+          {
+            x: 'Mar',
+            y: 212,
+          },
+          {
+            x: 'Apr',
+            y: 345,
+          },
+          {
+            x: 'May',
+            y: 111,
+          },
+          {
+            x: 'Jun',
+            y: 189,
+          },
+          {
+            x: 'Jul',
+            y: 498,
+          },
+          {
+            x: 'Aug',
+            y: 612,
+          },
+          {
+            x: 'Sep',
+            y: 451,
+          },
+          {
+            x: 'Oct',
+            y: 248,
+          },
+          {
+            x: 'Nov',
+            y: 306,
+          },
+          {
+            x: 'Dec',
+            y: 366,
+          },
+        ],
+      })
+    }, 1000)
+
+    timeout2 = setTimeout(() => {
+      series.value.push({
+        name: 'Abandonned',
+        data: [
+          {
+            x: 'Jan',
+            y: 25,
+          },
+          {
+            x: 'Feb',
+            y: 49,
+          },
+          {
+            x: 'Mar',
+            y: 36,
+          },
+          {
+            x: 'Apr',
+            y: 84,
+          },
+          {
+            x: 'May',
+            y: 64,
+          },
+          {
+            x: 'Jun',
+            y: 131,
+          },
+          {
+            x: 'Jul',
+            y: 48,
+          },
+          {
+            x: 'Aug',
+            y: 144,
+          },
+          {
+            x: 'Sep',
+            y: 96,
+          },
+          {
+            x: 'Oct',
+            y: 11,
+          },
+          {
+            x: 'Nov',
+            y: 31,
+          },
+          {
+            x: 'Dec',
+            y: 8,
+          },
+        ],
+      })
+    }, 2500)
+  })
+
+  onBeforeUnmount(() => {
+    clearTimeout(timeout)
+    clearTimeout(timeout2)
+  })
 
   return {
     type,
@@ -590,7 +1067,7 @@ function useSparkSalesFour() {
               </p>
             </div>
           </div>
-          <ExampleApexchartAreaCustomer />
+          <TairoApexcharts v-bind="areaCustomers" />
         </BaseCard>
       </div>
       <!-- Column -->
@@ -626,7 +1103,7 @@ function useSparkSalesFour() {
                 </BaseParagraph>
               </div>
               <div class="flex-1">
-                <ExampleApexchartRadialSalesRevenue />
+                <TairoApexcharts v-bind="radialSalesRevenue" />
               </div>
             </div>
           </BaseCard>
@@ -645,7 +1122,7 @@ function useSparkSalesFour() {
             </div>
             <div class="flex justify-between gap-2">
               <div class="flex-1 flex flex-col gap-2 text-center">
-                <ExampleApexchartRadialSmallOne />
+                <TairoApexcharts v-bind="radialSmallOne" />
                 <div class="-mt-6">
                   <BaseHeading
                     as="h5"
@@ -662,7 +1139,7 @@ function useSparkSalesFour() {
                 </div>
               </div>
               <div class="flex-1 flex flex-col gap-2 text-center">
-                <ExampleApexchartRadialSmallTwo />
+                <TairoApexcharts v-bind="radialSmallTwo" />
                 <div class="-mt-6">
                   <BaseHeading
                     as="h5"
@@ -679,7 +1156,7 @@ function useSparkSalesFour() {
                 </div>
               </div>
               <div class="flex-1 flex flex-col gap-2 text-center">
-                <ExampleApexchartRadialSmallThree />
+                <TairoApexcharts v-bind="radialSmallThree" />
                 <div class="-mt-6">
                   <BaseHeading
                     as="h5"
@@ -716,7 +1193,7 @@ function useSparkSalesFour() {
             </BaseHeading>
           </div>
           <div class="py-16">
-            <ExampleApexchartGaugePersonal />
+            <TairoApexcharts v-bind="gaugePersonal" class="-mt-14" />
           </div>
           <div class="text-center mt-auto">
             <BaseParagraph size="sm">
@@ -743,7 +1220,7 @@ function useSparkSalesFour() {
               <span>Orders Summary</span>
             </BaseHeading>
           </div>
-          <ExampleApexchartBarOrders />
+          <TairoApexcharts v-bind="barOrders" />
         </BaseCard>
       </div>
       <!-- Column -->
