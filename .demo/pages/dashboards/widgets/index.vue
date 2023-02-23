@@ -131,7 +131,7 @@ definePageMeta({
         title="Upgrade to Pro"
         text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quid censes in Latino fore? Nam ante Aristippus, et ille melius."
         label="Upgrade Now"
-        to="/"
+        to="#/"
         shape="curved"
       />
       <!-- Widget -->

@@ -17,17 +17,17 @@ const demoBreadcrumb = [
     label: 'Home',
     hideLabel: true,
     icon: 'lucide:home',
-    to: '/',
+    to: '#/',
   },
   {
     label: 'Components Hub',
     hideLabel: false,
-    to: '/',
+    to: '#/',
   },
   {
     label: 'Breadcrumbs',
     hideLabel: false,
-    to: '/',
+    to: '#/',
   },
 ]
 
@@ -36,17 +36,17 @@ const demoBreadcrumbOne = [
     label: 'Home',
     hideLabel: false,
     icon: 'lucide:home',
-    to: '/',
+    to: '#/',
   },
   {
     label: 'Products',
     hideLabel: false,
-    to: '/',
+    to: '#/',
   },
   {
     label: 'Laptops',
     hideLabel: false,
-    to: '/',
+    to: '#/',
   },
 ]
 
@@ -55,19 +55,19 @@ const demoBreadcrumbTwo = [
     label: 'Home',
     hideLabel: false,
     icon: 'lucide:home',
-    to: '/',
+    to: '#/',
   },
   {
     label: 'Products',
     hideLabel: false,
     icon: 'lucide:layout-grid',
-    to: '/',
+    to: '#/',
   },
   {
     label: 'Laptops',
     hideLabel: false,
     icon: 'lucide:laptop',
-    to: '/',
+    to: '#/',
   },
 ]
 </script>

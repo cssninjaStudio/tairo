@@ -6,7 +6,7 @@
     orientation="start"
   >
     <BaseDropdownItem
-      to="/"
+      to="#/"
       title="Profile"
       text="View your profile"
     >
@@ -18,7 +18,7 @@
       </template>
     </BaseDropdownItem>
     <BaseDropdownItem
-      to="/"
+      to="#/"
       title="Projects"
       text="View your projects"
     >
@@ -30,7 +30,7 @@
       </template>
     </BaseDropdownItem>
     <BaseDropdownItem
-      to="/"
+      to="#/"
       title="Team"
       text="Manage your team"
     >
@@ -43,7 +43,7 @@
     </BaseDropdownItem>
     <BaseDropdownDivide />
     <BaseDropdownItem
-      to="/"
+      to="#/"
       title="Settings"
       text="Set your preferences"
     >

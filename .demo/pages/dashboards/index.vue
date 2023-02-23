@@ -215,7 +215,7 @@ definePageMeta({
             </BaseParagraph>
             <NuxtLink
               class="font-sans text-white hover:underline underline-offset-4"
-              to="/"
+              to="#/"
             >
               Learn More
             </NuxtLink>

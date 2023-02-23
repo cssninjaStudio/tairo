@@ -25,17 +25,17 @@ const demoBreadcrumb = [
     label: 'Home',
     hideLabel: true,
     icon: 'lucide:home',
-    to: '/',
+    to: '#/',
   },
   {
     label: 'Components Hub',
     hideLabel: false,
-    to: '/',
+    to: '#/',
   },
   {
     label: 'Avatars',
     hideLabel: false,
-    to: '/',
+    to: '#/',
   },
 ]
 </script>

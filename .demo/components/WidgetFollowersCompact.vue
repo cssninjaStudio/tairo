@@ -34,21 +34,21 @@ const followers = [
         <span class="text-muted-400">
           Great News!
           <NuxtLink
-            to="/"
+            to="#/"
             class="underline-offset-2 hover:underline text-primary-500"
           >
             Clarke
           </NuxtLink>
           ,
           <NuxtLink
-            to="/"
+            to="#/"
             class="underline-offset-2 hover:underline text-primary-500"
           >
             John
           </NuxtLink>
           and
           <NuxtLink
-            to="/"
+            to="#/"
             class="underline-offset-2 hover:underline text-primary-500"
           >
             Maggie

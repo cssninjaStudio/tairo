@@ -7,7 +7,7 @@
     header-label="My Team"
   >
     <BaseDropdownItem
-      to="/"
+      to="#/"
       title="Lana Jensen"
       text="Software Engineer"
     >
@@ -20,7 +20,7 @@
       </template>
     </BaseDropdownItem>
     <BaseDropdownItem
-      to="/"
+      to="#/"
       title="Shawn Miller"
       text="Product Manager"
     >
@@ -33,7 +33,7 @@
       </template>
     </BaseDropdownItem>
     <BaseDropdownItem
-      to="/"
+      to="#/"
       title="John Marynski"
       text="Sales Manager"
     >
@@ -47,7 +47,7 @@
     </BaseDropdownItem>
     <BaseDropdownDivide />
     <BaseDropdownItem
-      to="/"
+      to="#/"
       title="Garry Porter"
       text="CEO - Founder"
     >

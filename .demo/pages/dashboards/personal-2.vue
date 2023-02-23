@@ -71,7 +71,7 @@ definePageMeta({
                   </BaseParagraph>
                   <NuxtLink
                     class="font-sans text-white text-sm hover:underline underline-offset-4"
-                    to="/"
+                    to="#/"
                   >
                     Learn More
                   </NuxtLink>
@@ -106,7 +106,7 @@ definePageMeta({
                 <span>Current Projects</span>
               </BaseHeading>
               <NuxtLink
-                to="/"
+                to="#/"
                 class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
               >
                 View All
@@ -127,7 +127,7 @@ definePageMeta({
                 <span>Completion</span>
               </BaseHeading>
               <NuxtLink
-                to="/"
+                to="#/"
                 class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
               >
                 Reports
@@ -148,7 +148,7 @@ definePageMeta({
                 <span>Team Efficiency</span>
               </BaseHeading>
               <NuxtLink
-                to="/"
+                to="#/"
                 class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
               >
                 Reports
@@ -176,7 +176,7 @@ definePageMeta({
                 <span>My Team</span>
               </BaseHeading>
               <NuxtLink
-                to="/"
+                to="#/"
                 class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
               >
                 View All
@@ -198,7 +198,7 @@ definePageMeta({
                 <span>Todo Today</span>
               </BaseHeading>
               <NuxtLink
-                to="/"
+                to="#/"
                 class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
               >
                 View All

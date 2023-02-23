@@ -37,7 +37,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 Notifications
               </h4>
               <NuxtLink
-                to="/"
+                to="#/"
                 class="font-alt text-sm font-semibold text-primary-500"
               >
                 View All
@@ -47,7 +47,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
           <div class="p-4">
             <MenuItem v-slot="{ active }">
               <NuxtLink
-                to="/"
+                to="#/"
                 class="group flex w-full items-center rounded-md p-2 text-sm transition-colors duration-300"
                 :class="[
                   active
@@ -81,7 +81,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
             </MenuItem>
             <MenuItem v-slot="{ active }">
               <NuxtLink
-                to="/"
+                to="#/"
                 class="group flex w-full items-center rounded-md p-2 text-sm transition-colors duration-300"
                 :class="[
                   active
@@ -115,7 +115,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
             </MenuItem>
             <MenuItem v-slot="{ active }">
               <NuxtLink
-                to="/"
+                to="#/"
                 class="group flex w-full items-center rounded-md p-2 text-sm transition-colors duration-300"
                 :class="[
                   active
@@ -149,7 +149,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
             </MenuItem>
             <MenuItem v-slot="{ active }">
               <NuxtLink
-                to="/"
+                to="#/"
                 class="group flex w-full items-center rounded-md p-2 text-sm transition-colors duration-300"
                 :class="[
                   active
@@ -183,7 +183,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
             </MenuItem>
             <MenuItem v-slot="{ active }">
               <NuxtLink
-                to="/"
+                to="#/"
                 class="group flex w-full items-center rounded-md p-2 text-sm transition-colors duration-300"
                 :class="[
                   active

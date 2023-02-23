@@ -271,7 +271,7 @@ definePageMeta({
                         better.
                       </span>
                       <NuxtLink
-                        to="/"
+                        to="#/"
                         class="text-primary-500 underline-offset-4 hover:underline"
                       >
                         Read how
@@ -305,7 +305,7 @@ definePageMeta({
                         Your energy seems a bit unstable. You can improve it.
                       </span>
                       <NuxtLink
-                        to="/"
+                        to="#/"
                         class="text-primary-500 underline-offset-4 hover:underline"
                       >
                         Read how
@@ -339,7 +339,7 @@ definePageMeta({
                         Your oxygen seems a bit unstable. You can improve it.
                       </span>
                       <NuxtLink
-                        to="/"
+                        to="#/"
                         class="text-primary-500 underline-offset-4 hover:underline"
                       >
                         Read how
@@ -373,7 +373,7 @@ definePageMeta({
                         Your overall progress is very good. Make it even better.
                       </span>
                       <NuxtLink
-                        to="/"
+                        to="#/"
                         class="text-primary-500 underline-offset-4 hover:underline"
                       >
                         Read how

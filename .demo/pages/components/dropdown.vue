@@ -44,17 +44,17 @@ definePageMeta({
                     <template #text>View your profile</template>
                   </BaseDropdownItem>
                   <BaseDropdownItem
-                    to="/"
+                    to="#/"
                     title="Projects"
                     text="View your projects"
                   />
                   <BaseDropdownItem
-                    to="/"
+                    to="#/"
                     title="Team"
                     text="Manage your team"
                   />
                   <BaseDropdownItem
-                    to="/"
+                    to="#/"
                     title="Settings"
                     text="Set your preferences"
                   />
@@ -78,22 +78,22 @@ definePageMeta({
                   orientation="end"
                 >
                   <BaseDropdownItem
-                    to="/"
+                    to="#/"
                     title="Profile"
                     text="View your profile"
                   />
                   <BaseDropdownItem
-                    to="/"
+                    to="#/"
                     title="Projects"
                     text="View your projects"
                   />
                   <BaseDropdownItem
-                    to="/"
+                    to="#/"
                     title="Team"
                     text="Manage your team"
                   />
                   <BaseDropdownItem
-                    to="/"
+                    to="#/"
                     title="Settings"
                     text="Set your preferences"
                   />
@@ -123,17 +123,17 @@ definePageMeta({
                     <template #text>View your profile</template>
                   </BaseDropdownItem>
                   <BaseDropdownItem
-                    to="/"
+                    to="#/"
                     title="Projects"
                     text="View your projects"
                   />
                   <BaseDropdownItem
-                    to="/"
+                    to="#/"
                     title="Team"
                     text="Manage your team"
                   />
                   <BaseDropdownItem
-                    to="/"
+                    to="#/"
                     title="Settings"
                     text="Set your preferences"
                   />
@@ -157,22 +157,22 @@ definePageMeta({
                   orientation="start"
                 >
                   <BaseDropdownItem
-                    to="/"
+                    to="#/"
                     title="Profile"
                     text="View your profile"
                   />
                   <BaseDropdownItem
-                    to="/"
+                    to="#/"
                     title="Projects"
                     text="View your projects"
                   />
                   <BaseDropdownItem
-                    to="/"
+                    to="#/"
                     title="Team"
                     text="Manage your team"
                   />
                   <BaseDropdownItem
-                    to="/"
+                    to="#/"
                     title="Settings"
                     text="Set your preferences"
                   />
@@ -200,22 +200,22 @@ definePageMeta({
                   orientation="end"
                 >
                   <BaseDropdownItem
-                    to="/"
+                    to="#/"
                     title="Profile"
                     text="View your profile"
                   />
                   <BaseDropdownItem
-                    to="/"
+                    to="#/"
                     title="Projects"
                     text="View your projects"
                   />
                   <BaseDropdownItem
-                    to="/"
+                    to="#/"
                     title="Team"
                     text="Manage your team"
                   />
                   <BaseDropdownItem
-                    to="/"
+                    to="#/"
                     title="Settings"
                     text="Set your preferences"
                   />
@@ -239,22 +239,22 @@ definePageMeta({
                   orientation="start"
                 >
                   <BaseDropdownItem
-                    to="/"
+                    to="#/"
                     title="Profile"
                     text="View your profile"
                   />
                   <BaseDropdownItem
-                    to="/"
+                    to="#/"
                     title="Projects"
                     text="View your projects"
                   />
                   <BaseDropdownItem
-                    to="/"
+                    to="#/"
                     title="Team"
                     text="Manage your team"
                   />
                   <BaseDropdownItem
-                    to="/"
+                    to="#/"
                     title="Settings"
                     text="Set your preferences"
                   />
@@ -274,22 +274,22 @@ definePageMeta({
               <div class="flex items-end justify-end">
                 <BaseDropdown flavor="text" label="Dropdown" orientation="end">
                   <BaseDropdownItem
-                    to="/"
+                    to="#/"
                     title="Profile"
                     text="View your profile"
                   />
                   <BaseDropdownItem
-                    to="/"
+                    to="#/"
                     title="Projects"
                     text="View your projects"
                   />
                   <BaseDropdownItem
-                    to="/"
+                    to="#/"
                     title="Team"
                     text="Manage your team"
                   />
                   <BaseDropdownItem
-                    to="/"
+                    to="#/"
                     title="Settings"
                     text="Set your preferences"
                   />
@@ -313,7 +313,7 @@ definePageMeta({
                   orientation="start"
                 >
                   <BaseDropdownItem
-                    to="/"
+                    to="#/"
                     title="Profile"
                     text="View your profile"
                   >
@@ -322,7 +322,7 @@ definePageMeta({
                     </template>
                   </BaseDropdownItem>
                   <BaseDropdownItem
-                    to="/"
+                    to="#/"
                     title="Projects"
                     text="View your projects"
                   >
@@ -333,7 +333,7 @@ definePageMeta({
                       />
                     </template>
                   </BaseDropdownItem>
-                  <BaseDropdownItem to="/" title="Team" text="Manage your team">
+                  <BaseDropdownItem to="#/" title="Team" text="Manage your team">
                     <template #end>
                       <Icon
                         name="ph:users-four-duotone"
@@ -343,7 +343,7 @@ definePageMeta({
                   </BaseDropdownItem>
                   <BaseDropdownDivide />
                   <BaseDropdownItem
-                    to="/"
+                    to="#/"
                     title="Settings"
                     text="Set your preferences"
                   >
@@ -374,7 +374,7 @@ definePageMeta({
                   orientation="start"
                 >
                   <BaseDropdownItem
-                    to="/"
+                    to="#/"
                     title="Lana Jensen"
                     text="Software Engineer"
                   >
@@ -387,7 +387,7 @@ definePageMeta({
                     </template>
                   </BaseDropdownItem>
                   <BaseDropdownItem
-                    to="/"
+                    to="#/"
                     title="Shawn Miller"
                     text="Product Manager"
                   >
@@ -400,7 +400,7 @@ definePageMeta({
                     </template>
                   </BaseDropdownItem>
                   <BaseDropdownItem
-                    to="/"
+                    to="#/"
                     title="John Marynski"
                     text="Sales Manager"
                   >
@@ -414,7 +414,7 @@ definePageMeta({
                   </BaseDropdownItem>
                   <BaseDropdownDivide />
                   <BaseDropdownItem
-                    to="/"
+                    to="#/"
                     title="Garry Porter"
                     text="CEO - Founder"
                   >
@@ -447,7 +447,7 @@ definePageMeta({
                   header-label="My Team"
                 >
                   <BaseDropdownItem
-                    to="/"
+                    to="#/"
                     title="Lana Jensen"
                     text="Software Engineer"
                   >
@@ -460,7 +460,7 @@ definePageMeta({
                     </template>
                   </BaseDropdownItem>
                   <BaseDropdownItem
-                    to="/"
+                    to="#/"
                     title="Shawn Miller"
                     text="Product Manager"
                   >
@@ -473,7 +473,7 @@ definePageMeta({
                     </template>
                   </BaseDropdownItem>
                   <BaseDropdownItem
-                    to="/"
+                    to="#/"
                     title="John Marynski"
                     text="Sales Manager"
                   >
@@ -487,7 +487,7 @@ definePageMeta({
                   </BaseDropdownItem>
                   <BaseDropdownDivide />
                   <BaseDropdownItem
-                    to="/"
+                    to="#/"
                     title="Garry Porter"
                     text="CEO - Founder"
                   >
