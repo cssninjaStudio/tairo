@@ -10,8 +10,6 @@ definePageMeta({
   },
 })
 
-// @unocss-include
-
 const team = [
   {
     id: 0,

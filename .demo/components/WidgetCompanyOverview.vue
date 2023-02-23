@@ -1,5 +1,3 @@
-<script setup lang="ts"></script>
-
 <template>
   <div class="h-full flex flex-col">
     <div class="relative w-20 h-20 mx-auto mb-4">

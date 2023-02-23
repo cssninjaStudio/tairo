@@ -157,7 +157,6 @@ export default defineComponent({
       let source = props.source
       const _theme = theme.value
       if (!source || !processors.value || htmlTheme.value[_theme]) return
-      console.log('set markdown', theme)
 
       const vfile = await processors.value[_theme].process(source)
       htmlTheme.value[_theme] = vfile.toString()
