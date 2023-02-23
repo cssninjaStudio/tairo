@@ -8,11 +8,7 @@ export default defineNuxtConfig({
     // shims: false,
     strict: true,
   },
-  modules: [
-    '@nuxt/devtools',
-    'nuxt-component-meta', 
-    'nuxt-swiper'
-  ],
+  modules: ['@nuxt/devtools', 'nuxt-component-meta', 'nuxt-swiper'],
   app: {
     // keepalive: true,
     layoutTransition: {

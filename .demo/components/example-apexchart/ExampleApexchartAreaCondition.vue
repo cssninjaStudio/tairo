@@ -5,7 +5,7 @@ const { LazyApexCharts, isLoaded } = useLazyApexCharts()
 /**
  * This is example data for the area chart
  * @see https://apexcharts.com/docs/chart-types/area-chart/
- * 
+ *
  * @note the `as const` is to make sure the type is inlined in the compiled code
  * instead of being a reference to the object in memory.
  */
@@ -52,7 +52,11 @@ const series = ref([
 
 <template>
   <div>
-    <BasePlaceload class="w-[calc(100%-32px)] m-4" v-if="!isLoaded" :style="{ height: `${height - 32}px` }" />
+    <BasePlaceload
+      class="w-[calc(100%-32px)] m-4"
+      v-if="!isLoaded"
+      :style="{ height: `${height - 32}px` }"
+    />
     <ClientOnly>
       <LazyApexCharts
         v-show="isLoaded"

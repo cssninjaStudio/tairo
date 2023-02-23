@@ -59,36 +59,24 @@ const options = {
 const series = ref([
   {
     name: 'Tonic',
-    data: generateDayWiseTimeSeries(
-      new Date('Oct 11 2020 GMT').getTime(),
-      20,
-      {
-        min: 10,
-        max: 60,
-      },
-    ),
+    data: generateDayWiseTimeSeries(new Date('Oct 11 2020 GMT').getTime(), 20, {
+      min: 10,
+      max: 60,
+    }),
   },
   {
     name: 'Tantra',
-    data: generateDayWiseTimeSeries(
-      new Date('Oct 11 2020 GMT').getTime(),
-      20,
-      {
-        min: 10,
-        max: 60,
-      },
-    ),
+    data: generateDayWiseTimeSeries(new Date('Oct 11 2020 GMT').getTime(), 20, {
+      min: 10,
+      max: 60,
+    }),
   },
   {
     name: 'Vital',
-    data: generateDayWiseTimeSeries(
-      new Date('Oct 11 2020 GMT').getTime(),
-      30,
-      {
-        min: 10,
-        max: 60,
-      },
-    ),
+    data: generateDayWiseTimeSeries(new Date('Oct 11 2020 GMT').getTime(), 30, {
+      min: 10,
+      max: 60,
+    }),
   },
 ])
 
@@ -113,7 +101,11 @@ function generateDayWiseTimeSeries(
 
 <template>
   <div>
-    <BasePlaceload class="w-[calc(100%-32px)] m-4" v-if="!isLoaded" :style="{ height: `${height - 32}px` }" />
+    <BasePlaceload
+      class="w-[calc(100%-32px)] m-4"
+      v-if="!isLoaded"
+      :style="{ height: `${height - 32}px` }"
+    />
     <ClientOnly>
       <LazyApexCharts
         v-show="isLoaded"

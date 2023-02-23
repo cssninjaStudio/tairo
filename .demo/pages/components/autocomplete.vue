@@ -19,7 +19,6 @@ definePageMeta({
   },
 })
 
-
 const frameworks = [
   {
     id: 1,

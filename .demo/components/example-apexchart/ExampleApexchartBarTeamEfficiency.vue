@@ -15,15 +15,15 @@ const height = 250
 const series = ref([
   {
     name: 'Design',
-    data: [ -26, -15, -13, -14, -9, -12, -7, -10, -4 ],
+    data: [-26, -15, -13, -14, -9, -12, -7, -10, -4],
   },
   {
     name: 'Development',
-    data: [ 6, 15, 31, 28, 17, 35, 21, 44, 24 ],
+    data: [6, 15, 31, 28, 17, 35, 21, 44, 24],
   },
   {
     name: 'Management',
-    data: [ -35, -29, -34, -44, -25, -22, -18, -17, -29 ],
+    data: [-35, -29, -34, -44, -25, -22, -18, -17, -29],
   },
 ])
 
@@ -78,7 +78,11 @@ const options = {
 
 <template>
   <div>
-    <BasePlaceload class="w-[calc(100%-32px)] m-4" v-if="!isLoaded" :style="{ height: `${height - 32}px` }" />
+    <BasePlaceload
+      class="w-[calc(100%-32px)] m-4"
+      v-if="!isLoaded"
+      :style="{ height: `${height - 32}px` }"
+    />
     <ClientOnly>
       <LazyApexCharts
         v-show="isLoaded"

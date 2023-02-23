@@ -1,4 +1,3 @@
-
 const useApexChartLoaded = () => useState('apex-loaded', () => false)
 
 /**
@@ -22,7 +21,7 @@ const LazyApexCharts = defineAsyncComponent({
 export function useLazyApexCharts() {
   const isLoaded = useApexChartLoaded()
 
-  return { 
+  return {
     LazyApexCharts,
     isLoaded,
   }

@@ -64,7 +64,11 @@ const series = ref([57, 86])
 
 <template>
   <div>
-    <BasePlaceload class="w-[calc(100%-32px)] m-4" v-if="!isLoaded" :style="{ height: `${height - 32}px` }" />
+    <BasePlaceload
+      class="w-[calc(100%-32px)] m-4"
+      v-if="!isLoaded"
+      :style="{ height: `${height - 32}px` }"
+    />
     <ClientOnly>
       <LazyApexCharts
         v-show="isLoaded"
