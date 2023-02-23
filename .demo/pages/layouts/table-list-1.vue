@@ -3,38 +3,38 @@ definePageMeta({
   title: 'Table List',
 })
 
-const filter = ref('')
-const perPage = ref('10')
+const route = useRoute()
+const router = useRouter()
+const page = computed(() => parseInt((route.query.page as string) ?? '1'))
 
-const { data, pending, error, refresh } = await useAsyncData(async () => {
-  try {
-    // Create an artificial delay
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-    // after the delay is over
-    return $fetch('/api/company/members/')
-  } catch (error: any) {
-    // log error and re-throw error
-    console.log('An error occured while retreiving company members info')
-    throw error
+const filter = ref('')
+const perPage = ref(10)
+
+watch([filter, perPage], () => {
+  router.push({
+    query: {
+      page: undefined,
+    },
+  })
+})
+
+const query = computed(() => {
+  return {
+    filter: filter.value,
+    perPage: perPage.value,
+    page: page.value,
   }
 })
+
+const { data, pending, error, refresh } = await useFetch(
+  '/api/company/members/',
+  {
+    query,
+  },
+)
 
 // Simplified useFetch() method as a superset of useAsyncData()
 // const { data, pending, error, refresh } = await useFetch('/api/company/members/')
-
-const filteredItems = computed(() => {
-  if (data.value) {
-    if (!filter.value) {
-      return data.value.slice(0, parseInt(perPage.value, 10))
-    }
-    const filterRe = new RegExp(filter.value, 'i')
-    return data.value.slice(0, parseInt(perPage.value, 10)).filter((item) => {
-      return [item.username, item.location, item.position].some((item) =>
-        item.match(filterRe),
-      )
-    })
-  }
-})
 </script>
 
 <template>
@@ -58,14 +58,14 @@ const filteredItems = computed(() => {
             wrapper: 'w-full sm:w-40',
           }"
         >
-          <option value="10">10 per page</option>
-          <option value="25">25 per page</option>
-          <option value="50">50 per page</option>
-          <option value="100">100 per page</option>
+          <option :value="10">10 per page</option>
+          <option :value="25">25 per page</option>
+          <option :value="50">50 per page</option>
+          <option :value="100">100 per page</option>
         </BaseSelect>
       </template>
       <div>
-        <div v-if="filteredItems?.length === 0">
+        <div v-if="!pending && data?.data.length === 0">
           <BasePlaceholderPage
             title="No matching results"
             subtitle="Looks like we couldn't find any matching results for your search terms. Try other search terms."
@@ -106,7 +106,7 @@ const filteredItems = computed(() => {
                 <BaseTableHeading uppercase spaced>Action</BaseTableHeading>
               </template>
 
-              <BaseTableRow v-for="item in filteredItems" :key="item.id">
+              <BaseTableRow v-for="item in data?.data" :key="item.id">
                 <BaseTableCell spaced>
                   <div class="flex items-center">
                     <BaseCheckbox
@@ -206,11 +206,9 @@ const filteredItems = computed(() => {
           </div>
           <div class="mt-6">
             <BasePagination
-              :total="100"
-              :item-per-page="10"
-              :total-items="100"
-              :current="1"
-              :limit="10"
+              :total-items="data?.total ?? 0"
+              :item-per-page="perPage"
+              :current-page="page"
               shape="curved"
             />
           </div>
