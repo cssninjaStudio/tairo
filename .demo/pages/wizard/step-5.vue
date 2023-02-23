@@ -45,7 +45,7 @@ const team: TeamMember[] = [
 const search = ref('')
 const filteredUsers = ref<Omit<TeamMember, 'role'>[]>([])
 
-const addTeammate = (teammate: Omit<TeamMember, 'role'>) => {
+function addTeammate(teammate: Omit<TeamMember, 'role'>) {
   project.team?.push({
     ...teammate,
     role: 'reader',
@@ -65,10 +65,10 @@ function removeTeammate(index: number) {
   }
 }
 
-// const setTeammateRole = (
+// function setTeammateRole (
 //   teammate: Omit<TeamMember, 'role'>,
 //   role: TeamMemberRole,
-// ) => {
+// ) {
 //   const index = project.team?.findIndex((item) => {
 //     return item.name === teammate.name
 //   })
@@ -78,7 +78,7 @@ function removeTeammate(index: number) {
 //   }
 // }
 
-// const removeTeammate = (teammate: Omit<TeamMember, 'role'>) => {
+// function removeTeammate(teammate: Omit<TeamMember, 'role'>) {
 //   const index = project.team?.findIndex((item) => {
 //     return item.name === teammate.name
 //   })
@@ -87,7 +87,7 @@ function removeTeammate(index: number) {
 //   }
 // }
 
-const getRoleLevel = (teammate: TeamMember) => {
+function getRoleLevel(teammate: TeamMember) {
   switch (teammate.role) {
     case 'collaborator':
       return 1

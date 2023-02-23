@@ -33,7 +33,7 @@ const filteredItems = computed(() => {
   }
 })
 
-const difficultyLabel = (itemDifficulty: number) => {
+function difficultyLabel(itemDifficulty: number) {
   switch (itemDifficulty) {
     case 1:
       return 'Very easy'

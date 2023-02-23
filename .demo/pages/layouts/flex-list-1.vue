@@ -35,7 +35,7 @@ const filteredItems = computed(() => {
   }
 })
 
-const statusColor = (itemStatus: string) => {
+function statusColor(itemStatus: string) {
   switch (itemStatus) {
     case 'online':
       return 'success'

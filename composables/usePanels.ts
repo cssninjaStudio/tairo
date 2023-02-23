@@ -40,7 +40,7 @@ export interface LayoutPanel {
  * </template>
  * ```
  */
-export const usePanels = () => {
+export function usePanels() {
   const app = useAppConfig()
 
   const panels = computed(

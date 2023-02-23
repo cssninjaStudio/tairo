@@ -504,7 +504,7 @@ onMounted(() => {
   }
 })
 
-const selectConversation = (id: number) => {
+function selectConversation(id: number) {
   loading.value = true
   setTimeout(() => {
     activeConversation.value = id

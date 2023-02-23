@@ -283,7 +283,7 @@ onMounted(() => {
     })
 
     map.value.on('style.load', () => {
-      const loadingStyles = () => {
+      function loadingStyles() {
         if (!map.value?.isStyleLoaded()) {
           setTimeout(loadingStyles, 1500)
           return

@@ -4,7 +4,7 @@ export interface TocItem {
   level: number
 }
 
-export const useToc = () => {
+export function useToc() {
   const toc = useState<TocItem[]>('toc', () => [])
 
   function register(item: TocItem) {

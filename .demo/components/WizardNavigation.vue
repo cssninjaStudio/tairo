@@ -13,7 +13,7 @@ const currentStepName = computed(() => {
 const target = ref(null)
 const open = ref(false)
 
-const openDropdown = () => {
+function openDropdown() {
   open.value = true
 }
 onClickOutside(target, () => (open.value = false))

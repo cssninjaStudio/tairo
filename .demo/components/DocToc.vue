@@ -27,7 +27,7 @@ watch(
   },
 )
 
-const getTocItemClass = (item: TocItem) => {
+function getTocItemClass(item: TocItem) {
   const classes = []
 
   if (item.level > 2) {
