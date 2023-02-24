@@ -11,7 +11,7 @@ export default defineNuxtConfig({
   modules: [
     'nuxt-swiper',
     //
-    '@nuxt/devtools',
+    //'@nuxt/devtools',
     'nuxt-component-meta',
   ],
   app: {
