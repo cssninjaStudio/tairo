@@ -1,4 +1,3 @@
-```vue
 <script setup lang="ts">
 const accordion = [
   {
@@ -23,7 +22,16 @@ const accordion = [
   <BaseAccordion
     :items="accordion"
     exclusive
-    action="chevron"
+    shape="straight"
+  />
+  <BaseAccordion
+    :items="accordion"
+    inclusive
+    shape="rounded"
+  />
+  <BaseAccordion
+    :items="accordion"
+    exclusive
+    shape="curved"
   />
 </template>
-```

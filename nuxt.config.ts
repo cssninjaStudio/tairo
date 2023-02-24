@@ -1,10 +1,6 @@
-import { createResolver, logger } from '@nuxt/kit'
-
-import { name, version } from './package.json'
+import { createResolver } from '@nuxt/kit'
 
 const { resolve } = createResolver(import.meta.url)
-
-logger.success(`Using ${name} v${version}`)
 
 const envModules = {
   ui: process?.env?.THEME_DEV_UI_PATH || '@cssninja/nuxt-ui',
@@ -12,10 +8,11 @@ const envModules = {
 
 export default defineNuxtConfig({
   extends: envModules.ui,
-  modules: ['nuxt-config-schema', '@nuxt/image-edge'],
-  // alias: {
-  //   '@': '/<rootDir>',
-  // },
+  modules: [
+    'nuxt-config-schema',
+     '@nuxt/image-edge',
+     './modules/purge-comments',
+  ],
   css: [
     resolve('./assets/css/modules/variables.css'),
     resolve('./assets/css/modules/slider.css'),
@@ -36,9 +33,7 @@ export default defineNuxtConfig({
       assetsInlineLimit: 4096 * 2,
     },
     define: {
-      'process.env': {
-        VSCODE_TEXTMATE_DEBUG: false,
-      },
+      'process.env.VSCODE_TEXTMATE_DEBUG': false,
     },
   },
 })

@@ -90,7 +90,7 @@ const activeTab = ref('tab-1')
               <p class="font-sans text-xs text-muted-400">Product Manager</p>
             </div>
             <NuxtLink
-              to="/"
+              to="#/"
               class="ml-auto flex h-9 w-9 items-center justify-center rounded-full border border-muted-200 text-muted-400 transition-colors duration-300 hover:border-primary-500 hover:text-primary-500 dark:border-muted-500 dark:hover:border-primary-500"
             >
               <Icon name="feather:arrow-right" class="h-4 w-4" />
@@ -118,7 +118,7 @@ const activeTab = ref('tab-1')
               <p class="font-sans text-xs text-muted-400">Mobile Developer</p>
             </div>
             <NuxtLink
-              to="/"
+              to="#/"
               class="ml-auto flex h-9 w-9 items-center justify-center rounded-full border border-muted-200 text-muted-400 transition-colors duration-300 hover:border-primary-500 hover:text-primary-500 dark:border-muted-500 dark:hover:border-primary-500"
             >
               <Icon name="feather:arrow-right" class="h-4 w-4" />
@@ -146,7 +146,7 @@ const activeTab = ref('tab-1')
               <p class="font-sans text-xs text-muted-400">Frontend Developer</p>
             </div>
             <NuxtLink
-              to="/"
+              to="#/"
               class="ml-auto flex h-9 w-9 items-center justify-center rounded-full border border-muted-200 text-muted-400 transition-colors duration-300 hover:border-primary-500 hover:text-primary-500 dark:border-muted-500 dark:hover:border-primary-500"
             >
               <Icon name="feather:arrow-right" class="h-4 w-4" />
@@ -174,7 +174,7 @@ const activeTab = ref('tab-1')
               <p class="font-sans text-xs text-muted-400">Sales Manager</p>
             </div>
             <NuxtLink
-              to="/"
+              to="#/"
               class="ml-auto flex h-9 w-9 items-center justify-center rounded-full border border-muted-200 text-muted-400 transition-colors duration-300 hover:border-primary-500 hover:text-primary-500 dark:border-muted-500 dark:hover:border-primary-500"
             >
               <Icon name="feather:arrow-right" class="h-4 w-4" />
@@ -207,7 +207,7 @@ const activeTab = ref('tab-1')
                 <p class="font-sans text-xs text-muted-400">getslicer.io</p>
               </div>
               <NuxtLink
-                to="/"
+                to="#/"
                 class="ml-auto flex h-9 w-9 items-center justify-center rounded-full border border-muted-200 text-muted-400 transition-colors duration-300 hover:border-primary-500 hover:text-primary-500 dark:border-muted-500 dark:hover:border-primary-500"
               >
                 <Icon name="feather:arrow-right" class="h-4 w-4" />
@@ -285,7 +285,7 @@ const activeTab = ref('tab-1')
                 <p class="font-sans text-xs text-muted-400">metamovies.co</p>
               </div>
               <NuxtLink
-                to="/"
+                to="#/"
                 class="ml-auto flex h-9 w-9 items-center justify-center rounded-full border border-muted-200 text-muted-400 transition-colors duration-300 hover:border-primary-500 hover:text-primary-500 dark:border-muted-500 dark:hover:border-primary-500"
               >
                 <Icon name="feather:arrow-right" class="h-4 w-4" />
@@ -345,7 +345,7 @@ const activeTab = ref('tab-1')
                 <p class="font-sans text-xs text-muted-400">fastpizza.com</p>
               </div>
               <NuxtLink
-                to="/"
+                to="#/"
                 class="ml-auto flex h-9 w-9 items-center justify-center rounded-full border border-muted-200 text-muted-400 transition-colors duration-300 hover:border-primary-500 hover:text-primary-500 dark:border-muted-500 dark:hover:border-primary-500"
               >
                 <Icon name="feather:arrow-right" class="h-4 w-4" />

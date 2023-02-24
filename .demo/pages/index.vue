@@ -1,5 +1,4 @@
 <script setup lang="ts">
-const app = useAppConfig()
 definePageMeta({
   breadcrumb: {
     label: 'Home',
@@ -7,6 +6,8 @@ definePageMeta({
     icon: 'lucide:home',
   },
 })
+
+const app = useAppConfig()
 </script>
 
 <template>

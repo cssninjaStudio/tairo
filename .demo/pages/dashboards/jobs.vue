@@ -204,7 +204,7 @@ const jobs = [
             v-model="selectedType"
             shape="curved"
             icon="lucide:briefcase"
-            label="Job type"
+            label=""
             hideLabel
           >
             <option value="">Select a type</option>
@@ -220,7 +220,7 @@ const jobs = [
             v-model="selectedRange"
             shape="curved"
             icon="lucide:dollar-sign"
-            label="Salary"
+            label=""
             hideLabel
           >
             <option value="">Select a range</option>
@@ -557,15 +557,15 @@ const jobs = [
                     <div>
                       <BaseAvatarGroup
                         :avatars="job.applicants"
-                        :limit="3"
+                        :limit="2"
                         size="xs"
                       />
                     </div>
                     <div class="flex gap-2">
-                      <BaseButton shape="curved" color="primary" class="w-28">
+                      <BaseButton shape="curved" color="primary" class="w-24">
                         Apply
                       </BaseButton>
-                      <BaseButton shape="curved" color="default" class="w-28">
+                      <BaseButton shape="curved" color="default" class="w-24">
                         Details
                       </BaseButton>
                     </div>

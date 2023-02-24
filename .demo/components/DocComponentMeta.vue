@@ -2,7 +2,6 @@
 import { kebabCase } from 'scule'
 import type { ComponentMeta } from 'vue-component-meta'
 import { Component } from '@nuxt/schema'
-// @ts-ignore
 import type { NuxtComponentMetaNames } from '#nuxt-component-meta/types'
 export type Componendivata = Component & { meta: ComponentMeta }
 

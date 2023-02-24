@@ -9,11 +9,6 @@ import loading from '~/documentation/form/input/loading.md?raw'
 import rounded from '~/documentation/form/input/rounded.md?raw'
 import straight from '~/documentation/form/input/straight.md?raw'
 
-const inputStraight = ref('')
-const inputRounded = ref('')
-const inputCurved = ref('')
-const inputFull = ref('')
-
 definePageMeta({
   title: 'Inputs',
   documentation: {
@@ -21,6 +16,11 @@ definePageMeta({
     components: ['BaseInput'],
   },
 })
+
+const inputStraight = ref('')
+const inputRounded = ref('')
+const inputCurved = ref('')
+const inputFull = ref('')
 </script>
 
 <template>

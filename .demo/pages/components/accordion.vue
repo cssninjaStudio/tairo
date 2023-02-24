@@ -1,27 +1,14 @@
 <script setup lang="ts">
-import chevron from '~/documentation/accordion/chevron.md?raw'
-import exclusive from '~/documentation/accordion/exclusive.md?raw'
-import inclusive from '~/documentation/accordion/inclusive.md?raw'
-import plus from '~/documentation/accordion/plus.md?raw'
-import shapes from '~/documentation/accordion/shapes.md?raw'
-
-const accordion = [
-  {
-    title: 'Accordion Item 1',
-    content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quo tandem modo? Inde igitur, inquit, ordiendum est. Primum quid tu dicis breve? Duo Reges: constructio interrete.',
-  },
-  {
-    title: 'Accordion Item 2',
-    content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quo tandem modo? Inde igitur, inquit, ordiendum est. Primum quid tu dicis breve? Duo Reges: constructio interrete.',
-  },
-  {
-    title: 'Accordion Item 3',
-    content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quo tandem modo? Inde igitur, inquit, ordiendum est. Primum quid tu dicis breve? Duo Reges: constructio interrete.',
-  },
-]
+import ChevronDemo from '~/documentation/accordion/chevron.vue'
+import chevronRaw from '~/documentation/accordion/chevron.vue?raw'
+import ExclusiveDemo from '~/documentation/accordion/exclusive.vue'
+import exclusiveRaw from '~/documentation/accordion/exclusive.vue?raw'
+import InclusiveDemo from '~/documentation/accordion/inclusive.vue'
+import inclusiveRaw from '~/documentation/accordion/inclusive.vue?raw'
+import PlusDemo from '~/documentation/accordion/plus.vue'
+import plusRaw from '~/documentation/accordion/plus.vue?raw'
+import ShapesDemo from '~/documentation/accordion/shapes.vue'
+import shapesRaw from '~/documentation/accordion/shapes.vue?raw'
 
 definePageMeta({
   title: 'Accordions',
@@ -30,6 +17,10 @@ definePageMeta({
     components: ['BaseAccordion', 'BaseAccordionItem'],
   },
 })
+
+function wrapVueMarkdown(source: string) {
+  return '```vue\n' + source + '\n```'
+}
 </script>
 
 <template>
@@ -46,11 +37,11 @@ definePageMeta({
           <DocComponent label="Inclusive accordion example">
             <template #demo>
               <div class="flex flex-col gap-4">
-                <BaseAccordion :items="accordion" />
+                <InclusiveDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="inclusive" class="prose max-w-full" />
+              <DocMarkdown :source="wrapVueMarkdown(inclusiveRaw)" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -60,11 +51,11 @@ definePageMeta({
           <DocComponent label="Exclusive accordion example">
             <template #demo>
               <div class="flex flex-col gap-4">
-                <BaseAccordion :items="accordion" exclusive />
+                <ExclusiveDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="exclusive" class="prose max-w-full" />
+              <DocMarkdown :source="wrapVueMarkdown(exclusiveRaw)" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -74,13 +65,11 @@ definePageMeta({
           <DocComponent label="Accordion shapes examples">
             <template #demo>
               <div class="grid gap-4 md:grid-cols-3">
-                <BaseAccordion :items="accordion" exclusive shape="straight" />
-                <BaseAccordion :items="accordion" shape="rounded" />
-                <BaseAccordion :items="accordion" exclusive shape="curved" />
+                <ShapesDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="shapes" class="prose max-w-full" />
+              <DocMarkdown :source="wrapVueMarkdown(shapesRaw)" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -90,11 +79,11 @@ definePageMeta({
           <DocComponent label="Chevron accordion example">
             <template #demo>
               <div class="flex flex-col gap-4">
-                <BaseAccordion :items="accordion" exclusive action="chevron" />
+                <ChevronDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="chevron" class="prose max-w-full" />
+              <DocMarkdown :source="wrapVueMarkdown(chevronRaw)" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>
@@ -104,11 +93,11 @@ definePageMeta({
           <DocComponent label="Plus accordion example">
             <template #demo>
               <div class="flex flex-col gap-4">
-                <BaseAccordion :items="accordion" action="plus" />
+                <PlusDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="plus" class="prose max-w-full" />
+              <DocMarkdown :source="wrapVueMarkdown(plusRaw)" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection>

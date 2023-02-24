@@ -3,6 +3,98 @@ definePageMeta({
   title: 'Stocks',
   layout: 'sidebar',
 })
+
+const barProfit = reactive(useBarProfit())
+
+function useBarProfit() {
+  const { primary } = useTailwindColors()
+  const type = 'bar'
+  const height = 255
+
+  const options = {
+    chart: {
+      toolbar: {
+        show: false,
+      },
+    },
+    plotOptions: {
+      bar: {
+        dataLabels: {
+          position: 'top', // top, center, bottom
+        },
+      },
+    },
+    dataLabels: {
+      enabled: true,
+      formatter: function (val: string) {
+        return val + '%'
+      },
+      offsetY: -20,
+      style: {
+        fontSize: '12px',
+        colors: ['#304758'],
+      },
+    },
+    xaxis: {
+      categories: ['May', 'Jun', 'Jul', 'Aug', 'Sep'],
+      position: 'top',
+      axisBorder: {
+        show: false,
+      },
+      axisTicks: {
+        show: false,
+      },
+      crosshairs: {
+        fill: {
+          type: 'gradient',
+          gradient: {
+            colorFrom: '#D8E3F0',
+            colorTo: '#BED1E6',
+            stops: [0, 100],
+            opacityFrom: 0.4,
+            opacityTo: 0.5,
+          },
+        },
+      },
+      tooltip: {
+        enabled: true,
+      },
+    },
+    yaxis: {
+      axisBorder: {
+        show: false,
+      },
+      axisTicks: {
+        show: false,
+      },
+      labels: {
+        show: false,
+        formatter: function (val: string) {
+          return val + '%'
+        },
+      },
+    },
+    colors: [primary.value],
+    title: {
+      text: undefined,
+      align: 'left',
+    },
+  }
+
+  const series = ref([
+    {
+      name: 'Ratio',
+      data: [2.3, 3.1, 4.0, 10.1, 4.0],
+    },
+  ])
+
+  return {
+    type,
+    height,
+    options,
+    series,
+  }
+}
 </script>
 
 <template>
@@ -12,7 +104,7 @@ definePageMeta({
       class="flex justify-around gap-6 pb-8 overflow-x-auto ltablet:overflow-visible lg:overflow-visible"
     >
       <!-- Item -->
-      <NuxtLink to="/" class="group flex-1 flex flex-col text-center">
+      <NuxtLink to="#/" class="group flex-1 flex flex-col text-center">
         <div
           class="h-16 w-16 mx-auto flex items-center justify-center mask mask-hexed bg-muted-200 dark:bg-muted-700 group-hover:bg-yellow-400 dark:group-hover:bg-yellow-400 scale-90 group-hover:scale-90 group-hover:-translate-y-1 transition-all duration-300"
         >
@@ -33,7 +125,7 @@ definePageMeta({
         </BaseHeading>
       </NuxtLink>
       <!-- Item -->
-      <NuxtLink to="/" class="group flex-1 flex flex-col text-center">
+      <NuxtLink to="#/" class="group flex-1 flex flex-col text-center">
         <div
           class="h-16 w-16 mx-auto flex items-center justify-center mask mask-hexed bg-muted-200 dark:bg-muted-700 group-hover:bg-primary-500 dark:group-hover:bg-primary-500 scale-90 group-hover:scale-90 group-hover:-translate-y-1 transition-all duration-300"
         >
@@ -57,7 +149,7 @@ definePageMeta({
         </BaseHeading>
       </NuxtLink>
       <!-- Item -->
-      <NuxtLink to="/" class="group flex-1 flex flex-col text-center">
+      <NuxtLink to="#/" class="group flex-1 flex flex-col text-center">
         <div
           class="h-16 w-16 mx-auto flex items-center justify-center mask mask-hexed bg-muted-200 dark:bg-muted-700 group-hover:bg-success-500 dark:group-hover:bg-success-500 scale-90 group-hover:scale-90 group-hover:-translate-y-1 transition-all duration-300"
         >
@@ -78,7 +170,7 @@ definePageMeta({
         </BaseHeading>
       </NuxtLink>
       <!-- Item -->
-      <NuxtLink to="/" class="group flex-1 flex flex-col text-center">
+      <NuxtLink to="#/" class="group flex-1 flex flex-col text-center">
         <div
           class="h-16 w-16 mx-auto flex items-center justify-center mask mask-hexed bg-muted-200 dark:bg-muted-700 group-hover:bg-indigo-500 dark:group-hover:bg-indigo-500 scale-90 group-hover:scale-90 group-hover:-translate-y-1 transition-all duration-300"
         >
@@ -99,7 +191,7 @@ definePageMeta({
         </BaseHeading>
       </NuxtLink>
       <!-- Item -->
-      <NuxtLink to="/" class="group flex-1 flex flex-col text-center">
+      <NuxtLink to="#/" class="group flex-1 flex flex-col text-center">
         <div
           class="h-16 w-16 mx-auto flex items-center justify-center mask mask-hexed bg-muted-200 dark:bg-muted-700 group-hover:bg-lime-500 dark:group-hover:bg-lime-500 scale-90 group-hover:scale-90 group-hover:-translate-y-1 transition-all duration-300"
         >
@@ -120,7 +212,7 @@ definePageMeta({
         </BaseHeading>
       </NuxtLink>
       <!-- Item -->
-      <NuxtLink to="/" class="group flex-1 flex flex-col text-center">
+      <NuxtLink to="#/" class="group flex-1 flex flex-col text-center">
         <div
           class="h-16 w-16 mx-auto flex items-center justify-center mask mask-hexed bg-muted-200 dark:bg-muted-700 group-hover:bg-sky-500 dark:group-hover:bg-sky-500 scale-90 group-hover:scale-90 group-hover:-translate-y-1 transition-all duration-300"
         >
@@ -141,7 +233,7 @@ definePageMeta({
         </BaseHeading>
       </NuxtLink>
       <!-- Item -->
-      <NuxtLink to="/" class="group flex-1 flex flex-col text-center">
+      <NuxtLink to="#/" class="group flex-1 flex flex-col text-center">
         <div
           class="h-16 w-16 mx-auto flex items-center justify-center mask mask-hexed bg-muted-200 dark:bg-muted-700 group-hover:bg-orange-500 dark:group-hover:bg-orange-500 scale-90 group-hover:scale-90 group-hover:-translate-y-1 transition-all duration-300"
         >
@@ -162,7 +254,7 @@ definePageMeta({
         </BaseHeading>
       </NuxtLink>
       <!-- Item -->
-      <NuxtLink to="/" class="group flex-1 flex flex-col text-center">
+      <NuxtLink to="#/" class="group flex-1 flex flex-col text-center">
         <div
           class="h-16 w-16 mx-auto flex items-center justify-center mask mask-hexed bg-muted-200 dark:bg-muted-700 group-hover:bg-rose-500 dark:group-hover:bg-rose-500 scale-90 group-hover:scale-90 group-hover:-translate-y-1 transition-all duration-300"
         >
@@ -203,13 +295,13 @@ definePageMeta({
               orientation="end"
               class="z-20"
             >
-              <BaseDropdownItem to="/" title="Invest" text="Buys more stocks">
+              <BaseDropdownItem to="#/" title="Invest" text="Buys more stocks">
                 <template #start>
                   <Icon name="ph:coin-duotone" class="w-5 h-5 block mr-2" />
                 </template>
               </BaseDropdownItem>
               <BaseDropdownItem
-                to="/"
+                to="#/"
                 title="Benchmark"
                 text="Compare other sources"
               >
@@ -220,13 +312,17 @@ definePageMeta({
                   />
                 </template>
               </BaseDropdownItem>
-              <BaseDropdownItem to="/" title="Trade" text="View opportunities">
+              <BaseDropdownItem to="#/" title="Trade" text="View opportunities">
                 <template #start>
                   <Icon name="ph:bank-duotone" class="w-5 h-5 block mr-2" />
                 </template>
               </BaseDropdownItem>
               <BaseDropdownDivide />
-              <BaseDropdownItem to="/" title="Wallet" text="Manage your wallet">
+              <BaseDropdownItem
+                to="#/"
+                title="Wallet"
+                text="Manage your wallet"
+              >
                 <template #start>
                   <Icon name="ph:wallet-duotone" class="w-5 h-5 block mr-2" />
                 </template>
@@ -290,13 +386,13 @@ definePageMeta({
               orientation="end"
               class="z-20"
             >
-              <BaseDropdownItem to="/" title="Invest" text="Buys more stocks">
+              <BaseDropdownItem to="#/" title="Invest" text="Buys more stocks">
                 <template #start>
                   <Icon name="ph:coin-duotone" class="w-5 h-5 block mr-2" />
                 </template>
               </BaseDropdownItem>
               <BaseDropdownItem
-                to="/"
+                to="#/"
                 title="Benchmark"
                 text="Compare other sources"
               >
@@ -307,13 +403,17 @@ definePageMeta({
                   />
                 </template>
               </BaseDropdownItem>
-              <BaseDropdownItem to="/" title="Trade" text="View opportunities">
+              <BaseDropdownItem to="#/" title="Trade" text="View opportunities">
                 <template #start>
                   <Icon name="ph:bank-duotone" class="w-5 h-5 block mr-2" />
                 </template>
               </BaseDropdownItem>
               <BaseDropdownDivide />
-              <BaseDropdownItem to="/" title="Wallet" text="Manage your wallet">
+              <BaseDropdownItem
+                to="#/"
+                title="Wallet"
+                text="Manage your wallet"
+              >
                 <template #start>
                   <Icon name="ph:wallet-duotone" class="w-5 h-5 block mr-2" />
                 </template>
@@ -379,13 +479,13 @@ definePageMeta({
               orientation="end"
               class="z-20"
             >
-              <BaseDropdownItem to="/" title="Invest" text="Buys more stocks">
+              <BaseDropdownItem to="#/" title="Invest" text="Buys more stocks">
                 <template #start>
                   <Icon name="ph:coin-duotone" class="w-5 h-5 block mr-2" />
                 </template>
               </BaseDropdownItem>
               <BaseDropdownItem
-                to="/"
+                to="#/"
                 title="Benchmark"
                 text="Compare other sources"
               >
@@ -396,13 +496,17 @@ definePageMeta({
                   />
                 </template>
               </BaseDropdownItem>
-              <BaseDropdownItem to="/" title="Trade" text="View opportunities">
+              <BaseDropdownItem to="#/" title="Trade" text="View opportunities">
                 <template #start>
                   <Icon name="ph:bank-duotone" class="w-5 h-5 block mr-2" />
                 </template>
               </BaseDropdownItem>
               <BaseDropdownDivide />
-              <BaseDropdownItem to="/" title="Wallet" text="Manage your wallet">
+              <BaseDropdownItem
+                to="#/"
+                title="Wallet"
+                text="Manage your wallet"
+              >
                 <template #start>
                   <Icon name="ph:wallet-duotone" class="w-5 h-5 block mr-2" />
                 </template>
@@ -467,7 +571,7 @@ definePageMeta({
               <span>Trending Stocks</span>
             </BaseHeading>
             <NuxtLink
-              to="/"
+              to="#/"
               class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
             >
               View All
@@ -701,7 +805,7 @@ definePageMeta({
               <span>Profit Evolution</span>
             </BaseHeading>
           </div>
-          <ExampleApexchartBarProfit />
+          <TairoApexcharts v-bind="barProfit" />
         </BaseCard>
       </div>
       <!-- Grid item -->

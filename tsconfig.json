@@ -4,17 +4,7 @@
   "compilerOptions": {
     "types": [
       "vite/client",
-      "@pinia/nuxt",
-      "@vueuse/nuxt"
-    ],
-    "baseUrl": ".",
-    "paths": {
-      "@/utils/*": [
-        "utils/*"
-      ],
-      "@/types/*": [
-        "types/*"
-      ],
-    }
+      "@pinia/nuxt"
+    ]
   }
 }

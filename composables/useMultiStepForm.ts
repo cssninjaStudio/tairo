@@ -61,7 +61,7 @@ export function createMultiStepForm<
     }
   }
 
-  const completeWizard = () => {
+  function completeWizard() {
     loading.value = true
     setTimeout(() => {
       loading.value = false

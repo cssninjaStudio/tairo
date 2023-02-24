@@ -37,10 +37,10 @@ const selectedDate = ref('2022-12-29')
 const dateFormat = ref('DD-MM-YYYY')
 const month = ref()
 const year = ref()
-const no_of_days = ref([])
-const blankdays = ref([])
+const numberOfDays = ref<number[]>([])
+const blankDays = ref<number[]>([])
 
-const initDate = () => {
+function initDate() {
   let today
   if (selectedDate.value) {
     today = new Date(Date.parse(selectedDate.value))
@@ -52,7 +52,7 @@ const initDate = () => {
   datepickerValue.value = formatDateForDisplay(today)
 }
 
-const formatDateForDisplay = (date: any) => {
+function formatDateForDisplay(date: any) {
   let formattedDay = DAYS[date.getDay()]
   let formattedDate = ('0' + date.getDate()).slice(-2) // appends 0 (zero) in single digit date
   let formattedMonth = MONTH_NAMES[date.getMonth()]
@@ -71,25 +71,25 @@ const formatDateForDisplay = (date: any) => {
   return `${formattedDay} ${formattedDate} ${formattedMonth} ${formattedYear}`
 }
 
-const isSelectedDate = (date: any) => {
+function isSelectedDate(date: any) {
   const d = new Date(year.value, month.value, date)
   return datepickerValue.value === formatDateForDisplay(d) ? true : false
 }
 
-const isToday = (date: any) => {
+function isToday(date: any) {
   const today = new Date()
   const d = new Date(year.value, month.value, date)
   return today.toDateString() === d.toDateString() ? true : false
 }
 
-const getDateValue = (date: any) => {
+function getDateValue(date: any) {
   let selectedDate = new Date(year.value, month.value, date)
   datepickerValue.value = formatDateForDisplay(selectedDate)
   isSelectedDate(date)
   // showDatepicker.value = false;
 }
 
-const getNoOfDays = () => {
+function getNoOfDays() {
   let daysInMonth = new Date(year.value, month.value + 1, 0).getDate()
   // find where to start calendar day of week
   let dayOfWeek = new Date(year.value, month.value).getDay()
@@ -101,11 +101,11 @@ const getNoOfDays = () => {
   for (var i = 1; i <= daysInMonth; i++) {
     daysArray.push(i)
   }
-  blankdays.value = blankdaysArray
-  no_of_days.value = daysArray
+  blankDays.value = blankdaysArray
+  numberOfDays.value = daysArray
 }
 
-const incrementDays = () => {
+function incrementDays() {
   if (month.value == 0) {
     year.value--
     month.value = 12
@@ -115,7 +115,7 @@ const incrementDays = () => {
   getNoOfDays()
 }
 
-const decrementDays = () => {
+function decrementDays() {
   if (month.value == 11) {
     month.value = 0
     year.value++
@@ -213,13 +213,13 @@ const props = defineProps<{
       </div>
 
       <div class="flex flex-wrap -mx-1">
-        <template v-for="blankday in blankdays">
+        <template v-for="blankday in blankDays">
           <div
             style="width: 14.28%"
             class="text-center border p-1 border-transparent text-sm"
           ></div>
         </template>
-        <template v-for="(date, dateIndex) in no_of_days" :key="dateIndex">
+        <template v-for="(date, dateIndex) in numberOfDays" :key="dateIndex">
           <div style="width: 14.28%" class="flex items-center justify-center">
             <div
               @click="getDateValue(date)"

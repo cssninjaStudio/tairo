@@ -90,7 +90,7 @@ const isScrolled = computed(() => {
         "
       >
         <NuxtLink
-          to="/"
+          to="#/"
           class="inline-flex h-9 w-9 items-center justify-center rounded-full transition-all duration-300"
         >
           <span

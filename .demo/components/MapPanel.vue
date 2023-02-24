@@ -253,7 +253,20 @@ function selectFeature(feature: any) {
   selectedFeature.value = feature
 }
 
+const accessToken = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN as string
+if (process.dev) {
+  // this block will be removed in production build
+
+  if (!accessToken) {
+    console.warn('VITE_MAPBOX_ACCESS_TOKEN environment variable is not defined, mapbox features are disabled')
+  }
+}
+
 onMounted(() => {
+  if (!accessToken) {
+    return
+  }
+
   Promise.all([
     import('mapbox-gl').then((m) => m.default),
     import('@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.min.js').then(
@@ -283,7 +296,7 @@ onMounted(() => {
     })
 
     map.value.on('style.load', () => {
-      const loadingStyles = () => {
+      function loadingStyles() {
         if (!map.value?.isStyleLoaded()) {
           setTimeout(loadingStyles, 1500)
           return
@@ -298,7 +311,6 @@ onMounted(() => {
   })
 })
 
-// watchPostEffect(() => {
 watchEffect(
   () => {
     if (!selectedFeature.value || !popupElement.value || !map.value) {
@@ -380,7 +392,7 @@ watch(
             <div
               class="flex h-16 w-16 ltablet:w-full lg:w-full items-center justify-center shrink-0"
             >
-              <NuxtLink to="/" class="flex items-center justify-center">
+              <NuxtLink to="#/" class="flex items-center justify-center">
                 <IconLogo class="text-primary-600 h-10" />
               </NuxtLink>
             </div>
@@ -412,7 +424,7 @@ watch(
             </div>
             <div class="flex h-16 w-full items-center justify-center">
               <NuxtLink
-                to="/"
+                to="#/"
                 class="text-muted-400 hover:text-primary-500 flex h-12 w-12 items-center justify-center rounded-2xl hover:bg-primary-500/20 transition-colors duration-300"
                 title="Settings"
               >

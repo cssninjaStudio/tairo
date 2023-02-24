@@ -1,11 +1,11 @@
 <script setup lang="ts">
-const { open } = usePanels()
-const panels = reactive(usePanels())
-
 definePageMeta({
   title: 'Messaging',
   layout: 'default',
 })
+
+const { open } = usePanels()
+const panels = reactive(usePanels())
 
 const conversations = ref([
   {
@@ -504,7 +504,7 @@ onMounted(() => {
   }
 })
 
-const selectConversation = (id: number) => {
+function selectConversation(id: number) {
   loading.value = true
   setTimeout(() => {
     activeConversation.value = id
@@ -531,7 +531,7 @@ const selectConversation = (id: number) => {
             <div
               class="flex h-16 w-16 ltablet:w-full lg:w-full items-center justify-center shrink-0"
             >
-              <NuxtLink to="/" class="flex items-center justify-center">
+              <NuxtLink to="#/" class="flex items-center justify-center">
                 <IconLogo class="text-primary-600 h-10" />
               </NuxtLink>
             </div>
@@ -561,7 +561,7 @@ const selectConversation = (id: number) => {
             </div>
             <div class="flex h-16 w-full items-center justify-center">
               <NuxtLink
-                to="/"
+                to="#/"
                 class="text-muted-400 hover:text-primary-500 flex h-12 w-12 items-center justify-center rounded-2xl hover:bg-primary-500/20 transition-colors duration-300"
                 title="Settings"
               >

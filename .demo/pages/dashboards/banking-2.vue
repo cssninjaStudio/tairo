@@ -44,6 +44,126 @@ const banks = [
 ]
 
 const selectedBank = ref(banks[0])
+
+const areaExpenses = reactive(useAreaExpenses())
+
+function useAreaExpenses() {
+  const { primary, info, success } = useTailwindColors()
+  const type = 'area'
+  const height = 250
+
+  const options = {
+    chart: {
+      foreColor: '#999',
+      stacked: true,
+      toolbar: {
+        show: false,
+      },
+      dropShadow: {
+        enabled: true,
+        enabledSeries: [0],
+        top: -2,
+        left: 2,
+        blur: 5,
+        opacity: 0.06,
+      },
+    },
+    colors: [success.value, primary.value, info.value],
+    stroke: {
+      curve: 'smooth',
+      width: 3,
+    },
+    title: {
+      text: '',
+      align: 'left',
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    markers: {
+      size: 0,
+      strokeColor: '#fff',
+      strokeWidth: 3,
+      strokeOpacity: 1,
+      fillOpacity: 1,
+      hover: {
+        size: 6,
+      },
+    },
+    xaxis: {
+      type: 'datetime',
+      axisBorder: {
+        show: false,
+      },
+      axisTicks: {
+        show: false,
+      },
+    },
+    yaxis: {
+      labels: {
+        offsetX: 0,
+        offsetY: -5,
+      },
+      tooltip: {
+        enabled: true,
+      },
+    },
+    grid: {
+      show: false,
+      padding: {
+        left: -5,
+        right: 5,
+      },
+    },
+    tooltip: {
+      x: {
+        format: 'dd MMM yyyy',
+      },
+    },
+    legend: {
+      position: 'top',
+      horizontalAlign: 'left',
+    },
+    fill: {
+      type: 'solid',
+      fillOpacity: 0.7,
+    },
+  }
+
+  const series = ref([
+    {
+      name: 'Cash Expenses',
+      data: generateDayWiseTimeSeries(0, 18),
+    },
+    {
+      name: 'Card Expenses',
+      data: generateDayWiseTimeSeries(1, 18),
+    },
+  ])
+
+  function generateDayWiseTimeSeries(s: number, count: number) {
+    const values = [
+      [4, 3, 10, 9, 29, 19, 25, 9, 12, 7, 19, 5, 13, 9, 17, 2, 7, 5],
+      [2, 3, 8, 7, 22, 16, 23, 7, 11, 5, 12, 5, 10, 4, 15, 2, 6, 2],
+    ]
+    let i = 0
+    const series = []
+    let x = new Date('11 Nov 2020').getTime()
+    while (i < count) {
+      series.push([x, values[s][i]])
+      x += 86400000
+      i++
+    }
+    return series
+  }
+
+  return {
+    type,
+    height,
+    options,
+    series,
+  }
+}
 </script>
 
 <template>
@@ -215,7 +335,7 @@ const selectedBank = ref(banks[0])
         </div>
       </BaseCard>
       <BaseCard
-        class="flex flex-col ltablet:flex-row lg:flex-row gap-y-10 p-6 sm:p-10 bg-muted-200 dark:bg-muted-800"
+        class="flex flex-col ltablet:flex-row lg:flex-row gap-y-10 p-6 sm:p-10 !bg-muted-200 dark:!bg-muted-800"
       >
         <div
           class="w-full ltablet:w-3/5 lg:w-3/5 ltablet:border-r lg:border-r border-muted-300 dark:border-muted-700"
@@ -260,7 +380,7 @@ const selectedBank = ref(banks[0])
             <!-- Chart -->
             <div class="h-full flex flex-col grow ltablet:pr-12 lg:pr-12">
               <div class="mt-auto">
-                <ExampleApexchartAreaExpenses />
+                <TairoApexcharts v-bind="areaExpenses" />
               </div>
             </div>
           </div>

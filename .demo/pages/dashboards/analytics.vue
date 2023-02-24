@@ -3,6 +3,271 @@ definePageMeta({
   title: 'Analytics',
   layout: 'sidebar',
 })
+
+const lineRevenue = reactive(useLineRevenue())
+const radialGoal = reactive(useRadialGoal())
+const radialGrowth = reactive(useRadialGrowth())
+const barSalesProfit = reactive(useBarSalesProfit())
+
+function useLineRevenue() {
+  const { primary } = useTailwindColors()
+  const type = 'line'
+  const height = 250
+
+  const options = {
+    chart: {
+      zoom: {
+        enabled: false,
+      },
+      toolbar: {
+        show: false,
+      },
+    },
+    colors: [primary.value],
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      width: [2, 2, 2],
+      curve: 'smooth',
+    },
+    grid: {
+      row: {
+        colors: ['transparent', 'transparent'], // takes an array which will be repeated on columns
+        opacity: 0.5,
+      },
+    },
+    xaxis: {
+      categories: [
+        'Feb',
+        'Mar',
+        'Apr',
+        'May',
+        'Jun',
+        'Jul',
+        'Aug',
+        'Sep',
+        'Oct',
+      ],
+    },
+    tooltip: {
+      y: {
+        formatter: function (val: string) {
+          return '$' + val
+        },
+      },
+    },
+  }
+
+  const series = ref([
+    {
+      name: 'Revenue',
+      data: [10835, 40214, 36257, 51411, 45697, 61221, 65295, 91512, 75648],
+    },
+  ])
+
+  return {
+    type,
+    height,
+    options,
+    series,
+  }
+}
+
+function useRadialGoal() {
+  const { primary, success } = useTailwindColors()
+  const type = 'radialBar'
+  const height = 220
+
+  const options = {
+    chart: {
+      offsetY: -10,
+    },
+    colors: [primary.value, success.value],
+    plotOptions: {
+      radialBar: {
+        startAngle: -135,
+        endAngle: 135,
+        inverseOrder: true,
+        dataLabels: {
+          show: true,
+          name: {
+            show: true,
+            fontSize: '14px',
+            fontWeight: 500,
+            offsetY: -10,
+          },
+          value: {
+            show: true,
+            fontWeight: 600,
+            fontSize: '16px',
+            offsetY: -5,
+          },
+          total: {
+            show: true,
+            fontSize: '14px',
+            fontWeight: 500,
+          },
+        },
+        hollow: {
+          margin: 15,
+          size: '75%',
+        },
+        track: {
+          strokeWidth: '100%',
+        },
+      },
+    },
+
+    stroke: {
+      lineCap: 'round',
+    },
+    labels: ['Efficiency', 'Productivity'],
+  }
+
+  const series = ref([57, 86])
+
+  return {
+    type,
+    height,
+    options,
+    series,
+  }
+}
+
+function useRadialGrowth() {
+  const { success } = useTailwindColors()
+  const height = 180
+  const type = 'radialBar'
+
+  const options = {
+    chart: {
+      toolbar: {
+        show: false,
+      },
+    },
+    colors: [success.value],
+    plotOptions: {
+      radialBar: {
+        hollow: {
+          size: '75%',
+        },
+        dataLabels: {
+          show: true,
+          name: {
+            show: true,
+            fontSize: '0.7rem',
+            fontFamily: 'Roboto',
+            fontWeight: 400,
+            offsetY: -10,
+          },
+          value: {
+            show: true,
+            fontWeight: 600,
+            fontSize: '16px',
+            fontFamily: 'Roboto',
+            offsetY: -5,
+          },
+        },
+      },
+    },
+    labels: ['Growth'],
+  }
+
+  const series = ref([65])
+
+  return {
+    type,
+    height,
+    options,
+    series,
+  }
+}
+
+function useBarSalesProfit() {
+  const { primary, info, success } = useTailwindColors()
+  const type = 'bar'
+  const height = 250
+
+  const options = {
+    chart: {
+      toolbar: {
+        show: false,
+      },
+    },
+    colors: [primary.value, info.value, success.value],
+    legend: {
+      position: 'top',
+    },
+    plotOptions: {
+      bar: {
+        horizontal: false,
+        endingShape: 'rounded',
+        columnWidth: '55%',
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      show: true,
+      width: 2,
+      colors: ['transparent'],
+    },
+    xaxis: {
+      categories: [
+        'Feb',
+        'Mar',
+        'Apr',
+        'May',
+        'Jun',
+        'Jul',
+        'Aug',
+        'Sep',
+        'Oct',
+      ],
+    },
+    yaxis: {
+      labels: {
+        formatter: function (val: string) {
+          return val + 70
+        },
+      },
+    },
+    fill: {
+      opacity: 1,
+    },
+    tooltip: {
+      y: {
+        formatter: function (val: string) {
+          return val + 70
+        },
+      },
+    },
+  }
+
+  const series = ref([
+    {
+      name: 'Net Profit',
+      data: [-26, -15, -13, -14, -9, -12, -7, -10, -4],
+    },
+    {
+      name: 'Revenue',
+      data: [6, 15, 31, 28, 17, 35, 21, 44, 24],
+    },
+    {
+      name: 'Free Cash Flow',
+      data: [-35, -29, -34, -44, -25, -22, -18, -17, -29],
+    },
+  ])
+
+  return {
+    type,
+    height,
+    options,
+    series,
+  }
+}
 </script>
 
 <template>
@@ -148,7 +413,7 @@ definePageMeta({
                 <span>Revenue</span>
               </BaseHeading>
               <NuxtLink
-                to="/"
+                to="#/"
                 class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
               >
                 Details
@@ -170,7 +435,7 @@ definePageMeta({
                 </p>
               </div>
             </div>
-            <ExampleApexchartLineRevenue />
+            <TairoApexcharts v-bind="lineRevenue" />
           </BaseCard>
         </div>
         <!-- Chart -->
@@ -188,7 +453,7 @@ definePageMeta({
               </BaseHeading>
             </div>
             <div class="mb-6">
-              <ExampleApexchartRadialGoal />
+              <TairoApexcharts v-bind="radialGoal" />
             </div>
             <div class="mt-auto">
               <div
@@ -235,7 +500,7 @@ definePageMeta({
               </BaseHeading>
             </div>
             <div class="mb-6">
-              <ExampleApexchartRadialGrowth />
+              <TairoApexcharts v-bind="radialGrowth" />
             </div>
             <div class="mt-auto">
               <div class="flex justify-center gap-2">
@@ -272,7 +537,7 @@ definePageMeta({
                 <span>Profit</span>
               </BaseHeading>
             </div>
-            <ExampleApexchartBarSalesProfit />
+            <TairoApexcharts v-bind="barSalesProfit" />
           </BaseCard>
         </div>
       </div>

@@ -69,7 +69,7 @@ const componentChildRoutes = computed(() => {
   return childrens
 })
 
-const hightlightSearch = (text?: string, search?: string): string => {
+function hightlightSearch(text?: string, search?: string): string {
   if (!text) {
     return ''
   }

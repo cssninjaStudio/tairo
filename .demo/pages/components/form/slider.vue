@@ -10,32 +10,13 @@ import multipleHandle from '~/documentation/form/slider/multiple-handle.md?raw'
 import rounded from '~/documentation/form/slider/rounded.md?raw'
 import straight from '~/documentation/form/slider/straight.md?raw'
 
-const properties = {
-  props: [
-    {
-      name: 'v-model',
-      type: 'number',
-      required: 'false',
-      default: '0',
-      values: ['number'],
-    },
-    {
-      name: 'format',
-      type: 'string',
-      required: 'false',
-      default: 'undefined',
-      values: ['string'],
-    },
-    {
-      name: 'merge',
-      type: 'number',
-      required: 'false',
-      default: 'undefined',
-      values: ['number'],
-    },
-  ],
-  slots: [],
-}
+definePageMeta({
+  title: 'Sliders',
+  documentation: {
+    category: 'Addons',
+    components: ['Slider'],
+  },
+})
 
 const value = ref(20)
 const info = ref(38)
@@ -48,14 +29,6 @@ const format = (value: any) => {
 }
 const mergeValue = ref([20, 50, 80])
 const merge = ref(10)
-
-definePageMeta({
-  title: 'Sliders',
-  documentation: {
-    category: 'Addons',
-    components: ['Slider'],
-  },
-})
 </script>
 
 <template>

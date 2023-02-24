@@ -61,7 +61,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
           <div class="py-1.5 px-6">
             <MenuItem v-slot="{ active }">
               <NuxtLink
-                to="/"
+                to="#/"
                 class="group flex w-full items-center rounded-md p-2 text-sm transition-colors duration-300"
                 :class="[
                   active
@@ -90,7 +90,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
             </MenuItem>
             <MenuItem v-slot="{ active }">
               <NuxtLink
-                to="/"
+                to="#/"
                 class="group flex w-full items-center rounded-md p-2 text-sm transition-colors duration-300"
                 :class="[
                   active
@@ -121,7 +121,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
             </MenuItem>
             <MenuItem v-slot="{ active }">
               <NuxtLink
-                to="/"
+                to="#/"
                 class="group flex w-full items-center rounded-md p-2 text-sm transition-colors duration-300"
                 :class="[
                   active

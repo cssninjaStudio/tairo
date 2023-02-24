@@ -11,6 +11,14 @@ import multiple from '~/documentation/autocomplete/multiple.md?raw'
 import rounded from '~/documentation/autocomplete/rounded.md?raw'
 import straight from '~/documentation/autocomplete/straight.md?raw'
 
+definePageMeta({
+  title: 'Autocomplete',
+  documentation: {
+    category: 'Forms',
+    components: ['BaseAutocomplete'],
+  },
+})
+
 const frameworks = [
   {
     id: 1,
@@ -104,14 +112,6 @@ const selectedFramework = ref('')
 const selectedHobby = ref('')
 const selectedPerson = ref('')
 const selectedPeople = ref([people[0], people[1]])
-
-definePageMeta({
-  title: 'Autocomplete',
-  documentation: {
-    category: 'Forms',
-    components: ['BaseAutocomplete'],
-  },
-})
 </script>
 
 <template>

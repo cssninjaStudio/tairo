@@ -1,7 +1,14 @@
 <script setup lang="ts">
 import iconCarousel from '~/documentation/carousel/icon.md?raw'
 import userCarousel from '~/documentation/carousel/user.md?raw'
-// @unocss-include
+
+definePageMeta({
+  title: 'Carousel',
+  documentation: {
+    category: 'Interaction',
+    components: ['CarouselTeam', 'CarouselIcons'],
+  },
+})
 
 const team = [
   {
@@ -25,7 +32,7 @@ const team = [
         logo: '/img/logos/stacks/sass.svg',
       },
     ],
-    to: '/',
+    to: '#/',
   },
   {
     id: 1,
@@ -48,7 +55,7 @@ const team = [
         logo: '/img/logos/stacks/photoshop.svg',
       },
     ],
-    to: '/',
+    to: '#/',
   },
   {
     id: 2,
@@ -71,7 +78,7 @@ const team = [
         logo: '/img/logos/stacks/javascript.svg',
       },
     ],
-    to: '/',
+    to: '#/',
   },
   {
     id: 3,
@@ -94,7 +101,7 @@ const team = [
         logo: '/img/logos/stacks/flutter.svg',
       },
     ],
-    to: '/',
+    to: '#/',
   },
   {
     id: 4,
@@ -117,7 +124,7 @@ const team = [
         logo: '/img/logos/stacks/react.svg',
       },
     ],
-    to: '/',
+    to: '#/',
   },
   {
     id: 5,
@@ -140,7 +147,7 @@ const team = [
         logo: '/img/logos/stacks/typescript.svg',
       },
     ],
-    to: '/',
+    to: '#/',
   },
 ]
 
@@ -216,14 +223,6 @@ const topics = [
     link: '/',
   },
 ]
-
-definePageMeta({
-  title: 'Carousel',
-  documentation: {
-    category: 'Interaction',
-    components: ['CarouselTeam', 'CarouselIcons'],
-  },
-})
 </script>
 
 <template>

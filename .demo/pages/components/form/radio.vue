@@ -2,9 +2,6 @@
 import base from '~/documentation/form/radio/base.md?raw'
 import colors from '~/documentation/form/radio/colors.md?raw'
 
-const radioSelected = ref('option_1')
-const demoColors = ref('primary')
-
 definePageMeta({
   title: 'Radios',
   documentation: {
@@ -12,6 +9,9 @@ definePageMeta({
     components: ['BaseRadio'],
   },
 })
+
+const radioSelected = ref('option_1')
+const demoColors = ref('primary')
 </script>
 
 <template>

@@ -19,7 +19,7 @@ const vFocus: Directive = {
   },
 }
 
-const onBlur = () => {
+function onBlur() {
   setTimeout(() => {
     if (!filter.value) {
       isSearching.value = false

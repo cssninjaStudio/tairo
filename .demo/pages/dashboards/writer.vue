@@ -131,7 +131,7 @@ const activePosts = ref('recent')
                         <span>Popular authors</span>
                       </BaseHeading>
                       <NuxtLink
-                        to="/"
+                        to="#/"
                         class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
                       >
                         View All
@@ -157,7 +157,7 @@ const activePosts = ref('recent')
                       <span>Latest comments</span>
                     </BaseHeading>
                     <NuxtLink
-                      to="/"
+                      to="#/"
                       class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
                     >
                       View All
@@ -204,7 +204,7 @@ const activePosts = ref('recent')
           <!-- Posts-->
           <div class="flex flex-col ptablet:grid ptablet:grid-cols-2 gap-6">
             <!-- Post -->
-            <NuxtLink to="/" class="flex flex-col">
+            <NuxtLink to="#/" class="flex flex-col">
               <img
                 src="/img/illustrations/dashboards/writer/post-1.svg"
                 alt="Post image"
@@ -255,7 +255,7 @@ const activePosts = ref('recent')
               </BaseCard>
             </NuxtLink>
             <!-- Post -->
-            <NuxtLink to="/" class="flex flex-col">
+            <NuxtLink to="#/" class="flex flex-col">
               <img
                 src="/img/illustrations/dashboards/writer/post-2.svg"
                 alt="Post image"

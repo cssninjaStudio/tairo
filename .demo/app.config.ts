@@ -48,7 +48,7 @@ export default defineAppConfig({
       {
         name: 'Settings',
         icon: { name: 'ph:gear-six-duotone', class: 'w-5 h-5' },
-        to: '/',
+        to: '#/',
         position: 'end',
       },
     ],

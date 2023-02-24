@@ -8,11 +8,6 @@ import rounded from '~/documentation/form/textarea/rounded.md?raw'
 import focus from '~/documentation/form/textarea/focus.md?raw'
 import straight from '~/documentation/form/textarea/straight.md?raw'
 
-const textareaStraight = ref('')
-const textareaRounded = ref('')
-const textareaCurved = ref('')
-const textareaFull = ref('')
-
 definePageMeta({
   title: 'Textarea',
   documentation: {
@@ -20,6 +15,11 @@ definePageMeta({
     components: ['BaseTextarea'],
   },
 })
+
+const textareaStraight = ref('')
+const textareaRounded = ref('')
+const textareaCurved = ref('')
+const textareaFull = ref('')
 </script>
 
 <template>

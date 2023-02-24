@@ -54,7 +54,7 @@ export interface SidebarItem {
  * })
  * ```
  */
-export const useSidebar = () => {
+export function useSidebar() {
   const route = useRoute()
   const app = useAppConfig()
 

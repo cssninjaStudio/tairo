@@ -1,6 +1,6 @@
 import { useCssVar } from '@vueuse/core'
 
-export const useTailwindColors = () => {
+export function useTailwindColors() {
   const primary = process.server
     ? ref('transparent')
     : useCssVar('--primary', document.documentElement)

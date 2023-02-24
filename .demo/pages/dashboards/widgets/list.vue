@@ -23,7 +23,7 @@ definePageMeta({
             <span>Members</span>
           </BaseHeading>
           <NuxtLink
-            to="/"
+            to="#/"
             class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
           >
             View All
@@ -48,7 +48,7 @@ definePageMeta({
             <span>Members</span>
           </BaseHeading>
           <NuxtLink
-            to="/"
+            to="#/"
             class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
           >
             View All
@@ -80,7 +80,7 @@ definePageMeta({
             <span>My Tasks</span>
           </BaseHeading>
           <NuxtLink
-            to="/"
+            to="#/"
             class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
           >
             View All
@@ -105,7 +105,7 @@ definePageMeta({
             <span>My Tasks</span>
           </BaseHeading>
           <NuxtLink
-            to="/"
+            to="#/"
             class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
           >
             View All
@@ -137,7 +137,7 @@ definePageMeta({
             <span>Latest comments</span>
           </BaseHeading>
           <NuxtLink
-            to="/"
+            to="#/"
             class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
           >
             View All
@@ -162,7 +162,7 @@ definePageMeta({
             <span>Topics</span>
           </BaseHeading>
           <NuxtLink
-            to="/"
+            to="#/"
             class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
           >
             View All
@@ -187,7 +187,7 @@ definePageMeta({
             <span>Topics</span>
           </BaseHeading>
           <NuxtLink
-            to="/"
+            to="#/"
             class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
           >
             View All
@@ -212,7 +212,7 @@ definePageMeta({
             <span>Timeline</span>
           </BaseHeading>
           <NuxtLink
-            to="/"
+            to="#/"
             class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
           >
             View All
@@ -237,7 +237,7 @@ definePageMeta({
             <span>Timeline</span>
           </BaseHeading>
           <NuxtLink
-            to="/"
+            to="#/"
             class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
           >
             View All
@@ -262,7 +262,7 @@ definePageMeta({
             <span>Timeline</span>
           </BaseHeading>
           <NuxtLink
-            to="/"
+            to="#/"
             class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
           >
             View All

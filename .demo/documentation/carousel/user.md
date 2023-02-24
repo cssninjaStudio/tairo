@@ -23,7 +23,7 @@ const team = [
         logo: '/img/logos/stacks/sass.svg',
       },
     ],
-    to: '/',
+    to: '#/',
   },
   //...
   {
@@ -48,7 +48,7 @@ const team = [
         logo: '/img/logos/stacks/typescript.svg',
       },
     ],
-    to: '/',
+    to: '#/',
   },
 ]
 </script>

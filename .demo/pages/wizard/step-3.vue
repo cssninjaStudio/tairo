@@ -81,13 +81,13 @@ const filteredCustomers = computed<Customer[]>(() => {
     .splice(0, 4)
 })
 
-const selectCustomer = (customerData: Customer) => {
+function selectCustomer(customerData: Customer) {
   project.customer = customerData
   itemSelected.value = true
   search.value = ''
 }
 
-const dismissCustomer = () => {
+function dismissCustomer() {
   if (project.customer) {
     project.customer.name = undefined
     project.customer.logo = undefined

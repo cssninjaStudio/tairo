@@ -4,6 +4,168 @@ definePageMeta({
   layout: 'sidebar',
 })
 
+const gaugePersonal = reactive(useGaugePersonal())
+const barSalesProfit = reactive(useBarSalesProfit())
+
+function useGaugePersonal() {
+  const { primary } = useTailwindColors()
+  const type = 'radialBar'
+  const height = 220
+
+  const options = {
+    title: {
+      text: undefined,
+    },
+    chart: {
+      sparkline: {
+        enabled: true,
+      },
+      toolbar: {
+        show: false,
+      },
+    },
+    colors: [primary.value],
+    plotOptions: {
+      radialBar: {
+        startAngle: -90,
+        endAngle: 90,
+        track: {
+          background: '#e7e7e7',
+          strokeWidth: '97%',
+          margin: 5, // margin is in pixels
+          dropShadow: {
+            enabled: false,
+            top: 2,
+            left: 0,
+            color: '#999',
+            opacity: 1,
+            blur: 2,
+          },
+        },
+        hollow: {
+          margin: 0,
+          size: '35%',
+        },
+        dataLabels: {
+          name: {
+            show: false,
+          },
+          value: {
+            offsetY: -2,
+            fontSize: '22px',
+          },
+        },
+      },
+    },
+    fill: {
+      type: 'gradient',
+      gradient: {
+        shade: 'light',
+        shadeIntensity: 0.1,
+        inverseColors: false,
+        opacityFrom: 1,
+        opacityTo: 1,
+        stops: [0, 50, 53, 91],
+      },
+    },
+    labels: ['Average Results'],
+  }
+
+  const series = ref([76])
+
+  return {
+    type,
+    height,
+    options,
+    series,
+  }
+}
+
+function useBarSalesProfit() {
+  const { primary, info, success } = useTailwindColors()
+  const type = 'bar'
+  const height = 250
+
+  const options = {
+    chart: {
+      toolbar: {
+        show: false,
+      },
+    },
+    colors: [primary.value, info.value, success.value],
+    legend: {
+      position: 'top',
+    },
+    plotOptions: {
+      bar: {
+        horizontal: false,
+        endingShape: 'rounded',
+        columnWidth: '55%',
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      show: true,
+      width: 2,
+      colors: ['transparent'],
+    },
+    xaxis: {
+      categories: [
+        'Feb',
+        'Mar',
+        'Apr',
+        'May',
+        'Jun',
+        'Jul',
+        'Aug',
+        'Sep',
+        'Oct',
+      ],
+    },
+    yaxis: {
+      labels: {
+        formatter: function (val: string) {
+          return val + 70
+        },
+      },
+    },
+    fill: {
+      opacity: 1,
+    },
+    tooltip: {
+      y: {
+        formatter: function (val: string) {
+          return val + 70
+        },
+      },
+    },
+  }
+
+  const series = ref([
+    {
+      name: 'Net Profit',
+      data: [-26, -15, -13, -14, -9, -12, -7, -10, -4],
+    },
+    {
+      name: 'Revenue',
+      data: [6, 15, 31, 28, 17, 35, 21, 44, 24],
+    },
+    {
+      name: 'Free Cash Flow',
+      data: [-35, -29, -34, -44, -25, -22, -18, -17, -29],
+    },
+  ])
+
+  return {
+    type,
+    height,
+    options,
+    series,
+  }
+}
+
 const team = [
   {
     id: '0',
@@ -238,7 +400,7 @@ const team = [
               </BaseHeading>
             </div>
             <div class="py-16">
-              <ExampleApexchartGaugePersonal />
+              <TairoApexcharts v-bind="gaugePersonal" class="-mt-14" />
             </div>
             <div class="text-center mt-auto">
               <BaseParagraph size="sm">
@@ -263,7 +425,7 @@ const team = [
                 <span>Profit</span>
               </BaseHeading>
             </div>
-            <ExampleApexchartBarSalesProfit />
+            <TairoApexcharts v-bind="barSalesProfit" />
           </BaseCard>
         </div>
         <!-- Widget -->
@@ -287,7 +449,7 @@ const team = [
                 <span>Pending tickets</span>
               </BaseHeading>
               <NuxtLink
-                to="/"
+                to="#/"
                 class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
               >
                 View All
