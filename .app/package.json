@@ -1,0 +1,8 @@
+{
+  "name": "tairo-quickstarter",
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "nuxt": "3.2.2"
+  }
+}

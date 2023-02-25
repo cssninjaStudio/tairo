@@ -1,0 +1,32 @@
+{
+  "name": "tairo-demo",
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "@mapbox/mapbox-gl-geocoder": "5.0.1",
+    "@nuxt/devtools": "^0.2.3",
+    "@pinia/nuxt": "0.4.7",
+    "@stefanprobst/remark-shiki": "2.2.0",
+    "@types/mapbox-gl": "2.7.10",
+    "@vueform/slider": "2.1.7",
+    "compressorjs": "1.2.0",
+    "cropperjs": "1.5.13",
+    "date-fns": "2.29.3",
+    "mapbox-gl": "2.13.0",
+    "nuxt": "3.2.2",
+    "nuxt-component-meta": "0.4.3",
+    "nuxt-swiper": "1.0.0",
+    "rehype-external-links": "2.0.1",
+    "rehype-raw": "6.1.1",
+    "rehype-sanitize": "5.0.1",
+    "rehype-stringify": "9.0.3",
+    "remark-gfm": "3.0.1",
+    "remark-parse": "10.0.1",
+    "remark-rehype": "10.1.0",
+    "shiki-es": "0.2.0",
+    "unified": "10.1.2",
+    "v-calendar": "3.0.0-alpha.8",
+    "vue-upload-component": "3.1.6",
+    "vue3-popper": "1.5.0"
+  }
+}

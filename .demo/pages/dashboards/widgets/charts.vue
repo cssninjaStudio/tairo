@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import dayjs from 'dayjs'
-
 definePageMeta({
   title: 'Apex Charts',
   layout: 'sidebar',
@@ -2480,9 +2478,9 @@ function useDemoTimeline() {
       enabled: true,
       formatter: function (val: string, opts: any) {
         const label = opts.w.globals.labels[opts.dataPointIndex]
-        const a = dayjs(val[0])
-        const b = dayjs(val[1])
-        const diff = b.diff(a, 'days')
+        const a = val[0] // todo: use date-fns
+        const b = val[1] // todo: use date-fns
+        const diff = 0 // b.diff(a, 'days') // todo: use date-fns
         return label + ': ' + diff + (diff > 1 ? 'D' : 'd')
       },
       style: {
