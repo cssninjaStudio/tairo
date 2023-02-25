@@ -22,7 +22,7 @@ let _processorsPromise: Promise<ProcessorThemes> | null = null
 
 async function createProcessor(options: HighlighterOptions) {
   if (process.client) {
-    setCDN('https://unpkg.com/shiki@0.12.1/')
+    setCDN('/shiki/')
   }
 
   const highlighter = await getHighlighter(options)

@@ -10,8 +10,8 @@ export default defineNuxtConfig({
   extends: envModules.ui,
   modules: [
     'nuxt-config-schema',
-     '@nuxt/image-edge',
-     './modules/purge-comments',
+    '@nuxt/image-edge',
+    './modules/purge-comments',
   ],
   css: [
     resolve('./assets/css/modules/variables.css'),
