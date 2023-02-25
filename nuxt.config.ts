@@ -8,11 +8,7 @@ const envModules = {
 
 export default defineNuxtConfig({
   extends: envModules.ui,
-  modules: [
-    'nuxt-config-schema',
-    '@nuxt/image-edge',
-    './modules/purge-comments',
-  ],
+  modules: ['@nuxt/image-edge', resolve('./modules/purge-comments')],
   css: [
     resolve('./assets/css/modules/variables.css'),
     resolve('./assets/css/modules/slider.css'),
