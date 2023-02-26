@@ -16,11 +16,12 @@ export default defineNuxtModule({
       name: 'purge-comments',
       enforce: 'pre',
       transform: (code, id) => {
-        if (!id.endsWith('.vue') || !code.includes('<!--'))
+        if (!id.endsWith('.vue') || !code.includes('<!--')) {
           return
+        }
 
         const s = new MagicString(code)
-        s.replace(/<!--(?:.*?)-->/sg, '')
+        s.replace(/<!--(?:.*?)-->/g, '')
 
         if (s.hasChanged()) {
           return {
