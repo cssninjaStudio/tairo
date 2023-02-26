@@ -21,7 +21,7 @@ export interface TairoPanelConfig {
   position?: 'left' | 'right'
 }
 
-export default defineNuxtConfigSchema({
+export default defineNuxtSchema({
   appConfig: {
     tairo: {
       title: 'Tairo',

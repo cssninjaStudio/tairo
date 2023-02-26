@@ -3,8 +3,8 @@ import MagicString from 'magic-string'
 
 /**
  * This module removes HTML comments from Vue files.
- * 
- * Comments are rendered in the DOM, which can cause issues with some transitions and 
+ *
+ * Comments are rendered in the DOM, which can cause issues with some transitions and
  * can cause hydration issues, so we remove them.
  */
 export default defineNuxtModule({
