@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Stocks',
-  layout: 'sidebar',
 })
 
 const barProfit = reactive(useBarProfit())

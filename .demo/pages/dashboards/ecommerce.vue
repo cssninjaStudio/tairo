@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Ecommerce',
-  layout: 'sidebar',
 })
 
 const sparkLineOne = reactive(useSparkLineOne())

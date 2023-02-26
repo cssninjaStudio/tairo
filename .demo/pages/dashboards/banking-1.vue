@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Overview',
-  layout: 'sidebar',
 })
 
 const incomeHistory = reactive(useIncomeHistory())

@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Activity',
-  layout: 'sidebar',
 })
 
 const areaCustomers = reactive(useAreaCustomers())

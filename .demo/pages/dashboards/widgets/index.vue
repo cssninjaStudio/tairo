@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'UI Widgets',
-  layout: 'sidebar',
 })
 
 const gaugePersonal = reactive(useGaugePersonal())

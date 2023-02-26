@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Cryptocurrency',
-  layout: 'sidebar',
 })
 
 const activePeriod = ref('week')

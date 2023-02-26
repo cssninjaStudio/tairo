@@ -1,7 +1,7 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Map',
-  layout: 'default',
+  layout: 'empty',
 })
 </script>
 

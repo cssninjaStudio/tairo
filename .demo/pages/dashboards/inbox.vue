@@ -1,7 +1,7 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Inbox',
-  layout: 'default',
+  layout: 'empty',
 })
 
 const { open } = usePanels()

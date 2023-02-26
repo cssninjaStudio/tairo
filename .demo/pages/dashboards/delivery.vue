@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Delivery',
-  layout: 'sidebar',
 })
 
 const genres = [

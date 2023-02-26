@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Jobs',
-  layout: 'sidebar',
 })
 
 const selectedType = ref('all')
