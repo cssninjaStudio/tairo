@@ -1,11 +1,13 @@
 <script setup lang="ts">
 export interface DocStateProps {
   state: any
-  height: string
+  height?: string
+  label?: string
 }
 
 const props = withDefaults(defineProps<DocStateProps>(), {
   height: '100%',
+  label: 'State',
 })
 </script>
 
@@ -15,13 +17,15 @@ const props = withDefaults(defineProps<DocStateProps>(), {
     :style="`min-height:${props.height}`"
   >
     <div class="flex">
-      <span class="font-sans text-xs uppercase text-muted-400">State</span>
+      <span class="font-sans text-xs uppercase text-muted-400">
+        {{ props.label }}
+      </span>
     </div>
     <div class="flex flex-col gap-y-4">
-      <div
-        class="flex break-words font-sans text-sm text-muted-500 dark:text-muted-200"
-      >
-        <pre>{{ props.state }}</pre>
+      <div class="prose flex break-words font-sans text-sm">
+        <pre class="!bg-transparent !p-0 text-muted-500 dark:text-muted-200">{{
+          props.state
+        }}</pre>
       </div>
     </div>
   </div>

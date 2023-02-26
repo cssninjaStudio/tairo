@@ -1,4 +1,3 @@
-```vue
 <script setup lang="ts">
 const people = [
   {
@@ -33,18 +32,16 @@ const people = [
   },
 ]
 
-const selectedPeople = ref([people[0], people[1])
+const selectedPerson = ref('')
 </script>
 
 <template>
   <BaseAutocomplete
-    v-model="selectedPeople"
+    v-model="selectedPerson"
     :items="people"
-    shape="rounded"
     icon="ph:users-three"
     placeholder="Search..."
     label="Assignee"
-    multiple
+    clearable
   />
 </template>
-```

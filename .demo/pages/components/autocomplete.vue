@@ -1,15 +1,26 @@
 <script setup lang="ts">
-import clearable from '~/documentation/autocomplete/clearable.md?raw'
-import curved from '~/documentation/autocomplete/curved.md?raw'
-import disabled from '~/documentation/autocomplete/disabled.md?raw'
-import full from '~/documentation/autocomplete/full.md?raw'
-import icon from '~/documentation/autocomplete/icon.md?raw'
-import iconResult from '~/documentation/autocomplete/icon-result.md?raw'
-import loading from '~/documentation/autocomplete/loading.md?raw'
-import mediaResult from '~/documentation/autocomplete/media-result.md?raw'
-import multiple from '~/documentation/autocomplete/multiple.md?raw'
-import rounded from '~/documentation/autocomplete/rounded.md?raw'
-import straight from '~/documentation/autocomplete/straight.md?raw'
+import ClearableDemo from '~/documentation/autocomplete/clearable.vue'
+import clearable from '~/documentation/autocomplete/clearable.vue?raw'
+import CurvedDemo from '~/documentation/autocomplete/curved.vue'
+import curved from '~/documentation/autocomplete/curved.vue?raw'
+import DisabledDemo from '~/documentation/autocomplete/disabled.vue'
+import disabled from '~/documentation/autocomplete/disabled.vue?raw'
+import FullDemo from '~/documentation/autocomplete/full.vue'
+import full from '~/documentation/autocomplete/full.vue?raw'
+import IconDemo from '~/documentation/autocomplete/icon.vue'
+import icon from '~/documentation/autocomplete/icon.vue?raw'
+import IconResultDemo from '~/documentation/autocomplete/icon-result.vue'
+import iconResult from '~/documentation/autocomplete/icon-result.vue?raw'
+import LoadingDemo from '~/documentation/autocomplete/loading.vue'
+import loading from '~/documentation/autocomplete/loading.vue?raw'
+import MediaResultDemo from '~/documentation/autocomplete/media-result.vue'
+import mediaResult from '~/documentation/autocomplete/media-result.vue?raw'
+import MultipleDemo from '~/documentation/autocomplete/multiple.vue'
+import multiple from '~/documentation/autocomplete/multiple.vue?raw'
+import RoundedDemo from '~/documentation/autocomplete/rounded.vue'
+import rounded from '~/documentation/autocomplete/rounded.vue?raw'
+import StraightDemo from '~/documentation/autocomplete/straight.vue'
+import straight from '~/documentation/autocomplete/straight.vue?raw'
 
 definePageMeta({
   title: 'Autocomplete',
@@ -18,6 +29,10 @@ definePageMeta({
     components: ['BaseAutocomplete'],
   },
 })
+
+function wrapVueMarkdown(source: string) {
+  return '```vue\n' + source + '\n```'
+}
 
 const frameworks = [
   {
@@ -108,10 +123,18 @@ const people = [
   },
 ]
 
+const selectedFramework = `
 const selectedFramework = ref('')
+`
+const selectedHobby = `
 const selectedHobby = ref('')
+`
+const selectedPerson = `
 const selectedPerson = ref('')
-const selectedPeople = ref([people[0], people[1]])
+`
+const selectedPeople = `
+const selectedPerson = ref([people[0], people[1]])
+`
 </script>
 
 <template>
@@ -133,20 +156,21 @@ const selectedPeople = ref([people[0], people[1]])
             <template #demo>
               <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseAutocomplete
-                    v-model="selectedFramework"
-                    :items="frameworks"
-                    shape="straight"
-                    placeholder="Select a framework"
-                    label="Framework"
-                  />
+                  <StraightDemo />
                 </div>
                 <!-- State box -->
-                <DocState :state="selectedFramework" height="80px" />
+                <DocState
+                  label="v-model"
+                  :state="selectedFramework"
+                  height="80px"
+                />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="straight" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(straight)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -157,20 +181,21 @@ const selectedPeople = ref([people[0], people[1]])
             <template #demo>
               <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseAutocomplete
-                    v-model="selectedFramework"
-                    :items="frameworks"
-                    shape="rounded"
-                    placeholder="Select a framework"
-                    label="Framework"
-                  />
+                  <RoundedDemo />
                 </div>
                 <!-- State box -->
-                <DocState :state="selectedFramework" height="80px" />
+                <DocState
+                  label="v-model"
+                  :state="selectedFramework"
+                  height="80px"
+                />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="rounded" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(rounded)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -181,20 +206,21 @@ const selectedPeople = ref([people[0], people[1]])
             <template #demo>
               <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseAutocomplete
-                    v-model="selectedFramework"
-                    :items="frameworks"
-                    shape="curved"
-                    placeholder="Select a framework"
-                    label="Framework"
-                  />
+                  <CurvedDemo />
                 </div>
                 <!-- State box -->
-                <DocState :state="selectedFramework" height="80px" />
+                <DocState
+                  label="v-model"
+                  :state="selectedFramework"
+                  height="80px"
+                />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="curved" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(curved)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -205,20 +231,21 @@ const selectedPeople = ref([people[0], people[1]])
             <template #demo>
               <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseAutocomplete
-                    v-model="selectedFramework"
-                    :items="frameworks"
-                    shape="full"
-                    placeholder="Select a framework"
-                    label="Framework"
-                  />
+                  <FullDemo />
                 </div>
                 <!-- State box -->
-                <DocState :state="selectedFramework" height="80px" />
+                <DocState
+                  label="v-model"
+                  :state="selectedFramework"
+                  height="80px"
+                />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="full" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(full)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -229,21 +256,21 @@ const selectedPeople = ref([people[0], people[1]])
             <template #demo>
               <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseAutocomplete
-                    v-model="selectedFramework"
-                    :items="frameworks"
-                    icon="lucide:search"
-                    shape="rounded"
-                    placeholder="Select a framework"
-                    label="Framework"
-                  />
+                  <IconDemo />
                 </div>
                 <!-- State box -->
-                <DocState :state="selectedFramework" height="80px" />
+                <DocState
+                  label="v-model"
+                  :state="selectedFramework"
+                  height="80px"
+                />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="icon" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(icon)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -254,22 +281,21 @@ const selectedPeople = ref([people[0], people[1]])
             <template #demo>
               <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseAutocomplete
-                    v-model="selectedFramework"
-                    :items="frameworks"
-                    icon="lucide:search"
-                    shape="rounded"
-                    placeholder="Select a framework"
-                    label="Framework"
-                    clearable
-                  />
+                  <ClearableDemo />
                 </div>
                 <!-- State box -->
-                <DocState :state="selectedFramework" height="80px" />
+                <DocState
+                  label="v-model"
+                  :state="selectedFramework"
+                  height="80px"
+                />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="clearable" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(clearable)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -284,23 +310,21 @@ const selectedPeople = ref([people[0], people[1]])
             <template #demo>
               <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseAutocomplete
-                    v-model="selectedFramework"
-                    :items="frameworks"
-                    icon="lucide:search"
-                    shape="rounded"
-                    placeholder="Select a framework"
-                    label="Framework"
-                    clearable
-                    disabled
-                  />
+                  <DisabledDemo />
                 </div>
                 <!-- State box -->
-                <DocState :state="selectedFramework" height="80px" />
+                <DocState
+                  label="v-model"
+                  :state="selectedFramework"
+                  height="80px"
+                />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="disabled" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(disabled)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -311,23 +335,21 @@ const selectedPeople = ref([people[0], people[1]])
             <template #demo>
               <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseAutocomplete
-                    v-model="selectedFramework"
-                    :items="frameworks"
-                    icon="lucide:search"
-                    shape="rounded"
-                    placeholder="Select a framework"
-                    label="Framework"
-                    clearable
-                    loading
-                  />
+                  <LoadingDemo />
                 </div>
                 <!-- State box -->
-                <DocState :state="selectedFramework" height="80px" />
+                <DocState
+                  label="v-model"
+                  :state="selectedFramework"
+                  height="80px"
+                />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="loading" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(loading)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -338,22 +360,21 @@ const selectedPeople = ref([people[0], people[1]])
             <template #demo>
               <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseAutocomplete
-                    v-model="selectedHobby"
-                    :items="hobbies"
-                    icon="ph:heartbeat-duotone"
-                    shape="rounded"
-                    placeholder="Select a hobby"
-                    label="Hobbies"
-                    clearable
-                  />
+                  <IconResultDemo />
                 </div>
                 <!-- State box -->
-                <DocState :state="selectedHobby" height="80px" />
+                <DocState
+                  label="v-model"
+                  :state="selectedHobby"
+                  height="80px"
+                />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="iconResult" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(iconResult)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -364,21 +385,21 @@ const selectedPeople = ref([people[0], people[1]])
             <template #demo>
               <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseAutocomplete
-                    v-model="selectedPerson"
-                    :items="people"
-                    icon="ph:users-three"
-                    placeholder="Search..."
-                    label="Assignee"
-                    clearable
-                  />
+                  <MediaResultDemo />
                 </div>
                 <!-- State box -->
-                <DocState :state="selectedPerson" height="80px" />
+                <DocState
+                  label="v-model"
+                  :state="selectedPerson"
+                  height="80px"
+                />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="mediaResult" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(mediaResult)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -389,22 +410,21 @@ const selectedPeople = ref([people[0], people[1]])
             <template #demo>
               <div class="flex max-w-lg flex-col gap-6">
                 <div class="w-full space-y-4">
-                  <BaseAutocomplete
-                    v-model="selectedPeople"
-                    :items="people"
-                    shape="rounded"
-                    icon="ph:users-three"
-                    placeholder="Search..."
-                    label="Assignee"
-                    multiple
-                  />
+                  <MultipleDemo />
                 </div>
                 <!-- State box -->
-                <DocState :state="selectedPeople" height="80px" />
+                <DocState
+                  label="v-model"
+                  :state="selectedPeople"
+                  height="80px"
+                />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="multiple" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(multiple)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
