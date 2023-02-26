@@ -1,4 +1,3 @@
-```vue
 <template>
   <div class="flex items-end flex-wrap">
     <BaseButtonIcon
@@ -39,4 +38,3 @@
     </BaseButtonIcon>
   </div>
 </template>
-```

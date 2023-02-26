@@ -1,10 +1,16 @@
 <script setup lang="ts">
-import group from '~/documentation/icon-button/group.md?raw'
-import loading from '~/documentation/icon-button/loading.md?raw'
-import muted from '~/documentation/icon-button/muted.md?raw'
-import primary from '~/documentation/icon-button/primary.md?raw'
-import shapes from '~/documentation/icon-button/shapes.md?raw'
-import small from '~/documentation/icon-button/small.md?raw'
+import GroupDemo from '~/documentation/icon-button/group.vue'
+import group from '~/documentation/icon-button/group.vue?raw'
+import LoadingDemo from '~/documentation/icon-button/loading.vue'
+import loading from '~/documentation/icon-button/loading.vue?raw'
+import MutedDemo from '~/documentation/icon-button/muted.vue'
+import muted from '~/documentation/icon-button/muted.vue?raw'
+import PrimaryDemo from '~/documentation/icon-button/primary.vue'
+import primary from '~/documentation/icon-button/primary.vue?raw'
+import ShapesDemo from '~/documentation/icon-button/shapes.vue'
+import shapes from '~/documentation/icon-button/shapes.vue?raw'
+import SmallDemo from '~/documentation/icon-button/small.vue'
+import small from '~/documentation/icon-button/small.vue?raw'
 
 definePageMeta({
   title: 'Button Icon',
@@ -14,6 +20,10 @@ definePageMeta({
     composables: ['useButton'],
   },
 })
+
+function wrapVueMarkdown(source: string) {
+  return '```vue\n' + source + '\n```'
+}
 </script>
 
 <template>
@@ -30,22 +40,14 @@ definePageMeta({
           <DocComponent label="Default button shapes">
             <template #demo>
               <BaseFocusLoop class="flex flex-wrap items-end gap-2">
-                <BaseButtonIcon shape="straight">
-                  <Icon name="ph:moon-duotone" class="h-5 w-5" />
-                </BaseButtonIcon>
-                <BaseButtonIcon shape="rounded">
-                  <Icon name="ph:github-logo-duotone" class="h-5 w-5" />
-                </BaseButtonIcon>
-                <BaseButtonIcon shape="curved">
-                  <Icon name="ph:game-controller-duotone" class="h-5 w-5" />
-                </BaseButtonIcon>
-                <BaseButtonIcon shape="full">
-                  <Icon name="ph:heart-duotone" class="h-5 w-5" />
-                </BaseButtonIcon>
+                <ShapesDemo />
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocMarkdown :source="shapes" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(shapes)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -55,22 +57,14 @@ definePageMeta({
           <DocComponent label="Smaller icon buttons">
             <template #demo>
               <BaseFocusLoop class="flex flex-wrap items-end gap-2">
-                <BaseButtonIcon shape="straight" small>
-                  <Icon name="ph:moon-duotone" class="h-5 w-5" />
-                </BaseButtonIcon>
-                <BaseButtonIcon shape="rounded" small>
-                  <Icon name="ph:github-logo-duotone" class="h-5 w-5" />
-                </BaseButtonIcon>
-                <BaseButtonIcon shape="curved" small>
-                  <Icon name="ph:game-controller-duotone" class="h-5 w-5" />
-                </BaseButtonIcon>
-                <BaseButtonIcon shape="full" small>
-                  <Icon name="ph:heart-duotone" class="h-5 w-5" />
-                </BaseButtonIcon>
+                <SmallDemo />
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocMarkdown :source="small" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(small)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -80,22 +74,14 @@ definePageMeta({
           <DocComponent label="Icon button primary color">
             <template #demo>
               <BaseFocusLoop class="flex flex-wrap items-end gap-2">
-                <BaseButtonIcon shape="straight" primary>
-                  <Icon name="ph:moon-duotone" class="h-5 w-5" />
-                </BaseButtonIcon>
-                <BaseButtonIcon shape="rounded" primary>
-                  <Icon name="ph:github-logo-duotone" class="h-5 w-5" />
-                </BaseButtonIcon>
-                <BaseButtonIcon shape="curved" primary>
-                  <Icon name="ph:game-controller-duotone" class="h-5 w-5" />
-                </BaseButtonIcon>
-                <BaseButtonIcon shape="full" primary>
-                  <Icon name="ph:heart-duotone" class="h-5 w-5" />
-                </BaseButtonIcon>
+                <PrimaryDemo />
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocMarkdown :source="primary" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(primary)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -105,22 +91,14 @@ definePageMeta({
           <DocComponent label="Button muted variation">
             <template #demo>
               <BaseFocusLoop class="flex flex-wrap items-end gap-2">
-                <BaseButtonIcon shape="straight" muted>
-                  <Icon name="ph:moon-duotone" class="h-5 w-5" />
-                </BaseButtonIcon>
-                <BaseButtonIcon shape="rounded" muted>
-                  <Icon name="ph:github-logo-duotone" class="h-5 w-5" />
-                </BaseButtonIcon>
-                <BaseButtonIcon shape="curved" muted>
-                  <Icon name="ph:game-controller-duotone" class="h-5 w-5" />
-                </BaseButtonIcon>
-                <BaseButtonIcon shape="full" muted>
-                  <Icon name="ph:heart-duotone" class="h-5 w-5" />
-                </BaseButtonIcon>
+                <MutedDemo />
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocMarkdown :source="muted" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(muted)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -130,22 +108,14 @@ definePageMeta({
           <DocComponent label="Icon button loading">
             <template #demo>
               <BaseFocusLoop class="flex flex-wrap items-end gap-2">
-                <BaseButtonIcon shape="straight" loading>
-                  <Icon name="ph:moon-duotone" class="h-5 w-5" />
-                </BaseButtonIcon>
-                <BaseButtonIcon shape="rounded" loading>
-                  <Icon name="ph:github-logo-duotone" class="h-5 w-5" />
-                </BaseButtonIcon>
-                <BaseButtonIcon shape="curved" loading>
-                  <Icon name="ph:game-controller-duotone" class="h-5 w-5" />
-                </BaseButtonIcon>
-                <BaseButtonIcon shape="full" loading>
-                  <Icon name="ph:heart-duotone" class="h-5 w-5" />
-                </BaseButtonIcon>
+                <LoadingDemo />
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocMarkdown :source="loading" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(loading)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -155,28 +125,14 @@ definePageMeta({
           <DocComponent label="icon buttons inside a group">
             <template #demo>
               <BaseFocusLoop class="flex flex-wrap items-end">
-                <BaseButtonIcon
-                  shape="curved"
-                  class="rounded-r-none border-r-0 focus:z-10"
-                >
-                  <Icon name="ph:moon-duotone" class="h-5 w-5" />
-                </BaseButtonIcon>
-                <BaseButtonIcon shape="straight" class="focus:z-10">
-                  <Icon name="ph:github-logo-duotone" class="h-5 w-5" />
-                </BaseButtonIcon>
-                <BaseButtonIcon shape="straight" class="border-l-0 focus:z-10">
-                  <Icon name="ph:game-controller-duotone" class="h-5 w-5" />
-                </BaseButtonIcon>
-                <BaseButtonIcon
-                  shape="curved"
-                  class="rounded-l-none border-l-0 focus:z-10"
-                >
-                  <Icon name="ph:heart-duotone" class="h-5 w-5" />
-                </BaseButtonIcon>
+                <GroupDemo />
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocMarkdown :source="group" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(group)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>

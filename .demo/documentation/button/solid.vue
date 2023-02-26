@@ -1,4 +1,3 @@
-```vue
 <template>
   <BaseButton>Button</BaseButton>
   <BaseButton color="primary">Button</BaseButton>
@@ -8,4 +7,3 @@
   <BaseButton color="danger">Button</BaseButton>
   <BaseButton muted>Button</BaseButton>
 </template>
-```

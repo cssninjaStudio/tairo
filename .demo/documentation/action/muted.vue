@@ -1,4 +1,3 @@
-```vue
 <template>
   <BaseButtonAction
     shape="straight"
@@ -16,4 +15,3 @@
     Action
   </BaseButtonAction>
 </template>
-```

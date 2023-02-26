@@ -1,4 +1,3 @@
-```vue
 <template>
   <BaseButtonAction shape="straight" loading>
     Action
@@ -13,4 +12,3 @@
     Action
   </BaseButtonAction>
 </template>
-```

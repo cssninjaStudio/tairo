@@ -1,4 +1,3 @@
-```vue
 <template>
   <div class="flex items-end">
     <BaseButtonAction
@@ -35,4 +34,3 @@
     </BaseButtonAction>
   </div>
 </template>
-```

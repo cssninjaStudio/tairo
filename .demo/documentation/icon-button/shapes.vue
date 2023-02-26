@@ -1,4 +1,3 @@
-```vue
 <template>
   <BaseButtonIcon shape="straight">
     <Icon
@@ -25,4 +24,3 @@
     />
   </BaseButtonIcon>
 </template>
-```

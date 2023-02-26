@@ -1,13 +1,22 @@
 <script setup lang="ts">
-import disabled from '~/documentation/button/disabled.md?raw'
-import group from '~/documentation/button/group.md?raw'
-import icons from '~/documentation/button/icons.md?raw'
-import links from '~/documentation/button/links.md?raw'
-import loading from '~/documentation/button/loading.md?raw'
-import outline from '~/documentation/button/outline.md?raw'
-import pastel from '~/documentation/button/pastel.md?raw'
-import shapes from '~/documentation/button/shapes.md?raw'
-import solid from '~/documentation/button/solid.md?raw'
+import DisabledDemo from '~/documentation/button/disabled.vue'
+import disabled from '~/documentation/button/group.vue?raw'
+import GroupDemo from '~/documentation/button/disabled.vue'
+import group from '~/documentation/button/group.vue?raw'
+import IconsDemo from '~/documentation/button/icons.vue'
+import icons from '~/documentation/button/icons.vue?raw'
+import LinksDemo from '~/documentation/button/links.vue'
+import links from '~/documentation/button/links.vue?raw'
+import LoadingDemo from '~/documentation/button/loading.vue'
+import loading from '~/documentation/button/loading.vue?raw'
+import OutlineDemo from '~/documentation/button/outline.vue'
+import outline from '~/documentation/button/outline.vue?raw'
+import PastelDemo from '~/documentation/button/pastel.vue'
+import pastel from '~/documentation/button/pastel.vue?raw'
+import ShapesDemo from '~/documentation/button/shapes.vue'
+import shapes from '~/documentation/button/shapes.vue?raw'
+import SolidDemo from '~/documentation/button/solid.vue'
+import solid from '~/documentation/button/solid.vue?raw'
 
 definePageMeta({
   title: 'Buttons',
@@ -17,6 +26,10 @@ definePageMeta({
     composables: ['useButton'],
   },
 })
+
+function wrapVueMarkdown(source: string) {
+  return '```vue\n' + source + '\n```'
+}
 </script>
 
 <template>
@@ -33,14 +46,14 @@ definePageMeta({
           <DocComponent label="Default button shapes">
             <template #demo>
               <BaseFocusLoop class="flex flex-wrap items-end gap-4">
-                <BaseButton shape="straight">Button</BaseButton>
-                <BaseButton>Button</BaseButton>
-                <BaseButton shape="curved">Button</BaseButton>
-                <BaseButton shape="full">Button</BaseButton>
+                <ShapesDemo />
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocMarkdown :source="shapes" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(shapes)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -50,25 +63,14 @@ definePageMeta({
           <DocComponent label="Button shaped links">
             <template #demo>
               <BaseFocusLoop class="flex flex-wrap items-end gap-4">
-                <BaseButton to="/components/button" shape="straight">
-                  Button
-                </BaseButton>
-                <BaseButton to="/components/button">Button</BaseButton>
-                <BaseButton to="https://cssninja.io" shape="curved">
-                  Button
-                </BaseButton>
-                <BaseButton
-                  rel=""
-                  target=""
-                  to="https://google.com"
-                  shape="full"
-                >
-                  Button
-                </BaseButton>
+                <LinksDemo />
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocMarkdown :source="links" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(links)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -78,17 +80,14 @@ definePageMeta({
           <DocComponent label="Solid button colors">
             <template #demo>
               <BaseFocusLoop class="flex flex-wrap items-end gap-4">
-                <BaseButton>Button</BaseButton>
-                <BaseButton color="primary">Button</BaseButton>
-                <BaseButton color="success">Button</BaseButton>
-                <BaseButton color="info">Button</BaseButton>
-                <BaseButton color="warning">Button</BaseButton>
-                <BaseButton color="danger">Button</BaseButton>
-                <BaseButton muted>Button</BaseButton>
+                <SolidDemo />
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocMarkdown :source="solid" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(solid)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -98,15 +97,14 @@ definePageMeta({
           <DocComponent label="Pastel button colors">
             <template #demo>
               <BaseFocusLoop class="flex flex-wrap items-end gap-4">
-                <BaseButton color="primary" flavor="pastel">Button</BaseButton>
-                <BaseButton color="success" flavor="pastel">Button</BaseButton>
-                <BaseButton color="info" flavor="pastel">Button</BaseButton>
-                <BaseButton color="warning" flavor="pastel">Button</BaseButton>
-                <BaseButton color="danger" flavor="pastel">Button</BaseButton>
+                <PastelDemo />
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocMarkdown :source="pastel" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(pastel)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -116,15 +114,14 @@ definePageMeta({
           <DocComponent label="Outline button colors">
             <template #demo>
               <BaseFocusLoop class="flex flex-wrap items-end gap-4">
-                <BaseButton color="primary" flavor="outline">Button</BaseButton>
-                <BaseButton color="success" flavor="outline">Button</BaseButton>
-                <BaseButton color="info" flavor="outline">Button</BaseButton>
-                <BaseButton color="warning" flavor="outline">Button</BaseButton>
-                <BaseButton color="danger" flavor="outline">Button</BaseButton>
+                <OutlineDemo />
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocMarkdown :source="outline" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(outline)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -134,16 +131,14 @@ definePageMeta({
           <DocComponent label="Button placeload insertion">
             <template #demo>
               <BaseFocusLoop class="flex flex-wrap items-end gap-4">
-                <BaseButton color="default" loading>Button</BaseButton>
-                <BaseButton color="primary" loading>Button</BaseButton>
-                <BaseButton color="success" loading>Button</BaseButton>
-                <BaseButton color="info" loading>Button</BaseButton>
-                <BaseButton color="warning" loading>Button</BaseButton>
-                <BaseButton color="danger" loading>Button</BaseButton>
+                <LoadingDemo />
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocMarkdown :source="loading" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(loading)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -153,34 +148,14 @@ definePageMeta({
           <DocComponent label="Button icons insertion">
             <template #demo>
               <BaseFocusLoop class="flex flex-wrap items-end gap-4">
-                <BaseButton color="default">
-                  <Icon name="lucide:moon" class="-ml-1 h-4 w-4" />
-                  <span>Button</span>
-                </BaseButton>
-                <BaseButton color="primary">
-                  <span>Button</span>
-                  <Icon name="lucide:arrow-right" class="mr-1 h-4 w-4" />
-                </BaseButton>
-                <BaseButton color="success">
-                  <Icon name="cib:envato" class="-ml-1 h-4 w-4" />
-                  <span>Button</span>
-                </BaseButton>
-                <BaseButton color="info">
-                  <Icon name="fa:twitter" class="-ml-1 h-4 w-4" />
-                  <span>Button</span>
-                </BaseButton>
-                <BaseButton color="warning">
-                  <Icon name="ion:shapes" class="-ml-1 h-4 w-4" />
-                  <span>Button</span>
-                </BaseButton>
-                <BaseButton color="danger">
-                  <Icon name="ph:heart-duotone" class="-ml-1 h-4 w-4" />
-                  <span>Button</span>
-                </BaseButton>
+                <IconsDemo />
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocMarkdown :source="icons" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(icons)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -190,16 +165,14 @@ definePageMeta({
           <DocComponent label="Button disabled state">
             <template #demo>
               <BaseFocusLoop class="flex flex-wrap items-end gap-4">
-                <BaseButton color="default" disabled>Button</BaseButton>
-                <BaseButton color="primary" disabled>Button</BaseButton>
-                <BaseButton color="success" disabled>Button</BaseButton>
-                <BaseButton color="info" disabled>Button</BaseButton>
-                <BaseButton color="warning" disabled>Button</BaseButton>
-                <BaseButton color="danger" disabled>Button</BaseButton>
+                <DisabledDemo />
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocMarkdown :source="disabled" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(disabled)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -209,22 +182,14 @@ definePageMeta({
           <DocComponent label="Setting a button group">
             <template #demo>
               <BaseFocusLoop class="flex flex-wrap items-end gap-2">
-                <BaseButton color="default">
-                  <Icon name="lucide:edit-3" class="-ml-1 h-3 w-3" />
-                  <span>Edit</span>
-                </BaseButton>
-                <BaseButton color="default">
-                  <Icon name="lucide:eye" class="-ml-1 h-3 w-3" />
-                  <span>View</span>
-                </BaseButton>
-                <BaseButton color="primary" flavor="outline">
-                  <Icon name="lucide:share-2" class="-ml-1 h-3 w-3" />
-                  <span>Share</span>
-                </BaseButton>
+                <GroupDemo />
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocMarkdown :source="group" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(group)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>

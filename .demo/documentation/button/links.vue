@@ -1,4 +1,3 @@
-```vue
 <template>
   <BaseButton
     to="/components/button"
@@ -24,4 +23,3 @@
     Button
   </BaseButton>
 </template>
-```

@@ -1,8 +1,12 @@
 <script setup lang="ts">
-import group from '~/documentation/action/group.md?raw'
-import loading from '~/documentation/action/loading.md?raw'
-import muted from '~/documentation/action/muted.md?raw'
-import shapes from '~/documentation/action/shapes.md?raw'
+import GroupDemo from '~/documentation/action/group.vue'
+import group from '~/documentation/action/group.vue?raw'
+import LoadingDemo from '~/documentation/action/loading.vue'
+import loading from '~/documentation/action/loading.vue?raw'
+import MutedDemo from '~/documentation/action/muted.vue'
+import muted from '~/documentation/action/muted.vue?raw'
+import ShapesDemo from '~/documentation/action/shapes.vue'
+import shapes from '~/documentation/action/shapes.vue?raw'
 
 definePageMeta({
   title: 'Button Action',
@@ -13,7 +17,9 @@ definePageMeta({
   },
 })
 
-const disabled = ref(true)
+function wrapVueMarkdown(source: string) {
+  return '```vue\n' + source + '\n```'
+}
 </script>
 
 <template>
@@ -30,14 +36,14 @@ const disabled = ref(true)
           <DocComponent label="Default action shapes">
             <template #demo>
               <BaseFocusLoop class="flex flex-wrap items-end gap-2">
-                <BaseButtonAction shape="straight">Action</BaseButtonAction>
-                <BaseButtonAction shape="rounded">Action</BaseButtonAction>
-                <BaseButtonAction shape="curved">Action</BaseButtonAction>
-                <BaseButtonAction shape="full">Action</BaseButtonAction>
+                <ShapesDemo />
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocMarkdown :source="shapes" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(shapes)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -47,22 +53,14 @@ const disabled = ref(true)
           <DocComponent label="Muted action variation">
             <template #demo>
               <BaseFocusLoop class="flex flex-wrap items-end gap-2">
-                <BaseButtonAction shape="straight" color="muted">
-                  Action
-                </BaseButtonAction>
-                <BaseButtonAction shape="rounded" color="muted">
-                  Action
-                </BaseButtonAction>
-                <BaseButtonAction shape="curved" color="muted">
-                  Action
-                </BaseButtonAction>
-                <BaseButtonAction shape="full" color="muted">
-                  Action
-                </BaseButtonAction>
+                <MutedDemo />
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocMarkdown :source="muted" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(muted)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -72,20 +70,14 @@ const disabled = ref(true)
           <DocComponent label="Action loading variation">
             <template #demo>
               <BaseFocusLoop class="flex flex-wrap items-end gap-2">
-                <BaseButtonAction shape="straight" loading>
-                  Action
-                </BaseButtonAction>
-                <BaseButtonAction shape="rounded" loading>
-                  Action
-                </BaseButtonAction>
-                <BaseButtonAction shape="curved" loading>
-                  Action
-                </BaseButtonAction>
-                <BaseButtonAction shape="full" loading>Action</BaseButtonAction>
+                <LoadingDemo />
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocMarkdown :source="loading" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(loading)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -94,36 +86,14 @@ const disabled = ref(true)
           <DocComponent label="Actions inside a group">
             <template #demo>
               <BaseFocusLoop class="flex items-end">
-                <BaseButtonAction
-                  shape="rounded"
-                  class="rounded-r-none border-r-0 focus:z-10"
-                  @click="disabled = !disabled"
-                >
-                  View
-                </BaseButtonAction>
-                <BaseButtonAction shape="straight" class="focus:z-10">
-                  <Icon name="ph:pen" class="h-4 w-4" />
-                </BaseButtonAction>
-                <BaseButtonAction muted shape="straight" class="focus:z-10">
-                  Muted
-                </BaseButtonAction>
-                <BaseButtonAction
-                  :disabled="disabled"
-                  shape="straight"
-                  class="focus:z-10"
-                >
-                  Disabled
-                </BaseButtonAction>
-                <BaseButtonAction
-                  shape="rounded"
-                  class="rounded-l-none border-l-0 focus:z-10"
-                >
-                  Share
-                </BaseButtonAction>
+                <GroupDemo />
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocMarkdown :source="group" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(group)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>

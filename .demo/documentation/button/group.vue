@@ -1,4 +1,3 @@
-```vue
 <template>
   <BaseButton color="default">
     <Icon
@@ -22,4 +21,3 @@
     <span>Share</span>
   </BaseButton>
 </template>
-```
