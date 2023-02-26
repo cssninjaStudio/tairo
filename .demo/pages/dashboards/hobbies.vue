@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Hobbies',
-  layout: 'sidebar',
 })
 
 const trending = [

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Credit Cards',
-  layout: 'sidebar',
+  
 })
 
 const cards = [

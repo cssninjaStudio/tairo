@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Soccer',
-  layout: 'sidebar',
 })
 
 const matches = [

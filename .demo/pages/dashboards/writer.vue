@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Writer',
-  layout: 'sidebar',
 })
 
 const activePosts = ref('recent')

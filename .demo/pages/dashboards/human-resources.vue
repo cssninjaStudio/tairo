@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Human Resources',
-  layout: 'sidebar',
 })
 
 const activeSetting = ref('candidates')

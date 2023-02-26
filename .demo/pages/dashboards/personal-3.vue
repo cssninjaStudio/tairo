@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Interviews',
-  layout: 'sidebar',
 })
 
 const areaInterviews = reactive(useAreaInterviews())

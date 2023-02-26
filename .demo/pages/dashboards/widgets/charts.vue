@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Apex Charts',
-  layout: 'sidebar',
 })
 
 const demoLine = reactive(useDemoLine())

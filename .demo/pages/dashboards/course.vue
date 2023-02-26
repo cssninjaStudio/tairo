@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'E-Learning',
-  layout: 'sidebar',
 })
 
 const courses = [

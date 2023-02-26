@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Health',
-  layout: 'sidebar',
 })
 
 const areaCondition = reactive(useAreaCondition())

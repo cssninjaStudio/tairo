@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Video',
-  layout: 'sidebar',
 })
 
 const featuredVideos = [

@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Analytics',
-  layout: 'sidebar',
 })
 
 const lineRevenue = reactive(useLineRevenue())

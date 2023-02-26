@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Sales',
-  layout: 'sidebar',
 })
 
 const sparkSalesOne = reactive(useSparkSalesOne())

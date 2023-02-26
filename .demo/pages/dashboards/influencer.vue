@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Influencer',
-  layout: 'sidebar',
 })
 
 const companies = [

@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Flights',
-  layout: 'sidebar',
 })
 
 const stops = ref([])

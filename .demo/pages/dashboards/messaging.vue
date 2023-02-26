@@ -1,7 +1,7 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Messaging',
-  layout: 'default',
+  layout: 'empty',
 })
 
 const { open } = usePanels()

@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'My Projects',
-  layout: 'sidebar',
 })
 
 const areaTaskCompletion = reactive(useAreaTaskCompletion())
