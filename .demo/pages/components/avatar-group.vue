@@ -1,8 +1,12 @@
 <script setup lang="ts">
-import large from '~/documentation/avatar-group/large.md?raw'
-import medium from '~/documentation/avatar-group/medium.md?raw'
-import small from '~/documentation/avatar-group/small.md?raw'
-import tiny from '~/documentation/avatar-group/tiny.md?raw'
+import LargeDemo from '~/documentation/avatar-group/large.vue'
+import large from '~/documentation/avatar-group/large.vue?raw'
+import MediumDemo from '~/documentation/avatar-group/medium.vue'
+import medium from '~/documentation/avatar-group/medium.vue?raw'
+import SmallDemo from '~/documentation/avatar-group/small.vue'
+import small from '~/documentation/avatar-group/small.vue?raw'
+import TinyDemo from '~/documentation/avatar-group/tiny.vue'
+import tiny from '~/documentation/avatar-group/tiny.vue?raw'
 
 definePageMeta({
   title: 'Avatar group',
@@ -12,45 +16,26 @@ definePageMeta({
   },
 })
 
+function wrapVueMarkdown(source: string) {
+  return '```vue\n' + source + '\n```'
+}
+
 const demoBreadcrumb = [
   {
     label: 'Home',
     hideLabel: true,
     icon: 'lucide:home',
-    to: '#/',
+    to: '/',
   },
   {
     label: 'Components Hub',
     hideLabel: false,
-    to: '#/',
+    to: '/components',
   },
   {
     label: 'Avatar group',
     hideLabel: false,
     to: '#/',
-  },
-]
-
-const people = [
-  {
-    tooltip: 'Clarissa Perez',
-    src: '/img/avatars/19.svg',
-  },
-  {
-    tooltip: 'Aaaron Splatter',
-    src: '/img/avatars/16.svg',
-  },
-  {
-    tooltip: 'Mike Miller',
-    src: '/img/avatars/3.svg',
-  },
-  {
-    tooltip: 'Benedict Kessler',
-    src: '/img/avatars/22.svg',
-  },
-  {
-    tooltip: 'Maya Rosselini',
-    src: '/img/avatars/2.svg',
   },
 ]
 </script>
@@ -69,11 +54,14 @@ const people = [
           <DocComponent label="Xs avatar group">
             <template #demo>
               <div class="flex flex-wrap items-end gap-4">
-                <BaseAvatarGroup size="xs" :avatars="people" />
+                <TinyDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="tiny" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(tiny)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -83,11 +71,14 @@ const people = [
           <DocComponent label="Sm avatar group">
             <template #demo>
               <div class="flex flex-wrap items-end gap-4">
-                <BaseAvatarGroup :avatars="people" />
+                <SmallDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="small" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(small)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -97,11 +88,14 @@ const people = [
           <DocComponent label="Md avatar group">
             <template #demo>
               <div class="flex flex-wrap items-end gap-4">
-                <BaseAvatarGroup size="md" :avatars="people" />
+                <MediumDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="medium" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(medium)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -111,11 +105,14 @@ const people = [
           <DocComponent label="Lg avatar group">
             <template #demo>
               <div class="flex flex-wrap items-end gap-4">
-                <BaseAvatarGroup size="lg" :avatars="people" />
+                <LargeDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="large" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(large)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>

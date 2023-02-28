@@ -1,22 +1,51 @@
 <script setup lang="ts">
-import dangerColor from '~/documentation/overview/danger-color.md?raw'
-import infoColor from '~/documentation/overview/info-color.md?raw'
-import primaryColor from '~/documentation/overview/primary-color.md?raw'
-import mutedColor from '~/documentation/overview/muted-color.md?raw'
-import successColor from '~/documentation/overview/success-color.md?raw'
-import warningColor from '~/documentation/overview/warning-color.md?raw'
+import DangerColorDemo from '~/documentation/overview/danger-color.vue'
+import dangerColor from '~/documentation/overview/danger-color.vue?raw'
+import InfoColorDemo from '~/documentation/overview/info-color.vue'
+import infoColor from '~/documentation/overview/info-color.vue?raw'
+import PrimaryColorDemo from '~/documentation/overview/primary-color.vue'
+import primaryColor from '~/documentation/overview/primary-color.vue?raw'
+import MutedColorDemo from '~/documentation/overview/muted-color.vue'
+import mutedColor from '~/documentation/overview/muted-color.vue?raw'
+import SuccessColorDemo from '~/documentation/overview/success-color.vue'
+import successColor from '~/documentation/overview/success-color.vue?raw'
+import WarningColorDemo from '~/documentation/overview/warning-color.vue'
+import warningColor from '~/documentation/overview/warning-color.vue?raw'
 
 definePageMeta({
   title: 'Overview',
 })
 
 const app = useAppConfig()
+
+function wrapVueMarkdown(source: string) {
+  return '```vue\n' + source + '\n```'
+}
+
+const demoBreadcrumb = [
+  {
+    label: 'Home',
+    hideLabel: true,
+    icon: 'lucide:home',
+    to: '/',
+  },
+  {
+    label: 'Components Hub',
+    hideLabel: false,
+    to: '/components',
+  },
+  {
+    label: 'Overview',
+    hideLabel: false,
+    to: '#/',
+  },
+]
 </script>
 
 <template>
   <div>
     <!-- BreadCrumb -->
-    <BaseBreadcrumb />
+    <BaseBreadcrumb :items="demoBreadcrumb" />
 
     <!-- Documentation Layout -->
     <DocLayout>
@@ -31,9 +60,9 @@ const app = useAppConfig()
               <BaseHeading
                 as="h2"
                 size="2xl"
-                weight="bold"
+                weight="medium"
                 :anchor="{ prefix: '' }"
-                class="text-muted-800 dark:text-white"
+                class="text-muted-800 dark:text-white mb-5"
               >
                 <strong>{{ app.tairo.title }}</strong>
                 Overview
@@ -42,13 +71,13 @@ const app = useAppConfig()
                 size="sm"
                 class="text-muted-500 dark:text-muted-400 mb-4"
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Erat
-                enim Polemonis.
+                Tairo is a powerful Nuxt 3 / Tailwind CSS Admin and Webapp UI
+                Kit, built with Vue 3 and TypeScript.
               </BaseParagraph>
               <BaseText size="sm" class="text-muted-400 dark:text-muted-400">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Erat
-                enim Polemonis. Duo Reges: constructio interrete. Philosophi
-                autem in suis lectulis plerumque moriuntur.
+                Tairo provides everything you need to build a modern web app or
+                admin application. All basic components are built with Tailwind
+                CSS and powered by Nuxt 3.
               </BaseText>
 
               <NuxtLink
@@ -108,7 +137,7 @@ const app = useAppConfig()
             </BaseCard>
             <BaseCard shape="rounded" class="p-8 text-center">
               <Icon
-                name="logos:unocss"
+                name="logos:vue"
                 class="mx-auto mb-2 block h-10 w-10 scale-75 dark:invert"
               />
               <BaseHeading
@@ -117,7 +146,7 @@ const app = useAppConfig()
                 weight="semibold"
                 class="text-muted-800 dark:text-white"
               >
-                UnoCSS
+                Nuxt UI
               </BaseHeading>
             </BaseCard>
           </div>
@@ -258,50 +287,14 @@ const app = useAppConfig()
           <DocComponent label="Primary color variations">
             <template #demo>
               <div class="flex flex-wrap items-end gap-2">
-                <div
-                  class="bg-primary-50 h-8 w-8 rounded-lg"
-                  tooltip="bg-primary-50"
-                />
-                <div
-                  class="bg-primary-100 h-8 w-8 rounded-lg"
-                  tooltip="bg-primary-100"
-                />
-                <div
-                  class="bg-primary-200 h-8 w-8 rounded-lg"
-                  tooltip="bg-primary-200"
-                />
-                <div
-                  class="bg-primary-300 h-8 w-8 rounded-lg"
-                  tooltip="bg-primary-300"
-                />
-                <div
-                  class="bg-primary-400 h-8 w-8 rounded-lg"
-                  tooltip="bg-primary-400"
-                />
-                <div
-                  class="bg-primary-500 h-8 w-8 rounded-lg"
-                  tooltip="bg-primary-500"
-                />
-                <div
-                  class="bg-primary-600 h-8 w-8 rounded-lg"
-                  tooltip="bg-primary-600"
-                />
-                <div
-                  class="bg-primary-700 h-8 w-8 rounded-lg"
-                  tooltip="bg-primary-700"
-                />
-                <div
-                  class="bg-primary-800 h-8 w-8 rounded-lg"
-                  tooltip="bg-primary-800"
-                />
-                <div
-                  class="bg-primary-900 h-8 w-8 rounded-lg"
-                  tooltip="bg-primary-900"
-                />
+                <PrimaryColorDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="primaryColor" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(primaryColor)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -311,50 +304,14 @@ const app = useAppConfig()
           <DocComponent label="Info color variations">
             <template #demo>
               <div class="flex flex-wrap items-end gap-2">
-                <div
-                  class="bg-info-50 h-8 w-8 rounded-lg"
-                  tooltip="bg-info-50"
-                />
-                <div
-                  class="bg-info-100 h-8 w-8 rounded-lg"
-                  tooltip="bg-info-100"
-                />
-                <div
-                  class="bg-info-200 h-8 w-8 rounded-lg"
-                  tooltip="bg-info-200"
-                />
-                <div
-                  class="bg-info-300 h-8 w-8 rounded-lg"
-                  tooltip="bg-info-300"
-                />
-                <div
-                  class="bg-info-400 h-8 w-8 rounded-lg"
-                  tooltip="bg-info-400"
-                />
-                <div
-                  class="bg-info-500 h-8 w-8 rounded-lg"
-                  tooltip="bg-info-500"
-                />
-                <div
-                  class="bg-info-600 h-8 w-8 rounded-lg"
-                  tooltip="bg-info-600"
-                />
-                <div
-                  class="bg-info-700 h-8 w-8 rounded-lg"
-                  tooltip="bg-info-700"
-                />
-                <div
-                  class="bg-info-800 h-8 w-8 rounded-lg"
-                  tooltip="bg-info-800"
-                />
-                <div
-                  class="bg-info-900 h-8 w-8 rounded-lg"
-                  tooltip="bg-info-900"
-                />
+                <InfoColorDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="infoColor" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(infoColor)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -364,50 +321,14 @@ const app = useAppConfig()
           <DocComponent label="Success color variations">
             <template #demo>
               <div class="flex flex-wrap items-end gap-2">
-                <div
-                  class="bg-success-50 h-8 w-8 rounded-lg"
-                  tooltip="bg-success-50"
-                />
-                <div
-                  class="bg-success-100 h-8 w-8 rounded-lg"
-                  tooltip="bg-success-100"
-                />
-                <div
-                  class="bg-success-200 h-8 w-8 rounded-lg"
-                  tooltip="bg-success-200"
-                />
-                <div
-                  class="bg-success-300 h-8 w-8 rounded-lg"
-                  tooltip="bg-success-300"
-                />
-                <div
-                  class="bg-success-400 h-8 w-8 rounded-lg"
-                  tooltip="bg-success-400"
-                />
-                <div
-                  class="bg-success-500 h-8 w-8 rounded-lg"
-                  tooltip="bg-success-500"
-                />
-                <div
-                  class="bg-success-600 h-8 w-8 rounded-lg"
-                  tooltip="bg-success-600"
-                />
-                <div
-                  class="bg-success-700 h-8 w-8 rounded-lg"
-                  tooltip="bg-success-700"
-                />
-                <div
-                  class="bg-success-800 h-8 w-8 rounded-lg"
-                  tooltip="bg-success-800"
-                />
-                <div
-                  class="bg-success-900 h-8 w-8 rounded-lg"
-                  tooltip="bg-success-900"
-                />
+                <SuccessColorDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="successColor" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(successColor)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -417,50 +338,14 @@ const app = useAppConfig()
           <DocComponent label="Success color variations">
             <template #demo>
               <div class="flex flex-wrap items-end gap-2">
-                <div
-                  class="bg-warning-50 h-8 w-8 rounded-lg"
-                  tooltip="bg-warning-50"
-                />
-                <div
-                  class="bg-warning-100 h-8 w-8 rounded-lg"
-                  tooltip="bg-warning-100"
-                />
-                <div
-                  class="bg-warning-200 h-8 w-8 rounded-lg"
-                  tooltip="bg-warning-200"
-                />
-                <div
-                  class="bg-warning-300 h-8 w-8 rounded-lg"
-                  tooltip="bg-warning-300"
-                />
-                <div
-                  class="bg-warning-400 h-8 w-8 rounded-lg"
-                  tooltip="bg-warning-400"
-                />
-                <div
-                  class="bg-warning-500 h-8 w-8 rounded-lg"
-                  tooltip="bg-warning-500"
-                />
-                <div
-                  class="bg-warning-600 h-8 w-8 rounded-lg"
-                  tooltip="bg-warning-600"
-                />
-                <div
-                  class="bg-warning-700 h-8 w-8 rounded-lg"
-                  tooltip="bg-warning-700"
-                />
-                <div
-                  class="bg-warning-800 h-8 w-8 rounded-lg"
-                  tooltip="bg-warning-800"
-                />
-                <div
-                  class="bg-warning-900 h-8 w-8 rounded-lg"
-                  tooltip="bg-warning-900"
-                />
+                <WarningColorDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="warningColor" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(warningColor)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -470,50 +355,14 @@ const app = useAppConfig()
           <DocComponent label="Success color variations">
             <template #demo>
               <div class="flex flex-wrap items-end gap-2">
-                <div
-                  class="bg-danger-50 h-8 w-8 rounded-lg"
-                  tooltip="bg-danger-50"
-                />
-                <div
-                  class="bg-danger-100 h-8 w-8 rounded-lg"
-                  tooltip="bg-danger-100"
-                />
-                <div
-                  class="bg-danger-200 h-8 w-8 rounded-lg"
-                  tooltip="bg-danger-200"
-                />
-                <div
-                  class="bg-danger-300 h-8 w-8 rounded-lg"
-                  tooltip="bg-danger-300"
-                />
-                <div
-                  class="bg-danger-400 h-8 w-8 rounded-lg"
-                  tooltip="bg-danger-400"
-                />
-                <div
-                  class="bg-danger-500 h-8 w-8 rounded-lg"
-                  tooltip="bg-danger-500"
-                />
-                <div
-                  class="bg-danger-600 h-8 w-8 rounded-lg"
-                  tooltip="bg-danger-600"
-                />
-                <div
-                  class="bg-danger-700 h-8 w-8 rounded-lg"
-                  tooltip="bg-danger-700"
-                />
-                <div
-                  class="bg-danger-800 h-8 w-8 rounded-lg"
-                  tooltip="bg-danger-800"
-                />
-                <div
-                  class="bg-danger-900 h-8 w-8 rounded-lg"
-                  tooltip="bg-danger-900"
-                />
+                <DangerColorDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="dangerColor" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(dangerColor)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -523,50 +372,14 @@ const app = useAppConfig()
           <DocComponent label="Success color variations">
             <template #demo>
               <div class="flex flex-wrap items-end gap-2">
-                <div
-                  class="bg-muted-50 h-8 w-8 rounded-lg"
-                  tooltip="bg-muted-50"
-                />
-                <div
-                  class="bg-muted-100 h-8 w-8 rounded-lg"
-                  tooltip="bg-muted-100"
-                />
-                <div
-                  class="bg-muted-200 h-8 w-8 rounded-lg"
-                  tooltip="bg-muted-200"
-                />
-                <div
-                  class="bg-muted-300 h-8 w-8 rounded-lg"
-                  tooltip="bg-muted-300"
-                />
-                <div
-                  class="bg-muted-400 h-8 w-8 rounded-lg"
-                  tooltip="bg-muted-400"
-                />
-                <div
-                  class="bg-muted-500 h-8 w-8 rounded-lg"
-                  tooltip="bg-muted-500"
-                />
-                <div
-                  class="bg-muted-600 h-8 w-8 rounded-lg"
-                  tooltip="bg-muted-600"
-                />
-                <div
-                  class="bg-muted-700 h-8 w-8 rounded-lg"
-                  tooltip="bg-muted-700"
-                />
-                <div
-                  class="bg-muted-800 h-8 w-8 rounded-lg"
-                  tooltip="bg-muted-800"
-                />
-                <div
-                  class="bg-muted-900 h-8 w-8 rounded-lg"
-                  tooltip="bg-muted-900"
-                />
+                <MutedColorDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="mutedColor" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(mutedColor)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>

@@ -1,8 +1,12 @@
 <script setup lang="ts">
-import arrow from '~/documentation/breadcrumb/arrow.md?raw'
-import chevron from '~/documentation/breadcrumb/chevron.md?raw'
-import dot from '~/documentation/breadcrumb/dot.md?raw'
-import slash from '~/documentation/breadcrumb/slash.md?raw'
+import ArrowDemo from '~/documentation/breadcrumb/arrow.vue'
+import arrow from '~/documentation/breadcrumb/arrow.vue?raw'
+import ChevronDemo from '~/documentation/breadcrumb/chevron.vue'
+import chevron from '~/documentation/breadcrumb/chevron.vue?raw'
+import DotDemo from '~/documentation/breadcrumb/dot.vue'
+import dot from '~/documentation/breadcrumb/dot.vue?raw'
+import SlashDemo from '~/documentation/breadcrumb/slash.vue'
+import slash from '~/documentation/breadcrumb/slash.vue?raw'
 
 definePageMeta({
   title: 'Breadcrumbs',
@@ -12,20 +16,24 @@ definePageMeta({
   },
 })
 
+function wrapVueMarkdown(source: string) {
+  return '```vue\n' + source + '\n```'
+}
+
 const demoBreadcrumb = [
   {
     label: 'Home',
     hideLabel: true,
     icon: 'lucide:home',
-    to: '#/',
+    to: '/',
   },
   {
     label: 'Components Hub',
     hideLabel: false,
-    to: '#/',
+    to: '/components',
   },
   {
-    label: 'Breadcrumbs',
+    label: 'Breadcrumb',
     hideLabel: false,
     to: '#/',
   },
@@ -86,13 +94,14 @@ const demoBreadcrumbTwo = [
           <DocComponent label="Breadcrumb dot separator">
             <template #demo>
               <div class="flex flex-col gap-4">
-                <BaseBreadcrumb :items="demoBreadcrumbOne" />
-
-                <BaseBreadcrumb :items="demoBreadcrumbTwo" />
+                <DotDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="dot" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(dot)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -102,13 +111,14 @@ const demoBreadcrumbTwo = [
           <DocComponent label="Breadcrumb slash separator">
             <template #demo>
               <div class="flex flex-col gap-4">
-                <BaseBreadcrumb :items="demoBreadcrumbOne">/</BaseBreadcrumb>
-
-                <BaseBreadcrumb :items="demoBreadcrumbTwo">/</BaseBreadcrumb>
+                <SlashDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="slash" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(slash)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -122,17 +132,14 @@ const demoBreadcrumbTwo = [
           <DocComponent label="Breadcrumb chevron separator">
             <template #demo>
               <div class="flex flex-col gap-4">
-                <BaseBreadcrumb :items="demoBreadcrumbOne">
-                  <Icon name="lucide:chevron-right" class="block h-3 w-3" />
-                </BaseBreadcrumb>
-
-                <BaseBreadcrumb :items="demoBreadcrumbTwo">
-                  <Icon name="lucide:chevron-right" class="block h-3 w-3" />
-                </BaseBreadcrumb>
+                <ChevronDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="chevron" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(chevron)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -142,17 +149,14 @@ const demoBreadcrumbTwo = [
           <DocComponent label="Breadcrumb arrow separator">
             <template #demo>
               <div class="flex flex-col gap-4">
-                <BaseBreadcrumb :items="demoBreadcrumbOne">
-                  <Icon name="lucide:arrow-right" class="block h-3 w-3" />
-                </BaseBreadcrumb>
-
-                <BaseBreadcrumb :items="demoBreadcrumbTwo">
-                  <Icon name="lucide:arrow-right" class="block h-3 w-3" />
-                </BaseBreadcrumb>
+                <ArrowDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="arrow" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(arrow)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>

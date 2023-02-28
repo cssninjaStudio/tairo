@@ -1,10 +1,16 @@
 <script setup lang="ts">
-import circleSizes from '~/documentation/iconbox/circle-sizes.md?raw'
-import elevation from '~/documentation/iconbox/elevation.md?raw'
-import outline from '~/documentation/iconbox/outline.md?raw'
-import pastel from '~/documentation/iconbox/pastel.md?raw'
-import roundedSizes from '~/documentation/iconbox/rounded-sizes.md?raw'
-import solid from '~/documentation/iconbox/solid.md?raw'
+import CircleSizesDemo from '~/documentation/iconbox/circle-sizes.vue'
+import circleSizes from '~/documentation/iconbox/circle-sizes.vue?raw'
+import ElevationDemo from '~/documentation/iconbox/elevation.vue'
+import elevation from '~/documentation/iconbox/elevation.vue?raw'
+import OutlineDemo from '~/documentation/iconbox/outline.vue'
+import outline from '~/documentation/iconbox/outline.vue?raw'
+import PastelDemo from '~/documentation/iconbox/pastel.vue'
+import pastel from '~/documentation/iconbox/pastel.vue?raw'
+import RoundedSizesDemo from '~/documentation/iconbox/rounded-sizes.vue'
+import roundedSizes from '~/documentation/iconbox/rounded-sizes.vue?raw'
+import SolidDemo from '~/documentation/iconbox/solid.vue'
+import solid from '~/documentation/iconbox/solid.vue?raw'
 
 definePageMeta({
   title: 'Icon Boxes',
@@ -13,12 +19,35 @@ definePageMeta({
     components: ['BaseIconBox'],
   },
 })
+
+function wrapVueMarkdown(source: string) {
+  return '```vue\n' + source + '\n```'
+}
+
+const demoBreadcrumb = [
+  {
+    label: 'Home',
+    hideLabel: true,
+    icon: 'lucide:home',
+    to: '/',
+  },
+  {
+    label: 'Components Hub',
+    hideLabel: false,
+    to: '/components',
+  },
+  {
+    label: 'Icon Box',
+    hideLabel: false,
+    to: '#/',
+  },
+]
 </script>
 
 <template>
   <div>
     <!-- BreadCrumb -->
-    <BaseBreadcrumb />
+    <BaseBreadcrumb :items="demoBreadcrumb" />
 
     <!-- Documentation Layout -->
     <DocLayout>
@@ -29,46 +58,14 @@ definePageMeta({
           <DocComponent label="Rounded boxes sizes">
             <template #demo>
               <div class="flex flex-wrap items-end gap-4">
-                <BaseIconBox
-                  size="xs"
-                  class="bg-gray-200 text-gray-500 dark:bg-gray-800"
-                >
-                  <Icon name="ph:nut-duotone" class="h-3 w-3" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="sm"
-                  class="bg-gray-200 text-gray-500 dark:bg-gray-800"
-                >
-                  <Icon name="ph:nut-duotone" class="h-4 w-4" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  class="bg-gray-200 text-gray-500 dark:bg-gray-800"
-                >
-                  <Icon name="ph:nut-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="lg"
-                  class="bg-gray-200 text-gray-500 dark:bg-gray-800"
-                >
-                  <Icon name="ph:nut-duotone" class="h-6 w-6" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="xl"
-                  class="bg-gray-200 text-gray-500 dark:bg-gray-800"
-                >
-                  <Icon name="ph:nut-duotone" class="h-7 w-7" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="2xl"
-                  class="bg-gray-200 text-gray-500 dark:bg-gray-800"
-                >
-                  <Icon name="ph:nut-duotone" class="h-8 w-8" />
-                </BaseIconBox>
+                <RoundedSizesDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="roundedSizes" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(roundedSizes)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -78,52 +75,14 @@ definePageMeta({
           <DocComponent label="Circle boxes sizes">
             <template #demo>
               <div class="flex flex-wrap items-end gap-4">
-                <BaseIconBox
-                  size="xs"
-                  shape="circle"
-                  class="bg-gray-200 text-gray-500 dark:bg-gray-800"
-                >
-                  <Icon name="ph:nut-duotone" class="h-3 w-3" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="sm"
-                  shape="circle"
-                  class="bg-gray-200 text-gray-500 dark:bg-gray-800"
-                >
-                  <Icon name="ph:nut-duotone" class="h-4 w-4" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="bg-gray-200 text-gray-500 dark:bg-gray-800"
-                >
-                  <Icon name="ph:nut-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="lg"
-                  shape="circle"
-                  class="bg-gray-200 text-gray-500 dark:bg-gray-800"
-                >
-                  <Icon name="ph:nut-duotone" class="h-6 w-6" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="xl"
-                  shape="circle"
-                  class="bg-gray-200 text-gray-500 dark:bg-gray-800"
-                >
-                  <Icon name="ph:nut-duotone" class="h-7 w-7" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="2xl"
-                  shape="circle"
-                  class="bg-gray-200 text-gray-500 dark:bg-gray-800"
-                >
-                  <Icon name="ph:nut-duotone" class="h-8 w-8" />
-                </BaseIconBox>
+                <CircleSizesDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="circleSizes" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(circleSizes)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -133,150 +92,14 @@ definePageMeta({
           <DocComponent label="Solid colors example">
             <template #demo>
               <div class="flex flex-wrap items-end gap-2">
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 border bg-white text-gray-500"
-                >
-                  <Icon name="ph:nut-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="bg-gray-200 text-gray-500 dark:bg-gray-800"
-                >
-                  <Icon name="ph:cat-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="bg-primary-500 text-white"
-                >
-                  <Icon name="ph:ghost-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="bg-lime-500 text-white"
-                >
-                  <Icon name="ph:club-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="bg-green-500 text-white"
-                >
-                  <Icon name="ph:leaf-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="bg-emerald-500 text-white"
-                >
-                  <Icon name="ph:mountains-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="bg-teal-500 text-white"
-                >
-                  <Icon name="ph:paint-brush-broad-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="bg-cyan-500 text-white"
-                >
-                  <Icon name="ph:rocket-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="bg-sky-500 text-white"
-                >
-                  <Icon name="ph:popcorn-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="bg-blue-500 text-white"
-                >
-                  <Icon name="ph:flask-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="bg-indigo-500 text-white"
-                >
-                  <Icon name="ph:drop-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="bg-purple-500 text-white"
-                >
-                  <Icon name="ph:image-square-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="bg-fuchsia-500 text-white"
-                >
-                  <Icon name="ph:piano-keys-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="bg-pink-500 text-white"
-                >
-                  <Icon name="ph:hand-waving-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="bg-rose-500 text-white"
-                >
-                  <Icon name="ph:lock-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="bg-red-500 text-white"
-                >
-                  <Icon name="ph:lightning-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="bg-orange-500 text-white"
-                >
-                  <Icon name="ph:pizza-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="bg-amber-500 text-white"
-                >
-                  <Icon name="ph:sun-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="bg-yellow-500 text-white"
-                >
-                  <Icon name="ph:sketch-logo-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="bg-muted-800 text-white"
-                >
-                  <Icon name="ph:moon-duotone" class="h-5 w-5" />
-                </BaseIconBox>
+                <SolidDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="solid" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(solid)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -286,112 +109,14 @@ definePageMeta({
           <DocComponent label="Pastel colors example">
             <template #demo>
               <div class="flex flex-wrap items-end gap-2">
-                <BaseIconBox
-                  size="md"
-                  class="bg-primary-100 text-primary-500 dark:border-primary-500 dark:bg-primary-500/20 dark:text-primary-400 dark:border-2"
-                >
-                  <Icon name="ph:nut-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  class="bg-lime-100 text-lime-500 dark:border-2 dark:border-lime-500 dark:bg-lime-500/20 dark:text-lime-400"
-                >
-                  <Icon name="ph:cookie-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  class="bg-green-100 text-green-500 dark:border-2 dark:border-green-500 dark:bg-green-500/20 dark:text-green-400"
-                >
-                  <Icon name="ph:armchair-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  class="bg-emerald-100 text-emerald-500 dark:border-2 dark:border-emerald-500 dark:bg-emerald-500/20 dark:text-emerald-400"
-                >
-                  <Icon name="ph:confetti-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  class="bg-teal-100 text-teal-500 dark:border-2 dark:border-teal-500 dark:bg-teal-500/20 dark:text-teal-400"
-                >
-                  <Icon name="ph:flask-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  class="bg-cyan-100 text-cyan-500 dark:border-2 dark:border-cyan-500 dark:bg-cyan-500/20 dark:text-cyan-400"
-                >
-                  <Icon name="ph:lamp-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  class="bg-sky-100 text-sky-500 dark:border-2 dark:border-sky-500 dark:bg-sky-500/20 dark:text-sky-400"
-                >
-                  <Icon name="ph:pill-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  class="bg-blue-100 text-blue-500 dark:border-2 dark:border-blue-500 dark:bg-blue-500/20 dark:text-blue-400"
-                >
-                  <Icon name="ph:chat-circle-dots-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  class="bg-indigo-100 text-indigo-500 dark:border-2 dark:border-indigo-500 dark:bg-indigo-500/20 dark:text-indigo-400"
-                >
-                  <Icon name="ph:popcorn-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  class="bg-purple-100 text-purple-500 dark:border-2 dark:border-purple-500 dark:bg-purple-500/20 dark:text-purple-400"
-                >
-                  <Icon name="ph:medal-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  class="bg-fuchsia-100 text-fuchsia-500 dark:border-2 dark:border-fuchsia-500 dark:bg-fuchsia-500/20 dark:text-fuchsia-400"
-                >
-                  <Icon name="ph:rocket-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  class="bg-pink-100 text-pink-500 dark:border-2 dark:border-pink-500 dark:bg-pink-500/20 dark:text-pink-400"
-                >
-                  <Icon name="ph:kanban-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  class="bg-rose-100 text-rose-500 dark:border-2 dark:border-rose-500 dark:bg-rose-500/20 dark:text-rose-400"
-                >
-                  <Icon name="ph:telegram-logo-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  class="bg-red-100 text-red-500 dark:border-2 dark:border-red-500 dark:bg-red-500/20 dark:text-red-400"
-                >
-                  <Icon name="ph:fire-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  class="bg-orange-100 text-orange-500 dark:border-2 dark:border-orange-500 dark:bg-orange-500/20 dark:text-orange-400"
-                >
-                  <Icon name="ph:sword-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  class="bg-amber-100 text-amber-500 dark:border-2 dark:border-amber-500 dark:bg-amber-500/20 dark:text-amber-400"
-                >
-                  <Icon name="ph:timer-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  class="bg-yellow-100 text-yellow-500 dark:border-2 dark:border-yellow-500 dark:bg-yellow-500/20 dark:text-yellow-400"
-                >
-                  <Icon name="ph:toggle-left-duotone" class="h-5 w-5" />
-                </BaseIconBox>
+                <PastelDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="pastel" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(pastel)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -401,162 +126,14 @@ definePageMeta({
           <DocComponent label="Outline colors example">
             <template #demo>
               <div class="flex flex-wrap items-end gap-2">
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="text-gray-400 dark:text-gray-500"
-                  bordered
-                >
-                  <Icon name="ph:popcorn-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="text-primary-500"
-                  bordered
-                >
-                  <Icon name="ph:presentation-chart-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="text-lime-500"
-                  bordered
-                >
-                  <Icon name="ph:paint-roller-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="text-green-500"
-                  bordered
-                >
-                  <Icon name="ph:rocket-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="text-emerald-500"
-                  bordered
-                >
-                  <Icon name="ph:package-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="text-teal-500"
-                  bordered
-                >
-                  <Icon name="ph:parachute-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="text-cyan-500"
-                  bordered
-                >
-                  <Icon name="ph:layout-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="text-sky-500"
-                  bordered
-                >
-                  <Icon name="ph:infinity-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="text-blue-500"
-                  bordered
-                >
-                  <Icon name="ph:flask-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="text-indigo-500"
-                  bordered
-                >
-                  <Icon name="ph:sparkle-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="text-purple-500"
-                  bordered
-                >
-                  <Icon name="ph:sword-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="text-fuchsia-500"
-                  bordered
-                >
-                  <Icon name="ph:trophy-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="text-pink-500"
-                  bordered
-                >
-                  <Icon name="ph:lock-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="text-rose-500"
-                  bordered
-                >
-                  <Icon name="ph:nut-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="text-red-500"
-                  bordered
-                >
-                  <Icon name="ph:paw-print-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="text-orange-500"
-                  bordered
-                >
-                  <Icon name="ph:users-four-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="text-amber-500"
-                  bordered
-                >
-                  <Icon name="ph:key-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="text-yellow-500"
-                  bordered
-                >
-                  <Icon name="ph:gear-six-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="text-muted-800 dark:text-muted-500"
-                  bordered
-                >
-                  <Icon name="ph:toilet-paper-duotone" class="h-5 w-5" />
-                </BaseIconBox>
+                <OutlineDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="outline" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(outline)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -566,143 +143,14 @@ definePageMeta({
           <DocComponent label="Elevation example">
             <template #demo>
               <div class="flex flex-wrap items-end gap-2">
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 border bg-white text-gray-500 shadow-lg"
-                >
-                  <Icon name="ph:nut-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="bg-primary-500 shadow-primary-500/50 text-white shadow-lg"
-                >
-                  <Icon name="ph:ghost-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="bg-lime-500 text-white shadow-lg shadow-lime-500/50"
-                >
-                  <Icon name="ph:club-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="bg-green-500 text-white shadow-lg shadow-green-500/50"
-                >
-                  <Icon name="ph:leaf-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="bg-emerald-500 text-white shadow-lg shadow-emerald-500/50"
-                >
-                  <Icon name="ph:mountains-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="bg-teal-500 text-white shadow-lg shadow-teal-500/50"
-                >
-                  <Icon name="ph:paint-brush-broad-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="bg-cyan-500 text-white shadow-lg shadow-cyan-500/50"
-                >
-                  <Icon name="ph:rocket-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="bg-sky-500 text-white shadow-lg shadow-sky-500/50"
-                >
-                  <Icon name="ph:popcorn-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="bg-blue-500 text-white shadow-lg shadow-blue-500/50"
-                >
-                  <Icon name="ph:flask-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="bg-indigo-500 text-white shadow-lg shadow-indigo-500/50"
-                >
-                  <Icon name="ph:drop-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="bg-purple-500 text-white shadow-lg shadow-purple-500/50"
-                >
-                  <Icon name="ph:image-square-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="bg-fuchsia-500 text-white shadow-lg shadow-fuchsia-500/50"
-                >
-                  <Icon name="ph:piano-keys-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="bg-pink-500 text-white shadow-lg shadow-pink-500/50"
-                >
-                  <Icon name="ph:hand-waving-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="bg-rose-500 text-white shadow-lg shadow-rose-500/50"
-                >
-                  <Icon name="ph:lock-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="bg-red-500 text-white shadow-lg shadow-red-500/50"
-                >
-                  <Icon name="ph:lightning-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="bg-orange-500 text-white shadow-lg shadow-orange-500/50"
-                >
-                  <Icon name="ph:pizza-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="bg-amber-500 text-white shadow-lg shadow-amber-500/50"
-                >
-                  <Icon name="ph:sun-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="bg-yellow-500 text-white shadow-lg shadow-yellow-500/50"
-                >
-                  <Icon name="ph:sketch-logo-duotone" class="h-5 w-5" />
-                </BaseIconBox>
-                <BaseIconBox
-                  size="md"
-                  shape="circle"
-                  class="bg-muted-800 shadow-muted-500/50 text-white shadow-lg"
-                >
-                  <Icon name="ph:moon-duotone" class="h-5 w-5" />
-                </BaseIconBox>
+                <ElevationDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="elevation" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(elevation)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>

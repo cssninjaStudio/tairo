@@ -1,9 +1,14 @@
 <script setup lang="ts">
-import circle from '~/documentation/form/checkbox/circle.md?raw'
-import colors from '~/documentation/form/checkbox/colors.md?raw'
-import curved from '~/documentation/form/checkbox/curved.md?raw'
-import rounded from '~/documentation/form/checkbox/rounded.md?raw'
-import straight from '~/documentation/form/checkbox/straight.md?raw'
+import CircleDemo from '~/documentation/form/checkbox/circle.vue'
+import circle from '~/documentation/form/checkbox/circle.vue?raw'
+import ColorsDemo from '~/documentation/form/checkbox/colors.vue'
+import colors from '~/documentation/form/checkbox/colors.vue?raw'
+import CurvedDemo from '~/documentation/form/checkbox/curved.vue'
+import curved from '~/documentation/form/checkbox/curved.vue?raw'
+import RoundedDemo from '~/documentation/form/checkbox/rounded.vue'
+import rounded from '~/documentation/form/checkbox/rounded.vue?raw'
+import StraightDemo from '~/documentation/form/checkbox/straight.vue'
+import straight from '~/documentation/form/checkbox/straight.vue?raw'
 
 definePageMeta({
   title: 'Checkbox',
@@ -13,17 +18,41 @@ definePageMeta({
   },
 })
 
-const demoOne = ref(true)
-const demoTwo = ref(true)
-const demoThree = ref([])
-const demoFour = ref('')
-const demoStraight = ref(true)
+function wrapVueMarkdown(source: string) {
+  return '```vue\n' + source + '\n```'
+}
+
+const demoBreadcrumb = [
+  {
+    label: 'Home',
+    hideLabel: true,
+    icon: 'lucide:home',
+    to: '/',
+  },
+  {
+    label: 'Components Hub',
+    hideLabel: false,
+    to: '/components',
+  },
+  {
+    label: 'Checkbox',
+    hideLabel: false,
+    to: '#/',
+  },
+]
+
+const booleanModel = `
+const checkbox = ref(true)
+`
+const arrayModel = `
+const checkbox = ref(['Option 1'])
+`
 </script>
 
 <template>
   <div>
     <!-- BreadCrumb -->
-    <BaseBreadcrumb />
+    <BaseBreadcrumb :items="demoBreadcrumb" />
 
     <!-- Documentation Layout -->
     <DocLayout>
@@ -39,20 +68,17 @@ const demoStraight = ref(true)
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseCheckbox
-                    v-model="demoOne"
-                    name="demo-1"
-                    label="Straight checkbox"
-                    shape="straight"
-                    :classes="{ wrapper: 'text-gray-500' }"
-                  />
+                  <StraightDemo />
                 </div>
                 <!-- State box -->
-                <DocState :state="demoOne" height="80px" />
+                <DocState label="V-Model" :state="booleanModel" height="80px" />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="straight" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(straight)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -63,20 +89,17 @@ const demoStraight = ref(true)
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseCheckbox
-                    v-model="demoTwo"
-                    name="demo-2"
-                    label="Rounded checkbox"
-                    shape="rounded"
-                    :classes="{ wrapper: 'text-gray-500' }"
-                  />
+                  <RoundedDemo />
                 </div>
                 <!-- State box -->
-                <DocState :state="demoTwo" height="80px" />
+                <DocState label="V-Model" :state="booleanModel" height="80px" />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="rounded" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(rounded)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -87,29 +110,17 @@ const demoStraight = ref(true)
             <template #demo>
               <div class="flex items-start gap-6">
                 <div class="w-full max-w-sm space-x-2">
-                  <BaseCheckbox
-                    v-model="demoThree"
-                    value="Option 1"
-                    name="demo-3-1"
-                    label="Curved checkbox"
-                    shape="curved"
-                    :classes="{ wrapper: 'text-gray-500' }"
-                  />
-                  <BaseCheckbox
-                    v-model="demoThree"
-                    value="Option 2"
-                    name="demo-3-2"
-                    label="Curved checkbox"
-                    shape="curved"
-                    :classes="{ wrapper: 'text-gray-500' }"
-                  />
+                  <CurvedDemo />
                 </div>
                 <!-- State box -->
-                <DocState :state="demoThree" height="80px" />
+                <DocState label="V-Model" :state="arrayModel" height="80px" />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="curved" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(curved)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -120,22 +131,17 @@ const demoStraight = ref(true)
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseCheckbox
-                    v-model="demoFour"
-                    name="demo-4"
-                    label="Circle checkbox"
-                    shape="circle"
-                    :true-value="'checked'"
-                    :false-value="'not-checked'"
-                    :classes="{ wrapper: 'text-gray-500' }"
-                  />
+                  <CircleDemo />
                 </div>
                 <!-- State box -->
-                <DocState :state="demoFour" height="80px" />
+                <DocState label="V-Model" :state="booleanModel" height="80px" />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="circle" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(circle)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -149,73 +155,14 @@ const demoStraight = ref(true)
           <DocComponent label="Straight checkbox example">
             <template #demo>
               <BaseFocusLoop class="flex flex-wrap items-end gap-4">
-                <BaseCheckbox
-                  checked
-                  name="demo-5"
-                  label="Straight"
-                  shape="straight"
-                  :classes="{ wrapper: 'text-gray-500' }"
-                />
-
-                <BaseCheckbox
-                  checked
-                  name="demo-6"
-                  label="Straight"
-                  shape="straight"
-                  :classes="{ wrapper: 'text-emerald-500' }"
-                />
-
-                <BaseCheckbox
-                  checked
-                  name="demo-7"
-                  label="Rounded"
-                  shape="rounded"
-                  :classes="{ wrapper: 'text-yellow-500' }"
-                />
-
-                <BaseCheckbox
-                  checked
-                  name="demo-8"
-                  label="Rounded"
-                  shape="rounded"
-                  :classes="{ wrapper: 'text-pink-500' }"
-                />
-
-                <BaseCheckbox
-                  checked
-                  name="demo-9"
-                  label="Curved"
-                  shape="curved"
-                  :classes="{ wrapper: 'text-indigo-500' }"
-                />
-
-                <BaseCheckbox
-                  checked
-                  name="demo-10"
-                  label="Curved"
-                  shape="curved"
-                  :classes="{ wrapper: 'text-primary-500' }"
-                />
-
-                <BaseCheckbox
-                  checked
-                  name="demo-11"
-                  label="Circle"
-                  shape="circle"
-                  :classes="{ wrapper: 'text-amber-500' }"
-                />
-
-                <BaseCheckbox
-                  checked
-                  name="demo-12"
-                  label="Circle"
-                  shape="circle"
-                  :classes="{ wrapper: 'text-rose-500' }"
-                />
+                <ColorsDemo />
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocMarkdown :source="colors" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(colors)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>

@@ -1,14 +1,24 @@
 <script setup lang="ts">
-import avatarSlot from '~/documentation/dropdown/avatar-slot.md?raw'
-import buttonLeft from '~/documentation/dropdown/button-left.md?raw'
-import buttonRight from '~/documentation/dropdown/button-right.md?raw'
-import compact from '~/documentation/dropdown/compact.md?raw'
-import contextLeft from '~/documentation/dropdown/context-left.md?raw'
-import contextRight from '~/documentation/dropdown/context-right.md?raw'
-import header from '~/documentation/dropdown/header.md?raw'
-import iconSlot from '~/documentation/dropdown/icon-slot.md?raw'
-import textLeft from '~/documentation/dropdown/text-left.md?raw'
-import textRight from '~/documentation/dropdown/text-right.md?raw'
+import AvatarSlotDemo from '~/documentation/dropdown/avatar-slot.vue'
+import avatarSlot from '~/documentation/dropdown/avatar-slot.vue?raw'
+import ButtonLeftDemo from '~/documentation/dropdown/button-left.vue'
+import buttonLeft from '~/documentation/dropdown/button-left.vue?raw'
+import ButtonRightDemo from '~/documentation/dropdown/button-right.vue'
+import buttonRight from '~/documentation/dropdown/button-right.vue?raw'
+import CompactDemo from '~/documentation/dropdown/compact.vue'
+import compact from '~/documentation/dropdown/compact.vue?raw'
+import ContextLeftDemo from '~/documentation/dropdown/context-left.vue'
+import contextLeft from '~/documentation/dropdown/context-left.vue?raw'
+import ContextRightDemo from '~/documentation/dropdown/context-right.vue'
+import contextRight from '~/documentation/dropdown/context-right.vue?raw'
+import HeaderDemo from '~/documentation/dropdown/header.vue'
+import header from '~/documentation/dropdown/header.vue?raw'
+import IconSlotDemo from '~/documentation/dropdown/icon-slot.vue'
+import iconSlot from '~/documentation/dropdown/icon-slot.vue?raw'
+import TextLeftDemo from '~/documentation/dropdown/text-left.vue'
+import textLeft from '~/documentation/dropdown/text-left.vue?raw'
+import TextRightDemo from '~/documentation/dropdown/text-right.vue'
+import textRight from '~/documentation/dropdown/text-right.vue?raw'
 
 definePageMeta({
   title: 'Dropdowns',
@@ -17,12 +27,35 @@ definePageMeta({
     components: ['BaseDropdown', 'BaseDropdownItem'],
   },
 })
+
+function wrapVueMarkdown(source: string) {
+  return '```vue\n' + source + '\n```'
+}
+
+const demoBreadcrumb = [
+  {
+    label: 'Home',
+    hideLabel: true,
+    icon: 'lucide:home',
+    to: '/',
+  },
+  {
+    label: 'Components Hub',
+    hideLabel: false,
+    to: '/components',
+  },
+  {
+    label: 'Dropdown',
+    hideLabel: false,
+    to: '#/',
+  },
+]
 </script>
 
 <template>
   <div>
     <!-- BreadCrumb -->
-    <BaseBreadcrumb />
+    <BaseBreadcrumb :items="demoBreadcrumb" />
 
     <!-- Documentation Layout -->
     <DocLayout>
@@ -33,36 +66,14 @@ definePageMeta({
           <DocComponent label="Dropdown left example">
             <template #demo>
               <div class="flex items-end">
-                <BaseDropdown
-                  flavor="button"
-                  label="Dropdown"
-                  orientation="start"
-                >
-                  <BaseDropdownItem>
-                    Profile
-
-                    <template #text>View your profile</template>
-                  </BaseDropdownItem>
-                  <BaseDropdownItem
-                    to="#/"
-                    title="Projects"
-                    text="View your projects"
-                  />
-                  <BaseDropdownItem
-                    to="#/"
-                    title="Team"
-                    text="Manage your team"
-                  />
-                  <BaseDropdownItem
-                    to="#/"
-                    title="Settings"
-                    text="Set your preferences"
-                  />
-                </BaseDropdown>
+                <ButtonLeftDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="buttonLeft" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(buttonLeft)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -72,36 +83,14 @@ definePageMeta({
           <DocComponent label="Dropdown right example">
             <template #demo>
               <div class="flex items-end justify-end">
-                <BaseDropdown
-                  flavor="button"
-                  label="Dropdown"
-                  orientation="end"
-                >
-                  <BaseDropdownItem
-                    to="#/"
-                    title="Profile"
-                    text="View your profile"
-                  />
-                  <BaseDropdownItem
-                    to="#/"
-                    title="Projects"
-                    text="View your projects"
-                  />
-                  <BaseDropdownItem
-                    to="#/"
-                    title="Team"
-                    text="Manage your team"
-                  />
-                  <BaseDropdownItem
-                    to="#/"
-                    title="Settings"
-                    text="Set your preferences"
-                  />
-                </BaseDropdown>
+                <ButtonRightDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="buttonRight" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(buttonRight)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -111,37 +100,14 @@ definePageMeta({
           <DocComponent label="Dropdown with compact menu">
             <template #demo>
               <div class="flex items-end">
-                <BaseDropdown
-                  flavor="button"
-                  label="Dropdown"
-                  orientation="start"
-                  compact
-                >
-                  <BaseDropdownItem>
-                    Profile
-
-                    <template #text>View your profile</template>
-                  </BaseDropdownItem>
-                  <BaseDropdownItem
-                    to="#/"
-                    title="Projects"
-                    text="View your projects"
-                  />
-                  <BaseDropdownItem
-                    to="#/"
-                    title="Team"
-                    text="Manage your team"
-                  />
-                  <BaseDropdownItem
-                    to="#/"
-                    title="Settings"
-                    text="Set your preferences"
-                  />
-                </BaseDropdown>
+                <CompactDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="compact" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(compact)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -151,36 +117,14 @@ definePageMeta({
           <DocComponent label="Dropdown left example">
             <template #demo>
               <div class="flex items-end">
-                <BaseDropdown
-                  flavor="context"
-                  label="Dropdown"
-                  orientation="start"
-                >
-                  <BaseDropdownItem
-                    to="#/"
-                    title="Profile"
-                    text="View your profile"
-                  />
-                  <BaseDropdownItem
-                    to="#/"
-                    title="Projects"
-                    text="View your projects"
-                  />
-                  <BaseDropdownItem
-                    to="#/"
-                    title="Team"
-                    text="Manage your team"
-                  />
-                  <BaseDropdownItem
-                    to="#/"
-                    title="Settings"
-                    text="Set your preferences"
-                  />
-                </BaseDropdown>
+                <ContextLeftDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="contextLeft" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(contextLeft)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -194,36 +138,14 @@ definePageMeta({
           <DocComponent label="Dropdown right example">
             <template #demo>
               <div class="flex items-end justify-end">
-                <BaseDropdown
-                  flavor="context"
-                  label="Dropdown"
-                  orientation="end"
-                >
-                  <BaseDropdownItem
-                    to="#/"
-                    title="Profile"
-                    text="View your profile"
-                  />
-                  <BaseDropdownItem
-                    to="#/"
-                    title="Projects"
-                    text="View your projects"
-                  />
-                  <BaseDropdownItem
-                    to="#/"
-                    title="Team"
-                    text="Manage your team"
-                  />
-                  <BaseDropdownItem
-                    to="#/"
-                    title="Settings"
-                    text="Set your preferences"
-                  />
-                </BaseDropdown>
+                <ContextRightDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="contextRight" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(contextRight)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -233,36 +155,14 @@ definePageMeta({
           <DocComponent label="Dropdown left example">
             <template #demo>
               <div class="flex items-end">
-                <BaseDropdown
-                  flavor="text"
-                  label="Dropdown"
-                  orientation="start"
-                >
-                  <BaseDropdownItem
-                    to="#/"
-                    title="Profile"
-                    text="View your profile"
-                  />
-                  <BaseDropdownItem
-                    to="#/"
-                    title="Projects"
-                    text="View your projects"
-                  />
-                  <BaseDropdownItem
-                    to="#/"
-                    title="Team"
-                    text="Manage your team"
-                  />
-                  <BaseDropdownItem
-                    to="#/"
-                    title="Settings"
-                    text="Set your preferences"
-                  />
-                </BaseDropdown>
+                <TextLeftDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="textLeft" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(textLeft)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -272,32 +172,14 @@ definePageMeta({
           <DocComponent label="Dropdown right example">
             <template #demo>
               <div class="flex items-end justify-end">
-                <BaseDropdown flavor="text" label="Dropdown" orientation="end">
-                  <BaseDropdownItem
-                    to="#/"
-                    title="Profile"
-                    text="View your profile"
-                  />
-                  <BaseDropdownItem
-                    to="#/"
-                    title="Projects"
-                    text="View your projects"
-                  />
-                  <BaseDropdownItem
-                    to="#/"
-                    title="Team"
-                    text="Manage your team"
-                  />
-                  <BaseDropdownItem
-                    to="#/"
-                    title="Settings"
-                    text="Set your preferences"
-                  />
-                </BaseDropdown>
+                <TextRightDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="textRight" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(textRight)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -307,58 +189,14 @@ definePageMeta({
           <DocComponent label="Icon slot example">
             <template #demo>
               <div class="flex items-end">
-                <BaseDropdown
-                  flavor="button"
-                  label="Dropdown"
-                  orientation="start"
-                >
-                  <BaseDropdownItem
-                    to="#/"
-                    title="Profile"
-                    text="View your profile"
-                  >
-                    <template #end>
-                      <Icon name="ph:user-duotone" class="mr-2 block h-5 w-5" />
-                    </template>
-                  </BaseDropdownItem>
-                  <BaseDropdownItem
-                    to="#/"
-                    title="Projects"
-                    text="View your projects"
-                  >
-                    <template #end>
-                      <Icon
-                        name="ph:briefcase-duotone"
-                        class="mr-2 block h-5 w-5"
-                      />
-                    </template>
-                  </BaseDropdownItem>
-                  <BaseDropdownItem to="#/" title="Team" text="Manage your team">
-                    <template #end>
-                      <Icon
-                        name="ph:users-four-duotone"
-                        class="mr-2 block h-5 w-5"
-                      />
-                    </template>
-                  </BaseDropdownItem>
-                  <BaseDropdownDivide />
-                  <BaseDropdownItem
-                    to="#/"
-                    title="Settings"
-                    text="Set your preferences"
-                  >
-                    <template #end>
-                      <Icon
-                        name="ph:gear-six-duotone"
-                        class="mr-2 block h-5 w-5"
-                      />
-                    </template>
-                  </BaseDropdownItem>
-                </BaseDropdown>
+                <IconSlotDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="iconSlot" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(iconSlot)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -368,69 +206,14 @@ definePageMeta({
           <DocComponent label="Avatar slot example">
             <template #demo>
               <div class="flex items-end">
-                <BaseDropdown
-                  flavor="button"
-                  label="Dropdown"
-                  orientation="start"
-                >
-                  <BaseDropdownItem
-                    to="#/"
-                    title="Lana Jensen"
-                    text="Software Engineer"
-                  >
-                    <template #start>
-                      <BaseAvatar
-                        src="/img/avatars/4.svg"
-                        size="xs"
-                        class="mr-3"
-                      />
-                    </template>
-                  </BaseDropdownItem>
-                  <BaseDropdownItem
-                    to="#/"
-                    title="Shawn Miller"
-                    text="Product Manager"
-                  >
-                    <template #start>
-                      <BaseAvatar
-                        src="/img/avatars/3.svg"
-                        size="xs"
-                        class="mr-3"
-                      />
-                    </template>
-                  </BaseDropdownItem>
-                  <BaseDropdownItem
-                    to="#/"
-                    title="John Marynski"
-                    text="Sales Manager"
-                  >
-                    <template #start>
-                      <BaseAvatar
-                        src="/img/avatars/18.svg"
-                        size="xs"
-                        class="mr-3"
-                      />
-                    </template>
-                  </BaseDropdownItem>
-                  <BaseDropdownDivide />
-                  <BaseDropdownItem
-                    to="#/"
-                    title="Garry Porter"
-                    text="CEO - Founder"
-                  >
-                    <template #start>
-                      <BaseAvatar
-                        src="/img/avatars/6.svg"
-                        size="xs"
-                        class="mr-3"
-                      />
-                    </template>
-                  </BaseDropdownItem>
-                </BaseDropdown>
+                <AvatarSlotDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="avatarSlot" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(avatarSlot)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -440,70 +223,14 @@ definePageMeta({
           <DocComponent label="Dropdown header example">
             <template #demo>
               <div class="flex items-end">
-                <BaseDropdown
-                  flavor="button"
-                  label="Dropdown"
-                  orientation="start"
-                  header-label="My Team"
-                >
-                  <BaseDropdownItem
-                    to="#/"
-                    title="Lana Jensen"
-                    text="Software Engineer"
-                  >
-                    <template #start>
-                      <BaseAvatar
-                        src="/img/avatars/4.svg"
-                        size="xs"
-                        class="mr-3"
-                      />
-                    </template>
-                  </BaseDropdownItem>
-                  <BaseDropdownItem
-                    to="#/"
-                    title="Shawn Miller"
-                    text="Product Manager"
-                  >
-                    <template #start>
-                      <BaseAvatar
-                        src="/img/avatars/3.svg"
-                        size="xs"
-                        class="mr-3"
-                      />
-                    </template>
-                  </BaseDropdownItem>
-                  <BaseDropdownItem
-                    to="#/"
-                    title="John Marynski"
-                    text="Sales Manager"
-                  >
-                    <template #start>
-                      <BaseAvatar
-                        src="/img/avatars/18.svg"
-                        size="xs"
-                        class="mr-3"
-                      />
-                    </template>
-                  </BaseDropdownItem>
-                  <BaseDropdownDivide />
-                  <BaseDropdownItem
-                    to="#/"
-                    title="Garry Porter"
-                    text="CEO - Founder"
-                  >
-                    <template #start>
-                      <BaseAvatar
-                        src="/img/avatars/6.svg"
-                        size="xs"
-                        class="mr-3"
-                      />
-                    </template>
-                  </BaseDropdownItem>
-                </BaseDropdown>
+                <HeaderDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="header" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(header)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>

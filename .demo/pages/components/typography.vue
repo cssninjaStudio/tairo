@@ -1,7 +1,10 @@
 <script setup lang="ts">
-import heading from '~/documentation/typography/heading.md?raw'
-import paragraph from '~/documentation/typography/paragraph.md?raw'
-import text from '~/documentation/typography/text.md?raw'
+import HeadingDemo from '~/documentation/typography/heading.vue'
+import heading from '~/documentation/typography/heading.vue?raw'
+import ParagraphDemo from '~/documentation/typography/paragraph.vue'
+import paragraph from '~/documentation/typography/paragraph.vue?raw'
+import TextDemo from '~/documentation/typography/text.vue'
+import text from '~/documentation/typography/text.vue?raw'
 
 definePageMeta({
   title: 'Typography',
@@ -10,12 +13,35 @@ definePageMeta({
     components: ['BaseHeading', 'BaseParagraph', 'BaseText'],
   },
 })
+
+function wrapVueMarkdown(source: string) {
+  return '```vue\n' + source + '\n```'
+}
+
+const demoBreadcrumb = [
+  {
+    label: 'Home',
+    hideLabel: true,
+    icon: 'lucide:home',
+    to: '/',
+  },
+  {
+    label: 'Components Hub',
+    hideLabel: false,
+    to: '/components',
+  },
+  {
+    label: 'Typography',
+    hideLabel: false,
+    to: '#/',
+  },
+]
 </script>
 
 <template>
   <div>
     <!-- BreadCrumb -->
-    <BaseBreadcrumb />
+    <BaseBreadcrumb :items="demoBreadcrumb" />
 
     <!-- Documentation Layout -->
     <DocLayout>
@@ -26,42 +52,14 @@ definePageMeta({
           <DocComponent label="Heading component examples">
             <template #demo>
               <div class="flex flex-col space-y-3">
-                <BaseHeading
-                  as="h2"
-                  size="3xl"
-                  weight="extrabold"
-                  class="text-muted-800 dark:text-white"
-                >
-                  A huge heading
-                </BaseHeading>
-                <BaseHeading
-                  as="h2"
-                  size="2xl"
-                  weight="bold"
-                  class="text-muted-800 dark:text-white"
-                >
-                  A bold and very large heading
-                </BaseHeading>
-                <BaseHeading
-                  as="h2"
-                  size="lg"
-                  weight="semibold"
-                  class="text-muted-800 dark:text-white"
-                >
-                  A smaller and less thicker heading
-                </BaseHeading>
-                <BaseHeading
-                  as="h2"
-                  size="md"
-                  weight="medium"
-                  class="text-muted-400"
-                >
-                  Smaller and using another color
-                </BaseHeading>
+                <HeadingDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="heading" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(heading)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -73,35 +71,13 @@ definePageMeta({
         <DocSection title="Paragraph" tag="1.0.0">
           <DocComponent label="Paragraph component examples">
             <template #demo>
-              <div class="grid gap-6 md:grid-cols-2">
-                <div class="flex flex-col">
-                  <BaseParagraph class="text-muted-400 dark:text-muted-400">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Erat enim Polemonis. Duo Reges: constructio interrete.
-                    Philosophi autem in suis lectulis plerumque moriuntur.
-                  </BaseParagraph>
-                </div>
-                <div class="flex flex-col space-y-2">
-                  <BaseParagraph
-                    size="sm"
-                    class="text-muted-400 dark:text-muted-400"
-                  >
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Erat enim Polemonis. Duo Reges: constructio interrete.
-                    Philosophi autem in suis lectulis plerumque moriuntur.
-                  </BaseParagraph>
-                  <BaseParagraph
-                    size="xs"
-                    weight="semibold"
-                    class="text-success-500"
-                  >
-                    Any text can have a different color
-                  </BaseParagraph>
-                </div>
-              </div>
+              <ParagraphDemo />
             </template>
             <template #code>
-              <DocMarkdown :source="paragraph" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(paragraph)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -113,31 +89,13 @@ definePageMeta({
         <DocSection title="Text" tag="1.0.0">
           <DocComponent label="Text component examples">
             <template #demo>
-              <div class="grid gap-6 md:grid-cols-2">
-                <div class="flex flex-col">
-                  <BaseText class="text-muted-500 dark:text-muted-400">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Erat enim Polemonis. Duo Reges: constructio interrete.
-                    Philosophi autem in suis lectulis plerumque moriuntur.
-                  </BaseText>
-                </div>
-                <div class="flex flex-col space-y-2">
-                  <BaseText
-                    size="sm"
-                    class="text-muted-400 dark:text-muted-400"
-                  >
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Erat enim Polemonis. Duo Reges: constructio interrete.
-                    Philosophi autem in suis lectulis plerumque moriuntur.
-                  </BaseText>
-                  <BaseText size="xs" weight="medium" class="text-success-500">
-                    Any text can have a different color
-                  </BaseText>
-                </div>
-              </div>
+              <TextDemo />
             </template>
             <template #code>
-              <DocMarkdown :source="text" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(text)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>

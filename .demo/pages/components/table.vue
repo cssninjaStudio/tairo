@@ -1,10 +1,16 @@
 <script setup lang="ts">
-import curved from '~/documentation/table/curved.md?raw'
-import mediaCurved from '~/documentation/table/media-curved.md?raw'
-import mediaRounded from '~/documentation/table/media-rounded.md?raw'
-import mediaStraight from '~/documentation/table/media-straight.md?raw'
-import rounded from '~/documentation/table/rounded.md?raw'
-import straight from '~/documentation/table/straight.md?raw'
+import CurvedDemo from '~/documentation/table/curved.vue'
+import curved from '~/documentation/table/curved.vue?raw'
+import MediaCurvedDemo from '~/documentation/table/media-curved.vue'
+import mediaCurved from '~/documentation/table/media-curved.vue?raw'
+import MediaRoundedDemo from '~/documentation/table/media-rounded.vue'
+import mediaRounded from '~/documentation/table/media-rounded.vue?raw'
+import MediaStraightDemo from '~/documentation/table/media-straight.vue'
+import mediaStraight from '~/documentation/table/media-straight.vue?raw'
+import RoundedDemo from '~/documentation/table/rounded.vue'
+import rounded from '~/documentation/table/rounded.vue?raw'
+import StraightDemo from '~/documentation/table/straight.vue'
+import straight from '~/documentation/table/straight.vue?raw'
 
 definePageMeta({
   title: 'Tables',
@@ -19,42 +25,26 @@ definePageMeta({
   },
 })
 
-const team = [
+function wrapVueMarkdown(source: string) {
+  return '```vue\n' + source + '\n```'
+}
+
+const demoBreadcrumb = [
   {
-    id: 0,
-    src: '/img/avatars/22.svg',
-    name: 'Anna Vrinkof',
-    role: 'UI/UX designer',
-    expertise: 'UX Design',
-    rate: 49,
-    status: 'Available',
+    label: 'Home',
+    hideLabel: true,
+    icon: 'lucide:home',
+    to: '/',
   },
   {
-    id: 1,
-    src: '/img/avatars/3.svg',
-    name: 'John Cambell',
-    role: 'Sales manager',
-    expertise: 'Management',
-    rate: 74,
-    status: 'Hired',
+    label: 'Components Hub',
+    hideLabel: false,
+    to: '/components',
   },
   {
-    id: 2,
-    src: '/img/avatars/9.svg',
-    name: 'Beth Delanoe',
-    role: 'Product designer',
-    expertise: 'Product',
-    rate: 43,
-    status: 'Available',
-  },
-  {
-    id: 3,
-    src: '/img/avatars/14.svg',
-    name: 'Andrew Higgs',
-    role: 'Project manager',
-    expertise: 'Project',
-    rate: 69,
-    status: 'New',
+    label: 'Table',
+    hideLabel: false,
+    to: '#/',
   },
 ]
 </script>
@@ -62,7 +52,7 @@ const team = [
 <template>
   <div>
     <!-- BreadCrumb -->
-    <BaseBreadcrumb />
+    <BaseBreadcrumb :items="demoBreadcrumb" />
 
     <!-- Documentation Layout -->
     <DocLayout>
@@ -73,86 +63,14 @@ const team = [
           <DocComponent label="Straight table example">
             <template #demo>
               <div class="w-full">
-                <BaseTable shape="straight">
-                  <template #header>
-                    <BaseTableHeading uppercase class="p-4">
-                      <div class="flex items-center">
-                        <BaseCheckbox
-                          name="table-1-main"
-                          shape="straight"
-                          class="text-primary-500"
-                        />
-                      </div>
-                    </BaseTableHeading>
-                    <BaseTableHeading uppercase>Collaborator</BaseTableHeading>
-                    <BaseTableHeading uppercase>Expertise</BaseTableHeading>
-                    <BaseTableHeading uppercase>Rate</BaseTableHeading>
-                    <BaseTableHeading uppercase>Status</BaseTableHeading>
-                    <BaseTableHeading uppercase class="p-4">
-                      <span class="sr-only">View</span>
-                    </BaseTableHeading>
-                  </template>
-
-                  <BaseTableRow v-for="member in team" :key="member.id">
-                    <BaseTableCell class="p-4">
-                      <div class="flex items-center">
-                        <BaseCheckbox
-                          :name="`member-checkbox-${member.id}`"
-                          shape="straight"
-                          class="text-primary-500"
-                        />
-                      </div>
-                    </BaseTableCell>
-                    <BaseTableCell>
-                      {{ member.name }}
-                    </BaseTableCell>
-                    <BaseTableCell light>
-                      {{ member.expertise }}
-                    </BaseTableCell>
-                    <BaseTableCell>${{ member.rate }}/hour</BaseTableCell>
-                    <BaseTableCell>
-                      <BaseTag
-                        v-if="member.status === 'Available'"
-                        color="success"
-                        flavor="pastel"
-                        shape="full"
-                        class="font-medium"
-                      >
-                        {{ member.status }}
-                      </BaseTag>
-                      <BaseTag
-                        v-else-if="member.status === 'New'"
-                        color="info"
-                        flavor="pastel"
-                        shape="full"
-                        class="font-medium"
-                      >
-                        {{ member.status }}
-                      </BaseTag>
-                      <BaseTag
-                        v-else-if="member.status === 'Hired'"
-                        color="warning"
-                        flavor="pastel"
-                        shape="full"
-                        class="font-medium"
-                      >
-                        {{ member.status }}
-                      </BaseTag>
-                    </BaseTableCell>
-                    <BaseTableCell>
-                      <a
-                        href="#"
-                        class="text-violet-500 transition-opacity duration-300 hover:opacity-75 dark:text-violet-400"
-                      >
-                        View
-                      </a>
-                    </BaseTableCell>
-                  </BaseTableRow>
-                </BaseTable>
+                <StraightDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="straight" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(straight)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -162,86 +80,14 @@ const team = [
           <DocComponent label="Rounded table example">
             <template #demo>
               <div class="w-full">
-                <BaseTable shape="rounded">
-                  <template #header>
-                    <BaseTableHeading uppercase class="p-4">
-                      <div class="flex items-center">
-                        <BaseCheckbox
-                          name="table-1-main"
-                          shape="rounded"
-                          class="text-primary-500"
-                        />
-                      </div>
-                    </BaseTableHeading>
-                    <BaseTableHeading uppercase>Collaborator</BaseTableHeading>
-                    <BaseTableHeading uppercase>Expertise</BaseTableHeading>
-                    <BaseTableHeading uppercase>Rate</BaseTableHeading>
-                    <BaseTableHeading uppercase>Status</BaseTableHeading>
-                    <BaseTableHeading uppercase class="p-4">
-                      <span class="sr-only">View</span>
-                    </BaseTableHeading>
-                  </template>
-
-                  <BaseTableRow v-for="member in team" :key="member.id">
-                    <BaseTableCell class="p-4">
-                      <div class="flex items-center">
-                        <BaseCheckbox
-                          :name="`member-checkbox-${member.id}`"
-                          shape="rounded"
-                          class="text-primary-500"
-                        />
-                      </div>
-                    </BaseTableCell>
-                    <BaseTableCell>
-                      {{ member.name }}
-                    </BaseTableCell>
-                    <BaseTableCell light>
-                      {{ member.expertise }}
-                    </BaseTableCell>
-                    <BaseTableCell>${{ member.rate }}/hour</BaseTableCell>
-                    <BaseTableCell>
-                      <BaseTag
-                        v-if="member.status === 'Available'"
-                        color="success"
-                        flavor="pastel"
-                        shape="full"
-                        class="font-medium"
-                      >
-                        {{ member.status }}
-                      </BaseTag>
-                      <BaseTag
-                        v-else-if="member.status === 'New'"
-                        color="info"
-                        flavor="pastel"
-                        shape="full"
-                        class="font-medium"
-                      >
-                        {{ member.status }}
-                      </BaseTag>
-                      <BaseTag
-                        v-else-if="member.status === 'Hired'"
-                        color="warning"
-                        flavor="pastel"
-                        shape="full"
-                        class="font-medium"
-                      >
-                        {{ member.status }}
-                      </BaseTag>
-                    </BaseTableCell>
-                    <BaseTableCell>
-                      <a
-                        href="#"
-                        class="text-violet-500 transition-opacity duration-300 hover:opacity-75 dark:text-violet-400"
-                      >
-                        View
-                      </a>
-                    </BaseTableCell>
-                  </BaseTableRow>
-                </BaseTable>
+                <RoundedDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="rounded" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(rounded)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -251,86 +97,14 @@ const team = [
           <DocComponent label="Curved table example">
             <template #demo>
               <div class="w-full">
-                <BaseTable shape="curved">
-                  <template #header>
-                    <BaseTableHeading uppercase class="p-4">
-                      <div class="flex items-center">
-                        <BaseCheckbox
-                          name="table-1-main"
-                          shape="curved"
-                          class="text-primary-500"
-                        />
-                      </div>
-                    </BaseTableHeading>
-                    <BaseTableHeading uppercase>Collaborator</BaseTableHeading>
-                    <BaseTableHeading uppercase>Expertise</BaseTableHeading>
-                    <BaseTableHeading uppercase>Rate</BaseTableHeading>
-                    <BaseTableHeading uppercase>Status</BaseTableHeading>
-                    <BaseTableHeading uppercase class="p-4">
-                      <span class="sr-only">View</span>
-                    </BaseTableHeading>
-                  </template>
-
-                  <BaseTableRow v-for="member in team" :key="member.id">
-                    <BaseTableCell class="p-4">
-                      <div class="flex items-center">
-                        <BaseCheckbox
-                          :name="`member-checkbox-${member.id}`"
-                          shape="curved"
-                          class="text-primary-500"
-                        />
-                      </div>
-                    </BaseTableCell>
-                    <BaseTableCell>
-                      {{ member.name }}
-                    </BaseTableCell>
-                    <BaseTableCell light>
-                      {{ member.expertise }}
-                    </BaseTableCell>
-                    <BaseTableCell>${{ member.rate }}/hour</BaseTableCell>
-                    <BaseTableCell>
-                      <BaseTag
-                        v-if="member.status === 'Available'"
-                        color="success"
-                        flavor="pastel"
-                        shape="full"
-                        class="font-medium"
-                      >
-                        {{ member.status }}
-                      </BaseTag>
-                      <BaseTag
-                        v-else-if="member.status === 'New'"
-                        color="info"
-                        flavor="pastel"
-                        shape="full"
-                        class="font-medium"
-                      >
-                        {{ member.status }}
-                      </BaseTag>
-                      <BaseTag
-                        v-else-if="member.status === 'Hired'"
-                        color="warning"
-                        flavor="pastel"
-                        shape="full"
-                        class="font-medium"
-                      >
-                        {{ member.status }}
-                      </BaseTag>
-                    </BaseTableCell>
-                    <BaseTableCell>
-                      <a
-                        href="#"
-                        class="text-violet-500 transition-opacity duration-300 hover:opacity-75 dark:text-violet-400"
-                      >
-                        View
-                      </a>
-                    </BaseTableCell>
-                  </BaseTableRow>
-                </BaseTable>
+                <CurvedDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="curved" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(curved)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -344,96 +118,14 @@ const team = [
           <DocComponent label="Media straight table example">
             <template #demo>
               <div class="w-full">
-                <BaseTable shape="straight">
-                  <template #header>
-                    <BaseTableHeading uppercase class="p-4">
-                      <div class="flex items-center">
-                        <BaseCheckbox
-                          name="table-1-main"
-                          shape="straight"
-                          class="text-primary-500"
-                        />
-                      </div>
-                    </BaseTableHeading>
-                    <BaseTableHeading uppercase>Collaborator</BaseTableHeading>
-                    <BaseTableHeading uppercase>Expertise</BaseTableHeading>
-                    <BaseTableHeading uppercase>Rate</BaseTableHeading>
-                    <BaseTableHeading uppercase>Status</BaseTableHeading>
-                    <BaseTableHeading uppercase class="p-4">
-                      <span class="sr-only">View</span>
-                    </BaseTableHeading>
-                  </template>
-
-                  <BaseTableRow v-for="member in team" :key="member.id">
-                    <BaseTableCell class="p-4">
-                      <div class="flex items-center">
-                        <BaseCheckbox
-                          :name="`member-checkbox-${member.id}`"
-                          shape="straight"
-                          class="text-primary-500"
-                        />
-                      </div>
-                    </BaseTableCell>
-                    <BaseTableCell>
-                      <div class="flex items-center">
-                        <BaseAvatar :src="member.src" />
-                        <div class="ml-3 leading-none">
-                          <h4 class="font-sans text-sm font-medium">
-                            {{ member.name }}
-                          </h4>
-                          <p class="font-sans text-xs text-muted-400">
-                            {{ member.role }}
-                          </p>
-                        </div>
-                      </div>
-                    </BaseTableCell>
-                    <BaseTableCell light>
-                      {{ member.expertise }}
-                    </BaseTableCell>
-                    <BaseTableCell>${{ member.rate }}/hour</BaseTableCell>
-                    <BaseTableCell>
-                      <BaseTag
-                        v-if="member.status === 'Available'"
-                        color="success"
-                        flavor="pastel"
-                        shape="full"
-                        class="font-medium"
-                      >
-                        {{ member.status }}
-                      </BaseTag>
-                      <BaseTag
-                        v-else-if="member.status === 'New'"
-                        color="info"
-                        flavor="pastel"
-                        shape="full"
-                        class="font-medium"
-                      >
-                        {{ member.status }}
-                      </BaseTag>
-                      <BaseTag
-                        v-else-if="member.status === 'Hired'"
-                        color="warning"
-                        flavor="pastel"
-                        shape="full"
-                        class="font-medium"
-                      >
-                        {{ member.status }}
-                      </BaseTag>
-                    </BaseTableCell>
-                    <BaseTableCell>
-                      <a
-                        href="#"
-                        class="text-violet-500 transition-opacity duration-300 hover:opacity-75 dark:text-violet-400"
-                      >
-                        View
-                      </a>
-                    </BaseTableCell>
-                  </BaseTableRow>
-                </BaseTable>
+                <MediaStraightDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="mediaStraight" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(mediaStraight)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -443,96 +135,14 @@ const team = [
           <DocComponent label="Media rounded table example">
             <template #demo>
               <div class="w-full">
-                <BaseTable shape="rounded">
-                  <template #header>
-                    <BaseTableHeading uppercase class="p-4">
-                      <div class="flex items-center">
-                        <BaseCheckbox
-                          name="table-1-main"
-                          shape="rounded"
-                          class="text-primary-500"
-                        />
-                      </div>
-                    </BaseTableHeading>
-                    <BaseTableHeading uppercase>Collaborator</BaseTableHeading>
-                    <BaseTableHeading uppercase>Expertise</BaseTableHeading>
-                    <BaseTableHeading uppercase>Rate</BaseTableHeading>
-                    <BaseTableHeading uppercase>Status</BaseTableHeading>
-                    <BaseTableHeading uppercase class="p-4">
-                      <span class="sr-only">View</span>
-                    </BaseTableHeading>
-                  </template>
-
-                  <BaseTableRow v-for="member in team" :key="member.id">
-                    <BaseTableCell class="p-4">
-                      <div class="flex items-center">
-                        <BaseCheckbox
-                          :name="`member-checkbox-${member.id}`"
-                          shape="rounded"
-                          class="text-primary-500"
-                        />
-                      </div>
-                    </BaseTableCell>
-                    <BaseTableCell>
-                      <div class="flex items-center">
-                        <BaseAvatar :src="member.src" />
-                        <div class="ml-3 leading-none">
-                          <h4 class="font-sans text-sm font-semibold">
-                            {{ member.name }}
-                          </h4>
-                          <p class="font-sans text-xs text-muted-400">
-                            {{ member.role }}
-                          </p>
-                        </div>
-                      </div>
-                    </BaseTableCell>
-                    <BaseTableCell light>
-                      {{ member.expertise }}
-                    </BaseTableCell>
-                    <BaseTableCell>${{ member.rate }}/hour</BaseTableCell>
-                    <BaseTableCell>
-                      <BaseTag
-                        v-if="member.status === 'Available'"
-                        color="success"
-                        flavor="pastel"
-                        shape="full"
-                        class="font-medium"
-                      >
-                        {{ member.status }}
-                      </BaseTag>
-                      <BaseTag
-                        v-else-if="member.status === 'New'"
-                        color="info"
-                        flavor="pastel"
-                        shape="full"
-                        class="font-medium"
-                      >
-                        {{ member.status }}
-                      </BaseTag>
-                      <BaseTag
-                        v-else-if="member.status === 'Hired'"
-                        color="warning"
-                        flavor="pastel"
-                        shape="full"
-                        class="font-medium"
-                      >
-                        {{ member.status }}
-                      </BaseTag>
-                    </BaseTableCell>
-                    <BaseTableCell>
-                      <a
-                        href="#"
-                        class="text-violet-500 transition-opacity duration-300 hover:opacity-75 dark:text-violet-400"
-                      >
-                        View
-                      </a>
-                    </BaseTableCell>
-                  </BaseTableRow>
-                </BaseTable>
+                <MediaRoundedDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="mediaRounded" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(mediaRounded)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -542,96 +152,14 @@ const team = [
           <DocComponent label="Media curved table example">
             <template #demo>
               <div class="w-full">
-                <BaseTable shape="curved">
-                  <template #header>
-                    <BaseTableHeading uppercase class="p-4">
-                      <div class="flex items-center">
-                        <BaseCheckbox
-                          name="table-1-main"
-                          shape="curved"
-                          class="text-primary-500"
-                        />
-                      </div>
-                    </BaseTableHeading>
-                    <BaseTableHeading uppercase>Collaborator</BaseTableHeading>
-                    <BaseTableHeading uppercase>Expertise</BaseTableHeading>
-                    <BaseTableHeading uppercase>Rate</BaseTableHeading>
-                    <BaseTableHeading uppercase>Status</BaseTableHeading>
-                    <BaseTableHeading uppercase class="p-4">
-                      <span class="sr-only">View</span>
-                    </BaseTableHeading>
-                  </template>
-
-                  <BaseTableRow v-for="member in team" :key="member.id">
-                    <BaseTableCell class="p-4">
-                      <div class="flex items-center">
-                        <BaseCheckbox
-                          :name="`member-checkbox-${member.id}`"
-                          shape="curved"
-                          class="text-primary-500"
-                        />
-                      </div>
-                    </BaseTableCell>
-                    <BaseTableCell>
-                      <div class="flex items-center">
-                        <BaseAvatar :src="member.src" />
-                        <div class="ml-3 leading-none">
-                          <h4 class="font-sans text-sm font-semibold">
-                            {{ member.name }}
-                          </h4>
-                          <p class="font-sans text-xs text-muted-400">
-                            {{ member.role }}
-                          </p>
-                        </div>
-                      </div>
-                    </BaseTableCell>
-                    <BaseTableCell light>
-                      {{ member.expertise }}
-                    </BaseTableCell>
-                    <BaseTableCell>${{ member.rate }}/hour</BaseTableCell>
-                    <BaseTableCell>
-                      <BaseTag
-                        v-if="member.status === 'Available'"
-                        color="success"
-                        flavor="pastel"
-                        shape="full"
-                        class="font-medium"
-                      >
-                        {{ member.status }}
-                      </BaseTag>
-                      <BaseTag
-                        v-else-if="member.status === 'New'"
-                        color="info"
-                        flavor="pastel"
-                        shape="full"
-                        class="font-medium"
-                      >
-                        {{ member.status }}
-                      </BaseTag>
-                      <BaseTag
-                        v-else-if="member.status === 'Hired'"
-                        color="warning"
-                        flavor="pastel"
-                        shape="full"
-                        class="font-medium"
-                      >
-                        {{ member.status }}
-                      </BaseTag>
-                    </BaseTableCell>
-                    <BaseTableCell>
-                      <a
-                        href="#"
-                        class="text-violet-500 transition-opacity duration-300 hover:opacity-75 dark:text-violet-400"
-                      >
-                        View
-                      </a>
-                    </BaseTableCell>
-                  </BaseTableRow>
-                </BaseTable>
+                <MediaCurvedDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="mediaCurved" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(mediaCurved)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>

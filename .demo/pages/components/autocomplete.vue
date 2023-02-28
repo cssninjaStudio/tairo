@@ -30,6 +30,25 @@ definePageMeta({
   },
 })
 
+const demoBreadcrumb = [
+  {
+    label: 'Home',
+    hideLabel: true,
+    icon: 'lucide:home',
+    to: '/',
+  },
+  {
+    label: 'Components Hub',
+    hideLabel: false,
+    to: '/components',
+  },
+  {
+    label: 'Autocomplete',
+    hideLabel: false,
+    to: '#/',
+  },
+]
+
 function wrapVueMarkdown(source: string) {
   return '```vue\n' + source + '\n```'
 }
@@ -51,7 +70,7 @@ const selectedPerson = ref([people[0], people[1]])
 <template>
   <div>
     <!-- BreadCrumb -->
-    <BaseBreadcrumb />
+    <BaseBreadcrumb :items="demoBreadcrumb" />
 
     <!-- Documentation Layout -->
     <DocLayout>

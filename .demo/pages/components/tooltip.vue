@@ -1,36 +1,41 @@
 <script setup lang="ts">
-import avatar from '~/documentation/tooltip/avatar.md?raw'
-import positions from '~/documentation/tooltip/positions.md?raw'
+import AvatarDemo from '~/documentation/tooltip/avatar.vue'
+import avatar from '~/documentation/tooltip/avatar.vue?raw'
+import PositionsDemo from '~/documentation/tooltip/positions.vue'
+import positions from '~/documentation/tooltip/positions.vue?raw'
 
 definePageMeta({
   title: 'Tooltips',
 })
 
-const properties = {
-  props: [
-    {
-      name: 'data-tooltip',
-      type: 'string',
-      required: 'true',
-      default: 'undefined',
-      values: ['string'],
-    },
-    {
-      name: 'flow',
-      type: 'string',
-      required: 'false',
-      default: 'top',
-      values: ['top', 'left', 'right', 'down'],
-    },
-  ],
-  slots: [],
+function wrapVueMarkdown(source: string) {
+  return '```vue\n' + source + '\n```'
 }
+
+const demoBreadcrumb = [
+  {
+    label: 'Home',
+    hideLabel: true,
+    icon: 'lucide:home',
+    to: '/',
+  },
+  {
+    label: 'Components Hub',
+    hideLabel: false,
+    to: '/components',
+  },
+  {
+    label: 'Tooltip',
+    hideLabel: false,
+    to: '#/',
+  },
+]
 </script>
 
 <template>
   <div>
     <!-- BreadCrumb -->
-    <BaseBreadcrumb />
+    <BaseBreadcrumb :items="demoBreadcrumb" />
 
     <!-- Documentation Layout -->
     <DocLayout>
@@ -40,51 +45,13 @@ const properties = {
         <DocSection title="Tooltip flow" tag="1.0.0">
           <DocComponent label="Default tooltip positions">
             <template #demo>
-              <div class="flex flex-wrap items-end gap-2">
-                <BaseButtonIcon shape="curved" tooltip="Time for a nap!">
-                  <Icon name="ph:timer-duotone" class="h-5 w-5 text-sky-500" />
-                </BaseButtonIcon>
-                <BaseButtonIcon
-                  shape="curved"
-                  flow="left"
-                  tooltip="Unlock this now!"
-                >
-                  <Icon
-                    name="ph:lock-duotone"
-                    class="h-5 w-5 text-emerald-500"
-                  />
-                </BaseButtonIcon>
-                <BaseButtonIcon
-                  shape="curved"
-                  flow="right"
-                  tooltip="Give some love!"
-                >
-                  <Icon
-                    name="ph:heartbeat-duotone"
-                    class="h-5 w-5 text-rose-500"
-                  />
-                </BaseButtonIcon>
-                <BaseButtonIcon
-                  shape="curved"
-                  flow="down"
-                  tooltip="The King in the North!"
-                >
-                  <Icon
-                    name="ph:crown-duotone"
-                    class="h-5 w-5 text-yellow-500"
-                  />
-                </BaseButtonIcon>
-                <BaseButtonAction shape="curved" tooltip="Here we go!">
-                  <Icon
-                    name="ph:bell-ringing-duotone"
-                    class="text-primary-500 -ml-1 h-4 w-4"
-                  />
-                  <span class="py-2">Subscribe</span>
-                </BaseButtonAction>
-              </div>
+              <PositionsDemo />
             </template>
             <template #code>
-              <DocMarkdown :source="positions" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(positions)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -93,31 +60,13 @@ const properties = {
         <DocSection title="Tooltip avatars" tag="1.0.0">
           <DocComponent label="Tooltips on avatars">
             <template #demo>
-              <div class="flex flex-wrap items-end gap-2">
-                <BaseAvatar
-                  src="/img/avatars/3.svg"
-                  size="lg"
-                  tooltip="Clarke Miller"
-                />
-                <BaseAvatar
-                  src="/img/avatars/17.svg"
-                  size="lg"
-                  tooltip="Barry Weston"
-                />
-                <BaseAvatar
-                  src="/img/avatars/16.svg"
-                  size="lg"
-                  tooltip="Carlos Perez"
-                />
-                <BaseAvatar
-                  src="/img/avatars/15.svg"
-                  size="lg"
-                  tooltip="Albert Wesker"
-                />
-              </div>
+              <AvatarDemo />
             </template>
             <template #code>
-              <DocMarkdown :source="avatar" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(avatar)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>

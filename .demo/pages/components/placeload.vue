@@ -1,7 +1,10 @@
 <script setup lang="ts">
-import composition from '~/documentation/placeload/composition.md?raw'
-import shape from '~/documentation/placeload/shape.md?raw'
-import text from '~/documentation/placeload/text.md?raw'
+import CompositionDemo from '~/documentation/placeload/composition.vue'
+import composition from '~/documentation/placeload/composition.vue?raw'
+import ShapeDemo from '~/documentation/placeload/shape.vue'
+import shape from '~/documentation/placeload/shape.vue?raw'
+import TextDemo from '~/documentation/placeload/text.vue'
+import text from '~/documentation/placeload/text.vue?raw'
 
 definePageMeta({
   title: 'Placeloads',
@@ -10,12 +13,35 @@ definePageMeta({
     components: ['BasePlaceload'],
   },
 })
+
+function wrapVueMarkdown(source: string) {
+  return '```vue\n' + source + '\n```'
+}
+
+const demoBreadcrumb = [
+  {
+    label: 'Home',
+    hideLabel: true,
+    icon: 'lucide:home',
+    to: '/',
+  },
+  {
+    label: 'Components Hub',
+    hideLabel: false,
+    to: '/components',
+  },
+  {
+    label: 'Placeload',
+    hideLabel: false,
+    to: '#/',
+  },
+]
 </script>
 
 <template>
   <div>
     <!-- BreadCrumb -->
-    <BaseBreadcrumb />
+    <BaseBreadcrumb :items="demoBreadcrumb" />
 
     <!-- Documentation Layout -->
     <DocLayout>
@@ -25,13 +51,13 @@ definePageMeta({
         <DocSection title="Text placeload" tag="1.0.0">
           <DocComponent label="Text placeload example">
             <template #demo>
-              <div class="max-w-sm space-y-2">
-                <BasePlaceload class="h-4 w-full rounded" />
-                <BasePlaceload class="h-4 w-[85%] rounded" />
-              </div>
+              <TextDemo />
             </template>
             <template #code>
-              <DocMarkdown :source="text" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(text)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -40,14 +66,13 @@ definePageMeta({
         <DocSection title="Shape placeload" tag="1.0.0">
           <DocComponent label="Shape placeload example">
             <template #demo>
-              <div class="flex flex-wrap items-end gap-2">
-                <BasePlaceload class="h-10 w-10 rounded" />
-                <BasePlaceload class="h-12 w-12 rounded-xl" />
-                <BasePlaceload class="h-16 w-16 rounded-full" />
-              </div>
+              <ShapeDemo />
             </template>
             <template #code>
-              <DocMarkdown :source="shape" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(shape)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -56,20 +81,13 @@ definePageMeta({
         <DocSection title="Composition" tag="1.0.0">
           <DocComponent label="Custom placeload example">
             <template #demo>
-              <div class="max-w-sm">
-                <BaseCard shape="rounded" class="p-4 md:p-6">
-                  <div class="flex items-center">
-                    <BasePlaceload class="h-10 w-10 rounded-full" />
-                    <div class="ml-3 grow space-y-2">
-                      <BasePlaceload class="h-3 w-full rounded" />
-                      <BasePlaceload class="h-3 w-[85%] rounded" />
-                    </div>
-                  </div>
-                </BaseCard>
-              </div>
+              <CompositionDemo />
             </template>
             <template #code>
-              <DocMarkdown :source="composition" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(composition)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>

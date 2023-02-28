@@ -1,13 +1,22 @@
 <script setup lang="ts">
-import base from '~/documentation/snack/base.md?raw'
-import baseLight from '~/documentation/snack/base-light.md?raw'
-import icon from '~/documentation/snack/icon.md?raw'
-import iconLight from '~/documentation/snack/icon-light.md?raw'
-import iconSmall from '~/documentation/snack/icon-small.md?raw'
-import image from '~/documentation/snack/image.md?raw'
-import imageLight from '~/documentation/snack/image-light.md?raw'
-import imageSmall from '~/documentation/snack/image-small.md?raw'
-import small from '~/documentation/snack/small.md?raw'
+import BaseDemo from '~/documentation/snack/base.vue'
+import base from '~/documentation/snack/base.vue?raw'
+import BaseLightDemo from '~/documentation/snack/base-light.vue'
+import baseLight from '~/documentation/snack/base-light.vue?raw'
+import IconDemo from '~/documentation/snack/icon.vue'
+import icon from '~/documentation/snack/icon.vue?raw'
+import IconLightDemo from '~/documentation/snack/icon-light.vue'
+import iconLight from '~/documentation/snack/icon-light.vue?raw'
+import IconSmallDemo from '~/documentation/snack/icon-small.vue'
+import iconSmall from '~/documentation/snack/icon-small.vue?raw'
+import ImageDemo from '~/documentation/snack/image.vue'
+import image from '~/documentation/snack/image.vue?raw'
+import ImageLightDemo from '~/documentation/snack/image-light.vue'
+import imageLight from '~/documentation/snack/image-light.vue?raw'
+import ImageSmallDemo from '~/documentation/snack/image-small.vue'
+import imageSmall from '~/documentation/snack/image-small.vue?raw'
+import SmallDemo from '~/documentation/snack/small.vue'
+import small from '~/documentation/snack/small.vue?raw'
 
 definePageMeta({
   title: 'Snacks',
@@ -16,12 +25,35 @@ definePageMeta({
     components: ['BaseSnack'],
   },
 })
+
+function wrapVueMarkdown(source: string) {
+  return '```vue\n' + source + '\n```'
+}
+
+const demoBreadcrumb = [
+  {
+    label: 'Home',
+    hideLabel: true,
+    icon: 'lucide:home',
+    to: '/',
+  },
+  {
+    label: 'Components Hub',
+    hideLabel: false,
+    to: '/components',
+  },
+  {
+    label: 'Snack',
+    hideLabel: false,
+    to: '#/',
+  },
+]
 </script>
 
 <template>
   <div>
     <!-- BreadCrumb -->
-    <BaseBreadcrumb />
+    <BaseBreadcrumb :items="demoBreadcrumb" />
 
     <!-- Documentation Layout -->
     <DocLayout>
@@ -32,15 +64,14 @@ definePageMeta({
           <DocComponent label="Snack base example">
             <template #demo>
               <div class="flex flex-wrap items-end gap-4">
-                <BaseSnack label="React" />
-                <BaseSnack label="Angular" />
-                <BaseSnack label="Vue" />
-                <BaseSnack label="Html" />
-                <BaseSnack label="Python" />
+                <BaseDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="base" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(base)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -50,15 +81,14 @@ definePageMeta({
           <DocComponent label="Snack base example">
             <template #demo>
               <div class="flex flex-wrap items-end gap-4">
-                <BaseSnack label="React" light />
-                <BaseSnack label="Angular" light />
-                <BaseSnack label="Vue" light />
-                <BaseSnack label="Html" light />
-                <BaseSnack label="Python" light />
+                <BaseLightDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="baseLight" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(baseLight)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -68,15 +98,14 @@ definePageMeta({
           <DocComponent label="Snack base small example">
             <template #demo>
               <div class="flex flex-wrap items-end gap-4">
-                <BaseSnack label="React" small />
-                <BaseSnack label="Angular" small />
-                <BaseSnack label="Vue" small />
-                <BaseSnack label="Html" small />
-                <BaseSnack label="Python" small />
+                <SmallDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="small" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(small)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -86,15 +115,14 @@ definePageMeta({
           <DocComponent label="Snack icons example">
             <template #demo>
               <div class="flex flex-wrap items-end gap-4">
-                <BaseSnack label="React" icon="logos:react" />
-                <BaseSnack label="Angular" icon="logos:angular-icon" />
-                <BaseSnack label="Vue" icon="logos:vue" />
-                <BaseSnack label="Html" icon="logos:html-5" />
-                <BaseSnack label="Python" icon="logos:python" />
+                <IconDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="icon" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(icon)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -104,15 +132,14 @@ definePageMeta({
           <DocComponent label="Snack icons example">
             <template #demo>
               <div class="flex flex-wrap items-end gap-4">
-                <BaseSnack label="React" icon="logos:react" light />
-                <BaseSnack label="Angular" icon="logos:angular-icon" light />
-                <BaseSnack label="Vue" icon="logos:vue" light />
-                <BaseSnack label="Html" icon="logos:html-5" light />
-                <BaseSnack label="Python" icon="logos:python" light />
+                <IconLightDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="iconLight" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(iconLight)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -122,15 +149,14 @@ definePageMeta({
           <DocComponent label="Snack icons small example">
             <template #demo>
               <div class="flex flex-wrap items-end gap-4">
-                <BaseSnack label="React" icon="logos:react" small />
-                <BaseSnack label="Angular" icon="logos:angular-icon" small />
-                <BaseSnack label="Vue" icon="logos:vue" small />
-                <BaseSnack label="Html" icon="logos:html-5" small />
-                <BaseSnack label="Python" icon="logos:python" small />
+                <IconSmallDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="iconSmall" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(iconSmall)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -140,15 +166,14 @@ definePageMeta({
           <DocComponent label="Snack images example">
             <template #demo>
               <div class="flex flex-wrap items-end gap-4">
-                <BaseSnack label="Lana" image="/img/avatars/4.svg" />
-                <BaseSnack label="Harry" image="/img/avatars/7.svg" />
-                <BaseSnack label="Mike" image="/img/avatars/3.svg" />
-                <BaseSnack label="Maya" image="/img/avatars/2.svg" />
-                <BaseSnack label="John" image="/img/avatars/11.svg" />
+                <ImageDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="image" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(image)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -158,15 +183,14 @@ definePageMeta({
           <DocComponent label="Snack images example">
             <template #demo>
               <div class="flex flex-wrap items-end gap-4">
-                <BaseSnack label="Lana" image="/img/avatars/4.svg" light />
-                <BaseSnack label="Harry" image="/img/avatars/7.svg" light />
-                <BaseSnack label="Mike" image="/img/avatars/3.svg" light />
-                <BaseSnack label="Maya" image="/img/avatars/2.svg" light />
-                <BaseSnack label="John" image="/img/avatars/11.svg" light />
+                <ImageLightDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="imageLight" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(imageLight)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -176,15 +200,14 @@ definePageMeta({
           <DocComponent label="Snack images small example">
             <template #demo>
               <div class="flex flex-wrap items-end gap-4">
-                <BaseSnack label="Lana" image="/img/avatars/4.svg" small />
-                <BaseSnack label="Harry" image="/img/avatars/7.svg" small />
-                <BaseSnack label="Mike" image="/img/avatars/3.svg" small />
-                <BaseSnack label="Maya" image="/img/avatars/2.svg" small />
-                <BaseSnack label="John" image="/img/avatars/11.svg" small />
+                <ImageSmallDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="imageSmall" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(imageSmall)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>

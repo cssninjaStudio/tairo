@@ -1,12 +1,20 @@
 <script setup lang="ts">
-import addon from '~/documentation/form/textarea/addon.md?raw'
-import curved from '~/documentation/form/textarea/curved.md?raw'
-import disabled from '~/documentation/form/textarea/disabled.md?raw'
-import invalid from '~/documentation/form/textarea/invalid.md?raw'
-import loading from '~/documentation/form/textarea/loading.md?raw'
-import rounded from '~/documentation/form/textarea/rounded.md?raw'
-import focus from '~/documentation/form/textarea/focus.md?raw'
-import straight from '~/documentation/form/textarea/straight.md?raw'
+import AddonDemo from '~/documentation/form/textarea/addon.vue'
+import addon from '~/documentation/form/textarea/addon.vue?raw'
+import CurvedDemo from '~/documentation/form/textarea/curved.vue'
+import curved from '~/documentation/form/textarea/curved.vue?raw'
+import DisabledDemo from '~/documentation/form/textarea/disabled.vue'
+import disabled from '~/documentation/form/textarea/disabled.vue?raw'
+import InvalidDemo from '~/documentation/form/textarea/invalid.vue'
+import invalid from '~/documentation/form/textarea/invalid.vue?raw'
+import LoadingDemo from '~/documentation/form/textarea/loading.vue'
+import loading from '~/documentation/form/textarea/loading.vue?raw'
+import RoundedDemo from '~/documentation/form/textarea/rounded.vue'
+import rounded from '~/documentation/form/textarea/rounded.vue?raw'
+import FocusDemo from '~/documentation/form/textarea/focus.vue'
+import focus from '~/documentation/form/textarea/focus.vue?raw'
+import StraightDemo from '~/documentation/form/textarea/straight.vue'
+import straight from '~/documentation/form/textarea/straight.vue?raw'
 
 definePageMeta({
   title: 'Textarea',
@@ -16,16 +24,38 @@ definePageMeta({
   },
 })
 
-const textareaStraight = ref('')
-const textareaRounded = ref('')
-const textareaCurved = ref('')
-const textareaFull = ref('')
+function wrapVueMarkdown(source: string) {
+  return '```vue\n' + source + '\n```'
+}
+
+const demoBreadcrumb = [
+  {
+    label: 'Home',
+    hideLabel: true,
+    icon: 'lucide:home',
+    to: '/',
+  },
+  {
+    label: 'Components Hub',
+    hideLabel: false,
+    to: '/components',
+  },
+  {
+    label: 'Textarea',
+    hideLabel: false,
+    to: '#/',
+  },
+]
+
+const model = `
+const textarea = ref('')
+`
 </script>
 
 <template>
   <div>
     <!-- BreadCrumb -->
-    <BaseBreadcrumb />
+    <BaseBreadcrumb :items="demoBreadcrumb" />
 
     <!-- Documentation Layout -->
     <DocLayout>
@@ -41,19 +71,17 @@ const textareaFull = ref('')
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseTextarea
-                    v-model="textareaStraight"
-                    label="Message"
-                    shape="straight"
-                    placeholder="Write a message..."
-                  />
+                  <StraightDemo />
                 </div>
                 <!-- State box -->
-                <DocState :state="textareaStraight" height="80px" />
+                <DocState label="V-Model" :state="model" height="80px" />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="straight" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(straight)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -64,19 +92,17 @@ const textareaFull = ref('')
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseTextarea
-                    v-model="textareaRounded"
-                    label="Message"
-                    shape="rounded"
-                    placeholder="Write a message..."
-                  />
+                  <RoundedDemo />
                 </div>
                 <!-- State box -->
-                <DocState :state="textareaRounded" height="80px" />
+                <DocState label="V-Model" :state="model" height="80px" />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="rounded" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(rounded)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -87,19 +113,17 @@ const textareaFull = ref('')
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseTextarea
-                    v-model="textareaCurved"
-                    label="Message"
-                    shape="curved"
-                    placeholder="Write a message..."
-                  />
+                  <CurvedDemo />
                 </div>
                 <!-- State box -->
-                <DocState :state="textareaCurved" height="80px" />
+                <DocState label="V-Model" :state="model" height="80px" />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="curved" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(curved)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -110,17 +134,15 @@ const textareaFull = ref('')
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseTextarea
-                    label="Message"
-                    shape="rounded"
-                    placeholder="Write a message..."
-                    color-focus
-                  />
+                  <FocusDemo />
                 </div>
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="focus" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(focus)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -131,17 +153,15 @@ const textareaFull = ref('')
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseTextarea
-                    label="Message"
-                    shape="rounded"
-                    placeholder="Write a message..."
-                    invalid
-                  />
+                  <InvalidDemo />
                 </div>
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="invalid" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(invalid)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -152,17 +172,15 @@ const textareaFull = ref('')
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseTextarea
-                    label="Description"
-                    shape="rounded"
-                    placeholder="Write a message..."
-                    loading
-                  />
+                  <LoadingDemo />
                 </div>
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="loading" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(loading)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -177,17 +195,15 @@ const textareaFull = ref('')
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseTextarea
-                    label="Description"
-                    shape="rounded"
-                    placeholder="Write a message..."
-                    disabled
-                  />
+                  <DisabledDemo />
                 </div>
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="disabled" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(disabled)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -198,38 +214,15 @@ const textareaFull = ref('')
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseTextarea
-                    v-model="textareaRounded"
-                    label="Message"
-                    shape="curved"
-                    placeholder="Write a message..."
-                    :rows="6"
-                    addon
-                  >
-                    <template #addon>
-                      <div class="flex items-center gap-2">
-                        <BaseAvatar src="/img/avatars/2.svg" class="mr-1" />
-                        <BaseHeading
-                          as="h4"
-                          size="sm"
-                          weight="semibold"
-                          class="text-muted-800 dark:text-white"
-                        >
-                          Maya
-                        </BaseHeading>
-                      </div>
-                      <div class="flex items-center gap-2">
-                        <BaseButton flavor="pastel" color="primary">
-                          Post Comment
-                        </BaseButton>
-                      </div>
-                    </template>
-                  </BaseTextarea>
+                  <AddonDemo />
                 </div>
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="addon" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(addon)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>

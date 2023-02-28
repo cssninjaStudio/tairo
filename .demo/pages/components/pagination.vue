@@ -1,8 +1,12 @@
 <script setup lang="ts">
-import curved from '~/documentation/pagination/curved.md?raw'
-import full from '~/documentation/pagination/full.md?raw'
-import rounded from '~/documentation/pagination/rounded.md?raw'
-import straight from '~/documentation/pagination/straight.md?raw'
+import CurvedDemo from '~/documentation/pagination/curved.vue'
+import curved from '~/documentation/pagination/curved.vue?raw'
+import FullDemo from '~/documentation/pagination/full.vue'
+import full from '~/documentation/pagination/full.vue?raw'
+import RoundedDemo from '~/documentation/pagination/rounded.vue'
+import rounded from '~/documentation/pagination/rounded.vue?raw'
+import StraightDemo from '~/documentation/pagination/straight.vue'
+import straight from '~/documentation/pagination/straight.vue?raw'
 
 definePageMeta({
   title: 'Pagination',
@@ -12,19 +16,34 @@ definePageMeta({
   },
 })
 
-const route = useRoute()
-const currentPage = computed(() => {
-  try {
-    return Number.parseInt(route.query.page as string) || 1
-  } catch {}
-  return 1
-})
+function wrapVueMarkdown(source: string) {
+  return '```vue\n' + source + '\n```'
+}
+
+const demoBreadcrumb = [
+  {
+    label: 'Home',
+    hideLabel: true,
+    icon: 'lucide:home',
+    to: '/',
+  },
+  {
+    label: 'Components Hub',
+    hideLabel: false,
+    to: '/components',
+  },
+  {
+    label: 'Pagination',
+    hideLabel: false,
+    to: '#/',
+  },
+]
 </script>
 
 <template>
   <div>
     <!-- BreadCrumb -->
-    <BaseBreadcrumb />
+    <BaseBreadcrumb :items="demoBreadcrumb" />
 
     <!-- Documentation Layout -->
     <DocLayout>
@@ -34,16 +53,13 @@ const currentPage = computed(() => {
         <DocSection title="Straight shape" tag="1.0.0">
           <DocComponent label="Straight pagination example">
             <template #demo>
-              <BasePagination
-                :item-per-page="8"
-                :total-items="512"
-                :current-page="currentPage"
-                :max-links-displayed="5"
-                shape="straight"
-              />
+              <StraightDemo />
             </template>
             <template #code>
-              <DocMarkdown :source="straight" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(straight)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -52,16 +68,13 @@ const currentPage = computed(() => {
         <DocSection title="Rounded shape" tag="1.0.0">
           <DocComponent label="Rounded pagination example">
             <template #demo>
-              <BasePagination
-                :item-per-page="8"
-                :total-items="512"
-                :current-page="currentPage"
-                :max-links-displayed="5"
-                shape="rounded"
-              />
+              <RoundedDemo />
             </template>
             <template #code>
-              <DocMarkdown :source="rounded" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(rounded)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -70,16 +83,13 @@ const currentPage = computed(() => {
         <DocSection title="Curved shape" tag="1.0.0">
           <DocComponent label="Curved pagination example">
             <template #demo>
-              <BasePagination
-                :item-per-page="8"
-                :total-items="512"
-                :current-page="currentPage"
-                :max-links-displayed="5"
-                shape="curved"
-              />
+              <CurvedDemo />
             </template>
             <template #code>
-              <DocMarkdown :source="curved" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(curved)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -88,16 +98,13 @@ const currentPage = computed(() => {
         <DocSection title="Full shape" tag="1.0.0">
           <DocComponent label="Full pagination example">
             <template #demo>
-              <BasePagination
-                :item-per-page="8"
-                :total-items="512"
-                :current-page="currentPage"
-                :max-links-displayed="5"
-                shape="full"
-              />
+              <FullDemo />
             </template>
             <template #code>
-              <DocMarkdown :source="full" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(full)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>

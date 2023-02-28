@@ -1,7 +1,10 @@
 <script setup lang="ts">
-import curved from '~/documentation/flex-table/curved.md?raw'
-import rounded from '~/documentation/flex-table/rounded.md?raw'
-import straight from '~/documentation/flex-table/straight.md?raw'
+import CurvedDemo from '~/documentation/flex-table/curved.vue'
+import curved from '~/documentation/flex-table/curved.vue?raw'
+import RoundedDemo from '~/documentation/flex-table/rounded.vue'
+import rounded from '~/documentation/flex-table/rounded.vue?raw'
+import StraightDemo from '~/documentation/flex-table/straight.vue'
+import straight from '~/documentation/flex-table/straight.vue?raw'
 
 definePageMeta({
   title: 'Flex Tables',
@@ -16,42 +19,26 @@ definePageMeta({
   },
 })
 
-const team = [
+function wrapVueMarkdown(source: string) {
+  return '```vue\n' + source + '\n```'
+}
+
+const demoBreadcrumb = [
   {
-    id: 0,
-    src: '/img/avatars/22.svg',
-    name: 'Anna Vrinkof',
-    role: 'UI/UX designer',
-    expertise: 'UX Design',
-    rate: 49,
-    status: 'Available',
+    label: 'Home',
+    hideLabel: true,
+    icon: 'lucide:home',
+    to: '/',
   },
   {
-    id: 1,
-    src: '/img/avatars/3.svg',
-    name: 'John Cambell',
-    role: 'Sales manager',
-    expertise: 'Management',
-    rate: 74,
-    status: 'Hired',
+    label: 'Components Hub',
+    hideLabel: false,
+    to: '/components',
   },
   {
-    id: 2,
-    src: '/img/avatars/9.svg',
-    name: 'Beth Delanoe',
-    role: 'Product designer',
-    expertise: 'Product',
-    rate: 43,
-    status: 'Available',
-  },
-  {
-    id: 3,
-    src: '/img/avatars/14.svg',
-    name: 'Andrew Higgs',
-    role: 'Project manager',
-    expertise: 'Project',
-    rate: 69,
-    status: 'New',
+    label: 'Flex Table',
+    hideLabel: false,
+    to: '#/',
   },
 ]
 </script>
@@ -59,7 +46,7 @@ const team = [
 <template>
   <div>
     <!-- BreadCrumb -->
-    <BaseBreadcrumb />
+    <BaseBreadcrumb :items="demoBreadcrumb" />
 
     <!-- Documentation Layout -->
     <DocLayout>
@@ -70,116 +57,14 @@ const team = [
           <DocComponent label="Straight table shape example">
             <template #demo>
               <div class="w-full">
-                <BaseFlexTable>
-                  <template #header>
-                    <BaseFlexTableHeading type="shrink">
-                      <div class="flex items-center">
-                        <BaseCheckbox
-                          name="table-1-main"
-                          shape="straight"
-                          class="text-primary-500"
-                        />
-                      </div>
-                    </BaseFlexTableHeading>
-                    <BaseFlexTableHeading type="grow">
-                      Member
-                    </BaseFlexTableHeading>
-                    <BaseFlexTableHeading type="stable">
-                      Expertise
-                    </BaseFlexTableHeading>
-                    <BaseFlexTableHeading type="stable">
-                      Rate
-                    </BaseFlexTableHeading>
-                    <BaseFlexTableHeading type="stable">
-                      Status
-                    </BaseFlexTableHeading>
-                    <BaseFlexTableHeading type="stable">
-                      Actions
-                    </BaseFlexTableHeading>
-                  </template>
-
-                  <BaseFlexTableRow
-                    v-for="member in team"
-                    :key="member.id"
-                    shape="straight"
-                  >
-                    <BaseFlexTableCell type="shrink" data-content="Selection">
-                      <div class="flex items-center">
-                        <BaseCheckbox
-                          :name="`member-checkbox-${member.id}`"
-                          shape="straight"
-                          class="text-primary-500"
-                        />
-                      </div>
-                    </BaseFlexTableCell>
-                    <BaseFlexTableCell type="grow" data-content="Member">
-                      <div class="flex items-center">
-                        <BaseAvatar :src="member.src" />
-                        <div class="ml-3 leading-none">
-                          <h4 class="font-heading text-sm font-semibold">
-                            {{ member.name }}
-                          </h4>
-                          <p class="font-alt text-xs text-muted-400">
-                            {{ member.role }}
-                          </p>
-                        </div>
-                      </div>
-                    </BaseFlexTableCell>
-                    <BaseFlexTableCell
-                      type="stable"
-                      data-content="Expertise"
-                      light
-                    >
-                      {{ member.expertise }}
-                    </BaseFlexTableCell>
-                    <BaseFlexTableCell type="stable" data-content="Rate">
-                      ${{ member.rate }}/hour
-                    </BaseFlexTableCell>
-                    <BaseFlexTableCell type="stable" data-content="Status">
-                      <BaseTag
-                        v-if="member.status === 'Available'"
-                        color="success"
-                        flavor="pastel"
-                        shape="full"
-                        class="font-medium"
-                      >
-                        {{ member.status }}
-                      </BaseTag>
-                      <BaseTag
-                        v-else-if="member.status === 'New'"
-                        color="info"
-                        flavor="pastel"
-                        shape="full"
-                        class="font-medium"
-                      >
-                        {{ member.status }}
-                      </BaseTag>
-                      <BaseTag
-                        v-else-if="member.status === 'Hired'"
-                        color="warning"
-                        flavor="pastel"
-                        shape="full"
-                        class="font-medium"
-                      >
-                        {{ member.status }}
-                      </BaseTag>
-                    </BaseFlexTableCell>
-                    <BaseFlexTableCell type="stable" data-content="Actions">
-                      <BaseButton
-                        color="primary"
-                        flavor="outline"
-                        shape="straight"
-                        class="scale-90"
-                      >
-                        View
-                      </BaseButton>
-                    </BaseFlexTableCell>
-                  </BaseFlexTableRow>
-                </BaseFlexTable>
+                <StraightDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="straight" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(straight)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -189,116 +74,14 @@ const team = [
           <DocComponent label="Rounded table shape example">
             <template #demo>
               <div class="w-full">
-                <BaseFlexTable>
-                  <template #header>
-                    <BaseFlexTableHeading type="shrink">
-                      <div class="flex items-center">
-                        <BaseCheckbox
-                          name="table-1-main"
-                          shape="rounded"
-                          class="text-primary-500"
-                        />
-                      </div>
-                    </BaseFlexTableHeading>
-                    <BaseFlexTableHeading type="grow">
-                      Member
-                    </BaseFlexTableHeading>
-                    <BaseFlexTableHeading type="stable">
-                      Expertise
-                    </BaseFlexTableHeading>
-                    <BaseFlexTableHeading type="stable">
-                      Rate
-                    </BaseFlexTableHeading>
-                    <BaseFlexTableHeading type="stable">
-                      Status
-                    </BaseFlexTableHeading>
-                    <BaseFlexTableHeading type="stable">
-                      Actions
-                    </BaseFlexTableHeading>
-                  </template>
-
-                  <BaseFlexTableRow
-                    v-for="member in team"
-                    :key="member.id"
-                    shape="rounded"
-                  >
-                    <BaseFlexTableCell type="shrink" data-content="Selection">
-                      <div class="flex items-center">
-                        <BaseCheckbox
-                          :name="`member-checkbox-${member.id}`"
-                          shape="rounded"
-                          class="text-primary-500"
-                        />
-                      </div>
-                    </BaseFlexTableCell>
-                    <BaseFlexTableCell type="grow" data-content="Member">
-                      <div class="flex items-center">
-                        <BaseAvatar :src="member.src" />
-                        <div class="ml-3 leading-none">
-                          <h4 class="font-heading text-sm font-semibold">
-                            {{ member.name }}
-                          </h4>
-                          <p class="font-alt text-xs text-muted-400">
-                            {{ member.role }}
-                          </p>
-                        </div>
-                      </div>
-                    </BaseFlexTableCell>
-                    <BaseFlexTableCell
-                      type="stable"
-                      data-content="Expertise"
-                      light
-                    >
-                      {{ member.expertise }}
-                    </BaseFlexTableCell>
-                    <BaseFlexTableCell type="stable" data-content="Rate">
-                      ${{ member.rate }}/hour
-                    </BaseFlexTableCell>
-                    <BaseFlexTableCell type="stable" data-content="Status">
-                      <BaseTag
-                        v-if="member.status === 'Available'"
-                        color="success"
-                        flavor="pastel"
-                        shape="full"
-                        class="font-medium"
-                      >
-                        {{ member.status }}
-                      </BaseTag>
-                      <BaseTag
-                        v-else-if="member.status === 'New'"
-                        color="info"
-                        flavor="pastel"
-                        shape="full"
-                        class="font-medium"
-                      >
-                        {{ member.status }}
-                      </BaseTag>
-                      <BaseTag
-                        v-else-if="member.status === 'Hired'"
-                        color="warning"
-                        flavor="pastel"
-                        shape="full"
-                        class="font-medium"
-                      >
-                        {{ member.status }}
-                      </BaseTag>
-                    </BaseFlexTableCell>
-                    <BaseFlexTableCell type="stable" data-content="Actions">
-                      <BaseButton
-                        color="primary"
-                        flavor="outline"
-                        shape="rounded"
-                        class="scale-90"
-                      >
-                        View
-                      </BaseButton>
-                    </BaseFlexTableCell>
-                  </BaseFlexTableRow>
-                </BaseFlexTable>
+                <RoundedDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="rounded" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(rounded)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -308,116 +91,14 @@ const team = [
           <DocComponent label="Curved table shape example">
             <template #demo>
               <div class="w-full">
-                <BaseFlexTable>
-                  <template #header>
-                    <BaseFlexTableHeading type="shrink">
-                      <div class="flex items-center">
-                        <BaseCheckbox
-                          name="table-1-main"
-                          shape="curved"
-                          class="text-primary-500"
-                        />
-                      </div>
-                    </BaseFlexTableHeading>
-                    <BaseFlexTableHeading type="grow">
-                      Member
-                    </BaseFlexTableHeading>
-                    <BaseFlexTableHeading type="stable">
-                      Expertise
-                    </BaseFlexTableHeading>
-                    <BaseFlexTableHeading type="stable">
-                      Rate
-                    </BaseFlexTableHeading>
-                    <BaseFlexTableHeading type="stable">
-                      Status
-                    </BaseFlexTableHeading>
-                    <BaseFlexTableHeading type="stable">
-                      Actions
-                    </BaseFlexTableHeading>
-                  </template>
-
-                  <BaseFlexTableRow
-                    v-for="member in team"
-                    :key="member.id"
-                    shape="curved"
-                  >
-                    <BaseFlexTableCell type="shrink" data-content="Selection">
-                      <div class="flex items-center">
-                        <BaseCheckbox
-                          :name="`member-checkbox-${member.id}`"
-                          shape="curved"
-                          class="text-primary-500"
-                        />
-                      </div>
-                    </BaseFlexTableCell>
-                    <BaseFlexTableCell type="grow" data-content="Member">
-                      <div class="flex items-center">
-                        <BaseAvatar :src="member.src" />
-                        <div class="ml-3 leading-none">
-                          <h4 class="font-heading text-sm font-semibold">
-                            {{ member.name }}
-                          </h4>
-                          <p class="font-alt text-xs text-muted-400">
-                            {{ member.role }}
-                          </p>
-                        </div>
-                      </div>
-                    </BaseFlexTableCell>
-                    <BaseFlexTableCell
-                      type="stable"
-                      data-content="Expertise"
-                      light
-                    >
-                      {{ member.expertise }}
-                    </BaseFlexTableCell>
-                    <BaseFlexTableCell type="stable" data-content="Rate">
-                      ${{ member.rate }}/hour
-                    </BaseFlexTableCell>
-                    <BaseFlexTableCell type="stable" data-content="Status">
-                      <BaseTag
-                        v-if="member.status === 'Available'"
-                        color="success"
-                        flavor="pastel"
-                        shape="full"
-                        class="font-medium"
-                      >
-                        {{ member.status }}
-                      </BaseTag>
-                      <BaseTag
-                        v-else-if="member.status === 'New'"
-                        color="info"
-                        flavor="pastel"
-                        shape="full"
-                        class="font-medium"
-                      >
-                        {{ member.status }}
-                      </BaseTag>
-                      <BaseTag
-                        v-else-if="member.status === 'Hired'"
-                        color="warning"
-                        flavor="pastel"
-                        shape="full"
-                        class="font-medium"
-                      >
-                        {{ member.status }}
-                      </BaseTag>
-                    </BaseFlexTableCell>
-                    <BaseFlexTableCell type="stable" data-content="Actions">
-                      <BaseButton
-                        color="primary"
-                        flavor="outline"
-                        shape="curved"
-                        class="scale-90"
-                      >
-                        View
-                      </BaseButton>
-                    </BaseFlexTableCell>
-                  </BaseFlexTableRow>
-                </BaseFlexTable>
+                <CurvedDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="curved" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(curved)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>

@@ -1,8 +1,12 @@
 <script setup lang="ts">
-import outline from '~/documentation/tag/outline.md?raw'
-import pastel from '~/documentation/tag/pastel.md?raw'
-import shapes from '~/documentation/tag/shapes.md?raw'
-import solid from '~/documentation/tag/solid.md?raw'
+import OutlineDemo from '~/documentation/tag/outline.vue'
+import outline from '~/documentation/tag/outline.vue?raw'
+import PastelDemo from '~/documentation/tag/pastel.vue'
+import pastel from '~/documentation/tag/pastel.vue?raw'
+import ShapesDemo from '~/documentation/tag/shapes.vue'
+import shapes from '~/documentation/tag/shapes.vue?raw'
+import SolidDemo from '~/documentation/tag/solid.vue'
+import solid from '~/documentation/tag/solid.vue?raw'
 
 definePageMeta({
   title: 'Tags',
@@ -11,12 +15,35 @@ definePageMeta({
     components: ['BaseTag'],
   },
 })
+
+function wrapVueMarkdown(source: string) {
+  return '```vue\n' + source + '\n```'
+}
+
+const demoBreadcrumb = [
+  {
+    label: 'Home',
+    hideLabel: true,
+    icon: 'lucide:home',
+    to: '/',
+  },
+  {
+    label: 'Components Hub',
+    hideLabel: false,
+    to: '/components',
+  },
+  {
+    label: 'Tag',
+    hideLabel: false,
+    to: '#/',
+  },
+]
 </script>
 
 <template>
   <div>
     <!-- BreadCrumb -->
-    <BaseBreadcrumb />
+    <BaseBreadcrumb :items="demoBreadcrumb" />
 
     <!-- Documentation Layout -->
     <DocLayout>
@@ -27,14 +54,14 @@ definePageMeta({
           <DocComponent label="Default tag shapes">
             <template #demo>
               <div class="flex flex-wrap items-end gap-1">
-                <BaseTag shape="straight">Label</BaseTag>
-                <BaseTag shape="rounded">Label</BaseTag>
-                <BaseTag shape="curved">Label</BaseTag>
-                <BaseTag shape="full">Label</BaseTag>
+                <ShapesDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="shapes" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(shapes)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -44,17 +71,14 @@ definePageMeta({
           <DocComponent label="Tag solid colors">
             <template #demo>
               <div class="flex flex-wrap items-end gap-1">
-                <BaseTag shape="rounded" color="default">Label</BaseTag>
-                <BaseTag shape="rounded" muted>Label</BaseTag>
-                <BaseTag shape="rounded" color="primary">Label</BaseTag>
-                <BaseTag shape="rounded" color="success">Label</BaseTag>
-                <BaseTag shape="rounded" color="info">Label</BaseTag>
-                <BaseTag shape="rounded" color="warning">Label</BaseTag>
-                <BaseTag shape="rounded" color="danger">Label</BaseTag>
+                <SolidDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="solid" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(solid)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -64,25 +88,14 @@ definePageMeta({
           <DocComponent label="Tag outline colors">
             <template #demo>
               <div class="flex flex-wrap items-end gap-1">
-                <BaseTag shape="rounded" color="primary" flavor="outline">
-                  Label
-                </BaseTag>
-                <BaseTag shape="rounded" color="success" flavor="outline">
-                  Label
-                </BaseTag>
-                <BaseTag shape="rounded" color="info" flavor="outline">
-                  Label
-                </BaseTag>
-                <BaseTag shape="rounded" color="warning" flavor="outline">
-                  Label
-                </BaseTag>
-                <BaseTag shape="rounded" color="danger" flavor="outline">
-                  Label
-                </BaseTag>
+                <OutlineDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="outline" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(outline)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -92,25 +105,14 @@ definePageMeta({
           <DocComponent label="Tag pastel colors">
             <template #demo>
               <div class="flex flex-wrap items-end gap-1">
-                <BaseTag shape="rounded" color="primary" flavor="pastel">
-                  Label
-                </BaseTag>
-                <BaseTag shape="rounded" color="success" flavor="pastel">
-                  Label
-                </BaseTag>
-                <BaseTag shape="rounded" color="info" flavor="pastel">
-                  Label
-                </BaseTag>
-                <BaseTag shape="rounded" color="warning" flavor="pastel">
-                  Label
-                </BaseTag>
-                <BaseTag shape="rounded" color="danger" flavor="pastel">
-                  Label
-                </BaseTag>
+                <PastelDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="pastel" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(pastel)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>

@@ -1,9 +1,14 @@
 <script setup lang="ts">
-import bar from '~/documentation/progress/bar.md?raw'
-import circle from '~/documentation/progress/circle.md?raw'
-import colors from '~/documentation/progress/colors.md?raw'
-import indeterminate from '~/documentation/progress/indeterminate.md?raw'
-import sizes from '~/documentation/progress/sizes.md?raw'
+import BarDemo from '~/documentation/progress/bar.vue'
+import bar from '~/documentation/progress/bar.vue?raw'
+import CircleDemo from '~/documentation/progress/circle.vue'
+import circle from '~/documentation/progress/circle.vue?raw'
+import ColorsDemo from '~/documentation/progress/colors.vue'
+import colors from '~/documentation/progress/colors.vue?raw'
+import IndeterminateDemo from '~/documentation/progress/indeterminate.vue'
+import indeterminate from '~/documentation/progress/indeterminate.vue?raw'
+import SizesDemo from '~/documentation/progress/sizes.vue'
+import sizes from '~/documentation/progress/sizes.vue?raw'
 
 definePageMeta({
   title: 'Progress',
@@ -13,14 +18,34 @@ definePageMeta({
   },
 })
 
-const progress = ref(25)
-const progressCircle = ref(25)
+function wrapVueMarkdown(source: string) {
+  return '```vue\n' + source + '\n```'
+}
+
+const demoBreadcrumb = [
+  {
+    label: 'Home',
+    hideLabel: true,
+    icon: 'lucide:home',
+    to: '/',
+  },
+  {
+    label: 'Components Hub',
+    hideLabel: false,
+    to: '/components',
+  },
+  {
+    label: 'Progress Bar',
+    hideLabel: false,
+    to: '#/',
+  },
+]
 </script>
 
 <template>
   <div>
     <!-- BreadCrumb -->
-    <BaseBreadcrumb />
+    <BaseBreadcrumb :items="demoBreadcrumb" />
 
     <!-- Documentation Layout -->
     <DocLayout>
@@ -30,52 +55,13 @@ const progressCircle = ref(25)
         <DocSection title="Progress bar" tag="1.0.0">
           <DocComponent label="Default progress bar">
             <template #demo>
-              <div class="max-w-xs space-y-4">
-                <BaseProgress
-                  title="Default progress bar"
-                  size="sm"
-                  :value="progress"
-                  color="primary"
-                />
-                <div class="flex justify-between gap-2">
-                  <BaseButtonAction
-                    :class="
-                      progress === 25 && '!border-primary-500 !text-primary-500'
-                    "
-                    @click="progress = 25"
-                  >
-                    25%
-                  </BaseButtonAction>
-                  <BaseButtonAction
-                    :class="
-                      progress === 50 && '!border-primary-500 !text-primary-500'
-                    "
-                    @click="progress = 50"
-                  >
-                    50%
-                  </BaseButtonAction>
-                  <BaseButtonAction
-                    :class="
-                      progress === 75 && '!border-primary-500 !text-primary-500'
-                    "
-                    @click="progress = 75"
-                  >
-                    75%
-                  </BaseButtonAction>
-                  <BaseButtonAction
-                    :class="
-                      progress === 100 &&
-                      '!border-primary-500 !text-primary-500'
-                    "
-                    @click="progress = 100"
-                  >
-                    100%
-                  </BaseButtonAction>
-                </div>
-              </div>
+              <BarDemo />
             </template>
             <template #code>
-              <DocMarkdown :source="bar" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(bar)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -84,76 +70,13 @@ const progressCircle = ref(25)
         <DocSection title="Progress circle" tag="1.0.0">
           <DocComponent label="Default progress circle">
             <template #demo>
-              <div class="max-w-xs space-y-4">
-                <div class="flex items-end gap-2">
-                  <BaseProgressCircle
-                    title="Primary circle progress bar"
-                    :size="45"
-                    :value="progressCircle"
-                    class="text-primary-500"
-                  />
-                  <BaseProgressCircle
-                    title="Yellow circle progress bar"
-                    :size="55"
-                    :value="progressCircle"
-                    class="text-yellow-500"
-                  />
-                  <BaseProgressCircle
-                    title="Pink circle progress bar"
-                    :size="75"
-                    :value="progressCircle"
-                    class="text-pink-500"
-                  />
-                  <BaseProgressCircle
-                    title="Indigo circle progress bar"
-                    :size="85"
-                    :value="progressCircle"
-                    class="text-indigo-400"
-                  />
-                </div>
-
-                <div class="flex justify-between gap-2">
-                  <BaseButtonAction
-                    :class="
-                      progressCircle === 25 &&
-                      '!border-primary-500 !text-primary-500'
-                    "
-                    @click="progressCircle = 25"
-                  >
-                    25%
-                  </BaseButtonAction>
-                  <BaseButtonAction
-                    :class="
-                      progressCircle === 50 &&
-                      '!border-primary-500 !text-primary-500'
-                    "
-                    @click="progressCircle = 50"
-                  >
-                    50%
-                  </BaseButtonAction>
-                  <BaseButtonAction
-                    :class="
-                      progressCircle === 75 &&
-                      '!border-primary-500 !text-primary-500'
-                    "
-                    @click="progressCircle = 75"
-                  >
-                    75%
-                  </BaseButtonAction>
-                  <BaseButtonAction
-                    :class="
-                      progressCircle === 100 &&
-                      '!border-primary-500 !text-primary-500'
-                    "
-                    @click="progressCircle = 100"
-                  >
-                    100%
-                  </BaseButtonAction>
-                </div>
-              </div>
+              <CircleDemo />
             </template>
             <template #code>
-              <DocMarkdown :source="circle" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(circle)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -162,41 +85,13 @@ const progressCircle = ref(25)
         <DocSection title="Progress sizes" tag="1.0.0">
           <DocComponent label="Default progress sizes">
             <template #demo>
-              <div class="max-w-xs space-y-4">
-                <BaseProgress
-                  title="xs progress bar"
-                  size="xs"
-                  :value="78"
-                  color="primary"
-                />
-                <BaseProgress
-                  title="sm progress bar"
-                  size="sm"
-                  :value="78"
-                  color="primary"
-                />
-                <BaseProgress
-                  title="md progress bar"
-                  size="md"
-                  :value="78"
-                  color="primary"
-                />
-                <BaseProgress
-                  title="lg progress bar"
-                  size="lg"
-                  :value="78"
-                  color="primary"
-                />
-                <BaseProgress
-                  title="xl progress bar"
-                  size="xl"
-                  :value="78"
-                  color="primary"
-                />
-              </div>
+              <SizesDemo />
             </template>
             <template #code>
-              <DocMarkdown :source="sizes" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(sizes)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -205,41 +100,13 @@ const progressCircle = ref(25)
         <DocSection title="Progress colors" tag="1.0.0">
           <DocComponent label="Default progress colors">
             <template #demo>
-              <div class="max-w-xs space-y-4">
-                <BaseProgress
-                  title="primary progress bar"
-                  size="sm"
-                  :value="78"
-                  color="primary"
-                />
-                <BaseProgress
-                  title="success progress bar"
-                  size="sm"
-                  :value="78"
-                  color="success"
-                />
-                <BaseProgress
-                  title="info progress bar"
-                  size="sm"
-                  :value="78"
-                  color="info"
-                />
-                <BaseProgress
-                  title="warning progress bar"
-                  size="sm"
-                  :value="78"
-                  color="warning"
-                />
-                <BaseProgress
-                  title="danger progress bar"
-                  size="sm"
-                  :value="78"
-                  color="danger"
-                />
-              </div>
+              <ColorsDemo />
             </template>
             <template #code>
-              <DocMarkdown :source="colors" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(colors)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -252,36 +119,13 @@ const progressCircle = ref(25)
         >
           <DocComponent label="indeterminate progress animation">
             <template #demo>
-              <div class="max-w-xs space-y-4">
-                <BaseProgress
-                  title="indeterminate primary progress bar"
-                  size="sm"
-                  color="primary"
-                />
-                <BaseProgress
-                  title="indeterminate success progress bar"
-                  size="sm"
-                  color="success"
-                />
-                <BaseProgress
-                  title="indeterminate info progress bar"
-                  size="sm"
-                  color="info"
-                />
-                <BaseProgress
-                  title="indeterminate warning progress bar"
-                  size="sm"
-                  color="warning"
-                />
-                <BaseProgress
-                  title="indeterminate danger progress bar"
-                  size="sm"
-                  color="danger"
-                />
-              </div>
+              <IndeterminateDemo />
             </template>
             <template #code>
-              <DocMarkdown :source="indeterminate" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(indeterminate)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>

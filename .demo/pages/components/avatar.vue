@@ -1,16 +1,28 @@
 <script setup lang="ts">
-import circleBadge from '~/documentation/avatar/circle-badge.md?raw'
-import circleDot from '~/documentation/avatar/circle-dot.md?raw'
-import circleFake from '~/documentation/avatar/circle-fake.md?raw'
-import circleFakeBadge from '~/documentation/avatar/circle-fake-badge.md?raw'
-import circleFakeColors from '~/documentation/avatar/circle-fake-colors.md?raw'
-import circleSize from '~/documentation/avatar/circle-size.md?raw'
-import squareBadge from '~/documentation/avatar/square-badge.md?raw'
-import squareDot from '~/documentation/avatar/square-dot.md?raw'
-import squareFake from '~/documentation/avatar/square-fake.md?raw'
-import squareFakeBadge from '~/documentation/avatar/square-fake-badge.md?raw'
-import squareFakeColors from '~/documentation/avatar/square-fake-colors.md?raw'
-import squareSize from '~/documentation/avatar/square-size.md?raw'
+import CircleBadgeDemo from '~/documentation/avatar/circle-badge.vue'
+import circleBadge from '~/documentation/avatar/circle-badge.vue?raw'
+import CircleDotDemo from '~/documentation/avatar/circle-dot.vue'
+import circleDot from '~/documentation/avatar/circle-dot.vue?raw'
+import CircleFakeDemo from '~/documentation/avatar/circle-fake.vue'
+import circleFake from '~/documentation/avatar/circle-fake.vue?raw'
+import CircleFakeBadgeDemo from '~/documentation/avatar/circle-fake-badge.vue'
+import circleFakeBadge from '~/documentation/avatar/circle-fake-badge.vue?raw'
+import CircleFakeColorsDemo from '~/documentation/avatar/circle-fake-colors.vue'
+import circleFakeColors from '~/documentation/avatar/circle-fake-colors.vue?raw'
+import CircleSizeDemo from '~/documentation/avatar/circle-size.vue'
+import circleSize from '~/documentation/avatar/circle-size.vue?raw'
+import SquareBadgeDemo from '~/documentation/avatar/square-badge.vue'
+import squareBadge from '~/documentation/avatar/square-badge.vue?raw'
+import SquareDotDemo from '~/documentation/avatar/square-dot.vue'
+import squareDot from '~/documentation/avatar/square-dot.vue?raw'
+import SquareFakeDemo from '~/documentation/avatar/square-fake.vue'
+import squareFake from '~/documentation/avatar/square-fake.vue?raw'
+import SquareFakeBadgeDemo from '~/documentation/avatar/square-fake-badge.vue'
+import squareFakeBadge from '~/documentation/avatar/square-fake-badge.vue?raw'
+import SquareFakeColorsDemo from '~/documentation/avatar/square-fake-colors.vue'
+import squareFakeColors from '~/documentation/avatar/square-fake-colors.vue?raw'
+import SquareSizeDemo from '~/documentation/avatar/square-size.vue'
+import squareSize from '~/documentation/avatar/square-size.vue?raw'
 
 definePageMeta({
   title: 'Avatars',
@@ -20,17 +32,21 @@ definePageMeta({
   },
 })
 
+function wrapVueMarkdown(source: string) {
+  return '```vue\n' + source + '\n```'
+}
+
 const demoBreadcrumb = [
   {
     label: 'Home',
     hideLabel: true,
     icon: 'lucide:home',
-    to: '#/',
+    to: '/',
   },
   {
     label: 'Components Hub',
     hideLabel: false,
-    to: '#/',
+    to: '/components',
   },
   {
     label: 'Avatars',
@@ -54,20 +70,14 @@ const demoBreadcrumb = [
           <DocComponent label="Circle avatar sizes">
             <template #demo>
               <div class="flex flex-wrap items-end gap-4">
-                <BaseAvatar size="xs">
-                  <NuxtImg src="/img/avatars/1.svg" />
-                </BaseAvatar>
-                <BaseAvatar src="/img/avatars/5.svg" />
-                <BaseAvatar src="/img/avatars/4.svg" size="md" />
-                <BaseAvatar src="/img/avatars/3.svg" size="lg" />
-                <BaseAvatar src="/img/avatars/8.svg" size="xl" />
-                <BaseAvatar src="/img/avatars/16.svg" size="2xl" />
-                <BaseAvatar src="/img/avatars/2.svg" size="3xl" />
-                <BaseAvatar src="/img/avatars/20.svg" size="4xl" />
+                <CircleSizeDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="circleSize" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(circleSize)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -77,30 +87,14 @@ const demoBreadcrumb = [
           <DocComponent label="Square avatar sizes">
             <template #demo>
               <div class="flex flex-wrap items-end gap-4">
-                <BaseAvatar src="/img/avatars/1.svg" size="xs" shape="square" />
-                <BaseAvatar src="/img/avatars/5.svg" shape="square" />
-                <BaseAvatar src="/img/avatars/4.svg" size="md" shape="square" />
-                <BaseAvatar src="/img/avatars/3.svg" size="lg" shape="square" />
-                <BaseAvatar src="/img/avatars/8.svg" size="xl" shape="square" />
-                <BaseAvatar
-                  src="/img/avatars/16.svg"
-                  size="2xl"
-                  shape="square"
-                />
-                <BaseAvatar
-                  src="/img/avatars/2.svg"
-                  size="3xl"
-                  shape="square"
-                />
-                <BaseAvatar
-                  src="/img/avatars/20.svg"
-                  size="4xl"
-                  shape="square"
-                />
+                <SquareSizeDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="squareSize" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(squareSize)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -131,18 +125,14 @@ const demoBreadcrumb = [
           <DocComponent label="Circle avatar dot">
             <template #demo>
               <div class="flex flex-wrap items-end gap-4">
-                <BaseAvatar src="/img/avatars/1.svg" size="xs" dot />
-                <BaseAvatar src="/img/avatars/5.svg" dot="info" />
-                <BaseAvatar src="/img/avatars/4.svg" size="md" dot="warning" />
-                <BaseAvatar src="/img/avatars/3.svg" size="lg" dot="pink" />
-                <BaseAvatar src="/img/avatars/8.svg" size="xl" dot="danger" />
-                <BaseAvatar src="/img/avatars/16.svg" size="2xl" dot="yellow" />
-                <BaseAvatar src="/img/avatars/2.svg" size="3xl" dot />
-                <BaseAvatar src="/img/avatars/20.svg" size="4xl" dot />
+                <CircleDotDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="circleDot" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(circleDot)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -152,57 +142,14 @@ const demoBreadcrumb = [
           <DocComponent label="Square avatar dot">
             <template #demo>
               <div class="flex flex-wrap items-end gap-4">
-                <BaseAvatar
-                  src="/img/avatars/1.svg"
-                  size="xs"
-                  shape="square"
-                  dot
-                />
-                <BaseAvatar
-                  src="/img/avatars/5.svg"
-                  shape="square"
-                  dot="info"
-                />
-                <BaseAvatar
-                  src="/img/avatars/4.svg"
-                  size="md"
-                  shape="square"
-                  dot="warning"
-                />
-                <BaseAvatar
-                  src="/img/avatars/3.svg"
-                  size="lg"
-                  shape="square"
-                  dot="pink"
-                />
-                <BaseAvatar
-                  src="/img/avatars/8.svg"
-                  size="xl"
-                  shape="square"
-                  dot="danger"
-                />
-                <BaseAvatar
-                  src="/img/avatars/16.svg"
-                  size="2xl"
-                  shape="square"
-                  dot="yellow"
-                />
-                <BaseAvatar
-                  src="/img/avatars/2.svg"
-                  size="3xl"
-                  shape="square"
-                  dot
-                />
-                <BaseAvatar
-                  src="/img/avatars/20.svg"
-                  size="4xl"
-                  shape="square"
-                  dot
-                />
+                <SquareDotDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="squareDot" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(squareDot)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -212,49 +159,14 @@ const demoBreadcrumb = [
           <DocComponent label="Circle avatar badges">
             <template #demo>
               <div class="flex flex-wrap items-end gap-4">
-                <BaseAvatar
-                  src="/img/avatars/1.svg"
-                  size="xs"
-                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
-                />
-                <BaseAvatar
-                  src="/img/avatars/5.svg"
-                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
-                />
-                <BaseAvatar
-                  src="/img/avatars/4.svg"
-                  size="md"
-                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
-                />
-                <BaseAvatar
-                  src="/img/avatars/3.svg"
-                  size="lg"
-                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
-                />
-                <BaseAvatar
-                  src="/img/avatars/8.svg"
-                  size="xl"
-                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
-                />
-                <BaseAvatar
-                  src="/img/avatars/16.svg"
-                  size="2xl"
-                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
-                />
-                <BaseAvatar
-                  src="/img/avatars/2.svg"
-                  size="3xl"
-                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
-                />
-                <BaseAvatar
-                  src="/img/avatars/20.svg"
-                  size="4xl"
-                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
-                />
+                <CircleBadgeDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="circleBadge" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(circleBadge)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -264,57 +176,14 @@ const demoBreadcrumb = [
           <DocComponent label="Square avatar badges">
             <template #demo>
               <div class="flex flex-wrap items-end gap-4">
-                <BaseAvatar
-                  src="/img/avatars/1.svg"
-                  size="xs"
-                  shape="square"
-                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
-                />
-                <BaseAvatar
-                  src="/img/avatars/5.svg"
-                  shape="square"
-                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
-                />
-                <BaseAvatar
-                  src="/img/avatars/4.svg"
-                  size="md"
-                  shape="square"
-                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
-                />
-                <BaseAvatar
-                  src="/img/avatars/3.svg"
-                  size="lg"
-                  shape="square"
-                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
-                />
-                <BaseAvatar
-                  src="/img/avatars/8.svg"
-                  size="xl"
-                  shape="square"
-                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
-                />
-                <BaseAvatar
-                  src="/img/avatars/16.svg"
-                  size="2xl"
-                  shape="square"
-                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
-                />
-                <BaseAvatar
-                  src="/img/avatars/2.svg"
-                  size="3xl"
-                  shape="square"
-                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
-                />
-                <BaseAvatar
-                  src="/img/avatars/20.svg"
-                  size="4xl"
-                  shape="square"
-                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
-                />
+                <SquareBadgeDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="squareBadge" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(squareBadge)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -324,49 +193,14 @@ const demoBreadcrumb = [
           <DocComponent label="Circle fake sizes">
             <template #demo>
               <div class="flex flex-wrap items-end gap-4">
-                <BaseAvatar
-                  text="CT"
-                  size="xs"
-                  class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
-                />
-                <BaseAvatar
-                  text="CT"
-                  class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="md"
-                  class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="lg"
-                  class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="xl"
-                  class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="2xl"
-                  class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="3xl"
-                  class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="4xl"
-                  class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
-                />
+                <CircleFakeDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="circleFake" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(circleFake)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -376,57 +210,14 @@ const demoBreadcrumb = [
           <DocComponent label="Square fake sizes">
             <template #demo>
               <div class="flex flex-wrap items-end gap-4">
-                <BaseAvatar
-                  text="CT"
-                  size="xs"
-                  shape="square"
-                  class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
-                />
-                <BaseAvatar
-                  text="CT"
-                  shape="square"
-                  class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="md"
-                  shape="square"
-                  class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="lg"
-                  shape="square"
-                  class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="xl"
-                  shape="square"
-                  class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="2xl"
-                  shape="square"
-                  class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="3xl"
-                  shape="square"
-                  class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="4xl"
-                  shape="square"
-                  class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
-                />
+                <SquareFakeDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="squareFake" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(squareFake)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -436,57 +227,14 @@ const demoBreadcrumb = [
           <DocComponent label="Circle fake badges">
             <template #demo>
               <div class="flex flex-wrap items-end gap-4">
-                <BaseAvatar
-                  text="CT"
-                  size="xs"
-                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
-                  class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
-                />
-                <BaseAvatar
-                  text="CT"
-                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
-                  class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="md"
-                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
-                  class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="lg"
-                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
-                  class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="xl"
-                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
-                  class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="2xl"
-                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
-                  class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="3xl"
-                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
-                  class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="4xl"
-                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
-                  class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
-                />
+                <CircleFakeBadgeDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="circleFakeBadge" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(circleFakeBadge)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -496,65 +244,14 @@ const demoBreadcrumb = [
           <DocComponent label="Square fake badges">
             <template #demo>
               <div class="flex flex-wrap items-end gap-4">
-                <BaseAvatar
-                  text="CT"
-                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
-                  size="xs"
-                  shape="square"
-                  class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
-                />
-                <BaseAvatar
-                  text="CT"
-                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
-                  shape="square"
-                  class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="md"
-                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
-                  shape="square"
-                  class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="lg"
-                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
-                  shape="square"
-                  class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="xl"
-                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
-                  shape="square"
-                  class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="2xl"
-                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
-                  shape="square"
-                  class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="3xl"
-                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
-                  shape="square"
-                  class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="4xl"
-                  badgeSrc="/img/icons/flags/united-states-of-america.svg"
-                  shape="square"
-                  class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
-                />
+                <SquareFakeBadgeDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="squareFakeBadge" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(squareFakeBadge)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -564,106 +261,12 @@ const demoBreadcrumb = [
           <DocComponent label="Circle fake colors">
             <template #demo>
               <div class="flex flex-wrap items-end gap-2">
-                <BaseAvatar
-                  text="CT"
-                  size="md"
-                  class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="md"
-                  class="bg-primary-100 text-primary-500 dark:bg-primary-500 dark:text-white"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="md"
-                  class="bg-lime-100 text-lime-500 dark:bg-lime-500 dark:text-white"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="md"
-                  class="bg-green-100 text-green-500 dark:bg-green-500 dark:text-white"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="md"
-                  class="bg-emerald-100 text-emerald-500 dark:bg-emerald-500 dark:text-white"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="md"
-                  class="bg-teal-100 text-teal-500 dark:bg-teal-500 dark:text-white"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="md"
-                  class="bg-cyan-100 text-cyan-500 dark:bg-cyan-500 dark:text-white"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="md"
-                  class="bg-sky-100 text-sky-500 dark:bg-sky-500 dark:text-white"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="md"
-                  class="bg-blue-100 text-blue-500 dark:bg-blue-500 dark:text-white"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="md"
-                  class="bg-indigo-100 text-indigo-500 dark:bg-indigo-500 dark:text-white"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="md"
-                  class="bg-violet-100 text-violet-500 dark:bg-violet-500 dark:text-white"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="md"
-                  class="bg-purple-100 text-purple-500 dark:bg-purple-500 dark:text-white"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="md"
-                  class="bg-fuchsia-100 text-fuchsia-500 dark:bg-fuchsia-500 dark:text-white"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="md"
-                  class="bg-pink-100 text-pink-500 dark:bg-pink-500 dark:text-white"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="md"
-                  class="bg-rose-100 text-rose-500 dark:bg-rose-500 dark:text-white"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="md"
-                  class="bg-red-100 text-red-500 dark:bg-red-500 dark:text-white"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="md"
-                  class="bg-orange-100 text-orange-500 dark:bg-orange-500 dark:text-white"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="md"
-                  class="bg-amber-100 text-amber-500 dark:bg-amber-500 dark:text-white"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="md"
-                  class="bg-yellow-100 text-yellow-500 dark:bg-yellow-500 dark:text-white"
-                />
+                <CircleFakeColorsDemo />
               </div>
             </template>
             <template #code>
               <DocMarkdown
-                :source="circleFakeColors"
+                :source="wrapVueMarkdown(circleFakeColors)"
                 class="prose max-w-full"
               />
             </template>
@@ -675,126 +278,12 @@ const demoBreadcrumb = [
           <DocComponent label="Square fake colors">
             <template #demo>
               <div class="flex flex-wrap items-end gap-2">
-                <BaseAvatar
-                  size="md"
-                  shape="square"
-                  class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
-                >
-                  CT
-                </BaseAvatar>
-                <BaseAvatar
-                  text="CT"
-                  size="md"
-                  shape="square"
-                  class="bg-primary-100 text-primary-500 dark:bg-primary-500 dark:text-white"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="md"
-                  shape="square"
-                  class="bg-lime-100 text-lime-500 dark:bg-lime-500 dark:text-white"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="md"
-                  shape="square"
-                  class="bg-green-100 text-green-500 dark:bg-green-500 dark:text-white"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="md"
-                  shape="square"
-                  class="bg-emerald-100 text-emerald-500 dark:bg-emerald-500 dark:text-white"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="md"
-                  shape="square"
-                  class="bg-teal-100 text-teal-500 dark:bg-teal-500 dark:text-white"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="md"
-                  shape="square"
-                  class="bg-cyan-100 text-cyan-500 dark:bg-cyan-500 dark:text-white"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="md"
-                  shape="square"
-                  class="bg-sky-100 text-sky-500 dark:bg-sky-500 dark:text-white"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="md"
-                  shape="square"
-                  class="bg-blue-100 text-blue-500 dark:bg-blue-500 dark:text-white"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="md"
-                  shape="square"
-                  class="bg-indigo-100 text-indigo-500 dark:bg-indigo-500 dark:text-white"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="md"
-                  shape="square"
-                  class="bg-violet-100 text-violet-500 dark:bg-violet-500 dark:text-white"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="md"
-                  shape="square"
-                  class="bg-purple-100 text-purple-500 dark:bg-purple-500 dark:text-white"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="md"
-                  shape="square"
-                  class="bg-fuchsia-100 text-fuchsia-500 dark:bg-fuchsia-500 dark:text-white"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="md"
-                  shape="square"
-                  class="bg-pink-100 text-pink-500 dark:bg-pink-500 dark:text-white"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="md"
-                  shape="square"
-                  class="bg-rose-100 text-rose-500 dark:bg-rose-500 dark:text-white"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="md"
-                  shape="square"
-                  class="bg-red-100 text-red-500 dark:bg-red-500 dark:text-white"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="md"
-                  shape="square"
-                  class="bg-orange-100 text-orange-500 dark:bg-orange-500 dark:text-white"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="md"
-                  shape="square"
-                  class="bg-amber-100 text-amber-500 dark:bg-amber-500 dark:text-white"
-                />
-                <BaseAvatar
-                  text="CT"
-                  size="md"
-                  shape="square"
-                  class="bg-yellow-100 text-yellow-500 dark:bg-yellow-500 dark:text-white"
-                />
+                <SquareFakeColorsDemo />
               </div>
             </template>
             <template #code>
               <DocMarkdown
-                :source="squareFakeColors"
+                :source="wrapVueMarkdown(squareFakeColors)"
                 class="prose max-w-full"
               />
             </template>

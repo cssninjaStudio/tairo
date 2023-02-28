@@ -1,10 +1,14 @@
 <script setup lang="ts">
 // @todo: fix switch checked / unchecked states that don't seem to work properly.
 
-import ballSublabel from '~/documentation/form/switch/ball-sublabel.md?raw'
-import ballSwitch from '~/documentation/form/switch/ball-switch.md?raw'
-import thinSublabel from '~/documentation/form/switch/thin-sublabel.md?raw'
-import thinSwitch from '~/documentation/form/switch/thin-switch.md?raw'
+import BallSublabelDemo from '~/documentation/form/switch/ball-sublabel.vue'
+import ballSublabel from '~/documentation/form/switch/ball-sublabel.vue?raw'
+import BallSwitchDemo from '~/documentation/form/switch/ball-switch.vue'
+import ballSwitch from '~/documentation/form/switch/ball-switch.vue?raw'
+import ThinSublabelDemo from '~/documentation/form/switch/thin-sublabel.vue'
+import thinSublabel from '~/documentation/form/switch/thin-sublabel.vue?raw'
+import ThinSwitchDemo from '~/documentation/form/switch/thin-switch.vue'
+import thinSwitch from '~/documentation/form/switch/thin-switch.vue?raw'
 
 definePageMeta({
   title: 'Switches',
@@ -13,12 +17,35 @@ definePageMeta({
     components: ['BaseSwitchThin', 'BaseSwitchBall'],
   },
 })
+
+function wrapVueMarkdown(source: string) {
+  return '```vue\n' + source + '\n```'
+}
+
+const demoBreadcrumb = [
+  {
+    label: 'Home',
+    hideLabel: true,
+    icon: 'lucide:home',
+    to: '/',
+  },
+  {
+    label: 'Components Hub',
+    hideLabel: false,
+    to: '/components',
+  },
+  {
+    label: 'Switch',
+    hideLabel: false,
+    to: '#/',
+  },
+]
 </script>
 
 <template>
   <div>
     <!-- BreadCrumb -->
-    <BaseBreadcrumb />
+    <BaseBreadcrumb :items="demoBreadcrumb" />
 
     <!-- Documentation Layout -->
     <DocLayout>
@@ -30,41 +57,15 @@ definePageMeta({
             <template #demo>
               <div class="flex items-end gap-6">
                 <BaseFocusLoop class="flex w-full flex-wrap gap-8">
-                  <BaseSwitchThin
-                    id="demo-thin-1"
-                    :checked="true"
-                    label="Primary"
-                    color="primary"
-                  />
-                  <BaseSwitchThin
-                    id="demo-thin-2"
-                    :checked="true"
-                    label="Info"
-                    color="info"
-                  />
-                  <BaseSwitchThin
-                    id="demo-thin-3"
-                    :checked="true"
-                    label="Success"
-                    color="success"
-                  />
-                  <BaseSwitchThin
-                    id="demo-thin-4"
-                    :checked="true"
-                    label="Warning"
-                    color="warning"
-                  />
-                  <BaseSwitchThin
-                    id="demo-thin-5"
-                    :checked="true"
-                    label="Danger"
-                    color="danger"
-                  />
+                  <ThinSwitchDemo />
                 </BaseFocusLoop>
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="thinSwitch" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(thinSwitch)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -74,17 +75,14 @@ definePageMeta({
           <DocComponent label="Thin switch example">
             <template #demo>
               <div class="w-full">
-                <BaseSwitchThin
-                  id="demo-thin-6"
-                  :checked="true"
-                  label="Primary"
-                  sublabel="This is a primary switch"
-                  color="primary"
-                />
+                <ThinSublabelDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="thinSublabel" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(thinSublabel)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -98,41 +96,15 @@ definePageMeta({
             <template #demo>
               <div class="flex items-end gap-6">
                 <BaseFocusLoop class="flex w-full flex-wrap gap-8">
-                  <BaseSwitchBall
-                    id="demo-ball-1"
-                    :checked="true"
-                    label="Primary"
-                    color="primary"
-                  />
-                  <BaseSwitchBall
-                    id="demo-ball-2"
-                    :checked="true"
-                    label="Info"
-                    color="info"
-                  />
-                  <BaseSwitchBall
-                    id="demo-ball-3"
-                    :checked="true"
-                    label="Success"
-                    color="success"
-                  />
-                  <BaseSwitchBall
-                    id="demo-ball-4"
-                    :checked="true"
-                    label="Warning"
-                    color="warning"
-                  />
-                  <BaseSwitchBall
-                    id="demo-ball-5"
-                    :checked="true"
-                    label="Danger"
-                    color="danger"
-                  />
+                  <BallSwitchDemo />
                 </BaseFocusLoop>
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="ballSwitch" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(ballSwitch)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -142,17 +114,14 @@ definePageMeta({
           <DocComponent label="Ball switch example">
             <template #demo>
               <div class="w-full">
-                <BaseSwitchBall
-                  id="demo-ball-6"
-                  :checked="true"
-                  label="Primary"
-                  sublabel="This is a primary switch"
-                  color="primary"
-                />
+                <BallSublabelDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="ballSublabel" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(ballSublabel)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>

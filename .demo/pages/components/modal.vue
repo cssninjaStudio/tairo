@@ -1,8 +1,12 @@
 <script setup lang="ts">
-import footerAlign from '~/documentation/modal/footer-align.md?raw'
-import largeTier from '~/documentation/modal/large-tier.md?raw'
-import mediumTier from '~/documentation/modal/medium-tier.md?raw'
-import smallTier from '~/documentation/modal/small-tier.md?raw'
+import FooterAlignDemo from '~/documentation/modal/footer-align.vue'
+import footerAlign from '~/documentation/modal/footer-align.vue?raw'
+import LargeTierDemo from '~/documentation/modal/large-tier.vue'
+import largeTier from '~/documentation/modal/large-tier.vue?raw'
+import MediumTierDemo from '~/documentation/modal/medium-tier.vue'
+import mediumTier from '~/documentation/modal/medium-tier.vue?raw'
+import SmallTierDemo from '~/documentation/modal/small-tier.vue'
+import smallTier from '~/documentation/modal/small-tier.vue?raw'
 
 definePageMeta({
   title: 'Modals',
@@ -11,12 +15,35 @@ definePageMeta({
     components: ['BaseModal'],
   },
 })
+
+function wrapVueMarkdown(source: string) {
+  return '```vue\n' + source + '\n```'
+}
+
+const demoBreadcrumb = [
+  {
+    label: 'Home',
+    hideLabel: true,
+    icon: 'lucide:home',
+    to: '/',
+  },
+  {
+    label: 'Components Hub',
+    hideLabel: false,
+    to: '/components',
+  },
+  {
+    label: 'Modal',
+    hideLabel: false,
+    to: '#/',
+  },
+]
 </script>
 
 <template>
   <div>
     <!-- BreadCrumb -->
-    <BaseBreadcrumb />
+    <BaseBreadcrumb :items="demoBreadcrumb" />
 
     <!-- Documentation Layout -->
     <DocLayout>
@@ -26,10 +53,13 @@ definePageMeta({
         <DocSection title="Small tier" tag="1.0.0">
           <DocComponent label="Small modals example">
             <template #demo>
-              <ExampleModalSmallTier />
+              <SmallTierDemo />
             </template>
             <template #code>
-              <DocMarkdown :source="smallTier" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(smallTier)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -38,10 +68,13 @@ definePageMeta({
         <DocSection title="Medium tier" tag="1.0.0">
           <DocComponent label="Medium modals example">
             <template #demo>
-              <ExampleModalMediumTier />
+              <MediumTierDemo />
             </template>
             <template #code>
-              <DocMarkdown :source="mediumTier" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(mediumTier)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -50,10 +83,13 @@ definePageMeta({
         <DocSection title="Large tier" tag="1.0.0">
           <DocComponent label="Large modals example">
             <template #demo>
-              <ExampleModalLargeTier />
+              <LargeTierDemo />
             </template>
             <template #code>
-              <DocMarkdown :source="largeTier" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(largeTier)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -62,10 +98,13 @@ definePageMeta({
         <DocSection title="Modal footer" tag="1.0.0">
           <DocComponent label="Footer options example">
             <template #demo>
-              <ExampleModalFooter />
+              <FooterAlignDemo />
             </template>
             <template #code>
-              <DocMarkdown :source="footerAlign" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(footerAlign)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>

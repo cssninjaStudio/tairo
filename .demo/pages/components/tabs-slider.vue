@@ -1,8 +1,12 @@
 <script setup lang="ts">
-import x2Full from '~/documentation/tabs-slider/full-x2.md?raw'
-import x2Rounded from '~/documentation/tabs-slider/rounded-x2.md?raw'
-import x3Full from '~/documentation/tabs-slider/full-x3.md?raw'
-import x3Rounded from '~/documentation/tabs-slider/rounded-x3.md?raw'
+import X2FullDemo from '~/documentation/tabs-slider/full-x2.vue'
+import x2Full from '~/documentation/tabs-slider/full-x2.vue?raw'
+import X2RoundedDemo from '~/documentation/tabs-slider/rounded-x2.vue'
+import x2Rounded from '~/documentation/tabs-slider/rounded-x2.vue?raw'
+import X3FullDemo from '~/documentation/tabs-slider/full-x3.vue'
+import x3Full from '~/documentation/tabs-slider/full-x3.vue?raw'
+import X3RoundedDemo from '~/documentation/tabs-slider/rounded-x2.vue'
+import x3Rounded from '~/documentation/tabs-slider/rounded-x3.vue?raw'
 
 definePageMeta({
   title: 'Slider Tabs',
@@ -11,12 +15,35 @@ definePageMeta({
     components: ['BaseTabSlider'],
   },
 })
+
+function wrapVueMarkdown(source: string) {
+  return '```vue\n' + source + '\n```'
+}
+
+const demoBreadcrumb = [
+  {
+    label: 'Home',
+    hideLabel: true,
+    icon: 'lucide:home',
+    to: '/',
+  },
+  {
+    label: 'Components Hub',
+    hideLabel: false,
+    to: '/components',
+  },
+  {
+    label: 'Tabs Slider',
+    hideLabel: false,
+    to: '#/',
+  },
+]
 </script>
 
 <template>
   <div>
     <!-- BreadCrumb -->
-    <BaseBreadcrumb />
+    <BaseBreadcrumb :items="demoBreadcrumb" />
 
     <!-- Documentation Layout -->
     <DocLayout>
@@ -27,48 +54,14 @@ definePageMeta({
           <DocComponent label="Rounded with two slots example">
             <template #demo>
               <div class="w-full max-w-sm">
-                <BaseTabSlider
-                  selected="team"
-                  :tabs="[
-                    { label: 'Team', value: 'team' },
-                    { label: 'Projects', value: 'projects' },
-                    { label: 'Tasks', value: 'tasks' },
-                  ]"
-                >
-                  <template #tab="{ activeValue }">
-                    <p
-                      v-if="activeValue === 'team'"
-                      class="font-sans text-sm text-gray-500 dark:text-gray-400"
-                    >
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Quid iudicant sensus? Primum quid tu dicis breve? Etiam
-                      beatissimum? Ne discipulum abducam, times.
-                    </p>
-                    <p
-                      v-else-if="activeValue === 'projects'"
-                      class="font-sans text-sm text-gray-500 dark:text-gray-400"
-                    >
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Quid iudicant sensus? Primum quid tu dicis breve? Etiam
-                      beatissimum? Ne discipulum abducam, times. Quae
-                      diligentissime contra Aristonem dicuntur a Chryippo. Duo
-                      Reges: constructio interrete.
-                    </p>
-                    <p
-                      v-else-if="activeValue === 'tasks'"
-                      class="font-sans text-sm text-gray-500 dark:text-gray-400"
-                    >
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Quid iudicant sensus? Primum quid tu dicis breve? Etiam
-                      beatissimum? Ne discipulum abducam, times. Quae
-                      diligentissime contra.
-                    </p>
-                  </template>
-                </BaseTabSlider>
+                <X2RoundedDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="x2Rounded" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(x2Rounded)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -78,49 +71,14 @@ definePageMeta({
           <DocComponent label="Full with two slots example">
             <template #demo>
               <div class="w-full max-w-sm">
-                <BaseTabSlider
-                  shape="full"
-                  selected="team"
-                  :tabs="[
-                    { label: 'Team', value: 'team' },
-                    { label: 'Projects', value: 'projects' },
-                    { label: 'Tasks', value: 'tasks' },
-                  ]"
-                >
-                  <template #tab="{ activeValue }">
-                    <p
-                      v-if="activeValue === 'team'"
-                      class="font-sans text-sm text-gray-500 dark:text-gray-400"
-                    >
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Quid iudicant sensus? Primum quid tu dicis breve? Etiam
-                      beatissimum? Ne discipulum abducam, times.
-                    </p>
-                    <p
-                      v-else-if="activeValue === 'projects'"
-                      class="font-sans text-sm text-gray-500 dark:text-gray-400"
-                    >
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Quid iudicant sensus? Primum quid tu dicis breve? Etiam
-                      beatissimum? Ne discipulum abducam, times. Quae
-                      diligentissime contra Aristonem dicuntur a Chryippo. Duo
-                      Reges: constructio interrete.
-                    </p>
-                    <p
-                      v-else-if="activeValue === 'tasks'"
-                      class="font-sans text-sm text-gray-500 dark:text-gray-400"
-                    >
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Quid iudicant sensus? Primum quid tu dicis breve? Etiam
-                      beatissimum? Ne discipulum abducam, times. Quae
-                      diligentissime contra.
-                    </p>
-                  </template>
-                </BaseTabSlider>
+                <X2FullDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="x2Full" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(x2Full)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -130,49 +88,14 @@ definePageMeta({
           <DocComponent label="Rounded with three slots example">
             <template #demo>
               <div class="w-full max-w-sm">
-                <BaseTabSlider
-                  :size="3"
-                  selected="team"
-                  :tabs="[
-                    { label: 'Team', value: 'team' },
-                    { label: 'Projects', value: 'projects' },
-                    { label: 'Tasks', value: 'tasks' },
-                  ]"
-                >
-                  <template #tab="{ activeValue }">
-                    <p
-                      v-if="activeValue === 'team'"
-                      class="font-sans text-sm text-gray-500 dark:text-gray-400"
-                    >
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Quid iudicant sensus? Primum quid tu dicis breve? Etiam
-                      beatissimum? Ne discipulum abducam, times.
-                    </p>
-                    <p
-                      v-else-if="activeValue === 'projects'"
-                      class="font-sans text-sm text-gray-500 dark:text-gray-400"
-                    >
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Quid iudicant sensus? Primum quid tu dicis breve? Etiam
-                      beatissimum? Ne discipulum abducam, times. Quae
-                      diligentissime contra Aristonem dicuntur a Chryippo. Duo
-                      Reges: constructio interrete.
-                    </p>
-                    <p
-                      v-else-if="activeValue === 'tasks'"
-                      class="font-sans text-sm text-gray-500 dark:text-gray-400"
-                    >
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Quid iudicant sensus? Primum quid tu dicis breve? Etiam
-                      beatissimum? Ne discipulum abducam, times. Quae
-                      diligentissime contra.
-                    </p>
-                  </template>
-                </BaseTabSlider>
+                <X3RoundedDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="x3Rounded" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(x3Rounded)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -182,50 +105,14 @@ definePageMeta({
           <DocComponent label="Full with three slots example">
             <template #demo>
               <div class="w-full max-w-sm">
-                <BaseTabSlider
-                  shape="full"
-                  :size="3"
-                  selected="team"
-                  :tabs="[
-                    { label: 'Team', value: 'team' },
-                    { label: 'Projects', value: 'projects' },
-                    { label: 'Tasks', value: 'tasks' },
-                  ]"
-                >
-                  <template #tab="{ activeValue }">
-                    <p
-                      v-if="activeValue === 'team'"
-                      class="font-sans text-sm text-gray-500 dark:text-gray-400"
-                    >
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Quid iudicant sensus? Primum quid tu dicis breve? Etiam
-                      beatissimum? Ne discipulum abducam, times.
-                    </p>
-                    <p
-                      v-else-if="activeValue === 'projects'"
-                      class="font-sans text-sm text-gray-500 dark:text-gray-400"
-                    >
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Quid iudicant sensus? Primum quid tu dicis breve? Etiam
-                      beatissimum? Ne discipulum abducam, times. Quae
-                      diligentissime contra Aristonem dicuntur a Chryippo. Duo
-                      Reges: constructio interrete.
-                    </p>
-                    <p
-                      v-else-if="activeValue === 'tasks'"
-                      class="font-sans text-sm text-gray-500 dark:text-gray-400"
-                    >
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Quid iudicant sensus? Primum quid tu dicis breve? Etiam
-                      beatissimum? Ne discipulum abducam, times. Quae
-                      diligentissime contra.
-                    </p>
-                  </template>
-                </BaseTabSlider>
+                <X3FullDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="x3Full" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(x3Full)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>

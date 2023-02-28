@@ -1,14 +1,22 @@
 <script setup lang="ts">
 import Slider from '@vueform/slider'
 
-import circle from '~/documentation/form/slider/circle.md?raw'
-import colors from '~/documentation/form/slider/colors.md?raw'
-import curved from '~/documentation/form/slider/curved.md?raw'
-import formatTooltip from '~/documentation/form/slider/format-tooltip.md?raw'
-import mergeTooltip from '~/documentation/form/slider/merge-tooltip.md?raw'
-import multipleHandle from '~/documentation/form/slider/multiple-handle.md?raw'
-import rounded from '~/documentation/form/slider/rounded.md?raw'
-import straight from '~/documentation/form/slider/straight.md?raw'
+import CircleDemo from '~/documentation/form/slider/circle.vue'
+import circle from '~/documentation/form/slider/circle.vue?raw'
+import ColorsDemo from '~/documentation/form/slider/colors.vue'
+import colors from '~/documentation/form/slider/colors.vue?raw'
+import CurvedDemo from '~/documentation/form/slider/curved.vue'
+import curved from '~/documentation/form/slider/curved.vue?raw'
+import FormatTooltipDemo from '~/documentation/form/slider/format-tooltip.vue'
+import formatTooltip from '~/documentation/form/slider/format-tooltip.vue?raw'
+import MergeTooltipDemo from '~/documentation/form/slider/merge-tooltip.vue'
+import mergeTooltip from '~/documentation/form/slider/merge-tooltip.vue?raw'
+import MultipleHandleDemo from '~/documentation/form/slider/multiple-handle.vue'
+import multipleHandle from '~/documentation/form/slider/multiple-handle.vue?raw'
+import RoundedDemo from '~/documentation/form/slider/rounded.vue'
+import rounded from '~/documentation/form/slider/rounded.vue?raw'
+import StraightDemo from '~/documentation/form/slider/straight.vue'
+import straight from '~/documentation/form/slider/straight.vue?raw'
 
 definePageMeta({
   title: 'Sliders',
@@ -18,23 +26,41 @@ definePageMeta({
   },
 })
 
-const value = ref(20)
-const info = ref(38)
-const success = ref(84)
-const warning = ref(53)
-const danger = ref(67)
-const multiple = ref([16, 84])
-const format = (value: any) => {
-  return `${value}%`
+function wrapVueMarkdown(source: string) {
+  return '```vue\n' + source + '\n```'
 }
-const mergeValue = ref([20, 50, 80])
-const merge = ref(10)
+
+const demoBreadcrumb = [
+  {
+    label: 'Home',
+    hideLabel: true,
+    icon: 'lucide:home',
+    to: '/',
+  },
+  {
+    label: 'Components Hub',
+    hideLabel: false,
+    to: '/components',
+  },
+  {
+    label: 'Slider',
+    hideLabel: false,
+    to: '#/',
+  },
+]
+
+const model = `
+const value = ref(20)
+`
+const multipleModel = `
+const value = ref([16, 84])
+`
 </script>
 
 <template>
   <div>
     <!-- BreadCrumb -->
-    <BaseBreadcrumb />
+    <BaseBreadcrumb :items="demoBreadcrumb" />
 
     <!-- Documentation Layout -->
     <DocLayout>
@@ -46,14 +72,17 @@ const merge = ref(10)
             <template #demo>
               <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4 px-4">
-                  <Slider v-model="value" class="straight-tooltip" />
+                  <StraightDemo />
                 </div>
                 <!-- State box -->
-                <DocState :state="value" height="80px" />
+                <DocState label="V-Model" :state="model" height="80px" />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="straight" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(straight)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -64,14 +93,17 @@ const merge = ref(10)
             <template #demo>
               <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4 px-4">
-                  <Slider v-model="value" class="rounded-tooltip" />
+                  <RoundedDemo />
                 </div>
                 <!-- State box -->
-                <DocState :state="value" height="80px" />
+                <DocState label="V-Model" :state="model" height="80px" />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="rounded" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(rounded)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -82,14 +114,17 @@ const merge = ref(10)
             <template #demo>
               <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4 px-4">
-                  <Slider v-model="value" class="curved-tooltip" />
+                  <CurvedDemo />
                 </div>
                 <!-- State box -->
-                <DocState :state="value" height="80px" />
+                <DocState label="V-Model" :state="model" height="80px" />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="curved" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(curved)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -100,14 +135,17 @@ const merge = ref(10)
             <template #demo>
               <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4 px-4">
-                  <Slider v-model="value" classes="circle-tooltip" />
+                  <CircleDemo />
                 </div>
                 <!-- State box -->
-                <DocState :state="value" height="80px" />
+                <DocState label="V-Model" :state="model" height="80px" />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="circle" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(circle)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -117,34 +155,14 @@ const merge = ref(10)
           <DocComponent label="Slider colors example">
             <template #demo>
               <div class="grid gap-4 md:grid-cols-2">
-                <div class="px-4 py-6">
-                  <Slider v-model="info" class="slider-info circle-tooltip" />
-                </div>
-
-                <div class="px-4 py-6">
-                  <Slider
-                    v-model="success"
-                    class="slider-success circle-tooltip"
-                  />
-                </div>
-
-                <div class="px-4 py-6">
-                  <Slider
-                    v-model="warning"
-                    class="slider-warning circle-tooltip"
-                  />
-                </div>
-
-                <div class="px-4 py-6">
-                  <Slider
-                    v-model="danger"
-                    class="slider-danger circle-tooltip"
-                  />
-                </div>
+                <ColorsDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="colors" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(colors)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -155,14 +173,21 @@ const merge = ref(10)
             <template #demo>
               <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4 px-4">
-                  <Slider v-model="multiple" class="circle-tooltip" />
+                  <MultipleHandleDemo />
                 </div>
                 <!-- State box -->
-                <DocState :state="multiple" height="80px" />
+                <DocState
+                  label="V-Model"
+                  :state="multipleModel"
+                  height="80px"
+                />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="multipleHandle" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(multipleHandle)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -173,18 +198,17 @@ const merge = ref(10)
             <template #demo>
               <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4 px-4">
-                  <Slider
-                    v-model="value"
-                    :format="format"
-                    class="rounded-tooltip"
-                  />
+                  <FormatTooltipDemo />
                 </div>
                 <!-- State box -->
-                <DocState :state="value" height="80px" />
+                <DocState label="V-Model" :state="model" height="80px" />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="formatTooltip" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(formatTooltip)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -195,18 +219,21 @@ const merge = ref(10)
             <template #demo>
               <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4 px-4">
-                  <Slider
-                    v-model="mergeValue"
-                    :merge="merge"
-                    class="rounded-tooltip"
-                  />
+                  <MergeTooltipDemo />
                 </div>
                 <!-- State box -->
-                <DocState :state="mergeValue" height="80px" />
+                <DocState
+                  label="V-Model"
+                  :state="multipleModel"
+                  height="80px"
+                />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="mergeTooltip" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(mergeTooltip)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>

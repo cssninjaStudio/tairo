@@ -1,0 +1,37 @@
+<template>
+  <BasePopover orientation="end">
+    <div class="flex items-center">
+      <BaseAvatar src="/img/avatars/2.svg" />
+      <span
+        class="ml-3 font-heading text-sm font-semibold text-muted-800 dark:text-white"
+      >
+        Maya Rosselini
+      </span>
+    </div>
+
+    <template #content>
+      <BasePopoverContentDual
+        :stats="[
+          {
+            title: 'Angular',
+            subtitle: '16 projects',
+            image:
+              'https://vuero.cssninja.io/images/icons/stacks/angular.svg',
+          },
+          {
+            title: 'Projects',
+            subtitle: '56 projects',
+            icon: 'ph:briefcase-duotone',
+          },
+        ]"
+        image="/img/avatars/2.svg"
+        title="Maya Rosselini"
+        subtitle="Software Engineer"
+        footer-title="$55/hour"
+        footer-text="Based on the latest 5 jobs"
+        link-label="Hire Now"
+        link="/"
+      />
+    </template>
+  </BasePopover>
+</template>

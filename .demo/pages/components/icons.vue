@@ -1,14 +1,24 @@
 <script setup lang="ts">
-import carbon from '~/documentation/icons/carbon.md?raw'
-import cil from '~/documentation/icons/cil.md?raw'
-import fa from '~/documentation/icons/fa.md?raw'
-import fab from '~/documentation/icons/fab.md?raw'
-import iconoir from '~/documentation/icons/iconoir.md?raw'
-import ion from '~/documentation/icons/ion.md?raw'
-import logos from '~/documentation/icons/logos.md?raw'
-import lucide from '~/documentation/icons/lucide.md?raw'
-import material from '~/documentation/icons/material.md?raw'
-import phosphor from '~/documentation/icons/phosphor.md?raw'
+import CarbonDemo from '~/documentation/icons/carbon.vue'
+import carbon from '~/documentation/icons/carbon.vue?raw'
+import CilDemo from '~/documentation/icons/cil.vue'
+import cil from '~/documentation/icons/cil.vue?raw'
+import FaDemo from '~/documentation/icons/fa.vue'
+import fa from '~/documentation/icons/fa.vue?raw'
+import FabDemo from '~/documentation/icons/fab.vue'
+import fab from '~/documentation/icons/fab.vue?raw'
+import IconoirDemo from '~/documentation/icons/iconoir.vue'
+import iconoir from '~/documentation/icons/iconoir.vue?raw'
+import IonDemo from '~/documentation/icons/ion.vue'
+import ion from '~/documentation/icons/ion.vue?raw'
+import LogosDemo from '~/documentation/icons/logos.vue'
+import logos from '~/documentation/icons/logos.vue?raw'
+import LucideDemo from '~/documentation/icons/lucide.vue'
+import lucide from '~/documentation/icons/lucide.vue?raw'
+import MaterialDemo from '~/documentation/icons/material.vue'
+import material from '~/documentation/icons/material.vue?raw'
+import PhosphorDemo from '~/documentation/icons/phosphor.vue'
+import phosphor from '~/documentation/icons/phosphor.vue?raw'
 
 definePageMeta({
   title: 'Icons',
@@ -17,12 +27,35 @@ definePageMeta({
     components: ['Icon'],
   },
 })
+
+function wrapVueMarkdown(source: string) {
+  return '```vue\n' + source + '\n```'
+}
+
+const demoBreadcrumb = [
+  {
+    label: 'Home',
+    hideLabel: true,
+    icon: 'lucide:home',
+    to: '/',
+  },
+  {
+    label: 'Components Hub',
+    hideLabel: false,
+    to: '/components',
+  },
+  {
+    label: 'Icons',
+    hideLabel: false,
+    to: '#/',
+  },
+]
 </script>
 
 <template>
   <div>
     <!-- BreadCrumb -->
-    <BaseBreadcrumb />
+    <BaseBreadcrumb :items="demoBreadcrumb" />
 
     <!-- Documentation Layout -->
     <DocLayout>
@@ -33,34 +66,14 @@ definePageMeta({
           <DocComponent label="Phosphor icons example">
             <template #demo>
               <div class="flex items-end gap-4">
-                <Icon
-                  name="ph:crown-duotone"
-                  class="block h-6 w-6 text-muted-400 dark:text-muted-500"
-                />
-                <Icon
-                  name="ph:crown-duotone"
-                  class="block h-7 w-7 text-muted-400 dark:text-muted-500"
-                />
-                <Icon
-                  name="ph:crown-duotone"
-                  class="block h-8 w-8 text-muted-400 dark:text-muted-500"
-                />
-                <Icon
-                  name="ph:crown-duotone"
-                  class="block h-9 w-9 text-muted-400 dark:text-muted-500"
-                />
-                <Icon
-                  name="ph:crown-duotone"
-                  class="block h-10 w-10 text-muted-400 dark:text-muted-500"
-                />
-                <Icon
-                  name="ph:crown-duotone"
-                  class="block h-12 w-12 text-yellow-500"
-                />
+                <PhosphorDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="phosphor" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(phosphor)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -70,34 +83,14 @@ definePageMeta({
           <DocComponent label="Lucide icons example">
             <template #demo>
               <div class="flex items-end gap-4">
-                <Icon
-                  name="lucide:sofa"
-                  class="block h-6 w-6 text-muted-400 dark:text-muted-500"
-                />
-                <Icon
-                  name="lucide:sofa"
-                  class="block h-7 w-7 text-muted-400 dark:text-muted-500"
-                />
-                <Icon
-                  name="lucide:sofa"
-                  class="block h-8 w-8 text-muted-400 dark:text-muted-500"
-                />
-                <Icon
-                  name="lucide:sofa"
-                  class="block h-9 w-9 text-muted-400 dark:text-muted-500"
-                />
-                <Icon
-                  name="lucide:sofa"
-                  class="block h-10 w-10 text-muted-400 dark:text-muted-500"
-                />
-                <Icon
-                  name="lucide:sofa"
-                  class="block h-12 w-12 text-rose-500"
-                />
+                <LucideDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="lucide" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(lucide)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -107,34 +100,14 @@ definePageMeta({
           <DocComponent label="Carbon icons example">
             <template #demo>
               <div class="flex items-end gap-4">
-                <Icon
-                  name="carbon:tropical-storm-tracks"
-                  class="block h-6 w-6 text-muted-400 dark:text-muted-500"
-                />
-                <Icon
-                  name="carbon:tropical-storm-tracks"
-                  class="block h-7 w-7 text-muted-400 dark:text-muted-500"
-                />
-                <Icon
-                  name="carbon:tropical-storm-tracks"
-                  class="block h-8 w-8 text-muted-400 dark:text-muted-500"
-                />
-                <Icon
-                  name="carbon:tropical-storm-tracks"
-                  class="block h-9 w-9 text-muted-400 dark:text-muted-500"
-                />
-                <Icon
-                  name="carbon:tropical-storm-tracks"
-                  class="block h-10 w-10 text-muted-400 dark:text-muted-500"
-                />
-                <Icon
-                  name="carbon:tropical-storm-tracks"
-                  class="block h-12 w-12 text-primary-500"
-                />
+                <CarbonDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="carbon" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(carbon)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -144,34 +117,14 @@ definePageMeta({
           <DocComponent label="Ion icons example">
             <template #demo>
               <div class="flex items-end gap-4">
-                <Icon
-                  name="ion:gift-outline"
-                  class="block h-6 w-6 text-muted-400 dark:text-muted-500"
-                />
-                <Icon
-                  name="ion:gift-outline"
-                  class="block h-7 w-7 text-muted-400 dark:text-muted-500"
-                />
-                <Icon
-                  name="ion:gift-outline"
-                  class="block h-8 w-8 text-muted-400 dark:text-muted-500"
-                />
-                <Icon
-                  name="ion:gift-outline"
-                  class="block h-9 w-9 text-muted-400 dark:text-muted-500"
-                />
-                <Icon
-                  name="ion:gift-outline"
-                  class="block h-10 w-10 text-muted-400 dark:text-muted-500"
-                />
-                <Icon
-                  name="ion:gift-outline"
-                  class="block h-12 w-12 text-pink-500"
-                />
+                <IonDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="ion" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(ion)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -181,34 +134,14 @@ definePageMeta({
           <DocComponent label="Iconoir icons example">
             <template #demo>
               <div class="flex items-end gap-4">
-                <Icon
-                  name="iconoir:arcade"
-                  class="block h-6 w-6 text-muted-400 dark:text-muted-500"
-                />
-                <Icon
-                  name="iconoir:arcade"
-                  class="block h-7 w-7 text-muted-400 dark:text-muted-500"
-                />
-                <Icon
-                  name="iconoir:arcade"
-                  class="block h-8 w-8 text-muted-400 dark:text-muted-500"
-                />
-                <Icon
-                  name="iconoir:arcade"
-                  class="block h-9 w-9 text-muted-400 dark:text-muted-500"
-                />
-                <Icon
-                  name="iconoir:arcade"
-                  class="block h-10 w-10 text-muted-400 dark:text-muted-500"
-                />
-                <Icon
-                  name="iconoir:arcade"
-                  class="block h-12 w-12 text-lime-500"
-                />
+                <IconoirDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="iconoir" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(iconoir)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -218,34 +151,14 @@ definePageMeta({
           <DocComponent label="Core UI icons example">
             <template #demo>
               <div class="flex items-end gap-4">
-                <Icon
-                  name="cil:boat-alt"
-                  class="block h-6 w-6 text-muted-400 dark:text-muted-500"
-                />
-                <Icon
-                  name="cil:boat-alt"
-                  class="block h-7 w-7 text-muted-400 dark:text-muted-500"
-                />
-                <Icon
-                  name="cil:boat-alt"
-                  class="block h-8 w-8 text-muted-400 dark:text-muted-500"
-                />
-                <Icon
-                  name="cil:boat-alt"
-                  class="block h-9 w-9 text-muted-400 dark:text-muted-500"
-                />
-                <Icon
-                  name="cil:boat-alt"
-                  class="block h-10 w-10 text-muted-400 dark:text-muted-500"
-                />
-                <Icon
-                  name="cil:boat-alt"
-                  class="block h-12 w-12 text-indigo-500"
-                />
+                <CilDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="cil" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(cil)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -255,34 +168,14 @@ definePageMeta({
           <DocComponent label="Font Awesome icons example">
             <template #demo>
               <div class="flex items-end gap-4">
-                <Icon
-                  name="fa6-solid:computer-mouse"
-                  class="block h-6 w-6 text-muted-400 dark:text-muted-500"
-                />
-                <Icon
-                  name="fa6-solid:computer-mouse"
-                  class="block h-7 w-7 text-muted-400 dark:text-muted-500"
-                />
-                <Icon
-                  name="fa6-solid:computer-mouse"
-                  class="block h-8 w-8 text-muted-400 dark:text-muted-500"
-                />
-                <Icon
-                  name="fa6-solid:computer-mouse"
-                  class="block h-9 w-9 text-muted-400 dark:text-muted-500"
-                />
-                <Icon
-                  name="fa6-solid:computer-mouse"
-                  class="block h-10 w-10 text-muted-400 dark:text-muted-500"
-                />
-                <Icon
-                  name="fa6-solid:computer-mouse"
-                  class="block h-12 w-12 text-fuchsia-500"
-                />
+                <FaDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="fa" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(fa)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -292,34 +185,14 @@ definePageMeta({
           <DocComponent label="Font Awesome brands example">
             <template #demo>
               <div class="flex items-end gap-4">
-                <Icon
-                  name="fa6-brands:behance"
-                  class="block h-6 w-6 text-muted-400 dark:text-muted-500"
-                />
-                <Icon
-                  name="fa6-brands:behance"
-                  class="block h-7 w-7 text-muted-400 dark:text-muted-500"
-                />
-                <Icon
-                  name="fa6-brands:behance"
-                  class="block h-8 w-8 text-muted-400 dark:text-muted-500"
-                />
-                <Icon
-                  name="fa6-brands:behance"
-                  class="block h-9 w-9 text-muted-400 dark:text-muted-500"
-                />
-                <Icon
-                  name="fa6-brands:behance"
-                  class="block h-10 w-10 text-muted-400 dark:text-muted-500"
-                />
-                <Icon
-                  name="fa6-brands:behance"
-                  class="block h-12 w-12 text-indigo-500"
-                />
+                <FabDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="fab" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(fab)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -329,34 +202,14 @@ definePageMeta({
           <DocComponent label="Material icons example">
             <template #demo>
               <div class="flex items-end gap-4">
-                <Icon
-                  name="ic:baseline-forest"
-                  class="block h-6 w-6 text-muted-400 dark:text-muted-500"
-                />
-                <Icon
-                  name="ic:baseline-forest"
-                  class="block h-7 w-7 text-muted-400 dark:text-muted-500"
-                />
-                <Icon
-                  name="ic:baseline-forest"
-                  class="block h-8 w-8 text-muted-400 dark:text-muted-500"
-                />
-                <Icon
-                  name="ic:baseline-forest"
-                  class="block h-9 w-9 text-muted-400 dark:text-muted-500"
-                />
-                <Icon
-                  name="ic:baseline-forest"
-                  class="block h-10 w-10 text-muted-400 dark:text-muted-500"
-                />
-                <Icon
-                  name="ic:baseline-forest"
-                  class="block h-12 w-12 text-teal-500"
-                />
+                <MaterialDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="material" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(material)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -366,16 +219,14 @@ definePageMeta({
           <DocComponent label="Logo icons example">
             <template #demo>
               <div class="flex items-end gap-4">
-                <Icon name="logos:vue" class="block h-6 w-6" />
-                <Icon name="logos:vue" class="block h-7 w-7" />
-                <Icon name="logos:vue" class="block h-8 w-8" />
-                <Icon name="logos:vue" class="block h-9 w-9" />
-                <Icon name="logos:vue" class="block h-10 w-10" />
-                <Icon name="logos:vue" class="block h-12 w-12" />
+                <LogosDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="logos" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(logos)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>

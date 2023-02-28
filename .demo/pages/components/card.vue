@@ -1,7 +1,10 @@
 <script setup lang="ts">
-import elevation from '~/documentation/card/elevation.md?raw'
-import elevationHover from '~/documentation/card/elevation-hover.md?raw'
-import shapes from '~/documentation/card/shapes.md?raw'
+import ElevationDemo from '~/documentation/card/elevation.vue'
+import elevation from '~/documentation/card/elevation.vue?raw'
+import ElevationHoverDemo from '~/documentation/card/elevation-hover.vue'
+import elevationHover from '~/documentation/card/elevation-hover.vue?raw'
+import ShapesDemo from '~/documentation/card/shapes.vue'
+import shapes from '~/documentation/card/shapes.vue?raw'
 
 definePageMeta({
   title: 'Cards',
@@ -10,12 +13,35 @@ definePageMeta({
     components: ['BaseCard'],
   },
 })
+
+function wrapVueMarkdown(source: string) {
+  return '```vue\n' + source + '\n```'
+}
+
+const demoBreadcrumb = [
+  {
+    label: 'Home',
+    hideLabel: true,
+    icon: 'lucide:home',
+    to: '/',
+  },
+  {
+    label: 'Components Hub',
+    hideLabel: false,
+    to: '/components',
+  },
+  {
+    label: 'Card',
+    hideLabel: false,
+    to: '#/',
+  },
+]
 </script>
 
 <template>
   <div>
     <!-- BreadCrumb -->
-    <BaseBreadcrumb />
+    <BaseBreadcrumb :items="demoBreadcrumb" />
 
     <!-- Documentation Layout -->
     <DocLayout>
@@ -26,52 +52,14 @@ definePageMeta({
           <DocComponent label="Card shapes example">
             <template #demo>
               <div class="grid gap-4 md:grid-cols-3">
-                <BaseCard shape="straight" class="p-6">
-                  <BaseHeading
-                    as="h4"
-                    size="sm"
-                    weight="semibold"
-                    lead="tight"
-                    class="text-muted-800 mb-2 dark:text-white"
-                  >
-                    Iam a card
-                  </BaseHeading>
-                  <BaseParagraph size="sm" lead="tight" class="text-muted-400">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  </BaseParagraph>
-                </BaseCard>
-                <BaseCard shape="rounded" class="p-6">
-                  <BaseHeading
-                    as="h4"
-                    size="sm"
-                    weight="semibold"
-                    lead="tight"
-                    class="text-muted-800 mb-2 dark:text-white"
-                  >
-                    Iam a card
-                  </BaseHeading>
-                  <BaseParagraph size="sm" lead="tight" class="text-muted-400">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  </BaseParagraph>
-                </BaseCard>
-                <BaseCard shape="curved" class="p-6">
-                  <BaseHeading
-                    as="h4"
-                    size="sm"
-                    weight="semibold"
-                    lead="tight"
-                    class="text-muted-800 mb-2 dark:text-white"
-                  >
-                    Iam a card
-                  </BaseHeading>
-                  <BaseParagraph size="sm" lead="tight" class="text-muted-400">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  </BaseParagraph>
-                </BaseCard>
+                <ShapesDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="shapes" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(shapes)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -81,52 +69,14 @@ definePageMeta({
           <DocComponent label="Card elevations example">
             <template #demo>
               <div class="grid gap-4 md:grid-cols-3">
-                <BaseCard shape="straight" elevated class="p-6">
-                  <BaseHeading
-                    as="h4"
-                    size="sm"
-                    weight="semibold"
-                    lead="tight"
-                    class="text-muted-800 mb-2 dark:text-white"
-                  >
-                    Iam a card
-                  </BaseHeading>
-                  <BaseParagraph size="sm" lead="tight" class="text-muted-400">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  </BaseParagraph>
-                </BaseCard>
-                <BaseCard shape="rounded" elevated class="p-6">
-                  <BaseHeading
-                    as="h4"
-                    size="sm"
-                    weight="semibold"
-                    lead="tight"
-                    class="text-muted-800 mb-2 dark:text-white"
-                  >
-                    Iam a card
-                  </BaseHeading>
-                  <BaseParagraph size="sm" lead="tight" class="text-muted-400">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  </BaseParagraph>
-                </BaseCard>
-                <BaseCard shape="curved" elevated class="p-6">
-                  <BaseHeading
-                    as="h4"
-                    size="sm"
-                    weight="semibold"
-                    lead="tight"
-                    class="text-muted-800 mb-2 dark:text-white"
-                  >
-                    Iam a card
-                  </BaseHeading>
-                  <BaseParagraph size="sm" lead="tight" class="text-muted-400">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  </BaseParagraph>
-                </BaseCard>
+                <ElevationDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="elevation" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(elevation)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -140,52 +90,14 @@ definePageMeta({
           <DocComponent label="Hover elevations example">
             <template #demo>
               <div class="grid gap-4 md:grid-cols-3">
-                <BaseCard shape="straight" elevated-hover class="p-6">
-                  <BaseHeading
-                    as="h4"
-                    size="sm"
-                    weight="semibold"
-                    lead="tight"
-                    class="text-muted-800 mb-2 dark:text-white"
-                  >
-                    Iam a card
-                  </BaseHeading>
-                  <BaseParagraph size="sm" lead="tight" class="text-muted-400">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  </BaseParagraph>
-                </BaseCard>
-                <BaseCard shape="rounded" elevated-hover class="p-6">
-                  <BaseHeading
-                    as="h4"
-                    size="sm"
-                    weight="semibold"
-                    lead="tight"
-                    class="text-muted-800 mb-2 dark:text-white"
-                  >
-                    Iam a card
-                  </BaseHeading>
-                  <BaseParagraph size="sm" lead="tight" class="text-muted-400">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  </BaseParagraph>
-                </BaseCard>
-                <BaseCard shape="curved" elevated-hover class="p-6">
-                  <BaseHeading
-                    as="h4"
-                    size="sm"
-                    weight="semibold"
-                    lead="tight"
-                    class="text-muted-800 mb-2 dark:text-white"
-                  >
-                    Iam a card
-                  </BaseHeading>
-                  <BaseParagraph size="sm" lead="tight" class="text-muted-400">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  </BaseParagraph>
-                </BaseCard>
+                <ElevationHoverDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="elevationHover" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(elevationHover)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>

@@ -1,13 +1,22 @@
 <script setup lang="ts">
-import curved from '~/documentation/form/input/curved.md?raw'
-import disabled from '~/documentation/form/input/disabled.md?raw'
-import focus from '~/documentation/form/input/focus.md?raw'
-import full from '~/documentation/form/input/full.md?raw'
-import icon from '~/documentation/form/input/icon.md?raw'
-import invalid from '~/documentation/form/input/invalid.md?raw'
-import loading from '~/documentation/form/input/loading.md?raw'
-import rounded from '~/documentation/form/input/rounded.md?raw'
-import straight from '~/documentation/form/input/straight.md?raw'
+import CurvedDemo from '~/documentation/form/input/curved.vue'
+import curved from '~/documentation/form/input/curved.vue?raw'
+import DisabledDemo from '~/documentation/form/input/disabled.vue'
+import disabled from '~/documentation/form/input/disabled.vue?raw'
+import FocusDemo from '~/documentation/form/input/focus.vue'
+import focus from '~/documentation/form/input/focus.vue?raw'
+import FullDemo from '~/documentation/form/input/full.vue'
+import full from '~/documentation/form/input/full.vue?raw'
+import IconDemo from '~/documentation/form/input/icon.vue'
+import icon from '~/documentation/form/input/icon.vue?raw'
+import InvalidDemo from '~/documentation/form/input/invalid.vue'
+import invalid from '~/documentation/form/input/invalid.vue?raw'
+import LoadingDemo from '~/documentation/form/input/loading.vue'
+import loading from '~/documentation/form/input/loading.vue?raw'
+import RoundedDemo from '~/documentation/form/input/rounded.vue'
+import rounded from '~/documentation/form/input/rounded.vue?raw'
+import StraightDemo from '~/documentation/form/input/straight.vue'
+import straight from '~/documentation/form/input/straight.vue?raw'
 
 definePageMeta({
   title: 'Inputs',
@@ -17,16 +26,38 @@ definePageMeta({
   },
 })
 
-const inputStraight = ref('')
-const inputRounded = ref('')
-const inputCurved = ref('')
-const inputFull = ref('')
+function wrapVueMarkdown(source: string) {
+  return '```vue\n' + source + '\n```'
+}
+
+const demoBreadcrumb = [
+  {
+    label: 'Home',
+    hideLabel: true,
+    icon: 'lucide:home',
+    to: '/',
+  },
+  {
+    label: 'Components Hub',
+    hideLabel: false,
+    to: '/components',
+  },
+  {
+    label: 'Input',
+    hideLabel: false,
+    to: '#/',
+  },
+]
+
+const model = `
+const input = ref('')
+`
 </script>
 
 <template>
   <div>
     <!-- BreadCrumb -->
-    <BaseBreadcrumb />
+    <BaseBreadcrumb :items="demoBreadcrumb" />
 
     <!-- Documentation Layout -->
     <DocLayout>
@@ -38,19 +69,17 @@ const inputFull = ref('')
             <template #demo>
               <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseInput
-                    v-model="inputStraight"
-                    shape="straight"
-                    label="Short description"
-                    placeholder="Enter a few words..."
-                  />
+                  <StraightDemo />
                 </div>
                 <!-- State box -->
-                <DocState :state="inputStraight" height="80px" />
+                <DocState label="V-Model" :state="model" height="80px" />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="straight" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(straight)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -61,19 +90,17 @@ const inputFull = ref('')
             <template #demo>
               <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseInput
-                    v-model="inputRounded"
-                    shape="rounded"
-                    label="Short description"
-                    placeholder="Enter a few words..."
-                  />
+                  <RoundedDemo />
                 </div>
                 <!-- State box -->
-                <DocState :state="inputRounded" height="80px" />
+                <DocState label="V-Model" :state="model" height="80px" />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="rounded" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(rounded)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -84,19 +111,17 @@ const inputFull = ref('')
             <template #demo>
               <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseInput
-                    v-model="inputCurved"
-                    shape="curved"
-                    label="Short description"
-                    placeholder="Enter a few words..."
-                  />
+                  <CurvedDemo />
                 </div>
                 <!-- State box -->
-                <DocState :state="inputCurved" height="80px" />
+                <DocState label="V-Model" :state="model" height="80px" />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="curved" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(curved)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -107,19 +132,17 @@ const inputFull = ref('')
             <template #demo>
               <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseInput
-                    v-model="inputFull"
-                    shape="full"
-                    label="Short description"
-                    placeholder="Enter a few words..."
-                  />
+                  <FullDemo />
                 </div>
                 <!-- State box -->
-                <DocState :state="inputFull" height="80px" />
+                <DocState label="V-Model" :state="model" height="80px" />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="full" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(full)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -128,40 +151,13 @@ const inputFull = ref('')
         <DocSection title="Input icon" tag="1.0.0">
           <DocComponent label="Icon input example">
             <template #demo>
-              <div class="flex flex-col gap-6 md:flex-row md:items-end">
-                <div class="w-full max-w-sm space-y-4">
-                  <BaseInput
-                    shape="straight"
-                    label="Search"
-                    placeholder="Enter search terms..."
-                    icon="lucide:search"
-                  />
-                  <BaseInput
-                    shape="rounded"
-                    label="Email Address"
-                    placeholder="Your email..."
-                    icon="lucide:mail"
-                  />
-                </div>
-                <div class="w-full max-w-sm space-y-4">
-                  <BaseInput
-                    shape="curved"
-                    label="Username"
-                    placeholder="Your username..."
-                    icon="lucide:user"
-                  />
-                  <BaseInput
-                    type="password"
-                    shape="full"
-                    label="Password"
-                    placeholder="Enter password..."
-                    icon="lucide:lock"
-                  />
-                </div>
-              </div>
+              <IconDemo />
             </template>
             <template #code>
-              <DocMarkdown :source="icon" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(icon)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -172,21 +168,17 @@ const inputFull = ref('')
             <template #demo>
               <div class="flex flex-col gap-6 md:flex-row md:items-end">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseInput
-                    v-model="inputRounded"
-                    shape="rounded"
-                    label="Email Address"
-                    placeholder="Enter your email..."
-                    icon="lucide:mail"
-                    color-focus
-                  />
+                  <FocusDemo />
                 </div>
                 <!-- State box -->
-                <DocState :state="inputRounded" height="80px" />
+                <DocState label="V-Model" :state="model" height="80px" />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="focus" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(focus)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -197,18 +189,15 @@ const inputFull = ref('')
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseInput
-                    shape="rounded"
-                    label="Email Address"
-                    placeholder="Enter your email..."
-                    icon="lucide:mail"
-                    loading
-                  />
+                  <LoadingDemo />
                 </div>
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="loading" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(loading)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -219,18 +208,15 @@ const inputFull = ref('')
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseInput
-                    shape="rounded"
-                    label="Email Address"
-                    placeholder="Enter your email..."
-                    icon="lucide:mail"
-                    disabled
-                  />
+                  <DisabledDemo />
                 </div>
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="disabled" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(disabled)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -241,18 +227,15 @@ const inputFull = ref('')
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseInput
-                    shape="rounded"
-                    label="Email Address"
-                    placeholder="Enter your email..."
-                    icon="lucide:mail"
-                    invalid
-                  />
+                  <InvalidDemo />
                 </div>
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="invalid" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(invalid)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>

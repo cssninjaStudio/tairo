@@ -1,10 +1,16 @@
 <script setup lang="ts">
-import boxed from '~/documentation/tabs/boxed.md?raw'
-import boxedIcons from '~/documentation/tabs/boxed-icons.md?raw'
-import center from '~/documentation/tabs/center.md?raw'
-import end from '~/documentation/tabs/end.md?raw'
-import icons from '~/documentation/tabs/icons.md?raw'
-import start from '~/documentation/tabs/start.md?raw'
+import BoxedDemo from '~/documentation/tabs/boxed.vue'
+import boxed from '~/documentation/tabs/boxed.vue?raw'
+import BoxedIconsDemo from '~/documentation/tabs/boxed-icons.vue'
+import boxedIcons from '~/documentation/tabs/boxed-icons.vue?raw'
+import CenterDemo from '~/documentation/tabs/center.vue'
+import center from '~/documentation/tabs/center.vue?raw'
+import EndDemo from '~/documentation/tabs/end.vue'
+import end from '~/documentation/tabs/end.vue?raw'
+import IconsDemo from '~/documentation/tabs/icons.vue'
+import icons from '~/documentation/tabs/icons.vue?raw'
+import StartDemo from '~/documentation/tabs/start.vue'
+import start from '~/documentation/tabs/start.vue?raw'
 
 definePageMeta({
   title: 'Nav Tabs',
@@ -13,12 +19,35 @@ definePageMeta({
     components: ['BaseTabs'],
   },
 })
+
+function wrapVueMarkdown(source: string) {
+  return '```vue\n' + source + '\n```'
+}
+
+const demoBreadcrumb = [
+  {
+    label: 'Home',
+    hideLabel: true,
+    icon: 'lucide:home',
+    to: '/',
+  },
+  {
+    label: 'Components Hub',
+    hideLabel: false,
+    to: '/components',
+  },
+  {
+    label: 'Tabs',
+    hideLabel: false,
+    to: '#/',
+  },
+]
 </script>
 
 <template>
   <div>
     <!-- BreadCrumb -->
-    <BaseBreadcrumb />
+    <BaseBreadcrumb :items="demoBreadcrumb" />
 
     <!-- Documentation Layout -->
     <DocLayout>
@@ -29,38 +58,14 @@ definePageMeta({
           <DocComponent label="Left aligned example">
             <template #demo>
               <div class="w-full max-w-sm">
-                <BaseTabs
-                  selected="team"
-                  :tabs="[
-                    { label: 'Team', value: 'team' },
-                    { label: 'Projects', value: 'projects' },
-                  ]"
-                >
-                  <template #tab="{ activeValue }">
-                    <p
-                      v-if="activeValue === 'team'"
-                      class="font-sans text-sm text-gray-500 dark:text-gray-400"
-                    >
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Quid iudicant sensus? Primum quid tu dicis breve? Etiam
-                      beatissimum? Ne discipulum abducam, times.
-                    </p>
-                    <p
-                      v-else-if="activeValue === 'projects'"
-                      class="font-sans text-sm text-gray-500 dark:text-gray-400"
-                    >
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Quid iudicant sensus? Primum quid tu dicis breve? Etiam
-                      beatissimum? Ne discipulum abducam, times. Quae
-                      diligentissime contra Aristonem dicuntur a Chryippo. Duo
-                      Reges: constructio interrete.
-                    </p>
-                  </template>
-                </BaseTabs>
+                <StartDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="start" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(start)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -70,39 +75,14 @@ definePageMeta({
           <DocComponent label="Center aligned example">
             <template #demo>
               <div class="w-full max-w-sm">
-                <BaseTabs
-                  justify="center"
-                  selected="team"
-                  :tabs="[
-                    { label: 'Team', value: 'team' },
-                    { label: 'Projects', value: 'projects' },
-                  ]"
-                >
-                  <template #tab="{ activeValue }">
-                    <p
-                      v-if="activeValue === 'team'"
-                      class="font-sans text-sm text-gray-500 dark:text-gray-400"
-                    >
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Quid iudicant sensus? Primum quid tu dicis breve? Etiam
-                      beatissimum? Ne discipulum abducam, times.
-                    </p>
-                    <p
-                      v-else-if="activeValue === 'projects'"
-                      class="font-sans text-sm text-gray-500 dark:text-gray-400"
-                    >
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Quid iudicant sensus? Primum quid tu dicis breve? Etiam
-                      beatissimum? Ne discipulum abducam, times. Quae
-                      diligentissime contra Aristonem dicuntur a Chryippo. Duo
-                      Reges: constructio interrete.
-                    </p>
-                  </template>
-                </BaseTabs>
+                <CenterDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="center" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(center)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -112,49 +92,14 @@ definePageMeta({
           <DocComponent label="Right aligned example">
             <template #demo>
               <div class="w-full max-w-sm">
-                <BaseTabs
-                  justify="end"
-                  selected="team"
-                  :tabs="[
-                    { label: 'Team', value: 'team' },
-                    { label: 'Projects', value: 'projects' },
-                    { label: 'Tasks', value: 'tasks' },
-                  ]"
-                >
-                  <template #tab="{ activeValue }">
-                    <p
-                      v-if="activeValue === 'team'"
-                      class="font-sans text-sm text-gray-500 dark:text-gray-400"
-                    >
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Quid iudicant sensus? Primum quid tu dicis breve? Etiam
-                      beatissimum? Ne discipulum abducam, times.
-                    </p>
-                    <p
-                      v-else-if="activeValue === 'projects'"
-                      class="font-sans text-sm text-gray-500 dark:text-gray-400"
-                    >
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Quid iudicant sensus? Primum quid tu dicis breve? Etiam
-                      beatissimum? Ne discipulum abducam, times. Quae
-                      diligentissime contra Aristonem dicuntur a Chryippo. Duo
-                      Reges: constructio interrete.
-                    </p>
-                    <p
-                      v-else-if="activeValue === 'tasks'"
-                      class="font-sans text-sm text-gray-500 dark:text-gray-400"
-                    >
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Quid iudicant sensus? Primum quid tu dicis breve? Etiam
-                      beatissimum? Ne discipulum abducam, times. Quae
-                      diligentissime contra.
-                    </p>
-                  </template>
-                </BaseTabs>
+                <EndDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="end" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(end)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -164,60 +109,14 @@ definePageMeta({
           <DocComponent label="Tabs with icons example">
             <template #demo>
               <div class="w-full max-w-sm">
-                <BaseTabs
-                  selected="team"
-                  :tabs="[
-                    {
-                      label: 'Team',
-                      value: 'team',
-                      icon: 'ph:users-three-duotone',
-                    },
-                    {
-                      label: 'Projects',
-                      value: 'projects',
-                      icon: 'ph:briefcase-duotone',
-                    },
-                    {
-                      label: 'Tasks',
-                      value: 'tasks',
-                      icon: 'ph:check-circle-duotone',
-                    },
-                  ]"
-                >
-                  <template #tab="{ activeValue }">
-                    <p
-                      v-if="activeValue === 'team'"
-                      class="font-sans text-sm text-gray-500 dark:text-gray-400"
-                    >
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Quid iudicant sensus? Primum quid tu dicis breve? Etiam
-                      beatissimum? Ne discipulum abducam, times.
-                    </p>
-                    <p
-                      v-else-if="activeValue === 'projects'"
-                      class="font-sans text-sm text-gray-500 dark:text-gray-400"
-                    >
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Quid iudicant sensus? Primum quid tu dicis breve? Etiam
-                      beatissimum? Ne discipulum abducam, times. Quae
-                      diligentissime contra Aristonem dicuntur a Chryippo. Duo
-                      Reges: constructio interrete.
-                    </p>
-                    <p
-                      v-else-if="activeValue === 'tasks'"
-                      class="font-sans text-sm text-gray-500 dark:text-gray-400"
-                    >
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Quid iudicant sensus? Primum quid tu dicis breve? Etiam
-                      beatissimum? Ne discipulum abducam, times. Quae
-                      diligentissime contra.
-                    </p>
-                  </template>
-                </BaseTabs>
+                <IconsDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="icons" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(icons)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -227,58 +126,14 @@ definePageMeta({
           <DocComponent label="Tabs boxed example">
             <template #demo>
               <div class="w-full max-w-sm">
-                <BaseTabs
-                  type="box"
-                  selected="team"
-                  :tabs="[
-                    {
-                      label: 'Team',
-                      value: 'team',
-                    },
-                    {
-                      label: 'Projects',
-                      value: 'projects',
-                    },
-                    {
-                      label: 'Tasks',
-                      value: 'tasks',
-                    },
-                  ]"
-                >
-                  <template #tab="{ activeValue }">
-                    <p
-                      v-if="activeValue === 'team'"
-                      class="font-sans text-sm text-gray-500 dark:text-gray-400"
-                    >
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Quid iudicant sensus? Primum quid tu dicis breve? Etiam
-                      beatissimum? Ne discipulum abducam, times.
-                    </p>
-                    <p
-                      v-else-if="activeValue === 'projects'"
-                      class="font-sans text-sm text-gray-500 dark:text-gray-400"
-                    >
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Quid iudicant sensus? Primum quid tu dicis breve? Etiam
-                      beatissimum? Ne discipulum abducam, times. Quae
-                      diligentissime contra Aristonem dicuntur a Chryippo. Duo
-                      Reges: constructio interrete.
-                    </p>
-                    <p
-                      v-else-if="activeValue === 'tasks'"
-                      class="font-sans text-sm text-gray-500 dark:text-gray-400"
-                    >
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Quid iudicant sensus? Primum quid tu dicis breve? Etiam
-                      beatissimum? Ne discipulum abducam, times. Quae
-                      diligentissime contra.
-                    </p>
-                  </template>
-                </BaseTabs>
+                <BoxedDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="boxed" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(boxed)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -288,61 +143,14 @@ definePageMeta({
           <DocComponent label="Tabs with icons example">
             <template #demo>
               <div class="w-full max-w-sm">
-                <BaseTabs
-                  type="box"
-                  selected="team"
-                  :tabs="[
-                    {
-                      label: 'Team',
-                      value: 'team',
-                      icon: 'ph:users-three-duotone',
-                    },
-                    {
-                      label: 'Projects',
-                      value: 'projects',
-                      icon: 'ph:briefcase-duotone',
-                    },
-                    {
-                      label: 'Tasks',
-                      value: 'tasks',
-                      icon: 'ph:check-circle-duotone',
-                    },
-                  ]"
-                >
-                  <template #tab="{ activeValue }">
-                    <p
-                      v-if="activeValue === 'team'"
-                      class="font-sans text-sm text-gray-500 dark:text-gray-400"
-                    >
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Quid iudicant sensus? Primum quid tu dicis breve? Etiam
-                      beatissimum? Ne discipulum abducam, times.
-                    </p>
-                    <p
-                      v-else-if="activeValue === 'projects'"
-                      class="font-sans text-sm text-gray-500 dark:text-gray-400"
-                    >
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Quid iudicant sensus? Primum quid tu dicis breve? Etiam
-                      beatissimum? Ne discipulum abducam, times. Quae
-                      diligentissime contra Aristonem dicuntur a Chryippo. Duo
-                      Reges: constructio interrete.
-                    </p>
-                    <p
-                      v-else-if="activeValue === 'tasks'"
-                      class="font-sans text-sm text-gray-500 dark:text-gray-400"
-                    >
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Quid iudicant sensus? Primum quid tu dicis breve? Etiam
-                      beatissimum? Ne discipulum abducam, times. Quae
-                      diligentissime contra.
-                    </p>
-                  </template>
-                </BaseTabs>
+                <BoxedIconsDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="boxedIcons" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(boxedIcons)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>

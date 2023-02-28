@@ -9,6 +9,7 @@ const plugin = require('tailwindcss/plugin')
  * You can add/override your own customizations here.
  */
 module.exports = cssninjaConfig({
+  content: ['documentation/**/*.{vue, ts, js}'],
   theme: {
     extend: {
       colors: {

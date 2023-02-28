@@ -1,7 +1,10 @@
 <script setup lang="ts">
-import icons from '~/documentation/message/icons.md?raw'
-import shapes from '~/documentation/message/shapes.md?raw'
-import types from '~/documentation/message/types.md?raw'
+import IconsDemo from '~/documentation/message/icons.vue'
+import icons from '~/documentation/message/icons.vue?raw'
+import ShapesDemo from '~/documentation/message/shapes.vue'
+import shapes from '~/documentation/message/shapes.vue?raw'
+import TypesDemo from '~/documentation/message/types.vue'
+import types from '~/documentation/message/types.vue?raw'
 
 definePageMeta({
   title: 'Messages',
@@ -10,12 +13,35 @@ definePageMeta({
     components: ['BaseMessage'],
   },
 })
+
+function wrapVueMarkdown(source: string) {
+  return '```vue\n' + source + '\n```'
+}
+
+const demoBreadcrumb = [
+  {
+    label: 'Home',
+    hideLabel: true,
+    icon: 'lucide:home',
+    to: '/',
+  },
+  {
+    label: 'Components Hub',
+    hideLabel: false,
+    to: '/components',
+  },
+  {
+    label: 'Message',
+    hideLabel: false,
+    to: '#/',
+  },
+]
 </script>
 
 <template>
   <div>
     <!-- BreadCrumb -->
-    <BaseBreadcrumb />
+    <BaseBreadcrumb :items="demoBreadcrumb" />
 
     <!-- Documentation Layout -->
     <DocLayout>
@@ -26,14 +52,14 @@ definePageMeta({
           <DocComponent label="Default message types">
             <template #demo>
               <BaseFocusLoop class="max-w-xs space-y-4">
-                <BaseMessage>A successful message.</BaseMessage>
-                <BaseMessage type="info">An information message.</BaseMessage>
-                <BaseMessage type="warning">A warning message.</BaseMessage>
-                <BaseMessage type="danger">A destructive message.</BaseMessage>
+                <TypesDemo />
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocMarkdown :source="types" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(types)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -43,20 +69,14 @@ definePageMeta({
           <DocComponent label="Message icons example">
             <template #demo>
               <BaseFocusLoop class="max-w-xs space-y-4">
-                <BaseMessage icon>A successful message.</BaseMessage>
-                <BaseMessage type="info" icon>
-                  An information message.
-                </BaseMessage>
-                <BaseMessage type="warning" icon>
-                  A warning message.
-                </BaseMessage>
-                <BaseMessage type="danger" icon>
-                  A destructive message.
-                </BaseMessage>
+                <IconsDemo />
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocMarkdown :source="icons" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(icons)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -66,25 +86,14 @@ definePageMeta({
           <DocComponent label="Default message shapes">
             <template #demo>
               <BaseFocusLoop class="max-w-xs space-y-4">
-                <BaseMessage shape="straight" icon>
-                  A successful message.
-                </BaseMessage>
-                <BaseMessage type="info" shape="rounded" icon>
-                  An information message.
-                </BaseMessage>
-                <BaseMessage
-                  type="warning"
-                  message="A warning message."
-                  shape="curved"
-                  icon
-                />
-                <BaseMessage type="danger" shape="full" icon>
-                  A destructive message.
-                </BaseMessage>
+                <ShapesDemo />
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocMarkdown :source="shapes" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(shapes)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>

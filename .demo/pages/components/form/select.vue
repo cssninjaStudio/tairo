@@ -1,12 +1,20 @@
 <script setup lang="ts">
-import curved from '~/documentation/form/select/curved.md?raw'
-import full from '~/documentation/form/select/full.md?raw'
-import group from '~/documentation/form/select/group.md?raw'
-import icon from '~/documentation/form/select/icon.md?raw'
-import invalid from '~/documentation/form/select/invalid.md?raw'
-import rounded from '~/documentation/form/select/rounded.md?raw'
-import loading from '~/documentation/form/select/loading.md?raw'
-import straight from '~/documentation/form/select/straight.md?raw'
+import CurvedDemo from '~/documentation/form/select/curved.vue'
+import curved from '~/documentation/form/select/curved.vue?raw'
+import FullDemo from '~/documentation/form/select/full.vue'
+import full from '~/documentation/form/select/full.vue?raw'
+import GroupDemo from '~/documentation/form/select/group.vue'
+import group from '~/documentation/form/select/group.vue?raw'
+import IconDemo from '~/documentation/form/select/icon.vue'
+import icon from '~/documentation/form/select/icon.vue?raw'
+import InvalidDemo from '~/documentation/form/select/invalid.vue'
+import invalid from '~/documentation/form/select/invalid.vue?raw'
+import RoundedDemo from '~/documentation/form/select/rounded.vue'
+import rounded from '~/documentation/form/select/rounded.vue?raw'
+import LoadingDemo from '~/documentation/form/select/loading.vue'
+import loading from '~/documentation/form/select/loading.vue?raw'
+import StraightDemo from '~/documentation/form/select/straight.vue'
+import straight from '~/documentation/form/select/straight.vue?raw'
 
 definePageMeta({
   title: 'Selects',
@@ -16,16 +24,38 @@ definePageMeta({
   },
 })
 
+function wrapVueMarkdown(source: string) {
+  return '```vue\n' + source + '\n```'
+}
+
+const demoBreadcrumb = [
+  {
+    label: 'Home',
+    hideLabel: true,
+    icon: 'lucide:home',
+    to: '/',
+  },
+  {
+    label: 'Components Hub',
+    hideLabel: false,
+    to: '/components',
+  },
+  {
+    label: 'Select',
+    hideLabel: false,
+    to: '#/',
+  },
+]
+
+const model = `
 const selectStraight = ref('')
-const selectRounded = ref('')
-const selectCurved = ref('')
-const selectFull = ref('')
+`
 </script>
 
 <template>
   <div>
     <!-- BreadCrumb -->
-    <BaseBreadcrumb />
+    <BaseBreadcrumb :items="demoBreadcrumb" />
 
     <!-- Documentation Layout -->
     <DocLayout>
@@ -37,25 +67,17 @@ const selectFull = ref('')
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseSelect
-                    v-model="selectStraight"
-                    shape="straight"
-                    label="Select a hero"
-                  >
-                    <option value="">Select a hero</option>
-                    <option value="Superman">Superman</option>
-                    <option value="Batman">Batman</option>
-                    <option value="Iron man">Iron man</option>
-                    <option value="Magneto">Magneto</option>
-                    <option value="Cyclops">Cyclops</option>
-                  </BaseSelect>
+                  <StraightDemo />
                 </div>
                 <!-- State box -->
-                <DocState :state="selectStraight" height="80px" />
+                <DocState label="V-Model" :state="model" height="80px" />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="straight" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(straight)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -66,25 +88,17 @@ const selectFull = ref('')
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseSelect
-                    v-model="selectRounded"
-                    shape="rounded"
-                    label="Select a hero"
-                  >
-                    <option value="">Select a hero</option>
-                    <option value="Superman">Superman</option>
-                    <option value="Batman">Batman</option>
-                    <option value="Iron man">Iron man</option>
-                    <option value="Magneto">Magneto</option>
-                    <option value="Cyclops">Cyclops</option>
-                  </BaseSelect>
+                  <RoundedDemo />
                 </div>
                 <!-- State box -->
-                <DocState :state="selectRounded" height="80px" />
+                <DocState label="V-Model" :state="model" height="80px" />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="rounded" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(rounded)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -95,25 +109,17 @@ const selectFull = ref('')
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseSelect
-                    v-model="selectCurved"
-                    shape="curved"
-                    label="Select a hero"
-                  >
-                    <option value="">Select a hero</option>
-                    <option value="Superman">Superman</option>
-                    <option value="Batman">Batman</option>
-                    <option value="Iron man">Iron man</option>
-                    <option value="Magneto">Magneto</option>
-                    <option value="Cyclops">Cyclops</option>
-                  </BaseSelect>
+                  <CurvedDemo />
                 </div>
                 <!-- State box -->
-                <DocState :state="selectCurved" height="80px" />
+                <DocState label="V-Model" :state="model" height="80px" />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="curved" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(curved)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -124,25 +130,17 @@ const selectFull = ref('')
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseSelect
-                    v-model="selectFull"
-                    shape="full"
-                    label="Select a hero"
-                  >
-                    <option value="">Select a hero</option>
-                    <option value="Superman">Superman</option>
-                    <option value="Batman">Batman</option>
-                    <option value="Iron man">Iron man</option>
-                    <option value="Magneto">Magneto</option>
-                    <option value="Cyclops">Cyclops</option>
-                  </BaseSelect>
+                  <FullDemo />
                 </div>
                 <!-- State box -->
-                <DocState :state="selectFull" height="80px" />
+                <DocState label="V-Model" :state="model" height="80px" />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="full" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(full)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -153,23 +151,15 @@ const selectFull = ref('')
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseSelect
-                    shape="rounded"
-                    label="Select a hero"
-                    icon="icon-park-outline:muscle"
-                  >
-                    <option value="">Select a hero</option>
-                    <option value="Superman">Superman</option>
-                    <option value="Batman">Batman</option>
-                    <option value="Iron man">Iron man</option>
-                    <option value="Magneto">Magneto</option>
-                    <option value="Cyclops">Cyclops</option>
-                  </BaseSelect>
+                  <IconDemo />
                 </div>
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="icon" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(icon)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -180,23 +170,15 @@ const selectFull = ref('')
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseSelect shape="rounded" label="Select a hero">
-                    <option value="">Select a hero</option>
-                    <optgroup label="Marvel">
-                      <option value="Iron man">Iron man</option>
-                      <option value="Magneto">Magneto</option>
-                      <option value="Cyclops">Cyclops</option>
-                    </optgroup>
-                    <optgroup label="DC Comics">
-                      <option value="Superman">Superman</option>
-                      <option value="Batman">Batman</option>
-                    </optgroup>
-                  </BaseSelect>
+                  <GroupDemo />
                 </div>
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="group" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(group)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -207,19 +189,15 @@ const selectFull = ref('')
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseSelect shape="rounded" label="Select a hero" loading>
-                    <option value="">Select a hero</option>
-                    <option value="Superman">Superman</option>
-                    <option value="Batman">Batman</option>
-                    <option value="Iron man">Iron man</option>
-                    <option value="Magneto">Magneto</option>
-                    <option value="Cyclops">Cyclops</option>
-                  </BaseSelect>
+                  <LoadingDemo />
                 </div>
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="loading" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(loading)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -230,20 +208,16 @@ const selectFull = ref('')
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="w-full max-w-sm space-y-4">
-                  <BaseSelect shape="curved" label="Select a hero" invalid>
-                    <option value="">Select a hero</option>
-                    <option value="Superman">Superman</option>
-                    <option value="Batman">Batman</option>
-                    <option value="Iron man">Iron man</option>
-                    <option value="Magneto">Magneto</option>
-                    <option value="Cyclops">Cyclops</option>
-                  </BaseSelect>
+                  <InvalidDemo />
                 </div>
                 <!-- State box -->
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="invalid" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(invalid)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>

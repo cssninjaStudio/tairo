@@ -38,6 +38,11 @@ export default defineNuxtConfig({
   tailwindcss: {
     config: tailwindConfig,
   },
+  hooks: {
+    'tailwindcss:config'(config) {
+      console.dir(config, { depth: null })
+    },
+  },
   runtimeConfig: {
     public: {
       dev: process.dev

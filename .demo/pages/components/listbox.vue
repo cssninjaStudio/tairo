@@ -1,113 +1,18 @@
 <script setup lang="ts">
-import disabled from '~/documentation/listbox/disabled.md?raw'
-import icon from '~/documentation/listbox/icon.md?raw'
-import loading from '~/documentation/listbox/loading.md?raw'
-import media from '~/documentation/listbox/media.md?raw'
-import shapes from '~/documentation/listbox/shapes.md?raw'
-import sublabels from '~/documentation/listbox/sublabels.md?raw'
-import multiple from '~/documentation/listbox/multiple.md?raw'
-
-const frameworks = ['Javascript', 'Vue.js', 'React.js', 'Angular', 'Alpine.js']
-
-const peopleNames = [
-  {
-    id: 1,
-    name: 'Clarissa Perez',
-    text: 'Sales Manager',
-  },
-  {
-    id: 2,
-    name: 'Aaron Splatter',
-    text: 'Project Manager',
-  },
-  {
-    id: 3,
-    name: 'Mike Miller',
-    text: 'UI/UX Designer',
-  },
-  {
-    id: 4,
-    name: 'Benedict Kessler',
-    text: 'Mobile Developer',
-  },
-  {
-    id: 5,
-    name: 'Maya Rosselini',
-    text: 'Product Manager',
-  },
-]
-
-const hobbies = [
-  {
-    id: 1,
-    name: 'Movies',
-    text: 'Cinema & shows',
-    icon: 'ph:sword-duotone',
-  },
-  {
-    id: 2,
-    name: 'Travel',
-    text: 'Tourism & travel',
-    icon: 'ph:airplane-duotone',
-  },
-  {
-    id: 3,
-    name: 'Drinks',
-    text: 'Wines & fine drinks',
-    icon: 'ph:brandy-duotone',
-  },
-  {
-    id: 4,
-    name: 'Arts',
-    text: 'Paintings & scultpure',
-    icon: 'ph:paint-brush-duotone',
-  },
-  {
-    id: 5,
-    name: 'Karaoke',
-    text: 'singing with friends',
-    icon: 'ph:microphone-stage-duotone',
-  },
-]
-
-const people = [
-  {
-    id: 1,
-    name: 'Clarissa Perez',
-    text: 'Sales Manager',
-    media: '/img/avatars/19.svg',
-  },
-  {
-    id: 2,
-    name: 'Aaron Splatter',
-    text: 'Project Manager',
-    media: '/img/avatars/16.svg',
-  },
-  {
-    id: 3,
-    name: 'Mike Miller',
-    text: 'UI/UX Designer',
-    media: '/img/avatars/3.svg',
-  },
-  {
-    id: 4,
-    name: 'Benedict Kessler',
-    text: 'Mobile Developer',
-    media: '/img/avatars/22.svg',
-  },
-  {
-    id: 5,
-    name: 'Maya Rosselini',
-    text: 'Product Manager',
-    media: '/img/avatars/2.svg',
-  },
-]
-
-const selectedFramework = ref()
-const selectedPersonName = ref(peopleNames[0])
-const selectedHobby = ref(hobbies[1])
-const selectedPerson = ref(people[2])
-const selectedPersonMutliple = ref([])
+import DisabledDemo from '~/documentation/listbox/disabled.vue'
+import disabled from '~/documentation/listbox/disabled.vue?raw'
+import IconDemo from '~/documentation/listbox/icon.vue'
+import icon from '~/documentation/listbox/icon.vue?raw'
+import LoadingDemo from '~/documentation/listbox/loading.vue'
+import loading from '~/documentation/listbox/loading.vue?raw'
+import MediaDemo from '~/documentation/listbox/media.vue'
+import media from '~/documentation/listbox/media.vue?raw'
+import ShapesDemo from '~/documentation/listbox/shapes.vue'
+import shapes from '~/documentation/listbox/shapes.vue?raw'
+import SublabelsDemo from '~/documentation/listbox/sublabels.vue'
+import sublabels from '~/documentation/listbox/sublabels.vue?raw'
+import MultipleDemo from '~/documentation/listbox/multiple.vue'
+import multiple from '~/documentation/listbox/multiple.vue?raw'
 
 definePageMeta({
   title: 'Listbox',
@@ -116,12 +21,35 @@ definePageMeta({
     components: ['BaseListbox'],
   },
 })
+
+function wrapVueMarkdown(source: string) {
+  return '```vue\n' + source + '\n```'
+}
+
+const demoBreadcrumb = [
+  {
+    label: 'Home',
+    hideLabel: true,
+    icon: 'lucide:home',
+    to: '/',
+  },
+  {
+    label: 'Components Hub',
+    hideLabel: false,
+    to: '/components',
+  },
+  {
+    label: 'Listbox',
+    hideLabel: false,
+    to: '#/',
+  },
+]
 </script>
 
 <template>
   <div>
     <!-- BreadCrumb -->
-    <BaseBreadcrumb />
+    <BaseBreadcrumb :items="demoBreadcrumb" />
 
     <!-- Documentation Layout -->
     <DocLayout>
@@ -132,41 +60,14 @@ definePageMeta({
           <DocComponent label="Listbox shapes example">
             <template #demo>
               <div class="grid gap-4 md:grid-cols-2">
-                <BaseListbox
-                  v-model="selectedFramework"
-                  label="Straight listbox"
-                  :items="frameworks"
-                  placeholder="Select a framework"
-                  shape="straight"
-                />
-
-                <BaseListbox
-                  v-model="selectedFramework"
-                  label="Rounded listbox (default)"
-                  :items="frameworks"
-                  placeholder="Select a framework"
-                  shape="rounded"
-                />
-
-                <BaseListbox
-                  v-model="selectedFramework"
-                  label="Curved listbox"
-                  :items="frameworks"
-                  placeholder="Select a framework"
-                  shape="curved"
-                />
-
-                <BaseListbox
-                  v-model="selectedFramework"
-                  label="Full listbox"
-                  :items="frameworks"
-                  placeholder="Select a framework"
-                  shape="full"
-                />
+                <ShapesDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="shapes" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(shapes)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -176,20 +77,14 @@ definePageMeta({
           <DocComponent label="Text with sublabels example">
             <template #demo>
               <div class="flex max-w-xs items-end">
-                <BaseListbox
-                  v-model="selectedPersonName"
-                  label="Assignee"
-                  :items="peopleNames"
-                  :properties="{
-                    value: 'id',
-                    label: 'name',
-                    sublabel: 'text',
-                  }"
-                />
+                <SublabelsDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="sublabels" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(sublabels)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -199,21 +94,14 @@ definePageMeta({
           <DocComponent label="Select media example">
             <template #demo>
               <div class="flex max-w-xs items-end">
-                <BaseListbox
-                  v-model="selectedPerson"
-                  label="Assignee"
-                  :items="people"
-                  :properties="{
-                    value: 'id',
-                    label: 'name',
-                    sublabel: 'text',
-                    media: 'media',
-                  }"
-                />
+                <MediaDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="media" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(media)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -223,21 +111,14 @@ definePageMeta({
           <DocComponent label="Listbox icon example">
             <template #demo>
               <div class="flex max-w-xs items-end">
-                <BaseListbox
-                  v-model="selectedHobby"
-                  label="Hobbies"
-                  :items="hobbies"
-                  :properties="{
-                    value: 'id',
-                    label: 'name',
-                    sublabel: 'text',
-                    icon: 'icon',
-                  }"
-                />
+                <IconDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="icon" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(icon)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -247,21 +128,14 @@ definePageMeta({
           <DocComponent label="Disabled state example">
             <template #demo>
               <div class="flex max-w-xs items-end">
-                <BaseListbox
-                  v-model="selectedPersonName"
-                  label="Assignee"
-                  :items="peopleNames"
-                  :properties="{
-                    value: 'id',
-                    label: 'name',
-                    sublabel: 'text',
-                  }"
-                  disabled
-                />
+                <DisabledDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="disabled" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(disabled)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -271,21 +145,14 @@ definePageMeta({
           <DocComponent label="Loading state example">
             <template #demo>
               <div class="flex max-w-xs items-end">
-                <BaseListbox
-                  v-model="selectedPersonName"
-                  label="Assignee"
-                  :items="peopleNames"
-                  :properties="{
-                    value: 'id',
-                    label: 'name',
-                    media: 'media',
-                  }"
-                  loading
-                />
+                <LoadingDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="loading" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(loading)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -295,22 +162,14 @@ definePageMeta({
           <DocComponent label="Select multiple example">
             <template #demo>
               <div class="flex max-w-xs items-end">
-                <BaseListbox
-                  v-model="selectedPersonMutliple"
-                  label="Assignee"
-                  :items="people"
-                  :properties="{
-                    value: 'id',
-                    label: 'name',
-                    sublabel: 'text',
-                    media: 'media',
-                  }"
-                  multiple
-                />
+                <MultipleDemo />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="multiple" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(multiple)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
