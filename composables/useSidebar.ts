@@ -86,6 +86,17 @@ export function useSidebar() {
   })
 
   function toggle() {
+    // If no sidebar item is selected, open the first one
+    if (!currentName.value && !isOpen.value) {
+      if (!sidebars.value?.[0]?.name) {
+        // No sidebar items defined
+        return
+      }
+
+      // Select the first sidebar item by default
+      currentName.value = sidebars.value[0].name
+    }
+
     isOpen.value = !isOpen.value
   }
 
