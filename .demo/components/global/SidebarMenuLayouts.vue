@@ -32,7 +32,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
         >
           <div v-show="open">
             <DisclosurePanel static>
-              <ul class="py-2 pl-5">
+              <ul class="py-2 pl-3">
                 <li class="flex h-8 items-center">
                   <NuxtLink
                     to="/layouts/"
@@ -103,7 +103,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
         >
           <div v-show="open">
             <DisclosurePanel static>
-              <ul class="py-2 pl-5">
+              <ul class="py-2 pl-3">
                 <li class="flex h-8 items-center">
                   <NuxtLink
                     to="/layouts/flex-list-1"
@@ -165,13 +165,13 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
         >
           <div v-show="open">
             <DisclosurePanel static>
-              <ul class="py-2 pl-5">
+              <ul class="py-2 pl-3">
                 <li class="flex h-8 items-center">
                   <NuxtLink
                     to="/layouts/table-list-1"
                     class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
                   >
-                    <Icon name="ph:list-checks-duotone" class="mr-2 h-5 w-5" />
+                    <Icon name="ph:table-duotone" class="mr-2 h-5 w-5" />
                     <span class="font-sans text-xs">Table list V1</span>
                   </NuxtLink>
                 </li>
@@ -180,7 +180,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                     to="/layouts/table-list-2"
                     class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
                   >
-                    <Icon name="ph:list-checks-duotone" class="mr-2 h-5 w-5" />
+                    <Icon name="ph:table-duotone" class="mr-2 h-5 w-5" />
                     <span class="font-sans text-xs">Table list V2</span>
                   </NuxtLink>
                 </li>
@@ -189,7 +189,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                     to="/layouts/table-list-3"
                     class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
                   >
-                    <Icon name="ph:list-checks-duotone" class="mr-2 h-5 w-5" />
+                    <Icon name="ph:table-duotone" class="mr-2 h-5 w-5" />
                     <span class="font-sans text-xs">Table list V3</span>
                   </NuxtLink>
                 </li>
@@ -198,7 +198,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                     to="/layouts/table-list-3"
                     class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
                   >
-                    <Icon name="ph:list-checks-duotone" class="mr-2 h-5 w-5" />
+                    <Icon name="ph:table-duotone" class="mr-2 h-5 w-5" />
                     <span class="font-sans text-xs">Table list V4</span>
                   </NuxtLink>
                 </li>
@@ -236,7 +236,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
         >
           <div v-show="open">
             <DisclosurePanel static>
-              <ul class="py-2 pl-5">
+              <ul class="py-2 pl-3">
                 <li class="flex h-8 items-center">
                   <NuxtLink
                     to="/layouts/form-1"
@@ -316,7 +316,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
         >
           <div v-show="open">
             <DisclosurePanel static>
-              <ul class="py-2 pl-5">
+              <ul class="py-2 pl-3">
                 <li class="flex h-8 items-center">
                   <NuxtLink
                     to="/layouts/placeload-1"
@@ -391,7 +391,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
         >
           <div v-show="open">
             <DisclosurePanel static>
-              <ul class="py-2 pl-5">
+              <ul class="py-2 pl-3">
                 <li class="flex h-8 items-center">
                   <NuxtLink
                     to="/layouts/card-grid-1"
@@ -462,7 +462,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
         >
           <div v-show="open">
             <DisclosurePanel static>
-              <ul class="py-2 pl-5">
+              <ul class="py-2 pl-3">
                 <li class="flex h-8 items-center">
                   <NuxtLink
                     to="/layouts/tile-grid-1"
@@ -533,7 +533,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
         >
           <div v-show="open">
             <DisclosurePanel static>
-              <ul class="py-2 pl-5">
+              <ul class="py-2 pl-3">
                 <li class="flex h-8 items-center">
                   <NuxtLink
                     to="/layouts/user-grid-1"
@@ -608,7 +608,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
         >
           <div v-show="open">
             <DisclosurePanel static>
-              <ul class="py-2 pl-5">
+              <ul class="py-2 pl-3">
                 <li class="flex h-8 items-center">
                   <NuxtLink
                     to="/layouts/project-list-1"
@@ -688,7 +688,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
         >
           <div v-show="open">
             <DisclosurePanel static>
-              <ul class="py-2 pl-5">
+              <ul class="py-2 pl-3">
                 <li class="flex h-8 items-center">
                   <NuxtLink
                     to="/auth/"
@@ -781,7 +781,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
         >
           <div v-show="open">
             <DisclosurePanel static>
-              <ul class="py-2 pl-5">
+              <ul class="py-2 pl-3">
                 <li class="flex h-8 items-center">
                   <NuxtLink
                     to="/layouts/profile"
@@ -903,7 +903,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
         >
           <div v-show="open">
             <DisclosurePanel static>
-              <ul class="py-2 pl-5">
+              <ul class="py-2 pl-3">
                 <li class="flex h-8 items-center">
                   <NuxtLink
                     to="/layouts/utility-confirm"
@@ -986,7 +986,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
         >
           <div v-show="open">
             <DisclosurePanel static>
-              <ul class="py-2 pl-5">
+              <ul class="py-2 pl-3">
                 <li class="flex h-8 items-center">
                   <NuxtLink
                     to="/layouts/onboarding-1"
@@ -1066,7 +1066,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
         >
           <div v-show="open">
             <DisclosurePanel static>
-              <ul class="py-2 pl-5">
+              <ul class="py-2 pl-3">
                 <li class="flex h-8 items-center">
                   <NuxtLink
                     to="/layouts/error-1"

@@ -3,35 +3,31 @@ definePageMeta({
   title: 'List View',
 })
 
-const filter = ref('')
+const route = useRoute()
+const router = useRouter()
+const page = computed(() => parseInt((route.query.page as string) ?? '1'))
 
-const { data, pending, error, refresh } = await useAsyncData(async () => {
-  try {
-    // Create an artificial delay
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-    // after the delay is over
-    return $fetch('/api/freelancers/')
-  } catch (error: any) {
-    // log error and re-throw error
-    console.log('An error occured while retreiving freelancers info')
-    throw error
+const filter = ref('')
+const perPage = ref(10)
+
+watch([filter, perPage], () => {
+  router.push({
+    query: {
+      page: undefined,
+    },
+  })
+})
+
+const query = computed(() => {
+  return {
+    filter: filter.value,
+    perPage: perPage.value,
+    page: page.value,
   }
 })
-// Simplified useFetch() method as a superset of useAsyncData()
-// const { data, pending, error, refresh } = await useFetch('/api/freelancers/')
 
-const filteredItems = computed(() => {
-  if (data.value) {
-    if (!filter.value) {
-      return data.value
-    }
-    const filterRe = new RegExp(filter.value, 'i')
-    return data.value.filter((item) => {
-      return [item.name, item.location, item.role].some((item) =>
-        item.match(filterRe),
-      )
-    })
-  }
+const { data, pending, error, refresh } = await useFetch('/api/freelancers', {
+  query,
 })
 </script>
 
@@ -56,7 +52,7 @@ const filteredItems = computed(() => {
         </BaseButton>
       </template>
       <div>
-        <div v-if="filteredItems?.length === 0">
+        <div v-if="!pending && data?.data.length === 0">
           <BasePlaceholderPage
             title="No matching results"
             subtitle="Looks like we couldn't find any matching results for your search terms. Try other search terms."
@@ -85,7 +81,7 @@ const filteredItems = computed(() => {
             leave-to-class="opacity-0 -translate-x-full"
           >
             <BaseCard
-              v-for="item in filteredItems"
+              v-for="item in data?.data"
               :key="item.id"
               shape="curved"
               class="flex flex-col sm:flex-row sm:items-center p-5"
@@ -199,11 +195,9 @@ const filteredItems = computed(() => {
 
           <div>
             <BasePagination
-              :total="100"
-              :item-per-page="10"
-              :total-items="100"
-              :current="1"
-              :limit="10"
+              :total-items="data?.total ?? 0"
+              :item-per-page="perPage"
+              :current-page="page"
               shape="full"
             />
           </div>

@@ -32,9 +32,6 @@ const { data, pending, error, refresh } = await useFetch(
     query,
   },
 )
-
-// Simplified useFetch() method as a superset of useAsyncData()
-// const { data, pending, error, refresh } = await useFetch('/api/company/members/')
 </script>
 
 <template>
