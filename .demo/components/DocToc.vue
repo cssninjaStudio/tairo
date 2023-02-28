@@ -60,9 +60,9 @@ function getTocItemClass(item: TocItem) {
 
 <template>
   <div
-    class="slimscroll sticky top-12 flex max-h-screen flex-col justify-between overflow-y-auto pt-10 pb-20 pl-20 pr-1"
+    class="slimscroll fixed flex max-h-screen flex-col justify-between overflow-y-auto pt-10 pb-20 pl-20 pr-1"
   >
-    <div class="mb-8">
+    <div class="mb-8 w-52">
       <div
         class="mb-6 font-heading text-xs font-semibold uppercase leading-tight text-muted-800 dark:text-white"
       >

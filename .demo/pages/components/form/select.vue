@@ -7,6 +7,10 @@ import GroupDemo from '~/documentation/form/select/group.vue'
 import group from '~/documentation/form/select/group.vue?raw'
 import IconDemo from '~/documentation/form/select/icon.vue'
 import icon from '~/documentation/form/select/icon.vue?raw'
+import CondensedDemo from '~/documentation/form/select/condensed.vue'
+import condensed from '~/documentation/form/select/condensed.vue?raw'
+import FloatLabelDemo from '~/documentation/form/select/float-label.vue'
+import floatLabel from '~/documentation/form/select/float-label.vue?raw'
 import InvalidDemo from '~/documentation/form/select/invalid.vue'
 import invalid from '~/documentation/form/select/invalid.vue?raw'
 import RoundedDemo from '~/documentation/form/select/rounded.vue'
@@ -158,6 +162,44 @@ const selectStraight = ref('')
             <template #code>
               <DocMarkdown
                 :source="wrapVueMarkdown(icon)"
+                class="prose max-w-full"
+              />
+            </template>
+          </DocComponent>
+        </DocSection>
+
+        <!-- Select float label -->
+        <DocSection title="Float labels" tag="1.0.0">
+          <DocComponent label="Material style labels example">
+            <template #demo>
+              <div class="flex items-end gap-6">
+                <div class="w-full max-w-lg space-y-4">
+                  <FloatLabelDemo />
+                </div>
+              </div>
+            </template>
+            <template #code>
+              <DocMarkdown
+                :source="wrapVueMarkdown(floatLabel)"
+                class="prose max-w-full"
+              />
+            </template>
+          </DocComponent>
+        </DocSection>
+
+        <!-- Select condensed -->
+        <DocSection title="Condensed selects" tag="1.0.0">
+          <DocComponent label="Smaller selects example">
+            <template #demo>
+              <div class="flex items-end gap-6">
+                <div class="w-full max-w-lg space-y-4">
+                  <CondensedDemo />
+                </div>
+              </div>
+            </template>
+            <template #code>
+              <DocMarkdown
+                :source="wrapVueMarkdown(condensed)"
                 class="prose max-w-full"
               />
             </template>

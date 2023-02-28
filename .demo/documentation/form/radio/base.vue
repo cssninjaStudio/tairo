@@ -9,7 +9,9 @@ const radioSelected = ref('option_1')
     name="demo_options"
     label="Option 1"
     value="option_1"
-    class="text-gray-500"
+    :classes="{
+      wrapper: 'text-muted-500',
+    }"
   />
 
   <BaseRadio
@@ -18,7 +20,9 @@ const radioSelected = ref('option_1')
     name="demo_options"
     label="Option 2"
     value="option_2"
-    class="text-gray-500"
+    :classes="{
+      wrapper: 'text-muted-500',
+    }"
   />
 
   <BaseRadio
@@ -27,6 +31,8 @@ const radioSelected = ref('option_1')
     name="demo_options"
     label="Option 3"
     value="option_3"
-    class="text-gray-500"
+    :classes="{
+      wrapper: 'text-muted-500',
+    }"
   />
 </template>

@@ -6,7 +6,7 @@ import boolean from '~/documentation/form/animated-checkbox/boolean.vue?raw'
 import CustomDemo from '~/documentation/form/animated-checkbox/custom.vue'
 import custom from '~/documentation/form/animated-checkbox/custom.vue?raw'
 import TrueFalseDemo from '~/documentation/form/animated-checkbox/true-false.vue'
-import trueFalse from '~/documentation/form/animated-checkbox/boolean.vue?raw'
+import trueFalse from '~/documentation/form/animated-checkbox/true-false.vue?raw'
 
 definePageMeta({
   title: 'Animated checkbox',
@@ -61,11 +61,7 @@ const customValue = ref()
       <!-- content -->
       <template #content>
         <!-- Animated checkbox -->
-        <DocSection
-          id="animated-checkbox"
-          title="Animated checkbox colors"
-          tag="1.0.0"
-        >
+        <DocSection id="animated-checkbox" title="Checkbox colors" tag="1.0.0">
           <DocComponent label="A nice and friendly checkbox">
             <template #demo>
               <div class="flex flex-col gap-6 md:flex-row md:items-start">
@@ -94,7 +90,7 @@ const customValue = ref()
         <!-- Animated boolean -->
         <DocSection
           id="animated-checkbox-boolean"
-          title="Animated checkbox with boolean value"
+          title="Boolean value"
           tag="1.0.0"
         >
           <DocComponent label="Use an array or a boolean as model">
@@ -125,7 +121,7 @@ const customValue = ref()
         <!-- Custom value -->
         <DocSection
           id="animated-checkbox-custom"
-          title="Animated checkbox with custom value"
+          title="Custom value"
           tag="1.0.0"
         >
           <DocComponent
@@ -139,14 +135,18 @@ const customValue = ref()
 
                 <!-- State box -->
                 <DocState
-                  :state="wrapVueMarkdown(custom)"
+                  label="V-Model"
+                  :state="vmodel"
                   height="80px"
                   class="w-2/5"
                 />
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="base" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(custom)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -154,7 +154,7 @@ const customValue = ref()
         <!-- Animated true-value/false-value -->
         <DocSection
           id="animated-checkbox-true-false"
-          title="Animated checkbox with static value"
+          title="Static value"
           tag="1.0.0"
         >
           <DocComponent

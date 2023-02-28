@@ -9,6 +9,10 @@ import FullDemo from '~/documentation/form/input/full.vue'
 import full from '~/documentation/form/input/full.vue?raw'
 import IconDemo from '~/documentation/form/input/icon.vue'
 import icon from '~/documentation/form/input/icon.vue?raw'
+import FloatLabelDemo from '~/documentation/form/input/float-label.vue'
+import floatLabel from '~/documentation/form/input/float-label.vue?raw'
+import CondensedDemo from '~/documentation/form/input/condensed.vue'
+import condensed from '~/documentation/form/input/condensed.vue?raw'
 import InvalidDemo from '~/documentation/form/input/invalid.vue'
 import invalid from '~/documentation/form/input/invalid.vue?raw'
 import LoadingDemo from '~/documentation/form/input/loading.vue'
@@ -49,9 +53,7 @@ const demoBreadcrumb = [
   },
 ]
 
-const model = `
-const input = ref('')
-`
+const model = 'const input = ref<string>'
 </script>
 
 <template>
@@ -156,6 +158,36 @@ const input = ref('')
             <template #code>
               <DocMarkdown
                 :source="wrapVueMarkdown(icon)"
+                class="prose max-w-full"
+              />
+            </template>
+          </DocComponent>
+        </DocSection>
+
+        <!-- Floating labels -->
+        <DocSection title="Floating labels" tag="1.0.0">
+          <DocComponent label="Material style labels example">
+            <template #demo>
+              <FloatLabelDemo />
+            </template>
+            <template #code>
+              <DocMarkdown
+                :source="wrapVueMarkdown(floatLabel)"
+                class="prose max-w-full"
+              />
+            </template>
+          </DocComponent>
+        </DocSection>
+
+        <!-- Input condensed -->
+        <DocSection title="Condensed inputs" tag="1.0.0">
+          <DocComponent label="Smaller inputs example">
+            <template #demo>
+              <CondensedDemo />
+            </template>
+            <template #code>
+              <DocMarkdown
+                :source="wrapVueMarkdown(condensed)"
                 class="prose max-w-full"
               />
             </template>

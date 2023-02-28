@@ -51,7 +51,7 @@ const props = withDefaults(defineProps<CarouselProps>(), {
         <NuxtLink :to="slide.to" class="cursor-pointer">
           <BaseCard
             shape="curved"
-            class="flex min-w-[100px] items-center justify-center py-6 px-2 text-muted-400 transition-all duration-300 hover:-translate-y-1 hover:border-primary-500 hover:text-primary-500 hover:shadow-lg dark:hover:border-primary-500"
+            class="text-muted-400 hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 flex min-w-[100px] items-center justify-center py-6 px-2 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
           >
             <div class="text-center">
               <Icon
@@ -90,7 +90,7 @@ const props = withDefaults(defineProps<CarouselProps>(), {
 }
 
 :deep(.carousel__next) {
-  @apply right-8;
+  @apply right-0;
 }
 
 :deep(.carousel__next) svg {
@@ -98,7 +98,7 @@ const props = withDefaults(defineProps<CarouselProps>(), {
 }
 
 :deep(.carousel__prev) {
-  @apply right-10;
+  @apply right-8;
 }
 
 :deep(.carousel__prev) svg {

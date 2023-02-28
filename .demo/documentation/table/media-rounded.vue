@@ -139,7 +139,7 @@ const team = [
       <BaseTableCell>
         <a
           href="#"
-          class="text-violet-500 dark:text-violet-400 hover:opacity-75 transition-opacity duration-300"
+          class="text-primary-500 dark:text-primary-400 underline-offset-4 hover:opacity-75 hover:underline transition-opacity duration-300"
         >
           View
         </a>

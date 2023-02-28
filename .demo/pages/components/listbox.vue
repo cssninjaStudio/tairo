@@ -9,6 +9,8 @@ import MediaDemo from '~/documentation/listbox/media.vue'
 import media from '~/documentation/listbox/media.vue?raw'
 import ShapesDemo from '~/documentation/listbox/shapes.vue'
 import shapes from '~/documentation/listbox/shapes.vue?raw'
+import FloatLabelDemo from '~/documentation/listbox/float-label.vue'
+import floatLabel from '~/documentation/listbox/float-label.vue?raw'
 import SublabelsDemo from '~/documentation/listbox/sublabels.vue'
 import sublabels from '~/documentation/listbox/sublabels.vue?raw'
 import MultipleDemo from '~/documentation/listbox/multiple.vue'
@@ -66,6 +68,23 @@ const demoBreadcrumb = [
             <template #code>
               <DocMarkdown
                 :source="wrapVueMarkdown(shapes)"
+                class="prose max-w-full"
+              />
+            </template>
+          </DocComponent>
+        </DocSection>
+
+        <!-- Listbox float label -->
+        <DocSection title="Floating label" tag="1.0.0">
+          <DocComponent label="Material style labels example">
+            <template #demo>
+              <div class="grid gap-x-4 gap-y-8 md:grid-cols-2">
+                <FloatLabelDemo />
+              </div>
+            </template>
+            <template #code>
+              <DocMarkdown
+                :source="wrapVueMarkdown(floatLabel)"
                 class="prose max-w-full"
               />
             </template>

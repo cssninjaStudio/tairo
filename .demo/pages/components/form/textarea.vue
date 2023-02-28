@@ -3,10 +3,14 @@ import AddonDemo from '~/documentation/form/textarea/addon.vue'
 import addon from '~/documentation/form/textarea/addon.vue?raw'
 import CurvedDemo from '~/documentation/form/textarea/curved.vue'
 import curved from '~/documentation/form/textarea/curved.vue?raw'
+import CondensedDemo from '~/documentation/form/textarea/condensed.vue'
+import condensed from '~/documentation/form/textarea/condensed.vue?raw'
 import DisabledDemo from '~/documentation/form/textarea/disabled.vue'
 import disabled from '~/documentation/form/textarea/disabled.vue?raw'
 import InvalidDemo from '~/documentation/form/textarea/invalid.vue'
 import invalid from '~/documentation/form/textarea/invalid.vue?raw'
+import LabelFloatDemo from '~/documentation/form/textarea/label-float.vue'
+import labelFloat from '~/documentation/form/textarea/label-float.vue?raw'
 import LoadingDemo from '~/documentation/form/textarea/loading.vue'
 import loading from '~/documentation/form/textarea/loading.vue?raw'
 import RoundedDemo from '~/documentation/form/textarea/rounded.vue'
@@ -122,6 +126,48 @@ const textarea = ref('')
             <template #code>
               <DocMarkdown
                 :source="wrapVueMarkdown(curved)"
+                class="prose max-w-full"
+              />
+            </template>
+          </DocComponent>
+        </DocSection>
+
+        <!-- Textarea float label -->
+        <DocSection title="Floating label" tag="1.0.0">
+          <DocComponent label="Material style label example">
+            <template #demo>
+              <div class="flex items-end gap-6">
+                <div class="w-full max-w-sm space-y-4">
+                  <LabelFloatDemo />
+                </div>
+                <!-- State box -->
+                <DocState label="V-Model" :state="model" height="80px" />
+              </div>
+            </template>
+            <template #code>
+              <DocMarkdown
+                :source="wrapVueMarkdown(labelFloat)"
+                class="prose max-w-full"
+              />
+            </template>
+          </DocComponent>
+        </DocSection>
+
+        <!-- Textarea condensed -->
+        <DocSection title="Textarea condensed" tag="1.0.0">
+          <DocComponent label="Smaller textarea example">
+            <template #demo>
+              <div class="flex items-end gap-6">
+                <div class="w-full max-w-sm space-y-4">
+                  <CondensedDemo />
+                </div>
+                <!-- State box -->
+                <DocState label="V-Model" :state="model" height="80px" />
+              </div>
+            </template>
+            <template #code>
+              <DocMarkdown
+                :source="wrapVueMarkdown(condensed)"
                 class="prose max-w-full"
               />
             </template>

@@ -10,7 +10,7 @@ const props = withDefaults(defineProps<DocSectionProps>(), {
 </script>
 
 <template>
-  <section class="mb-10 border-b border-muted-200 py-6 dark:border-muted-800">
+  <div class="mb-10 border-b border-muted-200 py-6 dark:border-muted-800">
     <div v-once class="mb-4 flex items-center">
       <BaseHeading
         as="h2"
@@ -30,5 +30,5 @@ const props = withDefaults(defineProps<DocSectionProps>(), {
     </div>
 
     <slot></slot>
-  </section>
+  </div>
 </template>

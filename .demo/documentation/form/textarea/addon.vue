@@ -16,6 +16,7 @@ const textareaRounded = ref('')
         <BaseAvatar
           src="/img/avatars/2.svg"
           class="mr-1"
+          size="xs"
         />
         <BaseHeading
           as="h4"

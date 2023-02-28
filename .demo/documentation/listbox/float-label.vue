@@ -17,6 +17,7 @@ const selectedFramework = ref()
     :items="frameworks"
     placeholder="Select a framework"
     shape="straight"
+    label-float
   />
 
   <BaseListbox
@@ -25,6 +26,7 @@ const selectedFramework = ref()
     :items="frameworks"
     placeholder="Select a framework"
     shape="rounded"
+    label-float
   />
 
   <BaseListbox
@@ -33,6 +35,7 @@ const selectedFramework = ref()
     :items="frameworks"
     placeholder="Select a framework"
     shape="curved"
+    label-float
   />
 
   <BaseListbox
@@ -41,5 +44,6 @@ const selectedFramework = ref()
     :items="frameworks"
     placeholder="Select a framework"
     shape="full"
+    label-float
   />
 </template>

@@ -56,7 +56,7 @@ const props = withDefaults(defineProps<CarouselProps>(), {
         <NuxtLink :to="slide.to">
           <BaseCard
             shape="curved"
-            class="px-4 py-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary-500 hover:shadow-lg dark:hover:border-primary-500"
+            class="hover:border-primary-500 dark:hover:border-primary-500 px-4 py-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
           >
             <BaseAvatar
               :src="slide.avatar"
@@ -71,7 +71,7 @@ const props = withDefaults(defineProps<CarouselProps>(), {
             >
               {{ slide.name }}
             </BaseHeading>
-            <BaseText size="xs" class="mb-2 text-muted-400">
+            <BaseText size="xs" class="text-muted-400 mb-2">
               {{ slide.role }}
             </BaseText>
             <BaseParagraph size="sm" class="text-muted-500">
@@ -109,7 +109,7 @@ const props = withDefaults(defineProps<CarouselProps>(), {
 }
 
 :deep(.carousel__next) {
-  @apply right-8;
+  @apply right-0;
 }
 
 :deep(.carousel__next) svg {
@@ -117,7 +117,7 @@ const props = withDefaults(defineProps<CarouselProps>(), {
 }
 
 :deep(.carousel__prev) {
-  @apply right-10;
+  @apply right-8;
 }
 
 :deep(.carousel__prev) svg {

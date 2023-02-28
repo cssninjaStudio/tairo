@@ -5,7 +5,7 @@ import X2RoundedDemo from '~/documentation/tabs-slider/rounded-x2.vue'
 import x2Rounded from '~/documentation/tabs-slider/rounded-x2.vue?raw'
 import X3FullDemo from '~/documentation/tabs-slider/full-x3.vue'
 import x3Full from '~/documentation/tabs-slider/full-x3.vue?raw'
-import X3RoundedDemo from '~/documentation/tabs-slider/rounded-x2.vue'
+import X3RoundedDemo from '~/documentation/tabs-slider/rounded-x3.vue'
 import x3Rounded from '~/documentation/tabs-slider/rounded-x3.vue?raw'
 
 definePageMeta({

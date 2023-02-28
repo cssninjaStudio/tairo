@@ -9,6 +9,10 @@ import FullDemo from '~/documentation/autocomplete/full.vue'
 import full from '~/documentation/autocomplete/full.vue?raw'
 import IconDemo from '~/documentation/autocomplete/icon.vue'
 import icon from '~/documentation/autocomplete/icon.vue?raw'
+import LabelFloatDemo from '~/documentation/autocomplete/label-float.vue'
+import labelFloat from '~/documentation/autocomplete/label-float.vue?raw'
+import CondensedDemo from '~/documentation/autocomplete/condensed.vue'
+import condensed from '~/documentation/autocomplete/condensed.vue?raw'
 import IconResultDemo from '~/documentation/autocomplete/icon-result.vue'
 import iconResult from '~/documentation/autocomplete/icon-result.vue?raw'
 import LoadingDemo from '~/documentation/autocomplete/loading.vue'
@@ -224,6 +228,44 @@ const selectedPerson = ref([people[0], people[1]])
             <template #code>
               <DocMarkdown
                 :source="wrapVueMarkdown(clearable)"
+                class="prose max-w-full"
+              />
+            </template>
+          </DocComponent>
+        </DocSection>
+
+        <!-- Autocomplete floating label -->
+        <DocSection title="Floating label" tag="1.0.0">
+          <DocComponent label="Material style labels example">
+            <template #demo>
+              <div class="flex flex-col gap-6 md:flex-row md:items-end">
+                <div class="w-full max-w-lg space-y-4">
+                  <LabelFloatDemo />
+                </div>
+              </div>
+            </template>
+            <template #code>
+              <DocMarkdown
+                :source="wrapVueMarkdown(labelFloat)"
+                class="prose max-w-full"
+              />
+            </template>
+          </DocComponent>
+        </DocSection>
+
+        <!-- Autocomplete condensed -->
+        <DocSection title="Condensed" tag="1.0.0">
+          <DocComponent label="Condensed autocompletes example">
+            <template #demo>
+              <div class="flex flex-col gap-6 md:flex-row md:items-end">
+                <div class="w-full max-w-lg space-y-4">
+                  <CondensedDemo />
+                </div>
+              </div>
+            </template>
+            <template #code>
+              <DocMarkdown
+                :source="wrapVueMarkdown(condensed)"
                 class="prose max-w-full"
               />
             </template>

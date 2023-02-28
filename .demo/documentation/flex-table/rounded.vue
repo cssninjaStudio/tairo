@@ -119,7 +119,7 @@ const team = [
         type="stable"
         data-content="Rate"
       >
-        \${{ member.rate }}/hour
+        ${{ member.rate }}/hour
       </BaseFlexTableCell>
       <BaseFlexTableCell
         type="stable"
@@ -160,7 +160,7 @@ const team = [
         <BaseButton
           color="primary"
           flavor="outline"
-          shape="straight"
+          shape="rounded"
           class="scale-90"
         >
           View
