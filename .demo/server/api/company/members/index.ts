@@ -42,7 +42,7 @@ async function getDemoData() {
     {
       id: 29,
       picture: '/img/avatars/22.svg',
-      badge: '/img/icons/stacks/python.svg',
+      badge: '/img/stacks/python.svg',
       username: 'Miranda L.',
       initials: 'ML',
       status: 'new',
@@ -144,7 +144,7 @@ async function getDemoData() {
     {
       id: 7,
       picture: '/img/avatars/10.svg',
-      badge: '/img/icons/stacks/js.svg',
+      badge: '/img/stacks/js.svg',
       username: 'Kendra W.',
       initials: 'KW',
       status: 'available',
@@ -281,7 +281,7 @@ async function getDemoData() {
     {
       id: 25,
       picture: '/img/avatars/25.svg',
-      badge: '/img/icons/stacks/js.svg',
+      badge: '/img/stacks/js.svg',
       username: 'Melany W.',
       initials: 'MW',
       status: 'new',
@@ -315,7 +315,7 @@ async function getDemoData() {
     {
       id: 39,
       picture: '/img/avatars/3.svg',
-      badge: '/img/icons/stacks/python.svg',
+      badge: '/img/stacks/python.svg',
       username: 'Alejandro B.',
       initials: 'AB',
       status: 'available',
@@ -383,7 +383,7 @@ async function getDemoData() {
     {
       id: 9,
       picture: '/img/avatars/9.svg',
-      badge: '/img/icons/stacks/illustrator.svg',
+      badge: '/img/stacks/illustrator.svg',
       username: 'Anna B.',
       initials: 'AB',
       status: 'busy',
@@ -519,7 +519,7 @@ async function getDemoData() {
     {
       id: 36,
       picture: '/img/avatars/18.svg',
-      badge: '/img/icons/stacks/reactjs.svg',
+      badge: '/img/stacks/reactjs.svg',
       username: 'Benoit B.',
       initials: 'BB',
       status: 'offline',
@@ -553,7 +553,7 @@ async function getDemoData() {
     {
       id: 38,
       picture: '/img/avatars/2.svg',
-      badge: '/img/icons/stacks/vuejs.svg',
+      badge: '/img/stacks/vuejs.svg',
       username: 'Maya R.',
       initials: 'MR',
       status: 'available',
@@ -587,7 +587,7 @@ async function getDemoData() {
     {
       id: 26,
       picture: '/img/avatars/26.svg',
-      badge: '/img/icons/stacks/html5.svg',
+      badge: '/img/stacks/html5.svg',
       username: 'Courtney W.',
       initials: 'CW',
       status: 'available',
@@ -655,7 +655,7 @@ async function getDemoData() {
     {
       id: 28,
       picture: '/img/avatars/17.svg',
-      badge: '/img/icons/stacks/angular.svg',
+      badge: '/img/stacks/angular.svg',
       username: 'Edouard F.',
       initials: 'EF',
       status: 'new',
@@ -723,7 +723,7 @@ async function getDemoData() {
     {
       id: 13,
       picture: '/img/avatars/22.svg',
-      badge: '/img/icons/stacks/illustrator.svg',
+      badge: '/img/stacks/illustrator.svg',
       username: 'Tara S.',
       initials: 'TS',
       status: 'busy',

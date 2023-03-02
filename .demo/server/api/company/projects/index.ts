@@ -1,5 +1,44 @@
-export default defineEventHandler(async () => {
-  const data = [
+export default defineEventHandler(async (event) => {
+  const query = getQuery(event)
+  const perPage = parseInt((query.perPage as string) || '5', 10)
+  const page = parseInt((query.page as string) || '1', 10)
+  const filter = (query.filter as string) || ''
+
+  if (perPage >= 50) {
+    // Create an artificial delay
+    await new Promise((resolve) => setTimeout(resolve, 1000))
+  }
+
+  const data = await getDemoData()
+
+  return {
+    total: data.length,
+    data: filterDemoData(data, filter, page, perPage),
+  }
+})
+
+function filterDemoData(
+  data: any[],
+  filter: string,
+  page: number,
+  perPage: number,
+) {
+  const offset = (page - 1) * perPage
+  if (!filter) {
+    return data.slice(offset, offset + perPage)
+  }
+  const filterRe = new RegExp(filter, 'i')
+  return data
+    .filter((item) => {
+      return [item.name, item.owner.name, item.dueDate].some((item) =>
+        item.match(filterRe),
+      )
+    })
+    .slice(offset, offset + perPage)
+}
+
+async function getDemoData() {
+  return Promise.resolve([
     {
       id: '1',
       name: 'Delivery App Project',
@@ -8,32 +47,28 @@ export default defineEventHandler(async () => {
       image: '/img/apps/1.jpg',
       owner: {
         id: 7,
-        avatar: '/img/avatars/7.svg',
-        name: 'Alice C.',
-        initials: 'AC',
-        color: 'info',
+        avatar: '/img/avatars/3.svg',
+        name: 'Clarke G.',
+        text: 'CG',
       },
       team: [
         {
           id: 27,
-          picture: '/img/avatars/27.svg',
+          src: '/img/avatars/24.svg',
           name: 'Carmen E.',
-          initials: 'CE',
-          color: 'h-yellow',
+          text: 'CE',
         },
         {
           id: 15,
-          picture: '/img/avatars/15.svg',
+          src: '/img/avatars/15.svg',
           name: 'Hilde V.',
-          initials: 'HV',
-          color: 'h-purple',
+          text: 'HV',
         },
         {
           id: 12,
-          picture: '/img/avatars/12.svg',
+          src: '/img/avatars/12.svg',
           name: 'Joshua S.',
-          initials: 'JS',
-          color: 'success',
+          text: 'JS',
         },
       ],
     },
@@ -46,24 +81,21 @@ export default defineEventHandler(async () => {
       owner: {
         id: 8,
         avatar: '/img/avatars/12.svg',
-        name: 'Erik K.',
-        initials: 'EK',
-        color: 'info',
+        name: 'Marjory L.',
+        text: 'ML',
       },
       team: [
         {
           id: 13,
-          picture: '/img/avatars/13.svg',
+          src: '/img/avatars/10.svg',
           name: 'Tara S.',
-          initials: 'TS',
-          color: 'danger',
+          text: 'TS',
         },
         {
           id: 21,
-          picture: '/img/avatars/21.svg',
+          src: '/img/avatars/21.svg',
           name: 'Elizabet F.',
-          initials: 'EF',
-          color: 'warning',
+          text: 'EF',
         },
       ],
     },
@@ -75,18 +107,16 @@ export default defineEventHandler(async () => {
       image: '/img/apps/3.png',
       owner: {
         id: 25,
-        avatar: '/img/avatars/25.svg',
-        name: 'Melany W.',
-        initials: 'MW',
-        color: 'info',
+        avatar: '/img/avatars/2.svg',
+        name: 'Maya R.',
+        text: 'MR',
       },
       team: [
         {
           id: 14,
-          picture: '/img/avatars/14.svg',
+          src: '/img/avatars/14.svg',
           name: 'Ryan B.',
-          initials: 'RB',
-          color: 'info',
+          text: 'RB',
         },
       ],
     },
@@ -98,25 +128,22 @@ export default defineEventHandler(async () => {
       image: '/img/apps/4.png',
       owner: {
         id: 23,
-        avatar: '/img/avatars/23.svg',
-        name: 'Irina V.',
-        initials: 'IV',
-        color: 'success',
+        avatar: '/img/avatars/16.svg',
+        name: 'Hermann M.',
+        text: 'HM',
       },
       team: [
         {
           id: 13,
-          picture: '/img/avatars/13.svg',
-          name: 'Tara S.',
-          initials: 'TS',
-          color: 'danger',
+          src: '/img/avatars/5.svg',
+          name: 'Clarissa M.',
+          text: 'CM',
         },
         {
           id: 21,
-          picture: '/img/avatars/21.svg',
-          name: 'Elizabet F.',
-          initials: 'EF',
-          color: 'warning',
+          src: '/img/avatars/3.svg',
+          name: 'Clarke G.',
+          text: 'CG',
         },
       ],
     },
@@ -129,24 +156,21 @@ export default defineEventHandler(async () => {
       owner: {
         id: 11,
         avatar: '/img/avatars/11.svg',
-        name: 'Kelly M.',
-        initials: 'KM',
-        color: 'h-orange',
+        name: 'Mike B.',
+        text: 'MB',
       },
       team: [
         {
           id: 30,
-          picture: '/img/avatars/30.svg',
-          name: 'Clément D.',
-          initials: 'CD',
-          color: 'info',
+          src: '/img/avatars/10.svg',
+          name: 'Kendra W.',
+          text: 'KW',
         },
         {
           id: 39,
-          picture: '/img/avatars/39.svg',
-          name: 'Alejandro B.',
-          initials: 'AB',
-          color: 'h-purple',
+          src: '/img/avatars/25.svg',
+          name: 'Melany L.',
+          text: 'ML',
         },
       ],
     },
@@ -160,30 +184,26 @@ export default defineEventHandler(async () => {
         id: 9,
         avatar: '/img/avatars/9.svg',
         name: 'Ana B.',
-        initials: 'AB',
-        color: 'success',
+        text: 'AB',
       },
       team: [
         {
           id: 15,
-          picture: '/img/avatars/15.svg',
-          name: 'Hilde V.',
-          initials: 'HV',
-          color: 'info',
+          src: '/img/avatars/15.svg',
+          name: 'Josh C.',
+          text: 'JS',
         },
         {
           id: 40,
-          picture: '/img/avatars/40.svg',
-          name: 'Jeanne M.',
-          initials: 'JM',
-          color: 'success',
+          src: '/img/avatars/20.svg',
+          name: 'Harold S',
+          text: 'HS',
         },
         {
           id: 8,
-          picture: '/img/avatars/11.svg',
+          src: '/img/avatars/11.svg',
           name: 'Erik K.',
-          initials: 'EK',
-          color: 'h-purple',
+          text: 'EK',
         },
       ],
     },
@@ -196,17 +216,15 @@ export default defineEventHandler(async () => {
       owner: {
         id: 25,
         avatar: '/img/avatars/25.svg',
-        name: 'Melany W.',
-        initials: 'MW',
-        color: 'info',
+        name: 'Melany L.',
+        text: 'ML',
       },
       team: [
         {
           id: 11,
-          picture: '/img/avatars/11.svg',
-          name: 'Kelly M.',
-          initials: 'KM',
-          color: 'success',
+          src: '/img/avatars/11.svg',
+          name: 'Mike B.',
+          text: 'MB',
         },
       ],
     },
@@ -219,31 +237,27 @@ export default defineEventHandler(async () => {
       owner: {
         id: 5,
         avatar: '/img/avatars/5.svg',
-        name: 'Mary L.',
-        initials: 'ML',
-        color: 'info',
+        name: 'Clarissa M.',
+        text: 'CM',
       },
       team: [
         {
           id: 21,
-          picture: '/img/avatars/21.svg',
-          name: 'Elizabeth F.',
-          initials: 'EF',
-          color: 'warning',
+          src: '/img/avatars/9.svg',
+          name: 'Ana B.',
+          text: 'AB',
         },
         {
           id: 29,
-          picture: '/img/avatars/29.svg',
-          name: 'Hakeem C.',
-          initials: 'HC',
-          color: 'danger',
+          src: '/img/avatars/10.svg',
+          name: 'Kendra W.',
+          text: 'KW',
         },
         {
           id: 33,
-          picture: '/img/avatars/33.svg',
+          src: '/img/avatars/18.svg',
           name: 'Harvey M.',
-          initials: 'HM',
-          color: 'success',
+          text: 'HM',
         },
       ],
     },
@@ -255,25 +269,22 @@ export default defineEventHandler(async () => {
       image: '/img/apps/9.png',
       owner: {
         id: 27,
-        avatar: '/img/avatars/27.svg',
+        avatar: '/img/avatars/24.svg',
         name: 'Carmen E.',
-        initials: 'CE',
-        color: 'info',
+        text: 'CE',
       },
       team: [
         {
           id: 30,
-          picture: '/img/avatars/30.svg',
-          name: 'Clément D.',
-          initials: 'CD',
-          color: 'h-purple',
+          src: '/img/avatars/3.svg',
+          name: 'Clarke G.',
+          text: 'CG',
         },
         {
           id: 19,
-          picture: '/img/avatars/19.svg',
+          src: '/img/avatars/19.svg',
           name: 'Greta K.',
-          initials: 'GK',
-          color: 'info',
+          text: 'GK',
         },
       ],
     },
@@ -285,25 +296,22 @@ export default defineEventHandler(async () => {
       image: '/img/apps/10.png',
       owner: {
         id: 27,
-        avatar: '/img/avatars/27.svg',
+        avatar: '/img/avatars/24.svg',
         name: 'Carmen E.',
-        initials: 'CE',
-        color: 'info',
+        text: 'CE',
       },
       team: [
         {
           id: 24,
-          picture: '/img/avatars/24.svg',
+          src: '/img/avatars/22.svg',
           name: 'Sandrine C.',
-          initials: 'SC',
-          color: 'success',
+          text: 'SC',
         },
         {
           id: 22,
-          picture: '/img/avatars/22.svg',
-          name: 'Jimmy H.',
-          initials: 'JH',
-          color: 'info',
+          src: '/img/avatars/10.svg',
+          name: 'Kendra W.',
+          text: 'KW',
         },
       ],
     },
@@ -316,17 +324,15 @@ export default defineEventHandler(async () => {
       owner: {
         id: 13,
         avatar: '/img/avatars/13.svg',
-        name: 'Tara S.',
-        initials: 'TS',
-        color: 'danger',
+        name: 'Terry S.',
+        text: 'TS',
       },
       team: [
         {
           id: 28,
-          picture: '/img/avatars/28.svg',
-          name: 'Edouard F.',
-          initials: 'EF',
-          color: 'info',
+          src: '/img/avatars/9.svg',
+          name: 'Ana B.',
+          text: 'AB',
         },
       ],
     },
@@ -338,18 +344,16 @@ export default defineEventHandler(async () => {
       image: '/img/apps/12.jpg',
       owner: {
         id: 12,
-        avatar: '/img/avatars/12.svg',
-        name: 'Joshua S.',
-        initials: 'JS',
-        color: 'info',
+        avatar: '/img/avatars/10.svg',
+        name: 'Kendra W.',
+        text: 'KW',
       },
       team: [
         {
           id: 119,
-          picture: undefined,
+          src: undefined,
           name: 'Sarah Connor.',
-          initials: 'SC',
-          color: 'h-purple',
+          text: 'SC',
         },
       ],
     },
@@ -361,32 +365,28 @@ export default defineEventHandler(async () => {
       image: '/img/apps/13.png',
       owner: {
         id: 12,
-        avatar: '/img/avatars/12.svg',
-        name: 'Joshua S.',
-        initials: 'JS',
-        color: 'info',
+        avatar: '/img/avatars/20.svg',
+        name: 'Harold S.',
+        text: 'HS',
       },
       team: [
         {
           id: 8,
-          picture: '/img/avatars/13.svg',
-          name: 'Erik K.',
-          initials: 'EK',
-          color: 'h-purple',
+          src: '/img/avatars/3.svg',
+          name: 'Clarke G.',
+          text: 'CG',
         },
         {
           id: 15,
-          picture: '/img/avatars/15.svg',
-          name: 'Hilde V.',
-          initials: 'HV',
-          color: 'h-orange',
+          src: '/img/avatars/16.svg',
+          name: 'Hermann M.',
+          text: 'HM',
         },
         {
           id: 12,
-          picture: '/img/avatars/40.svg',
-          name: 'Jeanne M.',
-          initials: 'JM',
-          color: 'success',
+          src: '/img/avatars/8.svg',
+          name: 'Mario T.',
+          text: 'MT',
         },
       ],
     },
@@ -399,17 +399,15 @@ export default defineEventHandler(async () => {
       owner: {
         id: 15,
         avatar: '/img/avatars/15.svg',
-        name: 'Hilde V.',
-        initials: 'HV',
-        color: 'danger',
+        name: 'Josh K.',
+        text: 'JK',
       },
       team: [
         {
           id: 31,
-          picture: '/img/avatars/31.svg',
+          src: undefined,
           name: 'Yasseen A.',
-          initials: 'YA',
-          color: 'info',
+          text: 'YA',
         },
       ],
     },
@@ -421,29 +419,24 @@ export default defineEventHandler(async () => {
       image: '/img/apps/15.png',
       owner: {
         id: 39,
-        avatar: '/img/avatars/39.svg',
-        name: 'Alejandro B.',
-        initials: 'AB',
-        color: 'info',
+        avatar: '/img/avatars/16.svg',
+        name: 'Hermann M.',
+        text: 'HM',
       },
       team: [
         {
           id: 5,
-          picture: '/img/avatars/5.svg',
-          name: 'Mary L.',
-          initials: 'ML',
-          color: 'info',
+          src: '/img/avatars/5.svg',
+          name: 'Clarissa M.',
+          text: 'CM',
         },
         {
           id: 24,
-          picture: '/img/avatars/24.svg',
-          name: 'Sandrine C.',
-          initials: 'SC',
-          color: 'success',
+          src: '/img/avatars/24.svg',
+          name: 'Ana B.',
+          text: 'AB',
         },
       ],
     },
-  ]
-
-  return data
-})
+  ])
+}
