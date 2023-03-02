@@ -193,15 +193,6 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                     <span class="font-sans text-xs">Table list V3</span>
                   </NuxtLink>
                 </li>
-                <li class="flex h-8 items-center">
-                  <NuxtLink
-                    to="/layouts/table-list-3"
-                    class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                  >
-                    <Icon name="ph:table-duotone" class="mr-2 h-5 w-5" />
-                    <span class="font-sans text-xs">Table list V4</span>
-                  </NuxtLink>
-                </li>
               </ul>
             </DisclosurePanel>
           </div>

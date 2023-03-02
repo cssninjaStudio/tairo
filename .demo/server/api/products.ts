@@ -30,9 +30,7 @@ function filterDemoData(
   const filterRe = new RegExp(filter, 'i')
   return data
     .filter((item) => {
-      return [item.name, item.stock, item.category].some((item) =>
-        item.match(filterRe),
-      )
+      return [item.name, item.category].some((item) => item.match(filterRe))
     })
     .slice(offset, offset + perPage)
 }

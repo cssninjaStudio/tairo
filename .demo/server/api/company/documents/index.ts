@@ -1,5 +1,42 @@
-export default defineEventHandler(async () => {
-  const data = [
+export default defineEventHandler(async (event) => {
+  const query = getQuery(event)
+  const perPage = parseInt((query.perPage as string) || '5', 10)
+  const page = parseInt((query.page as string) || '1', 10)
+  const filter = (query.filter as string) || ''
+
+  if (perPage >= 50) {
+    // Create an artificial delay
+    await new Promise((resolve) => setTimeout(resolve, 1000))
+  }
+
+  const data = await getDemoData()
+
+  return {
+    total: data.length,
+    data: filterDemoData(data, filter, page, perPage),
+  }
+})
+
+function filterDemoData(
+  data: any[],
+  filter: string,
+  page: number,
+  perPage: number,
+) {
+  const offset = (page - 1) * perPage
+  if (!filter) {
+    return data.slice(offset, offset + perPage)
+  }
+  const filterRe = new RegExp(filter, 'i')
+  return data
+    .filter((item) => {
+      return [item.name, item.author.name].some((item) => item.match(filterRe))
+    })
+    .slice(offset, offset + perPage)
+}
+
+async function getDemoData() {
+  return Promise.resolve([
     {
       id: 0,
       name: 'Company UX Guide',
@@ -9,7 +46,7 @@ export default defineEventHandler(async () => {
       uploaded: '2 weeks ago',
       author: {
         name: 'Hermann M.',
-        picture: '/img/avatars/16.jpg',
+        picture: '/img/avatars/16.svg',
       },
     },
     {
@@ -20,8 +57,8 @@ export default defineEventHandler(async () => {
       version: '1.1.3',
       uploaded: '3 days ago',
       author: {
-        name: 'Megan C.',
-        picture: '/img/avatars/5.jpg',
+        name: 'Clarissa M.',
+        picture: '/img/avatars/5.svg',
       },
     },
     {
@@ -32,8 +69,8 @@ export default defineEventHandler(async () => {
       version: '1.0.0',
       uploaded: '5 days ago',
       author: {
-        name: 'Megan C.',
-        picture: '/img/avatars/5.jpg',
+        name: 'Clark D.',
+        picture: '/img/avatars/3.svg',
       },
     },
     {
@@ -44,8 +81,8 @@ export default defineEventHandler(async () => {
       version: '1.0.0',
       uploaded: '2 weeks ago',
       author: {
-        name: 'Megan C.',
-        picture: '/img/avatars/5.jpg',
+        name: 'Terry S.',
+        picture: '/img/avatars/11.svg',
       },
     },
     {
@@ -56,8 +93,8 @@ export default defineEventHandler(async () => {
       version: '1.0.0',
       uploaded: '2 weeks ago',
       author: {
-        name: 'Megan C.',
-        picture: '/img/avatars/5.jpg',
+        name: 'Lana E.',
+        picture: '/img/avatars/4.svg',
       },
     },
     {
@@ -68,8 +105,8 @@ export default defineEventHandler(async () => {
       version: '1.2.0',
       uploaded: '3 days ago',
       author: {
-        name: 'Megan C.',
-        picture: '/img/avatars/5.jpg',
+        name: 'Howard L.',
+        picture: '/img/avatars/20.svg',
       },
     },
     {
@@ -80,8 +117,8 @@ export default defineEventHandler(async () => {
       version: '1.3.4',
       uploaded: '3 weeks ago',
       author: {
-        name: 'Megan C.',
-        picture: '/img/avatars/5.jpg',
+        name: 'Mike T.',
+        picture: '/img/avatars/1.svg',
       },
     },
     {
@@ -92,8 +129,8 @@ export default defineEventHandler(async () => {
       version: '1.0.4',
       uploaded: '5 days ago',
       author: {
-        name: 'Megan C.',
-        picture: '/img/avatars/5.jpg',
+        name: 'John Baxter.',
+        picture: '/img/avatars/14.svg',
       },
     },
     {
@@ -104,8 +141,8 @@ export default defineEventHandler(async () => {
       version: '1.0.0',
       uploaded: '6 days ago',
       author: {
-        name: 'Megan C.',
-        picture: '/img/avatars/5.jpg',
+        name: 'Maya R.',
+        picture: '/img/avatars/2.svg',
       },
     },
     {
@@ -116,8 +153,8 @@ export default defineEventHandler(async () => {
       version: '1.2.4',
       uploaded: '4 days ago',
       author: {
-        name: 'Megan C.',
-        picture: '/img/avatars/5.jpg',
+        name: 'Emilio R.',
+        picture: '/img/avatars/8.svg',
       },
     },
     {
@@ -128,8 +165,8 @@ export default defineEventHandler(async () => {
       version: '1.2.1',
       uploaded: '3 days ago',
       author: {
-        name: 'Megan C.',
-        picture: '/img/avatars/5.jpg',
+        name: 'Nicole R.',
+        picture: '/img/avatars/9.svg',
       },
     },
     {
@@ -140,8 +177,8 @@ export default defineEventHandler(async () => {
       version: '1.7.2',
       uploaded: '1 year ago',
       author: {
-        name: 'Megan C.',
-        picture: '/img/avatars/5.jpg',
+        name: 'Alessandra F.',
+        picture: '/img/avatars/21.svg',
       },
     },
     {
@@ -152,8 +189,8 @@ export default defineEventHandler(async () => {
       version: '1.0.0',
       uploaded: '6 days ago',
       author: {
-        name: 'Megan C.',
-        picture: '/img/avatars/5.jpg',
+        name: 'Arthur S.',
+        picture: '/img/avatars/7.svg',
       },
     },
     {
@@ -164,8 +201,8 @@ export default defineEventHandler(async () => {
       version: '1.1.5',
       uploaded: '8 days ago',
       author: {
-        name: 'Megan C.',
-        picture: '/img/avatars/5.jpg',
+        name: 'Kendra W.',
+        picture: '/img/avatars/10.svg',
       },
     },
     {
@@ -176,8 +213,8 @@ export default defineEventHandler(async () => {
       version: '2.5.1',
       uploaded: '3 weeks ago',
       author: {
-        name: 'Megan C.',
-        picture: '/img/avatars/5.jpg',
+        name: 'Hermann M.',
+        picture: '/img/avatars/16.svg',
       },
     },
     {
@@ -188,8 +225,8 @@ export default defineEventHandler(async () => {
       version: '3.4.8',
       uploaded: '1 year ago',
       author: {
-        name: 'Megan C.',
-        picture: '/img/avatars/5.jpg',
+        name: 'Tony U.',
+        picture: '/img/avatars/23.svg',
       },
     },
     {
@@ -200,8 +237,8 @@ export default defineEventHandler(async () => {
       version: '1.0.0',
       uploaded: '3 days ago',
       author: {
-        name: 'Megan C.',
-        picture: '/img/avatars/5.jpg',
+        name: 'Clara C.',
+        picture: '/img/avatars/22.svg',
       },
     },
     {
@@ -212,8 +249,8 @@ export default defineEventHandler(async () => {
       version: '1.0.0',
       uploaded: '5 days ago',
       author: {
-        name: 'Megan C.',
-        picture: '/img/avatars/5.jpg',
+        name: 'Daniela D.',
+        picture: '/img/avatars/24.svg',
       },
     },
     {
@@ -224,8 +261,8 @@ export default defineEventHandler(async () => {
       version: '1.1.0',
       uploaded: '9 days ago',
       author: {
-        name: 'Megan C.',
-        picture: '/img/avatars/5.jpg',
+        name: 'Helen T.',
+        picture: '/img/avatars/25.svg',
       },
     },
     {
@@ -236,11 +273,9 @@ export default defineEventHandler(async () => {
       version: '1.1.5',
       uploaded: '4 days ago',
       author: {
-        name: 'Megan C.',
-        picture: '/img/avatars/5.jpg',
+        name: 'Kendra W.',
+        picture: '/img/avatars/10.svg',
       },
     },
-  ]
-
-  return data
-})
+  ])
+}
