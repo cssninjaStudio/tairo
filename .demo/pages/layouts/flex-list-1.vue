@@ -174,11 +174,9 @@ function statusColor(itemStatus: string) {
         </div>
         <div v-if="!pending && data?.data.length !== 0" class="mt-4">
           <BasePagination
-            :total="100"
-            :item-per-page="10"
-            :total-items="100"
-            :current="1"
-            :limit="10"
+            :total-items="data?.total ?? 0"
+            :item-per-page="perPage"
+            :current-page="page"
             shape="curved"
           />
         </div>

@@ -2,8 +2,194 @@
 definePageMeta({
   title: 'Tiles',
 })
+
+const route = useRoute()
+const router = useRouter()
+const page = computed(() => parseInt((route.query.page as string) ?? '1'))
+
+const filter = ref('')
+const perPage = ref(10)
+
+watch([filter, perPage], () => {
+  router.push({
+    query: {
+      page: undefined,
+    },
+  })
+})
+
+const query = computed(() => {
+  return {
+    filter: filter.value,
+    perPage: perPage.value,
+    page: page.value,
+  }
+})
+
+const { data, pending, error, refresh } = await useFetch('/api/recipes', {
+  query,
+})
 </script>
 
 <template>
-  <div></div>
+  <div>
+    <ContentWrapper>
+      <template #left>
+        <BaseInput
+          v-model="filter"
+          icon="lucide:search"
+          shape="curved"
+          placeholder="Filter recipes..."
+          :classes="{
+            wrapper: 'w-full sm:w-auto',
+          }"
+        />
+      </template>
+      <template #right>
+        <BaseButton class="w-full sm:w-32" shape="curved">Manage</BaseButton>
+        <BaseButton color="primary" class="w-full sm:w-32" shape="curved">
+          <Icon name="lucide:plus" class="w-4 h-4" />
+          <span>Upload</span>
+        </BaseButton>
+      </template>
+      <div>
+        <div v-if="!pending && data?.data.length === 0">
+          <BasePlaceholderPage
+            title="No matching results"
+            subtitle="Looks like we couldn't find any matching results for your search terms. Try other search terms."
+          >
+            <template #image>
+              <NuxtImg
+                class="block dark:hidden"
+                src="/img/illustrations/placeholders/flat/placeholder-search-3.svg"
+                alt="Placeholder image"
+              />
+              <NuxtImg
+                class="hidden dark:block"
+                src="/img/illustrations/placeholders/flat/placeholder-search-3-dark.svg"
+                alt="Placeholder image"
+              />
+            </template>
+          </BasePlaceholderPage>
+        </div>
+        <div
+          v-else
+          class="grid sm:grid-cols-2 ltablet:grid-cols-3 lg:grid-cols-3 gap-4"
+        >
+          <TransitionGroup
+            enter-active-class="transform-gpu"
+            enter-from-class="opacity-0 -translate-x-full"
+            enter-to-class="opacity-100 translate-x-0"
+            leave-active-class="absolute transform-gpu"
+            leave-from-class="opacity-100 translate-x-0"
+            leave-to-class="opacity-0 -translate-x-full"
+          >
+            <BaseCard
+              v-for="(item, index) in data?.data"
+              :key="index"
+              shape="curved"
+              class="p-3"
+            >
+              <div class="w-full flex items-center gap-2">
+                <BaseAvatar
+                  :src="item.icon"
+                  :badge-src="item.author.avatar"
+                  :tooltip="`by ${item.author.name}`"
+                  size="md"
+                  class="bg-muted-100 dark:bg-muted-700/70"
+                />
+                <div>
+                  <BaseHeading
+                    tag="h3"
+                    size="sm"
+                    weight="medium"
+                    class="text-muted-800 dark:text-muted-100"
+                  >
+                    {{ item.name }}
+                  </BaseHeading>
+                  <div
+                    class="flex items-center justify-center gap-6 sm:gap-0 sm:justify-start"
+                  >
+                    <div
+                      class="flex items-center gap-1 text-xs mt-3 sm:mt-0 text-left text-muted-400"
+                    >
+                      <Icon name="lucide:archive" class="w-3 h-3" />
+                      <span>{{ item.category }}</span>
+                    </div>
+                    <div class="hidden sm:block px-2">
+                      <span>&middot;</span>
+                    </div>
+                    <div
+                      class="flex items-center gap-1 text-xs mt-3 sm:mt-0 text-left text-muted-400"
+                    >
+                      <Icon name="lucide:clock" class="w-3 h-3" />
+                      <span>{{ item.duration }}</span>
+                    </div>
+                    <div class="hidden sm:block px-2">
+                      <span>&middot;</span>
+                    </div>
+                    <div
+                      class="flex items-center gap-1 text-xs mt-3 sm:mt-0 text-left text-muted-400"
+                    >
+                      <Icon name="lucide:paperclip" class="w-3 h-3" />
+                      <span>{{ item.attachments }}</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="ml-auto">
+                  <BaseDropdown
+                    flavor="context"
+                    label="Dropdown"
+                    orientation="end"
+                    compact
+                    class="z-20"
+                    shape="curved"
+                  >
+                    <BaseDropdownItem
+                      to="#/"
+                      title="Download"
+                      text="Download recipe"
+                    >
+                      <template #start>
+                        <Icon
+                          name="ph:download-duotone"
+                          class="w-5 h-5 block mr-2"
+                        />
+                      </template>
+                    </BaseDropdownItem>
+                    <BaseDropdownDivide />
+                    <BaseDropdownItem to="#/" title="Share" text="Share recipe">
+                      <template #start>
+                        <Icon
+                          name="ph:share-duotone"
+                          class="w-5 h-5 block mr-2"
+                        />
+                      </template>
+                    </BaseDropdownItem>
+                    <BaseDropdownDivide />
+                    <BaseDropdownItem to="#/" title="Save" text="Save recipe">
+                      <template #start>
+                        <Icon
+                          name="ph:bookmark-simple-duotone"
+                          class="w-5 h-5 block mr-2"
+                        />
+                      </template>
+                    </BaseDropdownItem>
+                  </BaseDropdown>
+                </div>
+              </div>
+            </BaseCard>
+          </TransitionGroup>
+        </div>
+        <div v-if="!pending && data?.data.length !== 0" class="mt-4">
+          <BasePagination
+            :total-items="data?.total ?? 0"
+            :item-per-page="perPage"
+            :current-page="page"
+            shape="curved"
+          />
+        </div>
+      </div>
+    </ContentWrapper>
+  </div>
 </template>

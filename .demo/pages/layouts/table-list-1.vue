@@ -118,7 +118,7 @@ const { data, pending, error, refresh } = await useFetch(
                     <BaseAvatar
                       :src="item.picture"
                       :text="item.initials"
-                      class="bg-muted-500/20 text-muted-500"
+                      :class="useRandomColor()"
                     />
                     <div class="ml-3 leading-none">
                       <h4 class="font-sans text-sm font-medium">

@@ -2,8 +2,201 @@
 definePageMeta({
   title: 'Users',
 })
+
+const route = useRoute()
+const router = useRouter()
+const page = computed(() => parseInt((route.query.page as string) ?? '1'))
+
+const filter = ref('')
+const perPage = ref(18)
+
+watch([filter, perPage], () => {
+  router.push({
+    query: {
+      page: undefined,
+    },
+  })
+})
+
+const query = computed(() => {
+  return {
+    filter: filter.value,
+    perPage: perPage.value,
+    page: page.value,
+  }
+})
+
+const { data, pending, error, refresh } = await useFetch(
+  '/api/company/candidates',
+  {
+    query,
+  },
+)
 </script>
 
 <template>
-  <div></div>
+  <div>
+    <ContentWrapper>
+      <template #left>
+        <BaseInput
+          v-model="filter"
+          icon="lucide:search"
+          shape="full"
+          placeholder="Filter users..."
+          :classes="{
+            wrapper: 'w-full sm:w-auto',
+          }"
+        />
+      </template>
+      <template #right>
+        <BaseButton class="w-full sm:w-32" shape="full">Manage</BaseButton>
+        <BaseButton color="primary" class="w-full sm:w-32" shape="full">
+          <Icon name="lucide:plus" class="w-4 h-4" />
+          <span>Add User</span>
+        </BaseButton>
+      </template>
+      <div>
+        <div v-if="!pending && data?.data.length === 0">
+          <BasePlaceholderPage
+            title="No matching results"
+            subtitle="Looks like we couldn't find any matching results for your search terms. Try other search terms."
+          >
+            <template #image>
+              <NuxtImg
+                class="block dark:hidden"
+                src="/img/illustrations/placeholders/flat/placeholder-search-2.svg"
+                alt="Placeholder image"
+              />
+              <NuxtImg
+                class="hidden dark:block"
+                src="/img/illustrations/placeholders/flat/placeholder-search-2-dark.svg"
+                alt="Placeholder image"
+              />
+            </template>
+          </BasePlaceholderPage>
+        </div>
+        <div
+          v-else
+          class="grid sm:grid-cols-2 ltablet:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-4"
+        >
+          <TransitionGroup
+            enter-active-class="transform-gpu"
+            enter-from-class="opacity-0 -translate-x-full"
+            enter-to-class="opacity-100 translate-x-0"
+            leave-active-class="absolute transform-gpu"
+            leave-from-class="opacity-100 translate-x-0"
+            leave-to-class="opacity-0 -translate-x-full"
+          >
+            <BaseCard
+              v-for="(item, index) in data?.data"
+              :key="index"
+              shape="rounded"
+              elevated-hover
+              class="overflow-hidden"
+            >
+              <div class="p-6 bg-muted-50">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <BaseHeading
+                      v-if="item.tasks.status === 0"
+                      tag="h3"
+                      size="md"
+                      weight="medium"
+                      lead="none"
+                    >
+                      In Sync
+                    </BaseHeading>
+                    <BaseHeading
+                      v-else
+                      tag="h3"
+                      size="md"
+                      weight="medium"
+                      lead="none"
+                    >
+                      {{ item.tasks.status === 1 ? 'Overdue' : 'Blocked' }}
+                    </BaseHeading>
+                    <BaseParagraph size="xs" class="text-muted-400">
+                      {{ item.tasks.pending }} tasks remaining
+                    </BaseParagraph>
+                  </div>
+                  <div>
+                    <Icon
+                      v-if="item.tasks.status === 0"
+                      name="ph:check-circle-duotone"
+                      class="w-7 h-7 text-success-500"
+                    />
+                    <Icon
+                      v-else-if="item.tasks.status === 1"
+                      name="ph:warning-circle-duotone"
+                      class="w-7 h-7 text-warning-500"
+                    />
+                    <Icon
+                      v-else-if="item.tasks.status === 2"
+                      name="ph:x-circle-duotone"
+                      class="w-7 h-7 text-danger-500"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <NuxtLink
+                    to="#"
+                    class="font-sans text-xs text-primary-500 underline-offset-4 hover:underline"
+                  >
+                    View {{ item.username }}'s tasks
+                  </NuxtLink>
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="w-full flex items-center justify-center mb-3">
+                  <BaseAvatar
+                    size="xl"
+                    :src="item.src"
+                    :badge-src="item.badge"
+                    :text="item.initials"
+                    :class="useRandomColor()"
+                  />
+                </div>
+                <div class="text-center">
+                  <BaseHeading tag="h3" size="md" weight="medium" lead="none">
+                    {{ item.username }}
+                  </BaseHeading>
+                  <BaseParagraph size="xs" class="text-muted-400">
+                    {{ item.position }}
+                  </BaseParagraph>
+                </div>
+                <div class="mt-4 mb-6 flex items-center justify-center gap-3">
+                  <BaseAvatar
+                    v-for="relation in item.relations.slice(0, 3)"
+                    :key="relation"
+                    size="xs"
+                    :src="relation.src"
+                    :text="relation.text"
+                    :class="useRandomColor()"
+                  />
+                </div>
+                <div class="flex items-center gap-2">
+                  <BaseButton shape="rounded" class="w-full">
+                    <Icon name="ph:user-duotone" class="w-4 h-4" />
+                    <span>Profile</span>
+                  </BaseButton>
+                  <BaseButton shape="rounded" class="w-full">
+                    <Icon name="ph:chat-circle-duotone" class="w-4 h-4" />
+                    <span>Talk</span>
+                  </BaseButton>
+                </div>
+              </div>
+            </BaseCard>
+          </TransitionGroup>
+        </div>
+        <div v-if="!pending && data?.data.length !== 0" class="mt-4">
+          <BasePagination
+            :total-items="data?.total ?? 0"
+            :item-per-page="perPage"
+            :current-page="page"
+            shape="curved"
+          />
+        </div>
+      </div>
+    </ContentWrapper>
+  </div>
 </template>

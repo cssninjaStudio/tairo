@@ -48,6 +48,11 @@ async function getDemoData() {
       location: 'Las Vegas, NV',
       industry: 'Software',
       status: 'online',
+      tasks: {
+        pending: 37,
+        done: 164,
+        status: 0,
+      },
       relations: [
         {
           id: 0,
@@ -78,13 +83,18 @@ async function getDemoData() {
     },
     {
       id: 1,
-      username: 'Jimmy H.',
+      username: 'Sandra T.',
       position: 'Project Manager',
       src: '/img/avatars/22.svg',
       badge: '/img/icons/flags/united-states-of-america.svg',
       location: 'Los Angeles, CA',
       industry: 'Business',
       status: 'working',
+      tasks: {
+        pending: 21,
+        done: 598,
+        status: 0,
+      },
       relations: [
         {
           id: 148,
@@ -102,6 +112,11 @@ async function getDemoData() {
       location: 'San Jose, CA',
       industry: 'Design',
       status: 'online',
+      tasks: {
+        pending: 45,
+        done: 265,
+        status: 1,
+      },
       relations: [
         {
           id: 127,
@@ -144,6 +159,11 @@ async function getDemoData() {
       location: 'Las Vegas, NV',
       industry: 'Accounting',
       status: 'suspended',
+      tasks: {
+        pending: 15,
+        done: 575,
+        status: 0,
+      },
       relations: [
         {
           id: 7,
@@ -154,18 +174,23 @@ async function getDemoData() {
     },
     {
       id: 4,
-      username: 'Tara S.',
+      username: 'Heinrich L.',
       position: 'UI/UX Designer',
       src: '/img/avatars/13.svg',
       badge: '/img/icons/flags/united-states-of-america.svg',
       location: 'Los Angeles, CA',
       industry: 'Finance',
       status: 'working',
+      tasks: {
+        pending: 6,
+        done: 47,
+        status: 0,
+      },
       relations: [
         {
           id: 0,
-          src: '/img/avatars/5.svg',
-          text: 'CM',
+          src: '/img/avatars/3.svg',
+          text: 'CD',
         },
         {
           id: 14,
@@ -208,6 +233,11 @@ async function getDemoData() {
       location: 'Berlin, Germany',
       industry: 'Business',
       status: 'online',
+      tasks: {
+        pending: 68,
+        done: 128,
+        status: 1,
+      },
       relations: [
         {
           id: 0,
@@ -250,6 +280,11 @@ async function getDemoData() {
       location: 'Toulouse, France',
       industry: 'Software',
       status: 'Offline',
+      tasks: {
+        pending: 19,
+        done: 127,
+        status: 0,
+      },
       relations: [
         {
           id: 0,
@@ -280,13 +315,18 @@ async function getDemoData() {
     },
     {
       id: 7,
-      username: 'Kelly M.',
+      username: 'Ronald D.',
       position: 'Product Manager',
       src: '/img/avatars/11.svg',
       badge: '/img/icons/flags/england.svg',
       location: 'London, UK',
       industry: 'Software',
       status: 'online',
+      tasks: {
+        pending: 24,
+        done: 277,
+        status: 0,
+      },
       relations: [
         {
           id: 25,
@@ -311,11 +351,15 @@ async function getDemoData() {
       position: 'Software Engineer',
       src: undefined,
       badge: '/img/icons/flags/united-states-of-america.svg',
-      color: 'h-yellow',
       initials: 'AT',
       location: 'San Francisco, CA',
       industry: 'Software',
       status: 'Offline',
+      tasks: {
+        pending: 42,
+        done: 227,
+        status: 2,
+      },
       relations: [
         {
           id: 25,
@@ -333,6 +377,11 @@ async function getDemoData() {
       location: 'Melbourne, Australia',
       industry: 'Software',
       status: 'Offline',
+      tasks: {
+        pending: 12,
+        done: 272,
+        status: 0,
+      },
       relations: [
         {
           id: 112,
@@ -346,8 +395,179 @@ async function getDemoData() {
         },
         {
           id: 27,
-          src: '/img/avatars/27.svg',
+          src: '/img/avatars/16.svg',
           text: 'CE',
+        },
+        {
+          id: 150,
+          src: undefined,
+          text: 'SC',
+        },
+        {
+          id: 151,
+          src: undefined,
+          text: 'SC',
+        },
+      ],
+    },
+    {
+      id: 10,
+      username: 'Jennifer D.',
+      position: 'Sales Manager',
+      src: '/img/avatars/24.svg',
+      badge: '/img/icons/flags/united-states-of-america.svg',
+      location: 'San Diego, CA',
+      industry: 'Sales',
+      status: 'Offline',
+      tasks: {
+        pending: 11,
+        done: 72,
+        status: 0,
+      },
+      relations: [
+        {
+          id: 112,
+          src: '/img/avatars/2.svg',
+          text: 'MR',
+        },
+        {
+          id: 156,
+          src: undefined,
+          text: 'JB',
+        },
+      ],
+    },
+    {
+      id: 11,
+      username: 'Kendra W.',
+      position: 'HR Manager',
+      src: '/img/avatars/10.svg',
+      badge: '/img/icons/flags/united-states-of-america.svg',
+      location: 'New York, NY',
+      industry: 'HR',
+      status: 'Offline',
+      tasks: {
+        pending: 17,
+        done: 272,
+        status: 0,
+      },
+      relations: [
+        {
+          id: 112,
+          src: '/img/avatars/2.svg',
+          text: 'MR',
+        },
+        {
+          id: 7,
+          src: '/img/avatars/6.svg',
+          text: 'JB',
+        },
+        {
+          id: 27,
+          src: '/img/avatars/9.svg',
+          text: 'AB',
+        },
+        {
+          id: 150,
+          src: undefined,
+          text: 'SC',
+        },
+        {
+          id: 151,
+          src: undefined,
+          text: 'SC',
+        },
+      ],
+    },
+    {
+      id: 12,
+      username: 'Mike H.',
+      position: 'Business Analyst',
+      src: '/img/avatars/23.svg',
+      badge: '/img/icons/flags/united-states-of-america.svg',
+      location: 'Houston, TX',
+      industry: 'Business',
+      status: 'Offline',
+      tasks: {
+        pending: 27,
+        done: 272,
+        status: 1,
+      },
+      relations: [
+        {
+          id: 150,
+          src: undefined,
+          text: 'TE',
+        },
+        {
+          id: 151,
+          src: undefined,
+          text: 'GV',
+        },
+      ],
+    },
+    {
+      id: 13,
+      username: 'Bryan F.',
+      position: 'Software Engineer',
+      src: undefined,
+      badge: '/img/icons/flags/united-states-of-america.svg',
+      initials: 'BF',
+      location: 'Santa Monica, CA',
+      industry: 'Software',
+      status: 'Offline',
+      tasks: {
+        pending: 8,
+        done: 28,
+        status: 0,
+      },
+      relations: [
+        {
+          id: 150,
+          src: undefined,
+          text: 'TE',
+        },
+        {
+          id: 151,
+          src: undefined,
+          text: 'GV',
+        },
+        {
+          id: 12,
+          src: '/img/avatars/25.svg',
+          text: 'JT',
+        },
+      ],
+    },
+    {
+      id: 14,
+      username: 'John B.',
+      position: 'Board Member',
+      src: '/img/avatars/6.svg',
+      badge: '/img/icons/flags/united-states-of-america.svg',
+      location: 'New York, NY',
+      industry: 'Business',
+      status: 'Offline',
+      tasks: {
+        pending: 4,
+        done: 75,
+        status: 0,
+      },
+      relations: [
+        {
+          id: 112,
+          src: undefined,
+          text: 'ST',
+        },
+        {
+          id: 7,
+          src: '/img/avatars/10.svg',
+          text: 'KW',
+        },
+        {
+          id: 27,
+          src: '/img/avatars/5.svg',
+          text: 'CM',
         },
         {
           id: 150,
