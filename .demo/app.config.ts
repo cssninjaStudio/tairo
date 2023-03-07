@@ -68,6 +68,11 @@ export default defineAppConfig({
         position: 'left',
         component: 'PanelSearch',
       },
+      {
+        name: 'task',
+        position: 'right',
+        component: 'PanelTask',
+      },
     ],
   },
 })

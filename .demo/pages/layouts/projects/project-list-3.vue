@@ -49,106 +49,50 @@ const { data, pending, error, refresh } = await useFetch(
         />
       </template>
       <template #right>
-        <BaseButton color="primary" class="w-full sm:w-32" shape="curved">
-          <Icon name="lucide:plus" class="w-4 h-4" />
-          <span>New</span>
-        </BaseButton>
+        <BaseCard shape="curved" class="min-w-[340px]">
+          <div class="grid sm:grid-cols-4 p-4">
+            <div class="relative flex flex-col text-center">
+              <span
+                class="font-sans font-bold text-2xl text-muted-800 dark:text-muted-100"
+              >
+                12
+              </span>
+              <p class="font-sans text-xs text-muted-400">On Track</p>
+              <span
+                class="absolute top-0 right-0 h-2 w-2 rounded-full bg-primary-500"
+              ></span>
+            </div>
+            <div class="relative flex flex-col text-center">
+              <span
+                class="font-sans font-bold text-2xl text-muted-800 dark:text-muted-100"
+              >
+                4
+              </span>
+              <p class="font-sans text-xs text-muted-400">Overdue</p>
+              <span
+                class="absolute top-0 right-0 h-2 w-2 rounded-full bg-amber-500"
+              ></span>
+            </div>
+            <div class="relative flex flex-col text-center">
+              <span
+                class="font-sans font-bold text-2xl text-muted-800 dark:text-muted-100"
+              >
+                {{ data?.data.length || '0' }}
+              </span>
+              <p class="font-sans text-xs text-muted-400">Total</p>
+              <span
+                class="absolute top-0 right-0 h-2 w-2 rounded-full bg-success-500"
+              ></span>
+            </div>
+            <div class="flex items-center justify-center">
+              <BaseButtonIcon muted>
+                <Icon name="lucide:plus" />
+              </BaseButtonIcon>
+            </div>
+          </div>
+        </BaseCard>
       </template>
       <div class="space-y-10">
-        <div>
-          <div v-if="!pending && data?.recent.length === 0">
-            <div class="p-6 rounded-xl bg-muted-200 dark:bg-muted-800/60">
-              <BaseHeading tag="h4" size="lg" weight="medium">
-                Empty history
-              </BaseHeading>
-              <BaseParagraph size="sm" class="text-muted-400">
-                Looks like you haven't viewed any projects yet.
-              </BaseParagraph>
-            </div>
-          </div>
-          <div v-else>
-            <div>
-              <h4
-                class="mb-4 font-sans text-xs font-semibold uppercase text-muted-400"
-              >
-                Recently Viewed
-              </h4>
-            </div>
-            <div
-              class="grid sm:grid-cols-2 ltablet:grid-cols-4 lg:grid-cols-4 gap-4"
-            >
-              <TransitionGroup
-                enter-active-class="transform-gpu"
-                enter-from-class="opacity-0 -translate-x-full"
-                enter-to-class="opacity-100 translate-x-0"
-                leave-active-class="absolute transform-gpu"
-                leave-from-class="opacity-100 translate-x-0"
-                leave-to-class="opacity-0 -translate-x-full"
-              >
-                <NuxtLink
-                  v-for="(item, r) in data?.recent.slice(0, 4)"
-                  :key="r"
-                  class="block group"
-                  to="/"
-                >
-                  <BaseCard
-                    shape="curved"
-                    elevated-hover
-                    class="p-5 group-hover:!border-primary-500"
-                  >
-                    <div class="flex gap-2 mb-6">
-                      <BaseAvatar
-                        :src="item.customer.logo"
-                        size="sm"
-                        shape="square"
-                        :tooltip="item.name"
-                        class="bg-muted-100 dark:bg-muted-700"
-                      />
-                      <div>
-                        <BaseHeading
-                          tag="h5"
-                          size="sm"
-                          weight="medium"
-                          class="line-clamp-1"
-                        >
-                          {{ item.name }}
-                        </BaseHeading>
-                        <BaseParagraph size="xs" class="text-muted-400">
-                          {{ item.customer.name }} | {{ item.customer.text }}
-                        </BaseParagraph>
-                      </div>
-                    </div>
-                    <div class="flex items-center justify-between">
-                      <div class="flex items-center gap-2">
-                        <BaseAvatar
-                          v-for="stack in item.stacks"
-                          :key="stack.name"
-                          :src="stack.icon"
-                          size="xxs"
-                          shape="square"
-                          :tooltip="stack.name"
-                          class="bg-muted-100 dark:bg-muted-700"
-                        />
-                      </div>
-                      <div class="flex items-center gap-4 text-muted-400">
-                        <div class="flex items-center gap-1 text-sm">
-                          <Icon name="ph:paperclip-duotone" class="w-4 h-4" />
-                          <span class="font-sans">
-                            {{ item.files.length }}
-                          </span>
-                        </div>
-                        <div class="flex items-center gap-1 text-sm">
-                          <Icon name="ph:users-duotone" class="w-4 h-4" />
-                          <span class="font-sans">{{ item.team.length }}</span>
-                        </div>
-                      </div>
-                    </div>
-                  </BaseCard>
-                </NuxtLink>
-              </TransitionGroup>
-            </div>
-          </div>
-        </div>
         <div>
           <div v-if="!pending && data?.data.length === 0">
             <BasePlaceholderPage
@@ -195,20 +139,22 @@ const { data, pending, error, refresh } = await useFetch(
                   elevated-hover
                   class="hover:!border-primary-500"
                 >
-                  <NuxtLink class="group" to="/">
+                  <NuxtLink
+                    class="group"
+                    :to="`/layouts/projects/details/${item.slug}`"
+                  >
                     <div class="p-5">
                       <div class="relative mb-4">
                         <img
                           :src="item.image"
                           :alt="item.name"
-                          class="rounded-lg"
+                          class="w-full rounded-lg"
                         />
                       </div>
                       <div class="flex gap-2 mb-6">
                         <BaseAvatar
                           :src="item.customer.logo"
                           size="sm"
-                          shape="square"
                           :tooltip="item.name"
                           class="bg-muted-100 dark:bg-muted-700"
                         />
@@ -234,7 +180,6 @@ const { data, pending, error, refresh } = await useFetch(
                             :key="stack.name"
                             :src="stack.icon"
                             size="xxs"
-                            shape="square"
                             :tooltip="stack.name"
                             class="bg-muted-100 dark:bg-muted-700"
                           />
