@@ -80,19 +80,19 @@ const { data, pending, error, refresh } = await useFetch('/api/products', {
         </div>
         <div v-else>
           <div class="w-full">
-            <BaseTable shape="rounded">
+            <TairoTable shape="rounded">
               <template #header>
-                <BaseTableHeading uppercase spaced>Product</BaseTableHeading>
-                <BaseTableHeading uppercase spaced>Name</BaseTableHeading>
-                <BaseTableHeading uppercase spaced>Sku</BaseTableHeading>
-                <BaseTableHeading uppercase spaced>Price</BaseTableHeading>
-                <BaseTableHeading uppercase spaced>Stock</BaseTableHeading>
-                <BaseTableHeading uppercase spaced>Category</BaseTableHeading>
-                <BaseTableHeading uppercase spaced>Action</BaseTableHeading>
+                <TairoTableHeading uppercase spaced>Product</TairoTableHeading>
+                <TairoTableHeading uppercase spaced>Name</TairoTableHeading>
+                <TairoTableHeading uppercase spaced>Sku</TairoTableHeading>
+                <TairoTableHeading uppercase spaced>Price</TairoTableHeading>
+                <TairoTableHeading uppercase spaced>Stock</TairoTableHeading>
+                <TairoTableHeading uppercase spaced>Category</TairoTableHeading>
+                <TairoTableHeading uppercase spaced>Action</TairoTableHeading>
               </template>
 
-              <BaseTableRow v-for="item in data?.data" :key="item.id">
-                <BaseTableCell spaced>
+              <TairoTableRow v-for="item in data?.data" :key="item.id">
+                <TairoTableCell spaced>
                   <div class="flex items-center">
                     <NuxtImg
                       :src="item.image"
@@ -100,29 +100,29 @@ const { data, pending, error, refresh } = await useFetch('/api/products', {
                       class="max-w-[80px]"
                     />
                   </div>
-                </BaseTableCell>
-                <BaseTableCell spaced>
+                </TairoTableCell>
+                <TairoTableCell spaced>
                   {{ item.name }}
-                </BaseTableCell>
-                <BaseTableCell light spaced>
+                </TairoTableCell>
+                <TairoTableCell light spaced>
                   {{ item.sku }}
-                </BaseTableCell>
-                <BaseTableCell spaced>
+                </TairoTableCell>
+                <TairoTableCell spaced>
                   <span class="font-semibold">${{ item.price }}</span>
-                </BaseTableCell>
-                <BaseTableCell light spaced>
+                </TairoTableCell>
+                <TairoTableCell light spaced>
                   {{ item.stock }}
-                </BaseTableCell>
-                <BaseTableCell light spaced>
+                </TairoTableCell>
+                <TairoTableCell light spaced>
                   <span class="text-sm font-medium text-primary-500">
                     {{ item.category }}
                   </span>
-                </BaseTableCell>
-                <BaseTableCell spaced>
+                </TairoTableCell>
+                <TairoTableCell spaced>
                   <BaseButtonAction muted>Manage</BaseButtonAction>
-                </BaseTableCell>
-              </BaseTableRow>
-            </BaseTable>
+                </TairoTableCell>
+              </TairoTableRow>
+            </TairoTable>
           </div>
           <div class="mt-6">
             <BasePagination

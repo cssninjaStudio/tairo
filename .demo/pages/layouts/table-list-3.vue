@@ -84,9 +84,9 @@ const { data, pending, error, refresh } = await useFetch(
         </div>
         <div v-else>
           <div class="w-full">
-            <BaseTable shape="rounded">
+            <TairoTable shape="rounded">
               <template #header>
-                <BaseTableHeading uppercase spaced class="p-4">
+                <TairoTableHeading uppercase spaced class="p-4">
                   <div class="flex items-center">
                     <BaseCheckbox
                       name="table-1-main"
@@ -94,19 +94,19 @@ const { data, pending, error, refresh } = await useFetch(
                       class="text-primary-500"
                     />
                   </div>
-                </BaseTableHeading>
-                <BaseTableHeading uppercase spaced>Type</BaseTableHeading>
-                <BaseTableHeading uppercase spaced>Name</BaseTableHeading>
-                <BaseTableHeading uppercase spaced>Size</BaseTableHeading>
-                <BaseTableHeading uppercase spaced>Version</BaseTableHeading>
-                <BaseTableHeading uppercase spaced>
+                </TairoTableHeading>
+                <TairoTableHeading uppercase spaced>Type</TairoTableHeading>
+                <TairoTableHeading uppercase spaced>Name</TairoTableHeading>
+                <TairoTableHeading uppercase spaced>Size</TairoTableHeading>
+                <TairoTableHeading uppercase spaced>Version</TairoTableHeading>
+                <TairoTableHeading uppercase spaced>
                   Last Updated
-                </BaseTableHeading>
-                <BaseTableHeading uppercase spaced>Action</BaseTableHeading>
+                </TairoTableHeading>
+                <TairoTableHeading uppercase spaced>Action</TairoTableHeading>
               </template>
 
-              <BaseTableRow v-for="item in data?.data" :key="item.id">
-                <BaseTableCell spaced>
+              <TairoTableRow v-for="item in data?.data" :key="item.id">
+                <TairoTableCell spaced>
                   <div class="flex items-center">
                     <BaseCheckbox
                       :name="`item-checkbox-${item.id}`"
@@ -114,24 +114,24 @@ const { data, pending, error, refresh } = await useFetch(
                       class="text-primary-500"
                     />
                   </div>
-                </BaseTableCell>
-                <BaseTableCell light spaced>
+                </TairoTableCell>
+                <TairoTableCell light spaced>
                   <NuxtImg
                     :src="item.icon"
                     :alt="item.name"
                     class="max-w-[46px]"
                   />
-                </BaseTableCell>
-                <BaseTableCell spaced>
+                </TairoTableCell>
+                <TairoTableCell spaced>
                   <span class="font-medium">{{ item.name }}</span>
-                </BaseTableCell>
-                <BaseTableCell light spaced>
+                </TairoTableCell>
+                <TairoTableCell light spaced>
                   {{ item.size }}
-                </BaseTableCell>
-                <BaseTableCell light spaced>
+                </TairoTableCell>
+                <TairoTableCell light spaced>
                   {{ item.version }}
-                </BaseTableCell>
-                <BaseTableCell spaced>
+                </TairoTableCell>
+                <TairoTableCell spaced>
                   <div class="flex items-center">
                     <BaseAvatar
                       :src="item.author.picture"
@@ -148,12 +148,12 @@ const { data, pending, error, refresh } = await useFetch(
                       </p>
                     </div>
                   </div>
-                </BaseTableCell>
-                <BaseTableCell spaced>
+                </TairoTableCell>
+                <TairoTableCell spaced>
                   <BaseButtonAction muted>Manage</BaseButtonAction>
-                </BaseTableCell>
-              </BaseTableRow>
-            </BaseTable>
+                </TairoTableCell>
+              </TairoTableRow>
+            </TairoTable>
           </div>
           <div class="mt-6">
             <BasePagination

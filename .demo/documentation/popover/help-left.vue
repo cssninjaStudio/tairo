@@ -1,5 +1,5 @@
 <template>
-  <BasePopover size="sm">
+  <TairoPopover size="sm">
     <span
       class="flex items-center text-muted-500"
     >
@@ -13,7 +13,7 @@
     </span>
 
     <template #content>
-      <BasePopoverContentHelp
+      <TairoPopoverContentHelp
         title="Cookies"
         subtitle="Managing cookies"
         text="Lorem ipsum dolor sit amet, consectetur adipiscing elit solor
@@ -21,9 +21,9 @@
         icon="lucide:cookie"
       />
     </template>
-  </BasePopover>
+  </TairoPopover>
 
-  <BasePopover size="sm">
+  <TairoPopover size="sm">
     <span
       class="flex items-center text-muted-500"
     >
@@ -37,7 +37,7 @@
     </span>
 
     <template #content>
-      <BasePopoverContentHelp
+      <TairoPopoverContentHelp
         title="Dashboard"
         subtitle="Adding new widgets"
         text="Lorem ipsum dolor sit amet, consectetur adipiscing elit solor
@@ -46,5 +46,5 @@
         icon-color="success"
       />
     </template>
-  </BasePopover>
+  </TairoPopover>
 </template>

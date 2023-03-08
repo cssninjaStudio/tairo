@@ -17,10 +17,10 @@ definePageMeta({
   documentation: {
     category: 'Display',
     components: [
-      'BaseTable',
-      'BaseTableHeading',
-      'BaseTableRow',
-      'BaseTableCell',
+      'TairoTable',
+      'TairoTableHeading',
+      'TairoTableRow',
+      'TairoTableCell',
     ],
   },
 })
@@ -165,16 +165,16 @@ const demoBreadcrumb = [
         </DocSection>
 
         <!-- Table props -->
-        <DocComponentMeta name="BaseTable" />
+        <DocComponentMeta name="TairoTable" />
 
         <!-- Heading props -->
-        <DocComponentMeta name="BaseTableHeading" />
+        <DocComponentMeta name="TairoTableHeading" />
 
         <!-- Row props -->
-        <DocComponentMeta name="BaseTableRow" />
+        <DocComponentMeta name="TairoTableRow" />
 
         <!-- Cell props -->
-        <DocComponentMeta name="BaseTableCell" />
+        <DocComponentMeta name="TairoTableCell" />
       </template>
       <!-- Toc -->
       <template #toc>

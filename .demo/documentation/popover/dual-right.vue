@@ -1,5 +1,5 @@
 <template>
-  <BasePopover orientation="end">
+  <TairoPopover orientation="end">
     <div class="flex items-center">
       <BaseAvatar src="/img/avatars/2.svg" />
       <span
@@ -10,7 +10,7 @@
     </div>
 
     <template #content>
-      <BasePopoverContentDual
+      <TairoPopoverContentDual
         :stats="[
           {
             title: 'Angular',
@@ -33,5 +33,5 @@
         link="/"
       />
     </template>
-  </BasePopover>
+  </TairoPopover>
 </template>

@@ -34,9 +34,9 @@ definePageMeta({
       </template>
       <div>
         <div class="w-full">
-          <BaseTable shape="rounded">
+          <TairoTable shape="rounded">
             <template #header>
-              <BaseTableHeading uppercase spaced class="p-4">
+              <TairoTableHeading uppercase spaced class="p-4">
                 <div class="flex items-center">
                   <BaseCheckbox
                     name="table-1-main"
@@ -44,17 +44,19 @@ definePageMeta({
                     class="text-primary-500"
                   />
                 </div>
-              </BaseTableHeading>
-              <BaseTableHeading uppercase spaced>Type</BaseTableHeading>
-              <BaseTableHeading uppercase spaced>Name</BaseTableHeading>
-              <BaseTableHeading uppercase spaced>Size</BaseTableHeading>
-              <BaseTableHeading uppercase spaced>Version</BaseTableHeading>
-              <BaseTableHeading uppercase spaced>Last Updated</BaseTableHeading>
-              <BaseTableHeading uppercase spaced>Action</BaseTableHeading>
+              </TairoTableHeading>
+              <TairoTableHeading uppercase spaced>Type</TairoTableHeading>
+              <TairoTableHeading uppercase spaced>Name</TairoTableHeading>
+              <TairoTableHeading uppercase spaced>Size</TairoTableHeading>
+              <TairoTableHeading uppercase spaced>Version</TairoTableHeading>
+              <TairoTableHeading uppercase spaced>
+                Last Updated
+              </TairoTableHeading>
+              <TairoTableHeading uppercase spaced>Action</TairoTableHeading>
             </template>
 
-            <BaseTableRow v-for="index in 10" :key="index">
-              <BaseTableCell spaced>
+            <TairoTableRow v-for="index in 10" :key="index">
+              <TairoTableCell spaced>
                 <div class="flex items-center">
                   <BaseCheckbox
                     :name="`placeload-item-checkbox-${index}`"
@@ -62,20 +64,20 @@ definePageMeta({
                     class="text-primary-500"
                   />
                 </div>
-              </BaseTableCell>
-              <BaseTableCell light spaced>
+              </TairoTableCell>
+              <TairoTableCell light spaced>
                 <BasePlaceload class="w-[46px] h-[46px] rounded-xl shrink-0" />
-              </BaseTableCell>
-              <BaseTableCell spaced>
+              </TairoTableCell>
+              <TairoTableCell spaced>
                 <BasePlaceload class="w-24 h-3 rounded-lg" />
-              </BaseTableCell>
-              <BaseTableCell light spaced>
+              </TairoTableCell>
+              <TairoTableCell light spaced>
                 <BasePlaceload class="w-12 h-3 rounded-lg" />
-              </BaseTableCell>
-              <BaseTableCell light spaced>
+              </TairoTableCell>
+              <TairoTableCell light spaced>
                 <BasePlaceload class="w-12 h-3 rounded-lg" />
-              </BaseTableCell>
-              <BaseTableCell spaced>
+              </TairoTableCell>
+              <TairoTableCell spaced>
                 <div class="flex items-center gap-2">
                   <BasePlaceload class="w-8 h-8 rounded-full shrink-0" />
                   <div class="space-y-1">
@@ -83,12 +85,12 @@ definePageMeta({
                     <BasePlaceload class="w-[50px] h-2 rounded-lg" />
                   </div>
                 </div>
-              </BaseTableCell>
-              <BaseTableCell spaced>
+              </TairoTableCell>
+              <TairoTableCell spaced>
                 <BasePlaceload class="w-16 h-8 rounded-lg" />
-              </BaseTableCell>
-            </BaseTableRow>
-          </BaseTable>
+              </TairoTableCell>
+            </TairoTableRow>
+          </TairoTable>
         </div>
       </div>
     </ContentWrapper>

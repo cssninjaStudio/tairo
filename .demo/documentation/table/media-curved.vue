@@ -40,9 +40,9 @@ const team = [
 </script>
 
 <template>
-  <BaseTable shape="curved">
+  <TairoTable shape="curved">
     <template #header>
-      <BaseTableHeading uppercase class="p-4">
+      <TairoTableHeading uppercase class="p-4">
         <div class="flex items-center">
           <BaseCheckbox
             name="table-5-main"
@@ -50,29 +50,29 @@ const team = [
             class="text-primary-500"
           />
         </div>
-      </BaseTableHeading>
-      <BaseTableHeading uppercase>
+      </TairoTableHeading>
+      <TairoTableHeading uppercase>
         Collaborator
-      </BaseTableHeading>
-      <BaseTableHeading uppercase>
+      </TairoTableHeading>
+      <TairoTableHeading uppercase>
         Expertise
-      </BaseTableHeading>
-      <BaseTableHeading uppercase>
+      </TairoTableHeading>
+      <TairoTableHeading uppercase>
         Rate
-      </BaseTableHeading>
-      <BaseTableHeading uppercase>
+      </TairoTableHeading>
+      <TairoTableHeading uppercase>
         Status
-      </BaseTableHeading>
-      <BaseTableHeading uppercase class="p-4">
+      </TairoTableHeading>
+      <TairoTableHeading uppercase class="p-4">
         <span class="sr-only">View</span>
-      </BaseTableHeading>
+      </TairoTableHeading>
     </template>
 
-    <BaseTableRow
+    <TairoTableRow
       v-for="member in team"
       :key="member.id"
     >
-      <BaseTableCell class="p-4">
+      <TairoTableCell class="p-4">
         <div class="flex items-center">
           <BaseCheckbox
             :name="`table-5-${member.id}`"
@@ -80,8 +80,8 @@ const team = [
             class="text-primary-500"
           />
         </div>
-      </BaseTableCell>
-      <BaseTableCell>
+      </TairoTableCell>
+      <TairoTableCell>
         <div class="flex items-center">
           <BaseAvatar
             :src="member.src"
@@ -100,14 +100,14 @@ const team = [
             </p>
           </div>
         </div>
-      </BaseTableCell>
-      <BaseTableCell light>
+      </TairoTableCell>
+      <TairoTableCell light>
         {{ member.expertise }}
-      </BaseTableCell>
-      <BaseTableCell>
+      </TairoTableCell>
+      <TairoTableCell>
         \${{ member.rate }}/hour
-      </BaseTableCell>
-      <BaseTableCell>
+      </TairoTableCell>
+      <TairoTableCell>
         <BaseTag
           v-if="member.status === 'Available'"
           color="success"
@@ -135,15 +135,15 @@ const team = [
         >
           {{ member.status }}
         </BaseTag>
-      </BaseTableCell>
-      <BaseTableCell>
+      </TairoTableCell>
+      <TairoTableCell>
         <a
           href="#"
           class="text-primary-500 dark:text-primary-400 underline-offset-4 hover:opacity-75 hover:underline transition-opacity duration-300"
         >
           View
         </a>
-      </BaseTableCell>
-    </BaseTableRow>
-  </BaseTable>
+      </TairoTableCell>
+    </TairoTableRow>
+  </TairoTable>
 </template>

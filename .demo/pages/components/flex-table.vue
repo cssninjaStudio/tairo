@@ -11,10 +11,10 @@ definePageMeta({
   documentation: {
     category: 'Display',
     components: [
-      'BaseFlexTable',
-      'BaseFlexTableHeading',
-      'BaseFlexTableRow',
-      'BaseFlexTableCell',
+      'TairoFlexTable',
+      'TairoFlexTableHeading',
+      'TairoFlexTableRow',
+      'TairoFlexTableCell',
     ],
   },
 })
@@ -104,10 +104,10 @@ const demoBreadcrumb = [
         </DocSection>
 
         <!-- Flex table props -->
-        <DocComponentMeta name="BaseFlexTable" />
-        <DocComponentMeta name="BaseFlexTableHeading" />
-        <DocComponentMeta name="BaseFlexTableRow" />
-        <DocComponentMeta name="BaseFlexTableCell" />
+        <DocComponentMeta name="TairoFlexTable" />
+        <DocComponentMeta name="TairoFlexTableHeading" />
+        <DocComponentMeta name="TairoFlexTableRow" />
+        <DocComponentMeta name="TairoFlexTableCell" />
       </template>
       <!-- Toc -->
       <template #toc>

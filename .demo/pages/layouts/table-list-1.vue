@@ -83,9 +83,9 @@ const { data, pending, error, refresh } = await useFetch(
         </div>
         <div v-else>
           <div class="w-full">
-            <BaseTable shape="rounded">
+            <TairoTable shape="rounded">
               <template #header>
-                <BaseTableHeading uppercase spaced class="p-4">
+                <TairoTableHeading uppercase spaced class="p-4">
                   <div class="flex items-center">
                     <BaseCheckbox
                       name="table-1-main"
@@ -93,18 +93,20 @@ const { data, pending, error, refresh } = await useFetch(
                       class="text-primary-500"
                     />
                   </div>
-                </BaseTableHeading>
-                <BaseTableHeading uppercase spaced>
+                </TairoTableHeading>
+                <TairoTableHeading uppercase spaced>
                   Collaborator
-                </BaseTableHeading>
-                <BaseTableHeading uppercase spaced>Location</BaseTableHeading>
-                <BaseTableHeading uppercase spaced>Status</BaseTableHeading>
-                <BaseTableHeading uppercase spaced>Completed</BaseTableHeading>
-                <BaseTableHeading uppercase spaced>Action</BaseTableHeading>
+                </TairoTableHeading>
+                <TairoTableHeading uppercase spaced>Location</TairoTableHeading>
+                <TairoTableHeading uppercase spaced>Status</TairoTableHeading>
+                <TairoTableHeading uppercase spaced>
+                  Completed
+                </TairoTableHeading>
+                <TairoTableHeading uppercase spaced>Action</TairoTableHeading>
               </template>
 
-              <BaseTableRow v-for="item in data?.data" :key="item.id">
-                <BaseTableCell spaced>
+              <TairoTableRow v-for="item in data?.data" :key="item.id">
+                <TairoTableCell spaced>
                   <div class="flex items-center">
                     <BaseCheckbox
                       :name="`item-checkbox-${item.id}`"
@@ -112,8 +114,8 @@ const { data, pending, error, refresh } = await useFetch(
                       class="text-primary-500"
                     />
                   </div>
-                </BaseTableCell>
-                <BaseTableCell spaced>
+                </TairoTableCell>
+                <TairoTableCell spaced>
                   <div class="flex items-center">
                     <BaseAvatar
                       :src="item.picture"
@@ -129,11 +131,11 @@ const { data, pending, error, refresh } = await useFetch(
                       </p>
                     </div>
                   </div>
-                </BaseTableCell>
-                <BaseTableCell light spaced>
+                </TairoTableCell>
+                <TairoTableCell light spaced>
                   {{ item.location }}
-                </BaseTableCell>
-                <BaseTableCell spaced class="capitalize">
+                </TairoTableCell>
+                <TairoTableCell spaced class="capitalize">
                   <BaseTag
                     v-if="item.status === 'available'"
                     color="success"
@@ -174,8 +176,8 @@ const { data, pending, error, refresh } = await useFetch(
                   >
                     {{ item.status }}
                   </BaseTag>
-                </BaseTableCell>
-                <BaseTableCell spaced>
+                </TairoTableCell>
+                <TairoTableCell spaced>
                   <div class="flex items-center">
                     <div class="relative">
                       <BaseProgressCircle
@@ -194,12 +196,12 @@ const { data, pending, error, refresh } = await useFetch(
                       Tasks completed
                     </span>
                   </div>
-                </BaseTableCell>
-                <BaseTableCell spaced>
+                </TairoTableCell>
+                <TairoTableCell spaced>
                   <BaseButtonAction muted>Manage</BaseButtonAction>
-                </BaseTableCell>
-              </BaseTableRow>
-            </BaseTable>
+                </TairoTableCell>
+              </TairoTableRow>
+            </TairoTable>
           </div>
           <div class="mt-6">
             <BasePagination

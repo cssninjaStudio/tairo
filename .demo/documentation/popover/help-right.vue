@@ -1,5 +1,5 @@
 <template>
-  <BasePopover size="sm" orientation="end">
+  <TairoPopover size="sm" orientation="end">
     <span
       class="flex items-center text-muted-500"
     >
@@ -13,7 +13,7 @@
     </span>
 
     <template #content>
-      <BasePopoverContentHelp
+      <TairoPopoverContentHelp
         title="New design"
         subtitle="Adding new designs"
         text="Lorem ipsum dolor sit amet, consectetur adipiscing elit solor
@@ -22,9 +22,9 @@
         icon-color="info"
       />
     </template>
-  </BasePopover>
+  </TairoPopover>
 
-  <BasePopover size="sm" orientation="end">
+  <TairoPopover size="sm" orientation="end">
     <span
       class="flex items-center text-muted-500"
     >
@@ -38,7 +38,7 @@
     </span>
 
     <template #content>
-      <BasePopoverContentHelp
+      <TairoPopoverContentHelp
         title="Error"
         subtitle="Handling errors"
         text="Lorem ipsum dolor sit amet, consectetur adipiscing elit solor
@@ -47,5 +47,5 @@
         icon-color="danger"
       />
     </template>
-  </BasePopover>
+  </TairoPopover>
 </template>

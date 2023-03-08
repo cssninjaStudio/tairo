@@ -17,10 +17,10 @@ definePageMeta({
   documentation: {
     category: 'Interaction',
     components: [
-      'BasePopover',
-      'BasePopoverContentHelp',
-      'BasePopoverContentDual',
-      'BasePopoverContentMedia',
+      'TairoPopover',
+      'TairoPopoverContentHelp',
+      'TairoPopoverContentDual',
+      'TairoPopoverContentMedia',
     ],
   },
 })
@@ -161,16 +161,16 @@ const demoBreadcrumb = [
         </DocSection>
 
         <!-- Popover properties -->
-        <DocComponentMeta name="BasePopover" />
+        <DocComponentMeta name="TairoPopover" />
 
         <!-- Help properties -->
-        <DocComponentMeta name="BasePopoverContentHelp" />
+        <DocComponentMeta name="TairoPopoverContentHelp" />
 
         <!-- Dual properties -->
-        <DocComponentMeta name="BasePopoverContentDual" />
+        <DocComponentMeta name="TairoPopoverContentDual" />
 
         <!-- Media properties -->
-        <DocComponentMeta name="BasePopoverContentMedia" />
+        <DocComponentMeta name="TairoPopoverContentMedia" />
       </template>
       <!-- Toc -->
       <template #toc>

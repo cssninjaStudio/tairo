@@ -1,5 +1,5 @@
 <template>
-  <BasePopover orientation="start">
+  <TairoPopover orientation="start">
     <div class="flex items-center">
       <BaseAvatar src="/img/avatars/3.svg" />
       <span
@@ -10,7 +10,7 @@
     </div>
 
     <template #content>
-      <BasePopoverContentDual
+      <TairoPopoverContentDual
         :stats="[
           {
             title: 'Javascript',
@@ -33,5 +33,5 @@
         link="/"
       />
     </template>
-  </BasePopover>
+  </TairoPopover>
 </template>

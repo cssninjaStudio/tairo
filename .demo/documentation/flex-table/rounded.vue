@@ -40,9 +40,9 @@ const team = [
 </script>
 
 <template>
-  <BaseFlexTable>
+  <TairoFlexTable>
     <template #header>
-      <BaseFlexTableHeading type="shrink">
+      <TairoFlexTableHeading type="shrink">
         <div class="flex items-center">
           <BaseCheckbox
             name="table-1-main"
@@ -50,30 +50,30 @@ const team = [
             class="text-primary-500"
           />
         </div>
-      </BaseFlexTableHeading>
-      <BaseFlexTableHeading type="grow">
+      </TairoFlexTableHeading>
+      <TairoFlexTableHeading type="grow">
         Member
-      </BaseFlexTableHeading>
-      <BaseFlexTableHeading type="stable">
+      </TairoFlexTableHeading>
+      <TairoFlexTableHeading type="stable">
         Expertise
-      </BaseFlexTableHeading>
-      <BaseFlexTableHeading type="stable">
+      </TairoFlexTableHeading>
+      <TairoFlexTableHeading type="stable">
         Rate
-      </BaseFlexTableHeading>
-      <BaseFlexTableHeading type="stable">
+      </TairoFlexTableHeading>
+      <TairoFlexTableHeading type="stable">
         Status
-      </BaseFlexTableHeading>
-      <BaseFlexTableHeading type="stable">
+      </TairoFlexTableHeading>
+      <TairoFlexTableHeading type="stable">
         Actions
-      </BaseFlexTableHeading>
+      </TairoFlexTableHeading>
     </template>
 
-    <BaseFlexTableRow
+    <TairoFlexTableRow
       v-for="member in team"
       :key="member.id"
       shape="rounded"
     >
-      <BaseFlexTableCell
+      <TairoFlexTableCell
         type="shrink"
         data-content="Selection"
       >
@@ -84,8 +84,8 @@ const team = [
             class="text-primary-500"
           />
         </div>
-      </BaseFlexTableCell>
-      <BaseFlexTableCell
+      </TairoFlexTableCell>
+      <TairoFlexTableCell
         type="grow"
         data-content="Member"
       >
@@ -107,21 +107,21 @@ const team = [
             </p>
           </div>
         </div>
-      </BaseFlexTableCell>
-      <BaseFlexTableCell
+      </TairoFlexTableCell>
+      <TairoFlexTableCell
         type="stable"
         data-content="Expertise"
         light
       >
         {{ member.expertise }}
-      </BaseFlexTableCell>
-      <BaseFlexTableCell
+      </TairoFlexTableCell>
+      <TairoFlexTableCell
         type="stable"
         data-content="Rate"
       >
         ${{ member.rate }}/hour
-      </BaseFlexTableCell>
-      <BaseFlexTableCell
+      </TairoFlexTableCell>
+      <TairoFlexTableCell
         type="stable"
         data-content="Status"
       >
@@ -152,8 +152,8 @@ const team = [
         >
           {{ member.status }}
         </BaseTag>
-      </BaseFlexTableCell>
-      <BaseFlexTableCell
+      </TairoFlexTableCell>
+      <TairoFlexTableCell
         type="stable"
         data-content="Actions"
       >
@@ -165,7 +165,7 @@ const team = [
         >
           View
         </BaseButton>
-      </BaseFlexTableCell>
-    </BaseFlexTableRow>
-  </BaseFlexTable>
+      </TairoFlexTableCell>
+    </TairoFlexTableRow>
+  </TairoFlexTable>
 </template>
