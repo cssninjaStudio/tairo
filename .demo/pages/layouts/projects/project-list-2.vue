@@ -41,7 +41,7 @@ const { data, pending, error, refresh } = await useFetch(
         <BaseInput
           v-model="filter"
           icon="lucide:search"
-          shape="rounded"
+          shape="curved"
           placeholder="Filter projects..."
           :classes="{
             wrapper: 'w-full sm:w-auto',
@@ -49,7 +49,7 @@ const { data, pending, error, refresh } = await useFetch(
         />
       </template>
       <template #right>
-        <BaseButton color="primary" class="w-full sm:w-32" shape="rounded">
+        <BaseButton color="primary" class="w-full sm:w-32" shape="curved">
           <Icon name="lucide:plus" class="w-4 h-4" />
           <span>New</span>
         </BaseButton>
@@ -57,7 +57,7 @@ const { data, pending, error, refresh } = await useFetch(
       <div class="space-y-10">
         <div>
           <div v-if="!pending && data?.recent.length === 0">
-            <div class="p-6 rounded-lg bg-muted-200 dark:bg-muted-800/60">
+            <div class="p-6 rounded-xl bg-muted-200 dark:bg-muted-800/60">
               <BaseHeading tag="h4" size="lg" weight="medium">
                 Empty history
               </BaseHeading>
@@ -89,10 +89,10 @@ const { data, pending, error, refresh } = await useFetch(
                   v-for="(item, r) in data?.recent.slice(0, 4)"
                   :key="r"
                   class="block group"
-                  to="/"
+                  :to="`/layouts/projects/details/${item.slug}`"
                 >
                   <BaseCard
-                    shape="rounded"
+                    shape="curved"
                     elevated-hover
                     class="p-5 group-hover:!border-primary-500"
                   >
@@ -100,6 +100,7 @@ const { data, pending, error, refresh } = await useFetch(
                       <BaseAvatar
                         :src="item.customer.logo"
                         size="sm"
+                        shape="square"
                         :tooltip="item.name"
                         class="bg-muted-100 dark:bg-muted-700"
                       />
@@ -124,6 +125,7 @@ const { data, pending, error, refresh } = await useFetch(
                           :key="stack.name"
                           :src="stack.icon"
                           size="xxs"
+                          shape="square"
                           :tooltip="stack.name"
                           class="bg-muted-100 dark:bg-muted-700"
                         />
@@ -189,23 +191,27 @@ const { data, pending, error, refresh } = await useFetch(
                 <BaseCard
                   v-for="(item, index) in data?.data"
                   :key="index"
-                  shape="rounded"
+                  shape="curved"
                   elevated-hover
                   class="hover:!border-primary-500"
                 >
-                  <NuxtLink class="group" to="/">
+                  <NuxtLink
+                    class="group"
+                    :to="`/layouts/projects/details/${item.slug}`"
+                  >
                     <div class="p-5">
                       <div class="relative mb-4">
                         <img
                           :src="item.image"
                           :alt="item.name"
-                          class="rounded-md"
+                          class="rounded-lg"
                         />
                       </div>
                       <div class="flex gap-2 mb-6">
                         <BaseAvatar
                           :src="item.customer.logo"
                           size="sm"
+                          shape="square"
                           :tooltip="item.name"
                           class="bg-muted-100 dark:bg-muted-700"
                         />
@@ -231,6 +237,7 @@ const { data, pending, error, refresh } = await useFetch(
                             :key="stack.name"
                             :src="stack.icon"
                             size="xxs"
+                            shape="square"
                             :tooltip="stack.name"
                             class="bg-muted-100 dark:bg-muted-700"
                           />
@@ -252,7 +259,7 @@ const { data, pending, error, refresh } = await useFetch(
                       </div>
                     </div>
                     <div
-                      class="flex items-center justify-between px-5 py-3 border-t rounded-b-lg border-muted-200 dark:border-muted-700 bg-muted-50 dark:bg-muted-700/50"
+                      class="flex items-center justify-between px-5 py-3 border-t rounded-b-xl border-muted-200 dark:border-muted-700 bg-muted-50 dark:bg-muted-700/50"
                     >
                       <div>
                         <p class="font-sans text-sm text-muted-400">

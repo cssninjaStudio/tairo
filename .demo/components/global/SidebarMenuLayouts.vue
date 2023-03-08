@@ -602,7 +602,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
               <ul class="py-2 pl-3">
                 <li class="flex h-8 items-center">
                   <NuxtLink
-                    to="/layouts/project-list-1"
+                    to="/layouts/projects"
                     class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
                   >
                     <Icon name="ph:leaf-duotone" class="mr-2 h-5 w-5" />
@@ -611,7 +611,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                 </li>
                 <li class="flex h-8 items-center">
                   <NuxtLink
-                    to="/layouts/project-list-2"
+                    to="/layouts/projects/project-list-2"
                     class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
                   >
                     <Icon name="ph:leaf-duotone" class="mr-2 h-5 w-5" />
@@ -620,7 +620,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                 </li>
                 <li class="flex h-8 items-center">
                   <NuxtLink
-                    to="/layouts/project-list-3"
+                    to="/layouts/projects/project-list-3"
                     class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
                   >
                     <Icon name="ph:leaf-duotone" class="mr-2 h-5 w-5" />
@@ -629,7 +629,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                 </li>
                 <li class="flex h-8 items-center">
                   <NuxtLink
-                    to="/layouts/project-details"
+                    to="/layouts/projects/details/delivery-app-project"
                     class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
                   >
                     <Icon name="ph:note-duotone" class="mr-2 h-5 w-5" />
@@ -638,7 +638,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                 </li>
                 <li class="flex h-8 items-center">
                   <NuxtLink
-                    to="/layouts/project-board"
+                    to="/layouts/projects/board/delivery-app-project"
                     class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
                   >
                     <Icon name="ph:squares-four-duotone" class="mr-2 h-5 w-5" />

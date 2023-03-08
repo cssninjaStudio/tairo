@@ -3,6 +3,7 @@ export default defineEventHandler(async (event) => {
   const perPage = parseInt((query.perPage as string) || '5', 10)
   const page = parseInt((query.page as string) || '1', 10)
   const filter = (query.filter as string) || ''
+  const slug = (query.slug as string) || ''
 
   if (perPage >= 50) {
     // Create an artificial delay
@@ -15,6 +16,7 @@ export default defineEventHandler(async (event) => {
     total: data.length,
     data: filterDemoData(data, filter, page, perPage),
     recent: data.filter((item) => item.recent === true),
+    project: slug ? data.find((item) => item.slug === slug) : undefined,
   }
 })
 
@@ -42,10 +44,12 @@ async function getDemoData() {
   return Promise.resolve([
     {
       id: '1',
+      slug: 'delivery-app-project',
       name: 'Delivery App Project',
       dueDate: 'August 2020',
       updated: '3m ago',
       image: '/img/apps/1.jpg',
+      completed: 75,
       recent: false,
       category: 'UI/UX Design',
       description:
@@ -58,6 +62,9 @@ async function getDemoData() {
       owner: {
         id: 7,
         avatar: '/img/avatars/3.svg',
+        badge: '/img/stacks/reactjs.svg',
+        role: 'Frontend Developer',
+        bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
         name: 'Clarke G.',
         text: 'CG',
       },
@@ -65,18 +72,27 @@ async function getDemoData() {
         {
           id: 27,
           src: '/img/avatars/24.svg',
+          badge: '/img/stacks/illustrator.svg',
+          role: 'UI/UX Designer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Carmen E.',
           text: 'CE',
         },
         {
           id: 15,
           src: '/img/avatars/15.svg',
+          badge: '/img/stacks/js.svg',
+          role: 'Fullstack Developer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Josh C.',
-          text: 'JS',
+          text: 'JC',
         },
         {
           id: 12,
           src: '/img/avatars/12.svg',
+          badge: '/img/stacks/csharp.svg',
+          role: 'Backend Developer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Marjory L.',
           text: 'ML',
         },
@@ -192,12 +208,60 @@ async function getDemoData() {
       tasks: [
         {
           id: 0,
-          name: 'Create a new design for the homepage',
+          name: 'Create a new figma design for the new homepage elements',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
           completion: 75,
           created: '2 days ago',
-          attachments: 3,
+          attachments: 2,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -231,6 +295,54 @@ async function getDemoData() {
           description:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
           completion: 25,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           created: '2 days ago',
           attachments: 0,
           comments: [
@@ -268,6 +380,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -303,6 +463,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -338,6 +546,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -373,6 +629,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -408,6 +712,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -443,6 +795,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -479,10 +879,12 @@ async function getDemoData() {
     },
     {
       id: '2',
+      slug: 'health-and-fitness-dashboard',
       name: 'Health and Fitness Dashboard',
       dueDate: 'October 2020',
       updated: '5h ago',
       image: '/img/apps/2.png',
+      completed: 75,
       recent: true,
       category: 'UI/UX Design',
       description:
@@ -495,6 +897,9 @@ async function getDemoData() {
       owner: {
         id: 8,
         avatar: '/img/avatars/12.svg',
+        badge: '/img/stacks/js.svg',
+        role: 'UI/UX Designer',
+        bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
         name: 'Marjory L.',
         text: 'ML',
       },
@@ -502,12 +907,18 @@ async function getDemoData() {
         {
           id: 13,
           src: '/img/avatars/10.svg',
+          badge: '/img/stacks/js.svg',
+          role: 'UI/UX Designer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Kendra W.',
           text: 'KW',
         },
         {
           id: 21,
           src: '/img/avatars/21.svg',
+          badge: '/img/stacks/js.svg',
+          role: 'UI/UX Designer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Elizabet F.',
           text: 'EF',
         },
@@ -625,10 +1036,58 @@ async function getDemoData() {
           id: 0,
           name: 'Create a new design for the homepage',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
           completion: 75,
           created: '2 days ago',
-          attachments: 3,
+          attachments: 2,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -662,6 +1121,54 @@ async function getDemoData() {
           description:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
           completion: 25,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           created: '2 days ago',
           attachments: 0,
           comments: [
@@ -699,6 +1206,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -734,6 +1289,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -769,6 +1372,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -804,6 +1455,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -839,6 +1538,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -874,6 +1621,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -910,10 +1705,12 @@ async function getDemoData() {
     },
     {
       id: '3',
+      slug: 'learning-tracker-dashboard',
       name: 'Learning Tracker Dashboard',
       dueDate: 'September 2020',
       updated: '5h ago',
       image: '/img/apps/3.jpg',
+      completed: 75,
       recent: false,
       category: 'UI/UX Design',
       description:
@@ -926,6 +1723,9 @@ async function getDemoData() {
       owner: {
         id: 25,
         avatar: '/img/avatars/2.svg',
+        badge: '/img/stacks/js.svg',
+        role: 'UI/UX Designer',
+        bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
         name: 'Maya R.',
         text: 'MR',
       },
@@ -933,6 +1733,9 @@ async function getDemoData() {
         {
           id: 14,
           src: '/img/avatars/14.svg',
+          badge: '/img/stacks/js.svg',
+          role: 'UI/UX Designer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Ryan B.',
           text: 'RB',
         },
@@ -1050,10 +1853,58 @@ async function getDemoData() {
           id: 0,
           name: 'Create a new design for the homepage',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
           completion: 75,
           created: '2 days ago',
-          attachments: 3,
+          attachments: 2,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -1087,6 +1938,54 @@ async function getDemoData() {
           description:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
           completion: 25,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           created: '2 days ago',
           attachments: 0,
           comments: [
@@ -1124,6 +2023,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -1159,6 +2106,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -1194,6 +2189,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -1229,6 +2272,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -1264,6 +2355,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -1299,6 +2438,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -1335,10 +2522,12 @@ async function getDemoData() {
     },
     {
       id: '4',
+      slug: 'banking-and-finance-dashboard',
       name: 'Banking and Finance Dashboard',
       dueDate: 'October 2020',
       updated: '5h ago',
       image: '/img/apps/4.jpg',
+      completed: 75,
       recent: true,
       category: 'UI/UX Design',
       description:
@@ -1351,6 +2540,9 @@ async function getDemoData() {
       owner: {
         id: 23,
         avatar: '/img/avatars/16.svg',
+        badge: '/img/stacks/js.svg',
+        role: 'UI/UX Designer',
+        bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
         name: 'Hermann M.',
         text: 'HM',
       },
@@ -1358,12 +2550,18 @@ async function getDemoData() {
         {
           id: 13,
           src: '/img/avatars/5.svg',
+          badge: '/img/stacks/js.svg',
+          role: 'UI/UX Designer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Clarissa M.',
           text: 'CM',
         },
         {
           id: 21,
           src: '/img/avatars/3.svg',
+          badge: '/img/stacks/js.svg',
+          role: 'UI/UX Designer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Clarke G.',
           text: 'CG',
         },
@@ -1467,7 +2665,7 @@ async function getDemoData() {
         },
         {
           name: 'Android',
-          description: 'Programming Language',
+          description: 'Mobile Framework',
           icon: '/img/stacks/android.svg',
         },
         {
@@ -1481,10 +2679,58 @@ async function getDemoData() {
           id: 0,
           name: 'Create a new design for the homepage',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
           completion: 75,
           created: '2 days ago',
-          attachments: 3,
+          attachments: 2,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -1518,6 +2764,54 @@ async function getDemoData() {
           description:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
           completion: 25,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           created: '2 days ago',
           attachments: 0,
           comments: [
@@ -1555,6 +2849,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -1590,6 +2932,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -1625,6 +3015,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -1660,6 +3098,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -1695,6 +3181,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -1730,6 +3264,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -1766,10 +3348,12 @@ async function getDemoData() {
     },
     {
       id: '5',
-      name: 'Resume Management Mobile App',
+      slug: 'resume-management-mobile-app',
+      name: 'Resume Management App',
       dueDate: 'October 2020',
       updated: '2h ago',
       image: '/img/apps/5.jpg',
+      completed: 75,
       recent: false,
       category: 'UI/UX Design',
       description:
@@ -1782,6 +3366,9 @@ async function getDemoData() {
       owner: {
         id: 11,
         avatar: '/img/avatars/11.svg',
+        badge: '/img/stacks/js.svg',
+        role: 'UI/UX Designer',
+        bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
         name: 'Mike B.',
         text: 'MB',
       },
@@ -1789,12 +3376,18 @@ async function getDemoData() {
         {
           id: 30,
           src: '/img/avatars/10.svg',
+          badge: '/img/stacks/js.svg',
+          role: 'UI/UX Designer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Kendra W.',
           text: 'KW',
         },
         {
           id: 39,
           src: '/img/avatars/25.svg',
+          badge: '/img/stacks/js.svg',
+          role: 'UI/UX Designer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Melany L.',
           text: 'ML',
         },
@@ -1912,10 +3505,58 @@ async function getDemoData() {
           id: 0,
           name: 'Create a new design for the homepage',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
           completion: 75,
           created: '2 days ago',
-          attachments: 3,
+          attachments: 2,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -1949,6 +3590,54 @@ async function getDemoData() {
           description:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
           completion: 25,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           created: '2 days ago',
           attachments: 0,
           comments: [
@@ -1986,6 +3675,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -2021,6 +3758,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -2056,6 +3841,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -2091,6 +3924,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -2126,6 +4007,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -2161,6 +4090,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -2197,10 +4174,12 @@ async function getDemoData() {
     },
     {
       id: '6',
+      slug: 'banking-landing-page',
       name: 'Banking Landing Page',
       dueDate: 'December 2020',
       updated: '3d ago',
       image: '/img/apps/6.png',
+      completed: 75,
       recent: false,
       category: 'UI/UX Design',
       description:
@@ -2213,6 +4192,9 @@ async function getDemoData() {
       owner: {
         id: 9,
         avatar: '/img/avatars/9.svg',
+        badge: '/img/stacks/js.svg',
+        role: 'UI/UX Designer',
+        bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
         name: 'Ana B.',
         text: 'AB',
       },
@@ -2220,18 +4202,27 @@ async function getDemoData() {
         {
           id: 15,
           src: '/img/avatars/15.svg',
+          badge: '/img/stacks/js.svg',
+          role: 'UI/UX Designer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Josh C.',
           text: 'JS',
         },
         {
           id: 40,
           src: '/img/avatars/20.svg',
+          badge: '/img/stacks/js.svg',
+          role: 'UI/UX Designer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Harold S',
           text: 'HS',
         },
         {
           id: 8,
           src: '/img/avatars/11.svg',
+          badge: '/img/stacks/js.svg',
+          role: 'UI/UX Designer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Mike B.',
           text: 'MB',
         },
@@ -2349,10 +4340,58 @@ async function getDemoData() {
           id: 0,
           name: 'Create a new design for the homepage',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
           completion: 75,
           created: '2 days ago',
-          attachments: 3,
+          attachments: 2,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -2386,6 +4425,54 @@ async function getDemoData() {
           description:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
           completion: 25,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           created: '2 days ago',
           attachments: 0,
           comments: [
@@ -2423,6 +4510,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -2458,6 +4593,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -2493,6 +4676,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -2528,6 +4759,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -2563,6 +4842,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -2598,6 +4925,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -2634,10 +5009,12 @@ async function getDemoData() {
     },
     {
       id: '7',
+      slug: 'learning-app-design',
       name: 'Learning App Design',
       dueDate: 'November 2020',
       updated: '1h ago',
       image: '/img/apps/7.png',
+      completed: 75,
       recent: true,
       category: 'UI/UX Design',
       description:
@@ -2650,6 +5027,9 @@ async function getDemoData() {
       owner: {
         id: 25,
         avatar: '/img/avatars/25.svg',
+        badge: '/img/stacks/js.svg',
+        role: 'UI/UX Designer',
+        bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
         name: 'Melany L.',
         text: 'ML',
       },
@@ -2657,6 +5037,9 @@ async function getDemoData() {
         {
           id: 11,
           src: '/img/avatars/11.svg',
+          badge: '/img/stacks/js.svg',
+          role: 'UI/UX Designer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Mike B.',
           text: 'MB',
         },
@@ -2774,10 +5157,58 @@ async function getDemoData() {
           id: 0,
           name: 'Create a new design for the homepage',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
           completion: 75,
           created: '2 days ago',
-          attachments: 3,
+          attachments: 2,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -2811,6 +5242,54 @@ async function getDemoData() {
           description:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
           completion: 25,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           created: '2 days ago',
           attachments: 0,
           comments: [
@@ -2848,6 +5327,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -2883,6 +5410,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -2918,6 +5493,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -2953,6 +5576,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -2988,6 +5659,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -3023,6 +5742,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -3059,10 +5826,12 @@ async function getDemoData() {
     },
     {
       id: '8',
+      slug: 'educational-app-design',
       name: 'Educational App Design',
       dueDate: 'November 2020',
       updated: '4d ago',
       image: '/img/apps/8.png',
+      completed: 75,
       recent: false,
       category: 'UI/UX Design',
       description:
@@ -3075,6 +5844,9 @@ async function getDemoData() {
       owner: {
         id: 5,
         avatar: '/img/avatars/5.svg',
+        badge: '/img/stacks/js.svg',
+        role: 'UI/UX Designer',
+        bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
         name: 'Clarissa M.',
         text: 'CM',
       },
@@ -3082,18 +5854,27 @@ async function getDemoData() {
         {
           id: 21,
           src: '/img/avatars/9.svg',
+          badge: '/img/stacks/js.svg',
+          role: 'UI/UX Designer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Ana B.',
           text: 'AB',
         },
         {
           id: 29,
           src: '/img/avatars/10.svg',
+          badge: '/img/stacks/js.svg',
+          role: 'UI/UX Designer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Kendra W.',
           text: 'KW',
         },
         {
           id: 33,
           src: '/img/avatars/18.svg',
+          badge: '/img/stacks/js.svg',
+          role: 'UI/UX Designer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Harvey M.',
           text: 'HM',
         },
@@ -3211,10 +5992,58 @@ async function getDemoData() {
           id: 0,
           name: 'Create a new design for the homepage',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
           completion: 75,
           created: '2 days ago',
-          attachments: 3,
+          attachments: 2,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -3248,6 +6077,54 @@ async function getDemoData() {
           description:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
           completion: 25,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           created: '2 days ago',
           attachments: 0,
           comments: [
@@ -3285,6 +6162,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -3320,6 +6245,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -3355,6 +6328,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -3390,6 +6411,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -3425,6 +6494,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -3460,6 +6577,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -3496,10 +6661,12 @@ async function getDemoData() {
     },
     {
       id: '9',
+      slug: 'banking-solution-website',
       name: 'Banking Solution Website',
       dueDate: 'October 2020',
       updated: '2h ago',
       image: '/img/apps/9.png',
+      completed: 75,
       recent: false,
       category: 'UI/UX Design',
       description:
@@ -3512,6 +6679,9 @@ async function getDemoData() {
       owner: {
         id: 27,
         avatar: '/img/avatars/24.svg',
+        badge: '/img/stacks/js.svg',
+        role: 'UI/UX Designer',
+        bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
         name: 'Carmen E.',
         text: 'CE',
       },
@@ -3519,12 +6689,18 @@ async function getDemoData() {
         {
           id: 30,
           src: '/img/avatars/3.svg',
+          badge: '/img/stacks/js.svg',
+          role: 'UI/UX Designer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Clarke G.',
           text: 'CG',
         },
         {
           id: 19,
           src: '/img/avatars/19.svg',
+          badge: '/img/stacks/js.svg',
+          role: 'UI/UX Designer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Greta K.',
           text: 'GK',
         },
@@ -3642,10 +6818,58 @@ async function getDemoData() {
           id: 0,
           name: 'Create a new design for the homepage',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
           completion: 75,
           created: '2 days ago',
-          attachments: 3,
+          attachments: 2,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -3679,6 +6903,54 @@ async function getDemoData() {
           description:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
           completion: 25,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           created: '2 days ago',
           attachments: 0,
           comments: [
@@ -3716,6 +6988,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -3751,6 +7071,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -3786,6 +7154,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -3821,6 +7237,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -3856,6 +7320,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -3891,6 +7403,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -3927,10 +7487,12 @@ async function getDemoData() {
     },
     {
       id: '10',
+      slug: 'hr-webapp-design',
       name: 'HR Webapp Design',
       dueDate: 'August 2020',
       updated: '2h ago',
       image: '/img/apps/10.png',
+      completed: 75,
       recent: false,
       category: 'UI/UX Design',
       description:
@@ -3943,6 +7505,9 @@ async function getDemoData() {
       owner: {
         id: 27,
         avatar: '/img/avatars/24.svg',
+        badge: '/img/stacks/js.svg',
+        role: 'UI/UX Designer',
+        bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
         name: 'Carmen E.',
         text: 'CE',
       },
@@ -3950,12 +7515,18 @@ async function getDemoData() {
         {
           id: 24,
           src: '/img/avatars/22.svg',
+          badge: '/img/stacks/js.svg',
+          role: 'UI/UX Designer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Sandrine C.',
           text: 'SC',
         },
         {
           id: 22,
           src: '/img/avatars/10.svg',
+          badge: '/img/stacks/js.svg',
+          role: 'UI/UX Designer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Kendra W.',
           text: 'KW',
         },
@@ -4073,10 +7644,58 @@ async function getDemoData() {
           id: 0,
           name: 'Create a new design for the homepage',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
           completion: 75,
           created: '2 days ago',
-          attachments: 3,
+          attachments: 2,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -4110,6 +7729,54 @@ async function getDemoData() {
           description:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
           completion: 25,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           created: '2 days ago',
           attachments: 0,
           comments: [
@@ -4147,6 +7814,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -4182,6 +7897,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -4217,6 +7980,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -4252,6 +8063,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -4287,6 +8146,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -4322,6 +8229,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -4358,10 +8313,12 @@ async function getDemoData() {
     },
     {
       id: '11',
+      slug: 'ice-cream-delivery-dashboard',
       name: 'Ice Cream Delivery Dashboard',
       dueDate: 'January 2021',
       updated: '2h ago',
       image: '/img/apps/11.png',
+      completed: 75,
       recent: false,
       category: 'UI/UX Design',
       description:
@@ -4374,6 +8331,9 @@ async function getDemoData() {
       owner: {
         id: 13,
         avatar: '/img/avatars/13.svg',
+        badge: '/img/stacks/js.svg',
+        role: 'UI/UX Designer',
+        bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
         name: 'Terry S.',
         text: 'TS',
       },
@@ -4381,6 +8341,9 @@ async function getDemoData() {
         {
           id: 28,
           src: '/img/avatars/9.svg',
+          badge: '/img/stacks/js.svg',
+          role: 'UI/UX Designer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Ana B.',
           text: 'AB',
         },
@@ -4498,10 +8461,58 @@ async function getDemoData() {
           id: 0,
           name: 'Create a new design for the homepage',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
           completion: 75,
           created: '2 days ago',
-          attachments: 3,
+          attachments: 2,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -4535,6 +8546,54 @@ async function getDemoData() {
           description:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
           completion: 25,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           created: '2 days ago',
           attachments: 0,
           comments: [
@@ -4572,6 +8631,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -4607,6 +8714,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -4642,6 +8797,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -4677,6 +8880,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -4712,6 +8963,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -4747,6 +9046,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -4783,10 +9130,12 @@ async function getDemoData() {
     },
     {
       id: '12',
+      slug: 'mobile-app-landing-page',
       name: 'Mobile App Landing Page',
       dueDate: 'November 2020',
       updated: '4d ago',
       image: '/img/apps/12.jpg',
+      completed: 75,
       recent: false,
       category: 'UI/UX Design',
       description:
@@ -4799,6 +9148,9 @@ async function getDemoData() {
       owner: {
         id: 12,
         avatar: '/img/avatars/10.svg',
+        badge: '/img/stacks/js.svg',
+        role: 'UI/UX Designer',
+        bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
         name: 'Kendra W.',
         text: 'KW',
       },
@@ -4807,6 +9159,9 @@ async function getDemoData() {
           id: 119,
           src: undefined,
           tooltip: 'Sarah Connor.',
+          badge: '/img/stacks/js.svg',
+          role: 'UI/UX Designer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           text: 'SC',
         },
       ],
@@ -4923,10 +9278,58 @@ async function getDemoData() {
           id: 0,
           name: 'Create a new design for the homepage',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
           completion: 75,
           created: '2 days ago',
-          attachments: 3,
+          attachments: 2,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -4960,6 +9363,54 @@ async function getDemoData() {
           description:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
           completion: 25,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           created: '2 days ago',
           attachments: 0,
           comments: [
@@ -4997,6 +9448,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -5032,6 +9531,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -5067,6 +9614,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -5102,6 +9697,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -5137,6 +9780,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -5172,6 +9863,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -5208,10 +9947,12 @@ async function getDemoData() {
     },
     {
       id: '13',
+      slug: 'web-marketing-landing-page',
       name: 'Web Marketing Landing Page',
       dueDate: 'November 2020',
       updated: '3m ago',
       image: '/img/apps/13.png',
+      completed: 75,
       recent: false,
       category: 'UI/UX Design',
       description:
@@ -5224,6 +9965,9 @@ async function getDemoData() {
       owner: {
         id: 12,
         avatar: '/img/avatars/20.svg',
+        badge: '/img/stacks/js.svg',
+        role: 'UI/UX Designer',
+        bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
         name: 'Harold S.',
         text: 'HS',
       },
@@ -5231,18 +9975,27 @@ async function getDemoData() {
         {
           id: 8,
           src: '/img/avatars/3.svg',
+          badge: '/img/stacks/js.svg',
+          role: 'UI/UX Designer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Clarke G.',
           text: 'CG',
         },
         {
           id: 15,
           src: '/img/avatars/16.svg',
+          badge: '/img/stacks/js.svg',
+          role: 'UI/UX Designer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Hermann M.',
           text: 'HM',
         },
         {
           id: 12,
           src: '/img/avatars/8.svg',
+          badge: '/img/stacks/js.svg',
+          role: 'UI/UX Designer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Mario T.',
           text: 'MT',
         },
@@ -5360,10 +10113,58 @@ async function getDemoData() {
           id: 0,
           name: 'Create a new design for the homepage',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
           completion: 75,
           created: '2 days ago',
-          attachments: 3,
+          attachments: 2,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -5397,6 +10198,54 @@ async function getDemoData() {
           description:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
           completion: 25,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           created: '2 days ago',
           attachments: 0,
           comments: [
@@ -5434,6 +10283,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -5469,6 +10366,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -5504,6 +10449,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -5539,6 +10532,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -5574,6 +10615,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -5609,6 +10698,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -5645,10 +10782,12 @@ async function getDemoData() {
     },
     {
       id: '14',
+      slug: 'startup-landing-page',
       name: 'Startup Landing Page',
       dueDate: 'November 2020',
       updated: '3m ago',
       image: '/img/apps/14.jpg',
+      completed: 75,
       recent: false,
       category: 'UI/UX Design',
       description:
@@ -5661,6 +10800,9 @@ async function getDemoData() {
       owner: {
         id: 15,
         avatar: '/img/avatars/15.svg',
+        badge: '/img/stacks/js.svg',
+        role: 'UI/UX Designer',
+        bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
         name: 'Josh K.',
         text: 'JK',
       },
@@ -5668,6 +10810,9 @@ async function getDemoData() {
         {
           id: 31,
           src: undefined,
+          badge: '/img/stacks/js.svg',
+          role: 'UI/UX Designer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Yasseen A.',
           text: 'YA',
         },
@@ -5785,10 +10930,58 @@ async function getDemoData() {
           id: 0,
           name: 'Create a new design for the homepage',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
           completion: 75,
           created: '2 days ago',
-          attachments: 3,
+          attachments: 2,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -5822,6 +11015,54 @@ async function getDemoData() {
           description:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
           completion: 25,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           created: '2 days ago',
           attachments: 0,
           comments: [
@@ -5859,6 +11100,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -5894,6 +11183,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -5929,6 +11266,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -5964,6 +11349,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -5999,6 +11432,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -6034,6 +11515,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -6070,10 +11599,12 @@ async function getDemoData() {
     },
     {
       id: '15',
+      slug: 'expense-management-system',
       name: 'Expense Management System',
       dueDate: 'January 2021',
       updated: '2d ago',
       image: '/img/apps/15.png',
+      completed: 75,
       recent: true,
       category: 'UI/UX Design',
       description:
@@ -6086,6 +11617,9 @@ async function getDemoData() {
       owner: {
         id: 39,
         avatar: '/img/avatars/16.svg',
+        badge: '/img/stacks/js.svg',
+        role: 'UI/UX Designer',
+        bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
         name: 'Hermann M.',
         text: 'HM',
       },
@@ -6093,12 +11627,18 @@ async function getDemoData() {
         {
           id: 5,
           src: '/img/avatars/5.svg',
+          badge: '/img/stacks/js.svg',
+          role: 'UI/UX Designer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Clarissa M.',
           text: 'CM',
         },
         {
           id: 24,
           src: '/img/avatars/24.svg',
+          badge: '/img/stacks/js.svg',
+          role: 'UI/UX Designer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Ana B.',
           text: 'AB',
         },
@@ -6216,10 +11756,58 @@ async function getDemoData() {
           id: 0,
           name: 'Create a new design for the homepage',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
           completion: 75,
           created: '2 days ago',
-          attachments: 3,
+          attachments: 2,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -6253,6 +11841,54 @@ async function getDemoData() {
           description:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
           completion: 25,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           created: '2 days ago',
           attachments: 0,
           comments: [
@@ -6290,6 +11926,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -6325,6 +12009,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -6360,6 +12092,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -6395,6 +12175,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -6430,6 +12258,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -6465,6 +12341,54 @@ async function getDemoData() {
           completion: 0,
           created: '2 days ago',
           attachments: 0,
+          files: [
+            {
+              id: 0,
+              name: 'Company UX Guide',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'Thech summit expenses',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '3 days ago',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: true,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+            {
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              done: false,
+            },
+          ],
           comments: [
             {
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
