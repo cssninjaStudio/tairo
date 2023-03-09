@@ -15,7 +15,7 @@ import start from '~/documentation/tabs/start.vue?raw'
 definePageMeta({
   title: 'Nav Tabs',
   documentation: {
-    category: 'Interaction',
+    category: 'NUI Elements',
     components: ['BaseTabs'],
   },
 })
@@ -39,7 +39,7 @@ const demoBreadcrumb = [
   {
     label: 'Tabs',
     hideLabel: false,
-    to: '#/',
+    to: '#',
   },
 ]
 </script>

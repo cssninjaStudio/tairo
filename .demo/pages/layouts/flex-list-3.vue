@@ -50,7 +50,11 @@ function difficultyLabel(itemDifficulty: number) {
 
 <template>
   <div>
-    <ContentWrapperTabbed :labels="['All', 'Saved']" reverse shape="curved">
+    <TairoContentWrapperTabbed
+      :labels="['All', 'Saved']"
+      reverse
+      shape="curved"
+    >
       <template #left>
         <BaseInput
           v-model="filter"
@@ -226,6 +230,6 @@ function difficultyLabel(itemDifficulty: number) {
           </template>
         </BasePlaceholderPage>
       </template>
-    </ContentWrapperTabbed>
+    </TairoContentWrapperTabbed>
   </div>
 </template>

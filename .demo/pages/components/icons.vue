@@ -23,7 +23,7 @@ import phosphor from '~/documentation/icons/phosphor.vue?raw'
 definePageMeta({
   title: 'Icons',
   documentation: {
-    category: 'Content',
+    category: 'Uncategorized',
     components: ['Icon'],
   },
 })
@@ -47,7 +47,7 @@ const demoBreadcrumb = [
   {
     label: 'Icons',
     hideLabel: false,
-    to: '#/',
+    to: '#',
   },
 ]
 </script>

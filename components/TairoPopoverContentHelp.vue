@@ -28,7 +28,7 @@ const props = withDefaults(
   }>(),
   {
     iconColor: 'primary',
-  }
+  },
 )
 </script>
 

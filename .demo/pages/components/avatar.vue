@@ -27,7 +27,7 @@ import squareSize from '~/documentation/avatar/square-size.vue?raw'
 definePageMeta({
   title: 'Avatars',
   documentation: {
-    category: 'Display',
+    category: 'NUI Elements',
     components: ['BaseAvatar'],
   },
 })
@@ -51,7 +51,7 @@ const demoBreadcrumb = [
   {
     label: 'Avatars',
     hideLabel: false,
-    to: '#/',
+    to: '#',
   },
 ]
 </script>

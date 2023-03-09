@@ -23,7 +23,7 @@ import straight from '~/documentation/form/textarea/straight.vue?raw'
 definePageMeta({
   title: 'Textarea',
   documentation: {
-    category: 'Forms',
+    category: 'NUI Forms',
     components: ['BaseTextarea'],
   },
 })
@@ -47,7 +47,7 @@ const demoBreadcrumb = [
   {
     label: 'Textarea',
     hideLabel: false,
-    to: '#/',
+    to: '#',
   },
 ]
 

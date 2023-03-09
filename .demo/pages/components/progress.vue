@@ -13,7 +13,7 @@ import sizes from '~/documentation/progress/sizes.vue?raw'
 definePageMeta({
   title: 'Progress',
   documentation: {
-    category: 'Display',
+    category: 'NUI Elements',
     components: ['BaseProgress', 'BaseProgressCircle'],
   },
 })
@@ -37,7 +37,7 @@ const demoBreadcrumb = [
   {
     label: 'Progress Bar',
     hideLabel: false,
-    to: '#/',
+    to: '#',
   },
 ]
 </script>

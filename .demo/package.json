@@ -9,6 +9,7 @@
     "@stefanprobst/remark-shiki": "2.2.0",
     "@types/mapbox-gl": "2.7.10",
     "@vueform/slider": "2.1.7",
+    "apexcharts": "^3.37.1",
     "compressorjs": "1.2.1",
     "cropperjs": "1.5.13",
     "date-fns": "2.29.3",
@@ -27,6 +28,8 @@
     "unified": "10.1.2",
     "v-calendar": "3.0.0-alpha.8",
     "vue-upload-component": "3.1.6",
-    "vue3-popper": "1.5.0"
+    "vue3-popper": "1.5.0",
+    "vue3-apexcharts": "^1.4.1",
+    "vue3-carousel": "^0.2.12"
   }
 }

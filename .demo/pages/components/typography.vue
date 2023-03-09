@@ -9,7 +9,7 @@ import text from '~/documentation/typography/text.vue?raw'
 definePageMeta({
   title: 'Typography',
   documentation: {
-    category: 'Content',
+    category: 'NUI Elements',
     components: ['BaseHeading', 'BaseParagraph', 'BaseText'],
   },
 })
@@ -33,7 +33,7 @@ const demoBreadcrumb = [
   {
     label: 'Typography',
     hideLabel: false,
-    to: '#/',
+    to: '#',
   },
 ]
 </script>

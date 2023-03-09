@@ -23,7 +23,7 @@ import straight from '~/documentation/form/select/straight.vue?raw'
 definePageMeta({
   title: 'Selects',
   documentation: {
-    category: 'Forms',
+    category: 'NUI Forms',
     components: ['BaseSelect'],
   },
 })
@@ -47,7 +47,7 @@ const demoBreadcrumb = [
   {
     label: 'Select',
     hideLabel: false,
-    to: '#/',
+    to: '#',
   },
 ]
 

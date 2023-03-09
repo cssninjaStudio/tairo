@@ -222,7 +222,7 @@ function useBarTeamEfficiency() {
                   </BaseParagraph>
                   <NuxtLink
                     class="font-sans text-white text-sm hover:underline underline-offset-4"
-                    to="#/"
+                    to="#"
                   >
                     Learn More
                   </NuxtLink>
@@ -257,7 +257,7 @@ function useBarTeamEfficiency() {
                 <span>Current Projects</span>
               </BaseHeading>
               <NuxtLink
-                to="#/"
+                to="#"
                 class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
               >
                 View All
@@ -278,13 +278,13 @@ function useBarTeamEfficiency() {
                 <span>Completion</span>
               </BaseHeading>
               <NuxtLink
-                to="#/"
+                to="#"
                 class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
               >
                 Reports
               </NuxtLink>
             </div>
-            <TairoApexcharts v-bind="areaTaskCompletion" />
+            <DemoApexcharts v-bind="areaTaskCompletion" />
           </BaseCard>
           <!-- Chart -->
           <BaseCard class="p-6">
@@ -299,13 +299,13 @@ function useBarTeamEfficiency() {
                 <span>Team Efficiency</span>
               </BaseHeading>
               <NuxtLink
-                to="#/"
+                to="#"
                 class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
               >
                 Reports
               </NuxtLink>
             </div>
-            <TairoApexcharts v-bind="barTeamEfficiency" />
+            <DemoApexcharts v-bind="barTeamEfficiency" />
           </BaseCard>
         </div>
       </div>
@@ -327,7 +327,7 @@ function useBarTeamEfficiency() {
                 <span>My Team</span>
               </BaseHeading>
               <NuxtLink
-                to="#/"
+                to="#"
                 class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
               >
                 View All
@@ -349,7 +349,7 @@ function useBarTeamEfficiency() {
                 <span>Todo Today</span>
               </BaseHeading>
               <NuxtLink
-                to="#/"
+                to="#"
                 class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
               >
                 View All

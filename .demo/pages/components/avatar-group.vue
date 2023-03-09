@@ -11,7 +11,7 @@ import tiny from '~/documentation/avatar-group/tiny.vue?raw'
 definePageMeta({
   title: 'Avatar group',
   documentation: {
-    category: 'Display',
+    category: 'NUI Elements',
     components: ['BaseAvatarGroup'],
   },
 })
@@ -35,7 +35,7 @@ const demoBreadcrumb = [
   {
     label: 'Avatar group',
     hideLabel: false,
-    to: '#/',
+    to: '#',
   },
 ]
 </script>

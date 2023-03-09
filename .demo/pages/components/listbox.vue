@@ -19,7 +19,7 @@ import multiple from '~/documentation/listbox/multiple.vue?raw'
 definePageMeta({
   title: 'Listbox',
   documentation: {
-    category: 'Forms',
+    category: 'NUI Forms',
     components: ['BaseListbox'],
   },
 })
@@ -43,7 +43,7 @@ const demoBreadcrumb = [
   {
     label: 'Listbox',
     hideLabel: false,
-    to: '#/',
+    to: '#',
   },
 ]
 </script>

@@ -43,7 +43,7 @@ const topics = [
 <template>
   <div class="space-y-5 mb-2">
     <div v-for="topic in topics" :key="topic.id" class="flex gap-3">
-      <BaseIconBox :shape="props.shape" size="sm" :class="useRandomColor()">
+      <BaseIconBox :shape="props.shape" size="sm" :class="getRandomColor()">
         <Icon :name="topic.icon" class="w-5 h-5" />
       </BaseIconBox>
       <div>

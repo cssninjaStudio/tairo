@@ -2,7 +2,7 @@
 import type { VNode } from 'vue'
 import { Text } from 'vue'
 
-export interface TocAnchorProps {
+export interface TairoTocAnchorProps {
   id?: string
   label?: string
   level?: number
@@ -12,7 +12,10 @@ export interface TocAnchorProps {
   suffixClasses?: string
 }
 
-const props = withDefaults(defineProps<TocAnchorProps>(), {
+const props = withDefaults(defineProps<TairoTocAnchorProps>(), {
+  id: undefined,
+  label: undefined,
+  level: undefined,
   prefix: '#',
   prefixClasses:
     'hidden group-hover:inline-block group-focus:inline-block group-visible:inline-block leading-6 text-primary-300 absolute -left-5 top-0',
@@ -71,7 +74,7 @@ onMounted(() => {
   <NuxtLink
     :id="id"
     :to="{ name: route.name || 'index', hash: `#${id}` }"
-    class="group ninja-focus relative"
+    class="nui-focus group relative"
     :style="{ scrollMarginTop: '1.5rem' }"
   >
     <span v-if="props.prefix" :class="props.prefixClasses">

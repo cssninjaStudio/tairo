@@ -128,7 +128,7 @@ const filteredMembers = computed(() => {
         <div
           class="flex items-center ml-auto opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all duration-300"
         >
-          <BaseButtonIcon to="#/" :shape="props.shape" muted class="scale-75">
+          <BaseButtonIcon to="#" :shape="props.shape" muted class="scale-75">
             <Icon name="ph:arrow-right-duotone" class="w-5 h-5" />
           </BaseButtonIcon>
         </div>

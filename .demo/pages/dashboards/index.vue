@@ -430,7 +430,7 @@ function useBarProfit() {
               <span>Customers</span>
             </BaseHeading>
           </div>
-          <TairoApexcharts v-bind="areaCustomers" class="-ml-4" />
+          <DemoApexcharts v-bind="areaCustomers" class="-ml-4" />
         </BaseCard>
       </div>
       <!-- CTA card -->
@@ -457,7 +457,7 @@ function useBarProfit() {
             </BaseParagraph>
             <NuxtLink
               class="font-sans text-white hover:underline underline-offset-4"
-              to="#/"
+              to="#"
             >
               Learn More
             </NuxtLink>
@@ -498,7 +498,7 @@ function useBarProfit() {
             />
             <BaseAvatar src="/img/avatars/3.svg" />
           </div>
-          <TairoApexcharts v-bind="radialBarTeam" />
+          <DemoApexcharts v-bind="radialBarTeam" />
         </BaseCard>
       </div>
       <!-- Bar chart card -->
@@ -515,7 +515,7 @@ function useBarProfit() {
               <span>Profit Evolution</span>
             </BaseHeading>
           </div>
-          <TairoApexcharts v-bind="barProfit" />
+          <DemoApexcharts v-bind="barProfit" />
         </BaseCard>
       </div>
     </div>

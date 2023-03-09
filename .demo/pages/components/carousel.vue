@@ -7,8 +7,8 @@ import userCarousel from '~/documentation/carousel/user.vue?raw'
 definePageMeta({
   title: 'Carousel',
   documentation: {
-    category: 'Interaction',
-    components: ['CarouselTeam', 'CarouselIcons'],
+    category: 'Demo Elements',
+    components: ['DemoCarouselTeam', 'DemoCarouselIcons'],
   },
 })
 
@@ -31,7 +31,7 @@ const demoBreadcrumb = [
   {
     label: 'Carousel',
     hideLabel: false,
-    to: '#/',
+    to: '#',
   },
 ]
 </script>
@@ -62,7 +62,7 @@ const demoBreadcrumb = [
           </DocComponent>
         </DocSection>
 
-        <DocComponentMeta name="CarouselTeam" />
+        <DocComponentMeta name="DemoCarouselTeam" />
 
         <!-- Icon carousel -->
         <DocSection title="Icon Carousel" tag="1.0.0">
@@ -82,7 +82,7 @@ const demoBreadcrumb = [
         </DocSection>
 
         <!-- Icon carousel properties -->
-        <DocComponentMeta name="CarouselIcons" />
+        <DocComponentMeta name="DemoCarouselIcons" />
       </template>
       <!-- Toc -->
       <template #toc>

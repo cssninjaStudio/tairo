@@ -2,7 +2,7 @@
 definePageMeta({
   title: 'Text Editor',
   documentation: {
-    category: 'Addons',
+    // category: 'Addons',
     components: ['CKEditor'],
   },
 })

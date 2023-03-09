@@ -29,7 +29,7 @@ import straight from '~/documentation/autocomplete/straight.vue?raw'
 definePageMeta({
   title: 'Autocomplete',
   documentation: {
-    category: 'Forms',
+    category: 'NUI Forms',
     components: ['BaseAutocomplete'],
   },
 })
@@ -49,7 +49,7 @@ const demoBreadcrumb = [
   {
     label: 'Autocomplete',
     hideLabel: false,
-    to: '#/',
+    to: '#',
   },
 ]
 

@@ -27,7 +27,7 @@ const demoBreadcrumb = [
   {
     label: 'Tooltip',
     hideLabel: false,
-    to: '#/',
+    to: '#',
   },
 ]
 </script>

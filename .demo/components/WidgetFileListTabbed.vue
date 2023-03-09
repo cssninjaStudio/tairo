@@ -121,12 +121,12 @@ const savedFiles = [
                 flavor="context"
                 label="Dropdown"
                 orientation="end"
-                compact
+                condensed
                 class="z-20"
                 shape="curved"
               >
                 <BaseDropdownItem
-                  to="#/"
+                  to="#"
                   title="Download"
                   text="Download this file"
                 >
@@ -138,7 +138,7 @@ const savedFiles = [
                   </template>
                 </BaseDropdownItem>
                 <BaseDropdownItem
-                  to="#/"
+                  to="#"
                   title="Upload"
                   text="Upload a new version"
                 >
@@ -151,7 +151,7 @@ const savedFiles = [
                 </BaseDropdownItem>
                 <BaseDropdownDivide />
                 <BaseDropdownItem
-                  to="#/"
+                  to="#"
                   title="Permissions"
                   text="Manage permissions"
                 >
@@ -159,13 +159,13 @@ const savedFiles = [
                     <Icon name="ph:lock-duotone" class="w-5 h-5 block mr-2" />
                   </template>
                 </BaseDropdownItem>
-                <BaseDropdownItem to="#/" title="Share" text="Share this file">
+                <BaseDropdownItem to="#" title="Share" text="Share this file">
                   <template #start>
                     <Icon name="ph:share-duotone" class="w-5 h-5 block mr-2" />
                   </template>
                 </BaseDropdownItem>
                 <BaseDropdownDivide />
-                <BaseDropdownItem to="#/" title="Delete" text="Delete this file">
+                <BaseDropdownItem to="#" title="Delete" text="Delete this file">
                   <template #start>
                     <Icon name="ph:trash-duotone" class="w-5 h-5 block mr-2" />
                   </template>
@@ -202,12 +202,12 @@ const savedFiles = [
                 flavor="context"
                 label="Dropdown"
                 orientation="end"
-                compact
+                condensed
                 shape="curved"
                 class="z-20"
               >
                 <BaseDropdownItem
-                  to="#/"
+                  to="#"
                   title="Download"
                   text="Download this file"
                 >
@@ -219,7 +219,7 @@ const savedFiles = [
                   </template>
                 </BaseDropdownItem>
                 <BaseDropdownItem
-                  to="#/"
+                  to="#"
                   title="Upload"
                   text="Upload a new version"
                 >
@@ -232,7 +232,7 @@ const savedFiles = [
                 </BaseDropdownItem>
                 <BaseDropdownDivide />
                 <BaseDropdownItem
-                  to="#/"
+                  to="#"
                   title="Permissions"
                   text="Manage permissions"
                 >
@@ -240,13 +240,13 @@ const savedFiles = [
                     <Icon name="ph:lock-duotone" class="w-5 h-5 block mr-2" />
                   </template>
                 </BaseDropdownItem>
-                <BaseDropdownItem to="#/" title="Share" text="Share this file">
+                <BaseDropdownItem to="#" title="Share" text="Share this file">
                   <template #start>
                     <Icon name="ph:share-duotone" class="w-5 h-5 block mr-2" />
                   </template>
                 </BaseDropdownItem>
                 <BaseDropdownDivide />
-                <BaseDropdownItem to="#/" title="Delete" text="Delete this file">
+                <BaseDropdownItem to="#" title="Delete" text="Delete this file">
                   <template #start>
                     <Icon name="ph:trash-duotone" class="w-5 h-5 block mr-2" />
                   </template>

@@ -531,8 +531,8 @@ function selectConversation(id: number) {
             <div
               class="flex h-16 w-16 ltablet:w-full lg:w-full items-center justify-center shrink-0"
             >
-              <NuxtLink to="#/" class="flex items-center justify-center">
-                <IconLogo class="text-primary-600 h-10" />
+              <NuxtLink to="#" class="flex items-center justify-center">
+                <TairoLogo class="text-primary-600 h-10" />
               </NuxtLink>
             </div>
             <div
@@ -561,7 +561,7 @@ function selectConversation(id: number) {
             </div>
             <div class="flex h-16 w-full items-center justify-center">
               <NuxtLink
-                to="#/"
+                to="#"
                 class="text-muted-400 hover:text-primary-500 flex h-12 w-12 items-center justify-center rounded-2xl hover:bg-primary-500/20 transition-colors duration-300"
                 title="Settings"
               >
@@ -569,7 +569,7 @@ function selectConversation(id: number) {
               </NuxtLink>
             </div>
             <div class="flex h-16 w-full items-center justify-center">
-              <NavigationSidebarAccountMenu />
+              <DemoAccountMenu />
             </div>
           </div>
         </div>

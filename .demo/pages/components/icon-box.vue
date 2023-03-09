@@ -15,7 +15,7 @@ import solid from '~/documentation/iconbox/solid.vue?raw'
 definePageMeta({
   title: 'Icon Boxes',
   documentation: {
-    category: 'Display',
+    category: 'NUI Elements',
     components: ['BaseIconBox'],
   },
 })
@@ -39,7 +39,7 @@ const demoBreadcrumb = [
   {
     label: 'Icon Box',
     hideLabel: false,
-    to: '#/',
+    to: '#',
   },
 ]
 </script>

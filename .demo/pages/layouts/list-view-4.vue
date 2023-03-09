@@ -33,7 +33,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
 
 <template>
   <div>
-    <ContentWrapperTabbed :labels="['All', 'Saved']" shape="curved">
+    <TairoContentWrapperTabbed :labels="['All', 'Saved']" shape="curved">
       <template #left>
         <BaseInput
           v-model="filter"
@@ -196,6 +196,6 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
           </template>
         </BasePlaceholderPage>
       </template>
-    </ContentWrapperTabbed>
+    </TairoContentWrapperTabbed>
   </div>
 </template>

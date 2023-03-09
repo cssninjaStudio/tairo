@@ -15,7 +15,7 @@ import small from '~/documentation/icon-button/small.vue?raw'
 definePageMeta({
   title: 'Button Icon',
   documentation: {
-    category: 'Interaction',
+    category: 'NUI Elements',
     components: ['BaseButtonIcon'],
     composables: ['useButton'],
   },

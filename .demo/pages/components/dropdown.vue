@@ -23,7 +23,7 @@ import textRight from '~/documentation/dropdown/text-right.vue?raw'
 definePageMeta({
   title: 'Dropdowns',
   documentation: {
-    category: 'Interaction',
+    category: 'NUI Elements',
     components: ['BaseDropdown', 'BaseDropdownItem'],
   },
 })
@@ -47,7 +47,7 @@ const demoBreadcrumb = [
   {
     label: 'Dropdown',
     hideLabel: false,
-    to: '#/',
+    to: '#',
   },
 ]
 </script>

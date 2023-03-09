@@ -10,7 +10,7 @@ const props = withDefaults(
 </script>
 
 <template>
-  <NuxtLink to="#/" class="group w-full flex gap-4">
+  <NuxtLink to="#" class="group w-full flex gap-4">
     <div class="relative shrink-0">
       <img
         class="h-24 w-20 object-cover object-top"

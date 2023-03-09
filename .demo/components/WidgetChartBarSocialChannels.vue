@@ -113,7 +113,7 @@ function useBarSocialChannels() {
       </div>
     </div>
     <div class="mt-auto w-full">
-      <TairoApexcharts v-bind="barSocialChannels" />
+      <DemoApexcharts v-bind="barSocialChannels" />
     </div>
   </div>
 </template>

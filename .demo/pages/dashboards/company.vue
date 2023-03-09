@@ -399,7 +399,7 @@ const team = [
               </BaseHeading>
             </div>
             <div class="py-16">
-              <TairoApexcharts v-bind="gaugePersonal" class="-mt-14" />
+              <DemoApexcharts v-bind="gaugePersonal" class="-mt-14" />
             </div>
             <div class="text-center mt-auto">
               <BaseParagraph size="sm">
@@ -424,7 +424,7 @@ const team = [
                 <span>Profit</span>
               </BaseHeading>
             </div>
-            <TairoApexcharts v-bind="barSalesProfit" />
+            <DemoApexcharts v-bind="barSalesProfit" />
           </BaseCard>
         </div>
         <!-- Widget -->
@@ -448,7 +448,7 @@ const team = [
                 <span>Pending tickets</span>
               </BaseHeading>
               <NuxtLink
-                to="#/"
+                to="#"
                 class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
               >
                 View All

@@ -5,7 +5,7 @@ const props = withDefaults(
   }>(),
   {
     shape: 'rounded',
-  }
+  },
 )
 </script>
 

@@ -9,7 +9,7 @@ import shapes from '~/documentation/card/shapes.vue?raw'
 definePageMeta({
   title: 'Cards',
   documentation: {
-    category: 'Display',
+    category: 'NUI Elements',
     components: ['BaseCard'],
   },
 })
@@ -33,7 +33,7 @@ const demoBreadcrumb = [
   {
     label: 'Card',
     hideLabel: false,
-    to: '#/',
+    to: '#',
   },
 ]
 </script>

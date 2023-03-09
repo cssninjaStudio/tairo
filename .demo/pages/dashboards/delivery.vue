@@ -299,7 +299,7 @@ const total = computed(() => {
               <NuxtLink
                 v-for="meal in meals"
                 :key="meal.id"
-                to="#/"
+                to="#"
                 class="relative"
               >
                 <BaseCard

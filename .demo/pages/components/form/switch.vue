@@ -13,7 +13,7 @@ import thinSwitch from '~/documentation/form/switch/thin-switch.vue?raw'
 definePageMeta({
   title: 'Switches',
   documentation: {
-    category: 'Forms',
+    category: 'NUI Forms',
     components: ['BaseSwitchThin', 'BaseSwitchBall'],
   },
 })
@@ -37,7 +37,7 @@ const demoBreadcrumb = [
   {
     label: 'Switch',
     hideLabel: false,
-    to: '#/',
+    to: '#',
   },
 ]
 </script>

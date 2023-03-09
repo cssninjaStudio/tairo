@@ -1,10 +1,4 @@
-import type { TairoPanelConfig } from '../nuxt.schema'
-
-export interface LayoutPanel {
-  name: string
-  component: string
-  position: 'right' | 'left'
-}
+import { defu } from 'defu'
 
 /**
  * Composable to manage panels
@@ -20,9 +14,11 @@ export interface LayoutPanel {
  *         name: 'panel-name',
  *         // The component name of the panel
  *         // It should be registered in the app as a global component
- *         component: 'PanelComponent',
+ *         component: { name: 'PanelComponent', props: {} },
  *         // The position of the panel
  *         position: 'left',
+ *         // Whether to show an overlay when the panel is open
+ *         overlay: false,
  *       },
  *     ],
  *   },
@@ -45,10 +41,10 @@ export function usePanels() {
 
   const panels = computed(
     () =>
-      (app.tairo?.panels as TairoPanelConfig[]).map((panel) => ({
-        name: panel.name,
-        position: panel.position ?? 'left',
-        component: panel.component,
+      app.tairo?.panels.map((panel) => ({
+        ...panel,
+        position: (panel as any).position ?? 'left',
+        overlay: (panel as any).overlay ?? true,
       })) ?? [],
   )
 
@@ -57,6 +53,9 @@ export function usePanels() {
   // we need to know from which side the panel is coming from
   // and preserve it in the state so we can animate it when it's closing
   const transitionFrom = useState('panels-transition-from', () => 'left')
+  const showOverlay = useState('panels-overlay', () => true)
+
+  const currentProps = useState('panels-current-props', () => {})
 
   const current = computed(() => {
     if (!currentName.value) {
@@ -66,11 +65,15 @@ export function usePanels() {
     return panels.value.find((panel) => panel.name === currentName.value)
   })
 
-  function open(name: string) {
+  function open(name: string, props?: any) {
     const panel = panels.value.find(({ name: panelName }) => panelName === name)
     if (panel) {
       transitionFrom.value = panel.position
       currentName.value = panel.name
+      showOverlay.value = panel.overlay
+
+      // merge props from the panel config and the props passed to the function
+      currentProps.value = defu(props ?? {}, (panel as any).props ?? {})
     }
   }
   function close() {
@@ -81,6 +84,8 @@ export function usePanels() {
     panels,
     current,
     transitionFrom,
+    currentProps,
+    showOverlay,
     open,
     close,
   }

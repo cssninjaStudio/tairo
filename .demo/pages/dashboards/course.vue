@@ -391,7 +391,7 @@ const students = [
                   :color="student.status === 'Online' ? 'success' : 'muted'"
                   shape="full"
                   flavor="pastel"
-                  compact
+                  condensed
                 >
                   {{ student.status }}
                 </BaseTag>

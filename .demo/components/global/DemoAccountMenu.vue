@@ -62,7 +62,7 @@ const props = defineProps<{
           <div class="p-1.5">
             <MenuItem v-slot="{ active }">
               <NuxtLink
-                to="#/"
+                to="#"
                 class="group flex w-full items-center rounded-md p-2 text-sm transition-colors duration-300"
                 :class="[
                   active
@@ -87,7 +87,7 @@ const props = defineProps<{
           <div class="p-1.5">
             <MenuItem v-slot="{ active }">
               <NuxtLink
-                to="#/"
+                to="#"
                 class="group flex w-full items-center rounded-md p-2 text-sm transition-colors duration-300"
                 :class="[
                   active
@@ -110,7 +110,7 @@ const props = defineProps<{
             </MenuItem>
             <MenuItem v-slot="{ active }">
               <NuxtLink
-                to="#/"
+                to="#"
                 class="group flex w-full items-center rounded-md p-2 text-sm transition-colors duration-300"
                 :class="[
                   active
@@ -134,7 +134,7 @@ const props = defineProps<{
           <div class="p-1.5">
             <MenuItem v-slot="{ active }">
               <NuxtLink
-                to="#/"
+                to="#"
                 class="group flex w-full items-center rounded-md p-2 text-sm transition-colors duration-300"
                 :class="[
                   active

@@ -354,84 +354,94 @@ const activeTab = ref('tab-1')
           </div>
           <BaseParagraph
             size="sm"
-            class="max-w-xl mx-auto ltablet:mx-0 lg:mx-0 mb-6 text-muted-500 dark:text-muted-400"
+            as="div"
+            class="max-w-xl mx-auto ltablet:mx-0 lg:mx-0 mb-6 prose prose-sm dark:prose-invert"
           >
-            <span class="line-clamp-3">
+            <p class="line-clamp-3">
               Artist, musician, songwriter, influencer, these are the many names
               people give me. But for you Iam simply Clarissa. *Forever with all
-              my friends* // Latest video can be found here youtu.be/8Tcee5Cyz
-            </span>
+              my friends* // Latest video can be found here
+              <a href="#">youtu.be/8Tcee5Cyz</a>
+            </p>
           </BaseParagraph>
           <div
             class="flex justify-center ltablet:justify-start lg:justify-start gap-4"
           >
             <!-- Icon -->
-            <Popover arrow hover placement="top">
-              <div
-                class="h-10 w-10 flex items-center justify-center rounded-full bg-white dark:bg-muted-700 shadow-xl shadow-muted-300/40 dark:shadow-muted-900/20"
-              >
+            <ClientOnly>
+              <Popover arrow hover placement="top">
                 <div
-                  class="h-8 w-8 flex items-center justify-center rounded-full bg-rose-500/20"
+                  class="h-10 w-10 flex items-center justify-center rounded-full bg-white dark:bg-muted-700 shadow-xl shadow-muted-300/40 dark:shadow-muted-900/20"
                 >
-                  <Icon name="ri:fire-fill" class="w-5 h-5 text-rose-500" />
+                  <div
+                    class="h-8 w-8 flex items-center justify-center rounded-full bg-rose-500/20"
+                  >
+                    <Icon name="ri:fire-fill" class="w-5 h-5 text-rose-500" />
+                  </div>
                 </div>
-              </div>
-              <template #content>
-                <PopoverHead
-                  title="On Fire"
-                  icon="ri:fire-fill"
-                  class="text-rose-500 bg-rose-500/20"
-                />
-                <PopoverContent>
-                  You have been on fire for the last 7 days. Keep up the good
-                  work!
-                </PopoverContent>
-              </template>
-            </Popover>
-            <Popover arrow hover placement="top">
-              <!-- Icon -->
-              <div
-                class="h-10 w-10 flex items-center justify-center rounded-full bg-white dark:bg-muted-700 shadow-xl shadow-muted-300/40 dark:shadow-muted-900/20"
-              >
+                <template #content>
+                  <PopoverHead
+                    title="On Fire"
+                    icon="ri:fire-fill"
+                    class="text-rose-500 bg-rose-500/20"
+                  />
+                  <PopoverContent>
+                    You have been on fire for the last 7 days. Keep up the good
+                    work!
+                  </PopoverContent>
+                </template>
+              </Popover>
+              <Popover arrow hover placement="top">
+                <!-- Icon -->
                 <div
-                  class="h-8 w-8 flex items-center justify-center rounded-full bg-emerald-500/20"
+                  class="h-10 w-10 flex items-center justify-center rounded-full bg-white dark:bg-muted-700 shadow-xl shadow-muted-300/40 dark:shadow-muted-900/20"
                 >
-                  <Icon name="ri:medal-fill" class="w-5 h-5 text-emerald-500" />
+                  <div
+                    class="h-8 w-8 flex items-center justify-center rounded-full bg-emerald-500/20"
+                  >
+                    <Icon
+                      name="ri:medal-fill"
+                      class="w-5 h-5 text-emerald-500"
+                    />
+                  </div>
                 </div>
-              </div>
-              <template #content>
-                <PopoverHead
-                  title="Veteran"
-                  icon="ri:medal-fill"
-                  class="text-emerald-500 bg-emerald-500/20"
-                />
-                <PopoverContent>
-                  You posted more than 250 posts. You are now a post veteran!
-                </PopoverContent>
-              </template>
-            </Popover>
-            <Popover arrow hover placement="top">
-              <!-- Icon -->
-              <div
-                class="h-10 w-10 flex items-center justify-center rounded-full bg-white dark:bg-muted-700 shadow-xl shadow-muted-300/40 dark:shadow-muted-900/20"
-              >
+                <template #content>
+                  <PopoverHead
+                    title="Veteran"
+                    icon="ri:medal-fill"
+                    class="text-emerald-500 bg-emerald-500/20"
+                  />
+                  <PopoverContent>
+                    You posted more than 250 posts. You are now a post veteran!
+                  </PopoverContent>
+                </template>
+              </Popover>
+              <Popover arrow hover placement="top">
+                <!-- Icon -->
                 <div
-                  class="h-8 w-8 flex items-center justify-center rounded-full bg-yellow-500/20"
+                  class="h-10 w-10 flex items-center justify-center rounded-full bg-white dark:bg-muted-700 shadow-xl shadow-muted-300/40 dark:shadow-muted-900/20"
                 >
-                  <Icon name="ri:trophy-fill" class="w-5 h-5 text-yellow-500" />
+                  <div
+                    class="h-8 w-8 flex items-center justify-center rounded-full bg-yellow-500/20"
+                  >
+                    <Icon
+                      name="ri:trophy-fill"
+                      class="w-5 h-5 text-yellow-500"
+                    />
+                  </div>
                 </div>
-              </div>
-              <template #content>
-                <PopoverHead
-                  title="Champion"
-                  icon="ri:trophy-fill"
-                  class="text-yellow-500 bg-yellow-500/20"
-                />
-                <PopoverContent>
-                  You have more than 100k followers. You are a champion!
-                </PopoverContent>
-              </template>
-            </Popover>
+                <template #content>
+                  <PopoverHead
+                    title="Champion"
+                    icon="ri:trophy-fill"
+                    class="text-yellow-500 bg-yellow-500/20"
+                  />
+                  <PopoverContent>
+                    You have more than 100k followers. You are a champion!
+                  </PopoverContent>
+                </template>
+              </Popover>
+            </ClientOnly>
           </div>
         </div>
       </div>

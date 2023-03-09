@@ -13,7 +13,7 @@ import straight from '~/documentation/form/checkbox/straight.vue?raw'
 definePageMeta({
   title: 'Checkbox',
   documentation: {
-    category: 'Forms',
+    category: 'NUI Forms',
     components: ['BaseCheckbox'],
   },
 })
@@ -37,7 +37,7 @@ const demoBreadcrumb = [
   {
     label: 'Checkbox',
     hideLabel: false,
-    to: '#/',
+    to: '#',
   },
 ]
 

@@ -1,15 +1,19 @@
 import type { RouteLocationRaw } from 'vue-router'
 
-import type { TairoSidebarConfig } from '../nuxt.schema'
-
-export interface SidebarItem {
+export interface TairoSidebarResolvedConfig {
   name: string
   icon: {
     name: string
     class?: string
   }
-  component?: string
-  componentHeader?: string | false
+  component?: {
+    name: string
+    props?: any
+  }
+  subsidebar?: {
+    name: string
+    props?: any
+  }
   to?: RouteLocationRaw
   click?: () => void | Promise<void>
   activePath?: string
@@ -27,29 +31,35 @@ export interface SidebarItem {
  * ```ts
  * export default defineAppConfig({
  *   tairo: {
- *     sidebars: [
- *       {
- *         name: 'Dashboards',
- *         icon: { name: 'ph:sidebar-duotone', class: 'w-5 h-5' },
+ *     sidebar: {
+ *       items: {
+ *           name: 'Dashboards',
  *
- *         // You can define an active path to highlight the item
- *         activePath: '/dashboards',
+ *           // You can define an active path to highlight the item
+ *           activePath: '/dashboards',
  *
- *         // You can chose to display a subsidebar by defining a component name
- *         // It should be registered in the app as a global component
- *         component: 'SidebarMenuDashboards',
- *         componentHeader: 'SidebarMenuHeader',
+ *           // You can define an icon to display in the sidebar
+ *           icon: { name: 'ph:sidebar-duotone', class: 'w-5 h-5' },
  *
- *         // Or you can define a route to navigate to*
- *         to: '/dashboards',
+ *           // Or use a component
+ *           // It should be registered in the app as a global component
+ *           component: { name: 'BaseThemeToggle', props: {} },
  *
- *         // Or you can define a click handler (eg. to open a panel)
- *         click: () => {
- *           const { open } = usePanels()
- *           open('panel-name')
+ *           // You can chose to display a subsidebar by defining a component name
+ *           // It should be registered in the app as a global component
+ *           subsidebar: { name: 'SidebarMenuDashboards', props: {} },
+ *
+ *           // Or you can define a route to navigate to
+ *           to: '/dashboards',
+ *
+ *           // Or you can define a click handler (eg. to open a panel)
+ *           click: () => {
+ *             const { open } = usePanels()
+ *             open('panel-name')
+ *           },
  *         },
- *       },
- *     ],
+ *       ],
+ *     },
  *   },
  * })
  * ```
@@ -58,17 +68,21 @@ export function useSidebar() {
   const route = useRoute()
   const app = useAppConfig()
 
-  const sidebars = computed(
-    () =>
-      (app.tairo.sidebars as TairoSidebarConfig[]).map((sidebar) => ({
-        ...sidebar,
-        position: sidebar.position ?? 'start',
-        icon:
-          typeof sidebar.icon === 'string'
-            ? { name: sidebar.icon, class: 'w-5 h-5' }
-            : sidebar.icon,
-      })) ?? [],
-  )
+  const sidebars = computed(() => {
+    if (
+      (app.tairo.sidebar as any)?.enabled === false ||
+      app.tairo.sidebar?.items?.length === 0
+    ) {
+      return []
+    }
+    return app.tairo.sidebar?.items?.map(
+      (sidebar) =>
+        <TairoSidebarResolvedConfig>{
+          ...sidebar,
+          position: sidebar.position ?? 'start',
+        },
+    )
+  })
 
   const isOpen = useState('sidebar-open', () => false)
   const currentName = useState('sidebar-name', () => {
@@ -76,6 +90,10 @@ export function useSidebar() {
       ({ activePath }) => activePath && route.fullPath.startsWith(activePath),
     )
     return item?.name || ''
+  })
+
+  const hasSubsidebar = computed(() => {
+    return sidebars.value.some((sidebar) => sidebar.subsidebar?.name)
   })
 
   const current = computed(() => {
@@ -110,6 +128,7 @@ export function useSidebar() {
 
   return {
     sidebars,
+    hasSubsidebar,
     current,
     currentName,
     isOpen,

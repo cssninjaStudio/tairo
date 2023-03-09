@@ -258,7 +258,9 @@ if (process.dev) {
   // this block will be removed in production build
 
   if (!accessToken) {
-    console.warn('VITE_MAPBOX_ACCESS_TOKEN environment variable is not defined, mapbox features are disabled')
+    console.warn(
+      'VITE_MAPBOX_ACCESS_TOKEN environment variable is not defined, mapbox features are disabled',
+    )
   }
 }
 
@@ -392,8 +394,8 @@ watch(
             <div
               class="flex h-16 w-16 ltablet:w-full lg:w-full items-center justify-center shrink-0"
             >
-              <NuxtLink to="#/" class="flex items-center justify-center">
-                <IconLogo class="text-primary-600 h-10" />
+              <NuxtLink to="#" class="flex items-center justify-center">
+                <TairoLogo class="text-primary-600 h-10" />
               </NuxtLink>
             </div>
             <div
@@ -424,7 +426,7 @@ watch(
             </div>
             <div class="flex h-16 w-full items-center justify-center">
               <NuxtLink
-                to="#/"
+                to="#"
                 class="text-muted-400 hover:text-primary-500 flex h-12 w-12 items-center justify-center rounded-2xl hover:bg-primary-500/20 transition-colors duration-300"
                 title="Settings"
               >
@@ -434,12 +436,12 @@ watch(
             <div
               class="hidden lg:flex ltablet:flex h-16 w-full items-center justify-center"
             >
-              <NavigationSidebarAccountMenu />
+              <DemoAccountMenu />
             </div>
             <div
               class="flex lg:hidden ltablet:hidden h-16 w-full items-center justify-center"
             >
-              <NavigationSidebarAccountMenu horizontal />
+              <DemoAccountMenu horizontal />
             </div>
           </div>
         </div>

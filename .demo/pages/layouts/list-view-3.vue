@@ -33,7 +33,11 @@ const { data, pending, error, refresh } = await useFetch('/api/jobs', {
 
 <template>
   <div>
-    <ContentWrapperTabbed :labels="['Active', 'Inactive']" shape="full" reverse>
+    <TairoContentWrapperTabbed
+      :labels="['Active', 'Inactive']"
+      shape="full"
+      reverse
+    >
       <template #left>
         <BaseInput
           v-model="filter"
@@ -182,6 +186,6 @@ const { data, pending, error, refresh } = await useFetch('/api/jobs', {
           </template>
         </BasePlaceholderPage>
       </template>
-    </ContentWrapperTabbed>
+    </TairoContentWrapperTabbed>
   </div>
 </template>

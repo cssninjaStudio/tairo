@@ -9,7 +9,7 @@ import text from '~/documentation/placeload/text.vue?raw'
 definePageMeta({
   title: 'Placeloads',
   documentation: {
-    category: 'Display',
+    category: 'NUI Elements',
     components: ['BasePlaceload'],
   },
 })
@@ -33,7 +33,7 @@ const demoBreadcrumb = [
   {
     label: 'Placeload',
     hideLabel: false,
-    to: '#/',
+    to: '#',
   },
 ]
 </script>

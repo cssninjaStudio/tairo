@@ -33,7 +33,7 @@ const { data, pending, error, refresh } = await useFetch('/api/posts/', {
 
 <template>
   <div>
-    <ContentWrapper>
+    <TairoContentWrapper>
       <template #left>
         <BaseInput
           v-model="filter"
@@ -99,7 +99,7 @@ const { data, pending, error, refresh } = await useFetch('/api/posts/', {
                     shape="full"
                     color="primary"
                     flavor="pastel"
-                    compact
+                    condensed
                     class="absolute top-3 left-3 translate-y-1 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300"
                   >
                     {{ item.category }}
@@ -156,6 +156,6 @@ const { data, pending, error, refresh } = await useFetch('/api/posts/', {
           </div>
         </div>
       </div>
-    </ContentWrapper>
+    </TairoContentWrapper>
   </div>
 </template>

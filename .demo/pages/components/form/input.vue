@@ -25,7 +25,7 @@ import straight from '~/documentation/form/input/straight.vue?raw'
 definePageMeta({
   title: 'Inputs',
   documentation: {
-    category: 'Forms',
+    category: 'NUI Forms',
     components: ['BaseInput'],
   },
 })
@@ -49,7 +49,7 @@ const demoBreadcrumb = [
   {
     label: 'Input',
     hideLabel: false,
-    to: '#/',
+    to: '#',
   },
 ]
 

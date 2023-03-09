@@ -247,14 +247,14 @@ const videos = [
               >
                 <div class="p-6 ptablet:p-10">
                   <NuxtLink
-                    to="#/"
+                    to="#"
                     class="h-14 w-14 flex items-center justify-center border-2 border-transparent group-hover:border-primary-500 text-muted-300 group-hover:text-primary-500 rounded-full bg-white shadow-2xl shadow-muted-300/30 dark:shadow-muted-900/20 transition-colors duration-300"
                   >
                     <Icon name="ic:round-play-arrow" class="w-7 h-7" />
                   </NuxtLink>
                 </div>
                 <div class="p-6 ptablet:p-10">
-                  <NuxtLink to="#/">
+                  <NuxtLink to="#">
                     <BaseHeading
                       as="h3"
                       size="3xl"
@@ -273,7 +273,7 @@ const videos = [
                       class="flex-shrink-0 bg-primary-100 dark:bg-primary-500/20 text-primary-500"
                     />
                     <div>
-                      <NuxtLink to="#/">
+                      <NuxtLink to="#">
                         <BaseHeading
                           as="h4"
                           size="xs"
@@ -290,7 +290,7 @@ const videos = [
                       </BaseParagraph>
                     </div>
                     <div class="ml-auto">
-                      <BaseTag color="primary" shape="full" compact>
+                      <BaseTag color="primary" shape="full" condensed>
                         <span>{{ video.category }}</span>
                       </BaseTag>
                     </div>
@@ -327,14 +327,14 @@ const videos = [
                     >
                       <div class="p-4">
                         <NuxtLink
-                          to="#/"
+                          to="#"
                           class="h-10 w-10 flex items-center justify-center border-2 border-transparent group-hover:border-primary-500 text-muted-300 group-hover:text-primary-500 rounded-full bg-white shadow-2xl shadow-muted-300/30 dark:shadow-muted-900/20 transition-colors duration-300"
                         >
                           <Icon name="ic:round-play-arrow" class="w-5 h-5" />
                         </NuxtLink>
                       </div>
                       <div class="p-4">
-                        <NuxtLink to="#/">
+                        <NuxtLink to="#">
                           <BaseHeading
                             as="h3"
                             size="md"
@@ -353,7 +353,7 @@ const videos = [
                             class="flex-shrink-0 bg-primary-100 dark:bg-primary-500/20 text-primary-500"
                           />
                           <div>
-                            <NuxtLink to="#/">
+                            <NuxtLink to="#">
                               <BaseHeading
                                 as="h4"
                                 size="xs"
@@ -372,7 +372,7 @@ const videos = [
                             </BaseParagraph>
                           </div>
                           <div class="ml-auto">
-                            <BaseTag color="primary" shape="full" compact>
+                            <BaseTag color="primary" shape="full" condensed>
                               <span>{{ video.category }}</span>
                             </BaseTag>
                           </div>
@@ -449,14 +449,14 @@ const videos = [
             >
               <div class="p-4">
                 <NuxtLink
-                  to="#/"
+                  to="#"
                   class="h-10 w-10 flex items-center justify-center border-2 border-transparent group-hover:border-primary-500 text-muted-300 group-hover:text-primary-500 rounded-full bg-white shadow-2xl shadow-muted-300/30 dark:shadow-muted-900/20 transition-colors duration-300"
                 >
                   <Icon name="ic:round-play-arrow" class="w-5 h-5" />
                 </NuxtLink>
               </div>
               <div class="p-4">
-                <NuxtLink to="#/">
+                <NuxtLink to="#">
                   <BaseHeading
                     as="h3"
                     size="xl"
@@ -476,7 +476,7 @@ const videos = [
                     class="flex-shrink-0 bg-primary-100 dark:bg-primary-500/20 text-primary-500"
                   />
                   <div>
-                    <NuxtLink to="#/">
+                    <NuxtLink to="#">
                       <BaseHeading
                         as="h4"
                         size="xs"
@@ -493,7 +493,7 @@ const videos = [
                     </BaseParagraph>
                   </div>
                   <div class="ml-auto">
-                    <BaseTag color="primary" shape="full" compact>
+                    <BaseTag color="primary" shape="full" condensed>
                       <span>{{ video.category }}</span>
                     </BaseTag>
                   </div>

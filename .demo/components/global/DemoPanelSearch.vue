@@ -150,7 +150,7 @@ const filteredPeople = computed(() =>
         <ul class="space-y-4">
           <!-- Item -->
           <li>
-            <NuxtLink to="#/" class="flex items-center">
+            <NuxtLink to="#" class="flex items-center">
               <div
                 class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
               >
@@ -174,7 +174,7 @@ const filteredPeople = computed(() =>
           </li>
           <!-- Item -->
           <li>
-            <NuxtLink to="#/" class="flex items-center">
+            <NuxtLink to="#" class="flex items-center">
               <div
                 class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
               >
@@ -198,7 +198,7 @@ const filteredPeople = computed(() =>
           </li>
           <!-- Item -->
           <li>
-            <NuxtLink to="#/" class="flex items-center">
+            <NuxtLink to="#" class="flex items-center">
               <div
                 class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
               >
@@ -233,7 +233,7 @@ const filteredPeople = computed(() =>
         <ul class="space-y-4">
           <!-- Item -->
           <li>
-            <NuxtLink to="#/" class="flex items-center">
+            <NuxtLink to="#" class="flex items-center">
               <div
                 class="relative inline-flex h-10 w-10 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-500 dark:text-muted-50"
               >
@@ -251,7 +251,7 @@ const filteredPeople = computed(() =>
           </li>
           <!-- Item -->
           <li>
-            <NuxtLink to="#/" class="flex items-center">
+            <NuxtLink to="#" class="flex items-center">
               <div
                 class="relative inline-flex h-10 w-10 items-center justify-center rounded-full bg-warning-100 text-warning-600 dark:bg-warning-500 dark:text-muted-50"
               >
@@ -269,7 +269,7 @@ const filteredPeople = computed(() =>
           </li>
           <!-- Item -->
           <li>
-            <NuxtLink to="#/" class="flex items-center">
+            <NuxtLink to="#" class="flex items-center">
               <div
                 class="relative inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary-100 text-primary-600 dark:bg-primary-500 dark:text-muted-50"
               >

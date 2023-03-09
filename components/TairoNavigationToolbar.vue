@@ -1,22 +1,39 @@
 <script setup lang="ts">
 const { open } = usePanels()
+const app = useAppConfig()
+const { hasSubsidebar } = useSidebar()
 
 const route = useRoute()
 </script>
 
 <template>
   <div class="relative z-50 mb-5 flex h-16 items-center gap-2">
-    <NavigationBurger class="-ml-3" />
+    <TairoNavigationBurger
+      v-if="(app.tairo.toolbar as any).showNavBurger && hasSubsidebar"
+      class="-ml-3"
+    />
 
     <BaseHeading
+      v-if="(app.tairo.toolbar as any).showTitle"
       as="h1"
       size="2xl"
       weight="light"
       class="text-muted-800 hidden dark:text-white md:block"
     >
-      {{ route.meta.title }}
+      {{ route.meta.title ?? 'Unamed page' }}
     </BaseHeading>
 
+    <div class="ml-auto"></div>
+    <template v-for="tool of (app.tairo.toolbar as any).tools">
+      <component
+        :is="resolveComponent(tool.component)"
+        v-if="tool.component"
+        :key="tool.component"
+        v-bind="tool.props"
+      />
+    </template>
+
+    <!-- 
     <BaseThemeToggle class="ml-auto" />
 
     <button
@@ -41,6 +58,6 @@ const route = useRoute()
       <Icon name="ph:circles-four-duotone" class="text-muted-400 h-5 w-5" />
     </button>
 
-    <NavigationToolbarAccountMenu />
+    <NavigationToolbarAccountMenu /> -->
   </div>
 </template>

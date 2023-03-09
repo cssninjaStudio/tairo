@@ -14,7 +14,7 @@
     <div>
       <ul class="space-y-3">
         <li>
-          <NuxtLink to="#/" class="group flex items-center justify-between">
+          <NuxtLink to="#" class="group flex items-center justify-between">
             <BaseParagraph size="sm">
               <span
                 class="text-muted-500 dark:text-muted-400 group-hover:text-primary-500 transition-colors duration-300"
@@ -30,7 +30,7 @@
           </NuxtLink>
         </li>
         <li>
-          <NuxtLink to="#/" class="group flex items-center justify-between">
+          <NuxtLink to="#" class="group flex items-center justify-between">
             <BaseParagraph size="sm">
               <span
                 class="text-muted-500 dark:text-muted-400 group-hover:text-primary-500 transition-colors duration-300"
@@ -46,7 +46,7 @@
           </NuxtLink>
         </li>
         <li>
-          <NuxtLink to="#/" class="group flex items-center justify-between">
+          <NuxtLink to="#" class="group flex items-center justify-between">
             <BaseParagraph size="sm">
               <span
                 class="text-muted-500 dark:text-muted-400 group-hover:text-primary-500 transition-colors duration-300"

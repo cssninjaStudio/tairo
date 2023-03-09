@@ -33,7 +33,7 @@ const { data, pending, error, refresh } = await useFetch('/api/products', {
 
 <template>
   <div>
-    <ContentWrapper>
+    <TairoContentWrapper>
       <template #left>
         <BaseInput
           v-model="filter"
@@ -134,6 +134,6 @@ const { data, pending, error, refresh } = await useFetch('/api/products', {
           </div>
         </div>
       </div>
-    </ContentWrapper>
+    </TairoContentWrapper>
   </div>
 </template>

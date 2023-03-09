@@ -1,50 +1,30 @@
-import * as tailwindConfig from './tailwind.config.cjs'
 import { resolve } from 'pathe'
 
 export default defineNuxtConfig({
   extends: '..',
   typescript: {
     includeWorkspace: true,
-    // shims: false,
     strict: true,
   },
   modules: [
+    // Swiper is a nuxt module that allows us to use swiper in nuxt
+    // wich is a carousel component used in the demo
     'nuxt-swiper',
-    //
-    //'@nuxt/devtools',
+
+    // Component meta allow us to generate the API docs from the source code
+    // So we can keep the docs in sync with the code
     'nuxt-component-meta',
   ],
-  app: {
-    // keepalive: true,
-    layoutTransition: {
-      enterActiveClass: 'transition-opacity duration-400 ease-out',
-      enterFromClass: 'opacity-0',
-      enterToClass: 'opacity-100',
-      leaveActiveClass: 'transition-opacity duration-200 ease-in',
-      leaveFromClass: 'opacity-100',
-      leaveToClass: 'opacity-0',
-      // mode: 'out-in',
-    },
-    pageTransition: {
-      enterActiveClass: 'transition-opacity duration-300 ease-out',
-      enterFromClass: 'opacity-0',
-      enterToClass: 'opacity-100',
-      leaveActiveClass: 'transition-opacity duration-200 ease-in',
-      leaveFromClass: 'opacity-100',
-      leaveToClass: 'opacity-0',
-      // mode: 'out-in',
-    },
-  },
-  tailwindcss: {
-    config: tailwindConfig,
-  },
-  hooks: {
-    'tailwindcss:config'(config) {
-      console.dir(config, { depth: null })
+  vite: {
+    // This is required for shiki to work (used to render markdown code blocks)
+    define: {
+      'process.env.VSCODE_TEXTMATE_DEBUG': false,
     },
   },
   runtimeConfig: {
     public: {
+      // We use this to be able to create a link to open vscode from the browser
+      // (browse the demo components pages and click on the "Open in VSCode" button)
       dev: process.dev
         ? {}
         : {
@@ -53,10 +33,9 @@ export default defineNuxtConfig({
           },
     },
   },
+  // Component meta allow us to generate the API docs from the source code
+  // So we can keep the docs in sync with the code
   componentMeta: {
-    // componentDirs: [
-    //   '@cssninja/nuxt-ui/components'
-    // ],
     exclude: ['nuxt/dist', '@nuxt/ui-templates/dist', 'tairo/.demo/components'],
     debug: 2,
     checkerOptions: {

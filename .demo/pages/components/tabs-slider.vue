@@ -11,7 +11,7 @@ import x3Rounded from '~/documentation/tabs-slider/rounded-x3.vue?raw'
 definePageMeta({
   title: 'Slider Tabs',
   documentation: {
-    category: 'Interaction',
+    category: 'NUI Elements',
     components: ['BaseTabSlider'],
   },
 })
@@ -35,7 +35,7 @@ const demoBreadcrumb = [
   {
     label: 'Tabs Slider',
     hideLabel: false,
-    to: '#/',
+    to: '#',
   },
 ]
 </script>

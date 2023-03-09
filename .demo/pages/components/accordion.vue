@@ -13,7 +13,7 @@ import shapesRaw from '~/documentation/accordion/shapes.vue?raw'
 definePageMeta({
   title: 'Accordions',
   documentation: {
-    category: 'Interaction',
+    category: 'NUI Elements',
     components: ['BaseAccordion', 'BaseAccordionItem'],
   },
 })
@@ -41,7 +41,10 @@ function wrapVueMarkdown(source: string) {
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="wrapVueMarkdown(inclusiveRaw)" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(inclusiveRaw)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -55,7 +58,10 @@ function wrapVueMarkdown(source: string) {
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="wrapVueMarkdown(exclusiveRaw)" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(exclusiveRaw)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -69,7 +75,10 @@ function wrapVueMarkdown(source: string) {
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="wrapVueMarkdown(shapesRaw)" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(shapesRaw)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -83,7 +92,10 @@ function wrapVueMarkdown(source: string) {
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="wrapVueMarkdown(chevronRaw)" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(chevronRaw)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>
@@ -97,7 +109,10 @@ function wrapVueMarkdown(source: string) {
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="wrapVueMarkdown(plusRaw)" class="prose max-w-full" />
+              <DocMarkdown
+                :source="wrapVueMarkdown(plusRaw)"
+                class="prose max-w-full"
+              />
             </template>
           </DocComponent>
         </DocSection>

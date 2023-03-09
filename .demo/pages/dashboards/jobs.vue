@@ -306,7 +306,12 @@ const jobs = [
                     shape="rounded"
                     :classes="{ wrapper: 'text-primary-500' }"
                   />
-                  <BaseTag color="default" shape="full" class="text-xs" compact>
+                  <BaseTag
+                    color="default"
+                    shape="full"
+                    class="text-xs"
+                    condensed
+                  >
                     67
                   </BaseTag>
                 </div>
@@ -318,7 +323,12 @@ const jobs = [
                     shape="rounded"
                     :classes="{ wrapper: 'text-primary-500' }"
                   />
-                  <BaseTag color="default" shape="full" class="text-xs" compact>
+                  <BaseTag
+                    color="default"
+                    shape="full"
+                    class="text-xs"
+                    condensed
+                  >
                     31
                   </BaseTag>
                 </div>
@@ -330,7 +340,12 @@ const jobs = [
                     shape="rounded"
                     :classes="{ wrapper: 'text-primary-500' }"
                   />
-                  <BaseTag color="default" shape="full" class="text-xs" compact>
+                  <BaseTag
+                    color="default"
+                    shape="full"
+                    class="text-xs"
+                    condensed
+                  >
                     49
                   </BaseTag>
                 </div>
@@ -342,7 +357,12 @@ const jobs = [
                     shape="rounded"
                     :classes="{ wrapper: 'text-primary-500' }"
                   />
-                  <BaseTag color="default" shape="full" class="text-xs" compact>
+                  <BaseTag
+                    color="default"
+                    shape="full"
+                    class="text-xs"
+                    condensed
+                  >
                     17
                   </BaseTag>
                 </div>
@@ -372,7 +392,12 @@ const jobs = [
                     shape="rounded"
                     :classes="{ wrapper: 'text-primary-500' }"
                   />
-                  <BaseTag color="default" shape="full" class="text-xs" compact>
+                  <BaseTag
+                    color="default"
+                    shape="full"
+                    class="text-xs"
+                    condensed
+                  >
                     56
                   </BaseTag>
                 </div>
@@ -384,7 +409,12 @@ const jobs = [
                     shape="rounded"
                     :classes="{ wrapper: 'text-primary-500' }"
                   />
-                  <BaseTag color="default" shape="full" class="text-xs" compact>
+                  <BaseTag
+                    color="default"
+                    shape="full"
+                    class="text-xs"
+                    condensed
+                  >
                     84
                   </BaseTag>
                 </div>
@@ -396,7 +426,12 @@ const jobs = [
                     shape="rounded"
                     :classes="{ wrapper: 'text-primary-500' }"
                   />
-                  <BaseTag color="default" shape="full" class="text-xs" compact>
+                  <BaseTag
+                    color="default"
+                    shape="full"
+                    class="text-xs"
+                    condensed
+                  >
                     31
                   </BaseTag>
                 </div>
@@ -408,7 +443,12 @@ const jobs = [
                     shape="rounded"
                     :classes="{ wrapper: 'text-primary-500' }"
                   />
-                  <BaseTag color="default" shape="full" class="text-xs" compact>
+                  <BaseTag
+                    color="default"
+                    shape="full"
+                    class="text-xs"
+                    condensed
+                  >
                     59
                   </BaseTag>
                 </div>
@@ -420,7 +460,12 @@ const jobs = [
                     shape="rounded"
                     :classes="{ wrapper: 'text-primary-500' }"
                   />
-                  <BaseTag color="default" shape="full" class="text-xs" compact>
+                  <BaseTag
+                    color="default"
+                    shape="full"
+                    class="text-xs"
+                    condensed
+                  >
                     11
                   </BaseTag>
                 </div>
@@ -450,7 +495,12 @@ const jobs = [
                     shape="rounded"
                     :classes="{ wrapper: 'text-primary-500' }"
                   />
-                  <BaseTag color="default" shape="full" class="text-xs" compact>
+                  <BaseTag
+                    color="default"
+                    shape="full"
+                    class="text-xs"
+                    condensed
+                  >
                     61
                   </BaseTag>
                 </div>
@@ -462,7 +512,12 @@ const jobs = [
                     shape="rounded"
                     :classes="{ wrapper: 'text-primary-500' }"
                   />
-                  <BaseTag color="default" shape="full" class="text-xs" compact>
+                  <BaseTag
+                    color="default"
+                    shape="full"
+                    class="text-xs"
+                    condensed
+                  >
                     28
                   </BaseTag>
                 </div>
@@ -474,7 +529,12 @@ const jobs = [
                     shape="rounded"
                     :classes="{ wrapper: 'text-primary-500' }"
                   />
-                  <BaseTag color="default" shape="full" class="text-xs" compact>
+                  <BaseTag
+                    color="default"
+                    shape="full"
+                    class="text-xs"
+                    condensed
+                  >
                     112
                   </BaseTag>
                 </div>
@@ -486,7 +546,12 @@ const jobs = [
                     shape="rounded"
                     :classes="{ wrapper: 'text-primary-500' }"
                   />
-                  <BaseTag color="default" shape="full" class="text-xs" compact>
+                  <BaseTag
+                    color="default"
+                    shape="full"
+                    class="text-xs"
+                    condensed
+                  >
                     58
                   </BaseTag>
                 </div>
@@ -546,7 +611,7 @@ const jobs = [
                       v-for="(tag, index) in job.tags"
                       :key="index"
                       color="default"
-                      compact
+                      condensed
                       class="text-xs"
                     >
                       {{ tag }}

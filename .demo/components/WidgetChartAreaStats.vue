@@ -139,7 +139,7 @@ function useAreaSubscriptions() {
       </div>
     </div>
     <div class="mt-auto w-full">
-      <TairoApexcharts v-bind="areaSubscriptions" />
+      <DemoApexcharts v-bind="areaSubscriptions" />
     </div>
   </div>
 </template>

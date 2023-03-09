@@ -11,7 +11,7 @@ import straight from '~/documentation/pagination/straight.vue?raw'
 definePageMeta({
   title: 'Pagination',
   documentation: {
-    category: 'Interaction',
+    category: 'NUI Elements',
     components: ['BasePagination'],
   },
 })
@@ -35,7 +35,7 @@ const demoBreadcrumb = [
   {
     label: 'Pagination',
     hideLabel: false,
-    to: '#/',
+    to: '#',
   },
 ]
 </script>

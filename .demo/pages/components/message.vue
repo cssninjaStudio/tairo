@@ -9,7 +9,7 @@ import types from '~/documentation/message/types.vue?raw'
 definePageMeta({
   title: 'Messages',
   documentation: {
-    category: 'Interaction',
+    category: 'NUI Elements',
     components: ['BaseMessage'],
   },
 })
@@ -33,7 +33,7 @@ const demoBreadcrumb = [
   {
     label: 'Message',
     hideLabel: false,
-    to: '#/',
+    to: '#',
   },
 ]
 </script>

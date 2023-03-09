@@ -95,14 +95,14 @@ function getEventsSnippet(event: ComponentMeta['events'][0]) {
               :anchor="{ prefix: '', suffix: '#' }"
               class="text-muted-800 dark:text-muted-200"
             >
-              <TocAnchor
+              <TairoTocAnchor
                 :level="3"
                 prefix=""
                 suffix="¶"
                 :id="`${componentMeta.kebabName}-properties`"
               >
                 Properties
-              </TocAnchor>
+              </TairoTocAnchor>
             </BaseHeading>
           </header>
           <div class="p-3">
@@ -192,14 +192,14 @@ function getEventsSnippet(event: ComponentMeta['events'][0]) {
               :anchor="{ prefix: '', suffix: '#' }"
               class="text-muted-800 dark:text-muted-200"
             >
-              <TocAnchor
+              <TairoTocAnchor
                 :level="3"
                 prefix=""
                 suffix="¶"
                 :id="`${componentMeta.kebabName}-events`"
               >
                 Events
-              </TocAnchor>
+              </TairoTocAnchor>
             </BaseHeading>
           </header>
           <div class="p-3">
@@ -262,14 +262,14 @@ function getEventsSnippet(event: ComponentMeta['events'][0]) {
               :anchor="{ prefix: '', suffix: '#' }"
               class="text-muted-800 dark:text-muted-200"
             >
-              <TocAnchor
+              <TairoTocAnchor
                 :level="3"
                 prefix=""
                 suffix="¶"
                 :id="`${componentMeta.kebabName}-slots`"
               >
                 Slots
-              </TocAnchor>
+              </TairoTocAnchor>
             </BaseHeading>
           </header>
           <div class="p-3">

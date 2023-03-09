@@ -141,7 +141,7 @@ const selectedCurrency = ref('usd')
                 flavor="context"
                 label="Dropdown"
                 orientation="end"
-                compact
+                condensed
                 class="z-20"
               >
                 <BaseDropdownItem to="/" title="Invest" text="Buys more stocks">
@@ -269,7 +269,7 @@ const selectedCurrency = ref('usd')
                 flavor="context"
                 label="Dropdown"
                 orientation="end"
-                compact
+                condensed
                 class="z-20"
               >
                 <BaseDropdownItem to="/" title="Invest" text="Buys more stocks">
@@ -647,7 +647,7 @@ const selectedCurrency = ref('usd')
                   </NuxtLink>
                 </div>
               </div>
-              <TairoApexcharts v-bind="incomeHistory" />
+              <DemoApexcharts v-bind="incomeHistory" />
             </BaseCard>
           </div>
         </div>

@@ -1,32 +1,108 @@
-export interface TairoSidebarConfig {
-  name: string
-  icon: string | { name: string; class: string }
-  component?: string
-  componentHeader?: string | false
-  to?: string
-  click?: () => void | Promise<void>
-  activePath?: string
-  /**
-   * @default 'start'
-   */
-  position?: 'start' | 'end'
-}
-
-export interface TairoPanelConfig {
-  name: string
-  component: string
-  /**
-   * @default 'left'
-   */
-  position?: 'left' | 'right'
-}
-
 export default defineNuxtSchema({
   appConfig: {
     tairo: {
       title: 'Tairo',
-      sidebars: [] as TairoSidebarConfig[],
-      panels: [] as TairoPanelConfig[],
+      toolbar: {
+        enabled: true,
+        showTitle: true,
+        showNavBurger: false,
+        tools: {
+          $schema: {
+            type: 'array',
+            items: {
+              type: 'object',
+              required: ['name'],
+              properties: {
+                component: { type: 'string' },
+                props: { type: 'object' },
+              },
+            },
+          },
+        },
+      },
+      sidebar: {
+        enabled: true,
+        logo: {
+          component: 'TairoLogo',
+          props: {},
+        },
+        items: {
+          $schema: {
+            type: 'array',
+            items: {
+              type: 'object',
+              required: ['name'],
+              properties: {
+                name: { type: 'string' },
+                to: { type: 'string' },
+                activePath: { type: 'string' },
+                position: { type: 'string', tsType: "'start' | 'end'" },
+                icon: {
+                  type: 'object',
+                  required: ['name'],
+                  properties: {
+                    name: { type: 'string' },
+                    class: { type: 'string' },
+                  },
+                },
+                component: {
+                  type: 'object',
+                  required: ['name'],
+                  properties: {
+                    name: { type: 'string' },
+                    props: { type: 'object' },
+                  },
+                },
+                subsidebar: {
+                  type: 'object',
+                  required: ['name'],
+                  properties: {
+                    name: { type: 'string' },
+                    props: { type: 'object' },
+                  },
+                },
+                click: { type: 'function' },
+              },
+            },
+          },
+        },
+      },
+      circularMenu: {
+        enabled: true,
+        tools: {
+          $schema: {
+            type: 'array',
+            items: {
+              type: 'object',
+              required: ['name'],
+              properties: {
+                component: { type: 'string' },
+                props: { type: 'object' },
+              },
+            },
+          },
+        },
+      },
+      panels: {
+        $schema: {
+          type: 'array',
+          items: {
+            type: 'object',
+            required: ['name', 'component'],
+            properties: {
+              name: { type: 'string' },
+              position: {
+                type: 'string',
+                tsType: "'left' | 'right'",
+                $default: 'left',
+              },
+              component: { type: 'string' },
+              props: { type: 'object' },
+              overlay: { type: 'boolean', $default: true },
+            },
+          },
+        },
+      },
     },
   },
 })

@@ -98,7 +98,7 @@ function useGaugePersonal() {
           </BaseHeading>
         </div>
         <div class="py-16">
-          <TairoApexcharts v-bind="gaugePersonal" class="-mt-14" />
+          <DemoApexcharts v-bind="gaugePersonal" class="-mt-14" />
         </div>
         <div class="text-center mt-auto">
           <BaseParagraph size="sm">
@@ -206,7 +206,7 @@ function useGaugePersonal() {
         title="Upgrade to Pro"
         text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quid censes in Latino fore? Nam ante Aristippus, et ille melius."
         label="Upgrade Now"
-        to="#/"
+        to="#"
         shape="curved"
       />
       <!-- Widget -->

@@ -11,7 +11,7 @@ import shapes from '~/documentation/action/shapes.vue?raw'
 definePageMeta({
   title: 'Button Action',
   documentation: {
-    category: 'Interaction',
+    category: 'NUI Elements',
     components: ['BaseButtonAction'],
     composables: ['useButton'],
   },

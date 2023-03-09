@@ -7,7 +7,7 @@ import variation from '~/documentation/placeholder/variation.vue?raw'
 definePageMeta({
   title: 'Placeholders',
   documentation: {
-    category: 'Interaction',
+    category: 'NUI Elements',
     components: ['BasePlaceholderPage'],
   },
 })
@@ -31,7 +31,7 @@ const demoBreadcrumb = [
   {
     label: 'Placeholder',
     hideLabel: false,
-    to: '#/',
+    to: '#',
   },
 ]
 </script>

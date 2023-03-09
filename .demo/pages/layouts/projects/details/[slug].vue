@@ -37,28 +37,28 @@ function openTaskPanel(id: number, project: any) {
         flavor="context"
         label="Dropdown"
         orientation="end"
-        compact
+        condensed
         class="z-20"
         shape="curved"
       >
-        <BaseDropdownItem to="#/" title="Edit" text="Edit this project">
+        <BaseDropdownItem to="#" title="Edit" text="Edit this project">
           <template #start>
             <Icon name="ph:pencil-duotone" class="w-5 h-5 block mr-2" />
           </template>
         </BaseDropdownItem>
         <BaseDropdownDivide />
-        <BaseDropdownItem to="#/" title="Permissions" text="Manage permissions">
+        <BaseDropdownItem to="#" title="Permissions" text="Manage permissions">
           <template #start>
             <Icon name="ph:lock-duotone" class="w-5 h-5 block mr-2" />
           </template>
         </BaseDropdownItem>
-        <BaseDropdownItem to="#/" title="Files" text="Manage files">
+        <BaseDropdownItem to="#" title="Files" text="Manage files">
           <template #start>
             <Icon name="ph:file-duotone" class="w-5 h-5 block mr-2" />
           </template>
         </BaseDropdownItem>
         <BaseDropdownDivide />
-        <BaseDropdownItem to="#/" title="Delete" text="Delete this project">
+        <BaseDropdownItem to="#" title="Delete" text="Delete this project">
           <template #start>
             <Icon name="ph:trash-duotone" class="w-5 h-5 block mr-2" />
           </template>

@@ -646,14 +646,14 @@ function useGaugePersonal() {
                         better.
                       </span>
                       <NuxtLink
-                        to="#/"
+                        to="#"
                         class="text-primary-500 underline-offset-4 hover:underline"
                       >
                         Read how
                       </NuxtLink>
                     </BaseParagraph>
                   </div>
-                  <TairoApexcharts
+                  <DemoApexcharts
                     v-bind="areaCondition"
                     class="relative -left-5"
                   />
@@ -683,14 +683,14 @@ function useGaugePersonal() {
                         Your energy seems a bit unstable. You can improve it.
                       </span>
                       <NuxtLink
-                        to="#/"
+                        to="#"
                         class="text-primary-500 underline-offset-4 hover:underline"
                       >
                         Read how
                       </NuxtLink>
                     </BaseParagraph>
                   </div>
-                  <TairoApexcharts v-bind="scatterEnergy" />
+                  <DemoApexcharts v-bind="scatterEnergy" />
                 </BaseCard>
               </div>
               <!-- Chart -->
@@ -717,17 +717,14 @@ function useGaugePersonal() {
                         Your oxygen seems a bit unstable. You can improve it.
                       </span>
                       <NuxtLink
-                        to="#/"
+                        to="#"
                         class="text-primary-500 underline-offset-4 hover:underline"
                       >
                         Read how
                       </NuxtLink>
                     </BaseParagraph>
                   </div>
-                  <TairoApexcharts
-                    v-bind="barOxygen"
-                    class="relative -left-5"
-                  />
+                  <DemoApexcharts v-bind="barOxygen" class="relative -left-5" />
                 </BaseCard>
               </div>
               <!-- Chart -->
@@ -754,14 +751,14 @@ function useGaugePersonal() {
                         Your overall progress is very good. Make it even better.
                       </span>
                       <NuxtLink
-                        to="#/"
+                        to="#"
                         class="text-primary-500 underline-offset-4 hover:underline"
                       >
                         Read how
                       </NuxtLink>
                     </BaseParagraph>
                   </div>
-                  <TairoApexcharts
+                  <DemoApexcharts
                     v-bind="areaProgress"
                     class="relative -left-5"
                   />
@@ -796,7 +793,7 @@ function useGaugePersonal() {
                   </BaseHeading>
                 </div>
                 <div class="py-16">
-                  <TairoApexcharts v-bind="gaugePersonal" class="-mt-14" />
+                  <DemoApexcharts v-bind="gaugePersonal" class="-mt-14" />
                 </div>
                 <div class="text-center mt-auto">
                   <BaseParagraph size="sm">

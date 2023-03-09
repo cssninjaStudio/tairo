@@ -176,7 +176,7 @@ const items = [
                   </span>
                 </BaseParagraph>
                 <NuxtLink
-                  to="#/"
+                  to="#"
                   class="font-sans text-xs underline underline-offset-4 text-primary-500"
                 >
                   <span>Learn More</span>
@@ -221,7 +221,7 @@ const items = [
                         :color="item.status === 'new' ? 'success' : 'muted'"
                         shape="full"
                         flavor="pastel"
-                        compact
+                        condensed
                       >
                         {{ item.status }}
                       </BaseTag>
@@ -251,7 +251,7 @@ const items = [
             </div>
             <div class="flex sm:justify-end gap-2">
               <NuxtLink
-                to="#/"
+                to="#"
                 class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-white hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
               >
                 View All
@@ -389,7 +389,7 @@ const items = [
           <!-- Widget -->
           <BaseCard shape="curved" class="p-6">
             <BaseTabSlider
-              compact
+              condensed
               selected="team"
               :tabs="[
                 { label: 'Team', value: 'team' },

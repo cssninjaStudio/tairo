@@ -33,7 +33,7 @@ const { data, pending, error, refresh } = await useFetch('/api/rentals', {
 
 <template>
   <div>
-    <ContentWrapperTabbed :labels="['Active', 'Inactive']">
+    <TairoContentWrapperTabbed :labels="['Active', 'Inactive']">
       <template #left>
         <BaseInput
           v-model="filter"
@@ -245,6 +245,6 @@ const { data, pending, error, refresh } = await useFetch('/api/rentals', {
           </template>
         </BasePlaceholderPage>
       </template>
-    </ContentWrapperTabbed>
+    </TairoContentWrapperTabbed>
   </div>
 </template>

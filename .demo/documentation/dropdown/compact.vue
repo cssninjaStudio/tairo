@@ -1,33 +1,29 @@
-{highlight: ''}
 <template>
-<BaseDropdown
-flavor="button"
-label="Dropdown"
-orientation="start"
-compact
-
->
-
+  <BaseDropdown
+    flavor="button"
+    label="Dropdown"
+    orientation="start"
+    condensed
+  >
     <BaseDropdownItem
-      to="#/"
+      to="#"
       title="Profile"
       text="View your profile"
     />
     <BaseDropdownItem
-      to="#/"
+      to="#"
       title="Projects"
       text="View your projects"
     />
     <BaseDropdownItem
-      to="#/"
+      to="#"
       title="Team"
       text="Manage your team"
     />
     <BaseDropdownItem
-      to="#/"
+      to="#"
       title="Settings"
       text="Set your preferences"
     />
-
   </BaseDropdown>
 </template>

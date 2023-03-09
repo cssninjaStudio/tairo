@@ -995,7 +995,7 @@ function useBarOrders() {
         class="relative col-span-12 md:col-span-6 ltablet:col-span-3 lg:col-span-3"
       >
         <BaseCard class="pt-4">
-          <TairoApexcharts v-bind="sparkSalesOne" />
+          <DemoApexcharts v-bind="sparkSalesOne" />
         </BaseCard>
       </div>
       <!-- Sparkline -->
@@ -1003,7 +1003,7 @@ function useBarOrders() {
         class="relative col-span-12 md:col-span-6 ltablet:col-span-3 lg:col-span-3"
       >
         <BaseCard class="pt-4">
-          <TairoApexcharts v-bind="sparkSalesTwo" />
+          <DemoApexcharts v-bind="sparkSalesTwo" />
         </BaseCard>
       </div>
       <!-- Sparkline -->
@@ -1011,7 +1011,7 @@ function useBarOrders() {
         class="relative col-span-12 md:col-span-6 ltablet:col-span-3 lg:col-span-3"
       >
         <BaseCard class="pt-4">
-          <TairoApexcharts v-bind="sparkSalesThree" />
+          <DemoApexcharts v-bind="sparkSalesThree" />
         </BaseCard>
       </div>
       <!-- Sparkline -->
@@ -1019,7 +1019,7 @@ function useBarOrders() {
         class="relative col-span-12 md:col-span-6 ltablet:col-span-3 lg:col-span-3"
       >
         <BaseCard class="pt-4">
-          <TairoApexcharts v-bind="sparkSalesFour" />
+          <DemoApexcharts v-bind="sparkSalesFour" />
         </BaseCard>
       </div>
       <!-- Chart -->
@@ -1036,7 +1036,7 @@ function useBarOrders() {
               <span>Revenue Overview</span>
             </BaseHeading>
             <NuxtLink
-              to="#/"
+              to="#"
               class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
             >
               Details
@@ -1066,7 +1066,7 @@ function useBarOrders() {
               </p>
             </div>
           </div>
-          <TairoApexcharts v-bind="areaCustomers" />
+          <DemoApexcharts v-bind="areaCustomers" />
         </BaseCard>
       </div>
       <!-- Column -->
@@ -1102,7 +1102,7 @@ function useBarOrders() {
                 </BaseParagraph>
               </div>
               <div class="flex-1">
-                <TairoApexcharts v-bind="radialSalesRevenue" />
+                <DemoApexcharts v-bind="radialSalesRevenue" />
               </div>
             </div>
           </BaseCard>
@@ -1121,7 +1121,7 @@ function useBarOrders() {
             </div>
             <div class="flex justify-between gap-2">
               <div class="flex-1 flex flex-col gap-2 text-center">
-                <TairoApexcharts v-bind="radialSmallOne" />
+                <DemoApexcharts v-bind="radialSmallOne" />
                 <div class="-mt-6">
                   <BaseHeading
                     as="h5"
@@ -1138,7 +1138,7 @@ function useBarOrders() {
                 </div>
               </div>
               <div class="flex-1 flex flex-col gap-2 text-center">
-                <TairoApexcharts v-bind="radialSmallTwo" />
+                <DemoApexcharts v-bind="radialSmallTwo" />
                 <div class="-mt-6">
                   <BaseHeading
                     as="h5"
@@ -1155,7 +1155,7 @@ function useBarOrders() {
                 </div>
               </div>
               <div class="flex-1 flex flex-col gap-2 text-center">
-                <TairoApexcharts v-bind="radialSmallThree" />
+                <DemoApexcharts v-bind="radialSmallThree" />
                 <div class="-mt-6">
                   <BaseHeading
                     as="h5"
@@ -1192,7 +1192,7 @@ function useBarOrders() {
             </BaseHeading>
           </div>
           <div class="py-16">
-            <TairoApexcharts v-bind="gaugePersonal" class="-mt-14" />
+            <DemoApexcharts v-bind="gaugePersonal" class="-mt-14" />
           </div>
           <div class="text-center mt-auto">
             <BaseParagraph size="sm">
@@ -1219,7 +1219,7 @@ function useBarOrders() {
               <span>Orders Summary</span>
             </BaseHeading>
           </div>
-          <TairoApexcharts v-bind="barOrders" />
+          <DemoApexcharts v-bind="barOrders" />
         </BaseCard>
       </div>
       <!-- Column -->

@@ -157,7 +157,7 @@ const panelActive = ref(false)
         to="/dashboards"
         class="flex items-center justify-center w-16 h-16"
       >
-        <IconLogo class="text-primary-600 h-10" />
+        <TairoLogo class="text-primary-600 h-10" />
       </NuxtLink>
       <nav class="relative flex flex-col h-full">
         <NuxtLink
@@ -249,7 +249,7 @@ const panelActive = ref(false)
             </div>
           </button>
           <div class="relative w-16 h-16 flex items-center justify-center">
-            <NavigationSidebarAccountMenu />
+            <DemoAccountMenu />
           </div>
         </div>
       </nav>

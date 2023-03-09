@@ -15,7 +15,7 @@ import straight from '~/documentation/table/straight.vue?raw'
 definePageMeta({
   title: 'Tables',
   documentation: {
-    category: 'Display',
+    category: 'Tairo Elements',
     components: [
       'TairoTable',
       'TairoTableHeading',
@@ -44,7 +44,7 @@ const demoBreadcrumb = [
   {
     label: 'Table',
     hideLabel: false,
-    to: '#/',
+    to: '#',
   },
 ]
 </script>

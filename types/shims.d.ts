@@ -10,11 +10,15 @@ declare module 'nuxt/dist/pages/runtime/composables' {
     documentation?: {
       category?:
         | 'Uncategorized'
-        | 'Content'
-        | 'Interaction'
-        | 'Display'
-        | 'Forms'
-        | 'Addons'
+        // | 'Content'
+        // | 'Interaction'
+        // | 'Display'
+        // | 'Forms'
+        // | 'Addons'
+        | 'NUI Forms'
+        | 'NUI Elements'
+        | 'Tairo Elements'
+        | 'Demo Elements'
       components?: string[]
       composables?: string[]
       interfaces?: string[]

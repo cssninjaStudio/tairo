@@ -9,7 +9,7 @@ import straight from '~/documentation/flex-table/straight.vue?raw'
 definePageMeta({
   title: 'Flex Tables',
   documentation: {
-    category: 'Display',
+    category: 'Tairo Elements',
     components: [
       'TairoFlexTable',
       'TairoFlexTableHeading',
@@ -38,7 +38,7 @@ const demoBreadcrumb = [
   {
     label: 'Flex Table',
     hideLabel: false,
-    to: '#/',
+    to: '#',
   },
 ]
 </script>

@@ -33,7 +33,7 @@ const { data, pending, error, refresh } = await useFetch('/api/freelancers', {
 
 <template>
   <div>
-    <ContentWrapper>
+    <TairoContentWrapper>
       <template #left>
         <BaseInput
           v-model="filter"
@@ -119,7 +119,12 @@ const { data, pending, error, refresh } = await useFetch('/api/freelancers', {
                 <div
                   class="flex items-center justify-center sm:justify-end w-full sm:w-[160px]"
                 >
-                  <BaseTag compact color="primary" flavor="pastel" shape="full">
+                  <BaseTag
+                    condensed
+                    color="primary"
+                    flavor="pastel"
+                    shape="full"
+                  >
                     {{ item.role }}
                   </BaseTag>
                 </div>
@@ -203,6 +208,6 @@ const { data, pending, error, refresh } = await useFetch('/api/freelancers', {
           </div>
         </div>
       </div>
-    </ContentWrapper>
+    </TairoContentWrapper>
   </div>
 </template>

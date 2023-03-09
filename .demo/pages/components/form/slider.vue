@@ -21,7 +21,7 @@ import straight from '~/documentation/form/slider/straight.vue?raw'
 definePageMeta({
   title: 'Sliders',
   documentation: {
-    category: 'Addons',
+    // category: 'Addons',
     components: ['Slider'],
   },
 })
@@ -45,7 +45,7 @@ const demoBreadcrumb = [
   {
     label: 'Slider',
     hideLabel: false,
-    to: '#/',
+    to: '#',
   },
 ]
 

@@ -15,7 +15,7 @@ import mediaRight from '~/documentation/popover/media-right.vue?raw'
 definePageMeta({
   title: 'Popover',
   documentation: {
-    category: 'Interaction',
+    category: 'Tairo Elements',
     components: [
       'TairoPopover',
       'TairoPopoverContentHelp',
@@ -44,7 +44,7 @@ const demoBreadcrumb = [
   {
     label: 'Popover',
     hideLabel: false,
-    to: '#/',
+    to: '#',
   },
 ]
 </script>

@@ -36,7 +36,7 @@ const { data, pending, error, refresh } = await useFetch(
 
 <template>
   <div>
-    <ContentWrapper>
+    <TairoContentWrapper>
       <template #left>
         <BaseInput
           v-model="filter"
@@ -114,12 +114,12 @@ const { data, pending, error, refresh } = await useFetch(
                     flavor="context"
                     label="Dropdown"
                     orientation="end"
-                    compact
+                    condensed
                     class="z-20"
                     shape="curved"
                   >
                     <BaseDropdownItem
-                      to="#/"
+                      to="#"
                       title="Permissions"
                       text="Manage permissions"
                     >
@@ -131,7 +131,7 @@ const { data, pending, error, refresh } = await useFetch(
                       </template>
                     </BaseDropdownItem>
                     <BaseDropdownItem
-                      to="#/"
+                      to="#"
                       title="Message"
                       text="Send a message"
                     >
@@ -143,7 +143,7 @@ const { data, pending, error, refresh } = await useFetch(
                       </template>
                     </BaseDropdownItem>
                     <BaseDropdownItem
-                      to="#/"
+                      to="#"
                       title="Share"
                       text="Share this profile"
                     >
@@ -156,7 +156,7 @@ const { data, pending, error, refresh } = await useFetch(
                     </BaseDropdownItem>
                     <BaseDropdownDivide />
                     <BaseDropdownItem
-                      to="#/"
+                      to="#"
                       title="Remove"
                       text="Remove from list"
                     >
@@ -182,6 +182,6 @@ const { data, pending, error, refresh } = await useFetch(
           />
         </div>
       </div>
-    </ContentWrapper>
+    </TairoContentWrapper>
   </div>
 </template>

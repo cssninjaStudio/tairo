@@ -22,7 +22,7 @@ const team = [
         logo: '/img/logos/stacks/sass.svg',
       },
     ],
-    to: '#/',
+    to: '#',
   },
   {
     id: 1,
@@ -45,7 +45,7 @@ const team = [
         logo: '/img/logos/stacks/photoshop.svg',
       },
     ],
-    to: '#/',
+    to: '#',
   },
   {
     id: 2,
@@ -68,7 +68,7 @@ const team = [
         logo: '/img/logos/stacks/javascript.svg',
       },
     ],
-    to: '#/',
+    to: '#',
   },
   {
     id: 3,
@@ -91,7 +91,7 @@ const team = [
         logo: '/img/logos/stacks/flutter.svg',
       },
     ],
-    to: '#/',
+    to: '#',
   },
   {
     id: 4,
@@ -114,7 +114,7 @@ const team = [
         logo: '/img/logos/stacks/react.svg',
       },
     ],
-    to: '#/',
+    to: '#',
   },
   {
     id: 5,
@@ -137,13 +137,13 @@ const team = [
         logo: '/img/logos/stacks/typescript.svg',
       },
     ],
-    to: '#/',
+    to: '#',
   },
 ]
 </script>
 
 <template>
-  <CarouselTeam
+  <DemoCarouselTeam
     :slides-to-show="3"
     :slides="team"
   />

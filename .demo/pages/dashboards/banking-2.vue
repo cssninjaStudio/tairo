@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Credit Cards',
-  
 })
 
 const cards = [
@@ -380,7 +379,7 @@ function useAreaExpenses() {
             <!-- Chart -->
             <div class="h-full flex flex-col grow ltablet:pr-12 lg:pr-12">
               <div class="mt-auto">
-                <TairoApexcharts v-bind="areaExpenses" />
+                <DemoApexcharts v-bind="areaExpenses" />
               </div>
             </div>
           </div>

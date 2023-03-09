@@ -9,9 +9,9 @@ import TrueFalseDemo from '~/documentation/form/animated-checkbox/true-false.vue
 import trueFalse from '~/documentation/form/animated-checkbox/true-false.vue?raw'
 
 definePageMeta({
-  title: 'Animated checkbox',
+  title: 'Checkbox Animated',
   documentation: {
-    category: 'Forms',
+    category: 'NUI Forms',
     components: ['BaseAnimatedCheckbox'],
   },
 })
@@ -33,9 +33,9 @@ const demoBreadcrumb = [
     to: '/components',
   },
   {
-    label: 'Animated Checkbox',
+    label: 'Checkbox Animated',
     hideLabel: false,
-    to: '#/',
+    to: '#',
   },
 ]
 

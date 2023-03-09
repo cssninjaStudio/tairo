@@ -11,7 +11,7 @@ import smallTier from '~/documentation/modal/small-tier.vue?raw'
 definePageMeta({
   title: 'Modals',
   documentation: {
-    category: 'Interaction',
+    category: 'NUI Elements',
     components: ['BaseModal'],
   },
 })
@@ -35,7 +35,7 @@ const demoBreadcrumb = [
   {
     label: 'Modal',
     hideLabel: false,
-    to: '#/',
+    to: '#',
   },
 ]
 </script>

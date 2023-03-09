@@ -74,7 +74,7 @@ const topics = [
 </script>
 
 <template>
-  <CarouselIcons
+  <DemoCarouselIcons
     :slides-to-show="6"
     :slides="topics"
   />

@@ -3,19 +3,19 @@ import { useCssVar } from '@vueuse/core'
 export function useTailwindColors() {
   const primary = process.server
     ? ref('transparent')
-    : useCssVar('--primary', document.documentElement)
+    : useCssVar('--color-primary-500', document.documentElement)
   const success = process.server
     ? ref('transparent')
-    : useCssVar('--success', document.documentElement)
+    : useCssVar('--color-success-500', document.documentElement)
   const info = process.server
     ? ref('transparent')
-    : useCssVar('--info', document.documentElement)
+    : useCssVar('--color-info-500', document.documentElement)
   const warning = process.server
     ? ref('transparent')
-    : useCssVar('--warning', document.documentElement)
+    : useCssVar('--color-warning-500', document.documentElement)
   const danger = process.server
     ? ref('transparent')
-    : useCssVar('--danger', document.documentElement)
+    : useCssVar('--color-danger-500', document.documentElement)
   const yellow = process.server
     ? ref('transparent')
     : useCssVar('--color-yellow-400', document.documentElement)

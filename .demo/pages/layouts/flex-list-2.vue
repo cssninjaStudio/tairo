@@ -49,7 +49,7 @@ function statusColor(itemStatus: string) {
 
 <template>
   <div>
-    <ContentWrapper>
+    <TairoContentWrapper>
       <template #left>
         <BaseInput
           v-model="filter"
@@ -101,7 +101,7 @@ function statusColor(itemStatus: string) {
               v-for="(item, index) in data?.data"
               :key="index"
               shape="straight"
-              compact
+              condensed
               spaced
             >
               <template #start>
@@ -147,7 +147,7 @@ function statusColor(itemStatus: string) {
                     :color="statusColor(item.status)"
                     shape="full"
                     flavor="pastel"
-                    compact
+                    condensed
                     class="capitalize"
                   >
                     {{ item.status }}
@@ -183,6 +183,6 @@ function statusColor(itemStatus: string) {
           />
         </div>
       </div>
-    </ContentWrapper>
+    </TairoContentWrapper>
   </div>
 </template>

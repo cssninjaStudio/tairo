@@ -98,7 +98,7 @@ const popular = [
           <!-- Grid item -->
           <div class="col-span-6 sm:col-span-3">
             <NuxtLink
-              to="#/"
+              to="#"
               class="group relative w-full flex flex-col overflow-hidden rounded-2xl"
             >
               <img
@@ -140,7 +140,7 @@ const popular = [
           <!-- Grid item -->
           <div class="col-span-6 sm:col-span-3">
             <NuxtLink
-              to="#/"
+              to="#"
               class="group relative w-full flex flex-col overflow-hidden rounded-2xl"
             >
               <img
@@ -182,7 +182,7 @@ const popular = [
           <!-- Grid item -->
           <div class="col-span-6 sm:col-span-3">
             <NuxtLink
-              to="#/"
+              to="#"
               class="group relative w-full flex flex-col overflow-hidden rounded-2xl"
             >
               <img
@@ -224,7 +224,7 @@ const popular = [
           <!-- Grid item -->
           <div class="col-span-6 sm:col-span-3">
             <NuxtLink
-              to="#/"
+              to="#"
               class="group relative w-full flex flex-col overflow-hidden rounded-2xl"
             >
               <img
@@ -406,7 +406,7 @@ const popular = [
             <div class="space-y-1">
               <!-- Item -->
               <NuxtLink
-                to="#/"
+                to="#"
                 class="flex items-center gap-3 rounded-xl hover:bg-muted-100 dark:hover:bg-muted-700/50 py-3 px-2 transition-colors duration-300"
               >
                 <img
@@ -436,7 +436,7 @@ const popular = [
               </NuxtLink>
               <!-- Item -->
               <NuxtLink
-                to="#/"
+                to="#"
                 class="flex items-center gap-3 rounded-xl hover:bg-muted-100 dark:hover:bg-muted-700/50 py-3 px-2 transition-colors duration-300"
               >
                 <img
@@ -466,7 +466,7 @@ const popular = [
               </NuxtLink>
               <!-- Item -->
               <NuxtLink
-                to="#/"
+                to="#"
                 class="flex items-center gap-3 rounded-xl hover:bg-muted-100 dark:hover:bg-muted-700/50 py-3 px-2 transition-colors duration-300"
               >
                 <img

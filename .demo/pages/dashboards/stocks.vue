@@ -103,12 +103,12 @@ function useBarProfit() {
       class="flex justify-around gap-6 pb-8 overflow-x-auto ltablet:overflow-visible lg:overflow-visible"
     >
       <!-- Item -->
-      <NuxtLink to="#/" class="group flex-1 flex flex-col text-center">
+      <NuxtLink to="#" class="group flex-1 flex flex-col text-center">
         <div
-          class="h-16 w-16 mx-auto flex items-center justify-center mask mask-hexed bg-muted-200 dark:bg-muted-700 group-hover:bg-yellow-400 dark:group-hover:bg-yellow-400 scale-90 group-hover:scale-90 group-hover:-translate-y-1 transition-all duration-300"
+          class="h-16 w-16 mx-auto flex items-center justify-center nui-mask nui-mask-hexed bg-muted-200 dark:bg-muted-700 group-hover:bg-yellow-400 dark:group-hover:bg-yellow-400 scale-90 group-hover:scale-90 group-hover:-translate-y-1 transition-all duration-300"
         >
           <div
-            class="h-16 w-16 scale-95 flex items-center justify-center mask mask-hexed bg-white dark:bg-muted-800"
+            class="h-16 w-16 scale-95 flex items-center justify-center nui-mask nui-mask-hexed bg-white dark:bg-muted-800"
           >
             <Icon name="ph:lightning-duotone" class="w-6 h-6 text-yellow-400" />
           </div>
@@ -124,12 +124,12 @@ function useBarProfit() {
         </BaseHeading>
       </NuxtLink>
       <!-- Item -->
-      <NuxtLink to="#/" class="group flex-1 flex flex-col text-center">
+      <NuxtLink to="#" class="group flex-1 flex flex-col text-center">
         <div
-          class="h-16 w-16 mx-auto flex items-center justify-center mask mask-hexed bg-muted-200 dark:bg-muted-700 group-hover:bg-primary-500 dark:group-hover:bg-primary-500 scale-90 group-hover:scale-90 group-hover:-translate-y-1 transition-all duration-300"
+          class="h-16 w-16 mx-auto flex items-center justify-center nui-mask nui-mask-hexed bg-muted-200 dark:bg-muted-700 group-hover:bg-primary-500 dark:group-hover:bg-primary-500 scale-90 group-hover:scale-90 group-hover:-translate-y-1 transition-all duration-300"
         >
           <div
-            class="h-16 w-16 scale-95 flex items-center justify-center mask mask-hexed bg-white dark:bg-muted-800"
+            class="h-16 w-16 scale-95 flex items-center justify-center nui-mask nui-mask-hexed bg-white dark:bg-muted-800"
           >
             <Icon
               name="ph:buildings-duotone"
@@ -148,12 +148,12 @@ function useBarProfit() {
         </BaseHeading>
       </NuxtLink>
       <!-- Item -->
-      <NuxtLink to="#/" class="group flex-1 flex flex-col text-center">
+      <NuxtLink to="#" class="group flex-1 flex flex-col text-center">
         <div
-          class="h-16 w-16 mx-auto flex items-center justify-center mask mask-hexed bg-muted-200 dark:bg-muted-700 group-hover:bg-success-500 dark:group-hover:bg-success-500 scale-90 group-hover:scale-90 group-hover:-translate-y-1 transition-all duration-300"
+          class="h-16 w-16 mx-auto flex items-center justify-center nui-mask nui-mask-hexed bg-muted-200 dark:bg-muted-700 group-hover:bg-success-500 dark:group-hover:bg-success-500 scale-90 group-hover:scale-90 group-hover:-translate-y-1 transition-all duration-300"
         >
           <div
-            class="h-16 w-16 scale-95 flex items-center justify-center mask mask-hexed bg-white dark:bg-muted-800"
+            class="h-16 w-16 scale-95 flex items-center justify-center nui-mask nui-mask-hexed bg-white dark:bg-muted-800"
           >
             <Icon name="ph:leaf-duotone" class="w-6 h-6 text-success-500" />
           </div>
@@ -169,12 +169,12 @@ function useBarProfit() {
         </BaseHeading>
       </NuxtLink>
       <!-- Item -->
-      <NuxtLink to="#/" class="group flex-1 flex flex-col text-center">
+      <NuxtLink to="#" class="group flex-1 flex flex-col text-center">
         <div
-          class="h-16 w-16 mx-auto flex items-center justify-center mask mask-hexed bg-muted-200 dark:bg-muted-700 group-hover:bg-indigo-500 dark:group-hover:bg-indigo-500 scale-90 group-hover:scale-90 group-hover:-translate-y-1 transition-all duration-300"
+          class="h-16 w-16 mx-auto flex items-center justify-center nui-mask nui-mask-hexed bg-muted-200 dark:bg-muted-700 group-hover:bg-indigo-500 dark:group-hover:bg-indigo-500 scale-90 group-hover:scale-90 group-hover:-translate-y-1 transition-all duration-300"
         >
           <div
-            class="h-16 w-16 scale-95 flex items-center justify-center mask mask-hexed bg-white dark:bg-muted-800"
+            class="h-16 w-16 scale-95 flex items-center justify-center nui-mask nui-mask-hexed bg-white dark:bg-muted-800"
           >
             <Icon name="ph:bank-duotone" class="w-6 h-6 text-indigo-500" />
           </div>
@@ -190,12 +190,12 @@ function useBarProfit() {
         </BaseHeading>
       </NuxtLink>
       <!-- Item -->
-      <NuxtLink to="#/" class="group flex-1 flex flex-col text-center">
+      <NuxtLink to="#" class="group flex-1 flex flex-col text-center">
         <div
-          class="h-16 w-16 mx-auto flex items-center justify-center mask mask-hexed bg-muted-200 dark:bg-muted-700 group-hover:bg-lime-500 dark:group-hover:bg-lime-500 scale-90 group-hover:scale-90 group-hover:-translate-y-1 transition-all duration-300"
+          class="h-16 w-16 mx-auto flex items-center justify-center nui-mask nui-mask-hexed bg-muted-200 dark:bg-muted-700 group-hover:bg-lime-500 dark:group-hover:bg-lime-500 scale-90 group-hover:scale-90 group-hover:-translate-y-1 transition-all duration-300"
         >
           <div
-            class="h-16 w-16 scale-95 flex items-center justify-center mask mask-hexed bg-white dark:bg-muted-800"
+            class="h-16 w-16 scale-95 flex items-center justify-center nui-mask nui-mask-hexed bg-white dark:bg-muted-800"
           >
             <Icon name="ph:sketch-logo-duotone" class="w-6 h-6 text-lime-500" />
           </div>
@@ -211,12 +211,12 @@ function useBarProfit() {
         </BaseHeading>
       </NuxtLink>
       <!-- Item -->
-      <NuxtLink to="#/" class="group flex-1 flex flex-col text-center">
+      <NuxtLink to="#" class="group flex-1 flex flex-col text-center">
         <div
-          class="h-16 w-16 mx-auto flex items-center justify-center mask mask-hexed bg-muted-200 dark:bg-muted-700 group-hover:bg-sky-500 dark:group-hover:bg-sky-500 scale-90 group-hover:scale-90 group-hover:-translate-y-1 transition-all duration-300"
+          class="h-16 w-16 mx-auto flex items-center justify-center nui-mask nui-mask-hexed bg-muted-200 dark:bg-muted-700 group-hover:bg-sky-500 dark:group-hover:bg-sky-500 scale-90 group-hover:scale-90 group-hover:-translate-y-1 transition-all duration-300"
         >
           <div
-            class="h-16 w-16 scale-95 flex items-center justify-center mask mask-hexed bg-white dark:bg-muted-800"
+            class="h-16 w-16 scale-95 flex items-center justify-center nui-mask nui-mask-hexed bg-white dark:bg-muted-800"
           >
             <Icon name="ph:atom-duotone" class="w-6 h-6 text-sky-500" />
           </div>
@@ -232,12 +232,12 @@ function useBarProfit() {
         </BaseHeading>
       </NuxtLink>
       <!-- Item -->
-      <NuxtLink to="#/" class="group flex-1 flex flex-col text-center">
+      <NuxtLink to="#" class="group flex-1 flex flex-col text-center">
         <div
-          class="h-16 w-16 mx-auto flex items-center justify-center mask mask-hexed bg-muted-200 dark:bg-muted-700 group-hover:bg-orange-500 dark:group-hover:bg-orange-500 scale-90 group-hover:scale-90 group-hover:-translate-y-1 transition-all duration-300"
+          class="h-16 w-16 mx-auto flex items-center justify-center nui-mask nui-mask-hexed bg-muted-200 dark:bg-muted-700 group-hover:bg-orange-500 dark:group-hover:bg-orange-500 scale-90 group-hover:scale-90 group-hover:-translate-y-1 transition-all duration-300"
         >
           <div
-            class="h-16 w-16 scale-95 flex items-center justify-center mask mask-hexed bg-white dark:bg-muted-800"
+            class="h-16 w-16 scale-95 flex items-center justify-center nui-mask nui-mask-hexed bg-white dark:bg-muted-800"
           >
             <Icon name="ph:monitor-duotone" class="w-6 h-6 text-orange-500" />
           </div>
@@ -253,12 +253,12 @@ function useBarProfit() {
         </BaseHeading>
       </NuxtLink>
       <!-- Item -->
-      <NuxtLink to="#/" class="group flex-1 flex flex-col text-center">
+      <NuxtLink to="#" class="group flex-1 flex flex-col text-center">
         <div
-          class="h-16 w-16 mx-auto flex items-center justify-center mask mask-hexed bg-muted-200 dark:bg-muted-700 group-hover:bg-rose-500 dark:group-hover:bg-rose-500 scale-90 group-hover:scale-90 group-hover:-translate-y-1 transition-all duration-300"
+          class="h-16 w-16 mx-auto flex items-center justify-center nui-mask nui-mask-hexed bg-muted-200 dark:bg-muted-700 group-hover:bg-rose-500 dark:group-hover:bg-rose-500 scale-90 group-hover:scale-90 group-hover:-translate-y-1 transition-all duration-300"
         >
           <div
-            class="h-16 w-16 scale-95 flex items-center justify-center mask mask-hexed bg-white dark:bg-muted-800"
+            class="h-16 w-16 scale-95 flex items-center justify-center nui-mask nui-mask-hexed bg-white dark:bg-muted-800"
           >
             <Icon name="ph:pill-duotone" class="w-6 h-6 text-rose-500" />
           </div>
@@ -294,13 +294,13 @@ function useBarProfit() {
               orientation="end"
               class="z-20"
             >
-              <BaseDropdownItem to="#/" title="Invest" text="Buys more stocks">
+              <BaseDropdownItem to="#" title="Invest" text="Buys more stocks">
                 <template #start>
                   <Icon name="ph:coin-duotone" class="w-5 h-5 block mr-2" />
                 </template>
               </BaseDropdownItem>
               <BaseDropdownItem
-                to="#/"
+                to="#"
                 title="Benchmark"
                 text="Compare other sources"
               >
@@ -311,17 +311,13 @@ function useBarProfit() {
                   />
                 </template>
               </BaseDropdownItem>
-              <BaseDropdownItem to="#/" title="Trade" text="View opportunities">
+              <BaseDropdownItem to="#" title="Trade" text="View opportunities">
                 <template #start>
                   <Icon name="ph:bank-duotone" class="w-5 h-5 block mr-2" />
                 </template>
               </BaseDropdownItem>
               <BaseDropdownDivide />
-              <BaseDropdownItem
-                to="#/"
-                title="Wallet"
-                text="Manage your wallet"
-              >
+              <BaseDropdownItem to="#" title="Wallet" text="Manage your wallet">
                 <template #start>
                   <Icon name="ph:wallet-duotone" class="w-5 h-5 block mr-2" />
                 </template>
@@ -385,13 +381,13 @@ function useBarProfit() {
               orientation="end"
               class="z-20"
             >
-              <BaseDropdownItem to="#/" title="Invest" text="Buys more stocks">
+              <BaseDropdownItem to="#" title="Invest" text="Buys more stocks">
                 <template #start>
                   <Icon name="ph:coin-duotone" class="w-5 h-5 block mr-2" />
                 </template>
               </BaseDropdownItem>
               <BaseDropdownItem
-                to="#/"
+                to="#"
                 title="Benchmark"
                 text="Compare other sources"
               >
@@ -402,17 +398,13 @@ function useBarProfit() {
                   />
                 </template>
               </BaseDropdownItem>
-              <BaseDropdownItem to="#/" title="Trade" text="View opportunities">
+              <BaseDropdownItem to="#" title="Trade" text="View opportunities">
                 <template #start>
                   <Icon name="ph:bank-duotone" class="w-5 h-5 block mr-2" />
                 </template>
               </BaseDropdownItem>
               <BaseDropdownDivide />
-              <BaseDropdownItem
-                to="#/"
-                title="Wallet"
-                text="Manage your wallet"
-              >
+              <BaseDropdownItem to="#" title="Wallet" text="Manage your wallet">
                 <template #start>
                   <Icon name="ph:wallet-duotone" class="w-5 h-5 block mr-2" />
                 </template>
@@ -478,13 +470,13 @@ function useBarProfit() {
               orientation="end"
               class="z-20"
             >
-              <BaseDropdownItem to="#/" title="Invest" text="Buys more stocks">
+              <BaseDropdownItem to="#" title="Invest" text="Buys more stocks">
                 <template #start>
                   <Icon name="ph:coin-duotone" class="w-5 h-5 block mr-2" />
                 </template>
               </BaseDropdownItem>
               <BaseDropdownItem
-                to="#/"
+                to="#"
                 title="Benchmark"
                 text="Compare other sources"
               >
@@ -495,17 +487,13 @@ function useBarProfit() {
                   />
                 </template>
               </BaseDropdownItem>
-              <BaseDropdownItem to="#/" title="Trade" text="View opportunities">
+              <BaseDropdownItem to="#" title="Trade" text="View opportunities">
                 <template #start>
                   <Icon name="ph:bank-duotone" class="w-5 h-5 block mr-2" />
                 </template>
               </BaseDropdownItem>
               <BaseDropdownDivide />
-              <BaseDropdownItem
-                to="#/"
-                title="Wallet"
-                text="Manage your wallet"
-              >
+              <BaseDropdownItem to="#" title="Wallet" text="Manage your wallet">
                 <template #start>
                   <Icon name="ph:wallet-duotone" class="w-5 h-5 block mr-2" />
                 </template>
@@ -570,7 +558,7 @@ function useBarProfit() {
               <span>Trending Stocks</span>
             </BaseHeading>
             <NuxtLink
-              to="#/"
+              to="#"
               class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
             >
               View All
@@ -804,7 +792,7 @@ function useBarProfit() {
               <span>Profit Evolution</span>
             </BaseHeading>
           </div>
-          <TairoApexcharts v-bind="barProfit" />
+          <DemoApexcharts v-bind="barProfit" />
         </BaseCard>
       </div>
       <!-- Grid item -->

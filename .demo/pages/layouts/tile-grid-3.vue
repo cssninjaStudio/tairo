@@ -33,7 +33,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
 
 <template>
   <div>
-    <ContentWrapper>
+    <TairoContentWrapper>
       <template #left>
         <BaseInput
           v-model="filter"
@@ -141,12 +141,12 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                     flavor="context"
                     label="Dropdown"
                     orientation="end"
-                    compact
+                    condensed
                     class="z-20"
                     shape="curved"
                   >
                     <BaseDropdownItem
-                      to="#/"
+                      to="#"
                       title="Download"
                       text="Download recipe"
                     >
@@ -158,7 +158,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                       </template>
                     </BaseDropdownItem>
                     <BaseDropdownDivide />
-                    <BaseDropdownItem to="#/" title="Share" text="Share recipe">
+                    <BaseDropdownItem to="#" title="Share" text="Share recipe">
                       <template #start>
                         <Icon
                           name="ph:share-duotone"
@@ -167,7 +167,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                       </template>
                     </BaseDropdownItem>
                     <BaseDropdownDivide />
-                    <BaseDropdownItem to="#/" title="Save" text="Save recipe">
+                    <BaseDropdownItem to="#" title="Save" text="Save recipe">
                       <template #start>
                         <Icon
                           name="ph:bookmark-simple-duotone"
@@ -190,6 +190,6 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
           />
         </div>
       </div>
-    </ContentWrapper>
+    </TairoContentWrapper>
   </div>
 </template>

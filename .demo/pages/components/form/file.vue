@@ -2,7 +2,7 @@
 definePageMeta({
   title: 'File inputs',
   documentation: {
-    category: 'Forms',
+    category: 'NUI Forms',
     components: ['BaseInputFile'],
   },
 })
@@ -26,7 +26,7 @@ const demoBreadcrumb = [
   {
     label: 'File Input',
     hideLabel: false,
-    to: '#/',
+    to: '#',
   },
 ]
 </script>

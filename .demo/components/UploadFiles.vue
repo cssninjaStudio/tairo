@@ -236,15 +236,17 @@ export default {
             </div>
             <div class="w-40 flex items-center justify-center">
               <div v-if="file.error">
-                <BaseTag color="danger" shape="full" compact>
+                <BaseTag color="danger" shape="full" condensed>
                   {{ file.error }}
                 </BaseTag>
               </div>
               <div v-else-if="file.success">
-                <BaseTag color="success" shape="full" compact>Success</BaseTag>
+                <BaseTag color="success" shape="full" condensed>
+                  Success
+                </BaseTag>
               </div>
               <div v-else-if="file.active">
-                <BaseTag color="info" shape="full" compact>Active</BaseTag>
+                <BaseTag color="info" shape="full" condensed>Active</BaseTag>
               </div>
               <div v-else></div>
             </div>

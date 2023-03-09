@@ -18,14 +18,14 @@ const activeTab = ref('tab-1')
 <template>
   <div>
     <div
-      class="w-full flex flex-col sm:flex-row items-center justify-between gap-4 mb-6"
+      class="mb-6 flex w-full flex-col items-center justify-between gap-4 sm:flex-row"
       :class="props.reverse && 'sm:flex-row-reverse'"
     >
       <slot name="left"></slot>
       <slot name="right">
         <div class="w-full sm:w-auto">
           <div
-            class="relative h-9 w-full sm:w-40 flex bg-white dark:bg-muted-800"
+            class="dark:bg-muted-800 relative flex h-9 w-full bg-white sm:w-40"
             :class="[
               props.shape === 'rounded' ? 'rounded-md' : '',
               props.shape === 'curved' ? 'rounded-xl' : '',
@@ -34,7 +34,7 @@ const activeTab = ref('tab-1')
           >
             <button
               type="button"
-              class="relative z-10 flex-1 flex items-center justify-center font-sans text-sm cursor-pointer ninja-focus transition-colors duration-300"
+              class="nui-focus relative z-10 flex flex-1 cursor-pointer items-center justify-center font-sans text-sm transition-colors duration-300"
               :class="[
                 activeTab === 'tab-1' ? 'text-white' : 'text-muted-400',
                 props.shape === 'rounded' ? 'rounded-md' : '',
@@ -47,7 +47,7 @@ const activeTab = ref('tab-1')
             </button>
             <button
               type="button"
-              class="relative z-10 flex-1 flex items-center justify-center font-sans text-sm cursor-pointer ninja-focus transition-colors duration-300"
+              class="nui-focus relative z-10 flex flex-1 cursor-pointer items-center justify-center font-sans text-sm transition-colors duration-300"
               :class="[
                 activeTab === 'tab-2' ? 'text-white' : 'text-muted-400',
                 props.shape === 'rounded' ? 'rounded-md' : '',
@@ -59,7 +59,7 @@ const activeTab = ref('tab-1')
               {{ props.labels[1] }}
             </button>
             <div
-              class="absolute top-0 left-0 w-1/2 h-full bg-primary-500 transition-all duration-300 ease-in-out"
+              class="bg-primary-500 absolute top-0 left-0 h-full w-1/2 transition-all duration-300 ease-in-out"
               :class="[
                 activeTab === 'tab-1' ? 'ml-0' : 'ml-[50%]',
                 props.shape === 'rounded' ? 'rounded-md' : '',

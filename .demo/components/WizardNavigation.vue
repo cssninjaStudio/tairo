@@ -27,7 +27,7 @@ onClickOutside(target, () => (open.value = false))
           to="/dashboards"
           class="w-14 flex items-center justify-center pr-6 border-r border-muted-200 dark:border-muted-700"
         >
-          <IconLogo class="text-primary-600 h-10 shrink-0" />
+          <TairoLogo class="text-primary-600 h-10 shrink-0" />
         </NuxtLink>
         <div class="hidden sm:flex items-center gap-2 pl-6 font-sans">
           <p class="text-muted-500 dark:text-muted-400">
@@ -82,7 +82,7 @@ onClickOutside(target, () => (open.value = false))
       </div>
       <div class="flex items-center justify-end gap-4">
         <BaseThemeToggle />
-        <NavigationSidebarAccountMenu horizontal />
+        <DemoAccountMenu horizontal />
       </div>
       <div class="absolute inset-x-0 bottom-0 z-10 w-full">
         <BaseProgress :value="progress" size="xs" shape="full" />

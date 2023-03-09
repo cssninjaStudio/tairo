@@ -21,7 +21,7 @@ import solid from '~/documentation/button/solid.vue?raw'
 definePageMeta({
   title: 'Buttons',
   documentation: {
-    category: 'Interaction',
+    category: 'NUI Elements',
     components: ['BaseButton'],
     composables: ['useButton'],
   },

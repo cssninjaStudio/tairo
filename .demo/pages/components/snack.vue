@@ -21,7 +21,7 @@ import small from '~/documentation/snack/small.vue?raw'
 definePageMeta({
   title: 'Snacks',
   documentation: {
-    category: 'Interaction',
+    category: 'NUI Elements',
     components: ['BaseSnack'],
   },
 })
@@ -45,7 +45,7 @@ const demoBreadcrumb = [
   {
     label: 'Snack',
     hideLabel: false,
-    to: '#/',
+    to: '#',
   },
 ]
 </script>

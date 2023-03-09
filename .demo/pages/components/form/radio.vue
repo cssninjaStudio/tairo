@@ -7,7 +7,7 @@ import colors from '~/documentation/form/radio/colors.vue?raw'
 definePageMeta({
   title: 'Radios',
   documentation: {
-    category: 'Forms',
+    category: 'NUI Forms',
     components: ['BaseRadio'],
   },
 })
@@ -31,7 +31,7 @@ const demoBreadcrumb = [
   {
     label: 'Radio',
     hideLabel: false,
-    to: '#/',
+    to: '#',
   },
 ]
 

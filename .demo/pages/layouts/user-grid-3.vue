@@ -36,7 +36,7 @@ const { data, pending, error, refresh } = await useFetch(
 
 <template>
   <div>
-    <ContentWrapper>
+    <TairoContentWrapper>
       <template #left>
         <BaseInput
           v-model="filter"
@@ -153,7 +153,7 @@ const { data, pending, error, refresh } = await useFetch(
                     :src="item.src"
                     :badge-src="item.badge"
                     :text="item.initials"
-                    :class="useRandomColor()"
+                    :class="getRandomColor()"
                   />
                 </div>
                 <div class="text-center">
@@ -171,7 +171,7 @@ const { data, pending, error, refresh } = await useFetch(
                     size="xs"
                     :src="relation.src"
                     :text="relation.text"
-                    :class="useRandomColor()"
+                    :class="getRandomColor()"
                   />
                 </div>
                 <div class="flex items-center gap-2">
@@ -197,6 +197,6 @@ const { data, pending, error, refresh } = await useFetch(
           />
         </div>
       </div>
-    </ContentWrapper>
+    </TairoContentWrapper>
   </div>
 </template>

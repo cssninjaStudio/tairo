@@ -6,7 +6,7 @@ definePageMeta({
 
 <template>
   <div>
-    <ContentWrapper>
+    <TairoContentWrapper>
       <template #left>
         <BaseInput
           icon="lucide:search"
@@ -82,6 +82,6 @@ definePageMeta({
           </BaseCard>
         </div>
       </div>
-    </ContentWrapper>
+    </TairoContentWrapper>
   </div>
 </template>

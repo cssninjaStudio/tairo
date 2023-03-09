@@ -11,7 +11,7 @@ import solid from '~/documentation/tag/solid.vue?raw'
 definePageMeta({
   title: 'Tags',
   documentation: {
-    category: 'Display',
+    category: 'NUI Elements',
     components: ['BaseTag'],
   },
 })
@@ -35,7 +35,7 @@ const demoBreadcrumb = [
   {
     label: 'Tag',
     hideLabel: false,
-    to: '#/',
+    to: '#',
   },
 ]
 </script>

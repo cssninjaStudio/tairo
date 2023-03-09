@@ -36,7 +36,7 @@ const { data, pending, error, refresh } = await useFetch(
 
 <template>
   <div>
-    <ContentWrapper>
+    <TairoContentWrapper>
       <template #left>
         <BaseInput
           v-model="filter"
@@ -120,7 +120,7 @@ const { data, pending, error, refresh } = await useFetch(
                     <BaseAvatar
                       :src="item.picture"
                       :text="item.initials"
-                      :class="useRandomColor()"
+                      :class="getRandomColor()"
                     />
                     <div class="ml-3 leading-none">
                       <h4 class="font-sans text-sm font-medium">
@@ -141,7 +141,7 @@ const { data, pending, error, refresh } = await useFetch(
                     color="success"
                     flavor="pastel"
                     shape="full"
-                    compact
+                    condensed
                     class="font-medium"
                   >
                     {{ item.status }}
@@ -151,7 +151,7 @@ const { data, pending, error, refresh } = await useFetch(
                     color="info"
                     flavor="pastel"
                     shape="full"
-                    compact
+                    condensed
                     class="font-medium"
                   >
                     {{ item.status }}
@@ -161,7 +161,7 @@ const { data, pending, error, refresh } = await useFetch(
                     color="warning"
                     flavor="pastel"
                     shape="full"
-                    compact
+                    condensed
                     class="font-medium"
                   >
                     {{ item.status }}
@@ -171,7 +171,7 @@ const { data, pending, error, refresh } = await useFetch(
                     color="muted"
                     flavor="pastel"
                     shape="full"
-                    compact
+                    condensed
                     class="font-medium"
                   >
                     {{ item.status }}
@@ -213,6 +213,6 @@ const { data, pending, error, refresh } = await useFetch(
           </div>
         </div>
       </div>
-    </ContentWrapper>
+    </TairoContentWrapper>
   </div>
 </template>

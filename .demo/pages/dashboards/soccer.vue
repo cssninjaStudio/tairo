@@ -157,7 +157,7 @@ const matches = [
                   shape="full"
                   color="danger"
                   class="inline-flex items-center justify-center gap-1"
-                  compact
+                  condensed
                 >
                   <Icon name="lucide:video" class="w-3 h-3" />
                   <span>Live now</span>

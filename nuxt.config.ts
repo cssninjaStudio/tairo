@@ -28,8 +28,24 @@ export default defineNuxtConfig({
       chunkSizeWarningLimit: Infinity,
       assetsInlineLimit: 4096 * 2,
     },
-    define: {
-      'process.env.VSCODE_TEXTMATE_DEBUG': false,
+  },
+  app: {
+    // keepalive: true,
+    layoutTransition: {
+      enterActiveClass: 'transition-opacity duration-400 ease-out',
+      enterFromClass: 'opacity-0',
+      enterToClass: 'opacity-100',
+      leaveActiveClass: 'transition-opacity duration-200 ease-in',
+      leaveFromClass: 'opacity-100',
+      leaveToClass: 'opacity-0',
+    },
+    pageTransition: {
+      enterActiveClass: 'transition-opacity duration-300 ease-out',
+      enterFromClass: 'opacity-0',
+      enterToClass: 'opacity-100',
+      leaveActiveClass: 'transition-opacity duration-200 ease-in',
+      leaveFromClass: 'opacity-100',
+      leaveToClass: 'opacity-0',
     },
   },
 })

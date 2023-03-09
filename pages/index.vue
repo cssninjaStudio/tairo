@@ -1,15 +1,16 @@
 <script setup lang="ts">
 definePageMeta({
+  title: 'Welcome to Tairo',
   breadcrumb: {
     label: 'Home',
     hideLabel: true,
     icon: 'lucide:home',
   },
 })
-
-const app = useAppConfig()
 </script>
 
 <template>
-  <div>{{ app.tairo.title }} quickstarter</div>
+  <div>
+    <TairoWelcome />
+  </div>
 </template>

@@ -37,7 +37,7 @@ const demoBreadcrumb = [
   {
     label: 'Overview',
     hideLabel: false,
-    to: '#/',
+    to: '#',
   },
 ]
 </script>

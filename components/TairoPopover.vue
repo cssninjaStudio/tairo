@@ -22,7 +22,7 @@ const props = withDefaults(
     shape: 'rounded',
     size: 'md',
     orientation: 'start',
-  }
+  },
 )
 </script>
 
