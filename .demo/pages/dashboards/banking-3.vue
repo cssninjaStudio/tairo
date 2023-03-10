@@ -385,7 +385,7 @@ function useRadialPopularity() {
               </BaseHeading>
             </div>
 
-            <DemoApexcharts v-bind="areaBtcPrice" />
+            <AddonApexcharts v-bind="areaBtcPrice" />
           </BaseCard>
           <!-- Subgrid -->
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -409,7 +409,7 @@ function useRadialPopularity() {
                     Buy BTC
                   </NuxtLink>
                 </div>
-                <DemoApexcharts v-bind="radialEvolution" />
+                <AddonApexcharts v-bind="radialEvolution" />
               </BaseCard>
             </div>
             <!-- Chart -->
@@ -432,7 +432,7 @@ function useRadialPopularity() {
                     Buy BTC
                   </NuxtLink>
                 </div>
-                <DemoApexcharts v-bind="radialPopularity" />
+                <AddonApexcharts v-bind="radialPopularity" />
               </BaseCard>
             </div>
           </div>
@@ -519,7 +519,7 @@ function useRadialPopularity() {
                   View All
                 </NuxtLink>
               </div>
-              <WidgetTeamListCompact actions />
+              <DemoTeamListCompact actions />
             </BaseCard>
           </div>
           <!--Grid item-->
@@ -543,7 +543,7 @@ function useRadialPopularity() {
                   View All
                 </NuxtLink>
               </div>
-              <WidgetPopularCryptos />
+              <DemoPopularCryptos />
             </BaseCard>
           </div>
         </div>

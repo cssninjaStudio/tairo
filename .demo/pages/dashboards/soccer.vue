@@ -227,7 +227,7 @@ const matches = [
                 <span>Available Leagues</span>
               </BaseHeading>
             </div>
-            <WidgetLeagueListCompact />
+            <DemoLeagueListCompact />
           </BaseCard>
         </div>
       </div>

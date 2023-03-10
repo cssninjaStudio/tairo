@@ -23,31 +23,11 @@ definePageMeta({
 function wrapVueMarkdown(source: string) {
   return '```vue\n' + source + '\n```'
 }
-
-const demoBreadcrumb = [
-  {
-    label: 'Home',
-    hideLabel: true,
-    icon: 'lucide:home',
-    to: '/',
-  },
-  {
-    label: 'Components Hub',
-    hideLabel: false,
-    to: '/components',
-  },
-  {
-    label: 'Icon Box',
-    hideLabel: false,
-    to: '#',
-  },
-]
 </script>
 
 <template>
   <div>
-    <!-- BreadCrumb -->
-    <BaseBreadcrumb :items="demoBreadcrumb" />
+    <BaseBreadcrumb />
 
     <!-- Documentation Layout -->
     <DocLayout>
@@ -62,7 +42,7 @@ const demoBreadcrumb = [
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(roundedSizes)"
                 class="prose max-w-full"
               />
@@ -79,7 +59,7 @@ const demoBreadcrumb = [
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(circleSizes)"
                 class="prose max-w-full"
               />
@@ -96,7 +76,7 @@ const demoBreadcrumb = [
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(solid)"
                 class="prose max-w-full"
               />
@@ -113,7 +93,7 @@ const demoBreadcrumb = [
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(pastel)"
                 class="prose max-w-full"
               />
@@ -130,7 +110,7 @@ const demoBreadcrumb = [
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(outline)"
                 class="prose max-w-full"
               />
@@ -147,7 +127,7 @@ const demoBreadcrumb = [
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(elevation)"
                 class="prose max-w-full"
               />

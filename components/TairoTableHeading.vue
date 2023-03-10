@@ -7,7 +7,7 @@ const props = withDefaults(
   {
     uppercase: false,
     spaced: false,
-  }
+  },
 )
 </script>
 
@@ -17,8 +17,8 @@ const props = withDefaults(
     :class="[
       props.uppercase ? 'text-xs uppercase' : 'text-sm',
       props.spaced
-        ? 'border-r border-muted-200 dark:border-muted-700 last:border-r-none py-5 px-4 bg-white dark:bg-muted-800'
-        : 'py-3 bg-muted-50 dark:bg-muted-800',
+        ? 'border-muted-200 dark:border-muted-700 last:border-r-none dark:bg-muted-800 border-r bg-white py-5 px-4'
+        : 'bg-muted-50 dark:bg-muted-800 py-3',
     ]"
   >
     <slot></slot>

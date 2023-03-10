@@ -72,7 +72,7 @@ const tools: Tool[] = [
 
 <template>
   <div>
-    <WizardStepTitle />
+    <DemoWizardStepTitle />
 
     <div class="grid sm:grid-cols-3 gap-4 max-w-4xl mx-auto px-4">
       <!-- Tools -->

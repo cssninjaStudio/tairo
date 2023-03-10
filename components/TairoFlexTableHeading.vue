@@ -8,7 +8,7 @@ const props = withDefaults(
   }>(),
   {
     type: 'stable',
-  }
+  },
 )
 </script>
 
@@ -19,7 +19,7 @@ const props = withDefaults(
       props.type === 'grow' && 'md:grow',
       props.type === 'shrink' && 'md:shrink',
       props.type === 'stable' &&
-        'md:shrink-0 sm:w-[90px] md:w-[110px] md:line-clamp-1',
+        'md:line-clamp-1 sm:w-[90px] md:w-[110px] md:shrink-0',
     ]"
   >
     <slot></slot>

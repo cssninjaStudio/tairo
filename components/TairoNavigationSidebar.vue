@@ -1,4 +1,13 @@
 <script setup lang="ts">
+const props = withDefaults(
+  defineProps<{
+    subsidebar?: boolean
+  }>(),
+  {
+    subsidebar: true,
+  },
+)
+
 const sidebar = reactive(useSidebar())
 
 const startSidebars = computed(() =>
@@ -9,6 +18,14 @@ const startSidebars = computed(() =>
 const endSidebars = computed(() =>
   sidebar.sidebars?.filter((sidebar) => sidebar.position === 'end'),
 )
+
+const subsidebarEnabled = computed(() => {
+  return (
+    props.subsidebar !== false &&
+    sidebar.current &&
+    sidebar.current?.subsidebar?.name
+  )
+})
 </script>
 
 <template>
@@ -46,14 +63,14 @@ const endSidebars = computed(() =>
 
     <!-- Menu panel -->
     <div
-      v-if="sidebar.current && sidebar.current?.subsidebar?.name"
+      v-if="subsidebarEnabled"
       class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 pointer-events-auto relative z-10 h-full w-[220px] border-r bg-white transition-all duration-300"
       :class="sidebar.isOpen ? '' : 'translate-x-[calc(-100%_-_80px)]'"
     >
       <slot name="subnav">
         <component
           :is="resolveComponent(sidebar.current.subsidebar?.name)"
-          v-if="sidebar.current.subsidebar?.name"
+          v-if="sidebar.current?.subsidebar?.name"
         ></component>
       </slot>
     </div>

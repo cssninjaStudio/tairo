@@ -20,25 +20,6 @@ function wrapVueMarkdown(source: string) {
   return '```vue\n' + source + '\n```'
 }
 
-const demoBreadcrumb = [
-  {
-    label: 'Home',
-    hideLabel: true,
-    icon: 'lucide:home',
-    to: '/',
-  },
-  {
-    label: 'Components Hub',
-    hideLabel: false,
-    to: '/components',
-  },
-  {
-    label: 'Checkbox Animated',
-    hideLabel: false,
-    to: '#',
-  },
-]
-
 const model = `
 const options = ref(['Option 1', 'Option 2'])
 `
@@ -53,8 +34,7 @@ const customValue = ref()
 
 <template>
   <div>
-    <!-- BreadCrumb -->
-    <BaseBreadcrumb :items="demoBreadcrumb" />
+    <BaseBreadcrumb />
 
     <!-- Documentation Layout -->
     <DocLayout>
@@ -79,7 +59,7 @@ const customValue = ref()
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(base)"
                 class="prose max-w-full"
               />
@@ -110,7 +90,7 @@ const customValue = ref()
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(boolean)"
                 class="prose max-w-full"
               />
@@ -143,7 +123,7 @@ const customValue = ref()
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(custom)"
                 class="prose max-w-full"
               />
@@ -176,7 +156,7 @@ const customValue = ref()
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(trueFalse)"
                 class="prose max-w-full"
               />

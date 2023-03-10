@@ -143,7 +143,7 @@ const team = [
 </script>
 
 <template>
-  <DemoCarouselTeam
+  <AddonCarouselTeam
     :slides-to-show="3"
     :slides="team"
   />

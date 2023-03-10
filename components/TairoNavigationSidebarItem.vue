@@ -3,11 +3,11 @@
 
 import type { TairoSidebarResolvedConfig } from '../composables/useSidebar'
 
-const sidebar = reactive(useSidebar())
-
 const props = defineProps<{
   sidebar: TairoSidebarResolvedConfig
 }>()
+
+const sidebar = reactive(useSidebar())
 
 function onSidebarItemClick() {
   if (typeof props.sidebar.click === 'function') {

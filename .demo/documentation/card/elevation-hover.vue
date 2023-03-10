@@ -23,13 +23,11 @@
     </BaseParagraph>
   </BaseCard>
 
-<BaseCard
-shape="rounded"
-elevated-hover
-class="p-6"
-
->
-
+  <BaseCard
+    shape="rounded"
+    elevated-hover
+    class="p-6"
+  >
     <BaseHeading
       tag="h4"
       size="sm"
@@ -47,16 +45,13 @@ class="p-6"
       Lorem ipsum dolor sit amet, consectetur
       adipiscing elit.
     </BaseParagraph>
-
   </BaseCard>
 
-<BaseCard
-shape="curved"
-elevated-hover
-class="p-6"
-
->
-
+  <BaseCard
+    shape="curved"
+    elevated-hover
+    class="p-6"
+  >
     <BaseHeading
       tag="h4"
       size="sm"
@@ -74,6 +69,5 @@ class="p-6"
       Lorem ipsum dolor sit amet, consectetur
       adipiscing elit.
     </BaseParagraph>
-
   </BaseCard>
 </template>

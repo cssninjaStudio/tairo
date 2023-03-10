@@ -34,32 +34,12 @@ function wrapVueMarkdown(source: string) {
   return '```vue\n' + source + '\n```'
 }
 
-const demoBreadcrumb = [
-  {
-    label: 'Home',
-    hideLabel: true,
-    icon: 'lucide:home',
-    to: '/',
-  },
-  {
-    label: 'Components Hub',
-    hideLabel: false,
-    to: '/components',
-  },
-  {
-    label: 'Input',
-    hideLabel: false,
-    to: '#',
-  },
-]
-
 const model = 'const input = ref<string>'
 </script>
 
 <template>
   <div>
-    <!-- BreadCrumb -->
-    <BaseBreadcrumb :items="demoBreadcrumb" />
+    <BaseBreadcrumb />
 
     <!-- Documentation Layout -->
     <DocLayout>
@@ -78,7 +58,7 @@ const model = 'const input = ref<string>'
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(straight)"
                 class="prose max-w-full"
               />
@@ -99,7 +79,7 @@ const model = 'const input = ref<string>'
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(rounded)"
                 class="prose max-w-full"
               />
@@ -120,7 +100,7 @@ const model = 'const input = ref<string>'
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(curved)"
                 class="prose max-w-full"
               />
@@ -141,7 +121,7 @@ const model = 'const input = ref<string>'
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(full)"
                 class="prose max-w-full"
               />
@@ -156,7 +136,7 @@ const model = 'const input = ref<string>'
               <IconDemo />
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(icon)"
                 class="prose max-w-full"
               />
@@ -171,7 +151,7 @@ const model = 'const input = ref<string>'
               <FloatLabelDemo />
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(floatLabel)"
                 class="prose max-w-full"
               />
@@ -186,7 +166,7 @@ const model = 'const input = ref<string>'
               <CondensedDemo />
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(condensed)"
                 class="prose max-w-full"
               />
@@ -207,7 +187,7 @@ const model = 'const input = ref<string>'
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(focus)"
                 class="prose max-w-full"
               />
@@ -226,7 +206,7 @@ const model = 'const input = ref<string>'
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(loading)"
                 class="prose max-w-full"
               />
@@ -245,7 +225,7 @@ const model = 'const input = ref<string>'
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(disabled)"
                 class="prose max-w-full"
               />
@@ -264,7 +244,7 @@ const model = 'const input = ref<string>'
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(invalid)"
                 class="prose max-w-full"
               />

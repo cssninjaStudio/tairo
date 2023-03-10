@@ -7,7 +7,7 @@ const props = withDefaults(
   {
     light: false,
     spaced: false,
-  }
+  },
 )
 </script>
 

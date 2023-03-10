@@ -22,25 +22,6 @@ function wrapVueMarkdown(source: string) {
   return '```vue\n' + source + '\n```'
 }
 
-const demoBreadcrumb = [
-  {
-    label: 'Home',
-    hideLabel: true,
-    icon: 'lucide:home',
-    to: '/',
-  },
-  {
-    label: 'Components Hub',
-    hideLabel: false,
-    to: '/components',
-  },
-  {
-    label: 'Checkbox',
-    hideLabel: false,
-    to: '#',
-  },
-]
-
 const booleanModel = `
 const checkbox = ref(true)
 `
@@ -51,8 +32,7 @@ const checkbox = ref(['Option 1'])
 
 <template>
   <div>
-    <!-- BreadCrumb -->
-    <BaseBreadcrumb :items="demoBreadcrumb" />
+    <BaseBreadcrumb />
 
     <!-- Documentation Layout -->
     <DocLayout>
@@ -75,7 +55,7 @@ const checkbox = ref(['Option 1'])
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(straight)"
                 class="prose max-w-full"
               />
@@ -96,7 +76,7 @@ const checkbox = ref(['Option 1'])
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(rounded)"
                 class="prose max-w-full"
               />
@@ -117,7 +97,7 @@ const checkbox = ref(['Option 1'])
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(curved)"
                 class="prose max-w-full"
               />
@@ -138,7 +118,7 @@ const checkbox = ref(['Option 1'])
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(circle)"
                 class="prose max-w-full"
               />
@@ -159,7 +139,7 @@ const checkbox = ref(['Option 1'])
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(colors)"
                 class="prose max-w-full"
               />

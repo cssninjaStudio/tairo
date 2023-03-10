@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import type { Project, ProjectStepData } from '../types'
 
+definePageMeta({
+  layout: 'empty',
+})
+
 const initialState: Project = {
   type: undefined,
   name: '',
@@ -90,11 +94,24 @@ useHead({
 </script>
 
 <template>
-  <div class="bg-muted-100 dark:bg-muted-900 min-h-screen w-full">
-    <WizardNavigation />
+  <TairoLayout
+    :toolbar="false"
+    class="bg-muted-100 dark:bg-muted-900 min-h-screen w-full"
+  >
+    <template #logo>
+      <NuxtLink
+        to="/"
+        class="text-muted-400 hover:text-primary-500 flex h-12 w-12 items-center justify-center rounded-2xl hover:bg-primary-500/20 transition-colors duration-300"
+        @click.prevent="$router.back()"
+      >
+        <Icon name="lucide:arrow-left" class="h-5 w-5" />
+      </NuxtLink>
+    </template>
+
+    <DemoWizardNavigation />
     <div class="pt-24 pb-32">
-      <NuxtPage />
+      <RouterView />
     </div>
-    <WizardButtons />
-  </div>
+    <DemoWizardButtons />
+  </TairoLayout>
 </template>

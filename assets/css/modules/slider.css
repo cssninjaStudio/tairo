@@ -113,7 +113,7 @@
   border-radius: var(--slider-radius, 9999px);
 }
 .slider-connect {
-  background: var(--slider-connect-bg, var(--primary));
+  background: var(--slider-connect-bg, var(--color-primary-500));
   cursor: pointer;
 }
 .slider-draggable {
@@ -137,7 +137,7 @@
 }
 .slider-handle:focus {
   box-shadow: 0 0 0 var(--slider-handle-ring-width, 2px)
-      var(--slider-handle-ring-color, var(--primary)),
+      var(--slider-handle-ring-color, var(--color-primary-500)),
     var(--slider-handle-shadow, 0.5px 0.5px 2px 1px rgba(0, 0, 0, 0.32));
   outline: none;
 }
@@ -162,8 +162,8 @@
   border-color: var(--slider-tooltip-bg-disabled, #9ca3af);
 }
 .slider-tooltip {
-  background: var(--slider-tooltip-bg, var(--primary));
-  border: 1px solid var(--slider-tooltip-bg, var(--primary));
+  background: var(--slider-tooltip-bg, var(--color-primary-500));
+  border: 1px solid var(--slider-tooltip-bg, var(--color-primary-500));
   border-radius: var(--slider-tooltip-radius, 5px);
   color: var(--slider-tooltip-color, #fff);
   display: block;
@@ -358,52 +358,52 @@
 
 .slider-info .slider-connect,
 .slider-info .slider-tooltip {
-  background: var(--info);
-  border-color: var(--info);
+  background: var(--color-info-500);
+  border-color: var(--color-info-500);
 }
 
 .slider-info .slider-handle:focus {
   box-shadow: 0 0 0 var(--slider-handle-ring-width, 2px)
-      var(--slider-handle-ring-color, var(--info)),
+      var(--slider-handle-ring-color, var(--color-info-500)),
     var(--slider-handle-shadow, 0.5px 0.5px 2px 1px rgba(0, 0, 0, 0.32));
   outline: none;
 }
 
 .slider-success .slider-connect,
 .slider-success .slider-tooltip {
-  background: var(--success);
-  border-color: var(--success);
+  background: var(--color-success-500);
+  border-color: var(--color-success-500);
 }
 
 .slider-success .slider-handle:focus {
   box-shadow: 0 0 0 var(--slider-handle-ring-width, 2px)
-      var(--slider-handle-ring-color, var(--success)),
+      var(--slider-handle-ring-color, var(--color-success-500)),
     var(--slider-handle-shadow, 0.5px 0.5px 2px 1px rgba(0, 0, 0, 0.32));
   outline: none;
 }
 
 .slider-warning .slider-connect,
 .slider-warning .slider-tooltip {
-  background: var(--warning);
-  border-color: var(--warning);
+  background: var(--color-warning-500);
+  border-color: var(--color-warning-500);
 }
 
 .slider-warning .slider-handle:focus {
   box-shadow: 0 0 0 var(--slider-handle-ring-width, 2px)
-      var(--slider-handle-ring-color, var(--warning)),
+      var(--slider-handle-ring-color, var(--color-warning-500)),
     var(--slider-handle-shadow, 0.5px 0.5px 2px 1px rgba(0, 0, 0, 0.32));
   outline: none;
 }
 
 .slider-danger .slider-connect,
 .slider-danger .slider-tooltip {
-  background: var(--danger);
-  border-color: var(--danger);
+  background: var(--color-danger-500);
+  border-color: var(--color-danger-500);
 }
 
 .slider-danger .slider-handle:focus {
   box-shadow: 0 0 0 var(--slider-handle-ring-width, 2px)
-      var(--slider-handle-ring-color, var(--danger)),
+      var(--slider-handle-ring-color, var(--color-danger-500)),
     var(--slider-handle-shadow, 0.5px 0.5px 2px 1px rgba(0, 0, 0, 0.32));
   outline: none;
 }

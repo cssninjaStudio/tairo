@@ -35,31 +35,11 @@ definePageMeta({
 function wrapVueMarkdown(source: string) {
   return '```vue\n' + source + '\n```'
 }
-
-const demoBreadcrumb = [
-  {
-    label: 'Home',
-    hideLabel: true,
-    icon: 'lucide:home',
-    to: '/',
-  },
-  {
-    label: 'Components Hub',
-    hideLabel: false,
-    to: '/components',
-  },
-  {
-    label: 'Avatars',
-    hideLabel: false,
-    to: '#',
-  },
-]
 </script>
 
 <template>
   <div>
-    <!-- BreadCrumb -->
-    <BaseBreadcrumb :items="demoBreadcrumb" />
+    <BaseBreadcrumb />
 
     <!-- Documentation Layout -->
     <DocLayout>
@@ -74,7 +54,7 @@ const demoBreadcrumb = [
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(circleSize)"
                 class="prose max-w-full"
               />
@@ -91,7 +71,7 @@ const demoBreadcrumb = [
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(squareSize)"
                 class="prose max-w-full"
               />
@@ -115,7 +95,7 @@ const demoBreadcrumb = [
               </div>
             </template>
             <template #code>
-              <DocMarkdown :source="squareSize" class="prose max-w-full" />
+              <AddonMarkdownRemark :source="squareSize" class="prose max-w-full" />
             </template>
           </DocComponent>
         </DocSection -->
@@ -129,7 +109,7 @@ const demoBreadcrumb = [
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(circleDot)"
                 class="prose max-w-full"
               />
@@ -146,7 +126,7 @@ const demoBreadcrumb = [
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(squareDot)"
                 class="prose max-w-full"
               />
@@ -163,7 +143,7 @@ const demoBreadcrumb = [
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(circleBadge)"
                 class="prose max-w-full"
               />
@@ -180,7 +160,7 @@ const demoBreadcrumb = [
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(squareBadge)"
                 class="prose max-w-full"
               />
@@ -197,7 +177,7 @@ const demoBreadcrumb = [
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(circleFake)"
                 class="prose max-w-full"
               />
@@ -214,7 +194,7 @@ const demoBreadcrumb = [
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(squareFake)"
                 class="prose max-w-full"
               />
@@ -231,7 +211,7 @@ const demoBreadcrumb = [
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(circleFakeBadge)"
                 class="prose max-w-full"
               />
@@ -248,7 +228,7 @@ const demoBreadcrumb = [
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(squareFakeBadge)"
                 class="prose max-w-full"
               />
@@ -265,7 +245,7 @@ const demoBreadcrumb = [
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(circleFakeColors)"
                 class="prose max-w-full"
               />
@@ -282,7 +262,7 @@ const demoBreadcrumb = [
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(squareFakeColors)"
                 class="prose max-w-full"
               />

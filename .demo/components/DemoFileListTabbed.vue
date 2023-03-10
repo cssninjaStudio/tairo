@@ -89,7 +89,7 @@ const savedFiles = [
 
 <template>
   <div>
-    <WidgetTabbedContent
+    <DemoTabbedContent
       title="Files"
       :labels="['Recent', 'Saved']"
       :shape="props.shape"
@@ -256,6 +256,6 @@ const savedFiles = [
           </div>
         </div>
       </template>
-    </WidgetTabbedContent>
+    </DemoTabbedContent>
   </div>
 </template>

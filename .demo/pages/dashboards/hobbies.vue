@@ -383,12 +383,12 @@ const popular = [
           <!-- Widget -->
           <BaseCard class="p-6" shape="curved">
             <div class="w-full flex items-center justify-between">
-              <WidgetSearchCompact shape="curved" />
+              <DemoSearchCompact shape="curved" />
             </div>
           </BaseCard>
           <!-- Widget -->
           <BaseCard class="p-6" shape="curved">
-            <WidgetDatepicker expanded />
+            <DemoDatepicker expanded />
           </BaseCard>
           <!-- Widget -->
           <BaseCard class="p-6" shape="curved">

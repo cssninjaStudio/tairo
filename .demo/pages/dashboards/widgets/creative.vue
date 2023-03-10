@@ -10,7 +10,7 @@ definePageMeta({
     <div class="relative flex flex-col gap-4">
       <!-- Widget -->
       <BaseCard shape="curved" class="p-6">
-        <WidgetInfoBadges
+        <DemoInfoBadges
           image="/img/illustrations/widgets/1.svg"
           badge-small="/img/illustrations/widgets/3.svg"
           badge-medium="/img/illustrations/widgets/2.svg"
@@ -20,11 +20,11 @@ definePageMeta({
       </BaseCard>
       <!-- Widget -->
       <BaseCard shape="curved" class="p-6">
-        <WidgetVcardRight />
+        <DemoVcardRight />
       </BaseCard>
       <!-- Widget -->
       <BaseCard shape="curved" class="p-4">
-        <WidgetInfoImage
+        <DemoInfoImage
           shape="curved"
           image="/img/illustrations/widgets/7.svg"
           title="You've unlocked 2 new Achievements"
@@ -51,14 +51,14 @@ definePageMeta({
             View All
           </NuxtLink>
         </div>
-        <WidgetTeamListCompact />
+        <DemoTeamListCompact />
       </BaseCard>
     </div>
     <!-- Column -->
     <div class="relative flex flex-col gap-4">
       <!-- Widget -->
       <BaseCard shape="curved" class="p-4">
-        <WidgetInfoImage
+        <DemoInfoImage
           shape="curved"
           image="/img/illustrations/widgets/4.svg"
           title="You've unlocked 2 new Achievements"
@@ -67,22 +67,22 @@ definePageMeta({
       </BaseCard>
       <!-- Widget -->
       <BaseCard shape="curved" class="p-4">
-        <WidgetSocialLinks shape="curved" />
+        <DemoSocialLinks shape="curved" />
       </BaseCard>
       <!-- Widget -->
       <BaseCard shape="curved" class="p-4">
-        <WidgetTeamSearchCompact shape="curved" />
+        <DemoTeamSearchCompact shape="curved" />
       </BaseCard>
       <!-- Widget -->
       <BaseCard shape="curved" class="p-6">
-        <WidgetShoppingCartCompact shape="curved" />
+        <DemoShoppingCartCompact shape="curved" />
       </BaseCard>
     </div>
     <!-- Column -->
     <div class="relative flex flex-col gap-4">
       <!-- Widget -->
       <BaseCard shape="curved" class="p-6">
-        <WidgetIconText
+        <DemoIconText
           title="@cssninjaStudio"
           icon="lucide:twitter"
           text="Tairo will be released very soon, probably around the end of the year of the Christmas holidays."
@@ -95,11 +95,11 @@ definePageMeta({
             <NuxtLink to="#">#dashboards</NuxtLink>
             <NuxtLink to="#">#tailwind</NuxtLink>
           </div>
-        </WidgetIconText>
+        </DemoIconText>
       </BaseCard>
       <!-- Widget -->
       <BaseCard shape="curved" class="p-4">
-        <WidgetInfoImage
+        <DemoInfoImage
           shape="curved"
           image="/img/illustrations/widgets/5.svg"
           title="You've unlocked 2 new Achievements"
@@ -108,15 +108,15 @@ definePageMeta({
       </BaseCard>
       <!-- Widget -->
       <BaseCard shape="curved" class="p-6">
-        <WidgetVcardRight centered />
+        <DemoVcardRight centered />
       </BaseCard>
       <!-- Widget -->
       <BaseCard shape="curved" class="p-4">
-        <WidgetImageLinks shape="curved" />
+        <DemoImageLinks shape="curved" />
       </BaseCard>
       <!-- Widget -->
       <BaseCard shape="curved" class="p-6">
-        <WidgetProgressCircle
+        <DemoProgressCircle
           image="/img/avatars/6.svg"
           :title="`${78}% completed!`"
           text="Congrats, your efforts have been rewarded. Keep up like this!"
@@ -128,7 +128,7 @@ definePageMeta({
     <div class="relative flex flex-col gap-4">
       <!-- Widget -->
       <BaseCard shape="curved" class="p-6">
-        <WidgetProductCompact
+        <DemoProductCompact
           image="/img/illustrations/widgets/watch-3.svg"
           title="Connected Watch"
           text="Apple — 5th Gen Connected Watch series, 64GB, 2023 issue"
@@ -138,11 +138,11 @@ definePageMeta({
       </BaseCard>
       <!-- Widget -->
       <BaseCard shape="curved" class="p-6">
-        <WidgetIconsSquare shape="curved" />
+        <DemoIconsSquare shape="curved" />
       </BaseCard>
       <!-- Widget -->
       <BaseCard shape="curved" class="p-4">
-        <WidgetInfoImage
+        <DemoInfoImage
           shape="curved"
           image="/img/illustrations/widgets/8.svg"
           title="You've unlocked 2 new Achievements"

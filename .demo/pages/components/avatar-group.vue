@@ -19,31 +19,11 @@ definePageMeta({
 function wrapVueMarkdown(source: string) {
   return '```vue\n' + source + '\n```'
 }
-
-const demoBreadcrumb = [
-  {
-    label: 'Home',
-    hideLabel: true,
-    icon: 'lucide:home',
-    to: '/',
-  },
-  {
-    label: 'Components Hub',
-    hideLabel: false,
-    to: '/components',
-  },
-  {
-    label: 'Avatar group',
-    hideLabel: false,
-    to: '#',
-  },
-]
 </script>
 
 <template>
   <div>
-    <!-- BreadCrumb -->
-    <BaseBreadcrumb :items="demoBreadcrumb" />
+    <BaseBreadcrumb />
 
     <!-- Documentation Layout -->
     <DocLayout>
@@ -58,7 +38,7 @@ const demoBreadcrumb = [
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(tiny)"
                 class="prose max-w-full"
               />
@@ -75,7 +55,7 @@ const demoBreadcrumb = [
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(small)"
                 class="prose max-w-full"
               />
@@ -92,7 +72,7 @@ const demoBreadcrumb = [
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(medium)"
                 class="prose max-w-full"
               />
@@ -109,7 +89,7 @@ const demoBreadcrumb = [
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(large)"
                 class="prose max-w-full"
               />

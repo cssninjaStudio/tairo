@@ -55,7 +55,7 @@ const tasks = ref<string[]>(['Option 0', 'Option 1', 'Option 2'])
 
 <template>
   <div>
-    <WidgetTabbedContent
+    <DemoTabbedContent
       title="Tasks"
       :labels="['All', 'Mine']"
       :shape="props.shape"
@@ -138,6 +138,6 @@ const tasks = ref<string[]>(['Option 0', 'Option 1', 'Option 2'])
           </div>
         </div>
       </template>
-    </WidgetTabbedContent>
+    </DemoTabbedContent>
   </div>
 </template>

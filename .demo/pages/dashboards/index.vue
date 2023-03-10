@@ -430,7 +430,7 @@ function useBarProfit() {
               <span>Customers</span>
             </BaseHeading>
           </div>
-          <DemoApexcharts v-bind="areaCustomers" class="-ml-4" />
+          <AddonApexcharts v-bind="areaCustomers" class="-ml-4" />
         </BaseCard>
       </div>
       <!-- CTA card -->
@@ -498,7 +498,7 @@ function useBarProfit() {
             />
             <BaseAvatar src="/img/avatars/3.svg" />
           </div>
-          <DemoApexcharts v-bind="radialBarTeam" />
+          <AddonApexcharts v-bind="radialBarTeam" />
         </BaseCard>
       </div>
       <!-- Bar chart card -->
@@ -515,7 +515,7 @@ function useBarProfit() {
               <span>Profit Evolution</span>
             </BaseHeading>
           </div>
-          <DemoApexcharts v-bind="barProfit" />
+          <AddonApexcharts v-bind="barProfit" />
         </BaseCard>
       </div>
     </div>

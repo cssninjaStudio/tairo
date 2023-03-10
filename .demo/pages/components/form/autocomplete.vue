@@ -34,25 +34,6 @@ definePageMeta({
   },
 })
 
-const demoBreadcrumb = [
-  {
-    label: 'Home',
-    hideLabel: true,
-    icon: 'lucide:home',
-    to: '/',
-  },
-  {
-    label: 'Components Hub',
-    hideLabel: false,
-    to: '/components',
-  },
-  {
-    label: 'Autocomplete',
-    hideLabel: false,
-    to: '#',
-  },
-]
-
 function wrapVueMarkdown(source: string) {
   return '```vue\n' + source + '\n```'
 }
@@ -73,8 +54,7 @@ const selectedPerson = ref([people[0], people[1]])
 
 <template>
   <div>
-    <!-- BreadCrumb -->
-    <BaseBreadcrumb :items="demoBreadcrumb" />
+    <BaseBreadcrumb />
 
     <!-- Documentation Layout -->
     <DocLayout>
@@ -101,7 +81,7 @@ const selectedPerson = ref([people[0], people[1]])
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(straight)"
                 class="prose max-w-full"
               />
@@ -126,7 +106,7 @@ const selectedPerson = ref([people[0], people[1]])
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(rounded)"
                 class="prose max-w-full"
               />
@@ -151,7 +131,7 @@ const selectedPerson = ref([people[0], people[1]])
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(curved)"
                 class="prose max-w-full"
               />
@@ -176,7 +156,7 @@ const selectedPerson = ref([people[0], people[1]])
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(full)"
                 class="prose max-w-full"
               />
@@ -201,7 +181,7 @@ const selectedPerson = ref([people[0], people[1]])
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(icon)"
                 class="prose max-w-full"
               />
@@ -226,7 +206,7 @@ const selectedPerson = ref([people[0], people[1]])
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(clearable)"
                 class="prose max-w-full"
               />
@@ -245,7 +225,7 @@ const selectedPerson = ref([people[0], people[1]])
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(labelFloat)"
                 class="prose max-w-full"
               />
@@ -264,7 +244,7 @@ const selectedPerson = ref([people[0], people[1]])
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(condensed)"
                 class="prose max-w-full"
               />
@@ -293,7 +273,7 @@ const selectedPerson = ref([people[0], people[1]])
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(disabled)"
                 class="prose max-w-full"
               />
@@ -318,7 +298,7 @@ const selectedPerson = ref([people[0], people[1]])
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(loading)"
                 class="prose max-w-full"
               />
@@ -343,7 +323,7 @@ const selectedPerson = ref([people[0], people[1]])
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(iconResult)"
                 class="prose max-w-full"
               />
@@ -368,7 +348,7 @@ const selectedPerson = ref([people[0], people[1]])
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(mediaResult)"
                 class="prose max-w-full"
               />
@@ -393,7 +373,7 @@ const selectedPerson = ref([people[0], people[1]])
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(multiple)"
                 class="prose max-w-full"
               />

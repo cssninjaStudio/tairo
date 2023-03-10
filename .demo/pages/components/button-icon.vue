@@ -28,7 +28,6 @@ function wrapVueMarkdown(source: string) {
 
 <template>
   <div>
-    <!-- BreadCrumb -->
     <BaseBreadcrumb />
 
     <!-- Documentation Layout -->
@@ -44,7 +43,7 @@ function wrapVueMarkdown(source: string) {
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(shapes)"
                 class="prose max-w-full"
               />
@@ -61,7 +60,7 @@ function wrapVueMarkdown(source: string) {
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(small)"
                 class="prose max-w-full"
               />
@@ -78,7 +77,7 @@ function wrapVueMarkdown(source: string) {
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(primary)"
                 class="prose max-w-full"
               />
@@ -95,7 +94,7 @@ function wrapVueMarkdown(source: string) {
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(muted)"
                 class="prose max-w-full"
               />
@@ -112,7 +111,7 @@ function wrapVueMarkdown(source: string) {
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(loading)"
                 class="prose max-w-full"
               />
@@ -129,7 +128,7 @@ function wrapVueMarkdown(source: string) {
               </BaseFocusLoop>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(group)"
                 class="prose max-w-full"
               />

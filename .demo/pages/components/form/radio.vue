@@ -16,25 +16,6 @@ function wrapVueMarkdown(source: string) {
   return '```vue\n' + source + '\n```'
 }
 
-const demoBreadcrumb = [
-  {
-    label: 'Home',
-    hideLabel: true,
-    icon: 'lucide:home',
-    to: '/',
-  },
-  {
-    label: 'Components Hub',
-    hideLabel: false,
-    to: '/components',
-  },
-  {
-    label: 'Radio',
-    hideLabel: false,
-    to: '#',
-  },
-]
-
 const model = `
 const radio = ref('option_1')
 `
@@ -42,7 +23,6 @@ const radio = ref('option_1')
 
 <template>
   <div>
-    <!-- BreadCrumb -->
     <BaseBreadcrumb />
 
     <!-- Documentation Layout -->
@@ -63,7 +43,7 @@ const radio = ref('option_1')
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(base)"
                 class="prose max-w-full"
               />
@@ -85,7 +65,7 @@ const radio = ref('option_1')
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(colors)"
                 class="prose max-w-full"
               />

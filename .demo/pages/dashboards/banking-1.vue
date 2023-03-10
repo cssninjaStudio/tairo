@@ -121,7 +121,7 @@ const selectedCurrency = ref('usd')
             </BaseButtonIcon>
           </div>
           <div class="flex items-center gap-4 px-6 mb-8">
-            <ObjectCreditCardSmall class="text-primary-500" />
+            <DemoCreditCardSmall class="text-primary-500" />
             <div>
               <BaseParagraph size="sm" weight="medium">
                 <span class="text-muted-400">Card Balance</span>
@@ -249,7 +249,7 @@ const selectedCurrency = ref('usd')
             </div>
           </div>
           <div class="flex items-center gap-4 px-6 mb-2">
-            <ObjectCreditCardSmall class="text-success-500" />
+            <DemoCreditCardSmall class="text-success-500" />
             <div>
               <BaseParagraph size="sm" weight="medium">
                 <span class="text-muted-400">Card Balance</span>
@@ -647,7 +647,7 @@ const selectedCurrency = ref('usd')
                   </NuxtLink>
                 </div>
               </div>
-              <DemoApexcharts v-bind="incomeHistory" />
+              <AddonApexcharts v-bind="incomeHistory" />
             </BaseCard>
           </div>
         </div>

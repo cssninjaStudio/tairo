@@ -20,7 +20,7 @@ function onSelectType(type: ProjectType) {
 
 <template>
   <div>
-    <WizardStepTitle />
+    <DemoWizardStepTitle />
     <div class="w-full max-w-6xl mx-auto text-center px-4">
       <div class="grid sm:grid-cols-2 ltablet:grid-cols-3 lg:grid-cols-3 gap-6">
         <!-- Choice -->

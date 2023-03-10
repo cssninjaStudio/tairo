@@ -221,7 +221,7 @@ function useAreaExpenses() {
                 :key="index"
                 v-slot="{ isActive }"
               >
-                <ObjectCreditCard
+                <DemoCreditCard
                   :balance="card.balance"
                   :endingNumber="card.endingNumber"
                   :type="card.type"
@@ -379,7 +379,7 @@ function useAreaExpenses() {
             <!-- Chart -->
             <div class="h-full flex flex-col grow ltablet:pr-12 lg:pr-12">
               <div class="mt-auto">
-                <DemoApexcharts v-bind="areaExpenses" />
+                <AddonApexcharts v-bind="areaExpenses" />
               </div>
             </div>
           </div>

@@ -280,19 +280,19 @@ const team = [
         <!-- Widget -->
         <div class="col-span-12 sm:col-span-4 ptablet:col-span-6">
           <BaseCard class="p-6 h-full">
-            <WidgetCompanyOverview />
+            <DemoCompanyOverview />
           </BaseCard>
         </div>
         <!-- Widget -->
         <div class="col-span-12 sm:col-span-4 ptablet:col-span-6">
           <BaseCard class="relative h-full">
-            <WidgetChartAreaStats />
+            <DemoChartAreaStats />
           </BaseCard>
         </div>
         <!-- Widget -->
         <div class="col-span-12 sm:col-span-4 ptablet:col-span-12">
           <BaseCard class="relative h-full">
-            <WidgetChartBarSocialChannels />
+            <DemoChartBarSocialChannels />
           </BaseCard>
         </div>
         <!-- Widget -->
@@ -399,7 +399,7 @@ const team = [
               </BaseHeading>
             </div>
             <div class="py-16">
-              <DemoApexcharts v-bind="gaugePersonal" class="-mt-14" />
+              <AddonApexcharts v-bind="gaugePersonal" class="-mt-14" />
             </div>
             <div class="text-center mt-auto">
               <BaseParagraph size="sm">
@@ -424,13 +424,13 @@ const team = [
                 <span>Profit</span>
               </BaseHeading>
             </div>
-            <DemoApexcharts v-bind="barSalesProfit" />
+            <AddonApexcharts v-bind="barSalesProfit" />
           </BaseCard>
         </div>
         <!-- Widget -->
         <div class="col-span-12 sm:col-span-3 ptablet:hidden">
           <BaseCard class="h-full flex flex-col p-6">
-            <WidgetDatepicker />
+            <DemoDatepicker />
           </BaseCard>
         </div>
         <!-- Widget -->
@@ -454,7 +454,7 @@ const team = [
                 View All
               </NuxtLink>
             </div>
-            <WidgetPendingTickets />
+            <DemoPendingTickets />
           </BaseCard>
         </div>
       </div>

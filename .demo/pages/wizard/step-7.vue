@@ -17,7 +17,7 @@ onBeforeUnmount(() => {
 <template>
   <div>
     <div v-if="!complete">
-      <WizardStepTitle />
+      <DemoWizardStepTitle />
 
       <div class="flex flex-col px-4">
         <div

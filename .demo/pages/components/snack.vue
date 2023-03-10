@@ -29,31 +29,11 @@ definePageMeta({
 function wrapVueMarkdown(source: string) {
   return '```vue\n' + source + '\n```'
 }
-
-const demoBreadcrumb = [
-  {
-    label: 'Home',
-    hideLabel: true,
-    icon: 'lucide:home',
-    to: '/',
-  },
-  {
-    label: 'Components Hub',
-    hideLabel: false,
-    to: '/components',
-  },
-  {
-    label: 'Snack',
-    hideLabel: false,
-    to: '#',
-  },
-]
 </script>
 
 <template>
   <div>
-    <!-- BreadCrumb -->
-    <BaseBreadcrumb :items="demoBreadcrumb" />
+    <BaseBreadcrumb />
 
     <!-- Documentation Layout -->
     <DocLayout>
@@ -68,7 +48,7 @@ const demoBreadcrumb = [
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(base)"
                 class="prose max-w-full"
               />
@@ -85,7 +65,7 @@ const demoBreadcrumb = [
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(baseLight)"
                 class="prose max-w-full"
               />
@@ -102,7 +82,7 @@ const demoBreadcrumb = [
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(small)"
                 class="prose max-w-full"
               />
@@ -119,7 +99,7 @@ const demoBreadcrumb = [
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(icon)"
                 class="prose max-w-full"
               />
@@ -136,7 +116,7 @@ const demoBreadcrumb = [
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(iconLight)"
                 class="prose max-w-full"
               />
@@ -153,7 +133,7 @@ const demoBreadcrumb = [
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(iconSmall)"
                 class="prose max-w-full"
               />
@@ -170,7 +150,7 @@ const demoBreadcrumb = [
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(image)"
                 class="prose max-w-full"
               />
@@ -187,7 +167,7 @@ const demoBreadcrumb = [
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(imageLight)"
                 class="prose max-w-full"
               />
@@ -204,7 +184,7 @@ const demoBreadcrumb = [
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(imageSmall)"
                 class="prose max-w-full"
               />

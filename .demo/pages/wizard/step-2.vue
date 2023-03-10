@@ -10,7 +10,7 @@ useHead({
 
 <template>
   <div>
-    <WizardStepTitle />
+    <DemoWizardStepTitle />
 
     <div class="flex flex-col w-full max-w-5xl mx-auto px-4">
       <UploadAvatar />

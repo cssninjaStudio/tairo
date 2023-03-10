@@ -20,7 +20,7 @@
     "lint:eslint:fix": "eslint --fix ."
   },
   "dependencies": {
-    "@cssninja/nuxt-ui": "^0.4.1",
+    "@cssninja/nuxt-ui": "^0.4.2",
     "@nuxt/image-edge": "1.0.0-27968280.9739e4d",
     "nuxt": "^3.2.3",
     "pinia": "^2.0.33"

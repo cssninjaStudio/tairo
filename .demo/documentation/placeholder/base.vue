@@ -19,6 +19,5 @@
         Take some action
       </BaseButton>
     </div>
-
   </BasePlaceholderPage>
 </template>

@@ -186,13 +186,13 @@ const items = [
             <!-- Text -->
             <div class="col-span-12 sm:col-span-7">
               <div class="space-y-2">
-                <WidgetFlexTableRow
+                <DemoFlexTableRow
                   v-for="(item, index) in items"
                   :key="index"
                   shape="rounded"
                 >
                   <template #start>
-                    <WidgetFlexTableStart
+                    <DemoFlexTableStart
                       label="type"
                       :hideLabel="index > 0"
                       :title="item.title"
@@ -201,7 +201,7 @@ const items = [
                     />
                   </template>
                   <template #end>
-                    <WidgetFlexTableCell
+                    <DemoFlexTableCell
                       label="count"
                       :hideLabel="index > 0"
                       class="w-full sm:w-10"
@@ -211,8 +211,8 @@ const items = [
                       >
                         {{ item.count }}
                       </span>
-                    </WidgetFlexTableCell>
-                    <WidgetFlexTableCell
+                    </DemoFlexTableCell>
+                    <DemoFlexTableCell
                       label="status"
                       :hideLabel="index > 0"
                       class="w-full sm:w-16"
@@ -225,14 +225,14 @@ const items = [
                       >
                         {{ item.status }}
                       </BaseTag>
-                    </WidgetFlexTableCell>
-                    <WidgetFlexTableCell label="action" :hideLabel="index > 0">
+                    </DemoFlexTableCell>
+                    <DemoFlexTableCell label="action" :hideLabel="index > 0">
                       <span class="font-sans text-xs sm:pr-2 text-primary-500">
                         Action
                       </span>
-                    </WidgetFlexTableCell>
+                    </DemoFlexTableCell>
                   </template>
-                </WidgetFlexTableRow>
+                </DemoFlexTableRow>
               </div>
             </div>
           </div>
@@ -383,7 +383,7 @@ const items = [
           <!-- Widget -->
           <BaseCard shape="curved" class="p-6">
             <div class="w-full flex items-center justify-between">
-              <WidgetSearchCompact shape="curved" />
+              <DemoSearchCompact shape="curved" />
             </div>
           </BaseCard>
           <!-- Widget -->
@@ -399,17 +399,17 @@ const items = [
             >
               <template #tab="{ activeValue }">
                 <div v-if="activeValue === 'team'">
-                  <WidgetTeamListCompact actions />
+                  <DemoTeamListCompact actions />
                 </div>
                 <div v-else-if="activeValue === 'tasks'">
-                  <WidgetTodoListCompact />
+                  <DemoTodoListCompact />
                 </div>
               </template>
             </BaseTabSlider>
           </BaseCard>
           <!-- Widget -->
           <BaseCard shape="curved" class="p-6">
-            <WidgetDatepicker expanded />
+            <DemoDatepicker expanded />
           </BaseCard>
         </div>
       </div>

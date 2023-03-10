@@ -8,7 +8,7 @@ const toggled = ref(false)
 
 <template>
   <div>
-    <WizardStepTitle />
+    <DemoWizardStepTitle />
 
     <div class="px-4">
       <BasePlaceholderPage

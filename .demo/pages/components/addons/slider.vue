@@ -21,7 +21,7 @@ import straight from '~/documentation/form/slider/straight.vue?raw'
 definePageMeta({
   title: 'Sliders',
   documentation: {
-    // category: 'Addons',
+    category: 'Addons',
     components: ['Slider'],
   },
 })
@@ -29,25 +29,6 @@ definePageMeta({
 function wrapVueMarkdown(source: string) {
   return '```vue\n' + source + '\n```'
 }
-
-const demoBreadcrumb = [
-  {
-    label: 'Home',
-    hideLabel: true,
-    icon: 'lucide:home',
-    to: '/',
-  },
-  {
-    label: 'Components Hub',
-    hideLabel: false,
-    to: '/components',
-  },
-  {
-    label: 'Slider',
-    hideLabel: false,
-    to: '#',
-  },
-]
 
 const model = `
 const value = ref(20)
@@ -59,8 +40,7 @@ const value = ref([16, 84])
 
 <template>
   <div>
-    <!-- BreadCrumb -->
-    <BaseBreadcrumb :items="demoBreadcrumb" />
+    <BaseBreadcrumb />
 
     <!-- Documentation Layout -->
     <DocLayout>
@@ -79,7 +59,7 @@ const value = ref([16, 84])
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(straight)"
                 class="prose max-w-full"
               />
@@ -100,7 +80,7 @@ const value = ref([16, 84])
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(rounded)"
                 class="prose max-w-full"
               />
@@ -121,7 +101,7 @@ const value = ref([16, 84])
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(curved)"
                 class="prose max-w-full"
               />
@@ -142,7 +122,7 @@ const value = ref([16, 84])
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(circle)"
                 class="prose max-w-full"
               />
@@ -159,7 +139,7 @@ const value = ref([16, 84])
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(colors)"
                 class="prose max-w-full"
               />
@@ -184,7 +164,7 @@ const value = ref([16, 84])
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(multipleHandle)"
                 class="prose max-w-full"
               />
@@ -205,7 +185,7 @@ const value = ref([16, 84])
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(formatTooltip)"
                 class="prose max-w-full"
               />
@@ -230,7 +210,7 @@ const value = ref([16, 84])
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(mergeTooltip)"
                 class="prose max-w-full"
               />

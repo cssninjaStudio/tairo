@@ -29,11 +29,11 @@ module.exports = {
     'vue/script-setup-uses-vars': 'error',
     'vue/multi-word-component-names': 'off',
 
-    'import/default': 'off',
+    // 'import/default': 'off',
     //   'vue/script-setup-uses-vars': 'error',
-    //   'vue/define-macros-order': 'off',
+    'vue/define-macros-order': 'error',
     'tailwindcss/no-custom-classname': 'off',
-    //   // 'tailwindcss/classnames-order': 'off',
+    'tailwindcss/classnames-order': 'error',
     'prettier-vue/prettier': [
       'error',
       {

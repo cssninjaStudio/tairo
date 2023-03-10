@@ -7,39 +7,19 @@ import userCarousel from '~/documentation/carousel/user.vue?raw'
 definePageMeta({
   title: 'Carousel',
   documentation: {
-    category: 'Demo Elements',
-    components: ['DemoCarouselTeam', 'DemoCarouselIcons'],
+    category: 'Addons',
+    components: ['AddonCarouselTeam', 'AddonCarouselIcons'],
   },
 })
 
 function wrapVueMarkdown(source: string) {
   return '```vue\n' + source + '\n```'
 }
-
-const demoBreadcrumb = [
-  {
-    label: 'Home',
-    hideLabel: true,
-    icon: 'lucide:home',
-    to: '/',
-  },
-  {
-    label: 'Components Hub',
-    hideLabel: false,
-    to: '/components',
-  },
-  {
-    label: 'Carousel',
-    hideLabel: false,
-    to: '#',
-  },
-]
 </script>
 
 <template>
   <div>
-    <!-- BreadCrumb -->
-    <BaseBreadcrumb :items="demoBreadcrumb" />
+    <BaseBreadcrumb />
 
     <!-- Documentation Layout -->
     <DocLayout>
@@ -54,7 +34,7 @@ const demoBreadcrumb = [
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(userCarousel)"
                 class="prose max-w-full"
               />
@@ -62,7 +42,7 @@ const demoBreadcrumb = [
           </DocComponent>
         </DocSection>
 
-        <DocComponentMeta name="DemoCarouselTeam" />
+        <DocComponentMeta name="AddonCarouselTeam" />
 
         <!-- Icon carousel -->
         <DocSection title="Icon Carousel" tag="1.0.0">
@@ -73,7 +53,7 @@ const demoBreadcrumb = [
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(iconCarousel)"
                 class="prose max-w-full"
               />
@@ -82,7 +62,7 @@ const demoBreadcrumb = [
         </DocSection>
 
         <!-- Icon carousel properties -->
-        <DocComponentMeta name="DemoCarouselIcons" />
+        <DocComponentMeta name="AddonCarouselIcons" />
       </template>
       <!-- Toc -->
       <template #toc>

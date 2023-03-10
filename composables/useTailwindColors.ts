@@ -21,10 +21,10 @@ export function useTailwindColors() {
     : useCssVar('--color-yellow-400', document.documentElement)
   const title = process.server
     ? ref('transparent')
-    : useCssVar('--title', document.documentElement)
+    : useCssVar('--color-muted-600', document.documentElement)
   const subtitle = process.server
     ? ref('transparent')
-    : useCssVar('--subtitle', document.documentElement)
+    : useCssVar('--color-muted-400', document.documentElement)
 
   return {
     primary,

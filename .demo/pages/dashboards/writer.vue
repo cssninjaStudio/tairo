@@ -136,7 +136,7 @@ const activePosts = ref('recent')
                         View All
                       </NuxtLink>
                     </div>
-                    <WidgetAuthorsListCompact />
+                    <DemoAuthorsListCompact />
                   </BaseCard>
                 </div>
               </div>
@@ -162,7 +162,7 @@ const activePosts = ref('recent')
                       View All
                     </NuxtLink>
                   </div>
-                  <WidgetCommentListCompact />
+                  <DemoCommentListCompact />
                 </BaseCard>
               </div>
             </div>

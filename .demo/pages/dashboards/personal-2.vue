@@ -263,7 +263,7 @@ function useBarTeamEfficiency() {
                 View All
               </NuxtLink>
             </div>
-            <WidgetProjectListCompact />
+            <DemoProjectListCompact />
           </BaseCard>
           <!-- Chart -->
           <BaseCard class="p-6">
@@ -284,7 +284,7 @@ function useBarTeamEfficiency() {
                 Reports
               </NuxtLink>
             </div>
-            <DemoApexcharts v-bind="areaTaskCompletion" />
+            <AddonApexcharts v-bind="areaTaskCompletion" />
           </BaseCard>
           <!-- Chart -->
           <BaseCard class="p-6">
@@ -305,7 +305,7 @@ function useBarTeamEfficiency() {
                 Reports
               </NuxtLink>
             </div>
-            <DemoApexcharts v-bind="barTeamEfficiency" />
+            <AddonApexcharts v-bind="barTeamEfficiency" />
           </BaseCard>
         </div>
       </div>
@@ -333,7 +333,7 @@ function useBarTeamEfficiency() {
                 View All
               </NuxtLink>
             </div>
-            <WidgetTeamListCompact actions />
+            <DemoTeamListCompact actions />
           </BaseCard>
           <!-- Widget -->
           <BaseCard class="p-6">
@@ -355,11 +355,11 @@ function useBarTeamEfficiency() {
                 View All
               </NuxtLink>
             </div>
-            <WidgetTodoListCompact />
+            <DemoTodoListCompact />
           </BaseCard>
           <!-- Widget -->
           <BaseCard class="p-6">
-            <WidgetPlaceholderCompact>
+            <DemoPlaceholderCompact>
               <template #image>
                 <NuxtImg
                   src="/img/illustrations/placeholders/flat/chart-guy.svg"
@@ -396,7 +396,7 @@ function useBarTeamEfficiency() {
                   <span>Upgrade to Pro</span>
                 </BaseButton>
               </template>
-            </WidgetPlaceholderCompact>
+            </DemoPlaceholderCompact>
           </BaseCard>
         </div>
       </div>

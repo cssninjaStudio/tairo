@@ -653,7 +653,7 @@ function useGaugePersonal() {
                       </NuxtLink>
                     </BaseParagraph>
                   </div>
-                  <DemoApexcharts
+                  <AddonApexcharts
                     v-bind="areaCondition"
                     class="relative -left-5"
                   />
@@ -690,7 +690,7 @@ function useGaugePersonal() {
                       </NuxtLink>
                     </BaseParagraph>
                   </div>
-                  <DemoApexcharts v-bind="scatterEnergy" />
+                  <AddonApexcharts v-bind="scatterEnergy" />
                 </BaseCard>
               </div>
               <!-- Chart -->
@@ -724,7 +724,10 @@ function useGaugePersonal() {
                       </NuxtLink>
                     </BaseParagraph>
                   </div>
-                  <DemoApexcharts v-bind="barOxygen" class="relative -left-5" />
+                  <AddonApexcharts
+                    v-bind="barOxygen"
+                    class="relative -left-5"
+                  />
                 </BaseCard>
               </div>
               <!-- Chart -->
@@ -758,7 +761,7 @@ function useGaugePersonal() {
                       </NuxtLink>
                     </BaseParagraph>
                   </div>
-                  <DemoApexcharts
+                  <AddonApexcharts
                     v-bind="areaProgress"
                     class="relative -left-5"
                   />
@@ -772,12 +775,12 @@ function useGaugePersonal() {
               <!-- Widget -->
               <BaseCard class="p-6" shape="curved">
                 <div class="w-full flex items-center justify-between">
-                  <WidgetSearchCompact shape="curved" />
+                  <DemoSearchCompact shape="curved" />
                 </div>
               </BaseCard>
               <!-- Widget -->
               <BaseCard class="p-6" shape="curved">
-                <WidgetDatepicker expanded />
+                <DemoDatepicker expanded />
               </BaseCard>
               <!-- Widget -->
               <BaseCard class="h-full flex flex-col p-6">
@@ -793,7 +796,7 @@ function useGaugePersonal() {
                   </BaseHeading>
                 </div>
                 <div class="py-16">
-                  <DemoApexcharts v-bind="gaugePersonal" class="-mt-14" />
+                  <AddonApexcharts v-bind="gaugePersonal" class="-mt-14" />
                 </div>
                 <div class="text-center mt-auto">
                   <BaseParagraph size="sm">

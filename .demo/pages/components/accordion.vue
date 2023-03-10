@@ -25,7 +25,6 @@ function wrapVueMarkdown(source: string) {
 
 <template>
   <div>
-    <!-- BreadCrumb -->
     <BaseBreadcrumb />
 
     <!-- Documentation Layout -->
@@ -41,7 +40,7 @@ function wrapVueMarkdown(source: string) {
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(inclusiveRaw)"
                 class="prose max-w-full"
               />
@@ -58,7 +57,7 @@ function wrapVueMarkdown(source: string) {
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(exclusiveRaw)"
                 class="prose max-w-full"
               />
@@ -75,7 +74,7 @@ function wrapVueMarkdown(source: string) {
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(shapesRaw)"
                 class="prose max-w-full"
               />
@@ -92,7 +91,7 @@ function wrapVueMarkdown(source: string) {
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(chevronRaw)"
                 class="prose max-w-full"
               />
@@ -109,7 +108,7 @@ function wrapVueMarkdown(source: string) {
               </div>
             </template>
             <template #code>
-              <DocMarkdown
+              <AddonMarkdownRemark
                 :source="wrapVueMarkdown(plusRaw)"
                 class="prose max-w-full"
               />

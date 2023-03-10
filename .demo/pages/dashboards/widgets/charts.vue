@@ -3149,7 +3149,7 @@ function useDemoRadar() {
               <span>Line Chart</span>
             </BaseHeading>
           </div>
-          <DemoApexcharts v-bind="demoLine" />
+          <AddonApexcharts v-bind="demoLine" />
         </BaseCard>
       </div>
       <!-- Chart -->
@@ -3167,7 +3167,7 @@ function useDemoRadar() {
               <span>Line Chart</span>
             </BaseHeading>
           </div>
-          <DemoApexcharts v-bind="demoMultiLine" />
+          <AddonApexcharts v-bind="demoMultiLine" />
         </BaseCard>
       </div>
       <!-- Chart -->
@@ -3185,7 +3185,7 @@ function useDemoRadar() {
               <span>Stepline Chart</span>
             </BaseHeading>
           </div>
-          <DemoApexcharts v-bind="demoStepLine" />
+          <AddonApexcharts v-bind="demoStepLine" />
         </BaseCard>
       </div>
       <!-- Chart -->
@@ -3203,7 +3203,7 @@ function useDemoRadar() {
               <span>Area Chart</span>
             </BaseHeading>
           </div>
-          <DemoApexcharts v-bind="demoArea" />
+          <AddonApexcharts v-bind="demoArea" />
         </BaseCard>
       </div>
       <!-- Chart -->
@@ -3221,7 +3221,7 @@ function useDemoRadar() {
               <span>Multiple Area</span>
             </BaseHeading>
           </div>
-          <DemoApexcharts v-bind="demoAreaMultiple" />
+          <AddonApexcharts v-bind="demoAreaMultiple" />
         </BaseCard>
       </div>
       <!-- Chart -->
@@ -3239,7 +3239,7 @@ function useDemoRadar() {
               <span>Multiple Areas</span>
             </BaseHeading>
           </div>
-          <DemoApexcharts v-bind="demoAreasMultiple" />
+          <AddonApexcharts v-bind="demoAreasMultiple" />
         </BaseCard>
       </div>
       <!-- Chart -->
@@ -3257,7 +3257,7 @@ function useDemoRadar() {
               <span>Bar Chart</span>
             </BaseHeading>
           </div>
-          <DemoApexcharts v-bind="demoBar" />
+          <AddonApexcharts v-bind="demoBar" />
         </BaseCard>
       </div>
       <!-- Chart -->
@@ -3275,7 +3275,7 @@ function useDemoRadar() {
               <span>Multiple Bars</span>
             </BaseHeading>
           </div>
-          <DemoApexcharts v-bind="demoBarMultiple" />
+          <AddonApexcharts v-bind="demoBarMultiple" />
         </BaseCard>
       </div>
       <!-- Chart -->
@@ -3293,7 +3293,7 @@ function useDemoRadar() {
               <span>Stacked Bars</span>
             </BaseHeading>
           </div>
-          <DemoApexcharts v-bind="demoBarStacked" />
+          <AddonApexcharts v-bind="demoBarStacked" />
         </BaseCard>
       </div>
       <!-- Chart -->
@@ -3311,7 +3311,7 @@ function useDemoRadar() {
               <span>Range Column</span>
             </BaseHeading>
           </div>
-          <DemoApexcharts v-bind="demoBarRange" />
+          <AddonApexcharts v-bind="demoBarRange" />
         </BaseCard>
       </div>
       <!-- Chart -->
@@ -3329,7 +3329,7 @@ function useDemoRadar() {
               <span>Horizontal Bar</span>
             </BaseHeading>
           </div>
-          <DemoApexcharts v-bind="demoBarHorizontal" />
+          <AddonApexcharts v-bind="demoBarHorizontal" />
         </BaseCard>
       </div>
       <!-- Chart -->
@@ -3347,7 +3347,7 @@ function useDemoRadar() {
               <span>Horizontal Multiple</span>
             </BaseHeading>
           </div>
-          <DemoApexcharts v-bind="demoBarHorizontalMultiple" />
+          <AddonApexcharts v-bind="demoBarHorizontalMultiple" />
         </BaseCard>
       </div>
       <!-- Chart -->
@@ -3365,7 +3365,7 @@ function useDemoRadar() {
               <span>Timeline Chart</span>
             </BaseHeading>
           </div>
-          <DemoApexcharts v-bind="demoTimeline" />
+          <AddonApexcharts v-bind="demoTimeline" />
         </BaseCard>
       </div>
       <!-- Chart -->
@@ -3383,7 +3383,7 @@ function useDemoRadar() {
               <span>Bubble Chart</span>
             </BaseHeading>
           </div>
-          <DemoApexcharts v-bind="demoBubble" />
+          <AddonApexcharts v-bind="demoBubble" />
         </BaseCard>
       </div>
       <!-- Chart -->
@@ -3401,19 +3401,19 @@ function useDemoRadar() {
               <span>Scatter Chart</span>
             </BaseHeading>
           </div>
-          <DemoApexcharts v-bind="demoScatter" />
+          <AddonApexcharts v-bind="demoScatter" />
         </BaseCard>
       </div>
       <!-- Chart -->
       <div class="relative">
         <BaseCard class="p-6">
-          <DemoApexcharts v-bind="demoPie" />
+          <AddonApexcharts v-bind="demoPie" />
         </BaseCard>
       </div>
       <!-- Chart -->
       <div class="relative">
         <BaseCard class="p-6">
-          <DemoApexcharts v-bind="demoDonut" />
+          <AddonApexcharts v-bind="demoDonut" />
         </BaseCard>
       </div>
       <!-- Chart -->
@@ -3431,7 +3431,7 @@ function useDemoRadar() {
               <span>Radial Bar</span>
             </BaseHeading>
           </div>
-          <DemoApexcharts v-bind="demoRadialBar" />
+          <AddonApexcharts v-bind="demoRadialBar" />
         </BaseCard>
       </div>
       <!-- Chart -->
@@ -3449,7 +3449,7 @@ function useDemoRadar() {
               <span>Radial Multiple</span>
             </BaseHeading>
           </div>
-          <DemoApexcharts v-bind="demoRadialMultiple" />
+          <AddonApexcharts v-bind="demoRadialMultiple" />
         </BaseCard>
       </div>
       <!-- Chart -->
@@ -3467,7 +3467,7 @@ function useDemoRadar() {
               <span>Radial Gauge</span>
             </BaseHeading>
           </div>
-          <DemoApexcharts v-bind="demoRadialGauge" />
+          <AddonApexcharts v-bind="demoRadialGauge" />
         </BaseCard>
       </div>
       <!-- Chart -->
@@ -3485,7 +3485,7 @@ function useDemoRadar() {
               <span>Gauge Chart</span>
             </BaseHeading>
           </div>
-          <DemoApexcharts v-bind="demoGauge" />
+          <AddonApexcharts v-bind="demoGauge" />
         </BaseCard>
       </div>
       <!-- Chart -->
@@ -3503,7 +3503,7 @@ function useDemoRadar() {
               <span>Radar Chart</span>
             </BaseHeading>
           </div>
-          <DemoApexcharts v-bind="demoRadar" />
+          <AddonApexcharts v-bind="demoRadar" />
         </BaseCard>
       </div>
     </div>

@@ -792,13 +792,13 @@ function useBarProfit() {
               <span>Profit Evolution</span>
             </BaseHeading>
           </div>
-          <DemoApexcharts v-bind="barProfit" />
+          <AddonApexcharts v-bind="barProfit" />
         </BaseCard>
       </div>
       <!-- Grid item -->
       <div class="col-span-12 md:col-span-6 ltablet:col-span-4 lg:col-span-4">
         <BaseCard shape="curved" class="p-6">
-          <WidgetDatepicker expanded />
+          <DemoDatepicker expanded />
         </BaseCard>
       </div>
     </div>

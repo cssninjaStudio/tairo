@@ -277,7 +277,7 @@ const candidates = [
     <!--Grid item-->
     <div>
       <BaseCard shape="curved" class="p-6">
-        <WidgetDatepicker expanded />
+        <DemoDatepicker expanded />
       </BaseCard>
     </div>
     <!--Grid item-->
@@ -301,7 +301,7 @@ const candidates = [
             View All
           </NuxtLink>
         </div>
-        <WidgetTrendingSkills />
+        <DemoTrendingSkills />
       </BaseCard>
     </div>
     <!-- Grid item -->
@@ -325,7 +325,7 @@ const candidates = [
             Reports
           </NuxtLink>
         </div>
-        <DemoApexcharts v-bind="areaInterviews" />
+        <AddonApexcharts v-bind="areaInterviews" />
       </BaseCard>
     </div>
     <!-- Grid item -->

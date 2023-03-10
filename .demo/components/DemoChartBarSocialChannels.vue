@@ -1,10 +1,10 @@
 <script setup lang="ts">
-const areaSubscriptions = reactive(useAreaSubscriptions())
+const barSocialChannels = reactive(useBarSocialChannels())
 
-function useAreaSubscriptions() {
-  const { primary, info, success } = useTailwindColors()
-  const type = 'area'
-  const height = 180
+function useBarSocialChannels() {
+  const { primary, subtitle, success } = useTailwindColors()
+  const type = 'bar'
+  const height = 235
 
   const options = {
     chart: {
@@ -15,54 +15,32 @@ function useAreaSubscriptions() {
         enabled: true,
       },
     },
-    colors: [primary.value, success.value, info.value],
-    grid: {
-      show: false,
-      padding: {
-        left: 0,
-        right: 0,
+    plotOptions: {
+      bar: {
+        borderRadius: 5,
+        borderRadiusApplication: 'end',
+        columnWidth: '60%',
+        colors: {
+          backgroundBarOpacity: 0.75,
+        },
       },
     },
+    colors: [success.value, primary.value, subtitle.value],
     dataLabels: {
       enabled: false,
     },
-    stroke: {
-      width: [2],
-      curve: 'smooth',
+    noData: {
+      text: 'Loading...',
     },
     xaxis: {
-      type: 'numeric',
-      lines: {
-        show: false,
-      },
-      axisBorder: {
-        show: false,
-      },
+      type: 'category',
+      tickPlacement: 'on',
       labels: {
-        show: false,
+        rotate: -45,
+        rotateAlways: true,
       },
     },
-    yaxis: [
-      {
-        y: 0,
-        offsetX: 0,
-        offsetY: 0,
-        labels: {
-          show: false,
-        },
-        padding: {
-          left: 0,
-          right: 0,
-        },
-      },
-    ],
-    tooltip: {
-      x: {
-        show: false,
-        format: 'dd/MM/yy HH:mm',
-      },
-    },
-  }
+  } as const
 
   const series = ref([
     {
@@ -72,10 +50,6 @@ function useAreaSubscriptions() {
     {
       name: 'Renewals',
       data: [76, 85, 101, 98, 87, 105, 91, 114, 94],
-    },
-    {
-      name: 'Resigns',
-      data: [35, 41, 36, 26, 45, 48, 52, 53, 41],
     },
   ])
 
@@ -102,7 +76,7 @@ function useAreaSubscriptions() {
             <p
               class="font-sansfont-semibold text-[0.65rem] uppercase text-muted-400"
             >
-              New
+              Facebook
             </p>
           </div>
         </div>
@@ -117,7 +91,7 @@ function useAreaSubscriptions() {
             <p
               class="font-sans font-semibold text-[0.65rem] uppercase text-muted-400"
             >
-              Renewals
+              Twitter
             </p>
           </div>
         </div>
@@ -132,14 +106,14 @@ function useAreaSubscriptions() {
             <p
               class="font-sansfont-semibold text-[0.65rem] uppercase text-muted-400"
             >
-              Resigns
+              Linkedin
             </p>
           </div>
         </div>
       </div>
     </div>
     <div class="mt-auto w-full">
-      <DemoApexcharts v-bind="areaSubscriptions" />
+      <AddonApexcharts v-bind="barSocialChannels" />
     </div>
   </div>
 </template>

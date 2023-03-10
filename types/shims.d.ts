@@ -18,7 +18,7 @@ declare module 'nuxt/dist/pages/runtime/composables' {
         | 'NUI Forms'
         | 'NUI Elements'
         | 'Tairo Elements'
-        | 'Demo Elements'
+        | 'Addons'
       components?: string[]
       composables?: string[]
       interfaces?: string[]

@@ -785,7 +785,7 @@ function useBarOrders() {
               </span>
             </div>
             <div class="grow">
-              <DemoApexcharts v-bind="sparkLineOne" />
+              <AddonApexcharts v-bind="sparkLineOne" />
             </div>
           </div>
         </BaseCard>
@@ -814,7 +814,7 @@ function useBarOrders() {
               </span>
             </div>
             <div class="grow">
-              <DemoApexcharts v-bind="sparkLineTwo" />
+              <AddonApexcharts v-bind="sparkLineTwo" />
             </div>
           </div>
         </BaseCard>
@@ -843,7 +843,7 @@ function useBarOrders() {
               </span>
             </div>
             <div class="grow">
-              <DemoApexcharts v-bind="sparkLineThree" />
+              <AddonApexcharts v-bind="sparkLineThree" />
             </div>
           </div>
         </BaseCard>
@@ -872,7 +872,7 @@ function useBarOrders() {
               </span>
             </div>
             <div class="grow">
-              <DemoApexcharts v-bind="sparkLineFour" />
+              <AddonApexcharts v-bind="sparkLineFour" />
             </div>
           </div>
         </BaseCard>
@@ -921,7 +921,7 @@ function useBarOrders() {
               </p>
             </div>
           </div>
-          <DemoApexcharts v-bind="areaCustomers" />
+          <AddonApexcharts v-bind="areaCustomers" />
         </BaseCard>
       </div>
       <!-- Column -->
@@ -957,7 +957,7 @@ function useBarOrders() {
                 </BaseParagraph>
               </div>
               <div class="flex-1">
-                <DemoApexcharts v-bind="radialSalesRevenue" />
+                <AddonApexcharts v-bind="radialSalesRevenue" />
               </div>
             </div>
           </BaseCard>
@@ -976,7 +976,7 @@ function useBarOrders() {
             </div>
             <div class="flex justify-between gap-2">
               <div class="flex-1 flex flex-col gap-2 text-center">
-                <DemoApexcharts v-bind="radialSmallOne" />
+                <AddonApexcharts v-bind="radialSmallOne" />
                 <div class="-mt-6">
                   <BaseHeading
                     as="h5"
@@ -993,7 +993,7 @@ function useBarOrders() {
                 </div>
               </div>
               <div class="flex-1 flex flex-col gap-2 text-center">
-                <DemoApexcharts v-bind="radialSmallTwo" />
+                <AddonApexcharts v-bind="radialSmallTwo" />
                 <div class="-mt-6">
                   <BaseHeading
                     as="h5"
@@ -1010,7 +1010,7 @@ function useBarOrders() {
                 </div>
               </div>
               <div class="flex-1 flex flex-col gap-2 text-center">
-                <DemoApexcharts v-bind="radialSmallThree" />
+                <AddonApexcharts v-bind="radialSmallThree" />
                 <div class="-mt-6">
                   <BaseHeading
                     as="h5"
@@ -1047,7 +1047,7 @@ function useBarOrders() {
             </BaseHeading>
           </div>
           <div class="py-16">
-            <DemoApexcharts v-bind="gaugePersonal" class="-mt-14" />
+            <AddonApexcharts v-bind="gaugePersonal" class="-mt-14" />
           </div>
           <div class="text-center mt-auto">
             <BaseParagraph size="sm">
@@ -1074,7 +1074,7 @@ function useBarOrders() {
               <span>Orders Summary</span>
             </BaseHeading>
           </div>
-          <DemoApexcharts v-bind="barOrders" />
+          <AddonApexcharts v-bind="barOrders" />
         </BaseCard>
       </div>
       <!-- Column -->
@@ -1083,7 +1083,7 @@ function useBarOrders() {
       >
         <!-- Calendar -->
         <BaseCard class="p-6">
-          <WidgetDatepicker />
+          <DemoDatepicker />
         </BaseCard>
       </div>
     </div>

@@ -10,18 +10,10 @@ export default defineNuxtConfig({
   extends: envModules.ui,
   modules: ['@nuxt/image-edge', resolve('./modules/purge-comments')],
   css: [
-    resolve('./assets/css/modules/variables.css'),
     resolve('./assets/css/modules/slider.css'),
     resolve('./assets/css/modules/popper.css'),
-    resolve('./assets/css/modules/apex.css'), // @todo: this should be lazy loaded
-    resolve('./assets/css/modules/vcalendar.css'),
     resolve('./assets/css/keyframes.css'),
   ],
-  postcss: {
-    plugins: {
-      autoprefixer: {},
-    },
-  },
   vite: {
     logLevel: 'info',
     build: {

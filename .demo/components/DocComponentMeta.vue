@@ -165,7 +165,7 @@ function getEventsSnippet(event: ComponentMeta['events'][0]) {
                       </div>
                     </div>
                     <div class="p-2 md:w-8/12">
-                      <DocMarkdown
+                      <AddonMarkdownRemark
                         no-lines
                         no-highlight
                         class="prose max-w-none text-sm"
@@ -235,7 +235,7 @@ function getEventsSnippet(event: ComponentMeta['events'][0]) {
                       </div>
                     </div>
                     <div class="p-2 md:w-8/12">
-                      <DocMarkdown
+                      <AddonMarkdownRemark
                         no-lines
                         no-highlight
                         class="prose max-w-none text-sm"
@@ -305,7 +305,7 @@ function getEventsSnippet(event: ComponentMeta['events'][0]) {
                       </div>
                     </div>
                     <div class="p-2 md:w-8/12">
-                      <DocMarkdown
+                      <AddonMarkdownRemark
                         no-lines
                         no-highlight
                         class="prose max-w-none text-sm"

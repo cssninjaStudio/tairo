@@ -8,7 +8,7 @@ const categoryOrders = [
   'NUI Forms',
   'NUI Elements',
   'Tairo Elements',
-  'Demo Elements',
+  'Addons',
   // 'Content',
   // 'Interaction',
   // 'Display',
@@ -23,7 +23,7 @@ const show = reactive({
   'NUI Forms': true,
   'NUI Elements': true,
   'Tairo Elements': true,
-  'Demo Elements': true,
+  Addons: true,
   Uncategorized: true,
 })
 

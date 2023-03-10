@@ -5,6 +5,7 @@ definePageMeta({
 })
 
 const { open } = usePanels()
+const app = useAppConfig()
 const panels = reactive(usePanels())
 
 const conversations = ref([
@@ -629,29 +630,14 @@ function selectConversation(id: number) {
             <div
               class="relative h-16 w-full flex items-center justify-end gap-2 scale-90 sm:scale-100 -right-4 sm:right-0"
             >
-              <BaseThemeToggle />
-              <button
-                type="button"
-                class="flex h-9 w-9 items-center justify-center rounded-full border border-muted-200 bg-white ring-1 ring-transparent transition-all duration-300 hover:ring-muted-200 dark:hover:ring-muted-700 hover:ring-offset-4 dark:border-muted-700 dark:bg-muted-800 dark:ring-offset-muted-900"
-                @click="open('language')"
-              >
-                <NuxtImg
-                  class="h-7 w-7 rounded-full"
-                  src="/img/icons/flags/united-states-of-america.svg"
-                  alt="flag icon"
+              <template v-for="tool of (app.tairo.toolbar as any).tools">
+                <component
+                  :is="resolveComponent(tool.component)"
+                  v-if="tool.component"
+                  :key="tool.component"
+                  v-bind="tool.props"
                 />
-              </button>
-              <NavigationToolbarNotifications />
-              <button
-                type="button"
-                class="flex h-9 w-9 items-center justify-center rounded-full border border-muted-200 bg-white ring-1 ring-transparent transition-all duration-300 hover:ring-muted-200 dark:hover:ring-muted-700 hover:ring-offset-4 dark:border-muted-700 dark:bg-muted-800 dark:ring-offset-muted-900"
-                @click="open('activity')"
-              >
-                <Icon
-                  name="ph:circles-four-duotone"
-                  class="h-5 w-5 text-muted-400"
-                />
-              </button>
+              </template>
             </div>
           </div>
           <!-- Body -->

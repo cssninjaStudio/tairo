@@ -18,7 +18,7 @@ const props = withDefaults(
 
 <template>
   <div>
-    <WidgetPicture
+    <DemoPicture
       :src="props.image"
       :imageDark="props.imageDark"
       :height="300"

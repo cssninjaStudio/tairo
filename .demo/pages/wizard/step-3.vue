@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { DatePicker } from 'v-calendar'
+
 import 'v-calendar/dist/style.css'
+import '~/assets/css/vcalendar.css'
 
 import type { Customer, Project, ProjectStepData } from '../../types'
 
@@ -107,7 +109,7 @@ const budget = ref('< 5K')
 
 <template>
   <div>
-    <WizardStepTitle />
+    <DemoWizardStepTitle />
     <div class="flex flex-col gap-3 w-full max-w-sm mx-auto px-4">
       <!-- Customer -->
       <BaseCard shape="curved" class="relative p-6 z-10">
@@ -216,21 +218,22 @@ const budget = ref('< 5K')
         >
           <div class="relative pr-4">
             <ClientOnly>
-              <DatePicker v-model="project.startDate" :masks="masks" trim-weeks>
-                <template
-                  #default="{
-                    inputValue,
-                    inputEvents,
-                    showPopover,
-                    hidePopover,
-                  }"
-                >
+              <DatePicker
+                v-model="project.startDate"
+                :masks="masks"
+                :minute-increment="15"
+                :min-date="new Date()"
+                :disabled-dates="{ weekdays: [1, 7] }"
+                :valid-hours="{ min: 8, max: 18 }"
+                trim-weeks
+              >
+                <template v-slot="{ inputValue, inputEvents }">
                   <div class="relative">
                     <input
                       class="peer font-sans text-sm bg-transparent h-10 inline-flex items-center leading-tight w-full pl-10 rounded-lg text-muted-600 dark:text-muted-100 placeholder:text-muted-300 dark:placeholder:text-muted-600 focus-visible:outline-dashed focus-visible:outline-offset-4 focus-visible:outline-muted-300/70"
                       :value="inputValue"
                       placeholder="Start date"
-                      @focus="showPopover"
+                      v-on="inputEvents"
                     />
                     <div
                       class="absolute top-0 left-0 h-10 w-10 flex items-center justify-center text-muted-400 peer-focus-visible:text-primary-500 transition-colors duration-300"
@@ -244,21 +247,23 @@ const budget = ref('< 5K')
           </div>
           <div class="relative pl-4">
             <ClientOnly>
-              <DatePicker v-model="project.endDate" :masks="masks" trim-weeks>
-                <template
-                  #default="{
-                    inputValue,
-                    inputEvents,
-                    showPopover,
-                    hidePopover,
-                  }"
-                >
+              <DatePicker
+                id="endDate"
+                v-model="project.endDate"
+                :masks="masks"
+                :minute-increment="15"
+                :min-date="project.startDate"
+                :disabled-dates="{ weekdays: [1, 7] }"
+                :valid-hours="{ min: 8, max: 18 }"
+                trim-weeks
+              >
+                <template v-slot="{ inputValue, inputEvents }">
                   <div class="relative">
                     <input
                       class="peer font-sans text-sm bg-transparent h-10 inline-flex items-center leading-tight w-full pl-10 rounded-lg text-muted-600 dark:text-muted-100 placeholder:text-muted-300 dark:placeholder:text-muted-600 focus-visible:outline-dashed focus-visible:outline-offset-4 focus-visible:outline-muted-300/70"
                       :value="inputValue"
                       placeholder="End date"
-                      @focus="showPopover"
+                      v-on="inputEvents"
                     />
                     <div
                       class="absolute top-0 left-0 h-10 w-10 flex items-center justify-center text-muted-400 peer-focus-visible:text-primary-500 transition-colors duration-300"

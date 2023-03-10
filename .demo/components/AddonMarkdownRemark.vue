@@ -95,7 +95,7 @@ export function getProcessors(
 }
 
 export default defineComponent({
-  name: 'BaseMarkdown',
+  name: 'AddonMarkdownRemark',
   props: {
     source: {
       type: String,
@@ -145,6 +145,7 @@ export default defineComponent({
           'javascript',
           'typescript',
           'bash',
+          'diff',
           'css',
           'scss',
           'diff',

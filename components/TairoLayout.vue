@@ -2,11 +2,14 @@
 const props = withDefaults(
   defineProps<{
     sidebar?: boolean
+    subsidebar?: boolean
     toolbar?: boolean
     circularMenu?: boolean
+    condensed?: boolean
   }>(),
   {
     sidebar: true,
+    subsidebar: true,
     toolbar: true,
     circularMenu: true,
   },
@@ -30,6 +33,10 @@ const circularMenuEnabled = computed(() => {
 })
 
 const mainClass = computed(() => {
+  if (props.condensed) {
+    return 'bg-muted-100 dark:bg-muted-900 relative min-h-screen w-full overflow-x-hidden'
+  }
+
   if (!sidebarEnabled.value) {
     return 'bg-muted-100 dark:bg-muted-900 relative min-h-screen w-full overflow-x-hidden px-4 transition-all duration-300 xl:px-10'
   }
@@ -50,7 +57,10 @@ const mainClass = computed(() => {
 
 <template>
   <div class="bg-muted-100 dark:bg-muted-900 pb-20">
-    <TairoNavigationSidebar v-if="sidebarEnabled">
+    <TairoNavigationSidebar
+      v-if="sidebarEnabled"
+      :subsidebar="props.subsidebar"
+    >
       <div
         v-if="app.tairo.sidebar.logo.component"
         class="flex h-16 w-full items-center justify-center"
@@ -67,7 +77,7 @@ const mainClass = computed(() => {
     </TairoNavigationSidebar>
 
     <div :class="mainClass">
-      <div class="mx-auto w-full max-w-7xl">
+      <div :class="props.condensed ? 'w-full' : 'mx-auto w-full max-w-7xl'">
         <slot name="toolbar">
           <TairoNavigationToolbar
             v-if="toolbarEnabled"

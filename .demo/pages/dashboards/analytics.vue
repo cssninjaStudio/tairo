@@ -434,7 +434,7 @@ function useBarSalesProfit() {
                 </p>
               </div>
             </div>
-            <DemoApexcharts v-bind="lineRevenue" />
+            <AddonApexcharts v-bind="lineRevenue" />
           </BaseCard>
         </div>
         <!-- Chart -->
@@ -452,7 +452,7 @@ function useBarSalesProfit() {
               </BaseHeading>
             </div>
             <div class="mb-6">
-              <DemoApexcharts v-bind="radialGoal" />
+              <AddonApexcharts v-bind="radialGoal" />
             </div>
             <div class="mt-auto">
               <div
@@ -499,7 +499,7 @@ function useBarSalesProfit() {
               </BaseHeading>
             </div>
             <div class="mb-6">
-              <DemoApexcharts v-bind="radialGrowth" />
+              <AddonApexcharts v-bind="radialGrowth" />
             </div>
             <div class="mt-auto">
               <div class="flex justify-center gap-2">
@@ -536,7 +536,7 @@ function useBarSalesProfit() {
                 <span>Profit</span>
               </BaseHeading>
             </div>
-            <DemoApexcharts v-bind="barSalesProfit" />
+            <AddonApexcharts v-bind="barSalesProfit" />
           </BaseCard>
         </div>
       </div>
@@ -549,19 +549,19 @@ function useBarSalesProfit() {
       >
         <!-- Vcard -->
         <BaseCard class="p-6">
-          <WidgetVcardRight />
+          <DemoVcardRight />
         </BaseCard>
         <!-- Calendar -->
         <BaseCard class="p-6">
-          <WidgetDatepicker />
+          <DemoDatepicker />
         </BaseCard>
         <!-- Followers -->
         <BaseCard class="p-6">
-          <WidgetFollowersCompact />
+          <DemoFollowersCompact />
         </BaseCard>
         <!-- Notifications -->
         <BaseCard class="p-6">
-          <WidgetNotificationsCompact />
+          <DemoNotificationsCompact />
         </BaseCard>
       </div>
     </div>

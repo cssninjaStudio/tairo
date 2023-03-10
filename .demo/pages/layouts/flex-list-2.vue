@@ -97,7 +97,7 @@ function statusColor(itemStatus: string) {
             leave-from-class="opacity-100 translate-x-0"
             leave-to-class="opacity-0 -translate-x-full"
           >
-            <WidgetFlexTableRow
+            <DemoFlexTableRow
               v-for="(item, index) in data?.data"
               :key="index"
               shape="straight"
@@ -105,7 +105,7 @@ function statusColor(itemStatus: string) {
               spaced
             >
               <template #start>
-                <WidgetFlexTableStart
+                <DemoFlexTableStart
                   label="user"
                   :hideLabel="index > 0"
                   :title="item.username"
@@ -116,7 +116,7 @@ function statusColor(itemStatus: string) {
                 />
               </template>
               <template #end>
-                <WidgetFlexTableCell
+                <DemoFlexTableCell
                   label="location"
                   :hideLabel="index > 0"
                   class="w-full sm:w-40"
@@ -126,8 +126,8 @@ function statusColor(itemStatus: string) {
                   >
                     {{ item.location }}
                   </span>
-                </WidgetFlexTableCell>
-                <WidgetFlexTableCell
+                </DemoFlexTableCell>
+                <DemoFlexTableCell
                   label="industry"
                   :hideLabel="index > 0"
                   class="w-full sm:w-40"
@@ -137,8 +137,8 @@ function statusColor(itemStatus: string) {
                   >
                     {{ item.industry }}
                   </span>
-                </WidgetFlexTableCell>
-                <WidgetFlexTableCell
+                </DemoFlexTableCell>
+                <DemoFlexTableCell
                   label="status"
                   :hideLabel="index > 0"
                   class="w-full sm:w-16"
@@ -152,8 +152,8 @@ function statusColor(itemStatus: string) {
                   >
                     {{ item.status }}
                   </BaseTag>
-                </WidgetFlexTableCell>
-                <WidgetFlexTableCell
+                </DemoFlexTableCell>
+                <DemoFlexTableCell
                   label="relations"
                   :hideLabel="index > 0"
                   tablet-hidden
@@ -164,14 +164,14 @@ function statusColor(itemStatus: string) {
                     :avatars="item.relations"
                     :limit="2"
                   />
-                </WidgetFlexTableCell>
-                <WidgetFlexTableCell label="action" :hideLabel="index > 0">
+                </DemoFlexTableCell>
+                <DemoFlexTableCell label="action" :hideLabel="index > 0">
                   <BaseButtonAction color="muted">
                     <span>View</span>
                   </BaseButtonAction>
-                </WidgetFlexTableCell>
+                </DemoFlexTableCell>
               </template>
-            </WidgetFlexTableRow>
+            </DemoFlexTableRow>
           </TransitionGroup>
         </div>
         <div v-if="!pending && data?.data.length !== 0" class="mt-4">

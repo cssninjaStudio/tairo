@@ -355,14 +355,14 @@ const students = [
           </BaseParagraph>
         </div>
         <div class="space-y-2">
-          <WidgetFlexTableRow
+          <DemoFlexTableRow
             v-for="(student, studentIndex) in students"
             :key="studentIndex"
             shape="curved"
             spaced
           >
             <template #start>
-              <WidgetFlexTableStart
+              <DemoFlexTableStart
                 label="Student"
                 hideLabel
                 :title="student.name"
@@ -371,7 +371,7 @@ const students = [
               />
             </template>
             <template #end>
-              <WidgetFlexTableCell
+              <DemoFlexTableCell
                 label="location"
                 hideLabel
                 class="w-full sm:w-32"
@@ -381,8 +381,8 @@ const students = [
                 >
                   {{ student.location }}
                 </span>
-              </WidgetFlexTableCell>
-              <WidgetFlexTableCell
+              </DemoFlexTableCell>
+              <DemoFlexTableCell
                 label="status"
                 hideLabel
                 class="w-full sm:w-16"
@@ -395,8 +395,8 @@ const students = [
                 >
                   {{ student.status }}
                 </BaseTag>
-              </WidgetFlexTableCell>
-              <WidgetFlexTableCell
+              </DemoFlexTableCell>
+              <DemoFlexTableCell
                 label="location"
                 hideLabel
                 class="w-full sm:w-28"
@@ -406,12 +406,12 @@ const students = [
                 >
                   {{ student.presence }}
                 </span>
-              </WidgetFlexTableCell>
-              <WidgetFlexTableCell label="action" hideLabel>
+              </DemoFlexTableCell>
+              <DemoFlexTableCell label="action" hideLabel>
                 <BaseButtonAction>Chat</BaseButtonAction>
-              </WidgetFlexTableCell>
+              </DemoFlexTableCell>
             </template>
-          </WidgetFlexTableRow>
+          </DemoFlexTableRow>
         </div>
       </div>
     </div>

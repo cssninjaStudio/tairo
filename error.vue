@@ -38,7 +38,7 @@ const handleError = () => clearError({ redirect: '/' })
     <BasePlaceholderPage
       :title="title"
       :subtitle="description"
-      class="min-h-[250px] !items-end"
+      class="min-h-[200px] !items-end"
     >
       <BaseButton class="mt-6 items-center gap-2" @click="handleError">
         <Icon name="feather:arrow-left" />

@@ -95,13 +95,13 @@ function difficultyLabel(itemDifficulty: number) {
             leave-from-class="opacity-100 translate-x-0"
             leave-to-class="opacity-0 -translate-x-full"
           >
-            <WidgetFlexTableRow
+            <DemoFlexTableRow
               v-for="(item, index) in data?.data"
               :key="index"
               shape="rounded"
             >
               <template #start>
-                <WidgetFlexTableStart
+                <DemoFlexTableStart
                   label="user"
                   :hideLabel="index > 0"
                   :title="item.name"
@@ -110,7 +110,7 @@ function difficultyLabel(itemDifficulty: number) {
                 />
               </template>
               <template #end>
-                <WidgetFlexTableCell
+                <DemoFlexTableCell
                   label="category"
                   :hideLabel="index > 0"
                   tablet-hidden
@@ -121,8 +121,8 @@ function difficultyLabel(itemDifficulty: number) {
                   >
                     {{ item.category }}
                   </span>
-                </WidgetFlexTableCell>
-                <WidgetFlexTableCell
+                </DemoFlexTableCell>
+                <DemoFlexTableCell
                   label="main skill"
                   :hideLabel="index > 0"
                   class="w-full sm:w-32"
@@ -140,8 +140,8 @@ function difficultyLabel(itemDifficulty: number) {
                       {{ item.skill.name }}
                     </span>
                   </div>
-                </WidgetFlexTableCell>
-                <WidgetFlexTableCell
+                </DemoFlexTableCell>
+                <DemoFlexTableCell
                   label="difficulty"
                   :hideLabel="index > 0"
                   class="w-full sm:w-36"
@@ -191,14 +191,14 @@ function difficultyLabel(itemDifficulty: number) {
                       "
                     ></span>
                   </div>
-                </WidgetFlexTableCell>
-                <WidgetFlexTableCell label="action" :hideLabel="index > 0">
+                </DemoFlexTableCell>
+                <DemoFlexTableCell label="action" :hideLabel="index > 0">
                   <BaseButtonAction color="muted">
                     <span>View</span>
                   </BaseButtonAction>
-                </WidgetFlexTableCell>
+                </DemoFlexTableCell>
               </template>
-            </WidgetFlexTableRow>
+            </DemoFlexTableRow>
           </TransitionGroup>
 
           <div v-if="!pending && data?.data.length !== 0" class="pt-6">

@@ -423,12 +423,12 @@ const results = [
           <!-- Widget -->
           <BaseCard class="p-6">
             <div class="w-full flex items-center justify-between">
-              <WidgetSearchCompact />
+              <DemoSearchCompact />
             </div>
           </BaseCard>
           <!-- Widget -->
           <BaseCard class="p-6">
-            <WidgetDatepicker />
+            <DemoDatepicker />
           </BaseCard>
           <!-- Widget -->
           <BaseCard class="p-6">

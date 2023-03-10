@@ -26,6 +26,5 @@
         Edit Profile
       </BaseButton>
     </div>
-
   </BasePlaceholderPage>
 </template>

@@ -352,10 +352,8 @@ const activeTab = ref('tab-1')
               </span>
             </div>
           </div>
-          <BaseParagraph
-            size="sm"
-            as="div"
-            class="max-w-xl mx-auto ltablet:mx-0 lg:mx-0 mb-6 prose prose-sm dark:prose-invert"
+          <BaseProse
+            class="max-w-xl mx-auto ltablet:mx-0 lg:mx-0 mb-6 prose-sm"
           >
             <p class="line-clamp-3">
               Artist, musician, songwriter, influencer, these are the many names
@@ -363,7 +361,7 @@ const activeTab = ref('tab-1')
               my friends* // Latest video can be found here
               <a href="#">youtu.be/8Tcee5Cyz</a>
             </p>
-          </BaseParagraph>
+          </BaseProse>
           <div
             class="flex justify-center ltablet:justify-start lg:justify-start gap-4"
           >

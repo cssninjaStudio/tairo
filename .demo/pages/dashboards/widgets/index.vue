@@ -98,7 +98,7 @@ function useGaugePersonal() {
           </BaseHeading>
         </div>
         <div class="py-16">
-          <DemoApexcharts v-bind="gaugePersonal" class="-mt-14" />
+          <AddonApexcharts v-bind="gaugePersonal" class="-mt-14" />
         </div>
         <div class="text-center mt-auto">
           <BaseParagraph size="sm">
@@ -110,47 +110,47 @@ function useGaugePersonal() {
       </BaseCard>
       <!-- Widget -->
       <BaseCard shape="curved" class="p-6">
-        <WidgetFollowersCompact />
+        <DemoFollowersCompact />
       </BaseCard>
       <!-- Widget -->
       <BaseCard shape="curved" class="p-6">
         <div class="w-full flex items-center justify-between">
-          <WidgetSearchCompact shape="curved" />
+          <DemoSearchCompact shape="curved" />
         </div>
       </BaseCard>
       <!-- Widget -->
       <BaseCard shape="curved" class="p-3">
-        <WidgetVideoCompact shape="curved" />
+        <DemoVideoCompact shape="curved" />
       </BaseCard>
       <!-- Widget -->
       <BaseCard shape="curved" class="p-6">
-        <WidgetTagListCompact shape="curved" />
+        <DemoTagListCompact shape="curved" />
       </BaseCard>
     </div>
     <!-- Column -->
     <div class="relative flex flex-col gap-4">
       <!-- Widget -->
       <BaseCard shape="curved" class="p-4">
-        <WidgetIconLinks shape="curved" />
+        <DemoIconLinks shape="curved" />
       </BaseCard>
       <!-- Widget -->
       <BaseCard shape="curved" class="p-4">
-        <WidgetDaysSquare shape="curved" />
+        <DemoDaysSquare shape="curved" />
       </BaseCard>
       <!-- Widget -->
       <BaseCard shape="curved" class="p-6">
-        <WidgetDatepicker expanded />
+        <DemoDatepicker expanded />
       </BaseCard>
       <!-- Widget -->
       <BaseCard shape="curved" class="p-4">
-        <WidgetMenuIconList shape="curved" />
+        <DemoMenuIconList shape="curved" />
       </BaseCard>
     </div>
     <!-- Column -->
     <div class="relative flex flex-col gap-4">
       <!-- Widget -->
       <BaseCard shape="curved" class="p-6">
-        <WidgetIconText
+        <DemoIconText
           title="Payment"
           icon="lucide:bell"
           text="You have an upcoming payment for your recurring subscription fee due on Sept 20, 2020. Check your billing details."
@@ -159,7 +159,7 @@ function useGaugePersonal() {
       </BaseCard>
       <!-- Widget -->
       <BaseCard shape="curved" class="p-3">
-        <WidgetPicture
+        <DemoPicture
           src="/img/illustrations/widgets/mountain-picture.svg"
           alt="Picture widget image description"
           shape="curved"
@@ -170,7 +170,7 @@ function useGaugePersonal() {
       </BaseCard>
       <!-- Widget -->
       <BaseCard shape="curved" class="p-6">
-        <WidgetInboxMessage
+        <DemoInboxMessage
           picture="/img/avatars/10.svg"
           name="Kendra W."
           title="Design Project"
@@ -195,14 +195,14 @@ function useGaugePersonal() {
             <span>Popular topics</span>
           </BaseHeading>
         </div>
-        <WidgetTagListCompact shape="curved" />
+        <DemoTagListCompact shape="curved" />
       </BaseCard>
       <!-- Widget -->
       <BaseCard class="p-6" shape="curved">
-        <WidgetNotificationsCompact />
+        <DemoNotificationsCompact />
       </BaseCard>
       <!-- Widget -->
-      <WidgetActionText
+      <DemoActionText
         title="Upgrade to Pro"
         text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quid censes in Latino fore? Nam ante Aristippus, et ille melius."
         label="Upgrade Now"
@@ -211,7 +211,7 @@ function useGaugePersonal() {
       />
       <!-- Widget -->
       <BaseCard shape="curved" class="p-6">
-        <WidgetIconText
+        <DemoIconText
           title="Messages"
           icon="lucide:message-square"
           text="You currently have more than 10 unread messages in your inbox. It could be a good time to check them out."
