@@ -868,7 +868,7 @@ function wrapVueMarkdown(source: string) {
                 class="dark:border-muted-700 border-t-2 border-dashed border-gray-300 py-4 px-6"
               >
                 <NuxtLink
-                  to="/components/icons"
+                  to="/components/addons/icons"
                   class="text-primary-500 font-sans text-sm font-medium opacity-60 transition-opacity duration-300 hover:opacity-100"
                 >
                   Get Started

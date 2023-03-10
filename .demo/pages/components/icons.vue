@@ -23,7 +23,7 @@ import phosphor from '~/documentation/icons/phosphor.vue?raw'
 definePageMeta({
   title: 'Icons',
   documentation: {
-    category: 'Addons',
+    category: 'Uncategorized',
     components: ['Icon'],
   },
 })

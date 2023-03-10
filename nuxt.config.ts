@@ -2,12 +2,23 @@ import { createResolver } from '@nuxt/kit'
 
 const { resolve } = createResolver(import.meta.url)
 
-const envModules = {
-  ui: process?.env?.THEME_DEV_UI_PATH || '@cssninja/nuxt-ui',
-}
-
 export default defineNuxtConfig({
-  extends: envModules.ui,
+  extends: [
+    /**
+     * You can clone the repository and make THEME_DEV_UI_PATH point to the cloned folder
+     * to allow you to make changes to the UI and see them in real time.
+     *
+     * You can also create any component with same name to override the default one.
+     *
+     * @see https://github.com/cssninjaStudio/nuxt-ui
+     */
+    process.env?.THEME_DEV_UI_PATH || '@cssninja/nuxt-ui',
+
+    /**
+     * @see https://github.com/harlan-zw/nuxt-seo-kit
+     */
+    'nuxt-seo-kit',
+  ],
   modules: ['@nuxt/image-edge', resolve('./modules/purge-comments')],
   css: [
     resolve('./assets/css/modules/slider.css'),
