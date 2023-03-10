@@ -97,7 +97,7 @@ const { data, pending, error, refresh } = await useFetch(
                   <BaseAvatar
                     :src="item.owner.avatar"
                     :badge-src="item.image"
-                    shape="square"
+                    shape="straight"
                     size="lg"
                     :tooltip="item.owner.name"
                     class="bg-muted-500/20 text-muted-500"

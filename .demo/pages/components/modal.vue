@@ -11,8 +11,8 @@ import smallTier from '~/documentation/modal/small-tier.vue?raw'
 definePageMeta({
   title: 'Modals',
   documentation: {
-    category: 'NUI Elements',
-    components: ['BaseModal'],
+    category: 'Tairo Elements',
+    components: ['TairoModal'],
   },
 })
 
@@ -110,7 +110,7 @@ const demoBreadcrumb = [
         </DocSection>
 
         <!-- Modal properties -->
-        <DocComponentMeta name="BaseModal" />
+        <DocComponentMeta name="TairoModal" />
       </template>
       <!-- Toc -->
       <template #toc>

@@ -49,7 +49,7 @@ const isModalBodyOpen = ref(false)
   </div>
 
   <!-- Modal component -->
-  <BaseModal
+  <TairoModal
     :open="isModalStartOpen"
     size="md"
     footer-align="start"
@@ -118,10 +118,10 @@ const isModalBodyOpen = ref(false)
         </div>
       </div>
     </template>
-  </BaseModal>
+  </TairoModal>
 
   <!-- Modal component -->
-  <BaseModal
+  <TairoModal
     :open="isModalEndOpen"
     size="md"
     footer-align="end"
@@ -190,10 +190,10 @@ const isModalBodyOpen = ref(false)
         </div>
       </div>
     </template>
-  </BaseModal>
+  </TairoModal>
 
   <!-- Modal component -->
-  <BaseModal
+  <TairoModal
     :open="isModalCenterOpen"
     size="md"
     footer-align="center"
@@ -262,10 +262,10 @@ const isModalBodyOpen = ref(false)
         </div>
       </div>
     </template>
-  </BaseModal>
+  </TairoModal>
 
   <!-- Modal component -->
-  <BaseModal
+  <TairoModal
     :open="isModalBetweenOpen"
     size="md"
     footer-align="between"
@@ -338,10 +338,10 @@ const isModalBodyOpen = ref(false)
         </div>
       </div>
     </template>
-  </BaseModal>
+  </TairoModal>
 
   <!-- Modal component -->
-  <BaseModal
+  <TairoModal
     :open="isModalBodyOpen"
     size="md"
     @close="isModalBodyOpen = false"
@@ -389,5 +389,5 @@ const isModalBodyOpen = ref(false)
         </p>
       </div>
     </div>
-  </BaseModal>
+  </TairoModal>
 </template>

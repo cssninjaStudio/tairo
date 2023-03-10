@@ -40,7 +40,7 @@ definePageMeta({
                 <div class="flex items-center">
                   <BaseCheckbox
                     name="table-1-main"
-                    shape="circle"
+                    shape="full"
                     class="text-primary-500"
                   />
                 </div>
@@ -60,7 +60,7 @@ definePageMeta({
                 <div class="flex items-center">
                   <BaseCheckbox
                     :name="`placeload-item-checkbox-${index}`"
-                    shape="circle"
+                    shape="full"
                     class="text-primary-500"
                   />
                 </div>

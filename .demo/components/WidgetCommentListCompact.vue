@@ -46,7 +46,7 @@ const comments = [
         :src="comment.image"
         :text="comment.text"
         size="xs"
-        shape="square"
+        shape="straight"
         class="flex-shrink-0 bg-primary-100 dark:bg-primary-500/20 text-primary-500"
       />
       <div>

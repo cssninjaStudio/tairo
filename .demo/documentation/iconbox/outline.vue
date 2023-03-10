@@ -1,7 +1,7 @@
 <template>
   <BaseIconBox
     size="md"
-    shape="circle"
+    shape="full"
     class="text-gray-400 dark:text-gray-500"
     bordered
   >
@@ -12,7 +12,7 @@
   </BaseIconBox>
   <BaseIconBox
     size="md"
-    shape="circle"
+    shape="full"
     class="text-primary-500"
     bordered
   >
@@ -23,7 +23,7 @@
   </BaseIconBox>
   <BaseIconBox
     size="md"
-    shape="circle"
+    shape="full"
     class="text-lime-500"
     bordered
   >
@@ -34,7 +34,7 @@
   </BaseIconBox>
   <BaseIconBox
     size="md"
-    shape="circle"
+    shape="full"
     class="text-green-500"
     bordered
   >
@@ -45,7 +45,7 @@
   </BaseIconBox>
   <BaseIconBox
     size="md"
-    shape="circle"
+    shape="full"
     class="text-emerald-500"
     bordered
   >
@@ -56,7 +56,7 @@
   </BaseIconBox>
   <BaseIconBox
     size="md"
-    shape="circle"
+    shape="full"
     class="text-teal-500"
     bordered
   >
@@ -67,7 +67,7 @@
   </BaseIconBox>
   <BaseIconBox
     size="md"
-    shape="circle"
+    shape="full"
     class="text-cyan-500"
     bordered
   >
@@ -78,7 +78,7 @@
   </BaseIconBox>
   <BaseIconBox
     size="md"
-    shape="circle"
+    shape="full"
     class="text-sky-500"
     bordered
   >
@@ -89,7 +89,7 @@
   </BaseIconBox>
   <BaseIconBox
     size="md"
-    shape="circle"
+    shape="full"
     class="text-blue-500"
     bordered
   >
@@ -100,7 +100,7 @@
   </BaseIconBox>
   <BaseIconBox
     size="md"
-    shape="circle"
+    shape="full"
     class="text-indigo-500"
     bordered
   >
@@ -111,7 +111,7 @@
   </BaseIconBox>
   <BaseIconBox
     size="md"
-    shape="circle"
+    shape="full"
     class="text-purple-500"
     bordered
   >
@@ -122,7 +122,7 @@
   </BaseIconBox>
   <BaseIconBox
     size="md"
-    shape="circle"
+    shape="full"
     class="text-fuchsia-500"
     bordered
   >
@@ -133,7 +133,7 @@
   </BaseIconBox>
   <BaseIconBox
     size="md"
-    shape="circle"
+    shape="full"
     class="text-pink-500"
     bordered
   >
@@ -144,7 +144,7 @@
   </BaseIconBox>
   <BaseIconBox
     size="md"
-    shape="circle"
+    shape="full"
     class="text-rose-500"
     bordered
   >
@@ -152,7 +152,7 @@
   </BaseIconBox>
   <BaseIconBox
     size="md"
-    shape="circle"
+    shape="full"
     class="text-red-500"
     bordered
   >
@@ -163,7 +163,7 @@
   </BaseIconBox>
   <BaseIconBox
     size="md"
-    shape="circle"
+    shape="full"
     class="text-orange-500"
     bordered
   >
@@ -174,7 +174,7 @@
   </BaseIconBox>
   <BaseIconBox
     size="md"
-    shape="circle"
+    shape="full"
     class="text-amber-500"
     bordered
   >
@@ -182,7 +182,7 @@
   </BaseIconBox>
   <BaseIconBox
     size="md"
-    shape="circle"
+    shape="full"
     class="text-yellow-500"
     bordered
   >
@@ -193,7 +193,7 @@
   </BaseIconBox>
   <BaseIconBox
     size="md"
-    shape="circle"
+    shape="full"
     class="text-muted-800 dark:text-muted-500"
     bordered
   >

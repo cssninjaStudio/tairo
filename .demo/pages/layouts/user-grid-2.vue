@@ -97,7 +97,7 @@ const { data, pending, error, refresh } = await useFetch(
               <div class="w-full flex items-center justify-center mb-3">
                 <BaseAvatar
                   size="xl"
-                  shape="square"
+                  shape="straight"
                   :src="item.src"
                   :badge-src="item.badge"
                   :text="item.initials"
@@ -117,7 +117,7 @@ const { data, pending, error, refresh } = await useFetch(
                   v-for="relation in item.relations.slice(0, 3)"
                   :key="relation"
                   size="xs"
-                  shape="square"
+                  shape="straight"
                   :src="relation.src"
                   :text="relation.text"
                   :class="getRandomColor()"

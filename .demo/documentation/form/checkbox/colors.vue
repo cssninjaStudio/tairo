@@ -51,7 +51,7 @@
     checked
     name="demo-11"
     label="Circle"
-    shape="circle"
+    shape="full"
     :classes="{ wrapper: 'text-amber-500' }"
   />
 
@@ -59,7 +59,7 @@
     checked
     name="demo-12"
     label="Circle"
-    shape="circle"
+    shape="full"
     :classes="{ wrapper: 'text-rose-500' }"
   />
 </template>

@@ -158,7 +158,7 @@ const candidates = [
         <BaseIconBox
           size="sm"
           class="bg-info-100 text-info-500 dark:bg-info-500/20 dark:text-info-400 dark:border-2 dark:border-info-500"
-          shape="circle"
+          shape="full"
         >
           <Icon name="ph:timer-duotone" class="w-5 h-5" />
         </BaseIconBox>
@@ -182,7 +182,7 @@ const candidates = [
         <BaseIconBox
           size="sm"
           class="bg-primary-100 text-primary-500 dark:bg-primary-500/20 dark:text-primary-400 dark:border-2 dark:border-primary-500"
-          shape="circle"
+          shape="full"
         >
           <Icon name="ph:broadcast-duotone" class="w-5 h-5" />
         </BaseIconBox>
@@ -206,7 +206,7 @@ const candidates = [
         <BaseIconBox
           size="sm"
           class="bg-lime-100 text-lime-500 dark:bg-lime-500/20 dark:text-lime-400 dark:border-2 dark:border-lime-500"
-          shape="circle"
+          shape="full"
         >
           <Icon name="ph:user-plus-duotone" class="w-5 h-5" />
         </BaseIconBox>
@@ -230,7 +230,7 @@ const candidates = [
         <BaseIconBox
           size="sm"
           class="bg-amber-100 text-amber-500 dark:bg-amber-500/20 dark:text-amber-400 dark:border-2 dark:border-amber-500"
-          shape="circle"
+          shape="full"
         >
           <Icon name="ph:door-duotone" class="w-5 h-5" />
         </BaseIconBox>

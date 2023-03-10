@@ -104,14 +104,14 @@ const demoBreadcrumb = [
           <DocComponent label="Square avatar sizes">
             <template #demo>
               <div class="flex items-end flex-wrap gap-4">
-                <BaseAvatar src="no-file.jpg" size="xs" shape="square" />
-                <BaseAvatar src="no-file.jpg" shape="square" />
-                <BaseAvatar src="no-file.jpg" size="md" shape="square" />
-                <BaseAvatar src="no-file.jpg" size="lg" shape="square" />
-                <BaseAvatar src="no-file.jpg" size="xl" shape="square" />
-                <BaseAvatar src="no-file.jpg" size="2xl" shape="square" />
-                <BaseAvatar src="no-file.jpg" size="3xl" shape="square" />
-                <BaseAvatar src="no-file.jpg" size="4xl" shape="square" />
+                <BaseAvatar src="no-file.jpg" size="xs" shape="straight" />
+                <BaseAvatar src="no-file.jpg" shape="straight" />
+                <BaseAvatar src="no-file.jpg" size="md" shape="straight" />
+                <BaseAvatar src="no-file.jpg" size="lg" shape="straight" />
+                <BaseAvatar src="no-file.jpg" size="xl" shape="straight" />
+                <BaseAvatar src="no-file.jpg" size="2xl" shape="straight" />
+                <BaseAvatar src="no-file.jpg" size="3xl" shape="straight" />
+                <BaseAvatar src="no-file.jpg" size="4xl" shape="straight" />
               </div>
             </template>
             <template #code>

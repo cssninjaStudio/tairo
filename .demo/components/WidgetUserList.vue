@@ -57,11 +57,7 @@ const users = [
 <template>
   <div class="space-y-6">
     <div v-for="user in users" :key="user.id" class="flex items-center gap-2">
-      <BaseAvatar
-        :src="user.picture"
-        size="sm"
-        :shape="props.shape === 'full' ? 'circle' : 'square'"
-      />
+      <BaseAvatar :src="user.picture" size="sm" :shape="props.shape" />
       <div>
         <BaseHeading
           as="h3"

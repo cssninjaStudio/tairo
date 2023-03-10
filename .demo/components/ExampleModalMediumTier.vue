@@ -18,7 +18,7 @@ const isModalXlOpen = ref(false)
   </div>
 
   <!-- Modal component -->
-  <BaseModal :open="isModalLgOpen" size="lg" @close="isModalLgOpen = false">
+  <TairoModal :open="isModalLgOpen" size="lg" @close="isModalLgOpen = false">
     <template #header>
       <!-- Header -->
       <div class="flex w-full items-center justify-between p-4 md:p-6">
@@ -70,10 +70,10 @@ const isModalXlOpen = ref(false)
         </div>
       </div>
     </template>
-  </BaseModal>
+  </TairoModal>
 
   <!-- Modal component -->
-  <BaseModal :open="isModalXlOpen" size="xl" @close="isModalXlOpen = false">
+  <TairoModal :open="isModalXlOpen" size="xl" @close="isModalXlOpen = false">
     <template #header>
       <!-- Header -->
       <div class="flex w-full items-center justify-between p-4 md:p-6">
@@ -123,5 +123,5 @@ const isModalXlOpen = ref(false)
         </div>
       </div>
     </template>
-  </BaseModal>
+  </TairoModal>
 </template>

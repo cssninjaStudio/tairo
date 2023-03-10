@@ -20,12 +20,12 @@ module.exports = cssninjaConfig({
     extend: {
       // Custom colors
       colors: {
-        // primary: colors.red,
-        // muted: colors.stone,
-        // info: colors.sky,
-        // success: colors.teal,
-        // warning: colors.amber,
-        // danger: colors.rose,
+        primary: colors.red,
+        muted: colors.stone,
+        info: colors.sky,
+        success: colors.teal,
+        warning: colors.amber,
+        danger: colors.rose,
       },
     },
   },

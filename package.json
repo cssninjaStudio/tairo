@@ -9,9 +9,9 @@
     "build": "nuxi build .app",
     "demo:dev": "pnpm demo:prepare && nuxi dev .demo",
     "demo:build": "pnpm demo:prepare && nuxi build .demo",
-    "demo:prepare": "nuxi prepare && esno ./.demo/scripts/prepare-shiki.ts",
+    "demo:prepare": "nuxi prepare && nuxi prepare .demo && esno ./.demo/scripts/prepare-shiki.ts",
     "test": "run-p test:*",
-    "test:tsc": "vue-tsc --noEmit",
+    "test:tsc": "pnpm demo:prepare && vue-tsc --noEmit",
     "test:lint": "run-s lint:eslint lint:prettier",
     "lint": "run-s lint:eslint:fix lint:prettier:fix",
     "lint:prettier": "prettier --check \"./**/*.(ts|vue|css|md)\"",
@@ -20,7 +20,7 @@
     "lint:eslint:fix": "eslint --fix ."
   },
   "dependencies": {
-    "@cssninja/nuxt-ui": "^0.3.21",
+    "@cssninja/nuxt-ui": "^0.4.1",
     "@nuxt/image-edge": "1.0.0-27968280.9739e4d",
     "nuxt": "^3.2.3",
     "pinia": "^2.0.33"

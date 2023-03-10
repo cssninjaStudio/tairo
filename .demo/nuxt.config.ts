@@ -6,6 +6,23 @@ export default defineNuxtConfig({
     includeWorkspace: true,
     strict: true,
   },
+  app: {
+    // Global head configuration
+    // @see https://unhead.harlanzw.com/
+    // @see https://github.com/unjs/unhead/tree/main
+    head: {
+      link: [
+        {
+          rel: 'icon',
+          type: 'image/x-icon',
+          href: '/img/favicon.png',
+        },
+      ],
+      htmlAttrs: {
+        lang: 'en',
+      },
+    },
+  },
   modules: [
     // Swiper is a nuxt module that allows us to use swiper in nuxt
     // wich is a carousel component used in the demo

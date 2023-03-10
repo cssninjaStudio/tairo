@@ -90,7 +90,7 @@ const { data, pending, error, refresh } = await useFetch(
                   <div class="flex items-center">
                     <BaseCheckbox
                       name="table-1-main"
-                      shape="circle"
+                      shape="full"
                       class="text-primary-500"
                     />
                   </div>
@@ -110,7 +110,7 @@ const { data, pending, error, refresh } = await useFetch(
                   <div class="flex items-center">
                     <BaseCheckbox
                       :name="`item-checkbox-${item.id}`"
-                      shape="circle"
+                      shape="full"
                       class="text-primary-500"
                     />
                   </div>

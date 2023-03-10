@@ -2,49 +2,49 @@
   <BaseAvatar
     text="CT"
     size="xs"
-    shape="square"
+    shape="straight"
     class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
   />
   <BaseAvatar
     text="CT"
     size="sm"
-    shape="square"
+    shape="straight"
     class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
   />
   <BaseAvatar
     text="CT"
     size="md"
-    shape="square"
+    shape="straight"
     class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
   />
   <BaseAvatar
     text="CT"
     size="lg"
-    shape="square"
+    shape="straight"
     class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
   />
   <BaseAvatar
     text="CT"
     size="xl"
-    shape="square"
+    shape="straight"
     class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
   />
   <BaseAvatar
     text="CT"
     size="2xl"
-    shape="square"
+    shape="straight"
     class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
   />
   <BaseAvatar
     text="CT"
     size="3xl"
-    shape="square"
+    shape="straight"
     class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
   />
   <BaseAvatar
     text="CT"
     size="4xl"
-    shape="square"
+    shape="straight"
     class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
   />
 </template>

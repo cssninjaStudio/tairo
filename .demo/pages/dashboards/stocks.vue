@@ -331,7 +331,7 @@ function useBarProfit() {
           </div>
           <div class="flex items-center gap-2">
             <BaseIconBox
-              shape="circle"
+              shape="full"
               size="sm"
               class="bg-red-500 text-white shadow-xl shadow-red-500/20 dark:shadow-red-800/20"
             >
@@ -418,7 +418,7 @@ function useBarProfit() {
           </div>
           <div class="flex items-center gap-2">
             <BaseIconBox
-              shape="circle"
+              shape="full"
               size="sm"
               class="bg-blue-800 text-white shadow-xl shadow-blue-500/20 dark:shadow-blue-800/20"
             >
@@ -507,7 +507,7 @@ function useBarProfit() {
           </div>
           <div class="flex items-center gap-2">
             <BaseIconBox
-              shape="circle"
+              shape="full"
               size="sm"
               class="bg-sky-500 text-white shadow-xl shadow-sky-500/20 dark:shadow-sky-800/20"
             >
@@ -568,7 +568,7 @@ function useBarProfit() {
             <!-- List item -->
             <div class="flex items-center gap-2">
               <BaseIconBox
-                shape="circle"
+                shape="full"
                 size="xs"
                 class="bg-blue-800 text-white shadow-xl shadow-blue-500/20 dark:shadow-blue-800/20"
               >
@@ -603,7 +603,7 @@ function useBarProfit() {
             <!-- List item -->
             <div class="flex items-center gap-2">
               <BaseIconBox
-                shape="circle"
+                shape="full"
                 size="xs"
                 class="bg-muted-900 text-white dark:bg-muted-100 dark:text-muted-800"
               >
@@ -638,7 +638,7 @@ function useBarProfit() {
             <!-- List item -->
             <div class="flex items-center gap-2">
               <BaseIconBox
-                shape="circle"
+                shape="full"
                 size="xs"
                 class="bg-rose-500 text-white shadow-xl shadow-rose-500/20 dark:shadow-rose-800/20"
               >
@@ -673,7 +673,7 @@ function useBarProfit() {
             <!-- List item -->
             <div class="flex items-center gap-2">
               <BaseIconBox
-                shape="circle"
+                shape="full"
                 size="xs"
                 class="bg-sky-700 text-white shadow-xl shadow-sky-500/20 dark:shadow-sky-800/20"
               >
@@ -708,7 +708,7 @@ function useBarProfit() {
             <!-- List item -->
             <div class="flex items-center gap-2">
               <BaseIconBox
-                shape="circle"
+                shape="full"
                 size="xs"
                 class="bg-emerald-500 text-white shadow-xl shadow-emerald-500/20 dark:shadow-emerald-800/20"
               >
@@ -743,7 +743,7 @@ function useBarProfit() {
             <!-- List item -->
             <div class="flex items-center gap-2">
               <BaseIconBox
-                shape="circle"
+                shape="full"
                 size="xs"
                 class="bg-yellow-500 text-white shadow-xl shadow-yellow-500/20 dark:shadow-yellow-800/20"
               >

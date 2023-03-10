@@ -281,7 +281,7 @@ const panelActive = ref(false)
           <div class="flex items-center gap-2 mb-3">
             <BaseAvatar
               size="xs"
-              shape="square"
+              shape="straight"
               :src="message.sender.photo"
               class="pointer-events-none"
             />

@@ -69,17 +69,17 @@ const items = [
                 <div class="flex gap-2 mt-auto">
                   <BaseAvatar
                     size="sm"
-                    shape="square"
+                    shape="straight"
                     src="/img/avatars/3.svg"
                   />
                   <BaseAvatar
                     size="sm"
-                    shape="square"
+                    shape="straight"
                     src="/img/avatars/9.svg"
                   />
                   <BaseAvatar
                     size="sm"
-                    shape="square"
+                    shape="straight"
                     src="/img/avatars/5.svg"
                   />
                   <BaseButtonIcon>

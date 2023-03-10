@@ -192,7 +192,7 @@ definePageMeta({
             View All
           </NuxtLink>
         </div>
-        <WidgetTopicListCompact shape="circle" />
+        <WidgetTopicListCompact shape="full" />
       </BaseCard>
     </div>
     <!-- Column -->

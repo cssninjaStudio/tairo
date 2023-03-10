@@ -100,7 +100,7 @@ const { data, pending, error, refresh } = await useFetch(
                       <BaseAvatar
                         :src="item.customer.logo"
                         size="sm"
-                        shape="square"
+                        shape="straight"
                         :tooltip="item.name"
                         class="bg-muted-100 dark:bg-muted-700"
                       />
@@ -125,7 +125,7 @@ const { data, pending, error, refresh } = await useFetch(
                           :key="stack.name"
                           :src="stack.icon"
                           size="xxs"
-                          shape="square"
+                          shape="straight"
                           :tooltip="stack.name"
                           class="bg-muted-100 dark:bg-muted-700"
                         />
@@ -211,7 +211,7 @@ const { data, pending, error, refresh } = await useFetch(
                         <BaseAvatar
                           :src="item.customer.logo"
                           size="sm"
-                          shape="square"
+                          shape="straight"
                           :tooltip="item.name"
                           class="bg-muted-100 dark:bg-muted-700"
                         />
@@ -237,7 +237,7 @@ const { data, pending, error, refresh } = await useFetch(
                             :key="stack.name"
                             :src="stack.icon"
                             size="xxs"
-                            shape="square"
+                            shape="straight"
                             :tooltip="stack.name"
                             class="bg-muted-100 dark:bg-muted-700"
                           />

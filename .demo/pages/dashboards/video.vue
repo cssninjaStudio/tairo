@@ -212,10 +212,10 @@ const videos = [
           <BaseButtonIcon small>
             <Icon name="lucide:plus" class="w-4 h-4" />
           </BaseButtonIcon>
-          <BaseAvatar size="xs" shape="square" src="/img/avatars/10.svg" />
-          <BaseAvatar size="xs" shape="square" src="/img/avatars/8.svg" />
-          <BaseAvatar size="xs" shape="square" src="/img/avatars/5.svg" />
-          <BaseAvatar size="xs" shape="square" src="/img/avatars/16.svg" />
+          <BaseAvatar size="xs" shape="straight" src="/img/avatars/10.svg" />
+          <BaseAvatar size="xs" shape="straight" src="/img/avatars/8.svg" />
+          <BaseAvatar size="xs" shape="straight" src="/img/avatars/5.svg" />
+          <BaseAvatar size="xs" shape="straight" src="/img/avatars/16.svg" />
         </div>
       </div>
     </div>

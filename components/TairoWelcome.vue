@@ -9,7 +9,7 @@ const codePage = [
   `<` + `/script>`,
   ``,
   `<template>`,
-  `  Hello tairo!`,
+  `  Hello Tairo!`,
   `</template>`,
 ].join('\n')
 
@@ -39,7 +39,7 @@ const codeTailwind = [
       </BaseHeading>
 
       <div class="grid grid-cols-8">
-        <div class="prose dark:prose-invert col-span-8 md:col-span-6">
+        <BaseProse class="col-span-8 md:col-span-6">
           <ol>
             <li>
               <p>
@@ -70,7 +70,7 @@ const codeTailwind = [
               <small>(seo meta, route rules, modules, ...)</small>
             </li>
           </ol>
-        </div>
+        </BaseProse>
         <div class="col-span-8 flex flex-col gap-2 py-6 md:col-span-2">
           <BaseButton>
             <Icon name="lucide:external-link" class="text-sm" />

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const props = withDefaults(
   defineProps<{
-    shape?: 'rounded' | 'circle'
+    shape?: 'rounded' | 'full'
   }>(),
   {
     shape: 'rounded',

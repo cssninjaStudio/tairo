@@ -1,17 +1,30 @@
 <script setup lang="ts">
-const { open } = usePanels()
+const props = withDefaults(
+  defineProps<{
+    sidebar?: boolean
+  }>(),
+  {
+    sidebar: true,
+  },
+)
+
 const app = useAppConfig()
 const { hasSubsidebar } = useSidebar()
 
 const route = useRoute()
+
+const showNavBurger = computed(() => {
+  return (
+    props.sidebar &&
+    (app.tairo.toolbar as any).showNavBurger &&
+    hasSubsidebar.value
+  )
+})
 </script>
 
 <template>
   <div class="relative z-50 mb-5 flex h-16 items-center gap-2">
-    <TairoNavigationBurger
-      v-if="(app.tairo.toolbar as any).showNavBurger && hasSubsidebar"
-      class="-ml-3"
-    />
+    <TairoNavigationBurger v-if="showNavBurger" class="-ml-3" />
 
     <BaseHeading
       v-if="(app.tairo.toolbar as any).showTitle"
@@ -20,7 +33,7 @@ const route = useRoute()
       weight="light"
       class="text-muted-800 hidden dark:text-white md:block"
     >
-      {{ route.meta.title ?? 'Unamed page' }}
+      <slot name="title">{{ route.meta.title ?? 'Unamed page' }}</slot>
     </BaseHeading>
 
     <div class="ml-auto"></div>

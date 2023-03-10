@@ -5,13 +5,12 @@ importers:
   .:
     specifiers:
       '@antfu/eslint-config': 0.36.0
-      '@cssninja/nuxt-ui': ^0.3.21
+      '@cssninja/nuxt-ui': ^0.4.1
       '@iconify/json': 2.2.31
       '@nuxt/image-edge': 1.0.0-27968280.9739e4d
       '@nuxtjs/eslint-config': 12.0.0
       '@nuxtjs/eslint-config-typescript': 12.0.0
       '@types/fs-extra': ^11.0.1
-      apexcharts: ^3.37.1
       eslint: 8.35.0
       eslint-config-prettier: 8.7.0
       eslint-plugin-prettier-vue: 4.2.0
@@ -26,16 +25,11 @@ importers:
       tailwindcss: 3.2.7
       typescript: 4.9.5
       vue-tsc: 1.2.0
-      vue3-apexcharts: ^1.4.1
-      vue3-carousel: ^0.2.12
     dependencies:
-      '@cssninja/nuxt-ui': 0.3.21_ng4567ch6sdwitcmipvukbpmnq
+      '@cssninja/nuxt-ui': 0.4.1_ng4567ch6sdwitcmipvukbpmnq
       '@nuxt/image-edge': 1.0.0-27968280.9739e4d
-      apexcharts: 3.37.1
       nuxt: 3.2.3_clphw7clvv5mgretmv3yu3273e
       pinia: 2.0.33_typescript@4.9.5
-      vue3-apexcharts: 1.4.1_apexcharts@3.37.1
-      vue3-carousel: 0.2.12
     devDependencies:
       '@antfu/eslint-config': 0.36.0_ycpbpc6yetojsgtrx3mwntkhsu
       '@iconify/json': 2.2.31
@@ -69,6 +63,7 @@ importers:
       '@stefanprobst/remark-shiki': 2.2.0
       '@types/mapbox-gl': 2.7.10
       '@vueform/slider': 2.1.7
+      apexcharts: ^3.37.1
       compressorjs: 1.2.1
       cropperjs: 1.5.13
       date-fns: 2.29.3
@@ -87,6 +82,8 @@ importers:
       unified: 10.1.2
       v-calendar: 3.0.0-alpha.8
       vue-upload-component: 3.1.6
+      vue3-apexcharts: ^1.4.1
+      vue3-carousel: ^0.2.12
       vue3-popper: 1.5.0
     devDependencies:
       '@mapbox/mapbox-gl-geocoder': 5.0.1_mapbox-gl@2.13.0
@@ -95,6 +92,7 @@ importers:
       '@stefanprobst/remark-shiki': 2.2.0
       '@types/mapbox-gl': 2.7.10
       '@vueform/slider': 2.1.7
+      apexcharts: 3.37.1
       compressorjs: 1.2.1
       cropperjs: 1.5.13
       date-fns: 2.29.3
@@ -113,6 +111,8 @@ importers:
       unified: 10.1.2
       v-calendar: 3.0.0-alpha.8
       vue-upload-component: 3.1.6
+      vue3-apexcharts: 1.4.1_apexcharts@3.37.1
+      vue3-carousel: 0.2.12
       vue3-popper: 1.5.0
 
 packages:
@@ -820,8 +820,8 @@ packages:
     dependencies:
       mime: 3.0.0
 
-  /@cssninja/nuxt-ui/0.3.21_ng4567ch6sdwitcmipvukbpmnq:
-    resolution: {integrity: sha512-GClGGuizJg4ayO8V06PQLWZtk4zijp0XLoqiAkLqSkkadUTp3urk24OimSwDBVb73XO5LO7v1wWRNbpFmnaU2Q==}
+  /@cssninja/nuxt-ui/0.4.1_ng4567ch6sdwitcmipvukbpmnq:
+    resolution: {integrity: sha512-Nuru515RHrn0T9qG+oTDiCyu/60lM5eEq3p7ILs6FQG0lW2UFd/0MayWPHgPnq4XKgjIzL7nz88vPyCHAPqktg==}
     dependencies:
       '@headlessui/vue': 1.7.12
       '@iconify/vue': 4.1.0
@@ -3178,7 +3178,7 @@ packages:
       svg.pathmorphing.js: 0.1.3
       svg.resize.js: 1.4.3
       svg.select.js: 3.0.1
-    dev: false
+    dev: true
 
   /aproba/2.0.0:
     resolution: {integrity: sha512-lYe4Gx7QT+MKGbDsA+Z+he/Wtef0BiwDOlK/XkBrdfsh9J/jPPXbX0tE9x9cl27Tmu5gg3QUbUrQYa/y+KOHPQ==}
@@ -3317,7 +3317,7 @@ packages:
         optional: true
     dependencies:
       browserslist: 4.21.5
-      caniuse-lite: 1.0.30001462
+      caniuse-lite: 1.0.30001464
       fraction.js: 4.2.0
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -3335,7 +3335,7 @@ packages:
         optional: true
     dependencies:
       browserslist: 4.21.5
-      caniuse-lite: 1.0.30001462
+      caniuse-lite: 1.0.30001464
       fraction.js: 4.2.0
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -3595,6 +3595,9 @@ packages:
 
   /caniuse-lite/1.0.30001462:
     resolution: {integrity: sha512-PDd20WuOBPiasZ7KbFnmQRyuLE7cFXW2PVd7dmALzbkUXEP46upAuCDm9eY9vho8fgNMGmbAX92QBZHzcnWIqw==}
+
+  /caniuse-lite/1.0.30001464:
+    resolution: {integrity: sha512-oww27MtUmusatpRpCGSOneQk2/l5czXANDSFvsc7VuOQ86s3ANhZetpwXNf1zY/zdfP63Xvjz325DAdAoES13g==}
 
   /ccount/2.0.1:
     resolution: {integrity: sha512-eyrF0jiFpY+3drT6383f1qhkbGsLSifNAjA61IUjZjmLCWjItY6LB9ft9YhoDgwfmclB2zhu51Lc7+95b8NRAg==}
@@ -10344,32 +10347,32 @@ packages:
     engines: {node: '>= 0.8.0'}
     dependencies:
       svg.js: 2.7.1
-    dev: false
+    dev: true
 
   /svg.easing.js/2.0.0:
     resolution: {integrity: sha512-//ctPdJMGy22YoYGV+3HEfHbm6/69LJUTAqI2/5qBvaNHZ9uUFVC82B0Pl299HzgH13rKrBgi4+XyXXyVWWthA==}
     engines: {node: '>= 0.8.0'}
     dependencies:
       svg.js: 2.7.1
-    dev: false
+    dev: true
 
   /svg.filter.js/2.0.2:
     resolution: {integrity: sha512-xkGBwU+dKBzqg5PtilaTb0EYPqPfJ9Q6saVldX+5vCRy31P6TlRCP3U9NxH3HEufkKkpNgdTLBJnmhDHeTqAkw==}
     engines: {node: '>= 0.8.0'}
     dependencies:
       svg.js: 2.7.1
-    dev: false
+    dev: true
 
   /svg.js/2.7.1:
     resolution: {integrity: sha512-ycbxpizEQktk3FYvn/8BH+6/EuWXg7ZpQREJvgacqn46gIddG24tNNe4Son6omdXCnSOaApnpZw6MPCBA1dODA==}
-    dev: false
+    dev: true
 
   /svg.pathmorphing.js/0.1.3:
     resolution: {integrity: sha512-49HWI9X4XQR/JG1qXkSDV8xViuTLIWm/B/7YuQELV5KMOPtXjiwH4XPJvr/ghEDibmLQ9Oc22dpWpG0vUDDNww==}
     engines: {node: '>= 0.8.0'}
     dependencies:
       svg.js: 2.7.1
-    dev: false
+    dev: true
 
   /svg.resize.js/1.4.3:
     resolution: {integrity: sha512-9k5sXJuPKp+mVzXNvxz7U0uC9oVMQrrf7cFsETznzUDDm0x8+77dtZkWdMfRlmbkEEYvUn9btKuZ3n41oNA+uw==}
@@ -10377,21 +10380,21 @@ packages:
     dependencies:
       svg.js: 2.7.1
       svg.select.js: 2.1.2
-    dev: false
+    dev: true
 
   /svg.select.js/2.1.2:
     resolution: {integrity: sha512-tH6ABEyJsAOVAhwcCjF8mw4crjXSI1aa7j2VQR8ZuJ37H2MBUbyeqYr5nEO7sSN3cy9AR9DUwNg0t/962HlDbQ==}
     engines: {node: '>= 0.8.0'}
     dependencies:
       svg.js: 2.7.1
-    dev: false
+    dev: true
 
   /svg.select.js/3.0.1:
     resolution: {integrity: sha512-h5IS/hKkuVCbKSieR9uQCj9w+zLHoPh+ce19bBYyqF53g6mnPB8sAtIbe1s9dh2S2fCmYX2xel1Ln3PJBbK4kw==}
     engines: {node: '>= 0.8.0'}
     dependencies:
       svg.js: 2.7.1
-    dev: false
+    dev: true
 
   /svgo/2.8.0:
     resolution: {integrity: sha512-+N/Q9kV1+F+UeWYoSiULYo4xYSDQlTgb+ayMobAXPwMnLvop7oxKMo9OzIrX5x3eS4L4f2UHhc9axXwY8DpChg==}
@@ -11377,7 +11380,7 @@ packages:
         optional: true
     dependencies:
       apexcharts: 3.37.1
-    dev: false
+    dev: true
 
   /vue3-carousel/0.2.12:
     resolution: {integrity: sha512-yG5MCu/zOusFtIpyihlBtQtt5kI8dA5SqAWBJfGk8vxsbFo4P5OYC2jzCX/ZxLckS/Zw9AB+AahmKFGd1dncbw==}
@@ -11386,7 +11389,7 @@ packages:
     peerDependenciesMeta:
       vue:
         optional: true
-    dev: false
+    dev: true
 
   /vue3-popper/1.5.0:
     resolution: {integrity: sha512-xaEnx90YBnlSg5G2yWqm2DHWHg+DB99UVRp4VsyTF0QLXyHrqSuE1Xo5+sG0AQq/lBcrGMlk5NU5xE2MDLKViw==}

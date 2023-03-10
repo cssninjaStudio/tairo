@@ -2,40 +2,40 @@
   <BaseAvatar
     src="/img/avatars/1.svg"
     size="xs"
-    shape="square"
+    shape="straight"
   />
   <BaseAvatar
     src="/img/avatars/5.svg"
-    shape="square"
+    shape="straight"
   />
   <BaseAvatar
     src="/img/avatars/4.svg"
     size="md"
-    shape="square"
+    shape="straight"
   />
   <BaseAvatar
     src="/img/avatars/3.svg"
     size="lg"
-    shape="square"
+    shape="straight"
   />
   <BaseAvatar
     src="/img/avatars/8.svg"
     size="xl"
-    shape="square"
+    shape="straight"
   />
   <BaseAvatar
     src="/img/avatars/16.svg"
     size="2xl"
-    shape="square"
+    shape="straight"
   />
   <BaseAvatar
     src="/img/avatars/2.svg"
     size="3xl"
-    shape="square"
+    shape="straight"
   />
   <BaseAvatar
     src="/img/avatars/20.svg"
     size="4xl"
-    shape="square"
+    shape="straight"
   />
 </template>
