@@ -11,7 +11,7 @@ services:
     networks:
       - cssninja-services
     environment:
-      - NUXT_PUBLIC_FRONTEND_URL=${NUXT_PUBLIC_FRONTEND_URL}
+      - NUXT_PUBLIC_SITE_URL=${NUXT_PUBLIC_SITE_URL}
     labels:
       traefik.enable: true
       traefik.docker.network: 'cssninja-services'

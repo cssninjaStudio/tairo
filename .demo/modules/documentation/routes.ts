@@ -1,3 +1,4 @@
+import { NuxtPage } from '@nuxt/schema'
 import { resolve } from 'path'
 
 export const routes = {
@@ -922,4 +923,4 @@ export const routes = {
       ],
     },
   ],
-} as const
+} satisfies NuxtPage

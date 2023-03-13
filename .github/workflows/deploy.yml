@@ -25,6 +25,8 @@ jobs:
             demo:
               - '.demo/**'
             shared:
+              - '.github/env/**'
+              - '.github/workflows/deploy.yml'
               - 'assets/**'
               - 'components/**'
               - 'composables/**'
@@ -44,8 +46,6 @@ jobs:
               - 'tailwind.config.cjs'
               - 'tokens.config.ts'
               - 'tsconfig.json'
-              - '.github/env/**'
-              - '.github/workflows/deploy.yml'
 
   build-demo:
     name: Build tairo demo
@@ -63,12 +63,11 @@ jobs:
         run: |
           echo "PUBLIC_HOST=\"${{ secrets.PUBLIC_HOST }}\"" >> .github/env/.env
           echo "NUXT_PUBLIC_SITE_URL=\"${{ secrets.NUXT_PUBLIC_SITE_URL }}\"" >> .github/env/.env
-          echo "NUXT_INDEXABLE=\"${{ secrets.NUXT_INDEXABLE }}\"" >> .github/env/.env
 
       - run: corepack enable
       - run: pnpm install --frozen-lockfile
       # - run: echo '{"extends":"./.demo/.nuxt/tsconfig.json"}' > tsconfig.json
-      - run: NODE_OPTIONS=--max-old-space-size=4096 pnpm demo:build
+      - run: NUXT_INDEXABLE=false ENABLE_DOCUMENTATION=true NODE_OPTIONS=--max-old-space-size=4096 pnpm demo:build
       - run: cp .github/env/Dockerfile .demo/Dockerfile
 
       - name: Set up QEMU
@@ -88,7 +87,7 @@ jobs:
         timeout-minutes: 60
         with:
           push: true
-          context: .blog
+          context: .demo
           tags: ${{ env.dockertags }}
 
   deploy-demo:
