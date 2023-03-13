@@ -1,185 +1,114 @@
-<script lang="ts">
-import remarkShiki from '@stefanprobst/remark-shiki'
-import rehypeExternalLinks from 'rehype-external-links'
-import rehypeRaw from 'rehype-raw'
-import rehypeSanitize, { defaultSchema } from 'rehype-sanitize'
-import rehypeStringify from 'rehype-stringify'
-import remarkGfm from 'remark-gfm'
-import remarkParse from 'remark-parse'
-import remarkRehype from 'remark-rehype'
-import {
-  getHighlighter,
-  setCDN,
-  type HighlighterOptions,
-  type Lang,
-} from 'shiki-es'
-import { unified, type Processor } from 'unified'
+<script setup lang="ts">
+import type { Lang } from 'shiki-es'
+import type { ProcessorThemes } from '~/utils/markdown'
 
-type ProcessorThemes = Record<string, Processor>
-
-let _processors: ProcessorThemes
-let _processorsPromise: Promise<ProcessorThemes> | null = null
-
-async function createProcessor(options: HighlighterOptions) {
-  if (process.client) {
-    setCDN('/shiki/')
-  }
-
-  const highlighter = await getHighlighter(options)
-
-  return unified()
-    .use(remarkParse)
-    .use(remarkGfm)
-    .use(remarkShiki, { highlighter })
-    .use(remarkRehype, { allowDangerousHtml: true })
-    .use(rehypeRaw)
-    .use(rehypeSanitize, {
-      ...defaultSchema,
-      attributes: {
-        ...defaultSchema.attributes,
-        pre: [
-          ...(defaultSchema.attributes?.pre || []),
-          ['className'],
-          ['style'],
-        ],
-        code: [
-          ...(defaultSchema.attributes?.code || []),
-          ['className'],
-          ['style'],
-        ],
-        i: [...(defaultSchema.attributes?.i || []), ['className']],
-        span: [
-          ...(defaultSchema.attributes?.span || []),
-          ['className'],
-          ['style'],
-          ['dataHint'],
-        ],
-      },
-    })
-    .use(rehypeExternalLinks, {
-      rel: ['noopener noreferrer'],
-      target: '_blank',
-    })
-    .use(rehypeStringify)
-}
-
-export function getProcessors(
-  themes: Record<string, string> = {},
-  langs: Lang[] = [],
-) {
-  if (_processors) {
-    return Promise.resolve(_processors)
-  }
-
-  if (_processorsPromise) {
-    return _processorsPromise
-  }
-
-  _processorsPromise = new Promise(async (resolve, reject) => {
-    try {
-      const processors: ProcessorThemes = {}
-      for (const theme in themes) {
-        const processor = await createProcessor({
-          langs,
-          theme: themes[theme],
-        })
-        processors[theme] = processor
-      }
-      resolve(processors)
-    } catch (error) {
-      reject(error)
-    }
-  })
-
-  return _processorsPromise
-}
-
-export default defineComponent({
-  name: 'AddonMarkdownRemark',
-  props: {
-    source: {
-      type: String,
-      default: '',
-    },
-    noLines: {
-      type: Boolean,
-    },
-    noHighlight: {
-      type: Boolean,
-    },
+const props = withDefaults(
+  defineProps<{
+    /**
+     * Markdown source
+     */
+    source: string
+    /**
+     * Prose size modifier
+     */
+    size?: 'sm' | 'base' | 'lg' | 'xl' | '2xl'
+    /**
+     * Theme to use to highlight code blocks
+     *
+     * @see https://github.com/shikijs/shiki/blob/main/docs/themes.md#all-themes
+     */
+    theme?: { light: string; dark: string }
+    /**
+     * List of languages to highlight code blocks
+     *
+     * @see https://github.com/shikijs/shiki/blob/main/docs/languages.md#all-languages
+     */
+    langs?: Lang[]
+    /**
+     * Show line numbers
+     */
+    lines?: boolean
+    /**
+     * Don't wrap content in default tailwind prose size
+     */
+    fullwidth?: boolean
+  }>(),
+  {
+    lines: true,
+    size: 'base',
+    theme: () => ({
+      light: 'material-lighter',
+      dark: 'material-ocean',
+    }),
+    langs: () => ['html', 'vue'],
   },
-  setup(props) {
-    const processors = shallowRef<ProcessorThemes>()
-    const colorMode = useColorMode()
-    const loaded = ref(false)
-    const htmlTheme = ref<Record<string, string>>({
-      light: '',
-      dark: '',
-    })
-    const isDark = computed({
-      get() {
-        return colorMode.value === 'dark'
-      },
-      set(value) {
-        if (value) {
-          colorMode.preference = 'dark'
-        } else {
-          colorMode.preference = 'light'
-        }
-      },
-    })
-    const theme = computed(() => (isDark.value ? 'dark' : 'light'))
+)
 
-    watchEffect(async () => {
-      if (processors.value) return
-      processors.value = await getProcessors(
-        {
-          light: 'material-lighter',
-          dark: 'material-ocean',
-        },
-        [
-          'vue',
-          'html',
-          'vue-html',
-          'json',
-          'javascript',
-          'typescript',
-          'bash',
-          'diff',
-          'css',
-          'scss',
-          'diff',
-          'astro',
-        ],
-      )
-    })
-
-    watchEffect(async () => {
-      let source = props.source
-      const _theme = theme.value
-      if (!source || !processors.value || htmlTheme.value[_theme]) return
-
-      const vfile = await processors.value[_theme].process(source)
-      htmlTheme.value[_theme] = vfile.toString()
-      loaded.value = true
-    })
-
-    return () => {
-      if (!loaded.value)
-        return h(resolveComponent('BasePlaceload'), {
-          class: 'h-24 w-full rounded',
-        })
-      return h('div', {
-        class:
-          'markdown' +
-          (props.noLines ? '' : ' with-line-number') +
-          (props.noHighlight ? '' : ' with-highlight'),
-        innerHTML: htmlTheme.value[theme.value],
-      })
+const processors = shallowRef<ProcessorThemes>()
+const colorMode = useColorMode()
+const loaded = ref(false)
+const htmlTheme = ref<Record<string, string>>({
+  light: '',
+  dark: '',
+})
+const isDark = computed({
+  get() {
+    return colorMode.value === 'dark'
+  },
+  set(value) {
+    if (value) {
+      colorMode.preference = 'dark'
+    } else {
+      colorMode.preference = 'light'
     }
   },
 })
+const theme = computed(() => (isDark.value ? 'dark' : 'light'))
+const proseSize = computed(() => {
+  switch (props.size) {
+    case 'sm':
+      return 'prose-sm'
+    case 'lg':
+      return 'prose-lg'
+    case 'xl':
+      return 'prose-xl'
+    case '2xl':
+      return 'prose-2xl'
+    case 'base':
+    default:
+      return 'prose-base'
+  }
+})
+
+watchEffect(async () => {
+  if (processors.value) return
+  processors.value = await getMarkdownProcessors(props.theme, props.langs)
+})
+
+watchEffect(async () => {
+  let source = props.source
+  const _theme = theme.value
+  if (!source || !processors.value || htmlTheme.value[_theme]) return
+
+  const vfile = await processors.value[_theme].process(source)
+  htmlTheme.value[_theme] = vfile.toString()
+  loaded.value = true
+})
 </script>
+
+<template>
+  <BasePlaceload v-if="!loaded" class="h-24 w-full rounded"></BasePlaceload>
+  <BaseProse
+    v-else
+    :class="[
+      proseSize,
+      'markdown',
+      props.lines ? 'with-line-number' : '',
+      props.fullwidth ? 'max-w-none' : '',
+    ]"
+    v-html="htmlTheme[theme]"
+  ></BaseProse>
+</template>
 
 <style scoped>
 .markdown :deep(a[target='_blank']) {
@@ -202,7 +131,7 @@ export default defineComponent({
   opacity: 1;
 }
 
-.markdown.with-highlight :deep(.shiki .highlighted-line) {
+.markdown :deep(.shiki .highlighted-line) {
   background-color: var(--color-primary-100);
   padding: 4px 4px 4px 6px;
   margin-left: -6px;
@@ -213,7 +142,7 @@ export default defineComponent({
 :global(.dark .markdown .shiki) {
   background: var(--color-muted-900) !important;
 } */
-:global(.dark .markdown.with-highlight .shiki .highlighted-line) {
+:global(.dark .markdown .shiki .highlighted-line) {
   background-color: #0d0e14;
 }
 

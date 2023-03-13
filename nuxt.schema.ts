@@ -20,6 +20,12 @@ export default defineNuxtSchema({
           },
         },
       },
+      error: {
+        logo: {
+          component: 'TairoLogo',
+          props: {},
+        },
+      },
       sidebar: {
         enabled: true,
         logo: {

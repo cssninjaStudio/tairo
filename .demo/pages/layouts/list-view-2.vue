@@ -52,12 +52,12 @@ const { data, pending, error, refresh } = await useFetch('/api/rentals', {
               subtitle="Looks like we couldn't find any matching results for your search terms. Try other search terms."
             >
               <template #image>
-                <NuxtImg
+                <img
                   class="block dark:hidden"
                   src="/img/illustrations/placeholders/flat/placeholder-search-2.svg"
                   alt="Placeholder image"
                 />
-                <NuxtImg
+                <img
                   class="hidden dark:block"
                   src="/img/illustrations/placeholders/flat/placeholder-search-2-dark.svg"
                   alt="Placeholder image"
@@ -83,7 +83,7 @@ const { data, pending, error, refresh } = await useFetch('/api/rentals', {
                 <div
                   class="flex flex-col sm:flex-row justify-center sm:justify-start gap-3 text-center sm:text-left"
                 >
-                  <NuxtImg
+                  <img
                     class="w-full sm:max-w-[130px] bg-muted-100 dark:bg-muted-700/60 rounded-lg"
                     :src="item.picture"
                     :alt="item.name"
@@ -232,12 +232,12 @@ const { data, pending, error, refresh } = await useFetch('/api/rentals', {
           subtitle="Looks like there are no inactive properties to display. Please check your property settings."
         >
           <template #image>
-            <NuxtImg
+            <img
               class="block dark:hidden"
               src="/img/illustrations/placeholders/flat/placeholder-having-coffee.svg"
               alt="Placeholder image"
             />
-            <NuxtImg
+            <img
               class="hidden dark:block"
               src="/img/illustrations/placeholders/flat/placeholder-having-coffee-dark.svg"
               alt="Placeholder image"

@@ -16,13 +16,13 @@ export default defineNuxtConfig({
     // wich is a carousel component used in the demo
     'nuxt-swiper',
 
-    // Component meta allow us to generate the API docs from the source code
-    // So we can keep the docs in sync with the code
-    'nuxt-component-meta',
+    process.env.ENABLE_DOCUMENTATION
+      ? resolve(__dirname, './modules/documentation/module.ts')
+      : () => {},
 
     // Those modules are here for development only
-    '@nuxt/devtools',
-    '@cssninja/nuxt-media-viewer',
+    // '@nuxt/devtools',
+    // '@cssninja/nuxt-media-viewer',
   ],
   vite: {
     // This is required for shiki to work (used to render markdown code blocks)
@@ -44,48 +44,18 @@ export default defineNuxtConfig({
       siteDescription:
         'The most advanced Nuxt 3 and Tailwind CSS dashboard template',
       language: 'en',
-      // We use this to be able to create a link to open vscode from the browser
-      // (browse the demo components pages and click on the "Open in VSCode" button)
-      dev: process.dev
-        ? {}
-        : {
-            prefix: `vscode-remote/wsl+Ubuntu`,
-            src: resolve(__dirname),
-          },
     },
   },
   nitro: {
     prerender: {
       crawlLinks: true,
-      routes: ['/', '/components'],
+      routes: ['/'],
     },
   },
   routeRules: {
     '/**': {
       static: true,
       headers: { 'cache-control': `public, maxage=${WEEK}, s-maxage=${WEEK}` },
-    },
-  },
-  mediaViewer: {
-    installIpxMiddleware: false,
-    hasIpx: false,
-  },
-  // Component meta allow us to generate the API docs from the source code
-  // So we can keep the docs in sync with the code
-  componentMeta: {
-    exclude: ['nuxt/dist', '@nuxt/ui-templates/dist', 'tairo/.demo/components'],
-    debug: 2,
-    checkerOptions: {
-      forceUseTs: true,
-      schema: {
-        ignore: [
-          'RouteLocationRaw',
-          'ComponentData',
-          'NuxtComponentMetaNames',
-          'RouteLocationPathRaw',
-          'RouteLocationNamedRaw',
-        ],
-      },
     },
   },
 })

@@ -7,6 +7,6 @@ definePageMeta({
 
 <template>
   <div>
-    <AddonMapPanel />
+    <AddonMapboxPanel />
   </div>
 </template>

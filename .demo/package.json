@@ -3,7 +3,6 @@
   "private": true,
   "type": "module",
   "devDependencies": {
-    "@cssninja/nuxt-media-viewer": "^0.0.12",
     "@mapbox/mapbox-gl-geocoder": "5.0.1",
     "@nuxt/devtools": "^0.2.5",
     "@pinia/nuxt": "0.4.7",

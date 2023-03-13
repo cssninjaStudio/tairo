@@ -70,15 +70,17 @@ const tasks = ref<string[]>(['Option 0', 'Option 1', 'Option 2'])
             <BaseAnimatedCheckbox
               v-model="tasks"
               :value="`Option ${task.id}`"
-              :class="[
-                props.color === 'success' && 'text-success-500',
-                props.color === 'info' && 'text-info-500',
-                props.color === 'warning' && 'text-warning-500',
-                props.color === 'danger' && 'text-danger-500',
-                props.color === 'primary' && 'text-primary-500',
-                props.color === 'lime' && 'text-lime-500',
-                props.color === 'sky' && 'text-sky-500',
-              ]"
+              :classes="{
+                label: [
+                  props.color === 'success' && 'text-success-500',
+                  props.color === 'info' && 'text-info-500',
+                  props.color === 'warning' && 'text-warning-500',
+                  props.color === 'danger' && 'text-danger-500',
+                  props.color === 'primary' && 'text-primary-500',
+                  props.color === 'lime' && 'text-lime-500',
+                  props.color === 'sky' && 'text-sky-500',
+                ].join(''),
+              }"
             />
             <div>
               <BaseHeading
@@ -109,15 +111,17 @@ const tasks = ref<string[]>(['Option 0', 'Option 1', 'Option 2'])
             <BaseAnimatedCheckbox
               v-model="tasks"
               :value="`Option ${task.id}`"
-              :class="[
-                props.color === 'success' && 'text-success-500',
-                props.color === 'info' && 'text-info-500',
-                props.color === 'warning' && 'text-warning-500',
-                props.color === 'danger' && 'text-danger-500',
-                props.color === 'primary' && 'text-primary-500',
-                props.color === 'lime' && 'text-lime-500',
-                props.color === 'sky' && 'text-sky-500',
-              ]"
+              :classes="{
+                label: [
+                  props.color === 'success' && 'text-success-500',
+                  props.color === 'info' && 'text-info-500',
+                  props.color === 'warning' && 'text-warning-500',
+                  props.color === 'danger' && 'text-danger-500',
+                  props.color === 'primary' && 'text-primary-500',
+                  props.color === 'lime' && 'text-lime-500',
+                  props.color === 'sky' && 'text-sky-500',
+                ].join(''),
+              }"
             />
             <div>
               <BaseHeading

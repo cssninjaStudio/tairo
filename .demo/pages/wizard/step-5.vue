@@ -129,7 +129,7 @@ watchEffect(() => {
         subtitle="Start collaborating by inviting some team members to this project. Don't worry, you can do it later."
       >
         <template #image>
-          <NuxtImg
+          <img
             src="/img/illustrations/wizard/team.svg"
             class="rounded-full max-w-[210px] mx-auto"
             alt="Upload files"

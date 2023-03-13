@@ -53,12 +53,12 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
               subtitle="Looks like we couldn't find any matching results for your search terms. Try other search terms."
             >
               <template #image>
-                <NuxtImg
+                <img
                   class="block dark:hidden"
                   src="/img/illustrations/placeholders/flat/placeholder-search-3.svg"
                   alt="Placeholder image"
                 />
-                <NuxtImg
+                <img
                   class="hidden dark:block"
                   src="/img/illustrations/placeholders/flat/placeholder-search-3-dark.svg"
                   alt="Placeholder image"
@@ -183,12 +183,12 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
           subtitle="Looks like you don't have any saved recipes for the moment. Come back when you have some."
         >
           <template #image>
-            <NuxtImg
+            <img
               class="block dark:hidden"
               src="/img/illustrations/placeholders/flat/placeholder-cooking.svg"
               alt="Placeholder image"
             />
-            <NuxtImg
+            <img
               class="hidden dark:block"
               src="/img/illustrations/placeholders/flat/placeholder-cooking-dark.svg"
               alt="Placeholder image"

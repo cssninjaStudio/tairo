@@ -9,7 +9,7 @@ const plugin = require('tailwindcss/plugin')
  * You can add/override your own customizations here.
  */
 module.exports = cssninjaConfig({
-  content: [`${__dirname}/documentation/**/*.vue`], // Parse the special documentation folder for demo
+  // content: [`${__dirname}/documentation/**/*.vue`], // Parse the special documentation folder for demo
   theme: {
     // Custom fonts (defaults values are commented out)
     // fontFamily: {

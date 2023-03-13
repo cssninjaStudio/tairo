@@ -1,5 +1,5 @@
 <template>
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <svg viewBox="0 0 500 500">
     <path
       fill="currentColor"
       d="M195.57,83.36A290.54,290.54,0,0,1,224.2,56H0L66.45,176.83h69.13C149.28,145.92,168.5,113,195.57,83.36Z"

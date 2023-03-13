@@ -13,7 +13,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
           <div
             class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
           >
-            <NuxtImg
+            <img
               src="/img/avatars/2.svg"
               class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
               alt=""
@@ -37,7 +37,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
             <div
               class="relative mx-auto flex h-20 w-20 items-center justify-center rounded-full"
             >
-              <NuxtImg
+              <img
                 src="/img/avatars/2.svg"
                 class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                 alt=""
@@ -72,7 +72,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 <div
                   class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
                 >
-                  <NuxtImg
+                  <img
                     src="/img/avatars/3.svg"
                     class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""
@@ -101,7 +101,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 <div
                   class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
                 >
-                  <NuxtImg
+                  <img
                     src="/img/avatars/9.svg"
                     class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""
@@ -132,7 +132,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 <div
                   class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
                 >
-                  <NuxtImg
+                  <img
                     src="/img/avatars/14.svg"
                     class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""

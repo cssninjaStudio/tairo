@@ -294,7 +294,6 @@ const results = [
                     }`"
                   >
                     <svg
-                      xmlns="http://www.w3.org/2000/svg"
                       width="32"
                       height="32"
                       viewBox="0 0 64 64"
@@ -360,7 +359,6 @@ const results = [
                       class="grow mx-8 border-t-2 border-dashed border-muted-200 dark:border-muted-700"
                     ></div>
                     <svg
-                      xmlns="http://www.w3.org/2000/svg"
                       width="32"
                       height="32"
                       viewBox="0 0 64 64"

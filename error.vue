@@ -12,7 +12,7 @@ const title = computed(() => {
     return 'Page not found'
   }
 
-  return 'Internal server error'
+  return 'Oops... Something went wrong'
 })
 
 const description = computed(() => {
@@ -24,11 +24,20 @@ const description = computed(() => {
     return "We couldn't find the page you were looking for."
   }
 
-  return 'Something went wrong.'
+  return 'Please try again later.'
 })
 
 const app = useAppConfig()
 const handleError = () => clearError({ redirect: '/' })
+const retry = () => clearError()
+
+// this is a local directive (it begins with V..., usable with v-focus)
+// that is used to force the focus on input when mounted
+const VFocus = {
+  mounted(el: HTMLInputElement) {
+    el.focus()
+  },
+}
 </script>
 
 <template>
@@ -38,39 +47,77 @@ const handleError = () => clearError({ redirect: '/' })
     <BasePlaceholderPage
       :title="title"
       :subtitle="description"
-      class="min-h-[200px] !items-end"
+      class="!min-h-0 !items-end"
     >
+      <template #image>
+        <component
+          :is="resolveComponent(app.tairo.error.logo.component)"
+          v-if="app.tairo.error.logo.component"
+          v-bind="app.tairo.error.logo.props"
+        ></component>
+      </template>
+
       <BaseButton class="mt-6 items-center gap-2" @click="handleError">
         <Icon name="feather:arrow-left" />
         Back to home
       </BaseButton>
+
+      <DevOnly>
+        <BaseButton
+          flavor="pastel"
+          color="primary"
+          class="group mt-6 ml-4 items-center gap-2"
+          @click="retry"
+        >
+          <Icon name="feather:loader" class="group-hover:animate-spin" />
+          Retry
+        </BaseButton>
+      </DevOnly>
     </BasePlaceholderPage>
 
     <DevOnly>
-      <BaseCard class="nui-text-700 mx-auto mt-6 max-w-3xl p-6">
-        <div class="flex justify-between">
-          <BaseHeading>Development info</BaseHeading>
-
-          <div class="mb-6 flex gap-1">
-            <BaseTag color="danger" condensed>
-              {{ props.error.statusCode }}
-            </BaseTag>
-            <BaseTag color="danger" flavor="outline" condensed>
-              {{ props.error.url }}
-            </BaseTag>
+      <BaseCard
+        v-focus
+        class="nui-focus nui-text-700 group mx-auto mt-8 max-w-3xl p-6"
+        tabindex="0"
+      >
+        <div class="text-danger-500 mb-1 flex items-start gap-2">
+          <div
+            class="mt-1 shrink-0 opacity-30 transition-opacity duration-300 group-hover:opacity-100 group-focus:opacity-100"
+          >
+            <Icon
+              name="ph:circle-wavy-warning-duotone"
+              class="text-danger-600 text-2xl group-hover:animate-pulse group-focus:animate-pulse"
+            />
           </div>
-        </div>
-        <div>
-          <div class="text-danger-500 flex items-center gap-2">
-            <Icon name="bi:exclamation-octagon" class="text-base" />
-            <span class="font-mono text-lg font-bold">
+          <div>
+            <span class="font-mono text-lg font-bold [overflow-wrap:anywhere]">
               {{ props.error.message }}
             </span>
+            <div
+              class="mt-2 flex gap-1 opacity-30 transition-opacity duration-300 group-hover:opacity-100 group-focus:opacity-100"
+            >
+              <BaseTag v-if="props.error.statusCode" color="danger" condensed>
+                {{ props.error.statusCode }}
+              </BaseTag>
+              <BaseTag
+                v-if="props.error.url"
+                color="danger"
+                flavor="outline"
+                condensed
+              >
+                {{ props.error.url }}
+              </BaseTag>
+            </div>
           </div>
-          <!-- eslint-disable vue/no-v-html -->
-          <div class="overflow-auto font-mono" v-html="props.error.stack"></div>
-          <!-- eslint-enable vue/no-v-html -->
         </div>
+        <!-- eslint-disable vue/no-v-html -->
+        <div
+          v-if="props.error.stack"
+          class="mt-6 overflow-auto whitespace-nowrap p-2 font-mono opacity-60 transition-all duration-300 group-hover:opacity-100 group-focus:opacity-100"
+          v-html="props.error.stack"
+        ></div>
+        <!-- eslint-enable vue/no-v-html -->
       </BaseCard>
     </DevOnly>
   </TairoLayout>
@@ -81,6 +128,6 @@ const handleError = () => clearError({ redirect: '/' })
   @apply text-sm;
 }
 .stack.internal {
-  @apply opacity-75 pl-4 text-xs;
+  @apply opacity-100 pl-4 text-xs;
 }
 </style>

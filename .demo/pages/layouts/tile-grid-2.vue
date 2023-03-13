@@ -62,12 +62,12 @@ const { data, pending, error, refresh } = await useFetch(
             subtitle="Looks like we couldn't find any matching results for your search terms. Try other search terms."
           >
             <template #image>
-              <NuxtImg
+              <img
                 class="block dark:hidden"
                 src="/img/illustrations/placeholders/flat/placeholder-search-5.svg"
                 alt="Placeholder image"
               />
-              <NuxtImg
+              <img
                 class="hidden dark:block"
                 src="/img/illustrations/placeholders/flat/placeholder-search-5-dark.svg"
                 alt="Placeholder image"
@@ -94,11 +94,7 @@ const { data, pending, error, refresh } = await useFetch(
               class="p-3"
             >
               <div class="w-full flex items-center gap-2">
-                <NuxtImg
-                  :src="item.icon"
-                  :alt="item.name"
-                  class="max-w-[46px]"
-                />
+                <img :src="item.icon" :alt="item.name" class="max-w-[46px]" />
                 <div>
                   <BaseHeading tag="h3" size="sm" weight="medium">
                     {{ item.name }}

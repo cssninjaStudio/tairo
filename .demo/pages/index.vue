@@ -13,7 +13,7 @@ const app = useAppConfig()
 <template>
   <div>
     {{ app.tairo.title }} demo -
-    <NuxtLink to="/components">View components</NuxtLink>
+    <NuxtLink to="/documentation">View components</NuxtLink>
     <div>
       <BaseButton to="/test-error">Test error</BaseButton>
     </div>

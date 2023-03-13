@@ -73,12 +73,12 @@ function difficultyLabel(itemDifficulty: number) {
             subtitle="Looks like we couldn't find any matching results for your search terms. Try other search terms."
           >
             <template #image>
-              <NuxtImg
+              <img
                 class="block dark:hidden"
                 src="/img/illustrations/placeholders/flat/placeholder-search-4.svg"
                 alt="Placeholder image"
               />
-              <NuxtImg
+              <img
                 class="hidden dark:block"
                 src="/img/illustrations/placeholders/flat/placeholder-search-4-dark.svg"
                 alt="Placeholder image"
@@ -217,12 +217,12 @@ function difficultyLabel(itemDifficulty: number) {
           subtitle="Looks like you don't have any saved courses for the moment. Come back when you have some."
         >
           <template #image>
-            <NuxtImg
+            <img
               class="block dark:hidden"
               src="/img/illustrations/placeholders/flat/placeholder-courses.svg"
               alt="Placeholder image"
             />
-            <NuxtImg
+            <img
               class="hidden dark:block"
               src="/img/illustrations/placeholders/flat/placeholder-courses-dark.svg"
               alt="Placeholder image"

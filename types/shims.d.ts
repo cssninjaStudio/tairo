@@ -7,22 +7,28 @@ declare module 'nuxt/dist/pages/runtime/composables' {
   interface PageMeta {
     title?: string
     breadcrumb?: any
-    documentation?: {
-      category?:
-        | 'Uncategorized'
-        // | 'Content'
-        // | 'Interaction'
-        // | 'Display'
-        // | 'Forms'
-        // | 'Addons'
-        | 'NUI Forms'
-        | 'NUI Elements'
-        | 'Tairo Elements'
-        | 'Addons'
-      components?: string[]
-      composables?: string[]
-      interfaces?: string[]
-    }
+    documentation?:
+      | false
+      | {
+          description?: string
+          category?:
+            | 'Uncategorized'
+            // | 'Content'
+            // | 'Interaction'
+            // | 'Display'
+            // | 'Forms'
+            // | 'Addons'
+            | 'Base Forms'
+            | 'Base UI Elements'
+            | 'Layout Elements'
+            | 'Addons'
+          components?: string[]
+          composables?: string[]
+          icon?: {
+            src?: string
+            srcDark?: string
+          }
+        }
   }
 }
 
@@ -31,18 +37,24 @@ declare module 'vue-router' {
   interface RouteMeta {
     title?: string
     breadcrumb?: any
-    documentation?: {
-      category?:
-        | 'Uncategorized'
-        | 'Content'
-        | 'Interaction'
-        | 'Display'
-        | 'Forms'
-        | 'Addons'
-      components?: string[]
-      composables?: string[]
-      interfaces?: string[]
-    }
+    documentation?:
+      | false
+      | {
+          description?: string
+          category?:
+            | 'Uncategorized'
+            | 'Content'
+            | 'Interaction'
+            | 'Display'
+            | 'Forms'
+            | 'Addons'
+          components?: string[]
+          composables?: string[]
+          icon?: {
+            src?: string
+            srcDark?: string
+          }
+        }
   }
 }
 

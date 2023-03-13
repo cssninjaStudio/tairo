@@ -58,7 +58,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 <div
                   class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
                 >
-                  <NuxtImg
+                  <img
                     src="/img/avatars/12.svg"
                     class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""
@@ -92,7 +92,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 <div
                   class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
                 >
-                  <NuxtImg
+                  <img
                     src="/img/avatars/19.svg"
                     class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""
@@ -126,7 +126,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 <div
                   class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
                 >
-                  <NuxtImg
+                  <img
                     src="/img/avatars/3.svg"
                     class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""
@@ -160,7 +160,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 <div
                   class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
                 >
-                  <NuxtImg
+                  <img
                     src="/img/avatars/4.svg"
                     class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""
@@ -194,7 +194,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 <div
                   class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
                 >
-                  <NuxtImg
+                  <img
                     src="/img/avatars/8.svg"
                     class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""

@@ -17,7 +17,7 @@ const toggled = ref(false)
         subtitle="Add files to your project if you have them handy. Don't worry, you can also manage files later."
       >
         <template #image>
-          <NuxtImg
+          <img
             src="/img/illustrations/wizard/upload.svg"
             class="rounded-full max-w-[210px] mx-auto"
             alt="Upload files"

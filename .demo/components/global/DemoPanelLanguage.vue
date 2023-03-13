@@ -35,7 +35,7 @@ const { close } = usePanels()
             <div
               class="flex h-14 w-14 items-center justify-center rounded-full border-2 border-muted-200 shadow-lg transition-all duration-300 peer-checked:border-primary-500 dark:border-muted-600"
             >
-              <NuxtImg
+              <img
                 class="h-10 w-10 rounded-full"
                 src="/img/icons/flags/united-states-of-america.svg"
                 alt="flag icon"
@@ -59,7 +59,7 @@ const { close } = usePanels()
             <div
               class="flex h-14 w-14 items-center justify-center rounded-full border-2 border-muted-200 shadow-lg transition-all duration-300 peer-checked:border-primary-500 dark:border-muted-600"
             >
-              <NuxtImg
+              <img
                 class="h-10 w-10 rounded-full"
                 src="/img/icons/flags/france.svg"
                 alt="flag icon"
@@ -83,7 +83,7 @@ const { close } = usePanels()
             <div
               class="flex h-14 w-14 items-center justify-center rounded-full border-2 border-muted-200 shadow-lg transition-all duration-300 peer-checked:border-primary-500 dark:border-muted-600"
             >
-              <NuxtImg
+              <img
                 class="h-10 w-10 rounded-full"
                 src="/img/icons/flags/spain.svg"
                 alt="flag icon"
@@ -107,7 +107,7 @@ const { close } = usePanels()
             <div
               class="flex h-14 w-14 items-center justify-center rounded-full border-2 border-muted-200 shadow-lg transition-all duration-300 peer-checked:border-primary-500 dark:border-muted-600"
             >
-              <NuxtImg
+              <img
                 class="h-10 w-10 rounded-full"
                 src="/img/icons/flags/germany.svg"
                 alt="flag icon"
@@ -131,7 +131,7 @@ const { close } = usePanels()
             <div
               class="flex h-14 w-14 items-center justify-center rounded-full border-2 border-muted-200 shadow-lg transition-all duration-300 peer-checked:border-primary-500 dark:border-muted-600"
             >
-              <NuxtImg
+              <img
                 class="h-10 w-10 rounded-full"
                 src="/img/icons/flags/mexico.svg"
                 alt="flag icon"
@@ -155,7 +155,7 @@ const { close } = usePanels()
             <div
               class="flex h-14 w-14 items-center justify-center rounded-full border-2 border-muted-200 shadow-lg transition-all duration-300 peer-checked:border-primary-500 dark:border-muted-600"
             >
-              <NuxtImg
+              <img
                 class="h-10 w-10 rounded-full"
                 src="/img/icons/flags/china.svg"
                 alt="flag icon"
@@ -171,12 +171,12 @@ const { close } = usePanels()
       </div>
 
       <div>
-        <NuxtImg
+        <img
           src="/img/illustrations/translation.svg"
           class="mx-auto w-full max-w-[280px] dark:hidden"
           alt="illustration"
         />
-        <NuxtImg
+        <img
           src="/img/illustrations/translation-dark.svg"
           class="mx-auto hidden w-full max-w-[280px] dark:block"
           alt="illustration"

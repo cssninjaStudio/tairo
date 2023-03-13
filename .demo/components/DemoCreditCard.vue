@@ -30,7 +30,6 @@ const props = withDefaults(
           <svg
             class="h-10 w-10"
             :class="props.active ? 'text-white' : 'text-primary-500'"
-            xmlns="http://www.w3.org/2000/svg"
             width="32"
             height="32"
             viewBox="0 0 24 24"

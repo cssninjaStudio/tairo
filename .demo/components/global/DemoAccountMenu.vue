@@ -17,7 +17,7 @@ const props = defineProps<{
           <div
             class="relative inline-flex h-10 w-10 items-center justify-center rounded-full"
           >
-            <NuxtImg
+            <img
               src="/img/avatars/2.svg"
               class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
               alt=""
@@ -43,7 +43,7 @@ const props = defineProps<{
               <div
                 class="relative inline-flex h-14 w-14 items-center justify-center rounded-full"
               >
-                <NuxtImg
+                <img
                   src="/img/avatars/2.svg"
                   class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                   alt=""

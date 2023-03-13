@@ -118,7 +118,7 @@ const filteredPeople = computed(() =>
                 <div
                   class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
                 >
-                  <NuxtImg
+                  <img
                     :src="person.avatar"
                     class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""
@@ -154,7 +154,7 @@ const filteredPeople = computed(() =>
               <div
                 class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
               >
-                <NuxtImg
+                <img
                   src="/img/avatars/3.svg"
                   class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                   alt=""
@@ -178,7 +178,7 @@ const filteredPeople = computed(() =>
               <div
                 class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
               >
-                <NuxtImg
+                <img
                   src="/img/avatars/18.svg"
                   class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                   alt=""
@@ -202,7 +202,7 @@ const filteredPeople = computed(() =>
               <div
                 class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
               >
-                <NuxtImg
+                <img
                   src="/img/avatars/11.svg"
                   class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                   alt=""

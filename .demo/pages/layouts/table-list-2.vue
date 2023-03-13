@@ -65,12 +65,12 @@ const { data, pending, error, refresh } = await useFetch('/api/products', {
             subtitle="Looks like we couldn't find any matching results for your search terms. Try other search terms."
           >
             <template #image>
-              <NuxtImg
+              <img
                 class="block dark:hidden"
                 src="/img/illustrations/placeholders/flat/placeholder-search-4.svg"
                 alt="Placeholder image"
               />
-              <NuxtImg
+              <img
                 class="hidden dark:block"
                 src="/img/illustrations/placeholders/flat/placeholder-search-4-dark.svg"
                 alt="Placeholder image"
@@ -94,7 +94,7 @@ const { data, pending, error, refresh } = await useFetch('/api/products', {
               <TairoTableRow v-for="item in data?.data" :key="item.id">
                 <TairoTableCell spaced>
                   <div class="flex items-center">
-                    <NuxtImg
+                    <img
                       :src="item.image"
                       :alt="item.name"
                       class="max-w-[80px]"

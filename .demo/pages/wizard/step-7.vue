@@ -448,7 +448,7 @@ onBeforeUnmount(() => {
           subtitle="You, and the team members you've added can already start working and creating tasks."
         >
           <template #image>
-            <NuxtImg
+            <img
               src="/img/illustrations/wizard/finish.svg"
               class="rounded-full max-w-[210px] mx-auto"
               alt="Upload files"

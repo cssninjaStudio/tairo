@@ -57,12 +57,12 @@ const { data, pending, error, refresh } = await useFetch('/api/jobs', {
               subtitle="Looks like we couldn't find any matching results for your search terms. Try other search terms."
             >
               <template #image>
-                <NuxtImg
+                <img
                   class="block dark:hidden"
                   src="/img/illustrations/placeholders/flat/placeholder-search-3.svg"
                   alt="Placeholder image"
                 />
-                <NuxtImg
+                <img
                   class="hidden dark:block"
                   src="/img/illustrations/placeholders/flat/placeholder-search-3-dark.svg"
                   alt="Placeholder image"
@@ -173,12 +173,12 @@ const { data, pending, error, refresh } = await useFetch('/api/jobs', {
           subtitle="Looks like you don't have any saved jobs for the moment. It's also possible that some of your saved items expired."
         >
           <template #image>
-            <NuxtImg
+            <img
               class="block dark:hidden"
               src="/img/illustrations/placeholders/flat/placeholder-thinking-canvas.svg"
               alt="Placeholder image"
             />
-            <NuxtImg
+            <img
               class="hidden dark:block"
               src="/img/illustrations/placeholders/flat/placeholder-thinking-canvas-dark.svg"
               alt="Placeholder image"

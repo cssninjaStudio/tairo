@@ -71,7 +71,7 @@ const items = [
         ]"
       >
         <Icon v-if="item.icon" :name="item.icon" class="" />
-        <NuxtImg
+        <img
           v-if="item.image"
           :src="item.image"
           class="max-w-full object-cover shadow-sm dark:border-transparent"

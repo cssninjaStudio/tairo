@@ -71,12 +71,12 @@ function openTaskPanel(id: number, project: any) {
         subtitle="We couldn't find a project matching this namespace."
       >
         <template #image>
-          <NuxtImg
+          <img
             class="block dark:hidden"
             src="/img/illustrations/placeholders/flat/placeholder-projects.svg"
             alt="Placeholder image"
           />
-          <NuxtImg
+          <img
             class="hidden dark:block"
             src="/img/illustrations/placeholders/flat/placeholder-projects-dark.svg"
             alt="Placeholder image"
@@ -240,7 +240,7 @@ function openTaskPanel(id: number, project: any) {
                         shape="curved"
                       >
                         <div class="w-full flex items-center gap-2">
-                          <NuxtImg
+                          <img
                             :src="file.icon"
                             :alt="file.name"
                             class="max-w-[46px]"

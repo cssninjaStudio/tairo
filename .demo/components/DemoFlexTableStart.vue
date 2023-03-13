@@ -58,7 +58,7 @@ const props = withDefaults(
       v-else-if="props.picture && !props.avatar && !props.icon"
       class="relative shrink-0"
     >
-      <NuxtImg
+      <img
         :src="props.picture"
         :alt="props.title"
         class="h-12 w-16 object-cover rounded-lg"

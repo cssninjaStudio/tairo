@@ -361,14 +361,14 @@ function useBarTeamEfficiency() {
           <BaseCard class="p-6">
             <DemoPlaceholderCompact>
               <template #image>
-                <NuxtImg
+                <img
                   src="/img/illustrations/placeholders/flat/chart-guy.svg"
                   class="w-full block dark:hidden"
                   width="225"
                   height="150"
                   alt="Placeholder illustration"
                 />
-                <NuxtImg
+                <img
                   src="/img/illustrations/placeholders/flat/chart-guy-dark.svg"
                   class="w-full hidden dark:block"
                   width="225"

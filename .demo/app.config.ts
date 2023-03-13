@@ -71,12 +71,6 @@ export default defineAppConfig({
           activePath: '/layouts',
         },
         {
-          name: 'Components',
-          icon: { name: 'ph:grid-four-duotone', class: 'w-5 h-5' },
-          subsidebar: { name: 'DemoSubsidebarComponents' },
-          activePath: '/components',
-        },
-        {
           name: 'Chat',
           icon: { name: 'ph:chat-circle-duotone', class: 'w-5 h-5' },
           to: '/dashboards/messaging',
