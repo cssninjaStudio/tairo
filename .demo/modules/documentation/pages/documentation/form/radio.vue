@@ -1,16 +1,24 @@
 <script setup lang="ts">
 import BaseDemo from '../../../examples/form/radio/base.vue'
 import base from '../../../examples/form/radio/base.vue?raw'
+import MutedDemo from '../../../examples/form/radio/muted.vue'
+import muted from '../../../examples/form/radio/muted.vue?raw'
+import PrimaryDemo from '../../../examples/form/radio/primary.vue'
+import primary from '../../../examples/form/radio/primary.vue?raw'
+import InfoDemo from '../../../examples/form/radio/info.vue'
+import info from '../../../examples/form/radio/info.vue?raw'
+import SuccessDemo from '../../../examples/form/radio/success.vue'
+import success from '../../../examples/form/radio/success.vue?raw'
+import WarningDemo from '../../../examples/form/radio/warning.vue'
+import warning from '../../../examples/form/radio/warning.vue?raw'
+import DangerDemo from '../../../examples/form/radio/danger.vue'
+import danger from '../../../examples/form/radio/danger.vue?raw'
 import ColorsDemo from '../../../examples/form/radio/colors.vue'
 import colors from '../../../examples/form/radio/colors.vue?raw'
 
 function wrapVueMarkdown(source: string) {
   return '```vue\n' + source + '\n```'
 }
-
-const model = `
-const radio = ref('option_1')
-`
 </script>
 
 <template>
@@ -19,9 +27,9 @@ const radio = ref('option_1')
 
     <DocLayout>
       <template #content>
-        <!-- Radio straight -->
+        <!-- Radio default -->
         <DocSection title="Radio buttons" tag="1.0.0">
-          <DocComponent label="Radio buttons example">
+          <DocComponent label="Default color example">
             <template #demo>
               <div class="flex items-end gap-6">
                 <div class="flex w-full max-w-sm items-end gap-6">
@@ -35,14 +43,120 @@ const radio = ref('option_1')
           </DocComponent>
         </DocSection>
 
-        <!-- Radio colors -->
-        <DocSection title="Radio colors" tag="1.0.0">
-          <DocComponent label="Radio colors examples">
+        <!-- Radio Muted -->
+        <DocSection title="Muted color" tag="1.0.0">
+          <DocComponent label="Muted color example">
             <template #demo>
               <div class="flex items-end gap-6">
-                <div class="flex w-full max-w-sm flex-wrap items-end gap-6">
-                  <ColorsDemo />
+                <div class="flex w-full max-w-sm items-end gap-6">
+                  <MutedDemo />
                 </div>
+              </div>
+            </template>
+            <template #code>
+              <AddonMarkdownRemark :source="wrapVueMarkdown(muted)" fullwidth />
+            </template>
+          </DocComponent>
+        </DocSection>
+
+        <!-- Radio Primary -->
+        <DocSection title="Primary color" tag="1.0.0">
+          <DocComponent label="Primary color example">
+            <template #demo>
+              <div class="flex items-end gap-6">
+                <div class="flex w-full max-w-sm items-end gap-6">
+                  <PrimaryDemo />
+                </div>
+              </div>
+            </template>
+            <template #code>
+              <AddonMarkdownRemark
+                :source="wrapVueMarkdown(primary)"
+                fullwidth
+              />
+            </template>
+          </DocComponent>
+        </DocSection>
+
+        <!-- Radio Info -->
+        <DocSection title="Info color" tag="1.0.0">
+          <DocComponent label="Info color example">
+            <template #demo>
+              <div class="flex items-end gap-6">
+                <div class="flex w-full max-w-sm items-end gap-6">
+                  <InfoDemo />
+                </div>
+              </div>
+            </template>
+            <template #code>
+              <AddonMarkdownRemark :source="wrapVueMarkdown(info)" fullwidth />
+            </template>
+          </DocComponent>
+        </DocSection>
+
+        <!-- Radio Success -->
+        <DocSection title="Success color" tag="1.0.0">
+          <DocComponent label="Success color example">
+            <template #demo>
+              <div class="flex items-end gap-6">
+                <div class="flex w-full max-w-sm items-end gap-6">
+                  <SuccessDemo />
+                </div>
+              </div>
+            </template>
+            <template #code>
+              <AddonMarkdownRemark
+                :source="wrapVueMarkdown(success)"
+                fullwidth
+              />
+            </template>
+          </DocComponent>
+        </DocSection>
+
+        <!-- Radio Warning -->
+        <DocSection title="Warning color" tag="1.0.0">
+          <DocComponent label="Warning color example">
+            <template #demo>
+              <div class="flex items-end gap-6">
+                <div class="flex w-full max-w-sm items-end gap-6">
+                  <WarningDemo />
+                </div>
+              </div>
+            </template>
+            <template #code>
+              <AddonMarkdownRemark
+                :source="wrapVueMarkdown(warning)"
+                fullwidth
+              />
+            </template>
+          </DocComponent>
+        </DocSection>
+
+        <!-- Radio Danger -->
+        <DocSection title="Danger color" tag="1.0.0">
+          <DocComponent label="Danger color example">
+            <template #demo>
+              <div class="flex items-end gap-6">
+                <div class="flex w-full max-w-sm items-end gap-6">
+                  <DangerDemo />
+                </div>
+              </div>
+            </template>
+            <template #code>
+              <AddonMarkdownRemark
+                :source="wrapVueMarkdown(danger)"
+                fullwidth
+              />
+            </template>
+          </DocComponent>
+        </DocSection>
+
+        <!-- Radio custom colors -->
+        <DocSection title="Custom colors" tag="1.0.0">
+          <DocComponent label="Custom colors examples">
+            <template #demo>
+              <div class="flex items-end gap-6">
+                <ColorsDemo />
               </div>
             </template>
             <template #code>

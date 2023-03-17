@@ -47,8 +47,8 @@ export const routes = {
           description:
             'Use icons to enhance the user experience and to make your application more intuitive. Eplore the different icon types and their variations.',
           icon: {
-            src: '/img/illustrations/components/icons.svg',
-            srcDark: '/img/illustrations/components/icons-dark.svg',
+            src: '/img/illustrations/components/tag-icon.svg',
+            srcDark: '/img/illustrations/components/tag-icon.svg',
           },
         },
       },
@@ -79,8 +79,8 @@ export const routes = {
               description:
                 'Display content in a collapsible and expandable format.',
               icon: {
-                src: '/img/illustrations/components/avatar.svg',
-                srcDark: '/img/illustrations/components/avatar-dark.svg',
+                src: '/img/illustrations/components/accordion-icon.svg',
+                srcDark: '/img/illustrations/components/accordion-icon.svg',
               },
             },
           },
@@ -95,10 +95,10 @@ export const routes = {
               category: 'Base UI Elements',
               components: ['BaseAvatar'],
               description:
-                'Use avatars to represent entities with an image, icon, or initials.',
+                'Use avatars to represent entities with an image, icon, or initials. Discover multiple variations and options.',
               icon: {
-                src: '/img/illustrations/components/accordion.svg',
-                srcDark: '/img/illustrations/components/accordion-dark.svg',
+                src: '/img/illustrations/components/avatar-icon.svg',
+                srcDark: '/img/illustrations/components/avatar-icon-dark.svg',
               },
             },
           },
@@ -112,6 +112,12 @@ export const routes = {
             documentation: {
               category: 'Base UI Elements',
               components: ['BaseAvatarGroup'],
+              description:
+                'Use avatars groups to represent groups of persons, technologies, companies or anything else with a logo or an image.',
+              icon: {
+                src: '/img/illustrations/components/avatar-group-icon.svg',
+                srcDark: '/img/illustrations/components/avatar-group-icon.svg',
+              },
             },
           },
         },
@@ -125,10 +131,10 @@ export const routes = {
               category: 'Base UI Elements',
               components: ['BaseBreadcrumb'],
               description:
-                'Automatically generate breadcrumbs based on the current route.',
+                "Don't let users get lost inside your application. Automatically generate breadcrumbs based on the current route.",
               icon: {
-                src: '/img/illustrations/components/breadcrumb.svg',
-                srcDark: '/img/illustrations/components/breadcrumb-dark.svg',
+                src: '/img/illustrations/components/breadcrumb-icon.svg',
+                srcDark: '/img/illustrations/components/breadcrumb-icon.svg',
               },
             },
           },
@@ -144,10 +150,10 @@ export const routes = {
               components: ['BaseButton'],
               composables: ['useButton'],
               description:
-                'Use buttons to trigger actions or to navigate to a new page. Eplore the different button types and their variations.',
+                'Use buttons to trigger actions or to navigate to a new page. Explore the different button types and their variations.',
               icon: {
-                src: '/img/illustrations/components/buttons.svg',
-                srcDark: '/img/illustrations/components/buttons-dark.svg',
+                src: '/img/illustrations/components/button-icon.svg',
+                srcDark: '/img/illustrations/components/buttons-icon.svg',
               },
             },
           },
@@ -165,18 +171,12 @@ export const routes = {
               category: 'Base UI Elements',
               components: ['BaseButtonAction'],
               composables: ['useButton'],
-            },
-          },
-        },
-        {
-          name: 'documentation-button-ring',
-          path: 'button-ring',
-          file: resolve(__dirname, './pages/documentation/ui/button-ring.vue'),
-          meta: {
-            title: 'Button Close',
-            documentation: {
-              category: 'Base UI Elements',
-              components: ['BaseButtonRing'],
+              description:
+                'Use actions to interact within or to navigate to a new page. Explore the different button types and their variations.',
+              icon: {
+                src: '/img/illustrations/components/button-icon.svg',
+                srcDark: '/img/illustrations/components/button-icon.svg',
+              },
             },
           },
         },
@@ -189,6 +189,12 @@ export const routes = {
             documentation: {
               category: 'Base UI Elements',
               components: ['BaseButtonClose'],
+              description:
+                'Use close buttons for all your custom elements that need to have a close handle, like for modals, dialogs and alerts.',
+              icon: {
+                src: '/img/illustrations/components/button-close-icon.svg',
+                srcDark: '/img/illustrations/components/button-close-icon.svg',
+              },
             },
           },
         },
@@ -202,6 +208,12 @@ export const routes = {
               category: 'Base UI Elements',
               components: ['BaseButtonIcon'],
               composables: ['useButton'],
+              description:
+                'Use icon buttons to interact within or to navigate to a new page. Explore the different button types and their variations.',
+              icon: {
+                src: '/img/illustrations/components/button-action-icon.svg',
+                srcDark: '/img/illustrations/components/button-action-icon.svg',
+              },
             },
           },
         },
@@ -214,10 +226,11 @@ export const routes = {
             documentation: {
               category: 'Base UI Elements',
               components: ['BaseCard'],
-              description: 'Cards are used to group related content.',
+              description:
+                'Cards are used to group related content and present it in an elegant and efficient way. Explore the available options.',
               icon: {
-                src: '/img/illustrations/components/cards.svg',
-                srcDark: '/img/illustrations/components/cards-dark.svg',
+                src: '/img/illustrations/components/card-icon.svg',
+                srcDark: '/img/illustrations/components/card-icon.svg',
               },
             },
           },
@@ -236,10 +249,10 @@ export const routes = {
                 'BaseDropdownDivide',
               ],
               description:
-                'Dropdowns are used to display multiple options after a user interaction.',
+                'Dropdowns are used to display multiple options after a user interaction. Customize how they look and feel using the available props.',
               icon: {
-                src: '/img/illustrations/components/dropdown.svg',
-                srcDark: '/img/illustrations/components/dropdown-dark.svg',
+                src: '/img/illustrations/components/dropdown-icon.svg',
+                srcDark: '/img/illustrations/components/dropdown-icon.svg',
               },
             },
           },
@@ -253,6 +266,12 @@ export const routes = {
             documentation: {
               category: 'Base UI Elements',
               components: ['BaseFocusLoop'],
+              description:
+                'Use the focus loop when you want to group several elements inside a same container and make them easily focusable.',
+              icon: {
+                src: '/img/illustrations/components/focus-loop-icon.svg',
+                srcDark: '/img/illustrations/components/focus-loop-icon.svg',
+              },
             },
           },
         },
@@ -268,8 +287,8 @@ export const routes = {
               description:
                 'Display a box with an icon and a title. Use this to raise attention to a specific feature.',
               icon: {
-                src: '/img/illustrations/components/icon-box.svg',
-                srcDark: '/img/illustrations/components/icon-box-dark.svg',
+                src: '/img/illustrations/components/iconbox-icon.svg',
+                srcDark: '/img/illustrations/components/iconbox-icon.svg',
               },
             },
           },
@@ -283,6 +302,12 @@ export const routes = {
             documentation: {
               category: 'Base UI Elements',
               components: ['BaseMessage'],
+              description:
+                'Use messages to inform users about important interactions or events that occur inside your application.',
+              icon: {
+                src: '/img/illustrations/components/message-icon.svg',
+                srcDark: '/img/illustrations/components/message-icon.svg',
+              },
             },
           },
         },
@@ -295,6 +320,12 @@ export const routes = {
             documentation: {
               category: 'Base UI Elements',
               components: ['BasePagination'],
+              description:
+                'Use pagination in conjunction with your table, flex table, lists and any card grids to paginate the page content.',
+              icon: {
+                src: '/img/illustrations/components/pagination-icon.svg',
+                srcDark: '/img/illustrations/components/pagination-icon.svg',
+              },
             },
           },
         },
@@ -307,6 +338,12 @@ export const routes = {
             documentation: {
               category: 'Base UI Elements',
               components: ['BasePlaceholderPage'],
+              description:
+                'Use placeholders when your pages are empty. It can be because there is no data yet to display or because the user has no access to the content.',
+              icon: {
+                src: '/img/illustrations/components/placeholder-icon.svg',
+                srcDark: '/img/illustrations/components/placeholder-icon.svg',
+              },
             },
           },
         },
@@ -319,6 +356,12 @@ export const routes = {
             documentation: {
               category: 'Base UI Elements',
               components: ['BasePlaceload'],
+              description:
+                'Use placeloads to show a loading state on your page. Placeloads can be customized to mimic the content structure of your page.',
+              icon: {
+                src: '/img/illustrations/components/placeload-icon.svg',
+                srcDark: '/img/illustrations/components/placeload-icon.svg',
+              },
             },
           },
         },
@@ -332,10 +375,10 @@ export const routes = {
               category: 'Base UI Elements',
               components: ['BaseProgress', 'BaseProgressCircle'],
               description:
-                'Display the progress of a task in a linear or circular way.',
+                'Display the progress of a task in a linear or circular way. Use the different options to customize the look and feel of the progress bars.',
               icon: {
-                src: '/img/illustrations/components/progress.svg',
-                srcDark: '/img/illustrations/components/progress-dark.svg',
+                src: '/img/illustrations/components/progress-icon.svg',
+                srcDark: '/img/illustrations/components/progress-icon.svg',
               },
             },
           },
@@ -349,6 +392,12 @@ export const routes = {
             documentation: {
               category: 'Base UI Elements',
               components: ['BaseProse'],
+              description:
+                'Use the prose component, which is an implementation of the Tailwind CSS typography plugin, made ready to use for your content driven pages.',
+              icon: {
+                src: '/img/illustrations/components/prose-icon.svg',
+                srcDark: '/img/illustrations/components/prose-icon.svg',
+              },
             },
           },
         },
@@ -364,8 +413,8 @@ export const routes = {
               description:
                 'Snacks are used to display an interactive message to the user. They are used to display information in a compact way.',
               icon: {
-                src: '/img/illustrations/components/snacks.svg',
-                srcDark: '/img/illustrations/components/snacks-dark.svg',
+                src: '/img/illustrations/components/snack-icon.svg',
+                srcDark: '/img/illustrations/components/snack-icon.svg',
               },
             },
           },
@@ -379,6 +428,12 @@ export const routes = {
             documentation: {
               category: 'Base UI Elements',
               components: ['BaseTabSlider'],
+              description:
+                'Use tab sliders to display fancy sliding tabs that you can use anywhere in your app, components and pages.',
+              icon: {
+                src: '/img/illustrations/components/tab-slider-icon.svg',
+                srcDark: '/img/illustrations/components/tab-slider-icon.svg',
+              },
             },
           },
         },
@@ -392,10 +447,10 @@ export const routes = {
               category: 'Base UI Elements',
               components: ['BaseTabs'],
               description:
-                'Use tabs to organize content into different sections.',
+                'Use navtabs to organize content into different sections. Explore the different options to customize the look and feel of your tabs.',
               icon: {
-                src: '/img/illustrations/components/tabs.svg',
-                srcDark: '/img/illustrations/components/tabs-dark.svg',
+                src: '/img/illustrations/components/tabs-icon.svg',
+                srcDark: '/img/illustrations/components/tabs-icon.svg',
               },
             },
           },
@@ -409,11 +464,11 @@ export const routes = {
             documentation: {
               category: 'Base UI Elements',
               description:
-                'Tags are used to display information in a compact way.',
+                'Tags are used to display information in a compact and synthetic way. Many color and shape options are available to customize them.',
               components: ['BaseTag'],
               icon: {
-                src: '/img/illustrations/components/tags.svg',
-                srcDark: '/img/illustrations/components/tags-dark.svg',
+                src: '/img/illustrations/components/tag-icon.svg',
+                srcDark: '/img/illustrations/components/tag-icon.svg',
               },
             },
           },
@@ -427,6 +482,12 @@ export const routes = {
             documentation: {
               category: 'Base UI Elements',
               components: ['BaseThemeToggle'],
+              description:
+                'Tairo ships with a ready to use theme switcher that you can include anywhere to toggle between light and dark mode.',
+              icon: {
+                src: '/img/illustrations/components/theme-toggle-icon.svg',
+                srcDark: '/img/illustrations/components/theme-toggle-icon.svg',
+              },
             },
           },
         },
@@ -439,6 +500,12 @@ export const routes = {
             documentation: {
               category: 'Base UI Elements',
               components: ['BaseHeading', 'BaseParagraph', 'BaseText'],
+              description:
+                'Tairo provides ready to use typography components such as heading, paragraphs and text, with many customization options.',
+              icon: {
+                src: '/img/illustrations/components/typography-icon.svg',
+                srcDark: '/img/illustrations/components/typography-icon.svg',
+              },
             },
           },
         },
@@ -470,6 +537,12 @@ export const routes = {
             documentation: {
               category: 'Base Forms',
               components: ['BaseAnimatedCheckbox'],
+              description:
+                'Use animated checkboxes to display fancy svg circle and check animations, which are ideal to engage your audience.',
+              icon: {
+                src: '/img/illustrations/components/checkbox-icon.svg',
+                srcDark: '/img/illustrations/components/checkbox-icon.svg',
+              },
             },
           },
         },
@@ -485,6 +558,12 @@ export const routes = {
             documentation: {
               category: 'Base Forms',
               components: ['BaseAutocomplete', 'BaseAutocompleteItem'],
+              description:
+                'Tairo ships with ready to use autocompletes that render different kinds of lists, ranging from text to complex media objects.',
+              icon: {
+                src: '/img/illustrations/components/autocomplete-icon.svg',
+                srcDark: '/img/illustrations/components/autocomplete-icon.svg',
+              },
             },
           },
         },
@@ -496,12 +575,12 @@ export const routes = {
             title: 'Checkbox',
             documentation: {
               category: 'Base Forms',
-              components: ['BaseCheckbox', 'BaseCheckboxCustom'],
+              components: ['BaseCheckbox'],
               description:
-                'A checkbox is a form element that allows the user to select one or more options from a predefined set.',
+                'A checkbox is a form element that allows the user to select one or more options from a predefined set of data.',
               icon: {
-                src: '/img/illustrations/components/checkboxes.svg',
-                srcDark: '/img/illustrations/components/checkboxes-dark.svg',
+                src: '/img/illustrations/components/checkbox-icon.svg',
+                srcDark: '/img/illustrations/components/checkboxes-icon.svg',
               },
             },
           },
@@ -519,10 +598,10 @@ export const routes = {
               category: 'Base Forms',
               components: ['BaseCheckboxCustom'],
               description:
-                'Create a custom checkbox with the BaseCheckboxCustom component.',
+                'Create a custom checkbox using the the base checkbox element and designing yourself the exterior look of it.',
               icon: {
-                src: '/img/illustrations/components/checkboxes.svg',
-                srcDark: '/img/illustrations/components/checkboxes-dark.svg',
+                src: '/img/illustrations/components/checkbox-icon.svg',
+                srcDark: '/img/illustrations/components/checkboxes-icon.svg',
               },
             },
           },
@@ -536,6 +615,12 @@ export const routes = {
             documentation: {
               category: 'Base Forms',
               components: ['BaseInputFile'],
+              description:
+                'Use file inputs in your form to allow the user to upload files from their computer. Many customization options are available.',
+              icon: {
+                src: '/img/illustrations/components/input-file-icon.svg',
+                srcDark: '/img/illustrations/components/input-file-icon.svg',
+              },
             },
           },
         },
@@ -549,10 +634,10 @@ export const routes = {
               category: 'Base Forms',
               components: ['BaseInput'],
               description:
-                'An input is a form element that allows the user to enter text or numeric data from the keyboard.',
+                'An input is a form element that allows the user to enter text or numeric data from the keyboard. Explore the available options.',
               icon: {
-                src: '/img/illustrations/components/forms.svg',
-                srcDark: '/img/illustrations/components/forms-dark.svg',
+                src: '/img/illustrations/components/input-icon.svg',
+                srcDark: '/img/illustrations/components/input-icon.svg',
               },
             },
           },
@@ -566,6 +651,12 @@ export const routes = {
             documentation: {
               category: 'Base Forms',
               components: ['BaseListbox'],
+              description:
+                'Tairo ships with ready to use listbox select that render different kinds of lists, ranging from text to complex media objects.',
+              icon: {
+                src: '/img/illustrations/components/listbox-icon.svg',
+                srcDark: '/img/illustrations/components/listbox-icon.svg',
+              },
             },
           },
         },
@@ -578,6 +669,12 @@ export const routes = {
             documentation: {
               category: 'Base Forms',
               components: ['BaseRadio'],
+              description:
+                'A radio button is a form element that allows the user to select a single option from a predefined set.',
+              icon: {
+                src: '/img/illustrations/components/radio-icon.svg',
+                srcDark: '/img/illustrations/components/radio-icon.svg',
+              },
             },
           },
         },
@@ -593,6 +690,12 @@ export const routes = {
             documentation: {
               category: 'Base Forms',
               components: ['BaseRadioCustom'],
+              description:
+                'Create a completely custom radio button using the the base radio element and designing yourself the exterior look of it.',
+              icon: {
+                src: '/img/illustrations/components/radio-icon.svg',
+                srcDark: '/img/illustrations/components/radioes-icon.svg',
+              },
             },
           },
         },
@@ -605,6 +708,12 @@ export const routes = {
             documentation: {
               category: 'Base Forms',
               components: ['BaseSelect'],
+              description:
+                'Use the Tairo select form element when you wan to display a mobile friendly selection box. Explore the available customization options.',
+              icon: {
+                src: '/img/illustrations/components/select-icon.svg',
+                srcDark: '/img/illustrations/components/select-icon.svg',
+              },
             },
           },
         },
@@ -618,10 +727,10 @@ export const routes = {
               category: 'Base Forms',
               components: ['BaseSwitchThin', 'BaseSwitchBall'],
               description:
-                'A switch is a binary input that can be either on or off. It is used to toggle between two states.',
+                'A switch is a binary input that can be either on or off. It is used to toggle between two states. Check out the thin and the ball versions.',
               icon: {
-                src: '/img/illustrations/components/switches.svg',
-                srcDark: '/img/illustrations/components/switches-dark.svg',
+                src: '/img/illustrations/components/switch-thin-icon.svg',
+                srcDark: '/img/illustrations/components/switch-thin-icon.svg',
               },
             },
           },
@@ -635,6 +744,12 @@ export const routes = {
             documentation: {
               category: 'Base Forms',
               components: ['BaseTextarea'],
+              description:
+                'A textarea is a form element that allows the user to enter long text data from the keyboard. Explore the available customization options.',
+              icon: {
+                src: '/img/illustrations/components/textarea-icon.svg',
+                srcDark: '/img/illustrations/components/textarea-icon.svg',
+              },
             },
           },
         },
@@ -665,6 +780,12 @@ export const routes = {
             title: 'Content Wrapper',
             documentation: {
               category: 'Layout Elements',
+              description:
+                'Tairo content wrapper wraps the page content. It provides slots and allows you to control the horizontal flow of the page.',
+              icon: {
+                src: '/img/illustrations/components/logo-icon.svg',
+                srcDark: '/img/illustrations/components/logo-icon.svg',
+              },
               components: ['TairoContentWrapper', 'TairoContentWrapperTabbed'],
             },
           },
@@ -681,10 +802,10 @@ export const routes = {
             documentation: {
               category: 'Layout Elements',
               description:
-                'Flex tables are a flexible way to display tabular data. They can be used to display data instead of a table.',
+                'Flex tables are an alternative way to display tabular data. They behave responsively on smaller screens.',
               icon: {
-                src: '/img/illustrations/components/table.svg',
-                srcDark: '/img/illustrations/components/table-dark.svg',
+                src: '/img/illustrations/components/table-icon.svg',
+                srcDark: '/img/illustrations/components/table-icon.svg',
               },
               components: [
                 'TairoFlexTable',
@@ -704,6 +825,12 @@ export const routes = {
             documentation: {
               category: 'Layout Elements',
               components: ['TairoLayout', 'TairoLogo'],
+              description:
+                "Tairo's layout and logo component provide an easy way and to handle layout variations and specific page overrides",
+              icon: {
+                src: '/img/illustrations/components/logo-icon.svg',
+                srcDark: '/img/illustrations/components/logo-icon.svg',
+              },
             },
           },
         },
@@ -717,10 +844,10 @@ export const routes = {
               category: 'Layout Elements',
               components: ['TairoModal'],
               description:
-                'Modals force the user to interact with them before they can continue using the application.',
+                'Modals are popups that you can use to force an interaction before the user can continue using the application.',
               icon: {
-                src: '/img/illustrations/components/modal.svg',
-                srcDark: '/img/illustrations/components/modal-dark.svg',
+                src: '/img/illustrations/components/modal-icon.svg',
+                srcDark: '/img/illustrations/components/modal-icon.svg',
               },
             },
           },
@@ -733,10 +860,16 @@ export const routes = {
             './pages/documentation/layout/navigation-circular-menu.vue',
           ),
           meta: {
-            title: 'Navigation Toolbar',
+            title: 'Circular Menu',
             documentation: {
               category: 'Layout Elements',
               components: ['TairoNavigationCircularMenu'],
+              description:
+                'Tairo circular menu is a flying button that can be expanded to display the toolbar menu, when not visible.',
+              icon: {
+                src: '/img/illustrations/components/circular-menu-icon.svg',
+                srcDark: '/img/illustrations/components/circular-menu-icon.svg',
+              },
             },
           },
         },
@@ -751,6 +884,12 @@ export const routes = {
             title: 'Navigation Sidebar',
             documentation: {
               category: 'Layout Elements',
+              description:
+                'The icon sidebar is the basic navigation block of the global layout. It displays the logo and the main navigation menu.',
+              icon: {
+                src: '/img/illustrations/components/sidebar-icon.svg',
+                srcDark: '/img/illustrations/components/sidebar-icon.svg',
+              },
               components: [
                 'TairoNavigationSidebar',
                 'TairoNavigationSidebarItem',
@@ -770,6 +909,12 @@ export const routes = {
             documentation: {
               category: 'Layout Elements',
               components: ['TairoSubsidebar', 'TairoSubsidebarHeader'],
+              description:
+                'The subsidebar works as a submenu element for the main sidebar. Sidebar items can be single items or expandable items.',
+              icon: {
+                src: '/img/illustrations/components/sidebar-icon.svg',
+                srcDark: '/img/illustrations/components/sidebar-icon.svg',
+              },
             },
           },
         },
@@ -785,6 +930,12 @@ export const routes = {
             documentation: {
               category: 'Layout Elements',
               components: ['TairoNavigationToolbar', 'TairoNavigationBurger'],
+              description:
+                'Tairo toolbar and burger provide a smart way to handle menu items that are displayed at the top of the page.',
+              icon: {
+                src: '/img/illustrations/components/toolbar-icon.svg',
+                srcDark: '/img/illustrations/components/toolbar-icon.svg',
+              },
             },
           },
         },
@@ -802,6 +953,12 @@ export const routes = {
                 'TairoPopoverContentDual',
                 'TairoPopoverContentMedia',
               ],
+              description:
+                'A flexible popover that you can use to make simple text based popovers or more complex UI interactions.',
+              icon: {
+                src: '/img/illustrations/components/popover-icon.svg',
+                srcDark: '/img/illustrations/components/popover-icon.svg',
+              },
             },
           },
         },
@@ -819,6 +976,12 @@ export const routes = {
                 'TairoTableRow',
                 'TairoTableCell',
               ],
+              description:
+                'Tairo tables are a quick shortcut to render lists and collections using the native HTML5 table element.',
+              icon: {
+                src: '/img/illustrations/components/table-icon.svg',
+                srcDark: '/img/illustrations/components/table-icon.svg',
+              },
             },
           },
         },
@@ -832,6 +995,12 @@ export const routes = {
               category: 'Layout Elements',
               components: ['TairoTocAnchor'],
               composables: ['useToc'],
+              description:
+                'Tairo table of contents anchor is an easy and effective way to structure your content heavy pages and documentations.',
+              icon: {
+                src: '/img/illustrations/components/anchor-icon.svg',
+                srcDark: '/img/illustrations/components/anchor-icon.svg',
+              },
             },
           },
         },
@@ -863,6 +1032,12 @@ export const routes = {
             documentation: {
               category: 'Addons',
               components: ['AddonApexcharts'],
+              description:
+                'Tairo ships with the Apexcharts data visualisation library customized for Vue and Nuxt. Use the compoenent to render charts and graphs.',
+              icon: {
+                src: '/img/illustrations/components/apexcharts-icon.svg',
+                srcDark: '/img/illustrations/components/apexcharts-icon.svg',
+              },
             },
           },
         },
@@ -875,6 +1050,12 @@ export const routes = {
             documentation: {
               category: 'Addons',
               components: ['AddonCarouselTeam', 'AddonCarouselIcons'],
+              description:
+                'Tairo ships with the swiper module for  Nuxt. Use the component to display fancy and highly customizable carousels.',
+              icon: {
+                src: '/img/illustrations/components/carousel-icon.svg',
+                srcDark: '/img/illustrations/components/carousel-icon.svg',
+              },
             },
           },
         },
@@ -887,6 +1068,12 @@ export const routes = {
             documentation: {
               category: 'Addons',
               components: ['AddonMapboxPanel'],
+              description:
+                'Tairo ships with a Mapbox integration, allowing you to display maps anywhere you want. Explore the mapbox panel for a concrete example.',
+              icon: {
+                src: '/img/illustrations/components/map-icon.svg',
+                srcDark: '/img/illustrations/components/map-icon.svg',
+              },
             },
           },
         },
@@ -900,10 +1087,10 @@ export const routes = {
               category: 'Addons',
               components: ['AddonMarkdownRemark'],
               description:
-                'Convert markdown to HTML client-side using the unified remak/rehype and shiki.',
+                'Convert markdown to HTML client-side using the unified remak/rehype and shiki. Use the built-in component to render markdown content.',
               icon: {
-                src: '/img/illustrations/components/forms.svg',
-                srcDark: '/img/illustrations/components/forms-dark.svg',
+                src: '/img/illustrations/components/markdown-icon.svg',
+                srcDark: '/img/illustrations/components/markdown-icon.svg',
               },
             },
           },
@@ -917,6 +1104,12 @@ export const routes = {
             documentation: {
               category: 'Addons',
               components: ['Slider'],
+              description:
+                'Tairo ships with the powerful vueform slider component. Use it to render fancy sliders with or without tooltips and the ability to merge them.',
+              icon: {
+                src: '/img/illustrations/components/avatar-group-icon.svg',
+                srcDark: '/img/illustrations/components/avatar-group-icon.svg',
+              },
             },
           },
         },

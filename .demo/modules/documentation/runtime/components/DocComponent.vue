@@ -34,7 +34,7 @@ const activeTab = ref('demo')
               shape="rounded"
               class="h-[2.35rem] pr-3 focus:z-10"
               :class="activeTab === 'demo' && 'dark:!bg-muted-800'"
-              :muted="activeTab !== 'demo'"
+              :color="activeTab !== 'demo' ? 'muted' : 'default'"
               @click="activeTab = 'demo'"
             >
               <Icon name="ph:circles-four" class="h-4 w-4" />
@@ -46,7 +46,7 @@ const activeTab = ref('demo')
               shape="rounded"
               class="h-[2.35rem] pr-3 focus:z-10"
               :class="activeTab === 'code' && 'dark:!bg-muted-800'"
-              :muted="activeTab !== 'code'"
+              :color="activeTab !== 'code' ? 'muted' : 'default'"
               @click="activeTab = 'code'"
             >
               <Icon name="ph:terminal" class="h-4 w-4" />

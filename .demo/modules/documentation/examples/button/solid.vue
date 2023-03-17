@@ -5,5 +5,5 @@
   <BaseButton color="info">Button</BaseButton>
   <BaseButton color="warning">Button</BaseButton>
   <BaseButton color="danger">Button</BaseButton>
-  <BaseButton muted>Button</BaseButton>
+  <BaseButton color="muted">Button</BaseButton>
 </template>

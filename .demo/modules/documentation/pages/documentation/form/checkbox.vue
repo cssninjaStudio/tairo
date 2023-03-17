@@ -9,6 +9,10 @@ import RoundedDemo from '../../../examples/form/checkbox/rounded.vue'
 import rounded from '../../../examples/form/checkbox/rounded.vue?raw'
 import StraightDemo from '../../../examples/form/checkbox/straight.vue'
 import straight from '../../../examples/form/checkbox/straight.vue?raw'
+import MultipleValueDemo from '../../../examples/form/checkbox/multiple-value.vue'
+import multipleValue from '../../../examples/form/checkbox/multiple-value.vue?raw'
+import TrueFalseDemo from '../../../examples/form/checkbox/true-false.vue'
+import trueFalse from '../../../examples/form/checkbox/true-false.vue?raw'
 
 function wrapVueMarkdown(source: string) {
   return '```vue\n' + source + '\n```'
@@ -30,9 +34,7 @@ function wrapVueMarkdown(source: string) {
           <DocComponent label="Straight checkbox example">
             <template #demo>
               <div class="flex items-end gap-6">
-                <div class="w-full max-w-sm space-y-4">
-                  <StraightDemo />
-                </div>
+                <StraightDemo />
               </div>
             </template>
             <template #code>
@@ -49,9 +51,7 @@ function wrapVueMarkdown(source: string) {
           <DocComponent label="Rounded checkbox example">
             <template #demo>
               <div class="flex items-end gap-6">
-                <div class="w-full max-w-sm space-y-4">
-                  <RoundedDemo />
-                </div>
+                <RoundedDemo />
               </div>
             </template>
             <template #code>
@@ -68,9 +68,7 @@ function wrapVueMarkdown(source: string) {
           <DocComponent label="Curved checkbox example">
             <template #demo>
               <div class="flex items-start gap-6">
-                <div class="w-full max-w-sm space-x-2">
-                  <CurvedDemo />
-                </div>
+                <CurvedDemo />
               </div>
             </template>
             <template #code>
@@ -87,9 +85,7 @@ function wrapVueMarkdown(source: string) {
           <DocComponent label="Circle checkbox example">
             <template #demo>
               <div class="flex items-end gap-6">
-                <div class="w-full max-w-sm space-y-4">
-                  <CircleDemo />
-                </div>
+                <CircleDemo />
               </div>
             </template>
             <template #code>
@@ -101,13 +97,43 @@ function wrapVueMarkdown(source: string) {
           </DocComponent>
         </DocSection>
 
-        <!-- Checkbox straight -->
-        <DocSection
-          id="Checkbox-straight-colors"
-          title="Straight colors"
-          tag="1.0.0"
-        >
-          <DocComponent label="Straight checkbox example">
+        <!-- Multiple values -->
+        <DocSection title="Multiple values" tag="1.0.0">
+          <DocComponent label="Binding multiple values as v-model">
+            <template #demo>
+              <BaseFocusLoop class="flex flex-wrap items-end gap-4">
+                <MultipleValueDemo />
+              </BaseFocusLoop>
+            </template>
+            <template #code>
+              <AddonMarkdownRemark
+                :source="wrapVueMarkdown(multipleValue)"
+                fullwidth
+              />
+            </template>
+          </DocComponent>
+        </DocSection>
+
+        <!-- True False -->
+        <DocSection title="True / false value" tag="1.0.0">
+          <DocComponent label="Using true value as v-model">
+            <template #demo>
+              <BaseFocusLoop class="flex flex-wrap items-end gap-4">
+                <TrueFalseDemo />
+              </BaseFocusLoop>
+            </template>
+            <template #code>
+              <AddonMarkdownRemark
+                :source="wrapVueMarkdown(trueFalse)"
+                fullwidth
+              />
+            </template>
+          </DocComponent>
+        </DocSection>
+
+        <!-- Custom colors -->
+        <DocSection title="Custom colors" tag="1.0.0">
+          <DocComponent label="Custom colors example">
             <template #demo>
               <BaseFocusLoop class="flex flex-wrap items-end gap-4">
                 <ColorsDemo />

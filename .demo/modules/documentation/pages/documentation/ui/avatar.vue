@@ -23,6 +23,8 @@ import SquareFakeColorsDemo from '../../../examples/avatar/square-fake-colors.vu
 import squareFakeColors from '../../../examples/avatar/square-fake-colors.vue?raw'
 import SquareSizeDemo from '../../../examples/avatar/square-size.vue'
 import squareSize from '../../../examples/avatar/square-size.vue?raw'
+import MasksDemo from '../../../examples/avatar/masks.vue'
+import masks from '../../../examples/avatar/masks.vue?raw'
 
 function wrapVueMarkdown(source: string) {
   return '```vue\n' + source + '\n```'
@@ -256,6 +258,20 @@ function wrapVueMarkdown(source: string) {
                 :source="wrapVueMarkdown(squareFakeColors)"
                 fullwidth
               />
+            </template>
+          </DocComponent>
+        </DocSection>
+
+        <!-- SVG Masks -->
+        <DocSection title="SVG Masks" tag="1.0.0">
+          <DocComponent label="Avatar svg masks">
+            <template #demo>
+              <div class="flex flex-wrap items-end gap-2">
+                <MasksDemo />
+              </div>
+            </template>
+            <template #code>
+              <AddonMarkdownRemark :source="wrapVueMarkdown(masks)" fullwidth />
             </template>
           </DocComponent>
         </DocSection>

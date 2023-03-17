@@ -7,6 +7,10 @@ import ShapesDemo from '../../../examples/tag/shapes.vue'
 import shapes from '../../../examples/tag/shapes.vue?raw'
 import SolidDemo from '../../../examples/tag/solid.vue'
 import solid from '../../../examples/tag/solid.vue?raw'
+import ShadowFlatDemo from '../../../examples/tag/shadow-flat.vue'
+import shadowFlat from '../../../examples/tag/shadow-flat.vue?raw'
+import ShadowHoverDemo from '../../../examples/tag/shadow-hover.vue'
+import shadowHover from '../../../examples/tag/shadow-hover.vue?raw'
 
 function wrapVueMarkdown(source: string) {
   return '```vue\n' + source + '\n```'
@@ -78,6 +82,40 @@ function wrapVueMarkdown(source: string) {
             <template #code>
               <AddonMarkdownRemark
                 :source="wrapVueMarkdown(pastel)"
+                fullwidth
+              />
+            </template>
+          </DocComponent>
+        </DocSection>
+
+        <!-- Flat shadow -->
+        <DocSection title="Flat shadow" tag="1.0.0">
+          <DocComponent label="Flat shadow examples">
+            <template #demo>
+              <div class="flex flex-wrap items-end gap-1">
+                <ShadowFlatDemo />
+              </div>
+            </template>
+            <template #code>
+              <AddonMarkdownRemark
+                :source="wrapVueMarkdown(shadowFlat)"
+                fullwidth
+              />
+            </template>
+          </DocComponent>
+        </DocSection>
+
+        <!-- Hover shadow -->
+        <DocSection title="Hover shadow" tag="1.0.0">
+          <DocComponent label="Hover shadow examples">
+            <template #demo>
+              <div class="flex flex-wrap items-end gap-1">
+                <ShadowHoverDemo />
+              </div>
+            </template>
+            <template #code>
+              <AddonMarkdownRemark
+                :source="wrapVueMarkdown(shadowHover)"
                 fullwidth
               />
             </template>

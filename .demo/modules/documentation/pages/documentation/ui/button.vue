@@ -10,13 +10,23 @@ import links from '../../../examples/button/links.vue?raw'
 import LoadingDemo from '../../../examples/button/loading.vue'
 import loading from '../../../examples/button/loading.vue?raw'
 import OutlineDemo from '../../../examples/button/outline.vue'
+import OutlineCondensedDemo from '../../../examples/button/outline-condensed.vue'
+import outlineCondensed from '../../../examples/button/outline-condensed.vue?raw'
 import outline from '../../../examples/button/outline.vue?raw'
 import PastelDemo from '../../../examples/button/pastel.vue'
 import pastel from '../../../examples/button/pastel.vue?raw'
+import PastelCondensedDemo from '../../../examples/button/pastel-condensed.vue'
+import pastelCondensed from '../../../examples/button/pastel-condensed.vue?raw'
 import ShapesDemo from '../../../examples/button/shapes.vue'
 import shapes from '../../../examples/button/shapes.vue?raw'
 import SolidDemo from '../../../examples/button/solid.vue'
 import solid from '../../../examples/button/solid.vue?raw'
+import SolidCondensedDemo from '../../../examples/button/solid-condensed.vue'
+import solidCondensed from '../../../examples/button/solid-condensed.vue?raw'
+import ShadowFlatDemo from '../../../examples/button/shadow-flat.vue'
+import shadowFlat from '../../../examples/button/shadow-flat.vue?raw'
+import ShadowHoverDemo from '../../../examples/button/shadow-hover.vue'
+import shadowHover from '../../../examples/button/shadow-hover.vue?raw'
 
 function wrapVueMarkdown(source: string) {
   return '```vue\n' + source + '\n```'
@@ -74,6 +84,23 @@ function wrapVueMarkdown(source: string) {
           </DocComponent>
         </DocSection>
 
+        <!-- Solid condensed colors -->
+        <DocSection title="Solid condensed" tag="1.0.0">
+          <DocComponent label="Smaller solid button colors">
+            <template #demo>
+              <BaseFocusLoop class="flex flex-wrap items-end gap-4">
+                <SolidCondensedDemo />
+              </BaseFocusLoop>
+            </template>
+            <template #code>
+              <AddonMarkdownRemark
+                :source="wrapVueMarkdown(solidCondensed)"
+                fullwidth
+              />
+            </template>
+          </DocComponent>
+        </DocSection>
+
         <!-- Pastel colors -->
         <DocSection title="Pastel colors" tag="1.0.0">
           <DocComponent label="Pastel button colors">
@@ -91,6 +118,23 @@ function wrapVueMarkdown(source: string) {
           </DocComponent>
         </DocSection>
 
+        <!-- Pastel condensed colors -->
+        <DocSection title="Pastel condensed" tag="1.0.0">
+          <DocComponent label="Smaller pastel button colors">
+            <template #demo>
+              <BaseFocusLoop class="flex flex-wrap items-end gap-4">
+                <PastelCondensedDemo />
+              </BaseFocusLoop>
+            </template>
+            <template #code>
+              <AddonMarkdownRemark
+                :source="wrapVueMarkdown(pastelCondensed)"
+                fullwidth
+              />
+            </template>
+          </DocComponent>
+        </DocSection>
+
         <!-- Outline colors -->
         <DocSection title="Outline colors" tag="1.0.0">
           <DocComponent label="Outline button colors">
@@ -102,6 +146,23 @@ function wrapVueMarkdown(source: string) {
             <template #code>
               <AddonMarkdownRemark
                 :source="wrapVueMarkdown(outline)"
+                fullwidth
+              />
+            </template>
+          </DocComponent>
+        </DocSection>
+
+        <!-- Outline condensed colors -->
+        <DocSection title="Outline condensed colors" tag="1.0.0">
+          <DocComponent label="Smaller outline button colors">
+            <template #demo>
+              <BaseFocusLoop class="flex flex-wrap items-end gap-4">
+                <OutlineCondensedDemo />
+              </BaseFocusLoop>
+            </template>
+            <template #code>
+              <AddonMarkdownRemark
+                :source="wrapVueMarkdown(outlineCondensed)"
                 fullwidth
               />
             </template>
@@ -135,6 +196,40 @@ function wrapVueMarkdown(source: string) {
             </template>
             <template #code>
               <AddonMarkdownRemark :source="wrapVueMarkdown(icons)" fullwidth />
+            </template>
+          </DocComponent>
+        </DocSection>
+
+        <!-- Shadow flat -->
+        <DocSection title="Flat shadow" tag="1.0.0">
+          <DocComponent label="Button with shadow">
+            <template #demo>
+              <BaseFocusLoop class="flex flex-wrap items-end gap-4">
+                <ShadowFlatDemo />
+              </BaseFocusLoop>
+            </template>
+            <template #code>
+              <AddonMarkdownRemark
+                :source="wrapVueMarkdown(shadowFlat)"
+                fullwidth
+              />
+            </template>
+          </DocComponent>
+        </DocSection>
+
+        <!-- Shadow hover -->
+        <DocSection title="Hover shadow" tag="1.0.0">
+          <DocComponent label="Button with shadow on hover">
+            <template #demo>
+              <BaseFocusLoop class="flex flex-wrap items-end gap-4">
+                <ShadowHoverDemo />
+              </BaseFocusLoop>
+            </template>
+            <template #code>
+              <AddonMarkdownRemark
+                :source="wrapVueMarkdown(shadowHover)"
+                fullwidth
+              />
             </template>
           </DocComponent>
         </DocSection>

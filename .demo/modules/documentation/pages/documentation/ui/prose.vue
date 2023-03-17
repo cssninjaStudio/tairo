@@ -16,9 +16,9 @@ function wrapVueMarkdown(source: string) {
         <DocSection title="BaseProse" tag="1.0.0">
           <DocComponent>
             <BaseProse>
-              BaseProse use Taildwind CSS <code>prose</code> that fit
-              <code>muted</code> color. It allow to react to dark mode properly.
-              (this text use <code>BaseProse</code>)
+              BaseProse uses Taildwind CSS <code>prose</code> that features the
+              <code>muted</code> color. It allows to display appropriate colors
+              when using dark mode. (this text uses <code>BaseProse</code>)
             </BaseProse>
             <template #demo>
               <div class="flex flex-col space-y-3">

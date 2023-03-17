@@ -2,48 +2,48 @@
   <BaseAvatar
     src="/img/avatars/1.svg"
     size="xs"
-    shape="straight"
+    shape="rounded"
     badgeSrc="/img/icons/flags/united-states-of-america.svg"
   />
   <BaseAvatar
     src="/img/avatars/5.svg"
-    shape="straight"
+    shape="rounded"
     badgeSrc="/img/icons/flags/united-states-of-america.svg"
   />
   <BaseAvatar
     src="/img/avatars/4.svg"
     size="md"
-    shape="straight"
+    shape="rounded"
     badgeSrc="/img/icons/flags/united-states-of-america.svg"
   />
   <BaseAvatar
     src="/img/avatars/3.svg"
     size="lg"
-    shape="straight"
+    shape="rounded"
     badgeSrc="/img/icons/flags/united-states-of-america.svg"
   />
   <BaseAvatar
     src="/img/avatars/8.svg"
     size="xl"
-    shape="straight"
+    shape="rounded"
     badgeSrc="/img/icons/flags/united-states-of-america.svg"
   />
   <BaseAvatar
     src="/img/avatars/16.svg"
     size="2xl"
-    shape="straight"
+    shape="rounded"
     badgeSrc="/img/icons/flags/united-states-of-america.svg"
   />
   <BaseAvatar
     src="/img/avatars/2.svg"
     size="3xl"
-    shape="straight"
+    shape="rounded"
     badgeSrc="/img/icons/flags/united-states-of-america.svg"
   />
   <BaseAvatar
     src="/img/avatars/20.svg"
     size="4xl"
-    shape="straight"
+    shape="rounded"
     badgeSrc="/img/icons/flags/united-states-of-america.svg"
   />
 </template>

@@ -1,23 +1,23 @@
 <template>
-  <BaseButtonIcon shape="straight" small>
+  <BaseButtonIcon shape="straight" condensed>
     <Icon
       name="ph:moon-duotone"
       class="w-5 h-5"
     />
   </BaseButtonIcon>
-  <BaseButtonIcon shape="rounded" small>
+  <BaseButtonIcon shape="rounded" condensed>
     <Icon
       name="ph:github-logo-duotone"
       class="w-5 h-5"
     />
   </BaseButtonIcon>
-  <BaseButtonIcon shape="curved" small>
+  <BaseButtonIcon shape="curved" condensed>
     <Icon
       name="ph:game-controller-duotone"
       class="w-5 h-5"
     />
   </BaseButtonIcon>
-  <BaseButtonIcon shape="full" small>
+  <BaseButtonIcon shape="full" condensed>
     <Icon
       name="ph:heart-duotone"
       class="w-5 h-5"

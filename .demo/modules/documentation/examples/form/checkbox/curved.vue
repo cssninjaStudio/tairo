@@ -1,22 +1,54 @@
 <script setup lang="ts">
-const demoThree = ref(['Option 1'])
+const demoThree = ref(true)
 </script>
 
 <template>
   <BaseCheckbox
     v-model="demoThree"
-    value="Option 1"
-    name="demo-3-1"
-    label="Curved checkbox"
+    name="demo-curved-1"
+    label="Default"
     shape="curved"
-    :classes="{ wrapper: 'text-gray-500' }"
   />
   <BaseCheckbox
     v-model="demoThree"
-    value="Option 2"
-    name="demo-3-2"
-    label="Curved checkbox"
+    name="demo-curved-2"
+    label="Muted"
     shape="curved"
-    :classes="{ wrapper: 'text-gray-500' }"
+    color="muted"
+  />
+  <BaseCheckbox
+    v-model="demoThree"
+    name="demo-curved-3"
+    label="Primary"
+    shape="curved"
+    color="primary"
+  />
+  <BaseCheckbox
+    v-model="demoThree"
+    name="demo-curved-4"
+    label="Info"
+    shape="curved"
+    color="info"
+  />
+  <BaseCheckbox
+    v-model="demoThree"
+    name="demo-curved-5"
+    label="Success"
+    shape="curved"
+    color="success"
+  />
+  <BaseCheckbox
+    v-model="demoThree"
+    name="demo-curved-6"
+    label="Warning"
+    shape="curved"
+    color="warning"
+  />
+  <BaseCheckbox
+    v-model="demoThree"
+    name="demo-curved-2"
+    label="Danger"
+    shape="curved"
+    color="danger"
   />
 </template>

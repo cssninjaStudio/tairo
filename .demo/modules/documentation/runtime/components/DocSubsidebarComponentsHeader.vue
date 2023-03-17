@@ -95,7 +95,7 @@ onKeyStroke(['Escape'], () => {
             shape="rounded"
             class="flex-1 focus:z-10"
             :class="displayMode === 'category' && 'dark:!bg-muted-800'"
-            :muted="displayMode !== 'category'"
+            :color="displayMode !== 'category' ? 'muted' : 'default'"
             @click="displayMode = 'category'"
           >
             <span class="text-xs">Topics</span>
@@ -104,7 +104,7 @@ onKeyStroke(['Escape'], () => {
             shape="rounded"
             class="flex-1 focus:z-10"
             :class="displayMode === 'component' && 'dark:!bg-muted-800'"
-            :muted="displayMode !== 'component'"
+            :color="displayMode !== 'component' ? 'muted' : 'default'"
             @click="displayMode = 'component'"
           >
             <span class="text-xs">Names</span>

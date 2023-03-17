@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import FocusLoopDemo from '../../../examples/focus-loop/base.vue'
+import focusLoop from '../../../examples/focus-loop/base.vue?raw'
+
 function wrapVueMarkdown(source: string) {
   return '```vue\n' + source + '\n```'
 }
@@ -10,6 +13,23 @@ function wrapVueMarkdown(source: string) {
 
     <DocLayout>
       <template #content>
+        <!-- Focus loop -->
+        <DocSection title="Focus loop" tag="1.0.0">
+          <DocComponent label="Setting a focus loop">
+            <template #demo>
+              <BaseFocusLoop class="flex flex-wrap items-end gap-2">
+                <FocusLoopDemo />
+              </BaseFocusLoop>
+            </template>
+            <template #code>
+              <AddonMarkdownRemark
+                :source="wrapVueMarkdown(focusLoop)"
+                fullwidth
+              />
+            </template>
+          </DocComponent>
+        </DocSection>
+
         <!-- properties -->
         <DocComponentMeta name="BaseFocusLoop" />
       </template>

@@ -159,8 +159,8 @@ const componentsByCategoryMaped = computed(() => {
             </BaseCard>
             <BaseCard shape="rounded" class="p-8 text-center">
               <Icon
-                name="logos:vue"
-                class="mx-auto mb-2 block h-10 w-10 scale-75 dark:invert"
+                name="file-icons:nuxt"
+                class="mx-auto mb-2 block h-10 w-10 scale-95 text-primary-500 dark:text-primary-400"
               />
               <BaseHeading
                 as="h4"
@@ -323,16 +323,17 @@ const componentsByCategoryMaped = computed(() => {
                     <div class="grow pr-4">
                       <BaseHeading
                         as="h3"
-                        size="xl"
+                        size="lg"
                         weight="normal"
                         lead="tight"
                         class="mb-2"
+                        :tooltip="component.name"
                       >
-                        <code class="text-muted-800 dark:text-white"
-                          >&lt;<TairoTocAnchor :level="3" prefix="">{{
-                            component.name
-                          }}</TairoTocAnchor
-                          >&gt;</code
+                        <span
+                          class="block w-full max-w-[240px] line-clamp-1 font-mono text-muted-800 dark:text-white"
+                          ><TairoTocAnchor :level="3" prefix="" class="block"
+                            >&lt;{{ component.name }}&gt;</TairoTocAnchor
+                          ></span
                         >
                       </BaseHeading>
                       <BaseParagraph lead="tight" size="sm">
@@ -354,13 +355,13 @@ const componentsByCategoryMaped = computed(() => {
                     </div>
                     <template v-if="component.route?.meta?.documentation">
                       <img
-                        class="h-20 flex-shrink-0 opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
+                        class="h-16 flex-shrink-0 opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
                         v-if="component.route?.meta?.documentation.icon?.src"
                         :src="component.route?.meta?.documentation.icon?.src"
                         :alt="component.name + ' Tairo Documentation'"
                       />
                       <img
-                        class="hidden h-20 flex-shrink-0 opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
+                        class="hidden h-16 flex-shrink-0 opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:block"
                         v-if="component.route?.meta?.documentation.icon?.src"
                         :src="
                           component.route?.meta?.documentation.icon?.srcDark ||

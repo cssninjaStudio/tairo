@@ -2,48 +2,48 @@
   <BaseAvatar
     src="/img/avatars/1.svg"
     size="xs"
-    shape="straight"
-    dot
+    shape="curved"
+    dot="success"
   />
   <BaseAvatar
     src="/img/avatars/5.svg"
-    shape="straight"
+    shape="curved"
     dot="info"
   />
   <BaseAvatar
     src="/img/avatars/4.svg"
     size="md"
-    shape="straight"
+    shape="curved"
     dot="warning"
   />
   <BaseAvatar
     src="/img/avatars/3.svg"
     size="lg"
-    shape="straight"
+    shape="curved"
     dot="pink"
   />
   <BaseAvatar
     src="/img/avatars/8.svg"
     size="xl"
-    shape="straight"
+    shape="curved"
     dot="danger"
   />
   <BaseAvatar
     src="/img/avatars/16.svg"
     size="2xl"
-    shape="straight"
+    shape="curved"
     dot="yellow"
   />
   <BaseAvatar
     src="/img/avatars/2.svg"
     size="3xl"
-    shape="straight"
-    dot
+    shape="curved"
+    dot="info"
   />
   <BaseAvatar
     src="/img/avatars/20.svg"
     size="4xl"
-    shape="straight"
-    dot
+    shape="curved"
+    dot="success"
   />
 </template>

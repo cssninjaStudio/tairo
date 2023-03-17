@@ -5,11 +5,50 @@ const demoFour = ref(true)
 <template>
   <BaseCheckbox
     v-model="demoFour"
-    name="demo-4"
-    label="Circle checkbox"
+    name="demo-full-1"
+    label="Default"
     shape="full"
-    :true-value="'checked'"
-    :false-value="'not-checked'"
-    :classes="{ wrapper: 'text-gray-500' }"
+  />
+  <BaseCheckbox
+    v-model="demoFour"
+    name="demo-full-2"
+    label="Muted"
+    shape="full"
+    color="muted"
+  />
+  <BaseCheckbox
+    v-model="demoFour"
+    name="demo-full-3"
+    label="Primary"
+    shape="full"
+    color="primary"
+  />
+  <BaseCheckbox
+    v-model="demoFour"
+    name="demo-full-4"
+    label="Info"
+    shape="full"
+    color="info"
+  />
+  <BaseCheckbox
+    v-model="demoFour"
+    name="demo-full-5"
+    label="Success"
+    shape="full"
+    color="success"
+  />
+  <BaseCheckbox
+    v-model="demoFour"
+    name="demo-full-6"
+    label="Warning"
+    shape="full"
+    color="warning"
+  />
+  <BaseCheckbox
+    v-model="demoFour"
+    name="demo-full-2"
+    label="Danger"
+    shape="full"
+    color="danger"
   />
 </template>

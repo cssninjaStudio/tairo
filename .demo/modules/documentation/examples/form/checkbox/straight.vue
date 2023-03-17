@@ -5,9 +5,50 @@ const demoOne = ref(true)
 <template>
   <BaseCheckbox
     v-model="demoOne"
-    name="demo-1"
-    label="Straight checkbox"
+    name="demo-straight-1"
+    label="Default"
     shape="straight"
-    class="text-gray-500"
+  />
+  <BaseCheckbox
+    v-model="demoOne"
+    name="demo-straight-2"
+    label="Muted"
+    shape="straight"
+    color="muted"
+  />
+  <BaseCheckbox
+    v-model="demoOne"
+    name="demo-straight-3"
+    label="Primary"
+    shape="straight"
+    color="primary"
+  />
+  <BaseCheckbox
+    v-model="demoOne"
+    name="demo-straight-4"
+    label="Info"
+    shape="straight"
+    color="info"
+  />
+  <BaseCheckbox
+    v-model="demoOne"
+    name="demo-straight-5"
+    label="Success"
+    shape="straight"
+    color="success"
+  />
+  <BaseCheckbox
+    v-model="demoOne"
+    name="demo-straight-6"
+    label="Warning"
+    shape="straight"
+    color="warning"
+  />
+  <BaseCheckbox
+    v-model="demoOne"
+    name="demo-straight-2"
+    label="Danger"
+    shape="straight"
+    color="danger"
   />
 </template>

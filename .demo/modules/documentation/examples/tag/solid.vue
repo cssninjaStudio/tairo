@@ -2,7 +2,9 @@
   <BaseTag shape="rounded" color="default">
     Label
   </BaseTag>
-  <BaseTag shape="rounded" muted>Label</BaseTag>
+  <BaseTag shape="rounded" color="muted">
+    Label
+  </BaseTag>
   <BaseTag shape="rounded" color="primary">
     Label
   </BaseTag>
