@@ -23,10 +23,9 @@ const { data, pending, error, refresh } = await useFetch(
 
 const currentTask = ref()
 
-function openTaskPanel(id: number, project: any) {
-  currentTask.value = project.tasks.find((task: any) => task.id === id)
-  open('task')
-  console.log('TASK: ', currentTask.value)
+function openTaskPanel(id: number, tasks: any) {
+  currentTask.value = tasks.find((task: any) => task.id === id)
+  open('task', { task: currentTask })
 }
 </script>
 
@@ -41,6 +40,16 @@ function openTaskPanel(id: number, project: any) {
         class="z-20"
         shape="curved"
       >
+        <BaseDropdownItem
+          :to="`/layouts/projects/board/${slug}`"
+          title="Board view"
+          text="Swicth to board view"
+        >
+          <template #start>
+            <Icon name="ph:kanban-duotone" class="w-5 h-5 block mr-2" />
+          </template>
+        </BaseDropdownItem>
+        <BaseDropdownDivide />
         <BaseDropdownItem to="#" title="Edit" text="Edit this project">
           <template #start>
             <Icon name="ph:pencil-duotone" class="w-5 h-5 block mr-2" />
@@ -136,7 +145,10 @@ function openTaskPanel(id: number, project: any) {
                             </BaseParagraph>
                           </div>
                         </div>
-                        <BaseAvatarGroup :avatars="data?.project.team" />
+                        <BaseAvatarGroup
+                          :avatars="data?.project.team"
+                          :limit="3"
+                        />
                       </div>
                     </div>
                     <div class="w-72 shrink-0">
@@ -261,7 +273,7 @@ function openTaskPanel(id: number, project: any) {
                             <BaseButtonIcon
                               shape="full"
                               tooltip="Download file"
-                              small
+                              condensed
                             >
                               <Icon name="lucide:arrow-down" />
                             </BaseButtonIcon>
@@ -502,14 +514,25 @@ function openTaskPanel(id: number, project: any) {
                 v-for="item in data?.project.tasks"
                 :key="item.id"
                 elevated-hover
-                class="flex flex-col hover:!border-primary-500"
-                @click="openTaskPanel(item.id, data?.project)"
+                class="flex flex-col hover:!border-primary-500 cursor-pointer"
+                @click="openTaskPanel(item.id, data?.project.tasks)"
               >
                 <div class="p-5 flex flex-col sm:flex-row items-center">
                   <div class="flex flex-col sm:flex-row gap-3">
                     <Icon
+                      v-if="item.status === 6"
                       name="ph:check-circle-duotone"
+                      class="shrink-0 w-6 h-6 text-success-500"
+                    />
+                    <Icon
+                      v-if="item.status === 1"
+                      name="ph:timer-duotone"
                       class="shrink-0 w-6 h-6 text-muted-400"
+                    />
+                    <Icon
+                      v-if="item.status === 2 || item.status === 3"
+                      name="ph:warning-duotone"
+                      class="shrink-0 w-6 h-6 text-warning-500"
                     />
                     <div class="leading-none text-center sm:text-left">
                       <h4
@@ -517,7 +540,7 @@ function openTaskPanel(id: number, project: any) {
                       >
                         {{ item.name }}
                       </h4>
-                      <p class="font-sans text-xs text-muted-400">
+                      <p class="line-clamp-2 font-sans text-xs text-muted-400">
                         {{ item.description }}
                       </p>
                     </div>
@@ -526,8 +549,17 @@ function openTaskPanel(id: number, project: any) {
                 <div
                   class="mt-auto px-5 py-3 flex items-center justify-between rounded-b-lg bg-muted-50 dark:bg-muted-700/50"
                 >
-                  <div class="grow max-w-[180px]">
-                    <BaseProgress :value="item.completion" size="xs" />
+                  <div class="flex items-center gap-2 grow max-w-[180px]">
+                    <BaseAvatar
+                      size="xxs"
+                      :src="item.assignee.src"
+                      :tooltip="item.assignee.tooltip"
+                    />
+                    <BaseProgress
+                      :value="item.completion"
+                      size="xs"
+                      :color="item.status === 6 ? 'success' : 'primary'"
+                    />
                   </div>
                   <div class="flex items-center gap-4 text-muted-400">
                     <div class="flex items-center gap-1 text-sm">

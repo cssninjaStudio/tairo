@@ -2,6 +2,7 @@
 const props = withDefaults(
   defineProps<{
     sidebar?: boolean
+    horizontalScroll?: boolean
   }>(),
   {
     sidebar: true,
@@ -23,7 +24,10 @@ const showNavBurger = computed(() => {
 </script>
 
 <template>
-  <div class="relative z-50 mb-5 flex h-16 items-center gap-2">
+  <div
+    class="relative z-50 mb-5 flex h-16 items-center gap-2"
+    :class="props.horizontalScroll && 'pr-4 xl:pr-10'"
+  >
     <TairoNavigationBurger v-if="showNavBurger" class="-ml-3" />
 
     <BaseHeading

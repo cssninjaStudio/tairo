@@ -41,7 +41,7 @@ export function usePanels() {
 
   const panels = computed(
     () =>
-      app.tairo?.panels.map((panel) => ({
+      app.tairo?.panels?.map((panel) => ({
         ...panel,
         position: (panel as any).position ?? 'left',
         overlay: (panel as any).overlay ?? true,

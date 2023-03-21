@@ -101,6 +101,7 @@ const { data, pending, error, refresh } = await useFetch(
                         :src="item.customer.logo"
                         size="sm"
                         shape="straight"
+                        mask="blob"
                         :tooltip="item.name"
                         class="bg-muted-100 dark:bg-muted-700"
                       />
@@ -126,6 +127,7 @@ const { data, pending, error, refresh } = await useFetch(
                           :src="stack.icon"
                           size="xxs"
                           shape="straight"
+                          mask="blob"
                           :tooltip="stack.name"
                           class="bg-muted-100 dark:bg-muted-700"
                         />
@@ -212,6 +214,7 @@ const { data, pending, error, refresh } = await useFetch(
                           :src="item.customer.logo"
                           size="sm"
                           shape="straight"
+                          mask="blob"
                           :tooltip="item.name"
                           class="bg-muted-100 dark:bg-muted-700"
                         />
@@ -238,6 +241,7 @@ const { data, pending, error, refresh } = await useFetch(
                             :src="stack.icon"
                             size="xxs"
                             shape="straight"
+                            mask="blob"
                             :tooltip="stack.name"
                             class="bg-muted-100 dark:bg-muted-700"
                           />
@@ -267,7 +271,11 @@ const { data, pending, error, refresh } = await useFetch(
                         </p>
                       </div>
                       <div>
-                        <BaseAvatarGroup :avatars="item.team" size="xs" />
+                        <BaseAvatarGroup
+                          :avatars="item.team"
+                          size="xs"
+                          :limit="3"
+                        />
                       </div>
                     </div>
                   </NuxtLink>

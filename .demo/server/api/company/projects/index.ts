@@ -100,7 +100,7 @@ async function getDemoData() {
       files: [
         {
           id: 0,
-          name: 'Company UX Guide',
+          name: 'company-ux-guide.pdf',
           icon: '/img/icons/files/pdf.svg',
           size: '4.7MB',
           version: '1.5.2',
@@ -112,7 +112,7 @@ async function getDemoData() {
         },
         {
           id: 1,
-          name: 'Thech summit expenses',
+          name: 'tech-summit-expenses.xlsx',
           icon: '/img/icons/files/sheet.svg',
           size: '34KB',
           version: '1.1.3',
@@ -124,7 +124,7 @@ async function getDemoData() {
         },
         {
           id: 2,
-          name: 'Project outline',
+          name: 'project-outline.docx',
           icon: '/img/icons/files/doc-2.svg',
           size: '77KB',
           version: '1.0.0',
@@ -136,7 +136,7 @@ async function getDemoData() {
         },
         {
           id: 3,
-          name: 'UX presentation',
+          name: 'ux-presentation.pptx',
           icon: '/img/icons/files/ppt.svg',
           size: '2.3MB',
           version: '1.0.0',
@@ -148,7 +148,7 @@ async function getDemoData() {
         },
         {
           id: 4,
-          name: 'Website Homepage Redesign',
+          name: 'website-homepage-redesign.ai',
           icon: '/img/icons/files/ai.svg',
           size: '4.8MB',
           version: '1.0.0',
@@ -160,7 +160,7 @@ async function getDemoData() {
         },
         {
           id: 5,
-          name: 'UX Ramp Up for Interns',
+          name: 'interns-ux-rampup.docx',
           icon: '/img/icons/files/doc-2.svg',
           size: '1.8MB',
           version: '1.2.0',
@@ -210,14 +210,23 @@ async function getDemoData() {
           id: 0,
           name: 'Create a new figma design for the new homepage elements',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
-          completion: 75,
+            'We should have a collection of the most basic UI elements like buttons, badges and form elements. Then we should use these to create reusable section blocks that we can also use in other pages of the project.',
+          completion: 100,
+          status: 5,
           created: '2 days ago',
-          attachments: 2,
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'company-ux-guide.pdf',
               icon: '/img/icons/files/pdf.svg',
               size: '4.7MB',
               version: '1.5.2',
@@ -229,11 +238,11 @@ async function getDemoData() {
             },
             {
               id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
+              name: 'project_sketches.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '8.9MB',
               version: '1.1.3',
-              uploaded: '3 days ago',
+              uploaded: 'a week ago',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
@@ -242,48 +251,48 @@ async function getDemoData() {
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a set of button elements',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a set of badge elements',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a set of input elements',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a set of checkbox elements',
+              done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a set of card elements',
+              done: true,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think buttons corners should be a little more rounded.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Marjory L.',
+                picture: '/img/avatars/12.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Are you planning to add this as a global setting in the configuration file?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Not sure about it yet. Still need to check this out with the engineering team',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Marjory L.',
+                picture: '/img/avatars/12.svg',
                 posted: '2 days ago',
               },
             },
@@ -291,115 +300,118 @@ async function getDemoData() {
         },
         {
           id: 1,
-          name: 'Build a desktop and mobile landing page wireframe',
+          name: 'Build a landing page template for future marketing campaigns',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 25,
+            'The website should provide a customizable landing page template that can be used to support marketing campaigns. It should also be easily customizable by the marketing team.',
+          completion: 58,
+          status: 1,
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
-              icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              name: 'ux-notes.docx',
+              icon: '/img/icons/files/doc-2.svg',
+              size: '89KB',
+              version: '1.8.2',
               uploaded: '2 weeks ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
+                name: 'Melany D.',
+                picture: '/img/avatars/25.svg',
               },
             },
             {
               id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
+              name: 'landing_page.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '4.2MB',
+              version: '1.4.1',
+              uploaded: '5 days ago',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable hero section',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable pricing section',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable features section',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable testimonials section',
               done: false,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable contact section',
               done: false,
             },
           ],
-          created: '2 days ago',
-          attachments: 0,
+          created: '6 days ago',
+          attachments: 2,
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Iam wondering if we should add a section for the team members? it could be nice. And what about a section for the latest blog posts?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Selena M.',
+                picture: '/img/avatars/24.svg',
+                posted: '7 hours ago',
               },
             },
           ],
         },
         {
           id: 2,
-          name: 'Build a custom video player javascript librar',
+          name: 'Build a custom javascript video player with streaming support',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            "Since we couldn't find an out of the box solution, we are forced to build a custom player that we can reuse in othe projects.",
+          completion: 45,
+          status: 1,
+          created: '18 days ago',
+          assignee: {
+            id: 15,
+            src: '/img/avatars/15.svg',
+            badge: '/img/stacks/js.svg',
+            role: 'Fullstack Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Josh C.',
+            text: 'JC',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'player_specifications.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '2.9MB',
+              version: '1.0.1',
               uploaded: '2 weeks ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
+                name: 'Greta K.',
+                picture: '/img/avatars/20.svg',
               },
             },
             {
               id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
+              name: 'player-mockup.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '5.7MB',
+              version: '1.0.0',
+              uploaded: '5 days ago',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
@@ -408,214 +420,204 @@ async function getDemoData() {
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement basic frame and controls',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Design and implement custom svg control icons',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: true,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement video streaming support',
               done: false,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement video playback speed control',
+              done: true,
+            },
+            {
+              text: 'Implement video volume control',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Iam wondering if we should add several display modes for the player? It could be nice to have a fullscreen mode for example.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Erik K.',
+                picture: '/img/avatars/8.svg',
+                posted: '3 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Yeah, that would be nice. I will add it to the list of features. Anything else you can think of?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+                posted: '3 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think that should be it for now. I will let you know if I think of anything else. Now that you say it, ahave you though about cusomtization and Tailwind CSS support?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Erik K.',
+                picture: '/img/avatars/8.svg',
+                posted: '3 days ago',
               },
             },
           ],
         },
         {
           id: 3,
-          name: 'Design custom illustrations for landing page',
+          name: 'Design a set of custom branded illustrations for the website and the app',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            'The customer wants to have a set of illustrations that can be used on the website and the app. They should be custom branded and fit the overall design.',
+          completion: 100,
+          status: 5,
+          created: '2 weeks ago',
+          assignee: {
+            id: 15,
+            src: '/img/avatars/15.svg',
+            badge: '/img/stacks/js.svg',
+            role: 'Fullstack Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Josh C.',
+            text: 'JC',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'company_branding.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
-              uploaded: '2 weeks ago',
+              size: '25.8MB',
+              version: '4.5.2',
+              uploaded: '1 month ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
-              },
-            },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Lana H.',
+                picture: '/img/avatars/4.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create illustrations for the landing page',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Rework svgs to use the currentColor for fill and stroke attributes',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Prepare svg parts that will be animated',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Work on a set of branded icons',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'This is starting to look really good. I wonder if we should abstract the characters a little bit more? What do you guys think?',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                posted: '5 hours ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Looks good to me. I think we can start working on the icons now. I will add it to the list of features. Anything else you can think of?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+                posted: '2 hours ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think that should be it for now. I will let you know if I think of anything else. Now that you say it, have you though about cusomtization and Tailwind CSS support?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+                posted: '1 hour ago',
               },
             },
           ],
         },
         {
           id: 4,
-          name: 'Implement job management API controller',
+          name: 'Implement a complete job offers API endpoint',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            'The API endpoint should return a JSON list of jobs. The endpoint should be able to filter the results by keyword, location, type and category.',
+          completion: 65,
+          status: 1,
+          created: '2 weeks ago',
+          assignee: {
+            id: 7,
+            src: '/img/avatars/3.svg',
+            badge: '/img/stacks/reactjs.svg',
+            role: 'Frontend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Clarke G.',
+            text: 'CG',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'api-jobs-specs.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '1.2MB',
+              version: '1.9.2',
               uploaded: '2 weeks ago',
               author: {
                 name: 'Hermann M.',
                 picture: '/img/avatars/16.svg',
               },
             },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-              },
-            },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new API endpoint',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database table',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database migration',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database seeder',
               done: false,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database model',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I feel this architecture is not the best. I think we should use a different approach. What do you guys think?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Rob H.',
+                picture: '/img/avatars/13.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: "Yup, it looks clunky to me as well. Let's try something different. I will add it to the list of features. Anything else you can think of?",
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'John B.',
+                picture: '/img/avatars/8.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I have sent some notes to the team. That should help them refactor the code.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
                 posted: '2 days ago',
               },
             },
@@ -623,82 +625,79 @@ async function getDemoData() {
         },
         {
           id: 5,
-          name: 'Implement user management API controller',
+          name: 'Implement company users API endpoint',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
+            'The API endpoint should return a JSON list of users. The endpoint should be able to filter the results by keyword, location, type and category.',
+          completion: 100,
+          status: 0,
           created: '2 days ago',
-          attachments: 0,
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'api-users-specs.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '1.2MB',
+              version: '1.9.2',
               uploaded: '2 weeks ago',
               author: {
                 name: 'Hermann M.',
                 picture: '/img/avatars/16.svg',
               },
             },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-              },
-            },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new API endpoint',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database table',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database migration',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a new database seeder',
+              done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a new database model',
+              done: true,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I feel this architecture is not the best. I think we should use a different approach. What do you guys think?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Betty L.',
+                picture: '/img/avatars/24.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I have sent some notes to the team. That should help them refactor the code.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'John B.',
+                picture: '/img/avatars/8.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Hold your horses! I am still working on it. I will let you know when I am done.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Josh D.',
+                picture: '/img/avatars/11.svg',
                 posted: '2 days ago',
               },
             },
@@ -706,17 +705,173 @@ async function getDemoData() {
         },
         {
           id: 6,
-          name: 'Develop a JWT authentication controller',
+          name: 'Build a complete authentication system and API endpoint',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
+            'The authentication system should be able to handle user registration, login, logout, password reset and email verification. The API endpoint should return a Bearer token.',
+          completion: 100,
+          status: 0,
           created: '2 days ago',
-          attachments: 0,
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'api-auth-specs.pdf',
               icon: '/img/icons/files/pdf.svg',
+              size: '2.4MB',
+              version: '1.0.0',
+              uploaded: '3 weeks ago',
+              author: {
+                name: 'Josh S.',
+                picture: '/img/avatars/11.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'authentication.docx',
+              icon: '/img/icons/files/doc-2.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '5 days ago',
+              author: {
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Create a new API endpoint',
+              done: true,
+            },
+            {
+              text: 'Create a new database table',
+              done: true,
+            },
+            {
+              text: 'Create a new database migration',
+              done: true,
+            },
+            {
+              text: 'Create a new database seeder',
+              done: true,
+            },
+            {
+              text: 'Create a new database model',
+              done: true,
+            },
+          ],
+          comments: [],
+        },
+        {
+          id: 7,
+          name: 'Create reusable components to build different pricing sections',
+          description:
+            'The components should be able to handle different pricing plans and should be able to display the most popular plan. Also, the components should be able to display a button to purchase the plan.',
+          completion: 100,
+          status: 5,
+          created: '2 weeks ago',
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'pricing-components.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '9.5MB',
+              version: '1.0.0',
+              uploaded: '5 days ago',
+              author: {
+                name: 'Ana B.',
+                picture: '/img/avatars/9.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Draw some first stage wireframes',
+              done: true,
+            },
+            {
+              text: 'Design components in a Figma project',
+              done: true,
+            },
+            {
+              text: 'Design pricing sections in the Figma project',
+              done: true,
+            },
+            {
+              text: 'Implement the components in the project',
+              done: true,
+            },
+            {
+              text: 'Implement the pricing sections in the project',
+              done: true,
+            },
+          ],
+          comments: [
+            {
+              text: 'I like very much the design. There is just one thing I would change. I would make the button a bit bigger.',
+              author: {
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+                posted: '4 days ago',
+              },
+            },
+            {
+              text: 'Are you sure? I think the button is the right size. I will ask the team what they think.',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+                posted: '2 days ago',
+              },
+            },
+            {
+              text: 'I think the button is fine. I would not change it.',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+                posted: '2 days ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 8,
+          name: 'Implement a user profile page',
+          description:
+            'The user profile page should display the user avatar, name, email, bio, location, social links and a list of the user projects.',
+          completion: 100,
+          status: 5,
+          created: '3 weeks ago',
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'profile-view.ai',
+              icon: '/img/icons/files/ai.svg',
               size: '4.7MB',
               version: '1.5.2',
               uploaded: '2 weeks ago',
@@ -725,44 +880,264 @@ async function getDemoData() {
                 picture: '/img/avatars/16.svg',
               },
             },
+          ],
+          checklist: [
             {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
+              text: 'Draw some first stage wireframes',
+              done: true,
+            },
+            {
+              text: 'Design the user profile page in a Figma project',
+              done: true,
+            },
+            {
+              text: 'Implement the user profile page in the project',
+              done: true,
+            },
+          ],
+          comments: [
+            {
+              text: 'This looks great! I have just one question. How will the user change the avatar?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Henry D.',
+                picture: '/img/avatars/1.svg',
+                posted: '8 hours ago',
+              },
+            },
+            {
+              text: 'I think the user will be able to change the avatar from the settings page.',
+              author: {
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
+                posted: '8 hours ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 9,
+          name: 'Create a concept for a contact list page',
+          description:
+            'The contact list page should display a list of contacts with their name, email, phone number and avatar.',
+          completion: 75,
+          status: 3,
+          created: '2 weeks ago',
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'contact-list.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '7.9MB',
+              version: '1.1.1',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Draw some first stage wireframes',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Design the contact list page in a Figma project',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement the contact list page in the project',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Build a search functionality for the contact list page',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'The filter is a great addition. I think it will be very useful.',
+              author: {
+                name: 'Melany L.',
+                picture: '/img/avatars/25.svg',
+                posted: '6 hours ago',
+              },
+            },
+            {
+              text: "That's the cherry on top of the cake. I think it's ready to be implemented.",
+              author: {
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+                posted: '7 hours ago',
+              },
+            },
+            {
+              text: 'I agree. I will start working on the implementation.',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+                posted: '8 hours ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 10,
+          name: 'Implement a contact list API endpoint',
+          description:
+            'The contact list API endpoint should return a list of contacts with their name, email, phone number and avatar.',
+          completion: 50,
+          status: 1,
+          created: '6 days ago',
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'contact-list-api.pdf',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'contact-list-api.xlsx',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.0.0',
+              uploaded: '1 week ago',
+              author: {
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Create a new API endpoint for the contact list',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the contact list',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the contact list',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the contact list',
+              done: false,
+            },
+            {
+              text: 'Create filter queries and pagination for the contact list',
+              done: false,
+            },
+          ],
+          comments: [
+            {
+              text: 'I think we should add a search functionality to the contact list.',
+              author: {
+                name: 'Lana E.',
+                picture: '/img/avatars/4.svg',
+                posted: '2 hours ago',
+              },
+            },
+            {
+              text: 'I agree. I will add it to the checklist.',
+              author: {
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+                posted: '2 days ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 11,
+          name: 'Implement a messaging frontend for contacts',
+          description:
+            'The messaging frontend should allow users to send messages to each other. The messages should be stored in a database. The frontend should be implemented in React.',
+          completion: 100,
+          status: 5,
+          created: '2 weeks ago',
+          assignee: {
+            id: 7,
+            src: '/img/avatars/3.svg',
+            badge: '/img/stacks/reactjs.svg',
+            role: 'Frontend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Clarke G.',
+            text: 'CG',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'messaging-frontend.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '7.1MB',
+              version: '1.0.0',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Elias D.',
+                picture: '/img/avatars/13.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'messaging-frontend.pdf',
+              icon: '/img/icons/files/pdf.svg',
+              size: '1.2MB',
+              version: '1.0.0',
+              uploaded: '6 days ago',
+              author: {
+                name: 'Josh D.',
+                picture: '/img/avatars/11.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Create new components for the messaging frontend',
+              done: true,
+            },
+            {
+              text: 'Add a new route for the messaging frontend',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the messages',
+              done: true,
+            },
+            {
+              text: 'Implement the messaging functionality',
+              done: true,
+            },
+          ],
+          comments: [
+            {
+              text: 'I think we should add the ability to send images and files. What do you think?',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
@@ -770,17 +1145,17 @@ async function getDemoData() {
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Iam not sure if we should add this. It would be a lot of work. What do you think @Hermann M.?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Josh D.',
+                picture: '/img/avatars/11.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think we should add it. It would be a nice feature.',
               author: {
-                name: 'Clarissa M.',
+                name: 'Hermann M.',
                 picture: '/img/avatars/5.svg',
                 posted: '2 days ago',
               },
@@ -788,84 +1163,57 @@ async function getDemoData() {
           ],
         },
         {
-          id: 7,
-          name: 'Create a new design for the homepage',
+          id: 12,
+          name: 'Implement a messaging API endpoint for the frontend',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            'The messaging API endpoint should allow users to send messages to each other. The messages should be stored in a database. The API endpoint should be implemented in Node.js.',
+          completion: 65,
+          status: 1,
+          created: '3 weeks ago',
+          assignee: {
+            id: 7,
+            src: '/img/avatars/3.svg',
+            badge: '/img/stacks/reactjs.svg',
+            role: 'Frontend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Clarke G.',
+            text: 'CG',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'messaging-api-endpoint.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '2.2MB',
+              version: '1.0.2',
               uploaded: '2 weeks ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
-              },
-            },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new API endpoint for the messaging frontend',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement the messaging functionality',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: true,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Save the messages in a database',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I have been doing some heavy lifting on this. I think we should defintiely add the ability to send images and files. What do you think?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
+                posted: '10 hours ago',
               },
             },
           ],
@@ -907,8 +1255,8 @@ async function getDemoData() {
         {
           id: 13,
           src: '/img/avatars/10.svg',
-          badge: '/img/stacks/js.svg',
-          role: 'UI/UX Designer',
+          badge: '/img/stacks/reactjs.svg',
+          role: 'Software Engineer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Kendra W.',
           text: 'KW',
@@ -916,17 +1264,44 @@ async function getDemoData() {
         {
           id: 21,
           src: '/img/avatars/21.svg',
-          badge: '/img/stacks/js.svg',
-          role: 'UI/UX Designer',
+          badge: '/img/stacks/html5.svg',
+          role: 'UI Designer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Elizabet F.',
           text: 'EF',
+        },
+        {
+          id: 27,
+          src: '/img/avatars/24.svg',
+          badge: '/img/stacks/illustrator.svg',
+          role: 'UI/UX Designer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+          tooltip: 'Carmen E.',
+          text: 'CE',
+        },
+        {
+          id: 15,
+          src: '/img/avatars/15.svg',
+          badge: '/img/stacks/js.svg',
+          role: 'Fullstack Developer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+          tooltip: 'Josh C.',
+          text: 'JC',
+        },
+        {
+          id: 12,
+          src: '/img/avatars/16.svg',
+          badge: '/img/stacks/react.svg',
+          role: 'Fullstack Developer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+          tooltip: 'Hermann M.',
+          text: 'HM',
         },
       ],
       files: [
         {
           id: 0,
-          name: 'Company UX Guide',
+          name: 'company-ux-guide.pdf',
           icon: '/img/icons/files/pdf.svg',
           size: '4.7MB',
           version: '1.5.2',
@@ -938,7 +1313,7 @@ async function getDemoData() {
         },
         {
           id: 1,
-          name: 'Thech summit expenses',
+          name: 'tech-summit-expenses.xlsx',
           icon: '/img/icons/files/sheet.svg',
           size: '34KB',
           version: '1.1.3',
@@ -950,7 +1325,7 @@ async function getDemoData() {
         },
         {
           id: 2,
-          name: 'Project outline',
+          name: 'project-outline.docx',
           icon: '/img/icons/files/doc-2.svg',
           size: '77KB',
           version: '1.0.0',
@@ -962,7 +1337,7 @@ async function getDemoData() {
         },
         {
           id: 3,
-          name: 'UX presentation',
+          name: 'ux-presentation.pptx',
           icon: '/img/icons/files/ppt.svg',
           size: '2.3MB',
           version: '1.0.0',
@@ -974,7 +1349,7 @@ async function getDemoData() {
         },
         {
           id: 4,
-          name: 'Website Homepage Redesign',
+          name: 'website-homepage-redesign.ai',
           icon: '/img/icons/files/ai.svg',
           size: '4.8MB',
           version: '1.0.0',
@@ -986,7 +1361,7 @@ async function getDemoData() {
         },
         {
           id: 5,
-          name: 'UX Ramp Up for Interns',
+          name: 'interns-ux-rampup.docx',
           icon: '/img/icons/files/doc-2.svg',
           size: '1.8MB',
           version: '1.2.0',
@@ -1034,16 +1409,25 @@ async function getDemoData() {
       tasks: [
         {
           id: 0,
-          name: 'Create a new design for the homepage',
+          name: 'Create a new figma design for the new homepage elements',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
-          completion: 75,
+            'We should have a collection of the most basic UI elements like buttons, badges and form elements. Then we should use these to create reusable section blocks that we can also use in other pages of the project.',
+          completion: 100,
+          status: 5,
           created: '2 days ago',
-          attachments: 2,
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'company-ux-guide.pdf',
               icon: '/img/icons/files/pdf.svg',
               size: '4.7MB',
               version: '1.5.2',
@@ -1055,11 +1439,11 @@ async function getDemoData() {
             },
             {
               id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
+              name: 'project_sketches.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '8.9MB',
               version: '1.1.3',
-              uploaded: '3 days ago',
+              uploaded: 'a week ago',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
@@ -1068,48 +1452,48 @@ async function getDemoData() {
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a set of button elements',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a set of badge elements',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a set of input elements',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a set of checkbox elements',
+              done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a set of card elements',
+              done: true,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think buttons corners should be a little more rounded.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Marjory L.',
+                picture: '/img/avatars/12.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Are you planning to add this as a global setting in the configuration file?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Not sure about it yet. Still need to check this out with the engineering team',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Marjory L.',
+                picture: '/img/avatars/12.svg',
                 posted: '2 days ago',
               },
             },
@@ -1117,115 +1501,118 @@ async function getDemoData() {
         },
         {
           id: 1,
-          name: 'Build a desktop and mobile landing page wireframe',
+          name: 'Build a landing page template for future marketing campaigns',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 25,
+            'The website should provide a customizable landing page template that can be used to support marketing campaigns. It should also be easily customizable by the marketing team.',
+          completion: 58,
+          status: 1,
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
-              icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              name: 'ux-notes.docx',
+              icon: '/img/icons/files/doc-2.svg',
+              size: '89KB',
+              version: '1.8.2',
               uploaded: '2 weeks ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
+                name: 'Melany D.',
+                picture: '/img/avatars/25.svg',
               },
             },
             {
               id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
+              name: 'landing_page.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '4.2MB',
+              version: '1.4.1',
+              uploaded: '5 days ago',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable hero section',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable pricing section',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable features section',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable testimonials section',
               done: false,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable contact section',
               done: false,
             },
           ],
-          created: '2 days ago',
-          attachments: 0,
+          created: '6 days ago',
+          attachments: 2,
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Iam wondering if we should add a section for the team members? it could be nice. And what about a section for the latest blog posts?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Selena M.',
+                picture: '/img/avatars/24.svg',
+                posted: '7 hours ago',
               },
             },
           ],
         },
         {
           id: 2,
-          name: 'Build a custom video player javascript librar',
+          name: 'Build a custom javascript video player with streaming support',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            "Since we couldn't find an out of the box solution, we are forced to build a custom player that we can reuse in othe projects.",
+          completion: 45,
+          status: 1,
+          created: '18 days ago',
+          assignee: {
+            id: 15,
+            src: '/img/avatars/15.svg',
+            badge: '/img/stacks/js.svg',
+            role: 'Fullstack Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Josh C.',
+            text: 'JC',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'player_specifications.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '2.9MB',
+              version: '1.0.1',
               uploaded: '2 weeks ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
+                name: 'Greta K.',
+                picture: '/img/avatars/20.svg',
               },
             },
             {
               id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
+              name: 'player-mockup.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '5.7MB',
+              version: '1.0.0',
+              uploaded: '5 days ago',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
@@ -1234,214 +1621,204 @@ async function getDemoData() {
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement basic frame and controls',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Design and implement custom svg control icons',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: true,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement video streaming support',
               done: false,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement video playback speed control',
+              done: true,
+            },
+            {
+              text: 'Implement video volume control',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Iam wondering if we should add several display modes for the player? It could be nice to have a fullscreen mode for example.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Erik K.',
+                picture: '/img/avatars/8.svg',
+                posted: '3 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Yeah, that would be nice. I will add it to the list of features. Anything else you can think of?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+                posted: '3 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think that should be it for now. I will let you know if I think of anything else. Now that you say it, ahave you though about cusomtization and Tailwind CSS support?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Erik K.',
+                picture: '/img/avatars/8.svg',
+                posted: '3 days ago',
               },
             },
           ],
         },
         {
           id: 3,
-          name: 'Design custom illustrations for landing page',
+          name: 'Design a set of custom branded illustrations for the website and the app',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            'The customer wants to have a set of illustrations that can be used on the website and the app. They should be custom branded and fit the overall design.',
+          completion: 100,
+          status: 5,
+          created: '2 weeks ago',
+          assignee: {
+            id: 15,
+            src: '/img/avatars/15.svg',
+            badge: '/img/stacks/js.svg',
+            role: 'Fullstack Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Josh C.',
+            text: 'JC',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'company_branding.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
-              uploaded: '2 weeks ago',
+              size: '25.8MB',
+              version: '4.5.2',
+              uploaded: '1 month ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
-              },
-            },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Lana H.',
+                picture: '/img/avatars/4.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create illustrations for the landing page',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Rework svgs to use the currentColor for fill and stroke attributes',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Prepare svg parts that will be animated',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Work on a set of branded icons',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'This is starting to look really good. I wonder if we should abstract the characters a little bit more? What do you guys think?',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                posted: '5 hours ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Looks good to me. I think we can start working on the icons now. I will add it to the list of features. Anything else you can think of?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+                posted: '2 hours ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think that should be it for now. I will let you know if I think of anything else. Now that you say it, have you though about cusomtization and Tailwind CSS support?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+                posted: '1 hour ago',
               },
             },
           ],
         },
         {
           id: 4,
-          name: 'Implement job management API controller',
+          name: 'Implement a complete job offers API endpoint',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            'The API endpoint should return a JSON list of jobs. The endpoint should be able to filter the results by keyword, location, type and category.',
+          completion: 65,
+          status: 1,
+          created: '2 weeks ago',
+          assignee: {
+            id: 7,
+            src: '/img/avatars/3.svg',
+            badge: '/img/stacks/reactjs.svg',
+            role: 'Frontend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Clarke G.',
+            text: 'CG',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'api-jobs-specs.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '1.2MB',
+              version: '1.9.2',
               uploaded: '2 weeks ago',
               author: {
                 name: 'Hermann M.',
                 picture: '/img/avatars/16.svg',
               },
             },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-              },
-            },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new API endpoint',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database table',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database migration',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database seeder',
               done: false,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database model',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I feel this architecture is not the best. I think we should use a different approach. What do you guys think?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Rob H.',
+                picture: '/img/avatars/13.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: "Yup, it looks clunky to me as well. Let's try something different. I will add it to the list of features. Anything else you can think of?",
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'John B.',
+                picture: '/img/avatars/8.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I have sent some notes to the team. That should help them refactor the code.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
                 posted: '2 days ago',
               },
             },
@@ -1449,82 +1826,79 @@ async function getDemoData() {
         },
         {
           id: 5,
-          name: 'Implement user management API controller',
+          name: 'Implement company users API endpoint',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
+            'The API endpoint should return a JSON list of users. The endpoint should be able to filter the results by keyword, location, type and category.',
+          completion: 100,
+          status: 0,
           created: '2 days ago',
-          attachments: 0,
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'api-users-specs.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '1.2MB',
+              version: '1.9.2',
               uploaded: '2 weeks ago',
               author: {
                 name: 'Hermann M.',
                 picture: '/img/avatars/16.svg',
               },
             },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-              },
-            },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new API endpoint',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database table',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database migration',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a new database seeder',
+              done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a new database model',
+              done: true,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I feel this architecture is not the best. I think we should use a different approach. What do you guys think?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Betty L.',
+                picture: '/img/avatars/24.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I have sent some notes to the team. That should help them refactor the code.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'John B.',
+                picture: '/img/avatars/8.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Hold your horses! I am still working on it. I will let you know when I am done.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Josh D.',
+                picture: '/img/avatars/11.svg',
                 posted: '2 days ago',
               },
             },
@@ -1532,17 +1906,173 @@ async function getDemoData() {
         },
         {
           id: 6,
-          name: 'Develop a JWT authentication controller',
+          name: 'Build a complete authentication system and API endpoint',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
+            'The authentication system should be able to handle user registration, login, logout, password reset and email verification. The API endpoint should return a Bearer token.',
+          completion: 100,
+          status: 0,
           created: '2 days ago',
-          attachments: 0,
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'api-auth-specs.pdf',
               icon: '/img/icons/files/pdf.svg',
+              size: '2.4MB',
+              version: '1.0.0',
+              uploaded: '3 weeks ago',
+              author: {
+                name: 'Josh S.',
+                picture: '/img/avatars/11.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'authentication.docx',
+              icon: '/img/icons/files/doc-2.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '5 days ago',
+              author: {
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Create a new API endpoint',
+              done: true,
+            },
+            {
+              text: 'Create a new database table',
+              done: true,
+            },
+            {
+              text: 'Create a new database migration',
+              done: true,
+            },
+            {
+              text: 'Create a new database seeder',
+              done: true,
+            },
+            {
+              text: 'Create a new database model',
+              done: true,
+            },
+          ],
+          comments: [],
+        },
+        {
+          id: 7,
+          name: 'Create reusable components to build different pricing sections',
+          description:
+            'The components should be able to handle different pricing plans and should be able to display the most popular plan. Also, the components should be able to display a button to purchase the plan.',
+          completion: 100,
+          status: 5,
+          created: '2 weeks ago',
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'pricing-components.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '9.5MB',
+              version: '1.0.0',
+              uploaded: '5 days ago',
+              author: {
+                name: 'Ana B.',
+                picture: '/img/avatars/9.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Draw some first stage wireframes',
+              done: true,
+            },
+            {
+              text: 'Design components in a Figma project',
+              done: true,
+            },
+            {
+              text: 'Design pricing sections in the Figma project',
+              done: true,
+            },
+            {
+              text: 'Implement the components in the project',
+              done: true,
+            },
+            {
+              text: 'Implement the pricing sections in the project',
+              done: true,
+            },
+          ],
+          comments: [
+            {
+              text: 'I like very much the design. There is just one thing I would change. I would make the button a bit bigger.',
+              author: {
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+                posted: '4 days ago',
+              },
+            },
+            {
+              text: 'Are you sure? I think the button is the right size. I will ask the team what they think.',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+                posted: '2 days ago',
+              },
+            },
+            {
+              text: 'I think the button is fine. I would not change it.',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+                posted: '2 days ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 8,
+          name: 'Implement a user profile page',
+          description:
+            'The user profile page should display the user avatar, name, email, bio, location, social links and a list of the user projects.',
+          completion: 100,
+          status: 5,
+          created: '3 weeks ago',
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'profile-view.ai',
+              icon: '/img/icons/files/ai.svg',
               size: '4.7MB',
               version: '1.5.2',
               uploaded: '2 weeks ago',
@@ -1551,44 +2081,264 @@ async function getDemoData() {
                 picture: '/img/avatars/16.svg',
               },
             },
+          ],
+          checklist: [
             {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
+              text: 'Draw some first stage wireframes',
+              done: true,
+            },
+            {
+              text: 'Design the user profile page in a Figma project',
+              done: true,
+            },
+            {
+              text: 'Implement the user profile page in the project',
+              done: true,
+            },
+          ],
+          comments: [
+            {
+              text: 'This looks great! I have just one question. How will the user change the avatar?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Henry D.',
+                picture: '/img/avatars/1.svg',
+                posted: '8 hours ago',
+              },
+            },
+            {
+              text: 'I think the user will be able to change the avatar from the settings page.',
+              author: {
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
+                posted: '8 hours ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 9,
+          name: 'Create a concept for a contact list page',
+          description:
+            'The contact list page should display a list of contacts with their name, email, phone number and avatar.',
+          completion: 75,
+          status: 3,
+          created: '2 weeks ago',
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'contact-list.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '7.9MB',
+              version: '1.1.1',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Draw some first stage wireframes',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Design the contact list page in a Figma project',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement the contact list page in the project',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Build a search functionality for the contact list page',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'The filter is a great addition. I think it will be very useful.',
+              author: {
+                name: 'Melany L.',
+                picture: '/img/avatars/25.svg',
+                posted: '6 hours ago',
+              },
+            },
+            {
+              text: "That's the cherry on top of the cake. I think it's ready to be implemented.",
+              author: {
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+                posted: '7 hours ago',
+              },
+            },
+            {
+              text: 'I agree. I will start working on the implementation.',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+                posted: '8 hours ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 10,
+          name: 'Implement a contact list API endpoint',
+          description:
+            'The contact list API endpoint should return a list of contacts with their name, email, phone number and avatar.',
+          completion: 50,
+          status: 1,
+          created: '6 days ago',
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'contact-list-api.pdf',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'contact-list-api.xlsx',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.0.0',
+              uploaded: '1 week ago',
+              author: {
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Create a new API endpoint for the contact list',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the contact list',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the contact list',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the contact list',
+              done: false,
+            },
+            {
+              text: 'Create filter queries and pagination for the contact list',
+              done: false,
+            },
+          ],
+          comments: [
+            {
+              text: 'I think we should add a search functionality to the contact list.',
+              author: {
+                name: 'Lana E.',
+                picture: '/img/avatars/4.svg',
+                posted: '2 hours ago',
+              },
+            },
+            {
+              text: 'I agree. I will add it to the checklist.',
+              author: {
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+                posted: '2 days ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 11,
+          name: 'Implement a messaging frontend for contacts',
+          description:
+            'The messaging frontend should allow users to send messages to each other. The messages should be stored in a database. The frontend should be implemented in React.',
+          completion: 100,
+          status: 5,
+          created: '2 weeks ago',
+          assignee: {
+            id: 7,
+            src: '/img/avatars/3.svg',
+            badge: '/img/stacks/reactjs.svg',
+            role: 'Frontend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Clarke G.',
+            text: 'CG',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'messaging-frontend.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '7.1MB',
+              version: '1.0.0',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Elias D.',
+                picture: '/img/avatars/13.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'messaging-frontend.pdf',
+              icon: '/img/icons/files/pdf.svg',
+              size: '1.2MB',
+              version: '1.0.0',
+              uploaded: '6 days ago',
+              author: {
+                name: 'Josh D.',
+                picture: '/img/avatars/11.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Create new components for the messaging frontend',
+              done: true,
+            },
+            {
+              text: 'Add a new route for the messaging frontend',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the messages',
+              done: true,
+            },
+            {
+              text: 'Implement the messaging functionality',
+              done: true,
+            },
+          ],
+          comments: [
+            {
+              text: 'I think we should add the ability to send images and files. What do you think?',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
@@ -1596,17 +2346,17 @@ async function getDemoData() {
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Iam not sure if we should add this. It would be a lot of work. What do you think @Hermann M.?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Josh D.',
+                picture: '/img/avatars/11.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think we should add it. It would be a nice feature.',
               author: {
-                name: 'Clarissa M.',
+                name: 'Hermann M.',
                 picture: '/img/avatars/5.svg',
                 posted: '2 days ago',
               },
@@ -1614,84 +2364,57 @@ async function getDemoData() {
           ],
         },
         {
-          id: 7,
-          name: 'Create a new design for the homepage',
+          id: 12,
+          name: 'Implement a messaging API endpoint for the frontend',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            'The messaging API endpoint should allow users to send messages to each other. The messages should be stored in a database. The API endpoint should be implemented in Node.js.',
+          completion: 65,
+          status: 1,
+          created: '3 weeks ago',
+          assignee: {
+            id: 7,
+            src: '/img/avatars/3.svg',
+            badge: '/img/stacks/reactjs.svg',
+            role: 'Frontend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Clarke G.',
+            text: 'CG',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'messaging-api-endpoint.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '2.2MB',
+              version: '1.0.2',
               uploaded: '2 weeks ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
-              },
-            },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new API endpoint for the messaging frontend',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement the messaging functionality',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: true,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Save the messages in a database',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I have been doing some heavy lifting on this. I think we should defintiely add the ability to send images and files. What do you think?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
+                posted: '10 hours ago',
               },
             },
           ],
@@ -1739,11 +2462,38 @@ async function getDemoData() {
           tooltip: 'Ryan B.',
           text: 'RB',
         },
+        {
+          id: 27,
+          src: '/img/avatars/24.svg',
+          badge: '/img/stacks/illustrator.svg',
+          role: 'UI/UX Designer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+          tooltip: 'Carmen E.',
+          text: 'CE',
+        },
+        {
+          id: 15,
+          src: '/img/avatars/15.svg',
+          badge: '/img/stacks/js.svg',
+          role: 'Fullstack Developer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+          tooltip: 'Josh C.',
+          text: 'JC',
+        },
+        {
+          id: 12,
+          src: '/img/avatars/12.svg',
+          badge: '/img/stacks/csharp.svg',
+          role: 'Backend Developer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+          tooltip: 'Marjory L.',
+          text: 'ML',
+        },
       ],
       files: [
         {
           id: 0,
-          name: 'Company UX Guide',
+          name: 'company-ux-guide.pdf',
           icon: '/img/icons/files/pdf.svg',
           size: '4.7MB',
           version: '1.5.2',
@@ -1755,7 +2505,7 @@ async function getDemoData() {
         },
         {
           id: 1,
-          name: 'Thech summit expenses',
+          name: 'tech-summit-expenses.xlsx',
           icon: '/img/icons/files/sheet.svg',
           size: '34KB',
           version: '1.1.3',
@@ -1767,7 +2517,7 @@ async function getDemoData() {
         },
         {
           id: 2,
-          name: 'Project outline',
+          name: 'project-outline.docx',
           icon: '/img/icons/files/doc-2.svg',
           size: '77KB',
           version: '1.0.0',
@@ -1779,7 +2529,7 @@ async function getDemoData() {
         },
         {
           id: 3,
-          name: 'UX presentation',
+          name: 'ux-presentation.pptx',
           icon: '/img/icons/files/ppt.svg',
           size: '2.3MB',
           version: '1.0.0',
@@ -1791,7 +2541,7 @@ async function getDemoData() {
         },
         {
           id: 4,
-          name: 'Website Homepage Redesign',
+          name: 'website-homepage-redesign.ai',
           icon: '/img/icons/files/ai.svg',
           size: '4.8MB',
           version: '1.0.0',
@@ -1803,7 +2553,7 @@ async function getDemoData() {
         },
         {
           id: 5,
-          name: 'UX Ramp Up for Interns',
+          name: 'interns-ux-rampup.docx',
           icon: '/img/icons/files/doc-2.svg',
           size: '1.8MB',
           version: '1.2.0',
@@ -1851,16 +2601,25 @@ async function getDemoData() {
       tasks: [
         {
           id: 0,
-          name: 'Create a new design for the homepage',
+          name: 'Create a new figma design for the new homepage elements',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
-          completion: 75,
+            'We should have a collection of the most basic UI elements like buttons, badges and form elements. Then we should use these to create reusable section blocks that we can also use in other pages of the project.',
+          completion: 100,
+          status: 5,
           created: '2 days ago',
-          attachments: 2,
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'company-ux-guide.pdf',
               icon: '/img/icons/files/pdf.svg',
               size: '4.7MB',
               version: '1.5.2',
@@ -1872,11 +2631,11 @@ async function getDemoData() {
             },
             {
               id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
+              name: 'project_sketches.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '8.9MB',
               version: '1.1.3',
-              uploaded: '3 days ago',
+              uploaded: 'a week ago',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
@@ -1885,48 +2644,48 @@ async function getDemoData() {
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a set of button elements',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a set of badge elements',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a set of input elements',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a set of checkbox elements',
+              done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a set of card elements',
+              done: true,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think buttons corners should be a little more rounded.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Marjory L.',
+                picture: '/img/avatars/12.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Are you planning to add this as a global setting in the configuration file?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Not sure about it yet. Still need to check this out with the engineering team',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Marjory L.',
+                picture: '/img/avatars/12.svg',
                 posted: '2 days ago',
               },
             },
@@ -1934,115 +2693,118 @@ async function getDemoData() {
         },
         {
           id: 1,
-          name: 'Build a desktop and mobile landing page wireframe',
+          name: 'Build a landing page template for future marketing campaigns',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 25,
+            'The website should provide a customizable landing page template that can be used to support marketing campaigns. It should also be easily customizable by the marketing team.',
+          completion: 58,
+          status: 1,
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
-              icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              name: 'ux-notes.docx',
+              icon: '/img/icons/files/doc-2.svg',
+              size: '89KB',
+              version: '1.8.2',
               uploaded: '2 weeks ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
+                name: 'Melany D.',
+                picture: '/img/avatars/25.svg',
               },
             },
             {
               id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
+              name: 'landing_page.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '4.2MB',
+              version: '1.4.1',
+              uploaded: '5 days ago',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable hero section',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable pricing section',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable features section',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable testimonials section',
               done: false,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable contact section',
               done: false,
             },
           ],
-          created: '2 days ago',
-          attachments: 0,
+          created: '6 days ago',
+          attachments: 2,
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Iam wondering if we should add a section for the team members? it could be nice. And what about a section for the latest blog posts?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Selena M.',
+                picture: '/img/avatars/24.svg',
+                posted: '7 hours ago',
               },
             },
           ],
         },
         {
           id: 2,
-          name: 'Build a custom video player javascript librar',
+          name: 'Build a custom javascript video player with streaming support',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            "Since we couldn't find an out of the box solution, we are forced to build a custom player that we can reuse in othe projects.",
+          completion: 45,
+          status: 1,
+          created: '18 days ago',
+          assignee: {
+            id: 15,
+            src: '/img/avatars/15.svg',
+            badge: '/img/stacks/js.svg',
+            role: 'Fullstack Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Josh C.',
+            text: 'JC',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'player_specifications.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '2.9MB',
+              version: '1.0.1',
               uploaded: '2 weeks ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
+                name: 'Greta K.',
+                picture: '/img/avatars/20.svg',
               },
             },
             {
               id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
+              name: 'player-mockup.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '5.7MB',
+              version: '1.0.0',
+              uploaded: '5 days ago',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
@@ -2051,214 +2813,204 @@ async function getDemoData() {
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement basic frame and controls',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Design and implement custom svg control icons',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: true,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement video streaming support',
               done: false,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement video playback speed control',
+              done: true,
+            },
+            {
+              text: 'Implement video volume control',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Iam wondering if we should add several display modes for the player? It could be nice to have a fullscreen mode for example.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Erik K.',
+                picture: '/img/avatars/8.svg',
+                posted: '3 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Yeah, that would be nice. I will add it to the list of features. Anything else you can think of?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+                posted: '3 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think that should be it for now. I will let you know if I think of anything else. Now that you say it, ahave you though about cusomtization and Tailwind CSS support?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Erik K.',
+                picture: '/img/avatars/8.svg',
+                posted: '3 days ago',
               },
             },
           ],
         },
         {
           id: 3,
-          name: 'Design custom illustrations for landing page',
+          name: 'Design a set of custom branded illustrations for the website and the app',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            'The customer wants to have a set of illustrations that can be used on the website and the app. They should be custom branded and fit the overall design.',
+          completion: 100,
+          status: 5,
+          created: '2 weeks ago',
+          assignee: {
+            id: 15,
+            src: '/img/avatars/15.svg',
+            badge: '/img/stacks/js.svg',
+            role: 'Fullstack Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Josh C.',
+            text: 'JC',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'company_branding.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
-              uploaded: '2 weeks ago',
+              size: '25.8MB',
+              version: '4.5.2',
+              uploaded: '1 month ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
-              },
-            },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Lana H.',
+                picture: '/img/avatars/4.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create illustrations for the landing page',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Rework svgs to use the currentColor for fill and stroke attributes',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Prepare svg parts that will be animated',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Work on a set of branded icons',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'This is starting to look really good. I wonder if we should abstract the characters a little bit more? What do you guys think?',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                posted: '5 hours ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Looks good to me. I think we can start working on the icons now. I will add it to the list of features. Anything else you can think of?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+                posted: '2 hours ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think that should be it for now. I will let you know if I think of anything else. Now that you say it, have you though about cusomtization and Tailwind CSS support?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+                posted: '1 hour ago',
               },
             },
           ],
         },
         {
           id: 4,
-          name: 'Implement job management API controller',
+          name: 'Implement a complete job offers API endpoint',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            'The API endpoint should return a JSON list of jobs. The endpoint should be able to filter the results by keyword, location, type and category.',
+          completion: 65,
+          status: 1,
+          created: '2 weeks ago',
+          assignee: {
+            id: 7,
+            src: '/img/avatars/3.svg',
+            badge: '/img/stacks/reactjs.svg',
+            role: 'Frontend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Clarke G.',
+            text: 'CG',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'api-jobs-specs.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '1.2MB',
+              version: '1.9.2',
               uploaded: '2 weeks ago',
               author: {
                 name: 'Hermann M.',
                 picture: '/img/avatars/16.svg',
               },
             },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-              },
-            },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new API endpoint',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database table',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database migration',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database seeder',
               done: false,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database model',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I feel this architecture is not the best. I think we should use a different approach. What do you guys think?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Rob H.',
+                picture: '/img/avatars/13.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: "Yup, it looks clunky to me as well. Let's try something different. I will add it to the list of features. Anything else you can think of?",
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'John B.',
+                picture: '/img/avatars/8.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I have sent some notes to the team. That should help them refactor the code.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
                 posted: '2 days ago',
               },
             },
@@ -2266,82 +3018,79 @@ async function getDemoData() {
         },
         {
           id: 5,
-          name: 'Implement user management API controller',
+          name: 'Implement company users API endpoint',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
+            'The API endpoint should return a JSON list of users. The endpoint should be able to filter the results by keyword, location, type and category.',
+          completion: 100,
+          status: 0,
           created: '2 days ago',
-          attachments: 0,
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'api-users-specs.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '1.2MB',
+              version: '1.9.2',
               uploaded: '2 weeks ago',
               author: {
                 name: 'Hermann M.',
                 picture: '/img/avatars/16.svg',
               },
             },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-              },
-            },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new API endpoint',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database table',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database migration',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a new database seeder',
+              done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a new database model',
+              done: true,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I feel this architecture is not the best. I think we should use a different approach. What do you guys think?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Betty L.',
+                picture: '/img/avatars/24.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I have sent some notes to the team. That should help them refactor the code.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'John B.',
+                picture: '/img/avatars/8.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Hold your horses! I am still working on it. I will let you know when I am done.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Josh D.',
+                picture: '/img/avatars/11.svg',
                 posted: '2 days ago',
               },
             },
@@ -2349,17 +3098,173 @@ async function getDemoData() {
         },
         {
           id: 6,
-          name: 'Develop a JWT authentication controller',
+          name: 'Build a complete authentication system and API endpoint',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
+            'The authentication system should be able to handle user registration, login, logout, password reset and email verification. The API endpoint should return a Bearer token.',
+          completion: 100,
+          status: 0,
           created: '2 days ago',
-          attachments: 0,
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'api-auth-specs.pdf',
               icon: '/img/icons/files/pdf.svg',
+              size: '2.4MB',
+              version: '1.0.0',
+              uploaded: '3 weeks ago',
+              author: {
+                name: 'Josh S.',
+                picture: '/img/avatars/11.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'authentication.docx',
+              icon: '/img/icons/files/doc-2.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '5 days ago',
+              author: {
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Create a new API endpoint',
+              done: true,
+            },
+            {
+              text: 'Create a new database table',
+              done: true,
+            },
+            {
+              text: 'Create a new database migration',
+              done: true,
+            },
+            {
+              text: 'Create a new database seeder',
+              done: true,
+            },
+            {
+              text: 'Create a new database model',
+              done: true,
+            },
+          ],
+          comments: [],
+        },
+        {
+          id: 7,
+          name: 'Create reusable components to build different pricing sections',
+          description:
+            'The components should be able to handle different pricing plans and should be able to display the most popular plan. Also, the components should be able to display a button to purchase the plan.',
+          completion: 100,
+          status: 5,
+          created: '2 weeks ago',
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'pricing-components.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '9.5MB',
+              version: '1.0.0',
+              uploaded: '5 days ago',
+              author: {
+                name: 'Ana B.',
+                picture: '/img/avatars/9.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Draw some first stage wireframes',
+              done: true,
+            },
+            {
+              text: 'Design components in a Figma project',
+              done: true,
+            },
+            {
+              text: 'Design pricing sections in the Figma project',
+              done: true,
+            },
+            {
+              text: 'Implement the components in the project',
+              done: true,
+            },
+            {
+              text: 'Implement the pricing sections in the project',
+              done: true,
+            },
+          ],
+          comments: [
+            {
+              text: 'I like very much the design. There is just one thing I would change. I would make the button a bit bigger.',
+              author: {
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+                posted: '4 days ago',
+              },
+            },
+            {
+              text: 'Are you sure? I think the button is the right size. I will ask the team what they think.',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+                posted: '2 days ago',
+              },
+            },
+            {
+              text: 'I think the button is fine. I would not change it.',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+                posted: '2 days ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 8,
+          name: 'Implement a user profile page',
+          description:
+            'The user profile page should display the user avatar, name, email, bio, location, social links and a list of the user projects.',
+          completion: 100,
+          status: 5,
+          created: '3 weeks ago',
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'profile-view.ai',
+              icon: '/img/icons/files/ai.svg',
               size: '4.7MB',
               version: '1.5.2',
               uploaded: '2 weeks ago',
@@ -2368,44 +3273,264 @@ async function getDemoData() {
                 picture: '/img/avatars/16.svg',
               },
             },
+          ],
+          checklist: [
             {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
+              text: 'Draw some first stage wireframes',
+              done: true,
+            },
+            {
+              text: 'Design the user profile page in a Figma project',
+              done: true,
+            },
+            {
+              text: 'Implement the user profile page in the project',
+              done: true,
+            },
+          ],
+          comments: [
+            {
+              text: 'This looks great! I have just one question. How will the user change the avatar?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Henry D.',
+                picture: '/img/avatars/1.svg',
+                posted: '8 hours ago',
+              },
+            },
+            {
+              text: 'I think the user will be able to change the avatar from the settings page.',
+              author: {
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
+                posted: '8 hours ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 9,
+          name: 'Create a concept for a contact list page',
+          description:
+            'The contact list page should display a list of contacts with their name, email, phone number and avatar.',
+          completion: 75,
+          status: 3,
+          created: '2 weeks ago',
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'contact-list.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '7.9MB',
+              version: '1.1.1',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Draw some first stage wireframes',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Design the contact list page in a Figma project',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement the contact list page in the project',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Build a search functionality for the contact list page',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'The filter is a great addition. I think it will be very useful.',
+              author: {
+                name: 'Melany L.',
+                picture: '/img/avatars/25.svg',
+                posted: '6 hours ago',
+              },
+            },
+            {
+              text: "That's the cherry on top of the cake. I think it's ready to be implemented.",
+              author: {
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+                posted: '7 hours ago',
+              },
+            },
+            {
+              text: 'I agree. I will start working on the implementation.',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+                posted: '8 hours ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 10,
+          name: 'Implement a contact list API endpoint',
+          description:
+            'The contact list API endpoint should return a list of contacts with their name, email, phone number and avatar.',
+          completion: 50,
+          status: 1,
+          created: '6 days ago',
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'contact-list-api.pdf',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'contact-list-api.xlsx',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.0.0',
+              uploaded: '1 week ago',
+              author: {
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Create a new API endpoint for the contact list',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the contact list',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the contact list',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the contact list',
+              done: false,
+            },
+            {
+              text: 'Create filter queries and pagination for the contact list',
+              done: false,
+            },
+          ],
+          comments: [
+            {
+              text: 'I think we should add a search functionality to the contact list.',
+              author: {
+                name: 'Lana E.',
+                picture: '/img/avatars/4.svg',
+                posted: '2 hours ago',
+              },
+            },
+            {
+              text: 'I agree. I will add it to the checklist.',
+              author: {
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+                posted: '2 days ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 11,
+          name: 'Implement a messaging frontend for contacts',
+          description:
+            'The messaging frontend should allow users to send messages to each other. The messages should be stored in a database. The frontend should be implemented in React.',
+          completion: 100,
+          status: 5,
+          created: '2 weeks ago',
+          assignee: {
+            id: 7,
+            src: '/img/avatars/3.svg',
+            badge: '/img/stacks/reactjs.svg',
+            role: 'Frontend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Clarke G.',
+            text: 'CG',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'messaging-frontend.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '7.1MB',
+              version: '1.0.0',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Elias D.',
+                picture: '/img/avatars/13.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'messaging-frontend.pdf',
+              icon: '/img/icons/files/pdf.svg',
+              size: '1.2MB',
+              version: '1.0.0',
+              uploaded: '6 days ago',
+              author: {
+                name: 'Josh D.',
+                picture: '/img/avatars/11.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Create new components for the messaging frontend',
+              done: true,
+            },
+            {
+              text: 'Add a new route for the messaging frontend',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the messages',
+              done: true,
+            },
+            {
+              text: 'Implement the messaging functionality',
+              done: true,
+            },
+          ],
+          comments: [
+            {
+              text: 'I think we should add the ability to send images and files. What do you think?',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
@@ -2413,17 +3538,17 @@ async function getDemoData() {
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Iam not sure if we should add this. It would be a lot of work. What do you think @Hermann M.?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Josh D.',
+                picture: '/img/avatars/11.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think we should add it. It would be a nice feature.',
               author: {
-                name: 'Clarissa M.',
+                name: 'Hermann M.',
                 picture: '/img/avatars/5.svg',
                 posted: '2 days ago',
               },
@@ -2431,84 +3556,57 @@ async function getDemoData() {
           ],
         },
         {
-          id: 7,
-          name: 'Create a new design for the homepage',
+          id: 12,
+          name: 'Implement a messaging API endpoint for the frontend',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            'The messaging API endpoint should allow users to send messages to each other. The messages should be stored in a database. The API endpoint should be implemented in Node.js.',
+          completion: 65,
+          status: 1,
+          created: '3 weeks ago',
+          assignee: {
+            id: 7,
+            src: '/img/avatars/3.svg',
+            badge: '/img/stacks/reactjs.svg',
+            role: 'Frontend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Clarke G.',
+            text: 'CG',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'messaging-api-endpoint.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '2.2MB',
+              version: '1.0.2',
               uploaded: '2 weeks ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
-              },
-            },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new API endpoint for the messaging frontend',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement the messaging functionality',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: true,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Save the messages in a database',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I have been doing some heavy lifting on this. I think we should defintiely add the ability to send images and files. What do you think?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
+                posted: '10 hours ago',
               },
             },
           ],
@@ -2549,27 +3647,54 @@ async function getDemoData() {
       team: [
         {
           id: 13,
-          src: '/img/avatars/5.svg',
-          badge: '/img/stacks/js.svg',
-          role: 'UI/UX Designer',
+          src: '/img/avatars/1.svg',
+          badge: '/img/stacks/vuejs.svg',
+          role: 'Solution Architect',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
-          tooltip: 'Clarissa M.',
-          text: 'CM',
+          tooltip: 'Rob H.',
+          text: 'RH',
         },
         {
           id: 21,
-          src: '/img/avatars/3.svg',
+          src: '/img/avatars/20.svg',
           badge: '/img/stacks/js.svg',
+          role: 'Fronted Developer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+          tooltip: 'Anthony D.',
+          text: 'AD',
+        },
+        {
+          id: 27,
+          src: '/img/avatars/24.svg',
+          badge: '/img/stacks/illustrator.svg',
           role: 'UI/UX Designer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
-          tooltip: 'Clarke G.',
-          text: 'CG',
+          tooltip: 'Carmen E.',
+          text: 'CE',
+        },
+        {
+          id: 15,
+          src: '/img/avatars/15.svg',
+          badge: '/img/stacks/js.svg',
+          role: 'Fullstack Developer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+          tooltip: 'Josh C.',
+          text: 'JC',
+        },
+        {
+          id: 12,
+          src: '/img/avatars/12.svg',
+          badge: '/img/stacks/csharp.svg',
+          role: 'Backend Developer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+          tooltip: 'Marjory L.',
+          text: 'ML',
         },
       ],
       files: [
         {
           id: 0,
-          name: 'Company UX Guide',
+          name: 'company-ux-guide.pdf',
           icon: '/img/icons/files/pdf.svg',
           size: '4.7MB',
           version: '1.5.2',
@@ -2581,7 +3706,7 @@ async function getDemoData() {
         },
         {
           id: 1,
-          name: 'Thech summit expenses',
+          name: 'tech-summit-expenses.xlsx',
           icon: '/img/icons/files/sheet.svg',
           size: '34KB',
           version: '1.1.3',
@@ -2593,7 +3718,7 @@ async function getDemoData() {
         },
         {
           id: 2,
-          name: 'Project outline',
+          name: 'project-outline.docx',
           icon: '/img/icons/files/doc-2.svg',
           size: '77KB',
           version: '1.0.0',
@@ -2605,7 +3730,7 @@ async function getDemoData() {
         },
         {
           id: 3,
-          name: 'UX presentation',
+          name: 'ux-presentation.pptx',
           icon: '/img/icons/files/ppt.svg',
           size: '2.3MB',
           version: '1.0.0',
@@ -2617,7 +3742,7 @@ async function getDemoData() {
         },
         {
           id: 4,
-          name: 'Website Homepage Redesign',
+          name: 'website-homepage-redesign.ai',
           icon: '/img/icons/files/ai.svg',
           size: '4.8MB',
           version: '1.0.0',
@@ -2629,7 +3754,7 @@ async function getDemoData() {
         },
         {
           id: 5,
-          name: 'UX Ramp Up for Interns',
+          name: 'interns-ux-rampup.docx',
           icon: '/img/icons/files/doc-2.svg',
           size: '1.8MB',
           version: '1.2.0',
@@ -2677,16 +3802,25 @@ async function getDemoData() {
       tasks: [
         {
           id: 0,
-          name: 'Create a new design for the homepage',
+          name: 'Create a new figma design for the new homepage elements',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
-          completion: 75,
+            'We should have a collection of the most basic UI elements like buttons, badges and form elements. Then we should use these to create reusable section blocks that we can also use in other pages of the project.',
+          completion: 100,
+          status: 5,
           created: '2 days ago',
-          attachments: 2,
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'company-ux-guide.pdf',
               icon: '/img/icons/files/pdf.svg',
               size: '4.7MB',
               version: '1.5.2',
@@ -2698,11 +3832,11 @@ async function getDemoData() {
             },
             {
               id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
+              name: 'project_sketches.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '8.9MB',
               version: '1.1.3',
-              uploaded: '3 days ago',
+              uploaded: 'a week ago',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
@@ -2711,48 +3845,48 @@ async function getDemoData() {
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a set of button elements',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a set of badge elements',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a set of input elements',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a set of checkbox elements',
+              done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a set of card elements',
+              done: true,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think buttons corners should be a little more rounded.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Marjory L.',
+                picture: '/img/avatars/12.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Are you planning to add this as a global setting in the configuration file?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Not sure about it yet. Still need to check this out with the engineering team',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Marjory L.',
+                picture: '/img/avatars/12.svg',
                 posted: '2 days ago',
               },
             },
@@ -2760,115 +3894,118 @@ async function getDemoData() {
         },
         {
           id: 1,
-          name: 'Build a desktop and mobile landing page wireframe',
+          name: 'Build a landing page template for future marketing campaigns',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 25,
+            'The website should provide a customizable landing page template that can be used to support marketing campaigns. It should also be easily customizable by the marketing team.',
+          completion: 58,
+          status: 1,
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
-              icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              name: 'ux-notes.docx',
+              icon: '/img/icons/files/doc-2.svg',
+              size: '89KB',
+              version: '1.8.2',
               uploaded: '2 weeks ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
+                name: 'Melany D.',
+                picture: '/img/avatars/25.svg',
               },
             },
             {
               id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
+              name: 'landing_page.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '4.2MB',
+              version: '1.4.1',
+              uploaded: '5 days ago',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable hero section',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable pricing section',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable features section',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable testimonials section',
               done: false,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable contact section',
               done: false,
             },
           ],
-          created: '2 days ago',
-          attachments: 0,
+          created: '6 days ago',
+          attachments: 2,
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Iam wondering if we should add a section for the team members? it could be nice. And what about a section for the latest blog posts?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Selena M.',
+                picture: '/img/avatars/24.svg',
+                posted: '7 hours ago',
               },
             },
           ],
         },
         {
           id: 2,
-          name: 'Build a custom video player javascript librar',
+          name: 'Build a custom javascript video player with streaming support',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            "Since we couldn't find an out of the box solution, we are forced to build a custom player that we can reuse in othe projects.",
+          completion: 45,
+          status: 1,
+          created: '18 days ago',
+          assignee: {
+            id: 15,
+            src: '/img/avatars/15.svg',
+            badge: '/img/stacks/js.svg',
+            role: 'Fullstack Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Josh C.',
+            text: 'JC',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'player_specifications.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '2.9MB',
+              version: '1.0.1',
               uploaded: '2 weeks ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
+                name: 'Greta K.',
+                picture: '/img/avatars/20.svg',
               },
             },
             {
               id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
+              name: 'player-mockup.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '5.7MB',
+              version: '1.0.0',
+              uploaded: '5 days ago',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
@@ -2877,214 +4014,204 @@ async function getDemoData() {
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement basic frame and controls',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Design and implement custom svg control icons',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: true,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement video streaming support',
               done: false,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement video playback speed control',
+              done: true,
+            },
+            {
+              text: 'Implement video volume control',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Iam wondering if we should add several display modes for the player? It could be nice to have a fullscreen mode for example.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Erik K.',
+                picture: '/img/avatars/8.svg',
+                posted: '3 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Yeah, that would be nice. I will add it to the list of features. Anything else you can think of?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+                posted: '3 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think that should be it for now. I will let you know if I think of anything else. Now that you say it, ahave you though about cusomtization and Tailwind CSS support?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Erik K.',
+                picture: '/img/avatars/8.svg',
+                posted: '3 days ago',
               },
             },
           ],
         },
         {
           id: 3,
-          name: 'Design custom illustrations for landing page',
+          name: 'Design a set of custom branded illustrations for the website and the app',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            'The customer wants to have a set of illustrations that can be used on the website and the app. They should be custom branded and fit the overall design.',
+          completion: 100,
+          status: 5,
+          created: '2 weeks ago',
+          assignee: {
+            id: 15,
+            src: '/img/avatars/15.svg',
+            badge: '/img/stacks/js.svg',
+            role: 'Fullstack Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Josh C.',
+            text: 'JC',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'company_branding.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
-              uploaded: '2 weeks ago',
+              size: '25.8MB',
+              version: '4.5.2',
+              uploaded: '1 month ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
-              },
-            },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Lana H.',
+                picture: '/img/avatars/4.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create illustrations for the landing page',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Rework svgs to use the currentColor for fill and stroke attributes',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Prepare svg parts that will be animated',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Work on a set of branded icons',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'This is starting to look really good. I wonder if we should abstract the characters a little bit more? What do you guys think?',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                posted: '5 hours ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Looks good to me. I think we can start working on the icons now. I will add it to the list of features. Anything else you can think of?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+                posted: '2 hours ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think that should be it for now. I will let you know if I think of anything else. Now that you say it, have you though about cusomtization and Tailwind CSS support?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+                posted: '1 hour ago',
               },
             },
           ],
         },
         {
           id: 4,
-          name: 'Implement job management API controller',
+          name: 'Implement a complete job offers API endpoint',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            'The API endpoint should return a JSON list of jobs. The endpoint should be able to filter the results by keyword, location, type and category.',
+          completion: 65,
+          status: 1,
+          created: '2 weeks ago',
+          assignee: {
+            id: 7,
+            src: '/img/avatars/3.svg',
+            badge: '/img/stacks/reactjs.svg',
+            role: 'Frontend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Clarke G.',
+            text: 'CG',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'api-jobs-specs.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '1.2MB',
+              version: '1.9.2',
               uploaded: '2 weeks ago',
               author: {
                 name: 'Hermann M.',
                 picture: '/img/avatars/16.svg',
               },
             },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-              },
-            },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new API endpoint',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database table',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database migration',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database seeder',
               done: false,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database model',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I feel this architecture is not the best. I think we should use a different approach. What do you guys think?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Rob H.',
+                picture: '/img/avatars/13.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: "Yup, it looks clunky to me as well. Let's try something different. I will add it to the list of features. Anything else you can think of?",
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'John B.',
+                picture: '/img/avatars/8.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I have sent some notes to the team. That should help them refactor the code.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
                 posted: '2 days ago',
               },
             },
@@ -3092,82 +4219,79 @@ async function getDemoData() {
         },
         {
           id: 5,
-          name: 'Implement user management API controller',
+          name: 'Implement company users API endpoint',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
+            'The API endpoint should return a JSON list of users. The endpoint should be able to filter the results by keyword, location, type and category.',
+          completion: 100,
+          status: 0,
           created: '2 days ago',
-          attachments: 0,
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'api-users-specs.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '1.2MB',
+              version: '1.9.2',
               uploaded: '2 weeks ago',
               author: {
                 name: 'Hermann M.',
                 picture: '/img/avatars/16.svg',
               },
             },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-              },
-            },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new API endpoint',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database table',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database migration',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a new database seeder',
+              done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a new database model',
+              done: true,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I feel this architecture is not the best. I think we should use a different approach. What do you guys think?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Betty L.',
+                picture: '/img/avatars/24.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I have sent some notes to the team. That should help them refactor the code.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'John B.',
+                picture: '/img/avatars/8.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Hold your horses! I am still working on it. I will let you know when I am done.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Josh D.',
+                picture: '/img/avatars/11.svg',
                 posted: '2 days ago',
               },
             },
@@ -3175,17 +4299,173 @@ async function getDemoData() {
         },
         {
           id: 6,
-          name: 'Develop a JWT authentication controller',
+          name: 'Build a complete authentication system and API endpoint',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
+            'The authentication system should be able to handle user registration, login, logout, password reset and email verification. The API endpoint should return a Bearer token.',
+          completion: 100,
+          status: 0,
           created: '2 days ago',
-          attachments: 0,
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'api-auth-specs.pdf',
               icon: '/img/icons/files/pdf.svg',
+              size: '2.4MB',
+              version: '1.0.0',
+              uploaded: '3 weeks ago',
+              author: {
+                name: 'Josh S.',
+                picture: '/img/avatars/11.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'authentication.docx',
+              icon: '/img/icons/files/doc-2.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '5 days ago',
+              author: {
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Create a new API endpoint',
+              done: true,
+            },
+            {
+              text: 'Create a new database table',
+              done: true,
+            },
+            {
+              text: 'Create a new database migration',
+              done: true,
+            },
+            {
+              text: 'Create a new database seeder',
+              done: true,
+            },
+            {
+              text: 'Create a new database model',
+              done: true,
+            },
+          ],
+          comments: [],
+        },
+        {
+          id: 7,
+          name: 'Create reusable components to build different pricing sections',
+          description:
+            'The components should be able to handle different pricing plans and should be able to display the most popular plan. Also, the components should be able to display a button to purchase the plan.',
+          completion: 100,
+          status: 5,
+          created: '2 weeks ago',
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'pricing-components.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '9.5MB',
+              version: '1.0.0',
+              uploaded: '5 days ago',
+              author: {
+                name: 'Ana B.',
+                picture: '/img/avatars/9.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Draw some first stage wireframes',
+              done: true,
+            },
+            {
+              text: 'Design components in a Figma project',
+              done: true,
+            },
+            {
+              text: 'Design pricing sections in the Figma project',
+              done: true,
+            },
+            {
+              text: 'Implement the components in the project',
+              done: true,
+            },
+            {
+              text: 'Implement the pricing sections in the project',
+              done: true,
+            },
+          ],
+          comments: [
+            {
+              text: 'I like very much the design. There is just one thing I would change. I would make the button a bit bigger.',
+              author: {
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+                posted: '4 days ago',
+              },
+            },
+            {
+              text: 'Are you sure? I think the button is the right size. I will ask the team what they think.',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+                posted: '2 days ago',
+              },
+            },
+            {
+              text: 'I think the button is fine. I would not change it.',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+                posted: '2 days ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 8,
+          name: 'Implement a user profile page',
+          description:
+            'The user profile page should display the user avatar, name, email, bio, location, social links and a list of the user projects.',
+          completion: 100,
+          status: 5,
+          created: '3 weeks ago',
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'profile-view.ai',
+              icon: '/img/icons/files/ai.svg',
               size: '4.7MB',
               version: '1.5.2',
               uploaded: '2 weeks ago',
@@ -3194,44 +4474,264 @@ async function getDemoData() {
                 picture: '/img/avatars/16.svg',
               },
             },
+          ],
+          checklist: [
             {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
+              text: 'Draw some first stage wireframes',
+              done: true,
+            },
+            {
+              text: 'Design the user profile page in a Figma project',
+              done: true,
+            },
+            {
+              text: 'Implement the user profile page in the project',
+              done: true,
+            },
+          ],
+          comments: [
+            {
+              text: 'This looks great! I have just one question. How will the user change the avatar?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Henry D.',
+                picture: '/img/avatars/1.svg',
+                posted: '8 hours ago',
+              },
+            },
+            {
+              text: 'I think the user will be able to change the avatar from the settings page.',
+              author: {
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
+                posted: '8 hours ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 9,
+          name: 'Create a concept for a contact list page',
+          description:
+            'The contact list page should display a list of contacts with their name, email, phone number and avatar.',
+          completion: 75,
+          status: 3,
+          created: '2 weeks ago',
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'contact-list.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '7.9MB',
+              version: '1.1.1',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Draw some first stage wireframes',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Design the contact list page in a Figma project',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement the contact list page in the project',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Build a search functionality for the contact list page',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'The filter is a great addition. I think it will be very useful.',
+              author: {
+                name: 'Melany L.',
+                picture: '/img/avatars/25.svg',
+                posted: '6 hours ago',
+              },
+            },
+            {
+              text: "That's the cherry on top of the cake. I think it's ready to be implemented.",
+              author: {
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+                posted: '7 hours ago',
+              },
+            },
+            {
+              text: 'I agree. I will start working on the implementation.',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+                posted: '8 hours ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 10,
+          name: 'Implement a contact list API endpoint',
+          description:
+            'The contact list API endpoint should return a list of contacts with their name, email, phone number and avatar.',
+          completion: 50,
+          status: 1,
+          created: '6 days ago',
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'contact-list-api.pdf',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'contact-list-api.xlsx',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.0.0',
+              uploaded: '1 week ago',
+              author: {
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Create a new API endpoint for the contact list',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the contact list',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the contact list',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the contact list',
+              done: false,
+            },
+            {
+              text: 'Create filter queries and pagination for the contact list',
+              done: false,
+            },
+          ],
+          comments: [
+            {
+              text: 'I think we should add a search functionality to the contact list.',
+              author: {
+                name: 'Lana E.',
+                picture: '/img/avatars/4.svg',
+                posted: '2 hours ago',
+              },
+            },
+            {
+              text: 'I agree. I will add it to the checklist.',
+              author: {
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+                posted: '2 days ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 11,
+          name: 'Implement a messaging frontend for contacts',
+          description:
+            'The messaging frontend should allow users to send messages to each other. The messages should be stored in a database. The frontend should be implemented in React.',
+          completion: 100,
+          status: 5,
+          created: '2 weeks ago',
+          assignee: {
+            id: 7,
+            src: '/img/avatars/3.svg',
+            badge: '/img/stacks/reactjs.svg',
+            role: 'Frontend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Clarke G.',
+            text: 'CG',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'messaging-frontend.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '7.1MB',
+              version: '1.0.0',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Elias D.',
+                picture: '/img/avatars/13.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'messaging-frontend.pdf',
+              icon: '/img/icons/files/pdf.svg',
+              size: '1.2MB',
+              version: '1.0.0',
+              uploaded: '6 days ago',
+              author: {
+                name: 'Josh D.',
+                picture: '/img/avatars/11.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Create new components for the messaging frontend',
+              done: true,
+            },
+            {
+              text: 'Add a new route for the messaging frontend',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the messages',
+              done: true,
+            },
+            {
+              text: 'Implement the messaging functionality',
+              done: true,
+            },
+          ],
+          comments: [
+            {
+              text: 'I think we should add the ability to send images and files. What do you think?',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
@@ -3239,17 +4739,17 @@ async function getDemoData() {
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Iam not sure if we should add this. It would be a lot of work. What do you think @Hermann M.?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Josh D.',
+                picture: '/img/avatars/11.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think we should add it. It would be a nice feature.',
               author: {
-                name: 'Clarissa M.',
+                name: 'Hermann M.',
                 picture: '/img/avatars/5.svg',
                 posted: '2 days ago',
               },
@@ -3257,84 +4757,57 @@ async function getDemoData() {
           ],
         },
         {
-          id: 7,
-          name: 'Create a new design for the homepage',
+          id: 12,
+          name: 'Implement a messaging API endpoint for the frontend',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            'The messaging API endpoint should allow users to send messages to each other. The messages should be stored in a database. The API endpoint should be implemented in Node.js.',
+          completion: 65,
+          status: 1,
+          created: '3 weeks ago',
+          assignee: {
+            id: 7,
+            src: '/img/avatars/3.svg',
+            badge: '/img/stacks/reactjs.svg',
+            role: 'Frontend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Clarke G.',
+            text: 'CG',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'messaging-api-endpoint.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '2.2MB',
+              version: '1.0.2',
               uploaded: '2 weeks ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
-              },
-            },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new API endpoint for the messaging frontend',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement the messaging functionality',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: true,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Save the messages in a database',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I have been doing some heavy lifting on this. I think we should defintiely add the ability to send images and files. What do you think?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
+                posted: '10 hours ago',
               },
             },
           ],
@@ -3377,7 +4850,7 @@ async function getDemoData() {
           id: 30,
           src: '/img/avatars/10.svg',
           badge: '/img/stacks/js.svg',
-          role: 'UI/UX Designer',
+          role: 'Frontend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Kendra W.',
           text: 'KW',
@@ -3385,17 +4858,35 @@ async function getDemoData() {
         {
           id: 39,
           src: '/img/avatars/25.svg',
-          badge: '/img/stacks/js.svg',
-          role: 'UI/UX Designer',
+          badge: '/img/stacks/reactjs.svg',
+          role: 'Frontend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Melany L.',
+          text: 'ML',
+        },
+        {
+          id: 27,
+          src: '/img/avatars/24.svg',
+          badge: '/img/stacks/illustrator.svg',
+          role: 'UI/UX Designer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+          tooltip: 'Carmen E.',
+          text: 'CE',
+        },
+        {
+          id: 12,
+          src: '/img/avatars/12.svg',
+          badge: '/img/stacks/csharp.svg',
+          role: 'Backend Developer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+          tooltip: 'Marjory L.',
           text: 'ML',
         },
       ],
       files: [
         {
           id: 0,
-          name: 'Company UX Guide',
+          name: 'company-ux-guide.pdf',
           icon: '/img/icons/files/pdf.svg',
           size: '4.7MB',
           version: '1.5.2',
@@ -3407,7 +4898,7 @@ async function getDemoData() {
         },
         {
           id: 1,
-          name: 'Thech summit expenses',
+          name: 'tech-summit-expenses.xlsx',
           icon: '/img/icons/files/sheet.svg',
           size: '34KB',
           version: '1.1.3',
@@ -3419,7 +4910,7 @@ async function getDemoData() {
         },
         {
           id: 2,
-          name: 'Project outline',
+          name: 'project-outline.docx',
           icon: '/img/icons/files/doc-2.svg',
           size: '77KB',
           version: '1.0.0',
@@ -3431,7 +4922,7 @@ async function getDemoData() {
         },
         {
           id: 3,
-          name: 'UX presentation',
+          name: 'ux-presentation.pptx',
           icon: '/img/icons/files/ppt.svg',
           size: '2.3MB',
           version: '1.0.0',
@@ -3443,7 +4934,7 @@ async function getDemoData() {
         },
         {
           id: 4,
-          name: 'Website Homepage Redesign',
+          name: 'website-homepage-redesign.ai',
           icon: '/img/icons/files/ai.svg',
           size: '4.8MB',
           version: '1.0.0',
@@ -3455,7 +4946,7 @@ async function getDemoData() {
         },
         {
           id: 5,
-          name: 'UX Ramp Up for Interns',
+          name: 'interns-ux-rampup.docx',
           icon: '/img/icons/files/doc-2.svg',
           size: '1.8MB',
           version: '1.2.0',
@@ -3503,16 +4994,25 @@ async function getDemoData() {
       tasks: [
         {
           id: 0,
-          name: 'Create a new design for the homepage',
+          name: 'Create a new figma design for the new homepage elements',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
-          completion: 75,
+            'We should have a collection of the most basic UI elements like buttons, badges and form elements. Then we should use these to create reusable section blocks that we can also use in other pages of the project.',
+          completion: 100,
+          status: 5,
           created: '2 days ago',
-          attachments: 2,
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'company-ux-guide.pdf',
               icon: '/img/icons/files/pdf.svg',
               size: '4.7MB',
               version: '1.5.2',
@@ -3524,11 +5024,11 @@ async function getDemoData() {
             },
             {
               id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
+              name: 'project_sketches.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '8.9MB',
               version: '1.1.3',
-              uploaded: '3 days ago',
+              uploaded: 'a week ago',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
@@ -3537,48 +5037,48 @@ async function getDemoData() {
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a set of button elements',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a set of badge elements',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a set of input elements',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a set of checkbox elements',
+              done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a set of card elements',
+              done: true,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think buttons corners should be a little more rounded.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Marjory L.',
+                picture: '/img/avatars/12.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Are you planning to add this as a global setting in the configuration file?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Not sure about it yet. Still need to check this out with the engineering team',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Marjory L.',
+                picture: '/img/avatars/12.svg',
                 posted: '2 days ago',
               },
             },
@@ -3586,115 +5086,118 @@ async function getDemoData() {
         },
         {
           id: 1,
-          name: 'Build a desktop and mobile landing page wireframe',
+          name: 'Build a landing page template for future marketing campaigns',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 25,
+            'The website should provide a customizable landing page template that can be used to support marketing campaigns. It should also be easily customizable by the marketing team.',
+          completion: 58,
+          status: 1,
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
-              icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              name: 'ux-notes.docx',
+              icon: '/img/icons/files/doc-2.svg',
+              size: '89KB',
+              version: '1.8.2',
               uploaded: '2 weeks ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
+                name: 'Melany D.',
+                picture: '/img/avatars/25.svg',
               },
             },
             {
               id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
+              name: 'landing_page.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '4.2MB',
+              version: '1.4.1',
+              uploaded: '5 days ago',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable hero section',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable pricing section',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable features section',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable testimonials section',
               done: false,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable contact section',
               done: false,
             },
           ],
-          created: '2 days ago',
-          attachments: 0,
+          created: '6 days ago',
+          attachments: 2,
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Iam wondering if we should add a section for the team members? it could be nice. And what about a section for the latest blog posts?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Selena M.',
+                picture: '/img/avatars/24.svg',
+                posted: '7 hours ago',
               },
             },
           ],
         },
         {
           id: 2,
-          name: 'Build a custom video player javascript librar',
+          name: 'Build a custom javascript video player with streaming support',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            "Since we couldn't find an out of the box solution, we are forced to build a custom player that we can reuse in othe projects.",
+          completion: 45,
+          status: 1,
+          created: '18 days ago',
+          assignee: {
+            id: 15,
+            src: '/img/avatars/15.svg',
+            badge: '/img/stacks/js.svg',
+            role: 'Fullstack Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Josh C.',
+            text: 'JC',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'player_specifications.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '2.9MB',
+              version: '1.0.1',
               uploaded: '2 weeks ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
+                name: 'Greta K.',
+                picture: '/img/avatars/20.svg',
               },
             },
             {
               id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
+              name: 'player-mockup.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '5.7MB',
+              version: '1.0.0',
+              uploaded: '5 days ago',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
@@ -3703,214 +5206,204 @@ async function getDemoData() {
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement basic frame and controls',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Design and implement custom svg control icons',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: true,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement video streaming support',
               done: false,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement video playback speed control',
+              done: true,
+            },
+            {
+              text: 'Implement video volume control',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Iam wondering if we should add several display modes for the player? It could be nice to have a fullscreen mode for example.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Erik K.',
+                picture: '/img/avatars/8.svg',
+                posted: '3 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Yeah, that would be nice. I will add it to the list of features. Anything else you can think of?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+                posted: '3 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think that should be it for now. I will let you know if I think of anything else. Now that you say it, ahave you though about cusomtization and Tailwind CSS support?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Erik K.',
+                picture: '/img/avatars/8.svg',
+                posted: '3 days ago',
               },
             },
           ],
         },
         {
           id: 3,
-          name: 'Design custom illustrations for landing page',
+          name: 'Design a set of custom branded illustrations for the website and the app',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            'The customer wants to have a set of illustrations that can be used on the website and the app. They should be custom branded and fit the overall design.',
+          completion: 100,
+          status: 5,
+          created: '2 weeks ago',
+          assignee: {
+            id: 15,
+            src: '/img/avatars/15.svg',
+            badge: '/img/stacks/js.svg',
+            role: 'Fullstack Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Josh C.',
+            text: 'JC',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'company_branding.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
-              uploaded: '2 weeks ago',
+              size: '25.8MB',
+              version: '4.5.2',
+              uploaded: '1 month ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
-              },
-            },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Lana H.',
+                picture: '/img/avatars/4.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create illustrations for the landing page',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Rework svgs to use the currentColor for fill and stroke attributes',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Prepare svg parts that will be animated',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Work on a set of branded icons',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'This is starting to look really good. I wonder if we should abstract the characters a little bit more? What do you guys think?',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                posted: '5 hours ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Looks good to me. I think we can start working on the icons now. I will add it to the list of features. Anything else you can think of?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+                posted: '2 hours ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think that should be it for now. I will let you know if I think of anything else. Now that you say it, have you though about cusomtization and Tailwind CSS support?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+                posted: '1 hour ago',
               },
             },
           ],
         },
         {
           id: 4,
-          name: 'Implement job management API controller',
+          name: 'Implement a complete job offers API endpoint',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            'The API endpoint should return a JSON list of jobs. The endpoint should be able to filter the results by keyword, location, type and category.',
+          completion: 65,
+          status: 1,
+          created: '2 weeks ago',
+          assignee: {
+            id: 7,
+            src: '/img/avatars/3.svg',
+            badge: '/img/stacks/reactjs.svg',
+            role: 'Frontend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Clarke G.',
+            text: 'CG',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'api-jobs-specs.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '1.2MB',
+              version: '1.9.2',
               uploaded: '2 weeks ago',
               author: {
                 name: 'Hermann M.',
                 picture: '/img/avatars/16.svg',
               },
             },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-              },
-            },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new API endpoint',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database table',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database migration',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database seeder',
               done: false,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database model',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I feel this architecture is not the best. I think we should use a different approach. What do you guys think?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Rob H.',
+                picture: '/img/avatars/13.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: "Yup, it looks clunky to me as well. Let's try something different. I will add it to the list of features. Anything else you can think of?",
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'John B.',
+                picture: '/img/avatars/8.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I have sent some notes to the team. That should help them refactor the code.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
                 posted: '2 days ago',
               },
             },
@@ -3918,82 +5411,79 @@ async function getDemoData() {
         },
         {
           id: 5,
-          name: 'Implement user management API controller',
+          name: 'Implement company users API endpoint',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
+            'The API endpoint should return a JSON list of users. The endpoint should be able to filter the results by keyword, location, type and category.',
+          completion: 100,
+          status: 0,
           created: '2 days ago',
-          attachments: 0,
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'api-users-specs.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '1.2MB',
+              version: '1.9.2',
               uploaded: '2 weeks ago',
               author: {
                 name: 'Hermann M.',
                 picture: '/img/avatars/16.svg',
               },
             },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-              },
-            },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new API endpoint',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database table',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database migration',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a new database seeder',
+              done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a new database model',
+              done: true,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I feel this architecture is not the best. I think we should use a different approach. What do you guys think?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Betty L.',
+                picture: '/img/avatars/24.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I have sent some notes to the team. That should help them refactor the code.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'John B.',
+                picture: '/img/avatars/8.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Hold your horses! I am still working on it. I will let you know when I am done.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Josh D.',
+                picture: '/img/avatars/11.svg',
                 posted: '2 days ago',
               },
             },
@@ -4001,17 +5491,173 @@ async function getDemoData() {
         },
         {
           id: 6,
-          name: 'Develop a JWT authentication controller',
+          name: 'Build a complete authentication system and API endpoint',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
+            'The authentication system should be able to handle user registration, login, logout, password reset and email verification. The API endpoint should return a Bearer token.',
+          completion: 100,
+          status: 0,
           created: '2 days ago',
-          attachments: 0,
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'api-auth-specs.pdf',
               icon: '/img/icons/files/pdf.svg',
+              size: '2.4MB',
+              version: '1.0.0',
+              uploaded: '3 weeks ago',
+              author: {
+                name: 'Josh S.',
+                picture: '/img/avatars/11.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'authentication.docx',
+              icon: '/img/icons/files/doc-2.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '5 days ago',
+              author: {
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Create a new API endpoint',
+              done: true,
+            },
+            {
+              text: 'Create a new database table',
+              done: true,
+            },
+            {
+              text: 'Create a new database migration',
+              done: true,
+            },
+            {
+              text: 'Create a new database seeder',
+              done: true,
+            },
+            {
+              text: 'Create a new database model',
+              done: true,
+            },
+          ],
+          comments: [],
+        },
+        {
+          id: 7,
+          name: 'Create reusable components to build different pricing sections',
+          description:
+            'The components should be able to handle different pricing plans and should be able to display the most popular plan. Also, the components should be able to display a button to purchase the plan.',
+          completion: 100,
+          status: 5,
+          created: '2 weeks ago',
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'pricing-components.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '9.5MB',
+              version: '1.0.0',
+              uploaded: '5 days ago',
+              author: {
+                name: 'Ana B.',
+                picture: '/img/avatars/9.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Draw some first stage wireframes',
+              done: true,
+            },
+            {
+              text: 'Design components in a Figma project',
+              done: true,
+            },
+            {
+              text: 'Design pricing sections in the Figma project',
+              done: true,
+            },
+            {
+              text: 'Implement the components in the project',
+              done: true,
+            },
+            {
+              text: 'Implement the pricing sections in the project',
+              done: true,
+            },
+          ],
+          comments: [
+            {
+              text: 'I like very much the design. There is just one thing I would change. I would make the button a bit bigger.',
+              author: {
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+                posted: '4 days ago',
+              },
+            },
+            {
+              text: 'Are you sure? I think the button is the right size. I will ask the team what they think.',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+                posted: '2 days ago',
+              },
+            },
+            {
+              text: 'I think the button is fine. I would not change it.',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+                posted: '2 days ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 8,
+          name: 'Implement a user profile page',
+          description:
+            'The user profile page should display the user avatar, name, email, bio, location, social links and a list of the user projects.',
+          completion: 100,
+          status: 5,
+          created: '3 weeks ago',
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'profile-view.ai',
+              icon: '/img/icons/files/ai.svg',
               size: '4.7MB',
               version: '1.5.2',
               uploaded: '2 weeks ago',
@@ -4020,44 +5666,264 @@ async function getDemoData() {
                 picture: '/img/avatars/16.svg',
               },
             },
+          ],
+          checklist: [
             {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
+              text: 'Draw some first stage wireframes',
+              done: true,
+            },
+            {
+              text: 'Design the user profile page in a Figma project',
+              done: true,
+            },
+            {
+              text: 'Implement the user profile page in the project',
+              done: true,
+            },
+          ],
+          comments: [
+            {
+              text: 'This looks great! I have just one question. How will the user change the avatar?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Henry D.',
+                picture: '/img/avatars/1.svg',
+                posted: '8 hours ago',
+              },
+            },
+            {
+              text: 'I think the user will be able to change the avatar from the settings page.',
+              author: {
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
+                posted: '8 hours ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 9,
+          name: 'Create a concept for a contact list page',
+          description:
+            'The contact list page should display a list of contacts with their name, email, phone number and avatar.',
+          completion: 75,
+          status: 3,
+          created: '2 weeks ago',
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'contact-list.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '7.9MB',
+              version: '1.1.1',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Draw some first stage wireframes',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Design the contact list page in a Figma project',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement the contact list page in the project',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Build a search functionality for the contact list page',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'The filter is a great addition. I think it will be very useful.',
+              author: {
+                name: 'Melany L.',
+                picture: '/img/avatars/25.svg',
+                posted: '6 hours ago',
+              },
+            },
+            {
+              text: "That's the cherry on top of the cake. I think it's ready to be implemented.",
+              author: {
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+                posted: '7 hours ago',
+              },
+            },
+            {
+              text: 'I agree. I will start working on the implementation.',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+                posted: '8 hours ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 10,
+          name: 'Implement a contact list API endpoint',
+          description:
+            'The contact list API endpoint should return a list of contacts with their name, email, phone number and avatar.',
+          completion: 50,
+          status: 1,
+          created: '6 days ago',
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'contact-list-api.pdf',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'contact-list-api.xlsx',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.0.0',
+              uploaded: '1 week ago',
+              author: {
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Create a new API endpoint for the contact list',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the contact list',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the contact list',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the contact list',
+              done: false,
+            },
+            {
+              text: 'Create filter queries and pagination for the contact list',
+              done: false,
+            },
+          ],
+          comments: [
+            {
+              text: 'I think we should add a search functionality to the contact list.',
+              author: {
+                name: 'Lana E.',
+                picture: '/img/avatars/4.svg',
+                posted: '2 hours ago',
+              },
+            },
+            {
+              text: 'I agree. I will add it to the checklist.',
+              author: {
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+                posted: '2 days ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 11,
+          name: 'Implement a messaging frontend for contacts',
+          description:
+            'The messaging frontend should allow users to send messages to each other. The messages should be stored in a database. The frontend should be implemented in React.',
+          completion: 100,
+          status: 5,
+          created: '2 weeks ago',
+          assignee: {
+            id: 7,
+            src: '/img/avatars/3.svg',
+            badge: '/img/stacks/reactjs.svg',
+            role: 'Frontend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Clarke G.',
+            text: 'CG',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'messaging-frontend.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '7.1MB',
+              version: '1.0.0',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Elias D.',
+                picture: '/img/avatars/13.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'messaging-frontend.pdf',
+              icon: '/img/icons/files/pdf.svg',
+              size: '1.2MB',
+              version: '1.0.0',
+              uploaded: '6 days ago',
+              author: {
+                name: 'Josh D.',
+                picture: '/img/avatars/11.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Create new components for the messaging frontend',
+              done: true,
+            },
+            {
+              text: 'Add a new route for the messaging frontend',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the messages',
+              done: true,
+            },
+            {
+              text: 'Implement the messaging functionality',
+              done: true,
+            },
+          ],
+          comments: [
+            {
+              text: 'I think we should add the ability to send images and files. What do you think?',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
@@ -4065,17 +5931,17 @@ async function getDemoData() {
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Iam not sure if we should add this. It would be a lot of work. What do you think @Hermann M.?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Josh D.',
+                picture: '/img/avatars/11.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think we should add it. It would be a nice feature.',
               author: {
-                name: 'Clarissa M.',
+                name: 'Hermann M.',
                 picture: '/img/avatars/5.svg',
                 posted: '2 days ago',
               },
@@ -4083,84 +5949,57 @@ async function getDemoData() {
           ],
         },
         {
-          id: 7,
-          name: 'Create a new design for the homepage',
+          id: 12,
+          name: 'Implement a messaging API endpoint for the frontend',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            'The messaging API endpoint should allow users to send messages to each other. The messages should be stored in a database. The API endpoint should be implemented in Node.js.',
+          completion: 65,
+          status: 1,
+          created: '3 weeks ago',
+          assignee: {
+            id: 7,
+            src: '/img/avatars/3.svg',
+            badge: '/img/stacks/reactjs.svg',
+            role: 'Frontend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Clarke G.',
+            text: 'CG',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'messaging-api-endpoint.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '2.2MB',
+              version: '1.0.2',
               uploaded: '2 weeks ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
-              },
-            },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new API endpoint for the messaging frontend',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement the messaging functionality',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: true,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Save the messages in a database',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I have been doing some heavy lifting on this. I think we should defintiely add the ability to send images and files. What do you think?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
+                posted: '10 hours ago',
               },
             },
           ],
@@ -4203,16 +6042,25 @@ async function getDemoData() {
           id: 15,
           src: '/img/avatars/15.svg',
           badge: '/img/stacks/js.svg',
-          role: 'UI/UX Designer',
+          role: 'Fullstack Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Josh C.',
           text: 'JS',
         },
         {
+          id: 59,
+          src: '/img/avatars/2.svg',
+          badge: '/img/stacks/illustrator.svg',
+          role: 'Graphic Artist',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+          tooltip: 'Maya R.',
+          text: 'MR',
+        },
+        {
           id: 40,
           src: '/img/avatars/20.svg',
           badge: '/img/stacks/js.svg',
-          role: 'UI/UX Designer',
+          role: 'Backend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Harold S',
           text: 'HS',
@@ -4221,7 +6069,7 @@ async function getDemoData() {
           id: 8,
           src: '/img/avatars/11.svg',
           badge: '/img/stacks/js.svg',
-          role: 'UI/UX Designer',
+          role: 'Solution Architect',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Mike B.',
           text: 'MB',
@@ -4230,7 +6078,7 @@ async function getDemoData() {
       files: [
         {
           id: 0,
-          name: 'Company UX Guide',
+          name: 'company-ux-guide.pdf',
           icon: '/img/icons/files/pdf.svg',
           size: '4.7MB',
           version: '1.5.2',
@@ -4242,7 +6090,7 @@ async function getDemoData() {
         },
         {
           id: 1,
-          name: 'Thech summit expenses',
+          name: 'tech-summit-expenses.xlsx',
           icon: '/img/icons/files/sheet.svg',
           size: '34KB',
           version: '1.1.3',
@@ -4254,7 +6102,7 @@ async function getDemoData() {
         },
         {
           id: 2,
-          name: 'Project outline',
+          name: 'project-outline.docx',
           icon: '/img/icons/files/doc-2.svg',
           size: '77KB',
           version: '1.0.0',
@@ -4266,7 +6114,7 @@ async function getDemoData() {
         },
         {
           id: 3,
-          name: 'UX presentation',
+          name: 'ux-presentation.pptx',
           icon: '/img/icons/files/ppt.svg',
           size: '2.3MB',
           version: '1.0.0',
@@ -4278,7 +6126,7 @@ async function getDemoData() {
         },
         {
           id: 4,
-          name: 'Website Homepage Redesign',
+          name: 'website-homepage-redesign.ai',
           icon: '/img/icons/files/ai.svg',
           size: '4.8MB',
           version: '1.0.0',
@@ -4290,7 +6138,7 @@ async function getDemoData() {
         },
         {
           id: 5,
-          name: 'UX Ramp Up for Interns',
+          name: 'interns-ux-rampup.docx',
           icon: '/img/icons/files/doc-2.svg',
           size: '1.8MB',
           version: '1.2.0',
@@ -4338,16 +6186,25 @@ async function getDemoData() {
       tasks: [
         {
           id: 0,
-          name: 'Create a new design for the homepage',
+          name: 'Create a new figma design for the new homepage elements',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
-          completion: 75,
+            'We should have a collection of the most basic UI elements like buttons, badges and form elements. Then we should use these to create reusable section blocks that we can also use in other pages of the project.',
+          completion: 100,
+          status: 5,
           created: '2 days ago',
-          attachments: 2,
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'company-ux-guide.pdf',
               icon: '/img/icons/files/pdf.svg',
               size: '4.7MB',
               version: '1.5.2',
@@ -4359,11 +6216,11 @@ async function getDemoData() {
             },
             {
               id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
+              name: 'project_sketches.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '8.9MB',
               version: '1.1.3',
-              uploaded: '3 days ago',
+              uploaded: 'a week ago',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
@@ -4372,48 +6229,48 @@ async function getDemoData() {
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a set of button elements',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a set of badge elements',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a set of input elements',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a set of checkbox elements',
+              done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a set of card elements',
+              done: true,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think buttons corners should be a little more rounded.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Marjory L.',
+                picture: '/img/avatars/12.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Are you planning to add this as a global setting in the configuration file?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Not sure about it yet. Still need to check this out with the engineering team',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Marjory L.',
+                picture: '/img/avatars/12.svg',
                 posted: '2 days ago',
               },
             },
@@ -4421,115 +6278,118 @@ async function getDemoData() {
         },
         {
           id: 1,
-          name: 'Build a desktop and mobile landing page wireframe',
+          name: 'Build a landing page template for future marketing campaigns',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 25,
+            'The website should provide a customizable landing page template that can be used to support marketing campaigns. It should also be easily customizable by the marketing team.',
+          completion: 58,
+          status: 1,
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
-              icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              name: 'ux-notes.docx',
+              icon: '/img/icons/files/doc-2.svg',
+              size: '89KB',
+              version: '1.8.2',
               uploaded: '2 weeks ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
+                name: 'Melany D.',
+                picture: '/img/avatars/25.svg',
               },
             },
             {
               id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
+              name: 'landing_page.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '4.2MB',
+              version: '1.4.1',
+              uploaded: '5 days ago',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable hero section',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable pricing section',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable features section',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable testimonials section',
               done: false,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable contact section',
               done: false,
             },
           ],
-          created: '2 days ago',
-          attachments: 0,
+          created: '6 days ago',
+          attachments: 2,
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Iam wondering if we should add a section for the team members? it could be nice. And what about a section for the latest blog posts?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Selena M.',
+                picture: '/img/avatars/24.svg',
+                posted: '7 hours ago',
               },
             },
           ],
         },
         {
           id: 2,
-          name: 'Build a custom video player javascript librar',
+          name: 'Build a custom javascript video player with streaming support',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            "Since we couldn't find an out of the box solution, we are forced to build a custom player that we can reuse in othe projects.",
+          completion: 45,
+          status: 1,
+          created: '18 days ago',
+          assignee: {
+            id: 15,
+            src: '/img/avatars/15.svg',
+            badge: '/img/stacks/js.svg',
+            role: 'Fullstack Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Josh C.',
+            text: 'JC',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'player_specifications.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '2.9MB',
+              version: '1.0.1',
               uploaded: '2 weeks ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
+                name: 'Greta K.',
+                picture: '/img/avatars/20.svg',
               },
             },
             {
               id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
+              name: 'player-mockup.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '5.7MB',
+              version: '1.0.0',
+              uploaded: '5 days ago',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
@@ -4538,214 +6398,204 @@ async function getDemoData() {
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement basic frame and controls',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Design and implement custom svg control icons',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: true,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement video streaming support',
               done: false,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement video playback speed control',
+              done: true,
+            },
+            {
+              text: 'Implement video volume control',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Iam wondering if we should add several display modes for the player? It could be nice to have a fullscreen mode for example.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Erik K.',
+                picture: '/img/avatars/8.svg',
+                posted: '3 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Yeah, that would be nice. I will add it to the list of features. Anything else you can think of?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+                posted: '3 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think that should be it for now. I will let you know if I think of anything else. Now that you say it, ahave you though about cusomtization and Tailwind CSS support?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Erik K.',
+                picture: '/img/avatars/8.svg',
+                posted: '3 days ago',
               },
             },
           ],
         },
         {
           id: 3,
-          name: 'Design custom illustrations for landing page',
+          name: 'Design a set of custom branded illustrations for the website and the app',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            'The customer wants to have a set of illustrations that can be used on the website and the app. They should be custom branded and fit the overall design.',
+          completion: 100,
+          status: 5,
+          created: '2 weeks ago',
+          assignee: {
+            id: 15,
+            src: '/img/avatars/15.svg',
+            badge: '/img/stacks/js.svg',
+            role: 'Fullstack Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Josh C.',
+            text: 'JC',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'company_branding.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
-              uploaded: '2 weeks ago',
+              size: '25.8MB',
+              version: '4.5.2',
+              uploaded: '1 month ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
-              },
-            },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Lana H.',
+                picture: '/img/avatars/4.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create illustrations for the landing page',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Rework svgs to use the currentColor for fill and stroke attributes',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Prepare svg parts that will be animated',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Work on a set of branded icons',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'This is starting to look really good. I wonder if we should abstract the characters a little bit more? What do you guys think?',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                posted: '5 hours ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Looks good to me. I think we can start working on the icons now. I will add it to the list of features. Anything else you can think of?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+                posted: '2 hours ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think that should be it for now. I will let you know if I think of anything else. Now that you say it, have you though about cusomtization and Tailwind CSS support?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+                posted: '1 hour ago',
               },
             },
           ],
         },
         {
           id: 4,
-          name: 'Implement job management API controller',
+          name: 'Implement a complete job offers API endpoint',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            'The API endpoint should return a JSON list of jobs. The endpoint should be able to filter the results by keyword, location, type and category.',
+          completion: 65,
+          status: 1,
+          created: '2 weeks ago',
+          assignee: {
+            id: 7,
+            src: '/img/avatars/3.svg',
+            badge: '/img/stacks/reactjs.svg',
+            role: 'Frontend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Clarke G.',
+            text: 'CG',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'api-jobs-specs.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '1.2MB',
+              version: '1.9.2',
               uploaded: '2 weeks ago',
               author: {
                 name: 'Hermann M.',
                 picture: '/img/avatars/16.svg',
               },
             },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-              },
-            },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new API endpoint',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database table',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database migration',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database seeder',
               done: false,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database model',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I feel this architecture is not the best. I think we should use a different approach. What do you guys think?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Rob H.',
+                picture: '/img/avatars/13.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: "Yup, it looks clunky to me as well. Let's try something different. I will add it to the list of features. Anything else you can think of?",
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'John B.',
+                picture: '/img/avatars/8.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I have sent some notes to the team. That should help them refactor the code.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
                 posted: '2 days ago',
               },
             },
@@ -4753,82 +6603,79 @@ async function getDemoData() {
         },
         {
           id: 5,
-          name: 'Implement user management API controller',
+          name: 'Implement company users API endpoint',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
+            'The API endpoint should return a JSON list of users. The endpoint should be able to filter the results by keyword, location, type and category.',
+          completion: 100,
+          status: 0,
           created: '2 days ago',
-          attachments: 0,
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'api-users-specs.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '1.2MB',
+              version: '1.9.2',
               uploaded: '2 weeks ago',
               author: {
                 name: 'Hermann M.',
                 picture: '/img/avatars/16.svg',
               },
             },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-              },
-            },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new API endpoint',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database table',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database migration',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a new database seeder',
+              done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a new database model',
+              done: true,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I feel this architecture is not the best. I think we should use a different approach. What do you guys think?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Betty L.',
+                picture: '/img/avatars/24.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I have sent some notes to the team. That should help them refactor the code.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'John B.',
+                picture: '/img/avatars/8.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Hold your horses! I am still working on it. I will let you know when I am done.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Josh D.',
+                picture: '/img/avatars/11.svg',
                 posted: '2 days ago',
               },
             },
@@ -4836,17 +6683,173 @@ async function getDemoData() {
         },
         {
           id: 6,
-          name: 'Develop a JWT authentication controller',
+          name: 'Build a complete authentication system and API endpoint',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
+            'The authentication system should be able to handle user registration, login, logout, password reset and email verification. The API endpoint should return a Bearer token.',
+          completion: 100,
+          status: 0,
           created: '2 days ago',
-          attachments: 0,
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'api-auth-specs.pdf',
               icon: '/img/icons/files/pdf.svg',
+              size: '2.4MB',
+              version: '1.0.0',
+              uploaded: '3 weeks ago',
+              author: {
+                name: 'Josh S.',
+                picture: '/img/avatars/11.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'authentication.docx',
+              icon: '/img/icons/files/doc-2.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '5 days ago',
+              author: {
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Create a new API endpoint',
+              done: true,
+            },
+            {
+              text: 'Create a new database table',
+              done: true,
+            },
+            {
+              text: 'Create a new database migration',
+              done: true,
+            },
+            {
+              text: 'Create a new database seeder',
+              done: true,
+            },
+            {
+              text: 'Create a new database model',
+              done: true,
+            },
+          ],
+          comments: [],
+        },
+        {
+          id: 7,
+          name: 'Create reusable components to build different pricing sections',
+          description:
+            'The components should be able to handle different pricing plans and should be able to display the most popular plan. Also, the components should be able to display a button to purchase the plan.',
+          completion: 100,
+          status: 5,
+          created: '2 weeks ago',
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'pricing-components.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '9.5MB',
+              version: '1.0.0',
+              uploaded: '5 days ago',
+              author: {
+                name: 'Ana B.',
+                picture: '/img/avatars/9.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Draw some first stage wireframes',
+              done: true,
+            },
+            {
+              text: 'Design components in a Figma project',
+              done: true,
+            },
+            {
+              text: 'Design pricing sections in the Figma project',
+              done: true,
+            },
+            {
+              text: 'Implement the components in the project',
+              done: true,
+            },
+            {
+              text: 'Implement the pricing sections in the project',
+              done: true,
+            },
+          ],
+          comments: [
+            {
+              text: 'I like very much the design. There is just one thing I would change. I would make the button a bit bigger.',
+              author: {
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+                posted: '4 days ago',
+              },
+            },
+            {
+              text: 'Are you sure? I think the button is the right size. I will ask the team what they think.',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+                posted: '2 days ago',
+              },
+            },
+            {
+              text: 'I think the button is fine. I would not change it.',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+                posted: '2 days ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 8,
+          name: 'Implement a user profile page',
+          description:
+            'The user profile page should display the user avatar, name, email, bio, location, social links and a list of the user projects.',
+          completion: 100,
+          status: 5,
+          created: '3 weeks ago',
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'profile-view.ai',
+              icon: '/img/icons/files/ai.svg',
               size: '4.7MB',
               version: '1.5.2',
               uploaded: '2 weeks ago',
@@ -4855,44 +6858,264 @@ async function getDemoData() {
                 picture: '/img/avatars/16.svg',
               },
             },
+          ],
+          checklist: [
             {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
+              text: 'Draw some first stage wireframes',
+              done: true,
+            },
+            {
+              text: 'Design the user profile page in a Figma project',
+              done: true,
+            },
+            {
+              text: 'Implement the user profile page in the project',
+              done: true,
+            },
+          ],
+          comments: [
+            {
+              text: 'This looks great! I have just one question. How will the user change the avatar?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Henry D.',
+                picture: '/img/avatars/1.svg',
+                posted: '8 hours ago',
+              },
+            },
+            {
+              text: 'I think the user will be able to change the avatar from the settings page.',
+              author: {
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
+                posted: '8 hours ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 9,
+          name: 'Create a concept for a contact list page',
+          description:
+            'The contact list page should display a list of contacts with their name, email, phone number and avatar.',
+          completion: 75,
+          status: 3,
+          created: '2 weeks ago',
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'contact-list.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '7.9MB',
+              version: '1.1.1',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Draw some first stage wireframes',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Design the contact list page in a Figma project',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement the contact list page in the project',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Build a search functionality for the contact list page',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'The filter is a great addition. I think it will be very useful.',
+              author: {
+                name: 'Melany L.',
+                picture: '/img/avatars/25.svg',
+                posted: '6 hours ago',
+              },
+            },
+            {
+              text: "That's the cherry on top of the cake. I think it's ready to be implemented.",
+              author: {
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+                posted: '7 hours ago',
+              },
+            },
+            {
+              text: 'I agree. I will start working on the implementation.',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+                posted: '8 hours ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 10,
+          name: 'Implement a contact list API endpoint',
+          description:
+            'The contact list API endpoint should return a list of contacts with their name, email, phone number and avatar.',
+          completion: 50,
+          status: 1,
+          created: '6 days ago',
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'contact-list-api.pdf',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'contact-list-api.xlsx',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.0.0',
+              uploaded: '1 week ago',
+              author: {
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Create a new API endpoint for the contact list',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the contact list',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the contact list',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the contact list',
+              done: false,
+            },
+            {
+              text: 'Create filter queries and pagination for the contact list',
+              done: false,
+            },
+          ],
+          comments: [
+            {
+              text: 'I think we should add a search functionality to the contact list.',
+              author: {
+                name: 'Lana E.',
+                picture: '/img/avatars/4.svg',
+                posted: '2 hours ago',
+              },
+            },
+            {
+              text: 'I agree. I will add it to the checklist.',
+              author: {
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+                posted: '2 days ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 11,
+          name: 'Implement a messaging frontend for contacts',
+          description:
+            'The messaging frontend should allow users to send messages to each other. The messages should be stored in a database. The frontend should be implemented in React.',
+          completion: 100,
+          status: 5,
+          created: '2 weeks ago',
+          assignee: {
+            id: 7,
+            src: '/img/avatars/3.svg',
+            badge: '/img/stacks/reactjs.svg',
+            role: 'Frontend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Clarke G.',
+            text: 'CG',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'messaging-frontend.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '7.1MB',
+              version: '1.0.0',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Elias D.',
+                picture: '/img/avatars/13.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'messaging-frontend.pdf',
+              icon: '/img/icons/files/pdf.svg',
+              size: '1.2MB',
+              version: '1.0.0',
+              uploaded: '6 days ago',
+              author: {
+                name: 'Josh D.',
+                picture: '/img/avatars/11.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Create new components for the messaging frontend',
+              done: true,
+            },
+            {
+              text: 'Add a new route for the messaging frontend',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the messages',
+              done: true,
+            },
+            {
+              text: 'Implement the messaging functionality',
+              done: true,
+            },
+          ],
+          comments: [
+            {
+              text: 'I think we should add the ability to send images and files. What do you think?',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
@@ -4900,17 +7123,17 @@ async function getDemoData() {
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Iam not sure if we should add this. It would be a lot of work. What do you think @Hermann M.?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Josh D.',
+                picture: '/img/avatars/11.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think we should add it. It would be a nice feature.',
               author: {
-                name: 'Clarissa M.',
+                name: 'Hermann M.',
                 picture: '/img/avatars/5.svg',
                 posted: '2 days ago',
               },
@@ -4918,84 +7141,57 @@ async function getDemoData() {
           ],
         },
         {
-          id: 7,
-          name: 'Create a new design for the homepage',
+          id: 12,
+          name: 'Implement a messaging API endpoint for the frontend',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            'The messaging API endpoint should allow users to send messages to each other. The messages should be stored in a database. The API endpoint should be implemented in Node.js.',
+          completion: 65,
+          status: 1,
+          created: '3 weeks ago',
+          assignee: {
+            id: 7,
+            src: '/img/avatars/3.svg',
+            badge: '/img/stacks/reactjs.svg',
+            role: 'Frontend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Clarke G.',
+            text: 'CG',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'messaging-api-endpoint.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '2.2MB',
+              version: '1.0.2',
               uploaded: '2 weeks ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
-              },
-            },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new API endpoint for the messaging frontend',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement the messaging functionality',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: true,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Save the messages in a database',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I have been doing some heavy lifting on this. I think we should defintiely add the ability to send images and files. What do you think?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
+                posted: '10 hours ago',
               },
             },
           ],
@@ -5038,16 +7234,25 @@ async function getDemoData() {
           id: 11,
           src: '/img/avatars/11.svg',
           badge: '/img/stacks/js.svg',
-          role: 'UI/UX Designer',
+          role: 'Frontend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Mike B.',
           text: 'MB',
+        },
+        {
+          id: 11,
+          src: '/img/avatars/8.svg',
+          badge: '/img/stacks/android.svg',
+          role: 'Mobile Developer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+          tooltip: 'Arthur B.',
+          text: 'AB',
         },
       ],
       files: [
         {
           id: 0,
-          name: 'Company UX Guide',
+          name: 'company-ux-guide.pdf',
           icon: '/img/icons/files/pdf.svg',
           size: '4.7MB',
           version: '1.5.2',
@@ -5059,7 +7264,7 @@ async function getDemoData() {
         },
         {
           id: 1,
-          name: 'Thech summit expenses',
+          name: 'tech-summit-expenses.xlsx',
           icon: '/img/icons/files/sheet.svg',
           size: '34KB',
           version: '1.1.3',
@@ -5071,7 +7276,7 @@ async function getDemoData() {
         },
         {
           id: 2,
-          name: 'Project outline',
+          name: 'project-outline.docx',
           icon: '/img/icons/files/doc-2.svg',
           size: '77KB',
           version: '1.0.0',
@@ -5083,7 +7288,7 @@ async function getDemoData() {
         },
         {
           id: 3,
-          name: 'UX presentation',
+          name: 'ux-presentation.pptx',
           icon: '/img/icons/files/ppt.svg',
           size: '2.3MB',
           version: '1.0.0',
@@ -5095,7 +7300,7 @@ async function getDemoData() {
         },
         {
           id: 4,
-          name: 'Website Homepage Redesign',
+          name: 'website-homepage-redesign.ai',
           icon: '/img/icons/files/ai.svg',
           size: '4.8MB',
           version: '1.0.0',
@@ -5107,7 +7312,7 @@ async function getDemoData() {
         },
         {
           id: 5,
-          name: 'UX Ramp Up for Interns',
+          name: 'interns-ux-rampup.docx',
           icon: '/img/icons/files/doc-2.svg',
           size: '1.8MB',
           version: '1.2.0',
@@ -5155,16 +7360,25 @@ async function getDemoData() {
       tasks: [
         {
           id: 0,
-          name: 'Create a new design for the homepage',
+          name: 'Create a new figma design for the new homepage elements',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
-          completion: 75,
+            'We should have a collection of the most basic UI elements like buttons, badges and form elements. Then we should use these to create reusable section blocks that we can also use in other pages of the project.',
+          completion: 100,
+          status: 5,
           created: '2 days ago',
-          attachments: 2,
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'company-ux-guide.pdf',
               icon: '/img/icons/files/pdf.svg',
               size: '4.7MB',
               version: '1.5.2',
@@ -5176,11 +7390,11 @@ async function getDemoData() {
             },
             {
               id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
+              name: 'project_sketches.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '8.9MB',
               version: '1.1.3',
-              uploaded: '3 days ago',
+              uploaded: 'a week ago',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
@@ -5189,48 +7403,48 @@ async function getDemoData() {
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a set of button elements',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a set of badge elements',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a set of input elements',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a set of checkbox elements',
+              done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a set of card elements',
+              done: true,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think buttons corners should be a little more rounded.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Marjory L.',
+                picture: '/img/avatars/12.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Are you planning to add this as a global setting in the configuration file?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Not sure about it yet. Still need to check this out with the engineering team',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Marjory L.',
+                picture: '/img/avatars/12.svg',
                 posted: '2 days ago',
               },
             },
@@ -5238,115 +7452,118 @@ async function getDemoData() {
         },
         {
           id: 1,
-          name: 'Build a desktop and mobile landing page wireframe',
+          name: 'Build a landing page template for future marketing campaigns',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 25,
+            'The website should provide a customizable landing page template that can be used to support marketing campaigns. It should also be easily customizable by the marketing team.',
+          completion: 58,
+          status: 1,
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
-              icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              name: 'ux-notes.docx',
+              icon: '/img/icons/files/doc-2.svg',
+              size: '89KB',
+              version: '1.8.2',
               uploaded: '2 weeks ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
+                name: 'Melany D.',
+                picture: '/img/avatars/25.svg',
               },
             },
             {
               id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
+              name: 'landing_page.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '4.2MB',
+              version: '1.4.1',
+              uploaded: '5 days ago',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable hero section',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable pricing section',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable features section',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable testimonials section',
               done: false,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable contact section',
               done: false,
             },
           ],
-          created: '2 days ago',
-          attachments: 0,
+          created: '6 days ago',
+          attachments: 2,
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Iam wondering if we should add a section for the team members? it could be nice. And what about a section for the latest blog posts?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Selena M.',
+                picture: '/img/avatars/24.svg',
+                posted: '7 hours ago',
               },
             },
           ],
         },
         {
           id: 2,
-          name: 'Build a custom video player javascript librar',
+          name: 'Build a custom javascript video player with streaming support',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            "Since we couldn't find an out of the box solution, we are forced to build a custom player that we can reuse in othe projects.",
+          completion: 45,
+          status: 1,
+          created: '18 days ago',
+          assignee: {
+            id: 15,
+            src: '/img/avatars/15.svg',
+            badge: '/img/stacks/js.svg',
+            role: 'Fullstack Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Josh C.',
+            text: 'JC',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'player_specifications.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '2.9MB',
+              version: '1.0.1',
               uploaded: '2 weeks ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
+                name: 'Greta K.',
+                picture: '/img/avatars/20.svg',
               },
             },
             {
               id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
+              name: 'player-mockup.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '5.7MB',
+              version: '1.0.0',
+              uploaded: '5 days ago',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
@@ -5355,214 +7572,204 @@ async function getDemoData() {
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement basic frame and controls',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Design and implement custom svg control icons',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: true,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement video streaming support',
               done: false,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement video playback speed control',
+              done: true,
+            },
+            {
+              text: 'Implement video volume control',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Iam wondering if we should add several display modes for the player? It could be nice to have a fullscreen mode for example.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Erik K.',
+                picture: '/img/avatars/8.svg',
+                posted: '3 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Yeah, that would be nice. I will add it to the list of features. Anything else you can think of?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+                posted: '3 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think that should be it for now. I will let you know if I think of anything else. Now that you say it, ahave you though about cusomtization and Tailwind CSS support?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Erik K.',
+                picture: '/img/avatars/8.svg',
+                posted: '3 days ago',
               },
             },
           ],
         },
         {
           id: 3,
-          name: 'Design custom illustrations for landing page',
+          name: 'Design a set of custom branded illustrations for the website and the app',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            'The customer wants to have a set of illustrations that can be used on the website and the app. They should be custom branded and fit the overall design.',
+          completion: 100,
+          status: 5,
+          created: '2 weeks ago',
+          assignee: {
+            id: 15,
+            src: '/img/avatars/15.svg',
+            badge: '/img/stacks/js.svg',
+            role: 'Fullstack Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Josh C.',
+            text: 'JC',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'company_branding.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
-              uploaded: '2 weeks ago',
+              size: '25.8MB',
+              version: '4.5.2',
+              uploaded: '1 month ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
-              },
-            },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Lana H.',
+                picture: '/img/avatars/4.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create illustrations for the landing page',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Rework svgs to use the currentColor for fill and stroke attributes',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Prepare svg parts that will be animated',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Work on a set of branded icons',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'This is starting to look really good. I wonder if we should abstract the characters a little bit more? What do you guys think?',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                posted: '5 hours ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Looks good to me. I think we can start working on the icons now. I will add it to the list of features. Anything else you can think of?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+                posted: '2 hours ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think that should be it for now. I will let you know if I think of anything else. Now that you say it, have you though about cusomtization and Tailwind CSS support?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+                posted: '1 hour ago',
               },
             },
           ],
         },
         {
           id: 4,
-          name: 'Implement job management API controller',
+          name: 'Implement a complete job offers API endpoint',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            'The API endpoint should return a JSON list of jobs. The endpoint should be able to filter the results by keyword, location, type and category.',
+          completion: 65,
+          status: 1,
+          created: '2 weeks ago',
+          assignee: {
+            id: 7,
+            src: '/img/avatars/3.svg',
+            badge: '/img/stacks/reactjs.svg',
+            role: 'Frontend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Clarke G.',
+            text: 'CG',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'api-jobs-specs.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '1.2MB',
+              version: '1.9.2',
               uploaded: '2 weeks ago',
               author: {
                 name: 'Hermann M.',
                 picture: '/img/avatars/16.svg',
               },
             },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-              },
-            },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new API endpoint',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database table',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database migration',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database seeder',
               done: false,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database model',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I feel this architecture is not the best. I think we should use a different approach. What do you guys think?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Rob H.',
+                picture: '/img/avatars/13.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: "Yup, it looks clunky to me as well. Let's try something different. I will add it to the list of features. Anything else you can think of?",
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'John B.',
+                picture: '/img/avatars/8.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I have sent some notes to the team. That should help them refactor the code.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
                 posted: '2 days ago',
               },
             },
@@ -5570,82 +7777,79 @@ async function getDemoData() {
         },
         {
           id: 5,
-          name: 'Implement user management API controller',
+          name: 'Implement company users API endpoint',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
+            'The API endpoint should return a JSON list of users. The endpoint should be able to filter the results by keyword, location, type and category.',
+          completion: 100,
+          status: 0,
           created: '2 days ago',
-          attachments: 0,
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'api-users-specs.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '1.2MB',
+              version: '1.9.2',
               uploaded: '2 weeks ago',
               author: {
                 name: 'Hermann M.',
                 picture: '/img/avatars/16.svg',
               },
             },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-              },
-            },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new API endpoint',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database table',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database migration',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a new database seeder',
+              done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a new database model',
+              done: true,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I feel this architecture is not the best. I think we should use a different approach. What do you guys think?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Betty L.',
+                picture: '/img/avatars/24.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I have sent some notes to the team. That should help them refactor the code.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'John B.',
+                picture: '/img/avatars/8.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Hold your horses! I am still working on it. I will let you know when I am done.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Josh D.',
+                picture: '/img/avatars/11.svg',
                 posted: '2 days ago',
               },
             },
@@ -5653,17 +7857,173 @@ async function getDemoData() {
         },
         {
           id: 6,
-          name: 'Develop a JWT authentication controller',
+          name: 'Build a complete authentication system and API endpoint',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
+            'The authentication system should be able to handle user registration, login, logout, password reset and email verification. The API endpoint should return a Bearer token.',
+          completion: 100,
+          status: 0,
           created: '2 days ago',
-          attachments: 0,
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'api-auth-specs.pdf',
               icon: '/img/icons/files/pdf.svg',
+              size: '2.4MB',
+              version: '1.0.0',
+              uploaded: '3 weeks ago',
+              author: {
+                name: 'Josh S.',
+                picture: '/img/avatars/11.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'authentication.docx',
+              icon: '/img/icons/files/doc-2.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '5 days ago',
+              author: {
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Create a new API endpoint',
+              done: true,
+            },
+            {
+              text: 'Create a new database table',
+              done: true,
+            },
+            {
+              text: 'Create a new database migration',
+              done: true,
+            },
+            {
+              text: 'Create a new database seeder',
+              done: true,
+            },
+            {
+              text: 'Create a new database model',
+              done: true,
+            },
+          ],
+          comments: [],
+        },
+        {
+          id: 7,
+          name: 'Create reusable components to build different pricing sections',
+          description:
+            'The components should be able to handle different pricing plans and should be able to display the most popular plan. Also, the components should be able to display a button to purchase the plan.',
+          completion: 100,
+          status: 5,
+          created: '2 weeks ago',
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'pricing-components.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '9.5MB',
+              version: '1.0.0',
+              uploaded: '5 days ago',
+              author: {
+                name: 'Ana B.',
+                picture: '/img/avatars/9.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Draw some first stage wireframes',
+              done: true,
+            },
+            {
+              text: 'Design components in a Figma project',
+              done: true,
+            },
+            {
+              text: 'Design pricing sections in the Figma project',
+              done: true,
+            },
+            {
+              text: 'Implement the components in the project',
+              done: true,
+            },
+            {
+              text: 'Implement the pricing sections in the project',
+              done: true,
+            },
+          ],
+          comments: [
+            {
+              text: 'I like very much the design. There is just one thing I would change. I would make the button a bit bigger.',
+              author: {
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+                posted: '4 days ago',
+              },
+            },
+            {
+              text: 'Are you sure? I think the button is the right size. I will ask the team what they think.',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+                posted: '2 days ago',
+              },
+            },
+            {
+              text: 'I think the button is fine. I would not change it.',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+                posted: '2 days ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 8,
+          name: 'Implement a user profile page',
+          description:
+            'The user profile page should display the user avatar, name, email, bio, location, social links and a list of the user projects.',
+          completion: 100,
+          status: 5,
+          created: '3 weeks ago',
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'profile-view.ai',
+              icon: '/img/icons/files/ai.svg',
               size: '4.7MB',
               version: '1.5.2',
               uploaded: '2 weeks ago',
@@ -5672,44 +8032,264 @@ async function getDemoData() {
                 picture: '/img/avatars/16.svg',
               },
             },
+          ],
+          checklist: [
             {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
+              text: 'Draw some first stage wireframes',
+              done: true,
+            },
+            {
+              text: 'Design the user profile page in a Figma project',
+              done: true,
+            },
+            {
+              text: 'Implement the user profile page in the project',
+              done: true,
+            },
+          ],
+          comments: [
+            {
+              text: 'This looks great! I have just one question. How will the user change the avatar?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Henry D.',
+                picture: '/img/avatars/1.svg',
+                posted: '8 hours ago',
+              },
+            },
+            {
+              text: 'I think the user will be able to change the avatar from the settings page.',
+              author: {
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
+                posted: '8 hours ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 9,
+          name: 'Create a concept for a contact list page',
+          description:
+            'The contact list page should display a list of contacts with their name, email, phone number and avatar.',
+          completion: 75,
+          status: 3,
+          created: '2 weeks ago',
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'contact-list.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '7.9MB',
+              version: '1.1.1',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Draw some first stage wireframes',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Design the contact list page in a Figma project',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement the contact list page in the project',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Build a search functionality for the contact list page',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'The filter is a great addition. I think it will be very useful.',
+              author: {
+                name: 'Melany L.',
+                picture: '/img/avatars/25.svg',
+                posted: '6 hours ago',
+              },
+            },
+            {
+              text: "That's the cherry on top of the cake. I think it's ready to be implemented.",
+              author: {
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+                posted: '7 hours ago',
+              },
+            },
+            {
+              text: 'I agree. I will start working on the implementation.',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+                posted: '8 hours ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 10,
+          name: 'Implement a contact list API endpoint',
+          description:
+            'The contact list API endpoint should return a list of contacts with their name, email, phone number and avatar.',
+          completion: 50,
+          status: 1,
+          created: '6 days ago',
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'contact-list-api.pdf',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'contact-list-api.xlsx',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.0.0',
+              uploaded: '1 week ago',
+              author: {
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Create a new API endpoint for the contact list',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the contact list',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the contact list',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the contact list',
+              done: false,
+            },
+            {
+              text: 'Create filter queries and pagination for the contact list',
+              done: false,
+            },
+          ],
+          comments: [
+            {
+              text: 'I think we should add a search functionality to the contact list.',
+              author: {
+                name: 'Lana E.',
+                picture: '/img/avatars/4.svg',
+                posted: '2 hours ago',
+              },
+            },
+            {
+              text: 'I agree. I will add it to the checklist.',
+              author: {
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+                posted: '2 days ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 11,
+          name: 'Implement a messaging frontend for contacts',
+          description:
+            'The messaging frontend should allow users to send messages to each other. The messages should be stored in a database. The frontend should be implemented in React.',
+          completion: 100,
+          status: 5,
+          created: '2 weeks ago',
+          assignee: {
+            id: 7,
+            src: '/img/avatars/3.svg',
+            badge: '/img/stacks/reactjs.svg',
+            role: 'Frontend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Clarke G.',
+            text: 'CG',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'messaging-frontend.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '7.1MB',
+              version: '1.0.0',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Elias D.',
+                picture: '/img/avatars/13.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'messaging-frontend.pdf',
+              icon: '/img/icons/files/pdf.svg',
+              size: '1.2MB',
+              version: '1.0.0',
+              uploaded: '6 days ago',
+              author: {
+                name: 'Josh D.',
+                picture: '/img/avatars/11.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Create new components for the messaging frontend',
+              done: true,
+            },
+            {
+              text: 'Add a new route for the messaging frontend',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the messages',
+              done: true,
+            },
+            {
+              text: 'Implement the messaging functionality',
+              done: true,
+            },
+          ],
+          comments: [
+            {
+              text: 'I think we should add the ability to send images and files. What do you think?',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
@@ -5717,17 +8297,17 @@ async function getDemoData() {
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Iam not sure if we should add this. It would be a lot of work. What do you think @Hermann M.?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Josh D.',
+                picture: '/img/avatars/11.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think we should add it. It would be a nice feature.',
               author: {
-                name: 'Clarissa M.',
+                name: 'Hermann M.',
                 picture: '/img/avatars/5.svg',
                 posted: '2 days ago',
               },
@@ -5735,84 +8315,57 @@ async function getDemoData() {
           ],
         },
         {
-          id: 7,
-          name: 'Create a new design for the homepage',
+          id: 12,
+          name: 'Implement a messaging API endpoint for the frontend',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            'The messaging API endpoint should allow users to send messages to each other. The messages should be stored in a database. The API endpoint should be implemented in Node.js.',
+          completion: 65,
+          status: 1,
+          created: '3 weeks ago',
+          assignee: {
+            id: 7,
+            src: '/img/avatars/3.svg',
+            badge: '/img/stacks/reactjs.svg',
+            role: 'Frontend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Clarke G.',
+            text: 'CG',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'messaging-api-endpoint.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '2.2MB',
+              version: '1.0.2',
               uploaded: '2 weeks ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
-              },
-            },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new API endpoint for the messaging frontend',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement the messaging functionality',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: true,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Save the messages in a database',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I have been doing some heavy lifting on this. I think we should defintiely add the ability to send images and files. What do you think?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
+                posted: '10 hours ago',
               },
             },
           ],
@@ -5854,7 +8407,7 @@ async function getDemoData() {
         {
           id: 21,
           src: '/img/avatars/9.svg',
-          badge: '/img/stacks/js.svg',
+          badge: '/img/stacks/illustrator.svg',
           role: 'UI/UX Designer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Ana B.',
@@ -5862,27 +8415,27 @@ async function getDemoData() {
         },
         {
           id: 29,
-          src: '/img/avatars/10.svg',
-          badge: '/img/stacks/js.svg',
-          role: 'UI/UX Designer',
+          src: '/img/avatars/13.svg',
+          badge: '/img/stacks/reactjs.svg',
+          role: 'Frontend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
-          tooltip: 'Kendra W.',
-          text: 'KW',
+          tooltip: 'Henry C.',
+          text: 'HC',
         },
         {
           id: 33,
-          src: '/img/avatars/18.svg',
-          badge: '/img/stacks/js.svg',
-          role: 'UI/UX Designer',
+          src: '/img/avatars/22.svg',
+          badge: '/img/stacks/csharp.svg',
+          role: 'Backend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
-          tooltip: 'Harvey M.',
-          text: 'HM',
+          tooltip: 'Greta K.',
+          text: 'GK',
         },
       ],
       files: [
         {
           id: 0,
-          name: 'Company UX Guide',
+          name: 'company-ux-guide.pdf',
           icon: '/img/icons/files/pdf.svg',
           size: '4.7MB',
           version: '1.5.2',
@@ -5894,7 +8447,7 @@ async function getDemoData() {
         },
         {
           id: 1,
-          name: 'Thech summit expenses',
+          name: 'tech-summit-expenses.xlsx',
           icon: '/img/icons/files/sheet.svg',
           size: '34KB',
           version: '1.1.3',
@@ -5906,7 +8459,7 @@ async function getDemoData() {
         },
         {
           id: 2,
-          name: 'Project outline',
+          name: 'project-outline.docx',
           icon: '/img/icons/files/doc-2.svg',
           size: '77KB',
           version: '1.0.0',
@@ -5918,7 +8471,7 @@ async function getDemoData() {
         },
         {
           id: 3,
-          name: 'UX presentation',
+          name: 'ux-presentation.pptx',
           icon: '/img/icons/files/ppt.svg',
           size: '2.3MB',
           version: '1.0.0',
@@ -5930,7 +8483,7 @@ async function getDemoData() {
         },
         {
           id: 4,
-          name: 'Website Homepage Redesign',
+          name: 'website-homepage-redesign.ai',
           icon: '/img/icons/files/ai.svg',
           size: '4.8MB',
           version: '1.0.0',
@@ -5942,7 +8495,7 @@ async function getDemoData() {
         },
         {
           id: 5,
-          name: 'UX Ramp Up for Interns',
+          name: 'interns-ux-rampup.docx',
           icon: '/img/icons/files/doc-2.svg',
           size: '1.8MB',
           version: '1.2.0',
@@ -5990,16 +8543,25 @@ async function getDemoData() {
       tasks: [
         {
           id: 0,
-          name: 'Create a new design for the homepage',
+          name: 'Create a new figma design for the new homepage elements',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
-          completion: 75,
+            'We should have a collection of the most basic UI elements like buttons, badges and form elements. Then we should use these to create reusable section blocks that we can also use in other pages of the project.',
+          completion: 100,
+          status: 5,
           created: '2 days ago',
-          attachments: 2,
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'company-ux-guide.pdf',
               icon: '/img/icons/files/pdf.svg',
               size: '4.7MB',
               version: '1.5.2',
@@ -6011,11 +8573,11 @@ async function getDemoData() {
             },
             {
               id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
+              name: 'project_sketches.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '8.9MB',
               version: '1.1.3',
-              uploaded: '3 days ago',
+              uploaded: 'a week ago',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
@@ -6024,48 +8586,48 @@ async function getDemoData() {
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a set of button elements',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a set of badge elements',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a set of input elements',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a set of checkbox elements',
+              done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a set of card elements',
+              done: true,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think buttons corners should be a little more rounded.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Marjory L.',
+                picture: '/img/avatars/12.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Are you planning to add this as a global setting in the configuration file?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Not sure about it yet. Still need to check this out with the engineering team',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Marjory L.',
+                picture: '/img/avatars/12.svg',
                 posted: '2 days ago',
               },
             },
@@ -6073,115 +8635,118 @@ async function getDemoData() {
         },
         {
           id: 1,
-          name: 'Build a desktop and mobile landing page wireframe',
+          name: 'Build a landing page template for future marketing campaigns',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 25,
+            'The website should provide a customizable landing page template that can be used to support marketing campaigns. It should also be easily customizable by the marketing team.',
+          completion: 58,
+          status: 1,
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
-              icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              name: 'ux-notes.docx',
+              icon: '/img/icons/files/doc-2.svg',
+              size: '89KB',
+              version: '1.8.2',
               uploaded: '2 weeks ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
+                name: 'Melany D.',
+                picture: '/img/avatars/25.svg',
               },
             },
             {
               id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
+              name: 'landing_page.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '4.2MB',
+              version: '1.4.1',
+              uploaded: '5 days ago',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable hero section',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable pricing section',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable features section',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable testimonials section',
               done: false,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable contact section',
               done: false,
             },
           ],
-          created: '2 days ago',
-          attachments: 0,
+          created: '6 days ago',
+          attachments: 2,
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Iam wondering if we should add a section for the team members? it could be nice. And what about a section for the latest blog posts?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Selena M.',
+                picture: '/img/avatars/24.svg',
+                posted: '7 hours ago',
               },
             },
           ],
         },
         {
           id: 2,
-          name: 'Build a custom video player javascript librar',
+          name: 'Build a custom javascript video player with streaming support',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            "Since we couldn't find an out of the box solution, we are forced to build a custom player that we can reuse in othe projects.",
+          completion: 45,
+          status: 1,
+          created: '18 days ago',
+          assignee: {
+            id: 15,
+            src: '/img/avatars/15.svg',
+            badge: '/img/stacks/js.svg',
+            role: 'Fullstack Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Josh C.',
+            text: 'JC',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'player_specifications.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '2.9MB',
+              version: '1.0.1',
               uploaded: '2 weeks ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
+                name: 'Greta K.',
+                picture: '/img/avatars/20.svg',
               },
             },
             {
               id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
+              name: 'player-mockup.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '5.7MB',
+              version: '1.0.0',
+              uploaded: '5 days ago',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
@@ -6190,214 +8755,204 @@ async function getDemoData() {
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement basic frame and controls',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Design and implement custom svg control icons',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: true,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement video streaming support',
               done: false,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement video playback speed control',
+              done: true,
+            },
+            {
+              text: 'Implement video volume control',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Iam wondering if we should add several display modes for the player? It could be nice to have a fullscreen mode for example.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Erik K.',
+                picture: '/img/avatars/8.svg',
+                posted: '3 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Yeah, that would be nice. I will add it to the list of features. Anything else you can think of?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+                posted: '3 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think that should be it for now. I will let you know if I think of anything else. Now that you say it, ahave you though about cusomtization and Tailwind CSS support?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Erik K.',
+                picture: '/img/avatars/8.svg',
+                posted: '3 days ago',
               },
             },
           ],
         },
         {
           id: 3,
-          name: 'Design custom illustrations for landing page',
+          name: 'Design a set of custom branded illustrations for the website and the app',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            'The customer wants to have a set of illustrations that can be used on the website and the app. They should be custom branded and fit the overall design.',
+          completion: 100,
+          status: 5,
+          created: '2 weeks ago',
+          assignee: {
+            id: 15,
+            src: '/img/avatars/15.svg',
+            badge: '/img/stacks/js.svg',
+            role: 'Fullstack Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Josh C.',
+            text: 'JC',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'company_branding.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
-              uploaded: '2 weeks ago',
+              size: '25.8MB',
+              version: '4.5.2',
+              uploaded: '1 month ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
-              },
-            },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Lana H.',
+                picture: '/img/avatars/4.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create illustrations for the landing page',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Rework svgs to use the currentColor for fill and stroke attributes',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Prepare svg parts that will be animated',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Work on a set of branded icons',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'This is starting to look really good. I wonder if we should abstract the characters a little bit more? What do you guys think?',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                posted: '5 hours ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Looks good to me. I think we can start working on the icons now. I will add it to the list of features. Anything else you can think of?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+                posted: '2 hours ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think that should be it for now. I will let you know if I think of anything else. Now that you say it, have you though about cusomtization and Tailwind CSS support?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+                posted: '1 hour ago',
               },
             },
           ],
         },
         {
           id: 4,
-          name: 'Implement job management API controller',
+          name: 'Implement a complete job offers API endpoint',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            'The API endpoint should return a JSON list of jobs. The endpoint should be able to filter the results by keyword, location, type and category.',
+          completion: 65,
+          status: 1,
+          created: '2 weeks ago',
+          assignee: {
+            id: 7,
+            src: '/img/avatars/3.svg',
+            badge: '/img/stacks/reactjs.svg',
+            role: 'Frontend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Clarke G.',
+            text: 'CG',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'api-jobs-specs.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '1.2MB',
+              version: '1.9.2',
               uploaded: '2 weeks ago',
               author: {
                 name: 'Hermann M.',
                 picture: '/img/avatars/16.svg',
               },
             },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-              },
-            },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new API endpoint',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database table',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database migration',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database seeder',
               done: false,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database model',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I feel this architecture is not the best. I think we should use a different approach. What do you guys think?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Rob H.',
+                picture: '/img/avatars/13.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: "Yup, it looks clunky to me as well. Let's try something different. I will add it to the list of features. Anything else you can think of?",
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'John B.',
+                picture: '/img/avatars/8.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I have sent some notes to the team. That should help them refactor the code.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
                 posted: '2 days ago',
               },
             },
@@ -6405,82 +8960,79 @@ async function getDemoData() {
         },
         {
           id: 5,
-          name: 'Implement user management API controller',
+          name: 'Implement company users API endpoint',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
+            'The API endpoint should return a JSON list of users. The endpoint should be able to filter the results by keyword, location, type and category.',
+          completion: 100,
+          status: 0,
           created: '2 days ago',
-          attachments: 0,
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'api-users-specs.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '1.2MB',
+              version: '1.9.2',
               uploaded: '2 weeks ago',
               author: {
                 name: 'Hermann M.',
                 picture: '/img/avatars/16.svg',
               },
             },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-              },
-            },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new API endpoint',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database table',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database migration',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a new database seeder',
+              done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a new database model',
+              done: true,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I feel this architecture is not the best. I think we should use a different approach. What do you guys think?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Betty L.',
+                picture: '/img/avatars/24.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I have sent some notes to the team. That should help them refactor the code.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'John B.',
+                picture: '/img/avatars/8.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Hold your horses! I am still working on it. I will let you know when I am done.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Josh D.',
+                picture: '/img/avatars/11.svg',
                 posted: '2 days ago',
               },
             },
@@ -6488,17 +9040,173 @@ async function getDemoData() {
         },
         {
           id: 6,
-          name: 'Develop a JWT authentication controller',
+          name: 'Build a complete authentication system and API endpoint',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
+            'The authentication system should be able to handle user registration, login, logout, password reset and email verification. The API endpoint should return a Bearer token.',
+          completion: 100,
+          status: 0,
           created: '2 days ago',
-          attachments: 0,
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'api-auth-specs.pdf',
               icon: '/img/icons/files/pdf.svg',
+              size: '2.4MB',
+              version: '1.0.0',
+              uploaded: '3 weeks ago',
+              author: {
+                name: 'Josh S.',
+                picture: '/img/avatars/11.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'authentication.docx',
+              icon: '/img/icons/files/doc-2.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '5 days ago',
+              author: {
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Create a new API endpoint',
+              done: true,
+            },
+            {
+              text: 'Create a new database table',
+              done: true,
+            },
+            {
+              text: 'Create a new database migration',
+              done: true,
+            },
+            {
+              text: 'Create a new database seeder',
+              done: true,
+            },
+            {
+              text: 'Create a new database model',
+              done: true,
+            },
+          ],
+          comments: [],
+        },
+        {
+          id: 7,
+          name: 'Create reusable components to build different pricing sections',
+          description:
+            'The components should be able to handle different pricing plans and should be able to display the most popular plan. Also, the components should be able to display a button to purchase the plan.',
+          completion: 100,
+          status: 5,
+          created: '2 weeks ago',
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'pricing-components.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '9.5MB',
+              version: '1.0.0',
+              uploaded: '5 days ago',
+              author: {
+                name: 'Ana B.',
+                picture: '/img/avatars/9.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Draw some first stage wireframes',
+              done: true,
+            },
+            {
+              text: 'Design components in a Figma project',
+              done: true,
+            },
+            {
+              text: 'Design pricing sections in the Figma project',
+              done: true,
+            },
+            {
+              text: 'Implement the components in the project',
+              done: true,
+            },
+            {
+              text: 'Implement the pricing sections in the project',
+              done: true,
+            },
+          ],
+          comments: [
+            {
+              text: 'I like very much the design. There is just one thing I would change. I would make the button a bit bigger.',
+              author: {
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+                posted: '4 days ago',
+              },
+            },
+            {
+              text: 'Are you sure? I think the button is the right size. I will ask the team what they think.',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+                posted: '2 days ago',
+              },
+            },
+            {
+              text: 'I think the button is fine. I would not change it.',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+                posted: '2 days ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 8,
+          name: 'Implement a user profile page',
+          description:
+            'The user profile page should display the user avatar, name, email, bio, location, social links and a list of the user projects.',
+          completion: 100,
+          status: 5,
+          created: '3 weeks ago',
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'profile-view.ai',
+              icon: '/img/icons/files/ai.svg',
               size: '4.7MB',
               version: '1.5.2',
               uploaded: '2 weeks ago',
@@ -6507,44 +9215,264 @@ async function getDemoData() {
                 picture: '/img/avatars/16.svg',
               },
             },
+          ],
+          checklist: [
             {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
+              text: 'Draw some first stage wireframes',
+              done: true,
+            },
+            {
+              text: 'Design the user profile page in a Figma project',
+              done: true,
+            },
+            {
+              text: 'Implement the user profile page in the project',
+              done: true,
+            },
+          ],
+          comments: [
+            {
+              text: 'This looks great! I have just one question. How will the user change the avatar?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Henry D.',
+                picture: '/img/avatars/1.svg',
+                posted: '8 hours ago',
+              },
+            },
+            {
+              text: 'I think the user will be able to change the avatar from the settings page.',
+              author: {
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
+                posted: '8 hours ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 9,
+          name: 'Create a concept for a contact list page',
+          description:
+            'The contact list page should display a list of contacts with their name, email, phone number and avatar.',
+          completion: 75,
+          status: 3,
+          created: '2 weeks ago',
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'contact-list.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '7.9MB',
+              version: '1.1.1',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Draw some first stage wireframes',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Design the contact list page in a Figma project',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement the contact list page in the project',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Build a search functionality for the contact list page',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'The filter is a great addition. I think it will be very useful.',
+              author: {
+                name: 'Melany L.',
+                picture: '/img/avatars/25.svg',
+                posted: '6 hours ago',
+              },
+            },
+            {
+              text: "That's the cherry on top of the cake. I think it's ready to be implemented.",
+              author: {
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+                posted: '7 hours ago',
+              },
+            },
+            {
+              text: 'I agree. I will start working on the implementation.',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+                posted: '8 hours ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 10,
+          name: 'Implement a contact list API endpoint',
+          description:
+            'The contact list API endpoint should return a list of contacts with their name, email, phone number and avatar.',
+          completion: 50,
+          status: 1,
+          created: '6 days ago',
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'contact-list-api.pdf',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'contact-list-api.xlsx',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.0.0',
+              uploaded: '1 week ago',
+              author: {
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Create a new API endpoint for the contact list',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the contact list',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the contact list',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the contact list',
+              done: false,
+            },
+            {
+              text: 'Create filter queries and pagination for the contact list',
+              done: false,
+            },
+          ],
+          comments: [
+            {
+              text: 'I think we should add a search functionality to the contact list.',
+              author: {
+                name: 'Lana E.',
+                picture: '/img/avatars/4.svg',
+                posted: '2 hours ago',
+              },
+            },
+            {
+              text: 'I agree. I will add it to the checklist.',
+              author: {
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+                posted: '2 days ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 11,
+          name: 'Implement a messaging frontend for contacts',
+          description:
+            'The messaging frontend should allow users to send messages to each other. The messages should be stored in a database. The frontend should be implemented in React.',
+          completion: 100,
+          status: 5,
+          created: '2 weeks ago',
+          assignee: {
+            id: 7,
+            src: '/img/avatars/3.svg',
+            badge: '/img/stacks/reactjs.svg',
+            role: 'Frontend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Clarke G.',
+            text: 'CG',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'messaging-frontend.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '7.1MB',
+              version: '1.0.0',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Elias D.',
+                picture: '/img/avatars/13.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'messaging-frontend.pdf',
+              icon: '/img/icons/files/pdf.svg',
+              size: '1.2MB',
+              version: '1.0.0',
+              uploaded: '6 days ago',
+              author: {
+                name: 'Josh D.',
+                picture: '/img/avatars/11.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Create new components for the messaging frontend',
+              done: true,
+            },
+            {
+              text: 'Add a new route for the messaging frontend',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the messages',
+              done: true,
+            },
+            {
+              text: 'Implement the messaging functionality',
+              done: true,
+            },
+          ],
+          comments: [
+            {
+              text: 'I think we should add the ability to send images and files. What do you think?',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
@@ -6552,17 +9480,17 @@ async function getDemoData() {
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Iam not sure if we should add this. It would be a lot of work. What do you think @Hermann M.?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Josh D.',
+                picture: '/img/avatars/11.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think we should add it. It would be a nice feature.',
               author: {
-                name: 'Clarissa M.',
+                name: 'Hermann M.',
                 picture: '/img/avatars/5.svg',
                 posted: '2 days ago',
               },
@@ -6570,84 +9498,57 @@ async function getDemoData() {
           ],
         },
         {
-          id: 7,
-          name: 'Create a new design for the homepage',
+          id: 12,
+          name: 'Implement a messaging API endpoint for the frontend',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            'The messaging API endpoint should allow users to send messages to each other. The messages should be stored in a database. The API endpoint should be implemented in Node.js.',
+          completion: 65,
+          status: 1,
+          created: '3 weeks ago',
+          assignee: {
+            id: 7,
+            src: '/img/avatars/3.svg',
+            badge: '/img/stacks/reactjs.svg',
+            role: 'Frontend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Clarke G.',
+            text: 'CG',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'messaging-api-endpoint.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '2.2MB',
+              version: '1.0.2',
               uploaded: '2 weeks ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
-              },
-            },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new API endpoint for the messaging frontend',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement the messaging functionality',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: true,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Save the messages in a database',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I have been doing some heavy lifting on this. I think we should defintiely add the ability to send images and files. What do you think?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
+                posted: '10 hours ago',
               },
             },
           ],
@@ -6680,7 +9581,7 @@ async function getDemoData() {
         id: 27,
         avatar: '/img/avatars/24.svg',
         badge: '/img/stacks/js.svg',
-        role: 'UI/UX Designer',
+        role: 'Frontend Developer',
         bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
         name: 'Carmen E.',
         text: 'CE',
@@ -6689,7 +9590,7 @@ async function getDemoData() {
         {
           id: 30,
           src: '/img/avatars/3.svg',
-          badge: '/img/stacks/js.svg',
+          badge: '/img/stacks/illustrator.svg',
           role: 'UI/UX Designer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Clarke G.',
@@ -6698,17 +9599,35 @@ async function getDemoData() {
         {
           id: 19,
           src: '/img/avatars/19.svg',
-          badge: '/img/stacks/js.svg',
-          role: 'UI/UX Designer',
+          badge: '/img/stacks/nodejs.svg',
+          role: 'Fullstack Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Greta K.',
           text: 'GK',
+        },
+        {
+          id: 15,
+          src: '/img/avatars/15.svg',
+          badge: '/img/stacks/js.svg',
+          role: 'Fullstack Developer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+          tooltip: 'Josh C.',
+          text: 'JC',
+        },
+        {
+          id: 12,
+          src: '/img/avatars/12.svg',
+          badge: '/img/stacks/csharp.svg',
+          role: 'Backend Developer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+          tooltip: 'Marjory L.',
+          text: 'ML',
         },
       ],
       files: [
         {
           id: 0,
-          name: 'Company UX Guide',
+          name: 'company-ux-guide.pdf',
           icon: '/img/icons/files/pdf.svg',
           size: '4.7MB',
           version: '1.5.2',
@@ -6720,7 +9639,7 @@ async function getDemoData() {
         },
         {
           id: 1,
-          name: 'Thech summit expenses',
+          name: 'tech-summit-expenses.xlsx',
           icon: '/img/icons/files/sheet.svg',
           size: '34KB',
           version: '1.1.3',
@@ -6732,7 +9651,7 @@ async function getDemoData() {
         },
         {
           id: 2,
-          name: 'Project outline',
+          name: 'project-outline.docx',
           icon: '/img/icons/files/doc-2.svg',
           size: '77KB',
           version: '1.0.0',
@@ -6744,7 +9663,7 @@ async function getDemoData() {
         },
         {
           id: 3,
-          name: 'UX presentation',
+          name: 'ux-presentation.pptx',
           icon: '/img/icons/files/ppt.svg',
           size: '2.3MB',
           version: '1.0.0',
@@ -6756,7 +9675,7 @@ async function getDemoData() {
         },
         {
           id: 4,
-          name: 'Website Homepage Redesign',
+          name: 'website-homepage-redesign.ai',
           icon: '/img/icons/files/ai.svg',
           size: '4.8MB',
           version: '1.0.0',
@@ -6768,7 +9687,7 @@ async function getDemoData() {
         },
         {
           id: 5,
-          name: 'UX Ramp Up for Interns',
+          name: 'interns-ux-rampup.docx',
           icon: '/img/icons/files/doc-2.svg',
           size: '1.8MB',
           version: '1.2.0',
@@ -6816,16 +9735,25 @@ async function getDemoData() {
       tasks: [
         {
           id: 0,
-          name: 'Create a new design for the homepage',
+          name: 'Create a new figma design for the new homepage elements',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
-          completion: 75,
+            'We should have a collection of the most basic UI elements like buttons, badges and form elements. Then we should use these to create reusable section blocks that we can also use in other pages of the project.',
+          completion: 100,
+          status: 5,
           created: '2 days ago',
-          attachments: 2,
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'company-ux-guide.pdf',
               icon: '/img/icons/files/pdf.svg',
               size: '4.7MB',
               version: '1.5.2',
@@ -6837,11 +9765,11 @@ async function getDemoData() {
             },
             {
               id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
+              name: 'project_sketches.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '8.9MB',
               version: '1.1.3',
-              uploaded: '3 days ago',
+              uploaded: 'a week ago',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
@@ -6850,48 +9778,48 @@ async function getDemoData() {
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a set of button elements',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a set of badge elements',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a set of input elements',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a set of checkbox elements',
+              done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a set of card elements',
+              done: true,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think buttons corners should be a little more rounded.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Marjory L.',
+                picture: '/img/avatars/12.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Are you planning to add this as a global setting in the configuration file?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Not sure about it yet. Still need to check this out with the engineering team',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Marjory L.',
+                picture: '/img/avatars/12.svg',
                 posted: '2 days ago',
               },
             },
@@ -6899,115 +9827,118 @@ async function getDemoData() {
         },
         {
           id: 1,
-          name: 'Build a desktop and mobile landing page wireframe',
+          name: 'Build a landing page template for future marketing campaigns',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 25,
+            'The website should provide a customizable landing page template that can be used to support marketing campaigns. It should also be easily customizable by the marketing team.',
+          completion: 58,
+          status: 1,
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
-              icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              name: 'ux-notes.docx',
+              icon: '/img/icons/files/doc-2.svg',
+              size: '89KB',
+              version: '1.8.2',
               uploaded: '2 weeks ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
+                name: 'Melany D.',
+                picture: '/img/avatars/25.svg',
               },
             },
             {
               id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
+              name: 'landing_page.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '4.2MB',
+              version: '1.4.1',
+              uploaded: '5 days ago',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable hero section',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable pricing section',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable features section',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable testimonials section',
               done: false,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable contact section',
               done: false,
             },
           ],
-          created: '2 days ago',
-          attachments: 0,
+          created: '6 days ago',
+          attachments: 2,
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Iam wondering if we should add a section for the team members? it could be nice. And what about a section for the latest blog posts?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Selena M.',
+                picture: '/img/avatars/24.svg',
+                posted: '7 hours ago',
               },
             },
           ],
         },
         {
           id: 2,
-          name: 'Build a custom video player javascript librar',
+          name: 'Build a custom javascript video player with streaming support',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            "Since we couldn't find an out of the box solution, we are forced to build a custom player that we can reuse in othe projects.",
+          completion: 45,
+          status: 1,
+          created: '18 days ago',
+          assignee: {
+            id: 15,
+            src: '/img/avatars/15.svg',
+            badge: '/img/stacks/js.svg',
+            role: 'Fullstack Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Josh C.',
+            text: 'JC',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'player_specifications.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '2.9MB',
+              version: '1.0.1',
               uploaded: '2 weeks ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
+                name: 'Greta K.',
+                picture: '/img/avatars/20.svg',
               },
             },
             {
               id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
+              name: 'player-mockup.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '5.7MB',
+              version: '1.0.0',
+              uploaded: '5 days ago',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
@@ -7016,214 +9947,204 @@ async function getDemoData() {
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement basic frame and controls',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Design and implement custom svg control icons',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: true,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement video streaming support',
               done: false,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement video playback speed control',
+              done: true,
+            },
+            {
+              text: 'Implement video volume control',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Iam wondering if we should add several display modes for the player? It could be nice to have a fullscreen mode for example.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Erik K.',
+                picture: '/img/avatars/8.svg',
+                posted: '3 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Yeah, that would be nice. I will add it to the list of features. Anything else you can think of?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+                posted: '3 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think that should be it for now. I will let you know if I think of anything else. Now that you say it, ahave you though about cusomtization and Tailwind CSS support?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Erik K.',
+                picture: '/img/avatars/8.svg',
+                posted: '3 days ago',
               },
             },
           ],
         },
         {
           id: 3,
-          name: 'Design custom illustrations for landing page',
+          name: 'Design a set of custom branded illustrations for the website and the app',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            'The customer wants to have a set of illustrations that can be used on the website and the app. They should be custom branded and fit the overall design.',
+          completion: 100,
+          status: 5,
+          created: '2 weeks ago',
+          assignee: {
+            id: 15,
+            src: '/img/avatars/15.svg',
+            badge: '/img/stacks/js.svg',
+            role: 'Fullstack Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Josh C.',
+            text: 'JC',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'company_branding.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
-              uploaded: '2 weeks ago',
+              size: '25.8MB',
+              version: '4.5.2',
+              uploaded: '1 month ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
-              },
-            },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Lana H.',
+                picture: '/img/avatars/4.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create illustrations for the landing page',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Rework svgs to use the currentColor for fill and stroke attributes',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Prepare svg parts that will be animated',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Work on a set of branded icons',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'This is starting to look really good. I wonder if we should abstract the characters a little bit more? What do you guys think?',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                posted: '5 hours ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Looks good to me. I think we can start working on the icons now. I will add it to the list of features. Anything else you can think of?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+                posted: '2 hours ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think that should be it for now. I will let you know if I think of anything else. Now that you say it, have you though about cusomtization and Tailwind CSS support?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+                posted: '1 hour ago',
               },
             },
           ],
         },
         {
           id: 4,
-          name: 'Implement job management API controller',
+          name: 'Implement a complete job offers API endpoint',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            'The API endpoint should return a JSON list of jobs. The endpoint should be able to filter the results by keyword, location, type and category.',
+          completion: 65,
+          status: 1,
+          created: '2 weeks ago',
+          assignee: {
+            id: 7,
+            src: '/img/avatars/3.svg',
+            badge: '/img/stacks/reactjs.svg',
+            role: 'Frontend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Clarke G.',
+            text: 'CG',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'api-jobs-specs.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '1.2MB',
+              version: '1.9.2',
               uploaded: '2 weeks ago',
               author: {
                 name: 'Hermann M.',
                 picture: '/img/avatars/16.svg',
               },
             },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-              },
-            },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new API endpoint',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database table',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database migration',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database seeder',
               done: false,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database model',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I feel this architecture is not the best. I think we should use a different approach. What do you guys think?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Rob H.',
+                picture: '/img/avatars/13.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: "Yup, it looks clunky to me as well. Let's try something different. I will add it to the list of features. Anything else you can think of?",
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'John B.',
+                picture: '/img/avatars/8.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I have sent some notes to the team. That should help them refactor the code.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
                 posted: '2 days ago',
               },
             },
@@ -7231,82 +10152,79 @@ async function getDemoData() {
         },
         {
           id: 5,
-          name: 'Implement user management API controller',
+          name: 'Implement company users API endpoint',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
+            'The API endpoint should return a JSON list of users. The endpoint should be able to filter the results by keyword, location, type and category.',
+          completion: 100,
+          status: 0,
           created: '2 days ago',
-          attachments: 0,
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'api-users-specs.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '1.2MB',
+              version: '1.9.2',
               uploaded: '2 weeks ago',
               author: {
                 name: 'Hermann M.',
                 picture: '/img/avatars/16.svg',
               },
             },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-              },
-            },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new API endpoint',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database table',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database migration',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a new database seeder',
+              done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a new database model',
+              done: true,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I feel this architecture is not the best. I think we should use a different approach. What do you guys think?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Betty L.',
+                picture: '/img/avatars/24.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I have sent some notes to the team. That should help them refactor the code.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'John B.',
+                picture: '/img/avatars/8.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Hold your horses! I am still working on it. I will let you know when I am done.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Josh D.',
+                picture: '/img/avatars/11.svg',
                 posted: '2 days ago',
               },
             },
@@ -7314,17 +10232,173 @@ async function getDemoData() {
         },
         {
           id: 6,
-          name: 'Develop a JWT authentication controller',
+          name: 'Build a complete authentication system and API endpoint',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
+            'The authentication system should be able to handle user registration, login, logout, password reset and email verification. The API endpoint should return a Bearer token.',
+          completion: 100,
+          status: 0,
           created: '2 days ago',
-          attachments: 0,
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'api-auth-specs.pdf',
               icon: '/img/icons/files/pdf.svg',
+              size: '2.4MB',
+              version: '1.0.0',
+              uploaded: '3 weeks ago',
+              author: {
+                name: 'Josh S.',
+                picture: '/img/avatars/11.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'authentication.docx',
+              icon: '/img/icons/files/doc-2.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '5 days ago',
+              author: {
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Create a new API endpoint',
+              done: true,
+            },
+            {
+              text: 'Create a new database table',
+              done: true,
+            },
+            {
+              text: 'Create a new database migration',
+              done: true,
+            },
+            {
+              text: 'Create a new database seeder',
+              done: true,
+            },
+            {
+              text: 'Create a new database model',
+              done: true,
+            },
+          ],
+          comments: [],
+        },
+        {
+          id: 7,
+          name: 'Create reusable components to build different pricing sections',
+          description:
+            'The components should be able to handle different pricing plans and should be able to display the most popular plan. Also, the components should be able to display a button to purchase the plan.',
+          completion: 100,
+          status: 5,
+          created: '2 weeks ago',
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'pricing-components.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '9.5MB',
+              version: '1.0.0',
+              uploaded: '5 days ago',
+              author: {
+                name: 'Ana B.',
+                picture: '/img/avatars/9.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Draw some first stage wireframes',
+              done: true,
+            },
+            {
+              text: 'Design components in a Figma project',
+              done: true,
+            },
+            {
+              text: 'Design pricing sections in the Figma project',
+              done: true,
+            },
+            {
+              text: 'Implement the components in the project',
+              done: true,
+            },
+            {
+              text: 'Implement the pricing sections in the project',
+              done: true,
+            },
+          ],
+          comments: [
+            {
+              text: 'I like very much the design. There is just one thing I would change. I would make the button a bit bigger.',
+              author: {
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+                posted: '4 days ago',
+              },
+            },
+            {
+              text: 'Are you sure? I think the button is the right size. I will ask the team what they think.',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+                posted: '2 days ago',
+              },
+            },
+            {
+              text: 'I think the button is fine. I would not change it.',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+                posted: '2 days ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 8,
+          name: 'Implement a user profile page',
+          description:
+            'The user profile page should display the user avatar, name, email, bio, location, social links and a list of the user projects.',
+          completion: 100,
+          status: 5,
+          created: '3 weeks ago',
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'profile-view.ai',
+              icon: '/img/icons/files/ai.svg',
               size: '4.7MB',
               version: '1.5.2',
               uploaded: '2 weeks ago',
@@ -7333,44 +10407,264 @@ async function getDemoData() {
                 picture: '/img/avatars/16.svg',
               },
             },
+          ],
+          checklist: [
             {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
+              text: 'Draw some first stage wireframes',
+              done: true,
+            },
+            {
+              text: 'Design the user profile page in a Figma project',
+              done: true,
+            },
+            {
+              text: 'Implement the user profile page in the project',
+              done: true,
+            },
+          ],
+          comments: [
+            {
+              text: 'This looks great! I have just one question. How will the user change the avatar?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Henry D.',
+                picture: '/img/avatars/1.svg',
+                posted: '8 hours ago',
+              },
+            },
+            {
+              text: 'I think the user will be able to change the avatar from the settings page.',
+              author: {
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
+                posted: '8 hours ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 9,
+          name: 'Create a concept for a contact list page',
+          description:
+            'The contact list page should display a list of contacts with their name, email, phone number and avatar.',
+          completion: 75,
+          status: 3,
+          created: '2 weeks ago',
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'contact-list.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '7.9MB',
+              version: '1.1.1',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Draw some first stage wireframes',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Design the contact list page in a Figma project',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement the contact list page in the project',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Build a search functionality for the contact list page',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'The filter is a great addition. I think it will be very useful.',
+              author: {
+                name: 'Melany L.',
+                picture: '/img/avatars/25.svg',
+                posted: '6 hours ago',
+              },
+            },
+            {
+              text: "That's the cherry on top of the cake. I think it's ready to be implemented.",
+              author: {
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+                posted: '7 hours ago',
+              },
+            },
+            {
+              text: 'I agree. I will start working on the implementation.',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+                posted: '8 hours ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 10,
+          name: 'Implement a contact list API endpoint',
+          description:
+            'The contact list API endpoint should return a list of contacts with their name, email, phone number and avatar.',
+          completion: 50,
+          status: 1,
+          created: '6 days ago',
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'contact-list-api.pdf',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'contact-list-api.xlsx',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.0.0',
+              uploaded: '1 week ago',
+              author: {
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Create a new API endpoint for the contact list',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the contact list',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the contact list',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the contact list',
+              done: false,
+            },
+            {
+              text: 'Create filter queries and pagination for the contact list',
+              done: false,
+            },
+          ],
+          comments: [
+            {
+              text: 'I think we should add a search functionality to the contact list.',
+              author: {
+                name: 'Lana E.',
+                picture: '/img/avatars/4.svg',
+                posted: '2 hours ago',
+              },
+            },
+            {
+              text: 'I agree. I will add it to the checklist.',
+              author: {
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+                posted: '2 days ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 11,
+          name: 'Implement a messaging frontend for contacts',
+          description:
+            'The messaging frontend should allow users to send messages to each other. The messages should be stored in a database. The frontend should be implemented in React.',
+          completion: 100,
+          status: 5,
+          created: '2 weeks ago',
+          assignee: {
+            id: 7,
+            src: '/img/avatars/3.svg',
+            badge: '/img/stacks/reactjs.svg',
+            role: 'Frontend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Clarke G.',
+            text: 'CG',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'messaging-frontend.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '7.1MB',
+              version: '1.0.0',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Elias D.',
+                picture: '/img/avatars/13.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'messaging-frontend.pdf',
+              icon: '/img/icons/files/pdf.svg',
+              size: '1.2MB',
+              version: '1.0.0',
+              uploaded: '6 days ago',
+              author: {
+                name: 'Josh D.',
+                picture: '/img/avatars/11.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Create new components for the messaging frontend',
+              done: true,
+            },
+            {
+              text: 'Add a new route for the messaging frontend',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the messages',
+              done: true,
+            },
+            {
+              text: 'Implement the messaging functionality',
+              done: true,
+            },
+          ],
+          comments: [
+            {
+              text: 'I think we should add the ability to send images and files. What do you think?',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
@@ -7378,17 +10672,17 @@ async function getDemoData() {
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Iam not sure if we should add this. It would be a lot of work. What do you think @Hermann M.?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Josh D.',
+                picture: '/img/avatars/11.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think we should add it. It would be a nice feature.',
               author: {
-                name: 'Clarissa M.',
+                name: 'Hermann M.',
                 picture: '/img/avatars/5.svg',
                 posted: '2 days ago',
               },
@@ -7396,84 +10690,57 @@ async function getDemoData() {
           ],
         },
         {
-          id: 7,
-          name: 'Create a new design for the homepage',
+          id: 12,
+          name: 'Implement a messaging API endpoint for the frontend',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            'The messaging API endpoint should allow users to send messages to each other. The messages should be stored in a database. The API endpoint should be implemented in Node.js.',
+          completion: 65,
+          status: 1,
+          created: '3 weeks ago',
+          assignee: {
+            id: 7,
+            src: '/img/avatars/3.svg',
+            badge: '/img/stacks/reactjs.svg',
+            role: 'Frontend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Clarke G.',
+            text: 'CG',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'messaging-api-endpoint.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '2.2MB',
+              version: '1.0.2',
               uploaded: '2 weeks ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
-              },
-            },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new API endpoint for the messaging frontend',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement the messaging functionality',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: true,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Save the messages in a database',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I have been doing some heavy lifting on this. I think we should defintiely add the ability to send images and files. What do you think?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
+                posted: '10 hours ago',
               },
             },
           ],
@@ -7506,16 +10773,34 @@ async function getDemoData() {
         id: 27,
         avatar: '/img/avatars/24.svg',
         badge: '/img/stacks/js.svg',
-        role: 'UI/UX Designer',
+        role: 'Frontend Developer',
         bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
         name: 'Carmen E.',
         text: 'CE',
       },
       team: [
         {
+          id: 12,
+          src: '/img/avatars/12.svg',
+          badge: '/img/stacks/csharp.svg',
+          role: 'Backend Developer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+          tooltip: 'Marjory L.',
+          text: 'ML',
+        },
+        {
+          id: 15,
+          src: '/img/avatars/15.svg',
+          badge: '/img/stacks/js.svg',
+          role: 'Fullstack Developer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+          tooltip: 'Josh C.',
+          text: 'JC',
+        },
+        {
           id: 24,
           src: '/img/avatars/22.svg',
-          badge: '/img/stacks/js.svg',
+          badge: '/img/stacks/illustrator.svg',
           role: 'UI/UX Designer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Sandrine C.',
@@ -7525,7 +10810,7 @@ async function getDemoData() {
           id: 22,
           src: '/img/avatars/10.svg',
           badge: '/img/stacks/js.svg',
-          role: 'UI/UX Designer',
+          role: 'Frontend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Kendra W.',
           text: 'KW',
@@ -7534,7 +10819,7 @@ async function getDemoData() {
       files: [
         {
           id: 0,
-          name: 'Company UX Guide',
+          name: 'company-ux-guide.pdf',
           icon: '/img/icons/files/pdf.svg',
           size: '4.7MB',
           version: '1.5.2',
@@ -7546,7 +10831,7 @@ async function getDemoData() {
         },
         {
           id: 1,
-          name: 'Thech summit expenses',
+          name: 'tech-summit-expenses.xlsx',
           icon: '/img/icons/files/sheet.svg',
           size: '34KB',
           version: '1.1.3',
@@ -7558,7 +10843,7 @@ async function getDemoData() {
         },
         {
           id: 2,
-          name: 'Project outline',
+          name: 'project-outline.docx',
           icon: '/img/icons/files/doc-2.svg',
           size: '77KB',
           version: '1.0.0',
@@ -7570,7 +10855,7 @@ async function getDemoData() {
         },
         {
           id: 3,
-          name: 'UX presentation',
+          name: 'ux-presentation.pptx',
           icon: '/img/icons/files/ppt.svg',
           size: '2.3MB',
           version: '1.0.0',
@@ -7582,7 +10867,7 @@ async function getDemoData() {
         },
         {
           id: 4,
-          name: 'Website Homepage Redesign',
+          name: 'website-homepage-redesign.ai',
           icon: '/img/icons/files/ai.svg',
           size: '4.8MB',
           version: '1.0.0',
@@ -7594,7 +10879,7 @@ async function getDemoData() {
         },
         {
           id: 5,
-          name: 'UX Ramp Up for Interns',
+          name: 'interns-ux-rampup.docx',
           icon: '/img/icons/files/doc-2.svg',
           size: '1.8MB',
           version: '1.2.0',
@@ -7642,16 +10927,25 @@ async function getDemoData() {
       tasks: [
         {
           id: 0,
-          name: 'Create a new design for the homepage',
+          name: 'Create a new figma design for the new homepage elements',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
-          completion: 75,
+            'We should have a collection of the most basic UI elements like buttons, badges and form elements. Then we should use these to create reusable section blocks that we can also use in other pages of the project.',
+          completion: 100,
+          status: 5,
           created: '2 days ago',
-          attachments: 2,
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'company-ux-guide.pdf',
               icon: '/img/icons/files/pdf.svg',
               size: '4.7MB',
               version: '1.5.2',
@@ -7663,11 +10957,11 @@ async function getDemoData() {
             },
             {
               id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
+              name: 'project_sketches.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '8.9MB',
               version: '1.1.3',
-              uploaded: '3 days ago',
+              uploaded: 'a week ago',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
@@ -7676,48 +10970,48 @@ async function getDemoData() {
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a set of button elements',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a set of badge elements',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a set of input elements',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a set of checkbox elements',
+              done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a set of card elements',
+              done: true,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think buttons corners should be a little more rounded.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Marjory L.',
+                picture: '/img/avatars/12.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Are you planning to add this as a global setting in the configuration file?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Not sure about it yet. Still need to check this out with the engineering team',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Marjory L.',
+                picture: '/img/avatars/12.svg',
                 posted: '2 days ago',
               },
             },
@@ -7725,115 +11019,118 @@ async function getDemoData() {
         },
         {
           id: 1,
-          name: 'Build a desktop and mobile landing page wireframe',
+          name: 'Build a landing page template for future marketing campaigns',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 25,
+            'The website should provide a customizable landing page template that can be used to support marketing campaigns. It should also be easily customizable by the marketing team.',
+          completion: 58,
+          status: 1,
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
-              icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              name: 'ux-notes.docx',
+              icon: '/img/icons/files/doc-2.svg',
+              size: '89KB',
+              version: '1.8.2',
               uploaded: '2 weeks ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
+                name: 'Melany D.',
+                picture: '/img/avatars/25.svg',
               },
             },
             {
               id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
+              name: 'landing_page.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '4.2MB',
+              version: '1.4.1',
+              uploaded: '5 days ago',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable hero section',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable pricing section',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable features section',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable testimonials section',
               done: false,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable contact section',
               done: false,
             },
           ],
-          created: '2 days ago',
-          attachments: 0,
+          created: '6 days ago',
+          attachments: 2,
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Iam wondering if we should add a section for the team members? it could be nice. And what about a section for the latest blog posts?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Selena M.',
+                picture: '/img/avatars/24.svg',
+                posted: '7 hours ago',
               },
             },
           ],
         },
         {
           id: 2,
-          name: 'Build a custom video player javascript librar',
+          name: 'Build a custom javascript video player with streaming support',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            "Since we couldn't find an out of the box solution, we are forced to build a custom player that we can reuse in othe projects.",
+          completion: 45,
+          status: 1,
+          created: '18 days ago',
+          assignee: {
+            id: 15,
+            src: '/img/avatars/15.svg',
+            badge: '/img/stacks/js.svg',
+            role: 'Fullstack Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Josh C.',
+            text: 'JC',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'player_specifications.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '2.9MB',
+              version: '1.0.1',
               uploaded: '2 weeks ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
+                name: 'Greta K.',
+                picture: '/img/avatars/20.svg',
               },
             },
             {
               id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
+              name: 'player-mockup.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '5.7MB',
+              version: '1.0.0',
+              uploaded: '5 days ago',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
@@ -7842,214 +11139,204 @@ async function getDemoData() {
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement basic frame and controls',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Design and implement custom svg control icons',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: true,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement video streaming support',
               done: false,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement video playback speed control',
+              done: true,
+            },
+            {
+              text: 'Implement video volume control',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Iam wondering if we should add several display modes for the player? It could be nice to have a fullscreen mode for example.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Erik K.',
+                picture: '/img/avatars/8.svg',
+                posted: '3 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Yeah, that would be nice. I will add it to the list of features. Anything else you can think of?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+                posted: '3 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think that should be it for now. I will let you know if I think of anything else. Now that you say it, ahave you though about cusomtization and Tailwind CSS support?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Erik K.',
+                picture: '/img/avatars/8.svg',
+                posted: '3 days ago',
               },
             },
           ],
         },
         {
           id: 3,
-          name: 'Design custom illustrations for landing page',
+          name: 'Design a set of custom branded illustrations for the website and the app',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            'The customer wants to have a set of illustrations that can be used on the website and the app. They should be custom branded and fit the overall design.',
+          completion: 100,
+          status: 5,
+          created: '2 weeks ago',
+          assignee: {
+            id: 15,
+            src: '/img/avatars/15.svg',
+            badge: '/img/stacks/js.svg',
+            role: 'Fullstack Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Josh C.',
+            text: 'JC',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'company_branding.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
-              uploaded: '2 weeks ago',
+              size: '25.8MB',
+              version: '4.5.2',
+              uploaded: '1 month ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
-              },
-            },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Lana H.',
+                picture: '/img/avatars/4.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create illustrations for the landing page',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Rework svgs to use the currentColor for fill and stroke attributes',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Prepare svg parts that will be animated',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Work on a set of branded icons',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'This is starting to look really good. I wonder if we should abstract the characters a little bit more? What do you guys think?',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                posted: '5 hours ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Looks good to me. I think we can start working on the icons now. I will add it to the list of features. Anything else you can think of?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+                posted: '2 hours ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think that should be it for now. I will let you know if I think of anything else. Now that you say it, have you though about cusomtization and Tailwind CSS support?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+                posted: '1 hour ago',
               },
             },
           ],
         },
         {
           id: 4,
-          name: 'Implement job management API controller',
+          name: 'Implement a complete job offers API endpoint',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            'The API endpoint should return a JSON list of jobs. The endpoint should be able to filter the results by keyword, location, type and category.',
+          completion: 65,
+          status: 1,
+          created: '2 weeks ago',
+          assignee: {
+            id: 7,
+            src: '/img/avatars/3.svg',
+            badge: '/img/stacks/reactjs.svg',
+            role: 'Frontend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Clarke G.',
+            text: 'CG',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'api-jobs-specs.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '1.2MB',
+              version: '1.9.2',
               uploaded: '2 weeks ago',
               author: {
                 name: 'Hermann M.',
                 picture: '/img/avatars/16.svg',
               },
             },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-              },
-            },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new API endpoint',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database table',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database migration',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database seeder',
               done: false,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database model',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I feel this architecture is not the best. I think we should use a different approach. What do you guys think?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Rob H.',
+                picture: '/img/avatars/13.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: "Yup, it looks clunky to me as well. Let's try something different. I will add it to the list of features. Anything else you can think of?",
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'John B.',
+                picture: '/img/avatars/8.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I have sent some notes to the team. That should help them refactor the code.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
                 posted: '2 days ago',
               },
             },
@@ -8057,82 +11344,79 @@ async function getDemoData() {
         },
         {
           id: 5,
-          name: 'Implement user management API controller',
+          name: 'Implement company users API endpoint',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
+            'The API endpoint should return a JSON list of users. The endpoint should be able to filter the results by keyword, location, type and category.',
+          completion: 100,
+          status: 0,
           created: '2 days ago',
-          attachments: 0,
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'api-users-specs.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '1.2MB',
+              version: '1.9.2',
               uploaded: '2 weeks ago',
               author: {
                 name: 'Hermann M.',
                 picture: '/img/avatars/16.svg',
               },
             },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-              },
-            },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new API endpoint',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database table',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database migration',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a new database seeder',
+              done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a new database model',
+              done: true,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I feel this architecture is not the best. I think we should use a different approach. What do you guys think?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Betty L.',
+                picture: '/img/avatars/24.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I have sent some notes to the team. That should help them refactor the code.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'John B.',
+                picture: '/img/avatars/8.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Hold your horses! I am still working on it. I will let you know when I am done.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Josh D.',
+                picture: '/img/avatars/11.svg',
                 posted: '2 days ago',
               },
             },
@@ -8140,17 +11424,173 @@ async function getDemoData() {
         },
         {
           id: 6,
-          name: 'Develop a JWT authentication controller',
+          name: 'Build a complete authentication system and API endpoint',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
+            'The authentication system should be able to handle user registration, login, logout, password reset and email verification. The API endpoint should return a Bearer token.',
+          completion: 100,
+          status: 0,
           created: '2 days ago',
-          attachments: 0,
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'api-auth-specs.pdf',
               icon: '/img/icons/files/pdf.svg',
+              size: '2.4MB',
+              version: '1.0.0',
+              uploaded: '3 weeks ago',
+              author: {
+                name: 'Josh S.',
+                picture: '/img/avatars/11.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'authentication.docx',
+              icon: '/img/icons/files/doc-2.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '5 days ago',
+              author: {
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Create a new API endpoint',
+              done: true,
+            },
+            {
+              text: 'Create a new database table',
+              done: true,
+            },
+            {
+              text: 'Create a new database migration',
+              done: true,
+            },
+            {
+              text: 'Create a new database seeder',
+              done: true,
+            },
+            {
+              text: 'Create a new database model',
+              done: true,
+            },
+          ],
+          comments: [],
+        },
+        {
+          id: 7,
+          name: 'Create reusable components to build different pricing sections',
+          description:
+            'The components should be able to handle different pricing plans and should be able to display the most popular plan. Also, the components should be able to display a button to purchase the plan.',
+          completion: 100,
+          status: 5,
+          created: '2 weeks ago',
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'pricing-components.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '9.5MB',
+              version: '1.0.0',
+              uploaded: '5 days ago',
+              author: {
+                name: 'Ana B.',
+                picture: '/img/avatars/9.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Draw some first stage wireframes',
+              done: true,
+            },
+            {
+              text: 'Design components in a Figma project',
+              done: true,
+            },
+            {
+              text: 'Design pricing sections in the Figma project',
+              done: true,
+            },
+            {
+              text: 'Implement the components in the project',
+              done: true,
+            },
+            {
+              text: 'Implement the pricing sections in the project',
+              done: true,
+            },
+          ],
+          comments: [
+            {
+              text: 'I like very much the design. There is just one thing I would change. I would make the button a bit bigger.',
+              author: {
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+                posted: '4 days ago',
+              },
+            },
+            {
+              text: 'Are you sure? I think the button is the right size. I will ask the team what they think.',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+                posted: '2 days ago',
+              },
+            },
+            {
+              text: 'I think the button is fine. I would not change it.',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+                posted: '2 days ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 8,
+          name: 'Implement a user profile page',
+          description:
+            'The user profile page should display the user avatar, name, email, bio, location, social links and a list of the user projects.',
+          completion: 100,
+          status: 5,
+          created: '3 weeks ago',
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'profile-view.ai',
+              icon: '/img/icons/files/ai.svg',
               size: '4.7MB',
               version: '1.5.2',
               uploaded: '2 weeks ago',
@@ -8159,44 +11599,264 @@ async function getDemoData() {
                 picture: '/img/avatars/16.svg',
               },
             },
+          ],
+          checklist: [
             {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
+              text: 'Draw some first stage wireframes',
+              done: true,
+            },
+            {
+              text: 'Design the user profile page in a Figma project',
+              done: true,
+            },
+            {
+              text: 'Implement the user profile page in the project',
+              done: true,
+            },
+          ],
+          comments: [
+            {
+              text: 'This looks great! I have just one question. How will the user change the avatar?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Henry D.',
+                picture: '/img/avatars/1.svg',
+                posted: '8 hours ago',
+              },
+            },
+            {
+              text: 'I think the user will be able to change the avatar from the settings page.',
+              author: {
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
+                posted: '8 hours ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 9,
+          name: 'Create a concept for a contact list page',
+          description:
+            'The contact list page should display a list of contacts with their name, email, phone number and avatar.',
+          completion: 75,
+          status: 3,
+          created: '2 weeks ago',
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'contact-list.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '7.9MB',
+              version: '1.1.1',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Draw some first stage wireframes',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Design the contact list page in a Figma project',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement the contact list page in the project',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Build a search functionality for the contact list page',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'The filter is a great addition. I think it will be very useful.',
+              author: {
+                name: 'Melany L.',
+                picture: '/img/avatars/25.svg',
+                posted: '6 hours ago',
+              },
+            },
+            {
+              text: "That's the cherry on top of the cake. I think it's ready to be implemented.",
+              author: {
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+                posted: '7 hours ago',
+              },
+            },
+            {
+              text: 'I agree. I will start working on the implementation.',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+                posted: '8 hours ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 10,
+          name: 'Implement a contact list API endpoint',
+          description:
+            'The contact list API endpoint should return a list of contacts with their name, email, phone number and avatar.',
+          completion: 50,
+          status: 1,
+          created: '6 days ago',
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'contact-list-api.pdf',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'contact-list-api.xlsx',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.0.0',
+              uploaded: '1 week ago',
+              author: {
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Create a new API endpoint for the contact list',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the contact list',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the contact list',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the contact list',
+              done: false,
+            },
+            {
+              text: 'Create filter queries and pagination for the contact list',
+              done: false,
+            },
+          ],
+          comments: [
+            {
+              text: 'I think we should add a search functionality to the contact list.',
+              author: {
+                name: 'Lana E.',
+                picture: '/img/avatars/4.svg',
+                posted: '2 hours ago',
+              },
+            },
+            {
+              text: 'I agree. I will add it to the checklist.',
+              author: {
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+                posted: '2 days ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 11,
+          name: 'Implement a messaging frontend for contacts',
+          description:
+            'The messaging frontend should allow users to send messages to each other. The messages should be stored in a database. The frontend should be implemented in React.',
+          completion: 100,
+          status: 5,
+          created: '2 weeks ago',
+          assignee: {
+            id: 7,
+            src: '/img/avatars/3.svg',
+            badge: '/img/stacks/reactjs.svg',
+            role: 'Frontend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Clarke G.',
+            text: 'CG',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'messaging-frontend.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '7.1MB',
+              version: '1.0.0',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Elias D.',
+                picture: '/img/avatars/13.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'messaging-frontend.pdf',
+              icon: '/img/icons/files/pdf.svg',
+              size: '1.2MB',
+              version: '1.0.0',
+              uploaded: '6 days ago',
+              author: {
+                name: 'Josh D.',
+                picture: '/img/avatars/11.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Create new components for the messaging frontend',
+              done: true,
+            },
+            {
+              text: 'Add a new route for the messaging frontend',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the messages',
+              done: true,
+            },
+            {
+              text: 'Implement the messaging functionality',
+              done: true,
+            },
+          ],
+          comments: [
+            {
+              text: 'I think we should add the ability to send images and files. What do you think?',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
@@ -8204,17 +11864,17 @@ async function getDemoData() {
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Iam not sure if we should add this. It would be a lot of work. What do you think @Hermann M.?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Josh D.',
+                picture: '/img/avatars/11.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think we should add it. It would be a nice feature.',
               author: {
-                name: 'Clarissa M.',
+                name: 'Hermann M.',
                 picture: '/img/avatars/5.svg',
                 posted: '2 days ago',
               },
@@ -8222,84 +11882,57 @@ async function getDemoData() {
           ],
         },
         {
-          id: 7,
-          name: 'Create a new design for the homepage',
+          id: 12,
+          name: 'Implement a messaging API endpoint for the frontend',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            'The messaging API endpoint should allow users to send messages to each other. The messages should be stored in a database. The API endpoint should be implemented in Node.js.',
+          completion: 65,
+          status: 1,
+          created: '3 weeks ago',
+          assignee: {
+            id: 7,
+            src: '/img/avatars/3.svg',
+            badge: '/img/stacks/reactjs.svg',
+            role: 'Frontend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Clarke G.',
+            text: 'CG',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'messaging-api-endpoint.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '2.2MB',
+              version: '1.0.2',
               uploaded: '2 weeks ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
-              },
-            },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new API endpoint for the messaging frontend',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement the messaging functionality',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: true,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Save the messages in a database',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I have been doing some heavy lifting on this. I think we should defintiely add the ability to send images and files. What do you think?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
+                posted: '10 hours ago',
               },
             },
           ],
@@ -8341,17 +11974,44 @@ async function getDemoData() {
         {
           id: 28,
           src: '/img/avatars/9.svg',
-          badge: '/img/stacks/js.svg',
-          role: 'UI/UX Designer',
+          badge: '/img/stacks/android.svg',
+          role: 'Mobile Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Ana B.',
           text: 'AB',
+        },
+        {
+          id: 27,
+          src: '/img/avatars/24.svg',
+          badge: '/img/stacks/reactjs.svg',
+          role: 'Frontend Developer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+          tooltip: 'Carmen E.',
+          text: 'CE',
+        },
+        {
+          id: 15,
+          src: '/img/avatars/15.svg',
+          badge: '/img/stacks/js.svg',
+          role: 'Fullstack Developer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+          tooltip: 'Josh C.',
+          text: 'JC',
+        },
+        {
+          id: 12,
+          src: '/img/avatars/12.svg',
+          badge: '/img/stacks/csharp.svg',
+          role: 'Backend Developer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+          tooltip: 'Marjory L.',
+          text: 'ML',
         },
       ],
       files: [
         {
           id: 0,
-          name: 'Company UX Guide',
+          name: 'company-ux-guide.pdf',
           icon: '/img/icons/files/pdf.svg',
           size: '4.7MB',
           version: '1.5.2',
@@ -8363,7 +12023,7 @@ async function getDemoData() {
         },
         {
           id: 1,
-          name: 'Thech summit expenses',
+          name: 'tech-summit-expenses.xlsx',
           icon: '/img/icons/files/sheet.svg',
           size: '34KB',
           version: '1.1.3',
@@ -8375,7 +12035,7 @@ async function getDemoData() {
         },
         {
           id: 2,
-          name: 'Project outline',
+          name: 'project-outline.docx',
           icon: '/img/icons/files/doc-2.svg',
           size: '77KB',
           version: '1.0.0',
@@ -8387,7 +12047,7 @@ async function getDemoData() {
         },
         {
           id: 3,
-          name: 'UX presentation',
+          name: 'ux-presentation.pptx',
           icon: '/img/icons/files/ppt.svg',
           size: '2.3MB',
           version: '1.0.0',
@@ -8399,7 +12059,7 @@ async function getDemoData() {
         },
         {
           id: 4,
-          name: 'Website Homepage Redesign',
+          name: 'website-homepage-redesign.ai',
           icon: '/img/icons/files/ai.svg',
           size: '4.8MB',
           version: '1.0.0',
@@ -8411,7 +12071,7 @@ async function getDemoData() {
         },
         {
           id: 5,
-          name: 'UX Ramp Up for Interns',
+          name: 'interns-ux-rampup.docx',
           icon: '/img/icons/files/doc-2.svg',
           size: '1.8MB',
           version: '1.2.0',
@@ -8459,16 +12119,25 @@ async function getDemoData() {
       tasks: [
         {
           id: 0,
-          name: 'Create a new design for the homepage',
+          name: 'Create a new figma design for the new homepage elements',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
-          completion: 75,
+            'We should have a collection of the most basic UI elements like buttons, badges and form elements. Then we should use these to create reusable section blocks that we can also use in other pages of the project.',
+          completion: 100,
+          status: 5,
           created: '2 days ago',
-          attachments: 2,
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'company-ux-guide.pdf',
               icon: '/img/icons/files/pdf.svg',
               size: '4.7MB',
               version: '1.5.2',
@@ -8480,11 +12149,11 @@ async function getDemoData() {
             },
             {
               id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
+              name: 'project_sketches.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '8.9MB',
               version: '1.1.3',
-              uploaded: '3 days ago',
+              uploaded: 'a week ago',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
@@ -8493,48 +12162,48 @@ async function getDemoData() {
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a set of button elements',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a set of badge elements',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a set of input elements',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a set of checkbox elements',
+              done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a set of card elements',
+              done: true,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think buttons corners should be a little more rounded.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Marjory L.',
+                picture: '/img/avatars/12.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Are you planning to add this as a global setting in the configuration file?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Not sure about it yet. Still need to check this out with the engineering team',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Marjory L.',
+                picture: '/img/avatars/12.svg',
                 posted: '2 days ago',
               },
             },
@@ -8542,115 +12211,118 @@ async function getDemoData() {
         },
         {
           id: 1,
-          name: 'Build a desktop and mobile landing page wireframe',
+          name: 'Build a landing page template for future marketing campaigns',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 25,
+            'The website should provide a customizable landing page template that can be used to support marketing campaigns. It should also be easily customizable by the marketing team.',
+          completion: 58,
+          status: 1,
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
-              icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              name: 'ux-notes.docx',
+              icon: '/img/icons/files/doc-2.svg',
+              size: '89KB',
+              version: '1.8.2',
               uploaded: '2 weeks ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
+                name: 'Melany D.',
+                picture: '/img/avatars/25.svg',
               },
             },
             {
               id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
+              name: 'landing_page.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '4.2MB',
+              version: '1.4.1',
+              uploaded: '5 days ago',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable hero section',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable pricing section',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable features section',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable testimonials section',
               done: false,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable contact section',
               done: false,
             },
           ],
-          created: '2 days ago',
-          attachments: 0,
+          created: '6 days ago',
+          attachments: 2,
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Iam wondering if we should add a section for the team members? it could be nice. And what about a section for the latest blog posts?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Selena M.',
+                picture: '/img/avatars/24.svg',
+                posted: '7 hours ago',
               },
             },
           ],
         },
         {
           id: 2,
-          name: 'Build a custom video player javascript librar',
+          name: 'Build a custom javascript video player with streaming support',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            "Since we couldn't find an out of the box solution, we are forced to build a custom player that we can reuse in othe projects.",
+          completion: 45,
+          status: 1,
+          created: '18 days ago',
+          assignee: {
+            id: 15,
+            src: '/img/avatars/15.svg',
+            badge: '/img/stacks/js.svg',
+            role: 'Fullstack Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Josh C.',
+            text: 'JC',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'player_specifications.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '2.9MB',
+              version: '1.0.1',
               uploaded: '2 weeks ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
+                name: 'Greta K.',
+                picture: '/img/avatars/20.svg',
               },
             },
             {
               id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
+              name: 'player-mockup.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '5.7MB',
+              version: '1.0.0',
+              uploaded: '5 days ago',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
@@ -8659,214 +12331,204 @@ async function getDemoData() {
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement basic frame and controls',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Design and implement custom svg control icons',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: true,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement video streaming support',
               done: false,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement video playback speed control',
+              done: true,
+            },
+            {
+              text: 'Implement video volume control',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Iam wondering if we should add several display modes for the player? It could be nice to have a fullscreen mode for example.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Erik K.',
+                picture: '/img/avatars/8.svg',
+                posted: '3 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Yeah, that would be nice. I will add it to the list of features. Anything else you can think of?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+                posted: '3 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think that should be it for now. I will let you know if I think of anything else. Now that you say it, ahave you though about cusomtization and Tailwind CSS support?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Erik K.',
+                picture: '/img/avatars/8.svg',
+                posted: '3 days ago',
               },
             },
           ],
         },
         {
           id: 3,
-          name: 'Design custom illustrations for landing page',
+          name: 'Design a set of custom branded illustrations for the website and the app',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            'The customer wants to have a set of illustrations that can be used on the website and the app. They should be custom branded and fit the overall design.',
+          completion: 100,
+          status: 5,
+          created: '2 weeks ago',
+          assignee: {
+            id: 15,
+            src: '/img/avatars/15.svg',
+            badge: '/img/stacks/js.svg',
+            role: 'Fullstack Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Josh C.',
+            text: 'JC',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'company_branding.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
-              uploaded: '2 weeks ago',
+              size: '25.8MB',
+              version: '4.5.2',
+              uploaded: '1 month ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
-              },
-            },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Lana H.',
+                picture: '/img/avatars/4.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create illustrations for the landing page',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Rework svgs to use the currentColor for fill and stroke attributes',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Prepare svg parts that will be animated',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Work on a set of branded icons',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'This is starting to look really good. I wonder if we should abstract the characters a little bit more? What do you guys think?',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                posted: '5 hours ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Looks good to me. I think we can start working on the icons now. I will add it to the list of features. Anything else you can think of?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+                posted: '2 hours ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think that should be it for now. I will let you know if I think of anything else. Now that you say it, have you though about cusomtization and Tailwind CSS support?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+                posted: '1 hour ago',
               },
             },
           ],
         },
         {
           id: 4,
-          name: 'Implement job management API controller',
+          name: 'Implement a complete job offers API endpoint',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            'The API endpoint should return a JSON list of jobs. The endpoint should be able to filter the results by keyword, location, type and category.',
+          completion: 65,
+          status: 1,
+          created: '2 weeks ago',
+          assignee: {
+            id: 7,
+            src: '/img/avatars/3.svg',
+            badge: '/img/stacks/reactjs.svg',
+            role: 'Frontend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Clarke G.',
+            text: 'CG',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'api-jobs-specs.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '1.2MB',
+              version: '1.9.2',
               uploaded: '2 weeks ago',
               author: {
                 name: 'Hermann M.',
                 picture: '/img/avatars/16.svg',
               },
             },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-              },
-            },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new API endpoint',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database table',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database migration',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database seeder',
               done: false,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database model',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I feel this architecture is not the best. I think we should use a different approach. What do you guys think?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Rob H.',
+                picture: '/img/avatars/13.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: "Yup, it looks clunky to me as well. Let's try something different. I will add it to the list of features. Anything else you can think of?",
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'John B.',
+                picture: '/img/avatars/8.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I have sent some notes to the team. That should help them refactor the code.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
                 posted: '2 days ago',
               },
             },
@@ -8874,82 +12536,79 @@ async function getDemoData() {
         },
         {
           id: 5,
-          name: 'Implement user management API controller',
+          name: 'Implement company users API endpoint',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
+            'The API endpoint should return a JSON list of users. The endpoint should be able to filter the results by keyword, location, type and category.',
+          completion: 100,
+          status: 0,
           created: '2 days ago',
-          attachments: 0,
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'api-users-specs.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '1.2MB',
+              version: '1.9.2',
               uploaded: '2 weeks ago',
               author: {
                 name: 'Hermann M.',
                 picture: '/img/avatars/16.svg',
               },
             },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-              },
-            },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new API endpoint',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database table',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database migration',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a new database seeder',
+              done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a new database model',
+              done: true,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I feel this architecture is not the best. I think we should use a different approach. What do you guys think?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Betty L.',
+                picture: '/img/avatars/24.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I have sent some notes to the team. That should help them refactor the code.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'John B.',
+                picture: '/img/avatars/8.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Hold your horses! I am still working on it. I will let you know when I am done.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Josh D.',
+                picture: '/img/avatars/11.svg',
                 posted: '2 days ago',
               },
             },
@@ -8957,17 +12616,173 @@ async function getDemoData() {
         },
         {
           id: 6,
-          name: 'Develop a JWT authentication controller',
+          name: 'Build a complete authentication system and API endpoint',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
+            'The authentication system should be able to handle user registration, login, logout, password reset and email verification. The API endpoint should return a Bearer token.',
+          completion: 100,
+          status: 0,
           created: '2 days ago',
-          attachments: 0,
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'api-auth-specs.pdf',
               icon: '/img/icons/files/pdf.svg',
+              size: '2.4MB',
+              version: '1.0.0',
+              uploaded: '3 weeks ago',
+              author: {
+                name: 'Josh S.',
+                picture: '/img/avatars/11.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'authentication.docx',
+              icon: '/img/icons/files/doc-2.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '5 days ago',
+              author: {
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Create a new API endpoint',
+              done: true,
+            },
+            {
+              text: 'Create a new database table',
+              done: true,
+            },
+            {
+              text: 'Create a new database migration',
+              done: true,
+            },
+            {
+              text: 'Create a new database seeder',
+              done: true,
+            },
+            {
+              text: 'Create a new database model',
+              done: true,
+            },
+          ],
+          comments: [],
+        },
+        {
+          id: 7,
+          name: 'Create reusable components to build different pricing sections',
+          description:
+            'The components should be able to handle different pricing plans and should be able to display the most popular plan. Also, the components should be able to display a button to purchase the plan.',
+          completion: 100,
+          status: 5,
+          created: '2 weeks ago',
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'pricing-components.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '9.5MB',
+              version: '1.0.0',
+              uploaded: '5 days ago',
+              author: {
+                name: 'Ana B.',
+                picture: '/img/avatars/9.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Draw some first stage wireframes',
+              done: true,
+            },
+            {
+              text: 'Design components in a Figma project',
+              done: true,
+            },
+            {
+              text: 'Design pricing sections in the Figma project',
+              done: true,
+            },
+            {
+              text: 'Implement the components in the project',
+              done: true,
+            },
+            {
+              text: 'Implement the pricing sections in the project',
+              done: true,
+            },
+          ],
+          comments: [
+            {
+              text: 'I like very much the design. There is just one thing I would change. I would make the button a bit bigger.',
+              author: {
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+                posted: '4 days ago',
+              },
+            },
+            {
+              text: 'Are you sure? I think the button is the right size. I will ask the team what they think.',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+                posted: '2 days ago',
+              },
+            },
+            {
+              text: 'I think the button is fine. I would not change it.',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+                posted: '2 days ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 8,
+          name: 'Implement a user profile page',
+          description:
+            'The user profile page should display the user avatar, name, email, bio, location, social links and a list of the user projects.',
+          completion: 100,
+          status: 5,
+          created: '3 weeks ago',
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'profile-view.ai',
+              icon: '/img/icons/files/ai.svg',
               size: '4.7MB',
               version: '1.5.2',
               uploaded: '2 weeks ago',
@@ -8976,44 +12791,264 @@ async function getDemoData() {
                 picture: '/img/avatars/16.svg',
               },
             },
+          ],
+          checklist: [
             {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
+              text: 'Draw some first stage wireframes',
+              done: true,
+            },
+            {
+              text: 'Design the user profile page in a Figma project',
+              done: true,
+            },
+            {
+              text: 'Implement the user profile page in the project',
+              done: true,
+            },
+          ],
+          comments: [
+            {
+              text: 'This looks great! I have just one question. How will the user change the avatar?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Henry D.',
+                picture: '/img/avatars/1.svg',
+                posted: '8 hours ago',
+              },
+            },
+            {
+              text: 'I think the user will be able to change the avatar from the settings page.',
+              author: {
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
+                posted: '8 hours ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 9,
+          name: 'Create a concept for a contact list page',
+          description:
+            'The contact list page should display a list of contacts with their name, email, phone number and avatar.',
+          completion: 75,
+          status: 3,
+          created: '2 weeks ago',
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'contact-list.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '7.9MB',
+              version: '1.1.1',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Draw some first stage wireframes',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Design the contact list page in a Figma project',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement the contact list page in the project',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Build a search functionality for the contact list page',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'The filter is a great addition. I think it will be very useful.',
+              author: {
+                name: 'Melany L.',
+                picture: '/img/avatars/25.svg',
+                posted: '6 hours ago',
+              },
+            },
+            {
+              text: "That's the cherry on top of the cake. I think it's ready to be implemented.",
+              author: {
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+                posted: '7 hours ago',
+              },
+            },
+            {
+              text: 'I agree. I will start working on the implementation.',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+                posted: '8 hours ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 10,
+          name: 'Implement a contact list API endpoint',
+          description:
+            'The contact list API endpoint should return a list of contacts with their name, email, phone number and avatar.',
+          completion: 50,
+          status: 1,
+          created: '6 days ago',
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'contact-list-api.pdf',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'contact-list-api.xlsx',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.0.0',
+              uploaded: '1 week ago',
+              author: {
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Create a new API endpoint for the contact list',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the contact list',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the contact list',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the contact list',
+              done: false,
+            },
+            {
+              text: 'Create filter queries and pagination for the contact list',
+              done: false,
+            },
+          ],
+          comments: [
+            {
+              text: 'I think we should add a search functionality to the contact list.',
+              author: {
+                name: 'Lana E.',
+                picture: '/img/avatars/4.svg',
+                posted: '2 hours ago',
+              },
+            },
+            {
+              text: 'I agree. I will add it to the checklist.',
+              author: {
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+                posted: '2 days ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 11,
+          name: 'Implement a messaging frontend for contacts',
+          description:
+            'The messaging frontend should allow users to send messages to each other. The messages should be stored in a database. The frontend should be implemented in React.',
+          completion: 100,
+          status: 5,
+          created: '2 weeks ago',
+          assignee: {
+            id: 7,
+            src: '/img/avatars/3.svg',
+            badge: '/img/stacks/reactjs.svg',
+            role: 'Frontend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Clarke G.',
+            text: 'CG',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'messaging-frontend.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '7.1MB',
+              version: '1.0.0',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Elias D.',
+                picture: '/img/avatars/13.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'messaging-frontend.pdf',
+              icon: '/img/icons/files/pdf.svg',
+              size: '1.2MB',
+              version: '1.0.0',
+              uploaded: '6 days ago',
+              author: {
+                name: 'Josh D.',
+                picture: '/img/avatars/11.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Create new components for the messaging frontend',
+              done: true,
+            },
+            {
+              text: 'Add a new route for the messaging frontend',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the messages',
+              done: true,
+            },
+            {
+              text: 'Implement the messaging functionality',
+              done: true,
+            },
+          ],
+          comments: [
+            {
+              text: 'I think we should add the ability to send images and files. What do you think?',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
@@ -9021,17 +13056,17 @@ async function getDemoData() {
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Iam not sure if we should add this. It would be a lot of work. What do you think @Hermann M.?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Josh D.',
+                picture: '/img/avatars/11.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think we should add it. It would be a nice feature.',
               author: {
-                name: 'Clarissa M.',
+                name: 'Hermann M.',
                 picture: '/img/avatars/5.svg',
                 posted: '2 days ago',
               },
@@ -9039,84 +13074,57 @@ async function getDemoData() {
           ],
         },
         {
-          id: 7,
-          name: 'Create a new design for the homepage',
+          id: 12,
+          name: 'Implement a messaging API endpoint for the frontend',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            'The messaging API endpoint should allow users to send messages to each other. The messages should be stored in a database. The API endpoint should be implemented in Node.js.',
+          completion: 65,
+          status: 1,
+          created: '3 weeks ago',
+          assignee: {
+            id: 7,
+            src: '/img/avatars/3.svg',
+            badge: '/img/stacks/reactjs.svg',
+            role: 'Frontend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Clarke G.',
+            text: 'CG',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'messaging-api-endpoint.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '2.2MB',
+              version: '1.0.2',
               uploaded: '2 weeks ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
-              },
-            },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new API endpoint for the messaging frontend',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement the messaging functionality',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: true,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Save the messages in a database',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I have been doing some heavy lifting on this. I think we should defintiely add the ability to send images and files. What do you think?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
+                posted: '10 hours ago',
               },
             },
           ],
@@ -9157,18 +13165,45 @@ async function getDemoData() {
       team: [
         {
           id: 119,
-          src: undefined,
-          tooltip: 'Sarah Connor.',
+          src: '/img/avatars/22.svg',
           badge: '/img/stacks/js.svg',
           role: 'UI/UX Designer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+          tooltip: 'Sarah C.',
           text: 'SC',
+        },
+        {
+          id: 27,
+          src: '/img/avatars/24.svg',
+          badge: '/img/stacks/vuejs.svg',
+          role: 'Frontend Developer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+          tooltip: 'Carmen E.',
+          text: 'CE',
+        },
+        {
+          id: 15,
+          src: '/img/avatars/15.svg',
+          badge: '/img/stacks/js.svg',
+          role: 'Fullstack Developer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+          tooltip: 'Josh C.',
+          text: 'JC',
+        },
+        {
+          id: 12,
+          src: '/img/avatars/12.svg',
+          badge: '/img/stacks/csharp.svg',
+          role: 'Backend Developer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+          tooltip: 'Marjory L.',
+          text: 'ML',
         },
       ],
       files: [
         {
           id: 0,
-          name: 'Company UX Guide',
+          name: 'company-ux-guide.pdf',
           icon: '/img/icons/files/pdf.svg',
           size: '4.7MB',
           version: '1.5.2',
@@ -9180,7 +13215,7 @@ async function getDemoData() {
         },
         {
           id: 1,
-          name: 'Thech summit expenses',
+          name: 'tech-summit-expenses.xlsx',
           icon: '/img/icons/files/sheet.svg',
           size: '34KB',
           version: '1.1.3',
@@ -9192,7 +13227,7 @@ async function getDemoData() {
         },
         {
           id: 2,
-          name: 'Project outline',
+          name: 'project-outline.docx',
           icon: '/img/icons/files/doc-2.svg',
           size: '77KB',
           version: '1.0.0',
@@ -9204,7 +13239,7 @@ async function getDemoData() {
         },
         {
           id: 3,
-          name: 'UX presentation',
+          name: 'ux-presentation.pptx',
           icon: '/img/icons/files/ppt.svg',
           size: '2.3MB',
           version: '1.0.0',
@@ -9216,7 +13251,7 @@ async function getDemoData() {
         },
         {
           id: 4,
-          name: 'Website Homepage Redesign',
+          name: 'website-homepage-redesign.ai',
           icon: '/img/icons/files/ai.svg',
           size: '4.8MB',
           version: '1.0.0',
@@ -9228,7 +13263,7 @@ async function getDemoData() {
         },
         {
           id: 5,
-          name: 'UX Ramp Up for Interns',
+          name: 'interns-ux-rampup.docx',
           icon: '/img/icons/files/doc-2.svg',
           size: '1.8MB',
           version: '1.2.0',
@@ -9276,16 +13311,25 @@ async function getDemoData() {
       tasks: [
         {
           id: 0,
-          name: 'Create a new design for the homepage',
+          name: 'Create a new figma design for the new homepage elements',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
-          completion: 75,
+            'We should have a collection of the most basic UI elements like buttons, badges and form elements. Then we should use these to create reusable section blocks that we can also use in other pages of the project.',
+          completion: 100,
+          status: 5,
           created: '2 days ago',
-          attachments: 2,
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'company-ux-guide.pdf',
               icon: '/img/icons/files/pdf.svg',
               size: '4.7MB',
               version: '1.5.2',
@@ -9297,11 +13341,11 @@ async function getDemoData() {
             },
             {
               id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
+              name: 'project_sketches.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '8.9MB',
               version: '1.1.3',
-              uploaded: '3 days ago',
+              uploaded: 'a week ago',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
@@ -9310,48 +13354,48 @@ async function getDemoData() {
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a set of button elements',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a set of badge elements',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a set of input elements',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a set of checkbox elements',
+              done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a set of card elements',
+              done: true,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think buttons corners should be a little more rounded.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Marjory L.',
+                picture: '/img/avatars/12.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Are you planning to add this as a global setting in the configuration file?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Not sure about it yet. Still need to check this out with the engineering team',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Marjory L.',
+                picture: '/img/avatars/12.svg',
                 posted: '2 days ago',
               },
             },
@@ -9359,115 +13403,118 @@ async function getDemoData() {
         },
         {
           id: 1,
-          name: 'Build a desktop and mobile landing page wireframe',
+          name: 'Build a landing page template for future marketing campaigns',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 25,
+            'The website should provide a customizable landing page template that can be used to support marketing campaigns. It should also be easily customizable by the marketing team.',
+          completion: 58,
+          status: 1,
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
-              icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              name: 'ux-notes.docx',
+              icon: '/img/icons/files/doc-2.svg',
+              size: '89KB',
+              version: '1.8.2',
               uploaded: '2 weeks ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
+                name: 'Melany D.',
+                picture: '/img/avatars/25.svg',
               },
             },
             {
               id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
+              name: 'landing_page.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '4.2MB',
+              version: '1.4.1',
+              uploaded: '5 days ago',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable hero section',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable pricing section',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable features section',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable testimonials section',
               done: false,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable contact section',
               done: false,
             },
           ],
-          created: '2 days ago',
-          attachments: 0,
+          created: '6 days ago',
+          attachments: 2,
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Iam wondering if we should add a section for the team members? it could be nice. And what about a section for the latest blog posts?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Selena M.',
+                picture: '/img/avatars/24.svg',
+                posted: '7 hours ago',
               },
             },
           ],
         },
         {
           id: 2,
-          name: 'Build a custom video player javascript librar',
+          name: 'Build a custom javascript video player with streaming support',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            "Since we couldn't find an out of the box solution, we are forced to build a custom player that we can reuse in othe projects.",
+          completion: 45,
+          status: 1,
+          created: '18 days ago',
+          assignee: {
+            id: 15,
+            src: '/img/avatars/15.svg',
+            badge: '/img/stacks/js.svg',
+            role: 'Fullstack Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Josh C.',
+            text: 'JC',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'player_specifications.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '2.9MB',
+              version: '1.0.1',
               uploaded: '2 weeks ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
+                name: 'Greta K.',
+                picture: '/img/avatars/20.svg',
               },
             },
             {
               id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
+              name: 'player-mockup.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '5.7MB',
+              version: '1.0.0',
+              uploaded: '5 days ago',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
@@ -9476,214 +13523,204 @@ async function getDemoData() {
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement basic frame and controls',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Design and implement custom svg control icons',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: true,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement video streaming support',
               done: false,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement video playback speed control',
+              done: true,
+            },
+            {
+              text: 'Implement video volume control',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Iam wondering if we should add several display modes for the player? It could be nice to have a fullscreen mode for example.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Erik K.',
+                picture: '/img/avatars/8.svg',
+                posted: '3 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Yeah, that would be nice. I will add it to the list of features. Anything else you can think of?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+                posted: '3 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think that should be it for now. I will let you know if I think of anything else. Now that you say it, ahave you though about cusomtization and Tailwind CSS support?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Erik K.',
+                picture: '/img/avatars/8.svg',
+                posted: '3 days ago',
               },
             },
           ],
         },
         {
           id: 3,
-          name: 'Design custom illustrations for landing page',
+          name: 'Design a set of custom branded illustrations for the website and the app',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            'The customer wants to have a set of illustrations that can be used on the website and the app. They should be custom branded and fit the overall design.',
+          completion: 100,
+          status: 5,
+          created: '2 weeks ago',
+          assignee: {
+            id: 15,
+            src: '/img/avatars/15.svg',
+            badge: '/img/stacks/js.svg',
+            role: 'Fullstack Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Josh C.',
+            text: 'JC',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'company_branding.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
-              uploaded: '2 weeks ago',
+              size: '25.8MB',
+              version: '4.5.2',
+              uploaded: '1 month ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
-              },
-            },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Lana H.',
+                picture: '/img/avatars/4.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create illustrations for the landing page',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Rework svgs to use the currentColor for fill and stroke attributes',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Prepare svg parts that will be animated',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Work on a set of branded icons',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'This is starting to look really good. I wonder if we should abstract the characters a little bit more? What do you guys think?',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                posted: '5 hours ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Looks good to me. I think we can start working on the icons now. I will add it to the list of features. Anything else you can think of?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+                posted: '2 hours ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think that should be it for now. I will let you know if I think of anything else. Now that you say it, have you though about cusomtization and Tailwind CSS support?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+                posted: '1 hour ago',
               },
             },
           ],
         },
         {
           id: 4,
-          name: 'Implement job management API controller',
+          name: 'Implement a complete job offers API endpoint',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            'The API endpoint should return a JSON list of jobs. The endpoint should be able to filter the results by keyword, location, type and category.',
+          completion: 65,
+          status: 1,
+          created: '2 weeks ago',
+          assignee: {
+            id: 7,
+            src: '/img/avatars/3.svg',
+            badge: '/img/stacks/reactjs.svg',
+            role: 'Frontend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Clarke G.',
+            text: 'CG',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'api-jobs-specs.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '1.2MB',
+              version: '1.9.2',
               uploaded: '2 weeks ago',
               author: {
                 name: 'Hermann M.',
                 picture: '/img/avatars/16.svg',
               },
             },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-              },
-            },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new API endpoint',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database table',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database migration',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database seeder',
               done: false,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database model',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I feel this architecture is not the best. I think we should use a different approach. What do you guys think?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Rob H.',
+                picture: '/img/avatars/13.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: "Yup, it looks clunky to me as well. Let's try something different. I will add it to the list of features. Anything else you can think of?",
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'John B.',
+                picture: '/img/avatars/8.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I have sent some notes to the team. That should help them refactor the code.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
                 posted: '2 days ago',
               },
             },
@@ -9691,82 +13728,79 @@ async function getDemoData() {
         },
         {
           id: 5,
-          name: 'Implement user management API controller',
+          name: 'Implement company users API endpoint',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
+            'The API endpoint should return a JSON list of users. The endpoint should be able to filter the results by keyword, location, type and category.',
+          completion: 100,
+          status: 0,
           created: '2 days ago',
-          attachments: 0,
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'api-users-specs.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '1.2MB',
+              version: '1.9.2',
               uploaded: '2 weeks ago',
               author: {
                 name: 'Hermann M.',
                 picture: '/img/avatars/16.svg',
               },
             },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-              },
-            },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new API endpoint',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database table',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database migration',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a new database seeder',
+              done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a new database model',
+              done: true,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I feel this architecture is not the best. I think we should use a different approach. What do you guys think?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Betty L.',
+                picture: '/img/avatars/24.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I have sent some notes to the team. That should help them refactor the code.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'John B.',
+                picture: '/img/avatars/8.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Hold your horses! I am still working on it. I will let you know when I am done.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Josh D.',
+                picture: '/img/avatars/11.svg',
                 posted: '2 days ago',
               },
             },
@@ -9774,17 +13808,173 @@ async function getDemoData() {
         },
         {
           id: 6,
-          name: 'Develop a JWT authentication controller',
+          name: 'Build a complete authentication system and API endpoint',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
+            'The authentication system should be able to handle user registration, login, logout, password reset and email verification. The API endpoint should return a Bearer token.',
+          completion: 100,
+          status: 0,
           created: '2 days ago',
-          attachments: 0,
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'api-auth-specs.pdf',
               icon: '/img/icons/files/pdf.svg',
+              size: '2.4MB',
+              version: '1.0.0',
+              uploaded: '3 weeks ago',
+              author: {
+                name: 'Josh S.',
+                picture: '/img/avatars/11.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'authentication.docx',
+              icon: '/img/icons/files/doc-2.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '5 days ago',
+              author: {
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Create a new API endpoint',
+              done: true,
+            },
+            {
+              text: 'Create a new database table',
+              done: true,
+            },
+            {
+              text: 'Create a new database migration',
+              done: true,
+            },
+            {
+              text: 'Create a new database seeder',
+              done: true,
+            },
+            {
+              text: 'Create a new database model',
+              done: true,
+            },
+          ],
+          comments: [],
+        },
+        {
+          id: 7,
+          name: 'Create reusable components to build different pricing sections',
+          description:
+            'The components should be able to handle different pricing plans and should be able to display the most popular plan. Also, the components should be able to display a button to purchase the plan.',
+          completion: 100,
+          status: 5,
+          created: '2 weeks ago',
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'pricing-components.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '9.5MB',
+              version: '1.0.0',
+              uploaded: '5 days ago',
+              author: {
+                name: 'Ana B.',
+                picture: '/img/avatars/9.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Draw some first stage wireframes',
+              done: true,
+            },
+            {
+              text: 'Design components in a Figma project',
+              done: true,
+            },
+            {
+              text: 'Design pricing sections in the Figma project',
+              done: true,
+            },
+            {
+              text: 'Implement the components in the project',
+              done: true,
+            },
+            {
+              text: 'Implement the pricing sections in the project',
+              done: true,
+            },
+          ],
+          comments: [
+            {
+              text: 'I like very much the design. There is just one thing I would change. I would make the button a bit bigger.',
+              author: {
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+                posted: '4 days ago',
+              },
+            },
+            {
+              text: 'Are you sure? I think the button is the right size. I will ask the team what they think.',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+                posted: '2 days ago',
+              },
+            },
+            {
+              text: 'I think the button is fine. I would not change it.',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+                posted: '2 days ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 8,
+          name: 'Implement a user profile page',
+          description:
+            'The user profile page should display the user avatar, name, email, bio, location, social links and a list of the user projects.',
+          completion: 100,
+          status: 5,
+          created: '3 weeks ago',
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'profile-view.ai',
+              icon: '/img/icons/files/ai.svg',
               size: '4.7MB',
               version: '1.5.2',
               uploaded: '2 weeks ago',
@@ -9793,44 +13983,264 @@ async function getDemoData() {
                 picture: '/img/avatars/16.svg',
               },
             },
+          ],
+          checklist: [
             {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
+              text: 'Draw some first stage wireframes',
+              done: true,
+            },
+            {
+              text: 'Design the user profile page in a Figma project',
+              done: true,
+            },
+            {
+              text: 'Implement the user profile page in the project',
+              done: true,
+            },
+          ],
+          comments: [
+            {
+              text: 'This looks great! I have just one question. How will the user change the avatar?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Henry D.',
+                picture: '/img/avatars/1.svg',
+                posted: '8 hours ago',
+              },
+            },
+            {
+              text: 'I think the user will be able to change the avatar from the settings page.',
+              author: {
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
+                posted: '8 hours ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 9,
+          name: 'Create a concept for a contact list page',
+          description:
+            'The contact list page should display a list of contacts with their name, email, phone number and avatar.',
+          completion: 75,
+          status: 3,
+          created: '2 weeks ago',
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'contact-list.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '7.9MB',
+              version: '1.1.1',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Draw some first stage wireframes',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Design the contact list page in a Figma project',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement the contact list page in the project',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Build a search functionality for the contact list page',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'The filter is a great addition. I think it will be very useful.',
+              author: {
+                name: 'Melany L.',
+                picture: '/img/avatars/25.svg',
+                posted: '6 hours ago',
+              },
+            },
+            {
+              text: "That's the cherry on top of the cake. I think it's ready to be implemented.",
+              author: {
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+                posted: '7 hours ago',
+              },
+            },
+            {
+              text: 'I agree. I will start working on the implementation.',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+                posted: '8 hours ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 10,
+          name: 'Implement a contact list API endpoint',
+          description:
+            'The contact list API endpoint should return a list of contacts with their name, email, phone number and avatar.',
+          completion: 50,
+          status: 1,
+          created: '6 days ago',
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'contact-list-api.pdf',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'contact-list-api.xlsx',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.0.0',
+              uploaded: '1 week ago',
+              author: {
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Create a new API endpoint for the contact list',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the contact list',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the contact list',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the contact list',
+              done: false,
+            },
+            {
+              text: 'Create filter queries and pagination for the contact list',
+              done: false,
+            },
+          ],
+          comments: [
+            {
+              text: 'I think we should add a search functionality to the contact list.',
+              author: {
+                name: 'Lana E.',
+                picture: '/img/avatars/4.svg',
+                posted: '2 hours ago',
+              },
+            },
+            {
+              text: 'I agree. I will add it to the checklist.',
+              author: {
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+                posted: '2 days ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 11,
+          name: 'Implement a messaging frontend for contacts',
+          description:
+            'The messaging frontend should allow users to send messages to each other. The messages should be stored in a database. The frontend should be implemented in React.',
+          completion: 100,
+          status: 5,
+          created: '2 weeks ago',
+          assignee: {
+            id: 7,
+            src: '/img/avatars/3.svg',
+            badge: '/img/stacks/reactjs.svg',
+            role: 'Frontend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Clarke G.',
+            text: 'CG',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'messaging-frontend.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '7.1MB',
+              version: '1.0.0',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Elias D.',
+                picture: '/img/avatars/13.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'messaging-frontend.pdf',
+              icon: '/img/icons/files/pdf.svg',
+              size: '1.2MB',
+              version: '1.0.0',
+              uploaded: '6 days ago',
+              author: {
+                name: 'Josh D.',
+                picture: '/img/avatars/11.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Create new components for the messaging frontend',
+              done: true,
+            },
+            {
+              text: 'Add a new route for the messaging frontend',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the messages',
+              done: true,
+            },
+            {
+              text: 'Implement the messaging functionality',
+              done: true,
+            },
+          ],
+          comments: [
+            {
+              text: 'I think we should add the ability to send images and files. What do you think?',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
@@ -9838,17 +14248,17 @@ async function getDemoData() {
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Iam not sure if we should add this. It would be a lot of work. What do you think @Hermann M.?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Josh D.',
+                picture: '/img/avatars/11.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think we should add it. It would be a nice feature.',
               author: {
-                name: 'Clarissa M.',
+                name: 'Hermann M.',
                 picture: '/img/avatars/5.svg',
                 posted: '2 days ago',
               },
@@ -9856,84 +14266,57 @@ async function getDemoData() {
           ],
         },
         {
-          id: 7,
-          name: 'Create a new design for the homepage',
+          id: 12,
+          name: 'Implement a messaging API endpoint for the frontend',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            'The messaging API endpoint should allow users to send messages to each other. The messages should be stored in a database. The API endpoint should be implemented in Node.js.',
+          completion: 65,
+          status: 1,
+          created: '3 weeks ago',
+          assignee: {
+            id: 7,
+            src: '/img/avatars/3.svg',
+            badge: '/img/stacks/reactjs.svg',
+            role: 'Frontend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Clarke G.',
+            text: 'CG',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'messaging-api-endpoint.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '2.2MB',
+              version: '1.0.2',
               uploaded: '2 weeks ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
-              },
-            },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new API endpoint for the messaging frontend',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement the messaging functionality',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: true,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Save the messages in a database',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I have been doing some heavy lifting on this. I think we should defintiely add the ability to send images and files. What do you think?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
+                posted: '10 hours ago',
               },
             },
           ],
@@ -9976,7 +14359,7 @@ async function getDemoData() {
           id: 8,
           src: '/img/avatars/3.svg',
           badge: '/img/stacks/js.svg',
-          role: 'UI/UX Designer',
+          role: 'Frontend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Clarke G.',
           text: 'CG',
@@ -9984,8 +14367,8 @@ async function getDemoData() {
         {
           id: 15,
           src: '/img/avatars/16.svg',
-          badge: '/img/stacks/js.svg',
-          role: 'UI/UX Designer',
+          badge: '/img/stacks/android.svg',
+          role: 'Mobile Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Hermann M.',
           text: 'HM',
@@ -9993,8 +14376,8 @@ async function getDemoData() {
         {
           id: 12,
           src: '/img/avatars/8.svg',
-          badge: '/img/stacks/js.svg',
-          role: 'UI/UX Designer',
+          badge: '/img/stacks/python.svg',
+          role: 'Backend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Mario T.',
           text: 'MT',
@@ -10003,7 +14386,7 @@ async function getDemoData() {
       files: [
         {
           id: 0,
-          name: 'Company UX Guide',
+          name: 'company-ux-guide.pdf',
           icon: '/img/icons/files/pdf.svg',
           size: '4.7MB',
           version: '1.5.2',
@@ -10015,7 +14398,7 @@ async function getDemoData() {
         },
         {
           id: 1,
-          name: 'Thech summit expenses',
+          name: 'tech-summit-expenses.xlsx',
           icon: '/img/icons/files/sheet.svg',
           size: '34KB',
           version: '1.1.3',
@@ -10027,7 +14410,7 @@ async function getDemoData() {
         },
         {
           id: 2,
-          name: 'Project outline',
+          name: 'project-outline.docx',
           icon: '/img/icons/files/doc-2.svg',
           size: '77KB',
           version: '1.0.0',
@@ -10039,7 +14422,7 @@ async function getDemoData() {
         },
         {
           id: 3,
-          name: 'UX presentation',
+          name: 'ux-presentation.pptx',
           icon: '/img/icons/files/ppt.svg',
           size: '2.3MB',
           version: '1.0.0',
@@ -10051,7 +14434,7 @@ async function getDemoData() {
         },
         {
           id: 4,
-          name: 'Website Homepage Redesign',
+          name: 'website-homepage-redesign.ai',
           icon: '/img/icons/files/ai.svg',
           size: '4.8MB',
           version: '1.0.0',
@@ -10063,7 +14446,7 @@ async function getDemoData() {
         },
         {
           id: 5,
-          name: 'UX Ramp Up for Interns',
+          name: 'interns-ux-rampup.docx',
           icon: '/img/icons/files/doc-2.svg',
           size: '1.8MB',
           version: '1.2.0',
@@ -10111,16 +14494,25 @@ async function getDemoData() {
       tasks: [
         {
           id: 0,
-          name: 'Create a new design for the homepage',
+          name: 'Create a new figma design for the new homepage elements',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
-          completion: 75,
+            'We should have a collection of the most basic UI elements like buttons, badges and form elements. Then we should use these to create reusable section blocks that we can also use in other pages of the project.',
+          completion: 100,
+          status: 5,
           created: '2 days ago',
-          attachments: 2,
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'company-ux-guide.pdf',
               icon: '/img/icons/files/pdf.svg',
               size: '4.7MB',
               version: '1.5.2',
@@ -10132,11 +14524,11 @@ async function getDemoData() {
             },
             {
               id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
+              name: 'project_sketches.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '8.9MB',
               version: '1.1.3',
-              uploaded: '3 days ago',
+              uploaded: 'a week ago',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
@@ -10145,48 +14537,48 @@ async function getDemoData() {
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a set of button elements',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a set of badge elements',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a set of input elements',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a set of checkbox elements',
+              done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a set of card elements',
+              done: true,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think buttons corners should be a little more rounded.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Marjory L.',
+                picture: '/img/avatars/12.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Are you planning to add this as a global setting in the configuration file?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Not sure about it yet. Still need to check this out with the engineering team',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Marjory L.',
+                picture: '/img/avatars/12.svg',
                 posted: '2 days ago',
               },
             },
@@ -10194,115 +14586,118 @@ async function getDemoData() {
         },
         {
           id: 1,
-          name: 'Build a desktop and mobile landing page wireframe',
+          name: 'Build a landing page template for future marketing campaigns',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 25,
+            'The website should provide a customizable landing page template that can be used to support marketing campaigns. It should also be easily customizable by the marketing team.',
+          completion: 58,
+          status: 1,
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
-              icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              name: 'ux-notes.docx',
+              icon: '/img/icons/files/doc-2.svg',
+              size: '89KB',
+              version: '1.8.2',
               uploaded: '2 weeks ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
+                name: 'Melany D.',
+                picture: '/img/avatars/25.svg',
               },
             },
             {
               id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
+              name: 'landing_page.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '4.2MB',
+              version: '1.4.1',
+              uploaded: '5 days ago',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable hero section',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable pricing section',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable features section',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable testimonials section',
               done: false,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable contact section',
               done: false,
             },
           ],
-          created: '2 days ago',
-          attachments: 0,
+          created: '6 days ago',
+          attachments: 2,
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Iam wondering if we should add a section for the team members? it could be nice. And what about a section for the latest blog posts?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Selena M.',
+                picture: '/img/avatars/24.svg',
+                posted: '7 hours ago',
               },
             },
           ],
         },
         {
           id: 2,
-          name: 'Build a custom video player javascript librar',
+          name: 'Build a custom javascript video player with streaming support',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            "Since we couldn't find an out of the box solution, we are forced to build a custom player that we can reuse in othe projects.",
+          completion: 45,
+          status: 1,
+          created: '18 days ago',
+          assignee: {
+            id: 15,
+            src: '/img/avatars/15.svg',
+            badge: '/img/stacks/js.svg',
+            role: 'Fullstack Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Josh C.',
+            text: 'JC',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'player_specifications.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '2.9MB',
+              version: '1.0.1',
               uploaded: '2 weeks ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
+                name: 'Greta K.',
+                picture: '/img/avatars/20.svg',
               },
             },
             {
               id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
+              name: 'player-mockup.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '5.7MB',
+              version: '1.0.0',
+              uploaded: '5 days ago',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
@@ -10311,214 +14706,204 @@ async function getDemoData() {
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement basic frame and controls',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Design and implement custom svg control icons',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: true,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement video streaming support',
               done: false,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement video playback speed control',
+              done: true,
+            },
+            {
+              text: 'Implement video volume control',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Iam wondering if we should add several display modes for the player? It could be nice to have a fullscreen mode for example.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Erik K.',
+                picture: '/img/avatars/8.svg',
+                posted: '3 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Yeah, that would be nice. I will add it to the list of features. Anything else you can think of?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+                posted: '3 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think that should be it for now. I will let you know if I think of anything else. Now that you say it, ahave you though about cusomtization and Tailwind CSS support?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Erik K.',
+                picture: '/img/avatars/8.svg',
+                posted: '3 days ago',
               },
             },
           ],
         },
         {
           id: 3,
-          name: 'Design custom illustrations for landing page',
+          name: 'Design a set of custom branded illustrations for the website and the app',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            'The customer wants to have a set of illustrations that can be used on the website and the app. They should be custom branded and fit the overall design.',
+          completion: 100,
+          status: 5,
+          created: '2 weeks ago',
+          assignee: {
+            id: 15,
+            src: '/img/avatars/15.svg',
+            badge: '/img/stacks/js.svg',
+            role: 'Fullstack Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Josh C.',
+            text: 'JC',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'company_branding.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
-              uploaded: '2 weeks ago',
+              size: '25.8MB',
+              version: '4.5.2',
+              uploaded: '1 month ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
-              },
-            },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Lana H.',
+                picture: '/img/avatars/4.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create illustrations for the landing page',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Rework svgs to use the currentColor for fill and stroke attributes',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Prepare svg parts that will be animated',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Work on a set of branded icons',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'This is starting to look really good. I wonder if we should abstract the characters a little bit more? What do you guys think?',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                posted: '5 hours ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Looks good to me. I think we can start working on the icons now. I will add it to the list of features. Anything else you can think of?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+                posted: '2 hours ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think that should be it for now. I will let you know if I think of anything else. Now that you say it, have you though about cusomtization and Tailwind CSS support?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+                posted: '1 hour ago',
               },
             },
           ],
         },
         {
           id: 4,
-          name: 'Implement job management API controller',
+          name: 'Implement a complete job offers API endpoint',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            'The API endpoint should return a JSON list of jobs. The endpoint should be able to filter the results by keyword, location, type and category.',
+          completion: 65,
+          status: 1,
+          created: '2 weeks ago',
+          assignee: {
+            id: 7,
+            src: '/img/avatars/3.svg',
+            badge: '/img/stacks/reactjs.svg',
+            role: 'Frontend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Clarke G.',
+            text: 'CG',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'api-jobs-specs.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '1.2MB',
+              version: '1.9.2',
               uploaded: '2 weeks ago',
               author: {
                 name: 'Hermann M.',
                 picture: '/img/avatars/16.svg',
               },
             },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-              },
-            },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new API endpoint',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database table',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database migration',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database seeder',
               done: false,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database model',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I feel this architecture is not the best. I think we should use a different approach. What do you guys think?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Rob H.',
+                picture: '/img/avatars/13.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: "Yup, it looks clunky to me as well. Let's try something different. I will add it to the list of features. Anything else you can think of?",
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'John B.',
+                picture: '/img/avatars/8.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I have sent some notes to the team. That should help them refactor the code.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
                 posted: '2 days ago',
               },
             },
@@ -10526,82 +14911,79 @@ async function getDemoData() {
         },
         {
           id: 5,
-          name: 'Implement user management API controller',
+          name: 'Implement company users API endpoint',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
+            'The API endpoint should return a JSON list of users. The endpoint should be able to filter the results by keyword, location, type and category.',
+          completion: 100,
+          status: 0,
           created: '2 days ago',
-          attachments: 0,
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'api-users-specs.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '1.2MB',
+              version: '1.9.2',
               uploaded: '2 weeks ago',
               author: {
                 name: 'Hermann M.',
                 picture: '/img/avatars/16.svg',
               },
             },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-              },
-            },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new API endpoint',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database table',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database migration',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a new database seeder',
+              done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a new database model',
+              done: true,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I feel this architecture is not the best. I think we should use a different approach. What do you guys think?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Betty L.',
+                picture: '/img/avatars/24.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I have sent some notes to the team. That should help them refactor the code.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'John B.',
+                picture: '/img/avatars/8.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Hold your horses! I am still working on it. I will let you know when I am done.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Josh D.',
+                picture: '/img/avatars/11.svg',
                 posted: '2 days ago',
               },
             },
@@ -10609,17 +14991,173 @@ async function getDemoData() {
         },
         {
           id: 6,
-          name: 'Develop a JWT authentication controller',
+          name: 'Build a complete authentication system and API endpoint',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
+            'The authentication system should be able to handle user registration, login, logout, password reset and email verification. The API endpoint should return a Bearer token.',
+          completion: 100,
+          status: 0,
           created: '2 days ago',
-          attachments: 0,
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'api-auth-specs.pdf',
               icon: '/img/icons/files/pdf.svg',
+              size: '2.4MB',
+              version: '1.0.0',
+              uploaded: '3 weeks ago',
+              author: {
+                name: 'Josh S.',
+                picture: '/img/avatars/11.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'authentication.docx',
+              icon: '/img/icons/files/doc-2.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '5 days ago',
+              author: {
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Create a new API endpoint',
+              done: true,
+            },
+            {
+              text: 'Create a new database table',
+              done: true,
+            },
+            {
+              text: 'Create a new database migration',
+              done: true,
+            },
+            {
+              text: 'Create a new database seeder',
+              done: true,
+            },
+            {
+              text: 'Create a new database model',
+              done: true,
+            },
+          ],
+          comments: [],
+        },
+        {
+          id: 7,
+          name: 'Create reusable components to build different pricing sections',
+          description:
+            'The components should be able to handle different pricing plans and should be able to display the most popular plan. Also, the components should be able to display a button to purchase the plan.',
+          completion: 100,
+          status: 5,
+          created: '2 weeks ago',
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'pricing-components.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '9.5MB',
+              version: '1.0.0',
+              uploaded: '5 days ago',
+              author: {
+                name: 'Ana B.',
+                picture: '/img/avatars/9.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Draw some first stage wireframes',
+              done: true,
+            },
+            {
+              text: 'Design components in a Figma project',
+              done: true,
+            },
+            {
+              text: 'Design pricing sections in the Figma project',
+              done: true,
+            },
+            {
+              text: 'Implement the components in the project',
+              done: true,
+            },
+            {
+              text: 'Implement the pricing sections in the project',
+              done: true,
+            },
+          ],
+          comments: [
+            {
+              text: 'I like very much the design. There is just one thing I would change. I would make the button a bit bigger.',
+              author: {
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+                posted: '4 days ago',
+              },
+            },
+            {
+              text: 'Are you sure? I think the button is the right size. I will ask the team what they think.',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+                posted: '2 days ago',
+              },
+            },
+            {
+              text: 'I think the button is fine. I would not change it.',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+                posted: '2 days ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 8,
+          name: 'Implement a user profile page',
+          description:
+            'The user profile page should display the user avatar, name, email, bio, location, social links and a list of the user projects.',
+          completion: 100,
+          status: 5,
+          created: '3 weeks ago',
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'profile-view.ai',
+              icon: '/img/icons/files/ai.svg',
               size: '4.7MB',
               version: '1.5.2',
               uploaded: '2 weeks ago',
@@ -10628,44 +15166,264 @@ async function getDemoData() {
                 picture: '/img/avatars/16.svg',
               },
             },
+          ],
+          checklist: [
             {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
+              text: 'Draw some first stage wireframes',
+              done: true,
+            },
+            {
+              text: 'Design the user profile page in a Figma project',
+              done: true,
+            },
+            {
+              text: 'Implement the user profile page in the project',
+              done: true,
+            },
+          ],
+          comments: [
+            {
+              text: 'This looks great! I have just one question. How will the user change the avatar?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Henry D.',
+                picture: '/img/avatars/1.svg',
+                posted: '8 hours ago',
+              },
+            },
+            {
+              text: 'I think the user will be able to change the avatar from the settings page.',
+              author: {
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
+                posted: '8 hours ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 9,
+          name: 'Create a concept for a contact list page',
+          description:
+            'The contact list page should display a list of contacts with their name, email, phone number and avatar.',
+          completion: 75,
+          status: 3,
+          created: '2 weeks ago',
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'contact-list.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '7.9MB',
+              version: '1.1.1',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Draw some first stage wireframes',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Design the contact list page in a Figma project',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement the contact list page in the project',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Build a search functionality for the contact list page',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'The filter is a great addition. I think it will be very useful.',
+              author: {
+                name: 'Melany L.',
+                picture: '/img/avatars/25.svg',
+                posted: '6 hours ago',
+              },
+            },
+            {
+              text: "That's the cherry on top of the cake. I think it's ready to be implemented.",
+              author: {
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+                posted: '7 hours ago',
+              },
+            },
+            {
+              text: 'I agree. I will start working on the implementation.',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+                posted: '8 hours ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 10,
+          name: 'Implement a contact list API endpoint',
+          description:
+            'The contact list API endpoint should return a list of contacts with their name, email, phone number and avatar.',
+          completion: 50,
+          status: 1,
+          created: '6 days ago',
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'contact-list-api.pdf',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'contact-list-api.xlsx',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.0.0',
+              uploaded: '1 week ago',
+              author: {
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Create a new API endpoint for the contact list',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the contact list',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the contact list',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the contact list',
+              done: false,
+            },
+            {
+              text: 'Create filter queries and pagination for the contact list',
+              done: false,
+            },
+          ],
+          comments: [
+            {
+              text: 'I think we should add a search functionality to the contact list.',
+              author: {
+                name: 'Lana E.',
+                picture: '/img/avatars/4.svg',
+                posted: '2 hours ago',
+              },
+            },
+            {
+              text: 'I agree. I will add it to the checklist.',
+              author: {
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+                posted: '2 days ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 11,
+          name: 'Implement a messaging frontend for contacts',
+          description:
+            'The messaging frontend should allow users to send messages to each other. The messages should be stored in a database. The frontend should be implemented in React.',
+          completion: 100,
+          status: 5,
+          created: '2 weeks ago',
+          assignee: {
+            id: 7,
+            src: '/img/avatars/3.svg',
+            badge: '/img/stacks/reactjs.svg',
+            role: 'Frontend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Clarke G.',
+            text: 'CG',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'messaging-frontend.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '7.1MB',
+              version: '1.0.0',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Elias D.',
+                picture: '/img/avatars/13.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'messaging-frontend.pdf',
+              icon: '/img/icons/files/pdf.svg',
+              size: '1.2MB',
+              version: '1.0.0',
+              uploaded: '6 days ago',
+              author: {
+                name: 'Josh D.',
+                picture: '/img/avatars/11.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Create new components for the messaging frontend',
+              done: true,
+            },
+            {
+              text: 'Add a new route for the messaging frontend',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the messages',
+              done: true,
+            },
+            {
+              text: 'Implement the messaging functionality',
+              done: true,
+            },
+          ],
+          comments: [
+            {
+              text: 'I think we should add the ability to send images and files. What do you think?',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
@@ -10673,17 +15431,17 @@ async function getDemoData() {
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Iam not sure if we should add this. It would be a lot of work. What do you think @Hermann M.?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Josh D.',
+                picture: '/img/avatars/11.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think we should add it. It would be a nice feature.',
               author: {
-                name: 'Clarissa M.',
+                name: 'Hermann M.',
                 picture: '/img/avatars/5.svg',
                 posted: '2 days ago',
               },
@@ -10691,84 +15449,57 @@ async function getDemoData() {
           ],
         },
         {
-          id: 7,
-          name: 'Create a new design for the homepage',
+          id: 12,
+          name: 'Implement a messaging API endpoint for the frontend',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            'The messaging API endpoint should allow users to send messages to each other. The messages should be stored in a database. The API endpoint should be implemented in Node.js.',
+          completion: 65,
+          status: 1,
+          created: '3 weeks ago',
+          assignee: {
+            id: 7,
+            src: '/img/avatars/3.svg',
+            badge: '/img/stacks/reactjs.svg',
+            role: 'Frontend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Clarke G.',
+            text: 'CG',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'messaging-api-endpoint.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '2.2MB',
+              version: '1.0.2',
               uploaded: '2 weeks ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
-              },
-            },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new API endpoint for the messaging frontend',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement the messaging functionality',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: true,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Save the messages in a database',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I have been doing some heavy lifting on this. I think we should defintiely add the ability to send images and files. What do you think?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
+                posted: '10 hours ago',
               },
             },
           ],
@@ -10809,18 +15540,36 @@ async function getDemoData() {
       team: [
         {
           id: 31,
-          src: undefined,
-          badge: '/img/stacks/js.svg',
+          src: '/img/avatars/21.svg',
+          badge: '/img/stacks/illustrator.svg',
           role: 'UI/UX Designer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
-          tooltip: 'Yasseen A.',
-          text: 'YA',
+          tooltip: 'Howard D.',
+          text: 'HD',
+        },
+        {
+          id: 15,
+          src: '/img/avatars/16.svg',
+          badge: '/img/stacks/python.svg',
+          role: 'Solution Architect',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+          tooltip: 'Hermann M.',
+          text: 'HM',
+        },
+        {
+          id: 12,
+          src: '/img/avatars/8.svg',
+          badge: '/img/stacks/csharp.svg',
+          role: 'Backend Developer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+          tooltip: 'Mario T.',
+          text: 'MT',
         },
       ],
       files: [
         {
           id: 0,
-          name: 'Company UX Guide',
+          name: 'company-ux-guide.pdf',
           icon: '/img/icons/files/pdf.svg',
           size: '4.7MB',
           version: '1.5.2',
@@ -10832,7 +15581,7 @@ async function getDemoData() {
         },
         {
           id: 1,
-          name: 'Thech summit expenses',
+          name: 'tech-summit-expenses.xlsx',
           icon: '/img/icons/files/sheet.svg',
           size: '34KB',
           version: '1.1.3',
@@ -10844,7 +15593,7 @@ async function getDemoData() {
         },
         {
           id: 2,
-          name: 'Project outline',
+          name: 'project-outline.docx',
           icon: '/img/icons/files/doc-2.svg',
           size: '77KB',
           version: '1.0.0',
@@ -10856,7 +15605,7 @@ async function getDemoData() {
         },
         {
           id: 3,
-          name: 'UX presentation',
+          name: 'ux-presentation.pptx',
           icon: '/img/icons/files/ppt.svg',
           size: '2.3MB',
           version: '1.0.0',
@@ -10868,7 +15617,7 @@ async function getDemoData() {
         },
         {
           id: 4,
-          name: 'Website Homepage Redesign',
+          name: 'website-homepage-redesign.ai',
           icon: '/img/icons/files/ai.svg',
           size: '4.8MB',
           version: '1.0.0',
@@ -10880,7 +15629,7 @@ async function getDemoData() {
         },
         {
           id: 5,
-          name: 'UX Ramp Up for Interns',
+          name: 'interns-ux-rampup.docx',
           icon: '/img/icons/files/doc-2.svg',
           size: '1.8MB',
           version: '1.2.0',
@@ -10928,16 +15677,25 @@ async function getDemoData() {
       tasks: [
         {
           id: 0,
-          name: 'Create a new design for the homepage',
+          name: 'Create a new figma design for the new homepage elements',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
-          completion: 75,
+            'We should have a collection of the most basic UI elements like buttons, badges and form elements. Then we should use these to create reusable section blocks that we can also use in other pages of the project.',
+          completion: 100,
+          status: 5,
           created: '2 days ago',
-          attachments: 2,
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'company-ux-guide.pdf',
               icon: '/img/icons/files/pdf.svg',
               size: '4.7MB',
               version: '1.5.2',
@@ -10949,11 +15707,11 @@ async function getDemoData() {
             },
             {
               id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
+              name: 'project_sketches.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '8.9MB',
               version: '1.1.3',
-              uploaded: '3 days ago',
+              uploaded: 'a week ago',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
@@ -10962,48 +15720,48 @@ async function getDemoData() {
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a set of button elements',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a set of badge elements',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a set of input elements',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a set of checkbox elements',
+              done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a set of card elements',
+              done: true,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think buttons corners should be a little more rounded.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Marjory L.',
+                picture: '/img/avatars/12.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Are you planning to add this as a global setting in the configuration file?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Not sure about it yet. Still need to check this out with the engineering team',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Marjory L.',
+                picture: '/img/avatars/12.svg',
                 posted: '2 days ago',
               },
             },
@@ -11011,115 +15769,118 @@ async function getDemoData() {
         },
         {
           id: 1,
-          name: 'Build a desktop and mobile landing page wireframe',
+          name: 'Build a landing page template for future marketing campaigns',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 25,
+            'The website should provide a customizable landing page template that can be used to support marketing campaigns. It should also be easily customizable by the marketing team.',
+          completion: 58,
+          status: 1,
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
-              icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              name: 'ux-notes.docx',
+              icon: '/img/icons/files/doc-2.svg',
+              size: '89KB',
+              version: '1.8.2',
               uploaded: '2 weeks ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
+                name: 'Melany D.',
+                picture: '/img/avatars/25.svg',
               },
             },
             {
               id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
+              name: 'landing_page.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '4.2MB',
+              version: '1.4.1',
+              uploaded: '5 days ago',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable hero section',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable pricing section',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable features section',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable testimonials section',
               done: false,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable contact section',
               done: false,
             },
           ],
-          created: '2 days ago',
-          attachments: 0,
+          created: '6 days ago',
+          attachments: 2,
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Iam wondering if we should add a section for the team members? it could be nice. And what about a section for the latest blog posts?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Selena M.',
+                picture: '/img/avatars/24.svg',
+                posted: '7 hours ago',
               },
             },
           ],
         },
         {
           id: 2,
-          name: 'Build a custom video player javascript librar',
+          name: 'Build a custom javascript video player with streaming support',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            "Since we couldn't find an out of the box solution, we are forced to build a custom player that we can reuse in othe projects.",
+          completion: 45,
+          status: 1,
+          created: '18 days ago',
+          assignee: {
+            id: 15,
+            src: '/img/avatars/15.svg',
+            badge: '/img/stacks/js.svg',
+            role: 'Fullstack Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Josh C.',
+            text: 'JC',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'player_specifications.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '2.9MB',
+              version: '1.0.1',
               uploaded: '2 weeks ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
+                name: 'Greta K.',
+                picture: '/img/avatars/20.svg',
               },
             },
             {
               id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
+              name: 'player-mockup.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '5.7MB',
+              version: '1.0.0',
+              uploaded: '5 days ago',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
@@ -11128,214 +15889,204 @@ async function getDemoData() {
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement basic frame and controls',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Design and implement custom svg control icons',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: true,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement video streaming support',
               done: false,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement video playback speed control',
+              done: true,
+            },
+            {
+              text: 'Implement video volume control',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Iam wondering if we should add several display modes for the player? It could be nice to have a fullscreen mode for example.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Erik K.',
+                picture: '/img/avatars/8.svg',
+                posted: '3 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Yeah, that would be nice. I will add it to the list of features. Anything else you can think of?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+                posted: '3 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think that should be it for now. I will let you know if I think of anything else. Now that you say it, ahave you though about cusomtization and Tailwind CSS support?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Erik K.',
+                picture: '/img/avatars/8.svg',
+                posted: '3 days ago',
               },
             },
           ],
         },
         {
           id: 3,
-          name: 'Design custom illustrations for landing page',
+          name: 'Design a set of custom branded illustrations for the website and the app',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            'The customer wants to have a set of illustrations that can be used on the website and the app. They should be custom branded and fit the overall design.',
+          completion: 100,
+          status: 5,
+          created: '2 weeks ago',
+          assignee: {
+            id: 15,
+            src: '/img/avatars/15.svg',
+            badge: '/img/stacks/js.svg',
+            role: 'Fullstack Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Josh C.',
+            text: 'JC',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'company_branding.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
-              uploaded: '2 weeks ago',
+              size: '25.8MB',
+              version: '4.5.2',
+              uploaded: '1 month ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
-              },
-            },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Lana H.',
+                picture: '/img/avatars/4.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create illustrations for the landing page',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Rework svgs to use the currentColor for fill and stroke attributes',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Prepare svg parts that will be animated',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Work on a set of branded icons',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'This is starting to look really good. I wonder if we should abstract the characters a little bit more? What do you guys think?',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                posted: '5 hours ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Looks good to me. I think we can start working on the icons now. I will add it to the list of features. Anything else you can think of?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+                posted: '2 hours ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think that should be it for now. I will let you know if I think of anything else. Now that you say it, have you though about cusomtization and Tailwind CSS support?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+                posted: '1 hour ago',
               },
             },
           ],
         },
         {
           id: 4,
-          name: 'Implement job management API controller',
+          name: 'Implement a complete job offers API endpoint',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            'The API endpoint should return a JSON list of jobs. The endpoint should be able to filter the results by keyword, location, type and category.',
+          completion: 65,
+          status: 1,
+          created: '2 weeks ago',
+          assignee: {
+            id: 7,
+            src: '/img/avatars/3.svg',
+            badge: '/img/stacks/reactjs.svg',
+            role: 'Frontend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Clarke G.',
+            text: 'CG',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'api-jobs-specs.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '1.2MB',
+              version: '1.9.2',
               uploaded: '2 weeks ago',
               author: {
                 name: 'Hermann M.',
                 picture: '/img/avatars/16.svg',
               },
             },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-              },
-            },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new API endpoint',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database table',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database migration',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database seeder',
               done: false,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database model',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I feel this architecture is not the best. I think we should use a different approach. What do you guys think?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Rob H.',
+                picture: '/img/avatars/13.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: "Yup, it looks clunky to me as well. Let's try something different. I will add it to the list of features. Anything else you can think of?",
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'John B.',
+                picture: '/img/avatars/8.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I have sent some notes to the team. That should help them refactor the code.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
                 posted: '2 days ago',
               },
             },
@@ -11343,82 +16094,79 @@ async function getDemoData() {
         },
         {
           id: 5,
-          name: 'Implement user management API controller',
+          name: 'Implement company users API endpoint',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
+            'The API endpoint should return a JSON list of users. The endpoint should be able to filter the results by keyword, location, type and category.',
+          completion: 100,
+          status: 0,
           created: '2 days ago',
-          attachments: 0,
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'api-users-specs.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '1.2MB',
+              version: '1.9.2',
               uploaded: '2 weeks ago',
               author: {
                 name: 'Hermann M.',
                 picture: '/img/avatars/16.svg',
               },
             },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-              },
-            },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new API endpoint',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database table',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database migration',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a new database seeder',
+              done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a new database model',
+              done: true,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I feel this architecture is not the best. I think we should use a different approach. What do you guys think?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Betty L.',
+                picture: '/img/avatars/24.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I have sent some notes to the team. That should help them refactor the code.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'John B.',
+                picture: '/img/avatars/8.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Hold your horses! I am still working on it. I will let you know when I am done.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Josh D.',
+                picture: '/img/avatars/11.svg',
                 posted: '2 days ago',
               },
             },
@@ -11426,17 +16174,173 @@ async function getDemoData() {
         },
         {
           id: 6,
-          name: 'Develop a JWT authentication controller',
+          name: 'Build a complete authentication system and API endpoint',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
+            'The authentication system should be able to handle user registration, login, logout, password reset and email verification. The API endpoint should return a Bearer token.',
+          completion: 100,
+          status: 0,
           created: '2 days ago',
-          attachments: 0,
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'api-auth-specs.pdf',
               icon: '/img/icons/files/pdf.svg',
+              size: '2.4MB',
+              version: '1.0.0',
+              uploaded: '3 weeks ago',
+              author: {
+                name: 'Josh S.',
+                picture: '/img/avatars/11.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'authentication.docx',
+              icon: '/img/icons/files/doc-2.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '5 days ago',
+              author: {
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Create a new API endpoint',
+              done: true,
+            },
+            {
+              text: 'Create a new database table',
+              done: true,
+            },
+            {
+              text: 'Create a new database migration',
+              done: true,
+            },
+            {
+              text: 'Create a new database seeder',
+              done: true,
+            },
+            {
+              text: 'Create a new database model',
+              done: true,
+            },
+          ],
+          comments: [],
+        },
+        {
+          id: 7,
+          name: 'Create reusable components to build different pricing sections',
+          description:
+            'The components should be able to handle different pricing plans and should be able to display the most popular plan. Also, the components should be able to display a button to purchase the plan.',
+          completion: 100,
+          status: 5,
+          created: '2 weeks ago',
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'pricing-components.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '9.5MB',
+              version: '1.0.0',
+              uploaded: '5 days ago',
+              author: {
+                name: 'Ana B.',
+                picture: '/img/avatars/9.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Draw some first stage wireframes',
+              done: true,
+            },
+            {
+              text: 'Design components in a Figma project',
+              done: true,
+            },
+            {
+              text: 'Design pricing sections in the Figma project',
+              done: true,
+            },
+            {
+              text: 'Implement the components in the project',
+              done: true,
+            },
+            {
+              text: 'Implement the pricing sections in the project',
+              done: true,
+            },
+          ],
+          comments: [
+            {
+              text: 'I like very much the design. There is just one thing I would change. I would make the button a bit bigger.',
+              author: {
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+                posted: '4 days ago',
+              },
+            },
+            {
+              text: 'Are you sure? I think the button is the right size. I will ask the team what they think.',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+                posted: '2 days ago',
+              },
+            },
+            {
+              text: 'I think the button is fine. I would not change it.',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+                posted: '2 days ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 8,
+          name: 'Implement a user profile page',
+          description:
+            'The user profile page should display the user avatar, name, email, bio, location, social links and a list of the user projects.',
+          completion: 100,
+          status: 5,
+          created: '3 weeks ago',
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'profile-view.ai',
+              icon: '/img/icons/files/ai.svg',
               size: '4.7MB',
               version: '1.5.2',
               uploaded: '2 weeks ago',
@@ -11445,44 +16349,264 @@ async function getDemoData() {
                 picture: '/img/avatars/16.svg',
               },
             },
+          ],
+          checklist: [
             {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
+              text: 'Draw some first stage wireframes',
+              done: true,
+            },
+            {
+              text: 'Design the user profile page in a Figma project',
+              done: true,
+            },
+            {
+              text: 'Implement the user profile page in the project',
+              done: true,
+            },
+          ],
+          comments: [
+            {
+              text: 'This looks great! I have just one question. How will the user change the avatar?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Henry D.',
+                picture: '/img/avatars/1.svg',
+                posted: '8 hours ago',
+              },
+            },
+            {
+              text: 'I think the user will be able to change the avatar from the settings page.',
+              author: {
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
+                posted: '8 hours ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 9,
+          name: 'Create a concept for a contact list page',
+          description:
+            'The contact list page should display a list of contacts with their name, email, phone number and avatar.',
+          completion: 75,
+          status: 3,
+          created: '2 weeks ago',
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'contact-list.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '7.9MB',
+              version: '1.1.1',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Draw some first stage wireframes',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Design the contact list page in a Figma project',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement the contact list page in the project',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Build a search functionality for the contact list page',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'The filter is a great addition. I think it will be very useful.',
+              author: {
+                name: 'Melany L.',
+                picture: '/img/avatars/25.svg',
+                posted: '6 hours ago',
+              },
+            },
+            {
+              text: "That's the cherry on top of the cake. I think it's ready to be implemented.",
+              author: {
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+                posted: '7 hours ago',
+              },
+            },
+            {
+              text: 'I agree. I will start working on the implementation.',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+                posted: '8 hours ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 10,
+          name: 'Implement a contact list API endpoint',
+          description:
+            'The contact list API endpoint should return a list of contacts with their name, email, phone number and avatar.',
+          completion: 50,
+          status: 1,
+          created: '6 days ago',
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'contact-list-api.pdf',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'contact-list-api.xlsx',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.0.0',
+              uploaded: '1 week ago',
+              author: {
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Create a new API endpoint for the contact list',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the contact list',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the contact list',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the contact list',
+              done: false,
+            },
+            {
+              text: 'Create filter queries and pagination for the contact list',
+              done: false,
+            },
+          ],
+          comments: [
+            {
+              text: 'I think we should add a search functionality to the contact list.',
+              author: {
+                name: 'Lana E.',
+                picture: '/img/avatars/4.svg',
+                posted: '2 hours ago',
+              },
+            },
+            {
+              text: 'I agree. I will add it to the checklist.',
+              author: {
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+                posted: '2 days ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 11,
+          name: 'Implement a messaging frontend for contacts',
+          description:
+            'The messaging frontend should allow users to send messages to each other. The messages should be stored in a database. The frontend should be implemented in React.',
+          completion: 100,
+          status: 5,
+          created: '2 weeks ago',
+          assignee: {
+            id: 7,
+            src: '/img/avatars/3.svg',
+            badge: '/img/stacks/reactjs.svg',
+            role: 'Frontend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Clarke G.',
+            text: 'CG',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'messaging-frontend.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '7.1MB',
+              version: '1.0.0',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Elias D.',
+                picture: '/img/avatars/13.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'messaging-frontend.pdf',
+              icon: '/img/icons/files/pdf.svg',
+              size: '1.2MB',
+              version: '1.0.0',
+              uploaded: '6 days ago',
+              author: {
+                name: 'Josh D.',
+                picture: '/img/avatars/11.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Create new components for the messaging frontend',
+              done: true,
+            },
+            {
+              text: 'Add a new route for the messaging frontend',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the messages',
+              done: true,
+            },
+            {
+              text: 'Implement the messaging functionality',
+              done: true,
+            },
+          ],
+          comments: [
+            {
+              text: 'I think we should add the ability to send images and files. What do you think?',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
@@ -11490,17 +16614,17 @@ async function getDemoData() {
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Iam not sure if we should add this. It would be a lot of work. What do you think @Hermann M.?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Josh D.',
+                picture: '/img/avatars/11.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think we should add it. It would be a nice feature.',
               author: {
-                name: 'Clarissa M.',
+                name: 'Hermann M.',
                 picture: '/img/avatars/5.svg',
                 posted: '2 days ago',
               },
@@ -11508,84 +16632,57 @@ async function getDemoData() {
           ],
         },
         {
-          id: 7,
-          name: 'Create a new design for the homepage',
+          id: 12,
+          name: 'Implement a messaging API endpoint for the frontend',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            'The messaging API endpoint should allow users to send messages to each other. The messages should be stored in a database. The API endpoint should be implemented in Node.js.',
+          completion: 65,
+          status: 1,
+          created: '3 weeks ago',
+          assignee: {
+            id: 7,
+            src: '/img/avatars/3.svg',
+            badge: '/img/stacks/reactjs.svg',
+            role: 'Frontend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Clarke G.',
+            text: 'CG',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'messaging-api-endpoint.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '2.2MB',
+              version: '1.0.2',
               uploaded: '2 weeks ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
-              },
-            },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new API endpoint for the messaging frontend',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement the messaging functionality',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: true,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Save the messages in a database',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I have been doing some heavy lifting on this. I think we should defintiely add the ability to send images and files. What do you think?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
+                posted: '10 hours ago',
               },
             },
           ],
@@ -11634,10 +16731,28 @@ async function getDemoData() {
           text: 'CM',
         },
         {
+          id: 15,
+          src: '/img/avatars/16.svg',
+          badge: '/img/stacks/vuejs.svg',
+          role: 'Frontend Developer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+          tooltip: 'Hermann M.',
+          text: 'HM',
+        },
+        {
+          id: 12,
+          src: '/img/avatars/8.svg',
+          badge: '/img/stacks/reactjs.svg',
+          role: 'Frontend Developer',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+          tooltip: 'Mario T.',
+          text: 'MT',
+        },
+        {
           id: 24,
           src: '/img/avatars/24.svg',
-          badge: '/img/stacks/js.svg',
-          role: 'UI/UX Designer',
+          badge: '/img/stacks/csharp.svg',
+          role: 'Solution Architect',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Ana B.',
           text: 'AB',
@@ -11646,7 +16761,7 @@ async function getDemoData() {
       files: [
         {
           id: 0,
-          name: 'Company UX Guide',
+          name: 'company-ux-guide.pdf',
           icon: '/img/icons/files/pdf.svg',
           size: '4.7MB',
           version: '1.5.2',
@@ -11658,7 +16773,7 @@ async function getDemoData() {
         },
         {
           id: 1,
-          name: 'Thech summit expenses',
+          name: 'tech-summit-expenses.xlsx',
           icon: '/img/icons/files/sheet.svg',
           size: '34KB',
           version: '1.1.3',
@@ -11670,7 +16785,7 @@ async function getDemoData() {
         },
         {
           id: 2,
-          name: 'Project outline',
+          name: 'project-outline.docx',
           icon: '/img/icons/files/doc-2.svg',
           size: '77KB',
           version: '1.0.0',
@@ -11682,7 +16797,7 @@ async function getDemoData() {
         },
         {
           id: 3,
-          name: 'UX presentation',
+          name: 'ux-presentation.pptx',
           icon: '/img/icons/files/ppt.svg',
           size: '2.3MB',
           version: '1.0.0',
@@ -11694,7 +16809,7 @@ async function getDemoData() {
         },
         {
           id: 4,
-          name: 'Website Homepage Redesign',
+          name: 'website-homepage-redesign.ai',
           icon: '/img/icons/files/ai.svg',
           size: '4.8MB',
           version: '1.0.0',
@@ -11706,7 +16821,7 @@ async function getDemoData() {
         },
         {
           id: 5,
-          name: 'UX Ramp Up for Interns',
+          name: 'interns-ux-rampup.docx',
           icon: '/img/icons/files/doc-2.svg',
           size: '1.8MB',
           version: '1.2.0',
@@ -11754,16 +16869,25 @@ async function getDemoData() {
       tasks: [
         {
           id: 0,
-          name: 'Create a new design for the homepage',
+          name: 'Create a new figma design for the new homepage elements',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
-          completion: 75,
+            'We should have a collection of the most basic UI elements like buttons, badges and form elements. Then we should use these to create reusable section blocks that we can also use in other pages of the project.',
+          completion: 100,
+          status: 5,
           created: '2 days ago',
-          attachments: 2,
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'company-ux-guide.pdf',
               icon: '/img/icons/files/pdf.svg',
               size: '4.7MB',
               version: '1.5.2',
@@ -11775,11 +16899,11 @@ async function getDemoData() {
             },
             {
               id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
+              name: 'project_sketches.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '8.9MB',
               version: '1.1.3',
-              uploaded: '3 days ago',
+              uploaded: 'a week ago',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
@@ -11788,48 +16912,48 @@ async function getDemoData() {
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a set of button elements',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a set of badge elements',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a set of input elements',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a set of checkbox elements',
+              done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a set of card elements',
+              done: true,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think buttons corners should be a little more rounded.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Marjory L.',
+                picture: '/img/avatars/12.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Are you planning to add this as a global setting in the configuration file?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Not sure about it yet. Still need to check this out with the engineering team',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Marjory L.',
+                picture: '/img/avatars/12.svg',
                 posted: '2 days ago',
               },
             },
@@ -11837,115 +16961,118 @@ async function getDemoData() {
         },
         {
           id: 1,
-          name: 'Build a desktop and mobile landing page wireframe',
+          name: 'Build a landing page template for future marketing campaigns',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 25,
+            'The website should provide a customizable landing page template that can be used to support marketing campaigns. It should also be easily customizable by the marketing team.',
+          completion: 58,
+          status: 1,
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
-              icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              name: 'ux-notes.docx',
+              icon: '/img/icons/files/doc-2.svg',
+              size: '89KB',
+              version: '1.8.2',
               uploaded: '2 weeks ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
+                name: 'Melany D.',
+                picture: '/img/avatars/25.svg',
               },
             },
             {
               id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
+              name: 'landing_page.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '4.2MB',
+              version: '1.4.1',
+              uploaded: '5 days ago',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable hero section',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable pricing section',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable features section',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable testimonials section',
               done: false,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a customizable contact section',
               done: false,
             },
           ],
-          created: '2 days ago',
-          attachments: 0,
+          created: '6 days ago',
+          attachments: 2,
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Iam wondering if we should add a section for the team members? it could be nice. And what about a section for the latest blog posts?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Selena M.',
+                picture: '/img/avatars/24.svg',
+                posted: '7 hours ago',
               },
             },
           ],
         },
         {
           id: 2,
-          name: 'Build a custom video player javascript librar',
+          name: 'Build a custom javascript video player with streaming support',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            "Since we couldn't find an out of the box solution, we are forced to build a custom player that we can reuse in othe projects.",
+          completion: 45,
+          status: 1,
+          created: '18 days ago',
+          assignee: {
+            id: 15,
+            src: '/img/avatars/15.svg',
+            badge: '/img/stacks/js.svg',
+            role: 'Fullstack Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Josh C.',
+            text: 'JC',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'player_specifications.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '2.9MB',
+              version: '1.0.1',
               uploaded: '2 weeks ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
+                name: 'Greta K.',
+                picture: '/img/avatars/20.svg',
               },
             },
             {
               id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
+              name: 'player-mockup.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '5.7MB',
+              version: '1.0.0',
+              uploaded: '5 days ago',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
@@ -11954,214 +17081,204 @@ async function getDemoData() {
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement basic frame and controls',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Design and implement custom svg control icons',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: true,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement video streaming support',
               done: false,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement video playback speed control',
+              done: true,
+            },
+            {
+              text: 'Implement video volume control',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Iam wondering if we should add several display modes for the player? It could be nice to have a fullscreen mode for example.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Erik K.',
+                picture: '/img/avatars/8.svg',
+                posted: '3 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Yeah, that would be nice. I will add it to the list of features. Anything else you can think of?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+                posted: '3 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think that should be it for now. I will let you know if I think of anything else. Now that you say it, ahave you though about cusomtization and Tailwind CSS support?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Erik K.',
+                picture: '/img/avatars/8.svg',
+                posted: '3 days ago',
               },
             },
           ],
         },
         {
           id: 3,
-          name: 'Design custom illustrations for landing page',
+          name: 'Design a set of custom branded illustrations for the website and the app',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            'The customer wants to have a set of illustrations that can be used on the website and the app. They should be custom branded and fit the overall design.',
+          completion: 100,
+          status: 5,
+          created: '2 weeks ago',
+          assignee: {
+            id: 15,
+            src: '/img/avatars/15.svg',
+            badge: '/img/stacks/js.svg',
+            role: 'Fullstack Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Josh C.',
+            text: 'JC',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'company_branding.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
-              uploaded: '2 weeks ago',
+              size: '25.8MB',
+              version: '4.5.2',
+              uploaded: '1 month ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
-              },
-            },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Lana H.',
+                picture: '/img/avatars/4.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create illustrations for the landing page',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Rework svgs to use the currentColor for fill and stroke attributes',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Prepare svg parts that will be animated',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Work on a set of branded icons',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'This is starting to look really good. I wonder if we should abstract the characters a little bit more? What do you guys think?',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                posted: '5 hours ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Looks good to me. I think we can start working on the icons now. I will add it to the list of features. Anything else you can think of?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+                posted: '2 hours ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think that should be it for now. I will let you know if I think of anything else. Now that you say it, have you though about cusomtization and Tailwind CSS support?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+                posted: '1 hour ago',
               },
             },
           ],
         },
         {
           id: 4,
-          name: 'Implement job management API controller',
+          name: 'Implement a complete job offers API endpoint',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            'The API endpoint should return a JSON list of jobs. The endpoint should be able to filter the results by keyword, location, type and category.',
+          completion: 65,
+          status: 1,
+          created: '2 weeks ago',
+          assignee: {
+            id: 7,
+            src: '/img/avatars/3.svg',
+            badge: '/img/stacks/reactjs.svg',
+            role: 'Frontend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Clarke G.',
+            text: 'CG',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'api-jobs-specs.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '1.2MB',
+              version: '1.9.2',
               uploaded: '2 weeks ago',
               author: {
                 name: 'Hermann M.',
                 picture: '/img/avatars/16.svg',
               },
             },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-              },
-            },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new API endpoint',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database table',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database migration',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database seeder',
               done: false,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database model',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I feel this architecture is not the best. I think we should use a different approach. What do you guys think?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Rob H.',
+                picture: '/img/avatars/13.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: "Yup, it looks clunky to me as well. Let's try something different. I will add it to the list of features. Anything else you can think of?",
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'John B.',
+                picture: '/img/avatars/8.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I have sent some notes to the team. That should help them refactor the code.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
                 posted: '2 days ago',
               },
             },
@@ -12169,82 +17286,79 @@ async function getDemoData() {
         },
         {
           id: 5,
-          name: 'Implement user management API controller',
+          name: 'Implement company users API endpoint',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
+            'The API endpoint should return a JSON list of users. The endpoint should be able to filter the results by keyword, location, type and category.',
+          completion: 100,
+          status: 0,
           created: '2 days ago',
-          attachments: 0,
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'api-users-specs.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '1.2MB',
+              version: '1.9.2',
               uploaded: '2 weeks ago',
               author: {
                 name: 'Hermann M.',
                 picture: '/img/avatars/16.svg',
               },
             },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-              },
-            },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new API endpoint',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database table',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new database migration',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a new database seeder',
+              done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
+              text: 'Create a new database model',
+              done: true,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I feel this architecture is not the best. I think we should use a different approach. What do you guys think?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Betty L.',
+                picture: '/img/avatars/24.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I have sent some notes to the team. That should help them refactor the code.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'John B.',
+                picture: '/img/avatars/8.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Hold your horses! I am still working on it. I will let you know when I am done.',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Josh D.',
+                picture: '/img/avatars/11.svg',
                 posted: '2 days ago',
               },
             },
@@ -12252,17 +17366,173 @@ async function getDemoData() {
         },
         {
           id: 6,
-          name: 'Develop a JWT authentication controller',
+          name: 'Build a complete authentication system and API endpoint',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
+            'The authentication system should be able to handle user registration, login, logout, password reset and email verification. The API endpoint should return a Bearer token.',
+          completion: 100,
+          status: 0,
           created: '2 days ago',
-          attachments: 0,
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'api-auth-specs.pdf',
               icon: '/img/icons/files/pdf.svg',
+              size: '2.4MB',
+              version: '1.0.0',
+              uploaded: '3 weeks ago',
+              author: {
+                name: 'Josh S.',
+                picture: '/img/avatars/11.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'authentication.docx',
+              icon: '/img/icons/files/doc-2.svg',
+              size: '34KB',
+              version: '1.1.3',
+              uploaded: '5 days ago',
+              author: {
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Create a new API endpoint',
+              done: true,
+            },
+            {
+              text: 'Create a new database table',
+              done: true,
+            },
+            {
+              text: 'Create a new database migration',
+              done: true,
+            },
+            {
+              text: 'Create a new database seeder',
+              done: true,
+            },
+            {
+              text: 'Create a new database model',
+              done: true,
+            },
+          ],
+          comments: [],
+        },
+        {
+          id: 7,
+          name: 'Create reusable components to build different pricing sections',
+          description:
+            'The components should be able to handle different pricing plans and should be able to display the most popular plan. Also, the components should be able to display a button to purchase the plan.',
+          completion: 100,
+          status: 5,
+          created: '2 weeks ago',
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'pricing-components.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '9.5MB',
+              version: '1.0.0',
+              uploaded: '5 days ago',
+              author: {
+                name: 'Ana B.',
+                picture: '/img/avatars/9.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Draw some first stage wireframes',
+              done: true,
+            },
+            {
+              text: 'Design components in a Figma project',
+              done: true,
+            },
+            {
+              text: 'Design pricing sections in the Figma project',
+              done: true,
+            },
+            {
+              text: 'Implement the components in the project',
+              done: true,
+            },
+            {
+              text: 'Implement the pricing sections in the project',
+              done: true,
+            },
+          ],
+          comments: [
+            {
+              text: 'I like very much the design. There is just one thing I would change. I would make the button a bit bigger.',
+              author: {
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+                posted: '4 days ago',
+              },
+            },
+            {
+              text: 'Are you sure? I think the button is the right size. I will ask the team what they think.',
+              author: {
+                name: 'Clarissa M.',
+                picture: '/img/avatars/5.svg',
+                posted: '2 days ago',
+              },
+            },
+            {
+              text: 'I think the button is fine. I would not change it.',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+                posted: '2 days ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 8,
+          name: 'Implement a user profile page',
+          description:
+            'The user profile page should display the user avatar, name, email, bio, location, social links and a list of the user projects.',
+          completion: 100,
+          status: 5,
+          created: '3 weeks ago',
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'profile-view.ai',
+              icon: '/img/icons/files/ai.svg',
               size: '4.7MB',
               version: '1.5.2',
               uploaded: '2 weeks ago',
@@ -12271,44 +17541,264 @@ async function getDemoData() {
                 picture: '/img/avatars/16.svg',
               },
             },
+          ],
+          checklist: [
             {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
+              text: 'Draw some first stage wireframes',
+              done: true,
+            },
+            {
+              text: 'Design the user profile page in a Figma project',
+              done: true,
+            },
+            {
+              text: 'Implement the user profile page in the project',
+              done: true,
+            },
+          ],
+          comments: [
+            {
+              text: 'This looks great! I have just one question. How will the user change the avatar?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Henry D.',
+                picture: '/img/avatars/1.svg',
+                posted: '8 hours ago',
+              },
+            },
+            {
+              text: 'I think the user will be able to change the avatar from the settings page.',
+              author: {
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
+                posted: '8 hours ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 9,
+          name: 'Create a concept for a contact list page',
+          description:
+            'The contact list page should display a list of contacts with their name, email, phone number and avatar.',
+          completion: 75,
+          status: 3,
+          created: '2 weeks ago',
+          assignee: {
+            id: 27,
+            src: '/img/avatars/24.svg',
+            badge: '/img/stacks/illustrator.svg',
+            role: 'UI/UX Designer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Carmen E.',
+            text: 'CE',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'contact-list.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '7.9MB',
+              version: '1.1.1',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Draw some first stage wireframes',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Design the contact list page in a Figma project',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement the contact list page in the project',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Build a search functionality for the contact list page',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'The filter is a great addition. I think it will be very useful.',
+              author: {
+                name: 'Melany L.',
+                picture: '/img/avatars/25.svg',
+                posted: '6 hours ago',
+              },
+            },
+            {
+              text: "That's the cherry on top of the cake. I think it's ready to be implemented.",
+              author: {
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+                posted: '7 hours ago',
+              },
+            },
+            {
+              text: 'I agree. I will start working on the implementation.',
+              author: {
+                name: 'Hermann M.',
+                picture: '/img/avatars/16.svg',
+                posted: '8 hours ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 10,
+          name: 'Implement a contact list API endpoint',
+          description:
+            'The contact list API endpoint should return a list of contacts with their name, email, phone number and avatar.',
+          completion: 50,
+          status: 1,
+          created: '6 days ago',
+          assignee: {
+            id: 12,
+            src: '/img/avatars/12.svg',
+            badge: '/img/stacks/csharp.svg',
+            role: 'Backend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Marjory L.',
+            text: 'ML',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'contact-list-api.pdf',
+              icon: '/img/icons/files/pdf.svg',
+              size: '4.7MB',
+              version: '1.5.2',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'contact-list-api.xlsx',
+              icon: '/img/icons/files/sheet.svg',
+              size: '34KB',
+              version: '1.0.0',
+              uploaded: '1 week ago',
+              author: {
+                name: 'Maya R.',
+                picture: '/img/avatars/2.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Create a new API endpoint for the contact list',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the contact list',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the contact list',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the contact list',
+              done: false,
+            },
+            {
+              text: 'Create filter queries and pagination for the contact list',
+              done: false,
+            },
+          ],
+          comments: [
+            {
+              text: 'I think we should add a search functionality to the contact list.',
+              author: {
+                name: 'Lana E.',
+                picture: '/img/avatars/4.svg',
+                posted: '2 hours ago',
+              },
+            },
+            {
+              text: 'I agree. I will add it to the checklist.',
+              author: {
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
+                posted: '2 days ago',
+              },
+            },
+          ],
+        },
+        {
+          id: 11,
+          name: 'Implement a messaging frontend for contacts',
+          description:
+            'The messaging frontend should allow users to send messages to each other. The messages should be stored in a database. The frontend should be implemented in React.',
+          completion: 100,
+          status: 5,
+          created: '2 weeks ago',
+          assignee: {
+            id: 7,
+            src: '/img/avatars/3.svg',
+            badge: '/img/stacks/reactjs.svg',
+            role: 'Frontend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Clarke G.',
+            text: 'CG',
+          },
+          files: [
+            {
+              id: 0,
+              name: 'messaging-frontend.ai',
+              icon: '/img/icons/files/ai.svg',
+              size: '7.1MB',
+              version: '1.0.0',
+              uploaded: '2 weeks ago',
+              author: {
+                name: 'Elias D.',
+                picture: '/img/avatars/13.svg',
+              },
+            },
+            {
+              id: 1,
+              name: 'messaging-frontend.pdf',
+              icon: '/img/icons/files/pdf.svg',
+              size: '1.2MB',
+              version: '1.0.0',
+              uploaded: '6 days ago',
+              author: {
+                name: 'Josh D.',
+                picture: '/img/avatars/11.svg',
+              },
+            },
+          ],
+          checklist: [
+            {
+              text: 'Create new components for the messaging frontend',
+              done: true,
+            },
+            {
+              text: 'Add a new route for the messaging frontend',
+              done: true,
+            },
+            {
+              text: 'Create a new database table for the messages',
+              done: true,
+            },
+            {
+              text: 'Implement the messaging functionality',
+              done: true,
+            },
+          ],
+          comments: [
+            {
+              text: 'I think we should add the ability to send images and files. What do you think?',
               author: {
                 name: 'Clarissa M.',
                 picture: '/img/avatars/5.svg',
@@ -12316,17 +17806,17 @@ async function getDemoData() {
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Iam not sure if we should add this. It would be a lot of work. What do you think @Hermann M.?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Josh D.',
+                picture: '/img/avatars/11.svg',
                 posted: '2 days ago',
               },
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I think we should add it. It would be a nice feature.',
               author: {
-                name: 'Clarissa M.',
+                name: 'Hermann M.',
                 picture: '/img/avatars/5.svg',
                 posted: '2 days ago',
               },
@@ -12334,84 +17824,57 @@ async function getDemoData() {
           ],
         },
         {
-          id: 7,
-          name: 'Create a new design for the homepage',
+          id: 12,
+          name: 'Implement a messaging API endpoint for the frontend',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          completion: 0,
-          created: '2 days ago',
-          attachments: 0,
+            'The messaging API endpoint should allow users to send messages to each other. The messages should be stored in a database. The API endpoint should be implemented in Node.js.',
+          completion: 65,
+          status: 1,
+          created: '3 weeks ago',
+          assignee: {
+            id: 7,
+            src: '/img/avatars/3.svg',
+            badge: '/img/stacks/reactjs.svg',
+            role: 'Frontend Developer',
+            bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+            tooltip: 'Clarke G.',
+            text: 'CG',
+          },
           files: [
             {
               id: 0,
-              name: 'Company UX Guide',
+              name: 'messaging-api-endpoint.pdf',
               icon: '/img/icons/files/pdf.svg',
-              size: '4.7MB',
-              version: '1.5.2',
+              size: '2.2MB',
+              version: '1.0.2',
               uploaded: '2 weeks ago',
               author: {
-                name: 'Hermann M.',
-                picture: '/img/avatars/16.svg',
-              },
-            },
-            {
-              id: 1,
-              name: 'Thech summit expenses',
-              icon: '/img/icons/files/sheet.svg',
-              size: '34KB',
-              version: '1.1.3',
-              uploaded: '3 days ago',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
+                name: 'Kendra W.',
+                picture: '/img/avatars/10.svg',
               },
             },
           ],
           checklist: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Create a new API endpoint for the messaging frontend',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Implement the messaging functionality',
               done: true,
             },
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: true,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              done: false,
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'Save the messages in a database',
               done: false,
             },
           ],
           comments: [
             {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              text: 'I have been doing some heavy lifting on this. I think we should defintiely add the ability to send images and files. What do you think?',
               author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
-              },
-            },
-            {
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              author: {
-                name: 'Clarissa M.',
-                picture: '/img/avatars/5.svg',
-                posted: '2 days ago',
+                name: 'Clarke C.',
+                picture: '/img/avatars/3.svg',
+                posted: '10 hours ago',
               },
             },
           ],

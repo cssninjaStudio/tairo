@@ -6,6 +6,7 @@ const props = withDefaults(
     toolbar?: boolean
     circularMenu?: boolean
     condensed?: boolean
+    horizontalScroll?: boolean
   }>(),
   {
     sidebar: true,
@@ -51,6 +52,10 @@ const mainClass = computed(() => {
     list.push('xl:max-w-[calc(100%_-_80px)] xl:ml-[80px]')
   }
 
+  if (props.horizontalScroll) {
+    list.push('!pr-0 xl:!pr-0')
+  }
+
   return list
 })
 </script>
@@ -77,11 +82,20 @@ const mainClass = computed(() => {
     </TairoNavigationSidebar>
 
     <div :class="mainClass">
-      <div :class="props.condensed ? 'w-full' : 'mx-auto w-full max-w-7xl'">
+      <div
+        :class="[
+          props.condensed && !props.horizontalScroll && 'w-full',
+          !props.condensed && props.horizontalScroll && 'mx-auto w-full',
+          !props.condensed &&
+            !props.horizontalScroll &&
+            'mx-auto w-full max-w-7xl',
+        ]"
+      >
         <slot name="toolbar">
           <TairoNavigationToolbar
             v-if="toolbarEnabled"
             :sidebar="props.sidebar"
+            :horizontal-scroll="props.horizontalScroll"
           >
             <template #title><slot name="toolbar-title"></slot></template>
           </TairoNavigationToolbar>

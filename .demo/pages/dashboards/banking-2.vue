@@ -43,6 +43,7 @@ const banks = [
 ]
 
 const selectedBank = ref(banks[0])
+const activeCard = ref(0)
 
 const areaExpenses = reactive(useAreaExpenses())
 
@@ -192,47 +193,23 @@ function useAreaExpenses() {
                 <Icon name="lucide:plus" class="w-4 h-4" />
               </BaseButtonIcon>
             </div>
-            <Swiper
-              class="py-6"
-              :modules="[SwiperAutoplay, SwiperNavigation, SwiperPagination]"
-              :slidesPerView="2"
-              :loop="true"
-              :effect="'slide'"
-              :spaceBetween="16"
-              :autoplay="{
-                delay: 8000,
-                disableOnInteraction: true,
-              }"
-              ,
-              :breakpoints="{
-                320: {
-                  slidesPerView: 1,
-                },
-                768: {
-                  slidesPerView: 2,
-                },
-                1200: {
-                  slidesPerView: 2,
-                },
-              }"
+            <div
+              class="w-full grid sm:grid-cols-2 gap-4 max-h-[164px] slimscroll overflow-y-auto px-6"
             >
-              <SwiperSlide
+              <DemoCreditCard
                 v-for="(card, index) in cards"
                 :key="index"
-                v-slot="{ isActive }"
-              >
-                <DemoCreditCard
-                  :balance="card.balance"
-                  :endingNumber="card.endingNumber"
-                  :type="card.type"
-                  :active="isActive"
-                />
-              </SwiperSlide>
-            </Swiper>
+                :balance="card.balance"
+                :endingNumber="card.endingNumber"
+                :type="card.type"
+                :active="activeCard === index"
+                @click="activeCard = index"
+              />
+            </div>
           </div>
-          <div class="flex sm:pl-16 mt-4">
+          <div class="flex justify-center text-center mt-4">
             <p
-              class="font-sans text-xs max-w-xs mx-auto text-center ltablet:mx-0 lg:mx-0 ltablet:text-left lg:text-left text-muted-400"
+              class="font-sans text-xs max-w-xs mx-auto text-center ltablet:mx-0 lg:mx-0 text-muted-400"
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Peccata
               paria minime esse deterritum.

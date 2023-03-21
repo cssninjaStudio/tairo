@@ -1,6 +1,17 @@
 <script setup lang="ts">
+import { DatePicker } from 'v-calendar'
+
+import 'v-calendar/dist/style.css'
+import '~/assets/css/vcalendar.css'
+
 definePageMeta({
   title: 'Flights',
+})
+
+const startDate = ref()
+const endDate = ref()
+const masks = ref({
+  input: 'YYYY-MM-DD',
 })
 
 const stops = ref([])
@@ -132,25 +143,63 @@ const results = [
                 </div>
                 <div class="w-full flex flex-col sm:flex-row gap-4">
                   <div class="relative grow">
-                    <BaseInput
-                      type="date"
-                      class="w-full"
-                      :classes="{
-                        input: '!bg-transparent text-black border-black invert',
-                      }"
-                      placeholder="Departure"
-                    />
+                    <ClientOnly>
+                      <DatePicker
+                        v-model="startDate"
+                        :masks="masks"
+                        :minute-increment="15"
+                        :min-date="new Date()"
+                        :disabled-dates="{ weekdays: [1, 7] }"
+                        :valid-hours="{ min: 8, max: 18 }"
+                        trim-weeks
+                      >
+                        <template v-slot="{ inputValue, inputEvents }">
+                          <div class="relative">
+                            <input
+                              class="peer font-sans text-sm bg-transparent h-10 inline-flex items-center leading-tight w-full pl-10 border-2 border-white/40 focus-visible:border-white/80 rounded-lg text-muted-100 placeholder:text-muted-100/30 nui-focus transition-all duration-300"
+                              :value="inputValue"
+                              placeholder="Start date"
+                              v-on="inputEvents"
+                            />
+                            <div
+                              class="absolute top-0 left-0 h-10 w-10 flex items-center justify-center text-muted-100/40 peer-focus-visible:text-muted-100/80 transition-colors duration-300"
+                            >
+                              <Icon name="lucide:map-pin" class="w-5 h-5" />
+                            </div>
+                          </div>
+                        </template>
+                      </DatePicker>
+                    </ClientOnly>
                   </div>
                   <div class="relative grow">
-                    <BaseInput
-                      type="date"
-                      class="w-full"
-                      :classes="{
-                        input:
-                          '!bg-transparent text-black border-black invert dark:invert',
-                      }"
-                      placeholder="Departure"
-                    />
+                    <ClientOnly>
+                      <DatePicker
+                        id="endDate"
+                        v-model="endDate"
+                        :masks="masks"
+                        :minute-increment="15"
+                        :min-date="startDate"
+                        :disabled-dates="{ weekdays: [1, 7] }"
+                        :valid-hours="{ min: 8, max: 18 }"
+                        trim-weeks
+                      >
+                        <template v-slot="{ inputValue, inputEvents }">
+                          <div class="relative">
+                            <input
+                              class="peer font-sans text-sm bg-transparent h-10 inline-flex items-center leading-tight w-full pl-10 border-2 border-white/40 focus-visible:border-white/80 rounded-lg text-muted-100 placeholder:text-muted-100/30 nui-focus transition-all duration-300"
+                              :value="inputValue"
+                              placeholder="End date"
+                              v-on="inputEvents"
+                            />
+                            <div
+                              class="absolute top-0 left-0 h-10 w-10 flex items-center justify-center text-muted-100/40 peer-focus-visible:text-muted-100/80 transition-colors duration-300"
+                            >
+                              <Icon name="lucide:flag" class="w-5 h-5" />
+                            </div>
+                          </div>
+                        </template>
+                      </DatePicker>
+                    </ClientOnly>
                   </div>
                 </div>
               </div>

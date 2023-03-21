@@ -432,7 +432,7 @@ const activeTab = ref('tab-1')
                   <PopoverHead
                     title="Champion"
                     icon="ri:trophy-fill"
-                    class="text-yellow-500 bg-yellow-500/20"
+                    class="text-yellow-500"
                   />
                   <PopoverContent>
                     You have more than 100k followers. You are a champion!

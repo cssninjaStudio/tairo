@@ -16,7 +16,8 @@ const props = withDefaults(
 
 <template>
   <div
-    class="w-[290px] lg:w-full max-w-full h-[164px] rounded-xl relative flex flex-col p-5 overflow-hidden transition-all duration-300"
+    role="button"
+    class="xs:w-[240px] w-[290px] lg:w-full max-w-full xs:h-[144px] h-[160px] ltablet:h-[130px] rounded-xl relative flex flex-col p-5 overflow-hidden transition-all duration-300 cursor-pointer"
     :class="[
       props.active ? 'bg-primary-700' : 'bg-muted-200 dark:bg-muted-900',
     ]"

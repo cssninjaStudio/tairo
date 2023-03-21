@@ -263,7 +263,11 @@ const { data, pending, error, refresh } = await useFetch(
                         </p>
                       </div>
                       <div>
-                        <BaseAvatarGroup :avatars="item.team" size="xs" />
+                        <BaseAvatarGroup
+                          :avatars="item.team"
+                          size="xs"
+                          :limit="3"
+                        />
                       </div>
                     </div>
                   </NuxtLink>

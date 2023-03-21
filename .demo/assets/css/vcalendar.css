@@ -5,29 +5,56 @@
   @apply p-4;
 }
 .vc-pane-container .vc-pane-layout .vc-header .vc-title {
-  @apply text-base font-medium text-muted-700 dark:text-muted-100;
+  @apply capitalize text-base font-medium text-muted-800 dark:text-muted-100;
 }
 .vc-pane-container .vc-pane-layout .vc-weeks {
   @apply mt-2;
 }
 .vc-pane-container .vc-pane-layout .vc-weeks .vc-weekday {
-  @apply font-normal text-sm;
+  @apply font-normal text-sm text-muted-500 dark:text-muted-400/70;
 }
+
+.vc-pane-container
+  .vc-pane-layout
+  .vc-weeks
+  .vc-weeknumber
+  .vc-weeknumber-content {
+  @apply font-normal text-xs not-italic text-muted-500 dark:text-muted-400/70;
+}
+
 .vc-pane-container .vc-day-content {
   @apply !text-sm font-medium hover:bg-primary-500/10 hover:text-primary-500 dark:text-muted-400 dark:hover:bg-primary-500/10 dark:hover:text-primary-400;
 }
+.vc-pane-container .vc-day-content.is-disabled {
+  @apply text-muted-300 dark:!text-muted-700;
+}
+
+.vc-pane-container .vc-day-content.bg-gray-200 {
+  @apply !bg-muted-100 !text-muted-500 dark:!bg-muted-700 dark:!text-muted-100;
+}
+
 .vc-pane-container .vc-arrows-container {
-  @apply top-6 py-2 px-6;
+  @apply top-5 py-2 px-6;
 }
 .vc-pane-container .vc-arrows-container .vc-arrow {
-  @apply flex items-center justify-center rounded-xl dark:hover:bg-muted-700/40 dark:hover:text-muted-100;
+  @apply -top-2 flex items-center justify-center rounded-xl dark:hover:bg-muted-700/40 dark:hover:text-muted-100;
 }
+
 .vc-pane-container .vc-arrows-container .vc-arrow svg {
-  @apply relative -top-0.5 h-5 w-5;
+  @apply relative -top-0.5 h-5 w-5 !text-muted-500 dark:!text-muted-400;
+}
+
+.vc-day-layer + span {
+  @apply !text-white;
+}
+
+.vc-bars .vc-bar,
+.vc-dots .vc-dot {
+  @apply !bg-success-500;
 }
 
 .vc-highlight {
-  @apply !bg-primary-600 !font-normal;
+  @apply !bg-primary-600 !font-normal !text-white !border-primary-600;
 }
 
 .vc-container {
@@ -43,6 +70,15 @@
   .vc-nav-header {
   @apply mb-3;
 }
+
+.vc-nav-title {
+  @apply font-sans font-medium text-muted-800 dark:text-muted-100;
+}
+
+.vc-nav-title:hover {
+  @apply bg-muted-100 dark:bg-muted-800/60;
+}
+
 .vc-popover-content-wrapper
   .vc-nav-popover-container
   .vc-nav-container
@@ -65,6 +101,14 @@
   .vc-nav-arrow:focus {
   @apply !border-transparent;
 }
+
+.vc-popover-content-wrapper
+  .vc-nav-popover-container
+  .vc-nav-container
+  .vc-nav-header
+  .vc-nav-arrow:hover {
+  @apply bg-muted-100 dark:bg-muted-800/60;
+}
 .vc-popover-content-wrapper
   .vc-nav-popover-container
   .vc-nav-container
@@ -78,22 +122,43 @@
   .vc-nav-header
   .vc-nav-arrow
   svg {
-  @apply relative -top-0.5 h-5 w-5 stroke-white;
+  @apply relative -top-0.5 h-5 w-5 text-muted-500 dark:text-muted-200;
 }
 .vc-popover-content-wrapper
   .vc-nav-popover-container
   .vc-nav-container
   .vc-nav-items
   .vc-nav-item {
-  @apply text-white font-sans font-normal text-sm uppercase py-2;
+  @apply text-muted-500 dark:text-muted-400 font-sans font-normal text-xs rounded-lg !leading-none capitalize py-2;
 }
 .vc-popover-content-wrapper
   .vc-nav-popover-container
   .vc-nav-container
   .vc-nav-items
   .vc-nav-item.is-active {
-  @apply !bg-primary-500;
+  @apply !bg-primary-500 !border-primary-500 text-white;
 }
+
+.vc-popover-content-wrapper
+  .vc-nav-popover-container
+  .vc-nav-container
+  .vc-nav-items
+  .vc-nav-item.is-disabled {
+  @apply dark:text-muted-300;
+}
+
+.vc-popover-content-wrapper
+  .vc-nav-popover-container
+  .vc-nav-container
+  .vc-nav-items
+  .vc-nav-item:not(.is-active):hover {
+  @apply bg-muted-100 dark:bg-muted-600 dark:text-muted-200;
+}
+
+.vc-popover-content {
+  @apply bg-white dark:bg-muted-700 border-muted-200 dark:border-muted-700;
+}
+
 .vc-time-content .vc-time-date > span {
   @apply text-sm;
 }
@@ -102,4 +167,41 @@
 }
 .vc-time-picker .vc-date-time .vc-date > span {
   @apply font-sans text-sm;
+}
+
+.vc-time-picker.vc-bordered {
+  @apply border-muted-200 dark:border-muted-700;
+}
+
+.vc-time-picker {
+  @apply items-start;
+}
+
+.vc-time-content {
+  @apply grow;
+}
+
+.vc-time-content .vc-time-date span {
+  @apply font-sans text-xs text-muted-500 dark:text-muted-400;
+}
+
+.vc-time-month,
+.vc-time-day {
+  @apply !text-primary-500;
+}
+
+.vc-time-select {
+  @apply w-3/4;
+}
+
+.vc-time-select .vc-select {
+  @apply grow;
+}
+
+.vc-time-select > span {
+  @apply !mx-4;
+}
+
+.vc-time-select .vc-select select {
+  @apply w-full bg-muted-100 dark:bg-muted-700 border-muted-200 dark:border-muted-700 text-muted-500 dark:text-muted-200;
 }

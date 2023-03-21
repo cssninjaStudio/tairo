@@ -50,6 +50,7 @@ const authors = [
         :src="author.image"
         :text="author.text"
         shape="straight"
+        mask="blob"
         class="flex-shrink-0 bg-primary-100 dark:bg-primary-500/20 text-primary-500"
       />
       <div>

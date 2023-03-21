@@ -393,7 +393,7 @@ function useBarProfit() {
                 class="bg-indigo-100 text-indigo-500 dark:bg-indigo-500/20 dark:text-indigo-400 dark:border-2 dark:border-indigo-500"
                 shape="full"
               >
-                <Icon name="ph:sketch-logo-duotone" class="w-5 h-5" />
+                <Icon name="ph:bank-duotone" class="w-5 h-5" />
               </BaseIconBox>
               <div>
                 <BaseHeading

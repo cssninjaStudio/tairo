@@ -283,6 +283,7 @@ const panelActive = ref(false)
             <BaseAvatar
               size="xs"
               shape="straight"
+              mask="blob"
               :src="message.sender.photo"
               class="pointer-events-none"
             />
@@ -290,7 +291,7 @@ const panelActive = ref(false)
               <BaseHeading size="sm" weight="semibold" lead="tight">
                 <span>{{ message.sender.name }}</span>
               </BaseHeading>
-              <BaseParagraph size="sm" lead="none">
+              <BaseParagraph size="xs" lead="none">
                 <span class="text-muted-500 dark:text-muted-400">
                   {{ message.sender.email }}
                 </span>

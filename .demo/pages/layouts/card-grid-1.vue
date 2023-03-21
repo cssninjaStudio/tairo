@@ -127,7 +127,7 @@ const { data, pending, error, refresh } = await useFetch(
                   </div>
                 </div>
                 <div
-                  class="p-6 flex flex-col sm:flex-row items-center justify-between"
+                  class="px-6 py-4 flex flex-col sm:flex-row items-center justify-between"
                 >
                   <div class="grow w-full sm:w-auto sm:max-w-[260px] space-y-1">
                     <div class="flex items-center justify-between">
