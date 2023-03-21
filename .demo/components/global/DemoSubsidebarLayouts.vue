@@ -775,6 +775,16 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                       class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
                     >
                       <Icon name="ph:lock-duotone" class="mr-2 h-5 w-5" />
+                      <span class="font-sans text-xs">Login</span>
+                    </NuxtLink>
+                  </li>
+                  <li class="flex h-8 items-center">
+                    <NuxtLink
+                      to="/auth/login-1"
+                      exact-active-class="text-primary-500"
+                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
+                    >
+                      <Icon name="ph:lock-duotone" class="mr-2 h-5 w-5" />
                       <span class="font-sans text-xs">Login V1</span>
                     </NuxtLink>
                   </li>
@@ -825,7 +835,20 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                       class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
                     >
                       <Icon name="ph:magic-wand-duotone" class="mr-2 h-5 w-5" />
-                      <span class="font-sans text-xs">Signup flow</span>
+                      <span class="font-sans text-xs">Signup V3</span>
+                    </NuxtLink>
+                  </li>
+                  <li class="flex h-8 items-center">
+                    <NuxtLink
+                      to="/auth/recover"
+                      exact-active-class="text-primary-500"
+                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
+                    >
+                      <Icon
+                        name="ph:fingerprint-duotone"
+                        class="mr-2 h-5 w-5"
+                      />
+                      <span class="font-sans text-xs">Forgot password</span>
                     </NuxtLink>
                   </li>
                 </ul>
