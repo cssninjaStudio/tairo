@@ -87,7 +87,7 @@ importers:
       vue3-apexcharts: 1.4.1
       vue3-carousel: 0.2.12
       vue3-popper: 1.5.0
-      vue3-smooth-dnd: ^0.0.2
+      vue3-smooth-dnd: 0.0.2
     devDependencies:
       '@mapbox/mapbox-gl-geocoder': 5.0.1_mapbox-gl@2.13.0
       '@nuxt/devtools': 0.2.5_nuxt@3.2.3
