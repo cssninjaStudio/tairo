@@ -95,6 +95,7 @@ const remoteQuestion = ref()
                       ref="fileInput"
                       type="file"
                       @input="pickFile"
+                      accept="image/*"
                       class="absolute top-0 left-0 w-full h-full opacity-0 z-10"
                     />
                   </div>
