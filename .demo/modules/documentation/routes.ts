@@ -596,7 +596,7 @@ export const routes = {
             title: 'Checkbox Custom',
             documentation: {
               category: 'Base Forms',
-              components: ['BaseCheckboxCustom'],
+              components: ['BaseCheckboxHeadless'],
               description:
                 'Create a custom checkbox using the the base checkbox element and designing yourself the exterior look of it.',
               icon: {
@@ -689,7 +689,7 @@ export const routes = {
             title: 'Radios Custom',
             documentation: {
               category: 'Base Forms',
-              components: ['BaseRadioCustom'],
+              components: ['BaseRadioHeadless'],
               description:
                 'Create a completely custom radio button using the the base radio element and designing yourself the exterior look of it.',
               icon: {

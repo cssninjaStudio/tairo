@@ -28,7 +28,7 @@ function wrapVueMarkdown(source: string) {
         </DocSection>
 
         <!-- Radio properties -->
-        <DocComponentMeta name="BaseRadioCustom" />
+        <DocComponentMeta name="BaseRadioHeadless" />
       </template>
       <template #toc>
         <DocToc />

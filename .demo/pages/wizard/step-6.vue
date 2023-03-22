@@ -77,7 +77,7 @@ const tools: Tool[] = [
     <div class="grid sm:grid-cols-3 gap-4 max-w-4xl mx-auto px-4">
       <!-- Tools -->
       <div v-for="tool in tools" :key="tool.name" class="relative">
-        <BaseCheckboxCustom
+        <BaseCheckboxHeadless
           v-model="project.tools"
           :value="tool"
           :name="tool.name"
@@ -98,7 +98,7 @@ const tools: Tool[] = [
               </div>
             </div>
           </BaseCard>
-        </BaseCheckboxCustom>
+        </BaseCheckboxHeadless>
       </div>
     </div>
   </div>
