@@ -45,17 +45,17 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
             </div>
             <div class="mt-3">
               <h6
-                class="font-heading text-sm font-semibold text-muted-800 dark:text-white"
+                class="font-heading text-sm font-medium text-muted-800 dark:text-white"
               >
                 Maya Rosselini
               </h6>
               <p class="mb-4 font-sans text-xs text-muted-400">maya@tairo.io</p>
-              <button
-                type="button"
-                class="inline-flex w-full items-center justify-center rounded-lg border border-muted-200 bg-white px-4 py-2 font-alt text-muted-800 transition-all duration-300 hover:shadow-md hover:shadow-muted-600/10 focus:shadow-md focus:shadow-muted-600/20"
+              <BaseButton
+                to="/layouts/profile-edit"
+                shape="curved"
+                class="w-full"
+                >Manage Account</BaseButton
               >
-                <span class="text-sm">Manage Account</span>
-              </button>
             </div>
           </div>
           <div class="py-1.5 px-6">
@@ -80,7 +80,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 </div>
                 <div class="ml-2">
                   <h6
-                    class="font-heading text-xs font-semibold leading-none text-muted-800 dark:text-white"
+                    class="font-heading text-xs font-medium leading-none text-muted-800 dark:text-white"
                   >
                     Mike Miller
                   </h6>
@@ -109,7 +109,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 </div>
                 <div class="ml-2">
                   <h6
-                    class="font-heading text-xs font-semibold leading-none text-muted-800 dark:text-white"
+                    class="font-heading text-xs font-medium leading-none text-muted-800 dark:text-white"
                   >
                     Claire Baker
                   </h6>
@@ -140,7 +140,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 </div>
                 <div class="ml-2">
                   <h6
-                    class="font-heading text-xs font-semibold leading-none text-muted-800 dark:text-white"
+                    class="font-heading text-xs font-medium leading-none text-muted-800 dark:text-white"
                   >
                     Alan Baxter
                   </h6>
@@ -151,12 +151,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
           </div>
 
           <div class="p-6">
-            <button
-              type="button"
-              class="inline-flex w-full items-center justify-center rounded-lg border border-muted-200 bg-white px-4 py-2 font-alt text-muted-800 transition-all duration-300 hover:shadow-md hover:shadow-muted-600/10 focus:shadow-md focus:shadow-muted-600/20"
-            >
-              <span class="text-sm">Logout from all</span>
-            </button>
+            <BaseButton shape="curved" class="w-full">Logout</BaseButton>
           </div>
         </MenuItems>
       </Transition>

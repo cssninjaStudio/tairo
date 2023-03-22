@@ -10,6 +10,7 @@ const plugin = require('tailwindcss/plugin')
  */
 module.exports = cssninjaConfig({
   // content: [`${__dirname}/documentation/**/*.vue`], // Parse the special documentation folder for demo
+  content: [`${__dirname}/utils/**/*.ts`], // Parse the utils folder for demo
   theme: {
     // Custom fonts (defaults values are commented out)
     // fontFamily: {
