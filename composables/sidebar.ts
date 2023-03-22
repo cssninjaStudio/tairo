@@ -93,7 +93,7 @@ export function useSidebar() {
   })
 
   const hasSubsidebar = computed(() => {
-    return sidebars.value.some((sidebar) => sidebar.subsidebar?.name)
+    return sidebars.value?.some((sidebar) => sidebar.subsidebar?.name)
   })
 
   const current = computed(() => {

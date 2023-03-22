@@ -81,7 +81,6 @@ function wrapVueMarkdown(source: string) {
           </DocComponent>
         </DocSection>
 
-        <!-- Input properties -->
         <DocComponentMeta name="BaseInputFile" />
       </template>
       <template #toc>

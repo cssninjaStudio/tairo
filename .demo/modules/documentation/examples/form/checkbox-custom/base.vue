@@ -22,7 +22,7 @@ const checkboxCustom = ref([])
           </NuxtLink>
         </div>
         <div class="grid sm:grid-cols-3 gap-6">
-          <BaseCheckboxCustom
+          <BaseCheckboxHeadless
             v-model="checkboxCustom"
             value="team_member_1"
             name="team-member-1"
@@ -62,8 +62,8 @@ const checkboxCustom = ref([])
                 </div>
               </div>
             </BaseCard>
-          </BaseCheckboxCustom>
-          <BaseCheckboxCustom
+          </BaseCheckboxHeadless>
+          <BaseCheckboxHeadless
             v-model="checkboxCustom"
             value="team_member_2"
             name="team-member-2"
@@ -103,8 +103,8 @@ const checkboxCustom = ref([])
                 </div>
               </div>
             </BaseCard>
-          </BaseCheckboxCustom>
-          <BaseCheckboxCustom
+          </BaseCheckboxHeadless>
+          <BaseCheckboxHeadless
             v-model="checkboxCustom"
             value="team_member_3"
             name="team-member-3"
@@ -144,7 +144,7 @@ const checkboxCustom = ref([])
                 </div>
               </div>
             </BaseCard>
-          </BaseCheckboxCustom>
+          </BaseCheckboxHeadless>
         </div>
       </fieldset>
     </form>

@@ -29,7 +29,7 @@ const activeTab = ref('demo')
         <div
           class="flex items-end gap-1 p-1 rounded-lg bg-muted-200 dark:bg-muted-700"
         >
-          <BaseRadioCustom v-model="activeTab" value="demo">
+          <BaseRadioHeadless v-model="activeTab" value="demo">
             <BaseButtonAction
               shape="rounded"
               class="h-[2.35rem] pr-3 focus:z-10"
@@ -40,8 +40,8 @@ const activeTab = ref('demo')
               <Icon name="ph:circles-four" class="h-4 w-4" />
               <span>Demo</span>
             </BaseButtonAction>
-          </BaseRadioCustom>
-          <BaseRadioCustom v-model="activeTab" value="code">
+          </BaseRadioHeadless>
+          <BaseRadioHeadless v-model="activeTab" value="code">
             <BaseButtonAction
               shape="rounded"
               class="h-[2.35rem] pr-3 focus:z-10"
@@ -52,7 +52,7 @@ const activeTab = ref('demo')
               <Icon name="ph:terminal" class="h-4 w-4" />
               <span>Code</span>
             </BaseButtonAction>
-          </BaseRadioCustom>
+          </BaseRadioHeadless>
         </div>
       </div>
     </div>

@@ -287,38 +287,38 @@ const budget = ref('< 5K')
           </h3>
         </div>
         <div class="w-full flex justify-center gap-3">
-          <BaseRadioCustom v-model="budget" name="budget" value="< 5K">
+          <BaseRadioHeadless v-model="budget" name="budget" value="< 5K">
             <BaseButtonAction
               shape="curved"
               class="peer-checked:!bg-primary-500 peer-checked:!border-primary-500 peer-checked:!text-white peer-checked:shadow-xl peer-checked:shadow-primary-500/20"
             >
               <span>&lt; 5K</span>
             </BaseButtonAction>
-          </BaseRadioCustom>
-          <BaseRadioCustom v-model="budget" name="budget" value="< 30K">
+          </BaseRadioHeadless>
+          <BaseRadioHeadless v-model="budget" name="budget" value="< 30K">
             <BaseButtonAction
               shape="curved"
               class="peer-checked:!bg-primary-500 peer-checked:!border-primary-500 peer-checked:!text-white peer-checked:shadow-xl peer-checked:shadow-primary-500/20"
             >
               <span>&lt; 30K</span>
             </BaseButtonAction>
-          </BaseRadioCustom>
-          <BaseRadioCustom v-model="budget" name="budget" value="< 100K">
+          </BaseRadioHeadless>
+          <BaseRadioHeadless v-model="budget" name="budget" value="< 100K">
             <BaseButtonAction
               shape="curved"
               class="peer-checked:!bg-primary-500 peer-checked:!border-primary-500 peer-checked:!text-white peer-checked:shadow-xl peer-checked:shadow-primary-500/20"
             >
               <span>&lt; 100K</span>
             </BaseButtonAction>
-          </BaseRadioCustom>
-          <BaseRadioCustom v-model="budget" name="budget" value="100K+">
+          </BaseRadioHeadless>
+          <BaseRadioHeadless v-model="budget" name="budget" value="100K+">
             <BaseButtonAction
               shape="curved"
               class="peer-checked:!bg-primary-500 peer-checked:!border-primary-500 peer-checked:!text-white peer-checked:shadow-xl peer-checked:shadow-primary-500/20"
             >
               <span>100K+</span>
             </BaseButtonAction>
-          </BaseRadioCustom>
+          </BaseRadioHeadless>
         </div>
       </BaseCard>
     </div>

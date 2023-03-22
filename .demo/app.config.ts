@@ -128,4 +128,8 @@ export default defineAppConfig({
       },
     ],
   },
+  nuxtIcon: {},
+  nui: {
+    defaultShapes: {},
+  },
 })

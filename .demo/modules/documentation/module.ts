@@ -29,8 +29,8 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     // addPlugin(resolve(runtimeDir, 'plugin'))
-    addImportsDir(resolve(runtimeDir, 'composables'))
-    addImportsDir(resolve(runtimeDir, 'utils'))
+    // addImportsDir(resolve(runtimeDir, 'composables'))
+    // addImportsDir(resolve(runtimeDir, 'utils'))
 
     addComponentsDir({
       path: resolve(runtimeDir, 'components'),
@@ -38,43 +38,37 @@ export default defineNuxtModule<ModuleOptions>({
       global: true,
     })
 
-    // @ts-ignore
     nuxt.hook('tailwindcss:config', (config) => {
-      config.content.push(resolve(runtimeDir, 'components/**/*.{vue,js,ts}'))
-      config.content.push(resolve(__dirname, './pages/**/*.{vue,js,ts}'))
-      config.content.push(resolve(__dirname, './examples/**/*.{vue,js,ts}'))
+      if (Array.isArray(config.content)) {
+        config.content.push(resolve(runtimeDir, 'components/**/*.{vue,js,ts}'))
+        config.content.push(resolve(__dirname, './pages/**/*.{vue,js,ts}'))
+        config.content.push(resolve(__dirname, './examples/**/*.{vue,js,ts}'))
+      }
     })
 
     await installModule('nuxt-component-meta', {
       exclude: [
         'nuxt/dist',
         '@nuxt/ui-templates/dist',
-        'Nuxt',
-        'Swiper',
-        'Icon',
-        'Doc',
-        'Vector',
+        (component: any) => {
+          const hasTairoPrefix = component?.pascalName?.startsWith('Tairo')
+          const hasBasePrefix = component?.pascalName?.startsWith('Base')
+          const hasAddonPrefix = component?.pascalName?.startsWith('Addon')
+          return !(hasTairoPrefix || hasBasePrefix || hasAddonPrefix)
+        },
       ],
-      // exclude: [
-      //   (component: any) => {
-      //     const hasTairoPrefix = component?.pascalName?.startsWith('Tairo')
-      //     const hasBasePrefix = component?.pascalName?.startsWith('Base')
-      //     const hasAddonPrefix = component?.pascalName?.startsWith('Addon')
-      //     return !(hasTairoPrefix || hasBasePrefix || hasAddonPrefix)
-      //   },
-      // ],
       debug: 2,
       checkerOptions: {
         // forceUseTs: true,
-        // schema: {
-        //   ignore: [
-        //     'RouteLocationRaw',
-        //     'ComponentData',
-        //     'NuxtComponentMetaNames',
-        //     'RouteLocationPathRaw',
-        //     'RouteLocationNamedRaw',
-        //   ],
-        // },
+        schema: {
+          ignore: [
+            'RouteLocationRaw',
+            'ComponentData',
+            'NuxtComponentMetaNames',
+            'RouteLocationPathRaw',
+            'RouteLocationNamedRaw',
+          ],
+        },
       },
     })
   },

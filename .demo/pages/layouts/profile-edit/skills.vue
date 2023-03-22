@@ -197,7 +197,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile/')
                   class="relative flex items-center justify-center h-[50px] w-[50px] shrink-0 rounded-full border border-muted-200 dark:border-muted-600 bg-white dark:bg-muted-700"
                 >
                   <img
-                    v-if="item.logo !== undefined"
+                    v-if="'logo' in item"
                     :src="item.logo"
                     :alt="item.name"
                     class="h-8 w-8 rounded-full"

@@ -28,7 +28,7 @@ function wrapVueMarkdown(source: string) {
         </DocSection>
 
         <!-- Checkbox properties -->
-        <DocComponentMeta name="BaseCheckboxCustom" />
+        <DocComponentMeta name="BaseCheckboxHeadless" />
       </template>
       <template #toc>
         <DocToc />

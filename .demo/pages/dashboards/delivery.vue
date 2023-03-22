@@ -505,7 +505,7 @@ const total = computed(() => {
             </ul>
             <div class="flex justify-between text-xs font-bold mt-4">
               <BaseButton
-                color="custom"
+                color="none"
                 shape="curved"
                 class="group !h-14 !gap-3 w-full bg-yellow-400 hover:!shadow-xl hover:!shadow-yellow-400/20 text-muted-800"
               >

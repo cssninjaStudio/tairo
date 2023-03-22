@@ -1,10 +1,8 @@
 <script setup lang="ts">
-// @ts-ignore
-import { useDocumentationRoutes } from '#imports'
+import { useDocumentationRoutes } from '../../runtime/composables/routes'
 
 const app = useAppConfig()
 
-// @ts-ignore
 const componentsMeta = await useComponentMeta()
 const { routesFlat, routesByCategory, categoryOrders } =
   useDocumentationRoutes()

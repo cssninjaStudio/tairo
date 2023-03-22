@@ -52,7 +52,7 @@ const VFocus = {
       <template #image>
         <component
           :is="resolveComponent(app.tairo.error.logo.component)"
-          v-if="app.tairo.error.logo.component"
+          v-if="app.tairo.error?.logo?.component"
           v-bind="app.tairo.error.logo.props"
         ></component>
       </template>

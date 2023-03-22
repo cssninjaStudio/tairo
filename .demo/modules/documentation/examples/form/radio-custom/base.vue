@@ -22,7 +22,7 @@ const customRadio = ref('')
           </NuxtLink>
         </div>
         <div class="grid sm:grid-cols-4 gap-6">
-          <BaseRadioCustom
+          <BaseRadioHeadless
             v-model="customRadio"
             name="radio_custom"
             value="value_1"
@@ -69,8 +69,8 @@ const customRadio = ref('')
                 />
               </div>
             </BaseCard>
-          </BaseRadioCustom>
-          <BaseRadioCustom
+          </BaseRadioHeadless>
+          <BaseRadioHeadless
             v-model="customRadio"
             name="radio_custom"
             value="value_2"
@@ -117,8 +117,8 @@ const customRadio = ref('')
                 />
               </div>
             </BaseCard>
-          </BaseRadioCustom>
-          <BaseRadioCustom
+          </BaseRadioHeadless>
+          <BaseRadioHeadless
             v-model="customRadio"
             name="radio_custom"
             value="value_3"
@@ -165,8 +165,8 @@ const customRadio = ref('')
                 />
               </div>
             </BaseCard>
-          </BaseRadioCustom>
-          <BaseRadioCustom
+          </BaseRadioHeadless>
+          <BaseRadioHeadless
             v-model="customRadio"
             name="radio_custom"
             value="value_4"
@@ -213,7 +213,7 @@ const customRadio = ref('')
                 />
               </div>
             </BaseCard>
-          </BaseRadioCustom>
+          </BaseRadioHeadless>
         </div>
       </fieldset>
     </form>
