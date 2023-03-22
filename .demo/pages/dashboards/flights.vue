@@ -8,8 +8,11 @@ definePageMeta({
   title: 'Flights',
 })
 
-const startDate = ref()
-const endDate = ref()
+const dates = ref({
+  start: new Date(),
+  end: new Date(),
+})
+
 const masks = ref({
   input: 'YYYY-MM-DD',
 })
@@ -141,67 +144,49 @@ const results = [
                     </BaseParagraph>
                   </div>
                 </div>
-                <div class="w-full flex flex-col sm:flex-row gap-4">
-                  <div class="relative grow">
-                    <ClientOnly>
-                      <DatePicker
-                        v-model="startDate"
-                        :masks="masks"
-                        :minute-increment="15"
-                        :min-date="new Date()"
-                        :disabled-dates="{ weekdays: [1, 7] }"
-                        :valid-hours="{ min: 8, max: 18 }"
-                        trim-weeks
-                      >
-                        <template v-slot="{ inputValue, inputEvents }">
-                          <div class="relative">
-                            <input
-                              class="peer font-sans text-sm bg-transparent h-10 inline-flex items-center leading-tight w-full pl-10 border-2 border-white/40 focus-visible:border-white/80 rounded-lg text-muted-100 placeholder:text-muted-100/30 nui-focus transition-all duration-300"
-                              :value="inputValue"
-                              placeholder="Start date"
-                              v-on="inputEvents"
-                            />
-                            <div
-                              class="absolute top-0 left-0 h-10 w-10 flex items-center justify-center text-muted-100/40 peer-focus-visible:text-muted-100/80 transition-colors duration-300"
-                            >
-                              <Icon name="lucide:map-pin" class="w-5 h-5" />
-                            </div>
+                <DatePicker
+                  v-model.range="dates"
+                  :masks="masks"
+                  :min-date="new Date()"
+                  mode="date"
+                  hide-time-header
+                  trim-weeks
+                >
+                  <template v-slot="{ inputValue, inputEvents }">
+                    <div class="w-full flex flex-col sm:flex-row gap-4">
+                      <div class="relative grow">
+                        <div class="relative">
+                          <input
+                            class="peer font-sans text-sm bg-transparent h-10 inline-flex items-center leading-tight w-full pl-10 border-2 border-white/40 focus-visible:border-white/80 rounded-lg text-muted-100 placeholder:text-muted-100/30 nui-focus transition-all duration-300"
+                            placeholder="Start date"
+                            :value="inputValue.start"
+                            v-on="inputEvents.start"
+                          />
+                          <div
+                            class="absolute top-0 left-0 h-10 w-10 flex items-center justify-center text-muted-100/40 peer-focus-visible:text-muted-100/80 transition-colors duration-300"
+                          >
+                            <Icon name="lucide:map-pin" class="w-5 h-5" />
                           </div>
-                        </template>
-                      </DatePicker>
-                    </ClientOnly>
-                  </div>
-                  <div class="relative grow">
-                    <ClientOnly>
-                      <DatePicker
-                        id="endDate"
-                        v-model="endDate"
-                        :masks="masks"
-                        :minute-increment="15"
-                        :min-date="startDate"
-                        :disabled-dates="{ weekdays: [1, 7] }"
-                        :valid-hours="{ min: 8, max: 18 }"
-                        trim-weeks
-                      >
-                        <template v-slot="{ inputValue, inputEvents }">
-                          <div class="relative">
-                            <input
-                              class="peer font-sans text-sm bg-transparent h-10 inline-flex items-center leading-tight w-full pl-10 border-2 border-white/40 focus-visible:border-white/80 rounded-lg text-muted-100 placeholder:text-muted-100/30 nui-focus transition-all duration-300"
-                              :value="inputValue"
-                              placeholder="End date"
-                              v-on="inputEvents"
-                            />
-                            <div
-                              class="absolute top-0 left-0 h-10 w-10 flex items-center justify-center text-muted-100/40 peer-focus-visible:text-muted-100/80 transition-colors duration-300"
-                            >
-                              <Icon name="lucide:flag" class="w-5 h-5" />
-                            </div>
+                        </div>
+                      </div>
+                      <div class="relative grow">
+                        <div class="relative">
+                          <input
+                            class="peer font-sans text-sm bg-transparent h-10 inline-flex items-center leading-tight w-full pl-10 border-2 border-white/40 focus-visible:border-white/80 rounded-lg text-muted-100 placeholder:text-muted-100/30 nui-focus transition-all duration-300"
+                            placeholder="End date"
+                            :value="inputValue.end"
+                            v-on="inputEvents.end"
+                          />
+                          <div
+                            class="absolute top-0 left-0 h-10 w-10 flex items-center justify-center text-muted-100/40 peer-focus-visible:text-muted-100/80 transition-colors duration-300"
+                          >
+                            <Icon name="lucide:flag" class="w-5 h-5" />
                           </div>
-                        </template>
-                      </DatePicker>
-                    </ClientOnly>
-                  </div>
-                </div>
+                        </div>
+                      </div>
+                    </div>
+                  </template>
+                </DatePicker>
               </div>
             </div>
             <div class="relative w-full xs:min-h-[190px] sm:w-2/5">

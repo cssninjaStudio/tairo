@@ -217,63 +217,55 @@ const budget = ref('< 5K')
           class="w-full flex justify-between divide-x divide-muted-200 dark:divide-muted-700"
         >
           <div class="relative pr-4">
-            <ClientOnly>
-              <DatePicker
-                v-model="project.startDate"
-                :masks="masks"
-                :minute-increment="15"
-                :min-date="new Date()"
-                :disabled-dates="{ weekdays: [1, 7] }"
-                :valid-hours="{ min: 8, max: 18 }"
-                trim-weeks
-              >
-                <template v-slot="{ inputValue, inputEvents }">
-                  <div class="relative">
-                    <input
-                      class="peer font-sans text-sm bg-transparent h-10 inline-flex items-center leading-tight w-full pl-10 rounded-lg text-muted-600 dark:text-muted-100 placeholder:text-muted-300 dark:placeholder:text-muted-600 focus-visible:outline-dashed focus-visible:outline-offset-4 focus-visible:outline-muted-300/70"
-                      :value="inputValue"
-                      placeholder="Start date"
-                      v-on="inputEvents"
-                    />
-                    <div
-                      class="absolute top-0 left-0 h-10 w-10 flex items-center justify-center text-muted-400 peer-focus-visible:text-primary-500 transition-colors duration-300"
-                    >
-                      <Icon name="lucide:map-pin" class="w-5 h-5" />
-                    </div>
+            <DatePicker
+              v-model="project.startDate"
+              :masks="masks"
+              :minute-increment="15"
+              :min-date="new Date()"
+              trim-weeks
+            >
+              <template v-slot="{ inputValue, inputEvents }">
+                <div class="relative">
+                  <input
+                    class="peer font-sans text-sm bg-transparent h-10 inline-flex items-center leading-tight w-full pl-10 rounded-lg text-muted-600 dark:text-muted-100 placeholder:text-muted-300 dark:placeholder:text-muted-600 focus-visible:outline-dashed focus-visible:outline-offset-4 focus-visible:outline-muted-300/70"
+                    :value="inputValue"
+                    placeholder="Start date"
+                    v-on="inputEvents"
+                  />
+                  <div
+                    class="absolute top-0 left-0 h-10 w-10 flex items-center justify-center text-muted-400 peer-focus-visible:text-primary-500 transition-colors duration-300"
+                  >
+                    <Icon name="lucide:map-pin" class="w-5 h-5" />
                   </div>
-                </template>
-              </DatePicker>
-            </ClientOnly>
+                </div>
+              </template>
+            </DatePicker>
           </div>
           <div class="relative pl-4">
-            <ClientOnly>
-              <DatePicker
-                id="endDate"
-                v-model="project.endDate"
-                :masks="masks"
-                :minute-increment="15"
-                :min-date="project.startDate"
-                :disabled-dates="{ weekdays: [1, 7] }"
-                :valid-hours="{ min: 8, max: 18 }"
-                trim-weeks
-              >
-                <template v-slot="{ inputValue, inputEvents }">
-                  <div class="relative">
-                    <input
-                      class="peer font-sans text-sm bg-transparent h-10 inline-flex items-center leading-tight w-full pl-10 rounded-lg text-muted-600 dark:text-muted-100 placeholder:text-muted-300 dark:placeholder:text-muted-600 focus-visible:outline-dashed focus-visible:outline-offset-4 focus-visible:outline-muted-300/70"
-                      :value="inputValue"
-                      placeholder="End date"
-                      v-on="inputEvents"
-                    />
-                    <div
-                      class="absolute top-0 left-0 h-10 w-10 flex items-center justify-center text-muted-400 peer-focus-visible:text-primary-500 transition-colors duration-300"
-                    >
-                      <Icon name="lucide:flag" class="w-5 h-5" />
-                    </div>
+            <DatePicker
+              id="endDate"
+              v-model="project.endDate"
+              :masks="masks"
+              :minute-increment="15"
+              :min-date="project.startDate"
+              trim-weeks
+            >
+              <template v-slot="{ inputValue, inputEvents }">
+                <div class="relative">
+                  <input
+                    class="peer font-sans text-sm bg-transparent h-10 inline-flex items-center leading-tight w-full pl-10 rounded-lg text-muted-600 dark:text-muted-100 placeholder:text-muted-300 dark:placeholder:text-muted-600 focus-visible:outline-dashed focus-visible:outline-offset-4 focus-visible:outline-muted-300/70"
+                    :value="inputValue"
+                    placeholder="End date"
+                    v-on="inputEvents"
+                  />
+                  <div
+                    class="absolute top-0 left-0 h-10 w-10 flex items-center justify-center text-muted-400 peer-focus-visible:text-primary-500 transition-colors duration-300"
+                  >
+                    <Icon name="lucide:flag" class="w-5 h-5" />
                   </div>
-                </template>
-              </DatePicker>
-            </ClientOnly>
+                </div>
+              </template>
+            </DatePicker>
           </div>
         </div>
       </BaseCard>

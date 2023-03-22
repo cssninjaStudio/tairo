@@ -25,13 +25,6 @@ export default defineNuxtConfig({
     resolve('./assets/css/modules/popper.css'),
     resolve('./assets/css/keyframes.css'),
   ],
-  vite: {
-    logLevel: 'info',
-    build: {
-      chunkSizeWarningLimit: Infinity,
-      assetsInlineLimit: 4096 * 2,
-    },
-  },
   app: {
     // keepalive: true,
     layoutTransition: {

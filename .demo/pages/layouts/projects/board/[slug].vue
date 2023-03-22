@@ -1,5 +1,4 @@
 <script setup lang="ts">
-// @ts-expect-error
 import { Container, Draggable } from 'vue3-smooth-dnd'
 
 definePageMeta({
