@@ -906,7 +906,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
                       exact-active-class="text-primary-500"
                       class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
                     >
-                      <Icon name="ph:user-duotone" class="mr-2 h-5 w-5" />
+                      <Icon name="ph:pencil-duotone" class="mr-2 h-5 w-5" />
                       <span class="font-sans text-xs">Edit profile</span>
                     </NuxtLink>
                   </li>

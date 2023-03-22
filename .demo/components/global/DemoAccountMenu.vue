@@ -35,10 +35,10 @@ const props = defineProps<{
         leave-to-class="transform scale-95 opacity-0"
       >
         <MenuItems
-          class="divide-muted-100 border-muted-200 dark:divide-muted-700 dark:border-muted-700 dark:bg-muted-800 absolute mt-2 w-60 origin-bottom-right divide-y rounded-md border bg-white text-left shadow-lg focus:outline-none"
+          class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 absolute mt-2 w-60 origin-bottom-right rounded-md border bg-white text-left shadow-lg focus:outline-none"
           :class="props.horizontal ? 'top-10 right-0' : 'bottom-0 -right-64'"
         >
-          <div class="p-6">
+          <div class="p-6 bg-muted-50 dark:bg-muted-700/40">
             <div class="flex items-center">
               <div
                 class="relative inline-flex h-14 w-14 items-center justify-center rounded-full"
@@ -51,7 +51,7 @@ const props = defineProps<{
               </div>
               <div class="ml-3">
                 <h6
-                  class="font-heading text-muted-800 text-sm font-semibold dark:text-white"
+                  class="font-heading text-muted-800 text-sm font-medium dark:text-white"
                 >
                   Maya Rosselini
                 </h6>
@@ -59,21 +59,21 @@ const props = defineProps<{
               </div>
             </div>
           </div>
-          <div class="p-1.5">
+          <div class="p-2">
             <MenuItem v-slot="{ active }">
               <NuxtLink
-                to="#"
-                class="group flex w-full items-center rounded-md p-2 text-sm transition-colors duration-300"
+                to="/layouts/profile"
+                class="group flex w-full items-center rounded-md p-3 text-sm transition-colors duration-300"
                 :class="[
                   active
                     ? 'bg-muted-100 dark:bg-muted-700 text-primary-500'
-                    : 'text-muted-500',
+                    : 'text-muted-400',
                 ]"
               >
                 <Icon name="ph:user-circle-duotone" class="h-5 w-5" />
                 <div class="ml-3">
                   <h6
-                    class="font-heading text-muted-800 text-xs font-semibold leading-none dark:text-white"
+                    class="font-heading text-muted-800 text-xs font-medium leading-none dark:text-white"
                   >
                     Profile
                   </h6>
@@ -83,22 +83,20 @@ const props = defineProps<{
                 </div>
               </NuxtLink>
             </MenuItem>
-          </div>
-          <div class="p-1.5">
             <MenuItem v-slot="{ active }">
               <NuxtLink
-                to="#"
-                class="group flex w-full items-center rounded-md p-2 text-sm transition-colors duration-300"
+                to="/layouts/projects"
+                class="group flex w-full items-center rounded-md p-3 text-sm transition-colors duration-300"
                 :class="[
                   active
                     ? 'bg-muted-100 dark:bg-muted-700 text-primary-500'
-                    : 'text-muted-500',
+                    : 'text-muted-400',
                 ]"
               >
                 <Icon name="ph:briefcase-duotone" class="h-5 w-5" />
                 <div class="ml-3">
                   <h6
-                    class="font-heading text-muted-800 text-xs font-semibold leading-none dark:text-white"
+                    class="font-heading text-muted-800 text-xs font-medium leading-none dark:text-white"
                   >
                     Projects
                   </h6>
@@ -110,18 +108,18 @@ const props = defineProps<{
             </MenuItem>
             <MenuItem v-slot="{ active }">
               <NuxtLink
-                to="#"
-                class="group flex w-full items-center rounded-md p-2 text-sm transition-colors duration-300"
+                to="/layouts/user-grid-4"
+                class="group flex w-full items-center rounded-md p-3 text-sm transition-colors duration-300"
                 :class="[
                   active
                     ? 'bg-muted-100 dark:bg-muted-700 text-primary-500'
-                    : 'text-muted-500',
+                    : 'text-muted-400',
                 ]"
               >
                 <Icon name="ph:users-three-duotone" class="h-5 w-5" />
                 <div class="ml-3">
                   <h6
-                    class="font-heading text-muted-800 text-xs font-semibold leading-none dark:text-white"
+                    class="font-heading text-muted-800 text-xs font-medium leading-none dark:text-white"
                   >
                     Team
                   </h6>
@@ -129,23 +127,20 @@ const props = defineProps<{
                 </div>
               </NuxtLink>
             </MenuItem>
-          </div>
-
-          <div class="p-1.5">
             <MenuItem v-slot="{ active }">
               <NuxtLink
-                to="#"
-                class="group flex w-full items-center rounded-md p-2 text-sm transition-colors duration-300"
+                to="/layouts/profile-edit"
+                class="group flex w-full items-center rounded-md p-3 text-sm transition-colors duration-300"
                 :class="[
                   active
                     ? 'bg-muted-100 dark:bg-muted-700 text-primary-500'
-                    : 'text-muted-500',
+                    : 'text-muted-400',
                 ]"
               >
                 <Icon name="ph:gear-six-duotone" class="h-5 w-5" />
                 <div class="ml-3">
                   <h6
-                    class="font-heading text-muted-800 text-xs font-semibold leading-none dark:text-white"
+                    class="font-heading text-muted-800 text-xs font-medium leading-none dark:text-white"
                   >
                     Settings
                   </h6>
@@ -155,17 +150,6 @@ const props = defineProps<{
                 </div>
               </NuxtLink>
             </MenuItem>
-          </div>
-
-          <div class="p-1.5">
-            <BaseButton
-              color="primary"
-              shape="curved"
-              icon="ph:lock-duotone"
-              class="w-full"
-            >
-              <span>Logout</span>
-            </BaseButton>
           </div>
         </MenuItems>
       </Transition>

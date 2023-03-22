@@ -520,17 +520,22 @@ function openTaskPanel(id: number, tasks: any) {
                 <div class="p-5 flex flex-col sm:flex-row items-center">
                   <div class="flex flex-col sm:flex-row gap-3">
                     <Icon
-                      v-if="item.status === 6"
+                      v-if="item.status === 0"
+                      name="ph:plus-circle-duotone"
+                      class="shrink-0 w-6 h-6 text-muted-400"
+                    />
+                    <Icon
+                      v-else-if="item.status === 5"
                       name="ph:check-circle-duotone"
                       class="shrink-0 w-6 h-6 text-success-500"
                     />
                     <Icon
-                      v-if="item.status === 1"
+                      v-else-if="item.status === 1"
                       name="ph:timer-duotone"
                       class="shrink-0 w-6 h-6 text-muted-400"
                     />
                     <Icon
-                      v-if="item.status === 2 || item.status === 3"
+                      v-else-if="item.status === 2 || item.status === 3"
                       name="ph:warning-duotone"
                       class="shrink-0 w-6 h-6 text-warning-500"
                     />
@@ -558,7 +563,7 @@ function openTaskPanel(id: number, tasks: any) {
                     <BaseProgress
                       :value="item.completion"
                       size="xs"
-                      :color="item.status === 6 ? 'success' : 'primary'"
+                      :color="item.status === 5 ? 'success' : 'primary'"
                     />
                   </div>
                   <div class="flex items-center gap-4 text-muted-400">
