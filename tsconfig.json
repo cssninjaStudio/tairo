@@ -7,6 +7,8 @@
   //
   "extends": "./.demo/.nuxt/tsconfig.json",
   "compilerOptions": {
+    "target": "esnext",
+    "moduleResolution": "bundler",
     "types": ["vite/client", "@pinia/nuxt"]
   }
 }
