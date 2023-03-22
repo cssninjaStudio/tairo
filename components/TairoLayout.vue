@@ -67,7 +67,7 @@ const mainClass = computed(() => {
       :subsidebar="props.subsidebar"
     >
       <div
-        v-if="app.tairo.sidebar.logo.component"
+        v-if="app.tairo.sidebar?.logo?.component"
         class="flex h-16 w-full items-center justify-center"
       >
         <slot name="logo">

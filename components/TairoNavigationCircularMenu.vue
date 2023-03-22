@@ -19,7 +19,7 @@ const toolOffsets = [
 ] as const
 
 const tools = computed(() => {
-  return app.tairo.circularMenu.tools.slice(0, 4)
+  return app.tairo.circularMenu?.tools?.slice(0, 4) || []
 })
 </script>
 

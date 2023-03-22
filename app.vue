@@ -10,7 +10,9 @@ const app = useAppConfig()
 useHead({
   title: route.meta.title,
   titleTemplate: (titleChunk) => {
-    return titleChunk ? `${titleChunk} - ${app.tairo.title}` : app.tairo.title
+    return titleChunk
+      ? `${titleChunk} - ${app.tairo.title}`
+      : `${app.tairo.title || 'Tairo'}`
   },
   link: [
     {

@@ -138,7 +138,7 @@ async function getDemoData() {
           name: 'John H.',
           role: 'Software Engineer',
           badge: '/img/icons/flags/united-states-of-america.svg',
-          src: undefined,
+          src: '',
           text: 'JH',
         },
         {
