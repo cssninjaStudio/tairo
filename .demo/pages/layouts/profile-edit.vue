@@ -3,7 +3,7 @@ definePageMeta({
   title: 'Edit Profile',
 })
 
-const { data, pending, error, refresh } = await useFetch('/api/profile/')
+const { data, pending, error, refresh } = await useFetch('/api/profile')
 </script>
 
 <template>
@@ -31,6 +31,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile/')
             <li>
               <NuxtLink
                 to="/layouts/profile-edit/"
+                exact-active-class="!text-primary-500 !bg-primary-500/10"
                 class="flex items-center gap-2 p-3 rounded-lg text-muted-400 hover:text-muted-600 dark:hover:text-muted-200 hover:bg-muted-50 dark:hover:bg-muted-700/50 transition-colors duration-300"
               >
                 <Icon name="ph:user-duotone" class="w-4 h-4" />
@@ -40,6 +41,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile/')
             <li>
               <NuxtLink
                 to="/layouts/profile-edit/experience"
+                exact-active-class="!text-primary-500 !bg-primary-500/10"
                 class="flex items-center gap-2 p-3 rounded-lg text-muted-400 hover:text-muted-600 dark:hover:text-muted-200 hover:bg-muted-50 dark:hover:bg-muted-700/50 transition-colors duration-300"
               >
                 <Icon name="ph:buildings-duotone" class="w-4 h-4" />
@@ -49,6 +51,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile/')
             <li>
               <NuxtLink
                 to="/layouts/profile-edit/skills"
+                exact-active-class="!text-primary-500 !bg-primary-500/10"
                 class="flex items-center gap-2 p-3 rounded-lg text-muted-400 hover:text-muted-600 dark:hover:text-muted-200 hover:bg-muted-50 dark:hover:bg-muted-700/50 transition-colors duration-300"
               >
                 <Icon name="ph:sketch-logo-duotone" class="w-4 h-4" />
@@ -58,6 +61,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile/')
             <li>
               <NuxtLink
                 to="/layouts/profile-edit/settings"
+                exact-active-class="!text-primary-500 !bg-primary-500/10"
                 class="flex items-center gap-2 p-3 rounded-lg text-muted-400 hover:text-muted-600 dark:hover:text-muted-200 hover:bg-muted-50 dark:hover:bg-muted-700/50 transition-colors duration-300"
               >
                 <Icon name="ph:gear-six-duotone" class="w-4 h-4" />
@@ -68,7 +72,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile/')
         </div>
       </div>
       <div class="col-span-12 sm:col-span-8">
-        <router-view v-slot="{ Component }">
+        <RouterView v-slot="{ Component }">
           <Transition
             enter-active-class="transition-all duration-500 ease-out"
             enter-from-class="translate-y-20 opacity-0"
@@ -79,14 +83,8 @@ const { data, pending, error, refresh } = await useFetch('/api/profile/')
           >
             <component :is="Component" />
           </Transition>
-        </router-view>
+        </RouterView>
       </div>
     </div>
   </div>
 </template>
-
-<style lang="pcss" scoped>
-a.router-link-exact-active {
-  @apply !text-primary-500 !bg-primary-500/10;
-}
-</style>

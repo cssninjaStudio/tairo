@@ -1,40 +1,251 @@
 <script setup lang="ts">
+import { useForm, Field, useFieldError } from 'vee-validate'
+import { toFormValidator } from '@vee-validate/zod'
+import { z } from 'zod'
+
 definePageMeta({
   title: 'Edit Profile',
 })
 
-const { data, pending, error, refresh } = await useFetch('/api/profile/')
+// This is the object that will contain the validation messages
+const ONE_MB = 1000000
+const VALIDATION_TEXT = {
+  FIRST_REQUIRED: "Your first name can't be empty",
+  LASTNAME_REQUIRED: "Your last name can't be empty",
+  OPTION_REQUIRED: 'Please select an option',
+  AVATAR_TOO_BIG: `Avatar size must be less than 1MB`,
+}
 
-const previewImage = ref()
-const currentPhoto = ref('/img/avatars/2.svg')
-const fileInput = ref<HTMLInputElement>()
-
-const pickFile = () => {
-  let file = fileInput.value?.files
-  if (file && file[0]) {
-    let reader = new FileReader()
-    reader.onload = (e) => {
-      previewImage.value = e.target?.result
+// This is the Zod schema for the form input
+// It's used to define the shape that the form data will have
+const zodSchema = z
+  .object({
+    avatar: z.custom<File>((v) => v instanceof File).nullable(),
+    profile: z.object({
+      firstName: z.string().min(1, VALIDATION_TEXT.FIRST_REQUIRED),
+      lastName: z.string().min(1, VALIDATION_TEXT.LASTNAME_REQUIRED),
+      role: z.string().optional(),
+      location: z.string(),
+      bio: z.string(),
+    }),
+    info: z.object({
+      experience: z
+        .union([
+          z.literal('0-2 years'),
+          z.literal('2-5 years'),
+          z.literal('5-10 years'),
+          z.literal('10+ years'),
+        ])
+        .nullable(),
+      firstJob: z
+        .object({
+          label: z.string(),
+          value: z.boolean(),
+        })
+        .nullable(),
+      flexible: z
+        .object({
+          label: z.string(),
+          value: z.boolean(),
+        })
+        .nullable(),
+      remote: z
+        .object({
+          label: z.string(),
+          value: z.boolean(),
+        })
+        .nullable(),
+    }),
+    social: z.object({
+      facebook: z.string(),
+      twitter: z.string(),
+      dribbble: z.string(),
+      instagram: z.string(),
+      github: z.string(),
+      gitlab: z.string(),
+    }),
+  })
+  .superRefine((data, ctx) => {
+    if (!data.info.firstJob) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: VALIDATION_TEXT.OPTION_REQUIRED,
+        path: ['info.firstJob'],
+      })
     }
-    reader.readAsDataURL(file[0])
-  }
-}
+    if (!data.info.flexible) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: VALIDATION_TEXT.OPTION_REQUIRED,
+        path: ['info.flexible'],
+      })
+    }
+    if (!data.info.remote) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: VALIDATION_TEXT.OPTION_REQUIRED,
+        path: ['info.remote'],
+      })
+    }
+    if (data.avatar && data.avatar.size > ONE_MB) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: VALIDATION_TEXT.AVATAR_TOO_BIG,
+        path: ['avatar'],
+      })
+    }
+  })
 
-const removeFile = () => {
-  previewImage.value = null
-}
+// Zod has a great infer method that will
+// infer the shape of the schema into a TypeScript type
+type FormInput = z.infer<typeof zodSchema>
 
+const { data, pending, error, refresh } = await useFetch('/api/profile')
+
+const validationSchema = toFormValidator(zodSchema)
+const initialValues = computed<FormInput>(() => ({
+  avatar: null,
+  profile: {
+    firstName: data.value?.personalInfo?.firstName || '',
+    lastName: data.value?.personalInfo?.lastName || '',
+    role: data.value?.personalInfo?.role || '',
+    location: '',
+    bio: '',
+  },
+  info: {
+    experience: null,
+    firstJob: null,
+    flexible: null,
+    remote: null,
+  },
+  social: {
+    facebook: '',
+    twitter: '',
+    dribbble: '',
+    instagram: '',
+    github: '',
+    gitlab: '',
+  },
+}))
+
+// This is the list of options for the select inputs
 const experience = ['0-2 years', '2-5 years', '5-10 years', '10+ years']
-const answers = ['Yes', 'No']
+const answers = [
+  {
+    label: 'Yes',
+    value: true,
+  },
+  {
+    label: 'No',
+    value: false,
+  },
+]
 
-const selectedExperience = ref()
-const firstJobQuestion = ref()
-const flexibleQuestion = ref()
-const remoteQuestion = ref()
+// This is the computed value that will be used to display the current avatar
+const currentAvatar = computed(() => data.value?.personalInfo?.picture)
+
+const {
+  handleSubmit,
+  isSubmitting,
+  setFieldError,
+  meta,
+  values,
+  errors,
+  resetForm,
+  setFieldValue,
+  setErrors,
+} = useForm({
+  validationSchema,
+  initialValues,
+})
+
+const success = ref(false)
+const fieldsWithErrors = computed(() => Object.keys(errors.value).length)
+
+// BaseInputFileHeadless gives us a listfile input, but we need to
+// extract the file from the list and set it to the form
+const inputFile = ref<FileList | null>()
+const fileError = useFieldError('avatar')
+watch(inputFile, (value) => {
+  const file = value?.item(0) || null
+  setFieldValue('avatar', file)
+})
+
+// Ask the user for confirmation before leaving the page if the form has unsaved changes
+onBeforeRouteLeave(() => {
+  if (meta.value.dirty) {
+    return confirm('You have unsaved changes. Are you sure you want to leave?')
+  }
+})
+
+// This is where you would send the form data to the server
+const onSubmit = handleSubmit(
+  async (values) => {
+    success.value = false
+
+    // here you have access to the validated form values
+    console.log('profile-edit-success', values)
+
+    try {
+      // fake delay, this will make isSubmitting value to be true
+      await new Promise((resolve, reject) => {
+        if (values.profile.firstName === 'Maya') {
+          // simulate a backend error
+          setTimeout(
+            () => reject(new Error('Fake backend validation error')),
+            2000,
+          )
+        }
+        setTimeout(resolve, 4000)
+      })
+    } catch (error: any) {
+      // this will set the error on the form
+      if (error.message === 'Fake backend validation error') {
+        // @ts-expect-error - vee validate typing bug
+        setFieldError('profile.firstName', 'This first name is not allowed')
+
+        document.documentElement.scrollTo({
+          top: 0,
+          behavior: 'smooth',
+        })
+      }
+      return
+    }
+
+    // we can refresh the data from the server
+    // this will update the initial values and the current avatar
+    await refresh()
+
+    resetForm()
+
+    document.documentElement.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    })
+
+    success.value = true
+    setTimeout(() => {
+      success.value = false
+    }, 3000)
+  },
+  (error) => {
+    // this callback is optional and called only if the form has errors
+    success.value = false
+
+    // here you have access to the error
+    console.log('profile-edit-error', error)
+
+    // you can use it to scroll to the first error
+    document.documentElement.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    })
+  },
+)
 </script>
 
 <template>
-  <form class="w-full pb-16">
+  <form class="w-full pb-16" @submit.prevent="onSubmit">
     <BaseCard>
       <div class="flex items-center justify-between p-4">
         <div>
@@ -53,53 +264,91 @@ const remoteQuestion = ref()
         </div>
         <div class="flex items-center gap-2">
           <BaseButton class="w-24" to="/layouts/profile">Cancel</BaseButton>
-          <BaseButton color="primary" class="w-24">Save</BaseButton>
+          <BaseButton
+            type="submit"
+            color="primary"
+            class="w-24"
+            :disabled="isSubmitting"
+            :loading="isSubmitting"
+            >Save</BaseButton
+          >
         </div>
       </div>
       <div class="p-4">
         <div class="max-w-lg mx-auto py-8 space-y-12">
+          <BaseMessage v-if="success" @close="success = false">
+            Your profile has been updated!
+          </BaseMessage>
+          <BaseMessage
+            v-if="fieldsWithErrors"
+            type="danger"
+            @close="() => setErrors({})"
+          >
+            This form has {{ fieldsWithErrors }} errors, please check them
+            before submitting
+          </BaseMessage>
+
           <TairoFormGroup
             label="Profile picture"
             sublabel="This is how others will recognize you"
           >
-            <div class="relative">
-              <div class="relative h-24 w-24 mx-auto">
-                <img
-                  v-if="previewImage"
-                  :src="previewImage"
-                  alt="Upload preview"
-                  class="h-24 w-24 rounded-full object-cover object-center bg-muted-200 dark:bg-muted-700/60"
-                />
-                <img
-                  v-else
-                  :src="currentPhoto"
-                  alt="Upload preview"
-                  class="h-24 w-24 rounded-full object-cover object-center bg-muted-200 dark:bg-muted-700/60"
-                />
-                <div v-if="previewImage" class="absolute bottom-0 right-0 z-20">
-                  <BaseButtonIcon
-                    condensed
-                    shape="full"
-                    @click="removeFile"
-                    tooltip="Remove image"
+            <div
+              class="relative flex flex-col items-center justify-center gap-4"
+            >
+              <BaseFullscreenDropfile
+                icon="ph:image-duotone"
+                :filter-file-dropped="(file) => file.type.startsWith('image')"
+                @drop="
+                  (value) => {
+                    inputFile = value
+                  }
+                "
+              />
+              <BaseInputFileHeadless
+                accept="image/*"
+                v-model="inputFile"
+                v-slot="{ open, remove, preview, drop, files }"
+              >
+                <div class="relative h-24 w-24">
+                  <img
+                    v-if="files?.length && files.item(0)"
+                    :src="preview(files.item(0)!).src"
+                    alt="Upload preview"
+                    class="h-24 w-24 rounded-full object-cover object-center bg-muted-200 dark:bg-muted-700/60"
+                  />
+                  <img
+                    v-else
+                    :src="currentAvatar"
+                    alt="Upload preview"
+                    class="h-24 w-24 rounded-full object-cover object-center bg-muted-200 dark:bg-muted-700/60"
+                  />
+                  <div
+                    v-if="files?.length && files.item(0)"
+                    class="absolute bottom-0 right-0 z-20"
                   >
-                    <Icon name="lucide:x" class="w-4 h-4" />
-                  </BaseButtonIcon>
-                </div>
-                <div v-else class="absolute bottom-0 right-0 z-20">
-                  <div class="relative" tooltip="Upload image">
-                    <BaseButtonIcon condensed shape="full">
-                      <Icon name="lucide:plus" class="w-4 h-4" />
+                    <BaseButtonIcon
+                      condensed
+                      shape="full"
+                      @click="remove(files.item(0)!)"
+                      tooltip="Remove image"
+                    >
+                      <Icon name="lucide:x" class="w-4 h-4" />
                     </BaseButtonIcon>
-                    <input
-                      ref="fileInput"
-                      type="file"
-                      @input="pickFile"
-                      accept="image/*"
-                      class="absolute top-0 left-0 w-full h-full opacity-0 z-10"
-                    />
+                  </div>
+                  <div v-else class="absolute bottom-0 right-0 z-20">
+                    <div class="relative" tooltip="Upload image">
+                      <BaseButtonIcon condensed shape="full" @click="open">
+                        <Icon name="lucide:plus" class="w-4 h-4" />
+                      </BaseButtonIcon>
+                    </div>
                   </div>
                 </div>
+              </BaseInputFileHeadless>
+              <div
+                v-if="fileError"
+                class="inline-block font-sans text-[.8rem] text-danger-600"
+              >
+                {{ fileError }}
               </div>
             </div>
           </TairoFormGroup>
@@ -110,35 +359,108 @@ const remoteQuestion = ref()
           >
             <div class="grid grid-cols-12 gap-4">
               <div class="col-span-12 sm:col-span-6">
-                <BaseInput
-                  type="text"
-                  icon="ph:user-duotone"
-                  placeholder="First name"
-                />
+                <Field
+                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                  name="profile.firstName"
+                >
+                  <BaseInput
+                    :model-value="field.value"
+                    :error="errorMessage"
+                    :disabled="isSubmitting"
+                    type="text"
+                    icon="ph:user-duotone"
+                    placeholder="First name"
+                    @update:model-value="
+                      (value) => {
+                        handleChange(value)
+                      }
+                    "
+                    @blur="handleBlur"
+                  />
+                </Field>
               </div>
               <div class="col-span-12 sm:col-span-6">
-                <BaseInput
-                  type="text"
-                  icon="ph:user-duotone"
-                  placeholder="Last name"
-                />
+                <Field
+                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                  name="profile.lastName"
+                >
+                  <BaseInput
+                    :model-value="field.value"
+                    :error="errorMessage"
+                    :disabled="isSubmitting"
+                    type="text"
+                    icon="ph:user-duotone"
+                    placeholder="Last name"
+                    @update:model-value="
+                      (value) => {
+                        handleChange(value)
+                      }
+                    "
+                    @blur="handleBlur"
+                  />
+                </Field>
               </div>
               <div class="col-span-12">
-                <BaseInput
-                  type="text"
-                  icon="ph:suitcase-duotone"
-                  placeholder="Job title"
-                />
+                <Field
+                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                  name="profile.role"
+                >
+                  <BaseInput
+                    :model-value="field.value"
+                    :error="errorMessage"
+                    :disabled="isSubmitting"
+                    type="text"
+                    icon="ph:suitcase-duotone"
+                    placeholder="Job title"
+                    @update:model-value="
+                      (value) => {
+                        handleChange(value)
+                      }
+                    "
+                    @blur="handleBlur"
+                  />
+                </Field>
               </div>
               <div class="col-span-12">
-                <BaseInput
-                  type="text"
-                  icon="ph:map-pin-duotone"
-                  placeholder="Location"
-                />
+                <Field
+                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                  name="profile.location"
+                >
+                  <BaseInput
+                    :model-value="field.value"
+                    :error="errorMessage"
+                    :disabled="isSubmitting"
+                    type="text"
+                    icon="ph:map-pin-duotone"
+                    placeholder="Location"
+                    @update:model-value="
+                      (value) => {
+                        handleChange(value)
+                      }
+                    "
+                    @blur="handleBlur"
+                  />
+                </Field>
               </div>
               <div class="col-span-12">
-                <BaseTextarea rows="4" placeholder="About you / Short bio..." />
+                <Field
+                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                  name="profile.bio"
+                >
+                  <BaseTextarea
+                    :model-value="field.value"
+                    :error="errorMessage"
+                    :disabled="isSubmitting"
+                    rows="4"
+                    placeholder="About you / Short bio..."
+                    @update:model-value="
+                      (value) => {
+                        handleChange(value)
+                      }
+                    "
+                    @blur="handleBlur"
+                  />
+                </Field>
               </div>
             </div>
           </TairoFormGroup>
@@ -149,36 +471,91 @@ const remoteQuestion = ref()
           >
             <div class="grid grid-cols-12 gap-4">
               <div class="col-span-12 sm:col-span-6">
-                <BaseListbox
-                  v-model="selectedExperience"
-                  :items="experience"
-                  placeholder="Experience"
-                  shape="rounded"
-                />
+                <Field
+                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                  name="info.experience"
+                >
+                  <BaseListbox
+                    :model-value="field.value"
+                    :error="errorMessage"
+                    :disabled="isSubmitting"
+                    :items="experience"
+                    placeholder="Experience"
+                    shape="rounded"
+                    @update:model-value="
+                      (value) => {
+                        handleChange(value)
+                      }
+                    "
+                    @blur="handleBlur"
+                  />
+                </Field>
               </div>
               <div class="col-span-12 sm:col-span-6">
-                <BaseListbox
-                  v-model="firstJobQuestion"
-                  :items="answers"
-                  placeholder="Is this your first job?"
-                  shape="rounded"
-                />
+                <Field
+                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                  name="info.firstJob"
+                >
+                  <BaseListbox
+                    :model-value="field.value"
+                    :error="errorMessage"
+                    :disabled="isSubmitting"
+                    :items="answers"
+                    :properties="{ label: 'label', value: 'value' }"
+                    placeholder="Is this your first job?"
+                    shape="rounded"
+                    @update:model-value="
+                      (value) => {
+                        handleChange(value)
+                      }
+                    "
+                    @blur="handleBlur"
+                  />
+                </Field>
               </div>
               <div class="col-span-12 sm:col-span-6">
-                <BaseListbox
-                  v-model="flexibleQuestion"
-                  :items="answers"
-                  placeholder="Are you flexible?"
-                  shape="rounded"
-                />
+                <Field
+                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                  name="info.flexible"
+                >
+                  <BaseListbox
+                    :model-value="field.value"
+                    :error="errorMessage"
+                    :disabled="isSubmitting"
+                    :items="answers"
+                    :properties="{ label: 'label', value: 'value' }"
+                    placeholder="Are you flexible?"
+                    shape="rounded"
+                    @update:model-value="
+                      (value) => {
+                        handleChange(value)
+                      }
+                    "
+                    @blur="handleBlur"
+                  />
+                </Field>
               </div>
               <div class="col-span-12 sm:col-span-6">
-                <BaseListbox
-                  v-model="remoteQuestion"
-                  :items="answers"
-                  placeholder="Do you work remotely?"
-                  shape="rounded"
-                />
+                <Field
+                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                  name="info.remote"
+                >
+                  <BaseListbox
+                    :model-value="field.value"
+                    :error="errorMessage"
+                    :disabled="isSubmitting"
+                    :items="answers"
+                    :properties="{ label: 'label', value: 'value' }"
+                    placeholder="Do you work remotely?"
+                    shape="rounded"
+                    @update:model-value="
+                      (value) => {
+                        handleChange(value)
+                      }
+                    "
+                    @blur="handleBlur"
+                  />
+                </Field>
               </div>
             </div>
           </TairoFormGroup>
@@ -189,52 +566,136 @@ const remoteQuestion = ref()
           >
             <div class="grid grid-cols-12 gap-4">
               <div class="col-span-12 sm:col-span-6">
-                <BaseInput
-                  type="text"
-                  icon="fa6-brands:facebook-f"
-                  placeholder="Facebook URL"
-                />
+                <Field
+                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                  name="social.facebook"
+                >
+                  <BaseInput
+                    :model-value="field.value"
+                    :error="errorMessage"
+                    :disabled="isSubmitting"
+                    type="text"
+                    icon="fa6-brands:facebook-f"
+                    placeholder="Facebook URL"
+                    @update:model-value="
+                      (value) => {
+                        handleChange(value)
+                      }
+                    "
+                    @blur="handleBlur"
+                  />
+                </Field>
               </div>
               <div class="col-span-12 sm:col-span-6">
-                <BaseInput
-                  type="text"
-                  icon="fa6-brands:twitter"
-                  placeholder="Twitter URL"
-                />
+                <Field
+                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                  name="social.twitter"
+                >
+                  <BaseInput
+                    :model-value="field.value"
+                    :error="errorMessage"
+                    :disabled="isSubmitting"
+                    type="text"
+                    icon="fa6-brands:twitter"
+                    placeholder="Twitter URL"
+                    @update:model-value="
+                      (value) => {
+                        handleChange(value)
+                      }
+                    "
+                    @blur="handleBlur"
+                  />
+                </Field>
               </div>
               <div class="col-span-12 sm:col-span-6">
-                <BaseInput
-                  type="text"
-                  icon="fa6-brands:dribbble"
-                  placeholder="Dribbble URL"
-                />
+                <Field
+                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                  name="social.dribbble"
+                >
+                  <BaseInput
+                    :model-value="field.value"
+                    :error="errorMessage"
+                    :disabled="isSubmitting"
+                    type="text"
+                    icon="fa6-brands:dribbble"
+                    placeholder="Dribbble URL"
+                    @update:model-value="
+                      (value) => {
+                        handleChange(value)
+                      }
+                    "
+                    @blur="handleBlur"
+                  />
+                </Field>
               </div>
               <div class="col-span-12 sm:col-span-6">
-                <BaseInput
-                  type="text"
-                  icon="fa6-brands:instagram"
-                  placeholder="Instagram URL"
-                />
+                <Field
+                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                  name="social.instagram"
+                >
+                  <BaseInput
+                    :model-value="field.value"
+                    :error="errorMessage"
+                    :disabled="isSubmitting"
+                    type="text"
+                    icon="fa6-brands:instagram"
+                    placeholder="Instagram URL"
+                    @update:model-value="
+                      (value) => {
+                        handleChange(value)
+                      }
+                    "
+                    @blur="handleBlur"
+                  />
+                </Field>
               </div>
               <div class="col-span-12 sm:col-span-6">
-                <BaseInput
-                  type="text"
-                  icon="fa6-brands:github"
-                  placeholder="Github URL"
-                />
+                <Field
+                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                  name="social.github"
+                >
+                  <BaseInput
+                    :model-value="field.value"
+                    :error="errorMessage"
+                    :disabled="isSubmitting"
+                    type="text"
+                    icon="fa6-brands:github"
+                    placeholder="Github URL"
+                    @update:model-value="
+                      (value) => {
+                        handleChange(value)
+                      }
+                    "
+                    @blur="handleBlur"
+                  />
+                </Field>
               </div>
               <div class="col-span-12 sm:col-span-6">
-                <BaseInput
-                  type="text"
-                  icon="fa6-brands:gitlab"
-                  placeholder="Gitlab URL"
-                />
+                <Field
+                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                  name="social.gitlab"
+                >
+                  <BaseInput
+                    :model-value="field.value"
+                    :error="errorMessage"
+                    :disabled="isSubmitting"
+                    type="text"
+                    icon="fa6-brands:gitlab"
+                    placeholder="Gitlab URL"
+                    @update:model-value="
+                      (value) => {
+                        handleChange(value)
+                      }
+                    "
+                    @blur="handleBlur"
+                  />
+                </Field>
               </div>
             </div>
           </TairoFormGroup>
         </div>
       </div>
     </BaseCard>
-    <TairoFormSave />
+    <TairoFormSave :disabled="isSubmitting" :loading="isSubmitting" />
   </form>
 </template>

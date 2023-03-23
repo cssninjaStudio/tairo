@@ -3,7 +3,7 @@ const WEEK = 60 * 60 * 24 * 7
 export default defineNuxtConfig({
   extends: [
     /**
-     * This extends the base Tairo lauer.
+     * This extends the base Tairo layer.
      *
      * Alternatively you can use the following:
      * 'github:cssninjaStudio/tairo#v1.0.0'
