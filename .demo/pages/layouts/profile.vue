@@ -3,7 +3,7 @@ definePageMeta({
   title: 'Profile',
 })
 
-const { data, pending, error, refresh } = await useFetch('/api/profile/')
+const { data, pending, error, refresh } = await useFetch('/api/profile')
 </script>
 
 <template>

@@ -2,6 +2,8 @@
 const props = withDefaults(
   defineProps<{
     shape?: 'straight' | 'rounded' | 'curved' | 'full'
+    disabled?: boolean
+    loading?: boolean
   }>(),
   {
     shape: 'rounded',
@@ -29,22 +31,27 @@ const { x, y } = useWindowScroll()
           class="shadow-muted-300/30 dark:shadow-muted-800/30 flex items-center justify-between gap-2 rounded-2xl p-4 shadow-xl"
           :shape="props.shape === 'full' ? 'curved' : props.shape"
         >
-          <BaseButton
-            type="button"
-            :shape="props.shape"
-            class="w-full"
-            @click="$router.back()"
-          >
-            <span>Cancel</span>
-          </BaseButton>
-          <BaseButton
-            type="button"
-            :shape="props.shape"
-            color="primary"
-            class="w-full"
-          >
-            <span>Save</span>
-          </BaseButton>
+          <slot>
+            <BaseButton
+              type="button"
+              :shape="props.shape"
+              class="w-full"
+              :disabled="props.disabled"
+              @click="$router.back()"
+            >
+              <span>Cancel</span>
+            </BaseButton>
+            <BaseButton
+              type="submit"
+              :disabled="props.disabled"
+              :loading="props.loading"
+              :shape="props.shape"
+              color="primary"
+              class="w-full"
+            >
+              <span>Save</span>
+            </BaseButton>
+          </slot>
         </BaseCard>
       </div>
     </Transition>
