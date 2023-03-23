@@ -1,4 +1,9 @@
 <script setup lang="ts">
+import { Calendar } from 'v-calendar'
+
+import 'v-calendar/dist/style.css'
+import '~/assets/css/vcalendar.css'
+
 definePageMeta({
   title: 'UI Widgets',
 })
@@ -138,8 +143,21 @@ function useGaugePersonal() {
         <DemoDaysSquare shape="curved" />
       </BaseCard>
       <!-- Widget -->
-      <BaseCard shape="curved" class="p-6">
-        <DemoDatepicker expanded />
+      <BaseCard>
+        <Calendar
+          :attributes="[
+            {
+              key: 'today',
+              dot: true,
+              dates: new Date(),
+            },
+          ]"
+          expanded
+          borderless
+          transparent
+          trim-weeks
+          class="max-w-full rounded-xl"
+        />
       </BaseCard>
       <!-- Widget -->
       <BaseCard shape="curved" class="p-4">

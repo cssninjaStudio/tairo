@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { DatePicker } from 'v-calendar'
+import { DatePicker, Calendar } from 'v-calendar'
 
 import 'v-calendar/dist/style.css'
 import '~/assets/css/vcalendar.css'
@@ -459,8 +459,21 @@ const results = [
             </div>
           </BaseCard>
           <!-- Widget -->
-          <BaseCard class="p-6">
-            <DemoDatepicker />
+          <BaseCard>
+            <Calendar
+              :attributes="[
+                {
+                  key: 'today',
+                  dot: true,
+                  dates: new Date(),
+                },
+              ]"
+              expanded
+              borderless
+              transparent
+              trim-weeks
+              class="max-w-full rounded-md"
+            />
           </BaseCard>
           <!-- Widget -->
           <BaseCard class="p-6">

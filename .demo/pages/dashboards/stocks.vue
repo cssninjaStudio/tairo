@@ -1,4 +1,9 @@
 <script setup lang="ts">
+import { Calendar } from 'v-calendar'
+
+import 'v-calendar/dist/style.css'
+import '~/assets/css/vcalendar.css'
+
 definePageMeta({
   title: 'Stocks',
 })
@@ -797,8 +802,21 @@ function useBarProfit() {
       </div>
       <!-- Grid item -->
       <div class="col-span-12 md:col-span-6 ltablet:col-span-4 lg:col-span-4">
-        <BaseCard shape="curved" class="p-6">
-          <DemoDatepicker expanded />
+        <BaseCard>
+          <Calendar
+            :attributes="[
+              {
+                key: 'today',
+                dot: true,
+                dates: new Date(),
+              },
+            ]"
+            expanded
+            borderless
+            transparent
+            trim-weeks
+            class="max-w-full rounded-xl"
+          />
         </BaseCard>
       </div>
     </div>

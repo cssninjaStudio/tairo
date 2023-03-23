@@ -1,4 +1,9 @@
 <script setup lang="ts">
+import { Calendar } from 'v-calendar'
+
+import 'v-calendar/dist/style.css'
+import '~/assets/css/vcalendar.css'
+
 definePageMeta({
   title: 'Analytics',
 })
@@ -552,8 +557,21 @@ function useBarSalesProfit() {
           <DemoVcardRight />
         </BaseCard>
         <!-- Calendar -->
-        <BaseCard class="p-6">
-          <DemoDatepicker />
+        <BaseCard>
+          <Calendar
+            :attributes="[
+              {
+                key: 'today',
+                dot: true,
+                dates: new Date(),
+              },
+            ]"
+            expanded
+            borderless
+            transparent
+            trim-weeks
+            class="max-w-full rounded-md"
+          />
         </BaseCard>
         <!-- Followers -->
         <BaseCard class="p-6">

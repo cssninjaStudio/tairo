@@ -1,4 +1,9 @@
 <script setup lang="ts">
+import { Calendar } from 'v-calendar'
+
+import 'v-calendar/dist/style.css'
+import '~/assets/css/vcalendar.css'
+
 definePageMeta({
   title: 'Health',
 })
@@ -779,8 +784,21 @@ function useGaugePersonal() {
                 </div>
               </BaseCard>
               <!-- Widget -->
-              <BaseCard class="p-6" shape="curved">
-                <DemoDatepicker expanded />
+              <BaseCard>
+                <Calendar
+                  :attributes="[
+                    {
+                      key: 'today',
+                      dot: true,
+                      dates: new Date(),
+                    },
+                  ]"
+                  expanded
+                  borderless
+                  transparent
+                  trim-weeks
+                  class="max-w-full rounded-xl"
+                />
               </BaseCard>
               <!-- Widget -->
               <BaseCard class="h-full flex flex-col p-6">

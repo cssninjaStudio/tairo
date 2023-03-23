@@ -1,4 +1,9 @@
 <script setup lang="ts">
+import { Calendar } from 'v-calendar'
+
+import 'v-calendar/dist/style.css'
+import '~/assets/css/vcalendar.css'
+
 definePageMeta({
   title: 'Company',
 })
@@ -429,8 +434,21 @@ const team = [
         </div>
         <!-- Widget -->
         <div class="col-span-12 sm:col-span-3 ptablet:hidden">
-          <BaseCard class="h-full flex flex-col p-6">
-            <DemoDatepicker />
+          <BaseCard class="h-full flex flex-col">
+            <Calendar
+              :attributes="[
+                {
+                  key: 'today',
+                  dot: true,
+                  dates: new Date(),
+                },
+              ]"
+              expanded
+              borderless
+              transparent
+              trim-weeks
+              class="max-w-full rounded-md"
+            />
           </BaseCard>
         </div>
         <!-- Widget -->
