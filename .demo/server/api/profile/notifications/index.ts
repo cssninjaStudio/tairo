@@ -19,7 +19,7 @@ async function getDemoData() {
       target: {
         type: 'project',
         name: 'Delivery App',
-        url: '/layouts/projects/delivery-app-project',
+        url: '/layouts/projects/details/delivery-app-project',
         text: 'made some changes to the',
       },
       people: [
@@ -43,7 +43,7 @@ async function getDemoData() {
       target: {
         type: 'project',
         name: 'Delivery App',
-        url: '/layouts/projects/delivery-app-project',
+        url: '/layouts/projects/details/delivery-app-project',
         text: 'left a comment on a task, in the',
       },
       people: [
@@ -67,7 +67,7 @@ async function getDemoData() {
       target: {
         type: 'project',
         name: 'Resume management app',
-        url: '/layouts/projects/resume-management-mobile-app',
+        url: '/layouts/projects/details/resume-management-mobile-app',
         text: 'Invited 3 persons to the',
       },
       people: [
@@ -101,7 +101,7 @@ async function getDemoData() {
       target: {
         type: 'project',
         name: 'Delivery App',
-        url: '/layouts/projects/delivery-app-project',
+        url: '/layouts/projects/details/delivery-app-project',
         text: 'Changed the status of a task, in the',
       },
       people: [],
@@ -119,7 +119,7 @@ async function getDemoData() {
       target: {
         type: 'project',
         name: 'Delivery App',
-        url: '/layouts/projects/delivery-app-project',
+        url: '/layouts/projects/details/delivery-app-project',
         text: 'Uploaded 3 new files, in the',
       },
       people: [],
@@ -137,7 +137,7 @@ async function getDemoData() {
       target: {
         type: 'project',
         name: 'Resume management app',
-        url: '/layouts/projects/resume-management-mobile-app',
+        url: '/layouts/projects/details/resume-management-mobile-app',
         text: 'mentionned you in a comment, in the',
       },
       people: [],
@@ -155,7 +155,7 @@ async function getDemoData() {
       target: {
         type: 'project',
         name: 'Delivery App',
-        url: '/layouts/projects/delivery-app-project',
+        url: '/layouts/projects/details/delivery-app-project',
         text: 'left a comment on a task, in the',
       },
       people: [
@@ -179,7 +179,7 @@ async function getDemoData() {
       target: {
         type: 'project',
         name: 'Delivery App',
-        url: '/layouts/projects/delivery-app-project',
+        url: '/layouts/projects/details/delivery-app-project',
         text: 'Changed the status of a task, in the',
       },
       people: [],
