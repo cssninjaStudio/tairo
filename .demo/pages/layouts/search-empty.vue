@@ -2,8 +2,48 @@
 definePageMeta({
   title: 'Empty Search',
 })
+
+const searchTerms = ref('Ice cream pizza')
 </script>
 
 <template>
-  <div></div>
+  <div class="w-full max-w-5xl mx-auto">
+    <div class="w-full max-w-sm mx-auto mt-6 flex items-center justify-center">
+      <BaseInput
+        v-model="searchTerms"
+        icon="lucide:search"
+        placeholder="Search..."
+        shape="full"
+        :classes="{
+          wrapper: 'w-full',
+          input: 'h-12 !pl-12',
+          icon: 'h-12 w-12 [& > svg]:!w-7 [& > svg]:!h-7',
+        }"
+      />
+    </div>
+    <div class="mt-2 mb-12 text-center">
+      <BaseText size="sm" class="text-muted-400"
+        >0 results for "Ice cream pizza"</BaseText
+      >
+    </div>
+    <div>
+      <BasePlaceholderPage
+        title="No matching results"
+        subtitle="Looks like we couldn't find any matching results for your search terms. Try other search terms."
+      >
+        <template #image>
+          <img
+            class="block dark:hidden"
+            src="/img/illustrations/placeholders/flat/placeholder-search-4.svg"
+            alt="Placeholder image"
+          />
+          <img
+            class="hidden dark:block"
+            src="/img/illustrations/placeholders/flat/placeholder-search-4-dark.svg"
+            alt="Placeholder image"
+          />
+        </template>
+      </BasePlaceholderPage>
+    </div>
+  </div>
 </template>
