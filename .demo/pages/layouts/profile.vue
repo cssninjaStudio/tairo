@@ -71,7 +71,9 @@ const { data, pending, error, refresh } = await useFetch('/api/profile/')
                 >{{ data?.personalInfo.relations }}+ relations</BaseText
               >
             </div>
-            <div class="h-8 flex items-center gap-1 px-4 text-muted-400">
+            <div
+              class="h-8 hidden sm:flex items-center gap-1 px-4 text-muted-400"
+            >
               <Icon name="ph:check-circle-duotone" class="w-5 h-5" />
               <BaseText size="sm"
                 >{{ data?.personalInfo.projects }} projects</BaseText
