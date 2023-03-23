@@ -11,7 +11,7 @@ import {
   setCDN,
   type HighlighterOptions,
   type Lang,
-} from 'shiki-es'
+} from 'shiki'
 import { unified, type Processor } from 'unified'
 
 export type ProcessorThemes = Record<string, Processor>

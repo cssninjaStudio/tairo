@@ -3,6 +3,7 @@ import { useDocumentationRoutes } from '../../runtime/composables/routes'
 
 const app = useAppConfig()
 
+// @ts-ignore - might be not defined if documentation is disabled
 const componentsMeta = await useComponentMeta()
 const { routesFlat, routesByCategory, categoryOrders } =
   useDocumentationRoutes()

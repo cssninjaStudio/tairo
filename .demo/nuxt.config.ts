@@ -1,10 +1,18 @@
-import { resolve } from 'pathe'
-
 const WEEK = 60 * 60 * 24 * 7
 
 export default defineNuxtConfig({
   extends: [
-    // This extends the base Tairo config
+    /**
+     * This extends the base Tairo lauer.
+     *
+     * Alternatively you can use the following:
+     * 'github:cssninjaStudio/tairo#v1.0.0'
+     *
+     * And set GIGET_AUTH=<github_token> in your .env file
+     *
+     * This would allows you to create an empty git repository
+     * with only your source code and no demo.
+     */
     '..',
   ],
   typescript: {
@@ -16,13 +24,8 @@ export default defineNuxtConfig({
     // wich is a carousel component used in the demo
     'nuxt-swiper',
 
-    process.env.ENABLE_DOCUMENTATION
-      ? resolve(__dirname, './modules/documentation/module.ts')
-      : () => {},
-
-    // Those modules are here for development only
+    // Use the devtools module to debug nuxt 3
     // '@nuxt/devtools',
-    // '@cssninja/nuxt-media-viewer',
   ],
   vite: {
     // This is required for shiki to work (used to render markdown code blocks)

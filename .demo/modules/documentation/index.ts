@@ -1,3 +1,5 @@
+import { logger } from '@nuxt/kit'
+
 import { resolve } from 'path'
 import { fileURLToPath } from 'url'
 import {
@@ -17,6 +19,17 @@ export default defineNuxtModule<ModuleOptions>({
   },
   defaults: {},
   async setup(options, nuxt) {
+    if (process.env.ENABLE_DOCUMENTATION !== 'true') {
+      logger.info(
+        'Tairo Documentation module is disabled, to enable it set ENABLE_DOCUMENTATION env to true',
+      )
+      return
+    } else {
+      logger.info(
+        'Tairo Documentation module is enabled, this might increase startup time...',
+      )
+    }
+
     const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
     nuxt.options.build.transpile.push(runtimeDir)
 
@@ -28,16 +41,13 @@ export default defineNuxtModule<ModuleOptions>({
       pages.push(routes)
     })
 
-    // addPlugin(resolve(runtimeDir, 'plugin'))
-    // addImportsDir(resolve(runtimeDir, 'composables'))
-    // addImportsDir(resolve(runtimeDir, 'utils'))
-
     addComponentsDir({
       path: resolve(runtimeDir, 'components'),
       prefix: '',
       global: true,
     })
 
+    // @ts-ignore - hook registered by nuxt-tailwind via @cssninja/nuxt-ui
     nuxt.hook('tailwindcss:config', (config) => {
       if (Array.isArray(config.content)) {
         config.content.push(resolve(runtimeDir, 'components/**/*.{vue,js,ts}'))
@@ -46,6 +56,10 @@ export default defineNuxtModule<ModuleOptions>({
       }
     })
 
+    /**
+     * Nuxt-Component-Meta is used to generate the documentation for components
+     * It will generate meta data for each component and register useComponentMeta composable
+     */
     await installModule('nuxt-component-meta', {
       exclude: [
         'nuxt/dist',

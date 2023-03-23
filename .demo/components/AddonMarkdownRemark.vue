@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Lang } from 'shiki-es'
+import type { Lang } from 'shiki'
 import type { ProcessorThemes } from '~/utils/markdown'
 
 const props = withDefaults(
@@ -37,8 +37,8 @@ const props = withDefaults(
     lines: true,
     size: 'base',
     theme: () => ({
-      light: 'material-lighter',
-      dark: 'material-ocean',
+      light: 'material-theme-lighter',
+      dark: 'material-theme-ocean',
     }),
     langs: () => ['html', 'vue'],
   },

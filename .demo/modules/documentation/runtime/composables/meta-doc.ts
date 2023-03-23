@@ -1,6 +1,7 @@
 import { MaybeComputedRef } from '@vueuse/shared'
 import { kebabCase, upperFirst } from 'scule'
 import type { ComponentMeta } from 'vue-component-meta'
+// @ts-ignore - might be not defined if documentation is disabled
 import type { NuxtComponentMetaNames } from '#nuxt-component-meta/types'
 
 const excludedProps = ['modelValue', 'modelModifiers']

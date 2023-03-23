@@ -9,6 +9,6 @@
   "compilerOptions": {
     "target": "esnext",
     "moduleResolution": "bundler",
-    "types": ["vite/client", "@pinia/nuxt"]
+    "types": ["vite/client"]
   }
 }
