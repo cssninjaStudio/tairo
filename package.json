@@ -64,7 +64,6 @@
     "peerDependencyRules": {
       "ignoreMissing": [
         "postcss",
-        "shiki",
         "vue",
         "vite",
         "@unhead/vue",

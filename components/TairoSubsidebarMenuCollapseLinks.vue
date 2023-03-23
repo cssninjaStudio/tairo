@@ -10,18 +10,22 @@ const props = defineProps<{
 
 const open = ref(false)
 const route = useRoute()
+const buttonRef = ref<HTMLElement>()
+
+const hasActiveChild = computed(() => {
+  return props.children.some((item) => route.path === item.to)
+})
 
 watchEffect(() => {
-  const activeChild = props.children.find((item) => route.path === item.to)
-  if (activeChild) {
+  if (hasActiveChild.value) {
     open.value = true
   }
 })
 
-async function onFocus() {
-  await nextTick()
+function onClick(event: MouseEvent) {
+  open.value = !open.value
   if (!open.value) {
-    open.value = true
+    buttonRef.value?.blur()
   }
 }
 </script>
@@ -29,14 +33,19 @@ async function onFocus() {
 <template>
   <li class="group mb-1 min-h-[2rem]">
     <a
+      ref="buttonRef"
       href="#"
       class="relative top-0.5 flex items-center nui-focus"
-      @click.stop.prevent="open = !open"
+      @click.stop.prevent="onClick"
     >
       <span
-        class="font-sans text-sm text-muted-400 transition-colors duration-300 group-hover:text-primary-500"
+        class="inline-flex gap-2 items-center font-sans text-sm text-muted-400 transition-colors duration-300 group-hover:text-primary-500"
       >
-        {{ props.name }}
+        <span>{{ props.name }}</span>
+        <span
+          v-if="hasActiveChild"
+          class="rounded-full bg-muted-200 dark:bg-muted-600 h-[6px] w-[6px]"
+        ></span>
       </span>
       <Icon
         name="feather:chevron-down"
