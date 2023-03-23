@@ -35,17 +35,17 @@ function onClick(event: MouseEvent) {
     <a
       ref="buttonRef"
       href="#"
-      class="relative top-0.5 flex items-center nui-focus"
+      class="nui-focus relative top-0.5 flex items-center"
       @click.stop.prevent="onClick"
     >
       <span
-        class="inline-flex gap-2 items-center font-sans text-sm text-muted-400 transition-colors duration-300 group-hover:text-primary-500"
+        class="relative inline-flex gap-2 items-center font-sans text-sm text-muted-400 transition-colors duration-300 group-hover:text-primary-500"
       >
-        <span>{{ props.name }}</span>
         <span
           v-if="hasActiveChild"
-          class="rounded-full bg-muted-200 dark:bg-muted-600 h-[6px] w-[6px]"
+          class="absolute top-2 -left-3 rounded-full bg-primary-500 h-1 w-1"
         ></span>
+        <span>{{ props.name }}</span>
       </span>
       <Icon
         name="feather:chevron-down"
