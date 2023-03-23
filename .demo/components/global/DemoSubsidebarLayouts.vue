@@ -1,5 +1,414 @@
 <script setup lang="ts">
-import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
+const navigation = [
+  {
+    name: 'Lists',
+    children: [
+      {
+        name: 'List view V1',
+        icon: 'ph:list-bullets',
+        to: '/layouts',
+      },
+      {
+        name: 'List view V2',
+        icon: 'ph:list-bullets',
+        to: '/layouts/list-view-2',
+      },
+      {
+        name: 'List view V3',
+        icon: 'ph:list-bullets',
+        to: '/layouts/list-view-3',
+      },
+      {
+        name: 'List view V4',
+        icon: 'ph:list-bullets',
+        to: '/layouts/list-view-4',
+      },
+    ],
+  },
+  {
+    name: 'Flex lists',
+    children: [
+      {
+        name: 'Flex list V1',
+        icon: 'ph:list-checks',
+        to: '/layouts/flex-list-1',
+      },
+      {
+        name: 'Flex list V2',
+        icon: 'ph:list-checks',
+        to: '/layouts/flex-list-2',
+      },
+      {
+        name: 'Flex list V3',
+        icon: 'ph:list-checks',
+        to: '/layouts/flex-list-3',
+      },
+    ],
+  },
+  {
+    name: 'Table lists',
+    children: [
+      {
+        name: 'Table list V1',
+        icon: 'ph:table-duotone',
+        to: '/layouts/table-list-1',
+      },
+      {
+        name: 'Table list V2',
+        icon: 'ph:table-duotone',
+        to: '/layouts/table-list-2',
+      },
+      {
+        name: 'Table list V3',
+        icon: 'ph:table-duotone',
+        to: '/layouts/table-list-3',
+      },
+    ],
+  },
+  {
+    name: 'Form layouts',
+    children: [
+      {
+        name: 'Form layout V1',
+        icon: 'ph:article-duotone',
+        to: '/layouts/form-1',
+      },
+      {
+        name: 'Form layout V2',
+        icon: 'ph:article-duotone',
+        to: '/layouts/form-2',
+      },
+      {
+        name: 'Form layout V3',
+        icon: 'ph:article-duotone',
+        to: '/layouts/form-3',
+      },
+      {
+        name: 'Form layout V4',
+        icon: 'ph:article-duotone',
+        to: '/layouts/form-4',
+      },
+      {
+        name: 'Form layout V5',
+        icon: 'ph:article-duotone',
+        to: '/layouts/form-5',
+      },
+    ],
+  },
+  {
+    name: 'Placeloads',
+    children: [
+      {
+        name: 'Placeload V1',
+        icon: 'ph:timer-duotone',
+        to: '/layouts/placeload-1',
+      },
+      {
+        name: 'Placeload V2',
+        icon: 'ph:timer-duotone',
+        to: '/layouts/placeload-2',
+      },
+      {
+        name: 'Placeload V3',
+        icon: 'ph:timer-duotone',
+        to: '/layouts/placeload-3',
+      },
+      {
+        name: 'Placeload V4',
+        icon: 'ph:timer-duotone',
+        to: '/layouts/placeload-4',
+      },
+    ],
+  },
+  {
+    name: 'Card grids',
+    children: [
+      {
+        name: 'Card grid V1',
+        icon: 'ph:circles-four-duotone',
+        to: '/layouts/card-grid-1',
+      },
+      {
+        name: 'Card grid V2',
+        icon: 'ph:circles-four-duotone',
+        to: '/layouts/card-grid-2',
+      },
+      {
+        name: 'Card grid V3',
+        icon: 'ph:circles-four-duotone',
+        to: '/layouts/card-grid-3',
+      },
+      {
+        name: 'Card grid V4',
+        icon: 'ph:circles-four-duotone',
+        to: '/layouts/card-grid-4',
+      },
+    ],
+  },
+  {
+    name: 'Tile grids',
+    children: [
+      {
+        name: 'Tile grid V1',
+        icon: 'ph:selection-foreground-duotone',
+        to: '/layouts/tile-grid-1',
+      },
+      {
+        name: 'Tile grid V2',
+        icon: 'ph:selection-foreground-duotone',
+        to: '/layouts/tile-grid-2',
+      },
+      {
+        name: 'Tile grid V3',
+        icon: 'ph:selection-foreground-duotone',
+        to: '/layouts/tile-grid-3',
+      },
+    ],
+  },
+  {
+    name: 'User grids',
+    children: [
+      {
+        name: 'User grid V1',
+        icon: 'ph:users-three-duotone',
+        to: '/layouts/user-grid-1',
+      },
+      {
+        name: 'User grid V2',
+        icon: 'ph:users-three-duotone',
+        to: '/layouts/user-grid-2',
+      },
+      {
+        name: 'User grid V3',
+        icon: 'ph:users-three-duotone',
+        to: '/layouts/user-grid-3',
+      },
+      {
+        name: 'User grid V4',
+        icon: 'ph:users-three-duotone',
+        to: '/layouts/user-grid-4',
+      },
+    ],
+  },
+  {
+    divider: true,
+  },
+  {
+    name: 'Projects',
+    children: [
+      {
+        name: 'Projects V1',
+        icon: 'ph:leaf-duotone',
+        to: '/layouts/projects',
+      },
+      {
+        name: 'Projects V2',
+        icon: 'ph:leaf-duotone',
+        to: '/layouts/projects/project-list-2',
+      },
+      {
+        name: 'Projects V3',
+        icon: 'ph:leaf-duotone',
+        to: '/layouts/projects/project-list-3',
+      },
+      {
+        name: 'Project details',
+        icon: 'ph:note-duotone',
+        to: '/layouts/projects/details/delivery-app-project',
+      },
+      {
+        name: 'Kanban board',
+        icon: 'ph:squares-four-duotone',
+        to: '/layouts/projects/board/delivery-app-project',
+      },
+    ],
+  },
+  {
+    name: 'Auth',
+    children: [
+      {
+        name: 'Login',
+        icon: 'ph:lock-duotone',
+        to: '/auth',
+      },
+      {
+        name: 'Login V1',
+        icon: 'ph:lock-duotone',
+        to: '/auth/login-1',
+      },
+      {
+        name: 'Login V2',
+        icon: 'ph:lock-duotone',
+        to: '/auth/login-2',
+      },
+      {
+        name: 'Login V3',
+        icon: 'ph:lock-duotone',
+        to: '/auth/login-3',
+      },
+      {
+        name: 'Signup V1',
+        icon: 'ph:magic-wand-duotone',
+        to: '/auth/signup-1',
+      },
+      {
+        name: 'Signup V2',
+        icon: 'ph:magic-wand-duotone',
+        to: '/auth/signup-2',
+      },
+      {
+        name: 'Signup V3',
+        icon: 'ph:magic-wand-duotone',
+        to: '/auth/signup-3',
+      },
+      {
+        name: 'Forgot password',
+        icon: 'ph:fingerprint-duotone',
+        to: '/auth/recover',
+      },
+    ],
+  },
+  {
+    name: 'Subpages',
+    children: [
+      {
+        name: 'Profile',
+        icon: 'ph:lock-duotone',
+        to: '/layouts/profile',
+      },
+      {
+        name: 'Edit profile',
+        icon: 'ph:pencil-duotone',
+        to: '/layouts/profile-edit',
+      },
+      {
+        name: 'Notifications',
+        icon: 'ph:notification-duotone',
+        to: '/layouts/profile-notifications',
+      },
+      {
+        name: 'Settings',
+        icon: 'ph:gear-duotone',
+        to: '/layouts/profile-settings',
+      },
+      {
+        name: 'Search results',
+        icon: 'ph:magnifying-glass-duotone',
+        to: '/layouts/search-results',
+      },
+      {
+        name: 'Empty search',
+        icon: 'ph:magnifying-glass-duotone',
+        to: '/layouts/search-empty',
+      },
+      {
+        name: 'SaaS billing',
+        icon: 'ph:credit-card-duotone',
+        to: '/layouts/utility-billing',
+      },
+      {
+        name: 'Action page v1',
+        icon: 'ph:lightning-duotone',
+        to: '/layouts/utility-action-1',
+      },
+      {
+        name: 'Action page v2',
+        icon: 'ph:lightning-duotone',
+        to: '/layouts/utility-action-2',
+      },
+    ],
+  },
+  {
+    name: 'Utility',
+    children: [
+      {
+        name: 'Confirm account',
+        icon: 'ph:square-logo-duotone',
+        to: '/layouts/utility-confirm',
+      },
+      {
+        name: 'Promotion',
+        icon: 'ph:circle-wavy-check-duotone',
+        to: '/layouts/utility-promotion',
+      },
+      {
+        name: 'Invoice',
+        icon: 'ph:note-duotone',
+        to: '/layouts/utility-invoice',
+      },
+      {
+        name: 'Service status',
+        icon: 'ph:notification-duotone',
+        to: '/layouts/utility-status',
+      },
+      {
+        name: 'Roadmap',
+        icon: 'ph:notification-duotone',
+        to: '/layouts/utility-roadmap',
+      },
+    ],
+  },
+  {
+    name: 'Onboarding',
+    children: [
+      {
+        name: 'Onboarding V1',
+        icon: 'ph:square-logo-duotone',
+        to: '/layouts/onboarding-1',
+      },
+      {
+        name: 'Onboarding V2',
+        icon: 'ph:square-logo-duotone',
+        to: '/layouts/onboarding-2',
+      },
+      {
+        name: 'Onboarding V3',
+        icon: 'ph:square-logo-duotone',
+        to: '/layouts/onboarding-3',
+      },
+      {
+        name: 'Onboarding V4',
+        icon: 'ph:square-logo-duotone',
+        to: '/layouts/onboarding-4',
+      },
+      {
+        name: 'Onboarding V5',
+        icon: 'ph:square-logo-duotone',
+        to: '/layouts/onboarding-5',
+      },
+    ],
+  },
+  {
+    name: 'Error',
+    children: [
+      {
+        name: 'Error V1',
+        icon: 'ph:skull-duotone',
+        to: '/layouts/error-1',
+      },
+      {
+        name: 'Error V2',
+        icon: 'ph:skull-duotone',
+        to: '/layouts/error-2',
+      },
+      {
+        name: 'Error V3',
+        icon: 'ph:skull-duotone',
+        to: '/layouts/error-3',
+      },
+      {
+        name: 'Error V4',
+        icon: 'ph:skull-duotone',
+        to: '/layouts/error-4',
+      },
+      {
+        name: 'Error V5',
+        icon: 'ph:skull-duotone',
+        to: '/layouts/error-5',
+      },
+    ],
+  },
+]
 </script>
 
 <template>
@@ -8,1278 +417,6 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
       <TairoSubsidebarHeader />
     </template>
 
-    <ul>
-      <!-- Menu item -->
-      <li class="group mb-1 min-h-[2rem]">
-        <Disclosure v-slot="{ open }">
-          <DisclosureButton class="w-full">
-            <a class="relative top-0.5 flex items-center">
-              <span
-                class="font-sans text-sm text-muted-400 transition-colors duration-300 group-hover:text-primary-500"
-              >
-                Lists
-              </span>
-              <Icon
-                name="feather:chevron-down"
-                class="ml-auto block h-4 w-4 text-muted-400 transition-transform duration-300"
-                :class="open ? 'rotate-180' : ''"
-              />
-            </a>
-          </DisclosureButton>
-
-          <Transition
-            enter-active-class="transition-all duration-300 ease-out"
-            enter-from-class="opacity-0 -translate-y-5"
-            enter-to-class="opacity-100 translate-y-0"
-            leave-active-class="transition-all duration-300 ease-out"
-            leave-from-class="opacity-100 translate-y-0"
-            leave-to-class="opacity-0 -translate-y-5"
-          >
-            <div v-show="open">
-              <DisclosurePanel static>
-                <ul class="py-2 pl-3">
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon
-                        name="ph:list-bullets-duotone"
-                        class="mr-2 h-5 w-5"
-                      />
-                      <span class="font-sans text-xs">List view V1</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/list-view-2"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon
-                        name="ph:list-bullets-duotone"
-                        class="mr-2 h-5 w-5"
-                      />
-                      <span class="font-sans text-xs">List view V2</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/list-view-3"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon
-                        name="ph:list-bullets-duotone"
-                        class="mr-2 h-5 w-5"
-                      />
-                      <span class="font-sans text-xs">List view V3</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/list-view-4"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon
-                        name="ph:list-bullets-duotone"
-                        class="mr-2 h-5 w-5"
-                      />
-                      <span class="font-sans text-xs">List view V4</span>
-                    </NuxtLink>
-                  </li>
-                </ul>
-              </DisclosurePanel>
-            </div>
-          </Transition>
-        </Disclosure>
-      </li>
-      <!-- Menu item -->
-      <li class="group mb-1 min-h-[2rem]">
-        <Disclosure v-slot="{ open }">
-          <DisclosureButton class="w-full">
-            <a class="relative top-0.5 flex items-center">
-              <span
-                class="font-sans text-sm text-muted-400 transition-colors duration-300 group-hover:text-primary-500"
-              >
-                Flex lists
-              </span>
-              <Icon
-                name="feather:chevron-down"
-                class="ml-auto block h-4 w-4 text-muted-400 transition-transform duration-300"
-                :class="open ? 'rotate-180' : ''"
-              />
-            </a>
-          </DisclosureButton>
-
-          <Transition
-            enter-active-class="transition-all duration-300 ease-out"
-            enter-from-class="opacity-0 -translate-y-5"
-            enter-to-class="opacity-100 translate-y-0"
-            leave-active-class="transition-all duration-300 ease-out"
-            leave-from-class="opacity-100 translate-y-0"
-            leave-to-class="opacity-0 -translate-y-5"
-          >
-            <div v-show="open">
-              <DisclosurePanel static>
-                <ul class="py-2 pl-3">
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/flex-list-1"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon
-                        name="ph:list-checks-duotone"
-                        class="mr-2 h-5 w-5"
-                      />
-                      <span class="font-sans text-xs">Flex list V1</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/flex-list-2"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon
-                        name="ph:list-checks-duotone"
-                        class="mr-2 h-5 w-5"
-                      />
-                      <span class="font-sans text-xs">Flex list V2</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/flex-list-3"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon
-                        name="ph:list-checks-duotone"
-                        class="mr-2 h-5 w-5"
-                      />
-                      <span class="font-sans text-xs">Flex list V3</span>
-                    </NuxtLink>
-                  </li>
-                </ul>
-              </DisclosurePanel>
-            </div>
-          </Transition>
-        </Disclosure>
-      </li>
-      <!-- Menu item -->
-      <li class="group mb-1 min-h-[2rem]">
-        <Disclosure v-slot="{ open }">
-          <DisclosureButton class="w-full">
-            <a class="relative top-0.5 flex items-center">
-              <span
-                class="font-sans text-sm text-muted-400 transition-colors duration-300 group-hover:text-primary-500"
-              >
-                Table lists
-              </span>
-              <Icon
-                name="feather:chevron-down"
-                class="ml-auto block h-4 w-4 text-muted-400 transition-transform duration-300"
-                :class="open ? 'rotate-180' : ''"
-              />
-            </a>
-          </DisclosureButton>
-
-          <Transition
-            enter-active-class="transition-all duration-300 ease-out"
-            enter-from-class="opacity-0 -translate-y-5"
-            enter-to-class="opacity-100 translate-y-0"
-            leave-active-class="transition-all duration-300 ease-out"
-            leave-from-class="opacity-100 translate-y-0"
-            leave-to-class="opacity-0 -translate-y-5"
-          >
-            <div v-show="open">
-              <DisclosurePanel static>
-                <ul class="py-2 pl-3">
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/table-list-1"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon name="ph:table-duotone" class="mr-2 h-5 w-5" />
-                      <span class="font-sans text-xs">Table list V1</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/table-list-2"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon name="ph:table-duotone" class="mr-2 h-5 w-5" />
-                      <span class="font-sans text-xs">Table list V2</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/table-list-3"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon name="ph:table-duotone" class="mr-2 h-5 w-5" />
-                      <span class="font-sans text-xs">Table list V3</span>
-                    </NuxtLink>
-                  </li>
-                </ul>
-              </DisclosurePanel>
-            </div>
-          </Transition>
-        </Disclosure>
-      </li>
-      <!-- Menu item -->
-      <li class="group mb-1 min-h-[2rem]">
-        <Disclosure v-slot="{ open }">
-          <DisclosureButton class="w-full">
-            <a class="flex items-center">
-              <span
-                class="font-sans text-sm text-muted-400 transition-colors duration-300 group-hover:text-primary-500"
-              >
-                Form layouts
-              </span>
-              <Icon
-                name="feather:chevron-down"
-                class="ml-auto block h-4 w-4 text-muted-400 transition-transform duration-300"
-                :class="open ? 'rotate-180' : ''"
-              />
-            </a>
-          </DisclosureButton>
-
-          <Transition
-            enter-active-class="transition-all duration-300 ease-out"
-            enter-from-class="opacity-0 -translate-y-5"
-            enter-to-class="opacity-100 translate-y-0"
-            leave-active-class="transition-all duration-300 ease-out"
-            leave-from-class="opacity-100 translate-y-0"
-            leave-to-class="opacity-0 -translate-y-5"
-          >
-            <div v-show="open">
-              <DisclosurePanel static>
-                <ul class="py-2 pl-3">
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/form-1"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon name="ph:article-duotone" class="mr-2 h-5 w-5" />
-                      <span class="font-sans text-xs">Form layout V1</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/form-2"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon name="ph:article-duotone" class="mr-2 h-5 w-5" />
-                      <span class="font-sans text-xs">Form layout V2</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/form-3"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon name="ph:article-duotone" class="mr-2 h-5 w-5" />
-                      <span class="font-sans text-xs">Form layout V3</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/form-4"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon name="ph:article-duotone" class="mr-2 h-5 w-5" />
-                      <span class="font-sans text-xs">Form layout V4</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/form-5"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon name="ph:article-duotone" class="mr-2 h-5 w-5" />
-                      <span class="font-sans text-xs">Form layout V5</span>
-                    </NuxtLink>
-                  </li>
-                </ul>
-              </DisclosurePanel>
-            </div>
-          </Transition>
-        </Disclosure>
-      </li>
-      <!-- Menu item -->
-      <li class="group mb-1 min-h-[2rem]">
-        <Disclosure v-slot="{ open }">
-          <DisclosureButton class="w-full">
-            <a class="relative top-0.5 flex items-center">
-              <span
-                class="font-sans text-sm text-muted-400 transition-colors duration-300 group-hover:text-primary-500"
-              >
-                Placeloads
-              </span>
-              <Icon
-                name="feather:chevron-down"
-                class="ml-auto block h-4 w-4 text-muted-400 transition-transform duration-300"
-                :class="open ? 'rotate-180' : ''"
-              />
-            </a>
-          </DisclosureButton>
-
-          <Transition
-            enter-active-class="transition-all duration-300 ease-out"
-            enter-from-class="opacity-0 -translate-y-5"
-            enter-to-class="opacity-100 translate-y-0"
-            leave-active-class="transition-all duration-300 ease-out"
-            leave-from-class="opacity-100 translate-y-0"
-            leave-to-class="opacity-0 -translate-y-5"
-          >
-            <div v-show="open">
-              <DisclosurePanel static>
-                <ul class="py-2 pl-3">
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/placeload-1"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon name="ph:timer-duotone" class="mr-2 h-5 w-5" />
-                      <span class="font-sans text-xs">Placeload V1</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/placeload-2"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon name="ph:timer-duotone" class="mr-2 h-5 w-5" />
-                      <span class="font-sans text-xs">Placeload V2</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/placeload-3"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon name="ph:timer-duotone" class="mr-2 h-5 w-5" />
-                      <span class="font-sans text-xs">Placeload V3</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/placeload-4"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon name="ph:timer-duotone" class="mr-2 h-5 w-5" />
-                      <span class="font-sans text-xs">Placeload V4</span>
-                    </NuxtLink>
-                  </li>
-                </ul>
-              </DisclosurePanel>
-            </div>
-          </Transition>
-        </Disclosure>
-      </li>
-      <!-- Menu divider -->
-      <li
-        class="my-4 h-px w-full border-t border-muted-200 dark:border-muted-700"
-      ></li>
-      <!-- Menu item -->
-      <li class="group mb-1 min-h-[2rem]">
-        <Disclosure v-slot="{ open }">
-          <DisclosureButton class="w-full">
-            <a class="flex items-center">
-              <span
-                class="font-sans text-sm text-muted-400 transition-colors duration-300 group-hover:text-primary-500"
-              >
-                Card grids
-              </span>
-              <Icon
-                name="feather:chevron-down"
-                class="ml-auto block h-4 w-4 text-muted-400 transition-transform duration-300"
-                :class="open ? 'rotate-180' : ''"
-              />
-            </a>
-          </DisclosureButton>
-
-          <Transition
-            enter-active-class="transition-all duration-300 ease-out"
-            enter-from-class="opacity-0 -translate-y-5"
-            enter-to-class="opacity-100 translate-y-0"
-            leave-active-class="transition-all duration-300 ease-out"
-            leave-from-class="opacity-100 translate-y-0"
-            leave-to-class="opacity-0 -translate-y-5"
-          >
-            <div v-show="open">
-              <DisclosurePanel static>
-                <ul class="py-2 pl-3">
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/card-grid-1"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon
-                        name="ph:circles-four-duotone"
-                        class="mr-2 h-5 w-5"
-                      />
-                      <span class="font-sans text-xs">Card grid V1</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/card-grid-2"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon
-                        name="ph:circles-four-duotone"
-                        class="mr-2 h-5 w-5"
-                      />
-                      <span class="font-sans text-xs">Card grid V2</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/card-grid-3"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon
-                        name="ph:circles-four-duotone"
-                        class="mr-2 h-5 w-5"
-                      />
-                      <span class="font-sans text-xs">Card grid V3</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/card-grid-4"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon
-                        name="ph:circles-four-duotone"
-                        class="mr-2 h-5 w-5"
-                      />
-                      <span class="font-sans text-xs">Card grid V4</span>
-                    </NuxtLink>
-                  </li>
-                </ul>
-              </DisclosurePanel>
-            </div>
-          </Transition>
-        </Disclosure>
-      </li>
-      <!-- Menu item -->
-      <li class="group mb-1 min-h-[2rem]">
-        <Disclosure v-slot="{ open }">
-          <DisclosureButton class="w-full">
-            <a class="relative top-0.5 flex items-center">
-              <span
-                class="font-sans text-sm text-muted-400 transition-colors duration-300 group-hover:text-primary-500"
-              >
-                Tile grids
-              </span>
-              <Icon
-                name="feather:chevron-down"
-                class="ml-auto block h-4 w-4 text-muted-400 transition-transform duration-300"
-                :class="open ? 'rotate-180' : ''"
-              />
-            </a>
-          </DisclosureButton>
-
-          <Transition
-            enter-active-class="transition-all duration-300 ease-out"
-            enter-from-class="opacity-0 -translate-y-5"
-            enter-to-class="opacity-100 translate-y-0"
-            leave-active-class="transition-all duration-300 ease-out"
-            leave-from-class="opacity-100 translate-y-0"
-            leave-to-class="opacity-0 -translate-y-5"
-          >
-            <div v-show="open">
-              <DisclosurePanel static>
-                <ul class="py-2 pl-3">
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/tile-grid-1"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon
-                        name="ph:selection-foreground-duotone"
-                        class="mr-2 h-5 w-5"
-                      />
-                      <span class="font-sans text-xs">Tile grid V1</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/tile-grid-2"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon
-                        name="ph:selection-foreground-duotone"
-                        class="mr-2 h-5 w-5"
-                      />
-                      <span class="font-sans text-xs">Tile grid V2</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/tile-grid-3"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon
-                        name="ph:selection-foreground-duotone"
-                        class="mr-2 h-5 w-5"
-                      />
-                      <span class="font-sans text-xs">Tile grid V3</span>
-                    </NuxtLink>
-                  </li>
-                </ul>
-              </DisclosurePanel>
-            </div>
-          </Transition>
-        </Disclosure>
-      </li>
-      <!-- Menu item -->
-      <li class="group mb-1 min-h-[2rem]">
-        <Disclosure v-slot="{ open }">
-          <DisclosureButton class="w-full">
-            <a class="relative top-0.5 flex items-center">
-              <span
-                class="font-sans text-sm text-muted-400 transition-colors duration-300 group-hover:text-primary-500"
-              >
-                User grids
-              </span>
-              <Icon
-                name="feather:chevron-down"
-                class="ml-auto block h-4 w-4 text-muted-400 transition-transform duration-300"
-                :class="open ? 'rotate-180' : ''"
-              />
-            </a>
-          </DisclosureButton>
-
-          <Transition
-            enter-active-class="transition-all duration-300 ease-out"
-            enter-from-class="opacity-0 -translate-y-5"
-            enter-to-class="opacity-100 translate-y-0"
-            leave-active-class="transition-all duration-300 ease-out"
-            leave-from-class="opacity-100 translate-y-0"
-            leave-to-class="opacity-0 -translate-y-5"
-          >
-            <div v-show="open">
-              <DisclosurePanel static>
-                <ul class="py-2 pl-3">
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/user-grid-1"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon
-                        name="ph:users-three-duotone"
-                        class="mr-2 h-5 w-5"
-                      />
-                      <span class="font-sans text-xs">User grid V1</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/user-grid-2"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon
-                        name="ph:users-three-duotone"
-                        class="mr-2 h-5 w-5"
-                      />
-                      <span class="font-sans text-xs">User grid V2</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/user-grid-3"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon
-                        name="ph:users-three-duotone"
-                        class="mr-2 h-5 w-5"
-                      />
-                      <span class="font-sans text-xs">User grid V3</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/user-grid-4"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon
-                        name="ph:users-three-duotone"
-                        class="mr-2 h-5 w-5"
-                      />
-                      <span class="font-sans text-xs">User grid V4</span>
-                    </NuxtLink>
-                  </li>
-                </ul>
-              </DisclosurePanel>
-            </div>
-          </Transition>
-        </Disclosure>
-      </li>
-      <!-- Menu divider -->
-      <li
-        class="my-4 h-px w-full border-t border-muted-200 dark:border-muted-700"
-      ></li>
-      <!-- Menu item -->
-      <li class="group mb-1 min-h-[2rem]">
-        <Disclosure v-slot="{ open }">
-          <DisclosureButton class="w-full">
-            <a class="relative top-0.5 flex items-center">
-              <span
-                class="font-sans text-sm text-muted-400 transition-colors duration-300 group-hover:text-primary-500"
-              >
-                Projects
-              </span>
-              <Icon
-                name="feather:chevron-down"
-                class="ml-auto block h-4 w-4 text-muted-400 transition-transform duration-300"
-                :class="open ? 'rotate-180' : ''"
-              />
-            </a>
-          </DisclosureButton>
-
-          <Transition
-            enter-active-class="transition-all duration-300 ease-out"
-            enter-from-class="opacity-0 -translate-y-5"
-            enter-to-class="opacity-100 translate-y-0"
-            leave-active-class="transition-all duration-300 ease-out"
-            leave-from-class="opacity-100 translate-y-0"
-            leave-to-class="opacity-0 -translate-y-5"
-          >
-            <div v-show="open">
-              <DisclosurePanel static>
-                <ul class="py-2 pl-3">
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/projects"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon name="ph:leaf-duotone" class="mr-2 h-5 w-5" />
-                      <span class="font-sans text-xs">Projects V1</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/projects/project-list-2"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon name="ph:leaf-duotone" class="mr-2 h-5 w-5" />
-                      <span class="font-sans text-xs">Projects V2</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/projects/project-list-3"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon name="ph:leaf-duotone" class="mr-2 h-5 w-5" />
-                      <span class="font-sans text-xs">Projects V3</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/projects/details/delivery-app-project"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon name="ph:note-duotone" class="mr-2 h-5 w-5" />
-                      <span class="font-sans text-xs">Project details</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/projects/board/delivery-app-project"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon
-                        name="ph:squares-four-duotone"
-                        class="mr-2 h-5 w-5"
-                      />
-                      <span class="font-sans text-xs">Kanban board</span>
-                    </NuxtLink>
-                  </li>
-                </ul>
-              </DisclosurePanel>
-            </div>
-          </Transition>
-        </Disclosure>
-      </li>
-      <!-- Menu item -->
-      <li class="group mb-1 min-h-[2rem]">
-        <Disclosure v-slot="{ open }">
-          <DisclosureButton class="w-full">
-            <a class="relative top-0.5 flex items-center">
-              <span
-                class="font-sans text-sm text-muted-400 transition-colors duration-300 group-hover:text-primary-500"
-              >
-                Auth
-              </span>
-              <Icon
-                name="feather:chevron-down"
-                class="ml-auto block h-4 w-4 text-muted-400 transition-transform duration-300"
-                :class="open ? 'rotate-180' : ''"
-              />
-            </a>
-          </DisclosureButton>
-
-          <Transition
-            enter-active-class="transition-all duration-300 ease-out"
-            enter-from-class="opacity-0 -translate-y-5"
-            enter-to-class="opacity-100 translate-y-0"
-            leave-active-class="transition-all duration-300 ease-out"
-            leave-from-class="opacity-100 translate-y-0"
-            leave-to-class="opacity-0 -translate-y-5"
-          >
-            <div v-show="open">
-              <DisclosurePanel static>
-                <ul class="py-2 pl-3">
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/auth/"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon name="ph:lock-duotone" class="mr-2 h-5 w-5" />
-                      <span class="font-sans text-xs">Login</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/auth/login-1"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon name="ph:lock-duotone" class="mr-2 h-5 w-5" />
-                      <span class="font-sans text-xs">Login V1</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/auth/login-2"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon name="ph:lock-duotone" class="mr-2 h-5 w-5" />
-                      <span class="font-sans text-xs">Login V2</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/auth/login-3"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon name="ph:lock-duotone" class="mr-2 h-5 w-5" />
-                      <span class="font-sans text-xs">Login V3</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/auth/signup-1"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon name="ph:magic-wand-duotone" class="mr-2 h-5 w-5" />
-                      <span class="font-sans text-xs">Signup V1</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/auth/signup-2"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon name="ph:magic-wand-duotone" class="mr-2 h-5 w-5" />
-                      <span class="font-sans text-xs">Signup V2</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/auth/signup-3"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon name="ph:magic-wand-duotone" class="mr-2 h-5 w-5" />
-                      <span class="font-sans text-xs">Signup V3</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/auth/recover"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon
-                        name="ph:fingerprint-duotone"
-                        class="mr-2 h-5 w-5"
-                      />
-                      <span class="font-sans text-xs">Forgot password</span>
-                    </NuxtLink>
-                  </li>
-                </ul>
-              </DisclosurePanel>
-            </div>
-          </Transition>
-        </Disclosure>
-      </li>
-      <!-- Menu divider -->
-      <li
-        class="my-4 h-px w-full border-t border-muted-200 dark:border-muted-700"
-      ></li>
-      <!-- Menu item -->
-      <li class="group mb-1 min-h-[2rem]">
-        <Disclosure v-slot="{ open }">
-          <DisclosureButton class="w-full">
-            <a class="relative top-0.5 flex items-center">
-              <span
-                class="font-sans text-sm text-muted-400 transition-colors duration-300 group-hover:text-primary-500"
-              >
-                Subpages
-              </span>
-              <Icon
-                name="feather:chevron-down"
-                class="ml-auto block h-4 w-4 text-muted-400 transition-transform duration-300"
-                :class="open ? 'rotate-180' : ''"
-              />
-            </a>
-          </DisclosureButton>
-
-          <Transition
-            enter-active-class="transition-all duration-300 ease-out"
-            enter-from-class="opacity-0 -translate-y-5"
-            enter-to-class="opacity-100 translate-y-0"
-            leave-active-class="transition-all duration-300 ease-out"
-            leave-from-class="opacity-100 translate-y-0"
-            leave-to-class="opacity-0 -translate-y-5"
-          >
-            <div v-show="open">
-              <DisclosurePanel static>
-                <ul class="py-2 pl-3">
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/profile"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon name="ph:user-duotone" class="mr-2 h-5 w-5" />
-                      <span class="font-sans text-xs">Profile</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/profile-edit"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon name="ph:pencil-duotone" class="mr-2 h-5 w-5" />
-                      <span class="font-sans text-xs">Edit profile</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/profile-notifications"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon
-                        name="ph:notification-duotone"
-                        class="mr-2 h-5 w-5"
-                      />
-                      <span class="font-sans text-xs">Notifications</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/profile-settings"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon name="ph:gear-duotone" class="mr-2 h-5 w-5" />
-                      <span class="font-sans text-xs">Settings</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/search-results"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon
-                        name="ph:magnifying-glass-duotone"
-                        class="mr-2 h-5 w-5"
-                      />
-                      <span class="font-sans text-xs">Search results</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/search-empty"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon
-                        name="ph:magnifying-glass-duotone"
-                        class="mr-2 h-5 w-5"
-                      />
-                      <span class="font-sans text-xs">Empty search</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/utility-billing"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon
-                        name="ph:credit-card-duotone"
-                        class="mr-2 h-5 w-5"
-                      />
-                      <span class="font-sans text-xs">SaaS billing</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/utility-action-1"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon name="ph:lightning-duotone" class="mr-2 h-5 w-5" />
-                      <span class="font-sans text-xs">Action page v1</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/utility-action-2"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon name="ph:lightning-duotone" class="mr-2 h-5 w-5" />
-                      <span class="font-sans text-xs">Action page v2</span>
-                    </NuxtLink>
-                  </li>
-                </ul>
-              </DisclosurePanel>
-            </div>
-          </Transition>
-        </Disclosure>
-      </li>
-      <!-- Menu item -->
-      <li class="group mb-1 min-h-[2rem]">
-        <Disclosure v-slot="{ open }">
-          <DisclosureButton class="w-full">
-            <a class="relative top-0.5 flex items-center">
-              <span
-                class="font-sans text-sm text-muted-400 transition-colors duration-300 group-hover:text-primary-500"
-              >
-                Utility
-              </span>
-              <Icon
-                name="feather:chevron-down"
-                class="ml-auto block h-4 w-4 text-muted-400 transition-transform duration-300"
-                :class="open ? 'rotate-180' : ''"
-              />
-            </a>
-          </DisclosureButton>
-
-          <Transition
-            enter-active-class="transition-all duration-300 ease-out"
-            enter-from-class="opacity-0 -translate-y-5"
-            enter-to-class="opacity-100 translate-y-0"
-            leave-active-class="transition-all duration-300 ease-out"
-            leave-from-class="opacity-100 translate-y-0"
-            leave-to-class="opacity-0 -translate-y-5"
-          >
-            <div v-show="open">
-              <DisclosurePanel static>
-                <ul class="py-2 pl-3">
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/utility-confirm"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon
-                        name="ph:square-logo-duotone"
-                        class="mr-2 h-5 w-5"
-                      />
-                      <span class="font-sans text-xs">Confirm account</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/utility-promotion"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon
-                        name="ph:circle-wavy-check-duotone"
-                        class="mr-2 h-5 w-5"
-                      />
-                      <span class="font-sans text-xs">Promotion</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/utility-invoice"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon name="ph:note-duotone" class="mr-2 h-5 w-5" />
-                      <span class="font-sans text-xs">Invoice</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/utility-status"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon
-                        name="ph:notification-duotone"
-                        class="mr-2 h-5 w-5"
-                      />
-                      <span class="font-sans text-xs">Service status</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/utility-roadmap"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon
-                        name="ph:notification-duotone"
-                        class="mr-2 h-5 w-5"
-                      />
-                      <span class="font-sans text-xs">Roadmap</span>
-                    </NuxtLink>
-                  </li>
-                </ul>
-              </DisclosurePanel>
-            </div>
-          </Transition>
-        </Disclosure>
-      </li>
-      <!-- Menu item -->
-      <li class="group mb-1 min-h-[2rem]">
-        <Disclosure v-slot="{ open }">
-          <DisclosureButton class="w-full">
-            <a class="relative top-0.5 flex items-center">
-              <span
-                class="font-sans text-sm text-muted-400 transition-colors duration-300 group-hover:text-primary-500"
-              >
-                Onboarding
-              </span>
-              <Icon
-                name="feather:chevron-down"
-                class="ml-auto block h-4 w-4 text-muted-400 transition-transform duration-300"
-                :class="open ? 'rotate-180' : ''"
-              />
-            </a>
-          </DisclosureButton>
-
-          <Transition
-            enter-active-class="transition-all duration-300 ease-out"
-            enter-from-class="opacity-0 -translate-y-5"
-            enter-to-class="opacity-100 translate-y-0"
-            leave-active-class="transition-all duration-300 ease-out"
-            leave-from-class="opacity-100 translate-y-0"
-            leave-to-class="opacity-0 -translate-y-5"
-          >
-            <div v-show="open">
-              <DisclosurePanel static>
-                <ul class="py-2 pl-3">
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/onboarding-1"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon
-                        name="ph:hand-waving-duotone"
-                        class="mr-2 h-5 w-5"
-                      />
-                      <span class="font-sans text-xs">Onboarding V1</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/onboarding-2"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon
-                        name="ph:hand-waving-duotone"
-                        class="mr-2 h-5 w-5"
-                      />
-                      <span class="font-sans text-xs">Onboarding V2</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/onboarding-3"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon
-                        name="ph:hand-waving-duotone"
-                        class="mr-2 h-5 w-5"
-                      />
-                      <span class="font-sans text-xs">Onboarding V3</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/onboarding-4"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon
-                        name="ph:hand-waving-duotone"
-                        class="mr-2 h-5 w-5"
-                      />
-                      <span class="font-sans text-xs">Onboarding V4</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/onboarding-5"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon
-                        name="ph:hand-waving-duotone"
-                        class="mr-2 h-5 w-5"
-                      />
-                      <span class="font-sans text-xs">Onboarding V5</span>
-                    </NuxtLink>
-                  </li>
-                </ul>
-              </DisclosurePanel>
-            </div>
-          </Transition>
-        </Disclosure>
-      </li>
-      <!-- Menu item -->
-      <li class="group mb-1 min-h-[2rem]">
-        <Disclosure v-slot="{ open }">
-          <DisclosureButton class="w-full">
-            <a class="relative top-0.5 flex items-center">
-              <span
-                class="font-sans text-sm text-muted-400 transition-colors duration-300 group-hover:text-primary-500"
-              >
-                Error
-              </span>
-              <Icon
-                name="feather:chevron-down"
-                class="ml-auto block h-4 w-4 text-muted-400 transition-transform duration-300"
-                :class="open ? 'rotate-180' : ''"
-              />
-            </a>
-          </DisclosureButton>
-
-          <Transition
-            enter-active-class="transition-all duration-300 ease-out"
-            enter-from-class="opacity-0 -translate-y-5"
-            enter-to-class="opacity-100 translate-y-0"
-            leave-active-class="transition-all duration-300 ease-out"
-            leave-from-class="opacity-100 translate-y-0"
-            leave-to-class="opacity-0 -translate-y-5"
-          >
-            <div v-show="open">
-              <DisclosurePanel static>
-                <ul class="py-2 pl-3">
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/error-1"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon name="ph:skull-duotone" class="mr-2 h-5 w-5" />
-                      <span class="font-sans text-xs">Error V1</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/error-2"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon name="ph:skull-duotone" class="mr-2 h-5 w-5" />
-                      <span class="font-sans text-xs">Error V2</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/error-3"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon name="ph:skull-duotone" class="mr-2 h-5 w-5" />
-                      <span class="font-sans text-xs">Error V3</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/error-4"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon name="ph:skull-duotone" class="mr-2 h-5 w-5" />
-                      <span class="font-sans text-xs">Error V4</span>
-                    </NuxtLink>
-                  </li>
-                  <li class="flex h-8 items-center">
-                    <NuxtLink
-                      to="/layouts/error-5"
-                      exact-active-class="text-primary-500"
-                      class="flex items-center text-muted-400 transition-colors duration-300 hover:text-primary-500"
-                    >
-                      <Icon name="ph:skull-duotone" class="mr-2 h-5 w-5" />
-                      <span class="font-sans text-xs">Error V5</span>
-                    </NuxtLink>
-                  </li>
-                </ul>
-              </DisclosurePanel>
-            </div>
-          </Transition>
-        </Disclosure>
-      </li>
-    </ul>
+    <TairoSubsidebarMenu :navigation="navigation" />
   </TairoSubsidebar>
 </template>
