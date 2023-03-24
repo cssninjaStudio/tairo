@@ -3,6 +3,10 @@ definePageMeta({
   title: 'Jobs',
 })
 
+const search = ref('')
+const location = ref('')
+const alertKeyword = ref('')
+
 const selectedType = ref('all')
 const selectedRange = ref('all')
 
@@ -186,6 +190,7 @@ const jobs = [
           class="w-full sm:w-auto sm:grow py-2 pl-4 sm:pl-2 ptablet:pl-4 pr-4 ptablet:col-span-6"
         >
           <BaseInput
+            v-model.trim="search"
             shape="curved"
             icon="lucide:search"
             placeholder="Job keywords"
@@ -193,6 +198,7 @@ const jobs = [
         </div>
         <div class="w-full sm:w-auto flex-1 py-2 px-4 ptablet:col-span-6">
           <BaseInput
+            v-model.trim="location"
             shape="curved"
             icon="lucide:map-pin"
             placeholder="Location"
@@ -271,6 +277,7 @@ const jobs = [
             <!-- Form -->
             <form class="space-y-2">
               <BaseInput
+                v-model.trim="alertKeyword"
                 shape="curved"
                 icon="lucide:search"
                 placeholder="Job keywords"
@@ -301,7 +308,7 @@ const jobs = [
                 <div class="flex items-center justify-between">
                   <BaseCheckbox
                     v-model="jobTypes"
-                    name="job-types-1"
+                    value="job-types-1"
                     label="Full time jobs"
                     shape="rounded"
                     :classes="{ wrapper: 'text-primary-500' }"
@@ -318,7 +325,7 @@ const jobs = [
                 <div class="flex items-center justify-between">
                   <BaseCheckbox
                     v-model="jobTypes"
-                    name="job-types-2"
+                    value="job-types-2"
                     label="Part time jobs"
                     shape="rounded"
                     :classes="{ wrapper: 'text-primary-500' }"
@@ -335,7 +342,7 @@ const jobs = [
                 <div class="flex items-center justify-between">
                   <BaseCheckbox
                     v-model="jobTypes"
-                    name="job-types-3"
+                    value="job-types-3"
                     label="Remote jobs"
                     shape="rounded"
                     :classes="{ wrapper: 'text-primary-500' }"
@@ -352,7 +359,7 @@ const jobs = [
                 <div class="flex items-center justify-between">
                   <BaseCheckbox
                     v-model="jobTypes"
-                    name="job-types-4"
+                    value="job-types-4"
                     label="Internships"
                     shape="rounded"
                     :classes="{ wrapper: 'text-primary-500' }"
@@ -387,7 +394,7 @@ const jobs = [
                 <div class="flex items-center justify-between">
                   <BaseCheckbox
                     v-model="jobSeniority"
-                    name="seniority-level-1"
+                    value="seniority-level-1"
                     label="Student level"
                     shape="rounded"
                     :classes="{ wrapper: 'text-primary-500' }"
@@ -404,7 +411,7 @@ const jobs = [
                 <div class="flex items-center justify-between">
                   <BaseCheckbox
                     v-model="jobSeniority"
-                    name="seniority-level-2"
+                    value="seniority-level-2"
                     label="Entry level"
                     shape="rounded"
                     :classes="{ wrapper: 'text-primary-500' }"
@@ -421,7 +428,7 @@ const jobs = [
                 <div class="flex items-center justify-between">
                   <BaseCheckbox
                     v-model="jobSeniority"
-                    name="seniority-level-3"
+                    value="seniority-level-3"
                     label="Mid level"
                     shape="rounded"
                     :classes="{ wrapper: 'text-primary-500' }"
@@ -438,7 +445,7 @@ const jobs = [
                 <div class="flex items-center justify-between">
                   <BaseCheckbox
                     v-model="jobSeniority"
-                    name="seniority-level-4"
+                    value="seniority-level-4"
                     label="Senior level"
                     shape="rounded"
                     :classes="{ wrapper: 'text-primary-500' }"
@@ -455,7 +462,7 @@ const jobs = [
                 <div class="flex items-center justify-between">
                   <BaseCheckbox
                     v-model="jobSeniority"
-                    name="seniority-level-5"
+                    value="seniority-level-5"
                     label="Director level"
                     shape="rounded"
                     :classes="{ wrapper: 'text-primary-500' }"
@@ -490,7 +497,7 @@ const jobs = [
                 <div class="flex items-center justify-between">
                   <BaseCheckbox
                     v-model="jobSeniority"
-                    name="salary-range-1"
+                    value="salary-range-1"
                     label="10k ~ 20k"
                     shape="rounded"
                     :classes="{ wrapper: 'text-primary-500' }"
@@ -507,7 +514,7 @@ const jobs = [
                 <div class="flex items-center justify-between">
                   <BaseCheckbox
                     v-model="jobSeniority"
-                    name="salary-range-2"
+                    value="salary-range-2"
                     label="20k ~ 40k"
                     shape="rounded"
                     :classes="{ wrapper: 'text-primary-500' }"
@@ -524,7 +531,7 @@ const jobs = [
                 <div class="flex items-center justify-between">
                   <BaseCheckbox
                     v-model="jobSeniority"
-                    name="salary-range-3"
+                    value="salary-range-3"
                     label="40k ~ 75k"
                     shape="rounded"
                     :classes="{ wrapper: 'text-primary-500' }"
@@ -541,7 +548,7 @@ const jobs = [
                 <div class="flex items-center justify-between">
                   <BaseCheckbox
                     v-model="jobSeniority"
-                    name="salary-range-4"
+                    value="salary-range-4"
                     label="75k+"
                     shape="rounded"
                     :classes="{ wrapper: 'text-primary-500' }"
