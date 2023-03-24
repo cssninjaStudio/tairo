@@ -32,6 +32,20 @@ const { data, pending, error, refresh } = await useFetch(
     query,
   },
 )
+
+const selected = ref<number[]>([])
+
+const isAllVisibleSelected = computed(() => {
+  return selected.value.length === data.value?.data.length
+})
+
+function toggleAllVisibleSelection() {
+  if (isAllVisibleSelected.value) {
+    selected.value = []
+  } else {
+    selected.value = data.value?.data.map((item) => item.id) ?? []
+  }
+}
 </script>
 
 <template>
@@ -89,9 +103,14 @@ const { data, pending, error, refresh } = await useFetch(
                 <TairoTableHeading uppercase spaced class="p-4">
                   <div class="flex items-center">
                     <BaseCheckbox
+                      :model-value="isAllVisibleSelected"
+                      :indeterminate="
+                        selected.length > 0 && !isAllVisibleSelected
+                      "
                       name="table-1-main"
                       shape="full"
                       class="text-primary-500"
+                      @click="toggleAllVisibleSelection"
                     />
                   </div>
                 </TairoTableHeading>
@@ -105,10 +124,27 @@ const { data, pending, error, refresh } = await useFetch(
                 <TairoTableHeading uppercase spaced>Action</TairoTableHeading>
               </template>
 
+              <TairoTableRow v-if="selected.length > 0" :hoverable="false">
+                <TairoTableCell
+                  colspan="6"
+                  class="p-4 bg-success-100 text-success-700 dark:bg-success-700 dark:text-success-100"
+                >
+                  You have selected {{ selected.length }} items of the total
+                  {{ data?.total }} items.
+                  <a
+                    href="#"
+                    class="hover:underline focus:underline outline-none"
+                    >Click here to everything</a
+                  >
+                </TairoTableCell>
+              </TairoTableRow>
+
               <TairoTableRow v-for="item in data?.data" :key="item.id">
                 <TairoTableCell spaced>
                   <div class="flex items-center">
                     <BaseCheckbox
+                      v-model="selected"
+                      :value="item.id"
                       :name="`item-checkbox-${item.id}`"
                       shape="full"
                       class="text-primary-500"
