@@ -58,17 +58,11 @@ jobs:
       - name: Set up dockertags
         run: |
           echo "dockertags=digisquad/cssninja.tairo-demo:latest" >> $GITHUB_ENV
-      - name: Prepare .env file
-        shell: bash
-        run: |
-          echo "PUBLIC_HOST=\"${{ secrets.PUBLIC_HOST }}\"" >> .github/env/.env
-          echo "NUXT_PUBLIC_SITE_URL=\"${{ secrets.NUXT_PUBLIC_SITE_URL }}\"" >> .github/env/.env
-          echo "NUXT_PUBLIC_MAPBOX_TOKEN=\"${{ secrets.MAPBOX_ACCESS_TOKEN }}\"" >> .github/env/.env
 
       - run: corepack enable
       - run: pnpm install --frozen-lockfile
       # - run: echo '{"extends":"./.demo/.nuxt/tsconfig.json"}' > tsconfig.json
-      - run: NUXT_INDEXABLE=false ENABLE_DOCUMENTATION=true NODE_OPTIONS=--max-old-space-size=4096 pnpm demo:build
+      - run: NUXT_PUBLIC_MAPBOX_TOKEN=${{ secrets.MAPBOX_ACCESS_TOKEN }} NUXT_INDEXABLE=false ENABLE_DOCUMENTATION=true NODE_OPTIONS=--max-old-space-size=4096 pnpm demo:build
       - run: cp .github/env/Dockerfile .demo/Dockerfile
 
       - name: Set up QEMU
@@ -106,6 +100,13 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script_stop: true
           script: mkdir -p ${{ secrets.HOST_DIRECTORY }}
+
+      - name: Prepare .env file
+        shell: bash
+        run: |
+          echo "PUBLIC_HOST=\"${{ secrets.PUBLIC_HOST }}\"" >> .github/env/.env
+          echo "NUXT_PUBLIC_SITE_URL=\"${{ secrets.NUXT_PUBLIC_SITE_URL }}\"" >> .github/env/.env
+          echo "NUXT_PUBLIC_MAPBOX_TOKEN=\"${{ secrets.MAPBOX_ACCESS_TOKEN }}\"" >> .github/env/.env
 
       - name: Publish
         uses: appleboy/scp-action@master
