@@ -66,6 +66,15 @@ const zodSchema = z
     }),
   })
   .superRefine((data, ctx) => {
+    // This is a custom validation function that will be called
+    // before the form is submitted
+    if (!data.info.experience) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: VALIDATION_TEXT.OPTION_REQUIRED,
+        path: ['info.experience'],
+      })
+    }
     if (!data.info.firstJob) {
       ctx.addIssue({
         code: z.ZodIssueCode.custom,
@@ -201,7 +210,7 @@ const onSubmit = handleSubmit(
     } catch (error: any) {
       // this will set the error on the form
       if (error.message === 'Fake backend validation error') {
-        // @ts-expect-error - vee validate typing bug
+        // @ts-expect-error - vee validate typing bug with nested keys
         setFieldError('profile.firstName', 'This first name is not allowed')
 
         document.documentElement.scrollTo({
@@ -245,7 +254,7 @@ const onSubmit = handleSubmit(
 </script>
 
 <template>
-  <form class="w-full pb-16" @submit.prevent="onSubmit">
+  <form method="POST" action="" class="w-full pb-16" @submit.prevent="onSubmit">
     <BaseCard>
       <div class="flex items-center justify-between p-4">
         <div>
@@ -370,11 +379,7 @@ const onSubmit = handleSubmit(
                     type="text"
                     icon="ph:user-duotone"
                     placeholder="First name"
-                    @update:model-value="
-                      (value) => {
-                        handleChange(value)
-                      }
-                    "
+                    @update:model-value="handleChange"
                     @blur="handleBlur"
                   />
                 </Field>
@@ -391,11 +396,7 @@ const onSubmit = handleSubmit(
                     type="text"
                     icon="ph:user-duotone"
                     placeholder="Last name"
-                    @update:model-value="
-                      (value) => {
-                        handleChange(value)
-                      }
-                    "
+                    @update:model-value="handleChange"
                     @blur="handleBlur"
                   />
                 </Field>
@@ -412,11 +413,7 @@ const onSubmit = handleSubmit(
                     type="text"
                     icon="ph:suitcase-duotone"
                     placeholder="Job title"
-                    @update:model-value="
-                      (value) => {
-                        handleChange(value)
-                      }
-                    "
+                    @update:model-value="handleChange"
                     @blur="handleBlur"
                   />
                 </Field>
@@ -433,11 +430,7 @@ const onSubmit = handleSubmit(
                     type="text"
                     icon="ph:map-pin-duotone"
                     placeholder="Location"
-                    @update:model-value="
-                      (value) => {
-                        handleChange(value)
-                      }
-                    "
+                    @update:model-value="handleChange"
                     @blur="handleBlur"
                   />
                 </Field>
@@ -453,11 +446,7 @@ const onSubmit = handleSubmit(
                     :disabled="isSubmitting"
                     rows="4"
                     placeholder="About you / Short bio..."
-                    @update:model-value="
-                      (value) => {
-                        handleChange(value)
-                      }
-                    "
+                    @update:model-value="handleChange"
                     @blur="handleBlur"
                   />
                 </Field>
@@ -482,11 +471,7 @@ const onSubmit = handleSubmit(
                     :items="experience"
                     placeholder="Experience"
                     shape="rounded"
-                    @update:model-value="
-                      (value) => {
-                        handleChange(value)
-                      }
-                    "
+                    @update:model-value="handleChange"
                     @blur="handleBlur"
                   />
                 </Field>
@@ -504,11 +489,7 @@ const onSubmit = handleSubmit(
                     :properties="{ label: 'label', value: 'value' }"
                     placeholder="Is this your first job?"
                     shape="rounded"
-                    @update:model-value="
-                      (value) => {
-                        handleChange(value)
-                      }
-                    "
+                    @update:model-value="handleChange"
                     @blur="handleBlur"
                   />
                 </Field>
@@ -526,11 +507,7 @@ const onSubmit = handleSubmit(
                     :properties="{ label: 'label', value: 'value' }"
                     placeholder="Are you flexible?"
                     shape="rounded"
-                    @update:model-value="
-                      (value) => {
-                        handleChange(value)
-                      }
-                    "
+                    @update:model-value="handleChange"
                     @blur="handleBlur"
                   />
                 </Field>
@@ -548,11 +525,7 @@ const onSubmit = handleSubmit(
                     :properties="{ label: 'label', value: 'value' }"
                     placeholder="Do you work remotely?"
                     shape="rounded"
-                    @update:model-value="
-                      (value) => {
-                        handleChange(value)
-                      }
-                    "
+                    @update:model-value="handleChange"
                     @blur="handleBlur"
                   />
                 </Field>
@@ -577,11 +550,7 @@ const onSubmit = handleSubmit(
                     type="text"
                     icon="fa6-brands:facebook-f"
                     placeholder="Facebook URL"
-                    @update:model-value="
-                      (value) => {
-                        handleChange(value)
-                      }
-                    "
+                    @update:model-value="handleChange"
                     @blur="handleBlur"
                   />
                 </Field>
@@ -598,11 +567,7 @@ const onSubmit = handleSubmit(
                     type="text"
                     icon="fa6-brands:twitter"
                     placeholder="Twitter URL"
-                    @update:model-value="
-                      (value) => {
-                        handleChange(value)
-                      }
-                    "
+                    @update:model-value="handleChange"
                     @blur="handleBlur"
                   />
                 </Field>
@@ -619,11 +584,7 @@ const onSubmit = handleSubmit(
                     type="text"
                     icon="fa6-brands:dribbble"
                     placeholder="Dribbble URL"
-                    @update:model-value="
-                      (value) => {
-                        handleChange(value)
-                      }
-                    "
+                    @update:model-value="handleChange"
                     @blur="handleBlur"
                   />
                 </Field>
@@ -640,11 +601,7 @@ const onSubmit = handleSubmit(
                     type="text"
                     icon="fa6-brands:instagram"
                     placeholder="Instagram URL"
-                    @update:model-value="
-                      (value) => {
-                        handleChange(value)
-                      }
-                    "
+                    @update:model-value="handleChange"
                     @blur="handleBlur"
                   />
                 </Field>
@@ -661,11 +618,7 @@ const onSubmit = handleSubmit(
                     type="text"
                     icon="fa6-brands:github"
                     placeholder="Github URL"
-                    @update:model-value="
-                      (value) => {
-                        handleChange(value)
-                      }
-                    "
+                    @update:model-value="handleChange"
                     @blur="handleBlur"
                   />
                 </Field>
@@ -682,11 +635,7 @@ const onSubmit = handleSubmit(
                     type="text"
                     icon="fa6-brands:gitlab"
                     placeholder="Gitlab URL"
-                    @update:model-value="
-                      (value) => {
-                        handleChange(value)
-                      }
-                    "
+                    @update:model-value="handleChange"
                     @blur="handleBlur"
                   />
                 </Field>
@@ -696,6 +645,6 @@ const onSubmit = handleSubmit(
         </div>
       </div>
     </BaseCard>
-    <TairoFormSave :disabled="isSubmitting" :loading="isSubmitting" />
+    <TairoFormSave :disabled="isSubmitting" :loading="isSubmitting" @reset="resetForm" />
   </form>
 </template>

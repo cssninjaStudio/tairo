@@ -5,6 +5,7 @@ const props = defineProps<{
     name: string
     icon: string
     to: string
+    exact?: boolean
   }[]
 }>()
 
@@ -13,7 +14,13 @@ const route = useRoute()
 const buttonRef = ref<HTMLElement>()
 
 const hasActiveChild = computed(() => {
-  return props.children.some((item) => route.path === item.to)
+  return props.children.some((item) => {
+    if (item.exact === true) {
+      return route.path === item.to
+    }
+
+    return route.path.startsWith(item.to)
+  })
 })
 
 watchEffect(() => {
@@ -69,7 +76,8 @@ function onClick(event: MouseEvent) {
         <li v-for="link of props.children" class="flex h-8 items-center w-full">
           <NuxtLink
             :to="link.to"
-            exact-active-class="text-primary-500"
+            :active-class="!link.exact ? 'text-primary-500' : ''"
+            :exact-active-class="link.exact ? 'text-primary-500' : ''"
             class="flex pl-3 w-full nui-focus items-center text-muted-400 transition-colors duration-300 hover:text-primary-500 focus:text-primary-500"
           >
             <Icon :name="link.icon" class="mr-2 h-5 w-5" />

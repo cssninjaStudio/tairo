@@ -7,6 +7,7 @@ const navigation = [
         name: 'List view V1',
         icon: 'ph:list-bullets',
         to: '/layouts',
+        exact: true,
       },
       {
         name: 'List view V2',
@@ -200,6 +201,7 @@ const navigation = [
         name: 'Projects V1',
         icon: 'ph:leaf-duotone',
         to: '/layouts/projects',
+        exact: true,
       },
       {
         name: 'Projects V2',
@@ -230,6 +232,7 @@ const navigation = [
         name: 'Login',
         icon: 'ph:lock-duotone',
         to: '/auth',
+        exact: true,
       },
       {
         name: 'Login V1',

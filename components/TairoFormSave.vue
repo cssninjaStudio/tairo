@@ -1,4 +1,7 @@
 <script setup lang="ts">
+const emits = defineEmits<{
+  (event: 'reset'): void
+}>()
 const props = withDefaults(
   defineProps<{
     shape?: 'straight' | 'rounded' | 'curved' | 'full'
@@ -33,13 +36,13 @@ const { x, y } = useWindowScroll()
         >
           <slot>
             <BaseButton
-              type="button"
+              type="reset"
               :shape="props.shape"
               class="w-full"
               :disabled="props.disabled"
-              @click="$router.back()"
+              @click.prevent="() => emits('reset')"
             >
-              <span>Cancel</span>
+              <span>Reset</span>
             </BaseButton>
             <BaseButton
               type="submit"

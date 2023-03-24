@@ -80,6 +80,7 @@ importers:
       compressorjs: 1.2.1
       cropperjs: 1.5.13
       date-fns: 2.29.3
+      imask: ^6.4.3
       mapbox-gl: 2.13.0
       nuxt: 3.3.1
       nuxt-component-meta: 0.5.1
@@ -111,6 +112,7 @@ importers:
       compressorjs: 1.2.1
       cropperjs: 1.5.13
       date-fns: 2.29.3
+      imask: 6.4.3
       mapbox-gl: 2.13.0
       nuxt: 3.3.1
       nuxt-component-meta: 0.5.1
@@ -5733,6 +5735,11 @@ packages:
     resolution: {integrity: sha512-+oXiHwOEPr1IE5zY0tcBLED/CYcre15J4nwL50x3o0jxWqEkyjrusiKP3YSU+tr9fvJp33ZcP5Gpj2295g3aEw==}
     engines: {node: '>=10.18.0'}
     dev: false
+
+  /imask/6.4.3:
+    resolution: {integrity: sha512-aH2GHemGkr3cbRBfhogHMIx05eUxdHrZNlKTTLmz8VxpSopuHHJ8+85FsDlBVQqxPlDLhZuwj4lpHHWbLOdBSw==}
+    engines: {npm: '>=4.0.0'}
+    dev: true
 
   /import-fresh/3.3.0:
     resolution: {integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==}
