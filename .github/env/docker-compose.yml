@@ -12,6 +12,7 @@ services:
       - cssninja-services
     environment:
       - NUXT_PUBLIC_SITE_URL=${NUXT_PUBLIC_SITE_URL}
+      - NUXT_PUBLIC_MAPBOX_TOKEN=${NUXT_PUBLIC_MAPBOX_TOKEN}
     labels:
       traefik.enable: true
       traefik.docker.network: 'cssninja-services'

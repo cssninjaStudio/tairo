@@ -29,6 +29,8 @@ export default defineNuxtConfig({
   ],
   runtimeConfig: {
     public: {
+      // mapbox config
+      mapboxToken: process.env.NUXT_PUBLIC_MAPBOX_TOKEN,
       // nuxt-seo-kit config
       siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://example.com',
       siteName: 'Tairo',
