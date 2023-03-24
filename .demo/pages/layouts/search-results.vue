@@ -7,6 +7,25 @@ const { data, pending, error, refresh } = await useFetch('/api/search')
 
 const searchTerms = ref('internal projects')
 const results = ref()
+const filters = reactive({
+  publication: {
+    new: false,
+    updated: false,
+    upvoted: false,
+  },
+  topics: {
+    engineering: false,
+    software: false,
+    business: false,
+    management: false,
+    hr: false,
+  },
+  type: {
+    members: false,
+    projects: false,
+    files: false,
+  },
+})
 
 if (data.value) {
   results.value = data.value
@@ -72,7 +91,7 @@ const filteredResults = computed(() => {
             <ul class="space-y-4">
               <li class="flex items-center justify-between">
                 <BaseCheckbox
-                  id="publication-new"
+                  v-model="filters.publication.new"
                   color="primary"
                   shape="full"
                   label="Newly added"
@@ -84,7 +103,7 @@ const filteredResults = computed(() => {
               </li>
               <li class="flex items-center justify-between">
                 <BaseCheckbox
-                  id="publication-updated"
+                  v-model="filters.publication.updated"
                   color="primary"
                   shape="full"
                   label="Recently updated"
@@ -96,7 +115,7 @@ const filteredResults = computed(() => {
               </li>
               <li class="flex items-center justify-between">
                 <BaseCheckbox
-                  id="publication-upvoted"
+                  v-model="filters.publication.upvoted"
                   color="primary"
                   shape="full"
                   label="Upvoted"
@@ -115,7 +134,7 @@ const filteredResults = computed(() => {
             <ul class="space-y-4">
               <li class="flex items-center justify-between">
                 <BaseCheckbox
-                  id="topic-engineering"
+                  v-model="filters.topics.engineering"
                   color="primary"
                   shape="full"
                   label="Engineering"
@@ -127,7 +146,7 @@ const filteredResults = computed(() => {
               </li>
               <li class="flex items-center justify-between">
                 <BaseCheckbox
-                  id="topic-software"
+                  v-model="filters.topics.software"
                   color="primary"
                   shape="full"
                   label="Software"
@@ -139,7 +158,7 @@ const filteredResults = computed(() => {
               </li>
               <li class="flex items-center justify-between">
                 <BaseCheckbox
-                  id="topic-business"
+                  v-model="filters.topics.business"
                   color="primary"
                   shape="full"
                   label="Business"
@@ -151,7 +170,7 @@ const filteredResults = computed(() => {
               </li>
               <li class="flex items-center justify-between">
                 <BaseCheckbox
-                  id="topic-management"
+                  v-model="filters.topics.management"
                   color="primary"
                   shape="full"
                   label="Management"
@@ -163,7 +182,7 @@ const filteredResults = computed(() => {
               </li>
               <li class="flex items-center justify-between">
                 <BaseCheckbox
-                  id="topic-hr"
+                  v-model="filters.topics.hr"
                   color="primary"
                   shape="full"
                   label="Human Resources"
@@ -182,7 +201,7 @@ const filteredResults = computed(() => {
             <ul class="space-y-4">
               <li class="flex items-center justify-between">
                 <BaseCheckbox
-                  id="type-profile"
+                  v-model="filters.type.members"
                   color="primary"
                   shape="full"
                   label="Members"
@@ -194,7 +213,7 @@ const filteredResults = computed(() => {
               </li>
               <li class="flex items-center justify-between">
                 <BaseCheckbox
-                  id="type-project"
+                  v-model="filters.type.projects"
                   color="primary"
                   shape="full"
                   label="Projects"
@@ -206,7 +225,7 @@ const filteredResults = computed(() => {
               </li>
               <li class="flex items-center justify-between">
                 <BaseCheckbox
-                  id="type-files"
+                  v-model="filters.type.files"
                   color="primary"
                   shape="full"
                   label="Files"
