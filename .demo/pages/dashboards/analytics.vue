@@ -557,7 +557,7 @@ function useBarSalesProfit() {
           <DemoVcardRight />
         </BaseCard>
         <!-- Calendar -->
-        <BaseCard>
+        <BaseCard class="p-2">
           <Calendar
             :attributes="[
               {
@@ -566,6 +566,7 @@ function useBarSalesProfit() {
                 dates: new Date(),
               },
             ]"
+            title-position="left"
             expanded
             borderless
             transparent

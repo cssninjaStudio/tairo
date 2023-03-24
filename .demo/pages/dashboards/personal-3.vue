@@ -281,7 +281,7 @@ const candidates = [
     </div>
     <!--Grid item-->
     <div>
-      <BaseCard>
+      <BaseCard class="p-4" shape="curved">
         <Calendar
           :attributes="[
             {
@@ -290,6 +290,7 @@ const candidates = [
               dates: new Date(),
             },
           ]"
+          title-position="left"
           expanded
           borderless
           transparent

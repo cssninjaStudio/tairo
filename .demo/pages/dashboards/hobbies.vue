@@ -296,9 +296,10 @@ const popular = [
                 class="flex items-center gap-3 p-3"
               >
                 <div
-                  class="shrink-0 h-10 w-10 flex items-center justify-center rounded-full bg-primary-500/20"
+                  class="shrink-0 h-10 w-10 flex items-center justify-center rounded-full"
+                  :class="getRandomColor()"
                 >
-                  <Icon :name="item.icon" class="w-5 h-5 text-primary-500" />
+                  <Icon :name="item.icon" class="w-5 h-5" />
                 </div>
                 <div>
                   <BaseHeading
@@ -352,9 +353,10 @@ const popular = [
                 class="flex items-center gap-3 p-3"
               >
                 <div
-                  class="shrink-0 h-10 w-10 flex items-center justify-center rounded-full bg-primary-500/20"
+                  class="shrink-0 h-10 w-10 flex items-center justify-center rounded-full"
+                  :class="getRandomColor()"
                 >
-                  <Icon :name="item.icon" class="w-5 h-5 text-primary-500" />
+                  <Icon :name="item.icon" class="w-5 h-5" />
                 </div>
                 <div>
                   <BaseHeading
@@ -392,7 +394,7 @@ const popular = [
             </div>
           </BaseCard>
           <!-- Widget -->
-          <BaseCard>
+          <BaseCard shape="curved" class="p-4">
             <Calendar
               :attributes="[
                 {
@@ -401,6 +403,7 @@ const popular = [
                   dates: new Date(),
                 },
               ]"
+              title-position="left"
               expanded
               borderless
               transparent

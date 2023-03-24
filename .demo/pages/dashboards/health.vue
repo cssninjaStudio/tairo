@@ -784,7 +784,7 @@ function useGaugePersonal() {
                 </div>
               </BaseCard>
               <!-- Widget -->
-              <BaseCard>
+              <BaseCard shape="curved" class="p-2">
                 <Calendar
                   :attributes="[
                     {
@@ -793,6 +793,7 @@ function useGaugePersonal() {
                       dates: new Date(),
                     },
                   ]"
+                  title-position="left"
                   expanded
                   borderless
                   transparent

@@ -1232,7 +1232,7 @@ function useBarOrders() {
         class="relative col-span-12 md:col-span-6 ltablet:col-span-4 lg:col-span-3"
       >
         <!-- Calendar -->
-        <BaseCard>
+        <BaseCard class="p-2">
           <Calendar
             :attributes="[
               {
@@ -1241,6 +1241,7 @@ function useBarOrders() {
                 dates: new Date(),
               },
             ]"
+            title-position="left"
             expanded
             borderless
             transparent

@@ -434,7 +434,7 @@ const team = [
         </div>
         <!-- Widget -->
         <div class="col-span-12 sm:col-span-3 ptablet:hidden">
-          <BaseCard class="h-full flex flex-col">
+          <BaseCard class="h-full flex flex-col p-2">
             <Calendar
               :attributes="[
                 {
@@ -443,6 +443,7 @@ const team = [
                   dates: new Date(),
                 },
               ]"
+              title-position="left"
               expanded
               borderless
               transparent
