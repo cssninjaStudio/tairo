@@ -1,6 +1,80 @@
 <script setup lang="ts">
+import { useForm, Field } from 'vee-validate'
+import { toFormValidator } from '@vee-validate/zod'
+import { z } from 'zod'
+
 definePageMeta({
+  layout: 'empty',
   title: 'Login',
+})
+
+const VALIDATION_TEXT = {
+  EMAIL_REQUIRED: 'A valid email is required',
+  PASSWORD_REQUIRED: 'A password is required',
+}
+
+// This is the Zod schema for the form input
+// It's used to define the shape that the form data will have
+const zodSchema = z.object({
+  email: z.string().email(VALIDATION_TEXT.EMAIL_REQUIRED),
+  password: z.string().min(1, VALIDATION_TEXT.PASSWORD_REQUIRED),
+  trustDevice: z.boolean(),
+})
+
+// Zod has a great infer method that will
+// infer the shape of the schema into a TypeScript type
+type FormInput = z.infer<typeof zodSchema>
+
+const validationSchema = toFormValidator(zodSchema)
+const initialValues = computed<FormInput>(() => ({
+  email: '',
+  password: '',
+  trustDevice: false,
+}))
+
+const {
+  handleSubmit,
+  isSubmitting,
+  setFieldError,
+  meta,
+  values,
+  errors,
+  resetForm,
+  setFieldValue,
+  setErrors,
+} = useForm({
+  validationSchema,
+  initialValues,
+})
+
+const router = useRouter()
+
+// This is where you would send the form data to the server
+const onSubmit = handleSubmit(async (values) => {
+  // here you have access to the validated form values
+  console.log('auth-success', values)
+
+  try {
+    // fake delay, this will make isSubmitting value to be true
+    await new Promise((resolve, reject) => {
+      if (values.password !== 'password') {
+        // simulate a backend error
+        setTimeout(
+          () => reject(new Error('Fake backend validation error')),
+          2000,
+        )
+      }
+      setTimeout(resolve, 4000)
+    })
+  } catch (error: any) {
+    // this will set the error on the form
+    if (error.message === 'Fake backend validation error') {
+      setFieldError('password', 'Invalid credentials (use "password")')
+    }
+    return
+  }
+
+  router.push('/dashboards')
 })
 </script>
 
@@ -76,39 +150,72 @@ definePageMeta({
         </div>
 
         <!--Form section-->
-        <div class="mt-6">
+        <form
+          method="POST"
+          action=""
+          @submit.prevent="onSubmit"
+          class="mt-6"
+          novalidate
+        >
           <div class="mt-5">
-            <!--Form-->
-            <form action="#" method="POST">
+            <div>
               <div class="space-y-4">
-                <BaseInput
-                  id="email"
-                  type="text"
-                  label="Email address"
-                  placeholder="Email address"
-                  :classes="{
-                    input: 'h-12',
-                  }"
-                />
+                <Field
+                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                  name="email"
+                >
+                  <BaseInput
+                    :model-value="field.value"
+                    :error="errorMessage"
+                    :disabled="isSubmitting"
+                    type="email"
+                    label="Email address"
+                    placeholder="Email address"
+                    autocomplete="email"
+                    :classes="{
+                      input: 'h-12',
+                    }"
+                    @update:model-value="handleChange"
+                    @blur="handleBlur"
+                  />
+                </Field>
 
-                <BaseInput
-                  id="email"
-                  type="password"
-                  label="Password"
-                  placeholder="Password"
-                  :classes="{
-                    input: 'h-12',
-                  }"
-                />
+                <Field
+                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                  name="password"
+                >
+                  <BaseInput
+                    :model-value="field.value"
+                    :error="errorMessage"
+                    :disabled="isSubmitting"
+                    type="password"
+                    label="Password"
+                    placeholder="Password"
+                    autocomplete="current-password"
+                    :classes="{
+                      input: 'h-12',
+                    }"
+                    @update:model-value="handleChange"
+                    @blur="handleBlur"
+                  />
+                </Field>
               </div>
 
-              <!--Remember-->
               <div class="mt-6 flex items-center justify-between">
-                <BaseCheckbox
-                  shape="rounded"
-                  label="Remember me"
-                  color="primary"
-                />
+                <Field
+                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                  name="trustDevice"
+                >
+                  <BaseCheckbox
+                    :model-value="field.value"
+                    :disabled="isSubmitting"
+                    shape="rounded"
+                    label="Trust this device for 60 days"
+                    color="primary"
+                    @update:model-value="handleChange"
+                    @blur="handleBlur"
+                  />
+                </Field>
 
                 <div class="text-xs leading-5">
                   <NuxtLink
@@ -124,6 +231,8 @@ definePageMeta({
               <div class="mt-6">
                 <div class="block w-full rounded-md shadow-sm">
                   <BaseButton
+                    :disabled="isSubmitting"
+                    :loading="isSubmitting"
                     type="submit"
                     color="primary"
                     class="w-full !h-11"
@@ -132,7 +241,7 @@ definePageMeta({
                   </BaseButton>
                 </div>
               </div>
-            </form>
+            </div>
 
             <!--No account link-->
             <p
@@ -147,7 +256,7 @@ definePageMeta({
               </NuxtLink>
             </p>
           </div>
-        </div>
+        </form>
       </div>
     </div>
     <div

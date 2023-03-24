@@ -1,6 +1,53 @@
 <script setup lang="ts">
+import { useForm, Field } from 'vee-validate'
+import { toFormValidator } from '@vee-validate/zod'
+import { z } from 'zod'
+
 definePageMeta({
+  layout: 'empty',
   title: 'Recover Password',
+})
+
+const VALIDATION_TEXT = {
+  EMAIL_REQUIRED: 'A valid email is required',
+}
+
+// This is the Zod schema for the form input
+// It's used to define the shape that the form data will have
+const zodSchema = z.object({
+  email: z.string().email(VALIDATION_TEXT.EMAIL_REQUIRED),
+})
+
+// Zod has a great infer method that will
+// infer the shape of the schema into a TypeScript type
+type FormInput = z.infer<typeof zodSchema>
+
+const validationSchema = toFormValidator(zodSchema)
+const initialValues = computed<FormInput>(() => ({
+  email: '',
+}))
+
+const { handleSubmit, isSubmitting } = useForm({
+  validationSchema,
+  initialValues,
+})
+
+const success = ref(false)
+
+// This is where you would send the form data to the server
+const onSubmit = handleSubmit(async (values) => {
+  // here you have access to the validated form values
+  console.log('recover-success', values)
+
+  try {
+    // fake delay, this will make isSubmitting value to be true
+    await new Promise((resolve) => setTimeout(resolve, 4000))
+  } catch {
+    // discard errors
+  }
+
+  // always display success message
+  success.value = true
 })
 </script>
 
@@ -25,7 +72,7 @@ definePageMeta({
       <div class="relative w-full max-w-2xl mx-auto">
         <!--Form-->
         <div class="mr-auto ml-auto w-full mt-4">
-          <form class="w-full max-w-md mr-auto ml-auto mt-4">
+          <div class="w-full max-w-md mr-auto ml-auto mt-4">
             <div class="text-center">
               <BaseHeading as="h2" size="3xl" weight="medium">
                 Recover Password
@@ -34,46 +81,87 @@ definePageMeta({
                 Follow the instuctions sent to your email address
               </BaseParagraph>
             </div>
-            <div class="px-8 py-4">
-              <div class="space-y-4 mb-4">
-                <BaseInput
-                  id="email"
-                  type="text"
-                  label="Email address"
-                  placeholder="Email address"
-                  :classes="{
-                    input: 'h-12',
-                  }"
-                />
-              </div>
-              <div class="mb-6">
-                <div class="mt-6 flex items-center justify-between">
-                  <BaseCheckbox
-                    shape="rounded"
-                    label="I am the owner of this account"
-                    color="primary"
-                  />
+            <Transition
+              mode="out-in"
+              enter-active-class="transition-all duration-300 ease-out"
+              enter-from-class="scale-0 opacity-0"
+              enter-to-class="scale-100 opacity-100"
+              leave-active-class="transition-all duration-75 ease-in"
+              leave-from-class="scale-100 opacity-100"
+              leave-to-class="scale-0 opacity-0"
+            >
+              <div v-if="success" class="px-8 py-4">
+                <div class="space-y-4 mb-4">
+                  <BaseMessage class="p-6" :closable="false">
+                    <p class="text-base">
+                      An email has been sent to you with instructions on how to
+                      reset your password.
+                    </p>
+
+                    <small class="block pt-2">
+                      If you don't receive an email, please check your spam
+                      folder. If you still don't receive an email, that means
+                      you don't have an account
+                    </small>
+                  </BaseMessage>
                 </div>
               </div>
-              <div class="mb-6">
-                <BaseButton type="submit" color="primary" class="w-full !h-12">
-                  Recover Password
-                </BaseButton>
-              </div>
-              <!--No account link-->
-              <p
-                class="flex justify-between mt-4 font-sans text-sm leading-5 text-muted-400"
+              <form
+                v-else
+                method="POST"
+                action=""
+                @submit.prevent="onSubmit"
+                class="px-8 py-4"
+                novalidate
               >
-                <span>False alert?</span>
-                <NuxtLink
-                  to="/auth/login-1"
-                  class="font-medium text-primary-600 hover:text-primary-500 underline-offset-4 hover:underline transition ease-in-out duration-150"
+                <div class="space-y-4 mb-4">
+                  <Field
+                    v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                    name="email"
+                  >
+                    <BaseInput
+                      :model-value="field.value"
+                      :error="errorMessage"
+                      :disabled="isSubmitting"
+                      type="email"
+                      label="Email address"
+                      placeholder="Email address"
+                      autocomplete="email"
+                      :classes="{
+                        input: 'h-12',
+                      }"
+                      @update:model-value="handleChange"
+                      @blur="handleBlur"
+                    />
+                  </Field>
+                </div>
+
+                <div class="mb-6">
+                  <BaseButton
+                    :disabled="isSubmitting"
+                    :loading="isSubmitting"
+                    type="submit"
+                    color="primary"
+                    class="w-full !h-12"
+                  >
+                    Recover Password
+                  </BaseButton>
+                </div>
+                <!--No account link-->
+                <p
+                  class="flex justify-between mt-4 font-sans text-sm leading-5 text-muted-400"
                 >
-                  Sign in
-                </NuxtLink>
-              </p>
-            </div>
-          </form>
+                  <span>False alert?</span>
+                  <NuxtLink
+                    to="/auth/login-1"
+                    class="font-medium text-primary-600 hover:text-primary-500 underline-offset-4 hover:underline transition ease-in-out duration-150"
+                  >
+                    Sign in
+                  </NuxtLink>
+                </p>
+              </form>
+            </Transition>
+          </div>
         </div>
       </div>
     </div>

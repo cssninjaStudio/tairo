@@ -7,6 +7,7 @@ definePageMeta({
 const { open } = usePanels()
 const app = useAppConfig()
 const panels = reactive(usePanels())
+const search = ref('')
 
 const messages = [
   {
@@ -261,7 +262,12 @@ const panelActive = ref(false)
     >
       <!-- Head (search) -->
       <div class="h-16 w-full px-4 sm:px-8">
-        <BaseInput shape="curved" icon="lucide:search" placeholder="Search" />
+        <BaseInput
+          v-model.trim="search"
+          shape="curved"
+          icon="lucide:search"
+          placeholder="Search"
+        />
       </div>
 
       <ul

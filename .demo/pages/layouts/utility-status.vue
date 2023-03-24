@@ -396,7 +396,7 @@ definePageMeta({
             >
           </div>
           <span class="font-sans text-sm text-muted-400"
-            >&copy; 2018-2023 @cssninjaStudio</span
+            >&copy; 2018-{{ new Date().getFullYear() }} @cssninjaStudio</span
           >
         </div>
       </div>

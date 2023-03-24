@@ -1,6 +1,90 @@
 <script setup lang="ts">
+import { useForm, Field } from 'vee-validate'
+import { toFormValidator } from '@vee-validate/zod'
+import { z } from 'zod'
+
 definePageMeta({
+  layout: 'empty',
   title: 'Signup',
+})
+
+const VALIDATION_TEXT = {
+  EMAIL_REQUIRED: 'A valid email is required',
+  PASSWORD_LENGTH: 'Password must be at least 8 characters',
+  PASSWORD_CONTAINS_EMAIL: 'Password cannot contain your email',
+  PASSWORD_MATCH: 'Passwords do not match',
+  TERMS_REQUIRED: 'You must agree to the terms and conditions',
+}
+
+// This is the Zod schema for the form input
+// It's used to define the shape that the form data will have
+const zodSchema = z
+  .object({
+    email: z.string().email(VALIDATION_TEXT.EMAIL_REQUIRED),
+    password: z.string().min(8, VALIDATION_TEXT.PASSWORD_LENGTH),
+    confirmPassword: z.string(),
+    terms: z.boolean(),
+  })
+  .superRefine((data, ctx) => {
+    // This is a custom validation function that will be called
+    // before the form is submitted
+    if (data.password.includes(data.email)) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: VALIDATION_TEXT.PASSWORD_CONTAINS_EMAIL,
+        path: ['password'],
+      })
+    }
+    if (data.password !== data.confirmPassword) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: VALIDATION_TEXT.PASSWORD_MATCH,
+        path: ['confirmPassword'],
+      })
+    }
+    if (!data.terms) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: VALIDATION_TEXT.TERMS_REQUIRED,
+        path: ['terms'],
+      })
+    }
+  })
+
+// Zod has a great infer method that will
+// infer the shape of the schema into a TypeScript type
+type FormInput = z.infer<typeof zodSchema>
+
+const validationSchema = toFormValidator(zodSchema)
+const initialValues = computed<FormInput>(() => ({
+  email: '',
+  password: '',
+  confirmPassword: '',
+  terms: false,
+}))
+
+const { handleSubmit, isSubmitting } = useForm({
+  validationSchema,
+  initialValues,
+})
+
+const router = useRouter()
+
+// This is where you would send the form data to the server
+const onSubmit = handleSubmit(async (values) => {
+  // here you have access to the validated form values
+  console.log('auth-success', values)
+
+  try {
+    // fake delay, this will make isSubmitting value to be true
+    await new Promise((resolve) => setTimeout(resolve, 4000))
+  } catch (error: any) {
+    // handle error
+
+    return
+  }
+
+  router.push('/dashboards')
 })
 </script>
 
@@ -25,7 +109,13 @@ definePageMeta({
       <div class="relative w-full max-w-2xl mx-auto">
         <!--Form-->
         <div class="mr-auto ml-auto w-full mt-4">
-          <form class="w-full max-w-md mr-auto ml-auto mt-4">
+          <form
+            method="POST"
+            action=""
+            @submit.prevent="onSubmit"
+            class="w-full max-w-md mr-auto ml-auto mt-4"
+            novalidate
+          >
             <div class="text-center">
               <BaseHeading as="h2" size="3xl" weight="medium">
                 Welcome to Tairo
@@ -36,37 +126,101 @@ definePageMeta({
             </div>
             <div class="px-8 py-4">
               <div class="space-y-4 mb-4">
-                <BaseInput
-                  id="email"
-                  type="text"
-                  label="Email address"
-                  placeholder="Email address"
-                  :classes="{
-                    input: 'h-12',
-                  }"
-                />
+                <Field
+                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                  name="email"
+                >
+                  <BaseInput
+                    :model-value="field.value"
+                    :error="errorMessage"
+                    :disabled="isSubmitting"
+                    type="email"
+                    label="Email address"
+                    placeholder="ex: maya@cssninja.io"
+                    autocomplete="email"
+                    :classes="{
+                      input: 'h-12',
+                    }"
+                    @update:model-value="handleChange"
+                    @blur="handleBlur"
+                  />
+                </Field>
 
-                <BaseInput
-                  id="email"
-                  type="password"
-                  label="Password"
-                  placeholder="Password"
-                  :classes="{
-                    input: 'h-12',
-                  }"
-                />
+                <Field
+                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                  name="password"
+                >
+                  <BaseInput
+                    :model-value="field.value"
+                    :error="errorMessage"
+                    :disabled="isSubmitting"
+                    type="password"
+                    label="Password"
+                    placeholder="••••••••••"
+                    autocomplete="new-password"
+                    :classes="{
+                      input: 'h-12',
+                    }"
+                    @update:model-value="handleChange"
+                    @blur="handleBlur"
+                  />
+                </Field>
+
+                <Field
+                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                  name="confirmPassword"
+                >
+                  <BaseInput
+                    :model-value="field.value"
+                    :error="errorMessage"
+                    :disabled="isSubmitting"
+                    type="password"
+                    label="Confirm Password"
+                    placeholder="••••••••••"
+                    :classes="{
+                      input: 'h-12',
+                    }"
+                    @update:model-value="handleChange"
+                    @blur="handleBlur"
+                  />
+                </Field>
               </div>
               <div class="mb-6">
                 <div class="mt-6 flex items-center justify-between">
-                  <BaseCheckbox
-                    shape="rounded"
-                    label="I accept the Terms of Service"
-                    color="primary"
-                  />
+                  <Field
+                    v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                    name="terms"
+                  >
+                    <BaseCheckbox
+                      :model-value="field.value"
+                      :disabled="isSubmitting"
+                      :error="errorMessage"
+                      shape="rounded"
+                      color="primary"
+                      @update:model-value="handleChange"
+                      @blur="handleBlur"
+                    >
+                      <span>
+                        <span>I accept the</span>
+                        <a
+                          href="#"
+                          class="hover:underline focus:underline text-primary-500"
+                        >
+                          Terms of Service
+                        </a>
+                      </span>
+                    </BaseCheckbox>
+                  </Field>
                 </div>
               </div>
               <div class="mb-6">
-                <BaseButton type="submit" color="primary" class="w-full !h-12">
+                <BaseButton
+                  :disabled="isSubmitting"
+                  :loading="isSubmitting"
+                  type="submit"
+                  color="primary"
+                  class="w-full !h-12"
+                >
                   Sign Up
                 </BaseButton>
               </div>
