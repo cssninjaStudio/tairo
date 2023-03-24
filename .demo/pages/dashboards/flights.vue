@@ -459,7 +459,7 @@ const results = [
             </div>
           </BaseCard>
           <!-- Widget -->
-          <BaseCard>
+          <BaseCard class="p-2">
             <Calendar
               :attributes="[
                 {
@@ -468,6 +468,7 @@ const results = [
                   dates: new Date(),
                 },
               ]"
+              title-position="left"
               expanded
               borderless
               transparent

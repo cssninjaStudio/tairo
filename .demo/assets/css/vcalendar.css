@@ -7,6 +7,11 @@
 .vc-pane-container .vc-pane-layout .vc-header .vc-title {
   @apply capitalize text-base font-medium text-muted-800 dark:text-muted-100;
 }
+
+.vc-title {
+  @apply relative -top-3.5 text-muted-600 dark:text-muted-100;
+}
+
 .vc-pane-container .vc-pane-layout .vc-weeks {
   @apply mt-2;
 }
@@ -37,11 +42,11 @@
   @apply top-5 py-2 px-6;
 }
 .vc-pane-container .vc-arrows-container .vc-arrow {
-  @apply -top-2 flex items-center justify-center rounded-xl dark:hover:bg-muted-700/40 dark:hover:text-muted-100;
+  @apply -top-2 flex items-center justify-center rounded-xl !text-muted-400 dark:hover:bg-muted-700/40 dark:hover:text-muted-100;
 }
 
 .vc-pane-container .vc-arrows-container .vc-arrow svg {
-  @apply relative -top-0.5 h-5 w-5 !text-muted-500 dark:!text-muted-400;
+  @apply relative -top-0.5 h-5 w-5 ;
 }
 
 .vc-day-layer + span {

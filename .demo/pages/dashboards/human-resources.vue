@@ -413,7 +413,7 @@ const items = [
             </BaseTabSlider>
           </BaseCard>
           <!-- Widget -->
-          <BaseCard>
+          <BaseCard shape="curved" class="p-4">
             <Calendar
               :attributes="[
                 {
@@ -422,6 +422,7 @@ const items = [
                   dates: new Date(),
                 },
               ]"
+              title-position="left"
               expanded
               borderless
               transparent
