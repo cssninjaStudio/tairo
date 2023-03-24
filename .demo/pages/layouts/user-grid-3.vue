@@ -94,7 +94,7 @@ const { data, pending, error, refresh } = await useFetch(
               elevated-hover
               class="overflow-hidden"
             >
-              <div class="p-6 bg-muted-50">
+              <div class="p-6 nui-bg-50">
                 <div class="flex items-center justify-between">
                   <div>
                     <BaseHeading

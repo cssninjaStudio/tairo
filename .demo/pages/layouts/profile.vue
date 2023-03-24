@@ -84,6 +84,8 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 v-for="link in data?.personalInfo.socials"
                 :key="link.name"
                 :to="link.url"
+                target="_blank"
+                rel="noopener noreferrer"
                 class="h-8 w-8 flex items-center justify-center rounded-full border border-muted-200 hover:border-primary-500 dark:border-muted-700 dark:hover:border-primary-500 bg-white dark:bg-muted-800 text-muted-400 hover:text-primary-500 transition-colors duration-300"
               >
                 <Icon :name="link.icon" class="w-3 h-3" />
