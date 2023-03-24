@@ -645,6 +645,10 @@ const onSubmit = handleSubmit(
         </div>
       </div>
     </BaseCard>
-    <TairoFormSave :disabled="isSubmitting" :loading="isSubmitting" @reset="resetForm" />
+    <TairoFormSave
+      :disabled="isSubmitting"
+      :loading="isSubmitting"
+      @reset="resetForm"
+    />
   </form>
 </template>
