@@ -63,6 +63,7 @@ jobs:
         run: |
           echo "PUBLIC_HOST=\"${{ secrets.PUBLIC_HOST }}\"" >> .github/env/.env
           echo "NUXT_PUBLIC_SITE_URL=\"${{ secrets.NUXT_PUBLIC_SITE_URL }}\"" >> .github/env/.env
+          echo "VITE_MAPBOX_ACCESS_TOKEN=\"${{ secrets.MAPBOX_ACCESS_TOKEN }}\"" >> .github/env/.env
 
       - run: corepack enable
       - run: pnpm install --frozen-lockfile

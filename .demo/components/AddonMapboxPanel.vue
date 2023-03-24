@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { type Map, Popup } from 'mapbox-gl'
+import type { Map, Popup } from 'mapbox-gl'
 import 'mapbox-gl/src/css/mapbox-gl.css'
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css'
 
@@ -35,6 +35,8 @@ const popupElement = shallowRef<HTMLElement>()
 const map = shallowRef<Map>()
 const popup = shallowRef<Popup>()
 const geocoder = shallowRef<any>()
+
+let mapboxgl: typeof import('mapbox-gl')
 
 const locations = {
   type: 'FeatureCollection',
@@ -275,7 +277,8 @@ onMounted(() => {
     import('@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.min.js').then(
       (m) => m.default,
     ),
-  ]).then(([mapboxgl, MapboxGeocoder]) => {
+  ]).then(([_mapboxgl, MapboxGeocoder]) => {
+    mapboxgl = _mapboxgl
     if (!mapElement.value || !geocoderElement.value) {
       return
     }
@@ -351,7 +354,7 @@ watchEffect(
       popup.value.remove()
     }
 
-    popup.value = new Popup()
+    popup.value = new mapboxgl.Popup()
       .on('open', () => {
         selectedFeatureName.value = name
       })
