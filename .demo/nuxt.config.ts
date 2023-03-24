@@ -49,11 +49,11 @@ export default defineNuxtConfig({
       'process.env.VSCODE_TEXTMATE_DEBUG': false,
     },
     optimizeDeps: {
-      disabled: false,
+      // disabled: false,
     },
     build: {
       target: 'esnext',
-      commonjsOptions: { include: [] },
+      // commonjsOptions: { include: [] },
     },
   },
   hooks: {
