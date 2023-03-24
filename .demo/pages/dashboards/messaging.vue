@@ -488,9 +488,12 @@ const conversations = ref([
   },
 ])
 
-const chat = ref<HTMLElement>()
+const chatEl = ref<HTMLElement>()
 const expanded = ref(false)
 const loading = ref(false)
+const search = ref('')
+const message = ref('')
+const messageLoading = ref(false)
 const activeConversation = ref(1)
 
 const selectedConversation = computed(() => {
@@ -500,23 +503,69 @@ const selectedConversation = computed(() => {
 })
 
 onMounted(() => {
-  if (chat.value) {
-    chat.value.scrollTop = chat.value.scrollHeight
-  }
+  setTimeout(() => {
+    if (chatEl.value) {
+      chatEl.value.scrollTo({
+        top: chatEl.value.scrollHeight,
+        behavior: 'smooth',
+      })
+    }
+  }, 300)
 })
 
 function selectConversation(id: number) {
+  if (messageLoading.value) return
+
   loading.value = true
+  message.value = ''
+
   setTimeout(() => {
     activeConversation.value = id
     loading.value = false
     setTimeout(() => {
-      if (chat.value) {
-        chat.value.scrollTop = chat.value.scrollHeight
-      }
       expanded.value = false
+
+      if (chatEl.value) {
+        chatEl.value.scrollTo({
+          top: chatEl.value.scrollHeight,
+          behavior: 'smooth',
+        })
+      }
     }, 300)
   }, 1000)
+}
+
+async function submitMessage() {
+  if (!message.value) return
+  if (messageLoading.value) return
+
+  messageLoading.value = true
+
+  const newMessage = {
+    type: 'sent',
+    text: message.value,
+    time: 'Just now',
+    attachments: [],
+  }
+
+  const index = conversations.value.findIndex(
+    (conversation) => conversation.id === activeConversation.value,
+  )
+
+  await new Promise((resolve) => setTimeout(resolve, 200))
+
+  conversations.value[index].messages.push(newMessage)
+  message.value = ''
+  messageLoading.value = false
+
+  await nextTick()
+
+  if (chatEl.value) {
+    chatEl.value.scrollTo({
+      top: chatEl.value.scrollHeight,
+      behavior: 'smooth',
+    })
+  }
 }
 </script>
 
@@ -622,6 +671,7 @@ function selectConversation(id: number) {
           >
             <div class="flex items-center gap-2">
               <BaseInput
+                v-model="search"
                 shape="curved"
                 icon="lucide:search"
                 placeholder="Search"
@@ -642,7 +692,7 @@ function selectConversation(id: number) {
           </div>
           <!-- Body -->
           <div
-            ref="chat"
+            ref="chatEl"
             class="relative w-full h-[calc(100vh_-_128px)] p-4 sm:p-8"
             :class="loading ? 'overflow-hidden' : 'overflow-y-auto slimscroll'"
           >
@@ -838,11 +888,16 @@ function selectConversation(id: number) {
             </div>
           </div>
           <!-- Compose -->
-          <div
+          <form
+            method="POST"
+            action=""
+            @submit.prevent="submitMessage"
             class="w-full h-16 flex items-center px-4 sm:px-8 bg-muted-100 dark:bg-muted-900"
           >
             <div class="relative w-full">
               <BaseInput
+                v-model.trim="message"
+                :disabled="messageLoading"
                 shape="full"
                 :classes="{
                   input: 'h-12 pl-6 pr-24',
@@ -864,7 +919,7 @@ function selectConversation(id: number) {
                 </button>
               </div>
             </div>
-          </div>
+          </form>
         </div>
       </div>
       <!-- Current user -->
