@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const customRadio = ref('')
+const customRadio = ref('value_1')
 </script>
 
 <template>
