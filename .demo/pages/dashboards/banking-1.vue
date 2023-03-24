@@ -94,8 +94,10 @@ const banks = [
   },
 ]
 
-const selectedBank = ref(banks[0])
+const selectedBankTransfert = shallowRef(banks[0])
+const selectedBankSendTo = shallowRef(banks[0])
 const selectedCurrency = ref('usd')
+const amount = ref<number>()
 </script>
 
 <template>
@@ -440,7 +442,7 @@ const selectedCurrency = ref('usd')
           class="col-span-12 ltablet:col-span-6 lg:col-span-6 flex flex-col gap-4"
         >
           <!-- Widget -->
-          <div class="relative">
+          <form method="POST" action="" @submit.prevent class="relative">
             <BaseCard class="flex flex-col p-6">
               <div class="flex items-center justify-between mb-4">
                 <BaseHeading
@@ -455,7 +457,7 @@ const selectedCurrency = ref('usd')
               </div>
               <div>
                 <BaseListbox
-                  v-model="selectedBank"
+                  v-model="selectedBankTransfert"
                   :items="banks"
                   :properties="{
                     value: 'id',
@@ -472,17 +474,17 @@ const selectedCurrency = ref('usd')
                     transfer cannot exceed 20% of your balance.
                   </p>
                   <div class="flex justify-end mt-2">
-                    <NuxtLink
-                      to="/"
+                    <button
+                      type="submit"
                       class="font-sans text-sm underline-offset-4 text-primary-500 hover:underline"
                     >
                       Confirm and send
-                    </NuxtLink>
+                    </button>
                   </div>
                 </div>
               </div>
             </BaseCard>
-          </div>
+          </form>
           <!-- Widget -->
           <div class="relative">
             <BaseCard class="flex flex-col p-6">
@@ -523,7 +525,12 @@ const selectedCurrency = ref('usd')
           </div>
         </div>
         <!-- Sub column -->
-        <div class="col-span-12 ltablet:col-span-6 lg:col-span-6">
+        <form
+          method="POST"
+          action=""
+          @submit.prevent
+          class="col-span-12 ltablet:col-span-6 lg:col-span-6"
+        >
           <!-- Widget -->
           <div class="relative h-full">
             <BaseCard class="h-full flex flex-col p-6">
@@ -568,11 +575,11 @@ const selectedCurrency = ref('usd')
                   See all contacts
                 </NuxtLink>
               </div>
-              <form class="mt-auto">
+              <div class="mt-auto">
                 <div class="space-y-3">
                   <div>
                     <BaseListbox
-                      v-model="selectedBank"
+                      v-model="selectedBankSendTo"
                       :items="banks"
                       :properties="{
                         value: 'id',
@@ -595,6 +602,7 @@ const selectedCurrency = ref('usd')
                       <option value="eur">€</option>
                     </BaseSelect>
                     <BaseInput
+                      v-model.number="amount"
                       type="number"
                       :classes="{ wrapper: 'grow' }"
                       placeholder="0.00"
@@ -620,10 +628,10 @@ const selectedCurrency = ref('usd')
                     Send Money
                   </BaseButton>
                 </div>
-              </form>
+              </div>
             </BaseCard>
           </div>
-        </div>
+        </form>
         <!-- Sub column -->
         <div class="col-span-12">
           <div class="relative h-full">
