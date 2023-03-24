@@ -7,12 +7,15 @@ const props = withDefaults(
     shape: 'rounded',
   },
 )
+
+const search = ref('')
 </script>
 
 <template>
   <div class="w-full">
     <div class="relative w-full flex items-center gap-2">
       <BaseInput
+        v-model="search"
         icon="lucide:search"
         placeholder="Search"
         :shape="props.shape"

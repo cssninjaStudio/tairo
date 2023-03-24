@@ -170,7 +170,7 @@ function useBarSalesProfit() {
   }
 }
 
-const team = [
+const team = shallowRef([
   {
     id: '0',
     src: '/img/avatars/22.svg',
@@ -207,7 +207,21 @@ const team = [
     rate: 69,
     status: 'New',
   },
-]
+])
+
+const selected = ref<string[]>([])
+
+const isAllVisibleSelected = computed(() => {
+  return selected.value.length === team.value?.length
+})
+
+function toggleAllVisibleSelection() {
+  if (isAllVisibleSelected.value) {
+    selected.value = []
+  } else {
+    selected.value = team.value?.map((item) => item.id) ?? []
+  }
+}
 </script>
 
 <template>
@@ -307,9 +321,14 @@ const team = [
               <TairoTableHeading uppercase class="px-4 py-6">
                 <div class="flex items-center">
                   <BaseCheckbox
+                    :model-value="isAllVisibleSelected"
+                    :indeterminate="
+                      selected.length > 0 && !isAllVisibleSelected
+                    "
                     name="table-1-main"
                     shape="rounded"
                     class="text-primary-500"
+                    @click="toggleAllVisibleSelection"
                   />
                 </div>
               </TairoTableHeading>
@@ -326,6 +345,8 @@ const team = [
               <TairoTableCell class="p-4">
                 <div class="flex items-center">
                   <BaseCheckbox
+                    v-model="selected"
+                    :value="member.id"
                     :name="member.id"
                     shape="rounded"
                     class="text-primary-500"
