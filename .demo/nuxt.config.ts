@@ -27,20 +27,10 @@ export default defineNuxtConfig({
     // Use the devtools module to debug nuxt 3
     // '@nuxt/devtools',
   ],
-  vite: {
-    // This is required for shiki to work (used to render markdown code blocks)
-    define: {
-      'process.env.VSCODE_TEXTMATE_DEBUG': false,
-    },
-  },
-  linkChecker: {
-    failOn404: true,
-  },
-  unhead: {
-    seoOptimise: true,
-  },
   runtimeConfig: {
     public: {
+      // mapbox config
+      mapboxToken: process.env.NUXT_PUBLIC_MAPBOX_TOKEN,
       // nuxt-seo-kit config
       siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://example.com',
       siteName: 'Tairo',
@@ -49,15 +39,53 @@ export default defineNuxtConfig({
       language: 'en',
     },
   },
+  linkChecker: {
+    failOn404: true,
+  },
+  unhead: {
+    seoOptimise: true,
+  },
+  vite: {
+    // This is required for shiki to work (used to render markdown code blocks)
+    define: {
+      'process.env.VSCODE_TEXTMATE_DEBUG': false,
+    },
+    optimizeDeps: {
+      // disabled: false,
+    },
+    build: {
+      target: 'esnext',
+      // commonjsOptions: { include: [] },
+    },
+  },
+  hooks: {
+    'vite:extendConfig'(config, { isClient }) {
+      if (process.env.NODE_ENV !== 'development' && isClient) {
+        // @ts-ignore
+        config.build.rollupOptions.output.entryFileNames = '_nuxt/e/[hash].js'
+        // @ts-ignore
+        config.build.rollupOptions.output.chunkFileNames = '_nuxt/c/[hash].js'
+        // @ts-ignore
+        config.build.rollupOptions.output.assetFileNames =
+          '_nuxt/a/[hash][extname]'
+      }
+    },
+  },
   nitro: {
     prerender: {
       crawlLinks: true,
-      routes: ['/'],
+      routes: ['/', '/dashboards'],
+    },
+    esbuild: {
+      options: {
+        target: 'esnext',
+      },
     },
   },
   routeRules: {
     '/**': {
       static: true,
+      prerender: true,
       headers: { 'cache-control': `public, maxage=${WEEK}, s-maxage=${WEEK}` },
     },
   },

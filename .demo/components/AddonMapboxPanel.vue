@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { type Map, Popup } from 'mapbox-gl'
+import type { Map, Popup } from 'mapbox-gl'
 import 'mapbox-gl/src/css/mapbox-gl.css'
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css'
 
@@ -35,6 +35,8 @@ const popupElement = shallowRef<HTMLElement>()
 const map = shallowRef<Map>()
 const popup = shallowRef<Popup>()
 const geocoder = shallowRef<any>()
+
+let mapboxgl: typeof import('mapbox-gl')
 
 const locations = {
   type: 'FeatureCollection',
@@ -253,20 +255,19 @@ function selectFeature(feature: any) {
   selectedFeature.value = undefined
   selectedFeature.value = feature
 }
-
-const accessToken = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN as string
+const config = useRuntimeConfig()
 if (process.dev) {
   // this block will be removed in production build
 
-  if (!accessToken) {
+  if (!config.public.mapboxToken) {
     console.warn(
-      'VITE_MAPBOX_ACCESS_TOKEN environment variable is not defined, mapbox features are disabled',
+      'NUXT_PUBLIC_MAPBOX_TOKEN environment variable is not defined, mapbox features are disabled',
     )
   }
 }
 
 onMounted(() => {
-  if (!accessToken) {
+  if (!config.public.mapboxToken) {
     return
   }
 
@@ -275,12 +276,13 @@ onMounted(() => {
     import('@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.min.js').then(
       (m) => m.default,
     ),
-  ]).then(([mapboxgl, MapboxGeocoder]) => {
+  ]).then(([_mapboxgl, MapboxGeocoder]) => {
+    mapboxgl = _mapboxgl
     if (!mapElement.value || !geocoderElement.value) {
       return
     }
-    // You can set the VITE_MAPBOX_ACCESS_TOKEN inside .env file
-    mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN as string
+    // You can set the NUXT_PUBLIC_MAPBOX_TOKEN inside .env file
+    mapboxgl.accessToken = config.public.mapboxToken
 
     map.value = new mapboxgl.Map({
       container: mapElement.value,
@@ -351,7 +353,7 @@ watchEffect(
       popup.value.remove()
     }
 
-    popup.value = new Popup()
+    popup.value = new mapboxgl.Popup()
       .on('open', () => {
         selectedFeatureName.value = name
       })
