@@ -74,7 +74,7 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       crawlLinks: true,
-      routes: ['/', '/dashboards'],
+      routes: ['/', '/dashboards', '/layouts'],
     },
     esbuild: {
       options: {

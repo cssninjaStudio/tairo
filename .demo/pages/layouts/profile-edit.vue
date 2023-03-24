@@ -30,7 +30,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
           <ul class="font-sans text-sm space-y-1">
             <li>
               <NuxtLink
-                to="/layouts/profile-edit/"
+                to="/layouts/profile-edit"
                 exact-active-class="!text-primary-500 !bg-primary-500/10"
                 class="flex items-center gap-2 p-3 rounded-lg text-muted-400 hover:text-muted-600 dark:hover:text-muted-200 hover:bg-muted-50 dark:hover:bg-muted-700/50 transition-colors duration-300"
               >
