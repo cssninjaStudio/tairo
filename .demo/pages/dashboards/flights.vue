@@ -148,7 +148,7 @@ const results = [
                   v-model.range="dates"
                   :masks="masks"
                   :min-date="new Date()"
-                  mode="date"
+                  mode="dateTime"
                   hide-time-header
                   trim-weeks
                 >
