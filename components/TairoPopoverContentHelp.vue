@@ -24,7 +24,7 @@ const props = withDefaults(
     /**
      * The color of the icon.
      */
-    iconColor?: 'primary' | 'info' | 'success' | 'warning' | 'danger'
+    iconColor?: 'primary' | 'info' | 'success' | 'warning' | 'danger' | 'yellow'
   }>(),
   {
     iconColor: 'primary',
@@ -50,6 +50,8 @@ const props = withDefaults(
               'bg-warning-100 text-warning-500 dark:bg-warning-600',
             props.iconColor === 'danger' &&
               'bg-danger-100 text-danger-500 dark:bg-danger-600',
+            props.iconColor === 'yellow' &&
+              'bg-yellow-100 text-yellow-400 dark:bg-yellow-500',
           ]"
         >
           <Icon :name="props.icon" class="h-5 w-5" />
