@@ -46,17 +46,17 @@ function onClick(event: MouseEvent) {
       @click.stop.prevent="onClick"
     >
       <span
-        class="relative inline-flex gap-2 items-center font-sans text-sm text-muted-400 transition-colors duration-300 group-hover:text-primary-500"
+        class="text-muted-400 group-hover:text-primary-500 relative inline-flex items-center gap-2 font-sans text-sm transition-colors duration-300"
       >
         <span
           v-if="hasActiveChild"
-          class="absolute top-2 -left-3 rounded-full bg-primary-500 h-1 w-1"
+          class="bg-primary-500 absolute top-2 -left-3 h-1 w-1 rounded-full"
         ></span>
         <span>{{ props.name }}</span>
       </span>
       <Icon
         name="feather:chevron-down"
-        class="ml-auto block h-4 w-4 text-muted-400 transition-transform duration-300"
+        class="text-muted-400 ml-auto block h-4 w-4 transition-transform duration-300"
         :class="{
           'group-focus-within:rotate-180': !open,
           'rotate-180': open,
@@ -67,13 +67,17 @@ function onClick(event: MouseEvent) {
     <div
       class="transition-all duration-150"
       :class="{
-        'max-h-0 opacity-0 overflow-hidden group-focus-within:overflow-visible group-focus-within:max-h-max group-focus-within:opacity-100':
+        'max-h-0 overflow-hidden opacity-0 group-focus-within:max-h-max group-focus-within:overflow-visible group-focus-within:opacity-100':
           !open,
         'max-h-max opacity-100': open,
       }"
     >
       <ul class="py-2">
-        <li v-for="link of props.children" class="flex h-8 items-center w-full">
+        <li
+          v-for="link of props.children"
+          :key="link.to"
+          class="flex h-8 w-full items-center"
+        >
           <NuxtLink
             :to="link.to"
             :class="{
@@ -81,7 +85,7 @@ function onClick(event: MouseEvent) {
                 (link.exact && route.path === link.to) ||
                 (!link.exact && route.path.startsWith(link.to)),
             }"
-            class="flex pl-3 w-full nui-focus items-center text-muted-400 transition-colors duration-300 hover:text-primary-500 focus:text-primary-500"
+            class="nui-focus text-muted-400 hover:text-primary-500 focus:text-primary-500 flex w-full items-center pl-3 transition-colors duration-300"
           >
             <Icon :name="link.icon" class="mr-2 h-5 w-5" />
             <span class="font-sans text-xs">{{ link.name }}</span>
