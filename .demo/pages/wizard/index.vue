@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import type { Project, ProjectStepData, ProjectType } from '../../types'
 
-const { getNextStep, project, goToStep } = useMultiStepForm<
-  Project,
-  ProjectStepData
->()
+const {
+  getNextStep,
+  data: project,
+  goToStep,
+} = useMultiStepForm<Project, ProjectStepData>()
 useHead({
   title: 'Project type',
 })
@@ -12,7 +13,7 @@ useHead({
 function onSelectType(type: ProjectType) {
   const next = getNextStep()
   if (next) {
-    project.type = type
+    project.value.type = type
     goToStep(next)
   }
 }
@@ -26,6 +27,11 @@ function onSelectType(type: ProjectType) {
         <!-- Choice -->
         <div
           class="group rounded-2xl p-5 hover:bg-white dark:hover:bg-muted-800 hover:shadow-xl hover:shadow-muted-300/30 dark:hover:shadow-muted-800/30 transition-all duration-300"
+          :class="[
+            project.type === 'design'
+              ? 'bg-white dark:bg-muted-800 shadow-xl shadow-muted-300/30 dark:shadow-muted-800/30'
+              : '',
+          ]"
         >
           <img
             class="rounded-2xl"
@@ -50,13 +56,15 @@ function onSelectType(type: ProjectType) {
           </div>
           <div class="flex flex-col items-center mb-5">
             <BaseButton
-              :to="getNextStep()?.path"
+              :to="getNextStep()?.to"
               color="primary"
               shape="curved"
               class="w-36"
               @click.prevent="() => onSelectType('design')"
             >
-              <span>Continue</span>
+              <span>
+                {{ project.type === 'design' ? 'Selected' : 'Continue' }}
+              </span>
             </BaseButton>
             <div class="mt-4 text-center">
               <NuxtLink
@@ -71,6 +79,11 @@ function onSelectType(type: ProjectType) {
         <!-- Choice -->
         <div
           class="group rounded-2xl p-5 hover:bg-white dark:hover:bg-muted-800 hover:shadow-xl hover:shadow-muted-300/30 dark:hover:shadow-muted-800/30 transition-all duration-300"
+          :class="[
+            project.type === 'development'
+              ? 'bg-white dark:bg-muted-800 shadow-xl shadow-muted-300/30 dark:shadow-muted-800/30'
+              : '',
+          ]"
         >
           <img
             class="rounded-2xl"
@@ -95,13 +108,15 @@ function onSelectType(type: ProjectType) {
           </div>
           <div class="flex flex-col items-center mb-5">
             <BaseButton
-              :to="getNextStep()?.path"
+              :to="getNextStep()?.to"
               color="primary"
               shape="curved"
               class="w-36"
               @click.prevent="() => onSelectType('development')"
             >
-              <span>Continue</span>
+              <span>
+                {{ project.type === 'development' ? 'Selected' : 'Continue' }}
+              </span>
             </BaseButton>
             <div class="mt-4 text-center">
               <NuxtLink
@@ -116,6 +131,11 @@ function onSelectType(type: ProjectType) {
         <!-- Choice -->
         <div
           class="group rounded-2xl p-5 hover:bg-white dark:hover:bg-muted-800 hover:shadow-xl hover:shadow-muted-300/30 dark:hover:shadow-muted-800/30 transition-all duration-300"
+          :class="[
+            project.type === 'marketing'
+              ? 'bg-white dark:bg-muted-800 shadow-xl shadow-muted-300/30 dark:shadow-muted-800/30'
+              : '',
+          ]"
         >
           <img
             class="rounded-2xl"
@@ -139,13 +159,15 @@ function onSelectType(type: ProjectType) {
           </div>
           <div class="flex flex-col items-center mb-5">
             <BaseButton
-              :to="getNextStep()?.path"
+              :to="getNextStep()?.to"
               color="primary"
               shape="curved"
               class="w-36"
               @click.prevent="() => onSelectType('marketing')"
             >
-              <span>Continue</span>
+              <span>
+                {{ project.type === 'marketing' ? 'Selected' : 'Continue' }}
+              </span>
             </BaseButton>
             <div class="mt-4 text-center">
               <NuxtLink

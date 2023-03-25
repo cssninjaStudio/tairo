@@ -6,7 +6,7 @@ import '~/assets/css/vcalendar.css'
 
 import type { Customer, Project, ProjectStepData } from '../../types'
 
-const { project } = useMultiStepForm<Project, ProjectStepData>()
+const { data: project } = useMultiStepForm<Project, ProjectStepData>()
 
 useHead({
   title: 'Project details',
@@ -84,16 +84,16 @@ const filteredCustomers = computed<Customer[]>(() => {
 })
 
 function selectCustomer(customerData: Customer) {
-  project.customer = customerData
+  project.value.customer = customerData
   itemSelected.value = true
   search.value = ''
 }
 
 function dismissCustomer() {
-  if (project.customer) {
-    project.customer.name = undefined
-    project.customer.logo = undefined
-    project.customer.location = undefined
+  if (project.value.customer) {
+    project.value.customer.name = undefined
+    project.value.customer.logo = undefined
+    project.value.customer.location = undefined
   }
 
   itemSelected.value = false
@@ -127,7 +127,7 @@ const budget = ref('< 5K')
               v-model="search"
               icon="lucide:search"
               shape="curved"
-              placeholder="Search for a customer"
+              placeholder="ex: Figma, Github, ..."
               :classes="{
                 input: 'h-12 text-base !pl-12',
                 icon: 'h-12 w-12',

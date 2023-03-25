@@ -1,8 +1,10 @@
+import type { MaybeComputedRef } from '@vueuse/core'
+import copy from 'fast-copy'
 import type { InjectionKey } from 'vue'
 
 export interface StepForm<T extends Record<string, any> = Record<string, any>> {
-  data: T
-  path: string
+  meta: T
+  to: string
 
   onBeforeEnter?: () => void
   validate?: () => boolean
@@ -12,20 +14,39 @@ export interface MultiStepFormConfig<
   T extends Record<string, any> = Record<string, any>,
   D extends Record<string, any> = Record<string, any>,
 > {
-  state: T
+  initialState: MaybeComputedRef<T>
   steps: StepForm<D>[]
+
+  // eslint-disable-next-line no-use-before-define
+  onSubmit?: (data: T, ctx: MultiStepFormContext<T, D>) => Promise<void> | void
+
+  onError?: (
+    error: any,
+    // eslint-disable-next-line no-use-before-define
+    ctx: MultiStepFormContext<T, D>,
+  ) => Promise<void> | void
 }
 
 export function createMultiStepForm<
   T extends Record<string, any>,
   D extends Record<string, any>,
 >(rules: MultiStepFormConfig<T, D>) {
+  const initialState = computed(() => {
+    if (typeof rules.initialState === 'function') {
+      return rules.initialState()
+    }
+    if (isRef(rules.initialState)) {
+      return rules.initialState.value
+    }
+    return rules.initialState
+  })
+
   const steps = computed(() => rules.steps.map((step, id) => ({ ...step, id })))
   const router = useRouter()
   const totalSteps = computed(() => steps.value.length)
   const currentStep = computed(() => {
     const step = steps.value.find(
-      (step) => step.path === router.currentRoute.value.path,
+      (step) => step.to === router.currentRoute.value.path,
     )?.id
 
     if (typeof step !== 'number') return 0
@@ -35,10 +56,28 @@ export function createMultiStepForm<
   const progress = computed(
     () => ((currentStep.value + 1) / totalSteps.value) * 100,
   )
-  const project = reactive<T>(rules.state)
+  const data = ref<T>(copy(initialState.value))
   const loading = ref(false)
   const preview = ref(false)
   const complete = ref(false)
+
+  const multiStepContext = {
+    steps,
+    totalSteps,
+    currentStep,
+    progress,
+    data,
+    loading,
+    preview,
+    complete,
+    getStep,
+    getNextStep,
+    getPrevStep,
+    goToStep,
+    reset,
+    handleSubmit,
+  }
+
   function getNextStep() {
     if (currentStep.value + 1 >= totalSteps.value) {
       return null
@@ -54,35 +93,36 @@ export function createMultiStepForm<
   function getStep(step: number) {
     return steps.value[step]
   }
-
   function goToStep(step?: (typeof steps.value)[number]) {
     if (step) {
-      router.push(step.path)
+      router.push(step.to)
     }
   }
 
-  function completeWizard() {
-    loading.value = true
-    setTimeout(() => {
-      loading.value = false
-      complete.value = true
-    }, 1200)
+  function reset() {
+    data.value = copy(initialState.value)
+    preview.value = false
+    complete.value = false
   }
 
-  const multiStepContext = {
-    steps,
-    totalSteps,
-    currentStep,
-    progress,
-    project,
-    loading,
-    preview,
-    complete,
-    getStep,
-    getNextStep,
-    getPrevStep,
-    goToStep,
-    completeWizard,
+  async function handleSubmit() {
+    if (loading.value) return
+
+    loading.value = true
+
+    try {
+      if (rules.onSubmit) {
+        await rules.onSubmit(data.value, multiStepContext)
+      }
+      complete.value = true
+    } catch (error) {
+      if (rules.onError) {
+        await rules.onError(error, multiStepContext)
+      }
+      //
+    } finally {
+      loading.value = false
+    }
   }
 
   // @ts-ignore

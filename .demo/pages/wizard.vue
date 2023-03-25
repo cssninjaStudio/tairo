@@ -5,7 +5,7 @@ definePageMeta({
   layout: 'empty',
 })
 
-const initialState: Project = {
+const initialState = ref<Project>({
   type: undefined,
   name: '',
   description: '',
@@ -16,39 +16,41 @@ const initialState: Project = {
     logo: undefined,
     location: undefined,
   },
+  files: undefined,
+  avatar: null,
   team: [],
   tools: [],
   budget: '< 5K',
-}
+})
 
 const wizardSteps = [
   {
-    path: '/wizard',
-    data: <ProjectStepData>{
+    to: '/wizard',
+    meta: <ProjectStepData>{
       name: 'Project type',
       title: 'Select project type',
       subtitle: 'Select the type of project you want to create',
     },
   },
   {
-    path: '/wizard/step-2',
-    data: <ProjectStepData>{
+    to: '/wizard/step-2',
+    meta: <ProjectStepData>{
       name: 'Project info',
       title: 'What is this project about?',
       subtitle: 'Manage better by adding all relevant project information',
     },
   },
   {
-    path: '/wizard/step-3',
-    data: <ProjectStepData>{
+    to: '/wizard/step-3',
+    meta: <ProjectStepData>{
       name: 'Project details',
       title: 'Add more details',
       subtitle: 'Add useful details to your project. You can edit this later',
     },
   },
   {
-    path: '/wizard/step-4',
-    data: <ProjectStepData>{
+    to: '/wizard/step-4',
+    meta: <ProjectStepData>{
       name: 'Project files',
       title: 'Add files to this project',
       subtitle:
@@ -56,24 +58,24 @@ const wizardSteps = [
     },
   },
   {
-    path: '/wizard/step-5',
-    data: <ProjectStepData>{
+    to: '/wizard/step-5',
+    meta: <ProjectStepData>{
       name: 'Team members',
       title: 'Who will be working on this project?',
       subtitle: 'Start by adding members to your team',
     },
   },
   {
-    path: '/wizard/step-6',
-    data: <ProjectStepData>{
+    to: '/wizard/step-6',
+    meta: <ProjectStepData>{
       name: 'Project tools',
       title: 'What tools will you be using?',
       subtitle: "Choose a set of tools that you'll be using in this project",
     },
   },
   {
-    path: '/wizard/step-7',
-    data: <ProjectStepData>{
+    to: '/wizard/step-7',
+    meta: <ProjectStepData>{
       preview: true,
       name: 'Finish',
       title: 'Make sure it looks good',
@@ -83,13 +85,34 @@ const wizardSteps = [
   },
 ]
 
-const { currentStep } = createMultiStepForm<Project, ProjectStepData>({
-  state: initialState,
+const { handleSubmit, currentStep } = createMultiStepForm<
+  Project,
+  ProjectStepData
+>({
+  initialState: initialState,
   steps: wizardSteps,
+  onSubmit: async (state, ctx) => {
+    console.log('multi-step-submit', state)
+
+    if (!state.type) {
+      ctx.goToStep(ctx.getStep(0))
+      throw new Error('Please select a project type')
+    }
+    if (!state.name) {
+      ctx.goToStep(ctx.getStep(1))
+      throw new Error('Enter a project name')
+    }
+
+    // Simulate async request
+    await new Promise((resolve) => setTimeout(resolve, 4000))
+  },
+  onError: (error) => {
+    console.log('multi-step-error', error)
+  },
 })
 
 useHead({
-  titleTemplate: (title) => `${title} | Wizard - Step ${currentStep.value}`,
+  titleTemplate: (title) => `${title} | Wizard - Step ${currentStep.value + 1}`,
 })
 </script>
 
@@ -110,9 +133,12 @@ useHead({
     </template>
 
     <DemoWizardNavigation />
-    <div class="pt-24 pb-32">
-      <RouterView />
-    </div>
-    <DemoWizardButtons />
+
+    <form action="" method="POST" @submit.prevent="handleSubmit" novalidate>
+      <div class="pt-24 pb-32">
+        <RouterView />
+      </div>
+      <DemoWizardButtons />
+    </form>
   </TairoLayout>
 </template>

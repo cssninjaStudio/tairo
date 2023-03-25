@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { Project, ProjectStepData, Tool } from '../../types'
 
-const { project } = useMultiStepForm<Project, ProjectStepData>()
+const { data: project } = useMultiStepForm<Project, ProjectStepData>()
 useHead({
   title: 'Project tools',
 })

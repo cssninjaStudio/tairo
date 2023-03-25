@@ -1,7 +1,4 @@
 <script setup lang="ts">
-const emits = defineEmits<{
-  (event: 'reset'): void
-}>()
 const props = withDefaults(
   defineProps<{
     shape?: 'straight' | 'rounded' | 'curved' | 'full'
@@ -12,7 +9,9 @@ const props = withDefaults(
     shape: 'rounded',
   },
 )
-
+const emits = defineEmits<{
+  (event: 'reset'): void
+}>()
 const { x, y } = useWindowScroll()
 </script>
 

@@ -2,13 +2,19 @@
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     // "source.fixAll": true,
-    "source.organizeImports": false
+    "source.organizeImports": true
   },
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true
+    }
   },
   "[vue]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true
+    }
   },
   "tailwindCSS.experimental.configFile": ".demo/tailwind.config.cjs",
   "typescript.tsdk": "node_modules/typescript/lib"
