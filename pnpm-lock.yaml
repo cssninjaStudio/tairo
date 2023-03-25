@@ -81,8 +81,6 @@ importers:
       '@types/mapbox-gl': 2.7.10
       '@vueform/slider': 2.1.7
       apexcharts: 3.37.2
-      compressorjs: 1.2.1
-      cropperjs: 1.5.13
       date-fns: 2.29.3
       imask: ^6.4.3
       mapbox-gl: 2.13.0
@@ -99,7 +97,6 @@ importers:
       shiki: 0.14.1
       unified: 10.1.2
       v-calendar: 3.0.1
-      vue-upload-component: 3.1.6
       vue3-apexcharts: 1.4.1
       vue3-carousel: 0.2.14
       vue3-popper: 1.5.0
@@ -113,8 +110,6 @@ importers:
       '@types/mapbox-gl': 2.7.10
       '@vueform/slider': 2.1.7
       apexcharts: 3.37.2
-      compressorjs: 1.2.1
-      cropperjs: 1.5.13
       date-fns: 2.29.3
       imask: 6.4.3
       mapbox-gl: 2.13.0
@@ -131,7 +126,6 @@ importers:
       shiki: 0.14.1
       unified: 10.1.2
       v-calendar: 3.0.1_@popperjs+core@2.11.7
-      vue-upload-component: 3.1.6
       vue3-apexcharts: 1.4.1_apexcharts@3.37.2
       vue3-carousel: 0.2.14
       vue3-popper: 1.5.0
@@ -2998,10 +2992,6 @@ packages:
       inherits: 2.0.4
       readable-stream: 3.6.2
 
-  /blueimp-canvas-to-blob/3.29.0:
-    resolution: {integrity: sha512-0pcSSGxC0QxT+yVkivxIqW0Y4VlO2XSDPofBAqoJ1qJxgH9eiUDLv50Rixij2cDuEfx4M6DpD9UGZpRhT5Q8qg==}
-    dev: true
-
   /boolbase/1.0.0:
     resolution: {integrity: sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==}
 
@@ -3513,13 +3503,6 @@ packages:
       normalize-path: 3.0.0
       readable-stream: 3.6.2
 
-  /compressorjs/1.2.1:
-    resolution: {integrity: sha512-+geIjeRnPhQ+LLvvA7wxBQE5ddeLU7pJ3FsKFWirDw6veY3s9iLxAQEw7lXGHnhCJvBujEQWuNnGzZcvCvdkLQ==}
-    dependencies:
-      blueimp-canvas-to-blob: 3.29.0
-      is-blob: 2.1.0
-    dev: true
-
   /concat-map/0.0.1:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
 
@@ -3587,10 +3570,6 @@ packages:
 
   /create-require/1.1.1:
     resolution: {integrity: sha512-dcKFX3jn0MpIaXjisoRvexIJVEKzaq7z2rZKxf+MSr9TkdmHmsU4m2lcLojrj/FHl8mk5VxMmYA+ftRkP/3oKQ==}
-
-  /cropperjs/1.5.13:
-    resolution: {integrity: sha512-by7jKAo73y5/Do0K6sxdTKHgndY0NMjG2bEdgeJxycbcmHuCiMXqw8sxy5C5Y5WTOTcDGmbT7Sr5CgKOXR06OA==}
-    dev: true
 
   /cross-spawn/6.0.5:
     resolution: {integrity: sha512-eTVLrBSt7fjbDygz805pMnstIs2VTBNkRm0qxZd+M7A5XDdxVRWO5MxGBXZhjY4cqLYLdtrGqRf8mBPmzwSpWQ==}
@@ -5978,11 +5957,6 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       binary-extensions: 2.2.0
-
-  /is-blob/2.1.0:
-    resolution: {integrity: sha512-SZ/fTft5eUhQM6oF/ZaASFDEdbFVe89Imltn9uZr03wdKMcWNVYSMjQPFtg05QuNkt5l5c135ElvXEQG0rk4tw==}
-    engines: {node: '>=6'}
-    dev: true
 
   /is-boolean-object/1.1.2:
     resolution: {integrity: sha512-gDYaKHJmnj4aWxyj6YHyXVpdQawtVLHU5cb+eztPGczf6cjuTdwve5ZIEfgXqH4e57An1D1AKf8CZ3kYrQRqYA==}
@@ -11268,10 +11242,6 @@ packages:
       '@volar/vue-language-core': 1.2.0
       '@volar/vue-typescript': 1.2.0
       typescript: 5.0.2
-
-  /vue-upload-component/3.1.6:
-    resolution: {integrity: sha512-MAQ0UCZ39/Y54yJc/K3JdVg2h/IcKMaJISG6CD6y3zacAbVb7YtNz2rYE/zpnyDez+9IOygEvwX8TtUgsl3YGg==}
-    dev: true
 
   /vue/3.2.47:
     resolution: {integrity: sha512-60188y/9Dc9WVrAZeUVSDxRQOZ+z+y5nO2ts9jWXSTkMvayiWxCWOWtBQoYjLeccfXkiiPZWAHcV+WTPhkqJHQ==}

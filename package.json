@@ -4,6 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "main": "./nuxt.config.ts",
+  "engines": {
+    "node": ">=16.15",
+    "pnpm": ">=3"
+  },
   "scripts": {
     "dev": "nuxi prepare && nuxi dev .app",
     "build": "nuxi build .app",
