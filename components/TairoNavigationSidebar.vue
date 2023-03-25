@@ -2,9 +2,11 @@
 const props = withDefaults(
   defineProps<{
     subsidebar?: boolean
+    expanded?: boolean
   }>(),
   {
     subsidebar: true,
+    expanded: false,
   },
 )
 

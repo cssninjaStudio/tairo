@@ -244,7 +244,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                         :src="'src' in user ? user.src : undefined"
                         :text="user.text"
                         :class="getRandomColor()"
-                        :tooltip="user.name"
+                        :data-tooltip="user.name"
                         size="xs"
                       />
                     </div>
@@ -400,7 +400,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                       to="#"
                       condensed
                       shape="full"
-                      tooltip="View Profile"
+                      data-tooltip="View Profile"
                     >
                       <Icon name="lucide:arrow-right" class="w-4 h-4" />
                     </BaseButtonIcon>

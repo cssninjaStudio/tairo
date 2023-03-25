@@ -35,7 +35,7 @@ const links = [
         :src="link.image"
         size="xs"
         class="grayscale opacity-60 group-hover:scale-110 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
-        :tooltip="link.name"
+        :data-tooltip="link.name"
       />
     </NuxtLink>
   </div>

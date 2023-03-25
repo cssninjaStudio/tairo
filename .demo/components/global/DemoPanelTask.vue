@@ -40,7 +40,7 @@ const commentArea = ref('')
       <div>
         <div class="flex items-center justify-between mb-4">
           <div class="flex items-center gap-2">
-            <BaseButtonIcon shape="full" tooltip="Edit task" condensed>
+            <BaseButtonIcon shape="full" data-tooltip="Edit task" condensed>
               <Icon name="lucide:edit-3" />
             </BaseButtonIcon>
             <h4
@@ -191,7 +191,7 @@ const commentArea = ref('')
                 <div class="ml-auto">
                   <BaseButtonIcon
                     shape="full"
-                    tooltip="Download file"
+                    data-tooltip="Download file"
                     condensed
                   >
                     <Icon name="lucide:arrow-down" />

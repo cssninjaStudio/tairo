@@ -321,7 +321,7 @@ const matches = [
                         <td class="py-4 align-middle">
                           <div
                             class="flex items-center gap-2 font-sans text-sm text-muted-500 dark:text-muted-400"
-                            :tooltip="capitalize(match.status)"
+                            :data-tooltip="capitalize(match.status)"
                           >
                             <div
                               class="h-2 w-2 rounded-full"

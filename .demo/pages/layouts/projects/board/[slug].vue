@@ -147,11 +147,11 @@ function onDrop(column: ColumnContent, dropResult: any) {
         <BaseButtonIcon
           :to="`/layouts/projects/details/${slug}`"
           shape="curved"
-          tooltip="Project details"
+          data-tooltip="Project details"
         >
           <Icon name="lucide:layout-template" class="w-4 h-4" />
         </BaseButtonIcon>
-        <BaseButtonIcon color="primary" shape="curved" tooltip="New task">
+        <BaseButtonIcon color="primary" shape="curved" data-tooltip="New task">
           <Icon name="lucide:plus" class="w-4 h-4" />
         </BaseButtonIcon>
       </div>
@@ -246,28 +246,28 @@ function onDrop(column: ColumnContent, dropResult: any) {
                     <div class="flex items-center gap-3 text-muted-400">
                       <div
                         v-if="task.checklist.length > 0"
-                        :tooltip="`${task.checklist.length} subtask${
+                        :data-tooltip="`${task.checklist.length} subtask${
                           task.checklist.length > 1 ? 's' : ''
                         } in checklist`"
-                        flow="left"
+                        data-tooltip-position="left"
                       >
                         <Icon name="lucide:check-circle" class="w-4 h-4" />
                       </div>
                       <div
                         v-if="task.files.length > 0"
-                        :tooltip="`${task.files.length} file${
+                        :data-tooltip="`${task.files.length} file${
                           task.files.length > 1 ? 's' : ''
                         } uploaded`"
-                        flow="left"
+                        data-tooltip-position="left"
                       >
                         <Icon name="lucide:file" class="w-4 h-4" />
                       </div>
                       <div
                         v-if="task.comments.length > 0"
-                        :tooltip="`${task.comments.length} comment${
+                        :data-tooltip="`${task.comments.length} comment${
                           task.comments.length > 1 ? 's' : ''
                         }`"
-                        flow="left"
+                        data-tooltip-position="left"
                       >
                         <Icon name="lucide:message-circle" class="w-4 h-4" />
                       </div>

@@ -138,7 +138,7 @@ function openTaskPanel(id: number, tasks: any) {
                         <div class="flex items-center gap-2">
                           <BaseAvatar
                             :src="data?.project.owner.avatar"
-                            :tooltip="`${data?.project.owner.name} owns this project`"
+                            :data-tooltip="`${data?.project.owner.name} owns this project`"
                           />
                           <div>
                             <BaseHeading tag="h3" size="sm" weight="medium">
@@ -276,7 +276,7 @@ function openTaskPanel(id: number, tasks: any) {
                           <div class="ml-auto">
                             <BaseButtonIcon
                               shape="full"
-                              tooltip="Download file"
+                              data-tooltip="Download file"
                               condensed
                             >
                               <Icon name="lucide:arrow-down" />
@@ -302,7 +302,7 @@ function openTaskPanel(id: number, tasks: any) {
                       <BaseAvatar
                         :src="data?.project.customer.logo"
                         size="md"
-                        :tooltip="data?.project.customer.name"
+                        :data-tooltip="data?.project.customer.name"
                         class="bg-muted-100 dark:bg-muted-700"
                       />
                       <div>
@@ -356,7 +356,7 @@ function openTaskPanel(id: number, tasks: any) {
                         <BaseAvatar
                           :src="tool.icon"
                           size="xs"
-                          :tooltip="tool.name"
+                          :data-tooltip="tool.name"
                           class="bg-muted-100 dark:bg-muted-700"
                         />
                         <div>
@@ -392,7 +392,7 @@ function openTaskPanel(id: number, tasks: any) {
                         <BaseAvatar
                           :src="stack.icon"
                           size="xs"
-                          :tooltip="stack.name"
+                          :data-tooltip="stack.name"
                           class="bg-muted-100 dark:bg-muted-700"
                         />
                         <div>
@@ -562,7 +562,7 @@ function openTaskPanel(id: number, tasks: any) {
                     <BaseAvatar
                       size="xxs"
                       :src="item.assignee.src"
-                      :tooltip="item.assignee.tooltip"
+                      :data-tooltip="item.assignee.tooltip"
                     />
                     <BaseProgress
                       :value="item.completion"

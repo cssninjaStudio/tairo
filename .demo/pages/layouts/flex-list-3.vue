@@ -148,7 +148,7 @@ function difficultyLabel(itemDifficulty: number) {
                 >
                   <div
                     class="w-full flex justify-end sm:justify-center gap-1"
-                    :tooltip="difficultyLabel(item.difficulty)"
+                    :data-tooltip="difficultyLabel(item.difficulty)"
                   >
                     <span
                       class="block h-2 w-2 rounded-full"

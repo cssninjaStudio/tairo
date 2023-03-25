@@ -172,7 +172,7 @@ export default {
           @input-file="inputFile"
           v-model="files"
           ref="upload"
-          tooltip="Select files"
+          data-tooltip="Select files"
         >
           <Icon
             name="lucide:plus"
@@ -184,7 +184,7 @@ export default {
           v-if="!$refs.upload || !$refs.upload.active"
           type="button"
           class="relative h-10 w-10 flex items-center justify-center border border-muted-200 hover:border-primary-500 text-muted-700 dark:text-muted-200 hover:text-primary-600 dark:border-muted-700 bg-white dark:bg-muted-800 dark:hover:border-primary-500 dark:hover:text-primary-600 rounded-full cursor-pointer transition-colors duration-300"
-          tooltip="Start Upload"
+          data-tooltip="Start Upload"
           @click.prevent="$refs.upload.active = true"
         >
           <Icon name="lucide:arrow-up" class="w-4 h-4" />
@@ -195,7 +195,7 @@ export default {
           v-else
           type="button"
           class="relative h-10 w-10 flex items-center justify-center border border-muted-200 hover:border-primary-500 text-muted-700 dark:text-muted-200 hover:text-primary-600 dark:border-muted-700 bg-white dark:bg-muted-800 dark:hover:border-primary-500 dark:hover:text-primary-600 rounded-full cursor-pointer transition-colors duration-300"
-          tooltip="Stop Upload"
+          data-tooltip="Stop Upload"
           @click.prevent="$refs.upload.active = false"
         >
           <Icon name="lucide:pause" class="w-4 h-4" />
@@ -265,7 +265,7 @@ export default {
                 class="relative h-8 w-8 flex items-center justify-center border border-muted-200 hover:border-primary-500 text-muted-700 dark:text-muted-200 hover:text-primary-600 dark:border-muted-700 bg-white dark:bg-muted-900 dark:hover:border-primary-500 dark:hover:text-primary-600 rounded-full cursor-pointer transition-colors duration-300"
                 :disabled="!file.active"
                 href="#"
-                tooltip="Cancel"
+                data-tooltip="Cancel"
                 @click.prevent="
                   file.active
                     ? $refs.upload.update(file, { error: 'cancel' })
@@ -279,7 +279,7 @@ export default {
               <a
                 class="relative h-8 w-8 flex items-center justify-center border border-muted-200 hover:border-primary-500 text-muted-700 dark:text-muted-200 hover:text-primary-600 dark:border-muted-700 bg-white dark:bg-muted-900 dark:hover:border-primary-500 dark:hover:text-primary-600 rounded-full cursor-pointer transition-colors duration-300"
                 href="#"
-                tooltip="Abort"
+                data-tooltip="Abort"
                 v-if="file.active"
                 @click.prevent="$refs.upload.update(file, { active: false })"
               >
@@ -289,7 +289,7 @@ export default {
               <a
                 class="relative h-8 w-8 flex items-center justify-center border border-muted-200 hover:border-primary-500 text-muted-700 dark:text-muted-200 hover:text-primary-600 dark:border-muted-700 bg-white dark:bg-muted-900 dark:hover:border-primary-500 dark:hover:text-primary-600 rounded-full cursor-pointer transition-colors duration-300"
                 href="#"
-                tooltip="Retry"
+                data-tooltip="Retry"
                 v-else-if="
                   file.error &&
                   file.error !== 'compressing' &&
@@ -315,7 +315,7 @@ export default {
                   file.error === 'image parsing'
                 "
                 href="#"
-                tooltip="Upload"
+                data-tooltip="Upload"
                 v-else
                 @click.prevent="
                   file.success ||
@@ -331,7 +331,7 @@ export default {
               <a
                 class="relative h-8 w-8 flex items-center justify-center border border-muted-200 hover:border-primary-500 text-muted-700 dark:text-muted-200 hover:text-primary-600 dark:border-muted-700 bg-white dark:bg-muted-900 dark:hover:border-primary-500 dark:hover:text-primary-600 rounded-full cursor-pointer transition-colors duration-300"
                 href="#"
-                tooltip="Remove"
+                data-tooltip="Remove"
                 @click.prevent="$refs.upload.remove(file)"
               >
                 <Icon name="lucide:x" class="w-4 h-4" />
