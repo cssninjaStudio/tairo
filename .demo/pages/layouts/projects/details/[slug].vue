@@ -21,6 +21,10 @@ const { data, pending, error, refresh } = await useFetch(
   },
 )
 
+if (!data.value?.project) {
+  await navigateTo('/layouts/projects')
+}
+
 const currentTask = ref()
 
 function openTaskPanel(id: number, tasks: any) {

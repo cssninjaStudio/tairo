@@ -76,8 +76,11 @@ function onClick(event: MouseEvent) {
         <li v-for="link of props.children" class="flex h-8 items-center w-full">
           <NuxtLink
             :to="link.to"
-            :active-class="!link.exact ? 'text-primary-500' : ''"
-            :exact-active-class="link.exact ? 'text-primary-500' : ''"
+            :class="{
+              'text-primary-500':
+                (link.exact && route.path === link.to) ||
+                (!link.exact && route.path.startsWith(link.to)),
+            }"
             class="flex pl-3 w-full nui-focus items-center text-muted-400 transition-colors duration-300 hover:text-primary-500 focus:text-primary-500"
           >
             <Icon :name="link.icon" class="mr-2 h-5 w-5" />

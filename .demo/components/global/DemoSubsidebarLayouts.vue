@@ -216,12 +216,12 @@ const navigation = [
       {
         name: 'Project details',
         icon: 'ph:note-duotone',
-        to: '/layouts/projects/details/delivery-app-project',
+        to: '/layouts/projects/details',
       },
       {
         name: 'Kanban board',
         icon: 'ph:squares-four-duotone',
-        to: '/layouts/projects/board/delivery-app-project',
+        to: '/layouts/projects/board',
       },
     ],
   },

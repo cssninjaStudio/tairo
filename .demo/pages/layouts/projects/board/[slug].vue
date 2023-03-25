@@ -15,7 +15,7 @@ interface Column {
   [key: string]: ColumnContent
 }
 
-const columns: Column = {
+const columns = reactive<Column>({
   new: {
     title: 'New',
     tasks: [],
@@ -40,7 +40,7 @@ const columns: Column = {
     title: 'Done',
     tasks: [],
   },
-}
+})
 
 const { open } = usePanels()
 
@@ -60,7 +60,11 @@ const { data, pending, error, refresh } = await useFetch(
   },
 )
 
-const tasks = ref(data.value?.project.tasks)
+if (!data.value?.project) {
+  await navigateTo('/layouts/projects')
+}
+
+const tasks = ref(data.value?.project?.tasks)
 
 if (tasks.value) {
   for (const task of tasks.value) {
@@ -87,13 +91,34 @@ if (tasks.value) {
   }
 }
 
-const board = Object.values(columns)
+const board = computed(() => Object.values(columns || {}))
 
 const currentTask = ref()
 
 function openTaskPanel(id: number, tasks: any) {
   currentTask.value = tasks.find((task: any) => task.id === id)
   open('task', { task: currentTask })
+}
+
+function onDrop(column: ColumnContent, dropResult: any) {
+  if (
+    typeof dropResult?.addedIndex !== 'number' ||
+    typeof dropResult?.removedIndex !== 'number'
+  ) {
+    return
+  }
+  if (dropResult.addedIndex === dropResult.removedIndex) {
+    return
+  }
+
+  let itemToAdd
+
+  if (dropResult.removedIndex !== null) {
+    itemToAdd = column.tasks.splice(dropResult.removedIndex, 1)[0]
+  }
+  if (dropResult.addedIndex !== null) {
+    column.tasks.splice(dropResult.addedIndex, 0, itemToAdd)
+  }
 }
 </script>
 
@@ -159,125 +184,128 @@ function openTaskPanel(id: number, tasks: any) {
           </button>
         </div>
         <!-- Scrollable area -->
-        <Container
-          tag="div"
-          orientation="vertical"
-          :group-name="column.title"
-          drag-class="transform rotate-2 transform-gpu"
-          drop-class="opacity-40"
-          :drop-placeholder="{
-            className:
-              'mt-4 border-muted-200 border-dashed dark:border-muted-700 dark:bg-muted-800 group relative flex cursor-pointer flex-col items-start rounded-lg border bg-white/90 p-4 hover:bg-white opacity-60 mb-4',
-          }"
-          class="flex flex-col gap-y-4 pb-10 pr-2 overflow-auto slimscroll"
-        >
-          <!-- Board card -->
-          <template v-if="column.tasks.length > 0">
-            <Draggable
-              v-for="task in column.tasks"
-              :key="task.id"
-              class="!overflow-visible"
-            >
-              <div
-                class="relative flex flex-col items-start p-4 border border-muted-200 dark:border-muted-700 bg-white dark:bg-muted-800 rounded-lg cursor-pointer bg-opacity-90 group hover:bg-opacity-100"
-                draggable="true"
-                @click="() => openTaskPanel(task.id, data?.project.tasks)"
-              >
-                <div class="relative mb-2">
-                  <div
-                    class="w-full flex items-center justify-between gap-2 mb-2"
-                  >
-                    <BaseTag
-                      shape="full"
-                      flavor="pastel"
-                      color="muted"
-                      class="py-0 h-6 font-semibold inline-flex items-center text-xs m-0 scale-90 -ml-1"
-                      >Task #{{ task.id }}</BaseTag
-                    >
-                    <BaseText size="xs" class="text-muted-400">{{
-                      task.created
-                    }}</BaseText>
-                  </div>
-                  <BaseHeading
-                    as="h4"
-                    size="sm"
-                    weight="medium"
-                    class="line-clamp-2"
-                  >
-                    <span>{{ task.name }}</span>
-                  </BaseHeading>
-                </div>
+        <div class="pb-10 pr-2 overflow-auto slimscroll">
+          <Container
+            tag="div"
+            class="flex flex-col gap-y-4"
+            orientation="vertical"
+            :group-name="column.title"
+            drag-class="transform rotate-2 transform-gpu"
+            drop-class="opacity-40"
+            :drop-placeholder="{
+              className:
+                'mt-4 border-muted-200 border-dashed dark:border-muted-700 dark:bg-muted-800 group relative flex cursor-pointer flex-col items-start rounded-lg border bg-white/90 p-4 hover:bg-white opacity-60 mb-4',
+            }"
+            @drop="(dropResult: any) => onDrop(column, dropResult)"
+          >
+            <!-- Board card -->
+            <template v-if="column.tasks.length > 0">
+              <Draggable v-for="task in column.tasks" :key="task.id">
                 <div
-                  class="flex items-center justify-between w-full mt-2 text-xs font-medium text-muted-500 dark:text-muted-200"
+                  class="relative flex flex-col items-start p-4 border border-muted-200 dark:border-muted-700 bg-white dark:bg-muted-800 rounded-lg cursor-pointer bg-opacity-90 group hover:bg-opacity-100"
+                  draggable="true"
+                  @click="() => openTaskPanel(task.id, data?.project.tasks)"
                 >
-                  <div class="flex items-center gap-2">
-                    <BaseAvatar
-                      :src="task.assignee.src"
-                      size="xxs"
-                      class="flex-shrink-0"
-                    />
-                    <BaseText size="xs" class="text-muted-400">{{
-                      task.assignee.tooltip
-                    }}</BaseText>
+                  <div class="relative mb-2">
+                    <div
+                      class="w-full flex items-center justify-between gap-2 mb-2"
+                    >
+                      <BaseTag
+                        shape="full"
+                        flavor="pastel"
+                        color="muted"
+                        class="py-0 h-6 font-semibold inline-flex items-center text-xs m-0 scale-90 -ml-1"
+                        >Task #{{ task.id }}</BaseTag
+                      >
+                      <BaseText size="xs" class="text-muted-400">{{
+                        task.created
+                      }}</BaseText>
+                    </div>
+                    <BaseHeading
+                      as="h4"
+                      size="sm"
+                      weight="medium"
+                      class="line-clamp-2"
+                    >
+                      <span>{{ task.name }}</span>
+                    </BaseHeading>
                   </div>
-                  <div class="flex items-center gap-3 text-muted-400">
-                    <div
-                      v-if="task.checklist.length > 0"
-                      :tooltip="`${task.checklist.length} subtask${
-                        task.checklist.length > 1 ? 's' : ''
-                      } in checklist`"
-                      flow="left"
-                    >
-                      <Icon name="lucide:check-circle" class="w-4 h-4" />
+                  <div
+                    class="flex items-center justify-between w-full mt-2 text-xs font-medium text-muted-500 dark:text-muted-200"
+                  >
+                    <div class="flex items-center gap-2">
+                      <BaseAvatar
+                        :src="task.assignee.src"
+                        size="xxs"
+                        class="flex-shrink-0"
+                      />
+                      <BaseText size="xs" class="text-muted-400">{{
+                        task.assignee.tooltip
+                      }}</BaseText>
                     </div>
-                    <div
-                      v-if="task.files.length > 0"
-                      :tooltip="`${task.files.length} file${
-                        task.files.length > 1 ? 's' : ''
-                      } uploaded`"
-                      flow="left"
-                    >
-                      <Icon name="lucide:file" class="w-4 h-4" />
-                    </div>
-                    <div
-                      v-if="task.comments.length > 0"
-                      :tooltip="`${task.comments.length} comment${
-                        task.comments.length > 1 ? 's' : ''
-                      }`"
-                      flow="left"
-                    >
-                      <Icon name="lucide:message-circle" class="w-4 h-4" />
+                    <div class="flex items-center gap-3 text-muted-400">
+                      <div
+                        v-if="task.checklist.length > 0"
+                        :tooltip="`${task.checklist.length} subtask${
+                          task.checklist.length > 1 ? 's' : ''
+                        } in checklist`"
+                        flow="left"
+                      >
+                        <Icon name="lucide:check-circle" class="w-4 h-4" />
+                      </div>
+                      <div
+                        v-if="task.files.length > 0"
+                        :tooltip="`${task.files.length} file${
+                          task.files.length > 1 ? 's' : ''
+                        } uploaded`"
+                        flow="left"
+                      >
+                        <Icon name="lucide:file" class="w-4 h-4" />
+                      </div>
+                      <div
+                        v-if="task.comments.length > 0"
+                        :tooltip="`${task.comments.length} comment${
+                          task.comments.length > 1 ? 's' : ''
+                        }`"
+                        flow="left"
+                      >
+                        <Icon name="lucide:message-circle" class="w-4 h-4" />
+                      </div>
                     </div>
                   </div>
                 </div>
+              </Draggable>
+            </template>
+            <!-- Placeholder -->
+            <div v-else>
+              <div
+                class="flex items-center justify-center mt-10 text-muted-400"
+              >
+                <Icon name="ph:kanban-thin" class="w-12 h-12" />
               </div>
-            </Draggable>
-          </template>
-          <!-- Placeholder -->
-          <div v-else>
-            <div class="flex items-center justify-center mt-10 text-muted-400">
-              <Icon name="ph:kanban-thin" class="w-12 h-12" />
+              <div class="text-center mt-2">
+                <BaseHeading as="h4" size="md" weight="light" class="mb-1">
+                  <span>Nothing to show</span>
+                </BaseHeading>
+                <BaseParagraph
+                  size="xs"
+                  lead="tight"
+                  class="!font-sans max-w-[200px] mx-auto text-muted-500 dark:text-muted-400"
+                >
+                  <span
+                    >There are no pending tasks to show in here for now.</span
+                  >
+                </BaseParagraph>
+                <button
+                  class="font-sans flex items-center justify-center gap-1 mx-auto mt-2 text-xs underline-offset-4 text-primary-500 dark:text-sunny hover:underline"
+                >
+                  <Icon name="lucide:plus" class="w-3 h-3" />
+                  <span>New Task</span>
+                </button>
+              </div>
             </div>
-            <div class="text-center mt-2">
-              <BaseHeading as="h4" size="md" weight="light" class="mb-1">
-                <span>Nothing to show</span>
-              </BaseHeading>
-              <BaseParagraph
-                size="xs"
-                lead="tight"
-                class="!font-sans max-w-[200px] mx-auto text-muted-500 dark:text-muted-400"
-              >
-                <span>There are no pending tasks to show in here for now.</span>
-              </BaseParagraph>
-              <button
-                class="font-sans flex items-center justify-center gap-1 mx-auto mt-2 text-xs underline-offset-4 text-primary-500 dark:text-sunny hover:underline"
-              >
-                <Icon name="lucide:plus" class="w-3 h-3" />
-                <span>New Task</span>
-              </button>
-            </div>
-          </div>
-        </Container>
+          </Container>
+        </div>
       </div>
       <!-- Add Column -->
       <div class="flex flex-col flex-shrink-0 w-72">

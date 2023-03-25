@@ -4,6 +4,8 @@
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
     "vue.volar",
-    "antfu.iconify"
+    "antfu.iconify",
+    "antfu.goto-alias",
+    "naumovs.color-highlight"
   ]
 }
