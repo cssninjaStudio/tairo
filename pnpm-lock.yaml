@@ -10,7 +10,7 @@ importers:
     specifiers:
       '@antfu/eslint-config': 0.37.0
       '@cssninja/nuxt-toaster': ^0.3.10
-      '@cssninja/nuxt-ui': ^0.5.5
+      '@cssninja/nuxt-ui': ^0.5.6
       '@iconify/json': 2.2.39
       '@nuxt/image-edge': 1.0.0-27991759.1a5eea1
       '@nuxtjs/eslint-config': 12.0.0
@@ -37,7 +37,7 @@ importers:
       zod: ^3.21.4
     dependencies:
       '@cssninja/nuxt-toaster': 0.3.10
-      '@cssninja/nuxt-ui': 0.5.5_ypvhkv4gcr5tk2q5ldzfpua5qm
+      '@cssninja/nuxt-ui': 0.5.6_ypvhkv4gcr5tk2q5ldzfpua5qm
       '@nuxt/image-edge': 1.0.0-27991759.1a5eea1
       '@vee-validate/zod': 4.8.4
       fast-copy: 3.0.1
@@ -542,8 +542,8 @@ packages:
       - vue
     dev: false
 
-  /@cssninja/nuxt-ui/0.5.5_ypvhkv4gcr5tk2q5ldzfpua5qm:
-    resolution: {integrity: sha512-RQ4Hzw0QmPxKC6nV7ol10Gb4VOnyCgQ1nFDlejMO+puEIZ0cjPT+6RuMAPttnESgJ+j4M1cGPhY8j/NXtIMJbA==}
+  /@cssninja/nuxt-ui/0.5.6_ypvhkv4gcr5tk2q5ldzfpua5qm:
+    resolution: {integrity: sha512-boUXUTS5MfapLP2uyeFrVVPStqFhwWHmwhIFmGC4/WJVKn0rllXy2NdJx7mqy/JRdoPwpcXlUrhJ2Epe9Yv+kw==}
     dependencies:
       '@headlessui/vue': 1.7.12
       '@iconify/vue': 4.1.0

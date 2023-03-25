@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "@cssninja/nuxt-toaster": "^0.3.10",
-    "@cssninja/nuxt-ui": "^0.5.5",
+    "@cssninja/nuxt-ui": "^0.5.6",
     "@nuxt/image-edge": "1.0.0-27991759.1a5eea1",
     "@vee-validate/zod": "^4.8.3",
     "fast-copy": "^3.0.1",
