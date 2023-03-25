@@ -114,7 +114,7 @@ const VFocus = {
         <!-- eslint-disable vue/no-v-html -->
         <div
           v-if="props.error.stack"
-          class="mt-6 overflow-auto whitespace-nowrap p-2 font-mono opacity-60 transition-all duration-300 group-hover:opacity-100 group-focus:opacity-100"
+          class="mt-6 overflow-auto whitespace-pre p-2 font-mono opacity-60 transition-all duration-300 group-hover:opacity-100 group-focus:opacity-100"
           v-html="props.error.stack"
         ></div>
         <!-- eslint-enable vue/no-v-html -->

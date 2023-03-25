@@ -24,7 +24,7 @@ definePageMeta({
             >Home</NuxtLink
           >
           <NuxtLink
-            to="/layouts/roadmap"
+            to="/layouts/utility-roadmap"
             class="font-sans text-sm text-muted-400 hover:text-primary-500 hover:underline underline-offset-4"
             >Roadmap</NuxtLink
           >
