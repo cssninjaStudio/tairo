@@ -328,7 +328,7 @@ const filteredResults = computed(() => {
                     :to="result.url"
                     shape="full"
                     condensed
-                    tooltip="View profile"
+                    data-tooltip="View profile"
                   >
                     <Icon name="lucide:arrow-right" />
                   </BaseButtonIcon>
@@ -337,7 +337,7 @@ const filteredResults = computed(() => {
                     :to="result.url"
                     shape="full"
                     condensed
-                    tooltip="View project"
+                    data-tooltip="View project"
                   >
                     <Icon name="lucide:arrow-right" />
                   </BaseButtonIcon>
@@ -346,7 +346,7 @@ const filteredResults = computed(() => {
                     :to="result.url"
                     shape="full"
                     condensed
-                    tooltip="Download file"
+                    data-tooltip="Download file"
                   >
                     <Icon name="lucide:arrow-down" />
                   </BaseButtonIcon>

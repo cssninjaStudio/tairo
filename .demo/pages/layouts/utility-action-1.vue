@@ -46,18 +46,18 @@ definePageMeta({
               <BaseAvatar
                 src="/img/avatars/25.svg"
                 size="xs"
-                tooltip="Melany L."
+                data-tooltip="Melany L."
               />
               <BaseAvatar
                 size="xs"
                 text="OD"
-                tooltip="Oliver D."
+                data-tooltip="Oliver D."
                 :class="getRandomColor()"
               />
               <BaseAvatar
                 src="/img/avatars/16.svg"
                 size="xs"
-                tooltip="Hermann M."
+                data-tooltip="Hermann M."
               />
             </div>
             <div class="text-center mt-2">

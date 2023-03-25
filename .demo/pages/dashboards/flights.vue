@@ -299,7 +299,7 @@ const results = [
                   >
                     <BaseAvatar
                       :src="result.logo"
-                      :tooltip="result.company"
+                      :data-tooltip="result.company"
                       alt="Company logo"
                     />
                     <div>
@@ -323,7 +323,7 @@ const results = [
                   </div>
                   <div
                     class="w-full sm:w-auto flex items-center gap-2 grow px-6 py-6 sm:py-0"
-                    :tooltip="`${result.stops} stop${
+                    :data-tooltip="`${result.stops} stop${
                       result.stops > 1 ? 's' : ''
                     }`"
                   >

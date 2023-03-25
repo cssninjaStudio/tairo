@@ -330,7 +330,7 @@ const students = [
                 </BaseParagraph>
               </div>
               <div class="ml-auto">
-                <BaseButtonIcon small tooltip="Download file">
+                <BaseButtonIcon small data-tooltip="Download file">
                   <Icon name="lucide:arrow-down" class="w-4 h-4" />
                 </BaseButtonIcon>
               </div>

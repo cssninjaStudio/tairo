@@ -2,7 +2,7 @@
   <div class="flex flex-wrap items-end gap-2">
     <BaseButtonIcon
       shape="curved"
-      tooltip="Time for a nap!"
+      data-tooltip="Time for a nap!"
     >
       <Icon
         name="ph:timer-duotone"
@@ -11,8 +11,8 @@
     </BaseButtonIcon>
     <BaseButtonIcon
       shape="curved"
-      flow="left"
-      tooltip="Unlock this now!"
+      data-tooltip-position="left"
+      data-tooltip="Unlock this now!"
     >
       <Icon
         name="ph:lock-duotone"
@@ -21,8 +21,8 @@
     </BaseButtonIcon>
     <BaseButtonIcon
       shape="curved"
-      flow="right"
-      tooltip="Give some love!"
+      data-tooltip-position="right"
+      data-tooltip="Give some love!"
     >
       <Icon
         name="ph:heartbeat-duotone"
@@ -31,8 +31,8 @@
     </BaseButtonIcon>
     <BaseButtonIcon
       shape="curved"
-      flow="down"
-      tooltip="The King in the North!"
+      data-tooltip-position="down"
+      data-tooltip="The King in the North!"
     >
       <Icon
         name="ph:crown-duotone"
@@ -41,7 +41,7 @@
     </BaseButtonIcon>
     <BaseButtonAction
       shape="curved"
-      tooltip="Here we go!"
+      data-tooltip="Here we go!"
     >
       <Icon
         name="ph:bell-ringing-duotone"

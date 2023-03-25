@@ -36,11 +36,6 @@ export default defineNuxtConfig({
     '@cssninja/nuxt-toaster',
     resolve('./modules/purge-comments'),
   ],
-  css: [
-    resolve('./assets/css/modules/slider.css'),
-    resolve('./assets/css/modules/popper.css'),
-    resolve('./assets/css/keyframes.css'),
-  ],
   app: {
     layoutTransition: {
       enterActiveClass: 'transition-opacity duration-400 ease-out',

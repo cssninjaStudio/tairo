@@ -359,13 +359,13 @@ const onSubmit = handleSubmit(
                       condensed
                       shape="full"
                       @click="remove(files.item(0)!)"
-                      tooltip="Remove image"
+                      data-tooltip="Remove image"
                     >
                       <Icon name="lucide:x" class="w-4 h-4" />
                     </BaseButtonIcon>
                   </div>
                   <div v-else class="absolute bottom-0 right-0 z-20">
-                    <div class="relative" tooltip="Upload image">
+                    <div class="relative" data-tooltip="Upload image">
                       <BaseButtonIcon condensed shape="full" @click="open">
                         <Icon name="lucide:plus" class="w-4 h-4" />
                       </BaseButtonIcon>

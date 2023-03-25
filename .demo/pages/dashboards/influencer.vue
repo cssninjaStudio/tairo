@@ -365,81 +365,70 @@ const activeTab = ref('tab-1')
           <div
             class="flex justify-center ltablet:justify-start lg:justify-start gap-4"
           >
-            <!-- Icon -->
-            <ClientOnly>
-              <Popover arrow hover placement="top">
+            <TairoPopover size="sm">
+              <div
+                class="h-10 w-10 flex items-center justify-center rounded-full bg-white dark:bg-muted-700 shadow-xl shadow-muted-300/40 dark:shadow-muted-900/20"
+              >
                 <div
-                  class="h-10 w-10 flex items-center justify-center rounded-full bg-white dark:bg-muted-700 shadow-xl shadow-muted-300/40 dark:shadow-muted-900/20"
+                  class="h-8 w-8 flex items-center justify-center rounded-full bg-danger-500/20"
                 >
-                  <div
-                    class="h-8 w-8 flex items-center justify-center rounded-full bg-rose-500/20"
-                  >
-                    <Icon name="ri:fire-fill" class="w-5 h-5 text-rose-500" />
-                  </div>
+                  <Icon name="ri:fire-fill" class="w-5 h-5 text-danger-500" />
                 </div>
-                <template #content>
-                  <PopoverHead
-                    title="On Fire"
-                    icon="ri:fire-fill"
-                    class="text-rose-500 bg-rose-500/20"
-                  />
-                  <PopoverContent>
-                    You have been on fire for the last 7 days. Keep up the good
-                    work!
-                  </PopoverContent>
-                </template>
-              </Popover>
-              <Popover arrow hover placement="top">
-                <!-- Icon -->
+              </div>
+
+              <template #content>
+                <TairoPopoverContentHelp
+                  title="On Fire"
+                  subtitle="You are on rampage"
+                  text="You have been on fire for the last 7 days. Keep up the good
+                    work!"
+                  icon="ri:fire-fill"
+                  icon-color="danger"
+                />
+              </template>
+            </TairoPopover>
+            <TairoPopover size="sm">
+              <div
+                class="h-10 w-10 flex items-center justify-center rounded-full bg-white dark:bg-muted-700 shadow-xl shadow-muted-300/40 dark:shadow-muted-900/20"
+              >
                 <div
-                  class="h-10 w-10 flex items-center justify-center rounded-full bg-white dark:bg-muted-700 shadow-xl shadow-muted-300/40 dark:shadow-muted-900/20"
+                  class="h-8 w-8 flex items-center justify-center rounded-full bg-success-500/20"
                 >
-                  <div
-                    class="h-8 w-8 flex items-center justify-center rounded-full bg-emerald-500/20"
-                  >
-                    <Icon
-                      name="ri:medal-fill"
-                      class="w-5 h-5 text-emerald-500"
-                    />
-                  </div>
+                  <Icon name="ri:medal-fill" class="w-5 h-5 text-success-500" />
                 </div>
-                <template #content>
-                  <PopoverHead
-                    title="Veteran"
-                    icon="ri:medal-fill"
-                    class="text-emerald-500 bg-emerald-500/20"
-                  />
-                  <PopoverContent>
-                    You posted more than 250 posts. You are now a post veteran!
-                  </PopoverContent>
-                </template>
-              </Popover>
-              <Popover arrow hover placement="top">
-                <!-- Icon -->
+              </div>
+
+              <template #content>
+                <TairoPopoverContentHelp
+                  title="Veteran"
+                  subtitle="Way to go soldier"
+                  text="You posted more than 250 posts. You are now a post veteran!"
+                  icon="ri:medal-fill"
+                  icon-color="success"
+                />
+              </template>
+            </TairoPopover>
+            <TairoPopover size="sm">
+              <div
+                class="h-10 w-10 flex items-center justify-center rounded-full bg-white dark:bg-muted-700 shadow-xl shadow-muted-300/40 dark:shadow-muted-900/20"
+              >
                 <div
-                  class="h-10 w-10 flex items-center justify-center rounded-full bg-white dark:bg-muted-700 shadow-xl shadow-muted-300/40 dark:shadow-muted-900/20"
+                  class="h-8 w-8 flex items-center justify-center rounded-full bg-yellow-500/20"
                 >
-                  <div
-                    class="h-8 w-8 flex items-center justify-center rounded-full bg-yellow-500/20"
-                  >
-                    <Icon
-                      name="ri:trophy-fill"
-                      class="w-5 h-5 text-yellow-500"
-                    />
-                  </div>
+                  <Icon name="ri:trophy-fill" class="w-5 h-5 text-yellow-500" />
                 </div>
-                <template #content>
-                  <PopoverHead
-                    title="Champion"
-                    icon="ri:trophy-fill"
-                    class="text-yellow-500"
-                  />
-                  <PopoverContent>
-                    You have more than 100k followers. You are a champion!
-                  </PopoverContent>
-                </template>
-              </Popover>
-            </ClientOnly>
+              </div>
+
+              <template #content>
+                <TairoPopoverContentHelp
+                  title="Champion"
+                  subtitle="Hail to the king"
+                  text="You have more than 100k followers. You are a champion!"
+                  icon="ri:trophy-fill"
+                  icon-color="yellow"
+                />
+              </template>
+            </TairoPopover>
           </div>
         </div>
       </div>
@@ -1068,7 +1057,7 @@ const activeTab = ref('tab-1')
           >
             <BaseCard shape="curved" class="p-6 h-full flex flex-col">
               <div class="w-full h-full flex flex-col gap-4">
-                <div :tooltip="company.name">
+                <div :data-tooltip="company.name">
                   <Icon :name="company.logo" class="w-8 h-8 shrink-0" />
                 </div>
                 <div class="h-full flex flex-col">

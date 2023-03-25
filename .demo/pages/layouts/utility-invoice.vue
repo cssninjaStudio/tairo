@@ -58,16 +58,16 @@ const totalData = computed(() => {
         </BaseHeading>
       </div>
       <div class="flex items-center justify-end gap-3">
-        <BaseButtonIcon condensed shape="full" tooltip="Edit invoice">
+        <BaseButtonIcon condensed shape="full" data-tooltip="Edit invoice">
           <Icon name="ph:pencil-duotone" class="w-4 h-4" />
         </BaseButtonIcon>
-        <BaseButtonIcon condensed shape="full" tooltip="Send by email">
+        <BaseButtonIcon condensed shape="full" data-tooltip="Send by email">
           <Icon name="ph:envelope-duotone" class="w-4 h-4" />
         </BaseButtonIcon>
-        <BaseButtonIcon condensed shape="full" tooltip="Print invoice">
+        <BaseButtonIcon condensed shape="full" data-tooltip="Print invoice">
           <Icon name="ph:printer-duotone" class="w-4 h-4" />
         </BaseButtonIcon>
-        <BaseButtonIcon condensed shape="full" tooltip="Download as PDF">
+        <BaseButtonIcon condensed shape="full" data-tooltip="Download as PDF">
           <Icon name="ph:download-duotone" class="w-4 h-4" />
         </BaseButtonIcon>
       </div>

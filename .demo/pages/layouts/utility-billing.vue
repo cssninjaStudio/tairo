@@ -292,34 +292,34 @@ const billingCycles = ref('monthly')
                 <BaseAvatar
                   src="/img/avatars/2.svg"
                   size="sm"
-                  tooltip="Maya R."
+                  data-tooltip="Maya R."
                 />
                 <BaseAvatar
                   src="/img/avatars/10.svg"
                   size="sm"
-                  tooltip="Kendra W."
+                  data-tooltip="Kendra W."
                 />
                 <BaseAvatar
                   size="sm"
                   text="OD"
-                  tooltip="Oliver D."
+                  data-tooltip="Oliver D."
                   :class="getRandomColor()"
                 />
                 <BaseAvatar
                   src="/img/avatars/16.svg"
                   size="sm"
-                  tooltip="Hermann M."
+                  data-tooltip="Hermann M."
                 />
                 <BaseAvatar
                   size="sm"
                   text="MC"
-                  tooltip="Matteus C."
+                  data-tooltip="Matteus C."
                   :class="getRandomColor()"
                 />
                 <BaseAvatar
                   size="sm"
                   text="GM"
-                  tooltip="Gorav M."
+                  data-tooltip="Gorav M."
                   :class="getRandomColor()"
                 />
               </div>
@@ -327,7 +327,7 @@ const billingCycles = ref('monthly')
                 <button
                   type="button"
                   class="h-10 w-10 rounded-full border-2 border-dashed border-muted-200 dark:border-muted-700 hover:border-solid hover:border-primary-500 dark:hover:border-primary-500 text-muted-400 dark:text-muted-600 hover:text-primary-500 dark:hover:text-primary-500 transition-all duration-300"
-                  tooltip="Manage plan seats"
+                  data-tooltip="Manage plan seats"
                 >
                   <Icon name="lucide:edit-3" class="h-4 w-4" />
                 </button>

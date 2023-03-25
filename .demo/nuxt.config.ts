@@ -25,7 +25,7 @@ export default defineNuxtConfig({
     'nuxt-swiper',
 
     // Use the devtools module to debug nuxt 3
-    // '@nuxt/devtools',
+    '@nuxt/devtools',
   ],
   runtimeConfig: {
     public: {

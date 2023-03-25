@@ -102,7 +102,7 @@ const { data, pending, error, refresh } = await useFetch(
                         size="sm"
                         shape="straight"
                         mask="blob"
-                        :tooltip="item.name"
+                        :data-tooltip="item.name"
                         class="bg-muted-100 dark:bg-muted-700"
                       />
                       <div>
@@ -128,7 +128,7 @@ const { data, pending, error, refresh } = await useFetch(
                           size="xxs"
                           shape="straight"
                           mask="blob"
-                          :tooltip="stack.name"
+                          :data-tooltip="stack.name"
                           class="bg-muted-100 dark:bg-muted-700"
                         />
                       </div>
@@ -215,7 +215,7 @@ const { data, pending, error, refresh } = await useFetch(
                           size="sm"
                           shape="straight"
                           mask="blob"
-                          :tooltip="item.name"
+                          :data-tooltip="item.name"
                           class="bg-muted-100 dark:bg-muted-700"
                         />
                         <div>
@@ -242,7 +242,7 @@ const { data, pending, error, refresh } = await useFetch(
                             size="xxs"
                             shape="straight"
                             mask="blob"
-                            :tooltip="stack.name"
+                            :data-tooltip="stack.name"
                             class="bg-muted-100 dark:bg-muted-700"
                           />
                         </div>

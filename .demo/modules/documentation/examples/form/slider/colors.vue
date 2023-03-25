@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import '~/assets/css/slider.css'
 import Slider from '@vueform/slider'
 const info = ref(38)
 const success = ref(84)

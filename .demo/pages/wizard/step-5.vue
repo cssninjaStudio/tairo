@@ -239,7 +239,7 @@ watchEffect(() => {
                     <div class="relative w-48 flex justify-between">
                       <div
                         class="relative z-10 shrink-0"
-                        tooltip="Reader"
+                        data-tooltip="Reader"
                         tabindex="0"
                         @keydown.space.prevent="setTeammateRole(idx, 'reader')"
                         @click="setTeammateRole(idx, 'reader')"
@@ -255,7 +255,7 @@ watchEffect(() => {
                       </div>
                       <div
                         class="relative z-10 shrink-0"
-                        tooltip="Collaborator"
+                        data-tooltip="Collaborator"
                         tabindex="0"
                         @keydown.space.prevent="
                           setTeammateRole(idx, 'collaborator')
@@ -273,7 +273,7 @@ watchEffect(() => {
                       </div>
                       <div
                         class="relative z-10 shrink-0"
-                        tooltip="Manager"
+                        data-tooltip="Manager"
                         tabindex="0"
                         @keydown.space.prevent="setTeammateRole(idx, 'manager')"
                         @click="setTeammateRole(idx, 'manager')"
@@ -289,7 +289,7 @@ watchEffect(() => {
                       </div>
                       <div
                         class="relative z-10 shrink-0"
-                        tooltip="Owner"
+                        data-tooltip="Owner"
                         tabindex="0"
                         @keydown.space.prevent="setTeammateRole(idx, 'owner')"
                         @click="setTeammateRole(idx, 'owner')"

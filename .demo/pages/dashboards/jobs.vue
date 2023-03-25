@@ -593,7 +593,7 @@ const jobs = [
           <div v-for="(job, index) in jobs" :key="index" class="relative">
             <BaseCard shape="curved" class="p-6">
               <div class="w-full flex flex-col sm:flex-row gap-4">
-                <div :tooltip="job.company">
+                <div :data-tooltip="job.company">
                   <Icon :name="job.logo" class="w-10 h-10 shrink-0" />
                 </div>
                 <div>

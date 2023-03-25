@@ -326,7 +326,7 @@ const componentsByCategoryMaped = computed(() => {
                         weight="normal"
                         lead="tight"
                         class="mb-2"
-                        :tooltip="component.name"
+                        :data-tooltip="component.name"
                       >
                         <span
                           class="block w-full max-w-[240px] line-clamp-1 font-mono text-muted-800 dark:text-white"
