@@ -6,8 +6,6 @@ definePageMeta({
     icon: 'lucide:home',
   },
 })
-
-const app = useAppConfig()
 </script>
 
 <template>

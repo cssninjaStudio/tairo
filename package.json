@@ -20,6 +20,7 @@
     "lint:eslint:fix": "eslint --fix ."
   },
   "dependencies": {
+    "@cssninja/nuxt-toaster": "^0.3.10",
     "@cssninja/nuxt-ui": "^0.5.2",
     "@nuxt/image-edge": "1.0.0-27991759.1a5eea1",
     "@vee-validate/zod": "^4.8.3",

@@ -16,7 +16,7 @@ const { totalSteps, currentStep, loading, complete, getNextStep, getPrevStep } =
     >
       <div
         v-if="currentStep > 0 && !complete"
-        class="fixed bottom-6 inset-x-0 w-full max-w-[304px] mx-auto z-40"
+        class="fixed bottom-6 inset-x-0 w-full max-w-[304px] mx-auto z-20"
       >
         <BaseCard
           class="p-4 flex items-center justify-between gap-2 rounded-2xl shadow-xl shadow-muted-300/30 dark:shadow-muted-800/30"

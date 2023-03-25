@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useForm, Field } from 'vee-validate'
 import { toFormValidator } from '@vee-validate/zod'
+import { Field, useForm } from 'vee-validate'
 import { z } from 'zod'
 
 definePageMeta({
@@ -48,6 +48,7 @@ const {
 })
 
 const router = useRouter()
+const toaster = useToaster()
 
 // This is where you would send the form data to the server
 const onSubmit = handleSubmit(async (values) => {
@@ -65,6 +66,15 @@ const onSubmit = handleSubmit(async (values) => {
         )
       }
       setTimeout(resolve, 4000)
+    })
+
+    toaster.clearAll()
+    toaster.show({
+      title: 'Success',
+      message: `Welcome back!`,
+      color: 'success',
+      icon: 'ph:user-circle-fill',
+      closable: true,
     })
   } catch (error: any) {
     // this will set the error on the form

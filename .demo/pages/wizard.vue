@@ -85,6 +85,8 @@ const wizardSteps = [
   },
 ]
 
+const toaster = useToaster()
+
 const { handleSubmit, currentStep } = createMultiStepForm<
   Project,
   ProjectStepData
@@ -105,9 +107,27 @@ const { handleSubmit, currentStep } = createMultiStepForm<
 
     // Simulate async request
     await new Promise((resolve) => setTimeout(resolve, 4000))
+
+    toaster.clearAll()
+    toaster.show({
+      title: 'Success',
+      message: `Project ${state.name} created!`,
+      color: 'success',
+      icon: 'ph:check',
+      closable: true,
+    })
   },
   onError: (error) => {
     console.log('multi-step-error', error)
+
+    toaster.clearAll()
+    toaster.show({
+      title: 'Oops!',
+      message: error.message,
+      color: 'danger',
+      icon: 'lucide:alert-triangle',
+      closable: true,
+    })
   },
 })
 

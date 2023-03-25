@@ -9,6 +9,7 @@ importers:
   .:
     specifiers:
       '@antfu/eslint-config': 0.37.0
+      '@cssninja/nuxt-toaster': ^0.3.10
       '@cssninja/nuxt-ui': ^0.5.2
       '@iconify/json': 2.2.39
       '@nuxt/image-edge': 1.0.0-27991759.1a5eea1
@@ -35,6 +36,7 @@ importers:
       vue-tsc: 1.2.0
       zod: ^3.21.4
     dependencies:
+      '@cssninja/nuxt-toaster': 0.3.10
       '@cssninja/nuxt-ui': 0.5.2_ypvhkv4gcr5tk2q5ldzfpua5qm
       '@nuxt/image-edge': 1.0.0-27991759.1a5eea1
       '@vee-validate/zod': 4.8.4
@@ -532,6 +534,19 @@ packages:
     resolution: {integrity: sha512-9CB/MKf/wdvbfkUdfrj+OkEwZ5b7rws0eogJ4293h+7b6KX5toPwym+VQKmILafNB9YiehqY0DlNrDcDhdWHSQ==}
     dependencies:
       mime: 3.0.0
+
+  /@cssninja/nuxt-toaster/0.3.10:
+    resolution: {integrity: sha512-krbmR4cdwTF0xtbwumppWp+9pvKcEBN5V4gnMLopE8T0BJKAHh+VTb4eyV7cPcZNeaYhXeK53owQTy4/TsWZKg==}
+    dependencies:
+      '@nuxt/kit': 3.3.2
+      '@vueuse/core': 9.13.0
+      defu: 6.1.2
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - rollup
+      - supports-color
+      - vue
+    dev: false
 
   /@cssninja/nuxt-ui/0.5.2_ypvhkv4gcr5tk2q5ldzfpua5qm:
     resolution: {integrity: sha512-317j8bzihBXGMtRFnLGChyI2CumAoS0WGNDQTixJZ714SrC+43P00dFX5kICTZpIG2JTml+pj7um3+E5zUI8Zw==}

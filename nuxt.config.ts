@@ -31,7 +31,11 @@ export default defineNuxtConfig({
      */
     'nuxt-seo-kit',
   ],
-  modules: ['@nuxt/image-edge', resolve('./modules/purge-comments')],
+  modules: [
+    '@nuxt/image-edge',
+    '@cssninja/nuxt-toaster',
+    resolve('./modules/purge-comments'),
+  ],
   css: [
     resolve('./assets/css/modules/slider.css'),
     resolve('./assets/css/modules/popper.css'),
