@@ -151,7 +151,7 @@ function onDrop(column: ColumnContent, dropResult: any) {
         >
           <Icon name="lucide:layout-template" class="w-4 h-4" />
         </BaseButtonIcon>
-        <BaseButtonIcon color="primary" shape="curved" data-tooltip="New task">
+        <BaseButtonIcon shape="full" data-tooltip="New task">
           <Icon name="lucide:plus" class="w-4 h-4" />
         </BaseButtonIcon>
       </div>
