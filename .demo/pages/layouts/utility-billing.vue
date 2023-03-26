@@ -85,7 +85,45 @@ const billingCycles = ref('monthly')
 </script>
 
 <template>
-  <div class="w-full max-w-4xl mx-auto">
+  <form
+    action=""
+    method="POST"
+    @submit.prevent
+    class="w-full max-w-4xl mx-auto pb-16"
+  >
+    <!-- Header -->
+    <div class="flex flex-col md:flex-row md:items-center justify-between mb-8">
+      <div
+        class="flex flex-col md:flex-row items-center gap-4 text-center md:text-left max-w-[425px] ltablet:max-w-full lg:max-w-full"
+      >
+        <BaseAvatar src="/img/avatars/2.svg" size="lg" />
+        <div>
+          <BaseHeading
+            as="h2"
+            size="xl"
+            weight="light"
+            lead="tight"
+            class="text-muted-800 dark:text-white"
+          >
+            <span>Manage plan</span>
+          </BaseHeading>
+          <BaseParagraph>
+            <span class="text-muted-500">
+              Manage your plan and billing information
+            </span>
+          </BaseParagraph>
+        </div>
+      </div>
+      <div
+        class="flex items-center justify-center md:justify-start gap-2 mt-4 md:mt-0"
+      >
+        <BaseButton type="submit" color="primary">
+          <span>Save for</span>
+          <span class="font-semibold">${{ selectedPlan?.price.monthly }}</span>
+          <span>/month</span>
+        </BaseButton>
+      </div>
+    </div>
     <!-- plans -->
     <div
       class="dark:border-muted-800 mb-10 grid gap-4 border-b border-gray-200 pb-10 md:grid-cols-2 xl:gap-8"
@@ -492,16 +530,18 @@ const billingCycles = ref('monthly')
                     </div>
                   </div>
                 </div>
-                <div class="col-span-12">
-                  <BaseButton type="submit" class="w-full" color="primary"
-                    >Save Card Info</BaseButton
-                  >
-                </div>
               </div>
             </form>
           </div>
         </BaseCard>
       </div>
     </div>
-  </div>
+    <TairoFormSave>
+      <BaseButton type="submit" color="primary" class="w-full">
+        <span>Save for</span>
+        <span class="font-semibold">${{ selectedPlan?.price.monthly }}</span>
+        <span>/month</span>
+      </BaseButton>
+    </TairoFormSave>
+  </form>
 </template>
