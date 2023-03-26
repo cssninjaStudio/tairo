@@ -79,7 +79,6 @@ importers:
       '@popperjs/core': 2.11.7
       '@stefanprobst/remark-shiki': 2.2.0
       '@types/mapbox-gl': 2.7.10
-      '@types/splitpanes': ^2.2.1
       '@vueform/slider': 2.1.7
       apexcharts: 3.37.2
       date-fns: 2.29.3
@@ -110,7 +109,6 @@ importers:
       '@popperjs/core': 2.11.7
       '@stefanprobst/remark-shiki': 2.2.0_shiki@0.14.1
       '@types/mapbox-gl': 2.7.10
-      '@types/splitpanes': 2.2.1
       '@vueform/slider': 2.1.7
       apexcharts: 3.37.2
       date-fns: 2.29.3
@@ -1167,7 +1165,7 @@ packages:
       consola: 2.15.3
       execa: 7.1.1
       h3: 1.6.2
-      hookable: 5.5.1
+      hookable: 5.5.2
       is-installed-globally: 0.4.0
       launch-editor: 2.6.0
       nuxt: 3.3.2
@@ -1386,7 +1384,7 @@ packages:
       c12: 1.2.0
       create-require: 1.1.1
       defu: 6.1.2
-      hookable: 5.5.1
+      hookable: 5.5.2
       jiti: 1.18.2
       pathe: 1.1.0
       pkg-types: 1.0.2
@@ -1408,7 +1406,7 @@ packages:
       c12: 1.2.0
       create-require: 1.1.1
       defu: 6.1.2
-      hookable: 5.5.1
+      hookable: 5.5.2
       jiti: 1.18.2
       pathe: 1.1.0
       pkg-types: 1.0.2
@@ -1430,7 +1428,7 @@ packages:
       c12: 1.2.0
       create-require: 1.1.1
       defu: 6.1.2
-      hookable: 5.5.1
+      hookable: 5.5.2
       jiti: 1.18.2
       pathe: 1.1.0
       pkg-types: 1.0.2
@@ -1452,7 +1450,7 @@ packages:
       c12: 1.2.0
       create-require: 1.1.1
       defu: 6.1.2
-      hookable: 5.5.1
+      hookable: 5.5.2
       jiti: 1.18.2
       pathe: 1.1.0
       pkg-types: 1.0.2
@@ -1474,7 +1472,7 @@ packages:
       c12: 1.2.0
       create-require: 1.1.1
       defu: 6.1.2
-      hookable: 5.5.1
+      hookable: 5.5.2
       jiti: 1.18.2
       pathe: 1.1.0
       pkg-types: 1.0.2
@@ -1495,7 +1493,7 @@ packages:
       c12: 1.2.0
       create-require: 1.1.1
       defu: 6.1.2
-      hookable: 5.5.1
+      hookable: 5.5.2
       jiti: 1.18.2
       pathe: 1.1.0
       pkg-types: 1.0.2
@@ -2159,12 +2157,6 @@ packages:
     resolution: {integrity: sha512-21cFJr9z3g5dW8B0CVI9g2O9beqaThGQ6ZFBqHfwhzLDKUxaqTIy3vnfah/UPkfOiF2pLq+tGz+W8RyCskuslw==}
     dev: true
 
-  /@types/splitpanes/2.2.1:
-    resolution: {integrity: sha512-H5BgO6UdJRzz5ddRzuGvLBiPSPEuuHXb5ET+7avLLrEx1uc7f5Ut5oLMDQsfvGtHBBAFczt1QNYuDf27wHbvDQ==}
-    dependencies:
-      vue: 2.7.14
-    dev: true
-
   /@types/unist/2.0.6:
     resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==}
     dev: true
@@ -2338,7 +2330,7 @@ packages:
   /@unhead/schema/1.1.25:
     resolution: {integrity: sha512-ygmaxWgGTAq9CcB6zGY4+0HlGdQt/oMq+CM18tTnvOBY0Og/uPGt7roW8eH717GpTPibKRTpagSYzZYdL0tWeg==}
     dependencies:
-      hookable: 5.5.1
+      hookable: 5.5.2
       zhead: 2.0.4
 
   /@unhead/shared/1.1.25:
@@ -2362,7 +2354,7 @@ packages:
     dependencies:
       '@unhead/schema': 1.1.25
       '@unhead/shared': 1.1.25
-      hookable: 5.5.1
+      hookable: 5.5.2
       unhead: 1.1.25
     dev: false
 
@@ -2376,7 +2368,7 @@ packages:
     dependencies:
       '@unhead/schema': 1.1.25
       '@unhead/shared': 1.1.25
-      hookable: 5.5.1
+      hookable: 5.5.2
       unhead: 1.1.25
       vue: 3.2.47
 
@@ -2511,14 +2503,6 @@ packages:
     dependencies:
       '@vue/compiler-core': 3.2.47
       '@vue/shared': 3.2.47
-
-  /@vue/compiler-sfc/2.7.14:
-    resolution: {integrity: sha512-aNmNHyLPsw+sVvlQFQ2/8sjNuLtK54TC6cuKnVzAY93ks4ZBrvwQSnkkIh7bsbNhum5hJBS00wSDipQ937f5DA==}
-    dependencies:
-      '@babel/parser': 7.21.3
-      postcss: 8.4.21
-      source-map: 0.6.1
-    dev: true
 
   /@vue/compiler-sfc/3.2.47:
     resolution: {integrity: sha512-rog05W+2IFfxjMcFw10tM9+f7i/+FFpZJJ5XHX72NP9eC2uRD+42M3pYcQqDXVYoj74kHMSEdQ/WmCjt8JFksQ==}
@@ -3778,10 +3762,6 @@ packages:
 
   /csstype/2.6.21:
     resolution: {integrity: sha512-Z1PhmomIfypOpoMjRQB70jfvy/wxT50qW08YXO5lMIJkrdq4yOTR+AW7FqutScmB9NkLwxo+jU+kZLbofZZq/w==}
-
-  /csstype/3.1.1:
-    resolution: {integrity: sha512-DJR/VvkAvSZW9bTouZue2sSxDwdTN92uHjqeKVm+0dAqdfNykRzQ95tay8aXMBAAPpUiq4Qcug2L7neoRh2Egw==}
-    dev: true
 
   /cuint/0.2.2:
     resolution: {integrity: sha512-d4ZVpCW31eWwCMe1YT3ur7mUDnTXbgwyzaL320DrcRT45rfjYxkt5QWLrmOJ+/UEAI2+fQgKe/fCjR8l4TpRgw==}
@@ -5628,8 +5608,8 @@ packages:
     resolution: {integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==}
     hasBin: true
 
-  /hookable/5.5.1:
-    resolution: {integrity: sha512-ac50aYjbtRMMZEtTG0qnVaBDA+1lqL9fHzDnxMQlVuO6LZWcBB7NXjIu9H9iImClewNdrit4RiEzi9QpRTgKrg==}
+  /hookable/5.5.2:
+    resolution: {integrity: sha512-9JZdvGuxXswyoT47M0xrg+IabnK76Ppc7qjf8JdFZu/IaCWflTHVf/ln/GzicraEnPONPIfxgk929rdYiOqv9w==}
 
   /hosted-git-info/2.8.9:
     resolution: {integrity: sha512-mxIDAb9Lsm6DoOJ7xH+5+X4y1LU/4Hi50L9C5sIswK3JzULS4bwk1FvjdBgvYR4bzT4tuUQiC15FE2f5HbLvYw==}
@@ -7512,7 +7492,7 @@ packages:
       globby: 13.1.3
       gzip-size: 7.0.0
       h3: 1.6.2
-      hookable: 5.5.1
+      hookable: 5.5.2
       http-proxy: 1.18.1
       is-primitive: 3.0.1
       jiti: 1.18.2
@@ -7987,7 +7967,7 @@ packages:
       globby: 13.1.3
       h3: 1.6.2
       hash-sum: 2.0.0
-      hookable: 5.5.1
+      hookable: 5.5.2
       jiti: 1.18.2
       knitwork: 1.0.0
       magic-string: 0.30.0
@@ -8063,7 +8043,7 @@ packages:
       globby: 13.1.3
       h3: 1.6.2
       hash-sum: 2.0.0
-      hookable: 5.5.1
+      hookable: 5.5.2
       jiti: 1.18.2
       knitwork: 1.0.0
       magic-string: 0.30.0
@@ -10608,7 +10588,7 @@ packages:
       '@unhead/dom': 1.1.25
       '@unhead/schema': 1.1.25
       '@unhead/shared': 1.1.25
-      hookable: 5.5.1
+      hookable: 5.5.2
 
   /unicode-trie/2.0.0:
     resolution: {integrity: sha512-x7bc76x0bm4prf1VLg79uhAzKw8DVboClSN5VxJuQ+LKDOVEW9CdH+VY7SP+vX7xCYQqzzgQpFqz15zeLvAtZQ==}
@@ -11268,13 +11248,6 @@ packages:
       '@volar/vue-language-core': 1.2.0
       '@volar/vue-typescript': 1.2.0
       typescript: 5.0.2
-
-  /vue/2.7.14:
-    resolution: {integrity: sha512-b2qkFyOM0kwqWFuQmgd4o+uHGU7T+2z3T+WQp8UBjADfEv2n4FEMffzBmCKNP0IGzOEEfYjvtcC62xaSKeQDrQ==}
-    dependencies:
-      '@vue/compiler-sfc': 2.7.14
-      csstype: 3.1.1
-    dev: true
 
   /vue/3.2.47:
     resolution: {integrity: sha512-60188y/9Dc9WVrAZeUVSDxRQOZ+z+y5nO2ts9jWXSTkMvayiWxCWOWtBQoYjLeccfXkiiPZWAHcV+WTPhkqJHQ==}

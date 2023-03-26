@@ -9,7 +9,6 @@
     "@popperjs/core": "2.11.7",
     "@stefanprobst/remark-shiki": "2.2.0",
     "@types/mapbox-gl": "2.7.10",
-    "@types/splitpanes": "^2.2.1",
     "@vueform/slider": "2.1.7",
     "apexcharts": "3.37.2",
     "date-fns": "2.29.3",
@@ -33,14 +32,5 @@
     "vue3-carousel": "0.2.14",
     "vue3-popper": "1.5.0",
     "vue3-smooth-dnd": "0.0.4"
-  },
-  "pnpm": {
-    "packageExtensions": {
-      "@stefanprobst/remark-shiki": {
-        "peerDependencies": {
-          "shiki": "^0.14.0"
-        }
-      }
-    }
   }
 }

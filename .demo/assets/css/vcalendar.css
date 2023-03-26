@@ -24,7 +24,7 @@
 }
 
 .vc-arrow:hover {
-    @apply hover:bg-muted-100 dark:bg-muted-700 transition-colors duration-300;
+  @apply hover:bg-muted-100 dark:bg-muted-700 transition-colors duration-300;
 }
 
 .vc-pane-container
@@ -44,7 +44,8 @@
 .vc-highlight-content-outline {
   @apply !bg-primary-200 dark:!bg-muted-700/70 !text-primary-700 dark:!text-primary-400 border-2 border-primary-500;
 }
-.vc-pane-container .vc-day-content.is-disabled, .vc-disabled {
+.vc-pane-container .vc-day-content.is-disabled,
+.vc-disabled {
   @apply text-muted-300 dark:!text-muted-700;
 }
 
@@ -59,12 +60,15 @@
   @apply -top-2 flex items-center justify-center rounded-xl !text-muted-400 dark:hover:bg-muted-700/40 dark:hover:text-muted-100;
 }
 
-.vc-container button, .vc-container [role='button'], .vc-popover-content button, .vc-popover-content [role='button'] {
+.vc-container button,
+.vc-container [role='button'],
+.vc-popover-content button,
+.vc-popover-content [role='button'] {
   @apply nui-focus;
 }
 
 .vc-pane-container .vc-arrows-container .vc-arrow svg {
-  @apply relative -top-0.5 h-5 w-5 ;
+  @apply relative -top-0.5 h-5 w-5;
 }
 
 .vc-day-layer + span {
@@ -233,8 +237,8 @@
   @apply !mx-4;
 }
 
-.vc-time-select-group  {
-  @apply w-full bg-muted-100 dark:bg-muted-700 border-muted-200 dark:border-muted-700 ;
+.vc-time-select-group {
+  @apply w-full bg-muted-100 dark:bg-muted-700 border-muted-200 dark:border-muted-700;
 }
 
 .vc-time-select-group .vc-base-select select {
@@ -246,20 +250,21 @@
 }
 
 .vc-time-colon {
-  @apply text-muted-500 dark:text-muted-200
+  @apply text-muted-500 dark:text-muted-200;
 }
 
-.vc-light.vc-attr, .vc-light .vc-attr {
-    --vc-content-color: var(--color-primary-600);
-    --vc-highlight-outline-bg: var(--color-white);
-    --vc-highlight-outline-border: var(--color-primary-600);
-    --vc-highlight-outline-content-color: var(--color-primary-700);
-    --vc-highlight-light-bg: var(--color-primary-200);
-    --vc-highlight-light-content-color: var(--color-primary-900);
-    --vc-highlight-solid-bg: var(--color-primary-600);
-    --vc-highlight-solid-content-color: var(--color-white);
-    --vc-dot-bg: var(--color-primary-600);
-    --vc-bar-bg: var(--color-primary-600);
+.vc-light.vc-attr,
+.vc-light .vc-attr {
+  --vc-content-color: var(--color-primary-600);
+  --vc-highlight-outline-bg: var(--color-white);
+  --vc-highlight-outline-border: var(--color-primary-600);
+  --vc-highlight-outline-content-color: var(--color-primary-700);
+  --vc-highlight-light-bg: var(--color-primary-200);
+  --vc-highlight-light-content-color: var(--color-primary-900);
+  --vc-highlight-solid-bg: var(--color-primary-600);
+  --vc-highlight-solid-content-color: var(--color-white);
+  --vc-dot-bg: var(--color-primary-600);
+  --vc-bar-bg: var(--color-primary-600);
 }
 
 .vc-light {

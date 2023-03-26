@@ -1,4 +1,5 @@
 <script setup lang="ts">
+// @ts-expect-error - splitpanes types exists only for vue2
 import { Pane, Splitpanes } from 'splitpanes'
 import 'splitpanes/dist/splitpanes.css'
 
@@ -533,13 +534,13 @@ const panelActive = ref(false)
     <Transition
       enter-active-class="transition-transform duration-300 ease-out"
       :enter-from-class="
-        panels.transitionFrom.value === 'left'
+        panels.transitionFrom === 'left'
           ? '-translate-x-full'
           : 'translate-x-full'
       "
       leave-active-class="transition-transform duration-300 ease-in"
       :leave-to-class="
-        panels.transitionFrom.value === 'left'
+        panels.transitionFrom === 'left'
           ? '-translate-x-full'
           : 'translate-x-full'
       "
