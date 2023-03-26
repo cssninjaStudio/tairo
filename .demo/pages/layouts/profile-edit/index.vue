@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useForm, Field, useFieldError } from 'vee-validate'
 import { toFormValidator } from '@vee-validate/zod'
+import { Field, useFieldError, useForm } from 'vee-validate'
 import { z } from 'zod'
 
 definePageMeta({
@@ -187,6 +187,8 @@ onBeforeRouteLeave(() => {
   }
 })
 
+const toaster = useToaster()
+
 // This is where you would send the form data to the server
 const onSubmit = handleSubmit(
   async (values) => {
@@ -207,6 +209,15 @@ const onSubmit = handleSubmit(
         }
         setTimeout(resolve, 4000)
       })
+
+      toaster.clearAll()
+      toaster.show({
+        title: 'Success',
+        message: `Your profile has been updated!`,
+        color: 'success',
+        icon: 'ph:check',
+        closable: true,
+      })
     } catch (error: any) {
       // this will set the error on the form
       if (error.message === 'Fake backend validation error') {
@@ -216,6 +227,15 @@ const onSubmit = handleSubmit(
         document.documentElement.scrollTo({
           top: 0,
           behavior: 'smooth',
+        })
+
+        toaster.clearAll()
+        toaster.show({
+          title: 'Oops!',
+          message: 'Please review the errors in the form',
+          color: 'danger',
+          icon: 'lucide:alert-triangle',
+          closable: true,
         })
       }
       return
@@ -321,7 +341,7 @@ const onSubmit = handleSubmit(
                 <div class="relative h-24 w-24">
                   <img
                     v-if="files?.length && files.item(0)"
-                    :src="preview(files.item(0)!).src"
+                    :src="preview(files.item(0)!).value"
                     alt="Upload preview"
                     class="h-24 w-24 rounded-full object-cover object-center bg-muted-200 dark:bg-muted-700/60"
                   />

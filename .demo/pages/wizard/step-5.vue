@@ -6,7 +6,7 @@ import type {
   TeamMemberRole,
 } from '../../types'
 
-const { project } = useMultiStepForm<Project, ProjectStepData>()
+const { data: project } = useMultiStepForm<Project, ProjectStepData>()
 
 useHead({
   title: 'Team members',
@@ -46,7 +46,7 @@ const search = ref('')
 const filteredUsers = ref<Omit<TeamMember, 'role'>[]>([])
 
 function addTeammate(teammate: Omit<TeamMember, 'role'>) {
-  project.team?.push({
+  project.value.team?.push({
     ...teammate,
     role: 'reader',
   })
@@ -54,14 +54,14 @@ function addTeammate(teammate: Omit<TeamMember, 'role'>) {
 }
 
 function setTeammateRole(index: number, role: TeamMemberRole) {
-  if (project.team && project.team[index]) {
-    project.team[index].role = role
+  if (project.value.team && project.value.team[index]) {
+    project.value.team[index].role = role
   }
 }
 
 function removeTeammate(index: number) {
-  if (project.team) {
-    project.team.splice(index, 1)
+  if (project.value.team) {
+    project.value.team.splice(index, 1)
   }
 }
 
@@ -102,7 +102,7 @@ function getRoleLevel(teammate: TeamMember) {
 }
 
 watchEffect(() => {
-  const teamRef = project.team
+  const teamRef = project.value.team
   if (!search.value) {
     filteredUsers.value = []
     return
@@ -132,7 +132,7 @@ watchEffect(() => {
           <img
             src="/img/illustrations/wizard/team.svg"
             class="rounded-full max-w-[210px] mx-auto"
-            alt="Upload files"
+            alt=""
           />
         </template>
         <div class="text-center mt-2">
@@ -160,7 +160,7 @@ watchEffect(() => {
               v-model="search"
               icon="lucide:search"
               shape="curved"
-              placeholder="Search team members"
+              placeholder="ex: Clarissa, Kendra, ..."
               :classes="{
                 wrapper: 'w-full relative z-10',
                 input: 'h-12 text-base !pl-12',

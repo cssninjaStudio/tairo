@@ -7,7 +7,7 @@ const { steps, currentStep, progress, preview, goToStep } = useMultiStepForm<
 
 const currentStepName = computed(() => {
   const stepData = steps.value.find((step) => step.id === currentStep.value)
-  return stepData?.data?.name
+  return stepData?.meta?.name
 })
 
 const target = ref(null)
@@ -73,7 +73,7 @@ onClickOutside(target, () => (open.value = false))
                   Step {{ step.id + 1 }}:
                 </p>
                 <h4 class="text-xs font-medium text-muted-800 dark:text-white">
-                  {{ step.data.name }}
+                  {{ step.meta.name }}
                 </h4>
               </button>
             </div>

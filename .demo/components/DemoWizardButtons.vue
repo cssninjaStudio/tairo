@@ -1,14 +1,7 @@
 <script setup lang="ts">
 import type { Project, ProjectStepData } from '../types'
-const {
-  totalSteps,
-  currentStep,
-  loading,
-  complete,
-  getNextStep,
-  getPrevStep,
-  completeWizard,
-} = useMultiStepForm<Project, ProjectStepData>()
+const { totalSteps, currentStep, loading, complete, getNextStep, getPrevStep } =
+  useMultiStepForm<Project, ProjectStepData>()
 </script>
 
 <template>
@@ -23,13 +16,13 @@ const {
     >
       <div
         v-if="currentStep > 0 && !complete"
-        class="fixed bottom-6 inset-x-0 w-full max-w-[304px] mx-auto z-40"
+        class="fixed bottom-6 inset-x-0 w-full max-w-[304px] mx-auto z-20"
       >
         <BaseCard
           class="p-4 flex items-center justify-between gap-2 rounded-2xl shadow-xl shadow-muted-300/30 dark:shadow-muted-800/30"
         >
           <BaseButton
-            :to="getPrevStep()?.path"
+            :to="loading ? undefined : getPrevStep()?.to"
             :disabled="!getPrevStep()"
             shape="curved"
             class="w-full"
@@ -38,7 +31,7 @@ const {
           </BaseButton>
           <BaseButton
             v-if="currentStep < totalSteps - 1"
-            :to="getNextStep()?.path"
+            :to="getNextStep()?.to"
             :disabled="!getNextStep()"
             shape="curved"
             color="primary"
@@ -48,11 +41,12 @@ const {
           </BaseButton>
           <BaseButton
             v-else
+            type="submit"
             shape="curved"
             color="primary"
             class="w-full"
             :loading="loading"
-            @click="completeWizard"
+            :disabled="loading"
           >
             <span>Finish</span>
           </BaseButton>

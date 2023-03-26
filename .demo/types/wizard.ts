@@ -34,6 +34,8 @@ export interface Project {
   customer?: Customer
   budget?: string
   team?: TeamMember[]
+  files?: FileList
+  avatar?: File | null
   tools?: Tool[]
 }
 

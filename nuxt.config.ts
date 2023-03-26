@@ -31,7 +31,11 @@ export default defineNuxtConfig({
      */
     'nuxt-seo-kit',
   ],
-  modules: ['@nuxt/image-edge', resolve('./modules/purge-comments')],
+  modules: [
+    '@nuxt/image-edge',
+    '@cssninja/nuxt-toaster',
+    resolve('./modules/purge-comments'),
+  ],
   app: {
     layoutTransition: {
       enterActiveClass: 'transition-opacity duration-400 ease-out',

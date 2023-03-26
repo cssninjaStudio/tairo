@@ -1,17 +1,17 @@
 <script setup lang="ts">
 import type { Project, ProjectStepData } from '../../types'
 
-const { project, complete, getStep } = useMultiStepForm<
-  Project,
-  ProjectStepData
->()
+const {
+  data: project,
+  complete,
+  getStep,
+} = useMultiStepForm<Project, ProjectStepData>()
+
 useHead({
   title: 'Submit project',
 })
 
-onBeforeUnmount(() => {
-  complete.value = false
-})
+const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
 </script>
 
 <template>
@@ -24,9 +24,9 @@ onBeforeUnmount(() => {
           class="group relative w-16 mx-auto flex items-center justify-center mb-2"
         >
           <BaseAvatar
-            v-if="project.customer?.logo"
+            v-if="avatarPreview"
             size="lg"
-            :src="project.customer?.logo"
+            :src="avatarPreview"
             class="bg-white dark:bg-muted-700/60"
           />
           <BaseAvatar
@@ -41,7 +41,7 @@ onBeforeUnmount(() => {
               small
               shape="full"
               class="opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500"
-              :to="getStep(1).path"
+              :to="getStep(1).to"
             >
               <Icon name="lucide:edit-2" class="w-3 h-3 pointer-events-none" />
             </BaseButtonIcon>
@@ -65,7 +65,7 @@ onBeforeUnmount(() => {
                     small
                     shape="full"
                     class="opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500"
-                    :to="getStep(1).path"
+                    :to="getStep(1).to"
                   >
                     <Icon
                       name="lucide:edit-2"
@@ -103,7 +103,7 @@ onBeforeUnmount(() => {
                     small
                     shape="full"
                     class="opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500"
-                    :to="getStep(0).path"
+                    :to="getStep(0).to"
                   >
                     <Icon
                       name="lucide:edit-2"
@@ -168,7 +168,7 @@ onBeforeUnmount(() => {
                     small
                     shape="full"
                     class="opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500"
-                    :to="getStep(2).path"
+                    :to="getStep(2).to"
                   >
                     <Icon
                       name="lucide:edit-2"
@@ -216,7 +216,7 @@ onBeforeUnmount(() => {
                     small
                     shape="full"
                     class="opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500"
-                    :to="getStep(2).path"
+                    :to="getStep(2).to"
                   >
                     <Icon
                       name="lucide:edit-2"
@@ -251,7 +251,7 @@ onBeforeUnmount(() => {
                     small
                     shape="full"
                     class="opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500"
-                    :to="getStep(2).path"
+                    :to="getStep(2).to"
                   >
                     <Icon
                       name="lucide:edit-2"
@@ -290,7 +290,7 @@ onBeforeUnmount(() => {
                     small
                     shape="full"
                     class="opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500"
-                    :to="getStep(3).path"
+                    :to="getStep(3).to"
                   >
                     <Icon
                       name="lucide:edit-2"
@@ -305,7 +305,7 @@ onBeforeUnmount(() => {
                     <span
                       class="block font-sans font-semibold text-2xl mb-2 text-muted-800 dark:text-muted-100"
                     >
-                      0
+                      {{ project.files?.length || 0 }}
                     </span>
                     <BaseHeading size="xs" class="uppercase mb-4 scale-90">
                       <span class="text-muted-500 dark:text-muted-400">
@@ -325,7 +325,7 @@ onBeforeUnmount(() => {
                     small
                     shape="full"
                     class="opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500"
-                    :to="getStep(4).path"
+                    :to="getStep(4).to"
                   >
                     <Icon
                       name="lucide:edit-2"
@@ -380,7 +380,7 @@ onBeforeUnmount(() => {
                     small
                     shape="full"
                     class="opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500"
-                    :to="getStep(5).path"
+                    :to="getStep(5).to"
                   >
                     <Icon
                       name="lucide:edit-2"

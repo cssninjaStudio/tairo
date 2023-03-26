@@ -29,11 +29,23 @@ watchEffect(() => {
   }
 })
 
-function onClick(event: MouseEvent) {
+function onClick() {
   open.value = !open.value
   if (!open.value) {
     buttonRef.value?.blur()
   }
+}
+
+function isChildActive(link: {
+  name: string
+  icon: string
+  to: string
+  exact?: boolean
+}) {
+  return (
+    (link.exact && route.path === link.to) ||
+    (!link.exact && route.path.startsWith(link.to))
+  )
 }
 </script>
 
@@ -81,9 +93,7 @@ function onClick(event: MouseEvent) {
           <NuxtLink
             :to="link.to"
             :class="{
-              'text-primary-500':
-                (link.exact && route.path === link.to) ||
-                (!link.exact && route.path.startsWith(link.to)),
+              'text-primary-500': isChildActive(link),
             }"
             class="nui-focus text-muted-400 hover:text-primary-500 focus:text-primary-500 flex w-full items-center pl-3 transition-colors duration-300"
           >
