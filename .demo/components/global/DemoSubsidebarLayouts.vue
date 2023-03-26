@@ -344,11 +344,6 @@ const navigation = [
         icon: 'ph:notification-duotone',
         to: '/layouts/utility-status',
       },
-      {
-        name: 'Roadmap',
-        icon: 'ph:notification-duotone',
-        to: '/layouts/utility-roadmap',
-      },
     ],
   },
   {

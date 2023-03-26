@@ -19,7 +19,7 @@ const props = withDefaults(
 
 <template>
   <div
-    class="relative w-full h-[200px] max-w-[315px] mx-auto rounded-xl p-6 bg-white dark:bg-muted-1000 border border-muted-200 dark:border-muted-800 shadow-xl shadow-muted-400/10 dark:shadow-muted-800/10"
+    class="relative w-full h-[200px] max-w-[315px] mx-auto rounded-xl p-6 bg-white dark:bg-muted-900 border border-muted-200 dark:border-muted-800 shadow-xl shadow-muted-400/10 dark:shadow-muted-800/10"
   >
     <!--Card content-->
     <div class="h-full flex flex-col gap-3">

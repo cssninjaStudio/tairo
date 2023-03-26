@@ -7,7 +7,7 @@ definePageMeta({
 
 <template>
   <div class="min-h-screen bg-muted-100 dark:bg-muted-900 px-4 overflow-hidden">
-    <div class="max-w-4xl mx-auto">
+    <div class="max-w-3xl mx-auto">
       <div
         class="h-16 w-full max-w-4xl mx-auto px-4 flex items-center justify-between"
       >
@@ -18,33 +18,39 @@ definePageMeta({
           <TairoLogo class="w-10 h-10" />
         </NuxtLink>
         <div class="flex items-center gap-8">
-          <NuxtLink
-            to="/dashboards"
-            class="font-sans text-sm text-muted-400 hover:text-primary-500 hover:underline underline-offset-4"
-            >Home</NuxtLink
+          <BaseButton shape="curved" condensed color="muted">Status</BaseButton>
+          <BaseButton shape="curved" condensed color="none"
+            >Maintenance</BaseButton
           >
-          <NuxtLink
-            to="/layouts/utility-roadmap"
-            class="font-sans text-sm text-muted-400 hover:text-primary-500 hover:underline underline-offset-4"
-            >Roadmap</NuxtLink
+          <BaseButton shape="curved" condensed color="none"
+            >Incidents</BaseButton
           >
+        </div>
+        <div class="flex items-center gap-4">
           <BaseThemeToggle />
         </div>
       </div>
 
       <div class="max-w-4xl mx-auto py-12 space-y-12">
-        <BaseCard>
-          <div class="p-8 border-b border-muted-200 dark:border-muted-700">
-            <div class="flex items-center gap-4">
-              <div class="h-3 w-3 rounded-full bg-success-500"></div>
-              <div>
-                <BaseHeading as="h3" size="2xl" weight="medium" lead="none">
-                  All services online
-                </BaseHeading>
-                <BaseParagraph size="sm" class="text-muted-400">
-                  As of March 14, 2023 at 11:08 PM GMT
-                </BaseParagraph>
-              </div>
+        <div>
+          <div class="flex flex-col text-center gap-4 pb-16">
+            <Icon
+              name="ph:check-circle-duotone"
+              class="w-8 h-8 mx-auto text-success-500"
+            />
+            <div>
+              <BaseHeading
+                as="h3"
+                size="3xl"
+                weight="medium"
+                lead="none"
+                class="mb-1"
+              >
+                All services online
+              </BaseHeading>
+              <BaseParagraph size="sm" class="text-muted-400">
+                As of March 14, 2023 at 11:08 PM GMT
+              </BaseParagraph>
             </div>
           </div>
           <div
@@ -55,11 +61,11 @@ definePageMeta({
                 >Service</BaseText
               >
               <BaseText size="sm" class="text-muted-500 dark:text-muted-400"
-                >Uptime during the last 90 days</BaseText
+                >Uptime during the last 60 days</BaseText
               >
             </div>
           </div>
-          <div class="p-8">
+          <BaseCard shape="curved" class="p-8">
             <div class="space-y-8">
               <!-- Item -->
               <div class="flex items-center gap-16">
@@ -71,29 +77,16 @@ definePageMeta({
                   />
                 </div>
                 <div class="grow flex items-center justify-between">
-                  <div class="flex items-center gap-1">
+                  <div class="w-full flex items-center">
                     <div
-                      v-for="index in 20"
-                      class="h-8 w-2"
+                      v-for="index in 35"
+                      class="h-8 flex-1 shrink-0 rounded-[2px] border-l border-r border-white dark:border-muted-800"
                       :class="
-                        index <= 19
-                          ? 'bg-success-500'
+                        index <= 63
+                          ? 'bg-success-500 hover:bg-success-300 transition-colors duration-300'
                           : 'bg-muted-200 dark:bg-muted-700'
                       "
                     ></div>
-                  </div>
-                  <div class="text-right">
-                    <BaseText
-                      size="sm"
-                      class="text-muted-600 dark:text-muted-400"
-                    >
-                      REST Apis</BaseText
-                    >
-                  </div>
-                  <div class="text-right">
-                    <BaseText size="xs" class="text-muted-400">
-                      95% availability
-                    </BaseText>
                   </div>
                 </div>
               </div>
@@ -314,8 +307,8 @@ definePageMeta({
                 </div>
               </div>
             </div>
-          </div>
-        </BaseCard>
+          </BaseCard>
+        </div>
         <BaseCard class="mt-12">
           <div
             class="flex items-center gap-3 p-6 border-b border-muted-200 dark:border-muted-700"
