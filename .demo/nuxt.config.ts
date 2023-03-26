@@ -45,6 +45,17 @@ export default defineNuxtConfig({
   unhead: {
     seoOptimise: true,
   },
+  app: {
+    head: {
+      link: [
+        {
+          rel: 'icon',
+          type: 'image/x-icon',
+          href: '/img/favicon.png',
+        },
+      ],
+    },
+  },
   vite: {
     // This is required for shiki to work (used to render markdown code blocks)
     define: {

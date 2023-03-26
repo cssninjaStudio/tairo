@@ -126,6 +126,15 @@ export function useSidebar() {
     }
   })
 
+  if (process.client) {
+    const { xl } = useTailwindBreakpoints()
+    watch(xl, (isXl) => {
+      if (!isXl) {
+        isOpen.value = false
+      }
+    })
+  }
+
   return {
     sidebars,
     hasSubsidebar,

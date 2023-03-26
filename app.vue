@@ -14,13 +14,6 @@ useHead({
       ? `${titleChunk} - ${app.tairo.title}`
       : `${app.tairo.title || 'Tairo'}`
   },
-  link: [
-    {
-      rel: 'icon',
-      type: 'image/x-icon',
-      href: '/img/favicon.png',
-    },
-  ],
 })
 </script>
 

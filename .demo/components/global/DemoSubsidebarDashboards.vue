@@ -192,6 +192,7 @@ const navigation = [
         name: 'UI Widgets',
         icon: 'ph:square-half-duotone',
         to: '/dashboards/widgets',
+        exact: true,
       },
       {
         name: 'Creative Widgets',
