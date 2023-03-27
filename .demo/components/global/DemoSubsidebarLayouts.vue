@@ -350,8 +350,8 @@ const navigation = [
     name: 'Onboarding',
     children: [
       {
-        name: 'Onboarding V1',
-        icon: 'ph:square-logo-duotone',
+        name: '2 Factor',
+        icon: 'ph:fingerprint-duotone',
         to: '/layouts/onboarding-1',
       },
       {
@@ -363,16 +363,6 @@ const navigation = [
         name: 'Onboarding V3',
         icon: 'ph:square-logo-duotone',
         to: '/layouts/onboarding-3',
-      },
-      {
-        name: 'Onboarding V4',
-        icon: 'ph:square-logo-duotone',
-        to: '/layouts/onboarding-4',
-      },
-      {
-        name: 'Onboarding V5',
-        icon: 'ph:square-logo-duotone',
-        to: '/layouts/onboarding-5',
       },
     ],
   },

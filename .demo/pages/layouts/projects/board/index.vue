@@ -3,15 +3,40 @@ definePageMeta({
   title: 'Board List',
 })
 
+const route = useRoute()
+const router = useRouter()
+const page = computed(() => parseInt((route.query.page as string) ?? '1'))
+
+const filter = ref('')
+const perPage = ref(25)
+
+watch([filter, perPage], () => {
+  router.push({
+    query: {
+      page: undefined,
+    },
+  })
+})
+
+const query = computed(() => {
+  return {
+    filter: filter.value,
+    perPage: perPage.value,
+    page: page.value,
+  }
+})
+
 const { data, pending, error, refresh } = await useFetch(
   '/api/company/projects',
+  {
+    query,
+  },
 )
-
 const selectedProject = ref('')
 </script>
 
 <template>
-  <div class="max-w-2xl mx-auto">
+  <div class="max-w-4xl mx-auto ltablet:mt-20 lg:mt-20">
     <div v-if="!pending && data?.recent.length === 0">
       <div class="p-6 rounded-xl bg-muted-200 dark:bg-muted-800/60">
         <BaseHeading tag="h4" size="lg" weight="medium">
@@ -22,55 +47,67 @@ const selectedProject = ref('')
         </BaseParagraph>
       </div>
     </div>
-    <div v-else>
-      <div class="flex justify-center max-w-xs mx-auto mb-6">
-        <BaseAutocomplete
-          v-model="selectedProject"
-          :items="data?.data"
-          :display-value="(item) => item.name"
-          shape="full"
-          icon="lucide:search"
-          placeholder="Search..."
-          label="Search projects"
-          label-float
-          clearable
+    <div v-else class="grid grid-cols-12 gap-6">
+      <div class="col-span-12 ltablet:col-span-5 lg:col-span-5 mb-6">
+        <div
+          class="ltablet:max-w-sm lg:max-w-sm p-8 rounded-xl bg-muted-200 dark:bg-muted-800/60"
         >
-          <template #empty="{ pending: pending, query }">
-            <BasePlaceload v-if="pending" />
-            <span
-              v-else-if="!query"
-              class="text-muted-700 dark:text-muted-400 cursor-default select-none"
-            >
-              Cherchez un client par nom, email, tel...
-            </span>
-          </template>
-          <template #item="{ item, active, selected }">
-            <NuxtLink
-              :to="`/layouts/projects/details/${item.slug}`"
-              class="block"
-            >
-              <BaseAutocompleteItem
-                :value="{
-                  name: item.name,
-                  text: `${item.customer.name} | ${item.customer.text}`,
-                  media: item.customer.logo,
-                }"
-                :active="active"
-                :selected="selected"
-              />
-            </NuxtLink>
-          </template>
-        </BaseAutocomplete>
+          <div class="mb-8 max-w-sm">
+            <Icon
+              name="ph:kanban-duotone"
+              class="w-10 h-10 mb-2 text-primary-500"
+            />
+            <BaseHeading tag="h4" size="xl" weight="medium" class="mb-2">
+              Your recent boards
+            </BaseHeading>
+            <BaseParagraph size="sm" class="text-muted-400">
+              Here are the most recent projects that have been viewed in your
+              team. Search for more by entering the project name below.
+            </BaseParagraph>
+          </div>
+          <BaseAutocomplete
+            v-model="selectedProject"
+            :items="data?.data"
+            :display-value="(item) => item.name"
+            shape="curved"
+            icon="lucide:search"
+            placeholder="Search..."
+            label="Search projects"
+            label-float
+            clearable
+          >
+            <template #empty="{ pending: pending, query }">
+              <BasePlaceload v-if="pending" />
+              <span
+                v-else-if="!query"
+                class="text-muted-700 dark:text-muted-400 cursor-default select-none"
+              >
+                Ex: Delivery app project...
+              </span>
+            </template>
+            <template #item="{ item, active, selected }">
+              <NuxtLink
+                :to="`/layouts/projects/board/${item.slug}`"
+                class="block"
+              >
+                <BaseAutocompleteItem
+                  :value="{
+                    name: item.name,
+                    text: `${item.customer.name} | ${item.customer.text}`,
+                    media: item.customer.logo,
+                  }"
+                  :active="active"
+                  :selected="selected"
+                />
+              </NuxtLink>
+            </template>
+          </BaseAutocomplete>
+        </div>
       </div>
-      <div class="text-center mb-6">
-        <BaseHeading tag="h4" size="xl" weight="medium">
-          Your recent projects
-        </BaseHeading>
-        <BaseParagraph size="sm" class="text-muted-400">
-          Looks like you haven't viewed any projects yet.
-        </BaseParagraph>
-      </div>
-      <div class="grid sm:grid-cols-2 gap-4">
+
+      <div
+        class="col-span-12 ltablet:col-span-7 lg:col-span-7 grid sm:grid-cols-2 gap-4"
+      >
         <TransitionGroup
           enter-active-class="transform-gpu"
           enter-from-class="opacity-0 -translate-x-full"
@@ -80,10 +117,10 @@ const selectedProject = ref('')
           leave-to-class="opacity-0 -translate-x-full"
         >
           <NuxtLink
-            v-for="(item, r) in data?.recent.slice(0, 4)"
+            v-for="(item, r) in data?.data.slice(0, 6)"
             :key="r"
             class="block group"
-            :to="`/layouts/projects/details/${item.slug}`"
+            :to="`/layouts/projects/board/${item.slug}`"
           >
             <BaseCard
               shape="curved"
@@ -96,7 +133,7 @@ const selectedProject = ref('')
                   size="sm"
                   shape="straight"
                   mask="blob"
-                  :data-tooltip="item.name"
+                  :data-tooltip="item.customer.name"
                   class="bg-muted-100 dark:bg-muted-700"
                 />
                 <div>

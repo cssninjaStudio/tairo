@@ -53,9 +53,7 @@ definePageMeta({
               </BaseParagraph>
             </div>
           </div>
-          <div
-            class="px-8 py-5 border-b border-muted-200 dark:border-muted-700"
-          >
+          <div class="px-8 py-5">
             <div class="flex gap-16">
               <BaseText size="sm" class="text-muted-500 dark:text-muted-400"
                 >Service</BaseText
