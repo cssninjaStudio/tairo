@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import WrapperDemo from '../../../examples/tairo/wrapper.vue'
-import wrapper from '../../../examples/tairo/wrapper.vue?raw'
+import WrapperDemo from '#examples/tairo/wrapper.vue'
+import wrapper from '#examples/tairo/wrapper.vue?raw'
 
 function wrapVueMarkdown(source: string) {
   return '```vue\n' + source + '\n```'

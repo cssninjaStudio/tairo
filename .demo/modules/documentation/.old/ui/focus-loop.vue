@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import FocusLoopDemo from '../../../examples/focus-loop/base.vue'
-import focusLoop from '../../../examples/focus-loop/base.vue?raw'
+import FocusLoopDemo from '#examples/focus-loop/base.vue'
+import focusLoop from '#examples/focus-loop/base.vue?raw'
 
 function wrapVueMarkdown(source: string) {
   return '```vue\n' + source + '\n```'

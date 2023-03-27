@@ -79,21 +79,18 @@ export async function useDocumentationMeta(
             .replace(/{ /g, '{\n ')
             // .replace(/}/g, '\n}')
             .replace(/; ([a-z])/g, ';\n $1')
-            .replace(
-              /; /g,
-              ';\n',
-            )}\n\n// you can use a const or a ref/computed \n// or directly set value in template\nconst ${
-            prop.name
-          } = ref<${upperFirst(prop.name)}Data>(${prop.default})`,
+            .replace(/; /g, ';\n')}\n\nconst ${prop.name} = ref<${upperFirst(
+            prop.name,
+          )}Data>(${prop.default || ''})`,
         ].join('\n'),
       )
     } else {
       code.push(
         [
-          `// you can use a const or a ref/computed`,
-          `// or directly set value in template`,
-          `// with one of those valid tyescripta types`,
-          `const value = ref<${prop.type}>(${prop.default})`,
+          // `// you can use a const or a ref/computed`,
+          // `// or directly set value in template`,
+          // `// with one of those valid tyescripta types`,
+          `const value = ref<${prop.type}>(${prop.default || ''})`,
         ].join('\n'),
       )
     }
@@ -140,6 +137,9 @@ export async function useDocumentationMeta(
   function renderProperty(prop: ComponentMeta['props'][0]) {
     const code: string[] = ['```vue']
 
+    const defaultValue =
+      !prop.default || prop.default === 'undefined' ? '' : prop.default
+
     code.push(`<script setup lang="ts">`)
     if (prop.type.length > 45) {
       code.push(
@@ -149,21 +149,18 @@ export async function useDocumentationMeta(
             .replace(/{ /g, '{\n ')
             // .replace(/}/g, '\n}')
             .replace(/; ([a-z])/g, ';\n $1')
-            .replace(
-              /; /g,
-              ';\n',
-            )}\n\n// you can use a const or a ref/computed \n// or directly set value in template\nconst ${
-            prop.name
-          } = ref<${upperFirst(prop.name)}Data>(${prop.default})`,
+            .replace(/; /g, ';\n')}\n\n\nconst ${prop.name} = ref<${upperFirst(
+            prop.name,
+          )}Data>(${defaultValue})`,
         ].join('\n'),
       )
     } else {
       code.push(
         [
-          `// you can use a const or a ref/computed`,
-          `// or directly set value in template`,
-          `// with one of those valid tyescripta types`,
-          `const ${prop.name} = ref<${prop.type}>(${prop.default})`,
+          // `// you can use a const or a ref/computed`,
+          // `// or directly set value in template`,
+          // `// with one of those valid tyescripta types`,
+          `const ${prop.name} = ref<${prop.type}>(${defaultValue})`,
         ].join('\n'),
       )
     }

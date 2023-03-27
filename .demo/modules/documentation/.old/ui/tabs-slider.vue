@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import X2FullDemo from '../../../examples/tabs-slider/full-x2.vue'
-import x2Full from '../../../examples/tabs-slider/full-x2.vue?raw'
-import X2RoundedDemo from '../../../examples/tabs-slider/rounded-x2.vue'
-import x2Rounded from '../../../examples/tabs-slider/rounded-x2.vue?raw'
-import X3FullDemo from '../../../examples/tabs-slider/full-x3.vue'
-import x3Full from '../../../examples/tabs-slider/full-x3.vue?raw'
-import X3RoundedDemo from '../../../examples/tabs-slider/rounded-x3.vue'
-import x3Rounded from '../../../examples/tabs-slider/rounded-x3.vue?raw'
+import X2FullDemo from '#examples/tabs-slider/full-x2.vue'
+import x2Full from '#examples/tabs-slider/full-x2.vue?raw'
+import X3FullDemo from '#examples/tabs-slider/full-x3.vue'
+import x3Full from '#examples/tabs-slider/full-x3.vue?raw'
+import X2RoundedDemo from '#examples/tabs-slider/rounded-x2.vue'
+import x2Rounded from '#examples/tabs-slider/rounded-x2.vue?raw'
+import X3RoundedDemo from '#examples/tabs-slider/rounded-x3.vue'
+import x3Rounded from '#examples/tabs-slider/rounded-x3.vue?raw'
 
 function wrapVueMarkdown(source: string) {
   return '```vue\n' + source + '\n```'

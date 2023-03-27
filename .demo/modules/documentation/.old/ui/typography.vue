@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import HeadingDemo from '../../../examples/typography/heading.vue'
-import heading from '../../../examples/typography/heading.vue?raw'
-import ParagraphDemo from '../../../examples/typography/paragraph.vue'
-import paragraph from '../../../examples/typography/paragraph.vue?raw'
-import TextDemo from '../../../examples/typography/text.vue'
-import text from '../../../examples/typography/text.vue?raw'
+import HeadingDemo from '#examples/typography/heading.vue'
+import heading from '#examples/typography/heading.vue?raw'
+import ParagraphDemo from '#examples/typography/paragraph.vue'
+import paragraph from '#examples/typography/paragraph.vue?raw'
+import TextDemo from '#examples/typography/text.vue'
+import text from '#examples/typography/text.vue?raw'
 
 function wrapVueMarkdown(source: string) {
   return '```vue\n' + source + '\n```'

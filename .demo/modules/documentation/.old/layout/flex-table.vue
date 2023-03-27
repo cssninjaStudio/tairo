@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import CurvedDemo from '../../../examples/flex-table/curved.vue'
-import curved from '../../../examples/flex-table/curved.vue?raw'
-import RoundedDemo from '../../../examples/flex-table/rounded.vue'
-import rounded from '../../../examples/flex-table/rounded.vue?raw'
-import StraightDemo from '../../../examples/flex-table/straight.vue'
-import straight from '../../../examples/flex-table/straight.vue?raw'
+import CurvedDemo from '#examples/flex-table/curved.vue'
+import curved from '#examples/flex-table/curved.vue?raw'
+import RoundedDemo from '#examples/flex-table/rounded.vue'
+import rounded from '#examples/flex-table/rounded.vue?raw'
+import StraightDemo from '#examples/flex-table/straight.vue'
+import straight from '#examples/flex-table/straight.vue?raw'
 
 function wrapVueMarkdown(source: string) {
   return '```vue\n' + source + '\n```'

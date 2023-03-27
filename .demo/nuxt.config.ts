@@ -1,4 +1,4 @@
-const WEEK = 60 * 60 * 24 * 7
+// const WEEK = 60 * 60 * 24 * 7
 
 export default defineNuxtConfig({
   extends: [
@@ -97,7 +97,7 @@ export default defineNuxtConfig({
     '/**': {
       static: true,
       prerender: true,
-      headers: { 'cache-control': `public, maxage=${WEEK}, s-maxage=${WEEK}` },
+      // headers: { 'cache-control': `public, maxage=${WEEK}, s-maxage=${WEEK}` },
     },
   },
 })

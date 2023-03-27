@@ -58,7 +58,12 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     addComponentsDir({
-      path: resolve(runtimeDir, 'components'),
+      path: resolve(runtimeDir, 'components/layout'),
+      prefix: '',
+      global: true,
+    })
+    addComponentsDir({
+      path: resolve(runtimeDir, 'components/content'),
       prefix: '',
       global: true,
     })
@@ -98,7 +103,15 @@ export default defineNuxtModule<ModuleOptions>({
           const hasTairoPrefix = component?.pascalName?.startsWith('Tairo')
           const hasBasePrefix = component?.pascalName?.startsWith('Base')
           const hasAddonPrefix = component?.pascalName?.startsWith('Addon')
-          return !(hasTairoPrefix || hasBasePrefix || hasAddonPrefix)
+          const isBlacklisted = ['TairoWelcome'].includes(component?.pascalName)
+
+          const isExcluded = !(
+            hasTairoPrefix ||
+            hasBasePrefix ||
+            hasAddonPrefix
+          )
+
+          return isBlacklisted || isExcluded
         },
       ],
       debug: 2,

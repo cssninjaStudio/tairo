@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import BaseDemo from '../../../examples/checkbox-custom/base.vue'
-import base from '../../../examples/checkbox-custom/base.vue?raw'
+import BaseDemo from '#examples/checkbox-custom/base.vue'
+import base from '#examples/checkbox-custom/base.vue?raw'
 
 function wrapVueMarkdown(source: string) {
   return '```vue\n' + source + '\n```'

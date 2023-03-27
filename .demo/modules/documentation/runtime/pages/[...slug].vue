@@ -25,7 +25,18 @@ if (!data?.value) {
 }
 
 watchEffect(() => {
+  // setting the title in the route meta will update the page title
   route.meta.title = data.value?.title || ''
+})
+
+useHead({
+  title: data.value?.title || '',
+  meta: [
+    {
+      name: 'description',
+      content: data.value?.description || '',
+    },
+  ],
 })
 
 const breadcrumb = computed(() => {
@@ -75,8 +86,8 @@ const breadcrumb = computed(() => {
         <ContentRenderer :value="data" :key="data._path" />
       </div>
 
-      <template #toc>
-        <DocToc />
+      <template #sidebar>
+        <DocLayoutToc />
       </template>
     </DocLayout>
   </div>

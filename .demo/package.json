@@ -5,7 +5,7 @@
   "devDependencies": {
     "@mapbox/mapbox-gl-geocoder": "5.0.1",
     "@nuxt/content": "2.5.2",
-    "@nuxt/devtools": "0.2.5",
+    "@nuxt/devtools": "0.3.1",
     "@pinia/nuxt": "0.4.7",
     "@popperjs/core": "2.11.7",
     "@stefanprobst/remark-shiki": "2.2.0",

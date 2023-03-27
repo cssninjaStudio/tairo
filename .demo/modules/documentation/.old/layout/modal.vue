@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import FooterAlignDemo from '../../../examples/modal/footer-align.vue'
-import footerAlign from '../../../examples/modal/footer-align.vue?raw'
-import LargeTierDemo from '../../../examples/modal/large-tier.vue'
-import largeTier from '../../../examples/modal/large-tier.vue?raw'
-import MediumTierDemo from '../../../examples/modal/medium-tier.vue'
-import mediumTier from '../../../examples/modal/medium-tier.vue?raw'
-import SmallTierDemo from '../../../examples/modal/small-tier.vue'
-import smallTier from '../../../examples/modal/small-tier.vue?raw'
+import FooterAlignDemo from '#examples/modal/footer-align.vue'
+import footerAlign from '#examples/modal/footer-align.vue?raw'
+import LargeTierDemo from '#examples/modal/large-tier.vue'
+import largeTier from '#examples/modal/large-tier.vue?raw'
+import MediumTierDemo from '#examples/modal/medium-tier.vue'
+import mediumTier from '#examples/modal/medium-tier.vue?raw'
+import SmallTierDemo from '#examples/modal/small-tier.vue'
+import smallTier from '#examples/modal/small-tier.vue?raw'
 
 function wrapVueMarkdown(source: string) {
   return '```vue\n' + source + '\n```'

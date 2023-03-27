@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import CurvedDemo from '../../../examples/pagination/curved.vue'
-import curved from '../../../examples/pagination/curved.vue?raw'
-import FullDemo from '../../../examples/pagination/full.vue'
-import full from '../../../examples/pagination/full.vue?raw'
-import RoundedDemo from '../../../examples/pagination/rounded.vue'
-import rounded from '../../../examples/pagination/rounded.vue?raw'
-import StraightDemo from '../../../examples/pagination/straight.vue'
-import straight from '../../../examples/pagination/straight.vue?raw'
+import CurvedDemo from '#examples/pagination/curved.vue'
+import curved from '#examples/pagination/curved.vue?raw'
+import FullDemo from '#examples/pagination/full.vue'
+import full from '#examples/pagination/full.vue?raw'
+import RoundedDemo from '#examples/pagination/rounded.vue'
+import rounded from '#examples/pagination/rounded.vue?raw'
+import StraightDemo from '#examples/pagination/straight.vue'
+import straight from '#examples/pagination/straight.vue?raw'
 
 function wrapVueMarkdown(source: string) {
   return '```vue\n' + source + '\n```'

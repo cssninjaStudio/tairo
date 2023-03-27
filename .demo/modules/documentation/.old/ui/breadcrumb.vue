@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import ArrowDemo from '../../../examples/breadcrumb/arrow.vue'
-import arrow from '../../../examples/breadcrumb/arrow.vue?raw'
-import ChevronDemo from '../../../examples/breadcrumb/chevron.vue'
-import chevron from '../../../examples/breadcrumb/chevron.vue?raw'
-import DotDemo from '../../../examples/breadcrumb/dot.vue'
-import dot from '../../../examples/breadcrumb/dot.vue?raw'
-import SlashDemo from '../../../examples/breadcrumb/slash.vue'
-import slash from '../../../examples/breadcrumb/slash.vue?raw'
+import ArrowDemo from '#examples/breadcrumb/arrow.vue'
+import arrow from '#examples/breadcrumb/arrow.vue?raw'
+import ChevronDemo from '#examples/breadcrumb/chevron.vue'
+import chevron from '#examples/breadcrumb/chevron.vue?raw'
+import DotDemo from '#examples/breadcrumb/dot.vue'
+import dot from '#examples/breadcrumb/dot.vue?raw'
+import SlashDemo from '#examples/breadcrumb/slash.vue'
+import slash from '#examples/breadcrumb/slash.vue?raw'
 
 function wrapVueMarkdown(source: string) {
   return '```vue\n' + source + '\n```'

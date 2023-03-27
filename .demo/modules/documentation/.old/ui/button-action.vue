@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import GroupDemo from '../../../examples/action/group.vue'
-import group from '../../../examples/action/group.vue?raw'
-import LoadingDemo from '../../../examples/action/loading.vue'
-import loading from '../../../examples/action/loading.vue?raw'
-import MutedDemo from '../../../examples/action/muted.vue'
-import muted from '../../../examples/action/muted.vue?raw'
-import ShapesDemo from '../../../examples/action/shapes.vue'
-import shapes from '../../../examples/action/shapes.vue?raw'
+import GroupDemo from '#examples/action/group.vue'
+import group from '#examples/action/group.vue?raw'
+import LoadingDemo from '#examples/action/loading.vue'
+import loading from '#examples/action/loading.vue?raw'
+import MutedDemo from '#examples/action/muted.vue'
+import muted from '#examples/action/muted.vue?raw'
+import ShapesDemo from '#examples/action/shapes.vue'
+import shapes from '#examples/action/shapes.vue?raw'
 
 function wrapVueMarkdown(source: string) {
   return '```vue\n' + source + '\n```'

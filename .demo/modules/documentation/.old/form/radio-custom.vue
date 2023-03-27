@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import BaseDemo from '../../../examples/radio-custom/base.vue'
-import base from '../../../examples/radio-custom/base.vue?raw'
+import BaseDemo from '#examples/radio-custom/base.vue'
+import base from '#examples/radio-custom/base.vue?raw'
 
 function wrapVueMarkdown(source: string) {
   return '```vue\n' + source + '\n```'

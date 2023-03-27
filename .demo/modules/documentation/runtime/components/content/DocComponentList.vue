@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useDocumentationRoutes } from '../../runtime/composables/routes'
+import { useDocumentationRoutes } from '../../../runtime/composables/routes'
 
 const meta = ref<string[]>([])
 
@@ -12,13 +12,7 @@ const {
 
 // filter unwanted components
 watchEffect(async () => {
-  meta.value = Object.keys(componentsMeta.value)?.filter(
-    (name) =>
-      !['TairoWelcome'].includes(name) &&
-      (name.startsWith('Base') ||
-        name.startsWith('Tairo') ||
-        name.startsWith('Addon')),
-  )
+  meta.value = Object.keys(componentsMeta.value)
 })
 
 // map component meta to documentation routes
@@ -84,7 +78,7 @@ const componentsByCategoryMaped = computed(() => {
   <div>
     <div v-if="categoryOrders">
       <div v-for="category in categoryOrders" :key="category">
-        <DocSection
+        <DocLayoutSection
           v-if="
             category in componentsByCategoryMaped &&
             componentsByCategoryMaped[category].components.length
@@ -155,7 +149,7 @@ const componentsByCategoryMaped = computed(() => {
               </BaseCard>
             </NuxtLink>
           </div>
-        </DocSection>
+        </DocLayoutSection>
       </div>
     </div>
 

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import SidebarDemo from '../../../examples/tairo/layout.vue'
-import sidebar from '../../../examples/tairo/layout.vue?raw'
+import SidebarDemo from '#examples/tairo/layout.vue'
+import sidebar from '#examples/tairo/layout.vue?raw'
 
 function wrapVueMarkdown(source: string) {
   return '```vue\n' + source + '\n```'

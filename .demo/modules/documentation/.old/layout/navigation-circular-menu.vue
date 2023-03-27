@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import MenuDemo from '../../../examples/tairo/circular-menu.vue'
-import menu from '../../../examples/tairo/circular-menu.vue?raw'
+import MenuDemo from '#examples/tairo/circular-menu.vue'
+import menu from '#examples/tairo/circular-menu.vue?raw'
 
 function wrapVueMarkdown(source: string) {
   return '```vue\n' + source + '\n```'

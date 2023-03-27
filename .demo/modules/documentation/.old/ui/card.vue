@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import ElevationDemo from '../../../examples/card/elevation.vue'
-import elevation from '../../../examples/card/elevation.vue?raw'
-import ElevationHoverDemo from '../../../examples/card/elevation-hover.vue'
-import elevationHover from '../../../examples/card/elevation-hover.vue?raw'
-import ShapesDemo from '../../../examples/card/shapes.vue'
-import shapes from '../../../examples/card/shapes.vue?raw'
+import ElevationHoverDemo from '#examples/card/elevation-hover.vue'
+import elevationHover from '#examples/card/elevation-hover.vue?raw'
+import ElevationDemo from '#examples/card/elevation.vue'
+import elevation from '#examples/card/elevation.vue?raw'
+import ShapesDemo from '#examples/card/shapes.vue'
+import shapes from '#examples/card/shapes.vue?raw'
 
 function wrapVueMarkdown(source: string) {
   return '```vue\n' + source + '\n```'

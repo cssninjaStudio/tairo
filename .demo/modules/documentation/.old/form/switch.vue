@@ -1,14 +1,14 @@
 <script setup lang="ts">
 // @todo: fix switch checked / unchecked states that don't seem to work properly.
 
-import BallSublabelDemo from '../../../examples/switch/ball-sublabel.vue'
-import ballSublabel from '../../../examples/switch/ball-sublabel.vue?raw'
-import BallSwitchDemo from '../../../examples/switch/ball-switch.vue'
-import ballSwitch from '../../../examples/switch/ball-switch.vue?raw'
-import ThinSublabelDemo from '../../../examples/switch/thin-sublabel.vue'
-import thinSublabel from '../../../examples/switch/thin-sublabel.vue?raw'
-import ThinSwitchDemo from '../../../examples/switch/thin-switch.vue'
-import thinSwitch from '../../../examples/switch/thin-switch.vue?raw'
+import BallSublabelDemo from '#examples/switch/ball-sublabel.vue'
+import ballSublabel from '#examples/switch/ball-sublabel.vue?raw'
+import BallSwitchDemo from '#examples/switch/ball-switch.vue'
+import ballSwitch from '#examples/switch/ball-switch.vue?raw'
+import ThinSublabelDemo from '#examples/switch/thin-sublabel.vue'
+import thinSublabel from '#examples/switch/thin-sublabel.vue?raw'
+import ThinSwitchDemo from '#examples/switch/thin-switch.vue'
+import thinSwitch from '#examples/switch/thin-switch.vue?raw'
 
 function wrapVueMarkdown(source: string) {
   return '```vue\n' + source + '\n```'

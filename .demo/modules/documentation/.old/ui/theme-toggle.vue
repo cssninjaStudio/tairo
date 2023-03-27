@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import ThemeToggleDemo from '../../../examples/theme-toggle/base.vue'
-import themeToggle from '../../../examples/theme-toggle/base.vue?raw'
+import ThemeToggleDemo from '#examples/theme-toggle/base.vue'
+import themeToggle from '#examples/theme-toggle/base.vue?raw'
 
 function wrapVueMarkdown(source: string) {
   return '```vue\n' + source + '\n```'

@@ -134,136 +134,39 @@ const breadcrumb = computed(() => {
         </div>
       </div>
 
-      <div class="dark:border-muted-800 mb-10 border-b border-gray-200 pb-10">
-        <BaseHeading
-          as="h2"
-          size="xl"
-          anchor
-          weight="medium"
-          class="text-muted-800 mb-5 dark:text-white"
-        >
-          <TairoTocAnchor>Features</TairoTocAnchor>
-        </BaseHeading>
-
-        <div class="grid gap-4 md:grid-cols-3">
-          <BaseCard shape="curved" class="flex items-center p-3">
-            <BaseIconBox size="md" class="bg-success-100 text-success-500">
-              <Icon name="simple-icons:nuxtdotjs" class="h-6 w-6" />
-            </BaseIconBox>
-            <div class="ml-3">
-              <BaseHeading
-                as="h4"
-                size="sm"
-                weight="semibold"
-                class="text-muted-800 dark:text-white"
-              >
-                Nuxt 3
-              </BaseHeading>
-              <BaseText size="xs" class="text-muted-400">
-                Robust and solid vue app
-              </BaseText>
-            </div>
-          </BaseCard>
-          <BaseCard shape="curved" class="flex items-center p-3">
-            <BaseIconBox size="md" class="bg-yellow-100 text-yellow-500">
-              <Icon name="teenyicons:typescript-outline" class="h-6 w-6" />
-            </BaseIconBox>
-            <div class="ml-3">
-              <BaseHeading
-                as="h4"
-                size="sm"
-                weight="semibold"
-                class="text-muted-800 dark:text-white"
-              >
-                Typescript
-              </BaseHeading>
-              <BaseText size="xs" class="text-muted-400">
-                Types and auto-discovery
-              </BaseText>
-            </div>
-          </BaseCard>
-          <BaseCard shape="curved" class="flex items-center p-3">
-            <BaseIconBox size="md" class="bg-primary-100 text-primary-500">
-              <Icon name="simple-icons:vite" class="h-6 w-6" />
-            </BaseIconBox>
-            <div class="ml-3">
-              <BaseHeading
-                as="h4"
-                size="sm"
-                weight="semibold"
-                class="text-muted-800 dark:text-white"
-              >
-                Vite
-              </BaseHeading>
-              <BaseText size="xs" class="text-muted-400">
-                Bundling & hot reloading
-              </BaseText>
-            </div>
-          </BaseCard>
-
-          <BaseCard shape="curved" class="flex items-center p-3">
-            <BaseIconBox size="md" class="bg-sky-100 text-sky-500">
-              <Icon name="simple-icons:tailwindcss" class="h-6 w-6" />
-            </BaseIconBox>
-            <div class="ml-3">
-              <BaseHeading
-                as="h4"
-                size="sm"
-                weight="semibold"
-                class="text-muted-800 dark:text-white"
-              >
-                TailwindCSS
-              </BaseHeading>
-              <BaseText size="xs" class="text-muted-400">
-                For precise and clean styles
-              </BaseText>
-            </div>
-          </BaseCard>
-
-          <BaseCard shape="curved" class="flex items-center p-3">
-            <BaseIconBox size="md" class="bg-pink-100 text-pink-500">
-              <Icon name="icon-park-outline:pineapple" class="h-6 w-6" />
-            </BaseIconBox>
-            <div class="ml-3">
-              <BaseHeading
-                as="h4"
-                size="sm"
-                weight="semibold"
-                class="text-muted-800 dark:text-white"
-              >
-                Pinia
-              </BaseHeading>
-              <BaseText size="xs" class="text-muted-400">
-                To handle store data
-              </BaseText>
-            </div>
-          </BaseCard>
-
-          <BaseCard shape="curved" class="flex items-center p-3">
-            <BaseIconBox size="md" class="bg-lime-100 text-lime-500">
-              <Icon name="simple-icons:eslint" class="h-6 w-6" />
-            </BaseIconBox>
-            <div class="ml-3">
-              <BaseHeading
-                as="h4"
-                size="sm"
-                weight="semibold"
-                class="text-muted-800 dark:text-white"
-              >
-                ESlint
-              </BaseHeading>
-              <BaseText size="xs" class="text-muted-400">
-                For standardized code
-              </BaseText>
-            </div>
-          </BaseCard>
-        </div>
-      </div>
+      <DocSection title="Features">
+        <template #grid>
+          <DocGridIcon name="simple-icons:nuxtdotjs" color="success">
+            Nuxt 3
+            <template #description>Robust and solid vue app</template>
+          </DocGridIcon>
+          <DocGridIcon name="teenyicons:typescript-outline" color="yellow">
+            Typescript
+            <template #description>Types and auto-discovery</template>
+          </DocGridIcon>
+          <DocGridIcon name="simple-icons:vite" color="primary">
+            Vite
+            <template #description>Bundling & hot reloading</template>
+          </DocGridIcon>
+          <DocGridIcon name="simple-icons:tailwindcss" color="sky">
+            TailwindCSS
+            <template #description>For precise and clean styles</template>
+          </DocGridIcon>
+          <DocGridIcon name="icon-park-outline:pineapple" color="pink">
+            Pinia
+            <template #description>For precise and clean styles</template>
+          </DocGridIcon>
+          <DocGridIcon name="simple-icons:eslint" color="lime">
+            ESlint
+            <template #description>For standardized code</template>
+          </DocGridIcon>
+        </template>
+      </DocSection>
 
       <DocComponentList />
 
-      <template #toc>
-        <DocToc />
+      <template #sidebar>
+        <DocLayoutToc />
       </template>
     </DocLayout>
   </div>

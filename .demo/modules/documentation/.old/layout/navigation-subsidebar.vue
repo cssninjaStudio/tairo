@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import SubsidebarDemo from '../../../examples/tairo/subsidebar.vue'
-import subsidebar from '../../../examples/tairo/subsidebar.vue?raw'
+import SubsidebarDemo from '#examples/tairo/subsidebar.vue'
+import subsidebar from '#examples/tairo/subsidebar.vue?raw'
 
 function wrapVueMarkdown(source: string) {
   return '```vue\n' + source + '\n```'

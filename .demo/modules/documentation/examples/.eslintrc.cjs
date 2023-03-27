@@ -9,11 +9,14 @@ module.exports = {
   rules: {
     '@typescript-eslint/no-var-requires': 'off',
     'import/default': 'off',
-    //   'vue/script-setup-uses-vars': 'error',
     'vue/multi-word-component-names': 'off',
-    //   'vue/define-macros-order': 'off',
-    'tailwindcss/no-custom-classname': 'off',
-    'tailwindcss/classnames-order': 'off',
+    'vue/component-tags-order': [
+      'error',
+      {
+        order: ['template', 'script', 'style'],
+      },
+    ],
+    'tailwindcss/classnames-order': 'on',
     'prettier-vue/prettier': [
       'error',
       {

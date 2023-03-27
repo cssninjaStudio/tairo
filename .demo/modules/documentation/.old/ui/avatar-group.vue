@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import LargeDemo from '../../../examples/avatar-group/large.vue'
-import large from '../../../examples/avatar-group/large.vue?raw'
-import MediumDemo from '../../../examples/avatar-group/medium.vue'
-import medium from '../../../examples/avatar-group/medium.vue?raw'
-import SmallDemo from '../../../examples/avatar-group/small.vue'
-import small from '../../../examples/avatar-group/small.vue?raw'
-import TinyDemo from '../../../examples/avatar-group/tiny.vue'
-import tiny from '../../../examples/avatar-group/tiny.vue?raw'
+import LargeDemo from '#examples/avatar-group/large.vue'
+import large from '#examples/avatar-group/large.vue?raw'
+import MediumDemo from '#examples/avatar-group/medium.vue'
+import medium from '#examples/avatar-group/medium.vue?raw'
+import SmallDemo from '#examples/avatar-group/small.vue'
+import small from '#examples/avatar-group/small.vue?raw'
+import TinyDemo from '#examples/avatar-group/tiny.vue'
+import tiny from '#examples/avatar-group/tiny.vue?raw'
 
 function wrapVueMarkdown(source: string) {
   return '```vue\n' + source + '\n```'

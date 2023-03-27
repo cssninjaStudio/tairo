@@ -35,7 +35,7 @@ demo: '#examples/accordion/shapes.vue'
 
 You can change the shape of the accordion with the `shape` property.
 
-:::doc-message
+:::doc-message{type="muted" icon="ph:magic-wand"}
 Default shape of all :doc-linker{to="BaseAccordion"} can be set in your `app.config.ts`.
 :::
 ::
@@ -62,4 +62,4 @@ demo: '#examples/accordion/plus.vue'
 Here is an example of an accordion with `action="plus"`.
 ::
 
-::doc-component-meta{name="BaseAccordion"}
+:doc-component-meta{name="BaseAccordion"}

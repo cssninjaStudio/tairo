@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import ToolbarDemo from '../../../examples/tairo/toolbar.vue'
-import toolbar from '../../../examples/tairo/toolbar.vue?raw'
+import ToolbarDemo from '#examples/tairo/toolbar.vue'
+import toolbar from '#examples/tairo/toolbar.vue?raw'
 
 function wrapVueMarkdown(source: string) {
   return '```vue\n' + source + '\n```'

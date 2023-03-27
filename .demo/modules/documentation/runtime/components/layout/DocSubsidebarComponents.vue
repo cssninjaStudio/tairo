@@ -1,8 +1,6 @@
 <script setup lang="ts">
-// import { useDocumentationMenu } from '../composables/menu'
-import { useDocumentationRoutes } from '../composables/routes'
+import { useDocumentationRoutes } from '../../composables/routes'
 
-// const { displayMode, filter } = useDocumentationMenu()
 const { docRoutesByCategory: routesByCategory, categoryOrders } =
   await useDocumentationRoutes()
 

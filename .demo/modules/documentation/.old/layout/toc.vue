@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import TocDemo from '../../../examples/tairo/toc.vue'
-import toc from '../../../examples/tairo/toc.vue?raw'
+import TocDemo from '#examples/tairo/toc.vue'
+import toc from '#examples/tairo/toc.vue?raw'
 
 function wrapVueMarkdown(source: string) {
   return '```vue\n' + source + '\n```'

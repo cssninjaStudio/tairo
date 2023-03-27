@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import CompositionDemo from '../../../examples/placeload/composition.vue'
-import composition from '../../../examples/placeload/composition.vue?raw'
-import ShapeDemo from '../../../examples/placeload/shape.vue'
-import shape from '../../../examples/placeload/shape.vue?raw'
-import TextDemo from '../../../examples/placeload/text.vue'
-import text from '../../../examples/placeload/text.vue?raw'
+import CompositionDemo from '#examples/placeload/composition.vue'
+import composition from '#examples/placeload/composition.vue?raw'
+import ShapeDemo from '#examples/placeload/shape.vue'
+import shape from '#examples/placeload/shape.vue?raw'
+import TextDemo from '#examples/placeload/text.vue'
+import text from '#examples/placeload/text.vue?raw'
 
 function wrapVueMarkdown(source: string) {
   return '```vue\n' + source + '\n```'

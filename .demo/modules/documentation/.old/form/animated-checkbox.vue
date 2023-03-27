@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import BaseDemo from '../../../examples/animated-checkbox/base.vue'
-import base from '../../../examples/animated-checkbox/base.vue?raw'
-import BooleanDemo from '../../../examples/animated-checkbox/boolean.vue'
-import boolean from '../../../examples/animated-checkbox/boolean.vue?raw'
-import CustomDemo from '../../../examples/animated-checkbox/custom.vue'
-import custom from '../../../examples/animated-checkbox/custom.vue?raw'
-import TrueFalseDemo from '../../../examples/animated-checkbox/true-false.vue'
-import trueFalse from '../../../examples/animated-checkbox/true-false.vue?raw'
+import BaseDemo from '#examples/animated-checkbox/base.vue'
+import base from '#examples/animated-checkbox/base.vue?raw'
+import BooleanDemo from '#examples/animated-checkbox/boolean.vue'
+import boolean from '#examples/animated-checkbox/boolean.vue?raw'
+import CustomDemo from '#examples/animated-checkbox/custom.vue'
+import custom from '#examples/animated-checkbox/custom.vue?raw'
+import TrueFalseDemo from '#examples/animated-checkbox/true-false.vue'
+import trueFalse from '#examples/animated-checkbox/true-false.vue?raw'
 
 function wrapVueMarkdown(source: string) {
   return '```vue\n' + source + '\n```'

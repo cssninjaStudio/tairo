@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import ButtonCloseDemo from '../../../examples/button-close/base.vue'
-import buttonClose from '../../../examples/button-close/base.vue?raw'
-import ButtonCloseMutedDemo from '../../../examples/button-close/muted.vue'
-import buttonCloseMuted from '../../../examples/button-close/muted.vue?raw'
-import ButtonClosePrimaryDemo from '../../../examples/button-close/primary.vue'
-import buttonClosePrimary from '../../../examples/button-close/primary.vue?raw'
+import ButtonCloseDemo from '#examples/button-close/base.vue'
+import buttonClose from '#examples/button-close/base.vue?raw'
+import ButtonCloseMutedDemo from '#examples/button-close/muted.vue'
+import buttonCloseMuted from '#examples/button-close/muted.vue?raw'
+import ButtonClosePrimaryDemo from '#examples/button-close/primary.vue'
+import buttonClosePrimary from '#examples/button-close/primary.vue?raw'
 
 function wrapVueMarkdown(source: string) {
   return '```vue\n' + source + '\n```'

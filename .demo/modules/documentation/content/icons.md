@@ -5,7 +5,7 @@ components:
   - Icon
 ---
 
-::doc-component-demo
+::doc-section
 You can use any icon from [https://icones.js.org/](https://icones.js.org/) by using the :doc-linker{to="Icon"} component.
 
 
@@ -20,7 +20,6 @@ This component is provided by [nuxt-icon](https://github.com/nuxt-modules/icon) 
 title: Phosphor icons
 demo: '#examples/icons/phosphor.vue'
 ---
-Phosphor icons example
 ::
 
 ::doc-component-demo
@@ -28,7 +27,6 @@ Phosphor icons example
 title: Lucide icons
 demo: '#examples/icons/lucide.vue'
 ---
-Lucide icons example
 ::
 
 
@@ -37,7 +35,6 @@ Lucide icons example
 title: Carbon icons
 demo: '#examples/icons/carbon.vue'
 ---
-Carbon icons example
 ::
 
 
@@ -46,7 +43,6 @@ Carbon icons example
 title: Ion icons
 demo: '#examples/icons/ion.vue'
 ---
-Ion icons example
 ::
 
 
@@ -57,7 +53,6 @@ Ion icons example
 title: Iconoir icons
 demo: '#examples/icons/iconoir.vue'
 ---
-Iconoir icons example
 ::
 
 
@@ -67,7 +62,6 @@ Iconoir icons example
 title: CoreUI icons
 demo: '#examples/icons/cil.vue'
 ---
-CoreUI icons example
 ::
 
 
@@ -76,7 +70,6 @@ CoreUI icons example
 title: Font Awesome icons
 demo: '#examples/icons/fa.vue'
 ---
-Font Awesome icons example
 ::
 
 
@@ -86,7 +79,6 @@ Font Awesome icons example
 title: Font Awesome brands
 demo: '#examples/icons/fab.vue'
 ---
-Font Awesome brands example
 ::
 
 
@@ -96,7 +88,6 @@ Font Awesome brands example
 title: Material brands
 demo: '#examples/icons/material.vue'
 ---
-Material brands example
 ::
 
 
@@ -108,7 +99,5 @@ Material brands example
 title: Logos
 demo: '#examples/icons/logos.vue'
 ---
-Logos example
 ::
-
 

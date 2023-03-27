@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import BaseDemo from '../../../examples/input-file/base.vue'
-import base from '../../../examples/input-file/base.vue?raw'
-import CurvedDemo from '../../../examples/input-file/curved.vue'
-import curved from '../../../examples/input-file/curved.vue?raw'
-import FullDemo from '../../../examples/input-file/full.vue'
-import full from '../../../examples/input-file/full.vue?raw'
-import RoundedDemo from '../../../examples/input-file/rounded.vue'
-import rounded from '../../../examples/input-file/rounded.vue?raw'
+import BaseDemo from '#examples/input-file/base.vue'
+import base from '#examples/input-file/base.vue?raw'
+import CurvedDemo from '#examples/input-file/curved.vue'
+import curved from '#examples/input-file/curved.vue?raw'
+import FullDemo from '#examples/input-file/full.vue'
+import full from '#examples/input-file/full.vue?raw'
+import RoundedDemo from '#examples/input-file/rounded.vue'
+import rounded from '#examples/input-file/rounded.vue?raw'
 
 function wrapVueMarkdown(source: string) {
   return '```vue\n' + source + '\n```'

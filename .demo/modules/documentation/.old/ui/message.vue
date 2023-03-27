@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import IconsDemo from '../../../examples/message/icons.vue'
-import icons from '../../../examples/message/icons.vue?raw'
-import ShapesDemo from '../../../examples/message/shapes.vue'
-import shapes from '../../../examples/message/shapes.vue?raw'
-import TypesDemo from '../../../examples/message/types.vue'
-import types from '../../../examples/message/types.vue?raw'
+import IconsDemo from '#examples/message/icons.vue'
+import icons from '#examples/message/icons.vue?raw'
+import ShapesDemo from '#examples/message/shapes.vue'
+import shapes from '#examples/message/shapes.vue?raw'
+import TypesDemo from '#examples/message/types.vue'
+import types from '#examples/message/types.vue?raw'
 
 function wrapVueMarkdown(source: string) {
   return '```vue\n' + source + '\n```'

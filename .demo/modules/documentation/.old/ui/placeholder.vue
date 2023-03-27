@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import BaseDemo from '../../../examples/placeholder/base.vue'
-import base from '../../../examples/placeholder/base.vue?raw'
-import VariationDemo from '../../../examples/placeholder/variation.vue'
-import variation from '../../../examples/placeholder/variation.vue?raw'
+import BaseDemo from '#examples/placeholder/base.vue'
+import base from '#examples/placeholder/base.vue?raw'
+import VariationDemo from '#examples/placeholder/variation.vue'
+import variation from '#examples/placeholder/variation.vue?raw'
 
 function wrapVueMarkdown(source: string) {
   return '```vue\n' + source + '\n```'

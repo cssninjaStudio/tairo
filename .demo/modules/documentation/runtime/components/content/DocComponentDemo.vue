@@ -5,7 +5,7 @@ const props = defineProps<{
   demo?: string
 }>()
 
-const demoRE = /#examples\/([\w-]+)\/([\w-]+).vue/
+const demoRE = /^#examples\/([\w-]+)\/([\w-]+).vue$/
 
 if (process.dev) {
   if (props.demo && !demoRE.test(props.demo)) {
@@ -30,12 +30,15 @@ const exampleMarkdown = computed(() => {
 watchEffect(async () => {
   if (!info.value.folder || !info.value.file) return
 
+  // dynamically import the example component and source
+  // we can not use path alias, nor paths in variables
+  // this is a limitation of vite
   const [compo, source] = await Promise.all([
-    import(`../../examples/${info.value.folder}/${info.value.file}.vue`).then(
-      (m) => m.default,
-    ),
     import(
-      `../../examples/${info.value.folder}/${info.value.file}.vue?raw`
+      `../../../examples/${info.value.folder}/${info.value.file}.vue`
+    ).then((m) => m.default),
+    import(
+      `../../../examples/${info.value.folder}/${info.value.file}.vue?raw`
     ).then((m) => m.default),
   ])
   exampleComponent.value = markRaw(compo)
@@ -46,10 +49,12 @@ const showCode = ref(false)
 const hasDemoContent = computed(() =>
   Boolean(exampleComponent.value && exampleMarkdown.value),
 )
+
+const { md } = useTailwindBreakpoints()
 </script>
 
 <template>
-  <DocSection :title="props.title" :tag="props.tag">
+  <DocLayoutSection :title="props.title" :tag="props.tag">
     <template #action>
       <div class="ml-auto" v-if="hasDemoContent">
         <div
@@ -89,9 +94,7 @@ const hasDemoContent = computed(() =>
       </div>
     </template>
 
-    <div
-      class="mb-4 rounded-lg border border-muted-200 bg-white p-6 dark:border-muted-700 dark:bg-muted-800"
-    >
+    <BaseCard class="mb-4 p-6">
       <div v-if="'default' in $slots" :class="[hasDemoContent && 'mb-10']">
         <BaseProse class="prose-sm">
           <ContentSlot :use="$slots.default"></ContentSlot>
@@ -105,11 +108,12 @@ const hasDemoContent = computed(() =>
           v-if="exampleMarkdown && showCode"
           :source="exampleMarkdown"
           fullwidth
+          :lines="md ? true : false"
           class="doc-markdown"
         />
       </div>
-    </div>
-  </DocSection>
+    </BaseCard>
+  </DocLayoutSection>
 </template>
 
 <style scoped>

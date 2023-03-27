@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import ProseDemo from '../../../examples/typography/prose.vue'
-import prose from '../../../examples/typography/prose.vue?raw'
+import ProseDemo from '#examples/typography/prose.vue'
+import prose from '#examples/typography/prose.vue?raw'
 
 function wrapVueMarkdown(source: string) {
   return '```vue\n' + source + '\n```'

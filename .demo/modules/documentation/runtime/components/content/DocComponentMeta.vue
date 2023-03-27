@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useDocumentationMeta } from '../composables/meta-doc'
+import { useDocumentationMeta } from '../../composables/meta-doc'
 
 const props = defineProps<{
   name: string
@@ -20,7 +20,7 @@ function wrapExternalLinks(string: string) {
 
 <template>
   <div>
-    <DocSection
+    <DocLayoutSection
       v-if="docs.meta?.pascalName"
       :title="`<${docs.meta?.pascalName}>`"
     >
@@ -477,6 +477,6 @@ function wrapExternalLinks(string: string) {
           </div>
         </div>
       </div>
-    </DocSection>
+    </DocLayoutSection>
   </div>
 </template>
