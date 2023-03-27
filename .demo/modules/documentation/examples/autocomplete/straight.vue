@@ -1,5 +1,17 @@
+<template>
+  <BaseAutocomplete
+    v-model="selectedFramework"
+    :items="frameworks"
+    shape="straight"
+    placeholder="e.g. Vue.js"
+    label="Framework"
+  />
+</template>
+
 <script setup lang="ts">
-const frameworks = [
+// demo data for the autocomplete
+const selectedFramework = ref('')
+const frameworks = ref([
   {
     id: 1,
     name: 'Javascript',
@@ -20,17 +32,5 @@ const frameworks = [
     id: 5,
     name: 'Alpine.js',
   },
-]
-
-const selectedFramework = ref('')
+])
 </script>
-
-<template>
-  <BaseAutocomplete
-    v-model="selectedFramework"
-    :items="frameworks"
-    shape="straight"
-    placeholder="e.g. Vue.js"
-    label="Framework"
-  />
-</template>

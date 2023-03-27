@@ -1,15 +1,8 @@
 <template>
   <TairoPopover size="sm" orientation="end">
-    <span
-      class="flex items-center text-muted-500"
-    >
-      <Icon
-        name="lucide:help-circle"
-        class="mr-1 h-4 w-4"
-      />
-      <span class="font-sans text-sm">
-        Help text
-      </span>
+    <span class="flex items-center text-muted-500">
+      <Icon name="lucide:help-circle" class="mr-1 h-4 w-4" />
+      <span class="font-sans text-sm">Help text</span>
     </span>
 
     <template #content>
@@ -25,16 +18,9 @@
   </TairoPopover>
 
   <TairoPopover size="sm" orientation="end">
-    <span
-      class="flex items-center text-muted-500"
-    >
-      <Icon
-        name="lucide:help-circle"
-        class="mr-1 h-4 w-4"
-      />
-      <span class="font-sans text-sm">
-        Help text
-      </span>
+    <span class="flex items-center text-muted-500">
+      <Icon name="lucide:help-circle" class="mr-1 h-4 w-4" />
+      <span class="font-sans text-sm">Help text</span>
     </span>
 
     <template #content>

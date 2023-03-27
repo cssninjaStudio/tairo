@@ -6,6 +6,7 @@
     "vue.volar",
     "antfu.iconify",
     "antfu.goto-alias",
-    "naumovs.color-highlight"
+    "naumovs.color-highlight",
+    "Nuxt.mdc"
   ]
 }

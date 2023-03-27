@@ -41,13 +41,7 @@ const demoBreadcrumbTwo = [
 </script>
 
 <template>
-  <BaseBreadcrumb
-    :items="demoBreadcrumbOne"
-    separator="dot"
-  />
+  <BaseBreadcrumb :items="demoBreadcrumbOne" separator="dot" />
 
-  <BaseBreadcrumb
-    :items="demoBreadcrumbTwo"
-    separator="dot"
-  />
+  <BaseBreadcrumb :items="demoBreadcrumbTwo" separator="dot" />
 </template>

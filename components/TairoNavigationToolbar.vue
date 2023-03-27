@@ -37,7 +37,7 @@ const showNavBurger = computed(() => {
       weight="light"
       class="text-muted-800 hidden dark:text-white md:block"
     >
-      <slot name="title">{{ route.meta.title ?? 'Unamed page' }}</slot>
+      <slot name="title">{{ route.meta.title }}</slot>
     </BaseHeading>
 
     <div class="ml-auto"></div>

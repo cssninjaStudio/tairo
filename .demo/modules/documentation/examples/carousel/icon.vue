@@ -74,8 +74,5 @@ const topics = [
 </script>
 
 <template>
-  <AddonCarouselIcons
-    :slides-to-show="6"
-    :slides="topics"
-  />
+  <AddonCarouselIcons :slides-to-show="6" :slides="topics" />
 </template>

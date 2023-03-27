@@ -1,0 +1,7 @@
+<template>
+  <BaseSwitchThin id="demo-thin-1" :checked="true" label="Primary" color="primary" />
+  <BaseSwitchThin id="demo-thin-2" :checked="true" label="Info" color="info" />
+  <BaseSwitchThin id="demo-thin-3" :checked="true" label="Success" color="success" />
+  <BaseSwitchThin id="demo-thin-4" :checked="true" label="Warning" color="warning" />
+  <BaseSwitchThin id="demo-thin-5" :checked="true" label="Danger" color="danger" />
+</template>

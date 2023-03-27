@@ -71,7 +71,7 @@ function getTocItemClass(item: any) {
         <ul>
           <li v-for="item in toc" :key="item.id">
             <NuxtLink
-              :to="{ name: route.name!, hash: `#${item.id}` }"
+              :to="`#${item.id}`"
               class="block border-r-2 py-2"
               :class="getTocItemClass(item)"
             >

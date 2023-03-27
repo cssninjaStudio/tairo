@@ -1,5 +1,19 @@
+<template>
+  <BaseAutocomplete
+    v-model="selectedPeople"
+    :items="people"
+    shape="rounded"
+    icon="ph:users-three"
+    placeholder="Search..."
+    label="Assignee"
+    multiple
+  />
+</template>
+
 <script setup lang="ts">
-const people = [
+// demo data for the autocomplete
+const selectedPeople = ref<any>([])
+const people = ref([
   {
     id: 1,
     name: 'Clarissa Perez',
@@ -30,19 +44,9 @@ const people = [
     text: 'Product Manager',
     media: '/img/avatars/2.svg',
   },
-]
+])
 
-const selectedPeople = ref([people[0], people[1]])
+// preselect some items
+selectedPeople.value.push(people.value[0])
+selectedPeople.value.push(people.value[1])
 </script>
-
-<template>
-  <BaseAutocomplete
-    v-model="selectedPeople"
-    :items="people"
-    shape="rounded"
-    icon="ph:users-three"
-    placeholder="Search..."
-    label="Assignee"
-    multiple
-  />
-</template>

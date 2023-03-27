@@ -5,11 +5,7 @@
     size="xs"
     badgeSrc="/img/icons/flags/united-states-of-america.svg"
   />
-  <BaseAvatar
-    src="/img/avatars/5.svg"
-    shape="full"
-    badgeSrc="/img/icons/flags/united-states-of-america.svg"
-  />
+  <BaseAvatar src="/img/avatars/5.svg" shape="full" badgeSrc="/img/icons/flags/united-states-of-america.svg" />
   <BaseAvatar
     src="/img/avatars/4.svg"
     shape="full"

@@ -12,89 +12,49 @@ const isModalBodyOpen = ref(false)
   <!-- Element to trigger the modal -->
   <div class="flex gap-x-2">
     <div class="flex flex-wrap items-end gap-4">
-      <BaseButton
-        @click="isModalStartOpen = true"
-      >
-        Start Align
-      </BaseButton>
+      <BaseButton @click="isModalStartOpen = true">Start Align</BaseButton>
     </div>
 
     <div class="flex items-end gap-4">
-      <BaseButton @click="isModalEndOpen = true">
-        End Align
-      </BaseButton>
+      <BaseButton @click="isModalEndOpen = true">End Align</BaseButton>
     </div>
 
     <div class="flex items-end gap-4">
-      <BaseButton
-        @click="isModalCenterOpen = true"
-      >
-        Center Align
-      </BaseButton>
+      <BaseButton @click="isModalCenterOpen = true">Center Align</BaseButton>
     </div>
 
     <div class="flex items-end gap-4">
-      <BaseButton
-        @click="isModalBetweenOpen = true"
-      >
-        Between Align
-      </BaseButton>
+      <BaseButton @click="isModalBetweenOpen = true">Between Align</BaseButton>
     </div>
 
     <div class="flex items-end gap-4">
-      <BaseButton @click="isModalBodyOpen = true">
-        No Footer
-      </BaseButton>
+      <BaseButton @click="isModalBodyOpen = true">No Footer</BaseButton>
     </div>
   </div>
 
   <!-- Modal component -->
-  <TairoModal
-    :open="isModalStartOpen"
-    size="md"
-    footer-align="start"
-    @close="isModalStartOpen = false"
-  >
+  <TairoModal :open="isModalStartOpen" size="md" footer-align="start" @close="isModalStartOpen = false">
     <template #header>
       <!-- Header -->
-      <div
-        class="flex w-full items-center justify-between p-4 md:p-6"
-      >
-        <h3
-          class="font-heading text-lg font-medium leading-6 text-muted-900 dark:text-white"
-        >
-          Medium dialog
-        </h3>
-        <BaseButtonClose
-          @click="isModalStartOpen = false"
-        />
+      <div class="flex w-full items-center justify-between p-4 md:p-6">
+        <h3 class="font-heading text-lg font-medium leading-6 text-muted-900 dark:text-white">Medium dialog</h3>
+        <BaseButtonClose @click="isModalStartOpen = false" />
       </div>
     </template>
 
     <!-- Body -->
     <div class="p-4 md:p-6">
-      <div
-        class="mx-auto w-full max-w-xs text-center"
-      >
-        <div
-          class="relative mx-auto mb-4 flex h-24 w-24"
-        >
+      <div class="mx-auto w-full max-w-xs text-center">
+        <div class="relative mx-auto mb-4 flex h-24 w-24">
           <img
             src="https://media.cssninja.io/shuriken/avatars/3.svg"
             class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
             alt=""
           />
         </div>
-        <h3
-          class="font-heading text-lg font-medium leading-6 text-muted-800 dark:text-white"
-        >
-          New Invite
-        </h3>
-        <p
-          class="font-alt text-sm leading-5 text-muted-500 dark:text-muted-400"
-        >
-          Lorem ipsum dolor sit amet, consectetur
-          adipisicing elit, sed do eiusmod.
+        <h3 class="font-heading text-lg font-medium leading-6 text-muted-800 dark:text-white">New Invite</h3>
+        <p class="font-alt text-sm leading-5 text-muted-500 dark:text-muted-400">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
         </p>
       </div>
     </div>
@@ -103,70 +63,36 @@ const isModalBodyOpen = ref(false)
       <!-- Footer -->
       <div class="p-4 md:p-6">
         <div class="flex gap-x-2">
-          <BaseButton
-            @click="isModalStartOpen = false"
-          >
-            Decline
-          </BaseButton>
-          <BaseButton
-            color="primary"
-            flavor="solid"
-            @click="isModalStartOpen = false"
-          >
-            Accept
-          </BaseButton>
+          <BaseButton @click="isModalStartOpen = false">Decline</BaseButton>
+          <BaseButton color="primary" flavor="solid" @click="isModalStartOpen = false">Accept</BaseButton>
         </div>
       </div>
     </template>
   </TairoModal>
 
   <!-- Modal component -->
-  <TairoModal
-    :open="isModalEndOpen"
-    size="md"
-    footer-align="end"
-    @close="isModalEndOpen = false"
-  >
+  <TairoModal :open="isModalEndOpen" size="md" footer-align="end" @close="isModalEndOpen = false">
     <template #header>
       <!-- Header -->
-      <div
-        class="flex w-full items-center justify-between p-4 md:p-6"
-      >
-        <h3
-          class="font-heading text-lg font-medium leading-6 text-muted-900 dark:text-white"
-        >
-          Medium dialog
-        </h3>
-        <BaseButtonClose
-          @click="isModalEndOpen = false"
-        />
+      <div class="flex w-full items-center justify-between p-4 md:p-6">
+        <h3 class="font-heading text-lg font-medium leading-6 text-muted-900 dark:text-white">Medium dialog</h3>
+        <BaseButtonClose @click="isModalEndOpen = false" />
       </div>
     </template>
 
     <!-- Body -->
     <div class="p-4 md:p-6">
-      <div
-        class="mx-auto w-full max-w-xs text-center"
-      >
-        <div
-          class="relative mx-auto mb-4 flex h-24 w-24"
-        >
+      <div class="mx-auto w-full max-w-xs text-center">
+        <div class="relative mx-auto mb-4 flex h-24 w-24">
           <img
             src="https://media.cssninja.io/shuriken/avatars/3.svg"
             class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
             alt=""
           />
         </div>
-        <h3
-          class="font-heading text-lg font-medium leading-6 text-muted-800 dark:text-white"
-        >
-          New Invite
-        </h3>
-        <p
-          class="font-alt text-sm leading-5 text-muted-500 dark:text-muted-400"
-        >
-          Lorem ipsum dolor sit amet, consectetur
-          adipisicing elit, sed do eiusmod.
+        <h3 class="font-heading text-lg font-medium leading-6 text-muted-800 dark:text-white">New Invite</h3>
+        <p class="font-alt text-sm leading-5 text-muted-500 dark:text-muted-400">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
         </p>
       </div>
     </div>
@@ -175,70 +101,36 @@ const isModalBodyOpen = ref(false)
       <!-- Footer -->
       <div class="p-4 md:p-6">
         <div class="flex gap-x-2">
-          <BaseButton
-            @click="isModalEndOpen = false"
-          >
-            Decline
-          </BaseButton>
-          <BaseButton
-            color="primary"
-            flavor="solid"
-            @click="isModalEndOpen = false"
-          >
-            Accept
-          </BaseButton>
+          <BaseButton @click="isModalEndOpen = false">Decline</BaseButton>
+          <BaseButton color="primary" flavor="solid" @click="isModalEndOpen = false">Accept</BaseButton>
         </div>
       </div>
     </template>
   </TairoModal>
 
   <!-- Modal component -->
-  <TairoModal
-    :open="isModalCenterOpen"
-    size="md"
-    footer-align="center"
-    @close="isModalCenterOpen = false"
-  >
+  <TairoModal :open="isModalCenterOpen" size="md" footer-align="center" @close="isModalCenterOpen = false">
     <template #header>
       <!-- Header -->
-      <div
-        class="flex w-full items-center justify-between p-4 md:p-6"
-      >
-        <h3
-          class="font-heading text-lg font-medium leading-6 text-muted-900 dark:text-white"
-        >
-          Medium dialog
-        </h3>
-        <BaseButtonClose
-          @click="isModalCenterOpen = false"
-        />
+      <div class="flex w-full items-center justify-between p-4 md:p-6">
+        <h3 class="font-heading text-lg font-medium leading-6 text-muted-900 dark:text-white">Medium dialog</h3>
+        <BaseButtonClose @click="isModalCenterOpen = false" />
       </div>
     </template>
 
     <!-- Body -->
     <div class="p-4 md:p-6">
-      <div
-        class="mx-auto w-full max-w-xs text-center"
-      >
-        <div
-          class="relative mx-auto mb-4 flex h-24 w-24"
-        >
+      <div class="mx-auto w-full max-w-xs text-center">
+        <div class="relative mx-auto mb-4 flex h-24 w-24">
           <img
             src="https://media.cssninja.io/shuriken/avatars/3.svg"
             class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
             alt=""
           />
         </div>
-        <h3
-          class="font-heading text-lg font-medium leading-6 text-muted-800 dark:text-white"
-        >
-          New Invite
-        </h3>
-        <p
-          class="font-alt text-sm leading-5 text-muted-500 dark:text-muted-400"
-        >
-          Lorem ipsum dolor sit amet, consectetur
-          adipisicing elit, sed do eiusmod.
+        <h3 class="font-heading text-lg font-medium leading-6 text-muted-800 dark:text-white">New Invite</h3>
+        <p class="font-alt text-sm leading-5 text-muted-500 dark:text-muted-400">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
         </p>
       </div>
     </div>
@@ -247,70 +139,36 @@ const isModalBodyOpen = ref(false)
       <!-- Footer -->
       <div class="p-4 md:p-6">
         <div class="flex gap-x-2">
-          <BaseButton
-            @click="isModalCenterOpen = false"
-          >
-            Decline
-          </BaseButton>
-          <BaseButton
-            color="primary"
-            flavor="solid"
-            @click="isModalCenterOpen = false"
-          >
-            Accept
-          </BaseButton>
+          <BaseButton @click="isModalCenterOpen = false">Decline</BaseButton>
+          <BaseButton color="primary" flavor="solid" @click="isModalCenterOpen = false">Accept</BaseButton>
         </div>
       </div>
     </template>
   </TairoModal>
 
   <!-- Modal component -->
-  <TairoModal
-    :open="isModalBetweenOpen"
-    size="md"
-    footer-align="between"
-    @close="isModalBetweenOpen = false"
-  >
+  <TairoModal :open="isModalBetweenOpen" size="md" footer-align="between" @close="isModalBetweenOpen = false">
     <template #header>
       <!-- Header -->
-      <div
-        class="flex w-full items-center justify-between p-4 md:p-6"
-      >
-        <h3
-          class="font-heading text-lg font-medium leading-6 text-muted-900 dark:text-white"
-        >
-          Medium dialog
-        </h3>
-        <BaseButtonClose
-          @click="isModalBetweenOpen = false"
-        />
+      <div class="flex w-full items-center justify-between p-4 md:p-6">
+        <h3 class="font-heading text-lg font-medium leading-6 text-muted-900 dark:text-white">Medium dialog</h3>
+        <BaseButtonClose @click="isModalBetweenOpen = false" />
       </div>
     </template>
 
     <!-- Body -->
     <div class="p-4 md:p-6">
-      <div
-        class="mx-auto w-full max-w-xs text-center"
-      >
-        <div
-          class="relative mx-auto mb-4 flex h-24 w-24"
-        >
+      <div class="mx-auto w-full max-w-xs text-center">
+        <div class="relative mx-auto mb-4 flex h-24 w-24">
           <img
             src="https://media.cssninja.io/shuriken/avatars/3.svg"
             class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
             alt=""
           />
         </div>
-        <h3
-          class="font-heading text-lg font-medium leading-6 text-muted-800 dark:text-white"
-        >
-          New Invite
-        </h3>
-        <p
-          class="font-alt text-sm leading-5 text-muted-500 dark:text-muted-400"
-        >
-          Lorem ipsum dolor sit amet, consectetur
-          adipisicing elit, sed do eiusmod.
+        <h3 class="font-heading text-lg font-medium leading-6 text-muted-800 dark:text-white">New Invite</h3>
+        <p class="font-alt text-sm leading-5 text-muted-500 dark:text-muted-400">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
         </p>
       </div>
     </div>
@@ -319,73 +177,40 @@ const isModalBodyOpen = ref(false)
       <!-- Footer -->
       <div class="p-4 md:p-6">
         <div class="flex gap-x-2">
-          <BaseButton
-            @click="isModalBetweenOpen = false"
-          >
-            Decline
-          </BaseButton>
+          <BaseButton @click="isModalBetweenOpen = false">Decline</BaseButton>
         </div>
       </div>
       <div class="p-4 md:p-6">
         <div class="flex gap-x-2">
-          <BaseButton
-            color="primary"
-            flavor="solid"
-            @click="isModalBetweenOpen = false"
-          >
-            Accept
-          </BaseButton>
+          <BaseButton color="primary" flavor="solid" @click="isModalBetweenOpen = false">Accept</BaseButton>
         </div>
       </div>
     </template>
   </TairoModal>
 
   <!-- Modal component -->
-  <TairoModal
-    :open="isModalBodyOpen"
-    size="md"
-    @close="isModalBodyOpen = false"
-  >
+  <TairoModal :open="isModalBodyOpen" size="md" @close="isModalBodyOpen = false">
     <template #header>
       <!-- Header -->
-      <div
-        class="flex w-full items-center justify-between p-4 md:p-6"
-      >
-        <h3
-          class="font-heading text-lg font-medium leading-6 text-muted-900 dark:text-white"
-        >
-          Medium dialog
-        </h3>
-        <BaseButtonClose
-          @click="isModalBodyOpen = false"
-        />
+      <div class="flex w-full items-center justify-between p-4 md:p-6">
+        <h3 class="font-heading text-lg font-medium leading-6 text-muted-900 dark:text-white">Medium dialog</h3>
+        <BaseButtonClose @click="isModalBodyOpen = false" />
       </div>
     </template>
 
     <!-- Body -->
     <div class="p-4 md:p-6">
-      <div
-        class="mx-auto w-full max-w-xs text-center"
-      >
-        <div
-          class="relative mx-auto mb-8 flex h-24 w-24"
-        >
+      <div class="mx-auto w-full max-w-xs text-center">
+        <div class="relative mx-auto mb-8 flex h-24 w-24">
           <img
             src="https://media.cssninja.io/shuriken/avatars/3.svg"
             class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
             alt=""
           />
         </div>
-        <h3
-          class="font-heading text-lg font-medium leading-6 text-muted-800 dark:text-white"
-        >
-          New Invite
-        </h3>
-        <p
-          class="mb-6 font-alt text-sm leading-5 text-muted-500 dark:text-muted-400"
-        >
-          Lorem ipsum dolor sit amet, consectetur
-          adipisicing elit, sed do eiusmod.
+        <h3 class="font-heading text-lg font-medium leading-6 text-muted-800 dark:text-white">New Invite</h3>
+        <p class="mb-6 font-alt text-sm leading-5 text-muted-500 dark:text-muted-400">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
         </p>
       </div>
     </div>

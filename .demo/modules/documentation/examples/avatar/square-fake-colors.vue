@@ -11,12 +11,7 @@
     shape="curved"
     class="bg-primary-100 dark:bg-primary-500 text-primary-500 dark:text-white"
   />
-  <BaseAvatar
-    text="CT"
-    size="md"
-    shape="curved"
-    class="bg-lime-100 dark:bg-lime-500 text-lime-500 dark:text-white"
-  />
+  <BaseAvatar text="CT" size="md" shape="curved" class="bg-lime-100 dark:bg-lime-500 text-lime-500 dark:text-white" />
   <BaseAvatar
     text="CT"
     size="md"
@@ -29,30 +24,10 @@
     shape="curved"
     class="bg-emerald-100 dark:bg-emerald-500 text-emerald-500 dark:text-white"
   />
-  <BaseAvatar
-    text="CT"
-    size="md"
-    shape="curved"
-    class="bg-teal-100 dark:bg-teal-500 text-teal-500 dark:text-white"
-  />
-  <BaseAvatar
-    text="CT"
-    size="md"
-    shape="curved"
-    class="bg-cyan-100 dark:bg-cyan-500 text-cyan-500 dark:text-white"
-  />
-  <BaseAvatar
-    text="CT"
-    size="md"
-    shape="curved"
-    class="bg-sky-100 dark:bg-sky-500 text-sky-500 dark:text-white"
-  />
-  <BaseAvatar
-    text="CT"
-    size="md"
-    shape="curved"
-    class="bg-blue-100 dark:bg-blue-500 text-blue-500 dark:text-white"
-  />
+  <BaseAvatar text="CT" size="md" shape="curved" class="bg-teal-100 dark:bg-teal-500 text-teal-500 dark:text-white" />
+  <BaseAvatar text="CT" size="md" shape="curved" class="bg-cyan-100 dark:bg-cyan-500 text-cyan-500 dark:text-white" />
+  <BaseAvatar text="CT" size="md" shape="curved" class="bg-sky-100 dark:bg-sky-500 text-sky-500 dark:text-white" />
+  <BaseAvatar text="CT" size="md" shape="curved" class="bg-blue-100 dark:bg-blue-500 text-blue-500 dark:text-white" />
   <BaseAvatar
     text="CT"
     size="md"
@@ -77,24 +52,9 @@
     shape="curved"
     class="bg-fuchsia-100 dark:bg-fuchsia-500 text-fuchsia-500 dark:text-white"
   />
-  <BaseAvatar
-    text="CT"
-    size="md"
-    shape="curved"
-    class="bg-pink-100 dark:bg-pink-500 text-pink-500 dark:text-white"
-  />
-  <BaseAvatar
-    text="CT"
-    size="md"
-    shape="curved"
-    class="bg-rose-100 dark:bg-rose-500 text-rose-500 dark:text-white"
-  />
-  <BaseAvatar
-    text="CT"
-    size="md"
-    shape="curved"
-    class="bg-red-100 dark:bg-red-500 text-red-500 dark:text-white"
-  />
+  <BaseAvatar text="CT" size="md" shape="curved" class="bg-pink-100 dark:bg-pink-500 text-pink-500 dark:text-white" />
+  <BaseAvatar text="CT" size="md" shape="curved" class="bg-rose-100 dark:bg-rose-500 text-rose-500 dark:text-white" />
+  <BaseAvatar text="CT" size="md" shape="curved" class="bg-red-100 dark:bg-red-500 text-red-500 dark:text-white" />
   <BaseAvatar
     text="CT"
     size="md"

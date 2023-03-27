@@ -73,7 +73,7 @@ onMounted(() => {
 <template>
   <NuxtLink
     :id="id"
-    :to="{ name: route.name || 'index', hash: `#${id}` }"
+    :to="`#${id}`"
     class="nui-focus group relative"
     :style="{ scrollMarginTop: '1.5rem' }"
   >

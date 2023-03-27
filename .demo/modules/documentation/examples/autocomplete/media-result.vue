@@ -1,5 +1,18 @@
+<template>
+  <BaseAutocomplete
+    v-model="selectedPerson"
+    :items="people"
+    icon="ph:users-three"
+    placeholder="Search..."
+    label="Assignee"
+    clearable
+  />
+</template>
+
 <script setup lang="ts">
-const people = [
+// demo data for the autocomplete
+const selectedPerson = ref('')
+const people = ref([
   {
     id: 1,
     name: 'Clarissa Perez',
@@ -30,18 +43,5 @@ const people = [
     text: 'Product Manager',
     media: '/img/avatars/2.svg',
   },
-]
-
-const selectedPerson = ref('')
+])
 </script>
-
-<template>
-  <BaseAutocomplete
-    v-model="selectedPerson"
-    :items="people"
-    icon="ph:users-three"
-    placeholder="Search..."
-    label="Assignee"
-    clearable
-  />
-</template>

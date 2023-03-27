@@ -1,1 +1,2 @@
 .demo/public/
+.demo/modules/documentation/content/**/*.md

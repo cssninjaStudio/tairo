@@ -1,9 +1,6 @@
 <template>
   <div class="w-full">
-    <NuxtLink
-      to="#"
-      class="hover:[&>img]:!border-primary-500"
-    >
+    <NuxtLink to="#" class="hover:[&>img]:!border-primary-500">
       <img
         class="w-full block dark:hidden rounded-lg border border-muted-200 hover:shadow-xl hover:shadow-muted-300/30 transition-all duration-300"
         src="/img/apps/tairo-toolbar.png"

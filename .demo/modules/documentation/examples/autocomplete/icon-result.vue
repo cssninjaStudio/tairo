@@ -1,5 +1,19 @@
+<template>
+  <BaseAutocomplete
+    v-model="selectedHobby"
+    :items="hobbies"
+    icon="ph:buildings"
+    shape="rounded"
+    placeholder="Select a hobby"
+    label="Company"
+    clearable
+  />
+</template>
+
 <script setup lang="ts">
-const hobbies = [
+// demo data for the autocomplete
+const selectedHobby = ref('')
+const hobbies = ref([
   {
     id: 1,
     name: 'Movies',
@@ -30,19 +44,5 @@ const hobbies = [
     text: 'singing with friends',
     icon: 'ph:microphone-stage-duotone',
   },
-]
-
-const selectedHobby = ref('')
+])
 </script>
-
-<template>
-  <BaseAutocomplete
-    v-model="selectedHobby"
-    :items="hobbies"
-    icon="ph:buildings"
-    shape="rounded"
-    placeholder="Select a hobby"
-    label="Company"
-    clearable
-  />
-</template>

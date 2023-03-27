@@ -1,7 +1,14 @@
+<template>
+  <div class="md:max-w-lg">
+    <BaseAccordion :items="accordion" action="plus" />
+  </div>
+</template>
+
 <script setup lang="ts">
-const accordion = [
+// demo data for the accordion
+const accordion = ref([
   {
-    title: 'Aceeecordion Item 1',
+    title: 'Accordion Item 1',
     content:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quo tandem modo? Inde igitur, inquit, ordiendum est. Primum quid tu dicis breve? Duo Reges: constructio interrete.',
   },
@@ -15,13 +22,5 @@ const accordion = [
     content:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quo tandem modo? Inde igitur, inquit, ordiendum est. Primum quid tu dicis breve? Duo Reges: constructio interrete.',
   },
-]
+])
 </script>
-
-<template>
-  <BaseAccordion
-    :items="accordion"
-    inclusive
-    action="plus"
-  />
-</template>

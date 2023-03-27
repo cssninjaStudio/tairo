@@ -7,14 +7,18 @@
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.codeActionsOnSave": {
-      "source.fixAll": true
+      "source.fixAll.eslint": true
     }
   },
   "[vue]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.codeActionsOnSave": {
-      "source.fixAll": true
+      "source.fixAll.eslint": true
     }
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "Nuxt.mdc",
+    "editor.formatOnSave": true
   },
   "tailwindCSS.experimental.configFile": ".demo/tailwind.config.cjs",
   "typescript.tsdk": "node_modules/typescript/lib"

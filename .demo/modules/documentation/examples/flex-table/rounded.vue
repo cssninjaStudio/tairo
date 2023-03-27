@@ -44,127 +44,52 @@ const team = [
     <template #header>
       <TairoFlexTableHeading type="shrink">
         <div class="flex items-center">
-          <BaseCheckbox
-            name="table-1-main"
-            shape="rounded"
-            class="text-primary-500"
-          />
+          <BaseCheckbox name="table-1-main" shape="rounded" class="text-primary-500" />
         </div>
       </TairoFlexTableHeading>
-      <TairoFlexTableHeading type="grow">
-        Member
-      </TairoFlexTableHeading>
-      <TairoFlexTableHeading type="stable">
-        Expertise
-      </TairoFlexTableHeading>
-      <TairoFlexTableHeading type="stable">
-        Rate
-      </TairoFlexTableHeading>
-      <TairoFlexTableHeading type="stable">
-        Status
-      </TairoFlexTableHeading>
-      <TairoFlexTableHeading type="stable">
-        Actions
-      </TairoFlexTableHeading>
+      <TairoFlexTableHeading type="grow">Member</TairoFlexTableHeading>
+      <TairoFlexTableHeading type="stable">Expertise</TairoFlexTableHeading>
+      <TairoFlexTableHeading type="stable">Rate</TairoFlexTableHeading>
+      <TairoFlexTableHeading type="stable">Status</TairoFlexTableHeading>
+      <TairoFlexTableHeading type="stable">Actions</TairoFlexTableHeading>
     </template>
 
-    <TairoFlexTableRow
-      v-for="member in team"
-      :key="member.id"
-      shape="rounded"
-    >
-      <TairoFlexTableCell
-        type="shrink"
-        data-content="Selection"
-      >
+    <TairoFlexTableRow v-for="member in team" :key="member.id" shape="rounded">
+      <TairoFlexTableCell type="shrink" data-content="Selection">
         <div class="flex items-center">
-          <BaseCheckbox
-            :name="`checkbox-${member.id}`"
-            shape="rounded"
-            class="text-primary-500"
-          />
+          <BaseCheckbox :name="`checkbox-${member.id}`" shape="rounded" class="text-primary-500" />
         </div>
       </TairoFlexTableCell>
-      <TairoFlexTableCell
-        type="grow"
-        data-content="Member"
-      >
+      <TairoFlexTableCell type="grow" data-content="Member">
         <div class="flex items-center">
-          <BaseAvatar
-            :src="member.src"
-            size="sm"
-          />
+          <BaseAvatar :src="member.src" size="sm" />
           <div class="ml-3 leading-none">
-            <h4
-              class="font-heading text-sm font-semibold"
-            >
+            <h4 class="font-heading text-sm font-semibold">
               {{ member.name }}
             </h4>
-            <p
-              class="font-alt text-xs text-muted-400"
-            >
+            <p class="font-alt text-xs text-muted-400">
               {{ member.role }}
             </p>
           </div>
         </div>
       </TairoFlexTableCell>
-      <TairoFlexTableCell
-        type="stable"
-        data-content="Expertise"
-        light
-      >
+      <TairoFlexTableCell type="stable" data-content="Expertise" light>
         {{ member.expertise }}
       </TairoFlexTableCell>
-      <TairoFlexTableCell
-        type="stable"
-        data-content="Rate"
-      >
-        ${{ member.rate }}/hour
-      </TairoFlexTableCell>
-      <TairoFlexTableCell
-        type="stable"
-        data-content="Status"
-      >
-        <BaseTag
-          v-if="member.status === 'Available'"
-          color="success"
-          flavor="pastel"
-          shape="full"
-          class="font-medium"
-        >
+      <TairoFlexTableCell type="stable" data-content="Rate">${{ member.rate }}/hour</TairoFlexTableCell>
+      <TairoFlexTableCell type="stable" data-content="Status">
+        <BaseTag v-if="member.status === 'Available'" color="success" flavor="pastel" shape="full" class="font-medium">
           {{ member.status }}
         </BaseTag>
-        <BaseTag
-          v-else-if="member.status === 'New'"
-          color="info"
-          flavor="pastel"
-          shape="full"
-          class="font-medium"
-        >
+        <BaseTag v-else-if="member.status === 'New'" color="info" flavor="pastel" shape="full" class="font-medium">
           {{ member.status }}
         </BaseTag>
-        <BaseTag
-          v-else-if="member.status === 'Hired'"
-          color="warning"
-          flavor="pastel"
-          shape="full"
-          class="font-medium"
-        >
+        <BaseTag v-else-if="member.status === 'Hired'" color="warning" flavor="pastel" shape="full" class="font-medium">
           {{ member.status }}
         </BaseTag>
       </TairoFlexTableCell>
-      <TairoFlexTableCell
-        type="stable"
-        data-content="Actions"
-      >
-        <BaseButton
-          color="primary"
-          flavor="outline"
-          shape="rounded"
-          class="scale-90"
-        >
-          View
-        </BaseButton>
+      <TairoFlexTableCell type="stable" data-content="Actions">
+        <BaseButton color="primary" flavor="outline" shape="rounded" class="scale-90">View</BaseButton>
       </TairoFlexTableCell>
     </TairoFlexTableRow>
   </TairoFlexTable>

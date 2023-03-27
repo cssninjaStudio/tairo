@@ -1,4 +1,15 @@
+<template>
+  <div class="grid gap-4 md:grid-cols-3">
+    <BaseAccordion :items="accordion" exclusive shape="straight" />
+
+    <BaseAccordion :items="accordion" shape="rounded" />
+
+    <BaseAccordion :items="accordion" exclusive shape="curved" />
+  </div>
+</template>
+
 <script setup lang="ts">
+// demo data for the accordion
 const accordion = [
   {
     title: 'Accordion Item 1',
@@ -17,21 +28,3 @@ const accordion = [
   },
 ]
 </script>
-
-<template>
-  <BaseAccordion
-    :items="accordion"
-    exclusive
-    shape="straight"
-  />
-  <BaseAccordion
-    :items="accordion"
-    inclusive
-    shape="rounded"
-  />
-  <BaseAccordion
-    :items="accordion"
-    exclusive
-    shape="curved"
-  />
-</template>

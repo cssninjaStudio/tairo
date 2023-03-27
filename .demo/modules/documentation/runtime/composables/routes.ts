@@ -1,7 +1,5 @@
 import type { RouteRecordRaw } from 'vue-router'
 
-import { useDocumentationMenu } from './menu'
-
 type DocumentationTree = Record<string, RouteRecordRaw[]>
 
 const categoryOrders = [
@@ -17,93 +15,37 @@ const categoryOrders = [
   // 'Addons',
 ] as const
 
-export function useDocumentationRoutes() {
-  const router = useRouter()
-  const { displayMode, isSearching, filter } = useDocumentationMenu()
-
-  // check all routes that start with /components
-  const componentHubRoute = router.resolve('/documentation')
-  const routesByCategory = computed(() => {
-    const childrens =
-      componentHubRoute.matched[0]?.children?.reduce<DocumentationTree>(
-        reduceDocumentationTree,
-        {},
-      )
-
-    Object.keys(childrens).forEach((category) => {
-      childrens[category].sort((a, b) => {
-        const aName = a.path.toLowerCase()
-        const bName = b.path.toLowerCase()
-
-        if (aName < bName) {
-          return -1
-        }
-        if (aName > bName) {
-          return 1
-        }
-        return 0
-      })
-    })
-
-    return childrens
+export async function useDocumentationRoutes() {
+  const { data } = await useAsyncData('doc-nav', () => {
+    return queryContent('/documentation')
+      .only(['_path', 'title', 'description', 'category', 'components', 'icon'])
+      .sort({ _path: 1 })
+      .find()
   })
 
-  const routesFlat = computed(() => {
-    return Object.values(routesByCategory.value).reduce(
-      (acc, routes) => [...acc, ...routes],
-      [],
-    )
+  const docRoutesByCategory = computed(() => {
+    const byCategory: Record<string, typeof data.value> = {}
+
+    if (!data.value) {
+      return byCategory
+    }
+
+    for (const page of data.value) {
+      const category = page.category ?? 'Uncategorized'
+      byCategory[category] ||= []
+      byCategory[category]!.push(page)
+    }
+
+    return byCategory
   })
 
-  // recusively reduce the tree to a flat array of routes
-  function reduceDocumentationTree(
-    acc: DocumentationTree,
-    route: RouteRecordRaw,
-  ) {
-    if (route.children) {
-      route.children.forEach((child) => {
-        reduceDocumentationTree(acc, child)
-      })
-    }
-
-    // skip routes that are explicitly disabled
-    if (route.meta?.documentation === false) {
-      return acc
-    }
-
-    if (!filter.value || !isSearching.value) {
-      const category = route.meta?.documentation?.category ?? 'Uncategorized'
-      acc[category] = acc[category] ?? []
-      acc[category].push(route)
-
-      return acc
-    }
-
-    if (displayMode.value === 'category') {
-      if (
-        route.meta?.title?.toLowerCase().includes(filter.value.toLowerCase())
-      ) {
-        const category = route.meta?.documentation?.category ?? 'Uncategorized'
-        acc[category] = acc[category] ?? []
-        acc[category].push(route)
-      }
-    }
-
-    if (
-      route.meta?.documentation?.components?.some((component) =>
-        component?.toLowerCase().includes(filter.value.toLowerCase()),
-      )
-    ) {
-      const category = route.meta?.documentation?.category ?? 'Uncategorized'
-      acc[category] = acc[category] ?? []
-      acc[category].push(route)
-    }
-    return acc
-  }
+  const docRoutes = computed(() => {
+    return data.value ?? []
+  })
 
   return {
     categoryOrders,
-    routesByCategory,
-    routesFlat,
+    docRoutesByCategory,
+    docRoutes,
   }
 }

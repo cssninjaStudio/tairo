@@ -3,8 +3,7 @@ const team = [
   {
     id: 0,
     avatar: '/img/avatars/3.svg',
-    badge:
-      '/img/icons/flags/united-states-of-america.svg',
+    badge: '/img/icons/flags/united-states-of-america.svg',
     name: 'Daniel Clarke',
     role: 'Frontend developer',
     text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -143,8 +142,5 @@ const team = [
 </script>
 
 <template>
-  <AddonCarouselTeam
-    :slides-to-show="3"
-    :slides="team"
-  />
+  <AddonCarouselTeam :slides-to-show="3" :slides="team" />
 </template>

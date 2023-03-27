@@ -118,18 +118,22 @@ export function useSidebar() {
     isOpen.value = !isOpen.value
   }
 
-  watchEffect(() => {
-    if (currentName.value) {
-      isOpen.value = true
-    } else {
-      isOpen.value = false
-    }
-  })
-
   if (process.client) {
     const { xl } = useTailwindBreakpoints()
     watch(xl, (isXl) => {
       if (!isXl) {
+        isOpen.value = false
+      }
+    })
+
+    watch(currentName, (value) => {
+      if (value) {
+        // only open sidebar if it's not already open
+        // and the screen is not extra large
+        if (xl.value) {
+          isOpen.value = true
+        }
+      } else {
         isOpen.value = false
       }
     })

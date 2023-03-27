@@ -42,16 +42,10 @@ const demoBreadcrumbTwo = [
 
 <template>
   <BaseBreadcrumb :items="demoBreadcrumbOne">
-    <Icon
-      name="lucide:arrow-right"
-      class="block w-3 h-3"
-    />
+    <Icon name="lucide:arrow-right" class="block w-3 h-3" />
   </BaseBreadcrumb>
 
   <BaseBreadcrumb :items="demoBreadcrumbTwo">
-    <Icon
-      name="lucide:arrow-right"
-      class="block w-3 h-3"
-    />
+    <Icon name="lucide:arrow-right" class="block w-3 h-3" />
   </BaseBreadcrumb>
 </template>

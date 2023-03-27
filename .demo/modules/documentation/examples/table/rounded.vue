@@ -44,41 +44,22 @@ const team = [
     <template #header>
       <TairoTableHeading uppercase class="p-4">
         <div class="flex items-center">
-          <BaseCheckbox
-            name="table-2-main"
-            shape="rounded"
-            class="text-primary-500"
-          />
+          <BaseCheckbox name="table-2-main" shape="rounded" class="text-primary-500" />
         </div>
       </TairoTableHeading>
-      <TairoTableHeading uppercase>
-        Collaborator
-      </TairoTableHeading>
-      <TairoTableHeading uppercase>
-        Expertise
-      </TairoTableHeading>
-      <TairoTableHeading uppercase>
-        Rate
-      </TairoTableHeading>
-      <TairoTableHeading uppercase>
-        Status
-      </TairoTableHeading>
+      <TairoTableHeading uppercase>Collaborator</TairoTableHeading>
+      <TairoTableHeading uppercase>Expertise</TairoTableHeading>
+      <TairoTableHeading uppercase>Rate</TairoTableHeading>
+      <TairoTableHeading uppercase>Status</TairoTableHeading>
       <TairoTableHeading uppercase class="p-4">
         <span class="sr-only">View</span>
       </TairoTableHeading>
     </template>
 
-    <TairoTableRow
-      v-for="member in team"
-      :key="member.id"
-    >
+    <TairoTableRow v-for="member in team" :key="member.id">
       <TairoTableCell class="p-4">
         <div class="flex items-center">
-          <BaseCheckbox
-            :name="`table-2-${member.id}`"
-            shape="rounded"
-            class="text-primary-500"
-          />
+          <BaseCheckbox :name="`table-2-${member.id}`" shape="rounded" class="text-primary-500" />
         </div>
       </TairoTableCell>
       <TairoTableCell>
@@ -87,35 +68,15 @@ const team = [
       <TairoTableCell light>
         {{ member.expertise }}
       </TairoTableCell>
+      <TairoTableCell>\${{ member.rate }}/hour</TairoTableCell>
       <TairoTableCell>
-        \${{ member.rate }}/hour
-      </TairoTableCell>
-      <TairoTableCell>
-        <BaseTag
-          v-if="member.status === 'Available'"
-          color="success"
-          flavor="pastel"
-          shape="full"
-          class="font-medium"
-        >
+        <BaseTag v-if="member.status === 'Available'" color="success" flavor="pastel" shape="full" class="font-medium">
           {{ member.status }}
         </BaseTag>
-        <BaseTag
-          v-else-if="member.status === 'New'"
-          color="info"
-          flavor="pastel"
-          shape="full"
-          class="font-medium"
-        >
+        <BaseTag v-else-if="member.status === 'New'" color="info" flavor="pastel" shape="full" class="font-medium">
           {{ member.status }}
         </BaseTag>
-        <BaseTag
-          v-else-if="member.status === 'Hired'"
-          color="warning"
-          flavor="pastel"
-          shape="full"
-          class="font-medium"
-        >
+        <BaseTag v-else-if="member.status === 'Hired'" color="warning" flavor="pastel" shape="full" class="font-medium">
           {{ member.status }}
         </BaseTag>
       </TairoTableCell>

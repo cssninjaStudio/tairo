@@ -9,3 +9,4 @@ coverage
 .output
 CHANGELOG.md
 .demo/public/
+.demo/modules/documentation/content/**/*.md

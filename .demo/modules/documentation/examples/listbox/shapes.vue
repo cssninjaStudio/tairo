@@ -1,11 +1,5 @@
 <script setup lang="ts">
-const frameworks = [
-  'Javascript',
-  'Vue.js',
-  'React.js',
-  'Angular',
-  'Alpine.js',
-]
+const frameworks = ['Javascript', 'Vue.js', 'React.js', 'Angular', 'Alpine.js']
 
 const selectedFramework = ref()
 </script>

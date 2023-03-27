@@ -1,15 +1,13 @@
 import { logger } from '@nuxt/kit'
 
-import { resolve } from 'path'
-import { fileURLToPath } from 'url'
 import {
-  defineNuxtModule,
-  addImportsDir,
   addComponentsDir,
+  defineNuxtModule,
   extendPages,
   installModule,
 } from '@nuxt/kit'
-import { routes } from './routes'
+import { resolve } from 'path'
+import { fileURLToPath } from 'url'
 
 export interface ModuleOptions {}
 
@@ -33,12 +31,30 @@ export default defineNuxtModule<ModuleOptions>({
     const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
     nuxt.options.build.transpile.push(runtimeDir)
 
+    nuxt.options.alias ||= {}
+    nuxt.options.alias['#examples'] = fileURLToPath(
+      new URL('./examples', import.meta.url),
+    )
+
     nuxt.hook('app:resolve', (app) => {
       app.configs.push(resolve(runtimeDir, './app.config.ts'))
     })
 
     extendPages((pages) => {
-      pages.push(routes)
+      pages.push({
+        path: '/documentation/:slug(.*)*',
+        file: resolve(__dirname, './runtime/pages/[...slug].vue'),
+        alias: [],
+        meta: {},
+      })
+      pages.push({
+        path: '/documentation',
+        file: resolve(__dirname, './runtime/pages/index.vue'),
+        alias: [],
+        meta: {
+          title: 'Documentation Hub',
+        },
+      })
     })
 
     addComponentsDir({
@@ -56,6 +72,20 @@ export default defineNuxtModule<ModuleOptions>({
       }
     })
 
+    /**
+     * Nuxt-Component-Meta is used to generate the documentation for components
+     * It will generate meta data for each component and register useComponentMeta composable
+     */
+    await installModule('@nuxt/content', {
+      sources: {
+        // Additional sources
+        docs: {
+          driver: 'fs',
+          prefix: '/documentation', // All contents inside this source will be prefixed with `/documentation`
+          base: resolve(__dirname, 'content'),
+        },
+      },
+    })
     /**
      * Nuxt-Component-Meta is used to generate the documentation for components
      * It will generate meta data for each component and register useComponentMeta composable

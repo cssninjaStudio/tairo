@@ -2,11 +2,7 @@
   <TairoPopover orientation="start">
     <div class="flex items-center">
       <BaseAvatar src="/img/avatars/3.svg" />
-      <span
-        class="ml-3 font-heading text-sm font-semibold text-muted-800 dark:text-white"
-      >
-        Mike Miller
-      </span>
+      <span class="ml-3 font-heading text-sm font-semibold text-muted-800 dark:text-white">Mike Miller</span>
     </div>
 
     <template #content>
@@ -15,8 +11,7 @@
           {
             title: 'Javascript',
             subtitle: '65 projects',
-            image:
-              'https://vuero.cssninja.io/images/icons/stacks/js.svg',
+            image: 'https://vuero.cssninja.io/images/icons/stacks/js.svg',
           },
           {
             title: 'Projects',
