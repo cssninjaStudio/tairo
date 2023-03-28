@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "@cssninja/nuxt-toaster": "^0.3.10",
-    "@cssninja/nuxt-ui": "^0.5.6",
+    "@cssninja/nuxt-ui": "^0.6.0",
     "@nuxt/image-edge": "1.0.0-27991759.1a5eea1",
     "@vee-validate/zod": "^4.8.3",
     "fast-copy": "^3.0.1",
@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "0.37.0",
-    "@iconify/json": "2.2.39",
+    "@iconify/json": "2.2.40",
     "@nuxtjs/eslint-config": "12.0.0",
     "@nuxtjs/eslint-config-typescript": "12.0.0",
     "@types/fs-extra": "11.0.1",

@@ -21,10 +21,10 @@ const description = computed(() => {
   }
 
   if (props.error?.statusCode === 404) {
-    return "We couldn't find the page you were looking for."
+    return "We couldn't find the page you were looking for, please contact a system administrator or try again later."
   }
 
-  return 'Please try again later.'
+  return 'An error has occured. If the problem persists, please contact a system administrator or try again later.'
 })
 
 const app = useAppConfig()
@@ -38,64 +38,66 @@ const VFocus = {
     el.focus()
   },
 }
+
+// Show/hide demo stack trace
+const showStackTrace = ref(false)
 </script>
 
 <template>
   <TairoLayout :sidebar="false">
     <template #toolbar-title>{{ app.tairo.title }}</template>
 
-    <BasePlaceholderPage
-      :title="title"
-      :subtitle="description"
-      class="!min-h-0 !items-end"
-    >
-      <template #image>
-        <component
-          :is="resolveComponent(app.tairo.error.logo.component)"
-          v-if="app.tairo.error?.logo?.component"
-          v-bind="app.tairo.error.logo.props"
-        ></component>
-      </template>
+    <div class="pb-16">
+      <BasePlaceholderPage
+        :title="title"
+        :subtitle="description"
+        image-size="md"
+        class="relative !items-end"
+      >
+        <template #image>
+          <component
+            :is="resolveComponent(app.tairo.error.logo.component)"
+            v-if="app.tairo.error?.logo?.component"
+            v-bind="app.tairo.error.logo.props"
+          ></component>
+        </template>
 
-      <BaseButton class="mt-6 items-center gap-2" @click="handleError">
-        <Icon name="feather:arrow-left" />
-        Back to home
-      </BaseButton>
+        <div class="mt-4">
+          <div
+            class="text-muted-400/20 dark:text-muted-400/10 absolute inset-x-0 top-1/3 -translate-y-1/2 text-[13rem] font-bold sm:text-[20rem]"
+          >
+            <span>{{ props.error?.statusCode }}</span>
+          </div>
+          <BaseButton
+            shape="curved"
+            class="!h-12 w-48 items-center gap-2"
+            @click="handleError"
+          >
+            <Icon name="feather:arrow-left" />
+            Back to home
+          </BaseButton>
+          <DevOnly>
+            <div class="mt-6 flex items-center justify-center">
+              <BaseSwitchBall
+                v-model="showStackTrace"
+                color="danger"
+                :label="`${showStackTrace ? 'Hide' : 'Show'} Stacktrace (dev)`"
+              />
+            </div>
+          </DevOnly>
+        </div>
+      </BasePlaceholderPage>
 
       <DevOnly>
-        <BaseButton
-          flavor="pastel"
-          color="primary"
-          class="group mt-6 ml-4 items-center gap-2"
-          @click="retry"
-        >
-          <Icon name="feather:loader" class="group-hover:animate-spin" />
-          Retry
-        </BaseButton>
-      </DevOnly>
-    </BasePlaceholderPage>
-
-    <DevOnly>
-      <BaseCard
-        v-focus
-        class="nui-focus nui-text-700 group mx-auto mt-8 max-w-3xl p-6"
-        tabindex="0"
-      >
-        <div class="text-danger-500 mb-1 flex items-start gap-2">
-          <div
-            class="mt-1 shrink-0 opacity-30 transition-opacity duration-300 group-hover:opacity-100 group-focus:opacity-100"
+        <div v-if="showStackTrace">
+          <BaseCard
+            v-focus
+            shape="curved"
+            class="nui-focus nui-text-700 group relative mx-auto mt-6 max-w-3xl border-2 border-dashed p-8 hover:border-solid"
+            tabindex="0"
           >
-            <Icon
-              name="ph:circle-wavy-warning-duotone"
-              class="text-danger-600 text-2xl group-hover:animate-pulse group-focus:animate-pulse"
-            />
-          </div>
-          <div>
-            <span class="font-mono text-lg font-bold [overflow-wrap:anywhere]">
-              {{ props.error.message }}
-            </span>
             <div
-              class="mt-2 flex gap-1 opacity-30 transition-opacity duration-300 group-hover:opacity-100 group-focus:opacity-100"
+              class="mb-3 flex items-center justify-start gap-1 opacity-30 transition-opacity duration-300 group-hover:opacity-100 group-focus:opacity-100"
             >
               <BaseTag v-if="props.error.statusCode" color="danger" condensed>
                 {{ props.error.statusCode }}
@@ -108,18 +110,39 @@ const VFocus = {
               >
                 {{ props.error.url }}
               </BaseTag>
+              <BaseButtonClose
+                color="muted"
+                class="ml-auto"
+                @click="showStackTrace = false"
+              />
             </div>
-          </div>
+            <div class="mb-4 flex items-center gap-2">
+              <BaseIconBox color="danger" shape="full" size="md">
+                <Icon name="ph:skull-duotone" class="h-6 w-6" />
+              </BaseIconBox>
+              <div>
+                <h4
+                  class="text-danger-500 font-mono text-lg font-medium [overflow-wrap:anywhere]"
+                >
+                  {{ props.error.message }}
+                </h4>
+                <p class="nui-text-500 font-sans text-xs font-medium">
+                  This is a demo stacktrace, you won't see it in production.
+                </p>
+              </div>
+            </div>
+
+            <!-- eslint-disable vue/no-v-html -->
+            <div
+              v-if="props.error.stack"
+              class="mt-6 overflow-auto whitespace-pre p-2 font-mono text-sm opacity-60 transition-all duration-300 group-hover:opacity-100 group-focus:opacity-100"
+              v-html="props.error.stack"
+            ></div>
+            <!-- eslint-enable vue/no-v-html -->
+          </BaseCard>
         </div>
-        <!-- eslint-disable vue/no-v-html -->
-        <div
-          v-if="props.error.stack"
-          class="mt-6 overflow-auto whitespace-pre p-2 font-mono opacity-60 transition-all duration-300 group-hover:opacity-100 group-focus:opacity-100"
-          v-html="props.error.stack"
-        ></div>
-        <!-- eslint-enable vue/no-v-html -->
-      </BaseCard>
-    </DevOnly>
+      </DevOnly>
+    </div>
   </TairoLayout>
 </template>
 

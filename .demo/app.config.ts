@@ -132,7 +132,7 @@ export default defineAppConfig({
         component: 'img',
         props: {
           src: '/img/illustrations/system/404-1.svg',
-          class: 'w-full max-w-sm mx-auto',
+          class: 'relative z-20 w-full max-w-lg mx-auto',
         },
       },
     },
