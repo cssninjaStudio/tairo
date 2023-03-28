@@ -1,7 +1,26 @@
-{highlight: '6,12,27'}
+<template>
+  <div class="grid md:grid-cols-2 md:max-w-lg gap-6">
+    <BaseListbox
+      v-model="value"
+      label="Assignee"
+      :items="peopleNames"
+      :properties="{
+        value: 'id',
+        label: 'name',
+        sublabel: 'text',
+      }"
+    />
+  </div>
+</template>
 
 <script setup lang="ts">
-const peopleNames = [
+const value = ref({
+  id: 3,
+  name: 'Mike Miller',
+  text: 'UI/UX Designer',
+})
+
+const peopleNames = ref([
   {
     id: 1,
     name: 'Clarissa Perez',
@@ -27,20 +46,5 @@ const peopleNames = [
     name: 'Maya Rosselini',
     text: 'Product Manager',
   },
-]
-
-const selectedPersonName = ref(peopleNames[0])
+])
 </script>
-
-<template>
-  <BaseListbox
-    v-model="selectedPersonName"
-    label="Assignee"
-    :items="peopleNames"
-    :properties="{
-      value: 'id',
-      label: 'name',
-      sublabel: 'text',
-    }"
-  />
-</template>

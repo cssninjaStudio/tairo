@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { useDocumentationRoutes } from '../../../runtime/composables/routes'
 
+const props = defineProps<{
+  prefix?: string
+}>()
+
 const meta = ref<string[]>([])
 
 const componentsMeta = await useComponentMeta()
@@ -12,7 +16,11 @@ const {
 
 // filter unwanted components
 watchEffect(async () => {
-  meta.value = Object.keys(componentsMeta.value)
+  meta.value = Object.keys(componentsMeta.value)?.filter((name) => {
+    if (!props.prefix) return true
+
+    return name.startsWith(props.prefix)
+  })
 })
 
 // map component meta to documentation routes
@@ -101,7 +109,7 @@ const componentsByCategoryMaped = computed(() => {
                       >{{ component?.route?.title }}</span
                     >
                     <span
-                      class="text-muted-400 mb-2"
+                      class="text-muted-400 mb-2 text-sm"
                       v-if="component?.route?.description"
                     >
                       {{ component?.route?.description }}

@@ -1,3 +1,7 @@
 <template>
-  <BaseInput shape="rounded" label="Email Address" placeholder="Enter your email..." icon="lucide:mail" disabled />
+  <BaseCheckbox v-model="value" disabled label="I'm disabled" />
 </template>
+
+<script setup lang="ts">
+const value = ref(true)
+</script>

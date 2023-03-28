@@ -66,6 +66,10 @@ function wrapExternalLinks(string: string) {
                     :lines="false"
                     class="max-w-none"
                     :source="docs.renderNoOptions()"
+                    :theme="{
+                      light: 'cssninja-light-theme',
+                      dark: 'cssninja-dark-theme',
+                    }"
                   />
                 </div>
               </div>
@@ -170,6 +174,10 @@ function wrapExternalLinks(string: string) {
                       :lines="false"
                       class="max-w-none"
                       :source="docs.renderModel(docs.model)"
+                      :theme="{
+                        light: 'cssninja-light-theme',
+                        dark: 'cssninja-dark-theme',
+                      }"
                     />
                   </div>
                 </div>
@@ -270,6 +278,10 @@ function wrapExternalLinks(string: string) {
                     :lines="false"
                     class="max-w-none"
                     :source="docs.renderProperty(prop)"
+                    :theme="{
+                      light: 'cssninja-light-theme',
+                      dark: 'cssninja-dark-theme',
+                    }"
                   />
                 </div>
               </div>
@@ -335,6 +347,10 @@ function wrapExternalLinks(string: string) {
                     :lines="false"
                     class="max-w-none"
                     :source="docs.renderEvents(event)"
+                    :theme="{
+                      light: 'cssninja-light-theme',
+                      dark: 'cssninja-dark-theme',
+                    }"
                   />
                 </div>
               </div>
@@ -400,6 +416,10 @@ function wrapExternalLinks(string: string) {
                     :lines="false"
                     class="max-w-none"
                     :source="docs.renderSlot(slot)"
+                    :theme="{
+                      light: 'cssninja-light-theme',
+                      dark: 'cssninja-dark-theme',
+                    }"
                   />
                 </div>
               </div>
@@ -470,6 +490,10 @@ function wrapExternalLinks(string: string) {
                     :lines="false"
                     class="max-w-none"
                     :source="docs.renderExposed(exposed)"
+                    :theme="{
+                      light: 'cssninja-light-theme',
+                      dark: 'cssninja-dark-theme',
+                    }"
                   />
                 </div>
               </div>

@@ -1,17 +1,21 @@
 <template>
-  <BaseAutocomplete
-    v-model="selectedPerson"
-    :items="people"
-    icon="ph:users-three"
-    placeholder="Search..."
-    label="Assignee"
-    clearable
-  />
+  <div class="grid md:grid-cols-2 md:max-w-lg gap-6">
+    <BaseAutocomplete
+      v-model="value"
+      :items="people"
+      :display-value="(item) => item.name"
+      :filter-items="filterItems"
+      icon="ph:users-three"
+      placeholder="Search..."
+      label="Assignee"
+      clearable
+    />
+  </div>
 </template>
 
 <script setup lang="ts">
-// demo data for the autocomplete
-const selectedPerson = ref('')
+const value = ref('')
+
 const people = ref([
   {
     id: 1,
@@ -44,4 +48,17 @@ const people = ref([
     media: '/img/avatars/2.svg',
   },
 ])
+
+function filterItems(query?: string, items?: any[]) {
+  if (!query || !items) {
+    return items ?? []
+  }
+
+  // search by name or text
+  return items.filter((item) => {
+    const nameMatches = item?.name?.toLowerCase().includes(query.toLowerCase())
+    const textMatches = item?.text?.toLowerCase().includes(query.toLowerCase())
+    return nameMatches || textMatches
+  })
+}
 </script>

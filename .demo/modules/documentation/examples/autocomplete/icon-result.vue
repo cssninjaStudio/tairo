@@ -1,18 +1,21 @@
 <template>
-  <BaseAutocomplete
-    v-model="selectedHobby"
-    :items="hobbies"
-    icon="ph:buildings"
-    shape="rounded"
-    placeholder="Select a hobby"
-    label="Company"
-    clearable
-  />
+  <div class="grid md:grid-cols-2 md:max-w-lg gap-6">
+    <BaseAutocomplete
+      v-model="value"
+      :items="hobbies"
+      :display-value="(item) => item.name"
+      :filter-items="filterItems"
+      icon="ph:buildings"
+      shape="rounded"
+      placeholder="Select a hobby"
+      label="Company"
+      clearable
+    />
+  </div>
 </template>
 
 <script setup lang="ts">
-// demo data for the autocomplete
-const selectedHobby = ref('')
+const value = ref('')
 const hobbies = ref([
   {
     id: 1,
@@ -45,4 +48,17 @@ const hobbies = ref([
     icon: 'ph:microphone-stage-duotone',
   },
 ])
+
+function filterItems(query?: string, items?: any[]) {
+  if (!query || !items) {
+    return items ?? []
+  }
+
+  // search by name or text
+  return items.filter((item) => {
+    const nameMatches = item?.name?.toLowerCase().includes(query.toLowerCase())
+    const textMatches = item?.text?.toLowerCase().includes(query.toLowerCase())
+    return nameMatches || textMatches
+  })
+}
 </script>

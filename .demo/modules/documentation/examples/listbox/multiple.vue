@@ -1,6 +1,24 @@
-{highlight: '18..19,33'}
+<template>
+  <div class="grid md:grid-cols-2 md:max-w-lg gap-6">
+    <BaseListbox
+      v-model="values"
+      label="Assignee"
+      :items="people"
+      :properties="{
+        value: 'id',
+        label: 'name',
+        sublabel: 'text',
+        media: 'media',
+      }"
+      multiple
+    />
+  </div>
+</template>
 
 <script setup lang="ts">
+// the v-model should be an array
+const values = ref([])
+
 const people = [
   {
     id: 1,
@@ -33,22 +51,4 @@ const people = [
     media: '/img/avatars/2.svg',
   },
 ]
-
-// the v-model should be an array
-const selectedPersonMutliple = ref([])
 </script>
-
-<template>
-  <BaseListbox
-    v-model="selectedPersonMutliple"
-    label="Assignee"
-    :items="people"
-    :properties="{
-      value: 'id',
-      label: 'name',
-      sublabel: 'text',
-      media: 'media',
-    }"
-    multiple
-  />
-</template>

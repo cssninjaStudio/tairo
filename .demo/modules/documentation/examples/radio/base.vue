@@ -1,11 +1,33 @@
-<script setup lang="ts">
-const radioSelected = ref('option_1')
-</script>
-
 <template>
-  <BaseRadio id="demo-default-1" v-model="radioSelected" name="demo_default" label="Option 1" value="option_1" />
-
-  <BaseRadio id="demo-default-2" v-model="radioSelected" name="demo_default" label="Option 2" value="option_2" />
-
-  <BaseRadio id="demo-default-3" v-model="radioSelected" name="demo_options" label="Option 3" value="option_3" />
+  <div class="grid grid-cols-2 md:grid-cols-4 md:max-w-lg gap-6">
+    <BaseRadio v-model="value" name="checkbox_base" label="default" value="default" />
+    <BaseRadio
+      v-model="value"
+      name="checkbox_base"
+      label="primary"
+      value="primary"
+      color="primary"
+    />
+    <BaseRadio v-model="value" name="checkbox_base" value="muted" label="muted" color="muted" />
+    <BaseRadio v-model="value" name="checkbox_base" value="info" label="info" color="info" />
+    <BaseRadio
+      v-model="value"
+      name="checkbox_base"
+      value="success"
+      label="success"
+      color="success"
+    />
+    <BaseRadio
+      v-model="value"
+      name="checkbox_base"
+      value="warning"
+      label="warning"
+      color="warning"
+    />
+    <BaseRadio v-model="value" name="checkbox_base" value="danger" label="danger" color="danger" />
+  </div>
 </template>
+
+<script setup lang="ts">
+const value = ref('primary')
+</script>

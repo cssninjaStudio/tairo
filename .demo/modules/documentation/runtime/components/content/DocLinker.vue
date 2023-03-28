@@ -3,9 +3,9 @@ const props = defineProps<{
   to: string
 }>()
 
-const route = useRoute()
-
 const { data } = await useAsyncData('doc-linker', () => {
+  if (!props.to) return Promise.resolve(null)
+
   return queryContent()
     .where({
       _source: 'docs',
@@ -16,24 +16,24 @@ const { data } = await useAsyncData('doc-linker', () => {
 })
 
 const tooltip = computed(() => {
-  if (!data.value?._path) return ''
-  if (data.value._path !== route.path) {
-    return `Go to ${props.to} documentation`
-  }
-  return `Currently viewing ${props.to} documentation`
+  if (!data.value?._path) return `Documentation for ${props.to} is missing`
+  // if (data.value._path === route.path) {
+  //   return `Currently viewing ${props.to} documentation`
+  // }
+  return `Go to ${props.to} documentation`
 })
 </script>
 
 <template>
   <NuxtLink
     :to="data?._path"
-    class="nui-focus font-mono rounded before:content-['<'] after:content-['>']"
+    class="nui-focus font-mono rounded"
     :class="[
       data?._path
         ? 'nui-mark decoration-dotted dark:decoration-primary-100/60 underline-offset-4'
-        : 'bg-danger-100 dark:bg-danger-800/60 text-danger-500 no-underline',
+        : 'bg-danger-100 dark:bg-danger-800/60 text-danger-500 no-underline cursor-help',
     ]"
-    :title="tooltip"
-    >{{ props.to }}</NuxtLink
+    :data-tooltip="tooltip"
+    >&lt;{{ props.to }}&gt;</NuxtLink
   >
 </template>

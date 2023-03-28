@@ -22,7 +22,7 @@ module.exports = {
       {
         // Override all options of `prettier` here
         // @see https://prettier.io/docs/en/options.html
-        printWidth: 120,
+        printWidth: 100,
         singleQuote: true,
         semi: false,
         trailingComma: 'all',

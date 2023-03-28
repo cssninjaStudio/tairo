@@ -50,13 +50,26 @@ const hasDemoContent = computed(() =>
   Boolean(exampleComponent.value && exampleMarkdown.value),
 )
 
+const forceDark = ref(false)
 const { md } = useTailwindBreakpoints()
 </script>
 
 <template>
-  <DocLayoutSection :title="props.title" :tag="props.tag">
+  <DocLayoutSection class="group" :title="props.title" :tag="props.tag">
     <template #action>
-      <div class="ml-auto" v-if="hasDemoContent">
+      <div class="ml-auto flex gap-2 items-center" v-if="hasDemoContent">
+        <BaseCheckbox
+          v-model="forceDark"
+          condensed
+          :classes="{
+            label: '!text-xs mt-1',
+            wrapper:
+              'dark:hidden scale-90 gap-2 items-center uppercase opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300 flex-row-reverse',
+          }"
+        >
+          dark preview
+        </BaseCheckbox>
+
         <div
           class="flex items-end gap-1 p-1 rounded-lg bg-muted-200 dark:bg-muted-800/50"
         >
@@ -94,25 +107,33 @@ const { md } = useTailwindBreakpoints()
       </div>
     </template>
 
-    <BaseCard class="mb-4 p-6">
-      <div v-if="'default' in $slots" :class="[hasDemoContent && 'mb-10']">
-        <BaseProse class="prose-sm">
-          <ContentSlot :use="$slots.default"></ContentSlot>
-        </BaseProse>
-      </div>
+    <div :class="forceDark ? 'dark' : ''">
+      <BaseCard class="mb-4 p-6">
+        <div v-if="'default' in $slots" :class="[hasDemoContent && 'mb-10']">
+          <BaseProse class="prose-sm">
+            <ContentSlot :use="$slots.default"></ContentSlot>
+          </BaseProse>
+        </div>
 
-      <div v-if="hasDemoContent" class="flex flex-col gap-4">
-        <component v-if="exampleComponent" :is="exampleComponent" />
+        <div v-if="hasDemoContent" class="flex flex-col gap-4">
+          <div>
+            <component v-if="exampleComponent" :is="exampleComponent" />
+          </div>
 
-        <AddonMarkdownRemark
-          v-if="exampleMarkdown && showCode"
-          :source="exampleMarkdown"
-          fullwidth
-          :lines="md ? true : false"
-          class="doc-markdown"
-        />
-      </div>
-    </BaseCard>
+          <AddonMarkdownRemark
+            v-if="exampleMarkdown && showCode"
+            :source="exampleMarkdown"
+            fullwidth
+            :lines="md ? true : false"
+            class="doc-markdown"
+            :theme="{
+              light: 'cssninja-light-theme',
+              dark: 'cssninja-dark-theme',
+            }"
+          />
+        </div>
+      </BaseCard>
+    </div>
   </DocLayoutSection>
 </template>
 

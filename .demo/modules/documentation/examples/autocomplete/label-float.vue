@@ -1,20 +1,20 @@
 <template>
-  <div class="grid sm:grid-cols-2 gap-4">
+  <div class="grid md:grid-cols-2 md:max-w-lg gap-6 mt-6">
     <BaseAutocomplete
-      v-model="selectedFramework"
+      v-model="first"
       :items="frameworks"
       icon="lucide:search"
       shape="curved"
-      placeholder="Select a framework"
+      placeholder="e.g. Nuxt"
       label="Framework"
       label-float
     />
     <BaseAutocomplete
-      v-model="selectedFramework"
+      v-model="second"
       :items="frameworks"
       clearable
       shape="curved"
-      placeholder="Select a framework"
+      placeholder="e.g. Vue.js"
       label="Framework"
       label-float
     />
@@ -22,28 +22,8 @@
 </template>
 
 <script setup lang="ts">
-// demo data for the autocomplete
-const selectedFramework = ref('')
-const frameworks = ref([
-  {
-    id: 1,
-    name: 'Javascript',
-  },
-  {
-    id: 2,
-    name: 'Vue.js',
-  },
-  {
-    id: 3,
-    name: 'React.js',
-  },
-  {
-    id: 4,
-    name: 'Angular',
-  },
-  {
-    id: 5,
-    name: 'Alpine.js',
-  },
-])
+const first = ref('')
+const second = ref('')
+
+const frameworks = ref(['Javascript', 'Nuxt', 'Vue.js', 'React.js', 'Angular', 'Alpine.js'])
 </script>

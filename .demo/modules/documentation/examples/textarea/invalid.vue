@@ -1,3 +1,15 @@
 <template>
-  <BaseTextarea label="Message" shape="rounded" placeholder="Write a message..." invalid />
+  <div class="grid md:grid-cols-2 md:max-w-lg gap-6">
+    <BaseTextarea
+      v-model="value"
+      label="Message"
+      shape="rounded"
+      placeholder="Write a message..."
+      error="Please fill up the message"
+    />
+  </div>
 </template>
+
+<script setup lang="ts">
+const value = ref('')
+</script>

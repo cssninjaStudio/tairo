@@ -1,6 +1,27 @@
-{highlight: '7,14,30'}
+<template>
+  <div class="grid md:grid-cols-2 md:max-w-lg gap-6">
+    <BaseListbox
+      v-model="value"
+      label="Hobbies"
+      :items="hobbies"
+      :properties="{
+        value: 'id',
+        label: 'name',
+        sublabel: 'text',
+        icon: 'icon',
+      }"
+    />
+  </div>
+</template>
 
 <script setup lang="ts">
+const value = ref({
+  id: 2,
+  name: 'Travel',
+  text: 'Tourism & travel',
+  icon: 'ph:airplane-duotone',
+})
+
 const hobbies = [
   {
     id: 1,
@@ -33,20 +54,4 @@ const hobbies = [
     icon: 'ph:microphone-stage-duotone',
   },
 ]
-
-const selectedHobby = ref(hobbies[0])
 </script>
-
-<template>
-  <BaseListbox
-    v-model="selectedHobby"
-    label="Hobbies"
-    :items="hobbies"
-    :properties="{
-      value: 'id',
-      label: 'name',
-      sublabel: 'text',
-      icon: 'icon',
-    }"
-  />
-</template>

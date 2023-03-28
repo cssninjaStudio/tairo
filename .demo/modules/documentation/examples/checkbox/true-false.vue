@@ -1,15 +1,15 @@
-<script setup lang="ts">
-const demoTrueFalse = ref(true)
-</script>
-
 <template>
   <BaseCheckbox
-    v-model="demoTrueFalse"
+    v-model="value"
     name="true-false"
-    label="True/False"
+    :label="value"
     shape="full"
     :true-value="'checked'"
     :false-value="'not-checked'"
     color="muted"
   />
 </template>
+
+<script setup lang="ts">
+const value = ref('not-checked')
+</script>

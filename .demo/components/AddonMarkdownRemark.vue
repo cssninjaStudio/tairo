@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Lang } from 'shiki'
+import type { IThemeRegistration, Lang } from 'shiki'
 import type { ProcessorThemes } from '~/utils/markdown'
 
 const props = withDefaults(
@@ -17,7 +17,7 @@ const props = withDefaults(
      *
      * @see https://github.com/shikijs/shiki/blob/main/docs/themes.md#all-themes
      */
-    theme?: { light: string; dark: string }
+    theme?: { light: IThemeRegistration; dark: IThemeRegistration }
     /**
      * List of languages to highlight code blocks
      *
@@ -47,7 +47,7 @@ const props = withDefaults(
 const processors = shallowRef<ProcessorThemes>()
 const colorMode = useColorMode()
 const loaded = ref(false)
-const htmlTheme = ref<Record<string, string>>({
+const htmlContent = ref<Record<string, string>>({
   light: '',
   dark: '',
 })
@@ -63,7 +63,7 @@ const isDark = computed({
     }
   },
 })
-const theme = computed(() => (isDark.value ? 'dark' : 'light'))
+const mode = computed(() => (isDark.value ? 'dark' : 'light'))
 const proseSize = computed(() => {
   switch (props.size) {
     case 'sm':
@@ -87,11 +87,11 @@ watchEffect(async () => {
 
 watchEffect(async () => {
   let source = props.source
-  const _theme = theme.value
-  if (!source || !processors.value || htmlTheme.value[_theme]) return
+  const _mode = mode.value
+  if (!source || !processors.value || htmlContent.value[_mode]) return
 
-  const vfile = await processors.value[_theme].process(source)
-  htmlTheme.value[_theme] = vfile.toString()
+  const vfile = await processors.value[_mode].processor.process(source)
+  htmlContent.value[_mode] = vfile.toString()
   loaded.value = true
 })
 </script>
@@ -106,58 +106,30 @@ watchEffect(async () => {
       props.lines ? 'with-line-number' : '',
       props.fullwidth ? 'max-w-none' : '',
     ]"
-    v-html="htmlTheme[theme]"
+    v-html="htmlContent[mode]"
   ></BaseProse>
 </template>
 
 <style scoped>
-.markdown :deep(a[target='_blank']) {
-  align-items: center;
-  display: inline-flex;
-  gap: 0.25rem;
+.markdown :deep(.shiki) {
+  @apply nui-focus;
 }
-
-.markdown :deep(a[target='_blank']::after) {
-  content: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"%3E%3Cpath fill="none" stroke="%236944EC" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6m4-3h6v6m-11 5L21 3"%2F%3E%3C%2Fsvg%3E');
-  width: 0.8rem;
-  margin-top: 0.1rem;
-  opacity: 0.8;
-  transition: opacity 0.1s ease-out, width 0.1s ease-out;
-}
-
-.markdown :deep(a[target='_blank']:hover::after),
-.markdown :deep(a[target='_blank']:focus::after) {
-  width: 0.9rem;
-  opacity: 1;
-}
-
-.markdown :deep(.shiki .highlighted-line) {
-  background-color: var(--color-primary-100);
-  padding: 4px 4px 4px 6px;
-  margin-left: -6px;
-}
-/* .markdown :deep(.shiki) {
-  background: var(--color-muted-100) !important;
-}
-:global(.dark .markdown .shiki) {
-  background: var(--color-muted-900) !important;
-} */
-:global(.dark .markdown .shiki .highlighted-line) {
-  background-color: #0d0e14;
-}
-
 .markdown.with-line-number :deep(.shiki code) {
   counter-reset: step;
   counter-increment: step 0;
 }
-
+.markdown.with-line-number :deep(.shiki code .line) {
+  @apply inline-flex w-full h-[1.3rem];
+}
 .markdown.with-line-number :deep(.shiki code .line::before) {
   content: counter(step);
   counter-increment: step;
-  width: 1rem;
-  margin-right: 1.5rem;
-  display: inline-block;
-  text-align: right;
-  color: #898d98;
+  @apply w-4 mr-6 inline-block text-right text-muted-400 dark:text-muted-500;
+}
+.markdown.with-line-number :deep(.shiki code .line:hover) {
+  @apply bg-muted-100 dark:bg-muted-900;
+}
+.markdown.with-line-number :deep(.shiki code .line:hover::before) {
+  @apply text-muted-500 dark:text-muted-400;
 }
 </style>

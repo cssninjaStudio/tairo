@@ -1,39 +1,41 @@
-<script setup lang="ts">
-const frameworks = ['Javascript', 'Vue.js', 'React.js', 'Angular', 'Alpine.js']
-
-const selectedFramework = ref()
-</script>
-
 <template>
-  <BaseListbox
-    v-model="selectedFramework"
-    label="Straight listbox"
-    :items="frameworks"
-    placeholder="Select a framework"
-    shape="straight"
-  />
+  <div class="grid md:grid-cols-2 md:max-w-lg gap-6">
+    <BaseListbox
+      v-model="value"
+      label="Straight listbox"
+      :items="frameworks"
+      placeholder="Select a framework"
+      shape="straight"
+    />
 
-  <BaseListbox
-    v-model="selectedFramework"
-    label="Rounded listbox (default)"
-    :items="frameworks"
-    placeholder="Select a framework"
-    shape="rounded"
-  />
+    <BaseListbox
+      v-model="value"
+      label="Rounded listbox (default)"
+      :items="frameworks"
+      placeholder="Select a framework"
+      shape="rounded"
+    />
 
-  <BaseListbox
-    v-model="selectedFramework"
-    label="Curved listbox"
-    :items="frameworks"
-    placeholder="Select a framework"
-    shape="curved"
-  />
+    <BaseListbox
+      v-model="value"
+      label="Curved listbox"
+      :items="frameworks"
+      placeholder="Select a framework"
+      shape="curved"
+    />
 
-  <BaseListbox
-    v-model="selectedFramework"
-    label="Full listbox"
-    :items="frameworks"
-    placeholder="Select a framework"
-    shape="full"
-  />
+    <BaseListbox
+      v-model="value"
+      label="Full listbox"
+      :items="frameworks"
+      placeholder="Select a framework"
+      shape="full"
+    />
+  </div>
 </template>
+
+<script setup lang="ts">
+const value = ref()
+
+const frameworks = ['Javascript', 'Vue.js', 'React.js', 'Angular', 'Alpine.js']
+</script>

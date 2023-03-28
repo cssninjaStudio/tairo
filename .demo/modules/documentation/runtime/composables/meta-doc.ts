@@ -149,7 +149,7 @@ export async function useDocumentationMeta(
             .replace(/{ /g, '{\n ')
             // .replace(/}/g, '\n}')
             .replace(/; ([a-z])/g, ';\n $1')
-            .replace(/; /g, ';\n')}\n\n\nconst ${prop.name} = ref<${upperFirst(
+            .replace(/; /g, ';\n')}\n\nconst ${prop.name} = ref<${upperFirst(
             prop.name,
           )}Data>(${defaultValue})`,
         ].join('\n'),

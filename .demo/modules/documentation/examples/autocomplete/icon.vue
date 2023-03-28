@@ -1,37 +1,39 @@
 <template>
-  <BaseAutocomplete
-    v-model="selectedFramework"
-    :items="frameworks"
-    icon="lucide:search"
-    shape="full"
-    placeholder="Select a framework"
-    label="Framework"
-  />
+  <div class="grid md:grid-cols-2 md:max-w-lg gap-6">
+    <BaseAutocomplete
+      v-model="fields.first"
+      :items="frameworks"
+      icon="lucide:search"
+      shape="full"
+      placeholder="e.g. Nuxt"
+      label="Framework"
+    />
+    <BaseAutocomplete
+      v-model="fields.second"
+      :items="people"
+      icon="lucide:user"
+      shape="full"
+      placeholder="e.g. Clarissa"
+      label="Manager"
+      clearable
+    />
+  </div>
 </template>
 
 <script setup lang="ts">
-// demo data for the autocomplete
-const selectedFramework = ref('')
-const frameworks = ref([
-  {
-    id: 1,
-    name: 'Javascript',
-  },
-  {
-    id: 2,
-    name: 'Vue.js',
-  },
-  {
-    id: 3,
-    name: 'React.js',
-  },
-  {
-    id: 4,
-    name: 'Angular',
-  },
-  {
-    id: 5,
-    name: 'Alpine.js',
-  },
+const fields = reactive({
+  first: '',
+  second: '',
+  thrid: '',
+  fourth: '',
+})
+
+const frameworks = ref(['Javascript', 'Vue.js', 'React.js', 'Angular', 'Alpine.js'])
+const people = ref([
+  'Clarissa Perez',
+  'Aaron Splatter',
+  'Mike Miller',
+  'Benedict Kessler',
+  'Maya Rosselini',
 ])
 </script>

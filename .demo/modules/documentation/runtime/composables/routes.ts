@@ -19,7 +19,6 @@ export async function useDocumentationRoutes() {
   const { data } = await useAsyncData('doc-nav', () => {
     return queryContent('/documentation')
       .only(['_path', 'title', 'description', 'category', 'components', 'icon'])
-      .sort({ _path: 1 })
       .find()
   })
 

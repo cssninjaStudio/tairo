@@ -1,4 +1,5 @@
 import remarkShiki from '@stefanprobst/remark-shiki'
+import { hash } from 'ohash'
 import rehypeExternalLinks from 'rehype-external-links'
 import rehypeRaw from 'rehype-raw'
 import rehypeSanitize, { defaultSchema } from 'rehype-sanitize'
@@ -9,46 +10,59 @@ import remarkRehype from 'remark-rehype'
 import {
   getHighlighter,
   setCDN,
+  type Highlighter,
   type HighlighterOptions,
+  type IThemeRegistration,
   type Lang,
 } from 'shiki'
 import { unified, type Processor } from 'unified'
 
-export type ProcessorThemes = Record<string, Processor>
+export type ProcessorThemes = Record<
+  string,
+  {
+    processor: Processor
+    highlighter: Highlighter
+  }
+>
 
 // this is used to cache the markdown processors
-let _processors: ProcessorThemes
-let _processorsPromise: Promise<ProcessorThemes> | null = null
+const _processors: Map<string, ProcessorThemes> = new Map()
+const _processorsPromise: Map<string, Promise<ProcessorThemes> | null> =
+  new Map()
 
 export function getMarkdownProcessors(
-  themes: Record<string, string> = {},
+  themes: Record<string, IThemeRegistration> = {},
   langs: Lang[] = [],
 ) {
-  if (_processors) {
-    return Promise.resolve(_processors)
+  const key = hash({ themes, langs })
+  if (_processors.has(key)) {
+    return Promise.resolve(_processors.get(key)!)
   }
 
-  if (_processorsPromise) {
-    return _processorsPromise
+  if (_processorsPromise.has(key)) {
+    return _processorsPromise.get(key)!
   }
 
-  _processorsPromise = new Promise(async (resolve, reject) => {
-    try {
-      const processors: ProcessorThemes = {}
-      for (const theme in themes) {
-        const processor = await createProcessor({
-          langs,
-          theme: themes[theme],
-        })
-        processors[theme] = processor
+  _processorsPromise.set(
+    key,
+    new Promise(async (resolve, reject) => {
+      try {
+        const processors: ProcessorThemes = {}
+        for (const theme in themes) {
+          const processor = await createProcessor({
+            langs,
+            theme: themes[theme],
+          })
+          processors[theme] = processor
+        }
+        resolve(processors)
+      } catch (error) {
+        reject(error)
       }
-      resolve(processors)
-    } catch (error) {
-      reject(error)
-    }
-  })
+    }),
+  )
 
-  return _processorsPromise
+  return _processorsPromise.get(key)!
 }
 
 async function createProcessor(options: HighlighterOptions) {
@@ -60,43 +74,45 @@ async function createProcessor(options: HighlighterOptions) {
   }
 
   const highlighter = await getHighlighter(options)
+  const processor = unified()
+    .use(remarkParse)
+    .use(remarkGfm)
+    .use(remarkShiki, { highlighter })
+    .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeRaw)
+    // this but sanitize html but allow to add
+    // classes and styles to markdown elements
+    .use(rehypeSanitize, {
+      ...defaultSchema,
+      attributes: {
+        ...defaultSchema.attributes,
+        pre: [
+          ...(defaultSchema.attributes?.pre || []),
+          ['className'],
+          ['style'],
+        ],
+        code: [
+          ...(defaultSchema.attributes?.code || []),
+          ['className'],
+          ['style'],
+        ],
+        i: [...(defaultSchema.attributes?.i || []), ['className']],
+        span: [
+          ...(defaultSchema.attributes?.span || []),
+          ['className'],
+          ['style'],
+        ],
+      },
+    })
+    // this add noopener, noreferrer and _blank to external links
+    .use(rehypeExternalLinks, {
+      rel: ['noopener noreferrer'],
+      target: '_blank',
+    })
+    .use(rehypeStringify)
 
-  return (
-    unified()
-      .use(remarkParse)
-      .use(remarkGfm)
-      .use(remarkShiki, { highlighter })
-      .use(remarkRehype, { allowDangerousHtml: true })
-      .use(rehypeRaw)
-      // this but sanitize html but allow to add
-      // classes and styles to markdown elements
-      .use(rehypeSanitize, {
-        ...defaultSchema,
-        attributes: {
-          ...defaultSchema.attributes,
-          pre: [
-            ...(defaultSchema.attributes?.pre || []),
-            ['className'],
-            ['style'],
-          ],
-          code: [
-            ...(defaultSchema.attributes?.code || []),
-            ['className'],
-            ['style'],
-          ],
-          i: [...(defaultSchema.attributes?.i || []), ['className']],
-          span: [
-            ...(defaultSchema.attributes?.span || []),
-            ['className'],
-            ['style'],
-          ],
-        },
-      })
-      // this add noopener, noreferrer and _blank to external links
-      .use(rehypeExternalLinks, {
-        rel: ['noopener noreferrer'],
-        target: '_blank',
-      })
-      .use(rehypeStringify)
-  )
+  return {
+    processor,
+    highlighter,
+  }
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="grid sm:grid-cols-2 gap-4">
+  <div class="grid md:grid-cols-2 md:max-w-lg gap-6 mt-6">
     <BaseSelect shape="rounded" label="Select a hero" label-float>
       <option value="">Select a hero</option>
       <option value="Superman">Superman</option>
