@@ -127,6 +127,15 @@ export default defineAppConfig({
         component: 'DemoPanelTask',
       },
     ],
+    error: {
+      logo: {
+        component: 'img',
+        props: {
+          src: '/img/illustrations/system/404-1.svg',
+          class: 'w-full max-w-sm mx-auto',
+        },
+      },
+    },
   },
   nuxtIcon: {},
   nui: {

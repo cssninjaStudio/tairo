@@ -361,7 +361,7 @@ const validatePin = computed(() => {
               class="w-full flex items-center justify-center pointer-events-none pt-8"
             >
               <div class="flex h-16 items-center justify-center">
-                <IconCheckAnimated v-if="validatePin" size="sm" />
+                <TairoCheckAnimated v-if="validatePin" size="sm" />
                 <BaseIconBox
                   v-else
                   color="primary"

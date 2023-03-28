@@ -90,15 +90,13 @@ const onSubmit = handleSubmit(async (values) => {
       icon: 'ph:user-circle-fill',
       closable: true,
     })
+    router.push('/layouts/onboarding-1')
   } catch (error: any) {
     // this will set the error on the form
     if (error.message === 'Fake backend validation error') {
       setFieldError('username', 'This username is already taken')
     }
-    return
   }
-
-  router.push('/dashboards')
 })
 </script>
 
