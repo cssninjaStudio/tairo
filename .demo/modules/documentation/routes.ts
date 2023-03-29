@@ -526,17 +526,17 @@ export const routes = {
       },
       children: [
         {
-          name: 'documentation-animated-checkbox',
-          path: 'animated-checkbox',
+          name: 'documentation-checkbox-animated',
+          path: 'checkbox-animated',
           file: resolve(
             __dirname,
-            './pages/documentation/form/animated-checkbox.vue',
+            './pages/documentation/form/checkbox-animated.vue',
           ),
           meta: {
             title: 'Checkbox Animated',
             documentation: {
               category: 'Base Forms',
-              components: ['BaseAnimatedCheckbox'],
+              components: ['BaseCheckboxAnimated'],
               description:
                 'Use animated checkboxes to display fancy svg circle and check animations, which are ideal to engage your audience.',
               icon: {

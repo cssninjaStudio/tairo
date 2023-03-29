@@ -67,7 +67,7 @@ const tasks = ref<string[]>(['Option 0', 'Option 1', 'Option 2'])
             :key="task.id"
             class="flex items-center gap-3"
           >
-            <BaseAnimatedCheckbox
+            <BaseCheckboxAnimated
               v-model="tasks"
               :value="`Option ${task.id}`"
               color="success"
@@ -98,7 +98,7 @@ const tasks = ref<string[]>(['Option 0', 'Option 1', 'Option 2'])
             :key="task.id"
             class="flex items-center gap-3"
           >
-            <BaseAnimatedCheckbox
+            <BaseCheckboxAnimated
               v-model="tasks"
               :value="`Option ${task.id}`"
               :classes="{

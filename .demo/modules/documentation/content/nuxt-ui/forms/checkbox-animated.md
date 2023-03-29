@@ -2,7 +2,7 @@
 title: Checkbox Animated
 category: Base Forms
 components: 
-  - BaseAnimatedCheckbox
+  - BaseCheckboxAnimated
 description: Use animated checkboxes to display fancy svg circle and check animations, which are ideal to engage your audience.
 icon:
   src: /img/illustrations/components/checkbox-icon.svg
@@ -13,7 +13,7 @@ icon:
 ::doc-component-demo
 ---
 title: Checkbox colors
-demo: '#examples/animated-checkbox/base.vue'
+demo: '#examples/checkbox-animated/base.vue'
 ---
 A nice and friendly checkbox.
 
@@ -24,7 +24,7 @@ _Notice usage of :doc-linker{to="BaseFocusLoop"} to loop focus through the check
 ::doc-component-demo
 ---
 title: Boolean value
-demo: '#examples/animated-checkbox/boolean.vue'
+demo: '#examples/checkbox-animated/boolean.vue'
 ---
 Here is an example using a `boolean` value
 ::
@@ -33,7 +33,7 @@ Here is an example using a `boolean` value
 ::doc-component-demo
 ---
 title: Custom behavior
-demo: '#examples/animated-checkbox/custom.vue'
+demo: '#examples/checkbox-animated/custom.vue'
 ---
 Use `true-value`/`false-value` to create custom behavior
 ::
@@ -42,10 +42,10 @@ Use `true-value`/`false-value` to create custom behavior
 ::doc-component-demo
 ---
 title: Static value
-demo: '#examples/animated-checkbox/true-false.vue'
+demo: '#examples/checkbox-animated/true-false.vue'
 ---
 You can create a static checkbox by not providing a `v-model` (or `model-value`)
 ::
 
 
-:doc-component-meta{name="BaseAnimatedCheckbox"}
+:doc-component-meta{name="BaseCheckboxAnimated"}

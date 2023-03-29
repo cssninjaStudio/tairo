@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col gap-6 md:flex-row md:items-start">
     <div class="flex flex-wrap items-end gap-4 w-3/5">
-      <BaseAnimatedCheckbox v-model="checked" :classes="{ label: 'text-primary-500' }" />
+      <BaseCheckboxAnimated v-model="checked" :classes="{ label: 'text-primary-500' }" />
     </div>
   </div>
 </template>
