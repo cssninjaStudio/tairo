@@ -17,7 +17,7 @@ definePageMeta({
         >
           <TairoLogo class="w-10 h-10" />
         </NuxtLink>
-        <div class="flex items-center gap-8">
+        <!-- div class="flex items-center gap-8">
           <BaseButton shape="curved" condensed color="muted">Status</BaseButton>
           <BaseButton shape="curved" condensed color="none"
             >Maintenance</BaseButton
@@ -25,7 +25,7 @@ definePageMeta({
           <BaseButton shape="curved" condensed color="none"
             >Incidents</BaseButton
           >
-        </div>
+        </div -->
         <div class="flex items-center gap-4">
           <BaseThemeToggle />
         </div>
@@ -53,263 +53,187 @@ definePageMeta({
               </BaseParagraph>
             </div>
           </div>
-          <div
-            class="px-8 py-5 border-b border-muted-200 dark:border-muted-700"
-          >
+          <div class="px-8 py-5">
             <div class="flex gap-16">
               <BaseText size="sm" class="text-muted-500 dark:text-muted-400"
                 >Service</BaseText
               >
               <BaseText size="sm" class="text-muted-500 dark:text-muted-400"
-                >Uptime during the last 60 days</BaseText
+                >Uptime during the last 90 days</BaseText
               >
             </div>
           </div>
-          <BaseCard shape="curved" class="p-8">
-            <div class="space-y-8">
+          <BaseCard shape="curved" class="px-8">
+            <div>
               <!-- Item -->
-              <div class="flex items-center gap-16">
-                <div>
-                  <img
-                    class="w-14 h-14"
-                    src="/img/icons/animated/lightbulb.gif"
-                    alt="Animated icon"
-                  />
+              <div
+                class="[&:not(:last-child)]:border-b py-8 border-muted-200 dark:border-muted-700"
+              >
+                <div class="flex items-center justify-between gap-4">
+                  <div class="flex items-center gap-2 mb-1">
+                    <Icon
+                      name="ph:check-circle-duotone"
+                      class="w-4 h-4 text-success-500"
+                    />
+                    <BaseText size="sm">tairo.cssninja.io</BaseText>
+                  </div>
+                  <div>
+                    <BaseText
+                      size="sm"
+                      class="text-success-600 dark:text-success-400"
+                      >99.989% uptime</BaseText
+                    >
+                  </div>
                 </div>
-                <div class="grow flex items-center justify-between">
-                  <div class="w-full flex items-center">
+
+                <div class="w-full flex items-center">
+                  <div
+                    v-for="index in 90"
+                    class="group relative h-8 flex-1 shrink-0 rounded-[2px] border-l border-r border-white dark:border-muted-800 cursor-pointer"
+                    :class="[
+                      index !== 35 &&
+                        index !== 54 &&
+                        'bg-success-500 hover:bg-success-300 transition-colors duration-300',
+                      index === 35 &&
+                        'bg-orange-300 hover:bg-orange-500 transition-colors duration-300',
+                      index === 54 &&
+                        'bg-red-500 hover:bg-red-300 transition-colors duration-300',
+                    ]"
+                  >
+                    <!-- Popup -->
                     <div
-                      v-for="index in 35"
-                      class="h-8 flex-1 shrink-0 rounded-[2px] border-l border-r border-white dark:border-muted-800"
-                      :class="
-                        index <= 63
-                          ? 'bg-success-500 hover:bg-success-300 transition-colors duration-300'
-                          : 'bg-muted-200 dark:bg-muted-700'
-                      "
-                    ></div>
+                      class="absolute -top-24 left-1/2 -translate-x-1/2 w-40 opacity-0 group-hover:opacity-100 transition-all duration-300"
+                    >
+                      <BaseCard shape="curved" elevated>
+                        <div
+                          class="flex items-center gap-1 p-3 border-b border-muted-200 dark:border-muted-700"
+                        >
+                          <Icon
+                            name="ph:check-circle-duotone"
+                            class="w-4 h-4 text-success-500"
+                          />
+                          <BaseText
+                            size="sm"
+                            class="text-muted-600 dark:text-muted-100"
+                            >Operational</BaseText
+                          >
+                        </div>
+                        <div class="p-2 text-center text-muted-400">
+                          <BaseText size="xs">March 23, 2023</BaseText>
+                        </div>
+                      </BaseCard>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center justify-between gap-4 mt-1 text-muted-400"
+                >
+                  <div>
+                    <BaseText size="xs" weight="medium">90 days ago</BaseText>
+                  </div>
+                  <div>
+                    <BaseText size="xs" weight="medium">Today</BaseText>
                   </div>
                 </div>
               </div>
               <!-- Item -->
-              <div class="flex items-center gap-16">
-                <div>
-                  <img
-                    class="w-14 h-14"
-                    src="/img/icons/animated/image.gif"
-                    alt="Animated icon"
-                  />
-                </div>
-                <div class="grow flex items-center justify-between">
-                  <div class="flex items-center gap-1">
-                    <div
-                      v-for="index in 20"
-                      class="h-8 w-2"
-                      :class="
-                        index <= 20
-                          ? 'bg-success-500'
-                          : 'bg-muted-200 dark:bg-muted-700'
-                      "
-                    ></div>
+              <div
+                class="[&:not(:last-child)]:border-b py-8 border-muted-200 dark:border-muted-700"
+              >
+                <div class="flex items-center justify-between gap-4">
+                  <div class="flex items-center gap-2 mb-1">
+                    <Icon
+                      name="ph:check-circle-duotone"
+                      class="w-4 h-4 text-success-500"
+                    />
+                    <BaseText size="sm">api.tairo.cssninja.io</BaseText>
                   </div>
-                  <div class="text-right">
+                  <div>
                     <BaseText
                       size="sm"
-                      class="text-muted-600 dark:text-muted-400"
-                    >
-                      CDN Assets</BaseText
+                      class="text-success-600 dark:text-success-400"
+                      >99.989% uptime</BaseText
                     >
                   </div>
-                  <div class="text-right">
-                    <BaseText size="xs" class="text-muted-400">
-                      100% availability
-                    </BaseText>
+                </div>
+
+                <div class="w-full flex items-center">
+                  <div
+                    v-for="index in 90"
+                    class="relative h-8 flex-1 shrink-0 rounded-[2px] border-l border-r border-white dark:border-muted-800 cursor-pointer"
+                    :class="[
+                      index !== 35 &&
+                        index !== 54 &&
+                        'bg-success-500 hover:bg-success-300 transition-colors duration-300',
+                      index === 35 &&
+                        'bg-orange-300 hover:bg-orange-500 transition-colors duration-300',
+                      index === 54 &&
+                        'bg-red-500 hover:bg-red-300 transition-colors duration-300',
+                    ]"
+                  ></div>
+                </div>
+                <div
+                  class="flex items-center justify-between gap-4 mt-1 text-muted-400"
+                >
+                  <div>
+                    <BaseText size="xs" weight="medium">90 days ago</BaseText>
+                  </div>
+                  <div>
+                    <BaseText size="xs" weight="medium">Today</BaseText>
                   </div>
                 </div>
               </div>
               <!-- Item -->
-              <div class="flex items-center gap-16">
-                <div>
-                  <img
-                    class="w-14 h-14"
-                    src="/img/icons/animated/search.gif"
-                    alt="Animated icon"
-                  />
-                </div>
-                <div class="grow flex items-center justify-between">
-                  <div class="flex items-center gap-1">
-                    <div
-                      v-for="index in 20"
-                      class="h-8 w-2"
-                      :class="
-                        index <= 16
-                          ? 'bg-warning-500'
-                          : 'bg-muted-200 dark:bg-muted-700'
-                      "
-                    ></div>
+              <div
+                class="[&:not(:last-child)]:border-b py-8 border-muted-200 dark:border-muted-700"
+              >
+                <div class="flex items-center justify-between gap-4">
+                  <div class="flex items-center gap-2 mb-1">
+                    <Icon
+                      name="ph:check-circle-duotone"
+                      class="w-4 h-4 text-success-500"
+                    />
+                    <BaseText size="sm">hooks.tairo.cssninja.io</BaseText>
                   </div>
-                  <div class="text-right">
+                  <div>
                     <BaseText
                       size="sm"
-                      class="text-muted-600 dark:text-muted-400"
+                      class="text-success-600 dark:text-success-400"
+                      >99.989% uptime</BaseText
                     >
-                      Search indexes</BaseText
-                    >
-                  </div>
-                  <div class="text-right">
-                    <BaseText size="xs" class="text-muted-400">
-                      80% availability
-                    </BaseText>
                   </div>
                 </div>
-              </div>
-              <!-- Item -->
-              <div class="flex items-center gap-16">
-                <div>
-                  <img
-                    class="w-14 h-14"
-                    src="/img/icons/animated/diamond.gif"
-                    alt="Animated icon"
-                  />
+
+                <div class="w-full flex items-center">
+                  <div
+                    v-for="index in 90"
+                    class="relative h-8 flex-1 shrink-0 rounded-[2px] border-l border-r border-white dark:border-muted-800 cursor-pointer"
+                    :class="[
+                      index !== 35 &&
+                        index !== 54 &&
+                        'bg-success-500 hover:bg-success-300 transition-colors duration-300',
+                      index === 35 &&
+                        'bg-orange-300 hover:bg-orange-500 transition-colors duration-300',
+                      index === 54 &&
+                        'bg-red-500 hover:bg-red-300 transition-colors duration-300',
+                    ]"
+                  ></div>
                 </div>
-                <div class="grow flex items-center justify-between">
-                  <div class="flex items-center gap-1">
-                    <div
-                      v-for="index in 20"
-                      class="h-8 w-2"
-                      :class="
-                        index <= 9
-                          ? 'bg-danger-500'
-                          : 'bg-muted-200 dark:bg-muted-700'
-                      "
-                    ></div>
+                <div
+                  class="flex items-center justify-between gap-4 mt-1 text-muted-400"
+                >
+                  <div>
+                    <BaseText size="xs" weight="medium">90 days ago</BaseText>
                   </div>
-                  <div class="text-right">
-                    <BaseText
-                      size="sm"
-                      class="text-muted-600 dark:text-muted-400"
-                    >
-                      Integrations</BaseText
-                    >
-                  </div>
-                  <div class="text-right">
-                    <BaseText size="xs" class="text-muted-400">
-                      45% availability
-                    </BaseText>
-                  </div>
-                </div>
-              </div>
-              <!-- Item -->
-              <div class="flex items-center gap-16">
-                <div>
-                  <img
-                    class="w-14 h-14"
-                    src="/img/icons/animated/chart.gif"
-                    alt="Animated icon"
-                  />
-                </div>
-                <div class="grow flex items-center justify-between">
-                  <div class="flex items-center gap-1">
-                    <div
-                      v-for="index in 20"
-                      class="h-8 w-2"
-                      :class="
-                        index <= 20
-                          ? 'bg-success-500'
-                          : 'bg-muted-200 dark:bg-muted-700'
-                      "
-                    ></div>
-                  </div>
-                  <div class="text-right">
-                    <BaseText
-                      size="sm"
-                      class="text-muted-600 dark:text-muted-400"
-                    >
-                      Load balancing</BaseText
-                    >
-                  </div>
-                  <div class="text-right">
-                    <BaseText size="xs" class="text-muted-400">
-                      100% availability
-                    </BaseText>
-                  </div>
-                </div>
-              </div>
-              <!-- Item -->
-              <div class="flex items-center gap-16">
-                <div>
-                  <img
-                    class="w-14 h-14"
-                    src="/img/icons/animated/rocket.gif"
-                    alt="Animated icon"
-                  />
-                </div>
-                <div class="grow flex items-center justify-between">
-                  <div class="flex items-center gap-1">
-                    <div
-                      v-for="index in 20"
-                      class="h-8 w-2"
-                      :class="
-                        index <= 20
-                          ? 'bg-success-500'
-                          : 'bg-muted-200 dark:bg-muted-700'
-                      "
-                    ></div>
-                  </div>
-                  <div class="text-right">
-                    <BaseText
-                      size="sm"
-                      class="text-muted-600 dark:text-muted-400"
-                    >
-                      Load booster</BaseText
-                    >
-                  </div>
-                  <div class="text-right">
-                    <BaseText size="xs" class="text-muted-400">
-                      100% availability
-                    </BaseText>
-                  </div>
-                </div>
-              </div>
-              <!-- Item -->
-              <div class="flex items-center gap-16">
-                <div>
-                  <img
-                    class="w-14 h-14"
-                    src="/img/icons/animated/check.gif"
-                    alt="Animated icon"
-                  />
-                </div>
-                <div class="grow flex items-center justify-between">
-                  <div class="flex items-center gap-1">
-                    <div
-                      v-for="index in 20"
-                      class="h-8 w-2"
-                      :class="
-                        index <= 20
-                          ? 'bg-success-500'
-                          : 'bg-muted-200 dark:bg-muted-700'
-                      "
-                    ></div>
-                  </div>
-                  <div class="text-right">
-                    <BaseText
-                      size="sm"
-                      class="text-muted-600 dark:text-muted-400"
-                    >
-                      Security</BaseText
-                    >
-                  </div>
-                  <div class="text-right">
-                    <BaseText size="xs" class="text-muted-400">
-                      100% availability
-                    </BaseText>
+                  <div>
+                    <BaseText size="xs" weight="medium">Today</BaseText>
                   </div>
                 </div>
               </div>
             </div>
           </BaseCard>
         </div>
-        <BaseCard class="mt-12">
+        <BaseCard shape="curved" class="mt-12">
           <div
             class="flex items-center gap-3 p-6 border-b border-muted-200 dark:border-muted-700"
           >

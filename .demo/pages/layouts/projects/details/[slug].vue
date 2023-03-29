@@ -35,6 +35,16 @@ function openTaskPanel(id: number, tasks: any) {
 
 <template>
   <div class="relative">
+    <div class="hidden sm:block absolute top-2.5 right-12 z-20">
+      <BaseButton
+        condensed
+        shape="curved"
+        :to="`/layouts/projects/board/${slug}`"
+      >
+        <Icon name="ph:kanban-duotone" class="w-4 h-4" />
+        <span>Open Board</span>
+      </BaseButton>
+    </div>
     <div class="absolute top-2 right-0 z-20">
       <BaseDropdown
         flavor="context"
@@ -48,6 +58,7 @@ function openTaskPanel(id: number, tasks: any) {
           :to="`/layouts/projects/board/${slug}`"
           title="Board view"
           text="Swicth to board view"
+          class="sm:hidden"
         >
           <template #start>
             <Icon name="ph:kanban-duotone" class="w-5 h-5 block mr-2" />
@@ -119,10 +130,10 @@ function openTaskPanel(id: number, tasks: any) {
           <!-- Overview -->
           <div v-if="activeValue === 'overview'">
             <div class="grid grid-cols-12 gap-6">
-              <div class="col-span-12 sm:col-span-8">
+              <div class="col-span-12 ltablet:col-span-8 lg:col-span-8">
                 <BaseCard class="p-10 space-y-12">
                   <div
-                    class="flex items-center justify-between gap-8 pb-12 border-b border-muted-200 dark:border-muted-700"
+                    class="flex flex-col sm:flex-row items-center justify-between gap-8 pb-12 border-b border-muted-200 dark:border-muted-700"
                   >
                     <div>
                       <BaseHeading tag="h2" size="2xl" weight="medium">
@@ -155,7 +166,7 @@ function openTaskPanel(id: number, tasks: any) {
                         />
                       </div>
                     </div>
-                    <div class="w-72 shrink-0">
+                    <div class="w-full sm:w-72 shrink-0">
                       <img
                         :src="data?.project.image"
                         :alt="data?.project.name"
@@ -288,7 +299,7 @@ function openTaskPanel(id: number, tasks: any) {
                   </div>
                 </BaseCard>
               </div>
-              <div class="col-span-12 sm:col-span-4">
+              <div class="col-span-12 ltablet:col-span-4 lg:col-span-4">
                 <div class="space-y-6">
                   <!-- Customer -->
                   <BaseCard class="p-8">

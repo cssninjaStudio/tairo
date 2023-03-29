@@ -76,6 +76,7 @@ async function getDemoData() {
           role: 'UI/UX Designer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Carmen E.',
+          'data-tooltip': 'Carmen E.',
           text: 'CE',
         },
         {
@@ -85,6 +86,7 @@ async function getDemoData() {
           role: 'Fullstack Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Josh C.',
+          'data-tooltip': 'Josh C.',
           text: 'JC',
         },
         {
@@ -94,6 +96,7 @@ async function getDemoData() {
           role: 'Backend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Marjory L.',
+          'data-tooltip': 'Marjory L.',
           text: 'ML',
         },
       ],
@@ -1259,6 +1262,7 @@ async function getDemoData() {
           role: 'Software Engineer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Kendra W.',
+          'data-tooltip': 'Kendra W.',
           text: 'KW',
         },
         {
@@ -1268,6 +1272,7 @@ async function getDemoData() {
           role: 'UI Designer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Elizabet F.',
+          'data-tooltip': 'Elizabet F.',
           text: 'EF',
         },
         {
@@ -1277,6 +1282,7 @@ async function getDemoData() {
           role: 'UI/UX Designer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Carmen E.',
+          'data-tooltip': 'Carmen E.',
           text: 'CE',
         },
         {
@@ -1286,6 +1292,7 @@ async function getDemoData() {
           role: 'Fullstack Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Josh C.',
+          'data-tooltip': 'Josh C.',
           text: 'JC',
         },
         {
@@ -1295,6 +1302,7 @@ async function getDemoData() {
           role: 'Fullstack Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Hermann M.',
+          'data-tooltip': 'Hermann M.',
           text: 'HM',
         },
       ],
@@ -2460,6 +2468,7 @@ async function getDemoData() {
           role: 'UI/UX Designer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Ryan B.',
+          'data-tooltip': 'Ryan B.',
           text: 'RB',
         },
         {
@@ -2469,6 +2478,7 @@ async function getDemoData() {
           role: 'UI/UX Designer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Carmen E.',
+          'data-tooltip': 'Carmen E.',
           text: 'CE',
         },
         {
@@ -2478,6 +2488,7 @@ async function getDemoData() {
           role: 'Fullstack Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Josh C.',
+          'data-tooltip': 'Josh C.',
           text: 'JC',
         },
         {
@@ -2487,6 +2498,7 @@ async function getDemoData() {
           role: 'Backend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Marjory L.',
+          'data-tooltip': 'Marjory L.',
           text: 'ML',
         },
       ],
@@ -3652,6 +3664,7 @@ async function getDemoData() {
           role: 'Solution Architect',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Rob H.',
+          'data-tooltip': 'Rob H.',
           text: 'RH',
         },
         {
@@ -3661,6 +3674,7 @@ async function getDemoData() {
           role: 'Fronted Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Anthony D.',
+          'data-tooltip': 'Anthony D.',
           text: 'AD',
         },
         {
@@ -3670,6 +3684,7 @@ async function getDemoData() {
           role: 'UI/UX Designer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Carmen E.',
+          'data-tooltip': 'Carmen E.',
           text: 'CE',
         },
         {
@@ -3679,6 +3694,7 @@ async function getDemoData() {
           role: 'Fullstack Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Josh C.',
+          'data-tooltip': 'Josh C.',
           text: 'JC',
         },
         {
@@ -3688,6 +3704,7 @@ async function getDemoData() {
           role: 'Backend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Marjory L.',
+          'data-tooltip': 'Marjory L.',
           text: 'ML',
         },
       ],
@@ -4853,6 +4870,7 @@ async function getDemoData() {
           role: 'Frontend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Kendra W.',
+          'data-tooltip': 'Kendra W.',
           text: 'KW',
         },
         {
@@ -4862,6 +4880,7 @@ async function getDemoData() {
           role: 'Frontend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Melany L.',
+          'data-tooltip': 'Melany L.',
           text: 'ML',
         },
         {
@@ -4871,6 +4890,7 @@ async function getDemoData() {
           role: 'UI/UX Designer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Carmen E.',
+          'data-tooltip': 'Carmen E.',
           text: 'CE',
         },
         {
@@ -4880,6 +4900,7 @@ async function getDemoData() {
           role: 'Backend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Marjory L.',
+          'data-tooltip': 'Marjory L.',
           text: 'ML',
         },
       ],
@@ -6045,6 +6066,7 @@ async function getDemoData() {
           role: 'Fullstack Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Josh C.',
+          'data-tooltip': 'Josh C.',
           text: 'JS',
         },
         {
@@ -6054,6 +6076,7 @@ async function getDemoData() {
           role: 'Graphic Artist',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Maya R.',
+          'data-tooltip': 'Maya R.',
           text: 'MR',
         },
         {
@@ -6063,6 +6086,7 @@ async function getDemoData() {
           role: 'Backend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Harold S',
+          'data-tooltip': 'Harold S',
           text: 'HS',
         },
         {
@@ -6072,6 +6096,7 @@ async function getDemoData() {
           role: 'Solution Architect',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Mike B.',
+          'data-tooltip': 'Mike B.',
           text: 'MB',
         },
       ],
@@ -7237,6 +7262,7 @@ async function getDemoData() {
           role: 'Frontend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Mike B.',
+          'data-tooltip': 'Mike B.',
           text: 'MB',
         },
         {
@@ -7246,6 +7272,7 @@ async function getDemoData() {
           role: 'Mobile Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Arthur B.',
+          'data-tooltip': 'Arthur B.',
           text: 'AB',
         },
       ],
@@ -8411,6 +8438,7 @@ async function getDemoData() {
           role: 'UI/UX Designer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Ana B.',
+          'data-tooltip': 'Ana B.',
           text: 'AB',
         },
         {
@@ -8420,6 +8448,7 @@ async function getDemoData() {
           role: 'Frontend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Henry C.',
+          'data-tooltip': 'Henry C.',
           text: 'HC',
         },
         {
@@ -8429,6 +8458,7 @@ async function getDemoData() {
           role: 'Backend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Greta K.',
+          'data-tooltip': 'Greta K.',
           text: 'GK',
         },
       ],
@@ -9594,6 +9624,7 @@ async function getDemoData() {
           role: 'UI/UX Designer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Clarke G.',
+          'data-tooltip': 'Clarke G.',
           text: 'CG',
         },
         {
@@ -9603,6 +9634,7 @@ async function getDemoData() {
           role: 'Fullstack Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Greta K.',
+          'data-tooltip': 'Greta K.',
           text: 'GK',
         },
         {
@@ -9612,6 +9644,7 @@ async function getDemoData() {
           role: 'Fullstack Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Josh C.',
+          'data-tooltip': 'Josh C.',
           text: 'JC',
         },
         {
@@ -9621,6 +9654,7 @@ async function getDemoData() {
           role: 'Backend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Marjory L.',
+          'data-tooltip': 'Marjory L.',
           text: 'ML',
         },
       ],
@@ -10786,6 +10820,7 @@ async function getDemoData() {
           role: 'Backend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Marjory L.',
+          'data-tooltip': 'Marjory L.',
           text: 'ML',
         },
         {
@@ -10795,6 +10830,7 @@ async function getDemoData() {
           role: 'Fullstack Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Josh C.',
+          'data-tooltip': 'Josh C.',
           text: 'JC',
         },
         {
@@ -10804,6 +10840,7 @@ async function getDemoData() {
           role: 'UI/UX Designer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Sandrine C.',
+          'data-tooltip': 'Sandrine C.',
           text: 'SC',
         },
         {
@@ -10813,6 +10850,7 @@ async function getDemoData() {
           role: 'Frontend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Kendra W.',
+          'data-tooltip': 'Kendra W.',
           text: 'KW',
         },
       ],
@@ -11978,6 +12016,7 @@ async function getDemoData() {
           role: 'Mobile Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Ana B.',
+          'data-tooltip': 'Ana B.',
           text: 'AB',
         },
         {
@@ -11987,6 +12026,7 @@ async function getDemoData() {
           role: 'Frontend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Carmen E.',
+          'data-tooltip': 'Carmen E.',
           text: 'CE',
         },
         {
@@ -11996,6 +12036,7 @@ async function getDemoData() {
           role: 'Fullstack Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Josh C.',
+          'data-tooltip': 'Josh C.',
           text: 'JC',
         },
         {
@@ -12005,6 +12046,7 @@ async function getDemoData() {
           role: 'Backend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Marjory L.',
+          'data-tooltip': 'Marjory L.',
           text: 'ML',
         },
       ],
@@ -13170,6 +13212,7 @@ async function getDemoData() {
           role: 'UI/UX Designer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Sarah C.',
+          'data-tooltip': 'Sarah C.',
           text: 'SC',
         },
         {
@@ -13179,6 +13222,7 @@ async function getDemoData() {
           role: 'Frontend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Carmen E.',
+          'data-tooltip': 'Carmen E.',
           text: 'CE',
         },
         {
@@ -13188,6 +13232,7 @@ async function getDemoData() {
           role: 'Fullstack Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Josh C.',
+          'data-tooltip': 'Josh C.',
           text: 'JC',
         },
         {
@@ -13197,6 +13242,7 @@ async function getDemoData() {
           role: 'Backend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Marjory L.',
+          'data-tooltip': 'Marjory L.',
           text: 'ML',
         },
       ],
@@ -14362,6 +14408,7 @@ async function getDemoData() {
           role: 'Frontend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Clarke G.',
+          'data-tooltip': 'Clarke G.',
           text: 'CG',
         },
         {
@@ -14371,6 +14418,7 @@ async function getDemoData() {
           role: 'Mobile Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Hermann M.',
+          'data-tooltip': 'Hermann M.',
           text: 'HM',
         },
         {
@@ -14380,6 +14428,7 @@ async function getDemoData() {
           role: 'Backend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Mario T.',
+          'data-tooltip': 'Mario T.',
           text: 'MT',
         },
       ],
@@ -15545,6 +15594,7 @@ async function getDemoData() {
           role: 'UI/UX Designer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Howard D.',
+          'data-tooltip': 'Howard D.',
           text: 'HD',
         },
         {
@@ -15554,6 +15604,7 @@ async function getDemoData() {
           role: 'Solution Architect',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Hermann M.',
+          'data-tooltip': 'Hermann M.',
           text: 'HM',
         },
         {
@@ -15563,6 +15614,7 @@ async function getDemoData() {
           role: 'Backend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Mario T.',
+          'data-tooltip': 'Mario T.',
           text: 'MT',
         },
       ],
@@ -16728,6 +16780,7 @@ async function getDemoData() {
           role: 'UI/UX Designer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Clarissa M.',
+          'data-tooltip': 'Clarissa M.',
           text: 'CM',
         },
         {
@@ -16737,6 +16790,7 @@ async function getDemoData() {
           role: 'Frontend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Hermann M.',
+          'data-tooltip': 'Hermann M.',
           text: 'HM',
         },
         {
@@ -16746,6 +16800,7 @@ async function getDemoData() {
           role: 'Frontend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Mario T.',
+          'data-tooltip': 'Mario T.',
           text: 'MT',
         },
         {
@@ -16755,6 +16810,7 @@ async function getDemoData() {
           role: 'Solution Architect',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Ana B.',
+          'data-tooltip': 'Ana B.',
           text: 'AB',
         },
       ],

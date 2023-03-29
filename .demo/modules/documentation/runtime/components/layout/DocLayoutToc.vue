@@ -58,7 +58,7 @@ function getTocItemClass(item: any) {
 
 <template>
   <div
-    class="slimscroll fixed flex max-h-[calc(100vh_-_180px)] flex-col justify-between overflow-y-auto pt-2 pb-20 pl-20 pr-1"
+    class="slimscroll fixed flex max-h-[calc(100vh_-_180px)] flex-col justify-between overflow-y-auto overflow-x-hidden pt-2 pb-20 pl-20 pr-1"
   >
     <div class="mb-8 w-52">
       <div

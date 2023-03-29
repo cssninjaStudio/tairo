@@ -344,65 +344,30 @@ const navigation = [
         icon: 'ph:notification-duotone',
         to: '/layouts/utility-status',
       },
+      {
+        name: 'System error',
+        icon: 'ph:skull-duotone',
+        to: '/layouts/utility-error',
+      },
     ],
   },
   {
     name: 'Onboarding',
     children: [
       {
-        name: 'Onboarding V1',
-        icon: 'ph:square-logo-duotone',
+        name: '2 Factor',
+        icon: 'ph:fingerprint-duotone',
         to: '/layouts/onboarding-1',
       },
       {
-        name: 'Onboarding V2',
-        icon: 'ph:square-logo-duotone',
+        name: 'Plan boarding',
+        icon: 'ph:coins-duotone',
         to: '/layouts/onboarding-2',
       },
       {
-        name: 'Onboarding V3',
-        icon: 'ph:square-logo-duotone',
+        name: 'Role selection',
+        icon: 'ph:suitcase-duotone',
         to: '/layouts/onboarding-3',
-      },
-      {
-        name: 'Onboarding V4',
-        icon: 'ph:square-logo-duotone',
-        to: '/layouts/onboarding-4',
-      },
-      {
-        name: 'Onboarding V5',
-        icon: 'ph:square-logo-duotone',
-        to: '/layouts/onboarding-5',
-      },
-    ],
-  },
-  {
-    name: 'Error',
-    children: [
-      {
-        name: 'Error V1',
-        icon: 'ph:skull-duotone',
-        to: '/layouts/error-1',
-      },
-      {
-        name: 'Error V2',
-        icon: 'ph:skull-duotone',
-        to: '/layouts/error-2',
-      },
-      {
-        name: 'Error V3',
-        icon: 'ph:skull-duotone',
-        to: '/layouts/error-3',
-      },
-      {
-        name: 'Error V4',
-        icon: 'ph:skull-duotone',
-        to: '/layouts/error-4',
-      },
-      {
-        name: 'Error V5',
-        icon: 'ph:skull-duotone',
-        to: '/layouts/error-5',
       },
     ],
   },
