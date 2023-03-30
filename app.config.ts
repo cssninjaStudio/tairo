@@ -10,6 +10,7 @@ export default defineAppConfig({
     error: {
       logo: {
         component: 'TairoLogo',
+        resolve: true,
         props: { class: 'text-primary-500 mx-auto h-40 p-6' },
       },
     },
@@ -17,6 +18,7 @@ export default defineAppConfig({
       enabled: true,
       logo: {
         component: 'TairoLogo',
+        resolve: true,
         props: { class: 'text-primary-600 h-10' },
       },
       items: [],

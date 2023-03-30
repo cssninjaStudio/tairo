@@ -1,5 +1,5 @@
-const { cssninjaConfig } = require('@cssninja/nuxt-ui/tailwind')
-const colors = require('tailwindcss/colors')
+import { withShurikenUI } from '@cssninja/nuxt-ui/tailwind'
+import colors from 'tailwindcss/colors'
 
 /**
  * This is the Tailwind config file for the demo.
@@ -7,7 +7,8 @@ const colors = require('tailwindcss/colors')
  *
  * You can add/override your own customizations here.
  */
-module.exports = cssninjaConfig({
+export default withShurikenUI({
+  content: [],
   theme: {
     // Custom fonts (defaults values are commented out)
     // fontFamily: {

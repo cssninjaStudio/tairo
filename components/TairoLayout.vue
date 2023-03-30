@@ -73,7 +73,11 @@ const mainClass = computed(() => {
         <slot name="logo">
           <NuxtLink to="/" class="flex items-center justify-center">
             <component
-              :is="resolveComponent(app.tairo.sidebar.logo.component)"
+              :is="
+                app.tairo.sidebar.logo.resolve === false
+                  ? app.tairo.sidebar.logo.component
+                  : resolveComponent(app.tairo.sidebar.logo.component)
+              "
               v-bind="app.tairo.sidebar.logo.props"
             ></component>
           </NuxtLink>

@@ -23,6 +23,7 @@ export default defineNuxtSchema({
       error: {
         logo: {
           component: 'TairoLogo',
+          resolve: true,
           props: {},
         },
       },
@@ -30,6 +31,7 @@ export default defineNuxtSchema({
         enabled: true,
         logo: {
           component: 'TairoLogo',
+          resolve: true,
           props: {},
         },
         items: {

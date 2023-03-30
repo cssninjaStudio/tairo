@@ -1,6 +1,6 @@
-const { cssninjaConfig } = require('@cssninja/nuxt-ui/tailwind')
-const colors = require('tailwindcss/colors')
-const plugin = require('tailwindcss/plugin')
+import { withShurikenUI } from '@cssninja/nuxt-ui/tailwind'
+import { join } from 'pathe'
+import plugin from 'tailwindcss/plugin'
 
 /**
  * This is the Tailwind config file for the demo.
@@ -8,9 +8,8 @@ const plugin = require('tailwindcss/plugin')
  *
  * You can add/override your own customizations here.
  */
-module.exports = cssninjaConfig({
-  // content: [`${__dirname}/documentation/**/*.vue`], // Parse the special documentation folder for demo
-  content: [`${__dirname}/utils/**/*.ts`], // Parse the utils folder for demo
+export default withShurikenUI({
+  content: [join(__dirname, `/utils/**/*.ts`)], // Parse the utils folder for demo
   theme: {
     // Custom fonts (defaults values are commented out)
     // fontFamily: {
@@ -33,7 +32,7 @@ module.exports = cssninjaConfig({
   plugins: [
     // This plugin extracts all colors from the theme and adds them as CSS variables
     // to the :root selector. This allows you to use them in your CSS.
-    plugin(({ addBase, theme }) => {
+    plugin(({ addBase, theme }: any) => {
       addBase({
         ':root': extractColorVars(theme('colors')),
       })
@@ -41,11 +40,11 @@ module.exports = cssninjaConfig({
   ],
 })
 
-function extractColorVars(colorObj, colorGroup = '') {
+function extractColorVars(colorObj: any, colorGroup = '') {
   return Object.keys(colorObj).reduce((vars, colorKey) => {
     const value = colorObj[colorKey]
 
-    const newVars =
+    const newVars: any =
       typeof value === 'string'
         ? { [`--color${colorGroup}-${colorKey}`]: value }
         : extractColorVars(value, `-${colorKey}`)
