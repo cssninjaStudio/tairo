@@ -1,10 +1,10 @@
 import { logger } from '@nuxt/kit'
 
 import {
-addComponentsDir,
-defineNuxtModule,
-extendPages,
-installModule,
+  addComponentsDir,
+  defineNuxtModule,
+  extendPages,
+  installModule,
 } from '@nuxt/kit'
 import { resolve } from 'path'
 import { fileURLToPath } from 'url'
@@ -78,64 +78,75 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     /**
+     * Nuxt-Component-Meta is used to generate the documentation for components
+     * It will generate meta data for each component and register useComponentMeta composable
+     */
+    await installModule(
+      '@nuxt/content',
+      {
+        sources: {
+          // Additional sources
+          docs: {
+            driver: 'fs',
+            prefix: '/documentation', // All contents inside this source will be prefixed with `/documentation`
+            base: resolve(__dirname, 'content'),
+          },
+        },
+      },
+      nuxt,
+    )
+
+    /**
      * Enable Nuxt Studio if ENABLE_STUDIO env is set to true
      * @see https://nuxt.studio/
      */
     if (process.env.ENABLE_STUDIO === 'true') {
-      await installModule('@nuxthq/studio')
+      logger.info('Nuxt Studio module is enabled')
+      await installModule('@nuxthq/studio', {}, nuxt)
     }
 
     /**
      * Nuxt-Component-Meta is used to generate the documentation for components
      * It will generate meta data for each component and register useComponentMeta composable
      */
-    await installModule('@nuxt/content', {
-      sources: {
-        // Additional sources
-        docs: {
-          driver: 'fs',
-          prefix: '/documentation', // All contents inside this source will be prefixed with `/documentation`
-          base: resolve(__dirname, 'content'),
+    await installModule(
+      'nuxt-component-meta',
+      {
+        exclude: [
+          'nuxt/dist',
+          '@nuxt/ui-templates/dist',
+          (component: any) => {
+            const hasTairoPrefix = component?.pascalName?.startsWith('Tairo')
+            const hasBasePrefix = component?.pascalName?.startsWith('Base')
+            const hasAddonPrefix = component?.pascalName?.startsWith('Addon')
+            const isBlacklisted = ['TairoWelcome'].includes(
+              component?.pascalName,
+            )
+
+            const isExcluded = !(
+              hasTairoPrefix ||
+              hasBasePrefix ||
+              hasAddonPrefix
+            )
+
+            return isBlacklisted || isExcluded
+          },
+        ],
+        // debug: 2,
+        checkerOptions: {
+          // forceUseTs: true,
+          schema: {
+            ignore: [
+              'RouteLocationRaw',
+              'ComponentData',
+              'NuxtComponentMetaNames',
+              'RouteLocationPathRaw',
+              'RouteLocationNamedRaw',
+            ],
+          },
         },
       },
-    })
-
-    /**
-     * Nuxt-Component-Meta is used to generate the documentation for components
-     * It will generate meta data for each component and register useComponentMeta composable
-     */
-    await installModule('nuxt-component-meta', {
-      exclude: [
-        'nuxt/dist',
-        '@nuxt/ui-templates/dist',
-        (component: any) => {
-          const hasTairoPrefix = component?.pascalName?.startsWith('Tairo')
-          const hasBasePrefix = component?.pascalName?.startsWith('Base')
-          const hasAddonPrefix = component?.pascalName?.startsWith('Addon')
-          const isBlacklisted = ['TairoWelcome'].includes(component?.pascalName)
-
-          const isExcluded = !(
-            hasTairoPrefix ||
-            hasBasePrefix ||
-            hasAddonPrefix
-          )
-
-          return isBlacklisted || isExcluded
-        },
-      ],
-      debug: 2,
-      checkerOptions: {
-        // forceUseTs: true,
-        schema: {
-          ignore: [
-            'RouteLocationRaw',
-            'ComponentData',
-            'NuxtComponentMetaNames',
-            'RouteLocationPathRaw',
-            'RouteLocationNamedRaw',
-          ],
-        },
-      },
-    })
+      nuxt,
+    )
   },
 })
