@@ -1,10 +1,10 @@
 import { logger } from '@nuxt/kit'
 
 import {
-  addComponentsDir,
-  defineNuxtModule,
-  extendPages,
-  installModule,
+addComponentsDir,
+defineNuxtModule,
+extendPages,
+installModule,
 } from '@nuxt/kit'
 import { resolve } from 'path'
 import { fileURLToPath } from 'url'
@@ -78,6 +78,14 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     /**
+     * Enable Nuxt Studio if ENABLE_STUDIO env is set to true
+     * @see https://nuxt.studio/
+     */
+    if (process.env.ENABLE_STUDIO === 'true') {
+      await installModule('@nuxthq/studio')
+    }
+
+    /**
      * Nuxt-Component-Meta is used to generate the documentation for components
      * It will generate meta data for each component and register useComponentMeta composable
      */
@@ -91,6 +99,7 @@ export default defineNuxtModule<ModuleOptions>({
         },
       },
     })
+
     /**
      * Nuxt-Component-Meta is used to generate the documentation for components
      * It will generate meta data for each component and register useComponentMeta composable
