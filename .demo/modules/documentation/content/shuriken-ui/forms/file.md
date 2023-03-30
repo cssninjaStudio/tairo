@@ -15,7 +15,7 @@ icon:
 title: Straight input
 demo: '#examples/input-file/shapes.vue'
 ---
-
+File inputs have default styling, showing the file name and a button to select a file. You can change the shape of the input with the `shape` prop.
 :::doc-message{type="muted" icon="ph:magic-wand"}
 Default shape of all :doc-linker{to="BaseInputFile"} can be set in your `app.config.ts`.
 :::

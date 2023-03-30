@@ -1,5 +1,5 @@
 <template>
-  <div class="grid md:grid-cols-2 md:max-w-lg gap-6">
+  <div class="grid md:grid-cols-2 md:max-w-3xl gap-6">
     <BaseTextarea
       v-model="value"
       label="Message"
@@ -16,7 +16,7 @@
           </BaseHeading>
         </div>
         <div class="flex items-center gap-2">
-          <BaseButton flavor="pastel" color="primary">Post Comment</BaseButton>
+          <BaseButton condensed>Post Comment</BaseButton>
         </div>
       </template>
     </BaseTextarea>

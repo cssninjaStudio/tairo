@@ -15,8 +15,8 @@ icon:
 title: Checkbox straight
 demo: '#examples/checkbox/straight.vue'
 ---
-
-:::doc-message{type="muted" icon="ph:magic-wand"}
+The checkbox component can have different shapes. Here is an example of a `straight` checkbox.
+:::doc-message{type="muted" icon="ion:shapes-outline"}
 Default shape of all :doc-linker{to="BaseCheckbox"} can be set in your `app.config.ts`.
 :::
 ::
@@ -27,6 +27,7 @@ Default shape of all :doc-linker{to="BaseCheckbox"} can be set in your `app.conf
 title: Checkbox rounded
 demo: '#examples/checkbox/rounded.vue'
 ---
+The checkbox component can have different shapes. Here is an example of a `rounded` checkbox.
 ::
 
 
@@ -35,6 +36,7 @@ demo: '#examples/checkbox/rounded.vue'
 title: Checkbox curved
 demo: '#examples/checkbox/curved.vue'
 ---
+The checkbox component can have different shapes. Here is an example of a `curved` checkbox.
 ::
 
 
@@ -43,6 +45,7 @@ demo: '#examples/checkbox/curved.vue'
 title: Checkbox circle
 demo: '#examples/checkbox/circle.vue'
 ---
+The checkbox component can have different shapes. Here is an example of a `full` checkbox.
 ::
 
 
@@ -51,6 +54,7 @@ demo: '#examples/checkbox/circle.vue'
 title: Disabled state
 demo: '#examples/checkbox/disabled.vue'
 ---
+The checkbox component can show a disabled state. Use the `disabled` prop to make a checkbox disabled.
 ::
 
 ::doc-component-demo

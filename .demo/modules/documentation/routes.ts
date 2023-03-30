@@ -1033,7 +1033,7 @@ export const routes = {
               category: 'Addons',
               components: ['AddonApexcharts'],
               description:
-                'Tairo ships with the Apexcharts data visualisation library customized for Vue and Nuxt. Use the compoenent to render charts and graphs.',
+                'Tairo ships with the Apexcharts data visualisation library customized for Vue and Nuxt. Use the component to render charts and graphs.',
               icon: {
                 src: '/img/illustrations/components/apexcharts-icon.svg',
                 srcDark: '/img/illustrations/components/apexcharts-icon.svg',

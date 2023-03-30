@@ -15,9 +15,9 @@ icon:
 title: Mapbox panel
 demo: '#examples/map/base.vue'
 ---
-Map panel image preview.
+Tairo ships with the Mapbox SDK, allowing you to display maps anywhere you want. Take a look at the mapbox panel used in one Tairo's dashboards for a concrete example.
 
-:::doc-message{type="info" icon="simple-icons:mapbox"}
+:::doc-message{type="muted" icon="simple-icons:mapbox"}
 This component uses the [mapbox-gl](https://github.com/mapbox/mapbox-gl-js) library.
 :::
 ::

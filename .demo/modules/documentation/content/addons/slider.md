@@ -13,7 +13,7 @@ icon:
 Use `@vueform/slider` to render fancy sliders in you forms with or without tooltips, and the ability to merge them.
 
 
-:::doc-message{icon="mdi:vuejs"}
+:::doc-message{type="muted" icon="mdi:vuejs"}
 This component is provided by the [@vueform/slider](https://github.com/vueform/slider) library.
 :::
 ::
@@ -23,7 +23,7 @@ This component is provided by the [@vueform/slider](https://github.com/vueform/s
 title: Straight tooltip
 demo: '#examples/slider/straight.vue'
 ---
-Straight tooltip example
+Check out this example of a straight slider tooltip.
 ::
 
 
@@ -33,7 +33,7 @@ Straight tooltip example
 title: Rounded tooltip
 demo: '#examples/slider/rounded.vue'
 ---
-Rounded tooltip example
+Check out this example of a rounded slider tooltip.
 ::
 
 
@@ -42,7 +42,7 @@ Rounded tooltip example
 title: Curved tooltip
 demo: '#examples/slider/curved.vue'
 ---
-Curved tooltip example
+Check out this example of a curved slider tooltip.
 ::
 
 
@@ -52,7 +52,7 @@ Curved tooltip example
 title: Circle tooltip
 demo: '#examples/slider/circle.vue'
 ---
-Circle tooltip example
+Check out this example of a circle slider tooltip.
 ::
 
 
@@ -63,11 +63,8 @@ Circle tooltip example
 title: Slider colors
 demo: '#examples/slider/colors.vue'
 ---
-Slider colors example
+Slider components and tooltips can have different colors. Use the built-in color classes to change the color of the slider and the tooltip.
 ::
-
-
-
 
 
 ::doc-component-demo
@@ -75,7 +72,7 @@ Slider colors example
 title: Multiple handles
 demo: '#examples/slider/multiple-handle.vue'
 ---
-Multiple handles example
+Sliders can have multiple handles when the data structure requires it. Check out this example for more details.
 ::
 
 
@@ -85,7 +82,7 @@ Multiple handles example
 title: Tooltip format
 demo: '#examples/slider/format-tooltip.vue'
 ---
-Tooltip format example
+Slide tooltips content can be formatted using the `format` prop. Check out the code example for more details about usage.
 ::
 
 
@@ -95,6 +92,6 @@ Tooltip format example
 title: Tooltip merging
 demo: '#examples/slider/merge-tooltip.vue'
 ---
-Tooltip merging example
+In more complex examples, you might need to merge multiple tooltips into one at some point. Check out this example for more details.
 ::
 
