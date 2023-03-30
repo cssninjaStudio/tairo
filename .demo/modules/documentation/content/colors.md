@@ -29,6 +29,7 @@ The `muted` color is the color shade used for dark mode. To change it, you can e
 title: Success color
 demo: '#examples/colors/success-color.vue'
 ---
+The `success` color is the color shade used for your success states. To change it, you can edit the `success` color in your `tailwind.config.js` file.
 ::
 
 
@@ -37,6 +38,7 @@ demo: '#examples/colors/success-color.vue'
 title: Info color
 demo: '#examples/colors/info-color.vue'
 ---
+The `info` color is the color shade used for your info states. To change it, you can edit the `info` color in your `tailwind.config.js` file.
 ::
 
 
@@ -45,6 +47,7 @@ demo: '#examples/colors/info-color.vue'
 title: Danger color
 demo: '#examples/colors/danger-color.vue'
 ---
+The `danger` color is the color shade used for your error states. To change it, you can edit the `danger` color in your `tailwind.config.js` file.
 ::
 
 
@@ -53,4 +56,5 @@ demo: '#examples/colors/danger-color.vue'
 title: Warning color
 demo: '#examples/colors/warning-color.vue'
 ---
+The `warning` color is the color shade used for your warning states. To change it, you can edit the `warning` color in your `tailwind.config.js` file.
 ::

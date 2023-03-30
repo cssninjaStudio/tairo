@@ -15,10 +15,10 @@ icon:
 title: Mapbox panel
 demo: '#examples/map/base.vue'
 ---
-Map panel image preview
+Map panel image preview.
 
-:::doc-message{type="muted" icon="ph:package"}
-This component uses [mapbox-gl](https://github.com/mapbox/mapbox-gl-js) library.
+:::doc-message{type="info" icon="simple-icons:mapbox"}
+This component uses the [mapbox-gl](https://github.com/mapbox/mapbox-gl-js) library.
 :::
 ::
 

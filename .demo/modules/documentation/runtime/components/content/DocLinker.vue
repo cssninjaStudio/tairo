@@ -27,7 +27,7 @@ const tooltip = computed(() => {
 <template>
   <NuxtLink
     :to="data?._path"
-    class="nui-focus font-mono rounded"
+    class="nui-focus font-mono text-sm rounded"
     :class="[
       data?._path
         ? 'nui-mark decoration-dotted dark:decoration-primary-100/60 underline-offset-4'

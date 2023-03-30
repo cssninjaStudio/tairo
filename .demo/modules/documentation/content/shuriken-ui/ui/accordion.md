@@ -35,7 +35,7 @@ demo: '#examples/accordion/shapes.vue'
 
 You can change the shape of the accordion with the `shape` property.
 
-:::doc-message{type="muted" icon="ph:magic-wand"}
+:::doc-message{type="primary" icon="ion:shapes-outline"}
 Default shape of all :doc-linker{to="BaseAccordion"} can be set in your `app.config.ts`.
 :::
 ::
@@ -46,9 +46,7 @@ title: Chevron icon
 demo: '#examples/accordion/chevron.vue'
 ---
 
-:doc-linker{to="BaseAccordion"} accept an `action` property that you can use to change the icon of the accordion.
-
-By default, it uses the `dot` icon, but you can use `chevron` or `plus` as well.
+:doc-linker{to="BaseAccordion"} accept an `action` property that you can use to change the icon of the accordion. By default, it uses the `dot` icon, but you can use `chevron` or `plus` as well.
 
 Here is an example of an accordion with `action="chevron"`.
 ::

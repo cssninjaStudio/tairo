@@ -110,7 +110,9 @@ const { md } = useTailwindBreakpoints()
     <div :class="forceDark ? 'dark' : ''">
       <BaseCard class="mb-4 p-6">
         <div v-if="'default' in $slots" :class="[hasDemoContent && 'mb-10']">
-          <BaseProse class="prose-sm">
+          <BaseProse
+            class="prose-sm prose-p:text-muted-500 dark:prose-p:text-muted-400"
+          >
             <ContentSlot :use="$slots.default"></ContentSlot>
           </BaseProse>
         </div>

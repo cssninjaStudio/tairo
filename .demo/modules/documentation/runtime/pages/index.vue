@@ -67,7 +67,7 @@ const breadcrumb = computed(() => {
 
             <NuxtLink
               to="https://docs.cssninja.io/tairo"
-              class="text-primary-500 group mt-7 inline-flex items-center font-sans text-sm font-medium transition-opacity hover:opacity-90"
+              class="text-primary-500 group mt-6 flex items-center font-sans text-sm font-medium transition-opacity hover:opacity-90"
             >
               <span class="mr-1">Read the documentation</span>
               <Icon
@@ -119,7 +119,7 @@ const breadcrumb = computed(() => {
           </BaseCard>
           <BaseCard shape="rounded" class="p-8 text-center">
             <Icon
-              name="file-icons:nuxt"
+              name="carbon:tropical-storm-tracks"
               class="mx-auto mb-2 block h-10 w-10 scale-95 text-primary-500 dark:text-primary-400"
             />
             <BaseHeading
@@ -128,7 +128,7 @@ const breadcrumb = computed(() => {
               weight="semibold"
               class="text-muted-800 dark:text-white"
             >
-              Nuxt UI
+              Shuriken UI
             </BaseHeading>
           </BaseCard>
         </div>

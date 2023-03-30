@@ -15,9 +15,7 @@ icon:
 title: Checkbox colors
 demo: '#examples/checkbox-animated/base.vue'
 ---
-A nice and friendly checkbox.
-
-_Notice usage of :doc-linker{to="BaseFocusLoop"} to loop focus through the checkbox_
+A nice and friendly checkbox. Notice the usage of :doc-linker{to="BaseFocusLoop"} to loop focus through all the checkboxes.
 ::
 
 
@@ -35,7 +33,7 @@ Here is an example using a `boolean` value
 title: Custom behavior
 demo: '#examples/checkbox-animated/custom.vue'
 ---
-Use `true-value`/`false-value` to create custom behavior
+Use `true-value`/`false-value` to create a custom behavior
 ::
 
 
@@ -44,7 +42,7 @@ Use `true-value`/`false-value` to create custom behavior
 title: Static value
 demo: '#examples/checkbox-animated/true-false.vue'
 ---
-You can create a static checkbox by not providing a `v-model` (or `model-value`)
+You can create a static checkbox by omitting the `v-model` (or `model-value`)
 ::
 
 

@@ -16,8 +16,8 @@ icon:
 title: Autocomplete shapes
 demo: '#examples/autocomplete/shapes.vue'
 ---
-
-:::doc-message{type="muted" icon="ph:magic-wand"}
+Autocompletes can have different shapes. The default shape is `rounded` but you can also use `straight`, `curved` or `full` shapes.
+:::doc-message{type="primary" icon="ion:shapes-outline"}
 Default shape of all :doc-linker{to="BaseAutocomplete"} can be set in your `app.config.ts`.
 :::
 ::
@@ -28,6 +28,7 @@ Default shape of all :doc-linker{to="BaseAutocomplete"} can be set in your `app.
 title: With icon
 demo: '#examples/autocomplete/icon.vue'
 ---
+Autocompletes can have a configurable icon on the left side using the `icon` prop. Make sure to pick meaningful icons for your use case.
 ::
 
 ::doc-component-demo
@@ -35,6 +36,7 @@ demo: '#examples/autocomplete/icon.vue'
 title: Clearable
 demo: '#examples/autocomplete/clearable.vue'
 ---
+Clearable autocompletes have a clear icon that appears on the right side using the `clearable` prop. The clear icon is also configurable using the `clearIcon` prop.
 ::
 
 
@@ -44,6 +46,7 @@ demo: '#examples/autocomplete/clearable.vue'
 title: Floating label
 demo: '#examples/autocomplete/label-float.vue'
 ---
+Autocompletes can have a material desin style floating label using the `labelFloat` prop.
 ::
 
 
@@ -52,6 +55,7 @@ demo: '#examples/autocomplete/label-float.vue'
 title: Condensed
 demo: '#examples/autocomplete/condensed.vue'
 ---
+Autocompletes can be displayed in a smaller and more compact way using the `condensed` prop.
 ::
 
 
@@ -60,6 +64,7 @@ demo: '#examples/autocomplete/condensed.vue'
 title: Disabled state
 demo: '#examples/autocomplete/disabled.vue'
 ---
+Autocompletes can be disabled using the `disabled` prop.
 ::
 
 ::doc-component-demo
@@ -67,6 +72,7 @@ demo: '#examples/autocomplete/disabled.vue'
 title: Loading state
 demo: '#examples/autocomplete/loading.vue'
 ---
+Autocompletes can be showed in a loading state using the `loading` prop.
 ::
 
 
@@ -75,6 +81,7 @@ demo: '#examples/autocomplete/loading.vue'
 title: Multiple
 demo: '#examples/autocomplete/multiple.vue'
 ---
+Autocompletes can be configured to allow multiple value and item selection using the `multiple` prop.
 ::
 
 
@@ -88,6 +95,7 @@ demo: '#examples/autocomplete/multiple.vue'
 title: Icon results
 demo: '#examples/autocomplete/icon-result.vue'
 ---
+Autocompletes can render results with icons using the :doc-linker{to="BaseAutocompleteItem"} component. The component accepts an `icon` prop that is displayed in the results list.
 ::
 
 
@@ -96,6 +104,7 @@ demo: '#examples/autocomplete/icon-result.vue'
 title: Media results
 demo: '#examples/autocomplete/media-result.vue'
 ---
+Autocompletes can render results with images using the :doc-linker{to="BaseAutocompleteItem"} component. The component accepts a `media` prop that is displayed in the results list.
 ::
 
 

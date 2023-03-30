@@ -18,7 +18,7 @@ demo: '#examples/markdown/base.vue'
 Use this component to render markdown content client-side.
 It wrap rendered HTML in the :doc-linker{to="BaseProse"} to apply the Tailwind CSS <code>prose</code> class.
 
-:::doc-message{type="muted" icon="ph:package"}
+:::doc-message{type="info" icon="ri:markdown-fill"}
 This component uses [remark](https://github.com/remarkjs/remark) and [rehype](https://github.com/rehypejs/rehype) 
 to parse and render the markdown content.
 :::

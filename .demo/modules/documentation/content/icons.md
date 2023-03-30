@@ -9,8 +9,8 @@ components:
 You can use any icon from [https://icones.js.org/](https://icones.js.org/) by using the :doc-linker{to="Icon"} component.
 
 
-:::doc-message{type="muted" icon="ph:package"}
-This component is provided by [nuxt-icon](https://github.com/nuxt-modules/icon) module.
+:::doc-message{icon="simple-icons:nuxtdotjs"}
+This component is provided by the [nuxt-icon](https://github.com/nuxt-modules/icon) module.
 :::
 ::
 
@@ -20,6 +20,7 @@ This component is provided by [nuxt-icon](https://github.com/nuxt-modules/icon) 
 title: Phosphor icons
 demo: '#examples/icons/phosphor.vue'
 ---
+A great set of custom icons with a clean duotone collection.
 ::
 
 ::doc-component-demo
@@ -27,6 +28,7 @@ demo: '#examples/icons/phosphor.vue'
 title: Lucide icons
 demo: '#examples/icons/lucide.vue'
 ---
+Sharp and outlined icons that work great for UI design.
 ::
 
 
@@ -35,6 +37,7 @@ demo: '#examples/icons/lucide.vue'
 title: Carbon icons
 demo: '#examples/icons/carbon.vue'
 ---
+High definition icons featuring original patterns and shapes.
 ::
 
 
@@ -43,6 +46,7 @@ demo: '#examples/icons/carbon.vue'
 title: Ion icons
 demo: '#examples/icons/ion.vue'
 ---
+The classic and popular icon set from Ionic.
 ::
 
 
@@ -53,6 +57,7 @@ demo: '#examples/icons/ion.vue'
 title: Iconoir icons
 demo: '#examples/icons/iconoir.vue'
 ---
+An original and unique icon set with a modern and clean style.
 ::
 
 
@@ -62,6 +67,7 @@ demo: '#examples/icons/iconoir.vue'
 title: CoreUI icons
 demo: '#examples/icons/cil.vue'
 ---
+Powerful with a strong variety of icon topics.
 ::
 
 
@@ -70,6 +76,7 @@ demo: '#examples/icons/cil.vue'
 title: Font Awesome icons
 demo: '#examples/icons/fa.vue'
 ---
+The great and popular icon set from Font Awesome.
 ::
 
 
@@ -79,6 +86,7 @@ demo: '#examples/icons/fa.vue'
 title: Font Awesome brands
 demo: '#examples/icons/fab.vue'
 ---
+The reference icon set for brands, by Font Awesome.
 ::
 
 
@@ -88,6 +96,7 @@ demo: '#examples/icons/fab.vue'
 title: Material brands
 demo: '#examples/icons/material.vue'
 ---
+Great brand icons, material design style.
 ::
 
 
@@ -99,5 +108,6 @@ demo: '#examples/icons/material.vue'
 title: Logos
 demo: '#examples/icons/logos.vue'
 ---
+Pure vector logos, from the most popular tech brands.
 ::
 

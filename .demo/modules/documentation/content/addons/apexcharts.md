@@ -17,8 +17,8 @@ demo: '#examples/apexcharts/base.vue'
 ---
 Area chart exampleee
 
-:::doc-message{type="muted" icon="ph:package"}
-This component uses [vue3-apexcharts](https://github.com/apexcharts/vue3-apexcharts) library.
+:::doc-message{icon="mdi:vuejs"}
+This component uses the [vue3-apexcharts](https://github.com/apexcharts/vue3-apexcharts) library.
 :::
 ::
 
