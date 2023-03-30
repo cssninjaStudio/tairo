@@ -181,7 +181,7 @@ const pricingMode = ref('free')
                 </div>
                 <div class="flex flex-col items-center mx-auto">
                   <BaseButton
-                    to="/dashbaords"
+                    to="/dashboards"
                     type="button"
                     shape="curved"
                     class="w-48 !h-12"
