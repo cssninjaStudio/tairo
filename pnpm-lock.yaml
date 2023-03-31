@@ -109,8 +109,8 @@ importers:
         specifier: 0.3.1
         version: 0.3.1(nuxt@3.3.2)
       '@nuxthq/studio':
-        specifier: ^0.9.5
-        version: 0.9.5
+        specifier: ^0.10.0
+        version: 0.10.0
       '@pinia/nuxt':
         specifier: 0.4.7
         version: 0.4.7
@@ -1789,8 +1789,8 @@ packages:
       - vue-tsc
     dev: true
 
-  /@nuxthq/studio@0.9.5:
-    resolution: {integrity: sha512-EgAvLregOANyaohTObt1RBnUZV6lFlO2fBgaO/nWCI8c1EDeS6DsrMIePEgKgAGiEsVt/cTPn0lvhgafw7woGQ==}
+  /@nuxthq/studio@0.10.0:
+    resolution: {integrity: sha512-4BU6+SSIhOhNukBV09ZjhDEv5wXxf7iIopEQWX3zT9b2X82w/2JW3oFbDmKUu74zu2rp7fwdZazasb9GM59pSg==}
     dependencies:
       '@nuxt/kit': 3.3.2
       defu: 6.1.2
