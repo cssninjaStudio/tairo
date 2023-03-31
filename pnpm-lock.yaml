@@ -91,13 +91,13 @@ importers:
         specifier: 1.2.0
         version: 1.2.0(typescript@5.0.3)
 
-  .app:
+  _app:
     devDependencies:
       nuxt:
         specifier: 3.3.2
         version: 3.3.2
 
-  .demo:
+  _demo:
     devDependencies:
       '@mapbox/mapbox-gl-geocoder':
         specifier: 5.0.1
@@ -193,101 +193,20 @@ importers:
         specifier: 0.0.4
         version: 0.0.4
 
-  .documentation:
+  _documentation:
     devDependencies:
-      '@mapbox/mapbox-gl-geocoder':
-        specifier: 5.0.1
-        version: 5.0.1(mapbox-gl@2.13.0)
       '@nuxt/content':
         specifier: 2.5.2
         version: 2.5.2
-      '@nuxt/devtools':
-        specifier: 0.3.1
-        version: 0.3.1(nuxt@3.3.2)
       '@nuxthq/studio':
         specifier: ^0.10.0
         version: 0.10.0
-      '@pinia/nuxt':
-        specifier: 0.4.7
-        version: 0.4.7
-      '@popperjs/core':
-        specifier: 2.11.7
-        version: 2.11.7
-      '@stefanprobst/remark-shiki':
-        specifier: 2.2.0
-        version: 2.2.0(shiki@0.14.1)
-      '@types/mapbox-gl':
-        specifier: 2.7.10
-        version: 2.7.10
-      '@vueform/slider':
-        specifier: 2.1.7
-        version: 2.1.7
-      apexcharts:
-        specifier: 3.37.2
-        version: 3.37.2
-      date-fns:
-        specifier: 2.29.3
-        version: 2.29.3
-      imask:
-        specifier: ^6.4.3
-        version: 6.4.3
-      mapbox-gl:
-        specifier: 2.13.0
-        version: 2.13.0
       nuxt:
         specifier: 3.3.2
         version: 3.3.2
       nuxt-component-meta:
         specifier: 0.5.1
         version: 0.5.1
-      nuxt-swiper:
-        specifier: 1.0.1
-        version: 1.0.1
-      rehype-external-links:
-        specifier: 2.0.1
-        version: 2.0.1
-      rehype-raw:
-        specifier: 6.1.1
-        version: 6.1.1
-      rehype-sanitize:
-        specifier: 5.0.1
-        version: 5.0.1
-      rehype-stringify:
-        specifier: 9.0.3
-        version: 9.0.3
-      remark-gfm:
-        specifier: 3.0.1
-        version: 3.0.1
-      remark-parse:
-        specifier: 10.0.1
-        version: 10.0.1
-      remark-rehype:
-        specifier: 10.1.0
-        version: 10.1.0
-      shiki:
-        specifier: 0.14.1
-        version: 0.14.1
-      splitpanes:
-        specifier: ^3.1.5
-        version: 3.1.5
-      unified:
-        specifier: 10.1.2
-        version: 10.1.2
-      v-calendar:
-        specifier: 3.0.1
-        version: 3.0.1(@popperjs/core@2.11.7)
-      vue3-apexcharts:
-        specifier: 1.4.1
-        version: 1.4.1(apexcharts@3.37.2)
-      vue3-carousel:
-        specifier: 0.2.14
-        version: 0.2.14
-      vue3-popper:
-        specifier: 1.5.0
-        version: 1.5.0
-      vue3-smooth-dnd:
-        specifier: 0.0.4
-        version: 0.0.4
 
 packages:
 
@@ -8236,7 +8155,7 @@ packages:
     resolution: {integrity: sha512-NHrPnnxJtM9asKkvxJlyKUhgO/1o3p4ghX+j6xAq1+A2qm8C7l/7WntklQf5t3H7Y7OZXS9e763MXgrCrnZOww==}
     dependencies:
       '@nuxt/kit': 3.3.2
-      swiper: 9.1.1
+      swiper: 9.2.0
     transitivePeerDependencies:
       - rollup
       - supports-color
@@ -10665,8 +10584,8 @@ packages:
       picocolors: 1.0.0
       stable: 0.1.8
 
-  /swiper@9.1.1:
-    resolution: {integrity: sha512-D1zArOwI6XCXCYBULPA4jTxpqp5SQtvntjinbXNZwXzj6P3KS51zSWuMarCLXq5oRISay4nX+TuShpxz8qhtbw==}
+  /swiper@9.2.0:
+    resolution: {integrity: sha512-lWK9toYumUQss+YuTL+Mt0+8twiMJEyzioER4bbS4rrGHlkeLrDM8uhtAmnpdijELrNscuNUujDgKoMQZfQGlQ==}
     engines: {node: '>= 4.7.0'}
     dependencies:
       ssr-window: 4.0.2

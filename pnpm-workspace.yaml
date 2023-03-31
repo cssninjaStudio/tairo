@@ -1,4 +1,4 @@
 packages:
-  - demo
-  - .app
-  - documentation
+  - _demo
+  - _app
+  - _documentation
