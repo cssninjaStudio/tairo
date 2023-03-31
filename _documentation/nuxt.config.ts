@@ -2,17 +2,19 @@ import { resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 // const WEEK = 60 * 60 * 24 * 7
 
+console.log('process.env.ENABLE_STUDIO', process.env.ENABLE_STUDIO)
 export default defineNuxtConfig({
   extends: ['..'],
   modules: [
-    process.env.ENABLE_STUDIO && '@nuxthq/studio',
     '@nuxt/content',
     'nuxt-component-meta',
+    process.env.ENABLE_STUDIO === 'true' && '@nuxthq/studio',
   ],
   alias: {
     '#examples': fileURLToPath(new URL('./examples', import.meta.url)),
   },
   componentMeta: {
+    globalsOnly: false,
     exclude: [
       'nuxt/dist',
       '@nuxt/ui-templates/dist',
