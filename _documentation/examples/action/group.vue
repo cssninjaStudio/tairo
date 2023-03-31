@@ -8,9 +8,11 @@
       <Icon name="ph:pen" class="h-4 w-4" />
     </BaseButtonAction>
 
-    <BaseButtonAction muted shape="straight" class="focus:z-10">Muted</BaseButtonAction>
+    <BaseButtonAction muted shape="straight" class="focus:z-10 border-l-0">Muted</BaseButtonAction>
 
-    <BaseButtonAction disabled shape="straight" class="focus:z-10">Disabled</BaseButtonAction>
+    <BaseButtonAction disabled shape="straight" class="focus:z-10 border-l-0">
+      Disabled
+    </BaseButtonAction>
 
     <BaseButtonAction shape="rounded" class="rounded-l-none border-l-0 focus:z-10">
       Share
