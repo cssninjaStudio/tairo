@@ -6,7 +6,7 @@ components:
 description: Create a custom checkbox using the the base checkbox element and designing yourself the exterior look of it.
 icon: 
   src: /img/illustrations/components/checkbox-icon.svg
-  srcDark: /img/illustrations/components/checkboxes-icon.svg
+  srcDark: /img/illustrations/components/checkbox-icon.svg
 ---
 
 

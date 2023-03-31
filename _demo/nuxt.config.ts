@@ -17,7 +17,9 @@ export default defineNuxtConfig({
      */
     '..',
 
-    process.env.ENABLE_DOCUMENTATION && resolve(__dirname, '../_documentation'),
+    process.env.ENABLE_DOCUMENTATION === 'true'
+      ? resolve(__dirname, '../_documentation')
+      : undefined,
   ],
   typescript: {
     includeWorkspace: true,

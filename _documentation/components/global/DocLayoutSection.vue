@@ -20,11 +20,9 @@ const props = withDefaults(
         anchor
         weight="medium"
         class="text-muted-800 dark:text-white"
-        v-if="props.title || 'title' in $slots"
+        v-if="props.title"
       >
-        <TairoTocAnchor>
-          <slot name="title">{{ props.title }}</slot>
-        </TairoTocAnchor>
+        <TairoTocAnchor :label="props.title" />
       </BaseHeading>
       <div
         v-if="props.tag"

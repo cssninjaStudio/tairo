@@ -1,8 +1,10 @@
 <script setup lang="ts">
-const { toc } = useToc()
 const route = useRoute()
 const activeAnchor = ref('')
-const ids = toc.value.map(({ id }: any) => `#${id}`)
+const toc = ref<any[]>([])
+
+const ids = computed(() => toc.value.map(({ id }: any) => `#${id}`))
+
 const { activeIds } = useNinjaScrollspy(
   {
     rootMargin: '0px 0px -90% 0px',
@@ -10,20 +12,25 @@ const { activeIds } = useNinjaScrollspy(
   ids,
 )
 
-onMounted(() => {
-  if (route.hash) {
-    activeAnchor.value = route.hash.slice(1)
-  }
-})
+if (process.client) {
+  // active item when hash change
+  watch(
+    () => route.hash,
+    () => {
+      if (route.hash) {
+        activeAnchor.value = route.hash.slice(1)
+      }
+    },
+    {
+      immediate: true,
+    },
+  )
 
-watch(
-  () => route.fullPath,
-  () => {
-    if (route.hash) {
-      activeAnchor.value = route.hash.slice(1)
-    }
-  },
-)
+  // load toc item from dom
+  watch(() => route.path, loadTocItemFromDom, {
+    immediate: true,
+  })
+}
 
 function getTocItemClass(item: any) {
   const classes = []
@@ -44,15 +51,22 @@ function getTocItemClass(item: any) {
     )
   }
 
-  // [
-  //   item.level > 2 ? 'ml-3 text-xs' : '',
-  //   activeAnchor === item.id &&
-  //     'border-primary-500 text-primary-500',
-  //   activeAnchor !== item.id
-  //   activeIds.includes(item.id) ? 'border-primary-400' : '',
-  //     'border-muted-200  dark:border-muted-800 text-muted-500 dark:text-muted-400 hover:text-muted-400',
-  // ]
   return classes
+}
+
+async function loadTocItemFromDom() {
+  // wait page transition
+  await new Promise((resolve) => setTimeout(resolve, 500))
+
+  const elements = document.querySelectorAll('.tairo-toc-anchor')
+
+  toc.value = Array.from(elements).map((el) => {
+    return {
+      id: el.getAttribute('id'),
+      level: ('dataset' in el && (el.dataset as any)?.tocLevel) ?? 2,
+      label: 'dataset' in el && (el.dataset as any)?.tocLabel,
+    }
+  })
 }
 </script>
 
@@ -60,7 +74,7 @@ function getTocItemClass(item: any) {
   <div
     class="slimscroll fixed flex max-h-[calc(100vh_-_180px)] flex-col justify-between overflow-y-auto overflow-x-hidden pb-20 pl-20 pr-1 pt-2"
   >
-    <div class="mb-8 w-52">
+    <div class="mb-8 w-52" v-if="toc.length">
       <div
         class="font-heading text-muted-800 mb-6 text-xs font-semibold uppercase leading-tight dark:text-white"
       >

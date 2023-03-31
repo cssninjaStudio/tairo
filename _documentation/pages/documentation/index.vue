@@ -1,4 +1,8 @@
 <script setup lang="ts">
+definePageMeta({
+  title: 'Documentation Hub',
+})
+
 const app = useAppConfig()
 const router = useRouter()
 
@@ -45,13 +49,10 @@ const breadcrumb = computed(() => {
                 as="h2"
                 size="2xl"
                 weight="medium"
-                :anchor="{ prefix: '' }"
                 class="text-muted-800 mb-5 dark:text-white"
               >
-                <TairoTocAnchor>
-                  <strong>{{ app.tairo.title }}</strong>
-                  Overview
-                </TairoTocAnchor>
+                <strong>{{ app.tairo.title }}</strong>
+                <span>Overview</span>
               </BaseHeading>
               <BaseParagraph
                 size="sm"
@@ -169,8 +170,8 @@ const breadcrumb = computed(() => {
 
         <DocComponentList />
       </div>
-      <div v-if="'sidebar' in $slots" class="relative hidden xl:block xl:w-1/4">
-        <DocLayoutToc />
+      <div class="relative hidden xl:block xl:w-1/4">
+        <DocLayoutToc key="doc-hub" />
       </div>
     </div>
   </div>
