@@ -20,14 +20,14 @@ const tooltip = computed(() => {
   // if (data.value._path === route.path) {
   //   return `Currently viewing ${props.to} documentation`
   // }
-  return `Go to ${props.to} documentation`
+  return `Read ${props.to} docs`
 })
 </script>
 
 <template>
   <NuxtLink
     :to="data?._path"
-    class="nui-focus font-mono text-sm rounded"
+    class="inline-block nui-focus font-mono text-sm rounded"
     :class="[
       data?._path
         ? 'nui-mark decoration-dotted dark:decoration-primary-100/60 underline-offset-4'

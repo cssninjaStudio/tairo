@@ -41,11 +41,13 @@ const demoBreadcrumbTwo = [
 </script>
 
 <template>
-  <BaseBreadcrumb :items="demoBreadcrumbOne">
-    <Icon name="lucide:chevron-right" class="block w-3 h-3" />
-  </BaseBreadcrumb>
+  <div class="flex flex-col gap-4">
+    <BaseBreadcrumb :items="demoBreadcrumbOne">
+      <Icon name="lucide:chevron-right" class="block w-3 h-3" />
+    </BaseBreadcrumb>
 
-  <BaseBreadcrumb :items="demoBreadcrumbTwo">
-    <Icon name="lucide:chevron-right" class="block w-3 h-3" />
-  </BaseBreadcrumb>
+    <BaseBreadcrumb :items="demoBreadcrumbTwo">
+      <Icon name="lucide:chevron-right" class="block w-3 h-3" />
+    </BaseBreadcrumb>
+  </div>
 </template>
