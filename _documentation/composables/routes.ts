@@ -32,7 +32,7 @@ export async function useDocumentationRoutes() {
     for (const page of data.value) {
       const category = page.category ?? 'Uncategorized'
       byCategory[category] ||= []
-      byCategory[category]!.push(page)
+      byCategory[category]?.push(page)
     }
 
     return byCategory

@@ -2,7 +2,13 @@
   <div class="w-full">
     <BaseCard class="relative p-6">
       <div class="mb-6">
-        <BaseHeading as="h3" size="md" weight="semibold" lead="tight" class="text-muted-800 dark:text-white">
+        <BaseHeading
+          as="h3"
+          size="md"
+          weight="semibold"
+          lead="tight"
+          class="text-muted-800 dark:text-white"
+        >
           <span>BTC Price Chart</span>
         </BaseHeading>
       </div>

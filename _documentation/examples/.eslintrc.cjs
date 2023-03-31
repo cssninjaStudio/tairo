@@ -8,7 +8,7 @@ module.exports = {
   plugins: ['tailwindcss'],
   rules: {
     '@typescript-eslint/no-var-requires': 'off',
-    'import/default': 'off',
+    // 'import/default': 'off',
     'vue/multi-word-component-names': 'off',
     'vue/component-tags-order': [
       'error',
@@ -16,7 +16,7 @@ module.exports = {
         order: ['template', 'script', 'style'],
       },
     ],
-    'tailwindcss/classnames-order': 'on',
+    'tailwindcss/classnames-order': 'error',
     'prettier-vue/prettier': [
       'error',
       {

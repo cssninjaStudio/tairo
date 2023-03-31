@@ -28,7 +28,9 @@ const isModalMdOpen = ref(false)
     <template #header>
       <!-- Header -->
       <div class="flex w-full items-center justify-between p-4 md:p-6">
-        <h3 class="font-heading text-lg font-medium leading-6 text-muted-900 dark:text-white">Small dialog</h3>
+        <h3 class="font-heading text-lg font-medium leading-6 text-muted-900 dark:text-white">
+          Small dialog
+        </h3>
         <BaseButtonClose @click="closeModal" />
       </div>
     </template>
@@ -43,7 +45,9 @@ const isModalMdOpen = ref(false)
             alt=""
           />
         </div>
-        <h3 class="font-heading text-lg font-medium leading-6 text-muted-800 dark:text-white">New Invite</h3>
+        <h3 class="font-heading text-lg font-medium leading-6 text-muted-800 dark:text-white">
+          New Invite
+        </h3>
         <p class="font-alt text-sm leading-5 text-muted-500 dark:text-muted-400">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
         </p>
@@ -66,7 +70,9 @@ const isModalMdOpen = ref(false)
     <template #header>
       <!-- Header -->
       <div class="flex w-full items-center justify-between p-4 md:p-6">
-        <h3 class="font-heading text-lg font-medium leading-6 text-muted-900 dark:text-white">Medium dialog</h3>
+        <h3 class="font-heading text-lg font-medium leading-6 text-muted-900 dark:text-white">
+          Medium dialog
+        </h3>
         <BaseButtonClose @click="isModalMdOpen = false" />
       </div>
     </template>
@@ -81,7 +87,9 @@ const isModalMdOpen = ref(false)
             alt=""
           />
         </div>
-        <h3 class="font-heading text-lg font-medium leading-6 text-muted-800 dark:text-white">New Invite</h3>
+        <h3 class="font-heading text-lg font-medium leading-6 text-muted-800 dark:text-white">
+          New Invite
+        </h3>
         <p class="font-alt text-sm leading-5 text-muted-500 dark:text-muted-400">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
         </p>
@@ -93,7 +101,9 @@ const isModalMdOpen = ref(false)
       <div class="p-4 md:p-6">
         <div class="flex gap-x-2">
           <BaseButton @click="isModalMdOpen = false">Decline</BaseButton>
-          <BaseButton color="primary" flavor="solid" @click="isModalMdOpen = false">Accept</BaseButton>
+          <BaseButton color="primary" flavor="solid" @click="isModalMdOpen = false">
+            Accept
+          </BaseButton>
         </div>
       </div>
     </template>

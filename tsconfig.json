@@ -6,7 +6,6 @@
   // - ./.app/.nuxt/tsconfig.json - for the quickstarter app
   //
   "extends": [
-    // "./_app/.nuxt/tsconfig.json",
     "./_documentation/.nuxt/tsconfig.json",
     "./_demo/.nuxt/tsconfig.json"
   ],

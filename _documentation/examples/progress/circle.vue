@@ -17,7 +17,12 @@ const progressCircle = ref(25)
         :value="progressCircle"
         class="text-yellow-500"
       />
-      <BaseProgressCircle title="Pink circle progress bar" :size="75" :value="progressCircle" class="text-pink-500" />
+      <BaseProgressCircle
+        title="Pink circle progress bar"
+        :size="75"
+        :value="progressCircle"
+        class="text-pink-500"
+      />
       <BaseProgressCircle
         title="Indigo circle progress bar"
         :size="85"

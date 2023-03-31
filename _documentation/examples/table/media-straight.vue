@@ -80,13 +80,31 @@ const team = [
       </TairoTableCell>
       <TairoTableCell>\${{ member.rate }}/hour</TairoTableCell>
       <TairoTableCell>
-        <BaseTag v-if="member.status === 'Available'" color="success" flavor="pastel" shape="full" class="font-medium">
+        <BaseTag
+          v-if="member.status === 'Available'"
+          color="success"
+          flavor="pastel"
+          shape="full"
+          class="font-medium"
+        >
           {{ member.status }}
         </BaseTag>
-        <BaseTag v-else-if="member.status === 'New'" color="info" flavor="pastel" shape="full" class="font-medium">
+        <BaseTag
+          v-else-if="member.status === 'New'"
+          color="info"
+          flavor="pastel"
+          shape="full"
+          class="font-medium"
+        >
           {{ member.status }}
         </BaseTag>
-        <BaseTag v-else-if="member.status === 'Hired'" color="warning" flavor="pastel" shape="full" class="font-medium">
+        <BaseTag
+          v-else-if="member.status === 'Hired'"
+          color="warning"
+          flavor="pastel"
+          shape="full"
+          class="font-medium"
+        >
           {{ member.status }}
         </BaseTag>
       </TairoTableCell>

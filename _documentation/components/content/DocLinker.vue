@@ -27,11 +27,11 @@ const tooltip = computed(() => {
 <template>
   <NuxtLink
     :to="data?._path"
-    class="inline-block nui-focus font-mono text-sm rounded"
+    class="nui-focus inline-block rounded font-mono text-sm"
     :class="[
       data?._path
-        ? 'nui-mark decoration-dotted dark:decoration-primary-100/60 underline-offset-4'
-        : 'bg-danger-100 dark:bg-danger-800/60 text-danger-500 no-underline cursor-help',
+        ? 'nui-mark dark:decoration-primary-100/60 decoration-dotted underline-offset-4'
+        : 'bg-danger-100 dark:bg-danger-800/60 text-danger-500 cursor-help no-underline',
     ]"
     :data-tooltip="tooltip"
     >&lt;{{ props.to }}&gt;</NuxtLink

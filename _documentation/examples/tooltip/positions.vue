@@ -9,7 +9,11 @@
     <BaseButtonIcon shape="curved" data-tooltip-position="right" data-tooltip="Give some love!">
       <Icon name="ph:heartbeat-duotone" class="h-5 w-5 text-rose-500" />
     </BaseButtonIcon>
-    <BaseButtonIcon shape="curved" data-tooltip-position="down" data-tooltip="The King in the North!">
+    <BaseButtonIcon
+      shape="curved"
+      data-tooltip-position="down"
+      data-tooltip="The King in the North!"
+    >
       <Icon name="ph:crown-duotone" class="h-5 w-5 text-yellow-500" />
     </BaseButtonIcon>
     <BaseButtonAction shape="curved" data-tooltip="Here we go!">

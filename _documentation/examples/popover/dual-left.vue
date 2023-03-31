@@ -2,7 +2,9 @@
   <TairoPopover orientation="start">
     <div class="flex items-center">
       <BaseAvatar src="/img/avatars/3.svg" />
-      <span class="ml-3 font-heading text-sm font-semibold text-muted-800 dark:text-white">Mike Miller</span>
+      <span class="ml-3 font-heading text-sm font-semibold text-muted-800 dark:text-white">
+        Mike Miller
+      </span>
     </div>
 
     <template #content>

@@ -55,7 +55,7 @@ export function usePanels() {
   const transitionFrom = useState('panels-transition-from', () => 'left')
   const showOverlay = useState('panels-overlay', () => true)
 
-  const currentProps = useState('panels-current-props', () => {})
+  const currentProps = useState('panels-current-props', () => ({}))
 
   const current = computed(() => {
     if (!currentName.value) {

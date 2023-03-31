@@ -35,17 +35,18 @@ export function getMarkdownProcessors(
   langs: Lang[] = [],
 ) {
   const key = hash({ themes, langs })
-  if (_processors.has(key)) {
-    return Promise.resolve(_processors.get(key)!)
+  const processorCache = _processors.get(key)
+  if (processorCache) {
+    return Promise.resolve(processorCache)
   }
 
-  if (_processorsPromise.has(key)) {
-    return _processorsPromise.get(key)!
+  const processorPromiseCache = _processorsPromise.get(key)
+  if (processorPromiseCache) {
+    return processorPromiseCache
   }
 
-  _processorsPromise.set(
-    key,
-    new Promise(async (resolve, reject) => {
+  const processorPromise = new Promise<ProcessorThemes>(
+    async (resolve, reject) => {
       try {
         const processors: ProcessorThemes = {}
         for (const theme in themes) {
@@ -59,10 +60,12 @@ export function getMarkdownProcessors(
       } catch (error) {
         reject(error)
       }
-    }),
+    },
   )
 
-  return _processorsPromise.get(key)!
+  _processorsPromise.set(key, processorPromise)
+
+  return processorPromise
 }
 
 async function createProcessor(options: HighlighterOptions) {

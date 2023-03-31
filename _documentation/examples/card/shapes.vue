@@ -1,6 +1,12 @@
 <template>
   <BaseCard shape="straight" class="p-6">
-    <BaseHeading as="h4" size="sm" weight="semibold" lead="tight" class="text-muted-800 dark:text-white mb-2">
+    <BaseHeading
+      as="h4"
+      size="sm"
+      weight="semibold"
+      lead="tight"
+      class="text-muted-800 dark:text-white mb-2"
+    >
       Iam a card
     </BaseHeading>
     <BaseParagraph size="sm" lead="tight" class="text-muted-400">
@@ -9,7 +15,13 @@
   </BaseCard>
 
   <BaseCard shape="rounded" class="p-6">
-    <BaseHeading as="h4" size="sm" weight="semibold" lead="tight" class="text-muted-800 dark:text-white mb-2">
+    <BaseHeading
+      as="h4"
+      size="sm"
+      weight="semibold"
+      lead="tight"
+      class="text-muted-800 dark:text-white mb-2"
+    >
       Iam a card
     </BaseHeading>
     <BaseParagraph size="sm" lead="tight" class="text-muted-400">
@@ -18,7 +30,13 @@
   </BaseCard>
 
   <BaseCard shape="curved" class="p-6">
-    <BaseHeading as="h4" size="sm" weight="semibold" lead="tight" class="text-muted-800 dark:text-white mb-2">
+    <BaseHeading
+      as="h4"
+      size="sm"
+      weight="semibold"
+      lead="tight"
+      class="text-muted-800 dark:text-white mb-2"
+    >
       Iam a card
     </BaseHeading>
     <BaseParagraph size="sm" lead="tight" class="text-muted-400">

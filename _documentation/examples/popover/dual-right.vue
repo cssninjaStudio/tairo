@@ -2,7 +2,9 @@
   <TairoPopover orientation="end">
     <div class="flex items-center">
       <BaseAvatar src="/img/avatars/2.svg" />
-      <span class="ml-3 font-heading text-sm font-semibold text-muted-800 dark:text-white">Maya Rosselini</span>
+      <span class="ml-3 font-heading text-sm font-semibold text-muted-800 dark:text-white">
+        Maya Rosselini
+      </span>
     </div>
 
     <template #content>

@@ -76,20 +76,42 @@ const team = [
       <TairoFlexTableCell type="stable" data-content="Expertise" light>
         {{ member.expertise }}
       </TairoFlexTableCell>
-      <TairoFlexTableCell type="stable" data-content="Rate">${{ member.rate }}/hour</TairoFlexTableCell>
+      <TairoFlexTableCell type="stable" data-content="Rate">
+        ${{ member.rate }}/hour
+      </TairoFlexTableCell>
       <TairoFlexTableCell type="stable" data-content="Status">
-        <BaseTag v-if="member.status === 'Available'" color="success" flavor="pastel" shape="full" class="font-medium">
+        <BaseTag
+          v-if="member.status === 'Available'"
+          color="success"
+          flavor="pastel"
+          shape="full"
+          class="font-medium"
+        >
           {{ member.status }}
         </BaseTag>
-        <BaseTag v-else-if="member.status === 'New'" color="info" flavor="pastel" shape="full" class="font-medium">
+        <BaseTag
+          v-else-if="member.status === 'New'"
+          color="info"
+          flavor="pastel"
+          shape="full"
+          class="font-medium"
+        >
           {{ member.status }}
         </BaseTag>
-        <BaseTag v-else-if="member.status === 'Hired'" color="warning" flavor="pastel" shape="full" class="font-medium">
+        <BaseTag
+          v-else-if="member.status === 'Hired'"
+          color="warning"
+          flavor="pastel"
+          shape="full"
+          class="font-medium"
+        >
           {{ member.status }}
         </BaseTag>
       </TairoFlexTableCell>
       <TairoFlexTableCell type="stable" data-content="Actions">
-        <BaseButton color="primary" flavor="outline" shape="rounded" class="scale-90">View</BaseButton>
+        <BaseButton color="primary" flavor="outline" shape="rounded" class="scale-90">
+          View
+        </BaseButton>
       </TairoFlexTableCell>
     </TairoFlexTableRow>
   </TairoFlexTable>
