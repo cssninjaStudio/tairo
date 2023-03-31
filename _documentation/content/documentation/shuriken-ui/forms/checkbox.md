@@ -6,7 +6,7 @@ components:
 description: A checkbox is a form element that allows the user to select one or more options from a predefined set of data.
 icon:
   src: /img/illustrations/components/checkbox-icon.svg
-  srcDark: /img/illustrations/components/checkboxes-icon.svg
+  srcDark: /img/illustrations/components/checkbox-icon.svg
 ---
 
 

@@ -7,29 +7,21 @@ const contentPath = computed(() => {
   return `/documentation/${slug.join('/')}`
 })
 
-const { data } = await useAsyncData(
-  () => {
-    if (!route.params.slug) {
-      return Promise.reject(new Error('No slug provided'))
-    }
-    return queryContent(contentPath.value).findOne()
-  },
+const { data, pending } = await useAsyncData(
+  'page-data',
+  () => queryContent(contentPath.value).findOne(),
   {
     watch: [contentPath],
   },
 )
 
-if (!data?.value) {
-  await navigateTo('/documentation')
-}
-
 watchEffect(() => {
   // setting the title in the route meta will update the page title
-  route.meta.title = data.value?.title || ''
+  route.meta.title = data.value?.title || 'Page not found'
 })
 
 useHead({
-  title: data.value?.title || '',
+  title: data.value?.title || 'Page not found',
   meta: [
     {
       name: 'description',
@@ -68,24 +60,38 @@ const breadcrumb = computed(() => {
     })
   }
 
-  items.push({
-    label: data.value?.title,
-  })
+  if (data.value) {
+    items.push({
+      label: data.value?.title,
+    })
+  }
 
   return items
 })
 </script>
 
 <template>
-  <div v-if="data">
+  <div>
     <BaseBreadcrumb :items="breadcrumb" />
 
     <div class="flex">
       <div class="w-full xl:w-3/4">
-        <ContentRenderer :value="data" />
+        <ContentRenderer :value="(data as any)">
+          <template #empty>
+            <DocComponentDemo>
+              <div>
+                <p>The page you are looking for does not exist.</p>
+                <div class="flex flex-row gap-6">
+                  <BaseButton to="/documentation">Back to Hub</BaseButton>
+                  <BaseButton color="none" to="/">Back to Home</BaseButton>
+                </div>
+              </div>
+            </DocComponentDemo>
+          </template>
+        </ContentRenderer>
       </div>
-      <div v-if="'sidebar' in $slots" class="relative hidden xl:block xl:w-1/4">
-        <DocLayoutToc />
+      <div class="relative hidden xl:block xl:w-1/4">
+        <DocLayoutToc v-if="!pending" :key="data?._path" />
       </div>
     </div>
   </div>

@@ -65,9 +65,7 @@ const { md } = useTailwindBreakpoints()
         class="text-muted-800 dark:text-white"
         v-if="props.title"
       >
-        <TairoTocAnchor>
-          {{ props.title }}
-        </TairoTocAnchor>
+        <TairoTocAnchor :label="props.title" />
       </BaseHeading>
 
       <div

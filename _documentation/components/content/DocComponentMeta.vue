@@ -4,7 +4,7 @@
 const props = defineProps<{
   name: string
 }>()
-const docs = reactive(await useDocumentationMeta(props.name as any))
+const docs = await useDocumentationMeta(props.name as any)
 
 /**
  * Wrap https://... links in markdown with <a href="...">...</a>
@@ -33,7 +33,6 @@ function wrapExternalLinks(string: string) {
               as="h3"
               size="md"
               weight="semibold"
-              :anchor="{ prefix: '', suffix: '#' }"
               class="text-muted-800 dark:text-muted-200"
             >
               <TairoTocAnchor
@@ -41,9 +40,8 @@ function wrapExternalLinks(string: string) {
                 :level="3"
                 prefix=""
                 suffix="¶"
-              >
-                Basic usage
-              </TairoTocAnchor>
+                label="Basic usage"
+              />
             </BaseHeading>
           </div>
 
@@ -84,7 +82,6 @@ function wrapExternalLinks(string: string) {
               as="h3"
               size="md"
               weight="semibold"
-              :anchor="{ prefix: '', suffix: '#' }"
               class="text-muted-800 dark:text-muted-200"
             >
               <TairoTocAnchor
@@ -92,9 +89,8 @@ function wrapExternalLinks(string: string) {
                 :level="3"
                 prefix=""
                 suffix="¶"
-              >
-                Model
-              </TairoTocAnchor>
+                label="Model"
+              />
             </BaseHeading>
           </div>
 
@@ -192,7 +188,6 @@ function wrapExternalLinks(string: string) {
               as="h3"
               size="md"
               weight="semibold"
-              :anchor="{ prefix: '', suffix: '#' }"
               class="text-muted-800 dark:text-muted-200"
             >
               <TairoTocAnchor
@@ -200,9 +195,8 @@ function wrapExternalLinks(string: string) {
                 :level="3"
                 prefix=""
                 suffix="¶"
-              >
-                Properties
-              </TairoTocAnchor>
+                label="Properties"
+              />
             </BaseHeading>
           </div>
 
@@ -295,7 +289,6 @@ function wrapExternalLinks(string: string) {
               as="h3"
               size="md"
               weight="semibold"
-              :anchor="{ prefix: '', suffix: '#' }"
               class="text-muted-800 dark:text-muted-200"
             >
               <TairoTocAnchor
@@ -303,9 +296,8 @@ function wrapExternalLinks(string: string) {
                 :level="3"
                 prefix=""
                 suffix="¶"
-              >
-                Events
-              </TairoTocAnchor>
+                label="Events"
+              />
             </BaseHeading>
           </div>
 
@@ -364,7 +356,6 @@ function wrapExternalLinks(string: string) {
               as="h3"
               size="md"
               weight="semibold"
-              :anchor="{ prefix: '', suffix: '#' }"
               class="text-muted-800 dark:text-muted-200"
             >
               <TairoTocAnchor
@@ -372,9 +363,8 @@ function wrapExternalLinks(string: string) {
                 :level="3"
                 prefix=""
                 suffix="¶"
-              >
-                Slots
-              </TairoTocAnchor>
+                label="Slots"
+              />
             </BaseHeading>
           </div>
 
@@ -433,7 +423,6 @@ function wrapExternalLinks(string: string) {
               as="h3"
               size="md"
               weight="semibold"
-              :anchor="{ prefix: '', suffix: '#' }"
               class="text-muted-800 dark:text-muted-200"
             >
               <TairoTocAnchor
@@ -441,9 +430,8 @@ function wrapExternalLinks(string: string) {
                 :level="3"
                 prefix=""
                 suffix="¶"
-              >
-                Exposed
-              </TairoTocAnchor>
+                label="Exposed"
+              />
             </BaseHeading>
           </div>
 

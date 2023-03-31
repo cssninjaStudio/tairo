@@ -6,7 +6,7 @@ components:
 description: Create a completely custom radio button using the the base radio element and designing yourself the exterior look of it.
 icon:
   src: /img/illustrations/components/radio-icon.svg
-  srcDark: /img/illustrations/components/radioes-icon.svg
+  srcDark: /img/illustrations/components/radio-icon.svg
 ---
 
 

@@ -315,7 +315,7 @@ export async function useDocumentationMeta(
     return code.join('\n')
   }
 
-  return {
+  return reactive({
     meta,
     model,
     props,
@@ -330,5 +330,5 @@ export async function useDocumentationMeta(
     renderEvents,
     renderExposed,
     renderNoOptions,
-  }
+  })
 }

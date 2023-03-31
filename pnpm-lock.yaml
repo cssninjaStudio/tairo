@@ -12,8 +12,8 @@ importers:
         specifier: ^0.3.10
         version: 0.3.10
       '@cssninja/nuxt-ui':
-        specifier: ^0.7.1
-        version: 0.7.1(nuxt@3.3.2)(tailwindcss@3.3.1)
+        specifier: ^0.7.2
+        version: 0.7.2(nuxt@3.3.2)(tailwindcss@3.3.1)
       '@nuxt/image-edge':
         specifier: 1.0.0-28004283.2a7f5cd
         version: 1.0.0-28004283.2a7f5cd
@@ -102,15 +102,9 @@ importers:
       '@mapbox/mapbox-gl-geocoder':
         specifier: 5.0.1
         version: 5.0.1(mapbox-gl@2.13.0)
-      '@nuxt/content':
-        specifier: 2.5.2
-        version: 2.5.2
       '@nuxt/devtools':
         specifier: 0.3.1
         version: 0.3.1(nuxt@3.3.2)
-      '@nuxthq/studio':
-        specifier: ^0.10.0
-        version: 0.10.0
       '@pinia/nuxt':
         specifier: 0.4.7
         version: 0.4.7
@@ -141,9 +135,6 @@ importers:
       nuxt:
         specifier: 3.3.2
         version: 3.3.2
-      nuxt-component-meta:
-        specifier: 0.5.1
-        version: 0.5.1
       nuxt-swiper:
         specifier: 1.0.1
         version: 1.0.1
@@ -612,8 +603,8 @@ packages:
       - vue
     dev: false
 
-  /@cssninja/nuxt-ui@0.7.1(nuxt@3.3.2)(tailwindcss@3.3.1):
-    resolution: {integrity: sha512-j6CzxjIfg1uP1eV5eLQMWppVOF+uITWJvNs2sWkRiT+twG1D2kOt68J7WFOT0TVA64sktNzdnGeZPfLqB7BcbA==}
+  /@cssninja/nuxt-ui@0.7.2(nuxt@3.3.2)(tailwindcss@3.3.1):
+    resolution: {integrity: sha512-9d6HfMFxeOY42qniZKBVQ7R2gjYAUfhavp7x82IN8Q01pDQT5eHGnepvHwRS9EgQgKjh7ruOBr8oelPcqvJ1fg==}
     dependencies:
       '@headlessui/vue': 1.7.12
       '@iconify/vue': 4.1.0
