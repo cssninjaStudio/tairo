@@ -99,9 +99,7 @@ export default defineNuxtConfig({
   },
   routeRules: {
     '/**': {
-      static: true,
       prerender: true,
-      // headers: { 'cache-control': `public, maxage=${WEEK}, s-maxage=${WEEK}` },
     },
   },
 })

@@ -55,8 +55,28 @@ const { md } = useTailwindBreakpoints()
 </script>
 
 <template>
-  <DocLayoutSection class="group" :title="props.title" :tag="props.tag">
-    <template #action>
+  <div class="border-muted-200 dark:border-muted-800 mb-10 border-b py-6">
+    <div class="mb-4 flex items-center">
+      <BaseHeading
+        as="h2"
+        size="xl"
+        anchor
+        weight="medium"
+        class="text-muted-800 dark:text-white"
+        v-if="props.title"
+      >
+        <TairoTocAnchor>
+          {{ props.title }}
+        </TairoTocAnchor>
+      </BaseHeading>
+
+      <div
+        v-if="props.tag"
+        class="bg-muted-200 text-muted-600 dark:bg-muted-800 dark:text-muted-500 ml-3 hidden flex-none rounded-md px-2 py-1.5 text-xs font-semibold tracking-wide lg:block"
+      >
+        {{ props.tag }}
+      </div>
+
       <div v-if="hasDemoContent" class="ml-auto flex items-center gap-2">
         <BaseCheckbox
           v-model="forceDark"
@@ -105,16 +125,18 @@ const { md } = useTailwindBreakpoints()
           </BaseButtonAction>
         </div>
       </div>
-    </template>
+    </div>
 
     <div :class="forceDark ? 'dark' : ''">
-      <BaseCard class="mb-4 p-6">
+      <div
+        class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 relative mb-4 w-full rounded-md border bg-white p-6 transition-all duration-300"
+      >
         <div v-if="'default' in $slots" :class="[hasDemoContent && 'mb-10']">
-          <BaseProse
-            class="prose-sm prose-p:text-muted-500 dark:prose-p:text-muted-400"
+          <div
+            class="prose prose-primary prose-muted dark:prose-invert prose-th:p-4 prose-td:p-4 prose-table:bg-white dark:prose-table:bg-muted-800 prose-table:border prose-table:border-muted-200 dark:prose-table:border-muted-700 prose-sm prose-p:text-muted-500 dark:prose-p:text-muted-400"
           >
             <ContentSlot :use="$slots.default"></ContentSlot>
-          </BaseProse>
+          </div>
         </div>
 
         <div v-if="hasDemoContent" class="flex flex-col gap-4">
@@ -134,9 +156,9 @@ const { md } = useTailwindBreakpoints()
             }"
           />
         </div>
-      </BaseCard>
+      </div>
     </div>
-  </DocLayoutSection>
+  </div>
 </template>
 
 <style scoped>

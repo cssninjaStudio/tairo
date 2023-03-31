@@ -3,7 +3,6 @@ title: Tooltip
 category: Uncategorized
 ---
 
-
 ::doc-component-demo
 ---
 title: Tooltip flow

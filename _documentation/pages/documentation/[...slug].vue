@@ -80,14 +80,13 @@ const breadcrumb = computed(() => {
   <div v-if="data">
     <BaseBreadcrumb :items="breadcrumb" />
 
-    <DocLayout>
-      <div v-if="data">
+    <div class="flex">
+      <div class="w-full xl:w-3/4">
         <ContentRenderer :value="data" />
       </div>
-
-      <template #sidebar>
+      <div v-if="'sidebar' in $slots" class="relative hidden xl:block xl:w-1/4">
         <DocLayoutToc />
-      </template>
-    </DocLayout>
+      </div>
+    </div>
   </div>
 </template>
