@@ -6,15 +6,16 @@
   "main": "./nuxt.config.ts",
   "engines": {
     "node": ">=16.15",
-    "pnpm": ">=3"
+    "pnpm": ">=7"
   },
   "scripts": {
     "dev": "nuxi prepare && nuxi dev .app",
     "build": "nuxi build .app",
-    "demo:dev": "pnpm demo:prepare && nuxi dev .demo",
-    "demo:build": "pnpm demo:prepare && nuxi build .demo",
-    "demo:prepare": "nuxi prepare && nuxi prepare .demo && pnpm demo:prepare-shiki",
-    "demo:prepare-shiki": "esno ./.demo/scripts/prepare-shiki.ts",
+    "demo:dev": "pnpm demo:prepare && nuxi dev _demo",
+    "demo:build": "pnpm demo:prepare && nuxi build _demo",
+    "doc:prepare": "pnpm demo:prepare && nuxi prepare documentation",
+    "demo:prepare": "nuxi prepare && nuxi prepare _demo && pnpm demo:prepare-shiki",
+    "demo:prepare-shiki": "esno ./_demo/scripts/prepare-shiki.ts",
     "test": "run-p test:*",
     "test:tsc": "pnpm demo:prepare && vue-tsc --noEmit",
     "test:lint": "run-s lint:eslint lint:prettier",

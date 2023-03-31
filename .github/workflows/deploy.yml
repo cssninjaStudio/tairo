@@ -27,7 +27,8 @@ jobs:
           base: ${{ github.ref }}
           filters: |
             demo:
-              - '.demo/**'
+              - '_demo/**'
+              - '_documentation/**'
             shared:
               - '.github/env/**'
               - '.github/workflows/deploy.yml'
@@ -65,7 +66,7 @@ jobs:
 
       - run: corepack enable
       - run: pnpm install --frozen-lockfile
-      # - run: echo '{"extends":"./.demo/.nuxt/tsconfig.json"}' > tsconfig.json
+      # - run: echo '{"extends":"./_demo/.nuxt/tsconfig.json"}' > tsconfig.json
       - run: |
           NUXT_PUBLIC_MAPBOX_TOKEN=${{ secrets.MAPBOX_ACCESS_TOKEN }} \
           NUXT_INDEXABLE=false \
@@ -73,7 +74,7 @@ jobs:
           ENABLE_DOCUMENTATION=true \
           NODE_OPTIONS=--max-old-space-size=4096 \
           pnpm demo:build
-      - run: cp .github/env/Dockerfile .demo/Dockerfile
+      - run: cp .github/env/Dockerfile _demo/Dockerfile
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
 
@@ -91,7 +92,7 @@ jobs:
         timeout-minutes: 60
         with:
           push: true
-          context: .demo
+          context: _demo
           tags: ${{ env.dockertags }}
 
   deploy-demo:

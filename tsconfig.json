@@ -5,7 +5,11 @@
   // - ./.demo/.nuxt/tsconfig.json - for the full demo app
   // - ./.app/.nuxt/tsconfig.json - for the quickstarter app
   //
-  "extends": "./.demo/.nuxt/tsconfig.json",
+  "extends": [
+    // "./_app/.nuxt/tsconfig.json",
+    "./_documentation/.nuxt/tsconfig.json",
+    "./_demo/.nuxt/tsconfig.json"
+  ],
   "compilerOptions": {
     "target": "esnext",
     "moduleResolution": "bundler",

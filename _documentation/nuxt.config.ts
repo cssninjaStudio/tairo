@@ -1,0 +1,68 @@
+import { resolve } from 'node:path'
+import { fileURLToPath } from 'node:url'
+// const WEEK = 60 * 60 * 24 * 7
+
+export default defineNuxtConfig({
+  extends: ['..'],
+  modules: [
+    process.env.ENABLE_STUDIO && '@nuxthq/studio',
+    '@nuxt/content',
+    'nuxt-component-meta',
+  ],
+  alias: {
+    '#examples': fileURLToPath(new URL('./examples', import.meta.url)),
+  },
+  componentMeta: {
+    exclude: [
+      'nuxt/dist',
+      '@nuxt/ui-templates/dist',
+      (component: any) => {
+        const hasTairoPrefix = component?.pascalName?.startsWith('Tairo')
+        const hasBasePrefix = component?.pascalName?.startsWith('Base')
+        const hasAddonPrefix = component?.pascalName?.startsWith('Addon')
+        const isBlacklisted = ['TairoWelcome'].includes(component?.pascalName)
+
+        const isExcluded = !(hasTairoPrefix || hasBasePrefix || hasAddonPrefix)
+
+        return isBlacklisted || isExcluded
+      },
+    ],
+    // debug: 2,
+    checkerOptions: {
+      // forceUseTs: true,
+      schema: {
+        ignore: [
+          'RouteLocationRaw',
+          'ComponentData',
+          'NuxtComponentMetaNames',
+          'RouteLocationPathRaw',
+          'RouteLocationNamedRaw',
+        ],
+      },
+    },
+  },
+  hooks: {
+    // @ts-ignore - hook registered by nuxt-tailwind via @cssninja/nuxt-ui
+    'tailwindcss:config'(config) {
+      if (Array.isArray(config.content)) {
+        // config.content.push(resolve(runtimeDir, 'components/**/*.{vue,js,ts}'))
+        // config.content.push(resolve(__dirname, './pages/**/*.{vue,js,ts}'))
+        config.content.push(resolve(__dirname, './examples/**/*.{vue,js,ts}'))
+      }
+    },
+  },
+  nitro: {
+    prerender: {
+      routes: ['/documentation'],
+    },
+  },
+  content: {
+    sources: {
+      docs: {
+        driver: 'fs',
+        prefix: '/documentation', // All contents inside this source will be prefixed with `/documentation`
+        base: resolve(__dirname, 'content/documentation'),
+      },
+    },
+  },
+})

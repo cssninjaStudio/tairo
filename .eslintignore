@@ -1,2 +1,2 @@
-.demo/public/
-.demo/modules/documentation/content/**/*.md
+_demo/public/
+_documentation/content/**/*.md
