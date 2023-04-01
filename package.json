@@ -10,7 +10,7 @@
   },
   "scripts": {
     "dev": "nuxi prepare && nuxi dev _app",
-    "build": "nuxi build .app",
+    "build": "nuxi build _app",
     "demo:dev": "pnpm demo:prepare && nuxi dev _demo",
     "demo:build": "pnpm demo:prepare && nuxi build _demo",
     "demo:prepare": "nuxi prepare && nuxi prepare _demo && nuxi prepare _documentation && nuxi prepare _layout_sidebar && pnpm demo:prepare-shiki",
