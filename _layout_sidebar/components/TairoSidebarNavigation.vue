@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useSidebar } from '../composables/sidebar'
+
 const props = withDefaults(
   defineProps<{
     subsidebar?: boolean
@@ -45,7 +47,7 @@ const subsidebarEnabled = computed(() => {
       <div>
         <slot name="top"></slot>
 
-        <TairoNavigationSidebarItem
+        <TairoSidebarNavigationItem
           v-for="item in startSidebars"
           :key="item.name"
           :sidebar="item"
@@ -53,7 +55,7 @@ const subsidebarEnabled = computed(() => {
       </div>
       <!-- Bottom Menu -->
       <div class="mt-auto">
-        <TairoNavigationSidebarItem
+        <TairoSidebarNavigationItem
           v-for="item in endSidebars"
           :key="item.name"
           :sidebar="item"

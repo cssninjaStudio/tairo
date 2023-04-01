@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useSidebar } from '../composables/sidebar'
+
 const props = withDefaults(
   defineProps<{
     sidebar?: boolean
@@ -21,15 +23,14 @@ const sidebar = reactive(useSidebar())
 const panels = reactive(usePanels())
 
 const sidebarEnabled = computed(() => {
-  return (app.tairo.sidebar as any).enabled !== false && props.sidebar !== false
+  return app.tairo.sidebar?.enabled !== false && props.sidebar !== false
 })
 const toolbarEnabled = computed(() => {
-  return (app.tairo.toolbar as any).enabled !== false && props.toolbar !== false
+  return app.tairo.toolbar?.enabled !== false && props.toolbar !== false
 })
 const circularMenuEnabled = computed(() => {
   return (
-    (app.tairo.circularMenu as any).enabled !== false &&
-    props.circularMenu !== false
+    app.tairo.circularMenu?.enabled !== false && props.circularMenu !== false
   )
 })
 
@@ -63,7 +64,7 @@ const mainClass = computed(() => {
 <template>
   <div class="bg-muted-100 dark:bg-muted-900 pb-20">
     <slot name="sidebar">
-      <TairoNavigationSidebar
+      <TairoSidebarNavigation
         v-if="sidebarEnabled"
         :subsidebar="props.subsidebar"
       >
@@ -84,7 +85,7 @@ const mainClass = computed(() => {
             </NuxtLink>
           </slot>
         </div>
-      </TairoNavigationSidebar>
+      </TairoSidebarNavigation>
     </slot>
 
     <div :class="mainClass">
@@ -98,13 +99,13 @@ const mainClass = computed(() => {
         ]"
       >
         <slot name="toolbar">
-          <TairoNavigationToolbar
+          <TairoSidebarToolbar
             v-if="toolbarEnabled"
             :sidebar="props.sidebar"
             :horizontal-scroll="props.horizontalScroll"
           >
             <template #title><slot name="toolbar-title"></slot></template>
-          </TairoNavigationToolbar>
+          </TairoSidebarToolbar>
         </slot>
 
         <slot />
@@ -148,6 +149,6 @@ const mainClass = computed(() => {
       @click="panels.close"
     />
 
-    <TairoNavigationCircularMenu v-if="circularMenuEnabled" />
+    <TairoSidebarCircularMenu v-if="circularMenuEnabled" />
   </div>
 </template>

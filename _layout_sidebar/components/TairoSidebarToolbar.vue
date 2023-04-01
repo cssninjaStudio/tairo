@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useSidebar } from '../composables/sidebar'
+
 const props = withDefaults(
   defineProps<{
     sidebar?: boolean
@@ -16,9 +18,7 @@ const route = useRoute()
 
 const showNavBurger = computed(() => {
   return (
-    props.sidebar &&
-    (app.tairo.toolbar as any).showNavBurger &&
-    hasSubsidebar.value
+    props.sidebar && app.tairo.toolbar?.showNavBurger && hasSubsidebar.value
   )
 })
 </script>
@@ -28,7 +28,7 @@ const showNavBurger = computed(() => {
     class="relative z-50 mb-5 flex h-16 items-center gap-2"
     :class="props.horizontalScroll && 'pr-4 xl:pr-10'"
   >
-    <TairoNavigationBurger v-if="showNavBurger" class="-ml-3" />
+    <TairoSidebarBurger v-if="showNavBurger" class="-ml-3" />
 
     <BaseHeading
       v-if="(app.tairo.toolbar as any).showTitle"

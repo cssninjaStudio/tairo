@@ -17,7 +17,7 @@ function wrapVueMarkdown(source: string) {
         <DocSection title="Circular menu" tag="1.0.0">
           <DocComponent label="Tairo circular menu component">
             <template #demo>
-              <div class="w-full flex items-end gap-6">
+              <div class="flex w-full items-end gap-6">
                 <MenuDemo />
               </div>
             </template>
@@ -28,7 +28,7 @@ function wrapVueMarkdown(source: string) {
         </DocSection>
 
         <!-- Circular menu properties -->
-        <DocComponentMeta name="TairoNavigationCircularMenu" />
+        <DocComponentMeta name="TairoSidebarCircularMenu" />
       </template>
       <template #toc>
         <DocToc />

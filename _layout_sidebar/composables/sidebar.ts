@@ -70,7 +70,7 @@ export function useSidebar() {
 
   const sidebars = computed(() => {
     if (
-      (app.tairo.sidebar as any)?.enabled === false ||
+      app.tairo.sidebar?.enabled === false ||
       app.tairo.sidebar?.items?.length === 0
     ) {
       return []

@@ -863,7 +863,7 @@ export const routes = {
             title: 'Circular Menu',
             documentation: {
               category: 'Layout Elements',
-              components: ['TairoNavigationCircularMenu'],
+              components: ['TairoSidebarCircularMenu'],
               description:
                 'Tairo circular menu is a flying button that can be expanded to display the toolbar menu, when not visible.',
               icon: {
@@ -891,8 +891,8 @@ export const routes = {
                 srcDark: '/img/illustrations/components/sidebar-icon.svg',
               },
               components: [
-                'TairoNavigationSidebar',
-                'TairoNavigationSidebarItem',
+                'TairoSidebarNavigation',
+                'TairoSidebarNavigationItem',
               ],
             },
           },
@@ -929,7 +929,7 @@ export const routes = {
             title: 'Navigation Toolbar',
             documentation: {
               category: 'Layout Elements',
-              components: ['TairoNavigationToolbar', 'TairoNavigationBurger'],
+              components: ['TairoSidebarToolbar', 'TairoSidebarBurger'],
               description:
                 'Tairo toolbar and burger provide a smart way to handle menu items that are displayed at the top of the page.',
               icon: {

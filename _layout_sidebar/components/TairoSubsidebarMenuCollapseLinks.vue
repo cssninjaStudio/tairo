@@ -62,7 +62,7 @@ function isChildActive(link: {
       >
         <span
           v-if="hasActiveChild"
-          class="bg-primary-500 absolute top-2 -left-3 h-1 w-1 rounded-full"
+          class="bg-primary-500 absolute -left-3 top-2 h-1 w-1 rounded-full"
         ></span>
         <span>{{ props.name }}</span>
       </span>

@@ -1,7 +1,8 @@
 <script setup lang="ts">
 // import type { SidebarItem } from '../stores/sidebar'
 
-import type { TairoSidebarResolvedConfig } from '../../composables/sidebar'
+import type { TairoSidebarResolvedConfig } from '../composables/sidebar'
+import { useSidebar } from '../composables/sidebar'
 
 const props = defineProps<{
   sidebar: TairoSidebarResolvedConfig

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useSidebar } from '../composables/sidebar'
+
 const sidebar = reactive(useSidebar())
 </script>
 
