@@ -84,12 +84,24 @@ export function useSidebar() {
     )
   })
 
-  const isOpen = useState('sidebar-open', () => false)
   const currentName = useState('sidebar-name', () => {
     const item = sidebars.value?.find(
       ({ activePath }) => activePath && route.fullPath.startsWith(activePath),
     )
     return item?.name || ''
+  })
+  const isOpen = useState('sidebar-open', () => false)
+
+  onBeforeMount(() => {
+    console.log(
+      'sidebar',
+      isOpen.value,
+      app.tairo.sidebar?.startOpen,
+      currentName.value,
+    )
+    if (app.tairo.sidebar?.startOpen) {
+      isOpen.value = Boolean(currentName.value)
+    }
   })
 
   const hasSubsidebar = computed(() => {
@@ -120,6 +132,7 @@ export function useSidebar() {
 
   if (process.client) {
     const { xl } = useTailwindBreakpoints()
+    // close sidebar when screen become extra large
     watch(xl, (isXl) => {
       if (!isXl) {
         isOpen.value = false

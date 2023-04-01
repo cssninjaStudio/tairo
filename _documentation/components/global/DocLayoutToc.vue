@@ -11,6 +11,7 @@ const { activeIds } = useNinjaScrollspy(
   },
   ids,
 )
+const nuxtApp = useNuxtApp()
 
 if (process.client) {
   // active item when hash change
@@ -27,8 +28,16 @@ if (process.client) {
   )
 
   // load toc item from dom
-  watch(() => route.path, loadTocItemFromDom, {
-    immediate: true,
+  const stopPage = nuxtApp.hook('page:finish', (e) => {
+    loadTocItemFromDom()
+  })
+  const stopTransition = nuxtApp.hook('page:transition:finish', (e) => {
+    loadTocItemFromDom()
+  })
+
+  onBeforeUnmount(() => {
+    stopPage()
+    stopTransition()
   })
 }
 
@@ -55,8 +64,9 @@ function getTocItemClass(item: any) {
 }
 
 async function loadTocItemFromDom() {
+  await nextTick()
   // wait page transition
-  await new Promise((resolve) => setTimeout(resolve, 500))
+  // await new Promise((resolve) => setTimeout(resolve, 200))
 
   const elements = document.querySelectorAll('.tairo-toc-anchor')
 
@@ -71,17 +81,17 @@ async function loadTocItemFromDom() {
 </script>
 
 <template>
-  <div
-    class="slimscroll fixed flex max-h-[calc(100vh_-_180px)] flex-col justify-between overflow-y-auto overflow-x-hidden pb-20 pl-20 pr-1 pt-2"
-  >
-    <div class="mb-8 w-52" v-if="toc.length">
+  <div class="fixed flex flex-col justify-between pb-20 pl-20 pr-1 pt-2">
+    <div class="w-52" v-if="toc.length">
       <div
         class="font-heading text-muted-800 mb-6 text-xs font-semibold uppercase leading-tight dark:text-white"
       >
         <span>On this page</span>
       </div>
 
-      <nav class="font-sans text-sm">
+      <nav
+        class="slimscroll relative max-h-[calc(100vh_-_220px)] overflow-y-auto overflow-x-hidden pb-10 font-sans text-sm"
+      >
         <ul>
           <li v-for="item in toc" :key="item.id">
             <NuxtLink
@@ -93,6 +103,9 @@ async function loadTocItemFromDom() {
             </NuxtLink>
           </li>
         </ul>
+        <div
+          class="dark:from-muted-800 from-muted-100 pointer-events-none fixed bottom-10 z-10 h-10 w-[212px] bg-gradient-to-t to-transparent"
+        ></div>
       </nav>
     </div>
   </div>

@@ -8,6 +8,10 @@
     "node": ">=16.15",
     "pnpm": ">=7"
   },
+  "scripts": {
+    "layer:prepare": "nuxi prepare && pnpm prepare-shiki",
+    "prepare-shiki": "esno ./scripts/prepare-shiki.ts"
+  },
   "devDependencies": {
     "@mapbox/mapbox-gl-geocoder": "5.0.1",
     "@nuxt/devtools": "0.3.1",

@@ -1,15 +1,13 @@
 {
   // https://v3.nuxtjs.org/concepts/typescript
   //
-  // You have to select the correct path to your tsconfig.json file
-  // - ./.demo/.nuxt/tsconfig.json - for the full demo app
-  // - ./.app/.nuxt/tsconfig.json - for the quickstarter app
+  // You have to select the path to your tsconfig.json layers
+  // - ./_app/.nuxt/tsconfig.json - for the quickstarter app
+  // - ./_demo/.nuxt/tsconfig.json - for the demo app
+  // - ./_documentation/.nuxt/tsconfig.json - for the documentation app
+  // - ./_layout_sidebar/.nuxt/tsconfig.json - for the sidebar layout and all it dependencies
   //
-  "extends": [
-    "./_documentation/.nuxt/tsconfig.json",
-    "./_demo/.nuxt/tsconfig.json",
-    "./_layout_sidebar/.nuxt/tsconfig.json"
-  ],
+  "extends": "./_demo/.nuxt/tsconfig.json",
   "compilerOptions": {
     "target": "esnext",
     "moduleResolution": "bundler",

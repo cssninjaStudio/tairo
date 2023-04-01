@@ -1,6 +1,4 @@
 <script setup lang="ts">
-// import { useDocumentationRoutes } from '../../../runtime/composables/routes'
-
 const props = defineProps<{
   prefix?: string
 }>()
@@ -29,13 +27,6 @@ const componentsPagesMap = computed(() => {
     const route = routesFlat.value.find((route: any) =>
       route.components?.includes(name),
     )
-    // if (process.dev) {
-    //   if (!route) {
-    //     console.warn(
-    //       `Component ${name} is missing a documentation route. Please add it to the documentation routes.`,
-    //     )
-    //   }
-    // }
     return {
       name,
       route,

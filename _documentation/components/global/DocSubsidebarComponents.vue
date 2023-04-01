@@ -3,8 +3,6 @@ defineEmits<{
   (event: 'close'): void
 }>()
 
-// import { useDocumentationRoutes } from '../../composables/routes'
-
 const { docRoutesByCategory: routesByCategory, categoryOrders } =
   await useDocumentationRoutes()
 
@@ -24,6 +22,17 @@ const navigation = [
     _path: '/documentation',
   },
 ]
+
+const sidebar = reactive(useSidebar())
+const { xl } = useTailwindBreakpoints()
+
+function onLinkClick() {
+  if (xl.value) {
+    return
+  }
+
+  sidebar.toggle()
+}
 </script>
 
 <template>
@@ -43,6 +52,7 @@ const navigation = [
             :to="link._path"
             :class="[route.path === link._path && 'text-primary-500']"
             class="nui-focus text-muted-400 hover:text-primary-500 focus-visible:text-primary-500 group flex w-full flex-row items-center transition-colors duration-300 focus-within:outline-0 focus-visible:outline-1"
+            @click.passive="onLinkClick"
           >
             <span class="font-sans text-sm">{{ link?.title }}</span>
           </NuxtLink>
@@ -84,6 +94,7 @@ const navigation = [
                 :class="[route.path === link._path && 'text-primary-500']"
                 exact-active-class="text-primary-500"
                 class="nui-focus text-muted-400 hover:text-primary-500 focus-visible:text-primary-500 group flex w-full flex-row items-center transition-colors duration-300 focus-within:outline-0 focus-visible:outline-1"
+                @click.passive="onLinkClick"
               >
                 <span class="font-sans text-sm">{{ link?.title }}</span>
               </NuxtLink>

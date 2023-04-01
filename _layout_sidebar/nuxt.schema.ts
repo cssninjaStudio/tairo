@@ -3,6 +3,7 @@ export default defineNuxtSchema({
     tairo: {
       sidebar: {
         enabled: true,
+        startOpen: true,
         logo: {
           component: 'TairoLogo',
           resolve: true,

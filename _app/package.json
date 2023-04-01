@@ -4,5 +4,8 @@
   "type": "module",
   "devDependencies": {
     "nuxt": "3.3.2"
+  },
+  "scripts": {
+    "layer:prepare": "nuxi prepare"
   }
 }

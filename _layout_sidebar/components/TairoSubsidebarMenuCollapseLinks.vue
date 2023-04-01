@@ -29,7 +29,7 @@ watchEffect(() => {
   }
 })
 
-function onClick() {
+function onDropClick() {
   open.value = !open.value
   if (!open.value) {
     buttonRef.value?.blur()
@@ -47,6 +47,18 @@ function isChildActive(link: {
     (!link.exact && route.path.startsWith(link.to))
   )
 }
+
+const sidebar = reactive(useSidebar())
+const { xl } = useTailwindBreakpoints()
+
+function onLinkClick() {
+  console.log('onClick', props.name, xl.value)
+  if (xl.value) {
+    return
+  }
+
+  sidebar.toggle()
+}
 </script>
 
 <template>
@@ -55,7 +67,7 @@ function isChildActive(link: {
       ref="buttonRef"
       href="#"
       class="nui-focus relative top-0.5 flex items-center"
-      @click.stop.prevent="onClick"
+      @click.stop.prevent="onDropClick"
     >
       <span
         class="text-muted-400 group-hover:text-primary-500 relative inline-flex items-center gap-2 font-sans text-sm transition-colors duration-300"
@@ -84,7 +96,7 @@ function isChildActive(link: {
         'max-h-max opacity-100': open,
       }"
     >
-      <ul class="py-2">
+      <ul class="py-2" v-if="props?.children">
         <li
           v-for="link of props.children"
           :key="link.to"
@@ -96,6 +108,7 @@ function isChildActive(link: {
               'text-primary-500': isChildActive(link),
             }"
             class="nui-focus text-muted-400 hover:text-primary-500 focus:text-primary-500 flex w-full items-center pl-3 transition-colors duration-300"
+            @click.passive="onLinkClick"
           >
             <Icon :name="link.icon" class="mr-2 h-5 w-5" />
             <span class="font-sans text-xs">{{ link.name }}</span>

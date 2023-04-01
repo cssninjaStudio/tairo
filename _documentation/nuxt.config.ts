@@ -2,7 +2,6 @@ import { resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 // const WEEK = 60 * 60 * 24 * 7
 
-console.log('process.env.ENABLE_STUDIO', process.env.ENABLE_STUDIO)
 export default defineNuxtConfig({
   extends: ['..'],
   modules: [
@@ -10,6 +9,10 @@ export default defineNuxtConfig({
     'nuxt-component-meta',
     process.env.ENABLE_STUDIO === 'true' && '@nuxthq/studio',
   ],
+  typescript: {
+    includeWorkspace: true,
+    strict: true,
+  },
   alias: {
     '#examples': fileURLToPath(new URL('./examples', import.meta.url)),
   },
@@ -60,7 +63,7 @@ export default defineNuxtConfig({
   },
   content: {
     sources: {
-      docs: {
+      content: {
         driver: 'fs',
         prefix: '/documentation', // All contents inside this source will be prefixed with `/documentation`
         base: resolve(__dirname, 'content/documentation'),

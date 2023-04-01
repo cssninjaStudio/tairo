@@ -20,6 +20,10 @@ const info = computed(() => {
   return { folder, file }
 })
 
+const hasDemoInfo = computed(() =>
+  Boolean(info.value.folder && info.value.file),
+)
+const demoPending = ref(hasDemoInfo.value)
 const exampleComponent = shallowRef()
 const exampleSource = shallowRef()
 
@@ -27,23 +31,35 @@ const exampleMarkdown = computed(() => {
   return '```vue\n' + exampleSource.value + '\n```'
 })
 
-watchEffect(async () => {
-  if (!info.value.folder || !info.value.file) return
+await useAsyncData(
+  `demo-${props.demo}`,
+  async () => {
+    if (!info.value.folder || !info.value.file) return
+    demoPending.value = true
 
-  // dynamically import the example component and source
-  // we can not use path alias, nor paths in variables
-  // this is a limitation of vite
-  const [compo, source] = await Promise.all([
-    import(`../../examples/${info.value.folder}/${info.value.file}.vue`).then(
-      (m) => m.default,
-    ),
-    import(
-      `../../examples/${info.value.folder}/${info.value.file}.vue?raw`
-    ).then((m) => m.default),
-  ])
-  exampleComponent.value = markRaw(compo)
-  exampleSource.value = source
-})
+    // dynamically import the example component and source
+    // we can not use path alias, nor paths in variables
+    // this is a limitation of vite
+    try {
+      const [compo, source] = await Promise.all([
+        import(
+          `../../examples/${info.value.folder}/${info.value.file}.vue`
+        ).then((m) => m.default),
+        import(
+          `../../examples/${info.value.folder}/${info.value.file}.vue?raw`
+        ).then((m) => m.default),
+      ])
+      exampleComponent.value = markRaw(compo)
+      exampleSource.value = source
+    } finally {
+      demoPending.value = false
+    }
+  },
+  {
+    watch: [info],
+    // server: false,
+  },
+)
 
 const showCode = ref(false)
 const hasDemoContent = computed(() =>

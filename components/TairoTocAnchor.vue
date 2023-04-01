@@ -1,7 +1,4 @@
 <script setup lang="ts">
-// import type { VNode } from 'vue'
-// import { Text } from 'vue'
-
 const props = withDefaults(
   defineProps<{
     label: string
@@ -25,7 +22,6 @@ const props = withDefaults(
   },
 )
 
-// const innerText = texts.join('').trim()
 const slug = computed(() =>
   props.label
     .toLowerCase()
@@ -34,26 +30,6 @@ const slug = computed(() =>
 )
 
 const anchor = computed(() => props.id || slug.value)
-// const id = props.id ?? ''
-// const label = props.label ?? innerText
-// const level = props.level ?? 1
-// function visit(vnode: VNode | VNode[], fn: (vnode: VNode) => void): void {
-//   if (Array.isArray(vnode)) {
-//     return vnode.forEach((node) => visit(node, fn))
-//   }
-
-//   fn(vnode)
-
-//   if (Array.isArray(vnode.children)) {
-//     vnode.children.forEach((child) => {
-//       if (child && typeof child === 'object' && !Array.isArray(child)) {
-//         visit(child, fn)
-//       }
-//     })
-//   }
-// }
-
-// register({ id, label, level })
 </script>
 
 <template>

@@ -28,13 +28,13 @@ export async function useDocumentationMeta(
     ),
   )
   const events = computed(() =>
-    meta.value?.meta?.events?.filter(
+    meta?.value?.meta?.events?.filter(
       (prop: any) => prop.name !== 'update:modelValue',
     ),
   )
-  const slots = computed(() => meta.value?.meta?.slots)
+  const slots = computed(() => meta?.value?.meta?.slots)
   const exposed = computed(() =>
-    meta.value?.meta?.exposed
+    meta?.value?.meta?.exposed
       .filter((item: any) => {
         return (
           props.value?.findIndex((prop: any) => prop.name === item.name) === -1

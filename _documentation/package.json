@@ -8,6 +8,9 @@
     "node": ">=16.15",
     "pnpm": ">=7"
   },
+  "scripts": {
+    "layer:prepare": "nuxi prepare"
+  },
   "devDependencies": {
     "@nuxt/content": "2.5.2",
     "@nuxthq/studio": "^0.10.0",

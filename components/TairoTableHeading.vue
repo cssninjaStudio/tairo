@@ -17,7 +17,7 @@ const props = withDefaults(
     :class="[
       props.uppercase ? 'text-xs uppercase' : 'text-sm',
       props.spaced
-        ? 'border-muted-200 dark:border-muted-700 last:border-r-none dark:bg-muted-800 border-r bg-white py-5 px-4'
+        ? 'border-muted-200 dark:border-muted-700 last:border-r-none dark:bg-muted-800 border-r bg-white px-4 py-5'
         : 'bg-muted-50 dark:bg-muted-800 py-3',
     ]"
   >

@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import '~/assets/css/apexcharts.css'
 
-const { LazyApexCharts, isLoaded } = useLazyApexCharts()
 const props = defineProps<{
   type: string
   height: number
@@ -13,7 +12,7 @@ const props = defineProps<{
    */
   options?: Record<string, any>
 }>()
-
+const { LazyApexCharts, isLoaded } = useLazyApexCharts()
 const target = ref(null)
 const targetIsVisible = ref(false)
 
@@ -29,14 +28,14 @@ const { stop } = useIntersectionObserver(target, ([{ isIntersecting }]) => {
 <template>
   <div ref="target">
     <BasePlaceload
-      class="w-[calc(100%-32px)] m-4"
+      class="m-4 w-[calc(100%-32px)]"
       v-if="!isLoaded && !targetIsVisible"
       :style="{ height: `${height - 32}px` }"
     />
     <ClientOnly>
       <LazyApexCharts v-if="targetIsVisible" v-show="isLoaded" v-bind="props" />
       <BasePlaceload
-        class="w-[calc(100%-32px)] m-4"
+        class="m-4 w-[calc(100%-32px)]"
         v-else
         :style="{ height: `${height - 32}px` }"
       />

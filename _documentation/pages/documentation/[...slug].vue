@@ -1,4 +1,9 @@
 <script setup lang="ts">
+definePageMeta({
+  pageTransition: false,
+  layoutTransition: false,
+})
+
 const route = useRoute()
 const router = useRouter()
 
@@ -91,7 +96,7 @@ const breadcrumb = computed(() => {
         </ContentRenderer>
       </div>
       <div v-if="!pending && data" class="relative hidden xl:block xl:w-1/4">
-        <DocLayoutToc :key="data?._path" />
+        <DocLayoutToc :key="`toc-${data._path}`" />
       </div>
     </div>
   </div>

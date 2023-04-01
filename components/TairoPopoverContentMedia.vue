@@ -81,7 +81,7 @@ const props = defineProps<{
         </BaseText>
       </div>
       <div class="flex w-1/2 items-center justify-center">
-        <div class="w-full py-5 px-3 text-center">
+        <div class="w-full px-3 py-5 text-center">
           <div class="flex flex-col gap-2">
             <img
               :src="props.images[0]"
@@ -127,7 +127,7 @@ const props = defineProps<{
       <span class="flex items-center">
         <NuxtLink
           to="#"
-          class="font-sans text-primary-500 mr-1 text-sm font-medium underline-offset-4 hover:underline transition-colors"
+          class="text-primary-500 mr-1 font-sans text-sm font-medium underline-offset-4 transition-colors hover:underline"
         >
           {{ props.linkLabel }}
         </NuxtLink>

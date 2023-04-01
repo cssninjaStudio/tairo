@@ -145,7 +145,7 @@ const props = defineProps<{
       <span class="flex items-center">
         <NuxtLink
           to="#"
-          class="font-sans text-primary-500 mr-1 text-sm font-medium underline-offset-4 hover:underline transition-colors"
+          class="text-primary-500 mr-1 font-sans text-sm font-medium underline-offset-4 transition-colors hover:underline"
         >
           {{ props.linkLabel }}
         </NuxtLink>

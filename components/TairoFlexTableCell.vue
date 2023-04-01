@@ -18,7 +18,7 @@ const props = withDefaults(defineProps<FlexTableCellProps>(), {
       props.type === 'grow' && 'md:grow',
       props.type === 'shrink' && 'md:shrink',
       props.type === 'stable' &&
-        'md:line-clamp-1 sm:w-[90px] md:w-[110px] md:shrink-0',
+        'sm:w-[90px] md:line-clamp-1 md:w-[110px] md:shrink-0',
       props.light
         ? 'text-muted-500 dark:text-white'
         : 'text-muted-800 dark:text-white',
