@@ -1,5 +1,5 @@
 ---
-title: Close button
+title: Button close
 category: Base UI Elements
 components:
   - BaseButtonClose
@@ -20,3 +20,24 @@ Close buttons are a common part of any application. Close buttons can have diffe
 Default shape of all :doc-linker{to="BaseButtonClose"} can be set in your `app.config.ts`.
 :::
 ::
+
+::doc-component-demo
+---
+title: Primary color
+demo: '#examples/button-close/primary.vue'
+---
+Close buttons are a common part of any application. Close buttons can have different colors using the `color` prop.
+::
+
+
+
+::doc-component-demo
+---
+title: Muted color
+demo: '#examples/button-close/muted.vue'
+---
+Close buttons are a common part of any application. Close buttons can have different colors using the `color` prop.
+::
+
+
+:doc-component-meta{name="BaseButtonClose"}

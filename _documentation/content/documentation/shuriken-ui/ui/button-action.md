@@ -1,5 +1,5 @@
 ---
-title: Action buttons
+title: Button action
 category: Base UI Elements
 components:
   - BaseButtonAction
@@ -51,3 +51,5 @@ demo: '#examples/action/group.vue'
 ---
 Actions can be grouped into a single element using a flex container. Adjust border radiuses and borders to create a seamless group.
 ::
+
+:doc-component-meta{name="BaseButtonAction"}

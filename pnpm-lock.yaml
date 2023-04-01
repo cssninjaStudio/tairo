@@ -7,37 +7,45 @@ overrides:
 importers:
 
   .:
+    specifiers:
+      '@antfu/eslint-config': 0.38.2
+      '@cssninja/nuxt-toaster': ^0.3.10
+      '@cssninja/nuxt-ui': ^0.7.2
+      '@iconify/json': 2.2.42
+      '@nuxt/image-edge': 1.0.0-28004283.2a7f5cd
+      '@nuxtjs/eslint-config': 12.0.0
+      '@nuxtjs/eslint-config-typescript': 12.0.0
+      '@types/fs-extra': 11.0.1
+      '@vee-validate/zod': ^4.8.3
+      eslint: 8.37.0
+      eslint-config-prettier: 8.8.0
+      eslint-plugin-prettier-vue: 4.2.0
+      eslint-plugin-tailwindcss: 3.10.1
+      eslint-plugin-vuejs-accessibility: 2.1.0
+      fast-copy: ^3.0.1
+      fs-extra: 11.1.1
+      lint-staged: 13.2.0
+      npm-run-all: 4.1.5
+      nuxt: ^3.3.2
+      nuxt-seo-kit: ^1.3.5
+      pinia: ^2.0.33
+      prettier: 2.8.7
+      tailwindcss: 3.3.1
+      typescript: 5.0.3
+      vee-validate: ^4.8.3
+      vue-tsc: 1.2.0
+      zod: ^3.21.4
     dependencies:
-      '@cssninja/nuxt-toaster':
-        specifier: ^0.3.10
-        version: 0.3.10
-      '@cssninja/nuxt-ui':
-        specifier: ^0.7.2
-        version: 0.7.2(nuxt@3.3.2)(tailwindcss@3.3.1)
-      '@nuxt/image-edge':
-        specifier: 1.0.0-28004283.2a7f5cd
-        version: 1.0.0-28004283.2a7f5cd
-      '@vee-validate/zod':
-        specifier: ^4.8.3
-        version: 4.8.4
-      fast-copy:
-        specifier: ^3.0.1
-        version: 3.0.1
-      nuxt:
-        specifier: ^3.3.2
-        version: 3.3.2(eslint@8.37.0)(typescript@5.0.3)(vue-tsc@1.2.0)
-      nuxt-seo-kit:
-        specifier: ^1.3.5
-        version: 1.3.5
-      pinia:
-        specifier: ^2.0.33
-        version: 2.0.33(typescript@5.0.3)
-      vee-validate:
-        specifier: ^4.8.3
-        version: 4.8.4
-      zod:
-        specifier: ^3.21.4
-        version: 3.21.4
+      '@cssninja/nuxt-toaster': 0.3.10
+      '@cssninja/nuxt-ui': 0.7.2_tub4u4vahw345zo33pf2ausiuu
+      '@nuxt/image-edge': 1.0.0-28004283.2a7f5cd
+      '@vee-validate/zod': 4.8.4
+      fast-copy: 3.0.1
+      nuxt: 3.3.2_5ozfrksam2z5rl37zl7due4lzy
+      nuxt-seo-kit: 1.3.5
+      pinia: 2.0.33_typescript@5.0.3
+      vee-validate: 4.8.4
+      zod: 3.21.4
     devDependencies:
       '@antfu/eslint-config': 0.38.2_vwh6htx42aidho2qgfca5u5rwm
       '@iconify/json': 2.2.42
@@ -66,9 +74,7 @@ importers:
   _demo:
     specifiers:
       '@mapbox/mapbox-gl-geocoder': 5.0.1
-      '@nuxt/content': 2.5.2
       '@nuxt/devtools': 0.3.1
-      '@nuxthq/studio': ^0.10.0
       '@pinia/nuxt': 0.4.7
       '@popperjs/core': 2.11.7
       '@stefanprobst/remark-shiki': 2.2.0
@@ -79,7 +85,6 @@ importers:
       imask: ^6.4.3
       mapbox-gl: 2.13.0
       nuxt: 3.3.2
-      nuxt-component-meta: 0.5.1
       nuxt-swiper: 1.0.1
       rehype-external-links: 2.0.1
       rehype-raw: 6.1.1
@@ -97,11 +102,8 @@ importers:
       vue3-popper: 1.5.0
       vue3-smooth-dnd: 0.0.4
     devDependencies:
-<<<<<<< HEAD
       '@mapbox/mapbox-gl-geocoder': 5.0.1_mapbox-gl@2.13.0
-      '@nuxt/content': 2.5.2
       '@nuxt/devtools': 0.3.1_nuxt@3.3.2
-      '@nuxthq/studio': 0.10.0
       '@pinia/nuxt': 0.4.7
       '@popperjs/core': 2.11.7
       '@stefanprobst/remark-shiki': 2.2.0_shiki@0.14.1
@@ -112,7 +114,6 @@ importers:
       imask: 6.4.3
       mapbox-gl: 2.13.0
       nuxt: 3.3.2
-      nuxt-component-meta: 0.5.1
       nuxt-swiper: 1.0.1
       rehype-external-links: 2.0.1
       rehype-raw: 6.1.1
@@ -129,92 +130,6 @@ importers:
       vue3-carousel: 0.2.14
       vue3-popper: 1.5.0
       vue3-smooth-dnd: 0.0.4
-=======
-      '@mapbox/mapbox-gl-geocoder':
-        specifier: 5.0.1
-        version: 5.0.1(mapbox-gl@2.13.0)
-      '@nuxt/devtools':
-        specifier: 0.3.1
-        version: 0.3.1(nuxt@3.3.2)
-      '@pinia/nuxt':
-        specifier: 0.4.7
-        version: 0.4.7
-      '@popperjs/core':
-        specifier: 2.11.7
-        version: 2.11.7
-      '@stefanprobst/remark-shiki':
-        specifier: 2.2.0
-        version: 2.2.0(shiki@0.14.1)
-      '@types/mapbox-gl':
-        specifier: 2.7.10
-        version: 2.7.10
-      '@vueform/slider':
-        specifier: 2.1.7
-        version: 2.1.7
-      apexcharts:
-        specifier: 3.37.2
-        version: 3.37.2
-      date-fns:
-        specifier: 2.29.3
-        version: 2.29.3
-      imask:
-        specifier: ^6.4.3
-        version: 6.4.3
-      mapbox-gl:
-        specifier: 2.13.0
-        version: 2.13.0
-      nuxt:
-        specifier: 3.3.2
-        version: 3.3.2
-      nuxt-swiper:
-        specifier: 1.0.1
-        version: 1.0.1
-      rehype-external-links:
-        specifier: 2.0.1
-        version: 2.0.1
-      rehype-raw:
-        specifier: 6.1.1
-        version: 6.1.1
-      rehype-sanitize:
-        specifier: 5.0.1
-        version: 5.0.1
-      rehype-stringify:
-        specifier: 9.0.3
-        version: 9.0.3
-      remark-gfm:
-        specifier: 3.0.1
-        version: 3.0.1
-      remark-parse:
-        specifier: 10.0.1
-        version: 10.0.1
-      remark-rehype:
-        specifier: 10.1.0
-        version: 10.1.0
-      shiki:
-        specifier: 0.14.1
-        version: 0.14.1
-      splitpanes:
-        specifier: ^3.1.5
-        version: 3.1.5
-      unified:
-        specifier: 10.1.2
-        version: 10.1.2
-      v-calendar:
-        specifier: 3.0.1
-        version: 3.0.1(@popperjs/core@2.11.7)
-      vue3-apexcharts:
-        specifier: 1.4.1
-        version: 1.4.1(apexcharts@3.37.2)
-      vue3-carousel:
-        specifier: 0.2.14
-        version: 0.2.14
-      vue3-popper:
-        specifier: 1.5.0
-        version: 1.5.0
-      vue3-smooth-dnd:
-        specifier: 0.0.4
-        version: 0.0.4
->>>>>>> 68d02a191726e810929077af5109c9cdc0206fbc
 
   _documentation:
     specifiers:
@@ -632,13 +547,8 @@ packages:
       - vue
     dev: false
 
-<<<<<<< HEAD
-  /@cssninja/nuxt-ui/0.7.1_tub4u4vahw345zo33pf2ausiuu:
-    resolution: {integrity: sha512-j6CzxjIfg1uP1eV5eLQMWppVOF+uITWJvNs2sWkRiT+twG1D2kOt68J7WFOT0TVA64sktNzdnGeZPfLqB7BcbA==}
-=======
-  /@cssninja/nuxt-ui@0.7.2(nuxt@3.3.2)(tailwindcss@3.3.1):
+  /@cssninja/nuxt-ui/0.7.2_tub4u4vahw345zo33pf2ausiuu:
     resolution: {integrity: sha512-9d6HfMFxeOY42qniZKBVQ7R2gjYAUfhavp7x82IN8Q01pDQT5eHGnepvHwRS9EgQgKjh7ruOBr8oelPcqvJ1fg==}
->>>>>>> 68d02a191726e810929077af5109c9cdc0206fbc
     dependencies:
       '@headlessui/vue': 1.7.12
       '@iconify/vue': 4.1.0
@@ -3182,7 +3092,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001473
-      electron-to-chromium: 1.4.347
+      electron-to-chromium: 1.4.348
       node-releases: 2.0.10
       update-browserslist-db: 1.0.10_browserslist@4.21.5
 
@@ -4219,8 +4129,8 @@ packages:
   /ee-first/1.1.1:
     resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==}
 
-  /electron-to-chromium/1.4.347:
-    resolution: {integrity: sha512-LNi3+/9nV0vT6Bz1OsSoZ/w7IgNuWdefZ7mjKNjZxyRlI/ag6uMXxsxAy5Etvuixq3Q26exw2fc4bNYvYQqXSw==}
+  /electron-to-chromium/1.4.348:
+    resolution: {integrity: sha512-gM7TdwuG3amns/1rlgxMbeeyNoBFPa+4Uu0c7FeROWh4qWmvSOnvcslKmWy51ggLKZ2n/F/4i2HJ+PVNxH9uCQ==}
 
   /emoji-regex/10.2.1:
     resolution: {integrity: sha512-97g6QgOk8zlDRdgq1WxwgTMgEWGVAQvB5Fdpgc1MkNy56la5SKP9GsMXKDOdqwn90/41a8yPwIGk1Y6WVbeMQA==}
@@ -8180,7 +8090,7 @@ packages:
     resolution: {integrity: sha512-NHrPnnxJtM9asKkvxJlyKUhgO/1o3p4ghX+j6xAq1+A2qm8C7l/7WntklQf5t3H7Y7OZXS9e763MXgrCrnZOww==}
     dependencies:
       '@nuxt/kit': 3.3.2
-      swiper: 9.1.1
+      swiper: 9.2.0
     transitivePeerDependencies:
       - rollup
       - supports-color
@@ -10609,8 +10519,8 @@ packages:
       picocolors: 1.0.0
       stable: 0.1.8
 
-  /swiper/9.1.1:
-    resolution: {integrity: sha512-D1zArOwI6XCXCYBULPA4jTxpqp5SQtvntjinbXNZwXzj6P3KS51zSWuMarCLXq5oRISay4nX+TuShpxz8qhtbw==}
+  /swiper/9.2.0:
+    resolution: {integrity: sha512-lWK9toYumUQss+YuTL+Mt0+8twiMJEyzioER4bbS4rrGHlkeLrDM8uhtAmnpdijELrNscuNUujDgKoMQZfQGlQ==}
     engines: {node: '>= 4.7.0'}
     dependencies:
       ssr-window: 4.0.2
