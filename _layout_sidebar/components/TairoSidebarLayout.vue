@@ -62,28 +62,30 @@ const mainClass = computed(() => {
 
 <template>
   <div class="bg-muted-100 dark:bg-muted-900 pb-20">
-    <TairoNavigationSidebar
-      v-if="sidebarEnabled"
-      :subsidebar="props.subsidebar"
-    >
-      <div
-        v-if="app.tairo.sidebar?.logo?.component"
-        class="flex h-16 w-full items-center justify-center"
+    <slot name="sidebar">
+      <TairoNavigationSidebar
+        v-if="sidebarEnabled"
+        :subsidebar="props.subsidebar"
       >
-        <slot name="logo">
-          <NuxtLink to="/" class="flex items-center justify-center">
-            <component
-              :is="
-                app.tairo.sidebar.logo.resolve === false
-                  ? app.tairo.sidebar.logo.component
-                  : resolveComponent(app.tairo.sidebar.logo.component)
-              "
-              v-bind="app.tairo.sidebar.logo.props"
-            ></component>
-          </NuxtLink>
-        </slot>
-      </div>
-    </TairoNavigationSidebar>
+        <div
+          v-if="app.tairo.sidebar?.logo?.component"
+          class="flex h-16 w-full items-center justify-center"
+        >
+          <slot name="logo">
+            <NuxtLink to="/" class="flex items-center justify-center">
+              <component
+                :is="
+                  app.tairo.sidebar.logo.resolve === false
+                    ? app.tairo.sidebar.logo.component
+                    : resolveComponent(app.tairo.sidebar.logo.component)
+                "
+                v-bind="app.tairo.sidebar.logo.props"
+              ></component>
+            </NuxtLink>
+          </slot>
+        </div>
+      </TairoNavigationSidebar>
+    </slot>
 
     <div :class="mainClass">
       <div
@@ -137,7 +139,7 @@ const mainClass = computed(() => {
 
     <!-- Overlay -->
     <div
-      class="bg-muted-800/60 fixed top-0 left-0 z-[99] h-full w-full cursor-pointer transition-opacity duration-300"
+      class="bg-muted-800/60 fixed left-0 top-0 z-[99] h-full w-full cursor-pointer transition-opacity duration-300"
       :class="
         panels.current && panels.showOverlay
           ? 'opacity-100 pointer-events-auto'

@@ -12,6 +12,7 @@ export default defineNuxtConfig({
      * with only your source code and no demo.
      */
     '..',
+    '../_layout_sidebar',
   ],
   typescript: {
     includeWorkspace: true,

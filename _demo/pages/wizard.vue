@@ -137,7 +137,7 @@ useHead({
 </script>
 
 <template>
-  <TairoLayout
+  <TairoSidebarLayout
     :toolbar="false"
     :sidebar="false"
     class="bg-muted-100 dark:bg-muted-900 min-h-screen w-full"
@@ -160,5 +160,5 @@ useHead({
       </div>
       <DemoWizardButtons />
     </form>
-  </TairoLayout>
+  </TairoSidebarLayout>
 </template>

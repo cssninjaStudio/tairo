@@ -17,7 +17,7 @@ function wrapVueMarkdown(source: string) {
         <DocSection title="Tairo layout" tag="1.0.0">
           <DocComponent label="Tairo layout component">
             <template #demo>
-              <div class="w-full flex items-end gap-6">
+              <div class="flex w-full items-end gap-6">
                 <WrapperDemo />
               </div>
             </template>
@@ -31,7 +31,7 @@ function wrapVueMarkdown(source: string) {
         </DocSection>
 
         <!-- Layout properties -->
-        <DocComponentMeta name="TairoLayout" />
+        <DocComponentMeta name="TairoSidebarLayout" />
         <DocComponentMeta name="TairoLogo" />
       </template>
       <template #toc>

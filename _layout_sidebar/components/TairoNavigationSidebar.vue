@@ -32,7 +32,7 @@ const subsidebarEnabled = computed(() => {
 
 <template>
   <div
-    class="pointer-events-none fixed top-0 left-0 z-[60] flex h-full xl:z-10"
+    class="pointer-events-none fixed left-0 top-0 z-[60] flex h-full xl:z-10"
   >
     <!-- Icon sidebar -->
     <div

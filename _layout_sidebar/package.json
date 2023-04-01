@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "name": "@cssninja/tairo-layout-sidebar",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "./nuxt.config.ts",
+  "engines": {
+    "node": ">=16.15",
+    "pnpm": ">=7"
+  },
+  "devDependencies": {
+    "nuxt": "3.3.2"
+  }
+}

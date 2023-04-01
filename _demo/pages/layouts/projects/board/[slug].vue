@@ -123,7 +123,7 @@ function onDrop(column: ColumnContent, dropResult: any) {
 </script>
 
 <template>
-  <TairoLayout
+  <TairoSidebarLayout
     horizontal-scroll
     class="bg-muted-100 dark:bg-muted-900 h-screen w-full"
   >
@@ -326,7 +326,7 @@ function onDrop(column: ColumnContent, dropResult: any) {
       </div>
       <div class="flex-shrink-0 w-6"></div>
     </div>
-  </TairoLayout>
+  </TairoSidebarLayout>
 </template>
 
 <style>

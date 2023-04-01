@@ -9,12 +9,11 @@
     "pnpm": ">=7"
   },
   "scripts": {
-    "dev": "nuxi prepare && nuxi dev .app",
+    "dev": "nuxi prepare && nuxi dev _app",
     "build": "nuxi build .app",
     "demo:dev": "pnpm demo:prepare && nuxi dev _demo",
     "demo:build": "pnpm demo:prepare && nuxi build _demo",
-    "doc:prepare": "pnpm demo:prepare && nuxi prepare _documentation",
-    "demo:prepare": "nuxi prepare && nuxi prepare _demo && nuxi prepare _documentation && pnpm demo:prepare-shiki",
+    "demo:prepare": "nuxi prepare && nuxi prepare _demo && nuxi prepare _documentation && nuxi prepare _layout_sidebar && pnpm demo:prepare-shiki",
     "demo:prepare-shiki": "esno ./_demo/scripts/prepare-shiki.ts",
     "test": "run-p test:*",
     "test:tsc": "pnpm demo:prepare && vue-tsc --noEmit",

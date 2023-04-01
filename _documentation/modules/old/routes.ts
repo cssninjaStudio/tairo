@@ -824,7 +824,7 @@ export const routes = {
             title: 'Layout',
             documentation: {
               category: 'Layout Elements',
-              components: ['TairoLayout', 'TairoLogo'],
+              components: ['TairoSidebarLayout', 'TairoLogo'],
               description:
                 "Tairo's layout and logo component provide an easy way and to handle layout variations and specific page overrides",
               icon: {

@@ -16,6 +16,7 @@ export default defineNuxtConfig({
      * with only your source code and no demo.
      */
     '..',
+    '../_layout_sidebar',
 
     process.env.ENABLE_DOCUMENTATION === 'true'
       ? resolve(__dirname, '../_documentation')

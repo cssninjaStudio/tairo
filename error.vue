@@ -44,7 +44,7 @@ const showStackTrace = ref(false)
 </script>
 
 <template>
-  <TairoLayout :sidebar="false">
+  <TairoSidebarLayout :sidebar="false">
     <template #toolbar-title>{{ app.tairo.title }}</template>
 
     <div class="pb-16">
@@ -147,7 +147,7 @@ const showStackTrace = ref(false)
         </div>
       </DevOnly>
     </div>
-  </TairoLayout>
+  </TairoSidebarLayout>
 </template>
 
 <style>

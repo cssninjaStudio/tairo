@@ -43,6 +43,13 @@ const codeTailwind = [
           <ol>
             <li>
               <p>
+                Set default layout in
+                <code>layouts/default.vue</code>
+              </p>
+              <pre><code>...</code></pre>
+            </li>
+            <li>
+              <p>
                 Define your app settings in
                 <code>app.config.ts</code>
                 <small>(logo, name, sidebars, panels, ...)</small>

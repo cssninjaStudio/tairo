@@ -48,7 +48,7 @@ const { data, pending, error, refresh } = await useFetch('/api/posts/', {
       <template #right>
         <BaseButton shape="curved" class="w-full sm:w-28">Home</BaseButton>
         <BaseButton shape="curved" color="primary" class="w-full sm:w-28">
-          <Icon name="lucide:plus" class="w-4 h-4" />
+          <Icon name="lucide:plus" class="h-4 w-4" />
           <span>New</span>
         </BaseButton>
       </template>
@@ -74,7 +74,7 @@ const { data, pending, error, refresh } = await useFetch('/api/posts/', {
         </div>
         <div v-else>
           <div
-            class="w-full grid sm:grid-cols-3 ltablet:grid-cols-4 lg:grid-cols-4 gap-4"
+            class="ltablet:grid-cols-4 grid w-full gap-4 sm:grid-cols-3 lg:grid-cols-4"
           >
             <TransitionGroup
               enter-active-class="transform-gpu"
@@ -93,14 +93,14 @@ const { data, pending, error, refresh } = await useFetch('/api/posts/', {
                 <div class="relative">
                   <img
                     :src="item.image"
-                    class="w-full h-40 rounded-lg object-cover"
+                    class="h-40 w-full rounded-lg object-cover"
                   />
                   <BaseTag
                     shape="full"
                     color="primary"
                     flavor="pastel"
                     condensed
-                    class="absolute top-3 left-3 translate-y-1 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300"
+                    class="absolute left-3 top-3 translate-y-1 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
                   >
                     {{ item.category }}
                   </BaseTag>
@@ -118,7 +118,7 @@ const { data, pending, error, refresh } = await useFetch('/api/posts/', {
                     </BaseHeading>
                   </div>
 
-                  <div class="flex items-center gap-2 mt-auto">
+                  <div class="mt-auto flex items-center gap-2">
                     <BaseAvatar
                       :src="item.author.avatar"
                       :text="item.author.initials"
@@ -127,11 +127,11 @@ const { data, pending, error, refresh } = await useFetch('/api/posts/', {
                     />
                     <div class="leading-none">
                       <h4
-                        class="font-sans text-sm font-medium leading-tight text-muted-800 dark:text-muted-100"
+                        class="text-muted-800 dark:text-muted-100 font-sans text-sm font-medium leading-tight"
                       >
                         {{ item.author.name }}
                       </h4>
-                      <p class="font-sans text-xs text-muted-400">
+                      <p class="text-muted-400 font-sans text-xs">
                         {{ item.published }}
                       </p>
                     </div>
