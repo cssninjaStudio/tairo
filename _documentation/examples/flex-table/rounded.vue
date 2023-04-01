@@ -64,10 +64,10 @@ const team = [
         <div class="flex items-center">
           <BaseAvatar :src="member.src" size="sm" />
           <div class="ml-3 leading-none">
-            <h4 class="font-heading text-sm font-semibold">
+            <h4 class="font-sans text-sm font-medium">
               {{ member.name }}
             </h4>
-            <p class="font-alt text-xs text-muted-400">
+            <p class="font-sans font-normal text-xs text-muted-400">
               {{ member.role }}
             </p>
           </div>
@@ -77,7 +77,7 @@ const team = [
         {{ member.expertise }}
       </TairoFlexTableCell>
       <TairoFlexTableCell type="stable" data-content="Rate">
-        ${{ member.rate }}/hour
+        <span class="font-medium">${{ member.rate }}/hour</span>
       </TairoFlexTableCell>
       <TairoFlexTableCell type="stable" data-content="Status">
         <BaseTag

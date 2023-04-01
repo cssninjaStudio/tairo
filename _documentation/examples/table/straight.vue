@@ -68,7 +68,7 @@ const team = [
       <TairoTableCell light>
         {{ member.expertise }}
       </TairoTableCell>
-      <TairoTableCell>\${{ member.rate }}/hour</TairoTableCell>
+      <TairoTableCell>${{ member.rate }}/hour</TairoTableCell>
       <TairoTableCell>
         <BaseTag
           v-if="member.status === 'Available'"

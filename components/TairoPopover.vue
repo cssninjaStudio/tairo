@@ -54,7 +54,7 @@ const props = withDefaults(
           ]"
         >
           <div
-            class="border-muted-200 after:border-muted-200 dark:border-muted-600 dark:bg-muted-700 dark:after:border-muted-600 dark:after:bg-muted-700 relative w-full rounded-lg border bg-white shadow-lg after:absolute after:-top-2 after:h-4 after:w-4 after:rotate-[-135deg] after:border-r after:border-b after:bg-white after:content-['']"
+            class="border-muted-200 after:border-muted-200 dark:border-muted-600 dark:bg-muted-700 dark:after:border-muted-600 dark:after:bg-muted-700 relative w-full rounded-lg border bg-white shadow-xl shadow-muted-300/30 dark:shadow-muted-800/20 after:absolute after:-top-2 after:h-4 after:w-4 after:rotate-[-135deg] after:border-r after:border-b after:bg-white after:content-['']"
             :class="[
               props.orientation === 'start' && 'after:left-6',
               props.orientation === 'end' && 'after:right-6',

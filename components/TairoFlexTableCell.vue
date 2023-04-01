@@ -21,7 +21,7 @@ const props = withDefaults(defineProps<FlexTableCellProps>(), {
         'md:line-clamp-1 sm:w-[90px] md:w-[110px] md:shrink-0',
       props.light
         ? 'text-muted-500 dark:text-white'
-        : 'text-muted-800 font-semibold dark:text-white',
+        : 'text-muted-800 dark:text-white',
     ]"
   >
     <slot></slot>

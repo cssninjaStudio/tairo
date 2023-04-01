@@ -71,7 +71,7 @@ const props = defineProps<{
         <div
           v-for="(stat, index) in props.stats.slice(0, 2)"
           :key="index"
-          class="relative flex w-full rounded-lg p-1"
+          class="relative flex w-full rounded-lg px-1 py-2"
         >
           <BaseIconBox
             v-if="stat.icon && !stat.image"
@@ -138,16 +138,17 @@ const props = defineProps<{
         >
           {{ props.footerTitle }}
         </BaseHeading>
-        <Text size="xs" class="text-muted-400">
+        <BaseText size="xs" class="text-muted-400">
           {{ props.footerText }}
-        </Text>
+        </BaseText>
       </div>
       <span class="flex items-center">
-        <span
-          class="font-alt text-primary-500 mr-1 text-sm font-semibold transition-colors"
+        <NuxtLink
+          to="#"
+          class="font-sans text-primary-500 mr-1 text-sm font-medium underline-offset-4 hover:underline transition-colors"
         >
           {{ props.linkLabel }}
-        </span>
+        </NuxtLink>
       </span>
     </NuxtLink>
   </div>
