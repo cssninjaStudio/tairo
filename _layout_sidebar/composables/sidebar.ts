@@ -86,20 +86,14 @@ export function useSidebar() {
 
   const currentName = useState('sidebar-name', () => {
     const item = sidebars.value?.find(
-      ({ activePath }) => activePath && route.fullPath.startsWith(activePath),
+      (bar) => bar?.activePath && route.fullPath.startsWith(bar.activePath),
     )
     return item?.name || ''
   })
-  const isOpen = useState('sidebar-open', () => false)
+  const isOpen = useState<boolean | undefined>('sidebar-open', () => undefined)
 
   onBeforeMount(() => {
-    console.log(
-      'sidebar',
-      isOpen.value,
-      app.tairo.sidebar?.startOpen,
-      currentName.value,
-    )
-    if (app.tairo.sidebar?.startOpen) {
+    if (app.tairo.sidebar?.startOpen && isOpen.value === undefined) {
       isOpen.value = Boolean(currentName.value)
     }
   })
@@ -128,6 +122,18 @@ export function useSidebar() {
     }
 
     isOpen.value = !isOpen.value
+  }
+
+  function close(unselect = false) {
+    isOpen.value = false
+    if (unselect) {
+      currentName.value = ''
+    }
+  }
+
+  function open(name: string) {
+    currentName.value = name
+    isOpen.value = true
   }
 
   if (process.client) {
@@ -159,5 +165,7 @@ export function useSidebar() {
     currentName,
     isOpen,
     toggle,
+    close,
+    open,
   }
 }

@@ -8,21 +8,32 @@ const route = useRoute()
 const router = useRouter()
 
 const contentPath = computed(() => {
-  const slug = route.params.slug as string[]
+  const slug = route.params?.slug as string[]
+  if (!slug || slug.length === 0) {
+    return '/documentation'
+  }
   return `/documentation/${slug.join('/')}`
 })
 
 const { data, pending } = await useAsyncData(
   'page-data',
-  () => queryContent(contentPath.value).findOne(),
+  () =>
+    queryContent()
+      .where({
+        _path: contentPath.value,
+      })
+      .findOne(),
   {
     watch: [contentPath],
   },
 )
 
 watchEffect(() => {
+  const title = data.value?.title
+  if (pending.value) return
+
   // setting the title in the route meta will update the page title
-  route.meta.title = data.value?.title || 'Page not found'
+  route.meta.title = title || 'Page not found'
 })
 
 useHead({
@@ -65,7 +76,7 @@ const breadcrumb = computed(() => {
     })
   }
 
-  if (data.value) {
+  if (data.value && data.value._path !== '/documentation') {
     items.push({
       label: data.value?.title,
     })
@@ -80,7 +91,7 @@ const breadcrumb = computed(() => {
     <BaseBreadcrumb :items="breadcrumb" />
 
     <div class="flex">
-      <div class="w-full xl:w-3/4">
+      <div class="w-full lg:w-3/4">
         <ContentRenderer :value="(data as any)">
           <template #empty>
             <DocComponentDemo>
@@ -95,7 +106,10 @@ const breadcrumb = computed(() => {
           </template>
         </ContentRenderer>
       </div>
-      <div v-if="!pending && data" class="relative hidden xl:block xl:w-1/4">
+      <div
+        v-if="!pending && data"
+        class="relative hidden lg:mr-6 lg:block lg:w-1/4 xl:mr-0"
+      >
         <DocLayoutToc :key="`toc-${data._path}`" />
       </div>
     </div>
