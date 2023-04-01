@@ -25,7 +25,7 @@ function wrapExternalLinks(string: string) {
       :title="`<${docs.meta?.pascalName}>`"
     >
       <div
-        class="border-muted-200 divansition-shadow dark:border-muted-700 dark:bg-muted-800 rounded-md border bg-white duration-300 hover:shadow-lg"
+        class="border-muted-200 divansition-shadow dark:border-muted-700 dark:bg-muted-800 rounded-lg border bg-white duration-300 hover:shadow-lg hover:shadow-muted-300/30 dark:hover:shadow-muted-800/20"
       >
         <div v-if="docs.noOptions" class="mx-auto w-full">
           <div class="px-6 pb-2 pt-6">
