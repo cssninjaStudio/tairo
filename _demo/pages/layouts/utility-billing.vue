@@ -89,12 +89,12 @@ const billingCycles = ref('monthly')
     action=""
     method="POST"
     @submit.prevent
-    class="w-full max-w-4xl mx-auto pb-16"
+    class="mx-auto w-full max-w-4xl pb-16"
   >
     <!-- Header -->
-    <div class="flex flex-col md:flex-row md:items-center justify-between mb-8">
+    <div class="mb-8 flex flex-col justify-between md:flex-row md:items-center">
       <div
-        class="flex flex-col md:flex-row items-center gap-4 text-center md:text-left max-w-[425px] ltablet:max-w-full lg:max-w-full"
+        class="ltablet:max-w-full flex max-w-[425px] flex-col items-center gap-4 text-center md:flex-row md:text-left lg:max-w-full"
       >
         <BaseAvatar src="/img/avatars/2.svg" size="lg" />
         <div>
@@ -115,7 +115,7 @@ const billingCycles = ref('monthly')
         </div>
       </div>
       <div
-        class="flex items-center justify-center md:justify-start gap-2 mt-4 md:mt-0"
+        class="mt-4 flex items-center justify-center gap-2 md:mt-0 md:justify-start"
       >
         <BaseButton type="submit" color="primary">
           <span>Save for</span>
@@ -136,14 +136,14 @@ const billingCycles = ref('monthly')
         >
           <BaseCard
             shape="rounded"
-            class="group relative p-6 text-center text-muted-400/50 peer-checked:!border-success-500 peer-checked:text-success-500 peer-checked:[&_.child]:!opacity-100"
+            class="text-muted-400/50 peer-checked:!border-success-500 peer-checked:text-success-500 group relative p-6 text-center peer-checked:[&_.child]:!opacity-100"
           >
             <div
-              class="child opacity-0 absolute top-3 right-3 h-7 w-7 flex items-center justify-center rounded-full border border-muted-200 dark:border-muted-700 bg-white dark:bg-muted-800"
+              class="child border-muted-200 dark:border-muted-700 dark:bg-muted-800 absolute right-3 top-3 flex h-7 w-7 items-center justify-center rounded-full border bg-white opacity-0"
             >
               <Icon name="lucide:check" class="h-3 w-3 text-current" />
             </div>
-            <TairoLogo class="h-9 w-9 mx-auto" />
+            <TairoLogo class="mx-auto mb-2 h-9 w-9" />
             <BaseHeading
               as="h4"
               size="sm"
@@ -164,14 +164,14 @@ const billingCycles = ref('monthly')
         >
           <BaseCard
             shape="rounded"
-            class="group relative p-6 text-center text-muted-400/50 peer-checked:!border-yellow-400 peer-checked:text-yellow-400 peer-checked:[&_.child]:!opacity-100"
+            class="text-muted-400/50 group relative p-6 text-center peer-checked:!border-yellow-400 peer-checked:text-yellow-400 peer-checked:[&_.child]:!opacity-100"
           >
             <div
-              class="child opacity-0 absolute top-3 right-3 h-7 w-7 flex items-center justify-center rounded-full border border-muted-200 dark:border-muted-700 bg-white dark:bg-muted-800"
+              class="child border-muted-200 dark:border-muted-700 dark:bg-muted-800 absolute right-3 top-3 flex h-7 w-7 items-center justify-center rounded-full border bg-white opacity-0"
             >
               <Icon name="lucide:check" class="h-3 w-3 text-current" />
             </div>
-            <TairoLogo class="h-9 w-9 mx-auto" />
+            <TairoLogo class="mx-auto mb-2 h-9 w-9" />
             <BaseHeading
               as="h4"
               size="sm"
@@ -192,14 +192,14 @@ const billingCycles = ref('monthly')
         >
           <BaseCard
             shape="rounded"
-            class="group relative p-6 text-center text-muted-400/50 peer-checked:!border-indigo-500 peer-checked:text-indigo-500 peer-checked:[&_.child]:!opacity-100"
+            class="text-muted-400/50 group relative p-6 text-center peer-checked:!border-indigo-500 peer-checked:text-indigo-500 peer-checked:[&_.child]:!opacity-100"
           >
             <div
-              class="child opacity-0 absolute top-3 right-3 h-7 w-7 flex items-center justify-center rounded-full border border-muted-200 dark:border-muted-700 bg-white dark:bg-muted-800"
+              class="child border-muted-200 dark:border-muted-700 dark:bg-muted-800 absolute right-3 top-3 flex h-7 w-7 items-center justify-center rounded-full border bg-white opacity-0"
             >
               <Icon name="lucide:check" class="h-3 w-3 text-current" />
             </div>
-            <TairoLogo class="h-9 w-9 mx-auto" />
+            <TairoLogo class="mx-auto mb-2 h-9 w-9" />
             <BaseHeading
               as="h4"
               size="sm"
@@ -220,14 +220,14 @@ const billingCycles = ref('monthly')
         >
           <BaseCard
             shape="rounded"
-            class="group relative p-6 text-center text-muted-400/50 peer-checked:!border-primary-500 peer-checked:text-primary-500 peer-checked:[&_.child]:!opacity-100"
+            class="text-muted-400/50 peer-checked:!border-primary-500 peer-checked:text-primary-500 group relative p-6 text-center peer-checked:[&_.child]:!opacity-100"
           >
             <div
-              class="child opacity-0 absolute top-3 right-3 h-7 w-7 flex items-center justify-center rounded-full border border-muted-200 dark:border-muted-700 bg-white dark:bg-muted-800"
+              class="child border-muted-200 dark:border-muted-700 dark:bg-muted-800 absolute right-3 top-3 flex h-7 w-7 items-center justify-center rounded-full border bg-white opacity-0"
             >
               <Icon name="lucide:check" class="h-3 w-3 text-current" />
             </div>
-            <TairoLogo class="h-9 w-9 mx-auto" />
+            <TairoLogo class="mx-auto mb-2 h-9 w-9" />
             <BaseHeading
               as="h4"
               size="sm"
@@ -249,7 +249,7 @@ const billingCycles = ref('monthly')
             <div>
               <BaseText size="md" lead="tight" weight="semibold"
                 >${{ selectedPlan?.price.monthly }}
-                <span class="font-normal text-muted-400"
+                <span class="text-muted-400 font-normal"
                   >/per month</span
                 ></BaseText
               >
@@ -308,10 +308,10 @@ const billingCycles = ref('monthly')
     </div>
     <!-- Controls -->
     <div class="grid grid-cols-12 gap-6">
-      <div class="col-span-12 sm:col-span-6 ltablet:col-span-7 lg:col-span-7">
+      <div class="ltablet:col-span-7 col-span-12 sm:col-span-6 lg:col-span-7">
         <div class="flex flex-col gap-6">
           <BaseCard class="p-6">
-            <div class="flex items-center justify-between mb-4">
+            <div class="mb-4 flex items-center justify-between">
               <BaseHeading as="h4" size="sm" weight="semibold">
                 Used seats
               </BaseHeading>
@@ -322,10 +322,10 @@ const billingCycles = ref('monthly')
               </div>
             </div>
             <div
-              class="flex items-center xs:flex-wrap ptablet:flex-wrap ltablet:justify-between lg:justify-between gap-2"
+              class="xs:flex-wrap ptablet:flex-wrap ltablet:justify-between flex items-center gap-2 lg:justify-between"
             >
               <div
-                class="flex items-center xs:flex-wrap ptablet:flex-wrap gap-2"
+                class="xs:flex-wrap ptablet:flex-wrap flex items-center gap-2"
               >
                 <BaseAvatar
                   src="/img/avatars/2.svg"
@@ -364,7 +364,7 @@ const billingCycles = ref('monthly')
               <div>
                 <button
                   type="button"
-                  class="h-10 w-10 rounded-full border-2 border-dashed border-muted-200 dark:border-muted-700 hover:border-solid hover:border-primary-500 dark:hover:border-primary-500 text-muted-400 dark:text-muted-600 hover:text-primary-500 dark:hover:text-primary-500 transition-all duration-300"
+                  class="border-muted-200 dark:border-muted-700 hover:border-primary-500 dark:hover:border-primary-500 text-muted-400 dark:text-muted-600 hover:text-primary-500 dark:hover:text-primary-500 h-10 w-10 rounded-full border-2 border-dashed transition-all duration-300 hover:border-solid"
                   data-tooltip="Manage plan seats"
                 >
                   <Icon name="lucide:edit-3" class="h-4 w-4" />
@@ -373,7 +373,7 @@ const billingCycles = ref('monthly')
             </div>
           </BaseCard>
           <BaseCard class="p-6">
-            <div class="flex items-center justify-between mb-8">
+            <div class="mb-8 flex items-center justify-between">
               <BaseHeading as="h4" size="sm" weight="semibold">
                 Billing options
               </BaseHeading>
@@ -410,13 +410,13 @@ const billingCycles = ref('monthly')
             </div>
           </BaseCard>
           <BaseCard class="p-6">
-            <div class="flex items-center justify-between mb-8">
+            <div class="mb-8 flex items-center justify-between">
               <BaseHeading as="h4" size="sm" weight="semibold">
                 Billing cycle
               </BaseHeading>
               <div>
                 <NuxtLink
-                  class="font-sans text-xs text-primary-500 underline-offset-4 underline"
+                  class="text-primary-500 font-sans text-xs underline underline-offset-4"
                   >My invoices</NuxtLink
                 >
               </div>
@@ -452,7 +452,7 @@ const billingCycles = ref('monthly')
           </BaseCard>
         </div>
       </div>
-      <div class="col-span-12 sm:col-span-6 ltablet:col-span-5 lg:col-span-5">
+      <div class="ltablet:col-span-5 col-span-12 sm:col-span-6 lg:col-span-5">
         <BaseCard class="p-6">
           <div class="mb-4">
             <BaseHeading as="h4" size="sm" weight="semibold">
@@ -484,7 +484,7 @@ const billingCycles = ref('monthly')
                   />
                 </div>
                 <div class="col-span-12">
-                  <div class="grid sm:grid-cols-3 gap-4">
+                  <div class="grid gap-4 sm:grid-cols-3">
                     <div>
                       <BaseSelect
                         v-model="cardInfo.expiryMonth"

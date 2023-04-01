@@ -45,15 +45,11 @@ const breadcrumb = computed(() => {
         >
           <div>
             <BaseCard shape="rounded" class="p-8">
-              <BaseHeading
-                as="h2"
-                size="2xl"
-                weight="medium"
-                class="text-muted-800 mb-5 dark:text-white"
+              <div
+                class="text-muted-400 hover:text-primary-500 dark:text-muted-700 dark:hover:text-primary-500 mb-7 block transition-colors duration-300"
               >
-                <strong>{{ app.tairo.title }}</strong>
-                <span>Overview</span>
-              </BaseHeading>
+                <TairoLogoText class="h-8 transition-colors duration-300" />
+              </div>
               <BaseParagraph
                 size="sm"
                 class="text-muted-500 dark:text-muted-400 mb-4"
@@ -80,62 +76,73 @@ const breadcrumb = computed(() => {
             </BaseCard>
           </div>
           <div class="grid grid-cols-2 gap-2 xl:gap-6">
-            <BaseCard shape="rounded" class="p-8 text-center">
-              <Icon
-                name="logos:nuxt-icon"
-                class="mx-auto mb-2 block h-10 w-10"
-              />
-              <BaseHeading
-                as="h4"
-                size="sm"
-                weight="semibold"
-                class="text-muted-800 dark:text-white"
-              >
-                Nuxt JS
-              </BaseHeading>
-            </BaseCard>
-            <BaseCard shape="rounded" class="p-8 text-center">
-              <Icon
-                name="vscode-icons:folder-type-typescript"
-                class="mx-auto mb-2 block h-10 w-10"
-              />
-              <BaseHeading
-                as="h4"
-                size="sm"
-                weight="semibold"
-                class="text-muted-800 dark:text-white"
-              >
-                Typescript
-              </BaseHeading>
-            </BaseCard>
-            <BaseCard shape="rounded" class="p-8 text-center">
-              <Icon
-                name="logos:tailwindcss-icon"
-                class="mx-auto mb-2 block h-10 w-10"
-              />
-              <BaseHeading
-                as="h4"
-                size="sm"
-                weight="semibold"
-                class="text-muted-800 dark:text-white"
-              >
-                Tailwind CSS
-              </BaseHeading>
-            </BaseCard>
-            <BaseCard shape="rounded" class="p-8 text-center">
-              <Icon
-                name="carbon:tropical-storm-tracks"
-                class="text-primary-500 dark:text-primary-400 mx-auto mb-2 block h-10 w-10 scale-95"
-              />
-              <BaseHeading
-                as="h4"
-                size="sm"
-                weight="semibold"
-                class="text-muted-800 dark:text-white"
-              >
-                Shuriken UI
-              </BaseHeading>
-            </BaseCard>
+            <NuxtLink to="https://nuxt.com/docs" class="group">
+              <BaseCard shape="rounded" class="p-8 text-center">
+                <Icon
+                  name="simple-icons:nuxtdotjs"
+                  class="text-muted-400 group-hover:text-primary-500 mx-auto mb-2 block h-10 w-10 transition-colors duration-300"
+                />
+                <BaseHeading
+                  as="h4"
+                  size="sm"
+                  weight="semibold"
+                  class="text-muted-800 dark:text-white"
+                >
+                  Nuxt 3
+                </BaseHeading>
+              </BaseCard>
+            </NuxtLink>
+            <NuxtLink
+              to="https://tailwindcss.com/docs/installation"
+              class="group"
+            >
+              <BaseCard shape="rounded" class="p-8 text-center">
+                <Icon
+                  name="simple-icons:tailwindcss"
+                  class="text-muted-400 group-hover:text-primary-500 mx-auto mb-2 block h-10 w-10 transition-colors duration-300"
+                />
+                <BaseHeading
+                  as="h4"
+                  size="sm"
+                  weight="semibold"
+                  class="text-muted-800 dark:text-white"
+                >
+                  Tailwind CSS
+                </BaseHeading>
+              </BaseCard>
+            </NuxtLink>
+            <NuxtLink to="/documentation/shuriken-ui" class="group">
+              <BaseCard shape="rounded" class="p-8 text-center">
+                <Icon
+                  name="game-icons:sharp-shuriken"
+                  class="text-muted-400 group-hover:text-primary-500 mx-auto mb-2 block h-10 w-10 rotate-45 scale-95 transition-colors duration-300"
+                />
+                <BaseHeading
+                  as="h4"
+                  size="sm"
+                  weight="semibold"
+                  class="text-muted-800 dark:text-white"
+                >
+                  Shuriken UI
+                </BaseHeading>
+              </BaseCard>
+            </NuxtLink>
+            <NuxtLink to="https://www.typescriptlang.org/" class="group">
+              <BaseCard shape="rounded" class="p-8 text-center">
+                <Icon
+                  name="bxl:typescript"
+                  class="text-muted-400 group-hover:text-primary-500 mx-auto mb-2 block h-10 w-10 transition-colors duration-300"
+                />
+                <BaseHeading
+                  as="h4"
+                  size="sm"
+                  weight="semibold"
+                  class="text-muted-800 dark:text-white"
+                >
+                  Typescript
+                </BaseHeading>
+              </BaseCard>
+            </NuxtLink>
           </div>
         </div>
 

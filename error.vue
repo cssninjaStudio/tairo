@@ -45,7 +45,14 @@ const showStackTrace = ref(false)
 
 <template>
   <TairoSidebarLayout :sidebar="false">
-    <template #toolbar-title>{{ app.tairo.title }}</template>
+    <template #toolbar-title>
+      <NuxtLink
+        to="/"
+        class="text-muted-400 hover:text-primary-500 dark:text-muted-700 dark:hover:text-primary-500 transition-colors duration-300"
+      >
+        <TairoLogoText class="h-7" />
+      </NuxtLink>
+    </template>
 
     <div class="pb-16">
       <BasePlaceholderPage

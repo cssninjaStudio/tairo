@@ -1,12 +1,72 @@
 <template>
-  <svg viewBox="0 0 500 500">
-    <path
-      fill="currentColor"
-      d="M195.57,83.36A290.54,290.54,0,0,1,224.2,56H0L66.45,176.83h69.13C149.28,145.92,168.5,113,195.57,83.36Z"
-    />
-    <path
-      fill="currentColor"
-      d="M289.11,56c-4.81,2.87-9.83,6.06-15,9.61h0c-3.81,2.63-7.71,5.46-11.66,8.51A283.64,283.64,0,0,0,232,101.34q-3.09,3.18-6.18,6.57-3.75,4.11-7.3,8.29a337.9,337.9,0,0,0-40.78,60.63c-25.39,47.94-39.66,96.34-44.8,122.74,15.77,30.87,34.57,59.85,50.34,90.73Q197,417.15,210.67,444c2.58-39.92,13.41-134.9,72.49-213.37a277.15,277.15,0,0,1,53.12-53.82h95.85L500,56Z"
-    />
+  <svg
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    x="0px"
+    y="0px"
+    viewBox="0 0 500 500"
+    style="enable-background: new 0 0 500 500"
+    xml:space="preserve"
+    class="shrink-0"
+  >
+    <g>
+      <g>
+        <defs>
+          <path
+            id="LOGOSVGID_1_"
+            d="M228.4,181.2c59.6,0,107.8,48.3,107.8,107.8c0,59.6-48.3,107.8-107.8,107.8
+					c-59.6,0-107.8-48.3-107.8-107.8C120.6,229.5,168.8,181.2,228.4,181.2 M228.4,78c-116.5,0-211,94.5-211,211
+					c0,116.5,94.5,211,211,211c116.5,0,211-94.5,211-211c0-25.2-4.4-49.5-12.6-71.9c-5.2-14.4-16.9-24.2-32-26.9
+					c-45.1-7.9-82-39.7-97.1-81.9c-5.2-14.5-16.8-24.3-31.9-27C253.7,79.2,241.2,78,228.4,78z"
+          />
+        </defs>
+        <use
+          xlink:href="#LOGOSVGID_1_"
+          clip-rule="evenodd"
+          fill-rule="evenodd"
+          fill="currentColor"
+          class="overflow-visible"
+        />
+        <clipPath id="LOGOSVGID_2_">
+          <use xlink:href="#LOGOSVGID_1_" class="overflow-visible" />
+        </clipPath>
+        <rect
+          x="17.4"
+          y="78"
+          clip-path="url(#LOGOSVGID_2_)"
+          width="422"
+          height="422"
+          fill="currentColor"
+        />
+      </g>
+      <g>
+        <defs>
+          <path
+            id="LOGOSVGID_3_"
+            d="M416.8,0c36.3,0,65.8,29.5,65.8,65.8c0,36.3-29.5,65.8-65.8,65.8c-36.3,0-65.8-29.5-65.8-65.8
+					C351,29.5,380.5,0,416.8,0"
+          />
+        </defs>
+        <use
+          xlink:href="#LOGOSVGID_3_"
+          clip-rule="evenodd"
+          fill-rule="evenodd"
+          fill="currentColor"
+          class="overflow-visible"
+        />
+        <clipPath id="LOGOSVGID_4_">
+          <use xlink:href="#LOGOSVGID_3_" class="overflow-visible" />
+        </clipPath>
+        <rect
+          x="351"
+          y="0"
+          clip-path="url(#LOGOSVGID_4_)"
+          width="131.6"
+          height="131.6"
+          fill="currentColor"
+        />
+      </g>
+    </g>
   </svg>
 </template>
