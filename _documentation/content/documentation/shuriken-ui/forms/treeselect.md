@@ -1,5 +1,5 @@
 ---
-title: TreeSelect
+title: Tree Select
 category: Base Forms
 components: 
   - BaseTreeSelect
