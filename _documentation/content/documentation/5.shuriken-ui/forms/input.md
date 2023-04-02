@@ -1,5 +1,5 @@
 ---
-title: Inputs
+title: BaseInput
 category: Base Forms
 components: 
   - BaseInput

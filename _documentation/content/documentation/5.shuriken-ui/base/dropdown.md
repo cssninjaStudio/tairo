@@ -1,5 +1,5 @@
 ---
-title: Dropdowns
+title: BaseDropdown
 category: Base UI Elements
 components:
   - BaseDropdown

@@ -1,5 +1,5 @@
 ---
-title: Table
+title: TairoTable
 category: Layout Elements
 components:
   - TairoTable

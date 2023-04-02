@@ -1,5 +1,5 @@
 ---
-title: Progress
+title: BaseProgress
 category: Base UI Elements
 components:
   - BaseProgress

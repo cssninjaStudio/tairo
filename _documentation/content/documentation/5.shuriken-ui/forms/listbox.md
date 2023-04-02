@@ -1,5 +1,5 @@
 ---
-title: Listbox
+title: BaseListbox
 category: Base Forms
 components: 
   - BaseListbox

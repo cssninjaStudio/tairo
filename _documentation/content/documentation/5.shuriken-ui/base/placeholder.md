@@ -1,5 +1,5 @@
 ---
-title: Placeholder
+title: BasePlaceholderPage
 category: Base UI Elements
 components:
   - BasePlaceholderPage

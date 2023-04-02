@@ -1,5 +1,5 @@
 ---
-title: Button icon
+title: BaseButtonIcon
 category: Base UI Elements
 components:
   - BaseButtonIcon

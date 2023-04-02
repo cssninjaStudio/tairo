@@ -1,5 +1,5 @@
 ---
-title: Icon box
+title: BaseIconBox
 category: Base UI Elements
 components:
   - BaseIconBox

@@ -1,5 +1,5 @@
 ---
-title: Focus loop
+title: BaseFocusLoop
 category: Base UI Elements
 components:
   - BaseFocusLoop

@@ -1,5 +1,5 @@
 ---
-title: File inputs
+title: BaseInputFile
 category: Base Forms
 components: 
   - BaseInputFile

@@ -1,5 +1,5 @@
 ---
-title: Textarea
+title: BaseTextarea
 category: Base Forms
 components: 
   - BaseTextarea

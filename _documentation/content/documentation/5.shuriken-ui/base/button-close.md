@@ -1,5 +1,5 @@
 ---
-title: Button close
+title: BaseButtonClose
 category: Base UI Elements
 components:
   - BaseButtonClose

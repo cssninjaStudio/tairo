@@ -1,5 +1,5 @@
 ---
-title: Content Wrapper
+title: TairoContentWrapper
 category: Layout Elements
 components:
   - TairoContentWrapper

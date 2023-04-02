@@ -1,5 +1,5 @@
 ---
-title: Snack
+title: BaseSnack
 category: Base UI Elements
 components:
   - BaseSnack

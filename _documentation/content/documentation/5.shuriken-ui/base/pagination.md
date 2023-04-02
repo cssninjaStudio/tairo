@@ -1,5 +1,5 @@
 ---
-title: Pagination
+title: BasePagination
 category: Base UI Elements
 components:
   - BasePagination

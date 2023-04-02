@@ -1,5 +1,5 @@
 ---
-title: Accordions
+title: BaseAccordion
 category: Base UI Elements
 components:
   - BaseAccordion

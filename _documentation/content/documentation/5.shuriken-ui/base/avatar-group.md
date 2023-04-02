@@ -1,5 +1,5 @@
 ---
-title: Avatar groups
+title: BaseAvatarGroup
 category: Base UI Elements
 components:
   - BaseAvatarGroup

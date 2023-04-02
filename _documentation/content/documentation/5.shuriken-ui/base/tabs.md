@@ -1,5 +1,5 @@
 ---
-title: Nav tabs
+title: BaseTabs
 category: Base UI Elements
 components:
   - BaseTabs

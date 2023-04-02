@@ -1,5 +1,5 @@
 ---
-title: Popover
+title: TairoPopover
 category: Layout Elements
 components:
   - TairoPopover

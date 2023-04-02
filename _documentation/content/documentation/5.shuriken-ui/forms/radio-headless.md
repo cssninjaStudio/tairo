@@ -1,5 +1,5 @@
 ---
-title: Radios Headless
+title: BaseRadioHeadless
 category: Base Forms
 components: 
   - BaseRadioHeadless

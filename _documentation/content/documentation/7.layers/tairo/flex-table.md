@@ -1,5 +1,5 @@
 ---
-title: Flex table
+title: TairoFlexTable
 category: Layout Elements
 components:
   - TairoFlexTable

@@ -1,5 +1,5 @@
 ---
-title: Theme toggle
+title: BaseThemeToggle
 category: Base UI Elements
 components:
   - BaseThemeToggle

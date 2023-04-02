@@ -1,5 +1,5 @@
 ---
-title: Checkbox
+title: BaseCheckbox
 category: Base Forms
 components: 
   - BaseCheckbox

@@ -1,5 +1,5 @@
 ---
-title: Message
+title: BaseMessage
 category: Base UI Elements
 components:
   - BaseMessage

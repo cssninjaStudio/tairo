@@ -1,5 +1,5 @@
 ---
-title: Button action
+title: BaseButtonAction
 category: Base UI Elements
 components:
   - BaseButtonAction

@@ -1,5 +1,5 @@
 ---
-title: Buttons
+title: BaseButton
 category: Base UI Elements
 components:
   - BaseButton

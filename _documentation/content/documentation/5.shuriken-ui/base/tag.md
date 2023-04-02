@@ -1,5 +1,5 @@
 ---
-title: Tags
+title: BaseTag
 category: Base UI Elements
 components:
   - BaseTag

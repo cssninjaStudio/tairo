@@ -1,5 +1,5 @@
 ---
-title: Modal dialog
+title: TairoModal
 category: Layout Elements
 components:
   - TairoModal

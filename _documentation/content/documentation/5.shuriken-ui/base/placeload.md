@@ -1,5 +1,5 @@
 ---
-title: Placeload
+title: BasePlaceload
 category: Base UI Elements
 components:
   - BasePlaceload

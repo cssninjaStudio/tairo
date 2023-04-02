@@ -1,5 +1,5 @@
 ---
-title: Typography
+title: BaseHeading
 category: Base UI Elements
 components:
   - BaseHeading

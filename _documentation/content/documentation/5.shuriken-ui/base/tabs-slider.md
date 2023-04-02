@@ -1,5 +1,5 @@
 ---
-title: Tabs slider
+title: BaseTabSlider
 category: Base UI Elements
 components:
   - BaseTabSlider

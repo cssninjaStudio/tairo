@@ -1,5 +1,5 @@
 ---
-title: Cards
+title: BaseCard
 category: Base UI Elements
 components:
   - BaseCard

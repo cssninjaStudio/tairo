@@ -1,5 +1,5 @@
 ---
-title: Selects
+title: BaseSelect
 category: Base Forms
 components: 
   - BaseSelect

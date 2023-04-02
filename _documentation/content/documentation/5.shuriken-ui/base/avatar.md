@@ -1,5 +1,5 @@
 ---
-title: Avatars
+title: BaseAvatar
 category: Base UI Elements
 components:
   - BaseAvatar

@@ -1,5 +1,5 @@
 ---
-title: Radios
+title: BaseRadio
 category: Base Forms
 components:
   - BaseRadio

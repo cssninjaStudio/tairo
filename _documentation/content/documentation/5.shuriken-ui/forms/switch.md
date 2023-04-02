@@ -1,5 +1,5 @@
 ---
-title: Switches
+title: BaseSwitch
 category: Base Forms
 components: 
   - BaseSwitchThin

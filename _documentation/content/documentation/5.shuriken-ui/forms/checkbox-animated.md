@@ -1,5 +1,5 @@
 ---
-title: Checkbox Animated
+title: BaseCheckboxAnimated
 category: Base Forms
 components: 
   - BaseCheckboxAnimated

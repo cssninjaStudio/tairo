@@ -1,5 +1,5 @@
 ---
-title: Autocomplete
+title: BaseAutocomplete
 category: Base Forms
 components:
   - BaseAutocomplete

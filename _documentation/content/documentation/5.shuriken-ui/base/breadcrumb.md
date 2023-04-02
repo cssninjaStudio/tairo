@@ -1,5 +1,5 @@
 ---
-title: Breadcrumbs
+title: BaseBreadcrumb
 category: Base UI Elements
 components:
   - BaseBreadcrumb

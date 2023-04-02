@@ -1,5 +1,5 @@
 ---
-title: Prose text
+title: BaseProse
 category: Base UI Elements
 components:
   - BaseProse

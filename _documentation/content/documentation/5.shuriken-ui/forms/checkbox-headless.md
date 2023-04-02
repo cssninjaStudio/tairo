@@ -1,5 +1,5 @@
 ---
-title: Checkbox Headless
+title: BaseCheckboxHeadless
 category: Base Forms
 components: 
   - BaseCheckboxHeadless
