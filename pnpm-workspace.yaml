@@ -3,3 +3,4 @@ packages:
   - _app
   - _documentation
   - _layout_sidebar
+  - _layout_collapse

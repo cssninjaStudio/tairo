@@ -1,0 +1,157 @@
+<script setup lang="ts">
+import { useCollapse } from '../composables/collapse'
+
+const props = withDefaults(
+  defineProps<{
+    collapse?: boolean
+    toolbar?: boolean
+    circularMenu?: boolean
+    condensed?: boolean
+    horizontalScroll?: boolean
+  }>(),
+  {
+    collapse: true,
+    toolbar: true,
+    circularMenu: true,
+  },
+)
+
+const app = useAppConfig()
+const collapse = reactive(useCollapse())
+const panels = reactive(usePanels())
+
+const collapseEnabled = computed(() => {
+  return (
+    app.tairo.collapse?.navigation?.enabled !== false &&
+    props.collapse !== false
+  )
+})
+const toolbarEnabled = computed(() => {
+  return (
+    app.tairo.collapse?.toolbar?.enabled !== false && props.toolbar !== false
+  )
+})
+const circularMenuEnabled = computed(() => {
+  return (
+    app.tairo.collapse?.circularMenu?.enabled !== false &&
+    props.circularMenu !== false
+  )
+})
+
+const mainClass = computed(() => {
+  if (props.condensed) {
+    return 'bg-muted-100 dark:bg-muted-900 relative min-h-screen w-full overflow-x-hidden'
+  }
+
+  if (!collapseEnabled.value) {
+    return 'bg-muted-100 dark:bg-muted-900 relative min-h-screen w-full overflow-x-hidden px-4 transition-all duration-300 xl:px-10'
+  }
+
+  const list = [
+    'bg-muted-100 dark:bg-muted-900 relative min-h-screen w-full overflow-x-hidden px-4 transition-all duration-300 xl:px-10',
+  ]
+
+  if (collapse.isOpen) {
+    list.push('lg:max-w-[calc(100%_-_250px)] lg:ml-[250px]')
+  } else {
+    list.push('lg:max-w-[calc(100%_-_80px)] lg:ml-[80px]')
+  }
+
+  if (props.horizontalScroll) {
+    list.push('!pr-0 xl:!pr-0')
+  }
+
+  return list
+})
+</script>
+
+<template>
+  <div class="bg-muted-100 dark:bg-muted-900 pb-20">
+    <slot name="navigation">
+      <TairoCollapseNavigation v-if="collapseEnabled">
+        <div
+          v-if="app.tairo.collapse?.navigation?.logo?.component"
+          class="flex h-16 w-16 items-center justify-center"
+        >
+          <slot name="logo">
+            <NuxtLink to="/" class="flex items-center justify-center">
+              <component
+                :is="
+                  app.tairo.collapse.navigation.logo.resolve === false
+                    ? app.tairo.collapse.navigation.logo.component
+                    : resolveComponent(
+                        app.tairo.collapse.navigation.logo.component,
+                      )
+                "
+                v-bind="app.tairo.collapse.navigation.logo.props"
+              ></component>
+            </NuxtLink>
+          </slot>
+        </div>
+      </TairoCollapseNavigation>
+    </slot>
+
+    <div :class="mainClass">
+      <div
+        :class="[
+          props.condensed && !props.horizontalScroll && 'w-full',
+          !props.condensed && props.horizontalScroll && 'mx-auto w-full',
+          !props.condensed &&
+            !props.horizontalScroll &&
+            'mx-auto w-full max-w-7xl',
+        ]"
+      >
+        <slot name="toolbar">
+          <TairoCollapseToolbar
+            v-if="toolbarEnabled"
+            :collapse="props.collapse"
+            :horizontal-scroll="props.horizontalScroll"
+          >
+            <template #title><slot name="toolbar-title"></slot></template>
+          </TairoCollapseToolbar>
+        </slot>
+
+        <slot />
+      </div>
+    </div>
+
+    <!-- Active Panel -->
+    <Transition
+      enter-active-class="transition-transform duration-300 ease-out"
+      :enter-from-class="
+        panels.transitionFrom === 'left'
+          ? '-translate-x-full'
+          : 'translate-x-full'
+      "
+      leave-active-class="transition-transform duration-300 ease-in"
+      :leave-to-class="
+        panels.transitionFrom === 'left'
+          ? '-translate-x-full'
+          : 'translate-x-full'
+      "
+    >
+      <slot name="panel">
+        <component
+          :is="resolveComponent(panels.current.component)"
+          v-bind="panels.currentProps"
+          v-if="panels.current?.component"
+          class="fixed top-0 z-[100] h-full w-96"
+          :class="[panels.current.position === 'left' ? 'left-0' : 'right-0']"
+        />
+      </slot>
+    </Transition>
+
+    <!-- Overlay -->
+    <div
+      class="bg-muted-800/60 fixed left-0 top-0 z-[99] h-full w-full cursor-pointer transition-opacity duration-300"
+      :class="
+        panels.current && panels.showOverlay
+          ? 'opacity-100 pointer-events-auto'
+          : 'opacity-0 pointer-events-none'
+      "
+      @click="panels.close"
+    />
+
+    <TairoCollapseCircularMenu v-if="circularMenuEnabled" />
+  </div>
+</template>

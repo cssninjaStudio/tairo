@@ -199,6 +199,12 @@ importers:
         specifier: 0.5.1
         version: 0.5.1
 
+  _layout_collapse:
+    devDependencies:
+      nuxt:
+        specifier: 3.3.2
+        version: 3.3.2
+
   _layout_sidebar:
     devDependencies:
       nuxt:

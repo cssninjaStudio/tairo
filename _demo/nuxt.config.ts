@@ -17,6 +17,7 @@ export default defineNuxtConfig({
      */
     '..',
     '../_layout_sidebar',
+    '../_layout_collapse',
 
     process.env.ENABLE_DOCUMENTATION === 'true'
       ? resolve(__dirname, '../_documentation')
