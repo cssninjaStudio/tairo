@@ -35,7 +35,7 @@ function openTaskPanel(id: number, tasks: any) {
 
 <template>
   <div class="relative">
-    <div class="hidden sm:block absolute top-2.5 right-12 z-20">
+    <div class="hidden sm:block absolute top-2.5 end-12 z-20">
       <BaseButton
         condensed
         shape="curved"
@@ -45,7 +45,7 @@ function openTaskPanel(id: number, tasks: any) {
         <span>Open Board</span>
       </BaseButton>
     </div>
-    <div class="absolute top-2 right-0 z-20">
+    <div class="absolute top-2 end-0 z-20">
       <BaseDropdown
         flavor="context"
         label="Dropdown"
@@ -61,30 +61,30 @@ function openTaskPanel(id: number, tasks: any) {
           class="sm:hidden"
         >
           <template #start>
-            <Icon name="ph:kanban-duotone" class="w-5 h-5 block mr-2" />
+            <Icon name="ph:kanban-duotone" class="w-5 h-5 block me-2" />
           </template>
         </BaseDropdownItem>
         <BaseDropdownDivide />
         <BaseDropdownItem to="#" title="Edit" text="Edit this project">
           <template #start>
-            <Icon name="ph:pencil-duotone" class="w-5 h-5 block mr-2" />
+            <Icon name="ph:pencil-duotone" class="w-5 h-5 block me-2" />
           </template>
         </BaseDropdownItem>
         <BaseDropdownDivide />
         <BaseDropdownItem to="#" title="Permissions" text="Manage permissions">
           <template #start>
-            <Icon name="ph:lock-duotone" class="w-5 h-5 block mr-2" />
+            <Icon name="ph:lock-duotone" class="w-5 h-5 block me-2" />
           </template>
         </BaseDropdownItem>
         <BaseDropdownItem to="#" title="Files" text="Manage files">
           <template #start>
-            <Icon name="ph:file-duotone" class="w-5 h-5 block mr-2" />
+            <Icon name="ph:file-duotone" class="w-5 h-5 block me-2" />
           </template>
         </BaseDropdownItem>
         <BaseDropdownDivide />
         <BaseDropdownItem to="#" title="Delete" text="Delete this project">
           <template #start>
-            <Icon name="ph:trash-duotone" class="w-5 h-5 block mr-2" />
+            <Icon name="ph:trash-duotone" class="w-5 h-5 block me-2" />
           </template>
         </BaseDropdownItem>
       </BaseDropdown>
@@ -284,7 +284,7 @@ function openTaskPanel(id: number, tasks: any) {
                               <span>v{{ file.version }}</span>
                             </BaseParagraph>
                           </div>
-                          <div class="ml-auto">
+                          <div class="ms-auto">
                             <BaseButtonIcon
                               shape="full"
                               data-tooltip="Download file"
@@ -437,7 +437,7 @@ function openTaskPanel(id: number, tasks: any) {
                 <NuxtLink to="/">
                   <Icon
                     name="uiw:star-on"
-                    class="absolute top-6 right-6 text-primary-500"
+                    class="absolute top-6 end-6 text-primary-500"
                   />
                   <div class="p-5 flex flex-col sm:flex-row items-center">
                     <div class="flex flex-col sm:flex-row gap-3">

@@ -38,7 +38,7 @@ const days = [
       v-for="day in days"
       :key="day.name"
       :to="day.url"
-      class="group flex flex-col py-6 border bg-white dark:bg-muted-800 border-muted-200 hover:border-primary-500 dark:hover:border-primary-500 dark:border-muted-700 hover:shadow-xl hover:shadow-muted-300/30 dark:hover:shadow-muted-900/30 transition-all duration-300"
+      class="dark:bg-muted-800 border-muted-200 hover:border-primary-500 dark:hover:border-primary-500 dark:border-muted-700 hover:shadow-muted-300/30 dark:hover:shadow-muted-900/30 group flex flex-col border bg-white py-6 transition-all duration-300 hover:shadow-xl"
       :class="[
         props.shape === 'rounded' ? 'rounded-md' : '',
         props.shape === 'curved' ? 'rounded-xl' : '',
@@ -46,11 +46,11 @@ const days = [
     >
       <div class="text-center">
         <span
-          class="inline-block font-sans font-bold text-muted-800 dark:text-muted-100 group-hover:text-primary-500 dark:group-hover:text-primary-500 text-xl mb-1 transition-colors duration-300"
+          class="text-muted-800 dark:text-muted-100 group-hover:text-primary-500 dark:group-hover:text-primary-500 mb-1 inline-block font-sans text-xl font-bold transition-colors duration-300"
         >
           {{ day.date }}
         </span>
-        <p class="font-sans uppercase text-xs font-medium text-muted-400">
+        <p class="text-muted-400 font-sans text-xs font-medium uppercase">
           {{ day.name }}
         </p>
       </div>

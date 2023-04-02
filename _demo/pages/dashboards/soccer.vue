@@ -239,7 +239,7 @@ const matches = [
             <div
               class="flex flex-col sm:flex-row items-center rounded-2xl bg-primary-800"
             >
-              <div class="grow mt-6 sm:mt-0 pl-6 pr-6 sm:pl-10 sm:pr-0">
+              <div class="grow mt-6 sm:mt-0 ps-6 pe-6 sm:ps-10 sm:pe-0">
                 <div class="text-center sm:text-left pb-4 sm:pb-0">
                   <BaseHeading tag="h1" class="text-white opacity-90">
                     <span>Win awesome prizes in our contest</span>
@@ -265,7 +265,7 @@ const matches = [
               </div>
               <div class="relative shrink-0 h-[280px] sm:h-[225px] w-[320px]">
                 <img
-                  class="absolute bottom-0 right-6 sm:-right-10 pointer-events-none"
+                  class="absolute bottom-0 end-6 sm:-end-10 pointer-events-none"
                   src="/img/illustrations/dashboards/soccer/soccer-player.svg"
                   alt="Soccer Player"
                 />

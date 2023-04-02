@@ -84,23 +84,23 @@ function useAreaSubscriptions() {
 </script>
 
 <template>
-  <div class="flex flex-col h-full">
+  <div class="flex h-full flex-col">
     <div
-      class="text-center mb-6 p-6 border-b border-muted-200 dark:border-muted-700"
+      class="border-muted-200 dark:border-muted-700 mb-6 border-b p-6 text-center"
     >
       <div
-        class="w-full flex items-center divide-x divide-muted-200 dark:divide-muted-700"
+        class="divide-muted-200 dark:divide-muted-700 flex w-full items-center divide-x"
       >
         <!-- Item -->
         <div class="flex-1">
           <div class="flex flex-col px-4 text-center">
             <h4
-              class="font-sans font-semibold text-xl text-muted-800 dark:text-muted-100"
+              class="text-muted-800 dark:text-muted-100 font-sans text-xl font-semibold"
             >
               314
             </h4>
             <p
-              class="font-sansfont-semibold text-[0.65rem] uppercase text-muted-400"
+              class="font-sansfont-semibold text-muted-400 text-[0.65rem] uppercase"
             >
               New
             </p>
@@ -110,12 +110,12 @@ function useAreaSubscriptions() {
         <div class="flex-1">
           <div class="flex flex-col px-4 text-center">
             <h4
-              class="font-sans font-semibold text-xl text-muted-800 dark:text-muted-100"
+              class="text-muted-800 dark:text-muted-100 font-sans text-xl font-semibold"
             >
               611
             </h4>
             <p
-              class="font-sans font-semibold text-[0.65rem] uppercase text-muted-400"
+              class="text-muted-400 font-sans text-[0.65rem] font-semibold uppercase"
             >
               Renewals
             </p>
@@ -125,12 +125,12 @@ function useAreaSubscriptions() {
         <div class="flex-1">
           <div class="flex flex-col px-4 text-center">
             <h4
-              class="font-sans font-semibold text-xl text-muted-800 dark:text-muted-100"
+              class="text-muted-800 dark:text-muted-100 font-sans text-xl font-semibold"
             >
               49
             </h4>
             <p
-              class="font-sansfont-semibold text-[0.65rem] uppercase text-muted-400"
+              class="font-sansfont-semibold text-muted-400 text-[0.65rem] uppercase"
             >
               Resigns
             </p>

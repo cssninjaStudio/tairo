@@ -133,7 +133,7 @@ const { data, pending, error, refresh } = await useFetch('/api/jobs', {
                   </div>
                 </div>
                 <div
-                  class="sm:ml-auto flex items-center justify-end gap-2 mt-4 sm:mt-0"
+                  class="sm:ms-auto flex items-center justify-end gap-2 mt-4 sm:mt-0"
                 >
                   <BaseButton
                     color="primary"

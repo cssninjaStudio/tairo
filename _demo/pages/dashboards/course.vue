@@ -329,7 +329,7 @@ const students = [
                   </span>
                 </BaseParagraph>
               </div>
-              <div class="ml-auto">
+              <div class="ms-auto">
                 <BaseButtonIcon small data-tooltip="Download file">
                   <Icon name="lucide:arrow-down" class="w-4 h-4" />
                 </BaseButtonIcon>

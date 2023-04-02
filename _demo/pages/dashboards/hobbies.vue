@@ -317,7 +317,7 @@ const popular = [
                     </span>
                   </BaseParagraph>
                 </div>
-                <div class="flex items-center ml-auto">
+                <div class="flex items-center ms-auto">
                   <BaseButtonIcon shape="curved" muted class="scale-75">
                     <Icon name="lucide:arrow-right" class="w-5 h-5" />
                   </BaseButtonIcon>
@@ -374,7 +374,7 @@ const popular = [
                     </span>
                   </BaseParagraph>
                 </div>
-                <div class="flex items-center ml-auto">
+                <div class="flex items-center ms-auto">
                   <BaseButtonIcon shape="curved" muted class="scale-75">
                     <Icon name="lucide:arrow-right" class="w-5 h-5" />
                   </BaseButtonIcon>
@@ -449,7 +449,7 @@ const popular = [
                     <span class="text-muted-400">Oregon · Lvl 3</span>
                   </BaseParagraph>
                 </div>
-                <div class="flex items-center ml-auto">
+                <div class="flex items-center ms-auto">
                   <BaseButtonIcon shape="curved" muted class="scale-75">
                     <Icon name="lucide:arrow-right" class="w-5 h-5" />
                   </BaseButtonIcon>
@@ -479,7 +479,7 @@ const popular = [
                     <span class="text-muted-400">Alabama · Lvl 7</span>
                   </BaseParagraph>
                 </div>
-                <div class="flex items-center ml-auto">
+                <div class="flex items-center ms-auto">
                   <BaseButtonIcon shape="curved" muted class="scale-75">
                     <Icon name="lucide:arrow-right" class="w-5 h-5" />
                   </BaseButtonIcon>
@@ -509,7 +509,7 @@ const popular = [
                     <span class="text-muted-400">Missouri · Lvl 4</span>
                   </BaseParagraph>
                 </div>
-                <div class="flex items-center ml-auto">
+                <div class="flex items-center ms-auto">
                   <BaseButtonIcon shape="curved" muted class="scale-75">
                     <Icon name="lucide:arrow-right" class="w-5 h-5" />
                   </BaseButtonIcon>

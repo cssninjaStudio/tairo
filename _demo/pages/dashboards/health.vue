@@ -396,7 +396,7 @@ function useGaugePersonal() {
         >
           <div class="relative shrink-0 h-[168px] w-[280px]">
             <img
-              class="absolute -top-20 -left-6 sm:-left-10 pointer-events-none"
+              class="absolute -top-20 -start-6 sm:-start-10 pointer-events-none"
               src="/img/illustrations/dashboards/health/doctor.svg"
               alt="Doctor illustration"
             />
@@ -660,7 +660,7 @@ function useGaugePersonal() {
                   </div>
                   <AddonApexcharts
                     v-bind="areaCondition"
-                    class="relative -left-5"
+                    class="relative -start-5"
                   />
                 </BaseCard>
               </div>
@@ -731,7 +731,7 @@ function useGaugePersonal() {
                   </div>
                   <AddonApexcharts
                     v-bind="barOxygen"
-                    class="relative -left-5"
+                    class="relative -start-5"
                   />
                 </BaseCard>
               </div>
@@ -768,7 +768,7 @@ function useGaugePersonal() {
                   </div>
                   <AddonApexcharts
                     v-bind="areaProgress"
-                    class="relative -left-5"
+                    class="relative -start-5"
                   />
                 </BaseCard>
               </div>

@@ -186,7 +186,7 @@ const panelActive = ref(false)
           >
             <Icon name="ph:tray-duotone" class="w-5 h-5" />
             <span
-              class="absolute -top-1 -right-1 bg-pink-600 h-5 w-5 flex justify-center items-center rounded-full font-sans text-xs text-white"
+              class="absolute -top-1 -end-1 bg-pink-600 h-5 w-5 flex justify-center items-center rounded-full font-sans text-xs text-white"
             >
               3
             </span>
@@ -325,7 +325,7 @@ const panelActive = ref(false)
                     </span>
                   </BaseParagraph>
                 </div>
-                <div class="ml-auto pointer-events-none">
+                <div class="ms-auto pointer-events-none">
                   <span class="font-sans text-xs text-muted-400">
                     {{ message.time }}
                   </span>
@@ -343,7 +343,7 @@ const panelActive = ref(false)
       <Pane :size="100 - paneSize">
         <!-- Message details -->
         <div
-          class="fixed top-0 right-0 ltablet:static lg:static ltablet:grow lg:grow flex flex-col border-l border-muted-200 dark:border-muted-700/40 bg-white dark:bg-muted-800 transition-transform duration-300"
+          class="fixed top-0 end-0 ltablet:static lg:static ltablet:grow lg:grow flex flex-col border-l border-muted-200 dark:border-muted-700/40 bg-white dark:bg-muted-800 transition-transform duration-300"
           :class="
             panelActive
               ? 'translate-x-0'
@@ -370,7 +370,7 @@ const panelActive = ref(false)
                 </BaseHeading>
               </div>
               <div
-                class="relative h-16 w-full flex items-center justify-end gap-2 scale-90 sm:scale-100 -right-4 sm:right-0"
+                class="relative h-16 w-full flex items-center justify-end gap-2 scale-90 sm:scale-100 -end-4 sm:end-0"
               >
                 <template v-for="tool of (app.tairo.toolbar as any).tools">
                   <component
@@ -414,7 +414,7 @@ const panelActive = ref(false)
               <div>
                 <div class="flex gap-x-2 mb-2 ltablet:mb-0 lg:mb-0">
                   <BaseButtonIcon small class="scale-[0.8]">
-                    <Icon name="ph:arrow-u-up-left-duotone" class="h-4 w-4" />
+                    <Icon name="ph:arrow-u-up-start-duotone" class="h-4 w-4" />
                   </BaseButtonIcon>
                   <BaseButtonIcon small class="scale-[0.8]">
                     <Icon name="ph:bookmark-simple-duotone" class="h-4 w-4" />
@@ -488,9 +488,9 @@ const panelActive = ref(false)
                       {{ file.size }}
                     </span>
                   </span>
-                  <span class="block ml-auto">
+                  <span class="block ms-auto">
                     <span
-                      class="flex items-center justify-center mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                      class="flex items-center justify-center me-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
                     >
                       <Icon
                         name="lucide:arrow-down"
@@ -549,7 +549,7 @@ const panelActive = ref(false)
         :is="resolveComponent(panels.current.component)"
         v-if="panels.current?.component"
         class="fixed top-0 z-[100] h-full w-96"
-        :class="[panels.current.position === 'left' ? 'left-0' : 'right-0']"
+        :class="[panels.current.position === 'left' ? 'start-0' : 'end-0']"
       />
     </Transition>
   </div>

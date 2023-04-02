@@ -37,7 +37,7 @@ export default defineAppConfig({
         {
           component: 'BaseThemeToggle',
           props: {
-            class: 'ml-auto',
+            class: 'ms-auto',
             inverted: true,
           },
         },

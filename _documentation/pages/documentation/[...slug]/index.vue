@@ -108,7 +108,7 @@ const breadcrumb = computed(() => {
       </div>
       <div
         v-if="!pending && data"
-        class="relative hidden lg:mr-6 lg:block lg:w-1/4 xl:mr-0"
+        class="relative hidden lg:me-6 lg:block lg:w-1/4 xl:me-0"
       >
         <DocLayoutToc :key="`toc-${data._path}`" />
       </div>

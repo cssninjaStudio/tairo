@@ -8,7 +8,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
       <MenuButton as="template">
         <button
           type="button"
-          class="inline-flex h-9 w-9 items-center justify-center rounded-full ring-1 ring-transparent transition-all duration-300 group-hover:ring-primary-500 group-hover:ring-offset-4 dark:ring-offset-muted-900"
+          class="group-hover:ring-primary-500 dark:ring-offset-muted-900 inline-flex h-9 w-9 items-center justify-center rounded-full ring-1 ring-transparent transition-all duration-300 group-hover:ring-offset-4"
         >
           <div
             class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
@@ -31,7 +31,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
         leave-to-class="transform scale-95 opacity-0"
       >
         <MenuItems
-          class="absolute right-0 mt-2 w-64 origin-top-right divide-y divide-muted-100 rounded-md border border-muted-200 bg-white shadow-lg focus:outline-none dark:divide-muted-700 dark:border-muted-700 dark:bg-muted-800"
+          class="divide-muted-100 border-muted-200 dark:divide-muted-700 dark:border-muted-700 dark:bg-muted-800 absolute end-0 mt-2 w-64 origin-top-right divide-y rounded-md border bg-white shadow-lg focus:outline-none"
         >
           <div class="p-6 text-center">
             <div
@@ -45,11 +45,11 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
             </div>
             <div class="mt-3">
               <h6
-                class="font-heading text-sm font-medium text-muted-800 dark:text-white"
+                class="font-heading text-muted-800 text-sm font-medium dark:text-white"
               >
                 Maya Rosselini
               </h6>
-              <p class="mb-4 font-sans text-xs text-muted-400">maya@tairo.io</p>
+              <p class="text-muted-400 mb-4 font-sans text-xs">maya@tairo.io</p>
               <BaseButton
                 to="/layouts/profile-edit"
                 shape="curved"
@@ -58,7 +58,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
               >
             </div>
           </div>
-          <div class="py-1.5 px-6">
+          <div class="px-6 py-1.5">
             <MenuItem v-slot="{ active }">
               <NuxtLink
                 to="#"
@@ -78,13 +78,13 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                     alt=""
                   />
                 </div>
-                <div class="ml-2">
+                <div class="ms-2">
                   <h6
-                    class="font-heading text-xs font-medium leading-none text-muted-800 dark:text-white"
+                    class="font-heading text-muted-800 text-xs font-medium leading-none dark:text-white"
                   >
                     Mike Miller
                   </h6>
-                  <p class="font-sans text-xs text-muted-400">mike@tairo.io</p>
+                  <p class="text-muted-400 font-sans text-xs">mike@tairo.io</p>
                 </div>
               </NuxtLink>
             </MenuItem>
@@ -107,13 +107,13 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                     alt=""
                   />
                 </div>
-                <div class="ml-2">
+                <div class="ms-2">
                   <h6
-                    class="font-heading text-xs font-medium leading-none text-muted-800 dark:text-white"
+                    class="font-heading text-muted-800 text-xs font-medium leading-none dark:text-white"
                   >
                     Claire Baker
                   </h6>
-                  <p class="font-sans text-xs text-muted-400">
+                  <p class="text-muted-400 font-sans text-xs">
                     claire@tairo.io
                   </p>
                 </div>
@@ -138,13 +138,13 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                     alt=""
                   />
                 </div>
-                <div class="ml-2">
+                <div class="ms-2">
                   <h6
-                    class="font-heading text-xs font-medium leading-none text-muted-800 dark:text-white"
+                    class="font-heading text-muted-800 text-xs font-medium leading-none dark:text-white"
                   >
                     Alan Baxter
                   </h6>
-                  <p class="font-sans text-xs text-muted-400">alan@tairo.io</p>
+                  <p class="text-muted-400 font-sans text-xs">alan@tairo.io</p>
                 </div>
               </NuxtLink>
             </MenuItem>

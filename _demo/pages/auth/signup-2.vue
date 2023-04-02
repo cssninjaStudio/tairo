@@ -118,12 +118,12 @@ const onSubmit = handleSubmit(async (values) => {
     <div class="w-full flex items-center justify-center">
       <div class="relative w-full max-w-2xl mx-auto">
         <!--Form-->
-        <div class="mr-auto ml-auto w-full mt-4">
+        <div class="me-auto ms-auto w-full mt-4">
           <form
             method="POST"
             action=""
             @submit.prevent="onSubmit"
-            class="w-full max-w-md mr-auto ml-auto mt-4"
+            class="w-full max-w-md me-auto ms-auto mt-4"
             novalidate
           >
             <div class="text-center">

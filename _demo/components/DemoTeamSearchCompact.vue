@@ -67,7 +67,7 @@ const filteredMembers = computed(() => {
 </script>
 
 <template>
-  <div class="space-y-1 mb-2">
+  <div class="mb-2 space-y-1">
     <div class="relative mb-4">
       <BaseInput
         v-model="filter"
@@ -77,12 +77,12 @@ const filteredMembers = computed(() => {
       />
     </div>
     <div v-if="filteredMembers.length === 0">
-      <div class="flex flex-col items-center text-center py-10">
-        <Icon name="pepicons-print:person" class="w-10 h-10 text-primary-500" />
+      <div class="flex flex-col items-center py-10 text-center">
+        <Icon name="pepicons-print:person" class="text-primary-500 h-10 w-10" />
         <BaseHeading as="h4" size="md" weight="medium" lead="tight">
           <span>No matching results</span>
         </BaseHeading>
-        <BaseParagraph size="xs" class="max-w-[240px] mx-auto text-muted-400">
+        <BaseParagraph size="xs" class="text-muted-400 mx-auto max-w-[240px]">
           <span>
             Looks like we couldn't find any matchig results. Try different
             search terms.
@@ -94,7 +94,7 @@ const filteredMembers = computed(() => {
       <div
         v-for="member in filteredMembers"
         :key="member.id"
-        class="group flex items-center gap-3 p-2 hover:bg-muted-100"
+        class="hover:bg-muted-100 group flex items-center gap-3 p-2"
         :class="[
           props.shape === 'rounded' ? 'rounded-md' : '',
           props.shape === 'curved' ? 'rounded-xl' : '',
@@ -105,7 +105,7 @@ const filteredMembers = computed(() => {
           :src="member.image"
           :text="member.text"
           size="xs"
-          class="ml-1 flex-shrink-0 bg-primary-100 dark:bg-primary-500/20 text-primary-500"
+          class="bg-primary-100 dark:bg-primary-500/20 text-primary-500 ms-1 shrink-0"
         />
         <div>
           <BaseHeading
@@ -126,10 +126,10 @@ const filteredMembers = computed(() => {
           </BaseParagraph>
         </div>
         <div
-          class="flex items-center ml-auto opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all duration-300"
+          class="ms-auto flex -translate-x-1 items-center opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100"
         >
           <BaseButtonIcon to="#" :shape="props.shape" muted class="scale-75">
-            <Icon name="ph:arrow-right-duotone" class="w-5 h-5" />
+            <Icon name="ph:arrow-end-duotone" class="h-5 w-5" />
           </BaseButtonIcon>
         </div>
       </div>

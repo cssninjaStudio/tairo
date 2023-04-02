@@ -114,7 +114,7 @@ const { data, pending, error, refresh } = await useFetch('/api/freelancers', {
                 </div>
               </div>
               <div
-                class="sm:ml-auto flex flex-col sm:flex-row sm:items-center sm:justify-end gap-4 pt-4 sm:pt-0"
+                class="sm:ms-auto flex flex-col sm:flex-row sm:items-center sm:justify-end gap-4 pt-4 sm:pt-0"
               >
                 <div
                   class="flex items-center justify-center sm:justify-end w-full sm:w-[160px]"
@@ -189,7 +189,7 @@ const { data, pending, error, refresh } = await useFetch('/api/freelancers', {
                   <BaseAvatarGroup size="xs" :avatars="item.teams" :limit="3" />
                   <p class="font-sans text-xs text-muted-400">In Team</p>
                 </div>
-                <div class="sm:ml-6">
+                <div class="sm:ms-6">
                   <BaseButtonAction class="w-full sm:w-auto">
                     View
                   </BaseButtonAction>

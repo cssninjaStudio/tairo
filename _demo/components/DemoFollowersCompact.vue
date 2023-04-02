@@ -17,7 +17,7 @@ const followers = [
 
 <template>
   <div>
-    <div class="flex items-center justify-between mb-4">
+    <div class="mb-4 flex items-center justify-between">
       <BaseHeading
         as="h3"
         size="sm"
@@ -35,21 +35,21 @@ const followers = [
           Great News!
           <NuxtLink
             to="#"
-            class="underline-offset-2 hover:underline text-primary-500"
+            class="text-primary-500 underline-offset-2 hover:underline"
           >
             Clarke
           </NuxtLink>
           ,
           <NuxtLink
             to="#"
-            class="underline-offset-2 hover:underline text-primary-500"
+            class="text-primary-500 underline-offset-2 hover:underline"
           >
             John
           </NuxtLink>
           and
           <NuxtLink
             to="#"
-            class="underline-offset-2 hover:underline text-primary-500"
+            class="text-primary-500 underline-offset-2 hover:underline"
           >
             Maggie
           </NuxtLink>

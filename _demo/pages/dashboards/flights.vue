@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { DatePicker, Calendar } from 'v-calendar'
+import { Calendar, DatePicker } from 'v-calendar'
 
 import 'v-calendar/dist/style.css'
 import '~/assets/css/vcalendar.css'
@@ -119,17 +119,17 @@ const results = [
     <!-- Grid -->
     <div class="grid grid-cols-12 gap-6">
       <!-- Column -->
-      <div class="col-span-12 ltablet:col-span-8 lg:col-span-9">
+      <div class="ltablet:col-span-8 col-span-12 lg:col-span-9">
         <!-- Inner column -->
         <div class="flex flex-col gap-6">
           <!-- Header -->
           <div
-            class="flex flex-col sm:flex-row items-stretch p-8 rounded-lg bg-primary-800"
+            class="bg-primary-800 flex flex-col items-stretch rounded-lg p-8 sm:flex-row"
           >
             <div class="w-full sm:w-3/5">
-              <div class="w-full flex flex-col gap-4">
-                <div class="flex flex-col sm:flex-row sm:items-center gap-4">
-                  <Icon name="vaadin:airplane" class="w-9 h-9 text-white" />
+              <div class="flex w-full flex-col gap-4">
+                <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
+                  <Icon name="vaadin:airplane" class="h-9 w-9 text-white" />
                   <div>
                     <BaseHeading
                       as="h2"
@@ -152,35 +152,35 @@ const results = [
                   hide-time-header
                   trim-weeks
                 >
-                  <template v-slot="{ inputValue, inputEvents }">
-                    <div class="w-full flex flex-col sm:flex-row gap-4">
+                  <template #default="{ inputValue, inputEvents }">
+                    <div class="flex w-full flex-col gap-4 sm:flex-row">
                       <div class="relative grow">
                         <div class="relative">
                           <input
-                            class="peer font-sans text-sm bg-transparent h-10 inline-flex items-center leading-tight w-full pl-10 border-2 border-white/40 focus-visible:border-white/80 rounded-lg text-muted-100 placeholder:text-muted-100/30 nui-focus transition-all duration-300"
+                            class="text-muted-100 placeholder:text-muted-100/30 nui-focus peer inline-flex h-10 w-full items-center rounded-lg border-2 border-white/40 bg-transparent ps-10 font-sans text-sm leading-tight transition-all duration-300 focus-visible:border-white/80"
                             placeholder="Start date"
                             :value="inputValue.start"
                             v-on="inputEvents.start"
                           />
                           <div
-                            class="absolute top-0 left-0 h-10 w-10 flex items-center justify-center text-muted-100/40 peer-focus-visible:text-muted-100/80 transition-colors duration-300"
+                            class="text-muted-100/40 peer-focus-visible:text-muted-100/80 absolute start-0 top-0 flex h-10 w-10 items-center justify-center transition-colors duration-300"
                           >
-                            <Icon name="lucide:map-pin" class="w-5 h-5" />
+                            <Icon name="lucide:map-pin" class="h-5 w-5" />
                           </div>
                         </div>
                       </div>
                       <div class="relative grow">
                         <div class="relative">
                           <input
-                            class="peer font-sans text-sm bg-transparent h-10 inline-flex items-center leading-tight w-full pl-10 border-2 border-white/40 focus-visible:border-white/80 rounded-lg text-muted-100 placeholder:text-muted-100/30 nui-focus transition-all duration-300"
+                            class="text-muted-100 placeholder:text-muted-100/30 nui-focus peer inline-flex h-10 w-full items-center rounded-lg border-2 border-white/40 bg-transparent ps-10 font-sans text-sm leading-tight transition-all duration-300 focus-visible:border-white/80"
                             placeholder="End date"
                             :value="inputValue.end"
                             v-on="inputEvents.end"
                           />
                           <div
-                            class="absolute top-0 left-0 h-10 w-10 flex items-center justify-center text-muted-100/40 peer-focus-visible:text-muted-100/80 transition-colors duration-300"
+                            class="text-muted-100/40 peer-focus-visible:text-muted-100/80 absolute start-0 top-0 flex h-10 w-10 items-center justify-center transition-colors duration-300"
                           >
-                            <Icon name="lucide:flag" class="w-5 h-5" />
+                            <Icon name="lucide:flag" class="h-5 w-5" />
                           </div>
                         </div>
                       </div>
@@ -189,9 +189,9 @@ const results = [
                 </DatePicker>
               </div>
             </div>
-            <div class="relative w-full xs:min-h-[190px] sm:w-2/5">
+            <div class="xs:min-h-[190px] relative w-full sm:w-2/5">
               <img
-                class="absolute bottom-0 sm:right-0 w-full max-w-[260px] xs:mx-auto"
+                class="xs:mx-auto absolute bottom-0 w-full max-w-[260px] sm:end-0"
                 src="/img/illustrations/dashboards/travel-cases.svg"
                 alt="Travel cases"
               />
@@ -199,9 +199,9 @@ const results = [
           </div>
 
           <!-- Results -->
-          <div class="w-full flex flex-col gap-6">
+          <div class="flex w-full flex-col gap-6">
             <!-- Header -->
-            <div class="w-full flex items-center justify-between">
+            <div class="flex w-full items-center justify-between">
               <BaseHeading
                 as="h3"
                 weight="medium"
@@ -213,23 +213,23 @@ const results = [
               <BaseButtonAction muted>Clear</BaseButtonAction>
             </div>
             <!-- Best options -->
-            <div class="grid sm:grid-cols-3 gap-6">
+            <div class="grid gap-6 sm:grid-cols-3">
               <!-- Item -->
               <BaseCard class="p-6">
-                <div class="w-full flex items-center gap-3">
+                <div class="flex w-full items-center gap-3">
                   <span
-                    class="block font-sans font-semibold text-3xl text-muted-800 dark:text-muted-100"
+                    class="text-muted-800 dark:text-muted-100 block font-sans text-3xl font-semibold"
                   >
                     $290
                   </span>
                   <div>
                     <span
-                      class="block font-sans font-medium text-[0.65rem] uppercase leading-snug text-muted-400"
+                      class="text-muted-400 block font-sans text-[0.65rem] font-medium uppercase leading-snug"
                     >
                       Cheapest
                     </span>
                     <span
-                      class="block font-sans text-sm leading-none text-muted-500 dark:text-muted-100"
+                      class="text-muted-500 dark:text-muted-100 block font-sans text-sm leading-none"
                     >
                       7h32min
                     </span>
@@ -238,22 +238,22 @@ const results = [
               </BaseCard>
               <!-- Item -->
               <BaseCard
-                class="p-6 !bg-primary-600 !dark:bg-primary-600 !border-primary-600"
+                class="!bg-primary-600 !dark:bg-primary-600 !border-primary-600 p-6"
               >
-                <div class="w-full flex items-center gap-3">
+                <div class="flex w-full items-center gap-3">
                   <span
-                    class="block font-sans font-semibold text-3xl text-white"
+                    class="block font-sans text-3xl font-semibold text-white"
                   >
                     $439
                   </span>
                   <div>
                     <span
-                      class="block font-sans font-medium text-[0.65rem] uppercase leading-snug text-muted-200"
+                      class="text-muted-200 block font-sans text-[0.65rem] font-medium uppercase leading-snug"
                     >
                       Best
                     </span>
                     <span
-                      class="block font-sans text-sm leading-none text-muted-100"
+                      class="text-muted-100 block font-sans text-sm leading-none"
                     >
                       7h11min
                     </span>
@@ -262,20 +262,20 @@ const results = [
               </BaseCard>
               <!-- Item -->
               <BaseCard class="p-6">
-                <div class="w-full flex items-center gap-3">
+                <div class="flex w-full items-center gap-3">
                   <span
-                    class="block font-sans font-semibold text-3xl text-muted-800 dark:text-muted-100"
+                    class="text-muted-800 dark:text-muted-100 block font-sans text-3xl font-semibold"
                   >
                     $549
                   </span>
                   <div>
                     <span
-                      class="block font-sans font-medium text-[0.65rem] uppercase leading-snug text-muted-400"
+                      class="text-muted-400 block font-sans text-[0.65rem] font-medium uppercase leading-snug"
                     >
                       Fastest
                     </span>
                     <span
-                      class="block font-sans text-sm leading-none text-muted-500 dark:text-muted-100"
+                      class="text-muted-500 dark:text-muted-100 block font-sans text-sm leading-none"
                     >
                       5h36min
                     </span>
@@ -292,10 +292,10 @@ const results = [
                 class="p-5"
               >
                 <div
-                  class="w-full flex flex-col sm:flex-row items-center justify-between gap-2"
+                  class="flex w-full flex-col items-center justify-between gap-2 sm:flex-row"
                 >
                   <div
-                    class="flex flex-col sm:flex-row items-center gap-3 shrink-0 text-center sm:text-left"
+                    class="flex shrink-0 flex-col items-center gap-3 text-center sm:flex-row sm:text-left"
                   >
                     <BaseAvatar
                       :src="result.logo"
@@ -304,25 +304,25 @@ const results = [
                     />
                     <div>
                       <span
-                        class="block font-sans text-sm text-muted-500 dark:text-muted-400"
+                        class="text-muted-500 dark:text-muted-400 block font-sans text-sm"
                       >
                         {{ result.departure.time }}
                       </span>
                       <span
-                        class="block font-sans text-xs font-semibold text-primary-600"
+                        class="text-primary-600 block font-sans text-xs font-semibold"
                       >
                         {{ result.departure.city }}
                         {{ result.departure.airport }}
                       </span>
                       <span
-                        class="block font-sans text-sm text-muted-500 dark:text-muted-400"
+                        class="text-muted-500 dark:text-muted-400 block font-sans text-sm"
                       >
                         {{ result.departure.date }}
                       </span>
                     </div>
                   </div>
                   <div
-                    class="w-full sm:w-auto flex items-center gap-2 grow px-6 py-6 sm:py-0"
+                    class="flex w-full grow items-center gap-2 p-6 sm:w-auto sm:py-0"
                     :data-tooltip="`${result.stops} stop${
                       result.stops > 1 ? 's' : ''
                     }`"
@@ -331,7 +331,7 @@ const results = [
                       width="32"
                       height="32"
                       viewBox="0 0 64 64"
-                      class="w-10 h-10 text-muted-400"
+                      class="text-muted-400 h-10 w-10"
                     >
                       <path
                         fill="currentColor"
@@ -390,13 +390,13 @@ const results = [
                       />
                     </svg>
                     <div
-                      class="grow mx-8 border-t-2 border-dashed border-muted-200 dark:border-muted-700"
+                      class="border-muted-200 dark:border-muted-700 mx-8 grow border-t-2 border-dashed"
                     ></div>
                     <svg
                       width="32"
                       height="32"
                       viewBox="0 0 64 64"
-                      class="w-10 h-10 text-muted-400"
+                      class="text-muted-400 h-10 w-10"
                     >
                       <path
                         fill="currentColor"
@@ -416,28 +416,28 @@ const results = [
                     </svg>
                   </div>
                   <div
-                    class="flex flex-col sm:flex-row items-center justify-end gap-6 shrink-0 text-center sm:text-left"
+                    class="flex shrink-0 flex-col items-center justify-end gap-6 text-center sm:flex-row sm:text-left"
                   >
                     <div>
                       <span
-                        class="block font-sans text-sm text-muted-500 dark:text-muted-400"
+                        class="text-muted-500 dark:text-muted-400 block font-sans text-sm"
                       >
                         {{ result.arrival.time }}
                       </span>
                       <span
-                        class="block font-sans text-xs font-semibold text-primary-600"
+                        class="text-primary-600 block font-sans text-xs font-semibold"
                       >
                         {{ result.arrival.city }} {{ result.arrival.airport }}
                       </span>
                       <span
-                        class="block font-sans text-sm text-muted-500 dark:text-muted-400"
+                        class="text-muted-500 dark:text-muted-400 block font-sans text-sm"
                       >
                         {{ result.arrival.date }}
                       </span>
                     </div>
                     <div>
                       <span
-                        class="block font-sans font-semibold text-xl text-muted-800 dark:text-muted-100"
+                        class="text-muted-800 dark:text-muted-100 block font-sans text-xl font-semibold"
                       >
                         {{ formatPrice(result.price) }}
                       </span>
@@ -450,11 +450,11 @@ const results = [
         </div>
       </div>
       <!-- Column -->
-      <div class="col-span-12 ltablet:col-span-4 lg:col-span-3">
+      <div class="ltablet:col-span-4 col-span-12 lg:col-span-3">
         <div class="flex flex-col gap-6">
           <!-- Widget -->
           <BaseCard class="p-6">
-            <div class="w-full flex items-center justify-between">
+            <div class="flex w-full items-center justify-between">
               <DemoSearchCompact />
             </div>
           </BaseCard>
@@ -485,7 +485,7 @@ const results = [
               <div class="space-y-10">
                 <div>
                   <h5
-                    class="mb-4 font-sans font-semibold text-xs uppercase text-muted-500 dark:text-muted-400"
+                    class="text-muted-500 dark:text-muted-400 mb-4 font-sans text-xs font-semibold uppercase"
                   >
                     Stops
                   </h5>
@@ -522,7 +522,7 @@ const results = [
                 </div>
                 <div>
                   <h5
-                    class="mb-4 font-sans font-semibold text-xs uppercase text-muted-500 dark:text-muted-400"
+                    class="text-muted-500 dark:text-muted-400 mb-4 font-sans text-xs font-semibold uppercase"
                   >
                     Luggage
                   </h5>

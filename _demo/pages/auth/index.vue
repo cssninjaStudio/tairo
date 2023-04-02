@@ -86,7 +86,7 @@ const onSubmit = handleSubmit(async (values) => {
       <div class="relative mx-auto w-full max-w-sm bg-white dark:bg-muted-800">
         <!--Nav-->
         <div
-          class="absolute -top-16 right-0 w-full flex items-center justify-between"
+          class="absolute -top-16 end-0 w-full flex items-center justify-between"
         >
           <NuxtLink
             to="/dashboards"

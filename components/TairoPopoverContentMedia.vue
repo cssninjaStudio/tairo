@@ -56,7 +56,7 @@ const props = defineProps<{
             >
               <Icon name="ph:house-duotone" class="h-4 w-4" />
             </BaseIconBox>
-            <div class="ml-2">
+            <div class="ms-2">
               <BaseHeading
                 as="h4"
                 size="xs"
@@ -75,7 +75,7 @@ const props = defineProps<{
         <BaseText
           size="xs"
           lead="tight"
-          class="text-muted-400 line-clamp-3 pl-2"
+          class="text-muted-400 line-clamp-3 ps-2"
         >
           {{ props.text }}
         </BaseText>
@@ -127,7 +127,7 @@ const props = defineProps<{
       <span class="flex items-center">
         <NuxtLink
           to="#"
-          class="text-primary-500 mr-1 font-sans text-sm font-medium underline-offset-4 transition-colors hover:underline"
+          class="text-primary-500 me-1 font-sans text-sm font-medium underline-offset-4 transition-colors hover:underline"
         >
           {{ props.linkLabel }}
         </NuxtLink>

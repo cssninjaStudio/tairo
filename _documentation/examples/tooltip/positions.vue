@@ -17,7 +17,7 @@
       <Icon name="ph:crown-duotone" class="h-5 w-5 text-yellow-500" />
     </BaseButtonIcon>
     <BaseButtonAction shape="curved" data-tooltip="Here we go!">
-      <Icon name="ph:bell-ringing-duotone" class="text-primary-500 -ml-1 h-4 w-4" />
+      <Icon name="ph:bell-ringing-duotone" class="text-primary-500 -ms-1 h-4 w-4" />
       <span class="py-2">Subscribe</span>
     </BaseButtonAction>
   </div>

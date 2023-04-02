@@ -115,7 +115,7 @@ const { data, pending, error, refresh } = await useFetch(
                       </p>
                     </div>
                   </div>
-                  <div class="mt-4 sm:mt-0 sm:ml-auto flex items-center gap-3">
+                  <div class="mt-4 sm:mt-0 sm:ms-auto flex items-center gap-3">
                     <NuxtLink
                       v-for="link in item.socialProfiles"
                       :key="link.name"

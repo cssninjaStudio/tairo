@@ -136,7 +136,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                     </div>
                   </div>
                 </div>
-                <div class="ml-auto">
+                <div class="ms-auto">
                   <BaseDropdown
                     flavor="context"
                     label="Dropdown"
@@ -153,7 +153,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                       <template #start>
                         <Icon
                           name="ph:download-duotone"
-                          class="w-5 h-5 block mr-2"
+                          class="w-5 h-5 block me-2"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -162,7 +162,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                       <template #start>
                         <Icon
                           name="ph:share-duotone"
-                          class="w-5 h-5 block mr-2"
+                          class="w-5 h-5 block me-2"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -171,7 +171,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                       <template #start>
                         <Icon
                           name="ph:bookmark-simple-duotone"
-                          class="w-5 h-5 block mr-2"
+                          class="w-5 h-5 block me-2"
                         />
                       </template>
                     </BaseDropdownItem>

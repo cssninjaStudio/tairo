@@ -93,7 +93,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                     :size="68"
                     :thickness="1.5"
                     :value="item.level"
-                    class="absolute -top-2.5 -left-2.5 text-primary-500"
+                    class="absolute -top-2.5 -start-2.5 text-primary-500"
                   />
                 </div>
                 <div>
@@ -104,7 +104,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                     <span>{{ item.mastery }}</span>
                   </BaseParagraph>
                 </div>
-                <div class="ml-auto">
+                <div class="ms-auto">
                   <BaseDropdown
                     flavor="context"
                     label="Dropdown"
@@ -122,7 +122,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                       <template #start>
                         <Icon
                           name="ph:pencil-duotone"
-                          class="w-5 h-5 block mr-2"
+                          class="w-5 h-5 block me-2"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -134,7 +134,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                       <template #start>
                         <Icon
                           name="ph:trash-duotone"
-                          class="w-5 h-5 block mr-2"
+                          class="w-5 h-5 block me-2"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -158,7 +158,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                   <span>Add a new language you speak</span>
                 </BaseParagraph>
               </div>
-              <div class="ml-auto">
+              <div class="ms-auto">
                 <BaseButtonIcon shape="full" condensed>
                   <Icon name="lucide:plus" class="w-4 h-4" />
                 </BaseButtonIcon>
@@ -211,7 +211,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                     :size="68"
                     :thickness="1.5"
                     :value="item.level"
-                    class="absolute -top-2.5 -left-2.5 text-primary-500"
+                    class="absolute -top-2.5 -start-2.5 text-primary-500"
                   />
                 </div>
                 <div>
@@ -222,7 +222,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                     <span>{{ item.experience }} years of experience</span>
                   </BaseParagraph>
                 </div>
-                <div class="ml-auto">
+                <div class="ms-auto">
                   <BaseDropdown
                     flavor="context"
                     label="Dropdown"
@@ -240,7 +240,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                       <template #start>
                         <Icon
                           name="ph:pencil-duotone"
-                          class="w-5 h-5 block mr-2"
+                          class="w-5 h-5 block me-2"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -252,7 +252,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                       <template #start>
                         <Icon
                           name="ph:trash-duotone"
-                          class="w-5 h-5 block mr-2"
+                          class="w-5 h-5 block me-2"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -276,7 +276,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                   <span>Add a new skill you master</span>
                 </BaseParagraph>
               </div>
-              <div class="ml-auto">
+              <div class="ms-auto">
                 <BaseButtonIcon shape="full" condensed>
                   <Icon name="lucide:plus" class="w-4 h-4" />
                 </BaseButtonIcon>
@@ -323,7 +323,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                     :size="68"
                     :thickness="1.5"
                     :value="item.level"
-                    class="absolute -top-2.5 -left-2.5 text-primary-500"
+                    class="absolute -top-2.5 -start-2.5 text-primary-500"
                   />
                 </div>
                 <div>
@@ -334,7 +334,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                     <span>{{ item.mastery }}</span>
                   </BaseParagraph>
                 </div>
-                <div class="ml-auto">
+                <div class="ms-auto">
                   <BaseDropdown
                     flavor="context"
                     label="Dropdown"
@@ -348,7 +348,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                       <template #start>
                         <Icon
                           name="ph:pencil-duotone"
-                          class="w-5 h-5 block mr-2"
+                          class="w-5 h-5 block me-2"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -360,7 +360,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                       <template #start>
                         <Icon
                           name="ph:trash-duotone"
-                          class="w-5 h-5 block mr-2"
+                          class="w-5 h-5 block me-2"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -384,7 +384,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                   <span>Add a new tool you work with</span>
                 </BaseParagraph>
               </div>
-              <div class="ml-auto">
+              <div class="ms-auto">
                 <BaseButtonIcon shape="full" condensed>
                   <Icon name="lucide:plus" class="w-4 h-4" />
                 </BaseButtonIcon>

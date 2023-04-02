@@ -15,7 +15,7 @@ const props = withDefaults(
 
 <template>
   <div
-    class="p-6 bg-muted-200 dark:bg-muted-800"
+    class="bg-muted-200 dark:bg-muted-800 p-6"
     :class="[
       props.shape === 'rounded' ? 'rounded-md' : '',
       props.shape === 'curved' ? 'rounded-xl' : '',
@@ -28,7 +28,7 @@ const props = withDefaults(
         size="md"
         weight="light"
         lead="tight"
-        class="mb-2 text-muted-800 dark:text-white"
+        class="text-muted-800 mb-2 dark:text-white"
       >
         <span>{{ props.title }}</span>
       </BaseHeading>

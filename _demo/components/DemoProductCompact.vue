@@ -19,14 +19,14 @@ const props = withDefaults(
 </script>
 
 <template>
-  <div class="relative group">
+  <div class="group relative">
     <div
       v-if="props.icon"
-      class="absolute -top-2 -left-2 flex items-center justify-center"
+      class="absolute -start-2 -top-2 flex items-center justify-center"
     >
-      <Icon :name="props.icon" class="w-6 h-6 text-muted-400" />
+      <Icon :name="props.icon" class="text-muted-400 h-6 w-6" />
     </div>
-    <div class="absolute -top-2 right-0 flex items-center justify-center">
+    <div class="absolute -top-2 end-0 flex items-center justify-center">
       <BaseHeading
         as="h4"
         size="lg"
@@ -40,12 +40,12 @@ const props = withDefaults(
     <div class="py-6">
       <div class="relative">
         <img
-          class="relative max-w-[100px] mx-auto z-10"
+          class="relative z-10 mx-auto max-w-[100px]"
           :src="props.image"
           :alt="props.title"
         />
         <div
-          class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-20 h-20 rounded-full group-hover:scale-150 bg-primary-500/10 transition-transform duration-300"
+          class="bg-primary-500/10 absolute start-1/2 top-1/2 h-20 w-20 -translate-x-1/2 -translate-y-1/2 rounded-full transition-transform duration-300 group-hover:scale-150"
         ></div>
       </div>
     </div>
@@ -55,7 +55,7 @@ const props = withDefaults(
         size="md"
         weight="medium"
         lead="tight"
-        class="mb-1 text-muted-800 dark:text-white"
+        class="text-muted-800 mb-1 dark:text-white"
       >
         <span>{{ props.title }}</span>
       </BaseHeading>

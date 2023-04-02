@@ -22,7 +22,7 @@ if (data.value) {
         <div
           v-for="item in notifications"
           :key="item.id"
-          class="[&:not(:first-child)]:pt-3 relative flex items-center gap-4 after:content-[''] after:absolute after:top-3 after:left-[8px] ltablet:after:left-[104px] lg:after:left-[104px] after:w-px after:h-full after:border-r-2 after:border-muted-300 dark:after:border-muted-800"
+          class="[&:not(:first-child)]:pt-3 relative flex items-center gap-4 after:content-[''] after:absolute after:top-3 after:start-[8px] ltablet:after:start-[104px] lg:after:start-[104px] after:w-px after:h-full after:border-e-2 after:border-muted-300 dark:after:border-muted-800"
         >
           <div class="hidden ltablet:block lg:block w-24 text-right">
             <BaseText size="xs" class="text-muted-400">
@@ -72,7 +72,7 @@ if (data.value) {
                   <span>{{ item.time }}</span>
                 </BaseText>
               </div>
-              <div class="hidden sm:flex items-center gap-3 ml-auto">
+              <div class="hidden sm:flex items-center gap-3 ms-auto">
                 <BaseAvatar
                   v-for="user in item.people"
                   :key="user.name"

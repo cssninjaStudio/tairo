@@ -26,7 +26,7 @@
           to="https://docs.cssninja.io/tairo"
           class="text-primary-500 group mt-6 flex items-center font-sans text-sm font-medium transition-opacity hover:opacity-90"
         >
-          <span class="mr-1">Read the documentation</span>
+          <span class="me-1">Read the documentation</span>
           <Icon
             name="lucide:arrow-right"
             class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-2"

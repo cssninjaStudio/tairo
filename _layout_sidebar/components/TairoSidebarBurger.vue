@@ -13,7 +13,11 @@ const sidebar = reactive(useSidebar())
     <div class="relative h-5 w-5" :class="sidebar.isOpen ? 'scale-90' : ''">
       <span
         class="bg-primary-500 absolute block h-0.5 w-full transition-all duration-300"
-        :class="sidebar.isOpen ? '-rotate-45 max-w-[75%] top-1' : 'top-0.5'"
+        :class="
+          sidebar.isOpen
+            ? '-rotate-45 rtl:rotate-45 max-w-[75%] top-1'
+            : 'top-0.5'
+        "
       ></span>
       <span
         class="bg-primary-500 absolute top-1/2 block h-0.5 w-full max-w-[50%] transition-all duration-300"
@@ -21,7 +25,11 @@ const sidebar = reactive(useSidebar())
       ></span>
       <span
         class="bg-primary-500 absolute block h-0.5 w-full transition-all duration-300"
-        :class="sidebar.isOpen ? 'rotate-45 max-w-[75%] bottom-1' : 'bottom-0'"
+        :class="
+          sidebar.isOpen
+            ? 'rotate-45 rtl:-rotate-45 max-w-[75%] bottom-1'
+            : 'bottom-0'
+        "
       ></span>
     </div>
   </button>

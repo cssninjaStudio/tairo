@@ -72,7 +72,7 @@ const users = [
           <span>{{ user.position }}</span>
         </BaseText>
       </div>
-      <div class="ml-auto flex items-center justify-end gap-4">
+      <div class="ms-auto flex items-center justify-end gap-4">
         <BaseParagraph
           size="sm"
           weight="semibold"

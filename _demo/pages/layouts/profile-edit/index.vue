@@ -356,7 +356,7 @@ const onSubmit = handleSubmit(
                   />
                   <div
                     v-if="files?.length && files.item(0)"
-                    class="absolute bottom-0 right-0 z-20"
+                    class="absolute bottom-0 end-0 z-20"
                   >
                     <BaseButtonIcon
                       condensed
@@ -367,7 +367,7 @@ const onSubmit = handleSubmit(
                       <Icon name="lucide:x" class="w-4 h-4" />
                     </BaseButtonIcon>
                   </div>
-                  <div v-else class="absolute bottom-0 right-0 z-20">
+                  <div v-else class="absolute bottom-0 end-0 z-20">
                     <div class="relative" data-tooltip="Upload image">
                       <BaseButtonIcon condensed shape="full" @click="open">
                         <Icon name="lucide:plus" class="w-4 h-4" />

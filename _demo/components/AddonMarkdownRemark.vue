@@ -1,4 +1,5 @@
 <script setup lang="ts">
+// eslint-disable vue/no-v-text-v-html-on-component
 import type { IThemeRegistration, Lang } from 'shiki'
 import type { ProcessorThemes } from '~/utils/markdown'
 
@@ -106,12 +107,14 @@ watchEffect(async () => {
       props.lines ? 'with-line-number' : '',
       props.fullwidth ? 'max-w-none' : '',
     ]"
-    v-html="htmlContent[mode]"
-  ></BaseProse>
+  >
+    <div v-html="htmlContent[mode]"></div>
+  </BaseProse>
 </template>
 
 <style scoped>
 .markdown :deep(.shiki) {
+  direction: ltr;
   @apply nui-focus;
 }
 .markdown.with-line-number :deep(.shiki code) {
@@ -124,7 +127,7 @@ watchEffect(async () => {
 .markdown.with-line-number :deep(.shiki code .line::before) {
   content: counter(step);
   counter-increment: step;
-  @apply w-4 mr-6 inline-block text-right text-muted-400 dark:text-muted-500;
+  @apply w-4 me-6 inline-block text-right text-muted-400 dark:text-muted-500;
 }
 .markdown.with-line-number :deep(.shiki code .line:hover) {
   @apply bg-muted-100 dark:bg-muted-900;

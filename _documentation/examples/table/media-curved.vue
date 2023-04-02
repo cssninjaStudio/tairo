@@ -65,7 +65,7 @@ const team = [
       <TairoTableCell>
         <div class="flex items-center">
           <BaseAvatar :src="member.src" size="sm" />
-          <div class="ml-3 leading-none">
+          <div class="ms-3 leading-none">
             <h4 class="font-sans text-sm font-medium">
               {{ member.name }}
             </h4>

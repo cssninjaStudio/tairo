@@ -53,7 +53,7 @@ const commentArea = ref('')
             shape="full"
             flavor="pastel"
             color="muted"
-            class="py-0 h-6 font-semibold inline-flex items-center gap-1 text-xs m-0 scale-90 -ml-1"
+            class="py-0 h-6 font-semibold inline-flex items-center gap-1 text-xs m-0 scale-90 -ms-1"
           >
             <span
               class="block h-2 w-2 rounded-full"
@@ -188,7 +188,7 @@ const commentArea = ref('')
                     <span>v{{ file.version }}</span>
                   </BaseParagraph>
                 </div>
-                <div class="ml-auto">
+                <div class="ms-auto">
                   <BaseButtonIcon
                     shape="full"
                     data-tooltip="Download file"
@@ -256,7 +256,7 @@ const commentArea = ref('')
           >
             <template #addon>
               <div class="flex items-center gap-2">
-                <BaseAvatar src="/img/avatars/2.svg" class="mr-1" size="xs" />
+                <BaseAvatar src="/img/avatars/2.svg" class="me-1" size="xs" />
                 <BaseHeading
                   as="h4"
                   size="sm"

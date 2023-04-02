@@ -56,7 +56,7 @@ const props = withDefaults(
         >
           <Icon :name="props.icon" class="h-5 w-5" />
         </BaseIconBox>
-        <div class="ml-2">
+        <div class="ms-2">
           <BaseHeading
             as="h4"
             size="xs"

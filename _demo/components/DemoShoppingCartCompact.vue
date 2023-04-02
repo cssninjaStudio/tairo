@@ -35,7 +35,7 @@ const products = [
 
 <template>
   <div>
-    <div class="flex items-center justify-between mb-6">
+    <div class="mb-6 flex items-center justify-between">
       <BaseHeading as="h3" size="md" weight="semibold" lead="tight">
         Shopping cart
       </BaseHeading>
@@ -44,7 +44,7 @@ const products = [
     <div class="space-y-2">
       <div v-for="product in products" :key="product.id" class="flex gap-2">
         <div
-          class="h-16 w-16 flex items-center justify-center shrink-0 bg-muted-100 dark:bg-muted-700"
+          class="bg-muted-100 dark:bg-muted-700 flex h-16 w-16 shrink-0 items-center justify-center"
           :class="[
             props.shape === 'rounded' ? 'rounded' : '',
             props.shape === 'curved' ? 'rounded-xl' : '',
@@ -58,7 +58,7 @@ const products = [
           />
         </div>
         <div>
-          <p class="mt-1 font-sans text-xs text-muted-500 dark:text-muted-400">
+          <p class="text-muted-500 dark:text-muted-400 mt-1 font-sans text-xs">
             {{ product.name }}
           </p>
           <p class="font-sans font-semibold">${{ product.price }}</p>
@@ -66,7 +66,7 @@ const products = [
       </div>
     </div>
     <div class="mt-4">
-      <BaseButton color="primary" :shape="props.shape" class="w-full !h-12">
+      <BaseButton color="primary" :shape="props.shape" class="!h-12 w-full">
         Checkout
       </BaseButton>
     </div>

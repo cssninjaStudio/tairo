@@ -53,7 +53,7 @@ const currencies = [
           <span class="text-muted-400">{{ currency.fullName }} token</span>
         </BaseParagraph>
       </div>
-      <div class="flex items-center ml-auto">
+      <div class="flex items-center ms-auto">
         <BaseButtonIcon shape="curved" muted class="scale-75">
           <Icon name="lucide:arrow-right" class="w-5 h-5" />
         </BaseButtonIcon>

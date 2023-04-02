@@ -109,19 +109,19 @@ const props = withDefaults(defineProps<CarouselProps>(), {
 }
 
 :deep(.carousel__next) {
-  @apply right-0;
+  @apply end-0;
 }
 
 :deep(.carousel__next) svg {
-  @apply -right-px;
+  @apply -end-px;
 }
 
 :deep(.carousel__prev) {
-  @apply right-8;
+  @apply end-8;
 }
 
 :deep(.carousel__prev) svg {
-  @apply -left-px;
+  @apply -start-px;
 }
 
 :deep(.carousel__next),

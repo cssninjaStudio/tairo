@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="flex items-center justify-between mb-4">
+    <div class="mb-4 flex items-center justify-between">
       <BaseHeading
         as="h3"
         size="sm"
@@ -23,7 +23,7 @@
               </span>
             </BaseParagraph>
             <div
-              class="w-7 h-7 flex items-center justify-center rounded-full text-xs bg-muted-200 dark:bg-muted-700 text-muted-500 dark:text-muted-200"
+              class="bg-muted-200 dark:bg-muted-700 text-muted-500 dark:text-muted-200 flex h-7 w-7 items-center justify-center rounded-full text-xs"
             >
               <span>12</span>
             </div>
@@ -39,7 +39,7 @@
               </span>
             </BaseParagraph>
             <div
-              class="w-7 h-7 flex items-center justify-center rounded-full text-xs bg-muted-200 dark:bg-muted-700 text-muted-500 dark:text-muted-200"
+              class="bg-muted-200 dark:bg-muted-700 text-muted-500 dark:text-muted-200 flex h-7 w-7 items-center justify-center rounded-full text-xs"
             >
               <span>31</span>
             </div>
@@ -55,7 +55,7 @@
               </span>
             </BaseParagraph>
             <div
-              class="w-7 h-7 flex items-center justify-center rounded-full text-xs bg-muted-200 dark:bg-muted-700 text-muted-500 dark:text-muted-200"
+              class="bg-muted-200 dark:bg-muted-700 text-muted-500 dark:text-muted-200 flex h-7 w-7 items-center justify-center rounded-full text-xs"
             >
               <span>4</span>
             </div>

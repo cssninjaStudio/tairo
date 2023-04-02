@@ -169,7 +169,7 @@ const totalData = computed(() => {
                     <tr>
                       <th
                         scope="col"
-                        class="py-3.5 pl-4 pr-3 text-left text-xs font-medium uppercase text-muted-400 sm:pl-6 md:pl-0"
+                        class="py-3.5 ps-4 pe-3 text-left text-xs font-medium uppercase text-muted-400 sm:ps-6 md:ps-0"
                       >
                         Description
                       </th>
@@ -193,7 +193,7 @@ const totalData = computed(() => {
                       </th>
                       <th
                         scope="col"
-                        class="py-3.5 pl-3 pr-4 text-right text-xs font-medium uppercase text-muted-400 sm:pr-6 md:pr-0"
+                        class="py-3.5 ps-3 pe-4 text-right text-xs font-medium uppercase text-muted-400 sm:pe-6 md:pe-0"
                       >
                         Amount
                       </th>
@@ -205,7 +205,7 @@ const totalData = computed(() => {
                       :key="item.name"
                       class="border-b border-muted-200 dark:border-muted-700"
                     >
-                      <td class="py-4 pl-4 pr-3 text-sm sm:pl-6 md:pl-0">
+                      <td class="py-4 ps-4 pe-3 text-sm sm:ps-6 md:ps-0">
                         <div
                           class="font-medium text-muted-800 dark:text-muted-100"
                         >
@@ -239,7 +239,7 @@ const totalData = computed(() => {
                         ${{ item.rate }}
                       </td>
                       <td
-                        class="py-4 pl-3 pr-4 text-sm text-right text-muted-800 dark:text-muted-100 sm:pr-6 md:pr-0"
+                        class="py-4 ps-3 pe-4 text-sm text-right text-muted-800 dark:text-muted-100 sm:pe-6 md:pe-0"
                       >
                         ${{ (item.rate * item.quantity).toFixed(2) }}
                       </td>
@@ -250,18 +250,18 @@ const totalData = computed(() => {
                       <th
                         scope="row"
                         colspan="4"
-                        class="hidden pt-6 pl-6 pr-3 text-sm font-light text-right text-muted-400 sm:table-cell md:pl-0"
+                        class="hidden pt-6 ps-6 pe-3 text-sm font-light text-right text-muted-400 sm:table-cell md:ps-0"
                       >
                         {{ item.label }}
                       </th>
                       <th
                         scope="row"
-                        class="pt-6 pl-4 pr-3 text-sm font-light text-left text-muted-500 sm:hidden"
+                        class="pt-6 ps-4 pe-3 text-sm font-light text-left text-muted-500 sm:hidden"
                       >
                         {{ item.label }}
                       </th>
                       <td
-                        class="pt-6 pl-3 pr-4 text-right sm:pr-6 md:pr-0"
+                        class="pt-6 ps-3 pe-4 text-right sm:pe-6 md:pe-0"
                         :class="
                           item.label === 'Total'
                             ? 'font-semibold text-lg text-muted-800 dark:text-muted-100'

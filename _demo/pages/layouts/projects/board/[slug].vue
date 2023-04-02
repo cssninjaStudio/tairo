@@ -129,7 +129,7 @@ function onDrop(column: ColumnContent, dropResult: any) {
   >
     <div
       v-if="data?.project !== undefined"
-      class="h-12 flex items-center justify-between pr-4 xl:pr-10"
+      class="h-12 flex items-center justify-between pe-4 xl:pe-10"
     >
       <div class="flex items-center gap-2">
         <BaseAvatar :src="data?.project.customer.logo" size="xs" />
@@ -173,18 +173,18 @@ function onDrop(column: ColumnContent, dropResult: any) {
           }}</span>
           <!-- Column count -->
           <span
-            class="flex items-center justify-center w-5 h-5 ml-2 text-sm font-semibold text-primary-500 dark:text-sunny"
+            class="flex items-center justify-center w-5 h-5 ms-2 text-sm font-semibold text-primary-500 dark:text-sunny"
             >{{ column.tasks.length }}</span
           >
           <!-- Column action -->
           <button
-            class="flex items-center justify-center w-6 h-6 ml-auto text-primary-500 dark:text-sunny rounded-full hover:bg-primary-500/20 dark:hover:bg-sunny/20 transition-colors duration-300"
+            class="flex items-center justify-center w-6 h-6 ms-auto text-primary-500 dark:text-sunny rounded-full hover:bg-primary-500/20 dark:hover:bg-sunny/20 transition-colors duration-300"
           >
             <Icon name="lucide:plus" class="w-4 h-4" />
           </button>
         </div>
         <!-- Scrollable area -->
-        <div class="pb-10 pr-2 overflow-auto slimscroll">
+        <div class="pb-10 pe-2 overflow-auto slimscroll">
           <Container
             tag="div"
             class="flex flex-col gap-y-4"
@@ -214,7 +214,7 @@ function onDrop(column: ColumnContent, dropResult: any) {
                         shape="full"
                         flavor="pastel"
                         color="muted"
-                        class="py-0 h-6 font-semibold inline-flex items-center text-xs m-0 scale-90 -ml-1"
+                        class="py-0 h-6 font-semibold inline-flex items-center text-xs m-0 scale-90 -ms-1"
                         >Task #{{ task.id }}</BaseTag
                       >
                       <BaseText size="xs" class="text-muted-400">{{

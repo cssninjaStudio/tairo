@@ -187,7 +187,7 @@ const jobs = [
         class="w-full flex flex-col sm:flex-row items-center py-2 sm:py-0 ptablet:py-6 ptablet:px-4 mb-10 ptablet:grid ptablet:grid-cols-12 ltablet:divide-x lg:divide-x divide-muted-200 dark:divide-muted-700"
       >
         <div
-          class="w-full sm:w-auto sm:grow py-2 pl-4 sm:pl-2 ptablet:pl-4 pr-4 ptablet:col-span-6"
+          class="w-full sm:w-auto sm:grow py-2 ps-4 sm:ps-2 ptablet:ps-4 pe-4 ptablet:col-span-6"
         >
           <BaseInput
             v-model.trim="search"
@@ -304,7 +304,7 @@ const jobs = [
                 </BaseHeading>
               </div>
               <!-- Checkboxes -->
-              <div class="flex flex-col gap-4 pl-2">
+              <div class="flex flex-col gap-4 ps-2">
                 <div class="flex items-center justify-between">
                   <BaseCheckbox
                     v-model="jobTypes"
@@ -390,7 +390,7 @@ const jobs = [
                 </BaseHeading>
               </div>
               <!-- Checkboxes -->
-              <div class="flex flex-col gap-4 pl-2">
+              <div class="flex flex-col gap-4 ps-2">
                 <div class="flex items-center justify-between">
                   <BaseCheckbox
                     v-model="jobSeniority"
@@ -493,7 +493,7 @@ const jobs = [
                 </BaseHeading>
               </div>
               <!-- Checkboxes -->
-              <div class="flex flex-col gap-4 pl-2">
+              <div class="flex flex-col gap-4 ps-2">
                 <div class="flex items-center justify-between">
                   <BaseCheckbox
                     v-model="jobSeniority"

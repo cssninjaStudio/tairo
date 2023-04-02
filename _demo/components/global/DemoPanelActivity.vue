@@ -5,17 +5,17 @@ const activeTab = ref('tab-1')
 
 <template>
   <div
-    class="border border-muted-200 bg-white dark:border-muted-700 dark:bg-muted-800"
+    class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 border bg-white"
   >
     <div class="flex h-16 w-full items-center justify-between px-10">
       <h2
-        class="font-heading text-lg font-semibold text-muted-700 dark:text-white"
+        class="font-heading text-muted-700 text-lg font-semibold dark:text-white"
       >
         Activity
       </h2>
       <button
         type="button"
-        class="flex h-10 w-10 items-center justify-center rounded-full text-muted-400 transition-colors duration-300 hover:bg-muted-100 hover:text-muted-600 dark:hover:bg-muted-700 dark:hover:text-white"
+        class="text-muted-400 hover:bg-muted-100 hover:text-muted-600 dark:hover:bg-muted-700 flex h-10 w-10 items-center justify-center rounded-full transition-colors duration-300 dark:hover:text-white"
         @click="close"
       >
         <Icon name="feather:chevron-right" class="h-6 w-6" />
@@ -25,7 +25,7 @@ const activeTab = ref('tab-1')
     <div class="flex h-16 items-center px-10">
       <!-- Tabs -->
       <div
-        class="relative flex h-10 w-full items-center rounded-lg bg-muted-100 font-sans text-sm dark:bg-muted-700"
+        class="bg-muted-100 dark:bg-muted-700 relative flex h-10 w-full items-center rounded-lg font-sans text-sm"
       >
         <button
           type="button"
@@ -52,11 +52,11 @@ const activeTab = ref('tab-1')
           <span>Schedule</span>
         </button>
         <div
-          class="absolute top-0 left-0 z-10 h-full w-1/3 rounded-lg bg-primary-600 transition-all duration-300"
+          class="bg-primary-600 absolute start-0 top-0 z-10 h-full w-1/3 rounded-lg transition-all duration-300"
           :class="[
-            activeTab === 'tab-1' && 'ml-0',
-            activeTab === 'tab-2' && 'ml-[33.3%]',
-            activeTab === 'tab-3' && 'ml-[66.6%]',
+            activeTab === 'tab-1' && 'ms-0',
+            activeTab === 'tab-2' && 'ms-[33.3%]',
+            activeTab === 'tab-3' && 'ms-[66.6%]',
           ]"
         ></div>
       </div>
@@ -70,7 +70,7 @@ const activeTab = ref('tab-1')
         <div v-if="activeTab === 'tab-1'" class="space-y-4">
           <!-- Team member -->
           <div
-            class="flex items-center rounded-lg border border-muted-200 bg-white p-4 dark:border-muted-600 dark:bg-muted-700"
+            class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 flex items-center rounded-lg border bg-white p-4"
           >
             <div
               class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
@@ -81,24 +81,24 @@ const activeTab = ref('tab-1')
                 alt=""
               />
             </div>
-            <div class="ml-3">
+            <div class="ms-3">
               <h6
-                class="font-heading text-sm font-semibold text-muted-800 dark:text-white"
+                class="font-heading text-muted-800 text-sm font-semibold dark:text-white"
               >
                 You
               </h6>
-              <p class="font-sans text-xs text-muted-400">Product Manager</p>
+              <p class="text-muted-400 font-sans text-xs">Product Manager</p>
             </div>
             <NuxtLink
               to="#"
-              class="ml-auto flex h-9 w-9 items-center justify-center rounded-full border border-muted-200 text-muted-400 transition-colors duration-300 hover:border-primary-500 hover:text-primary-500 dark:border-muted-500 dark:hover:border-primary-500"
+              class="border-muted-200 text-muted-400 hover:border-primary-500 hover:text-primary-500 dark:border-muted-500 dark:hover:border-primary-500 ms-auto flex h-9 w-9 items-center justify-center rounded-full border transition-colors duration-300"
             >
               <Icon name="feather:arrow-right" class="h-4 w-4" />
             </NuxtLink>
           </div>
           <!-- Team member -->
           <div
-            class="flex items-center rounded-lg border border-muted-200 bg-white p-4 dark:border-muted-600 dark:bg-muted-700"
+            class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 flex items-center rounded-lg border bg-white p-4"
           >
             <div
               class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
@@ -109,24 +109,24 @@ const activeTab = ref('tab-1')
                 alt=""
               />
             </div>
-            <div class="ml-3">
+            <div class="ms-3">
               <h6
-                class="font-heading text-sm font-semibold text-muted-800 dark:text-white"
+                class="font-heading text-muted-800 text-sm font-semibold dark:text-white"
               >
                 Aaaron Splatter
               </h6>
-              <p class="font-sans text-xs text-muted-400">Mobile Developer</p>
+              <p class="text-muted-400 font-sans text-xs">Mobile Developer</p>
             </div>
             <NuxtLink
               to="#"
-              class="ml-auto flex h-9 w-9 items-center justify-center rounded-full border border-muted-200 text-muted-400 transition-colors duration-300 hover:border-primary-500 hover:text-primary-500 dark:border-muted-500 dark:hover:border-primary-500"
+              class="border-muted-200 text-muted-400 hover:border-primary-500 hover:text-primary-500 dark:border-muted-500 dark:hover:border-primary-500 ms-auto flex h-9 w-9 items-center justify-center rounded-full border transition-colors duration-300"
             >
               <Icon name="feather:arrow-right" class="h-4 w-4" />
             </NuxtLink>
           </div>
           <!-- Team member -->
           <div
-            class="flex items-center rounded-lg border border-muted-200 bg-white p-4 dark:border-muted-600 dark:bg-muted-700"
+            class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 flex items-center rounded-lg border bg-white p-4"
           >
             <div
               class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
@@ -137,24 +137,24 @@ const activeTab = ref('tab-1')
                 alt=""
               />
             </div>
-            <div class="ml-3">
+            <div class="ms-3">
               <h6
-                class="font-heading text-sm font-semibold text-muted-800 dark:text-white"
+                class="font-heading text-muted-800 text-sm font-semibold dark:text-white"
               >
                 Mike Miller
               </h6>
-              <p class="font-sans text-xs text-muted-400">Frontend Developer</p>
+              <p class="text-muted-400 font-sans text-xs">Frontend Developer</p>
             </div>
             <NuxtLink
               to="#"
-              class="ml-auto flex h-9 w-9 items-center justify-center rounded-full border border-muted-200 text-muted-400 transition-colors duration-300 hover:border-primary-500 hover:text-primary-500 dark:border-muted-500 dark:hover:border-primary-500"
+              class="border-muted-200 text-muted-400 hover:border-primary-500 hover:text-primary-500 dark:border-muted-500 dark:hover:border-primary-500 ms-auto flex h-9 w-9 items-center justify-center rounded-full border transition-colors duration-300"
             >
               <Icon name="feather:arrow-right" class="h-4 w-4" />
             </NuxtLink>
           </div>
           <!-- Team member -->
           <div
-            class="flex items-center rounded-lg border border-muted-200 bg-white p-4 dark:border-muted-600 dark:bg-muted-700"
+            class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 flex items-center rounded-lg border bg-white p-4"
           >
             <div
               class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
@@ -165,17 +165,17 @@ const activeTab = ref('tab-1')
                 alt=""
               />
             </div>
-            <div class="ml-3">
+            <div class="ms-3">
               <h6
-                class="font-heading text-sm font-semibold text-muted-800 dark:text-white"
+                class="font-heading text-muted-800 text-sm font-semibold dark:text-white"
               >
                 Clarissa Perez
               </h6>
-              <p class="font-sans text-xs text-muted-400">Sales Manager</p>
+              <p class="text-muted-400 font-sans text-xs">Sales Manager</p>
             </div>
             <NuxtLink
               to="#"
-              class="ml-auto flex h-9 w-9 items-center justify-center rounded-full border border-muted-200 text-muted-400 transition-colors duration-300 hover:border-primary-500 hover:text-primary-500 dark:border-muted-500 dark:hover:border-primary-500"
+              class="border-muted-200 text-muted-400 hover:border-primary-500 hover:text-primary-500 dark:border-muted-500 dark:hover:border-primary-500 ms-auto flex h-9 w-9 items-center justify-center rounded-full border transition-colors duration-300"
             >
               <Icon name="feather:arrow-right" class="h-4 w-4" />
             </NuxtLink>
@@ -186,7 +186,7 @@ const activeTab = ref('tab-1')
         <div v-else-if="activeTab === 'tab-2'" class="space-y-4">
           <!-- Project -->
           <div
-            class="rounded-lg border border-muted-200 bg-white p-4 dark:border-muted-600 dark:bg-muted-700"
+            class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 rounded-lg border bg-white p-4"
           >
             <div class="mb-4 flex items-center">
               <div
@@ -198,33 +198,33 @@ const activeTab = ref('tab-1')
                   alt=""
                 />
               </div>
-              <div class="ml-3">
+              <div class="ms-3">
                 <h6
-                  class="font-heading text-sm font-semibold text-muted-800 dark:text-white"
+                  class="font-heading text-muted-800 text-sm font-semibold dark:text-white"
                 >
                   The slicer project
                 </h6>
-                <p class="font-sans text-xs text-muted-400">getslicer.io</p>
+                <p class="text-muted-400 font-sans text-xs">getslicer.io</p>
               </div>
               <NuxtLink
                 to="#"
-                class="ml-auto flex h-9 w-9 items-center justify-center rounded-full border border-muted-200 text-muted-400 transition-colors duration-300 hover:border-primary-500 hover:text-primary-500 dark:border-muted-500 dark:hover:border-primary-500"
+                class="border-muted-200 text-muted-400 hover:border-primary-500 hover:text-primary-500 dark:border-muted-500 dark:hover:border-primary-500 ms-auto flex h-9 w-9 items-center justify-center rounded-full border transition-colors duration-300"
               >
                 <Icon name="feather:arrow-right" class="h-4 w-4" />
               </NuxtLink>
             </div>
             <div
-              class="relative mb-4 h-1 w-full overflow-hidden rounded-lg bg-muted-200 dark:bg-muted-800"
+              class="bg-muted-200 dark:bg-muted-800 relative mb-4 h-1 w-full overflow-hidden rounded-lg"
             >
               <div
-                class="absolute top-0 left-0 h-full w-[34%] rounded-lg bg-primary-500 transition duration-300"
+                class="bg-primary-500 absolute start-0 top-0 h-full w-[34%] rounded-lg transition duration-300"
               ></div>
             </div>
             <div class="flex items-center justify-between">
-              <span class="font-sans text-muted-400">5/24</span>
+              <span class="text-muted-400 font-sans">5/24</span>
               <div class="flex items-end">
                 <div
-                  class="relative -ml-2 inline-flex h-8 w-8 items-center justify-center rounded-full border-2 border-white dark:border-muted-700"
+                  class="dark:border-muted-700 relative -ms-2 inline-flex h-8 w-8 items-center justify-center rounded-full border-2 border-white"
                 >
                   <img
                     src="/img/avatars/2.svg"
@@ -233,7 +233,7 @@ const activeTab = ref('tab-1')
                   />
                 </div>
                 <div
-                  class="relative -ml-2 inline-flex h-8 w-8 items-center justify-center rounded-full border-2 border-white dark:border-muted-700"
+                  class="dark:border-muted-700 relative -ms-2 inline-flex h-8 w-8 items-center justify-center rounded-full border-2 border-white"
                 >
                   <img
                     src="/img/avatars/3.svg"
@@ -242,7 +242,7 @@ const activeTab = ref('tab-1')
                   />
                 </div>
                 <div
-                  class="relative -ml-2 inline-flex h-8 w-8 items-center justify-center rounded-full border-2 border-white dark:border-muted-700"
+                  class="dark:border-muted-700 relative -ms-2 inline-flex h-8 w-8 items-center justify-center rounded-full border-2 border-white"
                 >
                   <img
                     src="/img/avatars/4.svg"
@@ -251,10 +251,10 @@ const activeTab = ref('tab-1')
                   />
                 </div>
                 <div
-                  class="relative -ml-2 inline-flex h-8 w-8 items-center justify-center rounded-full border-2 border-white bg-muted-200 dark:border-muted-700 dark:bg-muted-800"
+                  class="bg-muted-200 dark:border-muted-700 dark:bg-muted-800 relative -ms-2 inline-flex h-8 w-8 items-center justify-center rounded-full border-2 border-white"
                 >
                   <span
-                    class="-ml-1 font-alt text-sm font-normal uppercase text-muted-500 dark:text-muted-300"
+                    class="font-alt text-muted-500 dark:text-muted-300 -ms-1 text-sm font-normal uppercase"
                   >
                     +3
                   </span>
@@ -264,7 +264,7 @@ const activeTab = ref('tab-1')
           </div>
           <!-- Project -->
           <div
-            class="rounded-lg border border-muted-200 bg-white p-4 dark:border-muted-600 dark:bg-muted-700"
+            class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 rounded-lg border bg-white p-4"
           >
             <div class="mb-4 flex items-center">
               <div
@@ -276,33 +276,33 @@ const activeTab = ref('tab-1')
                   alt=""
                 />
               </div>
-              <div class="ml-3">
+              <div class="ms-3">
                 <h6
-                  class="font-heading text-sm font-semibold text-muted-800 dark:text-white"
+                  class="font-heading text-muted-800 text-sm font-semibold dark:text-white"
                 >
                   Metamovies reworked
                 </h6>
-                <p class="font-sans text-xs text-muted-400">metamovies.co</p>
+                <p class="text-muted-400 font-sans text-xs">metamovies.co</p>
               </div>
               <NuxtLink
                 to="#"
-                class="ml-auto flex h-9 w-9 items-center justify-center rounded-full border border-muted-200 text-muted-400 transition-colors duration-300 hover:border-primary-500 hover:text-primary-500 dark:border-muted-500 dark:hover:border-primary-500"
+                class="border-muted-200 text-muted-400 hover:border-primary-500 hover:text-primary-500 dark:border-muted-500 dark:hover:border-primary-500 ms-auto flex h-9 w-9 items-center justify-center rounded-full border transition-colors duration-300"
               >
                 <Icon name="feather:arrow-right" class="h-4 w-4" />
               </NuxtLink>
             </div>
             <div
-              class="relative mb-4 h-1 w-full overflow-hidden rounded-lg bg-muted-200 dark:bg-muted-800"
+              class="bg-muted-200 dark:bg-muted-800 relative mb-4 h-1 w-full overflow-hidden rounded-lg"
             >
               <div
-                class="absolute top-0 left-0 h-full w-[88%] rounded-lg bg-primary-500 transition duration-300"
+                class="bg-primary-500 absolute start-0 top-0 h-full w-[88%] rounded-lg transition duration-300"
               ></div>
             </div>
             <div class="flex items-center justify-between">
-              <span class="font-sans text-muted-400">28/31</span>
+              <span class="text-muted-400 font-sans">28/31</span>
               <div class="flex items-end">
                 <div
-                  class="relative -ml-2 inline-flex h-8 w-8 items-center justify-center rounded-full border-2 border-white dark:border-muted-700"
+                  class="dark:border-muted-700 relative -ms-2 inline-flex h-8 w-8 items-center justify-center rounded-full border-2 border-white"
                 >
                   <img
                     src="/img/avatars/13.svg"
@@ -311,7 +311,7 @@ const activeTab = ref('tab-1')
                   />
                 </div>
                 <div
-                  class="relative -ml-2 inline-flex h-8 w-8 items-center justify-center rounded-full border-2 border-white dark:border-muted-700"
+                  class="dark:border-muted-700 relative -ms-2 inline-flex h-8 w-8 items-center justify-center rounded-full border-2 border-white"
                 >
                   <img
                     src="/img/avatars/24.svg"
@@ -324,7 +324,7 @@ const activeTab = ref('tab-1')
           </div>
           <!-- Project -->
           <div
-            class="rounded-lg border border-muted-200 bg-white p-4 dark:border-muted-600 dark:bg-muted-700"
+            class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 rounded-lg border bg-white p-4"
           >
             <div class="mb-4 flex items-center">
               <div
@@ -336,33 +336,33 @@ const activeTab = ref('tab-1')
                   alt=""
                 />
               </div>
-              <div class="ml-3">
+              <div class="ms-3">
                 <h6
-                  class="font-heading text-sm font-semibold text-muted-800 dark:text-white"
+                  class="font-heading text-muted-800 text-sm font-semibold dark:text-white"
                 >
                   Fast Pizza redesign
                 </h6>
-                <p class="font-sans text-xs text-muted-400">fastpizza.com</p>
+                <p class="text-muted-400 font-sans text-xs">fastpizza.com</p>
               </div>
               <NuxtLink
                 to="#"
-                class="ml-auto flex h-9 w-9 items-center justify-center rounded-full border border-muted-200 text-muted-400 transition-colors duration-300 hover:border-primary-500 hover:text-primary-500 dark:border-muted-500 dark:hover:border-primary-500"
+                class="border-muted-200 text-muted-400 hover:border-primary-500 hover:text-primary-500 dark:border-muted-500 dark:hover:border-primary-500 ms-auto flex h-9 w-9 items-center justify-center rounded-full border transition-colors duration-300"
               >
                 <Icon name="feather:arrow-right" class="h-4 w-4" />
               </NuxtLink>
             </div>
             <div
-              class="relative mb-4 h-1 w-full overflow-hidden rounded-lg bg-muted-200 dark:bg-muted-800"
+              class="bg-muted-200 dark:bg-muted-800 relative mb-4 h-1 w-full overflow-hidden rounded-lg"
             >
               <div
-                class="absolute top-0 left-0 h-full w-[62%] rounded-lg bg-primary-500 transition duration-300"
+                class="bg-primary-500 absolute start-0 top-0 h-full w-[62%] rounded-lg transition duration-300"
               ></div>
             </div>
             <div class="flex items-center justify-between">
-              <span class="font-sans text-muted-400">25/39</span>
+              <span class="text-muted-400 font-sans">25/39</span>
               <div class="flex items-end">
                 <div
-                  class="relative -ml-2 inline-flex h-8 w-8 items-center justify-center rounded-full border-2 border-white dark:border-muted-700"
+                  class="dark:border-muted-700 relative -ms-2 inline-flex h-8 w-8 items-center justify-center rounded-full border-2 border-white"
                 >
                   <img
                     src="/img/avatars/11.svg"
@@ -371,7 +371,7 @@ const activeTab = ref('tab-1')
                   />
                 </div>
                 <div
-                  class="relative -ml-2 inline-flex h-8 w-8 items-center justify-center rounded-full border-2 border-white dark:border-muted-700"
+                  class="dark:border-muted-700 relative -ms-2 inline-flex h-8 w-8 items-center justify-center rounded-full border-2 border-white"
                 >
                   <img
                     src="/img/avatars/3.svg"
@@ -390,28 +390,28 @@ const activeTab = ref('tab-1')
           <div>
             <!-- Item -->
             <div
-              class="relative flex pb-8 after:absolute after:top-10 after:left-4 after:h-[calc(100%_-_36px)] after:w-px after:border-l after:border-muted-300 after:content-[''] dark:after:border-muted-600"
+              class="after:border-muted-300 dark:after:border-muted-600 relative flex pb-8 after:absolute after:start-4 after:top-10 after:h-[calc(100%_-_36px)] after:w-px after:border-l after:content-['']"
             >
               <div
-                class="relative flex h-9 w-9 items-center justify-center rounded-full border border-muted-200 bg-white text-muted-400 shadow-lg after:absolute after:top-4 after:-right-8 after:h-px after:w-5 after:border-t after:border-muted-300 after:content-[''] dark:border-muted-600 dark:bg-muted-700 dark:after:border-muted-600"
+                class="border-muted-200 text-muted-400 after:border-muted-300 dark:border-muted-600 dark:bg-muted-700 dark:after:border-muted-600 relative flex h-9 w-9 items-center justify-center rounded-full border bg-white shadow-lg after:absolute after:-end-8 after:top-4 after:h-px after:w-5 after:border-t after:content-['']"
               >
                 <Icon name="ph:phone-duotone" class="" />
               </div>
-              <div class="ml-10">
+              <div class="ms-10">
                 <h6
-                  class="font-heading text-sm font-semibold text-muted-800 dark:text-white"
+                  class="font-heading text-muted-800 text-sm font-semibold dark:text-white"
                 >
                   Call Danny at Colby's
                 </h6>
-                <p class="font-sans text-xs text-muted-400">Today - 11:30am</p>
+                <p class="text-muted-400 font-sans text-xs">Today - 11:30am</p>
               </div>
             </div>
             <!-- Item -->
             <div
-              class="relative flex pb-8 after:absolute after:top-10 after:left-4 after:h-[calc(100%_-_36px)] after:w-px after:border-l after:border-muted-300 after:content-[''] dark:after:border-muted-600"
+              class="after:border-muted-300 dark:after:border-muted-600 relative flex pb-8 after:absolute after:start-4 after:top-10 after:h-[calc(100%_-_36px)] after:w-px after:border-l after:content-['']"
             >
               <div
-                class="relative flex h-9 w-9 items-center justify-center rounded-full border border-muted-200 bg-white text-muted-400 shadow-lg after:absolute after:top-4 after:-right-8 after:h-px after:w-5 after:border-t after:border-muted-300 after:content-[''] dark:border-muted-600 dark:bg-muted-700 dark:after:border-muted-600"
+                class="border-muted-200 text-muted-400 after:border-muted-300 dark:border-muted-600 dark:bg-muted-700 dark:after:border-muted-600 relative flex h-9 w-9 items-center justify-center rounded-full border bg-white shadow-lg after:absolute after:-end-8 after:top-4 after:h-px after:w-5 after:border-t after:content-['']"
               >
                 <div
                   class="relative inline-flex h-7 w-7 items-center justify-center rounded-full"
@@ -423,39 +423,39 @@ const activeTab = ref('tab-1')
                   />
                 </div>
               </div>
-              <div class="ml-10">
+              <div class="ms-10">
                 <h6
-                  class="font-heading text-sm font-semibold text-muted-800 dark:text-white"
+                  class="font-heading text-muted-800 text-sm font-semibold dark:text-white"
                 >
                   Meeting with Mike
                 </h6>
-                <p class="font-sans text-xs text-muted-400">Today - 01:00pm</p>
+                <p class="text-muted-400 font-sans text-xs">Today - 01:00pm</p>
               </div>
             </div>
             <!-- Item -->
             <div
-              class="relative flex pb-8 after:absolute after:top-10 after:left-4 after:h-[calc(100%_-_36px)] after:w-px after:border-l after:border-muted-300 after:content-[''] dark:after:border-muted-600"
+              class="after:border-muted-300 dark:after:border-muted-600 relative flex pb-8 after:absolute after:start-4 after:top-10 after:h-[calc(100%_-_36px)] after:w-px after:border-l after:content-['']"
             >
               <div
-                class="relative flex h-9 w-9 items-center justify-center rounded-full border border-muted-200 bg-white text-muted-400 shadow-lg after:absolute after:top-4 after:-right-8 after:h-px after:w-5 after:border-t after:border-muted-300 after:content-[''] dark:border-muted-600 dark:bg-muted-700 dark:after:border-muted-600"
+                class="border-muted-200 text-muted-400 after:border-muted-300 dark:border-muted-600 dark:bg-muted-700 dark:after:border-muted-600 relative flex h-9 w-9 items-center justify-center rounded-full border bg-white shadow-lg after:absolute after:-end-8 after:top-4 after:h-px after:w-5 after:border-t after:content-['']"
               >
                 <Icon name="ph:chat-circle-duotone" class="" />
               </div>
-              <div class="ml-10">
+              <div class="ms-10">
                 <h6
-                  class="font-heading text-sm font-semibold text-muted-800 dark:text-white"
+                  class="font-heading text-muted-800 text-sm font-semibold dark:text-white"
                 >
                   Answer Annie's message
                 </h6>
-                <p class="font-sans text-xs text-muted-400">Today - 01:45pm</p>
+                <p class="text-muted-400 font-sans text-xs">Today - 01:45pm</p>
               </div>
             </div>
             <!-- Item -->
             <div
-              class="relative flex pb-8 after:absolute after:top-10 after:left-4 after:h-[calc(100%_-_36px)] after:w-px after:border-l after:border-muted-300 after:content-[''] dark:after:border-muted-600"
+              class="after:border-muted-300 dark:after:border-muted-600 relative flex pb-8 after:absolute after:start-4 after:top-10 after:h-[calc(100%_-_36px)] after:w-px after:border-l after:content-['']"
             >
               <div
-                class="relative flex h-9 w-9 items-center justify-center rounded-full border border-muted-200 bg-white text-muted-400 shadow-lg after:absolute after:top-4 after:-right-8 after:h-px after:w-5 after:border-t after:border-muted-300 after:content-[''] dark:border-muted-600 dark:bg-muted-700 dark:after:border-muted-600"
+                class="border-muted-200 text-muted-400 after:border-muted-300 dark:border-muted-600 dark:bg-muted-700 dark:after:border-muted-600 relative flex h-9 w-9 items-center justify-center rounded-full border bg-white shadow-lg after:absolute after:-end-8 after:top-4 after:h-px after:w-5 after:border-t after:content-['']"
               >
                 <div
                   class="relative inline-flex h-7 w-7 items-center justify-center rounded-full"
@@ -467,67 +467,67 @@ const activeTab = ref('tab-1')
                   />
                 </div>
               </div>
-              <div class="ml-10">
+              <div class="ms-10">
                 <h6
-                  class="font-heading text-sm font-semibold text-muted-800 dark:text-white"
+                  class="font-heading text-muted-800 text-sm font-semibold dark:text-white"
                 >
                   Meeting with John
                 </h6>
-                <p class="font-sans text-xs text-muted-400">Today - 03:00pm</p>
+                <p class="text-muted-400 font-sans text-xs">Today - 03:00pm</p>
               </div>
             </div>
             <!-- Item -->
             <div
-              class="relative flex pb-8 after:absolute after:top-10 after:left-4 after:h-[calc(100%_-_36px)] after:w-px after:border-l after:border-muted-300 after:content-[''] dark:after:border-muted-600"
+              class="after:border-muted-300 dark:after:border-muted-600 relative flex pb-8 after:absolute after:start-4 after:top-10 after:h-[calc(100%_-_36px)] after:w-px after:border-l after:content-['']"
             >
               <div
-                class="relative flex h-9 w-9 items-center justify-center rounded-full border border-muted-200 bg-white text-muted-400 shadow-lg after:absolute after:top-4 after:-right-8 after:h-px after:w-5 after:border-t after:border-muted-300 after:content-[''] dark:border-muted-600 dark:bg-muted-700 dark:after:border-muted-600"
+                class="border-muted-200 text-muted-400 after:border-muted-300 dark:border-muted-600 dark:bg-muted-700 dark:after:border-muted-600 relative flex h-9 w-9 items-center justify-center rounded-full border bg-white shadow-lg after:absolute after:-end-8 after:top-4 after:h-px after:w-5 after:border-t after:content-['']"
               >
                 <Icon name="ph:envelope-duotone" class="" />
               </div>
-              <div class="ml-10">
+              <div class="ms-10">
                 <h6
-                  class="font-heading text-sm font-semibold text-muted-800 dark:text-white"
+                  class="font-heading text-muted-800 text-sm font-semibold dark:text-white"
                 >
                   Send marketing campaign
                 </h6>
-                <p class="font-sans text-xs text-muted-400">Today - 03:30pm</p>
+                <p class="text-muted-400 font-sans text-xs">Today - 03:30pm</p>
               </div>
             </div>
             <!-- Item -->
             <div
-              class="relative flex pb-8 after:absolute after:top-10 after:left-4 after:h-[calc(100%_-_36px)] after:w-px after:border-l after:border-muted-300 after:content-[''] dark:after:border-muted-600"
+              class="after:border-muted-300 dark:after:border-muted-600 relative flex pb-8 after:absolute after:start-4 after:top-10 after:h-[calc(100%_-_36px)] after:w-px after:border-l after:content-['']"
             >
               <div
-                class="relative flex h-9 w-9 items-center justify-center rounded-full border border-muted-200 bg-white text-muted-400 shadow-lg after:absolute after:top-4 after:-right-8 after:h-px after:w-5 after:border-t after:border-muted-300 after:content-[''] dark:border-muted-600 dark:bg-muted-700 dark:after:border-muted-600"
+                class="border-muted-200 text-muted-400 after:border-muted-300 dark:border-muted-600 dark:bg-muted-700 dark:after:border-muted-600 relative flex h-9 w-9 items-center justify-center rounded-full border bg-white shadow-lg after:absolute after:-end-8 after:top-4 after:h-px after:w-5 after:border-t after:content-['']"
               >
                 <Icon name="ph:selection-all-duotone" class="" />
               </div>
-              <div class="ml-10">
+              <div class="ms-10">
                 <h6
-                  class="font-heading text-sm font-semibold text-muted-800 dark:text-white"
+                  class="font-heading text-muted-800 text-sm font-semibold dark:text-white"
                 >
                   Project review
                 </h6>
-                <p class="font-sans text-xs text-muted-400">Today - 04:30pm</p>
+                <p class="text-muted-400 font-sans text-xs">Today - 04:30pm</p>
               </div>
             </div>
             <!-- Item -->
             <div
-              class="relative flex pb-8 after:absolute after:top-10 after:left-4 after:h-[calc(100%_-_36px)] after:w-px after:border-l after:border-muted-300 after:content-[''] dark:after:border-muted-600"
+              class="after:border-muted-300 dark:after:border-muted-600 relative flex pb-8 after:absolute after:start-4 after:top-10 after:h-[calc(100%_-_36px)] after:w-px after:border-l after:content-['']"
             >
               <div
-                class="relative flex h-9 w-9 items-center justify-center rounded-full border border-muted-200 bg-white text-muted-400 shadow-lg after:absolute after:top-4 after:-right-8 after:h-px after:w-5 after:border-t after:border-muted-300 after:content-[''] dark:border-muted-600 dark:bg-muted-700 dark:after:border-muted-600"
+                class="border-muted-200 text-muted-400 after:border-muted-300 dark:border-muted-600 dark:bg-muted-700 dark:after:border-muted-600 relative flex h-9 w-9 items-center justify-center rounded-full border bg-white shadow-lg after:absolute after:-end-8 after:top-4 after:h-px after:w-5 after:border-t after:content-['']"
               >
                 <Icon name="ph:note-duotone" class="" />
               </div>
-              <div class="ml-10">
+              <div class="ms-10">
                 <h6
-                  class="font-heading text-sm font-semibold text-muted-800 dark:text-white"
+                  class="font-heading text-muted-800 text-sm font-semibold dark:text-white"
                 >
                   Write proposal for Andy
                 </h6>
-                <p class="font-sans text-xs text-muted-400">Today - 06:30pm</p>
+                <p class="text-muted-400 font-sans text-xs">Today - 06:30pm</p>
               </div>
             </div>
           </div>

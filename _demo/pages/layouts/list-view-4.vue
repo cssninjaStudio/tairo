@@ -131,7 +131,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                   </div>
                 </div>
                 <div
-                  class="sm:ml-auto flex flex-col sm:flex-row items-center justify-end gap-2"
+                  class="sm:ms-auto flex flex-col sm:flex-row items-center justify-end gap-2"
                 >
                   <div
                     class="flex ptablet:hidden items-center justify-center sm:justify-end gap-1 w-full sm:w-[160px] py-5 sm:py-0"

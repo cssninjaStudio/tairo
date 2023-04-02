@@ -59,7 +59,7 @@ const { data, pending, error, refresh } = await useFetch(
               </span>
               <p class="font-sans text-xs text-muted-400">On Track</p>
               <span
-                class="absolute top-0 right-0 h-2 w-2 rounded-full bg-primary-500"
+                class="absolute top-0 end-0 h-2 w-2 rounded-full bg-primary-500"
               ></span>
             </div>
             <div class="relative flex flex-col text-center">
@@ -70,7 +70,7 @@ const { data, pending, error, refresh } = await useFetch(
               </span>
               <p class="font-sans text-xs text-muted-400">Overdue</p>
               <span
-                class="absolute top-0 right-0 h-2 w-2 rounded-full bg-amber-500"
+                class="absolute top-0 end-0 h-2 w-2 rounded-full bg-amber-500"
               ></span>
             </div>
             <div class="relative flex flex-col text-center">
@@ -81,7 +81,7 @@ const { data, pending, error, refresh } = await useFetch(
               </span>
               <p class="font-sans text-xs text-muted-400">Total</p>
               <span
-                class="absolute top-0 right-0 h-2 w-2 rounded-full bg-success-500"
+                class="absolute top-0 end-0 h-2 w-2 rounded-full bg-success-500"
               ></span>
             </div>
             <div class="flex items-center justify-center">

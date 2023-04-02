@@ -86,12 +86,12 @@ const { md } = useTailwindBreakpoints()
 
       <div
         v-if="props.tag"
-        class="bg-muted-200 text-muted-600 dark:bg-muted-800 dark:text-muted-500 ml-3 hidden flex-none rounded-md px-2 py-1.5 text-xs font-semibold tracking-wide lg:block"
+        class="bg-muted-200 text-muted-600 dark:bg-muted-800 dark:text-muted-500 ms-3 hidden flex-none rounded-md px-2 py-1.5 text-xs font-semibold tracking-wide lg:block"
       >
         {{ props.tag }}
       </div>
 
-      <div v-if="hasDemoContent" class="ml-auto flex items-center gap-2">
+      <div v-if="hasDemoContent" class="ms-auto flex items-center gap-2">
         <BaseCheckbox
           v-model="forceDark"
           condensed
@@ -110,7 +110,7 @@ const { md } = useTailwindBreakpoints()
           <BaseButtonAction
             v-if="exampleComponent"
             shape="rounded"
-            class="h-[2.35rem] pr-3 focus:z-10"
+            class="h-[2.35rem] pe-3 focus:z-10"
             :class="
               showCode
                 ? 'dark:!bg-muted-800'
@@ -125,7 +125,7 @@ const { md } = useTailwindBreakpoints()
           <BaseButtonAction
             v-if="exampleMarkdown"
             shape="rounded"
-            class="h-[2.35rem] pr-3 focus:z-10"
+            class="h-[2.35rem] pe-3 focus:z-10"
             :class="
               !showCode
                 ? 'dark:!bg-muted-800'

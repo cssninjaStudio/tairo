@@ -31,7 +31,7 @@
                   </BaseHeading>
                   <BaseText size="xs" class="text-muted-400">Software Engineer</BaseText>
                 </div>
-                <div class="child ml-auto text-muted-300">
+                <div class="child ms-auto text-muted-300">
                   <div class="h-3 w-3 rounded-full bg-current"></div>
                 </div>
               </div>
@@ -51,7 +51,7 @@
                   </BaseHeading>
                   <BaseText size="xs" class="text-muted-400">Sales Manager</BaseText>
                 </div>
-                <div class="child ml-auto text-muted-300">
+                <div class="child ms-auto text-muted-300">
                   <div class="h-3 w-3 rounded-full bg-current"></div>
                 </div>
               </div>
@@ -71,7 +71,7 @@
                   </BaseHeading>
                   <BaseText size="xs" class="text-muted-400">HR Manager</BaseText>
                 </div>
-                <div class="child ml-auto text-muted-300">
+                <div class="child ms-auto text-muted-300">
                   <div class="h-3 w-3 rounded-full bg-current"></div>
                 </div>
               </div>

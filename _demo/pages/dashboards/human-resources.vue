@@ -232,7 +232,7 @@ const items = [
                       </BaseTag>
                     </DemoFlexTableCell>
                     <DemoFlexTableCell label="action" :hideLabel="index > 0">
-                      <span class="font-sans text-xs sm:pr-2 text-primary-500">
+                      <span class="font-sans text-xs sm:pe-2 text-primary-500">
                         Action
                       </span>
                     </DemoFlexTableCell>

@@ -138,7 +138,7 @@ const showStackTrace = ref(false)
           </BaseTag>
           <BaseButtonClose
             color="muted"
-            class="ml-auto"
+            class="ms-auto"
             @click="showStackTrace = false"
           />
         </div>
@@ -175,6 +175,6 @@ const showStackTrace = ref(false)
   @apply text-sm;
 }
 .stack.internal {
-  @apply opacity-100 pl-4 text-xs;
+  @apply opacity-100 ps-4 text-xs;
 }
 </style>

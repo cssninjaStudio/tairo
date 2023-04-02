@@ -139,7 +139,7 @@ const billingCycles = ref('monthly')
             class="text-muted-400/50 peer-checked:!border-success-500 peer-checked:text-success-500 group relative p-6 text-center peer-checked:[&_.child]:!opacity-100"
           >
             <div
-              class="child border-muted-200 dark:border-muted-700 dark:bg-muted-800 absolute right-3 top-3 flex h-7 w-7 items-center justify-center rounded-full border bg-white opacity-0"
+              class="child border-muted-200 dark:border-muted-700 dark:bg-muted-800 absolute end-3 top-3 flex h-7 w-7 items-center justify-center rounded-full border bg-white opacity-0"
             >
               <Icon name="lucide:check" class="h-3 w-3 text-current" />
             </div>
@@ -167,7 +167,7 @@ const billingCycles = ref('monthly')
             class="text-muted-400/50 group relative p-6 text-center peer-checked:!border-yellow-400 peer-checked:text-yellow-400 peer-checked:[&_.child]:!opacity-100"
           >
             <div
-              class="child border-muted-200 dark:border-muted-700 dark:bg-muted-800 absolute right-3 top-3 flex h-7 w-7 items-center justify-center rounded-full border bg-white opacity-0"
+              class="child border-muted-200 dark:border-muted-700 dark:bg-muted-800 absolute end-3 top-3 flex h-7 w-7 items-center justify-center rounded-full border bg-white opacity-0"
             >
               <Icon name="lucide:check" class="h-3 w-3 text-current" />
             </div>
@@ -195,7 +195,7 @@ const billingCycles = ref('monthly')
             class="text-muted-400/50 group relative p-6 text-center peer-checked:!border-indigo-500 peer-checked:text-indigo-500 peer-checked:[&_.child]:!opacity-100"
           >
             <div
-              class="child border-muted-200 dark:border-muted-700 dark:bg-muted-800 absolute right-3 top-3 flex h-7 w-7 items-center justify-center rounded-full border bg-white opacity-0"
+              class="child border-muted-200 dark:border-muted-700 dark:bg-muted-800 absolute end-3 top-3 flex h-7 w-7 items-center justify-center rounded-full border bg-white opacity-0"
             >
               <Icon name="lucide:check" class="h-3 w-3 text-current" />
             </div>
@@ -223,7 +223,7 @@ const billingCycles = ref('monthly')
             class="text-muted-400/50 peer-checked:!border-primary-500 peer-checked:text-primary-500 group relative p-6 text-center peer-checked:[&_.child]:!opacity-100"
           >
             <div
-              class="child border-muted-200 dark:border-muted-700 dark:bg-muted-800 absolute right-3 top-3 flex h-7 w-7 items-center justify-center rounded-full border bg-white opacity-0"
+              class="child border-muted-200 dark:border-muted-700 dark:bg-muted-800 absolute end-3 top-3 flex h-7 w-7 items-center justify-center rounded-full border bg-white opacity-0"
             >
               <Icon name="lucide:check" class="h-3 w-3 text-current" />
             </div>

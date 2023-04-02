@@ -301,7 +301,7 @@ function useBarProfit() {
             >
               <BaseDropdownItem to="#" title="Invest" text="Buys more stocks">
                 <template #start>
-                  <Icon name="ph:coin-duotone" class="w-5 h-5 block mr-2" />
+                  <Icon name="ph:coin-duotone" class="w-5 h-5 block me-2" />
                 </template>
               </BaseDropdownItem>
               <BaseDropdownItem
@@ -312,19 +312,19 @@ function useBarProfit() {
                 <template #start>
                   <Icon
                     name="ph:cell-signal-medium-duotone"
-                    class="w-5 h-5 block mr-2"
+                    class="w-5 h-5 block me-2"
                   />
                 </template>
               </BaseDropdownItem>
               <BaseDropdownItem to="#" title="Trade" text="View opportunities">
                 <template #start>
-                  <Icon name="ph:bank-duotone" class="w-5 h-5 block mr-2" />
+                  <Icon name="ph:bank-duotone" class="w-5 h-5 block me-2" />
                 </template>
               </BaseDropdownItem>
               <BaseDropdownDivide />
               <BaseDropdownItem to="#" title="Wallet" text="Manage your wallet">
                 <template #start>
-                  <Icon name="ph:wallet-duotone" class="w-5 h-5 block mr-2" />
+                  <Icon name="ph:wallet-duotone" class="w-5 h-5 block me-2" />
                 </template>
               </BaseDropdownItem>
             </BaseDropdown>
@@ -356,7 +356,7 @@ function useBarProfit() {
                 <span class="text-muted-400">Tesla Motors</span>
               </BaseParagraph>
             </div>
-            <div class="flex items-center gap-1 ml-auto">
+            <div class="flex items-center gap-1 ms-auto">
               <Icon
                 name="ph:check-circle-duotone"
                 class="w-4 h-4 text-success-500"
@@ -388,7 +388,7 @@ function useBarProfit() {
             >
               <BaseDropdownItem to="#" title="Invest" text="Buys more stocks">
                 <template #start>
-                  <Icon name="ph:coin-duotone" class="w-5 h-5 block mr-2" />
+                  <Icon name="ph:coin-duotone" class="w-5 h-5 block me-2" />
                 </template>
               </BaseDropdownItem>
               <BaseDropdownItem
@@ -399,19 +399,19 @@ function useBarProfit() {
                 <template #start>
                   <Icon
                     name="ph:cell-signal-medium-duotone"
-                    class="w-5 h-5 block mr-2"
+                    class="w-5 h-5 block me-2"
                   />
                 </template>
               </BaseDropdownItem>
               <BaseDropdownItem to="#" title="Trade" text="View opportunities">
                 <template #start>
-                  <Icon name="ph:bank-duotone" class="w-5 h-5 block mr-2" />
+                  <Icon name="ph:bank-duotone" class="w-5 h-5 block me-2" />
                 </template>
               </BaseDropdownItem>
               <BaseDropdownDivide />
               <BaseDropdownItem to="#" title="Wallet" text="Manage your wallet">
                 <template #start>
-                  <Icon name="ph:wallet-duotone" class="w-5 h-5 block mr-2" />
+                  <Icon name="ph:wallet-duotone" class="w-5 h-5 block me-2" />
                 </template>
               </BaseDropdownItem>
             </BaseDropdown>
@@ -443,7 +443,7 @@ function useBarProfit() {
                 <span class="text-muted-400">Facebook Inc</span>
               </BaseParagraph>
             </div>
-            <div class="flex items-center gap-1 ml-auto">
+            <div class="flex items-center gap-1 ms-auto">
               <Icon
                 name="ph:check-circle-duotone"
                 class="w-4 h-4 text-success-500"
@@ -477,7 +477,7 @@ function useBarProfit() {
             >
               <BaseDropdownItem to="#" title="Invest" text="Buys more stocks">
                 <template #start>
-                  <Icon name="ph:coin-duotone" class="w-5 h-5 block mr-2" />
+                  <Icon name="ph:coin-duotone" class="w-5 h-5 block me-2" />
                 </template>
               </BaseDropdownItem>
               <BaseDropdownItem
@@ -488,19 +488,19 @@ function useBarProfit() {
                 <template #start>
                   <Icon
                     name="ph:cell-signal-medium-duotone"
-                    class="w-5 h-5 block mr-2"
+                    class="w-5 h-5 block me-2"
                   />
                 </template>
               </BaseDropdownItem>
               <BaseDropdownItem to="#" title="Trade" text="View opportunities">
                 <template #start>
-                  <Icon name="ph:bank-duotone" class="w-5 h-5 block mr-2" />
+                  <Icon name="ph:bank-duotone" class="w-5 h-5 block me-2" />
                 </template>
               </BaseDropdownItem>
               <BaseDropdownDivide />
               <BaseDropdownItem to="#" title="Wallet" text="Manage your wallet">
                 <template #start>
-                  <Icon name="ph:wallet-duotone" class="w-5 h-5 block mr-2" />
+                  <Icon name="ph:wallet-duotone" class="w-5 h-5 block me-2" />
                 </template>
               </BaseDropdownItem>
             </BaseDropdown>
@@ -532,7 +532,7 @@ function useBarProfit() {
                 <span class="text-muted-400">Twitter Inc</span>
               </BaseParagraph>
             </div>
-            <div class="flex items-center gap-1 ml-auto">
+            <div class="flex items-center gap-1 ms-auto">
               <Icon
                 name="ph:check-circle-duotone"
                 class="w-4 h-4 text-success-500"
@@ -593,7 +593,7 @@ function useBarProfit() {
                   <span class="text-muted-400">Linkedin Corp.</span>
                 </BaseParagraph>
               </div>
-              <div class="flex items-center gap-1 ml-auto">
+              <div class="flex items-center gap-1 ms-auto">
                 <Icon
                   name="ph:check-circle-duotone"
                   class="w-4 h-4 text-success-500"
@@ -628,7 +628,7 @@ function useBarProfit() {
                   <span class="text-muted-400">Github Inc.</span>
                 </BaseParagraph>
               </div>
-              <div class="flex items-center gap-1 ml-auto">
+              <div class="flex items-center gap-1 ms-auto">
                 <Icon
                   name="ph:check-circle-duotone"
                   class="w-4 h-4 text-success-500"
@@ -663,7 +663,7 @@ function useBarProfit() {
                   <span class="text-muted-400">Invision Corp.</span>
                 </BaseParagraph>
               </div>
-              <div class="flex items-center gap-1 ml-auto">
+              <div class="flex items-center gap-1 ms-auto">
                 <Icon
                   name="ph:check-circle-duotone"
                   class="w-4 h-4 text-success-500"
@@ -698,7 +698,7 @@ function useBarProfit() {
                   <span class="text-muted-400">Telegram Inc.</span>
                 </BaseParagraph>
               </div>
-              <div class="flex items-center gap-1 ml-auto">
+              <div class="flex items-center gap-1 ms-auto">
                 <Icon
                   name="ph:check-circle-duotone"
                   class="w-4 h-4 text-success-500"
@@ -733,7 +733,7 @@ function useBarProfit() {
                   <span class="text-muted-400">Kickstarter Inc.</span>
                 </BaseParagraph>
               </div>
-              <div class="flex items-center gap-1 ml-auto">
+              <div class="flex items-center gap-1 ms-auto">
                 <Icon
                   name="ph:check-circle-duotone"
                   class="w-4 h-4 text-success-500"
@@ -768,7 +768,7 @@ function useBarProfit() {
                   <span class="text-muted-400">Google Corp.</span>
                 </BaseParagraph>
               </div>
-              <div class="flex items-center gap-1 ml-auto">
+              <div class="flex items-center gap-1 ms-auto">
                 <Icon
                   name="ph:check-circle-duotone"
                   class="w-4 h-4 text-success-500"

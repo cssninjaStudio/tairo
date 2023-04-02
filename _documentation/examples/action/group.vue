@@ -1,6 +1,6 @@
 <template>
   <div class="flex items-end">
-    <BaseButtonAction shape="rounded" class="rounded-r-none border-r-0 focus:z-10">
+    <BaseButtonAction shape="rounded" class="rounded-e-none border-e-0 focus:z-10">
       View
     </BaseButtonAction>
 
@@ -8,13 +8,13 @@
       <Icon name="ph:pen" class="h-4 w-4" />
     </BaseButtonAction>
 
-    <BaseButtonAction muted shape="straight" class="focus:z-10 border-l-0">Muted</BaseButtonAction>
+    <BaseButtonAction muted shape="straight" class="focus:z-10 border-s-0">Muted</BaseButtonAction>
 
-    <BaseButtonAction disabled shape="straight" class="focus:z-10 border-l-0">
+    <BaseButtonAction disabled shape="straight" class="focus:z-10 border-s-0">
       Disabled
     </BaseButtonAction>
 
-    <BaseButtonAction shape="rounded" class="rounded-l-none border-l-0 focus:z-10">
+    <BaseButtonAction shape="rounded" class="rounded-s-none border-s-0 focus:z-10">
       Share
     </BaseButtonAction>
   </div>

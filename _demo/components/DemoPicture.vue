@@ -34,7 +34,7 @@ const props = withDefaults(
     <img
       v-if="props.srcDark"
       :src="$props.srcDark"
-      class="hidden dark:block w-full object-cover"
+      class="hidden w-full object-cover dark:block"
       :alt="$props.alt"
       :width="props.width"
       :height="props.height"
@@ -45,7 +45,7 @@ const props = withDefaults(
     />
     <div
       v-if="props.loading"
-      class="dark absolute bottom-8 inset-x-0 px-6 flex items-center justify-center"
+      class="dark absolute inset-x-0 bottom-8 flex items-center justify-center px-6"
     >
       <BaseProgress size="xs" inderterminate />
     </div>

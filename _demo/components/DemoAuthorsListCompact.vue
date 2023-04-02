@@ -69,7 +69,7 @@ const authors = [
           </span>
         </BaseParagraph>
       </div>
-      <div class="flex items-center gap-1 ml-auto">
+      <div class="flex items-center gap-1 ms-auto">
         <span class="font-sans text-xs text-muted-400">
           {{ author.articles }} articles
         </span>

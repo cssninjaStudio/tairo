@@ -36,7 +36,7 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
             class="bg-pink-500/10 text-pink-600"
           />
           <!-- Edit -->
-          <div class="absolute z-10 bottom-0 right-0">
+          <div class="absolute z-10 bottom-0 end-0">
             <BaseButtonIcon
               small
               shape="full"
@@ -60,7 +60,7 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
             <div class="col-span-12">
               <BaseCard shape="curved" class="group relative p-6">
                 <!-- Edit -->
-                <div class="absolute z-10 top-3 right-3">
+                <div class="absolute z-10 top-3 end-3">
                   <BaseButtonIcon
                     small
                     shape="full"
@@ -98,7 +98,7 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
             <div class="col-span-12 sm:col-span-6">
               <BaseCard shape="curved" class="group relative p-6">
                 <!-- Edit -->
-                <div class="absolute z-10 top-3 right-3">
+                <div class="absolute z-10 top-3 end-3">
                   <BaseButtonIcon
                     small
                     shape="full"
@@ -163,7 +163,7 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
             <div class="col-span-12 sm:col-span-6">
               <BaseCard shape="curved" class="group relative p-6">
                 <!-- Edit -->
-                <div class="absolute z-10 top-3 right-3">
+                <div class="absolute z-10 top-3 end-3">
                   <BaseButtonIcon
                     small
                     shape="full"
@@ -211,7 +211,7 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
             <div class="col-span-12 sm:col-span-4">
               <BaseCard shape="curved" class="group relative p-6">
                 <!-- Edit -->
-                <div class="absolute z-10 top-3 right-3">
+                <div class="absolute z-10 top-3 end-3">
                   <BaseButtonIcon
                     small
                     shape="full"
@@ -246,7 +246,7 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
             <div class="col-span-12 sm:col-span-4">
               <BaseCard shape="curved" class="group relative p-6 h-full">
                 <!-- Edit -->
-                <div class="absolute z-10 top-3 right-3">
+                <div class="absolute z-10 top-3 end-3">
                   <BaseButtonIcon
                     small
                     shape="full"
@@ -285,7 +285,7 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
             <div class="col-span-12 sm:col-span-4">
               <BaseCard shape="curved" class="group relative p-6">
                 <!-- Edit -->
-                <div class="absolute z-10 top-3 right-3">
+                <div class="absolute z-10 top-3 end-3">
                   <BaseButtonIcon
                     small
                     shape="full"
@@ -320,7 +320,7 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
             <div class="col-span-12 sm:col-span-6">
               <BaseCard shape="curved" class="group relative p-6">
                 <!-- Edit -->
-                <div class="absolute z-10 top-3 right-3">
+                <div class="absolute z-10 top-3 end-3">
                   <BaseButtonIcon
                     small
                     shape="full"
@@ -375,7 +375,7 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
             <div class="col-span-12 sm:col-span-6">
               <BaseCard shape="curved" class="group relative p-6">
                 <!-- Edit -->
-                <div class="absolute z-10 top-3 right-3">
+                <div class="absolute z-10 top-3 end-3">
                   <BaseButtonIcon
                     small
                     shape="full"

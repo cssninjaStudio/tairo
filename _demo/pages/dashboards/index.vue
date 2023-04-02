@@ -430,7 +430,7 @@ function useBarProfit() {
               <span>Customers</span>
             </BaseHeading>
           </div>
-          <AddonApexcharts v-bind="areaCustomers" class="-ml-4" />
+          <AddonApexcharts v-bind="areaCustomers" class="-ms-4" />
         </BaseCard>
       </div>
       <!-- CTA card -->
@@ -463,7 +463,7 @@ function useBarProfit() {
             </NuxtLink>
           </div>
           <div
-            class="absolute bottom-4 right-4 w-14 h-14 flex items-center justify-center z-10"
+            class="absolute bottom-4 end-4 w-14 h-14 flex items-center justify-center z-10"
           >
             <Icon
               name="ph:crown-duotone"

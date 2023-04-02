@@ -366,7 +366,7 @@ const candidates = [
             <span class="text-muted-400">8:00 am — 9:00 am</span>
           </BaseParagraph>
         </div>
-        <div class="flex items-center ml-auto">
+        <div class="flex items-center ms-auto">
           <BaseButtonIcon shape="curved" muted class="scale-75">
             <Icon name="lucide:arrow-right" class="w-5 h-5" />
           </BaseButtonIcon>
@@ -389,7 +389,7 @@ const candidates = [
             <span class="text-muted-400">10:30 am — 11:30 am</span>
           </BaseParagraph>
         </div>
-        <div class="flex items-center ml-auto">
+        <div class="flex items-center ms-auto">
           <BaseButtonIcon shape="curved" muted class="scale-75">
             <Icon name="lucide:arrow-right" class="w-5 h-5" />
           </BaseButtonIcon>
@@ -412,7 +412,7 @@ const candidates = [
             <span class="text-muted-400">2:00 pm — 3:00 pm</span>
           </BaseParagraph>
         </div>
-        <div class="flex items-center ml-auto">
+        <div class="flex items-center ms-auto">
           <BaseButtonIcon shape="curved" muted class="scale-75">
             <Icon name="lucide:arrow-right" class="w-5 h-5" />
           </BaseButtonIcon>

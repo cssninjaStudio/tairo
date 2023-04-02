@@ -186,7 +186,7 @@ function useAreaExpenses() {
             <div></div>
           </div>
           <div
-            class="flex flex-col sm:flex-row sm:gap-x-8 gap-y-4 ltablet:pr-12 lg:pr-12"
+            class="flex flex-col sm:flex-row sm:gap-x-8 gap-y-4 ltablet:pe-12 lg:pe-12"
           >
             <div>
               <BaseButtonIcon shape="rounded">
@@ -218,7 +218,7 @@ function useAreaExpenses() {
         </div>
         <div class="w-full ltablet:w-2/5 lg:w-2/5">
           <div
-            class="h-full flex flex-col ltablet:pl-12 lg:pl-12 ltablet:border-l lg:border-l border-muted-200 dark:border-muted-700"
+            class="h-full flex flex-col ltablet:ps-12 lg:ps-12 ltablet:border-l lg:border-l border-muted-200 dark:border-muted-700"
           >
             <div class="flex items-center justify-between mb-4">
               <BaseHeading
@@ -354,7 +354,7 @@ function useAreaExpenses() {
               </div>
             </div>
             <!-- Chart -->
-            <div class="h-full flex flex-col grow ltablet:pr-12 lg:pr-12">
+            <div class="h-full flex flex-col grow ltablet:pe-12 lg:pe-12">
               <div class="mt-auto">
                 <AddonApexcharts v-bind="areaExpenses" />
               </div>
@@ -362,7 +362,7 @@ function useAreaExpenses() {
           </div>
         </div>
         <div class="w-full ltablet:w-2/5 lg:w-2/5">
-          <div class="h-full ltablet:pl-12 lg:pl-12">
+          <div class="h-full ltablet:ps-12 lg:ps-12">
             <div class="w-full h-full flex flex-col">
               <div class="flex items-center justify-between mb-6">
                 <BaseHeading
@@ -400,7 +400,7 @@ function useAreaExpenses() {
                         <span>Oct 23, 2022 - 8:46pm</span>
                       </BaseParagraph>
                     </div>
-                    <div class="ml-auto">
+                    <div class="ms-auto">
                       <span
                         class="font-sans font-semibold text-sm text-muted-800 dark:text-muted-100"
                       >
@@ -431,7 +431,7 @@ function useAreaExpenses() {
                         <span>Oct 18, 2022 - 9:11am</span>
                       </BaseParagraph>
                     </div>
-                    <div class="ml-auto">
+                    <div class="ms-auto">
                       <span
                         class="font-sans font-semibold text-sm text-muted-800 dark:text-muted-100"
                       >
@@ -462,7 +462,7 @@ function useAreaExpenses() {
                         <span>Oct 16, 2022 - 2:13pm</span>
                       </BaseParagraph>
                     </div>
-                    <div class="ml-auto">
+                    <div class="ms-auto">
                       <span
                         class="font-sans font-semibold text-sm text-muted-800 dark:text-muted-100"
                       >

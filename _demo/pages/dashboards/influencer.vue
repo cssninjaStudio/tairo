@@ -285,7 +285,7 @@ const activeTab = ref('tab-1')
   <div>
     <!-- Header bg -->
     <div
-      class="absolute top-0 left-0 w-full h-[590px] ltablet:h-[410px] lg:h-[410px] bg-white dark:bg-muted-800"
+      class="absolute top-0 start-0 w-full h-[590px] ltablet:h-[410px] lg:h-[410px] bg-white dark:bg-muted-800"
     ></div>
     <!-- Header -->
     <div
@@ -434,7 +434,7 @@ const activeTab = ref('tab-1')
       </div>
       <!-- Action -->
       <div
-        class="flex justify-center ltablet:justify-start lg:justify-start shrink-0 ltablet:ml-auto lg:ml-auto mt-4 ltablet:mt-0 lg:mt-0"
+        class="flex justify-center ltablet:justify-start lg:justify-start shrink-0 ltablet:ms-auto lg:ms-auto mt-4 ltablet:mt-0 lg:mt-0"
       >
         <BaseButton
           class="w-52 ltablet:w-auto lg:w-auto mx-auto ltablet:mx-0 lg:mx-0"
@@ -445,7 +445,7 @@ const activeTab = ref('tab-1')
       </div>
       <!-- Tabs -->
       <div
-        class="absolute bottom-[-48px] ltablet:bottom-[-70px] lg:bottom-[-70px] left-0 flex items-end gap-2"
+        class="absolute bottom-[-48px] ltablet:bottom-[-70px] lg:bottom-[-70px] start-0 flex items-end gap-2"
       >
         <button
           type="button"

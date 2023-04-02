@@ -29,7 +29,7 @@ const isModalMdOpen = ref(false)
       <!-- Header -->
       <div class="flex w-full items-center justify-between p-4 md:p-6">
         <h3
-          class="font-heading text-lg font-medium leading-6 text-muted-900 dark:text-white"
+          class="font-heading text-muted-900 text-lg font-medium leading-6 dark:text-white"
         >
           Small dialog
         </h3>
@@ -48,12 +48,12 @@ const isModalMdOpen = ref(false)
           />
         </div>
         <h3
-          class="font-heading text-lg font-medium leading-6 text-muted-800 dark:text-white"
+          class="font-heading text-muted-800 text-lg font-medium leading-6 dark:text-white"
         >
           New Invite
         </h3>
         <p
-          class="font-alt text-sm leading-5 text-muted-500 dark:text-muted-400"
+          class="font-alt text-muted-500 dark:text-muted-400 text-sm leading-5"
         >
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod.
@@ -80,7 +80,7 @@ const isModalMdOpen = ref(false)
       <!-- Header -->
       <div class="flex w-full items-center justify-between p-4 md:p-6">
         <h3
-          class="font-heading text-lg font-medium leading-6 text-muted-900 dark:text-white"
+          class="font-heading text-muted-900 text-lg font-medium leading-6 dark:text-white"
         >
           Medium dialog
         </h3>
@@ -99,12 +99,12 @@ const isModalMdOpen = ref(false)
           />
         </div>
         <h3
-          class="font-heading text-lg font-medium leading-6 text-muted-800 dark:text-white"
+          class="font-heading text-muted-800 text-lg font-medium leading-6 dark:text-white"
         >
           New Invite
         </h3>
         <p
-          class="font-alt text-sm leading-5 text-muted-500 dark:text-muted-400"
+          class="font-alt text-muted-500 dark:text-muted-400 text-sm leading-5"
         >
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod.

@@ -1,16 +1,15 @@
 <script setup lang="ts">
+import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css'
 import type { Map, Popup } from 'mapbox-gl'
 import 'mapbox-gl/src/css/mapbox-gl.css'
-import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css'
-
-const { open } = usePanels()
-const app = useAppConfig()
-const panels = reactive(usePanels())
-const { primary } = useTailwindColors()
 
 const props = defineProps<{
   reversed?: boolean
 }>()
+const { open } = usePanels()
+const app = useAppConfig()
+const panels = reactive(usePanels())
+const { primary } = useTailwindColors()
 
 const colorMode = useColorMode()
 const darkmode = computed({
@@ -36,6 +35,7 @@ const map = shallowRef<Map>()
 const popup = shallowRef<Popup>()
 const geocoder = shallowRef<any>()
 
+// eslint-disable-next-line @typescript-eslint/consistent-type-imports
 let mapboxgl: typeof import('mapbox-gl')
 
 const locations = {
@@ -386,27 +386,27 @@ watch(
 <template>
   <div class="relative">
     <div
-      class="min-h-screen bg-muted-100 dark:bg-muted-900 flex flex-col ltablet:flex-row lg:flex-row"
+      class="bg-muted-100 dark:bg-muted-900 ltablet:flex-row flex min-h-screen flex-col lg:flex-row"
     >
       <!-- Sidebar -->
       <div
-        class="relative h-16 ltablet:h-screen lg:h-screen w-full ltablet:w-20 lg:w-20 ltablet:border-r lg:border-r border-muted-200 dark:border-muted-700 bg-white dark:bg-muted-800 z-10"
+        class="ltablet:h-screen ltablet:w-20 ltablet:border-r border-muted-200 dark:border-muted-700 dark:bg-muted-800 relative z-10 h-16 w-full bg-white lg:h-screen lg:w-20 lg:border-r"
       >
-        <div class="h-full flex ltablet:flex-col lg:flex-col justify-between">
-          <div class="flex ltablet:flex-col lg:flex-col">
+        <div class="ltablet:flex-col flex h-full justify-between lg:flex-col">
+          <div class="ltablet:flex-col flex lg:flex-col">
             <div
-              class="flex h-16 w-16 ltablet:w-full lg:w-full items-center justify-center shrink-0"
+              class="ltablet:w-full flex h-16 w-16 shrink-0 items-center justify-center lg:w-full"
             >
               <NuxtLink to="#" class="flex items-center justify-center">
                 <TairoLogo class="text-primary-600 h-10" />
               </NuxtLink>
             </div>
             <div
-              class="flex h-16 w-16 ltablet:w-full lg:w-full items-center justify-center shrink-0"
+              class="ltablet:w-full flex h-16 w-16 shrink-0 items-center justify-center lg:w-full"
             >
               <a
                 href="#"
-                class="text-muted-400 hover:text-primary-500 flex h-12 w-12 items-center justify-center rounded-2xl hover:bg-primary-500/20 transition-colors duration-300"
+                class="text-muted-400 hover:text-primary-500 hover:bg-primary-500/20 flex h-12 w-12 items-center justify-center rounded-2xl transition-colors duration-300"
                 title="Back"
                 @click.prevent="$router.back()"
               >
@@ -415,12 +415,12 @@ watch(
             </div>
           </div>
           <div
-            class="flex ltablet:flex-col lg:flex-col pr-4 ltablet:pr-0 lg:pr-0"
+            class="ltablet:flex-col ltablet:pe-0 flex pe-4 lg:flex-col lg:pe-0"
           >
             <div class="flex h-16 w-full items-center justify-center">
               <button
                 type="button"
-                class="text-muted-400 hover:text-primary-500 flex h-12 w-12 items-center justify-center rounded-2xl hover:bg-primary-500/20 transition-colors duration-300"
+                class="text-muted-400 hover:text-primary-500 hover:bg-primary-500/20 flex h-12 w-12 items-center justify-center rounded-2xl transition-colors duration-300"
                 title="Search"
                 @click="open('search')"
               >
@@ -430,19 +430,19 @@ watch(
             <div class="flex h-16 w-full items-center justify-center">
               <NuxtLink
                 to="#"
-                class="text-muted-400 hover:text-primary-500 flex h-12 w-12 items-center justify-center rounded-2xl hover:bg-primary-500/20 transition-colors duration-300"
+                class="text-muted-400 hover:text-primary-500 hover:bg-primary-500/20 flex h-12 w-12 items-center justify-center rounded-2xl transition-colors duration-300"
                 title="Settings"
               >
                 <Icon name="ph:gear-six-duotone" class="h-5 w-5" />
               </NuxtLink>
             </div>
             <div
-              class="hidden lg:flex ltablet:flex h-16 w-full items-center justify-center"
+              class="ltablet:flex hidden h-16 w-full items-center justify-center lg:flex"
             >
               <DemoAccountMenu />
             </div>
             <div
-              class="flex lg:hidden ltablet:hidden h-16 w-full items-center justify-center"
+              class="ltablet:hidden flex h-16 w-full items-center justify-center lg:hidden"
             >
               <DemoAccountMenu horizontal />
             </div>
@@ -451,8 +451,8 @@ watch(
       </div>
 
       <template v-if="!props.reversed">
-        <div class="relative grow h-96 ltablet:h-auto lg:h-auto">
-          <div ref="mapElement" class="absolute inset-0 w-full h-full"></div>
+        <div class="ltablet:h-auto relative h-96 grow lg:h-auto">
+          <div ref="mapElement" class="absolute inset-0 h-full w-full"></div>
           <div
             ref="geocoderElement"
             class="geocoder absolute inset-x-0 top-6 mx-auto flex items-center justify-center px-6 sm:px-0"
@@ -474,10 +474,10 @@ watch(
       </template>
 
       <div
-        class="w-full ltablet:w-96 lg:w-96 h-[calc(100vh_-_428px)] ltablet:h-screen lg:h-screen shrink-0 bg-white dark:bg-muted-800"
+        class="ltablet:w-96 ltablet:h-screen dark:bg-muted-800 h-[calc(100vh_-_428px)] w-full shrink-0 bg-white lg:h-screen lg:w-96"
       >
         <div
-          class="relative h-16 w-full flex items-center justify-between px-6 z-10"
+          class="relative z-10 flex h-16 w-full items-center justify-between px-6"
         >
           <BaseHeading size="xl" weight="medium">
             <span class="text-muted-800 dark:text-white">Locations</span>
@@ -494,25 +494,25 @@ watch(
           </div>
         </div>
         <div
-          class="h-[calc(100vh_-_492px)] ltablet:h-[calc(100%_-_64px)] lg:h-[calc(100%_-_64px)] overflow-y-auto slimscroll p-6"
+          class="ltablet:h-[calc(100%_-_64px)] slimscroll h-[calc(100vh_-_492px)] overflow-y-auto p-6 lg:h-[calc(100%_-_64px)]"
         >
           <!--Title-->
           <BaseHeading
             size="xs"
             weight="medium"
-            class="uppercase mb-4 tracking-wider"
+            class="mb-4 uppercase tracking-wider"
           >
             <span class="text-muted-400">Recent Locations</span>
           </BaseHeading>
 
           <!--Map Box-->
           <div
-            class="flex flex-col gap-4 ptablet:flex-none ptablet:grid ptablet:grid-cols-2 ptablet:pb-10"
+            class="ptablet:flex-none ptablet:grid ptablet:grid-cols-2 ptablet:pb-10 flex flex-col gap-4"
           >
             <BaseCard
               v-for="(feature, key) in locations.features"
               :key="key"
-              class="p-6 cursor-pointer"
+              class="cursor-pointer p-6"
               shape="curved"
               :class="[
                 selectedFeatureName === feature.properties.name &&
@@ -525,22 +525,22 @@ watch(
             >
               <div class="relative">
                 <div class="relative">
-                  <div class="flex items-center gap-2 mb-3">
+                  <div class="mb-3 flex items-center gap-2">
                     <BaseAvatar size="xs" :src="feature.properties.logo" />
                     <div class="font-sans">
                       <h4
-                        class="font-medium text-sm leading-none text-muted-800 dark:text-muted-100"
+                        class="text-muted-800 dark:text-muted-100 text-sm font-medium leading-none"
                       >
                         {{ feature.properties.name }}
                       </h4>
-                      <p class="text-sm text-muted-400">
+                      <p class="text-muted-400 text-sm">
                         Open until {{ feature.properties.openingCount }}
                       </p>
                     </div>
                   </div>
                 </div>
                 <div
-                  class="mb-4 font-sans text-sm text-muted-500 dark:text-muted-400"
+                  class="text-muted-500 dark:text-muted-400 mb-4 font-sans text-sm"
                 >
                   <p>
                     {{ feature.properties.description }}
@@ -548,17 +548,17 @@ watch(
                 </div>
                 <div class="flex items-center justify-between">
                   <div class="flex gap-1">
-                    <Icon name="uiw:star-on" class="text-yellow-400 w-3 h-3" />
-                    <Icon name="uiw:star-on" class="text-yellow-400 w-3 h-3" />
-                    <Icon name="uiw:star-on" class="text-yellow-400 w-3 h-3" />
-                    <Icon name="uiw:star-on" class="text-yellow-400 w-3 h-3" />
-                    <Icon name="uiw:star-on" class="text-yellow-400 w-3 h-3" />
+                    <Icon name="uiw:star-on" class="h-3 w-3 text-yellow-400" />
+                    <Icon name="uiw:star-on" class="h-3 w-3 text-yellow-400" />
+                    <Icon name="uiw:star-on" class="h-3 w-3 text-yellow-400" />
+                    <Icon name="uiw:star-on" class="h-3 w-3 text-yellow-400" />
+                    <Icon name="uiw:star-on" class="h-3 w-3 text-yellow-400" />
                   </div>
                   <div class="relative">
                     <div
-                      class="flex items-center gap-1 font-sans text-sm text-muted-400"
+                      class="text-muted-400 flex items-center gap-1 font-sans text-sm"
                     >
-                      <Icon name="lucide:flag" class="w-4 h-4" />
+                      <Icon name="lucide:flag" class="h-4 w-4" />
                       <span class="dark-inverted">
                         {{ feature.properties.distance }} mile
                       </span>
@@ -572,8 +572,8 @@ watch(
       </div>
 
       <template v-if="props.reversed">
-        <div class="relative grow h-96 ltablet:h-auto lg:h-auto">
-          <div ref="mapElement" class="absolute inset-0 w-full h-full"></div>
+        <div class="ltablet:h-auto relative h-96 grow lg:h-auto">
+          <div ref="mapElement" class="absolute inset-0 h-full w-full"></div>
           <div
             ref="geocoderElement"
             class="geocoder absolute inset-x-0 top-6 mx-auto flex items-center justify-center px-6 sm:px-0"
@@ -614,7 +614,7 @@ watch(
         :is="resolveComponent(panels.current.component)"
         v-if="panels.current?.component"
         class="fixed top-0 z-[100] h-full w-96"
-        :class="[panels.current.position === 'left' ? 'left-0' : 'right-0']"
+        :class="[panels.current.position === 'left' ? 'start-0' : 'end-0']"
       />
     </Transition>
   </div>
@@ -629,10 +629,10 @@ watch(
 }
 
 .mapboxgl-popup .mapboxgl-popup-anchor-right .mapboxgl-popup-tip {
-  @apply relative z-[30] left-[-2px];
+  @apply relative z-[30] start-[-2px];
 }
 .mapboxgl-popup .mapboxgl-popup-anchor-left .mapboxgl-popup-tip {
-  @apply relative z-[30] right-[-2px];
+  @apply relative z-[30] end-[-2px];
 }
 
 .mapboxgl-popup-close-button {
@@ -648,7 +648,7 @@ watch(
 }
 
 .mapboxgl-ctrl-geocoder input {
- @apply h-12 pl-12 font-sans text-muted-700 dark:text-muted-100 rounded-full bg-white dark:bg-muted-800 border border-muted-200 dark:border-muted-700 shadow-xl shadow-muted-300/30 dark:shadow-muted-900/40 transition-colors duration-300;
+ @apply h-12 ps-12 font-sans text-muted-700 dark:text-muted-100 rounded-full bg-white dark:bg-muted-800 border border-muted-200 dark:border-muted-700 shadow-xl shadow-muted-300/30 dark:shadow-muted-900/40 transition-colors duration-300;
 }
 
 .mapboxgl-ctrl-geocoder--button {
@@ -656,7 +656,7 @@ watch(
 }
 
 .mapboxgl-ctrl-geocoder--icon-search {
-  @apply text-primary-500 fill-current top-3.5 left-3.5 scale-[1.1];
+  @apply text-primary-500 fill-current top-3.5 start-3.5 scale-[1.1];
 }
 
 .mapboxgl-ctrl-geocoder--icon-close {

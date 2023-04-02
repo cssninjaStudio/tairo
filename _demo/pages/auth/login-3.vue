@@ -209,7 +209,7 @@ const onSubmit = handleSubmit(async (values) => {
           />
 
           <BaseButton class="w-full !h-11">
-            <Icon name="logos:google-icon" class="w-4 h-4 mr-1" />
+            <Icon name="logos:google-icon" class="w-4 h-4 me-1" />
             <span>Sign In with Google</span>
           </BaseButton>
 

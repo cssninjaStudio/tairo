@@ -131,31 +131,31 @@ watchEffect(() => {
         <template #image>
           <img
             src="/img/illustrations/wizard/team.svg"
-            class="rounded-full max-w-[210px] mx-auto"
+            class="mx-auto max-w-[210px] rounded-full"
             alt=""
           />
         </template>
-        <div class="text-center mt-2">
+        <div class="mt-2 text-center">
           <button
             type="button"
-            class="font-sans underline underline-offset-4 text-primary-500"
+            class="text-primary-500 font-sans underline underline-offset-4"
             @click="toggled = true"
           >
             Add Members
           </button>
         </div>
       </BasePlaceholderPage>
-      <div v-else class="relative max-w-5xl mx-auto">
-        <div class="w-full flex flex-col items-center">
+      <div v-else class="relative mx-auto max-w-5xl">
+        <div class="flex w-full flex-col items-center">
           <BaseAvatar
             size="xl"
             src="/img/avatars/2.svg"
             badge-src="/img/icons/flags/united-states-of-america.svg"
           />
-          <p class="my-3 font-sans text-sm text-muted-400">
+          <p class="text-muted-400 my-3 font-sans text-sm">
             You are the project owner
           </p>
-          <div class="w-full relative max-w-sm">
+          <div class="relative w-full max-w-sm">
             <BaseInput
               v-model="search"
               icon="lucide:search"
@@ -163,12 +163,12 @@ watchEffect(() => {
               placeholder="ex: Clarissa, Kendra, ..."
               :classes="{
                 wrapper: 'w-full relative z-10',
-                input: 'h-12 text-base !pl-12',
+                input: 'h-12 text-base !ps-12',
                 icon: 'h-12 w-12',
               }"
             />
             <div
-              class="absolute z-20 top-14 left-0 w-full p-4 rounded-xl border border-muted-200 dark:border-muted-700 bg-white dark:bg-muted-800 shadow-xl shadow-muted-300/30 dark:shadow-muted-900/30 transition-all duration-300"
+              class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 shadow-muted-300/30 dark:shadow-muted-900/30 absolute start-0 top-14 z-20 w-full rounded-xl border bg-white p-4 shadow-xl transition-all duration-300"
               :class="
                 search.length > 0
                   ? 'opacity-100 translate-y-0'
@@ -178,65 +178,65 @@ watchEffect(() => {
               <!-- Results -->
               <div
                 v-if="filteredUsers.length > 0"
-                class="space-y-2 max-h-[186px] overflow-y-auto slimscroll"
+                class="slimscroll max-h-[186px] space-y-2 overflow-y-auto"
               >
                 <!-- Result -->
                 <div
                   v-for="user in filteredUsers"
                   :key="user.name"
                   role="button"
-                  class="flex items-center gap-3 py-2 px-3 rounded-lg cursor-pointer hover:bg-muted-100"
+                  class="hover:bg-muted-100 flex cursor-pointer items-center gap-3 rounded-lg px-3 py-2"
                 >
                   <BaseAvatar size="sm" :src="user.picture" />
                   <div class="flex flex-col">
                     <h3
-                      class="font-sans text-sm font-semibold text-muted-800 dark:text-muted-100"
+                      class="text-muted-800 dark:text-muted-100 font-sans text-sm font-semibold"
                     >
                       Invite
                     </h3>
                     <p
-                      class="font-sans text-xs text-muted-500 dark:text-muted-400"
+                      class="text-muted-500 dark:text-muted-400 font-sans text-xs"
                     >
                       {{ user.name }}
                     </p>
                   </div>
-                  <div class="ml-auto">
+                  <div class="ms-auto">
                     <BaseButtonIcon
                       small
                       shape="full"
                       @click="addTeammate(user)"
                     >
-                      <Icon name="lucide:plus" class="w-4 h-4" />
+                      <Icon name="lucide:plus" class="h-4 w-4" />
                     </BaseButtonIcon>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="w-full max-w-2xl mx-auto mt-8 pb-40">
+          <div class="mx-auto mt-8 w-full max-w-2xl pb-40">
             <!-- Added members -->
             <template v-if="project.team && project.team.length > 0">
               <div class="w-full space-y-2">
                 <div
                   v-for="(member, idx) in project.team"
                   :key="member.name"
-                  class="flex items-center gap-3 p-4 rounded-lg cursor-pointer border border-muted-200 dark:border-muted-700 bg-white dark:bg-muted-800"
+                  class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 flex cursor-pointer items-center gap-3 rounded-lg border bg-white p-4"
                 >
                   <BaseAvatar size="sm" :src="member.picture" />
                   <div class="flex flex-col">
                     <h3
-                      class="font-sans text-sm font-semibold text-muted-800 dark:text-muted-100"
+                      class="text-muted-800 dark:text-muted-100 font-sans text-sm font-semibold"
                     >
                       Invited
                     </h3>
                     <p
-                      class="font-sans text-xs text-muted-500 dark:text-muted-400"
+                      class="text-muted-500 dark:text-muted-400 font-sans text-xs"
                     >
                       {{ member.name }}
                     </p>
                   </div>
-                  <div class="ml-auto">
-                    <div class="relative w-48 flex justify-between">
+                  <div class="ms-auto">
+                    <div class="relative flex w-48 justify-between">
                       <div
                         class="relative z-10 shrink-0"
                         data-tooltip="Reader"
@@ -303,7 +303,7 @@ watchEffect(() => {
                           ]"
                         ></div>
                       </div>
-                      <div class="absolute top-1/2 -translate-y-1/2 w-full">
+                      <div class="absolute top-1/2 w-full -translate-y-1/2">
                         <BaseProgress
                           size="xs"
                           :value="getRoleLevel(member)"
@@ -312,13 +312,13 @@ watchEffect(() => {
                       </div>
                     </div>
                   </div>
-                  <div class="ml-8">
+                  <div class="ms-8">
                     <BaseButtonIcon
                       small
                       shape="full"
                       @click="removeTeammate(idx)"
                     >
-                      <Icon name="lucide:x" class="w-4 h-4" />
+                      <Icon name="lucide:x" class="h-4 w-4" />
                     </BaseButtonIcon>
                   </div>
                 </div>

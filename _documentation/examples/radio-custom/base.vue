@@ -36,7 +36,7 @@
                   <span class="text-sm font-medium text-muted-500 dark:text-muted-400">/month</span>
                 </div>
               </div>
-              <div class="child absolute top-3 right-2 opacity-0">
+              <div class="child absolute top-3 end-2 opacity-0">
                 <Icon name="ph:check-circle-duotone" class="w-7 h-7 text-success-500" />
               </div>
             </BaseCard>
@@ -62,7 +62,7 @@
                   <span class="text-sm font-medium text-muted-500 dark:text-muted-400">/month</span>
                 </div>
               </div>
-              <div class="child absolute top-3 right-2 opacity-0">
+              <div class="child absolute top-3 end-2 opacity-0">
                 <Icon name="ph:check-circle-duotone" class="w-7 h-7 text-success-500" />
               </div>
             </BaseCard>
@@ -88,7 +88,7 @@
                   <span class="text-sm font-medium text-muted-500 dark:text-muted-400">/month</span>
                 </div>
               </div>
-              <div class="child absolute top-3 right-2 opacity-0">
+              <div class="child absolute top-3 end-2 opacity-0">
                 <Icon name="ph:check-circle-duotone" class="w-7 h-7 text-success-500" />
               </div>
             </BaseCard>
@@ -114,7 +114,7 @@
                   <span class="text-sm font-medium text-muted-500 dark:text-muted-400">/month</span>
                 </div>
               </div>
-              <div class="child absolute top-3 right-2 opacity-0">
+              <div class="child absolute top-3 end-2 opacity-0">
                 <Icon name="ph:check-circle-duotone" class="w-7 h-7 text-success-500" />
               </div>
             </BaseCard>

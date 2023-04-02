@@ -80,7 +80,7 @@ const tickets = [
           <span>Updated {{ ticket.updated }}</span>
         </BaseParagraph>
       </div>
-      <div class="w-full sm:w-auto sm:ml-auto">
+      <div class="w-full sm:w-auto sm:ms-auto">
         <BaseButton color="default" class="w-full sm:w-auto">
           <span>Manage</span>
         </BaseButton>
