@@ -28,38 +28,11 @@ const exampleComponent = shallowRef()
 const exampleSource = shallowRef()
 
 const exampleMarkdown = computed(() => {
+  if (!exampleSource.value) {
+    return ''
+  }
   return '```vue\n' + exampleSource.value + '\n```'
 })
-
-await useAsyncData(
-  `demo-${props.demo}`,
-  async () => {
-    if (!info.value.folder || !info.value.file) return
-    demoPending.value = true
-
-    // dynamically import the example component and source
-    // we can not use path alias, nor paths in variables
-    // this is a limitation of vite
-    try {
-      const [compo, source] = await Promise.all([
-        import(
-          `../../examples/${info.value.folder}/${info.value.file}.vue`
-        ).then((m) => m.default),
-        import(
-          `../../examples/${info.value.folder}/${info.value.file}.vue?raw`
-        ).then((m) => m.default),
-      ])
-      exampleComponent.value = markRaw(compo)
-      exampleSource.value = source
-    } finally {
-      demoPending.value = false
-    }
-  },
-  {
-    watch: [info],
-    // server: false,
-  },
-)
 
 const showCode = ref(false)
 const hasDemoContent = computed(() =>
@@ -68,6 +41,32 @@ const hasDemoContent = computed(() =>
 
 const forceDark = ref(false)
 const { md } = useTailwindBreakpoints()
+
+await loadDemo()
+watch(info, loadDemo)
+
+async function loadDemo() {
+  if (!info.value.folder || !info.value.file) return
+  demoPending.value = true
+
+  // dynamically import the example component and source
+  // we can not use path alias, nor paths in variables
+  // this is a limitation of vite
+  try {
+    const [compo, source] = await Promise.all([
+      import(`../../examples/${info.value.folder}/${info.value.file}.vue`).then(
+        (m) => m.default,
+      ),
+      import(
+        `../../examples/${info.value.folder}/${info.value.file}.vue?raw`
+      ).then((m) => m.default),
+    ])
+    exampleComponent.value = markRaw(compo)
+    exampleSource.value = source
+  } finally {
+    demoPending.value = false
+  }
+}
 </script>
 
 <template>
