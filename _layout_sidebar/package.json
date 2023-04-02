@@ -12,6 +12,6 @@
     "layer:prepare": "nuxi prepare"
   },
   "devDependencies": {
-    "nuxt": "3.3.2"
+    "nuxt": "3.3.3"
   }
 }

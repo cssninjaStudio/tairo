@@ -25,7 +25,7 @@
     "date-fns": "2.29.3",
     "imask": "^6.4.3",
     "mapbox-gl": "2.13.0",
-    "nuxt": "3.3.2",
+    "nuxt": "3.3.3",
     "nuxt-swiper": "1.0.1",
     "rehype-external-links": "2.0.1",
     "rehype-raw": "6.1.1",
@@ -40,7 +40,7 @@
     "v-calendar": "3.0.1",
     "vue-axe": "^3.1.2",
     "vue3-apexcharts": "1.4.1",
-    "vue3-carousel": "0.2.14",
+    "vue3-carousel": "0.2.16",
     "vue3-popper": "1.5.0",
     "vue3-smooth-dnd": "0.0.4"
   }
