@@ -1,5 +1,5 @@
 <template>
-  <BaseFocusLoop class="grid grid-cols-2 md:grid-cols-4 md:max-w-lg gap-6">
+  <BaseFocusLoop class="grid grid-cols-2 gap-6 md:max-w-lg md:grid-cols-4">
     <BaseCheckbox v-model="options.first" label="Default" shape="straight" />
     <BaseCheckbox v-model="options.second" label="Muted" shape="straight" color="muted" />
     <BaseCheckbox v-model="options.third" label="Primary" shape="straight" color="primary" />

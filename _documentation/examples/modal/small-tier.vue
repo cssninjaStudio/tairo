@@ -1,16 +1,3 @@
-<script setup lang="ts">
-const isModalOpen = ref(false)
-
-function closeModal() {
-  isModalOpen.value = false
-}
-function openModal() {
-  isModalOpen.value = true
-}
-
-const isModalMdOpen = ref(false)
-</script>
-
 <template>
   <!-- Element to trigger the modal -->
   <div class="flex gap-x-2">
@@ -28,7 +15,7 @@ const isModalMdOpen = ref(false)
     <template #header>
       <!-- Header -->
       <div class="flex w-full items-center justify-between p-4 md:p-6">
-        <h3 class="font-heading text-lg font-medium leading-6 text-muted-900 dark:text-white">
+        <h3 class="font-heading text-muted-900 text-lg font-medium leading-6 dark:text-white">
           Small dialog
         </h3>
         <BaseButtonClose @click="closeModal" />
@@ -45,10 +32,10 @@ const isModalMdOpen = ref(false)
             alt=""
           />
         </div>
-        <h3 class="font-heading text-lg font-medium leading-6 text-muted-800 dark:text-white">
+        <h3 class="font-heading text-muted-800 text-lg font-medium leading-6 dark:text-white">
           New Invite
         </h3>
-        <p class="font-alt text-sm leading-5 text-muted-500 dark:text-muted-400">
+        <p class="font-alt text-muted-500 dark:text-muted-400 text-sm leading-5">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
         </p>
       </div>
@@ -70,7 +57,7 @@ const isModalMdOpen = ref(false)
     <template #header>
       <!-- Header -->
       <div class="flex w-full items-center justify-between p-4 md:p-6">
-        <h3 class="font-heading text-lg font-medium leading-6 text-muted-900 dark:text-white">
+        <h3 class="font-heading text-muted-900 text-lg font-medium leading-6 dark:text-white">
           Medium dialog
         </h3>
         <BaseButtonClose @click="isModalMdOpen = false" />
@@ -87,10 +74,10 @@ const isModalMdOpen = ref(false)
             alt=""
           />
         </div>
-        <h3 class="font-heading text-lg font-medium leading-6 text-muted-800 dark:text-white">
+        <h3 class="font-heading text-muted-800 text-lg font-medium leading-6 dark:text-white">
           New Invite
         </h3>
-        <p class="font-alt text-sm leading-5 text-muted-500 dark:text-muted-400">
+        <p class="font-alt text-muted-500 dark:text-muted-400 text-sm leading-5">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
         </p>
       </div>
@@ -109,3 +96,16 @@ const isModalMdOpen = ref(false)
     </template>
   </TairoModal>
 </template>
+
+<script setup lang="ts">
+const isModalOpen = ref(false)
+
+function closeModal() {
+  isModalOpen.value = false
+}
+function openModal() {
+  isModalOpen.value = true
+}
+
+const isModalMdOpen = ref(false)
+</script>

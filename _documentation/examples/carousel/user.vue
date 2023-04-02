@@ -1,3 +1,7 @@
+<template>
+  <AddonCarouselTeam :slides-to-show="3" :slides="team" />
+</template>
+
 <script setup lang="ts">
 const team = [
   {
@@ -140,7 +144,3 @@ const team = [
   },
 ]
 </script>
-
-<template>
-  <AddonCarouselTeam :slides-to-show="3" :slides="team" />
-</template>

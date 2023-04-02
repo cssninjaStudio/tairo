@@ -17,11 +17,12 @@
     "test": "run-p test:*",
     "test:tsc": "vue-tsc --noEmit",
     "test:lint": "run-s lint:eslint lint:prettier",
-    "lint": "run-s lint:eslint:fix lint:prettier:fix",
+    "lint": "run-s lint:eslint:fix lint:eslint:fix-demo lint:prettier:fix",
     "lint:prettier": "prettier --check \"./**/*.(ts|vue|css|md)\"",
     "lint:prettier:fix": "prettier --write \"./**/*.(ts|vue|css|md)\"",
-    "lint:eslint": "eslint .",
-    "lint:eslint:fix": "eslint --fix ."
+    "lint:eslint": "eslint -c .eslintrc.cjs .",
+    "lint:eslint:fix": "eslint -c .eslintrc.cjs --fix .",
+    "lint:eslint:fix-demo": "eslint -c _documentation/examples/.eslintrc.cjs --fix --ext .vue _documentation/examples"
   },
   "dependencies": {
     "@cssninja/nuxt-toaster": "^0.3.10",

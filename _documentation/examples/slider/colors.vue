@@ -20,7 +20,7 @@
 
 <script setup lang="ts">
 import Slider from '@vueform/slider'
-// import '~/assets/css/slider.css'
+import '~/assets/css/slider.css'
 const info = ref(38)
 const success = ref(84)
 const warning = ref(53)

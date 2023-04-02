@@ -3,7 +3,7 @@
     <TairoPopover orientation="start">
       <div class="flex items-center">
         <span
-          class="rounded-full border border-muted-300 py-1.5 px-3 font-sans text-sm font-medium text-muted-800 dark:border-muted-600 dark:text-white"
+          class="border-muted-300 text-muted-800 dark:border-muted-600 rounded-full border px-3 py-1.5 font-sans text-sm font-medium dark:text-white"
         >
           Beautiful house
         </span>

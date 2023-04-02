@@ -1,7 +1,3 @@
-<script setup lang="ts">
-const progress = ref(25)
-</script>
-
 <template>
   <div class="max-w-xs space-y-4">
     <BaseProgress title="Default progress bar" size="sm" :value="progress" color="primary" />
@@ -33,3 +29,7 @@ const progress = ref(25)
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+const progress = ref(25)
+</script>

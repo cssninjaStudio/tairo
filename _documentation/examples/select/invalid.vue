@@ -1,6 +1,11 @@
 <template>
-  <div class="grid md:grid-cols-2 md:max-w-lg gap-6">
-    <BaseSelect shape="curved" label="Select a hero" error="Please make a selection">
+  <div class="grid gap-6 md:max-w-lg md:grid-cols-2">
+    <BaseSelect
+      v-model="value"
+      shape="curved"
+      label="Select a hero"
+      error="Please make a selection"
+    >
       <option value="">Select a hero</option>
       <option value="Superman">Superman</option>
       <option value="Batman">Batman</option>
@@ -10,3 +15,7 @@
     </BaseSelect>
   </div>
 </template>
+
+<script setup lang="ts">
+const value = ref('')
+</script>

@@ -1,6 +1,6 @@
 <template>
-  <div class="grid md:grid-cols-2 md:max-w-lg gap-6 mt-6">
-    <BaseSelect shape="rounded" label="Select a hero" label-float>
+  <div class="mt-6 grid gap-6 md:max-w-lg md:grid-cols-2">
+    <BaseSelect v-model="first" shape="rounded" label="Select a hero" label-float>
       <option value="">Select a hero</option>
       <option value="Superman">Superman</option>
       <option value="Batman">Batman</option>
@@ -8,7 +8,13 @@
       <option value="Magneto">Magneto</option>
       <option value="Cyclops">Cyclops</option>
     </BaseSelect>
-    <BaseSelect shape="rounded" label="Select a hero" icon="icon-park-outline:muscle" label-float>
+    <BaseSelect
+      v-model="second"
+      shape="rounded"
+      label="Select a hero"
+      icon="icon-park-outline:muscle"
+      label-float
+    >
       <option value="">Select a hero</option>
       <option value="Superman">Superman</option>
       <option value="Batman">Batman</option>
@@ -18,3 +24,8 @@
     </BaseSelect>
   </div>
 </template>
+
+<script setup lang="ts">
+const first = ref('')
+const second = ref('')
+</script>

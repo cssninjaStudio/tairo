@@ -1,13 +1,3 @@
-<script setup lang="ts">
-import { ref } from 'vue'
-
-const isModalStartOpen = ref(false)
-const isModalEndOpen = ref(false)
-const isModalCenterOpen = ref(false)
-const isModalBetweenOpen = ref(false)
-const isModalBodyOpen = ref(false)
-</script>
-
 <template>
   <!-- Element to trigger the modal -->
   <div class="flex gap-x-2">
@@ -42,7 +32,7 @@ const isModalBodyOpen = ref(false)
     <template #header>
       <!-- Header -->
       <div class="flex w-full items-center justify-between p-4 md:p-6">
-        <h3 class="font-heading text-lg font-medium leading-6 text-muted-900 dark:text-white">
+        <h3 class="font-heading text-muted-900 text-lg font-medium leading-6 dark:text-white">
           Medium dialog
         </h3>
         <BaseButtonClose @click="isModalStartOpen = false" />
@@ -59,10 +49,10 @@ const isModalBodyOpen = ref(false)
             alt=""
           />
         </div>
-        <h3 class="font-heading text-lg font-medium leading-6 text-muted-800 dark:text-white">
+        <h3 class="font-heading text-muted-800 text-lg font-medium leading-6 dark:text-white">
           New Invite
         </h3>
-        <p class="font-alt text-sm leading-5 text-muted-500 dark:text-muted-400">
+        <p class="font-alt text-muted-500 dark:text-muted-400 text-sm leading-5">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
         </p>
       </div>
@@ -86,7 +76,7 @@ const isModalBodyOpen = ref(false)
     <template #header>
       <!-- Header -->
       <div class="flex w-full items-center justify-between p-4 md:p-6">
-        <h3 class="font-heading text-lg font-medium leading-6 text-muted-900 dark:text-white">
+        <h3 class="font-heading text-muted-900 text-lg font-medium leading-6 dark:text-white">
           Medium dialog
         </h3>
         <BaseButtonClose @click="isModalEndOpen = false" />
@@ -103,10 +93,10 @@ const isModalBodyOpen = ref(false)
             alt=""
           />
         </div>
-        <h3 class="font-heading text-lg font-medium leading-6 text-muted-800 dark:text-white">
+        <h3 class="font-heading text-muted-800 text-lg font-medium leading-6 dark:text-white">
           New Invite
         </h3>
-        <p class="font-alt text-sm leading-5 text-muted-500 dark:text-muted-400">
+        <p class="font-alt text-muted-500 dark:text-muted-400 text-sm leading-5">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
         </p>
       </div>
@@ -135,7 +125,7 @@ const isModalBodyOpen = ref(false)
     <template #header>
       <!-- Header -->
       <div class="flex w-full items-center justify-between p-4 md:p-6">
-        <h3 class="font-heading text-lg font-medium leading-6 text-muted-900 dark:text-white">
+        <h3 class="font-heading text-muted-900 text-lg font-medium leading-6 dark:text-white">
           Medium dialog
         </h3>
         <BaseButtonClose @click="isModalCenterOpen = false" />
@@ -152,10 +142,10 @@ const isModalBodyOpen = ref(false)
             alt=""
           />
         </div>
-        <h3 class="font-heading text-lg font-medium leading-6 text-muted-800 dark:text-white">
+        <h3 class="font-heading text-muted-800 text-lg font-medium leading-6 dark:text-white">
           New Invite
         </h3>
-        <p class="font-alt text-sm leading-5 text-muted-500 dark:text-muted-400">
+        <p class="font-alt text-muted-500 dark:text-muted-400 text-sm leading-5">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
         </p>
       </div>
@@ -184,7 +174,7 @@ const isModalBodyOpen = ref(false)
     <template #header>
       <!-- Header -->
       <div class="flex w-full items-center justify-between p-4 md:p-6">
-        <h3 class="font-heading text-lg font-medium leading-6 text-muted-900 dark:text-white">
+        <h3 class="font-heading text-muted-900 text-lg font-medium leading-6 dark:text-white">
           Medium dialog
         </h3>
         <BaseButtonClose @click="isModalBetweenOpen = false" />
@@ -201,10 +191,10 @@ const isModalBodyOpen = ref(false)
             alt=""
           />
         </div>
-        <h3 class="font-heading text-lg font-medium leading-6 text-muted-800 dark:text-white">
+        <h3 class="font-heading text-muted-800 text-lg font-medium leading-6 dark:text-white">
           New Invite
         </h3>
-        <p class="font-alt text-sm leading-5 text-muted-500 dark:text-muted-400">
+        <p class="font-alt text-muted-500 dark:text-muted-400 text-sm leading-5">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
         </p>
       </div>
@@ -232,7 +222,7 @@ const isModalBodyOpen = ref(false)
     <template #header>
       <!-- Header -->
       <div class="flex w-full items-center justify-between p-4 md:p-6">
-        <h3 class="font-heading text-lg font-medium leading-6 text-muted-900 dark:text-white">
+        <h3 class="font-heading text-muted-900 text-lg font-medium leading-6 dark:text-white">
           Medium dialog
         </h3>
         <BaseButtonClose @click="isModalBodyOpen = false" />
@@ -249,13 +239,23 @@ const isModalBodyOpen = ref(false)
             alt=""
           />
         </div>
-        <h3 class="font-heading text-lg font-medium leading-6 text-muted-800 dark:text-white">
+        <h3 class="font-heading text-muted-800 text-lg font-medium leading-6 dark:text-white">
           New Invite
         </h3>
-        <p class="mb-6 font-alt text-sm leading-5 text-muted-500 dark:text-muted-400">
+        <p class="font-alt text-muted-500 dark:text-muted-400 mb-6 text-sm leading-5">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
         </p>
       </div>
     </div>
   </TairoModal>
 </template>
+
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const isModalStartOpen = ref(false)
+const isModalEndOpen = ref(false)
+const isModalCenterOpen = ref(false)
+const isModalBetweenOpen = ref(false)
+const isModalBodyOpen = ref(false)
+</script>

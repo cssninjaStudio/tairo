@@ -1,7 +1,3 @@
-<script setup lang="ts">
-const progressCircle = ref(25)
-</script>
-
 <template>
   <div class="max-w-xs space-y-4">
     <div class="flex items-end gap-2">
@@ -59,3 +55,7 @@ const progressCircle = ref(25)
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+const progressCircle = ref(25)
+</script>

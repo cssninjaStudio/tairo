@@ -1,44 +1,3 @@
-<script setup lang="ts">
-const team = [
-  {
-    id: 0,
-    src: '/img/avatars/22.svg',
-    name: 'Anna Vrinkof',
-    role: 'UI/UX designer',
-    expertise: 'UX Design',
-    rate: 49,
-    status: 'Available',
-  },
-  {
-    id: 1,
-    src: '/img/avatars/3.svg',
-    name: 'John Cambell',
-    role: 'Sales manager',
-    expertise: 'Management',
-    rate: 74,
-    status: 'Hired',
-  },
-  {
-    id: 2,
-    src: '/img/avatars/9.svg',
-    name: 'Beth Delanoe',
-    role: 'Product designer',
-    expertise: 'Product',
-    rate: 43,
-    status: 'Available',
-  },
-  {
-    id: 3,
-    src: '/img/avatars/14.svg',
-    name: 'Andrew Higgs',
-    role: 'Project manager',
-    expertise: 'Project',
-    rate: 69,
-    status: 'New',
-  },
-]
-</script>
-
 <template>
   <TairoFlexTable>
     <template #header>
@@ -67,7 +26,7 @@ const team = [
             <h4 class="font-sans text-sm font-medium">
               {{ member.name }}
             </h4>
-            <p class="font-sans font-normal text-xs text-muted-400">
+            <p class="text-muted-400 font-sans text-xs font-normal">
               {{ member.role }}
             </p>
           </div>
@@ -116,3 +75,44 @@ const team = [
     </TairoFlexTableRow>
   </TairoFlexTable>
 </template>
+
+<script setup lang="ts">
+const team = [
+  {
+    id: 0,
+    src: '/img/avatars/22.svg',
+    name: 'Anna Vrinkof',
+    role: 'UI/UX designer',
+    expertise: 'UX Design',
+    rate: 49,
+    status: 'Available',
+  },
+  {
+    id: 1,
+    src: '/img/avatars/3.svg',
+    name: 'John Cambell',
+    role: 'Sales manager',
+    expertise: 'Management',
+    rate: 74,
+    status: 'Hired',
+  },
+  {
+    id: 2,
+    src: '/img/avatars/9.svg',
+    name: 'Beth Delanoe',
+    role: 'Product designer',
+    expertise: 'Product',
+    rate: 43,
+    status: 'Available',
+  },
+  {
+    id: 3,
+    src: '/img/avatars/14.svg',
+    name: 'Andrew Higgs',
+    role: 'Project manager',
+    expertise: 'Project',
+    rate: 69,
+    status: 'New',
+  },
+]
+</script>

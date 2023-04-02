@@ -278,6 +278,7 @@ const navigation = [
         name: 'Profile',
         icon: 'ph:lock-duotone',
         to: '/layouts/profile',
+        exact: true,
       },
       {
         name: 'Edit profile',

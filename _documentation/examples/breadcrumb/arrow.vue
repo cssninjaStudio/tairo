@@ -1,3 +1,15 @@
+<template>
+  <div class="flex flex-col gap-4">
+    <BaseBreadcrumb :items="demoBreadcrumbOne">
+      <Icon name="lucide:arrow-right" class="block h-3 w-3" />
+    </BaseBreadcrumb>
+
+    <BaseBreadcrumb :items="demoBreadcrumbTwo">
+      <Icon name="lucide:arrow-right" class="block h-3 w-3" />
+    </BaseBreadcrumb>
+  </div>
+</template>
+
 <script setup lang="ts">
 const demoBreadcrumbOne = [
   {
@@ -39,15 +51,3 @@ const demoBreadcrumbTwo = [
   },
 ]
 </script>
-
-<template>
-  <div class="flex flex-col gap-4">
-    <BaseBreadcrumb :items="demoBreadcrumbOne">
-      <Icon name="lucide:arrow-right" class="block w-3 h-3" />
-    </BaseBreadcrumb>
-
-    <BaseBreadcrumb :items="demoBreadcrumbTwo">
-      <Icon name="lucide:arrow-right" class="block w-3 h-3" />
-    </BaseBreadcrumb>
-  </div>
-</template>

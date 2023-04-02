@@ -1,5 +1,5 @@
 <template>
-  <div class="grid md:grid-cols-2 md:max-w-lg gap-2">
+  <div class="grid gap-2 md:max-w-lg md:grid-cols-2">
     <BaseInput
       v-model="fields.first"
       type="search"

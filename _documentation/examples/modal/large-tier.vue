@@ -1,10 +1,3 @@
-<script setup lang="ts">
-import { ref } from 'vue'
-
-const isModal2XlOpen = ref(false)
-const isModal3XlOpen = ref(false)
-</script>
-
 <template>
   <!-- Element to trigger the modal -->
   <div class="flex gap-x-2">
@@ -22,7 +15,7 @@ const isModal3XlOpen = ref(false)
     <template #header>
       <!-- Header -->
       <div class="flex w-full items-center justify-between p-4 md:p-6">
-        <h3 class="font-heading text-lg font-medium leading-6 text-muted-900 dark:text-white">
+        <h3 class="font-heading text-muted-900 text-lg font-medium leading-6 dark:text-white">
           2Xl dialog
         </h3>
         <BaseButtonClose @click="isModal2XlOpen = false" />
@@ -39,10 +32,10 @@ const isModal3XlOpen = ref(false)
             alt=""
           />
         </div>
-        <h3 class="font-heading text-lg font-medium leading-6 text-muted-800 dark:text-white">
+        <h3 class="font-heading text-muted-800 text-lg font-medium leading-6 dark:text-white">
           New Invite
         </h3>
-        <p class="font-alt text-sm leading-5 text-muted-500 dark:text-muted-400">
+        <p class="font-alt text-muted-500 dark:text-muted-400 text-sm leading-5">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
         </p>
       </div>
@@ -66,7 +59,7 @@ const isModal3XlOpen = ref(false)
     <template #header>
       <!-- Header -->
       <div class="flex w-full items-center justify-between p-4 md:p-6">
-        <h3 class="font-heading text-lg font-medium leading-6 text-muted-900 dark:text-white">
+        <h3 class="font-heading text-muted-900 text-lg font-medium leading-6 dark:text-white">
           3Xl dialog
         </h3>
         <BaseButtonClose @click="isModal3XlOpen = false" />
@@ -82,10 +75,10 @@ const isModal3XlOpen = ref(false)
             alt=""
           />
         </div>
-        <h3 class="font-heading text-lg font-medium leading-6 text-muted-800 dark:text-white">
+        <h3 class="font-heading text-muted-800 text-lg font-medium leading-6 dark:text-white">
           New Invite
         </h3>
-        <p class="font-alt text-sm leading-5 text-muted-500 dark:text-muted-400">
+        <p class="font-alt text-muted-500 dark:text-muted-400 text-sm leading-5">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
         </p>
       </div>
@@ -103,3 +96,10 @@ const isModal3XlOpen = ref(false)
     </template>
   </TairoModal>
 </template>
+
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const isModal2XlOpen = ref(false)
+const isModal3XlOpen = ref(false)
+</script>

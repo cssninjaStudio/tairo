@@ -1,3 +1,7 @@
+<template>
+  <BaseAvatarGroup size="sm" :avatars="people" />
+</template>
+
 <script setup lang="ts">
 const people = [
   {
@@ -22,7 +26,3 @@ const people = [
   },
 ]
 </script>
-
-<template>
-  <BaseAvatarGroup size="sm" :avatars="people" />
-</template>

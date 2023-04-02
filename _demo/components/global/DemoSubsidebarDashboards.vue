@@ -7,6 +7,7 @@ const navigation = [
         name: 'Personal V1',
         icon: 'ph:coffee-duotone',
         to: '/dashboards',
+        exact: true,
       },
       {
         name: 'Personal V2',
@@ -218,6 +219,7 @@ const navigation = [
         name: 'Regular sidebar',
         icon: 'ph:sidebar-duotone',
         to: '#',
+        exact: true,
       },
     ],
   },
