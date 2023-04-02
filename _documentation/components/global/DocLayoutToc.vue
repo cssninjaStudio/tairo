@@ -90,13 +90,13 @@ async function loadTocItemFromDom() {
       </div>
 
       <nav
-        class="slimscroll relative max-h-[calc(100vh_-_220px)] overflow-y-auto overflow-x-hidden pb-10 font-sans text-sm"
+        class="slimscroll slimscroll-opaque relative max-h-[calc(100vh_-_220px)] overflow-y-auto overflow-x-hidden pb-10 font-sans text-[0.8rem] font-medium"
       >
         <ul>
           <li v-for="item in toc" :key="item.id">
             <NuxtLink
               :to="`#${item.id}`"
-              class="block border-e-2 py-2"
+              class="block border-e-2 py-1"
               :class="getTocItemClass(item)"
             >
               {{ item.label }}

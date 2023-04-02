@@ -46,7 +46,7 @@ const docNav = computed(
       <template v-for="link in docNav" :key="link?._path">
         <div
           v-if="!link.children"
-          class="mb-1 flex min-h-[2rem] w-full items-center"
+          class="mb-1 flex min-h-[1.5rem] w-full items-center"
         >
           <NuxtLink
             :to="link._path"
@@ -55,7 +55,7 @@ const docNav = computed(
             class="nui-focus text-muted-400 hover:text-primary-500 focus-visible:text-primary-500 group flex w-full flex-row items-center transition-colors duration-300 focus-within:outline-0 focus-visible:outline-1"
             @click.passive="onLinkClick"
           >
-            <span class="font-sans text-sm">{{ link?.title }}</span>
+            <span class="font-sans text-[0.85rem]">{{ link?.title }}</span>
           </NuxtLink>
         </div>
         <div v-else>

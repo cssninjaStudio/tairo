@@ -15,7 +15,7 @@ const demoBreadcrumbOne = [
   {
     label: 'Home',
     hideLabel: false,
-    icon: 'lucide:home',
+    icon: 'ph:house-duotone',
     to: '#',
   },
   {
@@ -34,19 +34,19 @@ const demoBreadcrumbTwo = [
   {
     label: 'Home',
     hideLabel: false,
-    icon: 'lucide:home',
+    icon: 'ph:house-duotone',
     to: '#',
   },
   {
     label: 'Products',
     hideLabel: false,
-    icon: 'lucide:layout-grid',
+    icon: 'ph:grid-four-duotone',
     to: '#',
   },
   {
     label: 'Laptops',
     hideLabel: false,
-    icon: 'lucide:laptop',
+    icon: 'ph:laptop-duotone',
     to: '#',
   },
 ]

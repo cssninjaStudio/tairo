@@ -205,11 +205,6 @@ const navigation = [
         icon: 'ph:square-half-duotone',
         to: '/dashboards/widgets/list',
       },
-      {
-        name: 'Stat Widgets',
-        icon: 'ph:square-half-bottom-duotone',
-        to: '/dashboards/widgets/stats',
-      },
     ],
   },
   {

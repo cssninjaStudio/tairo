@@ -153,11 +153,16 @@ async function loadDemo() {
             <component :is="exampleComponent" v-if="exampleComponent" />
           </div>
 
-          <details v-if="exampleMarkdown" class="mt-6">
+          <details v-if="exampleMarkdown" class="group mt-6">
             <summary
-              class="hover:bg-muted-50 focus:bg-muted-50 dark:hover:bg-muted-900 dark:focus:bg-muted-900 nui-text-600 nui-focus cursor-pointer rounded p-1 text-sm transition-all duration-100"
+              class="nui-focus hover:bg-muted-100 text-muted-500 inline-flex cursor-pointer list-none items-center justify-center gap-2 rounded-lg px-2 py-1.5 font-sans text-[0.8rem] transition-all duration-100"
             >
-              Show code
+              <span class="inline group-open:hidden">Show code</span>
+              <span class="hidden group-open:inline">Hide code</span>
+              <Icon
+                name="lucide:chevron-down"
+                class="text-muted-400 h-4 w-4 transition-transform duration-200 group-open:rotate-180"
+              />
             </summary>
             <AddonMarkdownRemark
               :source="exampleMarkdown"
