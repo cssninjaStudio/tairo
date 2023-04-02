@@ -505,9 +505,3 @@ function wrapExternalLinks(string: string) {
     </div>
   </div>
 </template>
-
-<style scoped>
-.doc-markdown:deep(.line) {
-  display: inline-block;
-}
-</style>

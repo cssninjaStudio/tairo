@@ -122,17 +122,11 @@ watchEffect(async () => {
   counter-increment: step 0;
 }
 .markdown.with-line-number :deep(.shiki code .line) {
-  @apply inline-flex w-full h-[1.3rem];
+  @apply inline w-full h-[1rem];
 }
 .markdown.with-line-number :deep(.shiki code .line::before) {
   content: counter(step);
   counter-increment: step;
-  @apply w-4 me-6 inline-block text-right text-muted-400 dark:text-muted-500;
-}
-.markdown.with-line-number :deep(.shiki code .line:hover) {
-  @apply bg-muted-100 dark:bg-muted-900;
-}
-.markdown.with-line-number :deep(.shiki code .line:hover::before) {
-  @apply text-muted-500 dark:text-muted-400;
+  @apply w-4 me-6 inline text-right text-muted-400 dark:text-muted-500;
 }
 </style>

@@ -1,3 +1,9 @@
+<script lang="ts">
+export default {
+  inheritAttrs: false,
+}
+</script>
+
 <script setup lang="ts">
 import {
   Dialog,
@@ -27,15 +33,68 @@ const props = withDefaults(
      * The alignment of the footer content.
      */
     footerAlign?: 'start' | 'end' | 'center' | 'between'
+
+    classes?: {
+      wrapper?: string | string[]
+      dialog?: string | string[]
+    }
   }>(),
   {
     size: 'md',
     shape: 'rounded',
     footerAlign: 'end',
+    classes: () => ({
+      wrapper: '',
+      dialog: '',
+    }),
   },
 )
 
 const emit = defineEmits(['close'])
+
+const dialogClasses = computed(() => {
+  const classes = []
+
+  if (props.classes.dialog) {
+    if (Array.isArray(props.classes.dialog)) {
+      classes.push(...props.classes.dialog)
+    } else {
+      classes.push(props.classes.dialog)
+    }
+  }
+
+  switch (props.shape) {
+    case 'rounded':
+      classes.push('rounded-lg')
+      break
+    case 'curved':
+      classes.push('rounded-xl')
+      break
+  }
+
+  switch (props.size) {
+    case 'sm':
+      classes.push('max-w-sm')
+      break
+    case 'md':
+      classes.push('max-w-md')
+      break
+    case 'lg':
+      classes.push('max-w-xl')
+      break
+    case 'xl':
+      classes.push('max-w-2xl')
+      break
+    case '2xl':
+      classes.push('max-w-3xl')
+      break
+    case '3xl':
+      classes.push('max-w-5xl')
+      break
+  }
+
+  return classes
+})
 </script>
 
 <template>
@@ -54,9 +113,10 @@ const emit = defineEmits(['close'])
           <div class="bg-muted-800/70 dark:bg-muted-900/80 fixed inset-0"></div>
         </TransitionChild>
 
-        <div class="fixed inset-0 overflow-y-auto">
+        <div class="fixed inset-0">
           <div
             class="flex min-h-full items-center justify-center p-4 text-center"
+            :class="props.classes.wrapper"
           >
             <TransitionChild
               as="template"
@@ -68,17 +128,8 @@ const emit = defineEmits(['close'])
               leave-to="opacity-0 scale-95"
             >
               <DialogPanel
-                class="dark:bg-muted-800 w-full overflow-hidden bg-white text-left align-middle shadow-xl transition-all"
-                :class="[
-                  props.shape === 'rounded' && 'rounded-lg',
-                  props.shape === 'curved' && 'rounded-xl',
-                  props.size === 'sm' && 'max-w-sm',
-                  props.size === 'md' && 'max-w-md',
-                  props.size === 'lg' && 'max-w-xl',
-                  props.size === 'xl' && 'max-w-2xl',
-                  props.size === '2xl' && 'max-w-3xl',
-                  props.size === '3xl' && 'max-w-5xl',
-                ]"
+                class="dark:bg-muted-800 w-full bg-white text-left align-middle shadow-xl transition-all"
+                :class="dialogClasses"
               >
                 <slot name="header"></slot>
 

@@ -112,9 +112,7 @@ const { md } = useTailwindBreakpoints()
             shape="rounded"
             class="h-[2.35rem] pe-3 focus:z-10"
             :class="
-              showCode
-                ? 'dark:!bg-muted-800'
-                : 'dark:!bg-transparent dark:border-transparent'
+              showCode ? 'dark:!bg-transparent dark:border-transparent' : ''
             "
             :color="showCode ? 'muted' : 'default'"
             @click="showCode = false"
@@ -127,9 +125,7 @@ const { md } = useTailwindBreakpoints()
             shape="rounded"
             class="h-[2.35rem] pe-3 focus:z-10"
             :class="
-              !showCode
-                ? 'dark:!bg-muted-800'
-                : 'dark:!bg-transparent dark:border-transparent'
+              !showCode ? 'dark:!bg-transparent dark:border-transparent' : ''
             "
             :color="!showCode ? 'muted' : 'default'"
             @click="showCode = true"
@@ -174,9 +170,3 @@ const { md } = useTailwindBreakpoints()
     </div>
   </div>
 </template>
-
-<style scoped>
-.doc-markdown:deep(.line) {
-  display: inline;
-}
-</style>

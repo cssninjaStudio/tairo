@@ -87,8 +87,10 @@ export default defineAppConfig({
           name: 'Search',
           icon: { name: 'ph:magnifying-glass-duotone', class: 'w-5 h-5' },
           click: () => {
-            const { open } = usePanels()
-            open('search')
+            const isOpen = useState('search-open', () => false)
+            // const { open } = usePanels()
+            // open('search')
+            isOpen.value = true
           },
           position: 'end',
         },
