@@ -54,9 +54,14 @@ const collapse = reactive(useCollapse())
       <ul id="sidebar-menu" class="space-y-3">
         <!--Menu item-->
         <li v-for="(item, index) in collapse.menuItems" :key="index">
+          <TairoCollapseNavigationCollapseLinks
+            v-if="item.children"
+            :item="item"
+          />
           <NuxtLink
-            v-if="item.to"
+            v-else-if="item.to"
             :to="item.to"
+            exact-active-class="bg-muted-200 dark:bg-muted-900"
             class="nui-focus text-muted-500 hover:bg-muted-200 dark:hover:bg-muted-900 hover:text-muted-600 dark:hover:text-muted-200 flex cursor-pointer items-center gap-4 rounded-lg py-3 transition-colors duration-300"
             :class="!collapse.isOpen ? 'px-1 justify-center' : 'px-4'"
           >
@@ -79,13 +84,6 @@ const collapse = reactive(useCollapse())
               :class="!collapse.isOpen ? 'hidden' : 'block'"
             >
               {{ item.name }}
-            </span>
-            <span
-              v-if="item.children"
-              class="ml-auto flex items-center justify-center"
-              :class="!collapse.isOpen ? 'hidden' : 'flex'"
-            >
-              <Icon name="lucide:chevron-down" class="h-4 w-4" />
             </span>
           </button>
         </li>

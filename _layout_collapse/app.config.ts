@@ -12,34 +12,34 @@ export default defineAppConfig({
           {
             name: 'Dashboards',
             icon: { name: 'ph:sidebar-duotone', class: 'w-5 h-5' },
-            activePath: '/',
+            to: '/dashboards',
           },
           {
-            name: 'Layouts',
+            name: 'Documentation',
             icon: { name: 'ph:app-window-duotone', class: 'w-5 h-5' },
-            activePath: '/layouts',
+            activePath: '/documentation',
             children: [
               {
                 name: 'Collapse',
-                to: '#',
+                to: '/documentation/shuriken-ui/forms/listbox',
                 icon: { name: 'ph:sidebar-duotone', class: 'w-5 h-5' },
               },
               {
                 name: 'Collapse 2 ',
-                to: '#',
+                to: '/documentation/shuriken-ui/forms/input',
                 icon: { name: 'ph:sidebar-duotone', class: 'w-5 h-5' },
               },
-              {
-                name: 'Collapse 3',
-                to: '#',
-                icon: { name: 'ph:sidebar-duotone', class: 'w-5 h-5' },
-              },
+              // {
+              //   name: 'Collapse 3',
+              //   to: '#link-3',
+              //   icon: { name: 'ph:sidebar-duotone', class: 'w-5 h-5' },
+              // },
             ],
           },
           {
-            name: 'Chat',
+            name: 'List Widgets',
             icon: { name: 'ph:chat-circle-duotone', class: 'w-5 h-5' },
-            to: '/dashboards/messaging',
+            to: '/dashboards/widgets/list',
           },
           {
             name: 'Search',
@@ -52,7 +52,7 @@ export default defineAppConfig({
           {
             name: 'Settings',
             icon: { name: 'ph:gear-six-duotone', class: 'w-5 h-5' },
-            to: '#',
+            to: '/dashboards/analytics',
           },
         ],
       },
