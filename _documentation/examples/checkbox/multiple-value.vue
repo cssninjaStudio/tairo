@@ -8,6 +8,7 @@
       shape="curved"
       color="muted"
     />
+
     <BaseCheckbox
       v-model="value"
       name="multiple-demo-2"
@@ -16,6 +17,7 @@
       shape="curved"
       color="muted"
     />
+
     <BaseCheckbox
       v-model="value"
       name="multiple-demo-3"
@@ -24,6 +26,7 @@
       shape="curved"
       color="muted"
     />
+
     <BaseCheckbox
       v-model="value"
       name="multiple-demo-4"
@@ -32,6 +35,7 @@
       shape="curved"
       color="muted"
     />
+
     <BaseCheckbox
       v-model="value"
       name="multiple-demo-5"

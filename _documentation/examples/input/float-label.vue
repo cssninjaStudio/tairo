@@ -9,6 +9,7 @@
       icon="lucide:search"
       label-float
     />
+
     <BaseInput
       v-model="fields.second"
       shape="rounded"
@@ -18,6 +19,7 @@
       icon="lucide:mail"
       label-float
     />
+
     <BaseInput
       v-model="fields.third"
       shape="curved"
@@ -25,6 +27,7 @@
       placeholder="Your username..."
       label-float
     />
+
     <BaseInput
       v-model="fields.fourth"
       type="password"

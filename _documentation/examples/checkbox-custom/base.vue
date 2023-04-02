@@ -8,6 +8,7 @@
           <legend class="text-muted-800 dark:text-muted-100 font-sans text-xl font-medium">
             Select people
           </legend>
+
           <button
             type="reset"
             @click.prevent="reset"
@@ -25,12 +26,15 @@
             >
               <div class="flex w-full items-center gap-2">
                 <BaseAvatar src="/img/avatars/10.svg" />
+
                 <div>
                   <BaseHeading as="h4" size="sm" weight="medium" lead="none">
                     Kendra Wilson
                   </BaseHeading>
+
                   <BaseText size="xs" class="text-muted-400">Software Engineer</BaseText>
                 </div>
+
                 <div class="child text-muted-300 ms-auto">
                   <div class="h-3 w-3 rounded-full bg-current"></div>
                 </div>
@@ -45,12 +49,15 @@
             >
               <div class="flex w-full items-center gap-2">
                 <BaseAvatar src="/img/avatars/16.svg" />
+
                 <div>
                   <BaseHeading as="h4" size="sm" weight="medium" lead="none">
                     Hermann Mayer
                   </BaseHeading>
+
                   <BaseText size="xs" class="text-muted-400">Sales Manager</BaseText>
                 </div>
+
                 <div class="child text-muted-300 ms-auto">
                   <div class="h-3 w-3 rounded-full bg-current"></div>
                 </div>
@@ -65,12 +72,15 @@
             >
               <div class="flex w-full items-center gap-2">
                 <BaseAvatar src="/img/avatars/25.svg" />
+
                 <div>
                   <BaseHeading as="h4" size="sm" weight="medium" lead="none">
                     Melany Lawright
                   </BaseHeading>
+
                   <BaseText size="xs" class="text-muted-400">HR Manager</BaseText>
                 </div>
+
                 <div class="child text-muted-300 ms-auto">
                   <div class="h-3 w-3 rounded-full bg-current"></div>
                 </div>

@@ -9,6 +9,7 @@
 
     <div class="mt-2 flex justify-center gap-2">
       <BaseButton color="default" shape="curved" class="h-11 w-32">Go Home</BaseButton>
+
       <BaseButton color="primary" shape="curved" class="h-11 w-32">Edit Profile</BaseButton>
     </div>
   </BasePlaceholderPage>

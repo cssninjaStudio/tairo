@@ -9,6 +9,7 @@
       label="Framework"
       condensed
     />
+
     <BaseAutocomplete
       v-model="second"
       :items="frameworks"

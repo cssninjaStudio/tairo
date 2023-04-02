@@ -8,6 +8,7 @@
       placeholder="e.g. Nuxt"
       label="Framework"
     />
+
     <BaseAutocomplete
       v-model="fields.second"
       :items="people"

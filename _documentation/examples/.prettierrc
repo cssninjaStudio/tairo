@@ -2,6 +2,5 @@
   "printWidth": 100,
   "singleQuote": true,
   "semi": false,
-  "trailingComma": "all",
-  "htmlWhitespaceSensitivity": "ignore"
+  "trailingComma": "all"
 }

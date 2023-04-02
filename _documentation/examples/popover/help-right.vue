@@ -3,6 +3,7 @@
     <TairoPopover size="sm" orientation="end">
       <span class="text-muted-500 flex items-center">
         <Icon name="lucide:help-circle" class="me-1 h-4 w-4" />
+
         <span class="font-sans text-sm">Help text</span>
       </span>
 
@@ -21,6 +22,7 @@
     <TairoPopover size="sm" orientation="end">
       <span class="text-muted-500 flex items-center">
         <Icon name="lucide:help-circle" class="me-1 h-4 w-4" />
+
         <span class="font-sans text-sm">Help text</span>
       </span>
 

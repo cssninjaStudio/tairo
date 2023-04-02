@@ -3,6 +3,7 @@
     <TairoPopover orientation="end">
       <div class="flex items-center">
         <BaseAvatar src="/img/avatars/2.svg" />
+
         <span class="text-muted-800 ms-3 font-sans text-sm font-medium dark:text-white">
           Maya Rosselini
         </span>

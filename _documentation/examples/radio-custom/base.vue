@@ -8,6 +8,7 @@
           <legend class="text-muted-800 dark:text-muted-100 font-sans text-xl font-medium">
             Change Plan
           </legend>
+
           <NuxtLink
             to="#"
             class="text-primary-500 font-sans text-sm font-medium underline-offset-4 hover:underline"
@@ -15,6 +16,7 @@
             Cancel your plan
           </NuxtLink>
         </div>
+
         <div class="grid gap-6 sm:grid-cols-4">
           <BaseRadioHeadless v-model="value" name="radio_custom" value="value_1">
             <BaseCard
@@ -27,15 +29,20 @@
                 >
                   Starter
                 </h4>
+
                 <h3 class="text-muted-800 dark:text-muted-100 font-sans font-bold">
                   <span class="text-4xl">1</span>
+
                   <span class="text-2xl uppercase">GB</span>
                 </h3>
+
                 <div class="font-sans">
                   <span class="text-muted-800 dark:text-muted-100 text-xl font-bold">$5</span>
+
                   <span class="text-muted-500 dark:text-muted-400 text-sm font-medium">/month</span>
                 </div>
               </div>
+
               <div class="child absolute end-2 top-3 opacity-0">
                 <Icon name="ph:check-circle-duotone" class="text-success-500 h-7 w-7" />
               </div>
@@ -53,15 +60,20 @@
                 >
                   Freelancer
                 </h4>
+
                 <h3 class="text-muted-800 dark:text-muted-100 font-sans font-bold">
                   <span class="text-4xl">5</span>
+
                   <span class="text-2xl uppercase">GB</span>
                 </h3>
+
                 <div class="font-sans">
                   <span class="text-muted-800 dark:text-muted-100 text-xl font-bold">$10</span>
+
                   <span class="text-muted-500 dark:text-muted-400 text-sm font-medium">/month</span>
                 </div>
               </div>
+
               <div class="child absolute end-2 top-3 opacity-0">
                 <Icon name="ph:check-circle-duotone" class="text-success-500 h-7 w-7" />
               </div>
@@ -79,15 +91,20 @@
                 >
                   Business
                 </h4>
+
                 <h3 class="text-muted-800 dark:text-muted-100 font-sans font-bold">
                   <span class="text-4xl">10</span>
+
                   <span class="text-2xl uppercase">GB</span>
                 </h3>
+
                 <div class="font-sans">
                   <span class="text-muted-800 dark:text-muted-100 text-xl font-bold">$15</span>
+
                   <span class="text-muted-500 dark:text-muted-400 text-sm font-medium">/month</span>
                 </div>
               </div>
+
               <div class="child absolute end-2 top-3 opacity-0">
                 <Icon name="ph:check-circle-duotone" class="text-success-500 h-7 w-7" />
               </div>
@@ -105,15 +122,20 @@
                 >
                   Enterprise
                 </h4>
+
                 <h3 class="text-muted-800 dark:text-muted-100 font-sans font-bold">
                   <span class="text-4xl">20</span>
+
                   <span class="text-2xl uppercase">GB</span>
                 </h3>
+
                 <div class="font-sans">
                   <span class="text-muted-800 dark:text-muted-100 text-xl font-bold">$20</span>
+
                   <span class="text-muted-500 dark:text-muted-400 text-sm font-medium">/month</span>
                 </div>
               </div>
+
               <div class="child absolute end-2 top-3 opacity-0">
                 <Icon name="ph:check-circle-duotone" class="text-success-500 h-7 w-7" />
               </div>

@@ -7,18 +7,21 @@
         :value="progressCircle"
         class="text-primary-500"
       />
+
       <BaseProgressCircle
         title="Yellow circle progress bar"
         :size="55"
         :value="progressCircle"
         class="text-yellow-500"
       />
+
       <BaseProgressCircle
         title="Pink circle progress bar"
         :size="75"
         :value="progressCircle"
         class="text-pink-500"
       />
+
       <BaseProgressCircle
         title="Indigo circle progress bar"
         :size="85"
@@ -34,18 +37,21 @@
       >
         25%
       </BaseButtonAction>
+
       <BaseButtonAction
         :class="progressCircle === 50 && '!border-primary-500 !text-primary-500'"
         @click="progressCircle = 50"
       >
         50%
       </BaseButtonAction>
+
       <BaseButtonAction
         :class="progressCircle === 75 && '!border-primary-500 !text-primary-500'"
         @click="progressCircle = 75"
       >
         75%
       </BaseButtonAction>
+
       <BaseButtonAction
         :class="progressCircle === 100 && '!border-primary-500 !text-primary-500'"
         @click="progressCircle = 100"

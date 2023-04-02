@@ -8,6 +8,7 @@
       placeholder="Enter search terms..."
       icon="lucide:search"
     />
+
     <BaseInput
       v-model="fields.second"
       shape="rounded"
@@ -16,6 +17,7 @@
       placeholder="Your email..."
       icon="lucide:mail"
     />
+
     <BaseInput
       v-model="fields.third"
       shape="curved"
@@ -23,6 +25,7 @@
       placeholder="Your username..."
       icon="lucide:user"
     />
+
     <BaseInput
       v-model="fields.fourth"
       type="password"

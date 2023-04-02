@@ -8,6 +8,7 @@
       rows="1"
       autogrow
     />
+
     <BaseTextarea
       v-model="fields.second"
       label="Rounded textarea"
@@ -16,6 +17,7 @@
       rows="1"
       autogrow
     />
+
     <BaseTextarea
       v-model="fields.third"
       label="Curved textarea"
@@ -24,6 +26,7 @@
       rows="1"
       autogrow
     />
+
     <BaseTextarea
       v-model="fields.fourth"
       label="Full textarea"
