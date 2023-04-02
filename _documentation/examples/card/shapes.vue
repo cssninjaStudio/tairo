@@ -6,10 +6,11 @@
         size="sm"
         weight="semibold"
         lead="tight"
-        class="text-muted-800 dark:text-white mb-2"
+        class="text-muted-800 mb-2 dark:text-white"
       >
         Iam a card
       </BaseHeading>
+
       <BaseParagraph size="sm" lead="tight" class="text-muted-400">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       </BaseParagraph>
@@ -21,10 +22,11 @@
         size="sm"
         weight="semibold"
         lead="tight"
-        class="text-muted-800 dark:text-white mb-2"
+        class="text-muted-800 mb-2 dark:text-white"
       >
         Iam a card
       </BaseHeading>
+
       <BaseParagraph size="sm" lead="tight" class="text-muted-400">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       </BaseParagraph>
@@ -36,10 +38,11 @@
         size="sm"
         weight="semibold"
         lead="tight"
-        class="text-muted-800 dark:text-white mb-2"
+        class="text-muted-800 mb-2 dark:text-white"
       >
         Iam a card
       </BaseHeading>
+
       <BaseParagraph size="sm" lead="tight" class="text-muted-400">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       </BaseParagraph>

@@ -14,7 +14,7 @@ const sidebar = reactive(useSidebar())
     </div>
     <button
       type="button"
-      class="text-muted-400 hover:bg-muted-100 hover:text-muted-600 ml-auto flex h-10 w-10 items-center justify-center rounded-full transition-colors duration-300 xl:hidden"
+      class="text-muted-400 hover:bg-muted-100 hover:text-muted-600 ms-auto flex h-10 w-10 items-center justify-center rounded-full transition-colors duration-300 xl:hidden"
       @click="sidebar.isOpen = false"
     >
       <Icon name="feather:chevron-left" class="h-6 w-6" />

@@ -76,7 +76,7 @@ const props = defineProps<{
           <BaseIconBox
             v-if="stat.icon && !stat.image"
             size="xs"
-            class="bg-primary-100 text-primary-500 dark:bg-primary-600 mr-2 dark:text-white"
+            class="bg-primary-100 text-primary-500 dark:bg-primary-600 me-2 dark:text-white"
           >
             <Icon :name="stat.icon" class="h-4 w-4" />
           </BaseIconBox>
@@ -84,7 +84,7 @@ const props = defineProps<{
             v-if="stat.image && !stat.icon"
             :src="stat.image"
             size="xs"
-            class="mr-2"
+            class="me-2"
           />
           <div>
             <BaseHeading
@@ -145,7 +145,7 @@ const props = defineProps<{
       <span class="flex items-center">
         <NuxtLink
           to="#"
-          class="text-primary-500 mr-1 font-sans text-sm font-medium underline-offset-4 transition-colors hover:underline"
+          class="text-primary-500 me-1 font-sans text-sm font-medium underline-offset-4 transition-colors hover:underline"
         >
           {{ props.linkLabel }}
         </NuxtLink>

@@ -1,9 +1,4 @@
 <script setup lang="ts">
-definePageMeta({
-  title: 'Error',
-  layout: 'empty',
-})
-
 const props = withDefaults(
   defineProps<{
     error: any
@@ -31,6 +26,11 @@ const props = withDefaults(
     }),
   },
 )
+
+definePageMeta({
+  title: 'Error',
+  layout: 'empty',
+})
 
 const title = computed(() => {
   if (props.error?.statusCode === 401) {
@@ -80,7 +80,7 @@ const showStackTrace = ref(false)
       :title="title"
       :subtitle="description"
       image-size="md"
-      class="!items-end relative"
+      class="relative !items-end"
     >
       <template #image>
         <component
@@ -92,7 +92,7 @@ const showStackTrace = ref(false)
 
       <div class="mt-4">
         <div
-          class="absolute top-1/3 -translate-y-1/2 inset-x-0 sm:text-[20rem] text-[13rem] font-bold text-muted-400/20 dark:text-muted-400/10"
+          class="text-muted-400/20 dark:text-muted-400/10 absolute inset-x-0 top-1/3 -translate-y-1/2 text-[13rem] font-bold sm:text-[20rem]"
         >
           <span>{{ props.error?.statusCode }}</span>
         </div>
@@ -105,7 +105,7 @@ const showStackTrace = ref(false)
           <Icon name="feather:arrow-left" />
           Take me Back
         </BaseButton>
-        <div class="flex items-center justify-center mt-6">
+        <div class="mt-6 flex items-center justify-center">
           <BaseSwitchBall
             v-model="showStackTrace"
             color="danger"
@@ -119,11 +119,11 @@ const showStackTrace = ref(false)
       <BaseCard
         v-focus
         shape="curved"
-        class="relative nui-focus nui-text-700 border-2 border-dashed hover:border-solid group mx-auto mt-6 max-w-3xl p-8"
+        class="nui-focus nui-text-700 group relative mx-auto mt-6 max-w-3xl border-2 border-dashed p-8 hover:border-solid"
         tabindex="0"
       >
         <div
-          class="flex items-center justify-start gap-1 mb-3 opacity-30 transition-opacity duration-300 group-hover:opacity-100 group-focus:opacity-100"
+          class="mb-3 flex items-center justify-start gap-1 opacity-30 transition-opacity duration-300 group-hover:opacity-100 group-focus:opacity-100"
         >
           <BaseTag v-if="props.error.statusCode" color="danger" condensed>
             {{ props.error.statusCode }}
@@ -138,21 +138,21 @@ const showStackTrace = ref(false)
           </BaseTag>
           <BaseButtonClose
             color="muted"
-            class="ml-auto"
+            class="ms-auto"
             @click="showStackTrace = false"
           />
         </div>
-        <div class="flex items-center gap-2 mb-4">
+        <div class="mb-4 flex items-center gap-2">
           <BaseIconBox color="danger" shape="full" size="md">
-            <Icon name="ph:skull-duotone" class="w-6 h-6" />
+            <Icon name="ph:skull-duotone" class="h-6 w-6" />
           </BaseIconBox>
           <div>
             <h4
-              class="font-mono text-lg font-medium text-danger-500 [overflow-wrap:anywhere]"
+              class="text-danger-500 font-mono text-lg font-medium [overflow-wrap:anywhere]"
             >
               {{ props.error.message }}
             </h4>
-            <p class="font-sans font-medium text-xs nui-text-500">
+            <p class="nui-text-500 font-sans text-xs font-medium">
               This is a demo stacktrace, you won't see it in production.
             </p>
           </div>
@@ -161,7 +161,7 @@ const showStackTrace = ref(false)
         <!-- eslint-disable vue/no-v-html -->
         <div
           v-if="props.error.stack"
-          class="text-sm mt-6 overflow-auto whitespace-pre p-2 font-mono opacity-60 transition-all duration-300 group-hover:opacity-100 group-focus:opacity-100"
+          class="mt-6 overflow-auto whitespace-pre p-2 font-mono text-sm opacity-60 transition-all duration-300 group-hover:opacity-100 group-focus:opacity-100"
           v-html="props.error.stack"
         ></div>
         <!-- eslint-enable vue/no-v-html -->
@@ -175,6 +175,6 @@ const showStackTrace = ref(false)
   @apply text-sm;
 }
 .stack.internal {
-  @apply opacity-100 pl-4 text-xs;
+  @apply opacity-100 ps-4 text-xs;
 }
 </style>

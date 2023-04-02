@@ -1,12 +1,5 @@
 module.exports = {
-  // root: true,
-  // env: {
-  //   browser: true,
-  //   node: true,
-  // },
-  // parserOptions: {
-  //   parser: '@typescript-eslint/parser',
-  // },
+  root: true,
   extends: [
     'plugin:@typescript-eslint/recommended',
     'plugin:vue/vue3-strongly-recommended',
@@ -32,7 +25,6 @@ module.exports = {
     '@typescript-eslint/consistent-type-imports': 'error',
     '@typescript-eslint/no-unused-vars': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
-    '@typescript-eslint/ban-ts-comment': 'off',
     '@typescript-eslint/ban-ts-comment': 'off',
 
     'vue/script-setup-uses-vars': 'error',

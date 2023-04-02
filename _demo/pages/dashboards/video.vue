@@ -309,7 +309,7 @@ const videos = [
                         <span class="text-muted-400">{{ video.uploaded }}</span>
                       </BaseParagraph>
                     </div>
-                    <div class="ml-auto">
+                    <div class="ms-auto">
                       <BaseTag color="primary" shape="full" condensed>
                         <span>{{ video.category }}</span>
                       </BaseTag>
@@ -391,7 +391,7 @@ const videos = [
                               </span>
                             </BaseParagraph>
                           </div>
-                          <div class="ml-auto">
+                          <div class="ms-auto">
                             <BaseTag color="primary" shape="full" condensed>
                               <span>{{ video.category }}</span>
                             </BaseTag>
@@ -512,7 +512,7 @@ const videos = [
                       <span class="text-muted-400">{{ video.uploaded }}</span>
                     </BaseParagraph>
                   </div>
-                  <div class="ml-auto">
+                  <div class="ms-auto">
                     <BaseTag color="primary" shape="full" condensed>
                       <span>{{ video.category }}</span>
                     </BaseTag>

@@ -2,7 +2,7 @@
   <div>
     <!-- Content -->
     <slot name="image"></slot>
-    <div class="text-center mt-4">
+    <div class="mt-4 text-center">
       <slot></slot>
       <div class="mt-4">
         <slot name="action"></slot>

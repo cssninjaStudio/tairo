@@ -94,7 +94,7 @@ const componentsByCategoryMaped = computed(() => {
             >
               <BaseCard>
                 <div class="mb-2 flex justify-between p-6">
-                  <div class="flex h-full grow flex-col justify-between pr-4">
+                  <div class="flex h-full grow flex-col justify-between pe-4">
                     <span
                       class="text-muted-800 mb-2 line-clamp-1 block w-full max-w-[240px] text-lg dark:text-white"
                       >{{ component?.route?.title }}</span

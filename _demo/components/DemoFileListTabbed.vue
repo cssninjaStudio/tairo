@@ -116,7 +116,7 @@ const savedFiles = [
                 <span>{{ file.type }}</span>
               </BaseText>
             </div>
-            <div class="ml-auto">
+            <div class="ms-auto">
               <BaseDropdown
                 flavor="context"
                 label="Dropdown"
@@ -133,7 +133,7 @@ const savedFiles = [
                   <template #start>
                     <Icon
                       name="ph:cloud-arrow-down-duotone"
-                      class="w-5 h-5 block mr-2"
+                      class="w-5 h-5 block me-2"
                     />
                   </template>
                 </BaseDropdownItem>
@@ -145,7 +145,7 @@ const savedFiles = [
                   <template #start>
                     <Icon
                       name="ph:cloud-arrow-up-duotone"
-                      class="w-5 h-5 block mr-2"
+                      class="w-5 h-5 block me-2"
                     />
                   </template>
                 </BaseDropdownItem>
@@ -156,18 +156,18 @@ const savedFiles = [
                   text="Manage permissions"
                 >
                   <template #start>
-                    <Icon name="ph:lock-duotone" class="w-5 h-5 block mr-2" />
+                    <Icon name="ph:lock-duotone" class="w-5 h-5 block me-2" />
                   </template>
                 </BaseDropdownItem>
                 <BaseDropdownItem to="#" title="Share" text="Share this file">
                   <template #start>
-                    <Icon name="ph:share-duotone" class="w-5 h-5 block mr-2" />
+                    <Icon name="ph:share-duotone" class="w-5 h-5 block me-2" />
                   </template>
                 </BaseDropdownItem>
                 <BaseDropdownDivide />
                 <BaseDropdownItem to="#" title="Delete" text="Delete this file">
                   <template #start>
-                    <Icon name="ph:trash-duotone" class="w-5 h-5 block mr-2" />
+                    <Icon name="ph:trash-duotone" class="w-5 h-5 block me-2" />
                   </template>
                 </BaseDropdownItem>
               </BaseDropdown>
@@ -197,7 +197,7 @@ const savedFiles = [
                 <span>{{ file.type }}</span>
               </BaseText>
             </div>
-            <div class="ml-auto">
+            <div class="ms-auto">
               <BaseDropdown
                 flavor="context"
                 label="Dropdown"
@@ -214,7 +214,7 @@ const savedFiles = [
                   <template #start>
                     <Icon
                       name="ph:cloud-arrow-down-duotone"
-                      class="w-5 h-5 block mr-2"
+                      class="w-5 h-5 block me-2"
                     />
                   </template>
                 </BaseDropdownItem>
@@ -226,7 +226,7 @@ const savedFiles = [
                   <template #start>
                     <Icon
                       name="ph:cloud-arrow-up-duotone"
-                      class="w-5 h-5 block mr-2"
+                      class="w-5 h-5 block me-2"
                     />
                   </template>
                 </BaseDropdownItem>
@@ -237,18 +237,18 @@ const savedFiles = [
                   text="Manage permissions"
                 >
                   <template #start>
-                    <Icon name="ph:lock-duotone" class="w-5 h-5 block mr-2" />
+                    <Icon name="ph:lock-duotone" class="w-5 h-5 block me-2" />
                   </template>
                 </BaseDropdownItem>
                 <BaseDropdownItem to="#" title="Share" text="Share this file">
                   <template #start>
-                    <Icon name="ph:share-duotone" class="w-5 h-5 block mr-2" />
+                    <Icon name="ph:share-duotone" class="w-5 h-5 block me-2" />
                   </template>
                 </BaseDropdownItem>
                 <BaseDropdownDivide />
                 <BaseDropdownItem to="#" title="Delete" text="Delete this file">
                   <template #start>
-                    <Icon name="ph:trash-duotone" class="w-5 h-5 block mr-2" />
+                    <Icon name="ph:trash-duotone" class="w-5 h-5 block me-2" />
                   </template>
                 </BaseDropdownItem>
               </BaseDropdown>

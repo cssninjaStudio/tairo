@@ -45,7 +45,7 @@ function getTocItemClass(item: any) {
   const classes = []
 
   if (item.level > 2) {
-    classes.push('ml-3 text-xs')
+    classes.push('ms-3 text-xs')
   }
 
   if (activeAnchor.value === item.id) {
@@ -81,7 +81,7 @@ async function loadTocItemFromDom() {
 </script>
 
 <template>
-  <div class="fixed flex flex-col justify-between pb-20 pl-20 pr-1 pt-2">
+  <div class="fixed flex flex-col justify-between pb-20 pe-1 ps-20 pt-2">
     <div class="w-52" v-if="toc.length">
       <div
         class="font-heading text-muted-800 mb-6 text-xs font-semibold uppercase leading-tight dark:text-white"
@@ -96,7 +96,7 @@ async function loadTocItemFromDom() {
           <li v-for="item in toc" :key="item.id">
             <NuxtLink
               :to="`#${item.id}`"
-              class="block border-r-2 py-2"
+              class="block border-e-2 py-2"
               :class="getTocItemClass(item)"
             >
               {{ item.label }}

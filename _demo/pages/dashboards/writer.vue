@@ -21,7 +21,7 @@ const activePosts = ref('recent')
             >
               <div class="relative shrink-0 h-[150px] sm:h-[175px] w-[320px]">
                 <img
-                  class="absolute top-0 left-6 sm:-left-10 pointer-events-none"
+                  class="absolute top-0 start-6 sm:-start-10 pointer-events-none"
                   src="/img/illustrations/dashboards/writer/readers.svg"
                   alt="Readers illustration"
                 />

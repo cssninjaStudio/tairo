@@ -34,7 +34,7 @@ const subsidebarEnabled = computed(() => {
 
 <template>
   <div
-    class="pointer-events-none fixed left-0 top-0 z-[60] flex h-full xl:z-10"
+    class="pointer-events-none fixed start-0 top-0 z-[60] flex h-full xl:z-10"
   >
     <!-- Icon sidebar -->
     <div
@@ -69,7 +69,11 @@ const subsidebarEnabled = computed(() => {
     <div
       v-if="subsidebarEnabled"
       class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 pointer-events-auto relative z-10 h-full w-[220px] border-r bg-white transition-all duration-300"
-      :class="sidebar.isOpen ? '' : 'translate-x-[calc(-100%_-_80px)]'"
+      :class="
+        sidebar.isOpen
+          ? ''
+          : 'rtl:translate-x-[calc(100%_+_80px)] translate-x-[calc(-100%_-_80px)]'
+      "
     >
       <slot name="subnav">
         <component

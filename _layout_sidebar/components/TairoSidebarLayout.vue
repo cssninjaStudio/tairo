@@ -48,13 +48,13 @@ const mainClass = computed(() => {
   ]
 
   if (sidebar.isOpen) {
-    list.push('xl:max-w-[calc(100%_-_300px)] xl:ml-[300px]')
+    list.push('xl:max-w-[calc(100%_-_300px)] xl:ms-[300px]')
   } else {
-    list.push('xl:max-w-[calc(100%_-_80px)] xl:ml-[80px]')
+    list.push('xl:max-w-[calc(100%_-_80px)] xl:ms-[80px]')
   }
 
   if (props.horizontalScroll) {
-    list.push('!pr-0 xl:!pr-0')
+    list.push('!pe-0 xl:!pe-0')
   }
 
   return list
@@ -117,14 +117,14 @@ const mainClass = computed(() => {
       enter-active-class="transition-transform duration-300 ease-out"
       :enter-from-class="
         panels.transitionFrom === 'left'
-          ? '-translate-x-full'
-          : 'translate-x-full'
+          ? '-translate-x-full rtl:translate-x-full'
+          : 'translate-x-full rtl:-translate-x-full'
       "
       leave-active-class="transition-transform duration-300 ease-in"
       :leave-to-class="
         panels.transitionFrom === 'left'
-          ? '-translate-x-full'
-          : 'translate-x-full'
+          ? '-translate-x-full rtl:translate-x-full'
+          : 'translate-x-full rtl:-translate-x-full'
       "
     >
       <slot name="panel">
@@ -133,14 +133,14 @@ const mainClass = computed(() => {
           v-bind="panels.currentProps"
           v-if="panels.current?.component"
           class="fixed top-0 z-[100] h-full w-96"
-          :class="[panels.current.position === 'left' ? 'left-0' : 'right-0']"
+          :class="[panels.current.position === 'left' ? 'start-0' : 'end-0']"
         />
       </slot>
     </Transition>
 
     <!-- Overlay -->
     <div
-      class="bg-muted-800/60 fixed left-0 top-0 z-[99] h-full w-full cursor-pointer transition-opacity duration-300"
+      class="bg-muted-800/60 fixed start-0 top-0 z-[99] h-full w-full cursor-pointer transition-opacity duration-300"
       :class="
         panels.current && panels.showOverlay
           ? 'opacity-100 pointer-events-auto'

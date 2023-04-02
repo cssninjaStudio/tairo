@@ -24,7 +24,7 @@ const tools = computed(() => {
 
 <template>
   <div
-    class="after:bg-primary-600 after:shadow-primary-500/50 dark:after:shadow-muted-800/10 fixed right-[1em] top-[0.6em] z-[90] transition-transform duration-300 after:absolute after:right-0 after:top-0 after:block after:h-12 after:w-12 after:rounded-full after:shadow-lg after:transition-transform after:duration-300 after:content-['']"
+    class="after:bg-primary-600 after:shadow-primary-500/50 dark:after:shadow-muted-800/10 fixed end-[1em] top-[0.6em] z-[90] transition-transform duration-300 after:absolute after:end-0 after:top-0 after:block after:h-12 after:w-12 after:rounded-full after:shadow-lg after:transition-transform after:duration-300 after:content-['']"
     :class="[
       isOpened
         ? 'after:ease-[cubic-bezier(0.68, 1.55, 0.265, 1)] after:scale-[5.5]'
@@ -61,7 +61,7 @@ const tools = computed(() => {
         <div
           v-if="tool.component"
           :key="tool.component"
-          class="absolute right-[0.2em] top-[0.2em] z-20 flex items-center justify-center transition-all duration-300"
+          class="absolute end-[0.2em] top-[0.2em] z-20 flex items-center justify-center transition-all duration-300"
           :class="isOpened ? toolOffsets[idx] : 'translate-x-0 translate-y-0'"
         >
           <component

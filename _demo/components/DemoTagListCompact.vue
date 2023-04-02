@@ -43,7 +43,7 @@ const tags = [
 </script>
 
 <template>
-  <div class="flex items-center flex-wrap gap-2">
+  <div class="flex flex-wrap items-center gap-2">
     <BaseTag
       v-for="tag in tags"
       :key="tag.id"

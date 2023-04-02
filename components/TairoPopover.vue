@@ -49,15 +49,15 @@ const props = withDefaults(
           :class="[
             props.size === 'sm' && 'max-w-[240px]',
             props.size === 'md' && 'max-w-xs',
-            props.orientation === 'start' && '-left-3',
-            props.orientation === 'end' && '-right-3',
+            props.orientation === 'start' && '-start-3',
+            props.orientation === 'end' && '-end-3',
           ]"
         >
           <div
             class="border-muted-200 after:border-muted-200 dark:border-muted-600 dark:bg-muted-700 dark:after:border-muted-600 dark:after:bg-muted-700 shadow-muted-300/30 dark:shadow-muted-800/20 relative w-full rounded-lg border bg-white shadow-xl after:absolute after:-top-2 after:h-4 after:w-4 after:rotate-[-135deg] after:border-b after:border-r after:bg-white after:content-['']"
             :class="[
-              props.orientation === 'start' && 'after:left-6',
-              props.orientation === 'end' && 'after:right-6',
+              props.orientation === 'start' && 'after:start-6',
+              props.orientation === 'end' && 'after:end-6',
             ]"
           >
             <slot name="content"></slot>

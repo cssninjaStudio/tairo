@@ -52,7 +52,7 @@ const tasks = ref<string[]>(['Option 0', 'Option 1', 'Option 2'])
 </script>
 
 <template>
-  <div class="space-y-6 mb-2">
+  <div class="mb-2 space-y-6">
     <div v-for="task in todos" :key="task.id" class="flex items-center gap-3">
       <BaseCheckboxAnimated
         v-model="tasks"

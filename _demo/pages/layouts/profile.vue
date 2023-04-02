@@ -10,7 +10,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
   <div class="w-full max-w-5xl mx-auto">
     <div v-if="!data"></div>
     <div v-else class="w-full relative">
-      <div class="absolute top-2 right-0 z-20">
+      <div class="absolute top-2 end-0 z-20">
         <BaseDropdown
           flavor="context"
           label="Dropdown"
@@ -26,24 +26,24 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
             text="Edit profile"
           >
             <template #start>
-              <Icon name="ph:pencil-duotone" class="w-5 h-5 block mr-2" />
+              <Icon name="ph:pencil-duotone" class="w-5 h-5 block me-2" />
             </template>
           </BaseDropdownItem>
           <BaseDropdownDivide />
           <BaseDropdownItem to="#" title="Security" text="Security settings">
             <template #start>
-              <Icon name="ph:lock-duotone" class="w-5 h-5 block mr-2" />
+              <Icon name="ph:lock-duotone" class="w-5 h-5 block me-2" />
             </template>
           </BaseDropdownItem>
           <BaseDropdownItem to="#" title="Billing" text="Manage billing">
             <template #start>
-              <Icon name="ph:bank-duotone" class="w-5 h-5 block mr-2" />
+              <Icon name="ph:bank-duotone" class="w-5 h-5 block me-2" />
             </template>
           </BaseDropdownItem>
           <BaseDropdownDivide />
           <BaseDropdownItem to="#" title="Share" text="Share profile">
             <template #start>
-              <Icon name="ph:link-duotone" class="w-5 h-5 block mr-2" />
+              <Icon name="ph:link-duotone" class="w-5 h-5 block me-2" />
             </template>
           </BaseDropdownItem>
         </BaseDropdown>
@@ -179,7 +179,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                         :size="68"
                         :thickness="1.5"
                         :value="item.level"
-                        class="absolute -top-2.5 -left-2.5 text-primary-500"
+                        class="absolute -top-2.5 -start-2.5 text-primary-500"
                       />
                     </div>
                     <div>
@@ -226,7 +226,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                         :size="68"
                         :thickness="1.5"
                         :value="item.level"
-                        class="absolute -top-2.5 -left-2.5 text-primary-500"
+                        class="absolute -top-2.5 -start-2.5 text-primary-500"
                       />
                     </div>
                     <div>
@@ -237,7 +237,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                         <span>{{ item.experience }} years of experience</span>
                       </BaseParagraph>
                     </div>
-                    <div class="ml-auto flex items-center gap-2">
+                    <div class="ms-auto flex items-center gap-2">
                       <BaseAvatar
                         v-for="user in item.related.people"
                         :key="user.name"
@@ -313,7 +313,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 >
                   Notifications
                 </h4>
-                <div class="ml-auto">
+                <div class="ms-auto">
                   <BaseSwitchBall v-model="data.notifications" />
                 </div>
               </div>
@@ -351,7 +351,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                       :size="68"
                       :thickness="1.5"
                       :value="item.level"
-                      class="absolute -top-2.5 -left-2.5 text-primary-500"
+                      class="absolute -top-2.5 -start-2.5 text-primary-500"
                     />
                   </div>
                   <div>
@@ -395,7 +395,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                       <span>{{ item.role }}</span>
                     </BaseParagraph>
                   </div>
-                  <div class="ml-auto">
+                  <div class="ms-auto">
                     <BaseButtonIcon
                       to="#"
                       condensed

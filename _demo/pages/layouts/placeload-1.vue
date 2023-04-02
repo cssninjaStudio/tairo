@@ -46,7 +46,7 @@ definePageMeta({
               </div>
             </div>
             <div
-              class="sm:ml-auto flex flex-col sm:flex-row sm:items-center sm:justify-end gap-4 pt-4 sm:pt-0"
+              class="sm:ms-auto flex flex-col sm:flex-row sm:items-center sm:justify-end gap-4 pt-4 sm:pt-0"
             >
               <div
                 class="flex items-center justify-center sm:justify-end w-full sm:w-[160px]"
@@ -73,7 +73,7 @@ definePageMeta({
                 <BasePlaceload class="w-8 h-8 rounded-full shrink-0" />
                 <BasePlaceload class="w-12 h-3 rounded-full hidden sm:block" />
               </div>
-              <div class="sm:ml-6">
+              <div class="sm:ms-6">
                 <BasePlaceload
                   class="w-40 sm:w-20 h-8 rounded-lg mx-auto sm:mx-0"
                 />

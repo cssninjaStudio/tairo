@@ -13,7 +13,7 @@ const search = ref('')
 
 <template>
   <div class="w-full">
-    <div class="relative w-full flex items-center gap-2">
+    <div class="relative flex w-full items-center gap-2">
       <BaseInput
         v-model="search"
         icon="lucide:search"
@@ -22,12 +22,12 @@ const search = ref('')
         :classes="{
           wrapper: 'w-full',
           input:
-            'pr-24 !bg-muted-100 dark:!bg-muted-700 focus:!bg-white dark:focus:!bg-muted-900',
+            'pe-24 !bg-muted-100 dark:!bg-muted-700 focus:!bg-white dark:focus:!bg-muted-900',
         }"
       />
       <button
         type="button"
-        class="absolute top-1 right-1 h-8 inline-flex items-center justify-center px-4 font-sans text-sm text-white bg-primary-500"
+        class="bg-primary-500 absolute end-1 top-1 inline-flex h-8 items-center justify-center px-4 font-sans text-sm text-white"
         :class="[
           props.shape === 'rounded' ? 'rounded' : '',
           props.shape === 'curved' ? 'rounded-lg' : '',
@@ -36,19 +36,19 @@ const search = ref('')
         <span>Go</span>
       </button>
     </div>
-    <div class="flex flex-wrap gap-2 mt-2">
+    <div class="mt-2 flex flex-wrap gap-2">
       <span
-        class="font-sans font-medium text-xs inline-flex justify-center items-center h-6 px-3 rounded-full text-muted-500 dark:text-muted-400 bg-muted-200 dark:bg-muted-700/40"
+        class="text-muted-500 dark:text-muted-400 bg-muted-200 dark:bg-muted-700/40 inline-flex h-6 items-center justify-center rounded-full px-3 font-sans text-xs font-medium"
       >
         #Europe
       </span>
       <span
-        class="font-sans font-medium text-xs inline-flex justify-center items-center h-6 px-3 rounded-full text-muted-500 dark:text-muted-400 bg-muted-200 dark:bg-muted-700/40"
+        class="text-muted-500 dark:text-muted-400 bg-muted-200 dark:bg-muted-700/40 inline-flex h-6 items-center justify-center rounded-full px-3 font-sans text-xs font-medium"
       >
         #Asia
       </span>
       <span
-        class="font-sans font-medium text-xs inline-flex justify-center items-center h-6 px-3 rounded-full text-muted-500 dark:text-muted-400 bg-muted-200 dark:bg-muted-700/40"
+        class="text-muted-500 dark:text-muted-400 bg-muted-200 dark:bg-muted-700/40 inline-flex h-6 items-center justify-center rounded-full px-3 font-sans text-xs font-medium"
       >
         #America
       </span>

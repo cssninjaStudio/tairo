@@ -59,9 +59,9 @@ const activeTab = ref('tab-1')
               {{ props.labels?.at(1) }}
             </button>
             <div
-              class="bg-primary-500 absolute left-0 top-0 h-full w-1/2 transition-all duration-300 ease-in-out"
+              class="bg-primary-500 absolute start-0 top-0 h-full w-1/2 transition-all duration-300 ease-in-out"
               :class="[
-                activeTab === 'tab-1' ? 'ml-0' : 'ml-[50%]',
+                activeTab === 'tab-1' ? 'ms-0' : 'ms-[50%]',
                 props.shape === 'rounded' ? 'rounded-md' : '',
                 props.shape === 'curved' ? 'rounded-xl' : '',
                 props.shape === 'full' ? 'rounded-full' : '',

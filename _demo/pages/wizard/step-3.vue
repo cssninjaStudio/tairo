@@ -110,12 +110,12 @@ const budget = ref('< 5K')
 <template>
   <div>
     <DemoWizardStepTitle />
-    <div class="flex flex-col gap-3 w-full max-w-sm mx-auto px-4">
+    <div class="mx-auto flex w-full max-w-sm flex-col gap-3 px-4">
       <!-- Customer -->
-      <BaseCard shape="curved" class="relative p-6 z-10">
-        <div class="text-center mb-4">
+      <BaseCard shape="curved" class="relative z-10 p-6">
+        <div class="mb-4 text-center">
           <h3
-            class="font-sans text-[0.65rem] font-semibold uppercase text-muted-400"
+            class="text-muted-400 font-sans text-[0.65rem] font-semibold uppercase"
           >
             Customer
           </h3>
@@ -129,7 +129,7 @@ const budget = ref('< 5K')
               shape="curved"
               placeholder="ex: Figma, Github, ..."
               :classes="{
-                input: 'h-12 text-base !pl-12',
+                input: 'h-12 text-base !ps-12',
                 icon: 'h-12 w-12',
               }"
             />
@@ -141,23 +141,23 @@ const budget = ref('< 5K')
               />
               <div class="flex flex-col">
                 <h3
-                  class="font-sans text-sm font-semibold text-muted-800 dark:text-muted-100"
+                  class="text-muted-800 dark:text-muted-100 font-sans text-sm font-semibold"
                 >
                   {{ project.customer?.name }}
                 </h3>
-                <p class="font-sans text-xs text-muted-500 dark:text-muted-400">
+                <p class="text-muted-500 dark:text-muted-400 font-sans text-xs">
                   {{ project.customer?.location }}
                 </p>
               </div>
-              <div class="ml-auto mr-3">
+              <div class="ms-auto me-3">
                 <BaseButtonIcon small shape="full" @click="dismissCustomer">
-                  <Icon name="lucide:x" class="w-4 h-4" />
+                  <Icon name="lucide:x" class="h-4 w-4" />
                 </BaseButtonIcon>
               </div>
             </div>
 
             <div
-              class="absolute top-14 left-0 w-full p-4 rounded-xl border border-muted-200 dark:border-muted-700 bg-white dark:bg-muted-800 shadow-xl shadow-muted-300/30 dark:shadow-muted-900/30 transition-all duration-300"
+              class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 shadow-muted-300/30 dark:shadow-muted-900/30 absolute start-0 top-14 w-full rounded-xl border bg-white p-4 shadow-xl transition-all duration-300"
               :class="
                 search.length > 0
                   ? 'opacity-100 translate-y-0'
@@ -167,35 +167,35 @@ const budget = ref('< 5K')
               <!-- Results -->
               <div
                 v-if="filteredCustomers.length > 0"
-                class="space-y-2 max-h-[248px] overflow-y-auto slimscroll"
+                class="slimscroll max-h-[248px] space-y-2 overflow-y-auto"
               >
                 <!-- Result -->
                 <div
                   v-for="customer in filteredCustomers"
                   :key="customer.name"
                   role="button"
-                  class="flex items-center gap-3 py-2 px-3 rounded-lg cursor-pointer hover:bg-muted-100"
+                  class="hover:bg-muted-100 flex cursor-pointer items-center gap-3 rounded-lg px-3 py-2"
                 >
                   <BaseAvatar size="sm" :src="customer.logo" />
                   <div class="flex flex-col">
                     <h3
-                      class="font-sans text-sm font-semibold text-muted-800 dark:text-muted-100"
+                      class="text-muted-800 dark:text-muted-100 font-sans text-sm font-semibold"
                     >
                       {{ customer.name }}
                     </h3>
                     <p
-                      class="font-sans text-xs text-muted-500 dark:text-muted-400"
+                      class="text-muted-500 dark:text-muted-400 font-sans text-xs"
                     >
                       {{ customer.location }}
                     </p>
                   </div>
-                  <div class="ml-auto">
+                  <div class="ms-auto">
                     <BaseButtonIcon
                       small
                       shape="full"
                       @click="selectCustomer(customer)"
                     >
-                      <Icon name="lucide:plus" class="w-4 h-4" />
+                      <Icon name="lucide:plus" class="h-4 w-4" />
                     </BaseButtonIcon>
                   </div>
                 </div>
@@ -206,17 +206,17 @@ const budget = ref('< 5K')
       </BaseCard>
       <!-- Time frame -->
       <BaseCard shape="curved" class="p-6">
-        <div class="text-center mb-4">
+        <div class="mb-4 text-center">
           <h3
-            class="font-sans text-[0.65rem] font-semibold uppercase text-muted-400"
+            class="text-muted-400 font-sans text-[0.65rem] font-semibold uppercase"
           >
             Time Frame
           </h3>
         </div>
         <div
-          class="w-full flex justify-between divide-x divide-muted-200 dark:divide-muted-700"
+          class="divide-muted-200 dark:divide-muted-700 flex w-full justify-between divide-x"
         >
-          <div class="relative pr-4">
+          <div class="relative pe-4">
             <DatePicker
               v-model="project.startDate"
               :masks="masks"
@@ -224,24 +224,24 @@ const budget = ref('< 5K')
               :min-date="new Date()"
               trim-weeks
             >
-              <template v-slot="{ inputValue, inputEvents }">
+              <template #default="{ inputValue, inputEvents }">
                 <div class="relative">
                   <input
-                    class="peer font-sans text-sm bg-transparent h-10 inline-flex items-center leading-tight w-full pl-10 rounded-lg text-muted-600 dark:text-muted-100 placeholder:text-muted-300 dark:placeholder:text-muted-600 focus-visible:outline-dashed focus-visible:outline-offset-4 focus-visible:outline-muted-300/70"
+                    class="text-muted-600 dark:text-muted-100 placeholder:text-muted-300 dark:placeholder:text-muted-600 focus-visible:outline-muted-300/70 peer inline-flex h-10 w-full items-center rounded-lg bg-transparent ps-10 font-sans text-sm leading-tight focus-visible:outline-dashed focus-visible:outline-offset-4"
                     :value="inputValue"
                     placeholder="Start date"
                     v-on="inputEvents"
                   />
                   <div
-                    class="absolute top-0 left-0 h-10 w-10 flex items-center justify-center text-muted-400 peer-focus-visible:text-primary-500 transition-colors duration-300"
+                    class="text-muted-400 peer-focus-visible:text-primary-500 absolute start-0 top-0 flex h-10 w-10 items-center justify-center transition-colors duration-300"
                   >
-                    <Icon name="lucide:map-pin" class="w-5 h-5" />
+                    <Icon name="lucide:map-pin" class="h-5 w-5" />
                   </div>
                 </div>
               </template>
             </DatePicker>
           </div>
-          <div class="relative pl-4">
+          <div class="relative ps-4">
             <DatePicker
               id="endDate"
               v-model="project.endDate"
@@ -250,18 +250,18 @@ const budget = ref('< 5K')
               :min-date="project.startDate"
               trim-weeks
             >
-              <template v-slot="{ inputValue, inputEvents }">
+              <template #default="{ inputValue, inputEvents }">
                 <div class="relative">
                   <input
-                    class="peer font-sans text-sm bg-transparent h-10 inline-flex items-center leading-tight w-full pl-10 rounded-lg text-muted-600 dark:text-muted-100 placeholder:text-muted-300 dark:placeholder:text-muted-600 focus-visible:outline-dashed focus-visible:outline-offset-4 focus-visible:outline-muted-300/70"
+                    class="text-muted-600 dark:text-muted-100 placeholder:text-muted-300 dark:placeholder:text-muted-600 focus-visible:outline-muted-300/70 peer inline-flex h-10 w-full items-center rounded-lg bg-transparent ps-10 font-sans text-sm leading-tight focus-visible:outline-dashed focus-visible:outline-offset-4"
                     :value="inputValue"
                     placeholder="End date"
                     v-on="inputEvents"
                   />
                   <div
-                    class="absolute top-0 left-0 h-10 w-10 flex items-center justify-center text-muted-400 peer-focus-visible:text-primary-500 transition-colors duration-300"
+                    class="text-muted-400 peer-focus-visible:text-primary-500 absolute start-0 top-0 flex h-10 w-10 items-center justify-center transition-colors duration-300"
                   >
-                    <Icon name="lucide:flag" class="w-5 h-5" />
+                    <Icon name="lucide:flag" class="h-5 w-5" />
                   </div>
                 </div>
               </template>
@@ -271,18 +271,18 @@ const budget = ref('< 5K')
       </BaseCard>
       <!-- Budget -->
       <BaseCard shape="curved" class="p-6">
-        <div class="text-center mb-4">
+        <div class="mb-4 text-center">
           <h3
-            class="font-sans text-[0.65rem] font-semibold uppercase text-muted-400"
+            class="text-muted-400 font-sans text-[0.65rem] font-semibold uppercase"
           >
             Initial budget
           </h3>
         </div>
-        <div class="w-full flex justify-center gap-3">
+        <div class="flex w-full justify-center gap-3">
           <BaseRadioHeadless v-model="budget" name="budget" value="< 5K">
             <BaseButtonAction
               shape="curved"
-              class="peer-checked:!bg-primary-500 peer-checked:!border-primary-500 peer-checked:!text-white peer-checked:shadow-xl peer-checked:shadow-primary-500/20"
+              class="peer-checked:!bg-primary-500 peer-checked:!border-primary-500 peer-checked:shadow-primary-500/20 peer-checked:!text-white peer-checked:shadow-xl"
             >
               <span>&lt; 5K</span>
             </BaseButtonAction>
@@ -290,7 +290,7 @@ const budget = ref('< 5K')
           <BaseRadioHeadless v-model="budget" name="budget" value="< 30K">
             <BaseButtonAction
               shape="curved"
-              class="peer-checked:!bg-primary-500 peer-checked:!border-primary-500 peer-checked:!text-white peer-checked:shadow-xl peer-checked:shadow-primary-500/20"
+              class="peer-checked:!bg-primary-500 peer-checked:!border-primary-500 peer-checked:shadow-primary-500/20 peer-checked:!text-white peer-checked:shadow-xl"
             >
               <span>&lt; 30K</span>
             </BaseButtonAction>
@@ -298,7 +298,7 @@ const budget = ref('< 5K')
           <BaseRadioHeadless v-model="budget" name="budget" value="< 100K">
             <BaseButtonAction
               shape="curved"
-              class="peer-checked:!bg-primary-500 peer-checked:!border-primary-500 peer-checked:!text-white peer-checked:shadow-xl peer-checked:shadow-primary-500/20"
+              class="peer-checked:!bg-primary-500 peer-checked:!border-primary-500 peer-checked:shadow-primary-500/20 peer-checked:!text-white peer-checked:shadow-xl"
             >
               <span>&lt; 100K</span>
             </BaseButtonAction>
@@ -306,7 +306,7 @@ const budget = ref('< 5K')
           <BaseRadioHeadless v-model="budget" name="budget" value="100K+">
             <BaseButtonAction
               shape="curved"
-              class="peer-checked:!bg-primary-500 peer-checked:!border-primary-500 peer-checked:!text-white peer-checked:shadow-xl peer-checked:shadow-primary-500/20"
+              class="peer-checked:!bg-primary-500 peer-checked:!border-primary-500 peer-checked:shadow-primary-500/20 peer-checked:!text-white peer-checked:shadow-xl"
             >
               <span>100K+</span>
             </BaseButtonAction>

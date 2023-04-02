@@ -4,48 +4,55 @@
       src="/img/avatars/1.svg"
       shape="full"
       size="xs"
-      badgeSrc="/img/icons/flags/united-states-of-america.svg"
+      badge-src="/img/icons/flags/united-states-of-america.svg"
     />
+
     <BaseAvatar
       src="/img/avatars/5.svg"
       shape="full"
-      badgeSrc="/img/icons/flags/united-states-of-america.svg"
+      badge-src="/img/icons/flags/united-states-of-america.svg"
     />
+
     <BaseAvatar
       src="/img/avatars/4.svg"
       shape="full"
       size="md"
-      badgeSrc="/img/icons/flags/united-states-of-america.svg"
+      badge-src="/img/icons/flags/united-states-of-america.svg"
     />
+
     <BaseAvatar
       src="/img/avatars/3.svg"
       shape="full"
       size="lg"
-      badgeSrc="/img/icons/flags/united-states-of-america.svg"
+      badge-src="/img/icons/flags/united-states-of-america.svg"
     />
+
     <BaseAvatar
       shape="full"
       src="/img/avatars/8.svg"
       size="xl"
-      badgeSrc="/img/icons/flags/united-states-of-america.svg"
+      badge-src="/img/icons/flags/united-states-of-america.svg"
     />
+
     <BaseAvatar
       shape="full"
       src="/img/avatars/16.svg"
       size="2xl"
-      badgeSrc="/img/icons/flags/united-states-of-america.svg"
+      badge-src="/img/icons/flags/united-states-of-america.svg"
     />
+
     <BaseAvatar
       shape="full"
       src="/img/avatars/2.svg"
       size="3xl"
-      badgeSrc="/img/icons/flags/united-states-of-america.svg"
+      badge-src="/img/icons/flags/united-states-of-america.svg"
     />
+
     <BaseAvatar
       shape="full"
       src="/img/avatars/20.svg"
       size="4xl"
-      badgeSrc="/img/icons/flags/united-states-of-america.svg"
+      badge-src="/img/icons/flags/united-states-of-america.svg"
     />
   </div>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <div class="grid md:grid-cols-2 md:max-w-xl gap-6">
+  <div class="grid gap-6 md:max-w-xl md:grid-cols-2">
     <BaseTextarea
       v-model="fields.first"
       label="Staight textarea"
@@ -8,6 +8,7 @@
       rows="1"
       autogrow
     />
+
     <BaseTextarea
       v-model="fields.second"
       label="Rounded textarea"
@@ -16,6 +17,7 @@
       rows="1"
       autogrow
     />
+
     <BaseTextarea
       v-model="fields.third"
       label="Curved textarea"
@@ -24,6 +26,7 @@
       rows="1"
       autogrow
     />
+
     <BaseTextarea
       v-model="fields.fourth"
       label="Full textarea"

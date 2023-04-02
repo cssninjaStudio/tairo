@@ -1,10 +1,15 @@
 <template>
   <div class="flex items-end gap-4">
-    <Icon name="fa6-brands:behance" class="w-6 h-6 block text-muted-400 dark:text-muted-500" />
-    <Icon name="fa6-brands:behance" class="w-7 h-7 block text-muted-400 dark:text-muted-500" />
-    <Icon name="fa6-brands:behance" class="w-8 h-8 block text-muted-400 dark:text-muted-500" />
-    <Icon name="fa6-brands:behance" class="w-9 h-9 block text-muted-400 dark:text-muted-500" />
-    <Icon name="fa6-brands:behance" class="w-10 h-10 block text-muted-400 dark:text-muted-500" />
-    <Icon name="fa6-brands:behance" class="w-12 h-12 block text-indigo-500" />
+    <Icon name="fa6-brands:behance" class="text-muted-400 dark:text-muted-500 block h-6 w-6" />
+
+    <Icon name="fa6-brands:behance" class="text-muted-400 dark:text-muted-500 block h-7 w-7" />
+
+    <Icon name="fa6-brands:behance" class="text-muted-400 dark:text-muted-500 block h-8 w-8" />
+
+    <Icon name="fa6-brands:behance" class="text-muted-400 dark:text-muted-500 block h-9 w-9" />
+
+    <Icon name="fa6-brands:behance" class="text-muted-400 dark:text-muted-500 block h-10 w-10" />
+
+    <Icon name="fa6-brands:behance" class="block h-12 w-12 text-indigo-500" />
   </div>
 </template>

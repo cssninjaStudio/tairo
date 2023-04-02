@@ -190,7 +190,7 @@ function useBarTeamEfficiency() {
             </div>
 
             <div
-              class="flex flex-col ltablet:flex-row ltablet:items-center lg:flex-row lg:items-center gap-6 ml-auto text-center md:text-left"
+              class="flex flex-col ltablet:flex-row ltablet:items-center lg:flex-row lg:items-center gap-6 ms-auto text-center md:text-left"
             >
               <div class="flex-1">
                 <BaseHeading
@@ -228,7 +228,7 @@ function useBarTeamEfficiency() {
                   </NuxtLink>
                 </div>
                 <div
-                  class="absolute bottom-0 right-2 w-14 h-14 flex items-center justify-center z-10"
+                  class="absolute bottom-0 end-2 w-14 h-14 flex items-center justify-center z-10"
                 >
                   <Icon
                     name="ph:crown-duotone"

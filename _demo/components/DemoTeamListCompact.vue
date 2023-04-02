@@ -67,7 +67,7 @@ const members = [
           </span>
         </BaseParagraph>
       </div>
-      <div v-if="props.actions" class="flex items-center ml-auto">
+      <div v-if="props.actions" class="flex items-center ms-auto">
         <BaseButtonIcon shape="curved" muted class="scale-75">
           <Icon name="ph:phone-duotone" class="w-5 h-5" />
         </BaseButtonIcon>

@@ -1,5 +1,5 @@
 <template>
-  <div class="grid md:grid-cols-2 md:max-w-xl gap-6 mt-6">
+  <div class="mt-6 grid gap-6 md:max-w-xl md:grid-cols-2">
     <BaseTextarea
       v-model="value"
       label="Message"

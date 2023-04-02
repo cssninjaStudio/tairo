@@ -95,7 +95,7 @@ const iconClasses = computed(() => {
   >
     <div class="absolute inset-x-0 bottom-0 h-1">
       <div
-        class="h-1 rounded-bl-lg"
+        class="h-1 rounded-es-lg"
         :class="progressClasses"
         :style="{
           width: `${percent * 100}%`,
@@ -103,18 +103,18 @@ const iconClasses = computed(() => {
       ></div>
     </div>
 
-    <div v-if="props.closable" class="absolute top-2 right-2">
+    <div v-if="props.closable" class="absolute top-2 end-2">
       <BaseButtonClose @click="state.close" />
     </div>
 
     <div
       v-if="props.icon"
-      class="flex w-16 items-center justify-center rounded-l-lg"
+      class="flex w-16 items-center justify-center rounded-s-lg"
       :class="iconBgClasses"
     >
       <Icon :name="props.icon" class="h-6 w-6" :class="iconClasses" />
     </div>
-    <div class="text-md min-w-[220px] max-w-xl py-4 pl-8 pr-12">
+    <div class="text-md min-w-[220px] max-w-xl py-4 ps-8 pe-12">
       <strong
         v-if="props.title"
         class="text-semibold font-heading maw-w-lg block truncate"

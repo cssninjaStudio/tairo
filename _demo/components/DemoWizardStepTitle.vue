@@ -8,7 +8,7 @@ const currentStepData = computed(() => {
 </script>
 
 <template>
-  <div class="text-center mb-10">
+  <div class="mb-10 text-center">
     <BaseHeading tag="h1" size="2xl" class="text-muted-800 dark:text-white">
       <span>{{ currentStepData?.meta?.title }}</span>
     </BaseHeading>

@@ -268,7 +268,7 @@ function useRadialPopularity() {
           class="text-muted-800 dark:text-white"
         >
           <span
-            class="after:content-['+3.4%'] after:relative after:-top-3 after:-right-2 after:text-sm after:text-success-500"
+            class="after:content-['+3.4%'] after:relative after:-top-3 after:-end-2 after:text-sm after:text-success-500"
           >
             {{ formatPrice(10584.3) }}
           </span>
@@ -467,7 +467,7 @@ function useRadialPopularity() {
                     BTC
                   </BaseParagraph>
                 </div>
-                <div class="ml-auto">
+                <div class="ms-auto">
                   <BaseButtonAction
                     size="sm"
                     class="text-muted-500 dark:text-muted-400"

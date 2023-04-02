@@ -103,7 +103,7 @@ definePageMeta({
                   >
                     <!-- Popup -->
                     <div
-                      class="absolute -top-24 left-1/2 w-40 -translate-x-1/2 opacity-0 transition-all duration-300 group-hover:opacity-100"
+                      class="absolute -top-24 start-1/2 w-40 -translate-x-1/2 opacity-0 transition-all duration-300 group-hover:opacity-100"
                     >
                       <BaseCard shape="curved" elevated>
                         <div
@@ -244,7 +244,7 @@ definePageMeta({
             <BaseHeading size="sm" weight="medium">
               @cssninjaStudio
             </BaseHeading>
-            <div class="ml-auto">
+            <div class="ms-auto">
               <NuxtLink
                 to="#"
                 class="text-primary-500 font-sans text-sm underline-offset-4 hover:underline"

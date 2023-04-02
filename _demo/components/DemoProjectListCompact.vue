@@ -110,7 +110,7 @@ const projects = [
           <span class="text-muted-400">Last updated {{ project.updated }}</span>
         </BaseParagraph>
       </div>
-      <div class="hidden md:block ml-auto">
+      <div class="hidden md:block ms-auto">
         <BaseAvatarGroup :avatars="project.members" size="sm" :limit="3" />
       </div>
     </div>

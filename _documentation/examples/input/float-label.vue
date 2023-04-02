@@ -1,5 +1,5 @@
 <template>
-  <div class="grid md:grid-cols-2 md:max-w-lg gap-6 mt-6">
+  <div class="mt-6 grid gap-6 md:max-w-lg md:grid-cols-2">
     <BaseInput
       v-model="fields.first"
       shape="straight"
@@ -9,6 +9,7 @@
       icon="lucide:search"
       label-float
     />
+
     <BaseInput
       v-model="fields.second"
       shape="rounded"
@@ -18,6 +19,7 @@
       icon="lucide:mail"
       label-float
     />
+
     <BaseInput
       v-model="fields.third"
       shape="curved"
@@ -25,6 +27,7 @@
       placeholder="Your username..."
       label-float
     />
+
     <BaseInput
       v-model="fields.fourth"
       type="password"

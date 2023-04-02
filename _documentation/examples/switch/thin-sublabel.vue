@@ -1,10 +1,14 @@
 <template>
-  <div class="grid md:grid-cols-2 md:max-w-lg gap-6">
+  <div class="grid gap-6 md:max-w-lg md:grid-cols-2">
     <BaseSwitchThin
-      :checked="true"
+      v-model="value"
       label="Primary"
       sublabel="This is a primary switch"
       color="primary"
     />
   </div>
 </template>
+
+<script setup lang="ts">
+const value = ref(true)
+</script>

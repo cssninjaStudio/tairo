@@ -1,7 +1,7 @@
 <template>
   <div class="md:max-w-lg">
     <BaseTreeSelect :children="tree" treeline>
-      <template #item-label="{ index, level, child, open, toggle }">
+      <template #item-label="{ level, child, toggle }">
         <BaseTreeSelectItem
           :level="level"
           :toggle="toggle"

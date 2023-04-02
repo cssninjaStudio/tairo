@@ -24,17 +24,17 @@ const links = [
 </script>
 
 <template>
-  <div class="w-full flex items-center justify-between gap-3">
+  <div class="flex w-full items-center justify-between gap-3">
     <NuxtLink
       v-for="link in links"
       :key="link.name"
       :to="link.url"
-      class="group h-9 w-9 flex items-center justify-center transition-all duration-300"
+      class="group flex h-9 w-9 items-center justify-center transition-all duration-300"
     >
       <BaseAvatar
         :src="link.image"
         size="xs"
-        class="grayscale opacity-60 group-hover:scale-110 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
+        class="opacity-60 grayscale transition-all duration-300 group-hover:scale-110 group-hover:opacity-100 group-hover:grayscale-0"
         :data-tooltip="link.name"
       />
     </NuxtLink>

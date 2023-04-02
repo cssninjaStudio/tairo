@@ -46,16 +46,16 @@ const menu = [
       class="group flex items-center gap-3"
     >
       <div
-        class="w-11 h-11 flex items-center justify-center text-muted-500 dark:text-muted-100 group-hover:text-white dark:group-hover:text-white bg-muted-100 dark:bg-muted-700 group-hover:bg-primary-500 group-hover:shadow-xl group-hover:shadow-primary-500/30 transition-all duration-300"
+        class="text-muted-500 dark:text-muted-100 bg-muted-100 dark:bg-muted-700 group-hover:bg-primary-500 group-hover:shadow-primary-500/30 flex h-11 w-11 items-center justify-center transition-all duration-300 group-hover:text-white group-hover:shadow-xl dark:group-hover:text-white"
         :class="[
           props.shape === 'rounded' ? 'rounded-lg' : '',
           props.shape === 'curved' ? 'rounded-xl' : '',
         ]"
       >
-        <Icon :name="item.icon" class="w-4 h-4" />
+        <Icon :name="item.icon" class="h-4 w-4" />
       </div>
       <span
-        class="font-sans text-sm text-muted-400 group-hover:text-muted-800 dark:group-hover:text-muted-100 transition-colors duration-300"
+        class="text-muted-400 group-hover:text-muted-800 dark:group-hover:text-muted-100 font-sans text-sm transition-colors duration-300"
       >
         {{ item.name }}
       </span>

@@ -30,7 +30,7 @@ const props = withDefaults(
   >
     <span
       v-if="props.label"
-      class="absolute hidden sm:block sm:-top-10 sm:left-2 font-sans text-xs font-medium uppercase text-muted-400"
+      class="absolute hidden sm:block sm:-top-10 sm:start-2 font-sans text-xs font-medium uppercase text-muted-400"
       :class="props.hideLabel ? 'sm:hidden' : ''"
     >
       {{ props.label }}

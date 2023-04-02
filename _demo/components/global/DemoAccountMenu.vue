@@ -36,9 +36,9 @@ const props = defineProps<{
       >
         <MenuItems
           class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 absolute mt-2 w-60 origin-bottom-right rounded-md border bg-white text-left shadow-lg focus:outline-none"
-          :class="props.horizontal ? 'top-10 right-0' : 'bottom-0 -right-64'"
+          :class="props.horizontal ? 'top-10 end-0' : 'bottom-0 -end-64'"
         >
-          <div class="p-6 bg-muted-50 dark:bg-muted-700/40">
+          <div class="bg-muted-50 dark:bg-muted-700/40 p-6">
             <div class="flex items-center">
               <div
                 class="relative inline-flex h-14 w-14 items-center justify-center rounded-full"
@@ -49,7 +49,7 @@ const props = defineProps<{
                   alt=""
                 />
               </div>
-              <div class="ml-3">
+              <div class="ms-3">
                 <h6
                   class="font-heading text-muted-800 text-sm font-medium dark:text-white"
                 >
@@ -71,7 +71,7 @@ const props = defineProps<{
                 ]"
               >
                 <Icon name="ph:user-circle-duotone" class="h-5 w-5" />
-                <div class="ml-3">
+                <div class="ms-3">
                   <h6
                     class="font-heading text-muted-800 text-xs font-medium leading-none dark:text-white"
                   >
@@ -94,7 +94,7 @@ const props = defineProps<{
                 ]"
               >
                 <Icon name="ph:briefcase-duotone" class="h-5 w-5" />
-                <div class="ml-3">
+                <div class="ms-3">
                   <h6
                     class="font-heading text-muted-800 text-xs font-medium leading-none dark:text-white"
                   >
@@ -117,7 +117,7 @@ const props = defineProps<{
                 ]"
               >
                 <Icon name="ph:users-three-duotone" class="h-5 w-5" />
-                <div class="ml-3">
+                <div class="ms-3">
                   <h6
                     class="font-heading text-muted-800 text-xs font-medium leading-none dark:text-white"
                   >
@@ -138,7 +138,7 @@ const props = defineProps<{
                 ]"
               >
                 <Icon name="ph:gear-six-duotone" class="h-5 w-5" />
-                <div class="ml-3">
+                <div class="ms-3">
                   <h6
                     class="font-heading text-muted-800 text-xs font-medium leading-none dark:text-white"
                   >

@@ -80,7 +80,7 @@ const pricingMode = ref('free')
                           </BaseText>
                         </div>
                       </div>
-                      <div class="child absolute top-3 right-2 opacity-0">
+                      <div class="child absolute top-3 end-2 opacity-0">
                         <Icon
                           name="ph:check-circle-duotone"
                           class="w-7 h-7 text-primary-500"
@@ -125,7 +125,7 @@ const pricingMode = ref('free')
                           </BaseText>
                         </div>
                       </div>
-                      <div class="child absolute top-3 right-2 opacity-0">
+                      <div class="child absolute top-3 end-2 opacity-0">
                         <Icon
                           name="ph:check-circle-duotone"
                           class="w-7 h-7 text-primary-500"
@@ -170,7 +170,7 @@ const pricingMode = ref('free')
                           </BaseText>
                         </div>
                       </div>
-                      <div class="child absolute top-3 right-2 opacity-0">
+                      <div class="child absolute top-3 end-2 opacity-0">
                         <Icon
                           name="ph:check-circle-duotone"
                           class="w-7 h-7 text-primary-500"

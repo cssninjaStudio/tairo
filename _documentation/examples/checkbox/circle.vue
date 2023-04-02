@@ -1,6 +1,7 @@
 <template>
-  <BaseFocusLoop class="grid grid-cols-2 md:grid-cols-4 md:max-w-lg gap-6">
+  <BaseFocusLoop class="grid grid-cols-2 gap-6 md:max-w-lg md:grid-cols-4">
     <BaseCheckbox v-model="options.first" value="demo-full-1" label="Default" shape="full" />
+
     <BaseCheckbox
       v-model="options.second"
       value="demo-full-2"
@@ -8,6 +9,7 @@
       shape="full"
       color="muted"
     />
+
     <BaseCheckbox
       v-model="options.third"
       value="demo-full-3"
@@ -15,6 +17,7 @@
       shape="full"
       color="primary"
     />
+
     <BaseCheckbox
       v-model="options.fourth"
       value="demo-full-4"
@@ -22,6 +25,7 @@
       shape="full"
       color="info"
     />
+
     <BaseCheckbox
       v-model="options.fifth"
       value="demo-full-5"
@@ -29,6 +33,7 @@
       shape="full"
       color="success"
     />
+
     <BaseCheckbox
       v-model="options.sixth"
       value="demo-full-6"
@@ -36,6 +41,7 @@
       shape="full"
       color="warning"
     />
+
     <BaseCheckbox
       v-model="options.seventh"
       value="demo-full-2"

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+// eslint-disable vue/no-v-text-v-html-on-component
 import type { IThemeRegistration, Lang } from 'shiki'
 import type { ProcessorThemes } from '~/utils/markdown'
 
@@ -12,6 +13,7 @@ const props = withDefaults(
      * Prose size modifier
      */
     size?: 'sm' | 'base' | 'lg' | 'xl' | '2xl'
+    mode?: 'light' | 'dark'
     /**
      * Theme to use to highlight code blocks
      *
@@ -36,6 +38,7 @@ const props = withDefaults(
   {
     lines: true,
     size: 'base',
+    mode: undefined,
     theme: () => ({
       light: 'material-theme-lighter',
       dark: 'material-theme-ocean',
@@ -63,7 +66,11 @@ const isDark = computed({
     }
   },
 })
-const mode = computed(() => (isDark.value ? 'dark' : 'light'))
+const mode = computed(() => {
+  if (props.mode !== undefined) return props.mode
+  return isDark.value ? 'dark' : 'light'
+})
+
 const proseSize = computed(() => {
   switch (props.size) {
     case 'sm':
@@ -106,12 +113,14 @@ watchEffect(async () => {
       props.lines ? 'with-line-number' : '',
       props.fullwidth ? 'max-w-none' : '',
     ]"
-    v-html="htmlContent[mode]"
-  ></BaseProse>
+  >
+    <div v-html="htmlContent[mode]"></div>
+  </BaseProse>
 </template>
 
 <style scoped>
 .markdown :deep(.shiki) {
+  direction: ltr;
   @apply nui-focus;
 }
 .markdown.with-line-number :deep(.shiki code) {
@@ -119,17 +128,11 @@ watchEffect(async () => {
   counter-increment: step 0;
 }
 .markdown.with-line-number :deep(.shiki code .line) {
-  @apply inline-flex w-full h-[1.3rem];
+  @apply inline w-full h-[1rem];
 }
 .markdown.with-line-number :deep(.shiki code .line::before) {
   content: counter(step);
   counter-increment: step;
-  @apply w-4 mr-6 inline-block text-right text-muted-400 dark:text-muted-500;
-}
-.markdown.with-line-number :deep(.shiki code .line:hover) {
-  @apply bg-muted-100 dark:bg-muted-900;
-}
-.markdown.with-line-number :deep(.shiki code .line:hover::before) {
-  @apply text-muted-500 dark:text-muted-400;
+  @apply w-4 me-6 inline text-right text-muted-400 dark:text-muted-500;
 }
 </style>

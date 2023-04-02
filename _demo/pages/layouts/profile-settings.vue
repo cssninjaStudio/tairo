@@ -10,7 +10,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
   <div class="w-full max-w-5xl mx-auto">
     <div v-if="!data"></div>
     <div v-else class="w-full relative">
-      <div class="absolute top-2 right-0 z-20">
+      <div class="absolute top-2 end-0 z-20">
         <BaseDropdown
           flavor="context"
           label="Dropdown"
@@ -26,24 +26,24 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
             text="Edit profile"
           >
             <template #start>
-              <Icon name="ph:pencil-duotone" class="w-5 h-5 block mr-2" />
+              <Icon name="ph:pencil-duotone" class="w-5 h-5 block me-2" />
             </template>
           </BaseDropdownItem>
           <BaseDropdownDivide />
           <BaseDropdownItem to="#" title="Security" text="Security settings">
             <template #start>
-              <Icon name="ph:lock-duotone" class="w-5 h-5 block mr-2" />
+              <Icon name="ph:lock-duotone" class="w-5 h-5 block me-2" />
             </template>
           </BaseDropdownItem>
           <BaseDropdownItem to="#" title="Billing" text="Manage billing">
             <template #start>
-              <Icon name="ph:bank-duotone" class="w-5 h-5 block mr-2" />
+              <Icon name="ph:bank-duotone" class="w-5 h-5 block me-2" />
             </template>
           </BaseDropdownItem>
           <BaseDropdownDivide />
           <BaseDropdownItem to="#" title="Share" text="Share profile">
             <template #start>
-              <Icon name="ph:link-duotone" class="w-5 h-5 block mr-2" />
+              <Icon name="ph:link-duotone" class="w-5 h-5 block me-2" />
             </template>
           </BaseDropdownItem>
         </BaseDropdown>

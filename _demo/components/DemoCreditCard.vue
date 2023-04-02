@@ -17,13 +17,13 @@ const props = withDefaults(
 <template>
   <div
     role="button"
-    class="xs:w-[240px] w-[290px] lg:w-full max-w-full xs:h-[144px] h-[160px] ltablet:h-[130px] rounded-xl relative flex flex-col p-5 overflow-hidden transition-all duration-300 cursor-pointer"
+    class="xs:w-[240px] xs:h-[144px] ltablet:h-[130px] relative flex h-[160px] w-[290px] max-w-full cursor-pointer flex-col overflow-hidden rounded-xl p-5 transition-all duration-300 lg:w-full"
     :class="[
       props.active ? 'bg-primary-700' : 'bg-muted-200 dark:bg-muted-900',
     ]"
   >
     <div
-      class="absolute -bottom-5 -right-5 h-[70px] w-[70px] rounded-full bg-white opacity-30 dark:opacity-10"
+      class="absolute -bottom-5 -end-5 h-[70px] w-[70px] rounded-full bg-white opacity-30 dark:opacity-10"
     ></div>
     <div class="flex items-center justify-between">
       <div>
@@ -45,7 +45,7 @@ const props = withDefaults(
     </div>
     <div class="mt-auto">
       <span
-        class="block font-sans font-semibold text-lg"
+        class="block font-sans text-lg font-semibold"
         :class="
           props.active ? 'text-white' : 'text-muted-800 dark:text-muted-200'
         "

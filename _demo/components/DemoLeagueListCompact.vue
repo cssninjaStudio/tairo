@@ -55,7 +55,7 @@ const leagues = [
           </span>
         </BaseParagraph>
       </div>
-      <div class="flex items-center gap-1 ml-auto">
+      <div class="flex items-center gap-1 ms-auto">
         <span class="font-sans text-xs text-muted-400">
           {{ league.matches }} matches
         </span>

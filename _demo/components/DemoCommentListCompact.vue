@@ -40,7 +40,7 @@ const comments = [
 </script>
 
 <template>
-  <div class="space-y-5 mb-2">
+  <div class="mb-2 space-y-5">
     <div v-for="comment in comments" :key="comment.id" class="flex gap-3">
       <BaseAvatar
         :src="comment.image"
@@ -48,7 +48,7 @@ const comments = [
         size="xs"
         shape="straight"
         mask="blob"
-        class="flex-shrink-0 bg-primary-100 dark:bg-primary-500/20 text-primary-500"
+        class="bg-primary-100 dark:bg-primary-500/20 text-primary-500 shrink-0"
       />
       <div>
         <BaseHeading

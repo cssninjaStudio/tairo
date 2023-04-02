@@ -29,7 +29,7 @@ const iconColor = computed(() => {
     <BaseIconBox v-if="props.name" size="md" :class="iconColor">
       <Icon :name="props.name" class="h-6 w-6" />
     </BaseIconBox>
-    <div class="ml-3">
+    <div class="ms-3">
       <BaseHeading
         as="h4"
         size="sm"

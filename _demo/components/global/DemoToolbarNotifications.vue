@@ -8,12 +8,12 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
       <MenuButton as="template">
         <button
           type="button"
-          class="inline-flex h-9 w-9 items-center justify-center rounded-full ring-1 ring-transparent transition-all duration-300 group-hover:ring-muted-200 dark:group-hover:ring-muted-700 group-hover:ring-offset-4 dark:ring-offset-muted-900"
+          class="group-hover:ring-muted-200 dark:group-hover:ring-muted-700 dark:ring-offset-muted-900 inline-flex h-9 w-9 items-center justify-center rounded-full ring-1 ring-transparent transition-all duration-300 group-hover:ring-offset-4"
         >
           <span
-            class="flex h-9 w-9 items-center justify-center rounded-full border border-muted-200 bg-white dark:border-muted-700 dark:bg-muted-800"
+            class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 flex h-9 w-9 items-center justify-center rounded-full border bg-white"
           >
-            <Icon name="ph:bell-duotone" class="h-5 w-5 text-muted-400" />
+            <Icon name="ph:bell-duotone" class="text-muted-400 h-5 w-5" />
           </span>
         </button>
       </MenuButton>
@@ -27,18 +27,18 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
         leave-to-class="transform scale-95 opacity-0"
       >
         <MenuItems
-          class="absolute right-0 mt-2 w-72 origin-top-right divide-y divide-muted-100 rounded-md border border-muted-200 bg-white shadow-lg focus:outline-none dark:divide-muted-700 dark:border-muted-700 dark:bg-muted-800"
+          class="divide-muted-100 border-muted-200 dark:divide-muted-700 dark:border-muted-700 dark:bg-muted-800 absolute end-0 mt-2 w-72 origin-top-right divide-y rounded-md border bg-white shadow-lg focus:outline-none"
         >
           <div class="p-4">
             <div class="relative flex items-center justify-between">
               <h4
-                class="font-heading text-xs uppercase text-muted-500 dark:text-muted-200"
+                class="font-heading text-muted-500 dark:text-muted-200 text-xs uppercase"
               >
                 Notifications
               </h4>
               <NuxtLink
                 to="#"
-                class="font-alt text-sm font-semibold text-primary-500"
+                class="font-alt text-primary-500 text-sm font-semibold"
               >
                 View All
               </NuxtLink>
@@ -64,18 +64,18 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                     alt=""
                   />
                 </div>
-                <div class="ml-2">
+                <div class="ms-2">
                   <h6
-                    class="font-heading text-xs font-semibold leading-tight text-muted-800 dark:text-white"
+                    class="font-heading text-muted-800 text-xs font-semibold leading-tight dark:text-white"
                   >
                     Helen Mariakis
                     <span
-                      class="font-normal text-muted-500 dark:text-muted-400"
+                      class="text-muted-500 dark:text-muted-400 font-normal"
                     >
                       left a comment
                     </span>
                   </h6>
-                  <p class="font-sans text-xs text-muted-400">1 hour ago</p>
+                  <p class="text-muted-400 font-sans text-xs">1 hour ago</p>
                 </div>
               </NuxtLink>
             </MenuItem>
@@ -98,18 +98,18 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                     alt=""
                   />
                 </div>
-                <div class="ml-2">
+                <div class="ms-2">
                   <h6
-                    class="font-heading text-xs font-semibold leading-tight text-muted-800 dark:text-white"
+                    class="font-heading text-muted-800 text-xs font-semibold leading-tight dark:text-white"
                   >
                     Clarissa Perez
                     <span
-                      class="font-normal text-muted-500 dark:text-muted-400"
+                      class="text-muted-500 dark:text-muted-400 font-normal"
                     >
                       uploaded a file
                     </span>
                   </h6>
-                  <p class="font-sans text-xs text-muted-400">2 hours ago</p>
+                  <p class="text-muted-400 font-sans text-xs">2 hours ago</p>
                 </div>
               </NuxtLink>
             </MenuItem>
@@ -132,18 +132,18 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                     alt=""
                   />
                 </div>
-                <div class="ml-2">
+                <div class="ms-2">
                   <h6
-                    class="font-heading text-xs font-semibold leading-tight text-muted-800 dark:text-white"
+                    class="font-heading text-muted-800 text-xs font-semibold leading-tight dark:text-white"
                   >
                     Mike Miller
                     <span
-                      class="font-normal text-muted-500 dark:text-muted-400"
+                      class="text-muted-500 dark:text-muted-400 font-normal"
                     >
                       left a comment
                     </span>
                   </h6>
-                  <p class="font-sans text-xs text-muted-400">3 hours ago</p>
+                  <p class="text-muted-400 font-sans text-xs">3 hours ago</p>
                 </div>
               </NuxtLink>
             </MenuItem>
@@ -166,18 +166,18 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                     alt=""
                   />
                 </div>
-                <div class="ml-2">
+                <div class="ms-2">
                   <h6
-                    class="font-heading text-xs font-semibold leading-tight text-muted-800 dark:text-white"
+                    class="font-heading text-muted-800 text-xs font-semibold leading-tight dark:text-white"
                   >
                     Lana Henriks
                     <span
-                      class="font-normal text-muted-500 dark:text-muted-400"
+                      class="text-muted-500 dark:text-muted-400 font-normal"
                     >
                       sent you a message
                     </span>
                   </h6>
-                  <p class="font-sans text-xs text-muted-400">Yesterday</p>
+                  <p class="text-muted-400 font-sans text-xs">Yesterday</p>
                 </div>
               </NuxtLink>
             </MenuItem>
@@ -200,18 +200,18 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                     alt=""
                   />
                 </div>
-                <div class="ml-2">
+                <div class="ms-2">
                   <h6
-                    class="font-heading text-xs font-semibold leading-tight text-muted-800 dark:text-white"
+                    class="font-heading text-muted-800 text-xs font-semibold leading-tight dark:text-white"
                   >
                     Dan Walker
                     <span
-                      class="font-normal text-muted-500 dark:text-muted-400"
+                      class="text-muted-500 dark:text-muted-400 font-normal"
                     >
                       left a comment
                     </span>
                   </h6>
-                  <p class="font-sans text-xs text-muted-400">Yesterday</p>
+                  <p class="text-muted-400 font-sans text-xs">Yesterday</p>
                 </div>
               </NuxtLink>
             </MenuItem>

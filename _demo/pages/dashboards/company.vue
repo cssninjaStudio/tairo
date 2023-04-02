@@ -356,7 +356,7 @@ function toggleAllVisibleSelection() {
               <TairoTableCell>
                 <div class="flex items-center">
                   <BaseAvatar :src="member.src" size="sm" />
-                  <div class="ml-3 leading-none">
+                  <div class="ms-3 leading-none">
                     <h4 class="font-heading text-sm font-semibold">
                       {{ member.name }}
                     </h4>

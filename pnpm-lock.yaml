@@ -12,8 +12,8 @@ importers:
         specifier: ^0.3.10
         version: 0.3.10
       '@cssninja/nuxt-ui':
-        specifier: ^0.7.2
-        version: 0.7.2(nuxt@3.3.2)(tailwindcss@3.3.1)
+        specifier: ^0.7.4
+        version: 0.7.4(nuxt@3.3.2)(tailwindcss@3.3.1)
       '@nuxt/image-edge':
         specifier: 1.0.0-28004283.2a7f5cd
         version: 1.0.0-28004283.2a7f5cd
@@ -615,8 +615,8 @@ packages:
       - vue
     dev: false
 
-  /@cssninja/nuxt-ui@0.7.2(nuxt@3.3.2)(tailwindcss@3.3.1):
-    resolution: {integrity: sha512-9d6HfMFxeOY42qniZKBVQ7R2gjYAUfhavp7x82IN8Q01pDQT5eHGnepvHwRS9EgQgKjh7ruOBr8oelPcqvJ1fg==}
+  /@cssninja/nuxt-ui@0.7.4(nuxt@3.3.2)(tailwindcss@3.3.1):
+    resolution: {integrity: sha512-teh9WTG0vjaKfl9eTQUd3t9VtKx9zAoeD74dwBI6M730hGtaLCX+XGA10QgwjQvgJ4WMFkng7X98xzqQ8Lf82w==}
     dependencies:
       '@headlessui/vue': 1.7.12
       '@iconify/vue': 4.1.0

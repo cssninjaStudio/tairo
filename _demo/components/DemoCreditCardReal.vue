@@ -19,34 +19,34 @@ const props = withDefaults(
 
 <template>
   <div
-    class="relative w-full h-[200px] max-w-[315px] mx-auto rounded-xl p-6 bg-white dark:bg-muted-900 border border-muted-200 dark:border-muted-800 shadow-xl shadow-muted-400/10 dark:shadow-muted-800/10"
+    class="dark:bg-muted-900 border-muted-200 dark:border-muted-800 shadow-muted-400/10 dark:shadow-muted-800/10 relative mx-auto h-[200px] w-full max-w-[315px] rounded-xl border bg-white p-6 shadow-xl"
   >
     <!--Card content-->
-    <div class="h-full flex flex-col gap-3">
+    <div class="flex h-full flex-col gap-3">
       <div class="flex items-center gap-2">
-        <div class="h-2 w-2 rounded-full bg-muted-200 dark:bg-muted-700"></div>
-        <span class="font-sans text-sm text-muted-400"> Mastercard </span>
+        <div class="bg-muted-200 dark:bg-muted-700 h-2 w-2 rounded-full"></div>
+        <span class="text-muted-400 font-sans text-sm"> Mastercard </span>
       </div>
       <div class="mt-auto space-y-1">
         <img
-          class="w-11 mb-3"
+          class="mb-3 w-11"
           src="/img/illustrations/card-chip.svg"
           alt="Card chip"
           width="44"
           height="31"
         />
         <div>
-          <h5 class="font-heading text-sm text-muted-500" x-text="cardholder">
+          <h5 class="font-heading text-muted-500 text-sm" x-text="cardholder">
             {{ props.name }}
           </h5>
         </div>
         <div>
-          <p class="font-heading text-xs text-muted-400">
+          <p class="font-heading text-muted-400 text-xs">
             <span>{{ props.number }}</span>
           </p>
         </div>
         <div
-          class="w-full flex items-center gap-2 font-heading text-xs text-muted-400"
+          class="font-heading text-muted-400 flex w-full items-center gap-2 text-xs"
         >
           <div class="flex items-center gap-2">
             <span>EXP</span>
@@ -61,16 +61,16 @@ const props = withDefaults(
     </div>
 
     <!--Mastercard-->
-    <div class="absolute top-4 right-5 flex">
-      <div class="h-9 w-9 rounded-full bg-rose-500/60 -mr-2"></div>
+    <div class="absolute end-5 top-4 flex">
+      <div class="-me-2 h-9 w-9 rounded-full bg-rose-500/60"></div>
       <div
-        class="relative h-9 w-9 rounded-full bg-yellow-500/60 -ml-2 z-10"
+        class="relative z-10 -ms-2 h-9 w-9 rounded-full bg-yellow-500/60"
       ></div>
     </div>
 
     <!--Logo-->
-    <div class="absolute bottom-7 right-5 flex">
-      <TairoLogo class="h-10 w-10 text-primary-500" />
+    <div class="absolute bottom-7 end-5 flex">
+      <TairoLogo class="text-primary-500 h-10 w-10" />
     </div>
   </div>
 </template>

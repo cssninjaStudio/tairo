@@ -147,7 +147,7 @@ const validatePin = computed(() => {
                           address
                         </BaseParagraph>
                       </div>
-                      <div class="child absolute top-3 right-2 opacity-0">
+                      <div class="child absolute top-3 end-2 opacity-0">
                         <Icon
                           name="ph:check-circle-duotone"
                           class="w-7 h-7 text-primary-500"
@@ -182,7 +182,7 @@ const validatePin = computed(() => {
                           phone
                         </BaseParagraph>
                       </div>
-                      <div class="child absolute top-3 right-2 opacity-0">
+                      <div class="child absolute top-3 end-2 opacity-0">
                         <Icon
                           name="ph:check-circle-duotone"
                           class="w-7 h-7 text-primary-500"
@@ -222,7 +222,7 @@ const validatePin = computed(() => {
                           authenticator app
                         </BaseParagraph>
                       </div>
-                      <div class="child absolute top-3 right-2 opacity-0">
+                      <div class="child absolute top-3 end-2 opacity-0">
                         <Icon
                           name="ph:check-circle-duotone"
                           class="w-7 h-7 text-primary-500"
@@ -292,7 +292,7 @@ const validatePin = computed(() => {
               placeholder="Ex: johndoe@gmail.com"
               :classes="{
                 wrapper: 'w-full',
-                input: '!h-12 !pl-12',
+                input: '!h-12 !ps-12',
                 icon: '!h-12 !w-12',
               }"
             />
@@ -303,7 +303,7 @@ const validatePin = computed(() => {
               placeholder="Ex: +15554815659"
               :classes="{
                 wrapper: 'w-full',
-                input: '!h-12 !pl-12',
+                input: '!h-12 !ps-12',
                 icon: '!h-12 !w-12',
               }"
             />
@@ -328,7 +328,7 @@ const validatePin = computed(() => {
                 placeholder="Ex: efcdwdeg16jei85"
                 :classes="{
                   wrapper: 'w-full',
-                  input: '!h-12 !pl-12',
+                  input: '!h-12 !ps-12',
                   icon: '!h-12 !w-12',
                 }"
               />

@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col gap-6 md:flex-row md:items-start">
-    <div class="flex flex-wrap items-end gap-4 w-3/5">
+    <div class="flex w-3/5 flex-wrap items-end gap-4">
       <BaseCheckboxAnimated
         v-model="customValue"
         :true-value="'checked'"

@@ -21,7 +21,7 @@ const props = withDefaults(
         ]"
         alt="Widget image"
       />
-      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+      <div class="absolute top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2">
         <button
           type="button"
           class="w-10 h-10 flex items-center justify-center rounded-full border-2 border-primary-500 bg-primary-500 group-hover:bg-white dark:group-hover:bg-muted-800 transition-colors duration-300"

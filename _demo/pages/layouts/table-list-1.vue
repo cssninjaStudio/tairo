@@ -158,7 +158,7 @@ function toggleAllVisibleSelection() {
                       :text="item.initials"
                       :class="getRandomColor()"
                     />
-                    <div class="ml-3 leading-none">
+                    <div class="ms-3 leading-none">
                       <h4 class="font-sans text-sm font-medium">
                         {{ item.username }}
                       </h4>
@@ -223,7 +223,7 @@ function toggleAllVisibleSelection() {
                         class="text-success-500"
                       />
                       <span
-                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 ml-0.5 font-sans text-[0.65rem] font-semibold"
+                        class="absolute top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2 z-10 ms-0.5 font-sans text-[0.65rem] font-semibold"
                       >
                         {{ item.completed }}%
                       </span>

@@ -105,7 +105,7 @@ const { data, pending, error, refresh } = await useFetch(
                     <span>v{{ item.version }}</span>
                   </BaseParagraph>
                 </div>
-                <div class="ml-auto">
+                <div class="ms-auto">
                   <BaseDropdown
                     flavor="context"
                     label="Dropdown"
@@ -122,7 +122,7 @@ const { data, pending, error, refresh } = await useFetch(
                       <template #start>
                         <Icon
                           name="ph:upload-duotone"
-                          class="w-5 h-5 block mr-2"
+                          class="w-5 h-5 block me-2"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -134,7 +134,7 @@ const { data, pending, error, refresh } = await useFetch(
                       <template #start>
                         <Icon
                           name="ph:download-duotone"
-                          class="w-5 h-5 block mr-2"
+                          class="w-5 h-5 block me-2"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -147,7 +147,7 @@ const { data, pending, error, refresh } = await useFetch(
                       <template #start>
                         <Icon
                           name="ph:lock-duotone"
-                          class="w-5 h-5 block mr-2"
+                          class="w-5 h-5 block me-2"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -159,7 +159,7 @@ const { data, pending, error, refresh } = await useFetch(
                       <template #start>
                         <Icon
                           name="ph:share-duotone"
-                          class="w-5 h-5 block mr-2"
+                          class="w-5 h-5 block me-2"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -172,7 +172,7 @@ const { data, pending, error, refresh } = await useFetch(
                       <template #start>
                         <Icon
                           name="ph:trash-duotone"
-                          class="w-5 h-5 block mr-2"
+                          class="w-5 h-5 block me-2"
                         />
                       </template>
                     </BaseDropdownItem>

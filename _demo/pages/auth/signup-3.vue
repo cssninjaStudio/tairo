@@ -109,42 +109,42 @@ const onSubmit = handleSubmit(async (values) => {
       <div class="relative w-full max-w-2xl mx-auto">
         <!--Avatars-->
         <img
-          class="hidden ltablet:block lg:block absolute top-[30%] left-0 object-cover w-12 h-12 rounded-full duration-[cubic-bezier(0.86,0,0.07,1)]"
+          class="hidden ltablet:block lg:block absolute top-[30%] start-0 object-cover w-12 h-12 rounded-full duration-[cubic-bezier(0.86,0,0.07,1)]"
           src="/img/avatars/1.svg"
           alt="Avatar"
           width="48"
           height="48"
         />
         <img
-          class="hidden ltablet:block lg:block absolute top-[40%] -left-[25%] object-cover w-16 h-16 rounded-full"
+          class="hidden ltablet:block lg:block absolute top-[40%] -start-[25%] object-cover w-16 h-16 rounded-full"
           src="/img/avatars/9.svg"
           alt="Avatar"
           width="64"
           height="64"
         />
         <img
-          class="hidden ltablet:block lg:block absolute top-[52%] -left-[5%] object-cover w-16 h-16 rounded-full"
+          class="hidden ltablet:block lg:block absolute top-[52%] -start-[5%] object-cover w-16 h-16 rounded-full"
           src="/img/avatars/4.svg"
           alt="Avatar"
           width="64"
           height="64"
         />
         <img
-          class="hidden ltablet:block lg:block absolute top-[65%] -left-[35%] object-cover w-24 h-24 rounded-full"
+          class="hidden ltablet:block lg:block absolute top-[65%] -start-[35%] object-cover w-24 h-24 rounded-full"
           src="/img/avatars/8.svg"
           alt="Avatar"
           width="96"
           height="96"
         />
         <img
-          class="hidden ltablet:block lg:block absolute top-[20%] -left-[35%] object-cover w-10 h-10 rounded-full"
+          class="hidden ltablet:block lg:block absolute top-[20%] -start-[35%] object-cover w-10 h-10 rounded-full"
           src="/img/avatars/12.svg"
           alt="Avatar"
           width="40"
           height="40"
         />
         <img
-          class="hidden ltablet:block lg:block absolute top-[40%] -left-[55%] object-cover w-20 h-20 rounded-full"
+          class="hidden ltablet:block lg:block absolute top-[40%] -start-[55%] object-cover w-20 h-20 rounded-full"
           src="/img/avatars/20.svg"
           alt="Avatar"
           width="80"
@@ -152,42 +152,42 @@ const onSubmit = handleSubmit(async (values) => {
         />
 
         <img
-          class="hidden ltablet:block lg:block absolute top-[30%] right-0 object-cover w-12 h-12 rounded-full"
+          class="hidden ltablet:block lg:block absolute top-[30%] end-0 object-cover w-12 h-12 rounded-full"
           src="/img/avatars/16.svg"
           alt="Avatar"
           width="48"
           height="48"
         />
         <img
-          class="hidden ltablet:block lg:block absolute top-[40%] -right-[25%] object-cover w-16 h-16 rounded-full"
+          class="hidden ltablet:block lg:block absolute top-[40%] -end-[25%] object-cover w-16 h-16 rounded-full"
           src="/img/avatars/10.svg"
           alt="Avatar"
           width="64"
           height="64"
         />
         <img
-          class="hidden ltablet:block lg:block absolute top-[52%] -right-[5%] object-cover w-16 h-16 rounded-full"
+          class="hidden ltablet:block lg:block absolute top-[52%] -end-[5%] object-cover w-16 h-16 rounded-full"
           src="/img/avatars/19.svg"
           alt="Avatar"
           width="64"
           height="64"
         />
         <img
-          class="hidden ltablet:block lg:block absolute top-[65%] -right-[35%] object-cover w-24 h-24 rounded-full"
+          class="hidden ltablet:block lg:block absolute top-[65%] -end-[35%] object-cover w-24 h-24 rounded-full"
           src="/img/avatars/24.svg"
           alt="Avatar"
           width="96"
           height="96"
         />
         <img
-          class="hidden ltablet:block lg:block absolute top-[20%] -right-[35%] object-cover w-10 h-10 rounded-full"
+          class="hidden ltablet:block lg:block absolute top-[20%] -end-[35%] object-cover w-10 h-10 rounded-full"
           src="/img/avatars/3.svg"
           alt="Avatar"
           width="40"
           height="40"
         />
         <img
-          class="hidden ltablet:block lg:block absolute top-[40%] -right-[55%] object-cover w-20 h-20 rounded-full"
+          class="hidden ltablet:block lg:block absolute top-[40%] -end-[55%] object-cover w-20 h-20 rounded-full"
           src="/img/avatars/5.svg"
           alt="Avatar"
           width="80"
@@ -195,12 +195,12 @@ const onSubmit = handleSubmit(async (values) => {
         />
 
         <!--Form-->
-        <div class="mr-auto ml-auto w-full mt-4">
+        <div class="me-auto ms-auto w-full mt-4">
           <form
             method="POST"
             action=""
             @submit.prevent="onSubmit"
-            class="w-full max-w-md mr-auto ml-auto mt-4"
+            class="w-full max-w-md me-auto ms-auto mt-4"
             novalidate
           >
             <div class="text-center">
@@ -226,7 +226,7 @@ const onSubmit = handleSubmit(async (values) => {
                     placeholder="ex: maya@cssninja.io"
                     icon="lucide:mail"
                     :classes="{
-                      input: 'h-12 !pl-12',
+                      input: 'h-12 !ps-12',
                       icon: 'h-12 w-12',
                     }"
                     @update:model-value="handleChange"
@@ -247,7 +247,7 @@ const onSubmit = handleSubmit(async (values) => {
                     placeholder="••••••••••"
                     icon="lucide:lock"
                     :classes="{
-                      input: 'h-12 !pl-12',
+                      input: 'h-12 !ps-12',
                       icon: 'h-12 w-12',
                     }"
                     @update:model-value="handleChange"
@@ -268,7 +268,7 @@ const onSubmit = handleSubmit(async (values) => {
                     placeholder="••••••••••"
                     icon="lucide:lock"
                     :classes="{
-                      input: 'h-12 !pl-12',
+                      input: 'h-12 !ps-12',
                       icon: 'h-12 w-12',
                     }"
                     @update:model-value="handleChange"

@@ -13,7 +13,7 @@ const props = defineProps<{
   >
     <span
       v-if="props.label"
-      class="absolute top-1/2 left-8 sm:-top-10 sm:inset-x-0 -translate-y-1/2 sm:translate-y-0 mx-auto text-center font-sans text-xs font-medium uppercase text-muted-400"
+      class="absolute top-1/2 start-8 sm:-top-10 sm:inset-x-0 -translate-y-1/2 sm:translate-y-0 mx-auto text-center font-sans text-xs font-medium uppercase text-muted-400"
       :class="props.hideLabel ? 'sm:hidden' : ''"
     >
       {{ props.label }}

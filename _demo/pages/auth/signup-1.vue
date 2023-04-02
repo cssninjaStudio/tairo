@@ -118,23 +118,23 @@ const onSubmit = handleSubmit(async (values) => {
         >
       </div>
       <div
-        class="absolute -top-6 -left-6 h-14 w-0 group-hover:w-72 origin-top-left rotate-45 bg-muted-200/20 rounded-full transition-all duration-300 delay-[25ms]"
+        class="absolute -top-6 -start-6 h-14 w-0 group-hover:w-72 origin-top-left rotate-45 bg-muted-200/20 rounded-full transition-all duration-300 delay-[25ms]"
       ></div>
       <div
-        class="absolute -top-12 left-20 h-14 w-0 group-hover:w-48 origin-top-left rotate-45 bg-muted-200/20 rounded-full transition-all duration-300 delay-75"
+        class="absolute -top-12 start-20 h-14 w-0 group-hover:w-48 origin-top-left rotate-45 bg-muted-200/20 rounded-full transition-all duration-300 delay-75"
       ></div>
       <div
-        class="absolute top-24 -left-7 h-14 w-0 group-hover:w-40 origin-top-left rotate-45 bg-muted-200/20 rounded-full transition-all duration-300 delay-150"
+        class="absolute top-24 -start-7 h-14 w-0 group-hover:w-40 origin-top-left rotate-45 bg-muted-200/20 rounded-full transition-all duration-300 delay-150"
       ></div>
 
       <div
-        class="absolute -bottom-6 -right-6 h-14 w-0 group-hover:w-72 origin-bottom-right rotate-45 bg-muted-200/20 rounded-full transition-all duration-300 delay-150"
+        class="absolute -bottom-6 -end-6 h-14 w-0 group-hover:w-72 origin-bottom-right rotate-45 bg-muted-200/20 rounded-full transition-all duration-300 delay-150"
       ></div>
       <div
-        class="absolute -bottom-12 right-20 h-14 w-0 group-hover:w-48 origin-bottom-right rotate-45 bg-muted-200/20 rounded-full transition-all duration-300 delay-75"
+        class="absolute -bottom-12 end-20 h-14 w-0 group-hover:w-48 origin-bottom-right rotate-45 bg-muted-200/20 rounded-full transition-all duration-300 delay-75"
       ></div>
       <div
-        class="absolute bottom-24 -right-7 h-14 w-0 group-hover:w-40 origin-bottom-right rotate-45 bg-muted-200/20 rounded-full transition-all duration-300 delay-[25ms]"
+        class="absolute bottom-24 -end-7 h-14 w-0 group-hover:w-40 origin-bottom-right rotate-45 bg-muted-200/20 rounded-full transition-all duration-300 delay-[25ms]"
       ></div>
     </div>
     <div

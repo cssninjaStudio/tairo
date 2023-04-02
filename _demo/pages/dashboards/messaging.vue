@@ -571,26 +571,26 @@ async function submitMessage() {
 
 <template>
   <div class="relative">
-    <div class="min-h-screen bg-muted-100 dark:bg-muted-900 flex">
+    <div class="bg-muted-100 dark:bg-muted-900 flex min-h-screen">
       <!-- Sidebar -->
       <div
-        class="relative hidden sm:block h-screen w-20 border-r border-muted-200 dark:border-muted-700 bg-white dark:bg-muted-800 z-10"
+        class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 relative z-10 hidden h-screen w-20 border-r bg-white sm:block"
       >
-        <div class="h-full flex flex-col justify-between">
+        <div class="flex h-full flex-col justify-between">
           <div class="flex flex-col">
             <div
-              class="flex h-16 w-16 ltablet:w-full lg:w-full items-center justify-center shrink-0"
+              class="ltablet:w-full flex h-16 w-16 shrink-0 items-center justify-center lg:w-full"
             >
               <NuxtLink to="#" class="flex items-center justify-center">
                 <TairoLogo class="text-primary-600 h-10" />
               </NuxtLink>
             </div>
             <div
-              class="flex h-16 w-16 ltablet:w-full lg:w-full items-center justify-center shrink-0"
+              class="ltablet:w-full flex h-16 w-16 shrink-0 items-center justify-center lg:w-full"
             >
               <a
                 href="#"
-                class="text-muted-400 hover:text-primary-500 flex h-12 w-12 items-center justify-center rounded-2xl hover:bg-primary-500/20 transition-colors duration-300"
+                class="text-muted-400 hover:text-primary-500 hover:bg-primary-500/20 flex h-12 w-12 items-center justify-center rounded-2xl transition-colors duration-300"
                 title="Back"
                 @click.prevent="$router.back()"
               >
@@ -602,7 +602,7 @@ async function submitMessage() {
             <div class="flex h-16 w-full items-center justify-center">
               <button
                 type="button"
-                class="text-muted-400 hover:text-primary-500 flex h-12 w-12 items-center justify-center rounded-2xl hover:bg-primary-500/20 transition-colors duration-300"
+                class="text-muted-400 hover:text-primary-500 hover:bg-primary-500/20 flex h-12 w-12 items-center justify-center rounded-2xl transition-colors duration-300"
                 title="Search"
                 @click="open('search')"
               >
@@ -612,7 +612,7 @@ async function submitMessage() {
             <div class="flex h-16 w-full items-center justify-center">
               <NuxtLink
                 to="#"
-                class="text-muted-400 hover:text-primary-500 flex h-12 w-12 items-center justify-center rounded-2xl hover:bg-primary-500/20 transition-colors duration-300"
+                class="text-muted-400 hover:text-primary-500 hover:bg-primary-500/20 flex h-12 w-12 items-center justify-center rounded-2xl transition-colors duration-300"
                 title="Settings"
               >
                 <Icon name="ph:gear-six-duotone" class="h-5 w-5" />
@@ -626,14 +626,14 @@ async function submitMessage() {
       </div>
       <!-- Conversations -->
       <div
-        class="relative h-screen w-16 sm:w-20 ltablet:border-r lg:border-r border-muted-200 dark:border-muted-700 bg-white dark:bg-muted-800 z-10"
+        class="ltablet:border-r border-muted-200 dark:border-muted-700 dark:bg-muted-800 relative z-10 h-screen w-16 bg-white sm:w-20 lg:border-r"
       >
-        <div class="h-full flex flex-col">
+        <div class="flex h-full flex-col">
           <button
-            class="h-16 w-16 sm:w-20 flex items-center justify-center shrink-0"
+            class="flex h-16 w-16 shrink-0 items-center justify-center sm:w-20"
           >
             <span
-              class="flex h-10 w-10 items-center justify-center rounded-full bg-primary-500 text-white"
+              class="bg-primary-500 flex h-10 w-10 items-center justify-center rounded-full text-white"
             >
               <Icon name="lucide:plus" class="h-4 w-4" />
             </span>
@@ -643,7 +643,7 @@ async function submitMessage() {
             v-for="conversation in conversations"
             :key="conversation.id"
             href="#"
-            class="h-16 w-16 sm:w-20 flex items-center justify-center shrink-0 border-l-2"
+            class="flex h-16 w-16 shrink-0 items-center justify-center border-s-2 sm:w-20"
             :class="
               activeConversation === conversation.id
                 ? 'border-primary-500'
@@ -664,10 +664,10 @@ async function submitMessage() {
             : 'ltablet:max-w-[calc(100%_-_470px)] lg:max-w-[calc(100%_-_550px)]'
         "
       >
-        <div class="w-full flex flex-col">
+        <div class="flex w-full flex-col">
           <!-- Header -->
           <div
-            class="h-16 w-full flex items-center justify-between px-4 sm:px-8"
+            class="flex h-16 w-full items-center justify-between px-4 sm:px-8"
           >
             <div class="flex items-center gap-2">
               <BaseInput
@@ -678,7 +678,7 @@ async function submitMessage() {
               />
             </div>
             <div
-              class="relative h-16 w-full flex items-center justify-end gap-2 scale-90 sm:scale-100 -right-4 sm:right-0"
+              class="relative -end-4 flex h-16 w-full scale-90 items-center justify-end gap-2 sm:end-0 sm:scale-100"
             >
               <template v-for="tool of (app.tairo.toolbar as any).tools">
                 <component
@@ -693,91 +693,91 @@ async function submitMessage() {
           <!-- Body -->
           <div
             ref="chatEl"
-            class="relative w-full h-[calc(100vh_-_128px)] p-4 sm:p-8"
+            class="relative h-[calc(100vh_-_128px)] w-full p-4 sm:p-8"
             :class="loading ? 'overflow-hidden' : 'overflow-y-auto slimscroll'"
           >
             <!-- Loader-->
             <div
-              class="absolute inset-0 h-full w-full p-8 bg-muted-100 dark:bg-muted-900 z-10 pointer-events-none transition-opacity duration-300"
+              class="bg-muted-100 dark:bg-muted-900 pointer-events-none absolute inset-0 z-10 h-full w-full p-8 transition-opacity duration-300"
               :class="loading ? 'opacity-100' : 'opacity-0 pointer-events-none'"
             >
-              <div class="space-y-12 mt-12">
-                <div class="flex gap-4 w-full max-w-md">
+              <div class="mt-12 space-y-12">
+                <div class="flex w-full max-w-md gap-4">
                   <BasePlaceload
-                    class="w-8 h-8 rounded-full shrink-0"
+                    class="h-8 w-8 shrink-0 rounded-full"
                     :width="32"
                     :height="32"
                   />
                   <div class="grow space-y-2">
-                    <BasePlaceload class="w-full max-w-[14rem] h-3 rounded" />
-                    <BasePlaceload class="w-full max-w-[8rem] h-3 rounded" />
+                    <BasePlaceload class="h-3 w-full max-w-[14rem] rounded" />
+                    <BasePlaceload class="h-3 w-full max-w-[8rem] rounded" />
                   </div>
                 </div>
-                <div class="flex gap-4 w-full max-w-md">
+                <div class="flex w-full max-w-md gap-4">
                   <BasePlaceload
-                    class="w-8 h-8 rounded-full shrink-0"
+                    class="h-8 w-8 shrink-0 rounded-full"
                     :width="32"
                     :height="32"
                   />
                   <div class="grow space-y-2">
-                    <BasePlaceload class="w-full max-w-[16rem] h-3 rounded" />
-                    <BasePlaceload class="w-full max-w-[12rem] h-3 rounded" />
-                  </div>
-                </div>
-                <div
-                  class="flex flex-row-reverse justify-end gap-4 w-full max-w-md ml-auto"
-                >
-                  <BasePlaceload
-                    class="w-8 h-8 rounded-full shrink-0"
-                    :width="32"
-                    :height="32"
-                  />
-                  <div class="grow space-y-2">
-                    <BasePlaceload
-                      class="w-full max-w-[16rem] h-3 rounded ml-auto"
-                    />
-                    <BasePlaceload
-                      class="w-full max-w-[12rem] h-3 rounded ml-auto"
-                    />
+                    <BasePlaceload class="h-3 w-full max-w-[16rem] rounded" />
+                    <BasePlaceload class="h-3 w-full max-w-[12rem] rounded" />
                   </div>
                 </div>
                 <div
-                  class="flex flex-row-reverse justify-end gap-4 w-full max-w-md ml-auto"
+                  class="ms-auto flex w-full max-w-md flex-row-reverse justify-end gap-4"
                 >
                   <BasePlaceload
-                    class="w-8 h-8 rounded-full shrink-0"
+                    class="h-8 w-8 shrink-0 rounded-full"
                     :width="32"
                     :height="32"
                   />
                   <div class="grow space-y-2">
                     <BasePlaceload
-                      class="w-full max-w-[14rem] h-3 rounded ml-auto"
+                      class="ms-auto h-3 w-full max-w-[16rem] rounded"
                     />
                     <BasePlaceload
-                      class="w-full max-w-[8rem] h-3 rounded ml-auto"
+                      class="ms-auto h-3 w-full max-w-[12rem] rounded"
                     />
                   </div>
                 </div>
-                <div class="flex gap-4 w-full max-w-md">
+                <div
+                  class="ms-auto flex w-full max-w-md flex-row-reverse justify-end gap-4"
+                >
                   <BasePlaceload
-                    class="w-8 h-8 rounded-full shrink-0"
+                    class="h-8 w-8 shrink-0 rounded-full"
                     :width="32"
                     :height="32"
                   />
                   <div class="grow space-y-2">
-                    <BasePlaceload class="w-full max-w-[14rem] h-3 rounded" />
-                    <BasePlaceload class="w-full max-w-[8rem] h-3 rounded" />
+                    <BasePlaceload
+                      class="ms-auto h-3 w-full max-w-[14rem] rounded"
+                    />
+                    <BasePlaceload
+                      class="ms-auto h-3 w-full max-w-[8rem] rounded"
+                    />
                   </div>
                 </div>
-                <div class="flex gap-4 w-full max-w-md">
+                <div class="flex w-full max-w-md gap-4">
                   <BasePlaceload
-                    class="w-8 h-8 rounded-full shrink-0"
+                    class="h-8 w-8 shrink-0 rounded-full"
                     :width="32"
                     :height="32"
                   />
                   <div class="grow space-y-2">
-                    <BasePlaceload class="w-full max-w-[16rem] h-3 rounded" />
-                    <BasePlaceload class="w-full max-w-[12rem] h-3 rounded" />
+                    <BasePlaceload class="h-3 w-full max-w-[14rem] rounded" />
+                    <BasePlaceload class="h-3 w-full max-w-[8rem] rounded" />
+                  </div>
+                </div>
+                <div class="flex w-full max-w-md gap-4">
+                  <BasePlaceload
+                    class="h-8 w-8 shrink-0 rounded-full"
+                    :width="32"
+                    :height="32"
+                  />
+                  <div class="grow space-y-2">
+                    <BasePlaceload class="h-3 w-full max-w-[16rem] rounded" />
+                    <BasePlaceload class="h-3 w-full max-w-[12rem] rounded" />
                   </div>
                 </div>
               </div>
@@ -787,14 +787,14 @@ async function submitMessage() {
               <div
                 v-for="(message, index) in selectedConversation?.messages"
                 :key="index"
-                class="relative w-full flex gap-4"
+                class="relative flex w-full gap-4"
                 :class="[
                   message.type === 'received' ? 'flex-row' : 'flex-row-reverse',
                   message.type === 'separator' ? 'justify-center' : '',
                 ]"
               >
                 <template v-if="message.type !== 'separator'">
-                  <div class="flex-shrink-0">
+                  <div class="shrink-0">
                     <BaseAvatar
                       v-if="message.type === 'received'"
                       :src="selectedConversation?.user.photo"
@@ -806,18 +806,18 @@ async function submitMessage() {
                       size="xs"
                     />
                   </div>
-                  <div class="flex flex-col max-w-md">
+                  <div class="flex max-w-md flex-col">
                     <div
-                      class="rounded-xl p-4 bg-muted-200 dark:bg-muted-800"
+                      class="bg-muted-200 dark:bg-muted-800 rounded-xl p-4"
                       :class="[
-                        message.type === 'received' ? 'rounded-tl-none' : '',
-                        message.type === 'sent' ? 'rounded-tr-none' : '',
+                        message.type === 'received' ? 'rounded-ss-none' : '',
+                        message.type === 'sent' ? 'rounded-se-none' : '',
                       ]"
                     >
                       <p class="font-sans text-sm">{{ message.text }}</p>
                     </div>
                     <div
-                      class="mt-1 font-sans text-xs text-muted-400"
+                      class="text-muted-400 mt-1 font-sans text-xs"
                       :class="message.type === 'received' ? 'text-right' : ''"
                     >
                       {{ message.time }}
@@ -832,8 +832,8 @@ async function submitMessage() {
                       >
                         <div
                           v-if="attachment.type === 'image'"
-                          class="p-2 bg-white dark:bg-muted-800 rounded-2xl max-w-xs"
-                          :class="message.type === 'sent' ? 'ml-auto' : ''"
+                          class="dark:bg-muted-800 max-w-xs rounded-2xl bg-white p-2"
+                          :class="message.type === 'sent' ? 'ms-auto' : ''"
                         >
                           <img
                             :src="attachment.image"
@@ -844,8 +844,8 @@ async function submitMessage() {
                         <NuxtLink
                           :to="`https://${attachment.url}`"
                           v-else-if="attachment.type === 'link'"
-                          class="block p-2 bg-white dark:bg-muted-800 rounded-2xl max-w-xs"
-                          :class="message.type === 'sent' ? 'ml-auto' : ''"
+                          class="dark:bg-muted-800 block max-w-xs rounded-2xl bg-white p-2"
+                          :class="message.type === 'sent' ? 'ms-auto' : ''"
                         >
                           <img
                             :src="attachment.image"
@@ -854,11 +854,11 @@ async function submitMessage() {
                           />
                           <div class="px-1 py-2">
                             <p
-                              class="font-sans text-muted-800 dark:text-muted-100"
+                              class="text-muted-800 dark:text-muted-100 font-sans"
                             >
                               {{ attachment.url }}
                             </p>
-                            <p class="font-sans text-xs text-muted-400">
+                            <p class="text-muted-400 font-sans text-xs">
                               {{ attachment.text }}
                             </p>
                           </div>
@@ -873,12 +873,12 @@ async function submitMessage() {
                     aria-hidden="true"
                   >
                     <div
-                      class="w-full border-t border-muted-300/50 dark:border-muted-800"
+                      class="border-muted-300/50 dark:border-muted-800 w-full border-t"
                     ></div>
                   </div>
                   <div class="relative flex justify-center">
                     <span
-                      class="font-sans text-xs uppercase bg-muted-100 dark:bg-muted-900 px-3 text-muted-400"
+                      class="bg-muted-100 dark:bg-muted-900 text-muted-400 px-3 font-sans text-xs uppercase"
                     >
                       {{ message.time }}
                     </span>
@@ -892,7 +892,7 @@ async function submitMessage() {
             method="POST"
             action=""
             @submit.prevent="submitMessage"
-            class="w-full h-16 flex items-center px-4 sm:px-8 bg-muted-100 dark:bg-muted-900"
+            class="bg-muted-100 dark:bg-muted-900 flex h-16 w-full items-center px-4 sm:px-8"
           >
             <div class="relative w-full">
               <BaseInput
@@ -900,22 +900,22 @@ async function submitMessage() {
                 :disabled="messageLoading"
                 shape="full"
                 :classes="{
-                  input: 'h-12 pl-6 pr-24',
+                  input: 'h-12 ps-6 pe-24',
                 }"
                 placeholder="Write a message..."
               />
-              <div class="absolute top-0 right-2 h-12 flex items-center gap-1">
+              <div class="absolute end-2 top-0 flex h-12 items-center gap-1">
                 <button
                   type="button"
-                  class="h-12 w-10 flex items-center justify-center text-muted-400 hover:text-primary-500 transition-colors duration-300"
+                  class="text-muted-400 hover:text-primary-500 flex h-12 w-10 items-center justify-center transition-colors duration-300"
                 >
-                  <Icon name="lucide:smile" class="w-5 h-5" />
+                  <Icon name="lucide:smile" class="h-5 w-5" />
                 </button>
                 <button
                   type="button"
-                  class="h-12 w-10 flex items-center justify-center text-muted-400 hover:text-primary-500 transition-colors duration-300"
+                  class="text-muted-400 hover:text-primary-500 flex h-12 w-10 items-center justify-center transition-colors duration-300"
                 >
-                  <Icon name="lucide:paperclip" class="w-5 h-5" />
+                  <Icon name="lucide:paperclip" class="h-5 w-5" />
                 </button>
               </div>
             </div>
@@ -924,10 +924,10 @@ async function submitMessage() {
       </div>
       <!-- Current user -->
       <div
-        class="fixed top-0 right-0 h-full w-[390px] ltablet:w-[310px] bg-white dark:bg-muted-800 transition-transform duration-300 z-20"
+        class="ltablet:w-[310px] dark:bg-muted-800 fixed end-0 top-0 z-20 h-full w-[390px] bg-white transition-transform duration-300"
         :class="expanded ? 'translate-x-full' : 'translate-x-0'"
       >
-        <div class="h-16 w-full flex items-center justify-between px-8">
+        <div class="flex h-16 w-full items-center justify-between px-8">
           <BaseHeading
             tag="h3"
             size="lg"
@@ -938,38 +938,38 @@ async function submitMessage() {
           <BaseButtonIcon small @click="expanded = true">
             <Icon
               name="lucide:arrow-right"
-              class="w-4 h-4 pointer-events-none"
+              class="pointer-events-none h-4 w-4"
             />
           </BaseButtonIcon>
         </div>
-        <div class="relative w-full flex flex-col px-8">
+        <div class="relative flex w-full flex-col px-8">
           <!-- Loader -->
           <div v-if="loading" class="mt-8">
-            <div class="flex items-center justify-center mb-3">
+            <div class="mb-3 flex items-center justify-center">
               <BasePlaceload
-                class="w-24 h-24 rounded-full shrink-0"
+                class="h-24 w-24 shrink-0 rounded-full"
                 :width="96"
                 :height="96"
               />
             </div>
             <div class="flex flex-col items-center">
-              <BasePlaceload class="w-full max-w-[10rem] h-3 rounded mb-2" />
-              <BasePlaceload class="w-full max-w-[6rem] h-3 rounded mb-2" />
-              <div class="flex flex-col items-center w-full my-4">
-                <BasePlaceload class="w-full max-w-[15rem] h-2 rounded mb-2" />
-                <BasePlaceload class="w-full max-w-[13rem] h-2 rounded mb-2" />
+              <BasePlaceload class="mb-2 h-3 w-full max-w-[10rem] rounded" />
+              <BasePlaceload class="mb-2 h-3 w-full max-w-[6rem] rounded" />
+              <div class="my-4 flex w-full flex-col items-center">
+                <BasePlaceload class="mb-2 h-2 w-full max-w-[15rem] rounded" />
+                <BasePlaceload class="mb-2 h-2 w-full max-w-[13rem] rounded" />
               </div>
-              <div class="w-full flex items-center justify-center mb-6">
+              <div class="mb-6 flex w-full items-center justify-center">
                 <div class="px-4">
-                  <BasePlaceload class="w-[3.5rem] h-3 rounded" />
+                  <BasePlaceload class="h-3 w-[3.5rem] rounded" />
                 </div>
                 <div class="px-4">
-                  <BasePlaceload class="w-[3.5rem] h-3 rounded" />
+                  <BasePlaceload class="h-3 w-[3.5rem] rounded" />
                 </div>
               </div>
               <div class="w-full">
-                <BasePlaceload class="w-full h-10 rounded-xl" />
-                <BasePlaceload class="w-[7.5rem] mt-3 mx-auto h-3 rounded" />
+                <BasePlaceload class="h-10 w-full rounded-xl" />
+                <BasePlaceload class="mx-auto mt-3 h-3 w-[7.5rem] rounded" />
               </div>
             </div>
           </div>
@@ -994,23 +994,23 @@ async function submitMessage() {
                 </BaseParagraph>
               </div>
               <div
-                class="flex items-center justify-center divide-x divide-muted-200 dark:divide-muted-700"
+                class="divide-muted-200 dark:divide-muted-700 flex items-center justify-center divide-x"
               >
                 <div class="flex items-center justify-center gap-2 px-4">
                   <Icon
                     name="ph:timer-duotone"
-                    class="h-4 w-4 text-muted-400"
+                    class="text-muted-400 h-4 w-4"
                   />
-                  <span class="font-sans text-xs text-muted-400">
+                  <span class="text-muted-400 font-sans text-xs">
                     Age: {{ selectedConversation?.user.age }}
                   </span>
                 </div>
                 <div class="flex items-center justify-center gap-2 px-4">
                   <Icon
                     name="ph:map-pin-duotone"
-                    class="h-4 w-4 text-muted-400"
+                    class="text-muted-400 h-4 w-4"
                   />
-                  <span class="font-sans text-xs text-muted-400">
+                  <span class="text-muted-400 font-sans text-xs">
                     {{ selectedConversation?.user.location }}
                   </span>
                 </div>
@@ -1023,7 +1023,7 @@ async function submitMessage() {
                 </BaseButton>
                 <button
                   type="button"
-                  class="mt-3 font-sans text-sm underline-offset-4 text-primary-500 hover:underline"
+                  class="text-primary-500 mt-3 font-sans text-sm underline-offset-4 hover:underline"
                 >
                   Send a friend request
                 </button>
@@ -1052,7 +1052,7 @@ async function submitMessage() {
         :is="resolveComponent(panels.current.component)"
         v-if="panels.current?.component"
         class="fixed top-0 z-[100] h-full w-96"
-        :class="[panels.current.position === 'left' ? 'left-0' : 'right-0']"
+        :class="[panels.current.position === 'left' ? 'start-0' : 'end-0']"
       />
     </Transition>
   </div>

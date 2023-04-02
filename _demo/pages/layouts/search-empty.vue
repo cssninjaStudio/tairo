@@ -16,7 +16,7 @@ const searchTerms = ref('Ice cream pizza')
         shape="full"
         :classes="{
           wrapper: 'w-full',
-          input: 'h-12 !pl-12',
+          input: 'h-12 !ps-12',
           icon: 'h-12 w-12 [& > svg]:!w-7 [& > svg]:!h-7',
         }"
       />

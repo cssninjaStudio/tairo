@@ -1,16 +1,19 @@
 <template>
-  <div class="flex items-end flex-wrap">
-    <BaseButtonIcon shape="curved" class="focus:z-10 rounded-r-none border-r-0">
-      <Icon name="ph:moon-duotone" class="w-5 h-5" />
+  <div class="flex flex-wrap items-end">
+    <BaseButtonIcon shape="curved" class="rounded-e-none border-e-0 focus:z-10">
+      <Icon name="ph:moon-duotone" class="h-5 w-5" />
     </BaseButtonIcon>
+
     <BaseButtonIcon shape="straight" class="focus:z-10">
-      <Icon name="ph:github-logo-duotone" class="w-5 h-5" />
+      <Icon name="ph:github-logo-duotone" class="h-5 w-5" />
     </BaseButtonIcon>
-    <BaseButtonIcon shape="straight" class="focus:z-10 border-l-0">
-      <Icon name="ph:game-controller-duotone" class="w-5 h-5" />
+
+    <BaseButtonIcon shape="straight" class="border-s-0 focus:z-10">
+      <Icon name="ph:game-controller-duotone" class="h-5 w-5" />
     </BaseButtonIcon>
-    <BaseButtonIcon shape="curved" class="focus:z-10 rounded-l-none border-l-0">
-      <Icon name="ph:heart-duotone" class="w-5 h-5" />
+
+    <BaseButtonIcon shape="curved" class="rounded-s-none border-s-0 focus:z-10">
+      <Icon name="ph:heart-duotone" class="h-5 w-5" />
     </BaseButtonIcon>
   </div>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <div class="grid md:grid-cols-2 md:max-w-lg gap-6">
+  <div class="grid gap-6 md:max-w-lg md:grid-cols-2">
     <BaseAutocomplete
       v-model="first"
       :items="frameworks"
@@ -10,6 +10,7 @@
       label="Framework"
       clearable
     />
+
     <BaseAutocomplete
       v-model="second"
       :items="people"

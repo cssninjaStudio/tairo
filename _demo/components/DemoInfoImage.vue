@@ -20,7 +20,7 @@ const props = withDefaults(
   <div>
     <DemoPicture
       :src="props.image"
-      :imageDark="props.imageDark"
+      :image-dark="props.imageDark"
       :height="300"
       :width="300"
       :shape="props.shape"
@@ -31,7 +31,7 @@ const props = withDefaults(
         size="md"
         weight="medium"
         lead="tight"
-        class="mb-1 text-muted-800 dark:text-white"
+        class="text-muted-800 mb-1 dark:text-white"
       >
         <span>{{ props.title }}</span>
       </BaseHeading>

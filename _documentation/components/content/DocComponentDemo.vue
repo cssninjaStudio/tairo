@@ -28,38 +28,11 @@ const exampleComponent = shallowRef()
 const exampleSource = shallowRef()
 
 const exampleMarkdown = computed(() => {
+  if (!exampleSource.value) {
+    return ''
+  }
   return '```vue\n' + exampleSource.value + '\n```'
 })
-
-await useAsyncData(
-  `demo-${props.demo}`,
-  async () => {
-    if (!info.value.folder || !info.value.file) return
-    demoPending.value = true
-
-    // dynamically import the example component and source
-    // we can not use path alias, nor paths in variables
-    // this is a limitation of vite
-    try {
-      const [compo, source] = await Promise.all([
-        import(
-          `../../examples/${info.value.folder}/${info.value.file}.vue`
-        ).then((m) => m.default),
-        import(
-          `../../examples/${info.value.folder}/${info.value.file}.vue?raw`
-        ).then((m) => m.default),
-      ])
-      exampleComponent.value = markRaw(compo)
-      exampleSource.value = source
-    } finally {
-      demoPending.value = false
-    }
-  },
-  {
-    watch: [info],
-    // server: false,
-  },
-)
 
 const showCode = ref(false)
 const hasDemoContent = computed(() =>
@@ -68,10 +41,36 @@ const hasDemoContent = computed(() =>
 
 const forceDark = ref(false)
 const { md } = useTailwindBreakpoints()
+
+await loadDemo()
+watch(info, loadDemo)
+
+async function loadDemo() {
+  if (!info.value.folder || !info.value.file) return
+  demoPending.value = true
+
+  // dynamically import the example component and source
+  // we can not use path alias, nor paths in variables
+  // this is a limitation of vite
+  try {
+    const [compo, source] = await Promise.all([
+      import(`../../examples/${info.value.folder}/${info.value.file}.vue`).then(
+        (m) => m.default,
+      ),
+      import(
+        `../../examples/${info.value.folder}/${info.value.file}.vue?raw`
+      ).then((m) => m.default),
+    ])
+    exampleComponent.value = markRaw(compo)
+    exampleSource.value = source
+  } finally {
+    demoPending.value = false
+  }
+}
 </script>
 
 <template>
-  <div class="border-muted-200 dark:border-muted-800 mb-10 border-b py-6">
+  <div class="border-muted-200 dark:border-muted-800 group mb-10 border-b py-6">
     <div class="mb-4 flex items-center">
       <BaseHeading
         as="h2"
@@ -86,12 +85,12 @@ const { md } = useTailwindBreakpoints()
 
       <div
         v-if="props.tag"
-        class="bg-muted-200 text-muted-600 dark:bg-muted-800 dark:text-muted-500 ml-3 hidden flex-none rounded-md px-2 py-1.5 text-xs font-semibold tracking-wide lg:block"
+        class="bg-muted-200 text-muted-600 dark:bg-muted-800 dark:text-muted-500 ms-3 hidden flex-none rounded-md px-2 py-1.5 text-xs font-semibold tracking-wide lg:block"
       >
         {{ props.tag }}
       </div>
 
-      <div v-if="hasDemoContent" class="ml-auto flex items-center gap-2">
+      <div v-if="hasDemoContent" class="ms-auto flex items-center gap-2">
         <BaseCheckbox
           v-model="forceDark"
           condensed
@@ -104,17 +103,15 @@ const { md } = useTailwindBreakpoints()
           dark preview
         </BaseCheckbox>
 
-        <div
+        <!-- <div
           class="bg-muted-200 dark:bg-muted-800/50 flex items-end gap-1 rounded-lg p-1"
         >
           <BaseButtonAction
             v-if="exampleComponent"
             shape="rounded"
-            class="h-[2.35rem] pr-3 focus:z-10"
+            class="h-[2.35rem] pe-3 focus:z-10"
             :class="
-              showCode
-                ? 'dark:!bg-muted-800'
-                : 'dark:!bg-transparent dark:border-transparent'
+              showCode ? 'dark:!bg-transparent dark:border-transparent' : ''
             "
             :color="showCode ? 'muted' : 'default'"
             @click="showCode = false"
@@ -125,11 +122,9 @@ const { md } = useTailwindBreakpoints()
           <BaseButtonAction
             v-if="exampleMarkdown"
             shape="rounded"
-            class="h-[2.35rem] pr-3 focus:z-10"
+            class="h-[2.35rem] pe-3 focus:z-10"
             :class="
-              !showCode
-                ? 'dark:!bg-muted-800'
-                : 'dark:!bg-transparent dark:border-transparent'
+              !showCode ? 'dark:!bg-transparent dark:border-transparent' : ''
             "
             :color="!showCode ? 'muted' : 'default'"
             @click="showCode = true"
@@ -137,7 +132,7 @@ const { md } = useTailwindBreakpoints()
             <Icon name="ph:terminal" class="h-4 w-4" />
             <span>Code</span>
           </BaseButtonAction>
-        </div>
+        </div> -->
       </div>
     </div>
 
@@ -158,17 +153,24 @@ const { md } = useTailwindBreakpoints()
             <component :is="exampleComponent" v-if="exampleComponent" />
           </div>
 
-          <AddonMarkdownRemark
-            v-if="exampleMarkdown && showCode"
-            :source="exampleMarkdown"
-            fullwidth
-            :lines="md ? true : false"
-            class="doc-markdown"
-            :theme="{
-              light: 'cssninja-light-theme',
-              dark: 'cssninja-dark-theme',
-            }"
-          />
+          <details v-if="exampleMarkdown" class="mt-6">
+            <summary
+              class="hover:bg-muted-50 focus:bg-muted-50 dark:hover:bg-muted-900 dark:focus:bg-muted-900 nui-text-600 nui-focus cursor-pointer rounded p-1 text-sm transition-all duration-100"
+            >
+              Show source
+            </summary>
+            <AddonMarkdownRemark
+              :source="exampleMarkdown"
+              fullwidth
+              :lines="md ? true : false"
+              class="doc-markdown"
+              :mode="forceDark ? 'dark' : undefined"
+              :theme="{
+                light: 'cssninja-light-theme',
+                dark: 'cssninja-dark-theme',
+              }"
+            />
+          </details>
         </div>
       </div>
     </div>
@@ -176,7 +178,7 @@ const { md } = useTailwindBreakpoints()
 </template>
 
 <style scoped>
-.doc-markdown:deep(.line) {
-  display: inline;
+.doc-markdown:deep(.shiki) {
+  @apply mt-2;
 }
 </style>

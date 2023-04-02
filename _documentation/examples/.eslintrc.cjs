@@ -1,32 +1,16 @@
 module.exports = {
-  extends: [
-    '@nuxtjs/eslint-config-typescript',
-    'plugin:tailwindcss/recommended',
-    'prettier',
-    'plugin:prettier-vue/recommended',
-  ],
-  plugins: ['tailwindcss'],
   rules: {
-    '@typescript-eslint/no-var-requires': 'off',
-    // 'import/default': 'off',
-    'vue/multi-word-component-names': 'off',
+    // demo
     'vue/component-tags-order': [
       'error',
       {
         order: ['template', 'script', 'style'],
       },
     ],
-    'tailwindcss/classnames-order': 'error',
-    'prettier-vue/prettier': [
-      'error',
-      {
-        // Override all options of `prettier` here
-        // @see https://prettier.io/docs/en/options.html
-        printWidth: 100,
-        singleQuote: true,
-        semi: false,
-        trailingComma: 'all',
-      },
-    ],
+    'vue/html-comment-content-newline': 'error',
+    'vue/html-comment-content-spacing': 'error',
+    'vue/html-comment-indent': 'error',
+    'vue/padding-line-between-blocks': 'error',
+    'vue/padding-line-between-tags': ['error', [{ blankLine: 'always', next: '*', prev: '*' }]],
   },
 }

@@ -204,7 +204,7 @@ const { data, pending, error, refresh } = await useFetch('/api/rentals', {
                   </div>
                 </div>
                 <div
-                  class="sm:ml-auto flex ptablet:flex-col items-center justify-end gap-2 mt-4 sm:mt-4"
+                  class="sm:ms-auto flex ptablet:flex-col items-center justify-end gap-2 mt-4 sm:mt-4"
                 >
                   <BaseButton class="w-full sm:w-28">More Info</BaseButton>
                   <BaseButton color="primary" class="w-full sm:w-28">

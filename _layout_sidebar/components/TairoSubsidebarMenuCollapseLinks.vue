@@ -52,7 +52,6 @@ const sidebar = reactive(useSidebar())
 const { xl } = useTailwindBreakpoints()
 
 function onLinkClick() {
-  console.log('onClick', props.name, xl.value)
   if (xl.value) {
     return
   }
@@ -74,13 +73,13 @@ function onLinkClick() {
       >
         <span
           v-if="hasActiveChild"
-          class="bg-primary-500 absolute -left-3 top-2 h-1 w-1 rounded-full"
+          class="bg-primary-500 absolute -start-3 top-2 h-1 w-1 rounded-full"
         ></span>
         <span>{{ props.name }}</span>
       </span>
       <Icon
         name="feather:chevron-down"
-        class="text-muted-400 ml-auto block h-4 w-4 transition-transform duration-300"
+        class="text-muted-400 ms-auto block h-4 w-4 transition-transform duration-300"
         :class="{
           'group-focus-within:rotate-180': !open,
           'rotate-180': open,
@@ -107,10 +106,10 @@ function onLinkClick() {
             :class="{
               'text-primary-500': isChildActive(link),
             }"
-            class="nui-focus text-muted-400 hover:text-primary-500 focus:text-primary-500 flex w-full items-center pl-3 transition-colors duration-300"
+            class="nui-focus text-muted-400 hover:text-primary-500 focus:text-primary-500 flex w-full items-center ps-3 transition-colors duration-300"
             @click.passive="onLinkClick"
           >
-            <Icon :name="link.icon" class="mr-2 h-5 w-5" />
+            <Icon :name="link.icon" class="me-2 h-5 w-5" />
             <span class="font-sans text-xs">{{ link.name }}</span>
           </NuxtLink>
         </li>

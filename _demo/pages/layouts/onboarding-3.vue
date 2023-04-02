@@ -109,7 +109,7 @@ const roles = [
                         class="relative h-20 w-20 flex items-center justify-center mx-auto peer-checked:[&_.child]:opacity-100 grayscale peer-checked:grayscale-0 transition-all duration-200"
                       >
                         <div
-                          class="child absolute top-0 right-0 w-6 h-6 rounded-full flex items-center justify-center bg-white dark:bg-muted-900 opacity-0 z-20"
+                          class="child absolute top-0 end-0 w-6 h-6 rounded-full flex items-center justify-center bg-white dark:bg-muted-900 opacity-0 z-20"
                         >
                           <Icon
                             name="ph:check-circle-duotone"

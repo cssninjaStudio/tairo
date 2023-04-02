@@ -53,7 +53,7 @@ const toggled = ref(Boolean(project.value.files?.length))
             >
               <Icon
                 name="lucide:plus"
-                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4"
+                class="absolute top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4"
               />
               <span class="sr-only">Select files</span>
             </button>
@@ -138,7 +138,7 @@ const toggled = ref(Boolean(project.value.files?.length))
                   </div>
 
                   <div
-                    class="ml-auto px-4 w-32 transition-opacity duration-300"
+                    class="ms-auto px-4 w-32 transition-opacity duration-300"
                     :class="'opacity-100'"
                   >
                     <BaseProgress :value="0" size="xs" :color="'success'" />

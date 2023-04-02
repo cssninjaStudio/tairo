@@ -27,7 +27,7 @@ const props = withDefaults(
         class="text-primary-500"
       />
       <div
-        class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-16 h-16"
+        class="absolute top-1/2 start-1/2 -translate-y-1/2 -translate-x-1/2 w-16 h-16"
       >
         <BaseAvatar :src="props.image" size="lg" />
       </div>

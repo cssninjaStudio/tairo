@@ -1,3 +1,7 @@
+<template>
+  <AddonCarouselIcons :slides-to-show="6" :slides="topics" />
+</template>
+
 <script setup lang="ts">
 const topics = [
   {
@@ -72,7 +76,3 @@ const topics = [
   },
 ]
 </script>
-
-<template>
-  <AddonCarouselIcons :slides-to-show="6" :slides="topics" />
-</template>

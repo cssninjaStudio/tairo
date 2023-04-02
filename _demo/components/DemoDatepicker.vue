@@ -1,4 +1,8 @@
 <script setup lang="ts">
+const props = defineProps<{
+  expanded?: boolean
+}>()
+
 const MONTH_NAMES = [
   'January',
   'February',
@@ -129,15 +133,11 @@ onMounted(() => {
   initDate()
   getNoOfDays()
 })
-
-const props = defineProps<{
-  expanded?: boolean
-}>()
 </script>
 
 <template>
   <div
-    class="relative w-full mx-auto font-sans pb-5"
+    class="relative mx-auto w-full pb-5 font-sans"
     :class="props.expanded ? 'max-w-[310px]' : 'max-w-[240px]'"
   >
     <input type="hidden" name="date" :value="datepickerValue" />
@@ -145,15 +145,15 @@ const props = defineProps<{
       type="text"
       @click="showDatepicker = !showDatepicker"
       v-model="datepickerValue"
-      class="hidden w-full pl-4 pr-10 py-3 leading-none rounded-lg shadow-sm focus:outline-none text-muted-600 font-medium focus:ring focus:ring-blue-600 focus:ring-opacity-50"
+      class="text-muted-600 hidden w-full rounded-lg py-3 pe-10 ps-4 font-medium leading-none shadow-sm focus:outline-none focus:ring focus:ring-blue-600 focus:ring-opacity-50"
       placeholder="Select date"
       readonly
     />
 
     <div class="w-full">
-      <div class="flex justify-between items-center mb-6">
+      <div class="mb-6 flex items-center justify-between">
         <div
-          class="text-base font-medium space-x-2 text-muted-800 dark:text-muted-100"
+          class="text-muted-800 dark:text-muted-100 space-x-2 text-base font-medium"
         >
           <span>{{ MONTH_NAMES[month] }}</span>
           <span>{{ year }}</span>
@@ -161,11 +161,11 @@ const props = defineProps<{
         <div>
           <button
             type="button"
-            class="focus:outline-none focus:shadow-outline transition ease-in-out duration-100 inline-flex cursor-pointer hover:bg-muted-100 p-1 rounded-full"
+            class="focus:shadow-outline hover:bg-muted-100 inline-flex cursor-pointer rounded-full p-1 transition duration-100 ease-in-out focus:outline-none"
             @click="incrementDays"
           >
             <svg
-              class="h-5 w-5 text-muted-400 inline-flex"
+              class="text-muted-400 inline-flex h-5 w-5"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -180,11 +180,11 @@ const props = defineProps<{
           </button>
           <button
             type="button"
-            class="focus:outline-none focus:shadow-outline transition ease-in-out duration-100 inline-flex cursor-pointer hover:bg-muted-100 p-1 rounded-full"
+            class="focus:shadow-outline hover:bg-muted-100 inline-flex cursor-pointer rounded-full p-1 transition duration-100 ease-in-out focus:outline-none"
             @click="decrementDays"
           >
             <svg
-              class="h-5 w-5 text-muted-400 inline-flex"
+              class="text-muted-400 inline-flex h-5 w-5"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -200,11 +200,11 @@ const props = defineProps<{
         </div>
       </div>
 
-      <div class="flex flex-wrap mb-3 -mx-1">
+      <div class="-mx-1 mb-3 flex flex-wrap">
         <template v-for="(day, index) in DAYS" :key="index">
           <div style="width: 14.26%" class="px-0.5">
             <div
-              class="text-muted-400 dark:text-muted-300 font-medium text-center text-xs"
+              class="text-muted-400 dark:text-muted-300 text-center text-xs font-medium"
             >
               {{ day }}
             </div>
@@ -212,18 +212,18 @@ const props = defineProps<{
         </template>
       </div>
 
-      <div class="flex flex-wrap -mx-1">
+      <div class="-mx-1 flex flex-wrap">
         <template v-for="blankday in blankDays">
           <div
             style="width: 14.28%"
-            class="text-center border p-1 border-transparent text-sm"
+            class="border border-transparent p-1 text-center text-sm"
           ></div>
         </template>
         <template v-for="(date, dateIndex) in numberOfDays" :key="dateIndex">
           <div style="width: 14.28%" class="flex items-center justify-center">
             <div
               @click="getDateValue(date)"
-              class="h-8 w-8 flex items-center justify-center mx-auto cursor-pointer text-center text-sm leading-none rounded-full transition ease-in-out duration-100"
+              class="mx-auto flex h-8 w-8 cursor-pointer items-center justify-center rounded-full text-center text-sm leading-none transition duration-100 ease-in-out"
               :class="[
                 isToday(date) === true
                   ? 'bg-primary-100 dark:bg-primary-500/20 text-primary-500'

@@ -61,7 +61,7 @@ const tasks = ref<string[]>(['Option 0', 'Option 1', 'Option 2'])
       :shape="props.shape"
     >
       <template #tab-1>
-        <div class="space-y-6 mb-2">
+        <div class="mb-2 space-y-6">
           <div
             v-for="task in todos"
             :key="task.id"
@@ -92,7 +92,7 @@ const tasks = ref<string[]>(['Option 0', 'Option 1', 'Option 2'])
         </div>
       </template>
       <template #tab-2>
-        <div class="space-y-6 mb-2">
+        <div class="mb-2 space-y-6">
           <div
             v-for="task in todos"
             :key="task.id"

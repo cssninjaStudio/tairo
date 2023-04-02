@@ -200,7 +200,7 @@ const total = computed(() => {
             >
               <div class="relative shrink-0 h-[120px] sm:h-[175px] w-[240px]">
                 <img
-                  class="absolute -top-6 sm:-top-2 left-3 sm:-left-10 pointer-events-none"
+                  class="absolute -top-6 sm:-top-2 start-3 sm:-start-10 pointer-events-none"
                   src="/img/illustrations/dashboards/delivery/header.svg"
                   alt="Food illustration"
                 />
@@ -244,7 +244,7 @@ const total = computed(() => {
                 <span>Popular Meals</span>
               </BaseHeading>
               <button
-                class="inline-flex items-center justify-center gap-x-1 rounded-full py-2 pl-2 pr-4 font-sans bg-primary-500/10 hover:bg-primary-500/20 text-primary-600 cursor-pointer text-sm transition-all duration-300"
+                class="inline-flex items-center justify-center gap-x-1 rounded-full py-2 ps-2 pe-4 font-sans bg-primary-500/10 hover:bg-primary-500/20 text-primary-600 cursor-pointer text-sm transition-all duration-300"
               >
                 <Icon name="ph:timer-duotone" class="w-5 h-5" />
                 <span class="text-sm">Delivery:</span>
@@ -335,14 +335,14 @@ const total = computed(() => {
                     <div
                       class="flex items-center divide-x divide-muted-200 dark:divide-muted-700"
                     >
-                      <div class="pr-4">
+                      <div class="pe-4">
                         <span
                           class="font-sans font-bold text-muted-800 dark:text-muted-100"
                         >
                           ${{ meal.price }}
                         </span>
                       </div>
-                      <div class="flex items-center gap-1 pl-4">
+                      <div class="flex items-center gap-1 ps-4">
                         <Icon
                           name="uiw:star-on"
                           class="w-3 h-3 text-yellow-400"
@@ -409,7 +409,7 @@ const total = computed(() => {
               <p class="text-white">35 min</p>
               <button
                 type="button"
-                class="text-yellow-400 cursor-pointer ml-auto"
+                class="text-yellow-400 cursor-pointer ms-auto"
               >
                 Choose time
               </button>
@@ -439,7 +439,7 @@ const total = computed(() => {
                     class="w-12 h-12 object-contain"
                   />
                   <div
-                    class="absolute -bottom-1 -right-1 h-6 w-6 flex items-center justify-center rounded-full bg-primary-500"
+                    class="absolute -bottom-1 -end-1 h-6 w-6 flex items-center justify-center rounded-full bg-primary-500"
                   >
                     <span
                       class="font-sans font-semibold text-[0.65rem] text-white"
@@ -458,7 +458,7 @@ const total = computed(() => {
                     unit price: ${{ item.price }}
                   </p>
                 </div>
-                <div class="ml-auto">
+                <div class="ms-auto">
                   <p
                     class="font-sans font-semibold text-sm text-muted-800 dark:text-muted-100"
                   >

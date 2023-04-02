@@ -171,7 +171,7 @@ function toggleAllVisibleSelection() {
                       size="xs"
                       class="bg-muted-500/20 text-muted-500"
                     />
-                    <div class="ml-3 leading-none">
+                    <div class="ms-3 leading-none">
                       <h4 class="font-sans text-sm font-medium">
                         {{ item.author.name }}
                       </h4>
