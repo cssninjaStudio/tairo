@@ -157,7 +157,7 @@ async function loadDemo() {
             <summary
               class="hover:bg-muted-50 focus:bg-muted-50 dark:hover:bg-muted-900 dark:focus:bg-muted-900 nui-text-600 nui-focus cursor-pointer rounded p-1 text-sm transition-all duration-100"
             >
-              Show source
+              Show code
             </summary>
             <AddonMarkdownRemark
               :source="exampleMarkdown"

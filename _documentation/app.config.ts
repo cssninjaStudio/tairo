@@ -3,9 +3,9 @@ export default defineAppConfig({
     sidebar: {
       items: [
         {
-          name: 'Components',
+          name: 'Documentation',
           icon: { name: 'ph:grid-four-duotone', class: 'w-5 h-5' },
-          subsidebar: { name: 'DocSubsidebarComponents' },
+          subsidebar: { name: 'DocSubsidebarDocumentation' },
           activePath: '/documentation',
         },
       ],

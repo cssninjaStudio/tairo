@@ -92,7 +92,7 @@ const componentsByCategoryMaped = computed(() => {
               class="nui-focus group rounded-md"
               :to="component.route._path"
             >
-              <BaseCard>
+              <BaseCard class="flex h-full flex-col justify-between">
                 <div class="mb-2 flex justify-between p-6">
                   <div class="flex h-full grow flex-col justify-between pe-4">
                     <span
