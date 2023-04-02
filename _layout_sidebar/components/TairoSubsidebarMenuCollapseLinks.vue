@@ -52,7 +52,6 @@ const sidebar = reactive(useSidebar())
 const { xl } = useTailwindBreakpoints()
 
 function onLinkClick() {
-  console.log('onClick', props.name, xl.value)
   if (xl.value) {
     return
   }

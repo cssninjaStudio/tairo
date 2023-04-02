@@ -11,12 +11,12 @@ const props = defineProps<{
 const markedTitle = useNinjaMark(
   () => props.title,
   () => props.search,
-  'nui-text-800 group-focus:text-primary-500 group-hover:text-primary-500 dark:group-focus:text-primary-400 dark:group-hover:text-primary-400 bg-transparent',
+  'nui-text-800 group-focus:text-primary-500 underline group-hover:text-primary-500 dark:group-focus:text-primary-400 dark:group-hover:text-primary-400 bg-transparent',
 )
 const markedSubtitle = useNinjaMark(
   () => props.subtitle,
   () => props.search,
-  'nui-text-500 bg-transparent',
+  'nui-text-500 bg-transparent underline',
 )
 </script>
 

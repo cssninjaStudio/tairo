@@ -181,7 +181,7 @@ const navigation = [
       {
         name: 'Apex Charts',
         icon: 'ph:chart-pie-slice-duotone',
-        to: '/dashboards/widgets/charts',
+        to: '/dashboards/charts',
       },
     ],
   },
