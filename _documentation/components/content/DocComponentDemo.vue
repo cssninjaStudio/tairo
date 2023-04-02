@@ -70,7 +70,7 @@ async function loadDemo() {
 </script>
 
 <template>
-  <div class="border-muted-200 dark:border-muted-800 mb-10 border-b py-6">
+  <div class="border-muted-200 dark:border-muted-800 group mb-10 border-b py-6">
     <div class="mb-4 flex items-center">
       <BaseHeading
         as="h2"
@@ -103,7 +103,7 @@ async function loadDemo() {
           dark preview
         </BaseCheckbox>
 
-        <div
+        <!-- <div
           class="bg-muted-200 dark:bg-muted-800/50 flex items-end gap-1 rounded-lg p-1"
         >
           <BaseButtonAction
@@ -132,7 +132,7 @@ async function loadDemo() {
             <Icon name="ph:terminal" class="h-4 w-4" />
             <span>Code</span>
           </BaseButtonAction>
-        </div>
+        </div> -->
       </div>
     </div>
 
@@ -153,19 +153,32 @@ async function loadDemo() {
             <component :is="exampleComponent" v-if="exampleComponent" />
           </div>
 
-          <AddonMarkdownRemark
-            v-if="exampleMarkdown && showCode"
-            :source="exampleMarkdown"
-            fullwidth
-            :lines="md ? true : false"
-            class="doc-markdown"
-            :theme="{
-              light: 'cssninja-light-theme',
-              dark: 'cssninja-dark-theme',
-            }"
-          />
+          <details v-if="exampleMarkdown" class="mt-6">
+            <summary
+              class="hover:bg-muted-50 focus:bg-muted-50 dark:hover:bg-muted-900 dark:focus:bg-muted-900 nui-text-600 nui-focus cursor-pointer rounded p-1 text-sm transition-all duration-100"
+            >
+              Show source
+            </summary>
+            <AddonMarkdownRemark
+              :source="exampleMarkdown"
+              fullwidth
+              :lines="md ? true : false"
+              class="doc-markdown"
+              :mode="forceDark ? 'dark' : undefined"
+              :theme="{
+                light: 'cssninja-light-theme',
+                dark: 'cssninja-dark-theme',
+              }"
+            />
+          </details>
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<style scoped>
+.doc-markdown:deep(.shiki) {
+  @apply mt-2;
+}
+</style>

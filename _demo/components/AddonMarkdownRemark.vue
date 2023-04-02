@@ -13,6 +13,7 @@ const props = withDefaults(
      * Prose size modifier
      */
     size?: 'sm' | 'base' | 'lg' | 'xl' | '2xl'
+    mode?: 'light' | 'dark'
     /**
      * Theme to use to highlight code blocks
      *
@@ -37,6 +38,7 @@ const props = withDefaults(
   {
     lines: true,
     size: 'base',
+    mode: undefined,
     theme: () => ({
       light: 'material-theme-lighter',
       dark: 'material-theme-ocean',
@@ -64,7 +66,11 @@ const isDark = computed({
     }
   },
 })
-const mode = computed(() => (isDark.value ? 'dark' : 'light'))
+const mode = computed(() => {
+  if (props.mode !== undefined) return props.mode
+  return isDark.value ? 'dark' : 'light'
+})
+
 const proseSize = computed(() => {
   switch (props.size) {
     case 'sm':
