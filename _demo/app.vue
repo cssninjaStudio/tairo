@@ -19,7 +19,18 @@ useHead({
 
 <template>
   <div>
+    <!-- 
+      Global app search modal
+      @see _demo/components/DemoAppSearch.vue
+    -->
     <DemoAppSearch />
+
+    <!-- 
+      Vue Axe Popup
+      @see _demo/plugins/vue-axe.client.ts
+    -->
+    <VueAxePopup />
+
     <NuxtLayout>
       <NuxtLoadingIndicator color="var(--color-primary-500)" />
       <SeoKit />

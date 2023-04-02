@@ -65,9 +65,11 @@ export default defineNuxtConfig({
     },
   },
   vite: {
-    // This is required for shiki to work (used to render markdown code blocks)
     define: {
+      // This is required for shiki to work (used to render markdown code blocks)
       'process.env.VSCODE_TEXTMATE_DEBUG': false,
+      // This enables vue-axe to work (used to check a11y - see _demo/plugins/vue-axe.ts)
+      'process.env.ENABLE_A11Y_AXE': false,
     },
     optimizeDeps: {
       // disabled: false,
