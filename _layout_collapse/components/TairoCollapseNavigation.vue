@@ -6,7 +6,7 @@ const collapse = reactive(useCollapse())
 
 <template>
   <div
-    class="dark:bg-muted-950 border-muted-200 dark:border-muted-800 fixed left-0 top-0 z-[60] h-full border-r bg-white transition-all duration-300"
+    class="dark:bg-muted-800 border-muted-200 dark:border-muted-700 fixed left-0 top-0 z-[60] h-full border-r bg-white transition-all duration-300"
     :class="[
       !collapse.isOpen ? 'w-[80px]' : 'w-[250px]',
       collapse.isMobileOpen
@@ -21,10 +21,10 @@ const collapse = reactive(useCollapse())
       <!--Fold button-->
       <button
         type="button"
-        class="nui-mask nui-mask-blob hover:bg-muted-200 dark:hover:bg-muted-800 text-muted-700 dark:text-muted-400 hidden h-10 w-10 cursor-pointer items-center justify-center transition-colors duration-300"
+        class="nui-mask nui-mask-blob hover:bg-muted-200 dark:hover:bg-muted-700/60 text-muted-500 dark:text-muted-400 hidden h-10 w-10 cursor-pointer items-center justify-center transition-colors duration-300"
         :class="!collapse.isOpen ? 'hidden' : 'lg:flex'"
       >
-        <Icon name="ph:dots-nine-duotone" class="h-5 w-5" />
+        <Icon :name="collapse.header.icon.name" class="h-4 w-4" />
       </button>
 
       <!--Mobile button-->
@@ -48,12 +48,14 @@ const collapse = reactive(useCollapse())
           <TairoCollapseNavigationCollapseLinks
             v-if="item.children"
             :item="item"
+            :expanded="collapse.isOpen"
+            @clicked="collapse.isOpen = true"
           />
           <NuxtLink
             v-else-if="item.to"
             :to="item.to"
-            exact-active-class="bg-muted-200 dark:bg-muted-900"
-            class="nui-focus text-muted-500 hover:bg-muted-100 dark:hover:bg-muted-900 hover:text-muted-600 dark:hover:text-muted-200 flex cursor-pointer items-center gap-4 rounded-lg py-3 transition-colors duration-300"
+            exact-active-class="!bg-primary-500/10 dark:!bg-primary-500/20 !text-primary-500 dark:!text-primary-500"
+            class="nui-focus text-muted-500 dark:text-muted-400/80 hover:bg-muted-100 dark:hover:bg-muted-700/60 hover:text-muted-600 dark:hover:text-muted-200 flex cursor-pointer items-center gap-4 rounded-lg py-3 transition-colors duration-300"
             :class="!collapse.isOpen ? 'px-1 justify-center' : 'px-4'"
           >
             <Icon :name="item.icon.name" :class="item.icon.class" />
@@ -64,9 +66,13 @@ const collapse = reactive(useCollapse())
               {{ item.name }}
             </span>
           </NuxtLink>
+          <div
+            v-else-if="item.divider"
+            class="border-muted-200 dark:border-muted-700 my-3 h-px w-full border-t"
+          ></div>
           <button
             v-else
-            class="nui-focus text-muted-500 hover:bg-muted-200 dark:hover:bg-muted-900 hover:text-muted-600 dark:hover:text-muted-200 flex w-full cursor-pointer items-center gap-4 rounded-lg py-3 transition-colors duration-300"
+            class="nui-focus text-muted-500 dark:text-muted-400/80 hover:bg-muted-100 dark:hover:bg-muted-700/60 hover:text-muted-600 dark:hover:text-muted-200 flex w-full cursor-pointer items-center gap-4 rounded-lg py-3 transition-colors duration-300"
             :class="!collapse.isOpen ? 'px-1 justify-center' : 'px-4'"
           >
             <Icon :name="item.icon.name" :class="item.icon.class" />
@@ -82,10 +88,20 @@ const collapse = reactive(useCollapse())
     </div>
     <!--Footer-->
     <div
-      class="flex h-16 w-full items-center justify-between"
-      :class="!collapse.isOpen ? 'px-2' : 'px-6'"
+      class="flex h-16 w-full items-center gap-4 transition-all duration-150"
+      :class="!collapse.isOpen ? 'px-2 justify-center' : 'px-6'"
     >
       <!--Account menu-->
+      <component
+        :is="resolveComponent(collapse.footer?.account.component)"
+        v-if="collapse.footer?.account?.component"
+      ></component>
+      <span
+        class="text-muted-500 dark:text-muted-400/80 whitespace-nowrap font-sans text-sm"
+        :class="!collapse.isOpen ? 'hidden' : 'block'"
+      >
+        {{ collapse.footer?.account?.label }}
+      </span>
     </div>
   </div>
 </template>

@@ -8,17 +8,31 @@ export default defineAppConfig({
           resolve: true,
           props: { class: 'text-primary-600 h-10' },
         },
+        header: {
+          button: {
+            icon: { name: 'ph:gear-six-duotone', class: 'w-5 h-5' },
+            click: () => {
+              const isOpen = useState('search-open', () => false)
+              isOpen.value = true
+            },
+          },
+        },
         items: [
           {
             name: 'Dashboards',
             icon: { name: 'ph:sidebar-duotone', class: 'w-5 h-5' },
-            to: '/dashboards',
+            to: '/toto',
           },
           {
             name: 'Documentation',
             icon: { name: 'ph:app-window-duotone', class: 'w-5 h-5' },
             activePath: '/documentation',
             children: [
+              {
+                name: 'Toto',
+                to: '/toto',
+                icon: { name: 'ph:sidebar-duotone', class: 'w-4 h-4' },
+              },
               {
                 name: 'Collapse',
                 to: '/documentation/shuriken-ui/forms/listbox',
@@ -50,11 +64,23 @@ export default defineAppConfig({
             },
           },
           {
+            name: 'Divider',
+            divider: true,
+          },
+          {
             name: 'Settings',
             icon: { name: 'ph:gear-six-duotone', class: 'w-5 h-5' },
             to: '/dashboards/analytics',
           },
         ],
+        footer: {
+          account: {
+            component: 'DemoAccountMenu',
+            label: 'My Account',
+            resolve: true,
+            props: {},
+          },
+        },
       },
       circularMenu: {
         enabled: false,

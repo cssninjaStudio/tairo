@@ -9,6 +9,18 @@ export default defineNuxtSchema({
             resolve: true,
             props: {},
           },
+          header: {
+            button: {
+              icon: {
+                type: 'object',
+                properties: {
+                  name: { type: 'string' },
+                  class: { type: 'string' },
+                },
+              },
+              click: { type: 'function' },
+            },
+          },
           items: {
             $schema: {
               type: 'array',
@@ -20,6 +32,7 @@ export default defineNuxtSchema({
                   to: { type: 'string' },
                   activePath: { type: 'string' },
                   position: { type: 'string', tsType: "'start' | 'end'" },
+                  divider: { type: 'boolean' },
                   icon: {
                     type: 'object',
                     required: ['name'],
@@ -60,6 +73,14 @@ export default defineNuxtSchema({
                   click: { type: 'function' },
                 },
               },
+            },
+          },
+          footer: {
+            account: {
+              component: 'DemoAccountMenu',
+              label: 'My Account',
+              resolve: true,
+              props: {},
             },
           },
         },

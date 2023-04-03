@@ -2,6 +2,7 @@ import type { RouteLocationRaw } from 'vue-router'
 
 export interface TairoCollapseResolvedConfig {
   name: string
+  divider?: boolean
   icon: {
     name: string
     class?: string
@@ -83,6 +84,14 @@ export function useCollapse() {
   const isOpen = useState('navigation-open', () => true)
   const isMobileOpen = useState('navigation-mobile-open', () => false)
 
+  const header = computed(() => {
+    return app.tairo.collapse?.navigation?.header
+  })
+
+  const footer = computed(() => {
+    return app.tairo.collapse?.navigation?.footer
+  })
+
   function toggle() {
     // If no sidebar item is selected, open the first one
     const { lg } = useTailwindBreakpoints()
@@ -112,5 +121,7 @@ export function useCollapse() {
     menuItems,
     isOpen,
     isMobileOpen,
+    header,
+    footer,
   }
 }

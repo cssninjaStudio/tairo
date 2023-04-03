@@ -207,17 +207,6 @@ const navigation = [
       },
     ],
   },
-  {
-    name: 'Starters',
-    children: [
-      {
-        name: 'Regular sidebar',
-        icon: 'ph:sidebar-duotone',
-        to: '#',
-        exact: true,
-      },
-    ],
-  },
 ]
 </script>
 
