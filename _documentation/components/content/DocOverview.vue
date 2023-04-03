@@ -5,7 +5,7 @@
     <div>
       <BaseCard shape="rounded" class="p-8">
         <div
-          class="text-muted-400 hover:text-primary-500 dark:text-muted-700 dark:hover:text-primary-500 mb-7 block transition-colors duration-300"
+          class="text-muted-400 hover:text-primary-500 dark:text-muted-600 dark:hover:text-primary-500 mb-7 block transition-colors duration-300"
         >
           <TairoLogoText class="h-8 transition-colors duration-300" />
         </div>

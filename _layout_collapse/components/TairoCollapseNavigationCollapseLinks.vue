@@ -27,7 +27,7 @@ function onDropClick() {
 <template>
   <div class="group">
     <button
-      class="nui-focus text-muted-500 hover:bg-muted-200 dark:hover:bg-muted-900 hover:text-muted-600 dark:hover:text-muted-200 flex w-full cursor-pointer items-center gap-4 rounded-lg px-4 py-3 transition-colors duration-300"
+      class="nui-focus text-muted-500 hover:bg-muted-100 dark:hover:bg-muted-900 hover:text-muted-600 dark:hover:text-muted-200 flex w-full cursor-pointer items-center gap-4 rounded-lg px-4 py-3 transition-colors duration-300"
       ref="buttonRef"
       @click.stop.prevent="onDropClick"
     >
@@ -42,26 +42,28 @@ function onDropClick() {
         <Icon
           name="lucide:chevron-up"
           class="h-4 w-4 transition-transform duration-200"
-          :class="isOpen ? 'rotate-180' : ''"
+          :class="!isOpen ? 'rotate-180' : ''"
         />
       </span>
     </button>
 
     <ul
+      class="relative block ps-4"
       :class="{
         'max-h-0 overflow-hidden opacity-0 group-focus-within:max-h-max group-focus-within:overflow-visible group-focus-within:opacity-100':
           !isOpen,
-        'max-h-max opacity-100': isOpen,
+        'after:border-muted-200 max-h-max opacity-100 after:absolute after:left-0 after:top-0 after:h-full after:w-px after:border-r after:content-[``]':
+          isOpen,
       }"
     >
       <li v-for="child in props.item.children" :key="child.to">
         <NuxtLink
           :to="child.to"
           exact-active-class="bg-muted-200 dark:bg-muted-900"
-          class="nui-focus text-muted-500 hover:bg-muted-200 dark:hover:bg-muted-900 hover:text-muted-600 dark:hover:text-muted-200 flex cursor-pointer items-center gap-4 rounded-lg px-4 py-3 transition-colors duration-300"
+          class="nui-focus text-muted-500 hover:bg-muted-200 dark:hover:bg-muted-900 hover:text-muted-600 dark:hover:text-muted-200 flex cursor-pointer items-center gap-2 rounded-lg p-2 transition-colors duration-300"
         >
           <Icon :name="child.icon.name" :class="child.icon.class" />
-          <span class="whitespace-nowrap font-sans text-sm">
+          <span class="whitespace-nowrap font-sans text-[0.85rem]">
             {{ child.name }}
           </span>
         </NuxtLink>

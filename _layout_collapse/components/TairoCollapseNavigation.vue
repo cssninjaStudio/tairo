@@ -1,15 +1,6 @@
 <script setup lang="ts">
 import { useCollapse } from '../composables/collapse'
 
-const props = withDefaults(
-  defineProps<{
-    expanded?: boolean
-  }>(),
-  {
-    expanded: false,
-  },
-)
-
 const collapse = reactive(useCollapse())
 </script>
 
@@ -51,7 +42,7 @@ const collapse = reactive(useCollapse())
       :class="!collapse.isOpen ? 'px-4' : 'px-6'"
     >
       <!--Menu-->
-      <ul id="sidebar-menu" class="space-y-3">
+      <ul id="sidebar-menu" class="space-y-2">
         <!--Menu item-->
         <li v-for="(item, index) in collapse.menuItems" :key="index">
           <TairoCollapseNavigationCollapseLinks
@@ -62,7 +53,7 @@ const collapse = reactive(useCollapse())
             v-else-if="item.to"
             :to="item.to"
             exact-active-class="bg-muted-200 dark:bg-muted-900"
-            class="nui-focus text-muted-500 hover:bg-muted-200 dark:hover:bg-muted-900 hover:text-muted-600 dark:hover:text-muted-200 flex cursor-pointer items-center gap-4 rounded-lg py-3 transition-colors duration-300"
+            class="nui-focus text-muted-500 hover:bg-muted-100 dark:hover:bg-muted-900 hover:text-muted-600 dark:hover:text-muted-200 flex cursor-pointer items-center gap-4 rounded-lg py-3 transition-colors duration-300"
             :class="!collapse.isOpen ? 'px-1 justify-center' : 'px-4'"
           >
             <Icon :name="item.icon.name" :class="item.icon.class" />

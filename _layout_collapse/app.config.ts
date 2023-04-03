@@ -22,12 +22,12 @@ export default defineAppConfig({
               {
                 name: 'Collapse',
                 to: '/documentation/shuriken-ui/forms/listbox',
-                icon: { name: 'ph:sidebar-duotone', class: 'w-5 h-5' },
+                icon: { name: 'ph:sidebar-duotone', class: 'w-4 h-4' },
               },
               {
                 name: 'Collapse 2 ',
                 to: '/documentation/shuriken-ui/forms/input',
-                icon: { name: 'ph:sidebar-duotone', class: 'w-5 h-5' },
+                icon: { name: 'ph:sidebar-duotone', class: 'w-4 h-4' },
               },
               // {
               //   name: 'Collapse 3',

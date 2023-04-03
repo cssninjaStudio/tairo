@@ -96,7 +96,7 @@ function onClick() {
     <TairoModal
       :classes="{
         wrapper: '!items-start pt-20',
-        dialog: 'p-2',
+        dialog: 'p-3 rounded-xl',
       }"
       :open="isOpen"
       size="md"
@@ -106,6 +106,7 @@ function onClick() {
         <div class="px-2 pb-2">
           <BaseInput
             type="search"
+            shape="curved"
             icon="lucide:search"
             v-model="search"
             placeholder="Search in docs and demo pages"
@@ -171,6 +172,14 @@ function onClick() {
           </ul>
         </div>
       </BaseFocusLoop>
+      <div class="flex flex-col items-center py-3 text-center">
+        <div>
+          <BaseText size="xs" weight="medium" class="text-muted-400"
+            >Powered by</BaseText
+          >
+          <TairoLogoText class="text-muted-400 mx-auto w-20" />
+        </div>
+      </div>
     </TairoModal>
   </div>
 </template>

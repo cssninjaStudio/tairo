@@ -42,7 +42,7 @@ const docNav = computed(
       <TairoSubsidebarHeader />
     </template>
 
-    <div>
+    <div class="pt-2">
       <template v-for="link in docNav" :key="link?._path">
         <div
           v-if="!link.children"

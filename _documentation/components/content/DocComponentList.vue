@@ -134,15 +134,57 @@ const componentsByCategoryMaped = computed(() => {
                 >
                   <div
                     v-if="component?.route?.components"
-                    class="flex w-full flex-wrap justify-start gap-2"
+                    class="flex w-full flex-wrap items-center justify-start gap-2"
                   >
                     <BaseTag
-                      v-for="name of component?.route?.components"
+                      v-for="name of component?.route?.components.slice(0, 1)"
                       :key="name"
                       condensed
                     >
-                      <span class="font-mono text-sm">&lt;{{ name }}&gt;</span>
+                      <span class="font-mono text-xs">&lt;{{ name }}&gt;</span>
                     </BaseTag>
+                    <div
+                      v-if="component?.route?.components.length > 1"
+                      class="group/popover ml-auto"
+                    >
+                      <TairoPopover size="md" orientation="end">
+                        <div
+                          class="bg-muted-100 dark:bg-muted-700 text-muted-500 dark:text-muted-400 hover:border-primary-500 group-hover/popover:text-primary-500 dark:group-hover/popover:text-primary-500 flex h-8 w-8 items-center justify-center rounded-full border-2 border-transparent transition-colors duration-200"
+                        >
+                          <BaseText
+                            size="xs"
+                            weight="medium"
+                            class="block group-hover/popover:hidden"
+                            >+{{
+                              component?.route?.components.length - 1
+                            }}</BaseText
+                          >
+                          <Icon
+                            name="lucide:more-horizontal"
+                            class="!hidden h-3 w-3 group-hover/popover:!block"
+                          />
+                        </div>
+
+                        <template #content>
+                          <div class="p-3">
+                            <BaseHeading size="sm" weight="medium">
+                              Related components
+                            </BaseHeading>
+                          </div>
+                          <div class="flex flex-wrap gap-2 px-3 pb-3">
+                            <BaseTag
+                              v-for="name of component?.route?.components"
+                              :key="name"
+                              condensed
+                            >
+                              <span class="font-mono text-xs"
+                                >&lt;{{ name }}&gt;</span
+                              >
+                            </BaseTag>
+                          </div>
+                        </template>
+                      </TairoPopover>
+                    </div>
                   </div>
                 </div>
               </BaseCard>
