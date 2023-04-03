@@ -4,51 +4,6 @@ const props = defineProps<{
   title?: string
 }>()
 
-const tree = [
-  {
-    item: '.app',
-    open: true,
-    children: [
-      {
-        item: 'index.ts',
-      },
-      {
-        item: 'shims.d.ts',
-      },
-    ],
-  },
-  {
-    item: 'src',
-    open: true,
-    children: [
-      {
-        item: 'pages',
-        children: [],
-      },
-      {
-        item: 'home',
-        children: [
-          {
-            item: 'index.ts',
-          },
-          {
-            item: 'styles.css',
-          },
-        ],
-      },
-      {
-        item: 'index.vue',
-      },
-    ],
-  },
-  {
-    item: 'app.config.ts',
-  },
-  {
-    item: 'tailwind.config.cjs',
-  },
-]
-
 const layerTree = [
   {
     item: {
@@ -778,7 +733,7 @@ const mergedTree = [
 
 <template>
   <DocLayoutSection :title="props.title" :tag="props.tag">
-    <div class="grid grid-cols-2 gap-6">
+    <div class="grid gap-6 md:grid-cols-2">
       <BaseCard class="mb-4 p-6">
         <div>
           <span>Your project ...</span>

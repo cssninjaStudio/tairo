@@ -15,18 +15,52 @@ const contentPath = computed(() => {
   return `/documentation/${slug.join('/')}`
 })
 
-const { data, pending } = await useAsyncData(
-  'page-data',
-  () =>
-    queryContent()
-      .where({
-        _path: contentPath.value,
-      })
-      .findOne(),
-  {
-    watch: [contentPath],
-  },
-)
+const [{ data, pending }, { data: tree }] = await Promise.all([
+  useAsyncData(
+    'page-data',
+    () =>
+      queryContent()
+        .where({
+          _path: contentPath.value,
+        })
+        .findOne(),
+    {
+      watch: [contentPath],
+    },
+  ),
+  useAsyncData(
+    'page-tree',
+    () => {
+      const path = contentPath.value.split('/')
+      path.shift() // remove /documentation
+      path.pop() // remove current page
+
+      // build all parent paths
+      const paths = []
+
+      for (let i = 0; i < path.length; i++) {
+        const parentPath = `/${path.slice(0, i + 1).join('/')}`
+        paths.push(parentPath)
+        paths.push(`${parentPath}/_dir`)
+      }
+
+      paths.push(`${contentPath.value}/_dir`)
+
+      return (
+        queryContent()
+          .where({
+            _path: { $in: paths },
+          })
+          .without(['body'])
+          // .only(['_path', '_dir', 'title'])
+          .find() as Promise<any[]>
+      )
+    },
+    {
+      watch: [contentPath],
+    },
+  ),
+])
 
 watchEffect(() => {
   const title = data.value?.title
@@ -36,15 +70,7 @@ watchEffect(() => {
   route.meta.title = title || 'Page not found'
 })
 
-useHead({
-  title: data.value?.title || 'Page not found',
-  meta: [
-    {
-      name: 'description',
-      content: data.value?.description || '',
-    },
-  ],
-})
+useContentHead(data as any)
 
 const breadcrumb = computed(() => {
   const items: any[] = []
@@ -65,23 +91,23 @@ const breadcrumb = computed(() => {
     })
   }
 
-  items.push({
-    label: 'Documentation Hub',
-    to: '/documentation',
-  })
-
-  if (data.value?.category && data.value.category !== 'Uncategorized') {
+  for (const item of tree.value || []) {
+    if (items.find((i) => i.to === item._path)) {
+      continue
+    }
     items.push({
-      label: data.value?.category,
+      label: item.title,
+      to: item._path.endsWith('_dir')
+        ? item._path.replace('/_dir', '')
+        : item._path,
     })
   }
 
-  if (data.value && data.value._path !== '/documentation') {
+  if (data.value?.title) {
     items.push({
       label: data.value?.title,
     })
   }
-
   return items
 })
 </script>
@@ -110,7 +136,7 @@ const breadcrumb = computed(() => {
         v-if="!pending && data"
         class="relative hidden lg:me-6 lg:block lg:w-1/4 xl:me-0"
       >
-        <DocLayoutToc :key="`toc-${data._path}`" />
+        <TairoToc :key="`toc-${data._path}`" />
       </div>
     </div>
   </div>

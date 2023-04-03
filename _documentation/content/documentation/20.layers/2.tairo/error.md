@@ -1,0 +1,6 @@
+---
+title: TairoError
+components:
+  - TairoError
+---
+

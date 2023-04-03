@@ -48,10 +48,3 @@ export default defineComponent({
     />
   </div>
 </template>
-
-<style>
-pre code .line {
-  display: block;
-  min-height: 1rem;
-}
-</style>

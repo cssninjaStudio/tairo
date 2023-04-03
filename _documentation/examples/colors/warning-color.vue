@@ -19,5 +19,7 @@
     <div class="bg-warning-800 h-8 w-8 rounded-lg" data-tooltip="bg-warning-800"></div>
 
     <div class="bg-warning-900 h-8 w-8 rounded-lg" data-tooltip="bg-warning-900"></div>
+
+    <div class="bg-warning-950 h-8 w-8 rounded-lg" data-tooltip="bg-warning-950"></div>
   </div>
 </template>

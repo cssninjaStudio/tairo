@@ -28,12 +28,23 @@ const { data: contentDocs, pending } = useAsyncData(
     // @ts-ignore This may be undefined if documentation is disabled
     return queryContent()
       .where({
-        $or: [
+        $and: [
           {
-            components: { $icontains: search.value },
+            _type: 'markdown',
+            _empty: false,
           },
           {
-            title: { $regex: `/${search.value}/i` },
+            $or: [
+              {
+                components: { $icontains: search.value },
+              },
+              {
+                title: { $regex: `/${search.value.replaceAll(' ', '.*')}/i` },
+              },
+              {
+                _path: { $regex: `/${search.value.replaceAll(' ', '.*')}/i` },
+              },
+            ],
           },
         ],
       })
