@@ -68,27 +68,7 @@ const mainClass = computed(() => {
 <template>
   <div class="bg-muted-100 dark:bg-muted-900 pb-20">
     <slot name="navigation">
-      <TairoCollapseNavigation v-if="collapseEnabled">
-        <div
-          v-if="app.tairo.collapse?.navigation?.logo?.component"
-          class="flex h-16 w-16 items-center justify-center"
-        >
-          <slot name="logo">
-            <NuxtLink to="/" class="flex items-center justify-center">
-              <component
-                :is="
-                  app.tairo.collapse.navigation.logo.resolve === false
-                    ? app.tairo.collapse.navigation.logo.component
-                    : resolveComponent(
-                        app.tairo.collapse.navigation.logo.component,
-                      )
-                "
-                v-bind="app.tairo.collapse.navigation.logo.props"
-              ></component>
-            </NuxtLink>
-          </slot>
-        </div>
-      </TairoCollapseNavigation>
+      <TairoCollapseNavigation v-if="collapseEnabled" />
     </slot>
 
     <div :class="mainClass">

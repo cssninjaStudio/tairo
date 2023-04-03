@@ -4,22 +4,15 @@ export default defineNuxtSchema({
       collapse: {
         navigation: {
           enabled: true,
-          logo: {
-            component: 'TairoLogo',
+          header: {
+            component: '',
             resolve: true,
             props: {},
           },
-          header: {
-            button: {
-              icon: {
-                type: 'object',
-                properties: {
-                  name: { type: 'string' },
-                  class: { type: 'string' },
-                },
-              },
-              click: { type: 'function' },
-            },
+          footer: {
+            component: '',
+            resolve: true,
+            props: {},
           },
           items: {
             $schema: {
@@ -73,14 +66,6 @@ export default defineNuxtSchema({
                   click: { type: 'function' },
                 },
               },
-            },
-          },
-          footer: {
-            account: {
-              component: 'DemoAccountMenu',
-              label: 'My Account',
-              resolve: true,
-              props: {},
             },
           },
         },

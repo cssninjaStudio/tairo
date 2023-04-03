@@ -2,11 +2,12 @@
 import { useCollapse } from '../composables/collapse'
 
 const collapse = reactive(useCollapse())
+const app = useAppConfig()
 </script>
 
 <template>
   <div
-    class="dark:bg-muted-800 border-muted-200 dark:border-muted-700 fixed left-0 top-0 z-[60] h-full border-r bg-white transition-all duration-300"
+    class="dark:bg-muted-800 border-muted-200 dark:border-muted-700 fixed left-0 top-0 z-[60] flex h-full flex-col border-r bg-white transition-all duration-300"
     :class="[
       !collapse.isOpen ? 'w-[80px]' : 'w-[250px]',
       collapse.isMobileOpen
@@ -15,30 +16,17 @@ const collapse = reactive(useCollapse())
     ]"
   >
     <!--Header-->
-    <div class="flex h-16 w-full items-center justify-between px-6">
-      <slot></slot>
-
-      <!--Fold button-->
-      <button
-        type="button"
-        class="nui-mask nui-mask-blob hover:bg-muted-200 dark:hover:bg-muted-700/60 text-muted-500 dark:text-muted-400 hidden h-10 w-10 cursor-pointer items-center justify-center transition-colors duration-300"
-        :class="!collapse.isOpen ? 'hidden' : 'lg:flex'"
-      >
-        <Icon :name="collapse.header.icon.name" class="h-4 w-4" />
-      </button>
-
-      <!--Mobile button-->
-      <button
-        type="button"
-        class="nui-mask nui-mask-blob hover:bg-muted-200 dark:hover:bg-muted-800 text-muted-700 dark:text-muted-400 flex h-10 w-10 cursor-pointer items-center justify-center transition-colors duration-300 lg:hidden"
-        @click="collapse.isMobileOpen = false"
-      >
-        <Icon name="lucide:arrow-left" class="h-5 w-5" />
-      </button>
-    </div>
+    <slot name="header">
+      <component
+        v-if="app.tairo.collapse?.navigation?.header?.component"
+        :is="
+          resolveComponent(app.tairo.collapse?.navigation?.header?.component)
+        "
+      />
+    </slot>
     <!--Body-->
     <div
-      class="slimscroll relative h-[calc(100%_-_8rem)] w-full overflow-y-auto py-6"
+      class="slimscroll relative w-full grow overflow-y-auto py-6"
       :class="!collapse.isOpen ? 'px-4' : 'px-6'"
     >
       <!--Menu-->
@@ -87,21 +75,13 @@ const collapse = reactive(useCollapse())
       </ul>
     </div>
     <!--Footer-->
-    <div
-      class="flex h-16 w-full items-center gap-4 transition-all duration-150"
-      :class="!collapse.isOpen ? 'px-2 justify-center' : 'px-6'"
-    >
-      <!--Account menu-->
+    <slot name="footer">
       <component
-        :is="resolveComponent(collapse.footer?.account.component)"
-        v-if="collapse.footer?.account?.component"
-      ></component>
-      <span
-        class="text-muted-500 dark:text-muted-400/80 whitespace-nowrap font-sans text-sm"
-        :class="!collapse.isOpen ? 'hidden' : 'block'"
-      >
-        {{ collapse.footer?.account?.label }}
-      </span>
-    </div>
+        v-if="app.tairo.collapse?.navigation?.footer?.component"
+        :is="
+          resolveComponent(app.tairo.collapse?.navigation?.footer?.component)
+        "
+      />
+    </slot>
   </div>
 </template>

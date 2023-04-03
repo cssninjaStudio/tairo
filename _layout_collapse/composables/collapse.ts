@@ -81,8 +81,8 @@ export function useCollapse() {
     )
   })
 
-  const isOpen = useState('navigation-open', () => true)
-  const isMobileOpen = useState('navigation-mobile-open', () => false)
+  const isOpen = useState('collapse-open', () => true)
+  const isMobileOpen = useState('collapse-mobile-open', () => false)
 
   const header = computed(() => {
     return app.tairo.collapse?.navigation?.header

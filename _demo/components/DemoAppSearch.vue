@@ -109,7 +109,7 @@ function onClick() {
             shape="curved"
             icon="lucide:search"
             v-model="search"
-            placeholder="Search in docs and demo pages"
+            placeholder="Ex: button or analytics..."
             v-focus
             color-focus
           >
@@ -120,7 +120,7 @@ function onClick() {
                   navigate with <kbd>↑</kbd> and <kbd>↓</kbd>
                 </span>
                 <span v-else-if="!search" class="text-xs opacity-60">
-                  press <kbd>ctrl</kbd> + <kbd>k</kbd> to search
+                  press <kbd>ctrl</kbd> + <kbd>k</kbd> to open
                 </span>
               </span>
             </template>
@@ -173,9 +173,9 @@ function onClick() {
         </div>
       </BaseFocusLoop>
       <div class="flex flex-col items-center py-3 text-center">
-        <div>
+        <div class="scale-[0.8]">
           <BaseText size="xs" weight="medium" class="text-muted-400"
-            >Powered by</BaseText
+            >Search by</BaseText
           >
           <TairoLogoText class="text-muted-400 mx-auto w-20" />
         </div>
