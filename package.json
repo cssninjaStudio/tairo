@@ -78,7 +78,6 @@
       ]
     },
     "overrides": {
-      "rollup": "3.18.0",
       "vite": "4.3.0-beta.1"
     }
   }
