@@ -26,6 +26,8 @@ const props = withDefaults(
       <BaseButtonAction
         shape="curved"
         :to="props.to"
+        target="_blank"
+        rel="noopener"
         class="hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500"
       >
         <Icon :name="props.icon" class="h-4 w-4" />
