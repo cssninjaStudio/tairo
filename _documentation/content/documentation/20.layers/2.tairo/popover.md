@@ -3,6 +3,9 @@ title: TairoPopover
 category: Layout Elements
 components:
   - TairoPopover
+  - TairoPopoverContentHelp
+  - TairoPopoverContentDual
+  - TairoPopoverContentMedia
 description: A flexible popover that you can use to make simple text based popovers or more complex UI interactions.
 icon:
   src: /img/illustrations/components/popover-icon.svg
