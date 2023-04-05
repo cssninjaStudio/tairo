@@ -44,7 +44,7 @@ function onDropClick() {
         {{ item.name }}
       </span>
       <span
-        class="ml-auto items-center justify-center"
+        class="ms-auto items-center justify-center"
         :class="!props.expanded ? 'hidden' : 'flex'"
       >
         <Icon

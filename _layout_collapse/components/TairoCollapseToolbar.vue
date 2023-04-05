@@ -21,9 +21,9 @@ const showNavBurger = computed(() => {
 <template>
   <div
     class="relative z-50 mb-5 flex h-16 items-center gap-2"
-    :class="props.horizontalScroll && 'pr-4 xl:pr-10'"
+    :class="props.horizontalScroll && 'pe-4 xl:pe-10'"
   >
-    <TairoCollapseBurger v-if="showNavBurger" class="-ml-3" />
+    <TairoCollapseBurger v-if="showNavBurger" class="-ms-3" />
 
     <BaseHeading
       v-if="(app.tairo.toolbar as any).showTitle"
@@ -35,7 +35,7 @@ const showNavBurger = computed(() => {
       <slot name="title">{{ route.meta.title }}</slot>
     </BaseHeading>
 
-    <div class="ml-auto"></div>
+    <div class="ms-auto"></div>
     <template v-for="tool of (app.tairo.toolbar as any).tools">
       <component
         :is="resolveComponent(tool.component)"

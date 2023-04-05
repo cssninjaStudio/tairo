@@ -52,13 +52,13 @@ const mainClass = computed(() => {
   ]
 
   if (collapse.isOpen) {
-    list.push('lg:max-w-[calc(100%_-_250px)] lg:ml-[250px]')
+    list.push('lg:max-w-[calc(100%_-_250px)] lg:ms-[250px]')
   } else {
-    list.push('lg:max-w-[calc(100%_-_80px)] lg:ml-[80px]')
+    list.push('lg:max-w-[calc(100%_-_80px)] lg:ms-[80px]')
   }
 
   if (props.horizontalScroll) {
-    list.push('!pr-0 xl:!pr-0')
+    list.push('!pe-0 xl:!pe-0')
   }
 
   return list

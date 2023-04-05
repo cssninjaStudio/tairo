@@ -145,7 +145,7 @@ const componentsByCategoryMaped = computed(() => {
                     </BaseTag>
                     <div
                       v-if="component?.route?.components.length > 1"
-                      class="group/popover ml-auto"
+                      class="group/popover ms-auto"
                     >
                       <TairoPopover size="md" orientation="end">
                         <div

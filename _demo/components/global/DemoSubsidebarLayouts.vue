@@ -70,7 +70,7 @@ const navigation = [
     name: 'Form layouts',
     children: [
       {
-        name: 'Form layout V1',
+        name: 'Company form',
         icon: 'ph:article-duotone',
         to: '/layouts/form-1',
       },

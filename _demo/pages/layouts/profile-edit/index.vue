@@ -307,7 +307,7 @@ const onSubmit = handleSubmit(
         </div>
       </div>
       <div class="p-4">
-        <div class="max-w-lg mx-auto py-8 space-y-12">
+        <div class="mx-auto max-w-lg space-y-12 py-8">
           <BaseMessage v-if="success" @close="success = false">
             Your profile has been updated!
           </BaseMessage>
@@ -339,20 +339,20 @@ const onSubmit = handleSubmit(
               <BaseInputFileHeadless
                 accept="image/*"
                 v-model="inputFile"
-                v-slot="{ open, remove, preview, drop, files }"
+                v-slot="{ open, remove, preview, files }"
               >
                 <div class="relative h-24 w-24">
                   <img
                     v-if="files?.length && files.item(0)"
                     :src="preview(files.item(0)!).value"
                     alt="Upload preview"
-                    class="h-24 w-24 rounded-full object-cover object-center bg-muted-200 dark:bg-muted-700/60"
+                    class="bg-muted-200 dark:bg-muted-700/60 h-24 w-24 rounded-full object-cover object-center"
                   />
                   <img
                     v-else
                     :src="currentAvatar"
                     alt="Upload preview"
-                    class="h-24 w-24 rounded-full object-cover object-center bg-muted-200 dark:bg-muted-700/60"
+                    class="bg-muted-200 dark:bg-muted-700/60 h-24 w-24 rounded-full object-cover object-center"
                   />
                   <div
                     v-if="files?.length && files.item(0)"
@@ -364,13 +364,13 @@ const onSubmit = handleSubmit(
                       @click="remove(files.item(0)!)"
                       data-tooltip="Remove image"
                     >
-                      <Icon name="lucide:x" class="w-4 h-4" />
+                      <Icon name="lucide:x" class="h-4 w-4" />
                     </BaseButtonIcon>
                   </div>
                   <div v-else class="absolute bottom-0 end-0 z-20">
                     <div class="relative" data-tooltip="Upload image">
                       <BaseButtonIcon condensed shape="full" @click="open">
-                        <Icon name="lucide:plus" class="w-4 h-4" />
+                        <Icon name="lucide:plus" class="h-4 w-4" />
                       </BaseButtonIcon>
                     </div>
                   </div>
@@ -378,7 +378,7 @@ const onSubmit = handleSubmit(
               </BaseInputFileHeadless>
               <div
                 v-if="fileError"
-                class="inline-block font-sans text-[.8rem] text-danger-600"
+                class="text-danger-600 inline-block font-sans text-[.8rem]"
               >
                 {{ fileError }}
               </div>
