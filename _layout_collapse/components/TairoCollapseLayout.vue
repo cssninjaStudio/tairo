@@ -95,42 +95,7 @@ const mainClass = computed(() => {
       </div>
     </div>
 
-    <!-- Active Panel -->
-    <Transition
-      enter-active-class="transition-transform duration-300 ease-out"
-      :enter-from-class="
-        panels.transitionFrom === 'left'
-          ? '-translate-x-full'
-          : 'translate-x-full'
-      "
-      leave-active-class="transition-transform duration-300 ease-in"
-      :leave-to-class="
-        panels.transitionFrom === 'left'
-          ? '-translate-x-full'
-          : 'translate-x-full'
-      "
-    >
-      <slot name="panel">
-        <component
-          :is="resolveComponent(panels.current.component)"
-          v-bind="panels.currentProps"
-          v-if="panels.current?.component"
-          class="fixed top-0 z-[100] h-full w-96"
-          :class="[panels.current.position === 'left' ? 'left-0' : 'right-0']"
-        />
-      </slot>
-    </Transition>
-
-    <!-- Overlay -->
-    <div
-      class="bg-muted-800/60 fixed left-0 top-0 z-[99] h-full w-full cursor-pointer transition-opacity duration-300"
-      :class="
-        panels.current && panels.showOverlay
-          ? 'opacity-100 pointer-events-auto'
-          : 'opacity-0 pointer-events-none'
-      "
-      @click="panels.close"
-    />
+    <TairoPanels />
 
     <TairoCollapseCircularMenu v-if="circularMenuEnabled" />
   </div>

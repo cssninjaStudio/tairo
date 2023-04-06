@@ -4,7 +4,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
 
 <template>
   <div class="group inline-flex items-center justify-center text-right">
-    <Menu as="div" class="relative h-9 w-9 text-left">
+    <Menu as="div" class="relative h-9 w-9 text-left" v-slot="{ close }">
       <MenuButton as="template">
         <button
           type="button"
@@ -54,12 +54,13 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 to="/layouts/profile-edit"
                 shape="curved"
                 class="w-full"
+                @click.passive="close"
                 >Manage Account</BaseButton
               >
             </div>
           </div>
           <div class="px-6 py-1.5">
-            <MenuItem v-slot="{ active }">
+            <MenuItem as="div" v-slot="{ active }">
               <NuxtLink
                 to="#"
                 class="group flex w-full items-center rounded-md p-2 text-sm transition-colors duration-300"
@@ -68,6 +69,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                     ? 'bg-muted-100 dark:bg-muted-700 text-primary-500'
                     : 'text-muted-500',
                 ]"
+                @click.passive="close"
               >
                 <div
                   class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
@@ -88,7 +90,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 </div>
               </NuxtLink>
             </MenuItem>
-            <MenuItem v-slot="{ active }">
+            <MenuItem as="div" v-slot="{ active }">
               <NuxtLink
                 to="#"
                 class="group flex w-full items-center rounded-md p-2 text-sm transition-colors duration-300"
@@ -97,6 +99,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                     ? 'bg-muted-100 dark:bg-muted-700 text-primary-500'
                     : 'text-muted-500',
                 ]"
+                @click.passive="close"
               >
                 <div
                   class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
@@ -119,7 +122,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 </div>
               </NuxtLink>
             </MenuItem>
-            <MenuItem v-slot="{ active }">
+            <MenuItem as="div" v-slot="{ active }">
               <NuxtLink
                 to="#"
                 class="group flex w-full items-center rounded-md p-2 text-sm transition-colors duration-300"
@@ -128,6 +131,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                     ? 'bg-muted-100 dark:bg-muted-700 text-primary-500'
                     : 'text-muted-500',
                 ]"
+                @click.passive="close"
               >
                 <div
                   class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
@@ -151,7 +155,9 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
           </div>
 
           <div class="p-6">
-            <BaseButton shape="curved" class="w-full">Logout</BaseButton>
+            <BaseButton @click.passive="close" shape="curved" class="w-full">
+              Logout
+            </BaseButton>
           </div>
         </MenuItems>
       </Transition>

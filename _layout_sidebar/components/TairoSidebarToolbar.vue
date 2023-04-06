@@ -41,13 +41,6 @@ const showNavBurger = computed(() => {
     </BaseHeading>
 
     <div class="ms-auto"></div>
-    <template v-for="tool of (app.tairo.toolbar as any).tools">
-      <component
-        :is="resolveComponent(tool.component)"
-        v-if="tool.component"
-        :key="tool.component"
-        v-bind="tool.props"
-      />
-    </template>
+    <TairoSidebarTools class="h-16" />
   </div>
 </template>
