@@ -64,6 +64,7 @@ export default defineNuxtConfig({
       ],
     },
   },
+  sourcemap: process.env.NODE_ENV !== 'production',
   vite: {
     define: {
       // This is required for shiki to work (used to render markdown code blocks)
