@@ -103,7 +103,7 @@ const iconClasses = computed(() => {
       ></div>
     </div>
 
-    <div v-if="props.closable" class="absolute top-2 end-2">
+    <div v-if="props.closable" class="absolute end-2 top-2">
       <BaseButtonClose @click="state.close" />
     </div>
 
@@ -114,7 +114,7 @@ const iconClasses = computed(() => {
     >
       <Icon :name="props.icon" class="h-6 w-6" :class="iconClasses" />
     </div>
-    <div class="text-md min-w-[220px] max-w-xl py-4 ps-8 pe-12">
+    <div class="text-md min-w-[220px] max-w-xl py-4 pe-12 ps-8">
       <strong
         v-if="props.title"
         class="text-semibold font-heading maw-w-lg block truncate"

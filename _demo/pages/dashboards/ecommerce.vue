@@ -728,9 +728,9 @@ function useBarOrders() {
 <template>
   <div>
     <!-- Header -->
-    <div class="flex flex-col md:flex-row md:items-center justify-between mb-8">
+    <div class="mb-8 flex flex-col justify-between md:flex-row md:items-center">
       <div
-        class="flex flex-col md:flex-row items-center gap-4 text-center md:text-left max-w-[425px] ltablet:max-w-full lg:max-w-full"
+        class="ltablet:max-w-full flex max-w-[425px] flex-col items-center gap-4 text-center md:flex-row md:text-left lg:max-w-full"
       >
         <BaseAvatar src="/img/avatars/2.svg" size="lg" />
         <div>
@@ -751,7 +751,7 @@ function useBarOrders() {
         </div>
       </div>
       <div
-        class="flex items-center justify-center md:justify-start gap-2 mt-4 md:mt-0"
+        class="mt-4 flex items-center justify-center gap-2 md:mt-0 md:justify-start"
       >
         <BaseButton>
           <span>View Reports</span>
@@ -764,7 +764,7 @@ function useBarOrders() {
     <!-- Grid -->
     <div class="grid grid-cols-12 gap-6">
       <!-- Tile -->
-      <div class="col-span-12 sm:col-span-3 ptablet:col-span-6">
+      <div class="ptablet:col-span-6 col-span-12 sm:col-span-3">
         <BaseCard class="p-6">
           <div class="flex items-center justify-between">
             <BaseHeading
@@ -772,19 +772,19 @@ function useBarOrders() {
               size="sm"
               weight="medium"
               lead="tight"
-              class="mb-1 text-muted-400"
+              class="text-muted-400 mb-1"
             >
               <span>Sales</span>
             </BaseHeading>
             <Icon
               name="ph:shopping-cart-duotone"
-              class="w-7 h-7 text-primary-500"
+              class="text-primary-500 h-7 w-7"
             />
           </div>
           <div class="flex items-center justify-between gap-6 pt-4">
             <div class="grow">
               <span
-                class="font-sans font-semibold text-xl text-muted-800 dark:text-muted-100"
+                class="text-muted-800 dark:text-muted-100 font-sans text-xl font-semibold"
               >
                 641.4k
               </span>
@@ -796,7 +796,7 @@ function useBarOrders() {
         </BaseCard>
       </div>
       <!-- Tile -->
-      <div class="col-span-12 sm:col-span-3 ptablet:col-span-6">
+      <div class="ptablet:col-span-6 col-span-12 sm:col-span-3">
         <BaseCard class="p-6">
           <div class="flex items-center justify-between">
             <BaseHeading
@@ -804,16 +804,16 @@ function useBarOrders() {
               size="sm"
               weight="medium"
               lead="tight"
-              class="mb-1 text-muted-400"
+              class="text-muted-400 mb-1"
             >
               <span>Income</span>
             </BaseHeading>
-            <Icon name="ph:money-duotone" class="w-7 h-7 text-success-500" />
+            <Icon name="ph:money-duotone" class="text-success-500 h-7 w-7" />
           </div>
           <div class="flex items-center justify-between gap-6 pt-4">
             <div class="grow">
               <span
-                class="font-sans font-semibold text-xl text-muted-800 dark:text-muted-100"
+                class="text-muted-800 dark:text-muted-100 font-sans text-xl font-semibold"
               >
                 $389.9k
               </span>
@@ -825,7 +825,7 @@ function useBarOrders() {
         </BaseCard>
       </div>
       <!-- Tile -->
-      <div class="col-span-12 sm:col-span-3 ptablet:col-span-6">
+      <div class="ptablet:col-span-6 col-span-12 sm:col-span-3">
         <BaseCard class="p-6">
           <div class="flex items-center justify-between">
             <BaseHeading
@@ -833,16 +833,16 @@ function useBarOrders() {
               size="sm"
               weight="medium"
               lead="tight"
-              class="mb-1 text-muted-400"
+              class="text-muted-400 mb-1"
             >
               <span>Orders</span>
             </BaseHeading>
-            <Icon name="ph:package-duotone" class="w-7 h-7 text-info-500" />
+            <Icon name="ph:package-duotone" class="text-info-500 h-7 w-7" />
           </div>
           <div class="flex items-center justify-between gap-6 pt-4">
             <div class="grow">
               <span
-                class="font-sans font-semibold text-xl text-muted-800 dark:text-muted-100"
+                class="text-muted-800 dark:text-muted-100 font-sans text-xl font-semibold"
               >
                 981
               </span>
@@ -854,7 +854,7 @@ function useBarOrders() {
         </BaseCard>
       </div>
       <!-- Tile -->
-      <div class="col-span-12 sm:col-span-3 ptablet:col-span-6">
+      <div class="ptablet:col-span-6 col-span-12 sm:col-span-3">
         <BaseCard class="p-6">
           <div class="flex items-center justify-between">
             <BaseHeading
@@ -862,16 +862,16 @@ function useBarOrders() {
               size="sm"
               weight="medium"
               lead="tight"
-              class="mb-1 text-muted-400"
+              class="text-muted-400 mb-1"
             >
               <span>Abandonned</span>
             </BaseHeading>
-            <Icon name="ph:timer-duotone" class="w-7 h-7 text-danger-500" />
+            <Icon name="ph:timer-duotone" class="text-danger-500 h-7 w-7" />
           </div>
           <div class="flex items-center justify-between gap-6 pt-4">
             <div class="grow">
               <span
-                class="font-sans font-semibold text-xl text-muted-800 dark:text-muted-100"
+                class="text-muted-800 dark:text-muted-100 font-sans text-xl font-semibold"
               >
                 43
               </span>
@@ -885,7 +885,7 @@ function useBarOrders() {
       <!-- Chart -->
       <div class="relative col-span-12 md:col-span-7">
         <BaseCard class="p-6">
-          <div class="flex items-center justify-between mb-2">
+          <div class="mb-2 flex items-center justify-between">
             <BaseHeading
               as="h3"
               size="md"
@@ -897,30 +897,30 @@ function useBarOrders() {
             </BaseHeading>
             <NuxtLink
               to="#"
-              class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
+              class="bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline"
             >
               Details
             </NuxtLink>
           </div>
           <div class="flex gap-8">
             <div>
-              <span class="font-sans text-xs text-muted-400">This month</span>
-              <p class="font-sans font-medium text-lg text-primary-500">
+              <span class="text-muted-400 font-sans text-xs">This month</span>
+              <p class="text-primary-500 font-sans text-lg font-medium">
                 $75,689
               </p>
             </div>
             <div>
-              <span class="font-sans text-xs text-muted-400">Last month</span>
+              <span class="text-muted-400 font-sans text-xs">Last month</span>
               <p
-                class="font-sans font-medium text-lg text-muted-800 dark:text-muted-100"
+                class="text-muted-800 dark:text-muted-100 font-sans text-lg font-medium"
               >
                 $59,724
               </p>
             </div>
             <div>
-              <span class="font-sans text-xs text-muted-400">Average</span>
+              <span class="text-muted-400 font-sans text-xs">Average</span>
               <p
-                class="font-sans font-medium text-lg text-muted-800 dark:text-muted-100"
+                class="text-muted-800 dark:text-muted-100 font-sans text-lg font-medium"
               >
                 $66,561
               </p>
@@ -931,7 +931,7 @@ function useBarOrders() {
       </div>
       <!-- Column -->
       <div class="relative col-span-12 md:col-span-5">
-        <div class="flex flex-col gap-6 h-full">
+        <div class="flex h-full flex-col gap-6">
           <!-- Chart -->
           <BaseCard class="flex-1 p-6">
             <div class="flex items-center justify-center">
@@ -941,7 +941,7 @@ function useBarOrders() {
                   size="md"
                   weight="semibold"
                   lead="tight"
-                  class="text-muted-800 dark:text-white mb-4"
+                  class="text-muted-800 mb-4 dark:text-white"
                 >
                   <span>Sales Revenue</span>
                 </BaseHeading>
@@ -950,7 +950,7 @@ function useBarOrders() {
                   size="lg"
                   weight="light"
                   lead="tight"
-                  class="text-muted-800 dark:text-white mb-2"
+                  class="text-muted-800 mb-2 dark:text-white"
                 >
                   <span>$8,641.26</span>
                 </BaseHeading>
@@ -968,7 +968,7 @@ function useBarOrders() {
           </BaseCard>
           <!-- Charts -->
           <BaseCard class="flex-1 p-6">
-            <div class="flex items-center justify-between mb-6">
+            <div class="mb-6 flex items-center justify-between">
               <BaseHeading
                 as="h3"
                 size="md"
@@ -980,7 +980,7 @@ function useBarOrders() {
               </BaseHeading>
             </div>
             <div class="flex justify-between gap-2">
-              <div class="flex-1 flex flex-col gap-2 text-center">
+              <div class="flex flex-1 flex-col gap-2 text-center">
                 <AddonApexcharts v-bind="radialSmallOne" />
                 <div class="-mt-6">
                   <BaseHeading
@@ -997,7 +997,7 @@ function useBarOrders() {
                   </BaseParagraph>
                 </div>
               </div>
-              <div class="flex-1 flex flex-col gap-2 text-center">
+              <div class="flex flex-1 flex-col gap-2 text-center">
                 <AddonApexcharts v-bind="radialSmallTwo" />
                 <div class="-mt-6">
                   <BaseHeading
@@ -1014,7 +1014,7 @@ function useBarOrders() {
                   </BaseParagraph>
                 </div>
               </div>
-              <div class="flex-1 flex flex-col gap-2 text-center">
+              <div class="flex flex-1 flex-col gap-2 text-center">
                 <AddonApexcharts v-bind="radialSmallThree" />
                 <div class="-mt-6">
                   <BaseHeading
@@ -1037,10 +1037,10 @@ function useBarOrders() {
       </div>
       <!-- Column -->
       <div
-        class="relative col-span-12 md:col-span-6 ltablet:col-span-4 lg:col-span-3"
+        class="ltablet:col-span-4 relative col-span-12 md:col-span-6 lg:col-span-3"
       >
         <BaseCard class="flex flex-col p-6">
-          <div class="flex items-center justify-between mb-6">
+          <div class="mb-6 flex items-center justify-between">
             <BaseHeading
               as="h3"
               size="md"
@@ -1054,7 +1054,7 @@ function useBarOrders() {
           <div class="py-16">
             <AddonApexcharts v-bind="gaugePersonal" class="-mt-14" />
           </div>
-          <div class="text-center mt-auto">
+          <div class="mt-auto text-center">
             <BaseParagraph size="sm">
               <span class="text-muted-400">
                 Your score has been calculated based on the latest metrics
@@ -1065,7 +1065,7 @@ function useBarOrders() {
       </div>
       <!-- Column -->
       <div
-        class="relative col-span-12 md:col-span-6 ltablet:col-span-4 lg:col-span-6"
+        class="ltablet:col-span-4 relative col-span-12 md:col-span-6 lg:col-span-6"
       >
         <BaseCard class="relative p-6">
           <div class="mb-6">
@@ -1084,7 +1084,7 @@ function useBarOrders() {
       </div>
       <!-- Column -->
       <div
-        class="relative col-span-12 md:col-span-6 ltablet:col-span-4 lg:col-span-3"
+        class="ltablet:col-span-4 relative col-span-12 md:col-span-6 lg:col-span-3"
       >
         <!-- Calendar -->
         <BaseCard class="p-2">

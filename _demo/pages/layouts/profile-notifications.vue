@@ -16,21 +16,21 @@ if (data.value) {
 
 <template>
   <div class="min-h-screen overflow-hidden">
-    <div class="w-full max-w-4xl mx-auto pt-12">
+    <div class="mx-auto w-full max-w-4xl pt-12">
       <div v-if="notifications.length === 0"></div>
       <div v-else class="">
         <div
           v-for="item in notifications"
           :key="item.id"
-          class="[&:not(:first-child)]:pt-3 relative flex items-center gap-4 after:content-[''] after:absolute after:top-3 after:start-[8px] ltablet:after:start-[104px] lg:after:start-[104px] after:w-px after:h-full after:border-e-2 after:border-muted-300 dark:after:border-muted-800"
+          class="ltablet:after:start-[104px] after:border-muted-300 dark:after:border-muted-800 relative flex items-center gap-4 after:absolute after:start-[8px] after:top-3 after:h-full after:w-px after:border-e-2 after:content-[''] lg:after:start-[104px] [&:not(:first-child)]:pt-3"
         >
-          <div class="hidden ltablet:block lg:block w-24 text-right">
+          <div class="ltablet:block hidden w-24 text-right lg:block">
             <BaseText size="xs" class="text-muted-400">
               {{ item.date }}
             </BaseText>
           </div>
           <div
-            class="relative z-10 shrink-0 h-4 w-4 rounded-full bg-white dark:bg-muted-800"
+            class="dark:bg-muted-800 relative z-10 h-4 w-4 shrink-0 rounded-full bg-white"
           >
             <div
               class="h-4 w-4 rounded-full border-2 border-current"
@@ -39,9 +39,9 @@ if (data.value) {
           </div>
 
           <BaseCard class="p-4">
-            <div class="w-full flex items-center gap-4">
+            <div class="flex w-full items-center gap-4">
               <div
-                class="h-2 w-2 rounded-full shrink-0"
+                class="h-2 w-2 shrink-0 rounded-full"
                 :class="
                   item.status === 0
                     ? 'bg-primary-500'
@@ -68,11 +68,11 @@ if (data.value) {
                 </BaseText>
                 <BaseText size="xs" class="text-muted-400">
                   <span class="ltablet:hidden lg:hidden">{{ item.date }}</span>
-                  <span class="px-2 ltablet:hidden lg:hidden">&middot;</span>
+                  <span class="ltablet:hidden px-2 lg:hidden">&middot;</span>
                   <span>{{ item.time }}</span>
                 </BaseText>
               </div>
-              <div class="hidden sm:flex items-center gap-3 ms-auto">
+              <div class="ms-auto hidden items-center gap-3 sm:flex">
                 <BaseAvatar
                   v-for="user in item.people"
                   :key="user.name"

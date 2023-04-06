@@ -90,42 +90,42 @@ const onSubmit = handleSubmit(async (values) => {
 
 <template>
   <div
-    class="relative w-full min-h-screen px-4 bg-muted-100 dark:bg-muted-900 overflow-hidden"
+    class="bg-muted-100 dark:bg-muted-900 relative min-h-screen w-full overflow-hidden px-4"
   >
     <div
-      class="h-16 w-full max-w-6xl mx-auto px-4 flex items-center justify-between"
+      class="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-4"
     >
       <NuxtLink
         to="/dashboards"
         class="text-muted-400 hover:text-primary-500 dark:text-muted-700 dark:hover:text-primary-500 transition-colors duration-300"
       >
-        <TairoLogo class="w-10 h-10" />
+        <TairoLogo class="h-10 w-10" />
       </NuxtLink>
       <div>
         <BaseThemeToggle />
       </div>
     </div>
-    <div class="w-full flex items-center justify-center">
-      <div class="relative w-full max-w-2xl mx-auto">
+    <div class="flex w-full items-center justify-center">
+      <div class="relative mx-auto w-full max-w-2xl">
         <!--Form-->
-        <div class="me-auto ms-auto w-full mt-4">
+        <div class="me-auto ms-auto mt-4 w-full">
           <form
             method="POST"
             action=""
             @submit.prevent="onSubmit"
-            class="w-full max-w-md me-auto ms-auto mt-4"
+            class="me-auto ms-auto mt-4 w-full max-w-md"
             novalidate
           >
             <div class="text-center">
               <BaseHeading as="h2" size="3xl" weight="medium">
                 Welcome back!
               </BaseHeading>
-              <BaseParagraph size="sm" class="mb-6 text-muted-400">
+              <BaseParagraph size="sm" class="text-muted-400 mb-6">
                 Login with social media or your credentials
               </BaseParagraph>
             </div>
             <div class="px-8 py-4">
-              <div class="space-y-4 mb-4">
+              <div class="mb-4 space-y-4">
                 <Field
                   v-slot="{ field, errorMessage, handleChange, handleBlur }"
                   name="email"
@@ -188,54 +188,54 @@ const onSubmit = handleSubmit(async (values) => {
                   :loading="isSubmitting"
                   type="submit"
                   color="primary"
-                  class="w-full !h-12"
+                  class="!h-12 w-full"
                 >
                   Sign In
                 </BaseButton>
               </div>
-              <div class="grid sm:grid-cols-3 gap-0 mb-6">
+              <div class="mb-6 grid gap-0 sm:grid-cols-3">
                 <hr
-                  class="mt-3 hidden sm:block border-t border-muted-200 dark:border-muted-700"
+                  class="border-muted-200 dark:border-muted-700 mt-3 hidden border-t sm:block"
                 />
                 <span
-                  class="relative top-0.5 font-sans text-center bg-muted-100 dark:bg-muted-900 text-sm text-muted-400"
+                  class="bg-muted-100 dark:bg-muted-900 text-muted-400 relative top-0.5 text-center font-sans text-sm"
                 >
                   Or continue with
                 </span>
                 <hr
-                  class="mt-3 hidden sm:block border-t border-muted-200 dark:border-muted-700"
+                  class="border-muted-200 dark:border-muted-700 mt-3 hidden border-t sm:block"
                 />
               </div>
               <!--Social signup-->
               <div class="grid grid-cols-3 gap-2">
                 <button
                   type="button"
-                  class="relative inline-flex justify-center items-center shadow-sm font-semibold text-sm py-3 px-0 bg-muted-200 dark:bg-muted-700 hover:bg-white dark:hover:bg-muted-600 text-muted-600 dark:text-muted-400 rounded text-center w-full transition-all duration-300 nui-focus"
+                  class="bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-600 text-muted-600 dark:text-muted-400 nui-focus relative inline-flex w-full items-center justify-center rounded px-0 py-3 text-center text-sm font-semibold shadow-sm transition-all duration-300 hover:bg-white"
                 >
-                  <Icon name="fa6-brands:google" class="w-5 h-5" />
+                  <Icon name="fa6-brands:google" class="h-5 w-5" />
                 </button>
                 <button
                   type="button"
-                  class="relative inline-flex justify-center items-center shadow-sm font-semibold text-sm py-3 px-0 bg-muted-200 dark:bg-muted-700 hover:bg-white dark:hover:bg-muted-600 text-muted-600 dark:text-muted-400 rounded text-center w-full transition-all duration-300 nui-focus"
+                  class="bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-600 text-muted-600 dark:text-muted-400 nui-focus relative inline-flex w-full items-center justify-center rounded px-0 py-3 text-center text-sm font-semibold shadow-sm transition-all duration-300 hover:bg-white"
                 >
-                  <Icon name="fa6-brands:twitter" class="w-5 h-5" />
+                  <Icon name="fa6-brands:twitter" class="h-5 w-5" />
                 </button>
                 <button
                   type="button"
-                  class="relative inline-flex justify-center items-center shadow-sm font-semibold text-sm py-3 px-0 bg-muted-200 dark:bg-muted-700 hover:bg-white dark:hover:bg-muted-600 text-muted-600 dark:text-muted-400 rounded text-center w-full transition-all duration-300 nui-focus"
+                  class="bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-600 text-muted-600 dark:text-muted-400 nui-focus relative inline-flex w-full items-center justify-center rounded px-0 py-3 text-center text-sm font-semibold shadow-sm transition-all duration-300 hover:bg-white"
                 >
-                  <Icon name="fa6-brands:linkedin-in" class="w-5 h-5" />
+                  <Icon name="fa6-brands:linkedin-in" class="h-5 w-5" />
                 </button>
               </div>
 
               <!--No account link-->
               <p
-                class="flex justify-between mt-4 font-sans text-sm leading-5 text-muted-400"
+                class="text-muted-400 mt-4 flex justify-between font-sans text-sm leading-5"
               >
                 <span>Don't have an account?</span>
                 <NuxtLink
                   to="/auth/signup-2"
-                  class="font-medium text-primary-600 hover:text-primary-500 underline-offset-4 hover:underline transition ease-in-out duration-150"
+                  class="text-primary-600 hover:text-primary-500 font-medium underline-offset-4 transition duration-150 ease-in-out hover:underline"
                 >
                   Sign Up
                 </NuxtLink>

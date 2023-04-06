@@ -164,14 +164,14 @@ function useBarTeamEfficiency() {
       <div class="col-span-12">
         <!-- Header -->
         <BaseCard class="p-5">
-          <div class="flex flex-col md:flex-row items-center">
+          <div class="flex flex-col items-center md:flex-row">
             <div
-              class="flex flex-col items-center md:items-start ltablet:flex-row ltablet:items-center lg:flex-row lg:items-center gap-4 text-center md:text-left"
+              class="ltablet:flex-row ltablet:items-center flex flex-col items-center gap-4 text-center md:items-start md:text-left lg:flex-row lg:items-center"
             >
               <BaseAvatar
                 src="/img/avatars/2.svg"
                 size="xl"
-                badgeSrc="/img/icons/flags/united-states-of-america.svg"
+                badge-src="/img/icons/flags/united-states-of-america.svg"
               />
               <div class="text-center md:text-left">
                 <BaseHeading
@@ -190,7 +190,7 @@ function useBarTeamEfficiency() {
             </div>
 
             <div
-              class="flex flex-col ltablet:flex-row ltablet:items-center lg:flex-row lg:items-center gap-6 ms-auto text-center md:text-left"
+              class="ltablet:flex-row ltablet:items-center ms-auto flex flex-col gap-6 text-center md:text-left lg:flex-row lg:items-center"
             >
               <div class="flex-1">
                 <BaseHeading
@@ -206,33 +206,33 @@ function useBarTeamEfficiency() {
                   </span>
                 </BaseHeading>
                 <BaseParagraph>
-                  <span class="text-sm text-muted-400">
+                  <span class="text-muted-400 text-sm">
                     Are currently pending
                   </span>
                 </BaseParagraph>
               </div>
               <BaseCard
-                class="relative flex-1 flex items-center justify-center p-5 bg-gradient-to-br from-primary-600 to-primary-700 shadow-xl shadow-primary-500/20"
+                class="from-primary-600 to-primary-700 shadow-primary-500/20 relative flex flex-1 items-center justify-center bg-gradient-to-br p-5 shadow-xl"
               >
-                <div class="relative flex flex-col gap-3 z-20">
+                <div class="relative z-20 flex flex-col gap-3">
                   <BaseParagraph size="sm">
                     <span class="text-white/80">
                       Start using our team and project management tools
                     </span>
                   </BaseParagraph>
                   <NuxtLink
-                    class="font-sans text-white text-sm hover:underline underline-offset-4"
+                    class="font-sans text-sm text-white underline-offset-4 hover:underline"
                     to="#"
                   >
                     Learn More
                   </NuxtLink>
                 </div>
                 <div
-                  class="absolute bottom-0 end-2 w-14 h-14 flex items-center justify-center z-10"
+                  class="absolute bottom-0 end-2 z-10 flex h-14 w-14 items-center justify-center"
                 >
                   <Icon
                     name="ph:crown-duotone"
-                    class="w-10 h-10 text-primary-900/50"
+                    class="text-primary-900/50 h-10 w-10"
                   ></Icon>
                 </div>
               </BaseCard>
@@ -241,12 +241,12 @@ function useBarTeamEfficiency() {
         </BaseCard>
       </div>
       <!--Grid column-->
-      <div class="col-span-12 ltablet:col-span-8 lg:col-span-8">
+      <div class="ltablet:col-span-8 col-span-12 lg:col-span-8">
         <!-- Inner grid -->
         <div class="flex flex-col gap-6">
           <!-- Project list widget -->
           <BaseCard class="p-6">
-            <div class="flex items-center justify-between mb-8">
+            <div class="mb-8 flex items-center justify-between">
               <BaseHeading
                 as="h3"
                 size="md"
@@ -258,7 +258,7 @@ function useBarTeamEfficiency() {
               </BaseHeading>
               <NuxtLink
                 to="#"
-                class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
+                class="bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline"
               >
                 View All
               </NuxtLink>
@@ -267,7 +267,7 @@ function useBarTeamEfficiency() {
           </BaseCard>
           <!-- Chart -->
           <BaseCard class="p-6">
-            <div class="flex items-center justify-between mb-6">
+            <div class="mb-6 flex items-center justify-between">
               <BaseHeading
                 as="h3"
                 size="md"
@@ -279,7 +279,7 @@ function useBarTeamEfficiency() {
               </BaseHeading>
               <NuxtLink
                 to="#"
-                class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
+                class="bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline"
               >
                 Reports
               </NuxtLink>
@@ -288,7 +288,7 @@ function useBarTeamEfficiency() {
           </BaseCard>
           <!-- Chart -->
           <BaseCard class="p-6">
-            <div class="flex items-center justify-between mb-6">
+            <div class="mb-6 flex items-center justify-between">
               <BaseHeading
                 as="h3"
                 size="md"
@@ -300,7 +300,7 @@ function useBarTeamEfficiency() {
               </BaseHeading>
               <NuxtLink
                 to="#"
-                class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
+                class="bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline"
               >
                 Reports
               </NuxtLink>
@@ -310,13 +310,13 @@ function useBarTeamEfficiency() {
         </div>
       </div>
       <!--Grid column-->
-      <div class="col-span-12 ltablet:col-span-4 lg:col-span-4">
+      <div class="ltablet:col-span-4 col-span-12 lg:col-span-4">
         <!-- Inner grid -->
-        <div class="grid ptablet:grid-cols-2 lg:flex lg:flex-col gap-6">
+        <div class="ptablet:grid-cols-2 grid gap-6 lg:flex lg:flex-col">
           <!-- Widget -->
           <BaseCard class="p-6">
             <!-- Title -->
-            <div class="flex items-center justify-between mb-8">
+            <div class="mb-8 flex items-center justify-between">
               <BaseHeading
                 as="h3"
                 size="md"
@@ -328,7 +328,7 @@ function useBarTeamEfficiency() {
               </BaseHeading>
               <NuxtLink
                 to="#"
-                class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
+                class="bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline"
               >
                 View All
               </NuxtLink>
@@ -338,7 +338,7 @@ function useBarTeamEfficiency() {
           <!-- Widget -->
           <BaseCard class="p-6">
             <!-- Title -->
-            <div class="flex items-center justify-between mb-8">
+            <div class="mb-8 flex items-center justify-between">
               <BaseHeading
                 as="h3"
                 size="md"
@@ -350,7 +350,7 @@ function useBarTeamEfficiency() {
               </BaseHeading>
               <NuxtLink
                 to="#"
-                class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
+                class="bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline"
               >
                 View All
               </NuxtLink>
@@ -363,14 +363,14 @@ function useBarTeamEfficiency() {
               <template #image>
                 <img
                   src="/img/illustrations/placeholders/flat/chart-guy.svg"
-                  class="w-full block dark:hidden"
+                  class="block w-full dark:hidden"
                   width="225"
                   height="150"
                   alt="Placeholder illustration"
                 />
                 <img
                   src="/img/illustrations/placeholders/flat/chart-guy-dark.svg"
-                  class="w-full hidden dark:block"
+                  class="hidden w-full dark:block"
                   width="225"
                   height="150"
                   alt="Placeholder illustration"
@@ -381,7 +381,7 @@ function useBarTeamEfficiency() {
                 size="lg"
                 weight="light"
                 lead="tight"
-                class="mb-1 text-muted-800 dark:text-white"
+                class="text-muted-800 mb-1 dark:text-white"
               >
                 <span>Pro Freatures</span>
               </BaseHeading>

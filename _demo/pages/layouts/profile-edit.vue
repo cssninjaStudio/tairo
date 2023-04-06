@@ -8,9 +8,9 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
 
 <template>
   <div class="min-h-screen overflow-hidden">
-    <div class="grid sm:grid-cols-12 gap-8">
+    <div class="grid gap-8 sm:grid-cols-12">
       <div class="col-span-12 sm:col-span-4">
-        <div class="w-full flex items-center gap-2">
+        <div class="flex w-full items-center gap-2">
           <BaseAvatar
             :src="data?.personalInfo.picture"
             :badge-src="data?.personalInfo.badge"
@@ -27,14 +27,14 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
           </div>
         </div>
         <div class="mt-8 max-w-[240px]">
-          <ul class="font-sans text-sm space-y-1">
+          <ul class="space-y-1 font-sans text-sm">
             <li>
               <NuxtLink
                 to="/layouts/profile-edit"
                 exact-active-class="!text-primary-500 !bg-primary-500/10"
-                class="flex items-center gap-2 p-3 rounded-lg text-muted-400 hover:text-muted-600 dark:hover:text-muted-200 hover:bg-muted-50 dark:hover:bg-muted-700/50 transition-colors duration-300"
+                class="text-muted-400 hover:text-muted-600 dark:hover:text-muted-200 hover:bg-muted-50 dark:hover:bg-muted-700/50 flex items-center gap-2 rounded-lg p-3 transition-colors duration-300"
               >
-                <Icon name="ph:user-duotone" class="w-4 h-4" />
+                <Icon name="ph:user-duotone" class="h-4 w-4" />
                 <span>General</span>
               </NuxtLink>
             </li>
@@ -42,9 +42,9 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
               <NuxtLink
                 to="/layouts/profile-edit/experience"
                 exact-active-class="!text-primary-500 !bg-primary-500/10"
-                class="flex items-center gap-2 p-3 rounded-lg text-muted-400 hover:text-muted-600 dark:hover:text-muted-200 hover:bg-muted-50 dark:hover:bg-muted-700/50 transition-colors duration-300"
+                class="text-muted-400 hover:text-muted-600 dark:hover:text-muted-200 hover:bg-muted-50 dark:hover:bg-muted-700/50 flex items-center gap-2 rounded-lg p-3 transition-colors duration-300"
               >
-                <Icon name="ph:buildings-duotone" class="w-4 h-4" />
+                <Icon name="ph:buildings-duotone" class="h-4 w-4" />
                 <span>Experience</span>
               </NuxtLink>
             </li>
@@ -52,9 +52,9 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
               <NuxtLink
                 to="/layouts/profile-edit/skills"
                 exact-active-class="!text-primary-500 !bg-primary-500/10"
-                class="flex items-center gap-2 p-3 rounded-lg text-muted-400 hover:text-muted-600 dark:hover:text-muted-200 hover:bg-muted-50 dark:hover:bg-muted-700/50 transition-colors duration-300"
+                class="text-muted-400 hover:text-muted-600 dark:hover:text-muted-200 hover:bg-muted-50 dark:hover:bg-muted-700/50 flex items-center gap-2 rounded-lg p-3 transition-colors duration-300"
               >
-                <Icon name="ph:sketch-logo-duotone" class="w-4 h-4" />
+                <Icon name="ph:sketch-logo-duotone" class="h-4 w-4" />
                 <span>Skills & Tools</span>
               </NuxtLink>
             </li>
@@ -62,9 +62,9 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
               <NuxtLink
                 to="/layouts/profile-edit/settings"
                 exact-active-class="!text-primary-500 !bg-primary-500/10"
-                class="flex items-center gap-2 p-3 rounded-lg text-muted-400 hover:text-muted-600 dark:hover:text-muted-200 hover:bg-muted-50 dark:hover:bg-muted-700/50 transition-colors duration-300"
+                class="text-muted-400 hover:text-muted-600 dark:hover:text-muted-200 hover:bg-muted-50 dark:hover:bg-muted-700/50 flex items-center gap-2 rounded-lg p-3 transition-colors duration-300"
               >
-                <Icon name="ph:gear-six-duotone" class="w-4 h-4" />
+                <Icon name="ph:gear-six-duotone" class="h-4 w-4" />
                 <span>Settings</span>
               </NuxtLink>
             </li>

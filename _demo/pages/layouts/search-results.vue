@@ -43,8 +43,8 @@ const filteredResults = computed(() => {
 </script>
 
 <template>
-  <div class="w-full max-w-5xl mx-auto">
-    <div class="w-full max-w-sm mx-auto mt-6 flex items-center justify-center">
+  <div class="mx-auto w-full max-w-5xl">
+    <div class="mx-auto mt-6 flex w-full max-w-sm items-center justify-center">
       <BaseInput
         v-model="searchTerms"
         icon="lucide:search"
@@ -57,7 +57,7 @@ const filteredResults = computed(() => {
         }"
       />
     </div>
-    <div class="mt-2 mb-12 text-center">
+    <div class="mb-12 mt-2 text-center">
       <BaseText size="sm" class="text-muted-400"
         >78 results for "internal projects"</BaseText
       >
@@ -241,11 +241,11 @@ const filteredResults = computed(() => {
       </div>
       <div class="col-span-12 sm:col-span-8">
         <div
-          class="flex items-center gap-4 font-sans border-b border-muted-200 dark:border-muted-800"
+          class="border-muted-200 dark:border-muted-800 flex items-center gap-4 border-b font-sans"
         >
           <button
             type="button"
-            class="py-4 px-3 border-b-2 text-sm"
+            class="border-b-2 px-3 py-4 text-sm"
             :class="
               activeFilter === 'all'
                 ? 'text-muted-700 dark:text-muted-100 border-primary-500'
@@ -257,7 +257,7 @@ const filteredResults = computed(() => {
           </button>
           <button
             type="button"
-            class="py-4 px-3 border-b-2 text-sm"
+            class="border-b-2 px-3 py-4 text-sm"
             :class="
               activeFilter === 'people'
                 ? 'text-muted-700 dark:text-muted-100 border-primary-500'
@@ -269,7 +269,7 @@ const filteredResults = computed(() => {
           </button>
           <button
             type="button"
-            class="py-4 px-3 border-b-2 text-sm"
+            class="border-b-2 px-3 py-4 text-sm"
             :class="
               activeFilter === 'project'
                 ? 'text-muted-700 dark:text-muted-100 border-primary-500'
@@ -281,7 +281,7 @@ const filteredResults = computed(() => {
           </button>
           <button
             type="button"
-            class="py-4 px-3 border-b-2 text-sm"
+            class="border-b-2 px-3 py-4 text-sm"
             :class="
               activeFilter === 'file'
                 ? 'text-muted-700 dark:text-muted-100 border-primary-500'
@@ -300,17 +300,17 @@ const filteredResults = computed(() => {
               :key="result.name"
               class="p-5"
             >
-              <div class="w-full flex items-center gap-4">
+              <div class="flex w-full items-center gap-4">
                 <BaseAvatar v-if="result.type === 'people'" :src="result.src" />
                 <img
                   v-else-if="result.type === 'project'"
-                  class="w-10 h-10 shrink-0 object-cover object-center rounded-full"
+                  class="h-10 w-10 shrink-0 rounded-full object-cover object-center"
                   :src="result.src"
                   :alt="result.name"
                 />
                 <img
                   v-else-if="result.type === 'file'"
-                  class="w-10 h-10 shrink-0"
+                  class="h-10 w-10 shrink-0"
                   :src="result.src"
                   :alt="result.name"
                 />

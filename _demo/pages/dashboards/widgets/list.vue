@@ -5,13 +5,13 @@ definePageMeta({
 </script>
 
 <template>
-  <div class="grid sm:grid-cols-3 ptablet:grid-cols-2 gap-6">
+  <div class="ptablet:grid-cols-2 grid gap-6 sm:grid-cols-3">
     <!-- Column -->
     <div class="relative">
       <!-- Widget -->
       <BaseCard shape="curved" class="p-6">
         <!-- Title -->
-        <div class="flex items-center justify-between mb-8">
+        <div class="mb-8 flex items-center justify-between">
           <BaseHeading
             as="h3"
             size="md"
@@ -23,7 +23,7 @@ definePageMeta({
           </BaseHeading>
           <NuxtLink
             to="#"
-            class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
+            class="bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline"
           >
             View All
           </NuxtLink>
@@ -36,7 +36,7 @@ definePageMeta({
       <!-- Widget -->
       <BaseCard shape="curved" class="p-6">
         <!-- Title -->
-        <div class="flex items-center justify-between mb-8">
+        <div class="mb-8 flex items-center justify-between">
           <BaseHeading
             as="h3"
             size="md"
@@ -48,7 +48,7 @@ definePageMeta({
           </BaseHeading>
           <NuxtLink
             to="#"
-            class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
+            class="bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline"
           >
             View All
           </NuxtLink>
@@ -68,7 +68,7 @@ definePageMeta({
       <!-- Widget -->
       <BaseCard shape="curved" class="p-6">
         <!-- Title -->
-        <div class="flex items-center justify-between mb-8">
+        <div class="mb-8 flex items-center justify-between">
           <BaseHeading
             as="h3"
             size="md"
@@ -80,7 +80,7 @@ definePageMeta({
           </BaseHeading>
           <NuxtLink
             to="#"
-            class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
+            class="bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline"
           >
             View All
           </NuxtLink>
@@ -93,7 +93,7 @@ definePageMeta({
       <!-- Widget -->
       <BaseCard shape="curved" class="p-6">
         <!-- Title -->
-        <div class="flex items-center justify-between mb-8">
+        <div class="mb-8 flex items-center justify-between">
           <BaseHeading
             as="h3"
             size="md"
@@ -105,7 +105,7 @@ definePageMeta({
           </BaseHeading>
           <NuxtLink
             to="#"
-            class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
+            class="bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline"
           >
             View All
           </NuxtLink>
@@ -125,7 +125,7 @@ definePageMeta({
       <!-- Widget -->
       <BaseCard class="p-6" shape="curved">
         <!-- Title -->
-        <div class="flex items-center justify-between mb-8">
+        <div class="mb-8 flex items-center justify-between">
           <BaseHeading
             as="h3"
             size="md"
@@ -137,7 +137,7 @@ definePageMeta({
           </BaseHeading>
           <NuxtLink
             to="#"
-            class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
+            class="bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline"
           >
             View All
           </NuxtLink>
@@ -150,7 +150,7 @@ definePageMeta({
       <!-- Widget -->
       <BaseCard class="p-6" shape="curved">
         <!-- Title -->
-        <div class="flex items-center justify-between mb-8">
+        <div class="mb-8 flex items-center justify-between">
           <BaseHeading
             as="h3"
             size="md"
@@ -162,7 +162,7 @@ definePageMeta({
           </BaseHeading>
           <NuxtLink
             to="#"
-            class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
+            class="bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline"
           >
             View All
           </NuxtLink>
@@ -175,7 +175,7 @@ definePageMeta({
       <!-- Widget -->
       <BaseCard class="p-6" shape="curved">
         <!-- Title -->
-        <div class="flex items-center justify-between mb-8">
+        <div class="mb-8 flex items-center justify-between">
           <BaseHeading
             as="h3"
             size="md"
@@ -187,7 +187,7 @@ definePageMeta({
           </BaseHeading>
           <NuxtLink
             to="#"
-            class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
+            class="bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline"
           >
             View All
           </NuxtLink>
@@ -200,7 +200,7 @@ definePageMeta({
       <!-- Widget -->
       <BaseCard class="p-6" shape="curved">
         <!-- Title -->
-        <div class="flex items-center justify-between mb-8">
+        <div class="mb-8 flex items-center justify-between">
           <BaseHeading
             as="h3"
             size="md"
@@ -212,7 +212,7 @@ definePageMeta({
           </BaseHeading>
           <NuxtLink
             to="#"
-            class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
+            class="bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline"
           >
             View All
           </NuxtLink>
@@ -225,7 +225,7 @@ definePageMeta({
       <!-- Widget -->
       <BaseCard class="p-6" shape="curved">
         <!-- Title -->
-        <div class="flex items-center justify-between mb-8">
+        <div class="mb-8 flex items-center justify-between">
           <BaseHeading
             as="h3"
             size="md"
@@ -237,7 +237,7 @@ definePageMeta({
           </BaseHeading>
           <NuxtLink
             to="#"
-            class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
+            class="bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline"
           >
             View All
           </NuxtLink>
@@ -250,7 +250,7 @@ definePageMeta({
       <!-- Widget -->
       <BaseCard class="p-6" shape="curved">
         <!-- Title -->
-        <div class="flex items-center justify-between mb-8">
+        <div class="mb-8 flex items-center justify-between">
           <BaseHeading
             as="h3"
             size="md"
@@ -262,7 +262,7 @@ definePageMeta({
           </BaseHeading>
           <NuxtLink
             to="#"
-            class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
+            class="bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline"
           >
             View All
           </NuxtLink>

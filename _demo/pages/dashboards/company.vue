@@ -230,66 +230,66 @@ function toggleAllVisibleSelection() {
       <!-- Header -->
       <BaseCard class="p-6">
         <div
-          class="w-full flex flex-col sm:flex-row items-center xs:divide-y sm:divide-x divide-muted-200 dark:divide-muted-700"
+          class="xs:divide-y divide-muted-200 dark:divide-muted-700 flex w-full flex-col items-center sm:flex-row sm:divide-x"
         >
           <!-- Item -->
           <div class="flex-1">
-            <div class="flex flex-col py-4 sm:py-0 px-4 text-center">
+            <div class="flex flex-col p-4 text-center sm:py-0">
               <Icon
                 name="ph:users-duotone"
-                class="w-8 h-8 mx-auto text-primary-500"
+                class="text-primary-500 mx-auto h-8 w-8"
               />
               <h4
-                class="font-sans font-semibold text-xl text-muted-800 dark:text-muted-100"
+                class="text-muted-800 dark:text-muted-100 font-sans text-xl font-semibold"
               >
                 162
               </h4>
-              <p class="font-sans text-sm text-muted-400">New Users</p>
+              <p class="text-muted-400 font-sans text-sm">New Users</p>
             </div>
           </div>
           <!-- Item -->
           <div class="flex-1">
-            <div class="flex flex-col py-4 sm:py-0 px-4 text-center">
+            <div class="flex flex-col p-4 text-center sm:py-0">
               <Icon
                 name="ph:coins-duotone"
-                class="w-8 h-8 mx-auto text-primary-500"
+                class="text-primary-500 mx-auto h-8 w-8"
               />
               <h4
-                class="font-sans font-semibold text-xl text-muted-800 dark:text-muted-100"
+                class="text-muted-800 dark:text-muted-100 font-sans text-xl font-semibold"
               >
                 $8,579
               </h4>
-              <p class="font-sans text-sm text-muted-400">Daily Income</p>
+              <p class="text-muted-400 font-sans text-sm">Daily Income</p>
             </div>
           </div>
           <!-- Item -->
           <div class="flex-1">
-            <div class="flex flex-col py-4 sm:py-0 px-4 text-center">
+            <div class="flex flex-col p-4 text-center sm:py-0">
               <Icon
                 name="ph:briefcase-duotone"
-                class="w-8 h-8 mx-auto text-primary-500"
+                class="text-primary-500 mx-auto h-8 w-8"
               />
               <h4
-                class="font-sans font-semibold text-xl text-muted-800 dark:text-muted-100"
+                class="text-muted-800 dark:text-muted-100 font-sans text-xl font-semibold"
               >
                 192
               </h4>
-              <p class="font-sans text-sm text-muted-400">Completed Projects</p>
+              <p class="text-muted-400 font-sans text-sm">Completed Projects</p>
             </div>
           </div>
           <!-- Item -->
           <div class="flex-1">
-            <div class="flex flex-col py-4 sm:py-0 px-4 text-center">
+            <div class="flex flex-col p-4 text-center sm:py-0">
               <Icon
                 name="ph:ticket-duotone"
-                class="w-8 h-8 mx-auto text-primary-500"
+                class="text-primary-500 mx-auto h-8 w-8"
               />
               <h4
-                class="font-sans font-semibold text-xl text-muted-800 dark:text-muted-100"
+                class="text-muted-800 dark:text-muted-100 font-sans text-xl font-semibold"
               >
                 32
               </h4>
-              <p class="font-sans text-sm text-muted-400">Active Tickets</p>
+              <p class="text-muted-400 font-sans text-sm">Active Tickets</p>
             </div>
           </div>
         </div>
@@ -297,19 +297,19 @@ function toggleAllVisibleSelection() {
       <!-- Grid -->
       <div class="grid grid-cols-12 gap-6">
         <!-- Widget -->
-        <div class="col-span-12 sm:col-span-4 ptablet:col-span-6">
-          <BaseCard class="p-6 h-full">
+        <div class="ptablet:col-span-6 col-span-12 sm:col-span-4">
+          <BaseCard class="h-full p-6">
             <DemoCompanyOverview />
           </BaseCard>
         </div>
         <!-- Widget -->
-        <div class="col-span-12 sm:col-span-4 ptablet:col-span-6">
+        <div class="ptablet:col-span-6 col-span-12 sm:col-span-4">
           <BaseCard class="relative h-full">
             <DemoChartAreaStats />
           </BaseCard>
         </div>
         <!-- Widget -->
-        <div class="col-span-12 sm:col-span-4 ptablet:col-span-12">
+        <div class="ptablet:col-span-12 col-span-12 sm:col-span-4">
           <BaseCard class="relative h-full">
             <DemoChartBarSocialChannels />
           </BaseCard>
@@ -360,7 +360,7 @@ function toggleAllVisibleSelection() {
                     <h4 class="font-heading text-sm font-semibold">
                       {{ member.name }}
                     </h4>
-                    <p class="font-sans text-xs text-muted-400">
+                    <p class="text-muted-400 font-sans text-xs">
                       {{ member.role }}
                     </p>
                   </div>
@@ -402,7 +402,7 @@ function toggleAllVisibleSelection() {
               <TairoTableCell>
                 <a
                   href="#"
-                  class="text-violet-500 dark:text-violet-400 hover:opacity-75 transition-opacity duration-300"
+                  class="text-violet-500 transition-opacity duration-300 hover:opacity-75 dark:text-violet-400"
                 >
                   View
                 </a>
@@ -411,9 +411,9 @@ function toggleAllVisibleSelection() {
           </TairoTable>
         </div>
         <!-- Widget -->
-        <div class="col-span-12 sm:col-span-3 ptablet:col-span-6">
-          <BaseCard class="h-full flex flex-col p-6">
-            <div class="flex items-center justify-between mb-6">
+        <div class="ptablet:col-span-6 col-span-12 sm:col-span-3">
+          <BaseCard class="flex h-full flex-col p-6">
+            <div class="mb-6 flex items-center justify-between">
               <BaseHeading
                 as="h3"
                 size="md"
@@ -427,7 +427,7 @@ function toggleAllVisibleSelection() {
             <div class="py-16">
               <AddonApexcharts v-bind="gaugePersonal" class="-mt-14" />
             </div>
-            <div class="text-center mt-auto">
+            <div class="mt-auto text-center">
               <BaseParagraph size="sm">
                 <span class="text-muted-400">
                   Your score has been calculated based on the latest metrics
@@ -437,7 +437,7 @@ function toggleAllVisibleSelection() {
           </BaseCard>
         </div>
         <!-- Chart -->
-        <div class="col-span-12 sm:col-span-6 ptablet:col-span-6">
+        <div class="ptablet:col-span-6 col-span-12 sm:col-span-6">
           <BaseCard class="relative p-6">
             <div class="mb-6">
               <BaseHeading
@@ -454,8 +454,8 @@ function toggleAllVisibleSelection() {
           </BaseCard>
         </div>
         <!-- Widget -->
-        <div class="col-span-12 sm:col-span-3 ptablet:hidden">
-          <BaseCard class="h-full flex flex-col p-2">
+        <div class="ptablet:hidden col-span-12 sm:col-span-3">
+          <BaseCard class="flex h-full flex-col p-2">
             <Calendar
               :attributes="[
                 {
@@ -477,7 +477,7 @@ function toggleAllVisibleSelection() {
         <div class="col-span-12">
           <BaseCard class="p-6">
             <!-- Title -->
-            <div class="flex items-center justify-between mb-10">
+            <div class="mb-10 flex items-center justify-between">
               <BaseHeading
                 as="h3"
                 size="md"
@@ -489,7 +489,7 @@ function toggleAllVisibleSelection() {
               </BaseHeading>
               <NuxtLink
                 to="#"
-                class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
+                class="bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline"
               >
                 View All
               </NuxtLink>

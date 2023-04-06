@@ -161,9 +161,9 @@ const students = [
 <template>
   <div>
     <!-- Header -->
-    <div class="flex flex-col md:flex-row md:items-center justify-between mb-8">
+    <div class="mb-8 flex flex-col justify-between md:flex-row md:items-center">
       <div
-        class="flex flex-col md:flex-row items-center gap-4 text-center md:text-left max-w-[425px] ltablet:max-w-full lg:max-w-full"
+        class="ltablet:max-w-full flex max-w-[425px] flex-col items-center gap-4 text-center md:flex-row md:text-left lg:max-w-full"
       >
         <BaseAvatar src="/img/avatars/2.svg" size="lg" />
         <div>
@@ -182,7 +182,7 @@ const students = [
         </div>
       </div>
       <div
-        class="flex items-center justify-center md:justify-start gap-2 mt-4 md:mt-0"
+        class="mt-4 flex items-center justify-center gap-2 md:mt-0 md:justify-start"
       >
         <BaseButton>
           <span>Settings</span>
@@ -193,14 +193,14 @@ const students = [
       </div>
     </div>
     <!-- Grid -->
-    <div class="grid grid-cols-12 gap-6 ltablet:gap-4">
+    <div class="ltablet:gap-4 grid grid-cols-12 gap-6">
       <!-- Course Card -->
       <div
         v-for="(course, index) in courses"
         :key="index"
-        class="relative col-span-12 sm:col-span-6 ltablet:col-span-4 lg:col-span-4"
+        class="ltablet:col-span-4 relative col-span-12 sm:col-span-6 lg:col-span-4"
       >
-        <BaseCard shape="curved" class="h-full flex flex-col p-6">
+        <BaseCard shape="curved" class="flex h-full flex-col p-6">
           <div class="mb-6">
             <BaseTag color="primary">
               <span>{{ course.category }}</span>
@@ -222,7 +222,7 @@ const students = [
               <span>{{ course.description }}</span>
             </BaseParagraph>
           </div>
-          <div class="flex items-center justify-between mt-auto mb-8">
+          <div class="mb-8 mt-auto flex items-center justify-between">
             <BaseAvatarGroup :avatars="course.students" :limit="3" size="sm" />
             <div>
               <BaseButtonAction>
@@ -236,17 +236,17 @@ const students = [
               size="md"
               weight="medium"
               lead="tight"
-              class="mb-2 text-muted-800 dark:text-muted-100"
+              class="text-muted-800 dark:text-muted-100 mb-2"
             >
               <span>Week {{ course.week }} lecture recording</span>
             </BaseHeading>
             <div class="flex gap-6">
-              <div class="flex items-center gap-1 text-muted-400">
-                <Icon name="ph:timer-duotone" class="w-5 h-5" />
+              <div class="text-muted-400 flex items-center gap-1">
+                <Icon name="ph:timer-duotone" class="h-5 w-5" />
                 <span class="font-sans text-sm">{{ course.duration }} min</span>
               </div>
-              <div class="flex items-center gap-1 text-muted-400">
-                <Icon name="ph:chat-circle-dots-duotone" class="w-5 h-5" />
+              <div class="text-muted-400 flex items-center gap-1">
+                <Icon name="ph:chat-circle-dots-duotone" class="h-5 w-5" />
                 <span class="font-sans text-sm">
                   {{ course.comments }} comments
                 </span>
@@ -259,13 +259,13 @@ const students = [
               size="md"
               weight="medium"
               lead="tight"
-              class="mb-2 text-muted-800 dark:text-muted-100"
+              class="text-muted-800 dark:text-muted-100 mb-2"
             >
               <span>Week {{ course.week }} examination</span>
             </BaseHeading>
             <div class="flex gap-6">
-              <div class="flex items-center gap-1 text-muted-400">
-                <Icon name="ph:calendar-check-duotone" class="w-5 h-5" />
+              <div class="text-muted-400 flex items-center gap-1">
+                <Icon name="ph:calendar-check-duotone" class="h-5 w-5" />
                 <span class="font-sans text-sm">
                   {{ course.date }} — {{ course.time }}
                 </span>
@@ -281,9 +281,9 @@ const students = [
       </div>
     </div>
     <!-- Grid -->
-    <div class="grid grid-cols-12 gap-x-6 ltablet:gap-x-4 gap-y-12 mt-10">
+    <div class="ltablet:gap-x-4 mt-10 grid grid-cols-12 gap-x-6 gap-y-12">
       <!-- Column -->
-      <div class="col-span-12 ltablet:col-span-4 lg:col-span-4">
+      <div class="ltablet:col-span-4 col-span-12 lg:col-span-4">
         <div class="mb-4">
           <BaseHeading
             as="h2"
@@ -307,11 +307,11 @@ const students = [
             shape="curved"
             class="p-4"
           >
-            <div class="w-full flex items-center gap-3">
+            <div class="flex w-full items-center gap-3">
               <img
                 :src="file.icon"
                 :alt="file.name"
-                class="w-10 h-10 shrink-0"
+                class="h-10 w-10 shrink-0"
               />
               <div>
                 <BaseHeading
@@ -331,7 +331,7 @@ const students = [
               </div>
               <div class="ms-auto">
                 <BaseButtonIcon small data-tooltip="Download file">
-                  <Icon name="lucide:arrow-down" class="w-4 h-4" />
+                  <Icon name="lucide:arrow-down" class="h-4 w-4" />
                 </BaseButtonIcon>
               </div>
             </div>
@@ -339,7 +339,7 @@ const students = [
         </div>
       </div>
       <!-- Column -->
-      <div class="col-span-12 ltablet:col-span-8 lg:col-span-8">
+      <div class="ltablet:col-span-8 col-span-12 lg:col-span-8">
         <div class="mb-4">
           <BaseHeading
             as="h2"
@@ -364,7 +364,7 @@ const students = [
             <template #start>
               <DemoFlexTableStart
                 label="Student"
-                hideLabel
+                hide-label
                 :title="student.name"
                 :subtitle="student.completion"
                 :avatar="student.avatar"
@@ -373,18 +373,18 @@ const students = [
             <template #end>
               <DemoFlexTableCell
                 label="location"
-                hideLabel
+                hide-label
                 class="w-full sm:w-32"
               >
                 <span
-                  class="line-clamp-1 font-sans text-sm text-muted-500 dark:text-muted-400"
+                  class="text-muted-500 dark:text-muted-400 line-clamp-1 font-sans text-sm"
                 >
                   {{ student.location }}
                 </span>
               </DemoFlexTableCell>
               <DemoFlexTableCell
                 label="status"
-                hideLabel
+                hide-label
                 class="w-full sm:w-16"
               >
                 <BaseTag
@@ -398,16 +398,16 @@ const students = [
               </DemoFlexTableCell>
               <DemoFlexTableCell
                 label="location"
-                hideLabel
+                hide-label
                 class="w-full sm:w-28"
               >
                 <span
-                  class="font-sans text-sm text-muted-500 dark:text-muted-400"
+                  class="text-muted-500 dark:text-muted-400 font-sans text-sm"
                 >
                   {{ student.presence }}
                 </span>
               </DemoFlexTableCell>
-              <DemoFlexTableCell label="action" hideLabel>
+              <DemoFlexTableCell label="action" hide-label>
                 <BaseButtonAction>Chat</BaseButtonAction>
               </DemoFlexTableCell>
             </template>

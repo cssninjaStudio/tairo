@@ -25,12 +25,12 @@ const props = withDefaults(
 
 <template>
   <div
-    class="relative flex items-center grow gap-2 px-6 sm:px-2 mb-4 sm:mb-0"
+    class="relative mb-4 flex grow items-center gap-2 px-6 sm:mb-0 sm:px-2"
     :class="props.picture && !props.avatar && !props.icon ? '' : 'h-10'"
   >
     <span
       v-if="props.label"
-      class="absolute hidden sm:block sm:-top-10 sm:start-2 font-sans text-xs font-medium uppercase text-muted-400"
+      class="text-muted-400 absolute hidden font-sans text-xs font-medium uppercase sm:-top-10 sm:start-2 sm:block"
       :class="props.hideLabel ? 'sm:hidden' : ''"
     >
       {{ props.label }}
@@ -52,7 +52,7 @@ const props = withDefaults(
       size="sm"
       class="bg-primary-500/20 text-primary-500"
     >
-      <Icon :name="props.icon" class="w-5 h-5" />
+      <Icon :name="props.icon" class="h-5 w-5" />
     </BaseIconBox>
     <div
       v-else-if="props.picture && !props.avatar && !props.icon"
@@ -61,7 +61,7 @@ const props = withDefaults(
       <img
         :src="props.picture"
         :alt="props.title"
-        class="h-12 w-16 object-cover rounded-lg"
+        class="h-12 w-16 rounded-lg object-cover"
       />
     </div>
 

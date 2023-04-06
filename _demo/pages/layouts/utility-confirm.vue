@@ -23,7 +23,7 @@ definePageMeta({
         />
       </template>
 
-      <div class="w-full max-w-[280px] mx-auto flex justify-between gap-2 mt-4">
+      <div class="mx-auto mt-4 flex w-full max-w-[280px] justify-between gap-2">
         <BaseButton shape="curved" class="h-11 w-full"> Cancel </BaseButton>
         <BaseButton color="primary" shape="curved" class="h-11 w-full">
           Confirm

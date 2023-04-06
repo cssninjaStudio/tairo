@@ -51,7 +51,7 @@ const { data, pending, error, refresh } = await useFetch(
       <template #right>
         <BaseButton class="w-full sm:w-32" shape="curved">Manage</BaseButton>
         <BaseButton color="primary" class="w-full sm:w-32" shape="curved">
-          <Icon name="lucide:plus" class="w-4 h-4" />
+          <Icon name="lucide:plus" class="h-4 w-4" />
           <span>Add User</span>
         </BaseButton>
       </template>
@@ -77,7 +77,7 @@ const { data, pending, error, refresh } = await useFetch(
         </div>
         <div
           v-else
-          class="grid sm:grid-cols-2 ltablet:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-4"
+          class="ltablet:grid-cols-3 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
         >
           <TransitionGroup
             enter-active-class="transform-gpu"
@@ -94,7 +94,7 @@ const { data, pending, error, refresh } = await useFetch(
               elevated-hover
               class="p-6"
             >
-              <div class="w-full flex items-center justify-center mb-3">
+              <div class="mb-3 flex w-full items-center justify-center">
                 <BaseAvatar
                   size="xl"
                   shape="curved"
@@ -112,7 +112,7 @@ const { data, pending, error, refresh } = await useFetch(
                   {{ item.position }}
                 </BaseParagraph>
               </div>
-              <div class="mt-4 mb-6 flex items-center justify-center gap-3">
+              <div class="mb-6 mt-4 flex items-center justify-center gap-3">
                 <BaseAvatar
                   v-for="relation in item.relations.slice(0, 3)"
                   :key="relation"
@@ -125,11 +125,11 @@ const { data, pending, error, refresh } = await useFetch(
               </div>
               <div class="flex items-center gap-2">
                 <BaseButton shape="curved" class="w-full">
-                  <Icon name="ph:user-duotone" class="w-4 h-4" />
+                  <Icon name="ph:user-duotone" class="h-4 w-4" />
                   <span>Profile</span>
                 </BaseButton>
                 <BaseButton shape="curved" class="w-full">
-                  <Icon name="ph:chat-circle-duotone" class="w-4 h-4" />
+                  <Icon name="ph:chat-circle-duotone" class="h-4 w-4" />
                   <span>Talk</span>
                 </BaseButton>
               </div>

@@ -40,7 +40,7 @@ const authors = [
 </script>
 
 <template>
-  <div class="space-y-5 mb-2">
+  <div class="mb-2 space-y-5">
     <div
       v-for="author in authors"
       :key="author.id"
@@ -51,7 +51,7 @@ const authors = [
         :text="author.text"
         shape="straight"
         mask="blob"
-        class="flex-shrink-0 bg-primary-100 dark:bg-primary-500/20 text-primary-500"
+        class="bg-primary-100 dark:bg-primary-500/20 text-primary-500 shrink-0"
       />
       <div>
         <BaseHeading
@@ -69,12 +69,12 @@ const authors = [
           </span>
         </BaseParagraph>
       </div>
-      <div class="flex items-center gap-1 ms-auto">
-        <span class="font-sans text-xs text-muted-400">
+      <div class="ms-auto flex items-center gap-1">
+        <span class="text-muted-400 font-sans text-xs">
           {{ author.articles }} articles
         </span>
         <BaseButtonIcon shape="curved" muted class="scale-75">
-          <Icon name="lucide:arrow-right" class="w-4 h-4" />
+          <Icon name="lucide:arrow-right" class="h-4 w-4" />
         </BaseButtonIcon>
       </div>
     </div>

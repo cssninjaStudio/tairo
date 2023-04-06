@@ -7,8 +7,8 @@ const searchTerms = ref('Ice cream pizza')
 </script>
 
 <template>
-  <div class="w-full max-w-5xl mx-auto">
-    <div class="w-full max-w-sm mx-auto mt-6 flex items-center justify-center">
+  <div class="mx-auto w-full max-w-5xl">
+    <div class="mx-auto mt-6 flex w-full max-w-sm items-center justify-center">
       <BaseInput
         v-model="searchTerms"
         icon="lucide:search"
@@ -21,7 +21,7 @@ const searchTerms = ref('Ice cream pizza')
         }"
       />
     </div>
-    <div class="mt-2 mb-12 text-center">
+    <div class="mb-12 mt-2 text-center">
       <BaseText size="sm" class="text-muted-400"
         >0 results for "Ice cream pizza"</BaseText
       >

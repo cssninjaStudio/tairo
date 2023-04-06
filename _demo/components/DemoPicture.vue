@@ -12,6 +12,7 @@ const props = withDefaults(
   {
     shape: 'rounded',
     src: undefined,
+    srcDark: undefined,
     alt: undefined,
   },
 )

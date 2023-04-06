@@ -20,8 +20,8 @@
     "lint": "run-s lint:eslint:fix lint:eslint:fix-demo lint:prettier:fix",
     "lint:prettier": "prettier --check \"./**/*.(ts|vue|css|md)\"",
     "lint:prettier:fix": "prettier --write \"./**/*.(ts|vue|css|md)\"",
-    "lint:eslint": "eslint -c .eslintrc.cjs .",
-    "lint:eslint:fix": "eslint -c .eslintrc.cjs --fix .",
+    "lint:eslint": "eslint -c .eslintrc.cjs --ext .vue,.ts .",
+    "lint:eslint:fix": "eslint -c .eslintrc.cjs --fix --ext .vue,.ts .",
     "lint:eslint:fix-demo": "eslint -c _documentation/examples/.eslintrc.cjs --fix --ext .vue _documentation/examples"
   },
   "dependencies": {

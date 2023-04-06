@@ -120,12 +120,12 @@ const matches = [
     <!-- Grid -->
     <div class="grid grid-cols-12 gap-6">
       <!-- Column -->
-      <div class="col-span-12 ltablet:col-span-4 lg:col-span-4">
-        <div class="flex flex-col ptablet:flex-row gap-6">
+      <div class="ltablet:col-span-4 col-span-12 lg:col-span-4">
+        <div class="ptablet:flex-row flex flex-col gap-6">
           <!-- Widget -->
           <BaseCard shape="curved" class="p-8">
             <!-- Title -->
-            <div class="flex items-center justify-between mb-6">
+            <div class="mb-6 flex items-center justify-between">
               <BaseHeading
                 as="h3"
                 size="lg"
@@ -137,14 +137,14 @@ const matches = [
               </BaseHeading>
             </div>
             <!-- Subtitle -->
-            <div class="flex items-center justify-between mb-6">
+            <div class="mb-6 flex items-center justify-between">
               <div>
                 <BaseHeading
                   as="h4"
                   size="sm"
                   weight="light"
                   lead="tight"
-                  class="mb-1 text-muted-800 dark:text-white"
+                  class="text-muted-800 mb-1 dark:text-white"
                 >
                   <span>Group C</span>
                 </BaseHeading>
@@ -159,16 +159,16 @@ const matches = [
                   class="inline-flex items-center justify-center gap-1"
                   condensed
                 >
-                  <Icon name="lucide:video" class="w-3 h-3" />
+                  <Icon name="lucide:video" class="h-3 w-3" />
                   <span>Live now</span>
                 </BaseTag>
               </div>
             </div>
             <!-- Results -->
-            <div class="flex items-center justify-between mb-6">
+            <div class="mb-6 flex items-center justify-between">
               <div class="flex flex-col text-center">
                 <img
-                  class="w-12 h-12 mx-auto"
+                  class="mx-auto h-12 w-12"
                   src="/img/icons/soccer/teams/barcelona.svg"
                   alt="Team logo"
                 />
@@ -177,13 +177,13 @@ const matches = [
                   size="sm"
                   weight="light"
                   lead="tight"
-                  class="mt-2 text-muted-500 dark:text-muted-400"
+                  class="text-muted-500 dark:text-muted-400 mt-2"
                 >
                   <span>Barcelona</span>
                 </BaseHeading>
               </div>
               <div
-                class="flex items-center justify-center gap-2 font-sans text-center text-muted-800 dark:text-muted-100"
+                class="text-muted-800 dark:text-muted-100 flex items-center justify-center gap-2 text-center font-sans"
               >
                 <span class="text-5xl font-bold">4</span>
                 <span class="text-4xl font-bold">:</span>
@@ -191,7 +191,7 @@ const matches = [
               </div>
               <div class="flex flex-col text-center">
                 <img
-                  class="w-12 h-12 mx-auto"
+                  class="mx-auto h-12 w-12"
                   src="/img/icons/soccer/teams/psg.svg"
                   alt="Team logo"
                 />
@@ -200,7 +200,7 @@ const matches = [
                   size="sm"
                   weight="light"
                   lead="tight"
-                  class="mt-2 text-muted-500 dark:text-muted-400"
+                  class="text-muted-500 dark:text-muted-400 mt-2"
                 >
                   <span>PSG</span>
                 </BaseHeading>
@@ -208,7 +208,7 @@ const matches = [
             </div>
             <!-- Action -->
             <div>
-              <BaseButton color="primary" shape="curved" class="w-full !h-12">
+              <BaseButton color="primary" shape="curved" class="!h-12 w-full">
                 <span>Watch Now</span>
               </BaseButton>
             </div>
@@ -216,7 +216,7 @@ const matches = [
           <!-- Widget -->
           <BaseCard shape="curved" class="p-8">
             <!-- Title -->
-            <div class="flex items-center justify-between mb-6">
+            <div class="mb-6 flex items-center justify-between">
               <BaseHeading
                 as="h3"
                 size="lg"
@@ -232,15 +232,15 @@ const matches = [
         </div>
       </div>
       <!-- Column -->
-      <div class="col-span-12 ltablet:col-span-8 lg:col-span-8">
+      <div class="ltablet:col-span-8 col-span-12 lg:col-span-8">
         <div class="flex flex-col gap-6">
           <!-- Header -->
           <div class="col-span-12">
             <div
-              class="flex flex-col sm:flex-row items-center rounded-2xl bg-primary-800"
+              class="bg-primary-800 flex flex-col items-center rounded-2xl sm:flex-row"
             >
-              <div class="grow mt-6 sm:mt-0 ps-6 pe-6 sm:ps-10 sm:pe-0">
-                <div class="text-center sm:text-left pb-4 sm:pb-0">
+              <div class="mt-6 grow pe-6 ps-6 sm:mt-0 sm:pe-0 sm:ps-10">
+                <div class="pb-4 text-center sm:pb-0 sm:text-left">
                   <BaseHeading tag="h1" class="text-white opacity-90">
                     <span>Win awesome prizes in our contest</span>
                   </BaseHeading>
@@ -258,14 +258,14 @@ const matches = [
                       class="w-full sm:w-auto"
                     >
                       <span>Learn More</span>
-                      <Icon name="lucide:arrow-right" class="w-4 h-4" />
+                      <Icon name="lucide:arrow-right" class="h-4 w-4" />
                     </BaseButton>
                   </div>
                 </div>
               </div>
-              <div class="relative shrink-0 h-[280px] sm:h-[225px] w-[320px]">
+              <div class="relative h-[280px] w-[320px] shrink-0 sm:h-[225px]">
                 <img
-                  class="absolute bottom-0 end-6 sm:-end-10 pointer-events-none"
+                  class="pointer-events-none absolute bottom-0 end-6 sm:-end-10"
                   src="/img/illustrations/dashboards/soccer/soccer-player.svg"
                   alt="Soccer Player"
                 />
@@ -274,24 +274,24 @@ const matches = [
           </div>
           <!-- Table -->
           <BaseCard shape="curved" class="p-8">
-            <div class="flex gap-4 font-sans mb-6">
+            <div class="mb-6 flex gap-4 font-sans">
               <button
-                class="pb-4 border-b-2 border-primary-500 text-muted-800 dark:text-muted-100"
+                class="border-primary-500 text-muted-800 dark:text-muted-100 border-b-2 pb-4"
               >
                 All
               </button>
               <button
-                class="pb-4 border-b-2 border-transparent text-muted-400 dark:text-muted-500"
+                class="text-muted-400 dark:text-muted-500 border-b-2 border-transparent pb-4"
               >
                 Live
               </button>
               <button
-                class="pb-4 border-b-2 border-transparent text-muted-400 dark:text-muted-500"
+                class="text-muted-400 dark:text-muted-500 border-b-2 border-transparent pb-4"
               >
                 Finished
               </button>
               <button
-                class="pb-4 border-b-2 border-transparent text-muted-400 dark:text-muted-500"
+                class="text-muted-400 dark:text-muted-500 border-b-2 border-transparent pb-4"
               >
                 Scheduled
               </button>
@@ -300,19 +300,19 @@ const matches = [
               <div class="inline-block min-w-full align-middle">
                 <div class="overflow-hidden">
                   <table
-                    class="text-left min-w-full divide-y divide-slate-200 table-fixed dark:divide-slate-700"
+                    class="min-w-full table-fixed divide-y divide-slate-200 text-left dark:divide-slate-700"
                   >
                     <thead>
-                      <th class="py-3 font-sans uppercase text-xs">Time</th>
+                      <th class="py-3 font-sans text-xs uppercase">Time</th>
                       <th
-                        class="xs:px-8 py-3 font-sans uppercase text-xs text-center"
+                        class="xs:px-8 py-3 text-center font-sans text-xs uppercase"
                       >
                         Match
                       </th>
-                      <th class="xs:px-4 py-3 font-sans uppercase text-xs">
+                      <th class="xs:px-4 py-3 font-sans text-xs uppercase">
                         Stadium
                       </th>
-                      <th class="xs:px-4 py-3 font-sans uppercase text-xs">
+                      <th class="xs:px-4 py-3 font-sans text-xs uppercase">
                         Details
                       </th>
                     </thead>
@@ -320,7 +320,7 @@ const matches = [
                       <tr v-for="match in matches" :key="match.id">
                         <td class="py-4 align-middle">
                           <div
-                            class="flex items-center gap-2 font-sans text-sm text-muted-500 dark:text-muted-400"
+                            class="text-muted-500 dark:text-muted-400 flex items-center gap-2 font-sans text-sm"
                             :data-tooltip="capitalize(match.status)"
                           >
                             <div
@@ -337,7 +337,7 @@ const matches = [
                         <td class="xs:px-8 py-4">
                           <div class="flex items-center justify-center gap-4">
                             <div
-                              class="w-[120px] flex items-center justify-end gap-2"
+                              class="flex w-[120px] items-center justify-end gap-2"
                             >
                               <BaseHeading
                                 as="h4"
@@ -349,13 +349,13 @@ const matches = [
                                 <span>{{ match.match.home.name }}</span>
                               </BaseHeading>
                               <img
-                                class="w-8 h-8"
+                                class="h-8 w-8"
                                 :src="match.match.home.logo"
                                 :alt="match.match.home.name"
                               />
                             </div>
                             <div
-                              class="flex items-center justify-center gap-2 font-sans text-center text-muted-800 dark:text-muted-100"
+                              class="text-muted-800 dark:text-muted-100 flex items-center justify-center gap-2 text-center font-sans"
                             >
                               <span class="text-sm font-bold">
                                 {{
@@ -373,9 +373,9 @@ const matches = [
                                 }}
                               </span>
                             </div>
-                            <div class="w-[120px] flex items-center gap-2">
+                            <div class="flex w-[120px] items-center gap-2">
                               <img
-                                class="w-8 h-8"
+                                class="h-8 w-8"
                                 :src="match.match.away.logo"
                                 :alt="match.match.away.name"
                               />
@@ -393,7 +393,7 @@ const matches = [
                         </td>
                         <td class="xs:px-4 py-4">
                           <div
-                            class="font-sans text-sm text-muted-500 dark:text-muted-400"
+                            class="text-muted-500 dark:text-muted-400 font-sans text-sm"
                           >
                             <span class="whitespace-nowrap">
                               {{ match.stadium }}
@@ -405,7 +405,7 @@ const matches = [
                             <BaseButtonIcon small muted>
                               <Icon
                                 name="lucide:more-horizontal"
-                                class="w-4 h-4"
+                                class="h-4 w-4"
                               />
                             </BaseButtonIcon>
                           </div>

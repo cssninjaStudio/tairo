@@ -21,13 +21,13 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
 
       <div class="flex flex-col px-4">
         <div
-          class="group relative w-16 mx-auto flex items-center justify-center mb-2"
+          class="group relative mx-auto mb-2 flex w-16 items-center justify-center"
         >
           <BaseAvatar
             v-if="avatarPreview"
             size="lg"
             :src="avatarPreview"
-            class="bg-white dark:bg-muted-700/60"
+            class="dark:bg-muted-700/60 bg-white"
           />
           <BaseAvatar
             v-else
@@ -36,21 +36,21 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
             class="bg-pink-500/10 text-pink-600"
           />
           <!-- Edit -->
-          <div class="absolute z-10 bottom-0 end-0">
+          <div class="absolute bottom-0 end-0 z-10">
             <BaseButtonIcon
               small
               shape="full"
-              class="opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500"
+              class="hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500 pointer-events-none opacity-0 group-hover:pointer-events-auto group-hover:opacity-100"
               :to="getStep(1).to"
             >
-              <Icon name="lucide:edit-2" class="w-3 h-3 pointer-events-none" />
+              <Icon name="lucide:edit-2" class="pointer-events-none h-3 w-3" />
             </BaseButtonIcon>
           </div>
         </div>
-        <div class="w-full flex flex-col gap-4 max-w-xl mx-auto">
+        <div class="mx-auto flex w-full max-w-xl flex-col gap-4">
           <!-- Title -->
           <h3
-            class="font-sans text-xl font-medium text-center text-muted-800 dark:text-muted-100"
+            class="text-muted-800 dark:text-muted-100 text-center font-sans text-xl font-medium"
           >
             {{ project.name === '' ? 'Project title goes here' : project.name }}
           </h3>
@@ -60,20 +60,20 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
             <div class="col-span-12">
               <BaseCard shape="curved" class="group relative p-6">
                 <!-- Edit -->
-                <div class="absolute z-10 top-3 end-3">
+                <div class="absolute end-3 top-3 z-10">
                   <BaseButtonIcon
                     small
                     shape="full"
-                    class="opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500"
+                    class="hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500 pointer-events-none opacity-0 group-hover:pointer-events-auto group-hover:opacity-100"
                     :to="getStep(1).to"
                   >
                     <Icon
                       name="lucide:edit-2"
-                      class="w-3 h-3 pointer-events-none"
+                      class="pointer-events-none h-3 w-3"
                     />
                   </BaseButtonIcon>
                 </div>
-                <BaseHeading size="xs" class="uppercase mb-4">
+                <BaseHeading size="xs" class="mb-4 uppercase">
                   <span class="text-muted-500 dark:text-muted-400">
                     Project description
                   </span>
@@ -98,54 +98,54 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
             <div class="col-span-12 sm:col-span-6">
               <BaseCard shape="curved" class="group relative p-6">
                 <!-- Edit -->
-                <div class="absolute z-10 top-3 end-3">
+                <div class="absolute end-3 top-3 z-10">
                   <BaseButtonIcon
                     small
                     shape="full"
-                    class="opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500"
+                    class="hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500 pointer-events-none opacity-0 group-hover:pointer-events-auto group-hover:opacity-100"
                     :to="getStep(0).to"
                   >
                     <Icon
                       name="lucide:edit-2"
-                      class="w-3 h-3 pointer-events-none"
+                      class="pointer-events-none h-3 w-3"
                     />
                   </BaseButtonIcon>
                 </div>
-                <div class="w-full flex items-center gap-2">
+                <div class="flex w-full items-center gap-2">
                   <BaseIconBox
                     v-if="project.type === undefined"
                     size="sm"
                     class="bg-primary-500/10 text-primary-600"
                   >
-                    <Icon name="ph:briefcase-duotone" class="w-5 h-5" />
+                    <Icon name="ph:briefcase-duotone" class="h-5 w-5" />
                   </BaseIconBox>
                   <BaseIconBox
                     v-else-if="project.type === 'design'"
                     size="sm"
                     class="bg-orange-500/10 text-orange-600"
                   >
-                    <Icon name="ph:bounding-box-duotone" class="w-5 h-5" />
+                    <Icon name="ph:bounding-box-duotone" class="h-5 w-5" />
                   </BaseIconBox>
                   <BaseIconBox
                     v-else-if="project.type === 'development'"
                     size="sm"
                     class="bg-emerald-500/10 text-emerald-600"
                   >
-                    <Icon name="ph:bounding-box-duotone" class="w-5 h-5" />
+                    <Icon name="ph:bounding-box-duotone" class="h-5 w-5" />
                   </BaseIconBox>
                   <BaseIconBox
                     v-else-if="project.type === 'marketing'"
                     size="sm"
                     class="bg-yellow-500/10 text-yellow-500"
                   >
-                    <Icon name="ph:bounding-box-duotone" class="w-5 h-5" />
+                    <Icon name="ph:bounding-box-duotone" class="h-5 w-5" />
                   </BaseIconBox>
                   <div>
-                    <div class="text-xs text-muted-400">
+                    <div class="text-muted-400 text-xs">
                       <span>Project type</span>
                     </div>
                     <div
-                      class="text-sm font-medium capitalize text-muted-800 dark:text-muted-100"
+                      class="text-muted-800 dark:text-muted-100 text-sm font-medium capitalize"
                     >
                       <span>
                         {{
@@ -163,20 +163,20 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
             <div class="col-span-12 sm:col-span-6">
               <BaseCard shape="curved" class="group relative p-6">
                 <!-- Edit -->
-                <div class="absolute z-10 top-3 end-3">
+                <div class="absolute end-3 top-3 z-10">
                   <BaseButtonIcon
                     small
                     shape="full"
-                    class="opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500"
+                    class="hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500 pointer-events-none opacity-0 group-hover:pointer-events-auto group-hover:opacity-100"
                     :to="getStep(2).to"
                   >
                     <Icon
                       name="lucide:edit-2"
-                      class="w-3 h-3 pointer-events-none"
+                      class="pointer-events-none h-3 w-3"
                     />
                   </BaseButtonIcon>
                 </div>
-                <div class="w-full flex items-center gap-2">
+                <div class="flex w-full items-center gap-2">
                   <BaseAvatar
                     v-if="project.customer?.logo === undefined"
                     src="/img/avatars/placeholder-file.png"
@@ -189,11 +189,11 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
                     class="bg-muted-100 dark:bg-muted-700"
                   />
                   <div>
-                    <div class="text-xs text-muted-400">
+                    <div class="text-muted-400 text-xs">
                       <span>Customer</span>
                     </div>
                     <div
-                      class="text-sm font-medium text-muted-800 dark:text-muted-100"
+                      class="text-muted-800 dark:text-muted-100 text-sm font-medium"
                     >
                       <span>
                         {{
@@ -211,16 +211,16 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
             <div class="col-span-12 sm:col-span-4">
               <BaseCard shape="curved" class="group relative p-6">
                 <!-- Edit -->
-                <div class="absolute z-10 top-3 end-3">
+                <div class="absolute end-3 top-3 z-10">
                   <BaseButtonIcon
                     small
                     shape="full"
-                    class="opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500"
+                    class="hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500 pointer-events-none opacity-0 group-hover:pointer-events-auto group-hover:opacity-100"
                     :to="getStep(2).to"
                   >
                     <Icon
                       name="lucide:edit-2"
-                      class="w-3 h-3 pointer-events-none"
+                      class="pointer-events-none h-3 w-3"
                     />
                   </BaseButtonIcon>
                 </div>
@@ -229,11 +229,11 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
                 >
                   <div>
                     <span
-                      class="block font-sans font-semibold text-2xl mb-2 text-muted-800 dark:text-muted-100"
+                      class="text-muted-800 dark:text-muted-100 mb-2 block font-sans text-2xl font-semibold"
                     >
                       {{ project.budget }}
                     </span>
-                    <BaseHeading size="xs" class="uppercase mb-4 scale-90">
+                    <BaseHeading size="xs" class="mb-4 scale-90 uppercase">
                       <span class="text-muted-500 dark:text-muted-400">
                         Estimate budget
                       </span>
@@ -244,27 +244,27 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
             </div>
             <!-- Due Date -->
             <div class="col-span-12 sm:col-span-4">
-              <BaseCard shape="curved" class="group relative p-6 h-full">
+              <BaseCard shape="curved" class="group relative h-full p-6">
                 <!-- Edit -->
-                <div class="absolute z-10 top-3 end-3">
+                <div class="absolute end-3 top-3 z-10">
                   <BaseButtonIcon
                     small
                     shape="full"
-                    class="opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500"
+                    class="hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500 pointer-events-none opacity-0 group-hover:pointer-events-auto group-hover:opacity-100"
                     :to="getStep(2).to"
                   >
                     <Icon
                       name="lucide:edit-2"
-                      class="w-3 h-3 pointer-events-none"
+                      class="pointer-events-none h-3 w-3"
                     />
                   </BaseButtonIcon>
                 </div>
                 <div
-                  class="h-full flex flex-col items-center justify-center text-center"
+                  class="flex h-full flex-col items-center justify-center text-center"
                 >
                   <div>
                     <span
-                      class="block font-sans font-medium text-sm mb-3 text-muted-800 dark:text-muted-100"
+                      class="text-muted-800 dark:text-muted-100 mb-3 block font-sans text-sm font-medium"
                     >
                       {{
                         project.endDate === undefined
@@ -272,7 +272,7 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
                           : formatDate(project.endDate)
                       }}
                     </span>
-                    <BaseHeading size="xs" class="uppercase mb-4 scale-90">
+                    <BaseHeading size="xs" class="mb-4 scale-90 uppercase">
                       <span class="text-muted-500 dark:text-muted-400">
                         Due date
                       </span>
@@ -285,16 +285,16 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
             <div class="col-span-12 sm:col-span-4">
               <BaseCard shape="curved" class="group relative p-6">
                 <!-- Edit -->
-                <div class="absolute z-10 top-3 end-3">
+                <div class="absolute end-3 top-3 z-10">
                   <BaseButtonIcon
                     small
                     shape="full"
-                    class="opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500"
+                    class="hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500 pointer-events-none opacity-0 group-hover:pointer-events-auto group-hover:opacity-100"
                     :to="getStep(3).to"
                   >
                     <Icon
                       name="lucide:edit-2"
-                      class="w-3 h-3 pointer-events-none"
+                      class="pointer-events-none h-3 w-3"
                     />
                   </BaseButtonIcon>
                 </div>
@@ -303,11 +303,11 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
                 >
                   <div>
                     <span
-                      class="block font-sans font-semibold text-2xl mb-2 text-muted-800 dark:text-muted-100"
+                      class="text-muted-800 dark:text-muted-100 mb-2 block font-sans text-2xl font-semibold"
                     >
                       {{ project.files?.length || 0 }}
                     </span>
-                    <BaseHeading size="xs" class="uppercase mb-4 scale-90">
+                    <BaseHeading size="xs" class="mb-4 scale-90 uppercase">
                       <span class="text-muted-500 dark:text-muted-400">
                         Attached files
                       </span>
@@ -320,20 +320,20 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
             <div class="col-span-12 sm:col-span-6">
               <BaseCard shape="curved" class="group relative p-6">
                 <!-- Edit -->
-                <div class="absolute z-10 top-3 end-3">
+                <div class="absolute end-3 top-3 z-10">
                   <BaseButtonIcon
                     small
                     shape="full"
-                    class="opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500"
+                    class="hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500 pointer-events-none opacity-0 group-hover:pointer-events-auto group-hover:opacity-100"
                     :to="getStep(4).to"
                   >
                     <Icon
                       name="lucide:edit-2"
-                      class="w-3 h-3 pointer-events-none"
+                      class="pointer-events-none h-3 w-3"
                     />
                   </BaseButtonIcon>
                 </div>
-                <BaseHeading size="xs" class="uppercase mb-4">
+                <BaseHeading size="xs" class="mb-4 uppercase">
                   <span class="text-muted-500 dark:text-muted-400">
                     Project team
                   </span>
@@ -351,12 +351,12 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
                       <BaseAvatar size="xs" :src="member.picture" />
                       <div class="flex flex-col">
                         <h3
-                          class="font-sans text-sm font-medium text-muted-800 dark:text-muted-100"
+                          class="text-muted-800 dark:text-muted-100 font-sans text-sm font-medium"
                         >
                           {{ member.name }}
                         </h3>
                         <p
-                          class="font-sans text-xs text-muted-500 dark:text-muted-400"
+                          class="text-muted-500 dark:text-muted-400 font-sans text-xs"
                         >
                           {{ member.role }}
                         </p>
@@ -375,20 +375,20 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
             <div class="col-span-12 sm:col-span-6">
               <BaseCard shape="curved" class="group relative p-6">
                 <!-- Edit -->
-                <div class="absolute z-10 top-3 end-3">
+                <div class="absolute end-3 top-3 z-10">
                   <BaseButtonIcon
                     small
                     shape="full"
-                    class="opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500"
+                    class="hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500 pointer-events-none opacity-0 group-hover:pointer-events-auto group-hover:opacity-100"
                     :to="getStep(5).to"
                   >
                     <Icon
                       name="lucide:edit-2"
-                      class="w-3 h-3 pointer-events-none"
+                      class="pointer-events-none h-3 w-3"
                     />
                   </BaseButtonIcon>
                 </div>
-                <BaseHeading size="xs" class="uppercase mb-4">
+                <BaseHeading size="xs" class="mb-4 uppercase">
                   <span class="text-muted-500 dark:text-muted-400">
                     Project tools
                   </span>
@@ -403,14 +403,14 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
                       :key="tool.name"
                       class="flex items-center gap-2"
                     >
-                      <img :src="tool.logo" class="w-8 h-8" />
+                      <img :src="tool.logo" class="h-8 w-8" />
                       <div>
                         <div
-                          class="text-sm font-medium text-muted-800 dark:text-muted-100"
+                          class="text-muted-800 dark:text-muted-100 text-sm font-medium"
                         >
                           {{ tool.name }}
                         </div>
-                        <div class="text-xs text-muted-400">
+                        <div class="text-muted-400 text-xs">
                           {{ tool.description }}
                         </div>
                       </div>
@@ -429,8 +429,8 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
       </div>
     </div>
     <div v-else>
-      <div class="max-w-2xl mx-auto px-4">
-        <div class="text-center mb-10">
+      <div class="mx-auto max-w-2xl px-4">
+        <div class="mb-10 text-center">
           <BaseHeading
             tag="h1"
             size="2xl"
@@ -450,11 +450,11 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
           <template #image>
             <img
               src="/img/illustrations/wizard/finish.svg"
-              class="rounded-full max-w-[210px] mx-auto"
+              class="mx-auto max-w-[210px] rounded-full"
               alt="Upload files"
             />
           </template>
-          <div class="text-center mt-2">
+          <div class="mt-2 text-center">
             <BaseButton
               to="/dashboards"
               shape="curved"

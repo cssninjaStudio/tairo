@@ -64,7 +64,7 @@ function statusColor(itemStatus: string) {
       <template #right>
         <BaseButton class="w-full sm:w-32" shape="full">Manage</BaseButton>
         <BaseButton color="primary" shape="full" class="w-full sm:w-32">
-          <Icon name="lucide:plus" class="w-4 h-4" />
+          <Icon name="lucide:plus" class="h-4 w-4" />
           <span>Add User</span>
         </BaseButton>
       </template>
@@ -107,7 +107,7 @@ function statusColor(itemStatus: string) {
               <template #start>
                 <DemoFlexTableStart
                   label="user"
-                  :hideLabel="index > 0"
+                  :hide-label="index > 0"
                   :title="item.username"
                   :subtitle="item.position"
                   :avatar="item.src"
@@ -118,29 +118,29 @@ function statusColor(itemStatus: string) {
               <template #end>
                 <DemoFlexTableCell
                   label="location"
-                  :hideLabel="index > 0"
+                  :hide-label="index > 0"
                   class="w-full sm:w-40"
                 >
                   <span
-                    class="font-sans text-sm text-muted-500 dark:text-muted-400"
+                    class="text-muted-500 dark:text-muted-400 font-sans text-sm"
                   >
                     {{ item.location }}
                   </span>
                 </DemoFlexTableCell>
                 <DemoFlexTableCell
                   label="industry"
-                  :hideLabel="index > 0"
+                  :hide-label="index > 0"
                   class="w-full sm:w-40"
                 >
                   <span
-                    class="font-sans text-sm text-muted-500 dark:text-muted-400"
+                    class="text-muted-500 dark:text-muted-400 font-sans text-sm"
                   >
                     {{ item.industry }}
                   </span>
                 </DemoFlexTableCell>
                 <DemoFlexTableCell
                   label="status"
-                  :hideLabel="index > 0"
+                  :hide-label="index > 0"
                   class="w-full sm:w-16"
                 >
                   <BaseTag
@@ -155,7 +155,7 @@ function statusColor(itemStatus: string) {
                 </DemoFlexTableCell>
                 <DemoFlexTableCell
                   label="relations"
-                  :hideLabel="index > 0"
+                  :hide-label="index > 0"
                   tablet-hidden
                   class="w-full sm:w-[160px]"
                 >
@@ -165,7 +165,7 @@ function statusColor(itemStatus: string) {
                     :limit="2"
                   />
                 </DemoFlexTableCell>
-                <DemoFlexTableCell label="action" :hideLabel="index > 0">
+                <DemoFlexTableCell label="action" :hide-label="index > 0">
                   <BaseButtonAction color="muted">
                     <span>View</span>
                   </BaseButtonAction>

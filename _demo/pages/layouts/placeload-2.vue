@@ -66,28 +66,28 @@ definePageMeta({
                 </div>
               </TairoTableCell>
               <TairoTableCell light spaced>
-                <BasePlaceload class="w-[46px] h-[46px] rounded-xl shrink-0" />
+                <BasePlaceload class="h-[46px] w-[46px] shrink-0 rounded-xl" />
               </TairoTableCell>
               <TairoTableCell spaced>
-                <BasePlaceload class="w-24 h-3 rounded-lg" />
+                <BasePlaceload class="h-3 w-24 rounded-lg" />
               </TairoTableCell>
               <TairoTableCell light spaced>
-                <BasePlaceload class="w-12 h-3 rounded-lg" />
+                <BasePlaceload class="h-3 w-12 rounded-lg" />
               </TairoTableCell>
               <TairoTableCell light spaced>
-                <BasePlaceload class="w-12 h-3 rounded-lg" />
+                <BasePlaceload class="h-3 w-12 rounded-lg" />
               </TairoTableCell>
               <TairoTableCell spaced>
                 <div class="flex items-center gap-2">
-                  <BasePlaceload class="w-8 h-8 rounded-full shrink-0" />
+                  <BasePlaceload class="h-8 w-8 shrink-0 rounded-full" />
                   <div class="space-y-1">
-                    <BasePlaceload class="w-[70px] h-2 rounded-lg" />
-                    <BasePlaceload class="w-[50px] h-2 rounded-lg" />
+                    <BasePlaceload class="h-2 w-[70px] rounded-lg" />
+                    <BasePlaceload class="h-2 w-[50px] rounded-lg" />
                   </div>
                 </div>
               </TairoTableCell>
               <TairoTableCell spaced>
-                <BasePlaceload class="w-16 h-8 rounded-lg" />
+                <BasePlaceload class="h-8 w-16 rounded-lg" />
               </TairoTableCell>
             </TairoTableRow>
           </TairoTable>

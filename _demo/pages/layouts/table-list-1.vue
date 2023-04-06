@@ -127,13 +127,13 @@ function toggleAllVisibleSelection() {
               <TairoTableRow v-if="selected.length > 0" :hoverable="false">
                 <TairoTableCell
                   colspan="6"
-                  class="p-4 bg-success-100 text-success-700 dark:bg-success-700 dark:text-success-100"
+                  class="bg-success-100 text-success-700 dark:bg-success-700 dark:text-success-100 p-4"
                 >
                   You have selected {{ selected.length }} items of the total
                   {{ data?.total }} items.
                   <a
                     href="#"
-                    class="hover:underline focus:underline outline-none"
+                    class="outline-none hover:underline focus:underline"
                     >Click here to everything</a
                   >
                 </TairoTableCell>
@@ -162,7 +162,7 @@ function toggleAllVisibleSelection() {
                       <h4 class="font-sans text-sm font-medium">
                         {{ item.username }}
                       </h4>
-                      <p class="font-sans text-xs text-muted-400">
+                      <p class="text-muted-400 font-sans text-xs">
                         {{ item.position }}
                       </p>
                     </div>
@@ -223,12 +223,12 @@ function toggleAllVisibleSelection() {
                         class="text-success-500"
                       />
                       <span
-                        class="absolute top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2 z-10 ms-0.5 font-sans text-[0.65rem] font-semibold"
+                        class="absolute start-1/2 top-1/2 z-10 ms-0.5 -translate-x-1/2 -translate-y-1/2 font-sans text-[0.65rem] font-semibold"
                       >
                         {{ item.completed }}%
                       </span>
                     </div>
-                    <span class="font-sans text-xs text-muted-400">
+                    <span class="text-muted-400 font-sans text-xs">
                       Tasks completed
                     </span>
                   </div>

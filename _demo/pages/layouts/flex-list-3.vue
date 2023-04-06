@@ -86,7 +86,7 @@ function difficultyLabel(itemDifficulty: number) {
             </template>
           </BasePlaceholderPage>
         </div>
-        <div v-else class="pt-6 space-y-2">
+        <div v-else class="space-y-2 pt-6">
           <TransitionGroup
             enter-active-class="transform-gpu"
             enter-from-class="opacity-0 -translate-x-full"
@@ -103,7 +103,7 @@ function difficultyLabel(itemDifficulty: number) {
               <template #start>
                 <DemoFlexTableStart
                   label="user"
-                  :hideLabel="index > 0"
+                  :hide-label="index > 0"
                   :title="item.name"
                   :subtitle="item.category"
                   :picture="item.picture"
@@ -112,30 +112,30 @@ function difficultyLabel(itemDifficulty: number) {
               <template #end>
                 <DemoFlexTableCell
                   label="category"
-                  :hideLabel="index > 0"
+                  :hide-label="index > 0"
                   tablet-hidden
                   class="w-full sm:w-36"
                 >
                   <span
-                    class="font-sans text-sm text-muted-500 dark:text-muted-400"
+                    class="text-muted-500 dark:text-muted-400 font-sans text-sm"
                   >
                     {{ item.category }}
                   </span>
                 </DemoFlexTableCell>
                 <DemoFlexTableCell
                   label="main skill"
-                  :hideLabel="index > 0"
+                  :hide-label="index > 0"
                   class="w-full sm:w-32"
                 >
                   <div
-                    class="w-full flex items-center justify-end sm:justify-center gap-1"
+                    class="flex w-full items-center justify-end gap-1 sm:justify-center"
                   >
                     <Icon
                       :name="item.skill.icon"
-                      class="w-5 h-5 text-primary-500"
+                      class="text-primary-500 h-5 w-5"
                     />
                     <span
-                      class="font-sans text-sm text-muted-500 dark:text-muted-400"
+                      class="text-muted-500 dark:text-muted-400 font-sans text-sm"
                     >
                       {{ item.skill.name }}
                     </span>
@@ -143,11 +143,11 @@ function difficultyLabel(itemDifficulty: number) {
                 </DemoFlexTableCell>
                 <DemoFlexTableCell
                   label="difficulty"
-                  :hideLabel="index > 0"
+                  :hide-label="index > 0"
                   class="w-full sm:w-36"
                 >
                   <div
-                    class="w-full flex justify-end sm:justify-center gap-1"
+                    class="flex w-full justify-end gap-1 sm:justify-center"
                     :data-tooltip="difficultyLabel(item.difficulty)"
                   >
                     <span
@@ -192,7 +192,7 @@ function difficultyLabel(itemDifficulty: number) {
                     ></span>
                   </div>
                 </DemoFlexTableCell>
-                <DemoFlexTableCell label="action" :hideLabel="index > 0">
+                <DemoFlexTableCell label="action" :hide-label="index > 0">
                   <BaseButtonAction color="muted">
                     <span>View</span>
                   </BaseButtonAction>

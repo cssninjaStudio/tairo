@@ -26,62 +26,62 @@ const initialState = ref<Project>({
 const wizardSteps = [
   {
     to: '/wizard',
-    meta: <ProjectStepData>{
+    meta: {
       name: 'Project type',
       title: 'Select project type',
       subtitle: 'Select the type of project you want to create',
-    },
+    } satisfies ProjectStepData,
   },
   {
     to: '/wizard/step-2',
-    meta: <ProjectStepData>{
+    meta: {
       name: 'Project info',
       title: 'What is this project about?',
       subtitle: 'Manage better by adding all relevant project information',
-    },
+    } satisfies ProjectStepData,
   },
   {
     to: '/wizard/step-3',
-    meta: <ProjectStepData>{
+    meta: {
       name: 'Project details',
       title: 'Add more details',
       subtitle: 'Add useful details to your project. You can edit this later',
-    },
+    } satisfies ProjectStepData,
   },
   {
     to: '/wizard/step-4',
-    meta: <ProjectStepData>{
+    meta: {
       name: 'Project files',
       title: 'Add files to this project',
       subtitle:
         'Or you can skip this step. You can always add more files later',
-    },
+    } satisfies ProjectStepData,
   },
   {
     to: '/wizard/step-5',
-    meta: <ProjectStepData>{
+    meta: {
       name: 'Team members',
       title: 'Who will be working on this project?',
       subtitle: 'Start by adding members to your team',
-    },
+    } satisfies ProjectStepData,
   },
   {
     to: '/wizard/step-6',
-    meta: <ProjectStepData>{
+    meta: {
       name: 'Project tools',
       title: 'What tools will you be using?',
       subtitle: "Choose a set of tools that you'll be using in this project",
-    },
+    } satisfies ProjectStepData,
   },
   {
     to: '/wizard/step-7',
-    meta: <ProjectStepData>{
+    meta: {
       preview: true,
       name: 'Finish',
       title: 'Make sure it looks good',
       subtitle:
         'You can go back to previous steps if you need to edit anything',
-    },
+    } satisfies ProjectStepData,
   },
 ]
 
@@ -145,7 +145,7 @@ useHead({
     <template #logo>
       <NuxtLink
         to="/"
-        class="text-muted-400 hover:text-primary-500 flex h-12 w-12 items-center justify-center rounded-2xl hover:bg-primary-500/20 transition-colors duration-300"
+        class="text-muted-400 hover:text-primary-500 hover:bg-primary-500/20 flex h-12 w-12 items-center justify-center rounded-2xl transition-colors duration-300"
         @click.prevent="$router.back()"
       >
         <Icon name="lucide:arrow-left" class="h-5 w-5" />
@@ -155,7 +155,7 @@ useHead({
     <DemoWizardNavigation />
 
     <form action="" method="POST" @submit.prevent="handleSubmit" novalidate>
-      <div class="pt-24 pb-32">
+      <div class="pb-32 pt-24">
         <RouterView />
       </div>
       <DemoWizardButtons />

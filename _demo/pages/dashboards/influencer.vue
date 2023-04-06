@@ -285,75 +285,75 @@ const activeTab = ref('tab-1')
   <div>
     <!-- Header bg -->
     <div
-      class="absolute top-0 start-0 w-full h-[590px] ltablet:h-[410px] lg:h-[410px] bg-white dark:bg-muted-800"
+      class="ltablet:h-[410px] dark:bg-muted-800 absolute start-0 top-0 h-[590px] w-full bg-white lg:h-[410px]"
     ></div>
     <!-- Header -->
     <div
-      class="relative w-full h-[460px] ltablet:h-64 lg:h-64 flex flex-col ltablet:flex-row lg:flex-row"
+      class="ltablet:h-64 ltablet:flex-row relative flex h-[460px] w-full flex-col lg:h-64 lg:flex-row"
     >
       <div
-        class="relative z-10 w-full flex flex-col ltablet:flex-row lg:flex-row gap-6"
+        class="ltablet:flex-row relative z-10 flex w-full flex-col gap-6 lg:flex-row"
       >
         <BaseAvatar
           src="/img/avatars/5.svg"
-          badgeSrc="/img/icons/flags/united-states-of-america.svg"
+          badge-src="/img/icons/flags/united-states-of-america.svg"
           size="3xl"
           alt="avatar"
-          class="mx-auto ltablet:mx-0 lg:mx-0"
+          class="ltablet:mx-0 mx-auto lg:mx-0"
         />
-        <div class="text-center ltablet:text-left lg:text-left">
+        <div class="ltablet:text-left text-center lg:text-left">
           <BaseHeading
             as="h2"
             size="xl"
             weight="semibold"
-            class="flex items-center justify-center ltablet:justify-start lg:justify-start gap-2"
+            class="ltablet:justify-start flex items-center justify-center gap-2 lg:justify-start"
           >
             <span class="text-muted-800 dark:text-white">Sweet_Mango12</span>
-            <Icon name="uiw:star-on" class="w-4 h-4 text-yellow-400" />
+            <Icon name="uiw:star-on" class="h-4 w-4 text-yellow-400" />
           </BaseHeading>
-          <span class="block mb-4 font-sans text-base text-muted-400">
+          <span class="text-muted-400 mb-4 block font-sans text-base">
             Clarissa Miller
           </span>
-          <div class="flex items-center gap-x-6 mb-6">
+          <div class="mb-6 flex items-center gap-x-6">
             <div
-              class="flex flex-col ltablet:flex-row lg:flex-row flex-1 ltablet:flex-auto lg:flex-auto gap-x-2 font-sans"
+              class="ltablet:flex-row ltablet:flex-auto flex flex-1 flex-col gap-x-2 font-sans lg:flex-auto lg:flex-row"
             >
-              <span class="font-semibold text-muted-800 dark:text-muted-100">
+              <span class="text-muted-800 dark:text-muted-100 font-semibold">
                 1512
               </span>
               <span
-                class="text-muted-400 text-xs sm:text-sm ltablet:text-base lg:text-base"
+                class="text-muted-400 ltablet:text-base text-xs sm:text-sm lg:text-base"
               >
                 Posts
               </span>
             </div>
             <div
-              class="flex flex-col ltablet:flex-row lg:flex-row flex-1 ltablet:flex-auto lg:flex-auto gap-x-2 font-sans"
+              class="ltablet:flex-row ltablet:flex-auto flex flex-1 flex-col gap-x-2 font-sans lg:flex-auto lg:flex-row"
             >
-              <span class="font-semibold text-muted-800 dark:text-muted-100">
+              <span class="text-muted-800 dark:text-muted-100 font-semibold">
                 38.3K
               </span>
               <span
-                class="text-muted-400 text-xs sm:text-sm ltablet:text-base lg:text-base"
+                class="text-muted-400 ltablet:text-base text-xs sm:text-sm lg:text-base"
               >
                 Followers
               </span>
             </div>
             <div
-              class="flex flex-col ltablet:flex-row lg:flex-row flex-1 ltablet:flex-auto lg:flex-auto gap-x-2 font-sans"
+              class="ltablet:flex-row ltablet:flex-auto flex flex-1 flex-col gap-x-2 font-sans lg:flex-auto lg:flex-row"
             >
-              <span class="font-semibold text-muted-800 dark:text-muted-100">
+              <span class="text-muted-800 dark:text-muted-100 font-semibold">
                 329
               </span>
               <span
-                class="text-muted-400 text-xs sm:text-sm ltablet:text-base lg:text-base"
+                class="text-muted-400 ltablet:text-base text-xs sm:text-sm lg:text-base"
               >
                 Following
               </span>
             </div>
           </div>
           <BaseProse
-            class="max-w-xl mx-auto ltablet:mx-0 lg:mx-0 mb-6 prose-sm"
+            class="ltablet:mx-0 prose-sm mx-auto mb-6 max-w-xl lg:mx-0"
           >
             <p class="line-clamp-3">
               Artist, musician, songwriter, influencer, these are the many names
@@ -363,16 +363,16 @@ const activeTab = ref('tab-1')
             </p>
           </BaseProse>
           <div
-            class="flex justify-center ltablet:justify-start lg:justify-start gap-4"
+            class="ltablet:justify-start flex justify-center gap-4 lg:justify-start"
           >
             <TairoPopover size="sm">
               <div
-                class="h-10 w-10 flex items-center justify-center rounded-full bg-white dark:bg-muted-700 shadow-xl shadow-muted-300/40 dark:shadow-muted-900/20"
+                class="dark:bg-muted-700 shadow-muted-300/40 dark:shadow-muted-900/20 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-xl"
               >
                 <div
-                  class="h-8 w-8 flex items-center justify-center rounded-full bg-danger-500/20"
+                  class="bg-danger-500/20 flex h-8 w-8 items-center justify-center rounded-full"
                 >
-                  <Icon name="ri:fire-fill" class="w-5 h-5 text-danger-500" />
+                  <Icon name="ri:fire-fill" class="text-danger-500 h-5 w-5" />
                 </div>
               </div>
 
@@ -389,12 +389,12 @@ const activeTab = ref('tab-1')
             </TairoPopover>
             <TairoPopover size="sm">
               <div
-                class="h-10 w-10 flex items-center justify-center rounded-full bg-white dark:bg-muted-700 shadow-xl shadow-muted-300/40 dark:shadow-muted-900/20"
+                class="dark:bg-muted-700 shadow-muted-300/40 dark:shadow-muted-900/20 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-xl"
               >
                 <div
-                  class="h-8 w-8 flex items-center justify-center rounded-full bg-success-500/20"
+                  class="bg-success-500/20 flex h-8 w-8 items-center justify-center rounded-full"
                 >
-                  <Icon name="ri:medal-fill" class="w-5 h-5 text-success-500" />
+                  <Icon name="ri:medal-fill" class="text-success-500 h-5 w-5" />
                 </div>
               </div>
 
@@ -410,12 +410,12 @@ const activeTab = ref('tab-1')
             </TairoPopover>
             <TairoPopover size="sm">
               <div
-                class="h-10 w-10 flex items-center justify-center rounded-full bg-white dark:bg-muted-700 shadow-xl shadow-muted-300/40 dark:shadow-muted-900/20"
+                class="dark:bg-muted-700 shadow-muted-300/40 dark:shadow-muted-900/20 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-xl"
               >
                 <div
-                  class="h-8 w-8 flex items-center justify-center rounded-full bg-yellow-500/20"
+                  class="flex h-8 w-8 items-center justify-center rounded-full bg-yellow-500/20"
                 >
-                  <Icon name="ri:trophy-fill" class="w-5 h-5 text-yellow-500" />
+                  <Icon name="ri:trophy-fill" class="h-5 w-5 text-yellow-500" />
                 </div>
               </div>
 
@@ -434,22 +434,22 @@ const activeTab = ref('tab-1')
       </div>
       <!-- Action -->
       <div
-        class="flex justify-center ltablet:justify-start lg:justify-start shrink-0 ltablet:ms-auto lg:ms-auto mt-4 ltablet:mt-0 lg:mt-0"
+        class="ltablet:justify-start ltablet:ms-auto ltablet:mt-0 mt-4 flex shrink-0 justify-center lg:ms-auto lg:mt-0 lg:justify-start"
       >
         <BaseButton
-          class="w-52 ltablet:w-auto lg:w-auto mx-auto ltablet:mx-0 lg:mx-0"
+          class="ltablet:w-auto ltablet:mx-0 mx-auto w-52 lg:mx-0 lg:w-auto"
         >
-          <Icon name="lucide:plus" class="w-4 h-4" />
+          <Icon name="lucide:plus" class="h-4 w-4" />
           <span>Add Account</span>
         </BaseButton>
       </div>
       <!-- Tabs -->
       <div
-        class="absolute bottom-[-48px] ltablet:bottom-[-70px] lg:bottom-[-70px] start-0 flex items-end gap-2"
+        class="ltablet:bottom-[-70px] absolute bottom-[-48px] start-0 flex items-end gap-2 lg:bottom-[-70px]"
       >
         <button
           type="button"
-          class="font-sans text-sm inline-flex items-center justify-center px-4 py-3 border-b-2"
+          class="inline-flex items-center justify-center border-b-2 px-4 py-3 font-sans text-sm"
           :class="
             activeTab === 'tab-1'
               ? 'border-primary-500 text-muted-800 dark:text-muted-100'
@@ -461,7 +461,7 @@ const activeTab = ref('tab-1')
         </button>
         <button
           type="button"
-          class="font-sans text-sm inline-flex items-center justify-center px-4 py-3 border-b-2"
+          class="inline-flex items-center justify-center border-b-2 px-4 py-3 font-sans text-sm"
           :class="
             activeTab === 'tab-2'
               ? 'border-primary-500 text-muted-800 dark:text-muted-100'
@@ -482,7 +482,7 @@ const activeTab = ref('tab-1')
           <!-- Group -->
           <div>
             <!-- Title -->
-            <div class="w-full flex items-center justify-between mb-6">
+            <div class="mb-6 flex w-full items-center justify-between">
               <div class="hidden sm:block">
                 <BaseHeading
                   as="h3"
@@ -513,7 +513,7 @@ const activeTab = ref('tab-1')
             <div class="grid grid-cols-12 gap-6">
               <!-- Grid item -->
               <div
-                class="col-span-12 sm:col-span-6 ltablet:col-span-4 lg:col-span-4"
+                class="ltablet:col-span-4 col-span-12 sm:col-span-6 lg:col-span-4"
               >
                 <BaseCard class="p-6">
                   <div class="flex items-center justify-between">
@@ -524,35 +524,35 @@ const activeTab = ref('tab-1')
                       <span>Content Posts (30 days)</span>
                     </BaseParagraph>
                     <BaseIconBox size="md" class="bg-pink-500/20 text-pink-500">
-                      <Icon name="ri:instagram-fill" class="w-6 h-6" />
+                      <Icon name="ri:instagram-fill" class="h-6 w-6" />
                     </BaseIconBox>
                   </div>
-                  <div class="pt-4 pb-6">
+                  <div class="pb-6 pt-4">
                     <span
-                      class="font-sans font-semibold text-4xl leading-none text-muted-800 dark:text-muted-100"
+                      class="text-muted-800 dark:text-muted-100 font-sans text-4xl font-semibold leading-none"
                     >
                       119
                       <small
-                        class="font-medium text-sm text-muted-500 dark:text-muted-400"
+                        class="text-muted-500 dark:text-muted-400 text-sm font-medium"
                       >
                         posts published
                       </small>
                     </span>
                   </div>
-                  <div class="flex items-center gap-2 font-sans mb-2">
+                  <div class="mb-2 flex items-center gap-2 font-sans">
                     <div
-                      class="flex items-center font-semibold text-danger-500"
+                      class="text-danger-500 flex items-center font-semibold"
                     >
-                      <Icon name="lucide:arrow-down-right" class="w-4 h-4" />
+                      <Icon name="lucide:arrow-down-right" class="h-4 w-4" />
                       <span>-4.5%</span>
                     </div>
-                    <span class="text-sm text-muted-400">less than usual</span>
+                    <span class="text-muted-400 text-sm">less than usual</span>
                   </div>
                 </BaseCard>
               </div>
               <!-- Grid item -->
               <div
-                class="col-span-12 sm:col-span-6 ltablet:col-span-4 lg:col-span-4"
+                class="ltablet:col-span-4 col-span-12 sm:col-span-6 lg:col-span-4"
               >
                 <BaseCard class="p-6">
                   <div class="flex items-center justify-between">
@@ -566,35 +566,35 @@ const activeTab = ref('tab-1')
                       size="md"
                       class="bg-primary-500/20 text-primary-500"
                     >
-                      <Icon name="ph:users-four-duotone" class="w-6 h-6" />
+                      <Icon name="ph:users-four-duotone" class="h-6 w-6" />
                     </BaseIconBox>
                   </div>
-                  <div class="pt-4 pb-6">
+                  <div class="pb-6 pt-4">
                     <span
-                      class="font-sans font-semibold text-4xl leading-none text-muted-800 dark:text-muted-100"
+                      class="text-muted-800 dark:text-muted-100 font-sans text-4xl font-semibold leading-none"
                     >
                       14.3k
                       <small
-                        class="font-medium text-sm text-muted-500 dark:text-muted-400"
+                        class="text-muted-500 dark:text-muted-400 text-sm font-medium"
                       >
                         following you
                       </small>
                     </span>
                   </div>
-                  <div class="flex items-center gap-2 font-sans mb-2">
+                  <div class="mb-2 flex items-center gap-2 font-sans">
                     <div
-                      class="flex items-center font-semibold text-success-500"
+                      class="text-success-500 flex items-center font-semibold"
                     >
-                      <Icon name="lucide:arrow-up-right" class="w-4 h-4" />
+                      <Icon name="lucide:arrow-up-right" class="h-4 w-4" />
                       <span>+9.2%</span>
                     </div>
-                    <span class="text-sm text-muted-400">follower growth</span>
+                    <span class="text-muted-400 text-sm">follower growth</span>
                   </div>
                 </BaseCard>
               </div>
               <!-- Grid item -->
               <div
-                class="col-span-12 sm:col-span-6 ltablet:col-span-4 lg:col-span-4"
+                class="ltablet:col-span-4 col-span-12 sm:col-span-6 lg:col-span-4"
               >
                 <BaseCard class="p-6">
                   <div class="flex items-center justify-between">
@@ -608,35 +608,35 @@ const activeTab = ref('tab-1')
                       size="md"
                       class="bg-emerald-500/20 text-emerald-500"
                     >
-                      <Icon name="ph:users-three-duotone" class="w-6 h-6" />
+                      <Icon name="ph:users-three-duotone" class="h-6 w-6" />
                     </BaseIconBox>
                   </div>
-                  <div class="pt-4 pb-6">
+                  <div class="pb-6 pt-4">
                     <span
-                      class="font-sans font-semibold text-4xl leading-none text-muted-800 dark:text-muted-100"
+                      class="text-muted-800 dark:text-muted-100 font-sans text-4xl font-semibold leading-none"
                     >
                       224
                       <small
-                        class="font-medium text-sm text-muted-500 dark:text-muted-400"
+                        class="text-muted-500 dark:text-muted-400 text-sm font-medium"
                       >
                         followed by you
                       </small>
                     </span>
                   </div>
-                  <div class="flex items-center gap-2 font-sans mb-2">
+                  <div class="mb-2 flex items-center gap-2 font-sans">
                     <div
-                      class="flex items-center font-semibold text-success-500"
+                      class="text-success-500 flex items-center font-semibold"
                     >
-                      <Icon name="lucide:arrow-up-right" class="w-4 h-4" />
+                      <Icon name="lucide:arrow-up-right" class="h-4 w-4" />
                       <span>+1.1%</span>
                     </div>
-                    <span class="text-sm text-muted-400">more than usual</span>
+                    <span class="text-muted-400 text-sm">more than usual</span>
                   </div>
                 </BaseCard>
               </div>
               <!-- Grid item -->
               <div
-                class="col-span-12 sm:col-span-6 ltablet:col-span-4 lg:col-span-4"
+                class="ltablet:col-span-4 col-span-12 sm:col-span-6 lg:col-span-4"
               >
                 <BaseCard class="p-6">
                   <div class="flex items-center justify-between">
@@ -647,29 +647,29 @@ const activeTab = ref('tab-1')
                       <span>Likes (30 days)</span>
                     </BaseParagraph>
                     <BaseIconBox size="md" class="bg-pink-500/20 text-pink-500">
-                      <Icon name="ph:heart-duotone" class="w-6 h-6" />
+                      <Icon name="ph:heart-duotone" class="h-6 w-6" />
                     </BaseIconBox>
                   </div>
-                  <div class="pt-4 pb-6">
+                  <div class="pb-6 pt-4">
                     <span
-                      class="font-sans font-semibold text-4xl leading-none text-muted-800 dark:text-muted-100"
+                      class="text-muted-800 dark:text-muted-100 font-sans text-4xl font-semibold leading-none"
                     >
                       129.7k
                       <small
-                        class="font-medium text-sm text-muted-500 dark:text-muted-400"
+                        class="text-muted-500 dark:text-muted-400 text-sm font-medium"
                       >
                         likes of your content
                       </small>
                     </span>
                   </div>
-                  <div class="flex items-center gap-2 font-sans mb-2">
+                  <div class="mb-2 flex items-center gap-2 font-sans">
                     <div
-                      class="flex items-center font-semibold text-success-500"
+                      class="text-success-500 flex items-center font-semibold"
                     >
-                      <Icon name="lucide:arrow-up-right" class="w-4 h-4" />
+                      <Icon name="lucide:arrow-up-right" class="h-4 w-4" />
                       <span>+25.7%</span>
                     </div>
-                    <span class="text-sm text-muted-400">
+                    <span class="text-muted-400 text-sm">
                       engagement growth
                     </span>
                   </div>
@@ -677,7 +677,7 @@ const activeTab = ref('tab-1')
               </div>
               <!-- Grid item -->
               <div
-                class="col-span-12 sm:col-span-6 ltablet:col-span-4 lg:col-span-4"
+                class="ltablet:col-span-4 col-span-12 sm:col-span-6 lg:col-span-4"
               >
                 <BaseCard class="p-6">
                   <div class="flex items-center justify-between">
@@ -691,29 +691,29 @@ const activeTab = ref('tab-1')
                       size="md"
                       class="bg-yellow-500/20 text-yellow-500"
                     >
-                      <Icon name="ph:chat-circle-duotone" class="w-6 h-6" />
+                      <Icon name="ph:chat-circle-duotone" class="h-6 w-6" />
                     </BaseIconBox>
                   </div>
-                  <div class="pt-4 pb-6">
+                  <div class="pb-6 pt-4">
                     <span
-                      class="font-sans font-semibold text-4xl leading-none text-muted-800 dark:text-muted-100"
+                      class="text-muted-800 dark:text-muted-100 font-sans text-4xl font-semibold leading-none"
                     >
                       5.2k
                       <small
-                        class="font-medium text-sm text-muted-500 dark:text-muted-400"
+                        class="text-muted-500 dark:text-muted-400 text-sm font-medium"
                       >
                         comments published
                       </small>
                     </span>
                   </div>
-                  <div class="flex items-center gap-2 font-sans mb-2">
+                  <div class="mb-2 flex items-center gap-2 font-sans">
                     <div
-                      class="flex items-center font-semibold text-success-500"
+                      class="text-success-500 flex items-center font-semibold"
                     >
-                      <Icon name="lucide:arrow-up-right" class="w-4 h-4" />
+                      <Icon name="lucide:arrow-up-right" class="h-4 w-4" />
                       <span>+11.3%</span>
                     </div>
-                    <span class="text-sm text-muted-400">
+                    <span class="text-muted-400 text-sm">
                       engagement growth
                     </span>
                   </div>
@@ -721,7 +721,7 @@ const activeTab = ref('tab-1')
               </div>
               <!-- Grid item -->
               <div
-                class="col-span-12 sm:col-span-6 ltablet:col-span-4 lg:col-span-4"
+                class="ltablet:col-span-4 col-span-12 sm:col-span-6 lg:col-span-4"
               >
                 <BaseCard class="p-6">
                   <div class="flex items-center justify-between">
@@ -732,29 +732,29 @@ const activeTab = ref('tab-1')
                       <span>Profile views (30 days)</span>
                     </BaseParagraph>
                     <BaseIconBox size="md" class="bg-lime-500/20 text-lime-500">
-                      <Icon name="ph:user-duotone" class="w-6 h-6" />
+                      <Icon name="ph:user-duotone" class="h-6 w-6" />
                     </BaseIconBox>
                   </div>
-                  <div class="pt-4 pb-6">
+                  <div class="pb-6 pt-4">
                     <span
-                      class="font-sans font-semibold text-4xl leading-none text-muted-800 dark:text-muted-100"
+                      class="text-muted-800 dark:text-muted-100 font-sans text-4xl font-semibold leading-none"
                     >
                       12.7k
                       <small
-                        class="font-medium text-sm text-muted-500 dark:text-muted-400"
+                        class="text-muted-500 dark:text-muted-400 text-sm font-medium"
                       >
                         views of profile
                       </small>
                     </span>
                   </div>
-                  <div class="flex items-center gap-2 font-sans mb-2">
+                  <div class="mb-2 flex items-center gap-2 font-sans">
                     <div
-                      class="flex items-center font-semibold text-success-500"
+                      class="text-success-500 flex items-center font-semibold"
                     >
-                      <Icon name="lucide:arrow-up-right" class="w-4 h-4" />
+                      <Icon name="lucide:arrow-up-right" class="h-4 w-4" />
                       <span>+8.5%</span>
                     </div>
-                    <span class="text-sm text-muted-400">
+                    <span class="text-muted-400 text-sm">
                       engagement growth
                     </span>
                   </div>
@@ -765,7 +765,7 @@ const activeTab = ref('tab-1')
           <!-- Group -->
           <div>
             <!-- Title -->
-            <div class="w-full flex items-center justify-between mb-6">
+            <div class="mb-6 flex w-full items-center justify-between">
               <div class="hidden sm:block">
                 <BaseHeading
                   as="h3"
@@ -793,7 +793,7 @@ const activeTab = ref('tab-1')
             <div class="grid grid-cols-12 gap-6">
               <!-- Grid item -->
               <div
-                class="col-span-12 sm:col-span-6 ltablet:col-span-4 lg:col-span-4"
+                class="ltablet:col-span-4 col-span-12 sm:col-span-6 lg:col-span-4"
               >
                 <BaseCard class="p-6">
                   <div class="flex items-center justify-between">
@@ -804,35 +804,35 @@ const activeTab = ref('tab-1')
                       <span>Content Posts (30 days)</span>
                     </BaseParagraph>
                     <BaseIconBox size="md" class="bg-sky-500/20 text-sky-500">
-                      <Icon name="fa6-brands:tiktok" class="w-6 h-6" />
+                      <Icon name="fa6-brands:tiktok" class="h-6 w-6" />
                     </BaseIconBox>
                   </div>
-                  <div class="pt-4 pb-6">
+                  <div class="pb-6 pt-4">
                     <span
-                      class="font-sans font-semibold text-4xl leading-none text-muted-800 dark:text-muted-100"
+                      class="text-muted-800 dark:text-muted-100 font-sans text-4xl font-semibold leading-none"
                     >
                       248
                       <small
-                        class="font-medium text-sm text-muted-500 dark:text-muted-400"
+                        class="text-muted-500 dark:text-muted-400 text-sm font-medium"
                       >
                         posts published
                       </small>
                     </span>
                   </div>
-                  <div class="flex items-center gap-2 font-sans mb-2">
+                  <div class="mb-2 flex items-center gap-2 font-sans">
                     <div
-                      class="flex items-center font-semibold text-success-500"
+                      class="text-success-500 flex items-center font-semibold"
                     >
-                      <Icon name="lucide:arrow-up-right" class="w-4 h-4" />
+                      <Icon name="lucide:arrow-up-right" class="h-4 w-4" />
                       <span>+15.5%</span>
                     </div>
-                    <span class="text-sm text-muted-400">more than usual</span>
+                    <span class="text-muted-400 text-sm">more than usual</span>
                   </div>
                 </BaseCard>
               </div>
               <!-- Grid item -->
               <div
-                class="col-span-12 sm:col-span-6 ltablet:col-span-4 lg:col-span-4"
+                class="ltablet:col-span-4 col-span-12 sm:col-span-6 lg:col-span-4"
               >
                 <BaseCard class="p-6">
                   <div class="flex items-center justify-between">
@@ -846,35 +846,35 @@ const activeTab = ref('tab-1')
                       size="md"
                       class="bg-primary-500/20 text-primary-500"
                     >
-                      <Icon name="ph:users-four-duotone" class="w-6 h-6" />
+                      <Icon name="ph:users-four-duotone" class="h-6 w-6" />
                     </BaseIconBox>
                   </div>
-                  <div class="pt-4 pb-6">
+                  <div class="pb-6 pt-4">
                     <span
-                      class="font-sans font-semibold text-4xl leading-none text-muted-800 dark:text-muted-100"
+                      class="text-muted-800 dark:text-muted-100 font-sans text-4xl font-semibold leading-none"
                     >
                       5.7k
                       <small
-                        class="font-medium text-sm text-muted-500 dark:text-muted-400"
+                        class="text-muted-500 dark:text-muted-400 text-sm font-medium"
                       >
                         following you
                       </small>
                     </span>
                   </div>
-                  <div class="flex items-center gap-2 font-sans mb-2">
+                  <div class="mb-2 flex items-center gap-2 font-sans">
                     <div
-                      class="flex items-center font-semibold text-success-500"
+                      class="text-success-500 flex items-center font-semibold"
                     >
-                      <Icon name="lucide:arrow-up-right" class="w-4 h-4" />
+                      <Icon name="lucide:arrow-up-right" class="h-4 w-4" />
                       <span>+17.2%</span>
                     </div>
-                    <span class="text-sm text-muted-400">follower growth</span>
+                    <span class="text-muted-400 text-sm">follower growth</span>
                   </div>
                 </BaseCard>
               </div>
               <!-- Grid item -->
               <div
-                class="col-span-12 sm:col-span-6 ltablet:col-span-4 lg:col-span-4"
+                class="ltablet:col-span-4 col-span-12 sm:col-span-6 lg:col-span-4"
               >
                 <BaseCard class="p-6">
                   <div class="flex items-center justify-between">
@@ -888,35 +888,35 @@ const activeTab = ref('tab-1')
                       size="md"
                       class="bg-emerald-500/20 text-emerald-500"
                     >
-                      <Icon name="ph:users-three-duotone" class="w-6 h-6" />
+                      <Icon name="ph:users-three-duotone" class="h-6 w-6" />
                     </BaseIconBox>
                   </div>
-                  <div class="pt-4 pb-6">
+                  <div class="pb-6 pt-4">
                     <span
-                      class="font-sans font-semibold text-4xl leading-none text-muted-800 dark:text-muted-100"
+                      class="text-muted-800 dark:text-muted-100 font-sans text-4xl font-semibold leading-none"
                     >
                       29
                       <small
-                        class="font-medium text-sm text-muted-500 dark:text-muted-400"
+                        class="text-muted-500 dark:text-muted-400 text-sm font-medium"
                       >
                         followed by you
                       </small>
                     </span>
                   </div>
-                  <div class="flex items-center gap-2 font-sans mb-2">
+                  <div class="mb-2 flex items-center gap-2 font-sans">
                     <div
-                      class="flex items-center font-semibold text-success-500"
+                      class="text-success-500 flex items-center font-semibold"
                     >
-                      <Icon name="lucide:arrow-up-right" class="w-4 h-4" />
+                      <Icon name="lucide:arrow-up-right" class="h-4 w-4" />
                       <span>+0.3%</span>
                     </div>
-                    <span class="text-sm text-muted-400">more than usual</span>
+                    <span class="text-muted-400 text-sm">more than usual</span>
                   </div>
                 </BaseCard>
               </div>
               <!-- Grid item -->
               <div
-                class="col-span-12 sm:col-span-6 ltablet:col-span-4 lg:col-span-4"
+                class="ltablet:col-span-4 col-span-12 sm:col-span-6 lg:col-span-4"
               >
                 <BaseCard class="p-6">
                   <div class="flex items-center justify-between">
@@ -927,29 +927,29 @@ const activeTab = ref('tab-1')
                       <span>Likes (30 days)</span>
                     </BaseParagraph>
                     <BaseIconBox size="md" class="bg-pink-500/20 text-pink-500">
-                      <Icon name="ph:heart-duotone" class="w-6 h-6" />
+                      <Icon name="ph:heart-duotone" class="h-6 w-6" />
                     </BaseIconBox>
                   </div>
-                  <div class="pt-4 pb-6">
+                  <div class="pb-6 pt-4">
                     <span
-                      class="font-sans font-semibold text-4xl leading-none text-muted-800 dark:text-muted-100"
+                      class="text-muted-800 dark:text-muted-100 font-sans text-4xl font-semibold leading-none"
                     >
                       80.4k
                       <small
-                        class="font-medium text-sm text-muted-500 dark:text-muted-400"
+                        class="text-muted-500 dark:text-muted-400 text-sm font-medium"
                       >
                         likes of your content
                       </small>
                     </span>
                   </div>
-                  <div class="flex items-center gap-2 font-sans mb-2">
+                  <div class="mb-2 flex items-center gap-2 font-sans">
                     <div
-                      class="flex items-center font-semibold text-success-500"
+                      class="text-success-500 flex items-center font-semibold"
                     >
-                      <Icon name="lucide:arrow-up-right" class="w-4 h-4" />
+                      <Icon name="lucide:arrow-up-right" class="h-4 w-4" />
                       <span>+65.7%</span>
                     </div>
-                    <span class="text-sm text-muted-400">
+                    <span class="text-muted-400 text-sm">
                       engagement growth
                     </span>
                   </div>
@@ -957,7 +957,7 @@ const activeTab = ref('tab-1')
               </div>
               <!-- Grid item -->
               <div
-                class="col-span-12 sm:col-span-6 ltablet:col-span-4 lg:col-span-4"
+                class="ltablet:col-span-4 col-span-12 sm:col-span-6 lg:col-span-4"
               >
                 <BaseCard class="p-6">
                   <div class="flex items-center justify-between">
@@ -971,29 +971,29 @@ const activeTab = ref('tab-1')
                       size="md"
                       class="bg-yellow-500/20 text-yellow-500"
                     >
-                      <Icon name="ph:chat-circle-duotone" class="w-6 h-6" />
+                      <Icon name="ph:chat-circle-duotone" class="h-6 w-6" />
                     </BaseIconBox>
                   </div>
-                  <div class="pt-4 pb-6">
+                  <div class="pb-6 pt-4">
                     <span
-                      class="font-sans font-semibold text-4xl leading-none text-muted-800 dark:text-muted-100"
+                      class="text-muted-800 dark:text-muted-100 font-sans text-4xl font-semibold leading-none"
                     >
                       22.8k
                       <small
-                        class="font-medium text-sm text-muted-500 dark:text-muted-400"
+                        class="text-muted-500 dark:text-muted-400 text-sm font-medium"
                       >
                         comments published
                       </small>
                     </span>
                   </div>
-                  <div class="flex items-center gap-2 font-sans mb-2">
+                  <div class="mb-2 flex items-center gap-2 font-sans">
                     <div
-                      class="flex items-center font-semibold text-success-500"
+                      class="text-success-500 flex items-center font-semibold"
                     >
-                      <Icon name="lucide:arrow-up-right" class="w-4 h-4" />
+                      <Icon name="lucide:arrow-up-right" class="h-4 w-4" />
                       <span>+49.3%</span>
                     </div>
-                    <span class="text-sm text-muted-400">
+                    <span class="text-muted-400 text-sm">
                       engagement growth
                     </span>
                   </div>
@@ -1001,7 +1001,7 @@ const activeTab = ref('tab-1')
               </div>
               <!-- Grid item -->
               <div
-                class="col-span-12 sm:col-span-6 ltablet:col-span-4 lg:col-span-4"
+                class="ltablet:col-span-4 col-span-12 sm:col-span-6 lg:col-span-4"
               >
                 <BaseCard class="p-6">
                   <div class="flex items-center justify-between">
@@ -1012,29 +1012,29 @@ const activeTab = ref('tab-1')
                       <span>Profile views (30 days)</span>
                     </BaseParagraph>
                     <BaseIconBox size="md" class="bg-lime-500/20 text-lime-500">
-                      <Icon name="ph:user-duotone" class="w-6 h-6" />
+                      <Icon name="ph:user-duotone" class="h-6 w-6" />
                     </BaseIconBox>
                   </div>
-                  <div class="pt-4 pb-6">
+                  <div class="pb-6 pt-4">
                     <span
-                      class="font-sans font-semibold text-4xl leading-none text-muted-800 dark:text-muted-100"
+                      class="text-muted-800 dark:text-muted-100 font-sans text-4xl font-semibold leading-none"
                     >
                       48.3k
                       <small
-                        class="font-medium text-sm text-muted-500 dark:text-muted-400"
+                        class="text-muted-500 dark:text-muted-400 text-sm font-medium"
                       >
                         views of profile
                       </small>
                     </span>
                   </div>
-                  <div class="flex items-center gap-2 font-sans mb-2">
+                  <div class="mb-2 flex items-center gap-2 font-sans">
                     <div
-                      class="flex items-center font-semibold text-success-500"
+                      class="text-success-500 flex items-center font-semibold"
                     >
-                      <Icon name="lucide:arrow-up-right" class="w-4 h-4" />
+                      <Icon name="lucide:arrow-up-right" class="h-4 w-4" />
                       <span>+34.2%</span>
                     </div>
-                    <span class="text-sm text-muted-400">
+                    <span class="text-muted-400 text-sm">
                       engagement growth
                     </span>
                   </div>
@@ -1048,45 +1048,45 @@ const activeTab = ref('tab-1')
       <div v-else-if="activeTab === 'tab-2'" class="mt-28">
         <!-- Inner company grid -->
         <div
-          class="grid grid-cols-1 sm:grid-cols-2 ltablet:grid-cols-3 lg:grid-cols-3 gap-6"
+          class="ltablet:grid-cols-3 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
         >
           <div
             v-for="(company, index) in companies"
             :key="index"
             class="relative h-full"
           >
-            <BaseCard shape="curved" class="p-6 h-full flex flex-col">
-              <div class="w-full h-full flex flex-col gap-4">
+            <BaseCard shape="curved" class="flex h-full flex-col p-6">
+              <div class="flex h-full w-full flex-col gap-4">
                 <div :data-tooltip="company.name">
-                  <Icon :name="company.logo" class="w-8 h-8 shrink-0" />
+                  <Icon :name="company.logo" class="h-8 w-8 shrink-0" />
                 </div>
-                <div class="h-full flex flex-col">
+                <div class="flex h-full flex-col">
                   <BaseHeading
                     as="h4"
                     size="md"
                     weight="semibold"
                     lead="tight"
-                    class="mb-4 after:text-muted-800 dark:text-white"
+                    class="after:text-muted-800 mb-4 dark:text-white"
                   >
                     <span>{{ company.name }}</span>
                   </BaseHeading>
                   <BaseParagraph size="sm">
                     <span
-                      class="line-clamp-4 text-muted-500 dark:text-muted-400"
+                      class="text-muted-500 dark:text-muted-400 line-clamp-4"
                     >
                       {{ company.description }}
                     </span>
                   </BaseParagraph>
                   <div
-                    class="mt-auto flex items-center justify-center py-4 divide-x divide-muted-200 dark:divide-muted-700"
+                    class="divide-muted-200 dark:divide-muted-700 mt-auto flex items-center justify-center divide-x py-4"
                   >
                     <div
                       v-for="(stat, statIndex) in company.stats"
                       :key="statIndex"
-                      class="flex-1 px-4 my-4 text-center font-sans"
+                      class="my-4 flex-1 px-4 text-center font-sans"
                     >
                       <span
-                        class="block font-semibold text-muted-800 dark:text-muted-100"
+                        class="text-muted-800 dark:text-muted-100 block font-semibold"
                       >
                         {{
                           stat.label === 'Income'
@@ -1094,7 +1094,7 @@ const activeTab = ref('tab-1')
                             : stat.value
                         }}
                       </span>
-                      <span class="block text-xs text-muted-400">
+                      <span class="text-muted-400 block text-xs">
                         {{ stat.label }}
                       </span>
                     </div>

@@ -145,7 +145,7 @@ onMounted(() => {
       type="text"
       @click="showDatepicker = !showDatepicker"
       v-model="datepickerValue"
-      class="text-muted-600 hidden w-full rounded-lg py-3 pe-10 ps-4 font-medium leading-none shadow-sm focus:outline-none focus:ring focus:ring-blue-600 focus:ring-opacity-50"
+      class="text-muted-600 hidden w-full rounded-lg py-3 pe-10 ps-4 font-medium leading-none shadow-sm focus:outline-none focus:ring focus:ring-blue-600/50"
       placeholder="Select date"
       readonly
     />
@@ -213,7 +213,7 @@ onMounted(() => {
       </div>
 
       <div class="-mx-1 flex flex-wrap">
-        <template v-for="blankday in blankDays">
+        <template v-for="blankday in blankDays" :key="blankday">
           <div
             style="width: 14.28%"
             class="border border-transparent p-1 text-center text-sm"
@@ -232,7 +232,7 @@ onMounted(() => {
                   ? 'text-muted-500 dark:text-muted-400 hover:text-primary-500 hover:bg-primary-100 dark:hover:bg-primary-500/20'
                   : '',
                 isSelectedDate(date) === true
-                  ? 'bg-primary-500 text-white hover:bg-opacity-75'
+                  ? 'bg-primary-500 hover:bg-primary-500/75 text-white'
                   : '',
               ]"
             >

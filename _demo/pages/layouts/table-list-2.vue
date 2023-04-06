@@ -114,7 +114,7 @@ const { data, pending, error, refresh } = await useFetch('/api/products', {
                   {{ item.stock }}
                 </TairoTableCell>
                 <TairoTableCell light spaced>
-                  <span class="text-sm font-medium text-primary-500">
+                  <span class="text-primary-500 text-sm font-medium">
                     {{ item.category }}
                   </span>
                 </TairoTableCell>

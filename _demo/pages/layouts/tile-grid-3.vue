@@ -48,7 +48,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
       <template #right>
         <BaseButton class="w-full sm:w-32" shape="curved">Manage</BaseButton>
         <BaseButton color="primary" class="w-full sm:w-32" shape="curved">
-          <Icon name="lucide:plus" class="w-4 h-4" />
+          <Icon name="lucide:plus" class="h-4 w-4" />
           <span>Upload</span>
         </BaseButton>
       </template>
@@ -74,7 +74,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
         </div>
         <div
           v-else
-          class="grid sm:grid-cols-2 ltablet:grid-cols-3 lg:grid-cols-3 gap-4"
+          class="ltablet:grid-cols-3 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
         >
           <TransitionGroup
             enter-active-class="transform-gpu"
@@ -90,7 +90,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
               shape="curved"
               class="p-3"
             >
-              <div class="w-full flex items-center gap-2">
+              <div class="flex w-full items-center gap-2">
                 <BaseAvatar
                   :src="item.icon"
                   :badge-src="item.author.avatar"
@@ -108,30 +108,30 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                     {{ item.name }}
                   </BaseHeading>
                   <div
-                    class="flex items-center justify-center gap-6 sm:gap-0 sm:justify-start"
+                    class="flex items-center justify-center gap-6 sm:justify-start sm:gap-0"
                   >
                     <div
-                      class="flex items-center gap-1 text-xs mt-3 sm:mt-0 text-left text-muted-400"
+                      class="text-muted-400 mt-3 flex items-center gap-1 text-left text-xs sm:mt-0"
                     >
-                      <Icon name="lucide:archive" class="w-3 h-3" />
+                      <Icon name="lucide:archive" class="h-3 w-3" />
                       <span>{{ item.category }}</span>
                     </div>
-                    <div class="hidden sm:block px-2">
+                    <div class="hidden px-2 sm:block">
                       <span>&middot;</span>
                     </div>
                     <div
-                      class="flex items-center gap-1 text-xs mt-3 sm:mt-0 text-left text-muted-400"
+                      class="text-muted-400 mt-3 flex items-center gap-1 text-left text-xs sm:mt-0"
                     >
-                      <Icon name="lucide:clock" class="w-3 h-3" />
+                      <Icon name="lucide:clock" class="h-3 w-3" />
                       <span>{{ item.duration }}</span>
                     </div>
-                    <div class="hidden sm:block px-2">
+                    <div class="hidden px-2 sm:block">
                       <span>&middot;</span>
                     </div>
                     <div
-                      class="flex items-center gap-1 text-xs mt-3 sm:mt-0 text-left text-muted-400"
+                      class="text-muted-400 mt-3 flex items-center gap-1 text-left text-xs sm:mt-0"
                     >
-                      <Icon name="lucide:paperclip" class="w-3 h-3" />
+                      <Icon name="lucide:paperclip" class="h-3 w-3" />
                       <span>{{ item.attachments }}</span>
                     </div>
                   </div>
@@ -153,7 +153,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                       <template #start>
                         <Icon
                           name="ph:download-duotone"
-                          class="w-5 h-5 block me-2"
+                          class="me-2 block h-5 w-5"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -162,7 +162,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                       <template #start>
                         <Icon
                           name="ph:share-duotone"
-                          class="w-5 h-5 block me-2"
+                          class="me-2 block h-5 w-5"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -171,7 +171,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                       <template #start>
                         <Icon
                           name="ph:bookmark-simple-duotone"
-                          class="w-5 h-5 block me-2"
+                          class="me-2 block h-5 w-5"
                         />
                       </template>
                     </BaseDropdownItem>

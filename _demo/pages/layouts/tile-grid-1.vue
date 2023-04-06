@@ -51,7 +51,7 @@ const { data, pending, error, refresh } = await useFetch(
       <template #right>
         <BaseButton class="w-full sm:w-32" shape="full">Manage</BaseButton>
         <BaseButton color="primary" class="w-full sm:w-32" shape="full">
-          <Icon name="lucide:plus" class="w-4 h-4" />
+          <Icon name="lucide:plus" class="h-4 w-4" />
           <span>Add User</span>
         </BaseButton>
       </template>
@@ -77,7 +77,7 @@ const { data, pending, error, refresh } = await useFetch(
         </div>
         <div
           v-else
-          class="grid sm:grid-cols-2 ltablet:grid-cols-3 lg:grid-cols-3 gap-4"
+          class="ltablet:grid-cols-3 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
         >
           <TransitionGroup
             enter-active-class="transform-gpu"
@@ -93,7 +93,7 @@ const { data, pending, error, refresh } = await useFetch(
               shape="curved"
               class="p-3"
             >
-              <div class="w-full flex items-center gap-2">
+              <div class="flex w-full items-center gap-2">
                 <BaseAvatar
                   size="md"
                   :src="item.picture"
@@ -126,7 +126,7 @@ const { data, pending, error, refresh } = await useFetch(
                       <template #start>
                         <Icon
                           name="ph:lock-duotone"
-                          class="w-5 h-5 block me-2"
+                          class="me-2 block h-5 w-5"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -138,7 +138,7 @@ const { data, pending, error, refresh } = await useFetch(
                       <template #start>
                         <Icon
                           name="ph:chat-circle-duotone"
-                          class="w-5 h-5 block me-2"
+                          class="me-2 block h-5 w-5"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -150,7 +150,7 @@ const { data, pending, error, refresh } = await useFetch(
                       <template #start>
                         <Icon
                           name="ph:share-duotone"
-                          class="w-5 h-5 block me-2"
+                          class="me-2 block h-5 w-5"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -163,7 +163,7 @@ const { data, pending, error, refresh } = await useFetch(
                       <template #start>
                         <Icon
                           name="ph:trash-duotone"
-                          class="w-5 h-5 block me-2"
+                          class="me-2 block h-5 w-5"
                         />
                       </template>
                     </BaseDropdownItem>

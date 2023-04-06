@@ -27,7 +27,7 @@ const props = withDefaults(
         class="text-primary-500"
       />
       <div
-        class="absolute top-1/2 start-1/2 -translate-y-1/2 -translate-x-1/2 w-16 h-16"
+        class="absolute start-1/2 top-1/2 h-16 w-16 -translate-x-1/2 -translate-y-1/2"
       >
         <BaseAvatar :src="props.image" size="lg" />
       </div>
@@ -38,7 +38,7 @@ const props = withDefaults(
         size="md"
         weight="medium"
         lead="tight"
-        class="mb-1 text-muted-800 dark:text-white"
+        class="text-muted-800 mb-1 dark:text-white"
       >
         <span>{{ props.title }}</span>
       </BaseHeading>

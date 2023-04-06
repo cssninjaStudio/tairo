@@ -51,7 +51,7 @@ const { data, pending, error, refresh } = await useFetch(
       <template #right>
         <BaseButton shape="curved" class="w-full sm:w-32">Settings</BaseButton>
         <BaseButton shape="curved" color="primary" class="w-full sm:w-32">
-          <Icon name="lucide:plus" class="w-4 h-4" />
+          <Icon name="lucide:plus" class="h-4 w-4" />
           <span>Create</span>
         </BaseButton>
       </template>
@@ -77,7 +77,7 @@ const { data, pending, error, refresh } = await useFetch(
         </div>
         <div v-else>
           <div
-            class="w-full grid sm:grid-cols-2 ltablet:grid-cols-3 lg:grid-cols-3 gap-4"
+            class="ltablet:grid-cols-3 grid w-full gap-4 sm:grid-cols-2 lg:grid-cols-3"
           >
             <TransitionGroup
               enter-active-class="transform-gpu"
@@ -93,7 +93,7 @@ const { data, pending, error, refresh } = await useFetch(
                 shape="curved"
                 class="p-4"
               >
-                <div class="flex items-center gap-3 mb-3">
+                <div class="mb-3 flex items-center gap-3">
                   <BaseAvatar
                     :src="item.owner.avatar"
                     :text="item.owner.initials"
@@ -102,11 +102,11 @@ const { data, pending, error, refresh } = await useFetch(
                   />
                   <div class="leading-none">
                     <h4
-                      class="font-sans text-sm font-medium text-muted-800 dark:text-muted-100"
+                      class="text-muted-800 dark:text-muted-100 font-sans text-sm font-medium"
                     >
                       {{ item.owner.name }}
                     </h4>
-                    <p class="font-sans text-xs text-muted-400">
+                    <p class="text-muted-400 font-sans text-xs">
                       Updated {{ item.updated }}
                     </p>
                   </div>
@@ -127,7 +127,7 @@ const { data, pending, error, refresh } = await useFetch(
                         <template #start>
                           <Icon
                             name="ph:pencil-duotone"
-                            class="w-5 h-5 block me-2"
+                            class="me-2 block h-5 w-5"
                           />
                         </template>
                       </BaseDropdownItem>
@@ -140,7 +140,7 @@ const { data, pending, error, refresh } = await useFetch(
                         <template #start>
                           <Icon
                             name="ph:lock-duotone"
-                            class="w-5 h-5 block me-2"
+                            class="me-2 block h-5 w-5"
                           />
                         </template>
                       </BaseDropdownItem>
@@ -152,7 +152,7 @@ const { data, pending, error, refresh } = await useFetch(
                         <template #start>
                           <Icon
                             name="ph:share-duotone"
-                            class="w-5 h-5 block me-2"
+                            class="me-2 block h-5 w-5"
                           />
                         </template>
                       </BaseDropdownItem>
@@ -165,7 +165,7 @@ const { data, pending, error, refresh } = await useFetch(
                         <template #start>
                           <Icon
                             name="ph:trash-duotone"
-                            class="w-5 h-5 block me-2"
+                            class="me-2 block h-5 w-5"
                           />
                         </template>
                       </BaseDropdownItem>
@@ -175,15 +175,15 @@ const { data, pending, error, refresh } = await useFetch(
                 <div>
                   <img :src="item.image" :alt="item.name" class="rounded-lg" />
                 </div>
-                <div class="flex items-center justify-between my-4">
+                <div class="my-4 flex items-center justify-between">
                   <div>
                     <h4
-                      class="font-sans text-base font-medium text-muted-800 dark:text-muted-100"
+                      class="text-muted-800 dark:text-muted-100 font-sans text-base font-medium"
                     >
                       {{ item.name }}
                     </h4>
-                    <div class="flex items-center gap-1 text-muted-400">
-                      <Icon name="ph:calendar-blank-duotone" class="w-4 h-4" />
+                    <div class="text-muted-400 flex items-center gap-1">
+                      <Icon name="ph:calendar-blank-duotone" class="h-4 w-4" />
                       <p class="font-sans text-sm">
                         {{ item.dueDate }}
                       </p>

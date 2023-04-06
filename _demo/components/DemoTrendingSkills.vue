@@ -28,16 +28,16 @@ const skills = [
 </script>
 
 <template>
-  <div class="space-y-5 mb-2">
+  <div class="mb-2 space-y-5">
     <div
       v-for="skill in skills"
       :key="skill.id"
       class="flex items-center gap-3"
     >
       <div
-        class="h-10 w-10 flex items-center justify-center rounded-full border border-muted-200 dark:border-muted-700"
+        class="border-muted-200 dark:border-muted-700 flex h-10 w-10 items-center justify-center rounded-full border"
       >
-        <Icon :name="skill.icon" class="w-5 h-5" />
+        <Icon :name="skill.icon" class="h-5 w-5" />
       </div>
       <div>
         <BaseHeading
@@ -55,9 +55,9 @@ const skills = [
           </span>
         </BaseParagraph>
       </div>
-      <div class="flex items-center ms-auto">
+      <div class="ms-auto flex items-center">
         <BaseButtonIcon shape="curved" muted class="scale-75">
-          <Icon name="lucide:arrow-right" class="w-5 h-5" />
+          <Icon name="lucide:arrow-right" class="h-5 w-5" />
         </BaseButtonIcon>
       </div>
     </div>

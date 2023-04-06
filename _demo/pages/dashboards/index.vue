@@ -250,9 +250,9 @@ function useBarProfit() {
 <template>
   <div>
     <!-- Header -->
-    <div class="flex flex-col md:flex-row md:items-center justify-between mb-8">
+    <div class="mb-8 flex flex-col justify-between md:flex-row md:items-center">
       <div
-        class="flex flex-col md:flex-row items-center gap-4 text-center md:text-left max-w-[425px] ltablet:max-w-full lg:max-w-full"
+        class="ltablet:max-w-full flex max-w-[425px] flex-col items-center gap-4 text-center md:flex-row md:text-left lg:max-w-full"
       >
         <BaseAvatar src="/img/avatars/2.svg" size="lg" />
         <div>
@@ -273,7 +273,7 @@ function useBarProfit() {
         </div>
       </div>
       <div
-        class="flex items-center justify-center md:justify-start gap-2 mt-4 md:mt-0"
+        class="mt-4 flex items-center justify-center gap-2 md:mt-0 md:justify-start"
       >
         <BaseButton>
           <span>View Reports</span>
@@ -286,7 +286,7 @@ function useBarProfit() {
     <!-- Grid -->
     <div class="grid grid-cols-12 gap-6">
       <!-- Quick stats -->
-      <div class="col-span-12 ltablet:col-span-6 lg:col-span-6">
+      <div class="ltablet:col-span-6 col-span-12 lg:col-span-6">
         <BaseCard class="p-6">
           <div class="mb-6">
             <BaseHeading
@@ -299,17 +299,17 @@ function useBarProfit() {
               <span>Your Quick Stats</span>
             </BaseHeading>
           </div>
-          <div class="grid md:grid-cols-2 gap-4">
+          <div class="grid gap-4 md:grid-cols-2">
             <!-- Grid item -->
             <div
-              class="flex items-center gap-2 py-10 px-5 rounded-md bg-muted-100/80 dark:bg-muted-700"
+              class="bg-muted-100/80 dark:bg-muted-700 flex items-center gap-2 rounded-md px-5 py-10"
             >
               <BaseIconBox
                 size="md"
-                class="bg-primary-100 text-primary-500 dark:bg-primary-500/20 dark:text-primary-400 dark:border-2 dark:border-primary-500"
+                class="bg-primary-100 text-primary-500 dark:bg-primary-500/20 dark:text-primary-400 dark:border-primary-500 dark:border-2"
                 shape="full"
               >
-                <Icon name="ph:nut-duotone" class="w-5 h-5" />
+                <Icon name="ph:nut-duotone" class="h-5 w-5" />
               </BaseIconBox>
               <div>
                 <BaseHeading
@@ -330,14 +330,14 @@ function useBarProfit() {
             </div>
             <!-- Grid item -->
             <div
-              class="flex items-center gap-2 py-10 px-5 rounded-md bg-muted-100/80 dark:bg-muted-700"
+              class="bg-muted-100/80 dark:bg-muted-700 flex items-center gap-2 rounded-md px-5 py-10"
             >
               <BaseIconBox
                 size="md"
-                class="bg-amber-100 text-amber-500 dark:bg-amber-500/20 dark:text-amber-400 dark:border-2 dark:border-amber-500"
+                class="bg-amber-100 text-amber-500 dark:border-2 dark:border-amber-500 dark:bg-amber-500/20 dark:text-amber-400"
                 shape="full"
               >
-                <Icon name="ph:handshake-duotone" class="w-5 h-5" />
+                <Icon name="ph:handshake-duotone" class="h-5 w-5" />
               </BaseIconBox>
               <div>
                 <BaseHeading
@@ -358,14 +358,14 @@ function useBarProfit() {
             </div>
             <!-- Grid item -->
             <div
-              class="flex items-center gap-2 py-10 px-5 rounded-md bg-muted-100/80 dark:bg-muted-700"
+              class="bg-muted-100/80 dark:bg-muted-700 flex items-center gap-2 rounded-md px-5 py-10"
             >
               <BaseIconBox
                 size="md"
-                class="bg-green-100 text-green-500 dark:bg-green-500/20 dark:text-green-400 dark:border-2 dark:border-green-500"
+                class="bg-green-100 text-green-500 dark:border-2 dark:border-green-500 dark:bg-green-500/20 dark:text-green-400"
                 shape="full"
               >
-                <Icon name="ph:sketch-logo-duotone" class="w-5 h-5" />
+                <Icon name="ph:sketch-logo-duotone" class="h-5 w-5" />
               </BaseIconBox>
               <div>
                 <BaseHeading
@@ -386,14 +386,14 @@ function useBarProfit() {
             </div>
             <!-- Grid item -->
             <div
-              class="flex items-center gap-2 py-10 px-5 rounded-md bg-muted-100/80 dark:bg-muted-700"
+              class="bg-muted-100/80 dark:bg-muted-700 flex items-center gap-2 rounded-md px-5 py-10"
             >
               <BaseIconBox
                 size="md"
-                class="bg-indigo-100 text-indigo-500 dark:bg-indigo-500/20 dark:text-indigo-400 dark:border-2 dark:border-indigo-500"
+                class="bg-indigo-100 text-indigo-500 dark:border-2 dark:border-indigo-500 dark:bg-indigo-500/20 dark:text-indigo-400"
                 shape="full"
               >
-                <Icon name="ph:bank-duotone" class="w-5 h-5" />
+                <Icon name="ph:bank-duotone" class="h-5 w-5" />
               </BaseIconBox>
               <div>
                 <BaseHeading
@@ -416,7 +416,7 @@ function useBarProfit() {
         </BaseCard>
       </div>
       <!-- Area Chart card -->
-      <div class="col-span-12 ltablet:col-span-6 lg:col-span-6">
+      <div class="ltablet:col-span-6 col-span-12 lg:col-span-6">
         <BaseCard class="p-6">
           <!-- Title -->
           <div class="mb-6">
@@ -435,12 +435,12 @@ function useBarProfit() {
       </div>
       <!-- CTA card -->
       <div
-        class="col-span-12 ptablet:col-span-6 ltablet:col-span-4 lg:col-span-4"
+        class="ptablet:col-span-6 ltablet:col-span-4 col-span-12 lg:col-span-4"
       >
         <BaseCard
-          class="relative h-full flex items-center justify-center p-6 bg-gradient-to-br from-primary-600 to-primary-700"
+          class="from-primary-600 to-primary-700 relative flex h-full items-center justify-center bg-gradient-to-br p-6"
         >
-          <div class="relative flex flex-col gap-3 py-10 text-center z-20">
+          <div class="relative z-20 flex flex-col gap-3 py-10 text-center">
             <BaseHeading
               as="h4"
               size="lg"
@@ -450,31 +450,31 @@ function useBarProfit() {
             >
               <span>Hey Maya, you're doing great.</span>
             </BaseHeading>
-            <BaseParagraph size="md" class="max-w-[280px] mx-auto">
+            <BaseParagraph size="md" class="mx-auto max-w-[280px]">
               <span class="text-white/80">
                 Start using our team and project management tools
               </span>
             </BaseParagraph>
             <NuxtLink
-              class="font-sans text-white hover:underline underline-offset-4"
+              class="font-sans text-white underline-offset-4 hover:underline"
               to="#"
             >
               Learn More
             </NuxtLink>
           </div>
           <div
-            class="absolute bottom-4 end-4 w-14 h-14 flex items-center justify-center z-10"
+            class="absolute bottom-4 end-4 z-10 flex h-14 w-14 items-center justify-center"
           >
             <Icon
               name="ph:crown-duotone"
-              class="w-14 h-14 text-primary-900/50"
+              class="text-primary-900/50 h-14 w-14"
             ></Icon>
           </div>
         </BaseCard>
       </div>
       <!-- Radial Bar card -->
       <div
-        class="col-span-12 ptablet:col-span-6 ltablet:col-span-4 lg:col-span-4"
+        class="ptablet:col-span-6 ltablet:col-span-4 col-span-12 lg:col-span-4"
       >
         <BaseCard class="relative p-6">
           <div class="mb-6">
@@ -489,12 +489,12 @@ function useBarProfit() {
             </BaseHeading>
           </div>
           <div
-            class="absolute top-24 inset-x-0 flex items-center justify-center gap-4"
+            class="absolute inset-x-0 top-24 flex items-center justify-center gap-4"
           >
             <BaseAvatar src="/img/avatars/4.svg" />
             <BaseAvatar
               text="H"
-              class="bg-yellow-100 dark:bg-yellow-500 text-yellow-500 dark:text-white"
+              class="bg-yellow-100 text-yellow-500 dark:bg-yellow-500 dark:text-white"
             />
             <BaseAvatar src="/img/avatars/3.svg" />
           </div>
@@ -502,7 +502,7 @@ function useBarProfit() {
         </BaseCard>
       </div>
       <!-- Bar chart card -->
-      <div class="col-span-12 ltablet:col-span-4 lg:col-span-4">
+      <div class="ltablet:col-span-4 col-span-12 lg:col-span-4">
         <BaseCard class="relative p-6">
           <div class="mb-6">
             <BaseHeading

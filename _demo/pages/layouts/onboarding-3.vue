@@ -59,15 +59,15 @@ const roles = [
 </script>
 
 <template>
-  <div class="min-h-screen bg-muted-100 dark:bg-muted-900">
+  <div class="bg-muted-100 dark:bg-muted-900 min-h-screen">
     <div
-      class="h-16 w-full max-w-7xl mx-auto px-4 flex items-center justify-between"
+      class="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-4"
     >
       <NuxtLink
         to="/"
         class="text-muted-400 hover:text-primary-500 dark:text-muted-700 dark:hover:text-primary-500 transition-colors duration-300"
       >
-        <TairoLogo class="w-10 h-10" />
+        <TairoLogo class="h-10 w-10" />
       </NuxtLink>
       <div class="flex items-center gap-4">
         <BaseThemeToggle />
@@ -77,43 +77,43 @@ const roles = [
       action=""
       method="POST"
       @submit.prevent
-      class="max-w-7xl mx-auto px-4"
+      class="mx-auto max-w-7xl px-4"
     >
       <div>
-        <div class="text-center pt-8">
+        <div class="pt-8 text-center">
           <BaseHeading tag="h2" size="3xl" weight="medium" class="mb-2">
             Choose a profile
           </BaseHeading>
-          <BaseParagraph class="mb-8 text-muted-500 dark:text-muted-400">
+          <BaseParagraph class="text-muted-500 dark:text-muted-400 mb-8">
             Pick one of the following roles based on your skills
           </BaseParagraph>
         </div>
 
         <div>
           <div class="w-full">
-            <div class="w-full max-w-3xl mx-auto">
+            <div class="mx-auto w-full max-w-3xl">
               <div class="w-full">
-                <div class="grid grid-cols-3 sm:grid-cols-4 mb-8">
+                <div class="mb-8 grid grid-cols-3 sm:grid-cols-4">
                   <div
                     v-for="role in roles"
                     :key="role.id"
-                    class="relative p-4 flex items-center justify-center"
+                    class="relative flex items-center justify-center p-4"
                   >
                     <BaseRadioHeadless
                       v-model="roleType"
                       :name="`role-${role.id}`"
                       :value="role.id"
-                      class="w-full h-full"
+                      class="h-full w-full"
                     >
                       <div
-                        class="relative h-20 w-20 flex items-center justify-center mx-auto peer-checked:[&_.child]:opacity-100 grayscale peer-checked:grayscale-0 transition-all duration-200"
+                        class="relative mx-auto flex h-20 w-20 items-center justify-center grayscale transition-all duration-200 peer-checked:grayscale-0 peer-checked:[&_.child]:opacity-100"
                       >
                         <div
-                          class="child absolute top-0 end-0 w-6 h-6 rounded-full flex items-center justify-center bg-white dark:bg-muted-900 opacity-0 z-20"
+                          class="child dark:bg-muted-900 absolute end-0 top-0 z-20 flex h-6 w-6 items-center justify-center rounded-full bg-white opacity-0"
                         >
                           <Icon
                             name="ph:check-circle-duotone"
-                            class="w-6 h-6 text-primary-500"
+                            class="text-primary-500 h-6 w-6"
                           />
                         </div>
                         <BaseAvatar
@@ -121,10 +121,10 @@ const roles = [
                           :src="role.avatar"
                           :badge-src="role.logo"
                           shape="full"
-                          class="mx-auto group-focus-within:outline-dashed group-focus-within:outline-muted-300 dark:group-focus-within:outline-muted-600 group-focus-within:outline-offset-2"
+                          class="group-focus-within:outline-muted-300 dark:group-focus-within:outline-muted-600 mx-auto group-focus-within:outline-dashed group-focus-within:outline-offset-2"
                         />
                       </div>
-                      <div class="text-center mt-3">
+                      <div class="mt-3 text-center">
                         <BaseText
                           size="sm"
                           class="text-muted-500 dark:text-muted-400"
@@ -134,18 +134,18 @@ const roles = [
                     </BaseRadioHeadless>
                   </div>
                 </div>
-                <div class="flex flex-col items-center mx-auto">
+                <div class="mx-auto flex flex-col items-center">
                   <BaseButton
                     to="/dashboards"
                     type="button"
                     shape="curved"
-                    class="w-48 !h-12"
+                    class="!h-12 w-48"
                     color="primary"
                     >Choose Profile</BaseButton
                   >
                   <NuxtLink
                     to="#"
-                    class="text-muted-400 hover:text-primary-500 font-medium text-xs underline-offset-4 hover:underline transition-colors duration-300 mt-4"
+                    class="text-muted-400 hover:text-primary-500 mt-4 text-xs font-medium underline-offset-4 transition-colors duration-300 hover:underline"
                     >Learn More</NuxtLink
                   >
                 </div>

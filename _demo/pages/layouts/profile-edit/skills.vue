@@ -28,7 +28,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
           <BaseButton color="primary" class="w-24">Save</BaseButton>
         </div>
       </div>
-      <div class="p-4 space-y-8">
+      <div class="space-y-8 p-4">
         <div v-if="!data">
           <BasePlaceholderPage
             title="No data to show"
@@ -49,7 +49,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
             </template>
           </BasePlaceholderPage>
         </div>
-        <div v-else class="max-w-lg mx-auto py-8 space-y-20">
+        <div v-else class="mx-auto max-w-lg space-y-20 py-8">
           <TairoFormGroup
             label="Languages"
             sublabel="How many languages do you speak?"
@@ -72,17 +72,17 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                     alt="Placeholder image"
                   />
                 </template>
-                <BaseButton class="w-40 mt-4">Add Language</BaseButton>
+                <BaseButton class="mt-4 w-40">Add Language</BaseButton>
               </BasePlaceholderPage>
             </div>
             <div v-else class="space-y-8">
               <div
                 v-for="item in data.personalInfo.languages"
                 :key="item.name"
-                class="w-full flex items-center gap-2"
+                class="flex w-full items-center gap-2"
               >
                 <div
-                  class="relative flex items-center justify-center h-[50px] w-[50px] shrink-0 rounded-full border border-muted-200 dark:border-muted-600 bg-white dark:bg-muted-700"
+                  class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 relative flex h-[50px] w-[50px] shrink-0 items-center justify-center rounded-full border bg-white"
                 >
                   <img
                     :src="item.icon"
@@ -93,7 +93,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                     :size="68"
                     :thickness="1.5"
                     :value="item.level"
-                    class="absolute -top-2.5 -start-2.5 text-primary-500"
+                    class="text-primary-500 absolute -start-2.5 -top-2.5"
                   />
                 </div>
                 <div>
@@ -122,7 +122,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                       <template #start>
                         <Icon
                           name="ph:pencil-duotone"
-                          class="w-5 h-5 block me-2"
+                          class="me-2 block h-5 w-5"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -134,7 +134,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                       <template #start>
                         <Icon
                           name="ph:trash-duotone"
-                          class="w-5 h-5 block me-2"
+                          class="me-2 block h-5 w-5"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -143,12 +143,12 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
               </div>
             </div>
             <div
-              class="w-full flex items-center gap-2 mt-8 pt-8 border-t border-muted-200 dark:border-muted-700"
+              class="border-muted-200 dark:border-muted-700 mt-8 flex w-full items-center gap-2 border-t pt-8"
             >
               <div
-                class="w-[50px] h-[50px] flex items-center justify-center rounded-full bg-muted-100 dark:bg-muted-700/60 text-muted-400"
+                class="bg-muted-100 dark:bg-muted-700/60 text-muted-400 flex h-[50px] w-[50px] items-center justify-center rounded-full"
               >
-                <Icon name="ph:book-open-duotone" class="w-5 h-5" />
+                <Icon name="ph:book-open-duotone" class="h-5 w-5" />
               </div>
               <div>
                 <BaseHeading tag="h3" size="sm" weight="medium">
@@ -160,7 +160,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
               </div>
               <div class="ms-auto">
                 <BaseButtonIcon shape="full" condensed>
-                  <Icon name="lucide:plus" class="w-4 h-4" />
+                  <Icon name="lucide:plus" class="h-4 w-4" />
                 </BaseButtonIcon>
               </div>
             </div>
@@ -184,17 +184,17 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                     alt="Placeholder image"
                   />
                 </template>
-                <BaseButton class="w-40 mt-4">Add Skill</BaseButton>
+                <BaseButton class="mt-4 w-40">Add Skill</BaseButton>
               </BasePlaceholderPage>
             </div>
             <div v-else class="space-y-8">
               <div
                 v-for="item in data.personalInfo.skills"
                 :key="item.name"
-                class="w-full flex items-center gap-2"
+                class="flex w-full items-center gap-2"
               >
                 <div
-                  class="relative flex items-center justify-center h-[50px] w-[50px] shrink-0 rounded-full border border-muted-200 dark:border-muted-600 bg-white dark:bg-muted-700"
+                  class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 relative flex h-[50px] w-[50px] shrink-0 items-center justify-center rounded-full border bg-white"
                 >
                   <img
                     v-if="'logo' in item"
@@ -205,13 +205,13 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                   <Icon
                     v-else
                     :name="item.icon"
-                    class="w-6 h-6 text-muted-400"
+                    class="text-muted-400 h-6 w-6"
                   />
                   <BaseProgressCircle
                     :size="68"
                     :thickness="1.5"
                     :value="item.level"
-                    class="absolute -top-2.5 -start-2.5 text-primary-500"
+                    class="text-primary-500 absolute -start-2.5 -top-2.5"
                   />
                 </div>
                 <div>
@@ -240,7 +240,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                       <template #start>
                         <Icon
                           name="ph:pencil-duotone"
-                          class="w-5 h-5 block me-2"
+                          class="me-2 block h-5 w-5"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -252,7 +252,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                       <template #start>
                         <Icon
                           name="ph:trash-duotone"
-                          class="w-5 h-5 block me-2"
+                          class="me-2 block h-5 w-5"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -261,12 +261,12 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
               </div>
             </div>
             <div
-              class="w-full flex items-center gap-2 mt-8 pt-8 border-t border-muted-200 dark:border-muted-700"
+              class="border-muted-200 dark:border-muted-700 mt-8 flex w-full items-center gap-2 border-t pt-8"
             >
               <div
-                class="w-[50px] h-[50px] flex items-center justify-center rounded-full bg-muted-100 dark:bg-muted-700/60 text-muted-400"
+                class="bg-muted-100 dark:bg-muted-700/60 text-muted-400 flex h-[50px] w-[50px] items-center justify-center rounded-full"
               >
-                <Icon name="ph:sparkle-duotone" class="w-5 h-5" />
+                <Icon name="ph:sparkle-duotone" class="h-5 w-5" />
               </div>
               <div>
                 <BaseHeading tag="h3" size="sm" weight="medium">
@@ -278,7 +278,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
               </div>
               <div class="ms-auto">
                 <BaseButtonIcon shape="full" condensed>
-                  <Icon name="lucide:plus" class="w-4 h-4" />
+                  <Icon name="lucide:plus" class="h-4 w-4" />
                 </BaseButtonIcon>
               </div>
             </div>
@@ -302,17 +302,17 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                     alt="Placeholder image"
                   />
                 </template>
-                <BaseButton class="w-40 mt-4">Add Tool</BaseButton>
+                <BaseButton class="mt-4 w-40">Add Tool</BaseButton>
               </BasePlaceholderPage>
             </div>
             <div v-else class="space-y-8">
               <div
                 v-for="item in data.personalInfo.tools"
                 :key="item.name"
-                class="w-full flex items-center gap-2"
+                class="flex w-full items-center gap-2"
               >
                 <div
-                  class="relative flex items-center justify-center h-[50px] w-[50px] shrink-0 rounded-full border border-muted-200 dark:border-muted-600 bg-white dark:bg-muted-700"
+                  class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 relative flex h-[50px] w-[50px] shrink-0 items-center justify-center rounded-full border bg-white"
                 >
                   <img
                     :src="item.logo"
@@ -323,7 +323,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                     :size="68"
                     :thickness="1.5"
                     :value="item.level"
-                    class="absolute -top-2.5 -start-2.5 text-primary-500"
+                    class="text-primary-500 absolute -start-2.5 -top-2.5"
                   />
                 </div>
                 <div>
@@ -348,7 +348,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                       <template #start>
                         <Icon
                           name="ph:pencil-duotone"
-                          class="w-5 h-5 block me-2"
+                          class="me-2 block h-5 w-5"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -360,7 +360,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                       <template #start>
                         <Icon
                           name="ph:trash-duotone"
-                          class="w-5 h-5 block me-2"
+                          class="me-2 block h-5 w-5"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -369,12 +369,12 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
               </div>
             </div>
             <div
-              class="w-full flex items-center gap-2 mt-8 pt-8 border-t border-muted-200 dark:border-muted-700"
+              class="border-muted-200 dark:border-muted-700 mt-8 flex w-full items-center gap-2 border-t pt-8"
             >
               <div
-                class="w-[50px] h-[50px] flex items-center justify-center rounded-full bg-muted-100 dark:bg-muted-700/60 text-muted-400"
+                class="bg-muted-100 dark:bg-muted-700/60 text-muted-400 flex h-[50px] w-[50px] items-center justify-center rounded-full"
               >
-                <Icon name="ph:wrench-duotone" class="w-5 h-5" />
+                <Icon name="ph:wrench-duotone" class="h-5 w-5" />
               </div>
               <div>
                 <BaseHeading tag="h3" size="sm" weight="medium">
@@ -386,7 +386,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
               </div>
               <div class="ms-auto">
                 <BaseButtonIcon shape="full" condensed>
-                  <Icon name="lucide:plus" class="w-4 h-4" />
+                  <Icon name="lucide:plus" class="h-4 w-4" />
                 </BaseButtonIcon>
               </div>
             </div>

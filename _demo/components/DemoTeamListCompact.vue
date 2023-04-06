@@ -40,7 +40,7 @@ const members = [
 </script>
 
 <template>
-  <div class="space-y-5 mb-2">
+  <div class="mb-2 space-y-5">
     <div
       v-for="member in members"
       :key="member.id"
@@ -49,7 +49,7 @@ const members = [
       <BaseAvatar
         :src="member.image"
         :text="member.text"
-        class="flex-shrink-0 bg-primary-100 dark:bg-primary-500/20 text-primary-500"
+        class="bg-primary-100 dark:bg-primary-500/20 text-primary-500 shrink-0"
       />
       <div>
         <BaseHeading
@@ -67,12 +67,12 @@ const members = [
           </span>
         </BaseParagraph>
       </div>
-      <div v-if="props.actions" class="flex items-center ms-auto">
+      <div v-if="props.actions" class="ms-auto flex items-center">
         <BaseButtonIcon shape="curved" muted class="scale-75">
-          <Icon name="ph:phone-duotone" class="w-5 h-5" />
+          <Icon name="ph:phone-duotone" class="h-5 w-5" />
         </BaseButtonIcon>
         <BaseButtonIcon shape="curved" muted class="scale-75">
-          <Icon name="ph:video-camera-duotone" class="w-5 h-5" />
+          <Icon name="ph:video-camera-duotone" class="h-5 w-5" />
         </BaseButtonIcon>
       </div>
     </div>

@@ -48,11 +48,11 @@ const tickets = [
 </script>
 
 <template>
-  <div class="space-y-6 divide-y divide-muted-200 dark:divide-muted-700">
+  <div class="divide-muted-200 dark:divide-muted-700 space-y-6 divide-y">
     <div
       v-for="(ticket, index) in tickets"
       :key="ticket.id"
-      class="flex flex-col sm:flex-row gap-4"
+      class="flex flex-col gap-4 sm:flex-row"
       :class="index > 0 ? 'pt-6' : ''"
     >
       <BaseAvatar
@@ -66,13 +66,13 @@ const tickets = [
           as="h3"
           size="md"
           weight="medium"
-          class="mb-1 text-muted-800 dark:text-muted-100"
+          class="text-muted-800 dark:text-muted-100 mb-1"
         >
           <span>[#{{ ticket.id }}] {{ ticket.title }}</span>
         </BaseHeading>
         <BaseParagraph
           size="sm"
-          class="mb-1 text-muted-500 dark:text-muted-400"
+          class="text-muted-500 dark:text-muted-400 mb-1"
         >
           <span>{{ ticket.content }}</span>
         </BaseParagraph>
@@ -80,7 +80,7 @@ const tickets = [
           <span>Updated {{ ticket.updated }}</span>
         </BaseParagraph>
       </div>
-      <div class="w-full sm:w-auto sm:ms-auto">
+      <div class="w-full sm:ms-auto sm:w-auto">
         <BaseButton color="default" class="w-full sm:w-auto">
           <span>Manage</span>
         </BaseButton>

@@ -53,35 +53,35 @@ const { data, pending, error, refresh } = await useFetch(
           <div class="grid grid-cols-4 p-4">
             <div class="relative flex flex-col text-center">
               <span
-                class="font-sans font-bold text-2xl text-muted-800 dark:text-muted-100"
+                class="text-muted-800 dark:text-muted-100 font-sans text-2xl font-bold"
               >
                 12
               </span>
-              <p class="font-sans text-xs text-muted-400">On Track</p>
+              <p class="text-muted-400 font-sans text-xs">On Track</p>
               <span
-                class="absolute top-0 end-0 h-2 w-2 rounded-full bg-primary-500"
+                class="bg-primary-500 absolute end-0 top-0 h-2 w-2 rounded-full"
               ></span>
             </div>
             <div class="relative flex flex-col text-center">
               <span
-                class="font-sans font-bold text-2xl text-muted-800 dark:text-muted-100"
+                class="text-muted-800 dark:text-muted-100 font-sans text-2xl font-bold"
               >
                 4
               </span>
-              <p class="font-sans text-xs text-muted-400">Overdue</p>
+              <p class="text-muted-400 font-sans text-xs">Overdue</p>
               <span
-                class="absolute top-0 end-0 h-2 w-2 rounded-full bg-amber-500"
+                class="absolute end-0 top-0 h-2 w-2 rounded-full bg-amber-500"
               ></span>
             </div>
             <div class="relative flex flex-col text-center">
               <span
-                class="font-sans font-bold text-2xl text-muted-800 dark:text-muted-100"
+                class="text-muted-800 dark:text-muted-100 font-sans text-2xl font-bold"
               >
                 {{ data?.data.length || '0' }}
               </span>
-              <p class="font-sans text-xs text-muted-400">Total</p>
+              <p class="text-muted-400 font-sans text-xs">Total</p>
               <span
-                class="absolute top-0 end-0 h-2 w-2 rounded-full bg-success-500"
+                class="bg-success-500 absolute end-0 top-0 h-2 w-2 rounded-full"
               ></span>
             </div>
             <div class="flex items-center justify-center">
@@ -116,13 +116,13 @@ const { data, pending, error, refresh } = await useFetch(
           <div v-else>
             <div>
               <h4
-                class="mb-4 font-sans text-xs font-semibold uppercase text-muted-400"
+                class="text-muted-400 mb-4 font-sans text-xs font-semibold uppercase"
               >
                 All Projects
               </h4>
             </div>
             <div
-              class="grid sm:grid-cols-2 ltablet:grid-cols-3 lg:grid-cols-3 gap-4"
+              class="ltablet:grid-cols-3 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
             >
               <TransitionGroup
                 enter-active-class="transform-gpu"
@@ -151,7 +151,7 @@ const { data, pending, error, refresh } = await useFetch(
                           class="w-full rounded-lg"
                         />
                       </div>
-                      <div class="flex gap-2 mb-6">
+                      <div class="mb-6 flex gap-2">
                         <BaseAvatar
                           :src="item.customer.logo"
                           size="sm"
@@ -184,15 +184,15 @@ const { data, pending, error, refresh } = await useFetch(
                             class="bg-muted-100 dark:bg-muted-700"
                           />
                         </div>
-                        <div class="flex items-center gap-4 text-muted-400">
+                        <div class="text-muted-400 flex items-center gap-4">
                           <div class="flex items-center gap-1 text-sm">
-                            <Icon name="ph:paperclip-duotone" class="w-4 h-4" />
+                            <Icon name="ph:paperclip-duotone" class="h-4 w-4" />
                             <span class="font-sans">
                               {{ item.files.length }}
                             </span>
                           </div>
                           <div class="flex items-center gap-1 text-sm">
-                            <Icon name="ph:users-duotone" class="w-4 h-4" />
+                            <Icon name="ph:users-duotone" class="h-4 w-4" />
                             <span class="font-sans">
                               {{ item.team.length }}
                             </span>
@@ -201,10 +201,10 @@ const { data, pending, error, refresh } = await useFetch(
                       </div>
                     </div>
                     <div
-                      class="flex items-center justify-between px-5 py-3 border-t rounded-b-xl border-muted-200 dark:border-muted-700 bg-muted-50 dark:bg-muted-700/50"
+                      class="border-muted-200 dark:border-muted-700 bg-muted-50 dark:bg-muted-700/50 flex items-center justify-between rounded-b-xl border-t px-5 py-3"
                     >
                       <div>
-                        <p class="font-sans text-sm text-muted-400">
+                        <p class="text-muted-400 font-sans text-sm">
                           {{ item.tasks.length }} tasks remaining
                         </p>
                       </div>

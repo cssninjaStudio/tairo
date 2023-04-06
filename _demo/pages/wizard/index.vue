@@ -22,14 +22,14 @@ function onSelectType(type: ProjectType) {
 <template>
   <div>
     <DemoWizardStepTitle />
-    <div class="w-full max-w-6xl mx-auto text-center px-4">
-      <div class="grid sm:grid-cols-2 ltablet:grid-cols-3 lg:grid-cols-3 gap-6">
+    <div class="mx-auto w-full max-w-6xl px-4 text-center">
+      <div class="ltablet:grid-cols-3 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         <!-- Choice -->
         <div
-          class="group rounded-2xl p-5 hover:bg-white dark:hover:bg-muted-800 hover:shadow-xl hover:shadow-muted-300/30 dark:hover:shadow-muted-800/30 transition-all duration-300"
+          class="dark:hover:bg-muted-800 hover:shadow-muted-300/30 dark:hover:shadow-muted-800/30 group rounded-2xl p-5 transition-all duration-300 hover:bg-white hover:shadow-xl"
           :class="[
             project.type === 'design'
-              ? 'bg-white dark:bg-muted-800 shadow-xl shadow-muted-300/30 dark:shadow-muted-800/30'
+              ? 'dark:bg-muted-800 shadow-muted-300/30 dark:shadow-muted-800/30 bg-white shadow-xl'
               : '',
           ]"
         >
@@ -43,7 +43,7 @@ function onSelectType(type: ProjectType) {
               tag="h3"
               weight="medium"
               size="xl"
-              class="mb-2 text-muted-800 dark:text-muted-100"
+              class="text-muted-800 dark:text-muted-100 mb-2"
             >
               <span>UI/UX design</span>
             </BaseHeading>
@@ -54,7 +54,7 @@ function onSelectType(type: ProjectType) {
               </span>
             </BaseParagraph>
           </div>
-          <div class="flex flex-col items-center mb-5">
+          <div class="mb-5 flex flex-col items-center">
             <BaseButton
               :to="getNextStep()?.to"
               color="primary"
@@ -69,7 +69,7 @@ function onSelectType(type: ProjectType) {
             <div class="mt-4 text-center">
               <NuxtLink
                 to="/wizard"
-                class="font-sans font-semibold uppercase text-[0.65rem] text-muted-400 hover:text-primary-500 opacity-0 group-hover:opacity-100 transition-all duration-300"
+                class="text-muted-400 hover:text-primary-500 font-sans text-[0.65rem] font-semibold uppercase opacity-0 transition-all duration-300 group-hover:opacity-100"
               >
                 <span>Learn More</span>
               </NuxtLink>
@@ -78,10 +78,10 @@ function onSelectType(type: ProjectType) {
         </div>
         <!-- Choice -->
         <div
-          class="group rounded-2xl p-5 hover:bg-white dark:hover:bg-muted-800 hover:shadow-xl hover:shadow-muted-300/30 dark:hover:shadow-muted-800/30 transition-all duration-300"
+          class="dark:hover:bg-muted-800 hover:shadow-muted-300/30 dark:hover:shadow-muted-800/30 group rounded-2xl p-5 transition-all duration-300 hover:bg-white hover:shadow-xl"
           :class="[
             project.type === 'development'
-              ? 'bg-white dark:bg-muted-800 shadow-xl shadow-muted-300/30 dark:shadow-muted-800/30'
+              ? 'dark:bg-muted-800 shadow-muted-300/30 dark:shadow-muted-800/30 bg-white shadow-xl'
               : '',
           ]"
         >
@@ -95,7 +95,7 @@ function onSelectType(type: ProjectType) {
               tag="h3"
               weight="medium"
               size="xl"
-              class="mb-2 text-muted-800 dark:text-muted-100"
+              class="text-muted-800 dark:text-muted-100 mb-2"
             >
               <span>Web Development</span>
             </BaseHeading>
@@ -106,7 +106,7 @@ function onSelectType(type: ProjectType) {
               </span>
             </BaseParagraph>
           </div>
-          <div class="flex flex-col items-center mb-5">
+          <div class="mb-5 flex flex-col items-center">
             <BaseButton
               :to="getNextStep()?.to"
               color="primary"
@@ -121,7 +121,7 @@ function onSelectType(type: ProjectType) {
             <div class="mt-4 text-center">
               <NuxtLink
                 to="/wizard"
-                class="font-sans font-semibold uppercase text-[0.65rem] text-muted-400 hover:text-primary-500 opacity-0 group-hover:opacity-100 transition-all duration-300"
+                class="text-muted-400 hover:text-primary-500 font-sans text-[0.65rem] font-semibold uppercase opacity-0 transition-all duration-300 group-hover:opacity-100"
               >
                 <span>Learn More</span>
               </NuxtLink>
@@ -130,10 +130,10 @@ function onSelectType(type: ProjectType) {
         </div>
         <!-- Choice -->
         <div
-          class="group rounded-2xl p-5 hover:bg-white dark:hover:bg-muted-800 hover:shadow-xl hover:shadow-muted-300/30 dark:hover:shadow-muted-800/30 transition-all duration-300"
+          class="dark:hover:bg-muted-800 hover:shadow-muted-300/30 dark:hover:shadow-muted-800/30 group rounded-2xl p-5 transition-all duration-300 hover:bg-white hover:shadow-xl"
           :class="[
             project.type === 'marketing'
-              ? 'bg-white dark:bg-muted-800 shadow-xl shadow-muted-300/30 dark:shadow-muted-800/30'
+              ? 'dark:bg-muted-800 shadow-muted-300/30 dark:shadow-muted-800/30 bg-white shadow-xl'
               : '',
           ]"
         >
@@ -147,7 +147,7 @@ function onSelectType(type: ProjectType) {
               tag="h3"
               weight="medium"
               size="xl"
-              class="mb-2 text-muted-800 dark:text-muted-100"
+              class="text-muted-800 dark:text-muted-100 mb-2"
             >
               <span>Marketing</span>
             </BaseHeading>
@@ -157,7 +157,7 @@ function onSelectType(type: ProjectType) {
               </span>
             </BaseParagraph>
           </div>
-          <div class="flex flex-col items-center mb-5">
+          <div class="mb-5 flex flex-col items-center">
             <BaseButton
               :to="getNextStep()?.to"
               color="primary"
@@ -172,7 +172,7 @@ function onSelectType(type: ProjectType) {
             <div class="mt-4 text-center">
               <NuxtLink
                 to="/wizard"
-                class="font-sans font-semibold uppercase text-[0.65rem] text-muted-400 hover:text-primary-500 opacity-0 group-hover:opacity-100 transition-all duration-300"
+                class="text-muted-400 hover:text-primary-500 font-sans text-[0.65rem] font-semibold uppercase opacity-0 transition-all duration-300 group-hover:opacity-100"
               >
                 <span>Learn More</span>
               </NuxtLink>

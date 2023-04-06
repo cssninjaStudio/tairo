@@ -50,8 +50,8 @@ const totalData = computed(() => {
 </script>
 
 <template>
-  <div class="max-w-3xl mx-auto py-10">
-    <div class="flex items-center justify-between mb-4">
+  <div class="mx-auto max-w-3xl py-10">
+    <div class="mb-4 flex items-center justify-between">
       <div>
         <BaseHeading as="h2" size="xl" weight="medium" lead="none">
           Order #ox-81469
@@ -59,25 +59,25 @@ const totalData = computed(() => {
       </div>
       <div class="flex items-center justify-end gap-3">
         <BaseButtonIcon condensed shape="full" data-tooltip="Edit invoice">
-          <Icon name="ph:pencil-duotone" class="w-4 h-4" />
+          <Icon name="ph:pencil-duotone" class="h-4 w-4" />
         </BaseButtonIcon>
         <BaseButtonIcon condensed shape="full" data-tooltip="Send by email">
-          <Icon name="ph:envelope-duotone" class="w-4 h-4" />
+          <Icon name="ph:envelope-duotone" class="h-4 w-4" />
         </BaseButtonIcon>
         <BaseButtonIcon condensed shape="full" data-tooltip="Print invoice">
-          <Icon name="ph:printer-duotone" class="w-4 h-4" />
+          <Icon name="ph:printer-duotone" class="h-4 w-4" />
         </BaseButtonIcon>
         <BaseButtonIcon condensed shape="full" data-tooltip="Download as PDF">
-          <Icon name="ph:download-duotone" class="w-4 h-4" />
+          <Icon name="ph:download-duotone" class="h-4 w-4" />
         </BaseButtonIcon>
       </div>
     </div>
     <div>
       <BaseCard>
-        <div class="font-sans overflow-hidden">
+        <div class="overflow-hidden font-sans">
           <div>
             <div
-              class="flex flex-col gap-y-8 sm:flex-row sm:items-center justify-between p-8 border-b border-muted-200 dark:border-muted-700"
+              class="border-muted-200 dark:border-muted-700 flex flex-col justify-between gap-y-8 border-b p-8 sm:flex-row sm:items-center"
             >
               <div class="flex items-center gap-3">
                 <BaseAvatar
@@ -96,34 +96,34 @@ const totalData = computed(() => {
               </div>
               <div class="flex gap-12">
                 <div
-                  class="text-sm font-light text-muted-500 dark:text-muted-400"
+                  class="text-muted-500 dark:text-muted-400 text-sm font-light"
                 >
                   <p
-                    class="text-xs font-normal text-muted-700 dark:text-muted-100"
+                    class="text-muted-700 dark:text-muted-100 text-xs font-normal"
                   >
                     Invoice Number
                   </p>
                   <p>INV-48654</p>
 
                   <p
-                    class="mt-2 text-xs font-normal text-muted-700 dark:text-muted-100"
+                    class="text-muted-700 dark:text-muted-100 mt-2 text-xs font-normal"
                   >
                     Date of Issue
                   </p>
                   <p>03.19.2023</p>
                 </div>
                 <div
-                  class="text-sm font-light text-muted-500 dark:text-muted-400"
+                  class="text-muted-500 dark:text-muted-400 text-sm font-light"
                 >
                   <p
-                    class="text-xs font-normal text-muted-700 dark:text-muted-100"
+                    class="text-muted-700 dark:text-muted-100 text-xs font-normal"
                   >
                     Terms
                   </p>
                   <p>30 Days</p>
 
                   <p
-                    class="mt-2 text-xs font-normal text-muted-700 dark:text-muted-100"
+                    class="text-muted-700 dark:text-muted-100 mt-2 text-xs font-normal"
                   >
                     Due
                   </p>
@@ -132,10 +132,10 @@ const totalData = computed(() => {
               </div>
             </div>
             <div
-              class="flex flex-col gap-y-8 sm:flex-row sm:items-center justify-between p-8 border-b border-muted-200 dark:border-muted-700"
+              class="border-muted-200 dark:border-muted-700 flex flex-col justify-between gap-y-8 border-b p-8 sm:flex-row sm:items-center"
             >
               <div class="flex items-center gap-4">
-                <TairoLogo class="w-12 h-12 text-primary-500" />
+                <TairoLogo class="text-primary-500 h-12 w-12" />
                 <div class="">
                   <BaseHeading as="h3" size="md" weight="medium" lead="none">
                     Tairo
@@ -147,10 +147,10 @@ const totalData = computed(() => {
               </div>
               <div class="flex gap-12">
                 <div
-                  class="text-sm font-light text-muted-500 dark:text-muted-400"
+                  class="text-muted-500 dark:text-muted-400 text-sm font-light"
                 >
                   <p
-                    class="text-sm font-normal text-muted-700 dark:text-muted-100"
+                    class="text-muted-700 dark:text-muted-100 text-sm font-normal"
                   >
                     Address
                   </p>
@@ -160,40 +160,40 @@ const totalData = computed(() => {
                 </div>
               </div>
             </div>
-            <div class="py-8 px-6 sm:p-8">
+            <div class="px-6 py-8 sm:p-8">
               <div class="flex flex-col">
                 <table
-                  class="min-w-full divide-y divide-muted-200 dark:divide-muted-700"
+                  class="divide-muted-200 dark:divide-muted-700 min-w-full divide-y"
                 >
                   <thead class="font-sans">
                     <tr>
                       <th
                         scope="col"
-                        class="py-3.5 ps-4 pe-3 text-left text-xs font-medium uppercase text-muted-400 sm:ps-6 md:ps-0"
+                        class="text-muted-400 py-3.5 pe-3 ps-4 text-left text-xs font-medium uppercase sm:ps-6 md:ps-0"
                       >
                         Description
                       </th>
                       <th
                         scope="col"
-                        class="hidden py-3.5 px-3 text-right text-xs font-medium uppercase text-muted-400 sm:table-cell"
+                        class="text-muted-400 hidden px-3 py-3.5 text-right text-xs font-medium uppercase sm:table-cell"
                       >
                         Unit
                       </th>
                       <th
                         scope="col"
-                        class="hidden py-3.5 px-3 text-right text-xs font-medium uppercase text-muted-400 sm:table-cell"
+                        class="text-muted-400 hidden px-3 py-3.5 text-right text-xs font-medium uppercase sm:table-cell"
                       >
                         Quantity
                       </th>
                       <th
                         scope="col"
-                        class="hidden py-3.5 px-3 text-right text-xs font-medium uppercase text-muted-400 sm:table-cell"
+                        class="text-muted-400 hidden px-3 py-3.5 text-right text-xs font-medium uppercase sm:table-cell"
                       >
                         Rate
                       </th>
                       <th
                         scope="col"
-                        class="py-3.5 ps-3 pe-4 text-right text-xs font-medium uppercase text-muted-400 sm:pe-6 md:pe-0"
+                        class="text-muted-400 py-3.5 pe-4 ps-3 text-right text-xs font-medium uppercase sm:pe-6 md:pe-0"
                       >
                         Amount
                       </th>
@@ -203,25 +203,25 @@ const totalData = computed(() => {
                     <tr
                       v-for="item in data"
                       :key="item.name"
-                      class="border-b border-muted-200 dark:border-muted-700"
+                      class="border-muted-200 dark:border-muted-700 border-b"
                     >
-                      <td class="py-4 ps-4 pe-3 text-sm sm:ps-6 md:ps-0">
+                      <td class="py-4 pe-3 ps-4 text-sm sm:ps-6 md:ps-0">
                         <div
-                          class="font-medium text-muted-800 dark:text-muted-100"
+                          class="text-muted-800 dark:text-muted-100 font-medium"
                         >
                           {{ item.name }}
                         </div>
-                        <div class="mt-0.5 text-xs text-muted-400">
+                        <div class="text-muted-400 mt-0.5 text-xs">
                           {{ item.quantity }} units at ${{ item.rate }}
                         </div>
                       </td>
                       <td
-                        class="hidden px-3 py-4 text-sm text-right text-muted-500 dark:text-muted-400 sm:table-cell"
+                        class="text-muted-500 dark:text-muted-400 hidden px-3 py-4 text-right text-sm sm:table-cell"
                       >
                         hours
                       </td>
                       <td
-                        class="hidden px-3 py-4 text-sm text-right sm:table-cell"
+                        class="hidden px-3 py-4 text-right text-sm sm:table-cell"
                       >
                         <div class="flex justify-end">
                           <BaseInput
@@ -234,12 +234,12 @@ const totalData = computed(() => {
                         </div>
                       </td>
                       <td
-                        class="hidden px-3 py-4 text-sm text-right text-muted-400 sm:table-cell"
+                        class="text-muted-400 hidden px-3 py-4 text-right text-sm sm:table-cell"
                       >
                         ${{ item.rate }}
                       </td>
                       <td
-                        class="py-4 ps-3 pe-4 text-sm text-right text-muted-800 dark:text-muted-100 sm:pe-6 md:pe-0"
+                        class="text-muted-800 dark:text-muted-100 py-4 pe-4 ps-3 text-right text-sm sm:pe-6 md:pe-0"
                       >
                         ${{ (item.rate * item.quantity).toFixed(2) }}
                       </td>
@@ -250,18 +250,18 @@ const totalData = computed(() => {
                       <th
                         scope="row"
                         colspan="4"
-                        class="hidden pt-6 ps-6 pe-3 text-sm font-light text-right text-muted-400 sm:table-cell md:ps-0"
+                        class="text-muted-400 hidden pe-3 ps-6 pt-6 text-right text-sm font-light sm:table-cell md:ps-0"
                       >
                         {{ item.label }}
                       </th>
                       <th
                         scope="row"
-                        class="pt-6 ps-4 pe-3 text-sm font-light text-left text-muted-500 sm:hidden"
+                        class="text-muted-500 pe-3 ps-4 pt-6 text-left text-sm font-light sm:hidden"
                       >
                         {{ item.label }}
                       </th>
                       <td
-                        class="pt-6 ps-3 pe-4 text-right sm:pe-6 md:pe-0"
+                        class="pe-4 ps-3 pt-6 text-right sm:pe-6 md:pe-0"
                         :class="
                           item.label === 'Total'
                             ? 'font-semibold text-lg text-muted-800 dark:text-muted-100'
@@ -277,7 +277,7 @@ const totalData = computed(() => {
             </div>
 
             <div class="mt-8 p-8">
-              <div class="border-t pt-8 border-muted-200 dark:border-muted-700">
+              <div class="border-muted-200 dark:border-muted-700 border-t pt-8">
                 <div class="text-muted-400">
                   <BaseParagraph size="xs">
                     Payment terms are 14 days. Please be aware that according to

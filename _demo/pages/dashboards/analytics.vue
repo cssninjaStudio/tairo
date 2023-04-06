@@ -277,13 +277,13 @@ function useBarSalesProfit() {
 <template>
   <div class="grid grid-cols-12 gap-4">
     <!-- Grid column -->
-    <div class="col-span-12 ltablet:col-span-9 lg:col-span-9">
+    <div class="ltablet:col-span-9 col-span-12 lg:col-span-9">
       <!-- Inner grid -->
       <div class="grid grid-cols-12 gap-4">
         <!-- Stat tile -->
         <div class="col-span-12 md:col-span-4">
           <BaseCard class="p-4">
-            <div class="flex items-center justify-between mb-1">
+            <div class="mb-1 flex items-center justify-between">
               <BaseHeading
                 as="h5"
                 size="sm"
@@ -295,10 +295,10 @@ function useBarSalesProfit() {
               </BaseHeading>
               <BaseIconBox
                 size="xs"
-                class="bg-success-100 text-success-500 dark:bg-success-500/20 dark:text-success-400 dark:border-2 dark:border-success-500"
+                class="bg-success-100 text-success-500 dark:bg-success-500/20 dark:text-success-400 dark:border-success-500 dark:border-2"
                 shape="full"
               >
-                <Icon name="ph:sketch-logo-duotone" class="w-5 h-5" />
+                <Icon name="ph:sketch-logo-duotone" class="h-5 w-5" />
               </BaseIconBox>
             </div>
             <div class="mb-2">
@@ -313,18 +313,18 @@ function useBarSalesProfit() {
               </BaseHeading>
             </div>
             <div
-              class="flex items-center gap-1 font-sans text-sm text-success-500"
+              class="text-success-500 flex items-center gap-1 font-sans text-sm"
             >
               <span>+7.8%</span>
-              <Icon name="lucide:trending-up" class="w-5 h-5" />
-              <span class="text-xs text-muted-400">since last month</span>
+              <Icon name="lucide:trending-up" class="h-5 w-5" />
+              <span class="text-muted-400 text-xs">since last month</span>
             </div>
           </BaseCard>
         </div>
         <!-- Stat tile -->
         <div class="col-span-12 md:col-span-4">
           <BaseCard class="p-4">
-            <div class="flex items-center justify-between mb-1">
+            <div class="mb-1 flex items-center justify-between">
               <BaseHeading
                 as="h5"
                 size="sm"
@@ -336,10 +336,10 @@ function useBarSalesProfit() {
               </BaseHeading>
               <BaseIconBox
                 size="xs"
-                class="bg-yellow-100 text-yellow-500 dark:bg-yellow-500/20 dark:text-yellow-400 dark:border-2 dark:border-yellow-500"
+                class="bg-yellow-100 text-yellow-500 dark:border-2 dark:border-yellow-500 dark:bg-yellow-500/20 dark:text-yellow-400"
                 shape="full"
               >
-                <Icon name="ph:rocket-duotone" class="w-5 h-5" />
+                <Icon name="ph:rocket-duotone" class="h-5 w-5" />
               </BaseIconBox>
             </div>
             <div class="mb-2">
@@ -354,18 +354,18 @@ function useBarSalesProfit() {
               </BaseHeading>
             </div>
             <div
-              class="flex items-center gap-1 font-sans text-sm text-danger-500"
+              class="text-danger-500 flex items-center gap-1 font-sans text-sm"
             >
               <span>-2.7%</span>
-              <Icon name="lucide:trending-down" class="w-5 h-5" />
-              <span class="text-xs text-muted-400">going down</span>
+              <Icon name="lucide:trending-down" class="h-5 w-5" />
+              <span class="text-muted-400 text-xs">going down</span>
             </div>
           </BaseCard>
         </div>
         <!-- Stat tile -->
         <div class="col-span-12 md:col-span-4">
           <BaseCard class="p-4">
-            <div class="flex items-center justify-between mb-1">
+            <div class="mb-1 flex items-center justify-between">
               <BaseHeading
                 as="h5"
                 size="sm"
@@ -377,10 +377,10 @@ function useBarSalesProfit() {
               </BaseHeading>
               <BaseIconBox
                 size="xs"
-                class="bg-primary-100 text-primary-500 dark:bg-primary-500/20 dark:text-primary-400 dark:border-2 dark:border-primary-500"
+                class="bg-primary-100 text-primary-500 dark:bg-primary-500/20 dark:text-primary-400 dark:border-primary-500 dark:border-2"
                 shape="full"
               >
-                <Icon name="ph:megaphone-simple-duotone" class="w-5 h-5" />
+                <Icon name="ph:megaphone-simple-duotone" class="h-5 w-5" />
               </BaseIconBox>
             </div>
             <div class="mb-2">
@@ -395,18 +395,18 @@ function useBarSalesProfit() {
               </BaseHeading>
             </div>
             <div
-              class="flex items-center gap-1 font-sans text-sm text-success-500"
+              class="text-success-500 flex items-center gap-1 font-sans text-sm"
             >
               <span>+4.5%</span>
-              <Icon name="lucide:trending-up" class="w-5 h-5" />
-              <span class="text-xs text-muted-400">going up</span>
+              <Icon name="lucide:trending-up" class="h-5 w-5" />
+              <span class="text-muted-400 text-xs">going up</span>
             </div>
           </BaseCard>
         </div>
         <!-- Chart -->
         <div class="col-span-12 md:col-span-8">
           <BaseCard class="p-6">
-            <div class="flex items-center justify-between mb-2">
+            <div class="mb-2 flex items-center justify-between">
               <BaseHeading
                 as="h3"
                 size="md"
@@ -418,22 +418,22 @@ function useBarSalesProfit() {
               </BaseHeading>
               <NuxtLink
                 to="#"
-                class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
+                class="bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline"
               >
                 Details
               </NuxtLink>
             </div>
             <div class="flex gap-8">
               <div>
-                <span class="font-sans text-xs text-muted-400">This month</span>
-                <p class="font-sans font-medium text-lg text-primary-500">
+                <span class="text-muted-400 font-sans text-xs">This month</span>
+                <p class="text-primary-500 font-sans text-lg font-medium">
                   $75,689
                 </p>
               </div>
               <div>
-                <span class="font-sans text-xs text-muted-400">Last month</span>
+                <span class="text-muted-400 font-sans text-xs">Last month</span>
                 <p
-                  class="font-sans font-medium text-lg text-muted-800 dark:text-muted-100"
+                  class="text-muted-800 dark:text-muted-100 font-sans text-lg font-medium"
                 >
                   $59,724
                 </p>
@@ -444,8 +444,8 @@ function useBarSalesProfit() {
         </div>
         <!-- Chart -->
         <div class="col-span-12 md:col-span-4">
-          <BaseCard class="h-full flex flex-col p-6">
-            <div class="flex items-center justify-between mb-10">
+          <BaseCard class="flex h-full flex-col p-6">
+            <div class="mb-10 flex items-center justify-between">
               <BaseHeading
                 as="h3"
                 size="md"
@@ -461,26 +461,26 @@ function useBarSalesProfit() {
             </div>
             <div class="mt-auto">
               <div
-                class="w-full flex text-center pt-4 border-t border-muted-200 dark:border-muted-700"
+                class="border-muted-200 dark:border-muted-700 flex w-full border-t pt-4 text-center"
               >
                 <div
-                  class="flex-1 px-2 border-r border-muted-200 dark:border-muted-700"
+                  class="border-muted-200 dark:border-muted-700 flex-1 border-r px-2"
                 >
-                  <span class="font-sans text-xs text-muted-400">
+                  <span class="text-muted-400 font-sans text-xs">
                     Completed
                   </span>
                   <p
-                    class="font-sans font-medium text-lg text-muted-800 dark:text-muted-100"
+                    class="text-muted-800 dark:text-muted-100 font-sans text-lg font-medium"
                   >
                     1431
                   </p>
                 </div>
                 <div class="flex-1 px-2">
-                  <span class="font-sans text-xs text-muted-400">
+                  <span class="text-muted-400 font-sans text-xs">
                     In Progress
                   </span>
                   <p
-                    class="font-sans font-medium text-lg text-muted-800 dark:text-muted-100"
+                    class="text-muted-800 dark:text-muted-100 font-sans text-lg font-medium"
                   >
                     219
                   </p>
@@ -491,8 +491,8 @@ function useBarSalesProfit() {
         </div>
         <!-- Chart -->
         <div class="col-span-12 md:col-span-4">
-          <BaseCard class="h-full flex flex-col p-6">
-            <div class="flex items-center justify-between mb-5">
+          <BaseCard class="flex h-full flex-col p-6">
+            <div class="mb-5 flex items-center justify-between">
               <BaseHeading
                 as="h3"
                 size="md"
@@ -508,7 +508,7 @@ function useBarSalesProfit() {
             </div>
             <div class="mt-auto">
               <div class="flex justify-center gap-2">
-                <Icon name="logos:shopify" class="w-8 h-8" />
+                <Icon name="logos:shopify" class="h-8 w-8" />
                 <div>
                   <BaseHeading
                     as="h5"
@@ -547,10 +547,10 @@ function useBarSalesProfit() {
       </div>
     </div>
     <!-- Grid column -->
-    <div class="col-span-12 ltablet:col-span-3 lg:col-span-3">
+    <div class="ltablet:col-span-3 col-span-12 lg:col-span-3">
       <!--Inner column -->
       <div
-        class="grid ptablet:grid-cols-2 ltablet:flex ltablet:flex-col lg:flex lg:flex-col gap-4"
+        class="ptablet:grid-cols-2 ltablet:flex ltablet:flex-col grid gap-4 lg:flex lg:flex-col"
       >
         <!-- Vcard -->
         <BaseCard class="p-6">

@@ -20,7 +20,7 @@ definePageMeta({
       <template #right>
         <BaseButton class="w-full sm:w-32" disabled>Manage</BaseButton>
         <BaseButton color="primary" class="w-full sm:w-32" disabled>
-          <Icon name="lucide:plus" class="w-4 h-4" />
+          <Icon name="lucide:plus" class="h-4 w-4" />
           <span>Add User</span>
         </BaseButton>
       </template>
@@ -30,52 +30,52 @@ definePageMeta({
             v-for="index in 10"
             :key="index"
             shape="curved"
-            class="flex flex-col sm:flex-row sm:items-center p-5"
+            class="flex flex-col p-5 sm:flex-row sm:items-center"
           >
             <div
-              class="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-3 text-center sm:text-left"
+              class="flex flex-col items-center justify-center gap-3 text-center sm:flex-row sm:justify-start sm:text-left"
             >
-              <BasePlaceload class="w-16 h-16 rounded-full shrink-0" />
+              <BasePlaceload class="h-16 w-16 shrink-0 rounded-full" />
               <div class="space-y-2">
                 <BasePlaceload
-                  class="w-[100px] h-3 rounded-lg mx-auto sm:mx-0"
+                  class="mx-auto h-3 w-[100px] rounded-lg sm:mx-0"
                 />
                 <BasePlaceload
-                  class="w-[75px] h-3 rounded-lg mx-auto sm:mx-0"
+                  class="mx-auto h-3 w-[75px] rounded-lg sm:mx-0"
                 />
               </div>
             </div>
             <div
-              class="sm:ms-auto flex flex-col sm:flex-row sm:items-center sm:justify-end gap-4 pt-4 sm:pt-0"
+              class="flex flex-col gap-4 pt-4 sm:ms-auto sm:flex-row sm:items-center sm:justify-end sm:pt-0"
             >
               <div
-                class="flex items-center justify-center sm:justify-end w-full sm:w-[160px]"
+                class="flex w-full items-center justify-center sm:w-[160px] sm:justify-end"
               >
-                <BasePlaceload class="w-24 h-6 rounded-full" />
+                <BasePlaceload class="h-6 w-24 rounded-full" />
               </div>
               <div
-                class="flex ptablet:hidden items-center justify-center divide-x divide-muted-200 dark:divide-muted-700"
+                class="ptablet:hidden divide-muted-200 dark:divide-muted-700 flex items-center justify-center divide-x"
               >
                 <div class="flex flex-col gap-1 px-4 text-center">
-                  <BasePlaceload class="w-16 h-3 rounded-lg" />
+                  <BasePlaceload class="h-3 w-16 rounded-lg" />
                 </div>
                 <div class="flex flex-col gap-1 px-4 text-center">
-                  <BasePlaceload class="w-16 h-3 rounded-lg" />
+                  <BasePlaceload class="h-3 w-16 rounded-lg" />
                 </div>
                 <div class="flex flex-col gap-1 px-4 text-center">
-                  <BasePlaceload class="w-16 h-3 rounded-lg" />
+                  <BasePlaceload class="h-3 w-16 rounded-lg" />
                 </div>
               </div>
               <div
-                class="flex ptablet:hidden items-center justify-center sm:justify-end gap-1 w-full sm:w-[160px] py-3 sm:py-0"
+                class="ptablet:hidden flex w-full items-center justify-center gap-1 py-3 sm:w-[160px] sm:justify-end sm:py-0"
               >
-                <BasePlaceload class="w-8 h-8 rounded-full shrink-0" />
-                <BasePlaceload class="w-8 h-8 rounded-full shrink-0" />
-                <BasePlaceload class="w-12 h-3 rounded-full hidden sm:block" />
+                <BasePlaceload class="h-8 w-8 shrink-0 rounded-full" />
+                <BasePlaceload class="h-8 w-8 shrink-0 rounded-full" />
+                <BasePlaceload class="hidden h-3 w-12 rounded-full sm:block" />
               </div>
               <div class="sm:ms-6">
                 <BasePlaceload
-                  class="w-40 sm:w-20 h-8 rounded-lg mx-auto sm:mx-0"
+                  class="mx-auto h-8 w-40 rounded-lg sm:mx-0 sm:w-20"
                 />
               </div>
             </div>

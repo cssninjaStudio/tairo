@@ -74,7 +74,7 @@ const tools: Tool[] = [
   <div>
     <DemoWizardStepTitle />
 
-    <div class="grid sm:grid-cols-3 gap-4 max-w-4xl mx-auto px-4">
+    <div class="mx-auto grid max-w-4xl gap-4 px-4 sm:grid-cols-3">
       <!-- Tools -->
       <div v-for="tool in tools" :key="tool.name" class="relative">
         <BaseCheckboxHeadless
@@ -84,17 +84,17 @@ const tools: Tool[] = [
         >
           <BaseCard
             shape="curved"
-            class="p-4 peer-checked:border-primary-500 peer-checked:shadow-xl peer-checked:shadow-muted-300/30 dark:peer-checked:shadow-muted-900/30"
+            class="peer-checked:border-primary-500 peer-checked:shadow-muted-300/30 dark:peer-checked:shadow-muted-900/30 p-4 peer-checked:shadow-xl"
           >
             <div class="flex items-center gap-3">
-              <img :src="tool.logo" class="w-8 h-8" />
+              <img :src="tool.logo" class="h-8 w-8" />
               <div>
                 <div
-                  class="text-sm font-medium text-muted-800 dark:text-muted-100"
+                  class="text-muted-800 dark:text-muted-100 text-sm font-medium"
                 >
                   {{ tool.name }}
                 </div>
-                <div class="text-xs text-muted-400">{{ tool.description }}</div>
+                <div class="text-muted-400 text-xs">{{ tool.description }}</div>
               </div>
             </div>
           </BaseCard>

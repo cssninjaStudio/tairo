@@ -79,10 +79,10 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                 v-for="item in data?.data"
                 :key="item.id"
                 shape="curved"
-                class="flex flex-col sm:flex-row sm:items-center p-5"
+                class="flex flex-col p-5 sm:flex-row sm:items-center"
               >
                 <div
-                  class="flex flex-col sm:flex-row justify-center sm:justify-start items-center gap-3 text-center sm:text-left"
+                  class="flex flex-col items-center justify-center gap-3 text-center sm:flex-row sm:justify-start sm:text-left"
                 >
                   <BaseAvatar
                     :src="item.icon"
@@ -101,49 +101,49 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                       {{ item.name }}
                     </BaseHeading>
                     <div
-                      class="flex items-center justify-center gap-6 sm:gap-0 sm:justify-start"
+                      class="flex items-center justify-center gap-6 sm:justify-start sm:gap-0"
                     >
                       <div
-                        class="flex items-center gap-1 text-sm mt-3 sm:mt-0 text-left text-muted-400"
+                        class="text-muted-400 mt-3 flex items-center gap-1 text-left text-sm sm:mt-0"
                       >
-                        <Icon name="lucide:archive" class="w-3 h-3" />
+                        <Icon name="lucide:archive" class="h-3 w-3" />
                         <span>{{ item.category }}</span>
                       </div>
-                      <div class="hidden sm:block px-2">
+                      <div class="hidden px-2 sm:block">
                         <span>&middot;</span>
                       </div>
                       <div
-                        class="flex items-center gap-1 text-sm mt-3 sm:mt-0 text-left text-muted-400"
+                        class="text-muted-400 mt-3 flex items-center gap-1 text-left text-sm sm:mt-0"
                       >
-                        <Icon name="lucide:clock" class="w-3 h-3" />
+                        <Icon name="lucide:clock" class="h-3 w-3" />
                         <span>{{ item.duration }}</span>
                       </div>
-                      <div class="hidden sm:block px-2">
+                      <div class="hidden px-2 sm:block">
                         <span>&middot;</span>
                       </div>
                       <div
-                        class="flex items-center gap-1 text-sm mt-3 sm:mt-0 text-left text-muted-400"
+                        class="text-muted-400 mt-3 flex items-center gap-1 text-left text-sm sm:mt-0"
                       >
-                        <Icon name="lucide:paperclip" class="w-3 h-3" />
+                        <Icon name="lucide:paperclip" class="h-3 w-3" />
                         <span>{{ item.attachments }}</span>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div
-                  class="sm:ms-auto flex flex-col sm:flex-row items-center justify-end gap-2"
+                  class="flex flex-col items-center justify-end gap-2 sm:ms-auto sm:flex-row"
                 >
                   <div
-                    class="flex ptablet:hidden items-center justify-center sm:justify-end gap-1 w-full sm:w-[160px] py-5 sm:py-0"
+                    class="ptablet:hidden flex w-full items-center justify-center gap-1 py-5 sm:w-[160px] sm:justify-end sm:py-0"
                   >
                     <BaseAvatarGroup
                       size="xs"
                       :avatars="item.followers"
                       :limit="3"
                     />
-                    <p class="font-sans text-xs text-muted-400">Like this</p>
+                    <p class="text-muted-400 font-sans text-xs">Like this</p>
                   </div>
-                  <div class="w-full sm:w-auto flex items-center gap-2">
+                  <div class="flex w-full items-center gap-2 sm:w-auto">
                     <BaseButton
                       color="primary"
                       flavor="outline"
@@ -158,7 +158,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                       data-tooltip="Save recipe"
                       class="hidden sm:inline-flex"
                     >
-                      <Icon name="ph:heart-duotone" class="w-4 h-4" />
+                      <Icon name="ph:heart-duotone" class="h-4 w-4" />
                     </BaseButtonIcon>
                   </div>
                 </div>

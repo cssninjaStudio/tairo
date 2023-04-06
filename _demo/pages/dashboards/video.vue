@@ -183,9 +183,9 @@ const videos = [
 <template>
   <div>
     <!-- Header -->
-    <div class="flex flex-col md:flex-row md:items-center justify-between mb-8">
+    <div class="mb-8 flex flex-col justify-between md:flex-row md:items-center">
       <div
-        class="flex flex-col md:flex-row items-center gap-4 text-center md:text-left max-w-[425px] ltablet:max-w-full lg:max-w-full"
+        class="ltablet:max-w-full flex max-w-[425px] flex-col items-center gap-4 text-center md:flex-row md:text-left lg:max-w-full"
       >
         <div>
           <BaseHeading
@@ -204,13 +204,13 @@ const videos = [
           </BaseParagraph>
         </div>
       </div>
-      <div class="space-y-2 xs:text-center xs:mt-2">
-        <span class="font-sans text-xs uppercase font-medium text-muted-400">
+      <div class="xs:text-center xs:mt-2 space-y-2">
+        <span class="text-muted-400 font-sans text-xs font-medium uppercase">
           My Team
         </span>
-        <div class="flex items-center justify-center md:justify-start gap-2">
+        <div class="flex items-center justify-center gap-2 md:justify-start">
           <BaseButtonIcon small>
-            <Icon name="lucide:plus" class="w-4 h-4" />
+            <Icon name="lucide:plus" class="h-4 w-4" />
           </BaseButtonIcon>
           <BaseAvatar
             size="xs"
@@ -243,44 +243,44 @@ const videos = [
     <!-- Featured videos -->
     <div class="relative">
       <!-- Grid -->
-      <div class="grid grid-cols-12 gap-6 min-h-[440px]">
+      <div class="grid min-h-[440px] grid-cols-12 gap-6">
         <!-- Column -->
         <div
           v-for="video in featuredVideos.slice(0, 1)"
           :key="video.id"
-          class="col-span-12 ltablet:col-span-6 lg:col-span-6"
+          class="ltablet:col-span-6 col-span-12 lg:col-span-6"
         >
-          <div class="h-full flex flex-col">
+          <div class="flex h-full flex-col">
             <div
-              class="group relative h-full w-full rounded-2xl bg-muted-200 dark:bg-muted-800 overflow-hidden"
+              class="bg-muted-200 dark:bg-muted-800 group relative h-full w-full overflow-hidden rounded-2xl"
             >
               <img
                 :src="video.cover"
                 :alt="video.title"
-                class="object-cover object-center w-full"
+                class="w-full object-cover object-center"
               />
               <div
-                class="absolute inset-x-0 bottom-0 w-full h-3/5 group-hover:h-full bg-gradient-to-t from-black z-10 transition-all duration-500 ease-in-out"
+                class="absolute inset-x-0 bottom-0 z-10 h-3/5 w-full bg-gradient-to-t from-black transition-all duration-500 ease-in-out group-hover:h-full"
               ></div>
               <div
-                class="absolute inset-0 w-full h-full flex flex-col justify-between z-20"
+                class="absolute inset-0 z-20 flex h-full w-full flex-col justify-between"
               >
-                <div class="p-6 ptablet:p-10">
+                <div class="ptablet:p-10 p-6">
                   <NuxtLink
                     to="#"
-                    class="h-14 w-14 flex items-center justify-center border-2 border-transparent group-hover:border-primary-500 text-muted-300 group-hover:text-primary-500 rounded-full bg-white shadow-2xl shadow-muted-300/30 dark:shadow-muted-900/20 transition-colors duration-300"
+                    class="group-hover:border-primary-500 text-muted-300 group-hover:text-primary-500 shadow-muted-300/30 dark:shadow-muted-900/20 flex h-14 w-14 items-center justify-center rounded-full border-2 border-transparent bg-white shadow-2xl transition-colors duration-300"
                   >
-                    <Icon name="ic:round-play-arrow" class="w-7 h-7" />
+                    <Icon name="ic:round-play-arrow" class="h-7 w-7" />
                   </NuxtLink>
                 </div>
-                <div class="p-6 ptablet:p-10">
+                <div class="ptablet:p-10 p-6">
                   <NuxtLink to="#">
                     <BaseHeading
                       as="h3"
                       size="3xl"
                       weight="bold"
                       lead="tight"
-                      class="xs:text-xl line-clamp-2 text-white hover:text-primary-300 mb-4 transition-colors duration-300"
+                      class="xs:text-xl hover:text-primary-300 mb-4 line-clamp-2 text-white transition-colors duration-300"
                     >
                       <span>{{ video.title }}</span>
                     </BaseHeading>
@@ -290,7 +290,7 @@ const videos = [
                       :src="video.author.avatar"
                       :text="video.author.name.slice(0, 1)"
                       size="xs"
-                      class="flex-shrink-0 bg-primary-100 dark:bg-primary-500/20 text-primary-500"
+                      class="bg-primary-100 dark:bg-primary-500/20 text-primary-500 shrink-0"
                     />
                     <div>
                       <NuxtLink to="#">
@@ -299,7 +299,7 @@ const videos = [
                           size="xs"
                           weight="light"
                           lead="tight"
-                          class="text-white hover:text-primary-500 transition-colors duration-300"
+                          class="hover:text-primary-500 text-white transition-colors duration-300"
                         >
                           <span>{{ video.author.name }}</span>
                         </BaseHeading>
@@ -321,36 +321,36 @@ const videos = [
           </div>
         </div>
         <!-- Column -->
-        <div class="col-span-12 ltablet:col-span-6 lg:col-span-6">
-          <div class="h-full flex flex-col">
-            <div class="h-full grid grid-cols-12 gap-6">
+        <div class="ltablet:col-span-6 col-span-12 lg:col-span-6">
+          <div class="flex h-full flex-col">
+            <div class="grid h-full grid-cols-12 gap-6">
               <!-- Subcolumn -->
               <div
                 v-for="video in featuredVideos.slice(1)"
                 :key="video.id"
                 class="col-span-12 sm:col-span-6"
               >
-                <div class="group h-full flex flex-col">
+                <div class="group flex h-full flex-col">
                   <div
-                    class="relative h-full w-full rounded-2xl bg-muted-200 dark:bg-muted-800 overflow-hidden"
+                    class="bg-muted-200 dark:bg-muted-800 relative h-full w-full overflow-hidden rounded-2xl"
                   >
                     <img
                       :src="video.cover"
                       :alt="video.title"
-                      class="object-cover object-center w-full"
+                      class="w-full object-cover object-center"
                     />
                     <div
-                      class="absolute inset-x-0 bottom-0 w-full h-3/5 group-hover:h-full bg-gradient-to-t from-black z-10 transition-all duration-500 ease-in-out"
+                      class="absolute inset-x-0 bottom-0 z-10 h-3/5 w-full bg-gradient-to-t from-black transition-all duration-500 ease-in-out group-hover:h-full"
                     ></div>
                     <div
-                      class="absolute inset-0 w-full h-full flex flex-col justify-between z-20"
+                      class="absolute inset-0 z-20 flex h-full w-full flex-col justify-between"
                     >
                       <div class="p-4">
                         <NuxtLink
                           to="#"
-                          class="h-10 w-10 flex items-center justify-center border-2 border-transparent group-hover:border-primary-500 text-muted-300 group-hover:text-primary-500 rounded-full bg-white shadow-2xl shadow-muted-300/30 dark:shadow-muted-900/20 transition-colors duration-300"
+                          class="group-hover:border-primary-500 text-muted-300 group-hover:text-primary-500 shadow-muted-300/30 dark:shadow-muted-900/20 flex h-10 w-10 items-center justify-center rounded-full border-2 border-transparent bg-white shadow-2xl transition-colors duration-300"
                         >
-                          <Icon name="ic:round-play-arrow" class="w-5 h-5" />
+                          <Icon name="ic:round-play-arrow" class="h-5 w-5" />
                         </NuxtLink>
                       </div>
                       <div class="p-4">
@@ -360,7 +360,7 @@ const videos = [
                             size="md"
                             weight="medium"
                             lead="tight"
-                            class="xs:text-xl ptablet:text-xl ptablet:font-bold xs:font-bold text-white mb-4 line-clamp-2 hover:text-primary-300 transition-colors duration-300"
+                            class="xs:text-xl ptablet:text-xl ptablet:font-bold xs:font-bold hover:text-primary-300 mb-4 line-clamp-2 text-white transition-colors duration-300"
                           >
                             <span>{{ video.title }}</span>
                           </BaseHeading>
@@ -370,7 +370,7 @@ const videos = [
                             :src="video.author.avatar"
                             :text="video.author.name.slice(0, 1)"
                             size="xs"
-                            class="flex-shrink-0 bg-primary-100 dark:bg-primary-500/20 text-primary-500"
+                            class="bg-primary-100 dark:bg-primary-500/20 text-primary-500 shrink-0"
                           />
                           <div>
                             <NuxtLink to="#">
@@ -379,7 +379,7 @@ const videos = [
                                 size="xs"
                                 weight="light"
                                 lead="tight"
-                                class="text-white hover:text-primary-500 transition-colors duration-300"
+                                class="hover:text-primary-500 text-white transition-colors duration-300"
                               >
                                 <span>{{ video.author.name }}</span>
                               </BaseHeading>
@@ -410,10 +410,10 @@ const videos = [
 
     <!-- Header -->
     <div
-      class="flex flex-col md:flex-row md:items-center justify-between mt-12 mb-8"
+      class="mb-8 mt-12 flex flex-col justify-between md:flex-row md:items-center"
     >
       <div
-        class="flex flex-col md:flex-row items-center gap-4 text-center md:text-left max-w-[425px] ltablet:max-w-full lg:max-w-full"
+        class="ltablet:max-w-full flex max-w-[425px] flex-col items-center gap-4 text-center md:flex-row md:text-left lg:max-w-full"
       >
         <div>
           <BaseHeading
@@ -434,10 +434,10 @@ const videos = [
       </div>
       <div>
         <div
-          class="flex items-center justify-center md:justify-start gap-2 xs:mt-2"
+          class="xs:mt-2 flex items-center justify-center gap-2 md:justify-start"
         >
           <BaseButton small shape="full">
-            <Icon name="lucide:video" class="w-4 h-4" />
+            <Icon name="lucide:video" class="h-4 w-4" />
             <span>Upload</span>
           </BaseButton>
         </div>
@@ -450,29 +450,29 @@ const videos = [
       <div
         v-for="video in videos"
         :key="video.id"
-        class="col-span-12 sm:col-span-4 ptablet:col-span-6"
+        class="ptablet:col-span-6 col-span-12 sm:col-span-4"
       >
         <div class="group flex flex-col">
           <div
-            class="relative w-full rounded-2xl bg-muted-200 dark:bg-muted-800 overflow-hidden"
+            class="bg-muted-200 dark:bg-muted-800 relative w-full overflow-hidden rounded-2xl"
           >
             <img
               :src="video.cover"
               :alt="video.title"
-              class="object-cover object-center w-full"
+              class="w-full object-cover object-center"
             />
             <div
-              class="absolute inset-x-0 bottom-0 w-full h-3/5 group-hover:h-full bg-gradient-to-t from-black z-10 transition-all duration-500 ease-in-out"
+              class="absolute inset-x-0 bottom-0 z-10 h-3/5 w-full bg-gradient-to-t from-black transition-all duration-500 ease-in-out group-hover:h-full"
             ></div>
             <div
-              class="absolute inset-0 w-full flex flex-col justify-between z-20"
+              class="absolute inset-0 z-20 flex w-full flex-col justify-between"
             >
               <div class="p-4">
                 <NuxtLink
                   to="#"
-                  class="h-10 w-10 flex items-center justify-center border-2 border-transparent group-hover:border-primary-500 text-muted-300 group-hover:text-primary-500 rounded-full bg-white shadow-2xl shadow-muted-300/30 dark:shadow-muted-900/20 transition-colors duration-300"
+                  class="group-hover:border-primary-500 text-muted-300 group-hover:text-primary-500 shadow-muted-300/30 dark:shadow-muted-900/20 flex h-10 w-10 items-center justify-center rounded-full border-2 border-transparent bg-white shadow-2xl transition-colors duration-300"
                 >
-                  <Icon name="ic:round-play-arrow" class="w-5 h-5" />
+                  <Icon name="ic:round-play-arrow" class="h-5 w-5" />
                 </NuxtLink>
               </div>
               <div class="p-4">
@@ -482,7 +482,7 @@ const videos = [
                     size="xl"
                     weight="medium"
                     lead="tight"
-                    class="xs:text-xl xs:font-bold text-white mb-4 line-clamp-2 hover:text-primary-300 transition-colors duration-300"
+                    class="xs:text-xl xs:font-bold hover:text-primary-300 mb-4 line-clamp-2 text-white transition-colors duration-300"
                   >
                     <span>{{ video.title }}</span>
                   </BaseHeading>
@@ -493,7 +493,7 @@ const videos = [
                     :src="video.author.avatar"
                     :text="video.author.name.slice(0, 1)"
                     size="xs"
-                    class="flex-shrink-0 bg-primary-100 dark:bg-primary-500/20 text-primary-500"
+                    class="bg-primary-100 dark:bg-primary-500/20 text-primary-500 shrink-0"
                   />
                   <div>
                     <NuxtLink to="#">
@@ -502,7 +502,7 @@ const videos = [
                         size="xs"
                         weight="light"
                         lead="tight"
-                        class="text-white hover:text-primary-500 transition-colors duration-300"
+                        class="hover:text-primary-500 text-white transition-colors duration-300"
                       >
                         <span>{{ video.author.name }}</span>
                       </BaseHeading>
@@ -526,9 +526,9 @@ const videos = [
     </div>
 
     <!-- Load more -->
-    <div class="flex items-center justify-center my-16">
+    <div class="my-16 flex items-center justify-center">
       <BaseButton shape="full" color="default">
-        <Icon name="ph:dots-nine-bold" class="w-4 h-4" />
+        <Icon name="ph:dots-nine-bold" class="h-4 w-4" />
         <span>Load more</span>
       </BaseButton>
     </div>

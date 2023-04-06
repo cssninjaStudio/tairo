@@ -35,17 +35,17 @@ function openTaskPanel(id: number, tasks: any) {
 
 <template>
   <div class="relative">
-    <div class="hidden sm:block absolute top-2.5 end-12 z-20">
+    <div class="absolute end-12 top-2.5 z-20 hidden sm:block">
       <BaseButton
         condensed
         shape="curved"
         :to="`/layouts/projects/board/${slug}`"
       >
-        <Icon name="ph:kanban-duotone" class="w-4 h-4" />
+        <Icon name="ph:kanban-duotone" class="h-4 w-4" />
         <span>Open Board</span>
       </BaseButton>
     </div>
-    <div class="absolute top-2 end-0 z-20">
+    <div class="absolute end-0 top-2 z-20">
       <BaseDropdown
         flavor="context"
         label="Dropdown"
@@ -61,30 +61,30 @@ function openTaskPanel(id: number, tasks: any) {
           class="sm:hidden"
         >
           <template #start>
-            <Icon name="ph:kanban-duotone" class="w-5 h-5 block me-2" />
+            <Icon name="ph:kanban-duotone" class="me-2 block h-5 w-5" />
           </template>
         </BaseDropdownItem>
         <BaseDropdownDivide />
         <BaseDropdownItem to="#" title="Edit" text="Edit this project">
           <template #start>
-            <Icon name="ph:pencil-duotone" class="w-5 h-5 block me-2" />
+            <Icon name="ph:pencil-duotone" class="me-2 block h-5 w-5" />
           </template>
         </BaseDropdownItem>
         <BaseDropdownDivide />
         <BaseDropdownItem to="#" title="Permissions" text="Manage permissions">
           <template #start>
-            <Icon name="ph:lock-duotone" class="w-5 h-5 block me-2" />
+            <Icon name="ph:lock-duotone" class="me-2 block h-5 w-5" />
           </template>
         </BaseDropdownItem>
         <BaseDropdownItem to="#" title="Files" text="Manage files">
           <template #start>
-            <Icon name="ph:file-duotone" class="w-5 h-5 block me-2" />
+            <Icon name="ph:file-duotone" class="me-2 block h-5 w-5" />
           </template>
         </BaseDropdownItem>
         <BaseDropdownDivide />
         <BaseDropdownItem to="#" title="Delete" text="Delete this project">
           <template #start>
-            <Icon name="ph:trash-duotone" class="w-5 h-5 block me-2" />
+            <Icon name="ph:trash-duotone" class="me-2 block h-5 w-5" />
           </template>
         </BaseDropdownItem>
       </BaseDropdown>
@@ -130,10 +130,10 @@ function openTaskPanel(id: number, tasks: any) {
           <!-- Overview -->
           <div v-if="activeValue === 'overview'">
             <div class="grid grid-cols-12 gap-6">
-              <div class="col-span-12 ltablet:col-span-8 lg:col-span-8">
-                <BaseCard class="p-10 space-y-12">
+              <div class="ltablet:col-span-8 col-span-12 lg:col-span-8">
+                <BaseCard class="space-y-12 p-10">
                   <div
-                    class="flex flex-col sm:flex-row items-center justify-between gap-8 pb-12 border-b border-muted-200 dark:border-muted-700"
+                    class="border-muted-200 dark:border-muted-700 flex flex-col items-center justify-between gap-8 border-b pb-12 sm:flex-row"
                   >
                     <div>
                       <BaseHeading tag="h2" size="2xl" weight="medium">
@@ -166,7 +166,7 @@ function openTaskPanel(id: number, tasks: any) {
                         />
                       </div>
                     </div>
-                    <div class="w-full sm:w-72 shrink-0">
+                    <div class="w-full shrink-0 sm:w-72">
                       <img
                         :src="data?.project.image"
                         :alt="data?.project.name"
@@ -175,12 +175,12 @@ function openTaskPanel(id: number, tasks: any) {
                     </div>
                   </div>
                   <div
-                    class="grid sm:grid-cols-4 gap-4 pb-12 border-b border-muted-200 dark:border-muted-700"
+                    class="border-muted-200 dark:border-muted-700 grid gap-4 border-b pb-12 sm:grid-cols-4"
                   >
                     <div>
                       <Icon
                         name="ph:pen-nib-duotone"
-                        class="w-6 h-6 mb-2 text-primary-500"
+                        class="text-primary-500 mb-2 h-6 w-6"
                       />
                       <div>
                         <BaseHeading tag="h3" size="sm" weight="medium">
@@ -199,7 +199,7 @@ function openTaskPanel(id: number, tasks: any) {
                     <div>
                       <Icon
                         name="ph:timer-duotone"
-                        class="w-6 h-6 mb-2 text-primary-500"
+                        class="text-primary-500 mb-2 h-6 w-6"
                       />
                       <div>
                         <BaseHeading tag="h3" size="sm" weight="medium">
@@ -218,7 +218,7 @@ function openTaskPanel(id: number, tasks: any) {
                     <div>
                       <Icon
                         name="ph:calendar-blank-duotone"
-                        class="w-6 h-6 mb-2 text-primary-500"
+                        class="text-primary-500 mb-2 h-6 w-6"
                       />
                       <div>
                         <BaseHeading tag="h3" size="sm" weight="medium">
@@ -237,7 +237,7 @@ function openTaskPanel(id: number, tasks: any) {
                     <div>
                       <Icon
                         name="ph:sketch-logo-duotone"
-                        class="w-6 h-6 mb-2 text-primary-500"
+                        class="text-primary-500 mb-2 h-6 w-6"
                       />
                       <div>
                         <BaseHeading tag="h3" size="sm" weight="medium">
@@ -256,17 +256,17 @@ function openTaskPanel(id: number, tasks: any) {
                   </div>
                   <div>
                     <h4
-                      class="mb-6 font-sans text-xs font-semibold uppercase text-muted-400"
+                      class="text-muted-400 mb-6 font-sans text-xs font-semibold uppercase"
                     >
                       Recent files
                     </h4>
-                    <div class="grid sm:grid-cols-2 gap-8 pb-6">
+                    <div class="grid gap-8 pb-6 sm:grid-cols-2">
                       <div
                         v-for="(file, index) in data?.project.files"
                         :key="index"
                         shape="curved"
                       >
-                        <div class="w-full flex items-center gap-2">
+                        <div class="flex w-full items-center gap-2">
                           <img
                             :src="file.icon"
                             :alt="file.name"
@@ -278,7 +278,7 @@ function openTaskPanel(id: number, tasks: any) {
                             </BaseHeading>
                             <BaseParagraph size="xs" class="text-muted-400">
                               <span>{{ file.size }}</span>
-                              <span class="text-base px-1 leading-tight">
+                              <span class="px-1 text-base leading-tight">
                                 &middot;
                               </span>
                               <span>v{{ file.version }}</span>
@@ -299,17 +299,17 @@ function openTaskPanel(id: number, tasks: any) {
                   </div>
                 </BaseCard>
               </div>
-              <div class="col-span-12 ltablet:col-span-4 lg:col-span-4">
+              <div class="ltablet:col-span-4 col-span-12 lg:col-span-4">
                 <div class="space-y-6">
                   <!-- Customer -->
                   <BaseCard class="p-8">
                     <h4
-                      class="mb-6 font-sans text-xs font-semibold uppercase text-muted-400"
+                      class="text-muted-400 mb-6 font-sans text-xs font-semibold uppercase"
                     >
                       Customer
                     </h4>
 
-                    <div class="flex items-center gap-2 mb-4">
+                    <div class="mb-4 flex items-center gap-2">
                       <BaseAvatar
                         :src="data?.project.customer.logo"
                         size="md"
@@ -334,12 +334,12 @@ function openTaskPanel(id: number, tasks: any) {
                     <div class="w-full space-y-1">
                       <div class="flex items-center justify-between">
                         <h4
-                          class="font-sans text-sm font-medium text-muted-700 dark:text-muted-100"
+                          class="text-muted-700 dark:text-muted-100 font-sans text-sm font-medium"
                         >
                           Progress
                         </h4>
                         <div>
-                          <span class="font-sans text-sm text-muted-400">
+                          <span class="text-muted-400 font-sans text-sm">
                             {{ data?.project.completed }}%
                           </span>
                         </div>
@@ -354,7 +354,7 @@ function openTaskPanel(id: number, tasks: any) {
                   <!-- Tools -->
                   <BaseCard class="p-8">
                     <h4
-                      class="mb-6 font-sans text-xs font-semibold uppercase text-muted-400"
+                      class="text-muted-400 mb-6 font-sans text-xs font-semibold uppercase"
                     >
                       Project Tools
                     </h4>
@@ -390,7 +390,7 @@ function openTaskPanel(id: number, tasks: any) {
                   <!-- Stacks -->
                   <BaseCard class="p-8">
                     <h4
-                      class="mb-6 font-sans text-xs font-semibold uppercase text-muted-400"
+                      class="text-muted-400 mb-6 font-sans text-xs font-semibold uppercase"
                     >
                       Project Stacks
                     </h4>
@@ -429,18 +429,18 @@ function openTaskPanel(id: number, tasks: any) {
           </div>
           <!-- Team -->
           <div v-else-if="activeValue === 'team'">
-            <div class="grid sm:grid-cols-3 gap-6">
+            <div class="grid gap-6 sm:grid-cols-3">
               <BaseCard
                 elevated-hover
-                class="relative hover:!border-primary-500"
+                class="hover:!border-primary-500 relative"
               >
                 <NuxtLink to="/">
                   <Icon
                     name="uiw:star-on"
-                    class="absolute top-6 end-6 text-primary-500"
+                    class="text-primary-500 absolute end-6 top-6"
                   />
-                  <div class="p-5 flex flex-col sm:flex-row items-center">
-                    <div class="flex flex-col sm:flex-row gap-3">
+                  <div class="flex flex-col items-center p-5 sm:flex-row">
+                    <div class="flex flex-col gap-3 sm:flex-row">
                       <BaseAvatar
                         :src="data?.project.owner.avatar"
                         :badge-src="data?.project.owner.badge"
@@ -448,17 +448,17 @@ function openTaskPanel(id: number, tasks: any) {
                         size="lg"
                         class="bg-muted-500/20 text-muted-500"
                       />
-                      <div class="leading-none text-center sm:text-left">
+                      <div class="text-center leading-none sm:text-left">
                         <h4
-                          class="font-sans text-base font-medium text-muted-800 dark:text-muted-100"
+                          class="text-muted-800 dark:text-muted-100 font-sans text-base font-medium"
                         >
                           {{ data?.project.owner.name }}
                         </h4>
-                        <p class="mb-2 font-sans text-xs text-muted-400">
+                        <p class="text-muted-400 mb-2 font-sans text-xs">
                           Project owner
                         </p>
                         <p
-                          class="font-sans text-xs text-muted-500 dark:text-muted-400"
+                          class="text-muted-500 dark:text-muted-400 font-sans text-xs"
                         >
                           {{ data?.project.owner.bio }}
                         </p>
@@ -474,8 +474,8 @@ function openTaskPanel(id: number, tasks: any) {
                 class="hover:!border-primary-500"
               >
                 <NuxtLink to="/">
-                  <div class="p-5 flex flex-col sm:flex-row items-center">
-                    <div class="flex flex-col sm:flex-row gap-3">
+                  <div class="flex flex-col items-center p-5 sm:flex-row">
+                    <div class="flex flex-col gap-3 sm:flex-row">
                       <BaseAvatar
                         :src="item.src"
                         :badge-src="item.badge"
@@ -483,17 +483,17 @@ function openTaskPanel(id: number, tasks: any) {
                         size="lg"
                         class="bg-muted-500/20 text-muted-500"
                       />
-                      <div class="leading-none text-center sm:text-left">
+                      <div class="text-center leading-none sm:text-left">
                         <h4
-                          class="font-sans text-base font-medium text-muted-800 dark:text-muted-100"
+                          class="text-muted-800 dark:text-muted-100 font-sans text-base font-medium"
                         >
                           {{ item.tooltip }}
                         </h4>
-                        <p class="mb-2 font-sans text-xs text-muted-400">
+                        <p class="text-muted-400 mb-2 font-sans text-xs">
                           {{ item.role }}
                         </p>
                         <p
-                          class="font-sans text-xs text-muted-500 dark:text-muted-400"
+                          class="text-muted-500 dark:text-muted-400 font-sans text-xs"
                         >
                           {{ item.bio }}
                         </p>
@@ -506,15 +506,15 @@ function openTaskPanel(id: number, tasks: any) {
               <div>
                 <button
                   type="button"
-                  class="group flex items-center justify-center gap-2 h-full w-full p-6 rounded-lg border-2 border-dashed border-muted-300 dark:border-muted-800 hover:border-primary-500 dark:hover:border-primary-500 transition-colors duration-300"
+                  class="border-muted-300 dark:border-muted-800 hover:border-primary-500 dark:hover:border-primary-500 group flex h-full w-full items-center justify-center gap-2 rounded-lg border-2 border-dashed p-6 transition-colors duration-300"
                 >
                   <span class="block text-center font-sans">
                     <span
-                      class="block text-muted-800 dark:text-muted-100 group-hover:text-primary-500 dark:group-hover:text-primary-500 transition-colors duration-300"
+                      class="text-muted-800 dark:text-muted-100 group-hover:text-primary-500 dark:group-hover:text-primary-500 block transition-colors duration-300"
                     >
                       Invite a new member
                     </span>
-                    <span class="block text-sm text-muted-400">
+                    <span class="text-muted-400 block text-sm">
                       Send an invitation to join your project team
                     </span>
                   </span>
@@ -524,52 +524,52 @@ function openTaskPanel(id: number, tasks: any) {
           </div>
           <!-- Tasks -->
           <div v-else-if="activeValue === 'tasks'">
-            <div class="grid sm:grid-cols-3 gap-6">
+            <div class="grid gap-6 sm:grid-cols-3">
               <BaseCard
                 v-for="item in data?.project.tasks"
                 :key="item.id"
                 elevated-hover
-                class="flex flex-col hover:!border-primary-500 cursor-pointer"
+                class="hover:!border-primary-500 flex cursor-pointer flex-col"
                 @click="openTaskPanel(item.id, data?.project.tasks)"
               >
-                <div class="p-5 flex flex-col sm:flex-row items-center">
-                  <div class="flex flex-col sm:flex-row gap-3">
+                <div class="flex flex-col items-center p-5 sm:flex-row">
+                  <div class="flex flex-col gap-3 sm:flex-row">
                     <Icon
                       v-if="item.status === 0"
                       name="ph:plus-circle-duotone"
-                      class="shrink-0 w-6 h-6 text-muted-400"
+                      class="text-muted-400 h-6 w-6 shrink-0"
                     />
                     <Icon
                       v-else-if="item.status === 5"
                       name="ph:check-circle-duotone"
-                      class="shrink-0 w-6 h-6 text-success-500"
+                      class="text-success-500 h-6 w-6 shrink-0"
                     />
                     <Icon
                       v-else-if="item.status === 1"
                       name="ph:timer-duotone"
-                      class="shrink-0 w-6 h-6 text-muted-400"
+                      class="text-muted-400 h-6 w-6 shrink-0"
                     />
                     <Icon
                       v-else-if="item.status === 2 || item.status === 3"
                       name="ph:warning-duotone"
-                      class="shrink-0 w-6 h-6 text-warning-500"
+                      class="text-warning-500 h-6 w-6 shrink-0"
                     />
-                    <div class="leading-none text-center sm:text-left">
+                    <div class="text-center leading-none sm:text-left">
                       <h4
-                        class="mb-2 font-sans text-base font-medium leading-tight text-muted-800 dark:text-muted-100"
+                        class="text-muted-800 dark:text-muted-100 mb-2 font-sans text-base font-medium leading-tight"
                       >
                         {{ item.name }}
                       </h4>
-                      <p class="line-clamp-2 font-sans text-xs text-muted-400">
+                      <p class="text-muted-400 line-clamp-2 font-sans text-xs">
                         {{ item.description }}
                       </p>
                     </div>
                   </div>
                 </div>
                 <div
-                  class="mt-auto px-5 py-3 flex items-center justify-between rounded-b-lg bg-muted-50 dark:bg-muted-700/50"
+                  class="bg-muted-50 dark:bg-muted-700/50 mt-auto flex items-center justify-between rounded-b-lg px-5 py-3"
                 >
-                  <div class="flex items-center gap-2 grow max-w-[180px]">
+                  <div class="flex max-w-[180px] grow items-center gap-2">
                     <BaseAvatar
                       size="xxs"
                       :src="item.assignee.src"
@@ -581,15 +581,15 @@ function openTaskPanel(id: number, tasks: any) {
                       :color="item.status === 5 ? 'success' : 'primary'"
                     />
                   </div>
-                  <div class="flex items-center gap-4 text-muted-400">
+                  <div class="text-muted-400 flex items-center gap-4">
                     <div class="flex items-center gap-1 text-sm">
-                      <Icon name="ph:paperclip-duotone" class="w-4 h-4" />
+                      <Icon name="ph:paperclip-duotone" class="h-4 w-4" />
                       <span class="font-sans">
                         {{ item.files.length }}
                       </span>
                     </div>
                     <div class="flex items-center gap-1 text-sm">
-                      <Icon name="ph:chat-circle-duotone" class="w-4 h-4" />
+                      <Icon name="ph:chat-circle-duotone" class="h-4 w-4" />
                       <span class="font-sans">
                         {{ item.comments.length }}
                       </span>
@@ -601,15 +601,15 @@ function openTaskPanel(id: number, tasks: any) {
               <div>
                 <button
                   type="button"
-                  class="group flex items-center justify-center gap-2 h-full w-full p-6 rounded-lg border-2 border-dashed border-muted-300 dark:border-muted-800 hover:border-primary-500 dark:hover:border-primary-500 transition-colors duration-300"
+                  class="border-muted-300 dark:border-muted-800 hover:border-primary-500 dark:hover:border-primary-500 group flex h-full w-full items-center justify-center gap-2 rounded-lg border-2 border-dashed p-6 transition-colors duration-300"
                 >
                   <span class="block text-center font-sans">
                     <span
-                      class="block text-muted-800 dark:text-muted-100 group-hover:text-primary-500 dark:group-hover:text-primary-500 transition-colors duration-300"
+                      class="text-muted-800 dark:text-muted-100 group-hover:text-primary-500 dark:group-hover:text-primary-500 block transition-colors duration-300"
                     >
                       Create a new task
                     </span>
-                    <span class="block text-sm text-muted-400">
+                    <span class="text-muted-400 block text-sm">
                       Add a new task to your project
                     </span>
                   </span>

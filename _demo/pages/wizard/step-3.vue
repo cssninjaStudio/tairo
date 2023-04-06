@@ -149,7 +149,7 @@ const budget = ref('< 5K')
                   {{ project.customer?.location }}
                 </p>
               </div>
-              <div class="ms-auto me-3">
+              <div class="me-3 ms-auto">
                 <BaseButtonIcon small shape="full" @click="dismissCustomer">
                   <Icon name="lucide:x" class="h-4 w-4" />
                 </BaseButtonIcon>
