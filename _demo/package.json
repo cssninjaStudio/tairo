@@ -43,5 +43,8 @@
     "vue3-carousel": "0.2.16",
     "vue3-popper": "1.5.0",
     "vue3-smooth-dnd": "0.0.4"
+  },
+  "dependencies": {
+    "zxcvbn": "^4.4.2"
   }
 }

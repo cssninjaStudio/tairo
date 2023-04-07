@@ -70,29 +70,39 @@ const navigation = [
     name: 'Form layouts',
     children: [
       {
-        name: 'Company form',
+        name: 'Company',
         icon: 'ph:article-duotone',
         to: '/layouts/form-1',
       },
       {
-        name: 'Form layout V2',
+        name: 'Doctor',
         icon: 'ph:article-duotone',
         to: '/layouts/form-2',
       },
       {
-        name: 'Form layout V3',
+        name: 'Checkout',
         icon: 'ph:article-duotone',
         to: '/layouts/form-3',
       },
       {
-        name: 'Form layout V4',
+        name: 'Event',
         icon: 'ph:article-duotone',
         to: '/layouts/form-4',
       },
       {
-        name: 'Form layout V5',
+        name: 'Password gen',
         icon: 'ph:article-duotone',
         to: '/layouts/form-5',
+      },
+      {
+        name: 'Meeting',
+        icon: 'ph:article-duotone',
+        to: '/layouts/form-6',
+      },
+      {
+        name: 'Repeatable',
+        icon: 'ph:article-duotone',
+        to: '/layouts/form-7',
       },
     ],
   },

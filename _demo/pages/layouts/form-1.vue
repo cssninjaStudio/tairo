@@ -712,7 +712,11 @@ const onSubmit = handleSubmit(
             <div
               class="mt-5 flex flex-col-reverse text-right md:block md:space-x-3"
             >
-              <BaseButton type="submit" color="primary" class="!h-12">
+              <BaseButton
+                type="submit"
+                color="primary"
+                class="!h-12 w-full sm:w-40"
+              >
                 Create Company
               </BaseButton>
             </div>
