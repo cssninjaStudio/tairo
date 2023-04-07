@@ -60,6 +60,7 @@ onClickOutside(target, () => (open.value = false))
             <div class="space-y-1">
               <button
                 v-for="step in steps"
+                :key="step.id"
                 type="button"
                 class="hover:bg-muted-100 dark:hover:bg-muted-700 flex w-full items-center gap-2 rounded-lg px-3 py-2 font-sans disabled:cursor-not-allowed disabled:opacity-70"
                 @click="

@@ -13,6 +13,12 @@ module.exports = {
   parser: 'vue-eslint-parser',
   parserOptions: {
     parser: '@typescript-eslint/parser',
+    sourceType: 'module',
+  },
+  settings: {
+    tailwindcss: {
+      config: 'tailwind.config.ts',
+    },
   },
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',

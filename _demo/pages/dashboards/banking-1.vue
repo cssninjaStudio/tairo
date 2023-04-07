@@ -102,13 +102,13 @@ const amount = ref<number>()
 
 <template>
   <!-- Grid -->
-  <div class="grid md:grid-cols-12 gap-4">
+  <div class="grid gap-4 md:grid-cols-12">
     <!--Grid column -->
-    <div class="col-span-12 ltablet:col-span-4 lg:col-span-4">
+    <div class="ltablet:col-span-4 col-span-12 lg:col-span-4">
       <!--Inner column -->
       <div class="flex flex-col gap-4">
         <BaseCard class="flex flex-col py-6">
-          <div class="flex items-center justify-between px-6 mb-6">
+          <div class="mb-6 flex items-center justify-between px-6">
             <BaseHeading
               as="h3"
               size="md"
@@ -119,10 +119,10 @@ const amount = ref<number>()
               <span>My Cards</span>
             </BaseHeading>
             <BaseButtonIcon shape="full" small>
-              <Icon name="lucide:plus" class="w-3 h-3" />
+              <Icon name="lucide:plus" class="h-3 w-3" />
             </BaseButtonIcon>
           </div>
-          <div class="flex items-center gap-4 px-6 mb-8">
+          <div class="mb-8 flex items-center gap-4 px-6">
             <DemoCreditCardSmall class="text-primary-500" />
             <div>
               <BaseParagraph size="sm" weight="medium">
@@ -148,7 +148,7 @@ const amount = ref<number>()
               >
                 <BaseDropdownItem to="/" title="Invest" text="Buys more stocks">
                   <template #start>
-                    <Icon name="ph:coin-duotone" class="w-5 h-5 block me-2" />
+                    <Icon name="ph:coin-duotone" class="me-2 block h-5 w-5" />
                   </template>
                 </BaseDropdownItem>
                 <BaseDropdownItem
@@ -159,7 +159,7 @@ const amount = ref<number>()
                   <template #start>
                     <Icon
                       name="ph:cell-signal-medium-duotone"
-                      class="w-5 h-5 block me-2"
+                      class="me-2 block h-5 w-5"
                     />
                   </template>
                 </BaseDropdownItem>
@@ -169,7 +169,7 @@ const amount = ref<number>()
                   text="View opportunities"
                 >
                   <template #start>
-                    <Icon name="ph:bank-duotone" class="w-5 h-5 block me-2" />
+                    <Icon name="ph:bank-duotone" class="me-2 block h-5 w-5" />
                   </template>
                 </BaseDropdownItem>
                 <BaseDropdownDivide />
@@ -179,14 +179,14 @@ const amount = ref<number>()
                   text="Manage your wallet"
                 >
                   <template #start>
-                    <Icon name="ph:wallet-duotone" class="w-5 h-5 block me-2" />
+                    <Icon name="ph:wallet-duotone" class="me-2 block h-5 w-5" />
                   </template>
                 </BaseDropdownItem>
               </BaseDropdown>
             </div>
           </div>
           <div
-            class="space-y-5 border-b-2 border-dashed px-6 pb-6 mb-8 border-muted-200 dark:border-muted-700"
+            class="border-muted-200 dark:border-muted-700 mb-8 space-y-5 border-b-2 border-dashed px-6 pb-6"
           >
             <div class="flex items-center justify-between">
               <BaseHeading
@@ -200,7 +200,7 @@ const amount = ref<number>()
               </BaseHeading>
               <NuxtLink
                 to="/"
-                class="font-sans text-sm underline-offset-4 text-primary-500 hover:underline"
+                class="text-primary-500 font-sans text-sm underline-offset-4 hover:underline"
               >
                 Edit
               </NuxtLink>
@@ -217,7 +217,7 @@ const amount = ref<number>()
               </BaseHeading>
               <div class="flex items-center gap-1">
                 <span class="block h-2 w-2 rounded-full bg-emerald-500"></span>
-                <p class="font-sans text-sm text-muted-400">Active</p>
+                <p class="text-muted-400 font-sans text-sm">Active</p>
               </div>
             </div>
             <div class="flex items-center justify-between">
@@ -231,7 +231,7 @@ const amount = ref<number>()
                 <span>Expires in</span>
               </BaseHeading>
               <div class="flex items-center gap-1">
-                <p class="font-sans text-sm text-muted-400">125 days</p>
+                <p class="text-muted-400 font-sans text-sm">125 days</p>
               </div>
             </div>
             <div class="flex items-center justify-between">
@@ -245,12 +245,12 @@ const amount = ref<number>()
                 <span>Type</span>
               </BaseHeading>
               <div class="flex items-center gap-1">
-                <Icon name="cib:visa" class="w-10 h-10 text-muted-400" />
-                <p class="font-sans text-xs text-muted-400">Credit Card</p>
+                <Icon name="cib:visa" class="text-muted-400 h-10 w-10" />
+                <p class="text-muted-400 font-sans text-xs">Credit Card</p>
               </div>
             </div>
           </div>
-          <div class="flex items-center gap-4 px-6 mb-2">
+          <div class="mb-2 flex items-center gap-4 px-6">
             <DemoCreditCardSmall class="text-success-500" />
             <div>
               <BaseParagraph size="sm" weight="medium">
@@ -276,7 +276,7 @@ const amount = ref<number>()
               >
                 <BaseDropdownItem to="/" title="Invest" text="Buys more stocks">
                   <template #start>
-                    <Icon name="ph:coin-duotone" class="w-5 h-5 block me-2" />
+                    <Icon name="ph:coin-duotone" class="me-2 block h-5 w-5" />
                   </template>
                 </BaseDropdownItem>
                 <BaseDropdownItem
@@ -287,7 +287,7 @@ const amount = ref<number>()
                   <template #start>
                     <Icon
                       name="ph:cell-signal-medium-duotone"
-                      class="w-5 h-5 block me-2"
+                      class="me-2 block h-5 w-5"
                     />
                   </template>
                 </BaseDropdownItem>
@@ -297,7 +297,7 @@ const amount = ref<number>()
                   text="View opportunities"
                 >
                   <template #start>
-                    <Icon name="ph:bank-duotone" class="w-5 h-5 block me-2" />
+                    <Icon name="ph:bank-duotone" class="me-2 block h-5 w-5" />
                   </template>
                 </BaseDropdownItem>
                 <BaseDropdownDivide />
@@ -307,7 +307,7 @@ const amount = ref<number>()
                   text="Manage your wallet"
                 >
                   <template #start>
-                    <Icon name="ph:wallet-duotone" class="w-5 h-5 block me-2" />
+                    <Icon name="ph:wallet-duotone" class="me-2 block h-5 w-5" />
                   </template>
                 </BaseDropdownItem>
               </BaseDropdown>
@@ -315,8 +315,8 @@ const amount = ref<number>()
           </div>
         </BaseCard>
         <!-- Widget -->
-        <BaseCard class="h-full flex flex-col p-6">
-          <div class="flex items-center justify-between mb-4">
+        <BaseCard class="flex h-full flex-col p-6">
+          <div class="mb-4 flex items-center justify-between">
             <BaseHeading
               as="h3"
               size="md"
@@ -329,7 +329,7 @@ const amount = ref<number>()
             <div>
               <NuxtLink
                 to="/"
-                class="font-sans text-sm underline-offset-4 text-muted-400 hover:text-primary-500 hover:underline transition-colors duration-300"
+                class="text-muted-400 hover:text-primary-500 font-sans text-sm underline-offset-4 transition-colors duration-300 hover:underline"
               >
                 View All
               </NuxtLink>
@@ -343,7 +343,7 @@ const amount = ref<number>()
                 size="md"
                 shape="full"
               >
-                <Icon name="ph:pizza-duotone" class="w-5 h-5" />
+                <Icon name="ph:pizza-duotone" class="h-5 w-5" />
               </BaseIconBox>
               <div>
                 <BaseHeading
@@ -361,7 +361,7 @@ const amount = ref<number>()
               </div>
               <div class="ms-auto">
                 <span
-                  class="font-sans font-semibold text-sm text-muted-800 dark:text-muted-100"
+                  class="text-muted-800 dark:text-muted-100 font-sans text-sm font-semibold"
                 >
                   - $41.49
                 </span>
@@ -374,7 +374,7 @@ const amount = ref<number>()
                 size="md"
                 shape="full"
               >
-                <Icon name="ph:storefront-duotone" class="w-5 h-5" />
+                <Icon name="ph:storefront-duotone" class="h-5 w-5" />
               </BaseIconBox>
               <div>
                 <BaseHeading
@@ -392,7 +392,7 @@ const amount = ref<number>()
               </div>
               <div class="ms-auto">
                 <span
-                  class="font-sans font-semibold text-sm text-muted-800 dark:text-muted-100"
+                  class="text-muted-800 dark:text-muted-100 font-sans text-sm font-semibold"
                 >
                   + $263.39
                 </span>
@@ -405,7 +405,7 @@ const amount = ref<number>()
                 size="md"
                 shape="full"
               >
-                <Icon name="ph:shopping-cart-duotone" class="w-5 h-5" />
+                <Icon name="ph:shopping-cart-duotone" class="h-5 w-5" />
               </BaseIconBox>
               <div>
                 <BaseHeading
@@ -423,7 +423,7 @@ const amount = ref<number>()
               </div>
               <div class="ms-auto">
                 <span
-                  class="font-sans font-semibold text-sm text-muted-800 dark:text-muted-100"
+                  class="text-muted-800 dark:text-muted-100 font-sans text-sm font-semibold"
                 >
                   - $92.00
                 </span>
@@ -434,17 +434,17 @@ const amount = ref<number>()
       </div>
     </div>
     <!--Grid column -->
-    <div class="col-span-12 ltablet:col-span-8 lg:col-span-8">
+    <div class="ltablet:col-span-8 col-span-12 lg:col-span-8">
       <!-- Sub grid -->
-      <div class="grid md:grid-cols-12 gap-4">
+      <div class="grid gap-4 md:grid-cols-12">
         <!-- Sub column -->
         <div
-          class="col-span-12 ltablet:col-span-6 lg:col-span-6 flex flex-col gap-4"
+          class="ltablet:col-span-6 col-span-12 flex flex-col gap-4 lg:col-span-6"
         >
           <!-- Widget -->
           <form method="POST" action="" @submit.prevent class="relative">
             <BaseCard class="flex flex-col p-6">
-              <div class="flex items-center justify-between mb-4">
+              <div class="mb-4 flex items-center justify-between">
                 <BaseHeading
                   as="h3"
                   size="md"
@@ -468,15 +468,15 @@ const amount = ref<number>()
                 />
                 <div class="mt-2">
                   <p
-                    class="font-sans text-xs leading-tight text-muted-500 dark:text-muted-400"
+                    class="text-muted-500 dark:text-muted-400 font-sans text-xs leading-tight"
                   >
                     Select one of your bank accounts to transfer some funds. The
                     transfer cannot exceed 20% of your balance.
                   </p>
-                  <div class="flex justify-end mt-2">
+                  <div class="mt-2 flex justify-end">
                     <button
                       type="submit"
-                      class="font-sans text-sm underline-offset-4 text-primary-500 hover:underline"
+                      class="text-primary-500 font-sans text-sm underline-offset-4 hover:underline"
                     >
                       Confirm and send
                     </button>
@@ -488,7 +488,7 @@ const amount = ref<number>()
           <!-- Widget -->
           <div class="relative">
             <BaseCard class="flex flex-col p-6">
-              <div class="flex items-center justify-between mb-4">
+              <div class="mb-4 flex items-center justify-between">
                 <BaseHeading
                   as="h3"
                   size="md"
@@ -499,22 +499,22 @@ const amount = ref<number>()
                   <span>Overall Progress</span>
                 </BaseHeading>
                 <div>
-                  <span class="font-sans text-sm text-muted-400">Lvl. 3</span>
+                  <span class="text-muted-400 font-sans text-sm">Lvl. 3</span>
                 </div>
               </div>
               <div>
                 <BaseProgress size="xs" :value="60" />
                 <div class="mt-2">
                   <p
-                    class="font-sans text-xs leading-tight text-muted-500 dark:text-muted-400"
+                    class="text-muted-500 dark:text-muted-400 font-sans text-xs leading-tight"
                   >
                     This is your Tairo customer level. Reach out higher levels
                     to unlock achievements, special gifts, and more.
                   </p>
-                  <div class="flex justify-end mt-2">
+                  <div class="mt-2 flex justify-end">
                     <NuxtLink
                       to="/"
-                      class="font-sans text-sm underline-offset-4 text-primary-500 hover:underline"
+                      class="text-primary-500 font-sans text-sm underline-offset-4 hover:underline"
                     >
                       Details
                     </NuxtLink>
@@ -529,12 +529,12 @@ const amount = ref<number>()
           method="POST"
           action=""
           @submit.prevent
-          class="col-span-12 ltablet:col-span-6 lg:col-span-6"
+          class="ltablet:col-span-6 col-span-12 lg:col-span-6"
         >
           <!-- Widget -->
           <div class="relative h-full">
-            <BaseCard class="h-full flex flex-col p-6">
-              <div class="flex items-center justify-between mb-4">
+            <BaseCard class="flex h-full flex-col p-6">
+              <div class="mb-4 flex items-center justify-between">
                 <BaseHeading
                   as="h3"
                   size="md"
@@ -547,14 +547,14 @@ const amount = ref<number>()
                 <div>
                   <NuxtLink
                     to="/"
-                    class="font-sans text-sm underline-offset-4 text-muted-400 hover:text-primary-500 hover:underline transition-colors duration-300"
+                    class="text-muted-400 hover:text-primary-500 font-sans text-sm underline-offset-4 transition-colors duration-300 hover:underline"
                   >
                     See All
                   </NuxtLink>
                 </div>
               </div>
               <div>
-                <div class="flex gap-3 mb-4">
+                <div class="mb-4 flex gap-3">
                   <BaseAvatar src="/img/avatars/16.svg" size="xs" />
                   <BaseAvatar
                     text="LT"
@@ -570,7 +570,7 @@ const amount = ref<number>()
                 </div>
                 <NuxtLink
                   to="/"
-                  class="font-sans text-sm underline-offset-4 text-muted-400 hover:text-primary-500 hover:underline"
+                  class="text-muted-400 hover:text-primary-500 font-sans text-sm underline-offset-4 hover:underline"
                 >
                   See all contacts
                 </NuxtLink>
@@ -589,7 +589,7 @@ const amount = ref<number>()
                       }"
                     />
                   </div>
-                  <div class="w-full flex gap-2">
+                  <div class="flex w-full gap-2">
                     <BaseSelect
                       v-model="selectedCurrency"
                       shape="rounded"
@@ -613,7 +613,7 @@ const amount = ref<number>()
                   </div>
                 </div>
                 <p
-                  class="my-3 font-sans text-xs leading-tight text-muted-500 dark:text-muted-400"
+                  class="text-muted-500 dark:text-muted-400 my-3 font-sans text-xs leading-tight"
                 >
                   Funds will reach destination tomorrow.
                 </p>
@@ -635,8 +635,8 @@ const amount = ref<number>()
         <!-- Sub column -->
         <div class="col-span-12">
           <div class="relative h-full">
-            <BaseCard class="h-full flex flex-col p-6">
-              <div class="flex items-center justify-between mb-4">
+            <BaseCard class="flex h-full flex-col p-6">
+              <div class="mb-4 flex items-center justify-between">
                 <BaseHeading
                   as="h3"
                   size="md"
@@ -649,7 +649,7 @@ const amount = ref<number>()
                 <div>
                   <NuxtLink
                     to="/"
-                    class="font-sans text-sm underline-offset-4 text-muted-400 hover:text-primary-500 hover:underline transition-colors duration-300"
+                    class="text-muted-400 hover:text-primary-500 font-sans text-sm underline-offset-4 transition-colors duration-300 hover:underline"
                   >
                     View Reports
                   </NuxtLink>

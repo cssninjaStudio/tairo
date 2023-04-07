@@ -6,10 +6,10 @@ definePageMeta({
 
 <template>
   <div class="flex items-center justify-center py-8">
-    <div class="w-full max-w-4xl mx-auto">
+    <div class="mx-auto w-full max-w-4xl">
       <BaseCard>
         <div
-          class="grid sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-muted-200 dark:divide-muted-700"
+          class="divide-muted-200 dark:divide-muted-700 grid divide-y sm:grid-cols-2 sm:divide-x sm:divide-y-0"
         >
           <div class="flex flex-col p-8">
             <BasePlaceholderPage
@@ -30,15 +30,15 @@ definePageMeta({
               </template>
 
               <div
-                class="w-full max-w-[280px] mx-auto flex items-end justify-center gap-2 mt-6"
+                class="mx-auto mt-6 flex w-full max-w-[280px] items-end justify-center gap-2"
               >
                 <BaseHeading as="h3" size="2xl" weight="medium" lead="none">
-                  <span class="text-sm text-muted-400">Only</span>
+                  <span class="text-muted-400 text-sm">Only</span>
                   <span class="px-1"> $44.99</span>
-                  <span class="text-sm text-muted-400">/per month</span>
+                  <span class="text-muted-400 text-sm">/per month</span>
                 </BaseHeading>
               </div>
-              <div class="flex items-center justify-between gap-2 mt-8">
+              <div class="mt-8 flex items-center justify-between gap-2">
                 <BaseButton class="w-full">Skip</BaseButton>
                 <BaseButton color="primary" class="w-full">Upgrade</BaseButton>
               </div>
@@ -51,7 +51,7 @@ definePageMeta({
               </BaseHeading>
               <BaseText
                 size="xs"
-                class="max-w-xs text-muted-500 dark:text-muted-400"
+                class="text-muted-500 dark:text-muted-400 max-w-xs"
               >
                 Take a look at some incredible features that have been added to
                 our premium plan. You won't believe it!
@@ -60,11 +60,11 @@ definePageMeta({
                 <ul class="space-y-6">
                   <li class="flex gap-3">
                     <div
-                      class="flex items-center justify-center h-9 w-9 rounded-full border border-muted-200 dark:border-muted-600 bg-white dark:bg-muted-700 shadow-xl shadow-muted-300/30 dark:shadow-muted-800/20"
+                      class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 shadow-muted-300/30 dark:shadow-muted-800/20 flex h-9 w-9 items-center justify-center rounded-full border bg-white shadow-xl"
                     >
                       <Icon
                         name="lucide:check"
-                        class="w-4 h-4 text-success-500"
+                        class="text-success-500 h-4 w-4"
                       />
                     </div>
                     <div>
@@ -73,7 +73,7 @@ definePageMeta({
                       </BaseHeading>
                       <BaseText
                         size="xs"
-                        class="max-w-[210px] text-muted-500 dark:text-muted-400"
+                        class="text-muted-500 dark:text-muted-400 max-w-[210px]"
                       >
                         Each team member on your account can create projects and
                         tasks.
@@ -82,11 +82,11 @@ definePageMeta({
                   </li>
                   <li class="flex gap-3">
                     <div
-                      class="flex items-center justify-center h-9 w-9 rounded-full border border-muted-200 dark:border-muted-600 bg-white dark:bg-muted-700 shadow-xl shadow-muted-300/30 dark:shadow-muted-800/20"
+                      class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 shadow-muted-300/30 dark:shadow-muted-800/20 flex h-9 w-9 items-center justify-center rounded-full border bg-white shadow-xl"
                     >
                       <Icon
                         name="lucide:check"
-                        class="w-4 h-4 text-success-500"
+                        class="text-success-500 h-4 w-4"
                       />
                     </div>
                     <div>
@@ -95,7 +95,7 @@ definePageMeta({
                       </BaseHeading>
                       <BaseText
                         size="xs"
-                        class="max-w-[210px] text-muted-500 dark:text-muted-400"
+                        class="text-muted-500 dark:text-muted-400 max-w-[210px]"
                       >
                         Add up to 5 addons to your main application to help you
                         manage.
@@ -104,11 +104,11 @@ definePageMeta({
                   </li>
                   <li class="flex gap-3">
                     <div
-                      class="flex items-center justify-center h-9 w-9 rounded-full border border-muted-200 dark:border-muted-600 bg-white dark:bg-muted-700 shadow-xl shadow-muted-300/30 dark:shadow-muted-800/20"
+                      class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 shadow-muted-300/30 dark:shadow-muted-800/20 flex h-9 w-9 items-center justify-center rounded-full border bg-white shadow-xl"
                     >
                       <Icon
                         name="lucide:check"
-                        class="w-4 h-4 text-success-500"
+                        class="text-success-500 h-4 w-4"
                       />
                     </div>
                     <div>
@@ -117,7 +117,7 @@ definePageMeta({
                       </BaseHeading>
                       <BaseText
                         size="xs"
-                        class="max-w-[210px] text-muted-500 dark:text-muted-400"
+                        class="text-muted-500 dark:text-muted-400 max-w-[210px]"
                       >
                         Your application grows in parallel of your business,
                         without any effort.

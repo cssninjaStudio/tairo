@@ -32,13 +32,13 @@ const leagues = [
 </script>
 
 <template>
-  <div class="space-y-5 mb-2">
+  <div class="mb-2 space-y-5">
     <div
       v-for="league in leagues"
       :key="league.id"
       class="flex items-center gap-3"
     >
-      <img :src="league.logo" :alt="league.name" class="shrink-0 w-10 h-10" />
+      <img :src="league.logo" :alt="league.name" class="h-10 w-10 shrink-0" />
       <div>
         <BaseHeading
           as="h4"
@@ -55,12 +55,12 @@ const leagues = [
           </span>
         </BaseParagraph>
       </div>
-      <div class="flex items-center gap-1 ms-auto">
-        <span class="font-sans text-xs text-muted-400">
+      <div class="ms-auto flex items-center gap-1">
+        <span class="text-muted-400 font-sans text-xs">
           {{ league.matches }} matches
         </span>
         <BaseButtonIcon shape="curved" muted class="scale-75">
-          <Icon name="lucide:arrow-right" class="w-4 h-4" />
+          <Icon name="lucide:arrow-right" class="h-4 w-4" />
         </BaseButtonIcon>
       </div>
     </div>

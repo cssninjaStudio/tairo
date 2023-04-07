@@ -8,12 +8,12 @@ const props = defineProps<{
 
 <template>
   <div
-    class="relative h-8 sm:h-10 flex items-center justify-end sm:justify-center px-6 sm:px-2"
+    class="relative flex h-8 items-center justify-end px-6 sm:h-10 sm:justify-center sm:px-2"
     :class="props.tabletHidden && 'ptablet:hidden'"
   >
     <span
       v-if="props.label"
-      class="absolute top-1/2 start-8 sm:-top-10 sm:inset-x-0 -translate-y-1/2 sm:translate-y-0 mx-auto text-center font-sans text-xs font-medium uppercase text-muted-400"
+      class="text-muted-400 absolute start-8 top-1/2 mx-auto -translate-y-1/2 text-center font-sans text-xs font-medium uppercase sm:inset-x-0 sm:-top-10 sm:translate-y-0"
       :class="props.hideLabel ? 'sm:hidden' : ''"
     >
       {{ props.label }}

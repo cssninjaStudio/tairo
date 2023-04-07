@@ -254,7 +254,7 @@ const onSubmit = handleSubmit(
         </div>
       </div>
       <div class="p-4">
-        <div class="max-w-lg mx-auto py-8 space-y-12">
+        <div class="mx-auto max-w-lg space-y-12 py-8">
           <BaseMessage v-if="success" @close="success = false">
             Your settings has been saved!
           </BaseMessage>
@@ -334,7 +334,7 @@ const onSubmit = handleSubmit(
             <div class="grid grid-cols-12 gap-4">
               <div class="col-span-12">
                 <Field
-                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                  v-slot="{ field, handleChange, handleBlur }"
                   name="twoFactor.enabled"
                 >
                   <BaseSwitchThin
@@ -376,7 +376,7 @@ const onSubmit = handleSubmit(
             <div class="grid grid-cols-12 gap-4">
               <div class="col-span-12">
                 <Field
-                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                  v-slot="{ field, handleChange, handleBlur }"
                   name="notifications.enabled"
                 >
                   <BaseSwitchBall
@@ -392,7 +392,7 @@ const onSubmit = handleSubmit(
               </div>
               <div v-show="values.notifications?.enabled" class="col-span-12">
                 <Field
-                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                  v-slot="{ field, handleChange, handleBlur }"
                   name="notifications.flushLowPriority"
                 >
                   <BaseSwitchBall
@@ -408,7 +408,7 @@ const onSubmit = handleSubmit(
               </div>
               <div v-show="values.notifications?.enabled" class="col-span-12">
                 <Field
-                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                  v-slot="{ field, handleChange, handleBlur }"
                   name="notifications.marketing"
                 >
                   <BaseSwitchBall
@@ -424,7 +424,7 @@ const onSubmit = handleSubmit(
               </div>
               <div v-show="values.notifications?.enabled" class="col-span-12">
                 <Field
-                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                  v-slot="{ field, handleChange, handleBlur }"
                   name="notifications.partners"
                 >
                   <BaseSwitchBall

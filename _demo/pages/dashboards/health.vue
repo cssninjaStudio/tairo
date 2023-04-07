@@ -392,16 +392,16 @@ function useGaugePersonal() {
       <!-- Header -->
       <div class="col-span-12">
         <div
-          class="flex flex-col sm:flex-row items-center p-4 rounded-2xl bg-primary-800"
+          class="bg-primary-800 flex flex-col items-center rounded-2xl p-4 sm:flex-row"
         >
-          <div class="relative shrink-0 h-[168px] w-[280px]">
+          <div class="relative h-[168px] w-[280px] shrink-0">
             <img
-              class="absolute -top-20 -start-6 sm:-start-10 pointer-events-none"
+              class="pointer-events-none absolute -start-6 -top-20 sm:-start-10"
               src="/img/illustrations/dashboards/health/doctor.svg"
               alt="Doctor illustration"
             />
           </div>
-          <div class="grow mt-6 sm:mt-0">
+          <div class="mt-6 grow sm:mt-0">
             <div class="text-center sm:text-left">
               <BaseHeading tag="h1" class="text-white opacity-90">
                 <span>Today's Summary</span>
@@ -412,7 +412,7 @@ function useGaugePersonal() {
                 </span>
               </BaseParagraph>
               <div
-                class="flex flex-wrap gap-y-6 sm:gap-x-8 text-center sm:text-left mt-6 sm:mt-4 pb-4 sm:pb-0"
+                class="mt-6 flex flex-wrap gap-y-6 pb-4 text-center sm:mt-4 sm:gap-x-8 sm:pb-0 sm:text-left"
               >
                 <div class="min-w-[33.3%] sm:min-w-0">
                   <BaseHeading
@@ -466,7 +466,7 @@ function useGaugePersonal() {
                     <span>Steps walked</span>
                   </BaseParagraph>
                 </div>
-                <div class="min-w-[33.3%] sm:min-w-0 ptablet:hidden">
+                <div class="ptablet:hidden min-w-[33.3%] sm:min-w-0">
                   <BaseHeading
                     tag="h4"
                     weight="medium"
@@ -487,15 +487,15 @@ function useGaugePersonal() {
       <!-- Icon box -->
       <div class="col-span-6 sm:col-span-3">
         <div class="flex flex-col">
-          <div class="flex items-center gap-2 mb-3">
+          <div class="mb-3 flex items-center gap-2">
             <BaseIconBox size="md" class="bg-primary-500/10">
-              <Icon name="ph:drop-duotone" class="w-5 h-5 text-primary-500" />
+              <Icon name="ph:drop-duotone" class="text-primary-500 h-5 w-5" />
             </BaseIconBox>
             <div class="flex items-center gap-1 font-sans">
-              <span class="font-semibold text-muted-800 dark:text-muted-100">
+              <span class="text-muted-800 dark:text-muted-100 font-semibold">
                 114/90
               </span>
-              <span class="text-sm text-muted-400">Min/Max</span>
+              <span class="text-muted-400 text-sm">Min/Max</span>
             </div>
           </div>
           <div>
@@ -519,18 +519,18 @@ function useGaugePersonal() {
       <!-- Icon box -->
       <div class="col-span-6 sm:col-span-3">
         <div class="flex flex-col">
-          <div class="flex items-center gap-2 mb-3">
+          <div class="mb-3 flex items-center gap-2">
             <BaseIconBox size="md" class="bg-primary-500/10">
               <Icon
                 name="ph:heartbeat-duotone"
-                class="w-5 h-5 text-primary-500"
+                class="text-primary-500 h-5 w-5"
               />
             </BaseIconBox>
             <div class="flex items-center gap-1 font-sans">
-              <span class="font-semibold text-muted-800 dark:text-muted-100">
+              <span class="text-muted-800 dark:text-muted-100 font-semibold">
                 112
               </span>
-              <span class="text-sm text-muted-400">Bpm</span>
+              <span class="text-muted-400 text-sm">Bpm</span>
             </div>
           </div>
           <div>
@@ -554,18 +554,18 @@ function useGaugePersonal() {
       <!-- Icon box -->
       <div class="col-span-6 sm:col-span-3">
         <div class="flex flex-col">
-          <div class="flex items-center gap-2 mb-3">
+          <div class="mb-3 flex items-center gap-2">
             <BaseIconBox size="md" class="bg-primary-500/10">
               <Icon
                 name="ph:drop-half-bottom-duotone"
-                class="w-5 h-5 text-primary-500"
+                class="text-primary-500 h-5 w-5"
               />
             </BaseIconBox>
             <div class="flex items-center gap-1 font-sans">
-              <span class="font-semibold text-muted-800 dark:text-muted-100">
+              <span class="text-muted-800 dark:text-muted-100 font-semibold">
                 12/14
               </span>
-              <span class="text-sm text-muted-400">Units</span>
+              <span class="text-muted-400 text-sm">Units</span>
             </div>
           </div>
           <div>
@@ -589,15 +589,15 @@ function useGaugePersonal() {
       <!-- Icon box -->
       <div class="col-span-6 sm:col-span-3">
         <div class="flex flex-col">
-          <div class="flex items-center gap-2 mb-3">
+          <div class="mb-3 flex items-center gap-2">
             <BaseIconBox size="md" class="bg-primary-500/10">
-              <Icon name="ph:gauge-duotone" class="w-5 h-5 text-primary-500" />
+              <Icon name="ph:gauge-duotone" class="text-primary-500 h-5 w-5" />
             </BaseIconBox>
             <div class="flex items-center gap-1 font-sans">
-              <span class="font-semibold text-muted-800 dark:text-muted-100">
+              <span class="text-muted-800 dark:text-muted-100 font-semibold">
                 60.4
               </span>
-              <span class="text-sm text-muted-400">Lbs</span>
+              <span class="text-muted-400 text-sm">Lbs</span>
             </div>
           </div>
           <div>
@@ -623,13 +623,13 @@ function useGaugePersonal() {
         <!-- Inner grid -->
         <div class="grid grid-cols-12 gap-6">
           <!-- Inner column -->
-          <div class="col-span-12 ltablet:col-span-9 lg:col-span-9">
+          <div class="ltablet:col-span-9 col-span-12 lg:col-span-9">
             <!-- Chart subgrid -->
             <div class="grid grid-cols-12 gap-6">
               <!-- Chart -->
               <div class="col-span-12 sm:col-span-6">
                 <BaseCard shape="curved" class="p-6">
-                  <div class="flex items-center justify-between mb-2">
+                  <div class="mb-2 flex items-center justify-between">
                     <BaseHeading
                       as="h3"
                       size="md"
@@ -643,9 +643,9 @@ function useGaugePersonal() {
                   <div>
                     <BaseParagraph
                       size="xs"
-                      class="max-w-[240px] text-muted-400"
+                      class="text-muted-400 max-w-[240px]"
                     >
-                      <Icon name="ph:question-duotone" class="w-4 h-4" />
+                      <Icon name="ph:question-duotone" class="h-4 w-4" />
                       <span>
                         Your overall condition is very good. Make it even
                         better.
@@ -667,7 +667,7 @@ function useGaugePersonal() {
               <!-- Chart -->
               <div class="col-span-12 sm:col-span-6">
                 <BaseCard shape="curved" class="p-6">
-                  <div class="flex items-center justify-between mb-2">
+                  <div class="mb-2 flex items-center justify-between">
                     <BaseHeading
                       as="h3"
                       size="md"
@@ -681,9 +681,9 @@ function useGaugePersonal() {
                   <div>
                     <BaseParagraph
                       size="xs"
-                      class="max-w-[240px] text-muted-400"
+                      class="text-muted-400 max-w-[240px]"
                     >
-                      <Icon name="ph:question-duotone" class="w-4 h-4" />
+                      <Icon name="ph:question-duotone" class="h-4 w-4" />
                       <span>
                         Your energy seems a bit unstable. You can improve it.
                       </span>
@@ -701,7 +701,7 @@ function useGaugePersonal() {
               <!-- Chart -->
               <div class="col-span-12 sm:col-span-6">
                 <BaseCard shape="curved" class="p-6">
-                  <div class="flex items-center justify-between mb-2">
+                  <div class="mb-2 flex items-center justify-between">
                     <BaseHeading
                       as="h3"
                       size="md"
@@ -715,9 +715,9 @@ function useGaugePersonal() {
                   <div>
                     <BaseParagraph
                       size="xs"
-                      class="max-w-[240px] text-muted-400"
+                      class="text-muted-400 max-w-[240px]"
                     >
-                      <Icon name="ph:question-duotone" class="w-4 h-4" />
+                      <Icon name="ph:question-duotone" class="h-4 w-4" />
                       <span>
                         Your oxygen seems a bit unstable. You can improve it.
                       </span>
@@ -738,7 +738,7 @@ function useGaugePersonal() {
               <!-- Chart -->
               <div class="col-span-12 sm:col-span-6">
                 <BaseCard shape="curved" class="p-6">
-                  <div class="flex items-center justify-between mb-2">
+                  <div class="mb-2 flex items-center justify-between">
                     <BaseHeading
                       as="h3"
                       size="md"
@@ -752,9 +752,9 @@ function useGaugePersonal() {
                   <div>
                     <BaseParagraph
                       size="xs"
-                      class="max-w-[240px] text-muted-400"
+                      class="text-muted-400 max-w-[240px]"
                     >
-                      <Icon name="ph:question-duotone" class="w-4 h-4" />
+                      <Icon name="ph:question-duotone" class="h-4 w-4" />
                       <span>
                         Your overall progress is very good. Make it even better.
                       </span>
@@ -775,11 +775,11 @@ function useGaugePersonal() {
             </div>
           </div>
           <!-- Inner column -->
-          <div class="col-span-12 ltablet:col-span-3 lg:col-span-3">
+          <div class="ltablet:col-span-3 col-span-12 lg:col-span-3">
             <div class="flex flex-col gap-6">
               <!-- Widget -->
               <BaseCard class="p-6" shape="curved">
-                <div class="w-full flex items-center justify-between">
+                <div class="flex w-full items-center justify-between">
                   <DemoSearchCompact shape="curved" />
                 </div>
               </BaseCard>
@@ -802,8 +802,8 @@ function useGaugePersonal() {
                 />
               </BaseCard>
               <!-- Widget -->
-              <BaseCard class="h-full flex flex-col p-6">
-                <div class="flex items-center justify-between mb-6">
+              <BaseCard class="flex h-full flex-col p-6">
+                <div class="mb-6 flex items-center justify-between">
                   <BaseHeading
                     as="h3"
                     size="md"
@@ -817,7 +817,7 @@ function useGaugePersonal() {
                 <div class="py-16">
                   <AddonApexcharts v-bind="gaugePersonal" class="-mt-14" />
                 </div>
-                <div class="text-center mt-auto">
+                <div class="mt-auto text-center">
                   <BaseParagraph size="sm">
                     <span class="text-muted-400">
                       Your score has been calculated based on the latest metrics

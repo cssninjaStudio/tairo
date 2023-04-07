@@ -6,10 +6,10 @@ definePageMeta({
 
 <template>
   <div class="flex items-center justify-center py-8">
-    <div class="w-full max-w-4xl mx-auto">
+    <div class="mx-auto w-full max-w-4xl">
       <BaseCard>
         <div
-          class="grid sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-muted-200 dark:divide-muted-700"
+          class="divide-muted-200 dark:divide-muted-700 grid divide-y sm:grid-cols-2 sm:divide-x sm:divide-y-0"
         >
           <div class="flex flex-col p-8">
             <BaseAvatar
@@ -18,20 +18,20 @@ definePageMeta({
               src="/img/avatars/10.svg"
               badge-src="/img/stacks/reactjs.svg"
             />
-            <div class="text-center max-w-xs mx-auto mb-4">
+            <div class="mx-auto mb-4 max-w-xs text-center">
               <BaseHeading as="h2" size="md" weight="medium" class="mt-4">
                 Kendra W. has invited you to the
                 <span class="text-primary-500">Banking Solution Website</span>
                 project.
               </BaseHeading>
             </div>
-            <div class="max-w-sm mx-auto">
+            <div class="mx-auto max-w-sm">
               <BaseCard elevated class="p-6">
                 <BaseHeading
                   as="h3"
                   size="xs"
                   weight="medium"
-                  class="uppercase !text-[0.65rem] text-muted-400 mb-2"
+                  class="text-muted-400 mb-2 !text-[0.65rem] uppercase"
                 >
                   Message from Kendra
                 </BaseHeading>
@@ -45,7 +45,7 @@ definePageMeta({
                   love to have you on board.
                 </BaseParagraph>
               </BaseCard>
-              <div class="flex items-center justify-center gap-3 mt-6">
+              <div class="mt-6 flex items-center justify-center gap-3">
                 <BaseAvatar
                   src="/img/avatars/25.svg"
                   size="xs"
@@ -63,12 +63,12 @@ definePageMeta({
                   data-tooltip="Hermann M."
                 />
               </div>
-              <div class="text-center mt-2">
+              <div class="mt-2 text-center">
                 <BaseText size="xs" class="text-muted-400">
                   And 5 others are members of this project
                 </BaseText>
               </div>
-              <div class="flex items-center justify-between gap-2 mt-6">
+              <div class="mt-6 flex items-center justify-between gap-2">
                 <BaseButton class="w-full">Decline</BaseButton>
                 <BaseButton color="primary" class="w-full">Accept</BaseButton>
               </div>
@@ -81,7 +81,7 @@ definePageMeta({
               </BaseHeading>
               <BaseText
                 size="xs"
-                class="max-w-xs text-muted-500 dark:text-muted-400"
+                class="text-muted-500 dark:text-muted-400 max-w-xs"
               >
                 Please read the following instructions carefully before
                 accepting the invitation.
@@ -90,11 +90,11 @@ definePageMeta({
                 <ul class="space-y-6">
                   <li class="flex gap-3">
                     <div
-                      class="flex items-center justify-center h-9 w-9 rounded-full border border-muted-200 dark:border-muted-600 bg-white dark:bg-muted-700 shadow-xl shadow-muted-300/30 dark:shadow-muted-800/20"
+                      class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 shadow-muted-300/30 dark:shadow-muted-800/20 flex h-9 w-9 items-center justify-center rounded-full border bg-white shadow-xl"
                     >
                       <Icon
                         name="lucide:check"
-                        class="w-4 h-4 text-success-500"
+                        class="text-success-500 h-4 w-4"
                       />
                     </div>
                     <div>
@@ -103,7 +103,7 @@ definePageMeta({
                       </BaseHeading>
                       <BaseText
                         size="xs"
-                        class="max-w-[210px] text-muted-500 dark:text-muted-400"
+                        class="text-muted-500 dark:text-muted-400 max-w-[210px]"
                       >
                         Please read the project summary. You'll find it in your
                         inbox
@@ -112,11 +112,11 @@ definePageMeta({
                   </li>
                   <li class="flex gap-3">
                     <div
-                      class="flex items-center justify-center h-9 w-9 rounded-full border border-muted-200 dark:border-muted-600 bg-white dark:bg-muted-700 shadow-xl shadow-muted-300/30 dark:shadow-muted-800/20"
+                      class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 shadow-muted-300/30 dark:shadow-muted-800/20 flex h-9 w-9 items-center justify-center rounded-full border bg-white shadow-xl"
                     >
                       <Icon
                         name="lucide:check"
-                        class="w-4 h-4 text-success-500"
+                        class="text-success-500 h-4 w-4"
                       />
                     </div>
                     <div>
@@ -125,7 +125,7 @@ definePageMeta({
                       </BaseHeading>
                       <BaseText
                         size="xs"
-                        class="max-w-[210px] text-muted-500 dark:text-muted-400"
+                        class="text-muted-500 dark:text-muted-400 max-w-[210px]"
                       >
                         Please review the latest wireframes the team has
                         provided
@@ -134,11 +134,11 @@ definePageMeta({
                   </li>
                   <li class="flex gap-3">
                     <div
-                      class="flex items-center justify-center h-9 w-9 rounded-full border border-muted-200 dark:border-muted-600 bg-white dark:bg-muted-700 shadow-xl shadow-muted-300/30 dark:shadow-muted-800/20"
+                      class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 shadow-muted-300/30 dark:shadow-muted-800/20 flex h-9 w-9 items-center justify-center rounded-full border bg-white shadow-xl"
                     >
                       <Icon
                         name="lucide:check"
-                        class="w-4 h-4 text-success-500"
+                        class="text-success-500 h-4 w-4"
                       />
                     </div>
                     <div>
@@ -147,7 +147,7 @@ definePageMeta({
                       </BaseHeading>
                       <BaseText
                         size="xs"
-                        class="max-w-[210px] text-muted-500 dark:text-muted-400"
+                        class="text-muted-500 dark:text-muted-400 max-w-[210px]"
                       >
                         Please schedule a meeting with the team so they can ramp
                         you up.

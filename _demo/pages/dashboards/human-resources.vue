@@ -33,29 +33,29 @@ const items = [
     <!-- Grid -->
     <div class="grid grid-cols-12 gap-6">
       <!-- Column -->
-      <div class="col-span-12 ltablet:col-span-8 lg:col-span-8">
+      <div class="ltablet:col-span-8 col-span-12 lg:col-span-8">
         <!-- Column -->
         <div class="flex flex-col gap-6">
           <!-- Header -->
-          <div class="px-6 py-12 bg-primary-700 rounded-xl">
-            <div class="w-full flex flex-col sm:flex-row items-center gap-y-4">
-              <div class="flex-1 flex flex-col px-4">
+          <div class="bg-primary-700 rounded-xl px-6 py-12">
+            <div class="flex w-full flex-col items-center gap-y-4 sm:flex-row">
+              <div class="flex flex-1 flex-col px-4">
                 <BaseAvatar
                   src="/img/avatars/2.svg"
                   size="lg"
-                  class="mb-3 border border-primary-200/50 ring-2 ring-offset-4 ring-primary-200/50 ring-offset-primary-600"
+                  class="border-primary-200/50 ring-primary-200/50 ring-offset-primary-600 mb-3 border ring-2 ring-offset-4"
                 />
                 <BaseHeading
                   as="h2"
                   size="3xl"
                   weight="bold"
                   lead="none"
-                  class="text-white ltablet:!text-2xl"
+                  class="ltablet:!text-2xl text-white"
                 >
                   <span>Welcome back, Maya.</span>
                 </BaseHeading>
               </div>
-              <div class="h-full flex-1 flex flex-col px-4 sm:px-6">
+              <div class="flex h-full flex-1 flex-col px-4 sm:px-6">
                 <BaseHeading
                   as="h2"
                   size="md"
@@ -71,7 +71,7 @@ const items = [
                     Praeclarae mortes.
                   </span>
                 </BaseParagraph>
-                <div class="flex gap-2 mt-auto">
+                <div class="mt-auto flex gap-2">
                   <BaseAvatar
                     size="sm"
                     shape="straight"
@@ -88,12 +88,12 @@ const items = [
                     src="/img/avatars/5.svg"
                   />
                   <BaseButtonIcon>
-                    <Icon name="lucide:plus" class="w-4 h-4" />
+                    <Icon name="lucide:plus" class="h-4 w-4" />
                   </BaseButtonIcon>
                 </div>
               </div>
               <div
-                class="h-full flex-1 flex flex-col px-4 sm:px-6 sm:border-l border-primary-300/60"
+                class="border-primary-300/60 flex h-full flex-1 flex-col px-4 sm:border-l sm:px-6"
               >
                 <BaseHeading
                   as="h2"
@@ -120,7 +120,7 @@ const items = [
           </div>
           <!-- Feed settings -->
           <div
-            class="flex flex-col sm:flex-row items-center justify-between gap-6"
+            class="flex flex-col items-center justify-between gap-6 sm:flex-row"
           >
             <div>
               <BaseHeading
@@ -128,12 +128,12 @@ const items = [
                 size="lg"
                 weight="semibold"
                 lead="tight"
-                class="mb-1 text-muted-800 dark:text-muted-100"
+                class="text-muted-800 dark:text-muted-100 mb-1"
               >
                 <span>Feed settings</span>
               </BaseHeading>
             </div>
-            <div class="flex sm:justify-end gap-2">
+            <div class="flex gap-2 sm:justify-end">
               <BaseButtonAction
                 shape="curved"
                 :color="activeSetting === 'all' ? 'primary' : 'default'"
@@ -158,18 +158,18 @@ const items = [
             </div>
           </div>
           <!-- Details -->
-          <div class="grid grid-cols-12 gap-x-6 gap-y-12 mt-6">
+          <div class="mt-6 grid grid-cols-12 gap-x-6 gap-y-12">
             <!-- Text -->
             <div class="col-span-12 sm:col-span-5">
               <div
-                class="h-full flex flex-col justify-center gap-2 max-w-[240px]"
+                class="flex h-full max-w-[240px] flex-col justify-center gap-2"
               >
                 <BaseHeading
                   as="h3"
                   size="md"
                   weight="medium"
                   lead="tight"
-                  class="mb-1 text-muted-800 dark:text-muted-100"
+                  class="text-muted-800 dark:text-muted-100 mb-1"
                 >
                   <span>Notifications</span>
                 </BaseHeading>
@@ -182,7 +182,7 @@ const items = [
                 </BaseParagraph>
                 <NuxtLink
                   to="#"
-                  class="font-sans text-xs underline underline-offset-4 text-primary-500"
+                  class="text-primary-500 font-sans text-xs underline underline-offset-4"
                 >
                   <span>Learn More</span>
                 </NuxtLink>
@@ -199,7 +199,7 @@ const items = [
                   <template #start>
                     <DemoFlexTableStart
                       label="type"
-                      :hideLabel="index > 0"
+                      :hide-label="index > 0"
                       :title="item.title"
                       :subtitle="item.subtitle"
                       :icon="item.icon"
@@ -208,18 +208,18 @@ const items = [
                   <template #end>
                     <DemoFlexTableCell
                       label="count"
-                      :hideLabel="index > 0"
+                      :hide-label="index > 0"
                       class="w-full sm:w-10"
                     >
                       <span
-                        class="font-sans text-sm text-muted-500 dark:text-muted-400"
+                        class="text-muted-500 dark:text-muted-400 font-sans text-sm"
                       >
                         {{ item.count }}
                       </span>
                     </DemoFlexTableCell>
                     <DemoFlexTableCell
                       label="status"
-                      :hideLabel="index > 0"
+                      :hide-label="index > 0"
                       class="w-full sm:w-16"
                     >
                       <BaseTag
@@ -231,8 +231,8 @@ const items = [
                         {{ item.status }}
                       </BaseTag>
                     </DemoFlexTableCell>
-                    <DemoFlexTableCell label="action" :hideLabel="index > 0">
-                      <span class="font-sans text-xs sm:pe-2 text-primary-500">
+                    <DemoFlexTableCell label="action" :hide-label="index > 0">
+                      <span class="text-primary-500 font-sans text-xs sm:pe-2">
                         Action
                       </span>
                     </DemoFlexTableCell>
@@ -242,29 +242,29 @@ const items = [
             </div>
           </div>
           <!-- Rookies -->
-          <div class="flex items-center justify-between gap-6 mt-6 sm:mt-0">
+          <div class="mt-6 flex items-center justify-between gap-6 sm:mt-0">
             <div>
               <BaseHeading
                 as="h3"
                 size="lg"
                 weight="semibold"
                 lead="tight"
-                class="mb-1 text-muted-800 dark:text-muted-100"
+                class="text-muted-800 dark:text-muted-100 mb-1"
               >
                 <span>New rookies</span>
               </BaseHeading>
             </div>
-            <div class="flex sm:justify-end gap-2">
+            <div class="flex gap-2 sm:justify-end">
               <NuxtLink
                 to="#"
-                class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-white hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
+                class="hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg bg-white px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline"
               >
                 View All
               </NuxtLink>
             </div>
           </div>
           <!-- Grid -->
-          <div class="grid sm:grid-cols-3 gap-6">
+          <div class="grid gap-6 sm:grid-cols-3">
             <!-- Item -->
             <div class="relative">
               <BaseCard class="p-6" shape="curved">
@@ -272,9 +272,9 @@ const items = [
                   <BaseAvatar
                     size="xl"
                     src="/img/avatars/5.svg"
-                    badgeSrc="/img/stacks/js.svg"
+                    badge-src="/img/stacks/js.svg"
                     alt="Avatar"
-                    class="mb-4 mx-auto"
+                    class="mx-auto mb-4"
                   />
                   <div class="text-center">
                     <BaseHeading
@@ -310,9 +310,9 @@ const items = [
                   <BaseAvatar
                     size="xl"
                     src="/img/avatars/16.svg"
-                    badgeSrc="/img/stacks/vuejs.svg"
+                    badge-src="/img/stacks/vuejs.svg"
                     alt="Avatar"
-                    class="mb-4 mx-auto"
+                    class="mx-auto mb-4"
                   />
                   <div class="text-center">
                     <BaseHeading
@@ -348,9 +348,9 @@ const items = [
                   <BaseAvatar
                     size="xl"
                     src="/img/avatars/12.svg"
-                    badgeSrc="/img/stacks/reactjs.svg"
+                    badge-src="/img/stacks/reactjs.svg"
                     alt="Avatar"
-                    class="mb-4 mx-auto"
+                    class="mx-auto mb-4"
                   />
                   <div class="text-center">
                     <BaseHeading
@@ -383,11 +383,11 @@ const items = [
         </div>
       </div>
       <!-- Column -->
-      <div class="col-span-12 ltablet:col-span-4 lg:col-span-4">
+      <div class="ltablet:col-span-4 col-span-12 lg:col-span-4">
         <div class="flex flex-col gap-6">
           <!-- Widget -->
           <BaseCard shape="curved" class="p-6">
-            <div class="w-full flex items-center justify-between">
+            <div class="flex w-full items-center justify-between">
               <DemoSearchCompact shape="curved" />
             </div>
           </BaseCard>

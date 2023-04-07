@@ -275,9 +275,6 @@ const onSubmit = handleSubmit(
 
 <template>
   <form method="POST" action="" class="w-full pb-16" @submit.prevent="onSubmit">
-    <pre>
-      {{ { meta, values, errors } }}
-    </pre>
     <BaseCard>
       <div class="flex items-center justify-between p-4">
         <div>

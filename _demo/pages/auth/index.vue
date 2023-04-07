@@ -79,20 +79,20 @@ const onSubmit = handleSubmit(async (values) => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-white dark:bg-muted-800 flex">
+  <div class="dark:bg-muted-800 flex min-h-screen bg-white">
     <div
-      class="relative flex-1 flex flex-col justify-center py-12 px-6 lg:flex-none lg:w-2/5"
+      class="relative flex flex-1 flex-col justify-center px-6 py-12 lg:w-2/5 lg:flex-none"
     >
-      <div class="relative mx-auto w-full max-w-sm bg-white dark:bg-muted-800">
+      <div class="dark:bg-muted-800 relative mx-auto w-full max-w-sm bg-white">
         <!--Nav-->
         <div
-          class="absolute -top-16 end-0 w-full flex items-center justify-between"
+          class="absolute -top-16 end-0 flex w-full items-center justify-between"
         >
           <NuxtLink
             to="/dashboards"
-            class="flex items-center gap-2 font-sans font-medium text-muted-400 hover:text-primary-500 transition-colors duration-300"
+            class="text-muted-400 hover:text-primary-500 flex items-center gap-2 font-sans font-medium transition-colors duration-300"
           >
-            <Icon name="gg:arrow-long-left" class="w-5 h-5" />
+            <Icon name="gg:arrow-long-left" class="h-5 w-5" />
             <span>Back to Home</span>
           </NuxtLink>
           <!--Theme button-->
@@ -115,36 +115,36 @@ const onSubmit = handleSubmit(async (values) => {
           <div class="flex flex-wrap justify-between gap-4">
             <!--Google button-->
             <button
-              class="inline-flex items-center justify-center gap-2 grow bg-white dark:bg-muted-700 text-muted-800 dark:text-white border border-muted-300 dark:border-muted-600 relative px-6 py-4 rounded nui-focus"
+              class="dark:bg-muted-700 text-muted-800 border-muted-300 dark:border-muted-600 nui-focus relative inline-flex grow items-center justify-center gap-2 rounded border bg-white px-6 py-4 dark:text-white"
             >
-              <Icon name="logos:google-icon" class="w-5 h-5" />
+              <Icon name="logos:google-icon" class="h-5 w-5" />
               <div>Login with Google</div>
             </button>
             <!--Twitter button-->
             <button
-              class="w-[calc(50%_-_0.5rem)] md:w-auto py-4 px-5 rounded bg-muted-200 dark:bg-muted-700 hover:bg-muted-100 dark:hover:bg-muted-600 text-muted-600 dark:text-muted-400 transition-colors duration-300 text-center cursor-pointer nui-focus"
+              class="bg-muted-200 dark:bg-muted-700 hover:bg-muted-100 dark:hover:bg-muted-600 text-muted-600 dark:text-muted-400 nui-focus w-[calc(50%_-_0.5rem)] cursor-pointer rounded px-5 py-4 text-center transition-colors duration-300 md:w-auto"
             >
-              <Icon name="fa6-brands:twitter" class="w-4 h-4 mx-auto" />
+              <Icon name="fa6-brands:twitter" class="mx-auto h-4 w-4" />
             </button>
             <!--Linkedin button-->
             <button
-              class="w-[calc(50%_-_0.5rem)] md:w-auto py-4 px-5 rounded bg-muted-200 dark:bg-muted-700 hover:bg-muted-100 dark:hover:bg-muted-600 text-muted-600 dark:text-muted-400 transition-colors duration-300 text-center cursor-pointer nui-focus"
+              class="bg-muted-200 dark:bg-muted-700 hover:bg-muted-100 dark:hover:bg-muted-600 text-muted-600 dark:text-muted-400 nui-focus w-[calc(50%_-_0.5rem)] cursor-pointer rounded px-5 py-4 text-center transition-colors duration-300 md:w-auto"
             >
-              <Icon name="fa6-brands:linkedin-in" class="w-4 h-4 mx-auto" />
+              <Icon name="fa6-brands:linkedin-in" class="mx-auto h-4 w-4" />
             </button>
           </div>
           <!-- 'or' divider		 -->
-          <div class="flex items-center flex-100 mt-8">
+          <div class="flex-100 mt-8 flex items-center">
             <hr
-              class="border-t-2 border-muted-200 dark:border-muted-700 flex-auto"
+              class="border-muted-200 dark:border-muted-700 flex-auto border-t-2"
             />
             <span
-              class="font-sans px-4 text-muted-600 dark:text-muted-300 font-light"
+              class="text-muted-600 dark:text-muted-300 px-4 font-sans font-light"
             >
               OR
             </span>
             <hr
-              class="border-t-2 border-muted-200 dark:border-muted-700 flex-auto"
+              class="border-muted-200 dark:border-muted-700 flex-auto border-t-2"
             />
           </div>
         </div>
@@ -203,7 +203,7 @@ const onSubmit = handleSubmit(async (values) => {
 
               <div class="mt-6 flex items-center justify-between">
                 <Field
-                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                  v-slot="{ field, handleChange, handleBlur }"
                   name="trustDevice"
                 >
                   <BaseCheckbox
@@ -220,7 +220,7 @@ const onSubmit = handleSubmit(async (values) => {
                 <div class="text-xs leading-5">
                   <NuxtLink
                     to="/auth/recover"
-                    class="font-sans font-medium text-primary-600 hover:text-primary-500 underline-offset-4 hover:underline transition ease-in-out duration-150"
+                    class="text-primary-600 hover:text-primary-500 font-sans font-medium underline-offset-4 transition duration-150 ease-in-out hover:underline"
                   >
                     Forgot your password?
                   </NuxtLink>
@@ -235,7 +235,7 @@ const onSubmit = handleSubmit(async (values) => {
                     :loading="isSubmitting"
                     type="submit"
                     color="primary"
-                    class="w-full !h-11"
+                    class="!h-11 w-full"
                   >
                     Sign in
                   </BaseButton>
@@ -245,12 +245,12 @@ const onSubmit = handleSubmit(async (values) => {
 
             <!--No account link-->
             <p
-              class="flex justify-between mt-4 font-sans text-xs leading-5 text-muted-400"
+              class="text-muted-400 mt-4 flex justify-between font-sans text-xs leading-5"
             >
               <span>Don't have an account?</span>
               <NuxtLink
                 to="/auth/signup-1"
-                class="font-medium text-primary-600 hover:text-primary-500 underline-offset-4 hover:underline transition ease-in-out duration-150"
+                class="text-primary-600 hover:text-primary-500 font-medium underline-offset-4 transition duration-150 ease-in-out hover:underline"
               >
                 start your 14-day free trial
               </NuxtLink>
@@ -260,9 +260,9 @@ const onSubmit = handleSubmit(async (values) => {
       </div>
     </div>
     <div
-      class="hidden lg:flex items-center justify-center lg:w-3/5 relative w-0 flex-1 bg-muted-100 dark:bg-muted-900"
+      class="bg-muted-100 dark:bg-muted-900 relative hidden w-0 flex-1 items-center justify-center lg:flex lg:w-3/5"
     >
-      <div class="w-full max-w-4xl mx-auto">
+      <div class="mx-auto w-full max-w-4xl">
         <!--Media image-->
       </div>
     </div>

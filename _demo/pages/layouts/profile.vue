@@ -7,10 +7,10 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
 </script>
 
 <template>
-  <div class="w-full max-w-5xl mx-auto">
+  <div class="mx-auto w-full max-w-5xl">
     <div v-if="!data"></div>
-    <div v-else class="w-full relative">
-      <div class="absolute top-2 end-0 z-20">
+    <div v-else class="relative w-full">
+      <div class="absolute end-0 top-2 z-20">
         <BaseDropdown
           flavor="context"
           label="Dropdown"
@@ -26,69 +26,69 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
             text="Edit profile"
           >
             <template #start>
-              <Icon name="ph:pencil-duotone" class="w-5 h-5 block me-2" />
+              <Icon name="ph:pencil-duotone" class="me-2 block h-5 w-5" />
             </template>
           </BaseDropdownItem>
           <BaseDropdownDivide />
           <BaseDropdownItem to="#" title="Security" text="Security settings">
             <template #start>
-              <Icon name="ph:lock-duotone" class="w-5 h-5 block me-2" />
+              <Icon name="ph:lock-duotone" class="me-2 block h-5 w-5" />
             </template>
           </BaseDropdownItem>
           <BaseDropdownItem to="#" title="Billing" text="Manage billing">
             <template #start>
-              <Icon name="ph:bank-duotone" class="w-5 h-5 block me-2" />
+              <Icon name="ph:bank-duotone" class="me-2 block h-5 w-5" />
             </template>
           </BaseDropdownItem>
           <BaseDropdownDivide />
           <BaseDropdownItem to="#" title="Share" text="Share profile">
             <template #start>
-              <Icon name="ph:link-duotone" class="w-5 h-5 block me-2" />
+              <Icon name="ph:link-duotone" class="me-2 block h-5 w-5" />
             </template>
           </BaseDropdownItem>
         </BaseDropdown>
       </div>
-      <div class="w-full flex flex-col">
+      <div class="flex w-full flex-col">
         <BaseAvatar
           :src="data?.personalInfo.picture"
           :badge-src="data?.personalInfo.badge"
           size="2xl"
           class="mx-auto"
         />
-        <div class="w-full max-w-md mx-auto text-center">
+        <div class="mx-auto w-full max-w-md text-center">
           <BaseHeading tag="h2" size="xl" weight="medium" class="mt-4">
             {{ data?.personalInfo.firstName }} {{ data?.personalInfo.lastName }}
           </BaseHeading>
-          <BaseParagraph size="sm" class="mt-1 mb-3 text-muted-400">
+          <BaseParagraph size="sm" class="text-muted-400 mb-3 mt-1">
             {{ data?.personalInfo.shortBio }}
           </BaseParagraph>
           <div
-            class="flex items-center justify-center divide-x divide-muted-200 dark:divide-muted-800"
+            class="divide-muted-200 dark:divide-muted-800 flex items-center justify-center divide-x"
           >
-            <div class="h-8 flex items-center gap-1 px-4 text-muted-400">
-              <Icon name="ph:circles-three-duotone" class="w-5 h-5" />
+            <div class="text-muted-400 flex h-8 items-center gap-1 px-4">
+              <Icon name="ph:circles-three-duotone" class="h-5 w-5" />
               <BaseText size="sm"
                 >{{ data?.personalInfo.relations }}+ relations</BaseText
               >
             </div>
             <div
-              class="h-8 hidden sm:flex items-center gap-1 px-4 text-muted-400"
+              class="text-muted-400 hidden h-8 items-center gap-1 px-4 sm:flex"
             >
-              <Icon name="ph:check-circle-duotone" class="w-5 h-5" />
+              <Icon name="ph:check-circle-duotone" class="h-5 w-5" />
               <BaseText size="sm"
                 >{{ data?.personalInfo.projects }} projects</BaseText
               >
             </div>
-            <div class="h-8 flex items-center gap-2 px-4">
+            <div class="flex h-8 items-center gap-2 px-4">
               <NuxtLink
                 v-for="link in data?.personalInfo.socials"
                 :key="link.name"
                 :to="link.url"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="h-8 w-8 flex items-center justify-center rounded-full border border-muted-200 hover:border-primary-500 dark:border-muted-700 dark:hover:border-primary-500 bg-white dark:bg-muted-800 text-muted-400 hover:text-primary-500 transition-colors duration-300"
+                class="border-muted-200 hover:border-primary-500 dark:border-muted-700 dark:hover:border-primary-500 dark:bg-muted-800 text-muted-400 hover:text-primary-500 flex h-8 w-8 items-center justify-center rounded-full border bg-white transition-colors duration-300"
               >
-                <Icon :name="link.icon" class="w-3 h-3" />
+                <Icon :name="link.icon" class="h-3 w-3" />
                 <span class="sr-only">{{ link.name }}</span>
               </NuxtLink>
             </div>
@@ -96,15 +96,15 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
         </div>
       </div>
 
-      <div class="grid grid-cols-12 gap-6 mt-6">
+      <div class="mt-6 grid grid-cols-12 gap-6">
         <div class="col-span-12 sm:col-span-8">
           <div class="flex flex-col gap-6">
             <BaseCard class="p-8">
               <!-- Bio -->
-              <div class="pb-8 border-b border-muted-200 dark:border-muted-700">
-                <div class="flex items-center gap-2 mb-4">
+              <div class="border-muted-200 dark:border-muted-700 border-b pb-8">
+                <div class="mb-4 flex items-center gap-2">
                   <h4
-                    class="font-sans text-xs font-semibold uppercase text-muted-400"
+                    class="text-muted-400 font-sans text-xs font-semibold uppercase"
                   >
                     About me
                   </h4>
@@ -119,24 +119,24 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 </div>
               </div>
               <!-- Experience -->
-              <div class="py-8 border-b border-muted-200 dark:border-muted-700">
-                <div class="flex items-center gap-2 mb-8">
+              <div class="border-muted-200 dark:border-muted-700 border-b py-8">
+                <div class="mb-8 flex items-center gap-2">
                   <h4
-                    class="font-sans text-xs font-semibold uppercase text-muted-400"
+                    class="text-muted-400 font-sans text-xs font-semibold uppercase"
                   >
                     Experiences
                   </h4>
                 </div>
-                <div class="grid sm:grid-cols-2 gap-x-4 gap-y-8">
+                <div class="grid gap-x-4 gap-y-8 sm:grid-cols-2">
                   <div
                     v-for="item in data.personalInfo.experiences"
                     :key="item.company"
-                    class="w-full flex items-center gap-2"
+                    class="flex w-full items-center gap-2"
                   >
                     <img
                       :src="item.logo"
                       :alt="item.company"
-                      class="max-w-[50px] rounded-full border border-muted-200 dark:border-muted-600 bg-white dark:bg-muted-700"
+                      class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 max-w-[50px] rounded-full border bg-white"
                     />
                     <div>
                       <BaseHeading tag="h3" size="sm" weight="medium">
@@ -153,22 +153,22 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 </div>
               </div>
               <!-- Languages -->
-              <div class="py-8 border-b border-muted-200 dark:border-muted-700">
-                <div class="flex items-center gap-2 mb-8">
+              <div class="border-muted-200 dark:border-muted-700 border-b py-8">
+                <div class="mb-8 flex items-center gap-2">
                   <h4
-                    class="font-sans text-xs font-semibold uppercase text-muted-400"
+                    class="text-muted-400 font-sans text-xs font-semibold uppercase"
                   >
                     Languages
                   </h4>
                 </div>
-                <div class="grid sm:grid-cols-2 gap-x-4 gap-y-8">
+                <div class="grid gap-x-4 gap-y-8 sm:grid-cols-2">
                   <div
                     v-for="item in data.personalInfo.languages"
                     :key="item.name"
-                    class="w-full flex items-center gap-2"
+                    class="flex w-full items-center gap-2"
                   >
                     <div
-                      class="relative flex items-center justify-center h-[50px] w-[50px] shrink-0 rounded-full border border-muted-200 dark:border-muted-600 bg-white dark:bg-muted-700"
+                      class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 relative flex h-[50px] w-[50px] shrink-0 items-center justify-center rounded-full border bg-white"
                     >
                       <img
                         :src="item.icon"
@@ -179,7 +179,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                         :size="68"
                         :thickness="1.5"
                         :value="item.level"
-                        class="absolute -top-2.5 -start-2.5 text-primary-500"
+                        class="text-primary-500 absolute -start-2.5 -top-2.5"
                       />
                     </div>
                     <div>
@@ -195,9 +195,9 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
               </div>
               <!-- Skills -->
               <div class="py-8">
-                <div class="flex items-center gap-2 mb-8">
+                <div class="mb-8 flex items-center gap-2">
                   <h4
-                    class="font-sans text-xs font-semibold uppercase text-muted-400"
+                    class="text-muted-400 font-sans text-xs font-semibold uppercase"
                   >
                     Skills
                   </h4>
@@ -206,10 +206,10 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                   <div
                     v-for="item in data.personalInfo.skills"
                     :key="item.name"
-                    class="w-full flex items-center gap-2"
+                    class="flex w-full items-center gap-2"
                   >
                     <div
-                      class="relative flex items-center justify-center h-[50px] w-[50px] shrink-0 rounded-full border border-muted-200 dark:border-muted-600 bg-white dark:bg-muted-700"
+                      class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 relative flex h-[50px] w-[50px] shrink-0 items-center justify-center rounded-full border bg-white"
                     >
                       <img
                         v-if="'logo' in item"
@@ -220,13 +220,13 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                       <Icon
                         v-else
                         :name="item.icon"
-                        class="w-6 h-6 text-muted-400"
+                        class="text-muted-400 h-6 w-6"
                       />
                       <BaseProgressCircle
                         :size="68"
                         :thickness="1.5"
                         :value="item.level"
-                        class="absolute -top-2.5 -start-2.5 text-primary-500"
+                        class="text-primary-500 absolute -start-2.5 -top-2.5"
                       />
                     </div>
                     <div>
@@ -253,25 +253,25 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
               </div>
               <!--Load more-->
               <div class="py-6">
-                <div class="w-full max-w-[240px] mx-auto">
+                <div class="mx-auto w-full max-w-[240px]">
                   <BaseButton class="w-full">Load More</BaseButton>
                 </div>
               </div>
             </BaseCard>
             <!-- Recommandations -->
             <BaseCard class="p-8">
-              <div class="flex items-center gap-2 mb-8">
+              <div class="mb-8 flex items-center gap-2">
                 <h4
-                  class="font-sans text-xs font-semibold uppercase text-muted-400"
+                  class="text-muted-400 font-sans text-xs font-semibold uppercase"
                 >
                   Recommendations
                 </h4>
               </div>
-              <div class="grid sm:grid-cols-2 gap-6">
+              <div class="grid gap-6 sm:grid-cols-2">
                 <div
                   v-for="item in data.personalInfo.recommandations"
                   :key="item.name"
-                  class="p-5 rounded-md bg-muted-100 dark:bg-muted-700/60"
+                  class="bg-muted-100 dark:bg-muted-700/60 rounded-md p-5"
                 >
                   <div class="flex flex-col py-4">
                     <BaseAvatar
@@ -281,11 +281,11 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                       :badge-src="item.badge"
                       class="mx-auto"
                     />
-                    <div class="text-center py-4">
+                    <div class="py-4 text-center">
                       <BaseHeading tag="h3" size="md" weight="medium">
                         {{ item.name }}
                       </BaseHeading>
-                      <BaseText size="xs" class="mb-4 text-muted-400">
+                      <BaseText size="xs" class="text-muted-400 mb-4">
                         <span>{{ item.role }}</span>
                       </BaseText>
                       <BaseParagraph size="xs" class="text-muted-400">
@@ -307,9 +307,9 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
           <div class="flex flex-col gap-6">
             <!-- Notifications -->
             <BaseCard class="p-8">
-              <div class="flex items-center gap-2 mb-8">
+              <div class="mb-8 flex items-center gap-2">
                 <h4
-                  class="font-sans text-xs font-semibold uppercase text-muted-400"
+                  class="text-muted-400 font-sans text-xs font-semibold uppercase"
                 >
                   Notifications
                 </h4>
@@ -326,9 +326,9 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
             </BaseCard>
             <!-- Tools -->
             <BaseCard class="p-8">
-              <div class="flex items-center gap-2 mb-8">
+              <div class="mb-8 flex items-center gap-2">
                 <h4
-                  class="font-sans text-xs font-semibold uppercase text-muted-400"
+                  class="text-muted-400 font-sans text-xs font-semibold uppercase"
                 >
                   Tools
                 </h4>
@@ -337,10 +337,10 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 <div
                   v-for="item in data.personalInfo.tools"
                   :key="item.name"
-                  class="w-full flex items-center gap-2"
+                  class="flex w-full items-center gap-2"
                 >
                   <div
-                    class="relative flex items-center justify-center h-[50px] w-[50px] shrink-0 rounded-full border border-muted-200 dark:border-muted-600 bg-white dark:bg-muted-700"
+                    class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 relative flex h-[50px] w-[50px] shrink-0 items-center justify-center rounded-full border bg-white"
                   >
                     <img
                       :src="item.logo"
@@ -351,7 +351,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                       :size="68"
                       :thickness="1.5"
                       :value="item.level"
-                      class="absolute -top-2.5 -start-2.5 text-primary-500"
+                      class="text-primary-500 absolute -start-2.5 -top-2.5"
                     />
                   </div>
                   <div>
@@ -367,9 +367,9 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
             </BaseCard>
             <!-- Recent Views -->
             <BaseCard class="p-8">
-              <div class="flex items-center gap-2 mb-8">
+              <div class="mb-8 flex items-center gap-2">
                 <h4
-                  class="font-sans text-xs font-semibold uppercase text-muted-400"
+                  class="text-muted-400 font-sans text-xs font-semibold uppercase"
                 >
                   Recent Views
                 </h4>
@@ -378,7 +378,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 <div
                   v-for="item in data.personalInfo.viewed"
                   :key="item.name"
-                  class="w-full flex items-center gap-2"
+                  class="flex w-full items-center gap-2"
                 >
                   <BaseAvatar
                     :src="item.src"
@@ -402,7 +402,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                       shape="full"
                       data-tooltip="View Profile"
                     >
-                      <Icon name="lucide:arrow-right" class="w-4 h-4" />
+                      <Icon name="lucide:arrow-right" class="h-4 w-4" />
                     </BaseButtonIcon>
                   </div>
                 </div>

@@ -191,23 +191,23 @@ const total = computed(() => {
     <!-- Grid -->
     <div class="grid grid-cols-12 gap-6">
       <!-- Column -->
-      <div class="col-span-12 ltablet:col-span-8 lg:col-span-8">
+      <div class="ltablet:col-span-8 col-span-12 lg:col-span-8">
         <div class="flex flex-col gap-6">
           <!-- Header -->
           <div class="col-span-12">
             <div
-              class="flex flex-col sm:flex-row items-center p-4 rounded-2xl bg-primary-800"
+              class="bg-primary-800 flex flex-col items-center rounded-2xl p-4 sm:flex-row"
             >
-              <div class="relative shrink-0 h-[120px] sm:h-[175px] w-[240px]">
+              <div class="relative h-[120px] w-[240px] shrink-0 sm:h-[175px]">
                 <img
-                  class="absolute -top-6 sm:-top-2 start-3 sm:-start-10 pointer-events-none"
+                  class="pointer-events-none absolute -top-6 start-3 sm:-start-10 sm:-top-2"
                   src="/img/illustrations/dashboards/delivery/header.svg"
                   alt="Food illustration"
                 />
               </div>
-              <div class="grow mt-6 sm:mt-0">
-                <div class="text-center sm:text-left pb-4 sm:pb-0">
-                  <BaseHeading tag="h1" class="text-white opacity-90 mb-2">
+              <div class="mt-6 grow sm:mt-0">
+                <div class="pb-4 text-center sm:pb-0 sm:text-left">
+                  <BaseHeading tag="h1" class="mb-2 text-white opacity-90">
                     <span>
                       Free delivery for 30 days!
                       <span class="text-3xl">🎉</span>
@@ -230,7 +230,7 @@ const total = computed(() => {
                       class="w-full sm:w-auto"
                     >
                       <span>Learn More</span>
-                      <Icon name="lucide:arrow-right" class="w-4 h-4" />
+                      <Icon name="lucide:arrow-right" class="h-4 w-4" />
                     </BaseButton>
                   </div>
                 </div>
@@ -239,25 +239,25 @@ const total = computed(() => {
           </div>
           <!-- Grid -->
           <div class="relative">
-            <div class="flex items-center justify-between mb-6">
+            <div class="mb-6 flex items-center justify-between">
               <BaseHeading tag="h3" size="xl" weight="semibold">
                 <span>Popular Meals</span>
               </BaseHeading>
               <button
-                class="inline-flex items-center justify-center gap-x-1 rounded-full py-2 ps-2 pe-4 font-sans bg-primary-500/10 hover:bg-primary-500/20 text-primary-600 cursor-pointer text-sm transition-all duration-300"
+                class="bg-primary-500/10 hover:bg-primary-500/20 text-primary-600 inline-flex cursor-pointer items-center justify-center gap-x-1 rounded-full py-2 pe-4 ps-2 font-sans text-sm transition-all duration-300"
               >
-                <Icon name="ph:timer-duotone" class="w-5 h-5" />
+                <Icon name="ph:timer-duotone" class="h-5 w-5" />
                 <span class="text-sm">Delivery:</span>
                 <span>~ 25min</span>
               </button>
             </div>
             <!-- Food types -->
-            <div class="grid grid-cols-4 sm:grid-cols-9 gap-4 mb-14">
+            <div class="mb-14 grid grid-cols-4 gap-4 sm:grid-cols-9">
               <div
                 v-for="genre in genres"
                 :key="genre.id"
                 role="button"
-                class="border rounded-full p-2 flex flex-col items-center shadow-xl cursor-pointer transition-colors duration-500 ease-in-out"
+                class="flex cursor-pointer flex-col items-center rounded-full border p-2 shadow-xl transition-colors duration-500 ease-in-out"
                 :class="
                   activeGenre === genre.id
                     ? 'bg-yellow-400 border-yellow-400'
@@ -266,7 +266,7 @@ const total = computed(() => {
                 @click="activeGenre = genre.id"
               >
                 <div
-                  class="border rounded-full p-2 transition-colors duration-500 ease-in-out"
+                  class="rounded-full border p-2 transition-colors duration-500 ease-in-out"
                   :class="
                     activeGenre === genre.id
                       ? 'bg-white border-yellow-400'
@@ -280,21 +280,21 @@ const total = computed(() => {
                     :class="activeGenre === genre.id ? '' : 'dark:invert'"
                   />
                 </div>
-                <p class="mt-3 mb-10 font-bold text-xs">{{ genre.name }}</p>
+                <p class="mb-10 mt-3 text-xs font-bold">{{ genre.name }}</p>
               </div>
 
-              <div class="hidden sm:flex items-center justify-center">
+              <div class="hidden items-center justify-center sm:flex">
                 <BaseButtonIcon
                   shape="full"
                   class="hover:border-yellow-500 hover:text-yellow-500"
                   data-tooltip="All categories"
                 >
-                  <Icon name="lucide:chevron-right" class="w-4 h-4" />
+                  <Icon name="lucide:chevron-right" class="h-4 w-4" />
                 </BaseButtonIcon>
               </div>
             </div>
             <!-- Meals -->
-            <div class="grid sm:grid-cols-3 gap-x-3 gap-y-6">
+            <div class="grid gap-x-3 gap-y-6 sm:grid-cols-3">
               <!-- Grid item -->
               <NuxtLink
                 v-for="meal in meals"
@@ -304,13 +304,13 @@ const total = computed(() => {
               >
                 <BaseCard
                   shape="curved"
-                  class="p-3 hover:border-primary-500 hover:shadow-xl hover:shadow-muted-300/30 dark:hover:shadow-muted-900/40"
+                  class="hover:border-primary-500 hover:shadow-muted-300/30 dark:hover:shadow-muted-900/40 p-3 hover:shadow-xl"
                 >
                   <div
-                    class="relative w-full h-36 sm:h-32 ltablet:h-28 mb-3 rounded-xl bg-muted-100 dark:bg-muted-900"
+                    class="ltablet:h-28 bg-muted-100 dark:bg-muted-900 relative mb-3 h-36 w-full rounded-xl sm:h-32"
                   >
                     <img
-                      class="absolute -top-4 sm:-top-6 inset-x-0 max-w-[210px] sm:max-w-[190px] ltablet:max-w-[175px] mx-auto"
+                      class="ltablet:max-w-[175px] absolute inset-x-0 -top-4 mx-auto max-w-[210px] sm:-top-6 sm:max-w-[190px]"
                       :src="meal.image"
                       :alt="meal.name"
                     />
@@ -333,11 +333,11 @@ const total = computed(() => {
                   </div>
                   <div class="flex items-center justify-between">
                     <div
-                      class="flex items-center divide-x divide-muted-200 dark:divide-muted-700"
+                      class="divide-muted-200 dark:divide-muted-700 flex items-center divide-x"
                     >
                       <div class="pe-4">
                         <span
-                          class="font-sans font-bold text-muted-800 dark:text-muted-100"
+                          class="text-muted-800 dark:text-muted-100 font-sans font-bold"
                         >
                           ${{ meal.price }}
                         </span>
@@ -345,9 +345,9 @@ const total = computed(() => {
                       <div class="flex items-center gap-1 ps-4">
                         <Icon
                           name="uiw:star-on"
-                          class="w-3 h-3 text-yellow-400"
+                          class="h-3 w-3 text-yellow-400"
                         />
-                        <span class="font-sans text-xs text-muted-400">
+                        <span class="text-muted-400 font-sans text-xs">
                           {{ meal.rating }} ({{ meal.reviews }})
                         </span>
                       </div>
@@ -363,9 +363,9 @@ const total = computed(() => {
               </NuxtLink>
             </div>
             <!-- Load more -->
-            <div class="flex items-center justify-center my-16">
+            <div class="my-16 flex items-center justify-center">
               <BaseButton shape="full" color="default">
-                <Icon name="ph:dots-nine-bold" class="w-4 h-4" />
+                <Icon name="ph:dots-nine-bold" class="h-4 w-4" />
                 <span>Load more</span>
               </BaseButton>
             </div>
@@ -373,13 +373,13 @@ const total = computed(() => {
         </div>
       </div>
       <!-- Column -->
-      <div class="col-span-12 ltablet:col-span-4 lg:col-span-4">
+      <div class="ltablet:col-span-4 col-span-12 lg:col-span-4">
         <div
-          class="flex flex-col gap-6 p-6 rounded-2xl bg-muted-200 dark:bg-muted-800"
+          class="bg-muted-200 dark:bg-muted-800 flex flex-col gap-6 rounded-2xl p-6"
         >
           <!-- Details -->
-          <div class="p-6 bg-purple-800 rounded-2xl font-hairline text-xs">
-            <div class="flex items-center gap-2 mb-4">
+          <div class="font-hairline rounded-2xl bg-purple-800 p-6 text-xs">
+            <div class="mb-4 flex items-center gap-2">
               <BaseAvatar src="/img/avatars/2.svg" size="xs" />
               <div>
                 <BaseHeading
@@ -396,20 +396,20 @@ const total = computed(() => {
                 </BaseParagraph>
               </div>
             </div>
-            <div class="flex justify-between items-center font-sans">
+            <div class="flex items-center justify-between font-sans">
               <p class="text-white">112 Mc Cornell Av.</p>
-              <button type="button" class="text-yellow-400 cursor-pointer">
+              <button type="button" class="cursor-pointer text-yellow-400">
                 Edit
               </button>
             </div>
-            <div class="flex items-center gap-2 mt-4 font-sans">
+            <div class="mt-4 flex items-center gap-2 font-sans">
               <div class="rounded-lg py-1">
-                <Icon name="ph:timer-duotone" class="w-5 h-5 text-yellow-400" />
+                <Icon name="ph:timer-duotone" class="h-5 w-5 text-yellow-400" />
               </div>
               <p class="text-white">35 min</p>
               <button
                 type="button"
-                class="text-yellow-400 cursor-pointer ms-auto"
+                class="ms-auto cursor-pointer text-yellow-400"
               >
                 Choose time
               </button>
@@ -431,18 +431,18 @@ const total = computed(() => {
             <li v-for="item in order.items" :key="item.id">
               <div class="flex items-center gap-3">
                 <div
-                  class="relative w-14 h-14 flex items-center justify-center rounded-xl border border-muted-200 dark:border-muted-700 bg-white dark:bg-muted-900"
+                  class="border-muted-200 dark:border-muted-700 dark:bg-muted-900 relative flex h-14 w-14 items-center justify-center rounded-xl border bg-white"
                 >
                   <img
                     :src="item.image"
                     :alt="item.name"
-                    class="w-12 h-12 object-contain"
+                    class="h-12 w-12 object-contain"
                   />
                   <div
-                    class="absolute -bottom-1 -end-1 h-6 w-6 flex items-center justify-center rounded-full bg-primary-500"
+                    class="bg-primary-500 absolute -bottom-1 -end-1 flex h-6 w-6 items-center justify-center rounded-full"
                   >
                     <span
-                      class="font-sans font-semibold text-[0.65rem] text-white"
+                      class="font-sans text-[0.65rem] font-semibold text-white"
                     >
                       x{{ item.quantity }}
                     </span>
@@ -450,17 +450,17 @@ const total = computed(() => {
                 </div>
                 <div>
                   <p
-                    class="font-sans text-sm text-muted-800 dark:text-muted-100"
+                    class="text-muted-800 dark:text-muted-100 font-sans text-sm"
                   >
                     {{ item.name }}
                   </p>
-                  <p class="font-sans text-xs text-muted-400">
+                  <p class="text-muted-400 font-sans text-xs">
                     unit price: ${{ item.price }}
                   </p>
                 </div>
                 <div class="ms-auto">
                   <p
-                    class="font-sans font-semibold text-sm text-muted-800 dark:text-muted-100"
+                    class="text-muted-800 dark:text-muted-100 font-sans text-sm font-semibold"
                   >
                     ${{ (item.price * item.quantity).toFixed(2) }}
                   </p>
@@ -469,50 +469,50 @@ const total = computed(() => {
             </li>
           </ul>
           <div
-            class="flex-grow flex flex-col justify-end border-t border-muted-300 dark:border-muted-800 py-4"
+            class="border-muted-300 dark:border-muted-800 flex grow flex-col justify-end border-t py-4"
           >
-            <ul class="font-sans space-y-2 my-4">
+            <ul class="my-4 space-y-2 font-sans">
               <li>
-                <div class="flex justify-between items-center">
+                <div class="flex items-center justify-between">
                   <span class="text-sm">Subtotal:</span>
                   <span
-                    class="font-medium text-sm text-muted-500 dark:text-muted-400"
+                    class="text-muted-500 dark:text-muted-400 text-sm font-medium"
                   >
                     ${{ subTotal.toFixed(2) }}
                   </span>
                 </div>
               </li>
               <li>
-                <div class="flex justify-between items-center">
+                <div class="flex items-center justify-between">
                   <span class="text-sm">Taxes:</span>
                   <span
-                    class="font-medium text-sm text-muted-500 dark:text-muted-400"
+                    class="text-muted-500 dark:text-muted-400 text-sm font-medium"
                   >
                     ${{ taxes.toFixed(2) }}
                   </span>
                 </div>
               </li>
               <li>
-                <div class="flex justify-between items-center">
+                <div class="flex items-center justify-between">
                   <span>Total:</span>
                   <span
-                    class="text-xl font-semibold text-muted-800 dark:text-muted-100"
+                    class="text-muted-800 dark:text-muted-100 text-xl font-semibold"
                   >
                     ${{ total.toFixed(2) }}
                   </span>
                 </div>
               </li>
             </ul>
-            <div class="flex justify-between text-xs font-bold mt-4">
+            <div class="mt-4 flex justify-between text-xs font-bold">
               <BaseButton
                 color="none"
                 shape="curved"
-                class="group !h-14 !gap-3 w-full bg-yellow-400 hover:!shadow-xl hover:!shadow-yellow-400/20 text-muted-800"
+                class="text-muted-800 group !h-14 w-full !gap-3 bg-yellow-400 hover:!shadow-xl hover:!shadow-yellow-400/20"
               >
                 <span class="text-base font-medium">Checkout</span>
                 <Icon
                   name="lucide:arrow-right"
-                  class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"
+                  class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
                 />
               </BaseButton>
             </div>

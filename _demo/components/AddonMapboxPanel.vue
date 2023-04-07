@@ -482,16 +482,8 @@ watch(
           <BaseHeading size="xl" weight="medium">
             <span class="text-muted-800 dark:text-white">Locations</span>
           </BaseHeading>
-          <div class="flex items-center gap-2">
-            <template v-for="tool of (app.tairo.toolbar as any).tools">
-              <component
-                :is="resolveComponent(tool.component)"
-                v-if="tool.component"
-                :key="tool.component"
-                v-bind="tool.props"
-              />
-            </template>
-          </div>
+
+          <TairoSidebarTools />
         </div>
         <div
           class="ltablet:h-[calc(100%_-_64px)] slimscroll h-[calc(100vh_-_492px)] overflow-y-auto p-6 lg:h-[calc(100%_-_64px)]"
@@ -595,28 +587,7 @@ watch(
       </template>
     </div>
 
-    <!-- Active Panel -->
-    <Transition
-      enter-active-class="transition-transform duration-300 ease-out"
-      :enter-from-class="
-        panels.transitionFrom === 'left'
-          ? '-translate-x-full'
-          : 'translate-x-full'
-      "
-      leave-active-class="transition-transform duration-300 ease-in"
-      :leave-to-class="
-        panels.transitionFrom === 'left'
-          ? '-translate-x-full'
-          : 'translate-x-full'
-      "
-    >
-      <component
-        :is="resolveComponent(panels.current.component)"
-        v-if="panels.current?.component"
-        class="fixed top-0 z-[100] h-full w-96"
-        :class="[panels.current.position === 'left' ? 'start-0' : 'end-0']"
-      />
-    </Transition>
+    <TairoPanels />
   </div>
 </template>
 

@@ -83,10 +83,10 @@ const { data, pending, error, refresh } = await useFetch('/api/jobs', {
                 v-for="item in data?.data"
                 :key="item.id"
                 shape="curved"
-                class="flex flex-col sm:flex-row sm:items-center p-5"
+                class="flex flex-col p-5 sm:flex-row sm:items-center"
               >
                 <div
-                  class="flex flex-col sm:flex-row justify-center sm:justify-start items-center gap-3 text-center sm:text-left"
+                  class="flex flex-col items-center justify-center gap-3 text-center sm:flex-row sm:justify-start sm:text-left"
                 >
                   <BaseAvatar
                     :src="item.logo"
@@ -106,34 +106,34 @@ const { data, pending, error, refresh } = await useFetch('/api/jobs', {
                       class="flex items-center justify-between sm:justify-start"
                     >
                       <div
-                        class="flex items-center gap-1 text-sm mt-3 sm:mt-0 text-left text-muted-400"
+                        class="text-muted-400 mt-3 flex items-center gap-1 text-left text-sm sm:mt-0"
                       >
-                        <Icon name="lucide:map-pin" class="w-3 h-3" />
+                        <Icon name="lucide:map-pin" class="h-3 w-3" />
                         <span>{{ item.location }}</span>
                       </div>
-                      <div class="hidden sm:block px-2">
+                      <div class="hidden px-2 sm:block">
                         <span>&middot;</span>
                       </div>
                       <div
-                        class="flex items-center gap-1 text-sm mt-3 sm:mt-0 text-left text-muted-400"
+                        class="text-muted-400 mt-3 flex items-center gap-1 text-left text-sm sm:mt-0"
                       >
-                        <Icon name="lucide:clock" class="w-3 h-3" />
+                        <Icon name="lucide:clock" class="h-3 w-3" />
                         <span>{{ item.duration }}</span>
                       </div>
-                      <div class="hidden sm:block px-2">
+                      <div class="hidden px-2 sm:block">
                         <span>&middot;</span>
                       </div>
                       <div
-                        class="flex items-center gap-1 text-sm mt-3 sm:mt-0 text-left text-muted-400"
+                        class="text-muted-400 mt-3 flex items-center gap-1 text-left text-sm sm:mt-0"
                       >
-                        <Icon name="lucide:check-circle" class="w-3 h-3" />
+                        <Icon name="lucide:check-circle" class="h-3 w-3" />
                         <span>{{ item.requirements }}</span>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div
-                  class="sm:ms-auto flex items-center justify-end gap-2 mt-4 sm:mt-0"
+                  class="mt-4 flex items-center justify-end gap-2 sm:ms-auto sm:mt-0"
                 >
                   <BaseButton
                     color="primary"
@@ -149,7 +149,7 @@ const { data, pending, error, refresh } = await useFetch('/api/jobs', {
                     data-tooltip="Add to Bookmarks"
                     class="hidden sm:inline-flex"
                   >
-                    <Icon name="ph:bookmark-duotone" class="w-4 h-4" />
+                    <Icon name="ph:bookmark-duotone" class="h-4 w-4" />
                   </BaseButtonIcon>
                 </div>
               </BaseCard>

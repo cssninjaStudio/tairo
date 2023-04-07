@@ -83,7 +83,7 @@ const { data, pending, error, refresh } = await useFetch(
           </BasePlaceholderPage>
         </div>
         <div v-else>
-          <div class="w-full grid ltablet:grid-cols-2 lg:grid-cols-2 gap-4">
+          <div class="ltablet:grid-cols-2 grid w-full gap-4 lg:grid-cols-2">
             <TransitionGroup
               enter-active-class="transform-gpu"
               enter-from-class="opacity-0 -translate-x-full"
@@ -94,9 +94,9 @@ const { data, pending, error, refresh } = await useFetch(
             >
               <BaseCard v-for="item in data?.data" :key="item.id">
                 <div
-                  class="p-6 flex flex-col sm:flex-row items-center border-b border-muted-200 dark:border-muted-700"
+                  class="border-muted-200 dark:border-muted-700 flex flex-col items-center border-b p-6 sm:flex-row"
                 >
-                  <div class="flex flex-col sm:flex-row items-center gap-3">
+                  <div class="flex flex-col items-center gap-3 sm:flex-row">
                     <BaseAvatar
                       :src="item.picture"
                       :badge-src="item.badge"
@@ -104,40 +104,40 @@ const { data, pending, error, refresh } = await useFetch(
                       size="xl"
                       class="bg-muted-500/20 text-muted-500"
                     />
-                    <div class="leading-none text-center sm:text-left">
+                    <div class="text-center leading-none sm:text-left">
                       <h4
-                        class="font-sans text-base font-medium text-muted-800 dark:text-muted-100"
+                        class="text-muted-800 dark:text-muted-100 font-sans text-base font-medium"
                       >
                         {{ item.username }}
                       </h4>
-                      <p class="font-sans text-sm text-muted-400">
+                      <p class="text-muted-400 font-sans text-sm">
                         {{ item.position }}
                       </p>
                     </div>
                   </div>
-                  <div class="mt-4 sm:mt-0 sm:ms-auto flex items-center gap-3">
+                  <div class="mt-4 flex items-center gap-3 sm:ms-auto sm:mt-0">
                     <NuxtLink
                       v-for="link in item.socialProfiles"
                       :key="link.name"
                       to="/"
-                      class="h-8 w-8 flex items-center justify-center rounded-full border border-muted-200 dark:border-muted-700 hover:border-primary-500 dark:hover:border-primary-500 bg-white dark:bg-muted-800 text-muted-400 hover:text-primary-500 shadow-lg shadow-muted-300/30 dark:shadow-muted-700/30 transition-all duration-300"
+                      class="border-muted-200 dark:border-muted-700 hover:border-primary-500 dark:hover:border-primary-500 dark:bg-muted-800 text-muted-400 hover:text-primary-500 shadow-muted-300/30 dark:shadow-muted-700/30 flex h-8 w-8 items-center justify-center rounded-full border bg-white shadow-lg transition-all duration-300"
                     >
-                      <Icon :name="link.icon" class="w-3 h-3" />
+                      <Icon :name="link.icon" class="h-3 w-3" />
                     </NuxtLink>
                   </div>
                 </div>
                 <div
-                  class="px-6 py-4 flex flex-col sm:flex-row items-center justify-between"
+                  class="flex flex-col items-center justify-between px-6 py-4 sm:flex-row"
                 >
-                  <div class="grow w-full sm:w-auto sm:max-w-[260px] space-y-1">
+                  <div class="w-full grow space-y-1 sm:w-auto sm:max-w-[260px]">
                     <div class="flex items-center justify-between">
                       <h4
-                        class="font-sans text-sm font-medium text-muted-700 dark:text-muted-100"
+                        class="text-muted-700 dark:text-muted-100 font-sans text-sm font-medium"
                       >
                         Progress
                       </h4>
                       <div>
-                        <span class="font-sans text-sm text-muted-400">
+                        <span class="text-muted-400 font-sans text-sm">
                           {{ item.completed }}%
                         </span>
                       </div>
@@ -148,7 +148,7 @@ const { data, pending, error, refresh } = await useFetch(
                       :value="item.completed"
                     />
                   </div>
-                  <div class="w-full sm:w-auto mt-4 sm:mt-0">
+                  <div class="mt-4 w-full sm:mt-0 sm:w-auto">
                     <BaseButton class="w-full sm:w-auto">
                       View profile
                     </BaseButton>

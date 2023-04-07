@@ -78,13 +78,13 @@ const { data, pending, error, refresh } = await useFetch('/api/rentals', {
                 v-for="item in data?.data"
                 :key="item.id"
                 shape="curved"
-                class="flex flex-col sm:flex-row sm:items-center p-5"
+                class="flex flex-col p-5 sm:flex-row sm:items-center"
               >
                 <div
-                  class="flex flex-col sm:flex-row justify-center sm:justify-start gap-3 text-center sm:text-left"
+                  class="flex flex-col justify-center gap-3 text-center sm:flex-row sm:justify-start sm:text-left"
                 >
                   <img
-                    class="w-full sm:max-w-[130px] bg-muted-100 dark:bg-muted-700/60 rounded-lg"
+                    class="bg-muted-100 dark:bg-muted-700/60 w-full rounded-lg sm:max-w-[130px]"
                     :src="item.picture"
                     :alt="item.name"
                     :height="190"
@@ -92,7 +92,7 @@ const { data, pending, error, refresh } = await useFetch('/api/rentals', {
                   />
                   <div>
                     <div
-                      class="flex flex-col sm:flex-row sm:items-center text-left gap-2"
+                      class="flex flex-col gap-2 text-left sm:flex-row sm:items-center"
                     >
                       <BaseHeading
                         tag="h3"
@@ -105,7 +105,7 @@ const { data, pending, error, refresh } = await useFetch('/api/rentals', {
                       <div class="flex items-center gap-2">
                         <Icon
                           name="uiw:star-on"
-                          class="w-3 h-3"
+                          class="h-3 w-3"
                           :class="
                             item.rating > 0
                               ? 'text-yellow-400'
@@ -114,7 +114,7 @@ const { data, pending, error, refresh } = await useFetch('/api/rentals', {
                         />
                         <Icon
                           name="uiw:star-on"
-                          class="w-3 h-3"
+                          class="h-3 w-3"
                           :class="
                             item.rating >= 2
                               ? 'text-yellow-400'
@@ -123,7 +123,7 @@ const { data, pending, error, refresh } = await useFetch('/api/rentals', {
                         />
                         <Icon
                           name="uiw:star-on"
-                          class="w-3 h-3"
+                          class="h-3 w-3"
                           :class="
                             item.rating >= 3
                               ? 'text-yellow-400'
@@ -132,7 +132,7 @@ const { data, pending, error, refresh } = await useFetch('/api/rentals', {
                         />
                         <Icon
                           name="uiw:star-on"
-                          class="w-3 h-3"
+                          class="h-3 w-3"
                           :class="
                             item.rating >= 4
                               ? 'text-yellow-400'
@@ -141,7 +141,7 @@ const { data, pending, error, refresh } = await useFetch('/api/rentals', {
                         />
                         <Icon
                           name="uiw:star-on"
-                          class="w-3 h-3"
+                          class="h-3 w-3"
                           :class="
                             item.rating === 5
                               ? 'text-yellow-400'
@@ -153,12 +153,12 @@ const { data, pending, error, refresh } = await useFetch('/api/rentals', {
                     <BaseParagraph
                       size="xs"
                       lead="none"
-                      class="flex sm:items-end gap-1 text-sm mt-3 sm:mt-0 text-left text-muted-400"
+                      class="text-muted-400 mt-3 flex gap-1 text-left text-sm sm:mt-0 sm:items-end"
                     >
-                      <Icon name="lucide:map-pin" class="w-3 h-3" />
+                      <Icon name="lucide:map-pin" class="h-3 w-3" />
                       <span>{{ item.location }}</span>
                     </BaseParagraph>
-                    <div class="flex items-center gap-2 my-2 text-primary-500">
+                    <div class="text-primary-500 my-2 flex items-center gap-2">
                       <span class="font-sans text-xs">
                         {{ item.details.rooms }} rooms
                       </span>
@@ -171,40 +171,40 @@ const { data, pending, error, refresh } = await useFetch('/api/rentals', {
                         {{ item.details.bathrooms }} bathrooms
                       </span>
                     </div>
-                    <div class="flex items-center gap-6 mt-auto text-muted-400">
+                    <div class="text-muted-400 mt-auto flex items-center gap-6">
                       <div
                         v-if="item.amenities.parking"
                         class="flex items-center gap-1"
                       >
-                        <Icon name="ph:car-duotone" class="w-4 h-4" />
+                        <Icon name="ph:car-duotone" class="h-4 w-4" />
                         <span class="font-sans text-xs">Parking</span>
                       </div>
                       <div
                         v-if="item.amenities.wifi"
                         class="flex items-center gap-1"
                       >
-                        <Icon name="ph:broadcast-duotone" class="w-4 h-4" />
+                        <Icon name="ph:broadcast-duotone" class="h-4 w-4" />
                         <span class="font-sans text-xs">Wifi</span>
                       </div>
                       <div
                         v-if="item.amenities.heater"
                         class="flex items-center gap-1"
                       >
-                        <Icon name="ph:thermometer-duotone" class="w-4 h-4" />
+                        <Icon name="ph:thermometer-duotone" class="h-4 w-4" />
                         <span class="font-sans text-xs">Heater</span>
                       </div>
                       <div
                         v-if="item.amenities.cleaning"
                         class="flex items-center gap-1"
                       >
-                        <Icon name="ph:waves-duotone" class="w-4 h-4" />
+                        <Icon name="ph:waves-duotone" class="h-4 w-4" />
                         <span class="font-sans text-xs">Cleaning</span>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div
-                  class="sm:ms-auto flex ptablet:flex-col items-center justify-end gap-2 mt-4 sm:mt-4"
+                  class="ptablet:flex-col mt-4 flex items-center justify-end gap-2 sm:ms-auto sm:mt-4"
                 >
                   <BaseButton class="w-full sm:w-28">More Info</BaseButton>
                   <BaseButton color="primary" class="w-full sm:w-28">

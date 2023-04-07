@@ -5,7 +5,7 @@ definePageMeta({
 </script>
 
 <template>
-  <div class="grid sm:grid-cols-4 ptablet:grid-cols-2 gap-4">
+  <div class="ptablet:grid-cols-2 grid gap-4 sm:grid-cols-4">
     <!-- Column -->
     <div class="relative flex flex-col gap-4">
       <!-- Widget -->
@@ -34,7 +34,7 @@ definePageMeta({
       <!-- Widget -->
       <BaseCard shape="curved" class="p-5">
         <!-- Title -->
-        <div class="flex items-center justify-between mb-8">
+        <div class="mb-8 flex items-center justify-between">
           <BaseHeading
             as="h3"
             size="md"
@@ -46,7 +46,7 @@ definePageMeta({
           </BaseHeading>
           <NuxtLink
             to="#"
-            class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
+            class="bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline"
           >
             View All
           </NuxtLink>
@@ -89,7 +89,7 @@ definePageMeta({
           indicator
         >
           <div
-            class="w-full flex gap-2 mt-3 font-sans font-medium text-xs text-primary-500"
+            class="text-primary-500 mt-3 flex w-full gap-2 font-sans text-xs font-medium"
           >
             <NuxtLink to="#">#uikit</NuxtLink>
             <NuxtLink to="#">#dashboards</NuxtLink>

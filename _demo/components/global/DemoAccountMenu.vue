@@ -8,7 +8,7 @@ const props = defineProps<{
 
 <template>
   <div class="group inline-flex items-center justify-center text-right">
-    <Menu as="div" class="relative h-10 w-10 text-left">
+    <Menu as="div" class="relative h-10 w-10 text-left" v-slot="{ close }">
       <MenuButton as="template">
         <button
           type="button"
@@ -53,14 +53,14 @@ const props = defineProps<{
                 <h6
                   class="font-heading text-muted-800 text-sm font-medium dark:text-white"
                 >
-                  Maya Rosselini
+                  Maya Rosseliniee
                 </h6>
                 <p class="text-muted-400 font-sans text-xs">Product Manager</p>
               </div>
             </div>
           </div>
           <div class="p-2">
-            <MenuItem v-slot="{ active }">
+            <MenuItem as="div" v-slot="{ active }">
               <NuxtLink
                 to="/layouts/profile"
                 class="group flex w-full items-center rounded-md p-3 text-sm transition-colors duration-300"
@@ -69,13 +69,14 @@ const props = defineProps<{
                     ? 'bg-muted-100 dark:bg-muted-700 text-primary-500'
                     : 'text-muted-400',
                 ]"
+                @click.passive="close"
               >
                 <Icon name="ph:user-circle-duotone" class="h-5 w-5" />
                 <div class="ms-3">
                   <h6
                     class="font-heading text-muted-800 text-xs font-medium leading-none dark:text-white"
                   >
-                    Profile
+                    Profileee
                   </h6>
                   <p class="text-muted-400 font-sans text-xs">
                     View your profile
@@ -83,7 +84,7 @@ const props = defineProps<{
                 </div>
               </NuxtLink>
             </MenuItem>
-            <MenuItem v-slot="{ active }">
+            <MenuItem as="div" v-slot="{ active }">
               <NuxtLink
                 to="/layouts/projects"
                 class="group flex w-full items-center rounded-md p-3 text-sm transition-colors duration-300"
@@ -92,6 +93,7 @@ const props = defineProps<{
                     ? 'bg-muted-100 dark:bg-muted-700 text-primary-500'
                     : 'text-muted-400',
                 ]"
+                @click.passive="close"
               >
                 <Icon name="ph:briefcase-duotone" class="h-5 w-5" />
                 <div class="ms-3">
@@ -106,7 +108,7 @@ const props = defineProps<{
                 </div>
               </NuxtLink>
             </MenuItem>
-            <MenuItem v-slot="{ active }">
+            <MenuItem as="div" v-slot="{ active }">
               <NuxtLink
                 to="/layouts/user-grid-4"
                 class="group flex w-full items-center rounded-md p-3 text-sm transition-colors duration-300"
@@ -115,6 +117,7 @@ const props = defineProps<{
                     ? 'bg-muted-100 dark:bg-muted-700 text-primary-500'
                     : 'text-muted-400',
                 ]"
+                @click.passive="close"
               >
                 <Icon name="ph:users-three-duotone" class="h-5 w-5" />
                 <div class="ms-3">
@@ -127,7 +130,7 @@ const props = defineProps<{
                 </div>
               </NuxtLink>
             </MenuItem>
-            <MenuItem v-slot="{ active }">
+            <MenuItem as="div" v-slot="{ active }">
               <NuxtLink
                 to="/layouts/profile-edit"
                 class="group flex w-full items-center rounded-md p-3 text-sm transition-colors duration-300"
@@ -136,6 +139,7 @@ const props = defineProps<{
                     ? 'bg-muted-100 dark:bg-muted-700 text-primary-500'
                     : 'text-muted-400',
                 ]"
+                @click.passive="close"
               >
                 <Icon name="ph:gear-six-duotone" class="h-5 w-5" />
                 <div class="ms-3">

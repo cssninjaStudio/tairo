@@ -50,14 +50,14 @@ const { data, pending, error, refresh } = await useFetch(
       </template>
       <template #right>
         <BaseButton color="primary" class="w-full sm:w-32" shape="rounded">
-          <Icon name="lucide:plus" class="w-4 h-4" />
+          <Icon name="lucide:plus" class="h-4 w-4" />
           <span>New</span>
         </BaseButton>
       </template>
       <div class="space-y-10">
         <div>
           <div v-if="!pending && data?.recent.length === 0">
-            <div class="p-6 rounded-lg bg-muted-200 dark:bg-muted-800/60">
+            <div class="bg-muted-200 dark:bg-muted-800/60 rounded-lg p-6">
               <BaseHeading tag="h4" size="lg" weight="medium">
                 Empty history
               </BaseHeading>
@@ -69,13 +69,13 @@ const { data, pending, error, refresh } = await useFetch(
           <div v-else>
             <div>
               <h4
-                class="mb-4 font-sans text-xs font-semibold uppercase text-muted-400"
+                class="text-muted-400 mb-4 font-sans text-xs font-semibold uppercase"
               >
                 Recently Viewed
               </h4>
             </div>
             <div
-              class="grid sm:grid-cols-2 ltablet:grid-cols-4 lg:grid-cols-4 gap-4"
+              class="ltablet:grid-cols-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
             >
               <TransitionGroup
                 enter-active-class="transform-gpu"
@@ -88,15 +88,15 @@ const { data, pending, error, refresh } = await useFetch(
                 <NuxtLink
                   v-for="(item, r) in data?.recent.slice(0, 4)"
                   :key="r"
-                  class="block group"
+                  class="group block"
                   :to="`/layouts/projects/details/${item.slug}`"
                 >
                   <BaseCard
                     shape="rounded"
                     elevated-hover
-                    class="p-5 group-hover:!border-primary-500"
+                    class="group-hover:!border-primary-500 p-5"
                   >
-                    <div class="flex gap-2 mb-6">
+                    <div class="mb-6 flex gap-2">
                       <BaseAvatar
                         :src="item.customer.logo"
                         size="sm"
@@ -128,15 +128,15 @@ const { data, pending, error, refresh } = await useFetch(
                           class="bg-muted-100 dark:bg-muted-700"
                         />
                       </div>
-                      <div class="flex items-center gap-4 text-muted-400">
+                      <div class="text-muted-400 flex items-center gap-4">
                         <div class="flex items-center gap-1 text-sm">
-                          <Icon name="ph:paperclip-duotone" class="w-4 h-4" />
+                          <Icon name="ph:paperclip-duotone" class="h-4 w-4" />
                           <span class="font-sans">
                             {{ item.files.length }}
                           </span>
                         </div>
                         <div class="flex items-center gap-1 text-sm">
-                          <Icon name="ph:users-duotone" class="w-4 h-4" />
+                          <Icon name="ph:users-duotone" class="h-4 w-4" />
                           <span class="font-sans">{{ item.team.length }}</span>
                         </div>
                       </div>
@@ -170,13 +170,13 @@ const { data, pending, error, refresh } = await useFetch(
           <div v-else>
             <div>
               <h4
-                class="mb-4 font-sans text-xs font-semibold uppercase text-muted-400"
+                class="text-muted-400 mb-4 font-sans text-xs font-semibold uppercase"
               >
                 All Projects
               </h4>
             </div>
             <div
-              class="grid sm:grid-cols-2 ltablet:grid-cols-3 lg:grid-cols-3 gap-4"
+              class="ltablet:grid-cols-3 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
             >
               <TransitionGroup
                 enter-active-class="transform-gpu"
@@ -205,7 +205,7 @@ const { data, pending, error, refresh } = await useFetch(
                           class="rounded-md"
                         />
                       </div>
-                      <div class="flex gap-2 mb-6">
+                      <div class="mb-6 flex gap-2">
                         <BaseAvatar
                           :src="item.customer.logo"
                           size="sm"
@@ -238,15 +238,15 @@ const { data, pending, error, refresh } = await useFetch(
                             class="bg-muted-100 dark:bg-muted-700"
                           />
                         </div>
-                        <div class="flex items-center gap-4 text-muted-400">
+                        <div class="text-muted-400 flex items-center gap-4">
                           <div class="flex items-center gap-1 text-sm">
-                            <Icon name="ph:paperclip-duotone" class="w-4 h-4" />
+                            <Icon name="ph:paperclip-duotone" class="h-4 w-4" />
                             <span class="font-sans">
                               {{ item.files.length }}
                             </span>
                           </div>
                           <div class="flex items-center gap-1 text-sm">
-                            <Icon name="ph:users-duotone" class="w-4 h-4" />
+                            <Icon name="ph:users-duotone" class="h-4 w-4" />
                             <span class="font-sans">
                               {{ item.team.length }}
                             </span>
@@ -255,10 +255,10 @@ const { data, pending, error, refresh } = await useFetch(
                       </div>
                     </div>
                     <div
-                      class="flex items-center justify-between px-5 py-3 border-t rounded-b-lg border-muted-200 dark:border-muted-700 bg-muted-50 dark:bg-muted-700/50"
+                      class="border-muted-200 dark:border-muted-700 bg-muted-50 dark:bg-muted-700/50 flex items-center justify-between rounded-b-lg border-t px-5 py-3"
                     >
                       <div>
-                        <p class="font-sans text-sm text-muted-400">
+                        <p class="text-muted-400 font-sans text-sm">
                           {{ item.tasks.length }} tasks remaining
                         </p>
                       </div>

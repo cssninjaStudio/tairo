@@ -20,24 +20,24 @@ definePageMeta({
       <template #right>
         <BaseButton class="w-full sm:w-32" disabled>Manage</BaseButton>
         <BaseButton color="primary" class="w-full sm:w-32" disabled>
-          <Icon name="lucide:plus" class="w-4 h-4" />
+          <Icon name="lucide:plus" class="h-4 w-4" />
           <span>Add User</span>
         </BaseButton>
       </template>
       <div>
         <div
-          class="grid sm:grid-cols-2 ltablet:grid-cols-3 lg:grid-cols-4 gap-6"
+          class="ltablet:grid-cols-3 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
         >
           <BaseCard v-for="index in 12" :key="index" class="flex flex-col p-6">
-            <BasePlaceload class="w-20 h-20 rounded-full shrink-0 mx-auto" />
-            <div class="space-y-2 mt-4 mb-6">
-              <BasePlaceload class="w-40 h-3 rounded-lg mx-auto" />
-              <BasePlaceload class="w-32 h-3 rounded-lg mx-auto" />
+            <BasePlaceload class="mx-auto h-20 w-20 shrink-0 rounded-full" />
+            <div class="mb-6 mt-4 space-y-2">
+              <BasePlaceload class="mx-auto h-3 w-40 rounded-lg" />
+              <BasePlaceload class="mx-auto h-3 w-32 rounded-lg" />
             </div>
-            <div class="flex items-center justify-center gap-3 mb-6">
-              <BasePlaceload class="w-8 h-8 rounded-full shrink-0" />
-              <BasePlaceload class="w-8 h-8 rounded-full shrink-0" />
-              <BasePlaceload class="w-8 h-8 rounded-full shrink-0" />
+            <div class="mb-6 flex items-center justify-center gap-3">
+              <BasePlaceload class="h-8 w-8 shrink-0 rounded-full" />
+              <BasePlaceload class="h-8 w-8 shrink-0 rounded-full" />
+              <BasePlaceload class="h-8 w-8 shrink-0 rounded-full" />
             </div>
             <div class="flex items-center justify-center gap-2">
               <BaseButton loading class="w-full">View</BaseButton>

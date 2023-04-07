@@ -109,7 +109,7 @@ const candidates = [
     <!--Grid item-->
     <div>
       <BaseCard
-        class="h-full flex flex-col p-8 border-0 bg-muted-200"
+        class="bg-muted-200 flex h-full flex-col border-0 p-8"
         shape="curved"
       >
         <div class="mb-5">
@@ -118,7 +118,7 @@ const candidates = [
             size="3xl"
             weight="light"
             lead="tight"
-            class="text-muted-800 dark:text-white mb-2"
+            class="text-muted-800 mb-2 dark:text-white"
           >
             <span>Hi, Maya R.</span>
           </BaseHeading>
@@ -130,7 +130,7 @@ const candidates = [
             </span>
           </BaseParagraph>
         </div>
-        <div class="flex items-center gap-2 mt-auto mb-4">
+        <div class="mb-4 mt-auto flex items-center gap-2">
           <div class="text-4xl">
             <span>🎉</span>
           </div>
@@ -150,7 +150,7 @@ const candidates = [
           </div>
         </div>
         <div>
-          <BaseButton color="primary" shape="curved" class="w-full h-11">
+          <BaseButton color="primary" shape="curved" class="h-11 w-full">
             <span>View Schedule</span>
           </BaseButton>
         </div>
@@ -162,10 +162,10 @@ const candidates = [
       <BaseCard shape="curved" class="flex items-center gap-2 p-3">
         <BaseIconBox
           size="sm"
-          class="bg-info-100 text-info-500 dark:bg-info-500/20 dark:text-info-400 dark:border-2 dark:border-info-500"
+          class="bg-info-100 text-info-500 dark:bg-info-500/20 dark:text-info-400 dark:border-info-500 dark:border-2"
           shape="full"
         >
-          <Icon name="ph:timer-duotone" class="w-5 h-5" />
+          <Icon name="ph:timer-duotone" class="h-5 w-5" />
         </BaseIconBox>
         <div>
           <BaseHeading
@@ -186,10 +186,10 @@ const candidates = [
       <BaseCard shape="curved" class="flex items-center gap-2 p-3">
         <BaseIconBox
           size="sm"
-          class="bg-primary-100 text-primary-500 dark:bg-primary-500/20 dark:text-primary-400 dark:border-2 dark:border-primary-500"
+          class="bg-primary-100 text-primary-500 dark:bg-primary-500/20 dark:text-primary-400 dark:border-primary-500 dark:border-2"
           shape="full"
         >
-          <Icon name="ph:broadcast-duotone" class="w-5 h-5" />
+          <Icon name="ph:broadcast-duotone" class="h-5 w-5" />
         </BaseIconBox>
         <div>
           <BaseHeading
@@ -210,10 +210,10 @@ const candidates = [
       <BaseCard shape="curved" class="flex items-center gap-2 p-3">
         <BaseIconBox
           size="sm"
-          class="bg-lime-100 text-lime-500 dark:bg-lime-500/20 dark:text-lime-400 dark:border-2 dark:border-lime-500"
+          class="bg-lime-100 text-lime-500 dark:border-2 dark:border-lime-500 dark:bg-lime-500/20 dark:text-lime-400"
           shape="full"
         >
-          <Icon name="ph:user-plus-duotone" class="w-5 h-5" />
+          <Icon name="ph:user-plus-duotone" class="h-5 w-5" />
         </BaseIconBox>
         <div>
           <BaseHeading
@@ -234,10 +234,10 @@ const candidates = [
       <BaseCard shape="curved" class="flex items-center gap-2 p-3">
         <BaseIconBox
           size="sm"
-          class="bg-amber-100 text-amber-500 dark:bg-amber-500/20 dark:text-amber-400 dark:border-2 dark:border-amber-500"
+          class="bg-amber-100 text-amber-500 dark:border-2 dark:border-amber-500 dark:bg-amber-500/20 dark:text-amber-400"
           shape="full"
         >
-          <Icon name="ph:door-duotone" class="w-5 h-5" />
+          <Icon name="ph:door-duotone" class="h-5 w-5" />
         </BaseIconBox>
         <div>
           <BaseHeading
@@ -256,7 +256,7 @@ const candidates = [
       </BaseCard>
       <!-- Inner item -->
       <div class="col-span-2">
-        <div class="h-full flex items-end justify-between mt-auto pb-4">
+        <div class="mt-auto flex h-full items-end justify-between pb-4">
           <div>
             <BaseHeading
               as="h2"
@@ -303,7 +303,7 @@ const candidates = [
     <div>
       <BaseCard class="p-6" shape="curved">
         <!-- Title -->
-        <div class="flex items-center justify-between mb-8">
+        <div class="mb-8 flex items-center justify-between">
           <BaseHeading
             as="h3"
             size="md"
@@ -315,7 +315,7 @@ const candidates = [
           </BaseHeading>
           <NuxtLink
             to="#"
-            class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
+            class="bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline"
           >
             View All
           </NuxtLink>
@@ -327,7 +327,7 @@ const candidates = [
     <div>
       <!-- Chart -->
       <BaseCard shape="curved" class="p-6">
-        <div class="flex items-center justify-between mb-6">
+        <div class="mb-6 flex items-center justify-between">
           <BaseHeading
             as="h3"
             size="md"
@@ -339,7 +339,7 @@ const candidates = [
           </BaseHeading>
           <NuxtLink
             to="#"
-            class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
+            class="bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline"
           >
             Reports
           </NuxtLink>
@@ -366,9 +366,9 @@ const candidates = [
             <span class="text-muted-400">8:00 am — 9:00 am</span>
           </BaseParagraph>
         </div>
-        <div class="flex items-center ms-auto">
+        <div class="ms-auto flex items-center">
           <BaseButtonIcon shape="curved" muted class="scale-75">
-            <Icon name="lucide:arrow-right" class="w-5 h-5" />
+            <Icon name="lucide:arrow-right" class="h-5 w-5" />
           </BaseButtonIcon>
         </div>
       </BaseCard>
@@ -389,9 +389,9 @@ const candidates = [
             <span class="text-muted-400">10:30 am — 11:30 am</span>
           </BaseParagraph>
         </div>
-        <div class="flex items-center ms-auto">
+        <div class="ms-auto flex items-center">
           <BaseButtonIcon shape="curved" muted class="scale-75">
-            <Icon name="lucide:arrow-right" class="w-5 h-5" />
+            <Icon name="lucide:arrow-right" class="h-5 w-5" />
           </BaseButtonIcon>
         </div>
       </BaseCard>
@@ -412,9 +412,9 @@ const candidates = [
             <span class="text-muted-400">2:00 pm — 3:00 pm</span>
           </BaseParagraph>
         </div>
-        <div class="flex items-center ms-auto">
+        <div class="ms-auto flex items-center">
           <BaseButtonIcon shape="curved" muted class="scale-75">
-            <Icon name="lucide:arrow-right" class="w-5 h-5" />
+            <Icon name="lucide:arrow-right" class="h-5 w-5" />
           </BaseButtonIcon>
         </div>
       </BaseCard>

@@ -94,7 +94,7 @@ const projects = [
       <BaseAvatar
         :src="project.image"
         :badge-src="project.badge"
-        class="flex-shrink-0"
+        class="shrink-0"
       />
       <div>
         <BaseHeading
@@ -110,7 +110,7 @@ const projects = [
           <span class="text-muted-400">Last updated {{ project.updated }}</span>
         </BaseParagraph>
       </div>
-      <div class="hidden md:block ms-auto">
+      <div class="ms-auto hidden md:block">
         <BaseAvatarGroup :avatars="project.members" size="sm" :limit="3" />
       </div>
     </div>

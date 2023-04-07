@@ -11,23 +11,23 @@ const activePosts = ref('recent')
     <!-- Grid -->
     <div class="grid grid-cols-12 gap-6">
       <!-- Column -->
-      <div class="col-span-12 ltablet:col-span-8 lg:col-span-8">
+      <div class="ltablet:col-span-8 col-span-12 lg:col-span-8">
         <!-- Inner grid -->
         <div class="grid grid-cols-12 gap-6">
           <!-- Header -->
           <div class="col-span-12">
             <div
-              class="flex flex-col sm:flex-row items-center p-4 rounded-2xl bg-primary-800"
+              class="bg-primary-800 flex flex-col items-center rounded-2xl p-4 sm:flex-row"
             >
-              <div class="relative shrink-0 h-[150px] sm:h-[175px] w-[320px]">
+              <div class="relative h-[150px] w-[320px] shrink-0 sm:h-[175px]">
                 <img
-                  class="absolute top-0 start-6 sm:-start-10 pointer-events-none"
+                  class="pointer-events-none absolute start-6 top-0 sm:-start-10"
                   src="/img/illustrations/dashboards/writer/readers.svg"
                   alt="Readers illustration"
                 />
               </div>
-              <div class="grow mt-6 sm:mt-0">
-                <div class="text-center sm:text-left pb-4 sm:pb-0">
+              <div class="mt-6 grow sm:mt-0">
+                <div class="pb-4 text-center sm:pb-0 sm:text-left">
                   <BaseHeading tag="h1" class="text-white opacity-90">
                     <span>Hello, Maya</span>
                   </BaseHeading>
@@ -47,7 +47,7 @@ const activePosts = ref('recent')
                       flavor="outline"
                       class="w-full sm:w-auto"
                     >
-                      <Icon name="lucide:plus" class="w-4 h-4" />
+                      <Icon name="lucide:plus" class="h-4 w-4" />
                       <span>New Article</span>
                     </BaseButton>
                   </div>
@@ -70,12 +70,12 @@ const activePosts = ref('recent')
                         <BaseParagraph
                           size="xs"
                           weight="medium"
-                          class="uppercase text-muted-400"
+                          class="text-muted-400 uppercase"
                         >
                           <span>Articles</span>
                         </BaseParagraph>
                         <span
-                          class="block font-sans font-bold text-2xl text-muted-800 dark:text-muted-100"
+                          class="text-muted-800 dark:text-muted-100 block font-sans text-2xl font-bold"
                         >
                           138
                         </span>
@@ -87,12 +87,12 @@ const activePosts = ref('recent')
                         <BaseParagraph
                           size="xs"
                           weight="medium"
-                          class="uppercase text-muted-400"
+                          class="text-muted-400 uppercase"
                         >
                           <span>Readers</span>
                         </BaseParagraph>
                         <span
-                          class="block font-sans font-bold text-2xl text-muted-800 dark:text-muted-100"
+                          class="text-muted-800 dark:text-muted-100 block font-sans text-2xl font-bold"
                         >
                           921
                         </span>
@@ -104,12 +104,12 @@ const activePosts = ref('recent')
                         <BaseParagraph
                           size="xs"
                           weight="medium"
-                          class="uppercase text-muted-400"
+                          class="text-muted-400 uppercase"
                         >
                           <span>Comments</span>
                         </BaseParagraph>
                         <span
-                          class="block font-sans font-bold text-2xl text-muted-800 dark:text-muted-100"
+                          class="text-muted-800 dark:text-muted-100 block font-sans text-2xl font-bold"
                         >
                           279
                         </span>
@@ -119,7 +119,7 @@ const activePosts = ref('recent')
                   <!-- Widget -->
                   <BaseCard class="p-6" shape="curved">
                     <!-- Title -->
-                    <div class="flex items-center justify-between mb-8">
+                    <div class="mb-8 flex items-center justify-between">
                       <BaseHeading
                         as="h3"
                         size="md"
@@ -131,7 +131,7 @@ const activePosts = ref('recent')
                       </BaseHeading>
                       <NuxtLink
                         to="#"
-                        class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
+                        class="bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline"
                       >
                         View All
                       </NuxtLink>
@@ -145,7 +145,7 @@ const activePosts = ref('recent')
                 <!-- Widget -->
                 <BaseCard class="p-6" shape="curved">
                   <!-- Title -->
-                  <div class="flex items-center justify-between mb-8">
+                  <div class="mb-8 flex items-center justify-between">
                     <BaseHeading
                       as="h3"
                       size="md"
@@ -157,7 +157,7 @@ const activePosts = ref('recent')
                     </BaseHeading>
                     <NuxtLink
                       to="#"
-                      class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
+                      class="bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline"
                     >
                       View All
                     </NuxtLink>
@@ -170,10 +170,10 @@ const activePosts = ref('recent')
         </div>
       </div>
       <!-- Column -->
-      <div class="col-span-12 ltablet:col-span-4 lg:col-span-4">
-        <div class="p-6 rounded-2xl bg-muted-200 dark:bg-muted-800/70">
+      <div class="ltablet:col-span-4 col-span-12 lg:col-span-4">
+        <div class="bg-muted-200 dark:bg-muted-800/70 rounded-2xl p-6">
           <!-- Title -->
-          <div class="flex items-center justify-between mb-8">
+          <div class="mb-8 flex items-center justify-between">
             <BaseHeading
               as="h3"
               size="md"
@@ -183,7 +183,7 @@ const activePosts = ref('recent')
             >
               <span>New articles</span>
             </BaseHeading>
-            <div class="flex sm:justify-end gap-2 scale-90">
+            <div class="flex scale-90 gap-2 sm:justify-end">
               <BaseButtonAction
                 small
                 :color="activePosts === 'recent' ? 'primary' : 'default'"
@@ -201,16 +201,16 @@ const activePosts = ref('recent')
             </div>
           </div>
           <!-- Posts-->
-          <div class="flex flex-col ptablet:grid ptablet:grid-cols-2 gap-6">
+          <div class="ptablet:grid ptablet:grid-cols-2 flex flex-col gap-6">
             <!-- Post -->
             <NuxtLink to="#" class="flex flex-col">
               <img
                 src="/img/illustrations/dashboards/writer/post-1.svg"
                 alt="Post image"
-                class="rounded-xl bg-muted-200"
+                class="bg-muted-200 rounded-xl"
               />
               <BaseCard
-                class="!rounded-2xl p-6 -mt-8 shadow-xl shadow-muted-300/30 dark:shadow-muted-900/20"
+                class="shadow-muted-300/30 dark:shadow-muted-900/20 -mt-8 !rounded-2xl p-6 shadow-xl"
               >
                 <div class="mb-3">
                   <BaseHeading
@@ -218,7 +218,7 @@ const activePosts = ref('recent')
                     size="md"
                     weight="light"
                     lead="tight"
-                    class="mb-1 text-muted-800 dark:text-white"
+                    class="text-muted-800 mb-1 dark:text-white"
                   >
                     <span>Learning the modern novel</span>
                   </BaseHeading>
@@ -234,7 +234,7 @@ const activePosts = ref('recent')
                     src="/img/avatars/6.svg"
                     text="BT"
                     size="xs"
-                    class="flex-shrink-0 bg-primary-100 dark:bg-primary-500/20 text-primary-500"
+                    class="bg-primary-100 dark:bg-primary-500/20 text-primary-500 shrink-0"
                   />
                   <div>
                     <BaseHeading
@@ -258,10 +258,10 @@ const activePosts = ref('recent')
               <img
                 src="/img/illustrations/dashboards/writer/post-2.svg"
                 alt="Post image"
-                class="rounded-xl bg-muted-200"
+                class="bg-muted-200 rounded-xl"
               />
               <BaseCard
-                class="!rounded-2xl p-6 -mt-8 shadow-xl shadow-muted-300/30 dark:shadow-muted-900/20"
+                class="shadow-muted-300/30 dark:shadow-muted-900/20 -mt-8 !rounded-2xl p-6 shadow-xl"
               >
                 <div class="mb-3">
                   <BaseHeading
@@ -269,7 +269,7 @@ const activePosts = ref('recent')
                     size="md"
                     weight="light"
                     lead="tight"
-                    class="mb-1 text-muted-800 dark:text-white"
+                    class="text-muted-800 mb-1 dark:text-white"
                   >
                     <span>5 writing tips just for you</span>
                   </BaseHeading>
@@ -285,7 +285,7 @@ const activePosts = ref('recent')
                     src="/img/avatars/5.svg"
                     text="BT"
                     size="xs"
-                    class="flex-shrink-0 bg-primary-100 dark:bg-primary-500/20 text-primary-500"
+                    class="bg-primary-100 dark:bg-primary-500/20 text-primary-500 shrink-0"
                   />
                   <div>
                     <BaseHeading

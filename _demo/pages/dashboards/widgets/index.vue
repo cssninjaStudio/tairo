@@ -86,12 +86,12 @@ function useGaugePersonal() {
 </script>
 
 <template>
-  <div class="grid sm:grid-cols-4 ptablet:grid-cols-2 gap-4">
+  <div class="ptablet:grid-cols-2 grid gap-4 sm:grid-cols-4">
     <!-- Column -->
     <div class="relative flex flex-col gap-4">
       <!-- Widget -->
       <BaseCard shape="curved" class="flex flex-col p-6">
-        <div class="flex items-center justify-between mb-6">
+        <div class="mb-6 flex items-center justify-between">
           <BaseHeading
             as="h3"
             size="sm"
@@ -105,7 +105,7 @@ function useGaugePersonal() {
         <div class="py-16">
           <AddonApexcharts v-bind="gaugePersonal" class="-mt-14" />
         </div>
-        <div class="text-center mt-auto">
+        <div class="mt-auto text-center">
           <BaseParagraph size="sm">
             <span class="text-muted-400">
               Your score has been calculated based on the latest metrics
@@ -119,7 +119,7 @@ function useGaugePersonal() {
       </BaseCard>
       <!-- Widget -->
       <BaseCard shape="curved" class="p-6">
-        <div class="w-full flex items-center justify-between">
+        <div class="flex w-full items-center justify-between">
           <DemoSearchCompact shape="curved" />
         </div>
       </BaseCard>
@@ -203,7 +203,7 @@ function useGaugePersonal() {
     <div class="relative flex flex-col gap-4">
       <!-- Widget -->
       <BaseCard shape="curved" class="p-6">
-        <div class="flex items-center justify-between mb-6">
+        <div class="mb-6 flex items-center justify-between">
           <BaseHeading
             as="h3"
             size="md"

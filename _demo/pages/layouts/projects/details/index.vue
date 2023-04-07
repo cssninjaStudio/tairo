@@ -36,9 +36,9 @@ const selectedProject = ref('')
 </script>
 
 <template>
-  <div class="max-w-2xl mx-auto">
+  <div class="mx-auto max-w-2xl">
     <div v-if="!pending && data?.recent.length === 0">
-      <div class="p-6 rounded-xl bg-muted-200 dark:bg-muted-800/60">
+      <div class="bg-muted-200 dark:bg-muted-800/60 rounded-xl p-6">
         <BaseHeading tag="h4" size="lg" weight="medium">
           No projects
         </BaseHeading>
@@ -48,10 +48,10 @@ const selectedProject = ref('')
       </div>
     </div>
     <div v-else>
-      <div class="text-center my-6">
+      <div class="my-6 text-center">
         <Icon
           name="ph:square-half-duotone"
-          class="w-10 h-10 mb-2 mx-auto text-primary-500"
+          class="text-primary-500 mx-auto mb-2 h-10 w-10"
         />
         <BaseHeading tag="h4" size="2xl" weight="medium">
           Your recent projects
@@ -59,7 +59,7 @@ const selectedProject = ref('')
         <BaseParagraph size="sm" class="text-muted-400">
           Here are your recently viewed projects.
         </BaseParagraph>
-        <div class="flex justify-center max-w-xs mx-auto mt-6">
+        <div class="mx-auto mt-6 flex max-w-xs justify-center">
           <BaseAutocomplete
             v-model="selectedProject"
             :items="data?.data"
@@ -71,10 +71,15 @@ const selectedProject = ref('')
             label-float
             clearable
           >
-            <template #empty="{ pending: pending, query }">
-              <BasePlaceload v-if="pending" />
+            <template
+              #empty="{
+                pending: pendingAutocomplete,
+                query: queryAutocomplete,
+              }"
+            >
+              <BasePlaceload v-if="pendingAutocomplete" />
               <span
-                v-else-if="!query"
+                v-else-if="!queryAutocomplete"
                 class="text-muted-700 dark:text-muted-400 cursor-default select-none"
               >
                 Ex: Delivery app project...
@@ -99,7 +104,7 @@ const selectedProject = ref('')
           </BaseAutocomplete>
         </div>
       </div>
-      <div class="grid sm:grid-cols-2 gap-4">
+      <div class="grid gap-4 sm:grid-cols-2">
         <TransitionGroup
           enter-active-class="transform-gpu"
           enter-from-class="opacity-0 -translate-x-full"
@@ -111,15 +116,15 @@ const selectedProject = ref('')
           <NuxtLink
             v-for="(item, r) in data?.recent.slice(0, 4)"
             :key="r"
-            class="block group"
+            class="group block"
             :to="`/layouts/projects/details/${item.slug}`"
           >
             <BaseCard
               shape="curved"
               elevated-hover
-              class="p-5 group-hover:!border-primary-500"
+              class="group-hover:!border-primary-500 p-5"
             >
-              <div class="flex gap-2 mb-6">
+              <div class="mb-6 flex gap-2">
                 <BaseAvatar
                   :src="item.customer.logo"
                   size="sm"
@@ -153,15 +158,15 @@ const selectedProject = ref('')
                     class="bg-muted-100 dark:bg-muted-700"
                   />
                 </div>
-                <div class="flex items-center gap-4 text-muted-400">
+                <div class="text-muted-400 flex items-center gap-4">
                   <div class="flex items-center gap-1 text-sm">
-                    <Icon name="ph:paperclip-duotone" class="w-4 h-4" />
+                    <Icon name="ph:paperclip-duotone" class="h-4 w-4" />
                     <span class="font-sans">
                       {{ item.files.length }}
                     </span>
                   </div>
                   <div class="flex items-center gap-1 text-sm">
-                    <Icon name="ph:users-duotone" class="w-4 h-4" />
+                    <Icon name="ph:users-duotone" class="h-4 w-4" />
                     <span class="font-sans">{{ item.team.length }}</span>
                   </div>
                 </div>

@@ -51,7 +51,7 @@ const { data, pending, error, refresh } = await useFetch(
       <template #right>
         <BaseButton class="w-full sm:w-32" shape="curved">Manage</BaseButton>
         <BaseButton color="primary" class="w-full sm:w-32" shape="curved">
-          <Icon name="lucide:plus" class="w-4 h-4" />
+          <Icon name="lucide:plus" class="h-4 w-4" />
           <span>Upload</span>
         </BaseButton>
       </template>
@@ -77,7 +77,7 @@ const { data, pending, error, refresh } = await useFetch(
         </div>
         <div
           v-else
-          class="grid sm:grid-cols-2 ltablet:grid-cols-3 lg:grid-cols-3 gap-4"
+          class="ltablet:grid-cols-3 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
         >
           <TransitionGroup
             enter-active-class="transform-gpu"
@@ -93,7 +93,7 @@ const { data, pending, error, refresh } = await useFetch(
               shape="curved"
               class="p-3"
             >
-              <div class="w-full flex items-center gap-2">
+              <div class="flex w-full items-center gap-2">
                 <img :src="item.icon" :alt="item.name" class="max-w-[46px]" />
                 <div>
                   <BaseHeading tag="h3" size="sm" weight="medium">
@@ -101,7 +101,7 @@ const { data, pending, error, refresh } = await useFetch(
                   </BaseHeading>
                   <BaseParagraph size="xs" class="text-muted-400">
                     <span>{{ item.size }}</span>
-                    <span class="text-base px-1 leading-tight">&middot;</span>
+                    <span class="px-1 text-base leading-tight">&middot;</span>
                     <span>v{{ item.version }}</span>
                   </BaseParagraph>
                 </div>
@@ -122,7 +122,7 @@ const { data, pending, error, refresh } = await useFetch(
                       <template #start>
                         <Icon
                           name="ph:upload-duotone"
-                          class="w-5 h-5 block me-2"
+                          class="me-2 block h-5 w-5"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -134,7 +134,7 @@ const { data, pending, error, refresh } = await useFetch(
                       <template #start>
                         <Icon
                           name="ph:download-duotone"
-                          class="w-5 h-5 block me-2"
+                          class="me-2 block h-5 w-5"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -147,7 +147,7 @@ const { data, pending, error, refresh } = await useFetch(
                       <template #start>
                         <Icon
                           name="ph:lock-duotone"
-                          class="w-5 h-5 block me-2"
+                          class="me-2 block h-5 w-5"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -159,7 +159,7 @@ const { data, pending, error, refresh } = await useFetch(
                       <template #start>
                         <Icon
                           name="ph:share-duotone"
-                          class="w-5 h-5 block me-2"
+                          class="me-2 block h-5 w-5"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -172,7 +172,7 @@ const { data, pending, error, refresh } = await useFetch(
                       <template #start>
                         <Icon
                           name="ph:trash-duotone"
-                          class="w-5 h-5 block me-2"
+                          class="me-2 block h-5 w-5"
                         />
                       </template>
                     </BaseDropdownItem>

@@ -89,23 +89,23 @@ const onSubmit = handleSubmit(async (values) => {
 </script>
 
 <template>
-  <div class="flex flex-col md:flex-row w-full h-screen items-center">
+  <div class="flex h-screen w-full flex-col items-center md:flex-row">
     <div
-      class="bg-muted-100 dark:bg-muted-900 hidden lg:block w-full md:w-1/2 xl:w-2/3 h-screen"
+      class="bg-muted-100 dark:bg-muted-900 hidden h-screen w-full md:w-1/2 lg:block xl:w-2/3"
     ></div>
 
     <div
-      class="bg-white dark:bg-muted-800 w-full md:max-w-md lg:max-w-full md:mx-auto md:w-1/2 xl:w-1/3 h-screen px-6 lg:px-16 xl:px-12 flex items-center justify-center"
+      class="dark:bg-muted-800 flex h-screen w-full items-center justify-center bg-white px-6 md:mx-auto md:w-1/2 md:max-w-md lg:max-w-full lg:px-16 xl:w-1/3 xl:px-12"
     >
       <div
-        class="w-full max-w-xs mx-auto h-full flex flex-col items-center justify-between py-8"
+        class="mx-auto flex h-full w-full max-w-xs flex-col items-center justify-between py-8"
       >
-        <div class="w-full max-w-xs mx-auto flex items-center justify-between">
+        <div class="mx-auto flex w-full max-w-xs items-center justify-between">
           <NuxtLink
             to="/dashboards"
             class="text-muted-400 hover:text-primary-500 dark:text-muted-700 dark:hover:text-primary-500 transition-colors duration-300"
           >
-            <TairoLogo class="w-10 h-10" />
+            <TairoLogo class="h-10 w-10" />
           </NuxtLink>
           <div>
             <BaseThemeToggle />
@@ -115,7 +115,7 @@ const onSubmit = handleSubmit(async (values) => {
           <BaseHeading as="h2" size="3xl" weight="medium">
             Welcome back!
           </BaseHeading>
-          <BaseParagraph size="sm" class="mb-6 text-muted-400">
+          <BaseParagraph size="sm" class="text-muted-400 mb-6">
             Enter your account credentials to sign in
           </BaseParagraph>
 
@@ -181,7 +181,7 @@ const onSubmit = handleSubmit(async (values) => {
               <div class="text-sm leading-5">
                 <NuxtLink
                   to="/auth/recover"
-                  class="font-sans font-medium text-xs text-primary-600 hover:text-primary-500 underline-offset-4 hover:underline transition ease-in-out duration-150"
+                  class="text-primary-600 hover:text-primary-500 font-sans text-xs font-medium underline-offset-4 transition duration-150 ease-in-out hover:underline"
                 >
                   Forgot your password?
                 </NuxtLink>
@@ -196,7 +196,7 @@ const onSubmit = handleSubmit(async (values) => {
                   :loading="isSubmitting"
                   type="submit"
                   color="primary"
-                  class="w-full !h-11"
+                  class="!h-11 w-full"
                 >
                   Sign in
                 </BaseButton>
@@ -205,22 +205,22 @@ const onSubmit = handleSubmit(async (values) => {
           </form>
 
           <hr
-            class="my-6 border-t border-muted-200 dark:border-muted-700 w-full"
+            class="border-muted-200 dark:border-muted-700 my-6 w-full border-t"
           />
 
-          <BaseButton class="w-full !h-11">
-            <Icon name="logos:google-icon" class="w-4 h-4 me-1" />
+          <BaseButton class="!h-11 w-full">
+            <Icon name="logos:google-icon" class="me-1 h-4 w-4" />
             <span>Sign In with Google</span>
           </BaseButton>
 
           <!--No account link-->
           <p
-            class="flex justify-between mt-4 font-sans text-xs leading-5 text-muted-400"
+            class="text-muted-400 mt-4 flex justify-between font-sans text-xs leading-5"
           >
             <span>Don't have an account?</span>
             <NuxtLink
               to="/auth/signup-1"
-              class="font-medium text-primary-600 hover:text-primary-500 underline-offset-4 hover:underline transition ease-in-out duration-150"
+              class="text-primary-600 hover:text-primary-500 font-medium underline-offset-4 transition duration-150 ease-in-out hover:underline"
             >
               Create Account
             </NuxtLink>

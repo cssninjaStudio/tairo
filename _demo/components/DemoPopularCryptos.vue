@@ -28,16 +28,16 @@ const currencies = [
 </script>
 
 <template>
-  <div class="space-y-5 mb-2">
+  <div class="mb-2 space-y-5">
     <div
       v-for="currency in currencies"
       :key="currency.id"
       class="flex items-center gap-3"
     >
       <div
-        class="h-10 w-10 flex items-center justify-center rounded-full border border-muted-200 dark:border-muted-700"
+        class="border-muted-200 dark:border-muted-700 flex h-10 w-10 items-center justify-center rounded-full border"
       >
-        <Icon :name="currency.icon" class="w-7 h-7 text-muted-400" />
+        <Icon :name="currency.icon" class="text-muted-400 h-7 w-7" />
       </div>
       <div>
         <BaseHeading
@@ -53,9 +53,9 @@ const currencies = [
           <span class="text-muted-400">{{ currency.fullName }} token</span>
         </BaseParagraph>
       </div>
-      <div class="flex items-center ms-auto">
+      <div class="ms-auto flex items-center">
         <BaseButtonIcon shape="curved" muted class="scale-75">
-          <Icon name="lucide:arrow-right" class="w-5 h-5" />
+          <Icon name="lucide:arrow-right" class="h-5 w-5" />
         </BaseButtonIcon>
       </div>
     </div>

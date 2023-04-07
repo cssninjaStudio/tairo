@@ -51,7 +51,7 @@ const { data, pending, error, refresh } = await useFetch(
       <template #right>
         <BaseButton shape="curved" class="w-full sm:w-32">Settings</BaseButton>
         <BaseButton shape="curved" color="primary" class="w-full sm:w-32">
-          <Icon name="lucide:plus" class="w-4 h-4" />
+          <Icon name="lucide:plus" class="h-4 w-4" />
           <span>Create</span>
         </BaseButton>
       </template>
@@ -77,7 +77,7 @@ const { data, pending, error, refresh } = await useFetch(
         </div>
         <div v-else>
           <div
-            class="w-full grid sm:grid-cols-2 ltablet:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-4"
+            class="ltablet:grid-cols-3 grid w-full gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
           >
             <TransitionGroup
               enter-active-class="transform-gpu"
@@ -93,7 +93,7 @@ const { data, pending, error, refresh } = await useFetch(
                 shape="curved"
                 class="p-6"
               >
-                <div class="flex items-center justify-center mb-3">
+                <div class="mb-3 flex items-center justify-center">
                   <BaseAvatar
                     :src="item.owner.avatar"
                     :badge-src="item.image"
@@ -103,17 +103,17 @@ const { data, pending, error, refresh } = await useFetch(
                     class="bg-muted-500/20 text-muted-500"
                   />
                 </div>
-                <div class="flex flex-col items-center justify-between my-4">
+                <div class="my-4 flex flex-col items-center justify-between">
                   <div class="text-center" :data-tooltip="item.name">
                     <h4
-                      class="line-clamp-1 font-sans text-base font-medium text-muted-800 dark:text-muted-100"
+                      class="text-muted-800 dark:text-muted-100 line-clamp-1 font-sans text-base font-medium"
                     >
                       {{ item.name }}
                     </h4>
                     <div
-                      class="flex items-center justify-center gap-1 text-muted-400"
+                      class="text-muted-400 flex items-center justify-center gap-1"
                     >
-                      <Icon name="ph:calendar-blank-duotone" class="w-4 h-4" />
+                      <Icon name="ph:calendar-blank-duotone" class="h-4 w-4" />
                       <p class="font-sans text-sm">
                         {{ item.dueDate }}
                       </p>

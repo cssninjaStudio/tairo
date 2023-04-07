@@ -256,7 +256,7 @@ function useRadialPopularity() {
   <div>
     <!-- Header -->
     <div
-      class="flex flex-col sm:flex-row sm:items-center justify-between gap-y-4 mb-6"
+      class="mb-6 flex flex-col justify-between gap-y-4 sm:flex-row sm:items-center"
     >
       <div>
         <BaseParagraph size="sm" class="text-muted-500 dark:text-muted-400">
@@ -268,13 +268,13 @@ function useRadialPopularity() {
           class="text-muted-800 dark:text-white"
         >
           <span
-            class="after:content-['+3.4%'] after:relative after:-top-3 after:-end-2 after:text-sm after:text-success-500"
+            class="after:text-success-500 after:relative after:-end-2 after:-top-3 after:text-sm after:content-['+3.4%']"
           >
             {{ formatPrice(10584.3) }}
           </span>
         </BaseHeading>
       </div>
-      <div class="flex sm:justify-end gap-2">
+      <div class="flex gap-2 sm:justify-end">
         <BaseButtonAction
           :color="activePeriod === 'hour' ? 'primary' : 'default'"
           @click="activePeriod = 'hour'"
@@ -310,13 +310,13 @@ function useRadialPopularity() {
     <!-- Grid -->
     <div class="grid grid-cols-12 gap-4">
       <!-- Column -->
-      <div class="col-span-12 ltablet:col-span-8 lg:col-span-8 gap-4">
+      <div class="ltablet:col-span-8 col-span-12 gap-4 lg:col-span-8">
         <div class="flex flex-col gap-4">
           <!-- Tile grid -->
-          <div class="grid sm:grid-cols-3 gap-4">
+          <div class="grid gap-4 sm:grid-cols-3">
             <!-- Tile -->
             <div class="relative">
-              <BaseCard class="p-5 space-y-1">
+              <BaseCard class="space-y-1 p-5">
                 <BaseParagraph
                   size="xs"
                   class="text-muted-500 dark:text-muted-400"
@@ -334,7 +334,7 @@ function useRadialPopularity() {
             </div>
             <!-- Tile -->
             <div class="relative">
-              <BaseCard class="p-5 space-y-1">
+              <BaseCard class="space-y-1 p-5">
                 <BaseParagraph
                   size="xs"
                   class="text-muted-500 dark:text-muted-400"
@@ -352,7 +352,7 @@ function useRadialPopularity() {
             </div>
             <!-- Tile -->
             <div class="relative">
-              <BaseCard class="p-5 space-y-1">
+              <BaseCard class="space-y-1 p-5">
                 <BaseParagraph
                   size="xs"
                   class="text-muted-500 dark:text-muted-400"
@@ -388,11 +388,11 @@ function useRadialPopularity() {
             <AddonApexcharts v-bind="areaBtcPrice" />
           </BaseCard>
           <!-- Subgrid -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <!-- Chart -->
             <div class="relative">
               <BaseCard class="p-6">
-                <div class="flex items-center justify-between mb-6">
+                <div class="mb-6 flex items-center justify-between">
                   <BaseHeading
                     as="h3"
                     size="md"
@@ -404,7 +404,7 @@ function useRadialPopularity() {
                   </BaseHeading>
                   <NuxtLink
                     to="#"
-                    class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
+                    class="bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline"
                   >
                     Buy BTC
                   </NuxtLink>
@@ -415,7 +415,7 @@ function useRadialPopularity() {
             <!-- Chart -->
             <div class="relative">
               <BaseCard class="p-6">
-                <div class="flex items-center justify-between mb-6">
+                <div class="mb-6 flex items-center justify-between">
                   <BaseHeading
                     as="h3"
                     size="md"
@@ -427,7 +427,7 @@ function useRadialPopularity() {
                   </BaseHeading>
                   <NuxtLink
                     to="#"
-                    class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
+                    class="bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline"
                   >
                     Buy BTC
                   </NuxtLink>
@@ -439,12 +439,12 @@ function useRadialPopularity() {
         </div>
       </div>
       <!-- Column -->
-      <div class="col-span-12 ltablet:col-span-4 lg:col-span-4">
+      <div class="ltablet:col-span-4 col-span-12 lg:col-span-4">
         <div class="flex flex-col gap-4">
           <!-- Currency -->
           <div class="relative">
             <BaseCard class="p-8">
-              <div class="flex items-center gap-2 mb-6">
+              <div class="mb-6 flex items-center gap-2">
                 <Icon
                   name="cryptocurrency:btc"
                   class="h-9 w-9 text-orange-400"
@@ -488,7 +488,7 @@ function useRadialPopularity() {
                   amet, consectetur adipiscing elit.
                 </BaseParagraph>
               </div>
-              <div class="flex items-center gap-2 mt-6">
+              <div class="mt-6 flex items-center gap-2">
                 <BaseButton color="default" class="w-full">
                   <span>Compare</span>
                 </BaseButton>
@@ -502,7 +502,7 @@ function useRadialPopularity() {
           <div class="relative">
             <BaseCard class="p-6">
               <!-- Title -->
-              <div class="flex items-center justify-between mb-8">
+              <div class="mb-8 flex items-center justify-between">
                 <BaseHeading
                   as="h3"
                   size="md"
@@ -514,7 +514,7 @@ function useRadialPopularity() {
                 </BaseHeading>
                 <NuxtLink
                   to="#"
-                  class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
+                  class="bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline"
                 >
                   View All
                 </NuxtLink>
@@ -526,7 +526,7 @@ function useRadialPopularity() {
           <div class="relative">
             <BaseCard class="p-6">
               <!-- Title -->
-              <div class="flex items-center justify-between mb-8">
+              <div class="mb-8 flex items-center justify-between">
                 <BaseHeading
                   as="h3"
                   size="md"
@@ -538,7 +538,7 @@ function useRadialPopularity() {
                 </BaseHeading>
                 <NuxtLink
                   to="#"
-                  class="font-sans font-medium text-sm py-2 px-4 rounded-lg bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 underline-offset-4 hover:underline transition-colors duration-300"
+                  class="bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline"
                 >
                   View All
                 </NuxtLink>

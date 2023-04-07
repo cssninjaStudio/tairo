@@ -677,18 +677,10 @@ async function submitMessage() {
                 placeholder="Search"
               />
             </div>
-            <div
-              class="relative -end-4 flex h-16 w-full scale-90 items-center justify-end gap-2 sm:end-0 sm:scale-100"
-            >
-              <template v-for="tool of (app.tairo.toolbar as any).tools">
-                <component
-                  :is="resolveComponent(tool.component)"
-                  v-if="tool.component"
-                  :key="tool.component"
-                  v-bind="tool.props"
-                />
-              </template>
-            </div>
+
+            <TairoSidebarTools
+              class="relative -end-4 z-20 flex h-16 w-full scale-90 items-center justify-end gap-2 sm:end-0 sm:scale-100"
+            />
           </div>
           <!-- Body -->
           <div
@@ -785,23 +777,23 @@ async function submitMessage() {
             <!-- Messages loop -->
             <div v-if="!loading" class="space-y-12">
               <div
-                v-for="(message, index) in selectedConversation?.messages"
+                v-for="(item, index) in selectedConversation?.messages"
                 :key="index"
                 class="relative flex w-full gap-4"
                 :class="[
-                  message.type === 'received' ? 'flex-row' : 'flex-row-reverse',
-                  message.type === 'separator' ? 'justify-center' : '',
+                  item.type === 'received' ? 'flex-row' : 'flex-row-reverse',
+                  item.type === 'separator' ? 'justify-center' : '',
                 ]"
               >
-                <template v-if="message.type !== 'separator'">
+                <template v-if="item.type !== 'separator'">
                   <div class="shrink-0">
                     <BaseAvatar
-                      v-if="message.type === 'received'"
+                      v-if="item.type === 'received'"
                       :src="selectedConversation?.user.photo"
                       size="xs"
                     />
                     <BaseAvatar
-                      v-else-if="message.type === 'sent'"
+                      v-else-if="item.type === 'sent'"
                       src="/img/avatars/2.svg"
                       size="xs"
                     />
@@ -810,30 +802,30 @@ async function submitMessage() {
                     <div
                       class="bg-muted-200 dark:bg-muted-800 rounded-xl p-4"
                       :class="[
-                        message.type === 'received' ? 'rounded-ss-none' : '',
-                        message.type === 'sent' ? 'rounded-se-none' : '',
+                        item.type === 'received' ? 'rounded-ss-none' : '',
+                        item.type === 'sent' ? 'rounded-se-none' : '',
                       ]"
                     >
-                      <p class="font-sans text-sm">{{ message.text }}</p>
+                      <p class="font-sans text-sm">{{ item.text }}</p>
                     </div>
                     <div
                       class="text-muted-400 mt-1 font-sans text-xs"
-                      :class="message.type === 'received' ? 'text-right' : ''"
+                      :class="item.type === 'received' ? 'text-right' : ''"
                     >
-                      {{ message.time }}
+                      {{ item.time }}
                     </div>
                     <div
-                      v-if="message.attachments.length > 0"
+                      v-if="item.attachments.length > 0"
                       class="mt-2 space-y-2"
                     >
                       <template
-                        v-for="(attachment, index) in message.attachments"
-                        :key="index"
+                        v-for="(attachment, idx) in item.attachments"
+                        :key="idx"
                       >
                         <div
                           v-if="attachment.type === 'image'"
                           class="dark:bg-muted-800 max-w-xs rounded-2xl bg-white p-2"
-                          :class="message.type === 'sent' ? 'ms-auto' : ''"
+                          :class="item.type === 'sent' ? 'ms-auto' : ''"
                         >
                           <img
                             :src="attachment.image"
@@ -845,7 +837,7 @@ async function submitMessage() {
                           :to="`https://${attachment.url}`"
                           v-else-if="attachment.type === 'link'"
                           class="dark:bg-muted-800 block max-w-xs rounded-2xl bg-white p-2"
-                          :class="message.type === 'sent' ? 'ms-auto' : ''"
+                          :class="item.type === 'sent' ? 'ms-auto' : ''"
                         >
                           <img
                             :src="attachment.image"
@@ -880,7 +872,7 @@ async function submitMessage() {
                     <span
                       class="bg-muted-100 dark:bg-muted-900 text-muted-400 px-3 font-sans text-xs uppercase"
                     >
-                      {{ message.time }}
+                      {{ item.time }}
                     </span>
                   </div>
                 </div>
@@ -1033,27 +1025,7 @@ async function submitMessage() {
         </div>
       </div>
     </div>
-    <!-- Active Panel -->
-    <Transition
-      enter-active-class="transition-transform duration-300 ease-out"
-      :enter-from-class="
-        panels.transitionFrom === 'left'
-          ? '-translate-x-full'
-          : 'translate-x-full'
-      "
-      leave-active-class="transition-transform duration-300 ease-in"
-      :leave-to-class="
-        panels.transitionFrom === 'left'
-          ? '-translate-x-full'
-          : 'translate-x-full'
-      "
-    >
-      <component
-        :is="resolveComponent(panels.current.component)"
-        v-if="panels.current?.component"
-        class="fixed top-0 z-[100] h-full w-96"
-        :class="[panels.current.position === 'left' ? 'start-0' : 'end-0']"
-      />
-    </Transition>
+
+    <TairoPanels />
   </div>
 </template>

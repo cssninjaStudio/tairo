@@ -53,31 +53,31 @@ const onSubmit = handleSubmit(async (values) => {
 
 <template>
   <div
-    class="relative w-full min-h-screen px-4 bg-muted-100 dark:bg-muted-900 overflow-hidden"
+    class="bg-muted-100 dark:bg-muted-900 relative min-h-screen w-full overflow-hidden px-4"
   >
     <div
-      class="h-16 w-full max-w-6xl mx-auto px-4 flex items-center justify-between"
+      class="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-4"
     >
       <NuxtLink
         to="/dashboards"
         class="text-muted-400 hover:text-primary-500 dark:text-muted-700 dark:hover:text-primary-500 transition-colors duration-300"
       >
-        <TairoLogo class="w-10 h-10" />
+        <TairoLogo class="h-10 w-10" />
       </NuxtLink>
       <div>
         <BaseThemeToggle />
       </div>
     </div>
-    <div class="w-full flex items-center justify-center">
-      <div class="relative w-full max-w-2xl mx-auto">
+    <div class="flex w-full items-center justify-center">
+      <div class="relative mx-auto w-full max-w-2xl">
         <!--Form-->
-        <div class="me-auto ms-auto w-full mt-4">
-          <div class="w-full max-w-md me-auto ms-auto mt-4">
+        <div class="me-auto ms-auto mt-4 w-full">
+          <div class="me-auto ms-auto mt-4 w-full max-w-md">
             <div class="text-center">
               <BaseHeading as="h2" size="3xl" weight="medium">
                 Recover Password
               </BaseHeading>
-              <BaseParagraph size="sm" class="mb-6 text-muted-400">
+              <BaseParagraph size="sm" class="text-muted-400 mb-6">
                 Follow the instuctions sent to your email address
               </BaseParagraph>
             </div>
@@ -91,7 +91,7 @@ const onSubmit = handleSubmit(async (values) => {
               leave-to-class="scale-0 opacity-0"
             >
               <div v-if="success" class="px-8 py-4">
-                <div class="space-y-4 mb-4">
+                <div class="mb-4 space-y-4">
                   <BaseMessage class="p-6" :closable="false">
                     <p class="text-base">
                       An email has been sent to you with instructions on how to
@@ -114,7 +114,7 @@ const onSubmit = handleSubmit(async (values) => {
                 class="px-8 py-4"
                 novalidate
               >
-                <div class="space-y-4 mb-4">
+                <div class="mb-4 space-y-4">
                   <Field
                     v-slot="{ field, errorMessage, handleChange, handleBlur }"
                     name="email"
@@ -142,19 +142,19 @@ const onSubmit = handleSubmit(async (values) => {
                     :loading="isSubmitting"
                     type="submit"
                     color="primary"
-                    class="w-full !h-12"
+                    class="!h-12 w-full"
                   >
                     Recover Password
                   </BaseButton>
                 </div>
                 <!--No account link-->
                 <p
-                  class="flex justify-between mt-4 font-sans text-sm leading-5 text-muted-400"
+                  class="text-muted-400 mt-4 flex justify-between font-sans text-sm leading-5"
                 >
                   <span>False alert?</span>
                   <NuxtLink
                     to="/auth/login-1"
-                    class="font-medium text-primary-600 hover:text-primary-500 underline-offset-4 hover:underline transition ease-in-out duration-150"
+                    class="text-primary-600 hover:text-primary-500 font-medium underline-offset-4 transition duration-150 ease-in-out hover:underline"
                   >
                     Sign in
                   </NuxtLink>

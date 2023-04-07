@@ -16,6 +16,9 @@ export default defineAppConfig({
       tools: [
         {
           component: 'BaseThemeToggle',
+          props: {
+            disableTransitions: true,
+          },
         },
         {
           component: 'DemoToolbarLanguage',
@@ -38,6 +41,7 @@ export default defineAppConfig({
           component: 'BaseThemeToggle',
           props: {
             class: 'ms-auto',
+            disableTransitions: true,
             inverted: true,
           },
         },

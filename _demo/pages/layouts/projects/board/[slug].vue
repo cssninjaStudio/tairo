@@ -129,7 +129,7 @@ function onDrop(column: ColumnContent, dropResult: any) {
   >
     <div
       v-if="data?.project !== undefined"
-      class="h-12 flex items-center justify-between pe-4 xl:pe-10"
+      class="flex h-12 items-center justify-between pe-4 xl:pe-10"
     >
       <div class="flex items-center gap-2">
         <BaseAvatar :src="data?.project.customer.logo" size="xs" />
@@ -149,42 +149,40 @@ function onDrop(column: ColumnContent, dropResult: any) {
           shape="curved"
           data-tooltip="Project details"
         >
-          <Icon name="lucide:layout-template" class="w-4 h-4" />
+          <Icon name="lucide:layout-template" class="h-4 w-4" />
         </BaseButtonIcon>
         <BaseButtonIcon shape="full" data-tooltip="New task">
-          <Icon name="lucide:plus" class="w-4 h-4" />
+          <Icon name="lucide:plus" class="h-4 w-4" />
         </BaseButtonIcon>
       </div>
     </div>
-    <div
-      class="h-[calc(100vh_-_133px)] pt-2 flex flex-grow space-x-6 overflow-auto"
-    >
+    <div class="flex h-[calc(100vh_-_133px)] grow space-x-6 overflow-auto pt-2">
       <!-- Column -->
       <div
-        v-for="(column, index) in board"
+        v-for="column in board"
         :key="column.title"
-        class="flex flex-col flex-shrink-0 h-full w-72"
+        class="flex h-full w-72 shrink-0 flex-col"
       >
         <!-- Column header -->
-        <div class="flex items-center flex-shrink-0 h-14 px-2">
+        <div class="flex h-14 shrink-0 items-center px-2">
           <!-- Column title -->
-          <span class="font-sans block text-sm font-semibold">{{
+          <span class="block font-sans text-sm font-semibold">{{
             column.title
           }}</span>
           <!-- Column count -->
           <span
-            class="flex items-center justify-center w-5 h-5 ms-2 text-sm font-semibold text-primary-500 dark:text-sunny"
+            class="text-primary-500 dark:text-sunny ms-2 flex h-5 w-5 items-center justify-center text-sm font-semibold"
             >{{ column.tasks.length }}</span
           >
           <!-- Column action -->
           <button
-            class="flex items-center justify-center w-6 h-6 ms-auto text-primary-500 dark:text-sunny rounded-full hover:bg-primary-500/20 dark:hover:bg-sunny/20 transition-colors duration-300"
+            class="text-primary-500 dark:text-sunny hover:bg-primary-500/20 dark:hover:bg-sunny/20 ms-auto flex h-6 w-6 items-center justify-center rounded-full transition-colors duration-300"
           >
-            <Icon name="lucide:plus" class="w-4 h-4" />
+            <Icon name="lucide:plus" class="h-4 w-4" />
           </button>
         </div>
         <!-- Scrollable area -->
-        <div class="pb-10 pe-2 overflow-auto slimscroll">
+        <div class="slimscroll overflow-auto pb-10 pe-2">
           <Container
             tag="div"
             class="flex flex-col gap-y-4"
@@ -202,19 +200,19 @@ function onDrop(column: ColumnContent, dropResult: any) {
             <template v-if="column.tasks.length > 0">
               <Draggable v-for="task in column.tasks" :key="task.id">
                 <div
-                  class="relative flex flex-col items-start p-4 border border-muted-200 dark:border-muted-700 bg-white dark:bg-muted-800 rounded-lg cursor-pointer bg-opacity-90 group hover:bg-opacity-100"
+                  class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 group relative flex cursor-pointer flex-col items-start rounded-lg border bg-white/90 p-4 hover:bg-white"
                   draggable="true"
                   @click="() => openTaskPanel(task.id, data?.project.tasks)"
                 >
                   <div class="relative mb-2">
                     <div
-                      class="w-full flex items-center justify-between gap-2 mb-2"
+                      class="mb-2 flex w-full items-center justify-between gap-2"
                     >
                       <BaseTag
                         shape="full"
                         flavor="pastel"
                         color="muted"
-                        class="py-0 h-6 font-semibold inline-flex items-center text-xs m-0 scale-90 -ms-1"
+                        class="m-0 -ms-1 inline-flex h-6 scale-90 items-center py-0 text-xs font-semibold"
                         >Task #{{ task.id }}</BaseTag
                       >
                       <BaseText size="xs" class="text-muted-400">{{
@@ -231,19 +229,19 @@ function onDrop(column: ColumnContent, dropResult: any) {
                     </BaseHeading>
                   </div>
                   <div
-                    class="flex items-center justify-between w-full mt-2 text-xs font-medium text-muted-500 dark:text-muted-200"
+                    class="text-muted-500 dark:text-muted-200 mt-2 flex w-full items-center justify-between text-xs font-medium"
                   >
                     <div class="flex items-center gap-2">
                       <BaseAvatar
                         :src="task.assignee.src"
                         size="xxs"
-                        class="flex-shrink-0"
+                        class="shrink-0"
                       />
                       <BaseText size="xs" class="text-muted-400">{{
                         task.assignee.tooltip
                       }}</BaseText>
                     </div>
-                    <div class="flex items-center gap-3 text-muted-400">
+                    <div class="text-muted-400 flex items-center gap-3">
                       <div
                         v-if="task.checklist.length > 0"
                         :data-tooltip="`${task.checklist.length} subtask${
@@ -251,7 +249,7 @@ function onDrop(column: ColumnContent, dropResult: any) {
                         } in checklist`"
                         data-tooltip-position="left"
                       >
-                        <Icon name="lucide:check-circle" class="w-4 h-4" />
+                        <Icon name="lucide:check-circle" class="h-4 w-4" />
                       </div>
                       <div
                         v-if="task.files.length > 0"
@@ -260,7 +258,7 @@ function onDrop(column: ColumnContent, dropResult: any) {
                         } uploaded`"
                         data-tooltip-position="left"
                       >
-                        <Icon name="lucide:file" class="w-4 h-4" />
+                        <Icon name="lucide:file" class="h-4 w-4" />
                       </div>
                       <div
                         v-if="task.comments.length > 0"
@@ -269,7 +267,7 @@ function onDrop(column: ColumnContent, dropResult: any) {
                         }`"
                         data-tooltip-position="left"
                       >
-                        <Icon name="lucide:message-circle" class="w-4 h-4" />
+                        <Icon name="lucide:message-circle" class="h-4 w-4" />
                       </div>
                     </div>
                   </div>
@@ -279,27 +277,27 @@ function onDrop(column: ColumnContent, dropResult: any) {
             <!-- Placeholder -->
             <div v-else>
               <div
-                class="flex items-center justify-center mt-10 text-muted-400"
+                class="text-muted-400 mt-10 flex items-center justify-center"
               >
-                <Icon name="ph:kanban-thin" class="w-12 h-12" />
+                <Icon name="ph:kanban-thin" class="h-12 w-12" />
               </div>
-              <div class="text-center mt-2">
+              <div class="mt-2 text-center">
                 <BaseHeading as="h4" size="md" weight="light" class="mb-1">
                   <span>Nothing to show</span>
                 </BaseHeading>
                 <BaseParagraph
                   size="xs"
                   lead="tight"
-                  class="!font-sans max-w-[200px] mx-auto text-muted-500 dark:text-muted-400"
+                  class="text-muted-500 dark:text-muted-400 mx-auto max-w-[200px] !font-sans"
                 >
                   <span
                     >There are no pending tasks to show in here for now.</span
                   >
                 </BaseParagraph>
                 <button
-                  class="font-sans flex items-center justify-center gap-1 mx-auto mt-2 text-xs underline-offset-4 text-primary-500 dark:text-sunny hover:underline"
+                  class="text-primary-500 dark:text-sunny mx-auto mt-2 flex items-center justify-center gap-1 font-sans text-xs underline-offset-4 hover:underline"
                 >
-                  <Icon name="lucide:plus" class="w-3 h-3" />
+                  <Icon name="lucide:plus" class="h-3 w-3" />
                   <span>New Task</span>
                 </button>
               </div>
@@ -308,23 +306,23 @@ function onDrop(column: ColumnContent, dropResult: any) {
         </div>
       </div>
       <!-- Add Column -->
-      <div class="flex flex-col flex-shrink-0 w-72">
+      <div class="flex w-72 shrink-0 flex-col">
         <!-- Column header -->
-        <div class="flex items-center flex-shrink-0 h-14 px-2">
+        <div class="flex h-14 shrink-0 items-center px-2">
           <!-- Column title -->
-          <span class="font-sans block text-sm font-semibold">Customize</span>
+          <span class="block font-sans text-sm font-semibold">Customize</span>
         </div>
         <!-- Add button -->
         <div class="w-full">
           <button
-            class="font-sans w-full h-12 flex items-center justify-center gap-x-2 px-6 rounded-xl text-muted-500 dark:text-muted-400 hover:text-primary-500 dark:hover:text-sunny border-2 border-dashed border-muted-300 dark:border-muted-600 hover:border-solid hover:border-primary-500 dark:hover:border-sunny transition-colors duration-300"
+            class="text-muted-500 dark:text-muted-400 hover:text-primary-500 dark:hover:text-sunny border-muted-300 dark:border-muted-600 hover:border-primary-500 dark:hover:border-sunny flex h-12 w-full items-center justify-center gap-x-2 rounded-xl border-2 border-dashed px-6 font-sans transition-colors duration-300 hover:border-solid"
           >
-            <Icon name="ph:gear-six-duotone" class="w-4 h-4" />
+            <Icon name="ph:gear-six-duotone" class="h-4 w-4" />
             <span class="text-sm">Manage columns</span>
           </button>
         </div>
       </div>
-      <div class="flex-shrink-0 w-6"></div>
+      <div class="w-6 shrink-0"></div>
     </div>
   </TairoSidebarLayout>
 </template>

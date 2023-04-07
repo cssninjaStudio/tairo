@@ -48,10 +48,10 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 alt="Placeholder image"
               />
             </template>
-            <BaseButton class="w-40 mt-4">Add Experience</BaseButton>
+            <BaseButton class="mt-4 w-40">Add Experience</BaseButton>
           </BasePlaceholderPage>
         </div>
-        <div v-else class="max-w-lg mx-auto py-8 space-y-12">
+        <div v-else class="mx-auto max-w-lg space-y-12 py-8">
           <TairoFormGroup
             label="Previous Experiences"
             sublabel="This will help others assess your experience"
@@ -60,12 +60,12 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
               <div
                 v-for="item in data.personalInfo.experiences"
                 :key="item.company"
-                class="w-full flex items-center gap-2"
+                class="flex w-full items-center gap-2"
               >
                 <img
                   :src="item.logo"
                   :alt="item.company"
-                  class="max-w-[50px] rounded-full border border-muted-200 dark:border-muted-600 bg-white dark:bg-muted-700"
+                  class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 max-w-[50px] rounded-full border bg-white"
                 />
                 <div>
                   <BaseHeading tag="h3" size="sm" weight="medium">
@@ -96,7 +96,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                       <template #start>
                         <Icon
                           name="ph:pencil-duotone"
-                          class="w-5 h-5 block me-2"
+                          class="me-2 block h-5 w-5"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -108,7 +108,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                       <template #start>
                         <Icon
                           name="ph:trash-duotone"
-                          class="w-5 h-5 block me-2"
+                          class="me-2 block h-5 w-5"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -117,12 +117,12 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
               </div>
             </div>
             <div
-              class="w-full flex items-center gap-2 mt-8 pt-8 border-t border-muted-200 dark:border-muted-700"
+              class="border-muted-200 dark:border-muted-700 mt-8 flex w-full items-center gap-2 border-t pt-8"
             >
               <div
-                class="w-[50px] h-[50px] flex items-center justify-center rounded-full bg-muted-100 dark:bg-muted-700/60 text-muted-400"
+                class="bg-muted-100 dark:bg-muted-700/60 text-muted-400 flex h-[50px] w-[50px] items-center justify-center rounded-full"
               >
-                <Icon name="ph:suitcase-duotone" class="w-5 h-5" />
+                <Icon name="ph:suitcase-duotone" class="h-5 w-5" />
               </div>
               <div>
                 <BaseHeading tag="h3" size="sm" weight="medium">
@@ -134,7 +134,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
               </div>
               <div class="ms-auto">
                 <BaseButtonIcon shape="full" condensed>
-                  <Icon name="lucide:plus" class="w-4 h-4" />
+                  <Icon name="lucide:plus" class="h-4 w-4" />
                 </BaseButtonIcon>
               </div>
             </div>

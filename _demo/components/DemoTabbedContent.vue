@@ -16,7 +16,7 @@ const activeTab = ref('tab-1')
 
 <template>
   <div>
-    <div class="flex items-center justify-between mb-8">
+    <div class="mb-8 flex items-center justify-between">
       <slot>
         <BaseHeading
           v-if="props.title"
@@ -31,7 +31,7 @@ const activeTab = ref('tab-1')
       </slot>
       <div>
         <div
-          class="relative h-9 w-40 flex bg-muted-100 dark:bg-muted-700"
+          class="bg-muted-100 dark:bg-muted-700 relative flex h-9 w-40"
           :class="[
             props.shape === 'rounded' ? 'rounded-md' : '',
             props.shape === 'curved' ? 'rounded-xl' : '',
@@ -40,7 +40,7 @@ const activeTab = ref('tab-1')
         >
           <button
             type="button"
-            class="relative z-10 flex-1 flex items-center justify-center font-sans text-sm cursor-pointer nui-focus transition-colors duration-300"
+            class="nui-focus relative z-10 flex flex-1 cursor-pointer items-center justify-center font-sans text-sm transition-colors duration-300"
             :class="[
               activeTab === 'tab-1' ? 'text-white' : 'text-muted-400',
               props.shape === 'rounded' ? 'rounded-md' : '',
@@ -53,7 +53,7 @@ const activeTab = ref('tab-1')
           </button>
           <button
             type="button"
-            class="relative z-10 flex-1 flex items-center justify-center font-sans text-sm cursor-pointer nui-focus transition-colors duration-300"
+            class="nui-focus relative z-10 flex flex-1 cursor-pointer items-center justify-center font-sans text-sm transition-colors duration-300"
             :class="[
               activeTab === 'tab-2' ? 'text-white' : 'text-muted-400',
               props.shape === 'rounded' ? 'rounded-md' : '',
@@ -65,7 +65,7 @@ const activeTab = ref('tab-1')
             {{ props.labels[1] }}
           </button>
           <div
-            class="absolute top-0 start-0 w-1/2 h-full bg-primary-500 transition-all duration-300 ease-in-out"
+            class="bg-primary-500 absolute start-0 top-0 h-full w-1/2 transition-all duration-300 ease-in-out"
             :class="[
               activeTab === 'tab-1' ? 'ms-0' : 'ms-[50%]',
               props.shape === 'rounded' ? 'rounded-md' : '',

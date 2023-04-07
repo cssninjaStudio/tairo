@@ -103,13 +103,13 @@ const onSubmit = handleSubmit(async (values) => {
 <template>
   <div class="h-screen md:flex">
     <div
-      class="group relative overflow-hidden md:flex w-1/2 bg-gradient-to-tr from-primary-900 to-primary-500 i justify-around items-center hidden"
+      class="from-primary-900 to-primary-500 i group relative hidden w-1/2 items-center justify-around overflow-hidden bg-gradient-to-tr md:flex"
     >
-      <div class="max-w-xs mx-auto text-center">
+      <div class="mx-auto max-w-xs text-center">
         <BaseHeading as="h2" size="3xl" weight="medium" class="text-white">
           Have an Account?
         </BaseHeading>
-        <BaseParagraph size="sm" class="mb-3 text-muted-200">
+        <BaseParagraph size="sm" class="text-muted-200 mb-3">
           No need to waste time on this page, let's take you back to your
           account
         </BaseParagraph>
@@ -118,34 +118,34 @@ const onSubmit = handleSubmit(async (values) => {
         >
       </div>
       <div
-        class="absolute -top-6 -start-6 h-14 w-0 group-hover:w-72 origin-top-left rotate-45 bg-muted-200/20 rounded-full transition-all duration-300 delay-[25ms]"
+        class="bg-muted-200/20 absolute -start-6 -top-6 h-14 w-0 origin-top-left rotate-45 rounded-full transition-all delay-[25ms] duration-300 group-hover:w-72"
       ></div>
       <div
-        class="absolute -top-12 start-20 h-14 w-0 group-hover:w-48 origin-top-left rotate-45 bg-muted-200/20 rounded-full transition-all duration-300 delay-75"
+        class="bg-muted-200/20 absolute -top-12 start-20 h-14 w-0 origin-top-left rotate-45 rounded-full transition-all delay-75 duration-300 group-hover:w-48"
       ></div>
       <div
-        class="absolute top-24 -start-7 h-14 w-0 group-hover:w-40 origin-top-left rotate-45 bg-muted-200/20 rounded-full transition-all duration-300 delay-150"
+        class="bg-muted-200/20 absolute -start-7 top-24 h-14 w-0 origin-top-left rotate-45 rounded-full transition-all delay-150 duration-300 group-hover:w-40"
       ></div>
 
       <div
-        class="absolute -bottom-6 -end-6 h-14 w-0 group-hover:w-72 origin-bottom-right rotate-45 bg-muted-200/20 rounded-full transition-all duration-300 delay-150"
+        class="bg-muted-200/20 absolute -bottom-6 -end-6 h-14 w-0 origin-bottom-right rotate-45 rounded-full transition-all delay-150 duration-300 group-hover:w-72"
       ></div>
       <div
-        class="absolute -bottom-12 end-20 h-14 w-0 group-hover:w-48 origin-bottom-right rotate-45 bg-muted-200/20 rounded-full transition-all duration-300 delay-75"
+        class="bg-muted-200/20 absolute -bottom-12 end-20 h-14 w-0 origin-bottom-right rotate-45 rounded-full transition-all delay-75 duration-300 group-hover:w-48"
       ></div>
       <div
-        class="absolute bottom-24 -end-7 h-14 w-0 group-hover:w-40 origin-bottom-right rotate-45 bg-muted-200/20 rounded-full transition-all duration-300 delay-[25ms]"
+        class="bg-muted-200/20 absolute -end-7 bottom-24 h-14 w-0 origin-bottom-right rotate-45 rounded-full transition-all delay-[25ms] duration-300 group-hover:w-40"
       ></div>
     </div>
     <div
-      class="flex flex-col items-center justify-between md:w-1/2 py-10 bg-white dark:bg-muted-900"
+      class="dark:bg-muted-900 flex flex-col items-center justify-between bg-white py-10 md:w-1/2"
     >
-      <div class="w-full max-w-xs mx-auto flex items-center justify-between">
+      <div class="mx-auto flex w-full max-w-xs items-center justify-between">
         <NuxtLink
           to="/dashboards"
           class="text-muted-400 hover:text-primary-500 dark:text-muted-700 dark:hover:text-primary-500 transition-colors duration-300"
         >
-          <TairoLogo class="w-10 h-10" />
+          <TairoLogo class="h-10 w-10" />
         </NuxtLink>
         <div>
           <BaseThemeToggle />
@@ -155,17 +155,17 @@ const onSubmit = handleSubmit(async (values) => {
         method="POST"
         action=""
         @submit.prevent="onSubmit"
-        class="w-full max-w-xs mx-auto"
+        class="mx-auto w-full max-w-xs"
         novalidate
       >
         <BaseHeading as="h2" size="3xl" weight="medium">
           Welcome to Tairo
         </BaseHeading>
-        <BaseParagraph size="sm" class="mb-6 text-muted-400">
+        <BaseParagraph size="sm" class="text-muted-400 mb-6">
           Let's start by creating you account
         </BaseParagraph>
 
-        <div class="space-y-3 mb-4">
+        <div class="mb-4 space-y-3">
           <Field
             v-slot="{ field, errorMessage, handleChange, handleBlur }"
             name="username"
@@ -237,18 +237,18 @@ const onSubmit = handleSubmit(async (values) => {
           type="submit"
           shape="curved"
           color="primary"
-          class="w-full !h-11"
+          class="!h-11 w-full"
         >
           Create Account
         </BaseButton>
         <!--No account link-->
         <p
-          class="flex justify-between mt-4 font-sans text-sm leading-5 text-muted-400"
+          class="text-muted-400 mt-4 flex justify-between font-sans text-sm leading-5"
         >
           <span>Have an account?</span>
           <NuxtLink
             to="/auth/login-1"
-            class="font-medium underline-offset-4 hover:underline text-primary-600 hover:text-primary-500 focus:outline-none focus:underline transition ease-in-out duration-150"
+            class="text-primary-600 hover:text-primary-500 font-medium underline-offset-4 transition duration-150 ease-in-out hover:underline focus:underline focus:outline-none"
           >
             Login here
           </NuxtLink>

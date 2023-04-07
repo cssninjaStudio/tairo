@@ -20,13 +20,13 @@
     "lint": "run-s lint:eslint:fix lint:eslint:fix-demo lint:prettier:fix",
     "lint:prettier": "prettier --check \"./**/*.(ts|vue|css|md)\"",
     "lint:prettier:fix": "prettier --write \"./**/*.(ts|vue|css|md)\"",
-    "lint:eslint": "eslint -c .eslintrc.cjs .",
-    "lint:eslint:fix": "eslint -c .eslintrc.cjs --fix .",
+    "lint:eslint": "eslint -c .eslintrc.cjs --ext .vue,.ts .",
+    "lint:eslint:fix": "eslint -c .eslintrc.cjs --fix --ext .vue,.ts .",
     "lint:eslint:fix-demo": "eslint -c _documentation/examples/.eslintrc.cjs --fix --ext .vue _documentation/examples"
   },
   "dependencies": {
     "@cssninja/nuxt-toaster": "^0.3.10",
-    "@cssninja/nuxt-ui": "^0.7.5",
+    "@cssninja/nuxt-ui": "^0.7.11",
     "@nuxt/image-edge": "1.0.0-28004283.2a7f5cd",
     "@vee-validate/zod": "^4.8.3",
     "fast-copy": "^3.0.1",
@@ -37,7 +37,7 @@
     "zod": "^3.21.4"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "0.38.2",
+    "@antfu/eslint-config": "0.38.4",
     "@iconify/json": "2.2.42",
     "@nuxtjs/eslint-config": "12.0.0",
     "@nuxtjs/eslint-config-typescript": "12.0.0",
@@ -45,7 +45,7 @@
     "eslint": "8.37.0",
     "eslint-config-prettier": "8.8.0",
     "eslint-plugin-prettier-vue": "4.2.0",
-    "eslint-plugin-tailwindcss": "3.10.3",
+    "eslint-plugin-tailwindcss": "3.11.0",
     "eslint-plugin-vuejs-accessibility": "2.1.0",
     "fs-extra": "11.1.1",
     "lint-staged": "13.2.0",

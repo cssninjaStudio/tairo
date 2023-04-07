@@ -170,10 +170,10 @@ function useAreaExpenses() {
   <div class="relative">
     <div class="flex flex-col gap-6">
       <BaseCard
-        class="flex flex-col ltablet:flex-row lg:flex-row p-6 sm:p-10 gap-y-10 overflow-hidden"
+        class="ltablet:flex-row flex flex-col gap-y-10 overflow-hidden p-6 sm:p-10 lg:flex-row"
       >
-        <div class="w-full ltablet:w-3/5 lg:w-3/5">
-          <div class="flex items-center justify-between mb-12">
+        <div class="ltablet:w-3/5 w-full lg:w-3/5">
+          <div class="mb-12 flex items-center justify-between">
             <BaseHeading
               as="h3"
               size="md"
@@ -186,41 +186,41 @@ function useAreaExpenses() {
             <div></div>
           </div>
           <div
-            class="flex flex-col sm:flex-row sm:gap-x-8 gap-y-4 ltablet:pe-12 lg:pe-12"
+            class="ltablet:pe-12 flex flex-col gap-y-4 sm:flex-row sm:gap-x-8 lg:pe-12"
           >
             <div>
               <BaseButtonIcon shape="rounded">
-                <Icon name="lucide:plus" class="w-4 h-4" />
+                <Icon name="lucide:plus" class="h-4 w-4" />
               </BaseButtonIcon>
             </div>
             <div
-              class="w-full grid sm:grid-cols-2 gap-4 max-h-[164px] slimscroll overflow-y-auto px-6"
+              class="slimscroll grid max-h-[164px] w-full gap-4 overflow-y-auto px-6 sm:grid-cols-2"
             >
               <DemoCreditCard
                 v-for="(card, index) in cards"
                 :key="index"
                 :balance="card.balance"
-                :endingNumber="card.endingNumber"
+                :ending-number="card.endingNumber"
                 :type="card.type"
                 :active="activeCard === index"
                 @click="activeCard = index"
               />
             </div>
           </div>
-          <div class="flex justify-center text-center mt-4">
+          <div class="mt-4 flex justify-center text-center">
             <p
-              class="font-sans text-xs max-w-xs mx-auto text-center ltablet:mx-0 lg:mx-0 text-muted-400"
+              class="ltablet:mx-0 text-muted-400 mx-auto max-w-xs text-center font-sans text-xs lg:mx-0"
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Peccata
               paria minime esse deterritum.
             </p>
           </div>
         </div>
-        <div class="w-full ltablet:w-2/5 lg:w-2/5">
+        <div class="ltablet:w-2/5 w-full lg:w-2/5">
           <div
-            class="h-full flex flex-col ltablet:ps-12 lg:ps-12 ltablet:border-l lg:border-l border-muted-200 dark:border-muted-700"
+            class="ltablet:ps-12 ltablet:border-l border-muted-200 dark:border-muted-700 flex h-full flex-col lg:border-l lg:ps-12"
           >
-            <div class="flex items-center justify-between mb-4">
+            <div class="mb-4 flex items-center justify-between">
               <BaseHeading
                 as="h4"
                 size="md"
@@ -231,7 +231,7 @@ function useAreaExpenses() {
                 <span>Balance</span>
               </BaseHeading>
               <div
-                class="hidden sm:block grow max-w-[260px] ltablet:max-w-[230px]"
+                class="ltablet:max-w-[230px] hidden max-w-[260px] grow sm:block"
               >
                 <BaseListbox
                   v-model="selectedBank"
@@ -243,41 +243,41 @@ function useAreaExpenses() {
                     sublabel: 'text',
                     media: 'media',
                   }"
-                  hideLabel
+                  hide-label
                 />
               </div>
             </div>
             <div
-              class="mt-auto ptablet:flex ptablet:items-end ptablet:justify-between ptablet:mt-10"
+              class="ptablet:flex ptablet:items-end ptablet:justify-between ptablet:mt-10 mt-auto"
             >
-              <div class="leading-relaxed mb-6 ptablet:mb-0">
+              <div class="ptablet:mb-0 mb-6 leading-relaxed">
                 <span
-                  class="block font-sans font-semibold text-3xl text-muted-800 dark:text-muted-100"
+                  class="text-muted-800 dark:text-muted-100 block font-sans text-3xl font-semibold"
                 >
                   {{ formatPrice(6341.14) }}
                 </span>
-                <span class="block font-sans text-sm text-muted-400">
+                <span class="text-muted-400 block font-sans text-sm">
                   **** **** **** 4986
                 </span>
               </div>
               <div class="flex items-center gap-12">
                 <div class="card-balance-stat">
                   <div
-                    class="font-sans text-xs uppercase font-medium text-muted-400 mb-1"
+                    class="text-muted-400 mb-1 font-sans text-xs font-medium uppercase"
                   >
                     <span>Income</span>
                   </div>
                   <div class="flex items-center gap-2">
                     <div
-                      class="h-10 w-10 flex items-center justify-center rounded-full bg-muted-100"
+                      class="bg-muted-100 flex h-10 w-10 items-center justify-center rounded-full"
                     >
                       <Icon
                         name="lucide:arrow-right"
-                        class="w-4 h-4 -rotate-45 text-success-500"
+                        class="text-success-500 h-4 w-4 -rotate-45"
                       />
                     </div>
                     <div
-                      class="font-sans text-sm text-muted-500 dark:text-muted-400"
+                      class="text-muted-500 dark:text-muted-400 font-sans text-sm"
                     >
                       <span>+ {{ formatPrice(2324.12) }}</span>
                     </div>
@@ -285,21 +285,21 @@ function useAreaExpenses() {
                 </div>
                 <div class="card-balance-stat">
                   <div
-                    class="font-sans text-xs uppercase font-medium text-muted-400 mb-1"
+                    class="text-muted-400 mb-1 font-sans text-xs font-medium uppercase"
                   >
                     <span>Expense</span>
                   </div>
                   <div class="flex items-center gap-2">
                     <div
-                      class="h-10 w-10 flex items-center justify-center rounded-full bg-muted-100"
+                      class="bg-muted-100 flex h-10 w-10 items-center justify-center rounded-full"
                     >
                       <Icon
                         name="lucide:arrow-right"
-                        class="w-4 h-4 rotate-45 text-danger-500"
+                        class="text-danger-500 h-4 w-4 rotate-45"
                       />
                     </div>
                     <div
-                      class="font-sans text-sm text-muted-500 dark:text-muted-400"
+                      class="text-muted-500 dark:text-muted-400 font-sans text-sm"
                     >
                       <span>+ {{ formatPrice(518.41) }}</span>
                     </div>
@@ -311,12 +311,12 @@ function useAreaExpenses() {
         </div>
       </BaseCard>
       <BaseCard
-        class="flex flex-col ltablet:flex-row lg:flex-row gap-y-10 p-6 sm:p-10 !bg-muted-200 dark:!bg-muted-800"
+        class="ltablet:flex-row !bg-muted-200 dark:!bg-muted-800 flex flex-col gap-y-10 p-6 sm:p-10 lg:flex-row"
       >
         <div
-          class="w-full ltablet:w-3/5 lg:w-3/5 ltablet:border-r lg:border-r border-muted-300 dark:border-muted-700"
+          class="ltablet:w-3/5 ltablet:border-r border-muted-300 dark:border-muted-700 w-full lg:w-3/5 lg:border-r"
         >
-          <div class="w-full h-full flex flex-col sm:flex-row gap-16">
+          <div class="flex h-full w-full flex-col gap-16 sm:flex-row">
             <!-- Monthly Summary -->
             <div class="shrink-0">
               <BaseHeading
@@ -324,53 +324,53 @@ function useAreaExpenses() {
                 size="md"
                 weight="semibold"
                 lead="tight"
-                class="mb-6 text-muted-800 dark:text-white"
+                class="text-muted-800 mb-6 dark:text-white"
               >
                 <span>Monthly Summary</span>
               </BaseHeading>
               <div
-                class="flex flex-col rounded-lg border border-muted-300 divide-y divide-muted-300 dark:border-muted-700 dark:divide-muted-700"
+                class="border-muted-300 divide-muted-300 dark:border-muted-700 dark:divide-muted-700 flex flex-col divide-y rounded-lg border"
               >
                 <div class="p-4">
                   <div
-                    class="font-sans text-xs uppercase font-medium text-muted-400 mb-1"
+                    class="text-muted-400 mb-1 font-sans text-xs font-medium uppercase"
                   >
                     <span>Income</span>
                   </div>
-                  <div class="font-sans font-semibold text-sm text-success-500">
+                  <div class="text-success-500 font-sans text-sm font-semibold">
                     <span>+ {{ formatPrice(2324.12) }}</span>
                   </div>
                 </div>
                 <div class="p-4">
                   <div
-                    class="font-sans text-xs uppercase font-medium text-muted-400 mb-1"
+                    class="text-muted-400 mb-1 font-sans text-xs font-medium uppercase"
                   >
                     <span>Expenses</span>
                   </div>
-                  <div class="font-sans font-semibold text-sm text-danger-500">
+                  <div class="text-danger-500 font-sans text-sm font-semibold">
                     <span>- {{ formatPrice(1509.27) }}</span>
                   </div>
                 </div>
               </div>
             </div>
             <!-- Chart -->
-            <div class="h-full flex flex-col grow ltablet:pe-12 lg:pe-12">
+            <div class="ltablet:pe-12 flex h-full grow flex-col lg:pe-12">
               <div class="mt-auto">
                 <AddonApexcharts v-bind="areaExpenses" />
               </div>
             </div>
           </div>
         </div>
-        <div class="w-full ltablet:w-2/5 lg:w-2/5">
-          <div class="h-full ltablet:ps-12 lg:ps-12">
-            <div class="w-full h-full flex flex-col">
-              <div class="flex items-center justify-between mb-6">
+        <div class="ltablet:w-2/5 w-full lg:w-2/5">
+          <div class="ltablet:ps-12 h-full lg:ps-12">
+            <div class="flex h-full w-full flex-col">
+              <div class="mb-6 flex items-center justify-between">
                 <BaseHeading
                   as="h3"
                   size="md"
                   weight="semibold"
                   lead="tight"
-                  class="mb-6 text-muted-800 dark:text-white"
+                  class="text-muted-800 mb-6 dark:text-white"
                 >
                   <span>Transactions</span>
                 </BaseHeading>
@@ -384,7 +384,7 @@ function useAreaExpenses() {
                       size="md"
                       shape="full"
                     >
-                      <Icon name="ph:pizza-duotone" class="w-5 h-5" />
+                      <Icon name="ph:pizza-duotone" class="h-5 w-5" />
                     </BaseIconBox>
                     <div>
                       <BaseHeading
@@ -402,7 +402,7 @@ function useAreaExpenses() {
                     </div>
                     <div class="ms-auto">
                       <span
-                        class="font-sans font-semibold text-sm text-muted-800 dark:text-muted-100"
+                        class="text-muted-800 dark:text-muted-100 font-sans text-sm font-semibold"
                       >
                         - {{ formatPrice(41.49) }}
                       </span>
@@ -415,7 +415,7 @@ function useAreaExpenses() {
                       size="md"
                       shape="full"
                     >
-                      <Icon name="ph:storefront-duotone" class="w-5 h-5" />
+                      <Icon name="ph:storefront-duotone" class="h-5 w-5" />
                     </BaseIconBox>
                     <div>
                       <BaseHeading
@@ -433,7 +433,7 @@ function useAreaExpenses() {
                     </div>
                     <div class="ms-auto">
                       <span
-                        class="font-sans font-semibold text-sm text-muted-800 dark:text-muted-100"
+                        class="text-muted-800 dark:text-muted-100 font-sans text-sm font-semibold"
                       >
                         + {{ formatPrice(263.39) }}
                       </span>
@@ -446,7 +446,7 @@ function useAreaExpenses() {
                       size="md"
                       shape="full"
                     >
-                      <Icon name="ph:shopping-cart-duotone" class="w-5 h-5" />
+                      <Icon name="ph:shopping-cart-duotone" class="h-5 w-5" />
                     </BaseIconBox>
                     <div>
                       <BaseHeading
@@ -464,14 +464,14 @@ function useAreaExpenses() {
                     </div>
                     <div class="ms-auto">
                       <span
-                        class="font-sans font-semibold text-sm text-muted-800 dark:text-muted-100"
+                        class="text-muted-800 dark:text-muted-100 font-sans text-sm font-semibold"
                       >
                         - {{ formatPrice(92.17) }}
                       </span>
                     </div>
                   </div>
                 </div>
-                <div class="flex items-center gap-2 mt-6">
+                <div class="mt-6 flex items-center gap-2">
                   <BaseButton color="default" class="w-full">
                     <span>Settings</span>
                   </BaseButton>

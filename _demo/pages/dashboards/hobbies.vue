@@ -66,9 +66,9 @@ const popular = [
 <template>
   <div>
     <!-- Header -->
-    <div class="flex flex-col md:flex-row md:items-center justify-between mb-8">
+    <div class="mb-8 flex flex-col justify-between md:flex-row md:items-center">
       <div
-        class="flex flex-col md:flex-row items-center gap-4 text-center md:text-left max-w-[425px] ltablet:max-w-full lg:max-w-full"
+        class="ltablet:max-w-full flex max-w-[425px] flex-col items-center gap-4 text-center md:flex-row md:text-left lg:max-w-full"
       >
         <div>
           <BaseHeading
@@ -88,7 +88,7 @@ const popular = [
         </div>
       </div>
       <div
-        class="flex items-center justify-center md:justify-start gap-2 mt-4 md:mt-0"
+        class="mt-4 flex items-center justify-center gap-2 md:mt-0 md:justify-start"
       >
         <BaseButton color="primary" class="w-32">
           <span>View All</span>
@@ -98,45 +98,45 @@ const popular = [
     <!-- Grid -->
     <div class="grid grid-cols-12 gap-4">
       <!-- Column -->
-      <div class="col-span-12 ltablet:col-span-8 lg:col-span-8">
+      <div class="ltablet:col-span-8 col-span-12 lg:col-span-8">
         <div class="grid grid-cols-12 gap-4">
           <!-- Grid item -->
           <div class="col-span-6 sm:col-span-3">
             <NuxtLink
               to="#"
-              class="group relative w-full flex flex-col overflow-hidden rounded-2xl"
+              class="group relative flex w-full flex-col overflow-hidden rounded-2xl"
             >
               <img
-                class="w-full h-80 object-cover object-center"
+                class="h-80 w-full object-cover object-center"
                 src="/img/illustrations/dashboards/hobbies/hobby-1.svg"
                 alt="Hobby cover"
               />
               <div
-                class="absolute inset-0 w-full h-full bg-muted-900 opacity-0 group-hover:opacity-50 transition-opacity duration-300 z-10"
+                class="bg-muted-900 absolute inset-0 z-10 h-full w-full opacity-0 transition-opacity duration-300 group-hover:opacity-50"
               ></div>
               <div
-                class="absolute inset-0 w-full h-full flex flex-col justify-between p-6 z-20"
+                class="absolute inset-0 z-20 flex h-full w-full flex-col justify-between p-6"
               >
                 <div class="flex items-center justify-between">
                   <h3
-                    class="font-sans tracking-wider text-white -translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 delay-100 transition-all duration-300"
+                    class="-translate-y-2 font-sans tracking-wider text-white opacity-0 transition-all delay-100 duration-300 group-hover:translate-y-0 group-hover:opacity-100"
                   >
                     Trekking
                   </h3>
                   <Icon
                     name="eos-icons:bootstrapping"
-                    class="w-5 h-5 text-white -translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 delay-300 transition-all duration-300"
+                    class="h-5 w-5 -translate-y-2 text-white opacity-0 transition-all delay-300 duration-300 group-hover:translate-y-0 group-hover:opacity-100"
                   />
                 </div>
                 <div class="flex items-center justify-between">
                   <h3
-                    class="font-sans text-sm text-white underline underline-offset-4 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 delay-500 transition-all duration-300"
+                    class="translate-y-2 font-sans text-sm text-white underline underline-offset-4 opacity-0 transition-all delay-500 duration-300 group-hover:translate-y-0 group-hover:opacity-100"
                   >
                     View activities
                   </h3>
                   <Icon
                     name="lucide:arrow-right"
-                    class="w-4 h-4 text-white translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 delay-700 transition-all duration-300"
+                    class="h-4 w-4 translate-y-2 text-white opacity-0 transition-all delay-700 duration-300 group-hover:translate-y-0 group-hover:opacity-100"
                   />
                 </div>
               </div>
@@ -146,39 +146,39 @@ const popular = [
           <div class="col-span-6 sm:col-span-3">
             <NuxtLink
               to="#"
-              class="group relative w-full flex flex-col overflow-hidden rounded-2xl"
+              class="group relative flex w-full flex-col overflow-hidden rounded-2xl"
             >
               <img
-                class="w-full h-80 object-cover object-center"
+                class="h-80 w-full object-cover object-center"
                 src="/img/illustrations/dashboards/hobbies/hobby-2.svg"
                 alt="Hobby cover"
               />
               <div
-                class="absolute inset-0 w-full h-full bg-muted-900 opacity-0 group-hover:opacity-50 transition-opacity duration-300 z-10"
+                class="bg-muted-900 absolute inset-0 z-10 h-full w-full opacity-0 transition-opacity duration-300 group-hover:opacity-50"
               ></div>
               <div
-                class="absolute inset-0 w-full h-full flex flex-col justify-between p-6 z-20"
+                class="absolute inset-0 z-20 flex h-full w-full flex-col justify-between p-6"
               >
                 <div class="flex items-center justify-between">
                   <h3
-                    class="font-sans tracking-wider text-white -translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 delay-100 transition-all duration-300"
+                    class="-translate-y-2 font-sans tracking-wider text-white opacity-0 transition-all delay-100 duration-300 group-hover:translate-y-0 group-hover:opacity-100"
                   >
                     Cycling
                   </h3>
                   <Icon
                     name="fluent-emoji-high-contrast:wheel"
-                    class="w-5 h-5 text-white -translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 delay-300 transition-all duration-300"
+                    class="h-5 w-5 -translate-y-2 text-white opacity-0 transition-all delay-300 duration-300 group-hover:translate-y-0 group-hover:opacity-100"
                   />
                 </div>
                 <div class="flex items-center justify-between">
                   <h3
-                    class="font-sans text-sm text-white underline underline-offset-4 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 delay-500 transition-all duration-300"
+                    class="translate-y-2 font-sans text-sm text-white underline underline-offset-4 opacity-0 transition-all delay-500 duration-300 group-hover:translate-y-0 group-hover:opacity-100"
                   >
                     View activities
                   </h3>
                   <Icon
                     name="lucide:arrow-right"
-                    class="w-4 h-4 text-white translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 delay-700 transition-all duration-300"
+                    class="h-4 w-4 translate-y-2 text-white opacity-0 transition-all delay-700 duration-300 group-hover:translate-y-0 group-hover:opacity-100"
                   />
                 </div>
               </div>
@@ -188,39 +188,39 @@ const popular = [
           <div class="col-span-6 sm:col-span-3">
             <NuxtLink
               to="#"
-              class="group relative w-full flex flex-col overflow-hidden rounded-2xl"
+              class="group relative flex w-full flex-col overflow-hidden rounded-2xl"
             >
               <img
-                class="w-full h-80 object-cover object-center"
+                class="h-80 w-full object-cover object-center"
                 src="/img/illustrations/dashboards/hobbies/hobby-3.svg"
                 alt="Hobby cover"
               />
               <div
-                class="absolute inset-0 w-full h-full bg-muted-900 opacity-0 group-hover:opacity-50 transition-opacity duration-300 z-10"
+                class="bg-muted-900 absolute inset-0 z-10 h-full w-full opacity-0 transition-opacity duration-300 group-hover:opacity-50"
               ></div>
               <div
-                class="absolute inset-0 w-full h-full flex flex-col justify-between p-6 z-20"
+                class="absolute inset-0 z-20 flex h-full w-full flex-col justify-between p-6"
               >
                 <div class="flex items-center justify-between">
                   <h3
-                    class="font-sans tracking-wider text-white -translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 delay-100 transition-all duration-300"
+                    class="-translate-y-2 font-sans tracking-wider text-white opacity-0 transition-all delay-100 duration-300 group-hover:translate-y-0 group-hover:opacity-100"
                   >
                     Exploration
                   </h3>
                   <Icon
                     name="fa6-solid:compass"
-                    class="w-5 h-5 text-white -translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 delay-300 transition-all duration-300"
+                    class="h-5 w-5 -translate-y-2 text-white opacity-0 transition-all delay-300 duration-300 group-hover:translate-y-0 group-hover:opacity-100"
                   />
                 </div>
                 <div class="flex items-center justify-between">
                   <h3
-                    class="font-sans text-sm text-white underline underline-offset-4 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 delay-500 transition-all duration-300"
+                    class="translate-y-2 font-sans text-sm text-white underline underline-offset-4 opacity-0 transition-all delay-500 duration-300 group-hover:translate-y-0 group-hover:opacity-100"
                   >
                     View activities
                   </h3>
                   <Icon
                     name="lucide:arrow-right"
-                    class="w-4 h-4 text-white translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 delay-700 transition-all duration-300"
+                    class="h-4 w-4 translate-y-2 text-white opacity-0 transition-all delay-700 duration-300 group-hover:translate-y-0 group-hover:opacity-100"
                   />
                 </div>
               </div>
@@ -230,39 +230,39 @@ const popular = [
           <div class="col-span-6 sm:col-span-3">
             <NuxtLink
               to="#"
-              class="group relative w-full flex flex-col overflow-hidden rounded-2xl"
+              class="group relative flex w-full flex-col overflow-hidden rounded-2xl"
             >
               <img
-                class="w-full h-80 object-cover object-center"
+                class="h-80 w-full object-cover object-center"
                 src="/img/illustrations/dashboards/hobbies/hobby-4.svg"
                 alt="Hobby cover"
               />
               <div
-                class="absolute inset-0 w-full h-full bg-muted-900 opacity-0 group-hover:opacity-50 transition-opacity duration-300 z-10"
+                class="bg-muted-900 absolute inset-0 z-10 h-full w-full opacity-0 transition-opacity duration-300 group-hover:opacity-50"
               ></div>
               <div
-                class="absolute inset-0 w-full h-full flex flex-col justify-between p-6 z-20"
+                class="absolute inset-0 z-20 flex h-full w-full flex-col justify-between p-6"
               >
                 <div class="flex items-center justify-between">
                   <h3
-                    class="font-sans tracking-wider text-white -translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 delay-100 transition-all duration-300"
+                    class="-translate-y-2 font-sans tracking-wider text-white opacity-0 transition-all delay-100 duration-300 group-hover:translate-y-0 group-hover:opacity-100"
                   >
                     Hiking
                   </h3>
                   <Icon
                     name="mdi:pickaxe"
-                    class="w-5 h-5 text-white -translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 delay-300 transition-all duration-300"
+                    class="h-5 w-5 -translate-y-2 text-white opacity-0 transition-all delay-300 duration-300 group-hover:translate-y-0 group-hover:opacity-100"
                   />
                 </div>
                 <div class="flex items-center justify-between">
                   <h3
-                    class="font-sans text-sm text-white underline underline-offset-4 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 delay-500 transition-all duration-300"
+                    class="translate-y-2 font-sans text-sm text-white underline underline-offset-4 opacity-0 transition-all delay-500 duration-300 group-hover:translate-y-0 group-hover:opacity-100"
                   >
                     View activities
                   </h3>
                   <Icon
                     name="lucide:arrow-right"
-                    class="w-4 h-4 text-white translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 delay-700 transition-all duration-300"
+                    class="h-4 w-4 translate-y-2 text-white opacity-0 transition-all delay-700 duration-300 group-hover:translate-y-0 group-hover:opacity-100"
                   />
                 </div>
               </div>
@@ -296,10 +296,10 @@ const popular = [
                 class="flex items-center gap-3 p-3"
               >
                 <div
-                  class="shrink-0 h-10 w-10 flex items-center justify-center rounded-full"
+                  class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full"
                   :class="getRandomColor()"
                 >
-                  <Icon :name="item.icon" class="w-5 h-5" />
+                  <Icon :name="item.icon" class="h-5 w-5" />
                 </div>
                 <div>
                   <BaseHeading
@@ -317,9 +317,9 @@ const popular = [
                     </span>
                   </BaseParagraph>
                 </div>
-                <div class="flex items-center ms-auto">
+                <div class="ms-auto flex items-center">
                   <BaseButtonIcon shape="curved" muted class="scale-75">
-                    <Icon name="lucide:arrow-right" class="w-5 h-5" />
+                    <Icon name="lucide:arrow-right" class="h-5 w-5" />
                   </BaseButtonIcon>
                 </div>
               </BaseCard>
@@ -353,10 +353,10 @@ const popular = [
                 class="flex items-center gap-3 p-3"
               >
                 <div
-                  class="shrink-0 h-10 w-10 flex items-center justify-center rounded-full"
+                  class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full"
                   :class="getRandomColor()"
                 >
-                  <Icon :name="item.icon" class="w-5 h-5" />
+                  <Icon :name="item.icon" class="h-5 w-5" />
                 </div>
                 <div>
                   <BaseHeading
@@ -374,9 +374,9 @@ const popular = [
                     </span>
                   </BaseParagraph>
                 </div>
-                <div class="flex items-center ms-auto">
+                <div class="ms-auto flex items-center">
                   <BaseButtonIcon shape="curved" muted class="scale-75">
-                    <Icon name="lucide:arrow-right" class="w-5 h-5" />
+                    <Icon name="lucide:arrow-right" class="h-5 w-5" />
                   </BaseButtonIcon>
                 </div>
               </BaseCard>
@@ -385,11 +385,11 @@ const popular = [
         </div>
       </div>
       <!-- Column -->
-      <div class="col-span-12 ltablet:col-span-4 lg:col-span-4">
+      <div class="ltablet:col-span-4 col-span-12 lg:col-span-4">
         <div class="flex flex-col gap-6">
           <!-- Widget -->
           <BaseCard class="p-6" shape="curved">
-            <div class="w-full flex items-center justify-between">
+            <div class="flex w-full items-center justify-between">
               <DemoSearchCompact shape="curved" />
             </div>
           </BaseCard>
@@ -428,7 +428,7 @@ const popular = [
               <!-- Item -->
               <NuxtLink
                 to="#"
-                class="flex items-center gap-3 rounded-xl hover:bg-muted-100 dark:hover:bg-muted-700/50 py-3 px-2 transition-colors duration-300"
+                class="hover:bg-muted-100 dark:hover:bg-muted-700/50 flex items-center gap-3 rounded-xl px-2 py-3 transition-colors duration-300"
               >
                 <img
                   src="/img/illustrations/dashboards/hobbies/landscape-thumb-1.svg"
@@ -449,16 +449,16 @@ const popular = [
                     <span class="text-muted-400">Oregon · Lvl 3</span>
                   </BaseParagraph>
                 </div>
-                <div class="flex items-center ms-auto">
+                <div class="ms-auto flex items-center">
                   <BaseButtonIcon shape="curved" muted class="scale-75">
-                    <Icon name="lucide:arrow-right" class="w-5 h-5" />
+                    <Icon name="lucide:arrow-right" class="h-5 w-5" />
                   </BaseButtonIcon>
                 </div>
               </NuxtLink>
               <!-- Item -->
               <NuxtLink
                 to="#"
-                class="flex items-center gap-3 rounded-xl hover:bg-muted-100 dark:hover:bg-muted-700/50 py-3 px-2 transition-colors duration-300"
+                class="hover:bg-muted-100 dark:hover:bg-muted-700/50 flex items-center gap-3 rounded-xl px-2 py-3 transition-colors duration-300"
               >
                 <img
                   src="/img/illustrations/dashboards/hobbies/landscape-thumb-7.svg"
@@ -479,16 +479,16 @@ const popular = [
                     <span class="text-muted-400">Alabama · Lvl 7</span>
                   </BaseParagraph>
                 </div>
-                <div class="flex items-center ms-auto">
+                <div class="ms-auto flex items-center">
                   <BaseButtonIcon shape="curved" muted class="scale-75">
-                    <Icon name="lucide:arrow-right" class="w-5 h-5" />
+                    <Icon name="lucide:arrow-right" class="h-5 w-5" />
                   </BaseButtonIcon>
                 </div>
               </NuxtLink>
               <!-- Item -->
               <NuxtLink
                 to="#"
-                class="flex items-center gap-3 rounded-xl hover:bg-muted-100 dark:hover:bg-muted-700/50 py-3 px-2 transition-colors duration-300"
+                class="hover:bg-muted-100 dark:hover:bg-muted-700/50 flex items-center gap-3 rounded-xl px-2 py-3 transition-colors duration-300"
               >
                 <img
                   src="/img/illustrations/dashboards/hobbies/landscape-thumb-4.svg"
@@ -509,9 +509,9 @@ const popular = [
                     <span class="text-muted-400">Missouri · Lvl 4</span>
                   </BaseParagraph>
                 </div>
-                <div class="flex items-center ms-auto">
+                <div class="ms-auto flex items-center">
                   <BaseButtonIcon shape="curved" muted class="scale-75">
-                    <Icon name="lucide:arrow-right" class="w-5 h-5" />
+                    <Icon name="lucide:arrow-right" class="h-5 w-5" />
                   </BaseButtonIcon>
                 </div>
               </NuxtLink>

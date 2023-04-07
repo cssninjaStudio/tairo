@@ -6,7 +6,7 @@ definePageMeta({
 
 <template>
   <div class="flex items-center justify-center py-8">
-    <div class="w-full max-w-md mx-auto">
+    <div class="mx-auto w-full max-w-md">
       <BaseCard class="p-6">
         <div class="flex flex-col py-2">
           <BaseAvatar
@@ -15,20 +15,20 @@ definePageMeta({
             src="/img/avatars/10.svg"
             badge-src="/img/stacks/reactjs.svg"
           />
-          <div class="text-center max-w-xs mx-auto mb-4">
+          <div class="mx-auto mb-4 max-w-xs text-center">
             <BaseHeading tag="h2" size="md" weight="medium" class="mt-4">
               Kendra W. has invited you to the
               <span class="text-primary-500">Banking Solution Website</span>
               project.
             </BaseHeading>
           </div>
-          <div class="max-w-sm mx-auto">
+          <div class="mx-auto max-w-sm">
             <BaseCard elevated class="p-6">
               <BaseHeading
                 tag="h3"
                 size="xs"
                 weight="medium"
-                class="uppercase !text-[0.65rem] text-muted-400 mb-2"
+                class="text-muted-400 mb-2 !text-[0.65rem] uppercase"
               >
                 Message from Kendra
               </BaseHeading>
@@ -42,7 +42,7 @@ definePageMeta({
                 you on board.
               </BaseParagraph>
             </BaseCard>
-            <div class="flex items-center justify-center gap-3 mt-6">
+            <div class="mt-6 flex items-center justify-center gap-3">
               <BaseAvatar
                 src="/img/avatars/25.svg"
                 size="xs"
@@ -60,12 +60,12 @@ definePageMeta({
                 data-tooltip="Hermann M."
               />
             </div>
-            <div class="text-center mt-2">
+            <div class="mt-2 text-center">
               <BaseText size="xs" class="text-muted-400">
                 And 5 others are members of this project
               </BaseText>
             </div>
-            <div class="flex items-center justify-between gap-2 mt-6">
+            <div class="mt-6 flex items-center justify-between gap-2">
               <BaseButton class="w-full">Decline</BaseButton>
               <BaseButton color="primary" class="w-full">Accept</BaseButton>
             </div>
