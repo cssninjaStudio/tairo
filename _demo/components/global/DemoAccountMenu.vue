@@ -53,7 +53,7 @@ const props = defineProps<{
                 <h6
                   class="font-heading text-muted-800 text-sm font-medium dark:text-white"
                 >
-                  Maya Rosseliniee
+                  Maya Rosselini
                 </h6>
                 <p class="text-muted-400 font-sans text-xs">Product Manager</p>
               </div>
@@ -76,7 +76,7 @@ const props = defineProps<{
                   <h6
                     class="font-heading text-muted-800 text-xs font-medium leading-none dark:text-white"
                   >
-                    Profileee
+                    Profile
                   </h6>
                   <p class="text-muted-400 font-sans text-xs">
                     View your profile
