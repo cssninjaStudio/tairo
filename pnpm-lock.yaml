@@ -12,8 +12,8 @@ importers:
         specifier: ^0.3.10
         version: 0.3.10
       '@cssninja/nuxt-ui':
-        specifier: ^0.7.11
-        version: 0.7.11(nuxt@3.3.3)(tailwindcss@3.3.1)
+        specifier: ^0.7.12
+        version: 0.7.12(nuxt@3.3.3)(tailwindcss@3.3.1)
       '@nuxt/image-edge':
         specifier: 1.0.0-28004283.2a7f5cd
         version: 1.0.0-28004283.2a7f5cd
@@ -43,8 +43,8 @@ importers:
         specifier: 0.38.4
         version: 0.38.4(eslint@8.37.0)(typescript@5.0.3)
       '@iconify/json':
-        specifier: 2.2.42
-        version: 2.2.42
+        specifier: 2.2.46
+        version: 2.2.46
       '@nuxtjs/eslint-config':
         specifier: 12.0.0
         version: 12.0.0(eslint@8.37.0)
@@ -98,10 +98,6 @@ importers:
         version: 3.3.3
 
   _demo:
-    dependencies:
-      zxcvbn:
-        specifier: ^4.4.2
-        version: 4.4.2
     devDependencies:
       '@mapbox/mapbox-gl-geocoder':
         specifier: 5.0.1
@@ -625,8 +621,8 @@ packages:
       - vue
     dev: false
 
-  /@cssninja/nuxt-ui@0.7.11(nuxt@3.3.3)(tailwindcss@3.3.1):
-    resolution: {integrity: sha512-csFYTP3/duW6pfDOiJ1CoNGAw37FH5k42cH5zoBEv6Nq+/yjNytHO+h4MzgZ2N5Fp1P6vR3hRjqGziaRUWQrdQ==}
+  /@cssninja/nuxt-ui@0.7.12(nuxt@3.3.3)(tailwindcss@3.3.1):
+    resolution: {integrity: sha512-odxIgiatJgIXRc4JjnvFGxeYSa2UuvdZYuWaZYWL124KAceHs52/1tyQh8viFx2tKs0OMIZktM6hq61Yt4uiSQ==}
     dependencies:
       '@headlessui/vue': 1.7.12
       '@iconify/vue': 4.1.1
@@ -945,8 +941,8 @@ packages:
   /@humanwhocodes/object-schema@1.2.1:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
 
-  /@iconify/json@2.2.42:
-    resolution: {integrity: sha512-CLZHgcBIqNuy9lRwHjuvFb++OcqJFjJmr5Rg8MZ8Dc/hfcpU9L5IW4O3oB2UPQecXMKswZLoamfFajBAt03igw==}
+  /@iconify/json@2.2.46:
+    resolution: {integrity: sha512-pWXAKAlvIIKHv/pO79GzKZup4CYBFSdN+F0ERv6lEP2977MJaAVazf1qThPfpnMDqX6mFPZFBPWl+aiqfGVxpQ==}
     dependencies:
       '@iconify/types': 2.0.0
       pathe: 1.1.0
@@ -12162,7 +12158,3 @@ packages:
   /zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
     dev: true
-
-  /zxcvbn@4.4.2:
-    resolution: {integrity: sha512-Bq0B+ixT/DMyG8kgX2xWcI5jUvCwqrMxSFam7m0lAf78nf04hv6lNCsyLYdyYTrCVMqNDY/206K7eExYCeSyUQ==}
-    dev: false
