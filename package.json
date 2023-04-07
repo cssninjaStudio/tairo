@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "@cssninja/nuxt-toaster": "^0.3.10",
-    "@cssninja/nuxt-ui": "^0.7.12",
+    "@cssninja/nuxt-ui": "^0.7.13",
     "@nuxt/image-edge": "1.0.0-28004283.2a7f5cd",
     "@vee-validate/zod": "^4.8.3",
     "fast-copy": "^3.0.1",
@@ -78,6 +78,7 @@
       ]
     },
     "overrides": {
+      "vue-component-meta": "1.3.12",
       "rollup": "3.18.0",
       "vite": "4.3.0-beta.1"
     }

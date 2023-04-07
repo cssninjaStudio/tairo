@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { kebabCase } from 'scule'
 // import { useDocumentationMeta } from '../../composables/meta-doc'
 
 const props = defineProps<{
@@ -115,11 +116,11 @@ function wrapExternalLinks(string: string) {
               class="bg-muted-50 text-muted-400 dark:bg-muted-700 px-4 text-xs font-semibold uppercase"
             >
               <div class="grid grid-cols-1 gap-6 px-2 py-4 lg:grid-cols-12">
-                <div class="col-span-1 lg:col-span-4">
+                <div class="col-span-1 lg:col-span-3">
                   <div class="text-left font-semibold">Name</div>
                 </div>
-                <div class="col-span-1 lg:col-span-8">
-                  <div class="text-left font-semibold">Example</div>
+                <div class="col-span-1 lg:col-span-9">
+                  <div class="text-left font-semibold">Type</div>
                 </div>
               </div>
             </div>
@@ -135,16 +136,7 @@ function wrapExternalLinks(string: string) {
                 :key="docs.model.name"
                 class="grid grid-cols-1 gap-6 lg:grid-cols-12"
               >
-                <div class="col-span-1 lg:col-span-4">
-                  <BaseTag
-                    v-if="docs.model.required"
-                    color="danger"
-                    condensed
-                    flavor="pastel"
-                    class="float-right mb-2 ms-6 font-mono rtl:float-left"
-                  >
-                    Required
-                  </BaseTag>
+                <div class="col-span-1 lg:col-span-3">
                   <div class="flex">
                     <div class="text-muted-800 dark:text-muted-100 font-medium">
                       <span
@@ -177,17 +169,52 @@ function wrapExternalLinks(string: string) {
                       ></p>
                     </div>
                   </div>
+
+                  <BaseTag
+                    v-if="docs.model.required"
+                    color="danger"
+                    condensed
+                    flavor="pastel"
+                    class="my-2 font-mono"
+                  >
+                    Required
+                  </BaseTag>
                 </div>
-                <div class="col-span-1 lg:col-span-8">
+                <div class="col-span-1 lg:col-span-9">
                   <AddonMarkdownRemark
+                    class="inline-sample"
                     :lines="false"
-                    class="max-w-none"
-                    :source="docs.renderModel(docs.model)"
+                    :source="`\`\`\`ts\n${docs.model.type}\n\`\`\``"
                     :theme="{
                       light: 'cssninja-light-theme',
                       dark: 'cssninja-dark-theme',
                     }"
                   />
+                </div>
+                <div class="col-span-1 lg:col-span-9 lg:col-start-4">
+                  <details class="group">
+                    <summary
+                      class="nui-focus hover:bg-muted-100 text-muted-500 inline-flex cursor-pointer list-none items-center justify-center gap-2 rounded-lg px-2 py-1.5 font-sans text-[0.8rem] transition-all duration-100"
+                    >
+                      <span class="inline group-open:hidden">Show example</span>
+                      <span class="hidden group-open:inline">Hide example</span>
+                      <Icon
+                        name="lucide:chevron-down"
+                        class="text-muted-400 h-4 w-4 transition-transform duration-200 group-open:rotate-180"
+                      />
+                    </summary>
+                    <AddonMarkdownRemark
+                      :lines="false"
+                      class="max-w-none"
+                      :source="docs.renderModel(docs.model)"
+                      :theme="{
+                        light: 'cssninja-light-theme',
+                        dark: 'cssninja-dark-theme',
+                      }"
+                    />
+
+                    <pre>{{ docs.model }}</pre>
+                  </details>
                 </div>
               </div>
             </div>
@@ -219,11 +246,14 @@ function wrapExternalLinks(string: string) {
               class="bg-muted-50 text-muted-400 dark:bg-muted-700 px-4 text-xs font-semibold uppercase"
             >
               <div class="grid grid-cols-1 gap-6 px-2 py-4 lg:grid-cols-12">
-                <div class="col-span-1 lg:col-span-4">
+                <div class="col-span-1 lg:col-span-3">
                   <div class="text-left font-semibold">Name</div>
                 </div>
-                <div class="col-span-1 lg:col-span-8">
-                  <div class="text-left font-semibold">Example</div>
+                <div class="col-span-1 lg:col-span-5">
+                  <div class="text-left font-semibold">Type</div>
+                </div>
+                <div class="col-span-1 lg:col-span-4">
+                  <div class="text-left font-semibold">Default</div>
                 </div>
               </div>
             </div>
@@ -237,22 +267,13 @@ function wrapExternalLinks(string: string) {
               :key="prop.name"
               class="border-muted-100 dark:border-muted-700 mb-6 grid grid-cols-1 gap-6 border-b pb-6 text-sm lg:grid-cols-12"
             >
-              <div class="col-span-1 lg:col-span-4">
-                <BaseTag
-                  v-if="prop.required"
-                  color="danger"
-                  condensed
-                  flavor="pastel"
-                  class="float-right mb-2 ms-6 font-mono rtl:float-left"
-                >
-                  Required
-                </BaseTag>
+              <div class="col-span-1 lg:col-span-3">
                 <div class="flex">
                   <div class="text-muted-800 dark:text-muted-100 font-medium">
                     <span
                       class="text-muted-800 dark:text-muted-100 font-mono font-medium"
                     >
-                      <code>{{ prop.name }}</code>
+                      <code>{{ kebabCase(prop.name) }}</code>
                     </span>
                   </div>
                 </div>
@@ -280,17 +301,65 @@ function wrapExternalLinks(string: string) {
                     ></p>
                   </div>
                 </div>
+
+                <BaseTag
+                  v-if="prop.required"
+                  color="danger"
+                  condensed
+                  flavor="pastel"
+                  class="my-2 font-mono"
+                >
+                  Required
+                </BaseTag>
               </div>
-              <div class="col-span-1 lg:col-span-8">
+              <div class="col-span-1 lg:col-span-5">
                 <AddonMarkdownRemark
+                  class="inline-sample"
                   :lines="false"
-                  class="max-w-none"
-                  :source="docs.renderProperty(prop)"
+                  :source="`\`\`\`ts\n${prop.type}\n\`\`\``"
                   :theme="{
                     light: 'cssninja-light-theme',
                     dark: 'cssninja-dark-theme',
                   }"
                 />
+              </div>
+              <div class="col-span-1 lg:col-span-4">
+                <AddonMarkdownRemark
+                  class="inline-sample"
+                  :lines="false"
+                  :source="`\`\`\`ts\n${
+                    !prop.default || prop.default === 'undefined'
+                      ? 'undefined'
+                      : prop.default
+                  }\n\`\`\``"
+                  :theme="{
+                    light: 'cssninja-light-theme',
+                    dark: 'cssninja-dark-theme',
+                  }"
+                />
+              </div>
+              <div class="col-span-1 lg:col-span-9 lg:col-start-4">
+                <details class="group">
+                  <summary
+                    class="nui-focus hover:bg-muted-100 text-muted-500 inline-flex cursor-pointer list-none items-center justify-center gap-2 rounded-lg px-2 py-1.5 font-sans text-[0.8rem] transition-all duration-100"
+                  >
+                    <span class="inline group-open:hidden">Show example</span>
+                    <span class="hidden group-open:inline">Hide example</span>
+                    <Icon
+                      name="lucide:chevron-down"
+                      class="text-muted-400 h-4 w-4 transition-transform duration-200 group-open:rotate-180"
+                    />
+                  </summary>
+                  <AddonMarkdownRemark
+                    :lines="false"
+                    class="max-w-none"
+                    :source="docs.renderProperty(prop)"
+                    :theme="{
+                      light: 'cssninja-light-theme',
+                      dark: 'cssninja-dark-theme',
+                    }"
+                  />
+                </details>
               </div>
             </div>
           </div>
@@ -321,11 +390,11 @@ function wrapExternalLinks(string: string) {
               class="bg-muted-50 text-muted-400 dark:bg-muted-700 px-4 text-xs font-semibold uppercase"
             >
               <div class="grid grid-cols-1 gap-6 px-2 py-4 lg:grid-cols-12">
-                <div class="col-span-1 lg:col-span-4">
+                <div class="col-span-1 lg:col-span-3">
                   <div class="text-left font-semibold">Name</div>
                 </div>
-                <div class="col-span-1 lg:col-span-8">
-                  <div class="text-left font-semibold">Example</div>
+                <div class="col-span-1 lg:col-span-9">
+                  <div class="text-left font-semibold">Emitted Value Type</div>
                 </div>
               </div>
             </div>
@@ -339,7 +408,7 @@ function wrapExternalLinks(string: string) {
               :key="event.type"
               class="border-muted-100 dark:border-muted-700 mb-6 grid grid-cols-1 gap-6 border-b pb-6 text-sm lg:grid-cols-12"
             >
-              <div class="col-span-1 lg:col-span-4">
+              <div class="col-span-1 lg:col-span-3">
                 <div class="flex items-center">
                   <div
                     class="text-muted-800 dark:text-muted-100 font-mono font-medium"
@@ -348,16 +417,42 @@ function wrapExternalLinks(string: string) {
                   </div>
                 </div>
               </div>
-              <div class="col-span-1 lg:col-span-8">
+              <div class="col-span-1 lg:col-span-9">
                 <AddonMarkdownRemark
+                  class="inline-sample max-w-none"
                   :lines="false"
-                  class="max-w-none"
-                  :source="docs.renderEvents(event)"
+                  :source="`\`\`\`ts\n${(event.type.startsWith('[')
+                    ? event.type.slice(1, -1)
+                    : event.type
+                  ).replace('value?: ', '')}\n\`\`\``"
                   :theme="{
                     light: 'cssninja-light-theme',
                     dark: 'cssninja-dark-theme',
                   }"
                 />
+              </div>
+              <div class="col-span-1 lg:col-span-9 lg:col-start-4">
+                <details class="group">
+                  <summary
+                    class="nui-focus hover:bg-muted-100 text-muted-500 inline-flex cursor-pointer list-none items-center justify-center gap-2 rounded-lg px-2 py-1.5 font-sans text-[0.8rem] transition-all duration-100"
+                  >
+                    <span class="inline group-open:hidden">Show example</span>
+                    <span class="hidden group-open:inline">Hide example</span>
+                    <Icon
+                      name="lucide:chevron-down"
+                      class="text-muted-400 h-4 w-4 transition-transform duration-200 group-open:rotate-180"
+                    />
+                  </summary>
+                  <AddonMarkdownRemark
+                    :lines="false"
+                    class="max-w-none"
+                    :source="docs.renderEvents(event)"
+                    :theme="{
+                      light: 'cssninja-light-theme',
+                      dark: 'cssninja-dark-theme',
+                    }"
+                  />
+                </details>
               </div>
             </div>
           </div>
@@ -388,11 +483,11 @@ function wrapExternalLinks(string: string) {
               class="bg-muted-50 text-muted-400 dark:bg-muted-700 px-4 text-xs font-semibold uppercase"
             >
               <div class="grid grid-cols-1 gap-6 px-2 py-4 lg:grid-cols-12">
-                <div class="col-span-1 lg:col-span-4">
+                <div class="col-span-1 lg:col-span-3">
                   <div class="text-left font-semibold">Name</div>
                 </div>
-                <div class="col-span-1 lg:col-span-8">
-                  <div class="text-left font-semibold">Example</div>
+                <div class="col-span-1 lg:col-span-9">
+                  <div class="text-left font-semibold">Slot Prop Type</div>
                 </div>
               </div>
             </div>
@@ -406,7 +501,7 @@ function wrapExternalLinks(string: string) {
               :key="slot.name"
               class="border-muted-100 dark:border-muted-700 mb-6 grid grid-cols-1 gap-6 border-b pb-6 text-sm lg:grid-cols-12"
             >
-              <div class="col-span-1 lg:col-span-4">
+              <div class="col-span-1 lg:col-span-3">
                 <div class="flex items-center">
                   <div
                     class="text-muted-800 dark:text-muted-100 font-mono font-medium"
@@ -415,16 +510,39 @@ function wrapExternalLinks(string: string) {
                   </div>
                 </div>
               </div>
-              <div class="col-span-1 lg:col-span-8">
+              <div class="col-span-1 lg:col-span-9">
                 <AddonMarkdownRemark
+                  class="inline-sample max-w-none"
                   :lines="false"
-                  class="max-w-none"
-                  :source="docs.renderSlot(slot)"
+                  :source="`\`\`\`ts\n${slot.type}\n\`\`\``"
                   :theme="{
                     light: 'cssninja-light-theme',
                     dark: 'cssninja-dark-theme',
                   }"
                 />
+              </div>
+              <div class="col-span-1 lg:col-span-9 lg:col-start-4">
+                <details class="group">
+                  <summary
+                    class="nui-focus hover:bg-muted-100 text-muted-500 inline-flex cursor-pointer list-none items-center justify-center gap-2 rounded-lg px-2 py-1.5 font-sans text-[0.8rem] transition-all duration-100"
+                  >
+                    <span class="inline group-open:hidden">Show example</span>
+                    <span class="hidden group-open:inline">Hide example</span>
+                    <Icon
+                      name="lucide:chevron-down"
+                      class="text-muted-400 h-4 w-4 transition-transform duration-200 group-open:rotate-180"
+                    />
+                  </summary>
+                  <AddonMarkdownRemark
+                    :lines="false"
+                    class="max-w-none"
+                    :source="docs.renderSlot(slot)"
+                    :theme="{
+                      light: 'cssninja-light-theme',
+                      dark: 'cssninja-dark-theme',
+                    }"
+                  />
+                </details>
               </div>
             </div>
           </div>
@@ -455,11 +573,11 @@ function wrapExternalLinks(string: string) {
               class="bg-muted-50 text-muted-400 dark:bg-muted-700 px-4 text-xs font-semibold uppercase"
             >
               <div class="grid grid-cols-1 gap-6 px-2 py-4 lg:grid-cols-12">
-                <div class="col-span-1 lg:col-span-4">
+                <div class="col-span-1 lg:col-span-3">
                   <div class="text-left font-semibold">Name</div>
                 </div>
-                <div class="col-span-1 lg:col-span-8">
-                  <div class="text-left font-semibold">Example</div>
+                <div class="col-span-1 lg:col-span-9">
+                  <div class="text-left font-semibold">Type</div>
                 </div>
               </div>
             </div>
@@ -473,7 +591,7 @@ function wrapExternalLinks(string: string) {
               :key="exposed.name"
               class="border-muted-100 dark:border-muted-700 mb-6 grid grid-cols-1 gap-6 border-b pb-6 text-sm lg:grid-cols-12"
             >
-              <div class="col-span-1 lg:col-span-4">
+              <div class="col-span-1 lg:col-span-3">
                 <div class="flex items-center">
                   <div
                     class="text-muted-800 dark:text-muted-100 font-mono font-medium"
@@ -487,16 +605,39 @@ function wrapExternalLinks(string: string) {
                   {{ exposed.description }}
                 </div>
               </div>
-              <div class="col-span-1 lg:col-span-8">
+              <div class="col-span-1 lg:col-span-9">
                 <AddonMarkdownRemark
+                  class="inline-sample"
                   :lines="false"
-                  class="max-w-none"
-                  :source="docs.renderExposed(exposed)"
+                  :source="`\`\`\`ts\n${exposed.type}\n\`\`\``"
                   :theme="{
                     light: 'cssninja-light-theme',
                     dark: 'cssninja-dark-theme',
                   }"
                 />
+              </div>
+              <div class="col-span-1 lg:col-span-9 lg:col-start-4">
+                <details class="group">
+                  <summary
+                    class="nui-focus hover:bg-muted-100 text-muted-500 inline-flex cursor-pointer list-none items-center justify-center gap-2 rounded-lg px-2 py-1.5 font-sans text-[0.8rem] transition-all duration-100"
+                  >
+                    <span class="inline group-open:hidden">Show example</span>
+                    <span class="hidden group-open:inline">Hide example</span>
+                    <Icon
+                      name="lucide:chevron-down"
+                      class="text-muted-400 h-4 w-4 transition-transform duration-200 group-open:rotate-180"
+                    />
+                  </summary>
+                  <AddonMarkdownRemark
+                    :lines="false"
+                    class="max-w-none"
+                    :source="docs.renderExposed(exposed)"
+                    :theme="{
+                      light: 'cssninja-light-theme',
+                      dark: 'cssninja-dark-theme',
+                    }"
+                  />
+                </details>
               </div>
             </div>
           </div>
@@ -505,3 +646,9 @@ function wrapExternalLinks(string: string) {
     </div>
   </div>
 </template>
+
+<style scoped>
+.inline-sample:deep(.shiki) {
+  @apply my-0;
+}
+</style>

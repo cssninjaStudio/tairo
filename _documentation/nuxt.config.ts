@@ -34,7 +34,8 @@ export default defineNuxtConfig({
     ],
     // debug: 2,
     checkerOptions: {
-      // forceUseTs: true,
+      forceUseTs: true,
+      printer: { newLine: 1 },
       schema: {
         ignore: [
           'RouteLocationRaw',

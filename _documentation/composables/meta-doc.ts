@@ -34,13 +34,19 @@ export async function useDocumentationMeta(
   )
   const slots = computed(() => meta?.value?.meta?.slots)
   const exposed = computed(() =>
-    meta?.value?.meta?.exposed
-      .filter((item: any) => {
-        return (
-          props.value?.findIndex((prop: any) => prop.name === item.name) === -1
-        )
-      })
-      .filter((item: any) => !excludedProps.includes(item.name)),
+    meta?.value?.meta?.exposed.filter((item: any) => {
+      const isProps =
+        props.value?.findIndex((prop: any) => prop.name === item.name) >= 0
+      const isEvent =
+        meta?.value?.meta?.events?.findIndex(
+          (event: any) =>
+            `on${event.name}`.toLowerCase() === item.name?.toLowerCase(),
+        ) >= 0
+      const isExcluded = item.name?.startsWith('$')
+      const isModel = item.name === 'modelValue'
+
+      return !(isProps || isEvent || isExcluded || isModel)
+    }),
   )
 
   const noOptions = computed(() => {
@@ -204,7 +210,6 @@ export async function useDocumentationMeta(
     if (slot.type !== '{}') {
       code.push(`  <${name.value}>`)
       code.push(`    <template #${slot.name}="value">`)
-      code.push(`      <!-- The slot prop \`value\` type is ${slot.type} -->`)
       code.push(`      <!-- Use destruct to keep what you need -->`)
       code.push(`      <pre>{{ value }}</pre>`)
       code.push(`    </template>`)

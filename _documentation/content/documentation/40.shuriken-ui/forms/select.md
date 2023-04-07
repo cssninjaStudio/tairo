@@ -74,4 +74,4 @@ Selects can be shown in an error state using the `error` prop. Use the same prop
 ::
 
 
-:doc-component-meta{name="BaseRadio"}
+:doc-component-meta{name="BaseSelect"}
