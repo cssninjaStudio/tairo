@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Slider from '@vueform/slider'
-import * as zxcvbn from 'zxcvbn'
+// import * as zxcvbn from 'zxcvbn'
 import '~/assets/css/slider.css'
 
 definePageMeta({
@@ -31,7 +31,8 @@ const charsArray = ref<string[]>([])
 
 function checkStrength() {
   if (!password.value) return (passwordScore.value = 0)
-  passwordScore.value = zxcvbn(password.value).score + 1
+  // passwordScore.value = zxcvbn(password.value).score + 1
+  passwordScore.value = 1
 }
 
 function generatePassword() {
