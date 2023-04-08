@@ -607,7 +607,7 @@ function wrapExternalLinks(string: string) {
               </div>
               <div class="col-span-1 lg:col-span-9">
                 <AddonMarkdownRemark
-                  class="inline-sample"
+                  class="inline-sample max-w-none"
                   :lines="false"
                   :source="`\`\`\`ts\n${exposed.type}\n\`\`\``"
                   :theme="{

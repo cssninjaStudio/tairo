@@ -90,13 +90,14 @@ export function useSidebar() {
     )
     return item?.name || ''
   })
-  const isOpen = useState<boolean | undefined>('sidebar-open', () => undefined)
+  const isOpen = useState<boolean | undefined>(
+    'sidebar-open',
+    () => app.tairo.sidebar?.startOpen,
+  )
 
-  onBeforeMount(() => {
-    if (app.tairo.sidebar?.startOpen && isOpen.value === undefined) {
-      isOpen.value = Boolean(currentName.value)
-    }
-  })
+  // if (app.tairo.sidebar?.startOpen && isOpen.value === undefined) {
+  //   isOpen.value = Boolean(currentName.value)
+  // }
 
   const hasSubsidebar = computed(() => {
     return sidebars.value?.some((sidebar) => sidebar.subsidebar?.name)
