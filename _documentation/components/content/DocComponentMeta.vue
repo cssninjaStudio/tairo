@@ -212,8 +212,6 @@ function wrapExternalLinks(string: string) {
                         dark: 'cssninja-dark-theme',
                       }"
                     />
-
-                    <pre>{{ docs.model }}</pre>
                   </details>
                 </div>
               </div>
