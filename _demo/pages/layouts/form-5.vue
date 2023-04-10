@@ -150,24 +150,7 @@ const handleClipboard = () => {
                 </template>
               </BaseInput>
             </div>
-            <div class="-mx-1 flex">
-              <template v-for="i in 5" :key="i">
-                <div class="w-1/5 px-1">
-                  <div
-                    class="h-2 rounded-xl transition-colors"
-                    :class="
-                      i < passwordScore
-                        ? passwordScore <= 2
-                          ? 'bg-danger-500'
-                          : passwordScore <= 4
-                          ? 'bg-yellow-400'
-                          : 'bg-success-500'
-                        : 'bg-muted-200 dark:bg-muted-700'
-                    "
-                  ></div>
-                </div>
-              </template>
-            </div>
+            <TairoPasswordtrength :value="password" :min-length="charsLength" />
             <hr
               class="border-muted-200 dark:border-muted-700 my-5 h-px border bg-transparent"
             />
@@ -245,7 +228,10 @@ const handleClipboard = () => {
                 </div>
               </div>
             </div>
-            <div v-if="isSupported" class="mt-6 flex gap-2">
+            <div
+              v-if="isSupported"
+              class="mt-6 flex flex-col gap-2 sm:flex-row"
+            >
               <BaseButton
                 shape="curved"
                 class="!h-12 w-full"

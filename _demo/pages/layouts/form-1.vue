@@ -412,11 +412,22 @@ const onSubmit = handleSubmit(
                     </Field>
                   </div>
                   <div class="col-span-12">
-                    <BaseInput
-                      icon="lucide:globe"
-                      label="Company website"
-                      placeholder="Ex: https://acme.co"
-                    />
+                    <Field
+                      v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                      name="company.website"
+                    >
+                      <BaseInput
+                        icon="lucide:globe"
+                        label="Company website"
+                        placeholder="Ex: https://acme.co"
+                        :model-value="field.value"
+                        :error="errorMessage"
+                        :disabled="isSubmitting"
+                        type="text"
+                        @update:model-value="handleChange"
+                        @blur="handleBlur"
+                      />
+                    </Field>
                   </div>
                 </div>
                 <div class="mb-6 mt-4">
@@ -601,7 +612,7 @@ const onSubmit = handleSubmit(
                     @update:model-value="handleChange"
                     @blur="handleBlur"
                   >
-                    <option value=""></option>
+                    <option value="" hidden></option>
                     <option value="0 - 250K">0 - 250K</option>
                     <option value="250K - 500K">250K - 500K</option>
                     <option value="500K - 1M">500K - 1M</option>
@@ -624,7 +635,7 @@ const onSubmit = handleSubmit(
                     @update:model-value="handleChange"
                     @blur="handleBlur"
                   >
-                    <option value=""></option>
+                    <option value="" hidden></option>
                     <option value="1-10 employees">1-10 employees</option>
                     <option value="10-50 employees">10-50 employees</option>
                     <option value="50-100 employees">50-100 employees</option>
@@ -668,7 +679,7 @@ const onSubmit = handleSubmit(
                     @update:model-value="handleChange"
                     @blur="handleBlur"
                   >
-                    <option value=""></option>
+                    <option value="" hidden></option>
                     <option value="active">Active</option>
                     <option value="inactive">Inactive</option>
                   </BaseSelect>

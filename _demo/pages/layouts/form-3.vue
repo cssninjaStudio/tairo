@@ -13,10 +13,11 @@ const cardInfo = ref({
 
 const selectedMethod = ref('cc')
 const billingCycles = ref('monthly')
+const termsApproval = ref(false)
 </script>
 
 <template>
-  <div class="grid w-full gap-8 md:grid-cols-2 lg:grid-cols-3">
+  <form class="grid w-full gap-8 md:grid-cols-2 lg:grid-cols-3">
     <div class="lg:col-span-2">
       <BaseCard>
         <div
@@ -72,11 +73,13 @@ const billingCycles = ref('monthly')
               </BaseParagraph>
             </div>
             <div class="grow">
-              <img
-                src="/img/illustrations/placeholders/flat/placeholder-paypal.svg"
-                alt="Pay with Paypal"
-                class="mx-auto w-full max-w-xs"
-              />
+              <BaseCard
+                shape="curved"
+                elevated
+                class="mx-auto flex max-w-[280px] items-center justify-center px-8 py-16"
+              >
+                <Icon name="logos:paypal" class="h-12 w-12" />
+              </BaseCard>
             </div>
           </div>
         </div>
@@ -145,7 +148,7 @@ const billingCycles = ref('monthly')
                       <div>
                         <BaseSelect
                           v-model="cardInfo.expiryYear"
-                          label="Exp. month"
+                          label="Exp. year"
                         >
                           <option value="">Year</option>
                           <option value="23">23</option>
@@ -175,7 +178,7 @@ const billingCycles = ref('monthly')
                 :name="cardInfo.name"
                 :number="cardInfo.number"
                 :expiry-month="cardInfo.expiryMonth"
-                :expiry-year="cardInfo.expiryMonth"
+                :expiry-year="cardInfo.expiryYear"
                 :cvc="cardInfo.cvc"
               />
             </div>
@@ -266,6 +269,7 @@ const billingCycles = ref('monthly')
         </div>
         <div class="my-4 flex items-center px-8">
           <BaseCheckbox
+            v-model="termsApproval"
             color="primary"
             shape="full"
             label="I agree to the Terms Of Service"
@@ -281,5 +285,5 @@ const billingCycles = ref('monthly')
         </div>
       </BaseCard>
     </div>
-  </div>
+  </form>
 </template>
