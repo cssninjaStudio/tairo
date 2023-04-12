@@ -27,6 +27,9 @@ export default withShurikenUI({
         // warning: colors.amber,
         // danger: colors.rose,
       },
+      animation: {
+        'spin-slow': 'spin 3s linear infinite',
+      },
     },
   },
   plugins: [

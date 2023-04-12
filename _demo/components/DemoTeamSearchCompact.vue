@@ -129,7 +129,7 @@ const filteredMembers = computed(() => {
           class="ms-auto flex -translate-x-1 items-center opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100"
         >
           <BaseButtonIcon to="#" :shape="props.shape" muted class="scale-75">
-            <Icon name="ph:arrow-end-duotone" class="h-5 w-5" />
+            <Icon name="lucide:arrow-right" class="h-4 w-4" />
           </BaseButtonIcon>
         </div>
       </div>

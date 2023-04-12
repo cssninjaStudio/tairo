@@ -1,13 +1,15 @@
 <script setup lang="ts">
 definePageMeta({
-  breadcrumb: {
-    label: 'Home',
-    hideLabel: true,
-    icon: 'lucide:home',
-  },
+  layout: 'empty',
 })
 </script>
 
 <template>
-  <div></div>
+  <div>
+    <LandingNavbar />
+    <LandingHero />
+    <LandingLayers />
+    <LandingCustomizer />
+    <LandingDemos />
+  </div>
 </template>

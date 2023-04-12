@@ -1,15 +1,15 @@
 <script setup lang="ts">
 const followers = [
   {
-    tooltip: 'Clarke Smith',
+    'data-tooltip': 'Clarke Smith',
     src: '/img/avatars/3.svg',
   },
   {
-    tooltip: 'John Rowner',
+    'data-tooltip': 'John Rowner',
     src: '/img/avatars/6.svg',
   },
   {
-    tooltip: 'Maggie Pitts',
+    'data-tooltip': 'Maggie Pitts',
     src: '/img/avatars/9.svg',
   },
 ]
