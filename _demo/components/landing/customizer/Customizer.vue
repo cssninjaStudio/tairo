@@ -472,7 +472,7 @@ const cardShape = ref<'straight' | 'rounded' | 'curved'>('curved')
                       >
                         <BaseRadio
                           v-model="cardShape"
-                          name="button_shape"
+                          name="card_shape"
                           label="Straight"
                           value="straight"
                           color="primary"
@@ -480,7 +480,7 @@ const cardShape = ref<'straight' | 'rounded' | 'curved'>('curved')
 
                         <BaseRadio
                           v-model="cardShape"
-                          name="button_shape"
+                          name="card_shape"
                           label="Rounded"
                           value="rounded"
                           color="primary"
@@ -488,7 +488,7 @@ const cardShape = ref<'straight' | 'rounded' | 'curved'>('curved')
 
                         <BaseRadio
                           v-model="cardShape"
-                          name="button_shape"
+                          name="card_shape"
                           value="curved"
                           label="Curved"
                           color="primary"

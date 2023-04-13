@@ -145,6 +145,12 @@ const selectedCategories = ref(['all'])
           </div>
         </div>
       </div>
+
+      <div class="mt-24 flex items-center justify-center">
+        <BaseButton shape="curved" color="primary" flavor="outline"
+          >View All Demos</BaseButton
+        >
+      </div>
     </div>
   </div>
 </template>

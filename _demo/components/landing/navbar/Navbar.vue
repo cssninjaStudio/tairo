@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const { x, y } = useWindowScroll()
+const isSearchOpen = useState('search-open', () => false)
 </script>
 
 <template>
@@ -19,7 +20,7 @@ const { x, y } = useWindowScroll()
         <NuxtLink to="/" class="ms-2 inline-flex">
           <TairoLogoText
             class="text-primary-500 transition-all duration-200"
-            :class="y > 60 ? 'h-6' : 'h-8'"
+            :class="y > 60 ? 'h-6' : 'h-7'"
           />
         </NuxtLink>
       </div>
@@ -28,11 +29,35 @@ const { x, y } = useWindowScroll()
           Prebuilt pages
         </NuxtLink>
         <NuxtLink to="/" class="inline-flex items-center justify-center px-6">
-          Components
-        </NuxtLink>
-        <NuxtLink to="/" class="inline-flex items-center justify-center px-6">
           Documentation
         </NuxtLink>
+        <div class="px-6">
+          <button
+            type="button"
+            class="group flex items-center gap-2 rounded-xl py-1 pl-3 pr-1"
+            :class="
+              y > 60
+                ? 'bg-muted-100 dark:bg-muted-900 border border-muted-100 dark:border-muted-800 text-muted-400 dark:text-muted-500 hover:text-primary-500 dark:hover:text-primary-500'
+                : 'text-muted-800 dark:text-muted-200'
+            "
+            @click="isSearchOpen = true"
+          >
+            <Icon
+              name="lucide:search"
+              class="h-4 w-4 transition-colors duration-300"
+            />
+            <span
+              class="rounded-lg border px-2 py-0.5 transition-colors duration-300"
+              :class="
+                y > 60
+                  ? 'bg-white dark:bg-muted-800 border-muted-200 dark:border-muted-700 shadow group-hover:text-muted-600 dark:group-hover:text-muted-100'
+                  : ' border-transparent'
+              "
+            >
+              <kbd class="font-sans text-sm tracking-wide">ctrl + k</kbd>
+            </span>
+          </button>
+        </div>
       </div>
       <div class="flex w-1/5 items-center justify-end gap-2">
         <BaseThemeToggle />

@@ -94,7 +94,7 @@ const filteredMembers = computed(() => {
       <div
         v-for="member in filteredMembers"
         :key="member.id"
-        class="hover:bg-muted-100 group flex items-center gap-3 p-2"
+        class="hover:bg-muted-100 dark:hover:bg-muted-700/70 group flex items-center gap-3 p-2"
         :class="[
           props.shape === 'rounded' ? 'rounded-md' : '',
           props.shape === 'curved' ? 'rounded-xl' : '',

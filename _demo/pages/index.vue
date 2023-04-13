@@ -11,5 +11,6 @@ definePageMeta({
     <LandingLayers />
     <LandingCustomizer />
     <LandingDemos />
+    <LandingFeatures />
   </div>
 </template>
