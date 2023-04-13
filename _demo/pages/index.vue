@@ -12,5 +12,7 @@ definePageMeta({
     <LandingCustomizer />
     <LandingDemos />
     <LandingFeatures />
+    <LandingContent />
+    <LandingFooter />
   </div>
 </template>
