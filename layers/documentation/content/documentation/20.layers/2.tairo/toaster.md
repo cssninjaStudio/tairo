@@ -1,0 +1,5 @@
+---
+title: TairoToaster
+components:
+  - TairoToaster
+---

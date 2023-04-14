@@ -1,0 +1,179 @@
+<template>
+  <svg
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    x="0px"
+    y="0px"
+    viewBox="0 0 1524.6 500"
+    class="shrink-0"
+  >
+    <g>
+      <g>
+        <defs>
+          <path
+            id="LOGOTXTSVGID_1_"
+            d="M180.5,391.1c-53-2.4-77.4-18-77.4-74.2V191.3h79.5V88.2h-6.8h-72.7V1.7H0v136.5v53.1V321
+				c0,119.2,69.5,168.6,180.5,168.8h2.1v-98.7H180.5z"
+          />
+        </defs>
+        <use
+          xlink:href="#LOGOTXTSVGID_1_"
+          class="overflow-visible"
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          fill="currentColor"
+        />
+        <clipPath id="LOGOTXTSVGID_3_">
+          <use xlink:href="#LOGOTXTSVGID_1_" class="overflow-visible" />
+        </clipPath>
+        <rect
+          y="1.7"
+          clip-path="url(#LOGOTXTSVGID_3_)"
+          width="182.6"
+          height="488.1"
+          fill="currentColor"
+        />
+      </g>
+      <g>
+        <defs>
+          <path
+            id="LOGOTXTSVGID_5_"
+            d="M409.2,181.2c59.6,0,107.8,48.3,107.8,107.8c0,59.6-48.3,107.8-107.8,107.8
+				c-59.6,0-107.8-48.3-107.8-107.8C301.4,229.5,349.7,181.2,409.2,181.2 M615.9,88.2h-98.5v43C486.2,98.3,443.2,79.6,394,79.6
+				c-104.7,0-197.2,90.6-197.2,210.2c0,118.8,92.5,209.4,197.2,209.4c49.2,0,92.2-18.8,123.5-51.6v43h98.5V88.2z"
+          />
+        </defs>
+        <use
+          xlink:href="#LOGOTXTSVGID_5_"
+          class="overflow-visible"
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          fill="currentColor"
+        />
+        <clipPath id="LOGOTXTSVGID_7_">
+          <use xlink:href="#LOGOTXTSVGID_5_" class="overflow-visible" />
+        </clipPath>
+        <rect
+          x="196.8"
+          y="79.6"
+          clip-path="url(#LOGOTXTSVGID_7_)"
+          width="419.2"
+          height="419.7"
+          fill="currentColor"
+        />
+      </g>
+      <g>
+        <defs>
+          <rect
+            id="LOGOTXTSVGID_9_"
+            x="674.2"
+            y="88.2"
+            width="103.2"
+            height="402.5"
+          />
+        </defs>
+        <use
+          xlink:href="#LOGOTXTSVGID_9_"
+          class="overflow-visible"
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          fill="currentColor"
+        />
+        <clipPath id="LOGOTXTSVGID_11_">
+          <use xlink:href="#LOGOTXTSVGID_9_" class="overflow-visible" />
+        </clipPath>
+        <rect
+          x="674.2"
+          y="88.2"
+          clip-path="url(#LOGOTXTSVGID_11_)"
+          width="103.2"
+          height="402.5"
+          fill="currentColor"
+        />
+      </g>
+      <g>
+        <defs>
+          <path
+            id="LOGOTXTSVGID_13_"
+            d="M1047.4,80.4c-133.6-16.4-212.6,63.3-212.6,177.4v232.9H938V257.8c0-57,43.8-92.2,109.4-80.5V80.4z"
+          />
+        </defs>
+        <use
+          xlink:href="#LOGOTXTSVGID_13_"
+          class="overflow-visible"
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          fill="currentColor"
+        />
+        <clipPath id="LOGOTXTSVGID_15_">
+          <use xlink:href="#LOGOTXTSVGID_13_" class="overflow-visible" />
+        </clipPath>
+        <rect
+          x="834.8"
+          y="63.9"
+          clip-path="url(#LOGOTXTSVGID_15_)"
+          width="212.6"
+          height="426.7"
+          fill="currentColor"
+        />
+      </g>
+      <g>
+        <defs>
+          <path
+            id="LOGOTXTSVGID_17_"
+            d="M1270.4,181.2c59.6,0,107.8,48.3,107.8,107.8c0,59.6-48.3,107.8-107.8,107.8
+				c-59.6,0-107.8-48.3-107.8-107.8C1162.5,229.5,1210.8,181.2,1270.4,181.2 M1270.4,78c-116.5,0-211,94.5-211,211
+				c0,116.5,94.5,211,211,211c116.5,0,211-94.5,211-211c0-25.2-4.4-49.5-12.6-71.9c-5.2-14.4-16.9-24.2-32-26.9
+				c-45.1-7.9-82-39.7-97.1-81.9c-5.2-14.5-16.8-24.3-31.9-27C1295.7,79.2,1283.2,78,1270.4,78z"
+          />
+        </defs>
+        <use
+          xlink:href="#LOGOTXTSVGID_17_"
+          class="overflow-visible"
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          fill="currentColor"
+        />
+        <clipPath id="LOGOTXTSVGID_19_">
+          <use xlink:href="#LOGOTXTSVGID_17_" class="overflow-visible" />
+        </clipPath>
+        <rect
+          x="1059.4"
+          y="78"
+          clip-path="url(#LOGOTXTSVGID_19_)"
+          width="422"
+          height="422"
+          fill="currentColor"
+        />
+      </g>
+      <g>
+        <defs>
+          <path
+            id="LOGOTXTSVGID_21_"
+            d="M1458.8,0c36.3,0,65.8,29.5,65.8,65.8c0,36.3-29.5,65.8-65.8,65.8c-36.3,0-65.8-29.5-65.8-65.8
+				C1393,29.5,1422.4,0,1458.8,0"
+          />
+        </defs>
+        <use
+          xlink:href="#LOGOTXTSVGID_21_"
+          class="overflow-visible"
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          fill="currentColor"
+        />
+        <clipPath id="LOGOTXTSVGID_23_">
+          <use xlink:href="#LOGOTXTSVGID_21_" class="overflow-visible" />
+        </clipPath>
+        <rect
+          x="1393"
+          y="0"
+          clip-path="url(#LOGOTXTSVGID_23_)"
+          width="131.6"
+          height="131.6"
+          fill="currentColor"
+        />
+      </g>
+    </g>
+  </svg>
+</template>

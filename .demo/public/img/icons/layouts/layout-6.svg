@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 456 330" style="enable-background:new 0 0 456 330;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:none;stroke:#A2A5B9;stroke-width:4;stroke-linecap:round;stroke-miterlimit:10;}
+	.st2{fill:#FFFFFF;stroke:#A2A5B9;stroke-width:4;stroke-linecap:round;stroke-miterlimit:10;}
+</style>
+<g>
+	<path class="st0" d="M32.2,307c-6.8,0-12.3-5.5-12.3-12.3V39.3c0-6.8,5.5-12.3,12.3-12.3h391.6c6.8,0,12.3,5.5,12.3,12.3v255.4
+		c0,6.8-5.5,12.3-12.3,12.3L32.2,307L32.2,307z"/>
+	<path class="st1" d="M423.8,28c6.2,0,11.3,5.1,11.3,11.3v255.4c0,6.2-5.1,11.3-11.3,11.3H32.2c-6.2,0-11.3-5.1-11.3-11.3V39.3
+		C20.9,33.1,26,28,32.2,28H423.8"/>
+</g>
+<g>
+	<circle class="st2" cx="117.6" cy="87.5" r="25"/>
+	<line class="st1" x1="159.6" y1="75.5" x2="290.6" y2="75.5"/>
+	<line class="st1" x1="160.1" y1="88.1" x2="250.1" y2="88.1"/>
+	<line class="st1" x1="160.1" y1="100.9" x2="264.1" y2="100.9"/>
+	<line class="st1" x1="92.6" y1="164.5" x2="223.6" y2="164.5"/>
+	<line class="st1" x1="93.1" y1="177.1" x2="183.1" y2="177.1"/>
+	<line class="st1" x1="93.1" y1="189.9" x2="197.1" y2="189.9"/>
+	<line class="st1" x1="284.6" y1="164.5" x2="415.6" y2="164.5"/>
+	<line class="st1" x1="285.1" y1="177.1" x2="375.1" y2="177.1"/>
+	<line class="st1" x1="285.1" y1="189.9" x2="389.1" y2="189.9"/>
+	<line class="st1" x1="92.6" y1="230.5" x2="223.6" y2="230.5"/>
+	<line class="st1" x1="93.1" y1="243.1" x2="183.1" y2="243.1"/>
+	<line class="st1" x1="93.1" y1="255.9" x2="197.1" y2="255.9"/>
+	<line class="st1" x1="284.6" y1="230.5" x2="415.6" y2="230.5"/>
+	<line class="st1" x1="285.1" y1="243.1" x2="375.1" y2="243.1"/>
+	<line class="st1" x1="285.1" y1="255.9" x2="389.1" y2="255.9"/>
+</g>
+<path class="st1" d="M52.6,299.2L52.6,299.2c-13.4,0-24.2-11.7-24.2-26V59.5c0-14.4,10.8-26,24.2-26h0c13.4,0,24.2,11.7,24.2,26
+	v213.6C76.8,287.5,66,299.2,52.6,299.2z"/>
+<circle class="st2" cx="52.6" cy="59.5" r="15"/>
+<circle class="st2" cx="52.6" cy="113.5" r="11"/>
+<circle class="st2" cx="52.6" cy="151.5" r="11"/>
+<circle class="st2" cx="52.6" cy="189.5" r="11"/>
+<circle class="st2" cx="52.6" cy="227.5" r="11"/>
+</svg>

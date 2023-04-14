@@ -1,0 +1,20 @@
+{
+  "private": true,
+  "name": "@cssninja/tairo-documentation",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "./nuxt.config.ts",
+  "engines": {
+    "node": ">=16.15",
+    "pnpm": ">=7"
+  },
+  "scripts": {
+    "layer:prepare": "nuxi prepare"
+  },
+  "devDependencies": {
+    "@nuxt/content": "2.5.2",
+    "@nuxthq/studio": "^0.10.1",
+    "nuxt": "3.4.1",
+    "nuxt-component-meta": "0.5.1"
+  }
+}

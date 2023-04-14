@@ -1,0 +1,128 @@
+name: Deploy tairo
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
+jobs:
+  # JOB to detect changes in subfolders
+  changes:
+    name: Check for changes
+    runs-on: ubuntu-latest
+    # Set job outputs to values from filter step
+    outputs:
+      demo: ${{ steps.filter.outputs.demo }}
+      shared: ${{ steps.filter.outputs.shared }}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: dorny/paths-filter@v2
+        id: filter
+        with:
+          # Use context to get the branch where commits were pushed.
+          base: ${{ github.ref }}
+          filters: |
+            demo:
+              - '.demo/**'
+            shared:
+              - '.github/env/**'
+              - '.github/workflows/deploy.yml'
+              - 'layers/**'
+              - 'types/**'
+              - '.npmrc'
+              - '.nuxtrc'
+              - 'package.json'
+              - 'pnpm-lock.yaml'
+              - 'tsconfig.json'
+
+  build-demo:
+    name: Build tairo demo
+    needs: changes
+    if: ${{ needs.changes.outputs.shared == 'true' || needs.changes.outputs.demo == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up dockertags
+        run: |
+          echo "dockertags=digisquad/cssninja.tairo-demo:latest" >> $GITHUB_ENV
+
+      - run: corepack enable
+      - run: pnpm install --frozen-lockfile
+      # - run: echo '{"extends":"./.demo/.nuxt/tsconfig.json"}' > tsconfig.json
+      - run: |
+          NUXT_PUBLIC_MAPBOX_TOKEN=${{ secrets.MAPBOX_ACCESS_TOKEN }} \
+          NUXT_INDEXABLE=false \
+          ENABLE_STUDIO=true \
+          ENABLE_DOCUMENTATION=true \
+          NODE_OPTIONS=--max-old-space-size=4096 \
+          pnpm demo:build
+      - run: cp .github/env/Dockerfile .demo/Dockerfile
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Login to DockerHub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and push
+        uses: docker/build-push-action@v4
+        timeout-minutes: 60
+        with:
+          push: true
+          context: _demo
+          tags: ${{ env.dockertags }}
+
+  deploy-demo:
+    name: Deploy tairo demo
+    needs: build-demo
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Prepare
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script_stop: true
+          script: mkdir -p ${{ secrets.HOST_DIRECTORY }}
+
+      - name: Prepare .env file
+        shell: bash
+        run: |
+          echo "PUBLIC_HOST=\"${{ secrets.PUBLIC_HOST }}\"" >> .github/env/.env
+          echo "NUXT_PUBLIC_SITE_URL=\"${{ secrets.NUXT_PUBLIC_SITE_URL }}\"" >> .github/env/.env
+          echo "NUXT_PUBLIC_MAPBOX_TOKEN=\"${{ secrets.MAPBOX_ACCESS_TOKEN }}\"" >> .github/env/.env
+
+      - name: Publish
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: .github/env/docker-compose.yml,.github/env/.env
+          target: ${{ secrets.HOST_DIRECTORY }}
+          strip_components: 2
+
+      - name: Deploy
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script_stop: true
+          script: |
+            cd ${{ secrets.HOST_DIRECTORY }}
+            docker compose pull
+            docker compose up -d --force-recreate --remove-orphans

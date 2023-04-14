@@ -1,0 +1,81 @@
+<script setup lang="ts">
+const { x, y } = useWindowScroll()
+const isSearchOpen = useState('search-open', () => false)
+</script>
+
+<template>
+  <div
+    class="ltablet:max-w-[1000px] ptablet:max-w-[47rem] fixed inset-x-0 top-0 z-50 mx-auto max-w-[350px] transition-all duration-200 lg:max-w-7xl"
+    :class="y > 60 ? 'mt-2' : 'mt-4'"
+  >
+    <div
+      class="flex items-center justify-between rounded-2xl border p-4 transition-all duration-200"
+      :class="
+        y > 60
+          ? 'bg-white/95 dark:bg-muted-950/95 border-muted-200 dark:border-muted-700 shadow-xl shadow-muted-300/30 dark:shadow-muted-800/20'
+          : 'border-transparent'
+      "
+    >
+      <div class="flex w-1/5 items-center gap-2">
+        <NuxtLink to="/" class="ms-2 inline-flex">
+          <TairoLogoText
+            class="text-primary-500 transition-all duration-200"
+            :class="y > 60 ? 'h-6' : 'h-7'"
+          />
+        </NuxtLink>
+      </div>
+      <div class="ltablet:flex hidden items-center justify-center lg:flex">
+        <NuxtLink to="/" class="inline-flex items-center justify-center px-6">
+          Prebuilt pages
+        </NuxtLink>
+        <NuxtLink to="/" class="inline-flex items-center justify-center px-6">
+          Documentation
+        </NuxtLink>
+        <div class="px-6">
+          <button
+            type="button"
+            class="group flex items-center gap-2 rounded-xl py-1 pe-1 ps-3"
+            :class="
+              y > 60
+                ? 'bg-muted-100 dark:bg-muted-900 border border-muted-100 dark:border-muted-800 text-muted-400 dark:text-muted-500 hover:text-primary-500 dark:hover:text-primary-500'
+                : 'text-muted-800 dark:text-muted-200'
+            "
+            @click="isSearchOpen = true"
+          >
+            <Icon
+              name="lucide:search"
+              class="h-4 w-4 transition-colors duration-300"
+            />
+            <span
+              class="rounded-lg border px-2 py-0.5 transition-colors duration-300"
+              :class="
+                y > 60
+                  ? 'bg-white dark:bg-muted-800 border-muted-200 dark:border-muted-700 shadow group-hover:text-muted-600 dark:group-hover:text-muted-100'
+                  : ' border-transparent'
+              "
+            >
+              <kbd class="font-sans text-sm tracking-wide">ctrl + k</kbd>
+            </span>
+          </button>
+        </div>
+      </div>
+      <div class="flex w-1/5 items-center justify-end gap-2">
+        <BaseThemeToggle />
+        <BaseButton
+          shape="curved"
+          color="primary"
+          to="/"
+          class="ltablet:!flex !hidden lg:!flex"
+        >
+          Buy Tairo
+        </BaseButton>
+        <button
+          type="button"
+          class="ltablet:hidden flex items-center justify-center lg:hidden"
+        >
+          <Icon name="lucide:menu" class="h-6 w-6" />
+        </button>
+      </div>
+    </div>
+  </div>
+</template>
