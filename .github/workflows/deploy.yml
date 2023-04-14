@@ -79,7 +79,7 @@ jobs:
         timeout-minutes: 60
         with:
           push: true
-          context: _demo
+          context: .demo
           tags: ${{ env.dockertags }}
 
   deploy-demo:
