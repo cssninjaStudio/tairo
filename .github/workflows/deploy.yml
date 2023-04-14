@@ -57,8 +57,8 @@ jobs:
       - run: |
           NUXT_PUBLIC_MAPBOX_TOKEN=${{ secrets.MAPBOX_ACCESS_TOKEN }} \
           NUXT_INDEXABLE=false \
-          ENABLE_STUDIO=true \
           ENABLE_DOCUMENTATION=true \
+          ENABLE_DOCUMENTATION_STUDIO=true \
           NODE_OPTIONS=--max-old-space-size=4096 \
           pnpm demo:build
       - run: cp .github/env/Dockerfile .demo/Dockerfile

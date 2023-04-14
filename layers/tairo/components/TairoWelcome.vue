@@ -14,10 +14,11 @@ const codePage = [
 ].join('\n')
 
 const codeTailwind = [
-  `const { cssninjaConfig } = require('@cssninja/nuxt-ui/tailwind')`,
-  `const colors = require('tailwindcss/colors')`,
+  `import { withShurikenUI } from '@shuriken-ui/tailwind'`,
+  `import colors from 'tailwindcss/colors'`,
   ``,
-  `module.exports = cssninjaConfig({`,
+  `export default withShurikenUI({`,
+  `  content: [],`,
   `  theme: {`,
   `    extend: {`,
   `      colors: {`,

@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/content',
     'nuxt-component-meta',
-    process.env.ENABLE_STUDIO === 'true' && '@nuxthq/studio',
+    process.env.ENABLE_DOCUMENTATION_STUDIO === 'true' && '@nuxthq/studio',
   ],
   alias: {
     '#examples': fileURLToPath(new URL('./examples', import.meta.url)),
@@ -43,7 +43,7 @@ export default defineNuxtConfig({
     },
   },
   hooks: {
-    // @ts-ignore - hook registered by nuxt-tailwind via @cssninja/nuxt-ui
+    // @ts-ignore - hook registered by nuxt-tailwind via @shuriken-ui/nuxt
     'tailwindcss:config'(config) {
       if (Array.isArray(config.content)) {
         // config.content.push(resolve(runtimeDir, 'components/**/*.{vue,js,ts}'))

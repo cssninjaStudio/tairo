@@ -1,10 +1,10 @@
-import { withShurikenUI } from '@cssninja/nuxt-ui/tailwind'
+import { withShurikenUI } from '@shuriken-ui/tailwind'
 import { join } from 'pathe'
 import plugin from 'tailwindcss/plugin'
 
 /**
  * This is the Tailwind config file for the demo.
- * It extends the default config from @cssninja/nuxt-ui/tailwind
+ * It extends the default config from @shuriken-ui/tailwind
  *
  * You can add/override your own customizations here.
  */

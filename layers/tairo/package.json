@@ -10,7 +10,7 @@
   },
   "devDependencies": {
     "@cssninja/nuxt-toaster": "^0.3.10",
-    "@cssninja/nuxt-ui": "^0.7.17",
+    "@shuriken-ui/nuxt": "^0.0.1",
     "@nuxt/image-edge": "1.0.0-28020728.5df24eb",
     "@vee-validate/zod": "^4.8.4",
     "fast-copy": "^3.0.1",

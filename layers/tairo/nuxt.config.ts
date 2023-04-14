@@ -5,22 +5,20 @@ const { resolve } = createResolver(import.meta.url)
 export default defineNuxtConfig({
   extends: [
     /**
-     * @cssninja/nuxt-ui is a nuxt layer that register a set of basic components (all prefixed with Base*)
+     * @shuriken-ui/nuxt is a nuxt layer that register a set of basic components (all prefixed with Base*)
      * plus a set of modules:
      *  - @nuxtjs/tailwindcss
      *  - @nuxtjs/color-mode
-     *  - @nuxtjs/color-mode
      *  - nuxt-icon
      *
-     * You can clone the repository and make THEME_DEV_UI_PATH point to the cloned folder
+     * You can clone the repository and make DEV_SHURIKEN_UI_PATH point to the cloned folder
      * to allow you to make changes to the UI and see them in real time.
      *
      * You can also create any component with same name to override the default one.
      *
-     * @see https://github.com/cssninjaStudio/nuxt-ui
-     * @see https://nuxt.com/docs/getting-started/layers
+     * @see https://github.com/shuriken-ui/nuxt
      */
-    process.env?.THEME_DEV_UI_PATH || '@cssninja/nuxt-ui',
+    process.env?.DEV_SHURIKEN_UI_PATH || '@shuriken-ui/nuxt',
   ],
   modules: ['@nuxt/image-edge', '@cssninja/nuxt-toaster'],
   app: {
