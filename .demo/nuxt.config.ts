@@ -8,7 +8,7 @@ export default defineNuxtConfig({
      * This extends the base Tairo layer.
      *
      * Alternatively you can use the following:
-     * 'github:cssninjaStudio/tairo#v1.0.0'
+     * 'github:cssninjaStudio/tairo/layers/xxx#v1.0.0'
      *
      * And set GIGET_AUTH=<github_token> in your .env file
      *
@@ -36,9 +36,6 @@ export default defineNuxtConfig({
     // Swiper is a nuxt module that allows us to use swiper in nuxt
     // wich is a carousel component used in the demo
     'nuxt-swiper',
-
-    // Use the devtools module to debug nuxt 3
-    '@nuxt/devtools',
   ],
   runtimeConfig: {
     public: {

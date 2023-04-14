@@ -26,8 +26,8 @@ export type ProcessorThemes = Record<
 >
 
 // this is used to cache the markdown processors
-const _processors: Map<string, ProcessorThemes> = new Map()
-const _processorsPromise: Map<string, Promise<ProcessorThemes> | null> =
+const processors: Map<string, ProcessorThemes> = new Map()
+const processorsPromise: Map<string, Promise<ProcessorThemes> | null> =
   new Map()
 
 export function getMarkdownProcessors(
@@ -35,12 +35,12 @@ export function getMarkdownProcessors(
   langs: Lang[] = [],
 ) {
   const key = hash({ themes, langs })
-  const processorCache = _processors.get(key)
+  const processorCache = processors.get(key)
   if (processorCache) {
     return Promise.resolve(processorCache)
   }
 
-  const processorPromiseCache = _processorsPromise.get(key)
+  const processorPromiseCache = processorsPromise.get(key)
   if (processorPromiseCache) {
     return processorPromiseCache
   }
@@ -63,7 +63,7 @@ export function getMarkdownProcessors(
     },
   )
 
-  _processorsPromise.set(key, processorPromise)
+  processorsPromise.set(key, processorPromise)
 
   return processorPromise
 }
@@ -72,7 +72,7 @@ async function createProcessor(options: HighlighterOptions) {
   if (process.client) {
     // this allow to load shiki from /public/shiki/ folder instead of cdn
     // we need to first copy the shiki folder from node_modules to public
-    // this is done with demo:prepare pnpm script
+    // this is done with prepare pnpm script (see .demo/package.json)
     setCDN('/shiki/')
   }
 

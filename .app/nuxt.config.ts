@@ -4,7 +4,7 @@ export default defineNuxtConfig({
      * This extends the base Tairo layer.
      *
      * Alternatively you can use the following:
-     * 'github:cssninjaStudio/tairo#v1.0.0'
+     * 'github:cssninjaStudio/tairo/layers/xxx#v1.0.0'
      *
      * And set GIGET_AUTH=<github_token> in your .env file
      *
