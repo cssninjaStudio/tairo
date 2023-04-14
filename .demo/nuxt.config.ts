@@ -1,4 +1,5 @@
 import { resolve } from 'node:path'
+import { isProduction } from 'std-env'
 
 // const WEEK = 60 * 60 * 24 * 7
 
@@ -75,16 +76,16 @@ export default defineNuxtConfig({
       'process.env.ENABLE_A11Y_AXE': false,
     },
     optimizeDeps: {
-      disabled: false,
+      // disabled: false,
     },
     build: {
       target: 'esnext',
-      commonjsOptions: { include: [] },
+      // commonjsOptions: { include: [] },
     },
   },
   hooks: {
     'vite:extendConfig'(config, { isClient }) {
-      if (process.env.NODE_ENV !== 'development' && isClient) {
+      if (isProduction && isClient) {
         // @ts-ignore
         config.build.rollupOptions.output.entryFileNames = '_nuxt/e/[hash].js'
         // @ts-ignore
