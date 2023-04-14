@@ -23,7 +23,7 @@
           to build beautiful and responsive dashboards in no time.
         </BaseParagraph>
       </div>
-      <div class="grid grid-cols-3 gap-8">
+      <div class="ltablet:grid-cols-3 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         <LandingFeaturesTile title="Nuxt 3" icon="simple-icons:nuxtdotjs">
           Node 18 is one of the latest versions of Node.js, a powerful
           javascript server engine.

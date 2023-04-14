@@ -101,11 +101,11 @@ function useGaugePersonal() {
           size="5xl"
           weight="light"
           lead="tight"
-          class="text-muted-800 mx-auto mb-4 max-w-2xl dark:text-white"
+          class="text-muted-800 xs:!text-4xl mx-auto mb-4 max-w-2xl dark:text-white"
         >
           The dashboard system that makes you say
           <span
-            class="text-primary-500 font-semibold underline underline-offset-4"
+            class="text-primary-500 font-hairline underline decoration-dotted underline-offset-4"
             >wow</span
           >
         </BaseHeading>
@@ -113,10 +113,9 @@ function useGaugePersonal() {
           size="lg"
           class="text-muted-500 dark:text-muted-100 mx-auto mb-4 max-w-2xl"
         >
-          Tairo is the ultimate solution for developers and businesses looking
-          to build beautiful and responsive dashboards in no time. This system
-          combines the power of the latest version of Nuxt with the popular
-          Tailwind CSS
+          Tairo is the ultimate solution for developers looking to build
+          beautiful and responsive Nuxt 3 dashboards in no time, with the power
+          of Shuriken UI and Tailwind CSS.
         </BaseParagraph>
         <div class="flex items-center justify-center">
           <BaseButton
@@ -132,9 +131,11 @@ function useGaugePersonal() {
       </div>
       <!-- Components -->
       <div class="relative z-30 mt-12">
-        <div class="grid grid-cols-4 gap-6">
+        <div
+          class="ltablet:grid-cols-4 ltablet:gap-6 grid gap-3 sm:grid-cols-3 lg:grid-cols-4 lg:gap-6"
+        >
           <!-- Col -->
-          <div class="flex flex-col gap-6 lg:mt-24">
+          <div class="ltablet:mt-24 ptablet:mt-24 flex flex-col gap-6 lg:mt-24">
             <!-- Widget -->
             <BaseCard shape="curved" elevated class="flex flex-col p-6">
               <div class="mb-6 flex items-center justify-between">
@@ -185,7 +186,9 @@ function useGaugePersonal() {
             </BaseCard>
           </div>
           <!-- Col -->
-          <div class="flex flex-col gap-6 lg:mt-16">
+          <div
+            class="ltablet:flex ltablet:mt-16 ptablet:mt-16 flex flex-col gap-6 sm:hidden lg:mt-16 lg:flex"
+          >
             <!-- Widget -->
             <BaseCard shape="curved" elevated class="p-4">
               <DemoTeamSearchCompact shape="curved" />
@@ -196,7 +199,7 @@ function useGaugePersonal() {
             </BaseCard>
           </div>
           <!-- Col -->
-          <div class="flex flex-col gap-6 lg:mt-10">
+          <div class="ltablet:mt-10 ptablet:mt-10 flex flex-col gap-6 lg:mt-10">
             <!-- Widget -->
             <BaseCard shape="curved" elevated class="p-6">
               <DemoProgressCircle

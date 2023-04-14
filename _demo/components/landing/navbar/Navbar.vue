@@ -5,7 +5,7 @@ const isSearchOpen = useState('search-open', () => false)
 
 <template>
   <div
-    class="fixed inset-x-0 top-0 z-50 mx-auto max-w-7xl transition-all duration-200"
+    class="ltablet:max-w-[1000px] ptablet:max-w-[47rem] fixed inset-x-0 top-0 z-50 mx-auto max-w-[350px] transition-all duration-200 lg:max-w-7xl"
     :class="y > 60 ? 'mt-2' : 'mt-4'"
   >
     <div
@@ -24,7 +24,7 @@ const isSearchOpen = useState('search-open', () => false)
           />
         </NuxtLink>
       </div>
-      <div class="flex items-center justify-center">
+      <div class="ltablet:flex hidden items-center justify-center lg:flex">
         <NuxtLink to="/" class="inline-flex items-center justify-center px-6">
           Prebuilt pages
         </NuxtLink>
@@ -34,7 +34,7 @@ const isSearchOpen = useState('search-open', () => false)
         <div class="px-6">
           <button
             type="button"
-            class="group flex items-center gap-2 rounded-xl py-1 pl-3 pr-1"
+            class="group flex items-center gap-2 rounded-xl py-1 pe-1 ps-3"
             :class="
               y > 60
                 ? 'bg-muted-100 dark:bg-muted-900 border border-muted-100 dark:border-muted-800 text-muted-400 dark:text-muted-500 hover:text-primary-500 dark:hover:text-primary-500'
@@ -61,9 +61,20 @@ const isSearchOpen = useState('search-open', () => false)
       </div>
       <div class="flex w-1/5 items-center justify-end gap-2">
         <BaseThemeToggle />
-        <BaseButton shape="curved" color="primary" to="/">
+        <BaseButton
+          shape="curved"
+          color="primary"
+          to="/"
+          class="ltablet:!flex !hidden lg:!flex"
+        >
           Buy Tairo
         </BaseButton>
+        <button
+          type="button"
+          class="ltablet:hidden flex items-center justify-center lg:hidden"
+        >
+          <Icon name="lucide:menu" class="h-6 w-6" />
+        </button>
       </div>
     </div>
   </div>

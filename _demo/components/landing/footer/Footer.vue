@@ -3,62 +3,66 @@ const year = new Date().getFullYear()
 </script>
 
 <template>
-  <footer class="dark:bg-muted-900 bg-white">
-    <div
-      class="mx-auto flex max-w-7xl flex-col items-center justify-between px-6 py-8 lg:flex-row"
+  <footer
+    class="dark:bg-muted-900 border-muted-200 dark:border-muted-700 relative border-t bg-white"
+  >
+    <NuxtLink
+      to="https://cssninja.io"
+      class="dark:bg-muted-900 absolute inset-x-0 -top-4 mx-auto flex h-9 w-14 items-center justify-center bg-white"
     >
-      <a href="#">
-        <TairoLogoText class="text-muted-300 h-7 transition-all duration-200" />
-      </a>
-
+      <img
+        class="h-7 w-7"
+        src="/img/logo/cssninja-logo-icon.svg"
+        alt="Css Ninja logo"
+      />
+    </NuxtLink>
+    <div
+      class="ltablet:flex-row mx-auto flex max-w-7xl flex-col items-center justify-between px-6 py-8 lg:flex-row"
+    >
+      <NuxtLink to="/" class="ltablet:w-1/5 block w-full lg:w-1/5">
+        <TairoLogoText
+          class="text-muted-300 ltablet:mx-0 mx-auto h-6 transition-all duration-200 lg:mx-0"
+        />
+      </NuxtLink>
       <div
-        class="mt-6 flex flex-wrap items-center justify-center gap-4 lg:mt-0 lg:gap-6"
+        class="ltablet:mt-0 ltablet:gap-6 mt-6 flex flex-wrap items-center justify-center gap-4 lg:mt-0 lg:gap-6"
       >
-        <a
-          href="#"
+        <NuxtLink
+          to="#"
           class="text-muted-600 hover:text-primary-500 dark:text-muted-200 dark:hover:text-primary-400 text-sm transition-colors duration-300"
         >
-          Overview
-        </a>
-
-        <a
-          href="#"
+          Home
+        </NuxtLink>
+        <NuxtLink
+          to="#"
           class="text-muted-600 hover:text-primary-500 dark:text-muted-200 dark:hover:text-primary-400 text-sm transition-colors duration-300"
         >
-          Features
-        </a>
-
-        <a
-          href="#"
+          Demo pages
+        </NuxtLink>
+        <NuxtLink
+          to="#"
           class="text-muted-600 hover:text-primary-500 dark:text-muted-200 dark:hover:text-primary-400 text-sm transition-colors duration-300"
         >
-          Pricing
-        </a>
-        <a
-          href="#"
+          Components
+        </NuxtLink>
+        <NuxtLink
+          to="#"
           class="text-muted-600 hover:text-primary-500 dark:text-muted-200 dark:hover:text-primary-400 text-sm transition-colors duration-300"
         >
-          Careers
-        </a>
-
-        <a
-          href="#"
+          Documentation
+        </NuxtLink>
+        <NuxtLink
+          to="https://cssninja.io/faq/support"
           class="text-muted-600 hover:text-primary-500 dark:text-muted-200 dark:hover:text-primary-400 text-sm transition-colors duration-300"
         >
-          Help
-        </a>
-
-        <a
-          href="#"
-          class="text-muted-600 hover:text-primary-500 dark:text-muted-200 dark:hover:text-primary-400 text-sm transition-colors duration-300"
-        >
-          Privacy
-        </a>
+          Support
+        </NuxtLink>
       </div>
-
-      <p class="text-muted-500 dark:text-muted-400 mt-6 text-sm lg:mt-0">
-        © Css Ninja 2018-{{ year }}.
-      </p>
+      <div
+        class="text-muted-500 dark:text-muted-400 ltablet:w-1/5 ltablet:justify-end ltablet:mt-0 mt-6 flex w-full items-center justify-center text-sm lg:mt-0 lg:w-1/5 lg:justify-end"
+      >
+        <span>© Css Ninja 2018-{{ year }}.</span>
+      </div>
     </div>
   </footer>
 </template>
