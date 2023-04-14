@@ -11,7 +11,7 @@ export default defineNuxtConfig({
      * This would allows you to create an empty git repository
      * with only your source code and no demo.
      */
-    '..',
+    '../_tairo',
     '../_layout_sidebar',
   ],
   typescript: {

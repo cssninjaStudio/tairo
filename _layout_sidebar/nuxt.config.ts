@@ -1,9 +1,1 @@
-// const WEEK = 60 * 60 * 24 * 7
-
-export default defineNuxtConfig({
-  extends: ['..'],
-  typescript: {
-    includeWorkspace: true,
-    strict: true,
-  },
-})
+export default defineNuxtConfig({})

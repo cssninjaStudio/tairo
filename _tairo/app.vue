@@ -21,7 +21,6 @@ useHead({
   <div>
     <NuxtLayout>
       <NuxtLoadingIndicator color="var(--color-primary-500)" />
-      <SeoKit />
       <NuxtPage />
     </NuxtLayout>
   </div>

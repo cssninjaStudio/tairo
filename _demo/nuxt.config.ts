@@ -15,13 +15,22 @@ export default defineNuxtConfig({
      * This would allows you to create an empty git repository
      * with only your source code and no demo.
      */
-    '..',
+    '../_tairo',
     '../_layout_sidebar',
     '../_layout_collapse',
 
     process.env.ENABLE_DOCUMENTATION === 'true'
       ? resolve(__dirname, '../_documentation')
       : undefined,
+
+    /**
+     * This is an additional layer that adds SEO features.
+     *
+     * Can be used either to prevent indexing,
+     * or to add custom meta tags to improve referencing.
+     * @see https://github.com/harlan-zw/nuxt-seo-kit
+     */
+    'nuxt-seo-kit',
   ],
   typescript: {
     includeWorkspace: true,
@@ -64,7 +73,7 @@ export default defineNuxtConfig({
       ],
     },
   },
-  sourcemap: process.env.NODE_ENV !== 'production',
+  // sourcemap: process.env.NODE_ENV !== 'production',
   vite: {
     define: {
       // This is required for shiki to work (used to render markdown code blocks)

@@ -11,7 +11,7 @@ export default defineNuxtModule({
   meta: {
     name: 'purge-comments',
   },
-  setup() {
+  setup(options, nuxt) {
     addVitePlugin({
       name: 'purge-comments',
       enforce: 'pre',
@@ -26,7 +26,9 @@ export default defineNuxtModule({
         if (s.hasChanged()) {
           return {
             code: s.toString(),
-            map: s.generateMap({ source: id, includeContent: true }),
+            map:
+              nuxt.options.sourcemap &&
+              s.generateMap({ source: id, includeContent: true }),
           }
         }
       },

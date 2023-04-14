@@ -21,21 +21,8 @@ export default defineNuxtConfig({
      * @see https://nuxt.com/docs/getting-started/layers
      */
     process.env?.THEME_DEV_UI_PATH || '@cssninja/nuxt-ui',
-
-    /**
-     * This is an additional layer that adds SEO features.
-     *
-     * Can be used either to prevent indexing,
-     * or to add custom meta tags to improve referencing.
-     * @see https://github.com/harlan-zw/nuxt-seo-kit
-     */
-    'nuxt-seo-kit',
   ],
-  modules: [
-    '@nuxt/image-edge',
-    '@cssninja/nuxt-toaster',
-    resolve('./modules/purge-comments'),
-  ],
+  modules: ['@nuxt/image-edge', '@cssninja/nuxt-toaster'],
   app: {
     layoutTransition: {
       enterActiveClass: 'transition-opacity duration-400 ease-out',

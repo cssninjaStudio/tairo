@@ -3,16 +3,11 @@ import { fileURLToPath } from 'node:url'
 // const WEEK = 60 * 60 * 24 * 7
 
 export default defineNuxtConfig({
-  extends: ['..'],
   modules: [
     '@nuxt/content',
     'nuxt-component-meta',
     process.env.ENABLE_STUDIO === 'true' && '@nuxthq/studio',
   ],
-  typescript: {
-    includeWorkspace: true,
-    strict: true,
-  },
   alias: {
     '#examples': fileURLToPath(new URL('./examples', import.meta.url)),
   },
