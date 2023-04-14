@@ -28,7 +28,7 @@ const cardShape = ref<'straight' | 'rounded' | 'curved'>('curved')
 </script>
 
 <template>
-  <div class="dark:bg-muted-900 bg-white py-24">
+  <div class="dark:bg-muted-900 overflow-hidden bg-white py-24">
     <div class="mx-auto w-full max-w-7xl px-4">
       <div class="mb-10 max-w-2xl">
         <BaseText
@@ -52,9 +52,11 @@ const cardShape = ref<'straight' | 'rounded' | 'curved'>('curved')
           to build beautiful and responsive dashboards in no time.
         </BaseParagraph>
       </div>
-      <div class="flex w-full items-center justify-between gap-6">
+      <div
+        class="flex w-full flex-col-reverse items-center justify-between gap-6 sm:flex-row"
+      >
         <!-- Left -->
-        <div class="relative w-1/2">
+        <div class="relative w-full sm:w-1/2">
           <div class="absolute inset-x-0 z-0 -mt-2 py-24">
             <div
               class="mt-12 grid grid-cols-2 -space-x-52 opacity-60 dark:opacity-50 2xl:mx-auto 2xl:max-w-3xl"
@@ -151,7 +153,7 @@ const cardShape = ref<'straight' | 'rounded' | 'curved'>('curved')
           </div>
         </div>
         <!-- Right -->
-        <div class="relative w-1/2">
+        <div class="relative w-full sm:w-1/2">
           <!-- Form -->
           <BaseCard shape="curved" elevated class="mx-auto max-w-md p-6">
             <div class="mb-6">
@@ -172,7 +174,7 @@ const cardShape = ref<'straight' | 'rounded' | 'curved'>('curved')
                 and sizes to fit your branding.
               </BaseParagraph>
             </div>
-            <div class="slimscroll max-h-[400px] overflow-y-auto pr-4">
+            <div class="slimscroll max-h-[400px] overflow-y-auto pe-4">
               <!-- Avatar -->
               <Disclosure v-slot="{ open }" default-open>
                 <DisclosureButton

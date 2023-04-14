@@ -57,7 +57,7 @@ const termsApproval = ref(false)
                   : 'ring-muted-400'
               "
             ></div>
-            <label class="ml-4 text-sm font-medium">PayPal</label>
+            <label class="ms-4 text-sm font-medium">PayPal</label>
           </div>
           <div
             v-if="selectedMethod === 'paypal'"
@@ -100,7 +100,7 @@ const termsApproval = ref(false)
                   : 'ring-muted-400'
               "
             ></div>
-            <label class="ml-4 text-sm font-medium">Credit Card</label>
+            <label class="ms-4 text-sm font-medium">Credit Card</label>
           </div>
           <div
             v-if="selectedMethod === 'cc'"

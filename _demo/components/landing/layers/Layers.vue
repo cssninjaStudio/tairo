@@ -23,7 +23,7 @@
           to build beautiful and responsive dashboards in no time.
         </BaseParagraph>
       </div>
-      <div class="grid grid-cols-3 gap-6">
+      <div class="ptablet:grid-cols-2 grid gap-6 sm:grid-cols-3">
         <LandingLayersBox title="UI Layer" icon="ph:mouse-duotone" to="/">
           Tairo is the ultimate solution for developers and businesses looking
           to build beautiful and responsive dashboards in no time.

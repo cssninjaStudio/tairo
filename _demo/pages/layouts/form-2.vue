@@ -631,7 +631,7 @@ const currentRatingText = computed(() => {
         <div
           class="divide-muted-200 dark:divide-muted-700 flex w-full items-center divide-x py-6"
         >
-          <div class="xxl:pr-6 flex flex-1 flex-col gap-1 pr-4">
+          <div class="xxl:pe-6 flex flex-1 flex-col gap-1 pe-4">
             <BaseHeading as="h3" size="sm" weight="medium" lead="none">{{
               values.doctor?.status === null ? 'n/a' : values.doctor?.status
             }}</BaseHeading>
@@ -647,7 +647,7 @@ const currentRatingText = computed(() => {
               Years of exp.
             </BaseText>
           </div>
-          <div class="xxl:pl-6 flex flex-1 flex-col gap-1 pl-4">
+          <div class="xxl:ps-6 flex flex-1 flex-col gap-1 ps-4">
             <BaseHeading as="h3" size="sm" weight="medium" lead="none"
               >Lvl.
               {{

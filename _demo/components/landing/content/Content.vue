@@ -23,7 +23,7 @@
           to build beautiful and responsive dashboards in no time.
         </BaseParagraph>
       </div>
-      <div class="mb-10 grid grid-cols-3 gap-8">
+      <div class="mb-10 grid gap-y-16 sm:grid-cols-3 sm:gap-x-8 sm:gap-y-16">
         <div class="relative">
           <BaseHeading
             as="h3"
@@ -159,7 +159,7 @@
             lead="tight"
             class="text-muted-800 mb-1 dark:text-white"
           >
-            Join the Tairo nation
+            Join the Tairo Nation
           </BaseHeading>
           <BaseParagraph size="sm" class="text-muted-500 dark:text-muted-100">
             Built-in props allow you to customize component options, shapes and

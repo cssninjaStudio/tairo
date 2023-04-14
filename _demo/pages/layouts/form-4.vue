@@ -225,7 +225,7 @@ const people = ref([
                   icon="ph:ticket-duotone"
                   placeholder="Ex: Next team building party"
                   :classes="{
-                    input: '!h-11 !pl-11',
+                    input: '!h-11 !ps-11',
                     icon: '!h-11 !w-11',
                   }"
                   :model-value="field.value"
@@ -248,7 +248,7 @@ const people = ref([
                   icon="ph:circles-four-duotone"
                   placeholder="Ex: We will meet to have fun together"
                   :classes="{
-                    input: '!h-11 !pl-11',
+                    input: '!h-11 !ps-11',
                     icon: '!h-11 !w-11',
                   }"
                   :model-value="field.value"
@@ -288,7 +288,7 @@ const people = ref([
                           :value="inputValue.start"
                           v-on="inputEvents.start"
                           :classes="{
-                            input: '!h-11 !pl-11',
+                            input: '!h-11 !ps-11',
                             icon: '!h-11 !w-11',
                           }"
                           :model-value="field.value"
@@ -317,7 +317,7 @@ const people = ref([
                           :value="inputValue.end"
                           v-on="inputEvents.end"
                           :classes="{
-                            input: '!h-11 !pl-11',
+                            input: '!h-11 !ps-11',
                             icon: '!h-11 !w-11',
                           }"
                           :model-value="field.value"
@@ -384,7 +384,7 @@ const people = ref([
                   icon="ph:drop-half-duotone"
                   placeholder="Pick an event color..."
                   :classes="{
-                    input: '!h-11 !pl-11 appearance-none',
+                    input: '!h-11 !ps-11 appearance-none',
                     icon: '!h-11 !w-11',
                   }"
                   :model-value="field.value"
@@ -419,7 +419,7 @@ const people = ref([
                   icon="ph:ticket-duotone"
                   placeholder="Pick a category..."
                   :classes="{
-                    input: '!h-11 !pl-11',
+                    input: '!h-11 !ps-11',
                     icon: '!h-11 !w-11',
                   }"
                   :model-value="field.value"
