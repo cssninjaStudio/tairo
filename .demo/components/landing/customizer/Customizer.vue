@@ -1,31 +1,4 @@
-<script setup lang="ts">
-import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
-
-const avatarType = ref('shape')
-const avatarShape = ref<'full' | 'straight' | 'rounded' | 'curved'>('full')
-const avatarMask = ref('hex')
-const avatarIndicator = ref(false)
-const headingSize = ref<
-  | 'xl'
-  | 'md'
-  | 'xs'
-  | 'sm'
-  | 'lg'
-  | '2xl'
-  | '3xl'
-  | '4xl'
-  | '5xl'
-  | '6xl'
-  | '7xl'
-  | '8xl'
-  | '9xl'
->('xl')
-const headingWeight = ref<
-  'semibold' | 'normal' | 'light' | 'medium' | 'bold' | 'extrabold'
->('semibold')
-const buttonShape = ref<'full' | 'straight' | 'rounded' | 'curved'>('curved')
-const cardShape = ref<'straight' | 'rounded' | 'curved'>('curved')
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div class="dark:bg-muted-900 overflow-hidden bg-white py-24">
@@ -62,7 +35,7 @@ const cardShape = ref<'straight' | 'rounded' | 'curved'>('curved')
               class="mt-12 grid grid-cols-2 -space-x-52 opacity-60 dark:opacity-50 2xl:mx-auto 2xl:max-w-3xl"
             >
               <div
-                class="from-primary-200 h-40 bg-gradient-to-br to-purple-400 blur-3xl dark:from-blue-700"
+                class="from-primary-200 to-primary-400 h-40 bg-gradient-to-br blur-3xl dark:from-blue-700"
               ></div>
               <div
                 class="dark:to-primary-600 h-24 bg-gradient-to-r from-indigo-400 to-indigo-700 blur-3xl"
@@ -73,32 +46,24 @@ const cardShape = ref<'straight' | 'rounded' | 'curved'>('curved')
             class="gridlines relative z-10 flex min-h-[480px] w-full items-center justify-center"
           >
             <BaseCard
-              :shape="cardShape"
+              shape="curved"
               class="!border-primary-600 relative mx-auto max-w-[340px] p-6"
             >
               <div class="mb-6 flex items-center justify-between">
-                <BaseTag :shape="buttonShape">Member</BaseTag>
-                <BaseButtonClose :shape="buttonShape" color="muted" />
+                <BaseTag shape="curved" color="primary" shadow="flat"
+                  >Member</BaseTag
+                >
+                <BaseButtonClose shape="full" color="muted" />
               </div>
               <BaseAvatar
                 size="xl"
                 src="/img/avatars/24.svg"
-                :badge-src="
-                  avatarType === 'mask' ? '' : '/img/stacks/html5.svg'
-                "
-                :dot="avatarIndicator && avatarType !== 'mask' && 'pink'"
+                badge-src="/img/stacks/html5.svg"
                 class="mx-auto !flex !transition-all !duration-200"
-                :shape="avatarType === 'mask' ? 'straight' : avatarShape"
-                :class="
-                  avatarType === 'mask' ? `nui-mask nui-mask-${avatarMask}` : ''
-                "
+                shape="full"
               />
               <div class="mt-3 text-center">
-                <BaseHeading
-                  as="h3"
-                  :size="headingSize"
-                  :weight="headingWeight"
-                >
+                <BaseHeading as="h3" size="xl" weight="medium">
                   Belen Lopez</BaseHeading
                 >
                 <BaseText size="sm" class="text-muted-500 dark:text-muted-400"
@@ -106,39 +71,20 @@ const cardShape = ref<'straight' | 'rounded' | 'curved'>('curved')
                 >
               </div>
               <div class="my-6 flex items-center justify-center gap-4">
-                <BaseAvatar
-                  size="xs"
-                  src="/img/stacks/js.svg"
-                  :shape="avatarType === 'mask' ? 'straight' : avatarShape"
-                  :class="
-                    avatarType === 'mask'
-                      ? `nui-mask nui-mask-${avatarMask}`
-                      : ''
-                  "
-                />
+                <BaseAvatar size="xs" src="/img/stacks/js.svg" shape="full" />
                 <BaseAvatar
                   size="xs"
                   src="/img/stacks/python.svg"
-                  :shape="avatarType === 'mask' ? 'straight' : avatarShape"
-                  :class="
-                    avatarType === 'mask'
-                      ? `nui-mask nui-mask-${avatarMask}`
-                      : ''
-                  "
+                  shape="full"
                 />
                 <BaseAvatar
                   size="xs"
                   src="/img/stacks/reactjs.svg"
-                  :shape="avatarType === 'mask' ? 'straight' : avatarShape"
-                  :class="
-                    avatarType === 'mask'
-                      ? `nui-mask nui-mask-${avatarMask}`
-                      : ''
-                  "
+                  shape="full"
                 />
               </div>
               <div>
-                <BaseButton class="!h-12 w-full" :shape="buttonShape">
+                <BaseButton class="!h-12 w-full" shape="curved">
                   <Icon name="lucide:bell" class="h-4 w-4" />
                   <span>Follow Belen</span>
                 </BaseButton>
@@ -154,354 +100,45 @@ const cardShape = ref<'straight' | 'rounded' | 'curved'>('curved')
         </div>
         <!-- Right -->
         <div class="relative w-full sm:w-1/2">
-          <!-- Form -->
-          <BaseCard shape="curved" elevated class="mx-auto max-w-md p-6">
-            <div class="mb-6">
-              <BaseHeading
-                as="h3"
-                size="xl"
-                weight="light"
-                lead="tight"
-                class="text-muted-800 mb-1 dark:text-white"
+          <!-- buttons -->
+          <div class="mx-auto grid max-w-sm grid-cols-2 gap-4 p-6">
+            <div>
+              <button
+                type="button"
+                class="border-muted-200 dark:border-muted-800 mx-auto flex h-32 w-32 flex-col items-center justify-center border"
               >
-                UI Customization
-              </BaseHeading>
-              <BaseParagraph
-                size="sm"
-                class="text-muted-500 dark:text-muted-100"
+                <Icon name="uit:window-maximize" class="mb-2 h-10 w-10" />
+                <span>Relaxed</span>
+              </button>
+            </div>
+            <div>
+              <button
+                type="button"
+                class="border-muted-200 dark:border-muted-800 mx-auto flex h-32 w-32 flex-col items-center justify-center border"
               >
-                Built-in props allow you to customize component options, shapes
-                and sizes to fit your branding.
-              </BaseParagraph>
+                <Icon name="uit:window-maximize" class="mb-2 h-10 w-10" />
+                <span>Relaxed</span>
+              </button>
             </div>
-            <div class="slimscroll max-h-[400px] overflow-y-auto pe-4">
-              <!-- Avatar -->
-              <Disclosure v-slot="{ open }" default-open>
-                <DisclosureButton
-                  class="text-muted-800 dark:text-muted-100 flex w-full items-center justify-between rounded-lg px-4 py-3 text-left text-sm font-medium"
-                  :class="open ? 'bg-muted-100 dark:bg-muted-700' : ''"
-                >
-                  <span>Customize avatars</span>
-                  <Icon
-                    name="lucide:chevron-down"
-                    class="text-muted-400 h-4 w-4 transition-transform duration-200"
-                    :class="open ? 'rotate-180' : ''"
-                  />
-                </DisclosureButton>
-                <DisclosurePanel class="text-muted-500 px-4 pb-2 pt-4 text-sm">
-                  <div class="mb-6 space-y-8">
-                    <!-- Type -->
-                    <div>
-                      <BaseText size="xs" class="text-muted-400 mb-3 uppercase"
-                        >Avatar type</BaseText
-                      >
-                      <div
-                        class="grid grid-cols-2 gap-6 md:max-w-lg md:grid-cols-4"
-                      >
-                        <BaseRadio
-                          v-model="avatarType"
-                          name="avatar_type"
-                          label="Shape"
-                          value="shape"
-                          color="primary"
-                        />
-
-                        <BaseRadio
-                          v-model="avatarType"
-                          name="avatar_type"
-                          label="Mask"
-                          value="mask"
-                          color="primary"
-                        />
-                      </div>
-                    </div>
-                    <!-- Shape -->
-                    <div v-if="avatarType === 'shape'">
-                      <BaseText size="xs" class="text-muted-400 mb-3 uppercase"
-                        >Avatar shapes</BaseText
-                      >
-                      <div
-                        class="grid grid-cols-2 gap-6 md:max-w-lg md:grid-cols-4"
-                      >
-                        <BaseRadio
-                          v-model="avatarShape"
-                          name="avatar_shape"
-                          label="Straight"
-                          value="straight"
-                          color="primary"
-                        />
-
-                        <BaseRadio
-                          v-model="avatarShape"
-                          name="avatar_shape"
-                          label="Rounded"
-                          value="rounded"
-                          color="primary"
-                        />
-
-                        <BaseRadio
-                          v-model="avatarShape"
-                          name="avatar_shape"
-                          value="curved"
-                          label="Curved"
-                          color="primary"
-                        />
-
-                        <BaseRadio
-                          v-model="avatarShape"
-                          name="avatar_shape"
-                          value="full"
-                          label="Full"
-                          color="primary"
-                        />
-                      </div>
-                    </div>
-                    <!-- Mask -->
-                    <div v-if="avatarType === 'mask'">
-                      <BaseText size="xs" class="text-muted-400 mb-3 uppercase"
-                        >Avatar masks</BaseText
-                      >
-                      <div
-                        class="grid grid-cols-2 gap-6 md:max-w-lg md:grid-cols-4"
-                      >
-                        <BaseRadio
-                          v-model="avatarMask"
-                          name="avatar_mask"
-                          label="Hex"
-                          value="hex"
-                          color="primary"
-                        />
-
-                        <BaseRadio
-                          v-model="avatarMask"
-                          name="avatar_mask"
-                          label="Hexed"
-                          value="hexed"
-                          color="primary"
-                        />
-
-                        <BaseRadio
-                          v-model="avatarMask"
-                          name="avatar_mask"
-                          value="blob"
-                          label="Blob"
-                          color="primary"
-                        />
-
-                        <BaseRadio
-                          v-model="avatarMask"
-                          name="avatar_mask"
-                          value="deca"
-                          label="Deca"
-                          color="primary"
-                        />
-                      </div>
-                    </div>
-                    <!-- Indicator -->
-                    <div v-if="avatarType !== 'mask'">
-                      <BaseText size="xs" class="text-muted-400 mb-3 uppercase"
-                        >Avatar status</BaseText
-                      >
-                      <BaseCheckbox
-                        v-model="avatarIndicator"
-                        label="Show status on main avatar"
-                        color="muted"
-                        :classes="{
-                          wrapper: 'text-pink-500',
-                        }"
-                      />
-                    </div>
-                  </div>
-                </DisclosurePanel>
-              </Disclosure>
-              <!-- Text -->
-              <Disclosure v-slot="{ open }" default-open>
-                <DisclosureButton
-                  class="text-muted-800 dark:text-muted-100 flex w-full items-center justify-between rounded-lg px-4 py-3 text-left text-sm font-medium"
-                  :class="open ? 'bg-muted-100 dark:bg-muted-700' : ''"
-                >
-                  <span>Customize text</span>
-                  <Icon
-                    name="lucide:chevron-down"
-                    class="text-muted-400 h-4 w-4 transition-transform duration-200"
-                    :class="open ? 'rotate-180' : ''"
-                  />
-                </DisclosureButton>
-                <DisclosurePanel class="text-muted-500 px-4 pb-2 pt-4 text-sm">
-                  <div class="mb-6 space-y-8">
-                    <!-- Size -->
-                    <div>
-                      <BaseText size="xs" class="text-muted-400 mb-3 uppercase"
-                        >Heading size</BaseText
-                      >
-                      <div
-                        class="grid grid-cols-2 gap-6 md:max-w-lg md:grid-cols-4"
-                      >
-                        <BaseRadio
-                          v-model="headingSize"
-                          name="heading_size"
-                          label="lg"
-                          value="lg"
-                          color="primary"
-                        />
-
-                        <BaseRadio
-                          v-model="headingSize"
-                          name="heading_size"
-                          label="xl"
-                          value="xl"
-                          color="primary"
-                        />
-
-                        <BaseRadio
-                          v-model="headingSize"
-                          name="heading_size"
-                          label="2xl"
-                          value="2xl"
-                          color="primary"
-                        />
-                      </div>
-                    </div>
-                    <!-- Weight -->
-                    <div>
-                      <BaseText size="xs" class="text-muted-400 mb-3 uppercase"
-                        >Heading weight</BaseText
-                      >
-                      <div
-                        class="grid grid-cols-2 gap-3 md:max-w-lg md:grid-cols-4"
-                      >
-                        <BaseRadio
-                          v-model="headingWeight"
-                          name="heading_weight"
-                          label="normal"
-                          value="normal"
-                          color="primary"
-                        />
-
-                        <BaseRadio
-                          v-model="headingWeight"
-                          name="heading_weight"
-                          label="semibold"
-                          value="semibold"
-                          color="primary"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </DisclosurePanel>
-              </Disclosure>
-              <!-- Buttons -->
-              <Disclosure v-slot="{ open }" default-open>
-                <DisclosureButton
-                  class="text-muted-800 dark:text-muted-100 flex w-full items-center justify-between rounded-lg px-4 py-3 text-left text-sm font-medium"
-                  :class="open ? 'bg-muted-100 dark:bg-muted-700' : ''"
-                >
-                  <span>Customize buttons / tag</span>
-                  <Icon
-                    name="lucide:chevron-down"
-                    class="text-muted-400 h-4 w-4 transition-transform duration-200"
-                    :class="open ? 'rotate-180' : ''"
-                  />
-                </DisclosureButton>
-                <DisclosurePanel class="text-muted-500 px-4 pb-2 pt-4 text-sm">
-                  <div class="mb-6 space-y-8">
-                    <!-- Shape -->
-                    <div>
-                      <BaseText size="xs" class="text-muted-400 mb-3 uppercase"
-                        >Shapes</BaseText
-                      >
-                      <div
-                        class="grid grid-cols-2 gap-6 md:max-w-lg md:grid-cols-4"
-                      >
-                        <BaseRadio
-                          v-model="buttonShape"
-                          name="button_shape"
-                          label="Straight"
-                          value="straight"
-                          color="primary"
-                        />
-
-                        <BaseRadio
-                          v-model="buttonShape"
-                          name="button_shape"
-                          label="Rounded"
-                          value="rounded"
-                          color="primary"
-                        />
-
-                        <BaseRadio
-                          v-model="buttonShape"
-                          name="button_shape"
-                          value="curved"
-                          label="Curved"
-                          color="primary"
-                        />
-
-                        <BaseRadio
-                          v-model="buttonShape"
-                          name="button_shape"
-                          value="full"
-                          label="Full"
-                          color="primary"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </DisclosurePanel>
-              </Disclosure>
-              <!-- Card -->
-              <Disclosure v-slot="{ open }" default-open>
-                <DisclosureButton
-                  class="text-muted-800 dark:text-muted-100 flex w-full items-center justify-between rounded-lg px-4 py-3 text-left text-sm font-medium"
-                  :class="open ? 'bg-muted-100 dark:bg-muted-700' : ''"
-                >
-                  <span>Customize card</span>
-                  <Icon
-                    name="lucide:chevron-down"
-                    class="text-muted-400 h-4 w-4 transition-transform duration-200"
-                    :class="open ? 'rotate-180' : ''"
-                  />
-                </DisclosureButton>
-                <DisclosurePanel class="text-muted-500 px-4 pb-2 pt-4 text-sm">
-                  <div class="mb-6 space-y-8">
-                    <!-- Shape -->
-                    <div>
-                      <BaseText size="xs" class="text-muted-400 mb-3 uppercase"
-                        >Shapes</BaseText
-                      >
-                      <div
-                        class="grid grid-cols-2 gap-8 md:max-w-lg md:grid-cols-4"
-                      >
-                        <BaseRadio
-                          v-model="cardShape"
-                          name="card_shape"
-                          label="Straight"
-                          value="straight"
-                          color="primary"
-                        />
-
-                        <BaseRadio
-                          v-model="cardShape"
-                          name="card_shape"
-                          label="Rounded"
-                          value="rounded"
-                          color="primary"
-                        />
-
-                        <BaseRadio
-                          v-model="cardShape"
-                          name="card_shape"
-                          value="curved"
-                          label="Curved"
-                          color="primary"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </DisclosurePanel>
-              </Disclosure>
+            <div>
+              <button
+                type="button"
+                class="border-muted-200 dark:border-muted-800 mx-auto flex h-32 w-32 flex-col items-center justify-center border"
+              >
+                <Icon name="uit:window-maximize" class="mb-2 h-10 w-10" />
+                <span>Relaxed</span>
+              </button>
             </div>
-          </BaseCard>
+            <div>
+              <button
+                type="button"
+                class="border-muted-200 dark:border-muted-800 mx-auto flex h-32 w-32 flex-col items-center justify-center border"
+              >
+                <Icon name="uit:window-maximize" class="mb-2 h-10 w-10" />
+                <span>Relaxed</span>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

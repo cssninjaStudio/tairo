@@ -24,11 +24,21 @@
         </BaseParagraph>
       </div>
       <div class="ptablet:grid-cols-2 grid gap-6 sm:grid-cols-3">
-        <LandingLayersBox title="UI Layer" icon="ph:mouse-duotone" to="/">
+        <LandingLayersBox
+          title="UI Layer"
+          icon="ph:mouse-duotone"
+          to="/"
+          color="indigo"
+        >
           Tairo is the ultimate solution for developers and businesses looking
           to build beautiful and responsive dashboards in no time.
         </LandingLayersBox>
-        <LandingLayersBox title="Layout Layer" icon="ph:sidebar-duotone" to="/">
+        <LandingLayersBox
+          title="Layout Layer"
+          icon="ph:sidebar-duotone"
+          to="/"
+          color="purple"
+        >
           Tairo is the ultimate solution for developers and businesses looking
           to build beautiful and responsive dashboards in no time.
         </LandingLayersBox>

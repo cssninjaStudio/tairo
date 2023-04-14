@@ -4,9 +4,11 @@ const props = withDefaults(
     title: string
     icon: string
     to?: string
+    color?: string
   }>(),
   {
     to: '/',
+    color: 'primary',
   },
 )
 </script>
@@ -16,7 +18,12 @@ const props = withDefaults(
     <BaseCard
       shape="curved"
       elevated-hover
-      class="dark:!bg-muted-900 hover:!border-primary-500 relative z-10 p-5"
+      class="dark:!bg-muted-900 relative z-10 p-5"
+      :class="[
+        props.color === 'primary' ? 'hover:!border-primary-500' : '',
+        props.color === 'purple' ? 'hover:!border-purple-500' : '',
+        props.color === 'indigo' ? 'hover:!border-indigo-500' : '',
+      ]"
     >
       <div
         class="gridlines relative mb-4 flex h-40 w-full items-center justify-center overflow-hidden"
@@ -25,12 +32,31 @@ const props = withDefaults(
           class="nui-mask nui-mask-hexed relative mb-2 flex h-[84px] w-[84px] shrink-0 items-center justify-center"
         >
           <div
-            class="animate-spin-slow from-primary-100 to-primary-500 dark:from-primary-800 absolute inset-0 flex h-full w-full items-center justify-center bg-gradient-to-tr blur-sm transition-all duration-200"
+            class="animate-spin-slow absolute inset-0 flex h-full w-full items-center justify-center bg-gradient-to-tr blur-sm transition-all duration-200"
+            :class="[
+              props.color === 'primary'
+                ? 'from-primary-100 to-primary-500 dark:from-primary-800'
+                : '',
+              props.color === 'purple'
+                ? 'from-purple-100 to-purple-500 dark:from-purple-800'
+                : '',
+              props.color === 'indigo'
+                ? 'from-indigo-100 to-indigo-500 dark:from-indigo-800'
+                : '',
+            ]"
           ></div>
           <div
             class="nui-mask nui-mask-hexed dark:bg-muted-800 flex h-[80px] w-[80px] items-center justify-center bg-white"
           >
-            <Icon :name="props.icon" class="text-primary-500 h-7 w-7" />
+            <Icon
+              :name="props.icon"
+              class="h-7 w-7"
+              :class="[
+                props.color === 'primary' ? 'text-primary-500' : '',
+                props.color === 'purple' ? 'text-purple-500' : '',
+                props.color === 'indigo' ? 'text-indigo-500' : '',
+              ]"
+            />
           </div>
         </div>
         <div

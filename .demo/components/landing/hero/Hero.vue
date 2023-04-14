@@ -87,7 +87,7 @@ function useGaugePersonal() {
         class="mt-12 grid grid-cols-2 -space-x-52 opacity-60 dark:opacity-50 2xl:mx-auto 2xl:max-w-6xl"
       >
         <div
-          class="from-primary-200 h-40 bg-gradient-to-br to-purple-400 blur-3xl dark:from-blue-700"
+          class="from-primary-200 h-40 bg-gradient-to-br to-primary-400 blur-3xl dark:from-blue-700"
         ></div>
         <div
           class="dark:to-primary-600 h-24 bg-gradient-to-r from-indigo-400 to-indigo-700 blur-3xl"
