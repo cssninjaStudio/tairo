@@ -9,10 +9,10 @@
     "pnpm": ">=7"
   },
   "scripts": {
-    "dev": "nuxi dev _app",
-    "build": "nuxi build _app",
-    "demo:dev": "nuxi dev _demo",
-    "demo:build": "nuxi build _demo",
+    "dev": "nuxi dev .app",
+    "build": "nuxi build .app",
+    "demo:dev": "nuxi dev .demo",
+    "demo:build": "nuxi build .demo",
     "test": "run-p test:*",
     "test:tsc": "vue-tsc --noEmit",
     "test:lint": "run-s lint:eslint lint:prettier",
@@ -27,12 +27,12 @@
     "@cssninja/nuxt-toaster": "^0.3.10",
     "@cssninja/nuxt-ui": "^0.7.13",
     "@nuxt/image-edge": "1.0.0-28020728.5df24eb",
-    "@vee-validate/zod": "^4.8.3",
+    "@vee-validate/zod": "^4.8.4",
     "fast-copy": "^3.0.1",
     "nuxt": "^3.4.1",
     "nuxt-seo-kit": "^1.3.6",
-    "pinia": "^2.0.33",
-    "vee-validate": "^4.8.3",
+    "pinia": "^2.0.34",
+    "vee-validate": "^4.8.4",
     "zod": "^3.21.4"
   },
   "devDependencies": {

@@ -1,7 +1,4 @@
 packages:
-  - _demo
-  - _app
-  - _documentation
-  - _layout_sidebar
-  - _layout_collapse
-  - _tairo
+  - .demo
+  - .app
+  - layers/*

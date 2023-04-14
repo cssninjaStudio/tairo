@@ -8,5 +8,5 @@ coverage
 .nuxt
 .output
 CHANGELOG.md
-_demo/public/
-_documentation/content/**/*.md
+.demo/public/
+layers/documentation/content/**/*.md
