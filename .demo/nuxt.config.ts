@@ -75,11 +75,11 @@ export default defineNuxtConfig({
       'process.env.ENABLE_A11Y_AXE': false,
     },
     optimizeDeps: {
-      // disabled: false,
+      disabled: false,
     },
     build: {
       target: 'esnext',
-      // commonjsOptions: { include: [] },
+      commonjsOptions: { include: [] },
     },
   },
   hooks: {
