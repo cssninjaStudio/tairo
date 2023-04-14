@@ -1,6 +1,7 @@
-import type { MaybeComputedRef } from '@vueuse/core'
+import type { MaybeRefOrGetter } from '@vueuse/core'
 import copy from 'fast-copy'
 import type { InjectionKey } from 'vue'
+import { toRef } from '@vueuse/core'
 
 export interface StepForm<T extends Record<string, any> = Record<string, any>> {
   meta: T
@@ -14,7 +15,7 @@ export interface MultiStepFormConfig<
   T extends Record<string, any> = Record<string, any>,
   D extends Record<string, any> = Record<string, any>,
 > {
-  initialState: MaybeComputedRef<T>
+  initialState: MaybeRefOrGetter<T>
   steps: StepForm<D>[]
 
   // eslint-disable-next-line no-use-before-define
@@ -31,15 +32,7 @@ export function createMultiStepForm<
   T extends Record<string, any>,
   D extends Record<string, any>,
 >(rules: MultiStepFormConfig<T, D>) {
-  const initialState = computed(() => {
-    if (typeof rules.initialState === 'function') {
-      return rules.initialState()
-    }
-    if (isRef(rules.initialState)) {
-      return rules.initialState.value
-    }
-    return rules.initialState
-  })
+  const initialState = toRef(rules.initialState)
 
   const steps = computed(() => rules.steps.map((step, id) => ({ ...step, id })))
   const router = useRouter()

@@ -1,21 +1,16 @@
-import type { MaybeComputedRef } from '@vueuse/shared'
+import type { MaybeRefOrGetter } from '@vueuse/shared'
 import { kebabCase, upperFirst } from 'scule'
 import type { ComponentMeta } from 'vue-component-meta'
 // @ts-ignore - might be not defined if documentation is disabled
 import type { NuxtComponentMetaNames } from '#nuxt-component-meta/types'
+import { toRef } from '@vueuse/core'
 
 const excludedProps = ['modelValue', 'modelModifiers']
 
 export async function useDocumentationMeta(
-  _name: MaybeComputedRef<NuxtComponentMetaNames>,
+  _name: MaybeRefOrGetter<NuxtComponentMetaNames>,
 ) {
-  const name = computed(() => {
-    return typeof _name === 'function'
-      ? _name()
-      : isRef(_name)
-      ? _name.value
-      : _name
-  })
+  const name = toRef(_name)
 
   const meta = await useComponentMeta(name.value)
 

@@ -177,8 +177,8 @@ importers:
   layers/tairo:
     devDependencies:
       '@cssninja/nuxt-toaster':
-        specifier: ^0.3.10
-        version: 0.3.10
+        specifier: ^0.3.11
+        version: 0.3.11
       '@nuxt/image-edge':
         specifier: 1.0.0-28020728.5df24eb
         version: 1.0.0-28020728.5df24eb
@@ -633,11 +633,11 @@ packages:
       mime: 3.0.0
     dev: true
 
-  /@cssninja/nuxt-toaster@0.3.10:
-    resolution: {integrity: sha512-krbmR4cdwTF0xtbwumppWp+9pvKcEBN5V4gnMLopE8T0BJKAHh+VTb4eyV7cPcZNeaYhXeK53owQTy4/TsWZKg==}
+  /@cssninja/nuxt-toaster@0.3.11:
+    resolution: {integrity: sha512-FLC7KSSLGK2FrCmZzGmZiQLX/D3e5qf8n5auQFBG+qn6ypYEtwVtqspVNo9CNf5ywPc2jmR+lgJ4jy9tVj6U/g==}
     dependencies:
       '@nuxt/kit': 3.4.1
-      '@vueuse/core': 9.13.0
+      '@vueuse/core': 10.0.2
       defu: 6.1.2
     transitivePeerDependencies:
       - '@vue/composition-api'
@@ -2690,18 +2690,6 @@ packages:
       - vue
     dev: true
 
-  /@vueuse/core@9.13.0:
-    resolution: {integrity: sha512-pujnclbeHWxxPRqXWmdkKV5OX4Wk4YeK7wusHqRwU0Q7EFusHoqNA/aPhB6KCh9hEqJkLAJo7bb0Lh9b+OIVzw==}
-    dependencies:
-      '@types/web-bluetooth': 0.0.16
-      '@vueuse/metadata': 9.13.0
-      '@vueuse/shared': 9.13.0
-      vue-demi: 0.14.0
-    transitivePeerDependencies:
-      - '@vue/composition-api'
-      - vue
-    dev: true
-
   /@vueuse/head@1.1.23:
     resolution: {integrity: sha512-bJiiQXrICvCI740jR2CLK+FhXyvMx2dIfyeF3FdOsYJn6OtexdBI2wchyuKNYmiAQ8cibAHxmDUytAFqIdIRJg==}
     peerDependencies:
@@ -2718,10 +2706,6 @@ packages:
 
   /@vueuse/metadata@10.0.2:
     resolution: {integrity: sha512-APSjlABrV+Q74c+FR0kFETvcN9W2pAaT3XF3WwqWUuk4srmVxv7DY4WshZxK2KYk1+MVY0Fus6J1Hk/JXVm6Aw==}
-    dev: true
-
-  /@vueuse/metadata@9.13.0:
-    resolution: {integrity: sha512-gdU7TKNAUVlXXLbaF+ZCfte8BjRJQWPCa2J55+7/h+yDtzw3vOoGQDRXzI6pyKyo6bXFT5/QoPE4hAknExjRLQ==}
     dev: true
 
   /@vueuse/nuxt@10.0.2(nuxt@3.4.1):
@@ -2744,15 +2728,6 @@ packages:
 
   /@vueuse/shared@10.0.2:
     resolution: {integrity: sha512-7W2l6qZaFvla3zAeEVo8hNHkNRKCezJa3JjZAKv3K4KsevXobHhVNr+RHaOVNK/6ETpFmtqiK+0pMIADbHjjag==}
-    dependencies:
-      vue-demi: 0.14.0
-    transitivePeerDependencies:
-      - '@vue/composition-api'
-      - vue
-    dev: true
-
-  /@vueuse/shared@9.13.0:
-    resolution: {integrity: sha512-UrnhU+Cnufu4S6JLCPZnkWh0WwZGUp72ktOF2DFptMlOs3TOdVv8xJN53zhHGARmVOsz5KqOls09+J1NR6sBKw==}
     dependencies:
       vue-demi: 0.14.0
     transitivePeerDependencies:
