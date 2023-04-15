@@ -43,6 +43,32 @@ export default defineNuxtConfig({
     // wich is a carousel component used in the demo
     'nuxt-swiper',
   ],
+  unfonts: {
+    google: {
+      families: ['Roboto Flex', 'Inter', 'Karla', 'Fira Code'],
+    },
+    // fontsource: {
+    //   families: [
+    //     {
+    //       name: 'roboto-flex',
+    //       variables: ['variable'],
+    //     },
+    //     {
+    //       name: 'inter',
+    //       variables: ['variable'],
+    //     },
+    //     {
+    //       name: 'karla',
+    //       variables: ['variable'],
+    //     },
+    //     {
+    //       name: 'fira-code',
+    //       variables: ['variable'],
+    //     },
+    //     // 'Roboto-Flex', 'Inter', 'Karla', 'Fira-Code'
+    //   ],
+    // },
+  },
   runtimeConfig: {
     public: {
       // mapbox config

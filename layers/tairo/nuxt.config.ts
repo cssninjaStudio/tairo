@@ -20,7 +20,11 @@ export default defineNuxtConfig({
      */
     process.env?.DEV_SHURIKEN_UI_PATH || '@shuriken-ui/nuxt',
   ],
-  modules: ['@nuxt/image-edge', '@cssninja/nuxt-toaster'],
+  modules: [
+    'unplugin-fonts/nuxt',
+    '@nuxt/image-edge',
+    '@cssninja/nuxt-toaster',
+  ],
   app: {
     layoutTransition: {
       enterActiveClass: 'transition-opacity duration-400 ease-out',

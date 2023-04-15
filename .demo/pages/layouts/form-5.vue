@@ -58,7 +58,7 @@ onMounted(() => {
   generatePassword()
 })
 
-const { text, copy, copied, isSupported } = useClipboard({ password })
+const { text, copy, copied, isSupported } = useClipboard({ source: password })
 const handleClipboard = () => {
   copy(password.value)
   if (copied) {
