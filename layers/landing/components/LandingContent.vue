@@ -168,10 +168,10 @@
         </div>
         <div class="mt-2 flex justify-center gap-2">
           <BaseButton
-            color="success"
+            color="primary"
             shape="curved"
             shadow="hover"
-            class="h-11 w-48"
+            class="!h-11 w-48"
           >
             <Icon name="cib:envato" class="h-4 w-4" />
             <span>Purchase Tairo</span>

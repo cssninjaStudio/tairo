@@ -405,7 +405,10 @@ const panelActive = ref(false)
               <div>
                 <div class="ltablet:mb-0 mb-2 flex gap-x-2 lg:mb-0">
                   <BaseButtonIcon small class="scale-[0.8]">
-                    <Icon name="ph:arrow-u-up-start-duotone" class="h-4 w-4" />
+                    <Icon
+                      name="ph:arrow-bend-down-left-duotone"
+                      class="h-4 w-4"
+                    />
                   </BaseButtonIcon>
                   <BaseButtonIcon small class="scale-[0.8]">
                     <Icon name="ph:bookmark-simple-duotone" class="h-4 w-4" />
