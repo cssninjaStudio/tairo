@@ -20,6 +20,6 @@
     "editor.defaultFormatter": "Nuxt.mdc",
     "editor.formatOnSave": true
   },
-  "tailwindCSS.experimental.configFile": "_demo/tailwind.config.ts",
+  "tailwindCSS.experimental.configFile": ".demo/tailwind.config.ts",
   "typescript.tsdk": "node_modules/typescript/lib"
 }
