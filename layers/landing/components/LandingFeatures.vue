@@ -66,9 +66,14 @@
       </div>
 
       <div class="mt-16 flex items-center justify-center">
-        <BaseButton shape="curved" color="primary" flavor="outline"
-          >Read Documentation</BaseButton
+        <BaseButton
+          to="/documentation"
+          shape="curved"
+          color="primary"
+          flavor="outline"
         >
+          Read Documentation
+        </BaseButton>
       </div>
     </div>
   </div>

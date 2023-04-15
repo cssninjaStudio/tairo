@@ -4,10 +4,6 @@
   "version": "0.0.0",
   "type": "module",
   "main": "./nuxt.config.ts",
-  "engines": {
-    "node": ">=16.15",
-    "pnpm": ">=7"
-  },
   "devDependencies": {
     "nuxt": "3.4.1"
   }

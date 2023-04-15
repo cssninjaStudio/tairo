@@ -6,6 +6,15 @@ import { isProduction } from 'std-env'
 export default defineNuxtConfig({
   extends: [
     /**
+     * App layers: these are the layers that contains specific features
+     * - landing: contains landing pages
+     * - documentation: contains all /documentation pages
+     */
+    '../layers/landing',
+    process.env.ENABLE_DOCUMENTATION &&
+      resolve(__dirname, '../layers/documentation'),
+
+    /**
      * This extends the base Tairo layer.
      *
      * Alternatively you can use the following:
@@ -16,13 +25,9 @@ export default defineNuxtConfig({
      * This would allows you to create an empty git repository
      * with only your source code and no demo.
      */
-    '../layers/tairo',
     '../layers/tairo-layout-sidebar',
     '../layers/tairo-layout-collapse',
-
-    process.env.ENABLE_DOCUMENTATION === 'true'
-      ? resolve(__dirname, '../layers/documentation')
-      : undefined,
+    '../layers/tairo',
 
     /**
      * This is an additional layer that adds SEO features.

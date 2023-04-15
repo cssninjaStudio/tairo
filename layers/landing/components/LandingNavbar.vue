@@ -28,7 +28,10 @@ const isSearchOpen = useState('search-open', () => false)
         <NuxtLink to="/" class="inline-flex items-center justify-center px-6">
           Prebuilt pages
         </NuxtLink>
-        <NuxtLink to="/" class="inline-flex items-center justify-center px-6">
+        <NuxtLink
+          to="/documentation"
+          class="inline-flex items-center justify-center px-6"
+        >
           Documentation
         </NuxtLink>
         <div class="px-6">

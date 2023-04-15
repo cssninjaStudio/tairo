@@ -4,13 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "main": "./nuxt.config.ts",
-  "engines": {
-    "node": ">=16.15",
-    "pnpm": ">=7"
-  },
   "devDependencies": {
     "@cssninja/nuxt-toaster": "^0.3.11",
-    "@shuriken-ui/nuxt": "^0.0.1",
+    "@shuriken-ui/nuxt": "^0.0.2",
     "@nuxt/image-edge": "1.0.0-28020728.5df24eb",
     "@vee-validate/zod": "^4.8.4",
     "fast-copy": "^3.0.1",

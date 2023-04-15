@@ -8,7 +8,7 @@
   "extends": "./.demo/.nuxt/tsconfig.json",
   "compilerOptions": {
     "target": "esnext",
-    "moduleResolution": "bundler",
+    // "moduleResolution": "bundler",
     "types": ["vite/client"]
   }
 }

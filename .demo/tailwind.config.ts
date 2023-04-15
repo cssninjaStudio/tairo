@@ -11,12 +11,22 @@ import plugin from 'tailwindcss/plugin'
 export default withShurikenUI({
   content: [join(__dirname, `/utils/**/*.ts`)], // Parse the utils folder for demo
   theme: {
-    // Custom fonts (defaults values are commented out)
-    // fontFamily: {
-    //   sans: ['Roboto Flex', 'sans-serif'],
-    //   heading: ['Inter', 'sans-serif'],
-    //   alt: ['Karla', 'sans-serif'],
-    // },
+    // Custom fonts
+    fontFamily: {
+      sans: ['Roboto Flex', 'sans-serif'],
+      heading: ['Inter', 'sans-serif'],
+      alt: ['Karla', 'sans-serif'],
+      mono: [
+        'ui-monospace',
+        'SFMono-Regular',
+        'Menlo',
+        'Monaco',
+        'Consolas',
+        '"Liberation Mono"',
+        '"Courier New"',
+        'monospace',
+      ],
+    },
     extend: {
       // Custom colors
       colors: {

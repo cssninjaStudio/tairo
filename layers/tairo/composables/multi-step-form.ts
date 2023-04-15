@@ -1,7 +1,7 @@
 import type { MaybeRefOrGetter } from '@vueuse/core'
-import copy from 'fast-copy'
-import type { InjectionKey } from 'vue'
 import { toRef } from '@vueuse/core'
+import copy from 'fast-copy'
+import type { InjectionKey, UnwrapRef } from 'vue'
 
 export interface StepForm<T extends Record<string, any> = Record<string, any>> {
   meta: T
@@ -93,7 +93,7 @@ export function createMultiStepForm<
   }
 
   function reset() {
-    data.value = copy(initialState.value)
+    data.value = copy(initialState.value) as UnwrapRef<T>
     preview.value = false
     complete.value = false
   }
@@ -105,7 +105,7 @@ export function createMultiStepForm<
 
     try {
       if (rules.onSubmit) {
-        await rules.onSubmit(data.value, multiStepContext)
+        await rules.onSubmit(data.value as T, multiStepContext)
       }
       complete.value = true
     } catch (error) {

@@ -31,28 +31,27 @@ const year = new Date().getFullYear()
           to="#"
           class="text-muted-600 hover:text-primary-500 dark:text-muted-200 dark:hover:text-primary-400 text-sm transition-colors duration-300"
         >
-          Home
-        </NuxtLink>
-        <NuxtLink
-          to="#"
-          class="text-muted-600 hover:text-primary-500 dark:text-muted-200 dark:hover:text-primary-400 text-sm transition-colors duration-300"
-        >
           Demo pages
         </NuxtLink>
+
         <NuxtLink
-          to="#"
-          class="text-muted-600 hover:text-primary-500 dark:text-muted-200 dark:hover:text-primary-400 text-sm transition-colors duration-300"
-        >
-          Components
-        </NuxtLink>
-        <NuxtLink
-          to="#"
+          to="/documentation"
           class="text-muted-600 hover:text-primary-500 dark:text-muted-200 dark:hover:text-primary-400 text-sm transition-colors duration-300"
         >
           Documentation
         </NuxtLink>
         <NuxtLink
+          to="https://github.com/shuriken-ui"
+          target="_blank"
+          rel="noopener"
+          class="text-muted-600 hover:text-primary-500 dark:text-muted-200 dark:hover:text-primary-400 text-sm transition-colors duration-300"
+        >
+          Shuriken UI
+        </NuxtLink>
+        <NuxtLink
           to="https://cssninja.io/faq/support"
+          target="_blank"
+          rel="noopener"
           class="text-muted-600 hover:text-primary-500 dark:text-muted-200 dark:hover:text-primary-400 text-sm transition-colors duration-300"
         >
           Support
@@ -61,7 +60,18 @@ const year = new Date().getFullYear()
       <div
         class="text-muted-500 dark:text-muted-400 ltablet:w-1/5 ltablet:justify-end ltablet:mt-0 mt-6 flex w-full items-center justify-center text-sm lg:mt-0 lg:w-1/5 lg:justify-end"
       >
-        <span>© Css Ninja 2018-{{ year }}.</span>
+        <span>
+          ©
+          <NuxtLink
+            to="https://cssninja.io"
+            target="_blank"
+            rel="noopener"
+            class="text-muted-600 hover:text-primary-500 dark:text-muted-200 dark:hover:text-primary-400 text-sm transition-colors duration-300"
+          >
+            Css Ninja
+          </NuxtLink>
+          2018-{{ year }}.
+        </span>
       </div>
     </div>
   </footer>

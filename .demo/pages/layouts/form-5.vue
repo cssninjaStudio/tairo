@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import Slider from '@vueform/slider'
-// import * as zxcvbn from 'zxcvbn'
 import '~/assets/css/slider.css'
 
 definePageMeta({
