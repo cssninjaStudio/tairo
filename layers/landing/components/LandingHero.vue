@@ -132,7 +132,7 @@ function useGaugePersonal() {
       </div>
       <!-- Components -->
       <div
-        class="relative z-30 mt-12 overflow-hidden border transition-all duration-300"
+        class="relative z-30 mt-12 transform-gpu overflow-hidden border transition-all duration-300"
         :class="[
           y > 60
             ? 'bg-muted-100 dark:bg-muted-900 border-muted-200 dark:border-muted-800 ltablet:ps-24 rounded-xl pb-6 pe-6 ps-6 pt-20 lg:ps-28'
@@ -141,7 +141,7 @@ function useGaugePersonal() {
       >
         <!-- Fake sidebar -->
         <div
-          class="ltablet:w-16 ltablet:flex dark:bg-muted-800 absolute left-0 top-0 hidden h-full w-20 flex-col bg-white transition-all duration-200 lg:flex"
+          class="ltablet:w-16 ltablet:flex dark:bg-muted-800 absolute left-0 top-0 hidden h-full w-20 transform-gpu flex-col bg-white transition-all duration-200 lg:flex"
           :class="
             y > 60 ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-full'
           "
@@ -205,7 +205,7 @@ function useGaugePersonal() {
         </div>
         <!-- Fake navbar -->
         <div
-          class="ltablet:ps-24 absolute left-0 top-0 flex h-20 w-full items-center justify-between pe-6 ps-6 transition-all duration-200 lg:ps-28"
+          class="ltablet:ps-24 absolute left-0 top-0 flex h-20 w-full transform-gpu items-center justify-between pe-6 ps-6 transition-all duration-200 lg:ps-28"
           :class="
             y > 60 ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full'
           "
@@ -253,11 +253,11 @@ function useGaugePersonal() {
           </div>
         </div>
         <div
-          class="ltablet:grid-cols-3 ltablet:gap-6 grid gap-3 sm:grid-cols-3 lg:grid-cols-4 lg:gap-6"
+          class="ltablet:grid-cols-3 ltablet:gap-6 grid gap-6 sm:grid-cols-3 sm:gap-3 lg:grid-cols-4 lg:gap-4"
         >
           <!-- Col -->
           <div
-            class="flex flex-col gap-6"
+            class="ltablet:gap-6 flex flex-col gap-6 sm:gap-3 lg:gap-4"
             :class="y > 60 ? '' : 'lg:mt-24 ltablet:mt-24 ptablet:mt-24'"
           >
             <!-- Widget -->
@@ -289,7 +289,7 @@ function useGaugePersonal() {
             </BaseCard>
           </div>
           <!-- Col -->
-          <div class="flex flex-col gap-6">
+          <div class="ltablet:gap-6 flex flex-col gap-6 sm:gap-3 lg:gap-4">
             <!-- Widget -->
             <BaseCard shape="curved" elevated class="p-6">
               <DemoInboxMessage
@@ -314,7 +314,7 @@ function useGaugePersonal() {
           </div>
           <!-- Col -->
           <div
-            class="flex flex-col gap-6 sm:hidden lg:flex"
+            class="ltablet:gap-6 flex flex-col gap-6 sm:hidden sm:gap-3 lg:flex lg:gap-4"
             :class="y > 60 ? '' : 'lg:mt-16 ltablet:mt-16 ptablet:mt-16'"
           >
             <!-- Widget -->
@@ -328,7 +328,7 @@ function useGaugePersonal() {
           </div>
           <!-- Col -->
           <div
-            class="flex flex-col gap-6"
+            class="ltablet:gap-6 flex flex-col gap-6 sm:gap-3 lg:gap-4"
             :class="y > 60 ? '' : 'lg:mt-10 ltablet:mt-10 ptablet:mt-10'"
           >
             <!-- Widget -->
