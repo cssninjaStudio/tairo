@@ -8,10 +8,11 @@ definePageMeta({
   <div>
     <LandingNavbar />
     <LandingHero />
-    <LandingLayers />
     <LandingCustomizer />
     <LandingDemos />
+    <LandingLayers />
     <LandingFeatures />
+    <LandingBenefits />
     <LandingContent />
     <LandingFooter />
   </div>
