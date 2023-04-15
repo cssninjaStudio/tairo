@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const { x, y } = useWindowScroll()
 const gaugePersonal = reactive(useGaugePersonal())
 
 function useGaugePersonal() {
@@ -78,7 +79,7 @@ function useGaugePersonal() {
 
 <template>
   <div
-    class="dark:to-muted-900 border-muted-100 dark:border-muted-800/50 relative min-h-screen overflow-hidden border-b bg-gradient-to-b from-transparent to-white"
+    class="dark:to-muted-900 relative min-h-screen overflow-hidden bg-gradient-to-b from-transparent to-white"
   >
     <div class="gridlines absolute inset-x-0 z-10 -mt-8 py-20"></div>
     <div class="absolute inset-x-0 z-20 -mt-24 py-20">
@@ -87,7 +88,7 @@ function useGaugePersonal() {
         class="mt-12 grid grid-cols-2 -space-x-52 opacity-60 dark:opacity-50 2xl:mx-auto 2xl:max-w-6xl"
       >
         <div
-          class="from-primary-200 h-40 bg-gradient-to-br to-primary-400 blur-3xl dark:from-blue-700"
+          class="from-primary-200 to-primary-400 h-40 bg-gradient-to-br blur-3xl dark:from-blue-700"
         ></div>
         <div
           class="dark:to-primary-600 h-24 bg-gradient-to-r from-indigo-400 to-indigo-700 blur-3xl"
@@ -130,12 +131,135 @@ function useGaugePersonal() {
         </div>
       </div>
       <!-- Components -->
-      <div class="relative z-30 mt-12">
+      <div
+        class="relative z-30 mt-12 overflow-hidden border transition-all duration-300"
+        :class="[
+          y > 60
+            ? 'bg-muted-100 dark:bg-muted-900 border-muted-200 dark:border-muted-800 ltablet:ps-24 rounded-xl pb-6 pe-6 ps-6 pt-20 lg:ps-28'
+            : 'border-transparent',
+        ]"
+      >
+        <!-- Fake sidebar -->
         <div
-          class="ltablet:grid-cols-4 ltablet:gap-6 grid gap-3 sm:grid-cols-3 lg:grid-cols-4 lg:gap-6"
+          class="ltablet:w-16 ltablet:flex dark:bg-muted-800 absolute left-0 top-0 hidden h-full w-20 flex-col bg-white transition-all duration-200 lg:flex"
+          :class="
+            y > 60 ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-full'
+          "
+        >
+          <div class="flex h-20 w-full items-center justify-center">
+            <TairoLogo class="text-primary-500 h-8 w-8" />
+          </div>
+          <div class="flex h-16 w-full items-center justify-center">
+            <div
+              class="nui-mask nui-mask-blob bg-primary-500/10 flex h-12 w-12 items-center justify-center transition-colors duration-200"
+            >
+              <Icon name="ph:house-duotone" class="text-primary-500 h-5 w-5" />
+            </div>
+          </div>
+          <div class="flex h-16 w-full items-center justify-center">
+            <div
+              class="nui-mask nui-mask-blob hover:bg-muted-100 dark:hover:bg-muted-700/50 flex h-12 w-12 items-center justify-center transition-colors duration-200"
+            >
+              <Icon
+                name="ph:grid-four-duotone"
+                class="text-muted-400 h-5 w-5"
+              />
+            </div>
+          </div>
+          <div class="flex h-16 w-full items-center justify-center">
+            <div
+              class="nui-mask nui-mask-blob hover:bg-muted-100 dark:hover:bg-muted-700/50 flex h-12 w-12 items-center justify-center transition-colors duration-200"
+            >
+              <Icon name="ph:users-duotone" class="text-muted-400 h-5 w-5" />
+            </div>
+          </div>
+          <div class="flex h-16 w-full items-center justify-center">
+            <div
+              class="nui-mask nui-mask-blob hover:bg-muted-100 dark:hover:bg-muted-700/50 flex h-12 w-12 items-center justify-center transition-colors duration-200"
+            >
+              <Icon
+                name="ph:chat-circle-duotone"
+                class="text-muted-400 h-5 w-5"
+              />
+            </div>
+          </div>
+          <div class="mt-auto flex h-16 w-full items-center justify-center">
+            <div
+              class="nui-mask nui-mask-blob hover:bg-muted-100 dark:hover:bg-muted-700/50 flex h-12 w-12 items-center justify-center transition-colors duration-200"
+            >
+              <Icon name="ph:gear-six-duotone" class="text-muted-400 h-5 w-5" />
+            </div>
+          </div>
+          <div class="flex h-16 w-full items-center justify-center">
+            <div
+              class="nui-mask nui-mask-blob hover:bg-muted-100 dark:hover:bg-muted-700/50 flex h-12 w-12 items-center justify-center transition-colors duration-200"
+            >
+              <BaseAvatar
+                shape="straight"
+                size="sm"
+                src="/img/avatars/24.svg"
+                class="nui-mask nui-mask-blob"
+              />
+            </div>
+          </div>
+        </div>
+        <!-- Fake navbar -->
+        <div
+          class="ltablet:ps-24 absolute left-0 top-0 flex h-20 w-full items-center justify-between pe-6 ps-6 transition-all duration-200 lg:ps-28"
+          :class="
+            y > 60 ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full'
+          "
+        >
+          <div class="flex h-full items-center gap-4">
+            <div
+              class="nui-mask nui-mask-blob dark:hover:bg-muted-800 flex h-10 w-10 items-center justify-center transition-colors duration-200 hover:bg-white"
+            >
+              <Icon name="lucide:menu" class="text-muted-400 h-5 w-5" />
+            </div>
+            <BaseText class="hidden sm:inline-block">My Dashboard</BaseText>
+          </div>
+          <div class="flex h-full items-center justify-end gap-1">
+            <div
+              class="nui-mask nui-mask-blob dark:hover:bg-muted-800 flex h-10 w-10 items-center justify-center transition-colors duration-200 hover:bg-white"
+            >
+              <Icon name="ph:bell-duotone" class="text-muted-400 h-5 w-5" />
+            </div>
+            <div
+              class="nui-mask nui-mask-blob dark:hover:bg-muted-800 flex h-10 w-10 items-center justify-center transition-colors duration-200 hover:bg-white"
+            >
+              <Icon
+                name="ph:circles-four-duotone"
+                class="text-muted-400 h-5 w-5"
+              />
+            </div>
+            <div
+              class="nui-mask nui-mask-blob dark:hover:bg-muted-800 flex h-10 w-10 items-center justify-center transition-colors duration-200 hover:bg-white"
+            >
+              <Icon
+                name="ph:translate-duotone"
+                class="text-muted-400 h-5 w-5"
+              />
+            </div>
+            <div
+              class="nui-mask nui-mask-blob dark:hover:bg-muted-800 flex h-10 w-10 items-center justify-center transition-colors duration-200 hover:bg-white"
+            >
+              <BaseAvatar
+                shape="straight"
+                size="xs"
+                src="/img/avatars/24.svg"
+                class="nui-mask nui-mask-blob"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="ltablet:grid-cols-3 ltablet:gap-6 grid gap-3 sm:grid-cols-3 lg:grid-cols-4 lg:gap-6"
         >
           <!-- Col -->
-          <div class="ltablet:mt-24 ptablet:mt-24 flex flex-col gap-6 lg:mt-24">
+          <div
+            class="flex flex-col gap-6"
+            :class="y > 60 ? '' : 'lg:mt-24 ltablet:mt-24 ptablet:mt-24'"
+          >
             <!-- Widget -->
             <BaseCard shape="curved" elevated class="flex flex-col p-6">
               <div class="mb-6 flex items-center justify-between">
@@ -149,8 +273,11 @@ function useGaugePersonal() {
                   <span>Personal Score</span>
                 </BaseHeading>
               </div>
-              <div class="py-16">
-                <AddonApexcharts v-bind="gaugePersonal" class="-mt-14" />
+              <div class="flex justify-center py-16">
+                <AddonApexcharts
+                  v-bind="gaugePersonal"
+                  class="-mt-14 transition-all duration-200"
+                />
               </div>
               <div class="mt-auto text-center">
                 <BaseParagraph size="sm">
@@ -187,7 +314,8 @@ function useGaugePersonal() {
           </div>
           <!-- Col -->
           <div
-            class="ltablet:flex ltablet:mt-16 ptablet:mt-16 flex flex-col gap-6 sm:hidden lg:mt-16 lg:flex"
+            class="flex flex-col gap-6 sm:hidden lg:flex"
+            :class="y > 60 ? '' : 'lg:mt-16 ltablet:mt-16 ptablet:mt-16'"
           >
             <!-- Widget -->
             <BaseCard shape="curved" elevated class="p-4">
@@ -199,7 +327,10 @@ function useGaugePersonal() {
             </BaseCard>
           </div>
           <!-- Col -->
-          <div class="ltablet:mt-10 ptablet:mt-10 flex flex-col gap-6 lg:mt-10">
+          <div
+            class="flex flex-col gap-6"
+            :class="y > 60 ? '' : 'lg:mt-10 ltablet:mt-10 ptablet:mt-10'"
+          >
             <!-- Widget -->
             <BaseCard shape="curved" elevated class="p-6">
               <DemoProgressCircle

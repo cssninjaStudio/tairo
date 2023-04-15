@@ -2,9 +2,9 @@
   <div
     class="ltablet:gap-y-0 relative z-30 mt-32 grid grid-cols-12 gap-y-8 overflow-hidden sm:w-full sm:gap-x-16 lg:gap-y-0"
   >
-    <div class="ltablet:col-span-5 col-span-12 lg:col-span-4">
-      <div class="flex h-full flex-col justify-center">
-        <div class="ptablet:text-center">
+    <div class="col-span-12">
+      <div class="mx-auto flex h-full w-full max-w-xl flex-col justify-center">
+        <div class="text-center">
           <BaseText
             class="text-primary-500 mb-2 text-[0.65rem] uppercase tracking-wider"
             >Nuxt Ready</BaseText
@@ -14,9 +14,9 @@
             size="4xl"
             weight="light"
             lead="tight"
-            class="text-muted-800 ptablet:max-w-md ptablet:mx-auto mb-4 max-w-2xl dark:text-white"
+            class="text-muted-800 mx-auto mb-4 max-w-xl dark:text-white"
           >
-            An advanced Nuxt 3 application setup
+            An advanced Nuxt 3 app setup
           </BaseHeading>
           <BaseParagraph
             size="lg"
@@ -94,18 +94,6 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="ltablet:col-span-7 col-span-12 lg:col-span-8">
-      <img
-        class="shadow-muted-300/30 border-muted-200 block max-w-full rounded-t-lg border border-b-0 shadow-xl dark:hidden"
-        src="/img/apps/tairo-screen-full.png"
-        alt="Tairo dashboard"
-      />
-      <img
-        class="shadow-muted-800/30 border-muted-700 hidden max-w-full rounded-t-lg border border-b-0 shadow-xl dark:block"
-        src="/img/apps/tairo-screen-full-dark.png"
-        alt="Tairo dashboard"
-      />
     </div>
   </div>
 </template>
