@@ -17,6 +17,7 @@ export default withShurikenUI({
       heading: ['Inter', 'sans-serif'],
       alt: ['Karla', 'sans-serif'],
       mono: [
+        'Fira Code',
         'ui-monospace',
         'SFMono-Regular',
         'Menlo',
