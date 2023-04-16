@@ -6,7 +6,7 @@ definePageMeta({
 </script>
 
 <template>
-  <div class="pt-16">
+  <div class="dark:bg-muted-900 bg-white pt-16">
     <LandingNavbar />
     <LandingDemos :cta="false" />
     <LandingCta />

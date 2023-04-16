@@ -28,7 +28,7 @@
         <LandingLayersBox
           title="Support portal"
           icon="ph:lifebuoy-duotone"
-          to="/"
+          to="https://cssninja.io/faq/support"
           color="indigo"
         >
           Running into issues? We have a dedicated support portal where you can
@@ -37,13 +37,17 @@
         <LandingLayersBox
           title="Github access"
           icon="fa6-brands:github"
-          to="/"
+          to="https://cssninja.io/faq/github-access"
           color="purple"
         >
           We built Github automation that allows you to access to our private
           repositories, for the products you've purchased from us.
         </LandingLayersBox>
-        <LandingLayersBox title="Community" icon="fa6-brands:discord" to="/">
+        <LandingLayersBox
+          title="Community"
+          icon="fa6-brands:discord"
+          to="https://go.cssninja.io/discord"
+        >
           We have a thrilling Discord community where you can discuss your work
           and get help from our community of customers and developers.
         </LandingLayersBox>

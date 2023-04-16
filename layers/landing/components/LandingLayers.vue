@@ -29,7 +29,7 @@
         <LandingLayersBox
           title="UI Layer"
           icon="ph:mouse-duotone"
-          to="/"
+          to="/documentation/layers"
           color="indigo"
         >
           The UI Layer is the foundation of your app. It provides all basic
@@ -39,7 +39,7 @@
         <LandingLayersBox
           title="Layout Layer"
           icon="ph:sidebar-duotone"
-          to="/"
+          to="/documentation/layers"
           color="purple"
         >
           The layout layer determines the overall structure of your app. It
@@ -49,7 +49,7 @@
         <LandingLayersBox
           title="App Layer"
           icon="ph:notification-duotone"
-          to="/"
+          to="/documentation/layers"
         >
           The app layer is where you write your own code and content. Tairo
           makes it even more easy providing you with app configuration files.
