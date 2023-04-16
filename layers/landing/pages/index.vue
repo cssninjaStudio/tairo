@@ -1,6 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
-  title: 'Nuxt - Tailwind CSS Dashboard System',
+  title: 'Tairo',
   layout: 'empty',
 })
 </script>

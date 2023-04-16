@@ -115,7 +115,7 @@ function useGaugePersonal() {
           class="text-muted-500 dark:text-muted-100 mx-auto mb-4 max-w-2xl"
         >
           Tairo is the ultimate solution for developers looking to build
-          beautiful Nuxt 3 dashboards in no time, with the power of Shuriken UI
+          beautiful Nuxt dashboards in no time, with the power of Shuriken UI
           and Tailwind CSS.
         </BaseParagraph>
         <div class="flex items-center justify-center">
