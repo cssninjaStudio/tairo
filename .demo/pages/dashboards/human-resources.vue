@@ -76,16 +76,19 @@ const items = [
                     size="sm"
                     shape="straight"
                     src="/img/avatars/3.svg"
+                    class="nui-mask nui-mask-blob"
                   />
                   <BaseAvatar
                     size="sm"
                     shape="straight"
                     src="/img/avatars/9.svg"
+                    class="nui-mask nui-mask-blob"
                   />
                   <BaseAvatar
                     size="sm"
                     shape="straight"
                     src="/img/avatars/5.svg"
+                    class="nui-mask nui-mask-blob"
                   />
                   <BaseButtonIcon>
                     <Icon name="lucide:plus" class="h-4 w-4" />

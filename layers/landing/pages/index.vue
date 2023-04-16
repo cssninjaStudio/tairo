@@ -13,6 +13,7 @@ definePageMeta({
     <LandingLayers />
     <LandingFeatures />
     <LandingBenefits />
+    <LandingCta />
     <LandingContent />
     <LandingFooter />
   </div>

@@ -311,7 +311,7 @@ const demos = [
     },
   },
   {
-    title: 'Wizard | Step 1',
+    title: 'Wizard — Step 1',
     subtitle: 'For onboarding and step forms',
     categories: ['Dashboards'],
     url: '/wizard',
@@ -321,7 +321,7 @@ const demos = [
     },
   },
   {
-    title: 'Wizard | Step 2',
+    title: 'Wizard — Step 2',
     subtitle: 'For onboarding and step forms',
     categories: ['Dashboards'],
     url: '/wizard/step-2',
@@ -331,7 +331,7 @@ const demos = [
     },
   },
   {
-    title: 'Wizard | Step 3',
+    title: 'Wizard — Step 3',
     subtitle: 'For onboarding and step forms',
     categories: ['Dashboards'],
     url: '/wizard/step-3',
@@ -341,7 +341,7 @@ const demos = [
     },
   },
   {
-    title: 'Wizard | Step 4',
+    title: 'Wizard — Step 4',
     subtitle: 'For onboarding and step forms',
     categories: ['Dashboards'],
     url: '/wizard/step-4',
@@ -351,7 +351,7 @@ const demos = [
     },
   },
   {
-    title: 'Wizard | Step 5',
+    title: 'Wizard — Step 5',
     subtitle: 'For onboarding and step forms',
     categories: ['Dashboards'],
     url: '/wizard/step-5',
@@ -361,7 +361,7 @@ const demos = [
     },
   },
   {
-    title: 'Wizard | Step 6',
+    title: 'Wizard — Step 6',
     subtitle: 'For onboarding and step forms',
     categories: ['Dashboards'],
     url: '/wizard/step-6',
@@ -371,7 +371,7 @@ const demos = [
     },
   },
   {
-    title: 'Wizard | Step 7',
+    title: 'Wizard — Step 7',
     subtitle: 'For onboarding and step forms',
     categories: ['Dashboards'],
     url: '/wizard/step-7',
@@ -406,8 +406,10 @@ const selectedCategories = ref(['all'])
           size="lg"
           class="text-muted-500 dark:text-muted-100 mx-auto mb-4"
         >
-          Tairo is the ultimate solution for developers and businesses looking
-          to build beautiful and responsive dashboards in no time.
+          Tairo ships with {{ demos.length }}+ prebuilt pages, including
+          dashboard and app examples, as well as collections like lists, grids,
+          profile and personal pages and many other authentication and utility
+          pages.
         </BaseParagraph>
       </div>
 
@@ -435,7 +437,7 @@ const selectedCategories = ref(['all'])
         <div class="ltablet:col-span-10 col-span-12 lg:col-span-10">
           <div class="grid gap-8 sm:grid-cols-2">
             <NuxtLink
-              to="#"
+              :to="demo.url"
               v-for="demo in demos"
               :key="demo.title"
               class="group relative block"

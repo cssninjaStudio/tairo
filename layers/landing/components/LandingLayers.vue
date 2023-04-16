@@ -19,8 +19,10 @@
           size="lg"
           class="text-muted-500 dark:text-muted-100 mx-auto mb-4"
         >
-          Tairo is the ultimate solution for developers and businesses looking
-          to build beautiful and responsive dashboards in no time.
+          Tairo is built on top on the Nuxt Layers concept. Layers can be seen
+          as groups of components and composables that are related to each
+          other. They are designed to be used together and can be easily swapped
+          out.
         </BaseParagraph>
       </div>
       <div class="ptablet:grid-cols-2 grid gap-6 sm:grid-cols-3">
@@ -30,8 +32,9 @@
           to="/"
           color="indigo"
         >
-          Tairo is the ultimate solution for developers and businesses looking
-          to build beautiful and responsive dashboards in no time.
+          The UI Layer is the foundation of your app. It provides all basic
+          elements and is mostly handled by Shuriken UI and some Tairo specific
+          components.
         </LandingLayersBox>
         <LandingLayersBox
           title="Layout Layer"
@@ -39,16 +42,17 @@
           to="/"
           color="purple"
         >
-          Tairo is the ultimate solution for developers and businesses looking
-          to build beautiful and responsive dashboards in no time.
+          The layout layer determines the overall structure of your app. It
+          provides a content area and some navigation options such as a sidebar
+          or a navbar.
         </LandingLayersBox>
         <LandingLayersBox
           title="App Layer"
           icon="ph:notification-duotone"
           to="/"
         >
-          Tairo is the ultimate solution for developers and businesses looking
-          to build beautiful and responsive dashboards in no time.
+          The app layer is where you write your own code and content. Tairo
+          makes it even more easy providing you with app configuration files.
         </LandingLayersBox>
       </div>
     </div>

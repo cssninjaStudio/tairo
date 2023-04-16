@@ -19,7 +19,7 @@ watch(selectedStyle, (value) => {
       <div class="mb-10 max-w-2xl">
         <BaseText
           class="text-primary-500 mb-2 text-[0.65rem] uppercase tracking-wider"
-          >Customize</BaseText
+          >UI Library</BaseText
         >
         <BaseHeading
           as="h2"
@@ -34,8 +34,10 @@ watch(selectedStyle, (value) => {
           size="lg"
           class="text-muted-500 dark:text-muted-100 mx-auto mb-4"
         >
-          Tairo is the ultimate solution for developers and businesses looking
-          to build beautiful and responsive dashboards in no time.
+          Shuriken UI provides a complete set of Nuxt components and utilities
+          such as buttons, form elements, badges, tabs and typography clusters.
+          Each component exposes several props that you can use to customize its
+          look and feel.
         </BaseParagraph>
       </div>
       <div
@@ -62,21 +64,21 @@ watch(selectedStyle, (value) => {
               v-if="toggled"
               class="absolute left-0 top-1/4 z-10 h-full w-full overflow-hidden"
             >
-              <div class="note1 absolute block">
+              <div class="shuriken-1 absolute block">
                 <img
                   class="animate-spin-fast h-10 w-10"
                   src="/img/logo/cssninja-logo-icon.svg"
                   alt="Css Ninja logo"
                 />
               </div>
-              <div class="note4 absolute block">
+              <div class="shuriken-2 absolute block">
                 <img
                   class="animate-spin-fast h-12 w-12"
                   src="/img/logo/cssninja-logo-icon.svg"
                   alt="Css Ninja logo"
                 />
               </div>
-              <div class="note5 absolute block">
+              <div class="shuriken-3 absolute block">
                 <img
                   class="animate-spin-fast h-11 w-11"
                   src="/img/logo/cssninja-logo-icon.svg"
@@ -147,7 +149,8 @@ watch(selectedStyle, (value) => {
               class="!border-primary-600 relative z-20 mx-auto max-w-[340px] overflow-hidden p-6"
             >
               <div
-                class="bg-primary-500 dark:bg-primary-500/20 absolute -right-16 -top-32 h-72 w-72 rounded-full"
+                class="bg-primary-500 dark:bg-primary-500/20 absolute -right-16 -top-32 h-72 w-72 rounded-full transition-transform delay-150 duration-500"
+                :class="selectedStyle === 'creative' ? 'scale-100' : 'scale-0'"
               ></div>
               <div class="mb-6 flex items-center justify-between">
                 <BaseTag
@@ -417,21 +420,21 @@ watch(selectedStyle, (value) => {
   background-image: url(/img/illustrations/gridlines-predark.svg);
 }
 
-.note1 {
-  animation: notes 0.75s 0s forwards;
+.shuriken-1 {
+  animation: shurikenFirst 0.75s 0s forwards;
 }
 
-.note4 {
+.shuriken-2 {
   top: 190px;
   transform: translateX(-20px);
-  animation: notes3 0.5s 0s forwards;
+  animation: shurikenSecond 0.5s 0s forwards;
 }
-.note5 {
+.shuriken-3 {
   top: 110px;
   transform: translateX(-20px) rotate(20deg);
-  animation: notes5 1.75s 0s forwards;
+  animation: shurikenThird 1.75s 0s forwards;
 }
-@keyframes notes {
+@keyframes shurikenFirst {
   0% {
     transform: translateX(0);
     opacity: 0;
@@ -445,7 +448,7 @@ watch(selectedStyle, (value) => {
   }
 }
 
-@keyframes notes3 {
+@keyframes shurikenSecond {
   0% {
     transform: translateX(0);
     opacity: 0;
@@ -459,7 +462,7 @@ watch(selectedStyle, (value) => {
   }
 }
 
-@keyframes notes5 {
+@keyframes shurikenThird {
   0% {
     transform: translateX(0);
     opacity: 0;

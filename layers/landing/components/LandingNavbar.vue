@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const { x, y } = useWindowScroll()
 const isSearchOpen = useState('search-open', () => false)
+const isMobileOpen = ref(false)
 </script>
 
 <template>
@@ -24,7 +25,17 @@ const isSearchOpen = useState('search-open', () => false)
           />
         </NuxtLink>
       </div>
-      <div class="ltablet:flex hidden items-center justify-center lg:flex">
+      <div
+        class="ltablet:static ltablet:w-auto ltablet:flex ltablet:flex-row dark:bg-muted-950 ltablet:!bg-transparent ltablet:mx-0 fixed inset-x-0 top-20 mx-auto w-[calc(100%_-_2rem)] items-center justify-center bg-white lg:static lg:mx-0 lg:flex lg:w-auto lg:flex-row lg:!bg-transparent"
+        :class="[
+          isMobileOpen
+            ? 'shadow-muted-300/30 dark:shadow-muted-900/20 flex flex-col space-y-4 rounded-xl p-6 shadow-xl transition-all duration-200'
+            : 'hidden',
+          isMobileOpen && y > 60
+            ? 'ltablet:mt-0 mt-2 lg:mt-0'
+            : 'ltablet:mt-0 mt-4 lg:mt-0',
+        ]"
+      >
         <NuxtLink to="/" class="inline-flex items-center justify-center px-6">
           Prebuilt pages
         </NuxtLink>
@@ -62,7 +73,7 @@ const isSearchOpen = useState('search-open', () => false)
           </button>
         </div>
       </div>
-      <div class="flex w-1/5 items-center justify-end gap-2">
+      <div class="flex w-1/5 items-center justify-end gap-4">
         <BaseThemeToggle />
         <BaseButton
           shape="curved"
@@ -75,8 +86,22 @@ const isSearchOpen = useState('search-open', () => false)
         <button
           type="button"
           class="ltablet:hidden flex items-center justify-center lg:hidden"
+          @click="isMobileOpen = !isMobileOpen"
         >
-          <Icon name="lucide:menu" class="h-6 w-6" />
+          <div class="space-y-1.5">
+            <span
+              class="bg-primary-600 block h-0.5 transition-all duration-300"
+              :class="isMobileOpen ? 'w-2' : 'w-6'"
+            ></span>
+            <span
+              class="bg-primary-600 block h-0.5 transition-all duration-300"
+              :class="isMobileOpen ? 'w-6' : 'w-6'"
+            ></span>
+            <span
+              class="bg-primary-600 block h-0.5 transition-all duration-300"
+              :class="isMobileOpen ? 'w-4' : 'w-6'"
+            ></span>
+          </div>
         </button>
       </div>
     </div>

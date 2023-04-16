@@ -16,14 +16,15 @@
             lead="tight"
             class="text-muted-800 mx-auto mb-4 max-w-xl dark:text-white"
           >
-            An advanced Nuxt 3 app setup
+            An advanced Nuxt app setup
           </BaseHeading>
           <BaseParagraph
             size="lg"
             class="text-muted-500 dark:text-muted-100 ptablet:max-w-lg ptablet:mx-auto mb-4 max-w-2xl"
           >
-            Tairo is the ultimate solution for developers and businesses looking
-            to build beautiful and responsive dashboards in no time.
+            Tairo is a powerful Nuxt 3 app starter with a robust and extensible
+            codebase. It brings everything you need to build a professional and
+            beautiful frontend for your app.
           </BaseParagraph>
           <div
             class="ptablet:max-w-md ptablet:mx-auto mt-6 grid scale-90 grid-cols-3"
@@ -46,7 +47,7 @@
                 </div>
               </div>
               <BaseText size="sm" class="text-muted-500 dark:text-muted-300"
-                >Nuxt 3</BaseText
+                >Nuxt</BaseText
               >
             </div>
             <!-- Col -->
