@@ -139,7 +139,10 @@ function openTaskPanel(id: number, tasks: any) {
                       <BaseHeading tag="h2" size="2xl" weight="medium">
                         {{ data?.project.name }}
                       </BaseHeading>
-                      <BaseParagraph size="lg" class="text-muted-600">
+                      <BaseParagraph
+                        size="lg"
+                        class="text-muted-600 dark:text-muted-400"
+                      >
                         {{ data?.project.category }}
                       </BaseParagraph>
                       <BaseParagraph size="sm" class="text-muted-400 py-4">

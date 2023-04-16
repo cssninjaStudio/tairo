@@ -36,7 +36,10 @@ const isMobileOpen = ref(false)
             : 'ltablet:mt-0 mt-4 lg:mt-0',
         ]"
       >
-        <NuxtLink to="/" class="inline-flex items-center justify-center px-6">
+        <NuxtLink
+          to="/demos"
+          class="inline-flex items-center justify-center px-6"
+        >
           Prebuilt pages
         </NuxtLink>
         <NuxtLink

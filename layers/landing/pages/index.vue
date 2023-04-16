@@ -1,5 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
+  title: 'Nuxt - Tailwind CSS Dashboard System',
   layout: 'empty',
 })
 </script>
@@ -9,7 +10,7 @@ definePageMeta({
     <LandingNavbar />
     <LandingHero />
     <LandingCustomizer />
-    <LandingDemos />
+    <LandingDemos :limit="12" />
     <LandingLayers />
     <LandingFeatures />
     <LandingBenefits />

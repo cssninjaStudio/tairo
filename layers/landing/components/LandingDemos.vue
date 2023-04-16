@@ -1,4 +1,15 @@
 <script setup lang="ts">
+const props = withDefaults(
+  defineProps<{
+    limit?: number
+    cta?: boolean
+  }>(),
+  {
+    limit: undefined,
+    cta: true,
+  },
+)
+
 const categories = [
   'dashboards',
   'lists',
@@ -380,6 +391,676 @@ const demos = [
       dark: '/img/screens/wizard-7-dark.png',
     },
   },
+  {
+    title: 'List view 1',
+    subtitle: 'For list views and collections',
+    categories: ['Layouts'],
+    url: '/layouts/',
+    screenshots: {
+      light: '/img/screens/layouts-list-view-1.png',
+      dark: '/img/screens/layouts-list-view-1-dark.png',
+    },
+  },
+  {
+    title: 'List view 2',
+    subtitle: 'For list views and collections',
+    categories: ['Layouts'],
+    url: '/layouts/list-view-2',
+    screenshots: {
+      light: '/img/screens/layouts-list-view-2.png',
+      dark: '/img/screens/layouts-list-view-2-dark.png',
+    },
+  },
+  {
+    title: 'List view 3',
+    subtitle: 'For list views and collections',
+    categories: ['Layouts'],
+    url: '/layouts/list-view-3',
+    screenshots: {
+      light: '/img/screens/layouts-list-view-3.png',
+      dark: '/img/screens/layouts-list-view-3-dark.png',
+    },
+  },
+  {
+    title: 'List view 4',
+    subtitle: 'For list views and collections',
+    categories: ['Layouts'],
+    url: '/layouts/list-view-4',
+    screenshots: {
+      light: '/img/screens/layouts-list-view-4.png',
+      dark: '/img/screens/layouts-list-view-4-dark.png',
+    },
+  },
+  {
+    title: 'Flex list 1',
+    subtitle: 'For list views and collections',
+    categories: ['Layouts'],
+    url: '/layouts/flex-list-1',
+    screenshots: {
+      light: '/img/screens/layouts-list-flex-1.png',
+      dark: '/img/screens/layouts-list-flex-1-dark.png',
+    },
+  },
+  {
+    title: 'Flex list 2',
+    subtitle: 'For list views and collections',
+    categories: ['Layouts'],
+    url: '/layouts/flex-list-2',
+    screenshots: {
+      light: '/img/screens/layouts-list-flex-2.png',
+      dark: '/img/screens/layouts-list-flex-2-dark.png',
+    },
+  },
+  {
+    title: 'Flex list 3',
+    subtitle: 'For list views and collections',
+    categories: ['Layouts'],
+    url: '/layouts/flex-list-3',
+    screenshots: {
+      light: '/img/screens/layouts-list-flex-3.png',
+      dark: '/img/screens/layouts-list-flex-3-dark.png',
+    },
+  },
+  {
+    title: 'Table list 1',
+    subtitle: 'For list views and collections',
+    categories: ['Layouts'],
+    url: '/layouts/table-list-1',
+    screenshots: {
+      light: '/img/screens/layouts-table-list-1.png',
+      dark: '/img/screens/layouts-table-list-1-dark.png',
+    },
+  },
+  {
+    title: 'Table list 2',
+    subtitle: 'For list views and collections',
+    categories: ['Layouts'],
+    url: '/layouts/table-list-2',
+    screenshots: {
+      light: '/img/screens/layouts-table-list-2.png',
+      dark: '/img/screens/layouts-table-list-2-dark.png',
+    },
+  },
+  {
+    title: 'Table list 3',
+    subtitle: 'For list views and collections',
+    categories: ['Layouts'],
+    url: '/layouts/table-list-3',
+    screenshots: {
+      light: '/img/screens/layouts-table-list-3.png',
+      dark: '/img/screens/layouts-table-list-3-dark.png',
+    },
+  },
+  {
+    title: 'Form layout 1',
+    subtitle: 'For forms and input fields',
+    categories: ['Layouts'],
+    url: '/layouts/form-1',
+    screenshots: {
+      light: '/img/screens/layouts-form-1.png',
+      dark: '/img/screens/layouts-form-1-dark.png',
+    },
+  },
+  {
+    title: 'Form layout 2',
+    subtitle: 'For forms and input fields',
+    categories: ['Layouts'],
+    url: '/layouts/form-2',
+    screenshots: {
+      light: '/img/screens/layouts-form-2.png',
+      dark: '/img/screens/layouts-form-2-dark.png',
+    },
+  },
+  {
+    title: 'Form layout 3',
+    subtitle: 'For forms and input fields',
+    categories: ['Layouts'],
+    url: '/layouts/form-3',
+    screenshots: {
+      light: '/img/screens/layouts-form-3.png',
+      dark: '/img/screens/layouts-form-3-dark.png',
+    },
+  },
+  {
+    title: 'Form layout 4',
+    subtitle: 'For forms and input fields',
+    categories: ['Layouts'],
+    url: '/layouts/form-4',
+    screenshots: {
+      light: '/img/screens/layouts-form-4.png',
+      dark: '/img/screens/layouts-form-4-dark.png',
+    },
+  },
+  {
+    title: 'Form layout 5',
+    subtitle: 'For forms and input fields',
+    categories: ['Layouts'],
+    url: '/layouts/form-5',
+    screenshots: {
+      light: '/img/screens/layouts-form-5.png',
+      dark: '/img/screens/layouts-form-5-dark.png',
+    },
+  },
+  {
+    title: 'Form layout 6',
+    subtitle: 'For forms and input fields',
+    categories: ['Layouts'],
+    url: '/layouts/form-6',
+    screenshots: {
+      light: '/img/screens/layouts-form-6.png',
+      dark: '/img/screens/layouts-form-6-dark.png',
+    },
+  },
+  {
+    title: 'Placeload 1',
+    subtitle: 'For loading states',
+    categories: ['Layouts'],
+    url: '/layouts/placeload-1',
+    screenshots: {
+      light: '/img/screens/layouts-placeload-1.png',
+      dark: '/img/screens/layouts-placeload-1-dark.png',
+    },
+  },
+  {
+    title: 'Placeload 2',
+    subtitle: 'For loading states',
+    categories: ['Layouts'],
+    url: '/layouts/placeload-2',
+    screenshots: {
+      light: '/img/screens/layouts-placeload-2.png',
+      dark: '/img/screens/layouts-placeload-2-dark.png',
+    },
+  },
+  {
+    title: 'Placeload 3',
+    subtitle: 'For loading states',
+    categories: ['Layouts'],
+    url: '/layouts/placeload-3',
+    screenshots: {
+      light: '/img/screens/layouts-placeload-3.png',
+      dark: '/img/screens/layouts-placeload-3-dark.png',
+    },
+  },
+  {
+    title: 'Placeload 4',
+    subtitle: 'For loading states',
+    categories: ['Layouts'],
+    url: '/layouts/placeload-4',
+    screenshots: {
+      light: '/img/screens/layouts-placeload-4.png',
+      dark: '/img/screens/layouts-placeload-4-dark.png',
+    },
+  },
+  {
+    title: 'Card grid 1',
+    subtitle: 'For item grids and collections',
+    categories: ['Layouts'],
+    url: '/layouts/card-grid-1',
+    screenshots: {
+      light: '/img/screens/layouts-card-grid-1.png',
+      dark: '/img/screens/layouts-card-grid-1-dark.png',
+    },
+  },
+  {
+    title: 'Card grid 2',
+    subtitle: 'For item grids and collections',
+    categories: ['Layouts'],
+    url: '/layouts/card-grid-2',
+    screenshots: {
+      light: '/img/screens/layouts-card-grid-2.png',
+      dark: '/img/screens/layouts-card-grid-2-dark.png',
+    },
+  },
+  {
+    title: 'Card grid 3',
+    subtitle: 'For item grids and collections',
+    categories: ['Layouts'],
+    url: '/layouts/card-grid-3',
+    screenshots: {
+      light: '/img/screens/layouts-card-grid-3.png',
+      dark: '/img/screens/layouts-card-grid-3-dark.png',
+    },
+  },
+  {
+    title: 'Card grid 4',
+    subtitle: 'For item grids and collections',
+    categories: ['Layouts'],
+    url: '/layouts/card-grid-4',
+    screenshots: {
+      light: '/img/screens/layouts-card-grid-4.png',
+      dark: '/img/screens/layouts-card-grid-4-dark.png',
+    },
+  },
+  {
+    title: 'Tile grid 1',
+    subtitle: 'For item grids and collections',
+    categories: ['Layouts'],
+    url: '/layouts/tile-grid-1',
+    screenshots: {
+      light: '/img/screens/layouts-tile-grid-1.png',
+      dark: '/img/screens/layouts-tile-grid-1-dark.png',
+    },
+  },
+  {
+    title: 'Tile grid 2',
+    subtitle: 'For item grids and collections',
+    categories: ['Layouts'],
+    url: '/layouts/tile-grid-2',
+    screenshots: {
+      light: '/img/screens/layouts-tile-grid-2.png',
+      dark: '/img/screens/layouts-tile-grid-2-dark.png',
+    },
+  },
+  {
+    title: 'Tile grid 3',
+    subtitle: 'For item grids and collections',
+    categories: ['Layouts'],
+    url: '/layouts/tile-grid-3',
+    screenshots: {
+      light: '/img/screens/layouts-tile-grid-3.png',
+      dark: '/img/screens/layouts-tile-grid-3-dark.png',
+    },
+  },
+  {
+    title: 'User grid 1',
+    subtitle: 'For item grids and collections',
+    categories: ['Layouts'],
+    url: '/layouts/user-grid-1',
+    screenshots: {
+      light: '/img/screens/layouts-user-grid-1.png',
+      dark: '/img/screens/layouts-user-grid-1-dark.png',
+    },
+  },
+  {
+    title: 'User grid 2',
+    subtitle: 'For item grids and collections',
+    categories: ['Layouts'],
+    url: '/layouts/user-grid-2',
+    screenshots: {
+      light: '/img/screens/layouts-user-grid-2.png',
+      dark: '/img/screens/layouts-user-grid-2-dark.png',
+    },
+  },
+  {
+    title: 'User grid 3',
+    subtitle: 'For item grids and collections',
+    categories: ['Layouts'],
+    url: '/layouts/user-grid-3',
+    screenshots: {
+      light: '/img/screens/layouts-user-grid-3.png',
+      dark: '/img/screens/layouts-user-grid-3-dark.png',
+    },
+  },
+  {
+    title: 'User grid 4',
+    subtitle: 'For item grids and collections',
+    categories: ['Layouts'],
+    url: '/layouts/user-grid-4',
+    screenshots: {
+      light: '/img/screens/layouts-user-grid-4.png',
+      dark: '/img/screens/layouts-user-grid-4-dark.png',
+    },
+  },
+  {
+    title: 'Project list 1',
+    subtitle: 'For displaying a list of projects',
+    categories: ['Layouts'],
+    url: '/layouts/projects',
+    screenshots: {
+      light: '/img/screens/layouts-projects-1.png',
+      dark: '/img/screens/layouts-projects-1-dark.png',
+    },
+  },
+  {
+    title: 'Project list 2',
+    subtitle: 'For displaying a list of projects',
+    categories: ['Layouts'],
+    url: '/layouts/projects/project-list-2',
+    screenshots: {
+      light: '/img/screens/layouts-projects-2.png',
+      dark: '/img/screens/layouts-projects-2-dark.png',
+    },
+  },
+  {
+    title: 'Project list 3',
+    subtitle: 'For displaying a list of projects',
+    categories: ['Layouts'],
+    url: '/layouts/projects/project-list-3',
+    screenshots: {
+      light: '/img/screens/layouts-projects-3.png',
+      dark: '/img/screens/layouts-projects-3-dark.png',
+    },
+  },
+  {
+    title: 'Project details hub',
+    subtitle: 'For displaying recent projects',
+    categories: ['Layouts'],
+    url: '/layouts/projects/details',
+    screenshots: {
+      light: '/img/screens/layouts-projects-details-hub.png',
+      dark: '/img/screens/layouts-projects-details-hub-dark.png',
+    },
+  },
+  {
+    title: 'Project details',
+    subtitle: 'For displaying project details',
+    categories: ['Layouts'],
+    url: '/layouts/projects/details/health-and-fitness-dashboard',
+    screenshots: {
+      light: '/img/screens/layouts-projects-details.png',
+      dark: '/img/screens/layouts-projects-details-dark.png',
+    },
+  },
+  {
+    title: 'Project board hub',
+    subtitle: 'For displaying recent projects',
+    categories: ['Layouts'],
+    url: '/layouts/projects/board',
+    screenshots: {
+      light: '/img/screens/layouts-projects-board-hub.png',
+      dark: '/img/screens/layouts-projects-board-hub-dark.png',
+    },
+  },
+  {
+    title: 'Project board',
+    subtitle: 'For displaying a kanban board',
+    categories: ['Layouts'],
+    url: '/layouts/projects/board/health-and-fitness-dashboard',
+    screenshots: {
+      light: '/img/screens/layouts-projects-board.png',
+      dark: '/img/screens/layouts-projects-board-dark.png',
+    },
+  },
+  {
+    title: 'Profile',
+    subtitle: 'For displaying a user profile',
+    categories: ['Layouts'],
+    url: '/layouts/profile',
+    screenshots: {
+      light: '/img/screens/layouts-subpages-profile.png',
+      dark: '/img/screens/layouts-subpages-profile-dark.png',
+    },
+  },
+  {
+    title: 'Edit profile 1',
+    subtitle: 'For editing a user profile',
+    categories: ['Layouts'],
+    url: '/layouts/profile-edit',
+    screenshots: {
+      light: '/img/screens/layouts-subpages-profile-edit-1.png',
+      dark: '/img/screens/layouts-subpages-profile-edit-1-dark.png',
+    },
+  },
+  {
+    title: 'Edit profile 2',
+    subtitle: 'For editing a user profile',
+    categories: ['Layouts'],
+    url: '/layouts/profile-edit/experience',
+    screenshots: {
+      light: '/img/screens/layouts-subpages-profile-edit-2.png',
+      dark: '/img/screens/layouts-subpages-profile-edit-2-dark.png',
+    },
+  },
+  {
+    title: 'Edit profile 3',
+    subtitle: 'For editing a user profile',
+    categories: ['Layouts'],
+    url: '/layouts/profile-edit/skills',
+    screenshots: {
+      light: '/img/screens/layouts-subpages-profile-edit-3.png',
+      dark: '/img/screens/layouts-subpages-profile-edit-3-dark.png',
+    },
+  },
+  {
+    title: 'Edit profile 4',
+    subtitle: 'For editing a user profile',
+    categories: ['Layouts'],
+    url: '/layouts/profile-edit/settings',
+    screenshots: {
+      light: '/img/screens/layouts-subpages-profile-edit-4.png',
+      dark: '/img/screens/layouts-subpages-profile-edit-4-dark.png',
+    },
+  },
+  {
+    title: 'Notifications',
+    subtitle: 'For displaying account notifications',
+    categories: ['Layouts'],
+    url: '/layouts/profile-notifications',
+    screenshots: {
+      light: '/img/screens/layouts-subpages-notifications.png',
+      dark: '/img/screens/layouts-subpages-notifications-dark.png',
+    },
+  },
+  {
+    title: 'Settings',
+    subtitle: 'For displaying account settings',
+    categories: ['Layouts'],
+    url: '/layouts/profile-settings',
+    screenshots: {
+      light: '/img/screens/layouts-subpages-settings.png',
+      dark: '/img/screens/layouts-subpages-settings-dark.png',
+    },
+  },
+  {
+    title: 'Search results',
+    subtitle: 'For displaying search results',
+    categories: ['Layouts'],
+    url: '/layouts/search-results',
+    screenshots: {
+      light: '/img/screens/layouts-subpages-search-results.png',
+      dark: '/img/screens/layouts-subpages-search-results-dark.png',
+    },
+  },
+  {
+    title: 'Empty search',
+    subtitle: 'For displaying search results',
+    categories: ['Layouts'],
+    url: '/layouts/search-empty',
+    screenshots: {
+      light: '/img/screens/layouts-subpages-search-empty.png',
+      dark: '/img/screens/layouts-subpages-search-empty-dark.png',
+    },
+  },
+  {
+    title: 'SaaS billing',
+    subtitle: 'For saas billing plans',
+    categories: ['Layouts'],
+    url: '/layouts/utility-billing',
+    screenshots: {
+      light: '/img/screens/layouts-subpages-billing.png',
+      dark: '/img/screens/layouts-subpages-billing-dark.png',
+    },
+  },
+  {
+    title: 'Action 1',
+    subtitle: 'For actions and tasks',
+    categories: ['Layouts'],
+    url: '/layouts/utility-action-1',
+    screenshots: {
+      light: '/img/screens/layouts-subpages-action-1.png',
+      dark: '/img/screens/layouts-subpages-action-1-dark.png',
+    },
+  },
+  {
+    title: 'Action 2',
+    subtitle: 'For actions and tasks',
+    categories: ['Layouts'],
+    url: '/layouts/utility-action-2',
+    screenshots: {
+      light: '/img/screens/layouts-subpages-action-2.png',
+      dark: '/img/screens/layouts-subpages-action-2-dark.png',
+    },
+  },
+  {
+    title: 'Confirm account',
+    subtitle: 'For account confirmation',
+    categories: ['Layouts'],
+    url: '/layouts/utility-confirm',
+    screenshots: {
+      light: '/img/screens/layouts-utility-confirm.png',
+      dark: '/img/screens/layouts-utility-confirm-dark.png',
+    },
+  },
+  {
+    title: 'Promotion',
+    subtitle: 'For promotional offers',
+    categories: ['Layouts'],
+    url: '/layouts/utility-promotion',
+    screenshots: {
+      light: '/img/screens/layouts-utility-promotion.png',
+      dark: '/img/screens/layouts-utility-promotion-dark.png',
+    },
+  },
+  {
+    title: 'Invoice',
+    subtitle: 'For accounting and invoices',
+    categories: ['Layouts'],
+    url: '/layouts/utility-invoice',
+    screenshots: {
+      light: '/img/screens/layouts-utility-invoice.png',
+      dark: '/img/screens/layouts-utility-invoice-dark.png',
+    },
+  },
+  {
+    title: 'Service status',
+    subtitle: 'For company service status',
+    categories: ['Layouts'],
+    url: '/layouts/utility-status',
+    screenshots: {
+      light: '/img/screens/layouts-utility-status.png',
+      dark: '/img/screens/layouts-utility-status-dark.png',
+    },
+  },
+  {
+    title: 'Error',
+    subtitle: 'For system errors',
+    categories: ['Layouts'],
+    url: '/layouts/utility-error',
+    screenshots: {
+      light: '/img/screens/layouts-utility-error.png',
+      dark: '/img/screens/layouts-utility-error-dark.png',
+    },
+  },
+  {
+    title: 'Onboarding 1',
+    subtitle: 'For onboarding new users',
+    categories: ['Layouts'],
+    url: '/layouts/onboarding-1',
+    screenshots: {
+      light: '/img/screens/layouts-onboarding-1.png',
+      dark: '/img/screens/layouts-onboarding-1-dark.png',
+    },
+  },
+  {
+    title: 'Onboarding 2',
+    subtitle: 'For onboarding new users',
+    categories: ['Layouts'],
+    url: '/layouts/onboarding-2',
+    screenshots: {
+      light: '/img/screens/layouts-onboarding-2.png',
+      dark: '/img/screens/layouts-onboarding-2-dark.png',
+    },
+  },
+  {
+    title: 'Onboarding 3',
+    subtitle: 'For onboarding new users',
+    categories: ['Layouts'],
+    url: '/layouts/onboarding-3',
+    screenshots: {
+      light: '/img/screens/layouts-onboarding-3.png',
+      dark: '/img/screens/layouts-onboarding-3-dark.png',
+    },
+  },
+  {
+    title: 'Login 1',
+    subtitle: 'For authentication and sign in',
+    categories: ['Authentication'],
+    url: '/auth',
+    screenshots: {
+      light: '/img/screens/auth-login-1.png',
+      dark: '/img/screens/auth-login-1-dark.png',
+    },
+  },
+  {
+    title: 'Login 2',
+    subtitle: 'For authentication and sign in',
+    categories: ['Authentication'],
+    url: '/auth/login-1',
+    screenshots: {
+      light: '/img/screens/auth-login-2.png',
+      dark: '/img/screens/auth-login-2-dark.png',
+    },
+  },
+  {
+    title: 'Login 3',
+    subtitle: 'For authentication and sign in',
+    categories: ['Authentication'],
+    url: '/auth/login-2',
+    screenshots: {
+      light: '/img/screens/auth-login-3.png',
+      dark: '/img/screens/auth-login-3-dark.png',
+    },
+  },
+  {
+    title: 'Login 4',
+    subtitle: 'For authentication and sign in',
+    categories: ['Authentication'],
+    url: '/auth/login-3',
+    screenshots: {
+      light: '/img/screens/auth-login-4.png',
+      dark: '/img/screens/auth-login-4-dark.png',
+    },
+  },
+  {
+    title: 'Signup 1',
+    subtitle: 'For authentication and sign up',
+    categories: ['Authentication'],
+    url: '/auth/signup-1',
+    screenshots: {
+      light: '/img/screens/auth-signup-1.png',
+      dark: '/img/screens/auth-signup-1-dark.png',
+    },
+  },
+  {
+    title: 'Signup 2',
+    subtitle: 'For authentication and sign up',
+    categories: ['Authentication'],
+    url: '/auth/signup-2',
+    screenshots: {
+      light: '/img/screens/auth-signup-2.png',
+      dark: '/img/screens/auth-signup-2-dark.png',
+    },
+  },
+  {
+    title: 'Signup 3',
+    subtitle: 'For authentication and sign up',
+    categories: ['Authentication'],
+    url: '/auth/signup-3',
+    screenshots: {
+      light: '/img/screens/auth-signup-3.png',
+      dark: '/img/screens/auth-signup-3-dark.png',
+    },
+  },
+  {
+    title: 'Recover',
+    subtitle: 'For password recovery',
+    categories: ['Authentication'],
+    url: '/auth/recover',
+    screenshots: {
+      light: '/img/screens/auth-recover.png',
+      dark: '/img/screens/auth-recover-dark.png',
+    },
+  },
+  {
+    title: 'Error',
+    subtitle: 'For system errors',
+    categories: ['Error'],
+    url: '/iam-a-404',
+    screenshots: {
+      light: '/img/screens/error.png',
+      dark: '/img/screens/error-dark.png',
+    },
+  },
 ]
 
 const selectedCategories = ref(['all'])
@@ -438,7 +1119,7 @@ const selectedCategories = ref(['all'])
           <div class="grid gap-8 sm:grid-cols-2">
             <NuxtLink
               :to="demo.url"
-              v-for="demo in demos"
+              v-for="demo in demos.slice(0, props.limit)"
               :key="demo.title"
               class="group relative block"
             >
@@ -492,8 +1173,12 @@ const selectedCategories = ref(['all'])
             </NuxtLink>
           </div>
 
-          <div class="mt-24 flex items-center justify-center">
-            <BaseButton shape="curved" color="primary" flavor="outline"
+          <div v-if="props.cta" class="mt-24 flex items-center justify-center">
+            <BaseButton
+              shape="curved"
+              color="primary"
+              flavor="outline"
+              to="/demos"
               >View All {{ demos.length }} Demos</BaseButton
             >
           </div>
