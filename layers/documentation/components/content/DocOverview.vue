@@ -13,8 +13,8 @@
           size="sm"
           class="text-muted-500 dark:text-muted-400 mb-4"
         >
-          Tairo is a powerful Nuxt 3 / Tailwind CSS Admin and Webapp UI Kit,
-          built with Vue 3 and TypeScript.
+          Tairo is a powerful Nuxt / Tailwind CSS Admin and Webapp UI Kit, built
+          with Vue 3 and TypeScript.
         </BaseParagraph>
         <BaseText size="sm" class="text-muted-400 dark:text-muted-400">
           Tairo provides everything you need to build a modern web app or admin
@@ -26,7 +26,7 @@
           to="https://docs.cssninja.io/tairo"
           class="text-primary-500 group mt-6 flex items-center font-sans text-sm font-medium transition-opacity hover:opacity-90"
         >
-          <span class="me-1">Read the documentation</span>
+          <span class="me-1">Quick start guide</span>
           <Icon
             name="lucide:arrow-right"
             class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-2"
@@ -47,7 +47,7 @@
             weight="semibold"
             class="text-muted-800 dark:text-white"
           >
-            Nuxt 3
+            Nuxt
           </BaseHeading>
         </BaseCard>
       </NuxtLink>
@@ -67,10 +67,10 @@
           </BaseHeading>
         </BaseCard>
       </NuxtLink>
-      <NuxtLink to="/documentation/shuriken-ui" class="group">
+      <NuxtLink to="https://github.com/shuriken-ui" class="group">
         <BaseCard shape="rounded" class="p-8 text-center">
           <Icon
-            name="game-icons:sharp-shuriken"
+            name="carbon:tropical-storm-tracks"
             class="text-muted-400 group-hover:text-primary-500 mx-auto mb-2 block h-10 w-10 rotate-45 scale-95 transition-colors duration-300"
           />
           <BaseHeading

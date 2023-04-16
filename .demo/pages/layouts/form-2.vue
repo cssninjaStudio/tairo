@@ -548,7 +548,7 @@ const currentRatingText = computed(() => {
                 </div>
                 <div class="col-span-12">
                   <div
-                    class="bg-muted-100 flex items-center gap-2 rounded-lg p-4"
+                    class="bg-muted-100 dark:bg-muted-700/70 flex items-center gap-2 rounded-lg p-4"
                   >
                     <BaseAvatar
                       size="xs"

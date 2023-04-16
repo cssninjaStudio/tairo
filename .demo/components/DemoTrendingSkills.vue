@@ -14,7 +14,7 @@ const skills = [
   },
   {
     id: 2,
-    name: 'Nuxt 3',
+    name: 'Nuxt',
     count: 94,
     icon: 'logos:nuxt-icon',
   },

@@ -13,7 +13,7 @@ export default withShurikenUI({
   theme: {
     // Custom fonts
     fontFamily: {
-      sans: ['Roboto Flex', 'sans-serif'],
+      sans: ['Inter', 'sans-serif'],
       heading: ['Inter', 'sans-serif'],
       alt: ['Karla', 'sans-serif'],
       mono: [
@@ -40,6 +40,7 @@ export default withShurikenUI({
       },
       animation: {
         'spin-slow': 'spin 3s linear infinite',
+        'spin-fast': 'spin 0.65s linear infinite',
       },
     },
   },

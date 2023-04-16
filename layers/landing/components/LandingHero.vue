@@ -115,8 +115,8 @@ function useGaugePersonal() {
           class="text-muted-500 dark:text-muted-100 mx-auto mb-4 max-w-2xl"
         >
           Tairo is the ultimate solution for developers looking to build
-          beautiful and responsive Nuxt 3 dashboards in no time, with the power
-          of Shuriken UI and Tailwind CSS.
+          beautiful Nuxt dashboards in no time, with the power of Shuriken UI
+          and Tailwind CSS.
         </BaseParagraph>
         <div class="flex items-center justify-center">
           <BaseButton
@@ -253,7 +253,7 @@ function useGaugePersonal() {
           </div>
         </div>
         <div
-          class="ltablet:grid-cols-3 ltablet:gap-6 grid gap-6 sm:grid-cols-3 sm:gap-3 lg:grid-cols-4 lg:gap-4"
+          class="ltablet:grid-cols-3 ltablet:gap-6 grid grid-cols-1 gap-6 sm:grid-cols-3 sm:gap-3 lg:grid-cols-4 lg:gap-4"
         >
           <!-- Col -->
           <div
@@ -335,9 +335,9 @@ function useGaugePersonal() {
             <BaseCard shape="curved" elevated class="p-6">
               <DemoProgressCircle
                 image="/img/avatars/6.svg"
-                :title="`${78}% completed!`"
+                :title="`${y < 500 ? Math.trunc(y / 5) : 100}% completed!`"
                 text="Congrats, your efforts have been rewarded. Keep up like this!"
-                :value="78"
+                :value="y < 500 ? Math.trunc(y / 5) : 100"
               />
             </BaseCard>
             <!-- Widget -->

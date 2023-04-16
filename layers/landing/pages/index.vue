@@ -1,5 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
+  title: 'Tairo',
   layout: 'empty',
 })
 </script>
@@ -9,10 +10,11 @@ definePageMeta({
     <LandingNavbar />
     <LandingHero />
     <LandingCustomizer />
-    <LandingDemos />
+    <LandingDemos :limit="12" />
     <LandingLayers />
     <LandingFeatures />
     <LandingBenefits />
+    <LandingCta />
     <LandingContent />
     <LandingFooter />
   </div>
