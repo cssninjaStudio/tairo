@@ -733,9 +733,11 @@ const mergedTree = [
 
 <template>
   <DocLayoutSection :title="props.title" :tag="props.tag">
-    <div class="grid gap-6 md:grid-cols-2">
-      <BaseCard class="mb-4 p-6">
-        <div>
+    <BaseCard
+      class="divide-muted-200 dark:divide-muted-700 grid gap-6 divide-x md:grid-cols-2"
+    >
+      <div class="mb-4 p-8">
+        <div class="border-muted-200 dark:border-muted-700 mb-4 border-b pb-4">
           <span>Your project ...</span>
         </div>
         <BaseTreeSelect
@@ -779,9 +781,9 @@ const mergedTree = [
             </span>
           </template>
         </BaseTreeSelect>
-      </BaseCard>
-      <BaseCard class="mb-4 p-6">
-        <div>
+      </div>
+      <div class="mb-4 p-8">
+        <div class="border-muted-200 dark:border-muted-700 mb-4 border-b pb-4">
           <span>... is flattened!</span>
         </div>
         <BaseTreeSelect
@@ -825,7 +827,7 @@ const mergedTree = [
             </span>
           </template>
         </BaseTreeSelect>
-      </BaseCard>
-    </div>
+      </div>
+    </BaseCard>
   </DocLayoutSection>
 </template>
