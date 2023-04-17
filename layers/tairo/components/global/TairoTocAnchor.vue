@@ -3,7 +3,7 @@ const props = withDefaults(
   defineProps<{
     label: string
     id?: string
-    level?: number
+    level?: number | string
     prefix?: string
     prefixClasses?: string
     suffix?: string
