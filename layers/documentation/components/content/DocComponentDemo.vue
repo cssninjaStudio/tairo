@@ -1,9 +1,22 @@
 <script setup lang="ts">
-const props = defineProps<{
-  tag?: string
-  title?: string
-  demo?: string
-}>()
+const props = withDefaults(
+  defineProps<{
+    tag?: string
+    title?: string
+    demo?: string
+    code?: boolean
+    dark?: boolean
+    condensed?: boolean
+  }>(),
+  {
+    tag: undefined,
+    title: undefined,
+    demo: undefined,
+    code: true,
+    dark: true,
+    condensed: false,
+  },
+)
 
 const demoRE = /^#examples\/([\w-]+)\/([\w-]+).vue$/
 
@@ -34,7 +47,6 @@ const exampleMarkdown = computed(() => {
   return '```vue\n' + exampleSource.value + '\n```'
 })
 
-const showCode = ref(false)
 const hasDemoContent = computed(() =>
   Boolean(exampleComponent.value && exampleMarkdown.value),
 )
@@ -70,8 +82,11 @@ async function loadDemo() {
 </script>
 
 <template>
-  <div class="border-muted-200 dark:border-muted-800 group mb-10 border-b py-6">
-    <div class="mb-4 flex items-center">
+  <div class="border-muted-200 dark:border-muted-800 group mb-10 border-b">
+    <div
+      v-if="props.title || props.tag || (hasDemoContent && props.dark)"
+      class="mb-4 flex items-center"
+    >
       <BaseHeading
         as="h2"
         size="xl"
@@ -90,7 +105,10 @@ async function loadDemo() {
         {{ props.tag }}
       </div>
 
-      <div v-if="hasDemoContent" class="ms-auto flex items-center gap-2">
+      <div
+        v-if="hasDemoContent && props.dark"
+        class="ms-auto flex items-center gap-2"
+      >
         <BaseCheckbox
           v-model="forceDark"
           condensed
@@ -136,7 +154,12 @@ async function loadDemo() {
       </div>
     </div>
 
-    <div :class="forceDark ? 'dark' : ''">
+    <div
+      :class="[
+        condensed ? 'max-w-[640px] pb-6' : 'py-6',
+        forceDark ? 'dark' : '',
+      ]"
+    >
       <div
         class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 relative mb-4 w-full rounded-md border bg-white p-6 transition-all duration-300"
       >
@@ -153,7 +176,7 @@ async function loadDemo() {
             <component :is="exampleComponent" v-if="exampleComponent" />
           </div>
 
-          <details v-if="exampleMarkdown" class="group mt-6">
+          <details v-if="exampleMarkdown && props.code" class="group mt-6">
             <summary
               class="nui-focus hover:bg-muted-100 text-muted-500 inline-flex cursor-pointer list-none items-center justify-center gap-2 rounded-lg px-2 py-1.5 font-sans text-[0.8rem] transition-all duration-100"
             >
