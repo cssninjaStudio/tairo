@@ -13,6 +13,7 @@ icon:
 ::doc-component-demo
 ---
 title: Content wrapper
+demo: '#examples/tairo/wrapper.vue'
 ---
 The content wrapper wraps the page content. It provides slots and allows you to control the horizontal flow of the page.
 ::
