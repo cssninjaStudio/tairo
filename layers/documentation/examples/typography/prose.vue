@@ -227,7 +227,7 @@
 
     <p>
       Here's what a default
-      <code>tailwind.config.js</code>
+      <code>tailwind.config.ts</code>
       file looks like at the time of writing:
     </p>
 

@@ -15,10 +15,10 @@ const props = withDefaults(
     label: undefined,
     prefix: '#',
     prefixClasses:
-      'hidden group-hover:inline-block group-focus:inline-block group-visible:inline-block leading-6 text-primary-300 absolute -start-5 top-0',
+      'hidden group-hover/toc:inline-block group-focus/toc:inline-block group-visible/toc:inline-block leading-6 text-primary-300 absolute -start-5 top-0',
     suffix: '',
     suffixClasses:
-      'hidden group-hover:inline-block group-focus:inline-block group-visible:inline-block leading-6 text-primary-300 absolute -end-5 -top-1',
+      'hidden group-hover/toc:inline-block group-focus/toc:inline-block group-visible/toc:inline-block leading-6 text-primary-300 absolute -end-5 -top-1',
   },
 )
 
@@ -38,7 +38,7 @@ const anchor = computed(() => props.id || slug.value)
     :to="`#${anchor}`"
     :data-toc-level="props.level"
     :data-toc-label="props.label"
-    class="tairo-toc-anchor nui-focus group relative"
+    class="tairo-toc-anchor nui-focus group/toc relative"
     :style="{ scrollMarginTop: '1.5rem' }"
   >
     <span v-if="props.prefix" :class="props.prefixClasses">

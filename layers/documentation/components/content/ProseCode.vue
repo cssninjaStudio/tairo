@@ -41,6 +41,7 @@ export default defineComponent({
       :source="markdown"
       fullwidth
       class="doc-markdown"
+      :lines="false"
       :theme="{
         light: 'cssninja-light-theme',
         dark: 'cssninja-dark-theme',

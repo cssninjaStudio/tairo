@@ -1,11 +1,14 @@
 import { resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
-// const WEEK = 60 * 60 * 24 * 7
 
 export default defineNuxtConfig({
   modules: [
     '@nuxt/content',
     'nuxt-component-meta',
+    /**
+     * @nuxthq/studio is a nuxt layer that register server routes to allow you to
+     * edit the documentation in real time via https//nuxt.studio
+     */
     process.env.ENABLE_DOCUMENTATION_STUDIO === 'true' && '@nuxthq/studio',
   ],
   alias: {
@@ -46,8 +49,8 @@ export default defineNuxtConfig({
     // @ts-ignore - hook registered by nuxt-tailwind via @shuriken-ui/nuxt
     'tailwindcss:config'(config) {
       if (Array.isArray(config.content)) {
-        // config.content.push(resolve(runtimeDir, 'components/**/*.{vue,js,ts}'))
-        // config.content.push(resolve(__dirname, './pages/**/*.{vue,js,ts}'))
+        // This add examples/ folder to the tailwind content list
+        // making it possible to use tailwind classes inside the examples
         config.content.push(resolve(__dirname, './examples/**/*.{vue,js,ts}'))
       }
     },
