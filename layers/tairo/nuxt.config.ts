@@ -1,6 +1,4 @@
-import { createResolver } from '@nuxt/kit'
-
-const { resolve } = createResolver(import.meta.url)
+import exposeColors from './tailwind/plugin-expose-colors'
 
 export default defineNuxtConfig({
   extends: [
@@ -25,20 +23,18 @@ export default defineNuxtConfig({
     '@nuxt/image-edge',
     '@cssninja/nuxt-toaster',
   ],
-  app: {
-    layoutTransition: {
-      enterActiveClass: 'transition-opacity duration-400 ease-out',
-      enterFromClass: 'opacity-0',
-      enterToClass: 'opacity-100',
-      leaveActiveClass: 'transition-opacity duration-200 ease-in',
-      leaveFromClass: 'opacity-100',
-      leaveToClass: 'opacity-0',
+  tailwindcss: {
+    config: {
+      content: [],
+      plugins: [exposeColors],
     },
+  },
+  app: {
     pageTransition: {
-      enterActiveClass: 'transition-opacity duration-300 ease-out',
+      enterActiveClass: 'transition-opacity duration-200 ease-out',
       enterFromClass: 'opacity-0',
       enterToClass: 'opacity-100',
-      leaveActiveClass: 'transition-opacity duration-200 ease-in',
+      leaveActiveClass: 'transition-opacity duration-75 ease-in',
       leaveFromClass: 'opacity-100',
       leaveToClass: 'opacity-0',
     },

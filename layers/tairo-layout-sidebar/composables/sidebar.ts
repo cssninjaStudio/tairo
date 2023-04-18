@@ -65,8 +65,8 @@ export interface TairoSidebarResolvedConfig {
  * ```
  */
 export function useSidebar() {
-  const route = useRoute()
   const app = useAppConfig()
+  const route = useRoute()
 
   const sidebars = computed(() => {
     if (
@@ -84,20 +84,8 @@ export function useSidebar() {
     )
   })
 
-  const currentName = useState('sidebar-name', () => {
-    const item = sidebars.value?.find(
-      (bar) => bar?.activePath && route.fullPath.startsWith(bar.activePath),
-    )
-    return item?.name || ''
-  })
-  const isOpen = useState<boolean | undefined>(
-    'sidebar-open',
-    () => app.tairo.sidebar?.startOpen,
-  )
-
-  // if (app.tairo.sidebar?.startOpen && isOpen.value === undefined) {
-  //   isOpen.value = Boolean(currentName.value)
-  // }
+  const currentName = useState('sidebar-name', () => '')
+  const isOpen = useState<boolean | undefined>('sidebar-open', () => undefined)
 
   const hasSubsidebar = computed(() => {
     return sidebars.value?.some((sidebar) => sidebar.subsidebar?.name)
@@ -137,7 +125,42 @@ export function useSidebar() {
     isOpen.value = true
   }
 
-  if (process.client) {
+  function detect() {
+    if (isOpen.value !== undefined) {
+      return
+    }
+    if (!app.tairo.sidebar?.startOpen) {
+      isOpen.value = false
+      return
+    }
+
+    const item = sidebars.value?.find(
+      (bar) => bar?.activePath && route.fullPath.startsWith(bar.activePath),
+    )
+    if (item) {
+      currentName.value = item.name
+      isOpen.value = Boolean(currentName.value)
+    }
+    return
+  }
+
+  function setup() {
+    // Detect sidebar item on server page load
+    if (!process.client) {
+      detect()
+      return
+    }
+
+    // Detect sidebar item on client page change
+    // page:finish allow to wait for the page to be fully loaded before detecting the sidebar item
+    const nuxtApp = useNuxtApp()
+    const removeHook = nuxtApp.hook('page:finish', (e) => {
+      detect()
+      removeHook()
+      return
+    })
+
+    // register a watcher to close sidebar when screen become extra large
     const { xl } = useTailwindBreakpoints()
     // close sidebar when screen become extra large
     watch(xl, (isXl) => {
@@ -146,17 +169,21 @@ export function useSidebar() {
       }
     })
 
-    watch(currentName, (value) => {
-      if (value) {
-        // only open sidebar if it's not already open
-        // and the screen is not extra large
-        if (xl.value) {
-          isOpen.value = true
+    // register a watcher to open sidebar when a sidebar item is selected
+    watch(
+      () => currentName,
+      (value) => {
+        if (value) {
+          // only open sidebar if it's not already open
+          // and the screen is not extra large
+          if (xl.value) {
+            isOpen.value = true
+          }
+        } else {
+          isOpen.value = false
         }
-      } else {
-        isOpen.value = false
-      }
-    })
+      },
+    )
   }
 
   return {
@@ -168,5 +195,7 @@ export function useSidebar() {
     toggle,
     close,
     open,
+    detect,
+    setup,
   }
 }

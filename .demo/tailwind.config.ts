@@ -1,6 +1,6 @@
 import { withShurikenUI } from '@shuriken-ui/tailwind'
 import { join } from 'pathe'
-import plugin from 'tailwindcss/plugin'
+import defaultTheme from 'tailwindcss/defaultTheme'
 
 /**
  * This is the Tailwind config file for the demo.
@@ -16,17 +16,7 @@ export default withShurikenUI({
       sans: ['Inter', 'sans-serif'],
       heading: ['Inter', 'sans-serif'],
       alt: ['Karla', 'sans-serif'],
-      mono: [
-        'Fira Code',
-        'ui-monospace',
-        'SFMono-Regular',
-        'Menlo',
-        'Monaco',
-        'Consolas',
-        '"Liberation Mono"',
-        '"Courier New"',
-        'monospace',
-      ],
+      mono: ['Fira Code', ...defaultTheme.fontFamily.mono],
     },
     extend: {
       // Custom colors
@@ -44,26 +34,4 @@ export default withShurikenUI({
       },
     },
   },
-  plugins: [
-    // This plugin extracts all colors from the theme and adds them as CSS variables
-    // to the :root selector. This allows you to use them in your CSS.
-    plugin(({ addBase, theme }: any) => {
-      addBase({
-        ':root': extractColorVars(theme('colors')),
-      })
-    }),
-  ],
 })
-
-function extractColorVars(colorObj: any, colorGroup = '') {
-  return Object.keys(colorObj).reduce((vars, colorKey) => {
-    const value = colorObj[colorKey]
-
-    const newVars: any =
-      typeof value === 'string'
-        ? { [`--color${colorGroup}-${colorKey}`]: value }
-        : extractColorVars(value, `-${colorKey}`)
-
-    return { ...vars, ...newVars }
-  }, {})
-}

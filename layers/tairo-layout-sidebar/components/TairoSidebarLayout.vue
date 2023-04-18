@@ -20,7 +20,12 @@ const props = withDefaults(
 
 const app = useAppConfig()
 const sidebar = reactive(useSidebar())
-// const panels = reactive(usePanels())
+sidebar.setup()
+
+onUnmounted(() => {
+  sidebar.currentName = ''
+  sidebar.isOpen = undefined
+})
 
 const sidebarEnabled = computed(() => {
   return app.tairo.sidebar?.enabled !== false && props.sidebar !== false
@@ -34,7 +39,7 @@ const circularMenuEnabled = computed(() => {
   )
 })
 
-const mainClass = computed(() => {
+const wrapperClass = computed(() => {
   if (props.condensed) {
     return 'bg-muted-100 dark:bg-muted-900 relative min-h-screen w-full overflow-x-hidden'
   }
@@ -88,7 +93,7 @@ const mainClass = computed(() => {
       </TairoSidebarNavigation>
     </slot>
 
-    <div :class="mainClass">
+    <div :class="wrapperClass">
       <div
         :class="[
           props.condensed && !props.horizontalScroll && 'w-full',
@@ -108,7 +113,9 @@ const mainClass = computed(() => {
           </TairoSidebarToolbar>
         </slot>
 
-        <slot />
+        <main>
+          <slot />
+        </main>
       </div>
     </div>
 

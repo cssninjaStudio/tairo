@@ -9,7 +9,7 @@ const colors = [
   'bg-lime-500/20 text-lime-500',
   'bg-rose-500/20 text-rose-500',
   'bg-purple-500/20 text-purple-500',
-]
+] as const
 
 export function getRandomColor() {
   return colors[Math.floor(Math.random() * colors.length)]
