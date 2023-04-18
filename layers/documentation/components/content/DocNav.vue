@@ -54,7 +54,7 @@ const nav = computed(() => {
           class="mt-1 group-hover:-translate-x-1 transition-transform duration-100"
         />
         <span class="inline-flex flex-col gap-1">
-          <span>Back to previous section</span>
+          <span class="font-sans text-sm leading-tight">Back to previous section</span>
           <span
             class="font-heading font-medium text-muted-500 dark:text-muted-400 group-hover:text-primary-500 dark:group-hover:text-primary-400 text-base"
             >{{ nav.prev.title }}</span
