@@ -1,6 +1,6 @@
 ---
 title: Tairo Form Group
-description: Tairo form groups are used to group form elements together. They are used to show a label and a description for a group of form elements.
+description: Tairo form groups are used to hold some form elements together. They are used to show a label and a description for a group of form elements.
 components:
   - TairoFormGroup
 icon:
@@ -13,7 +13,7 @@ icon:
 Tairo Form Group
 demo: '#examples/tairo/form-group.vue'
 ---
-Use the form group component to group form elements together. It is used to show a label and a description for a group of form elements.
+Use the form group component to hold some form elements together. It is used to show a label and a description for a group of form elements. The form group component is root is an HTML `<fieldset />` element.
 ::
 
 
