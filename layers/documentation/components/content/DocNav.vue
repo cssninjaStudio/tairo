@@ -71,7 +71,7 @@ const nav = computed(() => {
         <span class="inline-flex flex-col gap-1">
           <span class="font-sans text-sm leading-tight">Continue reading</span>
           <span
-            class="font-heading font-medium text-muted-500 dark:text-muted-400 group-hover:text-primary-500 dark:group-hover:text-primary-400 text-base"
+            class="font-heading font-medium text-muted-500 dark:text-muted-400 group-hover:text-primary-500 dark:group-hover:text-primary-400 text-sm"
             >{{ nav.next.title }}</span
           >
         </span>
