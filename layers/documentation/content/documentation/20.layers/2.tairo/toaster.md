@@ -11,7 +11,7 @@ icon:
 
 ::doc-component-demo
 ---
-title: Activity panel
+title: Tairo toaster
 demo: '#examples/tairo/toaster.vue'
 ---
 Tairo toasters are used to display notifications and messages to the user.
