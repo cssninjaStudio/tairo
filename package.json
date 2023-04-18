@@ -21,10 +21,10 @@
     "lint:prettier:fix": "prettier --write \"./**/*.(ts|vue|css|md)\"",
     "lint:eslint": "eslint -c .eslintrc.cjs --ext .vue,.ts .",
     "lint:eslint:fix": "eslint -c .eslintrc.cjs --fix --ext .vue,.ts .",
-    "lint:eslint:fix-demo": "eslint -c _documentation/examples/.eslintrc.cjs --fix --ext .vue _documentation/examples"
+    "lint:eslint:fix-demo": "eslint -c layers/documentation/examples/.eslintrc.cjs --fix --ext .vue layers/documentation/examples"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "0.38.4",
+    "@antfu/eslint-config": "0.38.5",
     "@iconify/json": "2.2.49",
     "@nuxtjs/eslint-config": "12.0.0",
     "@nuxtjs/eslint-config-typescript": "12.0.0",

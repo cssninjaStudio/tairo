@@ -97,7 +97,7 @@ async function loadDemo() {
       >
         <TairoTocAnchor :label="props.title">
           <template #prefix>
-            <Icon name="lucide:hash" class="w-4 h-4" />
+            <Icon name="lucide:hash" class="h-4 w-4" />
           </template>
         </TairoTocAnchor>
       </BaseHeading>
@@ -158,7 +158,7 @@ async function loadDemo() {
       </div>
     </div>
 
-    <div v-if="'grid' in $slots" class="grid gap-4 md:grid-cols-3 mb-4">
+    <div v-if="'grid' in $slots" class="mb-4 grid gap-4 md:grid-cols-3">
       <ContentSlot :use="$slots.grid"></ContentSlot>
     </div>
 
@@ -173,7 +173,7 @@ async function loadDemo() {
       >
         <div v-if="'default' in $slots" :class="[hasDemoContent && 'mb-10']">
           <div
-            class="prose prose-primary prose-muted dark:prose-invert prose-th:p-4 prose-td:p-4 prose-table:bg-white dark:prose-table:bg-muted-800 prose-table:border prose-table:border-muted-200 dark:prose-table:border-muted-700 prose-sm prose-p:text-muted-500 dark:prose-p:text-muted-400"
+            class="prose prose-primary prose-muted dark:prose-invert prose-th:p-4 prose-td:p-4 prose-table:bg-white dark:prose-table:bg-muted-800 prose-table:border prose-table:border-muted-200 dark:prose-table:border-muted-700 prose-sm prose-p:text-muted-500 dark:prose-p:text-muted-400 prose-a:decoration-from-font prose-a:underline-offset-1"
           >
             <ContentSlot :use="$slots.default"></ContentSlot>
           </div>

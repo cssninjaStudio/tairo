@@ -30,7 +30,7 @@ const isExternal = computed(() => {
 </script>
 
 <template>
-  <BaseCard shape="curved" class="flex items-center p-3 group/grid-icon">
+  <BaseCard shape="curved" class="group/grid-icon flex items-center p-3">
     <BaseIconBox v-if="props.name" size="md" :class="iconColor">
       <Icon :name="props.name" class="h-6 w-6" />
     </BaseIconBox>
@@ -50,7 +50,7 @@ const isExternal = computed(() => {
     </div>
     <div
       v-if="props.to"
-      class="ms-auto flex -translate-x-1 items-center opacity-0 transition-all duration-300 group-hover/grid-icon:translate-x-0 group-focus-within/grid-icon:translate-x-0 group-hover/grid-icon:opacity-100 group-focus-within/grid-icon:opacity-100"
+      class="ms-auto flex -translate-x-1 items-center opacity-0 transition-all duration-300 group-focus-within/grid-icon:translate-x-0 group-focus-within/grid-icon:opacity-100 group-hover/grid-icon:translate-x-0 group-hover/grid-icon:opacity-100"
     >
       <BaseButtonIcon
         :to="props.to"
