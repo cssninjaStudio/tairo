@@ -10,7 +10,7 @@ icon:
 
 ::doc-component-demo
 ---
-title: Tairo error
+Tairo Form Group
 demo: '#examples/tairo/form-group.vue'
 ---
 Use the form group component to group form elements together. It is used to show a label and a description for a group of form elements.
