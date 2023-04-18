@@ -22,7 +22,7 @@
           <BaseCheckboxHeadless v-model="value" value="team_member_1">
             <BaseCard
               shape="rounded"
-              class="peer-checked:!border-primary-500 peer-checked:[&_.child]:!text-primary-500 border-2 p-4 grayscale peer-checked:grayscale-0"
+              class="peer-checked:!border-primary-500 peer-checked:[&_.child]:!text-primary-500 border-2 p-4 opacity-50 peer-checked:opacity-100"
             >
               <div class="flex w-full items-center gap-2">
                 <BaseAvatar src="/img/avatars/10.svg" />
@@ -45,7 +45,7 @@
           <BaseCheckboxHeadless v-model="value" value="team_member_2">
             <BaseCard
               shape="rounded"
-              class="peer-checked:!border-primary-500 peer-checked:[&_.child]:!text-primary-500 border-2 p-4 grayscale peer-checked:grayscale-0"
+              class="peer-checked:!border-primary-500 peer-checked:[&_.child]:!text-primary-500 border-2 p-4 opacity-50 peer-checked:opacity-100"
             >
               <div class="flex w-full items-center gap-2">
                 <BaseAvatar src="/img/avatars/16.svg" />
@@ -68,7 +68,7 @@
           <BaseCheckboxHeadless v-model="value" value="team_member_3">
             <BaseCard
               shape="rounded"
-              class="peer-checked:!border-primary-500 peer-checked:[&_.child]:!text-primary-500 border-2 p-4 grayscale peer-checked:grayscale-0"
+              class="peer-checked:!border-primary-500 peer-checked:[&_.child]:!text-primary-500 border-2 p-4 opacity-50 peer-checked:opacity-100"
             >
               <div class="flex w-full items-center gap-2">
                 <BaseAvatar src="/img/avatars/25.svg" />

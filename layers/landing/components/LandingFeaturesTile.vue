@@ -11,7 +11,7 @@ const props = defineProps<{
       class="from-primary-600 absolute -inset-1 rounded-lg bg-gradient-to-r to-indigo-600 opacity-25 blur transition duration-1000 group-hover:opacity-100 group-hover:duration-200"
     ></div>
     <div
-      class="items-top ring-muted-900/5 relative flex justify-start space-x-6 rounded-xl bg-white p-5 leading-none ring-1"
+      class="items-top ring-muted-900/5 dark:bg-muted-950 relative flex justify-start space-x-6 rounded-xl bg-white p-5 leading-none ring-1"
     >
       <Icon :name="props.icon" class="text-primary-600 h-8 w-8 shrink-0" />
       <div class="space-y-1">
