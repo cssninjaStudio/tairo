@@ -13,7 +13,7 @@ icon:
 title: Tairo form save
 demo: '#examples/tairo/form-save.vue'
 ---
-Use the form save component for long forms that require the user to scroll.
+Display floating submit and reset button when users scroll. Wrap this component in a `<form>` element or use the `#default` slot to insert your own :doc-linker{to="BaseButton"} so you can use custom `@click` events
 ::
 
 :doc-component-meta{name="TairoFormSave"}
