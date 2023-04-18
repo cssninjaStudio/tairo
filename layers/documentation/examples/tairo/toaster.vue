@@ -1,6 +1,6 @@
 <template>
   <div>
-    <BaseButton>Show Toaster</BaseButton>
+    <BaseButton @click="showSuccess">Show Toaster</BaseButton>
   </div>
 </template>
 

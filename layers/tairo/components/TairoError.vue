@@ -40,7 +40,7 @@ const VFocus = {
 }
 
 // Show/hide demo stack trace
-const showStackTrace = ref(false)
+const showStackTrace = ref(true)
 </script>
 
 <template>
@@ -69,14 +69,29 @@ const showStackTrace = ref(false)
         >
           <span>{{ props.error?.statusCode }}</span>
         </div>
-        <BaseButton
-          shape="curved"
-          class="!h-12 w-48 items-center gap-2"
-          @click="handleError"
+        <div
+          class="w-full max-w-xs mx-auto flex items-center justify-center gap-2"
         >
-          <Icon name="feather:arrow-left" />
-          Back to home
-        </BaseButton>
+          <BaseButton
+            shape="curved"
+            class="!h-12 w-full items-center gap-2 max-w-[160px] mx-auto"
+            @click="handleError"
+          >
+            <Icon name="feather:arrow-left" />
+            Back to home
+          </BaseButton>
+          <DevOnly>
+            <BaseButton
+              color="muted"
+              shape="curved"
+              class="!h-12 w-full max-w-[160px] mx-auto"
+              @click="retry"
+            >
+              <Icon name="feather:refresh-cw" class="h-3 w-3" />
+              <span>Retry</span>
+            </BaseButton>
+          </DevOnly>
+        </div>
         <DevOnly>
           <div class="mt-6 flex items-center justify-center">
             <BaseSwitchBall
@@ -111,7 +126,6 @@ const showStackTrace = ref(false)
             >
               {{ props.error.url }}
             </BaseTag>
-            <BaseButtonClose color="muted" class="ms-auto" @click="retry" />
           </div>
           <div class="mb-4 flex items-center gap-2">
             <BaseIconBox color="danger" shape="full" size="md">
