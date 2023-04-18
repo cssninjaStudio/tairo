@@ -2,23 +2,10 @@ import type { RouteRecordRaw } from 'vue-router'
 
 type DocumentationTree = Record<string, RouteRecordRaw[]>
 
-const categoryOrders = [
-  'Uncategorized',
-  'Layout Elements',
-  'Base UI Elements',
-  'Base Forms',
-  'Addons',
-  // 'Content',
-  // 'Interaction',
-  // 'Display',
-  // 'Forms',
-  // 'Addons',
-] as const
-
 export async function useDocumentationRoutes() {
   const { data } = await useAsyncData('doc-nav', () => {
     return queryContent('/documentation')
-      .only(['_path', 'title', 'description', 'category', 'components', 'icon'])
+      .only(['_path', 'title', 'description', 'components', 'icon'])
       .find()
   })
 
@@ -30,7 +17,7 @@ export async function useDocumentationRoutes() {
     }
 
     for (const page of data.value) {
-      const category = page.category ?? 'Uncategorized'
+      const category = page?.category ?? 'Uncategorized'
       byCategory[category] ||= []
       byCategory[category]?.push(page)
     }
@@ -43,7 +30,6 @@ export async function useDocumentationRoutes() {
   })
 
   return {
-    categoryOrders,
     docRoutesByCategory,
     docRoutes,
   }
