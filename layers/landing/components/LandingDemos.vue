@@ -315,7 +315,7 @@ const demos = [
     title: 'List Widgets',
     subtitle: 'For page compositions',
     categories: ['Dashboards'],
-    url: '/dashboards/widgets/lists',
+    url: '/dashboards/widgets/list',
     screenshots: {
       light: '/img/screens/dashboards-widgets-lists.png',
       dark: '/img/screens/dashboards-widgets-lists-dark.png',
@@ -395,7 +395,7 @@ const demos = [
     title: 'List view 1',
     subtitle: 'For list views and collections',
     categories: ['Layouts'],
-    url: '/layouts/',
+    url: '/layouts',
     screenshots: {
       light: '/img/screens/layouts-list-view-1.png',
       dark: '/img/screens/layouts-list-view-1-dark.png',
@@ -1055,7 +1055,7 @@ const demos = [
     title: 'Error',
     subtitle: 'For system errors',
     categories: ['Error'],
-    url: '/iam-a-404',
+    url: '/test-error',
     screenshots: {
       light: '/img/screens/error.png',
       dark: '/img/screens/error-dark.png',

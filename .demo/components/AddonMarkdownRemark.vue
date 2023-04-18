@@ -43,7 +43,7 @@ const props = withDefaults(
       light: 'material-theme-lighter',
       dark: 'material-theme-ocean',
     }),
-    langs: () => ['html', 'vue'],
+    langs: () => ['html', 'vue', 'bash'],
   },
 )
 
