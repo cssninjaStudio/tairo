@@ -7,6 +7,84 @@ const props = defineProps<{
 const layerTree = [
   {
     item: {
+      name: '.app/',
+      tooltip: 'Your app root folder',
+    },
+    open: true,
+    children: [
+      {
+        item: {
+          name: 'components/',
+          tooltip: 'Your app components',
+        },
+        open: true,
+        children: [
+          {
+            item: {
+              name: 'AppSearch.vue',
+              tooltip: 'Your app search component',
+              icon: 'vscode-icons:file-type-vue',
+            },
+          },
+          {
+            item: {
+              name: 'BaseInput.vue',
+              tooltip: 'Override @shuriken-ui/nuxt BaseInput',
+              icon: 'vscode-icons:file-type-vue',
+            },
+          },
+        ],
+      },
+      {
+        item: {
+          name: 'layouts/',
+          tooltip: 'Your layouts',
+        },
+        open: true,
+        children: [
+          {
+            item: {
+              name: 'default.vue',
+              tooltip: 'Define your default layout',
+              icon: 'vscode-icons:file-type-vue',
+            },
+          },
+        ],
+      },
+      {
+        item: {
+          name: 'pages/',
+          tooltip: 'Your pages',
+        },
+        open: true,
+        children: [
+          {
+            item: {
+              name: 'index.vue',
+              tooltip: 'Your home page',
+              icon: 'vscode-icons:file-type-vue',
+            },
+          },
+        ],
+      },
+      {
+        item: {
+          name: 'app.config.ts',
+          tooltip: 'Your app config; depends on layers',
+          icon: 'vscode-icons:file-type-typescript',
+        },
+      },
+      {
+        item: {
+          name: 'nuxt.config.ts',
+          tooltip: 'Extends layers and module config',
+          icon: 'vscode-icons:file-type-typescript',
+        },
+      },
+    ],
+  },
+  {
+    item: {
       name: 'layers/',
       tooltip: 'List of extended layers in nuxt.config.ts',
     },
@@ -16,6 +94,7 @@ const layerTree = [
         item: {
           name: 'tairo/',
           color: 'bg-amber-500',
+          tooltip: 'Shared base layer',
         },
         children: [
           {
@@ -99,7 +178,7 @@ const layerTree = [
           {
             item: {
               name: 'nuxt.config.ts',
-              tooltip: 'Default nuxt configuration for tairo',
+              tooltip: 'Default nuxt config for tairo',
               icon: 'vscode-icons:file-type-typescript',
             },
           },
@@ -107,8 +186,9 @@ const layerTree = [
       },
       {
         item: {
-          name: 'layout-sidebar/',
+          name: 'tairo-layout-sidebar/',
           color: 'bg-lime-500',
+          tooltip: 'Layout layer with sidebar navigation',
         },
         children: [
           {
@@ -172,21 +252,21 @@ const layerTree = [
           {
             item: {
               name: 'app.config.ts',
-              tooltip: 'Specific config for layout-sidebar',
+              tooltip: 'Default config for layout-sidebar',
               icon: 'vscode-icons:file-type-typescript',
             },
           },
           {
             item: {
               name: 'nuxt.schema.ts',
-              tooltip: 'Specific nuxt schema for layout-sidebar',
+              tooltip: 'Nuxt schema for layout-sidebar',
               icon: 'vscode-icons:file-type-typescript',
             },
           },
           {
             item: {
               name: 'nuxt.config.ts',
-              tooltip: 'Extra nuxt configuration for layout-sidebar',
+              tooltip: 'Extra nuxt config for layout-sidebar',
               icon: 'vscode-icons:file-type-typescript',
             },
           },
@@ -194,8 +274,9 @@ const layerTree = [
       },
       {
         item: {
-          name: 'layout-collapse/',
+          name: 'tairo-layout-collapse/',
           color: 'bg-pink-500',
+          tooltip: 'Layout layer with collapsable navigation',
         },
         children: [
           {
@@ -273,7 +354,7 @@ const layerTree = [
           {
             item: {
               name: 'nuxt.config.ts',
-              tooltip: 'Extra nuxt configuration for layout-collapse',
+              tooltip: 'Extra nuxt config for layout-collapse',
               icon: 'vscode-icons:file-type-typescript',
             },
           },
@@ -281,68 +362,9 @@ const layerTree = [
       },
       {
         item: {
-          name: 'documentation/',
-          color: 'bg-sky-500',
-        },
-        children: [
-          {
-            item: {
-              name: 'content/',
-            },
-            children: [
-              {
-                item: {
-                  name: 'index.md',
-                  icon: 'vscode-icons:file-type-markdown',
-                },
-              },
-            ],
-          },
-          {
-            item: {
-              name: 'components/',
-            },
-            children: [
-              {
-                item: {
-                  name: 'DocLayout.vue',
-                  icon: 'vscode-icons:file-type-vue',
-                },
-              },
-              {
-                item: {
-                  name: 'DocSubsidebarDocumentation.vue',
-                  icon: 'vscode-icons:file-type-vue',
-                },
-              },
-              {
-                item: {
-                  name: 'Doc...',
-                  icon: 'vscode-icons:file-type-vue',
-                },
-              },
-            ],
-          },
-          {
-            item: {
-              name: 'app.config.ts',
-              tooltip: 'Specific config for the documentation',
-              icon: 'vscode-icons:file-type-typescript',
-            },
-          },
-          {
-            item: {
-              name: 'nuxt.config.ts',
-              tooltip: 'Extra nuxt configuration for the documentation',
-              icon: 'vscode-icons:file-type-typescript',
-            },
-          },
-        ],
-      },
-      {
-        item: {
-          name: 'shuriken-ui/',
+          name: '@shuriken-ui/nuxt',
           color: 'bg-purple-500',
+          tooltip: 'Open-source shuriken-ui layer',
         },
         children: [
           {
@@ -392,21 +414,21 @@ const layerTree = [
           {
             item: {
               name: 'app.config.ts',
-              tooltip: 'Specific config for shuriken-ui',
+              tooltip: 'Default config for shuriken-ui',
               icon: 'vscode-icons:file-type-typescript',
             },
           },
           {
             item: {
               name: 'nuxt.schema.ts',
-              tooltip: 'Specific nuxt schema for shuriken-ui',
+              tooltip: 'Nuxt schema for shuriken-ui',
               icon: 'vscode-icons:file-type-typescript',
             },
           },
           {
             item: {
               name: 'nuxt.config.ts',
-              tooltip: 'Extra nuxt configuration for shuriken-ui',
+              tooltip: 'Extra nuxt config for shuriken-ui',
               icon: 'vscode-icons:file-type-typescript',
             },
           },
@@ -414,97 +436,36 @@ const layerTree = [
       },
     ],
   },
+]
+const mergedTree = [
   {
     item: {
       name: 'components/',
-      tooltip: 'Your app components',
     },
     open: true,
     children: [
       {
         item: {
           name: 'AppSearch.vue',
-          tooltip: 'Your app search component',
+          tooltip: 'from your app layer',
           icon: 'vscode-icons:file-type-vue',
+        },
+      },
+      {
+        item: {
+          name: 'BaseButton.vue',
+          icon: 'vscode-icons:file-type-vue',
+          color: 'bg-purple-500',
+          tooltip: 'from @shuriken-ui/nuxt layer',
         },
       },
       {
         item: {
           name: 'BaseInput.vue',
-          tooltip: 'Override shuriken-ui BaseInput',
+          tooltip: 'from your app layer',
           icon: 'vscode-icons:file-type-vue',
         },
       },
-    ],
-  },
-  {
-    item: {
-      name: 'layouts/',
-      tooltip: 'Your layouts',
-    },
-    open: true,
-    children: [
-      {
-        item: {
-          name: 'default.vue',
-          tooltip: 'Define your default layout',
-          icon: 'vscode-icons:file-type-vue',
-        },
-      },
-    ],
-  },
-  {
-    item: {
-      name: 'pages/',
-      tooltip: 'Your pages',
-    },
-    open: true,
-    children: [
-      {
-        item: {
-          name: 'index.vue',
-          tooltip: 'Your home page',
-          icon: 'vscode-icons:file-type-vue',
-        },
-      },
-    ],
-  },
-  {
-    item: {
-      name: 'app.config.ts',
-      tooltip: 'Your app configuration, depending on the layers',
-      icon: 'vscode-icons:file-type-typescript',
-    },
-  },
-  {
-    item: {
-      name: 'nuxt.config.ts',
-      tooltip: 'Enable layers and extra nuxt configuration',
-      icon: 'vscode-icons:file-type-typescript',
-    },
-  },
-]
-const mergedTree = [
-  {
-    item: {
-      name: 'content/',
-    },
-    children: [
-      {
-        item: {
-          name: 'index.md',
-          icon: 'vscode-icons:file-type-markdown',
-          color: 'bg-sky-500',
-          tooltip: 'from documentation layer',
-        },
-      },
-    ],
-  },
-  {
-    item: {
-      name: 'components/',
-    },
-    children: [
       {
         item: {
           name: 'TairoModal.vue',
@@ -526,7 +487,7 @@ const mergedTree = [
           name: 'TairoSidebarLayout.vue',
           icon: 'vscode-icons:file-type-vue',
           color: 'bg-lime-500',
-          tooltip: 'from layout-sidebar layer',
+          tooltip: 'from tairo-layout-sidebar layer',
         },
       },
       {
@@ -534,7 +495,7 @@ const mergedTree = [
           name: 'TairoSidebarNavigation.vue',
           icon: 'vscode-icons:file-type-vue',
           color: 'bg-lime-500',
-          tooltip: 'from layout-sidebar layer',
+          tooltip: 'from tairo-layout-sidebar layer',
         },
       },
       {
@@ -542,7 +503,7 @@ const mergedTree = [
           name: 'TairCollapseLayout.vue',
           icon: 'vscode-icons:file-type-vue',
           color: 'bg-pink-500',
-          tooltip: 'from layout-collapse layer',
+          tooltip: 'from tairo-layout-collapse layer',
         },
       },
       {
@@ -550,45 +511,7 @@ const mergedTree = [
           name: 'TairCollapseNavigation.vue',
           icon: 'vscode-icons:file-type-vue',
           color: 'bg-pink-500',
-          tooltip: 'from layout-collapse layer',
-        },
-      },
-      {
-        item: {
-          name: 'DocLayout.vue',
-          color: 'bg-sky-500',
-          icon: 'vscode-icons:file-type-vue',
-          tooltip: 'from documentation layer',
-        },
-      },
-      {
-        item: {
-          name: 'DocSubsidebarDocumentation.vue',
-          color: 'bg-sky-500',
-          icon: 'vscode-icons:file-type-vue',
-          tooltip: 'from documentation layer',
-        },
-      },
-      {
-        item: {
-          name: 'BaseButton.vue',
-          icon: 'vscode-icons:file-type-vue',
-          color: 'bg-purple-500',
-          tooltip: 'from shuriken-ui layer',
-        },
-      },
-      {
-        item: {
-          name: 'BaseInput.vue',
-          tooltip: 'from your app layer',
-          icon: 'vscode-icons:file-type-vue',
-        },
-      },
-      {
-        item: {
-          name: 'AppSearch.vue',
-          tooltip: 'from your app layer',
-          icon: 'vscode-icons:file-type-vue',
+          tooltip: 'from tairo-layout-collapse layer',
         },
       },
     ],
@@ -609,7 +532,7 @@ const mergedTree = [
       {
         item: {
           name: 'sidebar.vue',
-          tooltip: 'from layout-sidebar layer',
+          tooltip: 'from tairo-layout-sidebar layer',
           icon: 'vscode-icons:file-type-vue',
           color: 'bg-lime-500',
         },
@@ -617,7 +540,7 @@ const mergedTree = [
       {
         item: {
           name: 'collapse.vue',
-          tooltip: 'from layout-collapse layer',
+          tooltip: 'from tairo-layout-collapse layer',
           icon: 'vscode-icons:file-type-vue',
           color: 'bg-pink-500',
         },
@@ -655,7 +578,7 @@ const mergedTree = [
       {
         item: {
           name: 'sidebar.ts',
-          tooltip: 'from layout-sidebar layer',
+          tooltip: 'from tairo-layout-sidebar layer',
           icon: 'vscode-icons:file-type-typescript',
           color: 'bg-lime-500',
         },
@@ -663,7 +586,7 @@ const mergedTree = [
       {
         item: {
           name: 'collapse.ts',
-          tooltip: 'from layout-collapse layer',
+          tooltip: 'from tairo-layout-collapse layer',
           icon: 'vscode-icons:file-type-typescript',
           color: 'bg-pink-500',
         },
@@ -671,7 +594,7 @@ const mergedTree = [
       {
         item: {
           name: 'file-preview.ts',
-          tooltip: 'from shuriken-ui layer',
+          tooltip: 'from @shuriken-ui/nuxt layer',
           icon: 'vscode-icons:file-type-typescript',
           color: 'bg-purple-500',
         },
@@ -679,7 +602,7 @@ const mergedTree = [
       {
         item: {
           name: 'scrollspy.ts',
-          tooltip: 'from shuriken-ui layer',
+          tooltip: 'from @shuriken-ui/nuxt layer',
           icon: 'vscode-icons:file-type-typescript',
           color: 'bg-purple-500',
         },
@@ -690,6 +613,7 @@ const mergedTree = [
     item: {
       name: 'pages/',
     },
+    open: true,
     children: [
       {
         item: {
@@ -788,7 +712,7 @@ const mergedTree = [
       </div>
       <div>
         <div class="border-muted-200 dark:border-muted-700 border-b px-8 py-6">
-          <span>... is flattened!</span>
+          <span>... is merged into a unique app!</span>
         </div>
         <div class="px-8 py-6">
           <BaseTreeSelect

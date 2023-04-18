@@ -6,31 +6,31 @@ const props = defineProps<{
 }>()
 
 const route = useRoute()
-const isOpen = ref(false)
+const isOpen = ref(true)
 
 const sidebar = reactive(useSidebar())
 const { xl } = useTailwindBreakpoints()
 
-const hasActiveChild = computed(() => {
-  if (!props.link.children) return false
-  return checkActiveChildren(props.link.children)
-})
+// const hasActiveChild = computed(() => {
+//   if (!props.link.children) return false
+//   return checkActiveChildren(props.link.children)
+// })
 
-function checkActiveChildren(children: NavItem[]): boolean {
-  return children.some((item) => {
-    if (item.children) {
-      return checkActiveChildren(item.children)
-    }
+// function checkActiveChildren(children: NavItem[]): boolean {
+//   return children.some((item) => {
+//     if (item.children) {
+//       return checkActiveChildren(item.children)
+//     }
 
-    return route.path === item._path
-  })
-}
+//     return route.path === item._path
+//   })
+// }
 
-watchEffect(() => {
-  if (hasActiveChild.value) {
-    isOpen.value = true
-  }
-})
+// watchEffect(() => {
+//   if (hasActiveChild.value) {
+//     isOpen.value = true
+//   }
+// })
 
 function onLinkClick() {
   if (xl.value) {
