@@ -132,221 +132,236 @@ function useGaugePersonal() {
       </div>
       <!-- Components -->
       <div
-        class="relative z-30 mt-12 transform-gpu overflow-hidden border transition-all duration-300"
-        :class="[
-          y > 60
-            ? 'bg-muted-100 dark:bg-muted-900 border-muted-200 dark:border-muted-800 ltablet:ps-24 rounded-xl pb-6 pe-6 ps-6 pt-20 lg:ps-28'
-            : 'border-transparent',
-        ]"
+        class="ltablet:min-h-[760px] min-h-[2075px] w-full sm:min-h-[760px] lg:min-h-[750px]"
       >
-        <!-- Fake sidebar -->
         <div
-          class="ltablet:w-16 ltablet:flex dark:bg-muted-800 absolute left-0 top-0 hidden h-full w-20 transform-gpu flex-col bg-white transition-all duration-200 lg:flex"
-          :class="
-            y > 60 ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-full'
-          "
+          class="relative z-30 mt-12 transform-gpu overflow-hidden border transition-all duration-300"
+          :class="[
+            y > 60
+              ? 'bg-muted-100 dark:bg-muted-900 border-muted-200 dark:border-muted-800 ltablet:ps-24 rounded-xl pb-6 pe-6 ps-6 pt-20 lg:ps-28'
+              : 'border-transparent',
+          ]"
         >
-          <div class="flex h-20 w-full items-center justify-center">
-            <TairoLogo class="text-primary-500 h-8 w-8" />
-          </div>
-          <div class="flex h-16 w-full items-center justify-center">
-            <div
-              class="nui-mask nui-mask-blob bg-primary-500/10 flex h-12 w-12 items-center justify-center transition-colors duration-200"
-            >
-              <Icon name="ph:house-duotone" class="text-primary-500 h-5 w-5" />
-            </div>
-          </div>
-          <div class="flex h-16 w-full items-center justify-center">
-            <div
-              class="nui-mask nui-mask-blob hover:bg-muted-100 dark:hover:bg-muted-700/50 flex h-12 w-12 items-center justify-center transition-colors duration-200"
-            >
-              <Icon
-                name="ph:grid-four-duotone"
-                class="text-muted-400 h-5 w-5"
-              />
-            </div>
-          </div>
-          <div class="flex h-16 w-full items-center justify-center">
-            <div
-              class="nui-mask nui-mask-blob hover:bg-muted-100 dark:hover:bg-muted-700/50 flex h-12 w-12 items-center justify-center transition-colors duration-200"
-            >
-              <Icon name="ph:users-duotone" class="text-muted-400 h-5 w-5" />
-            </div>
-          </div>
-          <div class="flex h-16 w-full items-center justify-center">
-            <div
-              class="nui-mask nui-mask-blob hover:bg-muted-100 dark:hover:bg-muted-700/50 flex h-12 w-12 items-center justify-center transition-colors duration-200"
-            >
-              <Icon
-                name="ph:chat-circle-duotone"
-                class="text-muted-400 h-5 w-5"
-              />
-            </div>
-          </div>
-          <div class="mt-auto flex h-16 w-full items-center justify-center">
-            <div
-              class="nui-mask nui-mask-blob hover:bg-muted-100 dark:hover:bg-muted-700/50 flex h-12 w-12 items-center justify-center transition-colors duration-200"
-            >
-              <Icon name="ph:gear-six-duotone" class="text-muted-400 h-5 w-5" />
-            </div>
-          </div>
-          <div class="flex h-16 w-full items-center justify-center">
-            <div
-              class="nui-mask nui-mask-blob hover:bg-muted-100 dark:hover:bg-muted-700/50 flex h-12 w-12 items-center justify-center transition-colors duration-200"
-            >
-              <BaseAvatar
-                shape="straight"
-                size="sm"
-                src="/img/avatars/24.svg"
-                class="nui-mask nui-mask-blob"
-              />
-            </div>
-          </div>
-        </div>
-        <!-- Fake navbar -->
-        <div
-          class="ltablet:ps-24 absolute left-0 top-0 flex h-20 w-full transform-gpu items-center justify-between pe-6 ps-6 transition-all duration-200 lg:ps-28"
-          :class="
-            y > 60 ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full'
-          "
-        >
-          <div class="flex h-full items-center gap-4">
-            <div
-              class="nui-mask nui-mask-blob dark:hover:bg-muted-800 flex h-10 w-10 items-center justify-center transition-colors duration-200 hover:bg-white"
-            >
-              <Icon name="lucide:menu" class="text-muted-400 h-5 w-5" />
-            </div>
-            <BaseText class="hidden sm:inline-block">My Dashboard</BaseText>
-          </div>
-          <div class="flex h-full items-center justify-end gap-1">
-            <div
-              class="nui-mask nui-mask-blob dark:hover:bg-muted-800 flex h-10 w-10 items-center justify-center transition-colors duration-200 hover:bg-white"
-            >
-              <Icon name="ph:bell-duotone" class="text-muted-400 h-5 w-5" />
-            </div>
-            <div
-              class="nui-mask nui-mask-blob dark:hover:bg-muted-800 flex h-10 w-10 items-center justify-center transition-colors duration-200 hover:bg-white"
-            >
-              <Icon
-                name="ph:circles-four-duotone"
-                class="text-muted-400 h-5 w-5"
-              />
-            </div>
-            <div
-              class="nui-mask nui-mask-blob dark:hover:bg-muted-800 flex h-10 w-10 items-center justify-center transition-colors duration-200 hover:bg-white"
-            >
-              <Icon
-                name="ph:translate-duotone"
-                class="text-muted-400 h-5 w-5"
-              />
-            </div>
-            <div
-              class="nui-mask nui-mask-blob dark:hover:bg-muted-800 flex h-10 w-10 items-center justify-center transition-colors duration-200 hover:bg-white"
-            >
-              <BaseAvatar
-                shape="straight"
-                size="xs"
-                src="/img/avatars/24.svg"
-                class="nui-mask nui-mask-blob"
-              />
-            </div>
-          </div>
-        </div>
-        <div
-          class="ltablet:grid-cols-3 ltablet:gap-6 grid grid-cols-1 gap-6 sm:grid-cols-3 sm:gap-3 lg:grid-cols-4 lg:gap-4"
-        >
-          <!-- Col -->
+          <!-- Fake sidebar -->
           <div
-            class="ltablet:gap-6 flex flex-col gap-6 sm:gap-3 lg:gap-4"
-            :class="y > 60 ? '' : 'lg:mt-24 ltablet:mt-24 ptablet:mt-24'"
+            class="ltablet:w-16 ltablet:flex dark:bg-muted-800 absolute left-0 top-0 hidden h-full w-20 transform-gpu flex-col bg-white transition-all duration-200 lg:flex"
+            :class="
+              y > 60
+                ? 'opacity-100 translate-x-0'
+                : 'opacity-0 -translate-x-full'
+            "
           >
-            <!-- Widget -->
-            <BaseCard shape="curved" elevated class="flex flex-col p-6">
-              <div class="mb-6 flex items-center justify-between">
-                <BaseHeading
-                  as="h3"
-                  size="sm"
-                  weight="semibold"
-                  lead="tight"
-                  class="text-muted-800 dark:text-white"
-                >
-                  <span>Personal Score</span>
-                </BaseHeading>
-              </div>
-              <div class="flex justify-center py-16">
-                <AddonApexcharts
-                  v-bind="gaugePersonal"
-                  class="-mt-14 transition-all duration-200"
+            <div class="flex h-20 w-full items-center justify-center">
+              <TairoLogo class="text-primary-500 h-8 w-8" />
+            </div>
+            <div class="flex h-16 w-full items-center justify-center">
+              <div
+                class="nui-mask nui-mask-blob bg-primary-500/10 flex h-12 w-12 items-center justify-center transition-colors duration-200"
+              >
+                <Icon
+                  name="ph:house-duotone"
+                  class="text-primary-500 h-5 w-5"
                 />
               </div>
-              <div class="mt-auto text-center">
-                <BaseParagraph size="sm">
-                  <span class="text-muted-400">
-                    Your score has been calculated based on the latest metrics
-                  </span>
-                </BaseParagraph>
+            </div>
+            <div class="flex h-16 w-full items-center justify-center">
+              <div
+                class="nui-mask nui-mask-blob hover:bg-muted-100 dark:hover:bg-muted-700/50 flex h-12 w-12 items-center justify-center transition-colors duration-200"
+              >
+                <Icon
+                  name="ph:grid-four-duotone"
+                  class="text-muted-400 h-5 w-5"
+                />
               </div>
-            </BaseCard>
+            </div>
+            <div class="flex h-16 w-full items-center justify-center">
+              <div
+                class="nui-mask nui-mask-blob hover:bg-muted-100 dark:hover:bg-muted-700/50 flex h-12 w-12 items-center justify-center transition-colors duration-200"
+              >
+                <Icon name="ph:users-duotone" class="text-muted-400 h-5 w-5" />
+              </div>
+            </div>
+            <div class="flex h-16 w-full items-center justify-center">
+              <div
+                class="nui-mask nui-mask-blob hover:bg-muted-100 dark:hover:bg-muted-700/50 flex h-12 w-12 items-center justify-center transition-colors duration-200"
+              >
+                <Icon
+                  name="ph:chat-circle-duotone"
+                  class="text-muted-400 h-5 w-5"
+                />
+              </div>
+            </div>
+            <div class="mt-auto flex h-16 w-full items-center justify-center">
+              <div
+                class="nui-mask nui-mask-blob hover:bg-muted-100 dark:hover:bg-muted-700/50 flex h-12 w-12 items-center justify-center transition-colors duration-200"
+              >
+                <Icon
+                  name="ph:gear-six-duotone"
+                  class="text-muted-400 h-5 w-5"
+                />
+              </div>
+            </div>
+            <div class="flex h-16 w-full items-center justify-center">
+              <div
+                class="nui-mask nui-mask-blob hover:bg-muted-100 dark:hover:bg-muted-700/50 flex h-12 w-12 items-center justify-center transition-colors duration-200"
+              >
+                <BaseAvatar
+                  shape="straight"
+                  size="sm"
+                  src="/img/avatars/24.svg"
+                  class="nui-mask nui-mask-blob"
+                />
+              </div>
+            </div>
           </div>
-          <!-- Col -->
-          <div class="ltablet:gap-6 flex flex-col gap-6 sm:gap-3 lg:gap-4">
-            <!-- Widget -->
-            <BaseCard shape="curved" elevated class="p-6">
-              <DemoInboxMessage
-                picture="/img/avatars/10.svg"
-                name="Kendra W."
-                title="Design Project"
-                text="Where are we in terms of design? We need to review the new screens."
-                time="28 minutes"
-                shape="curved"
-              />
-            </BaseCard>
-            <!-- Widget -->
-            <BaseCard shape="curved" elevated class="p-6">
-              <DemoInfoBadges
-                image="/img/illustrations/widgets/1.svg"
-                badge-small="/img/illustrations/widgets/3.svg"
-                badge-medium="/img/illustrations/widgets/2.svg"
-                title="You've unlocked 2 new Achievements"
-                text="Congrats, your efforts have been rewarded. Keep up like this!"
-              />
-            </BaseCard>
-          </div>
-          <!-- Col -->
+          <!-- Fake navbar -->
           <div
-            class="ltablet:gap-6 flex flex-col gap-6 sm:hidden sm:gap-3 lg:flex lg:gap-4"
-            :class="y > 60 ? '' : 'lg:mt-16 ltablet:mt-16 ptablet:mt-16'"
+            class="ltablet:ps-24 absolute left-0 top-0 flex h-20 w-full transform-gpu items-center justify-between pe-6 ps-6 transition-all duration-200 lg:ps-28"
+            :class="
+              y > 60
+                ? 'opacity-100 translate-y-0'
+                : 'opacity-0 -translate-y-full'
+            "
           >
-            <!-- Widget -->
-            <BaseCard shape="curved" elevated class="p-4">
-              <DemoTeamSearchCompact shape="curved" />
-            </BaseCard>
-            <!-- Widget -->
-            <BaseCard shape="curved" elevated class="p-3">
-              <DemoVideoCompact shape="curved" />
-            </BaseCard>
+            <div class="flex h-full items-center gap-4">
+              <div
+                class="nui-mask nui-mask-blob dark:hover:bg-muted-800 flex h-10 w-10 items-center justify-center transition-colors duration-200 hover:bg-white"
+              >
+                <Icon name="lucide:menu" class="text-muted-400 h-5 w-5" />
+              </div>
+              <BaseText class="hidden sm:inline-block">My Dashboard</BaseText>
+            </div>
+            <div class="flex h-full items-center justify-end gap-1">
+              <div
+                class="nui-mask nui-mask-blob dark:hover:bg-muted-800 flex h-10 w-10 items-center justify-center transition-colors duration-200 hover:bg-white"
+              >
+                <Icon name="ph:bell-duotone" class="text-muted-400 h-5 w-5" />
+              </div>
+              <div
+                class="nui-mask nui-mask-blob dark:hover:bg-muted-800 flex h-10 w-10 items-center justify-center transition-colors duration-200 hover:bg-white"
+              >
+                <Icon
+                  name="ph:circles-four-duotone"
+                  class="text-muted-400 h-5 w-5"
+                />
+              </div>
+              <div
+                class="nui-mask nui-mask-blob dark:hover:bg-muted-800 flex h-10 w-10 items-center justify-center transition-colors duration-200 hover:bg-white"
+              >
+                <Icon
+                  name="ph:translate-duotone"
+                  class="text-muted-400 h-5 w-5"
+                />
+              </div>
+              <div
+                class="nui-mask nui-mask-blob dark:hover:bg-muted-800 flex h-10 w-10 items-center justify-center transition-colors duration-200 hover:bg-white"
+              >
+                <BaseAvatar
+                  shape="straight"
+                  size="xs"
+                  src="/img/avatars/24.svg"
+                  class="nui-mask nui-mask-blob"
+                />
+              </div>
+            </div>
           </div>
-          <!-- Col -->
           <div
-            class="ltablet:gap-6 flex flex-col gap-6 sm:gap-3 lg:gap-4"
-            :class="y > 60 ? '' : 'lg:mt-10 ltablet:mt-10 ptablet:mt-10'"
+            class="ltablet:grid-cols-3 ltablet:gap-6 grid grid-cols-1 gap-6 sm:grid-cols-3 sm:gap-3 lg:grid-cols-4 lg:gap-4"
           >
-            <!-- Widget -->
-            <BaseCard shape="curved" elevated class="p-6">
-              <DemoProgressCircle
-                image="/img/avatars/6.svg"
-                :title="`${y < 500 ? Math.trunc(y / 5) : 100}% completed!`"
-                text="Congrats, your efforts have been rewarded. Keep up like this!"
-                :value="y < 500 ? Math.trunc(y / 5) : 100"
-              />
-            </BaseCard>
-            <!-- Widget -->
-            <BaseCard shape="curved" elevated class="p-6">
-              <DemoFollowersCompact />
-            </BaseCard>
+            <!-- Col -->
+            <div
+              class="ltablet:gap-6 flex flex-col gap-6 sm:gap-3 lg:gap-4"
+              :class="y > 60 ? '' : 'lg:mt-24 ltablet:mt-24 ptablet:mt-24'"
+            >
+              <!-- Widget -->
+              <BaseCard shape="curved" elevated class="flex flex-col p-6">
+                <div class="mb-6 flex items-center justify-between">
+                  <BaseHeading
+                    as="h3"
+                    size="sm"
+                    weight="semibold"
+                    lead="tight"
+                    class="text-muted-800 dark:text-white"
+                  >
+                    <span>Personal Score</span>
+                  </BaseHeading>
+                </div>
+                <div class="flex justify-center py-16">
+                  <AddonApexcharts
+                    v-bind="gaugePersonal"
+                    class="-mt-14 transition-all duration-200"
+                  />
+                </div>
+                <div class="mt-auto text-center">
+                  <BaseParagraph size="sm">
+                    <span class="text-muted-400">
+                      Your score has been calculated based on the latest metrics
+                    </span>
+                  </BaseParagraph>
+                </div>
+              </BaseCard>
+            </div>
+            <!-- Col -->
+            <div class="ltablet:gap-6 flex flex-col gap-6 sm:gap-3 lg:gap-4">
+              <!-- Widget -->
+              <BaseCard shape="curved" elevated class="p-6">
+                <DemoInboxMessage
+                  picture="/img/avatars/10.svg"
+                  name="Kendra W."
+                  title="Design Project"
+                  text="Where are we in terms of design? We need to review the new screens."
+                  time="28 minutes"
+                  shape="curved"
+                />
+              </BaseCard>
+              <!-- Widget -->
+              <BaseCard shape="curved" elevated class="p-6">
+                <DemoInfoBadges
+                  image="/img/illustrations/widgets/1.svg"
+                  badge-small="/img/illustrations/widgets/3.svg"
+                  badge-medium="/img/illustrations/widgets/2.svg"
+                  title="You've unlocked 2 new Achievements"
+                  text="Congrats, your efforts have been rewarded. Keep up like this!"
+                />
+              </BaseCard>
+            </div>
+            <!-- Col -->
+            <div
+              class="ltablet:gap-6 flex flex-col gap-6 sm:hidden sm:gap-3 lg:flex lg:gap-4"
+              :class="y > 60 ? '' : 'lg:mt-16 ltablet:mt-16 ptablet:mt-16'"
+            >
+              <!-- Widget -->
+              <BaseCard shape="curved" elevated class="p-4">
+                <DemoTeamSearchCompact shape="curved" />
+              </BaseCard>
+              <!-- Widget -->
+              <BaseCard shape="curved" elevated class="p-3">
+                <DemoVideoCompact shape="curved" />
+              </BaseCard>
+            </div>
+            <!-- Col -->
+            <div
+              class="ltablet:gap-6 flex flex-col gap-6 sm:gap-3 lg:gap-4"
+              :class="y > 60 ? '' : 'lg:mt-10 ltablet:mt-10 ptablet:mt-10'"
+            >
+              <!-- Widget -->
+              <BaseCard shape="curved" elevated class="p-6">
+                <DemoProgressCircle
+                  image="/img/avatars/6.svg"
+                  :title="`${y < 500 ? Math.trunc(y / 5) : 100}% completed!`"
+                  text="Congrats, your efforts have been rewarded. Keep up like this!"
+                  :value="y < 500 ? Math.trunc(y / 5) : 100"
+                />
+              </BaseCard>
+              <!-- Widget -->
+              <BaseCard shape="curved" elevated class="p-6">
+                <DemoFollowersCompact />
+              </BaseCard>
+            </div>
           </div>
         </div>
       </div>
+
       <!-- Components -->
       <LandingHeroMockup />
     </div>
