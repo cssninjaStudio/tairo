@@ -76,10 +76,13 @@ const subsidebarEnabled = computed(() => {
       "
     >
       <slot name="subnav">
-        <component
-          :is="resolveComponent(sidebar.current.subsidebar?.name)"
-          v-if="sidebar.current?.subsidebar?.name"
-        ></component>
+        <KeepAlive>
+          <component
+            :is="resolveComponent(sidebar.current.subsidebar?.name)"
+            :key="sidebar.current?.subsidebar?.name"
+            v-if="sidebar.current?.subsidebar?.name"
+          ></component>
+        </KeepAlive>
       </slot>
     </div>
   </div>
