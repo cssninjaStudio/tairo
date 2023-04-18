@@ -18,7 +18,9 @@ const route = useRoute()
 
 const showNavBurger = computed(() => {
   return (
-    props.sidebar && app.tairo.toolbar?.showNavBurger && hasSubsidebar.value
+    props.sidebar &&
+    app.tairo.sidebar?.toolbar?.showNavBurger &&
+    hasSubsidebar.value
   )
 })
 </script>
@@ -31,7 +33,7 @@ const showNavBurger = computed(() => {
     <TairoSidebarBurger v-if="showNavBurger" class="-ms-3" />
 
     <BaseHeading
-      v-if="(app.tairo.toolbar as any).showTitle"
+      v-if="app.tairo.sidebar?.toolbar?.showTitle"
       as="h1"
       size="2xl"
       weight="light"

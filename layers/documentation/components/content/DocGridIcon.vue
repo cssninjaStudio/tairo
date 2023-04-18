@@ -2,6 +2,7 @@
 const props = defineProps<{
   name?: string
   color?: 'success' | 'primary' | 'yellow' | 'sky' | 'pink' | 'lime'
+  to?: string
 }>()
 
 const iconColor = computed(() => {
@@ -22,16 +23,20 @@ const iconColor = computed(() => {
       return 'bg-muted-100 text-muted-500'
   }
 })
+
+const isExternal = computed(() => {
+  return props.to?.startsWith('http')
+})
 </script>
 
 <template>
-  <BaseCard shape="curved" class="flex items-center p-3">
+  <BaseCard shape="curved" class="flex items-center p-3 group/grid-icon">
     <BaseIconBox v-if="props.name" size="md" :class="iconColor">
       <Icon :name="props.name" class="h-6 w-6" />
     </BaseIconBox>
     <div class="ms-3">
       <BaseHeading
-        as="h4"
+        as="span"
         size="sm"
         weight="semibold"
         v-if="'default' in $slots"
@@ -42,6 +47,21 @@ const iconColor = computed(() => {
       <BaseText v-if="'description' in $slots" size="xs" class="text-muted-400">
         <ContentSlot unwrap="p" :use="$slots.description"></ContentSlot>
       </BaseText>
+    </div>
+    <div
+      v-if="props.to"
+      class="ms-auto flex -translate-x-1 items-center opacity-0 transition-all duration-300 group-hover/grid-icon:translate-x-0 group-focus-within/grid-icon:translate-x-0 group-hover/grid-icon:opacity-100 group-focus-within/grid-icon:opacity-100"
+    >
+      <BaseButtonIcon
+        :to="props.to"
+        :target="isExternal ? '_blank' : undefined"
+        :rel="isExternal ? 'noopener' : undefined"
+        shape="curved"
+        muted
+        class="scale-75"
+      >
+        <Icon name="lucide:arrow-right" class="h-4 w-4" />
+      </BaseButtonIcon>
     </div>
   </BaseCard>
 </template>

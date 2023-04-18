@@ -9,109 +9,137 @@
  */
 
 export default defineAppConfig({
+  nuxtIcon: {},
+  nui: {
+    defaultShapes: {},
+  },
   tairo: {
     title: 'Tairo',
-    toolbar: {
-      showNavBurger: true,
-      tools: [
-        {
-          component: 'BaseThemeToggle',
-          props: {
-            disableTransitions: true,
-          },
-        },
-        {
-          component: 'DemoToolbarLanguage',
-        },
-        {
-          component: 'DemoToolbarNotifications',
-        },
-        {
-          component: 'DemoToolbarActivity',
-        },
-        {
-          component: 'DemoToolbarAccountMenu',
-        },
-      ],
-    },
-    circularMenu: {
-      enabled: true,
-      tools: [
-        {
-          component: 'BaseThemeToggle',
-          props: {
-            class: 'ms-auto',
-            disableTransitions: true,
-            inverted: true,
-          },
-        },
-        {
-          component: 'DemoCircularMenuLanguage',
-        },
-        {
-          component: 'DemoCircularMenuNotifications',
-        },
-        {
-          component: 'DemoCircularMenuActivity',
-        },
-      ],
-    },
     sidebar: {
-      logo: {
-        component: 'TairoLogo',
-        props: { class: 'text-primary-600 h-10' },
+      toolbar: {
+        showNavBurger: true,
+        tools: [
+          {
+            component: 'BaseThemeToggle',
+            props: {
+              disableTransitions: true,
+            },
+          },
+          {
+            component: 'DemoToolbarLanguage',
+          },
+          {
+            component: 'DemoToolbarNotifications',
+          },
+          {
+            component: 'DemoToolbarActivity',
+          },
+          {
+            component: 'DemoToolbarAccountMenu',
+          },
+        ],
       },
-      items: [
-        {
-          name: 'Dashboards',
-          icon: { name: 'ph:sidebar-duotone', class: 'w-5 h-5' },
-          subsidebar: { name: 'DemoSubsidebarDashboards' },
-          activePath: '/dashboards',
-        },
-        {
-          name: 'Layouts',
-          icon: { name: 'ph:app-window-duotone', class: 'w-5 h-5' },
-          subsidebar: { name: 'DemoSubsidebarLayouts' },
-          activePath: '/layouts',
-        },
-        {
-          name: 'Chat',
-          icon: { name: 'ph:chat-circle-duotone', class: 'w-5 h-5' },
-          to: '/dashboards/messaging',
-        },
-        {
-          name: 'Panels',
-          icon: { name: 'ph:square-half-duotone', class: 'w-5 h-5' },
-          click: () => {
-            alert('clicked on layouts')
+      circularMenu: {
+        enabled: true,
+        tools: [
+          {
+            component: 'BaseThemeToggle',
+            props: {
+              class: 'ms-auto',
+              disableTransitions: true,
+              inverted: true,
+            },
           },
-          position: 'end',
-        },
-        {
-          name: 'Search',
-          icon: { name: 'ph:magnifying-glass-duotone', class: 'w-5 h-5' },
-          click: () => {
-            const isOpen = useState('search-open', () => false)
-            // const { open } = usePanels()
-            // open('search')
-            isOpen.value = true
+          {
+            component: 'DemoCircularMenuLanguage',
           },
-          position: 'end',
+          {
+            component: 'DemoCircularMenuNotifications',
+          },
+          {
+            component: 'DemoCircularMenuActivity',
+          },
+        ],
+      },
+      navigation: {
+        logo: {
+          component: 'TairoLogo',
+          props: { class: 'text-primary-600 h-10' },
         },
-        {
-          name: 'Settings',
-          icon: { name: 'ph:gear-six-duotone', class: 'w-5 h-5' },
-          to: '/layouts/profile-settings',
-          position: 'end',
-        },
-        {
-          name: 'My Account',
-          component: { name: 'DemoAccountMenu' },
-          position: 'end',
-        },
-      ],
+        items: [
+          {
+            title: 'Dashboards',
+            icon: { name: 'ph:sidebar-duotone', class: 'w-5 h-5' },
+            subsidebar: { component: 'DemoSubsidebarDashboards' },
+            activePath: '/dashboards',
+          },
+          {
+            title: 'Layouts',
+            icon: { name: 'ph:app-window-duotone', class: 'w-5 h-5' },
+            subsidebar: { component: 'DemoSubsidebarLayouts' },
+            activePath: '/layouts',
+          },
+          {
+            title: 'Chat',
+            icon: { name: 'ph:chat-circle-duotone', class: 'w-5 h-5' },
+            to: '/dashboards/messaging',
+          },
+          {
+            title: 'Panels',
+            icon: { name: 'ph:square-half-duotone', class: 'w-5 h-5' },
+            click: () => {
+              alert('clicked on layouts')
+            },
+            position: 'end',
+          },
+          {
+            title: 'Search',
+            icon: { name: 'ph:magnifying-glass-duotone', class: 'w-5 h-5' },
+            click: () => {
+              const isOpen = useState('search-open', () => false)
+              isOpen.value = true
+            },
+            position: 'end',
+          },
+          {
+            title: 'Settings',
+            icon: { name: 'ph:gear-six-duotone', class: 'w-5 h-5' },
+            to: '/layouts/profile-settings',
+            position: 'end',
+          },
+          {
+            title: 'My Account',
+            component: 'DemoAccountMenu',
+            position: 'end',
+          },
+        ],
+      },
     },
     collapse: {
+      toolbar: {
+        enabled: true,
+        tools: [
+          {
+            component: 'BaseThemeToggle',
+          },
+          {
+            component: 'DemoToolbarLanguage',
+          },
+          {
+            component: 'DemoToolbarNotifications',
+          },
+          {
+            component: 'DemoToolbarActivity',
+          },
+          {
+            component: 'DemoToolbarAccountMenu',
+          },
+        ],
+      },
+      circularMenu: {
+        enabled: false,
+        tools: [],
+      },
       navigation: {
         enabled: true,
         header: {
@@ -179,30 +207,6 @@ export default defineAppConfig({
           },
         ],
       },
-      circularMenu: {
-        enabled: false,
-        tools: [],
-      },
-      toolbar: {
-        enabled: true,
-        tools: [
-          {
-            component: 'BaseThemeToggle',
-          },
-          {
-            component: 'DemoToolbarLanguage',
-          },
-          {
-            component: 'DemoToolbarNotifications',
-          },
-          {
-            component: 'DemoToolbarActivity',
-          },
-          {
-            component: 'DemoToolbarAccountMenu',
-          },
-        ],
-      },
     },
     panels: [
       {
@@ -236,9 +240,5 @@ export default defineAppConfig({
         },
       },
     },
-  },
-  nuxtIcon: {},
-  nui: {
-    defaultShapes: {},
   },
 })

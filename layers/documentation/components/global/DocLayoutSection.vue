@@ -22,7 +22,11 @@ const props = withDefaults(
         class="text-muted-800 dark:text-white"
         v-if="props.title"
       >
-        <TairoTocAnchor :label="props.title" />
+        <TairoTocAnchor :label="props.title">
+          <template #prefix>
+            <Icon name="lucide:hash" class="w-4 h-4" />
+          </template>
+        </TairoTocAnchor>
       </BaseHeading>
       <div
         v-if="props.tag"

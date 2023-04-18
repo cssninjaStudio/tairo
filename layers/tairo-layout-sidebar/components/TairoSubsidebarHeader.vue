@@ -10,7 +10,7 @@ const sidebar = reactive(useSidebar())
       v-if="sidebar.current"
       class="font-heading text-muted-700 text-lg font-light capitalize dark:text-white"
     >
-      {{ sidebar.current.name }}
+      {{ sidebar.current.title }}
     </div>
     <button
       type="button"

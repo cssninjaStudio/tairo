@@ -4,7 +4,7 @@ components:
   - Icon
 ---
 
-::doc-section
+::doc-component-demo
 You can use any icon from [https://icones.js.org/](https://icones.js.org/) by using the :doc-linker{to="Icon"} component.
 
 

@@ -4,7 +4,7 @@ const app = useAppConfig()
 
 <template>
   <div class="flex items-center gap-2">
-    <template v-for="tool of (app.tairo.toolbar as any).tools">
+    <template v-for="tool of app.tairo.sidebar?.toolbar?.tools">
       <component
         :is="resolveComponent(tool.component)"
         v-if="tool.component"
