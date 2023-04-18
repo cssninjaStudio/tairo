@@ -1,5 +1,5 @@
 ---
-title: Tairo Form Save
+title: TairoFormSave
 description: Tairo form save is a customizable set of fixed buttons that are used to save or cancel a form.
 components:
   - TairoFormSave
