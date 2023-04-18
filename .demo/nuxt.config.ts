@@ -1,7 +1,4 @@
-import { resolve } from 'node:path'
 import { isProduction } from 'std-env'
-
-// const WEEK = 60 * 60 * 24 * 7
 
 export default defineNuxtConfig({
   extends: [
@@ -11,8 +8,7 @@ export default defineNuxtConfig({
      * - documentation: contains all /documentation pages
      */
     '../layers/landing',
-    process.env.ENABLE_DOCUMENTATION &&
-      resolve(__dirname, '../layers/documentation'),
+    process.env.ENABLE_DOCUMENTATION && '../layers/documentation',
 
     /**
      * This extends the base Tairo layer.
@@ -77,7 +73,7 @@ export default defineNuxtConfig({
       siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://example.com',
       siteName: 'Tairo',
       siteDescription:
-        'The most advanced Nuxt 3 and Tailwind CSS dashboard template',
+        'The most advanced Nuxt and Tailwind CSS dashboard template',
       language: 'en',
     },
   },

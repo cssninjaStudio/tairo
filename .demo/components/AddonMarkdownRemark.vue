@@ -128,7 +128,7 @@ watchEffect(async () => {
   counter-increment: step 0;
 }
 .markdown.with-line-number :deep(.shiki code .line) {
-  @apply inline w-full h-[1rem];
+  @apply inline w-full;
 }
 .markdown.with-line-number :deep(.shiki code .line::before) {
   content: counter(step);

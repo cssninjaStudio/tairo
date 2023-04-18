@@ -19,7 +19,7 @@
         <BaseText size="sm" class="text-muted-400 dark:text-muted-400">
           Tairo provides everything you need to build a modern web app or admin
           application. All basic components are built with Tailwind CSS and
-          powered by Nuxt 3.
+          powered by Nuxt.
         </BaseText>
 
         <NuxtLink

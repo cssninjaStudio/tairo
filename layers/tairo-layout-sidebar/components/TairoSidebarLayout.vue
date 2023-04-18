@@ -28,14 +28,19 @@ onUnmounted(() => {
 })
 
 const sidebarEnabled = computed(() => {
-  return app.tairo.sidebar?.enabled !== false && props.sidebar !== false
+  return (
+    app.tairo.sidebar?.navigation?.enabled !== false && props.sidebar !== false
+  )
 })
 const toolbarEnabled = computed(() => {
-  return app.tairo.toolbar?.enabled !== false && props.toolbar !== false
+  return (
+    app.tairo.sidebar?.toolbar?.enabled !== false && props.toolbar !== false
+  )
 })
 const circularMenuEnabled = computed(() => {
   return (
-    app.tairo.circularMenu?.enabled !== false && props.circularMenu !== false
+    app.tairo.sidebar?.circularMenu?.enabled !== false &&
+    props.circularMenu !== false
   )
 })
 
@@ -74,18 +79,20 @@ const wrapperClass = computed(() => {
         :subsidebar="props.subsidebar"
       >
         <div
-          v-if="app.tairo.sidebar?.logo?.component"
+          v-if="app.tairo.sidebar?.navigation?.logo?.component"
           class="flex h-16 w-full items-center justify-center"
         >
           <slot name="logo">
             <NuxtLink to="/" class="flex items-center justify-center">
               <component
                 :is="
-                  app.tairo.sidebar.logo.resolve === false
-                    ? app.tairo.sidebar.logo.component
-                    : resolveComponent(app.tairo.sidebar.logo.component)
+                  app.tairo.sidebar?.navigation.logo.resolve === false
+                    ? app.tairo.sidebar?.navigation.logo.component
+                    : resolveComponent(
+                        app.tairo.sidebar?.navigation.logo.component,
+                      )
                 "
-                v-bind="app.tairo.sidebar.logo.props"
+                v-bind="app.tairo.sidebar?.navigation.logo.props"
               ></component>
             </NuxtLink>
           </slot>

@@ -95,7 +95,11 @@ async function loadDemo() {
         class="text-muted-800 dark:text-white"
         v-if="props.title"
       >
-        <TairoTocAnchor :label="props.title" />
+        <TairoTocAnchor :label="props.title">
+          <template #prefix>
+            <Icon name="lucide:hash" class="w-4 h-4" />
+          </template>
+        </TairoTocAnchor>
       </BaseHeading>
 
       <div
@@ -152,6 +156,10 @@ async function loadDemo() {
           </BaseButtonAction>
         </div> -->
       </div>
+    </div>
+
+    <div v-if="'grid' in $slots" class="grid gap-4 md:grid-cols-3 mb-4">
+      <ContentSlot :use="$slots.grid"></ContentSlot>
     </div>
 
     <div

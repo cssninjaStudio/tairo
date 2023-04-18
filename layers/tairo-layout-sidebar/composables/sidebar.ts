@@ -1,28 +1,3 @@
-import type { RouteLocationRaw } from 'vue-router'
-
-export interface TairoSidebarResolvedConfig {
-  name: string
-  icon: {
-    name: string
-    class?: string
-  }
-  component?: {
-    name: string
-    props?: any
-  }
-  subsidebar?: {
-    name: string
-    props?: any
-  }
-  to?: RouteLocationRaw
-  click?: () => void | Promise<void>
-  activePath?: string
-  /**
-   * @default 'start'
-   */
-  position?: 'start' | 'end'
-}
-
 /**
  * Composable to manage navigation of the sidebar layout
  *
@@ -70,44 +45,38 @@ export function useSidebar() {
 
   const sidebars = computed(() => {
     if (
-      app.tairo.sidebar?.enabled === false ||
-      app.tairo.sidebar?.items?.length === 0
+      app.tairo.sidebar?.navigation?.enabled === false ||
+      app.tairo.sidebar?.navigation?.items?.length === 0
     ) {
       return []
     }
-    return app.tairo.sidebar?.items?.map(
-      (sidebar) =>
-        <TairoSidebarResolvedConfig>{
-          ...sidebar,
-          position: sidebar.position ?? 'start',
-        },
-    )
+    return app.tairo.sidebar?.navigation?.items
   })
 
   const currentName = useState('sidebar-name', () => '')
   const isOpen = useState<boolean | undefined>('sidebar-open', () => undefined)
 
   const hasSubsidebar = computed(() => {
-    return sidebars.value?.some((sidebar) => sidebar.subsidebar?.name)
+    return sidebars.value?.some((sidebar) => sidebar.subsidebar?.component)
   })
 
   const current = computed(() => {
     if (!currentName.value) {
       return undefined
     }
-    return sidebars.value?.find(({ name }) => name === currentName.value)
+    return sidebars.value?.find(({ title }) => title === currentName.value)
   })
 
   function toggle() {
     // If no sidebar item is selected, open the first one
     if (!currentName.value && !isOpen.value) {
-      if (!sidebars.value?.[0]?.name) {
+      if (!sidebars.value?.[0]?.title) {
         // No sidebar items defined
         return
       }
 
       // Select the first sidebar item by default
-      currentName.value = sidebars.value[0].name
+      currentName.value = sidebars.value[0].title
     }
 
     isOpen.value = !isOpen.value
@@ -129,7 +98,7 @@ export function useSidebar() {
     if (isOpen.value !== undefined) {
       return
     }
-    if (!app.tairo.sidebar?.startOpen) {
+    if (!app.tairo.sidebar?.navigation?.startOpen) {
       isOpen.value = false
       return
     }
@@ -138,7 +107,7 @@ export function useSidebar() {
       (bar) => bar?.activePath && route.fullPath.startsWith(bar.activePath),
     )
     if (item) {
-      currentName.value = item.name
+      currentName.value = item.title
       isOpen.value = Boolean(currentName.value)
     }
     return

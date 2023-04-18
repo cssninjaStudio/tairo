@@ -6,7 +6,7 @@ icon:
   srcDark: /img/illustrations/components/avatar-group-icon.svg
 ---
 
-::doc-section
+::doc-component-demo
 Use `@vueform/slider` to render fancy sliders in you forms with or without tooltips, and the ability to merge them.
 
 

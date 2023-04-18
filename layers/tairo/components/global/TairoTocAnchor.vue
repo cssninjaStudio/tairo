@@ -15,10 +15,10 @@ const props = withDefaults(
     label: undefined,
     prefix: '#',
     prefixClasses:
-      'hidden group-hover/toc:inline-block group-focus/toc:inline-block group-visible/toc:inline-block leading-6 text-primary-300 absolute -start-5 top-0',
+      'opacity-0 group-hover/toc:opacity-100 group-focus/toc:opacity-100 group-visible/toc:opacity-100 leading-6 text-primary-300 absolute -start-5 top-0',
     suffix: '',
     suffixClasses:
-      'hidden group-hover/toc:inline-block group-focus/toc:inline-block group-visible/toc:inline-block leading-6 text-primary-300 absolute -end-5 -top-1',
+      'opacity-0 group-hover/toc:opacity-100 group-focus/toc:opacity-100 group-visible/toc:opacity-100 leading-6 text-primary-300 absolute -end-5 -top-1',
   },
 )
 
@@ -41,12 +41,18 @@ const anchor = computed(() => props.id || slug.value)
     class="tairo-toc-anchor nui-focus group/toc relative"
     :style="{ scrollMarginTop: '1.5rem' }"
   >
-    <span v-if="props.prefix" :class="props.prefixClasses">
-      {{ props.prefix }}
+    <span
+      v-if="props.prefix || 'prefix' in $slots"
+      :class="props.prefixClasses"
+    >
+      <slot name="prefix">{{ props.prefix }}</slot>
     </span>
     <span>{{ props.label }}</span>
-    <span v-if="props.suffix" :class="props.suffixClasses">
-      {{ props.suffix }}
+    <span
+      v-if="props.suffix || 'suffix' in $slots"
+      :class="props.suffixClasses"
+    >
+      <slot name="suffix">{{ props.suffix }}</slot>
     </span>
   </NuxtLink>
 </template>

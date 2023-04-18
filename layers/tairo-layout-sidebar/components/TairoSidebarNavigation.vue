@@ -24,10 +24,8 @@ const endSidebars = computed(() =>
 )
 
 const subsidebarEnabled = computed(() => {
-  return (
-    props.subsidebar !== false &&
-    sidebar.current &&
-    sidebar.current?.subsidebar?.name
+  return Boolean(
+    props.subsidebar !== false && sidebar.current?.subsidebar?.component,
   )
 })
 </script>
@@ -49,7 +47,7 @@ const subsidebarEnabled = computed(() => {
 
         <TairoSidebarNavigationItem
           v-for="item in startSidebars"
-          :key="item.name"
+          :key="item.title"
           :sidebar="item"
         />
       </div>
@@ -57,7 +55,7 @@ const subsidebarEnabled = computed(() => {
       <div class="mt-auto">
         <TairoSidebarNavigationItem
           v-for="item in endSidebars"
-          :key="item.name"
+          :key="item.title"
           :sidebar="item"
         />
 
@@ -78,9 +76,9 @@ const subsidebarEnabled = computed(() => {
       <slot name="subnav">
         <KeepAlive>
           <component
-            :is="resolveComponent(sidebar.current.subsidebar?.name)"
-            :key="sidebar.current?.subsidebar?.name"
-            v-if="sidebar.current?.subsidebar?.name"
+            :is="resolveComponent(sidebar.current.subsidebar?.component)"
+            :key="sidebar.current?.subsidebar?.component"
+            v-if="sidebar.current?.subsidebar?.component"
           ></component>
         </KeepAlive>
       </slot>
