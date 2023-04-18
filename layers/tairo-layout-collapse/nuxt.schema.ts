@@ -2,6 +2,27 @@ export default defineNuxtSchema({
   appConfig: {
     tairo: {
       collapse: {
+        circularMenu: {
+          enabled: true,
+          tools: {
+            $schema: {
+              type: 'array',
+              items: {
+                type: 'object',
+                required: ['name'],
+                properties: {
+                  component: { type: 'string' },
+                  resolve: { type: 'boolean', $default: true },
+                  props: { type: 'object' },
+                },
+              },
+            },
+          },
+        },
+        toolbar: {
+          enabled: true,
+          tools: [],
+        },
         navigation: {
           enabled: true,
           header: {
@@ -59,7 +80,8 @@ export default defineNuxtSchema({
                     type: 'object',
                     required: ['name'],
                     properties: {
-                      name: { type: 'string' },
+                      component: { type: 'string' },
+                      resolve: { type: 'boolean', $default: true },
                       props: { type: 'object' },
                     },
                   },
@@ -68,26 +90,6 @@ export default defineNuxtSchema({
               },
             },
           },
-        },
-        circularMenu: {
-          enabled: true,
-          tools: {
-            $schema: {
-              type: 'array',
-              items: {
-                type: 'object',
-                required: ['name'],
-                properties: {
-                  component: { type: 'string' },
-                  props: { type: 'object' },
-                },
-              },
-            },
-          },
-        },
-        toolbar: {
-          enabled: true,
-          tools: [],
         },
       },
     },
