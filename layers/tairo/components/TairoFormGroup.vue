@@ -12,7 +12,7 @@ const props = withDefaults(
 </script>
 
 <template>
-  <div class="relative">
+  <fieldset class="relative">
     <div v-if="props.label || props.sublabel" class="mb-6">
       <BaseHeading
         v-if="props.label"
@@ -28,5 +28,5 @@ const props = withDefaults(
       </BaseText>
     </div>
     <slot></slot>
-  </div>
+  </fieldset>
 </template>

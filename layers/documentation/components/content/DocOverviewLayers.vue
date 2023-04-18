@@ -734,99 +734,107 @@ const mergedTree = [
 <template>
   <DocLayoutSection :title="props.title" :tag="props.tag">
     <BaseCard
-      class="divide-muted-200 dark:divide-muted-700 grid gap-6 divide-x md:grid-cols-2"
+      class="divide-muted-200 dark:divide-muted-700 grid divide-y sm:grid-cols-2 sm:divide-x sm:divide-y-0"
     >
-      <div class="mb-4 p-8">
-        <div class="border-muted-200 dark:border-muted-700 mb-4 border-b pb-4">
+      <div>
+        <div class="border-muted-200 dark:border-muted-700 border-b px-8 py-6">
           <span>Your project ...</span>
         </div>
-        <BaseTreeSelect
-          :children="layerTree"
-          treeline
-          :icons="{
-            open: 'clarity:folder-open-line',
-            closed: 'clarity:folder-line',
-            item: 'clarity:file-line',
-            empty: 'clarity:alert-line',
-          }"
-          :classes="{
-            treeline: 'border-muted-300 dark:border-muted-700',
-          }"
-        >
-          <template #item-icon="{ child }">
-            <span
-              class="text-muted-400 me-1 flex h-5 w-5 items-center justify-center"
-            >
-              <Icon :name="child?.item?.icon" class="h-4 w-4" />
-            </span>
-          </template>
-          <template #item-label="{ child, toggle }">
-            <span class="inline-flex items-center gap-2">
+        <div class="px-8 py-6">
+          <BaseTreeSelect
+            :children="layerTree"
+            treeline
+            :icons="{
+              open: 'clarity:folder-open-line',
+              closed: 'clarity:folder-line',
+              item: 'clarity:file-line',
+              empty: 'clarity:alert-line',
+            }"
+            :classes="{
+              treeline: 'border-muted-300 dark:border-muted-700',
+            }"
+          >
+            <template #item-icon="{ child }">
               <span
-                v-if="child?.item?.color"
-                class="inline-block h-2 w-2 rounded-sm"
-                :class="child?.item?.color"
-              ></span>
-              <span
-                :data-tooltip="child?.item?.tooltip"
-                data-tooltip-position="right"
-                :class="[
-                  child?.children ? 'cursor-pointer' : 'cursor-default',
-                  child?.item?.tooltip ? 'cursor-help pe-2' : 'cursor-default',
-                ]"
-                @click="toggle"
+                class="text-muted-400 me-1 flex h-5 w-5 items-center justify-center"
               >
-                {{ child?.item?.name }}
+                <Icon :name="child?.item?.icon" class="h-4 w-4" />
               </span>
-            </span>
-          </template>
-        </BaseTreeSelect>
+            </template>
+            <template #item-label="{ child, toggle }">
+              <span class="inline-flex items-center gap-2">
+                <span
+                  v-if="child?.item?.color"
+                  class="inline-block h-2 w-2 rounded-sm"
+                  :class="child?.item?.color"
+                ></span>
+                <span
+                  :data-tooltip="child?.item?.tooltip"
+                  data-tooltip-position="right"
+                  :class="[
+                    child?.children ? 'cursor-pointer' : 'cursor-default',
+                    child?.item?.tooltip
+                      ? 'cursor-help pe-2'
+                      : 'cursor-default',
+                  ]"
+                  @click="toggle"
+                >
+                  {{ child?.item?.name }}
+                </span>
+              </span>
+            </template>
+          </BaseTreeSelect>
+        </div>
       </div>
-      <div class="mb-4 p-8">
-        <div class="border-muted-200 dark:border-muted-700 mb-4 border-b pb-4">
+      <div>
+        <div class="border-muted-200 dark:border-muted-700 border-b px-8 py-6">
           <span>... is flattened!</span>
         </div>
-        <BaseTreeSelect
-          :children="mergedTree"
-          treeline
-          :icons="{
-            open: 'clarity:folder-open-line',
-            closed: 'clarity:folder-line',
-            item: 'clarity:file-line',
-            empty: 'clarity:alert-line',
-          }"
-          :classes="{
-            treeline: 'border-muted-300 dark:border-muted-700',
-          }"
-        >
-          <template #item-icon="{ child }">
-            <span
-              class="text-muted-400 me-1 flex h-5 w-5 items-center justify-center"
-            >
-              <Icon :name="child?.item?.icon" class="h-4 w-4" />
-            </span>
-          </template>
-          <template #item-label="{ child, toggle }">
-            <span class="inline-flex items-center gap-2">
+        <div class="px-8 py-6">
+          <BaseTreeSelect
+            :children="mergedTree"
+            treeline
+            :icons="{
+              open: 'clarity:folder-open-line',
+              closed: 'clarity:folder-line',
+              item: 'clarity:file-line',
+              empty: 'clarity:alert-line',
+            }"
+            :classes="{
+              treeline: 'border-muted-300 dark:border-muted-700',
+            }"
+          >
+            <template #item-icon="{ child }">
               <span
-                v-if="child?.item?.color"
-                class="inline-block h-2 w-2 rounded-sm"
-                :class="child?.item?.color"
-              ></span>
-              <span
-                :data-tooltip="child?.item?.tooltip"
-                data-tooltip-position="right"
-                :class="[
-                  child?.children ? 'cursor-pointer' : 'cursor-default',
-                  child?.item?.tooltip ? 'cursor-help pe-2' : 'cursor-default',
-                ]"
-                @click="toggle"
+                class="text-muted-400 me-1 flex h-5 w-5 items-center justify-center"
               >
-                {{ child?.item?.name }}
+                <Icon :name="child?.item?.icon" class="h-4 w-4" />
               </span>
-            </span>
-          </template>
-        </BaseTreeSelect>
+            </template>
+            <template #item-label="{ child, toggle }">
+              <span class="inline-flex items-center gap-2">
+                <span
+                  v-if="child?.item?.color"
+                  class="inline-block h-2 w-2 rounded-sm"
+                  :class="child?.item?.color"
+                ></span>
+                <span
+                  :data-tooltip="child?.item?.tooltip"
+                  data-tooltip-position="right"
+                  :class="[
+                    child?.children ? 'cursor-pointer' : 'cursor-default',
+                    child?.item?.tooltip
+                      ? 'cursor-help pe-2'
+                      : 'cursor-default',
+                  ]"
+                  @click="toggle"
+                >
+                  {{ child?.item?.name }}
+                </span>
+              </span>
+            </template>
+          </BaseTreeSelect>
+        </div>
       </div>
     </BaseCard>
   </DocLayoutSection>
