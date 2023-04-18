@@ -51,7 +51,7 @@ const nav = computed(() => {
       >
         <Icon
           name="lucide:arrow-left"
-          class="mt-1 group-hover:-translate-x-1 transition-transform duration-100"
+          class="mt-1 w-4 h-4 group-hover:-translate-x-1 transition-transform duration-100"
         />
         <span class="inline-flex flex-col gap-1">
           <span class="font-sans text-sm leading-tight">Back to previous section</span>
