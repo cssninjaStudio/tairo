@@ -77,7 +77,7 @@ const nav = computed(() => {
         </span>
         <Icon
           name="lucide:arrow-right"
-          class="mt-1 group-hover:translate-x-1 transition-transform duration-100"
+          class="mt-1 w-4 h-4 group-hover:translate-x-1 transition-transform duration-100"
         />
       </NuxtLink>
     </div>
