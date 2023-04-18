@@ -1,6 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
-  title: 'Toto',
+  title: 'Collapse Layout',
   layout: 'empty',
 })
 </script>

@@ -14,11 +14,13 @@ export default defineAppConfig({
         items: [],
       },
       circularMenu: {
-        enabled: false,
+        enabled: true,
         tools: [],
       },
       toolbar: {
         enabled: true,
+        showTitle: false,
+        showNavBurger: false,
         tools: [],
       },
     },

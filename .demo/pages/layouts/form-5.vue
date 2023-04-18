@@ -108,11 +108,7 @@ const handleClipboard = () => {
               </BaseParagraph>
             </div>
           </div>
-          <div
-            class="text-muted-800 mx-auto w-full pt-5"
-            style="max-width: 500px"
-            x-init="generatePassword()"
-          >
+          <div class="text-muted-800 mx-auto w-full pt-5">
             <div class="relative mb-2">
               <label
                 class="text-muted-500 dark:text-muted-400 mb-2 block text-xs font-semibold"
@@ -149,7 +145,10 @@ const handleClipboard = () => {
                 </template>
               </BaseInput>
             </div>
-            <TairoPasswordtrength :value="password" :min-length="charsLength" />
+            <TairoPasswordStrength
+              :value="password"
+              :min-length="charsLength"
+            />
             <hr
               class="border-muted-200 dark:border-muted-700 my-5 h-px border bg-transparent"
             />

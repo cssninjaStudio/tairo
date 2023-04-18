@@ -97,7 +97,7 @@ async function loadDemo() {
       >
         <TairoTocAnchor :label="props.title">
           <template #prefix>
-            <Icon name="lucide:hash" class="w-4 h-4" />
+            <Icon name="lucide:hash" class="h-4 w-4" />
           </template>
         </TairoTocAnchor>
       </BaseHeading>
@@ -158,7 +158,7 @@ async function loadDemo() {
       </div>
     </div>
 
-    <div v-if="'grid' in $slots" class="grid gap-4 md:grid-cols-3 mb-4">
+    <div v-if="'grid' in $slots" class="mb-4 grid gap-4 md:grid-cols-3">
       <ContentSlot :use="$slots.grid"></ContentSlot>
     </div>
 
@@ -186,7 +186,7 @@ async function loadDemo() {
 
           <details v-if="exampleMarkdown && props.code" class="group mt-6">
             <summary
-              class="nui-focus hover:bg-muted-100 text-muted-500 inline-flex cursor-pointer list-none items-center justify-center gap-2 rounded-lg px-2 py-1.5 font-sans text-[0.8rem] transition-all duration-100"
+              class="nui-focus hover:bg-muted-100 dark:hover:bg-muted-700/70 text-muted-500 dark:text-muted-400 inline-flex cursor-pointer list-none items-center justify-center gap-2 rounded-lg px-2 py-1.5 font-sans text-[0.8rem] transition-all duration-100"
             >
               <span class="inline group-open:hidden">Show code</span>
               <span class="hidden group-open:inline">Hide code</span>
