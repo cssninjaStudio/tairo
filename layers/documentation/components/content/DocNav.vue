@@ -47,16 +47,16 @@ const nav = computed(() => {
     <div v-if="nav.prev">
       <NuxtLink
         :to="nav.prev._path"
-        class="group inline-flex gap-2 text-sm text-muted-400 dark:text-muted-500 hover:text-muted-500 dark:hover:text-muted-400 transition-colors duration-100"
+        class="group inline-flex items-center gap-6 text-sm text-muted-400 dark:text-muted-500 hover:text-muted-500 dark:hover:text-muted-400 transition-colors duration-100"
       >
         <Icon
           name="lucide:arrow-left"
-          class="mt-1 w-4 h-4 group-hover:-translate-x-1 transition-transform duration-100"
+          class="ms-2 w-5 h-5 group-hover:-translate-x-1 transition-transform duration-100"
         />
         <span class="inline-flex flex-col gap-1">
-          <span class="font-sans text-sm leading-tight">Back to previous section</span>
+          <span class="font-sans text-sm leading-tight">Previous</span>
           <span
-            class="font-heading font-medium text-muted-500 dark:text-muted-400 group-hover:text-primary-500 dark:group-hover:text-primary-400 text-base"
+            class="font-heading font-medium text-muted-500 dark:text-muted-400 group-hover:text-primary-500 dark:group-hover:text-primary-400 text-sm"
             >{{ nav.prev.title }}</span
           >
         </span>
@@ -66,10 +66,10 @@ const nav = computed(() => {
     <div v-if="nav.next">
       <NuxtLink
         :to="nav.next._path"
-        class="group inline-flex gap-2 text-sm text-muted-400 dark:text-muted-500 hover:text-muted-500 dark:hover:text-muted-400 transition-colors duration-100"
+        class="group inline-flex items-center gap-6 text-sm text-muted-400 dark:text-muted-500 hover:text-muted-500 dark:hover:text-muted-400 transition-colors duration-100"
       >
-        <span class="inline-flex flex-col gap-1">
-          <span class="font-sans text-sm leading-tight">Continue reading</span>
+        <span class="inline-flex flex-col gap-1 text-end">
+          <span class="font-sans text-sm leading-tight">Next</span>
           <span
             class="font-heading font-medium text-muted-500 dark:text-muted-400 group-hover:text-primary-500 dark:group-hover:text-primary-400 text-sm"
             >{{ nav.next.title }}</span
@@ -77,7 +77,7 @@ const nav = computed(() => {
         </span>
         <Icon
           name="lucide:arrow-right"
-          class="mt-1 w-4 h-4 group-hover:translate-x-1 transition-transform duration-100"
+          class="me-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-100"
         />
       </NuxtLink>
     </div>
