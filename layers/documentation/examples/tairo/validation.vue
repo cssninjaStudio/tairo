@@ -1,7 +1,7 @@
 <template>
   <div class="max-w-lg">
     <BaseCard class="p-6">
-      <form action="" method="POST" @submit.prevent="onSubmit">
+      <form action="" method="POST" @submit.prevent="onSubmit" novalidate>
         <div class="grid grid-cols-12 gap-4">
           <div class="col-span-12 sm:col-span-6">
             <Field v-slot="{ field, errorMessage, handleChange, handleBlur }" name="firstName">
@@ -87,7 +87,7 @@ import { z } from 'zod'
 const VALIDATION_TEXT = {
   FIRSTNAME_REQUIRED: "First name can't be empty",
   LASTNAME_REQUIRED: "Last name can't be empty",
-  EMAIL_REQUIRED: "Email address can't be empty",
+  EMAIL_REQUIRED: 'Enter a valid email address',
   MESSAGE_REQUIRED: "Message can't be empty",
 }
 
@@ -96,7 +96,7 @@ const VALIDATION_TEXT = {
 const zodSchema = z.object({
   firstName: z.string().min(1, VALIDATION_TEXT.FIRSTNAME_REQUIRED),
   lastName: z.string().min(1, VALIDATION_TEXT.LASTNAME_REQUIRED),
-  email: z.string().min(1, VALIDATION_TEXT.EMAIL_REQUIRED),
+  email: z.string().email(VALIDATION_TEXT.EMAIL_REQUIRED),
   message: z.string().min(1, VALIDATION_TEXT.MESSAGE_REQUIRED),
 })
 
