@@ -13,7 +13,9 @@ icon:
 title: Sidebar tools
 demo: '#examples/tairo/sidebar-tools.vue'
 ---
-Tairo sidebar tools is a component that lets you reuse the main toolbar buttons anywhere in your app.
+Tairo sidebar tools is an internal component used to render the main toolbar buttons anywhere in your app.
+
+See [sidebar configuration](#)
 ::
 
 :doc-component-meta{name="TairoSidebarTools"}
