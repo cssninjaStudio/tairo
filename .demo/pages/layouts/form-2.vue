@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { toFormValidator } from '@vee-validate/zod'
+import { toTypedSchema } from '@vee-validate/zod'
 import { Field, useFieldError, useForm } from 'vee-validate'
 import { z } from 'zod'
 
@@ -116,7 +116,7 @@ const zodSchema = z
 // infer the shape of the schema into a TypeScript type
 type FormInput = z.infer<typeof zodSchema>
 
-const validationSchema = toFormValidator(zodSchema)
+const validationSchema = toTypedSchema(zodSchema)
 const initialValues = computed<FormInput>(() => ({
   avatar: null,
   doctor: {
