@@ -14,8 +14,8 @@ export default {
     const input = ref('')
     const query = computed(() => ({ from: input.value }))
 
-    const { data } = useAsyncData('/api/hello', () => {
-      return Promise.resolve('totoazza')
+    const { data } = useFetch('/api/hello', {
+      query,
     })
     return {
       data,
