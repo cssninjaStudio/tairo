@@ -110,11 +110,30 @@ const breadcrumb = computed(() => {
   }
   return items
 })
+
+const isSearchOpen = useState('search-open', () => false)
 </script>
 
 <template>
   <div>
-    <BaseBreadcrumb :items="breadcrumb" />
+    <div class="flex items-center justify-between">
+      <BaseBreadcrumb :items="breadcrumb" />
+      <button
+        type="button"
+        class="dark:bg-muted-800 border-muted-200 dark:border-muted-800 text-muted-400 dark:text-muted-500 hover:text-primary-500 dark:hover:text-primary-500 group mb-6 flex items-center gap-2 rounded-xl border bg-white py-1 pe-1 ps-3"
+        @click="isSearchOpen = true"
+      >
+        <Icon
+          name="lucide:search"
+          class="h-4 w-4 transition-colors duration-300"
+        />
+        <span
+          class="dark:bg-muted-800 border-muted-200 dark:border-muted-700 group-hover:text-muted-600 dark:group-hover:text-muted-100 rounded-lg border bg-white px-2 py-0.5 shadow transition-colors duration-300"
+        >
+          <kbd class="font-sans text-sm tracking-wide">ctrl + k</kbd>
+        </span>
+      </button>
+    </div>
 
     <div class="flex">
       <div class="w-full lg:w-3/4">
