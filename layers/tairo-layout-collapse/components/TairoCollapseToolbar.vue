@@ -14,7 +14,7 @@ const app = useAppConfig()
 const route = useRoute()
 
 const showNavBurger = computed(() => {
-  return props.collapse && app.tairo.toolbar?.showNavBurger
+  return props.collapse && app.tairo.collapse?.toolbar?.showNavBurger
 })
 </script>
 
@@ -26,7 +26,7 @@ const showNavBurger = computed(() => {
     <TairoCollapseBurger v-if="showNavBurger" class="-ms-3" />
 
     <BaseHeading
-      v-if="(app.tairo.toolbar as any).showTitle"
+      v-if="app.tairo.collapse?.toolbar?.showTitle"
       as="h1"
       size="2xl"
       weight="light"
@@ -36,7 +36,7 @@ const showNavBurger = computed(() => {
     </BaseHeading>
 
     <div class="ms-auto"></div>
-    <template v-for="tool of (app.tairo.toolbar as any).tools">
+    <template v-for="tool of app.tairo.collapse?.toolbar?.tools">
       <component
         :is="resolveComponent(tool.component)"
         v-if="tool.component"

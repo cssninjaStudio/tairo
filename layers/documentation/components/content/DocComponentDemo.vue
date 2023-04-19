@@ -124,37 +124,6 @@ async function loadDemo() {
         >
           dark preview
         </BaseCheckbox>
-
-        <!-- <div
-          class="bg-muted-200 dark:bg-muted-800/50 flex items-end gap-1 rounded-lg p-1"
-        >
-          <BaseButtonAction
-            v-if="exampleComponent"
-            shape="rounded"
-            class="h-[2.35rem] pe-3 focus:z-10"
-            :class="
-              showCode ? 'dark:!bg-transparent dark:border-transparent' : ''
-            "
-            :color="showCode ? 'muted' : 'default'"
-            @click="showCode = false"
-          >
-            <Icon name="ph:circles-four" class="h-4 w-4" />
-            <span>Demo</span>
-          </BaseButtonAction>
-          <BaseButtonAction
-            v-if="exampleMarkdown"
-            shape="rounded"
-            class="h-[2.35rem] pe-3 focus:z-10"
-            :class="
-              !showCode ? 'dark:!bg-transparent dark:border-transparent' : ''
-            "
-            :color="!showCode ? 'muted' : 'default'"
-            @click="showCode = true"
-          >
-            <Icon name="ph:terminal" class="h-4 w-4" />
-            <span>Code</span>
-          </BaseButtonAction>
-        </div> -->
       </div>
     </div>
 

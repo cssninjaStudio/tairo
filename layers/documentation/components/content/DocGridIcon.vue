@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const props = defineProps<{
   name?: string
-  color?: 'success' | 'primary' | 'yellow' | 'sky' | 'pink' | 'lime'
+  color?: 'success' | 'primary' | 'yellow' | 'sky' | 'pink' | 'orange' | 'lime'
   to?: string
 }>()
 
@@ -13,6 +13,8 @@ const iconColor = computed(() => {
       return 'bg-primary-100 text-primary-500'
     case 'yellow':
       return 'bg-yellow-100 text-yellow-500'
+    case 'orange':
+      return 'bg-orange-100 text-orange-500'
     case 'sky':
       return 'bg-sky-100 text-sky-500'
     case 'pink':
