@@ -118,6 +118,8 @@ export default defineAppConfig({
     collapse: {
       toolbar: {
         enabled: true,
+        showTitle: true,
+        showNavBurger: true,
         tools: [
           {
             component: 'BaseThemeToggle',
@@ -137,8 +139,26 @@ export default defineAppConfig({
         ],
       },
       circularMenu: {
-        enabled: false,
-        tools: [],
+        enabled: true,
+        tools: [
+          {
+            component: 'BaseThemeToggle',
+            props: {
+              class: 'ms-auto',
+              disableTransitions: true,
+              inverted: true,
+            },
+          },
+          {
+            component: 'DemoCircularMenuLanguage',
+          },
+          {
+            component: 'DemoCircularMenuNotifications',
+          },
+          {
+            component: 'DemoCircularMenuActivity',
+          },
+        ],
       },
       navigation: {
         enabled: true,
