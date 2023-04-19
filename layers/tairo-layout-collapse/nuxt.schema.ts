@@ -21,7 +21,22 @@ export default defineNuxtSchema({
         },
         toolbar: {
           enabled: true,
-          tools: [],
+          showTitle: true,
+          showNavBurger: false,
+          tools: {
+            $schema: {
+              type: 'array',
+              items: {
+                type: 'object',
+                required: ['name'],
+                properties: {
+                  component: { type: 'string' },
+                  resolve: { type: 'boolean', $default: true },
+                  props: { type: 'object' },
+                },
+              },
+            },
+          },
         },
         navigation: {
           enabled: true,

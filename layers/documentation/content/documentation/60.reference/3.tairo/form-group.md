@@ -1,5 +1,5 @@
 ---
-title: Tairo Form Group
+title: TairoFormGroup
 description: Tairo form groups are used to hold some form elements together. They are used to show a label and a description for a group of form elements.
 components:
   - TairoFormGroup

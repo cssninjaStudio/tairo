@@ -68,9 +68,9 @@ const checks = reactive([
 </script>
 
 <template>
-  <div class="group relative cursor-pointer">
+  <div class="group/password-strength relative cursor-pointer">
     <div
-      class="border-muted-200 dark:border-muted-700 shadow-muted-300/30 dark:shadow-muted-800/20 pointer-events-none absolute left-0 top-4 z-20 rounded-lg border bg-white p-6 opacity-0 shadow-xl transition-opacity duration-300 group-hover:pointer-events-auto group-hover:opacity-100"
+      class="border-muted-200 dark:border-muted-700 shadow-muted-300/30 dark:shadow-muted-800/20 dark:bg-muted-800 pointer-events-none absolute left-0 top-4 z-20 rounded-lg border bg-white p-6 opacity-0 shadow-xl transition-opacity duration-300 group-hover/password-strength:pointer-events-auto group-hover/password-strength:opacity-100"
     >
       <ul class="flex flex-col gap-4">
         <li
@@ -82,7 +82,7 @@ const checks = reactive([
             class="grow text-xs dark:text-slate-400"
             :class="[
               !check.valid && 'dark:text-slate-350 font-semibold',
-              check.valid && 'dark:text-slate-400',
+              check.valid && 'dark:text-slate-200',
             ]"
           >
             {{ check.label }}
