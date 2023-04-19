@@ -1,6 +1,15 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'E-Learning',
+  displayHome: true,
+  preview: {
+    title: 'Course dashboard',
+    description: 'For School and Education',
+    categories: ['dashboards'],
+    src: '/img/screens/dashboards-course.png',
+    srcDark: '/img/screens/dashboards-course-dark.png',
+    order: 13,
+  },
 })
 
 const courses = [

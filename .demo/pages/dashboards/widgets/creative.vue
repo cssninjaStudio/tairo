@@ -1,6 +1,15 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Creative Widgets',
+  displayHome: true,
+  preview: {
+    title: 'Creative Widgets',
+    description: 'For page compositions',
+    categories: ['dashboards', 'widgets'],
+    src: '/img/screens/dashboards-widgets-creative.png',
+    srcDark: '/img/screens/dashboards-widgets-creative-dark.png',
+    order: 28,
+  },
 })
 </script>
 

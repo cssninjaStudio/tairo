@@ -1,6 +1,15 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Checkout',
+  displayHome: true,
+  preview: {
+    title: 'Form layout 3',
+    description: 'For forms and input fields',
+    categories: ['layouts', 'forms'],
+    src: '/img/screens/layouts-form-3.png',
+    srcDark: '/img/screens/layouts-form-3-dark.png',
+    order: 49,
+  },
 })
 
 const cardInfo = ref({

@@ -6,6 +6,15 @@ import '~/assets/css/vcalendar.css'
 
 definePageMeta({
   title: 'Analytics',
+  displayHome: true,
+  preview: {
+    title: 'Analytics dashboard',
+    description: 'For heavy stats and kpis',
+    categories: ['dashboards'],
+    src: '/img/screens/dashboards-analytics.png',
+    srcDark: '/img/screens/dashboards-analytics-dark.png',
+    order: 4,
+  },
 })
 
 const lineRevenue = reactive(useLineRevenue())

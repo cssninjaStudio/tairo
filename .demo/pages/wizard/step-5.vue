@@ -6,6 +6,19 @@ import type {
   TeamMemberRole,
 } from '../../types'
 
+definePageMeta({
+  title: 'Wizard — Step 5',
+  displayHome: true,
+  preview: {
+    title: 'Wizard — Step 5',
+    description: 'For onboarding and step forms',
+    categories: ['dashboards', 'wizard', 'forms'],
+    src: '/img/screens/dashboards-wizard-5.png',
+    srcDark: '/img/screens/dashboards-wizard-5-dark.png',
+    order: 34,
+  },
+})
+
 const { data: project } = useMultiStepForm<Project, ProjectStepData>()
 
 useHead({

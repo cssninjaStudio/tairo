@@ -1,6 +1,15 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Delivery',
+  displayHome: true,
+  preview: {
+    title: 'Delivery dashboard',
+    description: 'For food delivery services',
+    categories: ['dashboards'],
+    src: '/img/screens/dashboards-delivery.png',
+    srcDark: '/img/screens/dashboards-delivery-dark.png',
+    order: 22,
+  },
 })
 
 const genres = [

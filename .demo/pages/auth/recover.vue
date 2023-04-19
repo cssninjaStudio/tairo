@@ -1,11 +1,20 @@
 <script setup lang="ts">
-import { useForm, Field } from 'vee-validate'
 import { toFormValidator } from '@vee-validate/zod'
+import { Field, useForm } from 'vee-validate'
 import { z } from 'zod'
 
 definePageMeta({
   layout: 'empty',
   title: 'Recover Password',
+  displayHome: true,
+  preview: {
+    title: 'Recover',
+    description: 'For password recovery',
+    categories: ['layouts', 'authentication'],
+    src: '/img/screens/auth-recover.png',
+    srcDark: '/img/screens/auth-recover-dark.png',
+    order: 103,
+  },
 })
 
 const VALIDATION_TEXT = {

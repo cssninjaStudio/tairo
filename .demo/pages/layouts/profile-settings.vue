@@ -1,6 +1,15 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Settings',
+  displayHome: true,
+  preview: {
+    title: 'Settings',
+    description: 'For displaying account settings',
+    categories: ['layouts', 'profile'],
+    src: '/img/screens/layouts-subpages-settings.png',
+    srcDark: '/img/screens/layouts-subpages-settings-dark.png',
+    order: 81,
+  },
 })
 
 const { data, pending, error, refresh } = await useFetch('/api/profile')

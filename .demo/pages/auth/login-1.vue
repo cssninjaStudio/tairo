@@ -6,6 +6,15 @@ import { z } from 'zod'
 definePageMeta({
   layout: 'empty',
   title: 'Login',
+  displayHome: true,
+  preview: {
+    title: 'Login 2',
+    description: 'For authentication and sign in',
+    categories: ['layouts', 'authentication'],
+    src: '/img/screens/auth-login-2.png',
+    srcDark: '/img/screens/auth-login-2-dark.png',
+    order: 97,
+  },
 })
 
 const VALIDATION_TEXT = {

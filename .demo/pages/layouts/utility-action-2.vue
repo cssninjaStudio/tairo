@@ -1,6 +1,15 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Action',
+  displayHome: true,
+  preview: {
+    title: 'Action 2',
+    description: 'For actions and tasks',
+    categories: ['layouts'],
+    src: '/img/screens/layouts-subpages-action-2.png',
+    srcDark: '/img/screens/layouts-subpages-action-2-dark.png',
+    order: 86,
+  },
 })
 </script>
 

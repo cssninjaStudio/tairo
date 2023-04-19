@@ -1,6 +1,15 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'SaaS Billing',
+  displayHome: true,
+  preview: {
+    title: 'SaaS billing',
+    description: 'For saas billing plans',
+    categories: ['layouts'],
+    src: '/img/screens/layouts-subpages-billing.png',
+    srcDark: '/img/screens/layouts-subpages-billing-dark.png',
+    order: 84,
+  },
 })
 
 const customRadio = ref('enterprise')

@@ -1,6 +1,15 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Tiles',
+  displayHome: true,
+  preview: {
+    title: 'Tile grid 3',
+    description: 'For item grids and collections',
+    categories: ['layouts'],
+    src: '/img/screens/layouts-tile-grid-3.png',
+    srcDark: '/img/screens/layouts-tile-grid-3-dark.png',
+    order: 63,
+  },
 })
 
 const route = useRoute()

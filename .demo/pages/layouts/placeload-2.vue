@@ -1,7 +1,20 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Placeload',
+  displayHome: true,
+  preview: {
+    title: 'Placeload 2',
+    description: 'For loading states',
+    categories: ['layouts'],
+    src: '/img/screens/layouts-placeload-2.png',
+    srcDark: '/img/screens/layouts-placeload-2-dark.png',
+    order: 54,
+  },
 })
+const fake = ref('')
+const fakePerPage = ref('')
+const fakeAll = ref(true)
+const fakeItems = ref([])
 </script>
 
 <template>
@@ -9,6 +22,7 @@ definePageMeta({
     <TairoContentWrapper>
       <template #left>
         <BaseInput
+          v-model="fake"
           icon="lucide:search"
           placeholder="Filter users..."
           :classes="{
@@ -19,6 +33,7 @@ definePageMeta({
       </template>
       <template #right>
         <BaseSelect
+          v-model="fakePerPage"
           placeholder="Items per page"
           label=""
           :classes="{
@@ -39,6 +54,7 @@ definePageMeta({
               <TairoTableHeading uppercase spaced class="p-4">
                 <div class="flex items-center">
                   <BaseCheckbox
+                    v-model="fakeAll"
                     name="table-1-main"
                     shape="full"
                     class="text-primary-500"
@@ -59,6 +75,7 @@ definePageMeta({
               <TairoTableCell spaced>
                 <div class="flex items-center">
                   <BaseCheckbox
+                    v-model="fakeItems"
                     :name="`placeload-item-checkbox-${index}`"
                     shape="full"
                     class="text-primary-500"

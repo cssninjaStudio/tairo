@@ -4,7 +4,16 @@ import { Field, useFieldError, useForm } from 'vee-validate'
 import { z } from 'zod'
 
 definePageMeta({
-  title: 'Company',
+  title: 'Form layout 1',
+  displayHome: true,
+  preview: {
+    title: 'Form layout 1',
+    description: 'For forms and input fields',
+    categories: ['layouts', 'forms'],
+    src: '/img/screens/layouts-form-1.png',
+    srcDark: '/img/screens/layouts-form-1-dark.png',
+    order: 47,
+  },
 })
 
 const people = [

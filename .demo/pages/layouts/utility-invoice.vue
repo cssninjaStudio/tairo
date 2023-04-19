@@ -1,6 +1,15 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Invoice',
+  displayHome: true,
+  preview: {
+    title: 'Invoice',
+    description: 'For accounting and invoices',
+    categories: ['layouts'],
+    src: '/img/screens/layouts-utility-invoice.png',
+    srcDark: '/img/screens/layouts-utility-invoice-dark.png',
+    order: 90,
+  },
 })
 
 const data = ref([

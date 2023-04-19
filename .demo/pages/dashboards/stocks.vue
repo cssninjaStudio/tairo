@@ -6,6 +6,15 @@ import '~/assets/css/vcalendar.css'
 
 definePageMeta({
   title: 'Stocks',
+  displayHome: true,
+  preview: {
+    title: 'Stocks dashboard',
+    description: 'For stock market analysis',
+    categories: ['dashboards'],
+    src: '/img/screens/dashboards-stocks.png',
+    srcDark: '/img/screens/dashboards-stocks-dark.png',
+    order: 5,
+  },
 })
 
 const barProfit = reactive(useBarProfit())

@@ -2,6 +2,15 @@
 definePageMeta({
   title: 'Onboarding',
   layout: 'empty',
+  displayHome: true,
+  preview: {
+    title: 'Onboarding 3',
+    description: 'For onboarding new users',
+    categories: ['layouts', 'onboarding'],
+    src: '/img/screens/layouts-onboarding-3.png',
+    srcDark: '/img/screens/layouts-onboarding-3-dark.png',
+    order: 95,
+  },
 })
 
 const roleType = ref('free')

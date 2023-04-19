@@ -1,6 +1,15 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Video',
+  displayHome: true,
+  preview: {
+    title: 'Video dashboard',
+    description: 'For video content creators',
+    categories: ['dashboards'],
+    src: '/img/screens/dashboards-video.png',
+    srcDark: '/img/screens/dashboards-video-dark.png',
+    order: 19,
+  },
 })
 
 const featuredVideos = [

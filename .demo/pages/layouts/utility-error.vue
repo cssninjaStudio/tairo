@@ -30,6 +30,15 @@ const props = withDefaults(
 definePageMeta({
   title: 'Error',
   layout: 'empty',
+  displayHome: true,
+  preview: {
+    title: 'Error',
+    description: 'For system errors',
+    categories: ['layouts'],
+    src: '/img/screens/layouts-utility-error.png',
+    srcDark: '/img/screens/layouts-utility-error-dark.png',
+    order: 92,
+  },
 })
 
 const title = computed(() => {

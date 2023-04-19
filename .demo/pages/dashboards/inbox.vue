@@ -6,6 +6,15 @@ import 'splitpanes/dist/splitpanes.css'
 definePageMeta({
   title: 'Inbox',
   layout: 'empty',
+  displayHome: true,
+  preview: {
+    title: 'Inbox app',
+    description: 'For email and messaging apps',
+    categories: ['dashboards'],
+    src: '/img/screens/dashboards-inbox.png',
+    srcDark: '/img/screens/dashboards-inbox-dark.png',
+    order: 25,
+  },
 })
 
 const split = ref()

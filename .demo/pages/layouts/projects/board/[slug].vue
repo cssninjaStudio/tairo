@@ -4,6 +4,15 @@ import { Container, Draggable } from 'vue3-smooth-dnd'
 definePageMeta({
   title: 'Project Board',
   layout: 'empty',
+  displayHome: true,
+  preview: {
+    title: 'Project board',
+    description: 'For displaying a kanban board',
+    categories: ['layouts', 'projects'],
+    src: '/img/screens/layouts-projects-board.png',
+    srcDark: '/img/screens/layouts-projects-board-dark.png',
+    order: 74,
+  },
 })
 
 interface ColumnContent {

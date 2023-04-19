@@ -1,6 +1,15 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Jobs',
+  displayHome: true,
+  preview: {
+    title: 'Jobs dashboard',
+    description: 'For recruitment and job search',
+    categories: ['dashboards'],
+    src: '/img/screens/dashboards-jobs.png',
+    srcDark: '/img/screens/dashboards-jobs-dark.png',
+    order: 14,
+  },
 })
 
 const search = ref('')

@@ -6,6 +6,15 @@ import '~/assets/css/vcalendar.css'
 
 definePageMeta({
   title: 'Human Resources',
+  displayHome: true,
+  preview: {
+    title: 'HR dashboard',
+    description: 'For HR management',
+    categories: ['dashboards'],
+    src: '/img/screens/dashboards-human-resources.png',
+    srcDark: '/img/screens/dashboards-human-resources-dark.png',
+    order: 12,
+  },
 })
 
 const activeSetting = ref('candidates')

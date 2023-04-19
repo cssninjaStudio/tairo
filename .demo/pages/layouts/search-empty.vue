@@ -1,6 +1,15 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Empty Search',
+  displayHome: true,
+  preview: {
+    title: 'Empty search',
+    description: 'For displaying search results',
+    categories: ['layouts'],
+    src: '/img/screens/layouts-subpages-search-empty.png',
+    srcDark: '/img/screens/layouts-subpages-search-empty-dark.png',
+    order: 83,
+  },
 })
 
 const searchTerms = ref('Ice cream pizza')
