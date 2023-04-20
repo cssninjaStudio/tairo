@@ -107,7 +107,7 @@ const codeTailwind = [
             </div>
           </BaseCard>
         </NuxtLink>
-        <NuxtLink to="https://nuxt.com/docs" class="relative">
+        <NuxtLink to="https://nuxt.com/docs" taget="_blank" rel="noopener noreferrer" class="relative">
           <BaseCard
             shape="curved"
             elevated-hover
