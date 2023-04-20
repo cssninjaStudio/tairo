@@ -2,6 +2,15 @@ declare module 'nuxt/dist/pages/runtime/composables' {
   interface PageMeta {
     title?: string
     breadcrumb?: any
+    displayHome?: boolean
+    preview?: {
+      title: string
+      description: string
+      categories?: string[]
+      src: string
+      srcDark?: string
+      order?: number
+    }
   }
 }
 
@@ -10,6 +19,15 @@ declare module 'vue-router' {
   interface RouteMeta {
     title?: string
     breadcrumb?: any
+    displayHome?: boolean
+    preview?: {
+      title: string
+      description: string
+      categories?: string[]
+      src: string
+      srcDark?: string
+      order?: number
+    }
   }
 }
 

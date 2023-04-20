@@ -1,4 +1,7 @@
 <script setup lang="ts">
+definePageMeta({
+  displayHome: false,
+})
 function raiseError() {
   throw new Error('Test error!')
 }
