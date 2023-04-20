@@ -79,7 +79,7 @@ const codeTailwind = [
 
     <div class="mb-4 grid grid-cols-1 gap-4 sm:mb-6 sm:grid-cols-2 sm:gap-6">
       <div class="grid grid-cols-2 gap-4 sm:gap-6">
-        <NuxtLink to="https://tairo.cssninja.io" class="relative">
+        <NuxtLink to="https://tairo.cssninja.io" taget="_blank" rel="noopener noreferrer" class="relative">
           <BaseCard
             shape="curved"
             elevated-hover
