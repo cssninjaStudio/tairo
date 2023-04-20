@@ -70,9 +70,15 @@ const demoPages = computed(() => {
       } else if (route.path.includes(':')) {
         // skip dynamic route
         continue
-      } else if (route.meta?.title && searchRe.test(route.meta?.title)) {
+      } else if (
+        route.meta?.preview?.title &&
+        searchRe.test(route.meta?.preview?.title)
+      ) {
         match.push(route)
-      } else if (typeof route.name === 'string' && searchRe.test(route.name)) {
+      } else if (
+        route.meta?.preview?.description &&
+        searchRe.test(route.meta?.preview?.description)
+      ) {
         match.push(route)
       }
     }
@@ -175,8 +181,8 @@ function onClick() {
                   name: page?.name as string
                 }"
                 :search="search"
-                :title="page?.meta?.title"
-                :subtitle="(page?.name as string)"
+                :title="page?.meta?.preview?.title"
+                :subtitle="page?.meta?.preview?.description"
                 @click.passive="onClick"
               />
             </li>

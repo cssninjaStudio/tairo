@@ -24,7 +24,7 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
 
 // BaseInputFileHeadless gives us a listfile input, but we need to
 // extract the file from the list and set it to the form
-const inputFile = ref<FileList | null>()
+const inputFile = ref<FileList | null>(null)
 watch(inputFile, (value) => {
   const file = value?.item(0) || null
   project.value.avatar = file
