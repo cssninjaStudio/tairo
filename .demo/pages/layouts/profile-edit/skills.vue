@@ -1,6 +1,15 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Skills',
+  displayHome: true,
+  preview: {
+    title: 'Edit profile 3',
+    description: 'For editing a user profile',
+    categories: ['layouts', 'profile', 'forms'],
+    src: '/img/screens/layouts-subpages-profile-edit-3.png',
+    srcDark: '/img/screens/layouts-subpages-profile-edit-3-dark.png',
+    order: 78,
+  },
 })
 const { data, pending, error, refresh } = await useFetch('/api/profile')
 </script>

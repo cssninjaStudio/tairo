@@ -339,7 +339,9 @@ watch(selectedStyle, (value) => {
         <div class="relative w-full sm:w-1/2">
           <!-- buttons -->
           <div class="mx-auto">
-            <div class="relative mx-auto flex w-full max-w-xs flex-wrap">
+            <div
+              class="relative mx-auto mt-48 flex w-full max-w-xs flex-wrap sm:mt-0"
+            >
               <img
                 class="absolute -top-48 right-8 w-64"
                 src="/img/illustrations/text-hand.svg"

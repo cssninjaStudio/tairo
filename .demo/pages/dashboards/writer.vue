@@ -1,6 +1,15 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Writer',
+  displayHome: true,
+  preview: {
+    title: 'Writer dashboard',
+    description: 'For writers and bloggers',
+    categories: ['dashboards'],
+    src: '/img/screens/dashboards-writer.png',
+    srcDark: '/img/screens/dashboards-writer-dark.png',
+    order: 18,
+  },
 })
 
 const activePosts = ref('recent')

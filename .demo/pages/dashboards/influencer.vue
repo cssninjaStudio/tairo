@@ -1,6 +1,15 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Influencer',
+  displayHome: true,
+  preview: {
+    title: 'Influencer dashboard',
+    description: 'For social media influencers',
+    categories: ['dashboards'],
+    src: '/img/screens/dashboards-influencer.png',
+    srcDark: '/img/screens/dashboards-influencer-dark.png',
+    order: 15,
+  },
 })
 
 const companies = [

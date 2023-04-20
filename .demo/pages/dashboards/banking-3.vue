@@ -1,6 +1,15 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Cryptocurrency',
+  displayHome: true,
+  preview: {
+    title: 'Banking dashboard v3',
+    description: 'For banking and accounts',
+    categories: ['dashboards'],
+    src: '/img/screens/dashboards-banking-3.png',
+    srcDark: '/img/screens/dashboards-banking-3-dark.png',
+    order: 9,
+  },
 })
 
 const activePeriod = ref('week')

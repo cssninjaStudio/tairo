@@ -4,6 +4,15 @@ import '~/assets/css/slider.css'
 
 definePageMeta({
   title: 'Password',
+  displayHome: true,
+  preview: {
+    title: 'Form layout 5',
+    description: 'For forms and input fields',
+    categories: ['layouts', 'forms'],
+    src: '/img/screens/layouts-form-5.png',
+    srcDark: '/img/screens/layouts-form-5-dark.png',
+    order: 51,
+  },
 })
 
 const toaster = useToaster()

@@ -1,6 +1,15 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'My Projects',
+  displayHome: true,
+  preview: {
+    title: 'Personal dashboard v2',
+    description: 'For personal usage and reports',
+    categories: ['dashboards'],
+    src: '/img/screens/dashboards-personal-2.png',
+    srcDark: '/img/screens/dashboards-personal-2-dark.png',
+    order: 2,
+  },
 })
 
 const areaTaskCompletion = reactive(useAreaTaskCompletion())

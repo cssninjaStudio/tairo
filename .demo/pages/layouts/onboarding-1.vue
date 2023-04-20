@@ -2,6 +2,15 @@
 definePageMeta({
   title: 'Onboarding',
   layout: 'empty',
+  displayHome: true,
+  preview: {
+    title: 'Onboarding 1',
+    description: 'For onboarding new users',
+    categories: ['layouts', 'onboarding'],
+    src: '/img/screens/layouts-onboarding-1.png',
+    srcDark: '/img/screens/layouts-onboarding-1-dark.png',
+    order: 93,
+  },
 })
 
 const loading = ref(false)

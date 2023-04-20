@@ -1,6 +1,15 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Credit Cards',
+  displayHome: true,
+  preview: {
+    title: 'Banking dashboard v2',
+    description: 'For banking and accounts',
+    categories: ['dashboards'],
+    src: '/img/screens/dashboards-banking-2.png',
+    srcDark: '/img/screens/dashboards-banking-2-dark.png',
+    order: 8,
+  },
 })
 
 const cards = [

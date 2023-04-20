@@ -99,11 +99,6 @@ const navigation = [
         icon: 'ph:article-duotone',
         to: '/layouts/form-6',
       },
-      {
-        name: 'Repeatable',
-        icon: 'ph:article-duotone',
-        to: '/layouts/form-7',
-      },
     ],
   },
   {

@@ -5,6 +5,15 @@ import { z } from 'zod'
 
 definePageMeta({
   title: 'New Doctor',
+  displayHome: true,
+  preview: {
+    title: 'Form layout 2',
+    description: 'For forms and input fields',
+    categories: ['layouts', 'forms'],
+    src: '/img/screens/layouts-form-2.png',
+    srcDark: '/img/screens/layouts-form-2-dark.png',
+    order: 48,
+  },
 })
 
 // This is the object that will contain the validation messages

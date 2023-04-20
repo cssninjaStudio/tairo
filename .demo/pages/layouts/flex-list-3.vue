@@ -1,6 +1,15 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Flex List',
+  displayHome: true,
+  preview: {
+    title: 'Flex list 3',
+    description: 'For list views and collections',
+    categories: ['layouts', 'lists'],
+    src: '/img/screens/layouts-list-flex-3.png',
+    srcDark: '/img/screens/layouts-list-flex-3-dark.png',
+    order: 43,
+  },
 })
 
 const route = useRoute()

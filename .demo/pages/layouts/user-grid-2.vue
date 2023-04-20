@@ -1,6 +1,15 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Users',
+  displayHome: true,
+  preview: {
+    title: 'User grid 2',
+    description: 'For item grids and collections',
+    categories: ['layouts'],
+    src: '/img/screens/layouts-user-grid-2.png',
+    srcDark: '/img/screens/layouts-user-grid-2-dark.png',
+    order: 65,
+  },
 })
 
 const route = useRoute()

@@ -2,6 +2,15 @@
 definePageMeta({
   title: 'Status',
   layout: 'empty',
+  displayHome: true,
+  preview: {
+    title: 'Service status',
+    description: 'For company service status',
+    categories: ['layouts'],
+    src: '/img/screens/layouts-utility-status.png',
+    srcDark: '/img/screens/layouts-utility-status-dark.png',
+    order: 91,
+  },
 })
 </script>
 

@@ -1,6 +1,19 @@
 <script setup lang="ts">
 import type { Project, ProjectStepData } from '../../types'
 
+definePageMeta({
+  title: 'Wizard — Step 2',
+  displayHome: true,
+  preview: {
+    title: 'Wizard — Step 2',
+    description: 'For onboarding and step forms',
+    categories: ['dashboards', 'wizard', 'forms'],
+    src: '/img/screens/dashboards-wizard-2.png',
+    srcDark: '/img/screens/dashboards-wizard-2-dark.png',
+    order: 31,
+  },
+})
+
 const { data: project } = useMultiStepForm<Project, ProjectStepData>()
 
 useHead({

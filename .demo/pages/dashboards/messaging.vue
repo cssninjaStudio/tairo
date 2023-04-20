@@ -2,6 +2,15 @@
 definePageMeta({
   title: 'Messaging',
   layout: 'empty',
+  displayHome: true,
+  preview: {
+    title: 'Messaging app',
+    description: 'For chat and messaging apps',
+    categories: ['dashboards'],
+    src: '/img/screens/dashboards-messaging.png',
+    srcDark: '/img/screens/dashboards-messaging-dark.png',
+    order: 26,
+  },
 })
 
 const { open } = usePanels()

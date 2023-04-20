@@ -6,6 +6,15 @@ import '~/assets/css/vcalendar.css'
 
 definePageMeta({
   title: 'Company',
+  displayHome: true,
+  preview: {
+    title: 'Company dashboard',
+    description: 'For corporate business',
+    categories: ['dashboards'],
+    src: '/img/screens/dashboards-company.png',
+    srcDark: '/img/screens/dashboards-company-dark.png',
+    order: 11,
+  },
 })
 
 const gaugePersonal = reactive(useGaugePersonal())

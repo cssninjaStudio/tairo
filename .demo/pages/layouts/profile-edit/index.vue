@@ -5,6 +5,15 @@ import { z } from 'zod'
 
 definePageMeta({
   title: 'Edit Profile',
+  displayHome: true,
+  preview: {
+    title: 'Edit profile 1',
+    description: 'For editing a user profile',
+    categories: ['layouts', 'profile', 'forms'],
+    src: '/img/screens/layouts-subpages-profile-edit-1.png',
+    srcDark: '/img/screens/layouts-subpages-profile-edit-1-dark.png',
+    order: 76,
+  },
 })
 
 // This is the object that will contain the validation messages

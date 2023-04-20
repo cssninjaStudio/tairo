@@ -1,6 +1,15 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Soccer',
+  displayHome: true,
+  preview: {
+    title: 'Soccer dashboard',
+    description: 'For soccer & football fans',
+    categories: ['dashboards'],
+    src: '/img/screens/dashboards-soccer.png',
+    srcDark: '/img/screens/dashboards-soccer-dark.png',
+    order: 20,
+  },
 })
 
 const matches = [

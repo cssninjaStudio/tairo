@@ -6,6 +6,15 @@ import '~/assets/css/vcalendar.css'
 
 definePageMeta({
   title: 'Hobbies',
+  displayHome: true,
+  preview: {
+    title: 'Hobbies dashboard',
+    description: 'For hobbies and interests',
+    categories: ['dashboards'],
+    src: '/img/screens/dashboards-hobbies.png',
+    srcDark: '/img/screens/dashboards-hobbies-dark.png',
+    order: 16,
+  },
 })
 
 const trending = [

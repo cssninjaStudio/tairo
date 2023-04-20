@@ -1,6 +1,15 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Card Grid',
+  displayHome: true,
+  preview: {
+    title: 'Card grid 3',
+    description: 'For item grids and collections',
+    categories: ['layouts'],
+    src: '/img/screens/layouts-card-grid-3.png',
+    srcDark: '/img/screens/layouts-card-grid-3-dark.png',
+    order: 59,
+  },
 })
 
 const route = useRoute()

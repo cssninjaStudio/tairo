@@ -9,6 +9,15 @@ import '~/assets/css/vcalendar.css'
 
 definePageMeta({
   title: 'New Event',
+  displayHome: true,
+  preview: {
+    title: 'Form layout 4',
+    description: 'For forms and input fields',
+    categories: ['layouts', 'forms'],
+    src: '/img/screens/layouts-form-4.png',
+    srcDark: '/img/screens/layouts-form-4-dark.png',
+    order: 50,
+  },
 })
 
 const VALIDATION_TEXT = {

@@ -6,6 +6,15 @@ import '~/assets/css/vcalendar.css'
 
 definePageMeta({
   title: 'Health',
+  displayHome: true,
+  preview: {
+    title: 'Health dashboard',
+    description: 'For health and fitness',
+    categories: ['dashboards'],
+    src: '/img/screens/dashboards-health.png',
+    srcDark: '/img/screens/dashboards-health-dark.png',
+    order: 17,
+  },
 })
 
 const areaCondition = reactive(useAreaCondition())

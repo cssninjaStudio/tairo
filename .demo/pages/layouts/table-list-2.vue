@@ -1,6 +1,15 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Table List',
+  displayHome: true,
+  preview: {
+    title: 'Table list 2',
+    description: 'For list views and collections',
+    categories: ['layouts', 'lists'],
+    src: '/img/screens/layouts-table-list-2.png',
+    srcDark: '/img/screens/layouts-table-list-2-dark.png',
+    order: 45,
+  },
 })
 
 const route = useRoute()
