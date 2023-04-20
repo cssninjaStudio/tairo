@@ -70,11 +70,11 @@ const showStackTrace = ref(true)
           <span>{{ props.error?.statusCode }}</span>
         </div>
         <div
-          class="w-full max-w-xs mx-auto flex items-center justify-center gap-2"
+          class="mx-auto flex w-full max-w-xs items-center justify-center gap-2"
         >
           <BaseButton
             shape="curved"
-            class="!h-12 w-full items-center gap-2 max-w-[160px] mx-auto"
+            class="mx-auto !h-12 w-full max-w-[160px] items-center gap-2"
             @click="handleError"
           >
             <Icon name="feather:arrow-left" />
@@ -84,7 +84,7 @@ const showStackTrace = ref(true)
             <BaseButton
               color="muted"
               shape="curved"
-              class="!h-12 w-full max-w-[160px] mx-auto"
+              class="mx-auto !h-12 w-full max-w-[160px]"
               @click="retry"
             >
               <Icon name="feather:refresh-cw" class="h-3 w-3" />

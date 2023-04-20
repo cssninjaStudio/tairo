@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { toFormValidator } from '@vee-validate/zod'
+import { toTypedSchema } from '@vee-validate/zod'
 import IMask from 'imask'
 import { Field, useForm } from 'vee-validate'
 import { z } from 'zod'
@@ -79,7 +79,7 @@ type FormInput = z.infer<typeof zodSchema>
 
 const { data, pending, error, refresh } = await useFetch('/api/profile')
 
-const validationSchema = toFormValidator(zodSchema)
+const validationSchema = toTypedSchema(zodSchema)
 const initialValues = computed<FormInput>(() => ({
   currentPassword: 'password',
   newPassword: '',

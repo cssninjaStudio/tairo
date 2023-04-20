@@ -1,4 +1,4 @@
-# Tairo Nuxt - Quickstarter
+# Tairo Nuxt - Quick Starter
 
 ## 🔃 Run a development server
 

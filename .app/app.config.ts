@@ -10,7 +10,7 @@
 
 export default defineAppConfig({
   tairo: {
-    title: 'Tairo Quickstarter',
+    title: 'Tairo Quick Starter',
   },
 
   // nui: {

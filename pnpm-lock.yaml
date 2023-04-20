@@ -8,8 +8,8 @@ importers:
   .:
     devDependencies:
       '@antfu/eslint-config':
-        specifier: 0.38.4
-        version: 0.38.4(eslint@8.38.0)(typescript@5.0.4)
+        specifier: 0.38.5
+        version: 0.38.5(eslint@8.38.0)(typescript@5.0.4)
       '@iconify/json':
         specifier: 2.2.49
         version: 2.2.49
@@ -101,17 +101,17 @@ importers:
         specifier: 2.1.7
         version: 2.1.7
       apexcharts:
-        specifier: 3.37.3
-        version: 3.37.3
+        specifier: 3.39.0
+        version: 3.39.0
       axe-core:
-        specifier: ^4.6.3
-        version: 4.6.3
+        specifier: ^4.7.0
+        version: 4.7.0
       date-fns:
         specifier: 2.29.3
         version: 2.29.3
       imask:
-        specifier: 6.6.0-alpha.0
-        version: 6.6.0-alpha.0
+        specifier: 6.6.0
+        version: 6.6.0
       mapbox-gl:
         specifier: 2.14.1
         version: 2.14.1
@@ -156,10 +156,10 @@ importers:
         version: 3.0.1(@popperjs/core@2.11.7)
       vue-axe:
         specifier: ^3.1.2
-        version: 3.1.2(axe-core@4.6.3)
+        version: 3.1.2(axe-core@4.7.0)
       vue3-apexcharts:
         specifier: 1.4.1
-        version: 1.4.1(apexcharts@3.37.3)
+        version: 1.4.1(apexcharts@3.39.0)
       vue3-carousel:
         specifier: 0.3.0
         version: 0.3.0
@@ -200,11 +200,11 @@ importers:
         specifier: 1.0.0-28020728.5df24eb
         version: 1.0.0-28020728.5df24eb
       '@shuriken-ui/nuxt':
-        specifier: ^0.0.2
-        version: 0.0.2(nuxt@3.4.1)
+        specifier: ^0.1.0
+        version: 0.1.0(nuxt@3.4.1)
       '@vee-validate/zod':
-        specifier: ^4.8.4
-        version: 4.8.4
+        specifier: ^4.8.6
+        version: 4.8.6
       fast-copy:
         specifier: ^3.0.1
         version: 3.0.1
@@ -212,14 +212,14 @@ importers:
         specifier: ^3.4.1
         version: 3.4.1(@types/node@18.15.11)(eslint@8.38.0)(typescript@5.0.4)(vue-tsc@1.2.0)
       nuxt-seo-kit:
-        specifier: ^1.3.6
-        version: 1.3.6
+        specifier: ^1.3.7
+        version: 1.3.7
       unplugin-fonts:
         specifier: ^1.0.3
         version: 1.0.3
       vee-validate:
-        specifier: ^4.8.4
-        version: 4.8.4
+        specifier: ^4.8.6
+        version: 4.8.6
       zod:
         specifier: ^3.21.4
         version: 3.21.4
@@ -246,13 +246,13 @@ packages:
       '@jridgewell/trace-mapping': 0.3.18
     dev: true
 
-  /@antfu/eslint-config-basic@0.38.4(@typescript-eslint/eslint-plugin@5.59.0)(@typescript-eslint/parser@5.59.0)(eslint@8.38.0)(typescript@5.0.4):
-    resolution: {integrity: sha512-QcJ/84eVa7mJD2PEbHw1r7dRg7pHNOvTvkHud+iFYxkDjzcuFMiHFZ7JCYLnuA1NKzeUmczdLFFrHnASxtpV3g==}
+  /@antfu/eslint-config-basic@0.38.5(@typescript-eslint/eslint-plugin@5.59.0)(@typescript-eslint/parser@5.59.0)(eslint@8.38.0)(typescript@5.0.4):
+    resolution: {integrity: sha512-Xifabjs94QscgQoLgZbj87GsagvtzZBoEY1+efHsz6RZE8kHqHzxZr9ulEZ/3e563Ld8fDGbgCTAxkDhrhkOjA==}
     peerDependencies:
       eslint: '>=7.4.0'
     dependencies:
       eslint: 8.38.0
-      eslint-plugin-antfu: 0.38.4(eslint@8.38.0)(typescript@5.0.4)
+      eslint-plugin-antfu: 0.38.5(eslint@8.38.0)(typescript@5.0.4)
       eslint-plugin-eslint-comments: 3.2.0(eslint@8.38.0)
       eslint-plugin-html: 7.1.0
       eslint-plugin-import: 2.27.5(@typescript-eslint/parser@5.59.0)(eslint-import-resolver-typescript@3.5.5)(eslint@8.38.0)
@@ -275,13 +275,13 @@ packages:
       - typescript
     dev: true
 
-  /@antfu/eslint-config-ts@0.38.4(eslint@8.38.0)(typescript@5.0.4):
-    resolution: {integrity: sha512-w1GweHjkbH6gCk92mdbkb/ZeyPtQ1ztd4fzoOjFagqhsELrH3bL/3tviipj3L/TnBWJz/kW2MMWFFne2+EjHgQ==}
+  /@antfu/eslint-config-ts@0.38.5(eslint@8.38.0)(typescript@5.0.4):
+    resolution: {integrity: sha512-5NCZj44HgWNLvp5ikah26f7RnovhSgrNzfO3zSMewhaJZgDerglVpig3Rc0tOZFEGieWZTDWruZHyvZZRc3lJw==}
     peerDependencies:
       eslint: '>=7.4.0'
       typescript: '>=3.9'
     dependencies:
-      '@antfu/eslint-config-basic': 0.38.4(@typescript-eslint/eslint-plugin@5.59.0)(@typescript-eslint/parser@5.59.0)(eslint@8.38.0)(typescript@5.0.4)
+      '@antfu/eslint-config-basic': 0.38.5(@typescript-eslint/eslint-plugin@5.59.0)(@typescript-eslint/parser@5.59.0)(eslint@8.38.0)(typescript@5.0.4)
       '@typescript-eslint/eslint-plugin': 5.59.0(@typescript-eslint/parser@5.59.0)(eslint@8.38.0)(typescript@5.0.4)
       '@typescript-eslint/parser': 5.59.0(eslint@8.38.0)(typescript@5.0.4)
       eslint: 8.38.0
@@ -294,13 +294,13 @@ packages:
       - supports-color
     dev: true
 
-  /@antfu/eslint-config-vue@0.38.4(@typescript-eslint/eslint-plugin@5.59.0)(@typescript-eslint/parser@5.59.0)(eslint@8.38.0)(typescript@5.0.4):
-    resolution: {integrity: sha512-PhKl2007+ztgwdyolzjwmZT8cCCtubhbfOvyYNJKdPOuJZytyjdw9V4RHnT/R+NRQFryLqXMJ+yswJn5La6a0Q==}
+  /@antfu/eslint-config-vue@0.38.5(@typescript-eslint/eslint-plugin@5.59.0)(@typescript-eslint/parser@5.59.0)(eslint@8.38.0)(typescript@5.0.4):
+    resolution: {integrity: sha512-vfih3rjrPfaqep/UaxKs0tFifBvxzL3QXy6uW7eYXkabwglG7IeUZZZJnbbKe8bIGqfLNGl3HDHHDiloprivlQ==}
     peerDependencies:
       eslint: '>=7.4.0'
     dependencies:
-      '@antfu/eslint-config-basic': 0.38.4(@typescript-eslint/eslint-plugin@5.59.0)(@typescript-eslint/parser@5.59.0)(eslint@8.38.0)(typescript@5.0.4)
-      '@antfu/eslint-config-ts': 0.38.4(eslint@8.38.0)(typescript@5.0.4)
+      '@antfu/eslint-config-basic': 0.38.5(@typescript-eslint/eslint-plugin@5.59.0)(@typescript-eslint/parser@5.59.0)(eslint@8.38.0)(typescript@5.0.4)
+      '@antfu/eslint-config-ts': 0.38.5(eslint@8.38.0)(typescript@5.0.4)
       eslint: 8.38.0
       eslint-plugin-vue: 9.11.0(eslint@8.38.0)
       local-pkg: 0.4.3
@@ -314,12 +314,12 @@ packages:
       - typescript
     dev: true
 
-  /@antfu/eslint-config@0.38.4(eslint@8.38.0)(typescript@5.0.4):
-    resolution: {integrity: sha512-znWeFFvemkzmSL1k07wpRs/Uwg8y+wo4yCMM/STVxFvFPNxU0SzJlNEmOUTdjqlFBzvGqmjr8dnIDRv/N6rmgA==}
+  /@antfu/eslint-config@0.38.5(eslint@8.38.0)(typescript@5.0.4):
+    resolution: {integrity: sha512-Oks5vh5FPMu/IAmXeaTzp0YUYoDuvM7UqaRyFQ7EOG9NLx8TBXQw7gkqB/h5+d11ikhKxrGCMbxcUO7910dobg==}
     peerDependencies:
       eslint: '>=7.4.0'
     dependencies:
-      '@antfu/eslint-config-vue': 0.38.4(@typescript-eslint/eslint-plugin@5.59.0)(@typescript-eslint/parser@5.59.0)(eslint@8.38.0)(typescript@5.0.4)
+      '@antfu/eslint-config-vue': 0.38.5(@typescript-eslint/eslint-plugin@5.59.0)(@typescript-eslint/parser@5.59.0)(eslint@8.38.0)(typescript@5.0.4)
       '@typescript-eslint/eslint-plugin': 5.59.0(@typescript-eslint/parser@5.59.0)(eslint@8.38.0)(typescript@5.0.4)
       '@typescript-eslint/parser': 5.59.0(eslint@8.38.0)(typescript@5.0.4)
       eslint: 8.38.0
@@ -1869,14 +1869,14 @@ packages:
       string.prototype.codepointat: 0.2.1
     dev: true
 
-  /@shuriken-ui/nuxt@0.0.2(nuxt@3.4.1):
-    resolution: {integrity: sha512-NLmfFOX/xafmdhekCZQV4G4KPtl61kzZZThPbnPCOrah0pqF8SV6gSzSHJwOwPInR1v3kzt2stOGlLYYqqRKug==}
+  /@shuriken-ui/nuxt@0.1.0(nuxt@3.4.1):
+    resolution: {integrity: sha512-psjNDjsYRCI+pPhwbyuJfouEemZIzaJ1DyoJqib2nt0VHHjqH+NdAj+wDfP/IbT+DgXOA6Rjsw/hDaMlgeGO+Q==}
     dependencies:
       '@headlessui/vue': 1.7.13
       '@iconify/vue': 4.1.1
       '@nuxtjs/color-mode': 3.2.0
       '@nuxtjs/tailwindcss': 6.6.6
-      '@shuriken-ui/tailwind': 0.0.3
+      '@shuriken-ui/tailwind': 0.0.4
       '@vueuse/nuxt': 10.0.2(nuxt@3.4.1)
       autoprefixer: 10.4.14(postcss@8.4.22)
       nuxt-icon: 0.3.3
@@ -1891,8 +1891,8 @@ packages:
       - webpack
     dev: true
 
-  /@shuriken-ui/tailwind@0.0.3:
-    resolution: {integrity: sha512-AWnLk49c2bthlFtUZXv67zb4BiH8Kg2cPG+JhK/ZsOmnEW3kPSRap7muFzWUyf5dgBpcZQVv2KtJ4AItpiiIyQ==}
+  /@shuriken-ui/tailwind@0.0.4:
+    resolution: {integrity: sha512-N72uQVV4JjsmR7pYgZvgnauqwvy1Y+NKWYN9mo506XPzVXr17zOuo6VvQlrhFn8ExAcuQIIhcC6L80yzFYFP0A==}
     dependencies:
       '@tailwindcss/aspect-ratio': 0.4.2(tailwindcss@3.3.1)
       '@tailwindcss/forms': 0.5.3(tailwindcss@3.3.1)
@@ -2301,11 +2301,11 @@ packages:
       vue: 3.2.47
     dev: true
 
-  /@vee-validate/zod@4.8.4:
-    resolution: {integrity: sha512-hdbVB+LjEj0Oa0G3LI9NIbQ5hPuCaGwVCYDXUUUubnuJSawzKYjUh/dq1WhPsNW8PljrVLiS3iszWgtbJjcygQ==}
+  /@vee-validate/zod@4.8.6:
+    resolution: {integrity: sha512-BG9UI0XleYXVphD462unkwwWsKiNqPwzoWaZh3YMU7VeZhcIbOQt3+derqhDdoIn5+C+Yj6o6n3NUtsKOrjOlQ==}
     dependencies:
       type-fest: 3.8.0
-      vee-validate: 4.8.4
+      vee-validate: 4.8.6
       zod: 3.21.4
     transitivePeerDependencies:
       - vue
@@ -2699,8 +2699,8 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /apexcharts@3.37.3:
-    resolution: {integrity: sha512-+rnUui9uC3Mvh9qbQxUfqBnuJ0nAJOYTp+yKnA5bVmmndKXj5X/Q+OVIxkq0Jr5ysiK200Dsg1Tuz/OUG+DEpw==}
+  /apexcharts@3.39.0:
+    resolution: {integrity: sha512-GRvdTg+ZaD55P7/jxqEXpbdCMZQOaej9qE9f7zKkN/oWAbBuuE3mnSCi44UkGMS2X249uEOEXWx0A96jjP3lcA==}
     dependencies:
       svg.draggable.js: 2.2.2
       svg.easing.js: 2.0.0
@@ -2869,8 +2869,8 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /axe-core@4.6.3:
-    resolution: {integrity: sha512-/BQzOX780JhsxDnPpH4ZiyrJAzcd8AfzFPkv+89veFSr1rcMjuq2JDCwypKaPeB6ljHp9KjXhPpjgCvQlWYuqg==}
+  /axe-core@4.7.0:
+    resolution: {integrity: sha512-M0JtH+hlOL5pLQwHOLNYZaXuhqmvS8oExsqB1SBYgA4Dk7u/xx+YdGHXaK5pyUfed5mYXdlYiphWq3G8cRi5JQ==}
     engines: {node: '>=4'}
     dev: true
 
@@ -4334,8 +4334,8 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-plugin-antfu@0.38.4(eslint@8.38.0)(typescript@5.0.4):
-    resolution: {integrity: sha512-lY7nxZaDwZ45GmSG4xm1arafIu8/DcAIkiLdz27jpMdgzQiHGJlsIgcDastrAyWU7I4o3kv+70q252HDDUAyyw==}
+  /eslint-plugin-antfu@0.38.5(eslint@8.38.0)(typescript@5.0.4):
+    resolution: {integrity: sha512-uBLSmOMhMLuioEm92Y7k4igNXBXcCrskzQYZKhzjoj+2GBo/hanKjCIHf2oDmydnCx6KCFARnQ+mnNanM0/qig==}
     dependencies:
       '@typescript-eslint/utils': 5.59.0(eslint@8.38.0)(typescript@5.0.4)
     transitivePeerDependencies:
@@ -5697,8 +5697,8 @@ packages:
     engines: {node: '>=10.18.0'}
     dev: true
 
-  /imask@6.6.0-alpha.0:
-    resolution: {integrity: sha512-p6ID0cMx0K2AouxMGsFLqdCfdFfn02IkSwe7SLPW2f9cwmbAojiktQ+SDi01S4ZdJ+eACa6IKRjjG2ZbJiXPmA==}
+  /imask@6.6.0:
+    resolution: {integrity: sha512-A/tOo6DEXvOLUCijka/DPtAK8rumZTNOa++DMsmz9ZkChODrAP+fEWy20INOmuxWR1YBkt12LFw6nSAnxFG82Q==}
     engines: {npm: '>=4.0.0'}
     dev: true
 
@@ -7696,8 +7696,8 @@ packages:
       - supports-color
     dev: true
 
-  /nuxt-seo-kit@1.3.6:
-    resolution: {integrity: sha512-yS697Bdpmwtmxr5Ky+jNFufhKHc2pyDg5wcMADOZhigRzzGu3vy+oS04afg1NRpFT7Pw/87CxXXVezjZ0kt10Q==}
+  /nuxt-seo-kit@1.3.7:
+    resolution: {integrity: sha512-rN/JeiLd3CQp6SKfOv6CVMde67iphFr9fbd5QtyCpMlltq98MoBmEVO2i/M5lT6/sCcQN+rSZQL67YY3+RyGFA==}
     dependencies:
       '@nuxt/kit': 3.4.1
       defu: 6.1.2
@@ -10781,10 +10781,10 @@ packages:
     engines: {node: '>= 0.8'}
     dev: true
 
-  /vee-validate@4.8.4:
-    resolution: {integrity: sha512-wlLBy50t4EMEin5oqxS2mxpqW02TkIsk0H3LcivLztNJKKLW17hpPSQtQnn8wjDLoWWZ/CVOfep6aw77aCAavg==}
+  /vee-validate@4.8.6:
+    resolution: {integrity: sha512-d8SS1mfFn3qv/QRwy9BQ/0ZmoxQT37zG7zERUSK5NvmI7gx7IbQxOIXtyYVEPaDJNI4QWopBe48q91pAQqwetA==}
     peerDependencies:
-      vue: ^3.0.0
+      vue: ^3.2.0
     peerDependenciesMeta:
       vue:
         optional: true
@@ -10981,7 +10981,7 @@ packages:
       pbf: 3.2.1
     dev: true
 
-  /vue-axe@3.1.2(axe-core@4.6.3):
+  /vue-axe@3.1.2(axe-core@4.7.0):
     resolution: {integrity: sha512-RZbc+u6gGy6ecI3hK/5jTMG3fTNLTaNL5s6arAoXskVb92hAtkHZ+peQbDJl49sS4hevUXR+del6rUOdI0bcYQ==}
     engines: {node: '>=10'}
     peerDependencies:
@@ -10991,7 +10991,7 @@ packages:
       vue:
         optional: true
     dependencies:
-      axe-core: 4.6.3
+      axe-core: 4.7.0
       prismjs: 1.29.0
     dev: true
 
@@ -11088,7 +11088,7 @@ packages:
       typescript: 5.0.4
     dev: true
 
-  /vue3-apexcharts@1.4.1(apexcharts@3.37.3):
+  /vue3-apexcharts@1.4.1(apexcharts@3.39.0):
     resolution: {integrity: sha512-96qP8JDqB9vwU7bkG5nVU+E0UGQn7yYQVqUUCLQMYWDuQyu2vE77H/UFZ1yI+hwzlSTBKT9BqnNG8JsFegB3eg==}
     peerDependencies:
       apexcharts: '> 3.0.0'
@@ -11097,7 +11097,7 @@ packages:
       vue:
         optional: true
     dependencies:
-      apexcharts: 3.37.3
+      apexcharts: 3.39.0
     dev: true
 
   /vue3-carousel@0.3.0:

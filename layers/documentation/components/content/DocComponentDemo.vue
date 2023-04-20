@@ -124,37 +124,6 @@ async function loadDemo() {
         >
           dark preview
         </BaseCheckbox>
-
-        <!-- <div
-          class="bg-muted-200 dark:bg-muted-800/50 flex items-end gap-1 rounded-lg p-1"
-        >
-          <BaseButtonAction
-            v-if="exampleComponent"
-            shape="rounded"
-            class="h-[2.35rem] pe-3 focus:z-10"
-            :class="
-              showCode ? 'dark:!bg-transparent dark:border-transparent' : ''
-            "
-            :color="showCode ? 'muted' : 'default'"
-            @click="showCode = false"
-          >
-            <Icon name="ph:circles-four" class="h-4 w-4" />
-            <span>Demo</span>
-          </BaseButtonAction>
-          <BaseButtonAction
-            v-if="exampleMarkdown"
-            shape="rounded"
-            class="h-[2.35rem] pe-3 focus:z-10"
-            :class="
-              !showCode ? 'dark:!bg-transparent dark:border-transparent' : ''
-            "
-            :color="!showCode ? 'muted' : 'default'"
-            @click="showCode = true"
-          >
-            <Icon name="ph:terminal" class="h-4 w-4" />
-            <span>Code</span>
-          </BaseButtonAction>
-        </div> -->
       </div>
     </div>
 
@@ -173,7 +142,7 @@ async function loadDemo() {
       >
         <div v-if="'default' in $slots" :class="[hasDemoContent && 'mb-10']">
           <div
-            class="prose prose-primary prose-muted dark:prose-invert prose-th:p-4 prose-td:p-4 prose-table:bg-white dark:prose-table:bg-muted-800 prose-table:border prose-table:border-muted-200 dark:prose-table:border-muted-700 prose-sm prose-p:text-muted-500 dark:prose-p:text-muted-400"
+            class="prose prose-primary prose-muted dark:prose-invert prose-th:p-4 prose-td:p-4 prose-table:bg-white dark:prose-table:bg-muted-800 prose-table:border prose-table:border-muted-200 dark:prose-table:border-muted-700 prose-sm prose-p:text-muted-500 dark:prose-p:text-muted-400 prose-a:decoration-from-font prose-a:underline-offset-1"
           >
             <ContentSlot :use="$slots.default"></ContentSlot>
           </div>

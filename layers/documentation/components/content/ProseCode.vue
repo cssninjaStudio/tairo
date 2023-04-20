@@ -43,20 +43,20 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="relative group/prose-code">
+  <div class="group/prose-code relative">
     <div
       v-if="filename || isSupported"
-      class="absolute group-hover/prose-code:opacity-80 end-2 inline-flex items-center gap-1 top-2 text-xs opacity-40 transition-opacity duration-200"
+      class="absolute end-2 top-2 inline-flex items-center gap-1 text-xs opacity-40 transition-opacity duration-200 group-hover/prose-code:opacity-60 dark:group-hover/prose-code:opacity-80"
     >
       <span v-if="filename">{{ filename }}</span>
       <button
         v-if="isSupported"
         type="button"
         :data-tooltip="copied ? 'Copied!' : 'Copy'"
-        class="hover:text-white"
+        class="hover:text-muted-950 dark:hover:text-white"
         @click="() => copy()"
       >
-        <Icon name="lucide:copy" class="inline-block w-3 h-3 ml-1" />
+        <Icon name="lucide:copy" class="ml-1 inline-block h-3 w-3" />
       </button>
     </div>
     <AddonMarkdownRemark
