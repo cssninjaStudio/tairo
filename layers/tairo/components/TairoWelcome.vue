@@ -163,7 +163,7 @@ const codeTailwind = [
             </div>
           </BaseCard>
         </NuxtLink>
-        <NuxtLink to="https://go.cssninja.io/discord" class="relative">
+        <NuxtLink to="https://go.cssninja.io/discord" taget="_blank" rel="noopener noreferrer" class="relative">
           <BaseCard
             shape="curved"
             elevated-hover
