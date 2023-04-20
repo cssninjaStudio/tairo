@@ -192,7 +192,7 @@ const codeTailwind = [
           </BaseCard>
         </NuxtLink>
       </div>
-      <NuxtLink to="https://tairo.cssninja.io/documentation" class="relative">
+      <NuxtLink to="https://tairo.cssninja.io/documentation" taget="_blank" rel="noopener noreferrer" class="relative">
         <BaseCard
           shape="curved"
           elevated-hover
