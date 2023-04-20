@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const app = useAppConfig()
 
-const command = [`pnpm dev`].join()
+const command = 'pnpm dev'
 
 const codePage = [
   `<script setup lang="ts">`,
