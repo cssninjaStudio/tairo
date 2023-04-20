@@ -135,7 +135,7 @@ const codeTailwind = [
             </div>
           </BaseCard>
         </NuxtLink>
-        <NuxtLink to="https://cssninja.io/faq/github-access" class="relative">
+        <NuxtLink to="https://cssninja.io/faq/github-access" taget="_blank" rel="noopener noreferrer" class="relative">
           <BaseCard
             shape="curved"
             elevated-hover
