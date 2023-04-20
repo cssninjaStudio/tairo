@@ -2,6 +2,7 @@
 definePageMeta({
   title: 'Collapse Layout',
   layout: 'empty',
+  displayHome: false,
 })
 </script>
 

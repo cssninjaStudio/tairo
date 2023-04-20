@@ -8,8 +8,8 @@ definePageMeta({
     title: 'Wizard — Step 7',
     description: 'For onboarding and step forms',
     categories: ['dashboards', 'wizard', 'forms'],
-    src: '/img/screens/dashboards-wizard-7.png',
-    srcDark: '/img/screens/dashboards-wizard-7-dark.png',
+    src: '/img/screens/wizard-7.png',
+    srcDark: '/img/screens/wizard-7-dark.png',
     order: 36,
   },
 })

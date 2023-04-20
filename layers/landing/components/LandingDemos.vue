@@ -12,7 +12,7 @@ const props = withDefaults(
   },
 )
 
-const selectedCategories = ref<string[]>([])
+const selectedCategory = ref<string>('')
 
 const router = useRouter()
 
@@ -65,7 +65,7 @@ const categories = computed(() => {
 })
 
 const filteredDemos = computed(() => {
-  if (selectedCategories.value.length === 0) {
+  if (selectedCategory.value.length === 0) {
     return demoPages.value
   }
   return demoPages.value.filter((page) => {
@@ -76,7 +76,7 @@ const filteredDemos = computed(() => {
       return false
     }
     return page.meta.preview.categories.some((category) =>
-      selectedCategories.value.includes(category),
+      selectedCategory.value.includes(category),
     )
   })
 })
@@ -116,13 +116,21 @@ const filteredDemos = computed(() => {
           class="ltablet:col-span-2 ltablet:block relative col-span-12 hidden lg:col-span-2 lg:block"
         >
           <ul class="space-y-3 lg:sticky lg:top-28">
+            <li class="capitalize">
+              <BaseRadio
+                v-model="selectedCategory"
+                value=""
+                color="primary"
+                label="All"
+              />
+            </li>
             <li
               v-for="(category, index) in categories"
               :key="index"
               class="capitalize"
             >
-              <BaseCheckbox
-                v-model="selectedCategories"
+              <BaseRadio
+                v-model="selectedCategory"
                 :value="category"
                 color="primary"
                 :label="category"
