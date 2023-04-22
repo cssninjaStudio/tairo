@@ -139,4 +139,7 @@ export default defineNuxtConfig({
       prerender: true,
     },
   },
+  experimental: {
+    watcher: 'parcel',
+  },
 })

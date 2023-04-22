@@ -6,8 +6,7 @@ const props = defineProps<{
 const meta = ref<string[]>([])
 
 const componentsMeta = await useComponentMeta()
-const { docRoutes: routesFlat, docRoutesByCategory: routesByCategory } =
-  await useDocumentationRoutes()
+const { docRoutes: routesFlat } = await useDocumentationRoutes()
 
 // filter unwanted components
 watchEffect(() => {
@@ -39,34 +38,6 @@ const componentsWithoutPages = computed(() => {
     )
     return !route
   })
-})
-
-// map components/meta with category
-const componentsPagesByCategory = computed(() => {
-  const categories = Object.keys(routesByCategory.value)
-
-  return categories.map((category) => {
-    const components = componentsPagesMap.value.filter((c) => {
-      const route = routesFlat.value.find((route: any) =>
-        route.components?.includes(c.name),
-      )
-      return route?.category === category
-    })
-
-    return {
-      category,
-      components,
-    }
-  })
-})
-
-// group components/meta by category
-const componentsByCategoryMaped = computed(() => {
-  const map: Record<string, any> = {}
-  for (const category of componentsPagesByCategory.value) {
-    map[category.category] = category
-  }
-  return map
 })
 </script>
 

@@ -1,7 +1,3 @@
-import type { RouteRecordRaw } from 'vue-router'
-
-type DocumentationTree = Record<string, RouteRecordRaw[]>
-
 export async function useDocumentationRoutes() {
   const { data } = await useAsyncData('doc-nav', () => {
     return queryContent('/documentation')
@@ -30,7 +26,6 @@ export async function useDocumentationRoutes() {
   })
 
   return {
-    docRoutesByCategory,
     docRoutes,
   }
 }
