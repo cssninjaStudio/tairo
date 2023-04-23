@@ -34,66 +34,117 @@
         </NuxtLink>
       </BaseCard>
     </div>
-    <div class="grid grid-cols-2 gap-2 xl:gap-6">
-      <NuxtLink to="https://nuxt.com/docs" class="group">
-        <BaseCard shape="rounded" class="p-8 text-center">
-          <Icon
-            name="simple-icons:nuxtdotjs"
-            class="text-muted-400 group-hover:text-primary-500 mx-auto mb-2 block h-10 w-10 transition-colors duration-300"
+    <div class="grid gap-2 sm:grid-cols-2 xl:gap-6">
+      <NuxtLink
+        to="https://nuxt.com/docs"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group flex h-full flex-col"
+      >
+        <BaseCard
+          shape="rounded"
+          class="group-hover:border-success-500 flex h-full items-center p-8 text-center sm:justify-center sm:p-2"
+        >
+          <img
+            src="/img/logos/brands/nuxt-light.svg"
+            class="block h-6 dark:hidden sm:mx-auto"
+            alt="Nuxt logo"
+          />
+          <img
+            src="/img/logos/brands/nuxt-dark.svg"
+            class="hidden h-6 dark:block sm:mx-auto"
+            alt="Nuxt logo"
           />
           <BaseHeading
             as="h4"
             size="sm"
             weight="semibold"
-            class="text-muted-800 dark:text-white"
+            class="text-muted-800 sr-only dark:text-white"
           >
             Nuxt
           </BaseHeading>
         </BaseCard>
       </NuxtLink>
-      <NuxtLink to="https://tailwindcss.com/docs/installation" class="group">
-        <BaseCard shape="rounded" class="p-8 text-center">
-          <Icon
-            name="simple-icons:tailwindcss"
-            class="text-muted-400 group-hover:text-primary-500 mx-auto mb-2 block h-10 w-10 transition-colors duration-300"
+      <NuxtLink
+        to="https://tailwindcss.com/docs/installation"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group flex h-full flex-col"
+      >
+        <BaseCard
+          shape="rounded"
+          class="flex h-full items-center p-8 text-center group-hover:border-sky-500 sm:justify-center sm:p-2"
+        >
+          <img
+            src="/img/logos/brands/tailwindcss-light.svg"
+            class="block h-7 dark:hidden sm:mx-auto"
+            alt="Tailwind CSS logo"
+          />
+          <img
+            src="/img/logos/brands/tailwindcss-dark.svg"
+            class="hidden h-7 dark:block sm:mx-auto"
+            alt="Tailwind CSS logo"
           />
           <BaseHeading
             as="h4"
             size="sm"
             weight="semibold"
-            class="text-muted-800 dark:text-white"
+            class="text-muted-800 sr-only dark:text-white"
           >
             Tailwind CSS
           </BaseHeading>
         </BaseCard>
       </NuxtLink>
-      <NuxtLink to="https://github.com/shuriken-ui" class="group">
-        <BaseCard shape="rounded" class="p-8 text-center">
-          <Icon
-            name="carbon:tropical-storm-tracks"
-            class="text-muted-400 group-hover:text-primary-500 mx-auto mb-2 block h-10 w-10 rotate-45 scale-95 transition-colors duration-300"
+      <NuxtLink
+        to="https://github.com/shuriken-ui"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group flex h-full flex-col"
+      >
+        <BaseCard
+          shape="rounded"
+          class="flex h-full items-center p-8 text-center group-hover:border-violet-500 sm:justify-center sm:p-2"
+        >
+          <img
+            src="/img/logos/brands/shuriken-light.svg"
+            class="block h-8 dark:hidden sm:mx-auto"
+            alt="Shuriken UI logo"
+          />
+          <img
+            src="/img/logos/brands/shuriken-dark.svg"
+            class="hidden h-8 dark:block sm:mx-auto"
+            alt="Shuriken UI logo"
           />
           <BaseHeading
             as="h4"
             size="sm"
             weight="semibold"
-            class="text-muted-800 dark:text-white"
+            class="text-muted-800 sr-only dark:text-white"
           >
             Shuriken UI
           </BaseHeading>
         </BaseCard>
       </NuxtLink>
-      <NuxtLink to="https://www.typescriptlang.org/" class="group">
-        <BaseCard shape="rounded" class="p-8 text-center">
-          <Icon
-            name="bxl:typescript"
-            class="text-muted-400 group-hover:text-primary-500 mx-auto mb-2 block h-10 w-10 transition-colors duration-300"
+      <NuxtLink
+        to="https://www.typescriptlang.org/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group flex h-full flex-col"
+      >
+        <BaseCard
+          shape="rounded"
+          class="flex h-full items-center p-8 text-center group-hover:border-blue-500 sm:justify-center sm:p-2"
+        >
+          <img
+            src="/img/logos/brands/typescript-text.svg"
+            class="block h-7 sm:mx-auto"
+            alt="Typescript logo"
           />
           <BaseHeading
             as="h4"
             size="sm"
             weight="semibold"
-            class="text-muted-800 dark:text-white"
+            class="text-muted-800 sr-only dark:text-white"
           >
             Typescript
           </BaseHeading>
