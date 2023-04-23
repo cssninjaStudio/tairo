@@ -1,6 +1,15 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Promotion',
+  displayHome: true,
+  preview: {
+    title: 'Promotion',
+    description: 'For promotional offers',
+    categories: ['layouts'],
+    src: '/img/screens/layouts-utility-promotion.png',
+    srcDark: '/img/screens/layouts-utility-promotion-dark.png',
+    order: 88,
+  },
 })
 </script>
 

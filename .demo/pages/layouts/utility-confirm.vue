@@ -1,6 +1,15 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Confirm',
+  displayHome: true,
+  preview: {
+    title: 'Confirm Account',
+    description: 'For account confirmation',
+    categories: ['layouts'],
+    src: '/img/screens/layouts-utility-confirm.png',
+    srcDark: '/img/screens/layouts-utility-confirm-dark.png',
+    order: 87,
+  },
 })
 </script>
 

@@ -2,6 +2,7 @@
 definePageMeta({
   title: 'Tairo',
   layout: 'empty',
+  displayHome: false,
 })
 </script>
 

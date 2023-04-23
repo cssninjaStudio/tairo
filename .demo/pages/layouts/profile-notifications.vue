@@ -1,6 +1,15 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Notifications',
+  displayHome: true,
+  preview: {
+    title: 'Notifications',
+    description: 'For displaying account notifications',
+    categories: ['layouts', 'profile'],
+    src: '/img/screens/layouts-subpages-notifications.png',
+    srcDark: '/img/screens/layouts-subpages-notifications-dark.png',
+    order: 80,
+  },
 })
 
 const { data, pending, error, refresh } = await useFetch(

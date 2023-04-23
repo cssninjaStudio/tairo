@@ -6,6 +6,15 @@ import { z } from 'zod'
 
 definePageMeta({
   title: 'Meeting',
+  displayHome: true,
+  preview: {
+    title: 'Form layout 6',
+    description: 'For forms and input fields',
+    categories: ['layouts', 'forms'],
+    src: '/img/screens/layouts-form-6.png',
+    srcDark: '/img/screens/layouts-form-6-dark.png',
+    order: 52,
+  },
 })
 
 const VALIDATION_TEXT = {

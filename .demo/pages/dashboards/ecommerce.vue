@@ -6,6 +6,15 @@ import '~/assets/css/vcalendar.css'
 
 definePageMeta({
   title: 'Ecommerce',
+  displayHome: true,
+  preview: {
+    title: 'Ecommerce dashboard',
+    description: 'For sales and online stores',
+    categories: ['dashboards'],
+    src: '/img/screens/dashboards-ecommerce.png',
+    srcDark: '/img/screens/dashboards-ecommerce-dark.png',
+    order: 21,
+  },
 })
 
 const sparkLineOne = reactive(useSparkLineOne())

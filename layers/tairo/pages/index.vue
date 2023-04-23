@@ -1,6 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
-  title: 'Welcome to Tairo',
+  title: '',
   breadcrumb: {
     label: 'Home',
     hideLabel: true,

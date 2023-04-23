@@ -6,6 +6,15 @@ import '~/assets/css/vcalendar.css'
 
 definePageMeta({
   title: 'Flights',
+  displayHome: true,
+  preview: {
+    title: 'Flights dashboard',
+    description: 'For travel and booking',
+    categories: ['dashboards'],
+    src: '/img/screens/dashboards-banking-3.png',
+    srcDark: '/img/screens/dashboards-banking-3-dark.png',
+    order: 10,
+  },
 })
 
 const dates = ref({

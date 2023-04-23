@@ -1,6 +1,15 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Placeload',
+  displayHome: true,
+  preview: {
+    title: 'Placeload 4',
+    description: 'For loading states',
+    categories: ['layouts'],
+    src: '/img/screens/layouts-placeload-4.png',
+    srcDark: '/img/screens/layouts-placeload-4-dark.png',
+    order: 56,
+  },
 })
 </script>
 

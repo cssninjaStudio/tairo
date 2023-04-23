@@ -1,7 +1,18 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Placeload',
+  displayHome: true,
+  preview: {
+    title: 'Placeload 1',
+    description: 'For loading states',
+    categories: ['layouts'],
+    src: '/img/screens/layouts-placeload-1.png',
+    srcDark: '/img/screens/layouts-placeload-1-dark.png',
+    order: 53,
+  },
 })
+
+const fake = ref('')
 </script>
 
 <template>
@@ -9,6 +20,7 @@ definePageMeta({
     <TairoContentWrapper>
       <template #left>
         <BaseInput
+          v-model="fake"
           icon="lucide:search"
           placeholder="Filter users..."
           :classes="{

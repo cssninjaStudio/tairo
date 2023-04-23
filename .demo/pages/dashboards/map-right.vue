@@ -2,6 +2,15 @@
 definePageMeta({
   title: 'Map',
   layout: 'empty',
+  displayHome: true,
+  preview: {
+    title: 'Right map panel',
+    description: 'For location based apps',
+    categories: ['dashboards'],
+    src: '/img/screens/dashboards-map-right.png',
+    srcDark: '/img/screens/dashboards-map-right-dark.png',
+    order: 24,
+  },
 })
 </script>
 

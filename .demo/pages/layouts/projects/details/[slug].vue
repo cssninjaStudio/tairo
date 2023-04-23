@@ -1,6 +1,15 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Project Details',
+  displayHome: true,
+  preview: {
+    title: 'Project details',
+    description: 'For displaying project details',
+    categories: ['layouts', 'projects'],
+    src: '/img/screens/layouts-projects-details.png',
+    srcDark: '/img/screens/layouts-projects-details-dark.png',
+    order: 72,
+  },
 })
 
 const { open } = usePanels()

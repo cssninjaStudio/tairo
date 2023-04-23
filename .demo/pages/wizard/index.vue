@@ -1,6 +1,19 @@
 <script setup lang="ts">
 import type { Project, ProjectStepData, ProjectType } from '../../types'
 
+definePageMeta({
+  title: 'Wizard — Step 1',
+  displayHome: true,
+  preview: {
+    title: 'Wizard — Step 1',
+    description: 'For onboarding and step forms',
+    categories: ['dashboards', 'wizard', 'forms'],
+    src: '/img/screens/wizard-1.png',
+    srcDark: '/img/screens/wizard-1-dark.png',
+    order: 30,
+  },
+})
+
 const {
   getNextStep,
   data: project,

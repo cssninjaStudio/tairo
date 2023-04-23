@@ -1,6 +1,15 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Search Results',
+  displayHome: true,
+  preview: {
+    title: 'Search results',
+    description: 'For displaying search results',
+    categories: ['layouts'],
+    src: '/img/screens/layouts-subpages-search-results.png',
+    srcDark: '/img/screens/layouts-subpages-search-results-dark.png',
+    order: 82,
+  },
 })
 
 const { data, pending, error, refresh } = await useFetch('/api/search')

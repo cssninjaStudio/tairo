@@ -6,6 +6,15 @@ import '~/assets/css/vcalendar.css'
 
 definePageMeta({
   title: 'UI Widgets',
+  displayHome: true,
+  preview: {
+    title: 'UI Widgets',
+    description: 'For page compositions',
+    categories: ['dashboards', 'widgets'],
+    src: '/img/screens/dashboards-widgets-ui.png',
+    srcDark: '/img/screens/dashboards-widgets-ui-dark.png',
+    order: 27,
+  },
 })
 
 const gaugePersonal = reactive(useGaugePersonal())

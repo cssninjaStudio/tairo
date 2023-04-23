@@ -1,6 +1,19 @@
 <script setup lang="ts">
 import type { Project, ProjectStepData } from '../../types'
 
+definePageMeta({
+  title: 'Wizard — Step 2',
+  displayHome: true,
+  preview: {
+    title: 'Wizard — Step 2',
+    description: 'For onboarding and step forms',
+    categories: ['dashboards', 'wizard', 'forms'],
+    src: '/img/screens/wizard-2.png',
+    srcDark: '/img/screens/wizard-2-dark.png',
+    order: 31,
+  },
+})
+
 const { data: project } = useMultiStepForm<Project, ProjectStepData>()
 
 useHead({
@@ -11,7 +24,7 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
 
 // BaseInputFileHeadless gives us a listfile input, but we need to
 // extract the file from the list and set it to the form
-const inputFile = ref<FileList | null>()
+const inputFile = ref<FileList | null>(null)
 watch(inputFile, (value) => {
   const file = value?.item(0) || null
   project.value.avatar = file

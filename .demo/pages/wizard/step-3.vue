@@ -6,6 +6,19 @@ import '~/assets/css/vcalendar.css'
 
 import type { Customer, Project, ProjectStepData } from '../../types'
 
+definePageMeta({
+  title: 'Wizard — Step 3',
+  displayHome: true,
+  preview: {
+    title: 'Wizard — Step 3',
+    description: 'For onboarding and step forms',
+    categories: ['dashboards', 'wizard', 'forms'],
+    src: '/img/screens/wizard-3.png',
+    srcDark: '/img/screens/wizard-3-dark.png',
+    order: 32,
+  },
+})
+
 const { data: project } = useMultiStepForm<Project, ProjectStepData>()
 
 useHead({

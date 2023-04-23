@@ -2,6 +2,7 @@
 definePageMeta({
   title: 'Prebuilt pages',
   layout: 'empty',
+  displayHome: false,
 })
 </script>
 

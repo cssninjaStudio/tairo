@@ -61,7 +61,7 @@
           Prettier is an opinionated code formatter. It enforces a consistent
           code style.
         </LandingFeaturesTile>
-        <LandingFeaturesTile title="Icones.js" icon="simple-icons:iconify">
+        <LandingFeaturesTile title="Icones.js" icon="ph:lightning-duotone">
           Icones.js is a library that allows you to use any icon from any icon
           library.
         </LandingFeaturesTile>

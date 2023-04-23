@@ -1,6 +1,15 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Board List',
+  displayHome: true,
+  preview: {
+    title: 'Project board hub',
+    description: 'For displaying recent projects',
+    categories: ['layouts', 'projects'],
+    src: '/img/screens/layouts-projects-board-hub.png',
+    srcDark: '/img/screens/layouts-projects-board-hub-dark.png',
+    order: 73,
+  },
 })
 
 const route = useRoute()

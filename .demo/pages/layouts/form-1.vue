@@ -4,7 +4,16 @@ import { Field, useFieldError, useForm } from 'vee-validate'
 import { z } from 'zod'
 
 definePageMeta({
-  title: 'Company',
+  title: 'Form layout 1',
+  displayHome: true,
+  preview: {
+    title: 'Form layout 1',
+    description: 'For forms and input fields',
+    categories: ['layouts', 'forms'],
+    src: '/img/screens/layouts-form-1.png',
+    srcDark: '/img/screens/layouts-form-1-dark.png',
+    order: 47,
+  },
 })
 
 const people = [
@@ -174,7 +183,7 @@ const fieldsWithErrors = computed(() => Object.keys(errors.value).length)
 
 // BaseInputFileHeadless gives us a listfile input, but we need to
 // extract the file from the list and set it to the form
-const inputFile = ref<FileList | null>()
+const inputFile = ref<FileList | null>(null)
 const fileError = useFieldError('avatar')
 watch(inputFile, (value) => {
   const file = value?.item(0) || null

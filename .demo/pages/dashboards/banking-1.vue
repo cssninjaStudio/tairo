@@ -1,6 +1,15 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Overview',
+  displayHome: true,
+  preview: {
+    title: 'Banking dashboard v1',
+    description: 'For banking and accounts',
+    categories: ['dashboards'],
+    src: '/img/screens/dashboards-banking-1.png',
+    srcDark: '/img/screens/dashboards-banking-1-dark.png',
+    order: 7,
+  },
 })
 
 const incomeHistory = reactive(useIncomeHistory())

@@ -5,6 +5,15 @@ import { z } from 'zod'
 
 definePageMeta({
   title: 'Edit Profile',
+  displayHome: true,
+  preview: {
+    title: 'Edit profile 1',
+    description: 'For editing a user profile',
+    categories: ['layouts', 'profile', 'forms'],
+    src: '/img/screens/layouts-subpages-profile-edit-1.png',
+    srcDark: '/img/screens/layouts-subpages-profile-edit-1-dark.png',
+    order: 76,
+  },
 })
 
 // This is the object that will contain the validation messages
@@ -173,7 +182,7 @@ const fieldsWithErrors = computed(() => Object.keys(errors.value).length)
 
 // BaseInputFileHeadless gives us a listfile input, but we need to
 // extract the file from the list and set it to the form
-const inputFile = ref<FileList | null>()
+const inputFile = ref<FileList | null>(null)
 const fileError = useFieldError('avatar')
 watch(inputFile, (value) => {
   const file = value?.item(0) || null

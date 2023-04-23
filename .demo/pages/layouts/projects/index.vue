@@ -1,6 +1,15 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Project List',
+  displayHome: true,
+  preview: {
+    title: 'Project list 1',
+    description: 'For displaying a list of projects',
+    categories: ['layouts', 'projects'],
+    src: '/img/screens/layouts-projects-1.png',
+    srcDark: '/img/screens/layouts-projects-1-dark.png',
+    order: 68,
+  },
 })
 
 const route = useRoute()

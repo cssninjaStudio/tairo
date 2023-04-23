@@ -1,6 +1,15 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Activity',
+  displayHome: true,
+  preview: {
+    title: 'Personal dashboard v1',
+    description: 'For personal usage and reports',
+    categories: ['dashboards'],
+    src: '/img/screens/dashboards-personal-1.png',
+    srcDark: '/img/screens/dashboards-personal-1-dark.png',
+    order: 1,
+  },
 })
 
 const areaCustomers = reactive(useAreaCustomers())

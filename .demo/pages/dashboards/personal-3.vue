@@ -6,6 +6,15 @@ import '~/assets/css/vcalendar.css'
 
 definePageMeta({
   title: 'Interviews',
+  displayHome: true,
+  preview: {
+    title: 'Personal dashboard v3',
+    description: 'For personal usage and reports',
+    categories: ['dashboards'],
+    src: '/img/screens/dashboards-personal-3.png',
+    srcDark: '/img/screens/dashboards-personal-3-dark.png',
+    order: 3,
+  },
 })
 
 const areaInterviews = reactive(useAreaInterviews())

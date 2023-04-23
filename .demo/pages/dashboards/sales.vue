@@ -6,6 +6,15 @@ import '~/assets/css/vcalendar.css'
 
 definePageMeta({
   title: 'Sales',
+  displayHome: true,
+  preview: {
+    title: 'Sales dashboard',
+    description: 'For sales and marketing',
+    categories: ['dashboards'],
+    src: '/img/screens/dashboards-sales.png',
+    srcDark: '/img/screens/dashboards-sales-dark.png',
+    order: 6,
+  },
 })
 
 const sparkSalesOne = reactive(useSparkSalesOne())
