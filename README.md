@@ -60,16 +60,6 @@ To start the development server, run one of the following commands:
 pnpm dev
 ```
 
-Using npm or yarn
-
-```bash
-# using npm
-npm run dev
-
-# using yarn
-yarn dev
-```
-
 This will run the `dev` script from the `package.json` file.
 
 > - Access the Tairo frontend in your browser at [http://localhost:3000/](http://localhost:3000/)
@@ -81,6 +71,3 @@ We try to keep it mostly up to date, so you can always find the latest informati
 
 > We also have a great [discord community](https://go.cssninja.io/discord) where you can ask questions and show your work.
 
-### [Tairo on docs.cssninja.io](https://docs.cssninja.io/tairo?utm_source=readme)
-
-### Useful links
