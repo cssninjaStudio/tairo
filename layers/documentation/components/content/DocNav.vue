@@ -4,7 +4,7 @@ const props = defineProps<{
   next?: string
 }>()
 
-const { data } = await useAsyncData('doc-nav', async () => {
+const { data } = await useAsyncData('doc-page-nav', async () => {
   const prev = !props.prev
     ? Promise.resolve(null)
     : queryContent()

@@ -20,7 +20,7 @@ export default defineAppConfig({
         showNavBurger: true,
         tools: [
           {
-            component: 'BaseThemeToggle',
+            component: 'DemoThemeToggle',
             props: {
               disableTransitions: true,
             },
@@ -43,7 +43,7 @@ export default defineAppConfig({
         enabled: true,
         tools: [
           {
-            component: 'BaseThemeToggle',
+            component: 'DemoThemeToggle',
             props: {
               class: 'ms-auto',
               disableTransitions: true,
@@ -122,7 +122,7 @@ export default defineAppConfig({
         showNavBurger: true,
         tools: [
           {
-            component: 'BaseThemeToggle',
+            component: 'DemoThemeToggle',
           },
           {
             component: 'DemoToolbarLanguage',
@@ -142,7 +142,7 @@ export default defineAppConfig({
         enabled: true,
         tools: [
           {
-            component: 'BaseThemeToggle',
+            component: 'DemoThemeToggle',
             props: {
               class: 'ms-auto',
               disableTransitions: true,
@@ -164,11 +164,9 @@ export default defineAppConfig({
         enabled: true,
         header: {
           component: 'DemoCollapseNavigationHeader',
-          resolve: true,
         },
         footer: {
           component: 'DemoCollapseNavigationFooter',
-          resolve: true,
         },
         items: [
           {
