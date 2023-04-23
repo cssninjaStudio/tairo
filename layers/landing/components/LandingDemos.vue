@@ -142,7 +142,7 @@ const filteredDemos = computed(() => {
         <div class="ltablet:col-span-10 col-span-12 lg:col-span-10">
           <div class="grid gap-8 sm:grid-cols-2">
             <NuxtLink
-              :to="page.path"
+              :to="{ name: page.name }"
               v-for="page in filteredDemos.slice(0, props.limit)"
               :key="page.path"
               class="group relative block"

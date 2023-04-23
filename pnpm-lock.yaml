@@ -1,6 +1,7 @@
 lockfileVersion: '6.0'
 
 overrides:
+  magic-string: 0.30.0
   consola: 3.1.0
 
 importers:
@@ -1804,7 +1805,7 @@ packages:
       estree-walker: 2.0.2
       glob: 8.1.0
       is-reference: 1.2.1
-      magic-string: 0.27.0
+      magic-string: 0.30.0
       rollup: 3.20.6
     dev: true
 
@@ -1819,7 +1820,7 @@ packages:
     dependencies:
       '@rollup/pluginutils': 5.0.2(rollup@3.20.6)
       estree-walker: 2.0.2
-      magic-string: 0.27.0
+      magic-string: 0.30.0
       rollup: 3.20.6
     dev: true
 
@@ -1864,7 +1865,7 @@ packages:
         optional: true
     dependencies:
       '@rollup/pluginutils': 5.0.2(rollup@3.20.6)
-      magic-string: 0.27.0
+      magic-string: 0.30.0
       rollup: 3.20.6
     dev: true
 
@@ -2549,7 +2550,7 @@ packages:
       '@vue/reactivity-transform': 3.2.47
       '@vue/shared': 3.2.47
       estree-walker: 2.0.2
-      magic-string: 0.25.9
+      magic-string: 0.30.0
       postcss: 8.4.23
       source-map: 0.6.1
     dev: true
@@ -2572,7 +2573,7 @@ packages:
       '@vue/compiler-core': 3.2.47
       '@vue/shared': 3.2.47
       estree-walker: 2.0.2
-      magic-string: 0.25.9
+      magic-string: 0.30.0
     dev: true
 
   /@vue/reactivity@3.2.47:
@@ -6700,19 +6701,6 @@ packages:
     engines: {node: 14 || >=16.14}
     dev: true
 
-  /magic-string@0.25.9:
-    resolution: {integrity: sha512-RmF0AsMzgt25qzqqLc1+MbHmhdx0ojF2Fvs4XnOqz2ZOBXzzkEwc/dJQZCYHAn7v1jbVOjAZfK8msRn4BxO4VQ==}
-    dependencies:
-      sourcemap-codec: 1.4.8
-    dev: true
-
-  /magic-string@0.27.0:
-    resolution: {integrity: sha512-8UnnX2PeRAPZuN12svgR9j7M1uWMovg/CEnIwIG0LFkXSJJe4PdfUGiTGl8V9bsBHFUtfVINcSyYxd7q+kx9fA==}
-    engines: {node: '>=12'}
-    dependencies:
-      '@jridgewell/sourcemap-codec': 1.4.15
-    dev: true
-
   /magic-string@0.30.0:
     resolution: {integrity: sha512-LA+31JYDJLs82r2ScLrlz1GjSgu66ZV518eyWT+S8VhyQn/JL0u9MeBOvQMGYiPk1DBiSN9DDMOcXvigJZaViQ==}
     engines: {node: '>=12'}
@@ -9892,11 +9880,6 @@ packages:
     engines: {node: '>= 8'}
     dev: true
 
-  /sourcemap-codec@1.4.8:
-    resolution: {integrity: sha512-9NykojV5Uih4lgo5So5dtw+f0JgJX30KCNI8gwhz2J9A15wD0Ml6tjHKwf6fTSa6fAdVBdZeNOs9eJ71qCk8vA==}
-    deprecated: Please use @jridgewell/sourcemap-codec instead
-    dev: true
-
   /space-separated-tokens@2.0.2:
     resolution: {integrity: sha512-PEGlAwrG8yXGXRjW32fGbg66JAlOAwbObuqVoJpv/mRgoWDQfgH1wDPvtzWyUSNAXBGSk8h755YDbbcEy3SH2Q==}
     dev: true
@@ -10666,7 +10649,7 @@ packages:
       escape-string-regexp: 5.0.0
       fast-glob: 3.2.12
       local-pkg: 0.4.3
-      magic-string: 0.27.0
+      magic-string: 0.30.0
       mlly: 1.2.0
       pathe: 1.1.0
       pkg-types: 1.0.2
@@ -10762,7 +10745,7 @@ packages:
       '@babel/generator': 7.21.4
       '@babel/parser': 7.21.4
       '@rollup/pluginutils': 5.0.2(rollup@3.20.6)
-      magic-string: 0.27.0
+      magic-string: 0.30.0
       unplugin: 1.3.1
     transitivePeerDependencies:
       - rollup
