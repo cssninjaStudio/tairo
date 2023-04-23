@@ -1,28 +1,38 @@
 <script setup lang="ts">
 const props = defineProps<{
   name?: string
-  color?: 'success' | 'primary' | 'yellow' | 'sky' | 'pink' | 'orange' | 'lime'
+  color?:
+    | 'success'
+    | 'primary'
+    | 'yellow'
+    | 'sky'
+    | 'pink'
+    | 'orange'
+    | 'lime'
+    | 'blue'
   to?: string
 }>()
 
 const iconColor = computed(() => {
   switch (props.color) {
     case 'success':
-      return 'bg-success-100 text-success-500'
+      return 'bg-success-500/20 text-success-500'
     case 'primary':
-      return 'bg-primary-100 text-primary-500'
+      return 'bg-primary-500/20 text-primary-500'
     case 'yellow':
-      return 'bg-yellow-100 text-yellow-500'
+      return 'bg-yellow-500/20 text-yellow-500'
     case 'orange':
-      return 'bg-orange-100 text-orange-500'
+      return 'bg-orange-500/20 text-orange-500'
     case 'sky':
-      return 'bg-sky-100 text-sky-500'
+      return 'bg-sky-500/20 text-sky-500'
     case 'pink':
-      return 'bg-pink-100 text-pink-500'
+      return 'bg-pink-500/20 text-pink-500'
     case 'lime':
-      return 'bg-lime-100 text-lime-500'
+      return 'bg-lime-500/20 text-lime-500'
+    case 'blue':
+      return 'bg-blue-500/20 text-blue-500'
     default:
-      return 'bg-muted-100 text-muted-500'
+      return 'bg-muted-500/20 text-muted-500'
   }
 })
 
