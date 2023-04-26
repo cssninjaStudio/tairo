@@ -88,7 +88,7 @@ const showStackTrace = ref(true)
               @click="retry"
             >
               <Icon name="feather:refresh-cw" class="h-3 w-3" />
-              <span>Retry</span>
+              <span>Clear Error</span>
             </BaseButton>
           </DevOnly>
         </div>

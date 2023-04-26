@@ -12,25 +12,4 @@ export default defineAppConfig({
   tairo: {
     title: 'Tairo Quick Starter',
   },
-
-  // nui: {
-  //   defaultShapes: {
-  //     accordion: 'straight',
-  //     autocompleteItem: 'straight',
-  //     avatar: 'straight',
-  //     button: 'straight',
-  //     buttonAction: 'straight',
-  //     buttonIcon: 'straight',
-  //     card: 'straight',
-  //     dropdown: 'straight',
-  //     iconBox: 'straight',
-  //     input: 'straight',
-  //     message: 'straight',
-  //     pagination: 'straight',
-  //     progess: 'straight',
-  //     prose: 'straight',
-  //     tabSlider: 'straight',
-  //     tag: 'straight',
-  //   },
-  // },
 })

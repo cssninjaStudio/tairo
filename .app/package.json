@@ -4,5 +4,11 @@
   "type": "module",
   "devDependencies": {
     "nuxt": "3.4.2"
+  },
+  "scripts": {
+    "prepare": "nuxi prepare",
+    "dev": "nuxi dev --open",
+    "build": "nuxi build",
+    "generate": "nuxi generate"
   }
 }

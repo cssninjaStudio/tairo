@@ -1,16 +1,5 @@
-<script setup lang="ts">
-definePageMeta({
-  title: '',
-  breadcrumb: {
-    label: 'Home',
-    hideLabel: true,
-    icon: 'lucide:home',
-  },
-})
-</script>
-
 <template>
-  <div>
+  <div class="bg-muted-100 dark:bg-muted-900">
     <TairoWelcome />
   </div>
 </template>

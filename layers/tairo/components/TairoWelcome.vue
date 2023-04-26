@@ -3,6 +3,23 @@ const app = useAppConfig()
 
 const command = 'pnpm dev'
 
+const nuxtConfig = [
+  `export default defineNuxtConfig({`,
+  `  extends: [`,
+  `    '../layers/tairo',`,
+  `    '../layers/tairo-layout-sidebar',`,
+  `  ]`,
+  `})`,
+].join('\n')
+
+const codeLayout = [
+  `<template>`,
+  `  <TairoSidebarLayout>`,
+  `    <slot />`,
+  `  </TairoSidebarLayout>`,
+  `</template>`,
+].join('\n')
+
 const codePage = [
   `<script setup lang="ts">`,
   `definePageMeta({`,
@@ -34,11 +51,11 @@ const codeTailwind = [
 </script>
 
 <template>
-  <div class="mx-auto max-w-4xl">
+  <div class="mx-auto max-w-4xl pb-16">
     <div class="absolute right-6 top-3">
       <BaseThemeToggle />
     </div>
-    <div class="-mt-8 mb-16 flex flex-col gap-3 text-center">
+    <div class="flex flex-col gap-3 pb-16 pt-8 text-center">
       <BaseHeading size="md" weight="medium" class="uppercase">
         <span>Welcome to</span>
       </BaseHeading>
@@ -287,11 +304,11 @@ const codeTailwind = [
                 class="text-primary-500 h-8 w-8 shrink-0"
               />
               <p>
-                Set default layout in
-                <code>layouts/default.vue</code>
+                Enable a layout in
+                <code>.app/nuxt.config.ts</code>
               </p>
             </div>
-            <pre><code>...</code></pre>
+            <pre><code>{{ nuxtConfig }}</code></pre>
           </div>
         </BaseProse>
       </BaseCard>
@@ -304,12 +321,11 @@ const codeTailwind = [
                 class="text-primary-500 h-8 w-8 shrink-0"
               />
               <p>
-                Define your app settings in
-                <code>app.config.ts</code>
-                <small>(logo, name, sidebars, panels, ...)</small>
+                Set default layout in
+                <code>.app/layouts/default.vue</code>
               </p>
             </div>
-            <pre><code>export default defineAppConfig({{app.tairo}})</code></pre>
+            <pre><code>{{ codeLayout }}</code></pre>
           </div>
         </BaseProse>
       </BaseCard>
@@ -322,11 +338,12 @@ const codeTailwind = [
                 class="text-primary-500 h-8 w-8 shrink-0"
               />
               <p>
-                Create your first page
-                <code>pages/index.vue</code>
+                Define your app settings in
+                <code>.app/app.config.ts</code>
+                <small>(logo, name, sidebars, panels, ...)</small>
               </p>
             </div>
-            <pre><code>{{codePage}}</code></pre>
+            <pre><code>export default defineAppConfig({{app.tairo}})</code></pre>
           </div>
         </BaseProse>
       </BaseCard>
@@ -339,12 +356,11 @@ const codeTailwind = [
                 class="text-primary-500 h-8 w-8 shrink-0"
               />
               <p>
-                Customize tailwind settings in
-                <code>tailwind.config.cjs</code>
-                <small>(colors, fonts, ...)</small>
+                Create your first page
+                <code>.app/pages/index.vue</code>
               </p>
             </div>
-            <pre><code>{{codeTailwind}}</code></pre>
+            <pre><code>{{codePage}}</code></pre>
           </div>
         </BaseProse>
       </BaseCard>
@@ -357,9 +373,30 @@ const codeTailwind = [
                 class="text-primary-500 h-8 w-8 shrink-0"
               />
               <p>
-                Customize nuxt settings in
-                <code>nuxt.config.ts</code>
-                <small>(seo meta, route rules, modules, ...)</small>
+                Customize tailwind settings in
+                <code>.app/tailwind.config.ts</code>
+                <small>(colors, fonts, ...)</small>
+              </p>
+            </div>
+            <pre><code>{{codeTailwind}}</code></pre>
+          </div>
+        </BaseProse>
+      </BaseCard>
+      <BaseCard class="dark:!bg-muted-900 p-6" shape="rounded">
+        <BaseProse class="prose-p:my-0 max-w-full">
+          <div>
+            <div class="flex gap-2 sm:items-center">
+              <Icon
+                name="ph:number-circle-six-duotone"
+                class="text-primary-500 h-8 w-8 shrink-0"
+              />
+              <p>
+                Continue learning with the
+                <a
+                  href="https://tairo.cssninja.io/documentation"
+                  target="_blank"
+                  >Online documentation</a
+                >
               </p>
             </div>
           </div>
