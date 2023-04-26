@@ -5,7 +5,7 @@
   "type": "module",
   "main": "./nuxt.config.ts",
   "engines": {
-    "node": ">=16.15 <19",
+    "node": ">=16.15",
     "pnpm": ">=7"
   },
   "scripts": {
@@ -69,6 +69,7 @@
     },
     "overrides": {
       "magic-string": "0.30.0",
+      "@nuxt/kit": "3.4.2",
       "consola": "3.1.0"
     }
   }
