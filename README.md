@@ -59,6 +59,3 @@ We try to keep it mostly up to date, so you can always find the latest informati
 
 > We also have a great [discord community](https://go.cssninja.io/discord) where you can ask questions and show your work.
 
-### [Tairo on docs.cssninja.io](https://docs.cssninja.io/tairo?utm_source=readme)
-
-### Useful links
