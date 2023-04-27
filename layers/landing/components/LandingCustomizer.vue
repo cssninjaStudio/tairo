@@ -67,21 +67,21 @@ watch(selectedStyle, (value) => {
               <div class="shuriken-1 absolute block">
                 <img
                   class="animate-spin-fast h-10 w-10"
-                  src="/img/logo/cssninja-logo-icon.svg"
+                  src="/img/logos/cssninja-logo-icon.svg"
                   alt="Css Ninja logo"
                 />
               </div>
               <div class="shuriken-2 absolute block">
                 <img
                   class="animate-spin-fast h-12 w-12"
-                  src="/img/logo/cssninja-logo-icon.svg"
+                  src="/img/logos/cssninja-logo-icon.svg"
                   alt="Css Ninja logo"
                 />
               </div>
               <div class="shuriken-3 absolute block">
                 <img
                   class="animate-spin-fast h-11 w-11"
-                  src="/img/logo/cssninja-logo-icon.svg"
+                  src="/img/logos/cssninja-logo-icon.svg"
                   alt="Css Ninja logo"
                 />
               </div>

@@ -12,7 +12,7 @@ const year = new Date().getFullYear()
     >
       <img
         class="h-7 w-7"
-        src="/img/logo/cssninja-logo-icon.svg"
+        src="/img/logos/cssninja-logo-icon.svg"
         alt="Css Ninja logo"
       />
     </NuxtLink>
