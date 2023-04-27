@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Checkout',
-  displayHome: true,
   preview: {
     title: 'Form layout 3',
     description: 'For forms and input fields',

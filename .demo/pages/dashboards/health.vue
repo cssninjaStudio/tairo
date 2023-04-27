@@ -6,7 +6,6 @@ import '~/assets/css/vcalendar.css'
 
 definePageMeta({
   title: 'Health',
-  displayHome: true,
   preview: {
     title: 'Health dashboard',
     description: 'For health and fitness',

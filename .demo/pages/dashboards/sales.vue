@@ -6,7 +6,6 @@ import '~/assets/css/vcalendar.css'
 
 definePageMeta({
   title: 'Sales',
-  displayHome: true,
   preview: {
     title: 'Sales dashboard',
     description: 'For sales and marketing',

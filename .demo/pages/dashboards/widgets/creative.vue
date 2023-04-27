@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Creative Widgets',
-  displayHome: true,
   preview: {
     title: 'Creative Widgets',
     description: 'For page compositions',

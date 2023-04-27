@@ -70,8 +70,8 @@ export default defineNuxtConfig({
       // mapbox config
       mapboxToken: process.env.NUXT_PUBLIC_MAPBOX_TOKEN,
       // nuxt-seo-kit config
-      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://example.com',
-      siteName: 'Tairo',
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL,
+      siteName: 'Tairo by CSS Ninja',
       siteDescription:
         'The most advanced Nuxt and Tailwind CSS dashboard template',
       language: 'en',
@@ -82,17 +82,6 @@ export default defineNuxtConfig({
   },
   unhead: {
     seoOptimise: true,
-  },
-  app: {
-    head: {
-      link: [
-        {
-          rel: 'icon',
-          type: 'image/x-icon',
-          href: '/img/favicon.png',
-        },
-      ],
-    },
   },
   // sourcemap: process.env.NODE_ENV !== 'production',
   vite: {

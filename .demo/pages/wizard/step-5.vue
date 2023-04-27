@@ -8,7 +8,6 @@ import type {
 
 definePageMeta({
   title: 'Wizard — Step 5',
-  displayHome: true,
   preview: {
     title: 'Wizard — Step 5',
     description: 'For onboarding and step forms',

@@ -1,8 +1,9 @@
 <script setup lang="ts">
 definePageMeta({
-  title: 'Tairo',
+  title: 'The Nuxt & Tailwind CSS dashboard system',
+  description:
+    'Tairo is a Nuxt & Tailwind CSS dashboard system template that comes with 100+ prebuilt pages and 40+ custom UI components.',
   layout: 'empty',
-  displayHome: false,
 })
 </script>
 

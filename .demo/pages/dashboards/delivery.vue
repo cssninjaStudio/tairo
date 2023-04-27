@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Delivery',
-  displayHome: true,
   preview: {
     title: 'Delivery dashboard',
     description: 'For food delivery services',

@@ -14,6 +14,51 @@ useHead({
       ? `${titleChunk} - ${app.tairo.title}`
       : `${app.tairo.title || 'Tairo'}`
   },
+  link: [
+    {
+      rel: 'icon',
+      type: 'image/png',
+      href: '/img/favicon.png',
+    },
+  ],
+
+  meta: [
+    {
+      name: 'twitter:card',
+      content: 'summary_large_image',
+    },
+    {
+      name: 'twitter:site',
+      content: '@cssninjaStudio',
+    },
+    {
+      name: 'og:image:type',
+      content: 'image/png',
+    },
+    {
+      name: 'og:image:width',
+      content: '1200',
+    },
+    {
+      name: 'og:image:height',
+      content: '630',
+    },
+    {
+      name: 'og:image',
+      content: `https://media.cssninja.io/embed/marketplace/product/wide.png?headline=${encodeURIComponent(
+        route.meta.description ||
+          `${route.meta.preview?.title} - ${route.meta.preview?.description}` ||
+          'Learn about Tairo by Css Ninja',
+      )}&url=${encodeURIComponent(
+        'https://media.cssninja.io/content/products/logos/tairo-text-white.svg',
+      )}&previewUrl=${encodeURIComponent(
+        `https://tairo.cssninja.io${
+          route.meta.preview?.srcDark ||
+          '/img/screens/documentation-hub-dark.png'
+        }`,
+      )}`,
+    },
+  ],
 })
 </script>
 

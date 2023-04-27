@@ -6,7 +6,6 @@ import '~/assets/css/vcalendar.css'
 
 definePageMeta({
   title: 'Hobbies',
-  displayHome: true,
   preview: {
     title: 'Hobbies dashboard',
     description: 'For hobbies and interests',

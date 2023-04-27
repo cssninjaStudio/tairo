@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Notifications',
-  displayHome: true,
   preview: {
     title: 'Notifications',
     description: 'For displaying account notifications',

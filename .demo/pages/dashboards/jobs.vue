@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Jobs',
-  displayHome: true,
   preview: {
     title: 'Jobs dashboard',
     description: 'For recruitment and job search',

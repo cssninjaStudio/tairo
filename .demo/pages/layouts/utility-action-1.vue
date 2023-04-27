@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Action',
-  displayHome: true,
   preview: {
     title: 'Action 1',
     description: 'For actions and tasks',

@@ -1,8 +1,9 @@
 <script setup lang="ts">
 definePageMeta({
-  title: 'Prebuilt pages',
+  title: 'Prebuilt dashboards pages',
+  description:
+    'Explore 100+ prebuilt pages, including dashboards and app examples. Kickstart your project with Nuxt and Tailwind CSS.',
   layout: 'empty',
-  displayHome: false,
 })
 </script>
 

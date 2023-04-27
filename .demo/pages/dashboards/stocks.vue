@@ -6,7 +6,6 @@ import '~/assets/css/vcalendar.css'
 
 definePageMeta({
   title: 'Stocks',
-  displayHome: true,
   preview: {
     title: 'Stocks dashboard',
     description: 'For stock market analysis',

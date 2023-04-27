@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Promotion',
-  displayHome: true,
   preview: {
     title: 'Promotion',
     description: 'For promotional offers',

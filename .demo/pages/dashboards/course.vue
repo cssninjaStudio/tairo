@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'E-Learning',
-  displayHome: true,
   preview: {
     title: 'Course dashboard',
     description: 'For School and Education',

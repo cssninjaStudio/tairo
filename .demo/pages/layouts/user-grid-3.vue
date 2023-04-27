@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Users',
-  displayHome: true,
   preview: {
     title: 'User grid 3',
     description: 'For item grids and collections',

@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Board List',
-  displayHome: true,
   preview: {
     title: 'Project board hub',
     description: 'For displaying recent projects',

@@ -4,7 +4,6 @@ import '~/assets/css/slider.css'
 
 definePageMeta({
   title: 'Password',
-  displayHome: true,
   preview: {
     title: 'Form layout 5',
     description: 'For forms and input fields',

@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'SaaS Billing',
-  displayHome: true,
   preview: {
     title: 'SaaS billing',
     description: 'For saas billing plans',

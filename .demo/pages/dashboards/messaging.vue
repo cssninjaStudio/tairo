@@ -2,7 +2,6 @@
 definePageMeta({
   title: 'Messaging',
   layout: 'empty',
-  displayHome: true,
   preview: {
     title: 'Messaging app',
     description: 'For chat and messaging apps',

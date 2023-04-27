@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Activity',
-  displayHome: true,
   preview: {
     title: 'Personal dashboard v1',
     description: 'For personal usage and reports',

@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Tiles',
-  displayHome: true,
   preview: {
     title: 'Tile grid 2',
     description: 'For item grids and collections',

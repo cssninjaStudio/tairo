@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Soccer',
-  displayHome: true,
   preview: {
     title: 'Soccer dashboard',
     description: 'For soccer & football fans',

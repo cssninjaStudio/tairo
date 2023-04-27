@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Credit Cards',
-  displayHome: true,
   preview: {
     title: 'Banking dashboard v2',
     description: 'For banking and accounts',

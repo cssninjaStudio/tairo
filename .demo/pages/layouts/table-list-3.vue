@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Table List',
-  displayHome: true,
   preview: {
     title: 'Table list 3',
     description: 'For list views and collections',

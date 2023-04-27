@@ -9,7 +9,6 @@ import '~/assets/css/vcalendar.css'
 
 definePageMeta({
   title: 'New Event',
-  displayHome: true,
   preview: {
     title: 'Form layout 4',
     description: 'For forms and input fields',

@@ -2,7 +2,6 @@
 definePageMeta({
   title: 'Status',
   layout: 'empty',
-  displayHome: true,
   preview: {
     title: 'Service status',
     description: 'For company service status',

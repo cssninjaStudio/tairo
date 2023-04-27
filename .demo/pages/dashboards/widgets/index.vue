@@ -6,7 +6,6 @@ import '~/assets/css/vcalendar.css'
 
 definePageMeta({
   title: 'UI Widgets',
-  displayHome: true,
   preview: {
     title: 'UI Widgets',
     description: 'For page compositions',

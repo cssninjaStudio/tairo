@@ -27,8 +27,8 @@ const demoPages = computed(() => {
       } else if (route.path.includes(':')) {
         // skip dynamic route
         continue
-      } else if (route.meta?.displayHome !== false) {
-        // not explicitely disabled (match displayHome undefined and true)
+      } else if (route.meta?.preview) {
+        // has preview data
         match.push(route)
       }
     }
@@ -125,8 +125,8 @@ const filteredDemos = computed(() => {
               />
             </li>
             <li
-              v-for="(category, index) in categories"
-              :key="index"
+              v-for="category in categories"
+              :key="category"
               class="capitalize"
             >
               <BaseRadio
@@ -144,7 +144,7 @@ const filteredDemos = computed(() => {
             <NuxtLink
               :to="{ name: page.name }"
               v-for="page in filteredDemos.slice(0, props.limit)"
-              :key="page.path"
+              :key="page.name"
               class="group relative block"
             >
               <div>

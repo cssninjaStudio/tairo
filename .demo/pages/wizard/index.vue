@@ -3,7 +3,6 @@ import type { Project, ProjectStepData, ProjectType } from '../../types'
 
 definePageMeta({
   title: 'Wizard — Step 1',
-  displayHome: true,
   preview: {
     title: 'Wizard — Step 1',
     description: 'For onboarding and step forms',

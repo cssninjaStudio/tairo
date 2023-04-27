@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Video',
-  displayHome: true,
   preview: {
     title: 'Video dashboard',
     description: 'For video content creators',

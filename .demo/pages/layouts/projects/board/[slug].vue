@@ -4,7 +4,6 @@ import { Container, Draggable } from 'vue3-smooth-dnd'
 definePageMeta({
   title: 'Project Board',
   layout: 'empty',
-  displayHome: true,
   preview: {
     title: 'Project board',
     description: 'For displaying a kanban board',

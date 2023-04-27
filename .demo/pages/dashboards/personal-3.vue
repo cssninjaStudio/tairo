@@ -6,7 +6,6 @@ import '~/assets/css/vcalendar.css'
 
 definePageMeta({
   title: 'Interviews',
-  displayHome: true,
   preview: {
     title: 'Personal dashboard v3',
     description: 'For personal usage and reports',

@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Apex Charts',
-  displayHome: true,
   preview: {
     title: 'Chart examples',
     description: 'For data visualization',

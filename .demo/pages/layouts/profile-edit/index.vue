@@ -5,7 +5,6 @@ import { z } from 'zod'
 
 definePageMeta({
   title: 'Edit Profile',
-  displayHome: true,
   preview: {
     title: 'Edit profile 1',
     description: 'For editing a user profile',

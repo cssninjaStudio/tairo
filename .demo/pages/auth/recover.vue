@@ -6,7 +6,6 @@ import { z } from 'zod'
 definePageMeta({
   layout: 'empty',
   title: 'Recover Password',
-  displayHome: true,
   preview: {
     title: 'Recover',
     description: 'For password recovery',

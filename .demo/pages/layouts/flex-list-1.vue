@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Flex List',
-  displayHome: true,
   preview: {
     title: 'Flex list 1',
     description: 'For list views and collections',

@@ -6,7 +6,6 @@ import '~/assets/css/vcalendar.css'
 
 definePageMeta({
   title: 'Flights',
-  displayHome: true,
   preview: {
     title: 'Flights dashboard',
     description: 'For travel and booking',

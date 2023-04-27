@@ -6,7 +6,6 @@ import { z } from 'zod'
 definePageMeta({
   layout: 'empty',
   title: 'Login',
-  displayHome: true,
   preview: {
     title: 'Login 4',
     description: 'For authentication and sign in',

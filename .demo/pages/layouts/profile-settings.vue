@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Settings',
-  displayHome: true,
   preview: {
     title: 'Settings',
     description: 'For displaying account settings',

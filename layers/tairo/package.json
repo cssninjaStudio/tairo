@@ -6,7 +6,6 @@
   "main": "./nuxt.config.ts",
   "devDependencies": {
     "@cssninja/nuxt-toaster": "^0.3.12",
-    "@nuxt/image-edge": "1.0.0-28020728.5df24eb",
     "@shuriken-ui/nuxt": "^0.2.0",
     "@vee-validate/zod": "^4.8.6",
     "fast-copy": "^3.0.1",

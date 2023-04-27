@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'List View',
-  displayHome: true,
   preview: {
     title: 'List view 2',
     description: 'For list views and collections',

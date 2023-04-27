@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Placeload',
-  displayHome: true,
   preview: {
     title: 'Placeload 1',
     description: 'For loading states',

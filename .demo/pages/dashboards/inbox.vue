@@ -6,7 +6,6 @@ import 'splitpanes/dist/splitpanes.css'
 definePageMeta({
   title: 'Inbox',
   layout: 'empty',
-  displayHome: true,
   preview: {
     title: 'Inbox app',
     description: 'For email and messaging apps',

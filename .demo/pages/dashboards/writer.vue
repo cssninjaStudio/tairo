@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Writer',
-  displayHome: true,
   preview: {
     title: 'Writer dashboard',
     description: 'For writers and bloggers',

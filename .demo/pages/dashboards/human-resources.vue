@@ -6,7 +6,6 @@ import '~/assets/css/vcalendar.css'
 
 definePageMeta({
   title: 'Human Resources',
-  displayHome: true,
   preview: {
     title: 'HR dashboard',
     description: 'For HR management',

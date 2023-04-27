@@ -12,7 +12,6 @@ const VALIDATION_TEXT = {
 
 definePageMeta({
   title: 'Settings',
-  displayHome: true,
   preview: {
     title: 'Edit profile 4',
     description: 'For editing a user profile',

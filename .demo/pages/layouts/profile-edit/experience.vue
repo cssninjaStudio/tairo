@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Experience',
-  displayHome: true,
   preview: {
     title: 'Edit profile 2',
     description: 'For editing a user profile',

@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Search Results',
-  displayHome: true,
   preview: {
     title: 'Search results',
     description: 'For displaying search results',

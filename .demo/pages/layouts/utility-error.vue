@@ -30,7 +30,6 @@ const props = withDefaults(
 definePageMeta({
   title: 'Error',
   layout: 'empty',
-  displayHome: true,
   preview: {
     title: 'Error',
     description: 'For system errors',

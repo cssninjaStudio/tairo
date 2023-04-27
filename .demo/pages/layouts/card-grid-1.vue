@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Card Grid',
-  displayHome: true,
   preview: {
     title: 'Card grid 1',
     description: 'For item grids and collections',

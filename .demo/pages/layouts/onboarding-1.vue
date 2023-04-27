@@ -2,7 +2,6 @@
 definePageMeta({
   title: 'Onboarding',
   layout: 'empty',
-  displayHome: true,
   preview: {
     title: 'Onboarding 1',
     description: 'For onboarding new users',

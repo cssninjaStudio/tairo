@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Project Details',
-  displayHome: true,
   preview: {
     title: 'Project details',
     description: 'For displaying project details',

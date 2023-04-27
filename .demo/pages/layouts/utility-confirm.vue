@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Confirm',
-  displayHome: true,
   preview: {
     title: 'Confirm Account',
     description: 'For account confirmation',

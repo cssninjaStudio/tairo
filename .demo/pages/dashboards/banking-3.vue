@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Cryptocurrency',
-  displayHome: true,
   preview: {
     title: 'Banking dashboard v3',
     description: 'For banking and accounts',

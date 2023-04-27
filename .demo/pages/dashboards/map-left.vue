@@ -2,7 +2,6 @@
 definePageMeta({
   title: 'Map',
   layout: 'empty',
-  displayHome: true,
   preview: {
     title: 'Left map panel',
     description: 'For location based apps',

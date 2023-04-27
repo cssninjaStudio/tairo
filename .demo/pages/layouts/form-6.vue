@@ -6,7 +6,6 @@ import { z } from 'zod'
 
 definePageMeta({
   title: 'Meeting',
-  displayHome: true,
   preview: {
     title: 'Form layout 6',
     description: 'For forms and input fields',

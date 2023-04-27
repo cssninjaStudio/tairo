@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Influencer',
-  displayHome: true,
   preview: {
     title: 'Influencer dashboard',
     description: 'For social media influencers',

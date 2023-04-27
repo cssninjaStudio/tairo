@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Invoice',
-  displayHome: true,
   preview: {
     title: 'Invoice',
     description: 'For accounting and invoices',
