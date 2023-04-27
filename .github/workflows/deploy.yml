@@ -59,7 +59,7 @@ jobs:
           NUXT_INDEXABLE=true \
           ENABLE_DOCUMENTATION=true \
           ENABLE_DOCUMENTATION_STUDIO=true \
-          NODE_OPTIONS=--max-old-space-size=4096 \
+          NODE_OPTIONS=--max-old-space-size=6144 \
           pnpm demo:build
       - run: cp .github/env/Dockerfile .demo/Dockerfile
       - name: Set up QEMU
