@@ -4,7 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "main": "./nuxt.config.ts",
+  "scripts": {
+    "clean": "rimraf .nuxt .output node_modules"
+  },
   "devDependencies": {
-    "nuxt": "3.4.2"
+    "nuxt": "3.4.3"
   }
 }

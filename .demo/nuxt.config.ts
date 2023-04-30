@@ -35,36 +35,21 @@ export default defineNuxtConfig({
     'nuxt-seo-kit',
   ],
   modules: [
-    // Swiper is a nuxt module that allows us to use swiper in nuxt
-    // wich is a carousel component used in the demo
+    /**
+     * Swiper is a nuxt module that allows us to use swiper in nuxt
+     * wich is a carousel component used in the demo
+     * @see https://github.com/cpreston321/nuxt-swiper
+     */
     'nuxt-swiper',
   ],
-  unfonts: {
-    google: {
-      families: ['Roboto Flex', 'Inter', 'Karla', 'Fira Code'],
-    },
-    // fontsource: {
-    //   families: [
-    //     {
-    //       name: 'roboto-flex',
-    //       variables: ['variable'],
-    //     },
-    //     {
-    //       name: 'inter',
-    //       variables: ['variable'],
-    //     },
-    //     {
-    //       name: 'karla',
-    //       variables: ['variable'],
-    //     },
-    //     {
-    //       name: 'fira-code',
-    //       variables: ['variable'],
-    //     },
-    //     // 'Roboto-Flex', 'Inter', 'Karla', 'Fira-Code'
-    //   ],
-    // },
+
+  experimental: {
+    // using parcel as as watcher run faster
+    // when using layers and/or in large projects
+    watcher: 'parcel',
   },
+
+  // nuxt behavior configuration
   runtimeConfig: {
     public: {
       // mapbox config
@@ -77,28 +62,13 @@ export default defineNuxtConfig({
       language: 'en',
     },
   },
-  linkChecker: {
-    failOn404: true,
-  },
-  unhead: {
-    seoOptimise: true,
-  },
-  // sourcemap: process.env.NODE_ENV !== 'production',
-  vite: {
-    define: {
-      // This is required for shiki to work (used to render markdown code blocks)
-      'process.env.VSCODE_TEXTMATE_DEBUG': false,
-      // This enables vue-axe to work (used to check a11y - see .demo/plugins/vue-axe.ts)
-      'process.env.ENABLE_A11Y_AXE': false,
-    },
-    optimizeDeps: {
-      // disabled: false,
-    },
-    build: {
-      target: 'esnext',
-      // commonjsOptions: { include: [] },
+  routeRules: {
+    '/**': {
+      prerender: true,
     },
   },
+
+  // build configuration
   hooks: {
     'vite:extendConfig'(config, { isClient }) {
       if (isProduction && isClient) {
@@ -123,12 +93,32 @@ export default defineNuxtConfig({
       },
     },
   },
-  routeRules: {
-    '/**': {
-      prerender: true,
+  vite: {
+    define: {
+      // This is required for shiki to work (used to render markdown code blocks)
+      'process.env.VSCODE_TEXTMATE_DEBUG': false,
+      // This enables vue-axe to work (used to check a11y - see .demo/plugins/vue-axe.ts)
+      'process.env.ENABLE_A11Y_AXE': process.env.ENABLE_A11Y_AXE,
+    },
+    optimizeDeps: {
+      // disabled: false,
+    },
+    build: {
+      target: 'esnext',
+      // commonjsOptions: { include: [] },
     },
   },
-  experimental: {
-    watcher: 'parcel',
+
+  // nuxt modules configuration
+  unfonts: {
+    google: {
+      families: ['Roboto Flex', 'Inter', 'Karla', 'Fira Code'],
+    },
+  },
+  linkChecker: {
+    failOn404: true,
+  },
+  unhead: {
+    seoOptimise: true,
   },
 })

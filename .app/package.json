@@ -3,12 +3,13 @@
   "private": true,
   "type": "module",
   "devDependencies": {
-    "nuxt": "3.4.2"
+    "nuxt": "3.4.3"
   },
   "scripts": {
     "prepare": "nuxi prepare",
     "dev": "nuxi dev --open",
     "build": "nuxi build",
-    "generate": "nuxi generate"
+    "generate": "nuxi generate",
+    "clean": "rimraf .nuxt .output node_modules"
   }
 }
