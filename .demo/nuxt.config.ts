@@ -95,6 +95,7 @@ export default defineNuxtConfig({
   },
   vite: {
     define: {
+      'process.test': false,
       // This is required for shiki to work (used to render markdown code blocks)
       'process.env.VSCODE_TEXTMATE_DEBUG': false,
       // This enables vue-axe to work (used to check a11y - see .demo/plugins/vue-axe.ts)
