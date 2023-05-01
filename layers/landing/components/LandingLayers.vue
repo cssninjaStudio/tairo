@@ -4,7 +4,7 @@
       <div class="mb-10 max-w-2xl">
         <BaseText
           class="text-primary-500 mb-2 text-[0.65rem] uppercase tracking-wider"
-          >Nuxt Layers</BaseText
+          >Made for developers</BaseText
         >
         <BaseHeading
           as="h2"
@@ -13,7 +13,7 @@
           lead="tight"
           class="text-muted-800 mx-auto mb-4 dark:text-white"
         >
-          Layer based structure
+          A layered experience
         </BaseHeading>
         <BaseParagraph
           size="lg"
@@ -21,38 +21,39 @@
         >
           Tairo is built on top on the Nuxt Layers concept. Layers can be seen
           as groups of components and composables that are related to each
-          other. They are designed to be used together and can be easily swapped
-          out.
+          other. They help create a consistent experience and a maintainable
+          codebase.
         </BaseParagraph>
       </div>
       <div class="ptablet:grid-cols-2 grid gap-6 sm:grid-cols-3">
         <LandingLayersBox
-          title="UI Layer"
-          icon="ph:mouse-duotone"
-          to="/documentation/layers"
+          title="Starter App"
+          icon="ph:rocket-duotone"
+          to="/documentation/setup"
           color="indigo"
         >
-          The UI Layer is the foundation of your app. It provides all basic
-          elements and is mostly handled by Shuriken UI and some Tairo specific
-          components.
+          Tairo ships with a clean starter project where you can start writing
+          your own code and content, also making it easier by providing app
+          configuration files.
         </LandingLayersBox>
         <LandingLayersBox
-          title="Layout Layer"
-          icon="ph:sidebar-duotone"
-          to="/documentation/layers"
+          title="Customization"
+          icon="ph:sparkle-duotone"
+          to="/documentation/tailwindcss"
           color="purple"
         >
-          The layout layer determines the overall structure of your app. It
-          provides a content area and some navigation options such as a sidebar
-          or a navbar.
+          Tairo is built with Tailwind CSS and Shuriken UI. You can customize
+          every single component to fit with your branding styles, shapes and
+          colors.
         </LandingLayersBox>
         <LandingLayersBox
-          title="App Layer"
+          title="Component reference"
           icon="ph:notification-duotone"
-          to="/documentation/layers"
+          to="/documentation/reference"
         >
-          The app layer is where you write your own code and content. Tairo
-          makes it even more easy providing you with app configuration files.
+          Tairo ships with a lot of UI components, from the smallest parts
+          required to build a web application to more complex organisms with
+          their own logic.
         </LandingLayersBox>
       </div>
     </div>
