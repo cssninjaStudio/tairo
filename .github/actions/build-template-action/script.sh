@@ -26,8 +26,9 @@ echo "::debug::${ARCHIVE}"
 
 # zip sources template-${PROJECT}-${TAG}.zip
 zip -r ${ARCHIVE} . \
-  -x ".nuxt/*" \
-  -x ".output/*" \
+  -x "*/.nuxt/*" \
+  -x "*/.output/*" \
+  -x "*/node_modules/*" \
   -x "node_modules/*" \
   -x ".git/*" \
   -x ".github/*" 

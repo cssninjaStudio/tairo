@@ -7,7 +7,7 @@
   "scripts": {
     "clean": "rimraf .nuxt .output node_modules"
   },
-  "devDependencies": {
-    "nuxt": "3.4.3"
+  "dependencies": {
+    "nuxt": "^3.4.3"
   }
 }

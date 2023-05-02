@@ -254,7 +254,7 @@ const validatePin = computed(() => {
                     >Continue</BaseButton
                   >
                   <NuxtLink
-                    to="/dashboard"
+                    to="/dashboards"
                     class="text-muted-400 hover:text-primary-500 mt-4 text-xs font-medium underline-offset-4 transition-colors duration-300 hover:underline"
                     >No thanks, I want to skip</NuxtLink
                   >

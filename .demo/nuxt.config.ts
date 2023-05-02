@@ -43,6 +43,7 @@ export default defineNuxtConfig({
     'nuxt-swiper',
   ],
 
+  sourcemap: false,
   experimental: {
     // using parcel as as watcher run faster
     // when using layers and/or in large projects
