@@ -15,7 +15,7 @@
     "demo:build": "nuxi build .demo",
     "clean:all": "pnpm -r clean && rimraf .nuxt .output node_modules",
     "test": "run-p test:*",
-    "test:tsc": "vue-tsc --noEmit",
+    "test:tsc-demo": "vue-tsc --noEmit -p .demo/tsconfig.json",
     "test:lint": "run-s lint:eslint lint:prettier",
     "lint": "run-s lint:eslint:fix lint:eslint:fix-demo lint:prettier:fix",
     "lint:prettier": "prettier --check \"./**/*.(ts|vue|css|md)\"",
