@@ -154,13 +154,13 @@ const amount = ref<number>()
                 condensed
                 class="z-20"
               >
-                <BaseDropdownItem to="/" title="Invest" text="Buys more stocks">
+                <BaseDropdownItem to="#" title="Invest" text="Buys more stocks">
                   <template #start>
                     <Icon name="ph:coin-duotone" class="me-2 block h-5 w-5" />
                   </template>
                 </BaseDropdownItem>
                 <BaseDropdownItem
-                  to="/"
+                  to="#"
                   title="Benchmark"
                   text="Compare other sources"
                 >
@@ -172,7 +172,7 @@ const amount = ref<number>()
                   </template>
                 </BaseDropdownItem>
                 <BaseDropdownItem
-                  to="/"
+                  to="#"
                   title="Trade"
                   text="View opportunities"
                 >
@@ -182,7 +182,7 @@ const amount = ref<number>()
                 </BaseDropdownItem>
                 <BaseDropdownDivide />
                 <BaseDropdownItem
-                  to="/"
+                  to="#"
                   title="Wallet"
                   text="Manage your wallet"
                 >
@@ -207,7 +207,7 @@ const amount = ref<number>()
                 <span>Information</span>
               </BaseHeading>
               <NuxtLink
-                to="/"
+                to="#"
                 class="text-primary-500 font-sans text-sm underline-offset-4 hover:underline"
               >
                 Edit
@@ -282,13 +282,13 @@ const amount = ref<number>()
                 condensed
                 class="z-20"
               >
-                <BaseDropdownItem to="/" title="Invest" text="Buys more stocks">
+                <BaseDropdownItem to="#" title="Invest" text="Buys more stocks">
                   <template #start>
                     <Icon name="ph:coin-duotone" class="me-2 block h-5 w-5" />
                   </template>
                 </BaseDropdownItem>
                 <BaseDropdownItem
-                  to="/"
+                  to="#"
                   title="Benchmark"
                   text="Compare other sources"
                 >
@@ -300,7 +300,7 @@ const amount = ref<number>()
                   </template>
                 </BaseDropdownItem>
                 <BaseDropdownItem
-                  to="/"
+                  to="#"
                   title="Trade"
                   text="View opportunities"
                 >
@@ -310,7 +310,7 @@ const amount = ref<number>()
                 </BaseDropdownItem>
                 <BaseDropdownDivide />
                 <BaseDropdownItem
-                  to="/"
+                  to="#"
                   title="Wallet"
                   text="Manage your wallet"
                 >
@@ -336,7 +336,7 @@ const amount = ref<number>()
             </BaseHeading>
             <div>
               <NuxtLink
-                to="/"
+                to="#"
                 class="text-muted-400 hover:text-primary-500 font-sans text-sm underline-offset-4 transition-colors duration-300 hover:underline"
               >
                 View All
@@ -521,7 +521,7 @@ const amount = ref<number>()
                   </p>
                   <div class="mt-2 flex justify-end">
                     <NuxtLink
-                      to="/"
+                      to="#"
                       class="text-primary-500 font-sans text-sm underline-offset-4 hover:underline"
                     >
                       Details
@@ -554,7 +554,7 @@ const amount = ref<number>()
                 </BaseHeading>
                 <div>
                   <NuxtLink
-                    to="/"
+                    to="#"
                     class="text-muted-400 hover:text-primary-500 font-sans text-sm underline-offset-4 transition-colors duration-300 hover:underline"
                   >
                     See All
@@ -577,7 +577,7 @@ const amount = ref<number>()
                   />
                 </div>
                 <NuxtLink
-                  to="/"
+                  to="#"
                   class="text-muted-400 hover:text-primary-500 font-sans text-sm underline-offset-4 hover:underline"
                 >
                   See all contacts
@@ -656,7 +656,7 @@ const amount = ref<number>()
                 </BaseHeading>
                 <div>
                   <NuxtLink
-                    to="/"
+                    to="#"
                     class="text-muted-400 hover:text-primary-500 font-sans text-sm underline-offset-4 transition-colors duration-300 hover:underline"
                   >
                     View Reports

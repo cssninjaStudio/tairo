@@ -16,7 +16,7 @@ const initialState = ref<Project>({
     logo: undefined,
     location: undefined,
   },
-  files: undefined,
+  files: null,
   avatar: null,
   team: [],
   tools: [],

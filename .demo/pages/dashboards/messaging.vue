@@ -13,8 +13,6 @@ definePageMeta({
 })
 
 const { open } = usePanels()
-const app = useAppConfig()
-const panels = reactive(usePanels())
 
 const conversations = ref([
   {

@@ -93,7 +93,7 @@ const selectedProject = ref('')
                 Ex: Delivery app project...
               </span>
             </template>
-            <template #item="{ item, active, selected }">
+            <template #item="{ item, selected }">
               <NuxtLink
                 :to="`/layouts/projects/details/${item.slug}`"
                 class="block"
@@ -104,7 +104,6 @@ const selectedProject = ref('')
                     text: `${item.customer.name} | ${item.customer.text}`,
                     media: item.customer.logo,
                   }"
-                  :active="active"
                   :selected="selected"
                 />
               </NuxtLink>

@@ -10,6 +10,8 @@ definePageMeta({
     order: 55,
   },
 })
+
+const input = ref('')
 </script>
 
 <template>
@@ -17,6 +19,7 @@ definePageMeta({
     <TairoContentWrapper>
       <template #left>
         <BaseInput
+          v-model="input"
           icon="lucide:search"
           placeholder="Filter users..."
           :classes="{

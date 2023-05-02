@@ -10,6 +10,7 @@ definePageMeta({
     order: 56,
   },
 })
+const input = ref('')
 </script>
 
 <template>
@@ -18,6 +19,7 @@ definePageMeta({
       <template #left>
         <BaseInput
           icon="lucide:search"
+          v-model="input"
           placeholder="Filter users..."
           :classes="{
             wrapper: 'w-full sm:w-auto',

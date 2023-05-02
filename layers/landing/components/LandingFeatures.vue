@@ -45,7 +45,7 @@
           Vite is a next generation frontend tooling that significantly improves
           frontend development.
         </LandingFeaturesTile>
-        <LandingFeaturesTile title="Node 18 LTS" icon="teenyicons:nodejs-solid">
+        <LandingFeaturesTile title="Node LTS" icon="teenyicons:nodejs-solid">
           Node 18 is one of the latest versions of Node.js, a powerful
           javascript server engine.
         </LandingFeaturesTile>

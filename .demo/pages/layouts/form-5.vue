@@ -38,7 +38,6 @@ const charsArray = ref<string[]>([])
 
 function checkStrength() {
   if (!password.value) return (passwordScore.value = 0)
-  // passwordScore.value = zxcvbn(password.value).score + 1
   passwordScore.value = 1
 }
 

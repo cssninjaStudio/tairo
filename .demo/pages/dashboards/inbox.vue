@@ -17,8 +17,6 @@ definePageMeta({
 })
 
 const split = ref()
-const app = useAppConfig()
-const panels = reactive(usePanels())
 const search = ref('')
 const { md } = useTailwindBreakpoints()
 

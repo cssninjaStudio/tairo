@@ -7,23 +7,9 @@ const props = defineProps<{
   reversed?: boolean
 }>()
 const { open } = usePanels()
-const app = useAppConfig()
-const panels = reactive(usePanels())
 const { primary } = useTailwindColors()
 
 const colorMode = useColorMode()
-const darkmode = computed({
-  get() {
-    return colorMode.value === 'dark'
-  },
-  set(value) {
-    if (value) {
-      colorMode.preference = 'dark'
-    } else {
-      colorMode.preference = 'light'
-    }
-  },
-})
 
 const selectedFeature = ref()
 const selectedFeatureLatLng = ref()
@@ -257,7 +243,7 @@ function selectFeature(feature: any) {
 }
 const config = useRuntimeConfig()
 if (process.dev) {
-  // this block will be removed in production build
+  // This block will be removed in production build
 
   if (!config.public.mapboxToken) {
     console.warn(
@@ -326,9 +312,6 @@ watchEffect(
     const { geometry, properties } = feature
     const { name } = properties
     const coordinates = geometry.coordinates.slice()
-    // const logo = selectedFeature.value.properties.logo
-    // const openingCount = selectedFeature.value.properties.openingCount
-    // const description = selectedFeature.value.properties.description
 
     console.log('zooming at: ', properties, coordinates)
 

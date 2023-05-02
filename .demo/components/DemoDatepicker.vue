@@ -90,7 +90,6 @@ function getDateValue(date: any) {
   let selectedDate = new Date(year.value, month.value, date)
   datepickerValue.value = formatDateForDisplay(selectedDate)
   isSelectedDate(date)
-  // showDatepicker.value = false;
 }
 
 function getNoOfDays() {

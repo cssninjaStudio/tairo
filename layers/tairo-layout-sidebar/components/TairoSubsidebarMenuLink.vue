@@ -4,7 +4,7 @@ const props = defineProps<{
   to: string
 }>()
 
-const sidebar = reactive(useSidebar())
+const { toggle } = useSidebar()
 const { xl } = useTailwindBreakpoints()
 
 function onClick() {
@@ -13,7 +13,7 @@ function onClick() {
     return
   }
 
-  sidebar.toggle()
+  toggle()
 }
 </script>
 

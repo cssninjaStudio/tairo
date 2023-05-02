@@ -101,12 +101,8 @@ export default defineNuxtConfig({
       // This enables vue-axe to work (used to check a11y - see .demo/plugins/vue-axe.ts)
       'process.env.ENABLE_A11Y_AXE': process.env.ENABLE_A11Y_AXE,
     },
-    optimizeDeps: {
-      // disabled: false,
-    },
     build: {
       target: 'esnext',
-      // commonjsOptions: { include: [] },
     },
   },
 

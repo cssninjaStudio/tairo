@@ -49,11 +49,6 @@ function useDemoRadialGaugeAlt() {
         },
       },
     },
-    grid: {
-      padding: {
-        // top: -10
-      },
-    },
     fill: {
       type: 'gradient',
       gradient: {

@@ -12,20 +12,20 @@ const props = withDefaults(
   },
 )
 
-const sidebar = reactive(useSidebar())
+const { isOpen, current, sidebars } = useSidebar()
 
 const startSidebars = computed(() =>
-  sidebar.sidebars?.filter(
+  sidebars.value?.filter(
     (sidebar) => !sidebar.position || sidebar.position === 'start',
   ),
 )
 const endSidebars = computed(() =>
-  sidebar.sidebars?.filter((sidebar) => sidebar.position === 'end'),
+  sidebars.value?.filter((sidebar) => sidebar.position === 'end'),
 )
 
 const subsidebarEnabled = computed(() => {
   return Boolean(
-    props.subsidebar !== false && sidebar.current?.subsidebar?.component,
+    props.subsidebar !== false && current.value?.subsidebar?.component,
   )
 })
 </script>
@@ -37,7 +37,7 @@ const subsidebarEnabled = computed(() => {
     <!-- Icon sidebar -->
     <div
       class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 pointer-events-auto relative z-20 flex h-full w-[80px] flex-col border-r bg-white transition-all duration-300"
-      :class="sidebar.isOpen ? '' : '-translate-x-full xl:translate-x-0'"
+      :class="isOpen ? '' : '-translate-x-full xl:translate-x-0'"
     >
       <slot></slot>
 
@@ -68,7 +68,7 @@ const subsidebarEnabled = computed(() => {
       v-if="subsidebarEnabled"
       class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 pointer-events-auto relative z-10 h-full w-[220px] border-r bg-white transition-all duration-300"
       :class="
-        sidebar.isOpen
+        isOpen
           ? ''
           : 'rtl:translate-x-[calc(100%_+_80px)] translate-x-[calc(-100%_-_80px)]'
       "
@@ -76,9 +76,9 @@ const subsidebarEnabled = computed(() => {
       <slot name="subnav">
         <KeepAlive>
           <component
-            :is="resolveComponent(sidebar.current.subsidebar?.component)"
-            :key="sidebar.current?.subsidebar?.component"
-            v-if="sidebar.current?.subsidebar?.component"
+            :is="resolveComponent(current.subsidebar?.component)"
+            :key="current?.subsidebar?.component"
+            v-if="current?.subsidebar?.component"
           ></component>
         </KeepAlive>
       </slot>

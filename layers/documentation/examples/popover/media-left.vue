@@ -22,7 +22,7 @@
           footer-title="$150/night"
           footer-text="14 Columbia Av., Block C"
           link-label="Rent Now"
-          to="/"
+          to="#"
         />
       </template>
     </TairoPopover>

@@ -2,16 +2,7 @@
 import type { RouteRecordRaw } from 'vue-router'
 
 const isOpen = useState('search-open', () => false)
-// const isOpen = ref(false)
 const search = ref('')
-
-// this is a local directive (it begins with V..., usable with v-focus)
-// that is used to force the focus on input when mounted
-const VFocus = {
-  mounted(el: HTMLInputElement) {
-    el.focus()
-  },
-}
 
 onKeyStroke('k', (event) => {
   if (event.ctrlKey) {
@@ -21,7 +12,7 @@ onKeyStroke('k', (event) => {
   }
 })
 
-const { data: contentDocs, pending } = useAsyncData(
+const { data: contentDocs } = useAsyncData(
   () => {
     if (!search.value) return Promise.resolve([] as any[])
 
@@ -104,8 +95,9 @@ const hasResult = computed(() =>
 
 function onClick() {
   isOpen.value = false
-  // search.value = ''
 }
+
+const metaKey = useMetaKey()
 </script>
 
 <template>
@@ -137,7 +129,7 @@ function onClick() {
                   navigate with <kbd>↑</kbd> and <kbd>↓</kbd>
                 </span>
                 <span v-else-if="!search" class="text-xs opacity-60">
-                  press <kbd>ctrl</kbd> + <kbd>k</kbd> to open
+                  press <kbd>{{ metaKey }}</kbd> + <kbd>k</kbd> to open
                 </span>
               </span>
             </template>

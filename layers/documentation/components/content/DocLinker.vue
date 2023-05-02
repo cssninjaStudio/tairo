@@ -22,9 +22,6 @@ const { pending, data } = useAsyncData(
 
 const tooltip = computed(() => {
   if (!data.value?._path) return `Documentation for ${props.to} is missing`
-  // if (data.value._path === route.path) {
-  //   return `Currently viewing ${props.to} documentation`
-  // }
   return `Read ${props.to} docs`
 })
 </script>

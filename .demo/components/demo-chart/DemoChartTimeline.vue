@@ -36,9 +36,9 @@ function useDemoTimeline() {
       enabled: true,
       formatter: function (val: string, opts: any) {
         const label = opts.w.globals.labels[opts.dataPointIndex]
-        const a = val[0] // todo: use date-fns
-        const b = val[1] // todo: use date-fns
-        const diff = 0 // b.diff(a, 'days') // todo: use date-fns
+        const a = val[0]
+        const b = val[1]
+        const diff = 0
         return label + ': ' + diff + (diff > 1 ? 'D' : 'd')
       },
       style: {

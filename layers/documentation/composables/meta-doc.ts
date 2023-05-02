@@ -78,7 +78,6 @@ export async function useDocumentationMeta(
           `// this type is generated to show you all possible values`,
           `type ${upperFirst(prop.name)}Data = ${prop.type
             .replace(/{ /g, '{\n ')
-            // .replace(/}/g, '\n}')
             .replace(/; ([a-z])/g, ';\n $1')
             .replace(/; /g, ';\n')}\n\nconst ${prop.name} = ref<${upperFirst(
             prop.name,
@@ -87,12 +86,7 @@ export async function useDocumentationMeta(
       )
     } else {
       code.push(
-        [
-          // `// you can use a const or a ref/computed`,
-          // `// or directly set value in template`,
-          // `// with one of those valid tyescripta types`,
-          `const value = ref<${prop.type}>(${prop.default || ''})`,
-        ].join('\n'),
+        [`const value = ref<${prop.type}>(${prop.default || ''})`].join('\n'),
       )
     }
 
@@ -120,18 +114,6 @@ export async function useDocumentationMeta(
 
     code.push(`</template>`)
 
-    // code.push(
-    //   [
-    //     ``,
-    //     `<template>`,
-    //     `  <${name.value}`,
-    //     `    :${kebabCase(prop.name)}="${prop.name}"`,
-    //     `  />`,
-    //     `</template>`,
-    //     '```',
-    //   ].join('\n'),
-    // )
-
     return code.join('\n')
   }
 
@@ -148,7 +130,6 @@ export async function useDocumentationMeta(
           `// this type is generated to show you all possible values`,
           `type ${upperFirst(prop.name)}Data = ${prop.type
             .replace(/{ /g, '{\n ')
-            // .replace(/}/g, '\n}')
             .replace(/; ([a-z])/g, ';\n $1')
             .replace(/; /g, ';\n')}\n\nconst ${prop.name} = ref<${upperFirst(
             prop.name,
@@ -157,12 +138,7 @@ export async function useDocumentationMeta(
       )
     } else {
       code.push(
-        [
-          // `// you can use a const or a ref/computed`,
-          // `// or directly set value in template`,
-          // `// with one of those valid tyescripta types`,
-          `const ${prop.name} = ref<${prop.type}>(${defaultValue})`,
-        ].join('\n'),
+        [`const ${prop.name} = ref<${prop.type}>(${defaultValue})`].join('\n'),
       )
     }
 

@@ -194,11 +194,6 @@ export default defineAppConfig({
                 to: '/documentation/shuriken-ui/forms/input',
                 icon: { name: 'ph:sidebar-duotone', class: 'w-4 h-4' },
               },
-              // {
-              //   name: 'Collapse 3',
-              //   to: '#link-3',
-              //   icon: { name: 'ph:sidebar-duotone', class: 'w-5 h-5' },
-              // },
             ],
           },
           {

@@ -21,6 +21,10 @@ const inputElements = ref<any[]>([])
 const correctPin = ref('1234')
 const onlyCheckOnLastFieldInput = ref(true)
 
+const email = ref('')
+const tel = ref('')
+const code = ref('')
+
 function goToStep(n: number) {
   loading.value = true
   const timer = setTimeout(() => {
@@ -250,7 +254,7 @@ const validatePin = computed(() => {
                     >Continue</BaseButton
                   >
                   <NuxtLink
-                    to="/"
+                    to="/dashboard"
                     class="text-muted-400 hover:text-primary-500 mt-4 text-xs font-medium underline-offset-4 transition-colors duration-300 hover:underline"
                     >No thanks, I want to skip</NuxtLink
                   >
@@ -295,6 +299,7 @@ const validatePin = computed(() => {
           <div class="mx-auto w-full max-w-sm py-6">
             <BaseInput
               v-if="twoFaMode === 'email_address'"
+              v-model="email"
               icon="ph:envelope-duotone"
               shape="curved"
               placeholder="Ex: johndoe@gmail.com"
@@ -306,6 +311,7 @@ const validatePin = computed(() => {
             />
             <BaseInput
               v-else-if="twoFaMode === 'phone_number'"
+              v-model="tel"
               icon="ph:device-mobile-speaker-duotone"
               shape="curved"
               placeholder="Ex: +15554815659"
@@ -331,6 +337,7 @@ const validatePin = computed(() => {
                 </div>
               </div>
               <BaseInput
+                v-model="code"
                 icon="ph:fingerprint-duotone"
                 shape="curved"
                 placeholder="Ex: efcdwdeg16jei85"

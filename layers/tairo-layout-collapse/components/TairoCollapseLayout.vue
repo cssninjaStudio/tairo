@@ -17,8 +17,7 @@ const props = withDefaults(
 )
 
 const app = useAppConfig()
-const collapse = reactive(useCollapse())
-const panels = reactive(usePanels())
+const { isOpen } = useCollapse()
 
 const collapseEnabled = computed(() => {
   return (
@@ -51,7 +50,7 @@ const mainClass = computed(() => {
     'bg-muted-100 dark:bg-muted-900 relative min-h-screen w-full overflow-x-hidden px-4 transition-all duration-300 xl:px-10',
   ]
 
-  if (collapse.isOpen) {
+  if (isOpen.value) {
     list.push('lg:max-w-[calc(100%_-_250px)] lg:ms-[250px]')
   } else {
     list.push('lg:max-w-[calc(100%_-_80px)] lg:ms-[80px]')

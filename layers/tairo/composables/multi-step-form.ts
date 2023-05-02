@@ -18,16 +18,21 @@ export interface MultiStepFormConfig<
   initialState: MaybeRefOrGetter<T>
   steps: StepForm<D>[]
 
-  // eslint-disable-next-line no-use-before-define
   onSubmit?: (data: T, ctx: MultiStepFormContext<T, D>) => Promise<void> | void
 
   onError?: (
     error: any,
-    // eslint-disable-next-line no-use-before-define
     ctx: MultiStepFormContext<T, D>,
   ) => Promise<void> | void
 }
 
+/**
+ * This function is used to create a multi-step form context.
+ * It allows you to create a multi-step form with rules and steps and
+ * track the current step, the progress, the data, etc.
+ *
+ * @see .demo/pages/wizard.vue
+ */
 export function createMultiStepForm<
   T extends Record<string, any>,
   D extends Record<string, any>,

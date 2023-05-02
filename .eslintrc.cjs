@@ -35,8 +35,6 @@ module.exports = {
     'vue/multi-word-component-names': 'off',
     'vue/define-macros-order': 'error',
 
-    // 'import/default': 'off',
-    //   'vue/script-setup-uses-vars': 'error',
     'tailwindcss/no-custom-classname': 'off',
     'tailwindcss/classnames-order': 'error',
 

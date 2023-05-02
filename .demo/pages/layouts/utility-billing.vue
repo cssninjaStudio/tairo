@@ -396,21 +396,21 @@ const billingCycles = ref('monthly')
             <div class="space-y-6">
               <BaseSwitchBall
                 id="billing-ball-1"
-                :checked="false"
+                :model-value="false"
                 label="Invoicing"
                 sublabel="Send new invoices to my inbox"
                 color="primary"
               />
               <BaseSwitchBall
                 id="billing-ball-2"
-                :checked="true"
+                :model-value="true"
                 label="Warnings"
                 sublabel="Warn me before the end of the billing period"
                 color="primary"
               />
               <BaseSwitchBall
                 id="billing-ball-3"
-                :checked="true"
+                :model-value="true"
                 label="Reports"
                 sublabel="Send monthly reports to my inbox"
                 color="primary"

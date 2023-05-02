@@ -1,5 +1,10 @@
 import { useCssVar } from '@vueuse/core'
 
+/**
+ * This function is used to expose Tailwind colors as reactive variables.
+ *
+ * @see layers/tairo/tailwind/plugin-expose-colors.ts
+ */
 export function useTailwindColors() {
   const primary = process.server
     ? ref('transparent')
@@ -38,6 +43,9 @@ export function useTailwindColors() {
   }
 }
 
+/**
+ * This function is used to expose Tailwind breakpoints as reactive variables.
+ */
 export function useTailwindBreakpoints() {
   const xs = useMediaQuery('(max-width: 639px)')
   const sm = useMediaQuery('(min-width: 640px)')

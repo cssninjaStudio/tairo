@@ -2,6 +2,8 @@
 const { x, y } = useWindowScroll()
 const isSearchOpen = useState('search-open', () => false)
 const isMobileOpen = ref(false)
+
+const metaKey = useMetaKey()
 </script>
 
 <template>
@@ -71,7 +73,9 @@ const isMobileOpen = ref(false)
                   : ' border-transparent'
               "
             >
-              <kbd class="font-sans text-sm tracking-wide">ctrl + k</kbd>
+              <kbd class="font-sans text-sm tracking-wide">
+                {{ metaKey }} + k
+              </kbd>
             </span>
           </button>
         </div>
@@ -81,7 +85,7 @@ const isMobileOpen = ref(false)
         <BaseButton
           shape="curved"
           color="primary"
-          to="/"
+          to="https://go.cssninja.io/buy-tairo"
           class="ltablet:!flex !hidden lg:!flex"
         >
           Buy Tairo

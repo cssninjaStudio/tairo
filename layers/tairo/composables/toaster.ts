@@ -4,6 +4,7 @@ import type {
   NinjaToasterBaseProps,
 } from '@cssninja/nuxt-toaster'
 
+// This type infer the props of TairoToaster component
 type TairoToasterProps = Omit<
   InstanceType<typeof TairoToaster>['$props'],
   keyof DefaultProps
@@ -12,6 +13,9 @@ type TairoToasterProps = Omit<
 export function useToaster() {
   const $nt = useNinjaToaster()
 
+  /**
+   * Display a TairoToaster component
+   */
   function show(props: TairoToasterProps, options?: NinjaToasterBaseProps) {
     return $nt.showComponent('TairoToaster', {
       props,

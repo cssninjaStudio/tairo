@@ -65,8 +65,6 @@ function getTocItemClass(item: any) {
 
 async function loadTocItemFromDom() {
   await nextTick()
-  // wait page transition
-  // await new Promise((resolve) => setTimeout(resolve, 200))
 
   const elements = document.querySelectorAll('.tairo-toc-anchor')
 

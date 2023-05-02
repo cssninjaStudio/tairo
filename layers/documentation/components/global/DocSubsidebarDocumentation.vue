@@ -3,20 +3,9 @@ defineEmits<{
   (event: 'close'): void
 }>()
 
-// const { docRoutesByCategory: routesByCategory, categoryOrders } =
-//   await useDocumentationRoutes()
-
 const route = useRoute()
 
-const show = reactive({
-  'Base Forms': true,
-  'Base UI Elements': true,
-  'Layout Elements': true,
-  Addons: true,
-  Uncategorized: true,
-} as Record<string, boolean>)
-
-const sidebar = reactive(useSidebar())
+const { toggle } = useSidebar()
 const { xl } = useTailwindBreakpoints()
 
 function onLinkClick() {
@@ -24,7 +13,7 @@ function onLinkClick() {
     return
   }
 
-  sidebar.toggle()
+  toggle()
 }
 
 const { data: navigation } = await useAsyncData('navigation', () =>

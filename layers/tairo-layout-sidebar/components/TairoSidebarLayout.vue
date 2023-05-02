@@ -19,12 +19,12 @@ const props = withDefaults(
 )
 
 const app = useAppConfig()
-const sidebar = reactive(useSidebar())
-sidebar.setup()
+const { setup, currentName, isOpen } = useSidebar()
+setup()
 
 onUnmounted(() => {
-  sidebar.currentName = ''
-  sidebar.isOpen = undefined
+  currentName.value = ''
+  isOpen.value = undefined
 })
 
 const sidebarEnabled = computed(() => {
@@ -57,7 +57,7 @@ const wrapperClass = computed(() => {
     'bg-muted-100 dark:bg-muted-900 relative min-h-screen w-full overflow-x-hidden px-4 transition-all duration-300 xl:px-10',
   ]
 
-  if (sidebar.isOpen) {
+  if (isOpen.value) {
     list.push('xl:max-w-[calc(100%_-_300px)] xl:ms-[300px]')
   } else {
     list.push('xl:max-w-[calc(100%_-_80px)] xl:ms-[80px]')

@@ -77,28 +77,6 @@ function removeTeammate(index: number) {
   }
 }
 
-// function setTeammateRole (
-//   teammate: Omit<TeamMember, 'role'>,
-//   role: TeamMemberRole,
-// ) {
-//   const index = project.team?.findIndex((item) => {
-//     return item.name === teammate.name
-//   })
-
-//   if (index && index > -1 && project.team) {
-//     project.team[index].role = role
-//   }
-// }
-
-// function removeTeammate(teammate: Omit<TeamMember, 'role'>) {
-//   const index = project.team?.findIndex((item) => {
-//     return item.name === teammate.name
-//   })
-//   if (index && index > -1) {
-//     project.team?.splice(index, 1)
-//   }
-// }
-
 function getRoleLevel(teammate: TeamMember) {
   switch (teammate.role) {
     case 'collaborator':

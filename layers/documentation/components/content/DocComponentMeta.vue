@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { kebabCase } from 'scule'
-// import { useDocumentationMeta } from '../../composables/meta-doc'
 
 const props = defineProps<{
   name: string
@@ -32,13 +31,6 @@ function wrapExternalLinks(string: string) {
       >
         <TairoTocAnchor :label="`<${docs.meta?.pascalName}>`" />
       </BaseHeading>
-
-      <!-- <div
-        v-if="props.tag"
-        class="bg-muted-200 text-muted-600 dark:bg-muted-800 dark:text-muted-500 ms-3 hidden flex-none rounded-md px-2 py-1.5 text-xs font-semibold tracking-wide lg:block"
-      >
-        {{ props.tag }}
-      </div> -->
     </div>
     <div
       class="doc-markdown border-muted-200 divansition-shadow dark:border-muted-700 dark:bg-muted-800 hover:shadow-muted-300/30 dark:hover:shadow-muted-800/20 rounded-lg border bg-white duration-300 hover:shadow-lg"

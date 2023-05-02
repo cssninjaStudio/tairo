@@ -48,7 +48,7 @@ function isChildActive(link: {
   )
 }
 
-const sidebar = reactive(useSidebar())
+const { toggle } = useSidebar()
 const { xl } = useTailwindBreakpoints()
 
 function onLinkClick() {
@@ -56,7 +56,7 @@ function onLinkClick() {
     return
   }
 
-  sidebar.toggle()
+  toggle()
 }
 </script>
 

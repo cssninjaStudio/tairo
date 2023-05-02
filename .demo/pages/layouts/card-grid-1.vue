@@ -127,7 +127,9 @@ const { data, pending, error, refresh } = await useFetch(
                     <NuxtLink
                       v-for="link in item.socialProfiles"
                       :key="link.name"
-                      to="/"
+                      :to="link.url"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       class="border-muted-200 dark:border-muted-700 hover:border-primary-500 dark:hover:border-primary-500 dark:bg-muted-800 text-muted-400 hover:text-primary-500 shadow-muted-300/30 dark:shadow-muted-700/30 flex h-8 w-8 items-center justify-center rounded-full border bg-white shadow-lg transition-all duration-300"
                     >
                       <Icon :name="link.icon" class="h-3 w-3" />

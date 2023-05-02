@@ -445,7 +445,7 @@ function openTaskPanel(id: number, tasks: any) {
                 elevated-hover
                 class="hover:!border-primary-500 relative"
               >
-                <NuxtLink to="/">
+                <NuxtLink to="#">
                   <Icon
                     name="uiw:star-on"
                     class="text-primary-500 absolute end-6 top-6"
@@ -484,7 +484,7 @@ function openTaskPanel(id: number, tasks: any) {
                 elevated-hover
                 class="hover:!border-primary-500"
               >
-                <NuxtLink to="/">
+                <NuxtLink to="#">
                   <div class="flex flex-col items-center p-5 sm:flex-row">
                     <div class="flex flex-col gap-3 sm:flex-row">
                       <BaseAvatar

@@ -1,7 +1,6 @@
 <script setup lang="ts">
-const collapse = reactive(useCollapse())
+const { isOpen, isMobileOpen } = useCollapse()
 
-const app = useAppConfig()
 const isSearchOpen = useState('search-open', () => false)
 </script>
 
@@ -19,7 +18,7 @@ const isSearchOpen = useState('search-open', () => false)
     <button
       type="button"
       class="nui-mask nui-mask-blob hover:bg-muted-200 dark:hover:bg-muted-700/60 text-muted-500 dark:text-muted-400 hidden h-10 w-10 cursor-pointer items-center justify-center transition-colors duration-300"
-      :class="!collapse.isOpen ? 'hidden' : 'lg:flex'"
+      :class="!isOpen ? 'hidden' : 'lg:flex'"
       @click="isSearchOpen = true"
     >
       <Icon name="lucide:search" class="h-4 w-4" />
@@ -29,7 +28,7 @@ const isSearchOpen = useState('search-open', () => false)
     <button
       type="button"
       class="nui-mask nui-mask-blob hover:bg-muted-200 dark:hover:bg-muted-800 text-muted-700 dark:text-muted-400 flex h-10 w-10 cursor-pointer items-center justify-center transition-colors duration-300 lg:hidden"
-      @click="collapse.isMobileOpen = false"
+      @click="isMobileOpen = false"
     >
       <Icon name="lucide:arrow-left" class="h-5 w-5" />
     </button>

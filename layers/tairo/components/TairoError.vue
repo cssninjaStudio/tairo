@@ -31,14 +31,6 @@ const app = useAppConfig()
 const handleError = () => clearError({ redirect: '/' })
 const retry = () => clearError()
 
-// this is a local directive (it begins with V..., usable with v-focus)
-// that is used to force the focus on input when mounted
-const VFocus = {
-  mounted(el: HTMLInputElement) {
-    el.focus()
-  },
-}
-
 // Show/hide demo stack trace
 const showStackTrace = ref(true)
 </script>

@@ -25,15 +25,6 @@ definePageMeta({
         >
           <TairoLogoText class="h-7" />
         </NuxtLink>
-        <!-- div class="flex items-center gap-8">
-          <BaseButton shape="curved" condensed color="muted">Status</BaseButton>
-          <BaseButton shape="curved" condensed color="none"
-            >Maintenance</BaseButton
-          >
-          <BaseButton shape="curved" condensed color="none"
-            >Incidents</BaseButton
-          >
-        </div -->
         <div class="flex items-center gap-4">
           <BaseThemeToggle />
         </div>

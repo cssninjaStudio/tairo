@@ -6,15 +6,15 @@ const props = defineProps<{
   sidebar: SidebarNavigationItemConfig
 }>()
 
-const sidebar = reactive(useSidebar())
+const { currentName, isOpen } = useSidebar()
 
 function onSidebarItemClick() {
   if (typeof props.sidebar.click === 'function') {
     return props.sidebar.click()
   }
 
-  sidebar.currentName = props.sidebar.title
-  sidebar.isOpen = true
+  currentName.value = props.sidebar.title
+  isOpen.value = true
 }
 </script>
 
@@ -41,7 +41,7 @@ function onSidebarItemClick() {
       type="button"
       class="flex h-12 w-12 items-center justify-center rounded-2xl transition-colors duration-300"
       :class="
-        sidebar.currentName === props.sidebar.title
+        currentName === props.sidebar.title
           ? 'bg-primary-100 text-primary-500 dark:bg-primary-500/10'
           : 'text-muted-400'
       "
