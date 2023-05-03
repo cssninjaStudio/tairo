@@ -109,6 +109,8 @@ const onSubmit = handleSubmit(async (values) => {
           class="max-w-xl mx-auto"
           src="/img/illustrations/people.svg"
           alt="Login illustration"
+          width="1200"
+          height="996"
         />
       </div>
     </div>
