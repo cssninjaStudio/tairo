@@ -93,9 +93,7 @@ const onSubmit = handleSubmit(async (values) => {
     >
       <div class="dark:bg-muted-800 relative mx-auto w-full max-w-sm bg-white">
         <!--Nav-->
-        <div
-          class="absolute -top-16 end-0 flex w-full items-center justify-between"
-        >
+        <div class="flex w-full items-center justify-between">
           <NuxtLink
             to="/dashboards"
             class="text-muted-400 hover:text-primary-500 flex items-center gap-2 font-sans font-medium transition-colors duration-300"
@@ -218,7 +216,7 @@ const onSubmit = handleSubmit(async (values) => {
                     :model-value="field.value"
                     :disabled="isSubmitting"
                     shape="rounded"
-                    label="Trust this device for 60 days"
+                    label="Trust for 60 days"
                     color="primary"
                     @update:model-value="handleChange"
                     @blur="handleBlur"
@@ -272,6 +270,11 @@ const onSubmit = handleSubmit(async (values) => {
     >
       <div class="mx-auto w-full max-w-4xl">
         <!--Media image-->
+        <img
+          class="max-w-md mx-auto"
+          src="/img/illustrations/magician.svg"
+          alt="Login illustration"
+        />
       </div>
     </div>
   </div>
