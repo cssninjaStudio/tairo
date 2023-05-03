@@ -1,0 +1,13 @@
+node_modules
+*.log
+*.zip
+.nuxt
+nuxt.d.ts
+.output
+.env
+*Zone.Identifier
+.demo/public/shiki/themes/*.json
+.demo/public/shiki/languages/*.json
+.demo/public/shiki/dist/*.wasm
+!.demo/public/shiki/themes/cssninja-dark-theme.json
+!.demo/public/shiki/themes/cssninja-light-theme.json

@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "name": "@cssninja/tairo-landing",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "./nuxt.config.ts",
+  "scripts": {
+    "clean": "rimraf .nuxt .output node_modules"
+  },
+  "devDependencies": {
+    "@nuxt/image-edge": "1.0.0-28050764.aaee7ac",
+    "nuxt": "3.4.3"
+  }
+}

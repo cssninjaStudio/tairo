@@ -1,0 +1,12 @@
+  
+# Ignore artifacts:
+build
+coverage
+
+# Ignore all HTML files:
+*.html
+.nuxt
+.output
+CHANGELOG.md
+.demo/public/
+layers/documentation/content/**/*.md

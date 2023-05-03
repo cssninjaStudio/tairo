@@ -1,0 +1,14 @@
+{
+  // https://v3.nuxtjs.org/concepts/typescript
+  //
+  // You have to select the path to your tsconfig.json layers
+  // - ./.app/.nuxt/tsconfig.json - for the quickstarter app
+  // - ./.demo/.nuxt/tsconfig.json - for the demo app
+  //
+  "extends": "./.demo/.nuxt/tsconfig.json",
+  "compilerOptions": {
+    "target": "esnext",
+    // "moduleResolution": "bundler",
+    "types": ["vite/client", "unplugin-fonts/client"]
+  }
+}
