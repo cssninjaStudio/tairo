@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "@cssninja/tairo",
+  "name": "tairo",
   "version": "1.0.0",
   "type": "module",
   "main": "./nuxt.config.ts",
