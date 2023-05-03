@@ -1,5 +1,11 @@
 import { isProduction } from 'std-env'
 
+import {
+  demoRules,
+  documentationRules,
+  landingRules,
+} from './config/routes-rules'
+
 export default defineNuxtConfig({
   extends: [
     /**
@@ -67,69 +73,9 @@ export default defineNuxtConfig({
     },
   },
   routeRules: {
-    '/img/**': {
-      headers: {
-        'Cache-Control': 'public, max-age=31536000',
-      },
-    },
-    '/shiki/**': {
-      headers: {
-        'Cache-Control': 'public, max-age=31536000',
-      },
-    },
-    '/api/**': {
-      headers: {
-        'Cache-Control': 'public, max-age=31536000',
-      },
-    },
-    '/dashboards/**': {
-      prerender: true,
-      cache: {
-        maxAge: 3600,
-        swr: true,
-        staleMaxAge: 3600,
-      },
-      headers: {
-        'Cache-Control':
-          'public, max-age=3600, s-maxage=3600, stale-while-revalidate=3600, stale-if-error=3600',
-      },
-    },
-    '/layouts/**': {
-      prerender: true,
-      cache: {
-        maxAge: 3600,
-        swr: true,
-        staleMaxAge: 3600,
-      },
-      headers: {
-        'Cache-Control':
-          'public, max-age=3600, s-maxage=3600, stale-while-revalidate=3600, stale-if-error=3600',
-      },
-    },
-    '/wizard/**': {
-      prerender: true,
-      cache: {
-        maxAge: 3600,
-        swr: true,
-        staleMaxAge: 3600,
-      },
-      headers: {
-        'Cache-Control':
-          'public, max-age=3600, s-maxage=3600, stale-while-revalidate=3600, stale-if-error=3600',
-      },
-    },
-    '/auth/**': {
-      prerender: true,
-      cache: {
-        maxAge: 3600,
-        swr: true,
-        staleMaxAge: 3600,
-      },
-      headers: {
-        'Cache-Control':
-          'public, max-age=3600, s-maxage=3600, stale-while-revalidate=3600, stale-if-error=3600',
-      },
-    },
+    ...demoRules,
+    ...landingRules,
+    ...(process.env.ENABLE_DOCUMENTATION ? documentationRules : {}),
   },
 
   // build configuration
@@ -156,13 +102,6 @@ export default defineNuxtConfig({
         target: 'esnext',
       },
     },
-    // publicAssets: [
-    //   {
-    //     baseURL: 'img',
-    //     dir: 'public/img',
-    //     maxAge: 60 * 60 * 24 * 7, // 7 days
-    //   },
-    // ],
   },
   vite: {
     define: {
