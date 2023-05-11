@@ -85,10 +85,11 @@ export default defineAppConfig({
             to: '/dashboards/messaging',
           },
           {
-            title: 'Panels',
+            title: 'Layout Switcher',
             icon: { name: 'ph:square-half-duotone', class: 'w-5 h-5' },
             click: () => {
-              alert('clicked on layouts')
+              const isOpen = useState('switcher-open', () => false)
+              isOpen.value = true
             },
             position: 'end',
           },

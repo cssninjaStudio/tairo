@@ -44,10 +44,10 @@ const conversations = ref([
         time: '10:09 am',
         attachments: [
           {
-            type: 'image',
+            type: 'link',
             image: '/img/ux/13.png',
-            text: '',
-            url: undefined,
+            url: 'https://figma.com',
+            text: 'Figma design file by Maya',
           },
         ],
       },
@@ -77,7 +77,7 @@ const conversations = ref([
           {
             type: 'link',
             image: '/img/ux/11.png',
-            url: 'titan-accounting.io',
+            url: 'https://waveapps.com',
             text: 'Smart Accounting made easy for everyone',
           },
         ],
@@ -632,7 +632,7 @@ async function submitMessage() {
       </div>
       <!-- Conversations -->
       <div
-        class="ltablet:border-r border-muted-200 dark:border-muted-700 dark:bg-muted-800 relative z-10 h-screen w-16 bg-white sm:w-20 lg:border-r"
+        class="ltablet:border-r border-muted-200 dark:border-muted-700 dark:bg-muted-800 relative z-[9] h-screen w-16 bg-white sm:w-20 lg:border-r"
       >
         <div class="flex h-full flex-col">
           <button
@@ -840,7 +840,7 @@ async function submitMessage() {
                           />
                         </div>
                         <NuxtLink
-                          :to="`https://${attachment.url}`"
+                          :to="attachment.url"
                           v-else-if="attachment.type === 'link'"
                           class="dark:bg-muted-800 block max-w-xs rounded-2xl bg-white p-2"
                           :class="item.type === 'sent' ? 'ms-auto' : ''"
@@ -854,7 +854,7 @@ async function submitMessage() {
                             <p
                               class="text-muted-800 dark:text-muted-100 font-sans"
                             >
-                              {{ attachment.url }}
+                              {{ attachment.url?.replace(/(^\w+:|^)\/\//, '') }}
                             </p>
                             <p class="text-muted-400 font-sans text-xs">
                               {{ attachment.text }}
