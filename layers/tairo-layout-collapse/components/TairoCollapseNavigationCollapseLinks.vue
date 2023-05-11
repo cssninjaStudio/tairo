@@ -36,10 +36,17 @@ function onDropClick() {
       ref="buttonRef"
       @click.stop.prevent="onDropClick"
     >
-      <Icon :name="item.icon.name" :class="item.icon.class" class="shrink-0" />
+      <Icon
+        :name="item.icon.name"
+        :class="[item.icon.class, isActive && 'text-primary-500']"
+        class="shrink-0"
+      />
       <span
         class="block whitespace-nowrap font-sans text-sm"
-        :class="[isActive && 'underline', !props.expanded ? 'hidden' : 'block']"
+        :class="[
+          isActive && 'text-primary-500',
+          !props.expanded ? 'hidden' : 'block',
+        ]"
       >
         {{ item.name }}
       </span>

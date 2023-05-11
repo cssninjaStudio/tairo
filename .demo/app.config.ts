@@ -173,51 +173,108 @@ export default defineAppConfig({
           {
             name: 'Dashboards',
             icon: { name: 'ph:sidebar-duotone', class: 'w-5 h-5' },
-            to: '/toto',
-          },
-          {
-            name: 'Documentation',
-            icon: { name: 'ph:app-window-duotone', class: 'w-5 h-5' },
-            activePath: '/documentation',
+            activePath: '/dashboards',
             children: [
               {
-                name: 'Toto',
-                to: '/toto',
-                icon: { name: 'ph:sidebar-duotone', class: 'w-4 h-4' },
+                name: 'Personal v1',
+                to: '/dashboards',
+                icon: { name: 'ph:coffee-duotone', class: 'w-4 h-4' },
               },
               {
-                name: 'Collapse',
-                to: '/documentation/shuriken-ui/forms/listbox',
-                icon: { name: 'ph:sidebar-duotone', class: 'w-4 h-4' },
+                name: 'Personal v2',
+                to: '/dashboards/personal-2',
+                icon: { name: 'ph:chart-pie-slice-duotone', class: 'w-4 h-4' },
               },
               {
-                name: 'Collapse 2 ',
-                to: '/documentation/shuriken-ui/forms/input',
-                icon: { name: 'ph:sidebar-duotone', class: 'w-4 h-4' },
+                name: 'Personal v3',
+                to: '/dashboards/personal-3',
+                icon: { name: 'ph:cactus-duotone', class: 'w-4 h-4' },
+              },
+              {
+                name: 'Analytics',
+                to: '/dashboards/analytics',
+                icon: { name: 'ph:gauge-duotone', class: 'w-4 h-4' },
+              },
+              {
+                name: 'Stocks',
+                to: '/dashboards/stocks',
+                icon: { name: 'ph:coin-duotone', class: 'w-4 h-4' },
+              },
+              {
+                name: 'Sales',
+                to: '/dashboards/sales',
+                icon: { name: 'ph:shopping-cart-duotone', class: 'w-4 h-4' },
               },
             ],
           },
           {
-            name: 'List Widgets',
-            icon: { name: 'ph:chat-circle-duotone', class: 'w-5 h-5' },
-            to: '/dashboards/widgets/list',
+            name: 'Layouts',
+            icon: { name: 'ph:app-window-duotone', class: 'w-5 h-5' },
+            activePath: '/layouts',
+            children: [
+              {
+                name: 'List view v1',
+                to: '/layouts',
+                icon: { name: 'ph:list-bullets-duotone', class: 'w-4 h-4' },
+              },
+              {
+                name: 'Flex list v1',
+                to: '/layouts/flex-list-1',
+                icon: { name: 'ph:list-checks-duotone', class: 'w-4 h-4' },
+              },
+              {
+                name: 'Table list v1',
+                to: '/layouts/table-list-1',
+                icon: { name: 'ph:table-duotone', class: 'w-4 h-4' },
+              },
+              {
+                name: 'Card grid v1',
+                to: '/layouts/card-grid-1',
+                icon: { name: 'ph:circles-four-duotone', class: 'w-4 h-4' },
+              },
+            ],
           },
           {
-            name: 'Search',
-            icon: { name: 'ph:magnifying-glass-duotone', class: 'w-5 h-5' },
-            click: () => {
-              const { open } = usePanels()
-              open('search')
-            },
+            name: 'Widgets',
+            icon: { name: 'ph:nut-duotone', class: 'w-5 h-5' },
+            activePath: '/dashboards/widgets',
+            children: [
+              {
+                name: 'UI Widgets',
+                to: '/dashboards/widgets',
+                icon: { name: 'ph:square-half-duotone', class: 'w-4 h-4' },
+              },
+              {
+                name: 'Creative Widgets',
+                to: '/dashboards/widgets/creative',
+                icon: {
+                  name: 'ph:square-half-bottom-duotone',
+                  class: 'w-4 h-4',
+                },
+              },
+              {
+                name: 'List Widgets',
+                to: '/dashboards/widgets/list',
+                icon: { name: 'ph:square-half-duotone', class: 'w-4 h-4' },
+              },
+            ],
           },
           {
             name: 'Divider',
             divider: true,
           },
           {
-            name: 'Settings',
-            icon: { name: 'ph:gear-six-duotone', class: 'w-5 h-5' },
-            to: '/dashboards/analytics',
+            name: 'Wizard',
+            icon: { name: 'ph:magic-wand-duotone', class: 'w-5 h-5' },
+            to: '/wizard',
+          },
+          {
+            name: 'Customize',
+            icon: { name: 'ph:drop-half-bottom-duotone', class: 'w-5 h-5' },
+            click: () => {
+              const isSwitcherOpen = useState('switcher-open', () => false)
+              isSwitcherOpen.value = true
+            },
           },
         ],
       },

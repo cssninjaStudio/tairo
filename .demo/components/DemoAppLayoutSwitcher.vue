@@ -1,8 +1,8 @@
 <script setup lang="ts">
-const isOpen = useState('switcher-open', () => false)
+const isSwitcherOpen = useState('switcher-open', () => false)
 
 function closeModal() {
-  isOpen.value = false
+  isSwitcherOpen.value = false
 }
 
 const layouts = [
@@ -58,7 +58,7 @@ const colors = ref([
 </script>
 
 <template>
-  <TairoModal :open="isOpen" size="2xl" @close="isOpen = false">
+  <TairoModal :open="isSwitcherOpen" size="2xl" @close="isSwitcherOpen = false">
     <template #header>
       <!-- Header -->
       <div class="flex w-full items-center justify-between p-4 md:p-6">
