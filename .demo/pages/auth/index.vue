@@ -273,7 +273,13 @@ const onSubmit = handleSubmit(async (values) => {
         <img
           class="max-w-md mx-auto"
           src="/img/illustrations/magician.svg"
+<<<<<<< HEAD
           alt="Login illustration"
+=======
+          alt=""
+          width="500"
+          height="500"
+>>>>>>> e497d766ef5be0b4711b6247edc80edabe7e9b13
         />
       </div>
     </div>
