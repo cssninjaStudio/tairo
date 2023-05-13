@@ -153,6 +153,8 @@ const filteredDemos = computed(() => {
                   :class="page.meta?.preview?.srcDark ? 'dark:hidden' : ''"
                   :src="page.meta?.preview?.src"
                   :alt="`Tairo - ${page.meta?.preview?.title}`"
+                  height="271"
+                  width="487"
                   sizes="sm:100vw md:50vw lg:974px"
                   format="webp"
                   loading="lazy"
