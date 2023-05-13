@@ -64,6 +64,7 @@ const app = useAppConfig()
             v-else
             class="nui-focus text-muted-500 dark:text-muted-400/80 hover:bg-muted-100 dark:hover:bg-muted-700/60 hover:text-muted-600 dark:hover:text-muted-200 flex w-full cursor-pointer items-center gap-4 rounded-lg py-3 transition-colors duration-300"
             :class="!isOpen ? 'px-1 justify-center' : 'px-4'"
+            @click="item.click"
           >
             <Icon :name="item.icon.name" :class="item.icon.class" />
             <span
