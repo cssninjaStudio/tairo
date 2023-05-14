@@ -3,10 +3,6 @@ import colors from 'tailwindcss/colors'
 
 const isSwitcherOpen = useState('switcher-open', () => false)
 
-function closeModal() {
-  isSwitcherOpen.value = false
-}
-
 const layouts = [
   {
     name: 'sidebar',
@@ -18,8 +14,23 @@ const layouts = [
   },
 ]
 
-const activeLayout = ref('sidebar')
+const route = useRoute()
+const activeLayout = ref()
 
+const defaultLayout = 'sidebar'
+
+watch(
+  () => route.meta.layout,
+  () => {
+    activeLayout.value =
+      route.meta.layout === 'default' ? defaultLayout : route.meta.layout
+  },
+  { immediate: true },
+)
+
+function closeModal() {
+  isSwitcherOpen.value = false
+}
 const switchLayout = (layout: string) => {
   setPageLayout(layout)
   activeLayout.value = layout

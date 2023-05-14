@@ -1,4 +1,24 @@
-import { useCssVar } from '@vueuse/core'
+import { useCssVar, type MaybeRefOrGetter } from '@vueuse/core'
+
+function convertRGBToHex(color: string) {
+  const chanels = color.split(' ')
+  const red = Number(chanels[0]).toString(16)
+  const green = Number(chanels[1]).toString(16)
+  const blue = Number(chanels[2]).toString(16)
+  return `#${red}${green}${blue}`
+}
+
+function useCssVarWithRGB(name: MaybeRefOrGetter<string>) {
+  return computed(() => {
+    const color = useCssVar(name, document.documentElement)
+
+    if (color.value.indexOf(' ')) {
+      return convertRGBToHex(color.value)
+    }
+
+    return color.value
+  })
+}
 
 /**
  * This function is used to expose Tailwind colors as reactive variables.
@@ -8,28 +28,28 @@ import { useCssVar } from '@vueuse/core'
 export function useTailwindColors() {
   const primary = process.server
     ? ref('transparent')
-    : useCssVar('--color-primary-500', document.documentElement)
+    : useCssVarWithRGB('--color-primary-500')
   const success = process.server
     ? ref('transparent')
-    : useCssVar('--color-success-500', document.documentElement)
+    : useCssVarWithRGB('--color-success-500')
   const info = process.server
     ? ref('transparent')
-    : useCssVar('--color-info-500', document.documentElement)
+    : useCssVarWithRGB('--color-info-500')
   const warning = process.server
     ? ref('transparent')
-    : useCssVar('--color-warning-500', document.documentElement)
+    : useCssVarWithRGB('--color-warning-500')
   const danger = process.server
     ? ref('transparent')
-    : useCssVar('--color-danger-500', document.documentElement)
+    : useCssVarWithRGB('--color-danger-500')
   const yellow = process.server
     ? ref('transparent')
-    : useCssVar('--color-yellow-400', document.documentElement)
+    : useCssVarWithRGB('--color-yellow-400')
   const title = process.server
     ? ref('transparent')
-    : useCssVar('--color-muted-600', document.documentElement)
+    : useCssVarWithRGB('--color-muted-600')
   const subtitle = process.server
     ? ref('transparent')
-    : useCssVar('--color-muted-400', document.documentElement)
+    : useCssVarWithRGB('--color-muted-400')
 
   return {
     primary,
