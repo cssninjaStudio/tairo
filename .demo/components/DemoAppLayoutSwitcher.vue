@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import colors from 'tailwindcss/colors'
+
 const isSwitcherOpen = useState('switcher-open', () => false)
 
 function closeModal() {
@@ -21,40 +23,41 @@ const activeLayout = ref('sidebar')
 const switchLayout = (layout: string) => {
   setPageLayout(layout)
   activeLayout.value = layout
+  closeModal()
 }
 
-const colors = ref([
+const primaryPresets = [
   {
-    name: 'primary',
-    label: 'Primary',
-    hex: '#2563EB',
-    class: 'bg-primary-500',
+    name: 'violet',
+    label: 'Violet',
+    shades: colors.violet,
+    class: 'bg-violet-500',
   },
   {
-    name: 'info',
-    label: 'Info',
-    hex: '#2563EB',
-    class: 'bg-info-500',
+    name: 'lime',
+    label: 'Lime',
+    shades: colors.lime,
+    class: 'bg-lime-500',
   },
   {
-    name: 'success',
-    label: 'Success',
-    hex: '#2563EB',
-    class: 'bg-success-500',
+    name: 'rose',
+    label: 'Rose',
+    shades: colors.rose,
+    class: 'bg-rose-500',
   },
   {
-    name: 'warning',
-    label: 'Warning',
-    hex: '#2563EB',
-    class: 'bg-warning-500',
+    name: 'teal',
+    label: 'Teal',
+    shades: colors.teal,
+    class: 'bg-teal-500',
   },
   {
-    name: 'danger',
-    label: 'Danger',
-    hex: '#2563EB',
-    class: 'bg-danger-500',
+    name: 'orange',
+    label: 'Orange',
+    shades: colors.orange,
+    class: 'bg-orange-500',
   },
-])
+]
 </script>
 
 <template>
@@ -210,20 +213,21 @@ const colors = ref([
             </BaseParagraph>
           </div>
           <div class="space-y-1">
-            <div v-for="color in colors" :key="color.name">
+            <div v-for="color in primaryPresets" :key="color.name">
               <button
                 type="button"
                 class="group w-full flex items-center gap-3 p-2 rounded-lg hover:bg-muted-100 dark:hover:bg-muted-700/70 transition-colors duration-200"
+                @click="() => switchColorShades('primary', color.shades)"
               >
                 <span
                   class="block h-7 w-7 rounded-lg"
                   :class="color.class"
                 ></span>
-                <BaseText size="sm">{{ color.label }} color</BaseText>
+                <BaseText size="sm">{{ color.label }}</BaseText>
                 <BaseText
                   size="xs"
                   class="ml-auto pr-3 text-primary-500 underline underline-offset-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-                  >Edit</BaseText
+                  >Try</BaseText
                 >
               </button>
             </div>
@@ -247,26 +251,31 @@ const colors = ref([
                     type="button"
                     class="block h-6 w-6 rounded-full bg-gray-200 dark:bg-gray-900"
                     data-tooltip="Gray"
+                    @click="() => switchColorShades('muted', colors.gray)"
                   ></button>
                   <button
                     type="button"
                     class="block h-6 w-6 rounded-full bg-slate-200 dark:bg-slate-900 ring-1 ring-muted-500 ring-offset-2 ring-offset-white dark:ring-offset-muted-800"
                     data-tooltip="Slate"
+                    @click="() => switchColorShades('muted', colors.slate)"
                   ></button>
                   <button
                     type="button"
                     class="block h-6 w-6 rounded-full bg-stone-200 dark:bg-stone-900"
                     data-tooltip="Stone"
+                    @click="() => switchColorShades('muted', colors.stone)"
                   ></button>
                   <button
                     type="button"
                     class="block h-6 w-6 rounded-full bg-zinc-200 dark:bg-zinc-900"
                     data-tooltip="Zinc"
+                    @click="() => switchColorShades('muted', colors.zinc)"
                   ></button
                   ><button
                     type="button"
                     class="block h-6 w-6 rounded-full bg-neutral-200 dark:bg-neutral-900"
                     data-tooltip="Neutral"
+                    @click="() => switchColorShades('muted', colors.neutral)"
                   ></button>
                 </div>
               </div>

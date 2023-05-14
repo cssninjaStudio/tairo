@@ -48,6 +48,7 @@ export default defineNuxtConfig({
      */
     'nuxt-swiper',
   ],
+  css: ['~/assets/css/colors.css'],
 
   experimental: {
     // using parcel as as watcher run faster

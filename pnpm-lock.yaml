@@ -97,6 +97,9 @@ importers:
       '@stefanprobst/remark-shiki':
         specifier: 2.2.1
         version: 2.2.1(shiki@0.14.2)
+      '@types/chroma-js':
+        specifier: ^2.4.0
+        version: 2.4.0
       '@types/mapbox-gl':
         specifier: 2.7.11
         version: 2.7.11
@@ -109,6 +112,9 @@ importers:
       axe-core:
         specifier: 4.7.0
         version: 4.7.0
+      chroma-js:
+        specifier: ^2.4.2
+        version: 2.4.2
       date-fns:
         specifier: 2.30.0
         version: 2.30.0
@@ -1720,6 +1726,10 @@ packages:
       '@types/responselike': 1.0.0
     dev: true
 
+  /@types/chroma-js@2.4.0:
+    resolution: {integrity: sha512-JklMxityrwjBTjGY2anH8JaTx3yjRU3/sEHSblLH1ba5lqcSh1LnImXJZO5peJfXyqKYWjHTGy4s5Wz++hARrw==}
+    dev: true
+
   /@types/debug@4.1.7:
     resolution: {integrity: sha512-9AonUzyTjXXhEOa0DnqpzZi6VHlqKMswga9EXjpXnnqxwLtdvPPtlO8evrI5D9S6asFRCQ6v+wpiUKbw+vKqyg==}
     dependencies:
@@ -2890,6 +2900,10 @@ packages:
   /chownr@2.0.0:
     resolution: {integrity: sha512-bIomtDF5KGpdogkLd9VspvFzk9KfpyyGlS8YFVZl7TGPBHL5snIOnxeshwVgPteQ9b4Eydl+pVbIyE1DcvCWgQ==}
     engines: {node: '>=10'}
+
+  /chroma-js@2.4.2:
+    resolution: {integrity: sha512-U9eDw6+wt7V8z5NncY2jJfZa+hUH8XEj8FQHgFJTrUFnJfXYf4Ml4adI2vXZOjqRDpFWtYVWypDfZwnJ+HIR4A==}
+    dev: true
 
   /chrome-launcher@0.15.2:
     resolution: {integrity: sha512-zdLEwNo3aUVzIhKhTtXfxhdvZhUghrnmkvcAq2NoDd+LeOHKf03H5jwZ8T/STsAlzyALkBVK552iaG1fGf1xVQ==}
