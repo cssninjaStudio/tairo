@@ -9,7 +9,7 @@ const app = useAppConfig()
   <div
     class="dark:bg-muted-800 border-muted-200 dark:border-muted-700 fixed left-0 top-0 z-[60] flex h-full flex-col border-r bg-white transition-all duration-300"
     :class="[
-      !isOpen ? 'w-[80px]' : 'w-[250px]',
+      !isOpen ? 'w-[80px]' : 'w-[280px]',
       isMobileOpen
         ? 'translate-x-0 lg:translate-x-0'
         : '-translate-x-full lg:translate-x-0',
@@ -64,6 +64,7 @@ const app = useAppConfig()
             v-else
             class="nui-focus text-muted-500 dark:text-muted-400/80 hover:bg-muted-100 dark:hover:bg-muted-700/60 hover:text-muted-600 dark:hover:text-muted-200 flex w-full cursor-pointer items-center gap-4 rounded-lg py-3 transition-colors duration-300"
             :class="!isOpen ? 'px-1 justify-center' : 'px-4'"
+            @click="item.click"
           >
             <Icon :name="item.icon.name" :class="item.icon.class" />
             <span

@@ -69,6 +69,11 @@ useHead({
       @see .demo/components/DemoAppSearch.vue
     -->
     <DemoAppSearch />
+    <!-- 
+      Global app layout switcher
+      @see .demo/components/DemoAppLayoutSwitcher.vue
+    -->
+    <DemoAppLayoutSwitcher />
 
     <!-- 
       Vue Axe Popup

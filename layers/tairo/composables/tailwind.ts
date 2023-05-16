@@ -1,4 +1,26 @@
-import { useCssVar } from '@vueuse/core'
+import { useCssVar, type MaybeRefOrGetter } from '@vueuse/core'
+
+const rgbRe = /(\d+) (\d+) (\d+)/
+
+function convertRGBToHex(color: string) {
+  const [, r, g, b] = color.match(rgbRe) || []
+  const red = Number(r).toString(16)
+  const green = Number(g).toString(16)
+  const blue = Number(b).toString(16)
+  return `#${red}${green}${blue}`
+}
+
+function useCssVarWithRGB(name: MaybeRefOrGetter<string>) {
+  return computed(() => {
+    const color = useCssVar(name, document.documentElement)
+
+    if (color.value && rgbRe.test(color.value)) {
+      return convertRGBToHex(color.value)
+    }
+
+    return color.value
+  })
+}
 
 /**
  * This function is used to expose Tailwind colors as reactive variables.
@@ -8,28 +30,28 @@ import { useCssVar } from '@vueuse/core'
 export function useTailwindColors() {
   const primary = process.server
     ? ref('transparent')
-    : useCssVar('--color-primary-500', document.documentElement)
+    : useCssVarWithRGB('--color-primary-500')
   const success = process.server
     ? ref('transparent')
-    : useCssVar('--color-success-500', document.documentElement)
+    : useCssVarWithRGB('--color-success-500')
   const info = process.server
     ? ref('transparent')
-    : useCssVar('--color-info-500', document.documentElement)
+    : useCssVarWithRGB('--color-info-500')
   const warning = process.server
     ? ref('transparent')
-    : useCssVar('--color-warning-500', document.documentElement)
+    : useCssVarWithRGB('--color-warning-500')
   const danger = process.server
     ? ref('transparent')
-    : useCssVar('--color-danger-500', document.documentElement)
+    : useCssVarWithRGB('--color-danger-500')
   const yellow = process.server
     ? ref('transparent')
-    : useCssVar('--color-yellow-400', document.documentElement)
+    : useCssVarWithRGB('--color-yellow-400')
   const title = process.server
     ? ref('transparent')
-    : useCssVar('--color-muted-600', document.documentElement)
+    : useCssVarWithRGB('--color-muted-600')
   const subtitle = process.server
     ? ref('transparent')
-    : useCssVar('--color-muted-400', document.documentElement)
+    : useCssVarWithRGB('--color-muted-400')
 
   return {
     primary,

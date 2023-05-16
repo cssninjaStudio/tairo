@@ -5,13 +5,17 @@ definePageMeta({
     'Explore 100+ prebuilt pages, including dashboards and app examples. Kickstart your project with Nuxt and Tailwind CSS.',
   layout: 'empty',
 })
+
+const { y } = useNinjaWindowScroll()
 </script>
 
 <template>
-  <div class="dark:bg-muted-900 bg-white pt-16">
-    <LandingNavbar />
-    <LandingDemos :cta="false" />
-    <LandingCta />
-    <LandingFooter />
+  <div class="group/landing" :class="y > 60 ? 'scrolled' : ''">
+    <div class="dark:bg-muted-900 bg-white pt-16">
+      <LandingNavbar />
+      <LandingDemos :cta="false" />
+      <LandingCta />
+      <LandingFooter />
+    </div>
   </div>
 </template>

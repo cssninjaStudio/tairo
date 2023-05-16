@@ -51,7 +51,7 @@ const mainClass = computed(() => {
   ]
 
   if (isOpen.value) {
-    list.push('lg:max-w-[calc(100%_-_250px)] lg:ms-[250px]')
+    list.push('lg:max-w-[calc(100%_-_280px)] lg:ms-[280px]')
   } else {
     list.push('lg:max-w-[calc(100%_-_80px)] lg:ms-[80px]')
   }
