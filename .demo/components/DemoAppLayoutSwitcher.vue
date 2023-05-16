@@ -37,7 +37,39 @@ const switchLayout = (layout: string) => {
   closeModal()
 }
 
+const mauve = {
+  50: '#EEECF9',
+  100: '#DCD8F3',
+  200: '#B6AEE5',
+  300: '#9488D8',
+  400: '#6E5DCB',
+  500: '#4E3CB9',
+  600: '#3E2F92',
+  700: '#302470',
+  800: '#1F1849',
+  900: '#100C27',
+  950: '#080613',
+}
+
 const primaryPresets = [
+  {
+    name: 'indigo',
+    label: 'Indigo',
+    shades: colors.indigo,
+    class: 'bg-indigo-500',
+  },
+  {
+    name: 'sky',
+    label: 'Sky',
+    shades: colors.sky,
+    class: 'bg-sky-500',
+  },
+  {
+    name: 'purple',
+    label: 'Purple',
+    shades: colors.purple,
+    class: 'bg-purple-500',
+  },
   {
     name: 'violet',
     label: 'Violet',
@@ -51,22 +83,46 @@ const primaryPresets = [
     class: 'bg-lime-500',
   },
   {
-    name: 'rose',
-    label: 'Rose',
-    shades: colors.rose,
-    class: 'bg-rose-500',
-  },
-  {
     name: 'teal',
     label: 'Teal',
     shades: colors.teal,
     class: 'bg-teal-500',
   },
   {
+    name: 'emerald',
+    label: 'Emerald',
+    shades: colors.emerald,
+    class: 'bg-emerald-500',
+  },
+  {
+    name: 'rose',
+    label: 'Rose',
+    shades: colors.rose,
+    class: 'bg-rose-500',
+  },
+  {
+    name: 'pink',
+    label: 'Pink',
+    shades: colors.pink,
+    class: 'bg-pink-500',
+  },
+  {
+    name: 'yellow',
+    label: 'Yellow',
+    shades: colors.yellow,
+    class: 'bg-yellow-500',
+  },
+  {
     name: 'orange',
     label: 'Orange',
     shades: colors.orange,
     class: 'bg-orange-500',
+  },
+  {
+    name: 'mauve',
+    label: 'Custom',
+    shades: mauve,
+    class: 'bg-mauve-500',
   },
 ]
 </script>
@@ -164,14 +220,14 @@ const primaryPresets = [
                 class="bg-muted-50 dark:bg-muted-700/70 flex items-center justify-center rounded-lg py-6 sm:py-3"
               >
                 <img
-                  src="/img/illustrations/switcher/layout-sidebar-default.svg"
+                  src="/img/illustrations/switcher/layout-collapse-curved.svg"
                   class="block dark:hidden max-w-[110px] mx-auto opacity-40 transition-opacity duration-200"
-                  alt="Sidebar layout"
+                  alt="Collapse curved layout"
                 />
                 <img
-                  src="/img/illustrations/switcher/layout-sidebar-default-dark.svg"
+                  src="/img/illustrations/switcher/layout-collapse-curved-dark.svg"
                   class="hidden dark:block max-w-[110px] mx-auto opacity-40 transition-opacity duration-200"
-                  alt="Sidebar layout"
+                  alt="Collapse curved layout"
                 />
               </div>
               <div class="flex items-center justify-between py-2">
@@ -188,14 +244,14 @@ const primaryPresets = [
                 class="bg-muted-50 dark:bg-muted-700/70 flex items-center justify-center rounded-lg py-6 sm:py-3"
               >
                 <img
-                  src="/img/illustrations/switcher/layout-sidebar-default.svg"
+                  src="/img/illustrations/switcher/layout-navbar-default.svg"
                   class="block dark:hidden max-w-[110px] mx-auto opacity-40 transition-opacity duration-200"
-                  alt="Sidebar layout"
+                  alt="Navbar layout"
                 />
                 <img
-                  src="/img/illustrations/switcher/layout-sidebar-default-dark.svg"
+                  src="/img/illustrations/switcher/layout-navbar-default-dark.svg"
                   class="hidden dark:block max-w-[110px] mx-auto opacity-40 transition-opacity duration-200"
-                  alt="Sidebar layout"
+                  alt="Navbar layout"
                 />
               </div>
               <div class="flex items-center justify-between py-2">
@@ -224,23 +280,20 @@ const primaryPresets = [
             </BaseParagraph>
           </div>
           <div class="space-y-1">
-            <div v-for="color in primaryPresets" :key="color.name">
-              <button
-                type="button"
-                class="group w-full flex items-center gap-3 p-2 rounded-lg hover:bg-muted-100 dark:hover:bg-muted-700/70 transition-colors duration-200"
-                @click="() => switchColorShades('primary', color.shades)"
-              >
-                <span
-                  class="block h-7 w-7 rounded-lg"
-                  :class="color.class"
-                ></span>
-                <BaseText size="sm">{{ color.label }}</BaseText>
-                <BaseText
-                  size="xs"
-                  class="ml-auto pr-3 text-primary-500 underline underline-offset-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-                  >Try</BaseText
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4">
+              <div v-for="color in primaryPresets" :key="color.name">
+                <button
+                  type="button"
+                  class="group w-full flex items-center gap-3 p-2 rounded-lg hover:bg-muted-100 dark:hover:bg-muted-700/70 transition-colors duration-200"
+                  @click="() => switchColorShades('primary', color.shades)"
                 >
-              </button>
+                  <span
+                    class="block h-6 w-6 rounded-lg shrink-0"
+                    :class="color.class"
+                  ></span>
+                  <BaseText size="sm">{{ color.label }}</BaseText>
+                </button>
+              </div>
             </div>
             <hr class="border-muted-200 dark:border-muted-700" />
             <div>
@@ -249,7 +302,7 @@ const primaryPresets = [
                 class="group w-full flex items-center gap-3 p-2 rounded-lg"
               >
                 <span
-                  class="block h-7 w-7 rounded-lg bg-muted-200 dark:bg-muted-900"
+                  class="block h-6 w-6 rounded-lg bg-muted-200 dark:bg-muted-900"
                 ></span>
                 <BaseText size="sm">Background shade</BaseText>
               </button>

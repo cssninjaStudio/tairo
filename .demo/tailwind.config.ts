@@ -27,6 +27,20 @@ export default withShurikenUI({
         // success: colors.teal,
         // warning: colors.amber,
         // danger: colors.rose,
+        // Custom color shades generate with https://www.tints.dev/brand/2D00FF
+        mauve: {
+          50: '#EEECF9',
+          100: '#DCD8F3',
+          200: '#B6AEE5',
+          300: '#9488D8',
+          400: '#6E5DCB',
+          500: '#4E3CB9',
+          600: '#3E2F92',
+          700: '#302470',
+          800: '#1F1849',
+          900: '#100C27',
+          950: '#080613',
+        },
 
         /**
          * We use CSS variables to define our colors so that we can easily
