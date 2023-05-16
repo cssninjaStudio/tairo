@@ -1,10 +1,12 @@
 import { useCssVar, type MaybeRefOrGetter } from '@vueuse/core'
 
+const rgbRe = /(\d+) (\d+) (\d+)/
+
 function convertRGBToHex(color: string) {
-  const chanels = color.split(' ')
-  const red = Number(chanels[0]).toString(16)
-  const green = Number(chanels[1]).toString(16)
-  const blue = Number(chanels[2]).toString(16)
+  const [, r, g, b] = color.match(rgbRe) || []
+  const red = Number(r).toString(16)
+  const green = Number(g).toString(16)
+  const blue = Number(b).toString(16)
   return `#${red}${green}${blue}`
 }
 
@@ -12,7 +14,7 @@ function useCssVarWithRGB(name: MaybeRefOrGetter<string>) {
   return computed(() => {
     const color = useCssVar(name, document.documentElement)
 
-    if (color.value.indexOf(' ')) {
+    if (color && rgbRe.test(color.value)) {
       return convertRGBToHex(color.value)
     }
 
