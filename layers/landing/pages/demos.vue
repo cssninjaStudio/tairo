@@ -10,7 +10,7 @@ const { y } = useNinjaWindowScroll()
 </script>
 
 <template>
-  <div class="group/landing" :class="y > 60 ? 'scrolled' : ''">
+  <div class="group/landing overflow-hidden" :class="y > 60 ? 'scrolled' : ''">
     <div class="dark:bg-muted-900 bg-white pt-16">
       <LandingNavbar />
       <LandingDemos :cta="false" />
