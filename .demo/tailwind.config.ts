@@ -27,7 +27,7 @@ export default withShurikenUI({
         // success: colors.teal,
         // warning: colors.amber,
         // danger: colors.rose,
-        // Custom color shades generate with https://www.tints.dev/brand/2D00FF
+        // Custom color shades generate with https://www.tints.dev/brand/4E3CB9
         mauve: {
           50: '#EEECF9',
           100: '#DCD8F3',
