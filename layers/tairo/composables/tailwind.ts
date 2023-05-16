@@ -14,7 +14,7 @@ function useCssVarWithRGB(name: MaybeRefOrGetter<string>) {
   return computed(() => {
     const color = useCssVar(name, document.documentElement)
 
-    if (color && rgbRe.test(color.value)) {
+    if (color.value && rgbRe.test(color.value)) {
       return convertRGBToHex(color.value)
     }
 
