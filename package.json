@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "tairo",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "type": "module",
   "main": "./nuxt.config.ts",
   "engines": {
