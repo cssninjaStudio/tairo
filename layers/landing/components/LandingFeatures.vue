@@ -68,7 +68,11 @@
       </div>
 
       <div class="mt-16 flex items-center justify-center">
-        <BaseButton to="#" shape="curved" color="primary">
+        <BaseButton
+          to="https://go.cssninja.io/buy-tairo"
+          shape="curved"
+          color="primary"
+        >
           Get Tairo Dashboard System
         </BaseButton>
       </div>
