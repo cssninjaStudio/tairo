@@ -53,11 +53,11 @@ importers:
         specifier: 2.8.8
         version: 2.8.8
       rimraf:
-        specifier: 5.0.1
-        version: 5.0.1
+        specifier: 5.0.0
+        version: 5.0.0
       std-env:
-        specifier: 3.3.3
-        version: 3.3.3
+        specifier: 3.3.2
+        version: 3.3.2
       tailwindcss:
         specifier: 3.3.2
         version: 3.3.2
@@ -110,8 +110,8 @@ importers:
         specifier: 3.40.0
         version: 3.40.0
       axe-core:
-        specifier: 4.7.1
-        version: 4.7.1
+        specifier: 4.7.0
+        version: 4.7.0
       chroma-js:
         specifier: ^2.4.2
         version: 2.4.2
@@ -134,8 +134,8 @@ importers:
         specifier: 1.1.0
         version: 1.1.0
       rehype-external-links:
-        specifier: 2.1.0
-        version: 2.1.0
+        specifier: 2.0.1
+        version: 2.0.1
       rehype-raw:
         specifier: 6.1.1
         version: 6.1.1
@@ -149,8 +149,8 @@ importers:
         specifier: 3.0.1
         version: 3.0.1
       remark-parse:
-        specifier: 10.0.2
-        version: 10.0.2
+        specifier: 10.0.1
+        version: 10.0.1
       remark-rehype:
         specifier: 10.1.0
         version: 10.1.0
@@ -168,7 +168,7 @@ importers:
         version: 3.0.1(@popperjs/core@2.11.7)
       vue-axe:
         specifier: 3.1.2
-        version: 3.1.2(axe-core@4.7.1)
+        version: 3.1.2(axe-core@4.7.0)
       vue3-apexcharts:
         specifier: 1.4.1
         version: 1.4.1(apexcharts@3.40.0)
@@ -215,7 +215,7 @@ importers:
         specifier: ^0.2.9
         version: 0.2.9(nuxt@3.4.3)
       '@vee-validate/zod':
-        specifier: ^4.9.4
+        specifier: ^4.8.6
         version: 4.9.4
       fast-copy:
         specifier: ^3.0.1
@@ -230,7 +230,7 @@ importers:
         specifier: ^1.0.3
         version: 1.0.3
       vee-validate:
-        specifier: ^4.9.4
+        specifier: ^4.8.6
         version: 4.9.4
       zod:
         specifier: ^3.21.4
@@ -1295,7 +1295,7 @@ packages:
       ohash: 1.1.2
       pathe: 1.1.0
       property-information: 6.2.0
-      rehype-external-links: 2.1.0
+      rehype-external-links: 2.0.1
       rehype-raw: 6.1.1
       rehype-slug: 5.1.0
       rehype-sort-attribute-values: 4.0.0
@@ -1303,7 +1303,7 @@ packages:
       remark-emoji: 3.1.1
       remark-gfm: 3.0.1
       remark-mdc: 1.1.3
-      remark-parse: 10.0.2
+      remark-parse: 10.0.1
       remark-rehype: 10.1.0
       remark-squeeze-paragraphs: 5.0.1
       scule: 1.0.0
@@ -1487,7 +1487,7 @@ packages:
       pkg-types: 1.0.3
       postcss-import-resolver: 2.0.0
       scule: 1.0.0
-      std-env: 3.3.3
+      std-env: 3.3.2
       ufo: 1.1.1
       unimport: 3.0.6
       untyped: 1.3.2
@@ -1504,7 +1504,7 @@ packages:
       pathe: 1.1.0
       pkg-types: 1.0.3
       postcss-import-resolver: 2.0.0
-      std-env: 3.3.3
+      std-env: 3.3.2
       ufo: 1.1.1
       unimport: 3.0.7(rollup@3.22.0)
       untyped: 1.3.2
@@ -1522,7 +1522,7 @@ packages:
       pathe: 1.1.0
       pkg-types: 1.0.3
       postcss-import-resolver: 2.0.0
-      std-env: 3.3.3
+      std-env: 3.3.2
       ufo: 1.1.2
       unimport: 3.0.7(rollup@3.22.0)
       untyped: 1.3.2
@@ -1570,7 +1570,7 @@ packages:
       ofetch: 1.0.1
       parse-git-config: 3.0.0
       rc9: 2.1.0
-      std-env: 3.3.3
+      std-env: 3.3.2
     transitivePeerDependencies:
       - rollup
       - supports-color
@@ -1613,7 +1613,7 @@ packages:
       postcss-import: 15.1.0(postcss@8.4.23)
       postcss-url: 10.1.3(postcss@8.4.23)
       rollup-plugin-visualizer: 5.9.0(rollup@3.22.0)
-      std-env: 3.3.3
+      std-env: 3.3.2
       strip-literal: 1.0.1
       ufo: 1.1.2
       unplugin: 1.3.1
@@ -2953,8 +2953,8 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /axe-core@4.7.1:
-    resolution: {integrity: sha512-sCXXUhA+cljomZ3ZAwb8i1p3oOlkABzPy08ZDAoGcYuvtBPlQ1Ytde129ArXyHWDhfeewq7rlx9F+cUx2SSlkg==}
+  /axe-core@4.7.0:
+    resolution: {integrity: sha512-M0JtH+hlOL5pLQwHOLNYZaXuhqmvS8oExsqB1SBYgA4Dk7u/xx+YdGHXaK5pyUfed5mYXdlYiphWq3G8cRi5JQ==}
     engines: {node: '>=4'}
     dev: true
 
@@ -7042,7 +7042,7 @@ packages:
       satori: 0.4.3
       satori-html: 0.3.2
       sirv: 2.0.3
-      std-env: 3.3.3
+      std-env: 3.3.2
       svg2png-wasm: 1.3.4
       tinyws: 0.1.0(ws@8.13.0)
       twemoji: 14.0.2
@@ -8395,12 +8395,11 @@ packages:
       functions-have-names: 1.2.3
     dev: true
 
-  /rehype-external-links@2.1.0:
-    resolution: {integrity: sha512-2YMJZVM1hxZnwl9IPkbN5Pjn78kXkAX7lq9VEtlaGA29qIls25vZN+ucNIJdbQUe+9NNFck17BiOhGmsD6oLIg==}
+  /rehype-external-links@2.0.1:
+    resolution: {integrity: sha512-u2dNypma+ps12SJWlS23zvbqwNx0Hl24t0YHXSM/6FCZj/pqWETCO3WyyrvALv4JYvRtuPjhiv2Lpen15ESqbA==}
     dependencies:
       '@types/hast': 2.3.4
       extend: 3.0.2
-      hast-util-is-element: 2.1.3
       is-absolute-url: 4.0.1
       space-separated-tokens: 2.0.2
       unified: 10.1.2
@@ -8501,8 +8500,8 @@ packages:
       - supports-color
     dev: true
 
-  /remark-parse@10.0.2:
-    resolution: {integrity: sha512-3ydxgHa/ZQzG8LvC7jTXccARYDcRld3VfcgIIFs7bI6vbRSxJJmzgLEIIoYKyrfhaY+ujuWaf/PJiMZXoiCXgw==}
+  /remark-parse@10.0.1:
+    resolution: {integrity: sha512-1fUyHr2jLsVOkhbvPRBJ5zTKZZyD6yZzYaWCS6BPBdQ8vEMBCH+9zNCDA6tET/zHCi/jLqjCWtlJZUPk+DbnFw==}
     dependencies:
       '@types/mdast': 3.0.11
       mdast-util-from-markdown: 1.3.0
@@ -8606,8 +8605,8 @@ packages:
     dependencies:
       glob: 7.2.3
 
-  /rimraf@5.0.1:
-    resolution: {integrity: sha512-OfFZdwtd3lZ+XZzYP/6gTACubwFcHdLRqS9UX3UwpU2dnGQYkPFISRwvM3w9IiB2w7bW5qGo/uAwE4SmXXSKvg==}
+  /rimraf@5.0.0:
+    resolution: {integrity: sha512-Jf9llaP+RvaEVS5nPShYFhtXIrb3LRKP281ib3So0KkeZKo2wIKyq0Re7TOSwanasA423PSr6CCIL4bP6T040g==}
     engines: {node: '>=14'}
     hasBin: true
     dependencies:
@@ -9043,6 +9042,9 @@ packages:
   /statuses@2.0.1:
     resolution: {integrity: sha512-RwNA9Z/7PrK06rYLIzFMlaF+l73iwpzsqRIFgbMLbTcLD6cOao82TaWefPXQvB2fOC4AjuYSEndS7N/mTCbkdQ==}
     engines: {node: '>= 0.8'}
+
+  /std-env@3.3.2:
+    resolution: {integrity: sha512-uUZI65yrV2Qva5gqE0+A7uVAvO40iPo6jGhs7s8keRfHCmtg+uB2X6EiLGCI9IgL1J17xGhvoOqSz79lzICPTA==}
 
   /std-env@3.3.3:
     resolution: {integrity: sha512-Rz6yejtVyWnVjC1RFvNmYL10kgjC49EOghxWn0RFqlCHGFpQx+Xe7yW3I4ceK1SGrWIGMjD5Kbue8W/udkbMJg==}
@@ -10187,7 +10189,7 @@ packages:
       pbf: 3.2.1
     dev: true
 
-  /vue-axe@3.1.2(axe-core@4.7.1):
+  /vue-axe@3.1.2(axe-core@4.7.0):
     resolution: {integrity: sha512-RZbc+u6gGy6ecI3hK/5jTMG3fTNLTaNL5s6arAoXskVb92hAtkHZ+peQbDJl49sS4hevUXR+del6rUOdI0bcYQ==}
     engines: {node: '>=10'}
     peerDependencies:
@@ -10197,7 +10199,7 @@ packages:
       vue:
         optional: true
     dependencies:
-      axe-core: 4.7.1
+      axe-core: 4.7.0
       prismjs: 1.29.0
     dev: true
 
