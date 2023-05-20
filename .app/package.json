@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "devDependencies": {
-    "nuxt": "3.4.3"
+    "nuxt": "3.5.0"
   },
   "scripts": {
     "prepare": "nuxi prepare",

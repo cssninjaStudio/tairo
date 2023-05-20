@@ -166,7 +166,7 @@
           width="768"
           height="432"
           alt="placeholder-image"
-          class="mx-auto max-w-3xl"
+          class="mx-auto max-w-full sm:max-w-3xl"
           loading="lazy"
           decoding="async"
         />
