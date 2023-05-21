@@ -212,7 +212,7 @@ importers:
         specifier: ^0.3.12
         version: 0.3.12
       '@shuriken-ui/nuxt':
-        specifier: ^0.2.9
+        specifier: ^0.2.1
         version: 0.2.9(nuxt@3.4.3)
       '@vee-validate/zod':
         specifier: ^4.8.6
