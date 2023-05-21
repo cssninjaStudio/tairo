@@ -77,8 +77,8 @@ importers:
   .demo:
     devDependencies:
       '@fontsource/fira-code':
-        specifier: 4.5.13
-        version: 4.5.13
+        specifier: 5.0.0
+        version: 5.0.0
       '@fontsource/inter':
         specifier: 4.5.15
         version: 4.5.15
@@ -1022,8 +1022,8 @@ packages:
     resolution: {integrity: sha512-kf9RB0Fg7NZfap83B3QOqOGg9QmD9yBudqQXzzOtn3i4y7ZUXe5ONeW34Gwi+TxhH4mvj72R1Zc300KUMa9Bng==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
-  /@fontsource/fira-code@4.5.13:
-    resolution: {integrity: sha512-T1IG6/2AXSwEKwlrEm3kyIL3RQTMblPyj68HgnBGl0IBGFxgS5LZ7StRdDo/QimJ4Tz6FQGHuy1Y/ShNxaUefA==}
+  /@fontsource/fira-code@5.0.0:
+    resolution: {integrity: sha512-Fq0VOyHfbZI04aeBF9wHAo7xd2bajrnCbxr8P2Ah3r3RSWOZIk58qqMrUpybjtCsJTT9HYj5PgyZJ6wgSypfnA==}
     dev: true
 
   /@fontsource/inter@4.5.15:
