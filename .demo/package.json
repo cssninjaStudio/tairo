@@ -10,9 +10,9 @@
     "clean": "rimraf .nuxt .output node_modules"
   },
   "devDependencies": {
-    "@fontsource/fira-code": "4.5.13",
-    "@fontsource/inter": "4.5.15",
-    "@fontsource/karla": "4.5.11",
+    "@fontsource/fira-code": "5.0.0",
+    "@fontsource/inter": "5.0.0",
+    "@fontsource/karla": "5.0.0",
     "@fontsource/roboto-flex": "4.5.5",
     "@mapbox/mapbox-gl-geocoder": "5.0.1",
     "@popperjs/core": "2.11.7",
