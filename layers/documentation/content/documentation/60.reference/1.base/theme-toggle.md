@@ -2,7 +2,6 @@
 title: BaseThemeToggle
 components:
   - BaseThemeToggle
-  - BaseThemeSwitch
 description: Tairo ships with a ready to use theme switcher that you can include anywhere to toggle between light and dark mode.
 icon:
   src: /img/illustrations/components/focus-loop-icon.svg
@@ -18,4 +17,3 @@ Tairo ships with a ready to use theme switcher that you can include anywhere to 
 ::
 
 :doc-component-meta{name="BaseThemeToggle"}
-:doc-component-meta{name="BaseThemeSwitch"}
