@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@cssninja/nuxt-toaster": "^0.3.12",
-    "@shuriken-ui/nuxt": "^0.2.9",
+    "@shuriken-ui/nuxt": "^0.2.1",
     "@vee-validate/zod": "^4.8.6",
     "fast-copy": "^3.0.1",
     "nuxt": "^3.4.3",
