@@ -18,7 +18,7 @@
           >
             <div
               class="relative flex h-full w-full items-center justify-center"
-              :data-tooltip="`${showPasswordField ? 'Show' : 'Hide'} password`"
+              :data-nui-tooltip="`${showPasswordField ? 'Show' : 'Hide'} password`"
             >
               <Icon
                 :name="showPasswordField ? 'mdi:eye-outline' : 'mdi:eye-off-outline'"

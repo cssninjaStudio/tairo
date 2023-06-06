@@ -202,7 +202,7 @@ function useAreaExpenses() {
               </BaseButtonIcon>
             </div>
             <div
-              class="slimscroll grid max-h-[164px] w-full gap-4 overflow-y-auto px-6 sm:grid-cols-2"
+              class="nui-slimscroll grid max-h-[164px] w-full gap-4 overflow-y-auto px-6 sm:grid-cols-2"
             >
               <DemoCreditCard
                 v-for="(card, index) in cards"

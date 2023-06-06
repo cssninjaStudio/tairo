@@ -163,7 +163,7 @@ const { data, pending, error, refresh } = await useFetch(
                         <BaseAvatar
                           :src="item.customer.logo"
                           size="sm"
-                          :data-tooltip="item.name"
+                          :data-nui-tooltip="item.name"
                           class="bg-muted-100 dark:bg-muted-700"
                         />
                         <div>
@@ -188,7 +188,7 @@ const { data, pending, error, refresh } = await useFetch(
                             :key="stack.name"
                             :src="stack.icon"
                             size="xxs"
-                            :data-tooltip="stack.name"
+                            :data-nui-tooltip="stack.name"
                             class="bg-muted-100 dark:bg-muted-700"
                           />
                         </div>

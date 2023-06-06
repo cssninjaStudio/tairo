@@ -108,7 +108,7 @@ const checks = computed(() => [
           <div
             class="h-2 rounded-xl transition-colors"
             :class="check.valid ? 'bg-success-500' : 'bg-danger-500'"
-            :data-tooltip="check.label.replace('Contains', '')"
+            :data-nui-tooltip="check.label.replace('Contains', '')"
           ></div>
         </div>
       </template>

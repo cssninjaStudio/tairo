@@ -135,7 +135,7 @@ const handleClipboard = () => {
                   >
                     <div
                       class="relative flex h-full w-full items-center justify-center"
-                      :data-tooltip="`${
+                      :data-nui-tooltip="`${
                         showPasswordField ? 'Show' : 'Hide'
                       } password`"
                     >

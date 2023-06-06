@@ -3,8 +3,8 @@ import 'vue3-carousel/dist/carousel.css'
 </script>
 
 <script setup lang="ts">
-import { Carousel, Navigation, Slide } from 'vue3-carousel'
 import type { RouteLocationRaw } from 'vue-router'
+import { Carousel, Navigation, Slide } from 'vue3-carousel'
 
 export interface CarouselSlideSkill {
   logo: string
@@ -83,7 +83,7 @@ const props = withDefaults(defineProps<CarouselProps>(), {
                 :key="s"
                 :src="skill.logo"
                 size="xs"
-                :data-tooltip="skill.name"
+                :data-nui-tooltip="skill.name"
                 class="bg-muted-200 dark:bg-muted-700"
               />
             </div>

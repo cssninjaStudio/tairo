@@ -155,11 +155,11 @@ function onDrop(column: ColumnContent, dropResult: any) {
         <BaseButtonIcon
           :to="`/layouts/projects/details/${slug}`"
           shape="curved"
-          data-tooltip="Project details"
+          data-nui-tooltip="Project details"
         >
           <Icon name="lucide:layout-template" class="h-4 w-4" />
         </BaseButtonIcon>
-        <BaseButtonIcon shape="full" data-tooltip="New task">
+        <BaseButtonIcon shape="full" data-nui-tooltip="New task">
           <Icon name="lucide:plus" class="h-4 w-4" />
         </BaseButtonIcon>
       </div>
@@ -190,7 +190,7 @@ function onDrop(column: ColumnContent, dropResult: any) {
           </button>
         </div>
         <!-- Scrollable area -->
-        <div class="slimscroll overflow-auto pb-10 pe-2">
+        <div class="nui-slimscroll overflow-auto pb-10 pe-2">
           <Container
             tag="div"
             class="flex flex-col gap-y-4"
@@ -252,28 +252,28 @@ function onDrop(column: ColumnContent, dropResult: any) {
                     <div class="text-muted-400 flex items-center gap-3">
                       <div
                         v-if="task.checklist.length > 0"
-                        :data-tooltip="`${task.checklist.length} subtask${
+                        :data-nui-tooltip="`${task.checklist.length} subtask${
                           task.checklist.length > 1 ? 's' : ''
                         } in checklist`"
-                        data-tooltip-position="left"
+                        data-nui-tooltip-position="start"
                       >
                         <Icon name="lucide:check-circle" class="h-4 w-4" />
                       </div>
                       <div
                         v-if="task.files.length > 0"
-                        :data-tooltip="`${task.files.length} file${
+                        :data-nui-tooltip="`${task.files.length} file${
                           task.files.length > 1 ? 's' : ''
                         } uploaded`"
-                        data-tooltip-position="left"
+                        data-nui-tooltip-position="start"
                       >
                         <Icon name="lucide:file" class="h-4 w-4" />
                       </div>
                       <div
                         v-if="task.comments.length > 0"
-                        :data-tooltip="`${task.comments.length} comment${
+                        :data-nui-tooltip="`${task.comments.length} comment${
                           task.comments.length > 1 ? 's' : ''
                         }`"
-                        data-tooltip-position="left"
+                        data-nui-tooltip-position="start"
                       >
                         <Icon name="lucide:message-circle" class="h-4 w-4" />
                       </div>

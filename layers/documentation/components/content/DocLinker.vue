@@ -37,7 +37,7 @@ const tooltip = computed(() => {
         ? 'nui-mark dark:decoration-primary-100/60 decoration-dotted underline-offset-4'
         : 'bg-danger-100 dark:bg-danger-800/60 text-danger-500 cursor-help no-underline',
     ]"
-    :data-tooltip="tooltip"
+    :data-nui-tooltip="tooltip"
     >&lt;{{ props.to }}&gt;</NuxtLink
   >
 </template>

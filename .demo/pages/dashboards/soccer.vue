@@ -329,7 +329,7 @@ const matches = [
                         <td class="py-4 align-middle">
                           <div
                             class="text-muted-500 dark:text-muted-400 flex items-center gap-2 font-sans text-sm"
-                            :data-tooltip="capitalize(match.status)"
+                            :data-nui-tooltip="capitalize(match.status)"
                           >
                             <div
                               class="h-2 w-2 rounded-full"

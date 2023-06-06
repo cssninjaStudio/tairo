@@ -110,7 +110,7 @@ const { data, pending, error, refresh } = await useFetch(
                         size="sm"
                         shape="straight"
                         mask="blob"
-                        :data-tooltip="item.name"
+                        :data-nui-tooltip="item.name"
                         class="bg-muted-100 dark:bg-muted-700"
                       />
                       <div>
@@ -136,7 +136,7 @@ const { data, pending, error, refresh } = await useFetch(
                           size="xxs"
                           shape="straight"
                           mask="blob"
-                          :data-tooltip="stack.name"
+                          :data-nui-tooltip="stack.name"
                           class="bg-muted-100 dark:bg-muted-700"
                         />
                       </div>
@@ -223,7 +223,7 @@ const { data, pending, error, refresh } = await useFetch(
                           size="sm"
                           shape="straight"
                           mask="blob"
-                          :data-tooltip="item.name"
+                          :data-nui-tooltip="item.name"
                           class="bg-muted-100 dark:bg-muted-700"
                         />
                         <div>
@@ -250,7 +250,7 @@ const { data, pending, error, refresh } = await useFetch(
                             size="xxs"
                             shape="straight"
                             mask="blob"
-                            :data-tooltip="stack.name"
+                            :data-nui-tooltip="stack.name"
                             class="bg-muted-100 dark:bg-muted-700"
                           />
                         </div>

@@ -57,18 +57,18 @@ definePageMeta({
                 <BaseAvatar
                   src="/img/avatars/25.svg"
                   size="xs"
-                  data-tooltip="Melany L."
+                  data-nui-tooltip="Melany L."
                 />
                 <BaseAvatar
                   size="xs"
                   text="OD"
-                  data-tooltip="Oliver D."
+                  data-nui-tooltip="Oliver D."
                   :class="getRandomColor()"
                 />
                 <BaseAvatar
                   src="/img/avatars/16.svg"
                   size="xs"
-                  data-tooltip="Hermann M."
+                  data-nui-tooltip="Hermann M."
                 />
               </div>
               <div class="mt-2 text-center">

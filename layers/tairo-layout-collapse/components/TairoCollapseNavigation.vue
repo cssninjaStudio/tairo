@@ -28,7 +28,7 @@ const app = useAppConfig()
     </slot>
     <!--Body-->
     <div
-      class="slimscroll relative w-full grow overflow-y-auto py-6"
+      class="nui-slimscroll relative w-full grow overflow-y-auto py-6"
       :class="!isOpen ? 'px-4' : 'px-6'"
     >
       <!--Menu-->
