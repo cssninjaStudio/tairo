@@ -1,4 +1,8 @@
-lockfileVersion: '6.0'
+lockfileVersion: '6.1'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
 
 overrides:
   consola: 3.1.0
@@ -86,8 +90,8 @@ importers:
         specifier: 5.0.0
         version: 5.0.0
       '@fontsource/roboto-flex':
-        specifier: 4.5.5
-        version: 4.5.5
+        specifier: 5.0.3
+        version: 5.0.3
       '@mapbox/mapbox-gl-geocoder':
         specifier: 5.0.1
         version: 5.0.1(mapbox-gl@2.14.1)
@@ -836,8 +840,8 @@ packages:
     resolution: {integrity: sha512-lWcT7GxLLBgqHJ0wIWIUMtkiM3VGfPBs26b1Jf3Qgg3Jnw1xbB7lDJDbNnsaYrmHxcu/oGuWvt2RGcAseweP4w==}
     dev: true
 
-  /@fontsource/roboto-flex@4.5.5:
-    resolution: {integrity: sha512-sBm53Q8WA61CS6ic4PLCdSDukpb2Yemt/f3tjBXlikV9zz2bg40KCUDVImAg7Hdzz9J57ggWVnuNW3RHLccqlQ==}
+  /@fontsource/roboto-flex@5.0.3:
+    resolution: {integrity: sha512-OZ/aVf2GrNgBOg1JOYmulXdFU8ZykLxyCxS+n/4XNWVygX3X02csXWwSro/Ah9UhEqRSP+HBRS33u09C5Vx87g==}
     dev: true
 
   /@headlessui/vue@1.7.13:

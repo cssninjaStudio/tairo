@@ -13,7 +13,7 @@
     "@fontsource/fira-code": "5.0.0",
     "@fontsource/inter": "5.0.0",
     "@fontsource/karla": "5.0.0",
-    "@fontsource/roboto-flex": "4.5.5",
+    "@fontsource/roboto-flex": "5.0.3",
     "@mapbox/mapbox-gl-geocoder": "5.0.1",
     "@popperjs/core": "2.11.7",
     "@stefanprobst/remark-shiki": "2.2.1",
