@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"tailwindCSS.experimental.configFile": ".demo/tailwind.config.ts",
+		"typescript.tsdk": "node_modules/typescript/lib"
+	}
+}
