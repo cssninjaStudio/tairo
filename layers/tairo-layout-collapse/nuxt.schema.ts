@@ -93,7 +93,7 @@ export default defineNuxtSchema({
                     type: 'object',
                     required: ['name'],
                     properties: {
-                      component: { type: 'string' },
+                      name: { type: 'string' },
                       props: { type: 'object' },
                     },
                   },

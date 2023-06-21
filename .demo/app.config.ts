@@ -275,6 +275,12 @@ export default defineAppConfig({
               const isSwitcherOpen = useState('switcher-open', () => false)
               isSwitcherOpen.value = true
             },
+            position: 'end',
+          },
+          {
+            name: 'Divider',
+            divider: true,
+            position: 'end',
           },
         ],
       },
