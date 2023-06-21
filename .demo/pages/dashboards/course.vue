@@ -338,7 +338,7 @@ const students = [
                 </BaseParagraph>
               </div>
               <div class="ms-auto">
-                <BaseButtonIcon small data-tooltip="Download file">
+                <BaseButtonIcon small data-nui-tooltip="Download file">
                   <Icon name="lucide:arrow-down" class="h-4 w-4" />
                 </BaseButtonIcon>
               </div>

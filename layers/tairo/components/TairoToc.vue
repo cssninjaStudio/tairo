@@ -88,7 +88,7 @@ async function loadTocItemFromDom() {
       </div>
 
       <nav
-        class="slimscroll slimscroll-opaque relative max-h-[calc(100vh_-_220px)] overflow-y-auto overflow-x-hidden pb-10 font-sans text-[0.8rem] font-medium"
+        class="nui-slimscroll-opaque relative max-h-[calc(100vh_-_220px)] overflow-y-auto overflow-x-hidden pb-10 font-sans text-[0.8rem] font-medium"
       >
         <ul>
           <li v-for="item in toc" :key="item.id">

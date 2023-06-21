@@ -252,7 +252,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                         :src="'src' in user ? user.src : undefined"
                         :text="user.text"
                         :class="getRandomColor()"
-                        :data-tooltip="user.name"
+                        :data-nui-tooltip="user.name"
                         size="xs"
                       />
                     </div>
@@ -408,7 +408,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                       to="#"
                       condensed
                       shape="full"
-                      data-tooltip="View Profile"
+                      data-nui-tooltip="View Profile"
                     >
                       <Icon name="lucide:arrow-right" class="h-4 w-4" />
                     </BaseButtonIcon>

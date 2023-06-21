@@ -52,7 +52,7 @@ export default defineComponent({
       <button
         v-if="isSupported"
         type="button"
-        :data-tooltip="copied ? 'Copied!' : 'Copy'"
+        :data-nui-tooltip="copied ? 'Copied!' : 'Copy'"
         class="hover:text-muted-950 dark:hover:text-white"
         @click="() => copy()"
       >

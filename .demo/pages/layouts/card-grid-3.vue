@@ -107,12 +107,12 @@ const { data, pending, error, refresh } = await useFetch(
                     :badge-src="item.image"
                     shape="curved"
                     size="lg"
-                    :data-tooltip="item.owner.name"
+                    :data-nui-tooltip="item.owner.name"
                     class="bg-muted-500/20 text-muted-500"
                   />
                 </div>
                 <div class="my-4 flex flex-col items-center justify-between">
-                  <div class="text-center" :data-tooltip="item.name">
+                  <div class="text-center" :data-nui-tooltip="item.name">
                     <h4
                       class="text-muted-800 dark:text-muted-100 line-clamp-1 font-sans text-base font-medium"
                     >

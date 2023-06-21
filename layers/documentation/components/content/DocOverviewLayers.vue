@@ -693,8 +693,8 @@ const mergedTree = [
                   :class="child?.item?.color"
                 ></span>
                 <span
-                  :data-tooltip="child?.item?.tooltip"
-                  data-tooltip-position="right"
+                  :data-nui-tooltip="child?.item?.tooltip"
+                  data-nui-tooltip-position="right"
                   :class="[
                     child?.children ? 'cursor-pointer' : 'cursor-default',
                     child?.item?.tooltip
@@ -743,8 +743,8 @@ const mergedTree = [
                   :class="child?.item?.color"
                 ></span>
                 <span
-                  :data-tooltip="child?.item?.tooltip"
-                  data-tooltip-position="right"
+                  :data-nui-tooltip="child?.item?.tooltip"
+                  data-nui-tooltip-position="right"
                   :class="[
                     child?.children ? 'cursor-pointer' : 'cursor-default',
                     child?.item?.tooltip

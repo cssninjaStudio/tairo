@@ -168,7 +168,7 @@ watchEffect(() => {
               <!-- Results -->
               <div
                 v-if="filteredUsers.length > 0"
-                class="slimscroll max-h-[186px] space-y-2 overflow-y-auto"
+                class="nui-slimscroll max-h-[186px] space-y-2 overflow-y-auto"
               >
                 <!-- Result -->
                 <div
@@ -229,7 +229,7 @@ watchEffect(() => {
                     <div class="relative flex w-48 justify-between">
                       <div
                         class="relative z-10 shrink-0"
-                        data-tooltip="Reader"
+                        data-nui-tooltip="Reader"
                         tabindex="0"
                         @keydown.space.prevent="setTeammateRole(idx, 'reader')"
                         @click="setTeammateRole(idx, 'reader')"
@@ -245,7 +245,7 @@ watchEffect(() => {
                       </div>
                       <div
                         class="relative z-10 shrink-0"
-                        data-tooltip="Collaborator"
+                        data-nui-tooltip="Collaborator"
                         tabindex="0"
                         @keydown.space.prevent="
                           setTeammateRole(idx, 'collaborator')
@@ -263,7 +263,7 @@ watchEffect(() => {
                       </div>
                       <div
                         class="relative z-10 shrink-0"
-                        data-tooltip="Manager"
+                        data-nui-tooltip="Manager"
                         tabindex="0"
                         @keydown.space.prevent="setTeammateRole(idx, 'manager')"
                         @click="setTeammateRole(idx, 'manager')"
@@ -279,7 +279,7 @@ watchEffect(() => {
                       </div>
                       <div
                         class="relative z-10 shrink-0"
-                        data-tooltip="Owner"
+                        data-nui-tooltip="Owner"
                         tabindex="0"
                         @keydown.space.prevent="setTeammateRole(idx, 'owner')"
                         @click="setTeammateRole(idx, 'owner')"

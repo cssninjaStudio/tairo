@@ -299,7 +299,7 @@ const panelActive = ref(false)
           </div>
 
           <ul
-            class="slimscroll h-[calc(100%_-_64px)] space-y-2 overflow-y-auto px-4 pb-8 sm:px-8"
+            class="nui-slimscroll h-[calc(100%_-_64px)] space-y-2 overflow-y-auto px-4 pb-8 sm:px-8"
           >
             <li
               v-for="message in messages"
@@ -429,7 +429,9 @@ const panelActive = ref(false)
               </div>
             </div>
             <!-- Message body -->
-            <div class="slimscroll h-[calc(100vh_-_344px)] overflow-y-auto p-8">
+            <div
+              class="nui-slimscroll h-[calc(100vh_-_344px)] overflow-y-auto p-8"
+            >
               <h1 class="text-2xl font-bold">{{ selectedMessage?.title }}</h1>
               <article
                 class="text-muted-500 dark:text-muted-400 mt-8 leading-7 tracking-wider"

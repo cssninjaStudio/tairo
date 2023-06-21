@@ -37,7 +37,7 @@ const endMenuItems = computed(() =>
     </slot>
     <!--Body-->
     <div
-      class="slimscroll relative flex w-full grow flex-col overflow-y-auto py-6"
+      class="nui-slimscroll relative flex w-full grow flex-col overflow-y-auto py-6"
       :class="!isOpen ? 'px-4' : 'px-6'"
     >
       <!--Menu-->

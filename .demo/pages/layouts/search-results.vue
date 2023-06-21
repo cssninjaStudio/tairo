@@ -336,7 +336,7 @@ const filteredResults = computed(() => {
                     :to="result.url"
                     shape="full"
                     condensed
-                    data-tooltip="View profile"
+                    data-nui-tooltip="View profile"
                   >
                     <Icon name="lucide:arrow-right" />
                   </BaseButtonIcon>
@@ -345,7 +345,7 @@ const filteredResults = computed(() => {
                     :to="result.url"
                     shape="full"
                     condensed
-                    data-tooltip="View project"
+                    data-nui-tooltip="View project"
                   >
                     <Icon name="lucide:arrow-right" />
                   </BaseButtonIcon>
@@ -354,7 +354,7 @@ const filteredResults = computed(() => {
                     :to="result.url"
                     shape="full"
                     condensed
-                    data-tooltip="Download file"
+                    data-nui-tooltip="Download file"
                   >
                     <Icon name="lucide:arrow-down" />
                   </BaseButtonIcon>
