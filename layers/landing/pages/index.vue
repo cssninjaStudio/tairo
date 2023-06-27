@@ -6,14 +6,12 @@ definePageMeta({
   breadcrumb: {
     label: 'Tairo',
   },
-  layout: 'empty',
+  layout: 'landing',
 })
-const { y } = useNinjaWindowScroll()
 </script>
 
 <template>
-  <div class="group/landing overflow-hidden" :class="y > 60 ? 'scrolled' : ''">
-    <LandingNavbar />
+  <div>
     <LandingHero />
     <LandingCustomizer />
     <LandingDemos :limit="12" />
