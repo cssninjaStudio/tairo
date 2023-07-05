@@ -5,11 +5,9 @@ export default defineAppConfig({
         enabled: true,
         header: {
           component: '',
-          resolve: true,
         },
         footer: {
           component: '',
-          resolve: true,
         },
         items: [],
       },

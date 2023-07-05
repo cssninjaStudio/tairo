@@ -40,12 +40,10 @@ export default defineNuxtSchema({
           enabled: true,
           header: {
             component: '',
-            resolve: true,
             props: {},
           },
           footer: {
             component: '',
-            resolve: true,
             props: {},
           },
           items: {
