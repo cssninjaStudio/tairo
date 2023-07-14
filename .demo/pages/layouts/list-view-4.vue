@@ -95,7 +95,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                   <BaseAvatar
                     :src="item.icon"
                     :badge-src="item.author.avatar"
-                    :data-tooltip="`by ${item.author.name}`"
+                    :data-nui-tooltip="`by ${item.author.name}`"
                     size="lg"
                     class="bg-muted-100 dark:bg-muted-700/70"
                   />
@@ -163,7 +163,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                       shape="full"
                       small
                       muted
-                      data-tooltip="Save recipe"
+                      data-nui-tooltip="Save recipe"
                       class="hidden sm:inline-flex"
                     >
                       <Icon name="ph:heart-duotone" class="h-4 w-4" />

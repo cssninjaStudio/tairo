@@ -295,7 +295,7 @@ const total = computed(() => {
                 <BaseButtonIcon
                   shape="full"
                   class="hover:border-yellow-500 hover:text-yellow-500"
-                  data-tooltip="All categories"
+                  data-nui-tooltip="All categories"
                 >
                   <Icon name="lucide:chevron-right" class="h-4 w-4" />
                 </BaseButtonIcon>

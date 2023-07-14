@@ -98,7 +98,7 @@ const componentsWithoutPages = computed(() => {
         :key="component.name"
         condensed
         class="cursor-help opacity-60 transition-opacity duration-100 hover:opacity-100"
-        data-tooltip="This component is not documented yet."
+        data-nui-tooltip="This component is not documented yet."
       >
         <span class="font-mono text-xs">&lt;{{ component.name }}&gt;</span>
       </BaseTag>

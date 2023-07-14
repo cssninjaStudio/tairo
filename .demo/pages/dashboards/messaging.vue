@@ -692,7 +692,9 @@ async function submitMessage() {
           <div
             ref="chatEl"
             class="relative h-[calc(100vh_-_128px)] w-full p-4 sm:p-8"
-            :class="loading ? 'overflow-hidden' : 'overflow-y-auto slimscroll'"
+            :class="
+              loading ? 'overflow-hidden' : 'overflow-y-auto nui-slimscroll'
+            "
           >
             <!-- Loader-->
             <div

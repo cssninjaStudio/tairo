@@ -154,7 +154,7 @@ const { data, pending, error, refresh } = await useFetch('/api/jobs', {
                     shape="full"
                     small
                     muted
-                    data-tooltip="Add to Bookmarks"
+                    data-nui-tooltip="Add to Bookmarks"
                     class="hidden sm:inline-flex"
                   >
                     <Icon name="ph:bookmark-duotone" class="h-4 w-4" />

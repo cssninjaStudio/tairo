@@ -83,7 +83,7 @@ const props = withDefaults(defineProps<CarouselProps>(), {
                 :key="s"
                 :src="skill.logo"
                 size="xs"
-                :data-tooltip="skill.name"
+                :data-nui-tooltip="skill.name"
                 class="bg-muted-200 dark:bg-muted-700"
               />
             </div>

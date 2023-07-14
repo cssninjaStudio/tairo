@@ -144,7 +144,7 @@ const primaryPresets = [
 
     <!-- Body -->
     <div
-      class="px-4 pb-4 md:px-6 md:pb-6 max-h-[550px] overflow-y-auto slimscroll"
+      class="px-4 pb-4 md:px-6 md:pb-6 max-h-[550px] overflow-y-auto nui-slimscroll"
     >
       <div class="grid grid-cols-12 gap-6">
         <div class="col-span-12 sm:col-span-7 flex flex-col gap-4">
@@ -314,31 +314,31 @@ const primaryPresets = [
                   <button
                     type="button"
                     class="block h-6 w-6 rounded-full bg-gray-200 dark:bg-gray-900"
-                    data-tooltip="Gray"
+                    data-nui-tooltip="Gray"
                     @click="() => switchColorShades('muted', colors.gray)"
                   ></button>
                   <button
                     type="button"
                     class="block h-6 w-6 rounded-full bg-slate-200 dark:bg-slate-900 ring-1 ring-muted-500 ring-offset-2 ring-offset-white dark:ring-offset-muted-800"
-                    data-tooltip="Slate"
+                    data-nui-tooltip="Slate"
                     @click="() => switchColorShades('muted', colors.slate)"
                   ></button>
                   <button
                     type="button"
                     class="block h-6 w-6 rounded-full bg-stone-200 dark:bg-stone-900"
-                    data-tooltip="Stone"
+                    data-nui-tooltip="Stone"
                     @click="() => switchColorShades('muted', colors.stone)"
                   ></button>
                   <button
                     type="button"
                     class="block h-6 w-6 rounded-full bg-zinc-200 dark:bg-zinc-900"
-                    data-tooltip="Zinc"
+                    data-nui-tooltip="Zinc"
                     @click="() => switchColorShades('muted', colors.zinc)"
                   ></button
                   ><button
                     type="button"
                     class="block h-6 w-6 rounded-full bg-neutral-200 dark:bg-neutral-900"
-                    data-tooltip="Neutral"
+                    data-nui-tooltip="Neutral"
                     @click="() => switchColorShades('muted', colors.neutral)"
                   ></button>
                 </div>

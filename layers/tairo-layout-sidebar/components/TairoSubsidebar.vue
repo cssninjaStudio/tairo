@@ -3,7 +3,7 @@
     <slot name="header"></slot>
 
     <!-- Body -->
-    <div class="slimscroll relative h-full w-full overflow-y-auto">
+    <div class="nui-slimscroll relative h-full w-full overflow-y-auto">
       <div class="px-6 pb-8">
         <slot></slot>
       </div>

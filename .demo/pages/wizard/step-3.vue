@@ -179,7 +179,7 @@ const budget = ref('< 5K')
               <!-- Results -->
               <div
                 v-if="filteredCustomers.length > 0"
-                class="slimscroll max-h-[248px] space-y-2 overflow-y-auto"
+                class="nui-slimscroll max-h-[248px] space-y-2 overflow-y-auto"
               >
                 <!-- Result -->
                 <div

@@ -63,7 +63,7 @@ const activeTab = ref('tab-1')
     </div>
 
     <div
-      class="slimscroll relative h-[calc(100%_-_128px)] w-full overflow-y-auto px-10"
+      class="nui-slimscroll relative h-[calc(100%_-_128px)] w-full overflow-y-auto px-10"
     >
       <div class="py-6">
         <!-- Team tab content -->

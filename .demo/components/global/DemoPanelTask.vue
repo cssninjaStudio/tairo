@@ -35,12 +35,12 @@ const commentArea = ref('')
     </div>
 
     <div
-      class="slimscroll relative h-[calc(100%_-_64px)] w-full overflow-y-auto px-10 py-5"
+      class="nui-slimscroll relative h-[calc(100%_-_64px)] w-full overflow-y-auto px-10 py-5"
     >
       <div>
         <div class="mb-4 flex items-center justify-between">
           <div class="flex items-center gap-2">
-            <BaseButtonIcon shape="full" data-tooltip="Edit task" condensed>
+            <BaseButtonIcon shape="full" data-nui-tooltip="Edit task" condensed>
               <Icon name="lucide:edit-3" />
             </BaseButtonIcon>
             <h4
@@ -191,7 +191,7 @@ const commentArea = ref('')
                 <div class="ms-auto">
                   <BaseButtonIcon
                     shape="full"
-                    data-tooltip="Download file"
+                    data-nui-tooltip="Download file"
                     condensed
                   >
                     <Icon name="lucide:arrow-down" />

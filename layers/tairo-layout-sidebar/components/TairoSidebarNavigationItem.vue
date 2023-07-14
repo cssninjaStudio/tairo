@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useSidebar } from '../composables/sidebar'
-import type { SidebarNavigationItemConfig } from '../types'
+import { useSidebar } from '../composables/sidebar';
+import type { SidebarNavigationItemConfig } from '../types';
 
 const props = defineProps<{
   sidebar: SidebarNavigationItemConfig
@@ -30,8 +30,8 @@ function onSidebarItemClick() {
       v-else-if="props.sidebar.to && props.sidebar.icon"
       :to="props.sidebar.to"
       class="text-muted-400 flex h-12 w-12 items-center justify-center rounded-2xl transition-colors duration-300"
-      data-tooltip-position="right"
-      :data-tooltip="props.sidebar.title"
+      data-nui-tooltip-position="end"
+      :data-nui-tooltip="props.sidebar.title"
     >
       <Icon v-bind="props.sidebar.icon" />
     </NuxtLink>
@@ -45,8 +45,8 @@ function onSidebarItemClick() {
           ? 'bg-primary-100 text-primary-500 dark:bg-primary-500/10'
           : 'text-muted-400'
       "
-      data-tooltip-position="right"
-      :data-tooltip="props.sidebar.title"
+      data-nui-tooltip-position="end"
+      :data-nui-tooltip="props.sidebar.title"
       @click="onSidebarItemClick"
     >
       <Icon v-bind="props.sidebar.icon" />
