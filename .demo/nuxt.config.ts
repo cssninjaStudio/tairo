@@ -51,9 +51,9 @@ export default defineNuxtConfig({
   css: ['~/assets/css/colors.css'],
 
   experimental: {
-    // using parcel as as watcher run faster
+    // using granular watcher run faster
     // when using layers and/or in large projects
-    watcher: 'parcel',
+    watcher: 'chokidar-granular',
     // Write early hints when using node server.
     writeEarlyHints: true,
     // Render JSON payloads with support for revivifying complex types.
