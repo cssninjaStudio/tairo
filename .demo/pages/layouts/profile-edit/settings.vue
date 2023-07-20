@@ -133,11 +133,8 @@ watch(
   () => values.notifications?.enabled,
   (value) => {
     if (!value) {
-      // @ts-expect-error - vee validate typing bug with nested keys
       setFieldValue('notifications.flushLowPriority', false)
-      // @ts-expect-error - vee validate typing bug with nested keys
       setFieldValue('notifications.marketing', false)
-      // @ts-expect-error - vee validate typing bug with nested keys
       setFieldValue('notifications.partners', false)
     }
   },
