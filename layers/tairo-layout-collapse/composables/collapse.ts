@@ -40,8 +40,8 @@ export interface TairoCollapseResolvedConfig {
  *           icon: { name: 'ph:sidebar-duotone', class: 'w-5 h-5' },
  *
  *           // Or use a component
- *           // It should be registered in the app as a global component
- *           component: { name: 'BaseThemeToggle', props: {} },
+ *           // It should be registered in the app as a global component (in components/global)
+ *           component: { name: 'AppThemeToggle', props: {} },
  *
  *           // You can chose to display a subsidebar by defining a component name
  *           // It should be registered in the app as a global component
