@@ -96,7 +96,7 @@ const componentsWithoutPages = computed(() => {
       <BaseTag
         v-for="component of componentsWithoutPages"
         :key="component.name"
-        condensed
+        size="sm"
         class="cursor-help opacity-60 transition-opacity duration-100 hover:opacity-100"
         data-nui-tooltip="This component is not documented yet."
       >

@@ -6,7 +6,7 @@
       shape="rounded"
       placeholder="Write a message..."
       rows="1"
-      condensed
+      size="sm"
       autogrow
     />
   </div>

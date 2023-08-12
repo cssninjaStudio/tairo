@@ -39,7 +39,7 @@ const products = [
       <BaseHeading as="h3" size="md" weight="semibold" lead="tight">
         Shopping cart
       </BaseHeading>
-      <BaseTag color="primary" condensed shape="full">3 items</BaseTag>
+      <BaseTag color="primary" size="sm" shape="full">3 items</BaseTag>
     </div>
     <div class="space-y-2">
       <div v-for="product in products" :key="product.id" class="flex gap-2">

@@ -116,7 +116,7 @@
       size="md"
       class="bg-yellow-100 text-yellow-500 dark:border-2 dark:border-yellow-500 dark:bg-yellow-500/20 dark:text-yellow-400"
     >
-      <Icon name="ph:toggle-start-duotone" class="h-5 w-5" />
+      <Icon name="ph:toggle-left-duotone" class="h-5 w-5" />
     </BaseIconBox>
   </div>
 </template>

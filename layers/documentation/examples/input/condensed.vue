@@ -6,7 +6,7 @@
       shape="straight"
       label="Search"
       placeholder="Enter search terms..."
-      condensed
+      size="sm"
     />
 
     <BaseInput
@@ -15,7 +15,7 @@
       shape="rounded"
       label="Email Address"
       placeholder="Your email..."
-      condensed
+      size="sm"
     />
 
     <BaseInput
@@ -25,7 +25,7 @@
       type="search"
       placeholder="Search..."
       icon="lucide:search"
-      condensed
+      size="sm"
     />
 
     <BaseInput
@@ -35,7 +35,7 @@
       label="Password"
       placeholder="Enter password..."
       icon="lucide:lock"
-      condensed
+      size="sm"
     />
   </div>
 </template>

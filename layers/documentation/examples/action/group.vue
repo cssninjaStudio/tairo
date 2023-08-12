@@ -1,21 +1,25 @@
 <template>
-  <div class="flex items-end">
-    <BaseButtonAction shape="rounded" class="rounded-e-none border-e-0 focus:z-10">
-      View
-    </BaseButtonAction>
+  <div class="nui-button-group">
+    <BaseButtonAction shape="rounded"> View </BaseButtonAction>
 
-    <BaseButtonAction shape="straight" class="focus:z-10">
+    <BaseButtonAction shape="straight">
       <Icon name="ph:pen" class="h-4 w-4" />
     </BaseButtonAction>
 
-    <BaseButtonAction muted shape="straight" class="border-s-0 focus:z-10">Muted</BaseButtonAction>
+    <BaseButtonAction muted shape="straight">Muted</BaseButtonAction>
 
-    <BaseButtonAction disabled shape="straight" class="border-s-0 focus:z-10">
-      Disabled
-    </BaseButtonAction>
+    <BaseDropdown label="plus">
+      <template #button>
+        <BaseButtonAction shape="rounded"> plus </BaseButtonAction>
+      </template>
 
-    <BaseButtonAction shape="rounded" class="rounded-s-none border-s-0 focus:z-10">
-      Share
-    </BaseButtonAction>
+      <BaseDropdownItem> Edit </BaseDropdownItem>
+
+      <BaseDropdownItem> Cancel </BaseDropdownItem>
+    </BaseDropdown>
+
+    <BaseButtonAction disabled shape="straight"> Disabled </BaseButtonAction>
+
+    <BaseButtonAction shape="rounded"> Share </BaseButtonAction>
   </div>
 </template>

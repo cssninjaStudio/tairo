@@ -153,7 +153,7 @@ function statusColor(itemStatus: string) {
                     :color="statusColor(item.status)"
                     shape="full"
                     flavor="pastel"
-                    condensed
+                    size="sm"
                     class="capitalize"
                   >
                     {{ item.status }}

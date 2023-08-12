@@ -45,7 +45,7 @@ function openTaskPanel(id: number, tasks: any) {
   <div class="relative">
     <div class="absolute end-12 top-2.5 z-20 hidden sm:block">
       <BaseButton
-        condensed
+        size="sm"
         shape="curved"
         :to="`/layouts/projects/board/${slug}`"
       >
@@ -58,7 +58,7 @@ function openTaskPanel(id: number, tasks: any) {
         flavor="context"
         label="Dropdown"
         orientation="end"
-        condensed
+        size="md"
         class="z-20"
         shape="curved"
       >
@@ -299,7 +299,7 @@ function openTaskPanel(id: number, tasks: any) {
                             <BaseButtonIcon
                               shape="full"
                               data-nui-tooltip="Download file"
-                              condensed
+                              size="sm"
                             >
                               <Icon name="lucide:arrow-down" />
                             </BaseButtonIcon>

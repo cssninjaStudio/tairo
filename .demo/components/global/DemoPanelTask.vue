@@ -40,7 +40,7 @@ const commentArea = ref('')
       <div>
         <div class="mb-4 flex items-center justify-between">
           <div class="flex items-center gap-2">
-            <BaseButtonIcon shape="full" data-nui-tooltip="Edit task" condensed>
+            <BaseButtonIcon shape="full" data-nui-tooltip="Edit task" size="sm">
               <Icon name="lucide:edit-3" />
             </BaseButtonIcon>
             <h4
@@ -192,7 +192,7 @@ const commentArea = ref('')
                   <BaseButtonIcon
                     shape="full"
                     data-nui-tooltip="Download file"
-                    condensed
+                    size="sm"
                   >
                     <Icon name="lucide:arrow-down" />
                   </BaseButtonIcon>

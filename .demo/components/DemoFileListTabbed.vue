@@ -121,7 +121,7 @@ const savedFiles = [
                 flavor="context"
                 label="Dropdown"
                 orientation="end"
-                condensed
+                size="md"
                 class="z-20"
                 shape="curved"
               >
@@ -202,7 +202,7 @@ const savedFiles = [
                 flavor="context"
                 label="Dropdown"
                 orientation="end"
-                condensed
+                size="md"
                 shape="curved"
                 class="z-20"
               >

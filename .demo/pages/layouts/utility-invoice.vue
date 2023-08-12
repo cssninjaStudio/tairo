@@ -66,17 +66,17 @@ const totalData = computed(() => {
         </BaseHeading>
       </div>
       <div class="flex items-center justify-end gap-3">
-        <BaseButtonIcon condensed shape="full" data-nui-tooltip="Edit invoice">
+        <BaseButtonIcon size="sm" shape="full" data-nui-tooltip="Edit invoice">
           <Icon name="ph:pencil-duotone" class="h-4 w-4" />
         </BaseButtonIcon>
-        <BaseButtonIcon condensed shape="full" data-nui-tooltip="Send by email">
+        <BaseButtonIcon size="sm" shape="full" data-nui-tooltip="Send by email">
           <Icon name="ph:envelope-duotone" class="h-4 w-4" />
         </BaseButtonIcon>
-        <BaseButtonIcon condensed shape="full" data-nui-tooltip="Print invoice">
+        <BaseButtonIcon size="sm" shape="full" data-nui-tooltip="Print invoice">
           <Icon name="ph:printer-duotone" class="h-4 w-4" />
         </BaseButtonIcon>
         <BaseButtonIcon
-          condensed
+          size="sm"
           shape="full"
           data-nui-tooltip="Download as PDF"
         >

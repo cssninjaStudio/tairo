@@ -185,7 +185,7 @@ function toggleAllVisibleSelection() {
                     color="success"
                     flavor="pastel"
                     shape="full"
-                    condensed
+                    size="sm"
                     class="font-medium"
                   >
                     {{ item.status }}
@@ -195,7 +195,7 @@ function toggleAllVisibleSelection() {
                     color="info"
                     flavor="pastel"
                     shape="full"
-                    condensed
+                    size="sm"
                     class="font-medium"
                   >
                     {{ item.status }}
@@ -205,7 +205,7 @@ function toggleAllVisibleSelection() {
                     color="warning"
                     flavor="pastel"
                     shape="full"
-                    condensed
+                    size="sm"
                     class="font-medium"
                   >
                     {{ item.status }}
@@ -215,7 +215,7 @@ function toggleAllVisibleSelection() {
                     color="muted"
                     flavor="pastel"
                     shape="full"
-                    condensed
+                    size="sm"
                     class="font-medium"
                   >
                     {{ item.status }}

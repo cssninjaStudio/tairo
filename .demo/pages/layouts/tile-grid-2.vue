@@ -118,7 +118,7 @@ const { data, pending, error, refresh } = await useFetch(
                     flavor="context"
                     label="Dropdown"
                     orientation="end"
-                    condensed
+                    size="md"
                     class="z-20"
                     shape="curved"
                   >

@@ -128,7 +128,7 @@ const { data, pending, error, refresh } = await useFetch('/api/freelancers', {
                   class="flex w-full items-center justify-center sm:w-[160px] sm:justify-end"
                 >
                   <BaseTag
-                    condensed
+                    size="sm"
                     color="primary"
                     flavor="pastel"
                     shape="full"

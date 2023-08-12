@@ -103,14 +103,14 @@ const showStackTrace = ref(true)
           <div
             class="mb-3 flex items-center justify-start gap-1 opacity-30 transition-opacity duration-300 group-hover:opacity-100 group-focus:opacity-100"
           >
-            <BaseTag v-if="props.error.statusCode" color="danger" condensed>
+            <BaseTag v-if="props.error.statusCode" color="danger" size="sm">
               {{ props.error.statusCode }}
             </BaseTag>
             <BaseTag
               v-if="props.error.url"
               color="danger"
               flavor="outline"
-              condensed
+              size="sm"
             >
               {{ props.error.url }}
             </BaseTag>

@@ -23,7 +23,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
           flavor="context"
           label="Dropdown"
           orientation="end"
-          condensed
+          size="md"
           class="z-20"
           shape="curved"
         >

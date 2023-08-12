@@ -237,7 +237,7 @@ const items = [
                         :color="item.status === 'new' ? 'success' : 'muted'"
                         shape="full"
                         flavor="pastel"
-                        condensed
+                        size="sm"
                       >
                         {{ item.status }}
                       </BaseTag>
@@ -405,22 +405,21 @@ const items = [
           <!-- Widget -->
           <BaseCard shape="curved" class="p-6">
             <BaseTabSlider
-              condensed
+              size="sm"
               selected="team"
               :tabs="[
                 { label: 'Team', value: 'team' },
                 { label: 'Tasks', value: 'tasks' },
                 { label: 'Project', value: 'projects' },
               ]"
+              v-slot="{ activeValue }"
             >
-              <template #tab="{ activeValue }">
-                <div v-if="activeValue === 'team'">
-                  <DemoTeamListCompact actions />
-                </div>
-                <div v-else-if="activeValue === 'tasks'">
-                  <DemoTodoListCompact />
-                </div>
-              </template>
+              <div v-if="activeValue === 'team'">
+                <DemoTeamListCompact actions />
+              </div>
+              <div v-else-if="activeValue === 'tasks'">
+                <DemoTodoListCompact />
+              </div>
             </BaseTabSlider>
           </BaseCard>
           <!-- Widget -->

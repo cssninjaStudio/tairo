@@ -358,7 +358,7 @@ const onSubmit = handleSubmit(
                         class="absolute bottom-0 end-0 z-20"
                       >
                         <BaseButtonIcon
-                          condensed
+                          size="sm"
                           shape="full"
                           @click="remove(files.item(0)!)"
                           data-nui-tooltip="Remove image"
@@ -369,7 +369,7 @@ const onSubmit = handleSubmit(
                       </div>
                       <div v-else class="absolute bottom-0 end-0 z-20">
                         <div class="relative" data-nui-tooltip="Upload image">
-                          <BaseButtonIcon condensed shape="full" @click="open">
+                          <BaseButtonIcon size="sm" shape="full" @click="open">
                             <Icon name="lucide:plus" class="h-4 w-4" />
                           </BaseButtonIcon>
                         </div>

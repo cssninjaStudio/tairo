@@ -1,6 +1,6 @@
 <template>
   <div class="flex items-end">
-    <BaseDropdown flavor="button" label="Dropdown" orientation="start" condensed>
+    <BaseDropdown flavor="button" label="Dropdown" orientation="start" size="md">
       <BaseDropdownItem to="#" title="Profile" text="View your profile" />
 
       <BaseDropdownItem to="#" title="Projects" text="View your projects" />

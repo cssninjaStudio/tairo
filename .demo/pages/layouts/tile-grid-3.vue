@@ -149,7 +149,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                     flavor="context"
                     label="Dropdown"
                     orientation="end"
-                    condensed
+                    size="md"
                     class="z-20"
                     shape="curved"
                   >

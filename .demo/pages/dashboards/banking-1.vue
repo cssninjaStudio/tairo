@@ -151,7 +151,7 @@ const amount = ref<number>()
                 flavor="context"
                 label="Dropdown"
                 orientation="end"
-                condensed
+                size="md"
                 class="z-20"
               >
                 <BaseDropdownItem to="#" title="Invest" text="Buys more stocks">
@@ -279,7 +279,7 @@ const amount = ref<number>()
                 flavor="context"
                 label="Dropdown"
                 orientation="end"
-                condensed
+                size="md"
                 class="z-20"
               >
                 <BaseDropdownItem to="#" title="Invest" text="Buys more stocks">

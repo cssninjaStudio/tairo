@@ -107,7 +107,7 @@ const filteredResults = computed(() => {
                     label: 'text-xs',
                   }"
                 />
-                <BaseTag shape="full" condensed>24</BaseTag>
+                <BaseTag shape="full" size="sm">24</BaseTag>
               </li>
               <li class="flex items-center justify-between">
                 <BaseCheckbox
@@ -119,7 +119,7 @@ const filteredResults = computed(() => {
                     label: 'text-xs',
                   }"
                 />
-                <BaseTag shape="full" condensed>39</BaseTag>
+                <BaseTag shape="full" size="sm">39</BaseTag>
               </li>
               <li class="flex items-center justify-between">
                 <BaseCheckbox
@@ -131,7 +131,7 @@ const filteredResults = computed(() => {
                     label: 'text-xs',
                   }"
                 />
-                <BaseTag shape="full" condensed>17</BaseTag>
+                <BaseTag shape="full" size="sm">17</BaseTag>
               </li>
             </ul>
           </BaseCard>
@@ -150,7 +150,7 @@ const filteredResults = computed(() => {
                     label: 'text-xs',
                   }"
                 />
-                <BaseTag shape="full" condensed>62</BaseTag>
+                <BaseTag shape="full" size="sm">62</BaseTag>
               </li>
               <li class="flex items-center justify-between">
                 <BaseCheckbox
@@ -162,7 +162,7 @@ const filteredResults = computed(() => {
                     label: 'text-xs',
                   }"
                 />
-                <BaseTag shape="full" condensed>148</BaseTag>
+                <BaseTag shape="full" size="sm">148</BaseTag>
               </li>
               <li class="flex items-center justify-between">
                 <BaseCheckbox
@@ -174,7 +174,7 @@ const filteredResults = computed(() => {
                     label: 'text-xs',
                   }"
                 />
-                <BaseTag shape="full" condensed>23</BaseTag>
+                <BaseTag shape="full" size="sm">23</BaseTag>
               </li>
               <li class="flex items-center justify-between">
                 <BaseCheckbox
@@ -186,7 +186,7 @@ const filteredResults = computed(() => {
                     label: 'text-xs',
                   }"
                 />
-                <BaseTag shape="full" condensed>8</BaseTag>
+                <BaseTag shape="full" size="sm">8</BaseTag>
               </li>
               <li class="flex items-center justify-between">
                 <BaseCheckbox
@@ -198,7 +198,7 @@ const filteredResults = computed(() => {
                     label: 'text-xs',
                   }"
                 />
-                <BaseTag shape="full" condensed>43</BaseTag>
+                <BaseTag shape="full" size="sm">43</BaseTag>
               </li>
             </ul>
           </BaseCard>
@@ -217,7 +217,7 @@ const filteredResults = computed(() => {
                     label: 'text-xs',
                   }"
                 />
-                <BaseTag shape="full" condensed>12</BaseTag>
+                <BaseTag shape="full" size="sm">12</BaseTag>
               </li>
               <li class="flex items-center justify-between">
                 <BaseCheckbox
@@ -229,7 +229,7 @@ const filteredResults = computed(() => {
                     label: 'text-xs',
                   }"
                 />
-                <BaseTag shape="full" condensed>54</BaseTag>
+                <BaseTag shape="full" size="sm">54</BaseTag>
               </li>
               <li class="flex items-center justify-between">
                 <BaseCheckbox
@@ -241,7 +241,7 @@ const filteredResults = computed(() => {
                     label: 'text-xs',
                   }"
                 />
-                <BaseTag shape="full" condensed>31</BaseTag>
+                <BaseTag shape="full" size="sm">31</BaseTag>
               </li>
             </ul>
           </BaseCard>
@@ -335,7 +335,7 @@ const filteredResults = computed(() => {
                     v-if="result.type === 'people'"
                     :to="result.url"
                     shape="full"
-                    condensed
+                    size="sm"
                     data-nui-tooltip="View profile"
                   >
                     <Icon name="lucide:arrow-right" />
@@ -344,7 +344,7 @@ const filteredResults = computed(() => {
                     v-else-if="result.type === 'project'"
                     :to="result.url"
                     shape="full"
-                    condensed
+                    size="sm"
                     data-nui-tooltip="View project"
                   >
                     <Icon name="lucide:arrow-right" />
@@ -353,7 +353,7 @@ const filteredResults = computed(() => {
                     v-else-if="result.type === 'file'"
                     :to="result.url"
                     shape="full"
-                    condensed
+                    size="sm"
                     data-nui-tooltip="Download file"
                   >
                     <Icon name="lucide:arrow-down" />

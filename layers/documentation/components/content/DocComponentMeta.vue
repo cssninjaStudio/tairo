@@ -165,7 +165,7 @@ function wrapExternalLinks(string: string) {
                   <BaseTag
                     v-if="docs.model.required"
                     color="danger"
-                    condensed
+                    size="sm"
                     flavor="pastel"
                     class="my-2 font-mono"
                   >
@@ -295,7 +295,7 @@ function wrapExternalLinks(string: string) {
                 <BaseTag
                   v-if="prop.required"
                   color="danger"
-                  condensed
+                  size="sm"
                   flavor="pastel"
                   class="my-2 font-mono"
                 >

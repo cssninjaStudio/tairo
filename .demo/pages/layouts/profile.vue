@@ -23,7 +23,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
           flavor="context"
           label="Dropdown"
           orientation="end"
-          condensed
+          size="md"
           class="z-20"
           shape="curved"
         >
@@ -406,7 +406,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                   <div class="ms-auto">
                     <BaseButtonIcon
                       to="#"
-                      condensed
+                      size="sm"
                       shape="full"
                       data-nui-tooltip="View Profile"
                     >

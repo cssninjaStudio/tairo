@@ -7,7 +7,7 @@
       shape="curved"
       placeholder="e.g. Nuxt"
       label="Framework"
-      condensed
+      size="sm"
     />
 
     <BaseAutocomplete
@@ -17,7 +17,7 @@
       shape="curved"
       placeholder="e.g. Vue.js"
       label="Framework"
-      condensed
+      size="sm"
     />
   </div>
 </template>
