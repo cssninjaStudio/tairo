@@ -72,13 +72,13 @@ function openTaskPanel(id: number, tasks: any) {
             <Icon name="ph:kanban-duotone" class="me-2 block h-5 w-5" />
           </template>
         </BaseDropdownItem>
-        <BaseDropdownDivide />
+        <BaseDropdownDivider />
         <BaseDropdownItem to="#" title="Edit" text="Edit this project">
           <template #start>
             <Icon name="ph:pencil-duotone" class="me-2 block h-5 w-5" />
           </template>
         </BaseDropdownItem>
-        <BaseDropdownDivide />
+        <BaseDropdownDivider />
         <BaseDropdownItem to="#" title="Permissions" text="Manage permissions">
           <template #start>
             <Icon name="ph:lock-duotone" class="me-2 block h-5 w-5" />
@@ -89,7 +89,7 @@ function openTaskPanel(id: number, tasks: any) {
             <Icon name="ph:file-duotone" class="me-2 block h-5 w-5" />
           </template>
         </BaseDropdownItem>
-        <BaseDropdownDivide />
+        <BaseDropdownDivider />
         <BaseDropdownItem to="#" title="Delete" text="Delete this project">
           <template #start>
             <Icon name="ph:trash-duotone" class="me-2 block h-5 w-5" />

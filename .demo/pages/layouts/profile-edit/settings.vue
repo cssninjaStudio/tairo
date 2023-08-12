@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { toTypedSchema } from '@vee-validate/zod'
-import IMask from 'imask'
+import IMask, { type InputMask } from 'imask'
 import { Field, useForm } from 'vee-validate'
 import { z } from 'zod'
 
@@ -115,9 +115,7 @@ const fieldsWithErrors = computed(() => Object.keys(errors.value).length)
 
 // Here we register the phone number input with IMask
 const phoneInput = ref<any>()
-const mask = shallowRef<IMask.InputMask<{ mask: string }> | undefined>(
-  undefined,
-)
+const mask = shallowRef<InputMask<{ mask: string }> | undefined>(undefined)
 onMounted(() => {
   mask.value = IMask(phoneInput.value?.el, {
     mask: '(000) 000-0000',

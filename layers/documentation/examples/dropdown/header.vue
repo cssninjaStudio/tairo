@@ -19,7 +19,7 @@
         </template>
       </BaseDropdownItem>
 
-      <BaseDropdownDivide />
+      <BaseDropdownDivider />
 
       <BaseDropdownItem to="#" title="Garry Porter" text="CEO - Founder">
         <template #start>

@@ -162,7 +162,7 @@ const { data, pending, error, refresh } = await useFetch(
                         />
                       </template>
                     </BaseDropdownItem>
-                    <BaseDropdownDivide />
+                    <BaseDropdownDivider />
                     <BaseDropdownItem
                       to="#"
                       title="Remove"

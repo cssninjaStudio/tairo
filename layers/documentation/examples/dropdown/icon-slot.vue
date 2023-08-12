@@ -19,7 +19,7 @@
         </template>
       </BaseDropdownItem>
 
-      <BaseDropdownDivide />
+      <BaseDropdownDivider />
 
       <BaseDropdownItem to="#" title="Settings" text="Set your preferences">
         <template #start>

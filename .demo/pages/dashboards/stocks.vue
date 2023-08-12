@@ -329,7 +329,7 @@ function useBarProfit() {
                   <Icon name="ph:bank-duotone" class="me-2 block h-5 w-5" />
                 </template>
               </BaseDropdownItem>
-              <BaseDropdownDivide />
+              <BaseDropdownDivider />
               <BaseDropdownItem to="#" title="Wallet" text="Manage your wallet">
                 <template #start>
                   <Icon name="ph:wallet-duotone" class="me-2 block h-5 w-5" />
@@ -416,7 +416,7 @@ function useBarProfit() {
                   <Icon name="ph:bank-duotone" class="me-2 block h-5 w-5" />
                 </template>
               </BaseDropdownItem>
-              <BaseDropdownDivide />
+              <BaseDropdownDivider />
               <BaseDropdownItem to="#" title="Wallet" text="Manage your wallet">
                 <template #start>
                   <Icon name="ph:wallet-duotone" class="me-2 block h-5 w-5" />
@@ -505,7 +505,7 @@ function useBarProfit() {
                   <Icon name="ph:bank-duotone" class="me-2 block h-5 w-5" />
                 </template>
               </BaseDropdownItem>
-              <BaseDropdownDivide />
+              <BaseDropdownDivider />
               <BaseDropdownItem to="#" title="Wallet" text="Manage your wallet">
                 <template #start>
                   <Icon name="ph:wallet-duotone" class="me-2 block h-5 w-5" />

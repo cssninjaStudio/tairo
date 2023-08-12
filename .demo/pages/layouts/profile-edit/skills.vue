@@ -121,7 +121,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                     class="z-20"
                     shape="curved"
                   >
-                    <BaseDropdownDivide />
+                    <BaseDropdownDivider />
                     <BaseDropdownItem
                       to="#"
                       title="Edit"
@@ -239,7 +239,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                     class="z-20"
                     shape="curved"
                   >
-                    <BaseDropdownDivide />
+                    <BaseDropdownDivider />
                     <BaseDropdownItem
                       to="#"
                       title="Edit"
@@ -351,7 +351,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                     class="z-20"
                     shape="curved"
                   >
-                    <BaseDropdownDivide />
+                    <BaseDropdownDivider />
                     <BaseDropdownItem to="#" title="Edit" text="Edit this tool">
                       <template #start>
                         <Icon

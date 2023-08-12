@@ -12,7 +12,7 @@ definePageMeta({
   },
 })
 
-const roleType = ref('free')
+const roleType = ref(0)
 
 const roles = [
   {

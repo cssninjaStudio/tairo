@@ -165,7 +165,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                         />
                       </template>
                     </BaseDropdownItem>
-                    <BaseDropdownDivide />
+                    <BaseDropdownDivider />
                     <BaseDropdownItem to="#" title="Share" text="Share recipe">
                       <template #start>
                         <Icon
@@ -174,7 +174,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                         />
                       </template>
                     </BaseDropdownItem>
-                    <BaseDropdownDivide />
+                    <BaseDropdownDivider />
                     <BaseDropdownItem to="#" title="Save" text="Save recipe">
                       <template #start>
                         <Icon

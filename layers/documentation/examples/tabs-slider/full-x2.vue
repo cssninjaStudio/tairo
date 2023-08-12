@@ -6,7 +6,6 @@
       :tabs="[
         { label: 'Team', value: 'team' },
         { label: 'Projects', value: 'projects' },
-        { label: 'Tasks', value: 'tasks' },
       ]"
       v-slot="{ activeValue }"
     >

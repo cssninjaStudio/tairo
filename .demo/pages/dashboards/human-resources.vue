@@ -410,7 +410,6 @@ const items = [
               :tabs="[
                 { label: 'Team', value: 'team' },
                 { label: 'Tasks', value: 'tasks' },
-                { label: 'Project', value: 'projects' },
               ]"
               v-slot="{ activeValue }"
             >
