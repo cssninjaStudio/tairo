@@ -13,7 +13,7 @@
       >
         <template #action>
           <button
-            class="leading-0 text-muted-400 peer-focus-within:text-primary-500 absolute right-0 top-0 flex h-10 w-10 items-center justify-center text-center text-xl"
+            class="leading-0 text-muted-400 peer-focus-within:text-primary-500 absolute end-0 top-0 flex h-10 w-10 items-center justify-center text-center text-xl"
             @click.prevent="showPasswordField = !showPasswordField"
           >
             <div

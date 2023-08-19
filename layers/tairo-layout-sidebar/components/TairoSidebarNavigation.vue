@@ -37,7 +37,11 @@ const subsidebarEnabled = computed(() => {
     <!-- Icon sidebar -->
     <div
       class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 pointer-events-auto relative z-20 flex h-full w-[80px] flex-col border-r bg-white transition-all duration-300"
-      :class="isOpen ? '' : '-translate-x-full xl:translate-x-0'"
+      :class="
+        isOpen
+          ? ''
+          : '-translate-x-full rtl:translate-x-full xl:translate-x-0 rtl:xl:-translate-x-0'
+      "
     >
       <slot></slot>
 

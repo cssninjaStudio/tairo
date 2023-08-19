@@ -16,7 +16,7 @@ const endMenuItems = computed(() =>
 
 <template>
   <div
-    class="dark:bg-muted-800 border-muted-200 dark:border-muted-700 fixed left-0 top-0 z-[60] flex h-full flex-col border-r bg-white transition-all duration-300"
+    class="dark:bg-muted-800 border-muted-200 dark:border-muted-700 fixed start-0 top-0 z-[60] flex h-full flex-col border-r bg-white transition-all duration-300"
     :class="[
       !isOpen ? 'w-[80px]' : 'w-[280px]',
       isMobileOpen

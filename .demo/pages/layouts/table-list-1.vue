@@ -231,7 +231,7 @@ function toggleAllVisibleSelection() {
                         class="text-success-500"
                       />
                       <span
-                        class="absolute start-1/2 top-1/2 z-10 ms-0.5 -translate-x-1/2 -translate-y-1/2 font-sans text-[0.65rem] font-semibold"
+                        class="absolute start-1/2 top-1/2 z-10 ms-0.5 rtl:ms-0 rtl:me-0.5 -translate-x-1/2 rtl:translate-x-1/2 -translate-y-1/2 font-sans text-[0.65rem] font-semibold"
                       >
                         {{ item.completed }}%
                       </span>
