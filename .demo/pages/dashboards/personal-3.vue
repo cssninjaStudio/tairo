@@ -113,7 +113,9 @@ const candidates = [
 </script>
 
 <template>
-  <div class="grid grid-cols-3 gap-6">
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 ltablet:grid-cols-3 lg:grid-cols-3 gap-6"
+  >
     <!--Grid item-->
     <div>
       <BaseCard
