@@ -37,7 +37,7 @@
     "eslint-plugin-vuejs-accessibility": "2.1.0",
     "esno": "0.16.3",
     "fs-extra": "11.1.1",
-    "lint-staged": "13.2.2",
+    "lint-staged": "14.0.1",
     "npm-run-all": "4.1.5",
     "prettier": "2.8.8",
     "rimraf": "5.0.1",
