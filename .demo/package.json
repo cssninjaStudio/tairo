@@ -30,7 +30,7 @@
     "nuxt": "3.5.0",
     "nuxt-swiper": "1.1.0",
     "rehype-external-links": "2.1.0",
-    "rehype-raw": "6.1.1",
+    "rehype-raw": "7.0.0",
     "rehype-sanitize": "5.0.1",
     "rehype-stringify": "9.0.3",
     "remark-gfm": "3.0.1",
