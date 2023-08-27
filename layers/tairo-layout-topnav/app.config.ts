@@ -1,0 +1,27 @@
+export default defineAppConfig({
+  tairo: {
+    topnav: {
+      navigation: {
+        enabled: true,
+        logo: {
+          component: 'TairoLogo',
+          resolve: true,
+          props: { class: 'text-primary-500 h-10 w-10' },
+        },
+        header: {
+          component: '',
+        },
+        items: [],
+      },
+      circularMenu: {
+        enabled: true,
+        tools: [],
+      },
+      toolbar: {
+        enabled: true,
+        showTitle: false,
+        tools: [],
+      },
+    },
+  },
+})
