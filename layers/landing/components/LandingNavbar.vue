@@ -70,12 +70,16 @@ const { open } = usePanels()
         <button
           type="button"
           class="border-muted-200 hover:ring-muted-200 dark:hover:ring-muted-700 dark:border-muted-700 dark:bg-muted-800 dark:ring-offset-muted-900 flex h-9 w-9 items-center justify-center rounded-full border bg-white ring-1 ring-transparent transition-all duration-300 hover:ring-offset-4"
-          @click="open('language')"
+          @click="
+            () => {
+              const isOpen = useState('switcher-open', () => false)
+              isOpen.value = true
+            }
+          "
         >
-          <img
-            class="h-7 w-7 rounded-full"
-            src="/img/icons/flags/united-states-of-america.svg"
-            alt="flag icon"
+          <Icon
+            name="ph:drop-half-bottom-duotone"
+            class="text-muted-400 h-5 w-5"
           />
         </button>
         <BaseThemeToggle aria-label="Toggle darkmode" />

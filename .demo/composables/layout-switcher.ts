@@ -27,7 +27,7 @@ export function useLayoutSwitcher() {
       label: 'Top navigation',
       component: TairoTopnavLayout,
     },
-  ]
+  ] as const
 
   const activeLayoutName = useState('layout-switcher-active', () => 'sidebar')
   const activeLayout = computed(() => {
