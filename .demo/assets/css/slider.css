@@ -187,7 +187,7 @@
 .slider-horizontal .slider-tooltip-top:before {
   border: var(--slider-tooltip-arrow-size, 5px) solid transparent;
   border-top-color: inherit;
-  bottom: calc(var(--slider-tooltip-arrow-size, 5px) * -2);
+  bottom: calc(var(--slider-tooltip-arrow-size, 5px) * -1.7);
   content: '';
   height: 0;
   left: 50%;
@@ -305,7 +305,7 @@
   padding-right: 0.75rem;
   height: 28px;
   font-size: 0.85rem;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 500;
   display: flex;
   justify-content: center;
@@ -320,7 +320,7 @@
   padding-right: 0.75rem;
   height: 28px;
   font-size: 0.85rem;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 500;
   display: flex;
   justify-content: center;
@@ -335,7 +335,7 @@
   padding-right: 0.75rem;
   height: 28px;
   font-size: 0.85rem;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 500;
   display: flex;
   justify-content: center;
@@ -348,12 +348,24 @@
   width: 32px;
   height: 32px;
   font-size: 0.85rem;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 500;
   display: flex;
   justify-content: center;
   align-items: center;
   line-height: 3;
+}
+
+.slider-primary .slider-connect,
+.slider-primary .slider-tooltip {
+  @apply bg-primary-500 border-primary-500;
+}
+
+.slider-primary .slider-handle:focus {
+  box-shadow: 0 0 0 var(--slider-handle-ring-width, 2px)
+      var(--slider-handle-ring-color, #6366f1),
+    var(--slider-handle-shadow, 0.5px 0.5px 2px 1px rgba(0, 0, 0, 0.32));
+  outline: none;
 }
 
 .slider-info .slider-connect,

@@ -95,9 +95,6 @@ export function useSidebar() {
   }
 
   function detect() {
-    if (isOpen.value !== undefined) {
-      return
-    }
     if (!app.tairo.sidebar?.navigation?.startOpen) {
       isOpen.value = false
       return
@@ -108,7 +105,12 @@ export function useSidebar() {
     )
     if (item) {
       currentName.value = item.title
-      isOpen.value = Boolean(currentName.value)
+      if (!process.client) {
+        isOpen.value = Boolean(currentName.value)
+      } else {
+        const isXl = useTailwindBreakpoints().xl.value
+        isOpen.value = Boolean(currentName.value) && isXl
+      }
     }
     return
   }

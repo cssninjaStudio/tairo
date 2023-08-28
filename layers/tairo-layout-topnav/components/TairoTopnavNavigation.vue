@@ -12,7 +12,7 @@ const props = withDefaults(
     position: 'absolute',
   },
 )
-const { menuItems, selectedMenuItem } = useTopnav()
+const { menuItems, isMobileOpen } = useTopnav()
 const app = useAppConfig()
 </script>
 
@@ -44,7 +44,17 @@ const app = useAppConfig()
         <div class="w-full grow md:w-auto">
           <slot></slot>
         </div>
-        <div class="w-full grow py-3 md:w-auto md:py-0">
+        <div
+          class="dark:bg-muted-800 fixed start-0 top-0 z-20 w-full grow items-center bg-white p-3 md:static md:z-0 md:block md:w-auto md:bg-transparent md:p-0"
+          :class="isMobileOpen ? 'flex' : 'hidden'"
+        >
+          <div class="me-auto block md:hidden">
+            <BaseButtonClose
+              color="muted"
+              shape="full"
+              @click="isMobileOpen = false"
+            />
+          </div>
           <slot name="toolbar">
             <BaseButton to="#" color="primary">Get Started</BaseButton>
           </slot>

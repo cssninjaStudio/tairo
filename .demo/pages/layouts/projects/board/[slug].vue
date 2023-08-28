@@ -4,14 +4,30 @@ import { Container, Draggable } from 'vue3-smooth-dnd'
 definePageMeta({
   title: 'Project Board',
   layout: 'empty',
-  preview: {
-    title: 'Project board',
-    description: 'For displaying a kanban board',
-    categories: ['layouts', 'projects'],
-    src: '/img/screens/layouts-projects-board.png',
-    srcDark: '/img/screens/layouts-projects-board-dark.png',
-    order: 74,
-  },
+  preview: [
+    {
+      title: 'Project board',
+      description: 'For a fitness project kanban board',
+      categories: ['layouts', 'projects', 'kanban'],
+      src: '/img/screens/layouts-projects-board.png',
+      srcDark: '/img/screens/layouts-projects-board-dark.png',
+      order: 74,
+      params: {
+        slug: 'health-and-fitness-dashboard',
+      },
+    },
+    {
+      title: 'Project board',
+      description: 'For a banking project kanban board',
+      categories: ['layouts', 'projects', 'kanban'],
+      src: '/img/screens/layouts-projects-board.png',
+      srcDark: '/img/screens/layouts-projects-board-dark.png',
+      order: 74,
+      params: {
+        slug: 'banking-and-finance-dashboard',
+      },
+    },
+  ],
 })
 
 interface ColumnContent {

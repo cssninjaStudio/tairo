@@ -24,10 +24,12 @@ const demoPages = computed(() => {
       if (route.children) {
         // recurse
         traverseRoutes(route.children)
-      } else if (route.path.includes(':')) {
-        // skip dynamic route
-        continue
-      } else if (route.meta?.preview) {
+      } else if (
+        route.path.includes(':') &&
+        Array.isArray(route.meta?.preview)
+      ) {
+        match.push(route)
+      } else if (!route.path.includes(':') && route.meta?.preview) {
         // has preview data
         match.push(route)
       }
@@ -48,16 +50,30 @@ const demoPages = computed(() => {
 
 const categories = computed(() => {
   const categories = new Set<string>()
-  for (const route of demoPages.value) {
-    if (!route.meta?.preview?.categories) {
-      continue
+
+  function extractPreview(preview: any) {
+    if (!preview) {
+      return
     }
-    if (!Array.isArray(route.meta?.preview?.categories)) {
-      continue
+    if (Array.isArray(preview)) {
+      for (const item of preview) {
+        extractPreview(item)
+      }
+      return
     }
-    for (const category of route.meta.preview.categories) {
+    if (!preview.categories) {
+      return
+    }
+    if (!Array.isArray(preview.categories)) {
+      return
+    }
+    for (const category of preview.categories) {
       categories.add(category)
     }
+  }
+
+  for (const route of demoPages.value) {
+    extractPreview(route.meta?.preview)
   }
   return Array.from(categories).sort((a, b) => {
     return a.localeCompare(b)
@@ -68,16 +84,32 @@ const filteredDemos = computed(() => {
   if (selectedCategory.value.length === 0) {
     return demoPages.value
   }
-  return demoPages.value.filter((page) => {
-    if (!page.meta?.preview?.categories) {
+
+  function filterPreview(preview: any) {
+    if (!preview) {
       return false
     }
-    if (!Array.isArray(page.meta?.preview?.categories)) {
+    if (Array.isArray(preview)) {
+      for (const item of preview) {
+        if (filterPreview(item)) {
+          return true
+        }
+      }
       return false
     }
-    return page.meta.preview.categories.some((category) =>
+    if (!preview.categories) {
+      return false
+    }
+    if (!Array.isArray(preview.categories)) {
+      return false
+    }
+    return preview.categories.some((category: string) =>
       selectedCategory.value.includes(category),
     )
+  }
+
+  return demoPages.value.filter((page) => {
+    return filterPreview(page.meta?.preview)
   })
 })
 </script>
@@ -141,70 +173,24 @@ const filteredDemos = computed(() => {
         <!-- Col -->
         <div class="ltablet:col-span-10 col-span-12 lg:col-span-10">
           <div class="grid gap-8 sm:grid-cols-2">
-            <NuxtLink
-              :to="{ name: page.name }"
+            <template
               v-for="page in filteredDemos.slice(0, props.limit)"
               :key="page.name"
-              class="group relative block"
             >
-              <div>
-                <NuxtImg
-                  class="border-muted-200 block rounded-lg border motion-safe:transition-opacity motion-safe:duration-200 motion-safe:group-hover:opacity-75"
-                  :class="page.meta?.preview?.srcDark ? 'dark:hidden' : ''"
-                  :src="page.meta?.preview?.src"
-                  :alt="`Tairo - ${page.meta?.preview?.title}`"
-                  height="271"
-                  width="487"
-                  sizes="sm:100vw md:50vw lg:974px"
-                  format="webp"
-                  loading="lazy"
-                  decoding="async"
+              <LandingDemoLink
+                v-if="!Array.isArray(page.meta?.preview)"
+                :name="page.name"
+                :preview="page.meta?.preview"
+              />
+              <template v-else>
+                <LandingDemoLink
+                  v-for="preview in page.meta?.preview"
+                  :key="preview.title"
+                  :name="page.name"
+                  :preview="preview"
                 />
-                <NuxtImg
-                  v-if="page.meta?.preview?.srcDark"
-                  class="border-muted-800 hidden rounded-lg border motion-safe:transition-opacity motion-safe:duration-200 motion-safe:group-hover:opacity-75 dark:block"
-                  :src="page.meta?.preview?.srcDark"
-                  :alt="`Tairo - ${page.meta?.preview?.title}`"
-                  height="271"
-                  width="487"
-                  sizes="sm:100vw md:50vw lg:974px"
-                  format="webp"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <div class="absolute inset-x-0 -bottom-2 mx-auto max-w-[85%]">
-                  <BaseCard
-                    shape="curved"
-                    class="flex items-center p-4"
-                    elevated
-                  >
-                    <div>
-                      <BaseHeading
-                        as="h3"
-                        size="sm"
-                        weight="medium"
-                        lead="none"
-                        class="text-muted-800 mx-auto dark:text-white"
-                        >{{ page.meta?.preview?.title }}</BaseHeading
-                      >
-                      <BaseText
-                        size="xs"
-                        class="text-muted-500 dark:text-muted-400"
-                        >{{ page.meta?.preview?.description }}</BaseText
-                      >
-                    </div>
-                    <div
-                      class="bg-primary-500/10 text-primary-500 me-2 ms-auto flex h-8 w-8 items-center justify-center rounded-full motion-safe:opacity-0 motion-safe:transition-opacity motion-safe:duration-300 motion-safe:group-hover:opacity-100"
-                    >
-                      <Icon
-                        name="lucide:arrow-right"
-                        class="h-4 w-4 motion-safe:-translate-x-2 motion-safe:transition-transform motion-safe:duration-300 motion-safe:group-hover:translate-x-0 motion-reduce:translate-x-0"
-                      />
-                    </div>
-                  </BaseCard>
-                </div>
-              </div>
-            </NuxtLink>
+              </template>
+            </template>
           </div>
 
           <div v-if="props.cta" class="mt-24 flex items-center justify-center">

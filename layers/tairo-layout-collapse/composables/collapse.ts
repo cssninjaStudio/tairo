@@ -103,17 +103,21 @@ export function useCollapse() {
   }
 
   if (process.client) {
+    const route = useRoute()
     const { lg, xl } = useTailwindBreakpoints()
-    /*watch(xl, (isXl) => {
-      if (!isXl) {
-        isOpen.value = false
-      }
-    })*/
     watch(lg, (isLg) => {
       if (isLg) {
         isMobileOpen.value = false
       }
     })
+    watch(
+      () => route.fullPath,
+      () => {
+        if (!lg.value) {
+          isMobileOpen.value = false
+        }
+      },
+    )
   }
 
   return {

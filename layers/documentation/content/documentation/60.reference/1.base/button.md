@@ -120,7 +120,7 @@ Buttons can be shown in a disabled state. Use the `disabled` prop to disable the
 title: Button group
 demo: '#examples/button/group.vue'
 ---
-Buttons can be grouped together. Use them inside a flex container with an optional gap.
+Buttons can be grouped together. Use them inside a `BaseButtonGroup` component.
 ::
 
 :doc-component-meta{name="BaseButton"}

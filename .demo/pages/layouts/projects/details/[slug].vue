@@ -1,14 +1,30 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Project Details',
-  preview: {
-    title: 'Project details',
-    description: 'For displaying project details',
-    categories: ['layouts', 'projects'],
-    src: '/img/screens/layouts-projects-details.png',
-    srcDark: '/img/screens/layouts-projects-details-dark.png',
-    order: 72,
-  },
+  preview: [
+    {
+      title: 'Project details',
+      description: 'For displaying fitness project details',
+      categories: ['layouts', 'projects'],
+      src: '/img/screens/layouts-projects-details.png',
+      srcDark: '/img/screens/layouts-projects-details-dark.png',
+      order: 72,
+      params: {
+        slug: 'health-and-fitness-dashboard',
+      },
+    },
+    {
+      title: 'Project details',
+      description: 'For displaying banking project details',
+      categories: ['layouts', 'projects'],
+      src: '/img/screens/layouts-projects-details.png',
+      srcDark: '/img/screens/layouts-projects-details-dark.png',
+      order: 72,
+      params: {
+        slug: 'banking-and-finance-dashboard',
+      },
+    },
+  ],
 })
 
 const { open } = usePanels()

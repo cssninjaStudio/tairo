@@ -43,7 +43,7 @@ export default defineNuxtSchema({
             props: {},
           },
           header: {
-            component: '',
+            component: undefined,
             props: {},
           },
           items: {

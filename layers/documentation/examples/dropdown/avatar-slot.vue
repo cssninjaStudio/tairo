@@ -3,19 +3,19 @@
     <BaseDropdown flavor="button" label="Dropdown" orientation="start">
       <BaseDropdownItem to="#" title="Lana Jensen" text="Software Engineer">
         <template #start>
-          <BaseAvatar src="/img/avatars/4.svg" size="xs" class="me-3" />
+          <BaseAvatar src="/img/avatars/4.svg" size="xs" />
         </template>
       </BaseDropdownItem>
 
       <BaseDropdownItem to="#" title="Shawn Miller" text="Product Manager">
         <template #start>
-          <BaseAvatar src="/img/avatars/3.svg" size="xs" class="me-3" />
+          <BaseAvatar src="/img/avatars/3.svg" size="xs" />
         </template>
       </BaseDropdownItem>
 
       <BaseDropdownItem to="#" title="John Marynski" text="Sales Manager">
         <template #start>
-          <BaseAvatar src="/img/avatars/18.svg" size="xs" class="me-3" />
+          <BaseAvatar src="/img/avatars/18.svg" size="xs" />
         </template>
       </BaseDropdownItem>
 
@@ -23,7 +23,7 @@
 
       <BaseDropdownItem to="#" title="Garry Porter" text="CEO - Founder">
         <template #start>
-          <BaseAvatar src="/img/avatars/6.svg" size="xs" class="me-3" />
+          <BaseAvatar src="/img/avatars/6.svg" size="xs" />
         </template>
       </BaseDropdownItem>
     </BaseDropdown>

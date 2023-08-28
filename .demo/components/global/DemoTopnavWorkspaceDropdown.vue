@@ -36,18 +36,21 @@ function setWorkspace(workspace: any) {
 <template>
   <div
     ref="target"
-    class="relative w-full z-10 group/workspace max-w-[240px] ms-auto md:ms-0"
+    class="relative w-full z-10 group/workspace max-w-[170px] md:max-w-[240px] ms-auto md:ms-0"
   >
     <button
       type="button"
-      class="w-full py-2 ps-2 pe-3 group-hover/workspace:bg-muted-100 dark:group-hover/workspace:bg-muted-900/60 rounded-xl max-w-[240px] transition-colors duration-300"
+      class="w-full py-2 ps-2 pe-3 group-hover/workspace:bg-muted-100 dark:group-hover/workspace:bg-muted-900/60 rounded-xl max-w-[170px] md:max-w-[240px] transition-colors duration-300"
       :class="open && 'bg-muted-100 dark:bg-muted-900/60'"
       @click="openDropdown()"
     >
       <span class="w-full flex items-center gap-3 text-start">
         <BaseAvatar size="xxs" :src="selectedWorkspace.logo" />
         <div>
-          <BaseText size="sm" class="block text-muted-800 dark:text-muted-200">
+          <BaseText
+            size="sm"
+            class="block text-muted-800 dark:text-muted-200 line-clamp-1"
+          >
             {{ selectedWorkspace.name }}
           </BaseText>
         </div>

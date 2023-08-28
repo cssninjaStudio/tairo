@@ -27,7 +27,7 @@ const props = withDefaults(
 const year = new Date().getFullYear()
 const route = useRoute()
 const app = useAppConfig()
-const { selectedMenuItem } = useTopnav()
+const { isMobileOpen } = useTopnav()
 
 const topnavEnabled = computed(() => {
   return (
@@ -99,15 +99,19 @@ const mainClass = computed(() => {
             >
               <slot name="title">{{ route.meta.title }}</slot>
             </BaseHeading>
-            <!--DemoTopnavWorkspaceDropdown /-->
             <component
               :is="
                 resolveComponentOrNative(
-                  app.tairo.topnav?.navigation.header.component,
+                  app.tairo.topnav?.navigation?.header?.component,
                 )
               "
-              v-bind="app.tairo.topnav?.navigation.header.props"
+              v-bind="app.tairo.topnav?.navigation?.header?.props"
             ></component>
+            <div class="flex items-center justify-center md:hidden">
+              <button type="button" @click="isMobileOpen = true">
+                <Icon name="lucide:menu" class="text-muted-400 h-6 w-6" />
+              </button>
+            </div>
           </div>
           <template #toolbar>
             <div v-if="toolbarEnabled">
@@ -128,7 +132,7 @@ const mainClass = computed(() => {
 
       <div :class="mainClass">
         <div
-          class="pt-52 md:pt-36"
+          class="pt-40 md:pt-36"
           :class="[
             props.display === 'condensed' && 'w-full',
             props.display === 'horizontal-scroll' &&

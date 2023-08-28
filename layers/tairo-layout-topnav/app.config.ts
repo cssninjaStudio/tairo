@@ -9,7 +9,7 @@ export default defineAppConfig({
           props: { class: 'text-primary-500 h-10 w-10' },
         },
         header: {
-          component: '',
+          component: undefined,
         },
         items: [],
       },

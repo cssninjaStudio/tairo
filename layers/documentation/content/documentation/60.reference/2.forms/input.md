@@ -77,4 +77,12 @@ demo: '#examples/input/invalid.vue'
 Inputs can be shown in an error state using the `error` prop. You can also set a custom error message using the same prop.
 ::
 
+::doc-component-demo
+---
+title: Grouped inputs
+demo: '#examples/input/group.vue'
+---
+Inputs and selects can be grouped with buttons using the `BaseButtonGroup` component.
+::
+
 :doc-component-meta{name="BaseInput"}

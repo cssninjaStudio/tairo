@@ -73,6 +73,8 @@ export function useTopnav() {
     )
   })
 
+  const isMobileOpen = useState('collapse-open', () => false)
+
   const activeMenuItem = computed(() => {
     return menuItems.value?.find((item) => {
       if (item.activePath) {
@@ -105,5 +107,6 @@ export function useTopnav() {
     menuItems,
     activeMenuItem,
     selectedMenuItem,
+    isMobileOpen,
   }
 }

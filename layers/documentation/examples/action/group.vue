@@ -1,5 +1,5 @@
 <template>
-  <div class="nui-button-group">
+  <BaseButtonGroup>
     <BaseButtonAction shape="rounded"> View </BaseButtonAction>
 
     <BaseButtonAction shape="straight">
@@ -21,5 +21,5 @@
     <BaseButtonAction disabled shape="straight"> Disabled </BaseButtonAction>
 
     <BaseButtonAction shape="rounded"> Share </BaseButtonAction>
-  </div>
+  </BaseButtonGroup>
 </template>
