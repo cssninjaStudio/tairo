@@ -602,7 +602,7 @@ watch(
 }
 
 .mapboxgl-ctrl-geocoder input {
- @apply h-12 ps-12 font-sans text-muted-700 dark:text-muted-100 rounded-full bg-white dark:bg-muted-800 border border-muted-200 dark:border-muted-700 shadow-xl shadow-muted-300/30 dark:shadow-muted-900/40 transition-colors duration-300;
+  @apply h-12 ps-12 font-sans text-muted-700 dark:text-muted-100 rounded-full bg-white dark:bg-muted-800 border border-muted-200 dark:border-muted-700 shadow-xl shadow-muted-300/30 dark:shadow-muted-900/40 transition-colors duration-300;
 }
 
 .mapboxgl-ctrl-geocoder--button {

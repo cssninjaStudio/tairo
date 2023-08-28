@@ -406,7 +406,7 @@ const items = [
           <BaseCard shape="curved" class="p-6">
             <BaseTabSlider
               size="sm"
-              selected="team"
+              model-value="team"
               :tabs="[
                 { label: 'Team', value: 'team' },
                 { label: 'Tasks', value: 'tasks' },

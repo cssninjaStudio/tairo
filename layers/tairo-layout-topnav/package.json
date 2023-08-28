@@ -8,6 +8,6 @@
     "clean": "rimraf .nuxt .output node_modules"
   },
   "dependencies": {
-    "nuxt": "^3.5.1"
+    "nuxt": "^3.7.0"
   }
 }

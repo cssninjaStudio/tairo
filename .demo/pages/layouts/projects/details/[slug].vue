@@ -134,7 +134,7 @@ function openTaskPanel(id: number, tasks: any) {
     </div>
     <div v-else class="h-full">
       <BaseTabs
-        selected="overview"
+        model-value="overview"
         :tabs="[
           {
             label: 'Overview',

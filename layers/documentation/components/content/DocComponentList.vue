@@ -20,8 +20,8 @@ watchEffect(() => {
 // map component meta to documentation routes
 const componentsPagesMap = computed(() => {
   return meta.value.map((name) => {
-    const route = routesFlat.value.find((route: any) =>
-      route.components?.includes(name),
+    const route = routesFlat.value.find(
+      (route: any) => route.components?.includes(name),
     )
     return {
       name,
@@ -33,8 +33,8 @@ const componentsPagesMap = computed(() => {
 // filter components without documentation routes
 const componentsWithoutPages = computed(() => {
   return componentsPagesMap.value.filter((c) => {
-    const route = routesFlat.value.find((route: any) =>
-      route.components?.includes(c.name),
+    const route = routesFlat.value.find(
+      (route: any) => route.components?.includes(c.name),
     )
     return !route
   })

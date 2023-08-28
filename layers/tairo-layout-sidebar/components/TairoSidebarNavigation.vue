@@ -14,13 +14,14 @@ const props = withDefaults(
 
 const { isOpen, current, sidebars } = useSidebar()
 
-const startSidebars = computed(() =>
-  sidebars.value?.filter(
-    (sidebar) => !sidebar.position || sidebar.position === 'start',
-  ),
+const startSidebars = computed(
+  () =>
+    sidebars.value?.filter(
+      (sidebar) => !sidebar.position || sidebar.position === 'start',
+    ),
 )
-const endSidebars = computed(() =>
-  sidebars.value?.filter((sidebar) => sidebar.position === 'end'),
+const endSidebars = computed(
+  () => sidebars.value?.filter((sidebar) => sidebar.position === 'end'),
 )
 
 const subsidebarEnabled = computed(() => {

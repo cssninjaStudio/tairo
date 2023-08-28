@@ -2,7 +2,7 @@
   <div class="w-full max-w-sm">
     <BaseTabSlider
       shape="full"
-      selected="team"
+      model-value="team"
       :tabs="[
         { label: 'Team', value: 'team' },
         { label: 'Projects', value: 'projects' },
