@@ -17,10 +17,10 @@ import {
 } from 'shiki'
 import { unified, type Processor } from 'unified'
 
-export type ProcessorThemes = Record<
+export type ProcessorThemes<T extends Processor = any> = Record<
   string,
   {
-    processor: Processor
+    processor: T
     highlighter: Highlighter
   }
 >
@@ -78,9 +78,13 @@ async function createProcessor(options: HighlighterOptions) {
 
   const highlighter = await getHighlighter(options)
   const processor = unified()
+    // @ts-expect-error
     .use(remarkParse)
+    // @ts-expect-error
     .use(remarkGfm)
+    // @ts-expect-error
     .use(remarkShiki, { highlighter })
+    // @ts-expect-error
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeRaw)
     // this but sanitize html but allow to add
@@ -108,6 +112,7 @@ async function createProcessor(options: HighlighterOptions) {
       },
     })
     // this add noopener, noreferrer and _blank to external links
+    // @ts-expect-error
     .use(rehypeExternalLinks, {
       rel: ['noopener noreferrer'],
       target: '_blank',

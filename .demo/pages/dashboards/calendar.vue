@@ -18,18 +18,15 @@ import 'v-calendar/dist/style.css'
 import '~/assets/css/vcalendar-weekly.css'
 import '~/assets/css/vcalendar.css'
 
-import { 
+import {
   type VCalendarAttribute,
   type CalendarCustomAttribute,
   type CalendarSettings,
   type CalendarEvent,
-
   dateToTop,
   datesToHeight,
   topToDate,
-
   categoryTheme,
-
   useCalendarEvents,
   useDateRange,
   useNowMarker,
@@ -38,7 +35,6 @@ import {
   useCreateEvent,
   useViewPan,
 } from '~/utils/apps/calendar'
-
 
 definePageMeta({
   title: 'Calendar',
@@ -70,7 +66,8 @@ function getChildPayload(index: number) {
 
 const { fromDate, toDate, weekdays, onPageChange } = useDateRange(settings)
 const { calendarEvents, pendingEvents } = useCalendarEvents({
-  fromDate, toDate,
+  fromDate,
+  toDate,
 })
 
 const {
@@ -78,13 +75,13 @@ const {
   isPositionDragging,
   onHeightDragStart,
   onPositionDragStart,
- } = useDragEvent(
+} = useDragEvent(
   settings,
   calendarEvents,
   // on drag end
   async (event) => {
     // update event
-  }
+  },
 )
 
 const { onCalendarClick, clearNew, hasNew } = useCreateEvent(
@@ -101,9 +98,13 @@ const { onCalendarClick, clearNew, hasNew } = useCreateEvent(
   }),
   // can create new event
   () => {
-    return !(isHeightDragging.value || isPositionDragging.value || isViewPaning.value)
+    return !(
+      isHeightDragging.value ||
+      isPositionDragging.value ||
+      isViewPaning.value
+    )
   },
-  // on create 
+  // on create
   async (event) => {
     calendarEvents.value.push(event)
     onSelectEvent(event.customData)
@@ -112,8 +113,12 @@ const { onCalendarClick, clearNew, hasNew } = useCreateEvent(
 
 const selectedEventId = ref<string>()
 const selectedEvent = computed(() => {
-  return calendarEvents.value.find((event) => event?.customData?.id === selectedEventId.value)?.customData || 
+  return (
+    calendarEvents.value.find(
+      (event) => event?.customData?.id === selectedEventId.value,
+    )?.customData ||
     pendingEvents.value.find((event) => event.id === selectedEventId.value)
+  )
 })
 function onSelectEvent(event: CalendarEvent) {
   if (event.id !== 'new' && hasNew.value) {
@@ -129,8 +134,8 @@ const { isViewPaning, isViewMoved } = useViewPan(scrollCalendarRef, () => {
 })
 
 const { isPendingEventDragging, onPendingEventDragStart } = useDragEventPending(
-  settings, 
-  calendarEvents, 
+  settings,
+  calendarEvents,
   // on drag end
   (event) => {
     onSelectEvent(event.customData)
@@ -184,18 +189,23 @@ function updateHeight(height = 160) {
 }
 const selectedEventFeatures = computed({
   get() {
-    return selectedEvent.value?.features ? Object.keys(selectedEvent.value?.features) : []
+    return selectedEvent.value?.features
+      ? Object.keys(selectedEvent.value?.features)
+      : []
   },
   set(values: string[]) {
     if (!selectedEvent.value) {
       return
     }
 
-    selectedEvent.value.features = values.reduce((acc, value) => {
-      acc[value] = true
-      return acc
-    }, {} as Record<string, boolean>)
-  }
+    selectedEvent.value.features = values.reduce(
+      (acc, value) => {
+        acc[value] = true
+        return acc
+      },
+      {} as Record<string, boolean>,
+    )
+  },
 })
 </script>
 
@@ -309,18 +319,22 @@ const selectedEventFeatures = computed({
       </nav>
     </div>
 
-    <div class="flex ms-20 lg:ms-0 w-[1500px] lg:w-full border-t border-muted-200 dark:border-muted-800">
+    <div
+      class="flex ms-20 lg:ms-0 w-[1500px] lg:w-full border-t border-muted-200 dark:border-muted-800"
+    >
       <!-- scrollable area -->
       <div
         ref="scrollCalendarRef"
-        class="nui-slimscroll grow h-[100vh] w-[1500px] overflow-x-auto lg:overflow-x-hidden lg:w-auto space-y-14  overflow-y-auto relative"
+        class="nui-slimscroll grow h-[100vh] w-[1500px] overflow-x-auto lg:overflow-x-hidden lg:w-auto space-y-14 overflow-y-auto relative"
       >
         <!-- sticky header -->
         <div
           class="sticky top-0 flex z-20 bg-white dark:bg-muted-900"
           @click="() => scrollCalendarToTop()"
         >
-          <div class="w-10 border-b border-muted-200 dark:border-muted-800"></div>
+          <div
+            class="w-10 border-b border-muted-200 dark:border-muted-800"
+          ></div>
           <div
             class="grid grow border-b border-muted-200 dark:border-muted-800"
             :class="[settings.hideWeekends ? 'grid-cols-5' : 'grid-cols-7']"
@@ -376,8 +390,12 @@ const selectedEventFeatures = computed({
               trim-weeks
               disable-page-swipe
               title-position="left"
-              :first-day-of-week="settings.weekStartsOn !== undefined ? (settings.weekStartsOn + 1 as any) : 1"
-              :attributes="(calendarEvents as VCalendarAttribute[])"
+              :first-day-of-week="
+                settings.weekStartsOn !== undefined
+                  ? ((settings.weekStartsOn + 1) as any)
+                  : 1
+              "
+              :attributes="calendarEvents as VCalendarAttribute[]"
               @update:pages="onPageChange"
             >
               <template #header-left-button="{ movePrev }">
@@ -387,7 +405,10 @@ const selectedEventFeatures = computed({
                   @click="movePrev"
                   @keydown.space.enter="movePrev"
                 >
-                  <Icon name="lucide:chevron-left" class="!top-auto !h-4 !w-4" />
+                  <Icon
+                    name="lucide:chevron-left"
+                    class="!top-auto !h-4 !w-4"
+                  />
                 </BaseButtonIcon>
               </template>
               <template #header-right-button="{ moveNext }">
@@ -397,10 +418,21 @@ const selectedEventFeatures = computed({
                   @click="moveNext"
                   @keydown.space.enter="moveNext"
                 >
-                  <Icon name="lucide:chevron-right" class="!top-auto !h-4 !w-4" />
+                  <Icon
+                    name="lucide:chevron-right"
+                    class="!top-auto !h-4 !w-4"
+                  />
                 </BaseButtonIcon>
               </template>
-              <template #day-content="{ day, attributes }: { day: any; attributes: CalendarCustomAttribute<CalendarEvent>[] }">
+              <template
+                #day-content="{
+                  day,
+                  attributes,
+                }: {
+                  day: any
+                  attributes: CalendarCustomAttribute<CalendarEvent>[]
+                }"
+              >
                 <div
                   class="group z-10 flex h-full flex-col p-0 relative"
                   :data-day="day.date"
@@ -452,12 +484,17 @@ const selectedEventFeatures = computed({
 
                   <!-- day events -->
                   <template v-for="event in attributes" :key="event.key">
-                    <div 
+                    <div
                       class="absolute z-50 outline-2 outline-offset-2 start-4 end-4 rounded-md pointer-events-none"
                       :class="{
-                        'outline-dashed': event.customData.id === 'new' && event.customData.id === selectedEventId,
-                        'outline': event.customData.id !== 'new' && event.customData.id === selectedEventId,
-                        [categoryTheme[event.customData.category].outline]: event.customData.id === selectedEventId,
+                        'outline-dashed':
+                          event.customData.id === 'new' &&
+                          event.customData.id === selectedEventId,
+                        outline:
+                          event.customData.id !== 'new' &&
+                          event.customData.id === selectedEventId,
+                        [categoryTheme[event.customData.category].outline]:
+                          event.customData.id === selectedEventId,
                       }"
                       :style="{
                         top: `${dateToTop(
@@ -465,12 +502,14 @@ const selectedEventFeatures = computed({
                           event.customData.startDate,
                           day.date,
                         )}px`,
-                        height: `${datesToHeight(
-                          settings,
-                          event.customData.startDate,
-                          event.customData.endDate,
-                          day.date,
-                        ) + 4}px`,
+                        height: `${
+                          datesToHeight(
+                            settings,
+                            event.customData.startDate,
+                            event.customData.endDate,
+                            day.date,
+                          ) + 4
+                        }px`,
                       }"
                     ></div>
 
@@ -495,13 +534,20 @@ const selectedEventFeatures = computed({
                       }"
                       @click.stop="() => onSelectEvent(event.customData)"
                     >
-                      <DemoCalendarEvent :event="event" @positiondrag="(e) => onPositionDragStart(event, e)" />
+                      <DemoCalendarEvent
+                        :event="event"
+                        @positiondrag="(e) => onPositionDragStart(event, e)"
+                      />
                     </div>
                     <div
                       class="absolute start-4 end-4 dark:border-muted-800 dark:bg-muted-700/50 dark:hover:bg-muted-700/80 left-0 bottom-0 h-[4px] bg-slate-50 hover:bg-slate-200 cursor-n-resize rounded-b-md border border-t-0"
                       :style="{
                         top: `${
-                          dateToTop(settings, event.customData.startDate, day.date) +
+                          dateToTop(
+                            settings,
+                            event.customData.startDate,
+                            day.date,
+                          ) +
                           datesToHeight(
                             settings,
                             event.customData.startDate,
@@ -540,9 +586,12 @@ const selectedEventFeatures = computed({
           </div>
           <TairoSidebarTools />
         </div>
-        
+
         <!-- settings -->
-        <div v-if="showSettings" class="px-6 py-4 bg-white dark:bg-muted-900 border-t border-b border-muted-300 dark:border-muted-800">
+        <div
+          v-if="showSettings"
+          class="px-6 py-4 bg-white dark:bg-muted-900 border-t border-b border-muted-300 dark:border-muted-800"
+        >
           <div class="grid grid-cols-3 gap-x-2 gap-y-4">
             <BaseInput
               v-model.number="settings.hourOpen"
@@ -576,7 +625,7 @@ const selectedEventFeatures = computed({
               label="Week starts on"
               size="sm"
               :classes="{
-                wrapper: 'col-span-2'
+                wrapper: 'col-span-2',
               }"
             >
               <option :value="0">Sunday</option>
@@ -588,15 +637,23 @@ const selectedEventFeatures = computed({
               <option :value="6">Saturday</option>
             </BaseSelect>
             <BaseButtonGroup>
-              <BaseButtonAction shape="curved" :color="settings.hourHeight === 480 ? 'muted' : 'default'" @click="() => updateHeight(480)">
+              <BaseButtonAction
+                shape="curved"
+                :color="settings.hourHeight === 480 ? 'muted' : 'default'"
+                @click="() => updateHeight(480)"
+              >
                 <Icon name="carbon:maximize" />
               </BaseButtonAction>
-              <BaseButtonAction shape="curved" :color="settings.hourHeight === 160 ? 'muted' : 'default'" @click="() => updateHeight()">
+              <BaseButtonAction
+                shape="curved"
+                :color="settings.hourHeight === 160 ? 'muted' : 'default'"
+                @click="() => updateHeight()"
+              >
                 <Icon name="carbon:minimize" />
               </BaseButtonAction>
             </BaseButtonGroup>
           </div>
-          
+
           <div class="mt-4">
             <BaseSwitchThin
               v-model="settings.hideWeekends"
@@ -613,20 +670,37 @@ const selectedEventFeatures = computed({
           enter-to-class="translate-x-0 opacity-100"
           leave-active-class="transition-all duration-100 ease-in"
           leave-from-class="translate-x-0 opacity-100"
-          :leave-to-class="selectedEvent ? '-translate-x-20 opacity-0' : 'translate-x-20 opacity-0'"
+          :leave-to-class="
+            selectedEvent
+              ? '-translate-x-20 opacity-0'
+              : 'translate-x-20 opacity-0'
+          "
         >
-          <div 
-            v-if="selectedEvent" 
+          <div
+            v-if="selectedEvent"
             class="relative p-6 pt-4 nui-slimscroll h-[calc(100vh_-_53px)]"
             :class="{
               'overflow-y-auto overflow-x-hidden': !showSettings,
               'overflow-hidden': showSettings,
             }"
           >
-            <div v-if="showSettings" class="absolute inset-0  z-50 cursor-pointer backdrop-blur-[2px]" @click="showSettings = false"></div>
-            <BaseHeading size="sm" weight="medium" lead="snug" class="flex justify-between items-center uppercase text-muted-400 dark:text-muted-500 mb-4">
+            <div
+              v-if="showSettings"
+              class="absolute inset-0 z-50 cursor-pointer backdrop-blur-[2px]"
+              @click="showSettings = false"
+            ></div>
+            <BaseHeading
+              size="sm"
+              weight="medium"
+              lead="snug"
+              class="flex justify-between items-center uppercase text-muted-400 dark:text-muted-500 mb-4"
+            >
               <span>Event Info</span>
-              <BaseButtonClose color="default" class="bg-white dark:bg-muted-800" @click="selectedEventId = undefined" />
+              <BaseButtonClose
+                color="default"
+                class="bg-white dark:bg-muted-800"
+                @click="selectedEventId = undefined"
+              />
             </BaseHeading>
 
             <div class="flex flex-col gap-2">
@@ -636,17 +710,19 @@ const selectedEventFeatures = computed({
                 v-focus
               />
 
-              <BaseListbox 
+              <BaseListbox
                 v-model.prop="selectedEvent.category"
                 label="Category"
                 :properties="{
                   value: 'value',
                   label: 'label',
-                }" 
-                :items="Object.entries(categoryTheme).map(([key, item]) => ({
-                  value: key,
-                  label: item.name,
-                }))"
+                }"
+                :items="
+                  Object.entries(categoryTheme).map(([key, item]) => ({
+                    value: key,
+                    label: item.name,
+                  }))
+                "
               />
 
               <BaseAutocomplete
@@ -688,33 +764,39 @@ const selectedEventFeatures = computed({
                 :display-value="(item) => item.name"
                 dropdown
                 multiple
-                :filter-items="(query?: string, items?: any[]) => {
-                  if (!query || !items) {
-                    return items ?? []
-                  }
+                :filter-items="
+                  (query?: string, items?: any[]) => {
+                    if (!query || !items) {
+                      return items ?? []
+                    }
 
-                  // search by name or text
-                  return items.filter((item) => {
-                    const nameMatches = item?.name?.toLowerCase().includes(query.toLowerCase())
-                    const textMatches = item?.text?.toLowerCase().includes(query.toLowerCase())
-                    return nameMatches || textMatches
-                  })
-                }"
+                    // search by name or text
+                    return items.filter((item) => {
+                      const nameMatches = item?.name
+                        ?.toLowerCase()
+                        .includes(query.toLowerCase())
+                      const textMatches = item?.text
+                        ?.toLowerCase()
+                        .includes(query.toLowerCase())
+                      return nameMatches || textMatches
+                    })
+                  }
+                "
                 icon="ph:users-three"
                 placeholder="Search..."
                 label="Assignee"
                 clearable
               >
-              <template #item="{ item, active, selected }">
-                <BaseAutocompleteItem
-                  :value="{
-                    name: item.name,
-                    media: item.photo,
-                  }"
-                  :active="active"
-                  :selected="selected"
-                />
-              </template>
+                <template #item="{ item, active, selected }">
+                  <BaseAutocompleteItem
+                    :value="{
+                      name: item.name,
+                      media: item.photo,
+                    }"
+                    :active="active"
+                    :selected="selected"
+                  />
+                </template>
               </BaseAutocomplete>
               <div class="grid pt-4 grid-cols-4 gap-2 relative z-[5]">
                 <div data-nui-tooltip="Record">
@@ -812,7 +894,11 @@ const selectedEventFeatures = computed({
               'overflow-hidden': showSettings,
             }"
           >
-            <div v-if="showSettings" class="absolute inset-0  z-50 cursor-pointer backdrop-blur-[2px]" @click="showSettings = false"></div>
+            <div
+              v-if="showSettings"
+              class="absolute inset-0 z-50 cursor-pointer backdrop-blur-[2px]"
+              @click="showSettings = false"
+            ></div>
 
             <!-- Draggable pending events cards -->
             <Container
@@ -828,31 +914,36 @@ const selectedEventFeatures = computed({
                 className:
                   'border-muted-200 border-dashed dark:border-muted-800 dark:bg-muted-800 group relative flex cursor-pointer flex-col items-start rounded-lg border bg-white p-4 hover:bg-white',
               }"
-              @drag-start="(ctx: any) => {
-                clearNew()
-                onPendingEventDragStart(ctx)
-              }"
+              @drag-start="
+                (ctx: any) => {
+                  clearNew()
+                  onPendingEventDragStart(ctx)
+                }
+              "
             >
               <template v-if="pendingEvents?.length">
-                <BaseHeading size="sm" weight="medium" lead="snug" class="uppercase text-muted-400 dark:text-muted-500 mb-4">
+                <BaseHeading
+                  size="sm"
+                  weight="medium"
+                  lead="snug"
+                  class="uppercase text-muted-400 dark:text-muted-500 mb-4"
+                >
                   Pending events
                 </BaseHeading>
                 <Draggable
                   v-for="pendingEvent in pendingEvents"
                   :key="pendingEvent.id"
                 >
-                  <DemoCalendarEventPending 
-                    :event="pendingEvent" 
-                    role="button" 
-                    @click="() => onSelectEvent(pendingEvent as any)" 
+                  <DemoCalendarEventPending
+                    :event="pendingEvent"
+                    role="button"
+                    @click="() => onSelectEvent(pendingEvent as any)"
                   />
                 </Draggable>
               </template>
               <div v-else>
                 <!-- empty state -->
-                <div
-                  class="p-4"
-                >
+                <div class="p-4">
                   <img
                     class="mx-auto block max-w-[200px] dark:hidden"
                     src="/img/illustrations/placeholders/flat/placeholder-projects.svg"
@@ -864,12 +955,7 @@ const selectedEventFeatures = computed({
                     alt=""
                   />
                   <div class="mt-4 text-center">
-                    <BaseHeading
-                      as="h4"
-                      size="lg"
-                      weight="light"
-                      class="mb-1"
-                    >
+                    <BaseHeading as="h4" size="lg" weight="light" class="mb-1">
                       <span>No pending events</span>
                     </BaseHeading>
                     <BaseParagraph

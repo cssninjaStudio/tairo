@@ -63,6 +63,12 @@ export default defineNuxtConfig({
     headNext: true,
   },
 
+  typescript: {
+    tsConfig: {
+      // Here you can customize the generated tsconfig.json file
+    },
+  },
+
   // nuxt behavior configuration
   runtimeConfig: {
     public: {

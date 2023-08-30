@@ -473,7 +473,16 @@ const results = [
                 {
                   key: 'today',
                   dot: true,
-                  dates: new Date(),
+                  bar: false,
+                  content: 'Today',
+                  customData: {},
+                  event: {},
+                  hashcode: 'today',
+                  highlight: false,
+                  order: 0,
+                  pinPage: false,
+                  popover: {},
+                  dates: [new Date()],
                 },
               ]"
               title-position="left"
