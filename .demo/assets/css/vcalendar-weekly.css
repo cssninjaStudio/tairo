@@ -1,0 +1,80 @@
+.custom-calendar.vc-container {
+  @apply rounded-none bg-transparent mt-0 border-0;
+}
+
+.custom-calendar .vc-pane-container .vc-pane-layout .vc-pane {
+  @apply p-0;
+}
+
+.custom-calendar .vc-pane-layout .vc-pane {
+  @apply p-0;
+}
+
+.custom-calendar.vc-container .vc-header {
+  @apply py-2 pl-1 bg-transparent mb-6;
+}
+.custom-calendar.vc-container .vc-header .vc-title {
+  @apply relative top-0;
+}
+
+.custom-calendar.vc-container {
+  @apply dark:bg-muted-900;
+}
+.custom-calendar.vc-container .vc-weeks {
+  @apply mt-0 p-0;
+}
+
+.custom-calendar.vc-container .vc-weekday {
+  @apply p-3 border-b !border-muted-200 dark:!border-muted-700 bg-muted-200 dark:bg-muted-800;
+}
+
+.custom-calendar.vc-container .vc-arrows-container {
+  @apply -top-1.5;
+}
+
+.custom-calendar.vc-container .vc-arrow:hover {
+  @apply bg-transparent;
+}
+
+.custom-calendar.vc-container .vc-day {
+  --day-height: 25rem;
+  @apply p-0 text-left min-h-[var(--day-height)] min-w-[var(--day-width)];
+}
+
+.custom-calendar.vc-container .vc-weekdays {
+  display: none;
+}
+.custom-calendar.vc-container .vc-week {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  position: relative;
+}
+.custom-calendar.vc-container.hide-weekend .vc-week {
+  grid-template-columns: repeat(5, 1fr);
+}
+.custom-calendar.vc-container.hide-weekend .vc-weekday-7,
+.custom-calendar.vc-container.hide-weekend .vc-weekday-1,
+.custom-calendar.vc-container.hide-weekend .vc-day.weekday-7,
+.custom-calendar.vc-container.hide-weekend .vc-day.weekday-1 {
+  @apply hidden;
+}
+
+.custom-calendar.vc-container .vc-day:not(.on-bottom) {
+  @apply border-b border-muted-200 dark:border-muted-800;
+}
+
+.custom-calendar.vc-container .vc-day:not(.on-right) {
+  @apply border-r border-muted-200 dark:border-muted-800;
+}
+
+.custom-calendar.vc-container .vc-day.is-not-in-month {
+  @apply bg-muted-50/50 dark:bg-muted-700/10;
+}
+
+.custom-calendar.vc-container .vc-day.weekday-1,
+.custom-calendar.vc-container .vc-day.weekday-7 {
+  @apply border-r border-muted-200 dark:border-muted-800;
+}
+.custom-calendar.vc-container .vc-day.weekday-1 {
+  @apply border-r-0;
+}

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css'
 import type { Map, Popup } from 'mapbox-gl'
+import type { FeatureCollection, Geometry, GeoJsonProperties } from 'geojson'
 import 'mapbox-gl/src/css/mapbox-gl.css'
 
 const props = defineProps<{
@@ -21,7 +22,6 @@ const map = shallowRef<Map>()
 const popup = shallowRef<Popup>()
 const geocoder = shallowRef<any>()
 
-// eslint-disable-next-line @typescript-eslint/consistent-type-imports
 let mapboxgl: typeof import('mapbox-gl')
 
 const locations = {
@@ -181,7 +181,7 @@ const locations = {
       },
     },
   ],
-} as const
+} satisfies FeatureCollection<Geometry, GeoJsonProperties>
 
 function loadLayers() {
   if (!map.value) {
@@ -195,7 +195,7 @@ function loadLayers() {
 
   map.value.addSource('places', {
     type: 'geojson',
-    data: locations as any,
+    data: locations,
   })
 
   // Add a layer showing the places.

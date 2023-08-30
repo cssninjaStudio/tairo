@@ -1,0 +1,17 @@
+diff --git a/dist/vue3-smooth-dnd.esm.js b/dist/vue3-smooth-dnd.esm.js
+index 1a68cd7f2c2b36e52531130796bab4d35c35ffff..56e1ae1ac5454095923373e2f377092c58a2bd71 100644
+--- a/dist/vue3-smooth-dnd.esm.js
++++ b/dist/vue3-smooth-dnd.esm.js
+@@ -79,7 +79,11 @@ var Container = defineComponent({
+   },
+   unmounted () {
+     if (this.container) {
+-      this.container.dispose();
++      try {
++        this.container.dispose();
++      } catch {
++        // ignore
++      }
+     }
+   },
+   emits: ['drop', 'drag-start', 'drag-end', 'drag-enter', 'drag-leave', 'drop-ready' ],

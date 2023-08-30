@@ -92,7 +92,7 @@ const props = withDefaults(defineProps<CarouselProps>(), {
       </Slide>
 
       <template #addons>
-        <navigation />
+        <Navigation />
       </template>
     </Carousel>
   </div>

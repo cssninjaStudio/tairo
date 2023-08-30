@@ -140,6 +140,11 @@ const navigation = [
     name: 'Apps',
     children: [
       {
+        name: 'Calendar',
+        icon: 'ph:calendar-blank-duotone',
+        to: '/dashboards/calendar',
+      },
+      {
         name: 'Food delivery',
         icon: 'ph:cookie-duotone',
         to: '/dashboards/delivery',

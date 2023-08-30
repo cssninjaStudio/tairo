@@ -191,15 +191,10 @@ const panelActive = ref(false)
             class="bg-primary-500/10 text-primary-500 relative flex h-12 w-12 items-center justify-center rounded-xl"
           >
             <Icon name="ph:tray-duotone" class="h-5 w-5" />
-            <span
-              class="absolute -end-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-pink-600 font-sans text-xs text-white"
-            >
-              3
-            </span>
           </div>
         </NuxtLink>
         <NuxtLink
-          to="/dashboards/inbox"
+          href="#"
           class="relative flex h-16 w-16 items-center justify-center"
         >
           <div
@@ -209,17 +204,22 @@ const panelActive = ref(false)
           </div>
         </NuxtLink>
         <NuxtLink
-          to="/dashboards/inbox"
+          to="/dashboards/calendar"
           class="relative flex h-16 w-16 items-center justify-center"
         >
           <div
             class="bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400 relative flex h-12 w-12 items-center justify-center rounded-xl"
           >
             <Icon name="ph:calendar-blank-duotone" class="h-5 w-5" />
+            <span
+              class="absolute -end-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-pink-600 font-sans text-xs text-white"
+            >
+              5
+            </span>
           </div>
         </NuxtLink>
         <NuxtLink
-          to="/dashboards/inbox"
+          href="#"
           class="relative flex h-16 w-16 items-center justify-center"
         >
           <div
@@ -229,7 +229,7 @@ const panelActive = ref(false)
           </div>
         </NuxtLink>
         <NuxtLink
-          to="/dashboards/inbox"
+          href="#"
           class="relative flex h-16 w-16 items-center justify-center"
         >
           <div
@@ -239,7 +239,7 @@ const panelActive = ref(false)
           </div>
         </NuxtLink>
         <NuxtLink
-          to="/dashboards/inbox"
+          href="#"
           class="relative flex h-16 w-16 items-center justify-center"
         >
           <div
