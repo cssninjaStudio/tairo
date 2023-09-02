@@ -569,8 +569,6 @@ watch(
         </div>
       </template>
     </div>
-
-    <TairoPanels />
   </div>
 </template>
 

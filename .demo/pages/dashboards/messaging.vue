@@ -1033,7 +1033,5 @@ async function submitMessage() {
         </div>
       </div>
     </div>
-
-    <TairoPanels />
   </div>
 </template>

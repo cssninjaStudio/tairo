@@ -531,8 +531,6 @@ const panelActive = ref(false)
         </div>
       </Pane>
     </Splitpanes>
-
-    <TairoPanels />
   </div>
 </template>
 

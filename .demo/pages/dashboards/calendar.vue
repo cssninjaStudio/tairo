@@ -980,7 +980,5 @@ const selectedEventFeatures = computed({
         </Transition>
       </div>
     </div>
-
-    <TairoPanels />
   </div>
 </template>
