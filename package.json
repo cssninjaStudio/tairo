@@ -28,7 +28,7 @@
     "@iconify/json": "2.2.67",
     "@parcel/watcher": "2.1.0",
     "@types/fs-extra": "11.0.1",
-    "@typescript-eslint/eslint-plugin": "5.59.6",
+    "@typescript-eslint/eslint-plugin": "6.6.0",
     "eslint": "8.41.0",
     "eslint-config-prettier": "8.8.0",
     "eslint-plugin-prettier-vue": "4.2.0",
