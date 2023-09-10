@@ -18,4 +18,10 @@ export default defineNuxtConfig({
      */
     // '../layers/tairo-layout-sidebar',
   ],
+
+  /**
+   * Load local font with @fontsource packages
+   * @see https://fontsource.org/
+   */
+  css: ['@fontsource-variable/inter', '@fontsource-variable/karla'],
 })

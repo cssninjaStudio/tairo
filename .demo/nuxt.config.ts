@@ -49,7 +49,12 @@ export default defineNuxtConfig({
      */
     'nuxt-swiper',
   ],
-  css: ['~/assets/css/colors.css'],
+  css: [
+    '~/assets/css/colors.css',
+    '@fontsource-variable/fira-code',
+    '@fontsource-variable/inter',
+    '@fontsource-variable/karla',
+  ],
 
   experimental: {
     // using chokidar-granular watcher run faster
@@ -59,8 +64,6 @@ export default defineNuxtConfig({
     writeEarlyHints: true,
     // Render JSON payloads with support for revivifying complex types.
     renderJsonPayloads: true,
-    // Use new experimental head optimisations
-    headNext: true,
   },
 
   typescript: {
@@ -89,6 +92,19 @@ export default defineNuxtConfig({
   },
 
   // nuxt build configuration
+  hooks: {
+    'vite:extendConfig'(config, { isClient }) {
+      if (isProduction && isClient) {
+        // @ts-ignore
+        config.build.rollupOptions.output.entryFileNames = '_nuxt/e/[hash].js'
+        // @ts-ignore
+        config.build.rollupOptions.output.chunkFileNames = '_nuxt/c/[hash].js'
+        // @ts-ignore
+        config.build.rollupOptions.output.assetFileNames =
+          '_nuxt/a/[hash][extname]'
+      }
+    },
+  },
   nitro: {
     prerender: {
       crawlLinks: false,
@@ -111,25 +127,9 @@ export default defineNuxtConfig({
     build: {
       target: 'esnext',
     },
-    $client: {
-      build: {
-        rollupOptions: {
-          output: {
-            entryFileNames: '_nuxt/e/[hash].js',
-            chunkFileNames: '_nuxt/c/[hash].js',
-            assetFileNames: '_nuxt/a/[hash][extname]',
-          },
-        },
-      },
-    },
   },
 
   // nuxt modules configuration
-  unfonts: {
-    google: {
-      families: ['Roboto Flex', 'Inter', 'Karla', 'Fira Code'],
-    },
-  },
   linkChecker: {
     failOn404: true,
   },

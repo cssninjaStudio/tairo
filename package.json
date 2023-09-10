@@ -9,9 +9,9 @@
     "pnpm": ">=7"
   },
   "scripts": {
-    "dev": "nuxi dev .app --open",
+    "dev": "nuxi dev .app",
     "build": "nuxi build .app",
-    "demo:dev": "nuxi dev .demo --open",
+    "demo:dev": "nuxi dev .demo",
     "demo:build": "nuxi build .demo",
     "clean:all": "pnpm -r clean && rimraf .nuxt .output node_modules",
     "test": "run-p test:*",
@@ -25,10 +25,10 @@
     "lint:eslint:fix-demo": "eslint -c layers/documentation/examples/.eslintrc.cjs --fix --ext .vue layers/documentation/examples"
   },
   "devDependencies": {
-    "@iconify/json": "2.2.106",
+    "@iconify/json": "2.2.113",
     "@types/fs-extra": "11.0.1",
-    "@typescript-eslint/eslint-plugin": "6.4.1",
-    "eslint": "8.48.0",
+    "@typescript-eslint/eslint-plugin": "6.6.0",
+    "eslint": "8.49.0",
     "eslint-config-prettier": "9.0.0",
     "eslint-plugin-prettier-vue": "5.0.0",
     "eslint-plugin-tailwindcss": "3.13.0",
@@ -38,12 +38,12 @@
     "fs-extra": "11.1.1",
     "lint-staged": "14.0.1",
     "npm-run-all": "4.1.5",
-    "prettier": "3.0.2",
+    "prettier": "3.0.3",
     "rimraf": "5.0.1",
     "std-env": "3.4.3",
     "tailwindcss": "3.3.3",
     "typescript": "5.2.2",
-    "vue-tsc": "1.8.8"
+    "vue-tsc": "1.8.10"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"

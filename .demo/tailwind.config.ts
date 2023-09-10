@@ -13,10 +13,10 @@ export default withShurikenUI({
   theme: {
     // Custom fonts
     fontFamily: {
-      sans: ['Inter', 'sans-serif'],
-      heading: ['Inter', 'sans-serif'],
-      alt: ['Karla', 'sans-serif'],
-      mono: ['Fira Code', ...defaultTheme.fontFamily.mono],
+      sans: ['Inter Variable', 'sans-serif'],
+      heading: ['Inter Variable', 'sans-serif'],
+      alt: ['Karla Variable', 'sans-serif'],
+      mono: ['Fira Code Variable', ...defaultTheme.fontFamily.mono],
     },
     extend: {
       // Custom colors
