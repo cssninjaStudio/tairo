@@ -100,6 +100,7 @@ const mainClass = computed(() => {
               <slot name="title">{{ route.meta.title }}</slot>
             </BaseHeading>
             <component
+              v-if="app.tairo.topnav?.navigation?.header?.component"
               :is="
                 resolveComponentOrNative(
                   app.tairo.topnav?.navigation?.header?.component,
