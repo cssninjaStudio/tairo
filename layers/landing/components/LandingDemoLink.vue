@@ -1,6 +1,8 @@
 <script setup lang="ts">
+import type { RouteRecordName } from 'vue-router'
+
 const props = defineProps<{
-  name?: string
+  name?: RouteRecordName
   preview?: {
     title: string
     description: string

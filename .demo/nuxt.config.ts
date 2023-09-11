@@ -51,9 +51,9 @@ export default defineNuxtConfig({
   ],
   css: [
     '~/assets/css/colors.css',
-    '@fontsource-variable/fira-code',
-    '@fontsource-variable/inter',
-    '@fontsource-variable/karla',
+    '@fontsource-variable/fira-code/index.css',
+    '@fontsource-variable/inter/index.css',
+    '@fontsource-variable/karla/index.css',
   ],
 
   experimental: {
@@ -106,10 +106,6 @@ export default defineNuxtConfig({
     },
   },
   nitro: {
-    prerender: {
-      crawlLinks: false,
-      routes: ['/', '/dashboards', '/layouts'],
-    },
     esbuild: {
       options: {
         target: 'esnext',

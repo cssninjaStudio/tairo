@@ -227,8 +227,8 @@ importers:
         specifier: ^0.3.12
         version: 0.3.12
       '@shuriken-ui/nuxt':
-        specifier: 1.0.2
-        version: 1.0.2(nuxt@3.6.5)
+        specifier: 1.1.0
+        version: 1.1.0(nuxt@3.6.5)
       '@vee-validate/zod':
         specifier: ^4.11.6
         version: 4.11.6
@@ -1950,7 +1950,6 @@ packages:
     dependencies:
       is-glob: 4.0.3
       micromatch: 4.0.5
-      napi-wasm: 1.1.0
     bundledDependencies:
       - napi-wasm
 
@@ -2167,14 +2166,14 @@ packages:
       string.prototype.codepointat: 0.2.1
     dev: false
 
-  /@shuriken-ui/nuxt@1.0.2(nuxt@3.6.5):
-    resolution: {integrity: sha512-FFJCQpDaiaj0rdATNM5ji8uZsgRypOSy1JRTCTGALlphLzMNAts0Dh7NjFJIfShU9xAyGGH2ynbusZSlncbixw==}
+  /@shuriken-ui/nuxt@1.1.0(nuxt@3.6.5):
+    resolution: {integrity: sha512-AP1TJKJ+EzEk0cQXWytLLpKeyEx72U9giKrDIAsQh3GJMm3Pv+BUOXoceCCwxRqnLM6rM9Kc+jlJwa5qckOojg==}
     dependencies:
       '@headlessui/vue': 1.7.16
       '@iconify/vue': 4.1.1
       '@nuxtjs/color-mode': 3.3.0
       '@nuxtjs/tailwindcss': 6.8.0
-      '@shuriken-ui/tailwind': 1.1.0
+      '@shuriken-ui/tailwind': 1.2.1
       '@vueuse/nuxt': 10.4.1(nuxt@3.6.5)
       autoprefixer: 10.4.15(postcss@8.4.29)
       nuxt-icon: 0.5.0
@@ -2189,8 +2188,8 @@ packages:
       - webpack
     dev: false
 
-  /@shuriken-ui/tailwind@1.1.0:
-    resolution: {integrity: sha512-NVmxZwEw1ASKSOoPX/4H847UsDAOGuMmJ44uK8fuD0DjJmRViLGxVmxDwpwDF+ThrcfRSUK5FNeXcZVhlR5OFQ==}
+  /@shuriken-ui/tailwind@1.2.1:
+    resolution: {integrity: sha512-uXC6V86t+5LC6L/9Hw4szEM3CCs/A/0RciK/QDasuHJHVrwW+/d0ocVE+JQZRFVwLheBtDyIM+ZGYO8VGuVPVQ==}
     dependencies:
       '@tailwindcss/aspect-ratio': 0.4.2(tailwindcss@3.3.3)
       '@tailwindcss/container-queries': 0.1.1(tailwindcss@3.3.3)
@@ -7158,9 +7157,6 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
-
-  /napi-wasm@1.1.0:
-    resolution: {integrity: sha512-lHwIAJbmLSjF9VDRm9GoVOy9AGp3aIvkjv+Kvz9h16QR3uSVYH78PNQUnT2U4X53mhlnV2M7wrhibQ3GHicDmg==}
 
   /natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}

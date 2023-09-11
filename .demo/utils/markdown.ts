@@ -112,7 +112,6 @@ async function createProcessor(options: HighlighterOptions) {
       },
     })
     // this add noopener, noreferrer and _blank to external links
-    // @ts-expect-error
     .use(rehypeExternalLinks, {
       rel: ['noopener noreferrer'],
       target: '_blank',

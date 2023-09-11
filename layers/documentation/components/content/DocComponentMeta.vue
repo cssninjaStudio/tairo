@@ -44,7 +44,7 @@ function wrapExternalLinks(string: string) {
             class="text-muted-800 dark:text-muted-200"
           >
             <TairoTocAnchor
-              :id="`${docs.meta.kebabName}-usage`"
+              :id="`${docs?.meta?.kebabName}-usage`"
               :level="3"
               prefix=""
               suffix="¶"
@@ -93,7 +93,7 @@ function wrapExternalLinks(string: string) {
             class="text-muted-800 dark:text-muted-200"
           >
             <TairoTocAnchor
-              :id="`${docs.meta.kebabName}-model`"
+              :id="`${docs?.meta?.kebabName}-model`"
               :level="3"
               prefix=""
               suffix="¶"
@@ -145,7 +145,7 @@ function wrapExternalLinks(string: string) {
                     {{ docs.model.description }}
                   </div>
                   <div
-                    v-if="docs.model.tags.length > 0"
+                    v-if="docs.model.tags?.length > 0"
                     class="mt-3 space-y-2 break-words"
                   >
                     <div
@@ -212,7 +212,7 @@ function wrapExternalLinks(string: string) {
         </div>
       </div>
       <!-- Props display -->
-      <div v-if="docs.props.length > 0" class="mx-auto w-full">
+      <div v-if="docs.props?.length > 0" class="mx-auto w-full">
         <div class="px-6 pb-2 pt-6">
           <BaseHeading
             as="h3"
@@ -221,7 +221,7 @@ function wrapExternalLinks(string: string) {
             class="text-muted-800 dark:text-muted-200"
           >
             <TairoTocAnchor
-              :id="`${docs.meta.kebabName}-properties`"
+              :id="`${docs?.meta?.kebabName}-properties`"
               :level="3"
               prefix=""
               suffix="¶"
@@ -275,7 +275,7 @@ function wrapExternalLinks(string: string) {
                   {{ prop.description }}
                 </div>
                 <div
-                  v-if="prop.tags.length > 0"
+                  v-if="prop.tags?.length > 0"
                   class="mt-3 space-y-2 break-words"
                 >
                   <div
@@ -356,7 +356,7 @@ function wrapExternalLinks(string: string) {
         </div>
       </div>
       <!-- Events display -->
-      <div v-if="docs.events.length > 0" class="mx-auto mt-10 w-full">
+      <div v-if="docs.events?.length > 0" class="mx-auto mt-10 w-full">
         <div class="px-6 pb-2 pt-6">
           <BaseHeading
             as="h3"
@@ -365,7 +365,7 @@ function wrapExternalLinks(string: string) {
             class="text-muted-800 dark:text-muted-200"
           >
             <TairoTocAnchor
-              :id="`${docs.meta.kebabName}-events`"
+              :id="`${docs?.meta?.kebabName}-events`"
               :level="3"
               prefix=""
               suffix="¶"
@@ -449,7 +449,7 @@ function wrapExternalLinks(string: string) {
         </div>
       </div>
       <!-- Slots display -->
-      <div v-if="docs.slots.length > 0" class="mx-auto mt-10 w-full">
+      <div v-if="docs.slots?.length > 0" class="mx-auto mt-10 w-full">
         <div class="px-6 pb-2 pt-6">
           <BaseHeading
             as="h3"
@@ -458,7 +458,7 @@ function wrapExternalLinks(string: string) {
             class="text-muted-800 dark:text-muted-200"
           >
             <TairoTocAnchor
-              :id="`${docs.meta.kebabName}-slots`"
+              :id="`${docs?.meta?.kebabName}-slots`"
               :level="3"
               prefix=""
               suffix="¶"
@@ -539,7 +539,7 @@ function wrapExternalLinks(string: string) {
         </div>
       </div>
       <!-- Exposed display -->
-      <div v-if="docs.exposed.length > 0" class="mx-auto mt-10 w-full">
+      <div v-if="docs.exposed?.length > 0" class="mx-auto mt-10 w-full">
         <div class="px-6 pb-2 pt-6">
           <BaseHeading
             as="h3"
@@ -548,7 +548,7 @@ function wrapExternalLinks(string: string) {
             class="text-muted-800 dark:text-muted-200"
           >
             <TairoTocAnchor
-              :id="`${docs.meta.kebabName}-exposed`"
+              :id="`${docs?.meta?.kebabName}-exposed`"
               :level="3"
               prefix=""
               suffix="¶"

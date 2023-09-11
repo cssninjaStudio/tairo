@@ -43,8 +43,8 @@ definePageMeta({
     title: 'Calendar app',
     description: 'For email and messaging apps',
     categories: ['dashboards'],
-    src: '/img/screens/dashboards-inbox.png',
-    srcDark: '/img/screens/dashboards-inbox-dark.png',
+    src: '/img/screens/dashboard-calendar.png',
+    srcDark: '/img/screens/dashboard-calendar-dark.png',
     order: 25,
   },
 })
@@ -761,7 +761,7 @@ const selectedEventFeatures = computed({
                     photo: '/img/avatars/2.svg',
                   },
                 ]"
-                :display-value="(item) => item.name"
+                :display-value="(item: any) => item?.name || ''"
                 dropdown
                 multiple
                 :filter-items="

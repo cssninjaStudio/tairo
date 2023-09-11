@@ -14,7 +14,7 @@
     <BaseAutocomplete
       v-model="second"
       :items="people"
-      :display-value="(item) => item?.name || ''"
+      :display-value="(item: any) => item?.name || ''"
       icon="lucide:search"
       shape="full"
       placeholder="e.g. Aaron"

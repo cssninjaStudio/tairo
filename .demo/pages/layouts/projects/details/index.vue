@@ -71,7 +71,7 @@ const selectedProject = ref('')
           <BaseAutocomplete
             v-model="selectedProject"
             :items="data?.data"
-            :display-value="(item) => item.name"
+            :display-value="(item: any) => item.name"
             shape="curved"
             icon="lucide:search"
             placeholder="Search..."
