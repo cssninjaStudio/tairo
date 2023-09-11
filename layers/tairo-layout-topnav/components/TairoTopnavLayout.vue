@@ -14,7 +14,7 @@ const props = withDefaults(
     topnav?: boolean
     toolbar?: boolean
     circularMenu?: boolean
-    display: LayoutDisplay
+    display?: LayoutDisplay
   }>(),
   {
     topnav: true,
