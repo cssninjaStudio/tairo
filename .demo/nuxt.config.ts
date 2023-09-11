@@ -92,19 +92,6 @@ export default defineNuxtConfig({
   },
 
   // nuxt build configuration
-  hooks: {
-    'vite:extendConfig'(config, { isClient }) {
-      if (isProduction && isClient) {
-        // @ts-ignore
-        config.build.rollupOptions.output.entryFileNames = '_nuxt/e/[hash].js'
-        // @ts-ignore
-        config.build.rollupOptions.output.chunkFileNames = '_nuxt/c/[hash].js'
-        // @ts-ignore
-        config.build.rollupOptions.output.assetFileNames =
-          '_nuxt/a/[hash][extname]'
-      }
-    },
-  },
   nitro: {
     esbuild: {
       options: {
