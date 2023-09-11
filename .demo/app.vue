@@ -82,7 +82,7 @@ useHead({
     <VueAxePopup />
 
     <NuxtLayout>
-      <NuxtLoadingIndicator color="var(--color-primary-500)" />
+      <NuxtLoadingIndicator color="rgb(var(--color-primary-500))" />
       <SeoKit />
       <NuxtPage />
     </NuxtLayout>
