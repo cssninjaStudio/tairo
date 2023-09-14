@@ -135,7 +135,7 @@ const metaKey = useMetaKey()
 
     <div class="flex">
       <div class="w-full lg:w-3/4">
-        <ContentRenderer :value="(data as any)">
+        <ContentRenderer :value="data as any">
           <template #empty>
             <DocComponentDemo>
               <div>

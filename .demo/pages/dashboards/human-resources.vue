@@ -237,7 +237,7 @@ const items = [
                         :color="item.status === 'new' ? 'success' : 'muted'"
                         shape="full"
                         flavor="pastel"
-                        condensed
+                        size="sm"
                       >
                         {{ item.status }}
                       </BaseTag>
@@ -405,22 +405,20 @@ const items = [
           <!-- Widget -->
           <BaseCard shape="curved" class="p-6">
             <BaseTabSlider
-              condensed
-              selected="team"
+              size="sm"
+              model-value="team"
               :tabs="[
                 { label: 'Team', value: 'team' },
                 { label: 'Tasks', value: 'tasks' },
-                { label: 'Project', value: 'projects' },
               ]"
+              v-slot="{ activeValue }"
             >
-              <template #tab="{ activeValue }">
-                <div v-if="activeValue === 'team'">
-                  <DemoTeamListCompact actions />
-                </div>
-                <div v-else-if="activeValue === 'tasks'">
-                  <DemoTodoListCompact />
-                </div>
-              </template>
+              <div v-if="activeValue === 'team'">
+                <DemoTeamListCompact actions />
+              </div>
+              <div v-else-if="activeValue === 'tasks'">
+                <DemoTodoListCompact />
+              </div>
             </BaseTabSlider>
           </BaseCard>
           <!-- Widget -->
@@ -430,7 +428,16 @@ const items = [
                 {
                   key: 'today',
                   dot: true,
-                  dates: new Date(),
+                  bar: false,
+                  content: 'Today',
+                  customData: {},
+                  event: {},
+                  hashcode: 'today',
+                  highlight: false,
+                  order: 0,
+                  pinPage: false,
+                  popover: {},
+                  dates: [new Date()],
                 },
               ]"
               title-position="left"

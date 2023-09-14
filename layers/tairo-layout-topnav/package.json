@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "name": "@cssninja/tairo-layout-topnav",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "./nuxt.config.ts",
+  "scripts": {
+    "clean": "rimraf .nuxt .output node_modules"
+  },
+  "dependencies": {
+    "nuxt": "^3.6.5"
+  }
+}

@@ -325,7 +325,7 @@ const jobs = [
                     color="default"
                     shape="full"
                     class="text-xs"
-                    condensed
+                    size="sm"
                   >
                     67
                   </BaseTag>
@@ -342,7 +342,7 @@ const jobs = [
                     color="default"
                     shape="full"
                     class="text-xs"
-                    condensed
+                    size="sm"
                   >
                     31
                   </BaseTag>
@@ -359,7 +359,7 @@ const jobs = [
                     color="default"
                     shape="full"
                     class="text-xs"
-                    condensed
+                    size="sm"
                   >
                     49
                   </BaseTag>
@@ -376,7 +376,7 @@ const jobs = [
                     color="default"
                     shape="full"
                     class="text-xs"
-                    condensed
+                    size="sm"
                   >
                     17
                   </BaseTag>
@@ -411,7 +411,7 @@ const jobs = [
                     color="default"
                     shape="full"
                     class="text-xs"
-                    condensed
+                    size="sm"
                   >
                     56
                   </BaseTag>
@@ -428,7 +428,7 @@ const jobs = [
                     color="default"
                     shape="full"
                     class="text-xs"
-                    condensed
+                    size="sm"
                   >
                     84
                   </BaseTag>
@@ -445,7 +445,7 @@ const jobs = [
                     color="default"
                     shape="full"
                     class="text-xs"
-                    condensed
+                    size="sm"
                   >
                     31
                   </BaseTag>
@@ -462,7 +462,7 @@ const jobs = [
                     color="default"
                     shape="full"
                     class="text-xs"
-                    condensed
+                    size="sm"
                   >
                     59
                   </BaseTag>
@@ -479,7 +479,7 @@ const jobs = [
                     color="default"
                     shape="full"
                     class="text-xs"
-                    condensed
+                    size="sm"
                   >
                     11
                   </BaseTag>
@@ -514,7 +514,7 @@ const jobs = [
                     color="default"
                     shape="full"
                     class="text-xs"
-                    condensed
+                    size="sm"
                   >
                     61
                   </BaseTag>
@@ -531,7 +531,7 @@ const jobs = [
                     color="default"
                     shape="full"
                     class="text-xs"
-                    condensed
+                    size="sm"
                   >
                     28
                   </BaseTag>
@@ -548,7 +548,7 @@ const jobs = [
                     color="default"
                     shape="full"
                     class="text-xs"
-                    condensed
+                    size="sm"
                   >
                     112
                   </BaseTag>
@@ -565,7 +565,7 @@ const jobs = [
                     color="default"
                     shape="full"
                     class="text-xs"
-                    condensed
+                    size="sm"
                   >
                     58
                   </BaseTag>
@@ -601,7 +601,7 @@ const jobs = [
           <div v-for="(job, index) in jobs" :key="index" class="relative">
             <BaseCard shape="curved" class="p-6">
               <div class="flex w-full flex-col gap-4 sm:flex-row">
-                <div :data-tooltip="job.company">
+                <div :data-nui-tooltip="job.company">
                   <Icon :name="job.logo" class="h-10 w-10 shrink-0" />
                 </div>
                 <div>
@@ -626,7 +626,7 @@ const jobs = [
                       v-for="tag in job.tags"
                       :key="tag"
                       color="default"
-                      condensed
+                      size="sm"
                       class="text-xs"
                     >
                       {{ tag }}

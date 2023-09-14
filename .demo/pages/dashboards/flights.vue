@@ -307,7 +307,7 @@ const results = [
                   >
                     <BaseAvatar
                       :src="result.logo"
-                      :data-tooltip="result.company"
+                      :data-nui-tooltip="result.company"
                       alt="Company logo"
                     />
                     <div>
@@ -331,7 +331,7 @@ const results = [
                   </div>
                   <div
                     class="flex w-full grow items-center gap-2 p-6 sm:w-auto sm:py-0"
-                    :data-tooltip="`${result.stops} stop${
+                    :data-nui-tooltip="`${result.stops} stop${
                       result.stops > 1 ? 's' : ''
                     }`"
                   >
@@ -473,7 +473,16 @@ const results = [
                 {
                   key: 'today',
                   dot: true,
-                  dates: new Date(),
+                  bar: false,
+                  content: 'Today',
+                  customData: {},
+                  event: {},
+                  hashcode: 'today',
+                  highlight: false,
+                  order: 0,
+                  pinPage: false,
+                  popover: {},
+                  dates: [new Date()],
                 },
               ]"
               title-position="left"

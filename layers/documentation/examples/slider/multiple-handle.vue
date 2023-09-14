@@ -1,7 +1,7 @@
 <template>
   <div class="mt-6 flex flex-col gap-6 md:flex-row md:items-end">
     <div class="w-full max-w-sm space-y-4 px-4">
-      <Slider v-model="multiple" class="circle-tooltip" />
+      <Slider v-model="multiple" class="slider-primary circle-tooltip" />
     </div>
   </div>
 </template>

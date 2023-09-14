@@ -1065,7 +1065,7 @@ const activeTab = ref('tab-1')
           >
             <BaseCard shape="curved" class="flex h-full flex-col p-6">
               <div class="flex h-full w-full flex-col gap-4">
-                <div :data-tooltip="company.name">
+                <div :data-nui-tooltip="company.name">
                   <Icon :name="company.logo" class="h-8 w-8 shrink-0" />
                 </div>
                 <div class="flex h-full flex-col">

@@ -147,7 +147,6 @@ const onSubmit = handleSubmit(
     } catch (error: any) {
       // this will set the error on the form
       if (error.message === 'Fake backend validation error') {
-        // @ts-expect-error - vee validate typing bug with nested keys
         setFieldError('meeting.title', 'This name is not allowed')
 
         document.documentElement.scrollTo({
@@ -470,15 +469,21 @@ const colorCode = ref('color_code_1')
             </div>
             <div class="col-span-12 sm:col-span-9">
               <div class="flex items-center gap-3">
-                <BaseAvatar src="/img/avatars/24.svg" data-tooltip="Anna B." />
+                <BaseAvatar
+                  src="/img/avatars/24.svg"
+                  data-nui-tooltip="Anna B."
+                />
                 <BaseAvatar
                   src="/img/avatars/10.svg"
-                  data-tooltip="Kendra W."
+                  data-nui-tooltip="Kendra W."
                 />
-                <BaseAvatar src="/img/avatars/8.svg" data-tooltip="John H." />
+                <BaseAvatar
+                  src="/img/avatars/8.svg"
+                  data-nui-tooltip="John H."
+                />
                 <BaseAvatar
                   src="/img/avatars/25.svg"
-                  data-tooltip="Melany L."
+                  data-nui-tooltip="Melany L."
                 />
                 <div class="ms-auto">
                   <button

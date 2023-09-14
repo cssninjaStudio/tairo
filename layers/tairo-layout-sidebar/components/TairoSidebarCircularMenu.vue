@@ -11,9 +11,9 @@ const isScrolled = computed(() => {
 })
 
 const toolOffsets = [
-  'translate-x-[-6.5em] translate-y-[-0.25em]',
-  'translate-x-[-5.75em] translate-y-[3em]',
-  'translate-x-[-3.15em] translate-y-[5.5em]',
+  'translate-x-[-6.5em] rtl:translate-x-[6.5em] translate-y-[-0.25em]',
+  'translate-x-[-5.75em] rtl:translate-x-[5.75em] translate-y-[3em]',
+  'translate-x-[-3.15em] rtl:translate-x-[3.15em] translate-y-[5.5em]',
   'translate-x-[0em] translate-y-[6.5em]',
 ] as const
 

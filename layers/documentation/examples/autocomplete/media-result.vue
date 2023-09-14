@@ -3,7 +3,7 @@
     <BaseAutocomplete
       v-model="value"
       :items="people"
-      :display-value="(item) => item.name"
+      :display-value="(item: Person) => item.name"
       :filter-items="filterItems"
       icon="ph:users-three"
       placeholder="Search..."
@@ -14,9 +14,14 @@
 </template>
 
 <script setup lang="ts">
-const value = ref('')
+interface Person {
+  id: number
+  name: string
+  text: string
+  media: string
+}
 
-const people = ref([
+const people = ref<Person[]>([
   {
     id: 1,
     name: 'Clarissa Perez',
@@ -48,6 +53,7 @@ const people = ref([
     media: '/img/avatars/2.svg',
   },
 ])
+const value = ref<Person>()
 
 function filterItems(query?: string, items?: any[]) {
   if (!query || !items) {

@@ -14,13 +14,14 @@ const props = withDefaults(
 
 const { isOpen, current, sidebars } = useSidebar()
 
-const startSidebars = computed(() =>
-  sidebars.value?.filter(
-    (sidebar) => !sidebar.position || sidebar.position === 'start',
-  ),
+const startSidebars = computed(
+  () =>
+    sidebars.value?.filter(
+      (sidebar) => !sidebar.position || sidebar.position === 'start',
+    ),
 )
-const endSidebars = computed(() =>
-  sidebars.value?.filter((sidebar) => sidebar.position === 'end'),
+const endSidebars = computed(
+  () => sidebars.value?.filter((sidebar) => sidebar.position === 'end'),
 )
 
 const subsidebarEnabled = computed(() => {
@@ -37,7 +38,11 @@ const subsidebarEnabled = computed(() => {
     <!-- Icon sidebar -->
     <div
       class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 pointer-events-auto relative z-20 flex h-full w-[80px] flex-col border-r bg-white transition-all duration-300"
-      :class="isOpen ? '' : '-translate-x-full xl:translate-x-0'"
+      :class="
+        isOpen
+          ? ''
+          : '-translate-x-full rtl:translate-x-full xl:translate-x-0 rtl:xl:-translate-x-0'
+      "
     >
       <slot></slot>
 

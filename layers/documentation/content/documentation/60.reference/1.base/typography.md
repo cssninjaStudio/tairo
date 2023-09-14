@@ -39,3 +39,13 @@ Use the `BaseText` component to display a text span. You can use various props t
 ::
 
 :doc-component-meta{name="BaseText"}
+
+::doc-component-demo
+---
+title: Link
+demo: '#examples/typography/link.vue'
+---
+Use the `BaseLink` component to display an HTML anchor element. You can also nest the `BaseLink` component inside the above typography clusters to inherit their props.
+::
+
+:doc-component-meta{name="BaseLink"}

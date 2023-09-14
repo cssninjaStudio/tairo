@@ -20,8 +20,8 @@ watchEffect(() => {
 // map component meta to documentation routes
 const componentsPagesMap = computed(() => {
   return meta.value.map((name) => {
-    const route = routesFlat.value.find((route: any) =>
-      route.components?.includes(name),
+    const route = routesFlat.value.find(
+      (route: any) => route.components?.includes(name),
     )
     return {
       name,
@@ -33,8 +33,8 @@ const componentsPagesMap = computed(() => {
 // filter components without documentation routes
 const componentsWithoutPages = computed(() => {
   return componentsPagesMap.value.filter((c) => {
-    const route = routesFlat.value.find((route: any) =>
-      route.components?.includes(c.name),
+    const route = routesFlat.value.find(
+      (route: any) => route.components?.includes(c.name),
     )
     return !route
   })
@@ -96,9 +96,9 @@ const componentsWithoutPages = computed(() => {
       <BaseTag
         v-for="component of componentsWithoutPages"
         :key="component.name"
-        condensed
+        size="sm"
         class="cursor-help opacity-60 transition-opacity duration-100 hover:opacity-100"
-        data-tooltip="This component is not documented yet."
+        data-nui-tooltip="This component is not documented yet."
       >
         <span class="font-mono text-xs">&lt;{{ component.name }}&gt;</span>
       </BaseTag>

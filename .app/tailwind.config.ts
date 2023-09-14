@@ -12,9 +12,9 @@ export default withShurikenUI({
   theme: {
     // Custom fonts (defaults values are commented out)
     fontFamily: {
-      sans: ['Roboto Flex', 'sans-serif'],
-      heading: ['Inter', 'sans-serif'],
-      alt: ['Karla', 'sans-serif'],
+      sans: ['Inter  Variable', 'sans-serif'],
+      heading: ['Inter  Variable', 'sans-serif'],
+      alt: ['Karla  Variable', 'sans-serif'],
       mono: [
         'ui-monospace',
         'SFMono-Regular',

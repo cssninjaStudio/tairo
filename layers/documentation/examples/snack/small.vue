@@ -1,13 +1,13 @@
 <template>
   <div class="flex flex-wrap items-end gap-4">
-    <BaseSnack label="React" small />
+    <BaseSnack label="React" size="sm" color="muted" />
 
-    <BaseSnack label="Angular" small />
+    <BaseSnack label="Angular" size="sm" color="muted" />
 
-    <BaseSnack label="Vue" small />
+    <BaseSnack label="Vue" size="sm" color="muted" />
 
-    <BaseSnack label="Html" small />
+    <BaseSnack label="Html" size="sm" color="muted" />
 
-    <BaseSnack label="Python" small />
+    <BaseSnack label="Python" size="sm" color="muted" />
   </div>
 </template>

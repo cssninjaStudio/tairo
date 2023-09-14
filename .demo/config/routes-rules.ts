@@ -10,7 +10,7 @@ const staticAssetsRule = isProduction
 
 const staticPageRule = isProduction
   ? {
-      prerender: true,
+      prerender: false,
       cache: {
         maxAge: 3600,
         swr: true,

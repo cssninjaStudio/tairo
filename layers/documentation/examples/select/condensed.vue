@@ -1,6 +1,6 @@
 <template>
   <div class="grid gap-2 md:max-w-lg md:grid-cols-2">
-    <BaseSelect v-model="first" shape="rounded" label="Select a hero" condensed>
+    <BaseSelect v-model="first" shape="rounded" label="Select a hero" size="sm">
       <option value="">Select a hero</option>
 
       <option value="Superman">Superman</option>
@@ -19,7 +19,7 @@
       shape="rounded"
       label="Select a hero"
       icon="icon-park-outline:muscle"
-      condensed
+      size="sm"
     >
       <option value="">Select a hero</option>
 

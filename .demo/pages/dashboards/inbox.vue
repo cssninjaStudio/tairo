@@ -191,15 +191,10 @@ const panelActive = ref(false)
             class="bg-primary-500/10 text-primary-500 relative flex h-12 w-12 items-center justify-center rounded-xl"
           >
             <Icon name="ph:tray-duotone" class="h-5 w-5" />
-            <span
-              class="absolute -end-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-pink-600 font-sans text-xs text-white"
-            >
-              3
-            </span>
           </div>
         </NuxtLink>
         <NuxtLink
-          to="/dashboards/inbox"
+          href="#"
           class="relative flex h-16 w-16 items-center justify-center"
         >
           <div
@@ -209,17 +204,22 @@ const panelActive = ref(false)
           </div>
         </NuxtLink>
         <NuxtLink
-          to="/dashboards/inbox"
+          to="/dashboards/calendar"
           class="relative flex h-16 w-16 items-center justify-center"
         >
           <div
             class="bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400 relative flex h-12 w-12 items-center justify-center rounded-xl"
           >
             <Icon name="ph:calendar-blank-duotone" class="h-5 w-5" />
+            <span
+              class="absolute -end-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-pink-600 font-sans text-xs text-white"
+            >
+              5
+            </span>
           </div>
         </NuxtLink>
         <NuxtLink
-          to="/dashboards/inbox"
+          href="#"
           class="relative flex h-16 w-16 items-center justify-center"
         >
           <div
@@ -229,7 +229,7 @@ const panelActive = ref(false)
           </div>
         </NuxtLink>
         <NuxtLink
-          to="/dashboards/inbox"
+          href="#"
           class="relative flex h-16 w-16 items-center justify-center"
         >
           <div
@@ -239,7 +239,7 @@ const panelActive = ref(false)
           </div>
         </NuxtLink>
         <NuxtLink
-          to="/dashboards/inbox"
+          href="#"
           class="relative flex h-16 w-16 items-center justify-center"
         >
           <div
@@ -299,7 +299,7 @@ const panelActive = ref(false)
           </div>
 
           <ul
-            class="slimscroll h-[calc(100%_-_64px)] space-y-2 overflow-y-auto px-4 pb-8 sm:px-8"
+            class="nui-slimscroll h-[calc(100%_-_64px)] space-y-2 overflow-y-auto px-4 pb-8 sm:px-8"
           >
             <li
               v-for="message in messages"
@@ -429,7 +429,9 @@ const panelActive = ref(false)
               </div>
             </div>
             <!-- Message body -->
-            <div class="slimscroll h-[calc(100vh_-_344px)] overflow-y-auto p-8">
+            <div
+              class="nui-slimscroll h-[calc(100vh_-_344px)] overflow-y-auto p-8"
+            >
               <h1 class="text-2xl font-bold">{{ selectedMessage?.title }}</h1>
               <article
                 class="text-muted-500 dark:text-muted-400 mt-8 leading-7 tracking-wider"
@@ -529,8 +531,6 @@ const panelActive = ref(false)
         </div>
       </Pane>
     </Splitpanes>
-
-    <TairoPanels />
   </div>
 </template>
 

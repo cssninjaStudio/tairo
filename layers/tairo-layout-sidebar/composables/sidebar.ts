@@ -17,8 +17,8 @@
  *           icon: { name: 'ph:sidebar-duotone', class: 'w-5 h-5' },
  *
  *           // Or use a component
- *           // It should be registered in the app as a global component
- *           component: { name: 'BaseThemeToggle', props: {} },
+ *           // It should be registered in the app as a global component (in components/global)
+ *           component: { name: 'AppThemeToggle', props: {} },
  *
  *           // You can chose to display a subsidebar by defining a component name
  *           // It should be registered in the app as a global component
@@ -95,9 +95,6 @@ export function useSidebar() {
   }
 
   function detect() {
-    if (isOpen.value !== undefined) {
-      return
-    }
     if (!app.tairo.sidebar?.navigation?.startOpen) {
       isOpen.value = false
       return
@@ -108,7 +105,12 @@ export function useSidebar() {
     )
     if (item) {
       currentName.value = item.title
-      isOpen.value = Boolean(currentName.value)
+      if (!process.client) {
+        isOpen.value = Boolean(currentName.value)
+      } else {
+        const isXl = useTailwindBreakpoints().xl.value
+        isOpen.value = Boolean(currentName.value) && isXl
+      }
     }
     return
   }

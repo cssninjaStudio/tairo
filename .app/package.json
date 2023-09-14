@@ -3,7 +3,9 @@
   "private": true,
   "type": "module",
   "devDependencies": {
-    "nuxt": "3.5.0"
+    "@fontsource-variable/inter": "^5.0.8",
+    "@fontsource-variable/karla": "^5.0.13",
+    "nuxt": "3.6.5"
   },
   "scripts": {
     "prepare": "nuxi prepare",
@@ -11,5 +13,7 @@
     "build": "nuxi build",
     "generate": "nuxi generate",
     "clean": "rimraf .nuxt .output node_modules"
+  },
+  "dependencies": {
   }
 }

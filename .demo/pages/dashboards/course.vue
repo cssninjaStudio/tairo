@@ -338,7 +338,7 @@ const students = [
                 </BaseParagraph>
               </div>
               <div class="ms-auto">
-                <BaseButtonIcon small data-tooltip="Download file">
+                <BaseButtonIcon small data-nui-tooltip="Download file">
                   <Icon name="lucide:arrow-down" class="h-4 w-4" />
                 </BaseButtonIcon>
               </div>
@@ -399,7 +399,7 @@ const students = [
                   :color="student.status === 'Online' ? 'success' : 'muted'"
                   shape="full"
                   flavor="pastel"
-                  condensed
+                  size="sm"
                 >
                   {{ student.status }}
                 </BaseTag>

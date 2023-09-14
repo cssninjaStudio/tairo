@@ -318,7 +318,7 @@ const videos = [
                       </BaseParagraph>
                     </div>
                     <div class="ms-auto">
-                      <BaseTag color="primary" shape="full" condensed>
+                      <BaseTag color="primary" shape="full" size="sm">
                         <span>{{ video.category }}</span>
                       </BaseTag>
                     </div>
@@ -400,7 +400,7 @@ const videos = [
                             </BaseParagraph>
                           </div>
                           <div class="ms-auto">
-                            <BaseTag color="primary" shape="full" condensed>
+                            <BaseTag color="primary" shape="full" size="sm">
                               <span>{{ video.category }}</span>
                             </BaseTag>
                           </div>
@@ -521,7 +521,7 @@ const videos = [
                     </BaseParagraph>
                   </div>
                   <div class="ms-auto">
-                    <BaseTag color="primary" shape="full" condensed>
+                    <BaseTag color="primary" shape="full" size="sm">
                       <span>{{ video.category }}</span>
                     </BaseTag>
                   </div>

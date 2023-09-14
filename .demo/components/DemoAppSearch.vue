@@ -172,7 +172,7 @@ const metaKey = useMetaKey()
             <li v-for="page in demoPagesResults" :key="page?.name" class="">
               <DemoAppSearchResult
                 :to="{
-                  name: page?.name as string
+                  name: page?.name as string,
                 }"
                 :search="search"
                 :title="page?.meta?.preview?.title"

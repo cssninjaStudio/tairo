@@ -118,7 +118,7 @@ const { data, pending, error, refresh } = await useFetch(
                     flavor="context"
                     label="Dropdown"
                     orientation="end"
-                    condensed
+                    size="md"
                     class="z-20"
                     shape="curved"
                   >
@@ -146,7 +146,7 @@ const { data, pending, error, refresh } = await useFetch(
                         />
                       </template>
                     </BaseDropdownItem>
-                    <BaseDropdownDivide />
+                    <BaseDropdownDivider />
                     <BaseDropdownItem
                       to="#"
                       title="Permissions"
@@ -171,7 +171,7 @@ const { data, pending, error, refresh } = await useFetch(
                         />
                       </template>
                     </BaseDropdownItem>
-                    <BaseDropdownDivide />
+                    <BaseDropdownDivider />
                     <BaseDropdownItem
                       to="#"
                       title="Delete"

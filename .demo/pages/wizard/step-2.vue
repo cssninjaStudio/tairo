@@ -68,7 +68,7 @@ watch(inputFile, (value) => {
               class="absolute bottom-0 end-0 z-20"
             >
               <BaseButtonIcon
-                condensed
+                size="sm"
                 shape="full"
                 @click="remove(files.item(0)!)"
                 tooltip="Remove image"
@@ -78,7 +78,7 @@ watch(inputFile, (value) => {
             </div>
             <div v-else class="absolute bottom-0 end-0 z-20">
               <div class="relative" tooltip="Upload image">
-                <BaseButtonIcon condensed shape="full" @click="open">
+                <BaseButtonIcon size="sm" shape="full" @click="open">
                   <Icon name="lucide:plus" class="h-4 w-4" />
                 </BaseButtonIcon>
               </div>

@@ -1,4 +1,4 @@
-declare module 'v-calendar'
+// declare module 'v-calendar'
 declare module 'vue3-carousel'
 declare module 'vue3-smooth-dnd'
 declare module '@ckeditor/ckeditor5-vue'

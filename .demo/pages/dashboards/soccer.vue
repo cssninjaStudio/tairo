@@ -165,7 +165,7 @@ const matches = [
                   shape="full"
                   color="danger"
                   class="inline-flex items-center justify-center gap-1"
-                  condensed
+                  size="sm"
                 >
                   <Icon name="lucide:video" class="h-3 w-3" />
                   <span>Live now</span>
@@ -329,7 +329,7 @@ const matches = [
                         <td class="py-4 align-middle">
                           <div
                             class="text-muted-500 dark:text-muted-400 flex items-center gap-2 font-sans text-sm"
-                            :data-tooltip="capitalize(match.status)"
+                            :data-nui-tooltip="capitalize(match.status)"
                           >
                             <div
                               class="h-2 w-2 rounded-full"

@@ -235,6 +235,56 @@ export default defineAppConfig({
             ],
           },
           {
+            name: 'Projects',
+            icon: { name: 'ph:suitcase-duotone', class: 'w-5 h-5' },
+            activePath: '/layouts/projects/',
+            children: [
+              {
+                name: 'Projects',
+                to: '/layouts/projects/project-list-3',
+                icon: { name: 'ph:leaf-duotone', class: 'w-4 h-4' },
+              },
+              {
+                name: 'Project Details',
+                to: '/layouts/projects/details',
+                icon: {
+                  name: 'ph:note-duotone',
+                  class: 'w-4 h-4',
+                },
+              },
+              {
+                name: 'Kanban Board',
+                to: '/layouts/projects/board',
+                icon: { name: 'ph:circles-four-duotone', class: 'w-4 h-4' },
+              },
+            ],
+          },
+          {
+            name: 'Auth',
+            icon: { name: 'ph:lock-duotone', class: 'w-5 h-5' },
+            activePath: '/layouts/projects/',
+            children: [
+              {
+                name: 'Login',
+                to: '/auth',
+                icon: { name: 'ph:fingerprint-duotone', class: 'w-4 h-4' },
+              },
+              {
+                name: 'Signup',
+                to: '/auth/signup-1',
+                icon: {
+                  name: 'ph:plus-circle-duotone',
+                  class: 'w-4 h-4',
+                },
+              },
+              {
+                name: 'Recover',
+                to: '/auth',
+                icon: { name: 'ph:lightning-duotone', class: 'w-4 h-4' },
+              },
+            ],
+          },
+          {
             name: 'Widgets',
             icon: { name: 'ph:nut-duotone', class: 'w-5 h-5' },
             activePath: '/dashboards/widgets',
@@ -264,9 +314,19 @@ export default defineAppConfig({
             divider: true,
           },
           {
+            name: 'Charts',
+            icon: { name: 'ph:chart-pie-slice-duotone', class: 'w-5 h-5' },
+            to: '/dashboards/charts',
+          },
+          {
             name: 'Wizard',
             icon: { name: 'ph:magic-wand-duotone', class: 'w-5 h-5' },
             to: '/wizard',
+          },
+          {
+            name: 'Messaging',
+            icon: { name: 'ph:chats-circle-duotone', class: 'w-5 h-5' },
+            to: '/dashboards/messaging',
           },
           {
             name: 'Customize',
@@ -274,6 +334,116 @@ export default defineAppConfig({
             click: () => {
               const isSwitcherOpen = useState('switcher-open', () => false)
               isSwitcherOpen.value = true
+            },
+            position: 'end',
+          },
+        ],
+      },
+    },
+    topnav: {
+      navigation: {
+        enabled: true,
+        logo: {
+          component: 'TairoLogo',
+          resolve: true,
+          props: { class: 'text-primary-600 h-10 w-10' },
+        },
+        header: {
+          component: 'DemoTopnavWorkspaceDropdown',
+        },
+        items: [
+          {
+            name: 'Dashboard',
+            icon: { name: 'ph:gauge-duotone', class: 'w-6 h-6' },
+            activePath: '/dashboards/sales',
+            to: '/dashboards/sales',
+          },
+          {
+            name: 'Projects',
+            icon: { name: 'ph:suitcase-duotone', class: 'w-6 h-6' },
+            activePath: '/layouts/projects/project-list-3',
+            to: '/layouts/projects/project-list-3',
+          },
+          {
+            name: 'Freelancers',
+            icon: { name: 'ph:users-duotone', class: 'w-6 h-6' },
+            activePath: '/layouts/flex-list-1',
+            to: '/layouts/flex-list-1',
+          },
+          {
+            name: 'Files',
+            icon: { name: 'ph:note-duotone', class: 'w-6 h-6' },
+            activePath: '/layouts/table-list-3',
+            to: '/layouts/table-list-3',
+          },
+          {
+            name: 'Customers',
+            icon: { name: 'ph:users-three-duotone', class: 'w-6 h-6' },
+            activePath: '/layouts/user-grid-3',
+            to: '/layouts/user-grid-3',
+          },
+          {
+            name: 'Billing',
+            icon: { name: 'ph:credit-card-duotone', class: 'w-6 h-6' },
+            activePath: '/layouts/utility-billing',
+            to: '/layouts/utility-billing',
+          },
+          {
+            name: 'Settings',
+            icon: { name: 'ph:gear-six-duotone', class: 'w-6 h-6' },
+            activePath: '/layouts/profile-settings',
+            to: '/layouts/profile-settings',
+          },
+          {
+            name: 'Status',
+            icon: { name: 'ph:notification-duotone', class: 'w-6 h-6' },
+            activePath: '/layouts/utility-status',
+            to: '/layouts/utility-status',
+          },
+        ],
+      },
+      circularMenu: {
+        enabled: true,
+        tools: [
+          {
+            component: 'DemoThemeToggle',
+            props: {
+              class: 'ms-auto',
+              disableTransitions: true,
+              inverted: true,
+            },
+          },
+          {
+            component: 'DemoCircularMenuLanguage',
+          },
+          {
+            component: 'DemoCircularMenuNotifications',
+          },
+          {
+            component: 'DemoCircularMenuActivity',
+          },
+        ],
+      },
+      toolbar: {
+        enabled: true,
+        showTitle: false,
+        tools: [
+          {
+            component: 'DemoThemeToggle',
+          },
+          {
+            component: 'DemoToolbarSearch',
+          },
+          {
+            component: 'DemoToolbarCustomize',
+          },
+          {
+            component: 'DemoToolbarNotifications',
+          },
+          {
+            component: 'DemoAccountMenu',
+            props: {
+              horizontal: true,
             },
           },
         ],

@@ -19,6 +19,30 @@ Default shape of all :doc-linker{to="BaseCard"} can be set in your `app.config.t
 :::
 ::
 
+
+::doc-component-demo
+---
+title: Card contrast
+demo: '#examples/card/contrast.vue'
+---
+Cards are an essential part of any application. Cards can have different contrasts using the `color` prop. Contrast types impact both light and dark mode colors.
+:::doc-message{type="muted" icon="ion:shapes-outline"}
+Default color of all :doc-linker{to="BaseCard"} can be set in your `app.config.ts`.
+:::
+::
+
+::doc-component-demo
+---
+title: Card colors
+demo: '#examples/card/colors.vue'
+---
+Cards are an essential part of any application. Cards can have different colors using the `color` prop. Color types impact both light and dark mode colors.
+:::doc-message{type="muted" icon="ion:shapes-outline"}
+Default color of all :doc-linker{to="BaseCard"} can be set in your `app.config.ts`.
+:::
+::
+
+
 ::doc-component-demo
 ---
 title: Flat shadow

@@ -11,9 +11,9 @@ const isScrolled = computed(() => {
 })
 
 const toolOffsets = [
-  'translate-x-[-6.5em] translate-y-[-0.25em]',
-  'translate-x-[-5.75em] translate-y-[3em]',
-  'translate-x-[-3.15em] translate-y-[5.5em]',
+  'translate-x-[-6.5em] rtl:translate-x-[6.5em] translate-y-[-0.25em]',
+  'translate-x-[-5.75em] rtl:translate-x-[5.75em] translate-y-[3em]',
+  'translate-x-[-3.15em] rtl:translate-x-[3.15em] translate-y-[5.5em]',
   'translate-x-[0em] translate-y-[6.5em]',
 ] as const
 
@@ -24,7 +24,7 @@ const tools = computed(() => {
 
 <template>
   <div
-    class="after:bg-primary-600 after:shadow-primary-500/50 dark:after:shadow-muted-800/10 fixed right-[1em] top-[0.6em] z-[90] transition-transform duration-300 after:absolute after:right-0 after:top-0 after:block after:h-12 after:w-12 after:rounded-full after:shadow-lg after:transition-transform after:duration-300 after:content-['']"
+    class="after:bg-primary-600 after:shadow-primary-500/50 dark:after:shadow-muted-800/10 fixed end-[1em] top-[0.6em] z-[90] transition-transform duration-300 after:absolute after:right-0 after:top-0 after:block after:h-12 after:w-12 after:rounded-full after:shadow-lg after:transition-transform after:duration-300 after:content-['']"
     :class="[
       isOpened
         ? 'after:ease-[cubic-bezier(0.68, 1.55, 0.265, 1)] after:scale-[5.5]'

@@ -29,6 +29,7 @@ export default defineNuxtConfig({
      */
     '../layers/tairo-layout-sidebar',
     '../layers/tairo-layout-collapse',
+    '../layers/tairo-layout-topnav',
     '../layers/tairo',
 
     /**
@@ -48,16 +49,27 @@ export default defineNuxtConfig({
      */
     'nuxt-swiper',
   ],
-  css: ['~/assets/css/colors.css'],
+  css: [
+    '~/assets/css/colors.css',
+    '@fontsource-variable/fira-code/index.css',
+    '@fontsource-variable/inter/index.css',
+    '@fontsource-variable/karla/index.css',
+  ],
 
   experimental: {
-    // using parcel as as watcher run faster
+    // using chokidar-granular watcher run faster
     // when using layers and/or in large projects
-    watcher: 'parcel',
+    watcher: 'chokidar-granular',
     // Write early hints when using node server.
     writeEarlyHints: true,
     // Render JSON payloads with support for revivifying complex types.
     renderJsonPayloads: true,
+  },
+
+  typescript: {
+    tsConfig: {
+      // Here you can customize the generated tsconfig.json file
+    },
   },
 
   // nuxt behavior configuration
@@ -79,25 +91,8 @@ export default defineNuxtConfig({
     ...(process.env.ENABLE_DOCUMENTATION ? documentationRules : {}),
   },
 
-  // build configuration
-  hooks: {
-    'vite:extendConfig'(config, { isClient }) {
-      if (isProduction && isClient) {
-        // @ts-ignore
-        config.build.rollupOptions.output.entryFileNames = '_nuxt/e/[hash].js'
-        // @ts-ignore
-        config.build.rollupOptions.output.chunkFileNames = '_nuxt/c/[hash].js'
-        // @ts-ignore
-        config.build.rollupOptions.output.assetFileNames =
-          '_nuxt/a/[hash][extname]'
-      }
-    },
-  },
+  // nuxt build configuration
   nitro: {
-    prerender: {
-      crawlLinks: true,
-      routes: ['/', '/dashboards', '/layouts'],
-    },
     esbuild: {
       options: {
         target: 'esnext',
@@ -118,11 +113,6 @@ export default defineNuxtConfig({
   },
 
   // nuxt modules configuration
-  unfonts: {
-    google: {
-      families: ['Roboto Flex', 'Inter', 'Karla', 'Fira Code'],
-    },
-  },
   linkChecker: {
     failOn404: true,
   },

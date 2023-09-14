@@ -117,11 +117,11 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                     flavor="context"
                     label="Dropdown"
                     orientation="end"
-                    condensed
+                    size="md"
                     class="z-20"
                     shape="curved"
                   >
-                    <BaseDropdownDivide />
+                    <BaseDropdownDivider />
                     <BaseDropdownItem
                       to="#"
                       title="Edit"
@@ -167,7 +167,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 </BaseParagraph>
               </div>
               <div class="ms-auto">
-                <BaseButtonIcon shape="full" condensed>
+                <BaseButtonIcon shape="full" size="sm">
                   <Icon name="lucide:plus" class="h-4 w-4" />
                 </BaseButtonIcon>
               </div>
@@ -235,11 +235,11 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                     flavor="context"
                     label="Dropdown"
                     orientation="end"
-                    condensed
+                    size="md"
                     class="z-20"
                     shape="curved"
                   >
-                    <BaseDropdownDivide />
+                    <BaseDropdownDivider />
                     <BaseDropdownItem
                       to="#"
                       title="Edit"
@@ -285,7 +285,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 </BaseParagraph>
               </div>
               <div class="ms-auto">
-                <BaseButtonIcon shape="full" condensed>
+                <BaseButtonIcon shape="full" size="sm">
                   <Icon name="lucide:plus" class="h-4 w-4" />
                 </BaseButtonIcon>
               </div>
@@ -347,11 +347,11 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                     flavor="context"
                     label="Dropdown"
                     orientation="end"
-                    condensed
+                    size="md"
                     class="z-20"
                     shape="curved"
                   >
-                    <BaseDropdownDivide />
+                    <BaseDropdownDivider />
                     <BaseDropdownItem to="#" title="Edit" text="Edit this tool">
                       <template #start>
                         <Icon
@@ -393,7 +393,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 </BaseParagraph>
               </div>
               <div class="ms-auto">
-                <BaseButtonIcon shape="full" condensed>
+                <BaseButtonIcon shape="full" size="sm">
                   <Icon name="lucide:plus" class="h-4 w-4" />
                 </BaseButtonIcon>
               </div>

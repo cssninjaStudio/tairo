@@ -130,7 +130,6 @@ const onSubmit = handleSubmit(
     } catch (error: any) {
       // this will set the error on the form
       if (error.message === 'Fake backend validation error') {
-        // @ts-expect-error - vee validate typing bug with nested keys
         setFieldError('event.title', 'This name is not allowed')
 
         document.documentElement.scrollTo({

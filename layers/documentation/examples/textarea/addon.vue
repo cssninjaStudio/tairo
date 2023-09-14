@@ -18,7 +18,7 @@
         </div>
 
         <div class="flex items-center gap-2">
-          <BaseButton condensed>Post Comment</BaseButton>
+          <BaseButton size="sm">Post Comment</BaseButton>
         </div>
       </template>
     </BaseTextarea>

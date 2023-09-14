@@ -23,11 +23,11 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
           flavor="context"
           label="Dropdown"
           orientation="end"
-          condensed
+          size="md"
           class="z-20"
           shape="curved"
         >
-          <BaseDropdownDivide />
+          <BaseDropdownDivider />
           <BaseDropdownItem
             to="/layouts/profile-edit"
             title="Edit"
@@ -37,7 +37,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
               <Icon name="ph:pencil-duotone" class="me-2 block h-5 w-5" />
             </template>
           </BaseDropdownItem>
-          <BaseDropdownDivide />
+          <BaseDropdownDivider />
           <BaseDropdownItem to="#" title="Security" text="Security settings">
             <template #start>
               <Icon name="ph:lock-duotone" class="me-2 block h-5 w-5" />
@@ -48,7 +48,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
               <Icon name="ph:bank-duotone" class="me-2 block h-5 w-5" />
             </template>
           </BaseDropdownItem>
-          <BaseDropdownDivide />
+          <BaseDropdownDivider />
           <BaseDropdownItem to="#" title="Share" text="Share profile">
             <template #start>
               <Icon name="ph:link-duotone" class="me-2 block h-5 w-5" />

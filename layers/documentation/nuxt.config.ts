@@ -55,11 +55,6 @@ export default defineNuxtConfig({
       }
     },
   },
-  nitro: {
-    prerender: {
-      routes: ['/documentation'],
-    },
-  },
   content: {
     sources: {
       content: {

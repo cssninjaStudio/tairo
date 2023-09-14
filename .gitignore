@@ -4,6 +4,7 @@ node_modules
 .nuxt
 nuxt.d.ts
 .output
+dist
 .env
 *Zone.Identifier
 .demo/public/shiki/themes/*.json

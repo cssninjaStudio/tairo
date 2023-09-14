@@ -19,7 +19,7 @@ const props = withDefaults(
 )
 
 const app = useAppConfig()
-const { setup, currentName, isOpen } = useSidebar()
+const { setup, currentName, isOpen, toggle } = useSidebar()
 setup()
 
 onUnmounted(() => {
@@ -96,6 +96,16 @@ const wrapperClass = computed(() => {
           </slot>
         </div>
       </TairoSidebarNavigation>
+      <div
+        role="button"
+        class="bg-muted-800 dark:bg-muted-900 fixed start-0 top-0 z-[59] block h-full w-full transition-opacity duration-300 lg:hidden"
+        :class="
+          isOpen
+            ? 'opacity-50 dark:opacity-75'
+            : 'opacity-0 pointer-events-none'
+        "
+        @click="toggle"
+      ></div>
     </slot>
 
     <div :class="wrapperClass">

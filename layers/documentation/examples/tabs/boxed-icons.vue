@@ -2,7 +2,7 @@
   <div class="w-full max-w-sm">
     <BaseTabs
       type="box"
-      selected="team"
+      model-value="team"
       :tabs="[
         {
           label: 'Team',

@@ -50,7 +50,7 @@ const tags = [
       :shape="props.shape"
       :flavor="tag.highlight ? 'solid' : 'outline'"
       color="primary"
-      condensed
+      size="sm"
     >
       <span>{{ tag.name }}</span>
     </BaseTag>

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css'
 import type { Map, Popup } from 'mapbox-gl'
+import type { FeatureCollection, Geometry, GeoJsonProperties } from 'geojson'
 import 'mapbox-gl/src/css/mapbox-gl.css'
 
 const props = defineProps<{
@@ -21,7 +22,6 @@ const map = shallowRef<Map>()
 const popup = shallowRef<Popup>()
 const geocoder = shallowRef<any>()
 
-// eslint-disable-next-line @typescript-eslint/consistent-type-imports
 let mapboxgl: typeof import('mapbox-gl')
 
 const locations = {
@@ -181,7 +181,7 @@ const locations = {
       },
     },
   ],
-} as const
+} satisfies FeatureCollection<Geometry, GeoJsonProperties>
 
 function loadLayers() {
   if (!map.value) {
@@ -195,7 +195,7 @@ function loadLayers() {
 
   map.value.addSource('places', {
     type: 'geojson',
-    data: locations as any,
+    data: locations,
   })
 
   // Add a layer showing the places.
@@ -469,7 +469,7 @@ watch(
           <TairoSidebarTools />
         </div>
         <div
-          class="ltablet:h-[calc(100%_-_64px)] slimscroll h-[calc(100vh_-_492px)] overflow-y-auto p-6 lg:h-[calc(100%_-_64px)]"
+          class="ltablet:h-[calc(100%_-_64px)] nui-slimscroll h-[calc(100vh_-_492px)] overflow-y-auto p-6 lg:h-[calc(100%_-_64px)]"
         >
           <!--Title-->
           <BaseHeading
@@ -569,8 +569,6 @@ watch(
         </div>
       </template>
     </div>
-
-    <TairoPanels />
   </div>
 </template>
 
@@ -602,7 +600,7 @@ watch(
 }
 
 .mapboxgl-ctrl-geocoder input {
- @apply h-12 ps-12 font-sans text-muted-700 dark:text-muted-100 rounded-full bg-white dark:bg-muted-800 border border-muted-200 dark:border-muted-700 shadow-xl shadow-muted-300/30 dark:shadow-muted-900/40 transition-colors duration-300;
+  @apply h-12 ps-12 font-sans text-muted-700 dark:text-muted-100 rounded-full bg-white dark:bg-muted-800 border border-muted-200 dark:border-muted-700 shadow-xl shadow-muted-300/30 dark:shadow-muted-900/40 transition-colors duration-300;
 }
 
 .mapboxgl-ctrl-geocoder--button {

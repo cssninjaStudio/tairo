@@ -40,12 +40,10 @@ export default defineNuxtSchema({
           enabled: true,
           header: {
             component: '',
-            resolve: true,
             props: {},
           },
           footer: {
             component: '',
-            resolve: true,
             props: {},
           },
           items: {
@@ -93,7 +91,7 @@ export default defineNuxtSchema({
                     type: 'object',
                     required: ['name'],
                     properties: {
-                      component: { type: 'string' },
+                      name: { type: 'string' },
                       props: { type: 'object' },
                     },
                   },

@@ -28,7 +28,7 @@ const codePage = [
   `<` + `/script>`,
   ``,
   `<template>`,
-  `  Hello Tairo!`,
+  `  <div>Hello Tairo!</div>`,
   `</template>`,
 ].join('\n')
 

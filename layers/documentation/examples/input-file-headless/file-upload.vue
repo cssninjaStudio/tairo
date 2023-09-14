@@ -13,10 +13,7 @@
           tooltip="Select files"
           @click="open"
         >
-          <Icon
-            name="lucide:plus"
-            class="absolute start-1/2 top-1/2 h-4 w-4 -translate-x-1/2 -translate-y-1/2"
-          />
+          <Icon name="lucide:plus" class="h-4 w-4" />
 
           <span class="sr-only">Select files</span>
         </button>

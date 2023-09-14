@@ -21,22 +21,32 @@ const { lg } = useTailwindBreakpoints()
       <span
         class="bg-primary-500 absolute block h-0.5 w-full transition-all duration-300"
         :class="[
-          isOpen && lg ? 'top-1 max-w-[75%] -rotate-45' : 'top-0.5',
-          isMobileOpen && !lg ? 'top-1 max-w-[75%] -rotate-45' : 'top-0.5',
+          isOpen && lg
+            ? 'top-1 max-w-[75%] -rotate-45 rtl:rotate-45'
+            : 'top-0.5',
+          isMobileOpen && !lg
+            ? 'top-1 max-w-[75%] -rotate-45 rtl:rotate-45'
+            : 'top-0.5',
         ]"
       ></span>
       <span
         class="bg-primary-500 absolute top-1/2 block h-0.5 w-full max-w-[50%] transition-all duration-300"
         :class="[
-          isOpen && lg ? 'translate-x-4 opacity-0' : '',
-          isMobileOpen && !lg ? 'translate-x-4 opacity-0' : '',
+          isOpen && lg ? 'translate-x-4 opacity-0 rtl:-translate-x-4' : '',
+          isMobileOpen && !lg
+            ? 'translate-x-4 opacity-0  rtl:-translate-x-4'
+            : '',
         ]"
       ></span>
       <span
         class="bg-primary-500 absolute block h-0.5 w-full transition-all duration-300"
         :class="[
-          isOpen && lg ? 'bottom-1 max-w-[75%] rotate-45' : 'bottom-0',
-          isMobileOpen && !lg ? 'bottom-1 max-w-[75%] rotate-45' : 'bottom-0',
+          isOpen && lg
+            ? 'bottom-1 max-w-[75%] rotate-45 rtl:-rotate-45'
+            : 'bottom-0',
+          isMobileOpen && !lg
+            ? 'bottom-1 max-w-[75%] rotate-45 rtl:-rotate-45'
+            : 'bottom-0',
         ]"
       ></span>
     </div>

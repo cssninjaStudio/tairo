@@ -1,14 +1,30 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Project Details',
-  preview: {
-    title: 'Project details',
-    description: 'For displaying project details',
-    categories: ['layouts', 'projects'],
-    src: '/img/screens/layouts-projects-details.png',
-    srcDark: '/img/screens/layouts-projects-details-dark.png',
-    order: 72,
-  },
+  preview: [
+    {
+      title: 'Project details',
+      description: 'For displaying fitness project details',
+      categories: ['layouts', 'projects'],
+      src: '/img/screens/layouts-projects-details.png',
+      srcDark: '/img/screens/layouts-projects-details-dark.png',
+      order: 72,
+      params: {
+        slug: 'health-and-fitness-dashboard',
+      },
+    },
+    {
+      title: 'Project details',
+      description: 'For displaying banking project details',
+      categories: ['layouts', 'projects'],
+      src: '/img/screens/layouts-projects-details.png',
+      srcDark: '/img/screens/layouts-projects-details-dark.png',
+      order: 72,
+      params: {
+        slug: 'banking-and-finance-dashboard',
+      },
+    },
+  ],
 })
 
 const { open } = usePanels()
@@ -45,7 +61,7 @@ function openTaskPanel(id: number, tasks: any) {
   <div class="relative">
     <div class="absolute end-12 top-2.5 z-20 hidden sm:block">
       <BaseButton
-        condensed
+        size="sm"
         shape="curved"
         :to="`/layouts/projects/board/${slug}`"
       >
@@ -58,7 +74,7 @@ function openTaskPanel(id: number, tasks: any) {
         flavor="context"
         label="Dropdown"
         orientation="end"
-        condensed
+        size="md"
         class="z-20"
         shape="curved"
       >
@@ -72,13 +88,13 @@ function openTaskPanel(id: number, tasks: any) {
             <Icon name="ph:kanban-duotone" class="me-2 block h-5 w-5" />
           </template>
         </BaseDropdownItem>
-        <BaseDropdownDivide />
+        <BaseDropdownDivider />
         <BaseDropdownItem to="#" title="Edit" text="Edit this project">
           <template #start>
             <Icon name="ph:pencil-duotone" class="me-2 block h-5 w-5" />
           </template>
         </BaseDropdownItem>
-        <BaseDropdownDivide />
+        <BaseDropdownDivider />
         <BaseDropdownItem to="#" title="Permissions" text="Manage permissions">
           <template #start>
             <Icon name="ph:lock-duotone" class="me-2 block h-5 w-5" />
@@ -89,7 +105,7 @@ function openTaskPanel(id: number, tasks: any) {
             <Icon name="ph:file-duotone" class="me-2 block h-5 w-5" />
           </template>
         </BaseDropdownItem>
-        <BaseDropdownDivide />
+        <BaseDropdownDivider />
         <BaseDropdownItem to="#" title="Delete" text="Delete this project">
           <template #start>
             <Icon name="ph:trash-duotone" class="me-2 block h-5 w-5" />
@@ -118,7 +134,7 @@ function openTaskPanel(id: number, tasks: any) {
     </div>
     <div v-else class="h-full">
       <BaseTabs
-        selected="overview"
+        model-value="overview"
         :tabs="[
           {
             label: 'Overview',
@@ -160,7 +176,7 @@ function openTaskPanel(id: number, tasks: any) {
                         <div class="flex items-center gap-2">
                           <BaseAvatar
                             :src="data?.project.owner.avatar"
-                            :data-tooltip="`${data?.project.owner.name} owns this project`"
+                            :data-nui-tooltip="`${data?.project.owner.name} owns this project`"
                           />
                           <div>
                             <BaseHeading tag="h3" size="sm" weight="medium">
@@ -298,8 +314,8 @@ function openTaskPanel(id: number, tasks: any) {
                           <div class="ms-auto">
                             <BaseButtonIcon
                               shape="full"
-                              data-tooltip="Download file"
-                              condensed
+                              data-nui-tooltip="Download file"
+                              size="sm"
                             >
                               <Icon name="lucide:arrow-down" />
                             </BaseButtonIcon>
@@ -324,7 +340,7 @@ function openTaskPanel(id: number, tasks: any) {
                       <BaseAvatar
                         :src="data?.project.customer.logo"
                         size="md"
-                        :data-tooltip="data?.project.customer.name"
+                        :data-nui-tooltip="data?.project.customer.name"
                         class="bg-muted-100 dark:bg-muted-700"
                       />
                       <div>
@@ -378,7 +394,7 @@ function openTaskPanel(id: number, tasks: any) {
                         <BaseAvatar
                           :src="tool.icon"
                           size="xs"
-                          :data-tooltip="tool.name"
+                          :data-nui-tooltip="tool.name"
                           class="bg-muted-100 dark:bg-muted-700"
                         />
                         <div>
@@ -414,7 +430,7 @@ function openTaskPanel(id: number, tasks: any) {
                         <BaseAvatar
                           :src="stack.icon"
                           size="xs"
-                          :data-tooltip="stack.name"
+                          :data-nui-tooltip="stack.name"
                           class="bg-muted-100 dark:bg-muted-700"
                         />
                         <div>
@@ -584,7 +600,7 @@ function openTaskPanel(id: number, tasks: any) {
                     <BaseAvatar
                       size="xxs"
                       :src="item.assignee.src"
-                      :data-tooltip="item.assignee.tooltip"
+                      :data-nui-tooltip="item.assignee.tooltip"
                     />
                     <BaseProgress
                       :value="item.completion"

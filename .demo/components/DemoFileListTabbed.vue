@@ -121,7 +121,7 @@ const savedFiles = [
                 flavor="context"
                 label="Dropdown"
                 orientation="end"
-                condensed
+                size="md"
                 class="z-20"
                 shape="curved"
               >
@@ -149,7 +149,7 @@ const savedFiles = [
                     />
                   </template>
                 </BaseDropdownItem>
-                <BaseDropdownDivide />
+                <BaseDropdownDivider />
                 <BaseDropdownItem
                   to="#"
                   title="Permissions"
@@ -164,7 +164,7 @@ const savedFiles = [
                     <Icon name="ph:share-duotone" class="me-2 block h-5 w-5" />
                   </template>
                 </BaseDropdownItem>
-                <BaseDropdownDivide />
+                <BaseDropdownDivider />
                 <BaseDropdownItem to="#" title="Delete" text="Delete this file">
                   <template #start>
                     <Icon name="ph:trash-duotone" class="me-2 block h-5 w-5" />
@@ -202,7 +202,7 @@ const savedFiles = [
                 flavor="context"
                 label="Dropdown"
                 orientation="end"
-                condensed
+                size="md"
                 shape="curved"
                 class="z-20"
               >
@@ -230,7 +230,7 @@ const savedFiles = [
                     />
                   </template>
                 </BaseDropdownItem>
-                <BaseDropdownDivide />
+                <BaseDropdownDivider />
                 <BaseDropdownItem
                   to="#"
                   title="Permissions"
@@ -245,7 +245,7 @@ const savedFiles = [
                     <Icon name="ph:share-duotone" class="me-2 block h-5 w-5" />
                   </template>
                 </BaseDropdownItem>
-                <BaseDropdownDivide />
+                <BaseDropdownDivider />
                 <BaseDropdownItem to="#" title="Delete" text="Delete this file">
                   <template #start>
                     <Icon name="ph:trash-duotone" class="me-2 block h-5 w-5" />

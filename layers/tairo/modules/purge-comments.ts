@@ -21,7 +21,7 @@ export default defineNuxtModule({
         }
 
         const s = new MagicString(code)
-        s.replace(/<!--(?:.*?)-->/g, '')
+        s.replace(/<!--.*?-->/g, '')
 
         if (s.hasChanged()) {
           return {

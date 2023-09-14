@@ -59,7 +59,7 @@ const tickets = [
         size="lg"
         :src="ticket.user.src"
         :text="ticket.user.name"
-        :data-tooltip="ticket.user.name"
+        :data-nui-tooltip="ticket.user.name"
       />
       <div class="max-w-md">
         <BaseHeading

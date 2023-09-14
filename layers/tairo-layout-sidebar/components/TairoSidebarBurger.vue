@@ -19,7 +19,7 @@ const { isOpen, toggle } = useSidebar()
       ></span>
       <span
         class="bg-primary-500 absolute top-1/2 block h-0.5 w-full max-w-[50%] transition-all duration-300"
-        :class="isOpen ? 'opacity-0 translate-x-4' : ''"
+        :class="isOpen ? 'opacity-0 translate-x-4 rtl:-translate-x-4' : ''"
       ></span>
       <span
         class="bg-primary-500 absolute block h-0.5 w-full transition-all duration-300"

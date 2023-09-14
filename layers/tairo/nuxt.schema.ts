@@ -5,7 +5,6 @@ export default defineNuxtSchema({
       error: {
         logo: {
           component: 'TairoLogo',
-          resolve: true,
           props: {},
         },
       },

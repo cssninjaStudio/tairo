@@ -3,7 +3,7 @@
     <BaseAutocomplete
       v-model="value"
       :items="hobbies"
-      :display-value="(item) => item.name"
+      :display-value="(item: Hobby) => item.name"
       :filter-items="filterItems"
       icon="ph:buildings"
       shape="rounded"
@@ -15,8 +15,15 @@
 </template>
 
 <script setup lang="ts">
-const value = ref('')
-const hobbies = ref([
+interface Hobby {
+  id: number
+  name: string
+  text: string
+  icon: string
+}
+
+const value = ref<Hobby>()
+const hobbies = ref<Hobby[]>([
   {
     id: 1,
     name: 'Movies',

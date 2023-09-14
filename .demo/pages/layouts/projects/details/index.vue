@@ -71,7 +71,7 @@ const selectedProject = ref('')
           <BaseAutocomplete
             v-model="selectedProject"
             :items="data?.data"
-            :display-value="(item) => item.name"
+            :display-value="(item: any) => item.name"
             shape="curved"
             icon="lucide:search"
             placeholder="Search..."
@@ -136,7 +136,7 @@ const selectedProject = ref('')
                   :src="item.customer.logo"
                   size="sm"
                   shape="full"
-                  :data-tooltip="item.name"
+                  :data-nui-tooltip="item.name"
                   class="bg-muted-100 dark:bg-muted-700"
                 />
                 <div>
@@ -161,7 +161,7 @@ const selectedProject = ref('')
                     :src="stack.icon"
                     size="xxs"
                     shape="full"
-                    :data-tooltip="stack.name"
+                    :data-nui-tooltip="stack.name"
                     class="bg-muted-100 dark:bg-muted-700"
                   />
                 </div>
