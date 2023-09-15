@@ -1,7 +1,8 @@
 <script setup lang="ts">
 // eslint-disable vue/no-v-text-v-html-on-component
-import type { IThemeRegistration, Lang } from 'shiki'
-import type { ProcessorThemes } from '~/utils/markdown'
+import light from '~/utils/shiki/theme/cssninja-light'
+import dark from '~/utils/shiki/theme/cssninja-dark'
+import { LanguageInput, BuiltinLanguage } from 'shikiji';
 
 const props = withDefaults(
   defineProps<{
@@ -19,13 +20,13 @@ const props = withDefaults(
      *
      * @see https://github.com/shikijs/shiki/blob/main/docs/themes.md#all-themes
      */
-    theme?: { light: IThemeRegistration; dark: IThemeRegistration }
+    themes?: { light: any; dark: any }
     /**
      * List of languages to highlight code blocks
      *
      * @see https://github.com/shikijs/shiki/blob/main/docs/languages.md#all-languages
      */
-    langs?: Lang[]
+    langs?: Array<LanguageInput | BuiltinLanguage>
     /**
      * Show line numbers
      */
@@ -39,21 +40,18 @@ const props = withDefaults(
     lines: true,
     size: 'base',
     mode: undefined,
-    theme: () => ({
-      light: 'material-theme-lighter',
-      dark: 'material-theme-ocean',
+    themes: () => ({
+      light,
+      dark,
     }),
-    langs: () => ['html', 'vue', 'bash'],
+    langs: () => ['html', 'vue', 'bash', 'dockerfile', 'json', 'yaml', 'markdown'],
   },
 )
 
-const processors = shallowRef<ProcessorThemes>()
+const processor = shallowRef<any>()
 const colorMode = useColorMode()
 const loaded = ref(false)
-const htmlContent = ref<Record<string, string>>({
-  light: '',
-  dark: '',
-})
+const htmlContent = ref<string>('')
 const isDark = computed({
   get() {
     return colorMode.value === 'dark'
@@ -88,17 +86,16 @@ const proseSize = computed(() => {
 })
 
 watchEffect(async () => {
-  if (processors.value) return
-  processors.value = await getMarkdownProcessors(props.theme, props.langs)
+  if (processor.value) return
+  processor.value = await getMarkdownProcessors(props.themes, props.langs)
 })
 
 watchEffect(async () => {
   let source = props.source
-  const _mode = mode.value
-  if (!source || !processors.value || htmlContent.value[_mode]) return
+  if (!source || !processor.value || htmlContent.value) return
 
-  const vfile = await processors.value[_mode].processor.process(source)
-  htmlContent.value[_mode] = vfile.toString()
+  const vfile = await processor.value.process(source)
+  htmlContent.value = vfile.toString()
   loaded.value = true
 })
 </script>
@@ -114,9 +111,18 @@ watchEffect(async () => {
       props.fullwidth ? 'max-w-none' : '',
     ]"
   >
-    <div v-html="htmlContent[mode]"></div>
+    <div v-html="htmlContent"></div>
   </BaseProse>
 </template>
+
+
+<style>
+html.dark .shiki,
+html.dark .shiki span {
+  background-color: var(--shiki-dark-bg) !important;
+  color: var(--shiki-dark) !important;
+}
+</style>
 
 <style scoped>
 .markdown :deep(.shiki) {
