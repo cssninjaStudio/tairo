@@ -15,7 +15,7 @@ demo: '#examples/avatar/circle-size.vue'
 ---
 Avatars can have different shapes. The following example shows avatars using the `full` shape. Avatars can also be displayed as groups, using the :doc-linker{to="BaseAvatarGroup"} component.
 :::doc-message{type="muted" icon="ion:shapes-outline"}
-Default shape of all :doc-linker{to="BaseAvatar"} can be set in your `app.config.ts`.
+Default shape of all :doc-linker{to="BaseAvatar"} can be set in your `.app/app.config.ts`.
 :::
 ::
 

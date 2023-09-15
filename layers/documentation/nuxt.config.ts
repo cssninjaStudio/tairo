@@ -17,6 +17,7 @@ export default defineNuxtConfig({
   componentMeta: {
     globalsOnly: false,
     exclude: [
+      '@nuxtjs/mdc',
       'nuxt/dist',
       '@nuxt/ui-templates/dist',
       (component: any) => {

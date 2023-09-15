@@ -1,7 +1,5 @@
 <template>
-  <li>
-    <BaseParagraph as="span" size="sm">
-      <slot />
-    </BaseParagraph>
-  </li>
+  <BaseListItem>
+    <slot />
+  </BaseListItem>
 </template>

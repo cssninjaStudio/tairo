@@ -44,7 +44,7 @@
     "std-env": "3.4.3",
     "tailwindcss": "3.3.3",
     "typescript": "5.2.2",
-    "vue-tsc": "1.8.10"
+    "vue-tsc": "1.8.11"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
@@ -69,7 +69,6 @@
       ]
     },
     "patchedDependencies": {
-      "vue3-smooth-dnd@0.0.5": "patches/vue3-smooth-dnd@0.0.5.patch",
       "smooth-dnd@0.12.1": "patches/smooth-dnd@0.12.1.patch"
     }
   }

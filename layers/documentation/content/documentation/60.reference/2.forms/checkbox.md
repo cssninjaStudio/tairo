@@ -16,7 +16,7 @@ demo: '#examples/checkbox/straight.vue'
 ---
 The checkbox component can have different shapes. Here is an example of a `straight` checkbox.
 :::doc-message{type="muted" icon="ion:shapes-outline"}
-Default shape of all :doc-linker{to="BaseCheckbox"} can be set in your `app.config.ts`.
+Default shape of all :doc-linker{to="BaseCheckbox"} can be set in your `.app/app.config.ts`.
 :::
 ::
 

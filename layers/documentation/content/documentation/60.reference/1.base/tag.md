@@ -15,7 +15,7 @@ demo: '#examples/tag/shapes.vue'
 ---
 Tags can have different shapes. Use the `shape` prop to display a tag with a rounded or squared shape.
 :::doc-message{type="muted" icon="ion:shapes-outline"}
-Default shape of all :doc-linker{to="BaseTag"} can be set in your `app.config.ts`.
+Default shape of all :doc-linker{to="BaseTag"} can be set in your `.app/app.config.ts`.
 :::
 ::
 

@@ -345,7 +345,6 @@ export default defineAppConfig({
         enabled: true,
         logo: {
           component: 'TairoLogo',
-          resolve: true,
           props: { class: 'text-primary-600 h-10 w-10' },
         },
         header: {
