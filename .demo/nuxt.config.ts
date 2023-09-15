@@ -1,5 +1,3 @@
-import { isProduction } from 'std-env'
-
 import {
   demoRules,
   documentationRules,
@@ -31,15 +29,6 @@ export default defineNuxtConfig({
     '../layers/tairo-layout-collapse',
     '../layers/tairo-layout-topnav',
     '../layers/tairo',
-
-    /**
-     * This is an additional layer that adds SEO features.
-     *
-     * Can be used either to prevent indexing,
-     * or to add custom meta tags to improve referencing.
-     * @see https://github.com/harlan-zw/nuxt-seo-kit
-     */
-    'nuxt-seo-kit',
   ],
   modules: [
     /**
@@ -77,12 +66,7 @@ export default defineNuxtConfig({
     public: {
       // mapbox config
       mapboxToken: process.env.NUXT_PUBLIC_MAPBOX_TOKEN,
-      // nuxt-seo-kit config
       siteUrl: process.env.NUXT_PUBLIC_SITE_URL,
-      siteName: 'Tairo by CSS Ninja',
-      siteDescription:
-        'The most advanced Nuxt and Tailwind CSS dashboard template',
-      language: 'en',
     },
   },
   routeRules: {
@@ -110,13 +94,5 @@ export default defineNuxtConfig({
     build: {
       target: 'esnext',
     },
-  },
-
-  // nuxt modules configuration
-  linkChecker: {
-    failOn404: true,
-  },
-  unhead: {
-    seoOptimise: true,
   },
 })

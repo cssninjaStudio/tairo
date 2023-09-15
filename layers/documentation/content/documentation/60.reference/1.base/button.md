@@ -15,7 +15,7 @@ demo: '#examples/button/shapes.vue'
 ---
 Buttons are an essential part of any application. Buttons can have different shapes using the `shape` prop.
 :::doc-message{type="muted" icon="ion:shapes-outline"}
-Default shape of all :doc-linker{to="BaseButton"} can be set in your `app.config.ts`.
+Default shape of all :doc-linker{to="BaseButton"} can be set in your `.app/app.config.ts`.
 :::
 ::
 

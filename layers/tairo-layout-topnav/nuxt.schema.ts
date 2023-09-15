@@ -39,7 +39,6 @@ export default defineNuxtSchema({
           enabled: true,
           logo: {
             component: 'TairoLogo',
-            resolve: true,
             props: {},
           },
           header: {

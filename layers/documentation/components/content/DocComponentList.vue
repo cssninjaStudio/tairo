@@ -5,12 +5,13 @@ const props = defineProps<{
 
 const meta = ref<string[]>([])
 
-const componentsMeta = await useComponentMeta()
+const componentsMeta = await $fetch(`/api/component-meta`)
+// const componentsMeta = { value: {} }
 const { docRoutes: routesFlat } = await useDocumentationRoutes()
 
 // filter unwanted components
 watchEffect(() => {
-  meta.value = Object.keys(componentsMeta.value)?.filter((name) => {
+  meta.value = Object.keys(componentsMeta ?? {})?.filter((name) => {
     if (!props.prefix) return true
 
     return name.startsWith(props.prefix)

@@ -15,7 +15,7 @@ demo: '#examples/icon-button/shapes.vue'
 ---
 Icon buttons are a quick and visual way to express an action. Icon buttons can have different shapes using the `shape` prop.
 :::doc-message{type="muted" icon="ion:shapes-outline"}
-Default shape of all :doc-linker{to="BaseButtonIcon"} can be set in your `app.config.ts`.
+Default shape of all :doc-linker{to="BaseButtonIcon"} can be set in your `.app/app.config.ts`.
 :::
 ::
 
