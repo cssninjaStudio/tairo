@@ -46,7 +46,8 @@ export default defineComponent({
   <div class="group/prose-code relative">
     <div
       v-if="filename || isSupported"
-      class="absolute end-2 top-2 inline-flex items-center gap-1 text-xs opacity-40 transition-opacity duration-200 group-hover/prose-code:opacity-60 dark:group-hover/prose-code:opacity-80"
+      class="absolute end-4 top-2 flex items-center gap-1 text-xs opacity-40 transition-opacity duration-200 group-hover/prose-code:opacity-60 dark:group-hover/prose-code:opacity-80"
+      :class="[filename && isSupported ? 'start-4 justify-between' : '']"
     >
       <span v-if="filename">{{ filename }}</span>
       <button
@@ -63,11 +64,10 @@ export default defineComponent({
       :source="markdown"
       fullwidth
       class="doc-markdown"
+      :class="[
+        filename && isSupported ? '[&_.shiki]:pt-8' : '[&_.shiki]:!pe-10',
+      ]"
       :lines="false"
-      :theme="{
-        light: 'cssninja-light-theme',
-        dark: 'cssninja-dark-theme',
-      }"
     />
   </div>
 </template>

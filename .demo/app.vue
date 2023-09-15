@@ -4,15 +4,18 @@ const app = useAppConfig()
 
 /**
  * Global head configuration
- * @see https://unhead.harlanzw.com/
- * @see https://github.com/unjs/unhead/tree/main
+ * @see https://nuxt.com/docs/getting-started/seo-meta
  */
 useHead({
-  title: route.meta.title,
+  title: () => route.meta?.title ?? '',
   titleTemplate: (titleChunk) => {
     return titleChunk
       ? `${titleChunk} - ${app.tairo.title}`
-      : `${app.tairo.title || 'Tairo'}`
+      : `${app.tairo.title}`
+  },
+  htmlAttrs: {
+    lang: 'en',
+    dir: 'ltr',
   },
   link: [
     {
@@ -23,6 +26,7 @@ useHead({
   ],
 
   meta: [
+    { name: 'description', content: () => route.meta.description ?? 'The most advanced Nuxt and Tailwind CSS dashboard template' },
     {
       name: 'twitter:card',
       content: 'summary_large_image',
@@ -83,7 +87,6 @@ useHead({
 
     <NuxtLayout>
       <NuxtLoadingIndicator color="var(--color-primary-500)" />
-      <SeoKit />
       <NuxtPage />
     </NuxtLayout>
   </div>

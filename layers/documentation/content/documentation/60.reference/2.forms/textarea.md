@@ -16,7 +16,7 @@ demo: '#examples/textarea/shapes.vue'
 ---
 Textareas can have different shapes. Use the `shape` prop to change the shape of the textarea component.
 :::doc-message{type="muted" icon="ion:shapes-outline"}
-Default shape of all :doc-linker{to="BaseTextarea"} can be set in your `app.config.ts`.
+Default shape of all :doc-linker{to="BaseTextarea"} can be set in your `.app/app.config.ts`.
 :::
 ::
 

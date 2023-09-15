@@ -15,7 +15,7 @@ demo: '#examples/pagination/straight.vue'
 ---
 The pagination component can have different shapes. Use the `shape` prop to change the shape of the pagination.
 :::doc-message{type="muted" icon="ion:shapes-outline"}
-Default shape of all :doc-linker{to="BasePagination"} can be set in your `app.config.ts`.
+Default shape of all :doc-linker{to="BasePagination"} can be set in your `.app/app.config.ts`.
 :::
 ::
 
