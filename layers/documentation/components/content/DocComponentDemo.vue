@@ -144,7 +144,7 @@ async function loadDemo() {
           <div
             class="prose prose-primary prose-muted dark:prose-invert prose-th:p-4 prose-td:p-4 prose-table:bg-white dark:prose-table:bg-muted-800 prose-table:border prose-table:border-muted-200 dark:prose-table:border-muted-700 prose-sm prose-p:text-muted-500 dark:prose-p:text-muted-400 prose-a:decoration-from-font prose-a:underline-offset-1"
           >
-            <ContentSlot :use="$slots.default"></ContentSlot>
+            <ContentSlot :use="$slots.default" :unwrap="false"></ContentSlot>
           </div>
         </div>
 
@@ -170,10 +170,6 @@ async function loadDemo() {
               :lines="md ? true : false"
               class="doc-markdown"
               :mode="forceDark ? 'dark' : undefined"
-              :theme="{
-                light: 'cssninja-light-theme',
-                dark: 'cssninja-dark-theme',
-              }"
             />
           </details>
         </div>
@@ -181,9 +177,3 @@ async function loadDemo() {
     </div>
   </div>
 </template>
-
-<style scoped>
-.doc-markdown:deep(.shiki) {
-  @apply mt-2;
-}
-</style>
