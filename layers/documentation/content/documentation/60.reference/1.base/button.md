@@ -40,7 +40,7 @@ Buttons can have solid background colors. Use the `flavor="solid"` prop and the 
 title: Smaller solid buttons
 demo: '#examples/button/solid-condensed.vue'
 ---
-Buttons can have a smaller size. Use the `condensed` prop to make smaller buttons.
+Buttons can have a smaller size. Use the `size` prop with the `sm` value to make smaller buttons.
 ::
 
 ::doc-component-demo
@@ -56,7 +56,7 @@ Buttons can have pastel background colors. Use the `flavor="pastel"` prop and th
 title: Smaller pastel buttons
 demo: '#examples/button/pastel-condensed.vue'
 ---
-Buttons can have a smaller size. Use the `condensed` prop to make smaller buttons.
+Buttons can have a smaller size. Use the `size` prop with the `sm` value to make smaller buttons.
 ::
 
 ::doc-component-demo
@@ -72,7 +72,7 @@ Buttons can have outline background colors. Use the `flavor="outline"` prop and 
 title: Smaller outline buttons
 demo: '#examples/button/outline-condensed.vue'
 ---
-Buttons can have a smaller size. Use the `condensed` prop to make smaller buttons.
+Buttons can have a smaller size. Use the `size` prop with the `sm` value to make smaller buttons.
 ::
 
 ::doc-component-demo

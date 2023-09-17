@@ -1,5 +1,5 @@
 <template>
-  <div class="nui-button-group">
+  <BaseButtonGroup>
     <BaseButtonIcon shape="curved">
       <Icon name="ph:moon-duotone" class="h-5 w-5" />
     </BaseButtonIcon>
@@ -15,5 +15,5 @@
     <BaseButtonIcon shape="curved">
       <Icon name="ph:heart-duotone" class="h-5 w-5" />
     </BaseButtonIcon>
-  </div>
+  </BaseButtonGroup>
 </template>

@@ -48,7 +48,7 @@ Actions can be shown in a loading state. Use the `loading` prop to show a loadin
 title: Actions group
 demo: '#examples/action/group.vue'
 ---
-Actions can be grouped into a single element using a flex container. Adjust border radiuses and borders to create a seamless group.
+Actions can be grouped into a single element using the `BaseButtonGroup` component.
 ::
 
 :doc-component-meta{name="BaseButtonAction"}

@@ -51,10 +51,10 @@ Autocompletes can have a material design style floating label using the `labelFl
 
 ::doc-component-demo
 ---
-title: Condensed
+title: Small
 demo: '#examples/autocomplete/condensed.vue'
 ---
-Autocompletes can be displayed in a smaller and more compact way using the `condensed` prop.
+Autocompletes can be displayed in a smaller and more compact way using the `size` prop with the `sm` value.
 ::
 
 

@@ -24,7 +24,7 @@ Default shape of all :doc-linker{to="BaseButtonIcon"} can be set in your `.app/a
 title: Small buttons
 demo: '#examples/icon-button/small.vue'
 ---
-Icon buttons can have a smaller size using the `condensed` prop.
+Icon buttons can have a smaller size using the `size` prop with the `sm` value.
 ::
 
 ::doc-component-demo
