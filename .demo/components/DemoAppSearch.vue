@@ -24,7 +24,8 @@ const { data: contentDocs } = useAsyncData(
         $and: [
           {
             _type: 'markdown',
-            _empty: false,
+            _draft: false,
+            _partial: false,
           },
           {
             $or: [
@@ -42,7 +43,8 @@ const { data: contentDocs } = useAsyncData(
         ],
       })
       .limit(6)
-      .find() as Promise<any[]>
+      .find()
+      .catch(() => []) as Promise<any[]>
   },
   {
     watch: [search],
