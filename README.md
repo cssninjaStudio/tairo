@@ -9,7 +9,7 @@ First of all, Thank you so much for purchasing this template and for being our l
 ### Prerequisites
 
 1. A recent web browser (Chrome, Edge, Firefox, ...)
-2. [Node.js LTS](https://nodejs.org/en/) _(> 16.x with pnpm > 7)_ installed
+2. [Node.js LTS](https://nodejs.org/en/) _(> 18 with pnpm > 8)_ installed
 3. Knowledge with [Typescript](https://github.com/microsoft/typescript) _(should not be installed globally)_
 4. Knowledge with [Tailwind CSS](https://tailwindcss.com/)
 5. (recommended) [VSCode](https://code.visualstudio.com/) with [Volar](https://marketplace.visualstudio.com/items?itemName=vue.volar)
