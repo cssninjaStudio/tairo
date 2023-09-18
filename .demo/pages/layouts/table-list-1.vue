@@ -105,7 +105,7 @@ function toggleAllVisibleSelection() {
         </div>
         <div v-else>
           <div class="w-full">
-            <TairoTable shape="rounded">
+            <TairoTable shape="rounded" :scrollable="false">
               <template #header>
                 <TairoTableHeading uppercase spaced class="p-4">
                   <div class="flex items-center">
@@ -129,7 +129,7 @@ function toggleAllVisibleSelection() {
                 <TairoTableHeading uppercase spaced>
                   Completed
                 </TairoTableHeading>
-                <TairoTableHeading uppercase spaced>Action</TairoTableHeading>
+                <TairoTableHeading uppercase spaced class="text-end">Action</TairoTableHeading>
               </template>
 
               <TairoTableRow v-if="selected.length > 0" :hoverable="false">
@@ -242,7 +242,11 @@ function toggleAllVisibleSelection() {
                   </div>
                 </TairoTableCell>
                 <TairoTableCell spaced>
-                  <BaseButtonAction muted>Manage</BaseButtonAction>
+                  <div class="flex justify-end">
+                    <BaseDropdown flavor="context" label="Dropdown" orientation="end" shape="smooth">
+                      <BaseDropdownItem to="#" title="User" text="View details" shape="smooth" />
+                    </BaseDropdown>
+                  </div>
                 </TairoTableCell>
               </TairoTableRow>
             </TairoTable>
