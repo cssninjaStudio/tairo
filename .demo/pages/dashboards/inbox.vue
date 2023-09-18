@@ -28,7 +28,7 @@ watch(md, async (isMd) => {
   } else {
     paneSize.value = 100
   }
-})
+}, { immediate: true })
 
 const messages = [
   {
@@ -278,259 +278,261 @@ const panelActive = ref(false)
       </nav>
     </div>
 
-    <Splitpanes ref="split" @resize="paneSize = $event[0].size">
-      <Pane
-        :size="paneSize"
-        :min-size="md ? 30 : 100"
-        :max-size="md ? 60 : 100"
-      >
-        <!-- Messages list -->
-        <div
-          class="ltablet:w-full bg-muted-50 dark:bg-muted-900 flex h-full w-full flex-col pt-3 lg:w-full"
+    <ClientOnly>
+      <Splitpanes ref="split" @resize="paneSize = $event[0].size">
+        <Pane
+          :size="paneSize"
+          :min-size="md ? 30 : 100"
+          :max-size="md ? 60 : 100"
         >
-          <!-- Head (search) -->
-          <div class="h-16 w-full px-4 sm:px-8">
-            <BaseInput
-              v-model.trim="search"
-              shape="curved"
-              icon="lucide:search"
-              placeholder="Search"
-            />
-          </div>
-
-          <ul
-            class="nui-slimscroll h-[calc(100%_-_64px)] space-y-2 overflow-y-auto px-4 pb-8 sm:px-8"
+          <!-- Messages list -->
+          <div
+            class="ltablet:w-full bg-muted-50 dark:bg-muted-900 flex h-full w-full flex-col pt-3 lg:w-full"
           >
-            <li
-              v-for="message in messages"
-              :key="message.id"
-              class="duration 300 cursor-pointer rounded-xl p-4 transition-colors sm:p-6"
-              :class="
-                activeMessage === message.id
-                  ? 'bg-primary-500/10'
-                  : 'hover:bg-muted-100 dark:hover:bg-muted-800'
-              "
-              role="button"
-              @click=";(activeMessage = message.id), (panelActive = true)"
-            >
-              <div class="mb-3 flex items-center gap-2">
-                <BaseAvatar
-                  size="xs"
-                  shape="straight"
-                  mask="blob"
-                  :src="message.sender.photo"
-                  class="pointer-events-none"
-                />
-                <div class="pointer-events-none">
-                  <BaseHeading size="sm" weight="semibold" lead="tight">
-                    <span>{{ message.sender.name }}</span>
-                  </BaseHeading>
-                  <BaseParagraph size="xs" lead="none">
-                    <span class="text-muted-500 dark:text-muted-400">
-                      {{ message.sender.email }}
-                    </span>
-                  </BaseParagraph>
-                </div>
-                <div class="pointer-events-none ms-auto">
-                  <span class="text-muted-400 font-sans text-xs">
-                    {{ message.time }}
-                  </span>
-                </div>
-              </div>
-              <div
-                class="text-muted-500 dark:text-muted-400 pointer-events-none font-sans text-sm leading-tight"
-              >
-                {{ message.abstract }}
-              </div>
-            </li>
-          </ul>
-        </div>
-      </Pane>
-      <Pane :size="100 - paneSize">
-        <!-- Message details -->
-        <div
-          class="ltablet:static ltablet:grow border-muted-200 dark:border-muted-700/40 dark:bg-muted-800 fixed end-0 top-0 flex h-full flex-col border-l bg-white transition-transform duration-300 lg:static lg:grow"
-          :class="
-            panelActive
-              ? 'translate-x-0'
-              : 'translate-x-full ltablet:translate-x-0 lg:translate-x-0'
-          "
-        >
-          <!-- Toolbar -->
-          <div class="ltablet:max-w-5xl mx-auto w-full lg:max-w-5xl">
-            <div
-              class="relative z-10 flex h-16 w-full items-center justify-between px-8"
-            >
-              <div
-                class="text-muted-700 dark:text-muted-300 flex items-center gap-2"
-              >
-                <button
-                  type="button"
-                  class="ltablet:hidden flex h-9 w-9 items-center justify-center lg:hidden"
-                  @click="panelActive = false"
-                >
-                  <Icon name="lucide:arrow-left" class="h-5 w-5" />
-                </button>
-                <BaseHeading size="2xl">
-                  <span>Inbox</span>
-                </BaseHeading>
-              </div>
-              <TairoSidebarTools
-                class="relative -end-4 z-20 flex h-16 w-full scale-90 items-center justify-end gap-2 sm:end-0 sm:scale-100"
+            <!-- Head (search) -->
+            <div class="h-16 w-full px-4 sm:px-8">
+              <BaseInput
+                v-model.trim="search"
+                shape="curved"
+                icon="lucide:search"
+                placeholder="Search"
               />
             </div>
 
-            <!-- Message header -->
-            <div
-              class="ltablet:flex-row ltablet:items-center border-muted-200 dark:border-muted-700 flex h-24 flex-col justify-between border-b px-8 lg:flex-row lg:items-center"
+            <ul
+              class="nui-slimscroll h-[calc(100%_-_64px)] space-y-2 overflow-y-auto px-4 pb-8 sm:px-8"
             >
-              <div class="flex items-center gap-x-4">
-                <div class="ltablet:block hidden lg:block">
-                  <BaseAvatar
-                    size="lg"
-                    :src="selectedMessage?.sender.photo"
-                    :alt="selectedMessage?.sender.name"
-                  />
-                </div>
-                <div class="ltablet:hidden block lg:hidden">
-                  <BaseAvatar
-                    size="sm"
-                    :src="selectedMessage?.sender.photo"
-                    :alt="selectedMessage?.sender.name"
-                  />
-                </div>
-                <div class="flex flex-col font-sans">
-                  <h3 class="text-lg font-semibold">
-                    {{ selectedMessage?.sender.name }}
-                  </h3>
-                  <p class="text-muted-400 text-sm">
-                    {{ selectedMessage?.sender.email }}
-                  </p>
-                </div>
-              </div>
-              <div>
-                <div class="ltablet:mb-0 mb-2 flex gap-x-2 lg:mb-0">
-                  <BaseButtonIcon small class="scale-[0.8]">
-                    <Icon
-                      name="ph:arrow-bend-down-left-duotone"
-                      class="h-4 w-4"
-                    />
-                  </BaseButtonIcon>
-                  <BaseButtonIcon small class="scale-[0.8]">
-                    <Icon name="ph:bookmark-simple-duotone" class="h-4 w-4" />
-                  </BaseButtonIcon>
-                  <BaseButtonIcon small class="scale-[0.8]">
-                    <Icon name="ph:printer-duotone" class="h-4 w-4" />
-                  </BaseButtonIcon>
-                  <BaseButtonIcon small class="scale-[0.8]">
-                    <Icon name="ph:trash-duotone" class="h-4 w-4" />
-                  </BaseButtonIcon>
-                </div>
-              </div>
-            </div>
-            <!-- Message body -->
-            <div
-              class="nui-slimscroll h-[calc(100vh_-_344px)] overflow-y-auto p-8"
-            >
-              <h1 class="text-2xl font-bold">{{ selectedMessage?.title }}</h1>
-              <article
-                class="text-muted-500 dark:text-muted-400 mt-8 leading-7 tracking-wider"
+              <li
+                v-for="message in messages"
+                :key="message.id"
+                class="duration 300 cursor-pointer rounded-xl p-4 transition-colors sm:p-6"
+                :class="
+                  activeMessage === message.id
+                    ? 'bg-primary-500/10'
+                    : 'hover:bg-muted-100 dark:hover:bg-muted-800'
+                "
+                role="button"
+                @click=";(activeMessage = message.id), (panelActive = true)"
               >
-                <p
-                  class="font-sans"
-                  v-html="
-                    selectedMessage?.content.replaceAll('/n ', '<br /><br />')
-                  "
-                ></p>
-              </article>
-              <div class="mt-24 grid grid-cols-1 gap-4 sm:grid-cols-4">
-                <button
-                  v-for="(file, index) in selectedMessage?.attachments"
-                  :key="index"
-                  type="button"
-                  class="hover:bg-muted-100/80 dark:hover:bg-muted-700/60 group flex items-center gap-3 rounded-xl p-2 text-left transition-colors duration-300"
+                <div class="mb-3 flex items-center gap-2">
+                  <BaseAvatar
+                    size="xs"
+                    shape="straight"
+                    mask="blob"
+                    :src="message.sender.photo"
+                    class="pointer-events-none"
+                  />
+                  <div class="pointer-events-none">
+                    <BaseHeading size="sm" weight="semibold" lead="tight">
+                      <span>{{ message.sender.name }}</span>
+                    </BaseHeading>
+                    <BaseParagraph size="xs" lead="none">
+                      <span class="text-muted-500 dark:text-muted-400">
+                        {{ message.sender.email }}
+                      </span>
+                    </BaseParagraph>
+                  </div>
+                  <div class="pointer-events-none ms-auto">
+                    <span class="text-muted-400 font-sans text-xs">
+                      {{ message.time }}
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class="text-muted-500 dark:text-muted-400 pointer-events-none font-sans text-sm leading-tight"
                 >
-                  <img
-                    v-if="file.type === 'pdf'"
-                    class="h-11 w-11"
-                    src="/img/icons/files/pdf.svg"
-                    alt="Pdf file"
-                  />
-                  <img
-                    v-else-if="file.type === 'zip'"
-                    class="h-11 w-11"
-                    src="/img/icons/files/zip-format.svg"
-                    alt="Zip file"
-                  />
-                  <img
-                    v-else-if="file.type === 'ai'"
-                    class="h-11 w-11"
-                    src="/img/icons/files/ai.svg"
-                    alt="AI file"
-                  />
-                  <img
-                    v-else-if="file.type === 'sheet'"
-                    class="h-11 w-11"
-                    src="/img/icons/files/sheet.svg"
-                    alt="Sheet"
-                  />
-                  <img
-                    v-else-if="file.type === 'doc'"
-                    class="h-11 w-11"
-                    src="/img/icons/files/doc-2.svg"
-                    alt="Document"
-                  />
-                  <span class="block font-sans">
-                    <span
-                      class="text-muted-800 dark:text-muted-100 block text-sm font-semibold"
-                    >
-                      {{ file.name }}
-                    </span>
-                    <span class="text-muted-400 block text-xs">
-                      {{ file.size }}
-                    </span>
-                  </span>
-                  <span class="ms-auto block">
-                    <span
-                      class="me-3 flex items-center justify-center opacity-0 transition-opacity duration-200 group-hover:opacity-100"
-                    >
-                      <Icon
-                        name="lucide:arrow-down"
-                        class="text-primary-500 h-4 w-4"
-                      />
-                    </span>
-                  </span>
-                </button>
-              </div>
-            </div>
-            <!-- Messsage reply -->
-            <div
-              class="relative flex h-44 w-full items-center justify-center px-8"
-            >
+                  {{ message.abstract }}
+                </div>
+              </li>
+            </ul>
+          </div>
+        </Pane>
+        <Pane :size="100 - paneSize">
+          <!-- Message details -->
+          <div
+            class="ltablet:static ltablet:grow border-muted-200 dark:border-muted-700/40 dark:bg-muted-800 fixed end-0 top-0 flex h-full flex-col border-l bg-white transition-transform duration-300 lg:static lg:grow"
+            :class="
+              panelActive
+                ? 'translate-x-0'
+                : 'translate-x-full ltablet:translate-x-0 lg:translate-x-0'
+            "
+          >
+            <!-- Toolbar -->
+            <div class="ltablet:max-w-5xl mx-auto w-full lg:max-w-5xl">
               <div
-                class="border-muted-200 dark:border-muted-700/40 bg-muted-50 dark:bg-muted-900 focus-within:outline-muted-200 dark:focus-within:outline-muted-700 mb-3 w-full rounded-xl border outline-none outline-offset-4 transition-all duration-300 focus-within:outline-dashed focus-within:outline-2"
+                class="relative z-10 flex h-16 w-full items-center justify-between px-8"
               >
-                <textarea
-                  class="bg-muted-50 dark:bg-muted-900 placeholder:text-muted-300 dark:placeholder:text-muted-600 w-full resize-none rounded-2xl p-3 font-sans outline-none"
-                  placeholder="Type your reply here..."
-                  rows="2"
-                ></textarea>
-                <div class="flex items-center justify-between p-3">
+                <div
+                  class="text-muted-700 dark:text-muted-300 flex items-center gap-2"
+                >
                   <button
-                    class="text-muted-500 dark:text-muted-100 flex h-6 w-6 items-center justify-center"
+                    type="button"
+                    class="ltablet:hidden flex h-9 w-9 items-center justify-center lg:hidden"
+                    @click="panelActive = false"
                   >
-                    <Icon name="uit:paperclip" class="h-7 w-7" />
+                    <Icon name="lucide:arrow-left" class="h-5 w-5" />
                   </button>
-                  <BaseButton shape="curved" color="primary" class="w-24">
-                    <span>Reply</span>
-                  </BaseButton>
+                  <BaseHeading size="2xl">
+                    <span>Inbox</span>
+                  </BaseHeading>
+                </div>
+                <TairoSidebarTools
+                  class="relative -end-4 z-20 flex h-16 w-full scale-90 items-center justify-end gap-2 sm:end-0 sm:scale-100"
+                />
+              </div>
+
+              <!-- Message header -->
+              <div
+                class="ltablet:flex-row ltablet:items-center border-muted-200 dark:border-muted-700 flex h-24 flex-col justify-between border-b px-8 lg:flex-row lg:items-center"
+              >
+                <div class="flex items-center gap-x-4">
+                  <div class="ltablet:block hidden lg:block">
+                    <BaseAvatar
+                      size="lg"
+                      :src="selectedMessage?.sender.photo"
+                      :alt="selectedMessage?.sender.name"
+                    />
+                  </div>
+                  <div class="ltablet:hidden block lg:hidden">
+                    <BaseAvatar
+                      size="sm"
+                      :src="selectedMessage?.sender.photo"
+                      :alt="selectedMessage?.sender.name"
+                    />
+                  </div>
+                  <div class="flex flex-col font-sans">
+                    <h3 class="text-lg font-semibold">
+                      {{ selectedMessage?.sender.name }}
+                    </h3>
+                    <p class="text-muted-400 text-sm">
+                      {{ selectedMessage?.sender.email }}
+                    </p>
+                  </div>
+                </div>
+                <div>
+                  <div class="ltablet:mb-0 mb-2 flex gap-x-2 lg:mb-0">
+                    <BaseButtonIcon small class="scale-[0.8]">
+                      <Icon
+                        name="ph:arrow-bend-down-left-duotone"
+                        class="h-4 w-4"
+                      />
+                    </BaseButtonIcon>
+                    <BaseButtonIcon small class="scale-[0.8]">
+                      <Icon name="ph:bookmark-simple-duotone" class="h-4 w-4" />
+                    </BaseButtonIcon>
+                    <BaseButtonIcon small class="scale-[0.8]">
+                      <Icon name="ph:printer-duotone" class="h-4 w-4" />
+                    </BaseButtonIcon>
+                    <BaseButtonIcon small class="scale-[0.8]">
+                      <Icon name="ph:trash-duotone" class="h-4 w-4" />
+                    </BaseButtonIcon>
+                  </div>
+                </div>
+              </div>
+              <!-- Message body -->
+              <div
+                class="nui-slimscroll h-[calc(100vh_-_344px)] overflow-y-auto p-8"
+              >
+                <h1 class="text-2xl font-bold">{{ selectedMessage?.title }}</h1>
+                <article
+                  class="text-muted-500 dark:text-muted-400 mt-8 leading-7 tracking-wider"
+                >
+                  <p
+                    class="font-sans"
+                    v-html="
+                      selectedMessage?.content.replaceAll('/n ', '<br /><br />')
+                    "
+                  ></p>
+                </article>
+                <div class="mt-24 grid grid-cols-1 gap-4 sm:grid-cols-4">
+                  <button
+                    v-for="(file, index) in selectedMessage?.attachments"
+                    :key="index"
+                    type="button"
+                    class="hover:bg-muted-100/80 dark:hover:bg-muted-700/60 group flex items-center gap-3 rounded-xl p-2 text-left transition-colors duration-300"
+                  >
+                    <img
+                      v-if="file.type === 'pdf'"
+                      class="h-11 w-11"
+                      src="/img/icons/files/pdf.svg"
+                      alt="Pdf file"
+                    />
+                    <img
+                      v-else-if="file.type === 'zip'"
+                      class="h-11 w-11"
+                      src="/img/icons/files/zip-format.svg"
+                      alt="Zip file"
+                    />
+                    <img
+                      v-else-if="file.type === 'ai'"
+                      class="h-11 w-11"
+                      src="/img/icons/files/ai.svg"
+                      alt="AI file"
+                    />
+                    <img
+                      v-else-if="file.type === 'sheet'"
+                      class="h-11 w-11"
+                      src="/img/icons/files/sheet.svg"
+                      alt="Sheet"
+                    />
+                    <img
+                      v-else-if="file.type === 'doc'"
+                      class="h-11 w-11"
+                      src="/img/icons/files/doc-2.svg"
+                      alt="Document"
+                    />
+                    <span class="block font-sans">
+                      <span
+                        class="text-muted-800 dark:text-muted-100 block text-sm font-semibold"
+                      >
+                        {{ file.name }}
+                      </span>
+                      <span class="text-muted-400 block text-xs">
+                        {{ file.size }}
+                      </span>
+                    </span>
+                    <span class="ms-auto block">
+                      <span
+                        class="me-3 flex items-center justify-center opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+                      >
+                        <Icon
+                          name="lucide:arrow-down"
+                          class="text-primary-500 h-4 w-4"
+                        />
+                      </span>
+                    </span>
+                  </button>
+                </div>
+              </div>
+              <!-- Messsage reply -->
+              <div
+                class="relative flex h-44 w-full items-center justify-center px-8"
+              >
+                <div
+                  class="border-muted-200 dark:border-muted-700/40 bg-muted-50 dark:bg-muted-900 focus-within:outline-muted-200 dark:focus-within:outline-muted-700 mb-3 w-full rounded-xl border outline-none outline-offset-4 transition-all duration-300 focus-within:outline-dashed focus-within:outline-2"
+                >
+                  <textarea
+                    class="bg-muted-50 dark:bg-muted-900 placeholder:text-muted-300 dark:placeholder:text-muted-600 w-full resize-none rounded-2xl p-3 font-sans outline-none"
+                    placeholder="Type your reply here..."
+                    rows="2"
+                  ></textarea>
+                  <div class="flex items-center justify-between p-3">
+                    <button
+                      class="text-muted-500 dark:text-muted-100 flex h-6 w-6 items-center justify-center"
+                    >
+                      <Icon name="uit:paperclip" class="h-7 w-7" />
+                    </button>
+                    <BaseButton shape="curved" color="primary" class="w-24">
+                      <span>Reply</span>
+                    </BaseButton>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </Pane>
-    </Splitpanes>
+        </Pane>
+      </Splitpanes>
+    </ClientOnly>
   </div>
 </template>
 
