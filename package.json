@@ -72,5 +72,8 @@
       "vue3-smooth-dnd@0.0.5": "patches/vue3-smooth-dnd@0.0.5.patch",
       "smooth-dnd@0.12.1": "patches/smooth-dnd@0.12.1.patch"
     }
+  },
+  "dependencies": {
+    "vue-final-modal": "^4.4.5"
   }
 }
