@@ -429,6 +429,9 @@ export default defineAppConfig({
         tools: [
           {
             component: 'DemoThemeToggle',
+            props: {
+              disableTransitions: true,
+            },
           },
           {
             component: 'DemoToolbarSearch',
