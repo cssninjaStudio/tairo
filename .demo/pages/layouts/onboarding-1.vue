@@ -16,8 +16,8 @@ const loading = ref(false)
 const twoFaMode = ref('email_address')
 const currentStep = ref(1)
 const codeLength = ref(4)
-const input = ref<number[]>([])
-const inputElements = ref<any[]>([])
+const input = ref<Array<number | undefined>>([])
+const inputElements = ref<HTMLInputElement[]>([])
 const correctPin = ref('1234')
 const onlyCheckOnLastFieldInput = ref(true)
 
@@ -40,51 +40,77 @@ function goToStep(n: number) {
   }, 1000)
 }
 
-function paste(event: any) {
-  // raw pasted input
-  let pasted = event.clipboardData.getData('text')
-  // only get numbers
-  pasted = pasted.replace(/\D/g, '')
-  // don't get more than the PIN codeLength
-  pasted = pasted.substring(0, codeLength.value)
+function paste(event: ClipboardEvent) {
+  const pasted = event.clipboardData
+    ?.getData('text')
+    ?.replace(/\D/g, '') // only get numbers
+    ?.substring(0, codeLength.value) // don't get more than the PIN codeLength
+
   // if after all that sanitazation the string is not empty
   if (pasted) {
     // split the pasted string into an array and load it
-    input.value = pasted.split('')
+    input.value = pasted.split('').map(Number)
     // check if the PIN is correct
     return validatePin.value
   }
 }
-function type(event: any, index: any) {
-  if (event.ctrlKey && event.key == 'v') {
-    console.log('ctrl-v')
-  } else if (event.keyCode == 8) {
+function type(event: KeyboardEvent, index: number) {
+   if (event.code === 'ArrowRight') {
     event.stopPropagation()
     event.preventDefault()
-    input.value[index - 1] = 0
-  } else {
-    // only allow numbers
-    let key = event.key.replace(/\D/g, '')
-    if (key != '') {
-      console.log(key)
-      input.value[index - 1] = key
-    }
+    nextTick(() => {
+      focusField(Math.min(codeLength.value, index + 1))
+    })
+    return 
+  }
+
+  if (event.code === 'ArrowLeft') {
+    event.stopPropagation()
+    event.preventDefault()
+    nextTick(() => {
+      focusField(Math.max(0, index - 1))
+    })
+    return 
+  }
+
+  if (event.code === 'Backspace') {
+    event.stopPropagation()
+    event.preventDefault()
+    input.value[index - 1] = undefined
+    nextTick(() => {
+      focusField(Math.max(0, index - 1))
+    })
+    return
+  } 
+
+  if (event.code == 'a' && event.ctrlKey) {
+    event.stopPropagation()
+    event.preventDefault()
+    return
+  }
+
+  // only allow numbers
+  const key = event.key.replace(/\D/g, '')
+  if (key !== '') {
+    input.value[index - 1] = Number(key)
   }
   // check if the PIN is correct
   if (
     (onlyCheckOnLastFieldInput.value && index == codeLength.value) ||
     !onlyCheckOnLastFieldInput.value
   ) {
-    return validatePin.value
+    event.stopPropagation()
+    event.preventDefault()
+    return
   }
   // go to the next field
   // must happen on nextTick cause the field can be disabled.
   nextTick(() => {
-    goto(index + 1)
+    focusField(Math.min(codeLength.value, index + 1))
   })
 }
 
-function goto(n: any) {
+function focusField(n: any) {
   if (!n || n > codeLength.value) {
     n = 1
   }
@@ -422,21 +448,17 @@ const validatePin = computed(() => {
                   :key="'pin' + i"
                   maxlength="1"
                   class="dark:bg-muted-800 unselectable nui-focus inline w-16 select-none rounded-lg bg-white py-5 text-center text-4xl font-bold transition-all"
-                  @paste.prevent="paste($event)"
-                  @keydown.exact="type($event, i)"
-                  @keydown.ctrl.a.prevent
-                  @mousemove.prevent.stop
-                  @keydown.arrow-right.prevent="goto(i + 1)"
-                  @keydown.arrow-left.prevent="goto(i - 1)"
-                  :value="input[i - 1] != null ? input[i - 1] : 0"
+                  @paste.prevent="(event) => paste(event)"
+                  @keydown="(event) => type(event, i)"
+                  :value="input[i - 1] !== undefined ? input[i - 1] : '-'"
                   :ref="
                     (el) => {
-                      inputElements[i] = el
+                      inputElements[i] = el as HTMLInputElement
                     }
                   "
                   placeholder="0"
                   :disabled="input.length < i - 1 || validatePin"
-                  :autofocus="i == 1"
+                  v-focus="i === 1"
                 />
               </div>
               <div class="mt-10">
