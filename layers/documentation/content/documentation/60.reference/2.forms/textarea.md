@@ -33,7 +33,7 @@ Textareas can have floating labels. Use the `label-float` prop to enable the flo
 title: Textarea condensed
 demo: '#examples/textarea/condensed.vue'
 ---
-Textareas can be shown smaller. Use the `condensed` prop to enable the condensed mode.
+Textareas can be shown smaller. Use the `size` prop with the `sm` value to make them smaller.
 ::
 
 ::doc-component-demo

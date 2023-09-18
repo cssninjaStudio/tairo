@@ -38,10 +38,10 @@ Inputs can have a material design style floating label using the `labelFloat` pr
 
 ::doc-component-demo
 ---
-title: Condensed inputs
+title: Small inputs
 demo: '#examples/input/condensed.vue'
 ---
-Inputs can be displayed in a smaller and more compact way using the `condensed` prop.
+Inputs can be displayed in a smaller and more compact way using the `size` prop with the `sm` value.
 ::
 
 ::doc-component-demo

@@ -21,10 +21,10 @@ Default shape of all :doc-linker{to="BaseTag"} can be set in your `.app/app.conf
 
 ::doc-component-demo
 ---
-title: Condensed tags
+title: Small tags
 demo: '#examples/tag/condensed.vue'
 ---
-Tags can have a smaller size. Use the `condensed` prop to display a tag with a smaller size.
+Tags can have a smaller size. Use the `size` prop with the `sm` value to display a tag with a smaller size.
 ::
 
 ::doc-component-demo

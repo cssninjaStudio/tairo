@@ -14,7 +14,7 @@ const { open } = usePanels()
     <div
       class="group-[&.scrolled]/landing:dark:bg-muted-950/95 group-[&.scrolled]/landing:border-muted-200 group-[&.scrolled]/landing:dark:border-muted-700 group-[&.scrolled]/landing:motion-safe:shadow-muted-300/30 group-[&.scrolled]/landing:motion-safe:dark:shadow-muted-800/20 flex items-center justify-between rounded-2xl border p-4 group-[&:not(.scrolled)]/landing:border-transparent group-[&.scrolled]/landing:bg-white/95 motion-safe:transition-all motion-safe:duration-200 group-[&.scrolled]/landing:motion-safe:shadow-xl"
     >
-      <div class="flex w-1/5 items-center gap-2">
+      <div class="flex w-1/2 items-center gap-2 md:w-1/5">
         <NuxtLink
           to="/"
           class="ms-2 inline-flex"
@@ -66,7 +66,7 @@ const { open } = usePanels()
           </button>
         </div>
       </div>
-      <div class="flex w-1/5 items-center justify-end gap-4">
+      <div class="flex w-1/2 items-center justify-end gap-4 md:w-1/5">
         <button
           type="button"
           class="border-muted-200 hover:ring-muted-200 dark:hover:ring-muted-700 dark:border-muted-700 dark:bg-muted-800 dark:ring-offset-muted-900 flex h-9 w-9 items-center justify-center rounded-full border bg-white ring-1 ring-transparent transition-all duration-300 hover:ring-offset-4"

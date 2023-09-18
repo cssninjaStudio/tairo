@@ -3,7 +3,7 @@ const layouts = [
   {
     name: 'sidebar',
     title: 'Sidebar layout',
-    description: 'Dual sidebar layout',
+    description: 'Tairo default layout',
     text: 'The sidebar layout is a double sided navigation layout. It has a sidebar with a list of menu icons and a subsidebar with a list of menu and submenu links',
     img: '/img/illustrations/ui/sidebar.png',
     imgDark: '/img/illustrations/ui/sidebar-dark.png',
@@ -12,7 +12,7 @@ const layouts = [
   {
     name: 'collapse',
     title: 'Collapse layout',
-    description: 'Apollux default layout',
+    description: 'Collapse sidebar layout',
     text: "The collapse layout focuses on a single sidebar with a list of menu and submenu links, ideal for smaller apps when you don't have much content.",
     img: '/img/illustrations/ui/collapse.png',
     imgDark: '/img/illustrations/ui/collapse-dark.png',
