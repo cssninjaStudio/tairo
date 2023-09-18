@@ -79,6 +79,41 @@ export default defineNuxtSchema({
             },
           },
         },
+        footer: {
+          enabled: true,
+
+          logoSeparator: {
+            component: 'TairoLogo',
+            props: {},
+          },
+
+          logo: {
+            component: 'TairoLogoText',
+            props: {},
+          },
+
+          copyright: {
+            name: '',
+            to: '',
+            since: '',
+          },
+
+          links: {
+            $schema: {
+              type: 'array',
+              items: {
+                type: 'object',
+                required: ['name', 'to'],
+                properties: {
+                  name: { type: 'string' },
+                  to: { type: 'string' },
+                  rel: { type: 'string' },
+                  target: { type: 'string' },
+                },
+              },
+            },
+          },
+        },
       },
     },
   },
