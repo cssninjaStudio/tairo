@@ -8,25 +8,28 @@ useSeoMeta({
   ogUrl: 'https://horizonhub.io',
 })
 definePageMeta({
-    title: 'HorizonHub.io • Blog Tags',
-    description: 'This is our blog',
-    layout: 'landing',
-    color: 'dark',
-    colorMode: 'dark',
-    auth: false
+  title: 'HorizonHub.io • Blog Tags',
+  description: 'This is our blog',
+  layout: 'blog',
+  color: 'dark',
+  colorMode: 'dark',
+  auth: false,
 })
 
 const { y } = useNinjaWindowScroll()
 </script>
 <template>
-  <div class="group/landing overflow-hidden dark:bg-muted-900 bg-white" :class="y > 70 ? 'scrolled' : ''">
-    <div class=" pt-16  max-w-7xl mx-auto">
+  <div
+    class="group/landing dark:bg-muted-900 overflow-hidden bg-white"
+    :class="y > 70 ? 'scrolled' : ''"
+  >
+    <div class="mx-auto max-w-7xl pt-16">
       <header>
         <BlogHeader />
       </header>
       <section class="grid grid-cols-4">
-        <BlogPosts class="col-span-3"/>
-        <BlogPostSideBar class="mt-28"/>
+        <BlogPosts class="col-span-3" />
+        <BlogPostSideBar class="mt-28" />
       </section>
     </div>
   </div>
