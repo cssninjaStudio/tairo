@@ -9,10 +9,10 @@
     "pnpm": ">=8"
   },
   "scripts": {
-    "dev": "nuxi dev .app",
+    "dev": "nuxi dev .app --open",
     "build": "nuxi build .app",
     "generate": "nuxi generate .app",
-    "demo:dev": "nuxi dev .demo",
+    "demo:dev": "nuxi dev .demo --open",
     "demo:build": "nuxi build .demo",
     "clean:all": "pnpm -r clean && rimraf .nuxt .output node_modules",
     "test": "run-p test:*",
