@@ -21,7 +21,6 @@ const { y } = useNinjaWindowScroll()
 <template>
   <div class="group/landing overflow-hidden dark:bg-muted-900 bg-white" :class="y > 70 ? 'scrolled' : ''">
     <div class=" pt-16  max-w-7xl mx-auto">
-      <LandingNavbar />
       <header>
         <BlogHeader />
       </header>
@@ -29,9 +28,6 @@ const { y } = useNinjaWindowScroll()
         <BlogPosts class="col-span-3"/>
         <BlogPostSideBar class="mt-28"/>
       </section>
-      <footer>
-        <LandingFooter />
-      </footer>
     </div>
   </div>
 </template>
