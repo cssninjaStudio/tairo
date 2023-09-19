@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/cssninjaStudio/tairo/compare/v1.2.0...v1.3.0) (2023-09-19)
+
+
+### Features
+
+* **TairoFlexTableCell:** add clamp property ([3bb47e4](https://github.com/cssninjaStudio/tairo/commit/3bb47e4f6ea2155e3c918847c95b14f72bf6830d))
+* **TairoTable:** add scrollable property ([feabf4a](https://github.com/cssninjaStudio/tairo/commit/feabf4a56c61d14c35b8cbe13b3bb7b1739a4d48))
+* **Topnav:** add configuration for the footer ([062517c](https://github.com/cssninjaStudio/tairo/commit/062517c8bef9e622e61e77bec28be7591e3d9a70)), closes [#126](https://github.com/cssninjaStudio/tairo/issues/126)
+
+
+### Bug Fixes
+
+* disable custom assets names ([c2f3835](https://github.com/cssninjaStudio/tairo/commit/c2f3835436f4c3769215a27b544b99c8b7fe979c))
+* documentation component meta ([a8233f7](https://github.com/cssninjaStudio/tairo/commit/a8233f7068852df6a207fc1d7b7a88742577dc19))
+* **inbox:** mobile layout mobile size issue ([a2449a3](https://github.com/cssninjaStudio/tairo/commit/a2449a3fc4333e4b0405b417531a8b3ab0831c8e)), closes [#127](https://github.com/cssninjaStudio/tairo/issues/127)
+* nuxt loading indicator color ([#124](https://github.com/cssninjaStudio/tairo/issues/124)) ([6781403](https://github.com/cssninjaStudio/tairo/commit/6781403b49036c5628ed637aaaba1fdfc9d890cc))
+* **onboarding:** improve OTP input ([c5976b1](https://github.com/cssninjaStudio/tairo/commit/c5976b1a8e60e8abd0ac4d8f8b52a671345fd50b)), closes [#106](https://github.com/cssninjaStudio/tairo/issues/106)
+* replace shiki with shikiji ([cfe5d85](https://github.com/cssninjaStudio/tairo/commit/cfe5d85cca205e4bf6cb9db595589bfe173f20fe))
+* squeezed color switcher button on mobile landing navbar ([9f86f44](https://github.com/cssninjaStudio/tairo/commit/9f86f44061cc1592baa6557926529d89e24a8339))
+* **TairoTopnavLayout:** allow to not provide header component ([ba431e4](https://github.com/cssninjaStudio/tairo/commit/ba431e4dba4989c741f20882734ed3c5b29b0c7e))
+* **TairoTopnavLayout:** remove unnecessary required props ([6012526](https://github.com/cssninjaStudio/tairo/commit/601252672676e7b470f79dc81c4e838c6db461f6))
+* **Topnav:** disable transition on theme toggle ([d36aaae](https://github.com/cssninjaStudio/tairo/commit/d36aaae3e32c0a5fd8ad9f006a57a196b9fdd706)), closes [#132](https://github.com/cssninjaStudio/tairo/issues/132)
+* update vue3-smooth-dnd + remove related pnpm patch ([aa21599](https://github.com/cssninjaStudio/tairo/commit/aa215990f956ca52ee3f28bc362445910da1d8f2))
+* upgrade engines to node 18 and pnpm 8 ([1c07667](https://github.com/cssninjaStudio/tairo/commit/1c07667c4d097c9716d8f940c2cec696b86485c0))
+
 ## [1.2.0](https://github.com/cssninjaStudio/tairo/compare/v1.1.1...v1.2.0) (2023-09-11)
 
 
