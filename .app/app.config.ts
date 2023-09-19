@@ -12,4 +12,7 @@ export default defineAppConfig({
   tairo: {
     title: 'Tairo Quick Starter',
   },
+  blog: {
+    route: '/blog',
+  }
 })

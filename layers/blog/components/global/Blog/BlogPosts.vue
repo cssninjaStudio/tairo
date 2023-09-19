@@ -4,8 +4,36 @@ const filter = ref('')
 const { data: navigation } = await useAsyncData('navigation', () =>
   fetchContentNavigation(),
 )
-const posts = navigation.value?.find((item) => item?._path === '/blog')
-  ?.children?.[0].children
+
+type TFolder = {
+  _path: string
+  title: string
+  children?: TFolder[]
+}
+
+const getChildren = (route: TFolder): TFolder[] | TFolder => {
+  const children = route?.children || null
+  if (children) {
+    return children
+      .map((child: TFolder) => {
+        if (!child?.children) {
+          return child
+        } else {
+          return getChildren(child)?.flatMap((item: TFolder) => item)
+        }
+      })
+      .flatMap((item: TFolder) => item)
+  } else {
+    return route
+  }
+}
+
+const { blog } = useAppConfig()
+const baseFolder = navigation.value?.find(
+  (item: TFolder) => item?._path === blog.route,
+)
+const posts = computed(() => getChildren(baseFolder))
+
 console.log('data', navigation.value)
 </script>
 
@@ -73,7 +101,7 @@ console.log('data', navigation.value)
                           </BaseHeading>
                           <BaseParagraph
                             size="xs"
-                            class="text-white min-h-[110px]"
+                            class="min-h-[110px] text-white"
                           >
                             {{ item.description }}
                           </BaseParagraph>
