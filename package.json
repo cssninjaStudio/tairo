@@ -28,6 +28,7 @@
   "devDependencies": {
     "@iconify/json": "2.2.113",
     "@types/fs-extra": "11.0.1",
+    "@nuxt/devtools": "^0.5.5",
     "@typescript-eslint/eslint-plugin": "6.6.0",
     "eslint": "8.49.0",
     "eslint-config-prettier": "9.0.0",
@@ -74,6 +75,7 @@
     }
   },
   "dependencies": {
-    "vue-final-modal": "^4.4.5"
+    "vue-final-modal": "^4.4.5",
+    "@shuriken-ui/nuxt": "^0.3.0"
   }
 }

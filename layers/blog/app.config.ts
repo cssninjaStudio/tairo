@@ -20,7 +20,7 @@ export default defineAppConfig({
       startOpen: true,
       circularMenu: {
         enabled: false,
-        tools: []
+        tools: [],
       },
       toolbar: {
         enabled: true,
@@ -38,17 +38,17 @@ export default defineAppConfig({
           {
             component: 'NavigationToolbarAccountMenu',
           },
-        ]
+        ],
       },
       navigation: {
         enabled: true,
         startOpen: false,
         logo: {
-          component: "TairoLogo",
+          component: 'TairoLogo',
           resolve: true,
           props: {
-            class: "text-primary-600 h-10"
-          }
+            class: 'text-primary-600 h-10',
+          },
         },
         items: [
           {
@@ -155,18 +155,18 @@ export default defineAppConfig({
             component: 'AccountMenu',
             position: 'end',
           },
-        ]
-      }
+        ],
+      },
     },
     error: {
       logo: {
-        component: "TairoLogo",
+        component: 'TairoLogo',
         resolve: true,
         props: {
-          class: "text-primary-500 mx-auto h-40 p-6"
-        }
-      }
+          class: 'text-primary-500 mx-auto h-40 p-6',
+        },
+      },
     },
-    panels: []
+    panels: [],
   },
 })
