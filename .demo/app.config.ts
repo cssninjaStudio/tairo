@@ -471,7 +471,7 @@ export default defineAppConfig({
         links: [
           {
             name: 'Demo pages',
-            to: '/demo',
+            to: '/demos',
           },
           {
             name: 'Documentation',

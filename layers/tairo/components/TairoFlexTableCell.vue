@@ -13,12 +13,12 @@ const props = withDefaults(defineProps<FlexTableCellProps>(), {
 })
 
 const clampMap = {
-  1: 'line-clamp-1',
-  2: 'line-clamp-2',
-  3: 'line-clamp-3',
-  4: 'line-clamp-4',
-  5: 'line-clamp-5',
-  6: 'line-clamp-6',
+  1: 'md:line-clamp-1',
+  2: 'md:line-clamp-2',
+  3: 'md:line-clamp-3',
+  4: 'md:line-clamp-4',
+  5: 'md:line-clamp-5',
+  6: 'md:line-clamp-6',
 }
 </script>
 
@@ -28,8 +28,7 @@ const clampMap = {
     :class="[
       props.type === 'grow' && 'md:grow',
       props.type === 'shrink' && 'md:shrink',
-      props.type === 'stable' &&
-        'sm:w-[90px] md:w-[110px] md:shrink-0',
+      props.type === 'stable' && 'sm:w-[90px] md:w-[110px] md:shrink-0',
       props.type === 'stable' && props.clamp && clampMap[props.clamp],
       props.light
         ? 'text-muted-500 dark:text-white'
