@@ -2,7 +2,7 @@
 // eslint-disable vue/no-v-text-v-html-on-component
 import light from '~/utils/shiki/theme/cssninja-light'
 import dark from '~/utils/shiki/theme/cssninja-dark'
-import { LanguageInput, BuiltinLanguage } from 'shikiji';
+import { LanguageInput, BuiltinLanguage } from 'shikiji'
 
 const props = withDefaults(
   defineProps<{
@@ -44,7 +44,15 @@ const props = withDefaults(
       light,
       dark,
     }),
-    langs: () => ['html', 'vue', 'bash', 'dockerfile', 'json', 'yaml', 'markdown'],
+    langs: () => [
+      'html',
+      'vue',
+      'bash',
+      'dockerfile',
+      'json',
+      'yaml',
+      'markdown',
+    ],
   },
 )
 
@@ -114,7 +122,6 @@ watchEffect(async () => {
     <div v-html="htmlContent"></div>
   </BaseProse>
 </template>
-
 
 <style>
 html.dark .shiki,

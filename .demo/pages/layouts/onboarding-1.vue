@@ -55,13 +55,13 @@ function paste(event: ClipboardEvent) {
   }
 }
 function type(event: KeyboardEvent, index: number) {
-   if (event.code === 'ArrowRight') {
+  if (event.code === 'ArrowRight') {
     event.stopPropagation()
     event.preventDefault()
     nextTick(() => {
       focusField(Math.min(codeLength.value, index + 1))
     })
-    return 
+    return
   }
 
   if (event.code === 'ArrowLeft') {
@@ -70,7 +70,7 @@ function type(event: KeyboardEvent, index: number) {
     nextTick(() => {
       focusField(Math.max(0, index - 1))
     })
-    return 
+    return
   }
 
   if (event.code === 'Backspace') {
@@ -81,7 +81,7 @@ function type(event: KeyboardEvent, index: number) {
       focusField(Math.max(0, index - 1))
     })
     return
-  } 
+  }
 
   if (event.code == 'a' && event.ctrlKey) {
     event.stopPropagation()

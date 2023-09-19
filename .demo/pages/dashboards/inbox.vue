@@ -21,14 +21,18 @@ const search = ref('')
 const { md } = useTailwindBreakpoints()
 
 const paneSize = ref(50)
-watch(md, async (isMd) => {
-  await nextTick()
-  if (isMd) {
-    paneSize.value = 50
-  } else {
-    paneSize.value = 100
-  }
-}, { immediate: true })
+watch(
+  md,
+  async (isMd) => {
+    await nextTick()
+    if (isMd) {
+      paneSize.value = 50
+    } else {
+      paneSize.value = 100
+    }
+  },
+  { immediate: true },
+)
 
 const messages = [
   {

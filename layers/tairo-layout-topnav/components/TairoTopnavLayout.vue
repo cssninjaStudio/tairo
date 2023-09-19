@@ -29,20 +29,13 @@ const config = useAppConfig().tairo.topnav
 const { isMobileOpen } = useTopnav()
 
 const topnavEnabled = computed(() => {
-  return (
-    config?.navigation?.enabled !== false && props.topnav !== false
-  )
+  return config?.navigation?.enabled !== false && props.topnav !== false
 })
 const toolbarEnabled = computed(() => {
-  return (
-    config?.toolbar?.enabled !== false && props.toolbar !== false
-  )
+  return config?.toolbar?.enabled !== false && props.toolbar !== false
 })
 const circularMenuEnabled = computed(() => {
-  return (
-    config?.circularMenu?.enabled !== false &&
-    props.circularMenu !== false
-  )
+  return config?.circularMenu?.enabled !== false && props.circularMenu !== false
 })
 
 const mainClass = computed(() => {
@@ -82,9 +75,7 @@ const mainClass = computed(() => {
             <NuxtLink to="/" class="flex items-center justify-center">
               <component
                 :is="
-                  resolveComponentOrNative(
-                    config?.navigation.logo.component,
-                  )
+                  resolveComponentOrNative(config?.navigation.logo.component)
                 "
                 v-bind="config?.navigation.logo.props"
               ></component>
@@ -101,9 +92,7 @@ const mainClass = computed(() => {
             <component
               v-if="config?.navigation?.header?.component"
               :is="
-                resolveComponentOrNative(
-                  config?.navigation?.header?.component,
-                )
+                resolveComponentOrNative(config?.navigation?.header?.component)
               "
               v-bind="config?.navigation?.header?.props"
             ></component>
@@ -152,7 +141,9 @@ const mainClass = computed(() => {
       <TairoTopnavCircularMenu v-if="circularMenuEnabled" />
     </div>
 
-
-    <TairoTopnavFooter v-if="config?.footer?.enabled" :display="props.display"  />
+    <TairoTopnavFooter
+      v-if="config?.footer?.enabled"
+      :display="props.display"
+    />
   </div>
 </template>

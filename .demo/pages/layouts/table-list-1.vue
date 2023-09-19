@@ -129,7 +129,9 @@ function toggleAllVisibleSelection() {
                 <TairoTableHeading uppercase spaced>
                   Completed
                 </TairoTableHeading>
-                <TairoTableHeading uppercase spaced class="text-end">Action</TairoTableHeading>
+                <TairoTableHeading uppercase spaced class="text-end"
+                  >Action</TairoTableHeading
+                >
               </template>
 
               <TairoTableRow v-if="selected.length > 0" :hoverable="false">
@@ -243,8 +245,18 @@ function toggleAllVisibleSelection() {
                 </TairoTableCell>
                 <TairoTableCell spaced>
                   <div class="flex justify-end">
-                    <BaseDropdown flavor="context" label="Dropdown" orientation="end" shape="smooth">
-                      <BaseDropdownItem to="#" title="User" text="View details" shape="smooth" />
+                    <BaseDropdown
+                      flavor="context"
+                      label="Dropdown"
+                      orientation="end"
+                      shape="smooth"
+                    >
+                      <BaseDropdownItem
+                        to="#"
+                        title="User"
+                        text="View details"
+                        shape="smooth"
+                      />
                     </BaseDropdown>
                   </div>
                 </TairoTableCell>

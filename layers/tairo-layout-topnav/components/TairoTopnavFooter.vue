@@ -1,12 +1,12 @@
 <script setup lang="ts">
- type LayoutDisplay =
+type LayoutDisplay =
   | 'condensed'
   | 'horizontal-scroll'
   | 'expanded-sm'
   | 'expanded-md'
   | 'expanded-lg'
   | 'expanded-xl'
-  
+
 const props = withDefaults(
   defineProps<{
     display?: LayoutDisplay
@@ -28,15 +28,11 @@ const year = new Date().getFullYear()
     <NuxtLink
       v-if="config?.logoSeparator?.component"
       to="/"
-        aria-label="Go to Homepage"
+      aria-label="Go to Homepage"
       class="dark:bg-muted-900 bg-muted-50 absolute inset-x-0 -top-4 mx-auto flex h-9 w-14 items-center justify-center"
     >
       <component
-        :is="
-          resolveComponentOrNative(
-            config.logoSeparator.component,
-          )
-        "
+        :is="resolveComponentOrNative(config.logoSeparator.component)"
         v-bind="config.logoSeparator.props"
       ></component>
     </NuxtLink>
@@ -56,11 +52,7 @@ const year = new Date().getFullYear()
         class="ltablet:w-1/5 block w-full lg:w-1/5"
       >
         <component
-          :is="
-            resolveComponentOrNative(
-              config.logo.component,
-            )
-          "
+          :is="resolveComponentOrNative(config.logo.component)"
           v-bind="config.logo.props"
         ></component>
       </NuxtLink>
@@ -84,7 +76,10 @@ const year = new Date().getFullYear()
       <div
         class="text-muted-500 dark:text-muted-400 ltablet:w-1/5 ltablet:justify-end ltablet:mt-0 mt-6 flex w-full items-center justify-center text-sm lg:mt-0 lg:w-1/5 lg:justify-end"
       >
-        <span v-if="config?.copyright?.name && config?.copyright?.to" class="inline-flex gap-1">
+        <span
+          v-if="config?.copyright?.name && config?.copyright?.to"
+          class="inline-flex gap-1"
+        >
           <span>©</span>
           <NuxtLink
             :to="config.copyright.to"
@@ -94,7 +89,9 @@ const year = new Date().getFullYear()
           >
             {{ config.copyright.name }}
           </NuxtLink>
-          <span v-if="config?.copyright?.since">{{config.copyright.since}}-{{ year }}.</span>
+          <span v-if="config?.copyright?.since"
+            >{{ config.copyright.since }}-{{ year }}.</span
+          >
         </span>
       </div>
     </div>

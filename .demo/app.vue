@@ -26,7 +26,12 @@ useHead({
   ],
 
   meta: [
-    { name: 'description', content: () => route.meta.description ?? 'The most advanced Nuxt and Tailwind CSS dashboard template' },
+    {
+      name: 'description',
+      content: () =>
+        route.meta.description ??
+        'The most advanced Nuxt and Tailwind CSS dashboard template',
+    },
     {
       name: 'twitter:card',
       content: 'summary_large_image',
