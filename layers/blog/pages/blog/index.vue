@@ -1,14 +1,14 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'HorizonHub.io • Blog Tags',
+  title: 'Blog',
   description: 'This is our blog',
-  ogTitle: 'HorizonHub.io • Blog Tags',
+  ogTitle: 'Blog',
   ogDescription: 'This is our blog',
-  ogImage: '/images/meta/ideas.png',
-  ogUrl: 'https://horizonhub.io',
+  /* ogImage: '/images/meta/ideas.png', */
+  ogUrl: '',
 })
 definePageMeta({
-  title: 'HorizonHub.io • Blog Tags',
+  title: 'Blog',
   description: 'This is our blog',
   layout: 'blog',
   color: 'dark',

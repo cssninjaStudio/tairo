@@ -15,5 +15,3 @@ const image = computed(() => props.image ?? data.value.cover)
     <img :src="image" alt="" class="object-cover !mt-0 ">
   </div>
 </template>
-
-<style scoped></style>

@@ -9,10 +9,30 @@
  */
 
 export default defineAppConfig({
-  tairo: {
+  header: {
     title: 'Tairo Quick Starter',
+    titleColored: 'Title colored',
+    paragraph: 'base paragraph',
+    image: '',
+  },
+  routes: {
+    articles: {
+      route: '/blog/articles',
+      sideBar: true,
+      sideBarType: 'posts'
+    },
+    tags: {
+      route: '/blog/tags',
+      sideBar: true,
+      sideBarType: 'tags'
+    },
+    categories: {
+      route: '/blog/categories',
+      sideBar: true,
+      sideBarType: 'categories'
+    },
   },
   blog: {
     route: '/blog',
-  }
+  },
 })

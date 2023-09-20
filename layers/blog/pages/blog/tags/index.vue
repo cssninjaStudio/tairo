@@ -1,30 +1,31 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'HorizonHub.io • Blog Tags',
+  title: 'Blog Tags',
   description: 'This is our blog',
-  ogTitle: 'HorizonHub.io • Blog Tags',
+  ogTitle: 'Blog Tags',
   ogDescription: 'This is our blog',
   /* ogImage: '/images/meta/ideas.png', */
-  ogUrl: 'https://horizonhub.io',
-  twitterTitle: 'HorizonHub.io • Blog Tags',
-  twitterDescription: 'This is our blog'
+  ogUrl: '',
 })
 definePageMeta({
-  title: 'HorizonHub.io • Blog Tags',
+  title: 'Blog Tags',
   description: 'This is our blog',
-  layout: 'empty',
-	color: 'dark',
+  layout: 'blog',
+  color: 'dark',
   colorMode: 'dark',
-  auth: false
+  auth: false,
 })
 const { y } = useNinjaWindowScroll()
 </script>
 <template>
-  <div class="group/landing overflow-hidden dark:bg-muted-900 bg-white" :class="y > 70 ? 'scrolled' : ''">
-    <div class=" pt-16  max-w-7xl mx-auto">
+  <div
+    class="group/landing dark:bg-muted-900 overflow-hidden bg-white"
+    :class="y > 70 ? 'scrolled' : ''"
+  >
+    <div class="mx-auto max-w-7xl pt-16">
       <LandingNavbar />
       <section>
-        <BlogTagsView/>
+        <BlogTagsView />
       </section>
       <LandingFooter />
     </div>
