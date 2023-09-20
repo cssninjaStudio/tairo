@@ -10,6 +10,10 @@ const props = withDefaults(
   },
 )
 
+const emits = defineEmits<{
+  (event: 'message', props: any): void
+}>()
+
 const { close } = usePanels()
 
 const commentArea = ref('')
@@ -267,7 +271,7 @@ const commentArea = ref('')
                 </BaseHeading>
               </div>
               <div class="flex items-center gap-2">
-                <BaseButtonAction color="primary"> Publish </BaseButtonAction>
+                <BaseButtonAction color="primary" @click="emits('message', { from: 'maya', comment: toValue(commentArea) })"> Publish </BaseButtonAction>
               </div>
             </template>
           </BaseTextarea>

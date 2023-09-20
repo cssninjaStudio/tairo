@@ -66,7 +66,7 @@ const columns = reactive<Column>({
   },
 })
 
-const { open } = usePanels()
+const { open, close } = usePanels()
 
 const route = useRoute()
 const slug = computed(() => route.params.slug)
@@ -121,7 +121,16 @@ const currentTask = ref()
 
 function openTaskPanel(id: number, tasks: any) {
   currentTask.value = tasks.find((task: any) => task.id === id)
-  open('task', { task: currentTask })
+  open('task', { 
+    task: currentTask,
+
+    // listen to "message" event emited from panel component
+    onMessage: async (message: any) => {
+      console.log('onMessage')
+      console.log(message)
+      close()
+    }
+  })
 }
 
 function onDrop(column: ColumnContent, dropResult: any) {
