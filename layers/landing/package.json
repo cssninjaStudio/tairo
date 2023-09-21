@@ -9,6 +9,6 @@
   },
   "devDependencies": {
     "@nuxt/image-edge": "1.0.0-rc.1-28239242.b0a8c4a",
-    "nuxt": "3.6.5"
+    "nuxt": "3.7.3"
   }
 }
