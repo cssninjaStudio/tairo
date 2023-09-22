@@ -38,7 +38,7 @@ console.log('data', navigation.value)
 </script>
 
 <template>
-  <div class="my-10">
+  <div class="my-10 mt-64">
     <TairoContentWrapper>
       <template #left>
         <BaseInput

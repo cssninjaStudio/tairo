@@ -23,7 +23,7 @@ const { y } = useNinjaWindowScroll()
     class="group/landing dark:bg-muted-900 overflow-hidden bg-white"
     :class="y > 70 ? 'scrolled' : ''"
   >
-    <div class="mx-auto max-w-7xl pt-16">
+    <div class="mx-auto max-w-7xl">
       <header>
         <BlogHeader />
       </header>

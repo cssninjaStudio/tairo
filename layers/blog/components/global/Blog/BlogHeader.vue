@@ -11,7 +11,7 @@ const { header } = useAppConfig()
 
 <template>
   <div class="mx-auto w-full max-w-7xl px-4">
-    <div class="absolute z-30 pt-32 text-center">
+    <div class="absolute z-30 text-center">
       <BaseHeading
         as="h1"
         size="5xl"
@@ -41,7 +41,8 @@ const { header } = useAppConfig()
     </div>
 
     <div class="relative h-[280px] md:h-full">
-      <img
+      <img 
+      v-if="header.image"
         class="relative top-8 w-full"
         :src="header.image"
         alt="wrinkled paper"

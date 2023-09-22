@@ -7,5 +7,8 @@
  *  "extends": "./.app/.nuxt/tsconfig.json"
  *
  */
-
-export default defineAppConfig({})
+export default defineAppConfig({
+  blog: {
+    route: '/blog',
+  },
+})
