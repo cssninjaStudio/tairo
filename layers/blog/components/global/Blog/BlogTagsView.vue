@@ -8,7 +8,8 @@ const { data: navigation } = await useAsyncData('navigation', () =>
 )
 
 console.log("navigation", navigation.value);
-
+const contentQueryResults = await queryContent().find()
+console.log('contentQuery', contentQueryResults)
 type TFolder = {
   _path: string
   title: string
