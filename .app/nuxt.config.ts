@@ -28,4 +28,18 @@ export default defineNuxtConfig({
     '@fontsource-variable/inter/index.css',
     '@fontsource-variable/karla/index.css',
   ],
+  modules: [
+    //...
+    '@nuxt/content',
+  ],
+  content: {
+    // https://content.nuxtjs.org/api/configuration
+    
+    navigation: {
+      fields: `'author', 'publishedAt', 'tags', 'categories', 'id', 'cover', 'title', 'description'`,
+    },
+  },
+  gtag: {
+    initialConsent: false,
+  },
 })
