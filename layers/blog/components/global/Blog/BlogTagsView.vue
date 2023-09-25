@@ -1,59 +1,36 @@
 <script setup lang="ts">
 const { y } = useNinjaWindowScroll()
 const uniqueTags: any[] = []
-const route = useRoute()
+const uniqueCategories: any[] = []
+const routeParam = useRoute().params
 
-const { data: navigation } = await useAsyncData('navigation', () =>
-  fetchContentNavigation(),
-)
-
-console.log("navigation", navigation.value);
 const contentQueryResults = await queryContent().find()
-console.log('contentQuery', contentQueryResults)
-type TFolder = {
-  _path: string
-  title: string
-  children?: TFolder[]
-}
-
-const getChildren = (route: TFolder): TFolder[] | TFolder => {
-  const children = route?.children || null
-  if (children) {
-    return children
-      .map((child: TFolder) => {
-        if (!child?.children) {
-          return child
-        } else {
-          return getChildren(child)?.flatMap((item: TFolder) => item)
-        }
-      })
-      .flatMap((item: TFolder) => item)
-  } else {
-    return route
-  }
-}
-
-const baseFolder = navigation.value?.find(
-  (item: TFolder) => item?._path === '/blog',
-)
-const posts = computed(() => getChildren(baseFolder))
-console.log("posts", posts.value);
+const posts = await queryContent('blog').where({ 'tags': { $contains: `${routeParam.tag}` } }).find()
 
 const getAllTagsAvailable = () => {
-  const allTags = posts.map((obj) => obj.tags)
-  console.log('allTags available', allTags)
-
-  /* allTags.forEach((element) => {
+  const allTags = contentQueryResults.map((obj) => obj.tags)
+  allTags.forEach((element) => {
     element.forEach((tag: any) => {
       if (!uniqueTags.includes(tag)) {
         uniqueTags.push(tag)
       }
     })
-  }) */
+  })
+}
+const getAllCategoriesAvailable = () => {
+  const allCategories = contentQueryResults.map((obj) => obj.tags)
+  allCategories.forEach((element) => {
+    element.forEach((tag: any) => {
+      if (!uniqueCategories.includes(tag)) {
+        uniqueCategories.push(tag)
+      }
+    })
+  })
 }
 
 onMounted(() => {
-  //getAllTagsAvailable()
+  getAllTagsAvailable()
+  getAllCategoriesAvailable()
 })
 </script>
 
@@ -63,9 +40,13 @@ onMounted(() => {
       <div class="grid grid-cols-4 space-y-10">
         <div class="col-span-3">
           <div class="">
-            <!-- <div>
-							<h4 class="text-muted-400 mb-4 font-sans text-xs font-semibold uppercase">All Posts</h4>
-						</div> -->
+            <nuxt-link to="/blog">
+              <h4
+                class="text-muted-400 mb-4 font-sans text-xs font-semibold uppercase"
+              >
+                All Posts
+              </h4>
+            </nuxt-link>
             <div
               class="ltablet:grid-cols-3 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
             >
@@ -127,7 +108,11 @@ onMounted(() => {
             </div>
           </div>
         </div>
-        <BlogTagsSideBar class="col-span-1" :data-tags="uniqueTags" />
+        <BlogTagsSideBar
+          class="col-span-1"
+          :tags="uniqueTags"
+          :categories="uniqueCategories"
+        />
       </div>
     </TairoContentWrapper>
   </div>
