@@ -11,6 +11,7 @@
             text="Some useful info"
             shape="rounded"
             color="default"
+            class="pointer-events-none"
           >
             <template #start>
               <BaseRadio
@@ -35,6 +36,7 @@
             text="Some useful info"
             shape="rounded"
             color="default"
+            class="pointer-events-none"
           >
             <template #start>
               <BaseRadio
@@ -59,6 +61,7 @@
             text="Some useful info"
             shape="rounded"
             color="default"
+            class="pointer-events-none"
           >
             <template #start>
               <BaseRadio

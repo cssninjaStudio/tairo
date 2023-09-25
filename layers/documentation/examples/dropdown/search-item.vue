@@ -16,12 +16,13 @@
               text="Software Engineer"
               shape="rounded"
               color="default"
+              class="pointer-events-none"
             >
               <template #start>
                 <BaseCheckbox
                   v-model="options.first"
-                  value="demo-curved-1"
-                  shape="curved"
+                  value="demo-rounded-1"
+                  shape="rounded"
                   color="primary"
                 />
               </template>
@@ -39,12 +40,13 @@
               text="Sales Manager"
               shape="rounded"
               color="default"
+              class="pointer-events-none"
             >
               <template #start>
                 <BaseCheckbox
                   v-model="options.second"
-                  value="demo-curved-2"
-                  shape="curved"
+                  value="demo-rounded-2"
+                  shape="rounded"
                   color="primary"
                 />
               </template>
@@ -62,12 +64,13 @@
               text="Adventurer"
               shape="rounded"
               color="default"
+              class="pointer-events-none"
             >
               <template #start>
                 <BaseCheckbox
                   v-model="options.third"
-                  value="demo-curved-3"
-                  shape="curved"
+                  value="demo-rounded-3"
+                  shape="rounded"
                   color="primary"
                 />
               </template>
@@ -85,12 +88,13 @@
               text="Web Developer"
               shape="rounded"
               color="default"
+              class="pointer-events-none"
             >
               <template #start>
                 <BaseCheckbox
                   v-model="options.fourth"
-                  value="demo-curved-4"
-                  shape="curved"
+                  value="demo-rounded-4"
+                  shape="rounded"
                   color="primary"
                 />
               </template>
@@ -108,12 +112,13 @@
               text="Solution Architect"
               shape="rounded"
               color="default"
+              class="pointer-events-none"
             >
               <template #start>
                 <BaseCheckbox
                   v-model="options.fifth"
-                  value="demo-curved-5"
-                  shape="curved"
+                  value="demo-rounded-5"
+                  shape="rounded"
                   color="primary"
                 />
               </template>
@@ -131,12 +136,13 @@
               text="Senior Accountant"
               shape="rounded"
               color="default"
+              class="pointer-events-none"
             >
               <template #start>
                 <BaseCheckbox
                   v-model="options.sixth"
-                  value="demo-curved-6"
-                  shape="curved"
+                  value="demo-rounded-6"
+                  shape="rounded"
                   color="primary"
                 />
               </template>
@@ -154,12 +160,13 @@
               text="Operations Officer"
               shape="rounded"
               color="default"
+              class="pointer-events-none"
             >
               <template #start>
                 <BaseCheckbox
                   v-model="options.fifth"
-                  value="demo-curved-7"
-                  shape="curved"
+                  value="demo-rounded-7"
+                  shape="rounded"
                   color="primary"
                 />
               </template>

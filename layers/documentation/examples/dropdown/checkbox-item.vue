@@ -11,12 +11,13 @@
             text="Some useful info"
             shape="rounded"
             color="default"
+            class="pointer-events-none"
           >
             <template #start>
               <BaseCheckbox
                 v-model="options.first"
-                value="demo-curved-1"
-                shape="curved"
+                value="demo-rounded-1"
+                shape="rounded"
                 color="primary"
               />
             </template>
@@ -34,12 +35,13 @@
             text="Some useful info"
             shape="rounded"
             color="default"
+            class="pointer-events-none"
           >
             <template #start>
               <BaseCheckbox
                 v-model="options.second"
-                value="demo-curved-2"
-                shape="curved"
+                value="demo-rounded-2"
+                shape="rounded"
                 color="primary"
               />
             </template>
@@ -57,12 +59,13 @@
             text="Some useful info"
             shape="rounded"
             color="default"
+            class="pointer-events-none"
           >
             <template #start>
               <BaseCheckbox
                 v-model="options.third"
-                value="demo-curved-3"
-                shape="curved"
+                value="demo-rounded-3"
+                shape="rounded"
                 color="primary"
               />
             </template>

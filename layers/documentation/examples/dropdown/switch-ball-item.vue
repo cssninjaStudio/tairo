@@ -11,6 +11,7 @@
             text="Some useful info"
             shape="rounded"
             color="default"
+            class="pointer-events-none"
           >
             <template #start>
               <BaseSwitchBall
@@ -34,6 +35,7 @@
             text="Some useful info"
             shape="rounded"
             color="default"
+            class="pointer-events-none"
           >
             <template #start>
               <BaseSwitchBall
@@ -57,6 +59,7 @@
             text="Some useful info"
             shape="rounded"
             color="default"
+            class="pointer-events-none"
           >
             <template #start>
               <BaseSwitchBall
