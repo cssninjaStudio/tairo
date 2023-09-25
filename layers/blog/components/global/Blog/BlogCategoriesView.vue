@@ -2,13 +2,9 @@
 const uniqueTags: any[] = []
 const uniqueCategories: any[] = []
 const routeParam = useRoute().params.category
-console.log("routeParam", routeParam);
 
 const contentQueryResults = await queryContent().find()
-console.log("contentQueryResults", contentQueryResults);
-
 const posts = await queryContent('blog').where({ 'categories': { $contains: `${routeParam}` } }).find()
-console.log('posts: ', posts)
 
 const getAllTagsAvailable = () => {
   const allTags = contentQueryResults.map((obj) => obj.tags)

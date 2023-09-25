@@ -1,40 +1,10 @@
 <script setup lang="ts">
 const filter = ref('')
+const posts = await queryContent().find()
 
-const { data: navigation } = await useAsyncData('navigation', () =>
-  fetchContentNavigation(),
-)
-
-type TFolder = {
-  _path: string
-  title: string
-  children?: TFolder[]
-}
-
-const getChildren = (route: TFolder): TFolder[] | TFolder => {
-  const children = route?.children || null
-  if (children) {
-    return children
-      .map((child: TFolder) => {
-        if (!child?.children) {
-          return child
-        } else {
-          return getChildren(child)?.flatMap((item: TFolder) => item)
-        }
-      })
-      .flatMap((item: TFolder) => item)
-  } else {
-    return route
-  }
-}
-
-const { blog } = useAppConfig()
-const baseFolder = navigation.value?.find(
-  (item: TFolder) => item?._path === blog.route,
-)
-const posts = computed(() => getChildren(baseFolder))
-
-console.log('data', navigation.value)
+const filteredList = computed(() => {
+	return posts?.filter((item: any) => item.title.toLowerCase().includes(filter.value.toLowerCase()))
+})
 </script>
 
 <template>
@@ -73,7 +43,7 @@ console.log('data', navigation.value)
                 leave-to-class="opacity-0 -translate-x-full"
               >
                 <BaseCard
-                  v-for="(item, index) in posts"
+                  v-for="(item, index) in filteredList"
                   :key="index"
                   shape="curved"
                   elevated-hover
