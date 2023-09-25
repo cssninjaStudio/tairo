@@ -22,9 +22,7 @@ const { y } = useNinjaWindowScroll()
     :class="y > 70 ? 'scrolled' : ''"
   >
     <div class="mx-auto max-w-7xl pt-16">
-      <LandingNavbar />
       <BlogCategoriesView />
-      <LandingFooter />
     </div>
   </div>
 </template>

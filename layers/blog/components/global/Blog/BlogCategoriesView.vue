@@ -1,30 +1,17 @@
 <script setup lang="ts">
-const { y } = useNinjaWindowScroll()
-const postsFiltered = ref([])
-const AllCategories = ref([])
-const route = useRoute()
-
-const { data: navigation } = await useAsyncData('navigation', () =>
-  fetchContentNavigation(),
-)
-const dataPosts = navigation.value?.find((item) => item?._path === '/blog')
-  ?.children?.[0].children
-const params = route.params
-
-const getFilteredPosts = () => {
-  postsFiltered.value = []
-  dataPosts.forEach((element) => {
-    if (element.categories.includes(params.category)) {
-      postsFiltered.value.push(element)
-    }
-  })
-}
+const uniqueTags: any[] = []
+const uniqueCategories: any[] = []
+const routeParam = useRoute().params.category
+console.log("routeParam", routeParam);
 
 const contentQueryResults = await queryContent().find()
-const posts = contentQueryResults
+console.log("contentQueryResults", contentQueryResults);
+
+const posts = await queryContent('blog').where({ 'categories': { $contains: `${routeParam}` } }).find()
+console.log('posts: ', posts)
 
 const getAllTagsAvailable = () => {
-  const allTags = posts.map((obj) => obj.tags)
+  const allTags = contentQueryResults.map((obj) => obj.tags)
   allTags.forEach((element) => {
     element.forEach((tag: any) => {
       if (!uniqueTags.includes(tag)) {
@@ -33,26 +20,26 @@ const getAllTagsAvailable = () => {
     })
   })
 }
+const getAllCategoriesAvailable = () => {
+  const allCategories = contentQueryResults.map((obj) => obj.tags)
+  allCategories.forEach((element) => {
+    element.forEach((tag: any) => {
+      if (!uniqueCategories.includes(tag)) {
+        uniqueCategories.push(tag)
+      }
+    })
+  })
+}
 
 onMounted(() => {
   getAllTagsAvailable()
+  getAllCategoriesAvailable()
 })
 </script>
 
 <template>
   <div class="my-10">
     <TairoContentWrapper>
-      <!-- <template #left>
-        <BaseInput
-          v-model="filter"
-          icon="lucide:search"
-          shape="curved"
-          placeholder="Search post..."
-          :classes="{
-            wrapper: 'w-full sm:w-auto',
-          }"
-        />
-      </template> -->
       <div class="grid grid-cols-4 space-y-10">
         <div class="col-span-3">
           <div class="">
@@ -61,7 +48,7 @@ onMounted(() => {
                 <h4
                   class="text-muted-400 mb-4 font-sans text-xs font-semibold uppercase"
                 >
-                  Category Selected: {{ params.category }}
+                  Category Selected: {{ routeParam }}
                 </h4>
               </span>
               <span class="sticky top-[85px] flex justify-end">
@@ -80,7 +67,7 @@ onMounted(() => {
                 leave-to-class="opacity-0 -translate-x-full"
               >
                 <BaseCard
-                  v-for="(item, index) in postsFiltered"
+                  v-for="(item, index) in posts"
                   :key="index"
                   shape="curved"
                   elevated-hover
@@ -96,7 +83,6 @@ onMounted(() => {
                         />
                       </div>
                       <div class="mb-6 flex gap-2">
-                        <!-- <BaseAvatar :src="item.customer.logo" size="sm" shape="straight" mask="blob" :data-tooltip="item.name" class="bg-muted-100 dark:bg-muted-700" /> -->
                         <div>
                           <BaseHeading
                             tag="h3"
@@ -129,7 +115,11 @@ onMounted(() => {
             </div>
           </div>
         </div>
-        <BlogTagsSideBar class="col-span-1" />
+        <BlogTagsSideBar
+          class="col-span-1"
+          :tags="uniqueTags"
+          :categories="uniqueCategories"
+        />
       </div>
     </TairoContentWrapper>
   </div>
