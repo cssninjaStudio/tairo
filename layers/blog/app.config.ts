@@ -9,6 +9,40 @@
  */
 export default defineAppConfig({
   blog: {
+    header: {
+      title: 'Blog default title',
+      titleColored: 'Blog defualt Title colored',
+      paragraph: 'Blog default base paragraph',
+      image: '',
+    },
+    pages: {
+      authors: {
+        components: {
+            BlogAuthor: {},
+        }
+      },
+    },
+    sidebars: {
+      main: {
+        components: {
+          BlogTagsForSidebar: {
+            props: { class: 'mb-4' },
+          },
+          BlogCategoriesForSidebar: {
+            props: { class: 'mb-4' },
+          },
+        },
+      },
+      posts: {},
+      categories: {},
+      tags: {
+        components: {
+          BlogCategoriesForSidebar: {
+            props: { class: 'mb-4' },
+          },
+        },
+      },
+    },
     route: '/blog',
   },
 })

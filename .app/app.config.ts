@@ -9,10 +9,19 @@
  */
 
 export default defineAppConfig({
-  header: {
-    title: 'Blog title',
-    titleColored: 'Blog Title colored',
-    paragraph: 'Blog base paragraph',
-    image: '',
+  blog: {
+    sidebars: {
+      tags: {
+        components: {
+          NewOne: { props: { class: 'mb-20' } },
+        },
+      },
+    },
+    // header: {
+    //   title: 'Blog title',
+    //   titleColored: 'Blog Title colored',
+    //   paragraph: 'Blog base paragraph',
+    //   image: '',
+    // },
   },
 })

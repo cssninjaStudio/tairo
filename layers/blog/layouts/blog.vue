@@ -10,7 +10,7 @@ onMounted(async () => {
 <template>
   <div class="group/landing" :class="y > 60 ? 'scrolled' : ''">
     <div class="dark:bg-muted-900 bg-white pt-16">
-      <div class="max-w-7xl mx-auto p-4">
+      <div class="mx-auto max-w-7xl p-4">
         <div class="relative min-h-screen">
           <slot />
         </div>
@@ -18,5 +18,3 @@ onMounted(async () => {
     </div>
   </div>
 </template>
-
-<style></style>

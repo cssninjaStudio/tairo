@@ -85,7 +85,7 @@ const posts = await queryContent('blog')
             </div>
           </div>
         </div>
-        <BlogTagAndCategorySideBar class="col-span-1" />
+        <BlogSideBar class="col-span-1" />
       </div>
     </TairoContentWrapper>
   </div>

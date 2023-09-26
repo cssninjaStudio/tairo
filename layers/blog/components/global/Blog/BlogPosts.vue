@@ -10,7 +10,7 @@ const filteredPosts = computed(() => {
 </script>
 
 <template>
-  <div class="my-10 mt-64">
+  <div class="my-10">
     <TairoContentWrapper>
       <template #left>
         <BaseInput
@@ -57,7 +57,7 @@ const filteredPosts = computed(() => {
                         <img
                           :src="item.cover"
                           :alt="item.title"
-                          class="rounded-lg"
+                          class="min-h-[120px] rounded-lg"
                         />
                       </div>
                       <div class="mb-6 flex gap-2">
@@ -82,12 +82,7 @@ const filteredPosts = computed(() => {
                     </div>
                     <div
                       class="border-muted-200 dark:border-muted-700 bg-muted-50 dark:bg-muted-700/50 flex items-center justify-between rounded-b-xl border-t px-5 py-3"
-                    >
-                      <div>
-                        <p class="text-muted-400 font-sans text-sm">Comments</p>
-                      </div>
-                      <div>Share</div>
-                    </div>
+                    />
                   </NuxtLink>
                 </BaseCard>
               </TransitionGroup>

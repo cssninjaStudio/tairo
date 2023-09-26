@@ -6,7 +6,9 @@ type THeader = {
   image?: string
 }
 
-const { header } = useAppConfig()
+const { blog } = useAppConfig()
+console.log(blog)
+const { header } = blog
 </script>
 
 <template>
@@ -40,9 +42,8 @@ const { header } = useAppConfig()
       <div class="flex items-center justify-center"></div>
     </div>
 
-    <div class="relative h-[280px] md:h-full">
-      <img 
-      v-if="header.image"
+    <div v-if="header?.image" class="relative h-[280px] md:h-full">
+      <img
         class="relative top-8 w-full"
         :src="header.image"
         alt="wrinkled paper"

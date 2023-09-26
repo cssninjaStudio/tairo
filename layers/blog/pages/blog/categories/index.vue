@@ -1,21 +1,20 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Blog',
+  title: 'Blog Categories',
   description: 'This is our blog',
-  ogTitle: 'Blog',
+  ogTitle: 'Blog Categories',
   ogDescription: 'This is our blog',
   /* ogImage: '/images/meta/ideas.png', */
   ogUrl: '',
 })
 definePageMeta({
-  title: 'Blog',
+  title: 'Blog Categories',
   description: 'This is our blog',
   layout: 'blog',
   color: 'dark',
   colorMode: 'dark',
   auth: false,
 })
-
 const { y } = useNinjaWindowScroll()
 </script>
 <template>
@@ -23,18 +22,10 @@ const { y } = useNinjaWindowScroll()
     class="group/landing dark:bg-muted-900 overflow-hidden bg-white"
     :class="y > 70 ? 'scrolled' : ''"
   >
-    <div class="mx-auto max-w-7xl">
-      <!--      <header class="w-full">-->
-      <!--        <BlogHeader />-->
-      <!--      </header>-->
-      <div class="grid grid-cols-4">
-        <section class="col-span-3">
-          <BlogPosts />
-        </section>
-        <aside>
-          <BlogSideBar class="mt-28" />
-        </aside>
-      </div>
+    <div class="mx-auto max-w-7xl pt-16">
+      <section>
+        <BlogCategoriesView />
+      </section>
     </div>
   </div>
 </template>
