@@ -1,36 +1,9 @@
 <script setup lang="ts">
-const uniqueTags: any[] = []
-const uniqueCategories: any[] = []
 const routeParam = useRoute().params.category
 
-const contentQueryResults = await queryContent().find()
-const posts = await queryContent('blog').where({ 'categories': { $contains: `${routeParam}` } }).find()
-
-const getAllTagsAvailable = () => {
-  const allTags = contentQueryResults.map((obj) => obj.tags)
-  allTags.forEach((element) => {
-    element.forEach((tag: any) => {
-      if (!uniqueTags.includes(tag)) {
-        uniqueTags.push(tag)
-      }
-    })
-  })
-}
-const getAllCategoriesAvailable = () => {
-  const allCategories = contentQueryResults.map((obj) => obj.tags)
-  allCategories.forEach((element) => {
-    element.forEach((tag: any) => {
-      if (!uniqueCategories.includes(tag)) {
-        uniqueCategories.push(tag)
-      }
-    })
-  })
-}
-
-onMounted(() => {
-  getAllTagsAvailable()
-  getAllCategoriesAvailable()
-})
+const posts = await queryContent('blog')
+  .where({ categories: { $contains: `${routeParam}` } })
+  .find()
 </script>
 
 <template>
@@ -111,11 +84,7 @@ onMounted(() => {
             </div>
           </div>
         </div>
-        <BlogTagsSideBar
-          class="col-span-1"
-          :tags="uniqueTags"
-          :categories="uniqueCategories"
-        />
+        <BlogTagAndCategorySideBar class="col-span-1" />
       </div>
     </TairoContentWrapper>
   </div>

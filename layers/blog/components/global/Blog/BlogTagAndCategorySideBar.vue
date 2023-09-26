@@ -1,9 +1,32 @@
 <script setup lang="ts">
-type TProps = {
-  tags: []
-  categories: []
+const contentQueryResults = await queryContent().find()
+
+const getAllTagsAvailable = () => {
+  const uniqueTags: string[] = []
+  const allTags = contentQueryResults.map((obj) => obj.tags)
+  allTags.forEach((element: string) => {
+    element.forEach((tag: string) => {
+      if (!uniqueTags.includes(tag)) {
+        uniqueTags.push(tag)
+      }
+    })
+  })
+  return uniqueTags
 }
-const props = defineProps<TProps>()
+const getAllCategoriesAvailable = () => {
+  const uniqueCategories: string[] = []
+  const allCategories = contentQueryResults.map((obj) => obj.tags)
+  allCategories.forEach((element) => {
+    element.forEach((tag: any) => {
+      if (!uniqueCategories.includes(tag)) {
+        uniqueCategories.push(tag)
+      }
+    })
+  })
+  return uniqueCategories
+}
+const categories = computed(() => getAllCategoriesAvailable())
+const tags = computed(() => getAllTagsAvailable())
 </script>
 
 <template>

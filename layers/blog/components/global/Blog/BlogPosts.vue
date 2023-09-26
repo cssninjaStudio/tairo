@@ -2,8 +2,10 @@
 const filter = ref('')
 const posts = await queryContent().find()
 
-const filteredList = computed(() => {
-	return posts?.filter((item: any) => item.title.toLowerCase().includes(filter.value.toLowerCase()))
+const filteredPosts = computed(() => {
+  return posts?.filter((item: any) =>
+    item.title.toLowerCase().includes(filter.value.toLowerCase()),
+  )
 })
 </script>
 
@@ -43,7 +45,7 @@ const filteredList = computed(() => {
                 leave-to-class="opacity-0 -translate-x-full"
               >
                 <BaseCard
-                  v-for="(item, index) in filteredList"
+                  v-for="(item, index) in filteredPosts"
                   :key="index"
                   shape="curved"
                   elevated-hover
