@@ -64,3 +64,27 @@ We try to keep it mostly up to date, so you can always find the latest informati
 - [Access Online Documentation](https://tairo.cssninja.io/documentation)
 
 > We also have a great [discord community](https://go.cssninja.io/discord) where you can ask questions and show your work.
+
+
+## Blog Layer
+
+- To activate blog layer add into `app/nuxt.config.ts` file the following
+        extends:['../layers/blog']
+
+- To modify the Blog header add the following to your `app/app.config.ts` file
+    export default defineAppConfig({
+        header: {
+            title: 'Blog title',
+            titleColored: 'Blog Title colored',
+            paragraph: 'Blog base paragraph',
+            image: '',
+        }
+    })
+
+- Create a new article in the fold `app/content/blog` Check an example: `/layers/blog/content`
+
+- To create a new component in the fold `/components/global/blog`
+
+- To modify a base component create a new one in the /app/components directory and name it with the same name as the base component
+
+- Content Documentation: https://content.nuxt.com/

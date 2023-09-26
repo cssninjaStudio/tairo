@@ -10,12 +10,9 @@
 
 export default defineAppConfig({
   header: {
-    title: 'Tairo Quick Starter',
-    titleColored: 'Title colored',
-    paragraph: 'base paragraphh',
+    title: 'Blog title',
+    titleColored: 'Blog Title colored',
+    paragraph: 'Blog base paragraph',
     image: '',
-  },
-  blog: {
-    route: '/blog',
   },
 })
