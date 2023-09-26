@@ -1,8 +1,14 @@
-# Tairo Nuxt - Multipurpose Admin and Webapp Tailwind Template
+# Nuxt Base Template - Multipurpose Admin and Webapp Tailwind Template
 
-[![cssninja-discord](https://img.shields.io/discord/785473098069311510?label=join%20us%20on%20discord&color=6944EC)](https://go.cssninja.io/discord)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+    - [Install Node.js](#install-nodejs)
+- [Layers](#layers)
+  - [Blog](#blog-layer)
 
-## ▶️ Getting started
+
+
+# Getting started
 
 First of all, Thank you so much for purchasing this template and for being our loyal customer. You are awesome! You are entitled to get free lifetime updates to this product and support from the cssninjaStudio team directly. **Tairo** is a product built by [cssninjaStudio](https://cssninja.io/) and [Digisquad](https://digisquad.io/).
 
@@ -65,6 +71,11 @@ We try to keep it mostly up to date, so you can always find the latest informati
 
 > We also have a great [discord community](https://go.cssninja.io/discord) where you can ask questions and show your work.
 
+
+
+------------------------------------------------------------------------------------------------------------------------------
+# Layers
+Here will be explained how to use the layers and how to modify them
 
 ## Blog Layer
 
