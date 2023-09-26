@@ -15,7 +15,7 @@ const getAllTagsAvailable = () => {
 }
 const getAllCategoriesAvailable = () => {
   const uniqueCategories: string[] = []
-  const allCategories = contentQueryResults.map((obj) => obj.tags)
+  const allCategories = contentQueryResults.map((obj) => obj.categories)
   allCategories.forEach((element) => {
     element.forEach((tag: any) => {
       if (!uniqueCategories.includes(tag)) {

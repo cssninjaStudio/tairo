@@ -12,25 +12,8 @@ export default defineAppConfig({
   header: {
     title: 'Tairo Quick Starter',
     titleColored: 'Title colored',
-    paragraph: 'base paragraph',
+    paragraph: 'base paragraphh',
     image: '',
-  },
-  routes: {
-    articles: {
-      route: '/blog/articles',
-      sideBar: true,
-      sideBarType: 'posts'
-    },
-    tags: {
-      route: '/blog/tags',
-      sideBar: true,
-      sideBarType: 'tags'
-    },
-    categories: {
-      route: '/blog/categories',
-      sideBar: true,
-      sideBarType: 'categories'
-    },
   },
   blog: {
     route: '/blog',

@@ -1,9 +1,10 @@
 <script setup lang="ts">
 const { y } = useNinjaWindowScroll()
-const routeParam = useRoute().params
+const routeParam = useRoute().params.tag
+console.log("tagRoute: ",routeParam);
 
 const posts = await queryContent('blog')
-  .where({ tags: { $contains: `${routeParam.tag}` } })
+  .where({ tags: { $contains: `${routeParam}` } })
   .find()
 </script>
 

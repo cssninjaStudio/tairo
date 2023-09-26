@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const routeParam = useRoute().params.category
+console.log("routeParam", routeParam);
 
 const posts = await queryContent('blog')
   .where({ categories: { $contains: `${routeParam}` } })
