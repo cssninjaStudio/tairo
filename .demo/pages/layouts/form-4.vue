@@ -34,11 +34,13 @@ const zodSchema = z
       title: z.string().min(5, VALIDATION_TEXT.TITLE_REQUIRED),
       shortDesc: z.string().min(10, VALIDATION_TEXT.SHORTDESC_REQUIRED),
       longDesc: z.string().min(40, VALIDATION_TEXT.LONGDESC_REQUIRED),
-      startDateTime: z.date().nullable(),
-      endDateTime: z.date().nullable(),
       participants: z.array(z.string()).optional(),
       color: z.string(),
       category: z.string(),
+      dates: z.object({
+        start: z.date().nullable(),
+        end: z.date().nullable(),
+      })
     }),
   })
   .superRefine((data, ctx) => {
@@ -63,8 +65,10 @@ const initialValues = computed<FormInput>(() => ({
     title: '',
     shortDesc: '',
     longDesc: '',
-    startDateTime: null,
-    endDateTime: null,
+    dates: {
+      start: new Date(),
+      end: new Date(),
+    },
     participants: [],
     color: '',
     category: '',
@@ -176,10 +180,10 @@ const onSubmit = handleSubmit(
   },
 )
 
-const dates = ref({
-  start: new Date(),
-  end: new Date(),
-})
+// const dates = ref({
+//   start: new Date(),
+//   end: new Date(),
+// })
 
 const masks = ref({
   input: 'YYYY-MM-DD',
@@ -268,26 +272,27 @@ const people = ref([
               </Field>
             </div>
             <div class="col-span-12">
-              <DatePicker
-                v-model.range="dates"
-                :masks="masks"
-                :min-date="new Date()"
-                mode="dateTime"
-                hide-time-header
-                trim-weeks
+              <Field
+                v-slot="{
+                  field,
+                  errorMessage,
+                  handleChange,
+                }"
+                name="event.dates"
               >
-                <template #default="{ inputValue, inputEvents }">
-                  <div class="flex w-full flex-col gap-4 sm:flex-row">
-                    <div class="relative grow">
-                      <Field
-                        v-slot="{
-                          field,
-                          errorMessage,
-                          handleChange,
-                          handleBlur,
-                        }"
-                        name="event.startDateTime"
-                      >
+                <DatePicker
+                  :model-value="field.value"
+                  :model-modifiers="{ range: true }"
+                  :masks="masks"
+                  :min-date="new Date()"
+                  mode="dateTime"
+                  hide-time-header
+                  trim-weeks
+                  @update:model-value="handleChange"
+                >
+                  <template #default="{ inputValue, inputEvents }">
+                    <div class="flex w-full flex-col gap-4 sm:flex-row">
+                      <div class="relative grow">
                         <BaseInput
                           shape="curved"
                           label="Start date"
@@ -298,25 +303,12 @@ const people = ref([
                             input: '!h-11 !ps-11',
                             icon: '!h-11 !w-11',
                           }"
-                          :model-value="field.value"
                           :error="errorMessage"
                           :disabled="isSubmitting"
                           type="text"
-                          @update:model-value="handleChange"
-                          @blur="handleBlur"
                         />
-                      </Field>
-                    </div>
-                    <div class="relative grow">
-                      <Field
-                        v-slot="{
-                          field,
-                          errorMessage,
-                          handleChange,
-                          handleBlur,
-                        }"
-                        name="event.endDateTime"
-                      >
+                      </div>
+                      <div class="relative grow">
                         <BaseInput
                           shape="curved"
                           label="End date"
@@ -327,18 +319,15 @@ const people = ref([
                             input: '!h-11 !ps-11',
                             icon: '!h-11 !w-11',
                           }"
-                          :model-value="field.value"
                           :error="errorMessage"
                           :disabled="isSubmitting"
                           type="text"
-                          @update:model-value="handleChange"
-                          @blur="handleBlur"
                         />
-                      </Field>
+                      </div>
                     </div>
-                  </div>
-                </template>
-              </DatePicker>
+                  </template>
+                </DatePicker>
+              </Field>
             </div>
             <div class="col-span-12">
               <Field
