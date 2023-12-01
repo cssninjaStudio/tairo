@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { useSidebar } from '../composables/sidebar'
+import { useSidebar } from "../composables/sidebar";
 
 const props = withDefaults(
   defineProps<{
-    sidebar?: boolean
-    subsidebar?: boolean
-    toolbar?: boolean
-    circularMenu?: boolean
-    condensed?: boolean
-    horizontalScroll?: boolean
+    sidebar?: boolean;
+    subsidebar?: boolean;
+    toolbar?: boolean;
+    circularMenu?: boolean;
+    condensed?: boolean;
+    horizontalScroll?: boolean;
   }>(),
   {
     sidebar: true,
@@ -16,60 +16,61 @@ const props = withDefaults(
     toolbar: true,
     circularMenu: true,
   },
-)
+);
 
-const app = useAppConfig()
-const { setup, currentName, isOpen, toggle } = useSidebar()
-setup()
+const app = useAppConfig();
+const { setup, currentName, isOpen, toggle } = useSidebar();
+setup();
 
 onUnmounted(() => {
-  currentName.value = ''
-  isOpen.value = undefined
-})
+  currentName.value = "";
+  isOpen.value = undefined;
+});
 
 const sidebarEnabled = computed(() => {
   return (
-    app.tairo?.sidebar?.navigation?.enabled as boolean !== false && props.sidebar !== false
-  )
-})
+    (app.tairo?.sidebar?.navigation?.enabled as boolean) !== false &&
+    props.sidebar !== false
+  );
+});
 const toolbarEnabled = computed(() => {
   return (
-    app.tairo?.sidebar?.toolbar?.enabled as boolean !== false && props.toolbar !== false
-  )
-})
+    (app.tairo?.sidebar?.toolbar?.enabled as boolean) !== false &&
+    props.toolbar !== false
+  );
+});
 const circularMenuEnabled = computed(() => {
   return (
-    app.tairo?.sidebar?.circularMenu?.enabled as boolean !== false
-    && props.circularMenu !== false
-  )
-})
+    (app.tairo?.sidebar?.circularMenu?.enabled as boolean) !== false &&
+    props.circularMenu !== false
+  );
+});
 
 const wrapperClass = computed(() => {
   if (props.condensed) {
-    return 'bg-muted-100 dark:bg-muted-900 relative min-h-screen w-full overflow-x-hidden'
+    return "bg-muted-100 dark:bg-muted-900 relative min-h-screen w-full overflow-x-hidden";
   }
 
   if (!sidebarEnabled.value) {
-    return 'bg-muted-100 dark:bg-muted-900 relative min-h-screen w-full overflow-x-hidden px-4 transition-all duration-300 xl:px-10'
+    return "bg-muted-100 dark:bg-muted-900 relative min-h-screen w-full overflow-x-hidden px-4 transition-all duration-300 xl:px-10";
   }
 
   const list = [
-    'bg-muted-100 dark:bg-muted-900 relative min-h-screen w-full overflow-x-hidden px-4 transition-all duration-300 xl:px-10',
-  ]
+    "bg-muted-100 dark:bg-muted-900 relative min-h-screen w-full overflow-x-hidden px-4 transition-all duration-300 xl:px-10",
+  ];
 
   if (isOpen.value) {
-    list.push('xl:max-w-[calc(100%_-_300px)] xl:ms-[300px]')
-  }
-  else {
-    list.push('xl:max-w-[calc(100%_-_80px)] xl:ms-[80px]')
+    list.push("xl:max-w-[calc(100%_-_300px)] xl:ms-[300px]");
+  } else {
+    list.push("xl:max-w-[calc(100%_-_80px)] xl:ms-[80px]");
   }
 
   if (props.horizontalScroll) {
-    list.push('!pe-0 xl:!pe-0')
+    list.push("!pe-0 xl:!pe-0");
   }
 
-  return list
-})
+  return list;
+});
 </script>
 
 <template>
@@ -100,7 +101,7 @@ const wrapperClass = computed(() => {
       <div
         role="button"
         tabindex="0"
-        class="bg-muted-800 dark:bg-muted-900 fixed start-0 top-0 z-[59] block size-full transition-opacity duration-300 lg:hidden"
+        class="bg-muted-800 dark:bg-muted-900 fixed start-0 top-0 z-[59] block size-full transition-opacity duration-300 xl:hidden"
         :class="
           isOpen
             ? 'opacity-50 dark:opacity-75'

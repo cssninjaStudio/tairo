@@ -11,6 +11,7 @@ const props = withDefaults(
   },
 )
 
+const { xl } = useTailwindBreakpoints();
 const app = useAppConfig()
 const { hasSubsidebar } = useSidebar()
 
@@ -20,7 +21,7 @@ const showNavBurger = computed(() => {
   return (
     props.sidebar
     && app.tairo?.sidebar?.toolbar?.showNavBurger
-    && hasSubsidebar.value
+    && (hasSubsidebar.value || !xl.value)
   )
 })
 </script>
