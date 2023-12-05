@@ -1,7 +1,5 @@
-import type { MaybeRefOrGetter } from '@vueuse/core'
-import { toRef } from '@vueuse/core'
 import copy from 'fast-copy'
-import type { InjectionKey, UnwrapRef } from 'vue'
+import type { MaybeRefOrGetter, InjectionKey, UnwrapRef } from 'vue'
 
 export interface StepForm<T extends Record<string, any> = Record<string, any>> {
   meta: T
@@ -54,7 +52,7 @@ export function createMultiStepForm<
   const progress = computed(
     () => ((currentStep.value + 1) / totalSteps.value) * 100,
   )
-  const data = ref<T>(copy(initialState.value))
+  const data = ref<T>(copy(initialState.value) as T)
   const loading = ref(false)
   const preview = ref(false)
   const complete = ref(false)

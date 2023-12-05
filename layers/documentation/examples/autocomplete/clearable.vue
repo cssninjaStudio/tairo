@@ -15,6 +15,12 @@
       v-model="second"
       :items="people"
       :display-value="(item: any) => item?.name || ''"
+      :properties="{
+        value: 'id',
+        label: 'name',
+        sublabel: 'text',
+        media: 'media',
+      }"
       icon="lucide:search"
       shape="full"
       placeholder="e.g. Aaron"

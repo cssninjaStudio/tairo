@@ -7,6 +7,7 @@
         open: 'lucide:chevron-up',
         closed: 'lucide:chevron-down',
         pending: 'svg-spinners:270-ring-with-bg',
+        item: '',
       }"
     />
   </div>

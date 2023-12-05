@@ -18,7 +18,6 @@ function randomDate(start: Date, end: Date) {
 export function useCalendarEvents(props: UseCalendarEventsProps) {
   const calendarEvents = ref<CalendarCustomAttribute<CalendarEvent>[]>([])
   const pendingEvents = ref<Omit<CalendarEvent, 'startDate' | 'endDate'>[]>([])
-
   async function refresh() {
     // This is a fake data, in real life you would fetch it from an API
     pendingEvents.value = [

@@ -34,11 +34,11 @@ const zodSchema = z.object({
 type FormInput = z.infer<typeof zodSchema>
 
 const validationSchema = toTypedSchema(zodSchema)
-const initialValues = computed<FormInput>(() => ({
+const initialValues = {
   email: '',
   password: '',
   trustDevice: false,
-}))
+} satisfies FormInput
 
 const {
   handleSubmit,

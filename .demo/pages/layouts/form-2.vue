@@ -125,7 +125,7 @@ const zodSchema = z
 type FormInput = z.infer<typeof zodSchema>
 
 const validationSchema = toTypedSchema(zodSchema)
-const initialValues = computed<FormInput>(() => ({
+const initialValues = {
   avatar: null,
   doctor: {
     firstName: '',
@@ -142,7 +142,7 @@ const initialValues = computed<FormInput>(() => ({
     zipcode: '',
     country: 'United States',
   },
-}))
+} satisfies FormInput
 
 const {
   handleSubmit,

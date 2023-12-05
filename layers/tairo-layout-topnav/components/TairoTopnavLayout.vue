@@ -29,13 +29,13 @@ const config = useAppConfig().tairo.topnav
 const { isMobileOpen } = useTopnav()
 
 const topnavEnabled = computed(() => {
-  return config?.navigation?.enabled !== false && props.topnav !== false
+  return config?.navigation?.enabled as boolean !== false && props.topnav !== false
 })
 const toolbarEnabled = computed(() => {
-  return config?.toolbar?.enabled !== false && props.toolbar !== false
+  return config?.toolbar?.enabled as boolean !== false && props.toolbar !== false
 })
 const circularMenuEnabled = computed(() => {
-  return config?.circularMenu?.enabled !== false && props.circularMenu !== false
+  return config?.circularMenu?.enabled as boolean !== false && props.circularMenu !== false
 })
 
 const mainClass = computed(() => {

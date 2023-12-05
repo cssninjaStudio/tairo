@@ -8,9 +8,15 @@
         closed: 'clarity:folder-line',
         item: 'clarity:file-line',
         empty: 'clarity:alert-line',
+        pending: '',
       }"
       :classes="{
         treeline: 'border-muted-300 dark:border-muted-700',
+        checkbox: { wrapper: '' },
+        emptyIcon: '',
+        itemIcon: '',
+        pendingIcon: '',
+        treeIcon: '',
       }"
     />
   </div>

@@ -3,6 +3,12 @@
     <BaseAutocomplete
       v-model="value"
       :items="people"
+      :properties="{
+        value: 'id',
+        label: 'name',
+        sublabel: 'text',
+        media: 'media',
+      }"
       :display-value="(item: Person) => item.name"
       :filter-items="filterItems"
       icon="ph:users-three"

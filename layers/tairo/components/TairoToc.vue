@@ -13,7 +13,7 @@ const { activeIds } = useNinjaScrollspy(
 )
 const nuxtApp = useNuxtApp()
 
-if (process.client) {
+if (import.meta.client) {
   // active item when hash change
   watch(
     () => route.hash,

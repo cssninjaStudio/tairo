@@ -1,4 +1,5 @@
-import { useCssVar, type MaybeRefOrGetter } from '@vueuse/core'
+import type { MaybeRefOrGetter } from 'vue'
+import { useCssVar } from '@vueuse/core'
 
 const rgbRe = /(\d+) (\d+) (\d+)/
 

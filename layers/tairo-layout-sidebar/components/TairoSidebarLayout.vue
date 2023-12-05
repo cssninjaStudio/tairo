@@ -29,17 +29,17 @@ onUnmounted(() => {
 
 const sidebarEnabled = computed(() => {
   return (
-    app.tairo.sidebar?.navigation?.enabled !== false && props.sidebar !== false
+    app.tairo.sidebar?.navigation?.enabled as boolean !== false && props.sidebar !== false
   )
 })
 const toolbarEnabled = computed(() => {
   return (
-    app.tairo.sidebar?.toolbar?.enabled !== false && props.toolbar !== false
+    app.tairo.sidebar?.toolbar?.enabled as boolean !== false && props.toolbar !== false
   )
 })
 const circularMenuEnabled = computed(() => {
   return (
-    app.tairo.sidebar?.circularMenu?.enabled !== false &&
+    app.tairo.sidebar?.circularMenu?.enabled as boolean !== false &&
     props.circularMenu !== false
   )
 })

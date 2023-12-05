@@ -67,7 +67,7 @@ export function useCollapse() {
 
   const menuItems = computed(() => {
     if (
-      app.tairo.collapse?.navigation?.enabled === false ||
+      (app.tairo.collapse?.navigation?.enabled as boolean) === false ||
       app.tairo.collapse?.navigation?.items?.length === 0
     ) {
       return []
@@ -102,7 +102,7 @@ export function useCollapse() {
     }
   }
 
-  if (process.client) {
+  if (import.meta.client) {
     const route = useRoute()
     const { lg, xl } = useTailwindBreakpoints()
     watch(lg, (isLg) => {

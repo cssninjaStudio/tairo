@@ -9,14 +9,14 @@
  * @see https://github.com/vue-a11y/vue-axe-next
  */
 export default defineNuxtPlugin(async (nuxtApp) => {
-  if (process.client && process.dev) {
-    if (process.env.ENABLE_A11Y_AXE) {
-      // @ts-expect-error - vue-axe is not typed
+  if (import.meta.client && import.meta.dev) {
+    if (import.meta.env.ENABLE_A11Y_AXE) {
+      // @ts-ignore - vue-axe is not typed
       const vueAxe = await import('vue-axe').then((m) => m.default)
       nuxtApp.vueApp.use(vueAxe)
 
       const VueAxePopup = defineAsyncComponent({
-        // @ts-expect-error - vue-axe is not typed
+        // @ts-ignore - vue-axe is not typed
         loader: () => import('vue-axe').then((m) => m.VueAxePopup),
       })
       nuxtApp.vueApp.component('VueAxePopup', VueAxePopup)

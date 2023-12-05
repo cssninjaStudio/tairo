@@ -9,11 +9,12 @@
   },
   "dependencies": {
     "@cssninja/nuxt-toaster": "^0.3.12",
-    "@shuriken-ui/nuxt": "1.1.3",
-    "@vee-validate/zod": "^4.11.6",
+    "@shuriken-ui/nuxt": "1.9.4",
+    "@vee-validate/zod": "^4.11.8",
     "fast-copy": "^3.0.1",
-    "nuxt": "^3.7.3",
-    "vee-validate": "^4.11.6",
-    "zod": "^3.22.2"
+    "nuxt": "^3.8.2",
+    "magic-string": "0.30.5",
+    "vee-validate": "^4.11.8",
+    "zod": "^3.22.4"
   }
 }

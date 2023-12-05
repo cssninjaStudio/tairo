@@ -1,9 +1,8 @@
-import type { MaybeRefOrGetter } from '@vueuse/shared'
+import type { MaybeRefOrGetter } from 'vue'
 import { kebabCase, upperFirst } from 'scule'
 import type { ComponentMeta } from 'vue-component-meta'
 // @ts-ignore - might be not defined if documentation is disabled
 import type { NuxtComponentMetaNames } from '#nuxt-component-meta/types'
-import { toRef } from '@vueuse/core'
 
 const excludedProps = ['modelValue', 'modelModifiers']
 
@@ -51,7 +50,7 @@ export async function useDocumentationMeta(
 ) {
   const name = toRef(_name)
 
-  const meta = await fetchComponentMeta(name.value)
+  const meta = await $fetch(`/api/component-meta/${name.value}`)
 
   const model = computed(
     () => meta?.meta?.props?.find((prop: any) => prop.name === 'modelValue'),

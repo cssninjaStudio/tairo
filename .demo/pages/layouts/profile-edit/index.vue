@@ -120,7 +120,7 @@ type FormInput = z.infer<typeof zodSchema>
 const { data, pending, error, refresh } = await useFetch('/api/profile')
 
 const validationSchema = toTypedSchema(zodSchema)
-const initialValues = computed<FormInput>(() => ({
+const initialValues = {
   avatar: null,
   profile: {
     firstName: data.value?.personalInfo?.firstName || '',
@@ -143,7 +143,7 @@ const initialValues = computed<FormInput>(() => ({
     github: '',
     gitlab: '',
   },
-}))
+} satisfies FormInput
 
 // This is the list of options for the select inputs
 const experience = ['0-2 years', '2-5 years', '5-10 years', '10+ years']

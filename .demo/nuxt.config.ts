@@ -18,9 +18,9 @@ export default defineNuxtConfig({
      * This extends the base Tairo layer.
      *
      * Alternatively you can use the following:
-     * 'github:cssninjaStudio/tairo/layers/xxx#v1.0.0'
+     * ["gh:cssninjaStudio/tairo/layers/tairo#v1.0.0", { giget: { auth: process.env.GITHUB_TOKEN } }]
      *
-     * And set GIGET_AUTH=<github_token> in your .env file
+     * @see https://github.com/unjs/c12#extending-config-layer-from-remote-sources
      *
      * This would allows you to create an empty git repository
      * with only your source code and no demo.
@@ -46,13 +46,12 @@ export default defineNuxtConfig({
   ],
 
   experimental: {
-    // using chokidar-granular watcher run faster
-    // when using layers and/or in large projects
-    watcher: 'chokidar-granular',
     // Write early hints when using node server.
     writeEarlyHints: true,
     // Render JSON payloads with support for revivifying complex types.
     renderJsonPayloads: true,
+    // Render tags in of the head in a more performant way
+    headNext: true,
   },
 
   typescript: {
@@ -65,8 +64,8 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       // mapbox config
-      mapboxToken: process.env.NUXT_PUBLIC_MAPBOX_TOKEN,
-      siteUrl: process.env.NUXT_PUBLIC_SITE_URL,
+      mapboxToken: '', // set it via NUXT_PUBLIC_MAPBOX_TOKEN env
+      siteUrl: '', // set it via NUXT_PUBLIC_SITE_URL
     },
   },
   routeRules: {

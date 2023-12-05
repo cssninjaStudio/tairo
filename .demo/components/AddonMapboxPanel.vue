@@ -242,7 +242,7 @@ function selectFeature(feature: any) {
   selectedFeature.value = feature
 }
 const config = useRuntimeConfig()
-if (process.dev) {
+if (import.meta.dev) {
   // This block will be removed in production build
 
   if (!config.public.mapboxToken) {
@@ -252,7 +252,7 @@ if (process.dev) {
   }
 }
 
-onMounted(() => {
+onNuxtReady(() => {
   if (!config.public.mapboxToken) {
     return
   }

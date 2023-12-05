@@ -349,6 +349,7 @@ export default defineAppConfig({
         },
         header: {
           component: 'DemoTopnavWorkspaceDropdown',
+          props: {},
         },
         items: [
           {

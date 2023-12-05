@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// @ts-expect-error - splitpanes types exists only for vue2
+// @ts-ignore - splitpanes types exists only for vue2
 import { Pane, Splitpanes } from 'splitpanes'
 import 'splitpanes/dist/splitpanes.css'
 

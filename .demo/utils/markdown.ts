@@ -34,7 +34,6 @@ async function createProcessor(options: RehypeShikijiOptions) {
       .use(remarkParse)
       // @ts-expect-error
       .use(remarkGfm)
-      // @ts-expect-error
       .use(remarkRehype, { allowDangerousHtml: true })
       .use(rehypeShikiji, options)
       .use(rehypeRaw)

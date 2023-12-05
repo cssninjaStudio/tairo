@@ -60,7 +60,7 @@ const zodSchema = z
 type FormInput = z.infer<typeof zodSchema>
 
 const validationSchema = toTypedSchema(zodSchema)
-const initialValues = computed<FormInput>(() => ({
+const initialValues = {
   event: {
     title: '',
     shortDesc: '',
@@ -73,7 +73,7 @@ const initialValues = computed<FormInput>(() => ({
     color: '',
     category: '',
   },
-}))
+} satisfies FormInput
 
 const {
   handleSubmit,

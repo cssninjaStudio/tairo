@@ -25,7 +25,6 @@ const staticPageRule = isProduction
 
 export const demoRules = {
   '/img/**': staticAssetsRule,
-  '/shiki/**': staticAssetsRule,
   '/api/**': staticAssetsRule,
   '/dashboards/**': staticPageRule,
   '/layouts/**': staticPageRule,

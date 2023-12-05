@@ -509,28 +509,28 @@ const results = [
                   <div class="flex flex-col gap-4">
                     <BaseCheckbox
                       v-model="stops"
-                      name="stops-1"
+                      value="stops-1"
                       label="All flights"
                       shape="rounded"
                       :classes="{ wrapper: 'text-primary-500' }"
                     />
                     <BaseCheckbox
                       v-model="stops"
-                      name="stops-2"
+                      value="stops-2"
                       label="No stops"
                       shape="rounded"
                       :classes="{ wrapper: 'text-primary-500' }"
                     />
                     <BaseCheckbox
                       v-model="stops"
-                      name="stops-3"
+                      value="stops-3"
                       label="One stop"
                       shape="rounded"
                       :classes="{ wrapper: 'text-primary-500' }"
                     />
                     <BaseCheckbox
                       v-model="stops"
-                      name="stops-4"
+                      value="stops-4"
                       label="Two stops"
                       shape="rounded"
                       :classes="{ wrapper: 'text-primary-500' }"
@@ -546,28 +546,28 @@ const results = [
                   <div class="flex flex-col gap-4">
                     <BaseCheckbox
                       v-model="luggage"
-                      name="luggage-1"
+                      value="luggage-1"
                       label="All options"
                       shape="rounded"
                       :classes="{ wrapper: 'text-primary-500' }"
                     />
                     <BaseCheckbox
                       v-model="luggage"
-                      name="luggage-2"
+                      value="luggage-2"
                       label="One cabin luggage"
                       shape="rounded"
                       :classes="{ wrapper: 'text-primary-500' }"
                     />
                     <BaseCheckbox
                       v-model="luggage"
-                      name="luggage-3"
+                      value="luggage-3"
                       label="Two cabin luggage"
                       shape="rounded"
                       :classes="{ wrapper: 'text-primary-500' }"
                     />
                     <BaseCheckbox
                       v-model="luggage"
-                      name="luggage-4"
+                      value="luggage-4"
                       label="No luggage"
                       shape="rounded"
                       :classes="{ wrapper: 'text-primary-500' }"

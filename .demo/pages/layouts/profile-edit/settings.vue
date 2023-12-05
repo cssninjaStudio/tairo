@@ -79,7 +79,7 @@ type FormInput = z.infer<typeof zodSchema>
 const { data, pending, error, refresh } = await useFetch('/api/profile')
 
 const validationSchema = toTypedSchema(zodSchema)
-const initialValues = computed<FormInput>(() => ({
+const initialValues = {
   currentPassword: 'password',
   newPassword: '',
   confirmPassword: '',
@@ -93,7 +93,7 @@ const initialValues = computed<FormInput>(() => ({
     marketing: false,
     partners: false,
   },
-}))
+} satisfies FormInput
 
 const {
   handleSubmit,

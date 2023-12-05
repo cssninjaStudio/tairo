@@ -14,7 +14,6 @@ title: Password strength
 demo: '#examples/tairo/password-strength.vue'
 ---
 Tairo password strength is a component that can be used with :doc-linker{to="BaseInput"} to show the strength of a password.
-```
 ::
 
 :doc-component-meta{name="TairoPasswordStrength"}

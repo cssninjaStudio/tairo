@@ -395,7 +395,7 @@ const selectedEventFeatures = computed({
                   ? ((settings.weekStartsOn + 1) as any)
                   : 1
               "
-              :attributes="calendarEvents as VCalendarAttribute[]"
+              :attributes="(calendarEvents as VCalendarAttribute[])"
               @update:pages="onPageChange"
             >
               <template #header-left-button="{ movePrev }">
@@ -761,6 +761,10 @@ const selectedEventFeatures = computed({
                     photo: '/img/avatars/2.svg',
                   },
                 ]"
+                :properties="{
+                  label: 'name',
+                  media: 'photo'
+                }"
                 :display-value="(item: any) => item?.name || ''"
                 dropdown
                 multiple
@@ -786,18 +790,7 @@ const selectedEventFeatures = computed({
                 placeholder="Search..."
                 label="Assignee"
                 clearable
-              >
-                <template #item="{ item, active, selected }">
-                  <BaseAutocompleteItem
-                    :value="{
-                      name: item.name,
-                      media: item.photo,
-                    }"
-                    :active="active"
-                    :selected="selected"
-                  />
-                </template>
-              </BaseAutocomplete>
+              />
               <div class="grid pt-4 grid-cols-4 gap-2 relative z-[5]">
                 <div data-nui-tooltip="Record">
                   <BaseCheckboxHeadless

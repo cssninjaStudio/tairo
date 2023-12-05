@@ -67,6 +67,7 @@ const zodSchema = z
     company: z.object({
       name: z.string().min(1, VALIDATION_TEXT.NAME_REQUIRED),
       email: z.string().min(1, VALIDATION_TEXT.EMAIL_REQUIRED),
+      type: z.string().optional(),
       website: z.string().optional(),
       status: z.union([z.literal('active'), z.literal('inactive')]).nullable(),
       employees: z
@@ -143,7 +144,7 @@ const zodSchema = z
 type FormInput = z.infer<typeof zodSchema>
 
 const validationSchema = toTypedSchema(zodSchema)
-const initialValues = computed<FormInput>(() => ({
+const initialValues = {
   avatar: null,
   company: {
     name: '',
@@ -157,7 +158,7 @@ const initialValues = computed<FormInput>(() => ({
     notes: '',
     privateRecord: false,
   },
-}))
+} satisfies FormInput
 
 // This is the computed value that will be used to display the current avatar
 const currentAvatar = computed(() => '/img/avatars/company.svg')

@@ -54,7 +54,6 @@ const fakeItems = ref([])
                 <div class="flex items-center">
                   <BaseCheckbox
                     v-model="fakeAll"
-                    name="table-1-main"
                     shape="full"
                     class="text-primary-500"
                   />
@@ -75,7 +74,7 @@ const fakeItems = ref([])
                 <div class="flex items-center">
                   <BaseCheckbox
                     v-model="fakeItems"
-                    :name="`placeload-item-checkbox-${index}`"
+                    :value="`placeload-item-checkbox-${index}`"
                     shape="full"
                     class="text-primary-500"
                   />

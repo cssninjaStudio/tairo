@@ -5,6 +5,12 @@
       :items="hobbies"
       :display-value="(item: Hobby) => item.name"
       :filter-items="filterItems"
+      :properties="{
+        value: 'id',
+        label: 'name',
+        sublabel: 'text',
+        icon: 'icon',
+      }"
       icon="ph:buildings"
       shape="rounded"
       placeholder="Select a hobby"

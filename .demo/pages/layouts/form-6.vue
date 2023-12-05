@@ -65,7 +65,7 @@ const zodSchema = z.object({
 type FormInput = z.infer<typeof zodSchema>
 
 const validationSchema = toTypedSchema(zodSchema)
-const initialValues = computed<FormInput>(() => ({
+const initialValues = {
   meeting: {
     title: '',
     startDate: null,
@@ -86,7 +86,7 @@ const initialValues = computed<FormInput>(() => ({
       modifications: false,
     },
   },
-}))
+} satisfies FormInput
 
 const {
   handleSubmit,

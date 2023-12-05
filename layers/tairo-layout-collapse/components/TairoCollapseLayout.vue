@@ -21,18 +21,18 @@ const { isOpen, isMobileOpen, toggle } = useCollapse()
 
 const collapseEnabled = computed(() => {
   return (
-    app.tairo.collapse?.navigation?.enabled !== false &&
+    (app.tairo.collapse?.navigation?.enabled as boolean) !== false &&
     props.collapse !== false
   )
 })
 const toolbarEnabled = computed(() => {
   return (
-    app.tairo.collapse?.toolbar?.enabled !== false && props.toolbar !== false
+    app.tairo.collapse?.toolbar?.enabled as boolean !== false && props.toolbar !== false
   )
 })
 const circularMenuEnabled = computed(() => {
   return (
-    app.tairo.collapse?.circularMenu?.enabled !== false &&
+    app.tairo.collapse?.circularMenu?.enabled as boolean !== false &&
     props.circularMenu !== false
   )
 })

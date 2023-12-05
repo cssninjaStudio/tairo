@@ -45,7 +45,7 @@ export function useSidebar() {
 
   const sidebars = computed(() => {
     if (
-      app.tairo.sidebar?.navigation?.enabled === false ||
+      (app.tairo.sidebar?.navigation?.enabled as boolean) === false ||
       app.tairo.sidebar?.navigation?.items?.length === 0
     ) {
       return []
@@ -105,7 +105,7 @@ export function useSidebar() {
     )
     if (item) {
       currentName.value = item.title
-      if (!process.client) {
+      if (!import.meta.client) {
         isOpen.value = Boolean(currentName.value)
       } else {
         const isXl = useTailwindBreakpoints().xl.value
@@ -117,7 +117,7 @@ export function useSidebar() {
 
   function setup() {
     // Detect sidebar item on server page load
-    if (!process.client) {
+    if (!import.meta.client) {
       detect()
       return
     }

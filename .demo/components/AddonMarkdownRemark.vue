@@ -2,7 +2,7 @@
 // eslint-disable vue/no-v-text-v-html-on-component
 import light from '~/utils/shiki/theme/cssninja-light'
 import dark from '~/utils/shiki/theme/cssninja-dark'
-import { LanguageInput, BuiltinLanguage } from 'shikiji'
+import type { LanguageInput, BuiltinLanguage } from 'shikiji'
 
 const props = withDefaults(
   defineProps<{
@@ -52,6 +52,7 @@ const props = withDefaults(
       'json',
       'yaml',
       'markdown',
+      'diff',
     ],
   },
 )

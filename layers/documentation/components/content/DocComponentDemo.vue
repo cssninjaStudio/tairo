@@ -20,7 +20,7 @@ const props = withDefaults(
 
 const demoRE = /^#examples\/([\w-]+)\/([\w-]+).vue$/
 
-if (process.dev) {
+if (import.meta.dev) {
   if (props.demo && !demoRE.test(props.demo)) {
     console.error(
       `Invalid demo path: ${props.demo}. Expected format: #examples/<folder>/<file>.vue`,
@@ -115,7 +115,6 @@ async function loadDemo() {
       >
         <BaseCheckbox
           v-model="forceDark"
-          condensed
           :classes="{
             label: '!text-xs mt-1',
             wrapper:

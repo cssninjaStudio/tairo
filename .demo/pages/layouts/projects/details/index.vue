@@ -104,6 +104,11 @@ const selectedProject = ref('')
                     text: `${item.customer.name} | ${item.customer.text}`,
                     media: item.customer.logo,
                   }"
+                  :properties="{
+                    label: 'name',
+                    sublabel: 'text',
+                    media: 'media'
+                  }"
                   :selected="selected"
                 />
               </NuxtLink>
