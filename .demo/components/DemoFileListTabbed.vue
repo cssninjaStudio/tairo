@@ -101,7 +101,11 @@ const savedFiles = [
             :key="file.id"
             class="flex items-center gap-2"
           >
-            <img :src="file.icon" class="h-10 w-10" :alt="file.name" />
+            <img
+              :src="file.icon"
+              class="h-10 w-10"
+              :alt="file.name"
+            >
             <div>
               <BaseHeading
                 as="h3"
@@ -159,13 +163,21 @@ const savedFiles = [
                     <Icon name="ph:lock-duotone" class="me-2 block h-5 w-5" />
                   </template>
                 </BaseDropdownItem>
-                <BaseDropdownItem to="#" title="Share" text="Share this file">
+                <BaseDropdownItem
+                  to="#"
+                  title="Share"
+                  text="Share this file"
+                >
                   <template #start>
                     <Icon name="ph:share-duotone" class="me-2 block h-5 w-5" />
                   </template>
                 </BaseDropdownItem>
                 <BaseDropdownDivider />
-                <BaseDropdownItem to="#" title="Delete" text="Delete this file">
+                <BaseDropdownItem
+                  to="#"
+                  title="Delete"
+                  text="Delete this file"
+                >
                   <template #start>
                     <Icon name="ph:trash-duotone" class="me-2 block h-5 w-5" />
                   </template>
@@ -182,7 +194,11 @@ const savedFiles = [
             :key="file.id"
             class="flex items-center gap-2"
           >
-            <img :src="file.icon" class="h-10 w-10" :alt="file.name" />
+            <img
+              :src="file.icon"
+              class="h-10 w-10"
+              :alt="file.name"
+            >
             <div>
               <BaseHeading
                 as="h3"
@@ -240,13 +256,21 @@ const savedFiles = [
                     <Icon name="ph:lock-duotone" class="me-2 block h-5 w-5" />
                   </template>
                 </BaseDropdownItem>
-                <BaseDropdownItem to="#" title="Share" text="Share this file">
+                <BaseDropdownItem
+                  to="#"
+                  title="Share"
+                  text="Share this file"
+                >
                   <template #start>
                     <Icon name="ph:share-duotone" class="me-2 block h-5 w-5" />
                   </template>
                 </BaseDropdownItem>
                 <BaseDropdownDivider />
-                <BaseDropdownItem to="#" title="Delete" text="Delete this file">
+                <BaseDropdownItem
+                  to="#"
+                  title="Delete"
+                  text="Delete this file"
+                >
                   <template #start>
                     <Icon name="ph:trash-duotone" class="me-2 block h-5 w-5" />
                   </template>

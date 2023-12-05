@@ -26,8 +26,8 @@ export default defineNuxtConfig({
         // This add examples/ folder to the tailwind content list
         // making it possible to use tailwind classes inside the examples
         config.content.push(
-          fileURLToPath(new URL('./examples', import.meta.url)) +
-            '/**/*.{vue,js,ts}',
+          fileURLToPath(new URL('./examples', import.meta.url))
+          + '/**/*.{vue,js,ts}',
         )
       }
     },

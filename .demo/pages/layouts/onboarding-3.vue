@@ -84,12 +84,17 @@ const roles = [
     <form
       action=""
       method="POST"
-      @submit.prevent
       class="mx-auto max-w-7xl px-4"
+      @submit.prevent
     >
       <div>
         <div class="pt-8 text-center">
-          <BaseHeading tag="h2" size="3xl" weight="medium" class="mb-2">
+          <BaseHeading
+            tag="h2"
+            size="3xl"
+            weight="medium"
+            class="mb-2"
+          >
             Choose a profile
           </BaseHeading>
           <BaseParagraph class="text-muted-500 dark:text-muted-400 mb-8">
@@ -136,8 +141,9 @@ const roles = [
                         <BaseText
                           size="sm"
                           class="text-muted-500 dark:text-muted-400"
-                          >{{ role.name }}</BaseText
                         >
+                          {{ role.name }}
+                        </BaseText>
                       </div>
                     </BaseRadioHeadless>
                   </div>
@@ -149,13 +155,15 @@ const roles = [
                     shape="curved"
                     class="!h-12 w-48"
                     color="primary"
-                    >Choose Profile</BaseButton
                   >
+                    Choose Profile
+                  </BaseButton>
                   <NuxtLink
                     to="#"
                     class="text-muted-400 hover:text-primary-500 mt-4 text-xs font-medium underline-offset-4 transition-colors duration-300 hover:underline"
-                    >Learn More</NuxtLink
                   >
+                    Learn More
+                  </NuxtLink>
                 </div>
               </div>
             </div>

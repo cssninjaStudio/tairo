@@ -132,7 +132,7 @@ export function useDragEvent(
 
         const calendarEventsValue = toValue(calendarEvents)
         const idx = calendarEventsValue.findIndex(
-          (item) => item.customData.id === attr.customData.id,
+          item => item.customData.id === attr.customData.id,
         )
         calendarEventsValue[idx] = {
           ...calendarEventsValue[idx],
@@ -153,7 +153,7 @@ export function useDragEvent(
 
       const calendarEventsValue = toValue(calendarEvents)
       const idx = calendarEventsValue.findIndex(
-        (item) => item.customData.id === attr.customData.id,
+        item => item.customData.id === attr.customData.id,
       )
 
       if (idx !== -1) {

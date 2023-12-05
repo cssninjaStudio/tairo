@@ -39,8 +39,8 @@ const toolbarEnabled = computed(() => {
 })
 const circularMenuEnabled = computed(() => {
   return (
-    app.tairo.sidebar?.circularMenu?.enabled as boolean !== false &&
-    props.circularMenu !== false
+    app.tairo.sidebar?.circularMenu?.enabled as boolean !== false
+    && props.circularMenu !== false
   )
 })
 
@@ -59,7 +59,8 @@ const wrapperClass = computed(() => {
 
   if (isOpen.value) {
     list.push('xl:max-w-[calc(100%_-_300px)] xl:ms-[300px]')
-  } else {
+  }
+  else {
     list.push('xl:max-w-[calc(100%_-_80px)] xl:ms-[80px]')
   }
 
@@ -91,13 +92,14 @@ const wrapperClass = computed(() => {
                   )
                 "
                 v-bind="app.tairo.sidebar?.navigation.logo.props"
-              ></component>
+              />
             </NuxtLink>
           </slot>
         </div>
       </TairoSidebarNavigation>
       <div
         role="button"
+        tabindex="0"
         class="bg-muted-800 dark:bg-muted-900 fixed start-0 top-0 z-[59] block h-full w-full transition-opacity duration-300 lg:hidden"
         :class="
           isOpen
@@ -105,7 +107,7 @@ const wrapperClass = computed(() => {
             : 'opacity-0 pointer-events-none'
         "
         @click="toggle"
-      ></div>
+      />
     </slot>
 
     <div :class="wrapperClass">
@@ -124,7 +126,9 @@ const wrapperClass = computed(() => {
             :sidebar="props.sidebar"
             :horizontal-scroll="props.horizontalScroll"
           >
-            <template #title><slot name="toolbar-title"></slot></template>
+            <template #title>
+              <slot name="toolbar-title" />
+            </template>
           </TairoSidebarToolbar>
         </slot>
 

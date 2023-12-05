@@ -1,10 +1,18 @@
 <template>
   <div class="grid gap-4 md:grid-cols-3">
-    <BaseAccordion :items="accordion" exclusive shape="straight" />
+    <BaseAccordion
+      :items="accordion"
+      exclusive
+      shape="straight"
+    />
 
     <BaseAccordion :items="accordion" shape="rounded" />
 
-    <BaseAccordion :items="accordion" exclusive shape="curved" />
+    <BaseAccordion
+      :items="accordion"
+      exclusive
+      shape="curved"
+    />
   </div>
 </template>
 

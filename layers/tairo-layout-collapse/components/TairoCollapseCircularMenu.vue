@@ -44,15 +44,15 @@ const tools = computed(() => {
         <span
           class="bg-muted-50 absolute block h-0.5 w-full transition-all duration-300"
           :class="isOpened ? '-rotate-45 top-1' : 'top-0.5'"
-        ></span>
+        />
         <span
           class="bg-muted-50 absolute top-1/2 block h-0.5 w-full transition-all duration-300"
           :class="isOpened ? 'opacity-0 translate-x-4' : ''"
-        ></span>
+        />
         <span
           class="bg-muted-50 absolute block h-0.5 w-full transition-all duration-300"
           :class="isOpened ? 'rotate-45 bottom-1.5' : 'bottom-0'"
-        ></span>
+        />
       </span>
     </button>
 

@@ -27,7 +27,7 @@ const props = defineProps<{
       </div>
     </div>
     <div class="space-y-2">
-      <slot></slot>
+      <slot />
     </div>
   </div>
 </template>

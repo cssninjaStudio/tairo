@@ -31,9 +31,11 @@ function goToStep(n: number) {
     loading.value = false
     if (n < 1) {
       currentStep.value = 1
-    } else if (n > 3) {
+    }
+    else if (n > 3) {
       currentStep.value = 3
-    } else {
+    }
+    else {
       currentStep.value = n
     }
     clearTimeout(timer)
@@ -96,8 +98,8 @@ function type(event: KeyboardEvent, index: number) {
   }
   // check if the PIN is correct
   if (
-    (onlyCheckOnLastFieldInput.value && index == codeLength.value) ||
-    !onlyCheckOnLastFieldInput.value
+    (onlyCheckOnLastFieldInput.value && index == codeLength.value)
+    || !onlyCheckOnLastFieldInput.value
   ) {
     event.stopPropagation()
     event.preventDefault()
@@ -140,12 +142,17 @@ const validatePin = computed(() => {
     <form
       action=""
       method="POST"
-      @submit.prevent
       class="mx-auto max-w-7xl px-4"
+      @submit.prevent
     >
       <div v-if="currentStep === 1">
         <div class="pt-8 text-center">
-          <BaseHeading tag="h2" size="3xl" weight="medium" class="mb-2">
+          <BaseHeading
+            tag="h2"
+            size="3xl"
+            weight="medium"
+            class="mb-2"
+          >
             Welcome to Tairo 👋
           </BaseHeading>
           <BaseParagraph class="text-muted-500 dark:text-muted-400 mb-8">
@@ -172,10 +179,13 @@ const validatePin = computed(() => {
                           src="/img/illustrations/onboarding/2fa-web.svg"
                           alt="2 factor authentication with email"
                           class="mx-auto max-w-[160px]"
-                        />
-                        <BaseHeading size="md" weight="medium"
-                          >With Email</BaseHeading
                         >
+                        <BaseHeading
+                          size="md"
+                          weight="medium"
+                        >
+                          With Email
+                        </BaseHeading>
                         <BaseParagraph
                           size="xs"
                           lead="snug"
@@ -207,10 +217,13 @@ const validatePin = computed(() => {
                           src="/img/illustrations/onboarding/2fa-sms.svg"
                           alt="2 factor authentication with SMS"
                           class="mx-auto max-w-[160px]"
-                        />
-                        <BaseHeading size="md" weight="medium"
-                          >With SMS</BaseHeading
                         >
+                        <BaseHeading
+                          size="md"
+                          weight="medium"
+                        >
+                          With SMS
+                        </BaseHeading>
                         <BaseParagraph
                           size="xs"
                           lead="snug"
@@ -242,10 +255,13 @@ const validatePin = computed(() => {
                           src="/img/illustrations/onboarding/2fa-app.svg"
                           alt="2 factor authentication with app"
                           class="mx-auto max-w-[160px]"
-                        />
-                        <BaseHeading size="md" weight="medium"
-                          >With an App</BaseHeading
                         >
+                        <BaseHeading
+                          size="md"
+                          weight="medium"
+                        >
+                          With an App
+                        </BaseHeading>
                         <BaseParagraph
                           size="xs"
                           lead="snug"
@@ -255,8 +271,9 @@ const validatePin = computed(() => {
                           <NuxtLink
                             to="https://authy.com/"
                             class="text-primary-500 underline-offset-4 hover:underline"
-                            >Authy</NuxtLink
                           >
+                            Authy
+                          </NuxtLink>
                           authenticator app
                         </BaseParagraph>
                       </div>
@@ -277,13 +294,15 @@ const validatePin = computed(() => {
                     color="primary"
                     :loading="loading"
                     @click="goToStep(2)"
-                    >Continue</BaseButton
                   >
+                    Continue
+                  </BaseButton>
                   <NuxtLink
                     to="/dashboards"
                     class="text-muted-400 hover:text-primary-500 mt-4 text-xs font-medium underline-offset-4 transition-colors duration-300 hover:underline"
-                    >No thanks, I want to skip</NuxtLink
                   >
+                    No thanks, I want to skip
+                  </NuxtLink>
                 </div>
               </div>
             </div>
@@ -295,7 +314,12 @@ const validatePin = computed(() => {
           <div
             class="pointer-events-none flex w-full items-center justify-center pt-8"
           >
-            <BaseIconBox color="primary" size="lg" shape="full" class="mx-auto">
+            <BaseIconBox
+              color="primary"
+              size="lg"
+              shape="full"
+              class="mx-auto"
+            >
               <Icon
                 v-if="twoFaMode === 'email_address'"
                 name="ph:envelope-duotone"
@@ -314,7 +338,12 @@ const validatePin = computed(() => {
             </BaseIconBox>
           </div>
           <div class="pt-4 text-center">
-            <BaseHeading tag="h2" size="3xl" weight="medium" class="mb-1">
+            <BaseHeading
+              tag="h2"
+              size="3xl"
+              weight="medium"
+              class="mb-1"
+            >
               Enter your {{ twoFaMode.split('_').join(' ') }}
             </BaseHeading>
             <BaseParagraph class="text-muted-500 dark:text-muted-400">
@@ -351,15 +380,19 @@ const validatePin = computed(() => {
               <div class="flex items-center gap-2">
                 <Icon name="logos:authy" class="h-6 w-6" />
                 <div>
-                  <BaseText size="sm" class="text-muted-500 dark:text-muted-400"
-                    >Only
+                  <BaseText
+                    size="sm"
+                    class="text-muted-500 dark:text-muted-400"
+                  >
+                    Only
                     <NuxtLink
                       to="https://authy.com/"
                       class="text-primary-500 underline-offset-4 hover:underline"
-                      >Authy</NuxtLink
                     >
-                    is supported so far</BaseText
-                  >
+                      Authy
+                    </NuxtLink>
+                    is supported so far
+                  </BaseText>
                 </div>
               </div>
               <BaseInput
@@ -383,8 +416,9 @@ const validatePin = computed(() => {
               color="primary"
               :loading="loading"
               @click="goToStep(3)"
-              >Continue</BaseButton
             >
+              Continue
+            </BaseButton>
             <button
               type="button"
               class="text-muted-400 hover:text-primary-500 mt-4 text-xs font-medium underline-offset-4 transition-colors duration-300 hover:underline"
@@ -418,7 +452,12 @@ const validatePin = computed(() => {
               </div>
             </div>
             <div class="pt-4 text-center">
-              <BaseHeading tag="h2" size="3xl" weight="medium" class="mb-1">
+              <BaseHeading
+                tag="h2"
+                size="3xl"
+                weight="medium"
+                class="mb-1"
+              >
                 Enter your code
               </BaseHeading>
               <BaseParagraph class="text-muted-500 dark:text-muted-400 mb-2">
@@ -442,24 +481,24 @@ const validatePin = computed(() => {
                 :class="validatePin && 'pointer-events-none'"
               >
                 <input
-                  type="text"
-                  :name="'pin' + i"
                   v-for="i in codeLength"
                   :key="'pin' + i"
-                  maxlength="1"
-                  class="dark:bg-muted-800 unselectable nui-focus inline w-16 select-none rounded-lg bg-white py-5 text-center text-4xl font-bold transition-all"
-                  @paste.prevent="(event) => paste(event)"
-                  @keydown="(event) => type(event, i)"
-                  :value="input[i - 1] !== undefined ? input[i - 1] : '-'"
                   :ref="
                     (el) => {
                       inputElements[i] = el as HTMLInputElement
                     }
                   "
+                  v-focus="i === 1"
+                  type="text"
+                  :name="'pin' + i"
+                  maxlength="1"
+                  class="dark:bg-muted-800 unselectable nui-focus inline w-16 select-none rounded-lg bg-white py-5 text-center text-4xl font-bold transition-all"
+                  :value="input[i - 1] !== undefined ? input[i - 1] : '-'"
                   placeholder="0"
                   :disabled="input.length < i - 1 || validatePin"
-                  v-focus="i === 1"
-                />
+                  @paste.prevent="(event) => paste(event)"
+                  @keydown="(event) => type(event, i)"
+                >
               </div>
               <div class="mt-10">
                 <BaseButton
@@ -468,13 +507,17 @@ const validatePin = computed(() => {
                   class="!h-12"
                   :color="validatePin ? 'primary' : 'default'"
                   :disabled="!validatePin"
-                  >Take me to Dashboard</BaseButton
                 >
+                  Take me to Dashboard
+                </BaseButton>
 
                 <div class="mt-8 flex items-center justify-between">
-                  <BaseText size="sm" class="text-muted-400"
-                    >Didn't receive the code?</BaseText
+                  <BaseText
+                    size="sm"
+                    class="text-muted-400"
                   >
+                    Didn't receive the code?
+                  </BaseText>
                   <button
                     type="button"
                     class="text-primary-500 font-sans text-sm underline-offset-4 hover:underline"

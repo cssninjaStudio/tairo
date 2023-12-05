@@ -53,7 +53,9 @@ const { data, pending, error, refresh } = await useFetch('/api/freelancers', {
         />
       </template>
       <template #right>
-        <BaseButton class="w-full sm:w-32">Manage</BaseButton>
+        <BaseButton class="w-full sm:w-32">
+          Manage
+        </BaseButton>
         <BaseButton color="primary" class="w-full sm:w-32">
           <Icon name="lucide:plus" class="h-4 w-4" />
           <span>Add User</span>
@@ -70,12 +72,12 @@ const { data, pending, error, refresh } = await useFetch('/api/freelancers', {
                 class="block dark:hidden"
                 src="/img/illustrations/placeholders/flat/placeholder-search-1.svg"
                 alt="Placeholder image"
-              />
+              >
               <img
                 class="hidden dark:block"
                 src="/img/illustrations/placeholders/flat/placeholder-search-1-dark.svg"
                 alt="Placeholder image"
-              />
+              >
             </template>
           </BasePlaceholderPage>
         </div>
@@ -194,8 +196,14 @@ const { data, pending, error, refresh } = await useFetch('/api/freelancers', {
                 <div
                   class="ptablet:hidden flex w-full items-center justify-center gap-1 py-3 sm:w-[160px] sm:justify-end sm:py-0"
                 >
-                  <BaseAvatarGroup size="xs" :avatars="item.teams" :limit="3" />
-                  <p class="text-muted-400 font-sans text-xs">In Team</p>
+                  <BaseAvatarGroup
+                    size="xs"
+                    :avatars="item.teams"
+                    :limit="3"
+                  />
+                  <p class="text-muted-400 font-sans text-xs">
+                    In Team
+                  </p>
                 </div>
                 <div class="sm:ms-6">
                   <BaseButtonAction class="w-full sm:w-auto">

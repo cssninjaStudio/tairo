@@ -58,7 +58,7 @@ const activeTab = ref('tab-1')
             activeTab === 'tab-2' && 'ms-[33.3%]',
             activeTab === 'tab-3' && 'ms-[66.6%]',
           ]"
-        ></div>
+        />
       </div>
     </div>
 
@@ -79,7 +79,7 @@ const activeTab = ref('tab-1')
                 src="/img/avatars/2.svg"
                 class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                 alt=""
-              />
+              >
             </div>
             <div class="ms-3">
               <h6
@@ -87,7 +87,9 @@ const activeTab = ref('tab-1')
               >
                 You
               </h6>
-              <p class="text-muted-400 font-sans text-xs">Product Manager</p>
+              <p class="text-muted-400 font-sans text-xs">
+                Product Manager
+              </p>
             </div>
             <NuxtLink
               to="#"
@@ -107,7 +109,7 @@ const activeTab = ref('tab-1')
                 src="/img/avatars/16.svg"
                 class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                 alt=""
-              />
+              >
             </div>
             <div class="ms-3">
               <h6
@@ -115,7 +117,9 @@ const activeTab = ref('tab-1')
               >
                 Aaaron Splatter
               </h6>
-              <p class="text-muted-400 font-sans text-xs">Mobile Developer</p>
+              <p class="text-muted-400 font-sans text-xs">
+                Mobile Developer
+              </p>
             </div>
             <NuxtLink
               to="#"
@@ -135,7 +139,7 @@ const activeTab = ref('tab-1')
                 src="/img/avatars/3.svg"
                 class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                 alt=""
-              />
+              >
             </div>
             <div class="ms-3">
               <h6
@@ -143,7 +147,9 @@ const activeTab = ref('tab-1')
               >
                 Mike Miller
               </h6>
-              <p class="text-muted-400 font-sans text-xs">Frontend Developer</p>
+              <p class="text-muted-400 font-sans text-xs">
+                Frontend Developer
+              </p>
             </div>
             <NuxtLink
               to="#"
@@ -163,7 +169,7 @@ const activeTab = ref('tab-1')
                 src="/img/avatars/19.svg"
                 class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                 alt=""
-              />
+              >
             </div>
             <div class="ms-3">
               <h6
@@ -171,7 +177,9 @@ const activeTab = ref('tab-1')
               >
                 Clarissa Perez
               </h6>
-              <p class="text-muted-400 font-sans text-xs">Sales Manager</p>
+              <p class="text-muted-400 font-sans text-xs">
+                Sales Manager
+              </p>
             </div>
             <NuxtLink
               to="#"
@@ -196,7 +204,7 @@ const activeTab = ref('tab-1')
                   src="/img/icons/logos/slicer.svg"
                   class="max-w-full rounded-xl object-cover shadow-sm dark:border-transparent"
                   alt=""
-                />
+                >
               </div>
               <div class="ms-3">
                 <h6
@@ -204,7 +212,9 @@ const activeTab = ref('tab-1')
                 >
                   The slicer project
                 </h6>
-                <p class="text-muted-400 font-sans text-xs">getslicer.io</p>
+                <p class="text-muted-400 font-sans text-xs">
+                  getslicer.io
+                </p>
               </div>
               <NuxtLink
                 to="#"
@@ -218,7 +228,7 @@ const activeTab = ref('tab-1')
             >
               <div
                 class="bg-primary-500 absolute start-0 top-0 h-full w-[34%] rounded-lg transition duration-300"
-              ></div>
+              />
             </div>
             <div class="flex items-center justify-between">
               <span class="text-muted-400 font-sans">5/24</span>
@@ -230,7 +240,7 @@ const activeTab = ref('tab-1')
                     src="/img/avatars/2.svg"
                     class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""
-                  />
+                  >
                 </div>
                 <div
                   class="dark:border-muted-700 relative -ms-2 inline-flex h-8 w-8 items-center justify-center rounded-full border-2 border-white"
@@ -239,7 +249,7 @@ const activeTab = ref('tab-1')
                     src="/img/avatars/3.svg"
                     class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""
-                  />
+                  >
                 </div>
                 <div
                   class="dark:border-muted-700 relative -ms-2 inline-flex h-8 w-8 items-center justify-center rounded-full border-2 border-white"
@@ -248,7 +258,7 @@ const activeTab = ref('tab-1')
                     src="/img/avatars/4.svg"
                     class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""
-                  />
+                  >
                 </div>
                 <div
                   class="bg-muted-200 dark:border-muted-700 dark:bg-muted-800 relative -ms-2 inline-flex h-8 w-8 items-center justify-center rounded-full border-2 border-white"
@@ -274,7 +284,7 @@ const activeTab = ref('tab-1')
                   src="/img/icons/logos/metamovies.svg"
                   class="max-w-full rounded-xl object-cover shadow-sm dark:border-transparent"
                   alt=""
-                />
+                >
               </div>
               <div class="ms-3">
                 <h6
@@ -282,7 +292,9 @@ const activeTab = ref('tab-1')
                 >
                   Metamovies reworked
                 </h6>
-                <p class="text-muted-400 font-sans text-xs">metamovies.co</p>
+                <p class="text-muted-400 font-sans text-xs">
+                  metamovies.co
+                </p>
               </div>
               <NuxtLink
                 to="#"
@@ -296,7 +308,7 @@ const activeTab = ref('tab-1')
             >
               <div
                 class="bg-primary-500 absolute start-0 top-0 h-full w-[88%] rounded-lg transition duration-300"
-              ></div>
+              />
             </div>
             <div class="flex items-center justify-between">
               <span class="text-muted-400 font-sans">28/31</span>
@@ -308,7 +320,7 @@ const activeTab = ref('tab-1')
                     src="/img/avatars/13.svg"
                     class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""
-                  />
+                  >
                 </div>
                 <div
                   class="dark:border-muted-700 relative -ms-2 inline-flex h-8 w-8 items-center justify-center rounded-full border-2 border-white"
@@ -317,7 +329,7 @@ const activeTab = ref('tab-1')
                     src="/img/avatars/24.svg"
                     class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""
-                  />
+                  >
                 </div>
               </div>
             </div>
@@ -334,7 +346,7 @@ const activeTab = ref('tab-1')
                   src="/img/icons/logos/fastpizza.svg"
                   class="max-w-full rounded-xl object-cover shadow-sm dark:border-transparent"
                   alt=""
-                />
+                >
               </div>
               <div class="ms-3">
                 <h6
@@ -342,7 +354,9 @@ const activeTab = ref('tab-1')
                 >
                   Fast Pizza redesign
                 </h6>
-                <p class="text-muted-400 font-sans text-xs">fastpizza.com</p>
+                <p class="text-muted-400 font-sans text-xs">
+                  fastpizza.com
+                </p>
               </div>
               <NuxtLink
                 to="#"
@@ -356,7 +370,7 @@ const activeTab = ref('tab-1')
             >
               <div
                 class="bg-primary-500 absolute start-0 top-0 h-full w-[62%] rounded-lg transition duration-300"
-              ></div>
+              />
             </div>
             <div class="flex items-center justify-between">
               <span class="text-muted-400 font-sans">25/39</span>
@@ -368,7 +382,7 @@ const activeTab = ref('tab-1')
                     src="/img/avatars/11.svg"
                     class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""
-                  />
+                  >
                 </div>
                 <div
                   class="dark:border-muted-700 relative -ms-2 inline-flex h-8 w-8 items-center justify-center rounded-full border-2 border-white"
@@ -377,7 +391,7 @@ const activeTab = ref('tab-1')
                     src="/img/avatars/3.svg"
                     class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""
-                  />
+                  >
                 </div>
               </div>
             </div>
@@ -403,7 +417,9 @@ const activeTab = ref('tab-1')
                 >
                   Call Danny at Colby's
                 </h6>
-                <p class="text-muted-400 font-sans text-xs">Today - 11:30am</p>
+                <p class="text-muted-400 font-sans text-xs">
+                  Today - 11:30am
+                </p>
               </div>
             </div>
             <!-- Item -->
@@ -420,7 +436,7 @@ const activeTab = ref('tab-1')
                     src="/img/avatars/3.svg"
                     class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""
-                  />
+                  >
                 </div>
               </div>
               <div class="ms-10">
@@ -429,7 +445,9 @@ const activeTab = ref('tab-1')
                 >
                   Meeting with Mike
                 </h6>
-                <p class="text-muted-400 font-sans text-xs">Today - 01:00pm</p>
+                <p class="text-muted-400 font-sans text-xs">
+                  Today - 01:00pm
+                </p>
               </div>
             </div>
             <!-- Item -->
@@ -447,7 +465,9 @@ const activeTab = ref('tab-1')
                 >
                   Answer Annie's message
                 </h6>
-                <p class="text-muted-400 font-sans text-xs">Today - 01:45pm</p>
+                <p class="text-muted-400 font-sans text-xs">
+                  Today - 01:45pm
+                </p>
               </div>
             </div>
             <!-- Item -->
@@ -464,7 +484,7 @@ const activeTab = ref('tab-1')
                     src="/img/avatars/18.svg"
                     class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""
-                  />
+                  >
                 </div>
               </div>
               <div class="ms-10">
@@ -473,7 +493,9 @@ const activeTab = ref('tab-1')
                 >
                   Meeting with John
                 </h6>
-                <p class="text-muted-400 font-sans text-xs">Today - 03:00pm</p>
+                <p class="text-muted-400 font-sans text-xs">
+                  Today - 03:00pm
+                </p>
               </div>
             </div>
             <!-- Item -->
@@ -491,7 +513,9 @@ const activeTab = ref('tab-1')
                 >
                   Send marketing campaign
                 </h6>
-                <p class="text-muted-400 font-sans text-xs">Today - 03:30pm</p>
+                <p class="text-muted-400 font-sans text-xs">
+                  Today - 03:30pm
+                </p>
               </div>
             </div>
             <!-- Item -->
@@ -509,7 +533,9 @@ const activeTab = ref('tab-1')
                 >
                   Project review
                 </h6>
-                <p class="text-muted-400 font-sans text-xs">Today - 04:30pm</p>
+                <p class="text-muted-400 font-sans text-xs">
+                  Today - 04:30pm
+                </p>
               </div>
             </div>
             <!-- Item -->
@@ -527,7 +553,9 @@ const activeTab = ref('tab-1')
                 >
                   Write proposal for Andy
                 </h6>
-                <p class="text-muted-400 font-sans text-xs">Today - 06:30pm</p>
+                <p class="text-muted-400 font-sans text-xs">
+                  Today - 06:30pm
+                </p>
               </div>
             </div>
           </div>

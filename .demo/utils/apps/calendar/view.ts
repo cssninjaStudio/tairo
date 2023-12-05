@@ -14,9 +14,9 @@ export function dateToTop(
   const hour = Math.max(date.getHours() - (settings.hourOpen || 0), 0)
   const minutes = date.getMinutes()
   return (
-    hour * settings.hourHeight +
-    (settings.hourHeight / 60) * minutes +
-    settings.dayOffsetY
+    hour * settings.hourHeight
+    + (settings.hourHeight / 60) * minutes
+    + settings.dayOffsetY
   )
 }
 
@@ -25,12 +25,12 @@ export function topToDate(
   top = 0,
   currentDay = new Date(),
 ) {
-  const hour =
-    Math.floor((top - settings.dayOffsetY) / settings.hourHeight) +
-    (settings.hourOpen || 0)
+  const hour
+    = Math.floor((top - settings.dayOffsetY) / settings.hourHeight)
+    + (settings.hourOpen || 0)
   const minutes = Math.floor(
-    ((top - settings.dayOffsetY) % settings.hourHeight) /
-      (settings.hourHeight / 60),
+    ((top - settings.dayOffsetY) % settings.hourHeight)
+    / (settings.hourHeight / 60),
   )
 
   if (hour < (settings.hourOpen || 0) || minutes < 0) {

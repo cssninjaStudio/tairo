@@ -32,7 +32,7 @@ const activePosts = ref('recent')
                   class="pointer-events-none absolute start-6 top-0 sm:-start-10"
                   src="/img/illustrations/dashboards/writer/readers.svg"
                   alt="Readers illustration"
-                />
+                >
               </div>
               <div class="mt-6 grow sm:mt-0">
                 <div class="pb-4 text-center sm:pb-0 sm:text-left">
@@ -216,7 +216,7 @@ const activePosts = ref('recent')
                 src="/img/illustrations/dashboards/writer/post-1.svg"
                 alt="Post image"
                 class="bg-muted-200 rounded-xl"
-              />
+              >
               <BaseCard
                 class="shadow-muted-300/30 dark:shadow-muted-900/20 -mt-8 !rounded-2xl p-6 shadow-xl"
               >
@@ -267,7 +267,7 @@ const activePosts = ref('recent')
                 src="/img/illustrations/dashboards/writer/post-2.svg"
                 alt="Post image"
                 class="bg-muted-200 rounded-xl"
-              />
+              >
               <BaseCard
                 class="shadow-muted-300/30 dark:shadow-muted-900/20 -mt-8 !rounded-2xl p-6 shadow-xl"
               >

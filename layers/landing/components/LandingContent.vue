@@ -4,8 +4,9 @@
       <div class="mb-10 max-w-2xl">
         <BaseText
           class="text-primary-500 mb-2 text-[0.65rem] uppercase tracking-wider"
-          >Rock Solid</BaseText
         >
+          Rock Solid
+        </BaseText>
         <BaseHeading
           as="h2"
           size="4xl"
@@ -169,7 +170,7 @@
           class="mx-auto max-w-full sm:max-w-3xl"
           loading="lazy"
           decoding="async"
-        />
+        >
         <div class="mx-auto mb-3 max-w-md text-center">
           <BaseHeading
             as="h3"
@@ -203,8 +204,9 @@
             <NuxtLink
               class="hover:text-primary-500 underline-offset-4 transition-colors duration-200 hover:underline"
               to="https://cssninja.io"
-              >cssninja.io</NuxtLink
             >
+              cssninja.io
+            </NuxtLink>
           </BaseParagraph>
         </div>
       </div>

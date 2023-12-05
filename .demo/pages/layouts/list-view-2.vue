@@ -64,12 +64,12 @@ const { data, pending, error, refresh } = await useFetch('/api/rentals', {
                   class="block dark:hidden"
                   src="/img/illustrations/placeholders/flat/placeholder-search-2.svg"
                   alt="Placeholder image"
-                />
+                >
                 <img
                   class="hidden dark:block"
                   src="/img/illustrations/placeholders/flat/placeholder-search-2-dark.svg"
                   alt="Placeholder image"
-                />
+                >
               </template>
             </BasePlaceholderPage>
           </div>
@@ -97,7 +97,7 @@ const { data, pending, error, refresh } = await useFetch('/api/rentals', {
                     :alt="item.name"
                     :height="190"
                     :width="130"
-                  />
+                  >
                   <div>
                     <div
                       class="flex flex-col gap-2 text-left sm:flex-row sm:items-center"
@@ -214,7 +214,9 @@ const { data, pending, error, refresh } = await useFetch('/api/rentals', {
                 <div
                   class="ptablet:flex-col mt-4 flex items-center justify-end gap-2 sm:ms-auto sm:mt-4"
                 >
-                  <BaseButton class="w-full sm:w-28">More Info</BaseButton>
+                  <BaseButton class="w-full sm:w-28">
+                    More Info
+                  </BaseButton>
                   <BaseButton color="primary" class="w-full sm:w-28">
                     <span>Book Now</span>
                   </BaseButton>
@@ -244,12 +246,12 @@ const { data, pending, error, refresh } = await useFetch('/api/rentals', {
               class="block dark:hidden"
               src="/img/illustrations/placeholders/flat/placeholder-having-coffee.svg"
               alt="Placeholder image"
-            />
+            >
             <img
               class="hidden dark:block"
               src="/img/illustrations/placeholders/flat/placeholder-having-coffee-dark.svg"
               alt="Placeholder image"
-            />
+            >
           </template>
         </BasePlaceholderPage>
       </template>

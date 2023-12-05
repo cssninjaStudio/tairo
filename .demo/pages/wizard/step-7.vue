@@ -415,7 +415,11 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
                       :key="tool.name"
                       class="flex items-center gap-2"
                     >
-                      <img :src="tool.logo" class="h-8 w-8" />
+                      <img
+                        :src="tool.logo"
+                        class="h-8 w-8"
+                        alt=""
+                      >
                       <div>
                         <div
                           class="text-muted-800 dark:text-muted-100 text-sm font-medium"
@@ -464,7 +468,7 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
               src="/img/illustrations/wizard/finish.svg"
               class="mx-auto max-w-[210px] rounded-full"
               alt="Upload files"
-            />
+            >
           </template>
           <div class="mt-2 text-center">
             <BaseButton

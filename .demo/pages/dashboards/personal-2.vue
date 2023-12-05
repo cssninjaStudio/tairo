@@ -241,7 +241,7 @@ function useBarTeamEfficiency() {
                   <Icon
                     name="ph:crown-duotone"
                     class="text-primary-900/50 h-10 w-10"
-                  ></Icon>
+                  />
                 </div>
               </BaseCard>
             </div>
@@ -375,14 +375,14 @@ function useBarTeamEfficiency() {
                   width="225"
                   height="150"
                   alt="Placeholder illustration"
-                />
+                >
                 <img
                   src="/img/illustrations/placeholders/flat/chart-guy-dark.svg"
                   class="hidden w-full dark:block"
                   width="225"
                   height="150"
                   alt="Placeholder illustration"
-                />
+                >
               </template>
               <BaseHeading
                 as="h4"
@@ -400,7 +400,11 @@ function useBarTeamEfficiency() {
                 </span>
               </BaseParagraph>
               <template #action>
-                <BaseButton color="primary" shape="rounded" class="w-full">
+                <BaseButton
+                  color="primary"
+                  shape="rounded"
+                  class="w-full"
+                >
                   <span>Upgrade to Pro</span>
                 </BaseButton>
               </template>

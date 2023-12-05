@@ -111,7 +111,11 @@ const projects = [
         </BaseParagraph>
       </div>
       <div class="ms-auto hidden md:block">
-        <BaseAvatarGroup :avatars="project.members" size="sm" :limit="3" />
+        <BaseAvatarGroup
+          :avatars="project.members"
+          size="sm"
+          :limit="3"
+        />
       </div>
     </div>
   </div>

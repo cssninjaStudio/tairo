@@ -29,32 +29,46 @@ definePageMeta({
                   class="block dark:hidden"
                   src="/img/illustrations/placeholders/flat/placeholder-promotion.svg"
                   alt="placeholder-image"
-                />
+                >
                 <img
                   class="hidden dark:block"
                   src="/img/illustrations/placeholders/flat/placeholder-promotion-dark.svg"
                   alt="placeholder-image"
-                />
+                >
               </template>
 
               <div
                 class="mx-auto mt-6 flex w-full max-w-[280px] items-end justify-center gap-2"
               >
-                <BaseHeading as="h3" size="2xl" weight="medium" lead="none">
+                <BaseHeading
+                  as="h3"
+                  size="2xl"
+                  weight="medium"
+                  lead="none"
+                >
                   <span class="text-muted-400 text-sm">Only</span>
                   <span class="px-1"> $44.99</span>
                   <span class="text-muted-400 text-sm">/per month</span>
                 </BaseHeading>
               </div>
               <div class="mt-8 flex items-center justify-between gap-2">
-                <BaseButton class="w-full">Skip</BaseButton>
-                <BaseButton color="primary" class="w-full">Upgrade</BaseButton>
+                <BaseButton class="w-full">
+                  Skip
+                </BaseButton>
+                <BaseButton color="primary" class="w-full">
+                  Upgrade
+                </BaseButton>
               </div>
             </BasePlaceholderPage>
           </div>
           <div>
             <div class="flex flex-col p-8">
-              <BaseHeading tag="h2" size="md" weight="medium" class="mt-4">
+              <BaseHeading
+                tag="h2"
+                size="md"
+                weight="medium"
+                class="mt-4"
+              >
                 Upgrade Now
               </BaseHeading>
               <BaseText
@@ -76,7 +90,11 @@ definePageMeta({
                       />
                     </div>
                     <div>
-                      <BaseHeading as="h3" size="sm" weight="medium">
+                      <BaseHeading
+                        as="h3"
+                        size="sm"
+                        weight="medium"
+                      >
                         8 team seats
                       </BaseHeading>
                       <BaseText
@@ -98,7 +116,11 @@ definePageMeta({
                       />
                     </div>
                     <div>
-                      <BaseHeading as="h3" size="sm" weight="medium">
+                      <BaseHeading
+                        as="h3"
+                        size="sm"
+                        weight="medium"
+                      >
                         Integrations
                       </BaseHeading>
                       <BaseText
@@ -120,7 +142,11 @@ definePageMeta({
                       />
                     </div>
                     <div>
-                      <BaseHeading as="h3" size="sm" weight="medium">
+                      <BaseHeading
+                        as="h3"
+                        size="sm"
+                        weight="medium"
+                      >
                         Growth scaling
                       </BaseHeading>
                       <BaseText

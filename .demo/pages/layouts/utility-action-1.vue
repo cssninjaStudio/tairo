@@ -24,7 +24,12 @@ definePageMeta({
             badge-src="/img/stacks/reactjs.svg"
           />
           <div class="mx-auto mb-4 max-w-xs text-center">
-            <BaseHeading tag="h2" size="md" weight="medium" class="mt-4">
+            <BaseHeading
+              tag="h2"
+              size="md"
+              weight="medium"
+              class="mt-4"
+            >
               Kendra W. has invited you to the
               <span class="text-primary-500">Banking Solution Website</span>
               project.
@@ -74,8 +79,12 @@ definePageMeta({
               </BaseText>
             </div>
             <div class="mt-6 flex items-center justify-between gap-2">
-              <BaseButton class="w-full">Decline</BaseButton>
-              <BaseButton color="primary" class="w-full">Accept</BaseButton>
+              <BaseButton class="w-full">
+                Decline
+              </BaseButton>
+              <BaseButton color="primary" class="w-full">
+                Accept
+              </BaseButton>
             </div>
           </div>
         </div>

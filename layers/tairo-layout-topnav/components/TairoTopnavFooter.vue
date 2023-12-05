@@ -34,7 +34,7 @@ const year = new Date().getFullYear()
       <component
         :is="resolveComponentOrNative(config.logoSeparator.component)"
         v-bind="config.logoSeparator.props"
-      ></component>
+      />
     </NuxtLink>
     <div
       class="ltablet:flex-row mx-auto flex flex-col items-center justify-between px-6 py-8 lg:flex-row"
@@ -54,9 +54,9 @@ const year = new Date().getFullYear()
         <component
           :is="resolveComponentOrNative(config.logo.component)"
           v-bind="config.logo.props"
-        ></component>
+        />
       </NuxtLink>
-      <div v-else class="ltablet:w-1/5 block w-full lg:w-1/5"></div>
+      <div v-else class="ltablet:w-1/5 block w-full lg:w-1/5" />
 
       <div
         class="ltablet:mt-0 ltablet:gap-6 mt-6 flex flex-wrap items-center justify-center gap-4 lg:mt-0 lg:gap-6"
@@ -89,9 +89,7 @@ const year = new Date().getFullYear()
           >
             {{ config.copyright.name }}
           </NuxtLink>
-          <span v-if="config?.copyright?.since"
-            >{{ config.copyright.since }}-{{ year }}.</span
-          >
+          <span v-if="config?.copyright?.since">{{ config.copyright.since }}-{{ year }}.</span>
         </span>
       </div>
     </div>

@@ -6,7 +6,7 @@ export default defineEventHandler(async (event) => {
 
   if (perPage >= 50) {
     // Create an artificial delay
-    await new Promise((resolve) => setTimeout(resolve, 1000))
+    await new Promise(resolve => setTimeout(resolve, 1000))
   }
 
   const data = await getDemoData()
@@ -30,7 +30,7 @@ function filterDemoData(
   const filterRe = new RegExp(filter, 'i')
   return data
     .filter((item) => {
-      return [item.username, item.location, item.position].some((item) =>
+      return [item.username, item.location, item.position].some(item =>
         item.match(filterRe),
       )
     })

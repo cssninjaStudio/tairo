@@ -75,13 +75,15 @@ const breadcrumb = computed(() => {
 
   if (indexRoute.meta.breadcrumb === false) {
     // skip breadcrumb item
-  } else if (indexRoute.meta.breadcrumb) {
+  }
+  else if (indexRoute.meta.breadcrumb) {
     const breadcrumbItem = indexRoute.meta.breadcrumb
     items.push({
       to: indexRoute.path,
       ...breadcrumbItem,
     })
-  } else if (indexRoute.meta.title) {
+  }
+  else if (indexRoute.meta.title) {
     items.push({
       label: indexRoute.meta.title as string,
       to: indexRoute.path,
@@ -89,7 +91,7 @@ const breadcrumb = computed(() => {
   }
 
   for (const item of tree.value || []) {
-    if (items.find((i) => i.to === item._path)) {
+    if (items.find(i => i.to === item._path)) {
       continue
     }
     items.push({
@@ -141,8 +143,12 @@ const metaKey = useMetaKey()
               <div>
                 <p>The page you are looking for does not exist.</p>
                 <div class="flex flex-row gap-6">
-                  <BaseButton to="/documentation">Back to Hub</BaseButton>
-                  <BaseButton color="none" to="/">Back to Home</BaseButton>
+                  <BaseButton to="/documentation">
+                    Back to Hub
+                  </BaseButton>
+                  <BaseButton color="none" to="/">
+                    Back to Home
+                  </BaseButton>
                 </div>
               </div>
             </DocComponentDemo>

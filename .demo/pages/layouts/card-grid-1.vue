@@ -64,10 +64,18 @@ const { data, pending, error, refresh } = await useFetch(
             wrapper: 'w-full sm:w-40',
           }"
         >
-          <option :value="10">10 per page</option>
-          <option :value="25">25 per page</option>
-          <option :value="50">50 per page</option>
-          <option :value="100">100 per page</option>
+          <option :value="10">
+            10 per page
+          </option>
+          <option :value="25">
+            25 per page
+          </option>
+          <option :value="50">
+            50 per page
+          </option>
+          <option :value="100">
+            100 per page
+          </option>
         </BaseSelect>
       </template>
       <div>
@@ -81,12 +89,12 @@ const { data, pending, error, refresh } = await useFetch(
                 class="block dark:hidden"
                 src="/img/illustrations/placeholders/flat/placeholder-search-6.svg"
                 alt="Placeholder image"
-              />
+              >
               <img
                 class="hidden dark:block"
                 src="/img/illustrations/placeholders/flat/placeholder-search-6-dark.svg"
                 alt="Placeholder image"
-              />
+              >
             </template>
           </BasePlaceholderPage>
         </div>

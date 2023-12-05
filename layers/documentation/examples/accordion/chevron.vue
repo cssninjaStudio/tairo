@@ -1,6 +1,10 @@
 <template>
   <div class="md:max-w-lg">
-    <BaseAccordion :items="accordion" exclusive action="chevron" />
+    <BaseAccordion
+      :items="accordion"
+      exclusive
+      action="chevron"
+    />
   </div>
 </template>
 

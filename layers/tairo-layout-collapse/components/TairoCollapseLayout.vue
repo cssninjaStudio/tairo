@@ -21,8 +21,8 @@ const { isOpen, isMobileOpen, toggle } = useCollapse()
 
 const collapseEnabled = computed(() => {
   return (
-    (app.tairo.collapse?.navigation?.enabled as boolean) !== false &&
-    props.collapse !== false
+    (app.tairo.collapse?.navigation?.enabled as boolean) !== false
+    && props.collapse !== false
   )
 })
 const toolbarEnabled = computed(() => {
@@ -32,8 +32,8 @@ const toolbarEnabled = computed(() => {
 })
 const circularMenuEnabled = computed(() => {
   return (
-    app.tairo.collapse?.circularMenu?.enabled as boolean !== false &&
-    props.circularMenu !== false
+    app.tairo.collapse?.circularMenu?.enabled as boolean !== false
+    && props.circularMenu !== false
   )
 })
 
@@ -52,7 +52,8 @@ const mainClass = computed(() => {
 
   if (isOpen.value) {
     list.push('lg:max-w-[calc(100%_-_280px)] lg:ms-[280px]')
-  } else {
+  }
+  else {
     list.push('lg:max-w-[calc(100%_-_80px)] lg:ms-[80px]')
   }
 
@@ -70,6 +71,7 @@ const mainClass = computed(() => {
       <TairoCollapseNavigation v-if="collapseEnabled" />
       <div
         role="button"
+        tabindex="0"
         class="bg-muted-800 dark:bg-muted-900 fixed start-0 top-0 z-[59] block h-full w-full transition-opacity duration-300 lg:hidden"
         :class="
           isMobileOpen
@@ -77,7 +79,7 @@ const mainClass = computed(() => {
             : 'opacity-0 pointer-events-none'
         "
         @click="toggle"
-      ></div>
+      />
     </slot>
 
     <div :class="mainClass">
@@ -96,7 +98,9 @@ const mainClass = computed(() => {
             :collapse="props.collapse"
             :horizontal-scroll="props.horizontalScroll"
           >
-            <template #title><slot name="toolbar-title"></slot></template>
+            <template #title>
+              <slot name="toolbar-title" />
+            </template>
           </TairoCollapseToolbar>
         </slot>
 

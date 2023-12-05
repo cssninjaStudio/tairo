@@ -25,5 +25,5 @@ export function toDate(format: string): WithTimeOptions {
 }
 
 export function toFixed(fractionDigit: number, divider = 1): WithOptions {
-  return (val) => (val / divider).toFixed(fractionDigit)
+  return val => (val / divider).toFixed(fractionDigit)
 }

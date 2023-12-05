@@ -21,13 +21,13 @@ export function useCreateEvent(
   onKeyStroke('Escape', clearNew)
 
   const hasNew = computed(() => {
-    return toValue(calendarEvents).some((attr) => attr.key === 'new')
+    return toValue(calendarEvents).some(attr => attr.key === 'new')
   })
 
   function clearNew() {
     const calendarEventsValue = toValue(calendarEvents)
     // clear new
-    const idx = calendarEventsValue.findIndex((attr) => attr.key === 'new')
+    const idx = calendarEventsValue.findIndex(attr => attr.key === 'new')
 
     if (idx !== -1) {
       calendarEventsValue.splice(idx, 1)

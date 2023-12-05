@@ -49,7 +49,7 @@ function onSelectType(type: ProjectType) {
             class="rounded-2xl"
             src="/img/illustrations/wizard/design.svg"
             alt="UI/UX design"
-          />
+          >
           <div class="my-4">
             <BaseHeading
               tag="h3"
@@ -101,7 +101,7 @@ function onSelectType(type: ProjectType) {
             class="rounded-2xl"
             src="/img/illustrations/wizard/development.svg"
             alt="Web Development"
-          />
+          >
           <div class="my-4">
             <BaseHeading
               tag="h3"
@@ -153,7 +153,7 @@ function onSelectType(type: ProjectType) {
             class="rounded-2xl"
             src="/img/illustrations/wizard/marketing.svg"
             alt="Web Development"
-          />
+          >
           <div class="my-4">
             <BaseHeading
               tag="h3"

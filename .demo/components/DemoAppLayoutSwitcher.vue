@@ -179,12 +179,12 @@ function switchMuted(color: (typeof mutedPresets)[number]) {
 
     <!-- Body -->
     <div
-      class="px-4 pb-4 md:px-6 md:pb-6 max-h-[550px] overflow-y-auto nui-slimscroll"
+      class="nui-slimscroll max-h-[550px] overflow-y-auto px-4 pb-4 md:px-6 md:pb-6"
     >
       <div class="grid grid-cols-12 gap-6">
         <div
           v-if="canChangeLayout"
-          class="col-span-12 sm:col-span-7 flex flex-col gap-4"
+          class="col-span-12 flex flex-col gap-4 sm:col-span-7"
         >
           <div>
             <BaseHeading
@@ -200,7 +200,7 @@ function switchMuted(color: (typeof mutedPresets)[number]) {
             </BaseParagraph>
           </div>
           <div
-            class="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 bg-muted-100 dark:bg-muted-700/40 rounded-xl"
+            class="bg-muted-100 dark:bg-muted-700/40 grid grid-cols-1 gap-4 rounded-xl p-4 sm:grid-cols-2"
           >
             <BaseCard
               v-for="layout in layouts"
@@ -216,24 +216,24 @@ function switchMuted(color: (typeof mutedPresets)[number]) {
               >
                 <img
                   :src="`/img/illustrations/switcher/layout-${layout.name}-default.svg`"
-                  class="block dark:hidden max-w-[110px] mx-auto transition-opacity duration-200"
+                  class="mx-auto block max-w-[110px] transition-opacity duration-200 dark:hidden"
                   :class="
                     activeLayoutName === layout.name
                       ? 'opacity-100'
                       : 'opacity-60'
                   "
                   :alt="`${layout.name} layout`"
-                />
+                >
                 <img
                   :src="`/img/illustrations/switcher/layout-${layout.name}-default-dark.svg`"
-                  class="hidden dark:block max-w-[110px] mx-auto transition-opacity duration-200"
+                  class="mx-auto hidden max-w-[110px] transition-opacity duration-200 dark:block"
                   :class="
                     activeLayoutName === layout.name
                       ? 'opacity-100'
                       : 'opacity-60'
                   "
                   :alt="`${layout.name} layout`"
-                />
+                >
               </div>
               <div class="flex items-center justify-between py-2">
                 <BaseText
@@ -249,7 +249,7 @@ function switchMuted(color: (typeof mutedPresets)[number]) {
                 </BaseText>
                 <Icon
                   name="ph:check-circle-duotone"
-                  class="w-5 h-5 text-success-500 transition-opacity duration-200"
+                  class="text-success-500 h-5 w-5 transition-opacity duration-200"
                   :class="
                     activeLayoutName === layout.name
                       ? 'opacity-100'
@@ -278,41 +278,48 @@ function switchMuted(color: (typeof mutedPresets)[number]) {
             </BaseParagraph>
           </div>
           <div class="space-y-1">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4">
+            <div class="grid grid-cols-1 gap-x-4 sm:grid-cols-2">
               <div v-for="color in primaryPresets" :key="color.name">
                 <button
                   type="button"
-                  class="group w-full flex items-center gap-3 p-2 rounded-lg hover:bg-muted-100 dark:hover:bg-muted-700/70 transition-colors duration-200"
-                  @click="() => switchPrimary(color)"
+                  class="hover:bg-muted-100 dark:hover:bg-muted-700/70 group flex w-full items-center gap-3 rounded-lg p-2 transition-colors duration-200"
                   :class="[
                     currentPrimary === color.name
-                      ? 'ring-1 ring-primary-500 z-10 relative'
+                      ? 'ring-primary-500 relative z-10 ring-1'
                       : 'ring-0',
                   ]"
+                  @click="() => switchPrimary(color)"
                 >
                   <span
-                    class="block h-6 w-6 rounded-lg shrink-0"
+                    class="block h-6 w-6 shrink-0 rounded-lg"
                     :class="color.class"
-                  ></span>
-                  <BaseText size="sm">{{ color.label }}</BaseText>
+                  />
+                  <BaseText size="sm">
+                    {{ color.label }}
+                  </BaseText>
                 </button>
               </div>
             </div>
-            <hr class="border-muted-200 dark:border-muted-700" />
+            <hr class="border-muted-200 dark:border-muted-700">
             <div>
               <button
                 type="button"
-                class="group w-full flex items-center gap-3 p-2 rounded-lg"
+                class="group flex w-full items-center gap-3 rounded-lg p-2"
               >
                 <span
-                  class="block h-6 w-6 rounded-lg bg-muted-200 dark:bg-muted-900"
-                ></span>
-                <BaseText size="sm">Background shade</BaseText>
+                  class="bg-muted-200 dark:bg-muted-900 block h-6 w-6 rounded-lg"
+                />
+                <BaseText size="sm">
+                  Background shade
+                </BaseText>
               </button>
               <div class="flex items-center px-2 pt-2">
-                <BaseText size="xs" class="text-muted-400"
-                  >Pick a shade</BaseText
+                <BaseText
+                  size="xs"
+                  class="text-muted-400"
                 >
+                  Pick a shade
+                </BaseText>
                 <div class="ml-auto flex items-center justify-end gap-2">
                   <button
                     v-for="color in mutedPresets"
@@ -322,12 +329,12 @@ function switchMuted(color: (typeof mutedPresets)[number]) {
                     :class="[
                       color.class,
                       currentMuted === color.name
-                        ? 'ring-1 ring-primary-500'
+                        ? 'ring-primary-500 ring-1'
                         : 'ring-0',
                     ]"
                     :data-nui-tooltip="color.label"
                     @click="() => switchMuted(color)"
-                  ></button>
+                  />
                 </div>
               </div>
             </div>

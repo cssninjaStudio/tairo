@@ -5,7 +5,11 @@
 
       <BaseCheckboxAnimated :model-value="true" :classes="{ label: 'text-primary-500' }" />
 
-      <BaseCheckboxAnimated :model-value="true" disabled :classes="{ label: 'text-primary-500' }" />
+      <BaseCheckboxAnimated
+        :model-value="true"
+        disabled
+        :classes="{ label: 'text-primary-500' }"
+      />
     </BaseFocusLoop>
   </div>
 </template>

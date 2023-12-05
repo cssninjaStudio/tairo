@@ -6,7 +6,7 @@ export default defineEventHandler(async (event) => {
 
   if (perPage >= 50) {
     // Create an artificial delay
-    await new Promise((resolve) => setTimeout(resolve, 1000))
+    await new Promise(resolve => setTimeout(resolve, 1000))
   }
 
   const data = await getDemoData()
@@ -31,7 +31,7 @@ function filterDemoData(
   return data
     .filter((item) => {
       return [item.username, item.location, item.position, item.industry].some(
-        (item) => item.match(filterRe),
+        item => item.match(filterRe),
       )
     })
     .slice(offset, offset + perPage)

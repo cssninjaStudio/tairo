@@ -65,12 +65,12 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                   class="block dark:hidden"
                   src="/img/illustrations/placeholders/flat/placeholder-search-3.svg"
                   alt="Placeholder image"
-                />
+                >
                 <img
                   class="hidden dark:block"
                   src="/img/illustrations/placeholders/flat/placeholder-search-3-dark.svg"
                   alt="Placeholder image"
-                />
+                >
               </template>
             </BasePlaceholderPage>
           </div>
@@ -149,7 +149,9 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                       :avatars="item.followers"
                       :limit="3"
                     />
-                    <p class="text-muted-400 font-sans text-xs">Like this</p>
+                    <p class="text-muted-400 font-sans text-xs">
+                      Like this
+                    </p>
                   </div>
                   <div class="flex w-full items-center gap-2 sm:w-auto">
                     <BaseButton
@@ -195,12 +197,12 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
               class="block dark:hidden"
               src="/img/illustrations/placeholders/flat/placeholder-cooking.svg"
               alt="Placeholder image"
-            />
+            >
             <img
               class="hidden dark:block"
               src="/img/illustrations/placeholders/flat/placeholder-cooking-dark.svg"
               alt="Placeholder image"
-            />
+            >
           </template>
         </BasePlaceholderPage>
       </template>

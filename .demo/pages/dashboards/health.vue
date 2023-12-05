@@ -160,13 +160,13 @@ function useScatterEnergy() {
   function generateDayWiseTimeSeries(
     baseval: number,
     count: number,
-    yrange: { min: number; max: number },
+    yrange: { min: number, max: number },
   ) {
     let i = 0
     const series = []
     while (i < count) {
-      const y =
-        Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min
+      const y
+        = Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min
 
       series.push([baseval, y])
       baseval += 86400000
@@ -407,7 +407,7 @@ function useGaugePersonal() {
               class="pointer-events-none absolute -start-6 -top-20 sm:-start-10"
               src="/img/illustrations/dashboards/health/doctor.svg"
               alt="Doctor illustration"
-            />
+            >
           </div>
           <div class="mt-6 grow sm:mt-0">
             <div class="text-center sm:text-left">

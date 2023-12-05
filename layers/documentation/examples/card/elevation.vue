@@ -1,6 +1,10 @@
 <template>
   <div class="grid gap-4 md:grid-cols-3">
-    <BaseCard shape="straight" elevated class="p-6">
+    <BaseCard
+      shape="straight"
+      elevated
+      class="p-6"
+    >
       <BaseHeading
         as="h4"
         size="sm"
@@ -11,12 +15,20 @@
         Iam a card
       </BaseHeading>
 
-      <BaseParagraph size="sm" lead="tight" class="text-muted-400">
+      <BaseParagraph
+        size="sm"
+        lead="tight"
+        class="text-muted-400"
+      >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       </BaseParagraph>
     </BaseCard>
 
-    <BaseCard shape="rounded" elevated class="p-6">
+    <BaseCard
+      shape="rounded"
+      elevated
+      class="p-6"
+    >
       <BaseHeading
         as="h4"
         size="sm"
@@ -27,12 +39,20 @@
         Iam a card
       </BaseHeading>
 
-      <BaseParagraph size="sm" lead="tight" class="text-muted-400">
+      <BaseParagraph
+        size="sm"
+        lead="tight"
+        class="text-muted-400"
+      >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       </BaseParagraph>
     </BaseCard>
 
-    <BaseCard shape="curved" elevated class="p-6">
+    <BaseCard
+      shape="curved"
+      elevated
+      class="p-6"
+    >
       <BaseHeading
         as="h4"
         size="sm"
@@ -43,7 +63,11 @@
         Iam a card
       </BaseHeading>
 
-      <BaseParagraph size="sm" lead="tight" class="text-muted-400">
+      <BaseParagraph
+        size="sm"
+        lead="tight"
+        class="text-muted-400"
+      >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       </BaseParagraph>
     </BaseCard>

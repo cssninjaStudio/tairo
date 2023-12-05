@@ -1,9 +1,7 @@
 <template>
   <div class="max-w-md">
     <div class="relative mb-2">
-      <label class="text-muted-500 dark:text-muted-400 mb-2 block text-xs font-semibold"
-        >Password strength</label
-      >
+      <label class="text-muted-500 dark:text-muted-400 mb-2 block text-xs font-semibold">Password strength</label>
 
       <BaseInput
         v-model="password"

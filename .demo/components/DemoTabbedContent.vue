@@ -72,16 +72,16 @@ const activeTab = ref('tab-1')
               props.shape === 'curved' ? 'rounded-xl' : '',
               props.shape === 'full' ? 'rounded-full' : '',
             ]"
-          ></div>
+          />
         </div>
       </div>
     </div>
     <div>
       <div v-if="activeTab === 'tab-1'">
-        <slot name="tab-1"></slot>
+        <slot name="tab-1" />
       </div>
       <div v-else-if="activeTab === 'tab-2'">
-        <slot name="tab-2"></slot>
+        <slot name="tab-2" />
       </div>
     </div>
   </div>

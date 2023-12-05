@@ -46,7 +46,11 @@ const props = defineProps<{
         decoding="async"
       />
       <div class="absolute inset-x-0 -bottom-2 mx-auto max-w-[85%]">
-        <BaseCard shape="curved" class="flex items-center p-4" elevated>
+        <BaseCard
+          shape="curved"
+          class="flex items-center p-4"
+          elevated
+        >
           <div>
             <BaseHeading
               as="h3"
@@ -54,11 +58,14 @@ const props = defineProps<{
               weight="medium"
               lead="none"
               class="text-muted-800 mx-auto dark:text-white"
-              >{{ props.preview?.title }}</BaseHeading
             >
-            <BaseText size="xs" class="text-muted-500 dark:text-muted-400">{{
-              props.preview?.description
-            }}</BaseText>
+              {{ props.preview?.title }}
+            </BaseHeading>
+            <BaseText size="xs" class="text-muted-500 dark:text-muted-400">
+              {{
+                props.preview?.description
+              }}
+            </BaseText>
           </div>
           <div
             class="bg-primary-500/10 text-primary-500 me-2 ms-auto flex h-8 w-8 items-center justify-center rounded-full motion-safe:opacity-0 motion-safe:transition-opacity motion-safe:duration-300 motion-safe:group-hover:opacity-100"

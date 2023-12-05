@@ -8,24 +8,24 @@ const { data } = await useAsyncData('doc-page-nav', async () => {
   const prev = !props.prev
     ? Promise.resolve(null)
     : queryContent()
-        .where({
-          _partial: false,
-          _draft: false,
-          _path: props.prev,
-        })
-        .only(['_path', 'title'])
-        .findOne()
+      .where({
+        _partial: false,
+        _draft: false,
+        _path: props.prev,
+      })
+      .only(['_path', 'title'])
+      .findOne()
 
   const next = !props.next
     ? Promise.resolve(null)
     : queryContent()
-        .where({
-          _partial: false,
-          _draft: false,
-          _path: props.next,
-        })
-        .only(['_path', 'title'])
-        .findOne()
+      .where({
+        _partial: false,
+        _draft: false,
+        _path: props.next,
+      })
+      .only(['_path', 'title'])
+      .findOne()
 
   return Promise.all([prev, next])
 })
@@ -57,12 +57,11 @@ const nav = computed(() => {
           <span class="font-sans text-sm leading-tight">Previous</span>
           <span
             class="font-heading text-muted-500 dark:text-muted-400 group-hover:text-primary-500 dark:group-hover:text-primary-400 text-sm font-medium"
-            >{{ nav.prev.title }}</span
-          >
+          >{{ nav.prev.title }}</span>
         </span>
       </NuxtLink>
     </div>
-    <div class="grow"></div>
+    <div class="grow" />
     <div v-if="nav.next">
       <NuxtLink
         :to="nav.next._path"
@@ -72,8 +71,7 @@ const nav = computed(() => {
           <span class="font-sans text-sm leading-tight">Next</span>
           <span
             class="font-heading text-muted-500 dark:text-muted-400 group-hover:text-primary-500 dark:group-hover:text-primary-400 text-sm font-medium"
-            >{{ nav.next.title }}</span
-          >
+          >{{ nav.next.title }}</span>
         </span>
         <Icon
           name="lucide:arrow-right"

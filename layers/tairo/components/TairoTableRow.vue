@@ -17,6 +17,6 @@ const props = withDefaults(
         : '',
     ]"
   >
-    <slot></slot>
+    <slot />
   </tr>
 </template>

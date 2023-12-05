@@ -57,8 +57,14 @@ const { data, pending, error, refresh } = await useFetch(
         />
       </template>
       <template #right>
-        <BaseButton class="w-full sm:w-32" shape="curved">Manage</BaseButton>
-        <BaseButton color="primary" class="w-full sm:w-32" shape="curved">
+        <BaseButton class="w-full sm:w-32" shape="curved">
+          Manage
+        </BaseButton>
+        <BaseButton
+          color="primary"
+          class="w-full sm:w-32"
+          shape="curved"
+        >
           <Icon name="lucide:plus" class="h-4 w-4" />
           <span>Upload</span>
         </BaseButton>
@@ -74,12 +80,12 @@ const { data, pending, error, refresh } = await useFetch(
                 class="block dark:hidden"
                 src="/img/illustrations/placeholders/flat/placeholder-search-5.svg"
                 alt="Placeholder image"
-              />
+              >
               <img
                 class="hidden dark:block"
                 src="/img/illustrations/placeholders/flat/placeholder-search-5-dark.svg"
                 alt="Placeholder image"
-              />
+              >
             </template>
           </BasePlaceholderPage>
         </div>
@@ -102,9 +108,17 @@ const { data, pending, error, refresh } = await useFetch(
               class="p-3"
             >
               <div class="flex w-full items-center gap-2">
-                <img :src="item.icon" :alt="item.name" class="max-w-[46px]" />
+                <img
+                  :src="item.icon"
+                  :alt="item.name"
+                  class="max-w-[46px]"
+                >
                 <div>
-                  <BaseHeading tag="h3" size="sm" weight="medium">
+                  <BaseHeading
+                    tag="h3"
+                    size="sm"
+                    weight="medium"
+                  >
                     {{ item.name }}
                   </BaseHeading>
                   <BaseParagraph size="xs" class="text-muted-400">

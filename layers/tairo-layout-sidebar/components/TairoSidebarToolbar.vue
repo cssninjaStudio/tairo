@@ -18,9 +18,9 @@ const route = useRoute()
 
 const showNavBurger = computed(() => {
   return (
-    props.sidebar &&
-    app.tairo.sidebar?.toolbar?.showNavBurger &&
-    hasSubsidebar.value
+    props.sidebar
+    && app.tairo.sidebar?.toolbar?.showNavBurger
+    && hasSubsidebar.value
   )
 })
 </script>
@@ -39,10 +39,12 @@ const showNavBurger = computed(() => {
       weight="light"
       class="text-muted-800 hidden dark:text-white md:block"
     >
-      <slot name="title">{{ route.meta.title }}</slot>
+      <slot name="title">
+        {{ route.meta.title }}
+      </slot>
     </BaseHeading>
 
-    <div class="ms-auto"></div>
+    <div class="ms-auto" />
     <TairoSidebarTools class="h-16" />
   </div>
 </template>

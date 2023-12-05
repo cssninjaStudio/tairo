@@ -20,7 +20,7 @@ const props = withDefaults(
           props.shape === 'curved' ? 'rounded-lg' : '',
         ]"
         alt="Widget image"
-      />
+      >
       <div class="absolute start-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
         <button
           type="button"
@@ -37,7 +37,12 @@ const props = withDefaults(
       <p class="text-primary-500 my-1 font-sans text-xs uppercase">
         Best Movies
       </p>
-      <BaseHeading as="h3" size="sm" weight="medium" lead="tight">
+      <BaseHeading
+        as="h3"
+        size="sm"
+        weight="medium"
+        lead="tight"
+      >
         <span>The man who didn't want to talk to horses</span>
       </BaseHeading>
       <div

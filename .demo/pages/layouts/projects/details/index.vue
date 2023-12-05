@@ -47,7 +47,11 @@ const selectedProject = ref('')
   <div class="mx-auto max-w-2xl">
     <div v-if="!pending && data?.recent.length === 0">
       <div class="bg-muted-200 dark:bg-muted-800/60 rounded-xl p-6">
-        <BaseHeading tag="h4" size="lg" weight="medium">
+        <BaseHeading
+          tag="h4"
+          size="lg"
+          weight="medium"
+        >
           No projects
         </BaseHeading>
         <BaseParagraph size="sm" class="text-muted-400">
@@ -61,7 +65,11 @@ const selectedProject = ref('')
           name="ph:square-half-duotone"
           class="text-primary-500 mx-auto mb-2 h-10 w-10"
         />
-        <BaseHeading tag="h4" size="2xl" weight="medium">
+        <BaseHeading
+          tag="h4"
+          size="2xl"
+          weight="medium"
+        >
           Your recent projects
         </BaseHeading>
         <BaseParagraph size="sm" class="text-muted-400">

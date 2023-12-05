@@ -46,7 +46,7 @@ const props = withDefaults(
                 ? 'from-indigo-100 to-indigo-500 dark:from-indigo-800'
                 : '',
             ]"
-          ></div>
+          />
           <div
             class="nui-mask nui-mask-hexed dark:bg-muted-800 flex h-[80px] w-[80px] items-center justify-center bg-white"
           >
@@ -63,7 +63,7 @@ const props = withDefaults(
         </div>
         <div
           class="dark:bg-muted-900 absolute -right-4 bottom-0 h-full w-24 scale-105 bg-white blur-lg"
-        ></div>
+        />
       </div>
       <div>
         <BaseHeading
@@ -79,7 +79,7 @@ const props = withDefaults(
           size="sm"
           class="text-muted-500 dark:text-muted-100 mx-auto my-2"
         >
-          <slot></slot>
+          <slot />
         </BaseParagraph>
       </div>
     </BaseCard>

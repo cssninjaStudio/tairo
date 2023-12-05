@@ -76,7 +76,7 @@ const onSubmit = handleSubmit(async (values) => {
 
   try {
     // fake delay, this will make isSubmitting value to be true
-    await new Promise((resolve) => setTimeout(resolve, 4000))
+    await new Promise(resolve => setTimeout(resolve, 4000))
 
     toaster.clearAll()
     toaster.show({
@@ -86,7 +86,8 @@ const onSubmit = handleSubmit(async (values) => {
       icon: 'ph:user-circle-fill',
       closable: true,
     })
-  } catch (error: any) {
+  }
+  catch (error: any) {
     // handle error
 
     return
@@ -122,42 +123,42 @@ const onSubmit = handleSubmit(async (values) => {
           alt="Avatar"
           width="48"
           height="48"
-        />
+        >
         <img
           class="ltablet:block absolute -start-[25%] top-[40%] hidden h-16 w-16 rounded-full object-cover lg:block"
           src="/img/avatars/9.svg"
           alt="Avatar"
           width="64"
           height="64"
-        />
+        >
         <img
           class="ltablet:block absolute -start-[5%] top-[52%] hidden h-16 w-16 rounded-full object-cover lg:block"
           src="/img/avatars/4.svg"
           alt="Avatar"
           width="64"
           height="64"
-        />
+        >
         <img
           class="ltablet:block absolute -start-[35%] top-[65%] hidden h-24 w-24 rounded-full object-cover lg:block"
           src="/img/avatars/8.svg"
           alt="Avatar"
           width="96"
           height="96"
-        />
+        >
         <img
           class="ltablet:block absolute -start-[35%] top-[20%] hidden h-10 w-10 rounded-full object-cover lg:block"
           src="/img/avatars/12.svg"
           alt="Avatar"
           width="40"
           height="40"
-        />
+        >
         <img
           class="ltablet:block absolute -start-[55%] top-[40%] hidden h-20 w-20 rounded-full object-cover lg:block"
           src="/img/avatars/20.svg"
           alt="Avatar"
           width="80"
           height="80"
-        />
+        >
 
         <img
           class="ltablet:block absolute end-0 top-[30%] hidden h-12 w-12 rounded-full object-cover lg:block"
@@ -165,54 +166,58 @@ const onSubmit = handleSubmit(async (values) => {
           alt="Avatar"
           width="48"
           height="48"
-        />
+        >
         <img
           class="ltablet:block absolute -end-[25%] top-[40%] hidden h-16 w-16 rounded-full object-cover lg:block"
           src="/img/avatars/10.svg"
           alt="Avatar"
           width="64"
           height="64"
-        />
+        >
         <img
           class="ltablet:block absolute -end-[5%] top-[52%] hidden h-16 w-16 rounded-full object-cover lg:block"
           src="/img/avatars/19.svg"
           alt="Avatar"
           width="64"
           height="64"
-        />
+        >
         <img
           class="ltablet:block absolute -end-[35%] top-[65%] hidden h-24 w-24 rounded-full object-cover lg:block"
           src="/img/avatars/24.svg"
           alt="Avatar"
           width="96"
           height="96"
-        />
+        >
         <img
           class="ltablet:block absolute -end-[35%] top-[20%] hidden h-10 w-10 rounded-full object-cover lg:block"
           src="/img/avatars/3.svg"
           alt="Avatar"
           width="40"
           height="40"
-        />
+        >
         <img
           class="ltablet:block absolute -end-[55%] top-[40%] hidden h-20 w-20 rounded-full object-cover lg:block"
           src="/img/avatars/5.svg"
           alt="Avatar"
           width="80"
           height="80"
-        />
+        >
 
         <!--Form-->
         <div class="me-auto ms-auto mt-4 w-full">
           <form
             method="POST"
             action=""
-            @submit.prevent="onSubmit"
             class="me-auto ms-auto mt-4 w-full max-w-md"
             novalidate
+            @submit.prevent="onSubmit"
           >
             <div class="text-center">
-              <BaseHeading as="h2" size="3xl" weight="medium">
+              <BaseHeading
+                as="h2"
+                size="3xl"
+                weight="medium"
+              >
                 Welcome to Tairo
               </BaseHeading>
               <BaseParagraph size="sm" class="text-muted-400 mb-6">
@@ -326,7 +331,7 @@ const onSubmit = handleSubmit(async (values) => {
               <div class="mb-6 grid gap-0 sm:grid-cols-3">
                 <hr
                   class="border-muted-200 dark:border-muted-700 mt-3 hidden border-t sm:block"
-                />
+                >
                 <span
                   class="dark:bg-muted-800 text-muted-400 relative top-0.5 bg-white text-center font-sans text-sm"
                 >
@@ -334,7 +339,7 @@ const onSubmit = handleSubmit(async (values) => {
                 </span>
                 <hr
                   class="border-muted-200 dark:border-muted-700 mt-3 hidden border-t sm:block"
-                />
+                >
               </div>
               <!--Social signup-->
               <div class="grid grid-cols-3 gap-2">

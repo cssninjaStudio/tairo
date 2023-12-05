@@ -32,10 +32,12 @@ const showNavBurger = computed(() => {
       weight="light"
       class="text-muted-800 hidden dark:text-white md:block"
     >
-      <slot name="title">{{ route.meta.title }}</slot>
+      <slot name="title">
+        {{ route.meta.title }}
+      </slot>
     </BaseHeading>
 
-    <div class="ms-auto"></div>
+    <div class="ms-auto" />
     <template v-for="tool of app.tairo.collapse?.toolbar?.tools">
       <component
         :is="resolveComponentOrNative(tool.component)"

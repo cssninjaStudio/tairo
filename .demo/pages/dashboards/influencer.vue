@@ -294,7 +294,7 @@ const activeTab = ref('tab-1')
     <!-- Header bg -->
     <div
       class="ltablet:h-[410px] dark:bg-muted-800 absolute start-0 top-0 h-[590px] w-full bg-white lg:h-[410px]"
-    ></div>
+    />
     <!-- Header -->
     <div
       class="ltablet:h-64 ltablet:flex-row relative flex h-[460px] w-full flex-col lg:h-64 lg:flex-row"
@@ -1116,7 +1116,11 @@ const activeTab = ref('tab-1')
                       />
                     </div>
                     <div class="flex gap-2">
-                      <BaseButton shape="curved" color="default" class="w-28">
+                      <BaseButton
+                        shape="curved"
+                        color="default"
+                        class="w-28"
+                      >
                         Details
                       </BaseButton>
                     </div>

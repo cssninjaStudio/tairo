@@ -29,8 +29,14 @@ const input = ref('')
         />
       </template>
       <template #right>
-        <BaseButton class="w-full sm:w-32" disabled>Manage</BaseButton>
-        <BaseButton color="primary" class="w-full sm:w-32" disabled>
+        <BaseButton class="w-full sm:w-32" disabled>
+          Manage
+        </BaseButton>
+        <BaseButton
+          color="primary"
+          class="w-full sm:w-32"
+          disabled
+        >
           <Icon name="lucide:plus" class="h-4 w-4" />
           <span>Add User</span>
         </BaseButton>
@@ -39,7 +45,11 @@ const input = ref('')
         <div
           class="ltablet:grid-cols-3 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
         >
-          <BaseCard v-for="index in 12" :key="index" class="flex flex-col p-6">
+          <BaseCard
+            v-for="index in 12"
+            :key="index"
+            class="flex flex-col p-6"
+          >
             <BasePlaceload class="mx-auto h-20 w-20 shrink-0 rounded-full" />
             <div class="mb-6 mt-4 space-y-2">
               <BasePlaceload class="mx-auto h-3 w-40 rounded-lg" />
@@ -51,8 +61,12 @@ const input = ref('')
               <BasePlaceload class="h-8 w-8 shrink-0 rounded-full" />
             </div>
             <div class="flex items-center justify-center gap-2">
-              <BaseButton loading class="w-full">View</BaseButton>
-              <BaseButton loading class="w-full">Edit</BaseButton>
+              <BaseButton loading class="w-full">
+                View
+              </BaseButton>
+              <BaseButton loading class="w-full">
+                Edit
+              </BaseButton>
             </div>
           </BaseCard>
         </div>

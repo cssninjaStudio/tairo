@@ -73,7 +73,11 @@ const items = [
                 >
                   <span>New Rookies</span>
                 </BaseHeading>
-                <BaseParagraph size="xs" lead="tight" class="mb-3">
+                <BaseParagraph
+                  size="xs"
+                  lead="tight"
+                  class="mb-3"
+                >
                   <span class="text-white">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Praeclarae mortes.
@@ -115,7 +119,11 @@ const items = [
                 >
                   <span>Job Feed</span>
                 </BaseHeading>
-                <BaseParagraph size="xs" lead="tight" class="mb-3">
+                <BaseParagraph
+                  size="xs"
+                  lead="tight"
+                  class="mb-3"
+                >
                   <span class="text-white">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Praeclarae mortes.
@@ -405,13 +413,13 @@ const items = [
           <!-- Widget -->
           <BaseCard shape="curved" class="p-6">
             <BaseTabSlider
+              v-slot="{ activeValue }"
               size="sm"
               model-value="team"
               :tabs="[
                 { label: 'Team', value: 'team' },
                 { label: 'Tasks', value: 'tasks' },
               ]"
-              v-slot="{ activeValue }"
             >
               <div v-if="activeValue === 'team'">
                 <DemoTeamListCompact actions />

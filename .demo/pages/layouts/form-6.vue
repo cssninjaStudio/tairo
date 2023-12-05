@@ -17,9 +17,9 @@ definePageMeta({
 })
 
 const VALIDATION_TEXT = {
-  FIRSTNAME_REQUIRED: "First name can't be empty",
-  LASTNAME_REQUIRED: "Last name can't be empty",
-  EMAIL_REQUIRED: "Email address can't be empty",
+  FIRSTNAME_REQUIRED: 'First name can\'t be empty',
+  LASTNAME_REQUIRED: 'Last name can\'t be empty',
+  EMAIL_REQUIRED: 'Email address can\'t be empty',
   OPTION_REQUIRED: 'Please select an option',
   ADDRESS_REQUIRED: 'Please enter an address',
   CITY_REQUIRED: 'Please enter a city',
@@ -144,7 +144,8 @@ const onSubmit = handleSubmit(
         icon: 'ph:check',
         closable: true,
       })
-    } catch (error: any) {
+    }
+    catch (error: any) {
       // this will set the error on the form
       if (error.message === 'Fake backend validation error') {
         setFieldError('meeting.title', 'This name is not allowed')
@@ -239,20 +240,27 @@ const colorCode = ref('color_code_1')
   <form
     action=""
     method="POST"
-    @submit.prevent="onSubmit"
     class="mx-auto w-full max-w-3xl"
+    @submit.prevent="onSubmit"
   >
     <BaseCard>
       <div
         class="border-muted-200 dark:border-muted-700 flex items-center justify-between gap-4 border-b px-10 py-5"
       >
         <div>
-          <BaseHeading as="h3" size="md" weight="medium">
+          <BaseHeading
+            as="h3"
+            size="md"
+            weight="medium"
+          >
             New Meeting
           </BaseHeading>
-          <BaseText size="xs" class="text-muted-400"
-            >Schedule a new meeting</BaseText
+          <BaseText
+            size="xs"
+            class="text-muted-400"
           >
+            Schedule a new meeting
+          </BaseText>
         </div>
         <div class="ms-auto flex items-center gap-2">
           <BaseButtonAction @click.prevent="$router.back()">
@@ -305,11 +313,11 @@ const colorCode = ref('color_code_1')
                         label="Start date"
                         icon="ph:calendar-blank-duotone"
                         :value="inputValue.start"
-                        v-on="inputEvents.start"
                         :model-value="field.value"
                         :error="errorMessage"
                         :disabled="isSubmitting"
                         type="text"
+                        v-on="inputEvents.start"
                         @update:model-value="handleChange"
                         @blur="handleBlur"
                       />
@@ -324,11 +332,11 @@ const colorCode = ref('color_code_1')
                         label="End date"
                         icon="ph:calendar-blank-duotone"
                         :value="inputValue.end"
-                        v-on="inputEvents.end"
                         :model-value="field.value"
                         :error="errorMessage"
                         :disabled="isSubmitting"
                         type="text"
+                        v-on="inputEvents.end"
                         @update:model-value="handleChange"
                         @blur="handleBlur"
                       />
@@ -358,11 +366,11 @@ const colorCode = ref('color_code_1')
                         label="Start time"
                         icon="ph:calendar-blank-duotone"
                         :value="inputValue.start"
-                        v-on="inputEvents.start"
                         :model-value="field.value"
                         :error="errorMessage"
                         :disabled="isSubmitting"
                         type="text"
+                        v-on="inputEvents.start"
                         @update:model-value="handleChange"
                         @blur="handleBlur"
                       />
@@ -377,11 +385,11 @@ const colorCode = ref('color_code_1')
                         label="End time"
                         icon="ph:calendar-blank-duotone"
                         :value="inputValue.end"
-                        v-on="inputEvents.end"
                         :model-value="field.value"
                         :error="errorMessage"
                         :disabled="isSubmitting"
                         type="text"
+                        v-on="inputEvents.end"
                         @update:model-value="handleChange"
                         @blur="handleBlur"
                       />
@@ -393,9 +401,7 @@ const colorCode = ref('color_code_1')
           </div>
           <div class="col-span-12">
             <div class="my-4">
-              <label class="nui-label pb-4 text-[0.825rem]"
-                >Meeting frequency</label
-              >
+              <label class="nui-label pb-4 text-[0.825rem]">Meeting frequency</label>
               <div class="flex items-center gap-6">
                 <Field
                   v-slot="{ field, errorMessage, handleChange, handleBlur }"
@@ -448,12 +454,19 @@ const colorCode = ref('color_code_1')
       >
         <div class="flex items-center justify-between">
           <div>
-            <BaseHeading as="h3" size="md" weight="medium">
+            <BaseHeading
+              as="h3"
+              size="md"
+              weight="medium"
+            >
               Meeting details
             </BaseHeading>
-            <BaseText size="xs" class="text-muted-400"
-              >Add some meeting details</BaseText
+            <BaseText
+              size="xs"
+              class="text-muted-400"
             >
+              Add some meeting details
+            </BaseText>
           </div>
           <div>
             <BaseButtonAction>
@@ -596,9 +609,9 @@ const colorCode = ref('color_code_1')
             </div>
             <div class="col-span-12 sm:col-span-9">
               <BaseInputFileHeadless
-                multiple
-                v-model="uploadedFiles"
                 v-slot="{ open, remove, preview, drop, files }"
+                v-model="uploadedFiles"
+                multiple
               >
                 <!-- Controls -->
                 <div class="mb-4 flex items-center gap-2">
@@ -626,6 +639,8 @@ const colorCode = ref('color_code_1')
                 </div>
 
                 <div
+                  role="button"
+                  tabindex="-1"
                   class=""
                   @dragenter.stop.prevent
                   @dragover.stop.prevent
@@ -670,17 +685,17 @@ const colorCode = ref('color_code_1')
                         <div class="flex items-center gap-2">
                           <div class="shrink-0">
                             <img
-                              class="h-14 w-14 rounded-xl object-cover object-center"
                               v-if="file.type.startsWith('image')"
+                              class="h-14 w-14 rounded-xl object-cover object-center"
                               :src="preview(file).value"
                               alt="Image preview"
-                            />
+                            >
                             <img
                               v-else
                               class="h-14 w-14 rounded-xl object-cover object-center"
                               src="/img/avatars/placeholder-file.png"
                               alt="Image preview"
-                            />
+                            >
                           </div>
                           <div class="font-sans">
                             <span
@@ -767,7 +782,7 @@ const colorCode = ref('color_code_1')
                   >
                     <div
                       class="border-primary-500 peer-checked:bg-primary-500 h-4 w-4 rounded-full border-2 transition-colors duration-300"
-                    ></div>
+                    />
                   </BaseRadioHeadless>
                 </Field>
 
@@ -786,7 +801,7 @@ const colorCode = ref('color_code_1')
                   >
                     <div
                       class="border-info-500 peer-checked:bg-info-500 h-4 w-4 rounded-full border-2 transition-colors duration-300"
-                    ></div>
+                    />
                   </BaseRadioHeadless>
                 </Field>
 
@@ -805,7 +820,7 @@ const colorCode = ref('color_code_1')
                   >
                     <div
                       class="border-success-500 peer-checked:bg-success-500 h-4 w-4 rounded-full border-2 transition-colors duration-300"
-                    ></div>
+                    />
                   </BaseRadioHeadless>
                 </Field>
 
@@ -824,7 +839,7 @@ const colorCode = ref('color_code_1')
                   >
                     <div
                       class="border-danger-500 peer-checked:bg-danger-500 h-4 w-4 rounded-full border-2 transition-colors duration-300"
-                    ></div>
+                    />
                   </BaseRadioHeadless>
                 </Field>
 
@@ -843,7 +858,7 @@ const colorCode = ref('color_code_1')
                   >
                     <div
                       class="h-4 w-4 rounded-full border-2 border-lime-500 transition-colors duration-300 peer-checked:bg-lime-500"
-                    ></div>
+                    />
                   </BaseRadioHeadless>
                 </Field>
 
@@ -862,7 +877,7 @@ const colorCode = ref('color_code_1')
                   >
                     <div
                       class="h-4 w-4 rounded-full border-2 border-pink-500 transition-colors duration-300 peer-checked:bg-pink-500"
-                    ></div>
+                    />
                   </BaseRadioHeadless>
                 </Field>
               </div>

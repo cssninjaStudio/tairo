@@ -87,18 +87,18 @@ const props = defineProps<{
               :src="props.images[0]"
               class="bg-muted-100 h-16 rounded object-cover"
               alt="popover image"
-            />
+            >
             <div class="grid grid-cols-2 gap-x-2">
               <img
                 :src="props.images[1]"
                 class="bg-muted-100 h-12 rounded object-cover"
                 alt="popover image"
-              />
+              >
               <img
                 :src="props.images[2]"
                 class="bg-muted-100 h-12 rounded object-cover"
                 alt="popover image"
-              />
+              >
             </div>
           </div>
         </div>

@@ -72,7 +72,11 @@ const props = withDefaults(
         </div>
       </div>
     </div>
-    <BaseText size="xs" lead="snug" class="text-muted-400">
+    <BaseText
+      size="xs"
+      lead="snug"
+      class="text-muted-400"
+    >
       {{ props.text }}
     </BaseText>
   </div>

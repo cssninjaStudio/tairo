@@ -12,6 +12,6 @@ const { open } = usePanels()
       class="h-7 w-7 rounded-full"
       src="/img/icons/flags/united-states-of-america.svg"
       alt="flag icon"
-    />
+    >
   </button>
 </template>

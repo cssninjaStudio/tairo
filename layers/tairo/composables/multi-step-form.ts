@@ -42,7 +42,7 @@ export function createMultiStepForm<
   const totalSteps = computed(() => steps.value.length)
   const currentStep = computed(() => {
     const step = steps.value.find(
-      (step) => step.to === router.currentRoute.value.path,
+      step => step.to === router.currentRoute.value.path,
     )?.id
 
     if (typeof step !== 'number') return 0
@@ -111,12 +111,14 @@ export function createMultiStepForm<
         await rules.onSubmit(data.value as T, multiStepContext)
       }
       complete.value = true
-    } catch (error) {
+    }
+    catch (error) {
       if (rules.onError) {
         await rules.onError(error, multiStepContext)
       }
       //
-    } finally {
+    }
+    finally {
       loading.value = false
     }
   }

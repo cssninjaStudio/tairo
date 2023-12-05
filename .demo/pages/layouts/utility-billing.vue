@@ -65,7 +65,7 @@ const plans = [
 ]
 
 const selectedPlan = computed(() => {
-  return plans.find((plan) => plan.name === customRadio.value)
+  return plans.find(plan => plan.name === customRadio.value)
 })
 
 const planColor = computed(() => {
@@ -96,8 +96,8 @@ const billingCycles = ref('monthly')
   <form
     action=""
     method="POST"
-    @submit.prevent
     class="mx-auto w-full max-w-4xl pb-16"
+    @submit.prevent
   >
     <!-- Header -->
     <div class="mb-8 flex flex-col justify-between md:flex-row md:items-center">
@@ -160,9 +160,13 @@ const billingCycles = ref('monthly')
             >
               Starter
             </BaseHeading>
-            <BaseText size="xs" lead="tight" class="text-muted-400"
-              >A basic plan made for quickstarts</BaseText
+            <BaseText
+              size="xs"
+              lead="tight"
+              class="text-muted-400"
             >
+              A basic plan made for quickstarts
+            </BaseText>
           </BaseCard>
         </BaseRadioHeadless>
         <BaseRadioHeadless
@@ -188,9 +192,13 @@ const billingCycles = ref('monthly')
             >
               Freelancer
             </BaseHeading>
-            <BaseText size="xs" lead="tight" class="text-muted-400"
-              >A plan for heavy working freelancers</BaseText
+            <BaseText
+              size="xs"
+              lead="tight"
+              class="text-muted-400"
             >
+              A plan for heavy working freelancers
+            </BaseText>
           </BaseCard>
         </BaseRadioHeadless>
         <BaseRadioHeadless
@@ -216,9 +224,13 @@ const billingCycles = ref('monthly')
             >
               Business
             </BaseHeading>
-            <BaseText size="xs" lead="tight" class="text-muted-400"
-              >An affordable medium business plan</BaseText
+            <BaseText
+              size="xs"
+              lead="tight"
+              class="text-muted-400"
             >
+              An affordable medium business plan
+            </BaseText>
           </BaseCard>
         </BaseRadioHeadless>
         <BaseRadioHeadless
@@ -244,9 +256,13 @@ const billingCycles = ref('monthly')
             >
               Enterprise
             </BaseHeading>
-            <BaseText size="xs" lead="tight" class="text-muted-400"
-              >A corporate and full fledged company plan</BaseText
+            <BaseText
+              size="xs"
+              lead="tight"
+              class="text-muted-400"
             >
+              A corporate and full fledged company plan
+            </BaseText>
           </BaseCard>
         </BaseRadioHeadless>
       </div>
@@ -255,15 +271,22 @@ const billingCycles = ref('monthly')
           <div class="flex gap-12">
             <TairoLogo class="h-12 w-12 shrink-0" :class="planColor" />
             <div>
-              <BaseText size="md" lead="tight" weight="semibold"
-                >${{ selectedPlan?.price.monthly }}
-                <span class="text-muted-400 font-normal"
-                  >/per month</span
-                ></BaseText
+              <BaseText
+                size="md"
+                lead="tight"
+                weight="semibold"
               >
-              <BaseText size="xs" lead="tight" class="mb-2" :class="planColor"
-                >Billed ${{ selectedPlan?.price.yearly }} yearly</BaseText
+                ${{ selectedPlan?.price.monthly }}
+                <span class="text-muted-400 font-normal">/per month</span>
+              </BaseText>
+              <BaseText
+                size="xs"
+                lead="tight"
+                class="mb-2"
+                :class="planColor"
               >
+                Billed ${{ selectedPlan?.price.yearly }} yearly
+              </BaseText>
               <BaseParagraph
                 size="xs"
                 class="text-muted-500 dark:text-muted-400"
@@ -320,13 +343,21 @@ const billingCycles = ref('monthly')
         <div class="flex flex-col gap-6">
           <BaseCard class="p-6">
             <div class="mb-4 flex items-center justify-between">
-              <BaseHeading as="h4" size="sm" weight="semibold">
+              <BaseHeading
+                as="h4"
+                size="sm"
+                weight="semibold"
+              >
                 Used seats
               </BaseHeading>
               <div>
-                <BaseText size="xs" lead="tight" class="text-muted-400"
-                  >6/8 remaining</BaseText
+                <BaseText
+                  size="xs"
+                  lead="tight"
+                  class="text-muted-400"
                 >
+                  6/8 remaining
+                </BaseText>
               </div>
             </div>
             <div
@@ -382,7 +413,11 @@ const billingCycles = ref('monthly')
           </BaseCard>
           <BaseCard class="p-6">
             <div class="mb-8 flex items-center justify-between">
-              <BaseHeading as="h4" size="sm" weight="semibold">
+              <BaseHeading
+                as="h4"
+                size="sm"
+                weight="semibold"
+              >
                 Billing options
               </BaseHeading>
               <div>
@@ -390,7 +425,7 @@ const billingCycles = ref('monthly')
                   size="xs"
                   lead="tight"
                   class="text-muted-400"
-                ></BaseText>
+                />
               </div>
             </div>
             <div class="space-y-6">
@@ -419,14 +454,19 @@ const billingCycles = ref('monthly')
           </BaseCard>
           <BaseCard class="p-6">
             <div class="mb-8 flex items-center justify-between">
-              <BaseHeading as="h4" size="sm" weight="semibold">
+              <BaseHeading
+                as="h4"
+                size="sm"
+                weight="semibold"
+              >
                 Billing cycle
               </BaseHeading>
               <div>
                 <NuxtLink
                   class="text-primary-500 font-sans text-xs underline underline-offset-4"
-                  >My invoices</NuxtLink
                 >
+                  My invoices
+                </NuxtLink>
               </div>
             </div>
             <div class="flex items-center gap-6">
@@ -463,7 +503,11 @@ const billingCycles = ref('monthly')
       <div class="ltablet:col-span-5 col-span-12 sm:col-span-6 lg:col-span-5">
         <BaseCard class="p-6">
           <div class="mb-4">
-            <BaseHeading as="h4" size="sm" weight="semibold">
+            <BaseHeading
+              as="h4"
+              size="sm"
+              weight="semibold"
+            >
               Payment information
             </BaseHeading>
           </div>
@@ -498,19 +542,45 @@ const billingCycles = ref('monthly')
                         v-model="cardInfo.expiryMonth"
                         label="Exp. month"
                       >
-                        <option value="">Month</option>
-                        <option value="01">01</option>
-                        <option value="02">02</option>
-                        <option value="03">03</option>
-                        <option value="04">04</option>
-                        <option value="05">05</option>
-                        <option value="06">06</option>
-                        <option value="07">07</option>
-                        <option value="08">08</option>
-                        <option value="09">09</option>
-                        <option value="10">10</option>
-                        <option value="11">11</option>
-                        <option value="12">12</option>
+                        <option value="">
+                          Month
+                        </option>
+                        <option value="01">
+                          01
+                        </option>
+                        <option value="02">
+                          02
+                        </option>
+                        <option value="03">
+                          03
+                        </option>
+                        <option value="04">
+                          04
+                        </option>
+                        <option value="05">
+                          05
+                        </option>
+                        <option value="06">
+                          06
+                        </option>
+                        <option value="07">
+                          07
+                        </option>
+                        <option value="08">
+                          08
+                        </option>
+                        <option value="09">
+                          09
+                        </option>
+                        <option value="10">
+                          10
+                        </option>
+                        <option value="11">
+                          11
+                        </option>
+                        <option value="12">
+                          12
+                        </option>
                       </BaseSelect>
                     </div>
                     <div>
@@ -518,15 +588,33 @@ const billingCycles = ref('monthly')
                         v-model="cardInfo.expiryYear"
                         label="Exp. month"
                       >
-                        <option value="">Year</option>
-                        <option value="23">23</option>
-                        <option value="24">24</option>
-                        <option value="25">25</option>
-                        <option value="26">26</option>
-                        <option value="27">27</option>
-                        <option value="28">28</option>
-                        <option value="29">29</option>
-                        <option value="30">30</option>
+                        <option value="">
+                          Year
+                        </option>
+                        <option value="23">
+                          23
+                        </option>
+                        <option value="24">
+                          24
+                        </option>
+                        <option value="25">
+                          25
+                        </option>
+                        <option value="26">
+                          26
+                        </option>
+                        <option value="27">
+                          27
+                        </option>
+                        <option value="28">
+                          28
+                        </option>
+                        <option value="29">
+                          29
+                        </option>
+                        <option value="30">
+                          30
+                        </option>
                       </BaseSelect>
                     </div>
                     <div>
@@ -545,7 +633,11 @@ const billingCycles = ref('monthly')
       </div>
     </div>
     <TairoFormSave>
-      <BaseButton type="submit" color="primary" class="w-full">
+      <BaseButton
+        type="submit"
+        color="primary"
+        class="w-full"
+      >
         <span>Save for</span>
         <span class="font-semibold">${{ selectedPlan?.price.monthly }}</span>
         <span>/month</span>

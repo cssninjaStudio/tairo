@@ -70,8 +70,14 @@ function statusColor(itemStatus: string) {
         />
       </template>
       <template #right>
-        <BaseButton class="w-full sm:w-32" shape="full">Manage</BaseButton>
-        <BaseButton color="primary" shape="full" class="w-full sm:w-32">
+        <BaseButton class="w-full sm:w-32" shape="full">
+          Manage
+        </BaseButton>
+        <BaseButton
+          color="primary"
+          shape="full"
+          class="w-full sm:w-32"
+        >
           <Icon name="lucide:plus" class="h-4 w-4" />
           <span>Add User</span>
         </BaseButton>
@@ -87,12 +93,12 @@ function statusColor(itemStatus: string) {
                 class="block dark:hidden"
                 src="/img/illustrations/placeholders/flat/placeholder-search-4.svg"
                 alt="Placeholder image"
-              />
+              >
               <img
                 class="hidden dark:block"
                 src="/img/illustrations/placeholders/flat/placeholder-search-4-dark.svg"
                 alt="Placeholder image"
-              />
+              >
             </template>
           </BasePlaceholderPage>
         </div>

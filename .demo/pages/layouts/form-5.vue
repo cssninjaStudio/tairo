@@ -101,9 +101,12 @@ const handleClipboard = () => {
             >
               New Password
             </BaseHeading>
-            <BaseText size="sm" class="text-muted-400"
-              >Generate a random password.</BaseText
+            <BaseText
+              size="sm"
+              class="text-muted-400"
             >
+              Generate a random password.
+            </BaseText>
           </div>
         </div>
         <div class="divide-muted-200 dark:divide-muted-700 divide-y">
@@ -119,8 +122,7 @@ const handleClipboard = () => {
             <div class="relative mb-2">
               <label
                 class="text-muted-500 dark:text-muted-400 mb-2 block text-xs font-semibold"
-                >Password strength</label
-              >
+              >Password strength</label>
               <BaseInput
                 v-model="password"
                 :type="showPasswordField ? 'password' : 'text'"
@@ -155,15 +157,14 @@ const handleClipboard = () => {
             <TairoPasswordStrength :value="password" />
             <hr
               class="border-muted-200 dark:border-muted-700 my-5 h-px border bg-transparent"
-            />
+            >
             <div class="mb-2">
               <label
                 class="text-muted-500 dark:text-muted-400 mb-2 block text-xs font-semibold"
-                >Password length</label
-              >
+              >Password length</label>
               <BaseInput
-                type="number"
                 v-model="charsLength"
+                type="number"
                 placeholder="Length"
                 shape="curved"
                 min="1"
@@ -176,17 +177,16 @@ const handleClipboard = () => {
                   v-model="charsLength"
                   class="rounded-tooltip"
                   :min="1"
-                  @change="generatePassword()"
                   :max="30"
                   :step="1"
+                  @change="generatePassword()"
                 />
               </div>
             </div>
             <div>
               <label
                 class="text-muted-500 dark:text-muted-400 mb-4 block text-xs font-semibold"
-                >Character types</label
-              >
+              >Character types</label>
               <div class="grid gap-6 pb-4 sm:grid-cols-2">
                 <div class="flex items-center gap-3">
                   <BaseCheckboxAnimated
@@ -194,9 +194,12 @@ const handleClipboard = () => {
                     color="success"
                     @input="generatePassword()"
                   />
-                  <BaseText class="text-muted-500 dark:text" size="sm"
-                    >Lowercase</BaseText
+                  <BaseText
+                    class="text-muted-500 dark:text"
+                    size="sm"
                   >
+                    Lowercase
+                  </BaseText>
                 </div>
                 <div class="flex items-center gap-3">
                   <BaseCheckboxAnimated
@@ -204,9 +207,12 @@ const handleClipboard = () => {
                     color="success"
                     @input="generatePassword()"
                   />
-                  <BaseText class="text-muted-500 dark:text" size="sm"
-                    >Uppercase</BaseText
+                  <BaseText
+                    class="text-muted-500 dark:text"
+                    size="sm"
                   >
+                    Uppercase
+                  </BaseText>
                 </div>
                 <div class="flex items-center gap-3">
                   <BaseCheckboxAnimated
@@ -214,9 +220,12 @@ const handleClipboard = () => {
                     color="success"
                     @input="generatePassword()"
                   />
-                  <BaseText class="text-muted-500 dark:text" size="sm"
-                    >Numbers</BaseText
+                  <BaseText
+                    class="text-muted-500 dark:text"
+                    size="sm"
                   >
+                    Numbers
+                  </BaseText>
                 </div>
                 <div class="flex items-center gap-3">
                   <BaseCheckboxAnimated
@@ -224,9 +233,12 @@ const handleClipboard = () => {
                     color="success"
                     @input="generatePassword()"
                   />
-                  <BaseText class="text-muted-500 dark:text" size="sm"
-                    >Symbols</BaseText
+                  <BaseText
+                    class="text-muted-500 dark:text"
+                    size="sm"
                   >
+                    Symbols
+                  </BaseText>
                 </div>
               </div>
             </div>
@@ -253,9 +265,12 @@ const handleClipboard = () => {
               </BaseButton>
             </div>
             <div v-else class="mt-6 flex gap-2">
-              <BaseText class="text-muted-400" size="sm"
-                >Your browser does not support Clipboard API.</BaseText
+              <BaseText
+                class="text-muted-400"
+                size="sm"
               >
+                Your browser does not support Clipboard API.
+              </BaseText>
             </div>
           </div>
         </div>

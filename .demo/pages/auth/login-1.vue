@@ -84,7 +84,8 @@ const onSubmit = handleSubmit(async (values) => {
       icon: 'ph:user-circle-fill',
       closable: true,
     })
-  } catch (error: any) {
+  }
+  catch (error: any) {
     // this will set the error on the form
     if (error.message === 'Fake backend validation error') {
       setFieldError('password', 'Invalid credentials (use "password")')
@@ -102,16 +103,16 @@ const onSubmit = handleSubmit(async (values) => {
       class="bg-muted-100 dark:bg-muted-900 relative hidden w-0 flex-1 items-center justify-center lg:flex lg:w-3/5"
     >
       <div
-        class="mx-auto w-full h-full flex items-center justify-center max-w-4xl"
+        class="mx-auto flex h-full w-full max-w-4xl items-center justify-center"
       >
         <!--Media image-->
         <img
-          class="max-w-xl mx-auto"
+          class="mx-auto max-w-xl"
           src="/img/illustrations/station.svg"
           alt=""
           width="619"
           height="594"
-        />
+        >
       </div>
     </div>
     <div
@@ -143,7 +144,7 @@ const onSubmit = handleSubmit(async (values) => {
           <BaseParagraph size="sm" class="text-muted-400 mb-6">
             Login with social media or your credentials
           </BaseParagraph>
-          <!-- 	Social Sign Up Buttons	 -->
+          <!-- Social Sign Up Buttons -->
           <div class="flex flex-wrap justify-between gap-4">
             <!--Google button-->
             <button
@@ -165,15 +166,15 @@ const onSubmit = handleSubmit(async (values) => {
               <Icon name="fa6-brands:linkedin-in" class="mx-auto h-4 w-4" />
             </button>
           </div>
-          <!-- 'or' divider		 -->
+          <!-- 'or' divider -->
           <div class="flex-100 mt-8 flex items-center">
             <hr
               class="border-muted-200 dark:border-muted-700 flex-auto border-t-2"
-            />
+            >
             <span class="text-muted-400 px-4 font-sans font-light"> OR </span>
             <hr
               class="border-muted-200 dark:border-muted-700 flex-auto border-t-2"
-            />
+            >
           </div>
         </div>
 
@@ -184,9 +185,9 @@ const onSubmit = handleSubmit(async (values) => {
             <form
               method="POST"
               action=""
-              @submit.prevent="onSubmit"
               class="mt-6"
               novalidate
+              @submit.prevent="onSubmit"
             >
               <div class="space-y-4">
                 <Field

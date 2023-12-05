@@ -99,9 +99,15 @@ definePageMeta({
           <div
             class="text-primary-500 mt-3 flex w-full gap-2 font-sans text-xs font-medium"
           >
-            <NuxtLink to="#">#uikit</NuxtLink>
-            <NuxtLink to="#">#dashboards</NuxtLink>
-            <NuxtLink to="#">#tailwind</NuxtLink>
+            <NuxtLink to="#">
+              #uikit
+            </NuxtLink>
+            <NuxtLink to="#">
+              #dashboards
+            </NuxtLink>
+            <NuxtLink to="#">
+              #tailwind
+            </NuxtLink>
           </div>
         </DemoIconText>
       </BaseCard>

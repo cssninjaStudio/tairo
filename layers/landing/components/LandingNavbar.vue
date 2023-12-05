@@ -49,8 +49,8 @@ const { open } = usePanels()
           <button
             type="button"
             class="group-[&.scrolled]/landing:bg-muted-100 group-[&.scrolled]/landing:dark:bg-muted-900 group-[&.scrolled]/landing:border-muted-100 group-[&.scrolled]/landing:dark:border-muted-800 group-[&.scrolled]/landing:text-muted-400 group-[&.scrolled]/landing:dark:text-muted-500 group-[&.scrolled]/landing:hover:text-primary-500 group-[&.scrolled]/landing:dark:hover:text-primary-500 group-[&:not(.scrolled)]/landing:text-muted-800 group-[&:not(.scrolled)]/landing:dark:text-muted-200 group flex items-center gap-2 rounded-xl py-1 pe-1 ps-3 group-[&.scrolled]/landing:border"
-            @click="isSearchOpen = true"
             aria-label="Open search"
+            @click="isSearchOpen = true"
           >
             <Icon
               name="lucide:search"
@@ -94,22 +94,22 @@ const { open } = usePanels()
         <button
           type="button"
           class="ltablet:hidden flex items-center justify-center lg:hidden"
-          @click="isMobileOpen = !isMobileOpen"
           :aria-label="isMobileOpen ? 'Close menu' : 'Open menu'"
+          @click="isMobileOpen = !isMobileOpen"
         >
           <div class="space-y-1.5">
             <span
               class="bg-primary-600 block h-0.5 motion-safe:transition-all motion-safe:duration-300"
               :class="isMobileOpen ? 'w-2' : 'w-6'"
-            ></span>
+            />
             <span
               class="bg-primary-600 block h-0.5 motion-safe:transition-all motion-safe:duration-300"
               :class="isMobileOpen ? 'w-6' : 'w-6'"
-            ></span>
+            />
             <span
               class="bg-primary-600 block h-0.5 motion-safe:transition-all motion-safe:duration-300"
               :class="isMobileOpen ? 'w-4' : 'w-6'"
-            ></span>
+            />
           </div>
         </button>
       </div>

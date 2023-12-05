@@ -17,11 +17,11 @@ const { isOpen, current, sidebars } = useSidebar()
 const startSidebars = computed(
   () =>
     sidebars.value?.filter(
-      (sidebar) => !sidebar.position || sidebar.position === 'start',
+      sidebar => !sidebar.position || sidebar.position === 'start',
     ),
 )
 const endSidebars = computed(
-  () => sidebars.value?.filter((sidebar) => sidebar.position === 'end'),
+  () => sidebars.value?.filter(sidebar => sidebar.position === 'end'),
 )
 
 const subsidebarEnabled = computed(() => {
@@ -44,11 +44,11 @@ const subsidebarEnabled = computed(() => {
           : '-translate-x-full rtl:translate-x-full xl:translate-x-0 rtl:xl:-translate-x-0'
       "
     >
-      <slot></slot>
+      <slot />
 
       <!-- Top Menu -->
       <div>
-        <slot name="top"></slot>
+        <slot name="top" />
 
         <TairoSidebarNavigationItem
           v-for="item in startSidebars"
@@ -64,7 +64,7 @@ const subsidebarEnabled = computed(() => {
           :sidebar="item"
         />
 
-        <slot name="end"></slot>
+        <slot name="end" />
       </div>
     </div>
 
@@ -82,9 +82,9 @@ const subsidebarEnabled = computed(() => {
         <KeepAlive>
           <component
             :is="resolveComponentOrNative(current.subsidebar?.component)"
-            :key="current?.subsidebar?.component"
             v-if="current?.subsidebar?.component"
-          ></component>
+            :key="current?.subsidebar?.component"
+          />
         </KeepAlive>
       </slot>
     </div>

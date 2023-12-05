@@ -18,8 +18,8 @@ definePageMeta({
 // This is the object that will contain the validation messages
 const ONE_MB = 1000000
 const VALIDATION_TEXT = {
-  FIRST_REQUIRED: "Your first name can't be empty",
-  LASTNAME_REQUIRED: "Your last name can't be empty",
+  FIRST_REQUIRED: 'Your first name can\'t be empty',
+  LASTNAME_REQUIRED: 'Your last name can\'t be empty',
   OPTION_REQUIRED: 'Please select an option',
   AVATAR_TOO_BIG: `Avatar size must be less than 1MB`,
 }
@@ -28,7 +28,7 @@ const VALIDATION_TEXT = {
 // It's used to define the shape that the form data will have
 const zodSchema = z
   .object({
-    avatar: z.custom<File>((v) => v instanceof File).nullable(),
+    avatar: z.custom<File>(v => v instanceof File).nullable(),
     profile: z.object({
       firstName: z.string().min(1, VALIDATION_TEXT.FIRST_REQUIRED),
       lastName: z.string().min(1, VALIDATION_TEXT.LASTNAME_REQUIRED),
@@ -226,7 +226,8 @@ const onSubmit = handleSubmit(
         icon: 'ph:check',
         closable: true,
       })
-    } catch (error: any) {
+    }
+    catch (error: any) {
       // this will set the error on the form
       if (error.message === 'Fake backend validation error') {
         setFieldError('profile.firstName', 'This first name is not allowed')
@@ -281,7 +282,12 @@ const onSubmit = handleSubmit(
 </script>
 
 <template>
-  <form method="POST" action="" class="w-full pb-16" @submit.prevent="onSubmit">
+  <form
+    method="POST"
+    action=""
+    class="w-full pb-16"
+    @submit.prevent="onSubmit"
+  >
     <BaseCard>
       <div class="flex items-center justify-between p-4">
         <div>
@@ -299,15 +305,18 @@ const onSubmit = handleSubmit(
           </BaseText>
         </div>
         <div class="flex items-center gap-2">
-          <BaseButton class="w-24" to="/layouts/profile">Cancel</BaseButton>
+          <BaseButton class="w-24" to="/layouts/profile">
+            Cancel
+          </BaseButton>
           <BaseButton
             type="submit"
             color="primary"
             class="w-24"
             :disabled="isSubmitting"
             :loading="isSubmitting"
-            >Save</BaseButton
           >
+            Save
+          </BaseButton>
         </div>
       </div>
       <div class="p-4">
@@ -341,9 +350,9 @@ const onSubmit = handleSubmit(
                 "
               />
               <BaseInputFileHeadless
-                accept="image/*"
-                v-model="inputFile"
                 v-slot="{ open, remove, preview, files }"
+                v-model="inputFile"
+                accept="image/*"
               >
                 <div class="relative h-24 w-24">
                   <img
@@ -351,13 +360,13 @@ const onSubmit = handleSubmit(
                     :src="preview(files.item(0)!).value"
                     alt="Upload preview"
                     class="bg-muted-200 dark:bg-muted-700/60 h-24 w-24 rounded-full object-cover object-center"
-                  />
+                  >
                   <img
                     v-else
                     :src="currentAvatar"
                     alt="Upload preview"
                     class="bg-muted-200 dark:bg-muted-700/60 h-24 w-24 rounded-full object-cover object-center"
-                  />
+                  >
                   <div
                     v-if="files?.length && files.item(0)"
                     class="absolute bottom-0 end-0 z-20"
@@ -365,15 +374,19 @@ const onSubmit = handleSubmit(
                     <BaseButtonIcon
                       size="sm"
                       shape="full"
-                      @click="remove(files.item(0)!)"
                       data-nui-tooltip="Remove image"
+                      @click="remove(files.item(0)!)"
                     >
                       <Icon name="lucide:x" class="h-4 w-4" />
                     </BaseButtonIcon>
                   </div>
                   <div v-else class="absolute bottom-0 end-0 z-20">
                     <div class="relative" data-nui-tooltip="Upload image">
-                      <BaseButtonIcon size="sm" shape="full" @click="open">
+                      <BaseButtonIcon
+                        size="sm"
+                        shape="full"
+                        @click="open"
+                      >
                         <Icon name="lucide:plus" class="h-4 w-4" />
                       </BaseButtonIcon>
                     </div>

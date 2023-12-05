@@ -49,8 +49,9 @@ const onSubmit = handleSubmit(async (values) => {
 
   try {
     // fake delay, this will make isSubmitting value to be true
-    await new Promise((resolve) => setTimeout(resolve, 4000))
-  } catch {
+    await new Promise(resolve => setTimeout(resolve, 4000))
+  }
+  catch {
     // discard errors
   }
 
@@ -82,7 +83,11 @@ const onSubmit = handleSubmit(async (values) => {
         <div class="me-auto ms-auto mt-4 w-full">
           <div class="me-auto ms-auto mt-4 w-full max-w-md">
             <div class="text-center">
-              <BaseHeading as="h2" size="3xl" weight="medium">
+              <BaseHeading
+                as="h2"
+                size="3xl"
+                weight="medium"
+              >
                 Recover Password
               </BaseHeading>
               <BaseParagraph size="sm" class="text-muted-400 mb-6">
@@ -118,9 +123,9 @@ const onSubmit = handleSubmit(async (values) => {
                 v-else
                 method="POST"
                 action=""
-                @submit.prevent="onSubmit"
                 class="px-8 py-4"
                 novalidate
+                @submit.prevent="onSubmit"
               >
                 <div class="mb-4 space-y-4">
                   <Field

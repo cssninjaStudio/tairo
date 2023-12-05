@@ -46,9 +46,9 @@ watch(inputFile, (value) => {
           "
         />
         <BaseInputFileHeadless
-          accept="image/*"
-          v-model="inputFile"
           v-slot="{ open, remove, files }"
+          v-model="inputFile"
+          accept="image/*"
         >
           <div class="relative h-20 w-20">
             <img
@@ -56,13 +56,13 @@ watch(inputFile, (value) => {
               :src="avatarPreview"
               alt="Upload preview"
               class="bg-muted-200 dark:bg-muted-700/60 h-20 w-20 rounded-full object-cover object-center"
-            />
+            >
             <img
               v-else
               src="/img/avatars/placeholder-file.png"
               alt="Upload preview"
               class="bg-muted-200 dark:bg-muted-700/60 h-20 w-20 rounded-full object-cover object-center"
-            />
+            >
             <div
               v-if="files?.length && files.item(0)"
               class="absolute bottom-0 end-0 z-20"
@@ -70,15 +70,19 @@ watch(inputFile, (value) => {
               <BaseButtonIcon
                 size="sm"
                 shape="full"
-                @click="remove(files.item(0)!)"
                 tooltip="Remove image"
+                @click="remove(files.item(0)!)"
               >
                 <Icon name="lucide:x" class="h-4 w-4" />
               </BaseButtonIcon>
             </div>
             <div v-else class="absolute bottom-0 end-0 z-20">
               <div class="relative" tooltip="Upload image">
-                <BaseButtonIcon size="sm" shape="full" @click="open">
+                <BaseButtonIcon
+                  size="sm"
+                  shape="full"
+                  @click="open"
+                >
                   <Icon name="lucide:plus" class="h-4 w-4" />
                 </BaseButtonIcon>
               </div>
@@ -88,8 +92,12 @@ watch(inputFile, (value) => {
       </div>
 
       <div class="my-4 text-center font-sans">
-        <p class="text-muted-500 text-sm">Upload a project logo</p>
-        <p class="text-muted-400 text-xs">File size cannot exceed 2MB</p>
+        <p class="text-muted-500 text-sm">
+          Upload a project logo
+        </p>
+        <p class="text-muted-400 text-xs">
+          File size cannot exceed 2MB
+        </p>
       </div>
       <div class="mx-auto flex w-full max-w-sm flex-col gap-3">
         <BaseInput

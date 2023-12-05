@@ -25,7 +25,7 @@ if (data.value) {
 <template>
   <div class="min-h-screen overflow-hidden">
     <div class="mx-auto w-full max-w-4xl pt-12">
-      <div v-if="notifications.length === 0"></div>
+      <div v-if="notifications.length === 0" />
       <div v-else class="">
         <div
           v-for="item in notifications"
@@ -43,7 +43,7 @@ if (data.value) {
             <div
               class="h-4 w-4 rounded-full border-2 border-current"
               :class="getRandomColor()"
-            ></div>
+            />
           </div>
 
           <BaseCard class="p-4">
@@ -55,24 +55,19 @@ if (data.value) {
                     ? 'bg-primary-500'
                     : 'bg-muted-300 dark:bg-muted-700/50'
                 "
-              ></div>
+              />
               <BaseAvatar :src="item.user.src" size="sm" />
               <div>
                 <BaseText size="sm" lead="tight">
-                  <span class="text-muted-800 dark:text-muted-100"
-                    >{{ item.user.name }}&nbsp;</span
-                  >
-                  <span class="text-muted-500 dark:text-muted-400"
-                    >{{ item.target.text }}&nbsp;</span
-                  >
+                  <span class="text-muted-800 dark:text-muted-100">{{ item.user.name }}&nbsp;</span>
+                  <span class="text-muted-500 dark:text-muted-400">{{ item.target.text }}&nbsp;</span>
                   <NuxtLink
                     :to="item.target.url"
                     class="text-primary-500 underline-offset-4 hover:underline"
-                    >{{ item.target.name }}</NuxtLink
                   >
-                  <span class="text-muted-500 dark:text-muted-400"
-                    >&nbsp;{{ item.target.type }}</span
-                  >
+                    {{ item.target.name }}
+                  </NuxtLink>
+                  <span class="text-muted-500 dark:text-muted-400">&nbsp;{{ item.target.type }}</span>
                 </BaseText>
                 <BaseText size="xs" class="text-muted-400">
                   <span class="ltablet:hidden lg:hidden">{{ item.date }}</span>

@@ -17,11 +17,11 @@ const props = defineProps<{
         : '',
     ]"
   >
-    <slot></slot>
+    <slot />
     <div class="flex w-full flex-col sm:flex-row sm:items-center">
-      <slot name="start"></slot>
+      <slot name="start" />
       <div class="flex flex-col gap-2 sm:flex-row sm:items-center">
-        <slot name="end"></slot>
+        <slot name="end" />
       </div>
     </div>
   </BaseCard>

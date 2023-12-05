@@ -179,7 +179,7 @@ const matches = [
                   class="mx-auto h-12 w-12"
                   src="/img/icons/soccer/teams/barcelona.svg"
                   alt="Team logo"
-                />
+                >
                 <BaseHeading
                   as="h4"
                   size="sm"
@@ -202,7 +202,7 @@ const matches = [
                   class="mx-auto h-12 w-12"
                   src="/img/icons/soccer/teams/psg.svg"
                   alt="Team logo"
-                />
+                >
                 <BaseHeading
                   as="h4"
                   size="sm"
@@ -216,7 +216,11 @@ const matches = [
             </div>
             <!-- Action -->
             <div>
-              <BaseButton color="primary" shape="curved" class="!h-12 w-full">
+              <BaseButton
+                color="primary"
+                shape="curved"
+                class="!h-12 w-full"
+              >
                 <span>Watch Now</span>
               </BaseButton>
             </div>
@@ -276,7 +280,7 @@ const matches = [
                   class="pointer-events-none absolute bottom-0 end-6 sm:-end-10"
                   src="/img/illustrations/dashboards/soccer/soccer-player.svg"
                   alt="Soccer Player"
-                />
+                >
               </div>
             </div>
           </div>
@@ -311,7 +315,9 @@ const matches = [
                     class="min-w-full table-fixed divide-y divide-slate-200 text-left dark:divide-slate-700"
                   >
                     <thead>
-                      <th class="py-3 font-sans text-xs uppercase">Time</th>
+                      <th class="py-3 font-sans text-xs uppercase">
+                        Time
+                      </th>
                       <th
                         class="xs:px-8 py-3 text-center font-sans text-xs uppercase"
                       >
@@ -338,7 +344,7 @@ const matches = [
                                   ? 'bg-rose-500'
                                   : 'bg-muted-300 dark:bg-muted-600'
                               "
-                            ></div>
+                            />
                             <span>{{ match.time }}</span>
                           </div>
                         </td>
@@ -360,7 +366,7 @@ const matches = [
                                 class="h-8 w-8"
                                 :src="match.match.home.logo"
                                 :alt="match.match.home.name"
-                              />
+                              >
                             </div>
                             <div
                               class="text-muted-800 dark:text-muted-100 flex items-center justify-center gap-2 text-center font-sans"
@@ -386,7 +392,7 @@ const matches = [
                                 class="h-8 w-8"
                                 :src="match.match.away.logo"
                                 :alt="match.match.away.name"
-                              />
+                              >
                               <BaseHeading
                                 as="h4"
                                 size="sm"

@@ -37,7 +37,7 @@ const toggled = ref(Boolean(project.value.files?.length))
             src="/img/illustrations/wizard/upload.svg"
             class="mx-auto max-w-[210px] rounded-full"
             alt="Upload files"
-          />
+          >
         </template>
         <div class="mt-2 text-center">
           <button
@@ -51,9 +51,9 @@ const toggled = ref(Boolean(project.value.files?.length))
       </BasePlaceholderPage>
       <div v-else class="relative mx-auto max-w-3xl">
         <BaseInputFileHeadless
-          multiple
-          v-model="project.files"
           v-slot="{ open, remove, preview, drop, files }"
+          v-model="project.files"
+          multiple
         >
           <!-- Controls -->
           <div class="mb-4 flex items-center gap-2">
@@ -78,6 +78,8 @@ const toggled = ref(Boolean(project.value.files?.length))
           </div>
 
           <div
+            role="button"
+            tabindex="-1"
             class=""
             @dragenter.stop.prevent
             @dragover.stop.prevent
@@ -122,17 +124,17 @@ const toggled = ref(Boolean(project.value.files?.length))
                   <div class="flex items-center gap-2">
                     <div class="shrink-0">
                       <img
-                        class="h-14 w-14 rounded-xl object-cover object-center"
                         v-if="file.type.startsWith('image')"
+                        class="h-14 w-14 rounded-xl object-cover object-center"
                         :src="preview(file).value"
                         alt="Image preview"
-                      />
+                      >
                       <img
                         v-else
                         class="h-14 w-14 rounded-xl object-cover object-center"
                         src="/img/avatars/placeholder-file.png"
                         alt="Image preview"
-                      />
+                      >
                     </div>
                     <div class="font-sans">
                       <span
@@ -150,7 +152,11 @@ const toggled = ref(Boolean(project.value.files?.length))
                     class="ms-auto w-32 px-4 transition-opacity duration-300"
                     :class="'opacity-100'"
                   >
-                    <BaseProgress :value="0" size="xs" :color="'success'" />
+                    <BaseProgress
+                      :value="0"
+                      size="xs"
+                      :color="'success'"
+                    />
                   </div>
                   <div class="flex gap-2">
                     <button

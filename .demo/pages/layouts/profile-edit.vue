@@ -25,7 +25,12 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
             size="md"
           />
           <div class="">
-            <BaseHeading tag="h2" size="md" weight="medium" lead="none">
+            <BaseHeading
+              tag="h2"
+              size="md"
+              weight="medium"
+              lead="none"
+            >
               {{ data?.personalInfo.firstName }}
               {{ data?.personalInfo.lastName }}
             </BaseHeading>

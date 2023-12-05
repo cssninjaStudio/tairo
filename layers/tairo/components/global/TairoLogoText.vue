@@ -19,7 +19,11 @@
       clip-rule="evenodd"
     />
     <clipPath id="b"><use xlink:href="#a" class="overflow-visible" /></clipPath>
-    <path fill="currentColor" d="M0 1.7h182.6v488.1H0z" clip-path="url(#b)" />
+    <path
+      fill="currentColor"
+      d="M0 1.7h182.6v488.1H0z"
+      clip-path="url(#b)"
+    />
     <defs>
       <path
         id="c"

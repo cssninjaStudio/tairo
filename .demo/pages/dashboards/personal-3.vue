@@ -114,7 +114,7 @@ const candidates = [
 
 <template>
   <div
-    class="grid grid-cols-1 md:grid-cols-2 ltablet:grid-cols-3 lg:grid-cols-3 gap-6"
+    class="ltablet:grid-cols-3 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
   >
     <!--Grid item-->
     <div>
@@ -160,7 +160,11 @@ const candidates = [
           </div>
         </div>
         <div>
-          <BaseButton color="primary" shape="curved" class="h-11 w-full">
+          <BaseButton
+            color="primary"
+            shape="curved"
+            class="h-11 w-full"
+          >
             <span>View Schedule</span>
           </BaseButton>
         </div>
@@ -284,7 +288,11 @@ const candidates = [
             </BaseParagraph>
           </div>
           <div>
-            <BaseAvatarGroup :avatars="candidates" size="sm" :limit="2" />
+            <BaseAvatarGroup
+              :avatars="candidates"
+              size="sm"
+              :limit="2"
+            />
           </div>
         </div>
       </div>
@@ -386,7 +394,11 @@ const candidates = [
           </BaseParagraph>
         </div>
         <div class="ms-auto flex items-center">
-          <BaseButtonIcon shape="curved" muted class="scale-75">
+          <BaseButtonIcon
+            shape="curved"
+            muted
+            class="scale-75"
+          >
             <Icon name="lucide:arrow-right" class="h-5 w-5" />
           </BaseButtonIcon>
         </div>
@@ -409,7 +421,11 @@ const candidates = [
           </BaseParagraph>
         </div>
         <div class="ms-auto flex items-center">
-          <BaseButtonIcon shape="curved" muted class="scale-75">
+          <BaseButtonIcon
+            shape="curved"
+            muted
+            class="scale-75"
+          >
             <Icon name="lucide:arrow-right" class="h-5 w-5" />
           </BaseButtonIcon>
         </div>
@@ -432,7 +448,11 @@ const candidates = [
           </BaseParagraph>
         </div>
         <div class="ms-auto flex items-center">
-          <BaseButtonIcon shape="curved" muted class="scale-75">
+          <BaseButtonIcon
+            shape="curved"
+            muted
+            class="scale-75"
+          >
             <Icon name="lucide:arrow-right" class="h-5 w-5" />
           </BaseButtonIcon>
         </div>

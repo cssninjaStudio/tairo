@@ -48,8 +48,8 @@ const filteredPeople = computed(() =>
   query.value === ''
     ? people
     : people.filter((person) => {
-        return person.name.toLowerCase().includes(query.value.toLowerCase())
-      }),
+      return person.name.toLowerCase().includes(query.value.toLowerCase())
+    }),
 )
 </script>
 
@@ -73,7 +73,11 @@ const filteredPeople = computed(() =>
     </div>
 
     <div class="relative h-[calc(100%_-_64px)] w-full px-10">
-      <Combobox v-model="selectedPerson" class="relative z-10 mt-5" as="div">
+      <Combobox
+        v-model="selectedPerson"
+        class="relative z-10 mt-5"
+        as="div"
+      >
         <div class="group relative">
           <ComboboxInput
             class="border-muted-300 text-muted-600 focus:border-primary-500 focus:shadow-muted-300/50 dark:border-muted-700 dark:bg-muted-800 dark:text-muted-200 dark:placeholder:text-muted-600 dark:focus:border-muted-600 dark:focus:shadow-muted-800/50 h-12 w-full rounded-lg border bg-white py-3 pe-4 ps-10 font-sans text-sm leading-5 !outline-none transition duration-300 focus:shadow-lg"
@@ -122,7 +126,7 @@ const filteredPeople = computed(() =>
                     :src="person.avatar"
                     class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""
-                  />
+                  >
                 </div>
                 <div class="ms-3">
                   <h6
@@ -158,7 +162,7 @@ const filteredPeople = computed(() =>
                   src="/img/avatars/3.svg"
                   class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                   alt=""
-                />
+                >
               </div>
               <div class="ms-3">
                 <h6
@@ -182,7 +186,7 @@ const filteredPeople = computed(() =>
                   src="/img/avatars/18.svg"
                   class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                   alt=""
-                />
+                >
               </div>
               <div class="ms-3">
                 <h6
@@ -206,7 +210,7 @@ const filteredPeople = computed(() =>
                   src="/img/avatars/11.svg"
                   class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                   alt=""
-                />
+                >
               </div>
               <div class="ms-3">
                 <h6
@@ -245,7 +249,9 @@ const filteredPeople = computed(() =>
                 >
                   Browser Support
                 </h6>
-                <p class="text-muted-400 font-sans text-xs">Blog article</p>
+                <p class="text-muted-400 font-sans text-xs">
+                  Blog article
+                </p>
               </div>
             </NuxtLink>
           </li>
@@ -263,7 +269,9 @@ const filteredPeople = computed(() =>
                 >
                   Twitch new API
                 </h6>
-                <p class="text-muted-400 font-sans text-xs">Blog article</p>
+                <p class="text-muted-400 font-sans text-xs">
+                  Blog article
+                </p>
               </div>
             </NuxtLink>
           </li>
@@ -281,7 +289,9 @@ const filteredPeople = computed(() =>
                 >
                   Social integrations
                 </h6>
-                <p class="text-muted-400 font-sans text-xs">Blog article</p>
+                <p class="text-muted-400 font-sans text-xs">
+                  Blog article
+                </p>
               </div>
             </NuxtLink>
           </li>

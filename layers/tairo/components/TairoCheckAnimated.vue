@@ -20,7 +20,8 @@ const props = withDefaults(
 const strokeWidth = computed(() => {
   if (props.size === 'xs' || props.size === 'sm') {
     return '4'
-  } else {
+  }
+  else {
     return '2'
   }
 })

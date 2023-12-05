@@ -24,12 +24,14 @@ const demoPages = computed(() => {
       if (route.children) {
         // recurse
         traverseRoutes(route.children)
-      } else if (
-        route.path.includes(':') &&
-        Array.isArray(route.meta?.preview)
+      }
+      else if (
+        route.path.includes(':')
+        && Array.isArray(route.meta?.preview)
       ) {
         match.push(route)
-      } else if (!route.path.includes(':') && route.meta?.preview) {
+      }
+      else if (!route.path.includes(':') && route.meta?.preview) {
         // has preview data
         match.push(route)
       }
@@ -120,8 +122,9 @@ const filteredDemos = computed(() => {
       <div class="mb-16 max-w-2xl">
         <BaseText
           class="text-primary-500 mb-2 text-[0.65rem] uppercase tracking-wider"
-          >Prebuilt pages</BaseText
         >
+          Prebuilt pages
+        </BaseText>
         <BaseHeading
           as="h2"
           size="4xl"
@@ -199,8 +202,9 @@ const filteredDemos = computed(() => {
               color="primary"
               flavor="outline"
               to="/demos"
-              >View All {{ demoPages.length }} Demos</BaseButton
             >
+              View All {{ demoPages.length }} Demos
+            </BaseButton>
           </div>
         </div>
       </div>

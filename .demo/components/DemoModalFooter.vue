@@ -12,23 +12,33 @@ const isModalBodyOpen = ref(false)
   <!-- Element to trigger the modal -->
   <div class="flex gap-x-2">
     <div class="flex flex-wrap items-end gap-4">
-      <BaseButton @click="isModalStartOpen = true">Start Align</BaseButton>
+      <BaseButton @click="isModalStartOpen = true">
+        Start Align
+      </BaseButton>
     </div>
 
     <div class="flex items-end gap-4">
-      <BaseButton @click="isModalEndOpen = true">End Align</BaseButton>
+      <BaseButton @click="isModalEndOpen = true">
+        End Align
+      </BaseButton>
     </div>
 
     <div class="flex items-end gap-4">
-      <BaseButton @click="isModalCenterOpen = true">Center Align</BaseButton>
+      <BaseButton @click="isModalCenterOpen = true">
+        Center Align
+      </BaseButton>
     </div>
 
     <div class="flex items-end gap-4">
-      <BaseButton @click="isModalBetweenOpen = true">Between Align</BaseButton>
+      <BaseButton @click="isModalBetweenOpen = true">
+        Between Align
+      </BaseButton>
     </div>
 
     <div class="flex items-end gap-4">
-      <BaseButton @click="isModalBodyOpen = true">No Footer</BaseButton>
+      <BaseButton @click="isModalBodyOpen = true">
+        No Footer
+      </BaseButton>
     </div>
   </div>
 
@@ -59,7 +69,7 @@ const isModalBodyOpen = ref(false)
             src="https://media.cssninja.io/shuriken/avatars/3.svg"
             class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
             alt=""
-          />
+          >
         </div>
         <h3
           class="font-heading text-muted-800 text-lg font-medium leading-6 dark:text-white"
@@ -79,7 +89,9 @@ const isModalBodyOpen = ref(false)
       <!-- Footer -->
       <div class="p-4 md:p-6">
         <div class="flex gap-x-2">
-          <BaseButton @click="isModalStartOpen = false">Decline</BaseButton>
+          <BaseButton @click="isModalStartOpen = false">
+            Decline
+          </BaseButton>
           <BaseButton
             color="primary"
             flavor="solid"
@@ -119,7 +131,7 @@ const isModalBodyOpen = ref(false)
             src="https://media.cssninja.io/shuriken/avatars/3.svg"
             class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
             alt=""
-          />
+          >
         </div>
         <h3
           class="font-heading text-muted-800 text-lg font-medium leading-6 dark:text-white"
@@ -139,7 +151,9 @@ const isModalBodyOpen = ref(false)
       <!-- Footer -->
       <div class="p-4 md:p-6">
         <div class="flex gap-x-2">
-          <BaseButton @click="isModalEndOpen = false">Decline</BaseButton>
+          <BaseButton @click="isModalEndOpen = false">
+            Decline
+          </BaseButton>
           <BaseButton
             color="primary"
             flavor="solid"
@@ -179,7 +193,7 @@ const isModalBodyOpen = ref(false)
             src="https://media.cssninja.io/shuriken/avatars/3.svg"
             class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
             alt=""
-          />
+          >
         </div>
         <h3
           class="font-heading text-muted-800 text-lg font-medium leading-6 dark:text-white"
@@ -199,7 +213,9 @@ const isModalBodyOpen = ref(false)
       <!-- Footer -->
       <div class="p-4 md:p-6">
         <div class="flex gap-x-2">
-          <BaseButton @click="isModalCenterOpen = false">Decline</BaseButton>
+          <BaseButton @click="isModalCenterOpen = false">
+            Decline
+          </BaseButton>
           <BaseButton
             color="primary"
             flavor="solid"
@@ -239,7 +255,7 @@ const isModalBodyOpen = ref(false)
             src="https://media.cssninja.io/shuriken/avatars/3.svg"
             class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
             alt=""
-          />
+          >
         </div>
         <h3
           class="font-heading text-muted-800 text-lg font-medium leading-6 dark:text-white"
@@ -259,7 +275,9 @@ const isModalBodyOpen = ref(false)
       <!-- Footer -->
       <div class="p-4 md:p-6">
         <div class="flex gap-x-2">
-          <BaseButton @click="isModalBetweenOpen = false">Decline</BaseButton>
+          <BaseButton @click="isModalBetweenOpen = false">
+            Decline
+          </BaseButton>
         </div>
       </div>
       <div class="p-4 md:p-6">
@@ -302,7 +320,7 @@ const isModalBodyOpen = ref(false)
             src="https://media.cssninja.io/shuriken/avatars/3.svg"
             class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
             alt=""
-          />
+          >
         </div>
         <h3
           class="font-heading text-muted-800 text-lg font-medium leading-6 dark:text-white"

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+/* eslint-disable sonarjs/no-identical-functions */
 import { Calendar } from 'v-calendar'
 
 import 'v-calendar/dist/style.css'
@@ -49,7 +50,7 @@ function useSparkSalesOne() {
     fill: {
       opacity: 1,
     },
-    labels: [...Array(24).keys()].map((n) => `2020-10-0${n + 1}`),
+    labels: [...Array(24).keys()].map(n => `2020-10-0${n + 1}`),
     yaxis: {
       min: 0,
       labels: {
@@ -166,7 +167,7 @@ function useSparkSalesTwo() {
     fill: {
       opacity: 1,
     },
-    labels: [...Array(24).keys()].map((n) => `2020-10-0${n + 1}`),
+    labels: [...Array(24).keys()].map(n => `2020-10-0${n + 1}`),
     yaxis: {
       min: 0,
       labels: {
@@ -282,7 +283,7 @@ function useSparkSalesThree() {
     fill: {
       opacity: 1,
     },
-    labels: [...Array(24).keys()].map((n) => `2020-10-0${n + 1}`),
+    labels: [...Array(24).keys()].map(n => `2020-10-0${n + 1}`),
     yaxis: {
       min: 0,
       labels: {
@@ -399,7 +400,7 @@ function useSparkSalesFour() {
     fill: {
       opacity: 1,
     },
-    labels: [...Array(24).keys()].map((n) => `2020-10-0${n + 1}`),
+    labels: [...Array(24).keys()].map(n => `2020-10-0${n + 1}`),
     yaxis: {
       min: 0,
       labels: {

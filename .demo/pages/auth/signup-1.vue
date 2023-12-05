@@ -99,7 +99,8 @@ const onSubmit = handleSubmit(async (values) => {
       closable: true,
     })
     router.push('/layouts/onboarding-1')
-  } catch (error: any) {
+  }
+  catch (error: any) {
     // this will set the error on the form
     if (error.message === 'Fake backend validation error') {
       setFieldError('username', 'This username is already taken')
@@ -114,36 +115,45 @@ const onSubmit = handleSubmit(async (values) => {
       class="from-primary-900 to-primary-500 i group relative hidden w-1/2 items-center justify-around overflow-hidden bg-gradient-to-tr md:flex"
     >
       <div class="mx-auto max-w-xs text-center">
-        <BaseHeading as="h2" size="3xl" weight="medium" class="text-white">
+        <BaseHeading
+          as="h2"
+          size="3xl"
+          weight="medium"
+          class="text-white"
+        >
           Have an Account?
         </BaseHeading>
         <BaseParagraph size="sm" class="text-muted-200 mb-3">
           No need to waste time on this page, let's take you back to your
           account
         </BaseParagraph>
-        <BaseButton to="/auth/login-1" shape="curved" class="w-full"
-          >Login to Account</BaseButton
+        <BaseButton
+          to="/auth/login-1"
+          shape="curved"
+          class="w-full"
         >
+          Login to Account
+        </BaseButton>
       </div>
       <div
         class="bg-muted-200/20 absolute -start-6 -top-6 h-14 w-0 origin-top-left rotate-45 rounded-full transition-all delay-[25ms] duration-300 group-hover:w-72"
-      ></div>
+      />
       <div
         class="bg-muted-200/20 absolute -top-12 start-20 h-14 w-0 origin-top-left rotate-45 rounded-full transition-all delay-75 duration-300 group-hover:w-48"
-      ></div>
+      />
       <div
         class="bg-muted-200/20 absolute -start-7 top-24 h-14 w-0 origin-top-left rotate-45 rounded-full transition-all delay-150 duration-300 group-hover:w-40"
-      ></div>
+      />
 
       <div
         class="bg-muted-200/20 absolute -bottom-6 -end-6 h-14 w-0 origin-bottom-right rotate-45 rounded-full transition-all delay-150 duration-300 group-hover:w-72"
-      ></div>
+      />
       <div
         class="bg-muted-200/20 absolute -bottom-12 end-20 h-14 w-0 origin-bottom-right rotate-45 rounded-full transition-all delay-75 duration-300 group-hover:w-48"
-      ></div>
+      />
       <div
         class="bg-muted-200/20 absolute -end-7 bottom-24 h-14 w-0 origin-bottom-right rotate-45 rounded-full transition-all delay-[25ms] duration-300 group-hover:w-40"
-      ></div>
+      />
     </div>
     <div
       class="dark:bg-muted-900 flex flex-col items-center justify-between bg-white py-10 md:w-1/2"
@@ -162,11 +172,15 @@ const onSubmit = handleSubmit(async (values) => {
       <form
         method="POST"
         action=""
-        @submit.prevent="onSubmit"
         class="mx-auto w-full max-w-xs"
         novalidate
+        @submit.prevent="onSubmit"
       >
-        <BaseHeading as="h2" size="3xl" weight="medium">
+        <BaseHeading
+          as="h2"
+          size="3xl"
+          weight="medium"
+        >
           Welcome to Tairo
         </BaseHeading>
         <BaseParagraph size="sm" class="text-muted-400 mb-6">

@@ -54,8 +54,14 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
         />
       </template>
       <template #right>
-        <BaseButton class="w-full sm:w-32" shape="curved">Manage</BaseButton>
-        <BaseButton color="primary" class="w-full sm:w-32" shape="curved">
+        <BaseButton class="w-full sm:w-32" shape="curved">
+          Manage
+        </BaseButton>
+        <BaseButton
+          color="primary"
+          class="w-full sm:w-32"
+          shape="curved"
+        >
           <Icon name="lucide:plus" class="h-4 w-4" />
           <span>Upload</span>
         </BaseButton>
@@ -71,12 +77,12 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                 class="block dark:hidden"
                 src="/img/illustrations/placeholders/flat/placeholder-search-3.svg"
                 alt="Placeholder image"
-              />
+              >
               <img
                 class="hidden dark:block"
                 src="/img/illustrations/placeholders/flat/placeholder-search-3-dark.svg"
                 alt="Placeholder image"
-              />
+              >
             </template>
           </BasePlaceholderPage>
         </div>
@@ -166,7 +172,11 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                       </template>
                     </BaseDropdownItem>
                     <BaseDropdownDivider />
-                    <BaseDropdownItem to="#" title="Share" text="Share recipe">
+                    <BaseDropdownItem
+                      to="#"
+                      title="Share"
+                      text="Share recipe"
+                    >
                       <template #start>
                         <Icon
                           name="ph:share-duotone"
@@ -175,7 +185,11 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                       </template>
                     </BaseDropdownItem>
                     <BaseDropdownDivider />
-                    <BaseDropdownItem to="#" title="Save" text="Save recipe">
+                    <BaseDropdownItem
+                      to="#"
+                      title="Save"
+                      text="Save recipe"
+                    >
                       <template #start>
                         <Icon
                           name="ph:bookmark-simple-duotone"

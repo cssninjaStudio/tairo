@@ -1,6 +1,10 @@
 <template>
   <BaseFocusLoop class="grid grid-cols-2 gap-6 md:max-w-lg md:grid-cols-4">
-    <BaseCheckbox v-model="options.first" label="Default" shape="curved" />
+    <BaseCheckbox
+      v-model="options.first"
+      label="Default"
+      shape="curved"
+    />
 
     <BaseCheckbox
       v-model="options.second"

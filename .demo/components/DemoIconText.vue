@@ -30,10 +30,10 @@ const props = withDefaults(
           <span class="relative flex h-2 w-2">
             <span
               class="bg-primary-400 absolute inline-flex h-full w-full animate-ping rounded-full opacity-75"
-            ></span>
+            />
             <span
               class="bg-primary-500 relative inline-flex h-2 w-2 rounded-full"
-            ></span>
+            />
           </span>
         </div>
       </div>
@@ -46,7 +46,7 @@ const props = withDefaults(
       </BaseParagraph>
     </div>
     <div>
-      <slot></slot>
+      <slot />
     </div>
   </div>
 </template>

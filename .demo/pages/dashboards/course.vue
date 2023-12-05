@@ -231,7 +231,11 @@ const students = [
             </BaseParagraph>
           </div>
           <div class="mb-8 mt-auto flex items-center justify-between">
-            <BaseAvatarGroup :avatars="course.students" :limit="3" size="sm" />
+            <BaseAvatarGroup
+              :avatars="course.students"
+              :limit="3"
+              size="sm"
+            />
             <div>
               <BaseButtonAction>
                 <span>Discussion</span>
@@ -281,7 +285,11 @@ const students = [
             </div>
           </div>
           <div class="mt-4">
-            <BaseButton color="primary" shape="curved" class="w-full">
+            <BaseButton
+              color="primary"
+              shape="curved"
+              class="w-full"
+            >
               <span>Class Details</span>
             </BaseButton>
           </div>
@@ -320,7 +328,7 @@ const students = [
                 :src="file.icon"
                 :alt="file.name"
                 class="h-10 w-10 shrink-0"
-              />
+              >
               <div>
                 <BaseHeading
                   as="h2"

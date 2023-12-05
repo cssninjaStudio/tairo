@@ -105,8 +105,8 @@ export function useCalendarEvents(props: UseCalendarEventsProps) {
       const events: CalendarCustomAttribute<CalendarEvent>[] = []
       const count = Math.floor(Math.random() * 3)
       for (let j = 0; j < count; j++) {
-        const event =
-          pendingEvents.value[
+        const event
+          = pendingEvents.value[
             Math.floor(Math.random() * pendingEvents.value.length)
           ]
         const startDate = randomDate(addHours(date, 8), addHours(date, 18))

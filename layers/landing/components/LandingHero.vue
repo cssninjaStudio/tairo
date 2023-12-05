@@ -82,17 +82,17 @@ function useGaugePersonal() {
   <div
     class="dark:to-muted-900 relative min-h-screen overflow-hidden bg-gradient-to-b from-transparent to-white"
   >
-    <div class="gridlines absolute inset-x-0 z-10 -mt-8 py-20"></div>
+    <div class="gridlines absolute inset-x-0 z-10 -mt-8 py-20" />
     <div class="absolute inset-x-0 z-20 -mt-24 py-20">
       <div
         class="mt-12 grid grid-cols-2 -space-x-52 opacity-60 dark:opacity-50 2xl:mx-auto 2xl:max-w-6xl"
       >
         <div
           class="from-primary-200 to-primary-400 h-40 bg-gradient-to-br blur-3xl dark:from-blue-700"
-        ></div>
+        />
         <div
           class="dark:to-primary-600 h-24 bg-gradient-to-r from-indigo-400 to-indigo-700 blur-3xl"
-        ></div>
+        />
       </div>
     </div>
     <div class="mx-auto w-full max-w-7xl px-4">
@@ -107,8 +107,7 @@ function useGaugePersonal() {
           The dashboard system that makes you say
           <span
             class="text-primary-500 font-hairline underline decoration-dotted underline-offset-4"
-            >wow</span
-          >
+          >wow</span>
         </BaseHeading>
         <BaseParagraph
           size="lg"
@@ -216,7 +215,9 @@ function useGaugePersonal() {
               >
                 <Icon name="lucide:menu" class="text-muted-400 h-5 w-5" />
               </div>
-              <BaseText class="hidden sm:inline-block">My Dashboard</BaseText>
+              <BaseText class="hidden sm:inline-block">
+                My Dashboard
+              </BaseText>
             </div>
             <div class="flex h-full items-center justify-end gap-1">
               <div
@@ -260,7 +261,11 @@ function useGaugePersonal() {
               class="ltablet:gap-6 group-[&:not(.scrolled)]/landing:ltablet:mt-24 group-[&:not(.scrolled)]/landing:ptablet:mt-24 flex flex-col gap-6 sm:gap-3 lg:gap-4 group-[&:not(.scrolled)]/landing:lg:mt-24"
             >
               <!-- Widget -->
-              <BaseCard shape="curved" elevated class="flex flex-col p-6">
+              <BaseCard
+                shape="curved"
+                elevated
+                class="flex flex-col p-6"
+              >
                 <div class="mb-6 flex items-center justify-between">
                   <BaseHeading
                     as="h3"
@@ -290,7 +295,11 @@ function useGaugePersonal() {
             <!-- Col -->
             <div class="ltablet:gap-6 flex flex-col gap-6 sm:gap-3 lg:gap-4">
               <!-- Widget -->
-              <BaseCard shape="curved" elevated class="p-6">
+              <BaseCard
+                shape="curved"
+                elevated
+                class="p-6"
+              >
                 <DemoInboxMessage
                   picture="/img/avatars/10.svg"
                   name="Kendra W."
@@ -301,7 +310,11 @@ function useGaugePersonal() {
                 />
               </BaseCard>
               <!-- Widget -->
-              <BaseCard shape="curved" elevated class="p-6">
+              <BaseCard
+                shape="curved"
+                elevated
+                class="p-6"
+              >
                 <DemoInfoBadges
                   image="/img/illustrations/widgets/1.svg"
                   badge-small="/img/illustrations/widgets/3.svg"
@@ -316,11 +329,19 @@ function useGaugePersonal() {
               class="ltablet:gap-6 group-[&:not(.scrolled)]/landing:ltablet:mt-16 group-[&:not(.scrolled)]/landing:ptablet:mt-16 flex flex-col gap-6 sm:hidden sm:gap-3 lg:flex lg:gap-4 group-[&:not(.scrolled)]/landing:lg:mt-16"
             >
               <!-- Widget -->
-              <BaseCard shape="curved" elevated class="p-4">
+              <BaseCard
+                shape="curved"
+                elevated
+                class="p-4"
+              >
                 <DemoTeamSearchCompact shape="curved" />
               </BaseCard>
               <!-- Widget -->
-              <BaseCard shape="curved" elevated class="p-3">
+              <BaseCard
+                shape="curved"
+                elevated
+                class="p-3"
+              >
                 <DemoVideoCompact shape="curved" />
               </BaseCard>
             </div>
@@ -329,7 +350,11 @@ function useGaugePersonal() {
               class="ltablet:gap-6 group-[&:not(.scrolled)]/landing:ltablet:mt-10 group-[&:not(.scrolled)]/landing:ptablet:mt-10 flex flex-col gap-6 sm:gap-3 lg:gap-4 group-[&:not(.scrolled)]/landing:lg:mt-10"
             >
               <!-- Widget -->
-              <BaseCard shape="curved" elevated class="p-6">
+              <BaseCard
+                shape="curved"
+                elevated
+                class="p-6"
+              >
                 <DemoProgressCircle
                   image="/img/avatars/6.svg"
                   :title="`${y < 500 ? Math.trunc(y / 5) : 100}% completed!`"
@@ -338,7 +363,11 @@ function useGaugePersonal() {
                 />
               </BaseCard>
               <!-- Widget -->
-              <BaseCard shape="curved" elevated class="p-6">
+              <BaseCard
+                shape="curved"
+                elevated
+                class="p-6"
+              >
                 <DemoFollowersCompact />
               </BaseCard>
             </div>

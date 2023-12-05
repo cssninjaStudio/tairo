@@ -11,9 +11,9 @@
     />
 
     <BaseInputFileHeadless
-      multiple
-      v-model="uploadedFiles"
       v-slot="{ open, remove, preview, drop, files }"
+      v-model="uploadedFiles"
+      multiple
     >
       <!-- Controls -->
       <div class="mb-4 flex items-center gap-2">
@@ -42,7 +42,15 @@
         </button>
       </div>
 
-      <div class="" @dragenter.stop.prevent @dragover.stop.prevent @drop="drop">
+      <div
+        role="button"
+        tabindex="-1"
+        class="
+        "
+        @dragenter.stop.prevent
+        @dragover.stop.prevent
+        @drop="drop"
+      >
         <div
           v-if="!files?.length"
           class="nui-focus border-muted-300 dark:border-muted-700 hover:border-muted-400 focus:border-muted-400 dark:hover:border-muted-600 dark:focus:border-muted-700 group cursor-pointer rounded-lg border-[3px] border-dashed p-8 transition-colors duration-300"
@@ -57,7 +65,9 @@
               class="text-muted-400 group-hover:text-primary-500 group-focus:text-primary-500 mb-2 h-10 w-10 transition-colors duration-300"
             />
 
-            <h4 class="text-muted-400 font-sans text-sm">Drop files to upload</h4>
+            <h4 class="text-muted-400 font-sans text-sm">
+              Drop files to upload
+            </h4>
 
             <div>
               <span class="text-muted-400 font-sans text-[0.7rem] font-semibold uppercase">
@@ -82,18 +92,18 @@
               <div class="flex items-center gap-2">
                 <div class="shrink-0">
                   <img
-                    class="h-14 w-14 rounded-xl object-cover object-center"
                     v-if="file.type.startsWith('image')"
+                    class="h-14 w-14 rounded-xl object-cover object-center"
                     :src="preview(file).value"
                     alt="Image preview"
-                  />
+                  >
 
                   <img
                     v-else
                     class="h-14 w-14 rounded-xl object-cover object-center"
                     src="/img/avatars/placeholder-file.png"
                     alt="Image preview"
-                  />
+                  >
                 </div>
 
                 <div class="font-sans">
@@ -108,7 +118,11 @@
               </div>
 
               <div class="ms-auto w-32 px-4 transition-opacity duration-300" :class="'opacity-100'">
-                <BaseProgress :value="0" size="xs" :color="'success'" />
+                <BaseProgress
+                  :value="0"
+                  size="xs"
+                  :color="'success'"
+                />
               </div>
 
               <div class="flex gap-2">

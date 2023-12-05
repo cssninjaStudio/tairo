@@ -12,7 +12,7 @@ const items = [
   {
     icon: 'ph:phone-duotone',
     image: undefined,
-    title: "Call Danny at Colby's",
+    title: 'Call Danny at Colby\'s',
     description: 'Today - 11:30am',
   },
   {
@@ -24,7 +24,7 @@ const items = [
   {
     icon: 'ph:chat-circle-duotone',
     image: undefined,
-    title: "Answer Annie's messages",
+    title: 'Answer Annie\'s messages',
     description: 'Today - 01:45pm',
   },
   {
@@ -70,7 +70,11 @@ const items = [
           props.shape === 'full' ? 'rounded-full' : '',
         ]"
       >
-        <Icon v-if="item.icon" :name="item.icon" class="" />
+        <Icon
+          v-if="item.icon"
+          :name="item.icon"
+          class=""
+        />
         <img
           v-if="item.image"
           :src="item.image"
@@ -81,7 +85,7 @@ const items = [
             props.shape === 'full' ? 'rounded-full' : '',
           ]"
           :alt="item.title"
-        />
+        >
       </div>
       <div class="ms-10">
         <h6
@@ -89,7 +93,9 @@ const items = [
         >
           {{ item.title }}
         </h6>
-        <p class="text-muted-400 font-sans text-xs">{{ item.description }}</p>
+        <p class="text-muted-400 font-sans text-xs">
+          {{ item.description }}
+        </p>
       </div>
     </div>
   </div>

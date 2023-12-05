@@ -27,7 +27,8 @@ watch(
     await nextTick()
     if (isMd) {
       paneSize.value = 50
-    } else {
+    }
+    else {
       paneSize.value = 100
     }
   },
@@ -165,7 +166,7 @@ const messages = [
 const activeMessage = ref(1)
 
 const selectedMessage = computed(() => {
-  return messages.find((message) => message.id === activeMessage.value)
+  return messages.find(message => message.id === activeMessage.value)
 })
 
 const panelActive = ref(false)
@@ -316,6 +317,7 @@ const panelActive = ref(false)
                     : 'hover:bg-muted-100 dark:hover:bg-muted-800'
                 "
                 role="button"
+                tabindex="0"
                 @click=";(activeMessage = message.id), (panelActive = true)"
               >
                 <div class="mb-3 flex items-center gap-2">
@@ -327,7 +329,11 @@ const panelActive = ref(false)
                     class="pointer-events-none"
                   />
                   <div class="pointer-events-none">
-                    <BaseHeading size="sm" weight="semibold" lead="tight">
+                    <BaseHeading
+                      size="sm"
+                      weight="semibold"
+                      lead="tight"
+                    >
                       <span>{{ message.sender.name }}</span>
                     </BaseHeading>
                     <BaseParagraph size="xs" lead="none">
@@ -437,16 +443,20 @@ const panelActive = ref(false)
               <div
                 class="nui-slimscroll h-[calc(100vh_-_344px)] overflow-y-auto p-8"
               >
-                <h1 class="text-2xl font-bold">{{ selectedMessage?.title }}</h1>
+                <h1 class="text-2xl font-bold">
+                  {{ selectedMessage?.title }}
+                </h1>
                 <article
                   class="text-muted-500 dark:text-muted-400 mt-8 leading-7 tracking-wider"
                 >
+                  <!-- eslint-disable vue/no-v-html -->
                   <p
                     class="font-sans"
                     v-html="
                       selectedMessage?.content.replaceAll('/n ', '<br /><br />')
                     "
-                  ></p>
+                  />
+                  <!-- eslint-enable vue/no-v-html -->
                 </article>
                 <div class="mt-24 grid grid-cols-1 gap-4 sm:grid-cols-4">
                   <button
@@ -460,31 +470,31 @@ const panelActive = ref(false)
                       class="h-11 w-11"
                       src="/img/icons/files/pdf.svg"
                       alt="Pdf file"
-                    />
+                    >
                     <img
                       v-else-if="file.type === 'zip'"
                       class="h-11 w-11"
                       src="/img/icons/files/zip-format.svg"
                       alt="Zip file"
-                    />
+                    >
                     <img
                       v-else-if="file.type === 'ai'"
                       class="h-11 w-11"
                       src="/img/icons/files/ai.svg"
                       alt="AI file"
-                    />
+                    >
                     <img
                       v-else-if="file.type === 'sheet'"
                       class="h-11 w-11"
                       src="/img/icons/files/sheet.svg"
                       alt="Sheet"
-                    />
+                    >
                     <img
                       v-else-if="file.type === 'doc'"
                       class="h-11 w-11"
                       src="/img/icons/files/doc-2.svg"
                       alt="Document"
-                    />
+                    >
                     <span class="block font-sans">
                       <span
                         class="text-muted-800 dark:text-muted-100 block text-sm font-semibold"
@@ -519,14 +529,18 @@ const panelActive = ref(false)
                     class="bg-muted-50 dark:bg-muted-900 placeholder:text-muted-300 dark:placeholder:text-muted-600 w-full resize-none rounded-2xl p-3 font-sans outline-none"
                     placeholder="Type your reply here..."
                     rows="2"
-                  ></textarea>
+                  />
                   <div class="flex items-center justify-between p-3">
                     <button
                       class="text-muted-500 dark:text-muted-100 flex h-6 w-6 items-center justify-center"
                     >
                       <Icon name="uit:paperclip" class="h-7 w-7" />
                     </button>
-                    <BaseButton shape="curved" color="primary" class="w-24">
+                    <BaseButton
+                      shape="curved"
+                      color="primary"
+                      class="w-24"
+                    >
                       <span>Reply</span>
                     </BaseButton>
                   </div>

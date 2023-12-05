@@ -4,7 +4,7 @@
   >
     <div
       class="absolute -bottom-2.5 -end-2.5 z-10 h-12 w-12 rounded-full bg-white opacity-10"
-    ></div>
+    />
     <div class="flex items-center justify-between">
       <span class="block font-sans text-xs font-medium text-white">**4628</span>
       <Icon name="cib:visa" class="h-7 w-7 text-white" />

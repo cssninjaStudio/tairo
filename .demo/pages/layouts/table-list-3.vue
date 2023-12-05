@@ -50,8 +50,9 @@ const isAllVisibleSelected = computed(() => {
 function toggleAllVisibleSelection() {
   if (isAllVisibleSelected.value) {
     selected.value = []
-  } else {
-    selected.value = data.value?.data.map((item) => item.id) ?? []
+  }
+  else {
+    selected.value = data.value?.data.map(item => item.id) ?? []
   }
 }
 </script>
@@ -78,10 +79,18 @@ function toggleAllVisibleSelection() {
             wrapper: 'w-full sm:w-40',
           }"
         >
-          <option :value="10">10 per page</option>
-          <option :value="25">25 per page</option>
-          <option :value="50">50 per page</option>
-          <option :value="100">100 per page</option>
+          <option :value="10">
+            10 per page
+          </option>
+          <option :value="25">
+            25 per page
+          </option>
+          <option :value="50">
+            50 per page
+          </option>
+          <option :value="100">
+            100 per page
+          </option>
         </BaseSelect>
       </template>
       <div>
@@ -95,12 +104,12 @@ function toggleAllVisibleSelection() {
                 class="block dark:hidden"
                 src="/img/illustrations/placeholders/flat/placeholder-search-4.svg"
                 alt="Placeholder image"
-              />
+              >
               <img
                 class="hidden dark:block"
                 src="/img/illustrations/placeholders/flat/placeholder-search-4-dark.svg"
                 alt="Placeholder image"
-              />
+              >
             </template>
           </BasePlaceholderPage>
         </div>
@@ -108,7 +117,11 @@ function toggleAllVisibleSelection() {
           <div class="w-full">
             <TairoTable shape="rounded">
               <template #header>
-                <TairoTableHeading uppercase spaced class="p-4">
+                <TairoTableHeading
+                  uppercase
+                  spaced
+                  class="p-4"
+                >
                   <div class="flex items-center">
                     <BaseCheckbox
                       :model-value="isAllVisibleSelected"
@@ -122,14 +135,24 @@ function toggleAllVisibleSelection() {
                     />
                   </div>
                 </TairoTableHeading>
-                <TairoTableHeading uppercase spaced>Type</TairoTableHeading>
-                <TairoTableHeading uppercase spaced>Name</TairoTableHeading>
-                <TairoTableHeading uppercase spaced>Size</TairoTableHeading>
-                <TairoTableHeading uppercase spaced>Version</TairoTableHeading>
+                <TairoTableHeading uppercase spaced>
+                  Type
+                </TairoTableHeading>
+                <TairoTableHeading uppercase spaced>
+                  Name
+                </TairoTableHeading>
+                <TairoTableHeading uppercase spaced>
+                  Size
+                </TairoTableHeading>
+                <TairoTableHeading uppercase spaced>
+                  Version
+                </TairoTableHeading>
                 <TairoTableHeading uppercase spaced>
                   Last Updated
                 </TairoTableHeading>
-                <TairoTableHeading uppercase spaced>Action</TairoTableHeading>
+                <TairoTableHeading uppercase spaced>
+                  Action
+                </TairoTableHeading>
               </template>
 
               <TairoTableRow v-if="selected.length > 0" :hoverable="false">
@@ -142,8 +165,7 @@ function toggleAllVisibleSelection() {
                   <a
                     href="#"
                     class="outline-none hover:underline focus:underline"
-                    >Click here to everything</a
-                  >
+                  >Click here to everything</a>
                 </TairoTableCell>
               </TairoTableRow>
 
@@ -160,7 +182,11 @@ function toggleAllVisibleSelection() {
                   </div>
                 </TairoTableCell>
                 <TairoTableCell light spaced>
-                  <img :src="item.icon" :alt="item.name" class="max-w-[46px]" />
+                  <img
+                    :src="item.icon"
+                    :alt="item.name"
+                    class="max-w-[46px]"
+                  >
                 </TairoTableCell>
                 <TairoTableCell spaced>
                   <span class="font-medium">{{ item.name }}</span>
@@ -190,7 +216,9 @@ function toggleAllVisibleSelection() {
                   </div>
                 </TairoTableCell>
                 <TairoTableCell spaced>
-                  <BaseButtonAction muted>Manage</BaseButtonAction>
+                  <BaseButtonAction muted>
+                    Manage
+                  </BaseButtonAction>
                 </TairoTableCell>
               </TairoTableRow>
             </TairoTable>

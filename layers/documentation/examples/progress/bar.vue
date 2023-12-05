@@ -1,6 +1,11 @@
 <template>
   <div class="max-w-xs space-y-4">
-    <BaseProgress title="Default progress bar" size="sm" :value="progress" color="primary" />
+    <BaseProgress
+      title="Default progress bar"
+      size="sm"
+      :value="progress"
+      color="primary"
+    />
 
     <div class="flex justify-between gap-2">
       <BaseButtonAction

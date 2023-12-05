@@ -78,7 +78,7 @@ const mainClass = computed(() => {
                   resolveComponentOrNative(config?.navigation.logo.component)
                 "
                 v-bind="config?.navigation.logo.props"
-              ></component>
+              />
             </NuxtLink>
             <BaseHeading
               v-if="config?.toolbar?.showTitle"
@@ -87,15 +87,17 @@ const mainClass = computed(() => {
               weight="light"
               class="text-muted-800 hidden dark:text-white md:block"
             >
-              <slot name="title">{{ route.meta.title }}</slot>
+              <slot name="title">
+                {{ route.meta.title }}
+              </slot>
             </BaseHeading>
             <component
-              v-if="config?.navigation?.header?.component"
               :is="
                 resolveComponentOrNative(config?.navigation?.header?.component)
               "
+              v-if="config?.navigation?.header?.component"
               v-bind="config?.navigation?.header?.props"
-            ></component>
+            />
             <div class="flex items-center justify-center md:hidden">
               <button type="button" @click="isMobileOpen = true">
                 <Icon name="lucide:menu" class="text-muted-400 h-6 w-6" />

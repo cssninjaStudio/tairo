@@ -35,6 +35,6 @@ const clampMap = {
         : 'text-muted-800 dark:text-white',
     ]"
   >
-    <slot></slot>
+    <slot />
   </div>
 </template>

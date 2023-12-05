@@ -23,7 +23,7 @@ const props = defineProps<{
         ]"
         :src="props.src"
         :alt="props.alt"
-      />
+      >
 
       <img
         class="border-muted-700 hidden w-full rounded-lg border transition-all duration-300 dark:block"
@@ -33,7 +33,7 @@ const props = defineProps<{
         ]"
         :src="props.srcDark || props.src"
         :alt="props.alt"
-      />
+      >
     </NuxtLink>
   </div>
 </template>

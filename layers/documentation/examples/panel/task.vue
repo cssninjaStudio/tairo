@@ -1,6 +1,8 @@
 <template>
   <div>
-    <BaseButton @click="open('task', { task: task })">Open Panel</BaseButton>
+    <BaseButton @click="open('task', { task: task })">
+      Open Panel
+    </BaseButton>
   </div>
 </template>
 

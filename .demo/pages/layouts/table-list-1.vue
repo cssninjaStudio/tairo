@@ -50,8 +50,9 @@ const isAllVisibleSelected = computed(() => {
 function toggleAllVisibleSelection() {
   if (isAllVisibleSelected.value) {
     selected.value = []
-  } else {
-    selected.value = data.value?.data.map((item) => item.id) ?? []
+  }
+  else {
+    selected.value = data.value?.data.map(item => item.id) ?? []
   }
 }
 </script>
@@ -77,10 +78,18 @@ function toggleAllVisibleSelection() {
             wrapper: 'w-full sm:w-40',
           }"
         >
-          <option :value="10">10 per page</option>
-          <option :value="25">25 per page</option>
-          <option :value="50">50 per page</option>
-          <option :value="100">100 per page</option>
+          <option :value="10">
+            10 per page
+          </option>
+          <option :value="25">
+            25 per page
+          </option>
+          <option :value="50">
+            50 per page
+          </option>
+          <option :value="100">
+            100 per page
+          </option>
         </BaseSelect>
       </template>
       <div>
@@ -94,12 +103,12 @@ function toggleAllVisibleSelection() {
                 class="block dark:hidden"
                 src="/img/illustrations/placeholders/flat/placeholder-search-4.svg"
                 alt="Placeholder image"
-              />
+              >
               <img
                 class="hidden dark:block"
                 src="/img/illustrations/placeholders/flat/placeholder-search-4-dark.svg"
                 alt="Placeholder image"
-              />
+              >
             </template>
           </BasePlaceholderPage>
         </div>
@@ -107,7 +116,11 @@ function toggleAllVisibleSelection() {
           <div class="w-full">
             <TairoTable shape="rounded" :scrollable="false">
               <template #header>
-                <TairoTableHeading uppercase spaced class="p-4">
+                <TairoTableHeading
+                  uppercase
+                  spaced
+                  class="p-4"
+                >
                   <div class="flex items-center">
                     <BaseCheckbox
                       :model-value="isAllVisibleSelected"
@@ -124,14 +137,22 @@ function toggleAllVisibleSelection() {
                 <TairoTableHeading uppercase spaced>
                   Collaborator
                 </TairoTableHeading>
-                <TairoTableHeading uppercase spaced>Location</TairoTableHeading>
-                <TairoTableHeading uppercase spaced>Status</TairoTableHeading>
+                <TairoTableHeading uppercase spaced>
+                  Location
+                </TairoTableHeading>
+                <TairoTableHeading uppercase spaced>
+                  Status
+                </TairoTableHeading>
                 <TairoTableHeading uppercase spaced>
                   Completed
                 </TairoTableHeading>
-                <TairoTableHeading uppercase spaced class="text-end"
-                  >Action</TairoTableHeading
+                <TairoTableHeading
+                  uppercase
+                  spaced
+                  class="text-end"
                 >
+                  Action
+                </TairoTableHeading>
               </template>
 
               <TairoTableRow v-if="selected.length > 0" :hoverable="false">
@@ -144,8 +165,7 @@ function toggleAllVisibleSelection() {
                   <a
                     href="#"
                     class="outline-none hover:underline focus:underline"
-                    >Click here to everything</a
-                  >
+                  >Click here to everything</a>
                 </TairoTableCell>
               </TairoTableRow>
 
@@ -233,7 +253,7 @@ function toggleAllVisibleSelection() {
                         class="text-success-500"
                       />
                       <span
-                        class="absolute start-1/2 top-1/2 z-10 ms-0.5 rtl:ms-0 rtl:me-0.5 -translate-x-1/2 rtl:translate-x-1/2 -translate-y-1/2 font-sans text-[0.65rem] font-semibold"
+                        class="absolute start-1/2 top-1/2 z-10 ms-0.5 -translate-x-1/2 -translate-y-1/2 font-sans text-[0.65rem] font-semibold rtl:me-0.5 rtl:ms-0 rtl:translate-x-1/2"
                       >
                         {{ item.completed }}%
                       </span>

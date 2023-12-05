@@ -40,17 +40,29 @@ const fakeItems = ref([])
           }"
           disabled
         >
-          <option :value="10">10 per page</option>
-          <option :value="25">25 per page</option>
-          <option :value="50">50 per page</option>
-          <option :value="100">100 per page</option>
+          <option :value="10">
+            10 per page
+          </option>
+          <option :value="25">
+            25 per page
+          </option>
+          <option :value="50">
+            50 per page
+          </option>
+          <option :value="100">
+            100 per page
+          </option>
         </BaseSelect>
       </template>
       <div>
         <div class="w-full">
           <TairoTable shape="rounded">
             <template #header>
-              <TairoTableHeading uppercase spaced class="p-4">
+              <TairoTableHeading
+                uppercase
+                spaced
+                class="p-4"
+              >
                 <div class="flex items-center">
                   <BaseCheckbox
                     v-model="fakeAll"
@@ -59,14 +71,24 @@ const fakeItems = ref([])
                   />
                 </div>
               </TairoTableHeading>
-              <TairoTableHeading uppercase spaced>Type</TairoTableHeading>
-              <TairoTableHeading uppercase spaced>Name</TairoTableHeading>
-              <TairoTableHeading uppercase spaced>Size</TairoTableHeading>
-              <TairoTableHeading uppercase spaced>Version</TairoTableHeading>
+              <TairoTableHeading uppercase spaced>
+                Type
+              </TairoTableHeading>
+              <TairoTableHeading uppercase spaced>
+                Name
+              </TairoTableHeading>
+              <TairoTableHeading uppercase spaced>
+                Size
+              </TairoTableHeading>
+              <TairoTableHeading uppercase spaced>
+                Version
+              </TairoTableHeading>
               <TairoTableHeading uppercase spaced>
                 Last Updated
               </TairoTableHeading>
-              <TairoTableHeading uppercase spaced>Action</TairoTableHeading>
+              <TairoTableHeading uppercase spaced>
+                Action
+              </TairoTableHeading>
             </template>
 
             <TairoTableRow v-for="index in 10" :key="index">

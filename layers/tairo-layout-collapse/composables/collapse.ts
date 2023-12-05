@@ -67,13 +67,13 @@ export function useCollapse() {
 
   const menuItems = computed(() => {
     if (
-      (app.tairo.collapse?.navigation?.enabled as boolean) === false ||
-      app.tairo.collapse?.navigation?.items?.length === 0
+      (app.tairo.collapse?.navigation?.enabled as boolean) === false
+      || app.tairo.collapse?.navigation?.items?.length === 0
     ) {
       return []
     }
     return app.tairo.collapse?.navigation?.items?.map(
-      (navigation) =>
+      navigation =>
         <TairoCollapseResolvedConfig>{
           ...navigation,
           position: navigation.position ?? 'start',
@@ -97,7 +97,8 @@ export function useCollapse() {
     const { lg } = useTailwindBreakpoints()
     if (lg.value) {
       isOpen.value = !isOpen.value
-    } else {
+    }
+    else {
       isMobileOpen.value = !isMobileOpen.value
     }
   }

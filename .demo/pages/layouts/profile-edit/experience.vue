@@ -33,8 +33,12 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
           </BaseText>
         </div>
         <div class="flex items-center gap-2">
-          <BaseButton class="w-24" to="/layouts/profile">Cancel</BaseButton>
-          <BaseButton color="primary" class="w-24">Save</BaseButton>
+          <BaseButton class="w-24" to="/layouts/profile">
+            Cancel
+          </BaseButton>
+          <BaseButton color="primary" class="w-24">
+            Save
+          </BaseButton>
         </div>
       </div>
       <div class="p-4">
@@ -49,14 +53,16 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 class="block dark:hidden"
                 src="/img/illustrations/placeholders/flat/placeholder-search-2.svg"
                 alt="Placeholder image"
-              />
+              >
               <img
                 class="hidden dark:block"
                 src="/img/illustrations/placeholders/flat/placeholder-search-2-dark.svg"
                 alt="Placeholder image"
-              />
+              >
             </template>
-            <BaseButton class="mt-4 w-40">Add Experience</BaseButton>
+            <BaseButton class="mt-4 w-40">
+              Add Experience
+            </BaseButton>
           </BasePlaceholderPage>
         </div>
         <div v-else class="mx-auto max-w-lg space-y-12 py-8">
@@ -74,9 +80,13 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                   :src="item.logo"
                   :alt="item.company"
                   class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 max-w-[50px] rounded-full border bg-white"
-                />
+                >
                 <div>
-                  <BaseHeading tag="h3" size="sm" weight="medium">
+                  <BaseHeading
+                    tag="h3"
+                    size="sm"
+                    weight="medium"
+                  >
                     {{ item.company }}
                   </BaseHeading>
                   <BaseParagraph size="xs" class="text-muted-400">
@@ -133,7 +143,11 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 <Icon name="ph:suitcase-duotone" class="h-5 w-5" />
               </div>
               <div>
-                <BaseHeading tag="h3" size="sm" weight="medium">
+                <BaseHeading
+                  tag="h3"
+                  size="sm"
+                  weight="medium"
+                >
                   New Experience
                 </BaseHeading>
                 <BaseParagraph size="xs" class="text-muted-400">

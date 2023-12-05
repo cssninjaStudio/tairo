@@ -296,7 +296,7 @@ function useBarProfit() {
         <BaseCard shape="curved" class="p-6">
           <div class="mb-2 flex items-center justify-between">
             <div class="flex items-center gap-2">
-              <span class="block h-2 w-2 rounded-full bg-emerald-500"></span>
+              <span class="block h-2 w-2 rounded-full bg-emerald-500" />
               <span class="text-muted-400 font-sans text-xs font-medium">
                 Open to transactions
               </span>
@@ -307,7 +307,11 @@ function useBarProfit() {
               orientation="end"
               class="z-20"
             >
-              <BaseDropdownItem to="#" title="Invest" text="Buys more stocks">
+              <BaseDropdownItem
+                to="#"
+                title="Invest"
+                text="Buys more stocks"
+              >
                 <template #start>
                   <Icon name="ph:coin-duotone" class="me-2 block h-5 w-5" />
                 </template>
@@ -324,13 +328,21 @@ function useBarProfit() {
                   />
                 </template>
               </BaseDropdownItem>
-              <BaseDropdownItem to="#" title="Trade" text="View opportunities">
+              <BaseDropdownItem
+                to="#"
+                title="Trade"
+                text="View opportunities"
+              >
                 <template #start>
                   <Icon name="ph:bank-duotone" class="me-2 block h-5 w-5" />
                 </template>
               </BaseDropdownItem>
               <BaseDropdownDivider />
-              <BaseDropdownItem to="#" title="Wallet" text="Manage your wallet">
+              <BaseDropdownItem
+                to="#"
+                title="Wallet"
+                text="Manage your wallet"
+              >
                 <template #start>
                   <Icon name="ph:wallet-duotone" class="me-2 block h-5 w-5" />
                 </template>
@@ -383,7 +395,7 @@ function useBarProfit() {
         <BaseCard shape="curved" class="p-6">
           <div class="mb-2 flex items-center justify-between">
             <div class="flex items-center gap-2">
-              <span class="block h-2 w-2 rounded-full bg-emerald-500"></span>
+              <span class="block h-2 w-2 rounded-full bg-emerald-500" />
               <span class="text-muted-400 font-sans text-xs font-medium">
                 Open to transactions
               </span>
@@ -394,7 +406,11 @@ function useBarProfit() {
               orientation="end"
               class="z-20"
             >
-              <BaseDropdownItem to="#" title="Invest" text="Buys more stocks">
+              <BaseDropdownItem
+                to="#"
+                title="Invest"
+                text="Buys more stocks"
+              >
                 <template #start>
                   <Icon name="ph:coin-duotone" class="me-2 block h-5 w-5" />
                 </template>
@@ -411,13 +427,21 @@ function useBarProfit() {
                   />
                 </template>
               </BaseDropdownItem>
-              <BaseDropdownItem to="#" title="Trade" text="View opportunities">
+              <BaseDropdownItem
+                to="#"
+                title="Trade"
+                text="View opportunities"
+              >
                 <template #start>
                   <Icon name="ph:bank-duotone" class="me-2 block h-5 w-5" />
                 </template>
               </BaseDropdownItem>
               <BaseDropdownDivider />
-              <BaseDropdownItem to="#" title="Wallet" text="Manage your wallet">
+              <BaseDropdownItem
+                to="#"
+                title="Wallet"
+                text="Manage your wallet"
+              >
                 <template #start>
                   <Icon name="ph:wallet-duotone" class="me-2 block h-5 w-5" />
                 </template>
@@ -472,7 +496,7 @@ function useBarProfit() {
             <div class="flex items-center gap-2">
               <span
                 class="bg-muted-300 dark:bg-muted-700/60 block h-2 w-2 rounded-full"
-              ></span>
+              />
               <span class="text-muted-400 font-sans text-xs font-medium">
                 Closed to transactions
               </span>
@@ -483,7 +507,11 @@ function useBarProfit() {
               orientation="end"
               class="z-20"
             >
-              <BaseDropdownItem to="#" title="Invest" text="Buys more stocks">
+              <BaseDropdownItem
+                to="#"
+                title="Invest"
+                text="Buys more stocks"
+              >
                 <template #start>
                   <Icon name="ph:coin-duotone" class="me-2 block h-5 w-5" />
                 </template>
@@ -500,13 +528,21 @@ function useBarProfit() {
                   />
                 </template>
               </BaseDropdownItem>
-              <BaseDropdownItem to="#" title="Trade" text="View opportunities">
+              <BaseDropdownItem
+                to="#"
+                title="Trade"
+                text="View opportunities"
+              >
                 <template #start>
                   <Icon name="ph:bank-duotone" class="me-2 block h-5 w-5" />
                 </template>
               </BaseDropdownItem>
               <BaseDropdownDivider />
-              <BaseDropdownItem to="#" title="Wallet" text="Manage your wallet">
+              <BaseDropdownItem
+                to="#"
+                title="Wallet"
+                text="Manage your wallet"
+              >
                 <template #start>
                   <Icon name="ph:wallet-duotone" class="me-2 block h-5 w-5" />
                 </template>

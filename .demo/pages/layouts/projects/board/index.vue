@@ -47,7 +47,11 @@ const selectedProject = ref('')
   <div class="ltablet:mt-20 mx-auto max-w-4xl lg:mt-20">
     <div v-if="!pending && data?.recent.length === 0">
       <div class="bg-muted-200 dark:bg-muted-800/60 rounded-xl p-6">
-        <BaseHeading tag="h4" size="lg" weight="medium">
+        <BaseHeading
+          tag="h4"
+          size="lg"
+          weight="medium"
+        >
           No projects
         </BaseHeading>
         <BaseParagraph size="sm" class="text-muted-400">
@@ -65,7 +69,12 @@ const selectedProject = ref('')
               name="ph:kanban-duotone"
               class="text-primary-500 mb-2 h-10 w-10"
             />
-            <BaseHeading tag="h4" size="xl" weight="medium" class="mb-2">
+            <BaseHeading
+              tag="h4"
+              size="xl"
+              weight="medium"
+              class="mb-2"
+            >
               Your recent boards
             </BaseHeading>
             <BaseParagraph size="sm" class="text-muted-400">

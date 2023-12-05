@@ -220,12 +220,24 @@ const jobs = [
             label=""
             hide-label
           >
-            <option value="">Select a type</option>
-            <option value="all">All</option>
-            <option value="design">Design</option>
-            <option value="engineering">Engineering</option>
-            <option value="frontend">Frontend</option>
-            <option value="backend">Backend</option>
+            <option value="">
+              Select a type
+            </option>
+            <option value="all">
+              All
+            </option>
+            <option value="design">
+              Design
+            </option>
+            <option value="engineering">
+              Engineering
+            </option>
+            <option value="frontend">
+              Frontend
+            </option>
+            <option value="backend">
+              Backend
+            </option>
           </BaseSelect>
         </div>
         <div class="ptablet:col-span-6 w-full flex-1 px-4 py-2 sm:w-auto">
@@ -236,12 +248,24 @@ const jobs = [
             label=""
             hide-label
           >
-            <option value="">Select a range</option>
-            <option value="all">All</option>
-            <option value="10k-20k">10k ~ 20k</option>
-            <option value="20k-30k">20k ~ 40k</option>
-            <option value="40k-75k">40k ~ 75k</option>
-            <option value="75k">75k+</option>
+            <option value="">
+              Select a range
+            </option>
+            <option value="all">
+              All
+            </option>
+            <option value="10k-20k">
+              10k ~ 20k
+            </option>
+            <option value="20k-30k">
+              20k ~ 40k
+            </option>
+            <option value="40k-75k">
+              40k ~ 75k
+            </option>
+            <option value="75k">
+              75k+
+            </option>
           </BaseSelect>
         </div>
         <div class="ptablet:col-span-12 w-full px-4 py-2 sm:w-auto">
@@ -290,7 +314,11 @@ const jobs = [
                 icon="lucide:search"
                 placeholder="Job keywords"
               />
-              <BaseButton shape="curved" color="primary" class="w-full">
+              <BaseButton
+                shape="curved"
+                color="primary"
+                class="w-full"
+              >
                 Create alert
               </BaseButton>
             </form>
@@ -598,7 +626,11 @@ const jobs = [
         </div>
         <!-- Inner jobs grid -->
         <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
-          <div v-for="(job, index) in jobs" :key="index" class="relative">
+          <div
+            v-for="(job, index) in jobs"
+            :key="index"
+            class="relative"
+          >
             <BaseCard shape="curved" class="p-6">
               <div class="flex w-full flex-col gap-4 sm:flex-row">
                 <div :data-nui-tooltip="job.company">
@@ -641,10 +673,18 @@ const jobs = [
                       />
                     </div>
                     <div class="flex gap-2">
-                      <BaseButton shape="curved" color="primary" class="w-24">
+                      <BaseButton
+                        shape="curved"
+                        color="primary"
+                        class="w-24"
+                      >
                         Apply
                       </BaseButton>
-                      <BaseButton shape="curved" color="default" class="w-24">
+                      <BaseButton
+                        shape="curved"
+                        color="default"
+                        class="w-24"
+                      >
                         Details
                       </BaseButton>
                     </div>

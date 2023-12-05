@@ -18,9 +18,9 @@ definePageMeta({
 // This is the object that will contain the validation messages
 const ONE_MB = 1000000
 const VALIDATION_TEXT = {
-  FIRSTNAME_REQUIRED: "First name can't be empty",
-  LASTNAME_REQUIRED: "Last name can't be empty",
-  EMAIL_REQUIRED: "Email address can't be empty",
+  FIRSTNAME_REQUIRED: 'First name can\'t be empty',
+  LASTNAME_REQUIRED: 'Last name can\'t be empty',
+  EMAIL_REQUIRED: 'Email address can\'t be empty',
   OPTION_REQUIRED: 'Please select an option',
   ADDRESS_REQUIRED: 'Please enter an address',
   CITY_REQUIRED: 'Please enter a city',
@@ -34,7 +34,7 @@ const VALIDATION_TEXT = {
 // It's used to define the shape that the form data will have
 const zodSchema = z
   .object({
-    avatar: z.custom<File>((v) => v instanceof File).nullable(),
+    avatar: z.custom<File>(v => v instanceof File).nullable(),
     doctor: z.object({
       firstName: z.string().min(1, VALIDATION_TEXT.FIRSTNAME_REQUIRED),
       lastName: z.string().min(1, VALIDATION_TEXT.LASTNAME_REQUIRED),
@@ -209,7 +209,8 @@ const onSubmit = handleSubmit(
         icon: 'ph:check',
         closable: true,
       })
-    } catch (error: any) {
+    }
+    catch (error: any) {
       // this will set the error on the form
       if (error.message === 'Fake backend validation error') {
         setFieldError('doctor.speciality', 'We have too many cardiologists')
@@ -286,19 +287,26 @@ const currentRatingText = computed(() => {
   <form
     action=""
     method="POST"
-    @submit.prevent="onSubmit"
     class="grid grid-cols-12 gap-6"
+    @submit.prevent="onSubmit"
   >
     <div class="ltablet:col-span-8 col-span-12 lg:col-span-8">
       <BaseCard shape="rounded" class="p-4 md:p-8">
         <div class="grid grid-cols-1 gap-4 gap-y-2 text-sm lg:grid-cols-12">
           <div class="col-span-12 mb-10 text-gray-600 sm:col-span-3 sm:mb-0">
-            <BaseHeading as="h2" size="lg" weight="medium">
+            <BaseHeading
+              as="h2"
+              size="lg"
+              weight="medium"
+            >
               New Doctor
             </BaseHeading>
-            <BaseText size="xs" class="text-muted-400"
-              >Fill in the required fields</BaseText
+            <BaseText
+              size="xs"
+              class="text-muted-400"
             >
+              Fill in the required fields
+            </BaseText>
           </div>
 
           <div class="ltablet:col-span-9 col-span-12 space-y-10 lg:col-span-9">
@@ -378,12 +386,22 @@ const currentRatingText = computed(() => {
                       @update:model-value="handleChange"
                       @blur="handleBlur"
                     >
-                      <option value="" hidden></option>
-                      <option value="Surgery">Surgery</option>
-                      <option value="Cardiology">Cardiology</option>
-                      <option value="Pediatry">Pediatry</option>
-                      <option value="Dermatology">Dermatology</option>
-                      <option value="Traumatology">Traumatology</option>
+                      <option value="" hidden />
+                      <option value="Surgery">
+                        Surgery
+                      </option>
+                      <option value="Cardiology">
+                        Cardiology
+                      </option>
+                      <option value="Pediatry">
+                        Pediatry
+                      </option>
+                      <option value="Dermatology">
+                        Dermatology
+                      </option>
+                      <option value="Traumatology">
+                        Traumatology
+                      </option>
                     </BaseSelect>
                   </Field>
                 </div>
@@ -420,10 +438,16 @@ const currentRatingText = computed(() => {
                       @update:model-value="handleChange"
                       @blur="handleBlur"
                     >
-                      <option value="" hidden></option>
-                      <option value="intern">Intern</option>
-                      <option value="resident">Resident</option>
-                      <option value="titular">Titular</option>
+                      <option value="" hidden />
+                      <option value="intern">
+                        Intern
+                      </option>
+                      <option value="resident">
+                        Resident
+                      </option>
+                      <option value="titular">
+                        Titular
+                      </option>
                     </BaseSelect>
                   </Field>
                 </div>
@@ -442,11 +466,19 @@ const currentRatingText = computed(() => {
                       @update:model-value="handleChange"
                       @blur="handleBlur"
                     >
-                      <option value="" hidden></option>
-                      <option value="0-5">0-5</option>
-                      <option value="5-10">5-10</option>
-                      <option value="10-15">10-15</option>
-                      <option value="15+">15+</option>
+                      <option value="" hidden />
+                      <option value="0-5">
+                        0-5
+                      </option>
+                      <option value="5-10">
+                        5-10
+                      </option>
+                      <option value="10-15">
+                        10-15
+                      </option>
+                      <option value="15+">
+                        15+
+                      </option>
                     </BaseSelect>
                   </Field>
                 </div>
@@ -465,12 +497,22 @@ const currentRatingText = computed(() => {
                       @update:model-value="handleChange"
                       @blur="handleBlur"
                     >
-                      <option value="" hidden></option>
-                      <option value="1">B+</option>
-                      <option value="2">A</option>
-                      <option value="3">A+</option>
-                      <option value="4">S</option>
-                      <option value="5">S+</option>
+                      <option value="" hidden />
+                      <option value="1">
+                        B+
+                      </option>
+                      <option value="2">
+                        A
+                      </option>
+                      <option value="3">
+                        A+
+                      </option>
+                      <option value="4">
+                        S
+                      </option>
+                      <option value="5">
+                        S+
+                      </option>
                     </BaseSelect>
                   </Field>
                 </div>
@@ -564,14 +606,16 @@ const currentRatingText = computed(() => {
                     <BaseText
                       size="sm"
                       class="text-muted-500 dark:text-muted-400"
-                      >United States</BaseText
                     >
+                      United States
+                    </BaseText>
                     <div class="ms-auto">
                       <NuxtLink
                         to="#"
                         class="text-primary-500 font-sans text-sm underline-offset-4 hover:underline"
-                        >Change</NuxtLink
                       >
+                        Change
+                      </NuxtLink>
                     </div>
                   </div>
                 </div>
@@ -582,7 +626,9 @@ const currentRatingText = computed(() => {
               <div
                 class="-mt-4 inline-flex w-full items-center justify-end gap-2 sm:w-auto"
               >
-                <BaseButton class="!h-12 w-full sm:w-40"> Cancel </BaseButton>
+                <BaseButton class="!h-12 w-full sm:w-40">
+                  Cancel
+                </BaseButton>
                 <BaseButton
                   type="submit"
                   color="primary"
@@ -602,31 +648,44 @@ const currentRatingText = computed(() => {
           size="xs"
           weight="medium"
           class="text-muted-400 mb-6 block uppercase tracking-wider"
-          >Record preview</BaseText
         >
+          Record preview
+        </BaseText>
         <div class="mb-4 flex">
           <div class="grow">
-            <BaseHeading as="h3" weight="medium"
-              >Dr. {{ values.doctor?.firstName }}
+            <BaseHeading
+              as="h3"
+              weight="medium"
+            >
+              Dr. {{ values.doctor?.firstName }}
               {{ values.doctor?.lastName }}
             </BaseHeading>
-            <BaseText size="sm" class="text-muted-400"
-              >{{ values.doctor?.city === '' ? 'City' : values.doctor?.city }},
+            <BaseText
+              size="sm"
+              class="text-muted-400"
+            >
+              {{ values.doctor?.city === '' ? 'City' : values.doctor?.city }},
               {{
                 values.doctor?.state === '' ? 'State' : values.doctor?.state
-              }}</BaseText
-            >
+              }}
+            </BaseText>
           </div>
           <div class="shrink-0">
             <BaseAvatar size="lg" src="/img/avatars/20.svg" />
           </div>
         </div>
         <div>
-          <BaseHeading as="h3" size="md" weight="medium">{{
-            values.doctor?.speciality === null
-              ? 'Main speciality'
-              : values.doctor?.speciality
-          }}</BaseHeading>
+          <BaseHeading
+            as="h3"
+            size="md"
+            weight="medium"
+          >
+            {{
+              values.doctor?.speciality === null
+                ? 'Main speciality'
+                : values.doctor?.speciality
+            }}
+          </BaseHeading>
           <BaseText size="sm" class="text-muted-400">
             {{
               values.doctor?.comments === ''
@@ -639,28 +698,49 @@ const currentRatingText = computed(() => {
           class="divide-muted-200 dark:divide-muted-700 flex w-full items-center divide-x py-6"
         >
           <div class="xxl:pe-6 flex flex-1 flex-col gap-1 pe-4">
-            <BaseHeading as="h3" size="sm" weight="medium" lead="none">{{
-              values.doctor?.status === null ? 'n/a' : values.doctor?.status
-            }}</BaseHeading>
-            <BaseText size="xs" class="text-muted-400"> Role status </BaseText>
+            <BaseHeading
+              as="h3"
+              size="sm"
+              weight="medium"
+              lead="none"
+            >
+              {{
+                values.doctor?.status === null ? 'n/a' : values.doctor?.status
+              }}
+            </BaseHeading>
+            <BaseText size="xs" class="text-muted-400">
+              Role status
+            </BaseText>
           </div>
           <div class="xxl:px-6 flex flex-1 flex-col gap-1 px-4">
-            <BaseHeading as="h3" size="sm" weight="medium" lead="none">{{
-              values.doctor?.experience === null
-                ? 'n/a'
-                : values.doctor?.experience
-            }}</BaseHeading>
+            <BaseHeading
+              as="h3"
+              size="sm"
+              weight="medium"
+              lead="none"
+            >
+              {{
+                values.doctor?.experience === null
+                  ? 'n/a'
+                  : values.doctor?.experience
+              }}
+            </BaseHeading>
             <BaseText size="xs" class="text-muted-400">
               Years of exp.
             </BaseText>
           </div>
           <div class="xxl:ps-6 flex flex-1 flex-col gap-1 ps-4">
-            <BaseHeading as="h3" size="sm" weight="medium" lead="none"
-              >Lvl.
+            <BaseHeading
+              as="h3"
+              size="sm"
+              weight="medium"
+              lead="none"
+            >
+              Lvl.
               {{
                 values.doctor?.rating === null ? 'n/a' : values.doctor?.rating
-              }}</BaseHeading
-            >
+              }}
+            </BaseHeading>
             <BaseText size="xs" class="text-muted-400">
               Global rating
             </BaseText>
@@ -668,7 +748,9 @@ const currentRatingText = computed(() => {
         </div>
         <div>
           <div class="flex items-end justify-between">
-            <div class="w-24 text-xs uppercase leading-tight">Rating</div>
+            <div class="w-24 text-xs uppercase leading-tight">
+              Rating
+            </div>
             <div class="text-success-600 font-sans text-xs font-semibold">
               {{ currentRatingText }}
             </div>
@@ -681,7 +763,7 @@ const currentRatingText = computed(() => {
                   ? 'bg-success-600'
                   : 'bg-muted-200 dark:bg-muted-700'
               "
-            ></div>
+            />
             <div
               class="dark:border-muted-800 h-3 grow border-x border-white"
               :class="
@@ -689,7 +771,7 @@ const currentRatingText = computed(() => {
                   ? 'bg-success-600'
                   : 'bg-muted-200 dark:bg-muted-700'
               "
-            ></div>
+            />
             <div
               class="dark:border-muted-800 h-3 grow border-x border-white"
               :class="
@@ -697,7 +779,7 @@ const currentRatingText = computed(() => {
                   ? 'bg-success-600'
                   : 'bg-muted-200 dark:bg-muted-700'
               "
-            ></div>
+            />
             <div
               class="dark:border-muted-800 h-3 grow border-x border-white"
               :class="
@@ -705,7 +787,7 @@ const currentRatingText = computed(() => {
                   ? 'bg-success-600'
                   : 'bg-muted-200 dark:bg-muted-700'
               "
-            ></div>
+            />
             <div
               class="dark:border-muted-800 h-3 grow border-x border-white"
               :class="
@@ -713,14 +795,16 @@ const currentRatingText = computed(() => {
                   ? 'bg-success-600'
                   : 'bg-muted-200 dark:bg-muted-700'
               "
-            ></div>
+            />
           </div>
         </div>
         <div class="text-muted-400 mt-6 flex items-center gap-2">
           <Icon name="lucide:mail" class="h-4 w-4" />
-          <BaseText size="xs">{{
-            values.doctor?.email === '' ? 'email address' : values.doctor?.email
-          }}</BaseText>
+          <BaseText size="xs">
+            {{
+              values.doctor?.email === '' ? 'email address' : values.doctor?.email
+            }}
+          </BaseText>
         </div>
       </BaseCard>
     </div>

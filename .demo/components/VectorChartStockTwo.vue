@@ -23,7 +23,13 @@
     >
       -5%
     </text>
-    <linearGradient id="_lgradient_2" x1="0%" y1="50%" x2="100%" y2="50%">
+    <linearGradient
+      id="_lgradient_2"
+      x1="0%"
+      y1="50%"
+      x2="100%"
+      y2="50%"
+    >
       <stop offset="0" style="stop-color: rgb(30 64 175)" />
       <stop offset="1" style="stop-color: rgb(98 127 222)" />
     </linearGradient>

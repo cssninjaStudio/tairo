@@ -56,7 +56,7 @@ export default defineNuxtSchema({
                   name: { type: 'string' },
                   to: { type: 'string' },
                   activePath: { type: 'string' },
-                  position: { type: 'string', tsType: "'start' | 'end'" },
+                  position: { type: 'string', tsType: '\'start\' | \'end\'' },
                   divider: { type: 'boolean' },
                   icon: {
                     type: 'object',
@@ -75,7 +75,7 @@ export default defineNuxtSchema({
                         name: { type: 'string' },
                         to: { type: 'string' },
                         activePath: { type: 'string' },
-                        position: { type: 'string', tsType: "'start' | 'end'" },
+                        position: { type: 'string', tsType: '\'start\' | \'end\'' },
                         icon: {
                           type: 'object',
                           required: ['name'],

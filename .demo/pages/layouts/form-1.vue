@@ -51,8 +51,8 @@ const people = [
 // This is the object that will contain the validation messages
 const ONE_MB = 1000000
 const VALIDATION_TEXT = {
-  NAME_REQUIRED: "Company name can't be empty",
-  EMAIL_REQUIRED: "Email address can't be empty",
+  NAME_REQUIRED: 'Company name can\'t be empty',
+  EMAIL_REQUIRED: 'Email address can\'t be empty',
   OPTION_REQUIRED: 'Please select an option',
   MANAGER_REQUIRED: 'Please select a manager',
   STATUS_REQUIRED: 'Pick a status',
@@ -63,7 +63,7 @@ const VALIDATION_TEXT = {
 // It's used to define the shape that the form data will have
 const zodSchema = z
   .object({
-    avatar: z.custom<File>((v) => v instanceof File).nullable(),
+    avatar: z.custom<File>(v => v instanceof File).nullable(),
     company: z.object({
       name: z.string().min(1, VALIDATION_TEXT.NAME_REQUIRED),
       email: z.string().min(1, VALIDATION_TEXT.EMAIL_REQUIRED),
@@ -228,7 +228,8 @@ const onSubmit = handleSubmit(
         icon: 'ph:check',
         closable: true,
       })
-    } catch (error: any) {
+    }
+    catch (error: any) {
       // this will set the error on the form
       if (error.message === 'Fake backend validation error') {
         setFieldError('company.name', 'This name is not allowed')
@@ -337,9 +338,9 @@ const onSubmit = handleSubmit(
                     "
                   />
                   <BaseInputFileHeadless
-                    accept="image/*"
-                    v-model="inputFile"
                     v-slot="{ open, remove, preview, files }"
+                    v-model="inputFile"
+                    accept="image/*"
                   >
                     <div class="relative h-20 w-20">
                       <img
@@ -347,13 +348,13 @@ const onSubmit = handleSubmit(
                         :src="preview(files.item(0)!).value"
                         alt="Upload preview"
                         class="bg-muted-200 dark:bg-muted-700/60 h-20 w-20 rounded-full object-cover object-center"
-                      />
+                      >
                       <img
                         v-else
                         :src="currentAvatar"
                         alt="Upload preview"
                         class="bg-muted-200 dark:bg-muted-700/60 h-20 w-20 rounded-full object-cover object-center dark:invert"
-                      />
+                      >
                       <div
                         v-if="files?.length && files.item(0)"
                         class="absolute bottom-0 end-0 z-20"
@@ -361,16 +362,20 @@ const onSubmit = handleSubmit(
                         <BaseButtonIcon
                           size="sm"
                           shape="full"
-                          @click="remove(files.item(0)!)"
                           data-nui-tooltip="Remove image"
                           class="scale-90"
+                          @click="remove(files.item(0)!)"
                         >
                           <Icon name="lucide:x" class="h-4 w-4" />
                         </BaseButtonIcon>
                       </div>
                       <div v-else class="absolute bottom-0 end-0 z-20">
                         <div class="relative" data-nui-tooltip="Upload image">
-                          <BaseButtonIcon size="sm" shape="full" @click="open">
+                          <BaseButtonIcon
+                            size="sm"
+                            shape="full"
+                            @click="open"
+                          >
                             <Icon name="lucide:plus" class="h-4 w-4" />
                           </BaseButtonIcon>
                         </div>
@@ -439,9 +444,7 @@ const onSubmit = handleSubmit(
                   </div>
                 </div>
                 <div class="mb-6 mt-4">
-                  <label class="nui-label pb-2 text-[0.825rem]"
-                    >Company type</label
-                  >
+                  <label class="nui-label pb-2 text-[0.825rem]">Company type</label>
                   <div
                     class="ptablet:grid-cols-2 ltablet:grid-cols-3 grid gap-4 lg:grid-cols-3"
                   >
@@ -479,9 +482,12 @@ const onSubmit = handleSubmit(
                                 Solo
                               </BaseHeading>
 
-                              <BaseText size="xs" class="text-muted-400"
-                                >Small company</BaseText
+                              <BaseText
+                                size="xs"
+                                class="text-muted-400"
                               >
+                                Small company
+                              </BaseText>
                             </div>
 
                             <div
@@ -489,7 +495,7 @@ const onSubmit = handleSubmit(
                             >
                               <div
                                 class="h-2 w-2 rounded-full bg-current"
-                              ></div>
+                              />
                             </div>
                           </div>
                         </BaseCard>
@@ -530,9 +536,12 @@ const onSubmit = handleSubmit(
                                 LLC
                               </BaseHeading>
 
-                              <BaseText size="xs" class="text-muted-400"
-                                >Medium company</BaseText
+                              <BaseText
+                                size="xs"
+                                class="text-muted-400"
                               >
+                                Medium company
+                              </BaseText>
                             </div>
 
                             <div
@@ -540,7 +549,7 @@ const onSubmit = handleSubmit(
                             >
                               <div
                                 class="h-2 w-2 rounded-full bg-current"
-                              ></div>
+                              />
                             </div>
                           </div>
                         </BaseCard>
@@ -581,9 +590,12 @@ const onSubmit = handleSubmit(
                                 Corp
                               </BaseHeading>
 
-                              <BaseText size="xs" class="text-muted-400"
-                                >Bigger company</BaseText
+                              <BaseText
+                                size="xs"
+                                class="text-muted-400"
                               >
+                                Bigger company
+                              </BaseText>
                             </div>
 
                             <div
@@ -591,7 +603,7 @@ const onSubmit = handleSubmit(
                             >
                               <div
                                 class="h-2 w-2 rounded-full bg-current"
-                              ></div>
+                              />
                             </div>
                           </div>
                         </BaseCard>
@@ -620,12 +632,22 @@ const onSubmit = handleSubmit(
                     @update:model-value="handleChange"
                     @blur="handleBlur"
                   >
-                    <option value="" hidden></option>
-                    <option value="0 - 250K">0 - 250K</option>
-                    <option value="250K - 500K">250K - 500K</option>
-                    <option value="500K - 1M">500K - 1M</option>
-                    <option value="1M - 5M">1M - 5M</option>
-                    <option value="10M+">10M+</option>
+                    <option value="" hidden />
+                    <option value="0 - 250K">
+                      0 - 250K
+                    </option>
+                    <option value="250K - 500K">
+                      250K - 500K
+                    </option>
+                    <option value="500K - 1M">
+                      500K - 1M
+                    </option>
+                    <option value="1M - 5M">
+                      1M - 5M
+                    </option>
+                    <option value="10M+">
+                      10M+
+                    </option>
                   </BaseSelect>
                 </Field>
               </div>
@@ -643,11 +665,19 @@ const onSubmit = handleSubmit(
                     @update:model-value="handleChange"
                     @blur="handleBlur"
                   >
-                    <option value="" hidden></option>
-                    <option value="1-10 employees">1-10 employees</option>
-                    <option value="10-50 employees">10-50 employees</option>
-                    <option value="50-100 employees">50-100 employees</option>
-                    <option value="100+ employees">100+ employees</option>
+                    <option value="" hidden />
+                    <option value="1-10 employees">
+                      1-10 employees
+                    </option>
+                    <option value="10-50 employees">
+                      10-50 employees
+                    </option>
+                    <option value="50-100 employees">
+                      50-100 employees
+                    </option>
+                    <option value="100+ employees">
+                      100+ employees
+                    </option>
                   </BaseSelect>
                 </Field>
               </div>
@@ -687,9 +717,13 @@ const onSubmit = handleSubmit(
                     @update:model-value="handleChange"
                     @blur="handleBlur"
                   >
-                    <option value="" hidden></option>
-                    <option value="active">Active</option>
-                    <option value="inactive">Inactive</option>
+                    <option value="" hidden />
+                    <option value="active">
+                      Active
+                    </option>
+                    <option value="inactive">
+                      Inactive
+                    </option>
                   </BaseSelect>
                 </Field>
               </div>

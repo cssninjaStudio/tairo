@@ -27,7 +27,12 @@ definePageMeta({
               badge-src="/img/stacks/reactjs.svg"
             />
             <div class="mx-auto mb-4 max-w-xs text-center">
-              <BaseHeading as="h2" size="md" weight="medium" class="mt-4">
+              <BaseHeading
+                as="h2"
+                size="md"
+                weight="medium"
+                class="mt-4"
+              >
                 Kendra W. has invited you to the
                 <span class="text-primary-500">Banking Solution Website</span>
                 project.
@@ -77,14 +82,23 @@ definePageMeta({
                 </BaseText>
               </div>
               <div class="mt-6 flex items-center justify-between gap-2">
-                <BaseButton class="w-full">Decline</BaseButton>
-                <BaseButton color="primary" class="w-full">Accept</BaseButton>
+                <BaseButton class="w-full">
+                  Decline
+                </BaseButton>
+                <BaseButton color="primary" class="w-full">
+                  Accept
+                </BaseButton>
               </div>
             </div>
           </div>
           <div>
             <div class="flex flex-col p-8">
-              <BaseHeading tag="h2" size="md" weight="medium" class="mt-4">
+              <BaseHeading
+                tag="h2"
+                size="md"
+                weight="medium"
+                class="mt-4"
+              >
                 Additional Instructions
               </BaseHeading>
               <BaseText
@@ -106,7 +120,11 @@ definePageMeta({
                       />
                     </div>
                     <div>
-                      <BaseHeading as="h3" size="sm" weight="medium">
+                      <BaseHeading
+                        as="h3"
+                        size="sm"
+                        weight="medium"
+                      >
                         Project Summary
                       </BaseHeading>
                       <BaseText
@@ -128,7 +146,11 @@ definePageMeta({
                       />
                     </div>
                     <div>
-                      <BaseHeading as="h3" size="sm" weight="medium">
+                      <BaseHeading
+                        as="h3"
+                        size="sm"
+                        weight="medium"
+                      >
                         UI Review
                       </BaseHeading>
                       <BaseText
@@ -150,7 +172,11 @@ definePageMeta({
                       />
                     </div>
                     <div>
-                      <BaseHeading as="h3" size="sm" weight="medium">
+                      <BaseHeading
+                        as="h3"
+                        size="sm"
+                        weight="medium"
+                      >
                         Schedule
                       </BaseHeading>
                       <BaseText

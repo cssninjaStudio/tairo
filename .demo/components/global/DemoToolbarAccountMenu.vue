@@ -4,7 +4,11 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
 
 <template>
   <div class="group inline-flex items-center justify-center text-right">
-    <Menu as="div" class="relative h-9 w-9 text-left" v-slot="{ close }">
+    <Menu
+      v-slot="{ close }"
+      as="div"
+      class="relative h-9 w-9 text-left"
+    >
       <MenuButton as="template">
         <button
           type="button"
@@ -17,7 +21,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
               src="/img/avatars/2.svg"
               class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
               alt=""
-            />
+            >
           </div>
         </button>
       </MenuButton>
@@ -41,7 +45,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 src="/img/avatars/2.svg"
                 class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                 alt=""
-              />
+              >
             </div>
             <div class="mt-3">
               <h6
@@ -49,18 +53,21 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
               >
                 Maya Rosselini
               </h6>
-              <p class="text-muted-400 mb-4 font-sans text-xs">maya@tairo.io</p>
+              <p class="text-muted-400 mb-4 font-sans text-xs">
+                maya@tairo.io
+              </p>
               <BaseButton
                 to="/layouts/profile-edit"
                 shape="curved"
                 class="w-full"
                 @click.passive="close"
-                >Manage Account</BaseButton
               >
+                Manage Account
+              </BaseButton>
             </div>
           </div>
           <div class="px-6 py-1.5">
-            <MenuItem as="div" v-slot="{ active }">
+            <MenuItem v-slot="{ active }" as="div">
               <NuxtLink
                 to="#"
                 class="group flex w-full items-center rounded-md p-2 text-sm transition-colors duration-300"
@@ -78,7 +85,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                     src="/img/avatars/3.svg"
                     class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""
-                  />
+                  >
                 </div>
                 <div class="ms-2">
                   <h6
@@ -86,11 +93,13 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                   >
                     Mike Miller
                   </h6>
-                  <p class="text-muted-400 font-sans text-xs">mike@tairo.io</p>
+                  <p class="text-muted-400 font-sans text-xs">
+                    mike@tairo.io
+                  </p>
                 </div>
               </NuxtLink>
             </MenuItem>
-            <MenuItem as="div" v-slot="{ active }">
+            <MenuItem v-slot="{ active }" as="div">
               <NuxtLink
                 to="#"
                 class="group flex w-full items-center rounded-md p-2 text-sm transition-colors duration-300"
@@ -108,7 +117,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                     src="/img/avatars/9.svg"
                     class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""
-                  />
+                  >
                 </div>
                 <div class="ms-2">
                   <h6
@@ -122,7 +131,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 </div>
               </NuxtLink>
             </MenuItem>
-            <MenuItem as="div" v-slot="{ active }">
+            <MenuItem v-slot="{ active }" as="div">
               <NuxtLink
                 to="#"
                 class="group flex w-full items-center rounded-md p-2 text-sm transition-colors duration-300"
@@ -140,7 +149,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                     src="/img/avatars/14.svg"
                     class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""
-                  />
+                  >
                 </div>
                 <div class="ms-2">
                   <h6
@@ -148,14 +157,20 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                   >
                     Alan Baxter
                   </h6>
-                  <p class="text-muted-400 font-sans text-xs">alan@tairo.io</p>
+                  <p class="text-muted-400 font-sans text-xs">
+                    alan@tairo.io
+                  </p>
                 </div>
               </NuxtLink>
             </MenuItem>
           </div>
 
           <div class="p-6">
-            <BaseButton @click.passive="close" shape="curved" class="w-full">
+            <BaseButton
+              shape="curved"
+              class="w-full"
+              @click.passive="close"
+            >
               Logout
             </BaseButton>
           </div>

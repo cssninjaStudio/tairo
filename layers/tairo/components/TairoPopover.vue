@@ -33,7 +33,7 @@ const props = withDefaults(
         class="group inline-flex cursor-pointer font-sans focus:outline-none"
         as="div"
       >
-        <slot></slot>
+        <slot />
       </PopoverButton>
 
       <Transition
@@ -60,7 +60,7 @@ const props = withDefaults(
               props.orientation === 'end' && 'after:end-6',
             ]"
           >
-            <slot name="content"></slot>
+            <slot name="content" />
           </div>
         </PopoverPanel>
       </Transition>

@@ -61,14 +61,12 @@ const zodSchema = z
       }
     }
 
-    if (data.twoFactor.enabled) {
-      if (!data.twoFactor.phoneNumber) {
-        ctx.addIssue({
-          code: z.ZodIssueCode.custom,
-          message: 'A phone number is required',
-          path: ['twoFactor.phoneNumber'],
-        })
-      }
+    if (data.twoFactor.enabled && !data.twoFactor.phoneNumber) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: 'A phone number is required',
+        path: ['twoFactor.phoneNumber'],
+      })
     }
   })
 
@@ -176,7 +174,8 @@ const onSubmit = handleSubmit(
         icon: 'ph:check',
         closable: true,
       })
-    } catch (error: any) {
+    }
+    catch (error: any) {
       // this will set the error on the form
       if (error.message === 'Fake backend validation error') {
         setFieldError('currentPassword', 'Your current password is incorrect')
@@ -227,7 +226,12 @@ const onSubmit = handleSubmit(
 </script>
 
 <template>
-  <form method="POST" action="" class="w-full pb-16" @submit.prevent="onSubmit">
+  <form
+    method="POST"
+    action=""
+    class="w-full pb-16"
+    @submit.prevent="onSubmit"
+  >
     <BaseCard>
       <div class="flex items-center justify-between p-4">
         <div>
@@ -245,15 +249,18 @@ const onSubmit = handleSubmit(
           </BaseText>
         </div>
         <div class="flex items-center gap-2">
-          <BaseButton class="w-24" to="/layouts/profile">Cancel</BaseButton>
+          <BaseButton class="w-24" to="/layouts/profile">
+            Cancel
+          </BaseButton>
           <BaseButton
             type="submit"
             color="primary"
             class="w-24"
             :disabled="isSubmitting"
             :loading="isSubmitting"
-            >Save</BaseButton
           >
+            Save
+          </BaseButton>
         </div>
       </div>
       <div class="p-4">

@@ -58,7 +58,7 @@ const description = computed(() => {
   }
 
   if (props.error?.statusCode === 404) {
-    return "We couldn't find the page you were looking for."
+    return 'We couldn\'t find the page you were looking for.'
   }
 
   return 'An error has occured. If the problem persists, please contact a system administrator or try again later.'
@@ -74,7 +74,9 @@ const showStackTrace = ref(false)
 
 <template>
   <TairoSidebarLayout>
-    <template #toolbar-title>{{ app.tairo.title }}</template>
+    <template #toolbar-title>
+      {{ app.tairo.title }}
+    </template>
 
     <BasePlaceholderPage
       :title="title"
@@ -87,7 +89,7 @@ const showStackTrace = ref(false)
           :is="resolveComponentOrNative(app.tairo.error.logo.component)"
           v-if="app.tairo.error?.logo?.component"
           v-bind="app.tairo.error.logo.props"
-        ></component>
+        />
       </template>
 
       <div class="mt-4">
@@ -125,7 +127,11 @@ const showStackTrace = ref(false)
         <div
           class="mb-3 flex items-center justify-start gap-1 opacity-30 transition-opacity duration-300 group-hover:opacity-100 group-focus:opacity-100"
         >
-          <BaseTag v-if="props.error.statusCode" color="danger" size="sm">
+          <BaseTag
+            v-if="props.error.statusCode"
+            color="danger"
+            size="sm"
+          >
             {{ props.error.statusCode }}
           </BaseTag>
           <BaseTag
@@ -143,7 +149,11 @@ const showStackTrace = ref(false)
           />
         </div>
         <div class="mb-4 flex items-center gap-2">
-          <BaseIconBox color="danger" shape="full" size="md">
+          <BaseIconBox
+            color="danger"
+            shape="full"
+            size="md"
+          >
             <Icon name="ph:skull-duotone" class="h-6 w-6" />
           </BaseIconBox>
           <div>
@@ -163,7 +173,7 @@ const showStackTrace = ref(false)
           v-if="props.error.stack"
           class="mt-6 overflow-auto whitespace-pre p-2 font-mono text-sm opacity-60 transition-all duration-300 group-hover:opacity-100 group-focus:opacity-100"
           v-html="props.error.stack"
-        ></div>
+        />
         <!-- eslint-enable vue/no-v-html -->
       </BaseCard>
     </div>

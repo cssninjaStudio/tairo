@@ -14,7 +14,7 @@ definePageMeta({
 
 <template>
   <div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
       <DemoChartLine />
       <DemoChartLineMulti />
       <DemoChartLineStep />

@@ -31,9 +31,9 @@ function onDropClick() {
 <template>
   <div class="group">
     <button
+      ref="buttonRef"
       class="nui-focus text-muted-500 dark:text-muted-400/80 hover:bg-muted-100 dark:hover:bg-muted-700/60 hover:text-muted-600 dark:hover:text-muted-200 flex w-full cursor-pointer items-center rounded-lg py-3 transition-colors duration-300"
       :class="props.expanded ? 'gap-4 px-4' : 'px-2 justify-center'"
-      ref="buttonRef"
       @click.stop.prevent="onDropClick"
     >
       <Icon

@@ -15,14 +15,14 @@
 
 <script setup lang="ts">
 const getAsyncTree = async () => {
-  await new Promise((resolve) => setTimeout(resolve, 3000))
+  await new Promise(resolve => setTimeout(resolve, 3000))
 
   return [
     {
       item: 'Item 1',
       open: true,
       children: async () => {
-        await new Promise((resolve) => setTimeout(resolve, 8000))
+        await new Promise(resolve => setTimeout(resolve, 8000))
 
         return Array.from(
           {
@@ -31,7 +31,7 @@ const getAsyncTree = async () => {
           (x, i) => ({
             item: `Item 1.${i}`,
             children: async () => {
-              await new Promise((resolve) => setTimeout(resolve, 2000))
+              await new Promise(resolve => setTimeout(resolve, 2000))
 
               return Array.from(
                 {
@@ -49,7 +49,7 @@ const getAsyncTree = async () => {
     {
       item: 'Item 2',
       children: async () => {
-        await new Promise((resolve) => setTimeout(resolve, 8000))
+        await new Promise(resolve => setTimeout(resolve, 8000))
 
         return Array.from(
           {
@@ -58,7 +58,7 @@ const getAsyncTree = async () => {
           (x, i) => ({
             item: `Item 2.${i}`,
             children: async () => {
-              await new Promise((resolve) => setTimeout(resolve, 2000))
+              await new Promise(resolve => setTimeout(resolve, 2000))
 
               return Array.from(
                 {

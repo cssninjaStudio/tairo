@@ -29,8 +29,14 @@ const fake = ref('')
         />
       </template>
       <template #right>
-        <BaseButton class="w-full sm:w-32" disabled>Manage</BaseButton>
-        <BaseButton color="primary" class="w-full sm:w-32" disabled>
+        <BaseButton class="w-full sm:w-32" disabled>
+          Manage
+        </BaseButton>
+        <BaseButton
+          color="primary"
+          class="w-full sm:w-32"
+          disabled
+        >
           <Icon name="lucide:plus" class="h-4 w-4" />
           <span>Add User</span>
         </BaseButton>

@@ -28,13 +28,13 @@ const props = withDefaults(
           >
             <thead>
               <tr>
-                <slot name="header"></slot>
+                <slot name="header" />
               </tr>
             </thead>
             <tbody
               class="divide-muted-200 dark:divide-muted-700 dark:bg-muted-800 divide-y bg-white"
             >
-              <slot></slot>
+              <slot />
             </tbody>
           </table>
         </div>

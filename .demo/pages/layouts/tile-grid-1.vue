@@ -57,8 +57,14 @@ const { data, pending, error, refresh } = await useFetch(
         />
       </template>
       <template #right>
-        <BaseButton class="w-full sm:w-32" shape="full">Manage</BaseButton>
-        <BaseButton color="primary" class="w-full sm:w-32" shape="full">
+        <BaseButton class="w-full sm:w-32" shape="full">
+          Manage
+        </BaseButton>
+        <BaseButton
+          color="primary"
+          class="w-full sm:w-32"
+          shape="full"
+        >
           <Icon name="lucide:plus" class="h-4 w-4" />
           <span>Add User</span>
         </BaseButton>
@@ -74,12 +80,12 @@ const { data, pending, error, refresh } = await useFetch(
                 class="block dark:hidden"
                 src="/img/illustrations/placeholders/flat/placeholder-search-5.svg"
                 alt="Placeholder image"
-              />
+              >
               <img
                 class="hidden dark:block"
                 src="/img/illustrations/placeholders/flat/placeholder-search-5-dark.svg"
                 alt="Placeholder image"
-              />
+              >
             </template>
           </BasePlaceholderPage>
         </div>
@@ -110,7 +116,11 @@ const { data, pending, error, refresh } = await useFetch(
                   class="bg-success-100 text-success-400"
                 />
                 <div>
-                  <BaseHeading tag="h3" size="sm" weight="medium">
+                  <BaseHeading
+                    tag="h3"
+                    size="sm"
+                    weight="medium"
+                  >
                     {{ item.username }}
                   </BaseHeading>
                   <BaseParagraph size="xs" class="text-muted-400">

@@ -5,22 +5,22 @@ declare module 'nuxt/dist/pages/runtime/composables' {
     breadcrumb?: any
     preview?:
       | {
-          title: string
-          description: string
-          categories?: string[]
-          src: string
-          srcDark?: string
-          order?: number
-        }
+        title: string
+        description: string
+        categories?: string[]
+        src: string
+        srcDark?: string
+        order?: number
+      }
       | {
-          title: string
-          description: string
-          categories?: string[]
-          src: string
-          srcDark?: string
-          order?: number
-          params: Record<string, string>
-        }[]
+        title: string
+        description: string
+        categories?: string[]
+        src: string
+        srcDark?: string
+        order?: number
+        params: Record<string, string>
+      }[]
   }
 }
 

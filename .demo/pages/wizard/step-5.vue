@@ -104,7 +104,7 @@ watchEffect(() => {
         return item.name === _item.name
       })
     })
-    .filter((item) => item.name.match(new RegExp(search.value, 'i')))
+    .filter(item => item.name.match(new RegExp(search.value, 'i')))
 })
 </script>
 
@@ -123,7 +123,7 @@ watchEffect(() => {
             src="/img/illustrations/wizard/team.svg"
             class="mx-auto max-w-[210px] rounded-full"
             alt=""
-          />
+          >
         </template>
         <div class="mt-2 text-center">
           <button
@@ -228,6 +228,7 @@ watchEffect(() => {
                   <div class="ms-auto">
                     <div class="relative flex w-48 justify-between">
                       <div
+                        role="button"
                         class="relative z-10 shrink-0"
                         data-nui-tooltip="Reader"
                         tabindex="0"
@@ -241,9 +242,10 @@ watchEffect(() => {
                               ? 'bg-primary-500'
                               : 'bg-muted-300 dark:bg-muted-700',
                           ]"
-                        ></div>
+                        />
                       </div>
                       <div
+                        role="button"
                         class="relative z-10 shrink-0"
                         data-nui-tooltip="Collaborator"
                         tabindex="0"
@@ -259,9 +261,10 @@ watchEffect(() => {
                               ? 'bg-primary-500'
                               : 'bg-muted-300 dark:bg-muted-700',
                           ]"
-                        ></div>
+                        />
                       </div>
                       <div
+                        role="button"
                         class="relative z-10 shrink-0"
                         data-nui-tooltip="Manager"
                         tabindex="0"
@@ -275,9 +278,10 @@ watchEffect(() => {
                               ? 'bg-primary-500'
                               : 'bg-muted-300 dark:bg-muted-700',
                           ]"
-                        ></div>
+                        />
                       </div>
                       <div
+                        role="button"
                         class="relative z-10 shrink-0"
                         data-nui-tooltip="Owner"
                         tabindex="0"
@@ -291,7 +295,7 @@ watchEffect(() => {
                               ? 'bg-primary-500'
                               : 'bg-muted-300 dark:bg-muted-700',
                           ]"
-                        ></div>
+                        />
                       </div>
                       <div class="absolute top-1/2 w-full -translate-y-1/2">
                         <BaseProgress

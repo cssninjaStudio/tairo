@@ -19,9 +19,13 @@
                 them.
               </p>
               <div class="mt-8 flex items-center gap-2">
-                <BaseButton to="/documentation" shape="curved" class="!h-11"
-                  >Open Documentation</BaseButton
+                <BaseButton
+                  to="/documentation"
+                  shape="curved"
+                  class="!h-11"
                 >
+                  Open Documentation
+                </BaseButton>
               </div>
             </div>
           </div>

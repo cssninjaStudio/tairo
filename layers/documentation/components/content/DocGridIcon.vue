@@ -43,21 +43,29 @@ const isExternal = computed(() => {
 
 <template>
   <BaseCard shape="curved" class="group/grid-icon flex items-center p-3">
-    <BaseIconBox v-if="props.name" size="md" :class="iconColor">
+    <BaseIconBox
+      v-if="props.name"
+      size="md"
+      :class="iconColor"
+    >
       <Icon :name="props.name" class="h-6 w-6" />
     </BaseIconBox>
     <div class="ms-3">
       <BaseHeading
+        v-if="'default' in $slots"
         as="span"
         size="sm"
         weight="semibold"
-        v-if="'default' in $slots"
         class="text-muted-800 dark:text-white"
       >
-        <ContentSlot unwrap="p" :use="$slots.default"></ContentSlot>
+        <ContentSlot unwrap="p" :use="$slots.default" />
       </BaseHeading>
-      <BaseText v-if="'description' in $slots" size="xs" class="text-muted-400">
-        <ContentSlot unwrap="p" :use="$slots.description"></ContentSlot>
+      <BaseText
+        v-if="'description' in $slots"
+        size="xs"
+        class="text-muted-400"
+      >
+        <ContentSlot unwrap="p" :use="$slots.description" />
       </BaseText>
     </div>
     <div

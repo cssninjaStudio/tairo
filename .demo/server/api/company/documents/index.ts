@@ -6,7 +6,7 @@ export default defineEventHandler(async (event) => {
 
   if (perPage >= 50) {
     // Create an artificial delay
-    await new Promise((resolve) => setTimeout(resolve, 1000))
+    await new Promise(resolve => setTimeout(resolve, 1000))
   }
 
   const data = await getDemoData()
@@ -30,7 +30,7 @@ function filterDemoData(
   const filterRe = new RegExp(filter, 'i')
   return data
     .filter((item) => {
-      return [item.name, item.author.name].some((item) => item.match(filterRe))
+      return [item.name, item.author.name].some(item => item.match(filterRe))
     })
     .slice(offset, offset + perPage)
 }
@@ -195,7 +195,7 @@ async function getDemoData() {
     },
     {
       id: 13,
-      name: '	Website Contact Page Redesign',
+      name: 'Website Contact Page Redesign',
       icon: '/img/icons/files/ai.svg',
       size: '3.8',
       version: '1.1.5',

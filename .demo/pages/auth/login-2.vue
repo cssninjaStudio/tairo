@@ -84,7 +84,8 @@ const onSubmit = handleSubmit(async (values) => {
       icon: 'ph:user-circle-fill',
       closable: true,
     })
-  } catch (error: any) {
+  }
+  catch (error: any) {
     // this will set the error on the form
     if (error.message === 'Fake backend validation error') {
       setFieldError('password', 'Invalid credentials (use "password")')
@@ -120,12 +121,16 @@ const onSubmit = handleSubmit(async (values) => {
           <form
             method="POST"
             action=""
-            @submit.prevent="onSubmit"
             class="me-auto ms-auto mt-4 w-full max-w-md"
             novalidate
+            @submit.prevent="onSubmit"
           >
             <div class="text-center">
-              <BaseHeading as="h2" size="3xl" weight="medium">
+              <BaseHeading
+                as="h2"
+                size="3xl"
+                weight="medium"
+              >
                 Welcome back!
               </BaseHeading>
               <BaseParagraph size="sm" class="text-muted-400 mb-6">
@@ -175,7 +180,7 @@ const onSubmit = handleSubmit(async (values) => {
               <div class="mb-6">
                 <div class="mt-6 flex items-center justify-between">
                   <Field
-                    v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                    v-slot="{ field, handleChange, handleBlur }"
                     name="trustDevice"
                   >
                     <BaseCheckbox
@@ -204,7 +209,7 @@ const onSubmit = handleSubmit(async (values) => {
               <div class="mb-6 grid gap-0 sm:grid-cols-3">
                 <hr
                   class="border-muted-200 dark:border-muted-700 mt-3 hidden border-t sm:block"
-                />
+                >
                 <span
                   class="bg-muted-100 dark:bg-muted-900 text-muted-400 relative top-0.5 text-center font-sans text-sm"
                 >
@@ -212,7 +217,7 @@ const onSubmit = handleSubmit(async (values) => {
                 </span>
                 <hr
                   class="border-muted-200 dark:border-muted-700 mt-3 hidden border-t sm:block"
-                />
+                >
               </div>
               <!--Social signup-->
               <div class="grid grid-cols-3 gap-2">

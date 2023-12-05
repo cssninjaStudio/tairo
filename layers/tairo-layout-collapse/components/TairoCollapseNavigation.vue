@@ -7,11 +7,11 @@ const app = useAppConfig()
 const startMenuItems = computed(
   () =>
     menuItems.value?.filter(
-      (sidebar) => !sidebar.position || sidebar.position === 'start',
+      sidebar => !sidebar.position || sidebar.position === 'start',
     ),
 )
 const endMenuItems = computed(
-  () => menuItems.value?.filter((sidebar) => sidebar.position === 'end'),
+  () => menuItems.value?.filter(sidebar => sidebar.position === 'end'),
 )
 </script>
 
@@ -28,12 +28,12 @@ const endMenuItems = computed(
     <!--Header-->
     <slot name="header">
       <component
-        v-if="app.tairo.collapse?.navigation?.header?.component"
         :is="
           resolveComponentOrNative(
             app.tairo.collapse?.navigation?.header?.component,
           )
         "
+        v-if="app.tairo.collapse?.navigation?.header?.component"
       />
     </slot>
     <!--Body-->
@@ -46,8 +46,8 @@ const endMenuItems = computed(
         <!--Menu item-->
         <li v-for="(item, index) in startMenuItems" :key="index">
           <component
-            v-if="item?.component?.name"
             :is="resolveComponentOrNative(item?.component?.name)"
+            v-if="item?.component?.name"
             v-bind="item?.component?.props"
           />
           <TairoCollapseNavigationCollapseLinks
@@ -74,7 +74,7 @@ const endMenuItems = computed(
           <div
             v-else-if="item.divider"
             class="border-muted-200 dark:border-muted-700 my-3 h-px w-full border-t"
-          ></div>
+          />
           <button
             v-else
             class="nui-focus text-muted-500 dark:text-muted-400/80 hover:bg-muted-100 dark:hover:bg-muted-700/60 hover:text-muted-600 dark:hover:text-muted-200 flex w-full cursor-pointer items-center gap-4 rounded-lg py-3 transition-colors duration-300"
@@ -91,14 +91,14 @@ const endMenuItems = computed(
           </button>
         </li>
       </ul>
-      <div class="mb-2 grow"></div>
+      <div class="mb-2 grow" />
       <!--Menu-->
       <ul v-if="endMenuItems?.length" class="space-y-2">
         <!--Menu item-->
         <li v-for="(item, index) in endMenuItems" :key="index">
           <component
-            v-if="item?.component?.name"
             :is="resolveComponentOrNative(item?.component?.name)"
+            v-if="item?.component?.name"
             v-bind="item?.component?.props"
           />
           <TairoCollapseNavigationCollapseLinks
@@ -125,7 +125,7 @@ const endMenuItems = computed(
           <div
             v-else-if="item.divider"
             class="border-muted-200 dark:border-muted-700 my-3 h-px w-full border-t"
-          ></div>
+          />
           <button
             v-else
             class="nui-focus text-muted-500 dark:text-muted-400/80 hover:bg-muted-100 dark:hover:bg-muted-700/60 hover:text-muted-600 dark:hover:text-muted-200 flex w-full cursor-pointer items-center gap-4 rounded-lg py-3 transition-colors duration-300"
@@ -146,12 +146,12 @@ const endMenuItems = computed(
     <!--Footer-->
     <slot name="footer">
       <component
-        v-if="app.tairo.collapse?.navigation?.footer?.component"
         :is="
           resolveComponentOrNative(
             app.tairo.collapse?.navigation?.footer?.component,
           )
         "
+        v-if="app.tairo.collapse?.navigation?.footer?.component"
       />
     </slot>
   </div>

@@ -191,7 +191,7 @@ function useAreaExpenses() {
             >
               <span>My Cards</span>
             </BaseHeading>
-            <div></div>
+            <div />
           </div>
           <div
             class="ltablet:pe-12 flex flex-col gap-y-4 sm:flex-row sm:gap-x-8 lg:pe-12"

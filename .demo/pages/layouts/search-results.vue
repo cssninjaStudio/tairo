@@ -66,9 +66,12 @@ const filteredResults = computed(() => {
       />
     </div>
     <div class="mb-12 mt-2 text-center">
-      <BaseText size="sm" class="text-muted-400"
-        >78 results for "internal projects"</BaseText
+      <BaseText
+        size="sm"
+        class="text-muted-400"
       >
+        78 results for "internal projects"
+      </BaseText>
     </div>
     <div v-if="results === null">
       <BasePlaceholderPage
@@ -80,12 +83,12 @@ const filteredResults = computed(() => {
             class="block dark:hidden"
             src="/img/illustrations/placeholders/flat/placeholder-search-4.svg"
             alt="Placeholder image"
-          />
+          >
           <img
             class="hidden dark:block"
             src="/img/illustrations/placeholders/flat/placeholder-search-4-dark.svg"
             alt="Placeholder image"
-          />
+          >
         </template>
       </BasePlaceholderPage>
     </div>
@@ -93,7 +96,12 @@ const filteredResults = computed(() => {
       <div class="col-span-12 sm:col-span-4">
         <div class="flex flex-col gap-6">
           <BaseCard class="p-6">
-            <BaseHeading as="h3" weight="medium" size="md" class="mb-4">
+            <BaseHeading
+              as="h3"
+              weight="medium"
+              size="md"
+              class="mb-4"
+            >
               Publication
             </BaseHeading>
             <ul class="space-y-4">
@@ -107,7 +115,9 @@ const filteredResults = computed(() => {
                     label: 'text-xs',
                   }"
                 />
-                <BaseTag shape="full" size="sm">24</BaseTag>
+                <BaseTag shape="full" size="sm">
+                  24
+                </BaseTag>
               </li>
               <li class="flex items-center justify-between">
                 <BaseCheckbox
@@ -119,7 +129,9 @@ const filteredResults = computed(() => {
                     label: 'text-xs',
                   }"
                 />
-                <BaseTag shape="full" size="sm">39</BaseTag>
+                <BaseTag shape="full" size="sm">
+                  39
+                </BaseTag>
               </li>
               <li class="flex items-center justify-between">
                 <BaseCheckbox
@@ -131,12 +143,19 @@ const filteredResults = computed(() => {
                     label: 'text-xs',
                   }"
                 />
-                <BaseTag shape="full" size="sm">17</BaseTag>
+                <BaseTag shape="full" size="sm">
+                  17
+                </BaseTag>
               </li>
             </ul>
           </BaseCard>
           <BaseCard class="p-6">
-            <BaseHeading as="h3" weight="medium" size="md" class="mb-4">
+            <BaseHeading
+              as="h3"
+              weight="medium"
+              size="md"
+              class="mb-4"
+            >
               Topics
             </BaseHeading>
             <ul class="space-y-4">
@@ -150,7 +169,9 @@ const filteredResults = computed(() => {
                     label: 'text-xs',
                   }"
                 />
-                <BaseTag shape="full" size="sm">62</BaseTag>
+                <BaseTag shape="full" size="sm">
+                  62
+                </BaseTag>
               </li>
               <li class="flex items-center justify-between">
                 <BaseCheckbox
@@ -162,7 +183,9 @@ const filteredResults = computed(() => {
                     label: 'text-xs',
                   }"
                 />
-                <BaseTag shape="full" size="sm">148</BaseTag>
+                <BaseTag shape="full" size="sm">
+                  148
+                </BaseTag>
               </li>
               <li class="flex items-center justify-between">
                 <BaseCheckbox
@@ -174,7 +197,9 @@ const filteredResults = computed(() => {
                     label: 'text-xs',
                   }"
                 />
-                <BaseTag shape="full" size="sm">23</BaseTag>
+                <BaseTag shape="full" size="sm">
+                  23
+                </BaseTag>
               </li>
               <li class="flex items-center justify-between">
                 <BaseCheckbox
@@ -186,7 +211,9 @@ const filteredResults = computed(() => {
                     label: 'text-xs',
                   }"
                 />
-                <BaseTag shape="full" size="sm">8</BaseTag>
+                <BaseTag shape="full" size="sm">
+                  8
+                </BaseTag>
               </li>
               <li class="flex items-center justify-between">
                 <BaseCheckbox
@@ -198,12 +225,19 @@ const filteredResults = computed(() => {
                     label: 'text-xs',
                   }"
                 />
-                <BaseTag shape="full" size="sm">43</BaseTag>
+                <BaseTag shape="full" size="sm">
+                  43
+                </BaseTag>
               </li>
             </ul>
           </BaseCard>
           <BaseCard class="p-6">
-            <BaseHeading as="h3" weight="medium" size="md" class="mb-4">
+            <BaseHeading
+              as="h3"
+              weight="medium"
+              size="md"
+              class="mb-4"
+            >
               Result type
             </BaseHeading>
             <ul class="space-y-4">
@@ -217,7 +251,9 @@ const filteredResults = computed(() => {
                     label: 'text-xs',
                   }"
                 />
-                <BaseTag shape="full" size="sm">12</BaseTag>
+                <BaseTag shape="full" size="sm">
+                  12
+                </BaseTag>
               </li>
               <li class="flex items-center justify-between">
                 <BaseCheckbox
@@ -229,7 +265,9 @@ const filteredResults = computed(() => {
                     label: 'text-xs',
                   }"
                 />
-                <BaseTag shape="full" size="sm">54</BaseTag>
+                <BaseTag shape="full" size="sm">
+                  54
+                </BaseTag>
               </li>
               <li class="flex items-center justify-between">
                 <BaseCheckbox
@@ -241,7 +279,9 @@ const filteredResults = computed(() => {
                     label: 'text-xs',
                   }"
                 />
-                <BaseTag shape="full" size="sm">31</BaseTag>
+                <BaseTag shape="full" size="sm">
+                  31
+                </BaseTag>
               </li>
             </ul>
           </BaseCard>
@@ -301,7 +341,7 @@ const filteredResults = computed(() => {
           </button>
         </div>
         <div>
-          <div v-if="results.length === 0"></div>
+          <div v-if="results.length === 0" />
           <div v-else class="space-y-4 py-4">
             <BaseCard
               v-for="result in filteredResults"
@@ -315,15 +355,19 @@ const filteredResults = computed(() => {
                   class="h-10 w-10 shrink-0 rounded-full object-cover object-center"
                   :src="result.src"
                   :alt="result.name"
-                />
+                >
                 <img
                   v-else-if="result.type === 'file'"
                   class="h-10 w-10 shrink-0"
                   :src="result.src"
                   :alt="result.name"
-                />
+                >
                 <div>
-                  <BaseHeading as="h3" weight="medium" size="sm">
+                  <BaseHeading
+                    as="h3"
+                    weight="medium"
+                    size="sm"
+                  >
                     {{ result.name }}
                   </BaseHeading>
                   <BaseText size="xs" class="text-muted-400">

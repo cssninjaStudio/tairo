@@ -49,12 +49,12 @@
             src="/img/logos/brands/nuxt-light.svg"
             class="block h-6 dark:hidden sm:mx-auto"
             alt="Nuxt logo"
-          />
+          >
           <img
             src="/img/logos/brands/nuxt-dark.svg"
             class="hidden h-6 dark:block sm:mx-auto"
             alt="Nuxt logo"
-          />
+          >
           <BaseHeading
             as="h4"
             size="sm"
@@ -79,12 +79,12 @@
             src="/img/logos/brands/tailwindcss-light.svg"
             class="block h-7 dark:hidden sm:mx-auto"
             alt="Tailwind CSS logo"
-          />
+          >
           <img
             src="/img/logos/brands/tailwindcss-dark.svg"
             class="hidden h-7 dark:block sm:mx-auto"
             alt="Tailwind CSS logo"
-          />
+          >
           <BaseHeading
             as="h4"
             size="sm"
@@ -109,12 +109,12 @@
             src="/img/logos/brands/shuriken-light.svg"
             class="block h-8 dark:hidden sm:mx-auto"
             alt="Shuriken UI logo"
-          />
+          >
           <img
             src="/img/logos/brands/shuriken-dark.svg"
             class="hidden h-8 dark:block sm:mx-auto"
             alt="Shuriken UI logo"
-          />
+          >
           <BaseHeading
             as="h4"
             size="sm"
@@ -139,7 +139,7 @@
             src="/img/logos/brands/typescript-text.svg"
             class="block h-7 sm:mx-auto"
             alt="Typescript logo"
-          />
+          >
           <BaseHeading
             as="h4"
             size="sm"

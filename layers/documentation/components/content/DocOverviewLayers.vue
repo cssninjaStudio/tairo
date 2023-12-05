@@ -697,8 +697,10 @@ const mergedTree = [
                   v-if="child?.item?.color"
                   class="inline-block h-2 w-2 rounded-sm"
                   :class="child?.item?.color"
-                ></span>
+                />
                 <span
+                  role="button"
+                  tabindex="0"
                   :data-nui-tooltip="child?.item?.tooltip"
                   data-nui-tooltip-position="right"
                   :class="[
@@ -747,8 +749,10 @@ const mergedTree = [
                   v-if="child?.item?.color"
                   class="inline-block h-2 w-2 rounded-sm"
                   :class="child?.item?.color"
-                ></span>
+                />
                 <span
+                  role="button"
+                  tabindex="0"
                   :data-nui-tooltip="child?.item?.tooltip"
                   data-nui-tooltip-position="right"
                   :class="[

@@ -6,7 +6,7 @@ const { steps, currentStep, progress, preview, goToStep } = useMultiStepForm<
 >()
 
 const currentStepName = computed(() => {
-  const stepData = steps.value.find((step) => step.id === currentStep.value)
+  const stepData = steps.value.find(step => step.id === currentStep.value)
   return stepData?.meta?.name
 })
 
@@ -86,7 +86,11 @@ onClickOutside(target, () => (open.value = false))
         <DemoAccountMenu horizontal />
       </div>
       <div class="absolute inset-x-0 bottom-0 z-10 w-full">
-        <BaseProgress :value="progress" size="xs" shape="full" />
+        <BaseProgress
+          :value="progress"
+          size="xs"
+          shape="full"
+        />
       </div>
     </div>
   </div>

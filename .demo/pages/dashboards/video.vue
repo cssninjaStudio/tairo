@@ -266,10 +266,10 @@ const videos = [
                 :src="video.cover"
                 :alt="video.title"
                 class="w-full object-cover object-center"
-              />
+              >
               <div
                 class="absolute inset-x-0 bottom-0 z-10 h-3/5 w-full bg-gradient-to-t from-black transition-all duration-500 ease-in-out group-hover:h-full"
-              ></div>
+              />
               <div
                 class="absolute inset-0 z-20 flex h-full w-full flex-col justify-between"
               >
@@ -318,7 +318,11 @@ const videos = [
                       </BaseParagraph>
                     </div>
                     <div class="ms-auto">
-                      <BaseTag color="primary" shape="full" size="sm">
+                      <BaseTag
+                        color="primary"
+                        shape="full"
+                        size="sm"
+                      >
                         <span>{{ video.category }}</span>
                       </BaseTag>
                     </div>
@@ -346,10 +350,10 @@ const videos = [
                       :src="video.cover"
                       :alt="video.title"
                       class="w-full object-cover object-center"
-                    />
+                    >
                     <div
                       class="absolute inset-x-0 bottom-0 z-10 h-3/5 w-full bg-gradient-to-t from-black transition-all duration-500 ease-in-out group-hover:h-full"
-                    ></div>
+                    />
                     <div
                       class="absolute inset-0 z-20 flex h-full w-full flex-col justify-between"
                     >
@@ -400,7 +404,11 @@ const videos = [
                             </BaseParagraph>
                           </div>
                           <div class="ms-auto">
-                            <BaseTag color="primary" shape="full" size="sm">
+                            <BaseTag
+                              color="primary"
+                              shape="full"
+                              size="sm"
+                            >
                               <span>{{ video.category }}</span>
                             </BaseTag>
                           </div>
@@ -468,10 +476,10 @@ const videos = [
               :src="video.cover"
               :alt="video.title"
               class="w-full object-cover object-center"
-            />
+            >
             <div
               class="absolute inset-x-0 bottom-0 z-10 h-3/5 w-full bg-gradient-to-t from-black transition-all duration-500 ease-in-out group-hover:h-full"
-            ></div>
+            />
             <div
               class="absolute inset-0 z-20 flex w-full flex-col justify-between"
             >
@@ -521,7 +529,11 @@ const videos = [
                     </BaseParagraph>
                   </div>
                   <div class="ms-auto">
-                    <BaseTag color="primary" shape="full" size="sm">
+                    <BaseTag
+                      color="primary"
+                      shape="full"
+                      size="sm"
+                    >
                       <span>{{ video.category }}</span>
                     </BaseTag>
                   </div>

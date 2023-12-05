@@ -16,7 +16,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
 
 <template>
   <div class="mx-auto w-full max-w-5xl">
-    <div v-if="!data"></div>
+    <div v-if="!data" />
     <div v-else class="relative w-full">
       <div class="absolute end-0 top-2 z-20">
         <BaseDropdown
@@ -38,18 +38,30 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
             </template>
           </BaseDropdownItem>
           <BaseDropdownDivider />
-          <BaseDropdownItem to="#" title="Security" text="Security settings">
+          <BaseDropdownItem
+            to="#"
+            title="Security"
+            text="Security settings"
+          >
             <template #start>
               <Icon name="ph:lock-duotone" class="me-2 block h-5 w-5" />
             </template>
           </BaseDropdownItem>
-          <BaseDropdownItem to="#" title="Billing" text="Manage billing">
+          <BaseDropdownItem
+            to="#"
+            title="Billing"
+            text="Manage billing"
+          >
             <template #start>
               <Icon name="ph:bank-duotone" class="me-2 block h-5 w-5" />
             </template>
           </BaseDropdownItem>
           <BaseDropdownDivider />
-          <BaseDropdownItem to="#" title="Share" text="Share profile">
+          <BaseDropdownItem
+            to="#"
+            title="Share"
+            text="Share profile"
+          >
             <template #start>
               <Icon name="ph:link-duotone" class="me-2 block h-5 w-5" />
             </template>
@@ -64,7 +76,12 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
           class="mx-auto"
         />
         <div class="mx-auto w-full max-w-md text-center">
-          <BaseHeading tag="h2" size="xl" weight="medium" class="mt-4">
+          <BaseHeading
+            tag="h2"
+            size="xl"
+            weight="medium"
+            class="mt-4"
+          >
             {{ data?.personalInfo.firstName }} {{ data?.personalInfo.lastName }}
           </BaseHeading>
           <BaseParagraph size="sm" class="text-muted-400 mb-3 mt-1">
@@ -75,17 +92,17 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
           >
             <div class="text-muted-400 flex h-8 items-center gap-1 px-4">
               <Icon name="ph:circles-three-duotone" class="h-5 w-5" />
-              <BaseText size="sm"
-                >{{ data?.personalInfo.relations }}+ relations</BaseText
-              >
+              <BaseText size="sm">
+                {{ data?.personalInfo.relations }}+ relations
+              </BaseText>
             </div>
             <div
               class="text-muted-400 hidden h-8 items-center gap-1 px-4 sm:flex"
             >
               <Icon name="ph:check-circle-duotone" class="h-5 w-5" />
-              <BaseText size="sm"
-                >{{ data?.personalInfo.projects }} projects</BaseText
-              >
+              <BaseText size="sm">
+                {{ data?.personalInfo.projects }} projects
+              </BaseText>
             </div>
             <div class="flex h-8 items-center gap-2 px-4">
               <NuxtLink
@@ -145,9 +162,13 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                       :src="item.logo"
                       :alt="item.company"
                       class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 max-w-[50px] rounded-full border bg-white"
-                    />
+                    >
                     <div>
-                      <BaseHeading tag="h3" size="sm" weight="medium">
+                      <BaseHeading
+                        tag="h3"
+                        size="sm"
+                        weight="medium"
+                      >
                         {{ item.company }}
                       </BaseHeading>
                       <BaseParagraph size="xs" class="text-muted-400">
@@ -182,7 +203,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                         :src="item.icon"
                         :alt="item.name"
                         class="h-8 w-8 rounded-full"
-                      />
+                      >
                       <BaseProgressCircle
                         :size="68"
                         :thickness="1.5"
@@ -191,7 +212,11 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                       />
                     </div>
                     <div>
-                      <BaseHeading tag="h3" size="sm" weight="medium">
+                      <BaseHeading
+                        tag="h3"
+                        size="sm"
+                        weight="medium"
+                      >
                         {{ item.name }}
                       </BaseHeading>
                       <BaseParagraph size="xs" class="text-muted-400">
@@ -224,7 +249,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                         :src="item.logo"
                         :alt="item.name"
                         class="h-8 w-8 rounded-full"
-                      />
+                      >
                       <Icon
                         v-else
                         :name="item.icon"
@@ -238,7 +263,11 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                       />
                     </div>
                     <div>
-                      <BaseHeading tag="h3" size="sm" weight="medium">
+                      <BaseHeading
+                        tag="h3"
+                        size="sm"
+                        weight="medium"
+                      >
                         {{ item.name }}
                       </BaseHeading>
                       <BaseParagraph size="xs" class="text-muted-400">
@@ -262,7 +291,9 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
               <!--Load more-->
               <div class="py-6">
                 <div class="mx-auto w-full max-w-[240px]">
-                  <BaseButton class="w-full">Load More</BaseButton>
+                  <BaseButton class="w-full">
+                    Load More
+                  </BaseButton>
                 </div>
               </div>
             </BaseCard>
@@ -290,7 +321,11 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                       class="mx-auto"
                     />
                     <div class="py-4 text-center">
-                      <BaseHeading tag="h3" size="md" weight="medium">
+                      <BaseHeading
+                        tag="h3"
+                        size="md"
+                        weight="medium"
+                      >
                         {{ item.name }}
                       </BaseHeading>
                       <BaseText size="xs" class="text-muted-400 mb-4">
@@ -354,7 +389,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                       :src="item.logo"
                       :alt="item.name"
                       class="h-8 w-8 rounded-full"
-                    />
+                    >
                     <BaseProgressCircle
                       :size="68"
                       :thickness="1.5"
@@ -363,7 +398,11 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                     />
                   </div>
                   <div>
-                    <BaseHeading tag="h3" size="sm" weight="medium">
+                    <BaseHeading
+                      tag="h3"
+                      size="sm"
+                      weight="medium"
+                    >
                       {{ item.name }}
                     </BaseHeading>
                     <BaseParagraph size="xs" class="text-muted-400">
@@ -396,7 +435,11 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                     :class="getRandomColor()"
                   />
                   <div>
-                    <BaseHeading tag="h3" size="sm" weight="medium">
+                    <BaseHeading
+                      tag="h3"
+                      size="sm"
+                      weight="medium"
+                    >
                       {{ item.name }}
                     </BaseHeading>
                     <BaseParagraph size="xs" class="text-muted-400">

@@ -71,10 +71,10 @@ export async function useDocumentationMeta(
   const exposed = computed(
     () =>
       meta?.meta?.exposed.filter((item: any) => {
-        const isProps =
-          props.value?.findIndex((prop: any) => prop.name === item.name) >= 0
-        const isEvent =
-          meta?.meta?.events?.findIndex(
+        const isProps
+          = props.value?.findIndex((prop: any) => prop.name === item.name) >= 0
+        const isEvent
+          = meta?.meta?.events?.findIndex(
             (event: any) =>
               `on${event.name}`.toLowerCase() === item.name?.toLowerCase(),
           ) >= 0
@@ -88,10 +88,10 @@ export async function useDocumentationMeta(
   const noOptions = computed(() => {
     return (
       !(
-        props.value?.length ||
-        events.value?.length ||
-        slots.value?.length ||
-        exposed.value?.length
+        props.value?.length
+        || events.value?.length
+        || slots.value?.length
+        || exposed.value?.length
       ) && model.value === undefined
     )
   })
@@ -125,7 +125,8 @@ export async function useDocumentationMeta(
           )}Data>(${prop.default || ''})`,
         ].join('\n'),
       )
-    } else {
+    }
+    else {
       code.push(
         [`const value = ref<${prop.type}>(${prop.default || ''})`].join('\n'),
       )
@@ -149,7 +150,8 @@ export async function useDocumentationMeta(
           '```',
         ].join('\n'),
       )
-    } else {
+    }
+    else {
       code.push(oneline)
     }
 
@@ -161,8 +163,8 @@ export async function useDocumentationMeta(
   function renderProperty(prop: ComponentMeta['props'][0]) {
     const code: string[] = ['```vue']
 
-    const defaultValue =
-      !prop.default || prop.default === 'undefined' ? '' : prop.default
+    const defaultValue
+      = !prop.default || prop.default === 'undefined' ? '' : prop.default
 
     code.push(`<script setup lang="ts">`)
     if (prop.type.length > 45) {
@@ -177,7 +179,8 @@ export async function useDocumentationMeta(
           )}Data>(${defaultValue})`,
         ].join('\n'),
       )
-    } else {
+    }
+    else {
       code.push(
         [`const ${prop.name} = ref<${prop.type}>(${defaultValue})`].join('\n'),
       )
@@ -205,7 +208,8 @@ export async function useDocumentationMeta(
           '```',
         ].join('\n'),
       )
-    } else {
+    }
+    else {
       code.push(oneline)
     }
 
@@ -225,12 +229,14 @@ export async function useDocumentationMeta(
       code.push(`      <!-- Use destruct to keep what you need -->`)
       code.push(`      <pre>{{ value }}</pre>`)
       code.push(`    </template>`)
-    } else {
+    }
+    else {
       code.push(`  <${name.value}>`)
 
       if (slot.name === 'default') {
         code.push(`    <!-- Your content -->`)
-      } else {
+      }
+      else {
         code.push(`    <template #${slot.name}>`)
         code.push(`      <!-- Your content -->`)
         code.push(`    </template>`)
@@ -247,7 +253,7 @@ export async function useDocumentationMeta(
   function renderEvents(event: ComponentMeta['events'][0]) {
     const code: string[] = []
 
-    const handlerName = upperFirst(event.name).replace(/:([a-z])/g, (v) =>
+    const handlerName = upperFirst(event.name).replace(/:([a-z])/g, v =>
       v.replace(':', '').toUpperCase(),
     )
     const handlerProps = event.type.startsWith('[')
@@ -276,7 +282,8 @@ export async function useDocumentationMeta(
       code.push(`  <${name.value}`)
       code.push(`    @${event.name}="on${handlerName}"`)
       code.push(`  />`)
-    } else {
+    }
+    else {
       code.push(oneline)
     }
 
@@ -323,7 +330,8 @@ export async function useDocumentationMeta(
           '```',
         ].join('\n'),
       )
-    } else {
+    }
+    else {
       code.push(oneline)
     }
 

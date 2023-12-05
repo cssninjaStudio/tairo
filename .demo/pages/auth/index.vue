@@ -74,7 +74,8 @@ const onSubmit = handleSubmit(async (values) => {
       }
       setTimeout(resolve, 4000)
     })
-  } catch (error: any) {
+  }
+  catch (error: any) {
     // this will set the error on the form
     if (error.message === 'Fake backend validation error') {
       setFieldError('password', 'Invalid credentials (use "password")')
@@ -117,7 +118,7 @@ const onSubmit = handleSubmit(async (values) => {
           <BaseParagraph size="sm" class="text-muted-400 mb-6">
             Login with social media or your credentials
           </BaseParagraph>
-          <!-- 	Social Sign Up Buttons	 -->
+          <!-- Social Sign Up Buttons -->
           <div class="flex flex-wrap justify-between gap-4">
             <!--Google button-->
             <button
@@ -139,11 +140,11 @@ const onSubmit = handleSubmit(async (values) => {
               <Icon name="fa6-brands:linkedin-in" class="mx-auto h-4 w-4" />
             </button>
           </div>
-          <!-- 'or' divider		 -->
+          <!-- 'or' divider -->
           <div class="flex-100 mt-8 flex items-center">
             <hr
               class="border-muted-200 dark:border-muted-700 flex-auto border-t-2"
-            />
+            >
             <span
               class="text-muted-600 dark:text-muted-300 px-4 font-sans font-light"
             >
@@ -151,7 +152,7 @@ const onSubmit = handleSubmit(async (values) => {
             </span>
             <hr
               class="border-muted-200 dark:border-muted-700 flex-auto border-t-2"
-            />
+            >
           </div>
         </div>
 
@@ -159,9 +160,9 @@ const onSubmit = handleSubmit(async (values) => {
         <form
           method="POST"
           action=""
-          @submit.prevent="onSubmit"
           class="mt-6"
           novalidate
+          @submit.prevent="onSubmit"
         >
           <div class="mt-5">
             <div>
@@ -271,12 +272,12 @@ const onSubmit = handleSubmit(async (values) => {
       <div class="mx-auto w-full max-w-4xl">
         <!--Media image-->
         <img
-          class="max-w-md mx-auto"
+          class="mx-auto max-w-md"
           src="/img/illustrations/magician.svg"
           alt=""
           width="500"
           height="500"
-        />
+        >
       </div>
     </div>
   </div>

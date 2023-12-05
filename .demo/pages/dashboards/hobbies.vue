@@ -118,10 +118,10 @@ const popular = [
                 class="h-80 w-full object-cover object-center"
                 src="/img/illustrations/dashboards/hobbies/hobby-1.svg"
                 alt="Hobby cover"
-              />
+              >
               <div
                 class="bg-muted-900 absolute inset-0 z-10 h-full w-full opacity-0 transition-opacity duration-300 group-hover:opacity-50"
-              ></div>
+              />
               <div
                 class="absolute inset-0 z-20 flex h-full w-full flex-col justify-between p-6"
               >
@@ -160,10 +160,10 @@ const popular = [
                 class="h-80 w-full object-cover object-center"
                 src="/img/illustrations/dashboards/hobbies/hobby-2.svg"
                 alt="Hobby cover"
-              />
+              >
               <div
                 class="bg-muted-900 absolute inset-0 z-10 h-full w-full opacity-0 transition-opacity duration-300 group-hover:opacity-50"
-              ></div>
+              />
               <div
                 class="absolute inset-0 z-20 flex h-full w-full flex-col justify-between p-6"
               >
@@ -202,10 +202,10 @@ const popular = [
                 class="h-80 w-full object-cover object-center"
                 src="/img/illustrations/dashboards/hobbies/hobby-3.svg"
                 alt="Hobby cover"
-              />
+              >
               <div
                 class="bg-muted-900 absolute inset-0 z-10 h-full w-full opacity-0 transition-opacity duration-300 group-hover:opacity-50"
-              ></div>
+              />
               <div
                 class="absolute inset-0 z-20 flex h-full w-full flex-col justify-between p-6"
               >
@@ -244,10 +244,10 @@ const popular = [
                 class="h-80 w-full object-cover object-center"
                 src="/img/illustrations/dashboards/hobbies/hobby-4.svg"
                 alt="Hobby cover"
-              />
+              >
               <div
                 class="bg-muted-900 absolute inset-0 z-10 h-full w-full opacity-0 transition-opacity duration-300 group-hover:opacity-50"
-              ></div>
+              />
               <div
                 class="absolute inset-0 z-20 flex h-full w-full flex-col justify-between p-6"
               >
@@ -326,7 +326,11 @@ const popular = [
                   </BaseParagraph>
                 </div>
                 <div class="ms-auto flex items-center">
-                  <BaseButtonIcon shape="curved" muted class="scale-75">
+                  <BaseButtonIcon
+                    shape="curved"
+                    muted
+                    class="scale-75"
+                  >
                     <Icon name="lucide:arrow-right" class="h-5 w-5" />
                   </BaseButtonIcon>
                 </div>
@@ -383,7 +387,11 @@ const popular = [
                   </BaseParagraph>
                 </div>
                 <div class="ms-auto flex items-center">
-                  <BaseButtonIcon shape="curved" muted class="scale-75">
+                  <BaseButtonIcon
+                    shape="curved"
+                    muted
+                    class="scale-75"
+                  >
                     <Icon name="lucide:arrow-right" class="h-5 w-5" />
                   </BaseButtonIcon>
                 </div>
@@ -451,7 +459,7 @@ const popular = [
                   src="/img/illustrations/dashboards/hobbies/landscape-thumb-1.svg"
                   alt="Hello"
                   class="max-w-[48px]"
-                />
+                >
                 <div>
                   <BaseHeading
                     as="h4"
@@ -467,7 +475,11 @@ const popular = [
                   </BaseParagraph>
                 </div>
                 <div class="ms-auto flex items-center">
-                  <BaseButtonIcon shape="curved" muted class="scale-75">
+                  <BaseButtonIcon
+                    shape="curved"
+                    muted
+                    class="scale-75"
+                  >
                     <Icon name="lucide:arrow-right" class="h-5 w-5" />
                   </BaseButtonIcon>
                 </div>
@@ -481,7 +493,7 @@ const popular = [
                   src="/img/illustrations/dashboards/hobbies/landscape-thumb-7.svg"
                   alt="Hello"
                   class="max-w-[48px]"
-                />
+                >
                 <div>
                   <BaseHeading
                     as="h4"
@@ -497,7 +509,11 @@ const popular = [
                   </BaseParagraph>
                 </div>
                 <div class="ms-auto flex items-center">
-                  <BaseButtonIcon shape="curved" muted class="scale-75">
+                  <BaseButtonIcon
+                    shape="curved"
+                    muted
+                    class="scale-75"
+                  >
                     <Icon name="lucide:arrow-right" class="h-5 w-5" />
                   </BaseButtonIcon>
                 </div>
@@ -511,7 +527,7 @@ const popular = [
                   src="/img/illustrations/dashboards/hobbies/landscape-thumb-4.svg"
                   alt="Hello"
                   class="max-w-[48px]"
-                />
+                >
                 <div>
                   <BaseHeading
                     as="h4"
@@ -527,7 +543,11 @@ const popular = [
                   </BaseParagraph>
                 </div>
                 <div class="ms-auto flex items-center">
-                  <BaseButtonIcon shape="curved" muted class="scale-75">
+                  <BaseButtonIcon
+                    shape="curved"
+                    muted
+                    class="scale-75"
+                  >
                     <Icon name="lucide:arrow-right" class="h-5 w-5" />
                   </BaseButtonIcon>
                 </div>

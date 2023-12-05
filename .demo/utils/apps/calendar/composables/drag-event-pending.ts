@@ -56,7 +56,7 @@ export function useDragEventPending(
 
         const calendarEventsValue = toValue(calendarEvents)
         const idx = calendarEventsValue.findIndex(
-          (item) => item.customData.id === ghostEvent.customData.id,
+          item => item.customData.id === ghostEvent.customData.id,
         )
         if (idx === -1) {
           calendarEventsValue.push({
@@ -88,7 +88,7 @@ export function useDragEventPending(
 
       const calendarEventsValue = toValue(calendarEvents)
       const idx = calendarEventsValue.findIndex(
-        (item) => item.customData.id === ghostEvent.customData.id,
+        item => item.customData.id === ghostEvent.customData.id,
       )
 
       if (idx !== -1) {
@@ -114,7 +114,7 @@ export function useDragEventPending(
     // clear unscheduled
     const calendarEventsValue = toValue(calendarEvents)
     const idx = calendarEventsValue.findIndex(
-      (attr) => attr.customData.id === pendingEventDraggingId.value,
+      attr => attr.customData.id === pendingEventDraggingId.value,
     )
 
     if (idx !== -1) {

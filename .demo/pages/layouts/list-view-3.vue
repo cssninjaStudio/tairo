@@ -69,12 +69,12 @@ const { data, pending, error, refresh } = await useFetch('/api/jobs', {
                   class="block dark:hidden"
                   src="/img/illustrations/placeholders/flat/placeholder-search-3.svg"
                   alt="Placeholder image"
-                />
+                >
                 <img
                   class="hidden dark:block"
                   src="/img/illustrations/placeholders/flat/placeholder-search-3-dark.svg"
                   alt="Placeholder image"
-                />
+                >
               </template>
             </BasePlaceholderPage>
           </div>
@@ -185,12 +185,12 @@ const { data, pending, error, refresh } = await useFetch('/api/jobs', {
               class="block dark:hidden"
               src="/img/illustrations/placeholders/flat/placeholder-thinking-canvas.svg"
               alt="Placeholder image"
-            />
+            >
             <img
               class="hidden dark:block"
               src="/img/illustrations/placeholders/flat/placeholder-thinking-canvas-dark.svg"
               alt="Placeholder image"
-            />
+            >
           </template>
         </BasePlaceholderPage>
       </template>

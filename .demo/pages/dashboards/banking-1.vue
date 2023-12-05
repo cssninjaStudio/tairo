@@ -154,7 +154,11 @@ const amount = ref<number>()
                 size="md"
                 class="z-20"
               >
-                <BaseDropdownItem to="#" title="Invest" text="Buys more stocks">
+                <BaseDropdownItem
+                  to="#"
+                  title="Invest"
+                  text="Buys more stocks"
+                >
                   <template #start>
                     <Icon name="ph:coin-duotone" class="me-2 block h-5 w-5" />
                   </template>
@@ -224,8 +228,10 @@ const amount = ref<number>()
                 <span>Status</span>
               </BaseHeading>
               <div class="flex items-center gap-1">
-                <span class="block h-2 w-2 rounded-full bg-emerald-500"></span>
-                <p class="text-muted-400 font-sans text-sm">Active</p>
+                <span class="block h-2 w-2 rounded-full bg-emerald-500" />
+                <p class="text-muted-400 font-sans text-sm">
+                  Active
+                </p>
               </div>
             </div>
             <div class="flex items-center justify-between">
@@ -239,7 +245,9 @@ const amount = ref<number>()
                 <span>Expires in</span>
               </BaseHeading>
               <div class="flex items-center gap-1">
-                <p class="text-muted-400 font-sans text-sm">125 days</p>
+                <p class="text-muted-400 font-sans text-sm">
+                  125 days
+                </p>
               </div>
             </div>
             <div class="flex items-center justify-between">
@@ -254,7 +262,9 @@ const amount = ref<number>()
               </BaseHeading>
               <div class="flex items-center gap-1">
                 <Icon name="cib:visa" class="text-muted-400 h-10 w-10" />
-                <p class="text-muted-400 font-sans text-xs">Credit Card</p>
+                <p class="text-muted-400 font-sans text-xs">
+                  Credit Card
+                </p>
               </div>
             </div>
           </div>
@@ -282,7 +292,11 @@ const amount = ref<number>()
                 size="md"
                 class="z-20"
               >
-                <BaseDropdownItem to="#" title="Invest" text="Buys more stocks">
+                <BaseDropdownItem
+                  to="#"
+                  title="Invest"
+                  text="Buys more stocks"
+                >
                   <template #start>
                     <Icon name="ph:coin-duotone" class="me-2 block h-5 w-5" />
                   </template>
@@ -450,7 +464,12 @@ const amount = ref<number>()
           class="ltablet:col-span-6 col-span-12 flex flex-col gap-4 lg:col-span-6"
         >
           <!-- Widget -->
-          <form method="POST" action="" @submit.prevent class="relative">
+          <form
+            method="POST"
+            action=""
+            class="relative"
+            @submit.prevent
+          >
             <BaseCard class="flex flex-col p-6">
               <div class="mb-4 flex items-center justify-between">
                 <BaseHeading
@@ -536,8 +555,8 @@ const amount = ref<number>()
         <form
           method="POST"
           action=""
-          @submit.prevent
           class="ltablet:col-span-6 col-span-12 lg:col-span-6"
+          @submit.prevent
         >
           <!-- Widget -->
           <div class="relative h-full">
@@ -604,10 +623,16 @@ const amount = ref<number>()
                       label="Currency"
                       class="w-16"
                     >
-                      <option value=""></option>
-                      <option value="usd">$</option>
-                      <option value="gbp">£</option>
-                      <option value="eur">€</option>
+                      <option value="" />
+                      <option value="usd">
+                        $
+                      </option>
+                      <option value="gbp">
+                        £
+                      </option>
+                      <option value="eur">
+                        €
+                      </option>
                     </BaseSelect>
                     <BaseInput
                       v-model.number="amount"

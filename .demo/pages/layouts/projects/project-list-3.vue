@@ -65,10 +65,12 @@ const { data, pending, error, refresh } = await useFetch(
               >
                 12
               </span>
-              <p class="text-muted-400 font-sans text-xs">On Track</p>
+              <p class="text-muted-400 font-sans text-xs">
+                On Track
+              </p>
               <span
                 class="bg-primary-500 absolute end-0 top-0 h-2 w-2 rounded-full"
-              ></span>
+              />
             </div>
             <div class="relative flex flex-col text-center">
               <span
@@ -76,10 +78,12 @@ const { data, pending, error, refresh } = await useFetch(
               >
                 4
               </span>
-              <p class="text-muted-400 font-sans text-xs">Overdue</p>
+              <p class="text-muted-400 font-sans text-xs">
+                Overdue
+              </p>
               <span
                 class="absolute end-0 top-0 h-2 w-2 rounded-full bg-amber-500"
-              ></span>
+              />
             </div>
             <div class="relative flex flex-col text-center">
               <span
@@ -87,10 +91,12 @@ const { data, pending, error, refresh } = await useFetch(
               >
                 {{ data?.data.length || '0' }}
               </span>
-              <p class="text-muted-400 font-sans text-xs">Total</p>
+              <p class="text-muted-400 font-sans text-xs">
+                Total
+              </p>
               <span
                 class="bg-success-500 absolute end-0 top-0 h-2 w-2 rounded-full"
-              ></span>
+              />
             </div>
             <div class="flex items-center justify-center">
               <BaseButtonIcon muted>
@@ -112,12 +118,12 @@ const { data, pending, error, refresh } = await useFetch(
                   class="block dark:hidden"
                   src="/img/illustrations/placeholders/flat/placeholder-search-4.svg"
                   alt="Placeholder image"
-                />
+                >
                 <img
                   class="hidden dark:block"
                   src="/img/illustrations/placeholders/flat/placeholder-search-4-dark.svg"
                   alt="Placeholder image"
-                />
+                >
               </template>
             </BasePlaceholderPage>
           </div>
@@ -157,7 +163,7 @@ const { data, pending, error, refresh } = await useFetch(
                           :src="item.image"
                           :alt="item.name"
                           class="w-full rounded-lg"
-                        />
+                        >
                       </div>
                       <div class="mb-6 flex gap-2">
                         <BaseAvatar

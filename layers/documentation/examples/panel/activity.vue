@@ -1,6 +1,8 @@
 <template>
   <div>
-    <BaseButton @click="open('activity')">Open Panel</BaseButton>
+    <BaseButton @click="open('activity')">
+      Open Panel
+    </BaseButton>
   </div>
 </template>
 

@@ -73,7 +73,11 @@ const authors = [
         <span class="text-muted-400 font-sans text-xs">
           {{ author.articles }} articles
         </span>
-        <BaseButtonIcon shape="curved" muted class="scale-75">
+        <BaseButtonIcon
+          shape="curved"
+          muted
+          class="scale-75"
+        >
           <Icon name="lucide:arrow-right" class="h-4 w-4" />
         </BaseButtonIcon>
       </div>

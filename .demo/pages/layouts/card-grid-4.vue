@@ -54,8 +54,14 @@ const { data, pending, error, refresh } = await useFetch('/api/posts/', {
         />
       </template>
       <template #right>
-        <BaseButton shape="curved" class="w-full sm:w-28">Home</BaseButton>
-        <BaseButton shape="curved" color="primary" class="w-full sm:w-28">
+        <BaseButton shape="curved" class="w-full sm:w-28">
+          Home
+        </BaseButton>
+        <BaseButton
+          shape="curved"
+          color="primary"
+          class="w-full sm:w-28"
+        >
           <Icon name="lucide:plus" class="h-4 w-4" />
           <span>New</span>
         </BaseButton>
@@ -71,12 +77,12 @@ const { data, pending, error, refresh } = await useFetch('/api/posts/', {
                 class="block dark:hidden"
                 src="/img/illustrations/placeholders/flat/placeholder-search-6.svg"
                 alt="Placeholder image"
-              />
+              >
               <img
                 class="hidden dark:block"
                 src="/img/illustrations/placeholders/flat/placeholder-search-6-dark.svg"
                 alt="Placeholder image"
-              />
+              >
             </template>
           </BasePlaceholderPage>
         </div>
@@ -102,7 +108,8 @@ const { data, pending, error, refresh } = await useFetch('/api/posts/', {
                   <img
                     :src="item.image"
                     class="h-40 w-full rounded-lg object-cover"
-                  />
+                    alt=""
+                  >
                   <BaseTag
                     shape="full"
                     color="primary"

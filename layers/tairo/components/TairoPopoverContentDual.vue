@@ -104,7 +104,11 @@ const props = defineProps<{
       </div>
       <div class="flex w-1/2 items-center justify-center">
         <div class="flex flex-col items-center gap-2 py-5 text-center">
-          <BaseAvatar :src="props.image" size="lg" class="mx-auto !block" />
+          <BaseAvatar
+            :src="props.image"
+            size="lg"
+            class="mx-auto !block"
+          />
           <div>
             <BaseHeading
               as="h4"

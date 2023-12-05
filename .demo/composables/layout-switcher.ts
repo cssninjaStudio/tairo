@@ -31,7 +31,7 @@ export function useLayoutSwitcher() {
 
   const activeLayoutName = useState('layout-switcher-active', () => 'sidebar')
   const activeLayout = computed(() => {
-    return layouts.find((layout) => layout.name === activeLayoutName.value)
+    return layouts.find(layout => layout.name === activeLayoutName.value)
   })
   const activeLayoutComponent = computed(() => {
     return activeLayout.value?.component || TairoSidebarLayout

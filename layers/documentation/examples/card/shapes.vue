@@ -11,7 +11,11 @@
         Iam a card
       </BaseHeading>
 
-      <BaseParagraph size="sm" lead="tight" class="text-muted-400">
+      <BaseParagraph
+        size="sm"
+        lead="tight"
+        class="text-muted-400"
+      >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       </BaseParagraph>
     </BaseCard>
@@ -27,7 +31,11 @@
         Iam a card
       </BaseHeading>
 
-      <BaseParagraph size="sm" lead="tight" class="text-muted-400">
+      <BaseParagraph
+        size="sm"
+        lead="tight"
+        class="text-muted-400"
+      >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       </BaseParagraph>
     </BaseCard>
@@ -43,7 +51,11 @@
         Iam a card
       </BaseHeading>
 
-      <BaseParagraph size="sm" lead="tight" class="text-muted-400">
+      <BaseParagraph
+        size="sm"
+        lead="tight"
+        class="text-muted-400"
+      >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       </BaseParagraph>
     </BaseCard>

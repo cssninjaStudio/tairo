@@ -16,7 +16,11 @@
       <Icon name="ph:ghost-duotone" class="h-5 w-5" />
     </BaseIconBox>
 
-    <BaseIconBox size="md" shape="full" class="bg-lime-500 text-white shadow-lg shadow-lime-500/50">
+    <BaseIconBox
+      size="md"
+      shape="full"
+      class="bg-lime-500 text-white shadow-lg shadow-lime-500/50"
+    >
       <Icon name="ph:club-duotone" class="h-5 w-5" />
     </BaseIconBox>
 
@@ -36,19 +40,35 @@
       <Icon name="ph:mountains-duotone" class="h-5 w-5" />
     </BaseIconBox>
 
-    <BaseIconBox size="md" shape="full" class="bg-teal-500 text-white shadow-lg shadow-teal-500/50">
+    <BaseIconBox
+      size="md"
+      shape="full"
+      class="bg-teal-500 text-white shadow-lg shadow-teal-500/50"
+    >
       <Icon name="ph:paint-brush-broad-duotone" class="h-5 w-5" />
     </BaseIconBox>
 
-    <BaseIconBox size="md" shape="full" class="bg-cyan-500 text-white shadow-lg shadow-cyan-500/50">
+    <BaseIconBox
+      size="md"
+      shape="full"
+      class="bg-cyan-500 text-white shadow-lg shadow-cyan-500/50"
+    >
       <Icon name="ph:rocket-duotone" class="h-5 w-5" />
     </BaseIconBox>
 
-    <BaseIconBox size="md" shape="full" class="bg-sky-500 text-white shadow-lg shadow-sky-500/50">
+    <BaseIconBox
+      size="md"
+      shape="full"
+      class="bg-sky-500 text-white shadow-lg shadow-sky-500/50"
+    >
       <Icon name="ph:popcorn-duotone" class="h-5 w-5" />
     </BaseIconBox>
 
-    <BaseIconBox size="md" shape="full" class="bg-blue-500 text-white shadow-lg shadow-blue-500/50">
+    <BaseIconBox
+      size="md"
+      shape="full"
+      class="bg-blue-500 text-white shadow-lg shadow-blue-500/50"
+    >
       <Icon name="ph:flask-duotone" class="h-5 w-5" />
     </BaseIconBox>
 
@@ -76,15 +96,27 @@
       <Icon name="ph:piano-keys-duotone" class="h-5 w-5" />
     </BaseIconBox>
 
-    <BaseIconBox size="md" shape="full" class="bg-pink-500 text-white shadow-lg shadow-pink-500/50">
+    <BaseIconBox
+      size="md"
+      shape="full"
+      class="bg-pink-500 text-white shadow-lg shadow-pink-500/50"
+    >
       <Icon name="ph:hand-waving-duotone" class="h-5 w-5" />
     </BaseIconBox>
 
-    <BaseIconBox size="md" shape="full" class="bg-rose-500 text-white shadow-lg shadow-rose-500/50">
+    <BaseIconBox
+      size="md"
+      shape="full"
+      class="bg-rose-500 text-white shadow-lg shadow-rose-500/50"
+    >
       <Icon name="ph:lock-duotone" class="h-5 w-5" />
     </BaseIconBox>
 
-    <BaseIconBox size="md" shape="full" class="bg-red-500 text-white shadow-lg shadow-red-500/50">
+    <BaseIconBox
+      size="md"
+      shape="full"
+      class="bg-red-500 text-white shadow-lg shadow-red-500/50"
+    >
       <Icon name="ph:lightning-duotone" class="h-5 w-5" />
     </BaseIconBox>
 

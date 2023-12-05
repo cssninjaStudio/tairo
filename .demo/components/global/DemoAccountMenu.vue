@@ -8,7 +8,11 @@ const props = defineProps<{
 
 <template>
   <div class="group inline-flex items-center justify-center text-right">
-    <Menu as="div" class="relative h-10 w-10 text-left" v-slot="{ close }">
+    <Menu
+      v-slot="{ close }"
+      as="div"
+      class="relative h-10 w-10 text-left"
+    >
       <MenuButton as="template">
         <button
           type="button"
@@ -21,7 +25,7 @@ const props = defineProps<{
               src="/img/avatars/2.svg"
               class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
               alt=""
-            />
+            >
           </div>
         </button>
       </MenuButton>
@@ -47,7 +51,7 @@ const props = defineProps<{
                   src="/img/avatars/2.svg"
                   class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                   alt=""
-                />
+                >
               </div>
               <div class="ms-3">
                 <h6
@@ -55,12 +59,14 @@ const props = defineProps<{
                 >
                   Maya Rosselini
                 </h6>
-                <p class="text-muted-400 font-sans text-xs">Product Manager</p>
+                <p class="text-muted-400 font-sans text-xs">
+                  Product Manager
+                </p>
               </div>
             </div>
           </div>
           <div class="p-2">
-            <MenuItem as="div" v-slot="{ active }">
+            <MenuItem v-slot="{ active }" as="div">
               <NuxtLink
                 to="/layouts/profile"
                 class="group flex w-full items-center rounded-md p-3 text-sm transition-colors duration-300"
@@ -84,7 +90,7 @@ const props = defineProps<{
                 </div>
               </NuxtLink>
             </MenuItem>
-            <MenuItem as="div" v-slot="{ active }">
+            <MenuItem v-slot="{ active }" as="div">
               <NuxtLink
                 to="/layouts/projects"
                 class="group flex w-full items-center rounded-md p-3 text-sm transition-colors duration-300"
@@ -108,7 +114,7 @@ const props = defineProps<{
                 </div>
               </NuxtLink>
             </MenuItem>
-            <MenuItem as="div" v-slot="{ active }">
+            <MenuItem v-slot="{ active }" as="div">
               <NuxtLink
                 to="/layouts/user-grid-4"
                 class="group flex w-full items-center rounded-md p-3 text-sm transition-colors duration-300"
@@ -126,11 +132,13 @@ const props = defineProps<{
                   >
                     Team
                   </h6>
-                  <p class="text-muted-400 font-sans text-xs">Manage my team</p>
+                  <p class="text-muted-400 font-sans text-xs">
+                    Manage my team
+                  </p>
                 </div>
               </NuxtLink>
             </MenuItem>
-            <MenuItem as="div" v-slot="{ active }">
+            <MenuItem v-slot="{ active }" as="div">
               <NuxtLink
                 to="/layouts/profile-edit"
                 class="group flex w-full items-center rounded-md p-3 text-sm transition-colors duration-300"

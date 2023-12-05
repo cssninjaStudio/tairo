@@ -31,10 +31,10 @@ function useDemoLineMulti() {
     legend: {
       tooltipHoverFormatter: function (val: string, opts: any) {
         return (
-          val +
-          ' - ' +
-          opts.w.globals.series[opts.seriesIndex][opts.dataPointIndex] +
-          ''
+          val
+          + ' - '
+          + opts.w.globals.series[opts.seriesIndex][opts.dataPointIndex]
+          + ''
         )
       },
       position: 'top',

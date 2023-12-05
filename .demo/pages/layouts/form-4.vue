@@ -21,8 +21,8 @@ definePageMeta({
 
 const VALIDATION_TEXT = {
   TITLE_REQUIRED: 'Event title is required',
-  SHORTDESC_REQUIRED: "Short description can't be empty",
-  LONGDESC_REQUIRED: "Long description can't be empty",
+  SHORTDESC_REQUIRED: 'Short description can\'t be empty',
+  LONGDESC_REQUIRED: 'Long description can\'t be empty',
   OPTION_REQUIRED: 'Please select an option',
 }
 
@@ -40,7 +40,7 @@ const zodSchema = z
       dates: z.object({
         start: z.date().nullable(),
         end: z.date().nullable(),
-      })
+      }),
     }),
   })
   .superRefine((data, ctx) => {
@@ -131,7 +131,8 @@ const onSubmit = handleSubmit(
         icon: 'ph:check',
         closable: true,
       })
-    } catch (error: any) {
+    }
+    catch (error: any) {
       // this will set the error on the form
       if (error.message === 'Fake backend validation error') {
         setFieldError('event.title', 'This name is not allowed')
@@ -203,8 +204,8 @@ const people = ref([
   <form
     action=""
     method="POST"
-    @submit.prevent="onSubmit"
     class="relative py-3 sm:mx-auto sm:max-w-xl"
+    @submit.prevent="onSubmit"
   >
     <BaseCard shape="curved" class="relative px-4 py-10 sm:p-10 md:mx-0">
       <div class="mx-auto max-w-md">
@@ -215,12 +216,19 @@ const people = ref([
             <Icon name="ph:calendar-blank-duotone" class="h-5 w-5" />
           </div>
           <div class="block text-xl font-semibold text-gray-700">
-            <BaseHeading as="h3" size="lg" weight="medium">
+            <BaseHeading
+              as="h3"
+              size="lg"
+              weight="medium"
+            >
               Create an Event
             </BaseHeading>
-            <BaseText size="sm" class="text-muted-400"
-              >Create a new upcoming event.</BaseText
+            <BaseText
+              size="sm"
+              class="text-muted-400"
             >
+              Create a new upcoming event.
+            </BaseText>
           </div>
         </div>
         <div class="divide-y divide-gray-200">
@@ -298,7 +306,6 @@ const people = ref([
                           label="Start date"
                           icon="ph:calendar-blank-duotone"
                           :value="inputValue.start"
-                          v-on="inputEvents.start"
                           :classes="{
                             input: '!h-11 !ps-11',
                             icon: '!h-11 !w-11',
@@ -306,6 +313,7 @@ const people = ref([
                           :error="errorMessage"
                           :disabled="isSubmitting"
                           type="text"
+                          v-on="inputEvents.start"
                         />
                       </div>
                       <div class="relative grow">
@@ -314,7 +322,6 @@ const people = ref([
                           label="End date"
                           icon="ph:calendar-blank-duotone"
                           :value="inputValue.end"
-                          v-on="inputEvents.end"
                           :classes="{
                             input: '!h-11 !ps-11',
                             icon: '!h-11 !w-11',
@@ -322,6 +329,7 @@ const people = ref([
                           :error="errorMessage"
                           :disabled="isSubmitting"
                           type="text"
+                          v-on="inputEvents.end"
                         />
                       </div>
                     </div>
@@ -390,16 +398,16 @@ const people = ref([
                   @blur="handleBlur"
                 />
                 <datalist id="eventColors">
-                  <option value="#84cc16"></option>
-                  <option value="#22c55e"></option>
-                  <option value="#0ea5e9"></option>
-                  <option value="#6366f1"></option>
-                  <option value="#8b5cf6"></option>
-                  <option value="#d946ef"></option>
-                  <option value="#f43f5e"></option>
-                  <option value="#facc15"></option>
-                  <option value="#fb923c"></option>
-                  <option value="#9ca3af"></option>
+                  <option value="#84cc16" />
+                  <option value="#22c55e" />
+                  <option value="#0ea5e9" />
+                  <option value="#6366f1" />
+                  <option value="#8b5cf6" />
+                  <option value="#d946ef" />
+                  <option value="#f43f5e" />
+                  <option value="#facc15" />
+                  <option value="#fb923c" />
+                  <option value="#9ca3af" />
                 </datalist>
               </Field>
             </div>
@@ -425,24 +433,27 @@ const people = ref([
                   @blur="handleBlur"
                 />
                 <datalist id="eventCategories">
-                  <option value="Chrome"></option>
-                  <option value="Firefox"></option>
-                  <option value="Opera"></option>
-                  <option value="Safari"></option>
-                  <option value="Microsoft Edge"></option>
+                  <option value="Chrome" />
+                  <option value="Firefox" />
+                  <option value="Opera" />
+                  <option value="Safari" />
+                  <option value="Microsoft Edge" />
                 </datalist>
               </Field>
             </div>
           </div>
           <div class="flex items-center gap-4 pt-4">
-            <BaseButton shape="curved" class="!h-12 w-full">Cancel</BaseButton>
+            <BaseButton shape="curved" class="!h-12 w-full">
+              Cancel
+            </BaseButton>
             <BaseButton
               type="submit"
               shape="curved"
               color="primary"
               class="!h-12 w-full"
-              >Create</BaseButton
             >
+              Create
+            </BaseButton>
           </div>
         </div>
       </div>

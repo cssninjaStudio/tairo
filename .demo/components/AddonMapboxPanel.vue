@@ -22,6 +22,7 @@ const map = shallowRef<Map>()
 const popup = shallowRef<Popup>()
 const geocoder = shallowRef<any>()
 
+// eslint-disable-next-line @typescript-eslint/consistent-type-imports
 let mapboxgl: typeof import('mapbox-gl')
 
 const locations = {
@@ -204,12 +205,10 @@ function loadLayers() {
     type: 'circle',
     source: 'places',
     paint: {
-      'circle-color':
-        colorMode.value === 'dark' ? primary.value : primary.value,
+      'circle-color': primary.value,
       'circle-radius': 6,
       'circle-stroke-width': 2,
-      'circle-stroke-color':
-        colorMode.value === 'dark' ? primary.value : primary.value,
+      'circle-stroke-color': primary.value,
     },
   })
 
@@ -242,14 +241,10 @@ function selectFeature(feature: any) {
   selectedFeature.value = feature
 }
 const config = useRuntimeConfig()
-if (import.meta.dev) {
-  // This block will be removed in production build
-
-  if (!config.public.mapboxToken) {
-    console.warn(
-      'NUXT_PUBLIC_MAPBOX_TOKEN environment variable is not defined, mapbox features are disabled',
-    )
-  }
+if (import.meta.dev && !config.public.mapboxToken) {
+  console.warn(
+    'NUXT_PUBLIC_MAPBOX_TOKEN environment variable is not defined, mapbox features are disabled',
+  )
 }
 
 onNuxtReady(() => {
@@ -258,9 +253,9 @@ onNuxtReady(() => {
   }
 
   Promise.all([
-    import('mapbox-gl').then((m) => m.default),
+    import('mapbox-gl').then(m => m.default),
     import('@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.min.js').then(
-      (m) => m.default,
+      m => m.default,
     ),
   ]).then(([_mapboxgl, MapboxGeocoder]) => {
     mapboxgl = _mapboxgl
@@ -320,8 +315,8 @@ watchEffect(
     // over the copy being pointed to.
     if (selectedFeatureLatLng.value) {
       while (Math.abs(selectedFeatureLatLng.value.lng - coordinates[0]) > 180) {
-        coordinates[0] +=
-          selectedFeatureLatLng.value.lng > coordinates[0] ? 360 : -360
+        coordinates[0]
+          += selectedFeatureLatLng.value.lng > coordinates[0] ? 360 : -360
       }
     }
 
@@ -359,7 +354,8 @@ watch(
 
     if (colorMode.value === 'dark') {
       map.value.setStyle('mapbox://styles/mapbox/dark-v10')
-    } else {
+    }
+    else {
       map.value.setStyle('mapbox://styles/mapbox/light-v10')
     }
   },
@@ -435,11 +431,11 @@ watch(
 
       <template v-if="!props.reversed">
         <div class="ltablet:h-auto relative h-96 grow lg:h-auto">
-          <div ref="mapElement" class="absolute inset-0 h-full w-full"></div>
+          <div ref="mapElement" class="absolute inset-0 h-full w-full" />
           <div
             ref="geocoderElement"
             class="geocoder absolute inset-x-0 top-6 mx-auto flex items-center justify-center px-6 sm:px-0"
-          ></div>
+          />
           <div
             ref="popupElement"
             style="display: none; visibility: hidden"
@@ -548,11 +544,11 @@ watch(
 
       <template v-if="props.reversed">
         <div class="ltablet:h-auto relative h-96 grow lg:h-auto">
-          <div ref="mapElement" class="absolute inset-0 h-full w-full"></div>
+          <div ref="mapElement" class="absolute inset-0 h-full w-full" />
           <div
             ref="geocoderElement"
             class="geocoder absolute inset-x-0 top-6 mx-auto flex items-center justify-center px-6 sm:px-0"
-          ></div>
+          />
           <div
             ref="popupElement"
             style="display: none; visibility: hidden"

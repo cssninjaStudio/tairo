@@ -89,24 +89,40 @@ function openTaskPanel(id: number, tasks: any) {
           </template>
         </BaseDropdownItem>
         <BaseDropdownDivider />
-        <BaseDropdownItem to="#" title="Edit" text="Edit this project">
+        <BaseDropdownItem
+          to="#"
+          title="Edit"
+          text="Edit this project"
+        >
           <template #start>
             <Icon name="ph:pencil-duotone" class="me-2 block h-5 w-5" />
           </template>
         </BaseDropdownItem>
         <BaseDropdownDivider />
-        <BaseDropdownItem to="#" title="Permissions" text="Manage permissions">
+        <BaseDropdownItem
+          to="#"
+          title="Permissions"
+          text="Manage permissions"
+        >
           <template #start>
             <Icon name="ph:lock-duotone" class="me-2 block h-5 w-5" />
           </template>
         </BaseDropdownItem>
-        <BaseDropdownItem to="#" title="Files" text="Manage files">
+        <BaseDropdownItem
+          to="#"
+          title="Files"
+          text="Manage files"
+        >
           <template #start>
             <Icon name="ph:file-duotone" class="me-2 block h-5 w-5" />
           </template>
         </BaseDropdownItem>
         <BaseDropdownDivider />
-        <BaseDropdownItem to="#" title="Delete" text="Delete this project">
+        <BaseDropdownItem
+          to="#"
+          title="Delete"
+          text="Delete this project"
+        >
           <template #start>
             <Icon name="ph:trash-duotone" class="me-2 block h-5 w-5" />
           </template>
@@ -123,12 +139,12 @@ function openTaskPanel(id: number, tasks: any) {
             class="block dark:hidden"
             src="/img/illustrations/placeholders/flat/placeholder-projects.svg"
             alt="Placeholder image"
-          />
+          >
           <img
             class="hidden dark:block"
             src="/img/illustrations/placeholders/flat/placeholder-projects-dark.svg"
             alt="Placeholder image"
-          />
+          >
         </template>
       </BasePlaceholderPage>
     </div>
@@ -160,7 +176,11 @@ function openTaskPanel(id: number, tasks: any) {
                     class="border-muted-200 dark:border-muted-700 flex flex-col items-center justify-between gap-8 border-b pb-12 sm:flex-row"
                   >
                     <div>
-                      <BaseHeading tag="h2" size="2xl" weight="medium">
+                      <BaseHeading
+                        tag="h2"
+                        size="2xl"
+                        weight="medium"
+                      >
                         {{ data?.project.name }}
                       </BaseHeading>
                       <BaseParagraph
@@ -179,7 +199,11 @@ function openTaskPanel(id: number, tasks: any) {
                             :data-nui-tooltip="`${data?.project.owner.name} owns this project`"
                           />
                           <div>
-                            <BaseHeading tag="h3" size="sm" weight="medium">
+                            <BaseHeading
+                              tag="h3"
+                              size="sm"
+                              weight="medium"
+                            >
                               {{ data?.project.owner.name }}
                             </BaseHeading>
                             <BaseParagraph size="xs" class="text-muted-400">
@@ -198,7 +222,7 @@ function openTaskPanel(id: number, tasks: any) {
                         :src="data?.project.image"
                         :alt="data?.project.name"
                         class="rounded-lg"
-                      />
+                      >
                     </div>
                   </div>
                   <div
@@ -210,7 +234,11 @@ function openTaskPanel(id: number, tasks: any) {
                         class="text-primary-500 mb-2 h-6 w-6"
                       />
                       <div>
-                        <BaseHeading tag="h3" size="sm" weight="medium">
+                        <BaseHeading
+                          tag="h3"
+                          size="sm"
+                          weight="medium"
+                        >
                           UI/UX Design
                         </BaseHeading>
                         <BaseParagraph
@@ -229,7 +257,11 @@ function openTaskPanel(id: number, tasks: any) {
                         class="text-primary-500 mb-2 h-6 w-6"
                       />
                       <div>
-                        <BaseHeading tag="h3" size="sm" weight="medium">
+                        <BaseHeading
+                          tag="h3"
+                          size="sm"
+                          weight="medium"
+                        >
                           1 Week Sprints
                         </BaseHeading>
                         <BaseParagraph
@@ -248,7 +280,11 @@ function openTaskPanel(id: number, tasks: any) {
                         class="text-primary-500 mb-2 h-6 w-6"
                       />
                       <div>
-                        <BaseHeading tag="h3" size="sm" weight="medium">
+                        <BaseHeading
+                          tag="h3"
+                          size="sm"
+                          weight="medium"
+                        >
                           3 Months
                         </BaseHeading>
                         <BaseParagraph
@@ -267,7 +303,11 @@ function openTaskPanel(id: number, tasks: any) {
                         class="text-primary-500 mb-2 h-6 w-6"
                       />
                       <div>
-                        <BaseHeading tag="h3" size="sm" weight="medium">
+                        <BaseHeading
+                          tag="h3"
+                          size="sm"
+                          weight="medium"
+                        >
                           Fixed
                         </BaseHeading>
                         <BaseParagraph
@@ -298,9 +338,13 @@ function openTaskPanel(id: number, tasks: any) {
                             :src="file.icon"
                             :alt="file.name"
                             class="max-w-[46px]"
-                          />
+                          >
                           <div>
-                            <BaseHeading tag="h3" size="sm" weight="medium">
+                            <BaseHeading
+                              tag="h3"
+                              size="sm"
+                              weight="medium"
+                            >
                               {{ file.name }}
                             </BaseHeading>
                             <BaseParagraph size="xs" class="text-muted-400">

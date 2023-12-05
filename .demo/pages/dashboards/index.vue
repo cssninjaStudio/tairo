@@ -476,7 +476,7 @@ function useBarProfit() {
             <Icon
               name="ph:crown-duotone"
               class="text-primary-900/50 h-14 w-14"
-            ></Icon>
+            />
           </div>
         </BaseCard>
       </div>

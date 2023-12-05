@@ -22,7 +22,7 @@ export function useNowMarker(
       return
     }
 
-    await new Promise((resolve) => setTimeout(resolve, 200))
+    await new Promise(resolve => setTimeout(resolve, 200))
     const rect = container.value.getBoundingClientRect()
 
     const top = dateToTop(settings, now.value, now.value)

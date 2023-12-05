@@ -3,17 +3,29 @@
     <template #header>
       <TairoTableHeading uppercase class="p-4">
         <div class="flex items-center">
-          <BaseCheckbox v-model="selectAll" shape="curved" class="text-primary-500" />
+          <BaseCheckbox
+            v-model="selectAll"
+            shape="curved"
+            class="text-primary-500"
+          />
         </div>
       </TairoTableHeading>
 
-      <TairoTableHeading uppercase>Collaborator</TairoTableHeading>
+      <TairoTableHeading uppercase>
+        Collaborator
+      </TairoTableHeading>
 
-      <TairoTableHeading uppercase>Expertise</TairoTableHeading>
+      <TairoTableHeading uppercase>
+        Expertise
+      </TairoTableHeading>
 
-      <TairoTableHeading uppercase>Rate</TairoTableHeading>
+      <TairoTableHeading uppercase>
+        Rate
+      </TairoTableHeading>
 
-      <TairoTableHeading uppercase>Status</TairoTableHeading>
+      <TairoTableHeading uppercase>
+        Status
+      </TairoTableHeading>
 
       <TairoTableHeading uppercase class="p-4">
         <span class="sr-only">View</span>

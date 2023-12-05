@@ -85,12 +85,12 @@ function difficultyLabel(itemDifficulty: number) {
                 class="block dark:hidden"
                 src="/img/illustrations/placeholders/flat/placeholder-search-4.svg"
                 alt="Placeholder image"
-              />
+              >
               <img
                 class="hidden dark:block"
                 src="/img/illustrations/placeholders/flat/placeholder-search-4-dark.svg"
                 alt="Placeholder image"
-              />
+              >
             </template>
           </BasePlaceholderPage>
         </div>
@@ -165,7 +165,7 @@ function difficultyLabel(itemDifficulty: number) {
                           ? 'bg-primary-500'
                           : 'bg-muted-200 dark:bg-muted-700'
                       "
-                    ></span>
+                    />
                     <span
                       class="block h-2 w-2 rounded-full"
                       :class="
@@ -173,7 +173,7 @@ function difficultyLabel(itemDifficulty: number) {
                           ? 'bg-primary-500'
                           : 'bg-muted-200 dark:bg-muted-700'
                       "
-                    ></span>
+                    />
                     <span
                       class="block h-2 w-2 rounded-full"
                       :class="
@@ -181,7 +181,7 @@ function difficultyLabel(itemDifficulty: number) {
                           ? 'bg-primary-500'
                           : 'bg-muted-200 dark:bg-muted-700'
                       "
-                    ></span>
+                    />
                     <span
                       class="block h-2 w-2 rounded-full"
                       :class="
@@ -189,7 +189,7 @@ function difficultyLabel(itemDifficulty: number) {
                           ? 'bg-primary-500'
                           : 'bg-muted-200 dark:bg-muted-700'
                       "
-                    ></span>
+                    />
                     <span
                       class="block h-2 w-2 rounded-full"
                       :class="
@@ -197,7 +197,7 @@ function difficultyLabel(itemDifficulty: number) {
                           ? 'bg-primary-500'
                           : 'bg-muted-200 dark:bg-muted-700'
                       "
-                    ></span>
+                    />
                   </div>
                 </DemoFlexTableCell>
                 <DemoFlexTableCell label="action" :hide-label="index > 0">
@@ -229,12 +229,12 @@ function difficultyLabel(itemDifficulty: number) {
               class="block dark:hidden"
               src="/img/illustrations/placeholders/flat/placeholder-courses.svg"
               alt="Placeholder image"
-            />
+            >
             <img
               class="hidden dark:block"
               src="/img/illustrations/placeholders/flat/placeholder-courses-dark.svg"
               alt="Placeholder image"
-            />
+            >
           </template>
         </BasePlaceholderPage>
       </template>

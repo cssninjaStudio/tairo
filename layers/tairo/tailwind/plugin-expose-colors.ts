@@ -20,7 +20,8 @@ function extractColors(colors: any, prefix = '') {
 
     if (typeof value === 'string') {
       cssVariables[`--color${prefix}-${shade}`] = value
-    } else {
+    }
+    else {
       cssVariables = {
         ...cssVariables,
         ...extractColors(value, `-${shade}`),

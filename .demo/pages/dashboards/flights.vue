@@ -169,7 +169,7 @@ const results = [
                             placeholder="Start date"
                             :value="inputValue.start"
                             v-on="inputEvents.start"
-                          />
+                          >
                           <div
                             class="text-muted-100/40 peer-focus-visible:text-muted-100/80 absolute start-0 top-0 flex h-10 w-10 items-center justify-center transition-colors duration-300"
                           >
@@ -184,7 +184,7 @@ const results = [
                             placeholder="End date"
                             :value="inputValue.end"
                             v-on="inputEvents.end"
-                          />
+                          >
                           <div
                             class="text-muted-100/40 peer-focus-visible:text-muted-100/80 absolute start-0 top-0 flex h-10 w-10 items-center justify-center transition-colors duration-300"
                           >
@@ -202,7 +202,7 @@ const results = [
                 class="xs:mx-auto absolute bottom-0 w-full max-w-[260px] sm:end-0"
                 src="/img/illustrations/dashboards/travel-cases.svg"
                 alt="Travel cases"
-              />
+              >
             </div>
           </div>
 
@@ -218,7 +218,9 @@ const results = [
               >
                 <span>69 results</span>
               </BaseHeading>
-              <BaseButtonAction muted>Clear</BaseButtonAction>
+              <BaseButtonAction muted>
+                Clear
+              </BaseButtonAction>
             </div>
             <!-- Best options -->
             <div class="grid gap-6 sm:grid-cols-3">
@@ -399,7 +401,7 @@ const results = [
                     </svg>
                     <div
                       class="border-muted-200 dark:border-muted-700 mx-8 grow border-t-2 border-dashed"
-                    ></div>
+                    />
                     <svg
                       width="32"
                       height="32"

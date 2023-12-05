@@ -18,7 +18,11 @@
         </div>
 
         <div class="grid gap-6 sm:grid-cols-4">
-          <BaseRadioHeadless v-model="value" name="radio_custom" value="value_1">
+          <BaseRadioHeadless
+            v-model="value"
+            name="radio_custom"
+            value="value_1"
+          >
             <BaseCard
               shape="curved"
               class="peer-checked:!border-success-500 peer-checked:!bg-success-500/10 relative border-2 p-5 peer-checked:[&_.child]:!opacity-100"
@@ -49,7 +53,11 @@
             </BaseCard>
           </BaseRadioHeadless>
 
-          <BaseRadioHeadless v-model="value" name="radio_custom" value="value_2">
+          <BaseRadioHeadless
+            v-model="value"
+            name="radio_custom"
+            value="value_2"
+          >
             <BaseCard
               shape="curved"
               class="peer-checked:!border-success-500 peer-checked:!bg-success-500/10 relative border-2 p-5 peer-checked:[&_.child]:!opacity-100"
@@ -80,7 +88,11 @@
             </BaseCard>
           </BaseRadioHeadless>
 
-          <BaseRadioHeadless v-model="value" name="radio_custom" value="value_3">
+          <BaseRadioHeadless
+            v-model="value"
+            name="radio_custom"
+            value="value_3"
+          >
             <BaseCard
               shape="curved"
               class="peer-checked:!border-success-500 peer-checked:!bg-success-500/10 relative border-2 p-5 peer-checked:[&_.child]:!opacity-100"
@@ -111,7 +123,11 @@
             </BaseCard>
           </BaseRadioHeadless>
 
-          <BaseRadioHeadless v-model="value" name="radio_custom" value="value_4">
+          <BaseRadioHeadless
+            v-model="value"
+            name="radio_custom"
+            value="value_4"
+          >
             <BaseCard
               shape="curved"
               class="peer-checked:!border-success-500 peer-checked:!bg-success-500/10 relative border-2 p-5 peer-checked:[&_.child]:!opacity-100"

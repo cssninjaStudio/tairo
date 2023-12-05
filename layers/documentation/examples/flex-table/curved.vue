@@ -3,22 +3,40 @@
     <template #header>
       <TairoFlexTableHeading type="shrink">
         <div class="flex items-center">
-          <BaseCheckbox v-model="selectAll" shape="curved" class="text-primary-500" />
+          <BaseCheckbox
+            v-model="selectAll"
+            shape="curved"
+            class="text-primary-500"
+          />
         </div>
       </TairoFlexTableHeading>
 
-      <TairoFlexTableHeading type="grow">Member</TairoFlexTableHeading>
+      <TairoFlexTableHeading type="grow">
+        Member
+      </TairoFlexTableHeading>
 
-      <TairoFlexTableHeading type="stable">Expertise</TairoFlexTableHeading>
+      <TairoFlexTableHeading type="stable">
+        Expertise
+      </TairoFlexTableHeading>
 
-      <TairoFlexTableHeading type="stable">Rate</TairoFlexTableHeading>
+      <TairoFlexTableHeading type="stable">
+        Rate
+      </TairoFlexTableHeading>
 
-      <TairoFlexTableHeading type="stable">Status</TairoFlexTableHeading>
+      <TairoFlexTableHeading type="stable">
+        Status
+      </TairoFlexTableHeading>
 
-      <TairoFlexTableHeading type="stable">Actions</TairoFlexTableHeading>
+      <TairoFlexTableHeading type="stable">
+        Actions
+      </TairoFlexTableHeading>
     </template>
 
-    <TairoFlexTableRow v-for="member in team" :key="member.id" shape="curved">
+    <TairoFlexTableRow
+      v-for="member in team"
+      :key="member.id"
+      shape="curved"
+    >
       <TairoFlexTableCell type="shrink" data-content="Selection">
         <div class="flex items-center">
           <BaseCheckbox
@@ -46,7 +64,11 @@
         </div>
       </TairoFlexTableCell>
 
-      <TairoFlexTableCell type="stable" data-content="Expertise" light>
+      <TairoFlexTableCell
+        type="stable"
+        data-content="Expertise"
+        light
+      >
         {{ member.expertise }}
       </TairoFlexTableCell>
 
@@ -87,7 +109,12 @@
       </TairoFlexTableCell>
 
       <TairoFlexTableCell type="stable" data-content="Actions">
-        <BaseButton color="primary" flavor="outline" shape="curved" class="scale-90">
+        <BaseButton
+          color="primary"
+          flavor="outline"
+          shape="curved"
+          class="scale-90"
+        >
           View
         </BaseButton>
       </TairoFlexTableCell>

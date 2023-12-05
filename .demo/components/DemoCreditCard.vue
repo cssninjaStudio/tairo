@@ -24,7 +24,7 @@ const props = withDefaults(
   >
     <div
       class="absolute -bottom-5 -end-5 h-[70px] w-[70px] rounded-full bg-white opacity-30 dark:opacity-10"
-    ></div>
+    />
     <div class="flex items-center justify-between">
       <div>
         <span>

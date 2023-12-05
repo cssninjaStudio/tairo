@@ -56,7 +56,11 @@ const skills = [
         </BaseParagraph>
       </div>
       <div class="ms-auto flex items-center">
-        <BaseButtonIcon shape="curved" muted class="scale-75">
+        <BaseButtonIcon
+          shape="curved"
+          muted
+          class="scale-75"
+        >
           <Icon name="lucide:arrow-right" class="h-5 w-5" />
         </BaseButtonIcon>
       </div>

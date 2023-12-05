@@ -31,7 +31,7 @@ const props = withDefaults(
     </div>
     <div class="hidden sm:block">
       <BaseText size="xs" class="text-muted-400">
-        <ContentSlot :use="$slots.default"></ContentSlot>
+        <ContentSlot :use="$slots.default" />
       </BaseText>
     </div>
   </div>

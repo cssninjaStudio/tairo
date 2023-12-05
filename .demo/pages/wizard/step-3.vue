@@ -88,8 +88,8 @@ const filteredCustomers = computed<Customer[]>(() => {
   return customers
     .filter((item) => {
       return (
-        item.name?.match(new RegExp(search.value, 'i')) ||
-        item.location?.match(new RegExp(search.value, 'i'))
+        item.name?.match(new RegExp(search.value, 'i'))
+        || item.location?.match(new RegExp(search.value, 'i'))
       )
     })
     .splice(0, 4)
@@ -162,7 +162,11 @@ const budget = ref('< 5K')
                 </p>
               </div>
               <div class="me-3 ms-auto">
-                <BaseButtonIcon small shape="full" @click="dismissCustomer">
+                <BaseButtonIcon
+                  small
+                  shape="full"
+                  @click="dismissCustomer"
+                >
                   <Icon name="lucide:x" class="h-4 w-4" />
                 </BaseButtonIcon>
               </div>
@@ -243,7 +247,7 @@ const budget = ref('< 5K')
                     :value="inputValue"
                     placeholder="Start date"
                     v-on="inputEvents"
-                  />
+                  >
                   <div
                     class="text-muted-400 peer-focus-visible:text-primary-500 absolute start-0 top-0 flex h-10 w-10 items-center justify-center transition-colors duration-300"
                   >
@@ -269,7 +273,7 @@ const budget = ref('< 5K')
                     :value="inputValue"
                     placeholder="End date"
                     v-on="inputEvents"
-                  />
+                  >
                   <div
                     class="text-muted-400 peer-focus-visible:text-primary-500 absolute start-0 top-0 flex h-10 w-10 items-center justify-center transition-colors duration-300"
                   >
@@ -291,7 +295,11 @@ const budget = ref('< 5K')
           </h3>
         </div>
         <div class="flex w-full justify-center gap-3">
-          <BaseRadioHeadless v-model="budget" name="budget" value="< 5K">
+          <BaseRadioHeadless
+            v-model="budget"
+            name="budget"
+            value="< 5K"
+          >
             <BaseButtonAction
               shape="curved"
               class="peer-checked:!bg-primary-500 peer-checked:!border-primary-500 peer-checked:shadow-primary-500/20 peer-checked:!text-white peer-checked:shadow-xl"
@@ -299,7 +307,11 @@ const budget = ref('< 5K')
               <span>&lt; 5K</span>
             </BaseButtonAction>
           </BaseRadioHeadless>
-          <BaseRadioHeadless v-model="budget" name="budget" value="< 30K">
+          <BaseRadioHeadless
+            v-model="budget"
+            name="budget"
+            value="< 30K"
+          >
             <BaseButtonAction
               shape="curved"
               class="peer-checked:!bg-primary-500 peer-checked:!border-primary-500 peer-checked:shadow-primary-500/20 peer-checked:!text-white peer-checked:shadow-xl"
@@ -307,7 +319,11 @@ const budget = ref('< 5K')
               <span>&lt; 30K</span>
             </BaseButtonAction>
           </BaseRadioHeadless>
-          <BaseRadioHeadless v-model="budget" name="budget" value="< 100K">
+          <BaseRadioHeadless
+            v-model="budget"
+            name="budget"
+            value="< 100K"
+          >
             <BaseButtonAction
               shape="curved"
               class="peer-checked:!bg-primary-500 peer-checked:!border-primary-500 peer-checked:shadow-primary-500/20 peer-checked:!text-white peer-checked:shadow-xl"
@@ -315,7 +331,11 @@ const budget = ref('< 5K')
               <span>&lt; 100K</span>
             </BaseButtonAction>
           </BaseRadioHeadless>
-          <BaseRadioHeadless v-model="budget" name="budget" value="100K+">
+          <BaseRadioHeadless
+            v-model="budget"
+            name="budget"
+            value="100K+"
+          >
             <BaseButtonAction
               shape="curved"
               class="peer-checked:!bg-primary-500 peer-checked:!border-primary-500 peer-checked:shadow-primary-500/20 peer-checked:!text-white peer-checked:shadow-xl"

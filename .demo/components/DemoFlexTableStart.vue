@@ -38,7 +38,7 @@ const props = withDefaults(
     <BaseAvatar
       v-if="
         (props.avatar && !props.icon && !props.picture) ||
-        (props.initials && !props.icon && !props.picture)
+          (props.initials && !props.icon && !props.picture)
       "
       :src="props.avatar"
       :badge-src="props.badge"
@@ -62,7 +62,7 @@ const props = withDefaults(
         :src="props.picture"
         :alt="props.title"
         class="h-12 w-16 rounded-lg object-cover"
-      />
+      >
     </div>
 
     <div>

@@ -18,25 +18,21 @@
     "clean:all": "pnpm -r clean && rimraf .nuxt .output node_modules",
     "test": "run-p test:*",
     "test:tsc-demo": "nuxi typecheck .demo",
-    "test:lint": "run-s lint:eslint lint:prettier",
-    "lint": "run-s lint:eslint:fix lint:eslint:fix-demo lint:prettier:fix",
-    "lint:prettier": "prettier --check \"./**/*.(ts|vue|css|md)\"",
-    "lint:prettier:fix": "prettier --write \"./**/*.(ts|vue|css|md)\"",
-    "lint:eslint": "eslint -c .eslintrc.cjs --ext .vue,.ts .",
-    "lint:eslint:fix": "eslint -c .eslintrc.cjs --fix --ext .vue,.ts .",
-    "lint:eslint:fix-demo": "eslint -c layers/documentation/examples/.eslintrc.cjs --fix --ext .vue layers/documentation/examples"
+    "test:lint": "eslint .",
+    "lint": "run-s lint:eslint:fix lint:eslint:fix-demo ",
+    "lint:eslint:fix": "eslint --fix .",
+    "lint:eslint:fix-demo": "eslint -c layers/documentation/examples/.eslintrc.cjs --fix layers/documentation/examples"
   },
   "devDependencies": {
+    "@stylistic/eslint-plugin": "^1.4.1",
     "@typescript-eslint/eslint-plugin": "6.13.2",
     "eslint": "8.55.0",
-    "eslint-config-prettier": "9.1.0",
-    "eslint-plugin-prettier-vue": "5.0.0",
+    "eslint-plugin-sonarjs": "^0.23.0",
     "eslint-plugin-tailwindcss": "3.13.0",
     "eslint-plugin-vue": "9.19.2",
     "eslint-plugin-vuejs-accessibility": "2.2.0",
     "lint-staged": "15.2.0",
     "npm-run-all": "4.1.5",
-    "prettier": "3.1.0",
     "rimraf": "5.0.5",
     "std-env": "3.6.0",
     "tailwindcss": "3.3.6",
@@ -48,11 +44,7 @@
   },
   "lint-staged": {
     "*.(ts|vue)": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.md": [
-      "prettier --write"
+      "eslint --fix"
     ]
   },
   "pnpm": {

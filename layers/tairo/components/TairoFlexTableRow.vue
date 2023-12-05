@@ -15,6 +15,6 @@ const props = defineProps<{
       props.shape === 'curved' && 'rounded-xl',
     ]"
   >
-    <slot></slot>
+    <slot />
   </div>
 </template>

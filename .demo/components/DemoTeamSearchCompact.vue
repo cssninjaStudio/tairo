@@ -59,7 +59,7 @@ const filteredMembers = computed(() => {
   }
   const filterRe = new RegExp(filter.value, 'i')
   return members.value.filter((item) => {
-    return [item.firstName, item.lastName, item.role].some((item) =>
+    return [item.firstName, item.lastName, item.role].some(item =>
       item.match(filterRe),
     )
   })
@@ -79,7 +79,12 @@ const filteredMembers = computed(() => {
     <div v-if="filteredMembers.length === 0">
       <div class="flex flex-col items-center py-10 text-center">
         <Icon name="pepicons-print:person" class="text-primary-500 h-10 w-10" />
-        <BaseHeading as="h4" size="md" weight="medium" lead="tight">
+        <BaseHeading
+          as="h4"
+          size="md"
+          weight="medium"
+          lead="tight"
+        >
           <span>No matching results</span>
         </BaseHeading>
         <BaseParagraph size="xs" class="text-muted-400 mx-auto max-w-[240px]">
@@ -126,9 +131,14 @@ const filteredMembers = computed(() => {
           </BaseParagraph>
         </div>
         <div
-          class="ms-auto flex -translate-x-1 items-center opacity-0 transition-all duration-300 group-hover:translate-x-0 group-focus-within:translate-x-0 group-hover:opacity-100 group-focus-within:opacity-100"
+          class="ms-auto flex -translate-x-1 items-center opacity-0 transition-all duration-300 group-focus-within:translate-x-0 group-focus-within:opacity-100 group-hover:translate-x-0 group-hover:opacity-100"
         >
-          <BaseButtonIcon to="#" :shape="props.shape" muted class="scale-75">
+          <BaseButtonIcon
+            to="#"
+            :shape="props.shape"
+            muted
+            class="scale-75"
+          >
             <Icon name="lucide:arrow-right" class="h-4 w-4" />
           </BaseButtonIcon>
         </div>

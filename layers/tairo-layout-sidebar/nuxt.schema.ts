@@ -56,7 +56,7 @@ export default defineNuxtSchema({
                   activePath: { type: 'string' },
                   position: {
                     type: 'string',
-                    tsType: "'start' | 'end'",
+                    tsType: '\'start\' | \'end\'',
                     $default: 'start',
                   },
 

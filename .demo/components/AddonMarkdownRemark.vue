@@ -20,7 +20,7 @@ const props = withDefaults(
      *
      * @see https://github.com/shikijs/shiki/blob/main/docs/themes.md#all-themes
      */
-    themes?: { light: any; dark: any }
+    themes?: { light: any, dark: any }
     /**
      * List of languages to highlight code blocks
      *
@@ -68,7 +68,8 @@ const isDark = computed({
   set(value) {
     if (value) {
       colorMode.preference = 'dark'
-    } else {
+    }
+    else {
       colorMode.preference = 'light'
     }
   },
@@ -110,7 +111,7 @@ watchEffect(async () => {
 </script>
 
 <template>
-  <BasePlaceload v-if="!loaded" class="h-24 w-full rounded"></BasePlaceload>
+  <BasePlaceload v-if="!loaded" class="h-24 w-full rounded" />
   <BaseProse
     v-else
     :class="[
@@ -120,7 +121,8 @@ watchEffect(async () => {
       props.fullwidth ? 'max-w-none' : '',
     ]"
   >
-    <div v-html="htmlContent"></div>
+    <!-- eslint-disable-next-line vue/no-v-html -->
+    <div v-html="htmlContent" />
   </BaseProse>
 </template>
 

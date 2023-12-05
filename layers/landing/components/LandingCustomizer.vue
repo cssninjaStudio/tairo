@@ -19,8 +19,9 @@ watch(selectedStyle, (value) => {
       <div class="mb-10 max-w-2xl">
         <BaseText
           class="text-primary-500 mb-2 text-[0.65rem] uppercase tracking-wider"
-          >UI Library</BaseText
         >
+          UI Library
+        </BaseText>
         <BaseHeading
           as="h2"
           size="4xl"
@@ -52,10 +53,10 @@ watch(selectedStyle, (value) => {
             >
               <div
                 class="from-primary-200 to-primary-400 h-40 bg-gradient-to-br blur-3xl dark:from-blue-700"
-              ></div>
+              />
               <div
                 class="dark:to-primary-600 h-24 bg-gradient-to-r from-indigo-400 to-indigo-700 blur-3xl"
-              ></div>
+              />
             </div>
           </div>
           <div
@@ -70,21 +71,21 @@ watch(selectedStyle, (value) => {
                   class="animate-spin-fast h-10 w-10"
                   src="/img/logos/cssninja-logo-icon.svg"
                   alt=""
-                />
+                >
               </div>
               <div class="shuriken-2 absolute block">
                 <img
                   class="animate-spin-fast h-12 w-12"
                   src="/img/logos/cssninja-logo-icon.svg"
                   alt=""
-                />
+                >
               </div>
               <div class="shuriken-3 absolute block">
                 <img
                   class="animate-spin-fast h-11 w-11"
                   src="/img/logos/cssninja-logo-icon.svg"
                   alt=""
-                />
+                >
               </div>
             </div>
             <BaseCard
@@ -93,9 +94,13 @@ watch(selectedStyle, (value) => {
               class="!border-primary-600 relative z-20 mx-auto max-w-[340px] p-6"
             >
               <div class="mb-6 flex items-center justify-between">
-                <BaseTag shape="curved" color="primary" shadow="flat"
-                  >Member</BaseTag
+                <BaseTag
+                  shape="curved"
+                  color="primary"
+                  shadow="flat"
                 >
+                  Member
+                </BaseTag>
                 <BaseButtonClose shape="full" color="muted" />
               </div>
               <BaseAvatar
@@ -106,15 +111,26 @@ watch(selectedStyle, (value) => {
                 shape="full"
               />
               <div class="mt-3 text-center">
-                <BaseHeading as="h3" size="xl" weight="medium">
-                  Belen Lopez</BaseHeading
+                <BaseHeading
+                  as="h3"
+                  size="xl"
+                  weight="medium"
                 >
-                <BaseText size="sm" class="text-muted-500 dark:text-muted-400"
-                  >Fullstack Developer</BaseText
+                  Belen Lopez
+                </BaseHeading>
+                <BaseText
+                  size="sm"
+                  class="text-muted-500 dark:text-muted-400"
                 >
+                  Fullstack Developer
+                </BaseText>
               </div>
               <div class="my-6 flex items-center justify-center gap-4">
-                <BaseAvatar size="xs" src="/img/stacks/js.svg" shape="full" />
+                <BaseAvatar
+                  size="xs"
+                  src="/img/stacks/js.svg"
+                  shape="full"
+                />
                 <BaseAvatar
                   size="xs"
                   src="/img/stacks/python.svg"
@@ -152,15 +168,16 @@ watch(selectedStyle, (value) => {
               <div
                 class="bg-primary-500 dark:bg-primary-500/20 absolute -right-16 -top-32 h-72 w-72 rounded-full transition-transform delay-150 duration-500"
                 :class="selectedStyle === 'creative' ? 'scale-100' : 'scale-0'"
-              ></div>
+              />
               <div class="mb-6 flex items-center justify-between">
                 <BaseTag
                   shape="full"
                   color="primary"
                   shadow="flat"
                   class="relative z-10"
-                  >Member</BaseTag
                 >
+                  Member
+                </BaseTag>
                 <div
                   class="dark:bg-muted-800 flex h-7 w-7 items-center justify-center rounded-full bg-white"
                 >
@@ -178,12 +195,19 @@ watch(selectedStyle, (value) => {
                 shape="straight"
               />
               <div class="mt-3 text-center">
-                <BaseHeading as="h3" size="xl" weight="medium">
-                  Kendra Wilson</BaseHeading
+                <BaseHeading
+                  as="h3"
+                  size="xl"
+                  weight="medium"
                 >
-                <BaseText size="sm" class="text-muted-500 dark:text-muted-400"
-                  >Sales Manager</BaseText
+                  Kendra Wilson
+                </BaseHeading>
+                <BaseText
+                  size="sm"
+                  class="text-muted-500 dark:text-muted-400"
                 >
+                  Sales Manager
+                </BaseText>
               </div>
               <div class="my-6 flex items-center justify-center gap-4">
                 <BaseAvatar
@@ -208,7 +232,11 @@ watch(selectedStyle, (value) => {
                   <span>Save</span>
                 </BaseButton>
 
-                <BaseButton class="!h-11 w-full" shape="full" color="primary">
+                <BaseButton
+                  class="!h-11 w-full"
+                  shape="full"
+                  color="primary"
+                >
                   <Icon name="lucide:bell" class="h-4 w-4" />
                   <span>Follow</span>
                 </BaseButton>
@@ -226,9 +254,13 @@ watch(selectedStyle, (value) => {
               class="!border-primary-600 relative z-20 mx-auto max-w-[340px] p-6"
             >
               <div class="mb-6 flex items-center justify-between">
-                <BaseTag shape="rounded" color="primary" shadow="flat"
-                  >Member</BaseTag
+                <BaseTag
+                  shape="rounded"
+                  color="primary"
+                  shadow="flat"
                 >
+                  Member
+                </BaseTag>
                 <BaseButtonClose shape="curved" color="primary" />
               </div>
               <BaseAvatar
@@ -239,19 +271,30 @@ watch(selectedStyle, (value) => {
                 shape="curved"
               />
               <div class="mt-3 text-center">
-                <BaseHeading as="h3" size="xl" weight="medium">
-                  Jenna Davis</BaseHeading
+                <BaseHeading
+                  as="h3"
+                  size="xl"
+                  weight="medium"
                 >
-                <BaseText size="sm" class="text-muted-500 dark:text-muted-400"
-                  >UI/UX Designer</BaseText
+                  Jenna Davis
+                </BaseHeading>
+                <BaseText
+                  size="sm"
+                  class="text-muted-500 dark:text-muted-400"
                 >
+                  UI/UX Designer
+                </BaseText>
               </div>
               <BaseParagraph size="sm" class="text-muted-400 my-2 text-center">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit sed
-                vitae nisl vitae nisl.</BaseParagraph
-              >
+                vitae nisl vitae nisl.
+              </BaseParagraph>
               <div class="my-6 flex items-center justify-center gap-4">
-                <BaseAvatar size="xs" src="/img/stacks/xd.svg" shape="full" />
+                <BaseAvatar
+                  size="xs"
+                  src="/img/stacks/xd.svg"
+                  shape="full"
+                />
                 <BaseAvatar
                   size="xs"
                   src="/img/stacks/photoshop.svg"
@@ -280,9 +323,13 @@ watch(selectedStyle, (value) => {
               class="!border-primary-600 relative z-20 mx-auto max-w-[340px] p-6"
             >
               <div class="mb-6 flex items-center justify-between">
-                <BaseTag shape="straight" color="primary" shadow="flat"
-                  >Member</BaseTag
+                <BaseTag
+                  shape="straight"
+                  color="primary"
+                  shadow="flat"
                 >
+                  Member
+                </BaseTag>
                 <BaseButtonClose shape="straight" />
               </div>
               <BaseAvatar
@@ -292,17 +339,24 @@ watch(selectedStyle, (value) => {
                 shape="straight"
               />
               <div class="mt-3 text-center">
-                <BaseHeading as="h3" size="xl" weight="medium">
-                  John Baxter</BaseHeading
+                <BaseHeading
+                  as="h3"
+                  size="xl"
+                  weight="medium"
                 >
-                <BaseText size="sm" class="text-muted-500 dark:text-muted-400"
-                  >Technical Lead</BaseText
+                  John Baxter
+                </BaseHeading>
+                <BaseText
+                  size="sm"
+                  class="text-muted-500 dark:text-muted-400"
                 >
+                  Technical Lead
+                </BaseText>
               </div>
               <BaseParagraph size="sm" class="text-muted-400 my-2 text-center">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit sed
-                vitae nisl vitae nisl.</BaseParagraph
-              >
+                vitae nisl vitae nisl.
+              </BaseParagraph>
               <div class="my-6 flex items-center justify-center gap-4">
                 <NuxtLink
                   to="#"
@@ -349,7 +403,7 @@ watch(selectedStyle, (value) => {
                 alt=""
                 loading="lazy"
                 decoding="async"
-              />
+              >
               <button
                 type="button"
                 class="mx-auto flex h-32 w-40 flex-col items-center justify-center transition-colors duration-200"

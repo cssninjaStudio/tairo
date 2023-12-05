@@ -57,8 +57,14 @@ const { data, pending, error, refresh } = await useFetch(
         />
       </template>
       <template #right>
-        <BaseButton shape="curved" class="w-full sm:w-32">Settings</BaseButton>
-        <BaseButton shape="curved" color="primary" class="w-full sm:w-32">
+        <BaseButton shape="curved" class="w-full sm:w-32">
+          Settings
+        </BaseButton>
+        <BaseButton
+          shape="curved"
+          color="primary"
+          class="w-full sm:w-32"
+        >
           <Icon name="lucide:plus" class="h-4 w-4" />
           <span>Create</span>
         </BaseButton>
@@ -74,12 +80,12 @@ const { data, pending, error, refresh } = await useFetch(
                 class="block dark:hidden"
                 src="/img/illustrations/placeholders/flat/placeholder-search-7.svg"
                 alt="Placeholder image"
-              />
+              >
               <img
                 class="hidden dark:block"
                 src="/img/illustrations/placeholders/flat/placeholder-search-7-dark.svg"
                 alt="Placeholder image"
-              />
+              >
             </template>
           </BasePlaceholderPage>
         </div>
@@ -136,7 +142,9 @@ const { data, pending, error, refresh } = await useFetch(
                   </div>
                 </div>
                 <div class="flex items-center gap-2">
-                  <BaseButton shape="curved" class="w-full">Tasks</BaseButton>
+                  <BaseButton shape="curved" class="w-full">
+                    Tasks
+                  </BaseButton>
                   <BaseButton shape="curved" class="w-full">
                     Activity
                   </BaseButton>

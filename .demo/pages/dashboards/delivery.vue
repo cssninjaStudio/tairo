@@ -84,7 +84,7 @@ const meals = [
   },
   {
     id: 4,
-    name: "Sweet n' Donuts",
+    name: 'Sweet n\' Donuts',
     description: 'Donuts, chocolate, strawberry, vanilla, sugar',
     price: 9.99,
     image: '/img/illustrations/dashboards/delivery/meal-4.png',
@@ -93,7 +93,7 @@ const meals = [
   },
   {
     id: 5,
-    name: "Sweet n' Milkshake",
+    name: 'Sweet n\' Milkshake',
     description: 'Milkshake, chocolate, strawberry, vanilla, sugar',
     price: 16.99,
     image: '/img/illustrations/dashboards/delivery/meal-5.png',
@@ -166,7 +166,7 @@ const order = {
     },
     {
       id: 4,
-      name: "Sweet n' Donuts",
+      name: 'Sweet n\' Donuts',
       description: 'Donuts, chocolate, strawberry, vanilla, sugar',
       price: 9.99,
       image: '/img/illustrations/dashboards/delivery/meal-4.png',
@@ -211,7 +211,7 @@ const total = computed(() => {
                   class="pointer-events-none absolute -top-6 start-3 sm:-start-10 sm:-top-2"
                   src="/img/illustrations/dashboards/delivery/header.svg"
                   alt="Food illustration"
-                />
+                >
               </div>
               <div class="mt-6 grow sm:mt-0">
                 <div class="pb-4 text-center sm:pb-0 sm:text-left">
@@ -248,7 +248,11 @@ const total = computed(() => {
           <!-- Grid -->
           <div class="relative">
             <div class="mb-6 flex items-center justify-between">
-              <BaseHeading tag="h3" size="xl" weight="semibold">
+              <BaseHeading
+                tag="h3"
+                size="xl"
+                weight="semibold"
+              >
                 <span>Popular Meals</span>
               </BaseHeading>
               <button
@@ -265,6 +269,7 @@ const total = computed(() => {
                 v-for="genre in genres"
                 :key="genre.id"
                 role="button"
+                tabindex="0"
                 class="flex cursor-pointer flex-col items-center rounded-full border p-2 shadow-xl transition-colors duration-500 ease-in-out"
                 :class="
                   activeGenre === genre.id
@@ -286,9 +291,11 @@ const total = computed(() => {
                     alt="Food type icon"
                     class="h-12 w-12 scale-[0.8]"
                     :class="activeGenre === genre.id ? '' : 'dark:invert'"
-                  />
+                  >
                 </div>
-                <p class="mb-10 mt-3 text-xs font-bold">{{ genre.name }}</p>
+                <p class="mb-10 mt-3 text-xs font-bold">
+                  {{ genre.name }}
+                </p>
               </div>
 
               <div class="hidden items-center justify-center sm:flex">
@@ -321,7 +328,7 @@ const total = computed(() => {
                       class="ltablet:max-w-[175px] absolute inset-x-0 -top-4 mx-auto max-w-[210px] sm:-top-6 sm:max-w-[190px]"
                       :src="meal.image"
                       :alt="meal.name"
-                    />
+                    >
                   </div>
                   <div class="mb-2">
                     <BaseHeading
@@ -386,7 +393,7 @@ const total = computed(() => {
           class="bg-muted-200 dark:bg-muted-800 flex flex-col gap-6 rounded-2xl p-6"
         >
           <!-- Details -->
-          <div class="font-hairline rounded-2xl bg-primary-800 p-6 text-xs">
+          <div class="font-hairline bg-primary-800 rounded-2xl p-6 text-xs">
             <div class="mb-4 flex items-center gap-2">
               <BaseAvatar src="/img/avatars/2.svg" size="xs" />
               <div>
@@ -405,7 +412,9 @@ const total = computed(() => {
               </div>
             </div>
             <div class="flex items-center justify-between font-sans">
-              <p class="text-white">112 Mc Cornell Av.</p>
+              <p class="text-white">
+                112 Mc Cornell Av.
+              </p>
               <button type="button" class="cursor-pointer text-yellow-400">
                 Edit
               </button>
@@ -414,7 +423,9 @@ const total = computed(() => {
               <div class="rounded-lg py-1">
                 <Icon name="ph:timer-duotone" class="h-5 w-5 text-yellow-400" />
               </div>
-              <p class="text-white">35 min</p>
+              <p class="text-white">
+                35 min
+              </p>
               <button
                 type="button"
                 class="ms-auto cursor-pointer text-yellow-400"
@@ -445,7 +456,7 @@ const total = computed(() => {
                     :src="item.image"
                     :alt="item.name"
                     class="h-12 w-12 object-contain"
-                  />
+                  >
                   <div
                     class="bg-primary-500 absolute -bottom-1 -end-1 flex h-6 w-6 items-center justify-center rounded-full"
                   >

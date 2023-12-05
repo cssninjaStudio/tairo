@@ -43,8 +43,8 @@ function isChildActive(link: {
   exact?: boolean
 }) {
   return (
-    (link.exact && route.path === link.to) ||
-    (!link.exact && route.path.startsWith(link.to))
+    (link.exact && route.path === link.to)
+    || (!link.exact && route.path.startsWith(link.to))
   )
 }
 
@@ -74,7 +74,7 @@ function onLinkClick() {
         <span
           v-if="hasActiveChild"
           class="bg-primary-500 absolute -start-3 top-2 h-1 w-1 rounded-full"
-        ></span>
+        />
         <span>{{ props.name }}</span>
       </span>
       <Icon
@@ -95,7 +95,7 @@ function onLinkClick() {
         'max-h-max opacity-100': open,
       }"
     >
-      <ul class="py-2" v-if="props?.children">
+      <ul v-if="props?.children" class="py-2">
         <li
           v-for="link of props.children"
           :key="link.to"

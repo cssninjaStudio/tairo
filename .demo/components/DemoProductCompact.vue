@@ -43,10 +43,10 @@ const props = withDefaults(
           class="relative z-10 mx-auto max-w-[100px]"
           :src="props.image"
           :alt="props.title"
-        />
+        >
         <div
           class="bg-primary-500/10 absolute start-1/2 top-1/2 h-20 w-20 -translate-x-1/2 -translate-y-1/2 rounded-full transition-transform duration-300 group-hover:scale-150"
-        ></div>
+        />
       </div>
     </div>
     <div class="text-center">

@@ -13,7 +13,11 @@
         constructio interrete. Philosophi autem in suis lectulis plerumque moriuntur.
       </BaseText>
 
-      <BaseText size="xs" weight="medium" class="text-success-500">
+      <BaseText
+        size="xs"
+        weight="medium"
+        class="text-success-500"
+      >
         Any text can have a different color
       </BaseText>
     </div>

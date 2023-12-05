@@ -45,8 +45,8 @@ export function useSidebar() {
 
   const sidebars = computed(() => {
     if (
-      (app.tairo.sidebar?.navigation?.enabled as boolean) === false ||
-      app.tairo.sidebar?.navigation?.items?.length === 0
+      (app.tairo.sidebar?.navigation?.enabled as boolean) === false
+      || app.tairo.sidebar?.navigation?.items?.length === 0
     ) {
       return []
     }
@@ -57,7 +57,7 @@ export function useSidebar() {
   const isOpen = useState<boolean | undefined>('sidebar-open', () => undefined)
 
   const hasSubsidebar = computed(() => {
-    return sidebars.value?.some((sidebar) => sidebar.subsidebar?.component)
+    return sidebars.value?.some(sidebar => sidebar.subsidebar?.component)
   })
 
   const current = computed(() => {
@@ -101,18 +101,18 @@ export function useSidebar() {
     }
 
     const item = sidebars.value?.find(
-      (bar) => bar?.activePath && route.fullPath.startsWith(bar.activePath),
+      bar => bar?.activePath && route.fullPath.startsWith(bar.activePath),
     )
     if (item) {
       currentName.value = item.title
       if (!import.meta.client) {
         isOpen.value = Boolean(currentName.value)
-      } else {
+      }
+      else {
         const isXl = useTailwindBreakpoints().xl.value
         isOpen.value = Boolean(currentName.value) && isXl
       }
     }
-    return
   }
 
   function setup() {
@@ -128,7 +128,6 @@ export function useSidebar() {
     const removeHook = nuxtApp.hook('page:finish', (e) => {
       detect()
       removeHook()
-      return
     })
 
     // register a watcher to close sidebar when screen become extra large
@@ -150,7 +149,8 @@ export function useSidebar() {
           if (xl.value) {
             isOpen.value = true
           }
-        } else {
+        }
+        else {
           isOpen.value = false
         }
       },

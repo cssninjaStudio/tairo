@@ -226,8 +226,9 @@ const isAllVisibleSelected = computed(() => {
 function toggleAllVisibleSelection() {
   if (isAllVisibleSelected.value) {
     selected.value = []
-  } else {
-    selected.value = team.value?.map((item) => item.id) ?? []
+  }
+  else {
+    selected.value = team.value?.map(item => item.id) ?? []
   }
 }
 </script>
@@ -252,7 +253,9 @@ function toggleAllVisibleSelection() {
               >
                 162
               </h4>
-              <p class="text-muted-400 font-sans text-sm">New Users</p>
+              <p class="text-muted-400 font-sans text-sm">
+                New Users
+              </p>
             </div>
           </div>
           <!-- Item -->
@@ -267,7 +270,9 @@ function toggleAllVisibleSelection() {
               >
                 $8,579
               </h4>
-              <p class="text-muted-400 font-sans text-sm">Daily Income</p>
+              <p class="text-muted-400 font-sans text-sm">
+                Daily Income
+              </p>
             </div>
           </div>
           <!-- Item -->
@@ -282,7 +287,9 @@ function toggleAllVisibleSelection() {
               >
                 192
               </h4>
-              <p class="text-muted-400 font-sans text-sm">Completed Projects</p>
+              <p class="text-muted-400 font-sans text-sm">
+                Completed Projects
+              </p>
             </div>
           </div>
           <!-- Item -->
@@ -297,7 +304,9 @@ function toggleAllVisibleSelection() {
               >
                 32
               </h4>
-              <p class="text-muted-400 font-sans text-sm">Active Tickets</p>
+              <p class="text-muted-400 font-sans text-sm">
+                Active Tickets
+              </p>
             </div>
           </div>
         </div>
@@ -340,10 +349,18 @@ function toggleAllVisibleSelection() {
                   />
                 </div>
               </TairoTableHeading>
-              <TairoTableHeading uppercase>Collaborator</TairoTableHeading>
-              <TairoTableHeading uppercase>Expertise</TairoTableHeading>
-              <TairoTableHeading uppercase>Rate</TairoTableHeading>
-              <TairoTableHeading uppercase>Status</TairoTableHeading>
+              <TairoTableHeading uppercase>
+                Collaborator
+              </TairoTableHeading>
+              <TairoTableHeading uppercase>
+                Expertise
+              </TairoTableHeading>
+              <TairoTableHeading uppercase>
+                Rate
+              </TairoTableHeading>
+              <TairoTableHeading uppercase>
+                Status
+              </TairoTableHeading>
               <TairoTableHeading uppercase class="px-4 py-6">
                 <span class="sr-only">View</span>
               </TairoTableHeading>
