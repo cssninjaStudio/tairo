@@ -1,12 +1,4 @@
-import rehypeExternalLinks from 'rehype-external-links'
-import rehypeRaw from 'rehype-raw'
-import rehypeSanitize, { defaultSchema } from 'rehype-sanitize'
-import rehypeStringify from 'rehype-stringify'
-import rehypeShikiji, { type RehypeShikijiOptions } from 'rehype-shikiji'
-import remarkGfm from 'remark-gfm'
-import remarkParse from 'remark-parse'
-import remarkRehype from 'remark-rehype'
-import { unified } from 'unified'
+import type { RehypeShikijiOptions } from 'rehype-shikiji'
 
 // this is used to cache the markdown processor
 let processor: ReturnType<typeof createProcessor>
@@ -28,6 +20,29 @@ export function getMarkdownProcessors(
 }
 
 async function createProcessor(options: RehypeShikijiOptions) {
+  const [
+    rehypeExternalLinks,
+    rehypeRaw,
+    [rehypeSanitize, defaultSchema],
+    rehypeStringify,
+    rehypeShikiji,
+    remarkGfm,
+    remarkParse,
+    remarkRehype,
+    unified,
+  ] = await Promise.all([
+    import('rehype-external-links').then(m => m.default),
+    import('rehype-raw').then(m => m.default),
+    import('rehype-sanitize').then(m => [m.default, m.defaultSchema] as const),
+    import('rehype-stringify').then(m => m.default),
+    import('rehype-shikiji').then(m => m.default),
+    import('remark-gfm').then(m => m.default),
+    import('remark-parse').then(m => m.default),
+    import('remark-rehype').then(m => m.default),
+    import('unified').then(m => m.unified),
+
+  ])
+
   return (
     unified()
       // @ts-expect-error
