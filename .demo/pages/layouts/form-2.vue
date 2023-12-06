@@ -3,6 +3,8 @@ import { toTypedSchema } from '@vee-validate/zod'
 import { Field, useFieldError, useForm } from 'vee-validate'
 import { z } from 'zod'
 
+import { AddonInputPhone } from '#components'
+
 definePageMeta({
   title: 'New Doctor',
   preview: {
@@ -30,6 +32,24 @@ const VALIDATION_TEXT = {
   AVATAR_TOO_BIG: `Avatar size must be less than 1MB`,
 }
 
+const inputPhoneRef = ref<InstanceType<typeof AddonInputPhone>>()
+
+function phoneErrorMessage(code?: string) {
+  switch (code) {
+    case 'INVALID_COUNTRY':
+      return 'Please select a country'
+    case 'NO_POSSIBLE_COUNTRIES':
+      return 'No possible countries for this phone number'
+    case 'PHONE_NUMBER_NOT_POSSIBLE':
+      return 'This phone number is not valid for the selected country'
+    case 'NOT_A_NUMBER':
+    case 'TOO_SHORT':
+    case 'TOO_LONG':
+    default:
+      return 'Please enter a valid phone number'
+  }
+}
+
 // This is the Zod schema for the form input
 // It's used to define the shape that the form data will have
 const zodSchema = z
@@ -40,6 +60,7 @@ const zodSchema = z
       lastName: z.string().min(1, VALIDATION_TEXT.LASTNAME_REQUIRED),
       email: z.string().min(1, VALIDATION_TEXT.EMAIL_REQUIRED),
       comments: z.string().optional(),
+      phone: z.string().optional(),
       status: z
         .union([
           z.literal('intern'),
@@ -116,6 +137,14 @@ const zodSchema = z
         code: z.ZodIssueCode.custom,
         message: VALIDATION_TEXT.OPTION_REQUIRED,
         path: ['doctor.rating'],
+      })
+    }
+
+    if (!inputPhoneRef.value?.validation?.valid) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: phoneErrorMessage(inputPhoneRef.value?.validation?.error) || VALIDATION_TEXT.OPTION_REQUIRED,
+        path: ['doctor.phone'],
       })
     }
   })
@@ -403,6 +432,25 @@ const currentRatingText = computed(() => {
                         Traumatology
                       </option>
                     </BaseSelect>
+                  </Field>
+                </div>
+
+                <div class="col-span-12">
+                  <Field
+                    v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                    name="doctor.phone"
+                  >
+                    <AddonInputPhone
+                      ref="inputPhoneRef"
+                      label="Emergency Phone"
+                      placeholder="Ex: +1 555 555 5555"
+                      icon="lucide:phone"
+                      :model-value="field.value"
+                      :error="errorMessage"
+                      :disabled="isSubmitting"
+                      @update:model-value="handleChange"
+                      @blur="handleBlur"
+                    />
                   </Field>
                 </div>
 
@@ -800,10 +848,40 @@ const currentRatingText = computed(() => {
         </div>
         <div class="text-muted-400 mt-6 flex items-center gap-2">
           <Icon name="lucide:mail" class="h-4 w-4" />
-          <BaseText size="xs">
-            {{
-              values.doctor?.email === '' ? 'email address' : values.doctor?.email
-            }}
+          <BaseLink
+            v-if="values.doctor?.email"
+            class="block"
+            :href="`mailto:${values.doctor?.email}`"
+          >
+            <BaseText size="xs">
+              {{ values.doctor?.email }}
+            </BaseText>
+          </BaseLink>
+          <BaseText
+            v-else
+            size="xs"
+            class="opacity-50"
+          >
+            Fill up your email
+          </BaseText>
+        </div>
+        <div class="text-muted-400 mt-6 flex items-center gap-2">
+          <Icon name="lucide:phone" class="h-4 w-4" />
+          <BaseLink
+            v-if="values.doctor?.phone"
+            class="block"
+            :href="`tel:${values.doctor?.phone}`"
+          >
+            <BaseText size="xs">
+              {{ values.doctor?.phone }}
+            </BaseText>
+          </BaseLink>
+          <BaseText
+            v-else
+            size="xs"
+            class="opacity-50"
+          >
+            Fill up your emergency phone
           </BaseText>
         </div>
       </BaseCard>

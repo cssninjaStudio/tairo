@@ -69,6 +69,7 @@ const zodSchema = z
       email: z.string().min(1, VALIDATION_TEXT.EMAIL_REQUIRED),
       type: z.string().optional(),
       website: z.string().optional(),
+      phone: z.string().optional(),
       status: z.union([z.literal('active'), z.literal('inactive')]).nullable(),
       employees: z
         .union([
@@ -151,6 +152,7 @@ const initialValues = {
     email: '',
     website: '',
     type: '',
+    phone: '',
     income: null,
     employees: null,
     manager: null,
@@ -322,301 +324,315 @@ const onSubmit = handleSubmit(
         >
           <div class="mx-auto flex w-full max-w-[410px] flex-col">
             <div>
-              <div>
-                <div
-                  class="relative mb-5 flex flex-col items-center justify-center gap-4"
+              <div
+                class="relative mb-5 flex flex-col items-center justify-center gap-4"
+              >
+                <BaseFullscreenDropfile
+                  icon="ph:image-duotone"
+                  :filter-file-dropped="
+                    (file) => file.type.startsWith('image')
+                  "
+                  @drop="
+                    (value) => {
+                      inputFile = value
+                    }
+                  "
+                />
+                <BaseInputFileHeadless
+                  v-slot="{ open, remove, preview, files }"
+                  v-model="inputFile"
+                  accept="image/*"
                 >
-                  <BaseFullscreenDropfile
-                    icon="ph:image-duotone"
-                    :filter-file-dropped="
-                      (file) => file.type.startsWith('image')
-                    "
-                    @drop="
-                      (value) => {
-                        inputFile = value
-                      }
-                    "
-                  />
-                  <BaseInputFileHeadless
-                    v-slot="{ open, remove, preview, files }"
-                    v-model="inputFile"
-                    accept="image/*"
-                  >
-                    <div class="relative h-20 w-20">
-                      <img
-                        v-if="files?.length && files.item(0)"
-                        :src="preview(files.item(0)!).value"
-                        alt="Upload preview"
-                        class="bg-muted-200 dark:bg-muted-700/60 h-20 w-20 rounded-full object-cover object-center"
+                  <div class="relative h-20 w-20">
+                    <img
+                      v-if="files?.length && files.item(0)"
+                      :src="preview(files.item(0)!).value"
+                      alt="Upload preview"
+                      class="bg-muted-200 dark:bg-muted-700/60 h-20 w-20 rounded-full object-cover object-center"
+                    >
+                    <img
+                      v-else
+                      :src="currentAvatar"
+                      alt="Upload preview"
+                      class="bg-muted-200 dark:bg-muted-700/60 h-20 w-20 rounded-full object-cover object-center dark:invert"
+                    >
+                    <div
+                      v-if="files?.length && files.item(0)"
+                      class="absolute bottom-0 end-0 z-20"
+                    >
+                      <BaseButtonIcon
+                        size="sm"
+                        shape="full"
+                        data-nui-tooltip="Remove image"
+                        class="scale-90"
+                        @click="remove(files.item(0)!)"
                       >
-                      <img
-                        v-else
-                        :src="currentAvatar"
-                        alt="Upload preview"
-                        class="bg-muted-200 dark:bg-muted-700/60 h-20 w-20 rounded-full object-cover object-center dark:invert"
-                      >
-                      <div
-                        v-if="files?.length && files.item(0)"
-                        class="absolute bottom-0 end-0 z-20"
-                      >
+                        <Icon name="lucide:x" class="h-4 w-4" />
+                      </BaseButtonIcon>
+                    </div>
+                    <div v-else class="absolute bottom-0 end-0 z-20">
+                      <div class="relative" data-nui-tooltip="Upload image">
                         <BaseButtonIcon
                           size="sm"
                           shape="full"
-                          data-nui-tooltip="Remove image"
-                          class="scale-90"
-                          @click="remove(files.item(0)!)"
+                          @click="open"
                         >
-                          <Icon name="lucide:x" class="h-4 w-4" />
+                          <Icon name="lucide:plus" class="h-4 w-4" />
                         </BaseButtonIcon>
                       </div>
-                      <div v-else class="absolute bottom-0 end-0 z-20">
-                        <div class="relative" data-nui-tooltip="Upload image">
-                          <BaseButtonIcon
-                            size="sm"
-                            shape="full"
-                            @click="open"
-                          >
-                            <Icon name="lucide:plus" class="h-4 w-4" />
-                          </BaseButtonIcon>
-                        </div>
-                      </div>
                     </div>
-                  </BaseInputFileHeadless>
-                  <div
-                    v-if="fileError"
-                    class="text-danger-600 inline-block font-sans text-[.8rem]"
-                  >
-                    {{ fileError }}
                   </div>
+                </BaseInputFileHeadless>
+                <div
+                  v-if="fileError"
+                  class="text-danger-600 inline-block font-sans text-[.8rem]"
+                >
+                  {{ fileError }}
                 </div>
-                <div class="grid grid-cols-12 gap-4">
-                  <div class="ltablet:col-span-6 col-span-12 lg:col-span-6">
-                    <Field
-                      v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                      name="company.name"
-                    >
-                      <BaseInput
-                        label="Company Name"
-                        placeholder="Ex: Acme Inc."
-                        :model-value="field.value"
-                        :error="errorMessage"
-                        :disabled="isSubmitting"
-                        type="text"
-                        @update:model-value="handleChange"
-                        @blur="handleBlur"
-                      />
-                    </Field>
-                  </div>
-                  <div class="ltablet:col-span-6 col-span-12 lg:col-span-6">
-                    <Field
-                      v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                      name="company.email"
-                    >
-                      <BaseInput
-                        label="Company Email"
-                        placeholder="Ex: hello@acme.co"
-                        :model-value="field.value"
-                        :error="errorMessage"
-                        :disabled="isSubmitting"
-                        type="email"
-                        @update:model-value="handleChange"
-                        @blur="handleBlur"
-                      />
-                    </Field>
-                  </div>
-                  <div class="col-span-12">
-                    <Field
-                      v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                      name="company.website"
-                    >
-                      <BaseInput
-                        icon="lucide:globe"
-                        label="Company website"
-                        placeholder="Ex: https://acme.co"
-                        :model-value="field.value"
-                        :error="errorMessage"
-                        :disabled="isSubmitting"
-                        type="text"
-                        @update:model-value="handleChange"
-                        @blur="handleBlur"
-                      />
-                    </Field>
-                  </div>
-                </div>
-                <div class="mb-6 mt-4">
-                  <label class="nui-label pb-2 text-[0.825rem]">Company type</label>
-                  <div
-                    class="ptablet:grid-cols-2 ltablet:grid-cols-3 grid gap-4 lg:grid-cols-3"
+              </div>
+              <div class="grid grid-cols-12 gap-4">
+                <div class="ltablet:col-span-6 col-span-12 lg:col-span-6">
+                  <Field
+                    v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                    name="company.name"
                   >
-                    <Field
-                      v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                      name="company.type"
+                    <BaseInput
+                      label="Company Name"
+                      placeholder="Ex: Acme Inc."
+                      :model-value="field.value"
+                      :error="errorMessage"
+                      :disabled="isSubmitting"
+                      type="text"
+                      @update:model-value="handleChange"
+                      @blur="handleBlur"
+                    />
+                  </Field>
+                </div>
+                <div class="ltablet:col-span-6 col-span-12 lg:col-span-6">
+                  <Field
+                    v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                    name="company.email"
+                  >
+                    <BaseInput
+                      label="Company Email"
+                      placeholder="Ex: hello@acme.co"
+                      :model-value="field.value"
+                      :error="errorMessage"
+                      :disabled="isSubmitting"
+                      type="email"
+                      @update:model-value="handleChange"
+                      @blur="handleBlur"
+                    />
+                  </Field>
+                </div>
+                <div class="col-span-12">
+                  <Field
+                    v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                    name="company.website"
+                  >
+                    <BaseInput
+                      icon="lucide:globe"
+                      label="Company website"
+                      placeholder="Ex: https://acme.co"
+                      :model-value="field.value"
+                      :error="errorMessage"
+                      :disabled="isSubmitting"
+                      type="text"
+                      @update:model-value="handleChange"
+                      @blur="handleBlur"
+                    />
+                  </Field>
+                </div>
+                <div class="col-span-12">
+                  <Field
+                    v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                    name="company.phone"
+                  >
+                    <AddonInputPhone
+                      label="Company Phone"
+                      placeholder="Ex: +1 555 555 5555"
+                      :model-value="field.value"
+                      :error="errorMessage"
+                      :disabled="isSubmitting"
+                      @update:model-value="handleChange"
+                      @blur="handleBlur"
+                    />
+                  </Field>
+                </div>
+              </div>
+              <div class="mb-6 mt-4">
+                <label class="nui-label pb-2 text-[0.825rem]">Company type</label>
+                <div
+                  class="ptablet:grid-cols-2 ltablet:grid-cols-3 grid gap-4 lg:grid-cols-3"
+                >
+                  <Field
+                    v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                    name="company.type"
+                  >
+                    <BaseRadioHeadless
+                      value="team_member_1"
+                      :model-value="field.value"
+                      :error="errorMessage"
+                      :disabled="isSubmitting"
+                      @update:model-value="handleChange"
+                      @blur="handleBlur"
                     >
-                      <BaseRadioHeadless
-                        value="team_member_1"
-                        :model-value="field.value"
-                        :error="errorMessage"
-                        :disabled="isSubmitting"
-                        @update:model-value="handleChange"
-                        @blur="handleBlur"
+                      <BaseCard
+                        shape="rounded"
+                        class="text-muted-400 peer-checked:!border-primary-500 peer-checked:[&_.child]:!text-primary-500 relative border-2 px-2 py-4 grayscale peer-checked:grayscale-0"
                       >
-                        <BaseCard
-                          shape="rounded"
-                          class="text-muted-400 peer-checked:!border-primary-500 peer-checked:[&_.child]:!text-primary-500 relative border-2 px-2 py-4 grayscale peer-checked:grayscale-0"
+                        <div
+                          class="flex w-full flex-col items-center gap-2 text-center"
                         >
-                          <div
-                            class="flex w-full flex-col items-center gap-2 text-center"
-                          >
-                            <Icon
-                              name="ph:house-simple-duotone"
-                              class="child mx-auto h-5 w-5"
-                            />
+                          <Icon
+                            name="ph:house-simple-duotone"
+                            class="child mx-auto h-5 w-5"
+                          />
 
-                            <div>
-                              <BaseHeading
-                                as="h4"
-                                size="sm"
-                                weight="medium"
-                                lead="none"
-                              >
-                                Solo
-                              </BaseHeading>
-
-                              <BaseText
-                                size="xs"
-                                class="text-muted-400"
-                              >
-                                Small company
-                              </BaseText>
-                            </div>
-
-                            <div
-                              class="child text-muted-300 absolute right-2 top-2 ms-auto"
+                          <div>
+                            <BaseHeading
+                              as="h4"
+                              size="sm"
+                              weight="medium"
+                              lead="none"
                             >
-                              <div
-                                class="h-2 w-2 rounded-full bg-current"
-                              />
-                            </div>
-                          </div>
-                        </BaseCard>
-                      </BaseRadioHeadless>
-                    </Field>
+                              Solo
+                            </BaseHeading>
 
-                    <Field
-                      v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                      name="company.type"
+                            <BaseText
+                              size="xs"
+                              class="text-muted-400"
+                            >
+                              Small company
+                            </BaseText>
+                          </div>
+
+                          <div
+                            class="child text-muted-300 absolute right-2 top-2 ms-auto"
+                          >
+                            <div
+                              class="h-2 w-2 rounded-full bg-current"
+                            />
+                          </div>
+                        </div>
+                      </BaseCard>
+                    </BaseRadioHeadless>
+                  </Field>
+
+                  <Field
+                    v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                    name="company.type"
+                  >
+                    <BaseRadioHeadless
+                      value="team_member_2"
+                      :model-value="field.value"
+                      :error="errorMessage"
+                      :disabled="isSubmitting"
+                      @update:model-value="handleChange"
+                      @blur="handleBlur"
                     >
-                      <BaseRadioHeadless
-                        value="team_member_2"
-                        :model-value="field.value"
-                        :error="errorMessage"
-                        :disabled="isSubmitting"
-                        @update:model-value="handleChange"
-                        @blur="handleBlur"
+                      <BaseCard
+                        shape="rounded"
+                        class="text-muted-400 peer-checked:!border-primary-500 peer-checked:[&_.child]:!text-primary-500 relative border-2 px-2 py-4 grayscale peer-checked:grayscale-0"
                       >
-                        <BaseCard
-                          shape="rounded"
-                          class="text-muted-400 peer-checked:!border-primary-500 peer-checked:[&_.child]:!text-primary-500 relative border-2 px-2 py-4 grayscale peer-checked:grayscale-0"
+                        <div
+                          class="flex w-full flex-col items-center gap-2 text-center"
                         >
-                          <div
-                            class="flex w-full flex-col items-center gap-2 text-center"
-                          >
-                            <Icon
-                              name="ph:storefront-duotone"
-                              class="child mx-auto h-5 w-5"
-                            />
+                          <Icon
+                            name="ph:storefront-duotone"
+                            class="child mx-auto h-5 w-5"
+                          />
 
-                            <div>
-                              <BaseHeading
-                                as="h4"
-                                size="sm"
-                                weight="medium"
-                                lead="none"
-                              >
-                                LLC
-                              </BaseHeading>
-
-                              <BaseText
-                                size="xs"
-                                class="text-muted-400"
-                              >
-                                Medium company
-                              </BaseText>
-                            </div>
-
-                            <div
-                              class="child text-muted-300 absolute right-2 top-2 ms-auto"
+                          <div>
+                            <BaseHeading
+                              as="h4"
+                              size="sm"
+                              weight="medium"
+                              lead="none"
                             >
-                              <div
-                                class="h-2 w-2 rounded-full bg-current"
-                              />
-                            </div>
-                          </div>
-                        </BaseCard>
-                      </BaseRadioHeadless>
-                    </Field>
+                              LLC
+                            </BaseHeading>
 
-                    <Field
-                      v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                      name="company.type"
+                            <BaseText
+                              size="xs"
+                              class="text-muted-400"
+                            >
+                              Medium company
+                            </BaseText>
+                          </div>
+
+                          <div
+                            class="child text-muted-300 absolute right-2 top-2 ms-auto"
+                          >
+                            <div
+                              class="h-2 w-2 rounded-full bg-current"
+                            />
+                          </div>
+                        </div>
+                      </BaseCard>
+                    </BaseRadioHeadless>
+                  </Field>
+
+                  <Field
+                    v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                    name="company.type"
+                  >
+                    <BaseRadioHeadless
+                      value="team_member_3"
+                      :model-value="field.value"
+                      :error="errorMessage"
+                      :disabled="isSubmitting"
+                      @update:model-value="handleChange"
+                      @blur="handleBlur"
                     >
-                      <BaseRadioHeadless
-                        value="team_member_3"
-                        :model-value="field.value"
-                        :error="errorMessage"
-                        :disabled="isSubmitting"
-                        @update:model-value="handleChange"
-                        @blur="handleBlur"
+                      <BaseCard
+                        shape="rounded"
+                        class="text-muted-400 peer-checked:!border-primary-500 peer-checked:[&_.child]:!text-primary-500 relative border-2 px-2 py-4 grayscale peer-checked:grayscale-0"
                       >
-                        <BaseCard
-                          shape="rounded"
-                          class="text-muted-400 peer-checked:!border-primary-500 peer-checked:[&_.child]:!text-primary-500 relative border-2 px-2 py-4 grayscale peer-checked:grayscale-0"
+                        <div
+                          class="flex w-full flex-col items-center gap-2 text-center"
                         >
-                          <div
-                            class="flex w-full flex-col items-center gap-2 text-center"
-                          >
-                            <Icon
-                              name="ph:buildings-duotone"
-                              class="child mx-auto h-5 w-5"
-                            />
+                          <Icon
+                            name="ph:buildings-duotone"
+                            class="child mx-auto h-5 w-5"
+                          />
 
-                            <div>
-                              <BaseHeading
-                                as="h4"
-                                size="sm"
-                                weight="medium"
-                                lead="none"
-                              >
-                                Corp
-                              </BaseHeading>
-
-                              <BaseText
-                                size="xs"
-                                class="text-muted-400"
-                              >
-                                Bigger company
-                              </BaseText>
-                            </div>
-
-                            <div
-                              class="child text-muted-300 absolute right-2 top-2 ms-auto"
+                          <div>
+                            <BaseHeading
+                              as="h4"
+                              size="sm"
+                              weight="medium"
+                              lead="none"
                             >
-                              <div
-                                class="h-2 w-2 rounded-full bg-current"
-                              />
-                            </div>
+                              Corp
+                            </BaseHeading>
+
+                            <BaseText
+                              size="xs"
+                              class="text-muted-400"
+                            >
+                              Bigger company
+                            </BaseText>
                           </div>
-                        </BaseCard>
-                      </BaseRadioHeadless>
-                    </Field>
-                  </div>
+
+                          <div
+                            class="child text-muted-300 absolute right-2 top-2 ms-auto"
+                          >
+                            <div
+                              class="h-2 w-2 rounded-full bg-current"
+                            />
+                          </div>
+                        </div>
+                      </BaseCard>
+                    </BaseRadioHeadless>
+                  </Field>
                 </div>
               </div>
             </div>
           </div>
         </div>
         <div shape="curved" class="w-full space-y-8 p-10">
-          <div class="mx-auto w-full max-w-[410px]">
+          <div class="mx-auto w-full max-w-[410px] sm:pt-28">
             <div class="grid grid-cols-12 gap-4">
               <div class="ltablet:col-span-6 col-span-12 lg:col-span-6">
                 <Field

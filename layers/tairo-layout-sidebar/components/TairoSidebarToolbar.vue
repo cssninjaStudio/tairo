@@ -27,7 +27,7 @@ const showNavBurger = computed(() => {
 
 <template>
   <div
-    class="relative z-50 mb-5 flex h-16 items-center gap-2"
+    class="relative mb-5 flex h-16 items-center gap-2"
     :class="props.horizontalScroll && 'pe-4 xl:pe-10'"
   >
     <TairoSidebarBurger v-if="showNavBurger" class="-ms-3" />

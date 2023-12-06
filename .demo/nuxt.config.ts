@@ -106,6 +106,9 @@ export default defineNuxtConfig({
         'vue3-carousel',
         // AddonApexcharts
         'vue3-apexcharts',
+        // AddonInputPhone
+        'libphonenumber-js/max',
+        'country-codes-list',
         // AddonMarkdownRemark
         'rehype-external-links',
         'rehype-raw',
