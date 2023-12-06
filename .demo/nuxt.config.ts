@@ -30,6 +30,7 @@ export default defineNuxtConfig({
     '../layers/tairo-layout-topnav',
     '../layers/tairo',
   ],
+
   modules: [
     /**
      * Swiper is a nuxt module that allows us to use swiper in nuxt
@@ -38,6 +39,7 @@ export default defineNuxtConfig({
      */
     'nuxt-swiper',
   ],
+
   css: [
     '~/assets/css/colors.css',
     '@fontsource-variable/fira-code/index.css',
@@ -68,6 +70,7 @@ export default defineNuxtConfig({
       siteUrl: '', // set it via NUXT_PUBLIC_SITE_URL
     },
   },
+
   routeRules: {
     ...demoRules,
     ...landingRules,
@@ -82,6 +85,7 @@ export default defineNuxtConfig({
       },
     },
   },
+
   vite: {
     define: {
       'process.test': false,
@@ -92,6 +96,47 @@ export default defineNuxtConfig({
     },
     build: {
       target: 'esnext',
+    },
+    // Defining the optimizeDeps.include option prebuilds the dependencies, this avoid
+    // some reloads when navigating between pages during development.
+    // It's also useful to track them usage.
+    optimizeDeps: {
+      include: [
+        '@vueform/slider',
+        'v-calendar',
+        // AddonCarouselIcon
+        // AddonCarouselTeam
+        'vue3-carousel',
+        // AddonApexcharts
+        'vue3-apexcharts',
+        // AddonMarkdownRemark
+        'rehype-external-links',
+        'rehype-raw',
+        'rehype-sanitize',
+        'rehype-stringify',
+        'rehype-shikiji',
+        'remark-gfm',
+        'remark-parse',
+        'remark-rehype',
+        'unified',
+        // useMultiStepForm
+        'fast-copy',
+        'vue3-smooth-dnd',
+        'splitpanes',
+        'mapbox-gl',
+        '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.min.js',
+        // DocComponentMeta
+        // useDocumentationMeta
+        'scule',
+        // form validation
+        '@vee-validate/zod',
+        'vee-validate',
+        'zod',
+        // calendar app
+        'date-fns',
+        // profile edit page
+        'imask',
+      ],
     },
   },
 })

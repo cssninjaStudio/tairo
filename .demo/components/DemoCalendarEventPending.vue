@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import { differenceInMinutes, isToday } from 'date-fns'
-
-import { type CalendarEvent, categoryTheme } from '~/utils/apps/calendar'
+import { type CalendarEvent, categoryTheme } from '~/utils/bundles/calendar'
 
 const props = defineProps<{
   event: Omit<CalendarEvent, 'startDate' | 'endDate'>

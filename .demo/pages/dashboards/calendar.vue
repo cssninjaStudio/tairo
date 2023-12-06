@@ -34,7 +34,7 @@ import {
   useDragEventPending,
   useCreateEvent,
   useViewPan,
-} from '~/utils/apps/calendar'
+} from '~/utils/bundles/calendar'
 
 definePageMeta({
   title: 'Calendar',

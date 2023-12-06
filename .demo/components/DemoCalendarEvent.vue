@@ -5,7 +5,7 @@ import {
   type CalendarCustomAttribute,
   type CalendarEvent,
   categoryTheme,
-} from '~/utils/apps/calendar'
+} from '~/utils/bundles/calendar'
 
 const props = defineProps<{
   event: CalendarCustomAttribute<CalendarEvent>
