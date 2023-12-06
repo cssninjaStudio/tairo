@@ -9,11 +9,16 @@
     "node": ">=18",
     "pnpm": ">=8"
   },
+  "workspaces": [
+    ".demo",
+    ".app",
+    "layers/*"
+  ],
   "scripts": {
-    "dev": "nuxi dev .app --open --no-fork",
+    "dev": "nuxi dev .app --open",
     "build": "nuxi build .app",
     "generate": "nuxi generate .app",
-    "demo:dev": "nuxi dev .demo --open --no-fork",
+    "demo:dev": "nuxi dev .demo --open",
     "demo:build": "nuxi build .demo",
     "clean:all": "pnpm -r clean && rimraf .nuxt .output node_modules",
     "test": "run-p test:*",
