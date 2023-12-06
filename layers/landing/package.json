@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "@nuxt/image": "1.1.0",
-    "nuxt": "3.8.2"
+    "nuxt": "3.8.2",
+    "sharp": "0.33.0"
   }
 }
