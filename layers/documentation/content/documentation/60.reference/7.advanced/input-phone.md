@@ -1,5 +1,5 @@
 ---
-title: Input Phone
+title: AddonInputPhone
 components: 
   - AddonInputPhone
 description: International phone number input field with country code dropdown.

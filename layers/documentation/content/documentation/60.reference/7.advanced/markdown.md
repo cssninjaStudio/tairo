@@ -1,5 +1,5 @@
 ---
-title: Markdown
+title: AddonMarkdownRemark
 components: 
   - AddonMarkdownRemark
 description: Convert markdown to HTML client-side using the unified remak/rehype and shiki. Use the built-in component to render markdown content.

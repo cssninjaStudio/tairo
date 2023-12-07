@@ -1,5 +1,5 @@
 ---
-title: Input Password
+title: AddonInputPassword
 components: 
   - AddonInputPassword
 description: Secure password input field with password visibility toggle.
