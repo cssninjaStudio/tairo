@@ -189,6 +189,7 @@ const handleClipboard = () => {
                         :min="1"
                         :max="8"
                         :step="1"
+                        :tooltips="false"
                       />
                     </div>
                   </div>
@@ -244,6 +245,7 @@ const handleClipboard = () => {
                         :min="1"
                         :max="42"
                         :step="1"
+                        :tooltips="false"
                       />
                     </div>
                   </div>

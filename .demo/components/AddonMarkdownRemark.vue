@@ -59,26 +59,8 @@ const props = withDefaults(
 )
 
 const processor = shallowRef<any>()
-const colorMode = useColorMode()
 const loaded = ref(false)
 const htmlContent = ref<string>('')
-const isDark = computed({
-  get() {
-    return colorMode.value === 'dark'
-  },
-  set(value) {
-    if (value) {
-      colorMode.preference = 'dark'
-    }
-    else {
-      colorMode.preference = 'light'
-    }
-  },
-})
-const mode = computed(() => {
-  if (props.mode !== undefined) return props.mode
-  return isDark.value ? 'dark' : 'light'
-})
 
 const proseSize = computed(() => {
   switch (props.size) {
@@ -96,19 +78,18 @@ const proseSize = computed(() => {
   }
 })
 
-watchEffect(async () => {
+onNuxtReady(async () => {
   if (processor.value) return
   processor.value = await getMarkdownProcessors(props.themes, props.langs)
 })
 
-watchEffect(async () => {
-  let source = props.source
-  if (!source || !processor.value || htmlContent.value) return
+watch([() => props.source, processor], async ([source, _processor]) => {
+  if (!source || !_processor) return
 
-  const vfile = await processor.value.process(source)
+  const vfile = await _processor.process(source)
   htmlContent.value = vfile.toString()
   loaded.value = true
-})
+}, { immediate: true })
 </script>
 
 <template>
@@ -139,17 +120,5 @@ html.dark .shiki span {
 .markdown :deep(.shiki) {
   direction: ltr;
   @apply nui-focus;
-}
-.markdown.with-line-number :deep(.shiki code) {
-  counter-reset: step;
-  counter-increment: step 0;
-}
-.markdown.with-line-number :deep(.shiki code .line) {
-  @apply inline w-full;
-}
-.markdown.with-line-number :deep(.shiki code .line::before) {
-  content: counter(step);
-  counter-increment: step;
-  @apply w-4 me-6 inline text-right text-muted-400 dark:text-muted-500;
 }
 </style>
