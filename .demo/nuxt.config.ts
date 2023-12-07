@@ -109,6 +109,11 @@ export default defineNuxtConfig({
         // AddonInputPhone
         'libphonenumber-js/max',
         'country-codes-list',
+        // AddonInputPassword
+        '@zxcvbn-ts/core',
+        '@zxcvbn-ts/language-common',
+        '@zxcvbn-ts/language-en',
+        '@zxcvbn-ts/language-fr',
         // AddonMarkdownRemark
         'rehype-external-links',
         'rehype-raw',

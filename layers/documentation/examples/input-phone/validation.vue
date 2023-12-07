@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="onSubmit">
+  <form class="max-w-md" @submit.prevent="onSubmit">
     <AddonInputPhone
       ref="inputRef"
       v-model="phone"

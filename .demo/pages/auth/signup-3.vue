@@ -3,6 +3,8 @@ import { toTypedSchema } from '@vee-validate/zod'
 import { Field, useForm } from 'vee-validate'
 import { z } from 'zod'
 
+import { AddonInputPassword } from '#components'
+
 definePageMeta({
   layout: 'empty',
   title: 'Signup',
@@ -23,6 +25,8 @@ const VALIDATION_TEXT = {
   PASSWORD_MATCH: 'Passwords do not match',
 }
 
+const passwordRef = ref<InstanceType<typeof AddonInputPassword>>()
+
 // This is the Zod schema for the form input
 // It's used to define the shape that the form data will have
 const zodSchema = z
@@ -34,10 +38,10 @@ const zodSchema = z
   .superRefine((data, ctx) => {
     // This is a custom validation function that will be called
     // before the form is submitted
-    if (data.password.includes(data.email)) {
+    if (passwordRef.value?.validation?.feedback?.warning || passwordRef.value?.validation?.feedback?.suggestions?.length) {
       ctx.addIssue({
         code: z.ZodIssueCode.custom,
-        message: VALIDATION_TEXT.PASSWORD_CONTAINS_EMAIL,
+        message: passwordRef.value?.validation?.feedback?.warning || passwordRef.value.validation.feedback?.suggestions?.[0],
         path: ['password'],
       })
     }
@@ -61,7 +65,7 @@ const initialValues = {
   confirmPassword: '',
 } satisfies FormInput
 
-const { handleSubmit, isSubmitting } = useForm({
+const { values, handleSubmit, isSubmitting } = useForm({
   validationSchema,
   initialValues,
 })
@@ -251,11 +255,12 @@ const onSubmit = handleSubmit(async (values) => {
                   v-slot="{ field, errorMessage, handleChange, handleBlur }"
                   name="password"
                 >
-                  <BaseInput
+                  <AddonInputPassword
+                    ref="passwordRef"
                     :model-value="field.value"
                     :error="errorMessage"
                     :disabled="isSubmitting"
-                    type="password"
+                    :user-inputs="[values.email ?? '']"
                     label="Password"
                     placeholder="••••••••••"
                     icon="lucide:lock"

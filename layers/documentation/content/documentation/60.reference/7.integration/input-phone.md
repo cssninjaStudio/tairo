@@ -52,6 +52,14 @@ The component provides a `@validation` event to indicate if the input value is v
 
 ::doc-component-demo
 ---
+title: Disabled State
+demo: '#examples/input-phone/disabled.vue'
+---
+::
+
+
+::doc-component-demo
+---
 title: Input Size
 demo: '#examples/input-phone/size.vue'
 ---
@@ -63,14 +71,6 @@ title: Input Shapes
 demo: '#examples/input-phone/shape.vue'
 ---
 ::
-
-::doc-component-demo
----
-title: Disabled State
-demo: '#examples/input-phone/disabled.vue'
----
-::
-
 
 
 :doc-component-meta{name="AddonInputPhone"}

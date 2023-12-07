@@ -1,13 +1,13 @@
 <template>
   <div class="max-w-md">
-    <AddonInputPhone
-      v-model="phone"
-      label="Phone number"
+    <AddonInputPassword
+      v-model="password"
+      label="Password"
       disabled
     />
   </div>
 </template>
 
 <script lang="ts" setup>
-const phone = ref('+1 555 555 5555')
+const password = ref('F4k3P4ssw0rd')
 </script>

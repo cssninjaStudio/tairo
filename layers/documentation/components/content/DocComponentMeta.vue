@@ -402,6 +402,12 @@ function wrapExternalLinks(string: string) {
                     class="text-muted-800 dark:text-muted-100 font-mono font-medium"
                   >
                     <code>@{{ event.name }}</code>
+                    <div
+                      v-if="event.description"
+                      class="text-muted-400 whitespace-pre-wrap break-words text-left italic"
+                    >
+                      {{ event.description }}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -491,6 +497,12 @@ function wrapExternalLinks(string: string) {
                     class="text-muted-800 dark:text-muted-100 font-mono font-medium"
                   >
                     <code>#{{ slot.name }}</code>
+                    <div
+                      v-if="slot.description"
+                      class="text-muted-400 whitespace-pre-wrap break-words text-left italic"
+                    >
+                      {{ slot.description }}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -577,6 +589,12 @@ function wrapExternalLinks(string: string) {
                     class="text-muted-800 dark:text-muted-100 font-mono font-medium"
                   >
                     <code>{{ exposed.name }}</code>
+                    <div
+                      v-if="exposed.description"
+                      class="text-muted-400 whitespace-pre-wrap break-words text-left italic"
+                    >
+                      {{ exposed.description }}
+                    </div>
                   </div>
                 </div>
                 <div

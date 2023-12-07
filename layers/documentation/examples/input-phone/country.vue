@@ -1,8 +1,10 @@
 <template>
-  <AddonInputPhone
-    v-model="phone"
-    v-model:country="country"
-  />
+  <div class="max-w-md">
+    <AddonInputPhone
+      v-model="phone"
+      v-model:country="country"
+    />
+  </div>
 </template>
 
 <script lang="ts" setup>

@@ -3,6 +3,8 @@ import { toTypedSchema } from '@vee-validate/zod'
 import { Field, useForm } from 'vee-validate'
 import { z } from 'zod'
 
+import { AddonInputPassword } from '#components'
+
 definePageMeta({
   layout: 'empty',
   title: 'Signup',
@@ -15,6 +17,8 @@ definePageMeta({
     order: 100,
   },
 })
+
+const passwordRef = ref<InstanceType<typeof AddonInputPassword>>()
 
 const VALIDATION_TEXT = {
   EMAIL_REQUIRED: 'A valid email is required',
@@ -36,10 +40,10 @@ const zodSchema = z
   .superRefine((data, ctx) => {
     // This is a custom validation function that will be called
     // before the form is submitted
-    if (data.password.includes(data.email)) {
+    if (passwordRef.value?.validation?.feedback?.warning || passwordRef.value?.validation?.feedback?.suggestions?.length) {
       ctx.addIssue({
         code: z.ZodIssueCode.custom,
-        message: VALIDATION_TEXT.PASSWORD_CONTAINS_EMAIL,
+        message: passwordRef.value?.validation?.feedback?.warning || passwordRef.value.validation.feedback?.suggestions?.[0],
         path: ['password'],
       })
     }
@@ -64,7 +68,7 @@ const initialValues = {
   confirmPassword: '',
 } satisfies FormInput
 
-const { handleSubmit, isSubmitting, setFieldError } = useForm({
+const { values, handleSubmit, isSubmitting, setFieldError } = useForm({
   validationSchema,
   initialValues,
 })
@@ -224,11 +228,12 @@ const onSubmit = handleSubmit(async (values) => {
             v-slot="{ field, errorMessage, handleChange, handleBlur }"
             name="password"
           >
-            <BaseInput
+            <AddonInputPassword
+              ref="passwordRef"
               :model-value="field.value"
               :error="errorMessage"
               :disabled="isSubmitting"
-              type="password"
+              :user-inputs="[values.username ?? '', values.email ?? '']"
               shape="curved"
               placeholder="Password"
               icon="ph:lock-duotone"

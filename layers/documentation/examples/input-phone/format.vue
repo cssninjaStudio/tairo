@@ -1,9 +1,11 @@
 <template>
-  <AddonInputPhone
-    v-model="phone"
-    format="national"
-    country="US"
-  />
+  <div class="max-w-md">
+    <AddonInputPhone
+      v-model="phone"
+      format="national"
+      country="US"
+    />
+  </div>
 </template>
 
 <script lang="ts" setup>
