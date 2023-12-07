@@ -53,9 +53,9 @@ const props = withDefaults(defineProps<{
 })
 
 const emits = defineEmits<{
-  (event: 'update:modelValue', value?: string): void
-  (event: 'update:country', value?: string): void
-  (event: 'validation', state: { valid: boolean, touched: boolean, error: string }): void
+  'update:modelValue': [value?: string]
+  'update:country': [value?: string]
+  'validation': [state: { valid: boolean, touched: boolean, error: string }]
 }>()
 
 defineOptions({

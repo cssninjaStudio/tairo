@@ -10,7 +10,7 @@ const props = withDefaults(
   },
 )
 const emits = defineEmits<{
-  (event: 'reset'): void
+  reset: []
 }>()
 const { x, y } = useWindowScroll()
 </script>

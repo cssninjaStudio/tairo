@@ -1,6 +1,6 @@
 <script setup lang="ts">
 defineEmits<{
-  (event: 'close'): void
+  'close': []
 }>()
 
 const route = useRoute()

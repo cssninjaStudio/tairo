@@ -12,7 +12,7 @@ const props = defineProps<{
 }>()
 
 const emits = defineEmits<{
-  (event: 'positiondrag', e: MouseEvent | TouchEvent): void
+  'positiondrag': [event: MouseEvent | TouchEvent]
 }>()
 
 </script>

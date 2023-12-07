@@ -4,7 +4,9 @@ const props = defineProps<{
   expanded?: boolean
 }>()
 
-const emit = defineEmits(['clicked'])
+const emit = defineEmits<{
+  clicked: []
+}>()
 
 const route = useRoute()
 
