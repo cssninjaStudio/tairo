@@ -2,31 +2,36 @@
   <!-- Element to trigger the modal -->
   <div class="flex gap-x-2">
     <div class="flex flex-wrap items-end gap-4">
-      <BaseButton @click="isModalStartOpen = true">
+      <BaseButton class="gap-2" @click="isModalStartOpen = true">
+        <Icon name="lucide:align-start-vertical" class="w-4" />
         Start Align
       </BaseButton>
     </div>
 
     <div class="flex items-end gap-4">
-      <BaseButton @click="isModalEndOpen = true">
+      <BaseButton class="gap-2" @click="isModalEndOpen = true">
+        <Icon name="lucide:align-end-vertical" class="w-4" />
         End Align
       </BaseButton>
     </div>
 
     <div class="flex items-end gap-4">
-      <BaseButton @click="isModalCenterOpen = true">
+      <BaseButton class="gap-2" @click="isModalCenterOpen = true">
+        <Icon name="lucide:align-center-vertical" class="w-4" />
         Center Align
       </BaseButton>
     </div>
 
     <div class="flex items-end gap-4">
-      <BaseButton @click="isModalBetweenOpen = true">
+      <BaseButton class="gap-2" @click="isModalBetweenOpen = true">
+        <Icon name="lucide:align-horizontal-space-between" class="w-4" />
         Between Align
       </BaseButton>
     </div>
 
     <div class="flex items-end gap-4">
-      <BaseButton @click="isModalBodyOpen = true">
+      <BaseButton class="gap-2" @click="isModalBodyOpen = true">
+        <Icon name="lucide:x" class="w-4" />
         No Footer
       </BaseButton>
     </div>

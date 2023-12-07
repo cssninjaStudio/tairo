@@ -277,7 +277,7 @@ const buttonBorder = computed(() => {
         <template v-for="x of 5" :key="x">
           <div class="px-1">
             <div
-              class="h-2 rounded-xl transition-colors"
+              class="h-1.5 rounded-xl transition-colors"
               :class="
                 !isTouched
                   ? 'bg-muted-200 dark:bg-muted-700'

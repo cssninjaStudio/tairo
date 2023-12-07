@@ -227,8 +227,8 @@ importers:
         specifier: ^0.3.12
         version: 0.3.12
       '@shuriken-ui/nuxt':
-        specifier: 1.9.5
-        version: 1.9.5(nuxt@3.8.2)
+        specifier: 1.9.6
+        version: 1.9.6(nuxt@3.8.2)
       '@vee-validate/zod':
         specifier: ^4.11.8
         version: 4.12.2
@@ -2383,8 +2383,8 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@shuriken-ui/nuxt@1.9.5(nuxt@3.8.2):
-    resolution: {integrity: sha512-FN55LllVaum7AZVdtIQHPDCPp27sJW3T9EqJ4zsc6v/C+yyf4yhuLnisg+z4BFMpFXc5TQ/Ed759cLJ0KyurEA==}
+  /@shuriken-ui/nuxt@1.9.6(nuxt@3.8.2):
+    resolution: {integrity: sha512-f0f23BUnB7cfWNKBclZ78IiDEyX2YKgK89yD068VGMEp11tYks5aRHD+hXDZbscH3CaACJJ0uwDQtvJ/EH/gqg==}
     dependencies:
       '@headlessui-float/vue': 0.12.0
       '@headlessui/vue': 1.7.16

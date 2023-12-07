@@ -2,14 +2,16 @@
   <!-- Element to trigger the modal -->
   <div class="flex gap-x-2">
     <div class="flex items-end gap-4">
-      <BaseButton @click="isModalLgOpen = true">
+      <BaseButton class="gap-2" @click="isModalLgOpen = true">
+        <Icon name="lucide:app-window" class="w-4" />
         Large dialog
       </BaseButton>
     </div>
 
     <div class="flex items-end gap-4">
-      <BaseButton @click="isModalXlOpen = true">
-        Xl dialog
+      <BaseButton class="gap-2" @click="isModalXlOpen = true">
+        <Icon name="lucide:app-window" class="w-4" />
+        XL dialog
       </BaseButton>
     </div>
   </div>

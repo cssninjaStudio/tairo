@@ -2,13 +2,15 @@
   <!-- Element to trigger the modal -->
   <div class="flex gap-x-2">
     <div class="flex items-end gap-4">
-      <BaseButton @click="openModal">
+      <BaseButton class="gap-2" @click="openModal">
+        <Icon name="lucide:app-window" class="w-4" />
         Small dialog
       </BaseButton>
     </div>
 
     <div class="flex items-end gap-4">
-      <BaseButton @click="isModalMdOpen = true">
+      <BaseButton class="gap-2" @click="isModalMdOpen = true">
+        <Icon name="lucide:app-window" class="w-4" />
         Medium dialog
       </BaseButton>
     </div>
