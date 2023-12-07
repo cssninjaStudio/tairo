@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { PhoneNumber, CountryCode } from 'libphonenumber-js/max'
-import type { CountriesPhoneCodes } from '~/utils/bundles/countries'
+import type { CountriesInfo } from '~/utils/bundles/countries'
 
 const props = withDefaults(defineProps<{
   /**
@@ -74,7 +74,7 @@ const vcountry = useVModel(props, 'country', emits, {
   defaultValue: undefined,
 })
 
-const countriesMap = shallowRef<CountriesPhoneCodes>({})
+const countriesMap = shallowRef<CountriesInfo>({})
 const countries = computed(() => Object.values(countriesMap.value))
 const possibleCountries = shallowRef<CountryCode[]>([])
 
@@ -346,8 +346,8 @@ const dropdownBorder = computed(() => {
         <template #label>
           <slot name="country-label" v-bind="{ modelValue: vmodel, country: vcountry, validation, filter, currentCountry }">
             <Icon
-              v-if="currentCountry?.code"
-              :name="`flagpack:${currentCountry.code.toLowerCase()}`"
+              v-if="currentCountry?.icon"
+              :name="currentCountry.icon"
               class="-mt-0.5"
               :class="iconSize"
             >
@@ -406,8 +406,8 @@ const dropdownBorder = computed(() => {
                     <template #start>
                       <span class="me-1 h-6 w-6 shrink-0 text-center">
                         <Icon
-                          v-if="data?.code"
-                          :name="`flagpack:${data.code.toLowerCase()}`"
+                          v-if="data?.icon"
+                          :name="data.icon"
                           class="h-6 w-6"
                         >
                           {{ data.code }}

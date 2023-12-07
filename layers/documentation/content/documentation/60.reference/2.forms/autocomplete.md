@@ -83,6 +83,20 @@ demo: '#examples/autocomplete/multiple.vue'
 Autocompletes can be configured to allow multiple value and item selection using the `multiple` prop.
 ::
 
+::doc-component-demo
+---
+title: Country selection
+demo: '#examples/autocomplete/country.vue'
+---
+::
+
+::doc-component-demo
+---
+title: Multiple Country selection
+demo: '#examples/autocomplete/country-multiple.vue'
+---
+::
+
 
 :doc-component-meta{name="BaseAutocomplete"}
 
