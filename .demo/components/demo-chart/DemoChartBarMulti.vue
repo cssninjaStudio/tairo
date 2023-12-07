@@ -64,7 +64,7 @@ function useDemoBarMulti() {
     },
   }
 
-  const series = ref([
+  const series = shallowRef([
     {
       name: 'Net Profit',
       data: [44, 55, 57, 56, 61, 58, 63, 60, 66],

@@ -34,7 +34,7 @@ function useDemoDonut() {
     },
   }
 
-  const series = ref([44, 55, 41, 17, 15])
+  const series = shallowRef([44, 55, 41, 17, 15])
 
   return {
     type,

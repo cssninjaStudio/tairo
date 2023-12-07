@@ -1546,7 +1546,7 @@ function useDemoAreasMultiple() {
     },
   }
 
-  const series = ref([
+  const series = shallowRef([
     {
       name: 'Desktops',
       data: dataSet[0],

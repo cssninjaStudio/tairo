@@ -65,7 +65,7 @@ function useAreaInterviews() {
     },
   }
 
-  const series = ref([
+  const series = shallowRef([
     {
       name: 'Interviews',
       data: [31, 40, 28, 51, 42, 109, 100],

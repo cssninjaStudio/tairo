@@ -42,7 +42,7 @@ function useBarSocialChannels() {
     },
   } as const
 
-  const series = ref([
+  const series = shallowRef([
     {
       name: 'New Users',
       data: [44, 55, 57, 56, 61, 58, 63, 60, 66],

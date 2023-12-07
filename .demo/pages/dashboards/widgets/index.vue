@@ -82,7 +82,7 @@ function useGaugePersonal() {
     labels: ['Average Results'],
   }
 
-  const series = ref([76])
+  const series = shallowRef([76])
 
   return {
     type,

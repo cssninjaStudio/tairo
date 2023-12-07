@@ -46,7 +46,7 @@ function useDemoAreaMulti() {
     },
   }
 
-  const series = ref([
+  const series = shallowRef([
     {
       name: 'Completed',
       data: [31, 40, 28, 51, 42, 109, 100],

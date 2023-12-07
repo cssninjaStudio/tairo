@@ -111,7 +111,7 @@ function useAreaBtcPrice() {
     },
   })
 
-  const series = ref([
+  const series = shallowRef([
     {
       name: 'Expected',
       data: generateDayWiseTimeSeries(0, 18),

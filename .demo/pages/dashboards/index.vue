@@ -62,7 +62,7 @@ function useAreaCustomers() {
     },
   }
 
-  const series = ref([
+  const series = shallowRef([
     {
       name: 'Returning',
       data: [31, 40, 28, 51, 42, 109, 100],
@@ -154,7 +154,7 @@ function useRadialBarTeam() {
     labels: ['Average Results'],
   }
 
-  const series = ref([76])
+  const series = shallowRef([76])
 
   return {
     type,
@@ -239,7 +239,7 @@ function useBarProfit() {
     },
   }
 
-  const series = ref([
+  const series = shallowRef([
     {
       name: 'Ratio',
       data: [2.3, 3.1, 4.0, 10.1, 4.0],

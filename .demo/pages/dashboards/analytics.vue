@@ -71,7 +71,7 @@ function useLineRevenue() {
     },
   }
 
-  const series = ref([
+  const series = shallowRef([
     {
       name: 'Revenue',
       data: [10835, 40214, 36257, 51411, 45697, 61221, 65295, 91512, 75648],
@@ -137,7 +137,7 @@ function useRadialGoal() {
     labels: ['Efficiency', 'Productivity'],
   }
 
-  const series = ref([57, 86])
+  const series = shallowRef([57, 86])
 
   return {
     type,
@@ -186,7 +186,7 @@ function useRadialGrowth() {
     labels: ['Growth'],
   }
 
-  const series = ref([65])
+  const series = shallowRef([65])
 
   return {
     type,
@@ -258,7 +258,7 @@ function useBarSalesProfit() {
     },
   }
 
-  const series = ref([
+  const series = shallowRef([
     {
       name: 'Net Profit',
       data: [-26, -15, -13, -14, -9, -12, -7, -10, -4],

@@ -35,7 +35,7 @@ function useDemoBubble() {
     },
   }
 
-  const series = ref([
+  const series = shallowRef([
     {
       name: 'Bubble1',
       data: generateData(new Date('11 Feb 2017 GMT').getTime(), 20, {

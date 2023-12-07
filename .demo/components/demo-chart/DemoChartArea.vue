@@ -60,7 +60,7 @@ function useDemoArea() {
     },
   }
 
-  const series = ref([
+  const series = shallowRef([
     {
       name: 'Balance',
       data: [

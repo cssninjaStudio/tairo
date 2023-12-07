@@ -47,7 +47,7 @@ function useDemoBarHorizontalMulti() {
     },
   }
 
-  const series = ref([
+  const series = shallowRef([
     {
       name: 'Completed',
       data: [44, 55, 41, 64, 22, 43, 21],

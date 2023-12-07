@@ -138,7 +138,7 @@ function useAreaExpenses() {
     },
   }
 
-  const series = ref([
+  const series = shallowRef([
     {
       name: 'Cash Expenses',
       data: generateDayWiseTimeSeries(0, 18),

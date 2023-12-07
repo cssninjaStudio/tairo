@@ -62,7 +62,7 @@ function useDemoBarStacked() {
     },
   }
 
-  const series = ref([
+  const series = shallowRef([
     {
       name: 'Desktops',
       data: [44, 55, 41, 67, 22, 43],

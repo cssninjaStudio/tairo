@@ -93,7 +93,7 @@ function useBarProfit() {
     },
   }
 
-  const series = ref([
+  const series = shallowRef([
     {
       name: 'Ratio',
       data: [2.3, 3.1, 4.0, 10.1, 4.0],

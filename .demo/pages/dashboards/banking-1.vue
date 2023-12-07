@@ -67,7 +67,7 @@ function useIncomeHistory() {
     },
   }
 
-  const series = ref([
+  const series = shallowRef([
     {
       name: 'Expenses',
       data: [318, 150, 49, 152.13, 421, 1009, 1220, 418, 113, 45],

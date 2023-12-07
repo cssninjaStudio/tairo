@@ -85,7 +85,7 @@ function useSparkSalesOne() {
     },
   }
 
-  const series = ref([
+  const series = shallowRef([
     {
       name: 'Total Sales',
       data: randomizeArray([
@@ -202,7 +202,7 @@ function useSparkSalesTwo() {
     },
   }
 
-  const series = ref([
+  const series = shallowRef([
     {
       name: 'Total Profit',
       data: randomizeArray([
@@ -318,7 +318,7 @@ function useSparkSalesThree() {
     },
   }
 
-  const series = ref([
+  const series = shallowRef([
     {
       name: 'Total Orders',
       data: randomizeArray([
@@ -435,7 +435,7 @@ function useSparkSalesFour() {
     },
   }
 
-  const series = ref([
+  const series = shallowRef([
     {
       name: 'Consolidated',
       data: randomizeArray([
@@ -542,7 +542,7 @@ function useAreaCustomers() {
     },
   }
 
-  const series = ref([
+  const series = shallowRef([
     {
       name: 'Returning',
       data: [31, 40, 28, 51, 42, 109, 100],
@@ -604,7 +604,7 @@ function useRadialSalesRevenue() {
     labels: ['Progress'],
   }
 
-  const series = ref([65])
+  const series = shallowRef([65])
 
   return {
     type,
@@ -642,7 +642,7 @@ function useRadialSmallOne() {
     labels: [''],
   }
 
-  const series = ref([31])
+  const series = shallowRef([31])
 
   return {
     type,
@@ -680,7 +680,7 @@ function useRadialSmallTwo() {
     labels: [''],
   }
 
-  const series = ref([53])
+  const series = shallowRef([53])
 
   return {
     type,
@@ -718,7 +718,7 @@ function useRadialSmallThree() {
     labels: [''],
   }
 
-  const series = ref([84])
+  const series = shallowRef([84])
 
   return {
     type,
@@ -792,7 +792,7 @@ function useGaugePersonal() {
     labels: ['Average Results'],
   }
 
-  const series = ref([76])
+  const series = shallowRef([76])
 
   return {
     type,
@@ -807,7 +807,7 @@ function useBarOrders() {
   const type = 'bar'
   const height = 210
 
-  const series = ref<any[]>([])
+  const series = shallowRef<any[]>([])
 
   const options = {
     chart: {

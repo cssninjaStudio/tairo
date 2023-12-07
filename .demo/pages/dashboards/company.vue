@@ -83,7 +83,7 @@ function useGaugePersonal() {
     labels: ['Average Results'],
   }
 
-  const series = ref([76])
+  const series = shallowRef([76])
 
   return {
     type,
@@ -155,7 +155,7 @@ function useBarSalesProfit() {
     },
   }
 
-  const series = ref([
+  const series = shallowRef([
     {
       name: 'Net Profit',
       data: [-26, -15, -13, -14, -9, -12, -7, -10, -4],

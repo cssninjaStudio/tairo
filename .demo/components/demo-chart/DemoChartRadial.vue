@@ -32,7 +32,7 @@ function useDemoRadial() {
     labels: ['Power'],
   }
 
-  const series = ref([70])
+  const series = shallowRef([70])
 
   return {
     type,

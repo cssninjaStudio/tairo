@@ -20,7 +20,6 @@ definePageMeta({
       <DemoChartLineStep />
       <DemoChartArea />
       <DemoChartAreaMulti />
-      <!-- <DemoChartAreaMultiAlt /> -->
       <DemoChartBar />
       <DemoChartBarMulti />
       <DemoChartBarStacked />

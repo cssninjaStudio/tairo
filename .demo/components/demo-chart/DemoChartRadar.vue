@@ -21,7 +21,7 @@ function useDemoRadar() {
     },
   }
 
-  const series = ref([
+  const series = shallowRef([
     {
       name: 'Series 1',
       data: [80, 50, 30, 40, 100, 20],

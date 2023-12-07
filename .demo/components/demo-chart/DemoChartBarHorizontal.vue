@@ -41,7 +41,7 @@ function useDemoBarHorizontal() {
     },
   }
 
-  const series = ref([
+  const series = shallowRef([
     {
       name: 'Spaceships',
       data: [400, 430, 448, 470, 540, 580, 690, 1100, 1200, 1380],

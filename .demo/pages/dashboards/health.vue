@@ -57,7 +57,7 @@ function useAreaCondition() {
     },
   }
 
-  const series = ref([
+  const series = shallowRef([
     {
       name: 'Condition (pt)',
       data: [31, 40, 28, 51, 42, 109, 100],
@@ -121,7 +121,7 @@ function useScatterEnergy() {
     },
   }
 
-  const series = ref([
+  const series = shallowRef([
     {
       name: 'Tonic',
       data: generateDayWiseTimeSeries(
@@ -253,7 +253,7 @@ function useBarOxygen() {
     colors: [primary.value],
   }
 
-  const series = ref([
+  const series = shallowRef([
     {
       name: 'Variation (pt)',
       data: [23, 26, 10, 7, 11, 18, 16],
@@ -303,7 +303,7 @@ function useAreaProgress() {
     },
   } as const
 
-  const series = ref([
+  const series = shallowRef([
     {
       name: 'Progress (pt)',
       data: [31, 40, 28, 51, 42, 109, 100],
@@ -382,7 +382,7 @@ function useGaugePersonal() {
     labels: ['Average Results'],
   }
 
-  const series = ref([76])
+  const series = shallowRef([76])
 
   return {
     type,

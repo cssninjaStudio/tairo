@@ -46,7 +46,7 @@ function useDemoScatter() {
     },
   }
 
-  const series = ref([
+  const series = shallowRef([
     {
       name: 'Team 1',
       data: generateDayWiseTimeSeries(

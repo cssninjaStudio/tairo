@@ -55,7 +55,7 @@ function useAreaTaskCompletion() {
     },
   }
 
-  const series = ref([
+  const series = shallowRef([
     {
       name: 'Pending',
       data: [31, 40, 28, 51, 42, 109, 100],
@@ -140,7 +140,7 @@ function useBarTeamEfficiency() {
     },
   }
 
-  const series = ref([
+  const series = shallowRef([
     {
       name: 'Design',
       data: [-26, -15, -13, -14, -9, -12, -7, -10, -4],
