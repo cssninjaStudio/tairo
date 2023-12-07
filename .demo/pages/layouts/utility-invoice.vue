@@ -269,11 +269,11 @@ const totalData = computed(() => {
                         class="hidden px-3 py-4 text-right text-sm sm:table-cell"
                       >
                         <div class="flex justify-end">
-                          <BaseInput
-                            v-model.number="item.quantity"
-                            type="number"
+                          <BaseInputNumber
+                            v-model="item.quantity"
+                            :min="0"
                             :classes="{
-                              wrapper: 'w-16',
+                              wrapper: 'w-32',
                             }"
                           />
                         </div>

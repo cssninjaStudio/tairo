@@ -2,6 +2,7 @@
 title: BaseListbox
 components: 
   - BaseListbox
+  - BaseListboxItem
 description: Tairo ships with ready to use listbox select that render different kinds of lists, ranging from text to complex media objects.
 icon:
   src: /img/illustrations/components/listbox-icon.svg
@@ -81,3 +82,4 @@ Listboxes can be used to select multiple items using the `multiple` prop.
 
 
 :doc-component-meta{name="BaseListbox"}
+:doc-component-meta{name="BaseListboxItem"}

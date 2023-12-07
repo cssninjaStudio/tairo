@@ -598,31 +598,29 @@ const selectedEventFeatures = computed({
           v-if="showSettings"
           class="dark:bg-muted-900 border-muted-300 dark:border-muted-800 border-y bg-white px-6 py-4"
         >
-          <div class="grid grid-cols-3 gap-x-2 gap-y-4">
-            <BaseInput
-              v-model.number="settings.hourOpen"
-              type="number"
-              min="0"
+          <div class="grid grid-cols-2 gap-x-2">
+            <BaseInputNumber
+              v-model="settings.hourOpen"
+              :min="0"
               :max="settings.hourClose - 1"
               label="Open from"
               size="sm"
             />
-            <BaseInput
-              v-model.number="settings.hourClose"
-              type="number"
+            <BaseInputNumber
+              v-model="settings.hourClose"
               :min="settings.hourOpen + 1"
-              max="24"
+              :max="24"
               label="Close at"
               size="sm"
             />
-            <BaseInput
-              v-model.number="settings.hourPrecision"
-              type="number"
-              min="5"
-              step="5"
-              max="30"
+            <BaseInputNumber
+              v-model="settings.hourPrecision"
+              :min="5"
+              :step="5"
+              :max="30"
               label="Precision"
               size="sm"
+              :classes="{ wrapper: 'col-span-2' }"
             />
           </div>
           <div class="grid grid-cols-3 items-end gap-x-2 gap-y-4">

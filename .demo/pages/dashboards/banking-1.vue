@@ -105,7 +105,7 @@ const banks = [
 const selectedBankTransfert = shallowRef(banks[0])
 const selectedBankSendTo = shallowRef(banks[0])
 const selectedCurrency = ref('usd')
-const amount = ref<number>()
+const amount = ref<number>(0)
 </script>
 
 <template>
@@ -634,14 +634,13 @@ const amount = ref<number>()
                         €
                       </option>
                     </BaseSelect>
-                    <BaseInput
-                      v-model.number="amount"
-                      type="number"
+                    <BaseInputNumber
+                      v-model="amount"
                       :classes="{ wrapper: 'grow' }"
                       placeholder="0.00"
                       shape="rounded"
                       label="Amount"
-                      hide-label
+                      :min="0"
                     />
                   </div>
                 </div>

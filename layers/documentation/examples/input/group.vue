@@ -5,7 +5,7 @@
     </BaseButton>
 
     <BaseInput
-      v-model="amount"
+      v-model.number="amount"
       :classes="{
         wrapper: 'w-28',
       }"
