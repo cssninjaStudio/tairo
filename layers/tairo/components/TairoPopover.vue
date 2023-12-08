@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
+import { Float } from '@headlessui-float/vue'
+import { FocusTrap, Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
 
 const props = withDefaults(
   defineProps<{
@@ -15,35 +16,78 @@ const props = withDefaults(
 
     /**
      * The orientation of the popover.
+     *
+     * @deprecated use placement instead
      */
     orientation?: 'start' | 'end'
+    /**
+     * Used a fixed strategy to float the component
+     */
+    fixed?: boolean
+
+    /**
+     * The placement of the dropdown via floating-ui.
+     */
+    placement?:
+      | 'top'
+      | 'top-start'
+      | 'top-end'
+      | 'right'
+      | 'right-start'
+      | 'right-end'
+      | 'bottom'
+      | 'bottom-start'
+      | 'bottom-end'
+      | 'left'
+      | 'left-start'
+      | 'left-end'
   }>(),
   {
     shape: 'rounded',
     size: 'md',
     orientation: 'start',
+    placement: undefined,
+    fixed: false,
   },
 )
+
+/**
+ * fallback placement with old orientation value
+ * @todo remove this on next major version
+ */
+const placementValue = computed(() => {
+  if (props.placement) {
+    return props.placement
+  }
+
+  return props.orientation === 'end' ? 'bottom-end' : 'bottom-start'
+})
 </script>
 
 <template>
   <div class="relative">
-    <Popover class="relative">
-      <PopoverButton
-        class="group inline-flex cursor-pointer font-sans focus:outline-none"
-        as="div"
+    <Popover>
+      <Float
+        enter="transition-all duration-200 ease-out"
+        enter-from="translate-y-1 opacity-0"
+        enter-to="translate-y-0 opacity-100"
+        leave="transition duration-150 ease-in"
+        leave-from="translate-y-0 opacity-100"
+        leave-to="translate-y-1 opacity-0"
+        tailwindcss-origin-class
+        :offset="10"
+        :strategy="props.fixed ? 'fixed' : 'absolute'"
+        :placement="placementValue"
+        :adaptive-width="props.fixed"
+        :z-index="20"
       >
-        <slot />
-      </PopoverButton>
+        <PopoverButton
+          class="group inline-flex cursor-pointer font-sans focus:outline-none"
+          as="div"
+        >
+          <slot />
+        </PopoverButton>
 
-      <Transition
-        enter-active-class="transition-all duration-200 ease-out"
-        enter-from-class="translate-y-1 opacity-0"
-        enter-to-class="translate-y-0 opacity-100"
-        leave-active-class="transition duration-150 ease-in"
-        leave-from-class="translate-y-0 opacity-100"
-        leave-to-class="translate-y-1 opacity-0"
-      >
         <PopoverPanel
           class="absolute z-10 mt-3 w-screen"
           :class="[
@@ -53,17 +97,19 @@ const props = withDefaults(
             props.orientation === 'end' && '-end-3',
           ]"
         >
-          <div
-            class="border-muted-200 after:border-muted-200 dark:border-muted-600 dark:bg-muted-700 dark:after:border-muted-600 dark:after:bg-muted-700 shadow-muted-300/30 dark:shadow-muted-800/20 relative w-full rounded-lg border bg-white shadow-xl after:absolute after:-top-2 after:h-4 after:w-4 after:rotate-[-135deg] after:border-b after:border-r after:bg-white after:content-['']"
-            :class="[
-              props.orientation === 'start' && 'after:start-6',
-              props.orientation === 'end' && 'after:end-6',
-            ]"
-          >
-            <slot name="content" />
-          </div>
+          <FocusTrap>
+            <div
+              class="border-muted-200 after:border-muted-200 dark:border-muted-600 dark:bg-muted-700 dark:after:border-muted-600 dark:after:bg-muted-700 shadow-muted-300/30 dark:shadow-muted-800/20 relative w-full rounded-lg border bg-white shadow-xl after:absolute after:-top-2 after:h-4 after:w-4 after:rotate-[-135deg] after:border-b after:border-r after:bg-white after:content-['']"
+              :class="[
+                props.orientation === 'start' && 'after:start-6',
+                props.orientation === 'end' && 'after:end-6',
+              ]"
+            >
+              <slot name="content" />
+            </div>
+          </FocusTrap>
         </PopoverPanel>
-      </Transition>
+      </Float>
     </Popover>
   </div>
 </template>
