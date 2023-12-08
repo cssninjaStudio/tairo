@@ -47,6 +47,27 @@ export default defineNuxtConfig({
     '@fontsource-variable/karla/index.css',
   ],
 
+  app: {
+    pageTransition: {
+      mode: 'out-in',
+      enterActiveClass: 'transition-opacity duration-200 ease-out',
+      enterFromClass: 'opacity-0',
+      enterToClass: 'opacity-100',
+      leaveActiveClass: 'transition-opacity duration-75 ease-in',
+      leaveFromClass: 'opacity-100',
+      leaveToClass: 'opacity-0',
+    },
+    layoutTransition: {
+      mode: 'out-in',
+      enterActiveClass: 'transition-opacity duration-200 ease-out',
+      enterFromClass: 'opacity-0',
+      enterToClass: 'opacity-100',
+      leaveActiveClass: 'transition-opacity duration-200 ease-in',
+      leaveFromClass: 'opacity-100',
+      leaveToClass: 'opacity-0',
+    },
+  },
+
   experimental: {
     // Write early hints when using node server.
     writeEarlyHints: true,

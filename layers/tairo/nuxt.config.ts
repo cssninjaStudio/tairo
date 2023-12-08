@@ -25,14 +25,4 @@ export default defineNuxtConfig({
       plugins: [exposeColors],
     },
   },
-  app: {
-    pageTransition: {
-      enterActiveClass: 'transition-opacity duration-200 ease-out',
-      enterFromClass: 'opacity-0',
-      enterToClass: 'opacity-100',
-      leaveActiveClass: 'transition-opacity duration-75 ease-in',
-      leaveFromClass: 'opacity-100',
-      leaveToClass: 'opacity-0',
-    },
-  },
 })
