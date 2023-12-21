@@ -28,11 +28,11 @@ You can set the `exclusive` property to `true` to force only one item to be open
 
 ::doc-component-demo
 ---
-title: Shapes
+title: Radius
 demo: '#examples/accordion/shapes.vue'
 ---
 
-You can change the shape of the accordion with the `shape` property.
+You can change the shape of the accordion with the `rounded` property.
 
 :::doc-message{type="muted" icon="ion:shapes-outline"}
 Default shape of all :doc-linker{to="BaseAccordion"} can be set in your `.app/app.config.ts`.

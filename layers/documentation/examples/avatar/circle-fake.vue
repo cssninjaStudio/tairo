@@ -2,6 +2,12 @@
   <div class="flex flex-wrap items-end gap-4">
     <BaseAvatar
       text="CT"
+      size="xxs"
+      class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
+    />
+
+    <BaseAvatar
+      text="CT"
       size="xs"
       class="bg-muted-200 text-muted-800 dark:bg-muted-600 dark:text-muted-300"
     />

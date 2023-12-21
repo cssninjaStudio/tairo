@@ -2,8 +2,16 @@
   <div class="flex flex-wrap items-end gap-4">
     <BaseAvatar
       text="CT"
+      size="xxs"
+      rounded="full"
+      badge-src="/img/icons/flags/united-states-of-america.svg"
+      class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
+    />
+
+    <BaseAvatar
+      text="CT"
       size="xs"
-      shape="full"
+      rounded="full"
       badge-src="/img/icons/flags/united-states-of-america.svg"
       class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
     />
@@ -11,7 +19,7 @@
     <BaseAvatar
       text="CT"
       size="sm"
-      shape="full"
+      rounded="full"
       badge-src="/img/icons/flags/united-states-of-america.svg"
       class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
     />
@@ -19,7 +27,7 @@
     <BaseAvatar
       text="CT"
       size="md"
-      shape="full"
+      rounded="full"
       badge-src="/img/icons/flags/united-states-of-america.svg"
       class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
     />
@@ -27,7 +35,7 @@
     <BaseAvatar
       text="CT"
       size="lg"
-      shape="full"
+      rounded="full"
       badge-src="/img/icons/flags/united-states-of-america.svg"
       class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
     />
@@ -35,7 +43,7 @@
     <BaseAvatar
       text="CT"
       size="xl"
-      shape="full"
+      rounded="full"
       badge-src="/img/icons/flags/united-states-of-america.svg"
       class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
     />
@@ -43,7 +51,7 @@
     <BaseAvatar
       text="CT"
       size="2xl"
-      shape="full"
+      rounded="full"
       badge-src="/img/icons/flags/united-states-of-america.svg"
       class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
     />
@@ -51,7 +59,7 @@
     <BaseAvatar
       text="CT"
       size="3xl"
-      shape="full"
+      rounded="full"
       badge-src="/img/icons/flags/united-states-of-america.svg"
       class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
     />
@@ -59,7 +67,7 @@
     <BaseAvatar
       text="CT"
       size="4xl"
-      shape="full"
+      rounded="full"
       badge-src="/img/icons/flags/united-states-of-america.svg"
       class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
     />

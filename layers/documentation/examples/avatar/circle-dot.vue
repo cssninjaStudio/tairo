@@ -1,6 +1,13 @@
 <template>
   <div class="flex flex-wrap items-end gap-4">
     <BaseAvatar
+      src="/img/avatars/15.svg"
+      shape="full"
+      size="xxs"
+      dot="yellow"
+    />
+
+    <BaseAvatar
       src="/img/avatars/1.svg"
       shape="full"
       size="xs"

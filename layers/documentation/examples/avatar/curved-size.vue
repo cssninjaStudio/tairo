@@ -1,47 +1,53 @@
 <template>
   <div class="flex flex-wrap items-end gap-4">
     <BaseAvatar
-      src="/img/avatars/1.svg"
-      size="xs"
-      shape="curved"
+      src="/img/avatars/15.svg"
+      size="xxs"
+      rounded="lg"
     />
 
-    <BaseAvatar src="/img/avatars/5.svg" shape="curved" />
+    <BaseAvatar
+      src="/img/avatars/1.svg"
+      size="xs"
+      rounded="lg"
+    />
+
+    <BaseAvatar src="/img/avatars/5.svg" rounded="lg" />
 
     <BaseAvatar
       src="/img/avatars/4.svg"
       size="md"
-      shape="curved"
+      rounded="lg"
     />
 
     <BaseAvatar
       src="/img/avatars/3.svg"
       size="lg"
-      shape="curved"
+      rounded="lg"
     />
 
     <BaseAvatar
       src="/img/avatars/8.svg"
       size="xl"
-      shape="curved"
+      rounded="lg"
     />
 
     <BaseAvatar
       src="/img/avatars/16.svg"
       size="2xl"
-      shape="curved"
+      rounded="lg"
     />
 
     <BaseAvatar
       src="/img/avatars/2.svg"
       size="3xl"
-      shape="curved"
+      rounded="lg"
     />
 
     <BaseAvatar
       src="/img/avatars/20.svg"
       size="4xl"
-      shape="curved"
+      rounded="lg"
     />
   </div>
 </template>

@@ -2,7 +2,7 @@
   <div class="flex flex-wrap items-end gap-4">
     <BaseButton
       color="primary"
-      flavor="pastel"
+      variant="pastel"
       size="sm"
     >
       Button
@@ -10,7 +10,7 @@
 
     <BaseButton
       color="success"
-      flavor="pastel"
+      variant="pastel"
       size="sm"
     >
       Button
@@ -18,7 +18,7 @@
 
     <BaseButton
       color="info"
-      flavor="pastel"
+      variant="pastel"
       size="sm"
     >
       Button
@@ -26,7 +26,7 @@
 
     <BaseButton
       color="warning"
-      flavor="pastel"
+      variant="pastel"
       size="sm"
     >
       Button
@@ -34,7 +34,7 @@
 
     <BaseButton
       color="danger"
-      flavor="pastel"
+      variant="pastel"
       size="sm"
     >
       Button

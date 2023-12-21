@@ -3,63 +3,51 @@
     <BaseAvatar
       src="/img/avatars/15.svg"
       size="xxs"
-      rounded="lg"
-      dot="yellow"
+      rounded="sm"
     />
 
     <BaseAvatar
       src="/img/avatars/1.svg"
       size="xs"
-      rounded="lg"
-      dot="success"
+      rounded="sm"
     />
 
-    <BaseAvatar
-      src="/img/avatars/5.svg"
-      rounded="lg"
-      dot="info"
-    />
+    <BaseAvatar src="/img/avatars/5.svg" rounded="sm" />
 
     <BaseAvatar
       src="/img/avatars/4.svg"
       size="md"
-      rounded="lg"
-      dot="warning"
+      rounded="sm"
     />
 
     <BaseAvatar
       src="/img/avatars/3.svg"
       size="lg"
-      rounded="lg"
-      dot="pink"
+      rounded="sm"
     />
 
     <BaseAvatar
       src="/img/avatars/8.svg"
       size="xl"
-      rounded="lg"
-      dot="danger"
+      rounded="sm"
     />
 
     <BaseAvatar
       src="/img/avatars/16.svg"
       size="2xl"
-      rounded="lg"
-      dot="yellow"
+      rounded="sm"
     />
 
     <BaseAvatar
       src="/img/avatars/2.svg"
       size="3xl"
-      rounded="lg"
-      dot="info"
+      rounded="sm"
     />
 
     <BaseAvatar
       src="/img/avatars/20.svg"
       size="4xl"
-      rounded="lg"
-      dot="success"
+      rounded="sm"
     />
   </div>
 </template>

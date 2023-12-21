@@ -10,6 +10,14 @@ icon:
 
 ::doc-component-demo
 ---
+title: Avatar group xxs
+demo: '#examples/avatar-group/micro.vue'
+---
+Avatars groups can have different sizes. This example shows an avatar group using the `xxs` size. Use the `size` prop to change the size of the avatar group.
+::
+
+::doc-component-demo
+---
 title: Avatar group xs
 demo: '#examples/avatar-group/tiny.vue'
 ---
