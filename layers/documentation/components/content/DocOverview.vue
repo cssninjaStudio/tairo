@@ -106,12 +106,12 @@
           class="flex h-full items-center p-8 text-center group-hover:border-violet-500 sm:justify-center sm:p-2"
         >
           <img
-            src="/img/logos/brands/shuriken-light.svg"
+            src="/img/logos/brands/shuriken-gradient-light.svg"
             class="block h-8 dark:hidden sm:mx-auto"
             alt="Shuriken UI logo"
           >
           <img
-            src="/img/logos/brands/shuriken-dark.svg"
+            src="/img/logos/brands/shuriken-gradient-dark.svg"
             class="hidden h-8 dark:block sm:mx-auto"
             alt="Shuriken UI logo"
           >

@@ -13,29 +13,6 @@ const props = defineProps<{
   to?: string
 }>()
 
-const iconColor = computed(() => {
-  switch (props.color) {
-    case 'success':
-      return 'bg-success-500/20 text-success-500'
-    case 'primary':
-      return 'bg-primary-500/20 text-primary-500'
-    case 'yellow':
-      return 'bg-yellow-500/20 text-yellow-500'
-    case 'orange':
-      return 'bg-orange-500/20 text-orange-500'
-    case 'sky':
-      return 'bg-sky-500/20 text-sky-500'
-    case 'pink':
-      return 'bg-pink-500/20 text-pink-500'
-    case 'lime':
-      return 'bg-lime-500/20 text-lime-500'
-    case 'blue':
-      return 'bg-blue-500/20 text-blue-500'
-    default:
-      return 'bg-muted-500/20 text-muted-500'
-  }
-})
-
 const isExternal = computed(() => {
   return props.to?.startsWith('http')
 })
@@ -46,7 +23,8 @@ const isExternal = computed(() => {
     <BaseIconBox
       v-if="props.name"
       size="md"
-      :class="iconColor"
+      rounded="none"
+      mask="blob"
     >
       <Icon :name="props.name" class="h-6 w-6" />
     </BaseIconBox>
