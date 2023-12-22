@@ -3,25 +3,25 @@
     <BaseButtonClose
       size="xs"
       rounded="full"
-      color="muted"
+      color="info"
     />
 
     <BaseButtonClose
       size="sm"
       rounded="full"
-      color="muted"
+      color="info"
     />
 
     <BaseButtonClose
       size="md"
       rounded="full"
-      color="muted"
+      color="info"
     />
 
     <BaseButtonClose
       size="lg"
       rounded="full"
-      color="muted"
+      color="info"
     />
   </div>
 </template>

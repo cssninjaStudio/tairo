@@ -1,14 +1,14 @@
 <template>
   <div class="flex flex-wrap items-end gap-2">
     <BaseButtonClose
-      size="md"
-      rounded="none"
+      size="xs"
+      rounded="md"
       color="muted"
     />
 
     <BaseButtonClose
-      size="md"
-      rounded="sm"
+      size="sm"
+      rounded="md"
       color="muted"
     />
 
@@ -19,14 +19,8 @@
     />
 
     <BaseButtonClose
-      size="md"
-      rounded="lg"
-      color="muted"
-    />
-
-    <BaseButtonClose
-      size="md"
-      rounded="full"
+      size="lg"
+      rounded="md"
       color="muted"
     />
   </div>

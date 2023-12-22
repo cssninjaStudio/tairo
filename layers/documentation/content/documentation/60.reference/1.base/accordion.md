@@ -10,7 +10,7 @@ icon:
 
 ::doc-component-demo
 ---
-title: Default accordion
+title: Default
 demo: '#examples/accordion/inclusive.vue'
 ---
 
@@ -19,7 +19,7 @@ By default, all :doc-linker{to="BaseAccordion"} items can be open at the same ti
 
 ::doc-component-demo
 ---
-title: Exclusive type
+title: Exclusive
 demo: '#examples/accordion/exclusive.vue'
 ---
 
@@ -35,26 +35,28 @@ demo: '#examples/accordion/shapes.vue'
 You can change the shape of the accordion with the `rounded` property.
 
 :::doc-message{type="muted" icon="ion:shapes-outline"}
-Default shape of all :doc-linker{to="BaseAccordion"} can be set in your `.app/app.config.ts`.
+Default props of all :doc-linker{to="BaseAccordion"} can be set in your `.app/app.config.ts`.
 :::
 ::
 
 ::doc-component-demo
 ---
-title: Chevron icon
+title: Icon:chevron
 demo: '#examples/accordion/chevron.vue'
 ---
 
-:doc-linker{to="BaseAccordion"} accept an `action` property that you can use to change the icon of the accordion. By default, it uses the `dot` icon, but you can use `chevron` or `plus` as well.
+:doc-linker{to="BaseAccordion"} accepts an `action` property that you can use to change the icon of the accordion. By default, it uses the `dot` icon, but you can use `chevron` or `plus` as well.
 
 Here is an example of an accordion with `action="chevron"`.
 ::
 
 ::doc-component-demo
 ---
-title: Plus icon
+title: Icon:plus
 demo: '#examples/accordion/plus.vue'
 ---
+
+:doc-linker{to="BaseAccordion"} accepts an `action` property that you can use to change the icon of the accordion. By default, it uses the `dot` icon, but you can use `chevron` or `plus` as well.
 
 Here is an example of an accordion with `action="plus"`.
 ::
