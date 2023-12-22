@@ -4,7 +4,7 @@
       variant="button"
       label="Dropdown"
       orientation="start"
-      size="md"
+      button-color="default"
     >
       <BaseDropdownItem
         to="#"
@@ -43,7 +43,46 @@
       variant="button"
       label="Dropdown"
       orientation="start"
-      size="lg"
+      button-color="muted"
+    >
+      <BaseDropdownItem
+        to="#"
+        title="Profile"
+        text="View your profile"
+        color="default"
+        rounded="sm"
+      />
+
+      <BaseDropdownItem
+        to="#"
+        title="Projects"
+        text="View your projects"
+        color="default"
+        rounded="sm"
+      />
+
+      <BaseDropdownItem
+        to="#"
+        title="Team"
+        text="Manage your team"
+        color="default"
+        rounded="sm"
+      />
+
+      <BaseDropdownItem
+        to="#"
+        title="Settings"
+        text="Set your preferences"
+        color="default"
+        rounded="sm"
+      />
+    </BaseDropdown>
+
+    <BaseDropdown
+      variant="button"
+      label="Dropdown"
+      orientation="start"
+      button-color="primary"
     >
       <BaseDropdownItem
         to="#"

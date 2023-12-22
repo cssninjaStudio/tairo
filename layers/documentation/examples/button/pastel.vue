@@ -1,22 +1,30 @@
 <template>
-  <div class="flex flex-wrap items-end gap-4">
-    <BaseButton color="primary" variant="pastel">
+  <div class="flex flex-wrap items-end gap-2">
+    <BaseButton variant="pastel">
       Button
     </BaseButton>
 
-    <BaseButton color="success" variant="pastel">
+    <BaseButton variant="pastel" color="muted">
       Button
     </BaseButton>
 
-    <BaseButton color="info" variant="pastel">
+    <BaseButton variant="pastel" color="primary">
       Button
     </BaseButton>
 
-    <BaseButton color="warning" variant="pastel">
+    <BaseButton variant="pastel" color="success">
       Button
     </BaseButton>
 
-    <BaseButton color="danger" variant="pastel">
+    <BaseButton variant="pastel" color="info">
+      Button
+    </BaseButton>
+
+    <BaseButton variant="pastel" color="warning">
+      Button
+    </BaseButton>
+
+    <BaseButton variant="pastel" color="danger">
       Button
     </BaseButton>
   </div>

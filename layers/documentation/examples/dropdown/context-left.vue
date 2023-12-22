@@ -1,7 +1,7 @@
 <template>
-  <div class="flex items-end">
+  <div class="flex w-full justify-start">
     <BaseDropdown
-      flavor="context"
+      variant="context"
       label="Dropdown"
       orientation="start"
     >
@@ -9,24 +9,32 @@
         to="#"
         title="Profile"
         text="View your profile"
+        color="default"
+        rounded="sm"
       />
 
       <BaseDropdownItem
         to="#"
         title="Projects"
         text="View your projects"
+        color="default"
+        rounded="sm"
       />
 
       <BaseDropdownItem
         to="#"
         title="Team"
         text="Manage your team"
+        color="default"
+        rounded="sm"
       />
 
       <BaseDropdownItem
         to="#"
         title="Settings"
         text="Set your preferences"
+        color="default"
+        rounded="sm"
       />
     </BaseDropdown>
   </div>

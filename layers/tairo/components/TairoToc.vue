@@ -104,7 +104,7 @@ async function loadTocItemFromDom() {
           </li>
         </ul>
         <div
-          class="dark:from-muted-900 from-muted-100 pointer-events-none fixed bottom-10 z-10 h-10 w-[212px] bg-gradient-to-t to-transparent"
+          class="dark:bg-muted-900 bg-muted-100 pointer-events-none fixed bottom-0 z-10 h-20 w-[212px] blur-xl"
         />
       </nav>
     </div>

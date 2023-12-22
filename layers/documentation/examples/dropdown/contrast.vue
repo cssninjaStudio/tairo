@@ -4,7 +4,7 @@
       variant="button"
       label="Dropdown"
       orientation="start"
-      size="md"
+      color="white"
     >
       <BaseDropdownItem
         to="#"
@@ -43,7 +43,7 @@
       variant="button"
       label="Dropdown"
       orientation="start"
-      size="lg"
+      color="white-contrast"
     >
       <BaseDropdownItem
         to="#"

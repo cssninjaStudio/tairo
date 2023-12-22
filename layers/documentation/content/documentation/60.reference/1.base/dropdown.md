@@ -12,15 +12,31 @@ icon:
 
 ::doc-component-demo
 ---
-title: Dropdown left
+title: Size
 demo: '#examples/dropdown/button-left.vue'
 ---
-Dropdowns have button shapes and are left aligned by default. Here is an example of a default dropdown button.
+Dropdowns have button shapes and are left aligned by default. Dropdown menu can also have different widths using the `size` prop.
 ::
 
 ::doc-component-demo
 ---
-title: Dropdown right
+title: Contrast
+demo: '#examples/dropdown/contrast.vue'
+---
+Dropdowns menus can have a darker color in dark mode. Use the `color` prop to change the contrast of the dropdown menu when in dark mode.
+::
+
+::doc-component-demo
+---
+title: Button:color
+demo: '#examples/dropdown/button-color.vue'
+---
+Dropdowns buttons can have different colors. Use the `button-color` prop to change the dropdown button color.
+::
+
+::doc-component-demo
+---
+title: Button:end
 demo: '#examples/dropdown/button-right.vue'
 ---
 Dropdowns can also be right aligned. Use the `orientation` prop to change the alignment of the dropdown.
@@ -28,31 +44,23 @@ Dropdowns can also be right aligned. Use the `orientation` prop to change the al
 
 ::doc-component-demo
 ---
-title: Compact menu
-demo: '#examples/dropdown/compact.vue'
----
-Dropdowns menus can have a smaller width. Use the `compact` prop to change the width of the dropdown menu.
-::
-
-::doc-component-demo
----
-title: Context left
+title: Context:start
 demo: '#examples/dropdown/context-left.vue'
 ---
-Dropdowns can be used as context menus. Use the `flavor` prop with the `context` value to change the dropdown to a context menu.
+Dropdowns can be used as context menus. Use the `variant` prop with the `context` value to change the dropdown to a context menu.
 ::
 
 ::doc-component-demo
 ---
-title: Context right
+title: Context:end
 demo: '#examples/dropdown/context-right.vue'
 ---
-Dropdowns can be used as context menus. You can also align it to the right using the `orientation` prop.
+Dropdowns can be used as context menus. You can also align it to the `end` using the `orientation` prop.
 ::
 
 ::doc-component-demo
 ---
-title: Text left
+title: Text:start
 demo: '#examples/dropdown/text-left.vue'
 ---
 Dropdowns can also be used as text menus. Use the `flavor` prop with the `text` value to change the dropdown to a text menu.
@@ -60,7 +68,7 @@ Dropdowns can also be used as text menus. Use the `flavor` prop with the `text` 
 
 ::doc-component-demo
 ---
-title: Text right
+title: Text:end
 demo: '#examples/dropdown/text-right.vue'
 ---
 Dropdowns can also be used as text menus. Use the `flavor` prop with the `text` value to change the dropdown to a text menu.
@@ -68,7 +76,7 @@ Dropdowns can also be used as text menus. Use the `flavor` prop with the `text` 
 
 ::doc-component-demo
 ---
-title: Icon slot
+title: Slot:icon
 demo: '#examples/dropdown/icon-slot.vue'
 ---
 Dropdowns items can have an icon. Use the `start` slot to add an icon to the dropdown item.
@@ -76,7 +84,7 @@ Dropdowns items can have an icon. Use the `start` slot to add an icon to the dro
 
 ::doc-component-demo
 ---
-title: Avatar slot
+title: Slot:avatar
 demo: '#examples/dropdown/avatar-slot.vue'
 ---
 Dropdowns items can have an avatar. Use the `start` slot to add an icon to the dropdown item.
@@ -84,7 +92,7 @@ Dropdowns items can have an avatar. Use the `start` slot to add an icon to the d
 
 ::doc-component-demo
 ---
-title: Menu header
+title: Slot:header
 demo: '#examples/dropdown/header.vue'
 ---
 Dropdowns menus can have a header. Use the `headerLabel` prop to add a header text to the dropdown menu.

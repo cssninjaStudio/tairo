@@ -1,7 +1,7 @@
 <template>
-  <div class="flex items-end">
+  <div class="flex w-full justify-start">
     <BaseDropdown
-      flavor="button"
+      variant="button"
       label="Dropdown"
       orientation="start"
       header-label="My Team"
@@ -10,9 +10,14 @@
         to="#"
         title="Lana Jensen"
         text="Software Engineer"
+        color="default"
+        rounded="sm"
       >
         <template #start>
-          <BaseAvatar src="/img/avatars/4.svg" size="xs" />
+          <BaseAvatar
+            src="https://tairo.cssninja.io/img/avatars/4.svg"
+            size="xs"
+          />
         </template>
       </BaseDropdownItem>
 
@@ -20,9 +25,14 @@
         to="#"
         title="Shawn Miller"
         text="Product Manager"
+        color="default"
+        rounded="sm"
       >
         <template #start>
-          <BaseAvatar src="/img/avatars/3.svg" size="xs" />
+          <BaseAvatar
+            src="https://tairo.cssninja.io/img/avatars/3.svg"
+            size="xs"
+          />
         </template>
       </BaseDropdownItem>
 
@@ -30,9 +40,14 @@
         to="#"
         title="John Marynski"
         text="Sales Manager"
+        color="default"
+        rounded="sm"
       >
         <template #start>
-          <BaseAvatar src="/img/avatars/18.svg" size="xs" />
+          <BaseAvatar
+            src="https://tairo.cssninja.io/img/avatars/18.svg"
+            size="xs"
+          />
         </template>
       </BaseDropdownItem>
 
@@ -42,9 +57,14 @@
         to="#"
         title="Garry Porter"
         text="CEO - Founder"
+        color="default"
+        rounded="sm"
       >
         <template #start>
-          <BaseAvatar src="/img/avatars/6.svg" size="xs" />
+          <BaseAvatar
+            src="https://tairo.cssninja.io/img/avatars/6.svg"
+            size="xs"
+          />
         </template>
       </BaseDropdownItem>
     </BaseDropdown>

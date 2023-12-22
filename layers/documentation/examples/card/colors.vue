@@ -1,8 +1,8 @@
 <template>
-  <div class="grid gap-4 md:grid-cols-3">
+  <div class="grid max-w-3xl gap-4 md:grid-cols-2">
     <BaseCard
-      shape="straight"
       color="white"
+      rounded="md"
       class="p-6"
     >
       <BaseHeading
@@ -25,8 +25,8 @@
     </BaseCard>
 
     <BaseCard
-      shape="straight"
       color="primary"
+      rounded="md"
       class="p-6"
     >
       <BaseHeading
@@ -49,8 +49,8 @@
     </BaseCard>
 
     <BaseCard
-      shape="rounded"
       color="info"
+      rounded="md"
       class="p-6"
     >
       <BaseHeading
@@ -73,8 +73,8 @@
     </BaseCard>
 
     <BaseCard
-      shape="smooth"
       color="success"
+      rounded="md"
       class="p-6"
     >
       <BaseHeading
@@ -97,8 +97,8 @@
     </BaseCard>
 
     <BaseCard
-      shape="smooth"
       color="warning"
+      rounded="md"
       class="p-6"
     >
       <BaseHeading
@@ -121,8 +121,8 @@
     </BaseCard>
 
     <BaseCard
-      shape="curved"
       color="danger"
+      rounded="md"
       class="p-6"
     >
       <BaseHeading
