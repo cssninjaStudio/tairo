@@ -1,5 +1,5 @@
 <template>
-  <BaseProse shape="rounded" class="prose-md">
+  <BaseProse rounded="md" class="prose-md">
     <h1>Typography plugin</h1>
 
     <p class="lead">

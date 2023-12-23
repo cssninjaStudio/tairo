@@ -1,6 +1,6 @@
 <template>
   <div class="max-w-sm">
-    <BaseCard shape="rounded" class="p-4 md:p-6">
+    <BaseCard rounded="md" class="p-4 md:p-6">
       <div class="flex items-center">
         <BasePlaceload class="h-10 w-10 rounded-full" />
 

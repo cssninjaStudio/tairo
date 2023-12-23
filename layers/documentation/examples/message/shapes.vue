@@ -1,28 +1,29 @@
 <template>
-  <div class="max-w-xs space-y-4">
-    <BaseMessage shape="straight" icon>
+  <div class="grid max-w-2xl grid-cols-1 gap-4 md:grid-cols-2">
+    <BaseMessage icon rounded="sm">
       A successful message.
     </BaseMessage>
 
     <BaseMessage
       type="info"
-      shape="rounded"
       icon
+      rounded="md"
     >
       An information message.
     </BaseMessage>
 
     <BaseMessage
       type="warning"
-      message="A warning message."
-      shape="curved"
       icon
-    />
+      rounded="lg"
+    >
+      A warning message.
+    </BaseMessage>
 
     <BaseMessage
       type="danger"
-      shape="full"
       icon
+      rounded="full"
     >
       A destructive message.
     </BaseMessage>

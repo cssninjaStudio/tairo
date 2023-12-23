@@ -10,7 +10,7 @@ icon:
 
 ::doc-component-demo
 ---
-title: Text placeload
+title: Text
 demo: '#examples/placeload/text.vue'
 ---
 Simulate a text element using the placeload component. Use Tailwind CSS classes to customize the placeload dimensions.
@@ -18,7 +18,7 @@ Simulate a text element using the placeload component. Use Tailwind CSS classes 
 
 ::doc-component-demo
 ---
-title: Shape placeload
+title: Shape
 demo: '#examples/placeload/shape.vue'
 ---
 Simulate a media element using the placeload component. Use Tailwind CSS classes to customize the placeload dimensions.

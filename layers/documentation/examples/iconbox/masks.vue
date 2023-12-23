@@ -2,8 +2,8 @@
   <div class="flex flex-wrap items-end gap-4">
     <BaseIconBox
       size="md"
-      shape="straight"
-      flavor="solid"
+      rounded="none"
+      variant="solid"
       color="primary"
       mask="hex"
     >
@@ -12,8 +12,8 @@
 
     <BaseIconBox
       size="md"
-      shape="straight"
-      flavor="solid"
+      rounded="none"
+      variant="solid"
       color="info"
       mask="hexed"
     >
@@ -22,8 +22,8 @@
 
     <BaseIconBox
       size="md"
-      shape="straight"
-      flavor="solid"
+      rounded="none"
+      variant="solid"
       color="success"
       mask="deca"
     >
@@ -32,8 +32,8 @@
 
     <BaseIconBox
       size="md"
-      shape="straight"
-      flavor="solid"
+      rounded="none"
+      variant="solid"
       color="warning"
       mask="blob"
     >
@@ -42,8 +42,8 @@
 
     <BaseIconBox
       size="md"
-      shape="straight"
-      flavor="solid"
+      rounded="none"
+      variant="solid"
       color="danger"
       mask="diamond"
     >
@@ -52,8 +52,8 @@
 
     <BaseIconBox
       size="md"
-      shape="straight"
-      flavor="pastel"
+      rounded="none"
+      variant="pastel"
       color="primary"
       mask="hex"
     >
@@ -62,8 +62,8 @@
 
     <BaseIconBox
       size="md"
-      shape="straight"
-      flavor="pastel"
+      rounded="none"
+      variant="pastel"
       color="info"
       mask="hexed"
     >
@@ -72,8 +72,8 @@
 
     <BaseIconBox
       size="md"
-      shape="straight"
-      flavor="pastel"
+      rounded="none"
+      variant="pastel"
       color="success"
       mask="deca"
     >
@@ -82,8 +82,8 @@
 
     <BaseIconBox
       size="md"
-      shape="straight"
-      flavor="pastel"
+      rounded="none"
+      variant="pastel"
       color="warning"
       mask="blob"
     >
@@ -92,8 +92,8 @@
 
     <BaseIconBox
       size="md"
-      shape="straight"
-      flavor="pastel"
+      rounded="none"
+      variant="pastel"
       color="danger"
       mask="diamond"
     >

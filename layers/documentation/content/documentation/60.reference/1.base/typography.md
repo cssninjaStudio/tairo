@@ -4,6 +4,7 @@ components:
   - BaseHeading
   - BaseParagraph
   - BaseText
+  - BaseLink
 description: Tairo provides ready to use typography components such as heading, paragraphs and text, with many customization options.
 icon:
   src: /img/illustrations/components/focus-loop-icon.svg

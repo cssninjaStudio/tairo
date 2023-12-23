@@ -1,41 +1,57 @@
 <template>
-  <div class="flex flex-wrap items-end gap-1">
+  <div class="flex flex-wrap items-end gap-3">
     <BaseTag
-      shape="rounded"
+      rounded="md"
+      variant="outline"
+      color="default"
+    >
+      Label
+    </BaseTag>
+
+    <BaseTag
+      rounded="md"
+      variant="outline"
+      color="muted"
+    >
+      Label
+    </BaseTag>
+
+    <BaseTag
+      rounded="md"
+      variant="outline"
       color="primary"
-      flavor="outline"
     >
       Label
     </BaseTag>
 
     <BaseTag
-      shape="rounded"
+      rounded="md"
+      variant="outline"
       color="success"
-      flavor="outline"
     >
       Label
     </BaseTag>
 
     <BaseTag
-      shape="rounded"
+      rounded="md"
+      variant="outline"
       color="info"
-      flavor="outline"
     >
       Label
     </BaseTag>
 
     <BaseTag
-      shape="rounded"
+      rounded="md"
+      variant="outline"
       color="warning"
-      flavor="outline"
     >
       Label
     </BaseTag>
 
     <BaseTag
-      shape="rounded"
+      rounded="md"
+      variant="outline"
       color="danger"
-      flavor="outline"
     >
       Label
     </BaseTag>

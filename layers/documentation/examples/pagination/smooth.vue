@@ -4,7 +4,7 @@
     :total-items="512"
     :current-page="currentPage"
     :max-links-displayed="5"
-    rounded="full"
+    rounded="md"
   />
 </template>
 

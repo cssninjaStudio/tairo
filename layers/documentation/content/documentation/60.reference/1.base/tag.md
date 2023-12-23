@@ -10,26 +10,26 @@ icon:
 
 ::doc-component-demo
 ---
-title: Tag shapes
-demo: '#examples/tag/shapes.vue'
+title: Size
+demo: '#examples/tag/size.vue'
 ---
-Tags can have different shapes. Use the `shape` prop to display a tag with a rounded or squared shape.
+Tags can have different sizes. Use the `size` prop to change the size of the tag.
 :::doc-message{type="muted" icon="ion:shapes-outline"}
-Default shape of all :doc-linker{to="BaseTag"} can be set in your `.app/app.config.ts`.
+Default props of all :doc-linker{to="BaseTag"} can be set in your `.app/app.config.ts`.
 :::
 ::
 
 ::doc-component-demo
 ---
-title: Small tags
-demo: '#examples/tag/condensed.vue'
+title: Radius
+demo: '#examples/tag/shapes.vue'
 ---
-Tags can have a smaller size. Use the `size` prop with the `sm` value to display a tag with a smaller size.
+Tags can have different radius factors. Use the `rounded` prop to change the radius of a tag.
 ::
 
 ::doc-component-demo
 ---
-title: Solid colors
+title: Variant:solid
 demo: '#examples/tag/solid.vue'
 ---
 Tags can have different flavors and colors. Use the `solid` flavor with the `color` prop to display a tag with a solid color.
@@ -37,7 +37,7 @@ Tags can have different flavors and colors. Use the `solid` flavor with the `col
 
 ::doc-component-demo
 ---
-title: Pastel colors
+title: Variant:pastel
 demo: '#examples/tag/pastel.vue'
 ---
 Tags can have different flavors and colors. Use the `pastel` flavor with the `color` prop to display a tag with a solid color.
@@ -45,7 +45,7 @@ Tags can have different flavors and colors. Use the `pastel` flavor with the `co
 
 ::doc-component-demo
 ---
-title: Outline colors
+title: Variant:outline
 demo: '#examples/tag/outline.vue'
 ---
 Tags can have different flavors and colors. Use the `outline` flavor with the `color` prop to display a tag with a solid color.
@@ -53,7 +53,7 @@ Tags can have different flavors and colors. Use the `outline` flavor with the `c
 
 ::doc-component-demo
 ---
-title: Flat shadow
+title: Shadow:flat
 demo: '#examples/tag/shadow-flat.vue'
 ---
 Tags can have a flat shadow. Use the `shadow` prop to display a tag with a flat shadow.
@@ -61,7 +61,7 @@ Tags can have a flat shadow. Use the `shadow` prop to display a tag with a flat 
 
 ::doc-component-demo
 ---
-title: Hover shadow
+title: Shadow:hover
 demo: '#examples/tag/shadow-hover.vue'
 ---
 Tags can have a shadow on hover. Use the `shadow` prop to display a tag with a hover shadow.
