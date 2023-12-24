@@ -8,7 +8,7 @@
         rounded="md"
         label="Size: sm"
         placeholder="Ex: javascript"
-        disabled
+        error="Please select a framework"
       />
     </div>
 
@@ -20,7 +20,7 @@
         rounded="md"
         label="Size: md"
         placeholder="Ex: javascript"
-        disabled
+        error="Please select a framework"
       />
     </div>
 
@@ -32,7 +32,7 @@
         rounded="md"
         label="Size: lg"
         placeholder="Ex: javascript"
-        disabled
+        error="Please select a framework"
       />
     </div>
   </div>

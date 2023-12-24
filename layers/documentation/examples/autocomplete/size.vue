@@ -8,7 +8,6 @@
         rounded="md"
         label="Size: sm"
         placeholder="Ex: javascript"
-        disabled
       />
     </div>
 
@@ -20,7 +19,6 @@
         rounded="md"
         label="Size: md"
         placeholder="Ex: javascript"
-        disabled
       />
     </div>
 
@@ -32,7 +30,6 @@
         rounded="md"
         label="Size: lg"
         placeholder="Ex: javascript"
-        disabled
       />
     </div>
   </div>

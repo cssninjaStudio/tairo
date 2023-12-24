@@ -4,11 +4,11 @@
       <BaseAutocomplete
         v-model="fields.first"
         :items="frameworks"
+        contrast="muted"
         size="sm"
         rounded="md"
         label="Size: sm"
         placeholder="Ex: javascript"
-        disabled
       />
     </div>
 
@@ -16,11 +16,11 @@
       <BaseAutocomplete
         v-model="fields.second"
         :items="frameworks"
+        contrast="muted"
         size="md"
         rounded="md"
         label="Size: md"
         placeholder="Ex: javascript"
-        disabled
       />
     </div>
 
@@ -28,11 +28,11 @@
       <BaseAutocomplete
         v-model="fields.third"
         :items="frameworks"
+        contrast="muted"
         size="lg"
         rounded="md"
         label="Size: lg"
         placeholder="Ex: javascript"
-        disabled
       />
     </div>
   </div>

@@ -1,10 +1,10 @@
 <template>
-  <div class="grid gap-6 md:max-w-lg md:grid-cols-2">
+  <div class="max-w-sm">
     <BaseAutocomplete
       v-model="value"
       :items="frameworks"
-      shape="rounded"
-      icon="ph:users-three"
+      rounded="md"
+      icon="lucide:list-filter"
       placeholder="Search..."
       label="Assignee"
       multiple
