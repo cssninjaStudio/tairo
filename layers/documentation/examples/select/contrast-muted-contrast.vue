@@ -3,10 +3,10 @@
     <div class="flex-1">
       <BaseSelect
         v-model="first"
+        contrast="muted-contrast"
         size="sm"
         rounded="md"
         label="Rounded: md"
-        error="This field is required"
       >
         <option value="">
           Select a hero
@@ -37,10 +37,10 @@
     <div class="flex-1">
       <BaseSelect
         v-model="second"
+        contrast="muted-contrast"
         size="md"
         rounded="md"
         label="Rounded: md"
-        error="This field is required"
       >
         <option value="">
           Select a hero
@@ -71,10 +71,10 @@
     <div class="flex-1">
       <BaseSelect
         v-model="third"
+        contrast="muted-contrast"
         size="lg"
         rounded="md"
         label="Rounded: md"
-        error="This field is required"
       >
         <option value="">
           Select a hero

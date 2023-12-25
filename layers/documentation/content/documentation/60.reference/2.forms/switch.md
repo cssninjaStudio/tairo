@@ -12,7 +12,7 @@ icon:
 
 ::doc-component-demo
 ---
-title: Thin Switch
+title: Switch:thin
 demo: '#examples/switch/thin-switch.vue'
 ---
 Switches are binary inputs that can be either on or off. They are used to toggle between two states. This is an example of a thin style switch.
@@ -20,7 +20,7 @@ Switches are binary inputs that can be either on or off. They are used to toggle
 
 ::doc-component-demo
 ---
-title: Thin Sublabel
+title: Thin:sublabel
 demo: '#examples/switch/thin-sublabel.vue'
 ---
 Switches can have a sublabel. use the `sublabel` prop to set the sublabel text and modify the swicth layout.
@@ -32,7 +32,7 @@ Switches can have a sublabel. use the `sublabel` prop to set the sublabel text a
 
 ::doc-component-demo
 ---
-title: Ball Switch
+title: Switch:ball
 demo: '#examples/switch/ball-switch.vue'
 ---
 Switches are binary inputs that can be either on or off. They are used to toggle between two states. This is an example of a ball style switch.
@@ -40,7 +40,7 @@ Switches are binary inputs that can be either on or off. They are used to toggle
 
 ::doc-component-demo
 ---
-title: Ball Sublabel
+title: Ball:sublabel
 demo: '#examples/switch/ball-sublabel.vue'
 ---
 Switches can have a sublabel. use the `sublabel` prop to set the sublabel text and modify the swicth layout.

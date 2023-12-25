@@ -6,7 +6,6 @@
         size="sm"
         rounded="md"
         label="Rounded: md"
-        error="This field is required"
       >
         <option value="">
           Select a hero
@@ -40,7 +39,6 @@
         size="md"
         rounded="md"
         label="Rounded: md"
-        error="This field is required"
       >
         <option value="">
           Select a hero
@@ -74,7 +72,6 @@
         size="lg"
         rounded="md"
         label="Rounded: md"
-        error="This field is required"
       >
         <option value="">
           Select a hero

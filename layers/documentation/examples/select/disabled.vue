@@ -5,7 +5,7 @@
       size="sm"
       rounded="md"
       label="Rounded: md"
-      label-float
+      disabled
     >
       <option value="">
         Select a hero
@@ -38,7 +38,7 @@
       size="sm"
       rounded="md"
       label="Rounded: md"
-      label-float
+      disabled
     >
       <option value="">
         Select a hero
@@ -70,7 +70,7 @@
       size="md"
       rounded="md"
       label="Rounded: md"
-      label-float
+      disabled
     >
       <option value="">
         Select a hero
@@ -103,7 +103,7 @@
       size="md"
       rounded="md"
       label="Rounded: md"
-      label-float
+      disabled
     >
       <option value="">
         Select a hero
@@ -135,7 +135,7 @@
       size="lg"
       rounded="md"
       label="Rounded: md"
-      label-float
+      disabled
     >
       <option value="">
         Select a hero
@@ -168,7 +168,7 @@
       size="lg"
       rounded="md"
       label="Rounded: md"
-      label-float
+      disabled
     >
       <option value="">
         Select a hero

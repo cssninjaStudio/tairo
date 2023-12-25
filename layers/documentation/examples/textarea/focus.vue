@@ -1,9 +1,18 @@
 <template>
-  <div class="grid gap-6 md:max-w-xl md:grid-cols-2">
+  <div class="grid gap-6 md:max-w-4xl md:grid-cols-3">
+    <BaseTextarea
+      v-model="value"
+      size="sm"
+      label="Message"
+      rounded="md"
+      placeholder="Write a message..."
+      color-focus
+    />
+
     <BaseTextarea
       v-model="value"
       label="Message"
-      shape="rounded"
+      rounded="md"
       placeholder="Write a message..."
       color-focus
     />

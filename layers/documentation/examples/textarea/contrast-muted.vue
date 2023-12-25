@@ -2,19 +2,21 @@
   <div class="grid gap-6 md:max-w-4xl md:grid-cols-3">
     <BaseTextarea
       v-model="value"
+      contrast="muted"
       size="sm"
       label="Message"
       rounded="md"
       placeholder="Write a message..."
-      disabled
+      color-focus
     />
 
     <BaseTextarea
       v-model="value"
+      contrast="muted"
       label="Message"
       rounded="md"
       placeholder="Write a message..."
-      disabled
+      color-focus
     />
   </div>
 </template>
