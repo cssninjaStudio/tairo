@@ -2,29 +2,36 @@
   <div class="grid gap-6 md:max-w-lg md:grid-cols-2">
     <BaseInputNumber
       v-model="fields.first"
-      shape="straight"
-      label="Straight input"
+      rounded="none"
+      label="Rounded:none"
       placeholder="Ex: username"
     />
 
     <BaseInputNumber
       v-model="fields.second"
-      shape="rounded"
-      label="Rounded input"
+      rounded="sm"
+      label="Rounded:sm"
       placeholder="Ex: username"
     />
 
     <BaseInputNumber
       v-model="fields.third"
-      shape="curved"
-      label="Curved input"
+      rounded="md"
+      label="Rounded:md"
       placeholder="Ex: username"
     />
 
     <BaseInputNumber
       v-model="fields.fourth"
-      shape="full"
-      label="Full input"
+      rounded="lg"
+      label="Rounded:lg"
+      placeholder="Ex: username"
+    />
+
+    <BaseInputNumber
+      v-model="fields.fifth"
+      rounded="full"
+      label="Rounded:full"
       placeholder="Ex: username"
     />
   </div>
@@ -36,5 +43,6 @@ const fields = reactive({
   second: 0,
   third: 0,
   fourth: 0,
+  fifth: 0,
 })
 </script>

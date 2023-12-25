@@ -7,7 +7,7 @@
         rounded="md"
         label="Amount"
         icon="lucide:euro"
-        disabled
+        loading
       />
     </div>
 
@@ -18,7 +18,7 @@
         rounded="md"
         label="Amount"
         icon="lucide:euro"
-        disabled
+        loading
       />
     </div>
 
@@ -29,7 +29,7 @@
         rounded="md"
         label="Amount"
         icon="lucide:euro"
-        disabled
+        loading
       />
     </div>
   </div>

@@ -10,25 +10,57 @@ icon:
 
 ::doc-component-demo
 ---
-title: Input number shape
+title: Radius
 demo: '#examples/input-number/shapes.vue'
 ---
-Inputs can be customized to show different shapes. The default shape is `rounded`. You can change the shape of all inputs by setting the `shape` property.
+Inputs can be customized to show different radius factors. The default shape is `rounded:sm`. You can change the shape of all inputs by setting the `rounded` property.
 :::doc-message{type="muted" icon="ion:shapes-outline"}
-Default shape of all :doc-linker{to="BaseInputNumber"} can be set in your `.app/app.config.ts`.
+Default props of all :doc-linker{to="BaseInputNumber"} can be set in your `.app/app.config.ts`.
 :::
 ::
 
 ::doc-component-demo
 ---
-title: Input number icon
+title: Size
+demo: '#examples/input-number/size.vue'
+---
+Inputs can have different sizes. The default size is `md`. You can change the size of all inputs by setting the `size` property.
+::
+
+::doc-component-demo
+---
+title: Contrast:default+
+demo: '#examples/input-number/contrast-default.vue'
+---
+Inputs can have different contrasts. The default contrast is `default`. You can change the contrast of an input number by setting the `contrast` property.
+::
+
+::doc-component-demo
+---
+title: Contrast:muted
+demo: '#examples/input-number/contrast-muted.vue'
+---
+Inputs can have different contrasts.  You can change the contrast of an input number by setting the `contrast` property.
+::
+
+::doc-component-demo
+---
+title: Contrast:muted+
+demo: '#examples/input-number/contrast-muted.vue'
+---
+Inputs can have different contrasts.  You can change the contrast of an input number by setting the `contrast` property.
+::
+
+
+::doc-component-demo
+---
+title: Icon
 demo: '#examples/input-number/icon.vue'
 ---
 Inputs can have a configurable icon on the left side using the `icon` prop. Make sure to pick meaningful icons for your use case.
 
 You can also change icons for increment and decrement buttons using the `icon-decrement` and `icon-increment` props.
 ::
-
 
 
 ::doc-component-demo
@@ -44,10 +76,19 @@ Defining a `min` and `max` value will prevent the increment and decrement button
 
 ::doc-component-demo
 ---
-title: Disabled state
+title: Disabled
 demo: '#examples/input-number/disabled.vue'
 ---
 Inputs can be shown in a disabled using the `disabled` prop.
+::
+
+
+::doc-component-demo
+---
+title: Loading
+demo: '#examples/input-number/loading.vue'
+---
+Inputs can be shown in a loading using the `loading` prop.
 ::
 
 
