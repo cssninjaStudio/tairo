@@ -5,48 +5,48 @@
     <BaseCheckbox
       v-model="options.first"
       label="Default"
-      rounded="none"
+      rounded="md"
     />
 
     <BaseCheckbox
       v-model="options.second"
       label="Muted"
-      rounded="none"
+      rounded="md"
       color="muted"
     />
 
     <BaseCheckbox
       v-model="options.third"
       label="Primary"
-      rounded="none"
+      rounded="md"
       color="primary"
     />
 
     <BaseCheckbox
       v-model="options.fourth"
       label="Info"
-      rounded="none"
+      rounded="md"
       color="info"
     />
 
     <BaseCheckbox
       v-model="options.fifth"
       label="Success"
-      rounded="none"
+      rounded="md"
       color="success"
     />
 
     <BaseCheckbox
       v-model="options.sixth"
       label="Warning"
-      rounded="none"
+      rounded="md"
       color="warning"
     />
 
     <BaseCheckbox
       v-model="options.seventh"
       label="Danger"
-      rounded="none"
+      rounded="md"
       color="danger"
     />
   </BaseFocusLoop>

@@ -1,50 +1,52 @@
 <template>
-  <BaseFocusLoop class="grid grid-cols-2 gap-6 md:max-w-lg md:grid-cols-4">
+  <BaseFocusLoop
+    class="grid grid-cols-2 gap-6 md:max-w-lg md:grid-cols-4"
+  >
     <BaseCheckbox
       v-model="options.first"
       label="Default"
-      shape="full"
+      rounded="full"
     />
 
     <BaseCheckbox
       v-model="options.second"
       label="Muted"
-      shape="full"
+      rounded="full"
       color="muted"
     />
 
     <BaseCheckbox
       v-model="options.third"
       label="Primary"
-      shape="full"
+      rounded="full"
       color="primary"
     />
 
     <BaseCheckbox
       v-model="options.fourth"
       label="Info"
-      shape="full"
+      rounded="full"
       color="info"
     />
 
     <BaseCheckbox
       v-model="options.fifth"
       label="Success"
-      shape="full"
+      rounded="full"
       color="success"
     />
 
     <BaseCheckbox
       v-model="options.sixth"
       label="Warning"
-      shape="full"
+      rounded="full"
       color="warning"
     />
 
     <BaseCheckbox
       v-model="options.seventh"
       label="Danger"
-      shape="full"
+      rounded="full"
       color="danger"
     />
   </BaseFocusLoop>
