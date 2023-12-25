@@ -3,6 +3,7 @@
     <div class="flex-1">
       <BaseInput
         v-model="fields.first"
+        icon="lucide:search"
         size="sm"
         rounded="md"
         label="Size: sm"
@@ -14,6 +15,7 @@
     <div class="flex-1">
       <BaseInput
         v-model="fields.second"
+        icon="lucide:search"
         size="md"
         rounded="md"
         label="Size: md"
@@ -25,6 +27,7 @@
     <div class="flex-1">
       <BaseInput
         v-model="fields.third"
+        icon="lucide:search"
         size="lg"
         rounded="md"
         label="Size: lg"

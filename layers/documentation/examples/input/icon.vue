@@ -1,39 +1,37 @@
 <template>
-  <div class="grid gap-6 md:max-w-lg md:grid-cols-2">
-    <BaseInput
-      v-model="fields.first"
-      shape="straight"
-      type="search"
-      label="Search"
-      placeholder="Enter search terms..."
-      icon="lucide:search"
-    />
+  <div class="flex max-w-3xl flex-wrap items-end gap-3">
+    <div class="flex-1">
+      <BaseInput
+        v-model="fields.first"
+        icon="lucide:search"
+        size="sm"
+        rounded="md"
+        label="Size: sm"
+        placeholder="Ex: username"
+      />
+    </div>
 
-    <BaseInput
-      v-model="fields.second"
-      shape="rounded"
-      type="email"
-      label="Email Address"
-      placeholder="Your email..."
-      icon="lucide:mail"
-    />
+    <div class="flex-1">
+      <BaseInput
+        v-model="fields.second"
+        icon="lucide:search"
+        size="md"
+        rounded="md"
+        label="Size: md"
+        placeholder="Ex: username"
+      />
+    </div>
 
-    <BaseInput
-      v-model="fields.third"
-      shape="curved"
-      label="Username"
-      placeholder="Your username..."
-      icon="lucide:user"
-    />
-
-    <BaseInput
-      v-model="fields.fourth"
-      type="password"
-      shape="full"
-      label="Password"
-      placeholder="Enter password..."
-      icon="lucide:lock"
-    />
+    <div class="flex-1">
+      <BaseInput
+        v-model="fields.third"
+        icon="lucide:search"
+        size="lg"
+        rounded="md"
+        label="Size: lg"
+        placeholder="Ex: username"
+      />
+    </div>
   </div>
 </template>
 

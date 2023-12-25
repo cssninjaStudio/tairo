@@ -3,33 +3,33 @@
     <div class="flex-1">
       <BaseInput
         v-model="fields.first"
+        contrast="muted-contrast"
         size="sm"
         rounded="md"
         label="Size: sm"
         placeholder="Ex: username"
-        error="Please enter a valid username"
       />
     </div>
 
     <div class="flex-1">
       <BaseInput
         v-model="fields.second"
+        contrast="muted-contrast"
         size="md"
         rounded="md"
         label="Size: md"
         placeholder="Ex: username"
-        error="Please enter a valid username"
       />
     </div>
 
     <div class="flex-1">
       <BaseInput
         v-model="fields.third"
+        contrast="muted-contrast"
         size="lg"
         rounded="md"
         label="Size: lg"
         placeholder="Ex: username"
-        error="Please enter a valid username"
       />
     </div>
   </div>

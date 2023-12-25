@@ -7,7 +7,6 @@
         rounded="md"
         label="Size: sm"
         placeholder="Ex: username"
-        error="Please enter a valid username"
       />
     </div>
 
@@ -18,7 +17,6 @@
         rounded="md"
         label="Size: md"
         placeholder="Ex: username"
-        error="Please enter a valid username"
       />
     </div>
 
@@ -29,7 +27,6 @@
         rounded="md"
         label="Size: lg"
         placeholder="Ex: username"
-        error="Please enter a valid username"
       />
     </div>
   </div>
