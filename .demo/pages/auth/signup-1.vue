@@ -133,7 +133,7 @@ const onSubmit = handleSubmit(async (values) => {
         </BaseParagraph>
         <BaseButton
           to="/auth/login-1"
-          shape="curved"
+          rounded="lg"
           class="w-full"
         >
           Login to Account
@@ -201,7 +201,7 @@ const onSubmit = handleSubmit(async (values) => {
               :error="errorMessage"
               :disabled="isSubmitting"
               type="text"
-              shape="curved"
+              rounded="lg"
               placeholder="Username"
               icon="ph:fingerprint-duotone"
               @update:model-value="handleChange"
@@ -217,7 +217,7 @@ const onSubmit = handleSubmit(async (values) => {
               :error="errorMessage"
               :disabled="isSubmitting"
               type="email"
-              shape="curved"
+              rounded="lg"
               placeholder="Email Address"
               icon="ph:at-duotone"
               @update:model-value="handleChange"
@@ -234,7 +234,7 @@ const onSubmit = handleSubmit(async (values) => {
               :error="errorMessage"
               :disabled="isSubmitting"
               :user-inputs="[values.username ?? '', values.email ?? '']"
-              shape="curved"
+              rounded="lg"
               placeholder="Password"
               icon="ph:lock-duotone"
               @update:model-value="handleChange"
@@ -250,7 +250,7 @@ const onSubmit = handleSubmit(async (values) => {
               :error="errorMessage"
               :disabled="isSubmitting"
               type="password"
-              shape="curved"
+              rounded="lg"
               placeholder="Confirm password"
               icon="ph:check"
               @update:model-value="handleChange"
@@ -262,7 +262,7 @@ const onSubmit = handleSubmit(async (values) => {
           :disabled="isSubmitting"
           :loading="isSubmitting"
           type="submit"
-          shape="curved"
+          rounded="lg"
           color="primary"
           class="!h-11 w-full"
         >

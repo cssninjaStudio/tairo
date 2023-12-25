@@ -49,7 +49,7 @@ const { data, pending, error, refresh } = await useFetch(
         <BaseInput
           v-model="filter"
           icon="lucide:search"
-          shape="full"
+          rounded="full"
           placeholder="Filter users..."
           :classes="{
             wrapper: 'w-full sm:w-auto',
@@ -57,13 +57,13 @@ const { data, pending, error, refresh } = await useFetch(
         />
       </template>
       <template #right>
-        <BaseButton class="w-full sm:w-32" shape="full">
+        <BaseButton class="w-full sm:w-32" rounded="full">
           Manage
         </BaseButton>
         <BaseButton
           color="primary"
           class="w-full sm:w-32"
-          shape="full"
+          rounded="full"
         >
           <Icon name="lucide:plus" class="h-4 w-4" />
           <span>Add User</span>
@@ -104,7 +104,7 @@ const { data, pending, error, refresh } = await useFetch(
             <BaseCard
               v-for="(item, index) in data?.data"
               :key="index"
-              shape="rounded"
+              rounded="sm"
               elevated-hover
               class="overflow-hidden"
             >
@@ -194,11 +194,11 @@ const { data, pending, error, refresh } = await useFetch(
                   />
                 </div>
                 <div class="flex items-center gap-2">
-                  <BaseButton shape="rounded" class="w-full">
+                  <BaseButton rounded="sm" class="w-full">
                     <Icon name="ph:user-duotone" class="h-4 w-4" />
                     <span>Profile</span>
                   </BaseButton>
-                  <BaseButton shape="rounded" class="w-full">
+                  <BaseButton rounded="sm" class="w-full">
                     <Icon name="ph:chat-circle-duotone" class="h-4 w-4" />
                     <span>Talk</span>
                   </BaseButton>
@@ -212,7 +212,7 @@ const { data, pending, error, refresh } = await useFetch(
             :total-items="data?.total ?? 0"
             :item-per-page="perPage"
             :current-page="page"
-            shape="curved"
+            rounded="lg"
           />
         </div>
       </div>

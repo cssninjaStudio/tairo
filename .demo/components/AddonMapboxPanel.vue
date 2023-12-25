@@ -484,7 +484,7 @@ watch(
               v-for="(feature, key) in locations.features"
               :key="key"
               class="cursor-pointer p-6"
-              shape="curved"
+              rounded="lg"
               :class="[
                 selectedFeatureName === feature.properties.name &&
                   'border-primary-500',

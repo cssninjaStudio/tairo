@@ -84,7 +84,7 @@ const { open } = usePanels()
         </button>
         <BaseThemeToggle aria-label="Toggle darkmode" />
         <BaseButton
-          shape="curved"
+          rounded="lg"
           color="primary"
           to="https://go.cssninja.io/buy-tairo"
           class="ltablet:!flex !hidden lg:!flex"

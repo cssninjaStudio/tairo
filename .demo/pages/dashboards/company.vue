@@ -333,7 +333,7 @@ function toggleAllVisibleSelection() {
         </div>
         <!-- Widget -->
         <div class="col-span-12">
-          <TairoTable shape="rounded">
+          <TairoTable rounded="sm">
             <template #header>
               <TairoTableHeading uppercase class="px-4 py-6">
                 <div class="flex items-center">
@@ -343,7 +343,7 @@ function toggleAllVisibleSelection() {
                       selected.length > 0 && !isAllVisibleSelected
                     "
                     name="table-1-main"
-                    shape="rounded"
+                    rounded="sm"
                     class="text-primary-500"
                     @click="toggleAllVisibleSelection"
                   />
@@ -373,7 +373,7 @@ function toggleAllVisibleSelection() {
                     v-model="selected"
                     :value="member.id"
                     :name="member.id"
-                    shape="rounded"
+                    rounded="sm"
                     class="text-primary-500"
                   />
                 </div>
@@ -399,8 +399,8 @@ function toggleAllVisibleSelection() {
                 <BaseTag
                   v-if="member.status === 'Available'"
                   color="success"
-                  flavor="pastel"
-                  shape="full"
+                  variant="pastel"
+                  rounded="full"
                   class="font-medium"
                 >
                   {{ member.status }}
@@ -408,8 +408,8 @@ function toggleAllVisibleSelection() {
                 <BaseTag
                   v-else-if="member.status === 'New'"
                   color="info"
-                  flavor="pastel"
-                  shape="full"
+                  variant="pastel"
+                  rounded="full"
                   class="font-medium"
                 >
                   {{ member.status }}
@@ -417,8 +417,8 @@ function toggleAllVisibleSelection() {
                 <BaseTag
                   v-else-if="member.status === 'Hired'"
                   color="warning"
-                  flavor="pastel"
-                  shape="full"
+                  variant="pastel"
+                  rounded="full"
                   class="font-medium"
                 >
                   {{ member.status }}

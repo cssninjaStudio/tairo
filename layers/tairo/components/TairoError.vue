@@ -61,7 +61,7 @@ const showStackTrace = ref(true)
           class="mx-auto flex w-full max-w-xs items-center justify-center gap-2"
         >
           <BaseButton
-            shape="curved"
+            rounded="lg"
             class="mx-auto !h-12 w-full max-w-[160px] items-center gap-2"
             @click="handleError"
           >
@@ -71,7 +71,7 @@ const showStackTrace = ref(true)
           <DevOnly>
             <BaseButton
               color="muted"
-              shape="curved"
+              rounded="lg"
               class="mx-auto !h-12 w-full max-w-[160px]"
               @click="retry"
             >
@@ -96,7 +96,7 @@ const showStackTrace = ref(true)
       <div v-if="showStackTrace">
         <BaseCard
           v-focus
-          shape="curved"
+          rounded="lg"
           class="nui-focus nui-text-700 group relative mx-auto mt-6 max-w-3xl border-2 border-dashed p-8 hover:border-solid"
           tabindex="0"
         >
@@ -113,7 +113,7 @@ const showStackTrace = ref(true)
             <BaseTag
               v-if="props.error.url"
               color="danger"
-              flavor="outline"
+              variant="outline"
               size="sm"
             >
               {{ props.error.url }}
@@ -122,7 +122,7 @@ const showStackTrace = ref(true)
           <div class="mb-4 flex items-center gap-2">
             <BaseIconBox
               color="danger"
-              shape="full"
+              rounded="full"
               size="md"
             >
               <Icon name="ph:skull-duotone" class="h-6 w-6" />

@@ -1063,7 +1063,7 @@ const activeTab = ref('tab-1')
             :key="index"
             class="relative h-full"
           >
-            <BaseCard shape="curved" class="flex h-full flex-col p-6">
+            <BaseCard rounded="lg" class="flex h-full flex-col p-6">
               <div class="flex h-full w-full flex-col gap-4">
                 <div :data-nui-tooltip="company.name">
                   <Icon :name="company.logo" class="h-8 w-8 shrink-0" />
@@ -1117,7 +1117,7 @@ const activeTab = ref('tab-1')
                     </div>
                     <div class="flex gap-2">
                       <BaseButton
-                        shape="curved"
+                        rounded="lg"
                         color="default"
                         class="w-28"
                       >

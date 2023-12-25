@@ -69,7 +69,7 @@ watch(inputFile, (value) => {
             >
               <BaseButtonIcon
                 size="sm"
-                shape="full"
+                rounded="full"
                 tooltip="Remove image"
                 @click="remove(files.item(0)!)"
               >
@@ -80,7 +80,7 @@ watch(inputFile, (value) => {
               <div class="relative" tooltip="Upload image">
                 <BaseButtonIcon
                   size="sm"
-                  shape="full"
+                  rounded="full"
                   @click="open"
                 >
                   <Icon name="lucide:plus" class="h-4 w-4" />
@@ -102,7 +102,7 @@ watch(inputFile, (value) => {
       <div class="mx-auto flex w-full max-w-sm flex-col gap-3">
         <BaseInput
           v-model="project.name"
-          shape="curved"
+          rounded="lg"
           placeholder="Project name"
           :classes="{
             input: 'h-12 text-base text-center',
@@ -110,7 +110,7 @@ watch(inputFile, (value) => {
         />
         <BaseTextarea
           v-model="project.description"
-          shape="curved"
+          rounded="lg"
           placeholder="Describe your project..."
           autogrow
           class="max-h-52"

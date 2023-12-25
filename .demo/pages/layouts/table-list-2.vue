@@ -96,7 +96,7 @@ const { data, pending, error, refresh } = await useFetch('/api/products', {
         </div>
         <div v-else>
           <div class="w-full">
-            <TairoTable shape="rounded">
+            <TairoTable rounded="sm">
               <template #header>
                 <TairoTableHeading uppercase spaced>
                   Product
@@ -161,7 +161,7 @@ const { data, pending, error, refresh } = await useFetch('/api/products', {
               :total-items="data?.total ?? 0"
               :item-per-page="perPage"
               :current-page="page"
-              shape="curved"
+              rounded="lg"
             />
           </div>
         </div>

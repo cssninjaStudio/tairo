@@ -46,7 +46,7 @@ const fake = ref('')
           <BaseCard
             v-for="index in 10"
             :key="index"
-            shape="curved"
+            rounded="lg"
             class="flex flex-col p-5 sm:flex-row sm:items-center"
           >
             <div

@@ -61,12 +61,12 @@ function difficultyLabel(itemDifficulty: number) {
     <TairoContentWrapperTabbed
       :labels="['All', 'Saved']"
       reverse
-      shape="curved"
+      rounded="lg"
     >
       <template #left>
         <BaseInput
           v-model="filter"
-          shape="curved"
+          rounded="lg"
           icon="lucide:search"
           placeholder="Filter courses..."
           :classes="{
@@ -106,7 +106,7 @@ function difficultyLabel(itemDifficulty: number) {
             <DemoFlexTableRow
               v-for="(item, index) in data?.data"
               :key="index"
-              shape="rounded"
+              rounded="sm"
             >
               <template #start>
                 <DemoFlexTableStart
@@ -214,7 +214,7 @@ function difficultyLabel(itemDifficulty: number) {
               :total-items="data?.total ?? 0"
               :item-per-page="perPage"
               :current-page="page"
-              shape="full"
+              rounded="full"
             />
           </div>
         </div>

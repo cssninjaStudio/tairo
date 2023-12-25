@@ -69,14 +69,14 @@ const members = [
       </div>
       <div v-if="props.actions" class="ms-auto flex items-center">
         <BaseButtonIcon
-          shape="curved"
+          rounded="lg"
           muted
           class="scale-75"
         >
           <Icon name="ph:phone-duotone" class="h-5 w-5" />
         </BaseButtonIcon>
         <BaseButtonIcon
-          shape="curved"
+          rounded="lg"
           muted
           class="scale-75"
         >

@@ -98,7 +98,7 @@ function useGaugePersonal() {
     <!-- Column -->
     <div class="relative flex flex-col gap-4">
       <!-- Widget -->
-      <BaseCard shape="curved" class="flex flex-col p-6">
+      <BaseCard rounded="lg" class="flex flex-col p-6">
         <div class="mb-6 flex items-center justify-between">
           <BaseHeading
             as="h3"
@@ -122,36 +122,36 @@ function useGaugePersonal() {
         </div>
       </BaseCard>
       <!-- Widget -->
-      <BaseCard shape="curved" class="p-6">
+      <BaseCard rounded="lg" class="p-6">
         <DemoFollowersCompact />
       </BaseCard>
       <!-- Widget -->
-      <BaseCard shape="curved" class="p-6">
+      <BaseCard rounded="lg" class="p-6">
         <div class="flex w-full items-center justify-between">
-          <DemoSearchCompact shape="curved" />
+          <DemoSearchCompact rounded="lg" />
         </div>
       </BaseCard>
       <!-- Widget -->
-      <BaseCard shape="curved" class="p-3">
-        <DemoVideoCompact shape="curved" />
+      <BaseCard rounded="lg" class="p-3">
+        <DemoVideoCompact rounded="lg" />
       </BaseCard>
       <!-- Widget -->
-      <BaseCard shape="curved" class="p-6">
-        <DemoTagListCompact shape="curved" />
+      <BaseCard rounded="lg" class="p-6">
+        <DemoTagListCompact rounded="lg" />
       </BaseCard>
     </div>
     <!-- Column -->
     <div class="relative flex flex-col gap-4">
       <!-- Widget -->
-      <BaseCard shape="curved" class="p-4">
-        <DemoIconLinks shape="curved" />
+      <BaseCard rounded="lg" class="p-4">
+        <DemoIconLinks rounded="lg" />
       </BaseCard>
       <!-- Widget -->
-      <BaseCard shape="curved" class="p-4">
-        <DemoDaysSquare shape="curved" />
+      <BaseCard rounded="lg" class="p-4">
+        <DemoDaysSquare rounded="lg" />
       </BaseCard>
       <!-- Widget -->
-      <BaseCard shape="curved" class="p-2">
+      <BaseCard rounded="lg" class="p-2">
         <Calendar
           :attributes="[
             {
@@ -178,14 +178,14 @@ function useGaugePersonal() {
         />
       </BaseCard>
       <!-- Widget -->
-      <BaseCard shape="curved" class="p-4">
-        <DemoMenuIconList shape="curved" />
+      <BaseCard rounded="lg" class="p-4">
+        <DemoMenuIconList rounded="lg" />
       </BaseCard>
     </div>
     <!-- Column -->
     <div class="relative flex flex-col gap-4">
       <!-- Widget -->
-      <BaseCard shape="curved" class="p-6">
+      <BaseCard rounded="lg" class="p-6">
         <DemoIconText
           title="Payment"
           icon="lucide:bell"
@@ -194,32 +194,32 @@ function useGaugePersonal() {
         />
       </BaseCard>
       <!-- Widget -->
-      <BaseCard shape="curved" class="p-3">
+      <BaseCard rounded="lg" class="p-3">
         <DemoPicture
           src="/img/illustrations/widgets/mountain-picture.svg"
           alt="Picture widget image description"
-          shape="curved"
+          rounded="lg"
           :height="286"
           :width="212"
           loading
         />
       </BaseCard>
       <!-- Widget -->
-      <BaseCard shape="curved" class="p-6">
+      <BaseCard rounded="lg" class="p-6">
         <DemoInboxMessage
           picture="/img/avatars/10.svg"
           name="Kendra W."
           title="Design Project"
           text="Where are we in terms of design? We need to review the new screens."
           time="28 minutes"
-          shape="curved"
+          rounded="lg"
         />
       </BaseCard>
     </div>
     <!-- Column -->
     <div class="relative flex flex-col gap-4">
       <!-- Widget -->
-      <BaseCard shape="curved" class="p-6">
+      <BaseCard rounded="lg" class="p-6">
         <div class="mb-6 flex items-center justify-between">
           <BaseHeading
             as="h3"
@@ -231,10 +231,10 @@ function useGaugePersonal() {
             <span>Popular topics</span>
           </BaseHeading>
         </div>
-        <DemoTagListCompact shape="curved" />
+        <DemoTagListCompact rounded="lg" />
       </BaseCard>
       <!-- Widget -->
-      <BaseCard class="p-6" shape="curved">
+      <BaseCard class="p-6" rounded="lg">
         <DemoNotificationsCompact />
       </BaseCard>
       <!-- Widget -->
@@ -243,10 +243,10 @@ function useGaugePersonal() {
         text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quid censes in Latino fore? Nam ante Aristippus, et ille melius."
         label="Upgrade Now"
         to="#"
-        shape="curved"
+        rounded="lg"
       />
       <!-- Widget -->
-      <BaseCard shape="curved" class="p-6">
+      <BaseCard rounded="lg" class="p-6">
         <DemoIconText
           title="Messages"
           icon="lucide:message-square"

@@ -115,7 +115,7 @@ function toggleAllVisibleSelection() {
         </div>
         <div v-else>
           <div class="w-full">
-            <TairoTable shape="rounded">
+            <TairoTable rounded="sm">
               <template #header>
                 <TairoTableHeading
                   uppercase
@@ -129,7 +129,7 @@ function toggleAllVisibleSelection() {
                         selected.length > 0 && !isAllVisibleSelected
                       "
                       name="table-1-main"
-                      shape="full"
+                      rounded="full"
                       class="text-primary-500"
                       @click="toggleAllVisibleSelection"
                     />
@@ -176,7 +176,7 @@ function toggleAllVisibleSelection() {
                       v-model="selected"
                       :value="item.id"
                       :name="`item-checkbox-${item.id}`"
-                      shape="full"
+                      rounded="full"
                       class="text-primary-500"
                     />
                   </div>
@@ -228,7 +228,7 @@ function toggleAllVisibleSelection() {
               :total-items="data?.total ?? 0"
               :item-per-page="perPage"
               :current-page="page"
-              shape="curved"
+              rounded="lg"
             />
           </div>
         </div>

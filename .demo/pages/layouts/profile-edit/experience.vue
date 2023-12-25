@@ -98,12 +98,12 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 </div>
                 <div class="ms-auto">
                   <BaseDropdown
-                    flavor="context"
+                    variant="context"
                     label="Dropdown"
                     orientation="end"
                     size="md"
                     class="z-20"
-                    shape="curved"
+                    rounded="lg"
                   >
                     <BaseDropdownDivider />
                     <BaseDropdownItem
@@ -155,7 +155,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 </BaseParagraph>
               </div>
               <div class="ms-auto">
-                <BaseButtonIcon shape="full" size="sm">
+                <BaseButtonIcon rounded="full" size="sm">
                   <Icon name="lucide:plus" class="h-4 w-4" />
                 </BaseButtonIcon>
               </div>

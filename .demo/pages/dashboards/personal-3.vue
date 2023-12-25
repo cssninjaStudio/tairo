@@ -120,7 +120,7 @@ const candidates = [
     <div>
       <BaseCard
         class="bg-muted-200 flex h-full flex-col border-0 p-8"
-        shape="curved"
+        rounded="lg"
       >
         <div class="mb-5">
           <BaseHeading
@@ -162,7 +162,7 @@ const candidates = [
         <div>
           <BaseButton
             color="primary"
-            shape="curved"
+            rounded="lg"
             class="h-11 w-full"
           >
             <span>View Schedule</span>
@@ -173,11 +173,11 @@ const candidates = [
     <!--Grid item-->
     <div class="grid grid-cols-2 gap-4">
       <!-- Inner item -->
-      <BaseCard shape="curved" class="flex items-center gap-2 p-3">
+      <BaseCard rounded="lg" class="flex items-center gap-2 p-3">
         <BaseIconBox
           size="sm"
           class="bg-info-100 text-info-500 dark:bg-info-500/20 dark:text-info-400 dark:border-info-500 dark:border-2"
-          shape="full"
+          rounded="full"
         >
           <Icon name="ph:timer-duotone" class="h-5 w-5" />
         </BaseIconBox>
@@ -197,11 +197,11 @@ const candidates = [
         </div>
       </BaseCard>
       <!-- Inner item -->
-      <BaseCard shape="curved" class="flex items-center gap-2 p-3">
+      <BaseCard rounded="lg" class="flex items-center gap-2 p-3">
         <BaseIconBox
           size="sm"
           class="bg-primary-100 text-primary-500 dark:bg-primary-500/20 dark:text-primary-400 dark:border-primary-500 dark:border-2"
-          shape="full"
+          rounded="full"
         >
           <Icon name="ph:broadcast-duotone" class="h-5 w-5" />
         </BaseIconBox>
@@ -221,11 +221,11 @@ const candidates = [
         </div>
       </BaseCard>
       <!-- Inner item -->
-      <BaseCard shape="curved" class="flex items-center gap-2 p-3">
+      <BaseCard rounded="lg" class="flex items-center gap-2 p-3">
         <BaseIconBox
           size="sm"
           class="bg-lime-100 text-lime-500 dark:border-2 dark:border-lime-500 dark:bg-lime-500/20 dark:text-lime-400"
-          shape="full"
+          rounded="full"
         >
           <Icon name="ph:user-plus-duotone" class="h-5 w-5" />
         </BaseIconBox>
@@ -245,11 +245,11 @@ const candidates = [
         </div>
       </BaseCard>
       <!-- Inner item -->
-      <BaseCard shape="curved" class="flex items-center gap-2 p-3">
+      <BaseCard rounded="lg" class="flex items-center gap-2 p-3">
         <BaseIconBox
           size="sm"
           class="bg-amber-100 text-amber-500 dark:border-2 dark:border-amber-500 dark:bg-amber-500/20 dark:text-amber-400"
-          shape="full"
+          rounded="full"
         >
           <Icon name="ph:door-duotone" class="h-5 w-5" />
         </BaseIconBox>
@@ -299,7 +299,7 @@ const candidates = [
     </div>
     <!--Grid item-->
     <div>
-      <BaseCard class="p-4" shape="curved">
+      <BaseCard class="p-4" rounded="lg">
         <Calendar
           :attributes="[
             {
@@ -328,7 +328,7 @@ const candidates = [
     </div>
     <!--Grid item-->
     <div>
-      <BaseCard class="p-6" shape="curved">
+      <BaseCard class="p-6" rounded="lg">
         <!-- Title -->
         <div class="mb-8 flex items-center justify-between">
           <BaseHeading
@@ -353,7 +353,7 @@ const candidates = [
     <!-- Grid item -->
     <div>
       <!-- Chart -->
-      <BaseCard shape="curved" class="p-6">
+      <BaseCard rounded="lg" class="p-6">
         <div class="mb-6 flex items-center justify-between">
           <BaseHeading
             as="h3"
@@ -377,7 +377,7 @@ const candidates = [
     <!-- Grid item -->
     <div class="flex flex-col gap-4">
       <!-- Card -->
-      <BaseCard shape="curved" class="flex items-center gap-3 p-4">
+      <BaseCard rounded="lg" class="flex items-center gap-3 p-4">
         <BaseAvatar src="/img/avatars/11.svg" size="md" />
         <div>
           <BaseHeading
@@ -395,7 +395,7 @@ const candidates = [
         </div>
         <div class="ms-auto flex items-center">
           <BaseButtonIcon
-            shape="curved"
+            rounded="lg"
             muted
             class="scale-75"
           >
@@ -404,7 +404,7 @@ const candidates = [
         </div>
       </BaseCard>
       <!-- Card -->
-      <BaseCard shape="curved" class="flex items-center gap-3 p-4">
+      <BaseCard rounded="lg" class="flex items-center gap-3 p-4">
         <BaseAvatar src="/img/avatars/16.svg" size="md" />
         <div>
           <BaseHeading
@@ -422,7 +422,7 @@ const candidates = [
         </div>
         <div class="ms-auto flex items-center">
           <BaseButtonIcon
-            shape="curved"
+            rounded="lg"
             muted
             class="scale-75"
           >
@@ -431,7 +431,7 @@ const candidates = [
         </div>
       </BaseCard>
       <!-- Card -->
-      <BaseCard shape="curved" class="flex items-center gap-3 p-4">
+      <BaseCard rounded="lg" class="flex items-center gap-3 p-4">
         <BaseAvatar src="/img/avatars/5.svg" size="md" />
         <div>
           <BaseHeading
@@ -449,7 +449,7 @@ const candidates = [
         </div>
         <div class="ms-auto flex items-center">
           <BaseButtonIcon
-            shape="curved"
+            rounded="lg"
             muted
             class="scale-75"
           >

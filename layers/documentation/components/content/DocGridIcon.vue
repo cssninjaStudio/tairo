@@ -2,14 +2,11 @@
 const props = defineProps<{
   name?: string
   color?:
-    | 'success'
     | 'primary'
-    | 'yellow'
-    | 'sky'
-    | 'pink'
-    | 'orange'
-    | 'lime'
-    | 'blue'
+    | 'info'
+    | 'success'
+    | 'warning'
+    | 'danger'
   to?: string
 }>()
 
@@ -19,12 +16,14 @@ const isExternal = computed(() => {
 </script>
 
 <template>
-  <BaseCard shape="curved" class="group/grid-icon flex items-center p-3">
+  <BaseCard rounded="lg" class="group/grid-icon flex items-center p-3">
     <BaseIconBox
       v-if="props.name"
       size="md"
       rounded="none"
       mask="blob"
+      :color="props.color"
+      variant="pastel"
     >
       <Icon :name="props.name" class="h-6 w-6" />
     </BaseIconBox>
@@ -54,7 +53,7 @@ const isExternal = computed(() => {
         :to="props.to"
         :target="isExternal ? '_blank' : undefined"
         :rel="isExternal ? 'noopener' : undefined"
-        shape="curved"
+        rounded="lg"
         muted
         class="scale-75"
       >

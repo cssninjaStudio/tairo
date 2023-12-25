@@ -99,7 +99,7 @@ const tools: Tool[] = [
           :name="tool.name"
         >
           <BaseCard
-            shape="curved"
+            rounded="lg"
             class="peer-checked:border-primary-500 peer-checked:shadow-muted-300/30 dark:peer-checked:shadow-muted-900/30 p-4 peer-checked:shadow-xl"
           >
             <div class="flex items-center gap-3">

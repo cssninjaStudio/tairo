@@ -70,8 +70,8 @@
         <BaseTag
           v-if="member.status === 'Available'"
           color="success"
-          flavor="pastel"
-          shape="full"
+          variant="pastel"
+          rounded="full"
           class="font-medium"
         >
           {{ member.status }}
@@ -80,8 +80,8 @@
         <BaseTag
           v-else-if="member.status === 'New'"
           color="info"
-          flavor="pastel"
-          shape="full"
+          variant="pastel"
+          rounded="full"
           class="font-medium"
         >
           {{ member.status }}
@@ -90,8 +90,8 @@
         <BaseTag
           v-else-if="member.status === 'Hired'"
           color="warning"
-          flavor="pastel"
-          shape="full"
+          variant="pastel"
+          rounded="full"
           class="font-medium"
         >
           {{ member.status }}

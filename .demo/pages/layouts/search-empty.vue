@@ -21,7 +21,7 @@ const searchTerms = ref('Ice cream pizza')
         v-model="searchTerms"
         icon="lucide:search"
         placeholder="Search..."
-        shape="full"
+        rounded="full"
         :classes="{
           wrapper: 'w-full',
           input: 'h-12 !ps-12',

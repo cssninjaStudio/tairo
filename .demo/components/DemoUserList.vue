@@ -1,10 +1,10 @@
 <script setup lang="ts">
 const props = withDefaults(
   defineProps<{
-    shape?: 'straight' | 'rounded' | 'curved' | 'full'
+    rounded?: 'none' | 'sm' | 'md' | 'lg' | 'full'
   }>(),
   {
-    shape: 'rounded',
+    rounded: 'sm',
   },
 )
 
@@ -64,7 +64,7 @@ const users = [
       <BaseAvatar
         :src="user.picture"
         size="sm"
-        :shape="props.shape"
+        :rounded="props.rounded"
       />
       <div>
         <BaseHeading
@@ -92,7 +92,7 @@ const users = [
           to="#"
           muted
           small
-          :shape="props.shape"
+          :rounded="props.rounded"
         >
           <Icon name="lucide:chevron-right" class="h-4 w-4" />
         </BaseButtonIcon>

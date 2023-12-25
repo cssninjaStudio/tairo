@@ -16,7 +16,7 @@ const props = withDefaults(
 <template>
   <NuxtLink :to="props.to" class="relative rounded-xl">
     <BaseCard
-      shape="curved"
+      rounded="lg"
       elevated-hover
       class="dark:!bg-muted-900 relative z-10 p-5 motion-reduce:hover:shadow-none"
       :class="[

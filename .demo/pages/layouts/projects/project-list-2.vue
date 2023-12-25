@@ -49,7 +49,7 @@ const { data, pending, error, refresh } = await useFetch(
         <BaseInput
           v-model="filter"
           icon="lucide:search"
-          shape="curved"
+          rounded="lg"
           placeholder="Filter projects..."
           :classes="{
             wrapper: 'w-full sm:w-auto',
@@ -60,7 +60,7 @@ const { data, pending, error, refresh } = await useFetch(
         <BaseButton
           color="primary"
           class="w-full sm:w-32"
-          shape="curved"
+          rounded="lg"
         >
           <Icon name="lucide:plus" class="h-4 w-4" />
           <span>New</span>
@@ -108,7 +108,7 @@ const { data, pending, error, refresh } = await useFetch(
                   :to="`/layouts/projects/details/${item.slug}`"
                 >
                   <BaseCard
-                    shape="curved"
+                    rounded="lg"
                     elevated-hover
                     class="group-hover:!border-primary-500 p-5"
                   >
@@ -116,7 +116,7 @@ const { data, pending, error, refresh } = await useFetch(
                       <BaseAvatar
                         :src="item.customer.logo"
                         size="sm"
-                        shape="straight"
+                        rounded="none"
                         mask="blob"
                         :data-nui-tooltip="item.name"
                         class="bg-muted-100 dark:bg-muted-700"
@@ -142,7 +142,7 @@ const { data, pending, error, refresh } = await useFetch(
                           :key="stack.name"
                           :src="stack.icon"
                           size="xxs"
-                          shape="straight"
+                          rounded="none"
                           mask="blob"
                           :data-nui-tooltip="stack.name"
                           class="bg-muted-100 dark:bg-muted-700"
@@ -209,7 +209,7 @@ const { data, pending, error, refresh } = await useFetch(
                 <BaseCard
                   v-for="(item, index) in data?.data"
                   :key="index"
-                  shape="curved"
+                  rounded="lg"
                   elevated-hover
                   class="hover:!border-primary-500"
                 >
@@ -229,7 +229,7 @@ const { data, pending, error, refresh } = await useFetch(
                         <BaseAvatar
                           :src="item.customer.logo"
                           size="sm"
-                          shape="straight"
+                          rounded="none"
                           mask="blob"
                           :data-nui-tooltip="item.name"
                           class="bg-muted-100 dark:bg-muted-700"
@@ -256,7 +256,7 @@ const { data, pending, error, refresh } = await useFetch(
                             :key="stack.name"
                             :src="stack.icon"
                             size="xxs"
-                            shape="straight"
+                            rounded="none"
                             mask="blob"
                             :data-nui-tooltip="stack.name"
                             class="bg-muted-100 dark:bg-muted-700"

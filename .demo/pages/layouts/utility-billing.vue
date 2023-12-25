@@ -143,7 +143,7 @@ const billingCycles = ref('monthly')
           value="starter"
         >
           <BaseCard
-            shape="rounded"
+            rounded="sm"
             class="text-muted-400/50 peer-checked:!border-success-500 peer-checked:text-success-500 group relative p-6 text-center peer-checked:[&_.child]:!opacity-100"
           >
             <div
@@ -175,7 +175,7 @@ const billingCycles = ref('monthly')
           value="freelancer"
         >
           <BaseCard
-            shape="rounded"
+            rounded="sm"
             class="text-muted-400/50 group relative p-6 text-center peer-checked:!border-yellow-400 peer-checked:text-yellow-400 peer-checked:[&_.child]:!opacity-100"
           >
             <div
@@ -207,7 +207,7 @@ const billingCycles = ref('monthly')
           value="business"
         >
           <BaseCard
-            shape="rounded"
+            rounded="sm"
             class="text-muted-400/50 group relative p-6 text-center peer-checked:!border-indigo-500 peer-checked:text-indigo-500 peer-checked:[&_.child]:!opacity-100"
           >
             <div
@@ -239,7 +239,7 @@ const billingCycles = ref('monthly')
           value="enterprise"
         >
           <BaseCard
-            shape="rounded"
+            rounded="sm"
             class="text-muted-400/50 peer-checked:!border-primary-500 peer-checked:text-primary-500 group relative p-6 text-center peer-checked:[&_.child]:!opacity-100"
           >
             <div
@@ -267,7 +267,7 @@ const billingCycles = ref('monthly')
         </BaseRadioHeadless>
       </div>
       <div>
-        <BaseCard shape="rounded" class="p-8">
+        <BaseCard rounded="sm" class="p-8">
           <div class="flex gap-12">
             <TairoLogo class="h-12 w-12 shrink-0" :class="planColor" />
             <div>

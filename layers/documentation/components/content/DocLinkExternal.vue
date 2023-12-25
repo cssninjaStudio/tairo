@@ -19,7 +19,7 @@ const props = withDefaults(
   <div class="flex items-center gap-4">
     <div>
       <BaseButtonAction
-        shape="full"
+        rounded="full"
         :to="props.to"
         target="_blank"
         rel="noopener"

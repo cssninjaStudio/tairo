@@ -191,7 +191,7 @@ const jobs = [
     <!-- Search bar -->
     <div class="relative">
       <BaseCard
-        shape="curved"
+        rounded="lg"
         class="ptablet:py-6 ptablet:px-4 ptablet:grid ptablet:grid-cols-12 ltablet:divide-x divide-muted-200 dark:divide-muted-700 mb-10 flex w-full flex-col items-center py-2 sm:flex-row sm:py-0 lg:divide-x"
       >
         <div
@@ -199,7 +199,7 @@ const jobs = [
         >
           <BaseInput
             v-model.trim="search"
-            shape="curved"
+            rounded="lg"
             icon="lucide:search"
             placeholder="Job keywords"
           />
@@ -207,7 +207,7 @@ const jobs = [
         <div class="ptablet:col-span-6 w-full flex-1 px-4 py-2 sm:w-auto">
           <BaseInput
             v-model.trim="location"
-            shape="curved"
+            rounded="lg"
             icon="lucide:map-pin"
             placeholder="Location"
           />
@@ -215,7 +215,7 @@ const jobs = [
         <div class="ptablet:col-span-6 w-full flex-1 px-4 py-2 sm:w-auto">
           <BaseSelect
             v-model="selectedType"
-            shape="curved"
+            rounded="lg"
             icon="lucide:briefcase"
             label=""
             hide-label
@@ -243,7 +243,7 @@ const jobs = [
         <div class="ptablet:col-span-6 w-full flex-1 px-4 py-2 sm:w-auto">
           <BaseSelect
             v-model="selectedRange"
-            shape="curved"
+            rounded="lg"
             icon="lucide:dollar-sign"
             label=""
             hide-label
@@ -270,7 +270,7 @@ const jobs = [
         </div>
         <div class="ptablet:col-span-12 w-full px-4 py-2 sm:w-auto">
           <BaseButton
-            shape="curved"
+            rounded="lg"
             color="primary"
             class="ptablet:w-full w-full sm:w-32"
           >
@@ -310,12 +310,12 @@ const jobs = [
             <form class="space-y-2">
               <BaseInput
                 v-model.trim="alertKeyword"
-                shape="curved"
+                rounded="lg"
                 icon="lucide:search"
                 placeholder="Job keywords"
               />
               <BaseButton
-                shape="curved"
+                rounded="lg"
                 color="primary"
                 class="w-full"
               >
@@ -346,12 +346,12 @@ const jobs = [
                     v-model="jobTypes"
                     value="job-types-1"
                     label="Full time jobs"
-                    shape="rounded"
+                    rounded="sm"
                     :classes="{ wrapper: 'text-primary-500' }"
                   />
                   <BaseTag
                     color="default"
-                    shape="full"
+                    rounded="full"
                     class="text-xs"
                     size="sm"
                   >
@@ -363,12 +363,12 @@ const jobs = [
                     v-model="jobTypes"
                     value="job-types-2"
                     label="Part time jobs"
-                    shape="rounded"
+                    rounded="sm"
                     :classes="{ wrapper: 'text-primary-500' }"
                   />
                   <BaseTag
                     color="default"
-                    shape="full"
+                    rounded="full"
                     class="text-xs"
                     size="sm"
                   >
@@ -380,12 +380,12 @@ const jobs = [
                     v-model="jobTypes"
                     value="job-types-3"
                     label="Remote jobs"
-                    shape="rounded"
+                    rounded="sm"
                     :classes="{ wrapper: 'text-primary-500' }"
                   />
                   <BaseTag
                     color="default"
-                    shape="full"
+                    rounded="full"
                     class="text-xs"
                     size="sm"
                   >
@@ -397,12 +397,12 @@ const jobs = [
                     v-model="jobTypes"
                     value="job-types-4"
                     label="Internships"
-                    shape="rounded"
+                    rounded="sm"
                     :classes="{ wrapper: 'text-primary-500' }"
                   />
                   <BaseTag
                     color="default"
-                    shape="full"
+                    rounded="full"
                     class="text-xs"
                     size="sm"
                   >
@@ -432,12 +432,12 @@ const jobs = [
                     v-model="jobSeniority"
                     value="seniority-level-1"
                     label="Student level"
-                    shape="rounded"
+                    rounded="sm"
                     :classes="{ wrapper: 'text-primary-500' }"
                   />
                   <BaseTag
                     color="default"
-                    shape="full"
+                    rounded="full"
                     class="text-xs"
                     size="sm"
                   >
@@ -449,12 +449,12 @@ const jobs = [
                     v-model="jobSeniority"
                     value="seniority-level-2"
                     label="Entry level"
-                    shape="rounded"
+                    rounded="sm"
                     :classes="{ wrapper: 'text-primary-500' }"
                   />
                   <BaseTag
                     color="default"
-                    shape="full"
+                    rounded="full"
                     class="text-xs"
                     size="sm"
                   >
@@ -466,12 +466,12 @@ const jobs = [
                     v-model="jobSeniority"
                     value="seniority-level-3"
                     label="Mid level"
-                    shape="rounded"
+                    rounded="sm"
                     :classes="{ wrapper: 'text-primary-500' }"
                   />
                   <BaseTag
                     color="default"
-                    shape="full"
+                    rounded="full"
                     class="text-xs"
                     size="sm"
                   >
@@ -483,12 +483,12 @@ const jobs = [
                     v-model="jobSeniority"
                     value="seniority-level-4"
                     label="Senior level"
-                    shape="rounded"
+                    rounded="sm"
                     :classes="{ wrapper: 'text-primary-500' }"
                   />
                   <BaseTag
                     color="default"
-                    shape="full"
+                    rounded="full"
                     class="text-xs"
                     size="sm"
                   >
@@ -500,12 +500,12 @@ const jobs = [
                     v-model="jobSeniority"
                     value="seniority-level-5"
                     label="Director level"
-                    shape="rounded"
+                    rounded="sm"
                     :classes="{ wrapper: 'text-primary-500' }"
                   />
                   <BaseTag
                     color="default"
-                    shape="full"
+                    rounded="full"
                     class="text-xs"
                     size="sm"
                   >
@@ -535,12 +535,12 @@ const jobs = [
                     v-model="jobSeniority"
                     value="salary-range-1"
                     label="10k ~ 20k"
-                    shape="rounded"
+                    rounded="sm"
                     :classes="{ wrapper: 'text-primary-500' }"
                   />
                   <BaseTag
                     color="default"
-                    shape="full"
+                    rounded="full"
                     class="text-xs"
                     size="sm"
                   >
@@ -552,12 +552,12 @@ const jobs = [
                     v-model="jobSeniority"
                     value="salary-range-2"
                     label="20k ~ 40k"
-                    shape="rounded"
+                    rounded="sm"
                     :classes="{ wrapper: 'text-primary-500' }"
                   />
                   <BaseTag
                     color="default"
-                    shape="full"
+                    rounded="full"
                     class="text-xs"
                     size="sm"
                   >
@@ -569,12 +569,12 @@ const jobs = [
                     v-model="jobSeniority"
                     value="salary-range-3"
                     label="40k ~ 75k"
-                    shape="rounded"
+                    rounded="sm"
                     :classes="{ wrapper: 'text-primary-500' }"
                   />
                   <BaseTag
                     color="default"
-                    shape="full"
+                    rounded="full"
                     class="text-xs"
                     size="sm"
                   >
@@ -586,12 +586,12 @@ const jobs = [
                     v-model="jobSeniority"
                     value="salary-range-4"
                     label="75k+"
-                    shape="rounded"
+                    rounded="sm"
                     :classes="{ wrapper: 'text-primary-500' }"
                   />
                   <BaseTag
                     color="default"
-                    shape="full"
+                    rounded="full"
                     class="text-xs"
                     size="sm"
                   >
@@ -631,7 +631,7 @@ const jobs = [
             :key="index"
             class="relative"
           >
-            <BaseCard shape="curved" class="p-6">
+            <BaseCard rounded="lg" class="p-6">
               <div class="flex w-full flex-col gap-4 sm:flex-row">
                 <div :data-nui-tooltip="job.company">
                   <Icon :name="job.logo" class="h-10 w-10 shrink-0" />
@@ -674,14 +674,14 @@ const jobs = [
                     </div>
                     <div class="flex gap-2">
                       <BaseButton
-                        shape="curved"
+                        rounded="lg"
                         color="primary"
                         class="w-24"
                       >
                         Apply
                       </BaseButton>
                       <BaseButton
-                        shape="curved"
+                        rounded="lg"
                         color="default"
                         class="w-24"
                       >

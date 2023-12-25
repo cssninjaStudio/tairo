@@ -106,7 +106,7 @@ const handleClipboard = () => {
 
 <template>
   <div class="relative py-3 sm:mx-auto sm:max-w-xl">
-    <BaseCard shape="curved" class="relative px-4 py-10 sm:p-10 md:mx-0">
+    <BaseCard rounded="lg" class="relative px-4 py-10 sm:p-10 md:mx-0">
       <div class="mx-auto max-w-md">
         <div class="flex items-center gap-4">
           <div
@@ -149,7 +149,7 @@ const handleClipboard = () => {
               <AddonInputPassword
                 v-model="password"
                 placeholder="Password"
-                shape="curved"
+                rounded="lg"
                 show
                 touched
               />
@@ -177,7 +177,7 @@ const handleClipboard = () => {
                     <BaseInputNumber
                       v-model="phraseStrength"
                       placeholder="Bits"
-                      shape="curved"
+                      rounded="lg"
                       :min="1"
                       :max="8"
                       :step="1"
@@ -199,7 +199,7 @@ const handleClipboard = () => {
                   >
                     <BaseButton
                       v-if="isSupported"
-                      shape="curved"
+                      rounded="lg"
                       class="!h-12 w-full"
                       @click="handleClipboard"
                     >
@@ -216,7 +216,7 @@ const handleClipboard = () => {
                     </div>
                     <BaseButton
                       color="primary"
-                      shape="curved"
+                      rounded="lg"
                       class="!h-12 w-full"
                       @click="generatePassphrase()"
                     >
@@ -233,7 +233,7 @@ const handleClipboard = () => {
                     <BaseInputNumber
                       v-model="charsLength"
                       placeholder="Length"
-                      shape="curved"
+                      rounded="lg"
                       :min="1"
                       :max="42"
                       :step="1"
@@ -309,7 +309,7 @@ const handleClipboard = () => {
                   >
                     <BaseButton
                       v-if="isSupported"
-                      shape="curved"
+                      rounded="lg"
                       class="!h-12 w-full"
                       @click="handleClipboard"
                     >
@@ -326,7 +326,7 @@ const handleClipboard = () => {
                     </div>
                     <BaseButton
                       color="primary"
-                      shape="curved"
+                      rounded="lg"
                       class="!h-12 w-full"
                       :disabled="!hasChars"
                       @click="generatePassword()"

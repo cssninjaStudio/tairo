@@ -31,7 +31,7 @@ const { x, y } = useWindowScroll()
       >
         <BaseCard
           class="shadow-muted-300/30 dark:shadow-muted-800/30 flex items-center justify-between gap-2 rounded-2xl p-4 shadow-xl"
-          :shape="props.rounded === 'full' ? 'lg' : props.rounded"
+          :rounded="props.rounded === 'full' ? 'lg' : props.rounded"
         >
           <slot>
             <BaseButton

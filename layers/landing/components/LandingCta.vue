@@ -21,7 +21,7 @@
               <div class="mt-8 flex items-center gap-2">
                 <BaseButton
                   to="/documentation"
-                  shape="curved"
+                  rounded="lg"
                   class="!h-11"
                 >
                   Open Documentation

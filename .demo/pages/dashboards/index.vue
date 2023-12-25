@@ -315,7 +315,7 @@ function useBarProfit() {
               <BaseIconBox
                 size="md"
                 class="bg-primary-100 text-primary-500 dark:bg-primary-500/20 dark:text-primary-400 dark:border-primary-500 dark:border-2"
-                shape="full"
+                rounded="full"
               >
                 <Icon name="ph:nut-duotone" class="h-5 w-5" />
               </BaseIconBox>
@@ -343,7 +343,7 @@ function useBarProfit() {
               <BaseIconBox
                 size="md"
                 class="bg-amber-100 text-amber-500 dark:border-2 dark:border-amber-500 dark:bg-amber-500/20 dark:text-amber-400"
-                shape="full"
+                rounded="full"
               >
                 <Icon name="ph:handshake-duotone" class="h-5 w-5" />
               </BaseIconBox>
@@ -371,7 +371,7 @@ function useBarProfit() {
               <BaseIconBox
                 size="md"
                 class="bg-green-100 text-green-500 dark:border-2 dark:border-green-500 dark:bg-green-500/20 dark:text-green-400"
-                shape="full"
+                rounded="full"
               >
                 <Icon name="ph:sketch-logo-duotone" class="h-5 w-5" />
               </BaseIconBox>
@@ -399,7 +399,7 @@ function useBarProfit() {
               <BaseIconBox
                 size="md"
                 class="bg-indigo-100 text-indigo-500 dark:border-2 dark:border-indigo-500 dark:bg-indigo-500/20 dark:text-indigo-400"
-                shape="full"
+                rounded="full"
               >
                 <Icon name="ph:bank-duotone" class="h-5 w-5" />
               </BaseIconBox>

@@ -197,7 +197,7 @@ function useAreaExpenses() {
             class="ltablet:pe-12 flex flex-col gap-y-4 sm:flex-row sm:gap-x-8 lg:pe-12"
           >
             <div>
-              <BaseButtonIcon shape="rounded">
+              <BaseButtonIcon rounded="sm">
                 <Icon name="lucide:plus" class="h-4 w-4" />
               </BaseButtonIcon>
             </div>
@@ -390,7 +390,7 @@ function useAreaExpenses() {
                     <BaseIconBox
                       class="bg-success-500/10 text-success-500"
                       size="md"
-                      shape="full"
+                      rounded="full"
                     >
                       <Icon name="ph:pizza-duotone" class="h-5 w-5" />
                     </BaseIconBox>
@@ -421,7 +421,7 @@ function useAreaExpenses() {
                     <BaseIconBox
                       class="bg-orange-500/10 text-orange-500"
                       size="md"
-                      shape="full"
+                      rounded="full"
                     >
                       <Icon name="ph:storefront-duotone" class="h-5 w-5" />
                     </BaseIconBox>
@@ -452,7 +452,7 @@ function useAreaExpenses() {
                     <BaseIconBox
                       class="bg-indigo-500/10 text-indigo-500"
                       size="md"
-                      shape="full"
+                      rounded="full"
                     >
                       <Icon name="ph:shopping-cart-duotone" class="h-5 w-5" />
                     </BaseIconBox>

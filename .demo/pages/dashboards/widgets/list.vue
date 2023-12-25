@@ -17,7 +17,7 @@ definePageMeta({
     <!-- Column -->
     <div class="relative">
       <!-- Widget -->
-      <BaseCard shape="curved" class="p-6">
+      <BaseCard rounded="lg" class="p-6">
         <!-- Title -->
         <div class="mb-8 flex items-center justify-between">
           <BaseHeading
@@ -42,7 +42,7 @@ definePageMeta({
     <!-- Column -->
     <div class="relative">
       <!-- Widget -->
-      <BaseCard shape="curved" class="p-6">
+      <BaseCard rounded="lg" class="p-6">
         <!-- Title -->
         <div class="mb-8 flex items-center justify-between">
           <BaseHeading
@@ -61,20 +61,20 @@ definePageMeta({
             View All
           </NuxtLink>
         </div>
-        <DemoUserList shape="full" />
+        <DemoUserList rounded="full" />
       </BaseCard>
     </div>
     <!-- Column -->
     <div class="relative">
       <!-- Widget -->
-      <BaseCard shape="curved" class="p-6">
-        <DemoFileListTabbed shape="full" />
+      <BaseCard rounded="lg" class="p-6">
+        <DemoFileListTabbed rounded="full" />
       </BaseCard>
     </div>
     <!-- Column -->
     <div class="relative">
       <!-- Widget -->
-      <BaseCard shape="curved" class="p-6">
+      <BaseCard rounded="lg" class="p-6">
         <!-- Title -->
         <div class="mb-8 flex items-center justify-between">
           <BaseHeading
@@ -99,7 +99,7 @@ definePageMeta({
     <!-- Column -->
     <div class="relative">
       <!-- Widget -->
-      <BaseCard shape="curved" class="p-6">
+      <BaseCard rounded="lg" class="p-6">
         <!-- Title -->
         <div class="mb-8 flex items-center justify-between">
           <BaseHeading
@@ -124,14 +124,14 @@ definePageMeta({
     <!-- Column -->
     <div class="relative">
       <!-- Widget -->
-      <BaseCard shape="curved" class="p-6">
-        <DemoTodoListTabbed shape="rounded" color="primary" />
+      <BaseCard rounded="lg" class="p-6">
+        <DemoTodoListTabbed rounded="sm" color="primary" />
       </BaseCard>
     </div>
     <!-- Column -->
     <div class="relative">
       <!-- Widget -->
-      <BaseCard class="p-6" shape="curved">
+      <BaseCard class="p-6" rounded="lg">
         <!-- Title -->
         <div class="mb-8 flex items-center justify-between">
           <BaseHeading
@@ -156,7 +156,7 @@ definePageMeta({
     <!-- Column -->
     <div class="relative">
       <!-- Widget -->
-      <BaseCard class="p-6" shape="curved">
+      <BaseCard class="p-6" rounded="lg">
         <!-- Title -->
         <div class="mb-8 flex items-center justify-between">
           <BaseHeading
@@ -181,7 +181,7 @@ definePageMeta({
     <!-- Column -->
     <div class="relative">
       <!-- Widget -->
-      <BaseCard class="p-6" shape="curved">
+      <BaseCard class="p-6" rounded="lg">
         <!-- Title -->
         <div class="mb-8 flex items-center justify-between">
           <BaseHeading
@@ -200,13 +200,13 @@ definePageMeta({
             View All
           </NuxtLink>
         </div>
-        <DemoTopicListCompact shape="full" />
+        <DemoTopicListCompact rounded="full" />
       </BaseCard>
     </div>
     <!-- Column -->
     <div class="relative">
       <!-- Widget -->
-      <BaseCard class="p-6" shape="curved">
+      <BaseCard class="p-6" rounded="lg">
         <!-- Title -->
         <div class="mb-8 flex items-center justify-between">
           <BaseHeading
@@ -225,13 +225,13 @@ definePageMeta({
             View All
           </NuxtLink>
         </div>
-        <DemoTimelineCompact shape="rounded" />
+        <DemoTimelineCompact rounded="sm" />
       </BaseCard>
     </div>
     <!-- Column -->
     <div class="relative">
       <!-- Widget -->
-      <BaseCard class="p-6" shape="curved">
+      <BaseCard class="p-6" rounded="lg">
         <!-- Title -->
         <div class="mb-8 flex items-center justify-between">
           <BaseHeading
@@ -250,13 +250,13 @@ definePageMeta({
             View All
           </NuxtLink>
         </div>
-        <DemoTimelineCompact shape="curved" />
+        <DemoTimelineCompact rounded="lg" />
       </BaseCard>
     </div>
     <!-- Column -->
     <div class="relative">
       <!-- Widget -->
-      <BaseCard class="p-6" shape="curved">
+      <BaseCard class="p-6" rounded="lg">
         <!-- Title -->
         <div class="mb-8 flex items-center justify-between">
           <BaseHeading
@@ -275,7 +275,7 @@ definePageMeta({
             View All
           </NuxtLink>
         </div>
-        <DemoTimelineCompact shape="full" />
+        <DemoTimelineCompact rounded="full" />
       </BaseCard>
     </div>
   </div>

@@ -32,7 +32,7 @@ Tags can have different radius factors. Use the `rounded` prop to change the rad
 title: Variant:solid
 demo: '#examples/tag/solid.vue'
 ---
-Tags can have different flavors and colors. Use the `solid` flavor with the `color` prop to display a tag with a solid color.
+Tags can have different variants and colors. Use the `solid` variant with the `color` prop to display a tag with a solid color.
 ::
 
 ::doc-component-demo
@@ -40,7 +40,7 @@ Tags can have different flavors and colors. Use the `solid` flavor with the `col
 title: Variant:pastel
 demo: '#examples/tag/pastel.vue'
 ---
-Tags can have different flavors and colors. Use the `pastel` flavor with the `color` prop to display a tag with a solid color.
+Tags can have different variants and colors. Use the `pastel` variant with the `color` prop to display a tag with a solid color.
 ::
 
 ::doc-component-demo
@@ -48,7 +48,7 @@ Tags can have different flavors and colors. Use the `pastel` flavor with the `co
 title: Variant:outline
 demo: '#examples/tag/outline.vue'
 ---
-Tags can have different flavors and colors. Use the `outline` flavor with the `color` prop to display a tag with a solid color.
+Tags can have different variants and colors. Use the `outline` variant with the `color` prop to display a tag with a solid color.
 ::
 
 ::doc-component-demo

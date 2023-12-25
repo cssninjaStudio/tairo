@@ -149,7 +149,7 @@ watchEffect(() => {
             <BaseInput
               v-model="search"
               icon="lucide:search"
-              shape="curved"
+              rounded="lg"
               placeholder="ex: Clarissa, Kendra, ..."
               :classes="{
                 wrapper: 'w-full relative z-10',
@@ -193,7 +193,7 @@ watchEffect(() => {
                   <div class="ms-auto">
                     <BaseButtonIcon
                       small
-                      shape="full"
+                      rounded="full"
                       @click="addTeammate(user)"
                     >
                       <Icon name="lucide:plus" class="h-4 w-4" />
@@ -309,7 +309,7 @@ watchEffect(() => {
                   <div class="ms-8">
                     <BaseButtonIcon
                       small
-                      shape="full"
+                      rounded="full"
                       @click="removeTeammate(idx)"
                     >
                       <Icon name="lucide:x" class="h-4 w-4" />

@@ -320,7 +320,7 @@ const currentRatingText = computed(() => {
     @submit.prevent="onSubmit"
   >
     <div class="ltablet:col-span-8 col-span-12 lg:col-span-8">
-      <BaseCard shape="rounded" class="p-4 md:p-8">
+      <BaseCard rounded="sm" class="p-4 md:p-8">
         <div class="grid grid-cols-1 gap-4 gap-y-2 text-sm lg:grid-cols-12">
           <div class="col-span-12 mb-10 text-gray-600 sm:col-span-3 sm:mb-0">
             <BaseHeading

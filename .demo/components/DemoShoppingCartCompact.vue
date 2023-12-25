@@ -1,10 +1,10 @@
 <script setup lang="ts">
 const props = withDefaults(
   defineProps<{
-    shape?: 'straight' | 'rounded' | 'curved' | 'full'
+    rounded?: 'none' | 'sm' | 'md' | 'lg' | 'full'
   }>(),
   {
-    shape: 'rounded',
+    rounded: 'sm',
   },
 )
 
@@ -47,7 +47,7 @@ const products = [
       <BaseTag
         color="primary"
         size="sm"
-        shape="full"
+        rounded="full"
       >
         3 items
       </BaseTag>
@@ -61,9 +61,10 @@ const products = [
         <div
           class="bg-muted-100 dark:bg-muted-700 flex h-16 w-16 shrink-0 items-center justify-center"
           :class="[
-            props.shape === 'rounded' ? 'rounded' : '',
-            props.shape === 'curved' ? 'rounded-xl' : '',
-            props.shape === 'full' ? 'rounded-full' : '',
+            props.rounded === 'sm' ? 'rounded' : '',
+            props.rounded === 'md' ? 'rounded-lg' : '',
+            props.rounded === 'lg' ? 'rounded-xl' : '',
+            props.rounded === 'full' ? 'rounded-full' : '',
           ]"
         >
           <img
@@ -85,7 +86,7 @@ const products = [
     <div class="mt-4">
       <BaseButton
         color="primary"
-        :shape="props.shape"
+        :rounded="props.rounded"
         class="!h-12 w-full"
       >
         Checkout

@@ -51,7 +51,7 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
           <div class="absolute bottom-0 end-0 z-10">
             <BaseButtonIcon
               small
-              shape="full"
+              rounded="full"
               class="hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500 pointer-events-none opacity-0 group-hover:pointer-events-auto group-hover:opacity-100"
               :to="getStep(1).to"
             >
@@ -70,12 +70,12 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
           <div class="grid grid-cols-12 gap-4">
             <!-- Description -->
             <div class="col-span-12">
-              <BaseCard shape="curved" class="group relative p-6">
+              <BaseCard rounded="lg" class="group relative p-6">
                 <!-- Edit -->
                 <div class="absolute end-3 top-3 z-10">
                   <BaseButtonIcon
                     small
-                    shape="full"
+                    rounded="full"
                     class="hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500 pointer-events-none opacity-0 group-hover:pointer-events-auto group-hover:opacity-100"
                     :to="getStep(1).to"
                   >
@@ -108,12 +108,12 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
             </div>
             <!-- Type -->
             <div class="col-span-12 sm:col-span-6">
-              <BaseCard shape="curved" class="group relative p-6">
+              <BaseCard rounded="lg" class="group relative p-6">
                 <!-- Edit -->
                 <div class="absolute end-3 top-3 z-10">
                   <BaseButtonIcon
                     small
-                    shape="full"
+                    rounded="full"
                     class="hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500 pointer-events-none opacity-0 group-hover:pointer-events-auto group-hover:opacity-100"
                     :to="getStep(0).to"
                   >
@@ -173,12 +173,12 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
             </div>
             <!-- Customer -->
             <div class="col-span-12 sm:col-span-6">
-              <BaseCard shape="curved" class="group relative p-6">
+              <BaseCard rounded="lg" class="group relative p-6">
                 <!-- Edit -->
                 <div class="absolute end-3 top-3 z-10">
                   <BaseButtonIcon
                     small
-                    shape="full"
+                    rounded="full"
                     class="hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500 pointer-events-none opacity-0 group-hover:pointer-events-auto group-hover:opacity-100"
                     :to="getStep(2).to"
                   >
@@ -221,12 +221,12 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
             </div>
             <!-- Budget -->
             <div class="col-span-12 sm:col-span-4">
-              <BaseCard shape="curved" class="group relative p-6">
+              <BaseCard rounded="lg" class="group relative p-6">
                 <!-- Edit -->
                 <div class="absolute end-3 top-3 z-10">
                   <BaseButtonIcon
                     small
-                    shape="full"
+                    rounded="full"
                     class="hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500 pointer-events-none opacity-0 group-hover:pointer-events-auto group-hover:opacity-100"
                     :to="getStep(2).to"
                   >
@@ -256,12 +256,12 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
             </div>
             <!-- Due Date -->
             <div class="col-span-12 sm:col-span-4">
-              <BaseCard shape="curved" class="group relative h-full p-6">
+              <BaseCard rounded="lg" class="group relative h-full p-6">
                 <!-- Edit -->
                 <div class="absolute end-3 top-3 z-10">
                   <BaseButtonIcon
                     small
-                    shape="full"
+                    rounded="full"
                     class="hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500 pointer-events-none opacity-0 group-hover:pointer-events-auto group-hover:opacity-100"
                     :to="getStep(2).to"
                   >
@@ -295,12 +295,12 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
             </div>
             <!-- Files -->
             <div class="col-span-12 sm:col-span-4">
-              <BaseCard shape="curved" class="group relative p-6">
+              <BaseCard rounded="lg" class="group relative p-6">
                 <!-- Edit -->
                 <div class="absolute end-3 top-3 z-10">
                   <BaseButtonIcon
                     small
-                    shape="full"
+                    rounded="full"
                     class="hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500 pointer-events-none opacity-0 group-hover:pointer-events-auto group-hover:opacity-100"
                     :to="getStep(3).to"
                   >
@@ -330,12 +330,12 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
             </div>
             <!-- Team -->
             <div class="col-span-12 sm:col-span-6">
-              <BaseCard shape="curved" class="group relative p-6">
+              <BaseCard rounded="lg" class="group relative p-6">
                 <!-- Edit -->
                 <div class="absolute end-3 top-3 z-10">
                   <BaseButtonIcon
                     small
-                    shape="full"
+                    rounded="full"
                     class="hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500 pointer-events-none opacity-0 group-hover:pointer-events-auto group-hover:opacity-100"
                     :to="getStep(4).to"
                   >
@@ -385,12 +385,12 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
             </div>
             <!-- Tools -->
             <div class="col-span-12 sm:col-span-6">
-              <BaseCard shape="curved" class="group relative p-6">
+              <BaseCard rounded="lg" class="group relative p-6">
                 <!-- Edit -->
                 <div class="absolute end-3 top-3 z-10">
                   <BaseButtonIcon
                     small
-                    shape="full"
+                    rounded="full"
                     class="hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500 pointer-events-none opacity-0 group-hover:pointer-events-auto group-hover:opacity-100"
                     :to="getStep(5).to"
                   >
@@ -473,7 +473,7 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
           <div class="mt-2 text-center">
             <BaseButton
               to="/dashboards"
-              shape="curved"
+              rounded="lg"
               color="primary"
               class="w-48"
             >

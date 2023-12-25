@@ -293,7 +293,7 @@ function useBarProfit() {
     >
       <!-- Tile -->
       <div class="relative">
-        <BaseCard shape="curved" class="p-6">
+        <BaseCard rounded="lg" class="p-6">
           <div class="mb-2 flex items-center justify-between">
             <div class="flex items-center gap-2">
               <span class="block h-2 w-2 rounded-full bg-emerald-500" />
@@ -302,7 +302,7 @@ function useBarProfit() {
               </span>
             </div>
             <BaseDropdown
-              flavor="context"
+              variant="context"
               label="Dropdown"
               orientation="end"
               class="z-20"
@@ -356,7 +356,7 @@ function useBarProfit() {
           </div>
           <div class="flex items-center gap-2">
             <BaseIconBox
-              shape="full"
+              rounded="full"
               size="sm"
               class="bg-red-500 text-white shadow-xl shadow-red-500/20 dark:shadow-red-800/20"
             >
@@ -392,7 +392,7 @@ function useBarProfit() {
       </div>
       <!-- Tile -->
       <div class="relative">
-        <BaseCard shape="curved" class="p-6">
+        <BaseCard rounded="lg" class="p-6">
           <div class="mb-2 flex items-center justify-between">
             <div class="flex items-center gap-2">
               <span class="block h-2 w-2 rounded-full bg-emerald-500" />
@@ -401,7 +401,7 @@ function useBarProfit() {
               </span>
             </div>
             <BaseDropdown
-              flavor="context"
+              variant="context"
               label="Dropdown"
               orientation="end"
               class="z-20"
@@ -455,7 +455,7 @@ function useBarProfit() {
           </div>
           <div class="flex items-center gap-2">
             <BaseIconBox
-              shape="full"
+              rounded="full"
               size="sm"
               class="bg-blue-800 text-white shadow-xl shadow-blue-500/20 dark:shadow-blue-800/20"
             >
@@ -491,7 +491,7 @@ function useBarProfit() {
       </div>
       <!-- Tile -->
       <div class="relative">
-        <BaseCard shape="curved" class="p-6">
+        <BaseCard rounded="lg" class="p-6">
           <div class="mb-2 flex items-center justify-between">
             <div class="flex items-center gap-2">
               <span
@@ -502,7 +502,7 @@ function useBarProfit() {
               </span>
             </div>
             <BaseDropdown
-              flavor="context"
+              variant="context"
               label="Dropdown"
               orientation="end"
               class="z-20"
@@ -556,7 +556,7 @@ function useBarProfit() {
           </div>
           <div class="flex items-center gap-2">
             <BaseIconBox
-              shape="full"
+              rounded="full"
               size="sm"
               class="bg-sky-500 text-white shadow-xl shadow-sky-500/20 dark:shadow-sky-800/20"
             >
@@ -595,7 +595,7 @@ function useBarProfit() {
     <div class="grid grid-cols-12 gap-6">
       <!-- Grid item -->
       <div class="ltablet:col-span-4 col-span-12 md:col-span-6 lg:col-span-4">
-        <BaseCard shape="curved" class="p-6">
+        <BaseCard rounded="lg" class="p-6">
           <div class="mb-6 flex items-center justify-between">
             <BaseHeading
               as="h3"
@@ -617,7 +617,7 @@ function useBarProfit() {
             <!-- List item -->
             <div class="flex items-center gap-2">
               <BaseIconBox
-                shape="full"
+                rounded="full"
                 size="xs"
                 class="bg-blue-800 text-white shadow-xl shadow-blue-500/20 dark:shadow-blue-800/20"
               >
@@ -652,7 +652,7 @@ function useBarProfit() {
             <!-- List item -->
             <div class="flex items-center gap-2">
               <BaseIconBox
-                shape="full"
+                rounded="full"
                 size="xs"
                 class="bg-muted-900 dark:bg-muted-100 dark:text-muted-800 text-white"
               >
@@ -687,7 +687,7 @@ function useBarProfit() {
             <!-- List item -->
             <div class="flex items-center gap-2">
               <BaseIconBox
-                shape="full"
+                rounded="full"
                 size="xs"
                 class="bg-rose-500 text-white shadow-xl shadow-rose-500/20 dark:shadow-rose-800/20"
               >
@@ -722,7 +722,7 @@ function useBarProfit() {
             <!-- List item -->
             <div class="flex items-center gap-2">
               <BaseIconBox
-                shape="full"
+                rounded="full"
                 size="xs"
                 class="bg-sky-700 text-white shadow-xl shadow-sky-500/20 dark:shadow-sky-800/20"
               >
@@ -757,7 +757,7 @@ function useBarProfit() {
             <!-- List item -->
             <div class="flex items-center gap-2">
               <BaseIconBox
-                shape="full"
+                rounded="full"
                 size="xs"
                 class="bg-emerald-500 text-white shadow-xl shadow-emerald-500/20 dark:shadow-emerald-800/20"
               >
@@ -792,7 +792,7 @@ function useBarProfit() {
             <!-- List item -->
             <div class="flex items-center gap-2">
               <BaseIconBox
-                shape="full"
+                rounded="full"
                 size="xs"
                 class="bg-yellow-500 text-white shadow-xl shadow-yellow-500/20 dark:shadow-yellow-800/20"
               >
@@ -829,7 +829,7 @@ function useBarProfit() {
       </div>
       <!-- Grid item -->
       <div class="ltablet:col-span-4 col-span-12 md:col-span-6 lg:col-span-4">
-        <BaseCard class="relative p-6" shape="curved">
+        <BaseCard class="relative p-6" rounded="lg">
           <div class="mb-6">
             <BaseHeading
               as="h3"
@@ -846,7 +846,7 @@ function useBarProfit() {
       </div>
       <!-- Grid item -->
       <div class="ltablet:col-span-4 col-span-12 md:col-span-6 lg:col-span-4">
-        <BaseCard class="p-4" shape="curved">
+        <BaseCard class="p-4" rounded="lg">
           <Calendar
             :attributes="[
               {

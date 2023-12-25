@@ -170,7 +170,7 @@ function wrapExternalLinks(string: string) {
                     v-if="docs.model.required"
                     color="danger"
                     size="sm"
-                    flavor="pastel"
+                    variant="pastel"
                     class="my-2 font-mono"
                   >
                     Required
@@ -302,7 +302,7 @@ function wrapExternalLinks(string: string) {
                   v-if="prop.required"
                   color="danger"
                   size="sm"
-                  flavor="pastel"
+                  variant="pastel"
                   class="my-2 font-mono"
                 >
                   Required

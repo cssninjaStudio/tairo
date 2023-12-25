@@ -319,7 +319,7 @@ const onSubmit = handleSubmit(
         @submit.prevent="onSubmit"
       >
         <div
-          shape="curved"
+          rounded="lg"
           class="bg-muted-50 dark:bg-muted-800/60 space-y-8 p-10"
         >
           <div class="mx-auto flex w-full max-w-[410px] flex-col">
@@ -362,7 +362,7 @@ const onSubmit = handleSubmit(
                     >
                       <BaseButtonIcon
                         size="sm"
-                        shape="full"
+                        rounded="full"
                         data-nui-tooltip="Remove image"
                         class="scale-90"
                         @click="remove(files.item(0)!)"
@@ -374,7 +374,7 @@ const onSubmit = handleSubmit(
                       <div class="relative" data-nui-tooltip="Upload image">
                         <BaseButtonIcon
                           size="sm"
-                          shape="full"
+                          rounded="full"
                           @click="open"
                         >
                           <Icon name="lucide:plus" class="h-4 w-4" />
@@ -478,7 +478,7 @@ const onSubmit = handleSubmit(
                       @blur="handleBlur"
                     >
                       <BaseCard
-                        shape="rounded"
+                        rounded="sm"
                         class="text-muted-400 peer-checked:!border-primary-500 peer-checked:[&_.child]:!text-primary-500 relative border-2 px-2 py-4 grayscale peer-checked:grayscale-0"
                       >
                         <div
@@ -532,7 +532,7 @@ const onSubmit = handleSubmit(
                       @blur="handleBlur"
                     >
                       <BaseCard
-                        shape="rounded"
+                        rounded="sm"
                         class="text-muted-400 peer-checked:!border-primary-500 peer-checked:[&_.child]:!text-primary-500 relative border-2 px-2 py-4 grayscale peer-checked:grayscale-0"
                       >
                         <div
@@ -586,7 +586,7 @@ const onSubmit = handleSubmit(
                       @blur="handleBlur"
                     >
                       <BaseCard
-                        shape="rounded"
+                        rounded="sm"
                         class="text-muted-400 peer-checked:!border-primary-500 peer-checked:[&_.child]:!text-primary-500 relative border-2 px-2 py-4 grayscale peer-checked:grayscale-0"
                       >
                         <div
@@ -631,7 +631,7 @@ const onSubmit = handleSubmit(
             </div>
           </div>
         </div>
-        <div shape="curved" class="w-full space-y-8 p-10">
+        <div rounded="lg" class="w-full space-y-8 p-10">
           <div class="mx-auto w-full max-w-[410px] sm:pt-28">
             <div class="grid grid-cols-12 gap-4">
               <div class="ltablet:col-span-6 col-span-12 lg:col-span-6">
@@ -640,7 +640,7 @@ const onSubmit = handleSubmit(
                   name="company.income"
                 >
                   <BaseSelect
-                    shape="rounded"
+                    rounded="sm"
                     label="Income"
                     :model-value="field.value"
                     :error="errorMessage"
@@ -673,7 +673,7 @@ const onSubmit = handleSubmit(
                   name="company.employees"
                 >
                   <BaseSelect
-                    shape="rounded"
+                    rounded="sm"
                     label="Employees"
                     :model-value="field.value"
                     :error="errorMessage"
@@ -725,7 +725,7 @@ const onSubmit = handleSubmit(
                   name="company.status"
                 >
                   <BaseSelect
-                    shape="rounded"
+                    rounded="sm"
                     label="Status"
                     :model-value="field.value"
                     :error="errorMessage"
@@ -767,7 +767,7 @@ const onSubmit = handleSubmit(
                 >
                   <BaseCheckbox
                     label="This record is private"
-                    shape="rounded"
+                    rounded="sm"
                     color="primary"
                     :model-value="field.value"
                     :error="errorMessage"

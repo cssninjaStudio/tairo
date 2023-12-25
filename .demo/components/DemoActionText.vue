@@ -5,10 +5,10 @@ const props = withDefaults(
     text: string
     label: string
     to: string
-    shape?: 'straight' | 'rounded' | 'curved'
+    rounded?: 'none' | 'sm' | 'md' | 'lg'
   }>(),
   {
-    shape: 'rounded',
+    rounded: 'sm',
   },
 )
 </script>
@@ -17,8 +17,9 @@ const props = withDefaults(
   <div
     class="bg-muted-200 dark:bg-muted-800 p-6"
     :class="[
-      props.shape === 'rounded' ? 'rounded-md' : '',
-      props.shape === 'curved' ? 'rounded-xl' : '',
+      props.rounded === 'sm' ? 'rounded-md' : '',
+      props.rounded === 'md' ? 'rounded-lg' : '',
+      props.rounded === 'lg' ? 'rounded-xl' : '',
     ]"
   >
     <!-- Title -->
@@ -41,7 +42,7 @@ const props = withDefaults(
     <!-- Action -->
     <BaseButton
       :to="props.to"
-      :shape="props.shape"
+      :rounded="props.rounded"
       color="primary"
       class="w-full"
     >

@@ -171,7 +171,7 @@ const validatePin = computed(() => {
                     value="email_address"
                   >
                     <BaseCard
-                      shape="curved"
+                      rounded="lg"
                       class="peer-checked:!border-primary-500 relative border-2 p-8 opacity-60 grayscale peer-checked:opacity-100 peer-checked:grayscale-0 peer-checked:[&_.child]:!opacity-100"
                     >
                       <div class="flex flex-col text-center">
@@ -209,7 +209,7 @@ const validatePin = computed(() => {
                     value="phone_number"
                   >
                     <BaseCard
-                      shape="curved"
+                      rounded="lg"
                       class="peer-checked:!border-primary-500 relative border-2 p-8 opacity-60 grayscale peer-checked:opacity-100 peer-checked:grayscale-0 peer-checked:[&_.child]:!opacity-100"
                     >
                       <div class="flex flex-col text-center">
@@ -247,7 +247,7 @@ const validatePin = computed(() => {
                     value="app_id"
                   >
                     <BaseCard
-                      shape="curved"
+                      rounded="lg"
                       class="peer-checked:!border-primary-500 relative border-2 p-8 opacity-60 grayscale peer-checked:opacity-100 peer-checked:grayscale-0 peer-checked:[&_.child]:!opacity-100"
                     >
                       <div class="flex flex-col text-center">
@@ -289,7 +289,7 @@ const validatePin = computed(() => {
                 <div class="mx-auto flex flex-col items-center">
                   <BaseButton
                     type="button"
-                    shape="curved"
+                    rounded="lg"
                     class="!h-12 w-48"
                     color="primary"
                     :loading="loading"
@@ -317,7 +317,7 @@ const validatePin = computed(() => {
             <BaseIconBox
               color="primary"
               size="lg"
-              shape="full"
+              rounded="full"
               class="mx-auto"
             >
               <Icon
@@ -356,7 +356,7 @@ const validatePin = computed(() => {
               v-if="twoFaMode === 'email_address'"
               v-model="email"
               icon="ph:envelope-duotone"
-              shape="curved"
+              rounded="lg"
               placeholder="Ex: johndoe@gmail.com"
               :classes="{
                 wrapper: 'w-full',
@@ -368,7 +368,7 @@ const validatePin = computed(() => {
               v-else-if="twoFaMode === 'phone_number'"
               v-model="tel"
               icon="ph:device-mobile-speaker-duotone"
-              shape="curved"
+              rounded="lg"
               placeholder="Ex: +15554815659"
               :classes="{
                 wrapper: 'w-full',
@@ -398,7 +398,7 @@ const validatePin = computed(() => {
               <BaseInput
                 v-model="code"
                 icon="ph:fingerprint-duotone"
-                shape="curved"
+                rounded="lg"
                 placeholder="Ex: efcdwdeg16jei85"
                 :classes="{
                   wrapper: 'w-full',
@@ -411,7 +411,7 @@ const validatePin = computed(() => {
           <div class="mx-auto flex flex-col items-center">
             <BaseButton
               type="button"
-              shape="curved"
+              rounded="lg"
               class="!h-12 w-48"
               color="primary"
               :loading="loading"
@@ -441,7 +441,7 @@ const validatePin = computed(() => {
                   v-else
                   color="primary"
                   size="lg"
-                  shape="full"
+                  rounded="full"
                   class="mx-auto"
                 >
                   <Icon
@@ -503,7 +503,7 @@ const validatePin = computed(() => {
               <div class="mt-10">
                 <BaseButton
                   to="/dashboards"
-                  shape="curved"
+                  rounded="lg"
                   class="!h-12"
                   :color="validatePin ? 'primary' : 'default'"
                   :disabled="!validatePin"

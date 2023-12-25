@@ -50,7 +50,7 @@ const comments = [
         :src="comment.image"
         :text="comment.text"
         size="xs"
-        shape="straight"
+        rounded="none"
         mask="blob"
         class="bg-primary-100 dark:bg-primary-500/20 text-primary-500 shrink-0"
       />

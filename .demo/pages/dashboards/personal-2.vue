@@ -402,7 +402,7 @@ function useBarTeamEfficiency() {
               <template #action>
                 <BaseButton
                   color="primary"
-                  shape="rounded"
+                  rounded="sm"
                   class="w-full"
                 >
                   <span>Upgrade to Pro</span>

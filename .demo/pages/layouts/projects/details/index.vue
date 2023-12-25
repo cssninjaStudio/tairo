@@ -80,7 +80,7 @@ const selectedProject = ref('')
             v-model="selectedProject"
             :items="data?.data"
             :display-value="(item: any) => item.name"
-            shape="curved"
+            rounded="lg"
             icon="lucide:search"
             placeholder="Search..."
             label="Search projects"
@@ -140,7 +140,7 @@ const selectedProject = ref('')
             :to="`/layouts/projects/details/${item.slug}`"
           >
             <BaseCard
-              shape="curved"
+              rounded="lg"
               elevated-hover
               class="group-hover:!border-primary-500 p-5"
             >
@@ -148,7 +148,7 @@ const selectedProject = ref('')
                 <BaseAvatar
                   :src="item.customer.logo"
                   size="sm"
-                  shape="full"
+                  rounded="full"
                   :data-nui-tooltip="item.name"
                   class="bg-muted-100 dark:bg-muted-700"
                 />
@@ -173,7 +173,7 @@ const selectedProject = ref('')
                     :key="stack.name"
                     :src="stack.icon"
                     size="xxs"
-                    shape="full"
+                    rounded="full"
                     :data-nui-tooltip="stack.name"
                     class="bg-muted-100 dark:bg-muted-700"
                   />

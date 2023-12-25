@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const props = defineProps<{
-  shape?: 'straight' | 'rounded' | 'curved'
+  rounded?: 'none' | 'sm' | 'md' | 'lg'
   spaced?: boolean
   condensed?: boolean
 }>()
@@ -8,7 +8,7 @@ const props = defineProps<{
 
 <template>
   <BaseCard
-    :shape="props.shape"
+    :rounded="props.rounded"
     class="relative"
     :class="[
       props.spaced ? 'px-2 py-6 sm:py-4' : 'py-6 sm:py-2',

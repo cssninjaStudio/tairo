@@ -20,12 +20,12 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
     <div v-else class="relative w-full">
       <div class="absolute end-0 top-2 z-20">
         <BaseDropdown
-          flavor="context"
+          variant="context"
           label="Dropdown"
           orientation="end"
           size="md"
           class="z-20"
-          shape="curved"
+          rounded="lg"
         >
           <BaseDropdownDivider />
           <BaseDropdownItem
@@ -125,7 +125,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
         class="ltablet:grid-cols-5 mx-auto mt-6 grid w-full max-w-4xl grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-5"
       >
         <BaseCard
-          shape="curved"
+          rounded="lg"
           elevated-hover
           class="hover:!border-primary-500 group border-2"
         >
@@ -150,7 +150,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
           </NuxtLink>
         </BaseCard>
         <BaseCard
-          shape="curved"
+          rounded="lg"
           elevated-hover
           class="hover:!border-primary-500 group border-2"
         >
@@ -175,7 +175,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
           </NuxtLink>
         </BaseCard>
         <BaseCard
-          shape="curved"
+          rounded="lg"
           elevated-hover
           class="hover:!border-primary-500 group border-2"
         >
@@ -200,7 +200,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
           </NuxtLink>
         </BaseCard>
         <BaseCard
-          shape="curved"
+          rounded="lg"
           elevated-hover
           class="hover:!border-primary-500 group border-2"
         >
@@ -225,7 +225,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
           </NuxtLink>
         </BaseCard>
         <BaseCard
-          shape="curved"
+          rounded="lg"
           elevated-hover
           class="hover:!border-primary-500 group border-2"
         >
@@ -250,7 +250,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
           </NuxtLink>
         </BaseCard>
         <BaseCard
-          shape="curved"
+          rounded="lg"
           elevated-hover
           class="hover:!border-primary-500 group border-2"
         >
@@ -275,7 +275,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
           </NuxtLink>
         </BaseCard>
         <BaseCard
-          shape="curved"
+          rounded="lg"
           elevated-hover
           class="hover:!border-primary-500 group border-2"
         >
@@ -300,7 +300,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
           </NuxtLink>
         </BaseCard>
         <BaseCard
-          shape="curved"
+          rounded="lg"
           elevated-hover
           class="hover:!border-primary-500 group border-2"
         >
@@ -325,7 +325,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
           </NuxtLink>
         </BaseCard>
         <BaseCard
-          shape="curved"
+          rounded="lg"
           elevated-hover
           class="hover:!border-primary-500 group border-2"
         >
@@ -350,7 +350,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
           </NuxtLink>
         </BaseCard>
         <BaseCard
-          shape="curved"
+          rounded="lg"
           elevated-hover
           class="hover:!border-primary-500 group border-2"
         >

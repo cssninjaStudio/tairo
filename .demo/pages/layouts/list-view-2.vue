@@ -85,7 +85,7 @@ const { data, pending, error, refresh } = await useFetch('/api/rentals', {
               <BaseCard
                 v-for="item in data?.data"
                 :key="item.id"
-                shape="curved"
+                rounded="lg"
                 class="flex flex-col p-5 sm:flex-row sm:items-center"
               >
                 <div
@@ -230,7 +230,7 @@ const { data, pending, error, refresh } = await useFetch('/api/rentals', {
                 :total-items="100"
                 :current="1"
                 :limit="10"
-                shape="full"
+                rounded="full"
               />
             </div>
           </div>

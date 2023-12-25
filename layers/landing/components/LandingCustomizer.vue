@@ -90,25 +90,25 @@ watch(selectedStyle, (value) => {
             </div>
             <BaseCard
               v-if="selectedStyle === 'smart'"
-              shape="curved"
+              rounded="lg"
               class="!border-primary-600 relative z-20 mx-auto max-w-[340px] p-6"
             >
               <div class="mb-6 flex items-center justify-between">
                 <BaseTag
-                  shape="curved"
+                  rounded="lg"
                   color="primary"
                   shadow="flat"
                 >
                   Member
                 </BaseTag>
-                <BaseButtonClose shape="full" color="muted" />
+                <BaseButtonClose rounded="full" color="muted" />
               </div>
               <BaseAvatar
                 size="xl"
                 src="/img/avatars/24.svg"
                 badge-src="/img/stacks/html5.svg"
                 class="mx-auto !flex !transition-all !duration-200"
-                shape="full"
+                rounded="full"
               />
               <div class="mt-3 text-center">
                 <BaseHeading
@@ -129,25 +129,25 @@ watch(selectedStyle, (value) => {
                 <BaseAvatar
                   size="xs"
                   src="/img/stacks/js.svg"
-                  shape="full"
+                  rounded="full"
                 />
                 <BaseAvatar
                   size="xs"
                   src="/img/stacks/python.svg"
-                  shape="full"
+                  rounded="full"
                 />
                 <BaseAvatar
                   size="xs"
                   src="/img/stacks/reactjs.svg"
-                  shape="full"
+                  rounded="full"
                 />
               </div>
               <div>
                 <BaseButton
                   class="!h-12 w-full"
-                  shape="curved"
+                  rounded="lg"
                   color="primary"
-                  flavor="pastel"
+                  variant="pastel"
                 >
                   <Icon name="lucide:bell" class="h-4 w-4" />
                   <span>Follow Belen</span>
@@ -162,7 +162,7 @@ watch(selectedStyle, (value) => {
             </BaseCard>
             <BaseCard
               v-if="selectedStyle === 'creative'"
-              shape="curved"
+              rounded="lg"
               class="!border-primary-600 relative z-20 mx-auto max-w-[340px] overflow-hidden p-6"
             >
               <div
@@ -171,7 +171,7 @@ watch(selectedStyle, (value) => {
               />
               <div class="mb-6 flex items-center justify-between">
                 <BaseTag
-                  shape="full"
+                  rounded="full"
                   color="primary"
                   shadow="flat"
                   class="relative z-10"
@@ -184,7 +184,7 @@ watch(selectedStyle, (value) => {
                   <BaseAvatar
                     size="xxs"
                     src="/img/icons/flags/united-states-of-america.svg"
-                    shape="full"
+                    rounded="full"
                   />
                 </div>
               </div>
@@ -192,7 +192,7 @@ watch(selectedStyle, (value) => {
                 size="xl"
                 src="/img/avatars/10.svg"
                 class="nui-mask nui-mask-hexed mx-auto !flex !transition-all !duration-200"
-                shape="straight"
+                rounded="none"
               />
               <div class="mt-3 text-center">
                 <BaseHeading
@@ -213,28 +213,28 @@ watch(selectedStyle, (value) => {
                 <BaseAvatar
                   size="xs"
                   src="/img/icons/logos/nitro.svg"
-                  shape="full"
+                  rounded="full"
                 />
                 <BaseAvatar
                   size="xs"
                   src="/img/icons/logos/okano.svg"
-                  shape="full"
+                  rounded="full"
                 />
                 <BaseAvatar
                   size="xs"
                   src="/img/icons/logos/slicer.svg"
-                  shape="full"
+                  rounded="full"
                 />
               </div>
               <div class="flex gap-2">
-                <BaseButton class="!h-11 w-full" shape="full">
+                <BaseButton class="!h-11 w-full" rounded="full">
                   <Icon name="lucide:bookmark" class="h-4 w-4" />
                   <span>Save</span>
                 </BaseButton>
 
                 <BaseButton
                   class="!h-11 w-full"
-                  shape="full"
+                  rounded="full"
                   color="primary"
                 >
                   <Icon name="lucide:bell" class="h-4 w-4" />
@@ -250,25 +250,25 @@ watch(selectedStyle, (value) => {
             </BaseCard>
             <BaseCard
               v-if="selectedStyle === 'corporate'"
-              shape="rounded"
+              rounded="sm"
               class="!border-primary-600 relative z-20 mx-auto max-w-[340px] p-6"
             >
               <div class="mb-6 flex items-center justify-between">
                 <BaseTag
-                  shape="rounded"
+                  rounded="sm"
                   color="primary"
                   shadow="flat"
                 >
                   Member
                 </BaseTag>
-                <BaseButtonClose shape="curved" color="primary" />
+                <BaseButtonClose rounded="lg" color="primary" />
               </div>
               <BaseAvatar
                 size="xl"
                 src="/img/avatars/25.svg"
                 badge-src="/img/stacks/illustrator.svg"
                 class="mx-auto !flex !transition-all !duration-200"
-                shape="curved"
+                rounded="lg"
               />
               <div class="mt-3 text-center">
                 <BaseHeading
@@ -293,23 +293,23 @@ watch(selectedStyle, (value) => {
                 <BaseAvatar
                   size="xs"
                   src="/img/stacks/xd.svg"
-                  shape="full"
+                  rounded="full"
                 />
                 <BaseAvatar
                   size="xs"
                   src="/img/stacks/photoshop.svg"
-                  shape="full"
+                  rounded="full"
                 />
                 <BaseAvatar
                   size="xs"
                   src="/img/stacks/html5.svg"
-                  shape="full"
+                  rounded="full"
                 />
               </div>
               <div>
                 <BaseButton
                   class="!h-11 w-full"
-                  shape="rounded"
+                  rounded="sm"
                   color="primary"
                 >
                   <Icon name="lucide:check" class="h-4 w-4" />
@@ -319,24 +319,24 @@ watch(selectedStyle, (value) => {
             </BaseCard>
             <BaseCard
               v-if="selectedStyle === 'classic'"
-              shape="straight"
+              rounded="none"
               class="!border-primary-600 relative z-20 mx-auto max-w-[340px] p-6"
             >
               <div class="mb-6 flex items-center justify-between">
                 <BaseTag
-                  shape="straight"
+                  rounded="none"
                   color="primary"
                   shadow="flat"
                 >
                   Member
                 </BaseTag>
-                <BaseButtonClose shape="straight" />
+                <BaseButtonClose rounded="none" />
               </div>
               <BaseAvatar
                 size="xl"
                 src="/img/avatars/8.svg"
                 class="mx-auto !flex !transition-all !duration-200"
-                shape="straight"
+                rounded="none"
               />
               <div class="mt-3 text-center">
                 <BaseHeading
@@ -380,9 +380,9 @@ watch(selectedStyle, (value) => {
               <div>
                 <BaseButton
                   class="!h-11 w-full"
-                  shape="straight"
+                  rounded="none"
                   color="primary"
-                  flavor="outline"
+                  variant="outline"
                 >
                   <span>Send Invitation</span>
                 </BaseButton>

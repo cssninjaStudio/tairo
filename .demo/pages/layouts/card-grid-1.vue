@@ -180,7 +180,7 @@ const { data, pending, error, refresh } = await useFetch(
               :total-items="data?.total ?? 0"
               :item-per-page="perPage"
               :current-page="page"
-              shape="curved"
+              rounded="lg"
             />
           </div>
         </div>

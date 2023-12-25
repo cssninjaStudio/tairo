@@ -51,7 +51,7 @@ const app = useAppConfig()
           <div class="me-auto block md:hidden">
             <BaseButtonClose
               color="muted"
-              shape="full"
+              rounded="full"
               @click="isMobileOpen = false"
             />
           </div>

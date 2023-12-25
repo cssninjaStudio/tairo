@@ -68,7 +68,7 @@ definePageMeta({
               </BaseText>
             </div>
           </div>
-          <BaseCard shape="curved" class="px-8">
+          <BaseCard rounded="lg" class="px-8">
             <div>
               <!-- Item -->
               <div
@@ -113,7 +113,7 @@ definePageMeta({
                     <div
                       class="absolute -top-24 start-1/2 w-40 -translate-x-1/2 opacity-0 transition-all duration-300 group-hover:opacity-100"
                     >
-                      <BaseCard shape="curved" elevated>
+                      <BaseCard rounded="lg" elevated>
                         <div
                           class="border-muted-200 dark:border-muted-700 flex items-center gap-1 border-b p-3"
                         >
@@ -265,7 +265,7 @@ definePageMeta({
             </div>
           </BaseCard>
         </div>
-        <BaseCard shape="curved" class="mt-12">
+        <BaseCard rounded="lg" class="mt-12">
           <div
             class="border-muted-200 dark:border-muted-700 flex items-center gap-3 border-b p-6"
           >

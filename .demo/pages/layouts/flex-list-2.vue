@@ -62,7 +62,7 @@ function statusColor(itemStatus: string) {
         <BaseInput
           v-model="filter"
           icon="lucide:search"
-          shape="full"
+          rounded="full"
           placeholder="Filter users..."
           :classes="{
             wrapper: 'w-full sm:w-auto',
@@ -70,12 +70,12 @@ function statusColor(itemStatus: string) {
         />
       </template>
       <template #right>
-        <BaseButton class="w-full sm:w-32" shape="full">
+        <BaseButton class="w-full sm:w-32" rounded="full">
           Manage
         </BaseButton>
         <BaseButton
           color="primary"
-          shape="full"
+          rounded="full"
           class="w-full sm:w-32"
         >
           <Icon name="lucide:plus" class="h-4 w-4" />
@@ -114,7 +114,7 @@ function statusColor(itemStatus: string) {
             <DemoFlexTableRow
               v-for="(item, index) in data?.data"
               :key="index"
-              shape="straight"
+              rounded="none"
               condensed
               spaced
             >
@@ -159,8 +159,8 @@ function statusColor(itemStatus: string) {
                 >
                   <BaseTag
                     :color="statusColor(item.status)"
-                    shape="full"
-                    flavor="pastel"
+                    rounded="full"
+                    variant="pastel"
                     size="sm"
                     class="capitalize"
                   >
@@ -193,7 +193,7 @@ function statusColor(itemStatus: string) {
             :total-items="data?.total ?? 0"
             :item-per-page="perPage"
             :current-page="page"
-            shape="full"
+            rounded="full"
           />
         </div>
       </div>

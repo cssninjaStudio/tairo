@@ -63,7 +63,7 @@ Dropdowns can be used as context menus. You can also align it to the `end` using
 title: Text:start
 demo: '#examples/dropdown/text-left.vue'
 ---
-Dropdowns can also be used as text menus. Use the `flavor` prop with the `text` value to change the dropdown to a text menu.
+Dropdowns can also be used as text menus. Use the `variant` prop with the `text` value to change the dropdown to a text menu.
 ::
 
 ::doc-component-demo
@@ -71,7 +71,7 @@ Dropdowns can also be used as text menus. Use the `flavor` prop with the `text` 
 title: Text:end
 demo: '#examples/dropdown/text-right.vue'
 ---
-Dropdowns can also be used as text menus. Use the `flavor` prop with the `text` value to change the dropdown to a text menu.
+Dropdowns can also be used as text menus. Use the `variant` prop with the `text` value to change the dropdown to a text menu.
 ::
 
 ::doc-component-demo

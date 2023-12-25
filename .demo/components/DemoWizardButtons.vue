@@ -24,7 +24,7 @@ const { totalSteps, currentStep, loading, complete, getNextStep, getPrevStep }
           <BaseButton
             :to="loading ? undefined : getPrevStep()?.to"
             :disabled="!getPrevStep()"
-            shape="curved"
+            rounded="lg"
             class="w-full"
           >
             <span>Previous</span>
@@ -33,7 +33,7 @@ const { totalSteps, currentStep, loading, complete, getNextStep, getPrevStep }
             v-if="currentStep < totalSteps - 1"
             :to="getNextStep()?.to"
             :disabled="!getNextStep()"
-            shape="curved"
+            rounded="lg"
             color="primary"
             class="w-full"
           >
@@ -42,7 +42,7 @@ const { totalSteps, currentStep, loading, complete, getNextStep, getPrevStep }
           <BaseButton
             v-else
             type="submit"
-            shape="curved"
+            rounded="lg"
             color="primary"
             class="w-full"
             :loading="loading"

@@ -6,14 +6,14 @@ const props = withDefaults(
     icon?: string
     image: string
     value?: number
-    shape?: 'straight' | 'rounded' | 'curved'
+    rounded?: 'none' | 'sm' | 'md' | 'lg'
   }>(),
   {
     value: 0,
     icon: undefined,
     title: undefined,
     text: undefined,
-    shape: 'rounded',
+    rounded: 'sm',
   },
 )
 </script>
@@ -68,7 +68,7 @@ const props = withDefaults(
         class="w-full"
         color="primary"
         icon="lucide:shopping-cart"
-        :shape="props.shape"
+        :rounded="props.rounded"
       >
         <span>Add to Cart</span>
       </BaseButton>

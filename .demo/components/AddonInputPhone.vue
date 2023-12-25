@@ -336,7 +336,7 @@ const dropdownBorder = computed(() => {
     >
       <BaseDropdown
         ref="dropdownRef"
-        flavor="text"
+        variant="text"
         :rounded="props.rounded"
         size="lg"
         class="[&_.nui-text-button]:border-muted-200 dark:[&_.nui-text-button]:border-muted-800 flex h-full [&_.nui-text-button]:relative [&_.nui-text-button]:z-10 [&_.nui-text-button]:h-full [&_.nui-text-button]:w-full [&_.nui-text-button]:border-e [&_.nui-text-button]:pe-2 [&_.nui-text-button]:ps-4"
@@ -364,7 +364,7 @@ const dropdownBorder = computed(() => {
         <BaseInput
           ref="filterRef"
           v-model="filter"
-          :shape="rounded === 'full' ? 'lg' : rounded"
+          :rounded="rounded === 'full' ? 'lg' : rounded"
           size="sm"
           icon="ph:magnifying-glass"
         />

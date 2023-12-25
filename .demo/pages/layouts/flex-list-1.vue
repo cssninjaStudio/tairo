@@ -109,7 +109,7 @@ function statusColor(itemStatus: string) {
             <DemoFlexTableRow
               v-for="(item, index) in data?.data"
               :key="index"
-              shape="rounded"
+              rounded="sm"
               spaced
             >
               <template #start>
@@ -153,8 +153,8 @@ function statusColor(itemStatus: string) {
                 >
                   <BaseTag
                     :color="statusColor(item.status)"
-                    shape="full"
-                    flavor="pastel"
+                    rounded="full"
+                    variant="pastel"
                     size="sm"
                     class="capitalize"
                   >
@@ -187,7 +187,7 @@ function statusColor(itemStatus: string) {
             :total-items="data?.total ?? 0"
             :item-per-page="perPage"
             :current-page="page"
-            shape="curved"
+            rounded="lg"
           />
         </div>
       </div>

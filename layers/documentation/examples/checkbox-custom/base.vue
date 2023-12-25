@@ -21,7 +21,7 @@
         <div class="grid gap-6 sm:grid-cols-3">
           <BaseCheckboxHeadless v-model="value" value="team_member_1">
             <BaseCard
-              shape="rounded"
+              rounded="sm"
               class="peer-checked:!border-primary-500 peer-checked:[&_.child]:!text-primary-500 border-2 p-4 opacity-50 peer-checked:opacity-100"
             >
               <div class="flex w-full items-center gap-2">
@@ -51,7 +51,7 @@
 
           <BaseCheckboxHeadless v-model="value" value="team_member_2">
             <BaseCard
-              shape="rounded"
+              rounded="sm"
               class="peer-checked:!border-primary-500 peer-checked:[&_.child]:!text-primary-500 border-2 p-4 opacity-50 peer-checked:opacity-100"
             >
               <div class="flex w-full items-center gap-2">
@@ -81,7 +81,7 @@
 
           <BaseCheckboxHeadless v-model="value" value="team_member_3">
             <BaseCard
-              shape="rounded"
+              rounded="sm"
               class="peer-checked:!border-primary-500 peer-checked:[&_.child]:!text-primary-500 border-2 p-4 opacity-50 peer-checked:opacity-100"
             >
               <div class="flex w-full items-center gap-2">

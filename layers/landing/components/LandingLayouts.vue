@@ -99,7 +99,7 @@ const activeLayout = ref('sidebar')
             v-show="activeLayout === layout.name"
             :key="index"
             color="white-contrast"
-            shape="curved"
+            rounded="lg"
             class="relative flex flex-col overflow-hidden rounded-xl text-start"
           >
             <div class="bg-muted-100 dark:bg-muted-900/40 relative">
