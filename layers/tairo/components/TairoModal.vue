@@ -25,9 +25,9 @@ const props = withDefaults(
     size?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl'
 
     /**
-     * The shape of the modal.
+     * The radius of the modal.
      */
-    shape?: 'straight' | 'rounded' | 'curved'
+    rounded?: 'none' | 'sm' | 'md' | 'lg'
 
     /**
      * The alignment of the footer content.
@@ -41,7 +41,7 @@ const props = withDefaults(
   }>(),
   {
     size: 'md',
-    shape: 'rounded',
+    rounded: 'sm',
     footerAlign: 'end',
     classes: () => ({
       wrapper: '',
@@ -66,11 +66,17 @@ const dialogClasses = computed(() => {
     }
   }
 
-  switch (props.shape) {
-    case 'rounded':
+  switch (props.rounded) {
+    case 'none':
+      classes.push('rounded-none')
+      break
+    case 'sm':
+      classes.push('rounded-md')
+      break
+    case 'md':
       classes.push('rounded-lg')
       break
-    case 'curved':
+    case 'lg':
       classes.push('rounded-xl')
       break
   }

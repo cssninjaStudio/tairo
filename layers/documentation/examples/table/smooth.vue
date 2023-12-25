@@ -1,11 +1,11 @@
 <template>
-  <TairoTable rounded="sm">
+  <TairoTable rounded="md">
     <template #header>
       <TairoTableHeading uppercase class="p-4">
         <div class="flex items-center">
           <BaseCheckbox
             v-model="selectAll"
-            rounded="sm"
+            rounded="md"
             class="text-primary-500"
           />
         </div>
@@ -38,7 +38,7 @@
           <BaseCheckbox
             v-model="selected"
             :value="`table-2-${member.id}`"
-            rounded="sm"
+            rounded="md"
             class="text-primary-500"
           />
         </div>

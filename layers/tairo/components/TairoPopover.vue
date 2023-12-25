@@ -5,9 +5,9 @@ import { FocusTrap, Popover, PopoverButton, PopoverPanel } from '@headlessui/vue
 const props = withDefaults(
   defineProps<{
     /**
-     * The shape of the popover.
+     * The radius of the popover.
      */
-    shape?: 'straight' | 'rounded' | 'curved'
+    rounded?: 'none' | 'sm' | 'md' | 'lg'
 
     /**
      * The size of the popover.
@@ -43,7 +43,7 @@ const props = withDefaults(
       | 'left-end'
   }>(),
   {
-    shape: 'rounded',
+    rounded: 'sm',
     size: 'md',
     orientation: 'start',
     placement: undefined,

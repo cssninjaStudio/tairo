@@ -18,9 +18,9 @@ const props = withDefaults(defineProps<{
    */
   locale?: () => Promise<LocaleImport> | LocaleImport
   /**
-   * The shape of the input.
+   * The radius of the input.
    */
-  shape?: 'straight' | 'rounded' | 'smooth' | 'curved' | 'full'
+  rounded?: 'none' | 'sm' | 'md' | 'lg' | 'full'
   /**
    * Whether the password is visible or not by default.
    */
@@ -34,7 +34,7 @@ const props = withDefaults(defineProps<{
   modelValue: '',
   userInputs: () => [],
   locale: undefined,
-  shape: undefined,
+  rounded: 'sm',
 })
 
 const emits = defineEmits<{
@@ -51,9 +51,6 @@ const vmodel = useVModel(props, 'modelValue', emits, {
   passive: true,
   defaultValue: '',
 })
-
-const appConfig = useAppConfig()
-const shape = computed(() => props.shape ?? appConfig.nui.defaultShapes?.input)
 
 const showPassword = ref(props.show ?? false)
 
@@ -144,16 +141,16 @@ onNuxtReady(async () => {
 
 // styles
 const buttonBorder = computed(() => {
-  switch (shape.value) {
-    case 'rounded':
-      return 'rounded-e'
-    case 'curved':
-      return 'rounded-e-xl'
+  switch (props.rounded) {
+    case 'sm':
+      return '[&_.nui-text-button]:rounded-s'
+    case 'md':
+      return '[&_.nui-text-button]:rounded-s-md'
+    case 'lg':
+      return '[&_.nui-text-button]:rounded-s-xl'
     case 'full':
-      return 'rounded-e-full'
-    case 'smooth':
-      return 'rounded-e-md'
-    case 'straight':
+      return '[&_.nui-text-button]:rounded-s-full'
+    case 'none':
       return ''
   }
 })
@@ -218,7 +215,7 @@ const buttonBorder = computed(() => {
       :model-value="vmodel"
       :type="showPassword ? 'text' : 'password'"
       :disabled="props.disabled"
-      :shape="shape"
+      :rounded="props.rounded"
       v-bind="$attrs"
       :classes="{ input: `!pe-12` }"
       @update:model-value="

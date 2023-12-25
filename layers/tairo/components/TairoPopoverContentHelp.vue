@@ -24,7 +24,7 @@ const props = withDefaults(
     /**
      * The color of the icon.
      */
-    iconColor?: 'primary' | 'info' | 'success' | 'warning' | 'danger' | 'yellow'
+    iconColor?: 'primary' | 'info' | 'success' | 'warning' | 'danger'
   }>(),
   {
     iconColor: 'primary',
@@ -38,21 +38,11 @@ const props = withDefaults(
       <div class="flex w-full">
         <BaseIconBox
           size="xs"
+          variant="pastel"
+          rounded="none"
+          mask="blob"
           class="dark:text-white"
-          :class="[
-            props.iconColor === 'primary' &&
-              'bg-primary-100 text-primary-500 dark:bg-primary-600',
-            props.iconColor === 'info' &&
-              'bg-info-100 text-info-500 dark:bg-info-600',
-            props.iconColor === 'success' &&
-              'bg-success-100 text-success-500 dark:bg-success-600',
-            props.iconColor === 'warning' &&
-              'bg-warning-100 text-warning-500 dark:bg-warning-600',
-            props.iconColor === 'danger' &&
-              'bg-danger-100 text-danger-500 dark:bg-danger-600',
-            props.iconColor === 'yellow' &&
-              'bg-yellow-100 text-yellow-400 dark:bg-yellow-500',
-          ]"
+          :color="props.iconColor"
         >
           <Icon :name="props.icon" class="h-5 w-5" />
         </BaseIconBox>

@@ -1,11 +1,11 @@
 <template>
-  <TairoTable rounded="sm">
+  <TairoTable rounded="md">
     <template #header>
       <TairoTableHeading uppercase class="p-4">
         <div class="flex items-center">
           <BaseCheckbox
             v-model="selectAll"
-            rounded="sm"
+            rounded="md"
             class="text-primary-500"
           />
         </div>
@@ -37,15 +37,27 @@
         <div class="flex items-center">
           <BaseCheckbox
             v-model="selected"
-            :value="`table-2-${member.id}`"
-            rounded="sm"
+            :value="`table-4-${member.id}`"
+            rounded="md"
             class="text-primary-500"
           />
         </div>
       </TairoTableCell>
 
       <TairoTableCell>
-        {{ member.name }}
+        <div class="flex items-center">
+          <BaseAvatar :src="member.src" size="sm" />
+
+          <div class="ms-3 leading-none">
+            <h4 class="font-sans text-sm font-medium">
+              {{ member.name }}
+            </h4>
+
+            <p class="text-muted-400 font-sans text-xs font-normal">
+              {{ member.role }}
+            </p>
+          </div>
+        </div>
       </TairoTableCell>
 
       <TairoTableCell light>

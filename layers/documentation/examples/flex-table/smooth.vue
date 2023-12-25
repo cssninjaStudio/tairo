@@ -1,60 +1,82 @@
 <template>
-  <TairoTable rounded="sm">
+  <TairoFlexTable>
     <template #header>
-      <TairoTableHeading uppercase class="p-4">
+      <TairoFlexTableHeading type="shrink">
         <div class="flex items-center">
           <BaseCheckbox
             v-model="selectAll"
-            rounded="sm"
+            rounded="md"
             class="text-primary-500"
           />
         </div>
-      </TairoTableHeading>
+      </TairoFlexTableHeading>
 
-      <TairoTableHeading uppercase>
-        Collaborator
-      </TairoTableHeading>
+      <TairoFlexTableHeading type="grow">
+        Member
+      </TairoFlexTableHeading>
 
-      <TairoTableHeading uppercase>
+      <TairoFlexTableHeading type="stable">
         Expertise
-      </TairoTableHeading>
+      </TairoFlexTableHeading>
 
-      <TairoTableHeading uppercase>
+      <TairoFlexTableHeading type="stable">
         Rate
-      </TairoTableHeading>
+      </TairoFlexTableHeading>
 
-      <TairoTableHeading uppercase>
+      <TairoFlexTableHeading type="stable">
         Status
-      </TairoTableHeading>
+      </TairoFlexTableHeading>
 
-      <TairoTableHeading uppercase class="p-4">
-        <span class="sr-only">View</span>
-      </TairoTableHeading>
+      <TairoFlexTableHeading type="stable">
+        Actions
+      </TairoFlexTableHeading>
     </template>
 
-    <TairoTableRow v-for="member in team" :key="member.id">
-      <TairoTableCell class="p-4">
+    <TairoFlexTableRow
+      v-for="member in team"
+      :key="member.id"
+      rounded="md"
+    >
+      <TairoFlexTableCell type="shrink" data-content="Selection">
         <div class="flex items-center">
           <BaseCheckbox
             v-model="selected"
-            :value="`table-2-${member.id}`"
-            rounded="sm"
+            :value="`checkbox-${member.id}`"
+            rounded="md"
             class="text-primary-500"
           />
         </div>
-      </TairoTableCell>
+      </TairoFlexTableCell>
 
-      <TairoTableCell>
-        {{ member.name }}
-      </TairoTableCell>
+      <TairoFlexTableCell type="grow" data-content="Member">
+        <div class="flex items-center">
+          <BaseAvatar :src="member.src" size="sm" />
 
-      <TairoTableCell light>
+          <div class="ms-3 leading-none">
+            <h4 class="font-sans text-sm font-medium">
+              {{ member.name }}
+            </h4>
+
+            <p class="text-muted-400 font-sans text-xs font-normal">
+              {{ member.role }}
+            </p>
+          </div>
+        </div>
+      </TairoFlexTableCell>
+
+      <TairoFlexTableCell
+        type="stable"
+        data-content="Expertise"
+        light
+      >
         {{ member.expertise }}
-      </TairoTableCell>
+      </TairoFlexTableCell>
 
-      <TairoTableCell>${{ member.rate }}/hour</TairoTableCell>
+      <TairoFlexTableCell type="stable" data-content="Rate">
+        <span class="font-medium">${{ member.rate }}/hour</span>
+      </TairoFlexTableCell>
 
-      <TairoTableCell>
+      <TairoFlexTableCell type="stable" data-content="Status">
         <BaseTag
           v-if="member.status === 'Available'"
           color="success"
@@ -84,18 +106,20 @@
         >
           {{ member.status }}
         </BaseTag>
-      </TairoTableCell>
+      </TairoFlexTableCell>
 
-      <TairoTableCell>
-        <a
-          href="#"
-          class="text-primary-500 dark:text-primary-400 underline-offset-4 transition-opacity duration-300 hover:underline hover:opacity-75"
+      <TairoFlexTableCell type="stable" data-content="Actions">
+        <BaseButton
+          color="primary"
+          variant="outline"
+          rounded="md"
+          class="scale-90"
         >
           View
-        </a>
-      </TairoTableCell>
-    </TairoTableRow>
-  </TairoTable>
+        </BaseButton>
+      </TairoFlexTableCell>
+    </TairoFlexTableRow>
+  </TairoFlexTable>
 </template>
 
 <script setup lang="ts">
