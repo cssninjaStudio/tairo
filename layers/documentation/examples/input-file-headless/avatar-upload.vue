@@ -22,13 +22,13 @@
             v-else
             :src="currentAvatar"
             alt="Upload preview"
-            class="bg-muted-200 dark:bg-muted-700/60 h-20 w-20 rounded-full object-cover object-center dark:invert"
+            class="bg-muted-200 dark:bg-muted-700/60 h-20 w-20 rounded-full object-cover object-center"
           >
 
           <div v-if="files?.length && files.item(0)" class="absolute bottom-0 end-0 z-20">
             <BaseButtonIcon
               size="sm"
-              shape="full"
+              rounded="full"
               data-nui-tooltip="Remove image"
               class="scale-90"
               @click="remove(files.item(0)!)"
@@ -41,7 +41,7 @@
             <div class="relative" data-nui-tooltip="Upload image">
               <BaseButtonIcon
                 size="sm"
-                shape="full"
+                rounded="full"
                 @click="open"
               >
                 <Icon name="lucide:plus" class="h-4 w-4" />
