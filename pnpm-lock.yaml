@@ -227,8 +227,8 @@ importers:
         specifier: ^0.3.12
         version: 0.3.12
       '@shuriken-ui/nuxt':
-        specifier: 2.0.0-next.6
-        version: 2.0.0-next.6(nuxt@3.8.2)
+        specifier: 2.0.0-next.7
+        version: 2.0.0-next.7(nuxt@3.8.2)
       '@vee-validate/zod':
         specifier: ^4.11.8
         version: 4.12.2
@@ -2383,15 +2383,15 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@shuriken-ui/nuxt@2.0.0-next.6(nuxt@3.8.2):
-    resolution: {integrity: sha512-AvbX+Dv2ML6jx38A/C5DVdn28nKWBEEnXJ8DOWXNQ1DyW2DbhXSJvm+Awa1KItlPYoZNekfiWs8mAKNhNFA/kw==}
+  /@shuriken-ui/nuxt@2.0.0-next.7(nuxt@3.8.2):
+    resolution: {integrity: sha512-/RqLId+eqvgAYfxu/lrTFq8ut4JQjUhYqJ9QlO7iix6IIf11K1mdZqqZkoFE7PtB/dAZcK7BLAI2NC5Pi1s5hw==}
     dependencies:
       '@headlessui-float/vue': 0.12.0
       '@headlessui/vue': 1.7.16
       '@iconify/vue': 4.1.1
       '@nuxtjs/color-mode': 3.3.2
       '@nuxtjs/tailwindcss': 6.10.1
-      '@shuriken-ui/tailwind': 2.0.0-next.11
+      '@shuriken-ui/tailwind': 2.0.0-next.12
       '@vueuse/nuxt': 10.7.0(nuxt@3.8.2)
       autoprefixer: 10.4.16(postcss@8.4.32)
       nuxt-icon: 0.6.6(nuxt@3.8.2)
@@ -2406,8 +2406,8 @@ packages:
       - vue
     dev: false
 
-  /@shuriken-ui/tailwind@2.0.0-next.11:
-    resolution: {integrity: sha512-bwwTKImQOfQadOR07PHmRnxrFaMKNRTQWxEtzACt0WWLl7s/5c2RAaYosYg0I4daPDiGVmRPmHUNRgcvtIQqrQ==}
+  /@shuriken-ui/tailwind@2.0.0-next.12:
+    resolution: {integrity: sha512-tNMR289BMiCBUtq/HaNqb17LWIpTG3E/btjC/RI+lhyzWrSG3mxdxsLJaidp3wucoFapnw3ZWuZCDbQ0OGmzCw==}
     dependencies:
       '@tailwindcss/container-queries': 0.1.1(tailwindcss@3.3.6)
       '@tailwindcss/typography': 0.5.10(tailwindcss@3.3.6)
