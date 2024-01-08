@@ -1,9 +1,9 @@
 <template>
-  <BaseFocusLoop class="grid gap-6 md:max-w-lg md:grid-cols-2">
+  <BaseFocusLoop class="grid gap-6 md:max-w-4xl md:grid-cols-3">
     <BaseSelect
       v-model="options.first"
-      shape="straight"
-      label="Straight select"
+      rounded="none"
+      label="Rounded: none"
     >
       <option value="">
         Select a hero
@@ -32,8 +32,8 @@
 
     <BaseSelect
       v-model="options.second"
-      shape="rounded"
-      label="Rounded select"
+      rounded="sm"
+      label="Rounded: sm"
     >
       <option value="">
         Select a hero
@@ -62,8 +62,8 @@
 
     <BaseSelect
       v-model="options.third"
-      shape="curved"
-      label="Curved select"
+      rounded="md"
+      label="Rounded: md"
     >
       <option value="">
         Select a hero
@@ -92,8 +92,38 @@
 
     <BaseSelect
       v-model="options.fourth"
-      shape="full"
-      label="Full select"
+      rounded="lg"
+      label="Rounded: lg"
+    >
+      <option value="">
+        Select a hero
+      </option>
+
+      <option value="Superman">
+        Superman
+      </option>
+
+      <option value="Batman">
+        Batman
+      </option>
+
+      <option value="Iron man">
+        Iron man
+      </option>
+
+      <option value="Magneto">
+        Magneto
+      </option>
+
+      <option value="Cyclops">
+        Cyclops
+      </option>
+    </BaseSelect>
+
+    <BaseSelect
+      v-model="options.fifth"
+      rounded="full"
+      label="Rounded: full"
     >
       <option value="">
         Select a hero
@@ -128,5 +158,6 @@ const options = reactive({
   second: '',
   third: '',
   fourth: '',
+  fifth: '',
 })
 </script>

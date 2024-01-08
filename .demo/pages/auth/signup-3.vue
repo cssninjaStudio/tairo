@@ -304,7 +304,7 @@ const onSubmit = handleSubmit(async (values) => {
                       :model-value="field.value"
                       :disabled="isSubmitting"
                       :error="errorMessage"
-                      shape="rounded"
+                      rounded="sm"
                       color="primary"
                       @update:model-value="handleChange"
                       @blur="handleBlur"

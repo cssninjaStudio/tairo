@@ -206,7 +206,7 @@ function switchMuted(color: (typeof mutedPresets)[number]) {
               v-for="layout in layouts"
               :key="layout.name"
               role="button"
-              shape="curved"
+              rounded="lg"
               class="p-2"
               :class="activeLayoutName === layout.name && '!border-primary-500'"
               @click="switchLayout(layout.name)"

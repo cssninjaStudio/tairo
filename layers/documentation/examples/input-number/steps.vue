@@ -2,7 +2,7 @@
   <div class="grid gap-6 md:max-w-lg md:grid-cols-2">
     <BaseInputNumber
       v-model="fields.first"
-      shape="straight"
+      rounded="md"
       label="Temperature (°C)"
       icon="carbon:temperature-celsius"
       :min="-20"
@@ -12,7 +12,7 @@
 
     <BaseInputNumber
       v-model="fields.second"
-      shape="rounded"
+      rounded="md"
       label="Temperature (°F)"
       icon="carbon:temperature-fahrenheit"
       :min="0"
@@ -21,7 +21,7 @@
 
     <BaseInputNumber
       v-model="fields.third"
-      shape="rounded"
+      rounded="md"
       label="BTC"
       icon="ic:sharp-currency-bitcoin"
       :min="0"
@@ -30,7 +30,7 @@
 
     <BaseInputNumber
       v-model="fields.fourth"
-      shape="full"
+      rounded="md"
       icon="material-symbols-light:encrypted-outline"
       label="Bytes"
       :min="0"

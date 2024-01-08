@@ -89,7 +89,7 @@ onClickOutside(target, () => (open.value = false))
         <BaseProgress
           :value="progress"
           size="xs"
-          shape="full"
+          rounded="full"
         />
       </div>
     </div>

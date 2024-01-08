@@ -222,25 +222,25 @@ const videos = [
           </BaseButtonIcon>
           <BaseAvatar
             size="xs"
-            shape="straight"
+            rounded="none"
             mask="blob"
             src="/img/avatars/10.svg"
           />
           <BaseAvatar
             size="xs"
-            shape="straight"
+            rounded="none"
             mask="blob"
             src="/img/avatars/8.svg"
           />
           <BaseAvatar
             size="xs"
-            shape="straight"
+            rounded="none"
             mask="blob"
             src="/img/avatars/5.svg"
           />
           <BaseAvatar
             size="xs"
-            shape="straight"
+            rounded="none"
             mask="blob"
             src="/img/avatars/16.svg"
           />
@@ -320,7 +320,7 @@ const videos = [
                     <div class="ms-auto">
                       <BaseTag
                         color="primary"
-                        shape="full"
+                        rounded="full"
                         size="sm"
                       >
                         <span>{{ video.category }}</span>
@@ -406,7 +406,7 @@ const videos = [
                           <div class="ms-auto">
                             <BaseTag
                               color="primary"
-                              shape="full"
+                              rounded="full"
                               size="sm"
                             >
                               <span>{{ video.category }}</span>
@@ -452,7 +452,7 @@ const videos = [
         <div
           class="xs:mt-2 flex items-center justify-center gap-2 md:justify-start"
         >
-          <BaseButton small shape="full">
+          <BaseButton small rounded="full">
             <Icon name="lucide:video" class="h-4 w-4" />
             <span>Upload</span>
           </BaseButton>
@@ -531,7 +531,7 @@ const videos = [
                   <div class="ms-auto">
                     <BaseTag
                       color="primary"
-                      shape="full"
+                      rounded="full"
                       size="sm"
                     >
                       <span>{{ video.category }}</span>
@@ -547,7 +547,7 @@ const videos = [
 
     <!-- Load more -->
     <div class="my-16 flex items-center justify-center">
-      <BaseButton shape="full" color="default">
+      <BaseButton rounded="full" color="default">
         <Icon name="ph:dots-nine-bold" class="h-4 w-4" />
         <span>Load more</span>
       </BaseButton>

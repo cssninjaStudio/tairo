@@ -1,11 +1,27 @@
 <template>
   <div class="flex flex-wrap items-end gap-2">
-    <BaseButtonClose shape="straight" color="muted" />
+    <BaseButtonClose
+      size="xs"
+      rounded="full"
+      color="muted"
+    />
 
-    <BaseButtonClose shape="rounded" color="muted" />
+    <BaseButtonClose
+      size="sm"
+      rounded="full"
+      color="muted"
+    />
 
-    <BaseButtonClose shape="curved" color="muted" />
+    <BaseButtonClose
+      size="md"
+      rounded="full"
+      color="muted"
+    />
 
-    <BaseButtonClose shape="full" color="muted" />
+    <BaseButtonClose
+      size="lg"
+      rounded="full"
+      color="muted"
+    />
   </div>
 </template>

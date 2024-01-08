@@ -62,7 +62,7 @@ function openTaskPanel(id: number, tasks: any) {
     <div class="absolute end-12 top-2.5 z-20 hidden sm:block">
       <BaseButton
         size="sm"
-        shape="curved"
+        rounded="lg"
         :to="`/layouts/projects/board/${slug}`"
       >
         <Icon name="ph:kanban-duotone" class="h-4 w-4" />
@@ -71,12 +71,12 @@ function openTaskPanel(id: number, tasks: any) {
     </div>
     <div class="absolute end-0 top-2 z-20">
       <BaseDropdown
-        flavor="context"
+        variant="context"
         label="Dropdown"
         orientation="end"
         size="md"
         class="z-20"
-        shape="curved"
+        rounded="lg"
       >
         <BaseDropdownItem
           :to="`/layouts/projects/board/${slug}`"
@@ -331,7 +331,7 @@ function openTaskPanel(id: number, tasks: any) {
                       <div
                         v-for="(file, index) in data?.project.files"
                         :key="index"
-                        shape="curved"
+                        rounded="lg"
                       >
                         <div class="flex w-full items-center gap-2">
                           <img
@@ -357,7 +357,7 @@ function openTaskPanel(id: number, tasks: any) {
                           </div>
                           <div class="ms-auto">
                             <BaseButtonIcon
-                              shape="full"
+                              rounded="full"
                               data-nui-tooltip="Download file"
                               size="sm"
                             >

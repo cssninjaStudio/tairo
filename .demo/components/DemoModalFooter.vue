@@ -94,7 +94,7 @@ const isModalBodyOpen = ref(false)
           </BaseButton>
           <BaseButton
             color="primary"
-            flavor="solid"
+            variant="solid"
             @click="isModalStartOpen = false"
           >
             Accept
@@ -156,7 +156,7 @@ const isModalBodyOpen = ref(false)
           </BaseButton>
           <BaseButton
             color="primary"
-            flavor="solid"
+            variant="solid"
             @click="isModalEndOpen = false"
           >
             Accept
@@ -218,7 +218,7 @@ const isModalBodyOpen = ref(false)
           </BaseButton>
           <BaseButton
             color="primary"
-            flavor="solid"
+            variant="solid"
             @click="isModalCenterOpen = false"
           >
             Accept
@@ -284,7 +284,7 @@ const isModalBodyOpen = ref(false)
         <div class="flex gap-x-2">
           <BaseButton
             color="primary"
-            flavor="solid"
+            variant="solid"
             @click="isModalBetweenOpen = false"
           >
             Accept

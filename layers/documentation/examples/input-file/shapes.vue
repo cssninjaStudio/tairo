@@ -1,27 +1,33 @@
 <template>
-  <div class="grid gap-6 md:max-w-lg md:grid-cols-2">
+  <div class="grid gap-6 md:max-w-4xl md:grid-cols-3">
     <BaseInputFile
       v-model="first"
-      shape="straight"
-      label="Straight input"
+      rounded="none"
+      label="Rounded: none"
     />
 
     <BaseInputFile
       v-model="second"
-      shape="rounded"
-      label="Rounded input"
+      rounded="sm"
+      label="Rounded: sm"
     />
 
     <BaseInputFile
       v-model="third"
-      shape="curved"
-      label="Curved input"
+      rounded="md"
+      label="Rounded: md"
     />
 
     <BaseInputFile
       v-model="fourth"
-      shape="full"
-      label="Full input"
+      rounded="lg"
+      label="Rounded: lg"
+    />
+
+    <BaseInputFile
+      v-model="fifth"
+      rounded="full"
+      label="Rounded: full"
     />
   </div>
 </template>
@@ -31,4 +37,5 @@ const first = ref<FileList | null>(null)
 const second = ref<FileList | null>(null)
 const third = ref<FileList | null>(null)
 const fourth = ref<FileList | null>(null)
+const fifth = ref<FileList | null>(null)
 </script>

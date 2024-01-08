@@ -10,29 +10,29 @@ icon:
 
 ::doc-component-demo
 ---
-title: Buttons shapes
+title: Radius
 demo: '#examples/icon-button/shapes.vue'
 ---
-Icon buttons are a quick and visual way to express an action. Icon buttons can have different shapes using the `shape` prop.
+Icon buttons are a quick and visual way to express an action. Icon buttons can have different radius factors using the `rounded` prop.
 :::doc-message{type="muted" icon="ion:shapes-outline"}
-Default shape of all :doc-linker{to="BaseButtonIcon"} can be set in your `.app/app.config.ts`.
+Default props of all :doc-linker{to="BaseButtonIcon"} can be set in your `.app/app.config.ts`.
 :::
 ::
 
 ::doc-component-demo
 ---
-title: Small buttons
-demo: '#examples/icon-button/small.vue'
+title: Size
+demo: '#examples/icon-button/size.vue'
 ---
-Icon buttons can have a smaller size using the `size` prop with the `sm` value.
+Icon buttons are a quick and visual way to express an action. Icon buttons can have different sizes using the `size` prop.
 ::
 
 ::doc-component-demo
 ---
-title: Primary color
-demo: '#examples/icon-button/primary.vue'
+title: Color:default
+demo: '#examples/icon-button/default.vue'
 ---
-Icon buttons can have different colors. The following example shows a `primary` button, using the `color` prop.
+Icon buttons can have different colors. The following example shows a `default` button, using the `color` prop.
 ::
 
 ::doc-component-demo
@@ -45,10 +45,58 @@ Icon buttons can have different colors. The following example shows a `muted` bu
 
 ::doc-component-demo
 ---
-title: Loading state
+title: Color:primary
+demo: '#examples/icon-button/primary.vue'
+---
+Icon buttons can have different colors. The following example shows a `primary` button, using the `color` prop.
+::
+
+::doc-component-demo
+---
+title: Color:info
+demo: '#examples/icon-button/info.vue'
+---
+Icon buttons can have different colors. The following example shows a `info` button, using the `color` prop.
+::
+
+::doc-component-demo
+---
+title: Color:success
+demo: '#examples/icon-button/success.vue'
+---
+Icon buttons can have different colors. The following example shows a `success` button, using the `color` prop.
+::
+
+::doc-component-demo
+---
+title: Color:warning
+demo: '#examples/icon-button/warning.vue'
+---
+Icon buttons can have different colors. The following example shows a `warning` button, using the `color` prop.
+::
+
+::doc-component-demo
+---
+title: Color:danger
+demo: '#examples/icon-button/danger.vue'
+---
+Icon buttons can have different colors. The following example shows a `danger` button, using the `color` prop.
+::
+
+::doc-component-demo
+---
+title: State:loading
 demo: '#examples/icon-button/loading.vue'
 ---
 Icon buttons can be shown in a loading state. Use the `loading` prop to show a loading indicator.
+::
+
+::doc-component-demo
+---
+title: State:disabled
+demo: '#examples/icon-button/disabled.vue'
+---
+Icon buttons can be shown in a disabled state. Use the `disabled` prop to show a disabled button.
 ::
 
 ::doc-component-demo

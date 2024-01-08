@@ -11,46 +11,55 @@ icon:
 
 ::doc-component-demo
 ---
-title: Checkbox straight
+title: Rounded:none
 demo: '#examples/checkbox/straight.vue'
 ---
-The checkbox component can have different shapes. Here is an example of a `straight` checkbox.
+The checkbox component can have different radius factors. Here is an example of a `rounded:none` checkbox.
 :::doc-message{type="muted" icon="ion:shapes-outline"}
-Default shape of all :doc-linker{to="BaseCheckbox"} can be set in your `.app/app.config.ts`.
+Default props of all :doc-linker{to="BaseCheckbox"} can be set in your `.app/app.config.ts`.
 :::
 ::
 
 
 ::doc-component-demo
 ---
-title: Checkbox rounded
+title: Rounded:sm
 demo: '#examples/checkbox/rounded.vue'
 ---
-The checkbox component can have different shapes. Here is an example of a `rounded` checkbox.
+The checkbox component can have different radius factors. Here is an example of a `rounded:sm` checkbox.
 ::
 
 
 ::doc-component-demo
 ---
-title: Checkbox curved
+title: Rounded:md
+demo: '#examples/checkbox/smooth.vue'
+---
+The checkbox component can have different radius factors. Here is an example of a `rounded:md` checkbox.
+::
+
+
+::doc-component-demo
+---
+title: Rounded:lg
 demo: '#examples/checkbox/curved.vue'
 ---
-The checkbox component can have different shapes. Here is an example of a `curved` checkbox.
+The checkbox component can have different radius factors. Here is an example of a `curved` checkbox.
 ::
 
 
 ::doc-component-demo
 ---
-title: Checkbox circle
+title: Rounded:full
 demo: '#examples/checkbox/circle.vue'
 ---
-The checkbox component can have different shapes. Here is an example of a `full` checkbox.
+The checkbox component can have different radius factors. Here is an example of a `full` checkbox.
 ::
 
 
 ::doc-component-demo
 ---
-title: Disabled state
+title: Disabled
 demo: '#examples/checkbox/disabled.vue'
 ---
 The checkbox component can show a disabled state. Use the `disabled` prop to make a checkbox disabled.
@@ -58,7 +67,7 @@ The checkbox component can show a disabled state. Use the `disabled` prop to mak
 
 ::doc-component-demo
 ---
-title: Custom behavior
+title: Value:custom
 demo: '#examples/checkbox/true-false.vue'
 ---
 Use `true-value`/`false-value` to create custom behavior
@@ -67,21 +76,11 @@ Use `true-value`/`false-value` to create custom behavior
 
 ::doc-component-demo
 ---
-title: Multiple values
+title: Value:multiple
 demo: '#examples/checkbox/multiple-value.vue'
 ---
 By default, the checkbox value has only two states: `true` and `false`.
 To use checkbox to select multiple options, define the `v-model` to an array.
-::
-
-
-
-::doc-component-demo
----
-title: Custom colors
-demo: '#examples/checkbox/colors.vue'
----
-You can use any colors defined with tailwind, use `classes` props to set your own values
 ::
 
 

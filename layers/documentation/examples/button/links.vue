@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-wrap items-end gap-4">
-    <BaseButton to="#" shape="straight">
+    <BaseButton to="#" rounded="none">
       Button
     </BaseButton>
 
@@ -8,7 +8,7 @@
       Button
     </BaseButton>
 
-    <BaseButton to="https://cssninja.io" shape="curved">
+    <BaseButton to="https://cssninja.io" rounded="lg">
       Button
     </BaseButton>
 
@@ -16,7 +16,7 @@
       to="https://google.com"
       target=""
       rel=""
-      shape="full"
+      rounded="full"
     >
       Button
     </BaseButton>

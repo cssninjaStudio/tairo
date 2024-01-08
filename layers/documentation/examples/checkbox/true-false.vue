@@ -3,7 +3,7 @@
     v-model="value"
     name="true-false"
     :label="value"
-    shape="full"
+    rounded="full"
     :true-value="'checked'"
     :false-value="'not-checked'"
     color="muted"

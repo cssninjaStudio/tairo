@@ -183,12 +183,12 @@ function onDrop(column: ColumnContent, dropResult: any) {
         <BaseAvatarGroup :avatars="data?.project.team" size="xs" />
         <BaseButtonIcon
           :to="`/layouts/projects/details/${slug}`"
-          shape="curved"
+          rounded="lg"
           data-nui-tooltip="Project details"
         >
           <Icon name="lucide:layout-template" class="h-4 w-4" />
         </BaseButtonIcon>
-        <BaseButtonIcon shape="full" data-nui-tooltip="New task">
+        <BaseButtonIcon rounded="full" data-nui-tooltip="New task">
           <Icon name="lucide:plus" class="h-4 w-4" />
         </BaseButtonIcon>
       </div>
@@ -247,8 +247,8 @@ function onDrop(column: ColumnContent, dropResult: any) {
                       class="mb-2 flex w-full items-center justify-between gap-2"
                     >
                       <BaseTag
-                        shape="full"
-                        flavor="pastel"
+                        rounded="full"
+                        variant="pastel"
                         color="muted"
                         class="m-0 -ms-1 inline-flex h-6 scale-90 items-center py-0 text-xs font-semibold"
                       >

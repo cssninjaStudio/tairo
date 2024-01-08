@@ -41,12 +41,12 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
 
 <template>
   <div>
-    <TairoContentWrapperTabbed :labels="['All', 'Saved']" shape="curved">
+    <TairoContentWrapperTabbed :labels="['All', 'Saved']" rounded="lg">
       <template #left>
         <BaseInput
           v-model="filter"
           icon="lucide:search"
-          shape="curved"
+          rounded="lg"
           placeholder="Filter recipes..."
           :classes="{
             wrapper: 'w-full sm:w-auto',
@@ -86,7 +86,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
               <BaseCard
                 v-for="item in data?.data"
                 :key="item.id"
-                shape="curved"
+                rounded="lg"
                 class="flex flex-col p-5 sm:flex-row sm:items-center"
               >
                 <div
@@ -156,13 +156,13 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                   <div class="flex w-full items-center gap-2 sm:w-auto">
                     <BaseButton
                       color="primary"
-                      flavor="outline"
+                      variant="outline"
                       class="w-full sm:w-28"
                     >
                       <span>Apply Now</span>
                     </BaseButton>
                     <BaseButtonIcon
-                      shape="full"
+                      rounded="full"
                       small
                       muted
                       data-nui-tooltip="Save recipe"
@@ -181,7 +181,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                 :total-items="100"
                 :current="1"
                 :limit="10"
-                shape="curved"
+                rounded="lg"
               />
             </div>
           </div>

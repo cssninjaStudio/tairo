@@ -2,32 +2,23 @@
   <div class="flex flex-wrap items-end gap-4">
     <BaseSnack
       label="React"
-      icon="logos:react"
       color="muted"
+      size="xs"
+      icon="logos:react"
     />
 
     <BaseSnack
       label="Angular"
-      icon="logos:angular-icon"
       color="muted"
+      size="sm"
+      icon="logos:angular-icon"
     />
 
     <BaseSnack
       label="Vue"
+      color="muted"
+      size="md"
       icon="logos:vue"
-      color="muted"
-    />
-
-    <BaseSnack
-      label="Html"
-      icon="logos:html-5"
-      color="muted"
-    />
-
-    <BaseSnack
-      label="Python"
-      icon="logos:python"
-      color="muted"
     />
   </div>
 </template>

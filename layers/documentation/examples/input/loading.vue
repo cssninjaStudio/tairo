@@ -1,17 +1,44 @@
 <template>
-  <div class="grid gap-6 md:max-w-lg md:grid-cols-2">
-    <BaseInput
-      v-model="value"
-      shape="rounded"
-      type="email"
-      label="Email Address"
-      placeholder="Enter your email..."
-      icon="lucide:mail"
-      loading
-    />
+  <div class="flex max-w-3xl flex-wrap items-end gap-3">
+    <div class="flex-1">
+      <BaseInput
+        v-model="fields.first"
+        size="sm"
+        rounded="md"
+        label="Size: sm"
+        placeholder="Ex: username"
+        loading
+      />
+    </div>
+
+    <div class="flex-1">
+      <BaseInput
+        v-model="fields.second"
+        size="md"
+        rounded="md"
+        label="Size: md"
+        placeholder="Ex: username"
+        loading
+      />
+    </div>
+
+    <div class="flex-1">
+      <BaseInput
+        v-model="fields.third"
+        size="lg"
+        rounded="md"
+        label="Size: lg"
+        placeholder="Ex: username"
+        loading
+      />
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-const value = ref('')
+const fields = reactive({
+  first: '',
+  second: '',
+  third: '',
+})
 </script>

@@ -65,7 +65,7 @@ const codeTailwind = [
       </BaseHeading>
       <TairoLogoText class="text-primary-500 mx-auto h-8" />
     </div>
-    <BaseCard shape="curved" class="dark:!bg-muted-900 mb-4 p-8 sm:mb-6">
+    <BaseCard rounded="lg" class="dark:!bg-muted-900 mb-4 p-8 sm:mb-6">
       <div
         class="nui-mask nui-mask-hexed absolute inset-x-0 -top-10 mx-auto mb-2 flex h-[84px] w-[84px] shrink-0 items-center justify-center"
       >
@@ -107,7 +107,7 @@ const codeTailwind = [
           class="relative"
         >
           <BaseCard
-            shape="curved"
+            rounded="lg"
             elevated-hover
             class="dark:!bg-muted-900 hover:!border-primary-500 relative z-10 h-full p-4"
           >
@@ -143,7 +143,7 @@ const codeTailwind = [
           class="relative"
         >
           <BaseCard
-            shape="curved"
+            rounded="lg"
             elevated-hover
             class="dark:!bg-muted-900 hover:!border-success-500 relative z-10 h-full p-4"
           >
@@ -179,7 +179,7 @@ const codeTailwind = [
           class="relative"
         >
           <BaseCard
-            shape="curved"
+            rounded="lg"
             elevated-hover
             class="dark:!bg-muted-900 relative z-10 h-full p-4 hover:!border-purple-500"
           >
@@ -215,7 +215,7 @@ const codeTailwind = [
           class="relative"
         >
           <BaseCard
-            shape="curved"
+            rounded="lg"
             elevated-hover
             class="dark:!bg-muted-900 relative z-10 h-full p-4 hover:!border-blue-500"
           >
@@ -252,7 +252,7 @@ const codeTailwind = [
         class="relative"
       >
         <BaseCard
-          shape="curved"
+          rounded="lg"
           elevated-hover
           class="dark:!bg-muted-900 hover:!border-primary-500 relative z-10 p-5"
         >
@@ -310,7 +310,7 @@ const codeTailwind = [
     </div>
 
     <div class="flex flex-col gap-6">
-      <BaseCard class="dark:!bg-muted-900 p-6" shape="rounded">
+      <BaseCard class="dark:!bg-muted-900 p-6" rounded="sm">
         <BaseProse class="prose-p:my-0 max-w-full">
           <div>
             <div class="flex gap-2 sm:items-center">
@@ -327,7 +327,7 @@ const codeTailwind = [
           </div>
         </BaseProse>
       </BaseCard>
-      <BaseCard class="dark:!bg-muted-900 p-6" shape="rounded">
+      <BaseCard class="dark:!bg-muted-900 p-6" rounded="sm">
         <BaseProse class="prose-p:my-0 max-w-full">
           <div>
             <div class="flex gap-2 sm:items-center">
@@ -344,7 +344,7 @@ const codeTailwind = [
           </div>
         </BaseProse>
       </BaseCard>
-      <BaseCard class="dark:!bg-muted-900 p-6" shape="rounded">
+      <BaseCard class="dark:!bg-muted-900 p-6" rounded="sm">
         <BaseProse class="prose-p:my-0 max-w-full">
           <div>
             <div class="flex gap-2 sm:items-center">
@@ -362,7 +362,7 @@ const codeTailwind = [
           </div>
         </BaseProse>
       </BaseCard>
-      <BaseCard class="dark:!bg-muted-900 p-6" shape="rounded">
+      <BaseCard class="dark:!bg-muted-900 p-6" rounded="sm">
         <BaseProse class="prose-p:my-0 max-w-full">
           <div>
             <div class="flex gap-2 sm:items-center">
@@ -379,7 +379,7 @@ const codeTailwind = [
           </div>
         </BaseProse>
       </BaseCard>
-      <BaseCard class="dark:!bg-muted-900 p-6" shape="rounded">
+      <BaseCard class="dark:!bg-muted-900 p-6" rounded="sm">
         <BaseProse class="prose-p:my-0 max-w-full">
           <div>
             <div class="flex gap-2 sm:items-center">
@@ -397,7 +397,7 @@ const codeTailwind = [
           </div>
         </BaseProse>
       </BaseCard>
-      <BaseCard class="dark:!bg-muted-900 p-6" shape="rounded">
+      <BaseCard class="dark:!bg-muted-900 p-6" rounded="sm">
         <BaseProse class="prose-p:my-0 max-w-full">
           <div>
             <div class="flex gap-2 sm:items-center">

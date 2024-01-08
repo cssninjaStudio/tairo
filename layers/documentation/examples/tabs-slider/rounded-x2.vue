@@ -3,6 +3,7 @@
     <BaseTabSlider
       v-slot="{ activeValue }"
       model-value="team"
+      rounded="none"
       :tabs="[
         { label: 'Team', value: 'team' },
         { label: 'Projects', value: 'projects' },

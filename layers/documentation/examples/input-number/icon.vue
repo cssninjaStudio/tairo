@@ -2,7 +2,7 @@
   <div class="grid gap-6 md:max-w-lg md:grid-cols-2">
     <BaseInputNumber
       v-model="fields.first"
-      shape="straight"
+      rounded="md"
       label="Your rating"
       icon-increment="lucide:chevron-right"
       icon-decrement="lucide:chevron-left"
@@ -13,7 +13,7 @@
 
     <BaseInputNumber
       v-model="fields.second"
-      shape="rounded"
+      rounded="md"
       label="Priority"
       icon-increment="lucide:alarm-plus"
       icon-decrement="lucide:alarm-minus"

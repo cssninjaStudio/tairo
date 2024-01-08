@@ -1,7 +1,7 @@
 <template>
-  <div class="flex items-end">
+  <div class="flex w-full justify-start">
     <BaseDropdown
-      flavor="button"
+      variant="button"
       label="Dropdown"
       orientation="start"
     >
@@ -9,6 +9,8 @@
         to="#"
         title="Profile"
         text="View your profile"
+        color="default"
+        rounded="sm"
       >
         <template #start>
           <Icon name="ph:user-duotone" class="me-2 block h-5 w-5" />
@@ -19,6 +21,8 @@
         to="#"
         title="Projects"
         text="View your projects"
+        color="default"
+        rounded="sm"
       >
         <template #start>
           <Icon name="ph:briefcase-duotone" class="me-2 block h-5 w-5" />
@@ -29,6 +33,8 @@
         to="#"
         title="Team"
         text="Manage your team"
+        color="default"
+        rounded="sm"
       >
         <template #start>
           <Icon name="ph:users-four-duotone" class="me-2 block h-5 w-5" />
@@ -41,6 +47,8 @@
         to="#"
         title="Settings"
         text="Set your preferences"
+        color="default"
+        rounded="sm"
       >
         <template #start>
           <Icon name="ph:gear-six-duotone" class="me-2 block h-5 w-5" />

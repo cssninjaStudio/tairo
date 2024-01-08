@@ -201,7 +201,7 @@ const onSubmit = handleSubmit(async (values) => {
                     type="email"
                     label="Email address"
                     placeholder="Email address"
-                    shape="curved"
+                    rounded="lg"
                     :classes="{
                       input: 'h-12',
                     }"
@@ -221,7 +221,7 @@ const onSubmit = handleSubmit(async (values) => {
                     type="password"
                     label="Password"
                     placeholder="Password"
-                    shape="curved"
+                    rounded="lg"
                     :classes="{
                       input: 'h-12',
                     }"
@@ -240,7 +240,7 @@ const onSubmit = handleSubmit(async (values) => {
                   <BaseCheckbox
                     :model-value="field.value"
                     :disabled="isSubmitting"
-                    shape="curved"
+                    rounded="lg"
                     label="Trust for 60 days"
                     color="primary"
                     @update:model-value="handleChange"
@@ -266,7 +266,7 @@ const onSubmit = handleSubmit(async (values) => {
                     :loading="isSubmitting"
                     type="submit"
                     color="primary"
-                    shape="curved"
+                    rounded="lg"
                     class="!h-11 w-full"
                   >
                     Sign in

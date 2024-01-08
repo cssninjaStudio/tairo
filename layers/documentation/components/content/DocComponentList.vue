@@ -53,7 +53,7 @@ const componentsWithoutPages = computed(() => {
             class="nui-focus group rounded-md"
             :to="component.route?._path"
           >
-            <BaseCard class="flex h-full flex-col px-4 py-8" shape="curved">
+            <BaseCard class="flex h-full flex-col px-4 py-8" rounded="lg">
               <template v-if="component.route?.icon">
                 <img
                   v-if="component.route?.icon?.src"

@@ -119,7 +119,7 @@ function useGaugePersonal() {
         </BaseParagraph>
         <div class="flex items-center justify-center">
           <BaseButton
-            shape="curved"
+            rounded="lg"
             color="primary"
             to="https://go.cssninja.io/buy-tairo"
             shadow="hover"
@@ -197,7 +197,7 @@ function useGaugePersonal() {
                 class="nui-mask nui-mask-blob hover:bg-muted-100 dark:hover:bg-muted-700/50 flex h-12 w-12 items-center justify-center motion-safe:transition-colors motion-safe:duration-200"
               >
                 <BaseAvatar
-                  shape="straight"
+                  rounded="none"
                   size="sm"
                   src="/img/avatars/24.svg"
                   class="nui-mask nui-mask-blob"
@@ -245,7 +245,7 @@ function useGaugePersonal() {
                 class="nui-mask nui-mask-blob dark:hover:bg-muted-800 flex h-10 w-10 items-center justify-center hover:bg-white motion-safe:transition-colors motion-safe:duration-200"
               >
                 <BaseAvatar
-                  shape="straight"
+                  rounded="none"
                   size="xs"
                   src="/img/avatars/24.svg"
                   class="nui-mask nui-mask-blob"
@@ -262,7 +262,7 @@ function useGaugePersonal() {
             >
               <!-- Widget -->
               <BaseCard
-                shape="curved"
+                rounded="lg"
                 elevated
                 class="flex flex-col p-6"
               >
@@ -296,7 +296,7 @@ function useGaugePersonal() {
             <div class="ltablet:gap-6 flex flex-col gap-6 sm:gap-3 lg:gap-4">
               <!-- Widget -->
               <BaseCard
-                shape="curved"
+                rounded="lg"
                 elevated
                 class="p-6"
               >
@@ -306,12 +306,12 @@ function useGaugePersonal() {
                   title="Design Project"
                   text="Where are we in terms of design? We need to review the new screens."
                   time="28 minutes"
-                  shape="curved"
+                  rounded="lg"
                 />
               </BaseCard>
               <!-- Widget -->
               <BaseCard
-                shape="curved"
+                rounded="lg"
                 elevated
                 class="p-6"
               >
@@ -330,19 +330,19 @@ function useGaugePersonal() {
             >
               <!-- Widget -->
               <BaseCard
-                shape="curved"
+                rounded="lg"
                 elevated
                 class="p-4"
               >
-                <DemoTeamSearchCompact shape="curved" />
+                <DemoTeamSearchCompact rounded="lg" />
               </BaseCard>
               <!-- Widget -->
               <BaseCard
-                shape="curved"
+                rounded="lg"
                 elevated
                 class="p-3"
               >
-                <DemoVideoCompact shape="curved" />
+                <DemoVideoCompact rounded="lg" />
               </BaseCard>
             </div>
             <!-- Col -->
@@ -351,7 +351,7 @@ function useGaugePersonal() {
             >
               <!-- Widget -->
               <BaseCard
-                shape="curved"
+                rounded="lg"
                 elevated
                 class="p-6"
               >
@@ -364,7 +364,7 @@ function useGaugePersonal() {
               </BaseCard>
               <!-- Widget -->
               <BaseCard
-                shape="curved"
+                rounded="lg"
                 elevated
                 class="p-6"
               >

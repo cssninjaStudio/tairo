@@ -11,12 +11,12 @@ icon:
 
 ::doc-component-demo
 ---
-title: Straight input
+title: Radius
 demo: '#examples/input-file/shapes.vue'
 ---
-File inputs have default styling, showing the file name and a button to select a file. You can change the shape of the input with the `shape` prop.
+File inputs have default styling, showing the file name and a button to select a file. You can change the radius factor of the input with the `rounded` prop.
 :::doc-message{type="muted" icon="ph:magic-wand"}
-Default shape of all :doc-linker{to="BaseInputFile"} can be set in your `.app/app.config.ts`.
+Default props of all :doc-linker{to="BaseInputFile"} can be set in your `.app/app.config.ts`.
 :::
 ::
 

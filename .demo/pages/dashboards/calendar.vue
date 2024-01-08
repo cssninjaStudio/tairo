@@ -402,7 +402,7 @@ const selectedEventFeatures = computed({
             >
               <template #header-left-button="{ movePrev }">
                 <BaseButtonIcon
-                  shape="full"
+                  rounded="full"
                   small
                   @click="movePrev"
                   @keydown.space.enter="movePrev"
@@ -415,7 +415,7 @@ const selectedEventFeatures = computed({
               </template>
               <template #header-right-button="{ moveNext }">
                 <BaseButtonIcon
-                  shape="full"
+                  rounded="full"
                   small
                   @click="moveNext"
                   @keydown.space.enter="moveNext"
@@ -656,14 +656,14 @@ const selectedEventFeatures = computed({
             </BaseSelect>
             <BaseButtonGroup>
               <BaseButtonAction
-                shape="curved"
+                rounded="lg"
                 :color="settings.hourHeight === 480 ? 'muted' : 'default'"
                 @click="() => updateHeight(480)"
               >
                 <Icon name="carbon:maximize" />
               </BaseButtonAction>
               <BaseButtonAction
-                shape="curved"
+                rounded="lg"
                 :color="settings.hourHeight === 160 ? 'muted' : 'default'"
                 @click="() => updateHeight()"
               >
@@ -819,7 +819,7 @@ const selectedEventFeatures = computed({
                     name="features"
                   >
                     <BaseCard
-                      shape="curved"
+                      rounded="lg"
                       class="text-muted-300 peer-checked:border-primary-500 peer-checked:text-primary-500 p-4"
                     >
                       <div class="flex flex-col items-center gap-1">
@@ -840,7 +840,7 @@ const selectedEventFeatures = computed({
                     name="features"
                   >
                     <BaseCard
-                      shape="curved"
+                      rounded="lg"
                       class="text-muted-300 peer-checked:border-primary-500 peer-checked:text-primary-500 p-4"
                     >
                       <div class="flex flex-col items-center gap-1">
@@ -861,7 +861,7 @@ const selectedEventFeatures = computed({
                     name="features"
                   >
                     <BaseCard
-                      shape="curved"
+                      rounded="lg"
                       class="text-muted-300 peer-checked:border-primary-500 peer-checked:text-primary-500 p-4"
                     >
                       <div class="flex flex-col items-center gap-1">
@@ -882,7 +882,7 @@ const selectedEventFeatures = computed({
                     name="features"
                   >
                     <BaseCard
-                      shape="curved"
+                      rounded="lg"
                       class="text-muted-300 peer-checked:border-primary-500 peer-checked:text-primary-500 p-4"
                     >
                       <div class="flex flex-col items-center gap-1">

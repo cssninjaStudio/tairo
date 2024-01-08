@@ -298,7 +298,7 @@ const panelActive = ref(false)
             <div class="h-16 w-full px-4 sm:px-8">
               <BaseInput
                 v-model.trim="search"
-                shape="curved"
+                rounded="lg"
                 icon="lucide:search"
                 placeholder="Search"
               />
@@ -323,7 +323,7 @@ const panelActive = ref(false)
                 <div class="mb-3 flex items-center gap-2">
                   <BaseAvatar
                     size="xs"
-                    shape="straight"
+                    rounded="none"
                     mask="blob"
                     :src="message.sender.photo"
                     class="pointer-events-none"
@@ -537,7 +537,7 @@ const panelActive = ref(false)
                       <Icon name="uit:paperclip" class="h-7 w-7" />
                     </button>
                     <BaseButton
-                      shape="curved"
+                      rounded="lg"
                       color="primary"
                       class="w-24"
                     >

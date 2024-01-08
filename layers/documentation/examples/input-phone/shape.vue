@@ -3,35 +3,35 @@
     <AddonInputPhone
       v-model="phone"
       v-model:country="country"
-      shape="straight"
+      rounded="none"
       label="Straight"
     />
 
     <AddonInputPhone
       v-model="phone"
       v-model:country="country"
-      shape="rounded"
+      rounded="sm"
       label="Rounded"
     />
 
     <AddonInputPhone
       v-model="phone"
       v-model:country="country"
-      shape="smooth"
+      rounded="md"
       label="Smooth"
     />
 
     <AddonInputPhone
       v-model="phone"
       v-model:country="country"
-      shape="curved"
+      rounded="lg"
       label="Curved"
     />
 
     <AddonInputPhone
       v-model="phone"
       v-model:country="country"
-      shape="full"
+      rounded="full"
       label="Full"
     />
   </div>

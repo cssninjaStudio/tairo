@@ -47,7 +47,7 @@ const props = defineProps<{
       />
       <div class="absolute inset-x-0 -bottom-2 mx-auto max-w-[85%]">
         <BaseCard
-          shape="curved"
+          rounded="lg"
           class="flex items-center p-4"
           elevated
         >

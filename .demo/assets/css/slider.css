@@ -329,6 +329,21 @@
   line-height: 3;
 }
 
+.smooth-tooltip .slider-tooltip {
+  border-radius: 0.65rem;
+  min-width: 28px;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  height: 28px;
+  font-size: 0.85rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 3;
+}
+
 .curved-tooltip .slider-tooltip {
   border-radius: 0.75rem;
   min-width: 28px;

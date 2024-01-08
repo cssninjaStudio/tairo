@@ -373,7 +373,7 @@ const onSubmit = handleSubmit(
                   >
                     <BaseButtonIcon
                       size="sm"
-                      shape="full"
+                      rounded="full"
                       data-nui-tooltip="Remove image"
                       @click="remove(files.item(0)!)"
                     >
@@ -384,7 +384,7 @@ const onSubmit = handleSubmit(
                     <div class="relative" data-nui-tooltip="Upload image">
                       <BaseButtonIcon
                         size="sm"
-                        shape="full"
+                        rounded="full"
                         @click="open"
                       >
                         <Icon name="lucide:plus" class="h-4 w-4" />
@@ -510,7 +510,7 @@ const onSubmit = handleSubmit(
                     :disabled="isSubmitting"
                     :items="experience"
                     placeholder="Experience"
-                    shape="rounded"
+                    rounded="sm"
                     @update:model-value="handleChange"
                     @blur="handleBlur"
                   />
@@ -528,7 +528,7 @@ const onSubmit = handleSubmit(
                     :items="answers"
                     :properties="{ label: 'label', value: 'value' }"
                     placeholder="Is this your first job?"
-                    shape="rounded"
+                    rounded="sm"
                     @update:model-value="handleChange"
                     @blur="handleBlur"
                   />
@@ -546,7 +546,7 @@ const onSubmit = handleSubmit(
                     :items="answers"
                     :properties="{ label: 'label', value: 'value' }"
                     placeholder="Are you flexible?"
-                    shape="rounded"
+                    rounded="sm"
                     @update:model-value="handleChange"
                     @blur="handleBlur"
                   />
@@ -564,7 +564,7 @@ const onSubmit = handleSubmit(
                     :items="answers"
                     :properties="{ label: 'label', value: 'value' }"
                     placeholder="Do you work remotely?"
-                    shape="rounded"
+                    rounded="sm"
                     @update:model-value="handleChange"
                     @blur="handleBlur"
                   />

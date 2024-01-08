@@ -1,10 +1,10 @@
 <script setup lang="ts">
 const props = withDefaults(
   defineProps<{
-    shape?: 'straight' | 'rounded' | 'curved' | 'full'
+    rounded?: 'none' | 'sm' | 'md' | 'lg' | 'full'
   }>(),
   {
-    shape: 'rounded',
+    rounded: 'sm',
   },
 )
 
@@ -73,7 +73,7 @@ const filteredMembers = computed(() => {
         v-model="filter"
         icon="lucide:search"
         placeholder="Search team members..."
-        :shape="props.shape"
+        :rounded="props.rounded"
       />
     </div>
     <div v-if="filteredMembers.length === 0">
@@ -101,9 +101,10 @@ const filteredMembers = computed(() => {
         :key="member.id"
         class="hover:bg-muted-100 focus-within:bg-muted-100 dark:hover:bg-muted-700/70 dark:focus-within:bg-muted-700/70 group flex items-center gap-3 p-2"
         :class="[
-          props.shape === 'rounded' ? 'rounded-md' : '',
-          props.shape === 'curved' ? 'rounded-xl' : '',
-          props.shape === 'full' ? 'rounded-full' : '',
+          props.rounded === 'sm' ? 'rounded-md' : '',
+          props.rounded === 'md' ? 'rounded-lg' : '',
+          props.rounded === 'lg' ? 'rounded-xl' : '',
+          props.rounded === 'full' ? 'rounded-full' : '',
         ]"
       >
         <BaseAvatar
@@ -135,7 +136,7 @@ const filteredMembers = computed(() => {
         >
           <BaseButtonIcon
             to="#"
-            :shape="props.shape"
+            :rounded="props.rounded"
             muted
             class="scale-75"
           >

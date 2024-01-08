@@ -49,7 +49,7 @@ const { data, pending, error, refresh } = await useFetch(
         <BaseInput
           v-model="filter"
           icon="lucide:search"
-          shape="curved"
+          rounded="lg"
           placeholder="Filter projects..."
           :classes="{
             wrapper: 'w-full sm:w-auto',
@@ -57,7 +57,7 @@ const { data, pending, error, refresh } = await useFetch(
         />
       </template>
       <template #right>
-        <BaseCard shape="curved" class="min-w-[340px]">
+        <BaseCard rounded="lg" class="min-w-[340px]">
           <div class="grid grid-cols-4 p-4">
             <div class="relative flex flex-col text-center">
               <span
@@ -149,7 +149,7 @@ const { data, pending, error, refresh } = await useFetch(
                 <BaseCard
                   v-for="(item, index) in data?.data"
                   :key="index"
-                  shape="curved"
+                  rounded="lg"
                   elevated-hover
                   class="hover:!border-primary-500"
                 >

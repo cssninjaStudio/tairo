@@ -208,7 +208,7 @@ const students = [
         :key="index"
         class="ltablet:col-span-4 relative col-span-12 sm:col-span-6 lg:col-span-4"
       >
-        <BaseCard shape="curved" class="flex h-full flex-col p-6">
+        <BaseCard rounded="lg" class="flex h-full flex-col p-6">
           <div class="mb-6">
             <BaseTag color="primary">
               <span>{{ course.category }}</span>
@@ -287,7 +287,7 @@ const students = [
           <div class="mt-4">
             <BaseButton
               color="primary"
-              shape="curved"
+              rounded="lg"
               class="w-full"
             >
               <span>Class Details</span>
@@ -320,7 +320,7 @@ const students = [
           <BaseCard
             v-for="(file, fileIndex) in files"
             :key="fileIndex"
-            shape="curved"
+            rounded="lg"
             class="p-4"
           >
             <div class="flex w-full items-center gap-3">
@@ -374,7 +374,7 @@ const students = [
           <DemoFlexTableRow
             v-for="(student, studentIndex) in students"
             :key="studentIndex"
-            shape="curved"
+            rounded="lg"
             spaced
           >
             <template #start>
@@ -405,8 +405,8 @@ const students = [
               >
                 <BaseTag
                   :color="student.status === 'Online' ? 'success' : 'muted'"
-                  shape="full"
-                  flavor="pastel"
+                  rounded="full"
+                  variant="pastel"
                   size="sm"
                 >
                   {{ student.status }}

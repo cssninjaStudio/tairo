@@ -20,12 +20,12 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
     <div v-else class="relative w-full">
       <div class="absolute end-0 top-2 z-20">
         <BaseDropdown
-          flavor="context"
+          variant="context"
           label="Dropdown"
           orientation="end"
           size="md"
           class="z-20"
-          shape="curved"
+          rounded="lg"
         >
           <BaseDropdownDivider />
           <BaseDropdownItem
@@ -450,7 +450,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                     <BaseButtonIcon
                       to="#"
                       size="sm"
-                      shape="full"
+                      rounded="full"
                       data-nui-tooltip="View Profile"
                     >
                       <Icon name="lucide:arrow-right" class="h-4 w-4" />

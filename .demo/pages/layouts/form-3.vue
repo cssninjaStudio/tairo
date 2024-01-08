@@ -95,7 +95,7 @@ const termsApproval = ref(false)
             </div>
             <div class="grow">
               <BaseCard
-                shape="curved"
+                rounded="lg"
                 elevated
                 class="mx-auto flex max-w-[280px] items-center justify-center px-8 py-16"
               >
@@ -357,7 +357,7 @@ const termsApproval = ref(false)
           <BaseCheckbox
             v-model="termsApproval"
             color="primary"
-            shape="full"
+            rounded="full"
             label="I agree to the Terms Of Service"
             :classes="{
               label: 'relative top-0.5 text-xs',

@@ -70,7 +70,7 @@ function onSelectType(type: ProjectType) {
             <BaseButton
               :to="getNextStep()?.to"
               color="primary"
-              shape="curved"
+              rounded="lg"
               class="w-36"
               @click.prevent="() => onSelectType('design')"
             >
@@ -122,7 +122,7 @@ function onSelectType(type: ProjectType) {
             <BaseButton
               :to="getNextStep()?.to"
               color="primary"
-              shape="curved"
+              rounded="lg"
               class="w-36"
               @click.prevent="() => onSelectType('development')"
             >
@@ -173,7 +173,7 @@ function onSelectType(type: ProjectType) {
             <BaseButton
               :to="getNextStep()?.to"
               color="primary"
-              shape="curved"
+              rounded="lg"
               class="w-36"
               @click.prevent="() => onSelectType('marketing')"
             >

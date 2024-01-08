@@ -78,7 +78,7 @@ const isModalMdOpen = ref(false)
           </BaseButton>
           <BaseButton
             color="primary"
-            flavor="solid"
+            variant="solid"
             @click="closeModal"
           >
             Accept
@@ -139,7 +139,7 @@ const isModalMdOpen = ref(false)
           </BaseButton>
           <BaseButton
             color="primary"
-            flavor="solid"
+            variant="solid"
             @click="isModalMdOpen = false"
           >
             Accept

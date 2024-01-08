@@ -49,7 +49,7 @@ const { data, pending, error, refresh } = await useFetch(
         <BaseInput
           v-model="filter"
           icon="lucide:search"
-          shape="rounded"
+          rounded="sm"
           placeholder="Filter projects..."
           :classes="{
             wrapper: 'w-full sm:w-auto',
@@ -60,7 +60,7 @@ const { data, pending, error, refresh } = await useFetch(
         <BaseButton
           color="primary"
           class="w-full sm:w-32"
-          shape="rounded"
+          rounded="sm"
         >
           <Icon name="lucide:plus" class="h-4 w-4" />
           <span>New</span>
@@ -108,7 +108,7 @@ const { data, pending, error, refresh } = await useFetch(
                   :to="`/layouts/projects/details/${item.slug}`"
                 >
                   <BaseCard
-                    shape="rounded"
+                    rounded="sm"
                     elevated-hover
                     class="group-hover:!border-primary-500 p-5"
                   >
@@ -205,7 +205,7 @@ const { data, pending, error, refresh } = await useFetch(
                 <BaseCard
                   v-for="(item, index) in data?.data"
                   :key="index"
-                  shape="rounded"
+                  rounded="sm"
                   elevated-hover
                   class="hover:!border-primary-500"
                 >

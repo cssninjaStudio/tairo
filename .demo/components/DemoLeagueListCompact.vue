@@ -64,7 +64,7 @@ const leagues = [
           {{ league.matches }} matches
         </span>
         <BaseButtonIcon
-          shape="curved"
+          rounded="lg"
           muted
           class="scale-75"
         >

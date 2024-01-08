@@ -2,7 +2,7 @@
   <div class="flex flex-wrap items-end gap-4">
     <BaseIconBox
       size="xs"
-      shape="rounded"
+      rounded="sm"
       class="bg-gray-200 text-gray-500 dark:bg-gray-800"
     >
       <Icon name="ph:nut-duotone" class="h-3 w-3" />
@@ -10,7 +10,7 @@
 
     <BaseIconBox
       size="sm"
-      shape="rounded"
+      rounded="sm"
       class="bg-gray-200 text-gray-500 dark:bg-gray-800"
     >
       <Icon name="ph:nut-duotone" class="h-4 w-4" />
@@ -18,7 +18,7 @@
 
     <BaseIconBox
       size="md"
-      shape="rounded"
+      rounded="sm"
       class="bg-gray-200 text-gray-500 dark:bg-gray-800"
     >
       <Icon name="ph:nut-duotone" class="h-5 w-5" />
@@ -26,7 +26,7 @@
 
     <BaseIconBox
       size="lg"
-      shape="rounded"
+      rounded="sm"
       class="bg-gray-200 text-gray-500 dark:bg-gray-800"
     >
       <Icon name="ph:nut-duotone" class="h-6 w-6" />
@@ -34,7 +34,7 @@
 
     <BaseIconBox
       size="xl"
-      shape="rounded"
+      rounded="sm"
       class="bg-gray-200 text-gray-500 dark:bg-gray-800"
     >
       <Icon name="ph:nut-duotone" class="h-7 w-7" />
@@ -42,7 +42,7 @@
 
     <BaseIconBox
       size="2xl"
-      shape="rounded"
+      rounded="sm"
       class="bg-gray-200 text-gray-500 dark:bg-gray-800"
     >
       <Icon name="ph:nut-duotone" class="h-8 w-8" />

@@ -114,7 +114,7 @@ function toggleAllVisibleSelection() {
         </div>
         <div v-else>
           <div class="w-full">
-            <TairoTable shape="rounded" :scrollable="false">
+            <TairoTable rounded="sm" :scrollable="false">
               <template #header>
                 <TairoTableHeading
                   uppercase
@@ -128,7 +128,7 @@ function toggleAllVisibleSelection() {
                         selected.length > 0 && !isAllVisibleSelected
                       "
                       name="table-1-main"
-                      shape="rounded"
+                      rounded="sm"
                       class="text-primary-500"
                       @click="toggleAllVisibleSelection"
                     />
@@ -176,7 +176,7 @@ function toggleAllVisibleSelection() {
                       v-model="selected"
                       :value="item.id"
                       :name="`item-checkbox-${item.id}`"
-                      shape="rounded"
+                      rounded="sm"
                       class="text-primary-500"
                     />
                   </div>
@@ -205,8 +205,8 @@ function toggleAllVisibleSelection() {
                   <BaseTag
                     v-if="item.status === 'available'"
                     color="success"
-                    flavor="pastel"
-                    shape="full"
+                    variant="pastel"
+                    rounded="full"
                     size="sm"
                     class="font-medium"
                   >
@@ -215,8 +215,8 @@ function toggleAllVisibleSelection() {
                   <BaseTag
                     v-else-if="item.status === 'new'"
                     color="info"
-                    flavor="pastel"
-                    shape="full"
+                    variant="pastel"
+                    rounded="full"
                     size="sm"
                     class="font-medium"
                   >
@@ -225,8 +225,8 @@ function toggleAllVisibleSelection() {
                   <BaseTag
                     v-else-if="item.status === 'busy'"
                     color="warning"
-                    flavor="pastel"
-                    shape="full"
+                    variant="pastel"
+                    rounded="full"
                     size="sm"
                     class="font-medium"
                   >
@@ -235,8 +235,8 @@ function toggleAllVisibleSelection() {
                   <BaseTag
                     v-else-if="item.status === 'offline'"
                     color="muted"
-                    flavor="pastel"
-                    shape="full"
+                    variant="pastel"
+                    rounded="full"
                     size="sm"
                     class="font-medium"
                   >
@@ -266,16 +266,16 @@ function toggleAllVisibleSelection() {
                 <TairoTableCell spaced>
                   <div class="flex justify-end">
                     <BaseDropdown
-                      flavor="context"
+                      variant="context"
                       label="Dropdown"
                       orientation="end"
-                      shape="smooth"
+                      rounded="md"
                     >
                       <BaseDropdownItem
                         to="#"
                         title="User"
                         text="View details"
-                        shape="smooth"
+                        rounded="md"
                       />
                     </BaseDropdown>
                   </div>
@@ -288,7 +288,7 @@ function toggleAllVisibleSelection() {
               :total-items="data?.total ?? 0"
               :item-per-page="perPage"
               :current-page="page"
-              shape="curved"
+              rounded="lg"
             />
           </div>
         </div>

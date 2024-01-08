@@ -2,7 +2,7 @@
   <div class="w-full max-w-sm">
     <BaseTabSlider
       v-slot="{ activeValue }"
-      shape="full"
+      rounded="full"
       model-value="team"
       :tabs="[
         { label: 'Team', value: 'team' },

@@ -93,7 +93,7 @@ const { data, pending, error, refresh } = await useFetch('/api/freelancers', {
             <BaseCard
               v-for="item in data?.data"
               :key="item.id"
-              shape="curved"
+              rounded="lg"
               class="flex flex-col p-5 sm:flex-row sm:items-center"
             >
               <div
@@ -132,8 +132,8 @@ const { data, pending, error, refresh } = await useFetch('/api/freelancers', {
                   <BaseTag
                     size="sm"
                     color="primary"
-                    flavor="pastel"
-                    shape="full"
+                    variant="pastel"
+                    rounded="full"
                   >
                     {{ item.role }}
                   </BaseTag>
@@ -219,7 +219,7 @@ const { data, pending, error, refresh } = await useFetch('/api/freelancers', {
               :total-items="data?.total ?? 0"
               :item-per-page="perPage"
               :current-page="page"
-              shape="full"
+              rounded="full"
             />
           </div>
         </div>

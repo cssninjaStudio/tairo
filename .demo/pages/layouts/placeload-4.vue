@@ -45,7 +45,7 @@ const input = ref('')
           <BaseCard
             v-for="index in 21"
             :key="index"
-            shape="curved"
+            rounded="lg"
             class="flex items-center gap-3 p-4"
           >
             <BasePlaceload class="h-12 w-12 shrink-0 rounded-full" />

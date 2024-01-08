@@ -636,7 +636,7 @@ function useGaugePersonal() {
             <div class="grid grid-cols-12 gap-6">
               <!-- Chart -->
               <div class="col-span-12 sm:col-span-6">
-                <BaseCard shape="curved" class="p-6">
+                <BaseCard rounded="lg" class="p-6">
                   <div class="mb-2 flex items-center justify-between">
                     <BaseHeading
                       as="h3"
@@ -674,7 +674,7 @@ function useGaugePersonal() {
               </div>
               <!-- Chart -->
               <div class="col-span-12 sm:col-span-6">
-                <BaseCard shape="curved" class="p-6">
+                <BaseCard rounded="lg" class="p-6">
                   <div class="mb-2 flex items-center justify-between">
                     <BaseHeading
                       as="h3"
@@ -708,7 +708,7 @@ function useGaugePersonal() {
               </div>
               <!-- Chart -->
               <div class="col-span-12 sm:col-span-6">
-                <BaseCard shape="curved" class="p-6">
+                <BaseCard rounded="lg" class="p-6">
                   <div class="mb-2 flex items-center justify-between">
                     <BaseHeading
                       as="h3"
@@ -745,7 +745,7 @@ function useGaugePersonal() {
               </div>
               <!-- Chart -->
               <div class="col-span-12 sm:col-span-6">
-                <BaseCard shape="curved" class="p-6">
+                <BaseCard rounded="lg" class="p-6">
                   <div class="mb-2 flex items-center justify-between">
                     <BaseHeading
                       as="h3"
@@ -786,13 +786,13 @@ function useGaugePersonal() {
           <div class="ltablet:col-span-3 col-span-12 lg:col-span-3">
             <div class="flex flex-col gap-6">
               <!-- Widget -->
-              <BaseCard class="p-6" shape="curved">
+              <BaseCard class="p-6" rounded="lg">
                 <div class="flex w-full items-center justify-between">
-                  <DemoSearchCompact shape="curved" />
+                  <DemoSearchCompact rounded="lg" />
                 </div>
               </BaseCard>
               <!-- Widget -->
-              <BaseCard shape="curved" class="p-2">
+              <BaseCard rounded="lg" class="p-2">
                 <Calendar
                   :attributes="[
                     {

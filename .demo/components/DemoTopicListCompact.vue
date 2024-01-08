@@ -1,10 +1,10 @@
 <script setup lang="ts">
 const props = withDefaults(
   defineProps<{
-    shape?: 'rounded' | 'full'
+    rounded?: 'none' | 'sm' | 'md' | 'lg' | 'full'
   }>(),
   {
-    shape: 'rounded',
+    rounded: 'sm',
   },
 )
 
@@ -48,7 +48,7 @@ const topics = [
       class="flex gap-3"
     >
       <BaseIconBox
-        :shape="props.shape"
+        :rounded="props.rounded"
         size="sm"
         :class="getRandomColor()"
       >

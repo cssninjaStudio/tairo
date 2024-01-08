@@ -1,11 +1,11 @@
 <script setup lang="ts">
 const props = withDefaults(
   defineProps<{
-    shape?: 'straight' | 'rounded' | 'curved'
+    rounded?: 'none' | 'sm' | 'md' | 'lg'
     scrollable?: boolean
   }>(),
   {
-    shape: 'rounded',
+    rounded: 'sm',
     scrollable: true,
   },
 )
@@ -17,8 +17,9 @@ const props = withDefaults(
       class="border-muted-200 dark:border-muted-700 border"
       :class="[
         props.scrollable && 'nui-slimscroll overflow-x-auto',
-        props.shape === 'rounded' && 'rounded-md',
-        props.shape === 'curved' && 'rounded-xl',
+        props.rounded === 'sm' && 'rounded-md',
+        props.rounded === 'md' && 'rounded-lg',
+        props.rounded === 'lg' && 'rounded-xl',
       ]"
     >
       <div class="inline-block min-w-full align-middle">

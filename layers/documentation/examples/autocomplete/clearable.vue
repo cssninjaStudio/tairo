@@ -1,76 +1,52 @@
 <template>
-  <div class="grid gap-6 md:max-w-lg md:grid-cols-2">
-    <BaseAutocomplete
-      v-model="first"
-      :items="frameworks"
-      :clear-value="''"
-      icon="lucide:search"
-      shape="full"
-      placeholder="e.g. Nuxt"
-      label="Framework"
-      clearable
-    />
+  <div class="flex max-w-3xl flex-wrap items-end gap-5">
+    <div class="flex-1">
+      <BaseAutocomplete
+        v-model="fields.first"
+        :items="frameworks"
+        icon="lucide:search"
+        size="sm"
+        rounded="md"
+        placeholder="e.g. Nuxt"
+        label="Framework"
+        clearable
+      />
+    </div>
 
-    <BaseAutocomplete
-      v-model="second"
-      :items="people"
-      :display-value="(item: any) => item?.name || ''"
-      :properties="{
-        value: 'id',
-        label: 'name',
-        sublabel: 'text',
-        media: 'media',
-      }"
-      icon="lucide:search"
-      shape="full"
-      placeholder="e.g. Aaron"
-      label="Manager"
-      clearable
-    />
+    <div class="flex-1">
+      <BaseAutocomplete
+        v-model="fields.second"
+        :items="frameworks"
+        icon="lucide:search"
+        size="md"
+        rounded="md"
+        placeholder="e.g. Nuxt"
+        label="Framework"
+        clearable
+      />
+    </div>
+
+    <div class="flex-1">
+      <BaseAutocomplete
+        v-model="fields.third"
+        :items="frameworks"
+        icon="lucide:search"
+        size="lg"
+        rounded="md"
+        placeholder="e.g. Nuxt"
+        label="Framework"
+        clearable
+      />
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-const first = ref('Angular')
-const second = ref({
-  id: 2,
-  name: 'Aaron Splatter',
-  text: 'Project Manager',
-  media: '/img/avatars/16.svg',
+const fields = reactive({
+  first: '',
+  second: '',
+  third: '',
 })
 
 const frameworks = ref(['Javascript', 'Nuxt', 'Vue.js', 'React.js', 'Angular', 'Alpine.js'])
-
-const people = ref([
-  {
-    id: 1,
-    name: 'Clarissa Perez',
-    text: 'Sales Manager',
-    media: '/img/avatars/19.svg',
-  },
-  {
-    id: 2,
-    name: 'Aaron Splatter',
-    text: 'Project Manager',
-    media: '/img/avatars/16.svg',
-  },
-  {
-    id: 3,
-    name: 'Mike Miller',
-    text: 'UI/UX Designer',
-    media: '/img/avatars/3.svg',
-  },
-  {
-    id: 4,
-    name: 'Benedict Kessler',
-    text: 'Mobile Developer',
-    media: '/img/avatars/22.svg',
-  },
-  {
-    id: 5,
-    name: 'Maya Rosselini',
-    text: 'Product Manager',
-    media: '/img/avatars/2.svg',
-  },
-])
 </script>

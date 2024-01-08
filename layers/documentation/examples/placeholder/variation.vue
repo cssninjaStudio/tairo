@@ -10,7 +10,7 @@
     <div class="mt-2 flex justify-center gap-2">
       <BaseButton
         color="default"
-        shape="curved"
+        rounded="lg"
         class="h-11 w-32"
       >
         Go Home
@@ -18,7 +18,7 @@
 
       <BaseButton
         color="primary"
-        shape="curved"
+        rounded="lg"
         class="h-11 w-32"
       >
         Edit Profile

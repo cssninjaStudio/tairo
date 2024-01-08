@@ -1,21 +1,21 @@
 <template>
-  <div class="grid gap-6 md:max-w-lg md:grid-cols-2">
+  <div class="max-w-sm">
     <BaseAutocomplete
       v-model="value"
       :items="hobbies"
       :display-value="(item: Hobby) => item.name"
       :filter-items="filterItems"
+      icon="ph:buildings"
+      rounded="md"
+      placeholder="Select a hobby"
+      label="Company"
+      clearable
       :properties="{
         value: 'id',
         label: 'name',
         sublabel: 'text',
         icon: 'icon',
       }"
-      icon="ph:buildings"
-      shape="rounded"
-      placeholder="Select a hobby"
-      label="Company"
-      clearable
     />
   </div>
 </template>

@@ -300,7 +300,7 @@ const popular = [
               <BaseCard
                 v-for="(item, i) in trending"
                 :key="i"
-                shape="curved"
+                rounded="lg"
                 class="flex items-center gap-3 p-3"
               >
                 <div
@@ -327,7 +327,7 @@ const popular = [
                 </div>
                 <div class="ms-auto flex items-center">
                   <BaseButtonIcon
-                    shape="curved"
+                    rounded="lg"
                     muted
                     class="scale-75"
                   >
@@ -361,7 +361,7 @@ const popular = [
               <BaseCard
                 v-for="(item, p) in popular"
                 :key="p"
-                shape="curved"
+                rounded="lg"
                 class="flex items-center gap-3 p-3"
               >
                 <div
@@ -388,7 +388,7 @@ const popular = [
                 </div>
                 <div class="ms-auto flex items-center">
                   <BaseButtonIcon
-                    shape="curved"
+                    rounded="lg"
                     muted
                     class="scale-75"
                   >
@@ -404,13 +404,13 @@ const popular = [
       <div class="ltablet:col-span-4 col-span-12 lg:col-span-4">
         <div class="flex flex-col gap-6">
           <!-- Widget -->
-          <BaseCard class="p-6" shape="curved">
+          <BaseCard class="p-6" rounded="lg">
             <div class="flex w-full items-center justify-between">
-              <DemoSearchCompact shape="curved" />
+              <DemoSearchCompact rounded="lg" />
             </div>
           </BaseCard>
           <!-- Widget -->
-          <BaseCard shape="curved" class="p-4">
+          <BaseCard rounded="lg" class="p-4">
             <Calendar
               :attributes="[
                 {
@@ -437,7 +437,7 @@ const popular = [
             />
           </BaseCard>
           <!-- Widget -->
-          <BaseCard class="p-6" shape="curved">
+          <BaseCard class="p-6" rounded="lg">
             <div class="mb-6">
               <BaseHeading
                 as="h3"
@@ -476,7 +476,7 @@ const popular = [
                 </div>
                 <div class="ms-auto flex items-center">
                   <BaseButtonIcon
-                    shape="curved"
+                    rounded="lg"
                     muted
                     class="scale-75"
                   >
@@ -510,7 +510,7 @@ const popular = [
                 </div>
                 <div class="ms-auto flex items-center">
                   <BaseButtonIcon
-                    shape="curved"
+                    rounded="lg"
                     muted
                     class="scale-75"
                   >
@@ -544,7 +544,7 @@ const popular = [
                 </div>
                 <div class="ms-auto flex items-center">
                   <BaseButtonIcon
-                    shape="curved"
+                    rounded="lg"
                     muted
                     class="scale-75"
                   >

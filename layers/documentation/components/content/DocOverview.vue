@@ -3,7 +3,7 @@
     class="dark:border-muted-800 mb-10 grid gap-4 border-b border-gray-200 pb-10 md:grid-cols-2 xl:gap-8"
   >
     <div>
-      <BaseCard shape="rounded" class="p-8">
+      <BaseCard rounded="sm" class="p-8">
         <div
           class="text-muted-400 hover:text-primary-500 dark:text-muted-600 dark:hover:text-primary-500 mb-7 block transition-colors duration-300"
         >
@@ -42,7 +42,7 @@
         class="group flex h-full flex-col"
       >
         <BaseCard
-          shape="rounded"
+          rounded="sm"
           class="group-hover:border-success-500 flex h-full items-center p-8 text-center sm:justify-center sm:p-2"
         >
           <img
@@ -72,7 +72,7 @@
         class="group flex h-full flex-col"
       >
         <BaseCard
-          shape="rounded"
+          rounded="sm"
           class="flex h-full items-center p-8 text-center group-hover:border-sky-500 sm:justify-center sm:p-2"
         >
           <img
@@ -102,16 +102,16 @@
         class="group flex h-full flex-col"
       >
         <BaseCard
-          shape="rounded"
+          rounded="sm"
           class="flex h-full items-center p-8 text-center group-hover:border-violet-500 sm:justify-center sm:p-2"
         >
           <img
-            src="/img/logos/brands/shuriken-light.svg"
+            src="/img/logos/brands/shuriken-gradient-light.svg"
             class="block h-8 dark:hidden sm:mx-auto"
             alt="Shuriken UI logo"
           >
           <img
-            src="/img/logos/brands/shuriken-dark.svg"
+            src="/img/logos/brands/shuriken-gradient-dark.svg"
             class="hidden h-8 dark:block sm:mx-auto"
             alt="Shuriken UI logo"
           >
@@ -132,7 +132,7 @@
         class="group flex h-full flex-col"
       >
         <BaseCard
-          shape="rounded"
+          rounded="sm"
           class="flex h-full items-center p-8 text-center group-hover:border-blue-500 sm:justify-center sm:p-2"
         >
           <img

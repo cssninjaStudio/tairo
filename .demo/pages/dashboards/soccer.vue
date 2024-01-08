@@ -131,7 +131,7 @@ const matches = [
       <div class="ltablet:col-span-4 col-span-12 lg:col-span-4">
         <div class="ptablet:flex-row flex flex-col gap-6">
           <!-- Widget -->
-          <BaseCard shape="curved" class="p-8">
+          <BaseCard rounded="lg" class="p-8">
             <!-- Title -->
             <div class="mb-6 flex items-center justify-between">
               <BaseHeading
@@ -162,7 +162,7 @@ const matches = [
               </div>
               <div>
                 <BaseTag
-                  shape="full"
+                  rounded="full"
                   color="danger"
                   class="inline-flex items-center justify-center gap-1"
                   size="sm"
@@ -218,7 +218,7 @@ const matches = [
             <div>
               <BaseButton
                 color="primary"
-                shape="curved"
+                rounded="lg"
                 class="!h-12 w-full"
               >
                 <span>Watch Now</span>
@@ -226,7 +226,7 @@ const matches = [
             </div>
           </BaseCard>
           <!-- Widget -->
-          <BaseCard shape="curved" class="p-8">
+          <BaseCard rounded="lg" class="p-8">
             <!-- Title -->
             <div class="mb-6 flex items-center justify-between">
               <BaseHeading
@@ -266,7 +266,7 @@ const matches = [
                     <BaseButton
                       size="sm"
                       color="light"
-                      flavor="outline"
+                      variant="outline"
                       class="w-full sm:w-auto"
                     >
                       <span>Learn More</span>
@@ -285,7 +285,7 @@ const matches = [
             </div>
           </div>
           <!-- Table -->
-          <BaseCard shape="curved" class="p-8">
+          <BaseCard rounded="lg" class="p-8">
             <div class="mb-6 flex gap-4 font-sans">
               <button
                 class="border-primary-500 text-muted-800 dark:text-muted-100 border-b-2 pb-4"

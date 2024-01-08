@@ -1,38 +1,51 @@
 <template>
-  <div class="grid gap-6 md:max-w-xl md:grid-cols-2">
+  <div class="grid gap-6 md:max-w-4xl md:grid-cols-3">
     <BaseTextarea
       v-model="fields.first"
-      label="Staight textarea"
-      shape="straight"
+      label="Rounded: none"
+      rounded="none"
       placeholder="Write a message..."
       rows="1"
+      :classes="{
+        textarea: 'resize-none overflow-hidden',
+      }"
       autogrow
     />
 
     <BaseTextarea
       v-model="fields.second"
-      label="Rounded textarea"
-      shape="rounded"
+      label="Rounded: sm"
+      rounded="sm"
       placeholder="Write a message..."
       rows="1"
+      :classes="{
+        textarea: 'resize-none overflow-hidden',
+      }"
       autogrow
     />
 
     <BaseTextarea
       v-model="fields.third"
-      label="Curved textarea"
-      shape="curved"
+      label="Rounded: md"
+      rounded="md"
       placeholder="Write a message..."
       rows="1"
+      :classes="{
+        textarea: 'resize-none overflow-hidden',
+      }"
       autogrow
     />
 
     <BaseTextarea
       v-model="fields.fourth"
-      label="Full textarea"
-      shape="full"
+      label="Rounded: lg"
+      rounded="lg"
       placeholder="Write a message..."
       rows="1"
+      :classes="{
+        textarea: 'resize-none overflow-hidden',
+      }"
+      autogrow
     />
   </div>
 </template>

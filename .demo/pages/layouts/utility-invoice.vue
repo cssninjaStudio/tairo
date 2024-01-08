@@ -73,28 +73,28 @@ const totalData = computed(() => {
       <div class="flex items-center justify-end gap-3">
         <BaseButtonIcon
           size="sm"
-          shape="full"
+          rounded="full"
           data-nui-tooltip="Edit invoice"
         >
           <Icon name="ph:pencil-duotone" class="h-4 w-4" />
         </BaseButtonIcon>
         <BaseButtonIcon
           size="sm"
-          shape="full"
+          rounded="full"
           data-nui-tooltip="Send by email"
         >
           <Icon name="ph:envelope-duotone" class="h-4 w-4" />
         </BaseButtonIcon>
         <BaseButtonIcon
           size="sm"
-          shape="full"
+          rounded="full"
           data-nui-tooltip="Print invoice"
         >
           <Icon name="ph:printer-duotone" class="h-4 w-4" />
         </BaseButtonIcon>
         <BaseButtonIcon
           size="sm"
-          shape="full"
+          rounded="full"
           data-nui-tooltip="Download as PDF"
         >
           <Icon name="ph:download-duotone" class="h-4 w-4" />

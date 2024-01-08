@@ -1,11 +1,11 @@
 <template>
-  <TairoTable shape="rounded">
+  <TairoTable rounded="sm">
     <template #header>
       <TairoTableHeading uppercase class="p-4">
         <div class="flex items-center">
           <BaseCheckbox
             v-model="selectAll"
-            shape="rounded"
+            rounded="sm"
             class="text-primary-500"
           />
         </div>
@@ -38,7 +38,7 @@
           <BaseCheckbox
             v-model="selected"
             :value="`table-2-${member.id}`"
-            shape="rounded"
+            rounded="sm"
             class="text-primary-500"
           />
         </div>
@@ -58,8 +58,8 @@
         <BaseTag
           v-if="member.status === 'Available'"
           color="success"
-          flavor="pastel"
-          shape="full"
+          variant="pastel"
+          rounded="full"
           class="font-medium"
         >
           {{ member.status }}
@@ -68,8 +68,8 @@
         <BaseTag
           v-else-if="member.status === 'New'"
           color="info"
-          flavor="pastel"
-          shape="full"
+          variant="pastel"
+          rounded="full"
           class="font-medium"
         >
           {{ member.status }}
@@ -78,8 +78,8 @@
         <BaseTag
           v-else-if="member.status === 'Hired'"
           color="warning"
-          flavor="pastel"
-          shape="full"
+          variant="pastel"
+          rounded="full"
           class="font-medium"
         >
           {{ member.status }}

@@ -56,7 +56,7 @@ const fakeItems = ref([])
       </template>
       <div>
         <div class="w-full">
-          <TairoTable shape="rounded">
+          <TairoTable rounded="sm">
             <template #header>
               <TairoTableHeading
                 uppercase
@@ -66,7 +66,7 @@ const fakeItems = ref([])
                 <div class="flex items-center">
                   <BaseCheckbox
                     v-model="fakeAll"
-                    shape="full"
+                    rounded="full"
                     class="text-primary-500"
                   />
                 </div>
@@ -97,7 +97,7 @@ const fakeItems = ref([])
                   <BaseCheckbox
                     v-model="fakeItems"
                     :value="`placeload-item-checkbox-${index}`"
-                    shape="full"
+                    rounded="full"
                     class="text-primary-500"
                   />
                 </div>

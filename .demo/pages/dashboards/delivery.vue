@@ -234,7 +234,7 @@ const total = computed(() => {
                     <BaseButton
                       size="sm"
                       color="light"
-                      flavor="outline"
+                      variant="outline"
                       class="w-full sm:w-auto"
                     >
                       <span>Learn More</span>
@@ -300,7 +300,7 @@ const total = computed(() => {
 
               <div class="hidden items-center justify-center sm:flex">
                 <BaseButtonIcon
-                  shape="full"
+                  rounded="full"
                   class="hover:border-yellow-500 hover:text-yellow-500"
                   data-nui-tooltip="All categories"
                 >
@@ -318,7 +318,7 @@ const total = computed(() => {
                 class="relative"
               >
                 <BaseCard
-                  shape="curved"
+                  rounded="lg"
                   class="hover:border-primary-500 hover:shadow-muted-300/30 dark:hover:shadow-muted-900/40 p-3 hover:shadow-xl"
                 >
                   <div
@@ -369,7 +369,7 @@ const total = computed(() => {
                     </div>
 
                     <div>
-                      <BaseButtonAction shape="curved">
+                      <BaseButtonAction rounded="lg">
                         <span>Order</span>
                       </BaseButtonAction>
                     </div>
@@ -379,7 +379,7 @@ const total = computed(() => {
             </div>
             <!-- Load more -->
             <div class="my-16 flex items-center justify-center">
-              <BaseButton shape="full" color="default">
+              <BaseButton rounded="full" color="default">
                 <Icon name="ph:dots-nine-bold" class="h-4 w-4" />
                 <span>Load more</span>
               </BaseButton>
@@ -525,7 +525,7 @@ const total = computed(() => {
             <div class="mt-4 flex justify-between text-xs font-bold">
               <BaseButton
                 color="none"
-                shape="curved"
+                rounded="lg"
                 class="text-muted-800 group !h-14 w-full !gap-3 bg-yellow-400 hover:!shadow-xl hover:!shadow-yellow-400/20"
               >
                 <span class="text-base font-medium">Checkout</span>

@@ -1,21 +1,62 @@
 <template>
-  <div class="mt-6 grid gap-6 md:max-w-lg md:grid-cols-2">
+  <div class="grid gap-6 md:max-w-lg md:grid-cols-2">
     <BaseAutocomplete
-      v-model="first"
+      v-model="fields.first"
       :items="frameworks"
-      icon="lucide:search"
-      shape="curved"
+      size="sm"
+      rounded="md"
       placeholder="e.g. Nuxt"
       label="Framework"
       label-float
     />
 
     <BaseAutocomplete
-      v-model="second"
+      v-model="fields.second"
       :items="frameworks"
-      clearable
-      shape="curved"
-      placeholder="e.g. Vue.js"
+      size="sm"
+      icon="lucide:search"
+      rounded="md"
+      placeholder="e.g. Nuxt"
+      label="Framework"
+      label-float
+    />
+
+    <BaseAutocomplete
+      v-model="fields.third"
+      :items="frameworks"
+      rounded="md"
+      placeholder="e.g. Nuxt"
+      label="Framework"
+      label-float
+    />
+
+    <BaseAutocomplete
+      v-model="fields.fourth"
+      :items="frameworks"
+      icon="lucide:search"
+      rounded="md"
+      placeholder="e.g. Nuxt"
+      label="Framework"
+      label-float
+    />
+
+    <BaseAutocomplete
+      v-model="fields.fifth"
+      :items="frameworks"
+      size="lg"
+      rounded="md"
+      placeholder="e.g. Nuxt"
+      label="Framework"
+      label-float
+    />
+
+    <BaseAutocomplete
+      v-model="fields.sixth"
+      :items="frameworks"
+      icon="lucide:search"
+      size="lg"
+      rounded="md"
+      placeholder="e.g. Nuxt"
       label="Framework"
       label-float
     />
@@ -23,8 +64,14 @@
 </template>
 
 <script setup lang="ts">
-const first = ref('')
-const second = ref('')
+const fields = reactive({
+  first: '',
+  second: '',
+  third: '',
+  fourth: '',
+  fifth: '',
+  sixth: '',
+})
 
 const frameworks = ref(['Javascript', 'Nuxt', 'Vue.js', 'React.js', 'Angular', 'Alpine.js'])
 </script>

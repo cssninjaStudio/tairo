@@ -86,7 +86,7 @@
 
           <BaseButton
             color="primary"
-            flavor="solid"
+            variant="solid"
             @click="isModalStartOpen = false"
           >
             Accept
@@ -145,7 +145,7 @@
 
           <BaseButton
             color="primary"
-            flavor="solid"
+            variant="solid"
             @click="isModalEndOpen = false"
           >
             Accept
@@ -204,7 +204,7 @@
 
           <BaseButton
             color="primary"
-            flavor="solid"
+            variant="solid"
             @click="isModalCenterOpen = false"
           >
             Accept
@@ -267,7 +267,7 @@
         <div class="flex gap-x-2">
           <BaseButton
             color="primary"
-            flavor="solid"
+            variant="solid"
             @click="isModalBetweenOpen = false"
           >
             Accept

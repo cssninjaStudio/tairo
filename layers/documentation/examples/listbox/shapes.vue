@@ -1,35 +1,43 @@
 <template>
-  <div class="grid gap-6 md:max-w-lg md:grid-cols-2">
+  <div class="grid gap-6 md:max-w-4xl md:grid-cols-3">
     <BaseListbox
       v-model="value"
-      label="Straight listbox"
+      label="Rounded: none"
       :items="frameworks"
       placeholder="Select a framework"
-      shape="straight"
+      rounded="none"
     />
 
     <BaseListbox
       v-model="value"
-      label="Rounded listbox (default)"
+      label="Rounded: sm"
       :items="frameworks"
       placeholder="Select a framework"
-      shape="rounded"
+      rounded="sm"
     />
 
     <BaseListbox
       v-model="value"
-      label="Curved listbox"
+      label="Rounded: md"
       :items="frameworks"
       placeholder="Select a framework"
-      shape="curved"
+      rounded="md"
     />
 
     <BaseListbox
       v-model="value"
-      label="Full listbox"
+      label="Rounded: lg"
       :items="frameworks"
       placeholder="Select a framework"
-      shape="full"
+      rounded="lg"
+    />
+
+    <BaseListbox
+      v-model="value"
+      label="Rounded: full"
+      :items="frameworks"
+      placeholder="Select a framework"
+      rounded="full"
     />
   </div>
 </template>

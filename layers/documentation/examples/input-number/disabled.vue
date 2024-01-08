@@ -1,12 +1,37 @@
 <template>
-  <div class="grid gap-6 md:max-w-lg md:grid-cols-2">
-    <BaseInputNumber
-      v-model="value"
-      shape="rounded"
-      label="Amount"
-      icon="lucide:euro"
-      disabled
-    />
+  <div class="flex max-w-3xl flex-wrap items-end gap-3">
+    <div class="flex-1">
+      <BaseInputNumber
+        v-model="value"
+        size="sm"
+        rounded="md"
+        label="Amount"
+        icon="lucide:euro"
+        disabled
+      />
+    </div>
+
+    <div class="flex-1">
+      <BaseInputNumber
+        v-model="value"
+        size="md"
+        rounded="md"
+        label="Amount"
+        icon="lucide:euro"
+        disabled
+      />
+    </div>
+
+    <div class="flex-1">
+      <BaseInputNumber
+        v-model="value"
+        size="lg"
+        rounded="md"
+        label="Amount"
+        icon="lucide:euro"
+        disabled
+      />
+    </div>
   </div>
 </template>
 

@@ -11,16 +11,16 @@ icon:
 
 ::doc-component-demo
 ---
-title: Checkbox colors
+title: Color
 demo: '#examples/checkbox-animated/base.vue'
 ---
-A nice and friendly checkbox. Notice the usage of :doc-linker{to="BaseFocusLoop"} to loop focus through all the checkboxes.
+A nice and friendly checkbox. Notice the usage of :doc-linker{to="BaseFocusLoop"} to loop focus through all the checkboxes. Use the `color` prop to change the color of the checkbox.
 ::
 
 
 ::doc-component-demo
 ---
-title: Boolean value
+title: Value:boolean
 demo: '#examples/checkbox-animated/boolean.vue'
 ---
 Here is an example using a `boolean` value
@@ -29,7 +29,7 @@ Here is an example using a `boolean` value
 
 ::doc-component-demo
 ---
-title: Custom behavior
+title: Value:custom
 demo: '#examples/checkbox-animated/custom.vue'
 ---
 Use `true-value`/`false-value` to create a custom behavior
@@ -38,7 +38,7 @@ Use `true-value`/`false-value` to create a custom behavior
 
 ::doc-component-demo
 ---
-title: Static value
+title: Value:static
 demo: '#examples/checkbox-animated/true-false.vue'
 ---
 You can create a static checkbox by omitting the `v-model` (or `model-value`)

@@ -1,10 +1,10 @@
 <script setup lang="ts">
 const props = withDefaults(
   defineProps<{
-    shape?: 'straight' | 'rounded' | 'curved'
+    rounded?: 'none' | 'sm' | 'md' | 'lg'
   }>(),
   {
-    shape: 'rounded',
+    rounded: 'sm',
   },
 )
 
@@ -18,7 +18,7 @@ const search = ref('')
         v-model="search"
         icon="lucide:search"
         placeholder="Search"
-        :shape="props.shape"
+        :rounded="props.rounded"
         :classes="{
           wrapper: 'w-full',
           input:
@@ -29,8 +29,9 @@ const search = ref('')
         type="button"
         class="bg-primary-500 absolute end-1 top-1 inline-flex h-8 items-center justify-center px-4 font-sans text-sm text-white"
         :class="[
-          props.shape === 'rounded' ? 'rounded' : '',
-          props.shape === 'curved' ? 'rounded-lg' : '',
+          props.rounded === 'sm' ? 'rounded' : '',
+          props.rounded === 'md' ? 'rounded-md' : '',
+          props.rounded === 'lg' ? 'rounded-lg' : '',
         ]"
       >
         <span>Go</span>

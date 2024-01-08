@@ -678,7 +678,7 @@ async function submitMessage() {
             <div class="flex items-center gap-2">
               <BaseInput
                 v-model="search"
-                shape="curved"
+                rounded="lg"
                 icon="lucide:search"
                 placeholder="Search"
               />
@@ -900,7 +900,7 @@ async function submitMessage() {
               <BaseInput
                 v-model.trim="message"
                 :disabled="messageLoading"
-                shape="full"
+                rounded="full"
                 :classes="{
                   input: 'h-12 ps-6 pe-24',
                 }"
@@ -1022,7 +1022,7 @@ async function submitMessage() {
                 </div>
               </div>
               <div class="mt-6">
-                <BaseButton shape="curved" class="w-full">
+                <BaseButton rounded="lg" class="w-full">
                   <span>
                     View {{ selectedConversation?.user.name }}'s profile
                   </span>

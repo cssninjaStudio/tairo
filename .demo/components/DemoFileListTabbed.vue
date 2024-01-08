@@ -1,10 +1,10 @@
 <script setup lang="ts">
 const props = withDefaults(
   defineProps<{
-    shape?: 'straight' | 'rounded' | 'curved' | 'full'
+    rounded?: 'none' | 'sm' | 'md' | 'lg' | 'full'
   }>(),
   {
-    shape: 'rounded',
+    rounded: 'sm',
   },
 )
 
@@ -92,7 +92,7 @@ const savedFiles = [
     <DemoTabbedContent
       title="Files"
       :labels="['Recent', 'Saved']"
-      :shape="props.shape"
+      :rounded="props.rounded"
     >
       <template #tab-1>
         <div class="space-y-6">
@@ -122,12 +122,12 @@ const savedFiles = [
             </div>
             <div class="ms-auto">
               <BaseDropdown
-                flavor="context"
+                variant="context"
                 label="Dropdown"
                 orientation="end"
                 size="md"
                 class="z-20"
-                shape="curved"
+                rounded="lg"
               >
                 <BaseDropdownItem
                   to="#"
@@ -215,11 +215,11 @@ const savedFiles = [
             </div>
             <div class="ms-auto">
               <BaseDropdown
-                flavor="context"
+                variant="context"
                 label="Dropdown"
                 orientation="end"
                 size="md"
-                shape="curved"
+                rounded="lg"
                 class="z-20"
               >
                 <BaseDropdownItem

@@ -45,7 +45,7 @@ const commentArea = ref('')
         <div class="mb-4 flex items-center justify-between">
           <div class="flex items-center gap-2">
             <BaseButtonIcon
-              shape="full"
+              rounded="full"
               data-nui-tooltip="Edit task"
               size="sm"
             >
@@ -58,8 +58,8 @@ const commentArea = ref('')
             </h4>
           </div>
           <BaseTag
-            shape="full"
-            flavor="pastel"
+            rounded="full"
+            variant="pastel"
             color="muted"
             class="m-0 -ms-1 inline-flex h-6 scale-90 items-center gap-1 py-0 text-xs font-semibold"
           >
@@ -159,7 +159,7 @@ const commentArea = ref('')
             <div
               v-for="(item, index) in props.task?.checklist"
               :key="index"
-              shape="curved"
+              rounded="lg"
             >
               <div class="flex w-full items-center gap-2">
                 <BaseCheckbox
@@ -207,7 +207,7 @@ const commentArea = ref('')
             <div
               v-for="(file, index) in props.task?.files"
               :key="index"
-              shape="curved"
+              rounded="lg"
             >
               <div class="flex w-full items-center gap-2">
                 <img
@@ -231,7 +231,7 @@ const commentArea = ref('')
                 </div>
                 <div class="ms-auto">
                   <BaseButtonIcon
-                    shape="full"
+                    rounded="full"
                     data-nui-tooltip="Download file"
                     size="sm"
                   >
@@ -303,7 +303,7 @@ const commentArea = ref('')
         <div>
           <BaseTextarea
             v-model="commentArea"
-            shape="rounded"
+            rounded="sm"
             placeholder="Write a comment..."
             :rows="4"
             addon

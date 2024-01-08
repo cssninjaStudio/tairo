@@ -124,7 +124,7 @@ const metaKey = useMetaKey()
             v-model="search"
             v-focus
             type="search"
-            shape="curved"
+            rounded="lg"
             icon="lucide:search"
             placeholder="Ex: button or analytics..."
             color-focus

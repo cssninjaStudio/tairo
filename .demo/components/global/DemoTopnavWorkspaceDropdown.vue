@@ -128,7 +128,7 @@ function setWorkspace(workspace: any) {
                 </ul>
               </div>
               <div class="mt-auto">
-                <BaseButton shape="smooth" class="w-full">
+                <BaseButton rounded="md" class="w-full">
                   <Icon name="lucide:plus" class="h-4 w-4" />
                   <span>Create Workspace</span>
                 </BaseButton>
@@ -185,7 +185,7 @@ function setWorkspace(workspace: any) {
                 </ul>
               </div>
               <div class="mt-auto">
-                <BaseButton shape="smooth" class="w-full">
+                <BaseButton rounded="md" class="w-full">
                   <Icon name="lucide:plus" class="h-4 w-4" />
                   <span>Create Project</span>
                 </BaseButton>

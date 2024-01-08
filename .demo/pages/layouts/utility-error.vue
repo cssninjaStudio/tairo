@@ -101,7 +101,7 @@ const showStackTrace = ref(false)
         <BaseButton
           color="primary"
           class="!h-12 w-48 items-center gap-2"
-          shape="curved"
+          rounded="lg"
           @click="handleError"
         >
           <Icon name="feather:arrow-left" />
@@ -120,7 +120,7 @@ const showStackTrace = ref(false)
     <div v-if="showStackTrace">
       <BaseCard
         v-focus
-        shape="curved"
+        rounded="lg"
         class="nui-focus nui-text-700 group relative mx-auto mt-6 max-w-3xl border-2 border-dashed p-8 hover:border-solid"
         tabindex="0"
       >
@@ -137,7 +137,7 @@ const showStackTrace = ref(false)
           <BaseTag
             v-if="props.error.url"
             color="danger"
-            flavor="outline"
+            variant="outline"
             size="sm"
           >
             {{ props.error.url }}
@@ -151,7 +151,7 @@ const showStackTrace = ref(false)
         <div class="mb-4 flex items-center gap-2">
           <BaseIconBox
             color="danger"
-            shape="full"
+            rounded="full"
             size="md"
           >
             <Icon name="ph:skull-duotone" class="h-6 w-6" />

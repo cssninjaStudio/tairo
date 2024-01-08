@@ -32,9 +32,9 @@ const props = withDefaults(defineProps<{
    */
   size?: 'sm' | 'md' | 'lg'
   /**
-   * The shape of the input.
+   * The radius of the input.
    */
-  shape?: 'straight' | 'rounded' | 'smooth' | 'curved' | 'full'
+  rounded?: 'none' | 'sm' | 'md' | 'lg' | 'full'
   /**
    * An error message or boolean value indicating whether the input is in an error state.
    */
@@ -42,7 +42,7 @@ const props = withDefaults(defineProps<{
   disabled?: boolean
 }>(), {
   modelValue: '',
-  shape: undefined,
+  rounded: 'sm',
   height: 200,
   itemHeight: 47,
   format: 'international',
@@ -63,7 +63,6 @@ defineOptions({
 })
 
 const appConfig = useAppConfig()
-const shape = computed(() => props.shape ?? appConfig.nui.defaultShapes?.input)
 
 const vmodel = useVModel(props, 'modelValue', emits, {
   passive: true,
@@ -311,16 +310,16 @@ const inputStart = computed(() => {
   }
 })
 const dropdownBorder = computed(() => {
-  switch (shape.value) {
-    case 'rounded':
+  switch (props.rounded) {
+    case 'sm':
       return '[&_.nui-text-button]:rounded-s'
-    case 'curved':
+    case 'md':
+      return '[&_.nui-text-button]:rounded-s-md'
+    case 'lg':
       return '[&_.nui-text-button]:rounded-s-xl'
     case 'full':
       return '[&_.nui-text-button]:rounded-s-full'
-    case 'smooth':
-      return '[&_.nui-text-button]:rounded-s-md'
-    case 'straight':
+    case 'none':
       return ''
   }
 })
@@ -337,8 +336,8 @@ const dropdownBorder = computed(() => {
     >
       <BaseDropdown
         ref="dropdownRef"
-        flavor="text"
-        :shape="shape"
+        variant="text"
+        :rounded="props.rounded"
         size="lg"
         class="[&_.nui-text-button]:border-muted-200 dark:[&_.nui-text-button]:border-muted-800 flex h-full [&_.nui-text-button]:relative [&_.nui-text-button]:z-10 [&_.nui-text-button]:h-full [&_.nui-text-button]:w-full [&_.nui-text-button]:border-e [&_.nui-text-button]:pe-2 [&_.nui-text-button]:ps-4"
         :class="dropdownBorder"
@@ -365,7 +364,7 @@ const dropdownBorder = computed(() => {
         <BaseInput
           ref="filterRef"
           v-model="filter"
-          :shape="shape === 'full' ? 'curved' : shape"
+          :rounded="rounded === 'full' ? 'lg' : rounded"
           size="sm"
           icon="ph:magnifying-glass"
         />
@@ -384,7 +383,7 @@ const dropdownBorder = computed(() => {
                 <BaseDropdownItem
                   title="No results"
                   text="Try searching by country name or code"
-                  :shape="shape === 'full' ? 'curved' : shape"
+                  :rounded="props.rounded === 'full' ? 'lg' : props.rounded"
                 />
               </slot>
             </div>
@@ -399,7 +398,7 @@ const dropdownBorder = computed(() => {
                     :title="data?.label"
                     :text="`+${data?.callingCode}`"
                     :tabindex="0"
-                    :shape="shape === 'full' ? 'curved' : shape"
+                    :rounded="props.rounded === 'full' ? 'lg' : props.rounded"
                     @click="selectCountry(data?.code)"
                     @keyboard.enter.prevent="selectCountry(data?.code)"
                   >
@@ -438,7 +437,7 @@ const dropdownBorder = computed(() => {
       :size="props.size"
       :error="props.error"
       :disabled="props.disabled"
-      :shape="shape"
+      :rounded="props.rounded"
       :classes="{ wrapper: 'relative grow [&_.nui-input-placeload]:ms-16', input: `${inputStart} !pe-8`, icon: '!w-16' }"
       v-bind="$attrs"
       @update:model-value="

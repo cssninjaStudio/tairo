@@ -1,12 +1,12 @@
 <script setup lang="ts">
 const props = withDefaults(
   defineProps<{
-    shape?: 'straight' | 'rounded' | 'curved' | 'full'
+    rounded?: 'none' | 'sm' | 'md' | 'lg' | 'full'
     disabled?: boolean
     loading?: boolean
   }>(),
   {
-    shape: 'rounded',
+    rounded: 'sm',
   },
 )
 const emits = defineEmits<{
@@ -31,12 +31,12 @@ const { x, y } = useWindowScroll()
       >
         <BaseCard
           class="shadow-muted-300/30 dark:shadow-muted-800/30 flex items-center justify-between gap-2 rounded-2xl p-4 shadow-xl"
-          :shape="props.shape === 'full' ? 'curved' : props.shape"
+          :rounded="props.rounded === 'full' ? 'lg' : props.rounded"
         >
           <slot>
             <BaseButton
               type="reset"
-              :shape="props.shape"
+              :rounded="props.rounded"
               class="w-full"
               :disabled="props.disabled"
               @click.prevent="() => emits('reset')"
@@ -47,7 +47,7 @@ const { x, y } = useWindowScroll()
               type="submit"
               :disabled="props.disabled"
               :loading="props.loading"
-              :shape="props.shape"
+              :rounded="props.rounded"
               color="primary"
               class="w-full"
             >

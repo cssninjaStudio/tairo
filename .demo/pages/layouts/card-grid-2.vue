@@ -49,7 +49,7 @@ const { data, pending, error, refresh } = await useFetch(
         <BaseInput
           v-model="filter"
           icon="lucide:search"
-          shape="full"
+          rounded="full"
           placeholder="Filter projects..."
           :classes="{
             wrapper: 'w-full sm:w-auto',
@@ -57,11 +57,11 @@ const { data, pending, error, refresh } = await useFetch(
         />
       </template>
       <template #right>
-        <BaseButton shape="curved" class="w-full sm:w-32">
+        <BaseButton rounded="lg" class="w-full sm:w-32">
           Settings
         </BaseButton>
         <BaseButton
-          shape="curved"
+          rounded="lg"
           color="primary"
           class="w-full sm:w-32"
         >
@@ -104,7 +104,7 @@ const { data, pending, error, refresh } = await useFetch(
               <BaseCard
                 v-for="item in data?.data"
                 :key="item.id"
-                shape="curved"
+                rounded="lg"
                 class="p-4"
               >
                 <div class="mb-3 flex items-center gap-3">
@@ -126,12 +126,12 @@ const { data, pending, error, refresh } = await useFetch(
                   </div>
                   <div class="ms-auto">
                     <BaseDropdown
-                      flavor="context"
+                      variant="context"
                       label="Dropdown"
                       orientation="end"
                       size="md"
                       class="z-20"
-                      shape="curved"
+                      rounded="lg"
                     >
                       <BaseDropdownItem
                         to="#"
@@ -216,10 +216,10 @@ const { data, pending, error, refresh } = await useFetch(
                   </div>
                 </div>
                 <div class="flex items-center gap-2">
-                  <BaseButton shape="curved" class="w-full">
+                  <BaseButton rounded="lg" class="w-full">
                     Tasks
                   </BaseButton>
-                  <BaseButton shape="curved" class="w-full">
+                  <BaseButton rounded="lg" class="w-full">
                     Activity
                   </BaseButton>
                 </div>
@@ -231,7 +231,7 @@ const { data, pending, error, refresh } = await useFetch(
               :total-items="data?.total ?? 0"
               :item-per-page="perPage"
               :current-page="page"
-              shape="curved"
+              rounded="lg"
             />
           </div>
         </div>

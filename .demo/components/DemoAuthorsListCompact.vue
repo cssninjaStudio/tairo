@@ -49,7 +49,7 @@ const authors = [
       <BaseAvatar
         :src="author.image"
         :text="author.text"
-        shape="straight"
+        rounded="none"
         mask="blob"
         class="bg-primary-100 dark:bg-primary-500/20 text-primary-500 shrink-0"
       />
@@ -74,7 +74,7 @@ const authors = [
           {{ author.articles }} articles
         </span>
         <BaseButtonIcon
-          shape="curved"
+          rounded="lg"
           muted
           class="scale-75"
         >

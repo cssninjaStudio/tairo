@@ -1,49 +1,57 @@
 <template>
-  <div class="flex flex-wrap items-end gap-1">
+  <div class="flex flex-wrap items-end gap-3">
     <BaseTag
-      shape="rounded"
+      rounded="md"
+      shadow="hover"
       color="default"
-      shadow="hover"
     >
       Label
     </BaseTag>
 
     <BaseTag
-      shape="rounded"
+      rounded="md"
+      shadow="hover"
+      color="muted"
+    >
+      Label
+    </BaseTag>
+
+    <BaseTag
+      rounded="md"
+      shadow="hover"
       color="primary"
-      shadow="hover"
     >
       Label
     </BaseTag>
 
     <BaseTag
-      shape="rounded"
+      rounded="md"
+      shadow="hover"
       color="success"
-      shadow="hover"
     >
       Label
     </BaseTag>
 
     <BaseTag
-      shape="rounded"
+      rounded="md"
+      shadow="hover"
       color="info"
-      shadow="hover"
     >
       Label
     </BaseTag>
 
     <BaseTag
-      shape="rounded"
+      rounded="md"
+      shadow="hover"
       color="warning"
-      shadow="hover"
     >
       Label
     </BaseTag>
 
     <BaseTag
-      shape="rounded"
-      color="danger"
+      rounded="md"
       shadow="hover"
+      color="danger"
     >
       Label
     </BaseTag>

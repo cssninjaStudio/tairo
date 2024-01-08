@@ -1,8 +1,8 @@
 <template>
-  <div class="grid gap-4 md:grid-cols-3">
+  <div class="grid max-w-3xl gap-4 md:grid-cols-2">
     <BaseCard
-      shape="straight"
-      elevated
+      rounded="none"
+      shadow="flat"
       class="p-6"
     >
       <BaseHeading
@@ -25,8 +25,8 @@
     </BaseCard>
 
     <BaseCard
-      shape="rounded"
-      elevated
+      rounded="sm"
+      shadow="flat"
       class="p-6"
     >
       <BaseHeading
@@ -49,8 +49,32 @@
     </BaseCard>
 
     <BaseCard
-      shape="curved"
-      elevated
+      rounded="md"
+      shadow="flat"
+      class="p-6"
+    >
+      <BaseHeading
+        as="h4"
+        size="sm"
+        weight="semibold"
+        lead="tight"
+        class="text-muted-800 mb-2 dark:text-white"
+      >
+        Iam a card
+      </BaseHeading>
+
+      <BaseParagraph
+        size="sm"
+        lead="tight"
+        class="text-muted-400"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </BaseParagraph>
+    </BaseCard>
+
+    <BaseCard
+      rounded="lg"
+      shadow="flat"
       class="p-6"
     >
       <BaseHeading

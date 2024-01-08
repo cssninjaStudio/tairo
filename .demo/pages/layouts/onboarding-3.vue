@@ -133,7 +133,7 @@ const roles = [
                           size="xl"
                           :src="role.avatar"
                           :badge-src="role.logo"
-                          shape="full"
+                          rounded="full"
                           class="group-focus-within:outline-muted-300 dark:group-focus-within:outline-muted-600 mx-auto group-focus-within:outline-dashed group-focus-within:outline-offset-2"
                         />
                       </div>
@@ -152,7 +152,7 @@ const roles = [
                   <BaseButton
                     to="/dashboards"
                     type="button"
-                    shape="curved"
+                    rounded="lg"
                     class="!h-12 w-48"
                     color="primary"
                   >

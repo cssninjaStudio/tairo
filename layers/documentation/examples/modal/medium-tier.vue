@@ -64,7 +64,7 @@
 
           <BaseButton
             color="primary"
-            flavor="solid"
+            variant="solid"
             @click="isModalLgOpen = false"
           >
             Accept
@@ -121,7 +121,7 @@
 
           <BaseButton
             color="primary"
-            flavor="solid"
+            variant="solid"
             @click="isModalXlOpen = false"
           >
             Accept

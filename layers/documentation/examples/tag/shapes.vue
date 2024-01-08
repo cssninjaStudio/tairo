@@ -1,18 +1,22 @@
 <template>
-  <div class="flex flex-wrap items-end gap-1">
-    <BaseTag shape="straight">
+  <div class="flex flex-wrap items-end gap-3">
+    <BaseTag rounded="none">
       Label
     </BaseTag>
 
-    <BaseTag shape="rounded">
+    <BaseTag rounded="sm">
       Label
     </BaseTag>
 
-    <BaseTag shape="curved">
+    <BaseTag rounded="md">
       Label
     </BaseTag>
 
-    <BaseTag shape="full">
+    <BaseTag rounded="lg">
+      Label
+    </BaseTag>
+
+    <BaseTag rounded="full">
       Label
     </BaseTag>
   </div>

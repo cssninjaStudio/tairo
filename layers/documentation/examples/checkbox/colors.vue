@@ -3,56 +3,56 @@
     <BaseCheckbox
       v-model="options.first"
       label="Straight"
-      shape="straight"
+      rounded="none"
       :classes="{ wrapper: 'text-gray-500' }"
     />
 
     <BaseCheckbox
       v-model="options.second"
       label="Straight"
-      shape="straight"
+      rounded="none"
       :classes="{ wrapper: 'text-emerald-500' }"
     />
 
     <BaseCheckbox
       v-model="options.third"
       label="Rounded"
-      shape="rounded"
+      rounded="sm"
       :classes="{ wrapper: 'text-yellow-500' }"
     />
 
     <BaseCheckbox
       v-model="options.fourth"
       label="Rounded"
-      shape="rounded"
+      rounded="sm"
       :classes="{ wrapper: 'text-pink-500' }"
     />
 
     <BaseCheckbox
       v-model="options.fifth"
       label="Curved"
-      shape="curved"
+      rounded="lg"
       :classes="{ wrapper: 'text-indigo-500' }"
     />
 
     <BaseCheckbox
       v-model="options.sixth"
       label="Curved"
-      shape="curved"
+      rounded="lg"
       :classes="{ wrapper: 'text-primary-500' }"
     />
 
     <BaseCheckbox
       v-model="options.seventh"
       label="Circle"
-      shape="full"
+      rounded="full"
       :classes="{ wrapper: 'text-amber-500' }"
     />
 
     <BaseCheckbox
       v-model="options.eighth"
       label="Circle"
-      shape="full"
+      rounded="full"
       :classes="{ wrapper: 'text-rose-500' }"
     />
   </BaseFocusLoop>

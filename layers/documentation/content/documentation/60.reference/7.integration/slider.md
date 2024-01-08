@@ -17,7 +17,7 @@ This component is provided by the [@vueform/slider](https://github.com/vueform/s
 
 ::doc-component-demo
 ---
-title: Straight tooltip
+title: Rounded:none
 demo: '#examples/slider/straight.vue'
 ---
 Check out this example of a straight slider tooltip.
@@ -27,7 +27,7 @@ Check out this example of a straight slider tooltip.
 
 ::doc-component-demo
 ---
-title: Rounded tooltip
+title: Rounded:sm
 demo: '#examples/slider/rounded.vue'
 ---
 Check out this example of a rounded slider tooltip.
@@ -36,28 +36,34 @@ Check out this example of a rounded slider tooltip.
 
 ::doc-component-demo
 ---
-title: Curved tooltip
+title: Rounded:md
+demo: '#examples/slider/smooth.vue'
+---
+Check out this example of a smooth slider tooltip.
+::
+
+
+::doc-component-demo
+---
+title: Rounded:lg
 demo: '#examples/slider/curved.vue'
 ---
 Check out this example of a curved slider tooltip.
 ::
 
 
-
 ::doc-component-demo
 ---
-title: Circle tooltip
+title: Rounded:full
 demo: '#examples/slider/circle.vue'
 ---
 Check out this example of a circle slider tooltip.
 ::
 
 
-
-
 ::doc-component-demo
 ---
-title: Slider colors
+title: Color
 demo: '#examples/slider/colors.vue'
 ---
 Slider components and tooltips can have different colors. Use the built-in color classes to change the color of the slider and the tooltip.
@@ -76,7 +82,7 @@ Sliders can have multiple handles when the data structure requires it. Check out
 
 ::doc-component-demo
 ---
-title: Tooltip format
+title: Format
 demo: '#examples/slider/format-tooltip.vue'
 ---
 Slide tooltips content can be formatted using the `format` prop. Check out the code example for more details about usage.
@@ -86,7 +92,7 @@ Slide tooltips content can be formatted using the `format` prop. Check out the c
 
 ::doc-component-demo
 ---
-title: Tooltip merging
+title: Merging
 demo: '#examples/slider/merge-tooltip.vue'
 ---
 In more complex examples, you might need to merge multiple tooltips into one at some point. Check out this example for more details.

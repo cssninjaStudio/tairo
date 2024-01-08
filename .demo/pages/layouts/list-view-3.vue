@@ -43,14 +43,14 @@ const { data, pending, error, refresh } = await useFetch('/api/jobs', {
   <div>
     <TairoContentWrapperTabbed
       :labels="['Active', 'Inactive']"
-      shape="full"
+      rounded="full"
       reverse
     >
       <template #left>
         <BaseInput
           v-model="filter"
           icon="lucide:search"
-          shape="full"
+          rounded="full"
           placeholder="Filter jobs..."
           :classes="{
             wrapper: 'w-full sm:w-auto',
@@ -90,7 +90,7 @@ const { data, pending, error, refresh } = await useFetch('/api/jobs', {
               <BaseCard
                 v-for="item in data?.data"
                 :key="item.id"
-                shape="curved"
+                rounded="lg"
                 class="flex flex-col p-5 sm:flex-row sm:items-center"
               >
                 <div
@@ -145,13 +145,13 @@ const { data, pending, error, refresh } = await useFetch('/api/jobs', {
                 >
                   <BaseButton
                     color="primary"
-                    flavor="outline"
+                    variant="outline"
                     class="w-full sm:w-28"
                   >
                     <span>Apply Now</span>
                   </BaseButton>
                   <BaseButtonIcon
-                    shape="full"
+                    rounded="full"
                     small
                     muted
                     data-nui-tooltip="Add to Bookmarks"
@@ -169,7 +169,7 @@ const { data, pending, error, refresh } = await useFetch('/api/jobs', {
                 :total-items="100"
                 :current="1"
                 :limit="10"
-                shape="full"
+                rounded="full"
               />
             </div>
           </div>

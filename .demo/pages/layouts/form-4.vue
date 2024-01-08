@@ -207,7 +207,7 @@ const people = ref([
     class="relative py-3 sm:mx-auto sm:max-w-xl"
     @submit.prevent="onSubmit"
   >
-    <BaseCard shape="curved" class="relative px-4 py-10 sm:p-10 md:mx-0">
+    <BaseCard rounded="lg" class="relative px-4 py-10 sm:p-10 md:mx-0">
       <div class="mx-auto max-w-md">
         <div class="flex items-center gap-4">
           <div
@@ -240,7 +240,7 @@ const people = ref([
               >
                 <BaseInput
                   label="Event title"
-                  shape="curved"
+                  rounded="lg"
                   icon="ph:ticket-duotone"
                   placeholder="Ex: Next team building party"
                   :classes="{
@@ -263,7 +263,7 @@ const people = ref([
               >
                 <BaseInput
                   label="Short description"
-                  shape="curved"
+                  rounded="lg"
                   icon="ph:circles-four-duotone"
                   placeholder="Ex: We will meet to have fun together"
                   :classes="{
@@ -302,7 +302,7 @@ const people = ref([
                     <div class="flex w-full flex-col gap-4 sm:flex-row">
                       <div class="relative grow">
                         <BaseInput
-                          shape="curved"
+                          rounded="lg"
                           label="Start date"
                           icon="ph:calendar-blank-duotone"
                           :value="inputValue.start"
@@ -318,7 +318,7 @@ const people = ref([
                       </div>
                       <div class="relative grow">
                         <BaseInput
-                          shape="curved"
+                          rounded="lg"
                           label="End date"
                           icon="ph:calendar-blank-duotone"
                           :value="inputValue.end"
@@ -344,7 +344,7 @@ const people = ref([
               >
                 <BaseTextarea
                   label="Long description"
-                  shape="curved"
+                  rounded="lg"
                   placeholder="Ex: Some additional details about the event..."
                   rows="5"
                   :model-value="field.value"
@@ -362,7 +362,7 @@ const people = ref([
               >
                 <BaseAutocomplete
                   :items="people"
-                  shape="curved"
+                  rounded="lg"
                   icon="ph:users-duotone"
                   placeholder="Add participants..."
                   label="Participants"
@@ -384,7 +384,7 @@ const people = ref([
                   type="color"
                   list="eventColors"
                   label="Event color"
-                  shape="curved"
+                  rounded="lg"
                   icon="ph:drop-half-duotone"
                   placeholder="Pick an event color..."
                   :classes="{
@@ -419,7 +419,7 @@ const people = ref([
                 <BaseInput
                   list="eventCategories"
                   label="Event category"
-                  shape="curved"
+                  rounded="lg"
                   icon="ph:ticket-duotone"
                   placeholder="Pick a category..."
                   :classes="{
@@ -443,12 +443,12 @@ const people = ref([
             </div>
           </div>
           <div class="flex items-center gap-4 pt-4">
-            <BaseButton shape="curved" class="!h-12 w-full">
+            <BaseButton rounded="lg" class="!h-12 w-full">
               Cancel
             </BaseButton>
             <BaseButton
               type="submit"
-              shape="curved"
+              rounded="lg"
               color="primary"
               class="!h-12 w-full"
             >

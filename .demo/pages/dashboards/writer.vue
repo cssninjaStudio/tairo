@@ -52,7 +52,7 @@ const activePosts = ref('recent')
                     <BaseButton
                       size="sm"
                       color="light"
-                      flavor="outline"
+                      variant="outline"
                       class="w-full sm:w-auto"
                     >
                       <Icon name="lucide:plus" class="h-4 w-4" />
@@ -74,7 +74,7 @@ const activePosts = ref('recent')
                   <div class="grid grid-cols-12 gap-4">
                     <!-- Tile -->
                     <div class="col-span-4">
-                      <BaseCard shape="curved" class="p-4">
+                      <BaseCard rounded="lg" class="p-4">
                         <BaseParagraph
                           size="xs"
                           weight="medium"
@@ -91,7 +91,7 @@ const activePosts = ref('recent')
                     </div>
                     <!-- Tile -->
                     <div class="col-span-4">
-                      <BaseCard shape="curved" class="p-4">
+                      <BaseCard rounded="lg" class="p-4">
                         <BaseParagraph
                           size="xs"
                           weight="medium"
@@ -108,7 +108,7 @@ const activePosts = ref('recent')
                     </div>
                     <!-- Tile -->
                     <div class="col-span-4">
-                      <BaseCard shape="curved" class="p-4">
+                      <BaseCard rounded="lg" class="p-4">
                         <BaseParagraph
                           size="xs"
                           weight="medium"
@@ -125,7 +125,7 @@ const activePosts = ref('recent')
                     </div>
                   </div>
                   <!-- Widget -->
-                  <BaseCard class="p-6" shape="curved">
+                  <BaseCard class="p-6" rounded="lg">
                     <!-- Title -->
                     <div class="mb-8 flex items-center justify-between">
                       <BaseHeading
@@ -151,7 +151,7 @@ const activePosts = ref('recent')
               <!-- Sub column -->
               <div class="col-span-12 sm:col-span-6">
                 <!-- Widget -->
-                <BaseCard class="p-6" shape="curved">
+                <BaseCard class="p-6" rounded="lg">
                   <!-- Title -->
                   <div class="mb-8 flex items-center justify-between">
                     <BaseHeading

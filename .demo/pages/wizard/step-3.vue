@@ -124,7 +124,7 @@ const budget = ref('< 5K')
     <DemoWizardStepTitle />
     <div class="mx-auto flex w-full max-w-sm flex-col gap-3 px-4">
       <!-- Customer -->
-      <BaseCard shape="curved" class="relative z-10 p-6">
+      <BaseCard rounded="lg" class="relative z-10 p-6">
         <div class="mb-4 text-center">
           <h3
             class="text-muted-400 font-sans text-[0.65rem] font-semibold uppercase"
@@ -138,7 +138,7 @@ const budget = ref('< 5K')
               v-if="!itemSelected"
               v-model="search"
               icon="lucide:search"
-              shape="curved"
+              rounded="lg"
               placeholder="ex: Figma, Github, ..."
               :classes="{
                 input: 'h-12 text-base !ps-12',
@@ -164,7 +164,7 @@ const budget = ref('< 5K')
               <div class="me-3 ms-auto">
                 <BaseButtonIcon
                   small
-                  shape="full"
+                  rounded="full"
                   @click="dismissCustomer"
                 >
                   <Icon name="lucide:x" class="h-4 w-4" />
@@ -208,7 +208,7 @@ const budget = ref('< 5K')
                   <div class="ms-auto">
                     <BaseButtonIcon
                       small
-                      shape="full"
+                      rounded="full"
                       @click="selectCustomer(customer)"
                     >
                       <Icon name="lucide:plus" class="h-4 w-4" />
@@ -221,7 +221,7 @@ const budget = ref('< 5K')
         </div>
       </BaseCard>
       <!-- Time frame -->
-      <BaseCard shape="curved" class="p-6">
+      <BaseCard rounded="lg" class="p-6">
         <div class="mb-4 text-center">
           <h3
             class="text-muted-400 font-sans text-[0.65rem] font-semibold uppercase"
@@ -286,7 +286,7 @@ const budget = ref('< 5K')
         </div>
       </BaseCard>
       <!-- Budget -->
-      <BaseCard shape="curved" class="p-6">
+      <BaseCard rounded="lg" class="p-6">
         <div class="mb-4 text-center">
           <h3
             class="text-muted-400 font-sans text-[0.65rem] font-semibold uppercase"
@@ -301,7 +301,7 @@ const budget = ref('< 5K')
             value="< 5K"
           >
             <BaseButtonAction
-              shape="curved"
+              rounded="lg"
               class="peer-checked:!bg-primary-500 peer-checked:!border-primary-500 peer-checked:shadow-primary-500/20 peer-checked:!text-white peer-checked:shadow-xl"
             >
               <span>&lt; 5K</span>
@@ -313,7 +313,7 @@ const budget = ref('< 5K')
             value="< 30K"
           >
             <BaseButtonAction
-              shape="curved"
+              rounded="lg"
               class="peer-checked:!bg-primary-500 peer-checked:!border-primary-500 peer-checked:shadow-primary-500/20 peer-checked:!text-white peer-checked:shadow-xl"
             >
               <span>&lt; 30K</span>
@@ -325,7 +325,7 @@ const budget = ref('< 5K')
             value="< 100K"
           >
             <BaseButtonAction
-              shape="curved"
+              rounded="lg"
               class="peer-checked:!bg-primary-500 peer-checked:!border-primary-500 peer-checked:shadow-primary-500/20 peer-checked:!text-white peer-checked:shadow-xl"
             >
               <span>&lt; 100K</span>
@@ -337,7 +337,7 @@ const budget = ref('< 5K')
             value="100K+"
           >
             <BaseButtonAction
-              shape="curved"
+              rounded="lg"
               class="peer-checked:!bg-primary-500 peer-checked:!border-primary-500 peer-checked:shadow-primary-500/20 peer-checked:!text-white peer-checked:shadow-xl"
             >
               <span>100K+</span>

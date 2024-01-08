@@ -72,7 +72,7 @@ const isModalXlOpen = ref(false)
           </BaseButton>
           <BaseButton
             color="primary"
-            flavor="solid"
+            variant="solid"
             @click="isModalLgOpen = false"
           >
             Accept
@@ -131,7 +131,7 @@ const isModalXlOpen = ref(false)
           </BaseButton>
           <BaseButton
             color="primary"
-            flavor="solid"
+            variant="solid"
             @click="isModalXlOpen = false"
           >
             Accept

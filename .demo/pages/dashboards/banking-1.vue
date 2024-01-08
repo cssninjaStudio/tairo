@@ -126,7 +126,7 @@ const amount = ref<number>(0)
             >
               <span>My Cards</span>
             </BaseHeading>
-            <BaseButtonIcon shape="full" small>
+            <BaseButtonIcon rounded="full" small>
               <Icon name="lucide:plus" class="h-3 w-3" />
             </BaseButtonIcon>
           </div>
@@ -148,7 +148,7 @@ const amount = ref<number>(0)
             </div>
             <div class="ms-auto">
               <BaseDropdown
-                flavor="context"
+                variant="context"
                 label="Dropdown"
                 orientation="end"
                 size="md"
@@ -286,7 +286,7 @@ const amount = ref<number>(0)
             </div>
             <div class="ms-auto">
               <BaseDropdown
-                flavor="context"
+                variant="context"
                 label="Dropdown"
                 orientation="end"
                 size="md"
@@ -363,7 +363,7 @@ const amount = ref<number>(0)
               <BaseIconBox
                 class="bg-success-500/10 text-success-500"
                 size="md"
-                shape="full"
+                rounded="full"
               >
                 <Icon name="ph:pizza-duotone" class="h-5 w-5" />
               </BaseIconBox>
@@ -394,7 +394,7 @@ const amount = ref<number>(0)
               <BaseIconBox
                 class="bg-orange-500/10 text-orange-500"
                 size="md"
-                shape="full"
+                rounded="full"
               >
                 <Icon name="ph:storefront-duotone" class="h-5 w-5" />
               </BaseIconBox>
@@ -425,7 +425,7 @@ const amount = ref<number>(0)
               <BaseIconBox
                 class="bg-indigo-500/10 text-indigo-500"
                 size="md"
-                shape="full"
+                rounded="full"
               >
                 <Icon name="ph:shopping-cart-duotone" class="h-5 w-5" />
               </BaseIconBox>
@@ -619,7 +619,7 @@ const amount = ref<number>(0)
                   <div class="flex w-full gap-2">
                     <BaseSelect
                       v-model="selectedCurrency"
-                      shape="rounded"
+                      rounded="sm"
                       label="Currency"
                       class="w-16"
                     >
@@ -638,7 +638,7 @@ const amount = ref<number>(0)
                       v-model="amount"
                       :classes="{ wrapper: 'grow' }"
                       placeholder="0.00"
-                      shape="rounded"
+                      rounded="sm"
                       label="Amount"
                       :min="0"
                     />
@@ -652,7 +652,7 @@ const amount = ref<number>(0)
                 <div>
                   <BaseButton
                     type="submit"
-                    shape="rounded"
+                    rounded="sm"
                     size="sm"
                     color="primary"
                     class="w-full"

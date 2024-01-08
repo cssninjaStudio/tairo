@@ -58,7 +58,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
               </p>
               <BaseButton
                 to="/layouts/profile-edit"
-                shape="curved"
+                rounded="lg"
                 class="w-full"
                 @click.passive="close"
               >
@@ -167,7 +167,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
 
           <div class="p-6">
             <BaseButton
-              shape="curved"
+              rounded="lg"
               class="w-full"
               @click.passive="close"
             >
