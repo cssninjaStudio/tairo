@@ -18,7 +18,10 @@ export default defineNuxtConfig({
      * This extends the base Tairo layer.
      *
      * Alternatively you can use the following:
-     * ["gh:cssninjaStudio/tairo/layers/tairo#v1.0.0", { giget: { auth: process.env.GITHUB_TOKEN } }]
+     * ["gh:cssninjaStudio/tairo/layers/tairo#v1.4.0", {
+     *    install: true,
+     *    giget: { auth: process.env.GITHUB_TOKEN },
+     * }]
      *
      * @see https://github.com/unjs/c12#extending-config-layer-from-remote-sources
      *
@@ -75,6 +78,12 @@ export default defineNuxtConfig({
     renderJsonPayloads: true,
     // Render tags in of the head in a more performant way
     headNext: true,
+    defaults: {
+      useAsyncData: {
+        // Use shallowRef in asyncData/fetch data
+        deep: false,
+      },
+    },
   },
 
   typescript: {
