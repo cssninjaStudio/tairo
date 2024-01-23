@@ -16,7 +16,6 @@ const selectedFeature = ref()
 const selectedFeatureLatLng = ref()
 const selectedFeatureName = ref('')
 const mapElement = shallowRef<HTMLElement>()
-const geocoderElement = shallowRef<HTMLElement>()
 const popupElement = shallowRef<HTMLElement>()
 const map = shallowRef<Map>()
 const popup = shallowRef<Popup>()
@@ -247,7 +246,7 @@ if (import.meta.dev && !config.public.mapboxToken) {
   )
 }
 
-onNuxtReady(() => {
+onMounted(() => {
   if (!config.public.mapboxToken) {
     return
   }
@@ -259,7 +258,7 @@ onNuxtReady(() => {
     ),
   ]).then(([_mapboxgl, MapboxGeocoder]) => {
     mapboxgl = _mapboxgl
-    if (!mapElement.value || !geocoderElement.value) {
+    if (!mapElement.value) {
       return
     }
     // You can set the NUXT_PUBLIC_MAPBOX_TOKEN inside .env file
@@ -293,7 +292,7 @@ onNuxtReady(() => {
       loadingStyles()
     })
 
-    geocoderElement.value.appendChild(geocoder.value.onAdd(map.value))
+    map.value.addControl(geocoder.value, props.reversed ? 'top-left' : 'top-right')
   })
 })
 
@@ -353,10 +352,10 @@ watch(
     }
 
     if (colorMode.value === 'dark') {
-      map.value.setStyle('mapbox://styles/mapbox/dark-v10')
+      map.value.setStyle('mapbox://styles/mapbox/dark-v11')
     }
     else {
-      map.value.setStyle('mapbox://styles/mapbox/light-v10')
+      map.value.setStyle('mapbox://styles/mapbox/light-v11')
     }
   },
 )
@@ -432,10 +431,6 @@ watch(
       <template v-if="!props.reversed">
         <div class="ltablet:h-auto relative h-96 grow lg:h-auto">
           <div ref="mapElement" class="absolute inset-0 h-full w-full" />
-          <div
-            ref="geocoderElement"
-            class="geocoder absolute inset-x-0 top-6 mx-auto flex items-center justify-center px-6 sm:px-0"
-          />
           <div
             ref="popupElement"
             style="display: none; visibility: hidden"
@@ -544,10 +539,9 @@ watch(
 
       <template v-if="props.reversed">
         <div class="ltablet:h-auto relative h-96 grow lg:h-auto">
-          <div ref="mapElement" class="absolute inset-0 h-full w-full" />
           <div
-            ref="geocoderElement"
-            class="geocoder absolute inset-x-0 top-6 mx-auto flex items-center justify-center px-6 sm:px-0"
+            ref="mapElement"
+            class="absolute inset-0 h-full w-full"
           />
           <div
             ref="popupElement"
