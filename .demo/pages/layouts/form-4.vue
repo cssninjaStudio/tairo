@@ -211,9 +211,9 @@ const people = ref([
       <div class="mx-auto max-w-md">
         <div class="flex items-center gap-4">
           <div
-            class="bg-primary-500/20 text-primary-500 flex h-14 w-14 shrink-0 items-center justify-center rounded-full font-sans text-2xl"
+            class="bg-primary-500/20 text-primary-500 flex size-14 shrink-0 items-center justify-center rounded-full font-sans text-2xl"
           >
-            <Icon name="ph:calendar-blank-duotone" class="h-5 w-5" />
+            <Icon name="ph:calendar-blank-duotone" class="size-5" />
           </div>
           <div class="block text-xl font-semibold text-gray-700">
             <BaseHeading

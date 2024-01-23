@@ -91,12 +91,12 @@ const checks = computed(() => [
             <Icon
               v-if="check.valid"
               name="ion:checkmark-circle-outline"
-              class="text-success-400 dark:text-success-500 h-4 w-4"
+              class="text-success-400 dark:text-success-500 size-4"
             />
             <Icon
               v-else
               name="ion:close-circle-outline"
-              class="text-danger-400 dark:text-danger-500 h-4 w-4"
+              class="text-danger-400 dark:text-danger-500 size-4"
             />
           </span>
         </li>

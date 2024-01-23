@@ -122,7 +122,7 @@ const onSubmit = handleSubmit(async (values) => {
         to="/"
         class="text-muted-400 hover:text-primary-500 dark:text-muted-700 dark:hover:text-primary-500 transition-colors duration-300"
       >
-        <TairoLogo class="h-10 w-10" />
+        <TairoLogo class="size-10" />
       </NuxtLink>
       <div>
         <BaseThemeToggle />
@@ -271,19 +271,19 @@ const onSubmit = handleSubmit(async (values) => {
                   type="button"
                   class="bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-600 text-muted-600 dark:text-muted-400 nui-focus relative inline-flex w-full items-center justify-center rounded px-0 py-3 text-center text-sm font-semibold shadow-sm transition-all duration-300 hover:bg-white"
                 >
-                  <Icon name="fa6-brands:google" class="h-5 w-5" />
+                  <Icon name="fa6-brands:google" class="size-5" />
                 </button>
                 <button
                   type="button"
                   class="bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-600 text-muted-600 dark:text-muted-400 nui-focus relative inline-flex w-full items-center justify-center rounded px-0 py-3 text-center text-sm font-semibold shadow-sm transition-all duration-300 hover:bg-white"
                 >
-                  <Icon name="fa6-brands:twitter" class="h-5 w-5" />
+                  <Icon name="fa6-brands:twitter" class="size-5" />
                 </button>
                 <button
                   type="button"
                   class="bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-600 text-muted-600 dark:text-muted-400 nui-focus relative inline-flex w-full items-center justify-center rounded px-0 py-3 text-center text-sm font-semibold shadow-sm transition-all duration-300 hover:bg-white"
                 >
-                  <Icon name="fa6-brands:linkedin-in" class="h-5 w-5" />
+                  <Icon name="fa6-brands:linkedin-in" class="size-5" />
                 </button>
               </div>
 

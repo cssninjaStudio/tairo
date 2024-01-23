@@ -57,7 +57,7 @@ const { data, pending, error, refresh } = await useFetch('/api/freelancers', {
           Manage
         </BaseButton>
         <BaseButton color="primary" class="w-full sm:w-32">
-          <Icon name="lucide:plus" class="h-4 w-4" />
+          <Icon name="lucide:plus" class="size-4" />
           <span>Add User</span>
         </BaseButton>
       </template>
@@ -118,7 +118,7 @@ const { data, pending, error, refresh } = await useFetch('/api/freelancers', {
                     lead="none"
                     class="text-muted-400 flex items-end text-sm"
                   >
-                    <Icon name="lucide:map-pin" class="h-4 w-4" />
+                    <Icon name="lucide:map-pin" class="size-4" />
                     <span>{{ item.location }}</span>
                   </BaseParagraph>
                 </div>

@@ -585,22 +585,22 @@ async function submitMessage() {
         <div class="flex h-full flex-col justify-between">
           <div class="flex flex-col">
             <div
-              class="ltablet:w-full flex h-16 w-16 shrink-0 items-center justify-center lg:w-full"
+              class="ltablet:w-full flex size-16 shrink-0 items-center justify-center lg:w-full"
             >
               <NuxtLink to="#" class="flex items-center justify-center">
                 <TairoLogo class="text-primary-600 h-10" />
               </NuxtLink>
             </div>
             <div
-              class="ltablet:w-full flex h-16 w-16 shrink-0 items-center justify-center lg:w-full"
+              class="ltablet:w-full flex size-16 shrink-0 items-center justify-center lg:w-full"
             >
               <a
                 href="#"
-                class="text-muted-400 hover:text-primary-500 hover:bg-primary-500/20 flex h-12 w-12 items-center justify-center rounded-2xl transition-colors duration-300"
+                class="text-muted-400 hover:text-primary-500 hover:bg-primary-500/20 flex size-12 items-center justify-center rounded-2xl transition-colors duration-300"
                 title="Back"
                 @click.prevent="$router.back()"
               >
-                <Icon name="lucide:arrow-left" class="h-5 w-5" />
+                <Icon name="lucide:arrow-left" class="size-5" />
               </a>
             </div>
           </div>
@@ -608,20 +608,20 @@ async function submitMessage() {
             <div class="flex h-16 w-full items-center justify-center">
               <button
                 type="button"
-                class="text-muted-400 hover:text-primary-500 hover:bg-primary-500/20 flex h-12 w-12 items-center justify-center rounded-2xl transition-colors duration-300"
+                class="text-muted-400 hover:text-primary-500 hover:bg-primary-500/20 flex size-12 items-center justify-center rounded-2xl transition-colors duration-300"
                 title="Search"
                 @click="open('search')"
               >
-                <Icon name="ph:magnifying-glass-duotone" class="h-5 w-5" />
+                <Icon name="ph:magnifying-glass-duotone" class="size-5" />
               </button>
             </div>
             <div class="flex h-16 w-full items-center justify-center">
               <NuxtLink
                 to="#"
-                class="text-muted-400 hover:text-primary-500 hover:bg-primary-500/20 flex h-12 w-12 items-center justify-center rounded-2xl transition-colors duration-300"
+                class="text-muted-400 hover:text-primary-500 hover:bg-primary-500/20 flex size-12 items-center justify-center rounded-2xl transition-colors duration-300"
                 title="Settings"
               >
-                <Icon name="ph:gear-six-duotone" class="h-5 w-5" />
+                <Icon name="ph:gear-six-duotone" class="size-5" />
               </NuxtLink>
             </div>
             <div class="flex h-16 w-full items-center justify-center">
@@ -636,12 +636,12 @@ async function submitMessage() {
       >
         <div class="flex h-full flex-col">
           <button
-            class="flex h-16 w-16 shrink-0 items-center justify-center sm:w-20"
+            class="flex size-16 shrink-0 items-center justify-center sm:w-20"
           >
             <span
-              class="bg-primary-500 flex h-10 w-10 items-center justify-center rounded-full text-white"
+              class="bg-primary-500 flex size-10 items-center justify-center rounded-full text-white"
             >
-              <Icon name="lucide:plus" class="h-4 w-4" />
+              <Icon name="lucide:plus" class="size-4" />
             </span>
           </button>
           <!-- List -->
@@ -649,7 +649,7 @@ async function submitMessage() {
             v-for="conversation in conversations"
             :key="conversation.id"
             href="#"
-            class="flex h-16 w-16 shrink-0 items-center justify-center border-s-2 sm:w-20"
+            class="flex size-16 shrink-0 items-center justify-center border-s-2 sm:w-20"
             :class="
               activeConversation === conversation.id
                 ? 'border-primary-500'
@@ -698,13 +698,13 @@ async function submitMessage() {
           >
             <!-- Loader-->
             <div
-              class="bg-muted-100 dark:bg-muted-900 pointer-events-none absolute inset-0 z-10 h-full w-full p-8 transition-opacity duration-300"
+              class="bg-muted-100 dark:bg-muted-900 pointer-events-none absolute inset-0 z-10 size-full p-8 transition-opacity duration-300"
               :class="loading ? 'opacity-100' : 'opacity-0 pointer-events-none'"
             >
               <div class="mt-12 space-y-12">
                 <div class="flex w-full max-w-md gap-4">
                   <BasePlaceload
-                    class="h-8 w-8 shrink-0 rounded-full"
+                    class="size-8 shrink-0 rounded-full"
                     :width="32"
                     :height="32"
                   />
@@ -715,7 +715,7 @@ async function submitMessage() {
                 </div>
                 <div class="flex w-full max-w-md gap-4">
                   <BasePlaceload
-                    class="h-8 w-8 shrink-0 rounded-full"
+                    class="size-8 shrink-0 rounded-full"
                     :width="32"
                     :height="32"
                   />
@@ -728,7 +728,7 @@ async function submitMessage() {
                   class="ms-auto flex w-full max-w-md flex-row-reverse justify-end gap-4"
                 >
                   <BasePlaceload
-                    class="h-8 w-8 shrink-0 rounded-full"
+                    class="size-8 shrink-0 rounded-full"
                     :width="32"
                     :height="32"
                   />
@@ -745,7 +745,7 @@ async function submitMessage() {
                   class="ms-auto flex w-full max-w-md flex-row-reverse justify-end gap-4"
                 >
                   <BasePlaceload
-                    class="h-8 w-8 shrink-0 rounded-full"
+                    class="size-8 shrink-0 rounded-full"
                     :width="32"
                     :height="32"
                   />
@@ -760,7 +760,7 @@ async function submitMessage() {
                 </div>
                 <div class="flex w-full max-w-md gap-4">
                   <BasePlaceload
-                    class="h-8 w-8 shrink-0 rounded-full"
+                    class="size-8 shrink-0 rounded-full"
                     :width="32"
                     :height="32"
                   />
@@ -771,7 +771,7 @@ async function submitMessage() {
                 </div>
                 <div class="flex w-full max-w-md gap-4">
                   <BasePlaceload
-                    class="h-8 w-8 shrink-0 rounded-full"
+                    class="size-8 shrink-0 rounded-full"
                     :width="32"
                     :height="32"
                   />
@@ -911,13 +911,13 @@ async function submitMessage() {
                   type="button"
                   class="text-muted-400 hover:text-primary-500 flex h-12 w-10 items-center justify-center transition-colors duration-300"
                 >
-                  <Icon name="lucide:smile" class="h-5 w-5" />
+                  <Icon name="lucide:smile" class="size-5" />
                 </button>
                 <button
                   type="button"
                   class="text-muted-400 hover:text-primary-500 flex h-12 w-10 items-center justify-center transition-colors duration-300"
                 >
-                  <Icon name="lucide:paperclip" class="h-5 w-5" />
+                  <Icon name="lucide:paperclip" class="size-5" />
                 </button>
               </div>
             </div>
@@ -940,7 +940,7 @@ async function submitMessage() {
           <BaseButtonIcon small @click="expanded = true">
             <Icon
               name="lucide:arrow-right"
-              class="pointer-events-none h-4 w-4"
+              class="pointer-events-none size-4"
             />
           </BaseButtonIcon>
         </div>
@@ -949,7 +949,7 @@ async function submitMessage() {
           <div v-if="loading" class="mt-8">
             <div class="mb-3 flex items-center justify-center">
               <BasePlaceload
-                class="h-24 w-24 shrink-0 rounded-full"
+                class="size-24 shrink-0 rounded-full"
                 :width="96"
                 :height="96"
               />
@@ -1005,7 +1005,7 @@ async function submitMessage() {
                 <div class="flex items-center justify-center gap-2 px-4">
                   <Icon
                     name="ph:timer-duotone"
-                    class="text-muted-400 h-4 w-4"
+                    class="text-muted-400 size-4"
                   />
                   <span class="text-muted-400 font-sans text-xs">
                     Age: {{ selectedConversation?.user.age }}
@@ -1014,7 +1014,7 @@ async function submitMessage() {
                 <div class="flex items-center justify-center gap-2 px-4">
                   <Icon
                     name="ph:map-pin-duotone"
-                    class="text-muted-400 h-4 w-4"
+                    class="text-muted-400 size-4"
                   />
                   <span class="text-muted-400 font-sans text-xs">
                     {{ selectedConversation?.user.location }}

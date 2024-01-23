@@ -43,7 +43,7 @@
                 </div>
 
                 <div class="child text-muted-300 ms-auto">
-                  <div class="h-3 w-3 rounded-full bg-current" />
+                  <div class="size-3 rounded-full bg-current" />
                 </div>
               </div>
             </BaseCard>
@@ -73,7 +73,7 @@
                 </div>
 
                 <div class="child text-muted-300 ms-auto">
-                  <div class="h-3 w-3 rounded-full bg-current" />
+                  <div class="size-3 rounded-full bg-current" />
                 </div>
               </div>
             </BaseCard>
@@ -103,7 +103,7 @@
                 </div>
 
                 <div class="child text-muted-300 ms-auto">
-                  <div class="h-3 w-3 rounded-full bg-current" />
+                  <div class="size-3 rounded-full bg-current" />
                 </div>
               </div>
             </BaseCard>

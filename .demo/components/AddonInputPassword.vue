@@ -178,7 +178,7 @@ const buttonBorder = computed(() => {
           >
             <Icon
               name="lucide:help-circle"
-              class="text-muted-400 dark:text-muted-500 h-4 w-4 shrink-0"
+              class="text-muted-400 dark:text-muted-500 size-4 shrink-0"
             />
             <span
               class="grow text-xs dark:text-slate-400"
@@ -196,7 +196,7 @@ const buttonBorder = computed(() => {
           >
             <Icon
               name="lucide:help-circle"
-              class="text-muted-400 dark:text-muted-500 h-4 w-4 shrink-0"
+              class="text-muted-400 dark:text-muted-500 size-4 shrink-0"
             />
             <span
               class="grow text-xs dark:text-slate-400"
@@ -235,7 +235,7 @@ const buttonBorder = computed(() => {
           }"
         >
           <button
-            class="leading-0 text-muted-400 peer-focus-within:text-primary-500 nui-focus absolute right-0 top-0 flex h-10 w-10 items-center justify-center text-center text-xl disabled:cursor-not-allowed"
+            class="leading-0 text-muted-400 peer-focus-within:text-primary-500 nui-focus absolute right-0 top-0 flex size-10 items-center justify-center text-center text-xl disabled:cursor-not-allowed"
             :class="buttonBorder"
             type="button"
             tabindex="0"
@@ -246,7 +246,7 @@ const buttonBorder = computed(() => {
             @click.prevent="() => toggleVisibility()"
           >
             <div
-              class="relative flex h-full w-full items-center justify-center"
+              class="relative flex size-full items-center justify-center"
             >
               <Icon
                 :name="
@@ -254,7 +254,7 @@ const buttonBorder = computed(() => {
                     ? 'mdi:eye-outline'
                     : 'mdi:eye-off-outline'
                 "
-                class="h-5 w-5"
+                class="size-5"
               />
             </div>
           </button>

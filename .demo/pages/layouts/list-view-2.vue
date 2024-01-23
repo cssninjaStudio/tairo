@@ -113,7 +113,7 @@ const { data, pending, error, refresh } = await useFetch('/api/rentals', {
                       <div class="flex items-center gap-2">
                         <Icon
                           name="uiw:star-on"
-                          class="h-3 w-3"
+                          class="size-3"
                           :class="
                             item.rating > 0
                               ? 'text-yellow-400'
@@ -122,7 +122,7 @@ const { data, pending, error, refresh } = await useFetch('/api/rentals', {
                         />
                         <Icon
                           name="uiw:star-on"
-                          class="h-3 w-3"
+                          class="size-3"
                           :class="
                             item.rating >= 2
                               ? 'text-yellow-400'
@@ -131,7 +131,7 @@ const { data, pending, error, refresh } = await useFetch('/api/rentals', {
                         />
                         <Icon
                           name="uiw:star-on"
-                          class="h-3 w-3"
+                          class="size-3"
                           :class="
                             item.rating >= 3
                               ? 'text-yellow-400'
@@ -140,7 +140,7 @@ const { data, pending, error, refresh } = await useFetch('/api/rentals', {
                         />
                         <Icon
                           name="uiw:star-on"
-                          class="h-3 w-3"
+                          class="size-3"
                           :class="
                             item.rating >= 4
                               ? 'text-yellow-400'
@@ -149,7 +149,7 @@ const { data, pending, error, refresh } = await useFetch('/api/rentals', {
                         />
                         <Icon
                           name="uiw:star-on"
-                          class="h-3 w-3"
+                          class="size-3"
                           :class="
                             item.rating === 5
                               ? 'text-yellow-400'
@@ -163,7 +163,7 @@ const { data, pending, error, refresh } = await useFetch('/api/rentals', {
                       lead="none"
                       class="text-muted-400 mt-3 flex gap-1 text-left text-sm sm:mt-0 sm:items-end"
                     >
-                      <Icon name="lucide:map-pin" class="h-3 w-3" />
+                      <Icon name="lucide:map-pin" class="size-3" />
                       <span>{{ item.location }}</span>
                     </BaseParagraph>
                     <div class="text-primary-500 my-2 flex items-center gap-2">
@@ -184,28 +184,28 @@ const { data, pending, error, refresh } = await useFetch('/api/rentals', {
                         v-if="item.amenities.parking"
                         class="flex items-center gap-1"
                       >
-                        <Icon name="ph:car-duotone" class="h-4 w-4" />
+                        <Icon name="ph:car-duotone" class="size-4" />
                         <span class="font-sans text-xs">Parking</span>
                       </div>
                       <div
                         v-if="item.amenities.wifi"
                         class="flex items-center gap-1"
                       >
-                        <Icon name="ph:broadcast-duotone" class="h-4 w-4" />
+                        <Icon name="ph:broadcast-duotone" class="size-4" />
                         <span class="font-sans text-xs">Wifi</span>
                       </div>
                       <div
                         v-if="item.amenities.heater"
                         class="flex items-center gap-1"
                       >
-                        <Icon name="ph:thermometer-duotone" class="h-4 w-4" />
+                        <Icon name="ph:thermometer-duotone" class="size-4" />
                         <span class="font-sans text-xs">Heater</span>
                       </div>
                       <div
                         v-if="item.amenities.cleaning"
                         class="flex items-center gap-1"
                       >
-                        <Icon name="ph:waves-duotone" class="h-4 w-4" />
+                        <Icon name="ph:waves-duotone" class="size-4" />
                         <span class="font-sans text-xs">Cleaning</span>
                       </div>
                     </div>

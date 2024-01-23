@@ -47,12 +47,12 @@ function onDropClick() {
         <Icon
           v-if="isOpen"
           name="mdi:minus-box-outline"
-          class="h-4 w-4"
+          class="size-4"
         />
         <Icon
           v-else
           name="mdi:plus-box-outline"
-          class="h-4 w-4"
+          class="size-4"
         />
       </div>
     </button>

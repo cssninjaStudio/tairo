@@ -51,7 +51,7 @@ const nav = computed(() => {
       >
         <Icon
           name="lucide:arrow-left"
-          class="ms-2 h-5 w-5 transition-transform duration-100 group-hover:-translate-x-1"
+          class="ms-2 size-5 transition-transform duration-100 group-hover:-translate-x-1"
         />
         <span class="inline-flex flex-col gap-1">
           <span class="font-sans text-sm leading-tight">Previous</span>
@@ -75,7 +75,7 @@ const nav = computed(() => {
         </span>
         <Icon
           name="lucide:arrow-right"
-          class="me-2 h-5 w-5 transition-transform duration-100 group-hover:translate-x-1"
+          class="me-2 size-5 transition-transform duration-100 group-hover:translate-x-1"
         />
       </NuxtLink>
     </div>

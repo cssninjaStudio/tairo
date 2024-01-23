@@ -76,7 +76,7 @@ const activeLayout = ref('sidebar')
             >
               <Icon
                 :name="layout.icon"
-                class="h-6 w-6"
+                class="size-6"
                 :class="
                   activeLayout === layout.name
                     ? 'text-primary-500'
@@ -126,7 +126,7 @@ const activeLayout = ref('sidebar')
                 class="border-muted-200 text-muted-600 dark:text-muted-400 hover:text-primary-500 dark:hover:text-primary-500 hover:border-primary-500 dark:bg-muted-950 dark:border-muted-800 dark:hover:border-primary-500 absolute start-6 top-6 inline-flex items-center gap-1 rounded-full border bg-white px-5 py-2 transition-colors duration-300"
               >
                 <span class="font-sans text-sm">How to use</span>
-                <Icon name="lucide:arrow-right" class="h-3 w-3" />
+                <Icon name="lucide:arrow-right" class="size-3" />
               </NuxtLink>
             </div>
             <div class="relative flex grow flex-col px-8 pb-8 pt-4">

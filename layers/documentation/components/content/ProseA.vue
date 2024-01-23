@@ -28,7 +28,7 @@ const isExternal = computed(() => {
       <Icon
         v-if="isExternal"
         name="lucide:external-link"
-        class="h-3 w-3 opacity-60 dark:opacity-80"
+        class="size-3 opacity-60 dark:opacity-80"
       />
     </NuxtLink>
   </span>

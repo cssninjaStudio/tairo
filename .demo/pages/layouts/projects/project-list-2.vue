@@ -62,7 +62,7 @@ const { data, pending, error, refresh } = await useFetch(
           class="w-full sm:w-32"
           rounded="lg"
         >
-          <Icon name="lucide:plus" class="h-4 w-4" />
+          <Icon name="lucide:plus" class="size-4" />
           <span>New</span>
         </BaseButton>
       </template>
@@ -150,13 +150,13 @@ const { data, pending, error, refresh } = await useFetch(
                       </div>
                       <div class="text-muted-400 flex items-center gap-4">
                         <div class="flex items-center gap-1 text-sm">
-                          <Icon name="ph:paperclip-duotone" class="h-4 w-4" />
+                          <Icon name="ph:paperclip-duotone" class="size-4" />
                           <span class="font-sans">
                             {{ item.files.length }}
                           </span>
                         </div>
                         <div class="flex items-center gap-1 text-sm">
-                          <Icon name="ph:users-duotone" class="h-4 w-4" />
+                          <Icon name="ph:users-duotone" class="size-4" />
                           <span class="font-sans">{{ item.team.length }}</span>
                         </div>
                       </div>
@@ -264,13 +264,13 @@ const { data, pending, error, refresh } = await useFetch(
                         </div>
                         <div class="text-muted-400 flex items-center gap-4">
                           <div class="flex items-center gap-1 text-sm">
-                            <Icon name="ph:paperclip-duotone" class="h-4 w-4" />
+                            <Icon name="ph:paperclip-duotone" class="size-4" />
                             <span class="font-sans">
                               {{ item.files.length }}
                             </span>
                           </div>
                           <div class="flex items-center gap-1 text-sm">
-                            <Icon name="ph:users-duotone" class="h-4 w-4" />
+                            <Icon name="ph:users-duotone" class="size-4" />
                             <span class="font-sans">
                               {{ item.team.length }}
                             </span>

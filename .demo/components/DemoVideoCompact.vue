@@ -24,11 +24,11 @@ const props = withDefaults(
       <div class="absolute start-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
         <button
           type="button"
-          class="border-primary-500 bg-primary-500 dark:group-hover:bg-muted-800 flex h-10 w-10 items-center justify-center rounded-full border-2 transition-colors duration-300 group-hover:bg-white"
+          class="border-primary-500 bg-primary-500 dark:group-hover:bg-muted-800 flex size-10 items-center justify-center rounded-full border-2 transition-colors duration-300 group-hover:bg-white"
         >
           <Icon
             name="ic:round-play-arrow"
-            class="group-hover:text-primary-500 h-5 w-5 text-white"
+            class="group-hover:text-primary-500 size-5 text-white"
           />
         </button>
       </div>
@@ -48,7 +48,7 @@ const props = withDefaults(
       <div
         class="text-muted-400 mt-auto flex items-center gap-2 font-sans text-xs"
       >
-        <Icon name="lucide:eye" class="h-4 w-4" />
+        <Icon name="lucide:eye" class="size-4" />
         <span>3,862 views</span>
       </div>
     </div>

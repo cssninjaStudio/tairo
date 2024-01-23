@@ -42,7 +42,7 @@ const markedSubtitle = useNinjaMark(
     <div v-if="props.icon" class="shrink-0">
       <img
         :src="props.icon"
-        class="h-8 w-8"
+        class="size-8"
         alt=""
       >
     </div>

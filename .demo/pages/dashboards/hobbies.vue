@@ -120,10 +120,10 @@ const popular = [
                 alt="Hobby cover"
               >
               <div
-                class="bg-muted-900 absolute inset-0 z-10 h-full w-full opacity-0 transition-opacity duration-300 group-hover:opacity-50"
+                class="bg-muted-900 absolute inset-0 z-10 size-full opacity-0 transition-opacity duration-300 group-hover:opacity-50"
               />
               <div
-                class="absolute inset-0 z-20 flex h-full w-full flex-col justify-between p-6"
+                class="absolute inset-0 z-20 flex size-full flex-col justify-between p-6"
               >
                 <div class="flex items-center justify-between">
                   <h3
@@ -133,7 +133,7 @@ const popular = [
                   </h3>
                   <Icon
                     name="eos-icons:bootstrapping"
-                    class="h-5 w-5 -translate-y-2 text-white opacity-0 transition-all delay-300 duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+                    class="size-5 -translate-y-2 text-white opacity-0 transition-all delay-300 duration-300 group-hover:translate-y-0 group-hover:opacity-100"
                   />
                 </div>
                 <div class="flex items-center justify-between">
@@ -144,7 +144,7 @@ const popular = [
                   </h3>
                   <Icon
                     name="lucide:arrow-right"
-                    class="h-4 w-4 translate-y-2 text-white opacity-0 transition-all delay-700 duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+                    class="size-4 translate-y-2 text-white opacity-0 transition-all delay-700 duration-300 group-hover:translate-y-0 group-hover:opacity-100"
                   />
                 </div>
               </div>
@@ -162,10 +162,10 @@ const popular = [
                 alt="Hobby cover"
               >
               <div
-                class="bg-muted-900 absolute inset-0 z-10 h-full w-full opacity-0 transition-opacity duration-300 group-hover:opacity-50"
+                class="bg-muted-900 absolute inset-0 z-10 size-full opacity-0 transition-opacity duration-300 group-hover:opacity-50"
               />
               <div
-                class="absolute inset-0 z-20 flex h-full w-full flex-col justify-between p-6"
+                class="absolute inset-0 z-20 flex size-full flex-col justify-between p-6"
               >
                 <div class="flex items-center justify-between">
                   <h3
@@ -175,7 +175,7 @@ const popular = [
                   </h3>
                   <Icon
                     name="fluent-emoji-high-contrast:wheel"
-                    class="h-5 w-5 -translate-y-2 text-white opacity-0 transition-all delay-300 duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+                    class="size-5 -translate-y-2 text-white opacity-0 transition-all delay-300 duration-300 group-hover:translate-y-0 group-hover:opacity-100"
                   />
                 </div>
                 <div class="flex items-center justify-between">
@@ -186,7 +186,7 @@ const popular = [
                   </h3>
                   <Icon
                     name="lucide:arrow-right"
-                    class="h-4 w-4 translate-y-2 text-white opacity-0 transition-all delay-700 duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+                    class="size-4 translate-y-2 text-white opacity-0 transition-all delay-700 duration-300 group-hover:translate-y-0 group-hover:opacity-100"
                   />
                 </div>
               </div>
@@ -204,10 +204,10 @@ const popular = [
                 alt="Hobby cover"
               >
               <div
-                class="bg-muted-900 absolute inset-0 z-10 h-full w-full opacity-0 transition-opacity duration-300 group-hover:opacity-50"
+                class="bg-muted-900 absolute inset-0 z-10 size-full opacity-0 transition-opacity duration-300 group-hover:opacity-50"
               />
               <div
-                class="absolute inset-0 z-20 flex h-full w-full flex-col justify-between p-6"
+                class="absolute inset-0 z-20 flex size-full flex-col justify-between p-6"
               >
                 <div class="flex items-center justify-between">
                   <h3
@@ -217,7 +217,7 @@ const popular = [
                   </h3>
                   <Icon
                     name="fa6-solid:compass"
-                    class="h-5 w-5 -translate-y-2 text-white opacity-0 transition-all delay-300 duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+                    class="size-5 -translate-y-2 text-white opacity-0 transition-all delay-300 duration-300 group-hover:translate-y-0 group-hover:opacity-100"
                   />
                 </div>
                 <div class="flex items-center justify-between">
@@ -228,7 +228,7 @@ const popular = [
                   </h3>
                   <Icon
                     name="lucide:arrow-right"
-                    class="h-4 w-4 translate-y-2 text-white opacity-0 transition-all delay-700 duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+                    class="size-4 translate-y-2 text-white opacity-0 transition-all delay-700 duration-300 group-hover:translate-y-0 group-hover:opacity-100"
                   />
                 </div>
               </div>
@@ -246,10 +246,10 @@ const popular = [
                 alt="Hobby cover"
               >
               <div
-                class="bg-muted-900 absolute inset-0 z-10 h-full w-full opacity-0 transition-opacity duration-300 group-hover:opacity-50"
+                class="bg-muted-900 absolute inset-0 z-10 size-full opacity-0 transition-opacity duration-300 group-hover:opacity-50"
               />
               <div
-                class="absolute inset-0 z-20 flex h-full w-full flex-col justify-between p-6"
+                class="absolute inset-0 z-20 flex size-full flex-col justify-between p-6"
               >
                 <div class="flex items-center justify-between">
                   <h3
@@ -259,7 +259,7 @@ const popular = [
                   </h3>
                   <Icon
                     name="mdi:pickaxe"
-                    class="h-5 w-5 -translate-y-2 text-white opacity-0 transition-all delay-300 duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+                    class="size-5 -translate-y-2 text-white opacity-0 transition-all delay-300 duration-300 group-hover:translate-y-0 group-hover:opacity-100"
                   />
                 </div>
                 <div class="flex items-center justify-between">
@@ -270,7 +270,7 @@ const popular = [
                   </h3>
                   <Icon
                     name="lucide:arrow-right"
-                    class="h-4 w-4 translate-y-2 text-white opacity-0 transition-all delay-700 duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+                    class="size-4 translate-y-2 text-white opacity-0 transition-all delay-700 duration-300 group-hover:translate-y-0 group-hover:opacity-100"
                   />
                 </div>
               </div>
@@ -304,10 +304,10 @@ const popular = [
                 class="flex items-center gap-3 p-3"
               >
                 <div
-                  class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full"
+                  class="flex size-10 shrink-0 items-center justify-center rounded-full"
                   :class="getRandomColor()"
                 >
-                  <Icon :name="item.icon" class="h-5 w-5" />
+                  <Icon :name="item.icon" class="size-5" />
                 </div>
                 <div>
                   <BaseHeading
@@ -331,7 +331,7 @@ const popular = [
                     muted
                     class="scale-75"
                   >
-                    <Icon name="lucide:arrow-right" class="h-5 w-5" />
+                    <Icon name="lucide:arrow-right" class="size-5" />
                   </BaseButtonIcon>
                 </div>
               </BaseCard>
@@ -365,10 +365,10 @@ const popular = [
                 class="flex items-center gap-3 p-3"
               >
                 <div
-                  class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full"
+                  class="flex size-10 shrink-0 items-center justify-center rounded-full"
                   :class="getRandomColor()"
                 >
-                  <Icon :name="item.icon" class="h-5 w-5" />
+                  <Icon :name="item.icon" class="size-5" />
                 </div>
                 <div>
                   <BaseHeading
@@ -392,7 +392,7 @@ const popular = [
                     muted
                     class="scale-75"
                   >
-                    <Icon name="lucide:arrow-right" class="h-5 w-5" />
+                    <Icon name="lucide:arrow-right" class="size-5" />
                   </BaseButtonIcon>
                 </div>
               </BaseCard>
@@ -472,7 +472,7 @@ const popular = [
                     muted
                     class="scale-75"
                   >
-                    <Icon name="lucide:arrow-right" class="h-5 w-5" />
+                    <Icon name="lucide:arrow-right" class="size-5" />
                   </BaseButtonIcon>
                 </div>
               </NuxtLink>
@@ -506,7 +506,7 @@ const popular = [
                     muted
                     class="scale-75"
                   >
-                    <Icon name="lucide:arrow-right" class="h-5 w-5" />
+                    <Icon name="lucide:arrow-right" class="size-5" />
                   </BaseButtonIcon>
                 </div>
               </NuxtLink>
@@ -540,7 +540,7 @@ const popular = [
                     muted
                     class="scale-75"
                   >
-                    <Icon name="lucide:arrow-right" class="h-5 w-5" />
+                    <Icon name="lucide:arrow-right" class="size-5" />
                   </BaseButtonIcon>
                 </div>
               </NuxtLink>

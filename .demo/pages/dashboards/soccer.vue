@@ -167,7 +167,7 @@ const matches = [
                   class="inline-flex items-center justify-center gap-1"
                   size="sm"
                 >
-                  <Icon name="lucide:video" class="h-3 w-3" />
+                  <Icon name="lucide:video" class="size-3" />
                   <span>Live now</span>
                 </BaseTag>
               </div>
@@ -176,7 +176,7 @@ const matches = [
             <div class="mb-6 flex items-center justify-between">
               <div class="flex flex-col text-center">
                 <img
-                  class="mx-auto h-12 w-12"
+                  class="mx-auto size-12"
                   src="/img/icons/soccer/teams/barcelona.svg"
                   alt="Team logo"
                 >
@@ -199,7 +199,7 @@ const matches = [
               </div>
               <div class="flex flex-col text-center">
                 <img
-                  class="mx-auto h-12 w-12"
+                  class="mx-auto size-12"
                   src="/img/icons/soccer/teams/psg.svg"
                   alt="Team logo"
                 >
@@ -270,7 +270,7 @@ const matches = [
                       class="w-full sm:w-auto"
                     >
                       <span>Learn More</span>
-                      <Icon name="lucide:arrow-right" class="h-4 w-4" />
+                      <Icon name="lucide:arrow-right" class="size-4" />
                     </BaseButton>
                   </div>
                 </div>
@@ -338,7 +338,7 @@ const matches = [
                             :data-nui-tooltip="capitalize(match.status)"
                           >
                             <div
-                              class="h-2 w-2 rounded-full"
+                              class="size-2 rounded-full"
                               :class="
                                 match.status === 'live'
                                   ? 'bg-rose-500'
@@ -363,7 +363,7 @@ const matches = [
                                 <span>{{ match.match.home.name }}</span>
                               </BaseHeading>
                               <img
-                                class="h-8 w-8"
+                                class="size-8"
                                 :src="match.match.home.logo"
                                 :alt="match.match.home.name"
                               >
@@ -389,7 +389,7 @@ const matches = [
                             </div>
                             <div class="flex w-[120px] items-center gap-2">
                               <img
-                                class="h-8 w-8"
+                                class="size-8"
                                 :src="match.match.away.logo"
                                 :alt="match.match.away.name"
                               >
@@ -419,7 +419,7 @@ const matches = [
                             <BaseButtonIcon small muted>
                               <Icon
                                 name="lucide:more-horizontal"
-                                class="h-4 w-4"
+                                class="size-4"
                               />
                             </BaseButtonIcon>
                           </div>

@@ -57,7 +57,7 @@ const props = defineProps<{
               rounded="none"
               mask="blob"
             >
-              <Icon name="ph:house-duotone" class="h-4 w-4" />
+              <Icon name="ph:house-duotone" class="size-4" />
             </BaseIconBox>
             <div class="ms-2">
               <BaseHeading

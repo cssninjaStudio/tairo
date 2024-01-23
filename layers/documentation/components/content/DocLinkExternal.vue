@@ -25,7 +25,7 @@ const props = withDefaults(
         rel="noopener"
         class="hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500"
       >
-        <Icon :name="props.icon" class="h-3 w-3" />
+        <Icon :name="props.icon" class="size-3" />
         <span>{{ props.label }}</span>
       </BaseButtonAction>
     </div>

@@ -634,7 +634,7 @@ const jobs = [
             <BaseCard rounded="lg" class="p-6">
               <div class="flex w-full flex-col gap-4 sm:flex-row">
                 <div :data-nui-tooltip="job.company">
-                  <Icon :name="job.logo" class="h-10 w-10 shrink-0" />
+                  <Icon :name="job.logo" class="size-10 shrink-0" />
                 </div>
                 <div>
                   <BaseHeading

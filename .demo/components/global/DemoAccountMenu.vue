@@ -11,15 +11,15 @@ const props = defineProps<{
     <Menu
       v-slot="{ close }"
       as="div"
-      class="relative h-10 w-10 text-left"
+      class="relative size-10 text-left"
     >
       <MenuButton as="template">
         <button
           type="button"
-          class="group-hover:ring-primary-500 dark:ring-offset-muted-800 inline-flex h-10 w-10 items-center justify-center rounded-full ring-1 ring-transparent transition-all duration-300 group-hover:ring-offset-4"
+          class="group-hover:ring-primary-500 dark:ring-offset-muted-800 inline-flex size-10 items-center justify-center rounded-full ring-1 ring-transparent transition-all duration-300 group-hover:ring-offset-4"
         >
           <div
-            class="relative inline-flex h-10 w-10 items-center justify-center rounded-full"
+            class="relative inline-flex size-10 items-center justify-center rounded-full"
           >
             <img
               src="/img/avatars/2.svg"
@@ -45,7 +45,7 @@ const props = defineProps<{
           <div class="bg-muted-50 dark:bg-muted-700/40 p-6">
             <div class="flex items-center">
               <div
-                class="relative inline-flex h-14 w-14 items-center justify-center rounded-full"
+                class="relative inline-flex size-14 items-center justify-center rounded-full"
               >
                 <img
                   src="/img/avatars/2.svg"
@@ -77,7 +77,7 @@ const props = defineProps<{
                 ]"
                 @click.passive="close"
               >
-                <Icon name="ph:user-circle-duotone" class="h-5 w-5" />
+                <Icon name="ph:user-circle-duotone" class="size-5" />
                 <div class="ms-3">
                   <h6
                     class="font-heading text-muted-800 text-xs font-medium leading-none dark:text-white"
@@ -101,7 +101,7 @@ const props = defineProps<{
                 ]"
                 @click.passive="close"
               >
-                <Icon name="ph:briefcase-duotone" class="h-5 w-5" />
+                <Icon name="ph:briefcase-duotone" class="size-5" />
                 <div class="ms-3">
                   <h6
                     class="font-heading text-muted-800 text-xs font-medium leading-none dark:text-white"
@@ -125,7 +125,7 @@ const props = defineProps<{
                 ]"
                 @click.passive="close"
               >
-                <Icon name="ph:users-three-duotone" class="h-5 w-5" />
+                <Icon name="ph:users-three-duotone" class="size-5" />
                 <div class="ms-3">
                   <h6
                     class="font-heading text-muted-800 text-xs font-medium leading-none dark:text-white"
@@ -149,7 +149,7 @@ const props = defineProps<{
                 ]"
                 @click.passive="close"
               >
-                <Icon name="ph:gear-six-duotone" class="h-5 w-5" />
+                <Icon name="ph:gear-six-duotone" class="size-5" />
                 <div class="ms-3">
                   <h6
                     class="font-heading text-muted-800 text-xs font-medium leading-none dark:text-white"

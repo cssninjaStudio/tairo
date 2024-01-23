@@ -54,7 +54,7 @@ const { open } = usePanels()
           >
             <Icon
               name="lucide:search"
-              class="h-4 w-4 motion-safe:transition-colors motion-safe:duration-300"
+              class="size-4 motion-safe:transition-colors motion-safe:duration-300"
             />
             <span
               class="group-[&.scrolled]/landing:dark:bg-muted-800 group-[&.scrolled]/landing:border-muted-200 group-[&.scrolled]/landing:dark:border-muted-700 group-[&.scrolled]/landing:group-hover:text-muted-600 group-[&.scrolled]/landing:dark:group-hover:text-muted-100 rounded-lg border px-2 py-0.5 group-[&:not(.scrolled)]/landing:border-transparent group-[&.scrolled]/landing:bg-white group-[&.scrolled]/landing:shadow motion-safe:transition-colors motion-safe:duration-300"
@@ -69,7 +69,7 @@ const { open } = usePanels()
       <div class="flex w-1/2 items-center justify-end gap-4 md:w-1/5">
         <button
           type="button"
-          class="border-muted-200 hover:ring-muted-200 dark:hover:ring-muted-700 dark:border-muted-700 dark:bg-muted-800 dark:ring-offset-muted-900 flex h-9 w-9 items-center justify-center rounded-full border bg-white ring-1 ring-transparent transition-all duration-300 hover:ring-offset-4"
+          class="border-muted-200 hover:ring-muted-200 dark:hover:ring-muted-700 dark:border-muted-700 dark:bg-muted-800 dark:ring-offset-muted-900 flex size-9 items-center justify-center rounded-full border bg-white ring-1 ring-transparent transition-all duration-300 hover:ring-offset-4"
           @click="
             () => {
               const isOpen = useState('switcher-open', () => false)
@@ -79,7 +79,7 @@ const { open } = usePanels()
         >
           <Icon
             name="ph:drop-half-bottom-duotone"
-            class="text-muted-400 h-5 w-5"
+            class="text-muted-400 size-5"
           />
         </button>
         <BaseThemeToggle aria-label="Toggle darkmode" />

@@ -103,7 +103,7 @@ const onSubmit = handleSubmit(async (values) => {
       class="bg-muted-100 dark:bg-muted-900 hidden h-screen w-full md:w-1/2 lg:block xl:w-2/3"
     >
       <div
-        class="mx-auto flex h-full w-full max-w-4xl items-center justify-center"
+        class="mx-auto flex size-full max-w-4xl items-center justify-center"
       >
         <!--Media image-->
         <img
@@ -120,14 +120,14 @@ const onSubmit = handleSubmit(async (values) => {
       class="dark:bg-muted-800 flex h-screen w-full items-center justify-center bg-white px-6 md:mx-auto md:w-1/2 md:max-w-md lg:max-w-full lg:px-16 xl:w-1/3 xl:px-12"
     >
       <div
-        class="mx-auto flex h-full w-full max-w-xs flex-col items-center justify-between py-8"
+        class="mx-auto flex size-full max-w-xs flex-col items-center justify-between py-8"
       >
         <div class="mx-auto flex w-full max-w-xs items-center justify-between">
           <NuxtLink
             to="/dashboards"
             class="text-muted-400 hover:text-primary-500 dark:text-muted-700 dark:hover:text-primary-500 transition-colors duration-300"
           >
-            <TairoLogo class="h-10 w-10" />
+            <TairoLogo class="size-10" />
           </NuxtLink>
           <div>
             <BaseThemeToggle />
@@ -235,7 +235,7 @@ const onSubmit = handleSubmit(async (values) => {
           >
 
           <BaseButton class="!h-11 w-full">
-            <Icon name="logos:google-icon" class="me-1 h-4 w-4" />
+            <Icon name="logos:google-icon" class="me-1 size-4" />
             <span>Sign In with Google</span>
           </BaseButton>
 

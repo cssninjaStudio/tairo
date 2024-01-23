@@ -7,7 +7,7 @@
       color="primary"
       mask="hex"
     >
-      <Icon name="ph:armchair-duotone" class="h-6 w-6" />
+      <Icon name="ph:armchair-duotone" class="size-6" />
     </BaseIconBox>
 
     <BaseIconBox
@@ -17,7 +17,7 @@
       color="info"
       mask="hexed"
     >
-      <Icon name="ph:confetti-duotone" class="h-6 w-6" />
+      <Icon name="ph:confetti-duotone" class="size-6" />
     </BaseIconBox>
 
     <BaseIconBox
@@ -27,7 +27,7 @@
       color="success"
       mask="deca"
     >
-      <Icon name="ph:check-circle-duotone" class="h-6 w-6" />
+      <Icon name="ph:check-circle-duotone" class="size-6" />
     </BaseIconBox>
 
     <BaseIconBox
@@ -37,7 +37,7 @@
       color="warning"
       mask="blob"
     >
-      <Icon name="ph:lightbulb-duotone" class="h-6 w-6" />
+      <Icon name="ph:lightbulb-duotone" class="size-6" />
     </BaseIconBox>
 
     <BaseIconBox
@@ -47,7 +47,7 @@
       color="danger"
       mask="diamond"
     >
-      <Icon name="ph:cookie-duotone" class="h-6 w-6" />
+      <Icon name="ph:cookie-duotone" class="size-6" />
     </BaseIconBox>
 
     <BaseIconBox
@@ -57,7 +57,7 @@
       color="primary"
       mask="hex"
     >
-      <Icon name="ph:armchair-duotone" class="h-6 w-6" />
+      <Icon name="ph:armchair-duotone" class="size-6" />
     </BaseIconBox>
 
     <BaseIconBox
@@ -67,7 +67,7 @@
       color="info"
       mask="hexed"
     >
-      <Icon name="ph:confetti-duotone" class="h-6 w-6" />
+      <Icon name="ph:confetti-duotone" class="size-6" />
     </BaseIconBox>
 
     <BaseIconBox
@@ -77,7 +77,7 @@
       color="success"
       mask="deca"
     >
-      <Icon name="ph:check-circle-duotone" class="h-6 w-6" />
+      <Icon name="ph:check-circle-duotone" class="size-6" />
     </BaseIconBox>
 
     <BaseIconBox
@@ -87,7 +87,7 @@
       color="warning"
       mask="blob"
     >
-      <Icon name="ph:lightbulb-duotone" class="h-6 w-6" />
+      <Icon name="ph:lightbulb-duotone" class="size-6" />
     </BaseIconBox>
 
     <BaseIconBox
@@ -97,7 +97,7 @@
       color="danger"
       mask="diamond"
     >
-      <Icon name="ph:cookie-duotone" class="h-6 w-6" />
+      <Icon name="ph:cookie-duotone" class="size-6" />
     </BaseIconBox>
   </div>
 </template>

@@ -75,7 +75,7 @@ const showStackTrace = ref(true)
               class="mx-auto !h-12 w-full max-w-[160px]"
               @click="retry"
             >
-              <Icon name="feather:refresh-cw" class="h-3 w-3" />
+              <Icon name="feather:refresh-cw" class="size-3" />
               <span>Clear Error</span>
             </BaseButton>
           </DevOnly>
@@ -125,7 +125,7 @@ const showStackTrace = ref(true)
               rounded="full"
               size="md"
             >
-              <Icon name="ph:skull-duotone" class="h-6 w-6" />
+              <Icon name="ph:skull-duotone" class="size-6" />
             </BaseIconBox>
             <div>
               <h4

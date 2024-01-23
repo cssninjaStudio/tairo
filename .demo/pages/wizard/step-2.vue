@@ -50,18 +50,18 @@ watch(inputFile, (value) => {
           v-model="inputFile"
           accept="image/*"
         >
-          <div class="relative h-20 w-20">
+          <div class="relative size-20">
             <img
               v-if="avatarPreview"
               :src="avatarPreview"
               alt="Upload preview"
-              class="bg-muted-200 dark:bg-muted-700/60 h-20 w-20 rounded-full object-cover object-center"
+              class="bg-muted-200 dark:bg-muted-700/60 size-20 rounded-full object-cover object-center"
             >
             <img
               v-else
               src="/img/avatars/placeholder-file.png"
               alt="Upload preview"
-              class="bg-muted-200 dark:bg-muted-700/60 h-20 w-20 rounded-full object-cover object-center"
+              class="bg-muted-200 dark:bg-muted-700/60 size-20 rounded-full object-cover object-center"
             >
             <div
               v-if="files?.length && files.item(0)"
@@ -73,7 +73,7 @@ watch(inputFile, (value) => {
                 tooltip="Remove image"
                 @click="remove(files.item(0)!)"
               >
-                <Icon name="lucide:x" class="h-4 w-4" />
+                <Icon name="lucide:x" class="size-4" />
               </BaseButtonIcon>
             </div>
             <div v-else class="absolute bottom-0 end-0 z-20">
@@ -83,7 +83,7 @@ watch(inputFile, (value) => {
                   rounded="full"
                   @click="open"
                 >
-                  <Icon name="lucide:plus" class="h-4 w-4" />
+                  <Icon name="lucide:plus" class="size-4" />
                 </BaseButtonIcon>
               </div>
             </div>

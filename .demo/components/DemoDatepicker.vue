@@ -171,7 +171,7 @@ onMounted(() => {
             @click="incrementDays"
           >
             <svg
-              class="text-muted-400 inline-flex h-5 w-5"
+              class="text-muted-400 inline-flex size-5"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -190,7 +190,7 @@ onMounted(() => {
             @click="decrementDays"
           >
             <svg
-              class="text-muted-400 inline-flex h-5 w-5"
+              class="text-muted-400 inline-flex size-5"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -230,7 +230,7 @@ onMounted(() => {
             <div
               role="button"
               tabindex="0"
-              class="mx-auto flex h-8 w-8 cursor-pointer items-center justify-center rounded-full text-center text-sm leading-none transition duration-100 ease-in-out"
+              class="mx-auto flex size-8 cursor-pointer items-center justify-center rounded-full text-center text-sm leading-none transition duration-100 ease-in-out"
               :class="[
                 isToday(date) === true
                   ? 'bg-primary-100 dark:bg-primary-500/20 text-primary-500'

@@ -79,7 +79,7 @@ const props = defineProps<{
             class="bg-primary-100 text-primary-500 dark:bg-primary-600 me-2 dark:text-white"
             color="none"
           >
-            <Icon :name="stat.icon" class="h-4 w-4" />
+            <Icon :name="stat.icon" class="size-4" />
           </BaseIconBox>
           <BaseAvatar
             v-if="stat.image && !stat.icon"

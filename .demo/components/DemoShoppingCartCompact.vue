@@ -59,7 +59,7 @@ const products = [
         class="flex gap-2"
       >
         <div
-          class="bg-muted-100 dark:bg-muted-700 flex h-16 w-16 shrink-0 items-center justify-center"
+          class="bg-muted-100 dark:bg-muted-700 flex size-16 shrink-0 items-center justify-center"
           :class="[
             props.rounded === 'sm' ? 'rounded' : '',
             props.rounded === 'md' ? 'rounded-lg' : '',
@@ -68,7 +68,7 @@ const products = [
           ]"
         >
           <img
-            class="h-12 w-12 object-cover object-center"
+            class="size-12 object-cover object-center"
             :src="product.image"
             alt="Widget image"
           >

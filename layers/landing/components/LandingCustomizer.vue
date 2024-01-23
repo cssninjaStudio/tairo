@@ -49,7 +49,7 @@ watch(selectedStyle, (value) => {
         <div class="relative w-full sm:w-1/2">
           <div class="absolute inset-x-0 z-0 -mt-2 py-24">
             <div
-              class="mt-12 grid grid-cols-2 -space-x-52 opacity-60 dark:opacity-50 2xl:mx-auto 2xl:max-w-3xl"
+              class="mt-12 grid grid-cols-2 -space-x-52 opacity-60 2xl:mx-auto 2xl:max-w-3xl dark:opacity-50"
             >
               <div
                 class="from-primary-200 to-primary-400 h-40 bg-gradient-to-br blur-3xl dark:from-blue-700"
@@ -64,25 +64,25 @@ watch(selectedStyle, (value) => {
           >
             <div
               v-if="toggled"
-              class="absolute left-0 top-1/4 z-10 h-full w-full overflow-hidden motion-reduce:hidden"
+              class="absolute left-0 top-1/4 z-10 size-full overflow-hidden motion-reduce:hidden"
             >
               <div class="shuriken-1 absolute block">
                 <img
-                  class="animate-spin-fast h-10 w-10"
+                  class="animate-spin-fast size-10"
                   src="/img/logos/cssninja-logo-icon.svg"
                   alt=""
                 >
               </div>
               <div class="shuriken-2 absolute block">
                 <img
-                  class="animate-spin-fast h-12 w-12"
+                  class="animate-spin-fast size-12"
                   src="/img/logos/cssninja-logo-icon.svg"
                   alt=""
                 >
               </div>
               <div class="shuriken-3 absolute block">
                 <img
-                  class="animate-spin-fast h-11 w-11"
+                  class="animate-spin-fast size-11"
                   src="/img/logos/cssninja-logo-icon.svg"
                   alt=""
                 >
@@ -149,7 +149,7 @@ watch(selectedStyle, (value) => {
                   color="primary"
                   variant="pastel"
                 >
-                  <Icon name="lucide:bell" class="h-4 w-4" />
+                  <Icon name="lucide:bell" class="size-4" />
                   <span>Follow Belen</span>
                 </BaseButton>
                 <NuxtLink
@@ -166,7 +166,7 @@ watch(selectedStyle, (value) => {
               class="!border-primary-600 relative z-20 mx-auto max-w-[340px] overflow-hidden p-6"
             >
               <div
-                class="bg-primary-500 dark:bg-primary-500/20 absolute -right-16 -top-32 h-72 w-72 rounded-full transition-transform delay-150 duration-500"
+                class="bg-primary-500 dark:bg-primary-500/20 absolute -right-16 -top-32 size-72 rounded-full transition-transform delay-150 duration-500"
                 :class="selectedStyle === 'creative' ? 'scale-100' : 'scale-0'"
               />
               <div class="mb-6 flex items-center justify-between">
@@ -179,7 +179,7 @@ watch(selectedStyle, (value) => {
                   Member
                 </BaseTag>
                 <div
-                  class="dark:bg-muted-800 flex h-7 w-7 items-center justify-center rounded-full bg-white"
+                  class="dark:bg-muted-800 flex size-7 items-center justify-center rounded-full bg-white"
                 >
                   <BaseAvatar
                     size="xxs"
@@ -228,7 +228,7 @@ watch(selectedStyle, (value) => {
               </div>
               <div class="flex gap-2">
                 <BaseButton class="!h-11 w-full" rounded="full">
-                  <Icon name="lucide:bookmark" class="h-4 w-4" />
+                  <Icon name="lucide:bookmark" class="size-4" />
                   <span>Save</span>
                 </BaseButton>
 
@@ -237,7 +237,7 @@ watch(selectedStyle, (value) => {
                   rounded="full"
                   color="primary"
                 >
-                  <Icon name="lucide:bell" class="h-4 w-4" />
+                  <Icon name="lucide:bell" class="size-4" />
                   <span>Follow</span>
                 </BaseButton>
               </div>
@@ -312,7 +312,7 @@ watch(selectedStyle, (value) => {
                   rounded="sm"
                   color="primary"
                 >
-                  <Icon name="lucide:check" class="h-4 w-4" />
+                  <Icon name="lucide:check" class="size-4" />
                   <span>Hire Now</span>
                 </BaseButton>
               </div>
@@ -360,21 +360,21 @@ watch(selectedStyle, (value) => {
               <div class="my-6 flex items-center justify-center gap-4">
                 <NuxtLink
                   to="#"
-                  class="text-muted-400 hover:text-primary-500 flex h-6 w-6 items-center justify-center transition-colors duration-200"
+                  class="text-muted-400 hover:text-primary-500 flex size-6 items-center justify-center transition-colors duration-200"
                 >
-                  <Icon name="fa6-brands:facebook-f" class="h-4 w-4" />
+                  <Icon name="fa6-brands:facebook-f" class="size-4" />
                 </NuxtLink>
                 <NuxtLink
                   to="#"
-                  class="text-muted-400 hover:text-primary-500 flex h-6 w-6 items-center justify-center transition-colors duration-200"
+                  class="text-muted-400 hover:text-primary-500 flex size-6 items-center justify-center transition-colors duration-200"
                 >
-                  <Icon name="fa6-brands:twitter" class="h-4 w-4" />
+                  <Icon name="fa6-brands:twitter" class="size-4" />
                 </NuxtLink>
                 <NuxtLink
                   to="#"
-                  class="text-muted-400 hover:text-primary-500 flex h-6 w-6 items-center justify-center transition-colors duration-200"
+                  class="text-muted-400 hover:text-primary-500 flex size-6 items-center justify-center transition-colors duration-200"
                 >
-                  <Icon name="fa6-brands:linkedin-in" class="h-4 w-4" />
+                  <Icon name="fa6-brands:linkedin-in" class="size-4" />
                 </NuxtLink>
               </div>
               <div>
@@ -416,7 +416,7 @@ watch(selectedStyle, (value) => {
               >
                 <Icon
                   name="system-uicons:document-words"
-                  class="mb-2 h-10 w-10"
+                  class="mb-2 size-10"
                 />
                 <span class="font-sans text-sm">Classic</span>
               </button>
@@ -430,7 +430,7 @@ watch(selectedStyle, (value) => {
                 "
                 @click="selectedStyle = 'corporate'"
               >
-                <Icon name="system-uicons:diamond" class="mb-2 h-10 w-10" />
+                <Icon name="system-uicons:diamond" class="mb-2 size-10" />
                 <span class="font-sans text-sm">Corporate</span>
               </button>
               <button
@@ -443,7 +443,7 @@ watch(selectedStyle, (value) => {
                 "
                 @click="selectedStyle = 'smart'"
               >
-                <Icon name="system-uicons:maximise" class="mb-2 h-10 w-10" />
+                <Icon name="system-uicons:maximise" class="mb-2 size-10" />
                 <span class="font-sans text-sm">Smart</span>
               </button>
               <button
@@ -458,7 +458,7 @@ watch(selectedStyle, (value) => {
               >
                 <Icon
                   name="system-uicons:lightbulb-on"
-                  class="mb-2 h-10 w-10"
+                  class="mb-2 size-10"
                 />
                 <span class="font-sans text-sm">Creative</span>
               </button>

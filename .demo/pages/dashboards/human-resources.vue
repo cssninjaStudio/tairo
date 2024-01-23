@@ -103,7 +103,7 @@ const items = [
                     class="nui-mask nui-mask-blob"
                   />
                   <BaseButtonIcon>
-                    <Icon name="lucide:plus" class="h-4 w-4" />
+                    <Icon name="lucide:plus" class="size-4" />
                   </BaseButtonIcon>
                 </div>
               </div>

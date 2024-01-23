@@ -24,7 +24,7 @@ const props = withDefaults(
       >
         <TairoTocAnchor :label="props.title">
           <template #prefix>
-            <Icon name="lucide:hash" class="h-4 w-4" />
+            <Icon name="lucide:hash" class="size-4" />
           </template>
         </TairoTocAnchor>
       </BaseHeading>

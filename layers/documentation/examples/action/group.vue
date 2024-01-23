@@ -5,7 +5,7 @@
     </BaseButtonAction>
 
     <BaseButtonAction rounded="md">
-      <Icon name="ph:pen" class="h-4 w-4" />
+      <Icon name="ph:pen" class="size-4" />
     </BaseButtonAction>
 
     <BaseButtonAction muted rounded="md">

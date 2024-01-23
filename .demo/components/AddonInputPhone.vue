@@ -339,7 +339,7 @@ const dropdownBorder = computed(() => {
         variant="text"
         :rounded="props.rounded"
         size="lg"
-        class="[&_.nui-text-button]:border-muted-200 dark:[&_.nui-text-button]:border-muted-800 flex h-full [&_.nui-text-button]:relative [&_.nui-text-button]:z-10 [&_.nui-text-button]:h-full [&_.nui-text-button]:w-full [&_.nui-text-button]:border-e [&_.nui-text-button]:pe-2 [&_.nui-text-button]:ps-4"
+        class="[&_.nui-text-button]:border-muted-200 dark:[&_.nui-text-button]:border-muted-800 flex h-full [&_.nui-text-button]:relative [&_.nui-text-button]:z-10 [&_.nui-text-button]:size-full [&_.nui-text-button]:border-e [&_.nui-text-button]:pe-2 [&_.nui-text-button]:ps-4"
         :class="dropdownBorder"
       >
         <template #label>
@@ -403,11 +403,11 @@ const dropdownBorder = computed(() => {
                     @keyboard.enter.prevent="selectCountry(data?.code)"
                   >
                     <template #start>
-                      <span class="me-1 h-6 w-6 shrink-0 text-center">
+                      <span class="me-1 size-6 shrink-0 text-center">
                         <Icon
                           v-if="data?.icon"
                           :name="data.icon"
-                          class="h-6 w-6"
+                          class="size-6"
                         >
                           {{ data.code }}
                         </Icon>
@@ -417,7 +417,7 @@ const dropdownBorder = computed(() => {
                       <Icon
                         v-if="vcountry === data?.code"
                         name="ph:check"
-                        class="text-success-500 h-4 w-4 shrink-0"
+                        class="text-success-500 size-4 shrink-0"
                       />
                     </template>
                   </BaseDropdownItem>

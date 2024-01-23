@@ -238,7 +238,7 @@ const total = computed(() => {
                       class="w-full sm:w-auto"
                     >
                       <span>Learn More</span>
-                      <Icon name="lucide:arrow-right" class="h-4 w-4" />
+                      <Icon name="lucide:arrow-right" class="size-4" />
                     </BaseButton>
                   </div>
                 </div>
@@ -258,7 +258,7 @@ const total = computed(() => {
               <button
                 class="bg-primary-500/10 hover:bg-primary-500/20 text-primary-600 inline-flex cursor-pointer items-center justify-center gap-x-1 rounded-full py-2 pe-4 ps-2 font-sans text-sm transition-all duration-300"
               >
-                <Icon name="ph:timer-duotone" class="h-5 w-5" />
+                <Icon name="ph:timer-duotone" class="size-5" />
                 <span class="text-sm">Delivery:</span>
                 <span>~ 25min</span>
               </button>
@@ -289,7 +289,7 @@ const total = computed(() => {
                   <img
                     :src="genre.icon"
                     alt="Food type icon"
-                    class="h-12 w-12 scale-[0.8]"
+                    class="size-12 scale-[0.8]"
                     :class="activeGenre === genre.id ? '' : 'dark:invert'"
                   >
                 </div>
@@ -304,7 +304,7 @@ const total = computed(() => {
                   class="hover:border-yellow-500 hover:text-yellow-500"
                   data-nui-tooltip="All categories"
                 >
-                  <Icon name="lucide:chevron-right" class="h-4 w-4" />
+                  <Icon name="lucide:chevron-right" class="size-4" />
                 </BaseButtonIcon>
               </div>
             </div>
@@ -360,7 +360,7 @@ const total = computed(() => {
                       <div class="flex items-center gap-1 ps-4">
                         <Icon
                           name="uiw:star-on"
-                          class="h-3 w-3 text-yellow-400"
+                          class="size-3 text-yellow-400"
                         />
                         <span class="text-muted-400 font-sans text-xs">
                           {{ meal.rating }} ({{ meal.reviews }})
@@ -380,7 +380,7 @@ const total = computed(() => {
             <!-- Load more -->
             <div class="my-16 flex items-center justify-center">
               <BaseButton rounded="full" color="default">
-                <Icon name="ph:dots-nine-bold" class="h-4 w-4" />
+                <Icon name="ph:dots-nine-bold" class="size-4" />
                 <span>Load more</span>
               </BaseButton>
             </div>
@@ -421,7 +421,7 @@ const total = computed(() => {
             </div>
             <div class="mt-4 flex items-center gap-2 font-sans">
               <div class="rounded-lg py-1">
-                <Icon name="ph:timer-duotone" class="h-5 w-5 text-yellow-400" />
+                <Icon name="ph:timer-duotone" class="size-5 text-yellow-400" />
               </div>
               <p class="text-white">
                 35 min
@@ -450,15 +450,15 @@ const total = computed(() => {
             <li v-for="item in order.items" :key="item.id">
               <div class="flex items-center gap-3">
                 <div
-                  class="border-muted-200 dark:border-muted-700 dark:bg-muted-900 relative flex h-14 w-14 items-center justify-center rounded-xl border bg-white"
+                  class="border-muted-200 dark:border-muted-700 dark:bg-muted-900 relative flex size-14 items-center justify-center rounded-xl border bg-white"
                 >
                   <img
                     :src="item.image"
                     :alt="item.name"
-                    class="h-12 w-12 object-contain"
+                    class="size-12 object-contain"
                   >
                   <div
-                    class="bg-primary-500 absolute -bottom-1 -end-1 flex h-6 w-6 items-center justify-center rounded-full"
+                    class="bg-primary-500 absolute -bottom-1 -end-1 flex size-6 items-center justify-center rounded-full"
                   >
                     <span
                       class="font-sans text-[0.65rem] font-semibold text-white"
@@ -531,7 +531,7 @@ const total = computed(() => {
                 <span class="text-base font-medium">Checkout</span>
                 <Icon
                   name="lucide:arrow-right"
-                  class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+                  class="size-4 transition-transform duration-300 group-hover:translate-x-1"
                 />
               </BaseButton>
             </div>

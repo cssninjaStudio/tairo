@@ -6,7 +6,7 @@
       class="bg-muted-200 text-muted-500 dark:bg-muted-800"
       color="none"
     >
-      <Icon name="ph:nut-duotone" class="h-3 w-3" />
+      <Icon name="ph:nut-duotone" class="size-3" />
     </BaseIconBox>
 
     <BaseIconBox
@@ -15,7 +15,7 @@
       class="bg-muted-200 text-muted-500 dark:bg-muted-800"
       color="none"
     >
-      <Icon name="ph:nut-duotone" class="h-4 w-4" />
+      <Icon name="ph:nut-duotone" class="size-4" />
     </BaseIconBox>
 
     <BaseIconBox
@@ -24,7 +24,7 @@
       class="bg-muted-200 text-muted-500 dark:bg-muted-800"
       color="none"
     >
-      <Icon name="ph:nut-duotone" class="h-5 w-5" />
+      <Icon name="ph:nut-duotone" class="size-5" />
     </BaseIconBox>
 
     <BaseIconBox
@@ -33,7 +33,7 @@
       class="bg-muted-200 text-muted-500 dark:bg-muted-800"
       color="none"
     >
-      <Icon name="ph:nut-duotone" class="h-6 w-6" />
+      <Icon name="ph:nut-duotone" class="size-6" />
     </BaseIconBox>
 
     <BaseIconBox
@@ -42,7 +42,7 @@
       class="bg-muted-200 text-muted-500 dark:bg-muted-800"
       color="none"
     >
-      <Icon name="ph:nut-duotone" class="h-7 w-7" />
+      <Icon name="ph:nut-duotone" class="size-7" />
     </BaseIconBox>
 
     <BaseIconBox
@@ -51,7 +51,7 @@
       class="bg-muted-200 text-muted-500 dark:bg-muted-800"
       color="none"
     >
-      <Icon name="ph:nut-duotone" class="h-8 w-8" />
+      <Icon name="ph:nut-duotone" class="size-8" />
     </BaseIconBox>
   </div>
 </template>

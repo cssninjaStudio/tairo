@@ -847,7 +847,7 @@ const currentRatingText = computed(() => {
           </div>
         </div>
         <div class="text-muted-400 mt-6 flex items-center gap-2">
-          <Icon name="lucide:mail" class="h-4 w-4" />
+          <Icon name="lucide:mail" class="size-4" />
           <BaseLink
             v-if="values.doctor?.email"
             class="block"
@@ -866,7 +866,7 @@ const currentRatingText = computed(() => {
           </BaseText>
         </div>
         <div class="text-muted-400 mt-6 flex items-center gap-2">
-          <Icon name="lucide:phone" class="h-4 w-4" />
+          <Icon name="lucide:phone" class="size-4" />
           <BaseLink
             v-if="values.doctor?.phone"
             class="block"

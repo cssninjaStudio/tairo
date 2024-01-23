@@ -352,13 +352,13 @@ const filteredResults = computed(() => {
                 <BaseAvatar v-if="result.type === 'people'" :src="result.src" />
                 <img
                   v-else-if="result.type === 'project'"
-                  class="h-10 w-10 shrink-0 rounded-full object-cover object-center"
+                  class="size-10 shrink-0 rounded-full object-cover object-center"
                   :src="result.src"
                   :alt="result.name"
                 >
                 <img
                   v-else-if="result.type === 'file'"
-                  class="h-10 w-10 shrink-0"
+                  class="size-10 shrink-0"
                   :src="result.src"
                   :alt="result.name"
                 >

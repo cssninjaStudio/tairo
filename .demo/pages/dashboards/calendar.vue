@@ -219,21 +219,21 @@ const selectedEventFeatures = computed({
     >
       <NuxtLink
         to="/dashboards"
-        class="flex h-16 w-16 items-center justify-center"
+        class="flex size-16 items-center justify-center"
       >
         <TairoLogo class="text-primary-600 h-10" />
       </NuxtLink>
       <nav class="relative flex h-full flex-col">
         <NuxtLink
           to="/dashboards/inbox"
-          class="relative flex h-16 w-16 items-center justify-center"
+          class="relative flex size-16 items-center justify-center"
         >
           <div
-            class="bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400 relative flex h-12 w-12 items-center justify-center rounded-xl"
+            class="bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400 relative flex size-12 items-center justify-center rounded-xl"
           >
-            <Icon name="ph:tray-duotone" class="h-5 w-5" />
+            <Icon name="ph:tray-duotone" class="size-5" />
             <span
-              class="absolute -end-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-pink-600 font-sans text-xs text-white"
+              class="absolute -end-1 -top-1 flex size-5 items-center justify-center rounded-full bg-pink-600 font-sans text-xs text-white"
             >
               3
             </span>
@@ -241,78 +241,78 @@ const selectedEventFeatures = computed({
         </NuxtLink>
         <NuxtLink
           href="#"
-          class="relative flex h-16 w-16 items-center justify-center"
+          class="relative flex size-16 items-center justify-center"
         >
           <div
-            class="bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400 relative flex h-12 w-12 items-center justify-center rounded-xl"
+            class="bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400 relative flex size-12 items-center justify-center rounded-xl"
           >
-            <Icon name="ph:bookmark-simple-duotone" class="h-5 w-5" />
+            <Icon name="ph:bookmark-simple-duotone" class="size-5" />
           </div>
         </NuxtLink>
         <NuxtLink
           to="/dashboards/calendar"
-          class="relative flex h-16 w-16 items-center justify-center"
+          class="relative flex size-16 items-center justify-center"
         >
           <div
-            class="bg-primary-500/10 text-primary-500 relative flex h-12 w-12 items-center justify-center rounded-xl"
+            class="bg-primary-500/10 text-primary-500 relative flex size-12 items-center justify-center rounded-xl"
           >
-            <Icon name="ph:calendar-blank-duotone" class="h-5 w-5" />
+            <Icon name="ph:calendar-blank-duotone" class="size-5" />
           </div>
         </NuxtLink>
         <NuxtLink
           to="/dashboards/inbox"
-          class="relative flex h-16 w-16 items-center justify-center"
+          class="relative flex size-16 items-center justify-center"
         >
           <div
-            class="bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400 relative flex h-12 w-12 items-center justify-center rounded-xl"
+            class="bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400 relative flex size-12 items-center justify-center rounded-xl"
           >
-            <Icon name="ph:folder-duotone" class="h-5 w-5" />
+            <Icon name="ph:folder-duotone" class="size-5" />
           </div>
         </NuxtLink>
         <NuxtLink
           to="/dashboards/inbox"
-          class="relative flex h-16 w-16 items-center justify-center"
+          class="relative flex size-16 items-center justify-center"
         >
           <div
-            class="bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400 relative flex h-12 w-12 items-center justify-center rounded-xl"
+            class="bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400 relative flex size-12 items-center justify-center rounded-xl"
           >
-            <Icon name="ph:trash-duotone" class="h-5 w-5" />
+            <Icon name="ph:trash-duotone" class="size-5" />
           </div>
         </NuxtLink>
         <NuxtLink
           to="/dashboards/inbox"
-          class="relative flex h-16 w-16 items-center justify-center"
+          class="relative flex size-16 items-center justify-center"
         >
           <div
-            class="bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400 relative flex h-12 w-12 items-center justify-center rounded-xl"
+            class="bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400 relative flex size-12 items-center justify-center rounded-xl"
           >
-            <Icon name="ph:gear-six-duotone" class="h-5 w-5" />
+            <Icon name="ph:gear-six-duotone" class="size-5" />
           </div>
         </NuxtLink>
         <div class="mt-auto flex flex-col items-center">
           <a
             href="#"
-            class="relative flex h-16 w-16 items-center justify-center"
+            class="relative flex size-16 items-center justify-center"
             title="Back"
             @click.prevent="$router.back()"
           >
             <div
-              class="bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400 relative flex h-12 w-12 items-center justify-center rounded-xl"
+              class="bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400 relative flex size-12 items-center justify-center rounded-xl"
             >
-              <Icon name="lucide:arrow-left" class="h-5 w-5" />
+              <Icon name="lucide:arrow-left" class="size-5" />
             </div>
           </a>
           <button
             type="button"
-            class="relative flex h-16 w-16 items-center justify-center"
+            class="relative flex size-16 items-center justify-center"
           >
             <div
-              class="bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400 relative flex h-12 w-12 items-center justify-center rounded-xl"
+              class="bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400 relative flex size-12 items-center justify-center rounded-xl"
             >
-              <Icon name="lucide:plus" class="h-5 w-5" />
+              <Icon name="lucide:plus" class="size-5" />
             </div>
           </button>
-          <div class="relative flex h-16 w-16 items-center justify-center">
+          <div class="relative flex size-16 items-center justify-center">
             <DemoAccountMenu />
           </div>
         </div>
@@ -448,7 +448,7 @@ const selectedEventFeatures = computed({
                   <!-- current time marker -->
                   <div
                     v-if="day.isToday && showNow"
-                    class="pointer-events-none absolute inset-x-0 z-50 h-[1px] bg-red-500 before:block before:h-2 before:w-2 before:-translate-x-full before:translate-y-[-3px] before:rounded-full before:bg-red-600 before:content-['']"
+                    class="pointer-events-none absolute inset-x-0 z-50 h-[1px] bg-red-500 before:block before:size-2 before:-translate-x-full before:translate-y-[-3px] before:rounded-full before:bg-red-600 before:content-['']"
                     :style="{
                       top: `${dateToTop(settings, now, day.date)}px`,
                     }"
@@ -584,10 +584,10 @@ const selectedEventFeatures = computed({
           <div>
             <button
               type="button"
-              class="border-muted-200 hover:ring-muted-200 dark:hover:ring-muted-700 dark:border-muted-800 dark:bg-muted-800 dark:ring-offset-muted-900 flex h-9 w-9 items-center justify-center rounded-full border bg-white ring-1 ring-transparent transition-all duration-300 hover:ring-offset-4"
+              class="border-muted-200 hover:ring-muted-200 dark:hover:ring-muted-700 dark:border-muted-800 dark:bg-muted-800 dark:ring-offset-muted-900 flex size-9 items-center justify-center rounded-full border bg-white ring-1 ring-transparent transition-all duration-300 hover:ring-offset-4"
               @click="showSettings = !showSettings"
             >
-              <Icon name="ph:gear-six-duotone" class="text-muted-400 h-5 w-5" />
+              <Icon name="ph:gear-six-duotone" class="text-muted-400 size-5" />
             </button>
           </div>
           <TairoSidebarTools />
@@ -823,7 +823,7 @@ const selectedEventFeatures = computed({
                       class="text-muted-300 peer-checked:border-primary-500 peer-checked:text-primary-500 p-4"
                     >
                       <div class="flex flex-col items-center gap-1">
-                        <Icon name="ph:monitor-play-duotone" class="h-5 w-5" />
+                        <Icon name="ph:monitor-play-duotone" class="size-5" />
                         <!-- <div
                           class="text-muted-800 dark:text-muted-100 text-xs font-medium"
                         >
@@ -844,7 +844,7 @@ const selectedEventFeatures = computed({
                       class="text-muted-300 peer-checked:border-primary-500 peer-checked:text-primary-500 p-4"
                     >
                       <div class="flex flex-col items-center gap-1">
-                        <Icon name="ph:note-duotone" class="h-5 w-5" />
+                        <Icon name="ph:note-duotone" class="size-5" />
                         <!-- <div
                           class="text-muted-800 dark:text-muted-100 text-xs font-medium"
                         >
@@ -865,7 +865,7 @@ const selectedEventFeatures = computed({
                       class="text-muted-300 peer-checked:border-primary-500 peer-checked:text-primary-500 p-4"
                     >
                       <div class="flex flex-col items-center gap-1">
-                        <Icon name="ph:lock-open-duotone" class="h-5 w-5" />
+                        <Icon name="ph:lock-open-duotone" class="size-5" />
                         <!-- <div
                           class="text-muted-800 dark:text-muted-100 text-xs font-medium"
                         >
@@ -886,7 +886,7 @@ const selectedEventFeatures = computed({
                       class="text-muted-300 peer-checked:border-primary-500 peer-checked:text-primary-500 p-4"
                     >
                       <div class="flex flex-col items-center gap-1">
-                        <Icon name="ph:chats-circle-duotone" class="h-5 w-5" />
+                        <Icon name="ph:chats-circle-duotone" class="size-5" />
                         <!-- <div
                           class="text-muted-800 dark:text-muted-100 text-xs font-medium"
                         >
@@ -989,7 +989,7 @@ const selectedEventFeatures = computed({
                       href="#"
                       class="text-primary-500 nui-focus dark:text-sunny pointer-events-auto mx-auto mt-2 flex items-center justify-center gap-1 font-sans text-xs underline-offset-4 hover:underline"
                     >
-                      <Icon name="lucide:plus" class="h-3 w-3" />
+                      <Icon name="lucide:plus" class="size-3" />
                       <span>New event</span>
                     </NuxtLink>
                   </div>

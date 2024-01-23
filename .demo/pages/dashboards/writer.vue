@@ -55,7 +55,7 @@ const activePosts = ref('recent')
                       variant="outline"
                       class="w-full sm:w-auto"
                     >
-                      <Icon name="lucide:plus" class="h-4 w-4" />
+                      <Icon name="lucide:plus" class="size-4" />
                       <span>New Article</span>
                     </BaseButton>
                   </div>

@@ -264,11 +264,11 @@ const colorCode = ref('color_code_1')
         </div>
         <div class="ms-auto flex items-center gap-2">
           <BaseButtonAction @click.prevent="$router.back()">
-            <Icon name="lucide:arrow-left" class="h-3 w-3" />
+            <Icon name="lucide:arrow-left" class="size-3" />
             <span>Cancel</span>
           </BaseButtonAction>
           <BaseButtonAction type="submit" color="primary">
-            <Icon name="lucide:check" class="h-3 w-3" />
+            <Icon name="lucide:check" class="size-3" />
             <span>Save</span>
           </BaseButtonAction>
         </div>
@@ -470,7 +470,7 @@ const colorCode = ref('color_code_1')
           </div>
           <div>
             <BaseButtonAction>
-              <Icon name="lucide:plus" class="h-3 w-3" />
+              <Icon name="lucide:plus" class="size-3" />
               <span>Add people</span>
             </BaseButtonAction>
           </div>
@@ -617,22 +617,22 @@ const colorCode = ref('color_code_1')
                 <div class="mb-4 flex items-center gap-2">
                   <button
                     type="button"
-                    class="nui-focus border-muted-200 hover:border-primary-500 text-muted-700 dark:text-muted-200 hover:text-primary-600 dark:border-muted-700 dark:bg-muted-800 dark:hover:border-primary-500 dark:hover:text-primary-600 relative flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border bg-white transition-colors duration-300"
+                    class="nui-focus border-muted-200 hover:border-primary-500 text-muted-700 dark:text-muted-200 hover:text-primary-600 dark:border-muted-700 dark:bg-muted-800 dark:hover:border-primary-500 dark:hover:text-primary-600 relative flex size-8 cursor-pointer items-center justify-center rounded-full border bg-white transition-colors duration-300"
                     tooltip="Select files"
                     @click="open"
                   >
                     <Icon
                       name="lucide:plus"
-                      class="absolute start-1/2 top-1/2 h-4 w-4 -translate-x-1/2 -translate-y-1/2"
+                      class="absolute start-1/2 top-1/2 size-4 -translate-x-1/2 -translate-y-1/2"
                     />
                     <span class="sr-only">Select files</span>
                   </button>
                   <button
                     type="button"
-                    class="nui-focus border-muted-200 hover:border-primary-500 text-muted-700 dark:text-muted-200 hover:text-primary-600 dark:border-muted-700 dark:bg-muted-800 dark:hover:border-primary-500 dark:hover:text-primary-600 relative flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border bg-white transition-colors duration-300"
+                    class="nui-focus border-muted-200 hover:border-primary-500 text-muted-700 dark:text-muted-200 hover:text-primary-600 dark:border-muted-700 dark:bg-muted-800 dark:hover:border-primary-500 dark:hover:text-primary-600 relative flex size-8 cursor-pointer items-center justify-center rounded-full border bg-white transition-colors duration-300"
                     tooltip="Start Upload"
                   >
-                    <Icon name="lucide:arrow-up" class="h-4 w-4" />
+                    <Icon name="lucide:arrow-up" class="size-4" />
 
                     <span class="sr-only">Start Upload</span>
                   </button>
@@ -657,7 +657,7 @@ const colorCode = ref('color_code_1')
                     <div class="p-5 text-center">
                       <Icon
                         name="mdi-light:cloud-upload"
-                        class="text-muted-400 group-hover:text-primary-500 group-focus:text-primary-500 mb-2 h-10 w-10 transition-colors duration-300"
+                        class="text-muted-400 group-hover:text-primary-500 group-focus:text-primary-500 mb-2 size-10 transition-colors duration-300"
                       />
                       <h4 class="text-muted-400 font-sans text-sm">
                         Drop files to upload
@@ -686,13 +686,13 @@ const colorCode = ref('color_code_1')
                           <div class="shrink-0">
                             <img
                               v-if="file.type.startsWith('image')"
-                              class="h-14 w-14 rounded-xl object-cover object-center"
+                              class="size-14 rounded-xl object-cover object-center"
                               :src="preview(file).value"
                               alt="Image preview"
                             >
                             <img
                               v-else
-                              class="h-14 w-14 rounded-xl object-cover object-center"
+                              class="size-14 rounded-xl object-cover object-center"
                               src="/img/avatars/placeholder-file.png"
                               alt="Image preview"
                             >
@@ -721,30 +721,30 @@ const colorCode = ref('color_code_1')
                         </div>
                         <div class="flex gap-2">
                           <button
-                            class="border-muted-200 hover:border-primary-500 text-muted-700 dark:text-muted-200 hover:text-primary-600 dark:border-muted-700 dark:bg-muted-900 dark:hover:border-primary-500 dark:hover:text-primary-600 relative flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border bg-white transition-colors duration-300 disabled:cursor-not-allowed disabled:opacity-60"
+                            class="border-muted-200 hover:border-primary-500 text-muted-700 dark:text-muted-200 hover:text-primary-600 dark:border-muted-700 dark:bg-muted-900 dark:hover:border-primary-500 dark:hover:text-primary-600 relative flex size-8 cursor-pointer items-center justify-center rounded-full border bg-white transition-colors duration-300 disabled:cursor-not-allowed disabled:opacity-60"
                             disabled
                             type="button"
                             tooltip="Cancel"
                           >
-                            <Icon name="lucide:slash" class="h-4 w-4" />
+                            <Icon name="lucide:slash" class="size-4" />
                             <span class="sr-only">Cancel</span>
                           </button>
 
                           <button
-                            class="border-muted-200 hover:border-primary-500 text-muted-700 dark:text-muted-200 hover:text-primary-600 dark:border-muted-700 dark:bg-muted-900 dark:hover:border-primary-500 dark:hover:text-primary-600 relative flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border bg-white transition-colors duration-300"
+                            class="border-muted-200 hover:border-primary-500 text-muted-700 dark:text-muted-200 hover:text-primary-600 dark:border-muted-700 dark:bg-muted-900 dark:hover:border-primary-500 dark:hover:text-primary-600 relative flex size-8 cursor-pointer items-center justify-center rounded-full border bg-white transition-colors duration-300"
                             type="button"
                             tooltip="Upload"
                           >
-                            <Icon name="lucide:arrow-up" class="h-4 w-4" />
+                            <Icon name="lucide:arrow-up" class="size-4" />
                             <span class="sr-only">Upload</span>
                           </button>
                           <button
-                            class="border-muted-200 hover:border-primary-500 text-muted-700 dark:text-muted-200 hover:text-primary-600 dark:border-muted-700 dark:bg-muted-900 dark:hover:border-primary-500 dark:hover:text-primary-600 relative flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border bg-white transition-colors duration-300"
+                            class="border-muted-200 hover:border-primary-500 text-muted-700 dark:text-muted-200 hover:text-primary-600 dark:border-muted-700 dark:bg-muted-900 dark:hover:border-primary-500 dark:hover:text-primary-600 relative flex size-8 cursor-pointer items-center justify-center rounded-full border bg-white transition-colors duration-300"
                             type="button"
                             tooltip="Remove"
                             @click.prevent="remove(file)"
                           >
-                            <Icon name="lucide:x" class="h-4 w-4" />
+                            <Icon name="lucide:x" class="size-4" />
                             <span class="sr-only">Remove</span>
                           </button>
                         </div>
@@ -781,7 +781,7 @@ const colorCode = ref('color_code_1')
                     @blur="handleBlur"
                   >
                     <div
-                      class="border-primary-500 peer-checked:bg-primary-500 h-4 w-4 rounded-full border-2 transition-colors duration-300"
+                      class="border-primary-500 peer-checked:bg-primary-500 size-4 rounded-full border-2 transition-colors duration-300"
                     />
                   </BaseRadioHeadless>
                 </Field>
@@ -800,7 +800,7 @@ const colorCode = ref('color_code_1')
                     @blur="handleBlur"
                   >
                     <div
-                      class="border-info-500 peer-checked:bg-info-500 h-4 w-4 rounded-full border-2 transition-colors duration-300"
+                      class="border-info-500 peer-checked:bg-info-500 size-4 rounded-full border-2 transition-colors duration-300"
                     />
                   </BaseRadioHeadless>
                 </Field>
@@ -819,7 +819,7 @@ const colorCode = ref('color_code_1')
                     @blur="handleBlur"
                   >
                     <div
-                      class="border-success-500 peer-checked:bg-success-500 h-4 w-4 rounded-full border-2 transition-colors duration-300"
+                      class="border-success-500 peer-checked:bg-success-500 size-4 rounded-full border-2 transition-colors duration-300"
                     />
                   </BaseRadioHeadless>
                 </Field>
@@ -838,7 +838,7 @@ const colorCode = ref('color_code_1')
                     @blur="handleBlur"
                   >
                     <div
-                      class="border-danger-500 peer-checked:bg-danger-500 h-4 w-4 rounded-full border-2 transition-colors duration-300"
+                      class="border-danger-500 peer-checked:bg-danger-500 size-4 rounded-full border-2 transition-colors duration-300"
                     />
                   </BaseRadioHeadless>
                 </Field>
@@ -857,7 +857,7 @@ const colorCode = ref('color_code_1')
                     @blur="handleBlur"
                   >
                     <div
-                      class="h-4 w-4 rounded-full border-2 border-lime-500 transition-colors duration-300 peer-checked:bg-lime-500"
+                      class="size-4 rounded-full border-2 border-lime-500 transition-colors duration-300 peer-checked:bg-lime-500"
                     />
                   </BaseRadioHeadless>
                 </Field>
@@ -876,7 +876,7 @@ const colorCode = ref('color_code_1')
                     @blur="handleBlur"
                   >
                     <div
-                      class="h-4 w-4 rounded-full border-2 border-pink-500 transition-colors duration-300 peer-checked:bg-pink-500"
+                      class="size-4 rounded-full border-2 border-pink-500 transition-colors duration-300 peer-checked:bg-pink-500"
                     />
                   </BaseRadioHeadless>
                 </Field>

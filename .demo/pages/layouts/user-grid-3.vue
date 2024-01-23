@@ -65,7 +65,7 @@ const { data, pending, error, refresh } = await useFetch(
           class="w-full sm:w-32"
           rounded="full"
         >
-          <Icon name="lucide:plus" class="h-4 w-4" />
+          <Icon name="lucide:plus" class="size-4" />
           <span>Add User</span>
         </BaseButton>
       </template>
@@ -137,17 +137,17 @@ const { data, pending, error, refresh } = await useFetch(
                     <Icon
                       v-if="item.tasks.status === 0"
                       name="ph:check-circle-duotone"
-                      class="text-success-500 h-7 w-7"
+                      class="text-success-500 size-7"
                     />
                     <Icon
                       v-else-if="item.tasks.status === 1"
                       name="ph:warning-circle-duotone"
-                      class="text-warning-500 h-7 w-7"
+                      class="text-warning-500 size-7"
                     />
                     <Icon
                       v-else-if="item.tasks.status === 2"
                       name="ph:x-circle-duotone"
-                      class="text-danger-500 h-7 w-7"
+                      class="text-danger-500 size-7"
                     />
                   </div>
                 </div>
@@ -195,11 +195,11 @@ const { data, pending, error, refresh } = await useFetch(
                 </div>
                 <div class="flex items-center gap-2">
                   <BaseButton rounded="sm" class="w-full">
-                    <Icon name="ph:user-duotone" class="h-4 w-4" />
+                    <Icon name="ph:user-duotone" class="size-4" />
                     <span>Profile</span>
                   </BaseButton>
                   <BaseButton rounded="sm" class="w-full">
-                    <Icon name="ph:chat-circle-duotone" class="h-4 w-4" />
+                    <Icon name="ph:chat-circle-duotone" class="size-4" />
                     <span>Talk</span>
                   </BaseButton>
                 </div>

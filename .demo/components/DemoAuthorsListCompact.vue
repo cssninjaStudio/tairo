@@ -78,7 +78,7 @@ const authors = [
           muted
           class="scale-75"
         >
-          <Icon name="lucide:arrow-right" class="h-4 w-4" />
+          <Icon name="lucide:arrow-right" class="size-4" />
         </BaseButtonIcon>
       </div>
     </div>

@@ -78,7 +78,7 @@ function statusColor(itemStatus: string) {
           rounded="full"
           class="w-full sm:w-32"
         >
-          <Icon name="lucide:plus" class="h-4 w-4" />
+          <Icon name="lucide:plus" class="size-4" />
           <span>Add User</span>
         </BaseButton>
       </template>

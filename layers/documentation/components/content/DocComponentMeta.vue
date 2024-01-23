@@ -192,7 +192,7 @@ function wrapExternalLinks(string: string) {
                       <span class="hidden group-open:inline">Hide example</span>
                       <Icon
                         name="lucide:chevron-down"
-                        class="text-muted-400 h-4 w-4 transition-transform duration-200 group-open:rotate-180"
+                        class="text-muted-400 size-4 transition-transform duration-200 group-open:rotate-180"
                       />
                     </summary>
                     <AddonMarkdownRemark
@@ -335,7 +335,7 @@ function wrapExternalLinks(string: string) {
                     <span class="hidden group-open:inline">Hide example</span>
                     <Icon
                       name="lucide:chevron-down"
-                      class="text-muted-400 h-4 w-4 transition-transform duration-200 group-open:rotate-180"
+                      class="text-muted-400 size-4 transition-transform duration-200 group-open:rotate-180"
                     />
                   </summary>
                   <AddonMarkdownRemark
@@ -430,7 +430,7 @@ function wrapExternalLinks(string: string) {
                     <span class="hidden group-open:inline">Hide example</span>
                     <Icon
                       name="lucide:chevron-down"
-                      class="text-muted-400 h-4 w-4 transition-transform duration-200 group-open:rotate-180"
+                      class="text-muted-400 size-4 transition-transform duration-200 group-open:rotate-180"
                     />
                   </summary>
                   <AddonMarkdownRemark
@@ -522,7 +522,7 @@ function wrapExternalLinks(string: string) {
                     <span class="hidden group-open:inline">Hide example</span>
                     <Icon
                       name="lucide:chevron-down"
-                      class="text-muted-400 h-4 w-4 transition-transform duration-200 group-open:rotate-180"
+                      class="text-muted-400 size-4 transition-transform duration-200 group-open:rotate-180"
                     />
                   </summary>
                   <AddonMarkdownRemark
@@ -619,7 +619,7 @@ function wrapExternalLinks(string: string) {
                     <span class="hidden group-open:inline">Hide example</span>
                     <Icon
                       name="lucide:chevron-down"
-                      class="text-muted-400 h-4 w-4 transition-transform duration-200 group-open:rotate-180"
+                      class="text-muted-400 size-4 transition-transform duration-200 group-open:rotate-180"
                     />
                   </summary>
                   <AddonMarkdownRemark

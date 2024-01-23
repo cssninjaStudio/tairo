@@ -112,7 +112,7 @@ const onSubmit = handleSubmit(async (values) => {
         to="/"
         class="text-muted-400 hover:text-primary-500 dark:text-muted-700 dark:hover:text-primary-500 transition-colors duration-300"
       >
-        <TairoLogo class="h-10 w-10" />
+        <TairoLogo class="size-10" />
       </NuxtLink>
       <div>
         <BaseThemeToggle />
@@ -122,42 +122,42 @@ const onSubmit = handleSubmit(async (values) => {
       <div class="relative mx-auto w-full max-w-2xl">
         <!--Avatars-->
         <img
-          class="ltablet:block absolute start-0 top-[30%] hidden h-12 w-12 rounded-full object-cover duration-[cubic-bezier(0.86,0,0.07,1)] lg:block"
+          class="ltablet:block absolute start-0 top-[30%] hidden size-12 rounded-full object-cover duration-[cubic-bezier(0.86,0,0.07,1)] lg:block"
           src="/img/avatars/1.svg"
           alt="Avatar"
           width="48"
           height="48"
         >
         <img
-          class="ltablet:block absolute -start-[25%] top-[40%] hidden h-16 w-16 rounded-full object-cover lg:block"
+          class="ltablet:block absolute -start-[25%] top-[40%] hidden size-16 rounded-full object-cover lg:block"
           src="/img/avatars/9.svg"
           alt="Avatar"
           width="64"
           height="64"
         >
         <img
-          class="ltablet:block absolute -start-[5%] top-[52%] hidden h-16 w-16 rounded-full object-cover lg:block"
+          class="ltablet:block absolute -start-[5%] top-[52%] hidden size-16 rounded-full object-cover lg:block"
           src="/img/avatars/4.svg"
           alt="Avatar"
           width="64"
           height="64"
         >
         <img
-          class="ltablet:block absolute -start-[35%] top-[65%] hidden h-24 w-24 rounded-full object-cover lg:block"
+          class="ltablet:block absolute -start-[35%] top-[65%] hidden size-24 rounded-full object-cover lg:block"
           src="/img/avatars/8.svg"
           alt="Avatar"
           width="96"
           height="96"
         >
         <img
-          class="ltablet:block absolute -start-[35%] top-[20%] hidden h-10 w-10 rounded-full object-cover lg:block"
+          class="ltablet:block absolute -start-[35%] top-[20%] hidden size-10 rounded-full object-cover lg:block"
           src="/img/avatars/12.svg"
           alt="Avatar"
           width="40"
           height="40"
         >
         <img
-          class="ltablet:block absolute -start-[55%] top-[40%] hidden h-20 w-20 rounded-full object-cover lg:block"
+          class="ltablet:block absolute -start-[55%] top-[40%] hidden size-20 rounded-full object-cover lg:block"
           src="/img/avatars/20.svg"
           alt="Avatar"
           width="80"
@@ -165,42 +165,42 @@ const onSubmit = handleSubmit(async (values) => {
         >
 
         <img
-          class="ltablet:block absolute end-0 top-[30%] hidden h-12 w-12 rounded-full object-cover lg:block"
+          class="ltablet:block absolute end-0 top-[30%] hidden size-12 rounded-full object-cover lg:block"
           src="/img/avatars/16.svg"
           alt="Avatar"
           width="48"
           height="48"
         >
         <img
-          class="ltablet:block absolute -end-[25%] top-[40%] hidden h-16 w-16 rounded-full object-cover lg:block"
+          class="ltablet:block absolute -end-[25%] top-[40%] hidden size-16 rounded-full object-cover lg:block"
           src="/img/avatars/10.svg"
           alt="Avatar"
           width="64"
           height="64"
         >
         <img
-          class="ltablet:block absolute -end-[5%] top-[52%] hidden h-16 w-16 rounded-full object-cover lg:block"
+          class="ltablet:block absolute -end-[5%] top-[52%] hidden size-16 rounded-full object-cover lg:block"
           src="/img/avatars/19.svg"
           alt="Avatar"
           width="64"
           height="64"
         >
         <img
-          class="ltablet:block absolute -end-[35%] top-[65%] hidden h-24 w-24 rounded-full object-cover lg:block"
+          class="ltablet:block absolute -end-[35%] top-[65%] hidden size-24 rounded-full object-cover lg:block"
           src="/img/avatars/24.svg"
           alt="Avatar"
           width="96"
           height="96"
         >
         <img
-          class="ltablet:block absolute -end-[35%] top-[20%] hidden h-10 w-10 rounded-full object-cover lg:block"
+          class="ltablet:block absolute -end-[35%] top-[20%] hidden size-10 rounded-full object-cover lg:block"
           src="/img/avatars/3.svg"
           alt="Avatar"
           width="40"
           height="40"
         >
         <img
-          class="ltablet:block absolute -end-[55%] top-[40%] hidden h-20 w-20 rounded-full object-cover lg:block"
+          class="ltablet:block absolute -end-[55%] top-[40%] hidden size-20 rounded-full object-cover lg:block"
           src="/img/avatars/5.svg"
           alt="Avatar"
           width="80"
@@ -352,19 +352,19 @@ const onSubmit = handleSubmit(async (values) => {
                   type="button"
                   class="bg-muted-200 dark:bg-muted-700 hover:bg-muted-100 dark:hover:bg-muted-600 text-muted-600 dark:text-muted-400 relative inline-flex w-full items-center justify-center rounded px-0 py-3 text-center text-sm font-semibold shadow-sm transition-all duration-300"
                 >
-                  <Icon name="fa6-brands:google" class="h-5 w-5" />
+                  <Icon name="fa6-brands:google" class="size-5" />
                 </button>
                 <button
                   type="button"
                   class="bg-muted-200 dark:bg-muted-700 hover:bg-muted-100 dark:hover:bg-muted-600 text-muted-600 dark:text-muted-400 relative inline-flex w-full items-center justify-center rounded px-0 py-3 text-center text-sm font-semibold shadow-sm transition-all duration-300"
                 >
-                  <Icon name="fa6-brands:twitter" class="h-5 w-5" />
+                  <Icon name="fa6-brands:twitter" class="size-5" />
                 </button>
                 <button
                   type="button"
                   class="bg-muted-200 dark:bg-muted-700 hover:bg-muted-100 dark:hover:bg-muted-600 text-muted-600 dark:text-muted-400 relative inline-flex w-full items-center justify-center rounded px-0 py-3 text-center text-sm font-semibold shadow-sm transition-all duration-300"
                 >
-                  <Icon name="fa6-brands:linkedin-in" class="h-5 w-5" />
+                  <Icon name="fa6-brands:linkedin-in" class="size-5" />
                 </button>
               </div>
 

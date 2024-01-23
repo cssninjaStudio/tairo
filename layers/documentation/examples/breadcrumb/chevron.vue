@@ -1,11 +1,11 @@
 <template>
   <div class="flex flex-col gap-4">
     <BaseBreadcrumb :items="demoBreadcrumbOne">
-      <Icon name="lucide:chevron-right" class="block h-3 w-3" />
+      <Icon name="lucide:chevron-right" class="block size-3" />
     </BaseBreadcrumb>
 
     <BaseBreadcrumb :items="demoBreadcrumbTwo">
-      <Icon name="lucide:chevron-right" class="block h-3 w-3" />
+      <Icon name="lucide:chevron-right" class="block size-3" />
     </BaseBreadcrumb>
   </div>
 </template>

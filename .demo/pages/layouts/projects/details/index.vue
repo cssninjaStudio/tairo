@@ -63,7 +63,7 @@ const selectedProject = ref('')
       <div class="my-6 text-center">
         <Icon
           name="ph:square-half-duotone"
-          class="text-primary-500 mx-auto mb-2 h-10 w-10"
+          class="text-primary-500 mx-auto mb-2 size-10"
         />
         <BaseHeading
           tag="h4"
@@ -180,13 +180,13 @@ const selectedProject = ref('')
                 </div>
                 <div class="text-muted-400 flex items-center gap-4">
                   <div class="flex items-center gap-1 text-sm">
-                    <Icon name="ph:paperclip-duotone" class="h-4 w-4" />
+                    <Icon name="ph:paperclip-duotone" class="size-4" />
                     <span class="font-sans">
                       {{ item.files.length }}
                     </span>
                   </div>
                   <div class="flex items-center gap-1 text-sm">
-                    <Icon name="ph:users-duotone" class="h-4 w-4" />
+                    <Icon name="ph:users-duotone" class="size-4" />
                     <span class="font-sans">{{ item.team.length }}</span>
                   </div>
                 </div>

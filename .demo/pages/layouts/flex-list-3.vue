@@ -140,7 +140,7 @@ function difficultyLabel(itemDifficulty: number) {
                   >
                     <Icon
                       :name="item.skill.icon"
-                      class="text-primary-500 h-5 w-5"
+                      class="text-primary-500 size-5"
                     />
                     <span
                       class="text-muted-500 dark:text-muted-400 font-sans text-sm"
@@ -159,7 +159,7 @@ function difficultyLabel(itemDifficulty: number) {
                     :data-nui-tooltip="difficultyLabel(item.difficulty)"
                   >
                     <span
-                      class="block h-2 w-2 rounded-full"
+                      class="block size-2 rounded-full"
                       :class="
                         item.difficulty >= 1
                           ? 'bg-primary-500'
@@ -167,7 +167,7 @@ function difficultyLabel(itemDifficulty: number) {
                       "
                     />
                     <span
-                      class="block h-2 w-2 rounded-full"
+                      class="block size-2 rounded-full"
                       :class="
                         item.difficulty >= 2
                           ? 'bg-primary-500'
@@ -175,7 +175,7 @@ function difficultyLabel(itemDifficulty: number) {
                       "
                     />
                     <span
-                      class="block h-2 w-2 rounded-full"
+                      class="block size-2 rounded-full"
                       :class="
                         item.difficulty >= 3
                           ? 'bg-primary-500'
@@ -183,7 +183,7 @@ function difficultyLabel(itemDifficulty: number) {
                       "
                     />
                     <span
-                      class="block h-2 w-2 rounded-full"
+                      class="block size-2 rounded-full"
                       :class="
                         item.difficulty >= 4
                           ? 'bg-primary-500'
@@ -191,7 +191,7 @@ function difficultyLabel(itemDifficulty: number) {
                       "
                     />
                     <span
-                      class="block h-2 w-2 rounded-full"
+                      class="block size-2 rounded-full"
                       :class="
                         item.difficulty === 5
                           ? 'bg-primary-500'

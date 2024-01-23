@@ -11,7 +11,7 @@ const year = new Date().getFullYear()
       class="dark:bg-muted-900 absolute inset-x-0 -top-4 mx-auto flex h-9 w-14 items-center justify-center bg-white"
     >
       <img
-        class="h-7 w-7"
+        class="size-7"
         src="/img/logos/cssninja-logo-icon.svg"
         alt="Css Ninja logo"
         height="28"

@@ -25,7 +25,7 @@ const isExternal = computed(() => {
       :color="props.color"
       variant="pastel"
     >
-      <Icon :name="props.name" class="h-6 w-6" />
+      <Icon :name="props.name" class="size-6" />
     </BaseIconBox>
     <div class="ms-3">
       <BaseHeading
@@ -57,7 +57,7 @@ const isExternal = computed(() => {
         muted
         class="scale-75"
       >
-        <Icon name="lucide:arrow-right" class="h-4 w-4" />
+        <Icon name="lucide:arrow-right" class="size-4" />
       </BaseButtonIcon>
     </div>
   </BaseCard>

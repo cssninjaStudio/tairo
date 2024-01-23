@@ -145,10 +145,10 @@ useHead({
     <template #logo>
       <NuxtLink
         to="/"
-        class="text-muted-400 hover:text-primary-500 hover:bg-primary-500/20 flex h-12 w-12 items-center justify-center rounded-2xl transition-colors duration-300"
+        class="text-muted-400 hover:text-primary-500 hover:bg-primary-500/20 flex size-12 items-center justify-center rounded-2xl transition-colors duration-300"
         @click.prevent="$router.back()"
       >
-        <Icon name="lucide:arrow-left" class="h-5 w-5" />
+        <Icon name="lucide:arrow-left" class="size-5" />
       </NuxtLink>
     </template>
 

@@ -180,7 +180,7 @@ const candidates = [
           rounded="full"
           color="none"
         >
-          <Icon name="ph:timer-duotone" class="h-5 w-5" />
+          <Icon name="ph:timer-duotone" class="size-5" />
         </BaseIconBox>
         <div>
           <BaseHeading
@@ -205,7 +205,7 @@ const candidates = [
           rounded="full"
           color="none"
         >
-          <Icon name="ph:broadcast-duotone" class="h-5 w-5" />
+          <Icon name="ph:broadcast-duotone" class="size-5" />
         </BaseIconBox>
         <div>
           <BaseHeading
@@ -230,7 +230,7 @@ const candidates = [
           rounded="full"
           color="none"
         >
-          <Icon name="ph:user-plus-duotone" class="h-5 w-5" />
+          <Icon name="ph:user-plus-duotone" class="size-5" />
         </BaseIconBox>
         <div>
           <BaseHeading
@@ -255,7 +255,7 @@ const candidates = [
           rounded="full"
           color="none"
         >
-          <Icon name="ph:door-duotone" class="h-5 w-5" />
+          <Icon name="ph:door-duotone" class="size-5" />
         </BaseIconBox>
         <div>
           <BaseHeading
@@ -395,7 +395,7 @@ const candidates = [
             muted
             class="scale-75"
           >
-            <Icon name="lucide:arrow-right" class="h-5 w-5" />
+            <Icon name="lucide:arrow-right" class="size-5" />
           </BaseButtonIcon>
         </div>
       </BaseCard>
@@ -422,7 +422,7 @@ const candidates = [
             muted
             class="scale-75"
           >
-            <Icon name="lucide:arrow-right" class="h-5 w-5" />
+            <Icon name="lucide:arrow-right" class="size-5" />
           </BaseButtonIcon>
         </div>
       </BaseCard>
@@ -449,7 +449,7 @@ const candidates = [
             muted
             class="scale-75"
           >
-            <Icon name="lucide:arrow-right" class="h-5 w-5" />
+            <Icon name="lucide:arrow-right" class="size-5" />
           </BaseButtonIcon>
         </div>
       </BaseCard>

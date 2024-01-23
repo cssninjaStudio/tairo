@@ -103,7 +103,7 @@ const fakeItems = ref([])
                 </div>
               </TairoTableCell>
               <TairoTableCell light spaced>
-                <BasePlaceload class="h-[46px] w-[46px] shrink-0 rounded-xl" />
+                <BasePlaceload class="size-[46px] shrink-0 rounded-xl" />
               </TairoTableCell>
               <TairoTableCell spaced>
                 <BasePlaceload class="h-3 w-24 rounded-lg" />
@@ -116,7 +116,7 @@ const fakeItems = ref([])
               </TairoTableCell>
               <TairoTableCell spaced>
                 <div class="flex items-center gap-2">
-                  <BasePlaceload class="h-8 w-8 shrink-0 rounded-full" />
+                  <BasePlaceload class="size-8 shrink-0 rounded-full" />
                   <div class="space-y-1">
                     <BasePlaceload class="h-2 w-[70px] rounded-lg" />
                     <BasePlaceload class="h-2 w-[50px] rounded-lg" />

@@ -76,28 +76,28 @@ const totalData = computed(() => {
           rounded="full"
           data-nui-tooltip="Edit invoice"
         >
-          <Icon name="ph:pencil-duotone" class="h-4 w-4" />
+          <Icon name="ph:pencil-duotone" class="size-4" />
         </BaseButtonIcon>
         <BaseButtonIcon
           size="sm"
           rounded="full"
           data-nui-tooltip="Send by email"
         >
-          <Icon name="ph:envelope-duotone" class="h-4 w-4" />
+          <Icon name="ph:envelope-duotone" class="size-4" />
         </BaseButtonIcon>
         <BaseButtonIcon
           size="sm"
           rounded="full"
           data-nui-tooltip="Print invoice"
         >
-          <Icon name="ph:printer-duotone" class="h-4 w-4" />
+          <Icon name="ph:printer-duotone" class="size-4" />
         </BaseButtonIcon>
         <BaseButtonIcon
           size="sm"
           rounded="full"
           data-nui-tooltip="Download as PDF"
         >
-          <Icon name="ph:download-duotone" class="h-4 w-4" />
+          <Icon name="ph:download-duotone" class="size-4" />
         </BaseButtonIcon>
       </div>
     </div>
@@ -169,7 +169,7 @@ const totalData = computed(() => {
               class="border-muted-200 dark:border-muted-700 flex flex-col justify-between gap-y-8 border-b p-8 sm:flex-row sm:items-center"
             >
               <div class="flex items-center gap-4">
-                <TairoLogo class="text-primary-500 h-12 w-12" />
+                <TairoLogo class="text-primary-500 size-12" />
                 <div class="">
                   <BaseHeading
                     as="h3"

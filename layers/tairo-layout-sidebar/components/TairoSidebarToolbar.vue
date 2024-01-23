@@ -37,7 +37,7 @@ const showNavBurger = computed(() => {
       as="h1"
       size="2xl"
       weight="light"
-      class="text-muted-800 hidden dark:text-white md:block"
+      class="text-muted-800 hidden md:block dark:text-white"
     >
       <slot name="title">
         {{ route.meta.title }}

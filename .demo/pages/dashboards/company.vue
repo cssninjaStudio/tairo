@@ -246,7 +246,7 @@ function toggleAllVisibleSelection() {
             <div class="flex flex-col p-4 text-center sm:py-0">
               <Icon
                 name="ph:users-duotone"
-                class="text-primary-500 mx-auto h-8 w-8"
+                class="text-primary-500 mx-auto size-8"
               />
               <h4
                 class="text-muted-800 dark:text-muted-100 font-sans text-xl font-semibold"
@@ -263,7 +263,7 @@ function toggleAllVisibleSelection() {
             <div class="flex flex-col p-4 text-center sm:py-0">
               <Icon
                 name="ph:coins-duotone"
-                class="text-primary-500 mx-auto h-8 w-8"
+                class="text-primary-500 mx-auto size-8"
               />
               <h4
                 class="text-muted-800 dark:text-muted-100 font-sans text-xl font-semibold"
@@ -280,7 +280,7 @@ function toggleAllVisibleSelection() {
             <div class="flex flex-col p-4 text-center sm:py-0">
               <Icon
                 name="ph:briefcase-duotone"
-                class="text-primary-500 mx-auto h-8 w-8"
+                class="text-primary-500 mx-auto size-8"
               />
               <h4
                 class="text-muted-800 dark:text-muted-100 font-sans text-xl font-semibold"
@@ -297,7 +297,7 @@ function toggleAllVisibleSelection() {
             <div class="flex flex-col p-4 text-center sm:py-0">
               <Icon
                 name="ph:ticket-duotone"
-                class="text-primary-500 mx-auto h-8 w-8"
+                class="text-primary-500 mx-auto size-8"
               />
               <h4
                 class="text-muted-800 dark:text-muted-100 font-sans text-xl font-semibold"

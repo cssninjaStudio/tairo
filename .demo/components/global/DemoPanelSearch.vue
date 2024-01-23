@@ -65,10 +65,10 @@ const filteredPeople = computed(() =>
       </h2>
       <button
         type="button"
-        class="text-muted-400 hover:bg-muted-100 hover:text-muted-600 dark:hover:bg-muted-700 flex h-10 w-10 items-center justify-center rounded-full transition-colors duration-300 dark:hover:text-white"
+        class="text-muted-400 hover:bg-muted-100 hover:text-muted-600 dark:hover:bg-muted-700 flex size-10 items-center justify-center rounded-full transition-colors duration-300 dark:hover:text-white"
         @click="close"
       >
-        <Icon name="feather:chevron-left" class="h-6 w-6" />
+        <Icon name="feather:chevron-left" class="size-6" />
       </button>
     </div>
 
@@ -86,9 +86,9 @@ const filteredPeople = computed(() =>
             @change="query = $event.target.value"
           />
           <div
-            class="text-muted-400 group-focus-within:text-primary-500 absolute start-0 top-0 flex h-12 w-12 items-center justify-center transition-colors duration-300"
+            class="text-muted-400 group-focus-within:text-primary-500 absolute start-0 top-0 flex size-12 items-center justify-center transition-colors duration-300"
           >
-            <Icon name="feather:search" class="h-5 w-5" />
+            <Icon name="feather:search" class="size-5" />
           </div>
         </div>
 
@@ -120,7 +120,7 @@ const filteredPeople = computed(() =>
                 class="hover:bg-muted-100 dark:hover:bg-muted-700 flex cursor-pointer items-center rounded-lg p-2 transition-colors duration-300"
               >
                 <div
-                  class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
+                  class="relative inline-flex size-9 items-center justify-center rounded-full"
                 >
                   <img
                     :src="person.avatar"
@@ -156,7 +156,7 @@ const filteredPeople = computed(() =>
           <li>
             <NuxtLink to="#" class="flex items-center">
               <div
-                class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
+                class="relative inline-flex size-9 items-center justify-center rounded-full"
               >
                 <img
                   src="/img/avatars/3.svg"
@@ -180,7 +180,7 @@ const filteredPeople = computed(() =>
           <li>
             <NuxtLink to="#" class="flex items-center">
               <div
-                class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
+                class="relative inline-flex size-9 items-center justify-center rounded-full"
               >
                 <img
                   src="/img/avatars/18.svg"
@@ -204,7 +204,7 @@ const filteredPeople = computed(() =>
           <li>
             <NuxtLink to="#" class="flex items-center">
               <div
-                class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
+                class="relative inline-flex size-9 items-center justify-center rounded-full"
               >
                 <img
                   src="/img/avatars/11.svg"
@@ -239,7 +239,7 @@ const filteredPeople = computed(() =>
           <li>
             <NuxtLink to="#" class="flex items-center">
               <div
-                class="dark:text-muted-50 relative inline-flex h-10 w-10 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-500"
+                class="dark:text-muted-50 relative inline-flex size-10 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-500"
               >
                 <Icon name="feather:chrome" class="" />
               </div>
@@ -259,7 +259,7 @@ const filteredPeople = computed(() =>
           <li>
             <NuxtLink to="#" class="flex items-center">
               <div
-                class="bg-warning-100 text-warning-600 dark:bg-warning-500 dark:text-muted-50 relative inline-flex h-10 w-10 items-center justify-center rounded-full"
+                class="bg-warning-100 text-warning-600 dark:bg-warning-500 dark:text-muted-50 relative inline-flex size-10 items-center justify-center rounded-full"
               >
                 <Icon name="feather:tv" class="" />
               </div>
@@ -279,7 +279,7 @@ const filteredPeople = computed(() =>
           <li>
             <NuxtLink to="#" class="flex items-center">
               <div
-                class="bg-primary-100 text-primary-600 dark:bg-primary-500 dark:text-muted-50 relative inline-flex h-10 w-10 items-center justify-center rounded-full"
+                class="bg-primary-100 text-primary-600 dark:bg-primary-500 dark:text-muted-50 relative inline-flex size-10 items-center justify-center rounded-full"
               >
                 <Icon name="feather:twitter" class="" />
               </div>

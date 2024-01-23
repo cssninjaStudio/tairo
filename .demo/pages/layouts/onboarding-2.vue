@@ -24,7 +24,7 @@ const pricingMode = ref('free')
         to="/"
         class="text-muted-400 hover:text-primary-500 dark:text-muted-700 dark:hover:text-primary-500 transition-colors duration-300"
       >
-        <TairoLogo class="h-10 w-10" />
+        <TairoLogo class="size-10" />
       </NuxtLink>
       <div class="flex items-center gap-4">
         <BaseThemeToggle />
@@ -98,7 +98,7 @@ const pricingMode = ref('free')
                       <div class="child absolute end-2 top-3 opacity-0">
                         <Icon
                           name="ph:check-circle-duotone"
-                          class="text-primary-500 h-7 w-7"
+                          class="text-primary-500 size-7"
                         />
                       </div>
                     </BaseCard>
@@ -145,7 +145,7 @@ const pricingMode = ref('free')
                       <div class="child absolute end-2 top-3 opacity-0">
                         <Icon
                           name="ph:check-circle-duotone"
-                          class="text-primary-500 h-7 w-7"
+                          class="text-primary-500 size-7"
                         />
                       </div>
                     </BaseCard>
@@ -192,7 +192,7 @@ const pricingMode = ref('free')
                       <div class="child absolute end-2 top-3 opacity-0">
                         <Icon
                           name="ph:check-circle-duotone"
-                          class="text-primary-500 h-7 w-7"
+                          class="text-primary-500 size-7"
                         />
                       </div>
                     </BaseCard>

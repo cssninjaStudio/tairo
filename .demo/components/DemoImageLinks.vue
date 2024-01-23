@@ -29,7 +29,7 @@ const links = [
       v-for="link in links"
       :key="link.name"
       :to="link.url"
-      class="group flex h-9 w-9 items-center justify-center transition-all duration-300"
+      class="group flex size-9 items-center justify-center transition-all duration-300"
     >
       <BaseAvatar
         :src="link.image"

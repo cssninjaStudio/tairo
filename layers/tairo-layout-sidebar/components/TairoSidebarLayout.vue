@@ -100,7 +100,7 @@ const wrapperClass = computed(() => {
       <div
         role="button"
         tabindex="0"
-        class="bg-muted-800 dark:bg-muted-900 fixed start-0 top-0 z-[59] block h-full w-full transition-opacity duration-300 lg:hidden"
+        class="bg-muted-800 dark:bg-muted-900 fixed start-0 top-0 z-[59] block size-full transition-opacity duration-300 lg:hidden"
         :class="
           isOpen
             ? 'opacity-50 dark:opacity-75'

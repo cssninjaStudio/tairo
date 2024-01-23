@@ -94,7 +94,7 @@ const users = [
           small
           :rounded="props.rounded"
         >
-          <Icon name="lucide:chevron-right" class="h-4 w-4" />
+          <Icon name="lucide:chevron-right" class="size-4" />
         </BaseButtonIcon>
       </div>
     </div>

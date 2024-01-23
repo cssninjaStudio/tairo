@@ -114,7 +114,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                       <template #start>
                         <Icon
                           name="ph:pencil-duotone"
-                          class="me-2 block h-5 w-5"
+                          class="me-2 block size-5"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -126,7 +126,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                       <template #start>
                         <Icon
                           name="ph:trash-duotone"
-                          class="me-2 block h-5 w-5"
+                          class="me-2 block size-5"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -138,9 +138,9 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
               class="border-muted-200 dark:border-muted-700 mt-8 flex w-full items-center gap-2 border-t pt-8"
             >
               <div
-                class="bg-muted-100 dark:bg-muted-700/60 text-muted-400 flex h-[50px] w-[50px] items-center justify-center rounded-full"
+                class="bg-muted-100 dark:bg-muted-700/60 text-muted-400 flex size-[50px] items-center justify-center rounded-full"
               >
-                <Icon name="ph:suitcase-duotone" class="h-5 w-5" />
+                <Icon name="ph:suitcase-duotone" class="size-5" />
               </div>
               <div>
                 <BaseHeading
@@ -156,7 +156,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
               </div>
               <div class="ms-auto">
                 <BaseButtonIcon rounded="full" size="sm">
-                  <Icon name="lucide:plus" class="h-4 w-4" />
+                  <Icon name="lucide:plus" class="size-4" />
                 </BaseButtonIcon>
               </div>
             </div>

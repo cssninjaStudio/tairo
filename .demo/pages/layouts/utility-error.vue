@@ -154,7 +154,7 @@ const showStackTrace = ref(false)
             rounded="full"
             size="md"
           >
-            <Icon name="ph:skull-duotone" class="h-6 w-6" />
+            <Icon name="ph:skull-duotone" class="size-6" />
           </BaseIconBox>
           <div>
             <h4

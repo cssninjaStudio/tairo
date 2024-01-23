@@ -114,7 +114,7 @@ const iconClasses = computed(() => {
     >
       <Icon
         :name="props.icon"
-        class="h-6 w-6"
+        class="size-6"
         :class="iconClasses"
       />
     </div>

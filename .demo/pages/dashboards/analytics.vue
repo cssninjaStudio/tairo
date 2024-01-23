@@ -307,7 +307,7 @@ function useBarSalesProfit() {
                 rounded="full"
                 color="none"
               >
-                <Icon name="ph:sketch-logo-duotone" class="h-5 w-5" />
+                <Icon name="ph:sketch-logo-duotone" class="size-5" />
               </BaseIconBox>
             </div>
             <div class="mb-2">
@@ -325,7 +325,7 @@ function useBarSalesProfit() {
               class="text-success-500 flex items-center gap-1 font-sans text-sm"
             >
               <span>+7.8%</span>
-              <Icon name="lucide:trending-up" class="h-5 w-5" />
+              <Icon name="lucide:trending-up" class="size-5" />
               <span class="text-muted-400 text-xs">since last month</span>
             </div>
           </BaseCard>
@@ -349,7 +349,7 @@ function useBarSalesProfit() {
                 rounded="full"
                 color="none"
               >
-                <Icon name="ph:rocket-duotone" class="h-5 w-5" />
+                <Icon name="ph:rocket-duotone" class="size-5" />
               </BaseIconBox>
             </div>
             <div class="mb-2">
@@ -367,7 +367,7 @@ function useBarSalesProfit() {
               class="text-danger-500 flex items-center gap-1 font-sans text-sm"
             >
               <span>-2.7%</span>
-              <Icon name="lucide:trending-down" class="h-5 w-5" />
+              <Icon name="lucide:trending-down" class="size-5" />
               <span class="text-muted-400 text-xs">going down</span>
             </div>
           </BaseCard>
@@ -391,7 +391,7 @@ function useBarSalesProfit() {
                 rounded="full"
                 color="none"
               >
-                <Icon name="ph:megaphone-simple-duotone" class="h-5 w-5" />
+                <Icon name="ph:megaphone-simple-duotone" class="size-5" />
               </BaseIconBox>
             </div>
             <div class="mb-2">
@@ -409,7 +409,7 @@ function useBarSalesProfit() {
               class="text-success-500 flex items-center gap-1 font-sans text-sm"
             >
               <span>+4.5%</span>
-              <Icon name="lucide:trending-up" class="h-5 w-5" />
+              <Icon name="lucide:trending-up" class="size-5" />
               <span class="text-muted-400 text-xs">going up</span>
             </div>
           </BaseCard>
@@ -519,7 +519,7 @@ function useBarSalesProfit() {
             </div>
             <div class="mt-auto">
               <div class="flex justify-center gap-2">
-                <Icon name="logos:shopify" class="h-8 w-8" />
+                <Icon name="logos:shopify" class="size-8" />
                 <div>
                   <BaseHeading
                     as="h5"

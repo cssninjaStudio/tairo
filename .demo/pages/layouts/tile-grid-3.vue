@@ -62,7 +62,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
           class="w-full sm:w-32"
           rounded="lg"
         >
-          <Icon name="lucide:plus" class="h-4 w-4" />
+          <Icon name="lucide:plus" class="size-4" />
           <span>Upload</span>
         </BaseButton>
       </template>
@@ -127,7 +127,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                     <div
                       class="text-muted-400 mt-3 flex items-center gap-1 text-left text-xs sm:mt-0"
                     >
-                      <Icon name="lucide:archive" class="h-3 w-3" />
+                      <Icon name="lucide:archive" class="size-3" />
                       <span>{{ item.category }}</span>
                     </div>
                     <div class="hidden px-2 sm:block">
@@ -136,7 +136,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                     <div
                       class="text-muted-400 mt-3 flex items-center gap-1 text-left text-xs sm:mt-0"
                     >
-                      <Icon name="lucide:clock" class="h-3 w-3" />
+                      <Icon name="lucide:clock" class="size-3" />
                       <span>{{ item.duration }}</span>
                     </div>
                     <div class="hidden px-2 sm:block">
@@ -145,7 +145,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                     <div
                       class="text-muted-400 mt-3 flex items-center gap-1 text-left text-xs sm:mt-0"
                     >
-                      <Icon name="lucide:paperclip" class="h-3 w-3" />
+                      <Icon name="lucide:paperclip" class="size-3" />
                       <span>{{ item.attachments }}</span>
                     </div>
                   </div>
@@ -167,7 +167,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                       <template #start>
                         <Icon
                           name="ph:download-duotone"
-                          class="me-2 block h-5 w-5"
+                          class="me-2 block size-5"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -180,7 +180,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                       <template #start>
                         <Icon
                           name="ph:share-duotone"
-                          class="me-2 block h-5 w-5"
+                          class="me-2 block size-5"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -193,7 +193,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                       <template #start>
                         <Icon
                           name="ph:bookmark-simple-duotone"
-                          class="me-2 block h-5 w-5"
+                          class="me-2 block size-5"
                         />
                       </template>
                     </BaseDropdownItem>

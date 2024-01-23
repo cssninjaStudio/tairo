@@ -306,7 +306,7 @@ const onSubmit = handleSubmit(
         class="mt-4 flex items-center justify-center gap-2 md:mt-0 md:justify-start"
       >
         <BaseButtonAction @click.prevent="$router.back()">
-          <Icon name="lucide:arrow-left" class="h-3 w-3" />
+          <Icon name="lucide:arrow-left" class="size-3" />
           <span>Cancel</span>
         </BaseButtonAction>
       </div>
@@ -343,18 +343,18 @@ const onSubmit = handleSubmit(
                   v-model="inputFile"
                   accept="image/*"
                 >
-                  <div class="relative h-20 w-20">
+                  <div class="relative size-20">
                     <img
                       v-if="files?.length && files.item(0)"
                       :src="preview(files.item(0)!).value"
                       alt="Upload preview"
-                      class="bg-muted-200 dark:bg-muted-700/60 h-20 w-20 rounded-full object-cover object-center"
+                      class="bg-muted-200 dark:bg-muted-700/60 size-20 rounded-full object-cover object-center"
                     >
                     <img
                       v-else
                       :src="currentAvatar"
                       alt="Upload preview"
-                      class="bg-muted-200 dark:bg-muted-700/60 h-20 w-20 rounded-full object-cover object-center dark:invert"
+                      class="bg-muted-200 dark:bg-muted-700/60 size-20 rounded-full object-cover object-center dark:invert"
                     >
                     <div
                       v-if="files?.length && files.item(0)"
@@ -367,7 +367,7 @@ const onSubmit = handleSubmit(
                         class="scale-90"
                         @click="remove(files.item(0)!)"
                       >
-                        <Icon name="lucide:x" class="h-4 w-4" />
+                        <Icon name="lucide:x" class="size-4" />
                       </BaseButtonIcon>
                     </div>
                     <div v-else class="absolute bottom-0 end-0 z-20">
@@ -377,7 +377,7 @@ const onSubmit = handleSubmit(
                           rounded="full"
                           @click="open"
                         >
-                          <Icon name="lucide:plus" class="h-4 w-4" />
+                          <Icon name="lucide:plus" class="size-4" />
                         </BaseButtonIcon>
                       </div>
                     </div>
@@ -486,7 +486,7 @@ const onSubmit = handleSubmit(
                         >
                           <Icon
                             name="ph:house-simple-duotone"
-                            class="child mx-auto h-5 w-5"
+                            class="child mx-auto size-5"
                           />
 
                           <div>
@@ -511,7 +511,7 @@ const onSubmit = handleSubmit(
                             class="child text-muted-300 absolute right-2 top-2 ms-auto"
                           >
                             <div
-                              class="h-2 w-2 rounded-full bg-current"
+                              class="size-2 rounded-full bg-current"
                             />
                           </div>
                         </div>
@@ -540,7 +540,7 @@ const onSubmit = handleSubmit(
                         >
                           <Icon
                             name="ph:storefront-duotone"
-                            class="child mx-auto h-5 w-5"
+                            class="child mx-auto size-5"
                           />
 
                           <div>
@@ -565,7 +565,7 @@ const onSubmit = handleSubmit(
                             class="child text-muted-300 absolute right-2 top-2 ms-auto"
                           >
                             <div
-                              class="h-2 w-2 rounded-full bg-current"
+                              class="size-2 rounded-full bg-current"
                             />
                           </div>
                         </div>
@@ -594,7 +594,7 @@ const onSubmit = handleSubmit(
                         >
                           <Icon
                             name="ph:buildings-duotone"
-                            class="child mx-auto h-5 w-5"
+                            class="child mx-auto size-5"
                           />
 
                           <div>
@@ -619,7 +619,7 @@ const onSubmit = handleSubmit(
                             class="child text-muted-300 absolute right-2 top-2 ms-auto"
                           >
                             <div
-                              class="h-2 w-2 rounded-full bg-current"
+                              class="size-2 rounded-full bg-current"
                             />
                           </div>
                         </div>

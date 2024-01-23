@@ -29,7 +29,7 @@
           <span class="me-1">Quick start guide</span>
           <Icon
             name="lucide:arrow-right"
-            class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-2"
+            class="size-4 transition-transform duration-300 group-hover:translate-x-2"
           />
         </NuxtLink>
       </BaseCard>
@@ -47,12 +47,12 @@
         >
           <img
             src="/img/logos/brands/nuxt-light.svg"
-            class="block h-6 dark:hidden sm:mx-auto"
+            class="block h-6 sm:mx-auto dark:hidden"
             alt="Nuxt logo"
           >
           <img
             src="/img/logos/brands/nuxt-dark.svg"
-            class="hidden h-6 dark:block sm:mx-auto"
+            class="hidden h-6 sm:mx-auto dark:block"
             alt="Nuxt logo"
           >
           <BaseHeading
@@ -77,12 +77,12 @@
         >
           <img
             src="/img/logos/brands/tailwindcss-light.svg"
-            class="block h-7 dark:hidden sm:mx-auto"
+            class="block h-7 sm:mx-auto dark:hidden"
             alt="Tailwind CSS logo"
           >
           <img
             src="/img/logos/brands/tailwindcss-dark.svg"
-            class="hidden h-7 dark:block sm:mx-auto"
+            class="hidden h-7 sm:mx-auto dark:block"
             alt="Tailwind CSS logo"
           >
           <BaseHeading
@@ -107,12 +107,12 @@
         >
           <img
             src="/img/logos/brands/shuriken-gradient-light.svg"
-            class="block h-8 dark:hidden sm:mx-auto"
+            class="block h-8 sm:mx-auto dark:hidden"
             alt="Shuriken UI logo"
           >
           <img
             src="/img/logos/brands/shuriken-gradient-dark.svg"
-            class="hidden h-8 dark:block sm:mx-auto"
+            class="hidden h-8 sm:mx-auto dark:block"
             alt="Shuriken UI logo"
           >
           <BaseHeading

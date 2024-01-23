@@ -78,7 +78,7 @@ const filteredMembers = computed(() => {
     </div>
     <div v-if="filteredMembers.length === 0">
       <div class="flex flex-col items-center py-10 text-center">
-        <Icon name="pepicons-print:person" class="text-primary-500 h-10 w-10" />
+        <Icon name="pepicons-print:person" class="text-primary-500 size-10" />
         <BaseHeading
           as="h4"
           size="md"
@@ -140,7 +140,7 @@ const filteredMembers = computed(() => {
             muted
             class="scale-75"
           >
-            <Icon name="lucide:arrow-right" class="h-4 w-4" />
+            <Icon name="lucide:arrow-right" class="size-4" />
           </BaseButtonIcon>
         </div>
       </div>

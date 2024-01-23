@@ -42,14 +42,14 @@ const props = defineProps<{
         class="flex items-end gap-2"
         :class="props.centered && 'justify-center'"
       >
-        <Icon name="ph:map-pin-duotone" class="text-primary-500 h-4 w-4" />
+        <Icon name="ph:map-pin-duotone" class="text-primary-500 size-4" />
         <span class="text-muted-400 text-xs">Los Angeles, CA</span>
       </div>
       <div
         class="flex items-end gap-2"
         :class="props.centered && 'justify-center'"
       >
-        <Icon name="ph:phone-duotone" class="text-primary-500 h-4 w-4" />
+        <Icon name="ph:phone-duotone" class="text-primary-500 size-4" />
         <span class="text-muted-400 text-xs">+1 444-751-5156</span>
       </div>
     </div>
@@ -62,7 +62,7 @@ const props = defineProps<{
       >
         maya@tairo.io
       </a>
-      <Icon name="ph:envelope-duotone" class="text-muted-400 h-4 w-4" />
+      <Icon name="ph:envelope-duotone" class="text-muted-400 size-4" />
     </div>
   </div>
 </template>

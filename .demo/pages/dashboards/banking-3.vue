@@ -455,7 +455,7 @@ function useRadialPopularity() {
               <div class="mb-6 flex items-center gap-2">
                 <Icon
                   name="cryptocurrency:btc"
-                  class="h-9 w-9 text-orange-400"
+                  class="size-9 text-orange-400"
                 />
                 <div>
                   <BaseHeading

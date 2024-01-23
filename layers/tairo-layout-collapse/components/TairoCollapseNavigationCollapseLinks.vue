@@ -58,7 +58,7 @@ function onDropClick() {
       >
         <Icon
           name="lucide:chevron-up"
-          class="h-4 w-4 transition-transform duration-200"
+          class="size-4 transition-transform duration-200"
           :class="!isOpen ? 'rotate-180' : ''"
         />
       </span>

@@ -167,7 +167,7 @@ const budget = ref('< 5K')
                   rounded="full"
                   @click="dismissCustomer"
                 >
-                  <Icon name="lucide:x" class="h-4 w-4" />
+                  <Icon name="lucide:x" class="size-4" />
                 </BaseButtonIcon>
               </div>
             </div>
@@ -211,7 +211,7 @@ const budget = ref('< 5K')
                       rounded="full"
                       @click="selectCustomer(customer)"
                     >
-                      <Icon name="lucide:plus" class="h-4 w-4" />
+                      <Icon name="lucide:plus" class="size-4" />
                     </BaseButtonIcon>
                   </div>
                 </div>
@@ -249,9 +249,9 @@ const budget = ref('< 5K')
                     v-on="inputEvents"
                   >
                   <div
-                    class="text-muted-400 peer-focus-visible:text-primary-500 absolute start-0 top-0 flex h-10 w-10 items-center justify-center transition-colors duration-300"
+                    class="text-muted-400 peer-focus-visible:text-primary-500 absolute start-0 top-0 flex size-10 items-center justify-center transition-colors duration-300"
                   >
-                    <Icon name="lucide:map-pin" class="h-5 w-5" />
+                    <Icon name="lucide:map-pin" class="size-5" />
                   </div>
                 </div>
               </template>
@@ -275,9 +275,9 @@ const budget = ref('< 5K')
                     v-on="inputEvents"
                   >
                   <div
-                    class="text-muted-400 peer-focus-visible:text-primary-500 absolute start-0 top-0 flex h-10 w-10 items-center justify-center transition-colors duration-300"
+                    class="text-muted-400 peer-focus-visible:text-primary-500 absolute start-0 top-0 flex size-10 items-center justify-center transition-colors duration-300"
                   >
-                    <Icon name="lucide:flag" class="h-5 w-5" />
+                    <Icon name="lucide:flag" class="size-5" />
                   </div>
                 </div>
               </template>

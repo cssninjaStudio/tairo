@@ -73,14 +73,14 @@ const members = [
           muted
           class="scale-75"
         >
-          <Icon name="ph:phone-duotone" class="h-5 w-5" />
+          <Icon name="ph:phone-duotone" class="size-5" />
         </BaseButtonIcon>
         <BaseButtonIcon
           rounded="lg"
           muted
           class="scale-75"
         >
-          <Icon name="ph:video-camera-duotone" class="h-5 w-5" />
+          <Icon name="ph:video-camera-duotone" class="size-5" />
         </BaseButtonIcon>
       </div>
     </div>

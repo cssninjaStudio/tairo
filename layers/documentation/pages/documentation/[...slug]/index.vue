@@ -125,7 +125,7 @@ const metaKey = useMetaKey()
       >
         <Icon
           name="lucide:search"
-          class="h-4 w-4 transition-colors duration-300"
+          class="size-4 transition-colors duration-300"
         />
         <span
           class="dark:bg-muted-800 border-muted-200 dark:border-muted-700 group-hover:text-muted-600 dark:group-hover:text-muted-100 rounded-lg border bg-white px-2 py-0.5 shadow transition-colors duration-300"

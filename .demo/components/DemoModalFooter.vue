@@ -64,7 +64,7 @@ const isModalBodyOpen = ref(false)
     <!-- Body -->
     <div class="p-4 md:p-6">
       <div class="mx-auto w-full max-w-xs text-center">
-        <div class="relative mx-auto mb-4 flex h-24 w-24">
+        <div class="relative mx-auto mb-4 flex size-24">
           <img
             src="https://media.cssninja.io/shuriken/avatars/3.svg"
             class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
@@ -126,7 +126,7 @@ const isModalBodyOpen = ref(false)
     <!-- Body -->
     <div class="p-4 md:p-6">
       <div class="mx-auto w-full max-w-xs text-center">
-        <div class="relative mx-auto mb-4 flex h-24 w-24">
+        <div class="relative mx-auto mb-4 flex size-24">
           <img
             src="https://media.cssninja.io/shuriken/avatars/3.svg"
             class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
@@ -188,7 +188,7 @@ const isModalBodyOpen = ref(false)
     <!-- Body -->
     <div class="p-4 md:p-6">
       <div class="mx-auto w-full max-w-xs text-center">
-        <div class="relative mx-auto mb-4 flex h-24 w-24">
+        <div class="relative mx-auto mb-4 flex size-24">
           <img
             src="https://media.cssninja.io/shuriken/avatars/3.svg"
             class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
@@ -250,7 +250,7 @@ const isModalBodyOpen = ref(false)
     <!-- Body -->
     <div class="p-4 md:p-6">
       <div class="mx-auto w-full max-w-xs text-center">
-        <div class="relative mx-auto mb-4 flex h-24 w-24">
+        <div class="relative mx-auto mb-4 flex size-24">
           <img
             src="https://media.cssninja.io/shuriken/avatars/3.svg"
             class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
@@ -315,7 +315,7 @@ const isModalBodyOpen = ref(false)
     <!-- Body -->
     <div class="p-4 md:p-6">
       <div class="mx-auto w-full max-w-xs text-center">
-        <div class="relative mx-auto mb-8 flex h-24 w-24">
+        <div class="relative mx-auto mb-8 flex size-24">
           <img
             src="https://media.cssninja.io/shuriken/avatars/3.svg"
             class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"

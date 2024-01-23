@@ -6,7 +6,7 @@
       variant="pastel"
       color="default"
     >
-      <Icon name="ph:skull-duotone" class="h-6 w-6" />
+      <Icon name="ph:skull-duotone" class="size-6" />
     </BaseIconBox>
 
     <BaseIconBox
@@ -15,7 +15,7 @@
       variant="pastel"
       color="primary"
     >
-      <Icon name="ph:armchair-duotone" class="h-6 w-6" />
+      <Icon name="ph:armchair-duotone" class="size-6" />
     </BaseIconBox>
 
     <BaseIconBox
@@ -24,7 +24,7 @@
       variant="pastel"
       color="info"
     >
-      <Icon name="ph:confetti-duotone" class="h-6 w-6" />
+      <Icon name="ph:confetti-duotone" class="size-6" />
     </BaseIconBox>
 
     <BaseIconBox
@@ -33,7 +33,7 @@
       variant="pastel"
       color="success"
     >
-      <Icon name="ph:check-circle-duotone" class="h-6 w-6" />
+      <Icon name="ph:check-circle-duotone" class="size-6" />
     </BaseIconBox>
 
     <BaseIconBox
@@ -42,7 +42,7 @@
       variant="pastel"
       color="warning"
     >
-      <Icon name="ph:lightbulb-duotone" class="h-6 w-6" />
+      <Icon name="ph:lightbulb-duotone" class="size-6" />
     </BaseIconBox>
 
     <BaseIconBox
@@ -51,7 +51,7 @@
       variant="pastel"
       color="danger"
     >
-      <Icon name="ph:cookie-duotone" class="h-6 w-6" />
+      <Icon name="ph:cookie-duotone" class="size-6" />
     </BaseIconBox>
   </div>
 </template>

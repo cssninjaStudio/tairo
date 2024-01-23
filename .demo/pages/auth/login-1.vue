@@ -103,7 +103,7 @@ const onSubmit = handleSubmit(async (values) => {
       class="bg-muted-100 dark:bg-muted-900 relative hidden w-0 flex-1 items-center justify-center lg:flex lg:w-3/5"
     >
       <div
-        class="mx-auto flex h-full w-full max-w-4xl items-center justify-center"
+        class="mx-auto flex size-full max-w-4xl items-center justify-center"
       >
         <!--Media image-->
         <img
@@ -125,7 +125,7 @@ const onSubmit = handleSubmit(async (values) => {
             to="/dashboards"
             class="text-muted-400 hover:text-primary-500 flex items-center gap-2 font-sans font-medium transition-colors duration-300"
           >
-            <Icon name="gg:arrow-long-left" class="h-5 w-5" />
+            <Icon name="gg:arrow-long-left" class="size-5" />
             <span>Back to Home</span>
           </NuxtLink>
           <!--Theme button-->
@@ -150,20 +150,20 @@ const onSubmit = handleSubmit(async (values) => {
             <button
               class="dark:bg-muted-700 text-muted-800 border-muted-300 dark:border-muted-600 nui-focus relative inline-flex grow items-center justify-center gap-2 rounded-xl border bg-white px-6 py-4 dark:text-white"
             >
-              <Icon name="logos:google-icon" class="h-5 w-5" />
+              <Icon name="logos:google-icon" class="size-5" />
               <div>Login with Google</div>
             </button>
             <!--Twitter button-->
             <button
               class="bg-muted-200 dark:bg-muted-700 hover:bg-muted-100 dark:hover:bg-muted-600 text-muted-600 dark:text-muted-400 nui-focus w-[calc(50%_-_0.5rem)] cursor-pointer rounded-xl px-5 py-4 text-center transition-colors duration-300 md:w-auto"
             >
-              <Icon name="fa6-brands:twitter" class="mx-auto h-4 w-4" />
+              <Icon name="fa6-brands:twitter" class="mx-auto size-4" />
             </button>
             <!--Linkedin button-->
             <button
               class="bg-muted-200 dark:bg-muted-700 hover:bg-muted-100 dark:hover:bg-muted-600 text-muted-600 dark:text-muted-400 nui-focus w-[calc(50%_-_0.5rem)] cursor-pointer rounded-xl px-5 py-4 text-center transition-colors duration-300 md:w-auto"
             >
-              <Icon name="fa6-brands:linkedin-in" class="mx-auto h-4 w-4" />
+              <Icon name="fa6-brands:linkedin-in" class="mx-auto size-4" />
             </button>
           </div>
           <!-- 'or' divider -->

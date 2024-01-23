@@ -48,7 +48,7 @@ const termsApproval = ref(false)
           </div>
           <div class="ms-auto">
             <BaseButtonAction @click.prevent="$router.back()">
-              <Icon name="lucide:arrow-left" class="h-3 w-3" />
+              <Icon name="lucide:arrow-left" class="size-3" />
               <span>Cancel</span>
             </BaseButtonAction>
           </div>
@@ -66,7 +66,7 @@ const termsApproval = ref(false)
             @click="selectedMethod = 'paypal'"
           >
             <div
-              class="dark:border-muted-800 h-4 w-4 rounded-full border-2 border-white ring-2 transition-colors"
+              class="dark:border-muted-800 size-4 rounded-full border-2 border-white ring-2 transition-colors"
               :class="
                 selectedMethod === 'paypal'
                   ? 'bg-primary-600 ring-primary-600'
@@ -99,7 +99,7 @@ const termsApproval = ref(false)
                 elevated
                 class="mx-auto flex max-w-[280px] items-center justify-center px-8 py-16"
               >
-                <Icon name="logos:paypal" class="h-12 w-12" />
+                <Icon name="logos:paypal" class="size-12" />
               </BaseCard>
             </div>
           </div>
@@ -115,7 +115,7 @@ const termsApproval = ref(false)
             @click="selectedMethod = 'cc'"
           >
             <div
-              class="dark:border-muted-800 h-4 w-4 rounded-full border-2 border-white ring-2"
+              class="dark:border-muted-800 size-4 rounded-full border-2 border-white ring-2"
               :class="
                 selectedMethod === 'cc'
                   ? 'bg-primary-600 ring-primary-600'

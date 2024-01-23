@@ -31,10 +31,10 @@ const commentArea = ref('')
       </h2>
       <button
         type="button"
-        class="text-muted-400 hover:bg-muted-100 hover:text-muted-600 dark:hover:bg-muted-700 flex h-10 w-10 items-center justify-center rounded-full transition-colors duration-300 dark:hover:text-white"
+        class="text-muted-400 hover:bg-muted-100 hover:text-muted-600 dark:hover:bg-muted-700 flex size-10 items-center justify-center rounded-full transition-colors duration-300 dark:hover:text-white"
         @click="close"
       >
-        <Icon name="feather:chevron-right" class="h-6 w-6" />
+        <Icon name="feather:chevron-right" class="size-6" />
       </button>
     </div>
 
@@ -64,7 +64,7 @@ const commentArea = ref('')
             class="m-0 -ms-1 inline-flex h-6 scale-90 items-center gap-1 py-0 text-xs font-semibold"
           >
             <span
-              class="block h-2 w-2 rounded-full"
+              class="block size-2 rounded-full"
               :class="[
                 props.task?.status === 0 && 'bg-info-500',
                 props.task?.status === 1 && 'bg-primary-500',
@@ -135,7 +135,7 @@ const commentArea = ref('')
           </h4>
           <div v-if="props.task?.checklist.length === 0">
             <div class="text-muted-400 mt-10 flex items-center justify-center">
-              <Icon name="ph:file-thin" class="h-10 w-10" />
+              <Icon name="ph:file-thin" class="size-10" />
             </div>
             <div class="mb-6 mt-2 text-center">
               <BaseHeading
@@ -183,7 +183,7 @@ const commentArea = ref('')
           </h4>
           <div v-if="props.task?.files.length === 0">
             <div class="text-muted-400 mt-10 flex items-center justify-center">
-              <Icon name="ph:file-thin" class="h-10 w-10" />
+              <Icon name="ph:file-thin" class="size-10" />
             </div>
             <div class="mb-6 mt-2 text-center">
               <BaseHeading
@@ -248,7 +248,7 @@ const commentArea = ref('')
           </h4>
           <div v-if="props.task?.comments.length === 0">
             <div class="text-muted-400 mt-10 flex items-center justify-center">
-              <Icon name="ph:chat-circle-thin" class="h-10 w-10" />
+              <Icon name="ph:chat-circle-thin" class="size-10" />
             </div>
             <div class="mb-6 mt-2 text-center">
               <BaseHeading

@@ -196,7 +196,7 @@ watchEffect(() => {
                       rounded="full"
                       @click="addTeammate(user)"
                     >
-                      <Icon name="lucide:plus" class="h-4 w-4" />
+                      <Icon name="lucide:plus" class="size-4" />
                     </BaseButtonIcon>
                   </div>
                 </div>
@@ -236,7 +236,7 @@ watchEffect(() => {
                         @click="setTeammateRole(idx, 'reader')"
                       >
                         <div
-                          class="h-3 w-3 rounded-full"
+                          class="size-3 rounded-full"
                           :class="[
                             getRoleLevel(member) >= 0
                               ? 'bg-primary-500'
@@ -255,7 +255,7 @@ watchEffect(() => {
                         @click="setTeammateRole(idx, 'collaborator')"
                       >
                         <div
-                          class="h-3 w-3 rounded-full"
+                          class="size-3 rounded-full"
                           :class="[
                             getRoleLevel(member) >= 1
                               ? 'bg-primary-500'
@@ -272,7 +272,7 @@ watchEffect(() => {
                         @click="setTeammateRole(idx, 'manager')"
                       >
                         <div
-                          class="h-3 w-3 rounded-full"
+                          class="size-3 rounded-full"
                           :class="[
                             getRoleLevel(member) >= 2
                               ? 'bg-primary-500'
@@ -289,7 +289,7 @@ watchEffect(() => {
                         @click="setTeammateRole(idx, 'owner')"
                       >
                         <div
-                          class="h-3 w-3 rounded-full"
+                          class="size-3 rounded-full"
                           :class="[
                             getRoleLevel(member) >= 3
                               ? 'bg-primary-500'
@@ -312,7 +312,7 @@ watchEffect(() => {
                       rounded="full"
                       @click="removeTeammate(idx)"
                     >
-                      <Icon name="lucide:x" class="h-4 w-4" />
+                      <Icon name="lucide:x" class="size-4" />
                     </BaseButtonIcon>
                   </div>
                 </div>

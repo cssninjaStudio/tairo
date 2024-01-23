@@ -116,7 +116,7 @@ const { data, pending, error, refresh } = await useFetch('/api/jobs', {
                       <div
                         class="text-muted-400 mt-3 flex items-center gap-1 text-left text-sm sm:mt-0"
                       >
-                        <Icon name="lucide:map-pin" class="h-3 w-3" />
+                        <Icon name="lucide:map-pin" class="size-3" />
                         <span>{{ item.location }}</span>
                       </div>
                       <div class="hidden px-2 sm:block">
@@ -125,7 +125,7 @@ const { data, pending, error, refresh } = await useFetch('/api/jobs', {
                       <div
                         class="text-muted-400 mt-3 flex items-center gap-1 text-left text-sm sm:mt-0"
                       >
-                        <Icon name="lucide:clock" class="h-3 w-3" />
+                        <Icon name="lucide:clock" class="size-3" />
                         <span>{{ item.duration }}</span>
                       </div>
                       <div class="hidden px-2 sm:block">
@@ -134,7 +134,7 @@ const { data, pending, error, refresh } = await useFetch('/api/jobs', {
                       <div
                         class="text-muted-400 mt-3 flex items-center gap-1 text-left text-sm sm:mt-0"
                       >
-                        <Icon name="lucide:check-circle" class="h-3 w-3" />
+                        <Icon name="lucide:check-circle" class="size-3" />
                         <span>{{ item.requirements }}</span>
                       </div>
                     </div>
@@ -157,7 +157,7 @@ const { data, pending, error, refresh } = await useFetch('/api/jobs', {
                     data-nui-tooltip="Add to Bookmarks"
                     class="hidden sm:inline-flex"
                   >
-                    <Icon name="ph:bookmark-duotone" class="h-4 w-4" />
+                    <Icon name="ph:bookmark-duotone" class="size-4" />
                   </BaseButtonIcon>
                 </div>
               </BaseCard>

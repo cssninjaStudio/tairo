@@ -65,7 +65,7 @@ const { data, pending, error, refresh } = await useFetch(
           color="primary"
           class="w-full sm:w-32"
         >
-          <Icon name="lucide:plus" class="h-4 w-4" />
+          <Icon name="lucide:plus" class="size-4" />
           <span>Create</span>
         </BaseButton>
       </template>
@@ -141,7 +141,7 @@ const { data, pending, error, refresh } = await useFetch(
                         <template #start>
                           <Icon
                             name="ph:pencil-duotone"
-                            class="me-2 block h-5 w-5"
+                            class="me-2 block size-5"
                           />
                         </template>
                       </BaseDropdownItem>
@@ -154,7 +154,7 @@ const { data, pending, error, refresh } = await useFetch(
                         <template #start>
                           <Icon
                             name="ph:lock-duotone"
-                            class="me-2 block h-5 w-5"
+                            class="me-2 block size-5"
                           />
                         </template>
                       </BaseDropdownItem>
@@ -166,7 +166,7 @@ const { data, pending, error, refresh } = await useFetch(
                         <template #start>
                           <Icon
                             name="ph:share-duotone"
-                            class="me-2 block h-5 w-5"
+                            class="me-2 block size-5"
                           />
                         </template>
                       </BaseDropdownItem>
@@ -179,7 +179,7 @@ const { data, pending, error, refresh } = await useFetch(
                         <template #start>
                           <Icon
                             name="ph:trash-duotone"
-                            class="me-2 block h-5 w-5"
+                            class="me-2 block size-5"
                           />
                         </template>
                       </BaseDropdownItem>
@@ -201,7 +201,7 @@ const { data, pending, error, refresh } = await useFetch(
                       {{ item.name }}
                     </h4>
                     <div class="text-muted-400 flex items-center gap-1">
-                      <Icon name="ph:calendar-blank-duotone" class="h-4 w-4" />
+                      <Icon name="ph:calendar-blank-duotone" class="size-4" />
                       <p class="font-sans text-sm">
                         {{ item.dueDate }}
                       </p>

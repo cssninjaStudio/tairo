@@ -65,7 +65,7 @@ const { data, pending, error, refresh } = await useFetch(
           class="w-full sm:w-32"
           rounded="lg"
         >
-          <Icon name="lucide:plus" class="h-4 w-4" />
+          <Icon name="lucide:plus" class="size-4" />
           <span>Upload</span>
         </BaseButton>
       </template>
@@ -144,7 +144,7 @@ const { data, pending, error, refresh } = await useFetch(
                       <template #start>
                         <Icon
                           name="ph:upload-duotone"
-                          class="me-2 block h-5 w-5"
+                          class="me-2 block size-5"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -156,7 +156,7 @@ const { data, pending, error, refresh } = await useFetch(
                       <template #start>
                         <Icon
                           name="ph:download-duotone"
-                          class="me-2 block h-5 w-5"
+                          class="me-2 block size-5"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -169,7 +169,7 @@ const { data, pending, error, refresh } = await useFetch(
                       <template #start>
                         <Icon
                           name="ph:lock-duotone"
-                          class="me-2 block h-5 w-5"
+                          class="me-2 block size-5"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -181,7 +181,7 @@ const { data, pending, error, refresh } = await useFetch(
                       <template #start>
                         <Icon
                           name="ph:share-duotone"
-                          class="me-2 block h-5 w-5"
+                          class="me-2 block size-5"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -194,7 +194,7 @@ const { data, pending, error, refresh } = await useFetch(
                       <template #start>
                         <Icon
                           name="ph:trash-duotone"
-                          class="me-2 block h-5 w-5"
+                          class="me-2 block size-5"
                         />
                       </template>
                     </BaseDropdownItem>

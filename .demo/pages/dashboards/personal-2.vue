@@ -236,11 +236,11 @@ function useBarTeamEfficiency() {
                   </NuxtLink>
                 </div>
                 <div
-                  class="absolute bottom-0 end-2 z-10 flex h-14 w-14 items-center justify-center"
+                  class="absolute bottom-0 end-2 z-10 flex size-14 items-center justify-center"
                 >
                   <Icon
                     name="ph:crown-duotone"
-                    class="text-primary-900/50 h-10 w-10"
+                    class="text-primary-900/50 size-10"
                   />
                 </div>
               </BaseCard>

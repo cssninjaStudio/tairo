@@ -133,7 +133,7 @@ const validatePin = computed(() => {
         to="/"
         class="text-muted-400 hover:text-primary-500 dark:text-muted-700 dark:hover:text-primary-500 transition-colors duration-300"
       >
-        <TairoLogo class="h-10 w-10" />
+        <TairoLogo class="size-10" />
       </NuxtLink>
       <div class="flex items-center gap-4">
         <BaseThemeToggle />
@@ -198,7 +198,7 @@ const validatePin = computed(() => {
                       <div class="child absolute end-2 top-3 opacity-0">
                         <Icon
                           name="ph:check-circle-duotone"
-                          class="text-primary-500 h-7 w-7"
+                          class="text-primary-500 size-7"
                         />
                       </div>
                     </BaseCard>
@@ -236,7 +236,7 @@ const validatePin = computed(() => {
                       <div class="child absolute end-2 top-3 opacity-0">
                         <Icon
                           name="ph:check-circle-duotone"
-                          class="text-primary-500 h-7 w-7"
+                          class="text-primary-500 size-7"
                         />
                       </div>
                     </BaseCard>
@@ -280,7 +280,7 @@ const validatePin = computed(() => {
                       <div class="child absolute end-2 top-3 opacity-0">
                         <Icon
                           name="ph:check-circle-duotone"
-                          class="text-primary-500 h-7 w-7"
+                          class="text-primary-500 size-7"
                         />
                       </div>
                     </BaseCard>
@@ -310,7 +310,7 @@ const validatePin = computed(() => {
         </div>
       </div>
       <div v-if="currentStep === 2" class="w-full">
-        <div class="flex h-full w-full flex-col">
+        <div class="flex size-full flex-col">
           <div
             class="pointer-events-none flex w-full items-center justify-center pt-8"
           >
@@ -323,17 +323,17 @@ const validatePin = computed(() => {
               <Icon
                 v-if="twoFaMode === 'email_address'"
                 name="ph:envelope-duotone"
-                class="text-primary-500 mx-auto h-8 w-8"
+                class="text-primary-500 mx-auto size-8"
               />
               <Icon
                 v-else-if="twoFaMode === 'phone_number'"
                 name="ph:device-mobile-speaker-duotone"
-                class="text-primary-500 mx-auto h-8 w-8"
+                class="text-primary-500 mx-auto size-8"
               />
               <Icon
                 v-else-if="twoFaMode === 'app_id'"
                 name="ph:fingerprint-duotone"
-                class="text-primary-500 mx-auto h-8 w-8"
+                class="text-primary-500 mx-auto size-8"
               />
             </BaseIconBox>
           </div>
@@ -378,7 +378,7 @@ const validatePin = computed(() => {
             />
             <div v-else-if="twoFaMode === 'app_id'" class="space-y-4">
               <div class="flex items-center gap-2">
-                <Icon name="logos:authy" class="h-6 w-6" />
+                <Icon name="logos:authy" class="size-6" />
                 <div>
                   <BaseText
                     size="sm"
@@ -431,7 +431,7 @@ const validatePin = computed(() => {
       </div>
       <div v-else-if="currentStep === 3">
         <div class="mx-auto max-w-4xl">
-          <div class="flex h-full w-full flex-col">
+          <div class="flex size-full flex-col">
             <div
               class="pointer-events-none flex w-full items-center justify-center pt-8"
             >
@@ -446,7 +446,7 @@ const validatePin = computed(() => {
                 >
                   <Icon
                     name="ph:lock-duotone"
-                    class="text-primary-500 mx-auto h-8 w-8"
+                    class="text-primary-500 mx-auto size-8"
                   />
                 </BaseIconBox>
               </div>

@@ -38,10 +38,10 @@ if (data.value) {
             </BaseText>
           </div>
           <div
-            class="dark:bg-muted-800 relative z-10 h-4 w-4 shrink-0 rounded-full bg-white"
+            class="dark:bg-muted-800 relative z-10 size-4 shrink-0 rounded-full bg-white"
           >
             <div
-              class="h-4 w-4 rounded-full border-2 border-current"
+              class="size-4 rounded-full border-2 border-current"
               :class="getRandomColor()"
             />
           </div>
@@ -49,7 +49,7 @@ if (data.value) {
           <BaseCard class="p-4">
             <div class="flex w-full items-center gap-4">
               <div
-                class="h-2 w-2 shrink-0 rounded-full"
+                class="size-2 shrink-0 rounded-full"
                 :class="
                   item.status === 0
                     ? 'bg-primary-500'

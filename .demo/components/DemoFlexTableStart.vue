@@ -53,7 +53,7 @@ const props = withDefaults(
       class="bg-primary-500/20 text-primary-500"
       color="none"
     >
-      <Icon :name="props.icon" class="h-5 w-5" />
+      <Icon :name="props.icon" class="size-5" />
     </BaseIconBox>
     <div
       v-else-if="props.picture && !props.avatar && !props.icon"

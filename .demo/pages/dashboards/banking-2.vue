@@ -198,7 +198,7 @@ function useAreaExpenses() {
           >
             <div>
               <BaseButtonIcon rounded="sm">
-                <Icon name="lucide:plus" class="h-4 w-4" />
+                <Icon name="lucide:plus" class="size-4" />
               </BaseButtonIcon>
             </div>
             <div
@@ -277,11 +277,11 @@ function useAreaExpenses() {
                   </div>
                   <div class="flex items-center gap-2">
                     <div
-                      class="bg-muted-100 dark:bg-muted-900 flex h-10 w-10 items-center justify-center rounded-full"
+                      class="bg-muted-100 dark:bg-muted-900 flex size-10 items-center justify-center rounded-full"
                     >
                       <Icon
                         name="lucide:arrow-right"
-                        class="text-success-500 h-4 w-4 -rotate-45"
+                        class="text-success-500 size-4 -rotate-45"
                       />
                     </div>
                     <div
@@ -299,11 +299,11 @@ function useAreaExpenses() {
                   </div>
                   <div class="flex items-center gap-2">
                     <div
-                      class="bg-muted-100 dark:bg-muted-900 flex h-10 w-10 items-center justify-center rounded-full"
+                      class="bg-muted-100 dark:bg-muted-900 flex size-10 items-center justify-center rounded-full"
                     >
                       <Icon
                         name="lucide:arrow-right"
-                        class="text-danger-500 h-4 w-4 rotate-45"
+                        class="text-danger-500 size-4 rotate-45"
                       />
                     </div>
                     <div
@@ -324,7 +324,7 @@ function useAreaExpenses() {
         <div
           class="ltablet:w-3/5 ltablet:border-r border-muted-300 dark:border-muted-700 w-full lg:w-3/5 lg:border-r"
         >
-          <div class="flex h-full w-full flex-col gap-16 sm:flex-row">
+          <div class="flex size-full flex-col gap-16 sm:flex-row">
             <!-- Monthly Summary -->
             <div class="shrink-0">
               <BaseHeading
@@ -371,7 +371,7 @@ function useAreaExpenses() {
         </div>
         <div class="ltablet:w-2/5 w-full lg:w-2/5">
           <div class="ltablet:ps-12 h-full lg:ps-12">
-            <div class="flex h-full w-full flex-col">
+            <div class="flex size-full flex-col">
               <div class="mb-6 flex items-center justify-between">
                 <BaseHeading
                   as="h3"
@@ -393,7 +393,7 @@ function useAreaExpenses() {
                       rounded="full"
                       color="none"
                     >
-                      <Icon name="ph:pizza-duotone" class="h-5 w-5" />
+                      <Icon name="ph:pizza-duotone" class="size-5" />
                     </BaseIconBox>
                     <div>
                       <BaseHeading
@@ -425,7 +425,7 @@ function useAreaExpenses() {
                       rounded="full"
                       color="none"
                     >
-                      <Icon name="ph:storefront-duotone" class="h-5 w-5" />
+                      <Icon name="ph:storefront-duotone" class="size-5" />
                     </BaseIconBox>
                     <div>
                       <BaseHeading
@@ -457,7 +457,7 @@ function useAreaExpenses() {
                       rounded="full"
                       color="none"
                     >
-                      <Icon name="ph:shopping-cart-duotone" class="h-5 w-5" />
+                      <Icon name="ph:shopping-cart-duotone" class="size-5" />
                     </BaseIconBox>
                     <div>
                       <BaseHeading

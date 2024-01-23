@@ -69,7 +69,7 @@ const { data, pending, error, refresh } = await useFetch(
                 On Track
               </p>
               <span
-                class="bg-primary-500 absolute end-0 top-0 h-2 w-2 rounded-full"
+                class="bg-primary-500 absolute end-0 top-0 size-2 rounded-full"
               />
             </div>
             <div class="relative flex flex-col text-center">
@@ -82,7 +82,7 @@ const { data, pending, error, refresh } = await useFetch(
                 Overdue
               </p>
               <span
-                class="absolute end-0 top-0 h-2 w-2 rounded-full bg-amber-500"
+                class="absolute end-0 top-0 size-2 rounded-full bg-amber-500"
               />
             </div>
             <div class="relative flex flex-col text-center">
@@ -95,7 +95,7 @@ const { data, pending, error, refresh } = await useFetch(
                 Total
               </p>
               <span
-                class="bg-success-500 absolute end-0 top-0 h-2 w-2 rounded-full"
+                class="bg-success-500 absolute end-0 top-0 size-2 rounded-full"
               />
             </div>
             <div class="flex items-center justify-center">
@@ -200,13 +200,13 @@ const { data, pending, error, refresh } = await useFetch(
                         </div>
                         <div class="text-muted-400 flex items-center gap-4">
                           <div class="flex items-center gap-1 text-sm">
-                            <Icon name="ph:paperclip-duotone" class="h-4 w-4" />
+                            <Icon name="ph:paperclip-duotone" class="size-4" />
                             <span class="font-sans">
                               {{ item.files.length }}
                             </span>
                           </div>
                           <div class="flex items-center gap-1 text-sm">
-                            <Icon name="ph:users-duotone" class="h-4 w-4" />
+                            <Icon name="ph:users-duotone" class="size-4" />
                             <span class="font-sans">
                               {{ item.team.length }}
                             </span>

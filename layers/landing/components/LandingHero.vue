@@ -85,7 +85,7 @@ function useGaugePersonal() {
     <div class="gridlines absolute inset-x-0 z-10 -mt-8 py-20" />
     <div class="absolute inset-x-0 z-20 -mt-24 py-20">
       <div
-        class="mt-12 grid grid-cols-2 -space-x-52 opacity-60 dark:opacity-50 2xl:mx-auto 2xl:max-w-6xl"
+        class="mt-12 grid grid-cols-2 -space-x-52 opacity-60 2xl:mx-auto 2xl:max-w-6xl dark:opacity-50"
       >
         <div
           class="from-primary-200 to-primary-400 h-40 bg-gradient-to-br blur-3xl dark:from-blue-700"
@@ -143,58 +143,58 @@ function useGaugePersonal() {
             class="ltablet:w-16 ltablet:flex dark:bg-muted-800 absolute left-0 top-0 hidden h-full w-20 flex-col bg-white group-[&.scrolled]/landing:translate-x-0 group-[&:not(.scrolled)]/landing:-translate-x-full group-[&.scrolled]/landing:opacity-100 group-[&:not(.scrolled)]/landing:opacity-0 motion-safe:transition-all motion-safe:duration-200 lg:flex"
           >
             <div class="flex h-20 w-full items-center justify-center">
-              <TairoLogo class="text-primary-500 h-8 w-8" />
+              <TairoLogo class="text-primary-500 size-8" />
             </div>
             <div class="flex h-16 w-full items-center justify-center">
               <div
-                class="nui-mask nui-mask-blob bg-primary-500/10 flex h-12 w-12 items-center justify-center motion-safe:transition-colors motion-safe:duration-200"
+                class="nui-mask nui-mask-blob bg-primary-500/10 flex size-12 items-center justify-center motion-safe:transition-colors motion-safe:duration-200"
               >
                 <Icon
                   name="ph:house-duotone"
-                  class="text-primary-500 h-5 w-5"
+                  class="text-primary-500 size-5"
                 />
               </div>
             </div>
             <div class="flex h-16 w-full items-center justify-center">
               <div
-                class="nui-mask nui-mask-blob hover:bg-muted-100 dark:hover:bg-muted-700/50 flex h-12 w-12 items-center justify-center motion-safe:transition-colors motion-safe:duration-200"
+                class="nui-mask nui-mask-blob hover:bg-muted-100 dark:hover:bg-muted-700/50 flex size-12 items-center justify-center motion-safe:transition-colors motion-safe:duration-200"
               >
                 <Icon
                   name="ph:grid-four-duotone"
-                  class="text-muted-400 h-5 w-5"
+                  class="text-muted-400 size-5"
                 />
               </div>
             </div>
             <div class="flex h-16 w-full items-center justify-center">
               <div
-                class="nui-mask nui-mask-blob hover:bg-muted-100 dark:hover:bg-muted-700/50 flex h-12 w-12 items-center justify-center motion-safe:transition-colors motion-safe:duration-200"
+                class="nui-mask nui-mask-blob hover:bg-muted-100 dark:hover:bg-muted-700/50 flex size-12 items-center justify-center motion-safe:transition-colors motion-safe:duration-200"
               >
-                <Icon name="ph:users-duotone" class="text-muted-400 h-5 w-5" />
+                <Icon name="ph:users-duotone" class="text-muted-400 size-5" />
               </div>
             </div>
             <div class="flex h-16 w-full items-center justify-center">
               <div
-                class="nui-mask nui-mask-blob hover:bg-muted-100 dark:hover:bg-muted-700/50 flex h-12 w-12 items-center justify-center motion-safe:transition-colors motion-safe:duration-200"
+                class="nui-mask nui-mask-blob hover:bg-muted-100 dark:hover:bg-muted-700/50 flex size-12 items-center justify-center motion-safe:transition-colors motion-safe:duration-200"
               >
                 <Icon
                   name="ph:chat-circle-duotone"
-                  class="text-muted-400 h-5 w-5"
+                  class="text-muted-400 size-5"
                 />
               </div>
             </div>
             <div class="mt-auto flex h-16 w-full items-center justify-center">
               <div
-                class="nui-mask nui-mask-blob hover:bg-muted-100 dark:hover:bg-muted-700/50 flex h-12 w-12 items-center justify-center motion-safe:transition-colors motion-safe:duration-200"
+                class="nui-mask nui-mask-blob hover:bg-muted-100 dark:hover:bg-muted-700/50 flex size-12 items-center justify-center motion-safe:transition-colors motion-safe:duration-200"
               >
                 <Icon
                   name="ph:gear-six-duotone"
-                  class="text-muted-400 h-5 w-5"
+                  class="text-muted-400 size-5"
                 />
               </div>
             </div>
             <div class="flex h-16 w-full items-center justify-center">
               <div
-                class="nui-mask nui-mask-blob hover:bg-muted-100 dark:hover:bg-muted-700/50 flex h-12 w-12 items-center justify-center motion-safe:transition-colors motion-safe:duration-200"
+                class="nui-mask nui-mask-blob hover:bg-muted-100 dark:hover:bg-muted-700/50 flex size-12 items-center justify-center motion-safe:transition-colors motion-safe:duration-200"
               >
                 <BaseAvatar
                   rounded="none"
@@ -211,9 +211,9 @@ function useGaugePersonal() {
           >
             <div class="flex h-full items-center gap-4">
               <div
-                class="nui-mask nui-mask-blob dark:hover:bg-muted-800 flex h-10 w-10 items-center justify-center hover:bg-white motion-safe:transition-colors motion-safe:duration-200"
+                class="nui-mask nui-mask-blob dark:hover:bg-muted-800 flex size-10 items-center justify-center hover:bg-white motion-safe:transition-colors motion-safe:duration-200"
               >
-                <Icon name="lucide:menu" class="text-muted-400 h-5 w-5" />
+                <Icon name="lucide:menu" class="text-muted-400 size-5" />
               </div>
               <BaseText class="hidden sm:inline-block">
                 My Dashboard
@@ -221,28 +221,28 @@ function useGaugePersonal() {
             </div>
             <div class="flex h-full items-center justify-end gap-1">
               <div
-                class="nui-mask nui-mask-blob dark:hover:bg-muted-800 flex h-10 w-10 items-center justify-center hover:bg-white motion-safe:transition-colors motion-safe:duration-200"
+                class="nui-mask nui-mask-blob dark:hover:bg-muted-800 flex size-10 items-center justify-center hover:bg-white motion-safe:transition-colors motion-safe:duration-200"
               >
-                <Icon name="ph:bell-duotone" class="text-muted-400 h-5 w-5" />
+                <Icon name="ph:bell-duotone" class="text-muted-400 size-5" />
               </div>
               <div
-                class="nui-mask nui-mask-blob dark:hover:bg-muted-800 flex h-10 w-10 items-center justify-center hover:bg-white motion-safe:transition-colors motion-safe:duration-200"
+                class="nui-mask nui-mask-blob dark:hover:bg-muted-800 flex size-10 items-center justify-center hover:bg-white motion-safe:transition-colors motion-safe:duration-200"
               >
                 <Icon
                   name="ph:circles-four-duotone"
-                  class="text-muted-400 h-5 w-5"
+                  class="text-muted-400 size-5"
                 />
               </div>
               <div
-                class="nui-mask nui-mask-blob dark:hover:bg-muted-800 flex h-10 w-10 items-center justify-center hover:bg-white motion-safe:transition-colors motion-safe:duration-200"
+                class="nui-mask nui-mask-blob dark:hover:bg-muted-800 flex size-10 items-center justify-center hover:bg-white motion-safe:transition-colors motion-safe:duration-200"
               >
                 <Icon
                   name="ph:translate-duotone"
-                  class="text-muted-400 h-5 w-5"
+                  class="text-muted-400 size-5"
                 />
               </div>
               <div
-                class="nui-mask nui-mask-blob dark:hover:bg-muted-800 flex h-10 w-10 items-center justify-center hover:bg-white motion-safe:transition-colors motion-safe:duration-200"
+                class="nui-mask nui-mask-blob dark:hover:bg-muted-800 flex size-10 items-center justify-center hover:bg-white motion-safe:transition-colors motion-safe:duration-200"
               >
                 <BaseAvatar
                   rounded="none"

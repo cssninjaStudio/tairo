@@ -35,7 +35,7 @@ definePageMeta({
           <div class="flex flex-col gap-4 pb-16 text-center">
             <Icon
               name="ph:check-circle-duotone"
-              class="text-success-500 mx-auto h-8 w-8"
+              class="text-success-500 mx-auto size-8"
             />
             <div>
               <BaseHeading
@@ -78,7 +78,7 @@ definePageMeta({
                   <div class="mb-1 flex items-center gap-2">
                     <Icon
                       name="ph:check-circle-duotone"
-                      class="text-success-500 h-4 w-4"
+                      class="text-success-500 size-4"
                     />
                     <BaseText size="sm">
                       tairo.cssninja.io
@@ -119,7 +119,7 @@ definePageMeta({
                         >
                           <Icon
                             name="ph:check-circle-duotone"
-                            class="text-success-500 h-4 w-4"
+                            class="text-success-500 size-4"
                           />
                           <BaseText
                             size="sm"
@@ -160,7 +160,7 @@ definePageMeta({
                   <div class="mb-1 flex items-center gap-2">
                     <Icon
                       name="ph:check-circle-duotone"
-                      class="text-success-500 h-4 w-4"
+                      class="text-success-500 size-4"
                     />
                     <BaseText size="sm">
                       api.tairo.cssninja.io
@@ -215,7 +215,7 @@ definePageMeta({
                   <div class="mb-1 flex items-center gap-2">
                     <Icon
                       name="ph:check-circle-duotone"
-                      class="text-success-500 h-4 w-4"
+                      class="text-success-500 size-4"
                     />
                     <BaseText size="sm">
                       hooks.tairo.cssninja.io
@@ -269,7 +269,7 @@ definePageMeta({
           <div
             class="border-muted-200 dark:border-muted-700 flex items-center gap-3 border-b p-6"
           >
-            <Icon name="fa6-brands:twitter" class="h-6 w-6 text-sky-500" />
+            <Icon name="fa6-brands:twitter" class="size-6 text-sky-500" />
             <BaseHeading size="sm" weight="medium">
               @cssninjaStudio
             </BaseHeading>

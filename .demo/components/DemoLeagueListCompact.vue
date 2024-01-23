@@ -41,7 +41,7 @@ const leagues = [
       <img
         :src="league.logo"
         :alt="league.name"
-        class="h-10 w-10 shrink-0"
+        class="size-10 shrink-0"
       >
       <div>
         <BaseHeading
@@ -68,7 +68,7 @@ const leagues = [
           muted
           class="scale-75"
         >
-          <Icon name="lucide:arrow-right" class="h-4 w-4" />
+          <Icon name="lucide:arrow-right" class="size-4" />
         </BaseButtonIcon>
       </div>
     </div>

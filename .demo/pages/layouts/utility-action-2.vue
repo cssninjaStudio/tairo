@@ -112,11 +112,11 @@ definePageMeta({
                 <ul class="space-y-6">
                   <li class="flex gap-3">
                     <div
-                      class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 shadow-muted-300/30 dark:shadow-muted-800/20 flex h-9 w-9 items-center justify-center rounded-full border bg-white shadow-xl"
+                      class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 shadow-muted-300/30 dark:shadow-muted-800/20 flex size-9 items-center justify-center rounded-full border bg-white shadow-xl"
                     >
                       <Icon
                         name="lucide:check"
-                        class="text-success-500 h-4 w-4"
+                        class="text-success-500 size-4"
                       />
                     </div>
                     <div>
@@ -138,11 +138,11 @@ definePageMeta({
                   </li>
                   <li class="flex gap-3">
                     <div
-                      class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 shadow-muted-300/30 dark:shadow-muted-800/20 flex h-9 w-9 items-center justify-center rounded-full border bg-white shadow-xl"
+                      class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 shadow-muted-300/30 dark:shadow-muted-800/20 flex size-9 items-center justify-center rounded-full border bg-white shadow-xl"
                     >
                       <Icon
                         name="lucide:check"
-                        class="text-success-500 h-4 w-4"
+                        class="text-success-500 size-4"
                       />
                     </div>
                     <div>
@@ -164,11 +164,11 @@ definePageMeta({
                   </li>
                   <li class="flex gap-3">
                     <div
-                      class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 shadow-muted-300/30 dark:shadow-muted-800/20 flex h-9 w-9 items-center justify-center rounded-full border bg-white shadow-xl"
+                      class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 shadow-muted-300/30 dark:shadow-muted-800/20 flex size-9 items-center justify-center rounded-full border bg-white shadow-xl"
                     >
                       <Icon
                         name="lucide:check"
-                        class="text-success-500 h-4 w-4"
+                        class="text-success-500 size-4"
                       />
                     </div>
                     <div>

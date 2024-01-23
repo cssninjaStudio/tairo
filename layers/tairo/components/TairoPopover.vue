@@ -98,7 +98,7 @@ const placementValue = computed(() => {
       >
         <FocusTrap>
           <div
-            class="border-muted-200 after:border-muted-200 dark:border-muted-600 dark:bg-muted-700 dark:after:border-muted-600 dark:after:bg-muted-700 shadow-muted-300/30 dark:shadow-muted-800/20 relative w-full rounded-lg border bg-white shadow-xl after:absolute after:-top-2 after:h-4 after:w-4 after:rotate-[-135deg] after:border-b after:border-r after:bg-white after:content-['']"
+            class="border-muted-200 after:border-muted-200 dark:border-muted-600 dark:bg-muted-700 dark:after:border-muted-600 dark:after:bg-muted-700 shadow-muted-300/30 dark:shadow-muted-800/20 relative w-full rounded-lg border bg-white shadow-xl after:absolute after:-top-2 after:size-4 after:rotate-[-135deg] after:border-b after:border-r after:bg-white after:content-['']"
             :class="[
               props.orientation === 'start' && 'after:start-6',
               props.orientation === 'end' && 'after:end-6',

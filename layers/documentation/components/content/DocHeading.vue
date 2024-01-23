@@ -24,7 +24,7 @@ const props = withDefaults(
       prefix=""
     >
       <template #suffix>
-        <Icon name="lucide:hash" class="mt-[0.33rem] h-4 w-4" />
+        <Icon name="lucide:hash" class="mt-[0.33rem] size-4" />
       </template>
     </TairoTocAnchor>
   </BaseHeading>

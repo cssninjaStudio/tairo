@@ -105,7 +105,7 @@ const tools: Tool[] = [
             <div class="flex items-center gap-3">
               <img
                 :src="tool.logo"
-                class="h-8 w-8"
+                class="size-8"
                 alt=""
               >
               <div>

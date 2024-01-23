@@ -373,22 +373,22 @@ watch(
         <div class="ltablet:flex-col flex h-full justify-between lg:flex-col">
           <div class="ltablet:flex-col flex lg:flex-col">
             <div
-              class="ltablet:w-full flex h-16 w-16 shrink-0 items-center justify-center lg:w-full"
+              class="ltablet:w-full flex size-16 shrink-0 items-center justify-center lg:w-full"
             >
               <NuxtLink to="#" class="flex items-center justify-center">
                 <TairoLogo class="text-primary-600 h-10" />
               </NuxtLink>
             </div>
             <div
-              class="ltablet:w-full flex h-16 w-16 shrink-0 items-center justify-center lg:w-full"
+              class="ltablet:w-full flex size-16 shrink-0 items-center justify-center lg:w-full"
             >
               <a
                 href="#"
-                class="text-muted-400 hover:text-primary-500 hover:bg-primary-500/20 flex h-12 w-12 items-center justify-center rounded-2xl transition-colors duration-300"
+                class="text-muted-400 hover:text-primary-500 hover:bg-primary-500/20 flex size-12 items-center justify-center rounded-2xl transition-colors duration-300"
                 title="Back"
                 @click.prevent="$router.back()"
               >
-                <Icon name="lucide:arrow-left" class="h-5 w-5" />
+                <Icon name="lucide:arrow-left" class="size-5" />
               </a>
             </div>
           </div>
@@ -398,20 +398,20 @@ watch(
             <div class="flex h-16 w-full items-center justify-center">
               <button
                 type="button"
-                class="text-muted-400 hover:text-primary-500 hover:bg-primary-500/20 flex h-12 w-12 items-center justify-center rounded-2xl transition-colors duration-300"
+                class="text-muted-400 hover:text-primary-500 hover:bg-primary-500/20 flex size-12 items-center justify-center rounded-2xl transition-colors duration-300"
                 title="Search"
                 @click="open('search')"
               >
-                <Icon name="ph:magnifying-glass-duotone" class="h-5 w-5" />
+                <Icon name="ph:magnifying-glass-duotone" class="size-5" />
               </button>
             </div>
             <div class="flex h-16 w-full items-center justify-center">
               <NuxtLink
                 to="#"
-                class="text-muted-400 hover:text-primary-500 hover:bg-primary-500/20 flex h-12 w-12 items-center justify-center rounded-2xl transition-colors duration-300"
+                class="text-muted-400 hover:text-primary-500 hover:bg-primary-500/20 flex size-12 items-center justify-center rounded-2xl transition-colors duration-300"
                 title="Settings"
               >
-                <Icon name="ph:gear-six-duotone" class="h-5 w-5" />
+                <Icon name="ph:gear-six-duotone" class="size-5" />
               </NuxtLink>
             </div>
             <div
@@ -430,7 +430,7 @@ watch(
 
       <template v-if="!props.reversed">
         <div class="ltablet:h-auto relative h-96 grow lg:h-auto">
-          <div ref="mapElement" class="absolute inset-0 h-full w-full" />
+          <div ref="mapElement" class="absolute inset-0 size-full" />
           <div
             ref="popupElement"
             style="display: none; visibility: hidden"
@@ -514,17 +514,17 @@ watch(
                 </div>
                 <div class="flex items-center justify-between">
                   <div class="flex gap-1">
-                    <Icon name="uiw:star-on" class="h-3 w-3 text-yellow-400" />
-                    <Icon name="uiw:star-on" class="h-3 w-3 text-yellow-400" />
-                    <Icon name="uiw:star-on" class="h-3 w-3 text-yellow-400" />
-                    <Icon name="uiw:star-on" class="h-3 w-3 text-yellow-400" />
-                    <Icon name="uiw:star-on" class="h-3 w-3 text-yellow-400" />
+                    <Icon name="uiw:star-on" class="size-3 text-yellow-400" />
+                    <Icon name="uiw:star-on" class="size-3 text-yellow-400" />
+                    <Icon name="uiw:star-on" class="size-3 text-yellow-400" />
+                    <Icon name="uiw:star-on" class="size-3 text-yellow-400" />
+                    <Icon name="uiw:star-on" class="size-3 text-yellow-400" />
                   </div>
                   <div class="relative">
                     <div
                       class="text-muted-400 flex items-center gap-1 font-sans text-sm"
                     >
-                      <Icon name="lucide:flag" class="h-4 w-4" />
+                      <Icon name="lucide:flag" class="size-4" />
                       <span class="dark-inverted">
                         {{ feature.properties.distance }} mile
                       </span>
@@ -541,7 +541,7 @@ watch(
         <div class="ltablet:h-auto relative h-96 grow lg:h-auto">
           <div
             ref="mapElement"
-            class="absolute inset-0 h-full w-full"
+            class="absolute inset-0 size-full"
           />
           <div
             ref="popupElement"

@@ -686,16 +686,16 @@ const mergedTree = [
           >
             <template #item-icon="{ child }">
               <span
-                class="text-muted-400 me-1 flex h-5 w-5 items-center justify-center"
+                class="text-muted-400 me-1 flex size-5 items-center justify-center"
               >
-                <Icon :name="child?.item?.icon" class="h-4 w-4" />
+                <Icon :name="child?.item?.icon" class="size-4" />
               </span>
             </template>
             <template #item-label="{ child, toggle }">
               <span class="inline-flex items-center gap-2">
                 <span
                   v-if="child?.item?.color"
-                  class="inline-block h-2 w-2 rounded-sm"
+                  class="inline-block size-2 rounded-sm"
                   :class="child?.item?.color"
                 />
                 <span
@@ -738,16 +738,16 @@ const mergedTree = [
           >
             <template #item-icon="{ child }">
               <span
-                class="text-muted-400 me-1 flex h-5 w-5 items-center justify-center"
+                class="text-muted-400 me-1 flex size-5 items-center justify-center"
               >
-                <Icon :name="child?.item?.icon" class="h-4 w-4" />
+                <Icon :name="child?.item?.icon" class="size-4" />
               </span>
             </template>
             <template #item-label="{ child, toggle }">
               <span class="inline-flex items-center gap-2">
                 <span
                   v-if="child?.item?.color"
-                  class="inline-block h-2 w-2 rounded-sm"
+                  class="inline-block size-2 rounded-sm"
                   :class="child?.item?.color"
                 />
                 <span

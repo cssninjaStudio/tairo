@@ -51,7 +51,7 @@ const props = withDefaults(
           class="dark:text-white"
           :color="props.iconColor"
         >
-          <Icon :name="props.icon" class="h-5 w-5" />
+          <Icon :name="props.icon" class="size-5" />
         </BaseIconBox>
         <div class="ms-2">
           <BaseHeading

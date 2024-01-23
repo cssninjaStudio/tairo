@@ -7,17 +7,17 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
     <Menu
       v-slot="{ close }"
       as="div"
-      class="relative h-9 w-9 text-left"
+      class="relative size-9 text-left"
     >
       <MenuButton as="div">
         <button
           type="button"
-          class="group-hover:ring-muted-200 dark:group-hover:ring-muted-700 dark:ring-offset-muted-900 inline-flex h-9 w-9 items-center justify-center rounded-full ring-1 ring-transparent transition-all duration-300 group-hover:ring-offset-4"
+          class="group-hover:ring-muted-200 dark:group-hover:ring-muted-700 dark:ring-offset-muted-900 inline-flex size-9 items-center justify-center rounded-full ring-1 ring-transparent transition-all duration-300 group-hover:ring-offset-4"
         >
           <span
-            class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 flex h-9 w-9 items-center justify-center rounded-full border bg-white"
+            class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 flex size-9 items-center justify-center rounded-full border bg-white"
           >
-            <Icon name="ph:bell-duotone" class="text-muted-400 h-5 w-5" />
+            <Icon name="ph:bell-duotone" class="text-muted-400 size-5" />
           </span>
         </button>
       </MenuButton>
@@ -62,7 +62,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 @click.passive="close"
               >
                 <div
-                  class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
+                  class="relative inline-flex size-9 items-center justify-center rounded-full"
                 >
                   <img
                     src="/img/avatars/12.svg"
@@ -99,7 +99,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 @click.passive="close"
               >
                 <div
-                  class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
+                  class="relative inline-flex size-9 items-center justify-center rounded-full"
                 >
                   <img
                     src="/img/avatars/19.svg"
@@ -136,7 +136,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 @click.passive="close"
               >
                 <div
-                  class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
+                  class="relative inline-flex size-9 items-center justify-center rounded-full"
                 >
                   <img
                     src="/img/avatars/3.svg"
@@ -173,7 +173,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 @click.passive="close"
               >
                 <div
-                  class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
+                  class="relative inline-flex size-9 items-center justify-center rounded-full"
                 >
                   <img
                     src="/img/avatars/4.svg"
@@ -210,7 +210,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 @click.passive="close"
               >
                 <div
-                  class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
+                  class="relative inline-flex size-9 items-center justify-center rounded-full"
                 >
                   <img
                     src="/img/avatars/8.svg"

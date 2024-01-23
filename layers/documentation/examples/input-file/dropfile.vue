@@ -19,13 +19,13 @@
       <div class="mb-4 flex items-center gap-2">
         <button
           type="button"
-          class="nui-focus border-muted-200 hover:border-primary-500 text-muted-700 dark:text-muted-200 hover:text-primary-600 dark:border-muted-700 dark:bg-muted-800 dark:hover:border-primary-500 dark:hover:text-primary-600 relative flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border bg-white transition-colors duration-300"
+          class="nui-focus border-muted-200 hover:border-primary-500 text-muted-700 dark:text-muted-200 hover:text-primary-600 dark:border-muted-700 dark:bg-muted-800 dark:hover:border-primary-500 dark:hover:text-primary-600 relative flex size-8 cursor-pointer items-center justify-center rounded-full border bg-white transition-colors duration-300"
           tooltip="Select files"
           @click="open"
         >
           <Icon
             name="lucide:plus"
-            class="absolute start-1/2 top-1/2 h-4 w-4 -translate-x-1/2 -translate-y-1/2"
+            class="absolute start-1/2 top-1/2 size-4 -translate-x-1/2 -translate-y-1/2"
           />
 
           <span class="sr-only">Select files</span>
@@ -33,10 +33,10 @@
 
         <button
           type="button"
-          class="nui-focus border-muted-200 hover:border-primary-500 text-muted-700 dark:text-muted-200 hover:text-primary-600 dark:border-muted-700 dark:bg-muted-800 dark:hover:border-primary-500 dark:hover:text-primary-600 relative flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border bg-white transition-colors duration-300"
+          class="nui-focus border-muted-200 hover:border-primary-500 text-muted-700 dark:text-muted-200 hover:text-primary-600 dark:border-muted-700 dark:bg-muted-800 dark:hover:border-primary-500 dark:hover:text-primary-600 relative flex size-8 cursor-pointer items-center justify-center rounded-full border bg-white transition-colors duration-300"
           tooltip="Start Upload"
         >
-          <Icon name="lucide:arrow-up" class="h-4 w-4" />
+          <Icon name="lucide:arrow-up" class="size-4" />
 
           <span class="sr-only">Start Upload</span>
         </button>
@@ -62,7 +62,7 @@
           <div class="p-5 text-center">
             <Icon
               name="mdi-light:cloud-upload"
-              class="text-muted-400 group-hover:text-primary-500 group-focus:text-primary-500 mb-2 h-10 w-10 transition-colors duration-300"
+              class="text-muted-400 group-hover:text-primary-500 group-focus:text-primary-500 mb-2 size-10 transition-colors duration-300"
             />
 
             <h4 class="text-muted-400 font-sans text-sm">
@@ -93,14 +93,14 @@
                 <div class="shrink-0">
                   <img
                     v-if="file.type.startsWith('image')"
-                    class="h-14 w-14 rounded-xl object-cover object-center"
+                    class="size-14 rounded-xl object-cover object-center"
                     :src="preview(file).value"
                     alt="Image preview"
                   >
 
                   <img
                     v-else
-                    class="h-14 w-14 rounded-xl object-cover object-center"
+                    class="size-14 rounded-xl object-cover object-center"
                     src="/img/avatars/placeholder-file.png"
                     alt="Image preview"
                   >
@@ -127,33 +127,33 @@
 
               <div class="flex gap-2">
                 <button
-                  class="border-muted-200 hover:border-primary-500 text-muted-700 dark:text-muted-200 hover:text-primary-600 dark:border-muted-700 dark:bg-muted-900 dark:hover:border-primary-500 dark:hover:text-primary-600 relative flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border bg-white transition-colors duration-300 disabled:cursor-not-allowed disabled:opacity-60"
+                  class="border-muted-200 hover:border-primary-500 text-muted-700 dark:text-muted-200 hover:text-primary-600 dark:border-muted-700 dark:bg-muted-900 dark:hover:border-primary-500 dark:hover:text-primary-600 relative flex size-8 cursor-pointer items-center justify-center rounded-full border bg-white transition-colors duration-300 disabled:cursor-not-allowed disabled:opacity-60"
                   disabled
                   type="button"
                   tooltip="Cancel"
                 >
-                  <Icon name="lucide:slash" class="h-4 w-4" />
+                  <Icon name="lucide:slash" class="size-4" />
 
                   <span class="sr-only">Cancel</span>
                 </button>
 
                 <button
-                  class="border-muted-200 hover:border-primary-500 text-muted-700 dark:text-muted-200 hover:text-primary-600 dark:border-muted-700 dark:bg-muted-900 dark:hover:border-primary-500 dark:hover:text-primary-600 relative flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border bg-white transition-colors duration-300"
+                  class="border-muted-200 hover:border-primary-500 text-muted-700 dark:text-muted-200 hover:text-primary-600 dark:border-muted-700 dark:bg-muted-900 dark:hover:border-primary-500 dark:hover:text-primary-600 relative flex size-8 cursor-pointer items-center justify-center rounded-full border bg-white transition-colors duration-300"
                   type="button"
                   tooltip="Upload"
                 >
-                  <Icon name="lucide:arrow-up" class="h-4 w-4" />
+                  <Icon name="lucide:arrow-up" class="size-4" />
 
                   <span class="sr-only">Upload</span>
                 </button>
 
                 <button
-                  class="border-muted-200 hover:border-primary-500 text-muted-700 dark:text-muted-200 hover:text-primary-600 dark:border-muted-700 dark:bg-muted-900 dark:hover:border-primary-500 dark:hover:text-primary-600 relative flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border bg-white transition-colors duration-300"
+                  class="border-muted-200 hover:border-primary-500 text-muted-700 dark:text-muted-200 hover:text-primary-600 dark:border-muted-700 dark:bg-muted-900 dark:hover:border-primary-500 dark:hover:text-primary-600 relative flex size-8 cursor-pointer items-center justify-center rounded-full border bg-white transition-colors duration-300"
                   type="button"
                   tooltip="Remove"
                   @click.prevent="remove(file)"
                 >
-                  <Icon name="lucide:x" class="h-4 w-4" />
+                  <Icon name="lucide:x" class="size-4" />
 
                   <span class="sr-only">Remove</span>
                 </button>

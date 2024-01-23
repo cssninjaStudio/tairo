@@ -13,7 +13,7 @@ const props = defineProps<{
     <div
       class="items-top ring-muted-900/5 dark:bg-muted-950 relative flex justify-start space-x-6 rounded-xl bg-white p-5 leading-none ring-1"
     >
-      <Icon :name="props.icon" class="text-primary-600 h-8 w-8 shrink-0" />
+      <Icon :name="props.icon" class="text-primary-600 size-8 shrink-0" />
       <div class="space-y-1">
         <BaseHeading
           as="h3"

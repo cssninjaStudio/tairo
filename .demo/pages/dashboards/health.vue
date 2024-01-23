@@ -501,7 +501,7 @@ function useGaugePersonal() {
               class="bg-primary-500/10"
               color="none"
             >
-              <Icon name="ph:drop-duotone" class="text-primary-500 h-5 w-5" />
+              <Icon name="ph:drop-duotone" class="text-primary-500 size-5" />
             </BaseIconBox>
             <div class="flex items-center gap-1 font-sans">
               <span class="text-muted-800 dark:text-muted-100 font-semibold">
@@ -539,7 +539,7 @@ function useGaugePersonal() {
             >
               <Icon
                 name="ph:heartbeat-duotone"
-                class="text-primary-500 h-5 w-5"
+                class="text-primary-500 size-5"
               />
             </BaseIconBox>
             <div class="flex items-center gap-1 font-sans">
@@ -578,7 +578,7 @@ function useGaugePersonal() {
             >
               <Icon
                 name="ph:drop-half-bottom-duotone"
-                class="text-primary-500 h-5 w-5"
+                class="text-primary-500 size-5"
               />
             </BaseIconBox>
             <div class="flex items-center gap-1 font-sans">
@@ -615,7 +615,7 @@ function useGaugePersonal() {
               class="bg-primary-500/10"
               color="none"
             >
-              <Icon name="ph:gauge-duotone" class="text-primary-500 h-5 w-5" />
+              <Icon name="ph:gauge-duotone" class="text-primary-500 size-5" />
             </BaseIconBox>
             <div class="flex items-center gap-1 font-sans">
               <span class="text-muted-800 dark:text-muted-100 font-semibold">
@@ -669,7 +669,7 @@ function useGaugePersonal() {
                       size="xs"
                       class="text-muted-400 max-w-[240px]"
                     >
-                      <Icon name="ph:question-duotone" class="h-4 w-4" />
+                      <Icon name="ph:question-duotone" class="size-4" />
                       <span>
                         Your overall condition is very good. Make it even
                         better.
@@ -707,7 +707,7 @@ function useGaugePersonal() {
                       size="xs"
                       class="text-muted-400 max-w-[240px]"
                     >
-                      <Icon name="ph:question-duotone" class="h-4 w-4" />
+                      <Icon name="ph:question-duotone" class="size-4" />
                       <span>
                         Your energy seems a bit unstable. You can improve it.
                       </span>
@@ -741,7 +741,7 @@ function useGaugePersonal() {
                       size="xs"
                       class="text-muted-400 max-w-[240px]"
                     >
-                      <Icon name="ph:question-duotone" class="h-4 w-4" />
+                      <Icon name="ph:question-duotone" class="size-4" />
                       <span>
                         Your oxygen seems a bit unstable. You can improve it.
                       </span>
@@ -778,7 +778,7 @@ function useGaugePersonal() {
                       size="xs"
                       class="text-muted-400 max-w-[240px]"
                     >
-                      <Icon name="ph:question-duotone" class="h-4 w-4" />
+                      <Icon name="ph:question-duotone" class="size-4" />
                       <span>
                         Your overall progress is very good. Make it even better.
                       </span>

@@ -354,18 +354,18 @@ const onSubmit = handleSubmit(
                 v-model="inputFile"
                 accept="image/*"
               >
-                <div class="relative h-24 w-24">
+                <div class="relative size-24">
                   <img
                     v-if="files?.length && files.item(0)"
                     :src="preview(files.item(0)!).value"
                     alt="Upload preview"
-                    class="bg-muted-200 dark:bg-muted-700/60 h-24 w-24 rounded-full object-cover object-center"
+                    class="bg-muted-200 dark:bg-muted-700/60 size-24 rounded-full object-cover object-center"
                   >
                   <img
                     v-else
                     :src="currentAvatar"
                     alt="Upload preview"
-                    class="bg-muted-200 dark:bg-muted-700/60 h-24 w-24 rounded-full object-cover object-center"
+                    class="bg-muted-200 dark:bg-muted-700/60 size-24 rounded-full object-cover object-center"
                   >
                   <div
                     v-if="files?.length && files.item(0)"
@@ -377,7 +377,7 @@ const onSubmit = handleSubmit(
                       data-nui-tooltip="Remove image"
                       @click="remove(files.item(0)!)"
                     >
-                      <Icon name="lucide:x" class="h-4 w-4" />
+                      <Icon name="lucide:x" class="size-4" />
                     </BaseButtonIcon>
                   </div>
                   <div v-else class="absolute bottom-0 end-0 z-20">
@@ -387,7 +387,7 @@ const onSubmit = handleSubmit(
                         rounded="full"
                         @click="open"
                       >
-                        <Icon name="lucide:plus" class="h-4 w-4" />
+                        <Icon name="lucide:plus" class="size-4" />
                       </BaseButtonIcon>
                     </div>
                   </div>

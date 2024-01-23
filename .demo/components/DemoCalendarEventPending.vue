@@ -13,11 +13,11 @@ const props = defineProps<{
     <!-- <div class="absolute inset-0 w-1 rounded-ss-lg rounded-es-lg" :class="[categoryTheme[event.category].color]"></div> -->
     <div
       role="button"
-      class="dnd-drag-handler hover:bg-muted-100 dark:hover:bg-muted-900 m-[1px] flex h-6 w-6 shrink-0 cursor-grab items-center justify-center rounded-full text-sm transition-colors duration-75"
+      class="dnd-drag-handler hover:bg-muted-100 dark:hover:bg-muted-900 m-[1px] flex size-6 shrink-0 cursor-grab items-center justify-center rounded-full text-sm transition-colors duration-75"
     >
       <Icon
         name="ph:dots-six-vertical"
-        class="text-muted-500 dark:text-muted-200 h-4 w-4"
+        class="text-muted-500 dark:text-muted-200 size-4"
       />
     </div>
     <div class="w-full pe-1 [&>:not(:first-of-type):before]:mx-1">
@@ -33,7 +33,7 @@ const props = defineProps<{
             <!-- <div class="w-2 h-2 rounded-sm" :class="[categoryTheme[event.category].color]"></div>
             <span>{{ categoryTheme[event.category].name }}</span> -->
             <!-- <span class="text-muted-200">|</span> -->
-            <Icon name="ph:clock" class="text-muted-400 h-4 w-4" />
+            <Icon name="ph:clock" class="text-muted-400 size-4" />
             <span>{{ event.duration }} min</span>
           </div>
         </div>
@@ -61,33 +61,33 @@ const props = defineProps<{
             class="text-muted-400"
             data-nui-tooltip="Recorded"
           >
-            <Icon name="ph:monitor-play-duotone" class="h-4 w-4" />
+            <Icon name="ph:monitor-play-duotone" class="size-4" />
           </span>
           <span
             v-if="event.features?.drive"
             class="text-muted-400"
             data-nui-tooltip="Document joined"
           >
-            <Icon name="ph:note-duotone" class="h-4 w-4" />
+            <Icon name="ph:note-duotone" class="size-4" />
           </span>
           <span
             v-if="event.features?.external"
             class="text-muted-400"
             data-nui-tooltip="External Users"
           >
-            <Icon name="ph:lock-open-duotone" class="h-4 w-4" />
+            <Icon name="ph:lock-open-duotone" class="size-4" />
           </span>
           <span
             v-if="event.features?.conversation"
             class="text-muted-400"
             data-nui-tooltip="Has comments"
           >
-            <Icon name="ph:chats-circle-duotone" class="h-4 w-4" />
+            <Icon name="ph:chats-circle-duotone" class="size-4" />
           </span>
         </div>
         <div>
           <div
-            class="h-2 w-2 rounded-full"
+            class="size-2 rounded-full"
             :class="[categoryTheme[event.category].color]"
             :data-nui-tooltip="categoryTheme[event.category].name"
             data-nui-tooltip-position="start"

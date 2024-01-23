@@ -110,9 +110,9 @@ const handleClipboard = () => {
       <div class="mx-auto max-w-md">
         <div class="flex items-center gap-4">
           <div
-            class="bg-primary-500/20 text-primary-500 flex h-14 w-14 shrink-0 items-center justify-center rounded-full font-sans text-2xl"
+            class="bg-primary-500/20 text-primary-500 flex size-14 shrink-0 items-center justify-center rounded-full font-sans text-2xl"
           >
-            <Icon name="ph:lock-duotone" class="h-5 w-5" />
+            <Icon name="ph:lock-duotone" class="size-5" />
           </div>
           <div class="text-muted-700 block text-xl font-semibold">
             <BaseHeading
@@ -203,7 +203,7 @@ const handleClipboard = () => {
                       class="!h-12 w-full"
                       @click="handleClipboard"
                     >
-                      <Icon name="ph:cards-duotone" class="h-5 w-5" />
+                      <Icon name="ph:cards-duotone" class="size-5" />
                       <span>Copy to Clipboard</span>
                     </BaseButton>
                     <div v-else class="h-12">
@@ -220,7 +220,7 @@ const handleClipboard = () => {
                       class="!h-12 w-full"
                       @click="generatePassphrase()"
                     >
-                      <Icon name="ph:arrows-clockwise" class="h-5 w-5" />
+                      <Icon name="ph:arrows-clockwise" class="size-5" />
                       <span>Generate New</span>
                     </BaseButton>
                   </div>
@@ -313,7 +313,7 @@ const handleClipboard = () => {
                       class="!h-12 w-full"
                       @click="handleClipboard"
                     >
-                      <Icon name="ph:cards-duotone" class="h-5 w-5" />
+                      <Icon name="ph:cards-duotone" class="size-5" />
                       <span>Copy to Clipboard</span>
                     </BaseButton>
                     <div v-else class="h-12">
@@ -331,7 +331,7 @@ const handleClipboard = () => {
                       :disabled="!hasChars"
                       @click="generatePassword()"
                     >
-                      <Icon name="ph:arrows-clockwise" class="h-5 w-5" />
+                      <Icon name="ph:arrows-clockwise" class="size-5" />
                       <span>Generate New</span>
                     </BaseButton>
                   </div>

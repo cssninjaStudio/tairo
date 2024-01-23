@@ -52,7 +52,7 @@ const {
     <div
       role="button"
       tabindex="0"
-      class="bg-muted-800/60 fixed start-0 top-0 z-[99] h-full w-full cursor-pointer transition-opacity duration-300"
+      class="bg-muted-800/60 fixed start-0 top-0 z-[99] size-full cursor-pointer transition-opacity duration-300"
       :class="
         current && showOverlay
           ? 'opacity-100 pointer-events-auto'

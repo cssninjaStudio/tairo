@@ -48,7 +48,7 @@
               </div>
 
               <div class="child absolute end-2 top-3 opacity-0">
-                <Icon name="ph:check-circle-duotone" class="text-success-500 h-7 w-7" />
+                <Icon name="ph:check-circle-duotone" class="text-success-500 size-7" />
               </div>
             </BaseCard>
           </BaseRadioHeadless>
@@ -83,7 +83,7 @@
               </div>
 
               <div class="child absolute end-2 top-3 opacity-0">
-                <Icon name="ph:check-circle-duotone" class="text-success-500 h-7 w-7" />
+                <Icon name="ph:check-circle-duotone" class="text-success-500 size-7" />
               </div>
             </BaseCard>
           </BaseRadioHeadless>
@@ -118,7 +118,7 @@
               </div>
 
               <div class="child absolute end-2 top-3 opacity-0">
-                <Icon name="ph:check-circle-duotone" class="text-success-500 h-7 w-7" />
+                <Icon name="ph:check-circle-duotone" class="text-success-500 size-7" />
               </div>
             </BaseCard>
           </BaseRadioHeadless>
@@ -153,7 +153,7 @@
               </div>
 
               <div class="child absolute end-2 top-3 opacity-0">
-                <Icon name="ph:check-circle-duotone" class="text-success-500 h-7 w-7" />
+                <Icon name="ph:check-circle-duotone" class="text-success-500 size-7" />
               </div>
             </BaseCard>
           </BaseRadioHeadless>

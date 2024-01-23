@@ -37,7 +37,7 @@ const input = ref('')
           class="w-full sm:w-32"
           disabled
         >
-          <Icon name="lucide:plus" class="h-4 w-4" />
+          <Icon name="lucide:plus" class="size-4" />
           <span>Add User</span>
         </BaseButton>
       </template>
@@ -50,15 +50,15 @@ const input = ref('')
             :key="index"
             class="flex flex-col p-6"
           >
-            <BasePlaceload class="mx-auto h-20 w-20 shrink-0 rounded-full" />
+            <BasePlaceload class="mx-auto size-20 shrink-0 rounded-full" />
             <div class="mb-6 mt-4 space-y-2">
               <BasePlaceload class="mx-auto h-3 w-40 rounded-lg" />
               <BasePlaceload class="mx-auto h-3 w-32 rounded-lg" />
             </div>
             <div class="mb-6 flex items-center justify-center gap-3">
-              <BasePlaceload class="h-8 w-8 shrink-0 rounded-full" />
-              <BasePlaceload class="h-8 w-8 shrink-0 rounded-full" />
-              <BasePlaceload class="h-8 w-8 shrink-0 rounded-full" />
+              <BasePlaceload class="size-8 shrink-0 rounded-full" />
+              <BasePlaceload class="size-8 shrink-0 rounded-full" />
+              <BasePlaceload class="size-8 shrink-0 rounded-full" />
             </div>
             <div class="flex items-center justify-center gap-2">
               <BaseButton loading class="w-full">

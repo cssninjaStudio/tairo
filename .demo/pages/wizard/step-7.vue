@@ -55,7 +55,7 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
               class="hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500 pointer-events-none opacity-0 group-hover:pointer-events-auto group-hover:opacity-100"
               :to="getStep(1).to"
             >
-              <Icon name="lucide:edit-2" class="pointer-events-none h-3 w-3" />
+              <Icon name="lucide:edit-2" class="pointer-events-none size-3" />
             </BaseButtonIcon>
           </div>
         </div>
@@ -81,7 +81,7 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
                   >
                     <Icon
                       name="lucide:edit-2"
-                      class="pointer-events-none h-3 w-3"
+                      class="pointer-events-none size-3"
                     />
                   </BaseButtonIcon>
                 </div>
@@ -119,7 +119,7 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
                   >
                     <Icon
                       name="lucide:edit-2"
-                      class="pointer-events-none h-3 w-3"
+                      class="pointer-events-none size-3"
                     />
                   </BaseButtonIcon>
                 </div>
@@ -130,7 +130,7 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
                     class="bg-primary-500/10 text-primary-600"
                     color="none"
                   >
-                    <Icon name="ph:briefcase-duotone" class="h-5 w-5" />
+                    <Icon name="ph:briefcase-duotone" class="size-5" />
                   </BaseIconBox>
                   <BaseIconBox
                     v-else-if="project.type === 'design'"
@@ -138,7 +138,7 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
                     class="bg-orange-500/10 text-orange-600"
                     color="none"
                   >
-                    <Icon name="ph:bounding-box-duotone" class="h-5 w-5" />
+                    <Icon name="ph:bounding-box-duotone" class="size-5" />
                   </BaseIconBox>
                   <BaseIconBox
                     v-else-if="project.type === 'development'"
@@ -146,7 +146,7 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
                     class="bg-emerald-500/10 text-emerald-600"
                     color="none"
                   >
-                    <Icon name="ph:bounding-box-duotone" class="h-5 w-5" />
+                    <Icon name="ph:bounding-box-duotone" class="size-5" />
                   </BaseIconBox>
                   <BaseIconBox
                     v-else-if="project.type === 'marketing'"
@@ -154,7 +154,7 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
                     class="bg-yellow-500/10 text-yellow-500"
                     color="none"
                   >
-                    <Icon name="ph:bounding-box-duotone" class="h-5 w-5" />
+                    <Icon name="ph:bounding-box-duotone" class="size-5" />
                   </BaseIconBox>
                   <div>
                     <div class="text-muted-400 text-xs">
@@ -188,7 +188,7 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
                   >
                     <Icon
                       name="lucide:edit-2"
-                      class="pointer-events-none h-3 w-3"
+                      class="pointer-events-none size-3"
                     />
                   </BaseButtonIcon>
                 </div>
@@ -236,7 +236,7 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
                   >
                     <Icon
                       name="lucide:edit-2"
-                      class="pointer-events-none h-3 w-3"
+                      class="pointer-events-none size-3"
                     />
                   </BaseButtonIcon>
                 </div>
@@ -271,7 +271,7 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
                   >
                     <Icon
                       name="lucide:edit-2"
-                      class="pointer-events-none h-3 w-3"
+                      class="pointer-events-none size-3"
                     />
                   </BaseButtonIcon>
                 </div>
@@ -310,7 +310,7 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
                   >
                     <Icon
                       name="lucide:edit-2"
-                      class="pointer-events-none h-3 w-3"
+                      class="pointer-events-none size-3"
                     />
                   </BaseButtonIcon>
                 </div>
@@ -345,7 +345,7 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
                   >
                     <Icon
                       name="lucide:edit-2"
-                      class="pointer-events-none h-3 w-3"
+                      class="pointer-events-none size-3"
                     />
                   </BaseButtonIcon>
                 </div>
@@ -400,7 +400,7 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
                   >
                     <Icon
                       name="lucide:edit-2"
-                      class="pointer-events-none h-3 w-3"
+                      class="pointer-events-none size-3"
                     />
                   </BaseButtonIcon>
                 </div>
@@ -421,7 +421,7 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
                     >
                       <img
                         :src="tool.logo"
-                        class="h-8 w-8"
+                        class="size-8"
                         alt=""
                       >
                       <div>

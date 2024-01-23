@@ -85,7 +85,7 @@ const mainClass = computed(() => {
               as="h1"
               size="lg"
               weight="light"
-              class="text-muted-800 hidden dark:text-white md:block"
+              class="text-muted-800 hidden md:block dark:text-white"
             >
               <slot name="title">
                 {{ route.meta.title }}
@@ -100,7 +100,7 @@ const mainClass = computed(() => {
             />
             <div class="flex items-center justify-center md:hidden">
               <button type="button" @click="isMobileOpen = true">
-                <Icon name="lucide:menu" class="text-muted-400 h-6 w-6" />
+                <Icon name="lucide:menu" class="text-muted-400 size-6" />
               </button>
             </div>
           </div>

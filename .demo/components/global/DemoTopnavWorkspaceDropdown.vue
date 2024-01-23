@@ -56,7 +56,7 @@ function setWorkspace(workspace: any) {
         </div>
         <Icon
           name="lucide:chevrons-up-down"
-          class="text-muted-400 ms-auto h-4 w-4 transition-transform duration-300"
+          class="text-muted-400 ms-auto size-4 transition-transform duration-300"
           :class="open && 'rotate-180'"
         />
       </span>
@@ -121,7 +121,7 @@ function setWorkspace(workspace: any) {
                       <Icon
                         v-if="selectedWorkspace === workspace"
                         name="lucide:check"
-                        class="text-primary-500 ms-auto h-4 w-4"
+                        class="text-primary-500 ms-auto size-4"
                       />
                     </button>
                   </li>
@@ -129,7 +129,7 @@ function setWorkspace(workspace: any) {
               </div>
               <div class="mt-auto">
                 <BaseButton rounded="md" class="w-full">
-                  <Icon name="lucide:plus" class="h-4 w-4" />
+                  <Icon name="lucide:plus" class="size-4" />
                   <span>Create Workspace</span>
                 </BaseButton>
               </div>
@@ -186,7 +186,7 @@ function setWorkspace(workspace: any) {
               </div>
               <div class="mt-auto">
                 <BaseButton rounded="md" class="w-full">
-                  <Icon name="lucide:plus" class="h-4 w-4" />
+                  <Icon name="lucide:plus" class="size-4" />
                   <span>Create Project</span>
                 </BaseButton>
               </div>

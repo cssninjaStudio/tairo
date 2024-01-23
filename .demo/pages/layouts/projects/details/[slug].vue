@@ -65,7 +65,7 @@ function openTaskPanel(id: number, tasks: any) {
         rounded="lg"
         :to="`/layouts/projects/board/${slug}`"
       >
-        <Icon name="ph:kanban-duotone" class="h-4 w-4" />
+        <Icon name="ph:kanban-duotone" class="size-4" />
         <span>Open Board</span>
       </BaseButton>
     </div>
@@ -85,7 +85,7 @@ function openTaskPanel(id: number, tasks: any) {
           class="sm:hidden"
         >
           <template #start>
-            <Icon name="ph:kanban-duotone" class="me-2 block h-5 w-5" />
+            <Icon name="ph:kanban-duotone" class="me-2 block size-5" />
           </template>
         </BaseDropdownItem>
         <BaseDropdownDivider />
@@ -95,7 +95,7 @@ function openTaskPanel(id: number, tasks: any) {
           text="Edit this project"
         >
           <template #start>
-            <Icon name="ph:pencil-duotone" class="me-2 block h-5 w-5" />
+            <Icon name="ph:pencil-duotone" class="me-2 block size-5" />
           </template>
         </BaseDropdownItem>
         <BaseDropdownDivider />
@@ -105,7 +105,7 @@ function openTaskPanel(id: number, tasks: any) {
           text="Manage permissions"
         >
           <template #start>
-            <Icon name="ph:lock-duotone" class="me-2 block h-5 w-5" />
+            <Icon name="ph:lock-duotone" class="me-2 block size-5" />
           </template>
         </BaseDropdownItem>
         <BaseDropdownItem
@@ -114,7 +114,7 @@ function openTaskPanel(id: number, tasks: any) {
           text="Manage files"
         >
           <template #start>
-            <Icon name="ph:file-duotone" class="me-2 block h-5 w-5" />
+            <Icon name="ph:file-duotone" class="me-2 block size-5" />
           </template>
         </BaseDropdownItem>
         <BaseDropdownDivider />
@@ -124,7 +124,7 @@ function openTaskPanel(id: number, tasks: any) {
           text="Delete this project"
         >
           <template #start>
-            <Icon name="ph:trash-duotone" class="me-2 block h-5 w-5" />
+            <Icon name="ph:trash-duotone" class="me-2 block size-5" />
           </template>
         </BaseDropdownItem>
       </BaseDropdown>
@@ -231,7 +231,7 @@ function openTaskPanel(id: number, tasks: any) {
                     <div>
                       <Icon
                         name="ph:pen-nib-duotone"
-                        class="text-primary-500 mb-2 h-6 w-6"
+                        class="text-primary-500 mb-2 size-6"
                       />
                       <div>
                         <BaseHeading
@@ -254,7 +254,7 @@ function openTaskPanel(id: number, tasks: any) {
                     <div>
                       <Icon
                         name="ph:timer-duotone"
-                        class="text-primary-500 mb-2 h-6 w-6"
+                        class="text-primary-500 mb-2 size-6"
                       />
                       <div>
                         <BaseHeading
@@ -277,7 +277,7 @@ function openTaskPanel(id: number, tasks: any) {
                     <div>
                       <Icon
                         name="ph:calendar-blank-duotone"
-                        class="text-primary-500 mb-2 h-6 w-6"
+                        class="text-primary-500 mb-2 size-6"
                       />
                       <div>
                         <BaseHeading
@@ -300,7 +300,7 @@ function openTaskPanel(id: number, tasks: any) {
                     <div>
                       <Icon
                         name="ph:sketch-logo-duotone"
-                        class="text-primary-500 mb-2 h-6 w-6"
+                        class="text-primary-500 mb-2 size-6"
                       />
                       <div>
                         <BaseHeading
@@ -577,7 +577,7 @@ function openTaskPanel(id: number, tasks: any) {
               <div>
                 <button
                   type="button"
-                  class="border-muted-300 dark:border-muted-800 hover:border-primary-500 dark:hover:border-primary-500 group flex h-full w-full items-center justify-center gap-2 rounded-lg border-2 border-dashed p-6 transition-colors duration-300"
+                  class="border-muted-300 dark:border-muted-800 hover:border-primary-500 dark:hover:border-primary-500 group flex size-full items-center justify-center gap-2 rounded-lg border-2 border-dashed p-6 transition-colors duration-300"
                 >
                   <span class="block text-center font-sans">
                     <span
@@ -608,22 +608,22 @@ function openTaskPanel(id: number, tasks: any) {
                     <Icon
                       v-if="item.status === 0"
                       name="ph:plus-circle-duotone"
-                      class="text-muted-400 h-6 w-6 shrink-0"
+                      class="text-muted-400 size-6 shrink-0"
                     />
                     <Icon
                       v-else-if="item.status === 5"
                       name="ph:check-circle-duotone"
-                      class="text-success-500 h-6 w-6 shrink-0"
+                      class="text-success-500 size-6 shrink-0"
                     />
                     <Icon
                       v-else-if="item.status === 1"
                       name="ph:timer-duotone"
-                      class="text-muted-400 h-6 w-6 shrink-0"
+                      class="text-muted-400 size-6 shrink-0"
                     />
                     <Icon
                       v-else-if="item.status === 2 || item.status === 3"
                       name="ph:warning-duotone"
-                      class="text-warning-500 h-6 w-6 shrink-0"
+                      class="text-warning-500 size-6 shrink-0"
                     />
                     <div class="text-center leading-none sm:text-left">
                       <h4
@@ -654,13 +654,13 @@ function openTaskPanel(id: number, tasks: any) {
                   </div>
                   <div class="text-muted-400 flex items-center gap-4">
                     <div class="flex items-center gap-1 text-sm">
-                      <Icon name="ph:paperclip-duotone" class="h-4 w-4" />
+                      <Icon name="ph:paperclip-duotone" class="size-4" />
                       <span class="font-sans">
                         {{ item.files.length }}
                       </span>
                     </div>
                     <div class="flex items-center gap-1 text-sm">
-                      <Icon name="ph:chat-circle-duotone" class="h-4 w-4" />
+                      <Icon name="ph:chat-circle-duotone" class="size-4" />
                       <span class="font-sans">
                         {{ item.comments.length }}
                       </span>
@@ -672,7 +672,7 @@ function openTaskPanel(id: number, tasks: any) {
               <div>
                 <button
                   type="button"
-                  class="border-muted-300 dark:border-muted-800 hover:border-primary-500 dark:hover:border-primary-500 group flex h-full w-full items-center justify-center gap-2 rounded-lg border-2 border-dashed p-6 transition-colors duration-300"
+                  class="border-muted-300 dark:border-muted-800 hover:border-primary-500 dark:hover:border-primary-500 group flex size-full items-center justify-center gap-2 rounded-lg border-2 border-dashed p-6 transition-colors duration-300"
                 >
                   <span class="block text-center font-sans">
                     <span

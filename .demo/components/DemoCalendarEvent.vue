@@ -21,11 +21,11 @@ const emits = defineEmits<{
   <div class="relative flex h-full gap-[1px] p-1">
     <div
       role="button"
-      class="dnd-drag-handler hover:bg-muted-100 dark:hover:bg-muted-900 m-[1px] flex h-6 w-6 shrink-0 cursor-grab items-center justify-center rounded-full text-sm transition-colors duration-75"
+      class="dnd-drag-handler hover:bg-muted-100 dark:hover:bg-muted-900 m-[1px] flex size-6 shrink-0 cursor-grab items-center justify-center rounded-full text-sm transition-colors duration-75"
     >
       <Icon
         name="ph:dots-six-vertical"
-        class="text-muted-500 dark:text-muted-200 h-4 w-4"
+        class="text-muted-500 dark:text-muted-200 size-4"
         @pointerdown="(e: MouseEvent | TouchEvent) => emits('positiondrag', e)"
       />
     </div>
@@ -67,33 +67,33 @@ const emits = defineEmits<{
             class="text-muted-400"
             data-nui-tooltip="Recorded"
           >
-            <Icon name="ph:monitor-play-duotone" class="h-4 w-4" />
+            <Icon name="ph:monitor-play-duotone" class="size-4" />
           </span>
           <span
             v-if="event.customData.features?.drive"
             class="text-muted-400"
             data-nui-tooltip="Document joined"
           >
-            <Icon name="ph:note-duotone" class="h-4 w-4" />
+            <Icon name="ph:note-duotone" class="size-4" />
           </span>
           <span
             v-if="event.customData.features?.external"
             class="text-muted-400"
             data-nui-tooltip="External Users"
           >
-            <Icon name="ph:lock-open-duotone" class="h-4 w-4" />
+            <Icon name="ph:lock-open-duotone" class="size-4" />
           </span>
           <span
             v-if="event.customData.features?.conversation"
             class="text-muted-400"
             data-nui-tooltip="Has comments"
           >
-            <Icon name="ph:chats-circle-duotone" class="h-4 w-4" />
+            <Icon name="ph:chats-circle-duotone" class="size-4" />
           </span>
         </div>
         <div>
           <div
-            class="h-2 w-2 rounded-full"
+            class="size-2 rounded-full"
             :class="[categoryTheme[event.customData.category].color]"
             :data-nui-tooltip="categoryTheme[event.customData.category].name"
             data-nui-tooltip-position="start"

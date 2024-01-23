@@ -318,7 +318,7 @@ function useBarProfit() {
                 rounded="full"
                 color="none"
               >
-                <Icon name="ph:nut-duotone" class="h-5 w-5" />
+                <Icon name="ph:nut-duotone" class="size-5" />
               </BaseIconBox>
               <div>
                 <BaseHeading
@@ -347,7 +347,7 @@ function useBarProfit() {
                 rounded="full"
                 color="none"
               >
-                <Icon name="ph:handshake-duotone" class="h-5 w-5" />
+                <Icon name="ph:handshake-duotone" class="size-5" />
               </BaseIconBox>
               <div>
                 <BaseHeading
@@ -376,7 +376,7 @@ function useBarProfit() {
                 rounded="full"
                 color="none"
               >
-                <Icon name="ph:sketch-logo-duotone" class="h-5 w-5" />
+                <Icon name="ph:sketch-logo-duotone" class="size-5" />
               </BaseIconBox>
               <div>
                 <BaseHeading
@@ -405,7 +405,7 @@ function useBarProfit() {
                 rounded="full"
                 color="none"
               >
-                <Icon name="ph:bank-duotone" class="h-5 w-5" />
+                <Icon name="ph:bank-duotone" class="size-5" />
               </BaseIconBox>
               <div>
                 <BaseHeading
@@ -475,11 +475,11 @@ function useBarProfit() {
             </NuxtLink>
           </div>
           <div
-            class="absolute bottom-4 end-4 z-10 flex h-14 w-14 items-center justify-center"
+            class="absolute bottom-4 end-4 z-10 flex size-14 items-center justify-center"
           >
             <Icon
               name="ph:crown-duotone"
-              class="text-primary-900/50 h-14 w-14"
+              class="text-primary-900/50 size-14"
             />
           </div>
         </BaseCard>

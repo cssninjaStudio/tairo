@@ -75,7 +75,7 @@ const roles = [
         to="/"
         class="text-muted-400 hover:text-primary-500 dark:text-muted-700 dark:hover:text-primary-500 transition-colors duration-300"
       >
-        <TairoLogo class="h-10 w-10" />
+        <TairoLogo class="size-10" />
       </NuxtLink>
       <div class="flex items-center gap-4">
         <BaseThemeToggle />
@@ -116,17 +116,17 @@ const roles = [
                       v-model="roleType"
                       :name="`role-${role.id}`"
                       :value="role.id"
-                      class="h-full w-full"
+                      class="size-full"
                     >
                       <div
-                        class="relative mx-auto flex h-20 w-20 items-center justify-center grayscale transition-all duration-200 peer-checked:grayscale-0 peer-checked:[&_.child]:opacity-100"
+                        class="relative mx-auto flex size-20 items-center justify-center grayscale transition-all duration-200 peer-checked:grayscale-0 peer-checked:[&_.child]:opacity-100"
                       >
                         <div
-                          class="child dark:bg-muted-900 absolute end-0 top-0 z-20 flex h-6 w-6 items-center justify-center rounded-full bg-white opacity-0"
+                          class="child dark:bg-muted-900 absolute end-0 top-0 z-20 flex size-6 items-center justify-center rounded-full bg-white opacity-0"
                         >
                           <Icon
                             name="ph:check-circle-duotone"
-                            class="text-primary-500 h-6 w-6"
+                            class="text-primary-500 size-6"
                           />
                         </div>
                         <BaseAvatar

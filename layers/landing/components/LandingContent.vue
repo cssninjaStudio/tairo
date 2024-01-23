@@ -194,7 +194,7 @@
             class="!h-11 w-48"
             to="https://go.cssninja.io/buy-tairo"
           >
-            <Icon name="cib:envato" class="h-4 w-4" />
+            <Icon name="cib:envato" class="size-4" />
             <span>Purchase Tairo</span>
           </BaseButton>
         </div>

@@ -136,7 +136,7 @@ function openTaskPanel(id: number, tasks: any) {
 function onDrop(column: ColumnContent, dropResult: any) {
   if (
     typeof dropResult?.addedIndex !== 'number'
-      || typeof dropResult?.removedIndex !== 'number'
+    || typeof dropResult?.removedIndex !== 'number'
   ) {
     return
   }
@@ -186,10 +186,10 @@ function onDrop(column: ColumnContent, dropResult: any) {
           rounded="lg"
           data-nui-tooltip="Project details"
         >
-          <Icon name="lucide:layout-template" class="h-4 w-4" />
+          <Icon name="lucide:layout-template" class="size-4" />
         </BaseButtonIcon>
         <BaseButtonIcon rounded="full" data-nui-tooltip="New task">
-          <Icon name="lucide:plus" class="h-4 w-4" />
+          <Icon name="lucide:plus" class="size-4" />
         </BaseButtonIcon>
       </div>
     </div>
@@ -208,13 +208,13 @@ function onDrop(column: ColumnContent, dropResult: any) {
           }}</span>
           <!-- Column count -->
           <span
-            class="text-primary-500 dark:text-sunny ms-2 flex h-5 w-5 items-center justify-center text-sm font-semibold"
+            class="text-primary-500 dark:text-sunny ms-2 flex size-5 items-center justify-center text-sm font-semibold"
           >{{ column.tasks.length }}</span>
           <!-- Column action -->
           <button
-            class="text-primary-500 dark:text-sunny hover:bg-primary-500/20 dark:hover:bg-sunny/20 ms-auto flex h-6 w-6 items-center justify-center rounded-full transition-colors duration-300"
+            class="text-primary-500 dark:text-sunny hover:bg-primary-500/20 dark:hover:bg-sunny/20 ms-auto flex size-6 items-center justify-center rounded-full transition-colors duration-300"
           >
-            <Icon name="lucide:plus" class="h-4 w-4" />
+            <Icon name="lucide:plus" class="size-4" />
           </button>
         </div>
         <!-- Scrollable area -->
@@ -292,7 +292,7 @@ function onDrop(column: ColumnContent, dropResult: any) {
                         } in checklist`"
                         data-nui-tooltip-position="start"
                       >
-                        <Icon name="lucide:check-circle" class="h-4 w-4" />
+                        <Icon name="lucide:check-circle" class="size-4" />
                       </div>
                       <div
                         v-if="task.files.length > 0"
@@ -301,7 +301,7 @@ function onDrop(column: ColumnContent, dropResult: any) {
                         } uploaded`"
                         data-nui-tooltip-position="start"
                       >
-                        <Icon name="lucide:file" class="h-4 w-4" />
+                        <Icon name="lucide:file" class="size-4" />
                       </div>
                       <div
                         v-if="task.comments.length > 0"
@@ -310,7 +310,7 @@ function onDrop(column: ColumnContent, dropResult: any) {
                         }`"
                         data-nui-tooltip-position="start"
                       >
-                        <Icon name="lucide:message-circle" class="h-4 w-4" />
+                        <Icon name="lucide:message-circle" class="size-4" />
                       </div>
                     </div>
                   </div>
@@ -322,7 +322,7 @@ function onDrop(column: ColumnContent, dropResult: any) {
               <div
                 class="text-muted-400 mt-10 flex items-center justify-center"
               >
-                <Icon name="ph:kanban-thin" class="h-12 w-12" />
+                <Icon name="ph:kanban-thin" class="size-12" />
               </div>
               <div class="mt-2 text-center">
                 <BaseHeading
@@ -343,7 +343,7 @@ function onDrop(column: ColumnContent, dropResult: any) {
                 <button
                   class="text-primary-500 dark:text-sunny mx-auto mt-2 flex items-center justify-center gap-1 font-sans text-xs underline-offset-4 hover:underline"
                 >
-                  <Icon name="lucide:plus" class="h-3 w-3" />
+                  <Icon name="lucide:plus" class="size-3" />
                   <span>New Task</span>
                 </button>
               </div>
@@ -363,7 +363,7 @@ function onDrop(column: ColumnContent, dropResult: any) {
           <button
             class="text-muted-500 dark:text-muted-400 hover:text-primary-500 dark:hover:text-sunny border-muted-300 dark:border-muted-600 hover:border-primary-500 dark:hover:border-sunny flex h-12 w-full items-center justify-center gap-x-2 rounded-xl border-2 border-dashed px-6 font-sans transition-colors duration-300 hover:border-solid"
           >
-            <Icon name="ph:gear-six-duotone" class="h-4 w-4" />
+            <Icon name="ph:gear-six-duotone" class="size-4" />
             <span class="text-sm">Manage columns</span>
           </button>
         </div>

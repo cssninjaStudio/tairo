@@ -12,9 +12,9 @@
           <button
             type="button"
             data-nui-tooltip="Save"
-            class="text-muted-400 hover:text-primary-500 absolute end-0 top-0 z-[1] flex h-8 w-8 items-center justify-center transition-colors duration-300"
+            class="text-muted-400 hover:text-primary-500 absolute end-0 top-0 z-[1] flex size-8 items-center justify-center transition-colors duration-300"
           >
-            <Icon name="lucide:save" class="h-4 w-4" />
+            <Icon name="lucide:save" class="size-4" />
           </button>
         </template>
       </BaseInput>
@@ -32,9 +32,9 @@
           <button
             type="button"
             data-nui-tooltip="Save"
-            class="text-muted-400 hover:text-primary-500 absolute end-0 top-0 z-[1] flex h-10 w-10 items-center justify-center transition-colors duration-300"
+            class="text-muted-400 hover:text-primary-500 absolute end-0 top-0 z-[1] flex size-10 items-center justify-center transition-colors duration-300"
           >
-            <Icon name="lucide:save" class="h-4 w-4" />
+            <Icon name="lucide:save" class="size-4" />
           </button>
         </template>
       </BaseInput>
@@ -52,9 +52,9 @@
           <button
             type="button"
             data-nui-tooltip="Save"
-            class="text-muted-400 hover:text-primary-500 absolute end-0 top-0 z-[1] flex h-12 w-12 items-center justify-center transition-colors duration-300"
+            class="text-muted-400 hover:text-primary-500 absolute end-0 top-0 z-[1] flex size-12 items-center justify-center transition-colors duration-300"
           >
-            <Icon name="lucide:save" class="h-5 w-5" />
+            <Icon name="lucide:save" class="size-5" />
           </button>
         </template>
       </BaseInput>

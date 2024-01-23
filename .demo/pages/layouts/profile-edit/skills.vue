@@ -96,12 +96,12 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 class="flex w-full items-center gap-2"
               >
                 <div
-                  class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 relative flex h-[50px] w-[50px] shrink-0 items-center justify-center rounded-full border bg-white"
+                  class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 relative flex size-[50px] shrink-0 items-center justify-center rounded-full border bg-white"
                 >
                   <img
                     :src="item.icon"
                     :alt="item.name"
-                    class="h-8 w-8 rounded-full"
+                    class="size-8 rounded-full"
                   >
                   <BaseProgressCircle
                     :size="68"
@@ -140,7 +140,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                       <template #start>
                         <Icon
                           name="ph:pencil-duotone"
-                          class="me-2 block h-5 w-5"
+                          class="me-2 block size-5"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -152,7 +152,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                       <template #start>
                         <Icon
                           name="ph:trash-duotone"
-                          class="me-2 block h-5 w-5"
+                          class="me-2 block size-5"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -164,9 +164,9 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
               class="border-muted-200 dark:border-muted-700 mt-8 flex w-full items-center gap-2 border-t pt-8"
             >
               <div
-                class="bg-muted-100 dark:bg-muted-700/60 text-muted-400 flex h-[50px] w-[50px] items-center justify-center rounded-full"
+                class="bg-muted-100 dark:bg-muted-700/60 text-muted-400 flex size-[50px] items-center justify-center rounded-full"
               >
-                <Icon name="ph:book-open-duotone" class="h-5 w-5" />
+                <Icon name="ph:book-open-duotone" class="size-5" />
               </div>
               <div>
                 <BaseHeading
@@ -182,7 +182,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
               </div>
               <div class="ms-auto">
                 <BaseButtonIcon rounded="full" size="sm">
-                  <Icon name="lucide:plus" class="h-4 w-4" />
+                  <Icon name="lucide:plus" class="size-4" />
                 </BaseButtonIcon>
               </div>
             </div>
@@ -218,18 +218,18 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 class="flex w-full items-center gap-2"
               >
                 <div
-                  class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 relative flex h-[50px] w-[50px] shrink-0 items-center justify-center rounded-full border bg-white"
+                  class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 relative flex size-[50px] shrink-0 items-center justify-center rounded-full border bg-white"
                 >
                   <img
                     v-if="'logo' in item"
                     :src="item.logo"
                     :alt="item.name"
-                    class="h-8 w-8 rounded-full"
+                    class="size-8 rounded-full"
                   >
                   <Icon
                     v-else
                     :name="item.icon"
-                    class="text-muted-400 h-6 w-6"
+                    class="text-muted-400 size-6"
                   />
                   <BaseProgressCircle
                     :size="68"
@@ -268,7 +268,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                       <template #start>
                         <Icon
                           name="ph:pencil-duotone"
-                          class="me-2 block h-5 w-5"
+                          class="me-2 block size-5"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -280,7 +280,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                       <template #start>
                         <Icon
                           name="ph:trash-duotone"
-                          class="me-2 block h-5 w-5"
+                          class="me-2 block size-5"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -292,9 +292,9 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
               class="border-muted-200 dark:border-muted-700 mt-8 flex w-full items-center gap-2 border-t pt-8"
             >
               <div
-                class="bg-muted-100 dark:bg-muted-700/60 text-muted-400 flex h-[50px] w-[50px] items-center justify-center rounded-full"
+                class="bg-muted-100 dark:bg-muted-700/60 text-muted-400 flex size-[50px] items-center justify-center rounded-full"
               >
-                <Icon name="ph:sparkle-duotone" class="h-5 w-5" />
+                <Icon name="ph:sparkle-duotone" class="size-5" />
               </div>
               <div>
                 <BaseHeading
@@ -310,7 +310,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
               </div>
               <div class="ms-auto">
                 <BaseButtonIcon rounded="full" size="sm">
-                  <Icon name="lucide:plus" class="h-4 w-4" />
+                  <Icon name="lucide:plus" class="size-4" />
                 </BaseButtonIcon>
               </div>
             </div>
@@ -346,12 +346,12 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 class="flex w-full items-center gap-2"
               >
                 <div
-                  class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 relative flex h-[50px] w-[50px] shrink-0 items-center justify-center rounded-full border bg-white"
+                  class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 relative flex size-[50px] shrink-0 items-center justify-center rounded-full border bg-white"
                 >
                   <img
                     :src="item.logo"
                     :alt="item.name"
-                    class="h-8 w-8 rounded-full"
+                    class="size-8 rounded-full"
                   >
                   <BaseProgressCircle
                     :size="68"
@@ -390,7 +390,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                       <template #start>
                         <Icon
                           name="ph:pencil-duotone"
-                          class="me-2 block h-5 w-5"
+                          class="me-2 block size-5"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -402,7 +402,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                       <template #start>
                         <Icon
                           name="ph:trash-duotone"
-                          class="me-2 block h-5 w-5"
+                          class="me-2 block size-5"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -414,9 +414,9 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
               class="border-muted-200 dark:border-muted-700 mt-8 flex w-full items-center gap-2 border-t pt-8"
             >
               <div
-                class="bg-muted-100 dark:bg-muted-700/60 text-muted-400 flex h-[50px] w-[50px] items-center justify-center rounded-full"
+                class="bg-muted-100 dark:bg-muted-700/60 text-muted-400 flex size-[50px] items-center justify-center rounded-full"
               >
-                <Icon name="ph:wrench-duotone" class="h-5 w-5" />
+                <Icon name="ph:wrench-duotone" class="size-5" />
               </div>
               <div>
                 <BaseHeading
@@ -432,7 +432,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
               </div>
               <div class="ms-auto">
                 <BaseButtonIcon rounded="full" size="sm">
-                  <Icon name="lucide:plus" class="h-4 w-4" />
+                  <Icon name="lucide:plus" class="size-4" />
                 </BaseButtonIcon>
               </div>
             </div>

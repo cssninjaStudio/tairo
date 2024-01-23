@@ -7,10 +7,10 @@ const { isOpen, toggle } = useSidebar()
 <template>
   <button
     type="button"
-    class="flex h-10 w-10 items-center justify-center"
+    class="flex size-10 items-center justify-center"
     @click="toggle"
   >
-    <div class="relative h-5 w-5" :class="isOpen ? 'scale-90' : ''">
+    <div class="relative size-5" :class="isOpen ? 'scale-90' : ''">
       <span
         class="bg-primary-500 absolute block h-0.5 w-full transition-all duration-300"
         :class="

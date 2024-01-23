@@ -786,7 +786,7 @@ function useBarOrders() {
             </BaseHeading>
             <Icon
               name="ph:shopping-cart-duotone"
-              class="text-primary-500 h-7 w-7"
+              class="text-primary-500 size-7"
             />
           </div>
           <div class="flex items-center justify-between gap-6 pt-4">
@@ -816,7 +816,7 @@ function useBarOrders() {
             >
               <span>Income</span>
             </BaseHeading>
-            <Icon name="ph:money-duotone" class="text-success-500 h-7 w-7" />
+            <Icon name="ph:money-duotone" class="text-success-500 size-7" />
           </div>
           <div class="flex items-center justify-between gap-6 pt-4">
             <div class="grow">
@@ -845,7 +845,7 @@ function useBarOrders() {
             >
               <span>Orders</span>
             </BaseHeading>
-            <Icon name="ph:package-duotone" class="text-info-500 h-7 w-7" />
+            <Icon name="ph:package-duotone" class="text-info-500 size-7" />
           </div>
           <div class="flex items-center justify-between gap-6 pt-4">
             <div class="grow">
@@ -874,7 +874,7 @@ function useBarOrders() {
             >
               <span>Abandonned</span>
             </BaseHeading>
-            <Icon name="ph:timer-duotone" class="text-danger-500 h-7 w-7" />
+            <Icon name="ph:timer-duotone" class="text-danger-500 size-7" />
           </div>
           <div class="flex items-center justify-between gap-6 pt-4">
             <div class="grow">

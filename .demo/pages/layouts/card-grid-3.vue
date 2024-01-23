@@ -65,7 +65,7 @@ const { data, pending, error, refresh } = await useFetch(
           color="primary"
           class="w-full sm:w-32"
         >
-          <Icon name="lucide:plus" class="h-4 w-4" />
+          <Icon name="lucide:plus" class="size-4" />
           <span>Create</span>
         </BaseButton>
       </template>
@@ -127,7 +127,7 @@ const { data, pending, error, refresh } = await useFetch(
                     <div
                       class="text-muted-400 flex items-center justify-center gap-1"
                     >
-                      <Icon name="ph:calendar-blank-duotone" class="h-4 w-4" />
+                      <Icon name="ph:calendar-blank-duotone" class="size-4" />
                       <p class="font-sans text-sm">
                         {{ item.dueDate }}
                       </p>

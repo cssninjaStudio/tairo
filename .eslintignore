@@ -3,4 +3,4 @@
 
 public
 *.md
-.nuxt
+dist

@@ -127,7 +127,7 @@ const amount = ref<number>(0)
               <span>My Cards</span>
             </BaseHeading>
             <BaseButtonIcon rounded="full" small>
-              <Icon name="lucide:plus" class="h-3 w-3" />
+              <Icon name="lucide:plus" class="size-3" />
             </BaseButtonIcon>
           </div>
           <div class="mb-8 flex items-center gap-4 px-6">
@@ -160,7 +160,7 @@ const amount = ref<number>(0)
                   text="Buys more stocks"
                 >
                   <template #start>
-                    <Icon name="ph:coin-duotone" class="me-2 block h-5 w-5" />
+                    <Icon name="ph:coin-duotone" class="me-2 block size-5" />
                   </template>
                 </BaseDropdownItem>
                 <BaseDropdownItem
@@ -171,7 +171,7 @@ const amount = ref<number>(0)
                   <template #start>
                     <Icon
                       name="ph:cell-signal-medium-duotone"
-                      class="me-2 block h-5 w-5"
+                      class="me-2 block size-5"
                     />
                   </template>
                 </BaseDropdownItem>
@@ -181,7 +181,7 @@ const amount = ref<number>(0)
                   text="View opportunities"
                 >
                   <template #start>
-                    <Icon name="ph:bank-duotone" class="me-2 block h-5 w-5" />
+                    <Icon name="ph:bank-duotone" class="me-2 block size-5" />
                   </template>
                 </BaseDropdownItem>
                 <BaseDropdownDivider />
@@ -191,7 +191,7 @@ const amount = ref<number>(0)
                   text="Manage your wallet"
                 >
                   <template #start>
-                    <Icon name="ph:wallet-duotone" class="me-2 block h-5 w-5" />
+                    <Icon name="ph:wallet-duotone" class="me-2 block size-5" />
                   </template>
                 </BaseDropdownItem>
               </BaseDropdown>
@@ -228,7 +228,7 @@ const amount = ref<number>(0)
                 <span>Status</span>
               </BaseHeading>
               <div class="flex items-center gap-1">
-                <span class="block h-2 w-2 rounded-full bg-emerald-500" />
+                <span class="block size-2 rounded-full bg-emerald-500" />
                 <p class="text-muted-400 font-sans text-sm">
                   Active
                 </p>
@@ -261,7 +261,7 @@ const amount = ref<number>(0)
                 <span>Type</span>
               </BaseHeading>
               <div class="flex items-center gap-1">
-                <Icon name="cib:visa" class="text-muted-400 h-10 w-10" />
+                <Icon name="cib:visa" class="text-muted-400 size-10" />
                 <p class="text-muted-400 font-sans text-xs">
                   Credit Card
                 </p>
@@ -298,7 +298,7 @@ const amount = ref<number>(0)
                   text="Buys more stocks"
                 >
                   <template #start>
-                    <Icon name="ph:coin-duotone" class="me-2 block h-5 w-5" />
+                    <Icon name="ph:coin-duotone" class="me-2 block size-5" />
                   </template>
                 </BaseDropdownItem>
                 <BaseDropdownItem
@@ -309,7 +309,7 @@ const amount = ref<number>(0)
                   <template #start>
                     <Icon
                       name="ph:cell-signal-medium-duotone"
-                      class="me-2 block h-5 w-5"
+                      class="me-2 block size-5"
                     />
                   </template>
                 </BaseDropdownItem>
@@ -319,7 +319,7 @@ const amount = ref<number>(0)
                   text="View opportunities"
                 >
                   <template #start>
-                    <Icon name="ph:bank-duotone" class="me-2 block h-5 w-5" />
+                    <Icon name="ph:bank-duotone" class="me-2 block size-5" />
                   </template>
                 </BaseDropdownItem>
                 <BaseDropdownDivider />
@@ -329,7 +329,7 @@ const amount = ref<number>(0)
                   text="Manage your wallet"
                 >
                   <template #start>
-                    <Icon name="ph:wallet-duotone" class="me-2 block h-5 w-5" />
+                    <Icon name="ph:wallet-duotone" class="me-2 block size-5" />
                   </template>
                 </BaseDropdownItem>
               </BaseDropdown>
@@ -366,7 +366,7 @@ const amount = ref<number>(0)
                 rounded="full"
                 color="none"
               >
-                <Icon name="ph:pizza-duotone" class="h-5 w-5" />
+                <Icon name="ph:pizza-duotone" class="size-5" />
               </BaseIconBox>
               <div>
                 <BaseHeading
@@ -398,7 +398,7 @@ const amount = ref<number>(0)
                 rounded="full"
                 color="none"
               >
-                <Icon name="ph:storefront-duotone" class="h-5 w-5" />
+                <Icon name="ph:storefront-duotone" class="size-5" />
               </BaseIconBox>
               <div>
                 <BaseHeading
@@ -430,7 +430,7 @@ const amount = ref<number>(0)
                 rounded="full"
                 color="none"
               >
-                <Icon name="ph:shopping-cart-duotone" class="h-5 w-5" />
+                <Icon name="ph:shopping-cart-duotone" class="size-5" />
               </BaseIconBox>
               <div>
                 <BaseHeading

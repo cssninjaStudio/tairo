@@ -7,7 +7,6 @@
   "[markdown]": {
     "editor.rulers": [80]
   },
-  "eslint.lintTask.options": "-c .eslintrc.cjs .",
   "eslint.validate": [
     "javascript",
     "javascriptreact",
@@ -18,8 +17,5 @@
   "tailwindCSS.experimental.configFile": ".demo/tailwind.config.ts",
   "typescript.tsdk": "node_modules/typescript/lib",
   "prettier.enable": false,
-  "vue.codeActions.enabled": false,
-  "[vue]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  }
+  "vue.codeActions.enabled": false
 }

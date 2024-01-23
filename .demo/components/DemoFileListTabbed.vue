@@ -103,7 +103,7 @@ const savedFiles = [
           >
             <img
               :src="file.icon"
-              class="h-10 w-10"
+              class="size-10"
               :alt="file.name"
             >
             <div>
@@ -137,7 +137,7 @@ const savedFiles = [
                   <template #start>
                     <Icon
                       name="ph:cloud-arrow-down-duotone"
-                      class="me-2 block h-5 w-5"
+                      class="me-2 block size-5"
                     />
                   </template>
                 </BaseDropdownItem>
@@ -149,7 +149,7 @@ const savedFiles = [
                   <template #start>
                     <Icon
                       name="ph:cloud-arrow-up-duotone"
-                      class="me-2 block h-5 w-5"
+                      class="me-2 block size-5"
                     />
                   </template>
                 </BaseDropdownItem>
@@ -160,7 +160,7 @@ const savedFiles = [
                   text="Manage permissions"
                 >
                   <template #start>
-                    <Icon name="ph:lock-duotone" class="me-2 block h-5 w-5" />
+                    <Icon name="ph:lock-duotone" class="me-2 block size-5" />
                   </template>
                 </BaseDropdownItem>
                 <BaseDropdownItem
@@ -169,7 +169,7 @@ const savedFiles = [
                   text="Share this file"
                 >
                   <template #start>
-                    <Icon name="ph:share-duotone" class="me-2 block h-5 w-5" />
+                    <Icon name="ph:share-duotone" class="me-2 block size-5" />
                   </template>
                 </BaseDropdownItem>
                 <BaseDropdownDivider />
@@ -179,7 +179,7 @@ const savedFiles = [
                   text="Delete this file"
                 >
                   <template #start>
-                    <Icon name="ph:trash-duotone" class="me-2 block h-5 w-5" />
+                    <Icon name="ph:trash-duotone" class="me-2 block size-5" />
                   </template>
                 </BaseDropdownItem>
               </BaseDropdown>
@@ -196,7 +196,7 @@ const savedFiles = [
           >
             <img
               :src="file.icon"
-              class="h-10 w-10"
+              class="size-10"
               :alt="file.name"
             >
             <div>
@@ -230,7 +230,7 @@ const savedFiles = [
                   <template #start>
                     <Icon
                       name="ph:cloud-arrow-down-duotone"
-                      class="me-2 block h-5 w-5"
+                      class="me-2 block size-5"
                     />
                   </template>
                 </BaseDropdownItem>
@@ -242,7 +242,7 @@ const savedFiles = [
                   <template #start>
                     <Icon
                       name="ph:cloud-arrow-up-duotone"
-                      class="me-2 block h-5 w-5"
+                      class="me-2 block size-5"
                     />
                   </template>
                 </BaseDropdownItem>
@@ -253,7 +253,7 @@ const savedFiles = [
                   text="Manage permissions"
                 >
                   <template #start>
-                    <Icon name="ph:lock-duotone" class="me-2 block h-5 w-5" />
+                    <Icon name="ph:lock-duotone" class="me-2 block size-5" />
                   </template>
                 </BaseDropdownItem>
                 <BaseDropdownItem
@@ -262,7 +262,7 @@ const savedFiles = [
                   text="Share this file"
                 >
                   <template #start>
-                    <Icon name="ph:share-duotone" class="me-2 block h-5 w-5" />
+                    <Icon name="ph:share-duotone" class="me-2 block size-5" />
                   </template>
                 </BaseDropdownItem>
                 <BaseDropdownDivider />
@@ -272,7 +272,7 @@ const savedFiles = [
                   text="Delete this file"
                 >
                   <template #start>
-                    <Icon name="ph:trash-duotone" class="me-2 block h-5 w-5" />
+                    <Icon name="ph:trash-duotone" class="me-2 block size-5" />
                   </template>
                 </BaseDropdownItem>
               </BaseDropdown>

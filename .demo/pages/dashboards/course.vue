@@ -254,11 +254,11 @@ const students = [
             </BaseHeading>
             <div class="flex gap-6">
               <div class="text-muted-400 flex items-center gap-1">
-                <Icon name="ph:timer-duotone" class="h-5 w-5" />
+                <Icon name="ph:timer-duotone" class="size-5" />
                 <span class="font-sans text-sm">{{ course.duration }} min</span>
               </div>
               <div class="text-muted-400 flex items-center gap-1">
-                <Icon name="ph:chat-circle-dots-duotone" class="h-5 w-5" />
+                <Icon name="ph:chat-circle-dots-duotone" class="size-5" />
                 <span class="font-sans text-sm">
                   {{ course.comments }} comments
                 </span>
@@ -277,7 +277,7 @@ const students = [
             </BaseHeading>
             <div class="flex gap-6">
               <div class="text-muted-400 flex items-center gap-1">
-                <Icon name="ph:calendar-check-duotone" class="h-5 w-5" />
+                <Icon name="ph:calendar-check-duotone" class="size-5" />
                 <span class="font-sans text-sm">
                   {{ course.date }} — {{ course.time }}
                 </span>
@@ -327,7 +327,7 @@ const students = [
               <img
                 :src="file.icon"
                 :alt="file.name"
-                class="h-10 w-10 shrink-0"
+                class="size-10 shrink-0"
               >
               <div>
                 <BaseHeading
@@ -347,7 +347,7 @@ const students = [
               </div>
               <div class="ms-auto">
                 <BaseButtonIcon small data-nui-tooltip="Download file">
-                  <Icon name="lucide:arrow-down" class="h-4 w-4" />
+                  <Icon name="lucide:arrow-down" class="size-4" />
                 </BaseButtonIcon>
               </div>
             </div>

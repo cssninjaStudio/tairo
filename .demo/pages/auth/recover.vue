@@ -71,7 +71,7 @@ const onSubmit = handleSubmit(async (values) => {
         to="/dashboards"
         class="text-muted-400 hover:text-primary-500 dark:text-muted-700 dark:hover:text-primary-500 transition-colors duration-300"
       >
-        <TairoLogo class="h-10 w-10" />
+        <TairoLogo class="size-10" />
       </NuxtLink>
       <div>
         <BaseThemeToggle />

@@ -249,7 +249,7 @@ function switchMuted(color: (typeof mutedPresets)[number]) {
                 </BaseText>
                 <Icon
                   name="ph:check-circle-duotone"
-                  class="text-success-500 h-5 w-5 transition-opacity duration-200"
+                  class="text-success-500 size-5 transition-opacity duration-200"
                   :class="
                     activeLayoutName === layout.name
                       ? 'opacity-100'
@@ -291,7 +291,7 @@ function switchMuted(color: (typeof mutedPresets)[number]) {
                   @click="() => switchPrimary(color)"
                 >
                   <span
-                    class="block h-6 w-6 shrink-0 rounded-lg"
+                    class="block size-6 shrink-0 rounded-lg"
                     :class="color.class"
                   />
                   <BaseText size="sm">
@@ -307,7 +307,7 @@ function switchMuted(color: (typeof mutedPresets)[number]) {
                 class="group flex w-full items-center gap-3 rounded-lg p-2"
               >
                 <span
-                  class="bg-muted-200 dark:bg-muted-900 block h-6 w-6 rounded-lg"
+                  class="bg-muted-200 dark:bg-muted-900 block size-6 rounded-lg"
                 />
                 <BaseText size="sm">
                   Background shade
@@ -325,7 +325,7 @@ function switchMuted(color: (typeof mutedPresets)[number]) {
                     v-for="color in mutedPresets"
                     :key="color.name"
                     type="button"
-                    class="block h-6 w-6 rounded-full"
+                    class="block size-6 rounded-full"
                     :class="[
                       color.class,
                       currentMuted === color.name

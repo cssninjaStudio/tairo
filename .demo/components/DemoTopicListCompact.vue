@@ -53,7 +53,7 @@ const topics = [
         color="none"
         :class="getRandomColor()"
       >
-        <Icon :name="topic.icon" class="h-5 w-5" />
+        <Icon :name="topic.icon" class="size-5" />
       </BaseIconBox>
       <div>
         <BaseHeading

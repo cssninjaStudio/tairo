@@ -114,7 +114,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                       <div
                         class="text-muted-400 mt-3 flex items-center gap-1 text-left text-sm sm:mt-0"
                       >
-                        <Icon name="lucide:archive" class="h-3 w-3" />
+                        <Icon name="lucide:archive" class="size-3" />
                         <span>{{ item.category }}</span>
                       </div>
                       <div class="hidden px-2 sm:block">
@@ -123,7 +123,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                       <div
                         class="text-muted-400 mt-3 flex items-center gap-1 text-left text-sm sm:mt-0"
                       >
-                        <Icon name="lucide:clock" class="h-3 w-3" />
+                        <Icon name="lucide:clock" class="size-3" />
                         <span>{{ item.duration }}</span>
                       </div>
                       <div class="hidden px-2 sm:block">
@@ -132,7 +132,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                       <div
                         class="text-muted-400 mt-3 flex items-center gap-1 text-left text-sm sm:mt-0"
                       >
-                        <Icon name="lucide:paperclip" class="h-3 w-3" />
+                        <Icon name="lucide:paperclip" class="size-3" />
                         <span>{{ item.attachments }}</span>
                       </div>
                     </div>
@@ -168,7 +168,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                       data-nui-tooltip="Save recipe"
                       class="hidden sm:inline-flex"
                     >
-                      <Icon name="ph:heart-duotone" class="h-4 w-4" />
+                      <Icon name="ph:heart-duotone" class="size-4" />
                     </BaseButtonIcon>
                   </div>
                 </div>

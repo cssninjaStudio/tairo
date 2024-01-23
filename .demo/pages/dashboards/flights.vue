@@ -137,7 +137,7 @@ const results = [
             <div class="w-full sm:w-3/5">
               <div class="flex w-full flex-col gap-4">
                 <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
-                  <Icon name="vaadin:airplane" class="h-9 w-9 text-white" />
+                  <Icon name="vaadin:airplane" class="size-9 text-white" />
                   <div>
                     <BaseHeading
                       as="h2"
@@ -171,9 +171,9 @@ const results = [
                             v-on="inputEvents.start"
                           >
                           <div
-                            class="text-muted-100/40 peer-focus-visible:text-muted-100/80 absolute start-0 top-0 flex h-10 w-10 items-center justify-center transition-colors duration-300"
+                            class="text-muted-100/40 peer-focus-visible:text-muted-100/80 absolute start-0 top-0 flex size-10 items-center justify-center transition-colors duration-300"
                           >
-                            <Icon name="lucide:map-pin" class="h-5 w-5" />
+                            <Icon name="lucide:map-pin" class="size-5" />
                           </div>
                         </div>
                       </div>
@@ -186,9 +186,9 @@ const results = [
                             v-on="inputEvents.end"
                           >
                           <div
-                            class="text-muted-100/40 peer-focus-visible:text-muted-100/80 absolute start-0 top-0 flex h-10 w-10 items-center justify-center transition-colors duration-300"
+                            class="text-muted-100/40 peer-focus-visible:text-muted-100/80 absolute start-0 top-0 flex size-10 items-center justify-center transition-colors duration-300"
                           >
-                            <Icon name="lucide:flag" class="h-5 w-5" />
+                            <Icon name="lucide:flag" class="size-5" />
                           </div>
                         </div>
                       </div>
@@ -341,7 +341,7 @@ const results = [
                       width="32"
                       height="32"
                       viewBox="0 0 64 64"
-                      class="text-muted-400 h-10 w-10"
+                      class="text-muted-400 size-10"
                     >
                       <path
                         fill="currentColor"
@@ -406,7 +406,7 @@ const results = [
                       width="32"
                       height="32"
                       viewBox="0 0 64 64"
-                      class="text-muted-400 h-10 w-10"
+                      class="text-muted-400 size-10"
                     >
                       <path
                         fill="currentColor"

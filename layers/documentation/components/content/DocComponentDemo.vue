@@ -96,7 +96,7 @@ async function loadDemo() {
       >
         <TairoTocAnchor :label="props.title">
           <template #prefix>
-            <Icon name="lucide:hash" class="h-4 w-4" />
+            <Icon name="lucide:hash" class="size-4" />
           </template>
         </TairoTocAnchor>
       </BaseHeading>
@@ -159,7 +159,7 @@ async function loadDemo() {
               <span class="hidden group-open:inline">Hide code</span>
               <Icon
                 name="lucide:chevron-down"
-                class="text-muted-400 h-4 w-4 transition-transform duration-200 group-open:rotate-180"
+                class="text-muted-400 size-4 transition-transform duration-200 group-open:rotate-180"
               />
             </summary>
             <AddonMarkdownRemark
