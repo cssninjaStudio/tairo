@@ -347,7 +347,7 @@ const jobs = [
                     value="job-types-1"
                     label="Full time jobs"
                     rounded="sm"
-                    :classes="{ wrapper: 'text-primary-500' }"
+                    color="primary"
                   />
                   <BaseTag
                     color="default"
@@ -364,7 +364,7 @@ const jobs = [
                     value="job-types-2"
                     label="Part time jobs"
                     rounded="sm"
-                    :classes="{ wrapper: 'text-primary-500' }"
+                    color="primary"
                   />
                   <BaseTag
                     color="default"
@@ -381,7 +381,7 @@ const jobs = [
                     value="job-types-3"
                     label="Remote jobs"
                     rounded="sm"
-                    :classes="{ wrapper: 'text-primary-500' }"
+                    color="primary"
                   />
                   <BaseTag
                     color="default"
@@ -398,7 +398,7 @@ const jobs = [
                     value="job-types-4"
                     label="Internships"
                     rounded="sm"
-                    :classes="{ wrapper: 'text-primary-500' }"
+                    color="primary"
                   />
                   <BaseTag
                     color="default"
@@ -433,7 +433,7 @@ const jobs = [
                     value="seniority-level-1"
                     label="Student level"
                     rounded="sm"
-                    :classes="{ wrapper: 'text-primary-500' }"
+                    color="primary"
                   />
                   <BaseTag
                     color="default"
@@ -450,7 +450,7 @@ const jobs = [
                     value="seniority-level-2"
                     label="Entry level"
                     rounded="sm"
-                    :classes="{ wrapper: 'text-primary-500' }"
+                    color="primary"
                   />
                   <BaseTag
                     color="default"
@@ -467,7 +467,7 @@ const jobs = [
                     value="seniority-level-3"
                     label="Mid level"
                     rounded="sm"
-                    :classes="{ wrapper: 'text-primary-500' }"
+                    color="primary"
                   />
                   <BaseTag
                     color="default"
@@ -484,7 +484,7 @@ const jobs = [
                     value="seniority-level-4"
                     label="Senior level"
                     rounded="sm"
-                    :classes="{ wrapper: 'text-primary-500' }"
+                    color="primary"
                   />
                   <BaseTag
                     color="default"
@@ -501,7 +501,7 @@ const jobs = [
                     value="seniority-level-5"
                     label="Director level"
                     rounded="sm"
-                    :classes="{ wrapper: 'text-primary-500' }"
+                    color="primary"
                   />
                   <BaseTag
                     color="default"
@@ -536,7 +536,7 @@ const jobs = [
                     value="salary-range-1"
                     label="10k ~ 20k"
                     rounded="sm"
-                    :classes="{ wrapper: 'text-primary-500' }"
+                    color="primary"
                   />
                   <BaseTag
                     color="default"
@@ -553,7 +553,7 @@ const jobs = [
                     value="salary-range-2"
                     label="20k ~ 40k"
                     rounded="sm"
-                    :classes="{ wrapper: 'text-primary-500' }"
+                    color="primary"
                   />
                   <BaseTag
                     color="default"
@@ -570,7 +570,7 @@ const jobs = [
                     value="salary-range-3"
                     label="40k ~ 75k"
                     rounded="sm"
-                    :classes="{ wrapper: 'text-primary-500' }"
+                    color="primary"
                   />
                   <BaseTag
                     color="default"
@@ -587,7 +587,7 @@ const jobs = [
                     value="salary-range-4"
                     label="75k+"
                     rounded="sm"
-                    :classes="{ wrapper: 'text-primary-500' }"
+                    color="primary"
                   />
                   <BaseTag
                     color="default"

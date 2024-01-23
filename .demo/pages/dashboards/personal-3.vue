@@ -178,6 +178,7 @@ const candidates = [
           size="sm"
           class="bg-info-100 text-info-500 dark:bg-info-500/20 dark:text-info-400 dark:border-info-500 dark:border-2"
           rounded="full"
+          color="none"
         >
           <Icon name="ph:timer-duotone" class="h-5 w-5" />
         </BaseIconBox>
@@ -202,6 +203,7 @@ const candidates = [
           size="sm"
           class="bg-primary-100 text-primary-500 dark:bg-primary-500/20 dark:text-primary-400 dark:border-primary-500 dark:border-2"
           rounded="full"
+          color="none"
         >
           <Icon name="ph:broadcast-duotone" class="h-5 w-5" />
         </BaseIconBox>
@@ -226,6 +228,7 @@ const candidates = [
           size="sm"
           class="bg-lime-100 text-lime-500 dark:border-2 dark:border-lime-500 dark:bg-lime-500/20 dark:text-lime-400"
           rounded="full"
+          color="none"
         >
           <Icon name="ph:user-plus-duotone" class="h-5 w-5" />
         </BaseIconBox>
@@ -250,6 +253,7 @@ const candidates = [
           size="sm"
           class="bg-amber-100 text-amber-500 dark:border-2 dark:border-amber-500 dark:bg-amber-500/20 dark:text-amber-400"
           rounded="full"
+          color="none"
         >
           <Icon name="ph:door-duotone" class="h-5 w-5" />
         </BaseIconBox>
@@ -304,16 +308,8 @@ const candidates = [
           :attributes="[
             {
               key: 'today',
-              dot: true,
-              bar: false,
-              content: 'Today',
-              customData: {},
-              event: {},
-              hashcode: 'today',
-              highlight: false,
+              highlight: true,
               order: 0,
-              pinPage: false,
-              popover: {},
               dates: [new Date()],
             },
           ]"

@@ -421,9 +421,9 @@ const activeTab = ref('tab-1')
                 class="dark:bg-muted-700 shadow-muted-300/40 dark:shadow-muted-900/20 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-xl"
               >
                 <div
-                  class="flex h-8 w-8 items-center justify-center rounded-full bg-yellow-500/20"
+                  class="bg-warning-500/20 flex h-8 w-8 items-center justify-center rounded-full"
                 >
-                  <Icon name="ri:trophy-fill" class="h-5 w-5 text-yellow-500" />
+                  <Icon name="ri:trophy-fill" class="text-warning-500 h-5 w-5" />
                 </div>
               </div>
 
@@ -433,7 +433,7 @@ const activeTab = ref('tab-1')
                   subtitle="Hail to the king"
                   text="You have more than 100k followers. You are a champion!"
                   icon="ri:trophy-fill"
-                  icon-color="yellow"
+                  icon-color="warning"
                 />
               </template>
             </TairoPopover>
@@ -531,7 +531,11 @@ const activeTab = ref('tab-1')
                     >
                       <span>Content Posts (30 days)</span>
                     </BaseParagraph>
-                    <BaseIconBox size="md" class="bg-pink-500/20 text-pink-500">
+                    <BaseIconBox
+                      size="md"
+                      class="bg-pink-500/20 text-pink-500"
+                      color="none"
+                    >
                       <Icon name="ri:instagram-fill" class="h-6 w-6" />
                     </BaseIconBox>
                   </div>
@@ -573,6 +577,7 @@ const activeTab = ref('tab-1')
                     <BaseIconBox
                       size="md"
                       class="bg-primary-500/20 text-primary-500"
+                      color="none"
                     >
                       <Icon name="ph:users-four-duotone" class="h-6 w-6" />
                     </BaseIconBox>
@@ -615,6 +620,7 @@ const activeTab = ref('tab-1')
                     <BaseIconBox
                       size="md"
                       class="bg-emerald-500/20 text-emerald-500"
+                      color="none"
                     >
                       <Icon name="ph:users-three-duotone" class="h-6 w-6" />
                     </BaseIconBox>
@@ -654,7 +660,11 @@ const activeTab = ref('tab-1')
                     >
                       <span>Likes (30 days)</span>
                     </BaseParagraph>
-                    <BaseIconBox size="md" class="bg-pink-500/20 text-pink-500">
+                    <BaseIconBox
+                      size="md"
+                      class="bg-pink-500/20 text-pink-500"
+                      color="none"
+                    >
                       <Icon name="ph:heart-duotone" class="h-6 w-6" />
                     </BaseIconBox>
                   </div>
@@ -698,6 +708,7 @@ const activeTab = ref('tab-1')
                     <BaseIconBox
                       size="md"
                       class="bg-yellow-500/20 text-yellow-500"
+                      color="none"
                     >
                       <Icon name="ph:chat-circle-duotone" class="h-6 w-6" />
                     </BaseIconBox>
@@ -739,7 +750,11 @@ const activeTab = ref('tab-1')
                     >
                       <span>Profile views (30 days)</span>
                     </BaseParagraph>
-                    <BaseIconBox size="md" class="bg-lime-500/20 text-lime-500">
+                    <BaseIconBox
+                      size="md"
+                      class="bg-lime-500/20 text-lime-500"
+                      color="none"
+                    >
                       <Icon name="ph:user-duotone" class="h-6 w-6" />
                     </BaseIconBox>
                   </div>
@@ -811,7 +826,11 @@ const activeTab = ref('tab-1')
                     >
                       <span>Content Posts (30 days)</span>
                     </BaseParagraph>
-                    <BaseIconBox size="md" class="bg-sky-500/20 text-sky-500">
+                    <BaseIconBox
+                      size="md"
+                      class="bg-sky-500/20 text-sky-500"
+                      color="none"
+                    >
                       <Icon name="fa6-brands:tiktok" class="h-6 w-6" />
                     </BaseIconBox>
                   </div>
@@ -853,6 +872,7 @@ const activeTab = ref('tab-1')
                     <BaseIconBox
                       size="md"
                       class="bg-primary-500/20 text-primary-500"
+                      color="none"
                     >
                       <Icon name="ph:users-four-duotone" class="h-6 w-6" />
                     </BaseIconBox>
@@ -895,6 +915,7 @@ const activeTab = ref('tab-1')
                     <BaseIconBox
                       size="md"
                       class="bg-emerald-500/20 text-emerald-500"
+                      color="none"
                     >
                       <Icon name="ph:users-three-duotone" class="h-6 w-6" />
                     </BaseIconBox>
@@ -934,7 +955,11 @@ const activeTab = ref('tab-1')
                     >
                       <span>Likes (30 days)</span>
                     </BaseParagraph>
-                    <BaseIconBox size="md" class="bg-pink-500/20 text-pink-500">
+                    <BaseIconBox
+                      size="md"
+                      class="bg-pink-500/20 text-pink-500"
+                      color="none"
+                    >
                       <Icon name="ph:heart-duotone" class="h-6 w-6" />
                     </BaseIconBox>
                   </div>
@@ -978,6 +1003,7 @@ const activeTab = ref('tab-1')
                     <BaseIconBox
                       size="md"
                       class="bg-yellow-500/20 text-yellow-500"
+                      color="none"
                     >
                       <Icon name="ph:chat-circle-duotone" class="h-6 w-6" />
                     </BaseIconBox>
@@ -1019,7 +1045,11 @@ const activeTab = ref('tab-1')
                     >
                       <span>Profile views (30 days)</span>
                     </BaseParagraph>
-                    <BaseIconBox size="md" class="bg-lime-500/20 text-lime-500">
+                    <BaseIconBox
+                      size="md"
+                      class="bg-lime-500/20 text-lime-500"
+                      color="none"
+                    >
                       <Icon name="ph:user-duotone" class="h-6 w-6" />
                     </BaseIconBox>
                   </div>

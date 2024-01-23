@@ -130,7 +130,7 @@ function toggleAllVisibleSelection() {
                       "
                       name="table-1-main"
                       rounded="full"
-                      class="text-primary-500"
+                      color="primary"
                       @click="toggleAllVisibleSelection"
                     />
                   </div>
@@ -177,7 +177,7 @@ function toggleAllVisibleSelection() {
                       :value="item.id"
                       :name="`item-checkbox-${item.id}`"
                       rounded="full"
-                      class="text-primary-500"
+                      color="primary"
                     />
                   </div>
                 </TairoTableCell>

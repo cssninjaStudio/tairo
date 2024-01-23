@@ -305,6 +305,7 @@ function useBarSalesProfit() {
                 size="xs"
                 class="bg-success-100 text-success-500 dark:bg-success-500/20 dark:text-success-400 dark:border-success-500 dark:border-2"
                 rounded="full"
+                color="none"
               >
                 <Icon name="ph:sketch-logo-duotone" class="h-5 w-5" />
               </BaseIconBox>
@@ -346,6 +347,7 @@ function useBarSalesProfit() {
                 size="xs"
                 class="bg-yellow-100 text-yellow-500 dark:border-2 dark:border-yellow-500 dark:bg-yellow-500/20 dark:text-yellow-400"
                 rounded="full"
+                color="none"
               >
                 <Icon name="ph:rocket-duotone" class="h-5 w-5" />
               </BaseIconBox>
@@ -387,6 +389,7 @@ function useBarSalesProfit() {
                 size="xs"
                 class="bg-primary-100 text-primary-500 dark:bg-primary-500/20 dark:text-primary-400 dark:border-primary-500 dark:border-2"
                 rounded="full"
+                color="none"
               >
                 <Icon name="ph:megaphone-simple-duotone" class="h-5 w-5" />
               </BaseIconBox>
@@ -570,16 +573,8 @@ function useBarSalesProfit() {
             :attributes="[
               {
                 key: 'today',
-                dot: true,
-                bar: false,
-                content: 'Today',
-                customData: {},
-                event: {},
-                hashcode: 'today',
-                highlight: false,
+                highlight: true,
                 order: 0,
-                pinPage: false,
-                popover: {},
                 dates: [new Date()],
               },
             ]"

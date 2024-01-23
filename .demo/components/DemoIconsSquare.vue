@@ -47,6 +47,7 @@ const links = [
       <div class="text-center">
         <div class="mb-2">
           <BaseIconBox
+            color="none"
             class="bg-primary-500/20 text-primary-500 group-hover:bg-primary-500 transition-colors duration-300 group-hover:text-white"
           >
             <Icon :name="link.icon" />

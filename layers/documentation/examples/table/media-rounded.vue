@@ -6,7 +6,7 @@
           <BaseCheckbox
             v-model="selectAll"
             rounded="sm"
-            class="text-primary-500"
+            color="primary"
           />
         </div>
       </TairoTableHeading>
@@ -39,7 +39,7 @@
             v-model="selected"
             :value="`table-4-${member.id}`"
             rounded="sm"
-            class="text-primary-500"
+            color="primary"
           />
         </div>
       </TairoTableCell>

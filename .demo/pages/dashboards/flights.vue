@@ -474,16 +474,8 @@ const results = [
               :attributes="[
                 {
                   key: 'today',
-                  dot: true,
-                  bar: false,
-                  content: 'Today',
-                  customData: {},
-                  event: {},
-                  hashcode: 'today',
-                  highlight: false,
+                  highlight: true,
                   order: 0,
-                  pinPage: false,
-                  popover: {},
                   dates: [new Date()],
                 },
               ]"
@@ -514,28 +506,28 @@ const results = [
                       value="stops-1"
                       label="All flights"
                       rounded="sm"
-                      :classes="{ wrapper: 'text-primary-500' }"
+                      color="primary"
                     />
                     <BaseCheckbox
                       v-model="stops"
                       value="stops-2"
                       label="No stops"
                       rounded="sm"
-                      :classes="{ wrapper: 'text-primary-500' }"
+                      color="primary"
                     />
                     <BaseCheckbox
                       v-model="stops"
                       value="stops-3"
                       label="One stop"
                       rounded="sm"
-                      :classes="{ wrapper: 'text-primary-500' }"
+                      color="primary"
                     />
                     <BaseCheckbox
                       v-model="stops"
                       value="stops-4"
                       label="Two stops"
                       rounded="sm"
-                      :classes="{ wrapper: 'text-primary-500' }"
+                      color="primary"
                     />
                   </div>
                 </div>
@@ -551,28 +543,28 @@ const results = [
                       value="luggage-1"
                       label="All options"
                       rounded="sm"
-                      :classes="{ wrapper: 'text-primary-500' }"
+                      color="primary"
                     />
                     <BaseCheckbox
                       v-model="luggage"
                       value="luggage-2"
                       label="One cabin luggage"
                       rounded="sm"
-                      :classes="{ wrapper: 'text-primary-500' }"
+                      color="primary"
                     />
                     <BaseCheckbox
                       v-model="luggage"
                       value="luggage-3"
                       label="Two cabin luggage"
                       rounded="sm"
-                      :classes="{ wrapper: 'text-primary-500' }"
+                      color="primary"
                     />
                     <BaseCheckbox
                       v-model="luggage"
                       value="luggage-4"
                       label="No luggage"
                       rounded="sm"
-                      :classes="{ wrapper: 'text-primary-500' }"
+                      color="primary"
                     />
                   </div>
                 </div>

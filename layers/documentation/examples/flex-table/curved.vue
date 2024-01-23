@@ -6,7 +6,7 @@
           <BaseCheckbox
             v-model="selectAll"
             rounded="lg"
-            class="text-primary-500"
+            color="primary"
           />
         </div>
       </TairoFlexTableHeading>

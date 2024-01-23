@@ -359,6 +359,7 @@ function useBarProfit() {
               rounded="full"
               size="sm"
               class="bg-red-500 text-white shadow-xl shadow-red-500/20 dark:shadow-red-800/20"
+              color="none"
             >
               <Icon name="cib:tesla" class="h-4 w-4" />
             </BaseIconBox>
@@ -458,6 +459,7 @@ function useBarProfit() {
               rounded="full"
               size="sm"
               class="bg-blue-800 text-white shadow-xl shadow-blue-500/20 dark:shadow-blue-800/20"
+              color="none"
             >
               <Icon name="fa6-brands:facebook-f" class="h-4 w-4" />
             </BaseIconBox>
@@ -559,6 +561,7 @@ function useBarProfit() {
               rounded="full"
               size="sm"
               class="bg-sky-500 text-white shadow-xl shadow-sky-500/20 dark:shadow-sky-800/20"
+              color="none"
             >
               <Icon name="fa6-brands:twitter" class="h-4 w-4" />
             </BaseIconBox>
@@ -620,6 +623,7 @@ function useBarProfit() {
                 rounded="full"
                 size="xs"
                 class="bg-blue-800 text-white shadow-xl shadow-blue-500/20 dark:shadow-blue-800/20"
+                color="none"
               >
                 <Icon name="fa6-brands:linkedin-in" class="h-3 w-3" />
               </BaseIconBox>
@@ -655,6 +659,7 @@ function useBarProfit() {
                 rounded="full"
                 size="xs"
                 class="bg-muted-900 dark:bg-muted-100 dark:text-muted-800 text-white"
+                color="none"
               >
                 <Icon name="fa6-brands:github" class="h-3 w-3" />
               </BaseIconBox>
@@ -690,6 +695,7 @@ function useBarProfit() {
                 rounded="full"
                 size="xs"
                 class="bg-rose-500 text-white shadow-xl shadow-rose-500/20 dark:shadow-rose-800/20"
+                color="none"
               >
                 <Icon name="fa6-brands:invision" class="h-4 w-4" />
               </BaseIconBox>
@@ -725,6 +731,7 @@ function useBarProfit() {
                 rounded="full"
                 size="xs"
                 class="bg-sky-700 text-white shadow-xl shadow-sky-500/20 dark:shadow-sky-800/20"
+                color="none"
               >
                 <Icon name="fa-brands:telegram-plane" class="h-4 w-4" />
               </BaseIconBox>
@@ -760,6 +767,7 @@ function useBarProfit() {
                 rounded="full"
                 size="xs"
                 class="bg-emerald-500 text-white shadow-xl shadow-emerald-500/20 dark:shadow-emerald-800/20"
+                color="none"
               >
                 <Icon name="fa-brands:kickstarter-k" class="h-4 w-4" />
               </BaseIconBox>
@@ -795,6 +803,7 @@ function useBarProfit() {
                 rounded="full"
                 size="xs"
                 class="bg-yellow-500 text-white shadow-xl shadow-yellow-500/20 dark:shadow-yellow-800/20"
+                color="none"
               >
                 <Icon name="fa-brands:google" class="h-4 w-4" />
               </BaseIconBox>
@@ -851,16 +860,8 @@ function useBarProfit() {
             :attributes="[
               {
                 key: 'today',
-                dot: true,
-                bar: false,
-                content: 'Today',
-                customData: {},
-                event: {},
-                hashcode: 'today',
-                highlight: false,
+                highlight: true,
                 order: 0,
-                pinPage: false,
-                popover: {},
                 dates: [new Date()],
               },
             ]"

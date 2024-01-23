@@ -277,7 +277,7 @@ function useAreaExpenses() {
                   </div>
                   <div class="flex items-center gap-2">
                     <div
-                      class="bg-muted-100 flex h-10 w-10 items-center justify-center rounded-full"
+                      class="bg-muted-100 dark:bg-muted-900 flex h-10 w-10 items-center justify-center rounded-full"
                     >
                       <Icon
                         name="lucide:arrow-right"
@@ -299,7 +299,7 @@ function useAreaExpenses() {
                   </div>
                   <div class="flex items-center gap-2">
                     <div
-                      class="bg-muted-100 flex h-10 w-10 items-center justify-center rounded-full"
+                      class="bg-muted-100 dark:bg-muted-900 flex h-10 w-10 items-center justify-center rounded-full"
                     >
                       <Icon
                         name="lucide:arrow-right"
@@ -391,6 +391,7 @@ function useAreaExpenses() {
                       class="bg-success-500/10 text-success-500"
                       size="md"
                       rounded="full"
+                      color="none"
                     >
                       <Icon name="ph:pizza-duotone" class="h-5 w-5" />
                     </BaseIconBox>
@@ -422,6 +423,7 @@ function useAreaExpenses() {
                       class="bg-orange-500/10 text-orange-500"
                       size="md"
                       rounded="full"
+                      color="none"
                     >
                       <Icon name="ph:storefront-duotone" class="h-5 w-5" />
                     </BaseIconBox>
@@ -453,6 +455,7 @@ function useAreaExpenses() {
                       class="bg-indigo-500/10 text-indigo-500"
                       size="md"
                       rounded="full"
+                      color="none"
                     >
                       <Icon name="ph:shopping-cart-duotone" class="h-5 w-5" />
                     </BaseIconBox>

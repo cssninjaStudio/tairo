@@ -156,16 +156,8 @@ function useGaugePersonal() {
           :attributes="[
             {
               key: 'today',
-              dot: true,
-              bar: false,
-              content: 'Today',
-              customData: {},
-              event: {},
-              hashcode: 'today',
-              highlight: false,
+              highlight: true,
               order: 0,
-              pinPage: false,
-              popover: {},
               dates: [new Date()],
             },
           ]"

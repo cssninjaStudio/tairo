@@ -67,7 +67,7 @@ const fakeItems = ref([])
                   <BaseCheckbox
                     v-model="fakeAll"
                     rounded="full"
-                    class="text-primary-500"
+                    color="primary"
                   />
                 </div>
               </TairoTableHeading>
@@ -98,7 +98,7 @@ const fakeItems = ref([])
                     v-model="fakeItems"
                     :value="`placeload-item-checkbox-${index}`"
                     rounded="full"
-                    class="text-primary-500"
+                    color="primary"
                   />
                 </div>
               </TairoTableCell>

@@ -4,6 +4,7 @@
       size="xs"
       rounded="none"
       class="bg-muted-200 text-muted-500 dark:bg-muted-800"
+      color="none"
     >
       <Icon name="ph:nut-duotone" class="h-3 w-3" />
     </BaseIconBox>
@@ -12,6 +13,7 @@
       size="sm"
       rounded="none"
       class="bg-muted-200 text-muted-500 dark:bg-muted-800"
+      color="none"
     >
       <Icon name="ph:nut-duotone" class="h-4 w-4" />
     </BaseIconBox>
@@ -20,6 +22,7 @@
       size="md"
       rounded="none"
       class="bg-muted-200 text-muted-500 dark:bg-muted-800"
+      color="none"
     >
       <Icon name="ph:nut-duotone" class="h-5 w-5" />
     </BaseIconBox>
@@ -28,6 +31,7 @@
       size="lg"
       rounded="none"
       class="bg-muted-200 text-muted-500 dark:bg-muted-800"
+      color="none"
     >
       <Icon name="ph:nut-duotone" class="h-6 w-6" />
     </BaseIconBox>
@@ -36,6 +40,7 @@
       size="xl"
       rounded="none"
       class="bg-muted-200 text-muted-500 dark:bg-muted-800"
+      color="none"
     >
       <Icon name="ph:nut-duotone" class="h-7 w-7" />
     </BaseIconBox>
@@ -44,6 +49,7 @@
       size="2xl"
       rounded="none"
       class="bg-muted-200 text-muted-500 dark:bg-muted-800"
+      color="none"
     >
       <Icon name="ph:nut-duotone" class="h-8 w-8" />
     </BaseIconBox>

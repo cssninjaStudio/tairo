@@ -496,7 +496,11 @@ function useGaugePersonal() {
       <div class="col-span-6 sm:col-span-3">
         <div class="flex flex-col">
           <div class="mb-3 flex items-center gap-2">
-            <BaseIconBox size="md" class="bg-primary-500/10">
+            <BaseIconBox
+              size="md"
+              class="bg-primary-500/10"
+              color="none"
+            >
               <Icon name="ph:drop-duotone" class="text-primary-500 h-5 w-5" />
             </BaseIconBox>
             <div class="flex items-center gap-1 font-sans">
@@ -528,7 +532,11 @@ function useGaugePersonal() {
       <div class="col-span-6 sm:col-span-3">
         <div class="flex flex-col">
           <div class="mb-3 flex items-center gap-2">
-            <BaseIconBox size="md" class="bg-primary-500/10">
+            <BaseIconBox
+              size="md"
+              class="bg-primary-500/10"
+              color="none"
+            >
               <Icon
                 name="ph:heartbeat-duotone"
                 class="text-primary-500 h-5 w-5"
@@ -563,7 +571,11 @@ function useGaugePersonal() {
       <div class="col-span-6 sm:col-span-3">
         <div class="flex flex-col">
           <div class="mb-3 flex items-center gap-2">
-            <BaseIconBox size="md" class="bg-primary-500/10">
+            <BaseIconBox
+              size="md"
+              class="bg-primary-500/10"
+              color="none"
+            >
               <Icon
                 name="ph:drop-half-bottom-duotone"
                 class="text-primary-500 h-5 w-5"
@@ -598,7 +610,11 @@ function useGaugePersonal() {
       <div class="col-span-6 sm:col-span-3">
         <div class="flex flex-col">
           <div class="mb-3 flex items-center gap-2">
-            <BaseIconBox size="md" class="bg-primary-500/10">
+            <BaseIconBox
+              size="md"
+              class="bg-primary-500/10"
+              color="none"
+            >
               <Icon name="ph:gauge-duotone" class="text-primary-500 h-5 w-5" />
             </BaseIconBox>
             <div class="flex items-center gap-1 font-sans">
@@ -797,16 +813,8 @@ function useGaugePersonal() {
                   :attributes="[
                     {
                       key: 'today',
-                      dot: true,
-                      bar: false,
-                      content: 'Today',
-                      customData: {},
-                      event: {},
-                      hashcode: 'today',
-                      highlight: false,
+                      highlight: true,
                       order: 0,
-                      pinPage: false,
-                      popover: {},
                       dates: [new Date()],
                     },
                   ]"

@@ -77,6 +77,7 @@ const props = defineProps<{
             v-if="stat.icon && !stat.image"
             size="xs"
             class="bg-primary-100 text-primary-500 dark:bg-primary-600 me-2 dark:text-white"
+            color="none"
           >
             <Icon :name="stat.icon" class="h-4 w-4" />
           </BaseIconBox>

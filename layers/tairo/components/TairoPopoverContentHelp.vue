@@ -24,7 +24,14 @@ const props = withDefaults(
     /**
      * The color of the icon.
      */
-    iconColor?: 'primary' | 'info' | 'success' | 'warning' | 'danger'
+    iconColor?: | 'default'
+    | 'invert'
+    | 'primary'
+    | 'info'
+    | 'success'
+    | 'warning'
+    | 'danger'
+    | 'none'
   }>(),
   {
     iconColor: 'primary',

@@ -344,7 +344,7 @@ function toggleAllVisibleSelection() {
                     "
                     name="table-1-main"
                     rounded="sm"
-                    class="text-primary-500"
+                    color="primary"
                     @click="toggleAllVisibleSelection"
                   />
                 </div>
@@ -374,7 +374,7 @@ function toggleAllVisibleSelection() {
                     :value="member.id"
                     :name="member.id"
                     rounded="sm"
-                    class="text-primary-500"
+                    color="primary"
                   />
                 </div>
               </TairoTableCell>
@@ -485,16 +485,8 @@ function toggleAllVisibleSelection() {
               :attributes="[
                 {
                   key: 'today',
-                  dot: true,
-                  bar: false,
-                  content: 'Today',
-                  customData: {},
-                  event: {},
-                  hashcode: 'today',
-                  highlight: false,
+                  highlight: true,
                   order: 0,
-                  pinPage: false,
-                  popover: {},
                   dates: [new Date()],
                 },
               ]"

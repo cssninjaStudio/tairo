@@ -6,7 +6,7 @@
           <BaseCheckbox
             v-model="selectAll"
             rounded="none"
-            class="text-primary-500"
+            color="primary"
           />
         </div>
       </TairoFlexTableHeading>
@@ -43,7 +43,7 @@
             v-model="selected"
             :value="`checkbox-${member.id}`"
             rounded="none"
-            class="text-primary-500"
+            color="primary"
           />
         </div>
       </TairoFlexTableCell>

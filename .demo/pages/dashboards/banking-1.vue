@@ -364,6 +364,7 @@ const amount = ref<number>(0)
                 class="bg-success-500/10 text-success-500"
                 size="md"
                 rounded="full"
+                color="none"
               >
                 <Icon name="ph:pizza-duotone" class="h-5 w-5" />
               </BaseIconBox>
@@ -395,6 +396,7 @@ const amount = ref<number>(0)
                 class="bg-orange-500/10 text-orange-500"
                 size="md"
                 rounded="full"
+                color="none"
               >
                 <Icon name="ph:storefront-duotone" class="h-5 w-5" />
               </BaseIconBox>
@@ -426,6 +428,7 @@ const amount = ref<number>(0)
                 class="bg-indigo-500/10 text-indigo-500"
                 size="md"
                 rounded="full"
+                color="none"
               >
                 <Icon name="ph:shopping-cart-duotone" class="h-5 w-5" />
               </BaseIconBox>
