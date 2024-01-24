@@ -25,7 +25,7 @@ const props = withDefaults(
 )
 
 const route = useRoute()
-const config = useAppConfig().tairo.topnav
+const config = useAppConfig().tairo?.topnav
 const { isMobileOpen } = useTopnav()
 
 const topnavEnabled = computed(() => {

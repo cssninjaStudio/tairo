@@ -29,17 +29,17 @@ onUnmounted(() => {
 
 const sidebarEnabled = computed(() => {
   return (
-    app.tairo.sidebar?.navigation?.enabled as boolean !== false && props.sidebar !== false
+    app.tairo?.sidebar?.navigation?.enabled as boolean !== false && props.sidebar !== false
   )
 })
 const toolbarEnabled = computed(() => {
   return (
-    app.tairo.sidebar?.toolbar?.enabled as boolean !== false && props.toolbar !== false
+    app.tairo?.sidebar?.toolbar?.enabled as boolean !== false && props.toolbar !== false
   )
 })
 const circularMenuEnabled = computed(() => {
   return (
-    app.tairo.sidebar?.circularMenu?.enabled as boolean !== false
+    app.tairo?.sidebar?.circularMenu?.enabled as boolean !== false
     && props.circularMenu !== false
   )
 })
@@ -80,7 +80,7 @@ const wrapperClass = computed(() => {
         :subsidebar="props.subsidebar"
       >
         <div
-          v-if="app.tairo.sidebar?.navigation?.logo?.component"
+          v-if="app.tairo?.sidebar?.navigation?.logo?.component"
           class="flex h-16 w-full items-center justify-center"
         >
           <slot name="logo">
@@ -88,10 +88,10 @@ const wrapperClass = computed(() => {
               <component
                 :is="
                   resolveComponentOrNative(
-                    app.tairo.sidebar?.navigation.logo.component,
+                    app.tairo?.sidebar?.navigation.logo.component,
                   )
                 "
-                v-bind="app.tairo.sidebar?.navigation.logo.props"
+                v-bind="app.tairo?.sidebar?.navigation.logo.props"
               />
             </NuxtLink>
           </slot>

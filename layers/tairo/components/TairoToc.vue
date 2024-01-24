@@ -9,7 +9,7 @@ const { activeIds } = useNinjaScrollspy(
   {
     rootMargin: '0px 0px -90% 0px',
   },
-  ids,
+  () => ids.value,
 )
 const nuxtApp = useNuxtApp()
 

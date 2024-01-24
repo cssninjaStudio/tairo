@@ -67,12 +67,12 @@ export function useCollapse() {
 
   const menuItems = computed(() => {
     if (
-      (app.tairo.collapse?.navigation?.enabled as boolean) === false
-      || app.tairo.collapse?.navigation?.items?.length === 0
+      (app.tairo?.collapse?.navigation?.enabled as boolean) === false
+      || app.tairo?.collapse?.navigation?.items?.length === 0
     ) {
       return []
     }
-    return app.tairo.collapse?.navigation?.items?.map(
+    return app.tairo?.collapse?.navigation?.items?.map(
       navigation =>
         <TairoCollapseResolvedConfig>{
           ...navigation,
@@ -85,11 +85,11 @@ export function useCollapse() {
   const isMobileOpen = useState('collapse-mobile-open', () => false)
 
   const header = computed(() => {
-    return app.tairo.collapse?.navigation?.header
+    return app.tairo?.collapse?.navigation?.header
   })
 
   const footer = computed(() => {
-    return app.tairo.collapse?.navigation?.footer
+    return app.tairo?.collapse?.navigation?.footer
   })
 
   function toggle() {

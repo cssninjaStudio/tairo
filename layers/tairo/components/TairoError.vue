@@ -45,9 +45,9 @@ const showStackTrace = ref(true)
     >
       <template #image>
         <component
-          :is="resolveComponentOrNative(app.tairo.error.logo.component)"
+          :is="resolveComponentOrNative(app.tairo?.error.logo.component)"
           v-if="app.tairo?.error?.logo?.component"
-          v-bind="app.tairo.error.logo.props"
+          v-bind="app.tairo?.error.logo.props"
         />
       </template>
 

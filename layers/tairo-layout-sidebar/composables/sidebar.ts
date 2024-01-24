@@ -45,12 +45,12 @@ export function useSidebar() {
 
   const sidebars = computed(() => {
     if (
-      (app.tairo.sidebar?.navigation?.enabled as boolean) === false
-      || app.tairo.sidebar?.navigation?.items?.length === 0
+      (app.tairo?.sidebar?.navigation?.enabled as boolean) === false
+      || app.tairo?.sidebar?.navigation?.items?.length === 0
     ) {
       return []
     }
-    return app.tairo.sidebar?.navigation?.items
+    return app.tairo?.sidebar?.navigation?.items
   })
 
   const currentName = useState('sidebar-name', () => '')
@@ -95,7 +95,7 @@ export function useSidebar() {
   }
 
   function detect() {
-    if (!app.tairo.sidebar?.navigation?.startOpen) {
+    if (!app.tairo?.sidebar?.navigation?.startOpen) {
       isOpen.value = false
       return
     }

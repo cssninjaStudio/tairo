@@ -9,7 +9,7 @@ const app = useAppConfig()
 <template>
   <TairoSidebarLayout :sidebar="false">
     <template #toolbar-title>
-      {{ app.tairo.title }}
+      {{ app.tairo?.title }}
     </template>
 
     <TairoError :error="props.error" />

@@ -30,10 +30,10 @@ const endMenuItems = computed(
       <component
         :is="
           resolveComponentOrNative(
-            app.tairo.collapse?.navigation?.header?.component,
+            app.tairo?.collapse?.navigation?.header?.component,
           )
         "
-        v-if="app.tairo.collapse?.navigation?.header?.component"
+        v-if="app.tairo?.collapse?.navigation?.header?.component"
       />
     </slot>
     <!--Body-->
@@ -148,10 +148,10 @@ const endMenuItems = computed(
       <component
         :is="
           resolveComponentOrNative(
-            app.tairo.collapse?.navigation?.footer?.component,
+            app.tairo?.collapse?.navigation?.footer?.component,
           )
         "
-        v-if="app.tairo.collapse?.navigation?.footer?.component"
+        v-if="app.tairo?.collapse?.navigation?.footer?.component"
       />
     </slot>
   </div>

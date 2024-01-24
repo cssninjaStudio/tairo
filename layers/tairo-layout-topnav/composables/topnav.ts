@@ -60,12 +60,12 @@ export function useTopnav() {
 
   const menuItems = computed(() => {
     if (
-      (app.tairo.topnav?.navigation?.enabled as boolean) === false
-      || app.tairo.topnav?.navigation?.items?.length === 0
+      (app.tairo?.topnav?.navigation?.enabled as boolean) === false
+      || app.tairo?.topnav?.navigation?.items?.length === 0
     ) {
       return []
     }
-    return app.tairo.topnav?.navigation?.items?.map(
+    return app.tairo?.topnav?.navigation?.items?.map(
       navigation =>
         <TairoTopnavResolvedConfig>{
           ...navigation,

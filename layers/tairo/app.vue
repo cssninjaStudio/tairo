@@ -11,8 +11,8 @@ useHead({
   title: route.meta.title,
   titleTemplate: (titleChunk) => {
     return titleChunk
-      ? `${titleChunk} - ${app.tairo.title}`
-      : `${app.tairo.title || 'Tairo'}`
+      ? `${titleChunk} - ${app.tairo?.title}`
+      : `${app.tairo?.title || 'Tairo'}`
   },
 })
 </script>
