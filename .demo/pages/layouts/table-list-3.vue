@@ -201,7 +201,6 @@ function toggleAllVisibleSelection() {
                   <div class="flex items-center">
                     <BaseAvatar
                       :src="item.author.picture"
-                      :text="item.initials"
                       size="xs"
                       class="bg-muted-500/20 text-muted-500"
                     />

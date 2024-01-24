@@ -110,7 +110,7 @@ const { data, pending, error, refresh } = await useFetch(
                 <div class="mb-3 flex items-center gap-3">
                   <BaseAvatar
                     :src="item.owner.avatar"
-                    :text="item.owner.initials"
+                    :text="item.owner.text"
                     size="xs"
                     class="bg-muted-500/20 text-muted-500"
                   />

@@ -40,7 +40,7 @@ const { data, pending, error, refresh } = await useFetch(
     query,
   },
 )
-const selectedProject = ref('')
+const selectedProject = ref<NonNullable<typeof data.value>['data'][0]>()
 </script>
 
 <template>
@@ -79,7 +79,7 @@ const selectedProject = ref('')
           <BaseAutocomplete
             v-model="selectedProject"
             :items="data?.data"
-            :display-value="(item: any) => item.name"
+            :display-value="(item) => item.name"
             rounded="lg"
             icon="lucide:search"
             placeholder="Search..."

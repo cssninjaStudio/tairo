@@ -75,7 +75,7 @@ const showStackTrace = ref(false)
 <template>
   <TairoSidebarLayout>
     <template #toolbar-title>
-      {{ app.tairo.title }}
+      {{ app.tairo?.title }}
     </template>
 
     <BasePlaceholderPage
@@ -86,9 +86,9 @@ const showStackTrace = ref(false)
     >
       <template #image>
         <component
-          :is="resolveComponentOrNative(app.tairo.error.logo.component)"
-          v-if="app.tairo.error?.logo?.component"
-          v-bind="app.tairo.error.logo.props"
+          :is="resolveComponentOrNative(app.tairo?.error.logo.component)"
+          v-if="app.tairo?.error?.logo?.component"
+          v-bind="app.tairo?.error.logo.props"
         />
       </template>
 

@@ -10,30 +10,20 @@ export default defineEventHandler(async (event) => {
   }
 
   const data = await getDemoData()
+  const offset = (page - 1) * perPage
+  const filterRe = new RegExp(filter, 'i')
 
   return {
     total: data.length,
-    data: filterDemoData(data, filter, page, perPage),
+    data: !filter
+      ? data.slice(offset, offset + perPage)
+      : data
+        .filter((item) => {
+          return [item.name, item.category].some(item => item.match(filterRe))
+        })
+        .slice(offset, offset + perPage),
   }
 })
-
-function filterDemoData(
-  data: any[],
-  filter: string,
-  page: number,
-  perPage: number,
-) {
-  const offset = (page - 1) * perPage
-  if (!filter) {
-    return data.slice(offset, offset + perPage)
-  }
-  const filterRe = new RegExp(filter, 'i')
-  return data
-    .filter((item) => {
-      return [item.name, item.category].some(item => item.match(filterRe))
-    })
-    .slice(offset, offset + perPage)
-}
 
 async function getDemoData() {
   return Promise.resolve([

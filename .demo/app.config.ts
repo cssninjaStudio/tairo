@@ -10,9 +10,6 @@
 
 export default defineAppConfig({
   nuxtIcon: {},
-  nui: {
-    defaultShapes: {},
-  },
   tairo: {
     title: 'Tairo',
     sidebar: {

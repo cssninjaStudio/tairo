@@ -10,8 +10,8 @@ useHead({
   title: () => route.meta?.title ?? '',
   titleTemplate: (titleChunk) => {
     return titleChunk
-      ? `${titleChunk} - ${app.tairo.title}`
-      : `${app.tairo.title}`
+      ? `${titleChunk} - ${app.tairo?.title}`
+      : `${app.tairo?.title}`
   },
   htmlAttrs: {
     lang: 'en',

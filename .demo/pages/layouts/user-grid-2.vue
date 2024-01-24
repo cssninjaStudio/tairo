@@ -134,7 +134,7 @@ const { data, pending, error, refresh } = await useFetch(
               <div class="mb-6 mt-4 flex items-center justify-center gap-3">
                 <BaseAvatar
                   v-for="relation in item.relations.slice(0, 3)"
-                  :key="relation"
+                  :key="relation.id"
                   size="xs"
                   rounded="lg"
                   :src="relation.src"
