@@ -16,7 +16,7 @@ const props = withDefaults(
 <template>
   <NuxtLink :to="props.to" class="relative rounded-xl">
     <BaseCard
-      shape="curved"
+      rounded="lg"
       elevated-hover
       class="dark:!bg-muted-900 relative z-10 p-5 motion-reduce:hover:shadow-none"
       :class="[
@@ -31,10 +31,10 @@ const props = withDefaults(
         class="gridlines relative mb-4 flex h-40 w-full items-center justify-center overflow-hidden"
       >
         <div
-          class="nui-mask nui-mask-hexed relative mb-2 flex h-[84px] w-[84px] shrink-0 items-center justify-center"
+          class="nui-mask nui-mask-hexed relative mb-2 flex size-[84px] shrink-0 items-center justify-center"
         >
           <div
-            class="motion-safe:animate-spin-slow absolute inset-0 flex h-full w-full items-center justify-center bg-gradient-to-tr blur-sm motion-safe:transition-all motion-safe:duration-200"
+            class="motion-safe:animate-spin-slow absolute inset-0 flex size-full items-center justify-center bg-gradient-to-tr blur-sm motion-safe:transition-all motion-safe:duration-200"
             :class="[
               props.color === 'primary'
                 ? 'from-primary-100 to-primary-500 dark:from-primary-800'
@@ -46,13 +46,13 @@ const props = withDefaults(
                 ? 'from-indigo-100 to-indigo-500 dark:from-indigo-800'
                 : '',
             ]"
-          ></div>
+          />
           <div
-            class="nui-mask nui-mask-hexed dark:bg-muted-800 flex h-[80px] w-[80px] items-center justify-center bg-white"
+            class="nui-mask nui-mask-hexed dark:bg-muted-800 flex size-[80px] items-center justify-center bg-white"
           >
             <Icon
               :name="props.icon"
-              class="h-7 w-7"
+              class="size-7"
               :class="[
                 props.color === 'primary' ? 'text-primary-500' : '',
                 props.color === 'purple' ? 'text-purple-500' : '',
@@ -63,7 +63,7 @@ const props = withDefaults(
         </div>
         <div
           class="dark:bg-muted-900 absolute -right-4 bottom-0 h-full w-24 scale-105 bg-white blur-lg"
-        ></div>
+        />
       </div>
       <div>
         <BaseHeading
@@ -79,7 +79,7 @@ const props = withDefaults(
           size="sm"
           class="text-muted-500 dark:text-muted-100 mx-auto my-2"
         >
-          <slot></slot>
+          <slot />
         </BaseParagraph>
       </div>
     </BaseCard>

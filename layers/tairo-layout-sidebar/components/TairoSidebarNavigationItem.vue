@@ -29,7 +29,7 @@ function onSidebarItemClick() {
     <NuxtLink
       v-else-if="props.sidebar.to && props.sidebar.icon"
       :to="props.sidebar.to"
-      class="text-muted-400 flex h-12 w-12 items-center justify-center rounded-2xl transition-colors duration-300"
+      class="text-muted-400 flex size-12 items-center justify-center rounded-2xl transition-colors duration-300"
       data-nui-tooltip-position="right"
       :data-nui-tooltip="props.sidebar.title"
     >
@@ -39,7 +39,7 @@ function onSidebarItemClick() {
     <button
       v-else-if="props.sidebar.icon"
       type="button"
-      class="flex h-12 w-12 items-center justify-center rounded-2xl transition-colors duration-300"
+      class="flex size-12 items-center justify-center rounded-2xl transition-colors duration-300"
       :class="
         currentName === props.sidebar.title
           ? 'bg-primary-100 text-primary-500 dark:bg-primary-500/10'

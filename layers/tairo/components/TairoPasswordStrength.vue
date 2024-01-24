@@ -15,7 +15,7 @@ const props = withDefaults(
 const hasUpperChar = computed(() => /[A-Z]/.test(props.value) ?? false)
 const hasLowerChar = computed(() => /[a-z]/.test(props.value) ?? false)
 const hasSpecialChar = computed(
-  () => /[!"#$%&\'()*+,-.\/:;<=>?@[\\\]\^_`{\|}~]/.test(props.value) ?? false,
+  () => /[!"#$%&'()*+,-./:;<=>?@[\\\]^_`{|}~]/.test(props.value) ?? false,
 )
 const hasNumberChar = computed(() => /[0-9]/.test(props.value) ?? false)
 const hasMinLength = computed(
@@ -30,12 +30,12 @@ const strength = computed(() => {
   }
 
   return (
-    Number(hasUpperChar.value) +
-    Number(hasLowerChar.value) +
-    Number(hasSpecialChar.value) +
-    Number(hasNumberChar.value) +
-    Number(hasMinLength.value) +
-    Number(hasGoodLength.value)
+    Number(hasUpperChar.value)
+    + Number(hasLowerChar.value)
+    + Number(hasSpecialChar.value)
+    + Number(hasNumberChar.value)
+    + Number(hasMinLength.value)
+    + Number(hasGoodLength.value)
   )
 })
 
@@ -91,12 +91,12 @@ const checks = computed(() => [
             <Icon
               v-if="check.valid"
               name="ion:checkmark-circle-outline"
-              class="text-success-400 dark:text-success-500 h-4 w-4"
+              class="text-success-400 dark:text-success-500 size-4"
             />
             <Icon
               v-else
               name="ion:close-circle-outline"
-              class="text-danger-400 dark:text-danger-500 h-4 w-4"
+              class="text-danger-400 dark:text-danger-500 size-4"
             />
           </span>
         </li>
@@ -109,7 +109,7 @@ const checks = computed(() => [
             class="h-2 rounded-xl transition-colors"
             :class="check.valid ? 'bg-success-500' : 'bg-danger-500'"
             :data-nui-tooltip="check.label.replace('Contains', '')"
-          ></div>
+          />
         </div>
       </template>
     </div>

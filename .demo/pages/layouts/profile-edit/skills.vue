@@ -32,8 +32,12 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
           </BaseText>
         </div>
         <div class="flex items-center gap-2">
-          <BaseButton class="w-24" to="/layouts/profile">Cancel</BaseButton>
-          <BaseButton color="primary" class="w-24">Save</BaseButton>
+          <BaseButton class="w-24" to="/layouts/profile">
+            Cancel
+          </BaseButton>
+          <BaseButton color="primary" class="w-24">
+            Save
+          </BaseButton>
         </div>
       </div>
       <div class="space-y-8 p-4">
@@ -48,12 +52,12 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 class="block dark:hidden"
                 src="/img/illustrations/placeholders/flat/placeholder-search-6.svg"
                 alt="Placeholder image"
-              />
+              >
               <img
                 class="hidden dark:block"
                 src="/img/illustrations/placeholders/flat/placeholder-search-6-dark.svg"
                 alt="Placeholder image"
-              />
+              >
             </template>
           </BasePlaceholderPage>
         </div>
@@ -73,14 +77,16 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                     class="block dark:hidden"
                     src="/img/illustrations/placeholders/flat/placeholder-search-3.svg"
                     alt="Placeholder image"
-                  />
+                  >
                   <img
                     class="hidden dark:block"
                     src="/img/illustrations/placeholders/flat/placeholder-search-3-dark.svg"
                     alt="Placeholder image"
-                  />
+                  >
                 </template>
-                <BaseButton class="mt-4 w-40">Add Language</BaseButton>
+                <BaseButton class="mt-4 w-40">
+                  Add Language
+                </BaseButton>
               </BasePlaceholderPage>
             </div>
             <div v-else class="space-y-8">
@@ -90,13 +96,13 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 class="flex w-full items-center gap-2"
               >
                 <div
-                  class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 relative flex h-[50px] w-[50px] shrink-0 items-center justify-center rounded-full border bg-white"
+                  class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 relative flex size-[50px] shrink-0 items-center justify-center rounded-full border bg-white"
                 >
                   <img
                     :src="item.icon"
                     :alt="item.name"
-                    class="h-8 w-8 rounded-full"
-                  />
+                    class="size-8 rounded-full"
+                  >
                   <BaseProgressCircle
                     :size="68"
                     :thickness="1.5"
@@ -105,7 +111,11 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                   />
                 </div>
                 <div>
-                  <BaseHeading tag="h3" size="sm" weight="medium">
+                  <BaseHeading
+                    tag="h3"
+                    size="sm"
+                    weight="medium"
+                  >
                     {{ item.name }}
                   </BaseHeading>
                   <BaseParagraph size="xs" class="text-muted-400">
@@ -114,12 +124,12 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 </div>
                 <div class="ms-auto">
                   <BaseDropdown
-                    flavor="context"
+                    variant="context"
                     label="Dropdown"
                     orientation="end"
                     size="md"
                     class="z-20"
-                    shape="curved"
+                    rounded="lg"
                   >
                     <BaseDropdownDivider />
                     <BaseDropdownItem
@@ -130,7 +140,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                       <template #start>
                         <Icon
                           name="ph:pencil-duotone"
-                          class="me-2 block h-5 w-5"
+                          class="me-2 block size-5"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -142,7 +152,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                       <template #start>
                         <Icon
                           name="ph:trash-duotone"
-                          class="me-2 block h-5 w-5"
+                          class="me-2 block size-5"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -154,12 +164,16 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
               class="border-muted-200 dark:border-muted-700 mt-8 flex w-full items-center gap-2 border-t pt-8"
             >
               <div
-                class="bg-muted-100 dark:bg-muted-700/60 text-muted-400 flex h-[50px] w-[50px] items-center justify-center rounded-full"
+                class="bg-muted-100 dark:bg-muted-700/60 text-muted-400 flex size-[50px] items-center justify-center rounded-full"
               >
-                <Icon name="ph:book-open-duotone" class="h-5 w-5" />
+                <Icon name="ph:book-open-duotone" class="size-5" />
               </div>
               <div>
-                <BaseHeading tag="h3" size="sm" weight="medium">
+                <BaseHeading
+                  tag="h3"
+                  size="sm"
+                  weight="medium"
+                >
                   New Language
                 </BaseHeading>
                 <BaseParagraph size="xs" class="text-muted-400">
@@ -167,8 +181,8 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 </BaseParagraph>
               </div>
               <div class="ms-auto">
-                <BaseButtonIcon shape="full" size="sm">
-                  <Icon name="lucide:plus" class="h-4 w-4" />
+                <BaseButtonIcon rounded="full" size="sm">
+                  <Icon name="lucide:plus" class="size-4" />
                 </BaseButtonIcon>
               </div>
             </div>
@@ -185,14 +199,16 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                     class="block dark:hidden"
                     src="/img/illustrations/placeholders/flat/placeholder-search-4.svg"
                     alt="Placeholder image"
-                  />
+                  >
                   <img
                     class="hidden dark:block"
                     src="/img/illustrations/placeholders/flat/placeholder-search-4-dark.svg"
                     alt="Placeholder image"
-                  />
+                  >
                 </template>
-                <BaseButton class="mt-4 w-40">Add Skill</BaseButton>
+                <BaseButton class="mt-4 w-40">
+                  Add Skill
+                </BaseButton>
               </BasePlaceholderPage>
             </div>
             <div v-else class="space-y-8">
@@ -202,18 +218,18 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 class="flex w-full items-center gap-2"
               >
                 <div
-                  class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 relative flex h-[50px] w-[50px] shrink-0 items-center justify-center rounded-full border bg-white"
+                  class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 relative flex size-[50px] shrink-0 items-center justify-center rounded-full border bg-white"
                 >
                   <img
                     v-if="'logo' in item"
                     :src="item.logo"
                     :alt="item.name"
-                    class="h-8 w-8 rounded-full"
-                  />
+                    class="size-8 rounded-full"
+                  >
                   <Icon
                     v-else
                     :name="item.icon"
-                    class="text-muted-400 h-6 w-6"
+                    class="text-muted-400 size-6"
                   />
                   <BaseProgressCircle
                     :size="68"
@@ -223,7 +239,11 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                   />
                 </div>
                 <div>
-                  <BaseHeading tag="h3" size="sm" weight="medium">
+                  <BaseHeading
+                    tag="h3"
+                    size="sm"
+                    weight="medium"
+                  >
                     {{ item.name }}
                   </BaseHeading>
                   <BaseParagraph size="xs" class="text-muted-400">
@@ -232,12 +252,12 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 </div>
                 <div class="ms-auto">
                   <BaseDropdown
-                    flavor="context"
+                    variant="context"
                     label="Dropdown"
                     orientation="end"
                     size="md"
                     class="z-20"
-                    shape="curved"
+                    rounded="lg"
                   >
                     <BaseDropdownDivider />
                     <BaseDropdownItem
@@ -248,7 +268,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                       <template #start>
                         <Icon
                           name="ph:pencil-duotone"
-                          class="me-2 block h-5 w-5"
+                          class="me-2 block size-5"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -260,7 +280,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                       <template #start>
                         <Icon
                           name="ph:trash-duotone"
-                          class="me-2 block h-5 w-5"
+                          class="me-2 block size-5"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -272,12 +292,16 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
               class="border-muted-200 dark:border-muted-700 mt-8 flex w-full items-center gap-2 border-t pt-8"
             >
               <div
-                class="bg-muted-100 dark:bg-muted-700/60 text-muted-400 flex h-[50px] w-[50px] items-center justify-center rounded-full"
+                class="bg-muted-100 dark:bg-muted-700/60 text-muted-400 flex size-[50px] items-center justify-center rounded-full"
               >
-                <Icon name="ph:sparkle-duotone" class="h-5 w-5" />
+                <Icon name="ph:sparkle-duotone" class="size-5" />
               </div>
               <div>
-                <BaseHeading tag="h3" size="sm" weight="medium">
+                <BaseHeading
+                  tag="h3"
+                  size="sm"
+                  weight="medium"
+                >
                   New Skill
                 </BaseHeading>
                 <BaseParagraph size="xs" class="text-muted-400">
@@ -285,8 +309,8 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 </BaseParagraph>
               </div>
               <div class="ms-auto">
-                <BaseButtonIcon shape="full" size="sm">
-                  <Icon name="lucide:plus" class="h-4 w-4" />
+                <BaseButtonIcon rounded="full" size="sm">
+                  <Icon name="lucide:plus" class="size-4" />
                 </BaseButtonIcon>
               </div>
             </div>
@@ -303,14 +327,16 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                     class="block dark:hidden"
                     src="/img/illustrations/placeholders/flat/placeholder-search-5.svg"
                     alt="Placeholder image"
-                  />
+                  >
                   <img
                     class="hidden dark:block"
                     src="/img/illustrations/placeholders/flat/placeholder-search-5-dark.svg"
                     alt="Placeholder image"
-                  />
+                  >
                 </template>
-                <BaseButton class="mt-4 w-40">Add Tool</BaseButton>
+                <BaseButton class="mt-4 w-40">
+                  Add Tool
+                </BaseButton>
               </BasePlaceholderPage>
             </div>
             <div v-else class="space-y-8">
@@ -320,13 +346,13 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 class="flex w-full items-center gap-2"
               >
                 <div
-                  class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 relative flex h-[50px] w-[50px] shrink-0 items-center justify-center rounded-full border bg-white"
+                  class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 relative flex size-[50px] shrink-0 items-center justify-center rounded-full border bg-white"
                 >
                   <img
                     :src="item.logo"
                     :alt="item.name"
-                    class="h-8 w-8 rounded-full"
-                  />
+                    class="size-8 rounded-full"
+                  >
                   <BaseProgressCircle
                     :size="68"
                     :thickness="1.5"
@@ -335,7 +361,11 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                   />
                 </div>
                 <div>
-                  <BaseHeading tag="h3" size="sm" weight="medium">
+                  <BaseHeading
+                    tag="h3"
+                    size="sm"
+                    weight="medium"
+                  >
                     {{ item.name }}
                   </BaseHeading>
                   <BaseParagraph size="xs" class="text-muted-400">
@@ -344,19 +374,23 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 </div>
                 <div class="ms-auto">
                   <BaseDropdown
-                    flavor="context"
+                    variant="context"
                     label="Dropdown"
                     orientation="end"
                     size="md"
                     class="z-20"
-                    shape="curved"
+                    rounded="lg"
                   >
                     <BaseDropdownDivider />
-                    <BaseDropdownItem to="#" title="Edit" text="Edit this tool">
+                    <BaseDropdownItem
+                      to="#"
+                      title="Edit"
+                      text="Edit this tool"
+                    >
                       <template #start>
                         <Icon
                           name="ph:pencil-duotone"
-                          class="me-2 block h-5 w-5"
+                          class="me-2 block size-5"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -368,7 +402,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                       <template #start>
                         <Icon
                           name="ph:trash-duotone"
-                          class="me-2 block h-5 w-5"
+                          class="me-2 block size-5"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -380,12 +414,16 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
               class="border-muted-200 dark:border-muted-700 mt-8 flex w-full items-center gap-2 border-t pt-8"
             >
               <div
-                class="bg-muted-100 dark:bg-muted-700/60 text-muted-400 flex h-[50px] w-[50px] items-center justify-center rounded-full"
+                class="bg-muted-100 dark:bg-muted-700/60 text-muted-400 flex size-[50px] items-center justify-center rounded-full"
               >
-                <Icon name="ph:wrench-duotone" class="h-5 w-5" />
+                <Icon name="ph:wrench-duotone" class="size-5" />
               </div>
               <div>
-                <BaseHeading tag="h3" size="sm" weight="medium">
+                <BaseHeading
+                  tag="h3"
+                  size="sm"
+                  weight="medium"
+                >
                   New Tool
                 </BaseHeading>
                 <BaseParagraph size="xs" class="text-muted-400">
@@ -393,8 +431,8 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 </BaseParagraph>
               </div>
               <div class="ms-auto">
-                <BaseButtonIcon shape="full" size="sm">
-                  <Icon name="lucide:plus" class="h-4 w-4" />
+                <BaseButtonIcon rounded="full" size="sm">
+                  <Icon name="lucide:plus" class="size-4" />
                 </BaseButtonIcon>
               </div>
             </div>

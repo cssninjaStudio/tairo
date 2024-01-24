@@ -1,6 +1,10 @@
 <template>
   <div class="md:max-w-lg">
-    <BaseTreeSelect :children="tree" treeline v-model="value" />
+    <BaseTreeSelect
+      v-model="value"
+      :children="tree"
+      treeline
+    />
   </div>
 </template>
 

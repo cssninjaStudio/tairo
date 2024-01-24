@@ -8,11 +8,11 @@ const { lg } = useTailwindBreakpoints()
 <template>
   <button
     type="button"
-    class="flex h-10 w-10 items-center justify-center"
+    class="flex size-10 items-center justify-center"
     @click="() => toggle()"
   >
     <div
-      class="relative h-5 w-5"
+      class="relative size-5"
       :class="[
         isOpen && lg ? 'scale-90' : '',
         isMobileOpen && !lg ? 'scale-90' : '',
@@ -28,7 +28,7 @@ const { lg } = useTailwindBreakpoints()
             ? 'top-1 max-w-[75%] -rotate-45 rtl:rotate-45'
             : 'top-0.5',
         ]"
-      ></span>
+      />
       <span
         class="bg-primary-500 absolute top-1/2 block h-0.5 w-full max-w-[50%] transition-all duration-300"
         :class="[
@@ -37,7 +37,7 @@ const { lg } = useTailwindBreakpoints()
             ? 'translate-x-4 opacity-0  rtl:-translate-x-4'
             : '',
         ]"
-      ></span>
+      />
       <span
         class="bg-primary-500 absolute block h-0.5 w-full transition-all duration-300"
         :class="[
@@ -48,7 +48,7 @@ const { lg } = useTailwindBreakpoints()
             ? 'bottom-1 max-w-[75%] rotate-45 rtl:-rotate-45'
             : 'bottom-0',
         ]"
-      ></span>
+      />
     </div>
   </button>
 </template>

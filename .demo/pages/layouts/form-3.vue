@@ -32,16 +32,23 @@ const termsApproval = ref(false)
           class="border-muted-200 dark:border-muted-700 flex items-center justify-between gap-4 border-b px-8 py-5"
         >
           <div>
-            <BaseHeading as="h3" size="sm" weight="medium">
+            <BaseHeading
+              as="h3"
+              size="sm"
+              weight="medium"
+            >
               Payment method
             </BaseHeading>
-            <BaseText size="xs" class="text-muted-400"
-              >Select a payment method</BaseText
+            <BaseText
+              size="xs"
+              class="text-muted-400"
             >
+              Select a payment method
+            </BaseText>
           </div>
           <div class="ms-auto">
             <BaseButtonAction @click.prevent="$router.back()">
-              <Icon name="lucide:arrow-left" class="h-3 w-3" />
+              <Icon name="lucide:arrow-left" class="size-3" />
               <span>Cancel</span>
             </BaseButtonAction>
           </div>
@@ -49,6 +56,7 @@ const termsApproval = ref(false)
         <div>
           <div
             role="button"
+            tabindex="0"
             class="flex cursor-pointer items-center px-8 py-5"
             :class="
               selectedMethod === 'paypal'
@@ -58,13 +66,13 @@ const termsApproval = ref(false)
             @click="selectedMethod = 'paypal'"
           >
             <div
-              class="dark:border-muted-800 h-4 w-4 rounded-full border-2 border-white ring-2 transition-colors"
+              class="dark:border-muted-800 size-4 rounded-full border-2 border-white ring-2 transition-colors"
               :class="
                 selectedMethod === 'paypal'
                   ? 'bg-primary-600 ring-primary-600'
                   : 'ring-muted-400'
               "
-            ></div>
+            />
             <label class="ms-4 text-sm font-medium">PayPal</label>
           </div>
           <div
@@ -72,7 +80,12 @@ const termsApproval = ref(false)
             class="flex items-center justify-between gap-4 p-8 pt-4"
           >
             <div class="max-w-xs">
-              <BaseHeading as="h3" size="md" weight="medium" class="mb-2">
+              <BaseHeading
+                as="h3"
+                size="md"
+                weight="medium"
+                class="mb-2"
+              >
                 Pay with PayPal
               </BaseHeading>
               <BaseParagraph size="sm" class="text-muted-400">
@@ -82,11 +95,11 @@ const termsApproval = ref(false)
             </div>
             <div class="grow">
               <BaseCard
-                shape="curved"
+                rounded="lg"
                 elevated
                 class="mx-auto flex max-w-[280px] items-center justify-center px-8 py-16"
               >
-                <Icon name="logos:paypal" class="h-12 w-12" />
+                <Icon name="logos:paypal" class="size-12" />
               </BaseCard>
             </div>
           </div>
@@ -94,6 +107,7 @@ const termsApproval = ref(false)
         <div class="border-muted-200 dark:border-muted-700 border-t">
           <div
             role="button"
+            tabindex="0"
             class="flex cursor-pointer items-center px-8 py-5"
             :class="
               selectedMethod === 'cc' ? 'bg-muted-50 dark:bg-muted-900/60' : ''
@@ -101,13 +115,13 @@ const termsApproval = ref(false)
             @click="selectedMethod = 'cc'"
           >
             <div
-              class="dark:border-muted-800 h-4 w-4 rounded-full border-2 border-white ring-2"
+              class="dark:border-muted-800 size-4 rounded-full border-2 border-white ring-2"
               :class="
                 selectedMethod === 'cc'
                   ? 'bg-primary-600 ring-primary-600'
                   : 'ring-muted-400'
               "
-            ></div>
+            />
             <label class="ms-4 text-sm font-medium">Credit Card</label>
           </div>
           <div
@@ -138,19 +152,45 @@ const termsApproval = ref(false)
                           v-model="cardInfo.expiryMonth"
                           label="Exp. month"
                         >
-                          <option value="">Month</option>
-                          <option value="01">01</option>
-                          <option value="02">02</option>
-                          <option value="03">03</option>
-                          <option value="04">04</option>
-                          <option value="05">05</option>
-                          <option value="06">06</option>
-                          <option value="07">07</option>
-                          <option value="08">08</option>
-                          <option value="09">09</option>
-                          <option value="10">10</option>
-                          <option value="11">11</option>
-                          <option value="12">12</option>
+                          <option value="">
+                            Month
+                          </option>
+                          <option value="01">
+                            01
+                          </option>
+                          <option value="02">
+                            02
+                          </option>
+                          <option value="03">
+                            03
+                          </option>
+                          <option value="04">
+                            04
+                          </option>
+                          <option value="05">
+                            05
+                          </option>
+                          <option value="06">
+                            06
+                          </option>
+                          <option value="07">
+                            07
+                          </option>
+                          <option value="08">
+                            08
+                          </option>
+                          <option value="09">
+                            09
+                          </option>
+                          <option value="10">
+                            10
+                          </option>
+                          <option value="11">
+                            11
+                          </option>
+                          <option value="12">
+                            12
+                          </option>
                         </BaseSelect>
                       </div>
                       <div>
@@ -158,15 +198,33 @@ const termsApproval = ref(false)
                           v-model="cardInfo.expiryYear"
                           label="Exp. year"
                         >
-                          <option value="">Year</option>
-                          <option value="23">23</option>
-                          <option value="24">24</option>
-                          <option value="25">25</option>
-                          <option value="26">26</option>
-                          <option value="27">27</option>
-                          <option value="28">28</option>
-                          <option value="29">29</option>
-                          <option value="30">30</option>
+                          <option value="">
+                            Year
+                          </option>
+                          <option value="23">
+                            23
+                          </option>
+                          <option value="24">
+                            24
+                          </option>
+                          <option value="25">
+                            25
+                          </option>
+                          <option value="26">
+                            26
+                          </option>
+                          <option value="27">
+                            27
+                          </option>
+                          <option value="28">
+                            28
+                          </option>
+                          <option value="29">
+                            29
+                          </option>
+                          <option value="30">
+                            30
+                          </option>
                         </BaseSelect>
                       </div>
                       <div>
@@ -197,12 +255,19 @@ const termsApproval = ref(false)
     <div>
       <BaseCard class="pb-6">
         <div class="border-muted-200 dark:border-muted-700 border-b px-8 py-5">
-          <BaseHeading as="h3" size="sm" weight="medium">
+          <BaseHeading
+            as="h3"
+            size="sm"
+            weight="medium"
+          >
             Order Summary
           </BaseHeading>
-          <BaseText size="xs" class="text-muted-400"
-            >Check your order details</BaseText
+          <BaseText
+            size="xs"
+            class="text-muted-400"
           >
+            Check your order details
+          </BaseText>
         </div>
         <div class="px-8 pt-5">
           <div class="mb-6">
@@ -234,25 +299,33 @@ const termsApproval = ref(false)
             </div>
           </div>
           <div class="flex items-center">
-            <BaseHeading as="h3" size="sm" weight="medium" lead="none">
+            <BaseHeading
+              as="h3"
+              size="sm"
+              weight="medium"
+              lead="none"
+            >
               Fasterio pro plan
             </BaseHeading>
             <div class="ms-auto">
               <BaseText size="sm" class="text-muted-800 dark:text-muted-100">
                 <span class="font-semibold">$29.99</span>
-                <span class="text-muted-500 dark:text-muted-400 text-xs"
-                  >/mo</span
-                >
+                <span class="text-muted-500 dark:text-muted-400 text-xs">/mo</span>
               </BaseText>
             </div>
           </div>
-          <BaseText class="text-muted-500 dark:text-muted-400 mt-2 text-xs"
-            >Save 20% with annual billing</BaseText
-          >
+          <BaseText class="text-muted-500 dark:text-muted-400 mt-2 text-xs">
+            Save 20% with annual billing
+          </BaseText>
         </div>
         <div class="mt-4 px-8 pb-5">
           <div class="flex items-end justify-between">
-            <BaseHeading as="h3" size="sm" weight="medium" lead="none">
+            <BaseHeading
+              as="h3"
+              size="sm"
+              weight="medium"
+              lead="none"
+            >
               Taxes
             </BaseHeading>
             <BaseText size="sm" class="text-muted-800 dark:text-muted-100">
@@ -264,22 +337,27 @@ const termsApproval = ref(false)
           class="border-muted-200 dark:border-muted-700 mt-4 border-t px-8 pt-5"
         >
           <div class="flex items-end justify-between">
-            <BaseHeading as="h3" size="sm" weight="medium" lead="none">
+            <BaseHeading
+              as="h3"
+              size="sm"
+              weight="medium"
+              lead="none"
+            >
               To pay today (USD)
             </BaseHeading>
             <BaseText size="md" class="text-muted-800 dark:text-muted-100">
               <span class="font-semibold">$0.00</span>
             </BaseText>
           </div>
-          <BaseText class="text-muted-500 dark:text-muted-400 mt-2 text-xs"
-            >Starting from next month: $29.99/mo.</BaseText
-          >
+          <BaseText class="text-muted-500 dark:text-muted-400 mt-2 text-xs">
+            Starting from next month: $29.99/mo.
+          </BaseText>
         </div>
         <div class="my-4 flex items-center px-8">
           <BaseCheckbox
             v-model="termsApproval"
             color="primary"
-            shape="full"
+            rounded="full"
             label="I agree to the Terms Of Service"
             :classes="{
               label: 'relative top-0.5 text-xs',
@@ -287,9 +365,12 @@ const termsApproval = ref(false)
           />
         </div>
         <div class="flex flex-col px-8 pt-4">
-          <BaseButton color="primary" class="!h-12 w-full"
-            >Start Subscription</BaseButton
+          <BaseButton
+            color="primary"
+            class="!h-12 w-full"
           >
+            Start Subscription
+          </BaseButton>
         </div>
       </BaseCard>
     </div>

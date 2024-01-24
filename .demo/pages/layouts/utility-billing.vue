@@ -65,7 +65,7 @@ const plans = [
 ]
 
 const selectedPlan = computed(() => {
-  return plans.find((plan) => plan.name === customRadio.value)
+  return plans.find(plan => plan.name === customRadio.value)
 })
 
 const planColor = computed(() => {
@@ -96,8 +96,8 @@ const billingCycles = ref('monthly')
   <form
     action=""
     method="POST"
-    @submit.prevent
     class="mx-auto w-full max-w-4xl pb-16"
+    @submit.prevent
   >
     <!-- Header -->
     <div class="mb-8 flex flex-col justify-between md:flex-row md:items-center">
@@ -143,15 +143,15 @@ const billingCycles = ref('monthly')
           value="starter"
         >
           <BaseCard
-            shape="rounded"
+            rounded="sm"
             class="text-muted-400/50 peer-checked:!border-success-500 peer-checked:text-success-500 group relative p-6 text-center peer-checked:[&_.child]:!opacity-100"
           >
             <div
-              class="child border-muted-200 dark:border-muted-700 dark:bg-muted-800 absolute end-3 top-3 flex h-7 w-7 items-center justify-center rounded-full border bg-white opacity-0"
+              class="child border-muted-200 dark:border-muted-700 dark:bg-muted-800 absolute end-3 top-3 flex size-7 items-center justify-center rounded-full border bg-white opacity-0"
             >
-              <Icon name="lucide:check" class="h-3 w-3 text-current" />
+              <Icon name="lucide:check" class="size-3 text-current" />
             </div>
-            <TairoLogo class="mx-auto mb-2 h-9 w-9" />
+            <TairoLogo class="mx-auto mb-2 size-9" />
             <BaseHeading
               as="h4"
               size="sm"
@@ -160,9 +160,13 @@ const billingCycles = ref('monthly')
             >
               Starter
             </BaseHeading>
-            <BaseText size="xs" lead="tight" class="text-muted-400"
-              >A basic plan made for quickstarts</BaseText
+            <BaseText
+              size="xs"
+              lead="tight"
+              class="text-muted-400"
             >
+              A basic plan made for quickstarts
+            </BaseText>
           </BaseCard>
         </BaseRadioHeadless>
         <BaseRadioHeadless
@@ -171,15 +175,15 @@ const billingCycles = ref('monthly')
           value="freelancer"
         >
           <BaseCard
-            shape="rounded"
+            rounded="sm"
             class="text-muted-400/50 group relative p-6 text-center peer-checked:!border-yellow-400 peer-checked:text-yellow-400 peer-checked:[&_.child]:!opacity-100"
           >
             <div
-              class="child border-muted-200 dark:border-muted-700 dark:bg-muted-800 absolute end-3 top-3 flex h-7 w-7 items-center justify-center rounded-full border bg-white opacity-0"
+              class="child border-muted-200 dark:border-muted-700 dark:bg-muted-800 absolute end-3 top-3 flex size-7 items-center justify-center rounded-full border bg-white opacity-0"
             >
-              <Icon name="lucide:check" class="h-3 w-3 text-current" />
+              <Icon name="lucide:check" class="size-3 text-current" />
             </div>
-            <TairoLogo class="mx-auto mb-2 h-9 w-9" />
+            <TairoLogo class="mx-auto mb-2 size-9" />
             <BaseHeading
               as="h4"
               size="sm"
@@ -188,9 +192,13 @@ const billingCycles = ref('monthly')
             >
               Freelancer
             </BaseHeading>
-            <BaseText size="xs" lead="tight" class="text-muted-400"
-              >A plan for heavy working freelancers</BaseText
+            <BaseText
+              size="xs"
+              lead="tight"
+              class="text-muted-400"
             >
+              A plan for heavy working freelancers
+            </BaseText>
           </BaseCard>
         </BaseRadioHeadless>
         <BaseRadioHeadless
@@ -199,15 +207,15 @@ const billingCycles = ref('monthly')
           value="business"
         >
           <BaseCard
-            shape="rounded"
+            rounded="sm"
             class="text-muted-400/50 group relative p-6 text-center peer-checked:!border-indigo-500 peer-checked:text-indigo-500 peer-checked:[&_.child]:!opacity-100"
           >
             <div
-              class="child border-muted-200 dark:border-muted-700 dark:bg-muted-800 absolute end-3 top-3 flex h-7 w-7 items-center justify-center rounded-full border bg-white opacity-0"
+              class="child border-muted-200 dark:border-muted-700 dark:bg-muted-800 absolute end-3 top-3 flex size-7 items-center justify-center rounded-full border bg-white opacity-0"
             >
-              <Icon name="lucide:check" class="h-3 w-3 text-current" />
+              <Icon name="lucide:check" class="size-3 text-current" />
             </div>
-            <TairoLogo class="mx-auto mb-2 h-9 w-9" />
+            <TairoLogo class="mx-auto mb-2 size-9" />
             <BaseHeading
               as="h4"
               size="sm"
@@ -216,9 +224,13 @@ const billingCycles = ref('monthly')
             >
               Business
             </BaseHeading>
-            <BaseText size="xs" lead="tight" class="text-muted-400"
-              >An affordable medium business plan</BaseText
+            <BaseText
+              size="xs"
+              lead="tight"
+              class="text-muted-400"
             >
+              An affordable medium business plan
+            </BaseText>
           </BaseCard>
         </BaseRadioHeadless>
         <BaseRadioHeadless
@@ -227,15 +239,15 @@ const billingCycles = ref('monthly')
           value="enterprise"
         >
           <BaseCard
-            shape="rounded"
+            rounded="sm"
             class="text-muted-400/50 peer-checked:!border-primary-500 peer-checked:text-primary-500 group relative p-6 text-center peer-checked:[&_.child]:!opacity-100"
           >
             <div
-              class="child border-muted-200 dark:border-muted-700 dark:bg-muted-800 absolute end-3 top-3 flex h-7 w-7 items-center justify-center rounded-full border bg-white opacity-0"
+              class="child border-muted-200 dark:border-muted-700 dark:bg-muted-800 absolute end-3 top-3 flex size-7 items-center justify-center rounded-full border bg-white opacity-0"
             >
-              <Icon name="lucide:check" class="h-3 w-3 text-current" />
+              <Icon name="lucide:check" class="size-3 text-current" />
             </div>
-            <TairoLogo class="mx-auto mb-2 h-9 w-9" />
+            <TairoLogo class="mx-auto mb-2 size-9" />
             <BaseHeading
               as="h4"
               size="sm"
@@ -244,26 +256,37 @@ const billingCycles = ref('monthly')
             >
               Enterprise
             </BaseHeading>
-            <BaseText size="xs" lead="tight" class="text-muted-400"
-              >A corporate and full fledged company plan</BaseText
+            <BaseText
+              size="xs"
+              lead="tight"
+              class="text-muted-400"
             >
+              A corporate and full fledged company plan
+            </BaseText>
           </BaseCard>
         </BaseRadioHeadless>
       </div>
       <div>
-        <BaseCard shape="rounded" class="p-8">
+        <BaseCard rounded="sm" class="p-8">
           <div class="flex gap-12">
-            <TairoLogo class="h-12 w-12 shrink-0" :class="planColor" />
+            <TairoLogo class="size-12 shrink-0" :class="planColor" />
             <div>
-              <BaseText size="md" lead="tight" weight="semibold"
-                >${{ selectedPlan?.price.monthly }}
-                <span class="text-muted-400 font-normal"
-                  >/per month</span
-                ></BaseText
+              <BaseText
+                size="md"
+                lead="tight"
+                weight="semibold"
               >
-              <BaseText size="xs" lead="tight" class="mb-2" :class="planColor"
-                >Billed ${{ selectedPlan?.price.yearly }} yearly</BaseText
+                ${{ selectedPlan?.price.monthly }}
+                <span class="text-muted-400 font-normal">/per month</span>
+              </BaseText>
+              <BaseText
+                size="xs"
+                lead="tight"
+                class="mb-2"
+                :class="planColor"
               >
+                Billed ${{ selectedPlan?.price.yearly }} yearly
+              </BaseText>
               <BaseParagraph
                 size="xs"
                 class="text-muted-500 dark:text-muted-400"
@@ -292,7 +315,7 @@ const billingCycles = ref('monthly')
                   class="flex items-center gap-2"
                   :class="planColor"
                 >
-                  <Icon name="lucide:check" class="h-3 w-3 text-current" />
+                  <Icon name="lucide:check" class="size-3 text-current" />
                   <span class="text-muted-400">{{ item }}</span>
                 </li>
               </ul>
@@ -305,7 +328,7 @@ const billingCycles = ref('monthly')
                   class="flex items-center gap-2"
                   :class="planColor"
                 >
-                  <Icon name="lucide:check" class="h-3 w-3 text-current" />
+                  <Icon name="lucide:check" class="size-3 text-current" />
                   <span class="text-muted-400">{{ item }}</span>
                 </li>
               </ul>
@@ -320,13 +343,21 @@ const billingCycles = ref('monthly')
         <div class="flex flex-col gap-6">
           <BaseCard class="p-6">
             <div class="mb-4 flex items-center justify-between">
-              <BaseHeading as="h4" size="sm" weight="semibold">
+              <BaseHeading
+                as="h4"
+                size="sm"
+                weight="semibold"
+              >
                 Used seats
               </BaseHeading>
               <div>
-                <BaseText size="xs" lead="tight" class="text-muted-400"
-                  >6/8 remaining</BaseText
+                <BaseText
+                  size="xs"
+                  lead="tight"
+                  class="text-muted-400"
                 >
+                  6/8 remaining
+                </BaseText>
               </div>
             </div>
             <div
@@ -372,17 +403,21 @@ const billingCycles = ref('monthly')
               <div>
                 <button
                   type="button"
-                  class="border-muted-200 dark:border-muted-700 hover:border-primary-500 dark:hover:border-primary-500 text-muted-400 dark:text-muted-600 hover:text-primary-500 dark:hover:text-primary-500 h-10 w-10 rounded-full border-2 border-dashed transition-all duration-300 hover:border-solid"
+                  class="border-muted-200 dark:border-muted-700 hover:border-primary-500 dark:hover:border-primary-500 text-muted-400 dark:text-muted-600 hover:text-primary-500 dark:hover:text-primary-500 size-10 rounded-full border-2 border-dashed transition-all duration-300 hover:border-solid"
                   data-nui-tooltip="Manage plan seats"
                 >
-                  <Icon name="lucide:edit-3" class="h-4 w-4" />
+                  <Icon name="lucide:edit-3" class="size-4" />
                 </button>
               </div>
             </div>
           </BaseCard>
           <BaseCard class="p-6">
             <div class="mb-8 flex items-center justify-between">
-              <BaseHeading as="h4" size="sm" weight="semibold">
+              <BaseHeading
+                as="h4"
+                size="sm"
+                weight="semibold"
+              >
                 Billing options
               </BaseHeading>
               <div>
@@ -390,7 +425,7 @@ const billingCycles = ref('monthly')
                   size="xs"
                   lead="tight"
                   class="text-muted-400"
-                ></BaseText>
+                />
               </div>
             </div>
             <div class="space-y-6">
@@ -419,14 +454,19 @@ const billingCycles = ref('monthly')
           </BaseCard>
           <BaseCard class="p-6">
             <div class="mb-8 flex items-center justify-between">
-              <BaseHeading as="h4" size="sm" weight="semibold">
+              <BaseHeading
+                as="h4"
+                size="sm"
+                weight="semibold"
+              >
                 Billing cycle
               </BaseHeading>
               <div>
                 <NuxtLink
                   class="text-primary-500 font-sans text-xs underline underline-offset-4"
-                  >My invoices</NuxtLink
                 >
+                  My invoices
+                </NuxtLink>
               </div>
             </div>
             <div class="flex items-center gap-6">
@@ -463,7 +503,11 @@ const billingCycles = ref('monthly')
       <div class="ltablet:col-span-5 col-span-12 sm:col-span-6 lg:col-span-5">
         <BaseCard class="p-6">
           <div class="mb-4">
-            <BaseHeading as="h4" size="sm" weight="semibold">
+            <BaseHeading
+              as="h4"
+              size="sm"
+              weight="semibold"
+            >
               Payment information
             </BaseHeading>
           </div>
@@ -498,19 +542,45 @@ const billingCycles = ref('monthly')
                         v-model="cardInfo.expiryMonth"
                         label="Exp. month"
                       >
-                        <option value="">Month</option>
-                        <option value="01">01</option>
-                        <option value="02">02</option>
-                        <option value="03">03</option>
-                        <option value="04">04</option>
-                        <option value="05">05</option>
-                        <option value="06">06</option>
-                        <option value="07">07</option>
-                        <option value="08">08</option>
-                        <option value="09">09</option>
-                        <option value="10">10</option>
-                        <option value="11">11</option>
-                        <option value="12">12</option>
+                        <option value="">
+                          Month
+                        </option>
+                        <option value="01">
+                          01
+                        </option>
+                        <option value="02">
+                          02
+                        </option>
+                        <option value="03">
+                          03
+                        </option>
+                        <option value="04">
+                          04
+                        </option>
+                        <option value="05">
+                          05
+                        </option>
+                        <option value="06">
+                          06
+                        </option>
+                        <option value="07">
+                          07
+                        </option>
+                        <option value="08">
+                          08
+                        </option>
+                        <option value="09">
+                          09
+                        </option>
+                        <option value="10">
+                          10
+                        </option>
+                        <option value="11">
+                          11
+                        </option>
+                        <option value="12">
+                          12
+                        </option>
                       </BaseSelect>
                     </div>
                     <div>
@@ -518,15 +588,33 @@ const billingCycles = ref('monthly')
                         v-model="cardInfo.expiryYear"
                         label="Exp. month"
                       >
-                        <option value="">Year</option>
-                        <option value="23">23</option>
-                        <option value="24">24</option>
-                        <option value="25">25</option>
-                        <option value="26">26</option>
-                        <option value="27">27</option>
-                        <option value="28">28</option>
-                        <option value="29">29</option>
-                        <option value="30">30</option>
+                        <option value="">
+                          Year
+                        </option>
+                        <option value="23">
+                          23
+                        </option>
+                        <option value="24">
+                          24
+                        </option>
+                        <option value="25">
+                          25
+                        </option>
+                        <option value="26">
+                          26
+                        </option>
+                        <option value="27">
+                          27
+                        </option>
+                        <option value="28">
+                          28
+                        </option>
+                        <option value="29">
+                          29
+                        </option>
+                        <option value="30">
+                          30
+                        </option>
                       </BaseSelect>
                     </div>
                     <div>
@@ -545,7 +633,11 @@ const billingCycles = ref('monthly')
       </div>
     </div>
     <TairoFormSave>
-      <BaseButton type="submit" color="primary" class="w-full">
+      <BaseButton
+        type="submit"
+        color="primary"
+        class="w-full"
+      >
         <span>Save for</span>
         <span class="font-semibold">${{ selectedPlan?.price.monthly }}</span>
         <span>/month</span>

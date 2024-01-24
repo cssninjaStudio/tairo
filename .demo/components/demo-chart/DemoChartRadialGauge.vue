@@ -52,7 +52,7 @@ function useDemoRadialGauge() {
     labels: ['Median Ratio'],
   }
 
-  const series = ref([67])
+  const series = shallowRef([67])
 
   return {
     type,

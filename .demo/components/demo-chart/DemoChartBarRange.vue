@@ -31,7 +31,7 @@ function useDemoBarRange() {
     },
   }
 
-  const series = ref([
+  const series = shallowRef([
     {
       name: 'Corporate',
       data: [

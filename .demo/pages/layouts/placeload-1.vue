@@ -29,9 +29,15 @@ const fake = ref('')
         />
       </template>
       <template #right>
-        <BaseButton class="w-full sm:w-32" disabled>Manage</BaseButton>
-        <BaseButton color="primary" class="w-full sm:w-32" disabled>
-          <Icon name="lucide:plus" class="h-4 w-4" />
+        <BaseButton class="w-full sm:w-32" disabled>
+          Manage
+        </BaseButton>
+        <BaseButton
+          color="primary"
+          class="w-full sm:w-32"
+          disabled
+        >
+          <Icon name="lucide:plus" class="size-4" />
           <span>Add User</span>
         </BaseButton>
       </template>
@@ -40,13 +46,13 @@ const fake = ref('')
           <BaseCard
             v-for="index in 10"
             :key="index"
-            shape="curved"
+            rounded="lg"
             class="flex flex-col p-5 sm:flex-row sm:items-center"
           >
             <div
               class="flex flex-col items-center justify-center gap-3 text-center sm:flex-row sm:justify-start sm:text-left"
             >
-              <BasePlaceload class="h-16 w-16 shrink-0 rounded-full" />
+              <BasePlaceload class="size-16 shrink-0 rounded-full" />
               <div class="space-y-2">
                 <BasePlaceload
                   class="mx-auto h-3 w-[100px] rounded-lg sm:mx-0"
@@ -80,8 +86,8 @@ const fake = ref('')
               <div
                 class="ptablet:hidden flex w-full items-center justify-center gap-1 py-3 sm:w-[160px] sm:justify-end sm:py-0"
               >
-                <BasePlaceload class="h-8 w-8 shrink-0 rounded-full" />
-                <BasePlaceload class="h-8 w-8 shrink-0 rounded-full" />
+                <BasePlaceload class="size-8 shrink-0 rounded-full" />
+                <BasePlaceload class="size-8 shrink-0 rounded-full" />
                 <BasePlaceload class="hidden h-3 w-12 rounded-full sm:block" />
               </div>
               <div class="sm:ms-6">

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// @ts-expect-error - splitpanes types exists only for vue2
+// @ts-ignore - splitpanes types exists only for vue2
 import { Pane, Splitpanes } from 'splitpanes'
 import 'splitpanes/dist/splitpanes.css'
 
@@ -21,14 +21,19 @@ const search = ref('')
 const { md } = useTailwindBreakpoints()
 
 const paneSize = ref(50)
-watch(md, async (isMd) => {
-  await nextTick()
-  if (isMd) {
-    paneSize.value = 50
-  } else {
-    paneSize.value = 100
-  }
-}, { immediate: true })
+watch(
+  md,
+  async (isMd) => {
+    await nextTick()
+    if (isMd) {
+      paneSize.value = 50
+    }
+    else {
+      paneSize.value = 100
+    }
+  },
+  { immediate: true },
+)
 
 const messages = [
   {
@@ -161,7 +166,7 @@ const messages = [
 const activeMessage = ref(1)
 
 const selectedMessage = computed(() => {
-  return messages.find((message) => message.id === activeMessage.value)
+  return messages.find(message => message.id === activeMessage.value)
 })
 
 const panelActive = ref(false)
@@ -178,41 +183,41 @@ const panelActive = ref(false)
     >
       <NuxtLink
         to="/dashboards"
-        class="flex h-16 w-16 items-center justify-center"
+        class="flex size-16 items-center justify-center"
       >
         <TairoLogo class="text-primary-600 h-10" />
       </NuxtLink>
       <nav class="relative flex h-full flex-col">
         <NuxtLink
           to="/dashboards/inbox"
-          class="relative flex h-16 w-16 items-center justify-center"
+          class="relative flex size-16 items-center justify-center"
         >
           <div
-            class="bg-primary-500/10 text-primary-500 relative flex h-12 w-12 items-center justify-center rounded-xl"
+            class="bg-primary-500/10 text-primary-500 relative flex size-12 items-center justify-center rounded-xl"
           >
-            <Icon name="ph:tray-duotone" class="h-5 w-5" />
+            <Icon name="ph:tray-duotone" class="size-5" />
           </div>
         </NuxtLink>
         <NuxtLink
           href="#"
-          class="relative flex h-16 w-16 items-center justify-center"
+          class="relative flex size-16 items-center justify-center"
         >
           <div
-            class="bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400 relative flex h-12 w-12 items-center justify-center rounded-xl"
+            class="bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400 relative flex size-12 items-center justify-center rounded-xl"
           >
-            <Icon name="ph:bookmark-simple-duotone" class="h-5 w-5" />
+            <Icon name="ph:bookmark-simple-duotone" class="size-5" />
           </div>
         </NuxtLink>
         <NuxtLink
           to="/dashboards/calendar"
-          class="relative flex h-16 w-16 items-center justify-center"
+          class="relative flex size-16 items-center justify-center"
         >
           <div
-            class="bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400 relative flex h-12 w-12 items-center justify-center rounded-xl"
+            class="bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400 relative flex size-12 items-center justify-center rounded-xl"
           >
-            <Icon name="ph:calendar-blank-duotone" class="h-5 w-5" />
+            <Icon name="ph:calendar-blank-duotone" class="size-5" />
             <span
-              class="absolute -end-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-pink-600 font-sans text-xs text-white"
+              class="absolute -end-1 -top-1 flex size-5 items-center justify-center rounded-full bg-pink-600 font-sans text-xs text-white"
             >
               5
             </span>
@@ -220,58 +225,58 @@ const panelActive = ref(false)
         </NuxtLink>
         <NuxtLink
           href="#"
-          class="relative flex h-16 w-16 items-center justify-center"
+          class="relative flex size-16 items-center justify-center"
         >
           <div
-            class="bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400 relative flex h-12 w-12 items-center justify-center rounded-xl"
+            class="bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400 relative flex size-12 items-center justify-center rounded-xl"
           >
-            <Icon name="ph:folder-duotone" class="h-5 w-5" />
+            <Icon name="ph:folder-duotone" class="size-5" />
           </div>
         </NuxtLink>
         <NuxtLink
           href="#"
-          class="relative flex h-16 w-16 items-center justify-center"
+          class="relative flex size-16 items-center justify-center"
         >
           <div
-            class="bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400 relative flex h-12 w-12 items-center justify-center rounded-xl"
+            class="bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400 relative flex size-12 items-center justify-center rounded-xl"
           >
-            <Icon name="ph:trash-duotone" class="h-5 w-5" />
+            <Icon name="ph:trash-duotone" class="size-5" />
           </div>
         </NuxtLink>
         <NuxtLink
           href="#"
-          class="relative flex h-16 w-16 items-center justify-center"
+          class="relative flex size-16 items-center justify-center"
         >
           <div
-            class="bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400 relative flex h-12 w-12 items-center justify-center rounded-xl"
+            class="bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400 relative flex size-12 items-center justify-center rounded-xl"
           >
-            <Icon name="ph:gear-six-duotone" class="h-5 w-5" />
+            <Icon name="ph:gear-six-duotone" class="size-5" />
           </div>
         </NuxtLink>
         <div class="mt-auto flex flex-col items-center">
           <a
             href="#"
-            class="relative flex h-16 w-16 items-center justify-center"
+            class="relative flex size-16 items-center justify-center"
             title="Back"
             @click.prevent="$router.back()"
           >
             <div
-              class="bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400 relative flex h-12 w-12 items-center justify-center rounded-xl"
+              class="bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400 relative flex size-12 items-center justify-center rounded-xl"
             >
-              <Icon name="lucide:arrow-left" class="h-5 w-5" />
+              <Icon name="lucide:arrow-left" class="size-5" />
             </div>
           </a>
           <button
             type="button"
-            class="relative flex h-16 w-16 items-center justify-center"
+            class="relative flex size-16 items-center justify-center"
           >
             <div
-              class="bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400 relative flex h-12 w-12 items-center justify-center rounded-xl"
+              class="bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400 relative flex size-12 items-center justify-center rounded-xl"
             >
-              <Icon name="lucide:plus" class="h-5 w-5" />
+              <Icon name="lucide:plus" class="size-5" />
             </div>
           </button>
-          <div class="relative flex h-16 w-16 items-center justify-center">
+          <div class="relative flex size-16 items-center justify-center">
             <DemoAccountMenu />
           </div>
         </div>
@@ -287,13 +292,13 @@ const panelActive = ref(false)
         >
           <!-- Messages list -->
           <div
-            class="ltablet:w-full bg-muted-50 dark:bg-muted-900 flex h-full w-full flex-col pt-3 lg:w-full"
+            class="ltablet:w-full bg-muted-50 dark:bg-muted-900 flex size-full flex-col pt-3 lg:w-full"
           >
             <!-- Head (search) -->
             <div class="h-16 w-full px-4 sm:px-8">
               <BaseInput
                 v-model.trim="search"
-                shape="curved"
+                rounded="lg"
                 icon="lucide:search"
                 placeholder="Search"
               />
@@ -312,18 +317,23 @@ const panelActive = ref(false)
                     : 'hover:bg-muted-100 dark:hover:bg-muted-800'
                 "
                 role="button"
+                tabindex="0"
                 @click=";(activeMessage = message.id), (panelActive = true)"
               >
                 <div class="mb-3 flex items-center gap-2">
                   <BaseAvatar
                     size="xs"
-                    shape="straight"
+                    rounded="none"
                     mask="blob"
                     :src="message.sender.photo"
                     class="pointer-events-none"
                   />
                   <div class="pointer-events-none">
-                    <BaseHeading size="sm" weight="semibold" lead="tight">
+                    <BaseHeading
+                      size="sm"
+                      weight="semibold"
+                      lead="tight"
+                    >
                       <span>{{ message.sender.name }}</span>
                     </BaseHeading>
                     <BaseParagraph size="xs" lead="none">
@@ -367,10 +377,10 @@ const panelActive = ref(false)
                 >
                   <button
                     type="button"
-                    class="ltablet:hidden flex h-9 w-9 items-center justify-center lg:hidden"
+                    class="ltablet:hidden flex size-9 items-center justify-center lg:hidden"
                     @click="panelActive = false"
                   >
-                    <Icon name="lucide:arrow-left" class="h-5 w-5" />
+                    <Icon name="lucide:arrow-left" class="size-5" />
                   </button>
                   <BaseHeading size="2xl">
                     <span>Inbox</span>
@@ -414,17 +424,17 @@ const panelActive = ref(false)
                     <BaseButtonIcon small class="scale-[0.8]">
                       <Icon
                         name="ph:arrow-bend-down-left-duotone"
-                        class="h-4 w-4"
+                        class="size-4"
                       />
                     </BaseButtonIcon>
                     <BaseButtonIcon small class="scale-[0.8]">
-                      <Icon name="ph:bookmark-simple-duotone" class="h-4 w-4" />
+                      <Icon name="ph:bookmark-simple-duotone" class="size-4" />
                     </BaseButtonIcon>
                     <BaseButtonIcon small class="scale-[0.8]">
-                      <Icon name="ph:printer-duotone" class="h-4 w-4" />
+                      <Icon name="ph:printer-duotone" class="size-4" />
                     </BaseButtonIcon>
                     <BaseButtonIcon small class="scale-[0.8]">
-                      <Icon name="ph:trash-duotone" class="h-4 w-4" />
+                      <Icon name="ph:trash-duotone" class="size-4" />
                     </BaseButtonIcon>
                   </div>
                 </div>
@@ -433,16 +443,20 @@ const panelActive = ref(false)
               <div
                 class="nui-slimscroll h-[calc(100vh_-_344px)] overflow-y-auto p-8"
               >
-                <h1 class="text-2xl font-bold">{{ selectedMessage?.title }}</h1>
+                <h1 class="text-2xl font-bold">
+                  {{ selectedMessage?.title }}
+                </h1>
                 <article
                   class="text-muted-500 dark:text-muted-400 mt-8 leading-7 tracking-wider"
                 >
+                  <!-- eslint-disable vue/no-v-html -->
                   <p
                     class="font-sans"
                     v-html="
                       selectedMessage?.content.replaceAll('/n ', '<br /><br />')
                     "
-                  ></p>
+                  />
+                  <!-- eslint-enable vue/no-v-html -->
                 </article>
                 <div class="mt-24 grid grid-cols-1 gap-4 sm:grid-cols-4">
                   <button
@@ -453,34 +467,34 @@ const panelActive = ref(false)
                   >
                     <img
                       v-if="file.type === 'pdf'"
-                      class="h-11 w-11"
+                      class="size-11"
                       src="/img/icons/files/pdf.svg"
                       alt="Pdf file"
-                    />
+                    >
                     <img
                       v-else-if="file.type === 'zip'"
-                      class="h-11 w-11"
+                      class="size-11"
                       src="/img/icons/files/zip-format.svg"
                       alt="Zip file"
-                    />
+                    >
                     <img
                       v-else-if="file.type === 'ai'"
-                      class="h-11 w-11"
+                      class="size-11"
                       src="/img/icons/files/ai.svg"
                       alt="AI file"
-                    />
+                    >
                     <img
                       v-else-if="file.type === 'sheet'"
-                      class="h-11 w-11"
+                      class="size-11"
                       src="/img/icons/files/sheet.svg"
                       alt="Sheet"
-                    />
+                    >
                     <img
                       v-else-if="file.type === 'doc'"
-                      class="h-11 w-11"
+                      class="size-11"
                       src="/img/icons/files/doc-2.svg"
                       alt="Document"
-                    />
+                    >
                     <span class="block font-sans">
                       <span
                         class="text-muted-800 dark:text-muted-100 block text-sm font-semibold"
@@ -497,7 +511,7 @@ const panelActive = ref(false)
                       >
                         <Icon
                           name="lucide:arrow-down"
-                          class="text-primary-500 h-4 w-4"
+                          class="text-primary-500 size-4"
                         />
                       </span>
                     </span>
@@ -515,14 +529,18 @@ const panelActive = ref(false)
                     class="bg-muted-50 dark:bg-muted-900 placeholder:text-muted-300 dark:placeholder:text-muted-600 w-full resize-none rounded-2xl p-3 font-sans outline-none"
                     placeholder="Type your reply here..."
                     rows="2"
-                  ></textarea>
+                  />
                   <div class="flex items-center justify-between p-3">
                     <button
-                      class="text-muted-500 dark:text-muted-100 flex h-6 w-6 items-center justify-center"
+                      class="text-muted-500 dark:text-muted-100 flex size-6 items-center justify-center"
                     >
-                      <Icon name="uit:paperclip" class="h-7 w-7" />
+                      <Icon name="uit:paperclip" class="size-7" />
                     </button>
-                    <BaseButton shape="curved" color="primary" class="w-24">
+                    <BaseButton
+                      rounded="lg"
+                      color="primary"
+                      class="w-24"
+                    >
                       <span>Reply</span>
                     </BaseButton>
                   </div>

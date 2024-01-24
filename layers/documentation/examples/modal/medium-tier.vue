@@ -2,16 +2,26 @@
   <!-- Element to trigger the modal -->
   <div class="flex gap-x-2">
     <div class="flex items-end gap-4">
-      <BaseButton @click="isModalLgOpen = true">Large dialog</BaseButton>
+      <BaseButton class="gap-2" @click="isModalLgOpen = true">
+        <Icon name="lucide:app-window" class="w-4" />
+        Large dialog
+      </BaseButton>
     </div>
 
     <div class="flex items-end gap-4">
-      <BaseButton @click="isModalXlOpen = true">Xl dialog</BaseButton>
+      <BaseButton class="gap-2" @click="isModalXlOpen = true">
+        <Icon name="lucide:app-window" class="w-4" />
+        XL dialog
+      </BaseButton>
     </div>
   </div>
 
   <!-- Modal component -->
-  <TairoModal :open="isModalLgOpen" size="lg" @close="isModalLgOpen = false">
+  <TairoModal
+    :open="isModalLgOpen"
+    size="lg"
+    @close="isModalLgOpen = false"
+  >
     <template #header>
       <!-- Header -->
       <div class="flex w-full items-center justify-between p-4 md:p-6">
@@ -26,12 +36,12 @@
     <!-- Body -->
     <div class="p-4 md:p-6">
       <div class="mx-auto w-full max-w-xs text-center">
-        <div class="relative mx-auto mb-4 flex h-24 w-24">
+        <div class="relative mx-auto mb-4 flex size-24">
           <img
             src="https://media.cssninja.io/shuriken/avatars/13.svg"
             class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
             alt=""
-          />
+          >
         </div>
 
         <h3 class="font-heading text-muted-800 text-lg font-medium leading-6 dark:text-white">
@@ -48,9 +58,15 @@
       <!-- Footer -->
       <div class="p-4 md:p-6">
         <div class="flex gap-x-2">
-          <BaseButton @click="isModalLgOpen = false">Decline</BaseButton>
+          <BaseButton @click="isModalLgOpen = false">
+            Decline
+          </BaseButton>
 
-          <BaseButton color="primary" flavor="solid" @click="isModalLgOpen = false">
+          <BaseButton
+            color="primary"
+            variant="solid"
+            @click="isModalLgOpen = false"
+          >
             Accept
           </BaseButton>
         </div>
@@ -59,7 +75,11 @@
   </TairoModal>
 
   <!-- Modal component -->
-  <TairoModal :open="isModalXlOpen" size="xl" @close="isModalXlOpen = false">
+  <TairoModal
+    :open="isModalXlOpen"
+    size="xl"
+    @close="isModalXlOpen = false"
+  >
     <template #header>
       <!-- Header -->
       <div class="flex w-full items-center justify-between p-4 md:p-6">
@@ -73,12 +93,12 @@
     <!-- Body -->
     <div class="p-4 md:p-6">
       <div class="mx-auto w-full max-w-xs text-center">
-        <div class="relative mx-auto mb-4 flex h-24 w-24">
+        <div class="relative mx-auto mb-4 flex size-24">
           <img
             src="https://media.cssninja.io/shuriken/avatars/17.svg"
             class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
             alt=""
-          />
+          >
         </div>
 
         <h3 class="font-heading text-muted-800 text-lg font-medium leading-6 dark:text-white">
@@ -95,9 +115,15 @@
       <!-- Footer -->
       <div class="p-4 md:p-6">
         <div class="flex gap-x-2">
-          <BaseButton @click="isModalXlOpen = false">Decline</BaseButton>
+          <BaseButton @click="isModalXlOpen = false">
+            Decline
+          </BaseButton>
 
-          <BaseButton color="primary" flavor="solid" @click="isModalXlOpen = false">
+          <BaseButton
+            color="primary"
+            variant="solid"
+            @click="isModalXlOpen = false"
+          >
             Accept
           </BaseButton>
         </div>

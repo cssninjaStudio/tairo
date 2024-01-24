@@ -34,7 +34,7 @@ import {
   useDragEventPending,
   useCreateEvent,
   useViewPan,
-} from '~/utils/apps/calendar'
+} from '~/utils/bundles/calendar'
 
 definePageMeta({
   title: 'Calendar',
@@ -88,7 +88,7 @@ const { onCalendarClick, clearNew, hasNew } = useCreateEvent(
   settings,
   calendarEvents,
   // new event template
-  (date) => ({
+  date => ({
     startDate: date,
     endDate: addMinutes(date, 30),
     duration: 30,
@@ -99,9 +99,9 @@ const { onCalendarClick, clearNew, hasNew } = useCreateEvent(
   // can create new event
   () => {
     return !(
-      isHeightDragging.value ||
-      isPositionDragging.value ||
-      isViewPaning.value
+      isHeightDragging.value
+      || isPositionDragging.value
+      || isViewPaning.value
     )
   },
   // on create
@@ -115,9 +115,9 @@ const selectedEventId = ref<string>()
 const selectedEvent = computed(() => {
   return (
     calendarEvents.value.find(
-      (event) => event?.customData?.id === selectedEventId.value,
-    )?.customData ||
-    pendingEvents.value.find((event) => event.id === selectedEventId.value)
+      event => event?.customData?.id === selectedEventId.value,
+    )?.customData
+    || pendingEvents.value.find(event => event.id === selectedEventId.value)
   )
 })
 function onSelectEvent(event: CalendarEvent) {
@@ -142,7 +142,7 @@ const { isPendingEventDragging, onPendingEventDragStart } = useDragEventPending(
     calendarEvents.value.push(event)
 
     const idx = pendingEvents.value.findIndex(
-      (item) => item.id === event.customData.id,
+      item => item.id === event.customData.id,
     )
     if (idx === -1) {
       return
@@ -153,9 +153,9 @@ const { isPendingEventDragging, onPendingEventDragStart } = useDragEventPending(
 
 const isDragging = computed(
   () =>
-    isPendingEventDragging.value ||
-    isPositionDragging.value ||
-    isHeightDragging.value,
+    isPendingEventDragging.value
+    || isPositionDragging.value
+    || isHeightDragging.value,
 )
 
 function scrollCalendarToTop(top = 0, behavior: ScrollBehavior = 'smooth') {
@@ -211,29 +211,29 @@ const selectedEventFeatures = computed({
 
 <template>
   <div
-    class="bg-white dark:bg-muted-900 flex h-screen w-full overflow-x-auto lg:overflow-hidden select-none"
+    class="dark:bg-muted-900 flex h-screen w-full select-none overflow-x-auto bg-white lg:overflow-hidden"
   >
     <!-- Sidebar -->
     <div
-      class="fixed lg:static top-0 start-0 z-50 h-full border-muted-200 dark:border-muted-800/40 dark:bg-muted-800 flex w-20 flex-col items-center border-r bg-white"
+      class="border-muted-200 dark:border-muted-800/40 dark:bg-muted-800 fixed start-0 top-0 z-50 flex h-full w-20 flex-col items-center border-r bg-white lg:static"
     >
       <NuxtLink
         to="/dashboards"
-        class="flex h-16 w-16 items-center justify-center"
+        class="flex size-16 items-center justify-center"
       >
         <TairoLogo class="text-primary-600 h-10" />
       </NuxtLink>
       <nav class="relative flex h-full flex-col">
         <NuxtLink
           to="/dashboards/inbox"
-          class="relative flex h-16 w-16 items-center justify-center"
+          class="relative flex size-16 items-center justify-center"
         >
           <div
-            class="bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400 relative flex h-12 w-12 items-center justify-center rounded-xl"
+            class="bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400 relative flex size-12 items-center justify-center rounded-xl"
           >
-            <Icon name="ph:tray-duotone" class="h-5 w-5" />
+            <Icon name="ph:tray-duotone" class="size-5" />
             <span
-              class="absolute -end-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-pink-600 font-sans text-xs text-white"
+              class="absolute -end-1 -top-1 flex size-5 items-center justify-center rounded-full bg-pink-600 font-sans text-xs text-white"
             >
               3
             </span>
@@ -241,78 +241,78 @@ const selectedEventFeatures = computed({
         </NuxtLink>
         <NuxtLink
           href="#"
-          class="relative flex h-16 w-16 items-center justify-center"
+          class="relative flex size-16 items-center justify-center"
         >
           <div
-            class="bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400 relative flex h-12 w-12 items-center justify-center rounded-xl"
+            class="bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400 relative flex size-12 items-center justify-center rounded-xl"
           >
-            <Icon name="ph:bookmark-simple-duotone" class="h-5 w-5" />
+            <Icon name="ph:bookmark-simple-duotone" class="size-5" />
           </div>
         </NuxtLink>
         <NuxtLink
           to="/dashboards/calendar"
-          class="relative flex h-16 w-16 items-center justify-center"
+          class="relative flex size-16 items-center justify-center"
         >
           <div
-            class="bg-primary-500/10 text-primary-500 relative flex h-12 w-12 items-center justify-center rounded-xl"
+            class="bg-primary-500/10 text-primary-500 relative flex size-12 items-center justify-center rounded-xl"
           >
-            <Icon name="ph:calendar-blank-duotone" class="h-5 w-5" />
+            <Icon name="ph:calendar-blank-duotone" class="size-5" />
           </div>
         </NuxtLink>
         <NuxtLink
           to="/dashboards/inbox"
-          class="relative flex h-16 w-16 items-center justify-center"
+          class="relative flex size-16 items-center justify-center"
         >
           <div
-            class="bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400 relative flex h-12 w-12 items-center justify-center rounded-xl"
+            class="bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400 relative flex size-12 items-center justify-center rounded-xl"
           >
-            <Icon name="ph:folder-duotone" class="h-5 w-5" />
+            <Icon name="ph:folder-duotone" class="size-5" />
           </div>
         </NuxtLink>
         <NuxtLink
           to="/dashboards/inbox"
-          class="relative flex h-16 w-16 items-center justify-center"
+          class="relative flex size-16 items-center justify-center"
         >
           <div
-            class="bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400 relative flex h-12 w-12 items-center justify-center rounded-xl"
+            class="bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400 relative flex size-12 items-center justify-center rounded-xl"
           >
-            <Icon name="ph:trash-duotone" class="h-5 w-5" />
+            <Icon name="ph:trash-duotone" class="size-5" />
           </div>
         </NuxtLink>
         <NuxtLink
           to="/dashboards/inbox"
-          class="relative flex h-16 w-16 items-center justify-center"
+          class="relative flex size-16 items-center justify-center"
         >
           <div
-            class="bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400 relative flex h-12 w-12 items-center justify-center rounded-xl"
+            class="bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400 relative flex size-12 items-center justify-center rounded-xl"
           >
-            <Icon name="ph:gear-six-duotone" class="h-5 w-5" />
+            <Icon name="ph:gear-six-duotone" class="size-5" />
           </div>
         </NuxtLink>
         <div class="mt-auto flex flex-col items-center">
           <a
             href="#"
-            class="relative flex h-16 w-16 items-center justify-center"
+            class="relative flex size-16 items-center justify-center"
             title="Back"
             @click.prevent="$router.back()"
           >
             <div
-              class="bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400 relative flex h-12 w-12 items-center justify-center rounded-xl"
+              class="bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400 relative flex size-12 items-center justify-center rounded-xl"
             >
-              <Icon name="lucide:arrow-left" class="h-5 w-5" />
+              <Icon name="lucide:arrow-left" class="size-5" />
             </div>
           </a>
           <button
             type="button"
-            class="relative flex h-16 w-16 items-center justify-center"
+            class="relative flex size-16 items-center justify-center"
           >
             <div
-              class="bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400 relative flex h-12 w-12 items-center justify-center rounded-xl"
+              class="bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400 relative flex size-12 items-center justify-center rounded-xl"
             >
-              <Icon name="lucide:plus" class="h-5 w-5" />
+              <Icon name="lucide:plus" class="size-5" />
             </div>
           </button>
-          <div class="relative flex h-16 w-16 items-center justify-center">
+          <div class="relative flex size-16 items-center justify-center">
             <DemoAccountMenu />
           </div>
         </div>
@@ -320,29 +320,31 @@ const selectedEventFeatures = computed({
     </div>
 
     <div
-      class="flex ms-20 lg:ms-0 w-[1500px] lg:w-full border-t border-muted-200 dark:border-muted-800"
+      class="border-muted-200 dark:border-muted-800 ms-20 flex w-[1500px] border-t lg:ms-0 lg:w-full"
     >
       <!-- scrollable area -->
       <div
         ref="scrollCalendarRef"
-        class="nui-slimscroll grow h-[100vh] w-[1500px] overflow-x-auto lg:overflow-x-hidden lg:w-auto space-y-14 overflow-y-auto relative"
+        class="nui-slimscroll relative h-[100vh] w-[1500px] grow space-y-14 overflow-auto lg:w-auto lg:overflow-x-hidden"
       >
         <!-- sticky header -->
         <div
-          class="sticky top-0 flex z-20 bg-white dark:bg-muted-900"
+          role="button"
+          tabindex="-1"
+          class="dark:bg-muted-900 sticky top-0 z-20 flex bg-white"
           @click="() => scrollCalendarToTop()"
         >
           <div
-            class="w-10 border-b border-muted-200 dark:border-muted-800"
-          ></div>
+            class="border-muted-200 dark:border-muted-800 w-10 border-b"
+          />
           <div
-            class="grid grow border-b border-muted-200 dark:border-muted-800"
+            class="border-muted-200 dark:border-muted-800 grid grow border-b"
             :class="[settings.hideWeekends ? 'grid-cols-5' : 'grid-cols-7']"
           >
             <span
               v-for="day of weekdays"
               :key="day.toISOString()"
-              class="day-label pointer-events-none text-muted-900 dark:text-muted-400 flex items-center gap-2 text-sm h-[52px] p-3"
+              class="day-label text-muted-900 dark:text-muted-400 pointer-events-none flex h-[52px] items-center gap-2 p-3 text-sm"
               :class="[isPast(endOfDay(day)) ? 'opacity-50' : '']"
             >
               <span>{{ capitalize(format(day, 'EEEE d')) }}</span>
@@ -352,24 +354,24 @@ const selectedEventFeatures = computed({
             </span>
           </div>
         </div>
-        <div class="flex !mt-0">
+        <div class="!mt-0 flex">
           <!-- hours grid -->
           <div class="w-10">
-            <div class="h-16"></div>
+            <div class="h-16" />
             <div>
               <div
-                class="grow pointer-events-none border-t border-muted-200 dark:border-muted-800"
+                class="border-muted-200 dark:border-muted-800 pointer-events-none grow border-t"
               >
                 <div
                   v-for="i in settings.hourClose - settings.hourOpen"
                   :key="i"
-                  class="border-b border-muted-200 dark:border-muted-800 relative"
+                  class="border-muted-200 dark:border-muted-800 relative border-b"
                   :style="{
                     height: `${settings.hourHeight}px`,
                   }"
                 >
                   <span
-                    class="text-xs absolute -top-2 left-1 bg-white dark:bg-muted-900 px-2 text-muted-900 dark:text-muted-300"
+                    class="dark:bg-muted-900 text-muted-900 dark:text-muted-300 absolute -top-2 left-1 bg-white px-2 text-xs"
                   >
                     {{ i + (settings.hourOpen - 1) }}h
                   </span>
@@ -395,12 +397,12 @@ const selectedEventFeatures = computed({
                   ? ((settings.weekStartsOn + 1) as any)
                   : 1
               "
-              :attributes="calendarEvents as VCalendarAttribute[]"
+              :attributes="(calendarEvents as VCalendarAttribute[])"
               @update:pages="onPageChange"
             >
               <template #header-left-button="{ movePrev }">
                 <BaseButtonIcon
-                  shape="full"
+                  rounded="full"
                   small
                   @click="movePrev"
                   @keydown.space.enter="movePrev"
@@ -413,7 +415,7 @@ const selectedEventFeatures = computed({
               </template>
               <template #header-right-button="{ moveNext }">
                 <BaseButtonIcon
-                  shape="full"
+                  rounded="full"
                   small
                   @click="moveNext"
                   @keydown.space.enter="moveNext"
@@ -434,7 +436,9 @@ const selectedEventFeatures = computed({
                 }"
               >
                 <div
-                  class="group z-10 flex h-full flex-col p-0 relative"
+                  role="button"
+                  tabindex="0"
+                  class="group relative z-10 flex h-full flex-col p-0"
                   :data-day="day.date"
                   :class="{
                     'pointer-events-none': isViewMoved,
@@ -444,20 +448,20 @@ const selectedEventFeatures = computed({
                   <!-- current time marker -->
                   <div
                     v-if="day.isToday && showNow"
-                    class="absolute z-50 pointer-events-none bg-red-500 h-[1px] inset-x-0 before:content-[''] before:bg-red-600 before:w-2 before:h-2 before:block before:rounded-full before:-translate-x-full before:translate-y-[-3px]"
+                    class="pointer-events-none absolute inset-x-0 z-50 h-[1px] bg-red-500 before:block before:size-2 before:-translate-x-full before:translate-y-[-3px] before:rounded-full before:bg-red-600 before:content-['']"
                     :style="{
                       top: `${dateToTop(settings, now, day.date)}px`,
                     }"
-                  ></div>
+                  />
 
                   <!-- hours grid -->
                   <div
-                    class="grow pointer-events-none border-t border-muted-200 dark:border-muted-800"
+                    class="border-muted-200 dark:border-muted-800 pointer-events-none grow border-t"
                   >
                     <div
                       v-for="i in settings.hourClose - settings?.hourOpen"
                       :key="i"
-                      class="border-b border-dashed border-muted-200 dark:border-muted-800 relative"
+                      class="border-muted-200 dark:border-muted-800 relative border-b border-dashed"
                       :style="{
                         height: `${settings.hourHeight}px`,
                       }"
@@ -465,7 +469,7 @@ const selectedEventFeatures = computed({
                       <div
                         v-for="j in 4"
                         :key="j"
-                        class="border-b relative z-50 border-muted-400 dark:border-muted-700 w-2"
+                        class="border-muted-400 dark:border-muted-700 relative z-50 w-2 border-b"
                         :style="{
                           height: `${settings.hourHeight / 4}px`,
                         }"
@@ -473,11 +477,11 @@ const selectedEventFeatures = computed({
                         <div
                           v-for="k in 2"
                           :key="k"
-                          class="border-b relative z-50 border-muted-300 dark:border-muted-800 w-1"
+                          class="border-muted-300 dark:border-muted-800 relative z-50 w-1 border-b"
                           :style="{
                             height: `${settings.hourHeight / 12}px`,
                           }"
-                        ></div>
+                        />
                       </div>
                     </div>
                   </div>
@@ -485,7 +489,7 @@ const selectedEventFeatures = computed({
                   <!-- day events -->
                   <template v-for="event in attributes" :key="event.key">
                     <div
-                      class="absolute z-50 outline-2 outline-offset-2 start-4 end-4 rounded-md pointer-events-none"
+                      class="pointer-events-none absolute end-4 start-4 z-50 rounded-md outline-2 outline-offset-2"
                       :class="{
                         'outline-dashed':
                           event.customData.id === 'new' &&
@@ -511,10 +515,12 @@ const selectedEventFeatures = computed({
                           ) + 4
                         }px`,
                       }"
-                    ></div>
+                    />
 
                     <div
-                      class="absolute z-10 bg-muted-50 dark:bg-muted-800 overflow-hidden start-4 end-4 text-xs rounded-t-md border border-b-0 border-muted-200 dark:border-muted-700 cursor-pointer"
+                      role="button"
+                      tabindex="0"
+                      class="bg-muted-50 dark:bg-muted-800 border-muted-200 dark:border-muted-700 absolute end-4 start-4 z-10 cursor-pointer overflow-hidden rounded-t-md border border-b-0 text-xs"
                       :class="{
                         'opacity-50': isPast(endOfDay(day.date)),
                         'pointer-events-none': isDragging,
@@ -540,7 +546,7 @@ const selectedEventFeatures = computed({
                       />
                     </div>
                     <div
-                      class="absolute start-4 end-4 dark:border-muted-800 dark:bg-muted-700/50 dark:hover:bg-muted-700/80 left-0 bottom-0 h-[4px] bg-slate-50 hover:bg-slate-200 cursor-n-resize rounded-b-md border border-t-0"
+                      class="dark:border-muted-800 dark:bg-muted-700/50 dark:hover:bg-muted-700/80 absolute bottom-0 end-4 left-0 start-4 h-[4px] cursor-n-resize rounded-b-md border border-t-0 bg-slate-50 hover:bg-slate-200"
                       :style="{
                         top: `${
                           dateToTop(
@@ -560,7 +566,7 @@ const selectedEventFeatures = computed({
                         'pointer-events-none': isDragging,
                       }"
                       @pointerdown="(e) => onHeightDragStart(event, e)"
-                    ></div>
+                    />
                   </template>
                 </div>
               </template>
@@ -571,17 +577,17 @@ const selectedEventFeatures = computed({
 
       <!-- left panel -->
       <div
-        class="w-72 shrink-0 hidden sm:block border-s border-muted-200 dark:border-muted-800"
+        class="border-muted-200 dark:border-muted-800 hidden w-72 shrink-0 border-s sm:block"
       >
         <!-- toolbar -->
-        <div class="relative z-20 p-2 flex items-center justify-between">
+        <div class="relative z-20 flex items-center justify-between p-2">
           <div>
             <button
               type="button"
-              class="border-muted-200 hover:ring-muted-200 dark:hover:ring-muted-700 dark:border-muted-800 dark:bg-muted-800 dark:ring-offset-muted-900 flex h-9 w-9 items-center justify-center rounded-full border bg-white ring-1 ring-transparent transition-all duration-300 hover:ring-offset-4"
+              class="border-muted-200 hover:ring-muted-200 dark:hover:ring-muted-700 dark:border-muted-800 dark:bg-muted-800 dark:ring-offset-muted-900 flex size-9 items-center justify-center rounded-full border bg-white ring-1 ring-transparent transition-all duration-300 hover:ring-offset-4"
               @click="showSettings = !showSettings"
             >
-              <Icon name="ph:gear-six-duotone" class="text-muted-400 h-5 w-5" />
+              <Icon name="ph:gear-six-duotone" class="text-muted-400 size-5" />
             </button>
           </div>
           <TairoSidebarTools />
@@ -590,36 +596,34 @@ const selectedEventFeatures = computed({
         <!-- settings -->
         <div
           v-if="showSettings"
-          class="px-6 py-4 bg-white dark:bg-muted-900 border-t border-b border-muted-300 dark:border-muted-800"
+          class="dark:bg-muted-900 border-muted-300 dark:border-muted-800 border-y bg-white px-6 py-4"
         >
-          <div class="grid grid-cols-3 gap-x-2 gap-y-4">
-            <BaseInput
-              v-model.number="settings.hourOpen"
-              type="number"
-              min="0"
+          <div class="grid grid-cols-2 gap-x-2">
+            <BaseInputNumber
+              v-model="settings.hourOpen"
+              :min="0"
               :max="settings.hourClose - 1"
               label="Open from"
               size="sm"
             />
-            <BaseInput
-              v-model.number="settings.hourClose"
-              type="number"
+            <BaseInputNumber
+              v-model="settings.hourClose"
               :min="settings.hourOpen + 1"
-              max="24"
+              :max="24"
               label="Close at"
               size="sm"
             />
-            <BaseInput
-              v-model.number="settings.hourPrecision"
-              type="number"
-              min="5"
-              step="5"
-              max="30"
+            <BaseInputNumber
+              v-model="settings.hourPrecision"
+              :min="5"
+              :step="5"
+              :max="30"
               label="Precision"
               size="sm"
+              :classes="{ wrapper: 'col-span-2' }"
             />
           </div>
-          <div class="grid grid-cols-3 gap-x-2 gap-y-4 items-end">
+          <div class="grid grid-cols-3 items-end gap-x-2 gap-y-4">
             <BaseSelect
               v-model.number="settings.weekStartsOn"
               label="Week starts on"
@@ -628,24 +632,38 @@ const selectedEventFeatures = computed({
                 wrapper: 'col-span-2',
               }"
             >
-              <option :value="0">Sunday</option>
-              <option :value="1">Monday</option>
-              <option :value="2">Tuesday</option>
-              <option :value="3">Wednesday</option>
-              <option :value="4">Thursday</option>
-              <option :value="5">Friday</option>
-              <option :value="6">Saturday</option>
+              <option :value="0">
+                Sunday
+              </option>
+              <option :value="1">
+                Monday
+              </option>
+              <option :value="2">
+                Tuesday
+              </option>
+              <option :value="3">
+                Wednesday
+              </option>
+              <option :value="4">
+                Thursday
+              </option>
+              <option :value="5">
+                Friday
+              </option>
+              <option :value="6">
+                Saturday
+              </option>
             </BaseSelect>
             <BaseButtonGroup>
               <BaseButtonAction
-                shape="curved"
+                rounded="lg"
                 :color="settings.hourHeight === 480 ? 'muted' : 'default'"
                 @click="() => updateHeight(480)"
               >
                 <Icon name="carbon:maximize" />
               </BaseButtonAction>
               <BaseButtonAction
-                shape="curved"
+                rounded="lg"
                 :color="settings.hourHeight === 160 ? 'muted' : 'default'"
                 @click="() => updateHeight()"
               >
@@ -678,7 +696,7 @@ const selectedEventFeatures = computed({
         >
           <div
             v-if="selectedEvent"
-            class="relative p-6 pt-4 nui-slimscroll h-[calc(100vh_-_53px)]"
+            class="nui-slimscroll relative h-[calc(100vh_-_53px)] p-6 pt-4"
             :class="{
               'overflow-y-auto overflow-x-hidden': !showSettings,
               'overflow-hidden': showSettings,
@@ -686,19 +704,21 @@ const selectedEventFeatures = computed({
           >
             <div
               v-if="showSettings"
+              role="button"
+              tabindex="0"
               class="absolute inset-0 z-50 cursor-pointer backdrop-blur-[2px]"
               @click="showSettings = false"
-            ></div>
+            />
             <BaseHeading
               size="sm"
               weight="medium"
               lead="snug"
-              class="flex justify-between items-center uppercase text-muted-400 dark:text-muted-500 mb-4"
+              class="text-muted-400 dark:text-muted-500 mb-4 flex items-center justify-between uppercase"
             >
               <span>Event Info</span>
               <BaseButtonClose
                 color="default"
-                class="bg-white dark:bg-muted-800"
+                class="dark:bg-muted-800 bg-white"
                 @click="selectedEventId = undefined"
               />
             </BaseHeading>
@@ -706,8 +726,8 @@ const selectedEventFeatures = computed({
             <div class="flex flex-col gap-2">
               <BaseInput
                 v-model.trim="selectedEvent.title"
-                label="Title"
                 v-focus
+                label="Title"
               />
 
               <BaseListbox
@@ -761,6 +781,10 @@ const selectedEventFeatures = computed({
                     photo: '/img/avatars/2.svg',
                   },
                 ]"
+                :properties="{
+                  label: 'name',
+                  media: 'photo'
+                }"
                 :display-value="(item: any) => item?.name || ''"
                 dropdown
                 multiple
@@ -786,19 +810,8 @@ const selectedEventFeatures = computed({
                 placeholder="Search..."
                 label="Assignee"
                 clearable
-              >
-                <template #item="{ item, active, selected }">
-                  <BaseAutocompleteItem
-                    :value="{
-                      name: item.name,
-                      media: item.photo,
-                    }"
-                    :active="active"
-                    :selected="selected"
-                  />
-                </template>
-              </BaseAutocomplete>
-              <div class="grid pt-4 grid-cols-4 gap-2 relative z-[5]">
+              />
+              <div class="relative z-[5] grid grid-cols-4 gap-2 pt-4">
                 <div data-nui-tooltip="Record">
                   <BaseCheckboxHeadless
                     v-model="selectedEventFeatures"
@@ -806,11 +819,11 @@ const selectedEventFeatures = computed({
                     name="features"
                   >
                     <BaseCard
-                      shape="curved"
+                      rounded="lg"
                       class="text-muted-300 peer-checked:border-primary-500 peer-checked:text-primary-500 p-4"
                     >
                       <div class="flex flex-col items-center gap-1">
-                        <Icon name="ph:monitor-play-duotone" class="w-5 h-5" />
+                        <Icon name="ph:monitor-play-duotone" class="size-5" />
                         <!-- <div
                           class="text-muted-800 dark:text-muted-100 text-xs font-medium"
                         >
@@ -827,11 +840,11 @@ const selectedEventFeatures = computed({
                     name="features"
                   >
                     <BaseCard
-                      shape="curved"
+                      rounded="lg"
                       class="text-muted-300 peer-checked:border-primary-500 peer-checked:text-primary-500 p-4"
                     >
                       <div class="flex flex-col items-center gap-1">
-                        <Icon name="ph:note-duotone" class="w-5 h-5" />
+                        <Icon name="ph:note-duotone" class="size-5" />
                         <!-- <div
                           class="text-muted-800 dark:text-muted-100 text-xs font-medium"
                         >
@@ -848,11 +861,11 @@ const selectedEventFeatures = computed({
                     name="features"
                   >
                     <BaseCard
-                      shape="curved"
+                      rounded="lg"
                       class="text-muted-300 peer-checked:border-primary-500 peer-checked:text-primary-500 p-4"
                     >
                       <div class="flex flex-col items-center gap-1">
-                        <Icon name="ph:lock-open-duotone" class="w-5 h-5" />
+                        <Icon name="ph:lock-open-duotone" class="size-5" />
                         <!-- <div
                           class="text-muted-800 dark:text-muted-100 text-xs font-medium"
                         >
@@ -869,11 +882,11 @@ const selectedEventFeatures = computed({
                     name="features"
                   >
                     <BaseCard
-                      shape="curved"
+                      rounded="lg"
                       class="text-muted-300 peer-checked:border-primary-500 peer-checked:text-primary-500 p-4"
                     >
                       <div class="flex flex-col items-center gap-1">
-                        <Icon name="ph:chats-circle-duotone" class="w-5 h-5" />
+                        <Icon name="ph:chats-circle-duotone" class="size-5" />
                         <!-- <div
                           class="text-muted-800 dark:text-muted-100 text-xs font-medium"
                         >
@@ -888,7 +901,7 @@ const selectedEventFeatures = computed({
           </div>
           <div
             v-else
-            class="relative p-6 nui-slimscroll h-[calc(100vh_-_53px)]"
+            class="nui-slimscroll relative h-[calc(100vh_-_53px)] p-6"
             :class="{
               'overflow-y-auto overflow-x-hidden': !showSettings,
               'overflow-hidden': showSettings,
@@ -896,13 +909,15 @@ const selectedEventFeatures = computed({
           >
             <div
               v-if="showSettings"
+              tabindex="0"
+              role="button"
               class="absolute inset-0 z-50 cursor-pointer backdrop-blur-[2px]"
               @click="showSettings = false"
-            ></div>
+            />
 
             <!-- Draggable pending events cards -->
             <Container
-              class="flex flex-col !min-h-[300px]"
+              class="flex !min-h-[300px] flex-col"
               tag="div"
               orientation="vertical"
               group-name="unscheduled"
@@ -926,7 +941,7 @@ const selectedEventFeatures = computed({
                   size="sm"
                   weight="medium"
                   lead="snug"
-                  class="uppercase text-muted-400 dark:text-muted-500 mb-4"
+                  class="text-muted-400 dark:text-muted-500 mb-4 uppercase"
                 >
                   Pending events
                 </BaseHeading>
@@ -948,14 +963,19 @@ const selectedEventFeatures = computed({
                     class="mx-auto block max-w-[200px] dark:hidden"
                     src="/img/illustrations/placeholders/flat/placeholder-projects.svg"
                     alt=""
-                  />
+                  >
                   <img
                     class="mx-auto hidden max-w-[200px] dark:block"
                     src="/img/illustrations/placeholders/flat/placeholder-projects-dark.svg"
                     alt=""
-                  />
+                  >
                   <div class="mt-4 text-center">
-                    <BaseHeading as="h4" size="lg" weight="light" class="mb-1">
+                    <BaseHeading
+                      as="h4"
+                      size="lg"
+                      weight="light"
+                      class="mb-1"
+                    >
                       <span>No pending events</span>
                     </BaseHeading>
                     <BaseParagraph
@@ -967,9 +987,9 @@ const selectedEventFeatures = computed({
                     </BaseParagraph>
                     <NuxtLink
                       href="#"
-                      class="text-primary-500 nui-focus pointer-events-auto dark:text-sunny mx-auto mt-2 flex items-center justify-center gap-1 font-sans text-xs underline-offset-4 hover:underline"
+                      class="text-primary-500 nui-focus dark:text-sunny pointer-events-auto mx-auto mt-2 flex items-center justify-center gap-1 font-sans text-xs underline-offset-4 hover:underline"
                     >
-                      <Icon name="lucide:plus" class="h-3 w-3" />
+                      <Icon name="lucide:plus" class="size-3" />
                       <span>New event</span>
                     </NuxtLink>
                   </div>

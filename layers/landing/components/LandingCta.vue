@@ -19,15 +19,19 @@
                 them.
               </p>
               <div class="mt-8 flex items-center gap-2">
-                <BaseButton to="/documentation" shape="curved" class="!h-11"
-                  >Open Documentation</BaseButton
+                <BaseButton
+                  to="/documentation"
+                  rounded="lg"
+                  class="!h-11"
                 >
+                  Open Documentation
+                </BaseButton>
               </div>
             </div>
           </div>
           <div class="aspect-w-5 aspect-h-3 md:aspect-w-2 md:aspect-h-1 -mt-6">
             <NuxtImg
-              class="ltablet:translate-y-20 block translate-x-6 translate-y-6 rounded-md object-cover object-left-top dark:hidden sm:translate-x-16 lg:translate-y-20"
+              class="ltablet:translate-y-20 block translate-x-6 translate-y-6 rounded-md object-cover object-left-top sm:translate-x-16 lg:translate-y-20 dark:hidden"
               src="/img/apps/tairo-screen-full.png"
               alt="Tairo demo screenshot lightmode"
               format="webp"
@@ -37,7 +41,7 @@
               decoding="async"
             />
             <NuxtImg
-              class="ltablet:translate-y-20 hidden translate-x-6 translate-y-6 rounded-md object-cover object-left-top dark:block sm:translate-x-16 lg:translate-y-20"
+              class="ltablet:translate-y-20 hidden translate-x-6 translate-y-6 rounded-md object-cover object-left-top sm:translate-x-16 lg:translate-y-20 dark:block"
               src="/img/apps/tairo-screen-full-dark.png"
               alt="Tairo demo screenshot darkmode"
               format="webp"

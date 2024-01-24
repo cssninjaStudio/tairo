@@ -73,7 +73,11 @@ const items = [
                 >
                   <span>New Rookies</span>
                 </BaseHeading>
-                <BaseParagraph size="xs" lead="tight" class="mb-3">
+                <BaseParagraph
+                  size="xs"
+                  lead="tight"
+                  class="mb-3"
+                >
                   <span class="text-white">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Praeclarae mortes.
@@ -82,24 +86,24 @@ const items = [
                 <div class="mt-auto flex gap-2">
                   <BaseAvatar
                     size="sm"
-                    shape="straight"
+                    rounded="none"
                     src="/img/avatars/3.svg"
                     class="nui-mask nui-mask-blob"
                   />
                   <BaseAvatar
                     size="sm"
-                    shape="straight"
+                    rounded="none"
                     src="/img/avatars/9.svg"
                     class="nui-mask nui-mask-blob"
                   />
                   <BaseAvatar
                     size="sm"
-                    shape="straight"
+                    rounded="none"
                     src="/img/avatars/5.svg"
                     class="nui-mask nui-mask-blob"
                   />
                   <BaseButtonIcon>
-                    <Icon name="lucide:plus" class="h-4 w-4" />
+                    <Icon name="lucide:plus" class="size-4" />
                   </BaseButtonIcon>
                 </div>
               </div>
@@ -115,7 +119,11 @@ const items = [
                 >
                   <span>Job Feed</span>
                 </BaseHeading>
-                <BaseParagraph size="xs" lead="tight" class="mb-3">
+                <BaseParagraph
+                  size="xs"
+                  lead="tight"
+                  class="mb-3"
+                >
                   <span class="text-white">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Praeclarae mortes.
@@ -146,21 +154,21 @@ const items = [
             </div>
             <div class="flex gap-2 sm:justify-end">
               <BaseButtonAction
-                shape="curved"
+                rounded="lg"
                 :color="activeSetting === 'all' ? 'primary' : 'default'"
                 @click="activeSetting = 'all'"
               >
                 All
               </BaseButtonAction>
               <BaseButtonAction
-                shape="curved"
+                rounded="lg"
                 :color="activeSetting === 'candidates' ? 'primary' : 'default'"
                 @click="activeSetting = 'candidates'"
               >
                 Candidates
               </BaseButtonAction>
               <BaseButtonAction
-                shape="curved"
+                rounded="lg"
                 :color="activeSetting === 'companies' ? 'primary' : 'default'"
                 @click="activeSetting = 'companies'"
               >
@@ -205,7 +213,7 @@ const items = [
                 <DemoFlexTableRow
                   v-for="(item, index) in items"
                   :key="index"
-                  shape="rounded"
+                  rounded="sm"
                 >
                   <template #start>
                     <DemoFlexTableStart
@@ -235,8 +243,8 @@ const items = [
                     >
                       <BaseTag
                         :color="item.status === 'new' ? 'success' : 'muted'"
-                        shape="full"
-                        flavor="pastel"
+                        rounded="full"
+                        variant="pastel"
                         size="sm"
                       >
                         {{ item.status }}
@@ -278,7 +286,7 @@ const items = [
           <div class="grid gap-6 sm:grid-cols-3">
             <!-- Item -->
             <div class="relative">
-              <BaseCard class="p-6" shape="curved">
+              <BaseCard class="p-6" rounded="lg">
                 <div class="flex flex-col">
                   <BaseAvatar
                     size="xl"
@@ -303,7 +311,7 @@ const items = [
                     <div class="mt-3">
                       <BaseButton
                         href="/"
-                        shape="curved"
+                        rounded="lg"
                         color="default"
                         class="w-full"
                       >
@@ -316,7 +324,7 @@ const items = [
             </div>
             <!-- Item -->
             <div class="relative">
-              <BaseCard class="p-6" shape="curved">
+              <BaseCard class="p-6" rounded="lg">
                 <div class="flex flex-col">
                   <BaseAvatar
                     size="xl"
@@ -341,7 +349,7 @@ const items = [
                     <div class="mt-3">
                       <BaseButton
                         href="/"
-                        shape="curved"
+                        rounded="lg"
                         color="default"
                         class="w-full"
                       >
@@ -354,7 +362,7 @@ const items = [
             </div>
             <!-- Item -->
             <div class="relative">
-              <BaseCard class="p-6" shape="curved">
+              <BaseCard class="p-6" rounded="lg">
                 <div class="flex flex-col">
                   <BaseAvatar
                     size="xl"
@@ -379,7 +387,7 @@ const items = [
                     <div class="mt-3">
                       <BaseButton
                         href="/"
-                        shape="curved"
+                        rounded="lg"
                         color="default"
                         class="w-full"
                       >
@@ -397,21 +405,21 @@ const items = [
       <div class="ltablet:col-span-4 col-span-12 lg:col-span-4">
         <div class="flex flex-col gap-6">
           <!-- Widget -->
-          <BaseCard shape="curved" class="p-6">
+          <BaseCard rounded="lg" class="p-6">
             <div class="flex w-full items-center justify-between">
-              <DemoSearchCompact shape="curved" />
+              <DemoSearchCompact rounded="lg" />
             </div>
           </BaseCard>
           <!-- Widget -->
-          <BaseCard shape="curved" class="p-6">
+          <BaseCard rounded="lg" class="p-6">
             <BaseTabSlider
+              v-slot="{ activeValue }"
               size="sm"
               model-value="team"
               :tabs="[
                 { label: 'Team', value: 'team' },
                 { label: 'Tasks', value: 'tasks' },
               ]"
-              v-slot="{ activeValue }"
             >
               <div v-if="activeValue === 'team'">
                 <DemoTeamListCompact actions />
@@ -422,21 +430,13 @@ const items = [
             </BaseTabSlider>
           </BaseCard>
           <!-- Widget -->
-          <BaseCard shape="curved" class="p-4">
+          <BaseCard rounded="lg" class="p-4">
             <Calendar
               :attributes="[
                 {
                   key: 'today',
-                  dot: true,
-                  bar: false,
-                  content: 'Today',
-                  customData: {},
-                  event: {},
-                  hashcode: 'today',
-                  highlight: false,
+                  highlight: true,
                   order: 0,
-                  pinPage: false,
-                  popover: {},
                   dates: [new Date()],
                 },
               ]"

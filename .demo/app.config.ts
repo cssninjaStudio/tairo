@@ -10,9 +10,6 @@
 
 export default defineAppConfig({
   nuxtIcon: {},
-  nui: {
-    defaultShapes: {},
-  },
   tairo: {
     title: 'Tairo',
     sidebar: {
@@ -349,6 +346,7 @@ export default defineAppConfig({
         },
         header: {
           component: 'DemoTopnavWorkspaceDropdown',
+          props: {},
         },
         items: [
           {

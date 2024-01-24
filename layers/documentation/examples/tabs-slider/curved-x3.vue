@@ -1,14 +1,14 @@
 <template>
   <div class="w-full max-w-sm">
     <BaseTabSlider
-      shape="curved"
+      v-slot="{ activeValue }"
+      rounded="lg"
       model-value="team"
       :tabs="[
         { label: 'Team', value: 'team' },
         { label: 'Projects', value: 'projects' },
         { label: 'Tasks', value: 'tasks' },
       ]"
-      v-slot="{ activeValue }"
     >
       <p v-if="activeValue === 'team'" class="font-sans text-sm text-gray-500 dark:text-gray-400">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quid iudicant sensus? Primum quid

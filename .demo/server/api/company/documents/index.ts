@@ -1,3 +1,16 @@
+interface Document {
+  id: number
+  name: string
+  icon: string
+  size: string
+  version: string
+  uploaded: string
+  author: {
+    name: string
+    picture: string
+  }
+}
+
 export default defineEventHandler(async (event) => {
   const query = getQuery(event)
   const perPage = parseInt((query.perPage as string) || '5', 10)
@@ -6,36 +19,26 @@ export default defineEventHandler(async (event) => {
 
   if (perPage >= 50) {
     // Create an artificial delay
-    await new Promise((resolve) => setTimeout(resolve, 1000))
+    await new Promise(resolve => setTimeout(resolve, 1000))
   }
 
   const data = await getDemoData()
+  const offset = (page - 1) * perPage
+  const filterRe = new RegExp(filter, 'i')
 
   return {
     total: data.length,
-    data: filterDemoData(data, filter, page, perPage),
+    data: !filter
+      ? data.slice(offset, offset + perPage)
+      : data
+        .filter((item) => {
+          return [item.name, item.author.name].some(item => item.match(filterRe))
+        })
+        .slice(offset, offset + perPage),
   }
 })
 
-function filterDemoData(
-  data: any[],
-  filter: string,
-  page: number,
-  perPage: number,
-) {
-  const offset = (page - 1) * perPage
-  if (!filter) {
-    return data.slice(offset, offset + perPage)
-  }
-  const filterRe = new RegExp(filter, 'i')
-  return data
-    .filter((item) => {
-      return [item.name, item.author.name].some((item) => item.match(filterRe))
-    })
-    .slice(offset, offset + perPage)
-}
-
-async function getDemoData() {
+async function getDemoData(): Promise<Document[]> {
   return Promise.resolve([
     {
       id: 0,
@@ -195,7 +198,7 @@ async function getDemoData() {
     },
     {
       id: 13,
-      name: '	Website Contact Page Redesign',
+      name: 'Website Contact Page Redesign',
       icon: '/img/icons/files/ai.svg',
       size: '3.8',
       version: '1.1.5',

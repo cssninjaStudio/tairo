@@ -2,11 +2,11 @@
 const props = withDefaults(
   defineProps<{
     title?: string
-    shape?: 'straight' | 'rounded' | 'curved' | 'full'
+    rounded?: 'none' | 'sm' | 'md' | 'lg' | 'full'
     labels: string[]
   }>(),
   {
-    shape: 'rounded',
+    rounded: 'sm',
     title: undefined,
   },
 )
@@ -33,9 +33,10 @@ const activeTab = ref('tab-1')
         <div
           class="bg-muted-100 dark:bg-muted-700 relative flex h-9 w-40"
           :class="[
-            props.shape === 'rounded' ? 'rounded-md' : '',
-            props.shape === 'curved' ? 'rounded-xl' : '',
-            props.shape === 'full' ? 'rounded-full' : '',
+            props.rounded === 'sm' ? 'rounded-md' : '',
+            props.rounded === 'md' ? 'rounded-lg' : '',
+            props.rounded === 'lg' ? 'rounded-xl' : '',
+            props.rounded === 'full' ? 'rounded-full' : '',
           ]"
         >
           <button
@@ -43,9 +44,10 @@ const activeTab = ref('tab-1')
             class="nui-focus relative z-10 flex flex-1 cursor-pointer items-center justify-center font-sans text-sm transition-colors duration-300"
             :class="[
               activeTab === 'tab-1' ? 'text-white' : 'text-muted-400',
-              props.shape === 'rounded' ? 'rounded-md' : '',
-              props.shape === 'curved' ? 'rounded-xl' : '',
-              props.shape === 'full' ? 'rounded-full' : '',
+              props.rounded === 'sm' ? 'rounded-md' : '',
+              props.rounded === 'md' ? 'rounded-lg' : '',
+              props.rounded === 'lg' ? 'rounded-xl' : '',
+              props.rounded === 'full' ? 'rounded-full' : '',
             ]"
             @click="activeTab = 'tab-1'"
           >
@@ -56,9 +58,10 @@ const activeTab = ref('tab-1')
             class="nui-focus relative z-10 flex flex-1 cursor-pointer items-center justify-center font-sans text-sm transition-colors duration-300"
             :class="[
               activeTab === 'tab-2' ? 'text-white' : 'text-muted-400',
-              props.shape === 'rounded' ? 'rounded-md' : '',
-              props.shape === 'curved' ? 'rounded-xl' : '',
-              props.shape === 'full' ? 'rounded-full' : '',
+              props.rounded === 'sm' ? 'rounded-md' : '',
+              props.rounded === 'md' ? 'rounded-lg' : '',
+              props.rounded === 'lg' ? 'rounded-xl' : '',
+              props.rounded === 'full' ? 'rounded-full' : '',
             ]"
             @click="activeTab = 'tab-2'"
           >
@@ -68,20 +71,21 @@ const activeTab = ref('tab-1')
             class="bg-primary-500 absolute start-0 top-0 h-full w-1/2 transition-all duration-300 ease-in-out"
             :class="[
               activeTab === 'tab-1' ? 'ms-0' : 'ms-[50%]',
-              props.shape === 'rounded' ? 'rounded-md' : '',
-              props.shape === 'curved' ? 'rounded-xl' : '',
-              props.shape === 'full' ? 'rounded-full' : '',
+              props.rounded === 'sm' ? 'rounded-md' : '',
+              props.rounded === 'md' ? 'rounded-lg' : '',
+              props.rounded === 'lg' ? 'rounded-xl' : '',
+              props.rounded === 'full' ? 'rounded-full' : '',
             ]"
-          ></div>
+          />
         </div>
       </div>
     </div>
     <div>
       <div v-if="activeTab === 'tab-1'">
-        <slot name="tab-1"></slot>
+        <slot name="tab-1" />
       </div>
       <div v-else-if="activeTab === 'tab-2'">
-        <slot name="tab-2"></slot>
+        <slot name="tab-2" />
       </div>
     </div>
   </div>

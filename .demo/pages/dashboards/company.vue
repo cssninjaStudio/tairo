@@ -83,7 +83,7 @@ function useGaugePersonal() {
     labels: ['Average Results'],
   }
 
-  const series = ref([76])
+  const series = shallowRef([76])
 
   return {
     type,
@@ -155,7 +155,7 @@ function useBarSalesProfit() {
     },
   }
 
-  const series = ref([
+  const series = shallowRef([
     {
       name: 'Net Profit',
       data: [-26, -15, -13, -14, -9, -12, -7, -10, -4],
@@ -226,8 +226,9 @@ const isAllVisibleSelected = computed(() => {
 function toggleAllVisibleSelection() {
   if (isAllVisibleSelected.value) {
     selected.value = []
-  } else {
-    selected.value = team.value?.map((item) => item.id) ?? []
+  }
+  else {
+    selected.value = team.value?.map(item => item.id) ?? []
   }
 }
 </script>
@@ -245,14 +246,16 @@ function toggleAllVisibleSelection() {
             <div class="flex flex-col p-4 text-center sm:py-0">
               <Icon
                 name="ph:users-duotone"
-                class="text-primary-500 mx-auto h-8 w-8"
+                class="text-primary-500 mx-auto size-8"
               />
               <h4
                 class="text-muted-800 dark:text-muted-100 font-sans text-xl font-semibold"
               >
                 162
               </h4>
-              <p class="text-muted-400 font-sans text-sm">New Users</p>
+              <p class="text-muted-400 font-sans text-sm">
+                New Users
+              </p>
             </div>
           </div>
           <!-- Item -->
@@ -260,14 +263,16 @@ function toggleAllVisibleSelection() {
             <div class="flex flex-col p-4 text-center sm:py-0">
               <Icon
                 name="ph:coins-duotone"
-                class="text-primary-500 mx-auto h-8 w-8"
+                class="text-primary-500 mx-auto size-8"
               />
               <h4
                 class="text-muted-800 dark:text-muted-100 font-sans text-xl font-semibold"
               >
                 $8,579
               </h4>
-              <p class="text-muted-400 font-sans text-sm">Daily Income</p>
+              <p class="text-muted-400 font-sans text-sm">
+                Daily Income
+              </p>
             </div>
           </div>
           <!-- Item -->
@@ -275,14 +280,16 @@ function toggleAllVisibleSelection() {
             <div class="flex flex-col p-4 text-center sm:py-0">
               <Icon
                 name="ph:briefcase-duotone"
-                class="text-primary-500 mx-auto h-8 w-8"
+                class="text-primary-500 mx-auto size-8"
               />
               <h4
                 class="text-muted-800 dark:text-muted-100 font-sans text-xl font-semibold"
               >
                 192
               </h4>
-              <p class="text-muted-400 font-sans text-sm">Completed Projects</p>
+              <p class="text-muted-400 font-sans text-sm">
+                Completed Projects
+              </p>
             </div>
           </div>
           <!-- Item -->
@@ -290,14 +297,16 @@ function toggleAllVisibleSelection() {
             <div class="flex flex-col p-4 text-center sm:py-0">
               <Icon
                 name="ph:ticket-duotone"
-                class="text-primary-500 mx-auto h-8 w-8"
+                class="text-primary-500 mx-auto size-8"
               />
               <h4
                 class="text-muted-800 dark:text-muted-100 font-sans text-xl font-semibold"
               >
                 32
               </h4>
-              <p class="text-muted-400 font-sans text-sm">Active Tickets</p>
+              <p class="text-muted-400 font-sans text-sm">
+                Active Tickets
+              </p>
             </div>
           </div>
         </div>
@@ -324,7 +333,7 @@ function toggleAllVisibleSelection() {
         </div>
         <!-- Widget -->
         <div class="col-span-12">
-          <TairoTable shape="rounded">
+          <TairoTable rounded="sm">
             <template #header>
               <TairoTableHeading uppercase class="px-4 py-6">
                 <div class="flex items-center">
@@ -334,16 +343,24 @@ function toggleAllVisibleSelection() {
                       selected.length > 0 && !isAllVisibleSelected
                     "
                     name="table-1-main"
-                    shape="rounded"
-                    class="text-primary-500"
+                    rounded="sm"
+                    color="primary"
                     @click="toggleAllVisibleSelection"
                   />
                 </div>
               </TairoTableHeading>
-              <TairoTableHeading uppercase>Collaborator</TairoTableHeading>
-              <TairoTableHeading uppercase>Expertise</TairoTableHeading>
-              <TairoTableHeading uppercase>Rate</TairoTableHeading>
-              <TairoTableHeading uppercase>Status</TairoTableHeading>
+              <TairoTableHeading uppercase>
+                Collaborator
+              </TairoTableHeading>
+              <TairoTableHeading uppercase>
+                Expertise
+              </TairoTableHeading>
+              <TairoTableHeading uppercase>
+                Rate
+              </TairoTableHeading>
+              <TairoTableHeading uppercase>
+                Status
+              </TairoTableHeading>
               <TairoTableHeading uppercase class="px-4 py-6">
                 <span class="sr-only">View</span>
               </TairoTableHeading>
@@ -356,8 +373,8 @@ function toggleAllVisibleSelection() {
                     v-model="selected"
                     :value="member.id"
                     :name="member.id"
-                    shape="rounded"
-                    class="text-primary-500"
+                    rounded="sm"
+                    color="primary"
                   />
                 </div>
               </TairoTableCell>
@@ -382,8 +399,8 @@ function toggleAllVisibleSelection() {
                 <BaseTag
                   v-if="member.status === 'Available'"
                   color="success"
-                  flavor="pastel"
-                  shape="full"
+                  variant="pastel"
+                  rounded="full"
                   class="font-medium"
                 >
                   {{ member.status }}
@@ -391,8 +408,8 @@ function toggleAllVisibleSelection() {
                 <BaseTag
                   v-else-if="member.status === 'New'"
                   color="info"
-                  flavor="pastel"
-                  shape="full"
+                  variant="pastel"
+                  rounded="full"
                   class="font-medium"
                 >
                   {{ member.status }}
@@ -400,8 +417,8 @@ function toggleAllVisibleSelection() {
                 <BaseTag
                   v-else-if="member.status === 'Hired'"
                   color="warning"
-                  flavor="pastel"
-                  shape="full"
+                  variant="pastel"
+                  rounded="full"
                   class="font-medium"
                 >
                   {{ member.status }}
@@ -468,16 +485,8 @@ function toggleAllVisibleSelection() {
               :attributes="[
                 {
                   key: 'today',
-                  dot: true,
-                  bar: false,
-                  content: 'Today',
-                  customData: {},
-                  event: {},
-                  hashcode: 'today',
-                  highlight: false,
+                  highlight: true,
                   order: 0,
-                  pinPage: false,
-                  popover: {},
                   dates: [new Date()],
                 },
               ]"

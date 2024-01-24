@@ -25,15 +25,15 @@ const props = withDefaults(
         <span>{{ props.title }}</span>
       </BaseHeading>
       <div class="relative">
-        <Icon :name="props.icon" class="text-muted-400 h-4 w-4" />
+        <Icon :name="props.icon" class="text-muted-400 size-4" />
         <div v-if="indicator" class="absolute -end-0.5 top-0.5">
-          <span class="relative flex h-2 w-2">
+          <span class="relative flex size-2">
             <span
-              class="bg-primary-400 absolute inline-flex h-full w-full animate-ping rounded-full opacity-75"
-            ></span>
+              class="bg-primary-400 absolute inline-flex size-full animate-ping rounded-full opacity-75"
+            />
             <span
-              class="bg-primary-500 relative inline-flex h-2 w-2 rounded-full"
-            ></span>
+              class="bg-primary-500 relative inline-flex size-2 rounded-full"
+            />
           </span>
         </div>
       </div>
@@ -46,7 +46,7 @@ const props = withDefaults(
       </BaseParagraph>
     </div>
     <div>
-      <slot></slot>
+      <slot />
     </div>
   </div>
 </template>

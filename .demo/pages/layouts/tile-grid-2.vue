@@ -49,7 +49,7 @@ const { data, pending, error, refresh } = await useFetch(
         <BaseInput
           v-model="filter"
           icon="lucide:search"
-          shape="curved"
+          rounded="lg"
           placeholder="Filter files..."
           :classes="{
             wrapper: 'w-full sm:w-auto',
@@ -57,9 +57,15 @@ const { data, pending, error, refresh } = await useFetch(
         />
       </template>
       <template #right>
-        <BaseButton class="w-full sm:w-32" shape="curved">Manage</BaseButton>
-        <BaseButton color="primary" class="w-full sm:w-32" shape="curved">
-          <Icon name="lucide:plus" class="h-4 w-4" />
+        <BaseButton class="w-full sm:w-32" rounded="lg">
+          Manage
+        </BaseButton>
+        <BaseButton
+          color="primary"
+          class="w-full sm:w-32"
+          rounded="lg"
+        >
+          <Icon name="lucide:plus" class="size-4" />
           <span>Upload</span>
         </BaseButton>
       </template>
@@ -74,12 +80,12 @@ const { data, pending, error, refresh } = await useFetch(
                 class="block dark:hidden"
                 src="/img/illustrations/placeholders/flat/placeholder-search-5.svg"
                 alt="Placeholder image"
-              />
+              >
               <img
                 class="hidden dark:block"
                 src="/img/illustrations/placeholders/flat/placeholder-search-5-dark.svg"
                 alt="Placeholder image"
-              />
+              >
             </template>
           </BasePlaceholderPage>
         </div>
@@ -98,13 +104,21 @@ const { data, pending, error, refresh } = await useFetch(
             <BaseCard
               v-for="(item, index) in data?.data"
               :key="index"
-              shape="curved"
+              rounded="lg"
               class="p-3"
             >
               <div class="flex w-full items-center gap-2">
-                <img :src="item.icon" :alt="item.name" class="max-w-[46px]" />
+                <img
+                  :src="item.icon"
+                  :alt="item.name"
+                  class="max-w-[46px]"
+                >
                 <div>
-                  <BaseHeading tag="h3" size="sm" weight="medium">
+                  <BaseHeading
+                    tag="h3"
+                    size="sm"
+                    weight="medium"
+                  >
                     {{ item.name }}
                   </BaseHeading>
                   <BaseParagraph size="xs" class="text-muted-400">
@@ -115,12 +129,12 @@ const { data, pending, error, refresh } = await useFetch(
                 </div>
                 <div class="ms-auto">
                   <BaseDropdown
-                    flavor="context"
+                    variant="context"
                     label="Dropdown"
                     orientation="end"
                     size="md"
                     class="z-20"
-                    shape="curved"
+                    rounded="lg"
                   >
                     <BaseDropdownItem
                       to="#"
@@ -130,7 +144,7 @@ const { data, pending, error, refresh } = await useFetch(
                       <template #start>
                         <Icon
                           name="ph:upload-duotone"
-                          class="me-2 block h-5 w-5"
+                          class="me-2 block size-5"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -142,7 +156,7 @@ const { data, pending, error, refresh } = await useFetch(
                       <template #start>
                         <Icon
                           name="ph:download-duotone"
-                          class="me-2 block h-5 w-5"
+                          class="me-2 block size-5"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -155,7 +169,7 @@ const { data, pending, error, refresh } = await useFetch(
                       <template #start>
                         <Icon
                           name="ph:lock-duotone"
-                          class="me-2 block h-5 w-5"
+                          class="me-2 block size-5"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -167,7 +181,7 @@ const { data, pending, error, refresh } = await useFetch(
                       <template #start>
                         <Icon
                           name="ph:share-duotone"
-                          class="me-2 block h-5 w-5"
+                          class="me-2 block size-5"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -180,7 +194,7 @@ const { data, pending, error, refresh } = await useFetch(
                       <template #start>
                         <Icon
                           name="ph:trash-duotone"
-                          class="me-2 block h-5 w-5"
+                          class="me-2 block size-5"
                         />
                       </template>
                     </BaseDropdownItem>
@@ -195,7 +209,7 @@ const { data, pending, error, refresh } = await useFetch(
             :total-items="data?.total ?? 0"
             :item-per-page="perPage"
             :current-page="page"
-            shape="curved"
+            rounded="lg"
           />
         </div>
       </div>

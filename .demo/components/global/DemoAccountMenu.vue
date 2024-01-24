@@ -8,20 +8,24 @@ const props = defineProps<{
 
 <template>
   <div class="group inline-flex items-center justify-center text-right">
-    <Menu as="div" class="relative h-10 w-10 text-left" v-slot="{ close }">
+    <Menu
+      v-slot="{ close }"
+      as="div"
+      class="relative size-10 text-left"
+    >
       <MenuButton as="template">
         <button
           type="button"
-          class="group-hover:ring-primary-500 dark:ring-offset-muted-800 inline-flex h-10 w-10 items-center justify-center rounded-full ring-1 ring-transparent transition-all duration-300 group-hover:ring-offset-4"
+          class="group-hover:ring-primary-500 dark:ring-offset-muted-800 inline-flex size-10 items-center justify-center rounded-full ring-1 ring-transparent transition-all duration-300 group-hover:ring-offset-4"
         >
           <div
-            class="relative inline-flex h-10 w-10 items-center justify-center rounded-full"
+            class="relative inline-flex size-10 items-center justify-center rounded-full"
           >
             <img
               src="/img/avatars/2.svg"
               class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
               alt=""
-            />
+            >
           </div>
         </button>
       </MenuButton>
@@ -41,13 +45,13 @@ const props = defineProps<{
           <div class="bg-muted-50 dark:bg-muted-700/40 p-6">
             <div class="flex items-center">
               <div
-                class="relative inline-flex h-14 w-14 items-center justify-center rounded-full"
+                class="relative inline-flex size-14 items-center justify-center rounded-full"
               >
                 <img
                   src="/img/avatars/2.svg"
                   class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                   alt=""
-                />
+                >
               </div>
               <div class="ms-3">
                 <h6
@@ -55,12 +59,14 @@ const props = defineProps<{
                 >
                   Maya Rosselini
                 </h6>
-                <p class="text-muted-400 font-sans text-xs">Product Manager</p>
+                <p class="text-muted-400 font-sans text-xs">
+                  Product Manager
+                </p>
               </div>
             </div>
           </div>
           <div class="p-2">
-            <MenuItem as="div" v-slot="{ active }">
+            <MenuItem v-slot="{ active }" as="div">
               <NuxtLink
                 to="/layouts/profile"
                 class="group flex w-full items-center rounded-md p-3 text-sm transition-colors duration-300"
@@ -71,7 +77,7 @@ const props = defineProps<{
                 ]"
                 @click.passive="close"
               >
-                <Icon name="ph:user-circle-duotone" class="h-5 w-5" />
+                <Icon name="ph:user-circle-duotone" class="size-5" />
                 <div class="ms-3">
                   <h6
                     class="font-heading text-muted-800 text-xs font-medium leading-none dark:text-white"
@@ -84,7 +90,7 @@ const props = defineProps<{
                 </div>
               </NuxtLink>
             </MenuItem>
-            <MenuItem as="div" v-slot="{ active }">
+            <MenuItem v-slot="{ active }" as="div">
               <NuxtLink
                 to="/layouts/projects"
                 class="group flex w-full items-center rounded-md p-3 text-sm transition-colors duration-300"
@@ -95,7 +101,7 @@ const props = defineProps<{
                 ]"
                 @click.passive="close"
               >
-                <Icon name="ph:briefcase-duotone" class="h-5 w-5" />
+                <Icon name="ph:briefcase-duotone" class="size-5" />
                 <div class="ms-3">
                   <h6
                     class="font-heading text-muted-800 text-xs font-medium leading-none dark:text-white"
@@ -108,7 +114,7 @@ const props = defineProps<{
                 </div>
               </NuxtLink>
             </MenuItem>
-            <MenuItem as="div" v-slot="{ active }">
+            <MenuItem v-slot="{ active }" as="div">
               <NuxtLink
                 to="/layouts/user-grid-4"
                 class="group flex w-full items-center rounded-md p-3 text-sm transition-colors duration-300"
@@ -119,18 +125,20 @@ const props = defineProps<{
                 ]"
                 @click.passive="close"
               >
-                <Icon name="ph:users-three-duotone" class="h-5 w-5" />
+                <Icon name="ph:users-three-duotone" class="size-5" />
                 <div class="ms-3">
                   <h6
                     class="font-heading text-muted-800 text-xs font-medium leading-none dark:text-white"
                   >
                     Team
                   </h6>
-                  <p class="text-muted-400 font-sans text-xs">Manage my team</p>
+                  <p class="text-muted-400 font-sans text-xs">
+                    Manage my team
+                  </p>
                 </div>
               </NuxtLink>
             </MenuItem>
-            <MenuItem as="div" v-slot="{ active }">
+            <MenuItem v-slot="{ active }" as="div">
               <NuxtLink
                 to="/layouts/profile-edit"
                 class="group flex w-full items-center rounded-md p-3 text-sm transition-colors duration-300"
@@ -141,7 +149,7 @@ const props = defineProps<{
                 ]"
                 @click.passive="close"
               >
-                <Icon name="ph:gear-six-duotone" class="h-5 w-5" />
+                <Icon name="ph:gear-six-duotone" class="size-5" />
                 <div class="ms-3">
                   <h6
                     class="font-heading text-muted-800 text-xs font-medium leading-none dark:text-white"

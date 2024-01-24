@@ -1,5 +1,5 @@
 <template>
-  <BaseList ordered>
+  <BaseList ordered class="ps-4">
     <li>Finish project UX</li>
 
     <li>Meet with Andy at 3:00pm</li>

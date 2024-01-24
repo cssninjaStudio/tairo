@@ -62,7 +62,7 @@ function useAreaCustomers() {
     },
   }
 
-  const series = ref([
+  const series = shallowRef([
     {
       name: 'Returning',
       data: [31, 40, 28, 51, 42, 109, 100],
@@ -154,7 +154,7 @@ function useRadialBarTeam() {
     labels: ['Average Results'],
   }
 
-  const series = ref([76])
+  const series = shallowRef([76])
 
   return {
     type,
@@ -239,7 +239,7 @@ function useBarProfit() {
     },
   }
 
-  const series = ref([
+  const series = shallowRef([
     {
       name: 'Ratio',
       data: [2.3, 3.1, 4.0, 10.1, 4.0],
@@ -315,9 +315,10 @@ function useBarProfit() {
               <BaseIconBox
                 size="md"
                 class="bg-primary-100 text-primary-500 dark:bg-primary-500/20 dark:text-primary-400 dark:border-primary-500 dark:border-2"
-                shape="full"
+                rounded="full"
+                color="none"
               >
-                <Icon name="ph:nut-duotone" class="h-5 w-5" />
+                <Icon name="ph:nut-duotone" class="size-5" />
               </BaseIconBox>
               <div>
                 <BaseHeading
@@ -343,9 +344,10 @@ function useBarProfit() {
               <BaseIconBox
                 size="md"
                 class="bg-amber-100 text-amber-500 dark:border-2 dark:border-amber-500 dark:bg-amber-500/20 dark:text-amber-400"
-                shape="full"
+                rounded="full"
+                color="none"
               >
-                <Icon name="ph:handshake-duotone" class="h-5 w-5" />
+                <Icon name="ph:handshake-duotone" class="size-5" />
               </BaseIconBox>
               <div>
                 <BaseHeading
@@ -371,9 +373,10 @@ function useBarProfit() {
               <BaseIconBox
                 size="md"
                 class="bg-green-100 text-green-500 dark:border-2 dark:border-green-500 dark:bg-green-500/20 dark:text-green-400"
-                shape="full"
+                rounded="full"
+                color="none"
               >
-                <Icon name="ph:sketch-logo-duotone" class="h-5 w-5" />
+                <Icon name="ph:sketch-logo-duotone" class="size-5" />
               </BaseIconBox>
               <div>
                 <BaseHeading
@@ -399,9 +402,10 @@ function useBarProfit() {
               <BaseIconBox
                 size="md"
                 class="bg-indigo-100 text-indigo-500 dark:border-2 dark:border-indigo-500 dark:bg-indigo-500/20 dark:text-indigo-400"
-                shape="full"
+                rounded="full"
+                color="none"
               >
-                <Icon name="ph:bank-duotone" class="h-5 w-5" />
+                <Icon name="ph:bank-duotone" class="size-5" />
               </BaseIconBox>
               <div>
                 <BaseHeading
@@ -471,12 +475,12 @@ function useBarProfit() {
             </NuxtLink>
           </div>
           <div
-            class="absolute bottom-4 end-4 z-10 flex h-14 w-14 items-center justify-center"
+            class="absolute bottom-4 end-4 z-10 flex size-14 items-center justify-center"
           >
             <Icon
               name="ph:crown-duotone"
-              class="text-primary-900/50 h-14 w-14"
-            ></Icon>
+              class="text-primary-900/50 size-14"
+            />
           </div>
         </BaseCard>
       </div>

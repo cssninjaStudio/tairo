@@ -137,7 +137,7 @@ const results = [
             <div class="w-full sm:w-3/5">
               <div class="flex w-full flex-col gap-4">
                 <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
-                  <Icon name="vaadin:airplane" class="h-9 w-9 text-white" />
+                  <Icon name="vaadin:airplane" class="size-9 text-white" />
                   <div>
                     <BaseHeading
                       as="h2"
@@ -169,11 +169,11 @@ const results = [
                             placeholder="Start date"
                             :value="inputValue.start"
                             v-on="inputEvents.start"
-                          />
-                          <div
-                            class="text-muted-100/40 peer-focus-visible:text-muted-100/80 absolute start-0 top-0 flex h-10 w-10 items-center justify-center transition-colors duration-300"
                           >
-                            <Icon name="lucide:map-pin" class="h-5 w-5" />
+                          <div
+                            class="text-muted-100/40 peer-focus-visible:text-muted-100/80 absolute start-0 top-0 flex size-10 items-center justify-center transition-colors duration-300"
+                          >
+                            <Icon name="lucide:map-pin" class="size-5" />
                           </div>
                         </div>
                       </div>
@@ -184,11 +184,11 @@ const results = [
                             placeholder="End date"
                             :value="inputValue.end"
                             v-on="inputEvents.end"
-                          />
-                          <div
-                            class="text-muted-100/40 peer-focus-visible:text-muted-100/80 absolute start-0 top-0 flex h-10 w-10 items-center justify-center transition-colors duration-300"
                           >
-                            <Icon name="lucide:flag" class="h-5 w-5" />
+                          <div
+                            class="text-muted-100/40 peer-focus-visible:text-muted-100/80 absolute start-0 top-0 flex size-10 items-center justify-center transition-colors duration-300"
+                          >
+                            <Icon name="lucide:flag" class="size-5" />
                           </div>
                         </div>
                       </div>
@@ -202,7 +202,7 @@ const results = [
                 class="xs:mx-auto absolute bottom-0 w-full max-w-[260px] sm:end-0"
                 src="/img/illustrations/dashboards/travel-cases.svg"
                 alt="Travel cases"
-              />
+              >
             </div>
           </div>
 
@@ -218,7 +218,9 @@ const results = [
               >
                 <span>69 results</span>
               </BaseHeading>
-              <BaseButtonAction muted>Clear</BaseButtonAction>
+              <BaseButtonAction muted>
+                Clear
+              </BaseButtonAction>
             </div>
             <!-- Best options -->
             <div class="grid gap-6 sm:grid-cols-3">
@@ -339,7 +341,7 @@ const results = [
                       width="32"
                       height="32"
                       viewBox="0 0 64 64"
-                      class="text-muted-400 h-10 w-10"
+                      class="text-muted-400 size-10"
                     >
                       <path
                         fill="currentColor"
@@ -399,12 +401,12 @@ const results = [
                     </svg>
                     <div
                       class="border-muted-200 dark:border-muted-700 mx-8 grow border-t-2 border-dashed"
-                    ></div>
+                    />
                     <svg
                       width="32"
                       height="32"
                       viewBox="0 0 64 64"
-                      class="text-muted-400 h-10 w-10"
+                      class="text-muted-400 size-10"
                     >
                       <path
                         fill="currentColor"
@@ -472,16 +474,8 @@ const results = [
               :attributes="[
                 {
                   key: 'today',
-                  dot: true,
-                  bar: false,
-                  content: 'Today',
-                  customData: {},
-                  event: {},
-                  hashcode: 'today',
-                  highlight: false,
+                  highlight: true,
                   order: 0,
-                  pinPage: false,
-                  popover: {},
                   dates: [new Date()],
                 },
               ]"
@@ -509,31 +503,31 @@ const results = [
                   <div class="flex flex-col gap-4">
                     <BaseCheckbox
                       v-model="stops"
-                      name="stops-1"
+                      value="stops-1"
                       label="All flights"
-                      shape="rounded"
-                      :classes="{ wrapper: 'text-primary-500' }"
+                      rounded="sm"
+                      color="primary"
                     />
                     <BaseCheckbox
                       v-model="stops"
-                      name="stops-2"
+                      value="stops-2"
                       label="No stops"
-                      shape="rounded"
-                      :classes="{ wrapper: 'text-primary-500' }"
+                      rounded="sm"
+                      color="primary"
                     />
                     <BaseCheckbox
                       v-model="stops"
-                      name="stops-3"
+                      value="stops-3"
                       label="One stop"
-                      shape="rounded"
-                      :classes="{ wrapper: 'text-primary-500' }"
+                      rounded="sm"
+                      color="primary"
                     />
                     <BaseCheckbox
                       v-model="stops"
-                      name="stops-4"
+                      value="stops-4"
                       label="Two stops"
-                      shape="rounded"
-                      :classes="{ wrapper: 'text-primary-500' }"
+                      rounded="sm"
+                      color="primary"
                     />
                   </div>
                 </div>
@@ -546,31 +540,31 @@ const results = [
                   <div class="flex flex-col gap-4">
                     <BaseCheckbox
                       v-model="luggage"
-                      name="luggage-1"
+                      value="luggage-1"
                       label="All options"
-                      shape="rounded"
-                      :classes="{ wrapper: 'text-primary-500' }"
+                      rounded="sm"
+                      color="primary"
                     />
                     <BaseCheckbox
                       v-model="luggage"
-                      name="luggage-2"
+                      value="luggage-2"
                       label="One cabin luggage"
-                      shape="rounded"
-                      :classes="{ wrapper: 'text-primary-500' }"
+                      rounded="sm"
+                      color="primary"
                     />
                     <BaseCheckbox
                       v-model="luggage"
-                      name="luggage-3"
+                      value="luggage-3"
                       label="Two cabin luggage"
-                      shape="rounded"
-                      :classes="{ wrapper: 'text-primary-500' }"
+                      rounded="sm"
+                      color="primary"
                     />
                     <BaseCheckbox
                       v-model="luggage"
-                      name="luggage-4"
+                      value="luggage-4"
                       label="No luggage"
-                      shape="rounded"
-                      :classes="{ wrapper: 'text-primary-500' }"
+                      rounded="sm"
+                      color="primary"
                     />
                   </div>
                 </div>

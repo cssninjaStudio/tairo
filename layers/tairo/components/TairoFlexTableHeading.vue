@@ -22,6 +22,6 @@ const props = withDefaults(
         'sm:w-[90px] md:line-clamp-1 md:w-[110px] md:shrink-0',
     ]"
   >
-    <slot></slot>
+    <slot />
   </div>
 </template>

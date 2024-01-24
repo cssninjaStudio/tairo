@@ -34,11 +34,11 @@ const zodSchema = z.object({
 type FormInput = z.infer<typeof zodSchema>
 
 const validationSchema = toTypedSchema(zodSchema)
-const initialValues = computed<FormInput>(() => ({
+const initialValues = {
   email: '',
   password: '',
   trustDevice: false,
-}))
+} satisfies FormInput
 
 const {
   handleSubmit,
@@ -84,7 +84,8 @@ const onSubmit = handleSubmit(async (values) => {
       icon: 'ph:user-circle-fill',
       closable: true,
     })
-  } catch (error: any) {
+  }
+  catch (error: any) {
     // this will set the error on the form
     if (error.message === 'Fake backend validation error') {
       setFieldError('password', 'Invalid credentials (use "password")')
@@ -102,16 +103,16 @@ const onSubmit = handleSubmit(async (values) => {
       class="bg-muted-100 dark:bg-muted-900 hidden h-screen w-full md:w-1/2 lg:block xl:w-2/3"
     >
       <div
-        class="mx-auto w-full h-full flex items-center justify-center max-w-4xl"
+        class="mx-auto flex size-full max-w-4xl items-center justify-center"
       >
         <!--Media image-->
         <img
-          class="max-w-xl mx-auto"
+          class="mx-auto max-w-xl"
           src="/img/illustrations/people.svg"
           alt=""
           width="1200"
           height="996"
-        />
+        >
       </div>
     </div>
 
@@ -119,21 +120,25 @@ const onSubmit = handleSubmit(async (values) => {
       class="dark:bg-muted-800 flex h-screen w-full items-center justify-center bg-white px-6 md:mx-auto md:w-1/2 md:max-w-md lg:max-w-full lg:px-16 xl:w-1/3 xl:px-12"
     >
       <div
-        class="mx-auto flex h-full w-full max-w-xs flex-col items-center justify-between py-8"
+        class="mx-auto flex size-full max-w-xs flex-col items-center justify-between py-8"
       >
         <div class="mx-auto flex w-full max-w-xs items-center justify-between">
           <NuxtLink
             to="/dashboards"
             class="text-muted-400 hover:text-primary-500 dark:text-muted-700 dark:hover:text-primary-500 transition-colors duration-300"
           >
-            <TairoLogo class="h-10 w-10" />
+            <TairoLogo class="size-10" />
           </NuxtLink>
           <div>
             <BaseThemeToggle />
           </div>
         </div>
         <div class="w-full">
-          <BaseHeading as="h2" size="3xl" weight="medium">
+          <BaseHeading
+            as="h2"
+            size="3xl"
+            weight="medium"
+          >
             Welcome back!
           </BaseHeading>
           <BaseParagraph size="sm" class="text-muted-400 mb-6">
@@ -143,9 +148,9 @@ const onSubmit = handleSubmit(async (values) => {
           <form
             method="POST"
             action=""
-            @submit.prevent="onSubmit"
             class="mt-6"
             novalidate
+            @submit.prevent="onSubmit"
           >
             <div class="space-y-4">
               <Field
@@ -185,13 +190,13 @@ const onSubmit = handleSubmit(async (values) => {
             <!--Remember-->
             <div class="mt-6 flex items-center justify-between">
               <Field
-                v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                v-slot="{ field, handleChange, handleBlur }"
                 name="trustDevice"
               >
                 <BaseCheckbox
                   :model-value="field.value"
                   :disabled="isSubmitting"
-                  shape="rounded"
+                  rounded="sm"
                   label="Trust for 60 days"
                   color="primary"
                   @update:model-value="handleChange"
@@ -227,10 +232,10 @@ const onSubmit = handleSubmit(async (values) => {
 
           <hr
             class="border-muted-200 dark:border-muted-700 my-6 w-full border-t"
-          />
+          >
 
           <BaseButton class="!h-11 w-full">
-            <Icon name="logos:google-icon" class="me-1 h-4 w-4" />
+            <Icon name="logos:google-icon" class="me-1 size-4" />
             <span>Sign In with Google</span>
           </BaseButton>
 

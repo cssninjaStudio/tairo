@@ -49,7 +49,7 @@ const authors = [
       <BaseAvatar
         :src="author.image"
         :text="author.text"
-        shape="straight"
+        rounded="none"
         mask="blob"
         class="bg-primary-100 dark:bg-primary-500/20 text-primary-500 shrink-0"
       />
@@ -73,8 +73,12 @@ const authors = [
         <span class="text-muted-400 font-sans text-xs">
           {{ author.articles }} articles
         </span>
-        <BaseButtonIcon shape="curved" muted class="scale-75">
-          <Icon name="lucide:arrow-right" class="h-4 w-4" />
+        <BaseButtonIcon
+          rounded="lg"
+          muted
+          class="scale-75"
+        >
+          <Icon name="lucide:arrow-right" class="size-4" />
         </BaseButtonIcon>
       </div>
     </div>

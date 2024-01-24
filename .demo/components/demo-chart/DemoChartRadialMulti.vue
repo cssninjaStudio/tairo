@@ -40,7 +40,7 @@ function useDemoRadialMulti() {
     labels: ['Apples', 'Oranges', 'Bananas', 'Berries'],
   }
 
-  const series = ref([44, 55, 67, 83])
+  const series = shallowRef([44, 55, 67, 83])
 
   return {
     type,

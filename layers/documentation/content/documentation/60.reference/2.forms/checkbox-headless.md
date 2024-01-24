@@ -11,7 +11,7 @@ icon:
 
 ::doc-component-demo
 ---
-title: Custom checkbox
+title: Headless
 demo: '#examples/checkbox-custom/base.vue'
 ---
 Create stunning custom checkboxes using the base checkbox element and designing yourself the exterior look of it.

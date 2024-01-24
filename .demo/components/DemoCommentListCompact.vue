@@ -41,12 +41,16 @@ const comments = [
 
 <template>
   <div class="mb-2 space-y-5">
-    <div v-for="comment in comments" :key="comment.id" class="flex gap-3">
+    <div
+      v-for="comment in comments"
+      :key="comment.id"
+      class="flex gap-3"
+    >
       <BaseAvatar
         :src="comment.image"
         :text="comment.text"
         size="xs"
-        shape="straight"
+        rounded="none"
         mask="blob"
         class="bg-primary-100 dark:bg-primary-500/20 text-primary-500 shrink-0"
       />

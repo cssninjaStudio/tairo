@@ -6,7 +6,7 @@ const { steps, currentStep, progress, preview, goToStep } = useMultiStepForm<
 >()
 
 const currentStepName = computed(() => {
-  const stepData = steps.value.find((step) => step.id === currentStep.value)
+  const stepData = steps.value.find(step => step.id === currentStep.value)
   return stepData?.meta?.name
 })
 
@@ -40,12 +40,12 @@ onClickOutside(target, () => (open.value = false))
         <div ref="target" class="relative hidden sm:block">
           <button
             type="button"
-            class="flex h-10 w-10 items-center justify-center"
+            class="flex size-10 items-center justify-center"
             @click="openDropdown"
           >
             <Icon
               name="lucide:chevron-down"
-              class="text-muted-400 h-4 w-4 transition-transform duration-300"
+              class="text-muted-400 size-4 transition-transform duration-300"
               :class="open ? 'rotate-180' : ''"
             />
           </button>
@@ -86,7 +86,11 @@ onClickOutside(target, () => (open.value = false))
         <DemoAccountMenu horizontal />
       </div>
       <div class="absolute inset-x-0 bottom-0 z-10 w-full">
-        <BaseProgress :value="progress" size="xs" shape="full" />
+        <BaseProgress
+          :value="progress"
+          size="xs"
+          rounded="full"
+        />
       </div>
     </div>
   </div>

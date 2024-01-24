@@ -31,9 +31,11 @@ function goToStep(n: number) {
     loading.value = false
     if (n < 1) {
       currentStep.value = 1
-    } else if (n > 3) {
+    }
+    else if (n > 3) {
       currentStep.value = 3
-    } else {
+    }
+    else {
       currentStep.value = n
     }
     clearTimeout(timer)
@@ -55,13 +57,13 @@ function paste(event: ClipboardEvent) {
   }
 }
 function type(event: KeyboardEvent, index: number) {
-   if (event.code === 'ArrowRight') {
+  if (event.code === 'ArrowRight') {
     event.stopPropagation()
     event.preventDefault()
     nextTick(() => {
       focusField(Math.min(codeLength.value, index + 1))
     })
-    return 
+    return
   }
 
   if (event.code === 'ArrowLeft') {
@@ -70,7 +72,7 @@ function type(event: KeyboardEvent, index: number) {
     nextTick(() => {
       focusField(Math.max(0, index - 1))
     })
-    return 
+    return
   }
 
   if (event.code === 'Backspace') {
@@ -81,7 +83,7 @@ function type(event: KeyboardEvent, index: number) {
       focusField(Math.max(0, index - 1))
     })
     return
-  } 
+  }
 
   if (event.code == 'a' && event.ctrlKey) {
     event.stopPropagation()
@@ -96,8 +98,8 @@ function type(event: KeyboardEvent, index: number) {
   }
   // check if the PIN is correct
   if (
-    (onlyCheckOnLastFieldInput.value && index == codeLength.value) ||
-    !onlyCheckOnLastFieldInput.value
+    (onlyCheckOnLastFieldInput.value && index == codeLength.value)
+    || !onlyCheckOnLastFieldInput.value
   ) {
     event.stopPropagation()
     event.preventDefault()
@@ -131,7 +133,7 @@ const validatePin = computed(() => {
         to="/"
         class="text-muted-400 hover:text-primary-500 dark:text-muted-700 dark:hover:text-primary-500 transition-colors duration-300"
       >
-        <TairoLogo class="h-10 w-10" />
+        <TairoLogo class="size-10" />
       </NuxtLink>
       <div class="flex items-center gap-4">
         <BaseThemeToggle />
@@ -140,12 +142,17 @@ const validatePin = computed(() => {
     <form
       action=""
       method="POST"
-      @submit.prevent
       class="mx-auto max-w-7xl px-4"
+      @submit.prevent
     >
       <div v-if="currentStep === 1">
         <div class="pt-8 text-center">
-          <BaseHeading tag="h2" size="3xl" weight="medium" class="mb-2">
+          <BaseHeading
+            tag="h2"
+            size="3xl"
+            weight="medium"
+            class="mb-2"
+          >
             Welcome to Tairo 👋
           </BaseHeading>
           <BaseParagraph class="text-muted-500 dark:text-muted-400 mb-8">
@@ -164,7 +171,7 @@ const validatePin = computed(() => {
                     value="email_address"
                   >
                     <BaseCard
-                      shape="curved"
+                      rounded="lg"
                       class="peer-checked:!border-primary-500 relative border-2 p-8 opacity-60 grayscale peer-checked:opacity-100 peer-checked:grayscale-0 peer-checked:[&_.child]:!opacity-100"
                     >
                       <div class="flex flex-col text-center">
@@ -172,10 +179,13 @@ const validatePin = computed(() => {
                           src="/img/illustrations/onboarding/2fa-web.svg"
                           alt="2 factor authentication with email"
                           class="mx-auto max-w-[160px]"
-                        />
-                        <BaseHeading size="md" weight="medium"
-                          >With Email</BaseHeading
                         >
+                        <BaseHeading
+                          size="md"
+                          weight="medium"
+                        >
+                          With Email
+                        </BaseHeading>
                         <BaseParagraph
                           size="xs"
                           lead="snug"
@@ -188,7 +198,7 @@ const validatePin = computed(() => {
                       <div class="child absolute end-2 top-3 opacity-0">
                         <Icon
                           name="ph:check-circle-duotone"
-                          class="text-primary-500 h-7 w-7"
+                          class="text-primary-500 size-7"
                         />
                       </div>
                     </BaseCard>
@@ -199,7 +209,7 @@ const validatePin = computed(() => {
                     value="phone_number"
                   >
                     <BaseCard
-                      shape="curved"
+                      rounded="lg"
                       class="peer-checked:!border-primary-500 relative border-2 p-8 opacity-60 grayscale peer-checked:opacity-100 peer-checked:grayscale-0 peer-checked:[&_.child]:!opacity-100"
                     >
                       <div class="flex flex-col text-center">
@@ -207,10 +217,13 @@ const validatePin = computed(() => {
                           src="/img/illustrations/onboarding/2fa-sms.svg"
                           alt="2 factor authentication with SMS"
                           class="mx-auto max-w-[160px]"
-                        />
-                        <BaseHeading size="md" weight="medium"
-                          >With SMS</BaseHeading
                         >
+                        <BaseHeading
+                          size="md"
+                          weight="medium"
+                        >
+                          With SMS
+                        </BaseHeading>
                         <BaseParagraph
                           size="xs"
                           lead="snug"
@@ -223,7 +236,7 @@ const validatePin = computed(() => {
                       <div class="child absolute end-2 top-3 opacity-0">
                         <Icon
                           name="ph:check-circle-duotone"
-                          class="text-primary-500 h-7 w-7"
+                          class="text-primary-500 size-7"
                         />
                       </div>
                     </BaseCard>
@@ -234,7 +247,7 @@ const validatePin = computed(() => {
                     value="app_id"
                   >
                     <BaseCard
-                      shape="curved"
+                      rounded="lg"
                       class="peer-checked:!border-primary-500 relative border-2 p-8 opacity-60 grayscale peer-checked:opacity-100 peer-checked:grayscale-0 peer-checked:[&_.child]:!opacity-100"
                     >
                       <div class="flex flex-col text-center">
@@ -242,10 +255,13 @@ const validatePin = computed(() => {
                           src="/img/illustrations/onboarding/2fa-app.svg"
                           alt="2 factor authentication with app"
                           class="mx-auto max-w-[160px]"
-                        />
-                        <BaseHeading size="md" weight="medium"
-                          >With an App</BaseHeading
                         >
+                        <BaseHeading
+                          size="md"
+                          weight="medium"
+                        >
+                          With an App
+                        </BaseHeading>
                         <BaseParagraph
                           size="xs"
                           lead="snug"
@@ -255,15 +271,16 @@ const validatePin = computed(() => {
                           <NuxtLink
                             to="https://authy.com/"
                             class="text-primary-500 underline-offset-4 hover:underline"
-                            >Authy</NuxtLink
                           >
+                            Authy
+                          </NuxtLink>
                           authenticator app
                         </BaseParagraph>
                       </div>
                       <div class="child absolute end-2 top-3 opacity-0">
                         <Icon
                           name="ph:check-circle-duotone"
-                          class="text-primary-500 h-7 w-7"
+                          class="text-primary-500 size-7"
                         />
                       </div>
                     </BaseCard>
@@ -272,18 +289,20 @@ const validatePin = computed(() => {
                 <div class="mx-auto flex flex-col items-center">
                   <BaseButton
                     type="button"
-                    shape="curved"
+                    rounded="lg"
                     class="!h-12 w-48"
                     color="primary"
                     :loading="loading"
                     @click="goToStep(2)"
-                    >Continue</BaseButton
                   >
+                    Continue
+                  </BaseButton>
                   <NuxtLink
                     to="/dashboards"
                     class="text-muted-400 hover:text-primary-500 mt-4 text-xs font-medium underline-offset-4 transition-colors duration-300 hover:underline"
-                    >No thanks, I want to skip</NuxtLink
                   >
+                    No thanks, I want to skip
+                  </NuxtLink>
                 </div>
               </div>
             </div>
@@ -291,30 +310,40 @@ const validatePin = computed(() => {
         </div>
       </div>
       <div v-if="currentStep === 2" class="w-full">
-        <div class="flex h-full w-full flex-col">
+        <div class="flex size-full flex-col">
           <div
             class="pointer-events-none flex w-full items-center justify-center pt-8"
           >
-            <BaseIconBox color="primary" size="lg" shape="full" class="mx-auto">
+            <BaseIconBox
+              color="primary"
+              size="lg"
+              rounded="full"
+              class="mx-auto"
+            >
               <Icon
                 v-if="twoFaMode === 'email_address'"
                 name="ph:envelope-duotone"
-                class="text-primary-500 mx-auto h-8 w-8"
+                class="text-primary-500 mx-auto size-8"
               />
               <Icon
                 v-else-if="twoFaMode === 'phone_number'"
                 name="ph:device-mobile-speaker-duotone"
-                class="text-primary-500 mx-auto h-8 w-8"
+                class="text-primary-500 mx-auto size-8"
               />
               <Icon
                 v-else-if="twoFaMode === 'app_id'"
                 name="ph:fingerprint-duotone"
-                class="text-primary-500 mx-auto h-8 w-8"
+                class="text-primary-500 mx-auto size-8"
               />
             </BaseIconBox>
           </div>
           <div class="pt-4 text-center">
-            <BaseHeading tag="h2" size="3xl" weight="medium" class="mb-1">
+            <BaseHeading
+              tag="h2"
+              size="3xl"
+              weight="medium"
+              class="mb-1"
+            >
               Enter your {{ twoFaMode.split('_').join(' ') }}
             </BaseHeading>
             <BaseParagraph class="text-muted-500 dark:text-muted-400">
@@ -327,7 +356,7 @@ const validatePin = computed(() => {
               v-if="twoFaMode === 'email_address'"
               v-model="email"
               icon="ph:envelope-duotone"
-              shape="curved"
+              rounded="lg"
               placeholder="Ex: johndoe@gmail.com"
               :classes="{
                 wrapper: 'w-full',
@@ -339,7 +368,7 @@ const validatePin = computed(() => {
               v-else-if="twoFaMode === 'phone_number'"
               v-model="tel"
               icon="ph:device-mobile-speaker-duotone"
-              shape="curved"
+              rounded="lg"
               placeholder="Ex: +15554815659"
               :classes="{
                 wrapper: 'w-full',
@@ -349,23 +378,27 @@ const validatePin = computed(() => {
             />
             <div v-else-if="twoFaMode === 'app_id'" class="space-y-4">
               <div class="flex items-center gap-2">
-                <Icon name="logos:authy" class="h-6 w-6" />
+                <Icon name="logos:authy" class="size-6" />
                 <div>
-                  <BaseText size="sm" class="text-muted-500 dark:text-muted-400"
-                    >Only
+                  <BaseText
+                    size="sm"
+                    class="text-muted-500 dark:text-muted-400"
+                  >
+                    Only
                     <NuxtLink
                       to="https://authy.com/"
                       class="text-primary-500 underline-offset-4 hover:underline"
-                      >Authy</NuxtLink
                     >
-                    is supported so far</BaseText
-                  >
+                      Authy
+                    </NuxtLink>
+                    is supported so far
+                  </BaseText>
                 </div>
               </div>
               <BaseInput
                 v-model="code"
                 icon="ph:fingerprint-duotone"
-                shape="curved"
+                rounded="lg"
                 placeholder="Ex: efcdwdeg16jei85"
                 :classes="{
                   wrapper: 'w-full',
@@ -378,13 +411,14 @@ const validatePin = computed(() => {
           <div class="mx-auto flex flex-col items-center">
             <BaseButton
               type="button"
-              shape="curved"
+              rounded="lg"
               class="!h-12 w-48"
               color="primary"
               :loading="loading"
               @click="goToStep(3)"
-              >Continue</BaseButton
             >
+              Continue
+            </BaseButton>
             <button
               type="button"
               class="text-muted-400 hover:text-primary-500 mt-4 text-xs font-medium underline-offset-4 transition-colors duration-300 hover:underline"
@@ -397,7 +431,7 @@ const validatePin = computed(() => {
       </div>
       <div v-else-if="currentStep === 3">
         <div class="mx-auto max-w-4xl">
-          <div class="flex h-full w-full flex-col">
+          <div class="flex size-full flex-col">
             <div
               class="pointer-events-none flex w-full items-center justify-center pt-8"
             >
@@ -407,18 +441,23 @@ const validatePin = computed(() => {
                   v-else
                   color="primary"
                   size="lg"
-                  shape="full"
+                  rounded="full"
                   class="mx-auto"
                 >
                   <Icon
                     name="ph:lock-duotone"
-                    class="text-primary-500 mx-auto h-8 w-8"
+                    class="text-primary-500 mx-auto size-8"
                   />
                 </BaseIconBox>
               </div>
             </div>
             <div class="pt-4 text-center">
-              <BaseHeading tag="h2" size="3xl" weight="medium" class="mb-1">
+              <BaseHeading
+                tag="h2"
+                size="3xl"
+                weight="medium"
+                class="mb-1"
+              >
                 Enter your code
               </BaseHeading>
               <BaseParagraph class="text-muted-500 dark:text-muted-400 mb-2">
@@ -442,39 +481,43 @@ const validatePin = computed(() => {
                 :class="validatePin && 'pointer-events-none'"
               >
                 <input
-                  type="text"
-                  :name="'pin' + i"
                   v-for="i in codeLength"
                   :key="'pin' + i"
-                  maxlength="1"
-                  class="dark:bg-muted-800 unselectable nui-focus inline w-16 select-none rounded-lg bg-white py-5 text-center text-4xl font-bold transition-all"
-                  @paste.prevent="(event) => paste(event)"
-                  @keydown="(event) => type(event, i)"
-                  :value="input[i - 1] !== undefined ? input[i - 1] : '-'"
                   :ref="
                     (el) => {
                       inputElements[i] = el as HTMLInputElement
                     }
                   "
+                  v-focus="i === 1"
+                  type="text"
+                  :name="'pin' + i"
+                  maxlength="1"
+                  class="dark:bg-muted-800 unselectable nui-focus inline w-16 select-none rounded-lg bg-white py-5 text-center text-4xl font-bold transition-all"
+                  :value="input[i - 1] !== undefined ? input[i - 1] : '-'"
                   placeholder="0"
                   :disabled="input.length < i - 1 || validatePin"
-                  v-focus="i === 1"
-                />
+                  @paste.prevent="(event) => paste(event)"
+                  @keydown="(event) => type(event, i)"
+                >
               </div>
               <div class="mt-10">
                 <BaseButton
                   to="/dashboards"
-                  shape="curved"
+                  rounded="lg"
                   class="!h-12"
                   :color="validatePin ? 'primary' : 'default'"
                   :disabled="!validatePin"
-                  >Take me to Dashboard</BaseButton
                 >
+                  Take me to Dashboard
+                </BaseButton>
 
                 <div class="mt-8 flex items-center justify-between">
-                  <BaseText size="sm" class="text-muted-400"
-                    >Didn't receive the code?</BaseText
+                  <BaseText
+                    size="sm"
+                    class="text-muted-400"
                   >
+                    Didn't receive the code?
+                  </BaseText>
                   <button
                     type="button"
                     class="text-primary-500 font-sans text-sm underline-offset-4 hover:underline"

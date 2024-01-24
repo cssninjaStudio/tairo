@@ -28,14 +28,13 @@ const clampMap = {
     :class="[
       props.type === 'grow' && 'md:grow',
       props.type === 'shrink' && 'md:shrink',
-      props.type === 'stable' &&
-        'sm:w-[90px] md:w-[110px] md:shrink-0',
+      props.type === 'stable' && 'sm:w-[90px] md:w-[110px] md:shrink-0',
       props.type === 'stable' && props.clamp && clampMap[props.clamp],
       props.light
         ? 'text-muted-500 dark:text-white'
         : 'text-muted-800 dark:text-white',
     ]"
   >
-    <slot></slot>
+    <slot />
   </div>
 </template>

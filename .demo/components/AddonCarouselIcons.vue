@@ -50,14 +50,14 @@ const props = withDefaults(defineProps<CarouselProps>(), {
       <Slide v-for="(slide, index) in props.slides" :key="index">
         <NuxtLink :to="slide.to" class="cursor-pointer">
           <BaseCard
-            shape="curved"
+            rounded="lg"
             class="text-muted-400 hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 flex min-w-[100px] items-center justify-center px-2 py-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
           >
             <div class="text-center">
               <Icon
                 v-if="slide.icon"
                 :name="slide.icon"
-                class="mx-auto mb-2 !block h-7 w-7"
+                class="mx-auto mb-2 !block size-7"
               />
               <BaseHeading
                 size="sm"

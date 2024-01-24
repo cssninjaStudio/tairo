@@ -1,19 +1,49 @@
 <template>
-  <div class="grid gap-6 md:max-w-lg md:grid-cols-2">
-    <BaseAutocomplete
-      v-model="value"
-      :items="frameworks"
-      icon="lucide:search"
-      shape="full"
-      placeholder="e.g. Nuxt"
-      label="Framework"
-      disabled
-    />
+  <div class="flex max-w-3xl flex-wrap items-end gap-3">
+    <div class="flex-1">
+      <BaseAutocomplete
+        v-model="fields.first"
+        :items="frameworks"
+        size="sm"
+        rounded="md"
+        label="Size: sm"
+        placeholder="Ex: javascript"
+        disabled
+      />
+    </div>
+
+    <div class="flex-1">
+      <BaseAutocomplete
+        v-model="fields.second"
+        :items="frameworks"
+        size="md"
+        rounded="md"
+        label="Size: md"
+        placeholder="Ex: javascript"
+        disabled
+      />
+    </div>
+
+    <div class="flex-1">
+      <BaseAutocomplete
+        v-model="fields.third"
+        :items="frameworks"
+        size="lg"
+        rounded="md"
+        label="Size: lg"
+        placeholder="Ex: javascript"
+        disabled
+      />
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-const value = ref('Nuxt')
+const fields = reactive({
+  first: '',
+  second: '',
+  third: '',
+})
 
 const frameworks = ref(['Javascript', 'Nuxt', 'Vue.js', 'React.js', 'Angular', 'Alpine.js'])
 </script>

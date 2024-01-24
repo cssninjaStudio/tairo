@@ -19,8 +19,9 @@ watch(selectedStyle, (value) => {
       <div class="mb-10 max-w-2xl">
         <BaseText
           class="text-primary-500 mb-2 text-[0.65rem] uppercase tracking-wider"
-          >UI Library</BaseText
         >
+          UI Library
+        </BaseText>
         <BaseHeading
           as="h2"
           size="4xl"
@@ -48,14 +49,14 @@ watch(selectedStyle, (value) => {
         <div class="relative w-full sm:w-1/2">
           <div class="absolute inset-x-0 z-0 -mt-2 py-24">
             <div
-              class="mt-12 grid grid-cols-2 -space-x-52 opacity-60 dark:opacity-50 2xl:mx-auto 2xl:max-w-3xl"
+              class="mt-12 grid grid-cols-2 -space-x-52 opacity-60 2xl:mx-auto 2xl:max-w-3xl dark:opacity-50"
             >
               <div
                 class="from-primary-200 to-primary-400 h-40 bg-gradient-to-br blur-3xl dark:from-blue-700"
-              ></div>
+              />
               <div
                 class="dark:to-primary-600 h-24 bg-gradient-to-r from-indigo-400 to-indigo-700 blur-3xl"
-              ></div>
+              />
             </div>
           </div>
           <div
@@ -63,77 +64,92 @@ watch(selectedStyle, (value) => {
           >
             <div
               v-if="toggled"
-              class="absolute left-0 top-1/4 z-10 h-full w-full overflow-hidden motion-reduce:hidden"
+              class="absolute left-0 top-1/4 z-10 size-full overflow-hidden motion-reduce:hidden"
             >
               <div class="shuriken-1 absolute block">
                 <img
-                  class="animate-spin-fast h-10 w-10"
+                  class="animate-spin-fast size-10"
                   src="/img/logos/cssninja-logo-icon.svg"
                   alt=""
-                />
+                >
               </div>
               <div class="shuriken-2 absolute block">
                 <img
-                  class="animate-spin-fast h-12 w-12"
+                  class="animate-spin-fast size-12"
                   src="/img/logos/cssninja-logo-icon.svg"
                   alt=""
-                />
+                >
               </div>
               <div class="shuriken-3 absolute block">
                 <img
-                  class="animate-spin-fast h-11 w-11"
+                  class="animate-spin-fast size-11"
                   src="/img/logos/cssninja-logo-icon.svg"
                   alt=""
-                />
+                >
               </div>
             </div>
             <BaseCard
               v-if="selectedStyle === 'smart'"
-              shape="curved"
+              rounded="lg"
               class="!border-primary-600 relative z-20 mx-auto max-w-[340px] p-6"
             >
               <div class="mb-6 flex items-center justify-between">
-                <BaseTag shape="curved" color="primary" shadow="flat"
-                  >Member</BaseTag
+                <BaseTag
+                  rounded="lg"
+                  color="primary"
+                  shadow="flat"
                 >
-                <BaseButtonClose shape="full" color="muted" />
+                  Member
+                </BaseTag>
+                <BaseButtonClose rounded="full" color="muted" />
               </div>
               <BaseAvatar
                 size="xl"
                 src="/img/avatars/24.svg"
                 badge-src="/img/stacks/html5.svg"
                 class="mx-auto !flex !transition-all !duration-200"
-                shape="full"
+                rounded="full"
               />
               <div class="mt-3 text-center">
-                <BaseHeading as="h3" size="xl" weight="medium">
-                  Belen Lopez</BaseHeading
+                <BaseHeading
+                  as="h3"
+                  size="xl"
+                  weight="medium"
                 >
-                <BaseText size="sm" class="text-muted-500 dark:text-muted-400"
-                  >Fullstack Developer</BaseText
+                  Belen Lopez
+                </BaseHeading>
+                <BaseText
+                  size="sm"
+                  class="text-muted-500 dark:text-muted-400"
                 >
+                  Fullstack Developer
+                </BaseText>
               </div>
               <div class="my-6 flex items-center justify-center gap-4">
-                <BaseAvatar size="xs" src="/img/stacks/js.svg" shape="full" />
+                <BaseAvatar
+                  size="xs"
+                  src="/img/stacks/js.svg"
+                  rounded="full"
+                />
                 <BaseAvatar
                   size="xs"
                   src="/img/stacks/python.svg"
-                  shape="full"
+                  rounded="full"
                 />
                 <BaseAvatar
                   size="xs"
                   src="/img/stacks/reactjs.svg"
-                  shape="full"
+                  rounded="full"
                 />
               </div>
               <div>
                 <BaseButton
                   class="!h-12 w-full"
-                  shape="curved"
+                  rounded="lg"
                   color="primary"
-                  flavor="pastel"
+                  variant="pastel"
                 >
-                  <Icon name="lucide:bell" class="h-4 w-4" />
+                  <Icon name="lucide:bell" class="size-4" />
                   <span>Follow Belen</span>
                 </BaseButton>
                 <NuxtLink
@@ -146,28 +162,29 @@ watch(selectedStyle, (value) => {
             </BaseCard>
             <BaseCard
               v-if="selectedStyle === 'creative'"
-              shape="curved"
+              rounded="lg"
               class="!border-primary-600 relative z-20 mx-auto max-w-[340px] overflow-hidden p-6"
             >
               <div
-                class="bg-primary-500 dark:bg-primary-500/20 absolute -right-16 -top-32 h-72 w-72 rounded-full transition-transform delay-150 duration-500"
+                class="bg-primary-500 dark:bg-primary-500/20 absolute -right-16 -top-32 size-72 rounded-full transition-transform delay-150 duration-500"
                 :class="selectedStyle === 'creative' ? 'scale-100' : 'scale-0'"
-              ></div>
+              />
               <div class="mb-6 flex items-center justify-between">
                 <BaseTag
-                  shape="full"
+                  rounded="full"
                   color="primary"
                   shadow="flat"
                   class="relative z-10"
-                  >Member</BaseTag
                 >
+                  Member
+                </BaseTag>
                 <div
-                  class="dark:bg-muted-800 flex h-7 w-7 items-center justify-center rounded-full bg-white"
+                  class="dark:bg-muted-800 flex size-7 items-center justify-center rounded-full bg-white"
                 >
                   <BaseAvatar
                     size="xxs"
                     src="/img/icons/flags/united-states-of-america.svg"
-                    shape="full"
+                    rounded="full"
                   />
                 </div>
               </div>
@@ -175,41 +192,52 @@ watch(selectedStyle, (value) => {
                 size="xl"
                 src="/img/avatars/10.svg"
                 class="nui-mask nui-mask-hexed mx-auto !flex !transition-all !duration-200"
-                shape="straight"
+                rounded="none"
               />
               <div class="mt-3 text-center">
-                <BaseHeading as="h3" size="xl" weight="medium">
-                  Kendra Wilson</BaseHeading
+                <BaseHeading
+                  as="h3"
+                  size="xl"
+                  weight="medium"
                 >
-                <BaseText size="sm" class="text-muted-500 dark:text-muted-400"
-                  >Sales Manager</BaseText
+                  Kendra Wilson
+                </BaseHeading>
+                <BaseText
+                  size="sm"
+                  class="text-muted-500 dark:text-muted-400"
                 >
+                  Sales Manager
+                </BaseText>
               </div>
               <div class="my-6 flex items-center justify-center gap-4">
                 <BaseAvatar
                   size="xs"
                   src="/img/icons/logos/nitro.svg"
-                  shape="full"
+                  rounded="full"
                 />
                 <BaseAvatar
                   size="xs"
                   src="/img/icons/logos/okano.svg"
-                  shape="full"
+                  rounded="full"
                 />
                 <BaseAvatar
                   size="xs"
                   src="/img/icons/logos/slicer.svg"
-                  shape="full"
+                  rounded="full"
                 />
               </div>
               <div class="flex gap-2">
-                <BaseButton class="!h-11 w-full" shape="full">
-                  <Icon name="lucide:bookmark" class="h-4 w-4" />
+                <BaseButton class="!h-11 w-full" rounded="full">
+                  <Icon name="lucide:bookmark" class="size-4" />
                   <span>Save</span>
                 </BaseButton>
 
-                <BaseButton class="!h-11 w-full" shape="full" color="primary">
-                  <Icon name="lucide:bell" class="h-4 w-4" />
+                <BaseButton
+                  class="!h-11 w-full"
+                  rounded="full"
+                  color="primary"
+                >
+                  <Icon name="lucide:bell" class="size-4" />
                   <span>Follow</span>
                 </BaseButton>
               </div>
@@ -222,113 +250,139 @@ watch(selectedStyle, (value) => {
             </BaseCard>
             <BaseCard
               v-if="selectedStyle === 'corporate'"
-              shape="rounded"
+              rounded="sm"
               class="!border-primary-600 relative z-20 mx-auto max-w-[340px] p-6"
             >
               <div class="mb-6 flex items-center justify-between">
-                <BaseTag shape="rounded" color="primary" shadow="flat"
-                  >Member</BaseTag
+                <BaseTag
+                  rounded="sm"
+                  color="primary"
+                  shadow="flat"
                 >
-                <BaseButtonClose shape="curved" color="primary" />
+                  Member
+                </BaseTag>
+                <BaseButtonClose rounded="lg" color="primary" />
               </div>
               <BaseAvatar
                 size="xl"
                 src="/img/avatars/25.svg"
                 badge-src="/img/stacks/illustrator.svg"
                 class="mx-auto !flex !transition-all !duration-200"
-                shape="curved"
+                rounded="lg"
               />
               <div class="mt-3 text-center">
-                <BaseHeading as="h3" size="xl" weight="medium">
-                  Jenna Davis</BaseHeading
+                <BaseHeading
+                  as="h3"
+                  size="xl"
+                  weight="medium"
                 >
-                <BaseText size="sm" class="text-muted-500 dark:text-muted-400"
-                  >UI/UX Designer</BaseText
+                  Jenna Davis
+                </BaseHeading>
+                <BaseText
+                  size="sm"
+                  class="text-muted-500 dark:text-muted-400"
                 >
+                  UI/UX Designer
+                </BaseText>
               </div>
               <BaseParagraph size="sm" class="text-muted-400 my-2 text-center">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit sed
-                vitae nisl vitae nisl.</BaseParagraph
-              >
+                vitae nisl vitae nisl.
+              </BaseParagraph>
               <div class="my-6 flex items-center justify-center gap-4">
-                <BaseAvatar size="xs" src="/img/stacks/xd.svg" shape="full" />
+                <BaseAvatar
+                  size="xs"
+                  src="/img/stacks/xd.svg"
+                  rounded="full"
+                />
                 <BaseAvatar
                   size="xs"
                   src="/img/stacks/photoshop.svg"
-                  shape="full"
+                  rounded="full"
                 />
                 <BaseAvatar
                   size="xs"
                   src="/img/stacks/html5.svg"
-                  shape="full"
+                  rounded="full"
                 />
               </div>
               <div>
                 <BaseButton
                   class="!h-11 w-full"
-                  shape="rounded"
+                  rounded="sm"
                   color="primary"
                 >
-                  <Icon name="lucide:check" class="h-4 w-4" />
+                  <Icon name="lucide:check" class="size-4" />
                   <span>Hire Now</span>
                 </BaseButton>
               </div>
             </BaseCard>
             <BaseCard
               v-if="selectedStyle === 'classic'"
-              shape="straight"
+              rounded="none"
               class="!border-primary-600 relative z-20 mx-auto max-w-[340px] p-6"
             >
               <div class="mb-6 flex items-center justify-between">
-                <BaseTag shape="straight" color="primary" shadow="flat"
-                  >Member</BaseTag
+                <BaseTag
+                  rounded="none"
+                  color="primary"
+                  shadow="flat"
                 >
-                <BaseButtonClose shape="straight" />
+                  Member
+                </BaseTag>
+                <BaseButtonClose rounded="none" />
               </div>
               <BaseAvatar
                 size="xl"
                 src="/img/avatars/8.svg"
                 class="mx-auto !flex !transition-all !duration-200"
-                shape="straight"
+                rounded="none"
               />
               <div class="mt-3 text-center">
-                <BaseHeading as="h3" size="xl" weight="medium">
-                  John Baxter</BaseHeading
+                <BaseHeading
+                  as="h3"
+                  size="xl"
+                  weight="medium"
                 >
-                <BaseText size="sm" class="text-muted-500 dark:text-muted-400"
-                  >Technical Lead</BaseText
+                  John Baxter
+                </BaseHeading>
+                <BaseText
+                  size="sm"
+                  class="text-muted-500 dark:text-muted-400"
                 >
+                  Technical Lead
+                </BaseText>
               </div>
               <BaseParagraph size="sm" class="text-muted-400 my-2 text-center">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit sed
-                vitae nisl vitae nisl.</BaseParagraph
-              >
+                vitae nisl vitae nisl.
+              </BaseParagraph>
               <div class="my-6 flex items-center justify-center gap-4">
                 <NuxtLink
                   to="#"
-                  class="text-muted-400 hover:text-primary-500 flex h-6 w-6 items-center justify-center transition-colors duration-200"
+                  class="text-muted-400 hover:text-primary-500 flex size-6 items-center justify-center transition-colors duration-200"
                 >
-                  <Icon name="fa6-brands:facebook-f" class="h-4 w-4" />
+                  <Icon name="fa6-brands:facebook-f" class="size-4" />
                 </NuxtLink>
                 <NuxtLink
                   to="#"
-                  class="text-muted-400 hover:text-primary-500 flex h-6 w-6 items-center justify-center transition-colors duration-200"
+                  class="text-muted-400 hover:text-primary-500 flex size-6 items-center justify-center transition-colors duration-200"
                 >
-                  <Icon name="fa6-brands:twitter" class="h-4 w-4" />
+                  <Icon name="fa6-brands:twitter" class="size-4" />
                 </NuxtLink>
                 <NuxtLink
                   to="#"
-                  class="text-muted-400 hover:text-primary-500 flex h-6 w-6 items-center justify-center transition-colors duration-200"
+                  class="text-muted-400 hover:text-primary-500 flex size-6 items-center justify-center transition-colors duration-200"
                 >
-                  <Icon name="fa6-brands:linkedin-in" class="h-4 w-4" />
+                  <Icon name="fa6-brands:linkedin-in" class="size-4" />
                 </NuxtLink>
               </div>
               <div>
                 <BaseButton
                   class="!h-11 w-full"
-                  shape="straight"
+                  rounded="none"
                   color="primary"
-                  flavor="outline"
+                  variant="outline"
                 >
                   <span>Send Invitation</span>
                 </BaseButton>
@@ -349,7 +403,7 @@ watch(selectedStyle, (value) => {
                 alt=""
                 loading="lazy"
                 decoding="async"
-              />
+              >
               <button
                 type="button"
                 class="mx-auto flex h-32 w-40 flex-col items-center justify-center transition-colors duration-200"
@@ -362,7 +416,7 @@ watch(selectedStyle, (value) => {
               >
                 <Icon
                   name="system-uicons:document-words"
-                  class="mb-2 h-10 w-10"
+                  class="mb-2 size-10"
                 />
                 <span class="font-sans text-sm">Classic</span>
               </button>
@@ -376,7 +430,7 @@ watch(selectedStyle, (value) => {
                 "
                 @click="selectedStyle = 'corporate'"
               >
-                <Icon name="system-uicons:diamond" class="mb-2 h-10 w-10" />
+                <Icon name="system-uicons:diamond" class="mb-2 size-10" />
                 <span class="font-sans text-sm">Corporate</span>
               </button>
               <button
@@ -389,7 +443,7 @@ watch(selectedStyle, (value) => {
                 "
                 @click="selectedStyle = 'smart'"
               >
-                <Icon name="system-uicons:maximise" class="mb-2 h-10 w-10" />
+                <Icon name="system-uicons:maximise" class="mb-2 size-10" />
                 <span class="font-sans text-sm">Smart</span>
               </button>
               <button
@@ -404,7 +458,7 @@ watch(selectedStyle, (value) => {
               >
                 <Icon
                   name="system-uicons:lightbulb-on"
-                  class="mb-2 h-10 w-10"
+                  class="mb-2 size-10"
                 />
                 <span class="font-sans text-sm">Creative</span>
               </button>

@@ -27,8 +27,8 @@ export default defineNuxtModule({
           return {
             code: s.toString(),
             map:
-              nuxt.options.sourcemap &&
-              s.generateMap({ source: id, includeContent: true }),
+              nuxt.options.sourcemap
+              && s.generateMap({ source: id, includeContent: true }),
           }
         }
       },

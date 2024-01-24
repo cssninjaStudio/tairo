@@ -84,7 +84,7 @@ const conversations = ref([
       },
       {
         type: 'received',
-        text: "Yeah, that's them. they really have a gorgeous branding. I'll check them out. Thanks for the tip!",
+        text: 'Yeah, that\'s them. they really have a gorgeous branding. I\'ll check them out. Thanks for the tip!',
         time: '2:16 pm',
         attachments: [],
       },
@@ -121,7 +121,7 @@ const conversations = ref([
       },
       {
         type: 'sent',
-        text: "Yeah, I've got a copy on my inbox but I still didn't get a chance to read it and to take some notes.",
+        text: 'Yeah, I\'ve got a copy on my inbox but I still didn\'t get a chance to read it and to take some notes.',
         time: '11:09 am',
         attachments: [],
       },
@@ -145,7 +145,7 @@ const conversations = ref([
       },
       {
         type: 'sent',
-        text: "Nah, don't be like that! You're not annoying me at all. I'm just a bit busy right now. I'll send you my notes but yeah, I don't see anything preventing you from showing it to the boss.",
+        text: 'Nah, don\'t be like that! You\'re not annoying me at all. I\'m just a bit busy right now. I\'ll send you my notes but yeah, I don\'t see anything preventing you from showing it to the boss.',
         time: '4:06 pm',
         attachments: [],
       },
@@ -157,7 +157,7 @@ const conversations = ref([
       },
       {
         type: 'sent',
-        text: "You're very welcome Hermann! Let me know if you need anything else.",
+        text: 'You\'re very welcome Hermann! Let me know if you need anything else.',
         time: '4:26 pm',
         attachments: [],
       },
@@ -188,7 +188,7 @@ const conversations = ref([
       },
       {
         type: 'sent',
-        text: "Clarissa! sure thing. I'll send it to you right now. weren't we supposed to have lunch together? I'm free today if you want to grab a bite.",
+        text: 'Clarissa! sure thing. I\'ll send it to you right now. weren\'t we supposed to have lunch together? I\'m free today if you want to grab a bite.',
         time: '11:09 am',
         attachments: [],
       },
@@ -212,7 +212,7 @@ const conversations = ref([
       },
       {
         type: 'sent',
-        text: "Oh yeah! Let's do suchi! I'm starving too. I'll see you at 2pm.'",
+        text: 'Oh yeah! Let\'s do suchi! I\'m starving too. I\'ll see you at 2pm.\'',
         time: '1:12 pm',
         attachments: [],
       },
@@ -224,7 +224,7 @@ const conversations = ref([
       },
       {
         type: 'sent',
-        text: "Don't worry about it 😉 ",
+        text: 'Don\'t worry about it 😉 ',
         time: '4:26 pm',
         attachments: [],
       },
@@ -255,7 +255,7 @@ const conversations = ref([
       },
       {
         type: 'sent',
-        text: "Hey, no problem. I still have it. I'll send it to you right now. How about we grab lunch today? I'm free around noon.",
+        text: 'Hey, no problem. I still have it. I\'ll send it to you right now. How about we grab lunch today? I\'m free around noon.',
         time: '9:09 am',
         attachments: [],
       },
@@ -285,7 +285,7 @@ const conversations = ref([
       },
       {
         type: 'sent',
-        text: "No problem. Let's chat more at lunch. 😉 ",
+        text: 'No problem. Let\'s chat more at lunch. 😉 ',
         time: '12:01 pm',
         attachments: [],
       },
@@ -310,13 +310,13 @@ const conversations = ref([
       },
       {
         type: 'received',
-        text: "Hey, I wanted to get your feedback on the new UI design for the login page. I've made some updates based on the user testing data we collected last week.",
+        text: 'Hey, I wanted to get your feedback on the new UI design for the login page. I\'ve made some updates based on the user testing data we collected last week.',
         time: '4:04 pm',
         attachments: [],
       },
       {
         type: 'sent',
-        text: "Sure thing, I'll take a look at it now. Can you send me the updated version?",
+        text: 'Sure thing, I\'ll take a look at it now. Can you send me the updated version?',
         time: '4:09 pm',
         attachments: [],
       },
@@ -328,13 +328,13 @@ const conversations = ref([
       },
       {
         type: 'received',
-        text: "I've sent the updated version to you. I also included some notes on the changes I made.",
+        text: 'I\'ve sent the updated version to you. I also included some notes on the changes I made.',
         time: '9:00 am',
         attachments: [],
       },
       {
         type: 'sent',
-        text: "Thanks, I'll take a look now.",
+        text: 'Thanks, I\'ll take a look now.',
         time: '9:01 am',
         attachments: [],
       },
@@ -346,13 +346,13 @@ const conversations = ref([
       },
       {
         type: 'received',
-        text: "Thanks for the feedback, I'll add the hover effects to the buttons. Do you have time to meet later to discuss any other changes?",
+        text: 'Thanks for the feedback, I\'ll add the hover effects to the buttons. Do you have time to meet later to discuss any other changes?',
         time: '9:20 am',
         attachments: [],
       },
       {
         type: 'sent',
-        text: "Sure, let's schedule a meeting for 1pm today.",
+        text: 'Sure, let\'s schedule a meeting for 1pm today.',
         time: '9:22 am',
         attachments: [],
       },
@@ -383,7 +383,7 @@ const conversations = ref([
       },
       {
         type: 'sent',
-        text: "Yes, I've gone through it. The data looks promising. We should schedule a meeting to discuss next steps.",
+        text: 'Yes, I\'ve gone through it. The data looks promising. We should schedule a meeting to discuss next steps.',
         time: '4:09 pm',
         attachments: [],
       },
@@ -395,25 +395,25 @@ const conversations = ref([
       },
       {
         type: 'sent',
-        text: "I've scheduled a meeting for tomorrow at 10am to discuss the launch strategy for the new product. Can you send me the latest version of the product roadmap before the meeting?",
+        text: 'I\'ve scheduled a meeting for tomorrow at 10am to discuss the launch strategy for the new product. Can you send me the latest version of the product roadmap before the meeting?',
         time: '9:00 am',
         attachments: [],
       },
       {
         type: 'received',
-        text: "Sure, I'll send it to you now.",
+        text: 'Sure, I\'ll send it to you now.',
         time: '9:01 am',
         attachments: [],
       },
       {
         type: 'received',
-        text: "I've sent you the updated product roadmap. I've also included some notes on the changes I made based on the market research.",
+        text: 'I\'ve sent you the updated product roadmap. I\'ve also included some notes on the changes I made based on the market research.',
         time: '9:05 am',
         attachments: [],
       },
       {
         type: 'sent',
-        text: "Thanks, I'll review it before tomorrow's meeting.",
+        text: 'Thanks, I\'ll review it before tomorrow\'s meeting.',
         time: '9:06 am',
         attachments: [],
       },
@@ -450,7 +450,7 @@ const conversations = ref([
       },
       {
         type: 'sent',
-        text: "Yes, I've been getting reports of slow response times. I've started investigating but haven't found the root cause yet.",
+        text: 'Yes, I\'ve been getting reports of slow response times. I\'ve started investigating but haven\'t found the root cause yet.',
         time: '2:09 pm',
         attachments: [],
       },
@@ -462,31 +462,31 @@ const conversations = ref([
       },
       {
         type: 'sent',
-        text: "I've discovered that the server's disk space is almost full. I'm going to schedule a maintenance window tonight to add more storage.",
+        text: 'I\'ve discovered that the server\'s disk space is almost full. I\'m going to schedule a maintenance window tonight to add more storage.',
         time: '9:00 am',
         attachments: [],
       },
       {
         type: 'received',
-        text: "Okay, I'll make sure to inform the team and schedule any necessary downtime.",
+        text: 'Okay, I\'ll make sure to inform the team and schedule any necessary downtime.',
         time: '9:01 am',
         attachments: [],
       },
       {
         type: 'received',
-        text: "I've sent an email to the team and scheduled a two-hour maintenance window starting at 11pm tonight. Will that work for you?",
+        text: 'I\'ve sent an email to the team and scheduled a two-hour maintenance window starting at 11pm tonight. Will that work for you?',
         time: '9:05 am',
         attachments: [],
       },
       {
         type: 'sent',
-        text: "Yes, that works for me. I'll make sure to have everything set up before the maintenance window.",
+        text: 'Yes, that works for me. I\'ll make sure to have everything set up before the maintenance window.',
         time: '9:06 am',
         attachments: [],
       },
       {
         type: 'sent',
-        text: "I've added the storage and the server is running smoothly again. I'll keep an eye on it and let you know if there are any further issues.",
+        text: 'I\'ve added the storage and the server is running smoothly again. I\'ll keep an eye on it and let you know if there are any further issues.',
         time: '2:22 pm',
         attachments: [],
       },
@@ -504,7 +504,7 @@ const activeConversation = ref(1)
 
 const selectedConversation = computed(() => {
   return conversations.value.find(
-    (conversation) => conversation.id === activeConversation.value,
+    conversation => conversation.id === activeConversation.value,
   )
 })
 
@@ -555,10 +555,10 @@ async function submitMessage() {
   }
 
   const index = conversations.value.findIndex(
-    (conversation) => conversation.id === activeConversation.value,
+    conversation => conversation.id === activeConversation.value,
   )
 
-  await new Promise((resolve) => setTimeout(resolve, 200))
+  await new Promise(resolve => setTimeout(resolve, 200))
 
   conversations.value[index].messages.push(newMessage)
   message.value = ''
@@ -585,22 +585,22 @@ async function submitMessage() {
         <div class="flex h-full flex-col justify-between">
           <div class="flex flex-col">
             <div
-              class="ltablet:w-full flex h-16 w-16 shrink-0 items-center justify-center lg:w-full"
+              class="ltablet:w-full flex size-16 shrink-0 items-center justify-center lg:w-full"
             >
               <NuxtLink to="#" class="flex items-center justify-center">
                 <TairoLogo class="text-primary-600 h-10" />
               </NuxtLink>
             </div>
             <div
-              class="ltablet:w-full flex h-16 w-16 shrink-0 items-center justify-center lg:w-full"
+              class="ltablet:w-full flex size-16 shrink-0 items-center justify-center lg:w-full"
             >
               <a
                 href="#"
-                class="text-muted-400 hover:text-primary-500 hover:bg-primary-500/20 flex h-12 w-12 items-center justify-center rounded-2xl transition-colors duration-300"
+                class="text-muted-400 hover:text-primary-500 hover:bg-primary-500/20 flex size-12 items-center justify-center rounded-2xl transition-colors duration-300"
                 title="Back"
                 @click.prevent="$router.back()"
               >
-                <Icon name="lucide:arrow-left" class="h-5 w-5" />
+                <Icon name="lucide:arrow-left" class="size-5" />
               </a>
             </div>
           </div>
@@ -608,20 +608,20 @@ async function submitMessage() {
             <div class="flex h-16 w-full items-center justify-center">
               <button
                 type="button"
-                class="text-muted-400 hover:text-primary-500 hover:bg-primary-500/20 flex h-12 w-12 items-center justify-center rounded-2xl transition-colors duration-300"
+                class="text-muted-400 hover:text-primary-500 hover:bg-primary-500/20 flex size-12 items-center justify-center rounded-2xl transition-colors duration-300"
                 title="Search"
                 @click="open('search')"
               >
-                <Icon name="ph:magnifying-glass-duotone" class="h-5 w-5" />
+                <Icon name="ph:magnifying-glass-duotone" class="size-5" />
               </button>
             </div>
             <div class="flex h-16 w-full items-center justify-center">
               <NuxtLink
                 to="#"
-                class="text-muted-400 hover:text-primary-500 hover:bg-primary-500/20 flex h-12 w-12 items-center justify-center rounded-2xl transition-colors duration-300"
+                class="text-muted-400 hover:text-primary-500 hover:bg-primary-500/20 flex size-12 items-center justify-center rounded-2xl transition-colors duration-300"
                 title="Settings"
               >
-                <Icon name="ph:gear-six-duotone" class="h-5 w-5" />
+                <Icon name="ph:gear-six-duotone" class="size-5" />
               </NuxtLink>
             </div>
             <div class="flex h-16 w-full items-center justify-center">
@@ -636,12 +636,12 @@ async function submitMessage() {
       >
         <div class="flex h-full flex-col">
           <button
-            class="flex h-16 w-16 shrink-0 items-center justify-center sm:w-20"
+            class="flex size-16 shrink-0 items-center justify-center sm:w-20"
           >
             <span
-              class="bg-primary-500 flex h-10 w-10 items-center justify-center rounded-full text-white"
+              class="bg-primary-500 flex size-10 items-center justify-center rounded-full text-white"
             >
-              <Icon name="lucide:plus" class="h-4 w-4" />
+              <Icon name="lucide:plus" class="size-4" />
             </span>
           </button>
           <!-- List -->
@@ -649,7 +649,7 @@ async function submitMessage() {
             v-for="conversation in conversations"
             :key="conversation.id"
             href="#"
-            class="flex h-16 w-16 shrink-0 items-center justify-center border-s-2 sm:w-20"
+            class="flex size-16 shrink-0 items-center justify-center border-s-2 sm:w-20"
             :class="
               activeConversation === conversation.id
                 ? 'border-primary-500'
@@ -678,7 +678,7 @@ async function submitMessage() {
             <div class="flex items-center gap-2">
               <BaseInput
                 v-model="search"
-                shape="curved"
+                rounded="lg"
                 icon="lucide:search"
                 placeholder="Search"
               />
@@ -698,13 +698,13 @@ async function submitMessage() {
           >
             <!-- Loader-->
             <div
-              class="bg-muted-100 dark:bg-muted-900 pointer-events-none absolute inset-0 z-10 h-full w-full p-8 transition-opacity duration-300"
+              class="bg-muted-100 dark:bg-muted-900 pointer-events-none absolute inset-0 z-10 size-full p-8 transition-opacity duration-300"
               :class="loading ? 'opacity-100' : 'opacity-0 pointer-events-none'"
             >
               <div class="mt-12 space-y-12">
                 <div class="flex w-full max-w-md gap-4">
                   <BasePlaceload
-                    class="h-8 w-8 shrink-0 rounded-full"
+                    class="size-8 shrink-0 rounded-full"
                     :width="32"
                     :height="32"
                   />
@@ -715,7 +715,7 @@ async function submitMessage() {
                 </div>
                 <div class="flex w-full max-w-md gap-4">
                   <BasePlaceload
-                    class="h-8 w-8 shrink-0 rounded-full"
+                    class="size-8 shrink-0 rounded-full"
                     :width="32"
                     :height="32"
                   />
@@ -728,7 +728,7 @@ async function submitMessage() {
                   class="ms-auto flex w-full max-w-md flex-row-reverse justify-end gap-4"
                 >
                   <BasePlaceload
-                    class="h-8 w-8 shrink-0 rounded-full"
+                    class="size-8 shrink-0 rounded-full"
                     :width="32"
                     :height="32"
                   />
@@ -745,7 +745,7 @@ async function submitMessage() {
                   class="ms-auto flex w-full max-w-md flex-row-reverse justify-end gap-4"
                 >
                   <BasePlaceload
-                    class="h-8 w-8 shrink-0 rounded-full"
+                    class="size-8 shrink-0 rounded-full"
                     :width="32"
                     :height="32"
                   />
@@ -760,7 +760,7 @@ async function submitMessage() {
                 </div>
                 <div class="flex w-full max-w-md gap-4">
                   <BasePlaceload
-                    class="h-8 w-8 shrink-0 rounded-full"
+                    class="size-8 shrink-0 rounded-full"
                     :width="32"
                     :height="32"
                   />
@@ -771,7 +771,7 @@ async function submitMessage() {
                 </div>
                 <div class="flex w-full max-w-md gap-4">
                   <BasePlaceload
-                    class="h-8 w-8 shrink-0 rounded-full"
+                    class="size-8 shrink-0 rounded-full"
                     :width="32"
                     :height="32"
                   />
@@ -814,7 +814,9 @@ async function submitMessage() {
                         item.type === 'sent' ? 'rounded-se-none' : '',
                       ]"
                     >
-                      <p class="font-sans text-sm">{{ item.text }}</p>
+                      <p class="font-sans text-sm">
+                        {{ item.text }}
+                      </p>
                     </div>
                     <div
                       class="text-muted-400 mt-1 font-sans text-xs"
@@ -839,11 +841,11 @@ async function submitMessage() {
                             :src="attachment.image"
                             :alt="attachment.text"
                             class="rounded-xl"
-                          />
+                          >
                         </div>
                         <NuxtLink
-                          :to="attachment.url"
                           v-else-if="attachment.type === 'link'"
+                          :to="attachment.url"
                           class="dark:bg-muted-800 block max-w-xs rounded-2xl bg-white p-2"
                           :class="item.type === 'sent' ? 'ms-auto' : ''"
                         >
@@ -851,7 +853,7 @@ async function submitMessage() {
                             :src="attachment.image"
                             :alt="attachment.text"
                             class="rounded-xl"
-                          />
+                          >
                           <div class="px-1 py-2">
                             <p
                               class="text-muted-800 dark:text-muted-100 font-sans"
@@ -874,7 +876,7 @@ async function submitMessage() {
                   >
                     <div
                       class="border-muted-300/50 dark:border-muted-800 w-full border-t"
-                    ></div>
+                    />
                   </div>
                   <div class="relative flex justify-center">
                     <span
@@ -891,14 +893,14 @@ async function submitMessage() {
           <form
             method="POST"
             action=""
-            @submit.prevent="submitMessage"
             class="bg-muted-100 dark:bg-muted-900 flex h-16 w-full items-center px-4 sm:px-8"
+            @submit.prevent="submitMessage"
           >
             <div class="relative w-full">
               <BaseInput
                 v-model.trim="message"
                 :disabled="messageLoading"
-                shape="full"
+                rounded="full"
                 :classes="{
                   input: 'h-12 ps-6 pe-24',
                 }"
@@ -909,13 +911,13 @@ async function submitMessage() {
                   type="button"
                   class="text-muted-400 hover:text-primary-500 flex h-12 w-10 items-center justify-center transition-colors duration-300"
                 >
-                  <Icon name="lucide:smile" class="h-5 w-5" />
+                  <Icon name="lucide:smile" class="size-5" />
                 </button>
                 <button
                   type="button"
                   class="text-muted-400 hover:text-primary-500 flex h-12 w-10 items-center justify-center transition-colors duration-300"
                 >
-                  <Icon name="lucide:paperclip" class="h-5 w-5" />
+                  <Icon name="lucide:paperclip" class="size-5" />
                 </button>
               </div>
             </div>
@@ -938,7 +940,7 @@ async function submitMessage() {
           <BaseButtonIcon small @click="expanded = true">
             <Icon
               name="lucide:arrow-right"
-              class="pointer-events-none h-4 w-4"
+              class="pointer-events-none size-4"
             />
           </BaseButtonIcon>
         </div>
@@ -947,7 +949,7 @@ async function submitMessage() {
           <div v-if="loading" class="mt-8">
             <div class="mb-3 flex items-center justify-center">
               <BasePlaceload
-                class="h-24 w-24 shrink-0 rounded-full"
+                class="size-24 shrink-0 rounded-full"
                 :width="96"
                 :height="96"
               />
@@ -979,7 +981,11 @@ async function submitMessage() {
               <BaseAvatar :src="selectedConversation?.user.photo" size="2xl" />
             </div>
             <div class="text-center">
-              <BaseHeading tag="h3" size="lg" class="mt-4">
+              <BaseHeading
+                tag="h3"
+                size="lg"
+                class="mt-4"
+              >
                 <span>{{ selectedConversation?.user.name }}</span>
               </BaseHeading>
               <BaseParagraph size="sm" class="text-muted-400">
@@ -999,7 +1005,7 @@ async function submitMessage() {
                 <div class="flex items-center justify-center gap-2 px-4">
                   <Icon
                     name="ph:timer-duotone"
-                    class="text-muted-400 h-4 w-4"
+                    class="text-muted-400 size-4"
                   />
                   <span class="text-muted-400 font-sans text-xs">
                     Age: {{ selectedConversation?.user.age }}
@@ -1008,7 +1014,7 @@ async function submitMessage() {
                 <div class="flex items-center justify-center gap-2 px-4">
                   <Icon
                     name="ph:map-pin-duotone"
-                    class="text-muted-400 h-4 w-4"
+                    class="text-muted-400 size-4"
                   />
                   <span class="text-muted-400 font-sans text-xs">
                     {{ selectedConversation?.user.location }}
@@ -1016,7 +1022,7 @@ async function submitMessage() {
                 </div>
               </div>
               <div class="mt-6">
-                <BaseButton shape="curved" class="w-full">
+                <BaseButton rounded="lg" class="w-full">
                   <span>
                     View {{ selectedConversation?.user.name }}'s profile
                   </span>

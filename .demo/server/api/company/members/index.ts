@@ -1,3 +1,21 @@
+interface Member {
+  id: number
+  picture?: string
+  badge?: string
+  username: string
+  initials: string
+  status: string
+  location: string
+  position: string
+  completed: number
+  bio: string
+  socialProfiles: {
+    name: string
+    icon: string
+    url: string
+  }[]
+}
+
 export default defineEventHandler(async (event) => {
   const query = getQuery(event)
   const perPage = parseInt((query.perPage as string) || '5', 10)
@@ -6,38 +24,28 @@ export default defineEventHandler(async (event) => {
 
   if (perPage >= 50) {
     // Create an artificial delay
-    await new Promise((resolve) => setTimeout(resolve, 1000))
+    await new Promise(resolve => setTimeout(resolve, 1000))
   }
 
   const data = await getDemoData()
+  const offset = (page - 1) * perPage
+  const filterRe = new RegExp(filter, 'i')
 
   return {
     total: data.length,
-    data: filterDemoData(data, filter, page, perPage),
+    data: !filter
+      ? data.slice(offset, offset + perPage)
+      : data
+        .filter((item) => {
+          return [item.username, item.location, item.position].some(item =>
+            item.match(filterRe),
+          )
+        })
+        .slice(offset, offset + perPage),
   }
 })
 
-function filterDemoData(
-  data: any[],
-  filter: string,
-  page: number,
-  perPage: number,
-) {
-  const offset = (page - 1) * perPage
-  if (!filter) {
-    return data.slice(offset, offset + perPage)
-  }
-  const filterRe = new RegExp(filter, 'i')
-  return data
-    .filter((item) => {
-      return [item.username, item.location, item.position].some((item) =>
-        item.match(filterRe),
-      )
-    })
-    .slice(offset, offset + perPage)
-}
-
-async function getDemoData() {
+async function getDemoData(): Promise<Member[]> {
   return Promise.resolve([
     {
       id: 29,

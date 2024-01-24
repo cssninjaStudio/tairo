@@ -26,21 +26,25 @@ const markedSubtitle = useNinjaMark(
     :to="props.to"
   >
     <div class="flex grow flex-col">
+      <!-- eslint-disable vue/no-v-html -->
       <span
         v-if="props.title"
         class="nui-text-600 font-heading group-hover:text-primary-500 group-focus:text-primary-500 dark:group-hover:text-primary-400 dark:group-focus:text-primary-400 text-sm"
         v-html="markedTitle"
-      >
-      </span>
+      />
       <span
         v-if="props.subtitle"
         class="nui-text-400 line-clamp-1 text-sm"
         v-html="markedSubtitle"
-      >
-      </span>
+      />
+      <!-- eslint-enable vue/no-v-html -->
     </div>
     <div v-if="props.icon" class="shrink-0">
-      <img :src="props.icon" class="h-8 w-8" />
+      <img
+        :src="props.icon"
+        class="size-8"
+        alt=""
+      >
     </div>
   </NuxtLink>
 </template>

@@ -61,12 +61,12 @@ function difficultyLabel(itemDifficulty: number) {
     <TairoContentWrapperTabbed
       :labels="['All', 'Saved']"
       reverse
-      shape="curved"
+      rounded="lg"
     >
       <template #left>
         <BaseInput
           v-model="filter"
-          shape="curved"
+          rounded="lg"
           icon="lucide:search"
           placeholder="Filter courses..."
           :classes="{
@@ -85,12 +85,12 @@ function difficultyLabel(itemDifficulty: number) {
                 class="block dark:hidden"
                 src="/img/illustrations/placeholders/flat/placeholder-search-4.svg"
                 alt="Placeholder image"
-              />
+              >
               <img
                 class="hidden dark:block"
                 src="/img/illustrations/placeholders/flat/placeholder-search-4-dark.svg"
                 alt="Placeholder image"
-              />
+              >
             </template>
           </BasePlaceholderPage>
         </div>
@@ -106,7 +106,7 @@ function difficultyLabel(itemDifficulty: number) {
             <DemoFlexTableRow
               v-for="(item, index) in data?.data"
               :key="index"
-              shape="rounded"
+              rounded="sm"
             >
               <template #start>
                 <DemoFlexTableStart
@@ -140,7 +140,7 @@ function difficultyLabel(itemDifficulty: number) {
                   >
                     <Icon
                       :name="item.skill.icon"
-                      class="text-primary-500 h-5 w-5"
+                      class="text-primary-500 size-5"
                     />
                     <span
                       class="text-muted-500 dark:text-muted-400 font-sans text-sm"
@@ -159,45 +159,45 @@ function difficultyLabel(itemDifficulty: number) {
                     :data-nui-tooltip="difficultyLabel(item.difficulty)"
                   >
                     <span
-                      class="block h-2 w-2 rounded-full"
+                      class="block size-2 rounded-full"
                       :class="
                         item.difficulty >= 1
                           ? 'bg-primary-500'
                           : 'bg-muted-200 dark:bg-muted-700'
                       "
-                    ></span>
+                    />
                     <span
-                      class="block h-2 w-2 rounded-full"
+                      class="block size-2 rounded-full"
                       :class="
                         item.difficulty >= 2
                           ? 'bg-primary-500'
                           : 'bg-muted-200 dark:bg-muted-700'
                       "
-                    ></span>
+                    />
                     <span
-                      class="block h-2 w-2 rounded-full"
+                      class="block size-2 rounded-full"
                       :class="
                         item.difficulty >= 3
                           ? 'bg-primary-500'
                           : 'bg-muted-200 dark:bg-muted-700'
                       "
-                    ></span>
+                    />
                     <span
-                      class="block h-2 w-2 rounded-full"
+                      class="block size-2 rounded-full"
                       :class="
                         item.difficulty >= 4
                           ? 'bg-primary-500'
                           : 'bg-muted-200 dark:bg-muted-700'
                       "
-                    ></span>
+                    />
                     <span
-                      class="block h-2 w-2 rounded-full"
+                      class="block size-2 rounded-full"
                       :class="
                         item.difficulty === 5
                           ? 'bg-primary-500'
                           : 'bg-muted-200 dark:bg-muted-700'
                       "
-                    ></span>
+                    />
                   </div>
                 </DemoFlexTableCell>
                 <DemoFlexTableCell label="action" :hide-label="index > 0">
@@ -214,7 +214,7 @@ function difficultyLabel(itemDifficulty: number) {
               :total-items="data?.total ?? 0"
               :item-per-page="perPage"
               :current-page="page"
-              shape="full"
+              rounded="full"
             />
           </div>
         </div>
@@ -229,12 +229,12 @@ function difficultyLabel(itemDifficulty: number) {
               class="block dark:hidden"
               src="/img/illustrations/placeholders/flat/placeholder-courses.svg"
               alt="Placeholder image"
-            />
+            >
             <img
               class="hidden dark:block"
               src="/img/illustrations/placeholders/flat/placeholder-courses-dark.svg"
               alt="Placeholder image"
-            />
+            >
           </template>
         </BasePlaceholderPage>
       </template>

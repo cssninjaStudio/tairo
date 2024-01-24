@@ -1,10 +1,10 @@
 <script setup lang="ts">
 const props = withDefaults(
   defineProps<{
-    shape?: 'straight' | 'rounded' | 'curved' | 'full'
+    rounded?: 'none' | 'sm' | 'md' | 'lg' | 'full'
   }>(),
   {
-    shape: 'rounded',
+    rounded: 'sm',
   },
 )
 
@@ -59,7 +59,7 @@ const filteredMembers = computed(() => {
   }
   const filterRe = new RegExp(filter.value, 'i')
   return members.value.filter((item) => {
-    return [item.firstName, item.lastName, item.role].some((item) =>
+    return [item.firstName, item.lastName, item.role].some(item =>
       item.match(filterRe),
     )
   })
@@ -73,13 +73,18 @@ const filteredMembers = computed(() => {
         v-model="filter"
         icon="lucide:search"
         placeholder="Search team members..."
-        :shape="props.shape"
+        :rounded="props.rounded"
       />
     </div>
     <div v-if="filteredMembers.length === 0">
       <div class="flex flex-col items-center py-10 text-center">
-        <Icon name="pepicons-print:person" class="text-primary-500 h-10 w-10" />
-        <BaseHeading as="h4" size="md" weight="medium" lead="tight">
+        <Icon name="pepicons-print:person" class="text-primary-500 size-10" />
+        <BaseHeading
+          as="h4"
+          size="md"
+          weight="medium"
+          lead="tight"
+        >
           <span>No matching results</span>
         </BaseHeading>
         <BaseParagraph size="xs" class="text-muted-400 mx-auto max-w-[240px]">
@@ -96,9 +101,10 @@ const filteredMembers = computed(() => {
         :key="member.id"
         class="hover:bg-muted-100 focus-within:bg-muted-100 dark:hover:bg-muted-700/70 dark:focus-within:bg-muted-700/70 group flex items-center gap-3 p-2"
         :class="[
-          props.shape === 'rounded' ? 'rounded-md' : '',
-          props.shape === 'curved' ? 'rounded-xl' : '',
-          props.shape === 'full' ? 'rounded-full' : '',
+          props.rounded === 'sm' ? 'rounded-md' : '',
+          props.rounded === 'md' ? 'rounded-lg' : '',
+          props.rounded === 'lg' ? 'rounded-xl' : '',
+          props.rounded === 'full' ? 'rounded-full' : '',
         ]"
       >
         <BaseAvatar
@@ -126,10 +132,15 @@ const filteredMembers = computed(() => {
           </BaseParagraph>
         </div>
         <div
-          class="ms-auto flex -translate-x-1 items-center opacity-0 transition-all duration-300 group-hover:translate-x-0 group-focus-within:translate-x-0 group-hover:opacity-100 group-focus-within:opacity-100"
+          class="ms-auto flex -translate-x-1 items-center opacity-0 transition-all duration-300 group-focus-within:translate-x-0 group-focus-within:opacity-100 group-hover:translate-x-0 group-hover:opacity-100"
         >
-          <BaseButtonIcon to="#" :shape="props.shape" muted class="scale-75">
-            <Icon name="lucide:arrow-right" class="h-4 w-4" />
+          <BaseButtonIcon
+            to="#"
+            :rounded="props.rounded"
+            muted
+            class="scale-75"
+          >
+            <Icon name="lucide:arrow-right" class="size-4" />
           </BaseButtonIcon>
         </div>
       </div>

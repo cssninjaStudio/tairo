@@ -1,10 +1,10 @@
 <script setup lang="ts">
 const props = withDefaults(
   defineProps<{
-    shape?: 'rounded' | 'full'
+    rounded?: 'none' | 'sm' | 'md' | 'lg' | 'full'
   }>(),
   {
-    shape: 'rounded',
+    rounded: 'sm',
   },
 )
 
@@ -42,9 +42,18 @@ const topics = [
 
 <template>
   <div class="mb-2 space-y-5">
-    <div v-for="topic in topics" :key="topic.id" class="flex gap-3">
-      <BaseIconBox :shape="props.shape" size="sm" :class="getRandomColor()">
-        <Icon :name="topic.icon" class="h-5 w-5" />
+    <div
+      v-for="topic in topics"
+      :key="topic.id"
+      class="flex gap-3"
+    >
+      <BaseIconBox
+        :rounded="props.rounded"
+        size="sm"
+        color="none"
+        :class="getRandomColor()"
+      >
+        <Icon :name="topic.icon" class="size-5" />
       </BaseIconBox>
       <div>
         <BaseHeading

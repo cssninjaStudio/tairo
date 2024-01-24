@@ -1,9 +1,7 @@
 export default defineEventHandler(async () => {
-  const data = [
+  return [
     {
       id: 0,
     },
   ]
-
-  return data
 })

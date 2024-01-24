@@ -4,16 +4,20 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
 
 <template>
   <div class="group inline-flex items-center justify-center text-right">
-    <Menu as="div" class="relative h-9 w-9 text-left" v-slot="{ close }">
+    <Menu
+      v-slot="{ close }"
+      as="div"
+      class="relative size-9 text-left"
+    >
       <MenuButton as="div">
         <button
           type="button"
-          class="group-hover:ring-muted-200 dark:group-hover:ring-muted-700 dark:ring-offset-muted-900 inline-flex h-9 w-9 items-center justify-center rounded-full ring-1 ring-transparent transition-all duration-300 group-hover:ring-offset-4"
+          class="group-hover:ring-muted-200 dark:group-hover:ring-muted-700 dark:ring-offset-muted-900 inline-flex size-9 items-center justify-center rounded-full ring-1 ring-transparent transition-all duration-300 group-hover:ring-offset-4"
         >
           <span
-            class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 flex h-9 w-9 items-center justify-center rounded-full border bg-white"
+            class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 flex size-9 items-center justify-center rounded-full border bg-white"
           >
-            <Icon name="ph:bell-duotone" class="text-muted-400 h-5 w-5" />
+            <Icon name="ph:bell-duotone" class="text-muted-400 size-5" />
           </span>
         </button>
       </MenuButton>
@@ -46,7 +50,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
             </div>
           </div>
           <div class="p-4">
-            <MenuItem as="div" v-slot="{ active }">
+            <MenuItem v-slot="{ active }" as="div">
               <NuxtLink
                 to="#"
                 class="group flex w-full items-center rounded-md p-2 text-sm transition-colors duration-300"
@@ -58,13 +62,13 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 @click.passive="close"
               >
                 <div
-                  class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
+                  class="relative inline-flex size-9 items-center justify-center rounded-full"
                 >
                   <img
                     src="/img/avatars/12.svg"
                     class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""
-                  />
+                  >
                 </div>
                 <div class="ms-2">
                   <h6
@@ -77,11 +81,13 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                       left a comment
                     </span>
                   </h6>
-                  <p class="text-muted-400 font-sans text-xs">1 hour ago</p>
+                  <p class="text-muted-400 font-sans text-xs">
+                    1 hour ago
+                  </p>
                 </div>
               </NuxtLink>
             </MenuItem>
-            <MenuItem as="div" v-slot="{ active }">
+            <MenuItem v-slot="{ active }" as="div">
               <NuxtLink
                 to="#"
                 class="group flex w-full items-center rounded-md p-2 text-sm transition-colors duration-300"
@@ -93,13 +99,13 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 @click.passive="close"
               >
                 <div
-                  class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
+                  class="relative inline-flex size-9 items-center justify-center rounded-full"
                 >
                   <img
                     src="/img/avatars/19.svg"
                     class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""
-                  />
+                  >
                 </div>
                 <div class="ms-2">
                   <h6
@@ -112,11 +118,13 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                       uploaded a file
                     </span>
                   </h6>
-                  <p class="text-muted-400 font-sans text-xs">2 hours ago</p>
+                  <p class="text-muted-400 font-sans text-xs">
+                    2 hours ago
+                  </p>
                 </div>
               </NuxtLink>
             </MenuItem>
-            <MenuItem as="div" v-slot="{ active }">
+            <MenuItem v-slot="{ active }" as="div">
               <NuxtLink
                 to="#"
                 class="group flex w-full items-center rounded-md p-2 text-sm transition-colors duration-300"
@@ -128,13 +136,13 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 @click.passive="close"
               >
                 <div
-                  class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
+                  class="relative inline-flex size-9 items-center justify-center rounded-full"
                 >
                   <img
                     src="/img/avatars/3.svg"
                     class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""
-                  />
+                  >
                 </div>
                 <div class="ms-2">
                   <h6
@@ -147,11 +155,13 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                       left a comment
                     </span>
                   </h6>
-                  <p class="text-muted-400 font-sans text-xs">3 hours ago</p>
+                  <p class="text-muted-400 font-sans text-xs">
+                    3 hours ago
+                  </p>
                 </div>
               </NuxtLink>
             </MenuItem>
-            <MenuItem as="div" v-slot="{ active }">
+            <MenuItem v-slot="{ active }" as="div">
               <NuxtLink
                 to="#"
                 class="group flex w-full items-center rounded-md p-2 text-sm transition-colors duration-300"
@@ -163,13 +173,13 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 @click.passive="close"
               >
                 <div
-                  class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
+                  class="relative inline-flex size-9 items-center justify-center rounded-full"
                 >
                   <img
                     src="/img/avatars/4.svg"
                     class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""
-                  />
+                  >
                 </div>
                 <div class="ms-2">
                   <h6
@@ -182,11 +192,13 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                       sent you a message
                     </span>
                   </h6>
-                  <p class="text-muted-400 font-sans text-xs">Yesterday</p>
+                  <p class="text-muted-400 font-sans text-xs">
+                    Yesterday
+                  </p>
                 </div>
               </NuxtLink>
             </MenuItem>
-            <MenuItem as="div" v-slot="{ active }">
+            <MenuItem v-slot="{ active }" as="div">
               <NuxtLink
                 to="#"
                 class="group flex w-full items-center rounded-md p-2 text-sm transition-colors duration-300"
@@ -198,13 +210,13 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 @click.passive="close"
               >
                 <div
-                  class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
+                  class="relative inline-flex size-9 items-center justify-center rounded-full"
                 >
                   <img
                     src="/img/avatars/8.svg"
                     class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""
-                  />
+                  >
                 </div>
                 <div class="ms-2">
                   <h6
@@ -217,7 +229,9 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                       left a comment
                     </span>
                   </h6>
-                  <p class="text-muted-400 font-sans text-xs">Yesterday</p>
+                  <p class="text-muted-400 font-sans text-xs">
+                    Yesterday
+                  </p>
                 </div>
               </NuxtLink>
             </MenuItem>

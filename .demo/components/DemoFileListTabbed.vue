@@ -1,10 +1,10 @@
 <script setup lang="ts">
 const props = withDefaults(
   defineProps<{
-    shape?: 'straight' | 'rounded' | 'curved' | 'full'
+    rounded?: 'none' | 'sm' | 'md' | 'lg' | 'full'
   }>(),
   {
-    shape: 'rounded',
+    rounded: 'sm',
   },
 )
 
@@ -92,7 +92,7 @@ const savedFiles = [
     <DemoTabbedContent
       title="Files"
       :labels="['Recent', 'Saved']"
-      :shape="props.shape"
+      :rounded="props.rounded"
     >
       <template #tab-1>
         <div class="space-y-6">
@@ -101,7 +101,11 @@ const savedFiles = [
             :key="file.id"
             class="flex items-center gap-2"
           >
-            <img :src="file.icon" class="h-10 w-10" :alt="file.name" />
+            <img
+              :src="file.icon"
+              class="size-10"
+              :alt="file.name"
+            >
             <div>
               <BaseHeading
                 as="h3"
@@ -118,12 +122,12 @@ const savedFiles = [
             </div>
             <div class="ms-auto">
               <BaseDropdown
-                flavor="context"
+                variant="context"
                 label="Dropdown"
                 orientation="end"
                 size="md"
                 class="z-20"
-                shape="curved"
+                rounded="lg"
               >
                 <BaseDropdownItem
                   to="#"
@@ -133,7 +137,7 @@ const savedFiles = [
                   <template #start>
                     <Icon
                       name="ph:cloud-arrow-down-duotone"
-                      class="me-2 block h-5 w-5"
+                      class="me-2 block size-5"
                     />
                   </template>
                 </BaseDropdownItem>
@@ -145,7 +149,7 @@ const savedFiles = [
                   <template #start>
                     <Icon
                       name="ph:cloud-arrow-up-duotone"
-                      class="me-2 block h-5 w-5"
+                      class="me-2 block size-5"
                     />
                   </template>
                 </BaseDropdownItem>
@@ -156,18 +160,26 @@ const savedFiles = [
                   text="Manage permissions"
                 >
                   <template #start>
-                    <Icon name="ph:lock-duotone" class="me-2 block h-5 w-5" />
+                    <Icon name="ph:lock-duotone" class="me-2 block size-5" />
                   </template>
                 </BaseDropdownItem>
-                <BaseDropdownItem to="#" title="Share" text="Share this file">
+                <BaseDropdownItem
+                  to="#"
+                  title="Share"
+                  text="Share this file"
+                >
                   <template #start>
-                    <Icon name="ph:share-duotone" class="me-2 block h-5 w-5" />
+                    <Icon name="ph:share-duotone" class="me-2 block size-5" />
                   </template>
                 </BaseDropdownItem>
                 <BaseDropdownDivider />
-                <BaseDropdownItem to="#" title="Delete" text="Delete this file">
+                <BaseDropdownItem
+                  to="#"
+                  title="Delete"
+                  text="Delete this file"
+                >
                   <template #start>
-                    <Icon name="ph:trash-duotone" class="me-2 block h-5 w-5" />
+                    <Icon name="ph:trash-duotone" class="me-2 block size-5" />
                   </template>
                 </BaseDropdownItem>
               </BaseDropdown>
@@ -182,7 +194,11 @@ const savedFiles = [
             :key="file.id"
             class="flex items-center gap-2"
           >
-            <img :src="file.icon" class="h-10 w-10" :alt="file.name" />
+            <img
+              :src="file.icon"
+              class="size-10"
+              :alt="file.name"
+            >
             <div>
               <BaseHeading
                 as="h3"
@@ -199,11 +215,11 @@ const savedFiles = [
             </div>
             <div class="ms-auto">
               <BaseDropdown
-                flavor="context"
+                variant="context"
                 label="Dropdown"
                 orientation="end"
                 size="md"
-                shape="curved"
+                rounded="lg"
                 class="z-20"
               >
                 <BaseDropdownItem
@@ -214,7 +230,7 @@ const savedFiles = [
                   <template #start>
                     <Icon
                       name="ph:cloud-arrow-down-duotone"
-                      class="me-2 block h-5 w-5"
+                      class="me-2 block size-5"
                     />
                   </template>
                 </BaseDropdownItem>
@@ -226,7 +242,7 @@ const savedFiles = [
                   <template #start>
                     <Icon
                       name="ph:cloud-arrow-up-duotone"
-                      class="me-2 block h-5 w-5"
+                      class="me-2 block size-5"
                     />
                   </template>
                 </BaseDropdownItem>
@@ -237,18 +253,26 @@ const savedFiles = [
                   text="Manage permissions"
                 >
                   <template #start>
-                    <Icon name="ph:lock-duotone" class="me-2 block h-5 w-5" />
+                    <Icon name="ph:lock-duotone" class="me-2 block size-5" />
                   </template>
                 </BaseDropdownItem>
-                <BaseDropdownItem to="#" title="Share" text="Share this file">
+                <BaseDropdownItem
+                  to="#"
+                  title="Share"
+                  text="Share this file"
+                >
                   <template #start>
-                    <Icon name="ph:share-duotone" class="me-2 block h-5 w-5" />
+                    <Icon name="ph:share-duotone" class="me-2 block size-5" />
                   </template>
                 </BaseDropdownItem>
                 <BaseDropdownDivider />
-                <BaseDropdownItem to="#" title="Delete" text="Delete this file">
+                <BaseDropdownItem
+                  to="#"
+                  title="Delete"
+                  text="Delete this file"
+                >
                   <template #start>
-                    <Icon name="ph:trash-duotone" class="me-2 block h-5 w-5" />
+                    <Icon name="ph:trash-duotone" class="me-2 block size-5" />
                   </template>
                 </BaseDropdownItem>
               </BaseDropdown>

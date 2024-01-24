@@ -131,7 +131,7 @@ const matches = [
       <div class="ltablet:col-span-4 col-span-12 lg:col-span-4">
         <div class="ptablet:flex-row flex flex-col gap-6">
           <!-- Widget -->
-          <BaseCard shape="curved" class="p-8">
+          <BaseCard rounded="lg" class="p-8">
             <!-- Title -->
             <div class="mb-6 flex items-center justify-between">
               <BaseHeading
@@ -162,12 +162,12 @@ const matches = [
               </div>
               <div>
                 <BaseTag
-                  shape="full"
+                  rounded="full"
                   color="danger"
                   class="inline-flex items-center justify-center gap-1"
                   size="sm"
                 >
-                  <Icon name="lucide:video" class="h-3 w-3" />
+                  <Icon name="lucide:video" class="size-3" />
                   <span>Live now</span>
                 </BaseTag>
               </div>
@@ -176,10 +176,10 @@ const matches = [
             <div class="mb-6 flex items-center justify-between">
               <div class="flex flex-col text-center">
                 <img
-                  class="mx-auto h-12 w-12"
+                  class="mx-auto size-12"
                   src="/img/icons/soccer/teams/barcelona.svg"
                   alt="Team logo"
-                />
+                >
                 <BaseHeading
                   as="h4"
                   size="sm"
@@ -199,10 +199,10 @@ const matches = [
               </div>
               <div class="flex flex-col text-center">
                 <img
-                  class="mx-auto h-12 w-12"
+                  class="mx-auto size-12"
                   src="/img/icons/soccer/teams/psg.svg"
                   alt="Team logo"
-                />
+                >
                 <BaseHeading
                   as="h4"
                   size="sm"
@@ -216,13 +216,17 @@ const matches = [
             </div>
             <!-- Action -->
             <div>
-              <BaseButton color="primary" shape="curved" class="!h-12 w-full">
+              <BaseButton
+                color="primary"
+                rounded="lg"
+                class="!h-12 w-full"
+              >
                 <span>Watch Now</span>
               </BaseButton>
             </div>
           </BaseCard>
           <!-- Widget -->
-          <BaseCard shape="curved" class="p-8">
+          <BaseCard rounded="lg" class="p-8">
             <!-- Title -->
             <div class="mb-6 flex items-center justify-between">
               <BaseHeading
@@ -262,11 +266,11 @@ const matches = [
                     <BaseButton
                       size="sm"
                       color="light"
-                      flavor="outline"
+                      variant="outline"
                       class="w-full sm:w-auto"
                     >
                       <span>Learn More</span>
-                      <Icon name="lucide:arrow-right" class="h-4 w-4" />
+                      <Icon name="lucide:arrow-right" class="size-4" />
                     </BaseButton>
                   </div>
                 </div>
@@ -276,12 +280,12 @@ const matches = [
                   class="pointer-events-none absolute bottom-0 end-6 sm:-end-10"
                   src="/img/illustrations/dashboards/soccer/soccer-player.svg"
                   alt="Soccer Player"
-                />
+                >
               </div>
             </div>
           </div>
           <!-- Table -->
-          <BaseCard shape="curved" class="p-8">
+          <BaseCard rounded="lg" class="p-8">
             <div class="mb-6 flex gap-4 font-sans">
               <button
                 class="border-primary-500 text-muted-800 dark:text-muted-100 border-b-2 pb-4"
@@ -311,7 +315,9 @@ const matches = [
                     class="min-w-full table-fixed divide-y divide-slate-200 text-left dark:divide-slate-700"
                   >
                     <thead>
-                      <th class="py-3 font-sans text-xs uppercase">Time</th>
+                      <th class="py-3 font-sans text-xs uppercase">
+                        Time
+                      </th>
                       <th
                         class="xs:px-8 py-3 text-center font-sans text-xs uppercase"
                       >
@@ -332,13 +338,13 @@ const matches = [
                             :data-nui-tooltip="capitalize(match.status)"
                           >
                             <div
-                              class="h-2 w-2 rounded-full"
+                              class="size-2 rounded-full"
                               :class="
                                 match.status === 'live'
                                   ? 'bg-rose-500'
                                   : 'bg-muted-300 dark:bg-muted-600'
                               "
-                            ></div>
+                            />
                             <span>{{ match.time }}</span>
                           </div>
                         </td>
@@ -357,10 +363,10 @@ const matches = [
                                 <span>{{ match.match.home.name }}</span>
                               </BaseHeading>
                               <img
-                                class="h-8 w-8"
+                                class="size-8"
                                 :src="match.match.home.logo"
                                 :alt="match.match.home.name"
-                              />
+                              >
                             </div>
                             <div
                               class="text-muted-800 dark:text-muted-100 flex items-center justify-center gap-2 text-center font-sans"
@@ -383,10 +389,10 @@ const matches = [
                             </div>
                             <div class="flex w-[120px] items-center gap-2">
                               <img
-                                class="h-8 w-8"
+                                class="size-8"
                                 :src="match.match.away.logo"
                                 :alt="match.match.away.name"
-                              />
+                              >
                               <BaseHeading
                                 as="h4"
                                 size="sm"
@@ -413,7 +419,7 @@ const matches = [
                             <BaseButtonIcon small muted>
                               <Icon
                                 name="lucide:more-horizontal"
-                                class="h-4 w-4"
+                                class="size-4"
                               />
                             </BaseButtonIcon>
                           </div>

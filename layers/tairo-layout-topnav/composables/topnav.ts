@@ -60,13 +60,13 @@ export function useTopnav() {
 
   const menuItems = computed(() => {
     if (
-      app.tairo.topnav?.navigation?.enabled === false ||
-      app.tairo.topnav?.navigation?.items?.length === 0
+      (app.tairo?.topnav?.navigation?.enabled as boolean) === false
+      || app.tairo?.topnav?.navigation?.items?.length === 0
     ) {
       return []
     }
-    return app.tairo.topnav?.navigation?.items?.map(
-      (navigation) =>
+    return app.tairo?.topnav?.navigation?.items?.map(
+      navigation =>
         <TairoTopnavResolvedConfig>{
           ...navigation,
         },
@@ -94,13 +94,13 @@ export function useTopnav() {
     selectedMenuItem.value = item
   })
 
-  if (process.client) {
+  if (import.meta.client) {
     const { lg, xl } = useTailwindBreakpoints()
-    /*watch(xl, (isXl) => {
+    /* watch(xl, (isXl) => {
       if (!isXl) {
         isOpen.value = false
       }
-    })*/
+    }) */
   }
 
   return {

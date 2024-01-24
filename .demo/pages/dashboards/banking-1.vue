@@ -67,7 +67,7 @@ function useIncomeHistory() {
     },
   }
 
-  const series = ref([
+  const series = shallowRef([
     {
       name: 'Expenses',
       data: [318, 150, 49, 152.13, 421, 1009, 1220, 418, 113, 45],
@@ -105,7 +105,7 @@ const banks = [
 const selectedBankTransfert = shallowRef(banks[0])
 const selectedBankSendTo = shallowRef(banks[0])
 const selectedCurrency = ref('usd')
-const amount = ref<number>()
+const amount = ref<number>(0)
 </script>
 
 <template>
@@ -126,8 +126,8 @@ const amount = ref<number>()
             >
               <span>My Cards</span>
             </BaseHeading>
-            <BaseButtonIcon shape="full" small>
-              <Icon name="lucide:plus" class="h-3 w-3" />
+            <BaseButtonIcon rounded="full" small>
+              <Icon name="lucide:plus" class="size-3" />
             </BaseButtonIcon>
           </div>
           <div class="mb-8 flex items-center gap-4 px-6">
@@ -148,15 +148,19 @@ const amount = ref<number>()
             </div>
             <div class="ms-auto">
               <BaseDropdown
-                flavor="context"
+                variant="context"
                 label="Dropdown"
                 orientation="end"
                 size="md"
                 class="z-20"
               >
-                <BaseDropdownItem to="#" title="Invest" text="Buys more stocks">
+                <BaseDropdownItem
+                  to="#"
+                  title="Invest"
+                  text="Buys more stocks"
+                >
                   <template #start>
-                    <Icon name="ph:coin-duotone" class="me-2 block h-5 w-5" />
+                    <Icon name="ph:coin-duotone" class="me-2 block size-5" />
                   </template>
                 </BaseDropdownItem>
                 <BaseDropdownItem
@@ -167,7 +171,7 @@ const amount = ref<number>()
                   <template #start>
                     <Icon
                       name="ph:cell-signal-medium-duotone"
-                      class="me-2 block h-5 w-5"
+                      class="me-2 block size-5"
                     />
                   </template>
                 </BaseDropdownItem>
@@ -177,7 +181,7 @@ const amount = ref<number>()
                   text="View opportunities"
                 >
                   <template #start>
-                    <Icon name="ph:bank-duotone" class="me-2 block h-5 w-5" />
+                    <Icon name="ph:bank-duotone" class="me-2 block size-5" />
                   </template>
                 </BaseDropdownItem>
                 <BaseDropdownDivider />
@@ -187,7 +191,7 @@ const amount = ref<number>()
                   text="Manage your wallet"
                 >
                   <template #start>
-                    <Icon name="ph:wallet-duotone" class="me-2 block h-5 w-5" />
+                    <Icon name="ph:wallet-duotone" class="me-2 block size-5" />
                   </template>
                 </BaseDropdownItem>
               </BaseDropdown>
@@ -224,8 +228,10 @@ const amount = ref<number>()
                 <span>Status</span>
               </BaseHeading>
               <div class="flex items-center gap-1">
-                <span class="block h-2 w-2 rounded-full bg-emerald-500"></span>
-                <p class="text-muted-400 font-sans text-sm">Active</p>
+                <span class="block size-2 rounded-full bg-emerald-500" />
+                <p class="text-muted-400 font-sans text-sm">
+                  Active
+                </p>
               </div>
             </div>
             <div class="flex items-center justify-between">
@@ -239,7 +245,9 @@ const amount = ref<number>()
                 <span>Expires in</span>
               </BaseHeading>
               <div class="flex items-center gap-1">
-                <p class="text-muted-400 font-sans text-sm">125 days</p>
+                <p class="text-muted-400 font-sans text-sm">
+                  125 days
+                </p>
               </div>
             </div>
             <div class="flex items-center justify-between">
@@ -253,8 +261,10 @@ const amount = ref<number>()
                 <span>Type</span>
               </BaseHeading>
               <div class="flex items-center gap-1">
-                <Icon name="cib:visa" class="text-muted-400 h-10 w-10" />
-                <p class="text-muted-400 font-sans text-xs">Credit Card</p>
+                <Icon name="cib:visa" class="text-muted-400 size-10" />
+                <p class="text-muted-400 font-sans text-xs">
+                  Credit Card
+                </p>
               </div>
             </div>
           </div>
@@ -276,15 +286,19 @@ const amount = ref<number>()
             </div>
             <div class="ms-auto">
               <BaseDropdown
-                flavor="context"
+                variant="context"
                 label="Dropdown"
                 orientation="end"
                 size="md"
                 class="z-20"
               >
-                <BaseDropdownItem to="#" title="Invest" text="Buys more stocks">
+                <BaseDropdownItem
+                  to="#"
+                  title="Invest"
+                  text="Buys more stocks"
+                >
                   <template #start>
-                    <Icon name="ph:coin-duotone" class="me-2 block h-5 w-5" />
+                    <Icon name="ph:coin-duotone" class="me-2 block size-5" />
                   </template>
                 </BaseDropdownItem>
                 <BaseDropdownItem
@@ -295,7 +309,7 @@ const amount = ref<number>()
                   <template #start>
                     <Icon
                       name="ph:cell-signal-medium-duotone"
-                      class="me-2 block h-5 w-5"
+                      class="me-2 block size-5"
                     />
                   </template>
                 </BaseDropdownItem>
@@ -305,7 +319,7 @@ const amount = ref<number>()
                   text="View opportunities"
                 >
                   <template #start>
-                    <Icon name="ph:bank-duotone" class="me-2 block h-5 w-5" />
+                    <Icon name="ph:bank-duotone" class="me-2 block size-5" />
                   </template>
                 </BaseDropdownItem>
                 <BaseDropdownDivider />
@@ -315,7 +329,7 @@ const amount = ref<number>()
                   text="Manage your wallet"
                 >
                   <template #start>
-                    <Icon name="ph:wallet-duotone" class="me-2 block h-5 w-5" />
+                    <Icon name="ph:wallet-duotone" class="me-2 block size-5" />
                   </template>
                 </BaseDropdownItem>
               </BaseDropdown>
@@ -349,9 +363,10 @@ const amount = ref<number>()
               <BaseIconBox
                 class="bg-success-500/10 text-success-500"
                 size="md"
-                shape="full"
+                rounded="full"
+                color="none"
               >
-                <Icon name="ph:pizza-duotone" class="h-5 w-5" />
+                <Icon name="ph:pizza-duotone" class="size-5" />
               </BaseIconBox>
               <div>
                 <BaseHeading
@@ -380,9 +395,10 @@ const amount = ref<number>()
               <BaseIconBox
                 class="bg-orange-500/10 text-orange-500"
                 size="md"
-                shape="full"
+                rounded="full"
+                color="none"
               >
-                <Icon name="ph:storefront-duotone" class="h-5 w-5" />
+                <Icon name="ph:storefront-duotone" class="size-5" />
               </BaseIconBox>
               <div>
                 <BaseHeading
@@ -411,9 +427,10 @@ const amount = ref<number>()
               <BaseIconBox
                 class="bg-indigo-500/10 text-indigo-500"
                 size="md"
-                shape="full"
+                rounded="full"
+                color="none"
               >
-                <Icon name="ph:shopping-cart-duotone" class="h-5 w-5" />
+                <Icon name="ph:shopping-cart-duotone" class="size-5" />
               </BaseIconBox>
               <div>
                 <BaseHeading
@@ -450,7 +467,12 @@ const amount = ref<number>()
           class="ltablet:col-span-6 col-span-12 flex flex-col gap-4 lg:col-span-6"
         >
           <!-- Widget -->
-          <form method="POST" action="" @submit.prevent class="relative">
+          <form
+            method="POST"
+            action=""
+            class="relative"
+            @submit.prevent
+          >
             <BaseCard class="flex flex-col p-6">
               <div class="mb-4 flex items-center justify-between">
                 <BaseHeading
@@ -536,8 +558,8 @@ const amount = ref<number>()
         <form
           method="POST"
           action=""
-          @submit.prevent
           class="ltablet:col-span-6 col-span-12 lg:col-span-6"
+          @submit.prevent
         >
           <!-- Widget -->
           <div class="relative h-full">
@@ -600,23 +622,28 @@ const amount = ref<number>()
                   <div class="flex w-full gap-2">
                     <BaseSelect
                       v-model="selectedCurrency"
-                      shape="rounded"
+                      rounded="sm"
                       label="Currency"
                       class="w-16"
                     >
-                      <option value=""></option>
-                      <option value="usd">$</option>
-                      <option value="gbp">£</option>
-                      <option value="eur">€</option>
+                      <option value="" />
+                      <option value="usd">
+                        $
+                      </option>
+                      <option value="gbp">
+                        £
+                      </option>
+                      <option value="eur">
+                        €
+                      </option>
                     </BaseSelect>
-                    <BaseInput
-                      v-model.number="amount"
-                      type="number"
+                    <BaseInputNumber
+                      v-model="amount"
                       :classes="{ wrapper: 'grow' }"
                       placeholder="0.00"
-                      shape="rounded"
+                      rounded="sm"
                       label="Amount"
-                      hide-label
+                      :min="0"
                     />
                   </div>
                 </div>
@@ -628,7 +655,7 @@ const amount = ref<number>()
                 <div>
                   <BaseButton
                     type="submit"
-                    shape="rounded"
+                    rounded="sm"
                     size="sm"
                     color="primary"
                     class="w-full"

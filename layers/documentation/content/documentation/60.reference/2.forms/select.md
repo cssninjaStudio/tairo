@@ -11,39 +11,45 @@ icon:
 
 ::doc-component-demo
 ---
-title: Select shapes
+title: Radius
 demo: '#examples/select/shapes.vue'
 ---
 The select component can have different shapes. Here is an example of a `rounded` select.
 :::doc-message{type="muted" icon="ion:shapes-outline"}
-Default shape of all :doc-linker{to="BaseSelect"} can be set in your `.app/app.config.ts`.
+Default props of all :doc-linker{to="BaseSelect"} can be set in your `.app/app.config.ts`.
 :::
 ::
 
-
 ::doc-component-demo
 ---
-title: Icons
-demo: '#examples/select/icon.vue'
+title: Size
+demo: '#examples/select/size.vue'
 ---
-Selects can have a configurable icon on the left side using the `icon` prop. Make sure to pick meaningful icons for your use case.
-::
-
-
-::doc-component-demo
----
-title: Float labels
-demo: '#examples/select/float-label.vue'
----
-Selects can have a material design style floating label using the `labelFloat` prop.
+Selects can have different sizes. Use the `size` prop to change the size of the select component.
 ::
 
 ::doc-component-demo
 ---
-title: Small
-demo: '#examples/select/condensed.vue'
+title: Contrast:default+
+demo: '#examples/select/contrast-default.vue'
 ---
-Selects can be displayed in a smaller and more compact way using the `size` prop with the `sm` value.
+Selects can have different contrasts. Use the `contrast` prop to change the contrast of the select component.
+::
+
+::doc-component-demo
+---
+title: Contrast:muted
+demo: '#examples/select/contrast-muted.vue'
+---
+Selects can have different contrasts. Use the `contrast` prop to change the contrast of the select component.
+::
+
+::doc-component-demo
+---
+title: Contrast:muted+
+demo: '#examples/select/contrast-muted-contrast.vue'
+---
+Selects can have different contrasts. Use the `contrast` prop to change the contrast of the select component.
 ::
 
 ::doc-component-demo
@@ -54,22 +60,47 @@ demo: '#examples/select/group.vue'
 Selects can have option groups using the `optgroup` element to wrap your `options`.
 ::
 
+
 ::doc-component-demo
 ---
-title: Loading state
+title: Icon
+demo: '#examples/select/icon.vue'
+---
+Selects can have a configurable icon on the left side using the `icon` prop. Make sure to pick meaningful icons for your use case.
+::
+
+
+::doc-component-demo
+---
+title: Error
+demo: '#examples/select/invalid.vue'
+---
+Selects can be shown in an error state using the `error` prop. Use the same prop to display an error message.
+::
+
+
+::doc-component-demo
+---
+title: Label:float
+demo: '#examples/select/float-label.vue'
+---
+Selects can have a material design style floating label using the `labelFloat` prop.
+::
+
+::doc-component-demo
+---
+title: Loading
 demo: '#examples/select/loading.vue'
 ---
 Selects can be shown in a loading state using the `loading` prop.
 ::
 
-
-
 ::doc-component-demo
 ---
-title: Error state
-demo: '#examples/select/invalid.vue'
+title: Disabled
+demo: '#examples/select/disabled.vue'
 ---
-Selects can be shown in an error state using the `error` prop. Use the same prop to display an error message.
+Selects can be shown in a disabled state using the `disabled` prop.
 ::
 
 

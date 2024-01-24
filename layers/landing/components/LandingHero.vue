@@ -67,7 +67,7 @@ function useGaugePersonal() {
     labels: ['Average Results'],
   }
 
-  const series = ref([76])
+  const series = shallowRef([76])
 
   return {
     type,
@@ -82,17 +82,17 @@ function useGaugePersonal() {
   <div
     class="dark:to-muted-900 relative min-h-screen overflow-hidden bg-gradient-to-b from-transparent to-white"
   >
-    <div class="gridlines absolute inset-x-0 z-10 -mt-8 py-20"></div>
+    <div class="gridlines absolute inset-x-0 z-10 -mt-8 py-20" />
     <div class="absolute inset-x-0 z-20 -mt-24 py-20">
       <div
-        class="mt-12 grid grid-cols-2 -space-x-52 opacity-60 dark:opacity-50 2xl:mx-auto 2xl:max-w-6xl"
+        class="mt-12 grid grid-cols-2 -space-x-52 opacity-60 2xl:mx-auto 2xl:max-w-6xl dark:opacity-50"
       >
         <div
           class="from-primary-200 to-primary-400 h-40 bg-gradient-to-br blur-3xl dark:from-blue-700"
-        ></div>
+        />
         <div
           class="dark:to-primary-600 h-24 bg-gradient-to-r from-indigo-400 to-indigo-700 blur-3xl"
-        ></div>
+        />
       </div>
     </div>
     <div class="mx-auto w-full max-w-7xl px-4">
@@ -107,8 +107,7 @@ function useGaugePersonal() {
           The dashboard system that makes you say
           <span
             class="text-primary-500 font-hairline underline decoration-dotted underline-offset-4"
-            >wow</span
-          >
+          >wow</span>
         </BaseHeading>
         <BaseParagraph
           size="lg"
@@ -120,7 +119,7 @@ function useGaugePersonal() {
         </BaseParagraph>
         <div class="flex items-center justify-center">
           <BaseButton
-            shape="curved"
+            rounded="lg"
             color="primary"
             to="https://go.cssninja.io/buy-tairo"
             shadow="hover"
@@ -144,61 +143,61 @@ function useGaugePersonal() {
             class="ltablet:w-16 ltablet:flex dark:bg-muted-800 absolute left-0 top-0 hidden h-full w-20 flex-col bg-white group-[&.scrolled]/landing:translate-x-0 group-[&:not(.scrolled)]/landing:-translate-x-full group-[&.scrolled]/landing:opacity-100 group-[&:not(.scrolled)]/landing:opacity-0 motion-safe:transition-all motion-safe:duration-200 lg:flex"
           >
             <div class="flex h-20 w-full items-center justify-center">
-              <TairoLogo class="text-primary-500 h-8 w-8" />
+              <TairoLogo class="text-primary-500 size-8" />
             </div>
             <div class="flex h-16 w-full items-center justify-center">
               <div
-                class="nui-mask nui-mask-blob bg-primary-500/10 flex h-12 w-12 items-center justify-center motion-safe:transition-colors motion-safe:duration-200"
+                class="nui-mask nui-mask-blob bg-primary-500/10 flex size-12 items-center justify-center motion-safe:transition-colors motion-safe:duration-200"
               >
                 <Icon
                   name="ph:house-duotone"
-                  class="text-primary-500 h-5 w-5"
+                  class="text-primary-500 size-5"
                 />
               </div>
             </div>
             <div class="flex h-16 w-full items-center justify-center">
               <div
-                class="nui-mask nui-mask-blob hover:bg-muted-100 dark:hover:bg-muted-700/50 flex h-12 w-12 items-center justify-center motion-safe:transition-colors motion-safe:duration-200"
+                class="nui-mask nui-mask-blob hover:bg-muted-100 dark:hover:bg-muted-700/50 flex size-12 items-center justify-center motion-safe:transition-colors motion-safe:duration-200"
               >
                 <Icon
                   name="ph:grid-four-duotone"
-                  class="text-muted-400 h-5 w-5"
+                  class="text-muted-400 size-5"
                 />
               </div>
             </div>
             <div class="flex h-16 w-full items-center justify-center">
               <div
-                class="nui-mask nui-mask-blob hover:bg-muted-100 dark:hover:bg-muted-700/50 flex h-12 w-12 items-center justify-center motion-safe:transition-colors motion-safe:duration-200"
+                class="nui-mask nui-mask-blob hover:bg-muted-100 dark:hover:bg-muted-700/50 flex size-12 items-center justify-center motion-safe:transition-colors motion-safe:duration-200"
               >
-                <Icon name="ph:users-duotone" class="text-muted-400 h-5 w-5" />
+                <Icon name="ph:users-duotone" class="text-muted-400 size-5" />
               </div>
             </div>
             <div class="flex h-16 w-full items-center justify-center">
               <div
-                class="nui-mask nui-mask-blob hover:bg-muted-100 dark:hover:bg-muted-700/50 flex h-12 w-12 items-center justify-center motion-safe:transition-colors motion-safe:duration-200"
+                class="nui-mask nui-mask-blob hover:bg-muted-100 dark:hover:bg-muted-700/50 flex size-12 items-center justify-center motion-safe:transition-colors motion-safe:duration-200"
               >
                 <Icon
                   name="ph:chat-circle-duotone"
-                  class="text-muted-400 h-5 w-5"
+                  class="text-muted-400 size-5"
                 />
               </div>
             </div>
             <div class="mt-auto flex h-16 w-full items-center justify-center">
               <div
-                class="nui-mask nui-mask-blob hover:bg-muted-100 dark:hover:bg-muted-700/50 flex h-12 w-12 items-center justify-center motion-safe:transition-colors motion-safe:duration-200"
+                class="nui-mask nui-mask-blob hover:bg-muted-100 dark:hover:bg-muted-700/50 flex size-12 items-center justify-center motion-safe:transition-colors motion-safe:duration-200"
               >
                 <Icon
                   name="ph:gear-six-duotone"
-                  class="text-muted-400 h-5 w-5"
+                  class="text-muted-400 size-5"
                 />
               </div>
             </div>
             <div class="flex h-16 w-full items-center justify-center">
               <div
-                class="nui-mask nui-mask-blob hover:bg-muted-100 dark:hover:bg-muted-700/50 flex h-12 w-12 items-center justify-center motion-safe:transition-colors motion-safe:duration-200"
+                class="nui-mask nui-mask-blob hover:bg-muted-100 dark:hover:bg-muted-700/50 flex size-12 items-center justify-center motion-safe:transition-colors motion-safe:duration-200"
               >
                 <BaseAvatar
-                  shape="straight"
+                  rounded="none"
                   size="sm"
                   src="/img/avatars/24.svg"
                   class="nui-mask nui-mask-blob"
@@ -212,39 +211,41 @@ function useGaugePersonal() {
           >
             <div class="flex h-full items-center gap-4">
               <div
-                class="nui-mask nui-mask-blob dark:hover:bg-muted-800 flex h-10 w-10 items-center justify-center hover:bg-white motion-safe:transition-colors motion-safe:duration-200"
+                class="nui-mask nui-mask-blob dark:hover:bg-muted-800 flex size-10 items-center justify-center hover:bg-white motion-safe:transition-colors motion-safe:duration-200"
               >
-                <Icon name="lucide:menu" class="text-muted-400 h-5 w-5" />
+                <Icon name="lucide:menu" class="text-muted-400 size-5" />
               </div>
-              <BaseText class="hidden sm:inline-block">My Dashboard</BaseText>
+              <BaseText class="hidden sm:inline-block">
+                My Dashboard
+              </BaseText>
             </div>
             <div class="flex h-full items-center justify-end gap-1">
               <div
-                class="nui-mask nui-mask-blob dark:hover:bg-muted-800 flex h-10 w-10 items-center justify-center hover:bg-white motion-safe:transition-colors motion-safe:duration-200"
+                class="nui-mask nui-mask-blob dark:hover:bg-muted-800 flex size-10 items-center justify-center hover:bg-white motion-safe:transition-colors motion-safe:duration-200"
               >
-                <Icon name="ph:bell-duotone" class="text-muted-400 h-5 w-5" />
+                <Icon name="ph:bell-duotone" class="text-muted-400 size-5" />
               </div>
               <div
-                class="nui-mask nui-mask-blob dark:hover:bg-muted-800 flex h-10 w-10 items-center justify-center hover:bg-white motion-safe:transition-colors motion-safe:duration-200"
+                class="nui-mask nui-mask-blob dark:hover:bg-muted-800 flex size-10 items-center justify-center hover:bg-white motion-safe:transition-colors motion-safe:duration-200"
               >
                 <Icon
                   name="ph:circles-four-duotone"
-                  class="text-muted-400 h-5 w-5"
+                  class="text-muted-400 size-5"
                 />
               </div>
               <div
-                class="nui-mask nui-mask-blob dark:hover:bg-muted-800 flex h-10 w-10 items-center justify-center hover:bg-white motion-safe:transition-colors motion-safe:duration-200"
+                class="nui-mask nui-mask-blob dark:hover:bg-muted-800 flex size-10 items-center justify-center hover:bg-white motion-safe:transition-colors motion-safe:duration-200"
               >
                 <Icon
                   name="ph:translate-duotone"
-                  class="text-muted-400 h-5 w-5"
+                  class="text-muted-400 size-5"
                 />
               </div>
               <div
-                class="nui-mask nui-mask-blob dark:hover:bg-muted-800 flex h-10 w-10 items-center justify-center hover:bg-white motion-safe:transition-colors motion-safe:duration-200"
+                class="nui-mask nui-mask-blob dark:hover:bg-muted-800 flex size-10 items-center justify-center hover:bg-white motion-safe:transition-colors motion-safe:duration-200"
               >
                 <BaseAvatar
-                  shape="straight"
+                  rounded="none"
                   size="xs"
                   src="/img/avatars/24.svg"
                   class="nui-mask nui-mask-blob"
@@ -260,7 +261,11 @@ function useGaugePersonal() {
               class="ltablet:gap-6 group-[&:not(.scrolled)]/landing:ltablet:mt-24 group-[&:not(.scrolled)]/landing:ptablet:mt-24 flex flex-col gap-6 sm:gap-3 lg:gap-4 group-[&:not(.scrolled)]/landing:lg:mt-24"
             >
               <!-- Widget -->
-              <BaseCard shape="curved" elevated class="flex flex-col p-6">
+              <BaseCard
+                rounded="lg"
+                elevated
+                class="flex flex-col p-6"
+              >
                 <div class="mb-6 flex items-center justify-between">
                   <BaseHeading
                     as="h3"
@@ -290,18 +295,26 @@ function useGaugePersonal() {
             <!-- Col -->
             <div class="ltablet:gap-6 flex flex-col gap-6 sm:gap-3 lg:gap-4">
               <!-- Widget -->
-              <BaseCard shape="curved" elevated class="p-6">
+              <BaseCard
+                rounded="lg"
+                elevated
+                class="p-6"
+              >
                 <DemoInboxMessage
                   picture="/img/avatars/10.svg"
                   name="Kendra W."
                   title="Design Project"
                   text="Where are we in terms of design? We need to review the new screens."
                   time="28 minutes"
-                  shape="curved"
+                  rounded="lg"
                 />
               </BaseCard>
               <!-- Widget -->
-              <BaseCard shape="curved" elevated class="p-6">
+              <BaseCard
+                rounded="lg"
+                elevated
+                class="p-6"
+              >
                 <DemoInfoBadges
                   image="/img/illustrations/widgets/1.svg"
                   badge-small="/img/illustrations/widgets/3.svg"
@@ -316,12 +329,20 @@ function useGaugePersonal() {
               class="ltablet:gap-6 group-[&:not(.scrolled)]/landing:ltablet:mt-16 group-[&:not(.scrolled)]/landing:ptablet:mt-16 flex flex-col gap-6 sm:hidden sm:gap-3 lg:flex lg:gap-4 group-[&:not(.scrolled)]/landing:lg:mt-16"
             >
               <!-- Widget -->
-              <BaseCard shape="curved" elevated class="p-4">
-                <DemoTeamSearchCompact shape="curved" />
+              <BaseCard
+                rounded="lg"
+                elevated
+                class="p-4"
+              >
+                <DemoTeamSearchCompact rounded="lg" />
               </BaseCard>
               <!-- Widget -->
-              <BaseCard shape="curved" elevated class="p-3">
-                <DemoVideoCompact shape="curved" />
+              <BaseCard
+                rounded="lg"
+                elevated
+                class="p-3"
+              >
+                <DemoVideoCompact rounded="lg" />
               </BaseCard>
             </div>
             <!-- Col -->
@@ -329,7 +350,11 @@ function useGaugePersonal() {
               class="ltablet:gap-6 group-[&:not(.scrolled)]/landing:ltablet:mt-10 group-[&:not(.scrolled)]/landing:ptablet:mt-10 flex flex-col gap-6 sm:gap-3 lg:gap-4 group-[&:not(.scrolled)]/landing:lg:mt-10"
             >
               <!-- Widget -->
-              <BaseCard shape="curved" elevated class="p-6">
+              <BaseCard
+                rounded="lg"
+                elevated
+                class="p-6"
+              >
                 <DemoProgressCircle
                   image="/img/avatars/6.svg"
                   :title="`${y < 500 ? Math.trunc(y / 5) : 100}% completed!`"
@@ -338,7 +363,11 @@ function useGaugePersonal() {
                 />
               </BaseCard>
               <!-- Widget -->
-              <BaseCard shape="curved" elevated class="p-6">
+              <BaseCard
+                rounded="lg"
+                elevated
+                class="p-6"
+              >
                 <DemoFollowersCompact />
               </BaseCard>
             </div>

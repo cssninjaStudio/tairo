@@ -41,12 +41,12 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
 
 <template>
   <div>
-    <TairoContentWrapperTabbed :labels="['All', 'Saved']" shape="curved">
+    <TairoContentWrapperTabbed :labels="['All', 'Saved']" rounded="lg">
       <template #left>
         <BaseInput
           v-model="filter"
           icon="lucide:search"
-          shape="curved"
+          rounded="lg"
           placeholder="Filter recipes..."
           :classes="{
             wrapper: 'w-full sm:w-auto',
@@ -65,12 +65,12 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                   class="block dark:hidden"
                   src="/img/illustrations/placeholders/flat/placeholder-search-3.svg"
                   alt="Placeholder image"
-                />
+                >
                 <img
                   class="hidden dark:block"
                   src="/img/illustrations/placeholders/flat/placeholder-search-3-dark.svg"
                   alt="Placeholder image"
-                />
+                >
               </template>
             </BasePlaceholderPage>
           </div>
@@ -86,7 +86,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
               <BaseCard
                 v-for="item in data?.data"
                 :key="item.id"
-                shape="curved"
+                rounded="lg"
                 class="flex flex-col p-5 sm:flex-row sm:items-center"
               >
                 <div
@@ -114,7 +114,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                       <div
                         class="text-muted-400 mt-3 flex items-center gap-1 text-left text-sm sm:mt-0"
                       >
-                        <Icon name="lucide:archive" class="h-3 w-3" />
+                        <Icon name="lucide:archive" class="size-3" />
                         <span>{{ item.category }}</span>
                       </div>
                       <div class="hidden px-2 sm:block">
@@ -123,7 +123,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                       <div
                         class="text-muted-400 mt-3 flex items-center gap-1 text-left text-sm sm:mt-0"
                       >
-                        <Icon name="lucide:clock" class="h-3 w-3" />
+                        <Icon name="lucide:clock" class="size-3" />
                         <span>{{ item.duration }}</span>
                       </div>
                       <div class="hidden px-2 sm:block">
@@ -132,7 +132,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                       <div
                         class="text-muted-400 mt-3 flex items-center gap-1 text-left text-sm sm:mt-0"
                       >
-                        <Icon name="lucide:paperclip" class="h-3 w-3" />
+                        <Icon name="lucide:paperclip" class="size-3" />
                         <span>{{ item.attachments }}</span>
                       </div>
                     </div>
@@ -149,24 +149,26 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                       :avatars="item.followers"
                       :limit="3"
                     />
-                    <p class="text-muted-400 font-sans text-xs">Like this</p>
+                    <p class="text-muted-400 font-sans text-xs">
+                      Like this
+                    </p>
                   </div>
                   <div class="flex w-full items-center gap-2 sm:w-auto">
                     <BaseButton
                       color="primary"
-                      flavor="outline"
+                      variant="outline"
                       class="w-full sm:w-28"
                     >
                       <span>Apply Now</span>
                     </BaseButton>
                     <BaseButtonIcon
-                      shape="full"
+                      rounded="full"
                       small
                       muted
                       data-nui-tooltip="Save recipe"
                       class="hidden sm:inline-flex"
                     >
-                      <Icon name="ph:heart-duotone" class="h-4 w-4" />
+                      <Icon name="ph:heart-duotone" class="size-4" />
                     </BaseButtonIcon>
                   </div>
                 </div>
@@ -179,7 +181,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                 :total-items="100"
                 :current="1"
                 :limit="10"
-                shape="curved"
+                rounded="lg"
               />
             </div>
           </div>
@@ -195,12 +197,12 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
               class="block dark:hidden"
               src="/img/illustrations/placeholders/flat/placeholder-cooking.svg"
               alt="Placeholder image"
-            />
+            >
             <img
               class="hidden dark:block"
               src="/img/illustrations/placeholders/flat/placeholder-cooking-dark.svg"
               alt="Placeholder image"
-            />
+            >
           </template>
         </BasePlaceholderPage>
       </template>

@@ -10,7 +10,7 @@
             text: child.item.text,
             icon: child.item.icon,
           }"
-        ></BaseTreeSelectItem>
+        />
       </template>
     </BaseTreeSelect>
   </div>

@@ -10,6 +10,10 @@ const props = withDefaults(
   },
 )
 
+const emits = defineEmits<{
+  'message': [props: any]
+}>()
+
 const { close } = usePanels()
 
 const commentArea = ref('')
@@ -27,10 +31,10 @@ const commentArea = ref('')
       </h2>
       <button
         type="button"
-        class="text-muted-400 hover:bg-muted-100 hover:text-muted-600 dark:hover:bg-muted-700 flex h-10 w-10 items-center justify-center rounded-full transition-colors duration-300 dark:hover:text-white"
+        class="text-muted-400 hover:bg-muted-100 hover:text-muted-600 dark:hover:bg-muted-700 flex size-10 items-center justify-center rounded-full transition-colors duration-300 dark:hover:text-white"
         @click="close"
       >
-        <Icon name="feather:chevron-right" class="h-6 w-6" />
+        <Icon name="feather:chevron-right" class="size-6" />
       </button>
     </div>
 
@@ -40,7 +44,11 @@ const commentArea = ref('')
       <div>
         <div class="mb-4 flex items-center justify-between">
           <div class="flex items-center gap-2">
-            <BaseButtonIcon shape="full" data-nui-tooltip="Edit task" size="sm">
+            <BaseButtonIcon
+              rounded="full"
+              data-nui-tooltip="Edit task"
+              size="sm"
+            >
               <Icon name="lucide:edit-3" />
             </BaseButtonIcon>
             <h4
@@ -50,13 +58,13 @@ const commentArea = ref('')
             </h4>
           </div>
           <BaseTag
-            shape="full"
-            flavor="pastel"
+            rounded="full"
+            variant="pastel"
             color="muted"
             class="m-0 -ms-1 inline-flex h-6 scale-90 items-center gap-1 py-0 text-xs font-semibold"
           >
             <span
-              class="block h-2 w-2 rounded-full"
+              class="block size-2 rounded-full"
               :class="[
                 props.task?.status === 0 && 'bg-info-500',
                 props.task?.status === 1 && 'bg-primary-500',
@@ -65,12 +73,17 @@ const commentArea = ref('')
                 props.task?.status === 4 && 'bg-yellow-400',
                 props.task?.status === 5 && 'bg-success-500',
               ]"
-            ></span>
+            />
             <span>Task #{{ props.task?.id }}</span>
           </BaseTag>
         </div>
         <div class="border-muted-200 dark:border-muted-700 border-b pb-6">
-          <BaseHeading as="h3" size="md" weight="medium" class="mb-2">
+          <BaseHeading
+            as="h3"
+            size="md"
+            weight="medium"
+            class="mb-2"
+          >
             {{ props.task?.name }}
           </BaseHeading>
           <BaseParagraph size="xs" class="text-muted-500 dark:text-muted-400">
@@ -84,18 +97,30 @@ const commentArea = ref('')
                 class="shrink-0"
               />
               <div>
-                <BaseText size="xs" class="text-muted-400" lead="none"
-                  >Assigned to</BaseText
+                <BaseText
+                  size="xs"
+                  class="text-muted-400"
+                  lead="none"
                 >
-                <BaseHeading as="h4" size="sm" weight="medium">
+                  Assigned to
+                </BaseText>
+                <BaseHeading
+                  as="h4"
+                  size="sm"
+                  weight="medium"
+                >
                   {{ props.task?.assignee.tooltip }}
                 </BaseHeading>
               </div>
             </div>
             <div class="max-w-[120px] grow">
-              <BaseText size="xs" class="text-muted-400 mb-2" lead="none"
-                >{{ props.task?.completion }}% complete</BaseText
+              <BaseText
+                size="xs"
+                class="text-muted-400 mb-2"
+                lead="none"
               >
+                {{ props.task?.completion }}% complete
+              </BaseText>
               <BaseProgress
                 :value="props.task?.completion"
                 size="xs"
@@ -110,10 +135,15 @@ const commentArea = ref('')
           </h4>
           <div v-if="props.task?.checklist.length === 0">
             <div class="text-muted-400 mt-10 flex items-center justify-center">
-              <Icon name="ph:file-thin" class="h-10 w-10" />
+              <Icon name="ph:file-thin" class="size-10" />
             </div>
             <div class="mb-6 mt-2 text-center">
-              <BaseHeading as="h4" size="md" weight="light" class="mb-1">
+              <BaseHeading
+                as="h4"
+                size="md"
+                weight="light"
+                class="mb-1"
+              >
                 <span>Nothing to show</span>
               </BaseHeading>
               <BaseParagraph
@@ -129,7 +159,7 @@ const commentArea = ref('')
             <div
               v-for="(item, index) in props.task?.checklist"
               :key="index"
-              shape="curved"
+              rounded="lg"
             >
               <div class="flex w-full items-center gap-2">
                 <BaseCheckbox
@@ -142,7 +172,7 @@ const commentArea = ref('')
                     label:
                       'text-[0.85rem] text-muted-500 dark:text-muted-300 leading-snug',
                   }"
-                ></BaseCheckbox>
+                />
               </div>
             </div>
           </div>
@@ -153,10 +183,15 @@ const commentArea = ref('')
           </h4>
           <div v-if="props.task?.files.length === 0">
             <div class="text-muted-400 mt-10 flex items-center justify-center">
-              <Icon name="ph:file-thin" class="h-10 w-10" />
+              <Icon name="ph:file-thin" class="size-10" />
             </div>
             <div class="mb-6 mt-2 text-center">
-              <BaseHeading as="h4" size="md" weight="light" class="mb-1">
+              <BaseHeading
+                as="h4"
+                size="md"
+                weight="light"
+                class="mb-1"
+              >
                 <span>Nothing to show</span>
               </BaseHeading>
               <BaseParagraph
@@ -164,9 +199,7 @@ const commentArea = ref('')
                 lead="tight"
                 class="text-muted-500 dark:text-muted-400 mx-auto max-w-[200px] !font-sans"
               >
-                <span
-                  >There are no attached files to show in here for now.</span
-                >
+                <span>There are no attached files to show in here for now.</span>
               </BaseParagraph>
             </div>
           </div>
@@ -174,12 +207,20 @@ const commentArea = ref('')
             <div
               v-for="(file, index) in props.task?.files"
               :key="index"
-              shape="curved"
+              rounded="lg"
             >
               <div class="flex w-full items-center gap-2">
-                <img :src="file.icon" :alt="file.name" class="max-w-[40px]" />
+                <img
+                  :src="file.icon"
+                  :alt="file.name"
+                  class="max-w-[40px]"
+                >
                 <div>
-                  <BaseHeading tag="h3" size="sm" weight="medium">
+                  <BaseHeading
+                    tag="h3"
+                    size="sm"
+                    weight="medium"
+                  >
                     {{ file.name }}
                   </BaseHeading>
                   <BaseParagraph size="xs" class="text-muted-400">
@@ -190,7 +231,7 @@ const commentArea = ref('')
                 </div>
                 <div class="ms-auto">
                   <BaseButtonIcon
-                    shape="full"
+                    rounded="full"
                     data-nui-tooltip="Download file"
                     size="sm"
                   >
@@ -207,10 +248,15 @@ const commentArea = ref('')
           </h4>
           <div v-if="props.task?.comments.length === 0">
             <div class="text-muted-400 mt-10 flex items-center justify-center">
-              <Icon name="ph:chat-circle-thin" class="h-10 w-10" />
+              <Icon name="ph:chat-circle-thin" class="size-10" />
             </div>
             <div class="mb-6 mt-2 text-center">
-              <BaseHeading as="h4" size="md" weight="light" class="mb-1">
+              <BaseHeading
+                as="h4"
+                size="md"
+                weight="light"
+                class="mb-1"
+              >
                 <span>Nothing to show</span>
               </BaseHeading>
               <BaseParagraph
@@ -230,10 +276,18 @@ const commentArea = ref('')
             >
               <BaseAvatar :src="comment.author.picture" size="xs" />
               <div>
-                <BaseHeading as="h3" size="sm" weight="medium">
+                <BaseHeading
+                  as="h3"
+                  size="sm"
+                  weight="medium"
+                >
                   {{ comment.author.name }}
                 </BaseHeading>
-                <BaseText size="xs" class="text-muted-400 mb-2" lead="none">
+                <BaseText
+                  size="xs"
+                  class="text-muted-400 mb-2"
+                  lead="none"
+                >
                   posted {{ comment.author.posted }}
                 </BaseText>
                 <BaseParagraph
@@ -249,14 +303,18 @@ const commentArea = ref('')
         <div>
           <BaseTextarea
             v-model="commentArea"
-            shape="rounded"
+            rounded="sm"
             placeholder="Write a comment..."
             :rows="4"
             addon
           >
             <template #addon>
               <div class="flex items-center gap-2">
-                <BaseAvatar src="/img/avatars/2.svg" class="me-1" size="xs" />
+                <BaseAvatar
+                  src="/img/avatars/2.svg"
+                  class="me-1"
+                  size="xs"
+                />
                 <BaseHeading
                   as="h4"
                   size="sm"
@@ -267,7 +325,9 @@ const commentArea = ref('')
                 </BaseHeading>
               </div>
               <div class="flex items-center gap-2">
-                <BaseButtonAction color="primary"> Publish </BaseButtonAction>
+                <BaseButtonAction color="primary" @click="emits('message', { from: 'maya', comment: toValue(commentArea) })">
+                  Publish
+                </BaseButtonAction>
               </div>
             </template>
           </BaseTextarea>

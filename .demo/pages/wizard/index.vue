@@ -49,7 +49,7 @@ function onSelectType(type: ProjectType) {
             class="rounded-2xl"
             src="/img/illustrations/wizard/design.svg"
             alt="UI/UX design"
-          />
+          >
           <div class="my-4">
             <BaseHeading
               tag="h3"
@@ -70,7 +70,7 @@ function onSelectType(type: ProjectType) {
             <BaseButton
               :to="getNextStep()?.to"
               color="primary"
-              shape="curved"
+              rounded="lg"
               class="w-36"
               @click.prevent="() => onSelectType('design')"
             >
@@ -101,7 +101,7 @@ function onSelectType(type: ProjectType) {
             class="rounded-2xl"
             src="/img/illustrations/wizard/development.svg"
             alt="Web Development"
-          />
+          >
           <div class="my-4">
             <BaseHeading
               tag="h3"
@@ -122,7 +122,7 @@ function onSelectType(type: ProjectType) {
             <BaseButton
               :to="getNextStep()?.to"
               color="primary"
-              shape="curved"
+              rounded="lg"
               class="w-36"
               @click.prevent="() => onSelectType('development')"
             >
@@ -153,7 +153,7 @@ function onSelectType(type: ProjectType) {
             class="rounded-2xl"
             src="/img/illustrations/wizard/marketing.svg"
             alt="Web Development"
-          />
+          >
           <div class="my-4">
             <BaseHeading
               tag="h3"
@@ -173,7 +173,7 @@ function onSelectType(type: ProjectType) {
             <BaseButton
               :to="getNextStep()?.to"
               color="primary"
-              shape="curved"
+              rounded="lg"
               class="w-36"
               @click.prevent="() => onSelectType('marketing')"
             >

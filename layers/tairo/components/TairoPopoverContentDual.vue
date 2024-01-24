@@ -77,8 +77,9 @@ const props = defineProps<{
             v-if="stat.icon && !stat.image"
             size="xs"
             class="bg-primary-100 text-primary-500 dark:bg-primary-600 me-2 dark:text-white"
+            color="none"
           >
-            <Icon :name="stat.icon" class="h-4 w-4" />
+            <Icon :name="stat.icon" class="size-4" />
           </BaseIconBox>
           <BaseAvatar
             v-if="stat.image && !stat.icon"
@@ -104,7 +105,11 @@ const props = defineProps<{
       </div>
       <div class="flex w-1/2 items-center justify-center">
         <div class="flex flex-col items-center gap-2 py-5 text-center">
-          <BaseAvatar :src="props.image" size="lg" class="mx-auto !block" />
+          <BaseAvatar
+            :src="props.image"
+            size="lg"
+            class="mx-auto !block"
+          />
           <div>
             <BaseHeading
               as="h4"
@@ -145,7 +150,7 @@ const props = defineProps<{
       <span class="flex items-center">
         <NuxtLink
           to="#"
-          class="text-primary-500 me-1 font-sans text-sm font-medium underline-offset-4 transition-colors hover:underline"
+          class="text-primary-500 me-1 font-sans text-sm font-medium underline-offset-4 outline-none transition-colors hover:underline"
         >
           {{ props.linkLabel }}
         </NuxtLink>

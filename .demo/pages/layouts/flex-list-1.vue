@@ -69,9 +69,11 @@ function statusColor(itemStatus: string) {
         />
       </template>
       <template #right>
-        <BaseButton class="w-full sm:w-32">Manage</BaseButton>
+        <BaseButton class="w-full sm:w-32">
+          Manage
+        </BaseButton>
         <BaseButton color="primary" class="w-full sm:w-32">
-          <Icon name="lucide:plus" class="h-4 w-4" />
+          <Icon name="lucide:plus" class="size-4" />
           <span>Add User</span>
         </BaseButton>
       </template>
@@ -86,12 +88,12 @@ function statusColor(itemStatus: string) {
                 class="block dark:hidden"
                 src="/img/illustrations/placeholders/flat/placeholder-search-4.svg"
                 alt="Placeholder image"
-              />
+              >
               <img
                 class="hidden dark:block"
                 src="/img/illustrations/placeholders/flat/placeholder-search-4-dark.svg"
                 alt="Placeholder image"
-              />
+              >
             </template>
           </BasePlaceholderPage>
         </div>
@@ -107,7 +109,7 @@ function statusColor(itemStatus: string) {
             <DemoFlexTableRow
               v-for="(item, index) in data?.data"
               :key="index"
-              shape="rounded"
+              rounded="sm"
               spaced
             >
               <template #start>
@@ -151,8 +153,8 @@ function statusColor(itemStatus: string) {
                 >
                   <BaseTag
                     :color="statusColor(item.status)"
-                    shape="full"
-                    flavor="pastel"
+                    rounded="full"
+                    variant="pastel"
                     size="sm"
                     class="capitalize"
                   >
@@ -185,7 +187,7 @@ function statusColor(itemStatus: string) {
             :total-items="data?.total ?? 0"
             :item-per-page="perPage"
             :current-page="page"
-            shape="curved"
+            rounded="lg"
           />
         </div>
       </div>

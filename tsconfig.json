@@ -5,10 +5,5 @@
   // - ./.app/.nuxt/tsconfig.json - for the quickstarter app
   // - ./.demo/.nuxt/tsconfig.json - for the demo app
   //
-  "extends": "./.demo/.nuxt/tsconfig.json",
-  "compilerOptions": {
-    "target": "esnext",
-    // "moduleResolution": "bundler",
-    "types": ["vite/client"]
-  }
+  "extends": "./.demo/.nuxt/tsconfig.json"
 }

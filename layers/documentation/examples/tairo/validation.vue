@@ -1,7 +1,12 @@
 <template>
   <div class="max-w-lg">
     <BaseCard class="p-6">
-      <form action="" method="POST" @submit.prevent="onSubmit" novalidate>
+      <form
+        action=""
+        method="POST"
+        novalidate
+        @submit.prevent="onSubmit"
+      >
         <div class="grid grid-cols-12 gap-4">
           <div class="col-span-12 sm:col-span-6">
             <Field v-slot="{ field, errorMessage, handleChange, handleBlur }" name="firstName">
@@ -69,8 +74,9 @@
               color="primary"
               :disabled="isSubmitting"
               :loading="isSubmitting"
-              >Send Message</BaseButton
             >
+              Send Message
+            </BaseButton>
           </div>
         </div>
       </form>
@@ -85,10 +91,10 @@ import { z } from 'zod'
 
 // This is the object that will contain the validation messages
 const VALIDATION_TEXT = {
-  FIRSTNAME_REQUIRED: "First name can't be empty",
-  LASTNAME_REQUIRED: "Last name can't be empty",
+  FIRSTNAME_REQUIRED: 'First name can\'t be empty',
+  LASTNAME_REQUIRED: 'Last name can\'t be empty',
   EMAIL_REQUIRED: 'Enter a valid email address',
-  MESSAGE_REQUIRED: "Message can't be empty",
+  MESSAGE_REQUIRED: 'Message can\'t be empty',
 }
 
 // This is the Zod schema for the form input
@@ -105,12 +111,12 @@ const zodSchema = z.object({
 type FormInput = z.infer<typeof zodSchema>
 
 const validationSchema = toTypedSchema(zodSchema)
-const initialValues = computed<FormInput>(() => ({
+const initialValues = {
   firstName: '',
   lastName: '',
   email: '',
   message: '',
-}))
+} satisfies FormInput
 
 const {
   handleSubmit,
@@ -164,7 +170,8 @@ const onSubmit = handleSubmit(
         icon: 'ph:check',
         closable: true,
       })
-    } catch (error: any) {
+    }
+    catch (error: any) {
       // this will set the error on the form
       if (error.message === 'Fake backend validation error') {
         setFieldError('firstName', 'This name is not allowed')

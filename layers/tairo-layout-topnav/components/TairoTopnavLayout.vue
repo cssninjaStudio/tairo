@@ -25,24 +25,17 @@ const props = withDefaults(
 )
 
 const route = useRoute()
-const config = useAppConfig().tairo.topnav
+const config = useAppConfig().tairo?.topnav
 const { isMobileOpen } = useTopnav()
 
 const topnavEnabled = computed(() => {
-  return (
-    config?.navigation?.enabled !== false && props.topnav !== false
-  )
+  return config?.navigation?.enabled as boolean !== false && props.topnav !== false
 })
 const toolbarEnabled = computed(() => {
-  return (
-    config?.toolbar?.enabled !== false && props.toolbar !== false
-  )
+  return config?.toolbar?.enabled as boolean !== false && props.toolbar !== false
 })
 const circularMenuEnabled = computed(() => {
-  return (
-    config?.circularMenu?.enabled !== false &&
-    props.circularMenu !== false
-  )
+  return config?.circularMenu?.enabled as boolean !== false && props.circularMenu !== false
 })
 
 const mainClass = computed(() => {
@@ -82,34 +75,32 @@ const mainClass = computed(() => {
             <NuxtLink to="/" class="flex items-center justify-center">
               <component
                 :is="
-                  resolveComponentOrNative(
-                    config?.navigation.logo.component,
-                  )
+                  resolveComponentOrNative(config?.navigation.logo.component)
                 "
                 v-bind="config?.navigation.logo.props"
-              ></component>
+              />
             </NuxtLink>
             <BaseHeading
               v-if="config?.toolbar?.showTitle"
               as="h1"
               size="lg"
               weight="light"
-              class="text-muted-800 hidden dark:text-white md:block"
+              class="text-muted-800 hidden md:block dark:text-white"
             >
-              <slot name="title">{{ route.meta.title }}</slot>
+              <slot name="title">
+                {{ route.meta.title }}
+              </slot>
             </BaseHeading>
             <component
-              v-if="config?.navigation?.header?.component"
               :is="
-                resolveComponentOrNative(
-                  config?.navigation?.header?.component,
-                )
+                resolveComponentOrNative(config?.navigation?.header?.component)
               "
+              v-if="config?.navigation?.header?.component"
               v-bind="config?.navigation?.header?.props"
-            ></component>
+            />
             <div class="flex items-center justify-center md:hidden">
               <button type="button" @click="isMobileOpen = true">
-                <Icon name="lucide:menu" class="text-muted-400 h-6 w-6" />
+                <Icon name="lucide:menu" class="text-muted-400 size-6" />
               </button>
             </div>
           </div>
@@ -152,7 +143,9 @@ const mainClass = computed(() => {
       <TairoTopnavCircularMenu v-if="circularMenuEnabled" />
     </div>
 
-
-    <TairoTopnavFooter v-if="config?.footer?.enabled" :display="props.display"  />
+    <TairoTopnavFooter
+      v-if="config?.footer?.enabled"
+      :display="props.display"
+    />
   </div>
 </template>

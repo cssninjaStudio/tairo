@@ -10,15 +10,15 @@ icon:
 
 ::doc-component-demo
 ---
-title: Rounded x2 slider
+title: Rounded:none
 demo: '#examples/tabs-slider/rounded-x2.vue'
 ---
-Slider tabs can have rounded corners. Use the `shape` prop to display a rounded slider.
+Slider tabs can have diffrerent radius factors. Use the `rounded` prop to change the radius of the tab items.
 ::
 
 ::doc-component-demo
 ---
-title: Rounded x3 slider
+title: Rounded:sm
 demo: '#examples/tabs-slider/rounded-x3.vue'
 ---
 Slider tabs can have rounded corners. Use the `shape` prop to display a rounded slider.
@@ -26,7 +26,7 @@ Slider tabs can have rounded corners. Use the `shape` prop to display a rounded 
 
 ::doc-component-demo
 ---
-title: Curved x2 slider
+title: Rounded:md
 demo: '#examples/tabs-slider/curved-x2.vue'
 ---
 Slider tabs can have curved corners. Use the `shape` prop to display a curved slider.
@@ -34,7 +34,7 @@ Slider tabs can have curved corners. Use the `shape` prop to display a curved sl
 
 ::doc-component-demo
 ---
-title: Curved x3 slider
+title: Rounded:lg
 demo: '#examples/tabs-slider/curved-x3.vue'
 ---
 Slider tabs can have curved corners. Use the `shape` prop to display a curved slider.
@@ -43,7 +43,7 @@ Slider tabs can have curved corners. Use the `shape` prop to display a curved sl
 
 ::doc-component-demo
 ---
-title: Full x2 slider
+title: Rounded:full
 demo: '#examples/tabs-slider/full-x2.vue'
 ---
 Slider tabs can have full corners. Use the `shape` prop to display a full slider.
@@ -51,10 +51,10 @@ Slider tabs can have full corners. Use the `shape` prop to display a full slider
 
 ::doc-component-demo
 ---
-title: Full x3 slider
+title: Size:sm
 demo: '#examples/tabs-slider/full-x3.vue'
 ---
-Slider tabs can have full corners. Use the `shape` prop to display a full slider.
+Slider tabs can be made smaller using the `size` prop.
 ::
 
 :doc-component-meta{name="BaseTabSlider"}

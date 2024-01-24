@@ -29,18 +29,18 @@ onUnmounted(() => {
 
 const sidebarEnabled = computed(() => {
   return (
-    app.tairo.sidebar?.navigation?.enabled !== false && props.sidebar !== false
+    app.tairo?.sidebar?.navigation?.enabled as boolean !== false && props.sidebar !== false
   )
 })
 const toolbarEnabled = computed(() => {
   return (
-    app.tairo.sidebar?.toolbar?.enabled !== false && props.toolbar !== false
+    app.tairo?.sidebar?.toolbar?.enabled as boolean !== false && props.toolbar !== false
   )
 })
 const circularMenuEnabled = computed(() => {
   return (
-    app.tairo.sidebar?.circularMenu?.enabled !== false &&
-    props.circularMenu !== false
+    app.tairo?.sidebar?.circularMenu?.enabled as boolean !== false
+    && props.circularMenu !== false
   )
 })
 
@@ -59,7 +59,8 @@ const wrapperClass = computed(() => {
 
   if (isOpen.value) {
     list.push('xl:max-w-[calc(100%_-_300px)] xl:ms-[300px]')
-  } else {
+  }
+  else {
     list.push('xl:max-w-[calc(100%_-_80px)] xl:ms-[80px]')
   }
 
@@ -79,7 +80,7 @@ const wrapperClass = computed(() => {
         :subsidebar="props.subsidebar"
       >
         <div
-          v-if="app.tairo.sidebar?.navigation?.logo?.component"
+          v-if="app.tairo?.sidebar?.navigation?.logo?.component"
           class="flex h-16 w-full items-center justify-center"
         >
           <slot name="logo">
@@ -87,25 +88,26 @@ const wrapperClass = computed(() => {
               <component
                 :is="
                   resolveComponentOrNative(
-                    app.tairo.sidebar?.navigation.logo.component,
+                    app.tairo?.sidebar?.navigation.logo.component,
                   )
                 "
-                v-bind="app.tairo.sidebar?.navigation.logo.props"
-              ></component>
+                v-bind="app.tairo?.sidebar?.navigation.logo.props"
+              />
             </NuxtLink>
           </slot>
         </div>
       </TairoSidebarNavigation>
       <div
         role="button"
-        class="bg-muted-800 dark:bg-muted-900 fixed start-0 top-0 z-[59] block h-full w-full transition-opacity duration-300 lg:hidden"
+        tabindex="0"
+        class="bg-muted-800 dark:bg-muted-900 fixed start-0 top-0 z-[59] block size-full transition-opacity duration-300 lg:hidden"
         :class="
           isOpen
             ? 'opacity-50 dark:opacity-75'
             : 'opacity-0 pointer-events-none'
         "
         @click="toggle"
-      ></div>
+      />
     </slot>
 
     <div :class="wrapperClass">
@@ -124,7 +126,9 @@ const wrapperClass = computed(() => {
             :sidebar="props.sidebar"
             :horizontal-scroll="props.horizontalScroll"
           >
-            <template #title><slot name="toolbar-title"></slot></template>
+            <template #title>
+              <slot name="toolbar-title" />
+            </template>
           </TairoSidebarToolbar>
         </slot>
 

@@ -56,22 +56,26 @@ const codeTailwind = [
       <BaseThemeToggle />
     </div>
     <div class="flex flex-col gap-3 pb-16 pt-8 text-center">
-      <BaseHeading size="md" weight="medium" class="uppercase">
+      <BaseHeading
+        size="md"
+        weight="medium"
+        class="uppercase"
+      >
         <span>Welcome to</span>
       </BaseHeading>
       <TairoLogoText class="text-primary-500 mx-auto h-8" />
     </div>
-    <BaseCard shape="curved" class="dark:!bg-muted-900 mb-4 p-8 sm:mb-6">
+    <BaseCard rounded="lg" class="dark:!bg-muted-900 mb-4 p-8 sm:mb-6">
       <div
-        class="nui-mask nui-mask-hexed absolute inset-x-0 -top-10 mx-auto mb-2 flex h-[84px] w-[84px] shrink-0 items-center justify-center"
+        class="nui-mask nui-mask-hexed absolute inset-x-0 -top-10 mx-auto mb-2 flex size-[84px] shrink-0 items-center justify-center"
       >
         <div
-          class="animate-spin-slow from-primary-100 to-primary-500 dark:from-primary-800 absolute inset-0 flex h-full w-full items-center justify-center bg-gradient-to-tr blur-sm transition-all duration-200"
-        ></div>
+          class="animate-spin-slow from-primary-100 to-primary-500 dark:from-primary-800 absolute inset-0 flex size-full items-center justify-center bg-gradient-to-tr blur-sm transition-all duration-200"
+        />
         <div
-          class="nui-mask nui-mask-hexed dark:bg-muted-800 flex h-[80px] w-[80px] items-center justify-center bg-white"
+          class="nui-mask nui-mask-hexed dark:bg-muted-800 flex size-[80px] items-center justify-center bg-white"
         >
-          <Icon name="ph:sparkle-duotone" class="text-primary-500 h-8 w-8" />
+          <Icon name="ph:sparkle-duotone" class="text-primary-500 size-8" />
         </div>
       </div>
       <div class="space-y-2 pt-6 text-center">
@@ -103,29 +107,32 @@ const codeTailwind = [
           class="relative"
         >
           <BaseCard
-            shape="curved"
+            rounded="lg"
             elevated-hover
             class="dark:!bg-muted-900 hover:!border-primary-500 relative z-10 h-full p-4"
           >
             <div class="flex h-full flex-col items-center justify-center gap-2">
               <div
-                class="nui-mask nui-mask-hexed relative flex h-16 w-16 shrink-0 items-center justify-center"
+                class="nui-mask nui-mask-hexed relative flex size-16 shrink-0 items-center justify-center"
               >
                 <div
-                  class="animate-spin-slow from-primary-100 to-primary-500 dark:from-primary-800 absolute inset-0 flex h-full w-full items-center justify-center bg-gradient-to-tr blur-sm transition-all duration-200"
-                ></div>
+                  class="animate-spin-slow from-primary-100 to-primary-500 dark:from-primary-800 absolute inset-0 flex size-full items-center justify-center bg-gradient-to-tr blur-sm transition-all duration-200"
+                />
                 <div
-                  class="nui-mask nui-mask-hexed dark:bg-muted-800 flex h-[60px] w-[60px] items-center justify-center bg-white"
+                  class="nui-mask nui-mask-hexed dark:bg-muted-800 flex size-[60px] items-center justify-center bg-white"
                 >
                   <Icon
                     name="ph:sidebar-duotone"
-                    class="text-primary-500 h-6 w-6"
+                    class="text-primary-500 size-6"
                   />
                 </div>
               </div>
-              <BaseText size="sm" class="text-muted-500 dark:text-muted-300"
-                >Online demo</BaseText
+              <BaseText
+                size="sm"
+                class="text-muted-500 dark:text-muted-300"
               >
+                Online demo
+              </BaseText>
             </div>
           </BaseCard>
         </NuxtLink>
@@ -136,29 +143,32 @@ const codeTailwind = [
           class="relative"
         >
           <BaseCard
-            shape="curved"
+            rounded="lg"
             elevated-hover
             class="dark:!bg-muted-900 hover:!border-success-500 relative z-10 h-full p-4"
           >
             <div class="flex h-full flex-col items-center justify-center gap-2">
               <div
-                class="nui-mask nui-mask-hexed relative flex h-16 w-16 shrink-0 items-center justify-center"
+                class="nui-mask nui-mask-hexed relative flex size-16 shrink-0 items-center justify-center"
               >
                 <div
-                  class="animate-spin-slow from-success-100 to-success-500 dark:from-success-800 absolute inset-0 flex h-full w-full items-center justify-center bg-gradient-to-tr blur-sm transition-all duration-200"
-                ></div>
+                  class="animate-spin-slow from-success-100 to-success-500 dark:from-success-800 absolute inset-0 flex size-full items-center justify-center bg-gradient-to-tr blur-sm transition-all duration-200"
+                />
                 <div
-                  class="nui-mask nui-mask-hexed dark:bg-muted-800 flex h-[60px] w-[60px] items-center justify-center bg-white"
+                  class="nui-mask nui-mask-hexed dark:bg-muted-800 flex size-[60px] items-center justify-center bg-white"
                 >
                   <Icon
                     name="simple-icons:nuxtdotjs"
-                    class="text-success-500 relative -top-0.5 h-5 w-5"
+                    class="text-success-500 relative -top-0.5 size-5"
                   />
                 </div>
               </div>
-              <BaseText size="sm" class="text-muted-500 dark:text-muted-300"
-                >Nuxt documentation</BaseText
+              <BaseText
+                size="sm"
+                class="text-muted-500 dark:text-muted-300"
               >
+                Nuxt documentation
+              </BaseText>
             </div>
           </BaseCard>
         </NuxtLink>
@@ -169,29 +179,32 @@ const codeTailwind = [
           class="relative"
         >
           <BaseCard
-            shape="curved"
+            rounded="lg"
             elevated-hover
             class="dark:!bg-muted-900 relative z-10 h-full p-4 hover:!border-purple-500"
           >
             <div class="flex h-full flex-col items-center justify-center gap-2">
               <div
-                class="nui-mask nui-mask-hexed relative flex h-16 w-16 shrink-0 items-center justify-center"
+                class="nui-mask nui-mask-hexed relative flex size-16 shrink-0 items-center justify-center"
               >
                 <div
-                  class="animate-spin-slow absolute inset-0 flex h-full w-full items-center justify-center bg-gradient-to-tr from-purple-100 to-purple-500 blur-sm transition-all duration-200 dark:from-purple-800"
-                ></div>
+                  class="animate-spin-slow absolute inset-0 flex size-full items-center justify-center bg-gradient-to-tr from-purple-100 to-purple-500 blur-sm transition-all duration-200 dark:from-purple-800"
+                />
                 <div
-                  class="nui-mask nui-mask-hexed dark:bg-muted-800 flex h-[60px] w-[60px] items-center justify-center bg-white"
+                  class="nui-mask nui-mask-hexed dark:bg-muted-800 flex size-[60px] items-center justify-center bg-white"
                 >
                   <Icon
                     name="fa6-brands:github"
-                    class="relative -top-0.5 h-5 w-5 text-purple-500"
+                    class="relative -top-0.5 size-5 text-purple-500"
                   />
                 </div>
               </div>
-              <BaseText size="sm" class="text-muted-500 dark:text-muted-300"
-                >Github Access</BaseText
+              <BaseText
+                size="sm"
+                class="text-muted-500 dark:text-muted-300"
               >
+                Github Access
+              </BaseText>
             </div>
           </BaseCard>
         </NuxtLink>
@@ -202,29 +215,32 @@ const codeTailwind = [
           class="relative"
         >
           <BaseCard
-            shape="curved"
+            rounded="lg"
             elevated-hover
             class="dark:!bg-muted-900 relative z-10 h-full p-4 hover:!border-blue-500"
           >
             <div class="flex h-full flex-col items-center justify-center gap-2">
               <div
-                class="nui-mask nui-mask-hexed relative flex h-16 w-16 shrink-0 items-center justify-center"
+                class="nui-mask nui-mask-hexed relative flex size-16 shrink-0 items-center justify-center"
               >
                 <div
-                  class="animate-spin-slow absolute inset-0 flex h-full w-full items-center justify-center bg-gradient-to-tr from-blue-100 to-blue-500 blur-sm transition-all duration-200 dark:from-blue-800"
-                ></div>
+                  class="animate-spin-slow absolute inset-0 flex size-full items-center justify-center bg-gradient-to-tr from-blue-100 to-blue-500 blur-sm transition-all duration-200 dark:from-blue-800"
+                />
                 <div
-                  class="nui-mask nui-mask-hexed dark:bg-muted-800 flex h-[60px] w-[60px] items-center justify-center bg-white"
+                  class="nui-mask nui-mask-hexed dark:bg-muted-800 flex size-[60px] items-center justify-center bg-white"
                 >
                   <Icon
                     name="fa6-brands:discord"
-                    class="relative -top-0.5 h-5 w-5 text-blue-500"
+                    class="relative -top-0.5 size-5 text-blue-500"
                   />
                 </div>
               </div>
-              <BaseText size="sm" class="text-muted-500 dark:text-muted-300"
-                >Discord Server</BaseText
+              <BaseText
+                size="sm"
+                class="text-muted-500 dark:text-muted-300"
               >
+                Discord Server
+              </BaseText>
             </div>
           </BaseCard>
         </NuxtLink>
@@ -236,7 +252,7 @@ const codeTailwind = [
         class="relative"
       >
         <BaseCard
-          shape="curved"
+          rounded="lg"
           elevated-hover
           class="dark:!bg-muted-900 hover:!border-primary-500 relative z-10 p-5"
         >
@@ -244,23 +260,23 @@ const codeTailwind = [
             class="gridlines relative mb-4 flex h-40 w-full items-center justify-center overflow-hidden"
           >
             <div
-              class="nui-mask nui-mask-hexed relative mb-2 flex h-[84px] w-[84px] shrink-0 items-center justify-center"
+              class="nui-mask nui-mask-hexed relative mb-2 flex size-[84px] shrink-0 items-center justify-center"
             >
               <div
-                class="animate-spin-slow from-primary-100 to-primary-500 dark:from-primary-800 absolute inset-0 flex h-full w-full items-center justify-center bg-gradient-to-tr blur-sm transition-all duration-200"
-              ></div>
+                class="animate-spin-slow from-primary-100 to-primary-500 dark:from-primary-800 absolute inset-0 flex size-full items-center justify-center bg-gradient-to-tr blur-sm transition-all duration-200"
+              />
               <div
-                class="nui-mask nui-mask-hexed dark:bg-muted-800 flex h-[80px] w-[80px] items-center justify-center bg-white"
+                class="nui-mask nui-mask-hexed dark:bg-muted-800 flex size-[80px] items-center justify-center bg-white"
               >
                 <Icon
                   name="ph:book-open-duotone"
-                  class="text-primary-500 h-7 w-7"
+                  class="text-primary-500 size-7"
                 />
               </div>
             </div>
             <div
               class="dark:bg-muted-900 absolute -right-4 bottom-0 h-full w-24 scale-105 bg-white blur-lg"
-            ></div>
+            />
           </div>
           <div>
             <BaseHeading
@@ -286,22 +302,21 @@ const codeTailwind = [
     </div>
 
     <div class="flex items-center py-4">
-      <div class="bg-muted-200 dark:bg-muted-800 h-px grow"></div>
+      <div class="bg-muted-200 dark:bg-muted-800 h-px grow" />
       <span
         class="text-semibold text-muted-800d dark:text-muted-100 shrink px-4 font-sans text-lg font-semibold"
-        >Getting started</span
-      >
-      <div class="bg-muted-200 dark:bg-muted-800 h-px grow"></div>
+      >Getting started</span>
+      <div class="bg-muted-200 dark:bg-muted-800 h-px grow" />
     </div>
 
     <div class="flex flex-col gap-6">
-      <BaseCard class="dark:!bg-muted-900 p-6" shape="rounded">
+      <BaseCard class="dark:!bg-muted-900 p-6" rounded="sm">
         <BaseProse class="prose-p:my-0 max-w-full">
           <div>
             <div class="flex gap-2 sm:items-center">
               <Icon
                 name="ph:number-circle-one-duotone"
-                class="text-primary-500 h-8 w-8 shrink-0"
+                class="text-primary-500 size-8 shrink-0"
               />
               <p>
                 Enable a layout in
@@ -312,13 +327,13 @@ const codeTailwind = [
           </div>
         </BaseProse>
       </BaseCard>
-      <BaseCard class="dark:!bg-muted-900 p-6" shape="rounded">
+      <BaseCard class="dark:!bg-muted-900 p-6" rounded="sm">
         <BaseProse class="prose-p:my-0 max-w-full">
           <div>
             <div class="flex gap-2 sm:items-center">
               <Icon
                 name="ph:number-circle-two-duotone"
-                class="text-primary-500 h-8 w-8 shrink-0"
+                class="text-primary-500 size-8 shrink-0"
               />
               <p>
                 Set default layout in
@@ -329,13 +344,13 @@ const codeTailwind = [
           </div>
         </BaseProse>
       </BaseCard>
-      <BaseCard class="dark:!bg-muted-900 p-6" shape="rounded">
+      <BaseCard class="dark:!bg-muted-900 p-6" rounded="sm">
         <BaseProse class="prose-p:my-0 max-w-full">
           <div>
             <div class="flex gap-2 sm:items-center">
               <Icon
                 name="ph:number-circle-three-duotone"
-                class="text-primary-500 h-8 w-8 shrink-0"
+                class="text-primary-500 size-8 shrink-0"
               />
               <p>
                 Define your app settings in
@@ -343,34 +358,34 @@ const codeTailwind = [
                 <small>(logo, name, sidebars, panels, ...)</small>
               </p>
             </div>
-            <pre><code>export default defineAppConfig({{app.tairo}})</code></pre>
+            <pre><code>export default defineAppConfig({{ app.tairo }})</code></pre>
           </div>
         </BaseProse>
       </BaseCard>
-      <BaseCard class="dark:!bg-muted-900 p-6" shape="rounded">
+      <BaseCard class="dark:!bg-muted-900 p-6" rounded="sm">
         <BaseProse class="prose-p:my-0 max-w-full">
           <div>
             <div class="flex gap-2 sm:items-center">
               <Icon
                 name="ph:number-circle-four-duotone"
-                class="text-primary-500 h-8 w-8 shrink-0"
+                class="text-primary-500 size-8 shrink-0"
               />
               <p>
                 Create your first page
                 <code>.app/pages/index.vue</code>
               </p>
             </div>
-            <pre><code>{{codePage}}</code></pre>
+            <pre><code>{{ codePage }}</code></pre>
           </div>
         </BaseProse>
       </BaseCard>
-      <BaseCard class="dark:!bg-muted-900 p-6" shape="rounded">
+      <BaseCard class="dark:!bg-muted-900 p-6" rounded="sm">
         <BaseProse class="prose-p:my-0 max-w-full">
           <div>
             <div class="flex gap-2 sm:items-center">
               <Icon
                 name="ph:number-circle-five-duotone"
-                class="text-primary-500 h-8 w-8 shrink-0"
+                class="text-primary-500 size-8 shrink-0"
               />
               <p>
                 Customize tailwind settings in
@@ -378,25 +393,24 @@ const codeTailwind = [
                 <small>(colors, fonts, ...)</small>
               </p>
             </div>
-            <pre><code>{{codeTailwind}}</code></pre>
+            <pre><code>{{ codeTailwind }}</code></pre>
           </div>
         </BaseProse>
       </BaseCard>
-      <BaseCard class="dark:!bg-muted-900 p-6" shape="rounded">
+      <BaseCard class="dark:!bg-muted-900 p-6" rounded="sm">
         <BaseProse class="prose-p:my-0 max-w-full">
           <div>
             <div class="flex gap-2 sm:items-center">
               <Icon
                 name="ph:number-circle-six-duotone"
-                class="text-primary-500 h-8 w-8 shrink-0"
+                class="text-primary-500 size-8 shrink-0"
               />
               <p>
                 Continue learning with the
                 <a
                   href="https://tairo.cssninja.io/documentation"
                   target="_blank"
-                  >Online documentation</a
-                >
+                >Online documentation</a>
               </p>
             </div>
           </div>

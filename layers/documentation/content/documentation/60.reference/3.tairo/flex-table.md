@@ -13,26 +13,34 @@ icon:
 
 ::doc-component-demo
 ---
-title: Straight table
+title: Rounded:none
 demo: '#examples/flex-table/straight.vue'
 ---
-Flex tables can have different shapes. Use the `shape` prop to change the shape of the table. This example uses the `straight` shape.
+Flex tables can have different radius factors. Use the `rounded` prop to change the radius of the table. This example uses the `none` radius.
 ::
 
 ::doc-component-demo
 ---
-title: Rounded table
+title: Rounded:sm
 demo: '#examples/flex-table/rounded.vue'
 ---
-Flex tables can have different shapes. Use the `shape` prop to change the shape of the table. This example uses the `rounded` shape.
+Flex tables can have different radius factors. Use the `rounded` prop to change the radius of the table. This example uses the `sm` radius.
 ::
 
 ::doc-component-demo
 ---
-title: Curved table
+title: Rounded:md
+demo: '#examples/flex-table/smooth.vue'
+---
+Flex tables can have different radius factors. Use the `rounded` prop to change the radius of the table. This example uses the `md` radius.
+::
+
+::doc-component-demo
+---
+title: Rounded:lg
 demo: '#examples/flex-table/curved.vue'
 ---
-Flex tables can have different shapes. Use the `shape` prop to change the shape of the table. This example uses the `curved` shape.
+Flex tables can have different radius factors. Use the `rounded` prop to change the radius of the table. This example uses the `lg` radius.
 ::
 
 :doc-component-meta{name="TairoFlexTable"}

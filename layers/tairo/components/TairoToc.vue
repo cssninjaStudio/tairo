@@ -9,11 +9,11 @@ const { activeIds } = useNinjaScrollspy(
   {
     rootMargin: '0px 0px -90% 0px',
   },
-  ids,
+  () => ids.value,
 )
 const nuxtApp = useNuxtApp()
 
-if (process.client) {
+if (import.meta.client) {
   // active item when hash change
   watch(
     () => route.hash,
@@ -50,11 +50,13 @@ function getTocItemClass(item: any) {
 
   if (activeAnchor.value === item.id) {
     classes.push('border-primary-500 text-primary-500')
-  } else if (activeIds.value.includes(item.id)) {
+  }
+  else if (activeIds.value.includes(item.id)) {
     classes.push(
       'border-primary-400 dark:border-primary-600 text-muted-500 dark:text-muted-400 hover:text-muted-400',
     )
-  } else {
+  }
+  else {
     classes.push(
       'border-muted-200 dark:border-muted-800 text-muted-500 dark:text-muted-400 hover:text-muted-400',
     )
@@ -80,7 +82,7 @@ async function loadTocItemFromDom() {
 
 <template>
   <div class="fixed flex flex-col justify-between pb-20 pe-1 ps-20 pt-2">
-    <div class="w-52" v-if="toc.length">
+    <div v-if="toc.length" class="w-52">
       <div
         class="font-heading text-muted-800 mb-6 text-xs font-semibold uppercase leading-tight dark:text-white"
       >
@@ -102,8 +104,8 @@ async function loadTocItemFromDom() {
           </li>
         </ul>
         <div
-          class="dark:from-muted-900 from-muted-100 pointer-events-none fixed bottom-10 z-10 h-10 w-[212px] bg-gradient-to-t to-transparent"
-        ></div>
+          class="dark:bg-muted-900 bg-muted-100 pointer-events-none fixed bottom-0 z-10 h-20 w-[212px] blur-xl"
+        />
       </nav>
     </div>
   </div>

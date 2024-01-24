@@ -53,9 +53,11 @@ const { data, pending, error, refresh } = await useFetch('/api/freelancers', {
         />
       </template>
       <template #right>
-        <BaseButton class="w-full sm:w-32">Manage</BaseButton>
+        <BaseButton class="w-full sm:w-32">
+          Manage
+        </BaseButton>
         <BaseButton color="primary" class="w-full sm:w-32">
-          <Icon name="lucide:plus" class="h-4 w-4" />
+          <Icon name="lucide:plus" class="size-4" />
           <span>Add User</span>
         </BaseButton>
       </template>
@@ -70,12 +72,12 @@ const { data, pending, error, refresh } = await useFetch('/api/freelancers', {
                 class="block dark:hidden"
                 src="/img/illustrations/placeholders/flat/placeholder-search-1.svg"
                 alt="Placeholder image"
-              />
+              >
               <img
                 class="hidden dark:block"
                 src="/img/illustrations/placeholders/flat/placeholder-search-1-dark.svg"
                 alt="Placeholder image"
-              />
+              >
             </template>
           </BasePlaceholderPage>
         </div>
@@ -91,7 +93,7 @@ const { data, pending, error, refresh } = await useFetch('/api/freelancers', {
             <BaseCard
               v-for="item in data?.data"
               :key="item.id"
-              shape="curved"
+              rounded="lg"
               class="flex flex-col p-5 sm:flex-row sm:items-center"
             >
               <div
@@ -116,7 +118,7 @@ const { data, pending, error, refresh } = await useFetch('/api/freelancers', {
                     lead="none"
                     class="text-muted-400 flex items-end text-sm"
                   >
-                    <Icon name="lucide:map-pin" class="h-4 w-4" />
+                    <Icon name="lucide:map-pin" class="size-4" />
                     <span>{{ item.location }}</span>
                   </BaseParagraph>
                 </div>
@@ -130,8 +132,8 @@ const { data, pending, error, refresh } = await useFetch('/api/freelancers', {
                   <BaseTag
                     size="sm"
                     color="primary"
-                    flavor="pastel"
-                    shape="full"
+                    variant="pastel"
+                    rounded="full"
                   >
                     {{ item.role }}
                   </BaseTag>
@@ -194,8 +196,14 @@ const { data, pending, error, refresh } = await useFetch('/api/freelancers', {
                 <div
                   class="ptablet:hidden flex w-full items-center justify-center gap-1 py-3 sm:w-[160px] sm:justify-end sm:py-0"
                 >
-                  <BaseAvatarGroup size="xs" :avatars="item.teams" :limit="3" />
-                  <p class="text-muted-400 font-sans text-xs">In Team</p>
+                  <BaseAvatarGroup
+                    size="xs"
+                    :avatars="item.teams"
+                    :limit="3"
+                  />
+                  <p class="text-muted-400 font-sans text-xs">
+                    In Team
+                  </p>
                 </div>
                 <div class="sm:ms-6">
                   <BaseButtonAction class="w-full sm:w-auto">
@@ -211,7 +219,7 @@ const { data, pending, error, refresh } = await useFetch('/api/freelancers', {
               :total-items="data?.total ?? 0"
               :item-per-page="perPage"
               :current-page="page"
-              shape="full"
+              rounded="full"
             />
           </div>
         </div>

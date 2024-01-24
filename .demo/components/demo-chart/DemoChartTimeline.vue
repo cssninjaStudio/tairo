@@ -60,7 +60,7 @@ function useDemoTimeline() {
     },
   }
 
-  const series = ref([
+  const series = shallowRef([
     {
       data: [
         {

@@ -18,7 +18,7 @@ export default defineNuxtSchema({
               name: { type: 'string' },
               position: {
                 type: 'string',
-                tsType: "'left' | 'right'",
+                tsType: '\'left\' | \'right\'',
                 $default: 'left',
               },
               component: { type: 'string' },

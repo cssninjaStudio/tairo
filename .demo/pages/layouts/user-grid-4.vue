@@ -49,7 +49,7 @@ const { data, pending, error, refresh } = await useFetch(
         <BaseInput
           v-model="filter"
           icon="lucide:search"
-          shape="curved"
+          rounded="lg"
           placeholder="Filter users..."
           :classes="{
             wrapper: 'w-full sm:w-auto',
@@ -57,9 +57,15 @@ const { data, pending, error, refresh } = await useFetch(
         />
       </template>
       <template #right>
-        <BaseButton class="w-full sm:w-32" shape="curved">Manage</BaseButton>
-        <BaseButton color="primary" class="w-full sm:w-32" shape="curved">
-          <Icon name="lucide:plus" class="h-4 w-4" />
+        <BaseButton class="w-full sm:w-32" rounded="lg">
+          Manage
+        </BaseButton>
+        <BaseButton
+          color="primary"
+          class="w-full sm:w-32"
+          rounded="lg"
+        >
+          <Icon name="lucide:plus" class="size-4" />
           <span>Add User</span>
         </BaseButton>
       </template>
@@ -74,12 +80,12 @@ const { data, pending, error, refresh } = await useFetch(
                 class="block dark:hidden"
                 src="/img/illustrations/placeholders/flat/placeholder-search-2.svg"
                 alt="Placeholder image"
-              />
+              >
               <img
                 class="hidden dark:block"
                 src="/img/illustrations/placeholders/flat/placeholder-search-2-dark.svg"
                 alt="Placeholder image"
-              />
+              >
             </template>
           </BasePlaceholderPage>
         </div>
@@ -98,7 +104,7 @@ const { data, pending, error, refresh } = await useFetch(
             <BaseCard
               v-for="(item, index) in data?.data"
               :key="index"
-              shape="curved"
+              rounded="lg"
               elevated-hover
               class="overflow-hidden"
             >
@@ -131,17 +137,17 @@ const { data, pending, error, refresh } = await useFetch(
                     <Icon
                       v-if="item.tasks.status === 0"
                       name="ph:check-circle-duotone"
-                      class="text-success-500 h-7 w-7"
+                      class="text-success-500 size-7"
                     />
                     <Icon
                       v-else-if="item.tasks.status === 1"
                       name="ph:warning-circle-duotone"
-                      class="text-warning-500 h-7 w-7"
+                      class="text-warning-500 size-7"
                     />
                     <Icon
                       v-else-if="item.tasks.status === 2"
                       name="ph:x-circle-duotone"
-                      class="text-danger-500 h-7 w-7"
+                      class="text-danger-500 size-7"
                     />
                   </div>
                 </div>
@@ -158,7 +164,7 @@ const { data, pending, error, refresh } = await useFetch(
                 <div class="mb-3 flex w-full items-center justify-center">
                   <BaseAvatar
                     size="xl"
-                    shape="curved"
+                    rounded="lg"
                     :src="item.src"
                     :badge-src="item.badge"
                     :text="item.initials"
@@ -166,7 +172,12 @@ const { data, pending, error, refresh } = await useFetch(
                   />
                 </div>
                 <div class="text-center">
-                  <BaseHeading tag="h3" size="md" weight="medium" lead="none">
+                  <BaseHeading
+                    tag="h3"
+                    size="md"
+                    weight="medium"
+                    lead="none"
+                  >
                     {{ item.username }}
                   </BaseHeading>
                   <BaseParagraph size="xs" class="text-muted-400">
@@ -176,21 +187,21 @@ const { data, pending, error, refresh } = await useFetch(
                 <div class="mb-6 mt-4 flex items-center justify-center gap-3">
                   <BaseAvatar
                     v-for="relation in item.relations.slice(0, 3)"
-                    :key="relation"
+                    :key="relation.id"
                     size="xs"
-                    shape="curved"
+                    rounded="lg"
                     :src="relation.src"
                     :text="relation.text"
                     :class="getRandomColor()"
                   />
                 </div>
                 <div class="flex items-center gap-2">
-                  <BaseButton shape="curved" class="w-full">
-                    <Icon name="ph:user-duotone" class="h-4 w-4" />
+                  <BaseButton rounded="lg" class="w-full">
+                    <Icon name="ph:user-duotone" class="size-4" />
                     <span>Profile</span>
                   </BaseButton>
-                  <BaseButton shape="curved" class="w-full">
-                    <Icon name="ph:chat-circle-duotone" class="h-4 w-4" />
+                  <BaseButton rounded="lg" class="w-full">
+                    <Icon name="ph:chat-circle-duotone" class="size-4" />
                     <span>Talk</span>
                   </BaseButton>
                 </div>
@@ -203,7 +214,7 @@ const { data, pending, error, refresh } = await useFetch(
             :total-items="data?.total ?? 0"
             :item-per-page="perPage"
             :current-page="page"
-            shape="curved"
+            rounded="lg"
           />
         </div>
       </div>

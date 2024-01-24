@@ -40,34 +40,55 @@ const fakeItems = ref([])
           }"
           disabled
         >
-          <option :value="10">10 per page</option>
-          <option :value="25">25 per page</option>
-          <option :value="50">50 per page</option>
-          <option :value="100">100 per page</option>
+          <option :value="10">
+            10 per page
+          </option>
+          <option :value="25">
+            25 per page
+          </option>
+          <option :value="50">
+            50 per page
+          </option>
+          <option :value="100">
+            100 per page
+          </option>
         </BaseSelect>
       </template>
       <div>
         <div class="w-full">
-          <TairoTable shape="rounded">
+          <TairoTable rounded="sm">
             <template #header>
-              <TairoTableHeading uppercase spaced class="p-4">
+              <TairoTableHeading
+                uppercase
+                spaced
+                class="p-4"
+              >
                 <div class="flex items-center">
                   <BaseCheckbox
                     v-model="fakeAll"
-                    name="table-1-main"
-                    shape="full"
-                    class="text-primary-500"
+                    rounded="full"
+                    color="primary"
                   />
                 </div>
               </TairoTableHeading>
-              <TairoTableHeading uppercase spaced>Type</TairoTableHeading>
-              <TairoTableHeading uppercase spaced>Name</TairoTableHeading>
-              <TairoTableHeading uppercase spaced>Size</TairoTableHeading>
-              <TairoTableHeading uppercase spaced>Version</TairoTableHeading>
+              <TairoTableHeading uppercase spaced>
+                Type
+              </TairoTableHeading>
+              <TairoTableHeading uppercase spaced>
+                Name
+              </TairoTableHeading>
+              <TairoTableHeading uppercase spaced>
+                Size
+              </TairoTableHeading>
+              <TairoTableHeading uppercase spaced>
+                Version
+              </TairoTableHeading>
               <TairoTableHeading uppercase spaced>
                 Last Updated
               </TairoTableHeading>
-              <TairoTableHeading uppercase spaced>Action</TairoTableHeading>
+              <TairoTableHeading uppercase spaced>
+                Action
+              </TairoTableHeading>
             </template>
 
             <TairoTableRow v-for="index in 10" :key="index">
@@ -75,14 +96,14 @@ const fakeItems = ref([])
                 <div class="flex items-center">
                   <BaseCheckbox
                     v-model="fakeItems"
-                    :name="`placeload-item-checkbox-${index}`"
-                    shape="full"
-                    class="text-primary-500"
+                    :value="`placeload-item-checkbox-${index}`"
+                    rounded="full"
+                    color="primary"
                   />
                 </div>
               </TairoTableCell>
               <TairoTableCell light spaced>
-                <BasePlaceload class="h-[46px] w-[46px] shrink-0 rounded-xl" />
+                <BasePlaceload class="size-[46px] shrink-0 rounded-xl" />
               </TairoTableCell>
               <TairoTableCell spaced>
                 <BasePlaceload class="h-3 w-24 rounded-lg" />
@@ -95,7 +116,7 @@ const fakeItems = ref([])
               </TairoTableCell>
               <TairoTableCell spaced>
                 <div class="flex items-center gap-2">
-                  <BasePlaceload class="h-8 w-8 shrink-0 rounded-full" />
+                  <BasePlaceload class="size-8 shrink-0 rounded-full" />
                   <div class="space-y-1">
                     <BasePlaceload class="h-2 w-[70px] rounded-lg" />
                     <BasePlaceload class="h-2 w-[50px] rounded-lg" />

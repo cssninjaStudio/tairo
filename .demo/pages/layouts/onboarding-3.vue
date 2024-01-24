@@ -75,7 +75,7 @@ const roles = [
         to="/"
         class="text-muted-400 hover:text-primary-500 dark:text-muted-700 dark:hover:text-primary-500 transition-colors duration-300"
       >
-        <TairoLogo class="h-10 w-10" />
+        <TairoLogo class="size-10" />
       </NuxtLink>
       <div class="flex items-center gap-4">
         <BaseThemeToggle />
@@ -84,12 +84,17 @@ const roles = [
     <form
       action=""
       method="POST"
-      @submit.prevent
       class="mx-auto max-w-7xl px-4"
+      @submit.prevent
     >
       <div>
         <div class="pt-8 text-center">
-          <BaseHeading tag="h2" size="3xl" weight="medium" class="mb-2">
+          <BaseHeading
+            tag="h2"
+            size="3xl"
+            weight="medium"
+            class="mb-2"
+          >
             Choose a profile
           </BaseHeading>
           <BaseParagraph class="text-muted-500 dark:text-muted-400 mb-8">
@@ -111,24 +116,24 @@ const roles = [
                       v-model="roleType"
                       :name="`role-${role.id}`"
                       :value="role.id"
-                      class="h-full w-full"
+                      class="size-full"
                     >
                       <div
-                        class="relative mx-auto flex h-20 w-20 items-center justify-center grayscale transition-all duration-200 peer-checked:grayscale-0 peer-checked:[&_.child]:opacity-100"
+                        class="relative mx-auto flex size-20 items-center justify-center grayscale transition-all duration-200 peer-checked:grayscale-0 peer-checked:[&_.child]:opacity-100"
                       >
                         <div
-                          class="child dark:bg-muted-900 absolute end-0 top-0 z-20 flex h-6 w-6 items-center justify-center rounded-full bg-white opacity-0"
+                          class="child dark:bg-muted-900 absolute end-0 top-0 z-20 flex size-6 items-center justify-center rounded-full bg-white opacity-0"
                         >
                           <Icon
                             name="ph:check-circle-duotone"
-                            class="text-primary-500 h-6 w-6"
+                            class="text-primary-500 size-6"
                           />
                         </div>
                         <BaseAvatar
                           size="xl"
                           :src="role.avatar"
                           :badge-src="role.logo"
-                          shape="full"
+                          rounded="full"
                           class="group-focus-within:outline-muted-300 dark:group-focus-within:outline-muted-600 mx-auto group-focus-within:outline-dashed group-focus-within:outline-offset-2"
                         />
                       </div>
@@ -136,8 +141,9 @@ const roles = [
                         <BaseText
                           size="sm"
                           class="text-muted-500 dark:text-muted-400"
-                          >{{ role.name }}</BaseText
                         >
+                          {{ role.name }}
+                        </BaseText>
                       </div>
                     </BaseRadioHeadless>
                   </div>
@@ -146,16 +152,18 @@ const roles = [
                   <BaseButton
                     to="/dashboards"
                     type="button"
-                    shape="curved"
+                    rounded="lg"
                     class="!h-12 w-48"
                     color="primary"
-                    >Choose Profile</BaseButton
                   >
+                    Choose Profile
+                  </BaseButton>
                   <NuxtLink
                     to="#"
                     class="text-muted-400 hover:text-primary-500 mt-4 text-xs font-medium underline-offset-4 transition-colors duration-300 hover:underline"
-                    >Learn More</NuxtLink
                   >
+                    Learn More
+                  </NuxtLink>
                 </div>
               </div>
             </div>

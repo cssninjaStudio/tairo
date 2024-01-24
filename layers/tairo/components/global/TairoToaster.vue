@@ -100,7 +100,7 @@ const iconClasses = computed(() => {
         :style="{
           width: `${percent * 100}%`,
         }"
-      ></div>
+      />
     </div>
 
     <div v-if="props.closable" class="absolute end-2 top-2">
@@ -112,7 +112,11 @@ const iconClasses = computed(() => {
       class="flex w-16 items-center justify-center rounded-s-lg"
       :class="iconBgClasses"
     >
-      <Icon :name="props.icon" class="h-6 w-6" :class="iconClasses" />
+      <Icon
+        :name="props.icon"
+        class="size-6"
+        :class="iconClasses"
+      />
     </div>
     <div class="text-md min-w-[220px] max-w-xl py-4 pe-12 ps-8">
       <strong

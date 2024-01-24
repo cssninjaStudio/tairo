@@ -4,8 +4,9 @@
       <div class="mb-10 max-w-2xl">
         <BaseText
           class="text-primary-500 mb-2 text-[0.65rem] uppercase tracking-wider"
-          >We back you up</BaseText
         >
+          We back you up
+        </BaseText>
         <BaseHeading
           as="h2"
           size="4xl"

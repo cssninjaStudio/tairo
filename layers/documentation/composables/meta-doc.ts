@@ -1,81 +1,41 @@
-import type { MaybeRefOrGetter } from '@vueuse/shared'
+import type { MaybeRefOrGetter } from 'vue'
 import { kebabCase, upperFirst } from 'scule'
 import type { ComponentMeta } from 'vue-component-meta'
 // @ts-ignore - might be not defined if documentation is disabled
 import type { NuxtComponentMetaNames } from '#nuxt-component-meta/types'
-import { toRef } from '@vueuse/core'
 
 const excludedProps = ['modelValue', 'modelModifiers']
-
-const useComponentsMetaState = () =>
-  useState('components-meta', () => ({}) as Record<string, Promise<any> | any>)
-
-export async function fetchComponentMeta(name: string) {
-  const state = useComponentsMetaState()
-
-  if (state.value[name]?.then) {
-    await state.value[name]
-    return state.value[name]
-  }
-  if (state.value[name]) {
-    return state.value[name]
-  }
-
-  // Store promise to avoid multiple calls
-
-  // add to nitro prerender
-  if (process.server) {
-    const event = useRequestEvent()
-    event.node.res.setHeader(
-      'x-nitro-prerender',
-      [
-        event.node.res.getHeader('x-nitro-prerender'),
-        `/api/component-meta/${name}.json`,
-      ]
-        .filter(Boolean)
-        .join(','),
-    )
-  }
-  state.value[name] = $fetch(`/api/component-meta/${name}.json`).then(
-    (meta) => {
-      state.value[name] = meta
-    },
-  )
-
-  await state.value[name]
-  return state.value[name]
-}
 
 export async function useDocumentationMeta(
   _name: MaybeRefOrGetter<NuxtComponentMetaNames>,
 ) {
   const name = toRef(_name)
 
-  const meta = await fetchComponentMeta(name.value)
+  const meta = await useComponentMeta(name)
 
   const model = computed(
-    () => meta?.meta?.props?.find((prop: any) => prop.name === 'modelValue'),
+    () => meta.value?.meta?.props?.find((prop: any) => prop.name === 'modelValue'),
   )
   const props = computed(
     () =>
-      meta?.meta?.props?.filter(
+      meta.value?.meta?.props?.filter(
         (prop: any) => !excludedProps.includes(prop.name),
       ),
   )
   const events = computed(
     () =>
-      meta?.meta?.events?.filter(
+      meta.value?.meta?.events?.filter(
         (prop: any) => prop.name !== 'update:modelValue',
       ),
   )
-  const slots = computed(() => meta?.meta?.slots)
+  const slots = computed(() => meta.value?.meta?.slots)
   const exposed = computed(
     () =>
-      meta?.meta?.exposed.filter((item: any) => {
-        const isProps =
-          props.value?.findIndex((prop: any) => prop.name === item.name) >= 0
-        const isEvent =
-          meta?.meta?.events?.findIndex(
+      meta.value?.meta?.exposed?.filter((item: any) => {
+        const isProps
+          = props.value?.findIndex((prop: any) => prop.name === item.name) >= 0
+        const isEvent
+          = meta.value?.meta?.events?.findIndex(
             (event: any) =>
               `on${event.name}`.toLowerCase() === item.name?.toLowerCase(),
           ) >= 0
@@ -89,10 +49,10 @@ export async function useDocumentationMeta(
   const noOptions = computed(() => {
     return (
       !(
-        props.value?.length ||
-        events.value?.length ||
-        slots.value?.length ||
-        exposed.value?.length
+        props.value?.length
+        || events.value?.length
+        || slots.value?.length
+        || exposed.value?.length
       ) && model.value === undefined
     )
   })
@@ -126,7 +86,8 @@ export async function useDocumentationMeta(
           )}Data>(${prop.default || ''})`,
         ].join('\n'),
       )
-    } else {
+    }
+    else {
       code.push(
         [`const value = ref<${prop.type}>(${prop.default || ''})`].join('\n'),
       )
@@ -150,7 +111,8 @@ export async function useDocumentationMeta(
           '```',
         ].join('\n'),
       )
-    } else {
+    }
+    else {
       code.push(oneline)
     }
 
@@ -162,8 +124,8 @@ export async function useDocumentationMeta(
   function renderProperty(prop: ComponentMeta['props'][0]) {
     const code: string[] = ['```vue']
 
-    const defaultValue =
-      !prop.default || prop.default === 'undefined' ? '' : prop.default
+    const defaultValue
+      = !prop.default || prop.default === 'undefined' ? '' : prop.default
 
     code.push(`<script setup lang="ts">`)
     if (prop.type.length > 45) {
@@ -178,7 +140,8 @@ export async function useDocumentationMeta(
           )}Data>(${defaultValue})`,
         ].join('\n'),
       )
-    } else {
+    }
+    else {
       code.push(
         [`const ${prop.name} = ref<${prop.type}>(${defaultValue})`].join('\n'),
       )
@@ -206,7 +169,8 @@ export async function useDocumentationMeta(
           '```',
         ].join('\n'),
       )
-    } else {
+    }
+    else {
       code.push(oneline)
     }
 
@@ -226,12 +190,14 @@ export async function useDocumentationMeta(
       code.push(`      <!-- Use destruct to keep what you need -->`)
       code.push(`      <pre>{{ value }}</pre>`)
       code.push(`    </template>`)
-    } else {
+    }
+    else {
       code.push(`  <${name.value}>`)
 
       if (slot.name === 'default') {
         code.push(`    <!-- Your content -->`)
-      } else {
+      }
+      else {
         code.push(`    <template #${slot.name}>`)
         code.push(`      <!-- Your content -->`)
         code.push(`    </template>`)
@@ -248,7 +214,7 @@ export async function useDocumentationMeta(
   function renderEvents(event: ComponentMeta['events'][0]) {
     const code: string[] = []
 
-    const handlerName = upperFirst(event.name).replace(/:([a-z])/g, (v) =>
+    const handlerName = upperFirst(event.name).replace(/:([a-z])/g, v =>
       v.replace(':', '').toUpperCase(),
     )
     const handlerProps = event.type.startsWith('[')
@@ -277,7 +243,8 @@ export async function useDocumentationMeta(
       code.push(`  <${name.value}`)
       code.push(`    @${event.name}="on${handlerName}"`)
       code.push(`  />`)
-    } else {
+    }
+    else {
       code.push(oneline)
     }
 
@@ -324,7 +291,8 @@ export async function useDocumentationMeta(
           '```',
         ].join('\n'),
       )
-    } else {
+    }
+    else {
       code.push(oneline)
     }
 

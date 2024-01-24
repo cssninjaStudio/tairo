@@ -21,6 +21,6 @@ const props = withDefaults(
         : 'bg-muted-50 dark:bg-muted-800 py-3',
     ]"
   >
-    <slot></slot>
+    <slot />
   </th>
 </template>

@@ -32,26 +32,30 @@ const props = withDefaults(
         <span>Inbox</span>
       </BaseHeading>
       <div class="relative">
-        <Icon name="lucide:mail" class="text-muted-400 h-4 w-4" />
+        <Icon name="lucide:mail" class="text-muted-400 size-4" />
         <div class="absolute -end-1 top-0.5">
-          <span class="relative flex h-2 w-2">
+          <span class="relative flex size-2">
             <span
-              class="bg-primary-400 absolute inline-flex h-full w-full animate-ping rounded-full opacity-75"
-            ></span>
+              class="bg-primary-400 absolute inline-flex size-full animate-ping rounded-full opacity-75"
+            />
             <span
-              class="bg-primary-500 relative inline-flex h-2 w-2 rounded-full"
-            ></span>
+              class="bg-primary-500 relative inline-flex size-2 rounded-full"
+            />
           </span>
         </div>
       </div>
     </div>
     <div class="mb-4 flex items-center gap-2">
-      <BaseAvatar v-if="props.picture" :src="props.picture" :alt="props.name" />
+      <BaseAvatar
+        v-if="props.picture"
+        :src="props.picture"
+        :alt="props.name"
+      />
       <div
         v-else
-        class="bg-muted-100 dark:bg-muted-700/80 flex h-10 w-10 shrink-0 items-center justify-center rounded-full"
+        class="bg-muted-100 dark:bg-muted-700/80 flex size-10 shrink-0 items-center justify-center rounded-full"
       >
-        <Icon name="ph:user-duotone" class="text-muted-400 h-4 w-4" />
+        <Icon name="ph:user-duotone" class="text-muted-400 size-4" />
       </div>
       <span class="text-muted-500 dark:text-muted-400 font-sans text-sm">
         Sent by
@@ -66,7 +70,7 @@ const props = withDefaults(
       ]"
     >
       <div class="mb-4 flex items-center gap-2">
-        <div class="bg-success-500 h-2 w-2 shrink-0 rounded-full"></div>
+        <div class="bg-success-500 size-2 shrink-0 rounded-full" />
         <h3 class="text-muted-800 dark:text-muted-100 font-sans text-sm">
           {{ props.title }}
         </h3>
@@ -76,7 +80,9 @@ const props = withDefaults(
           {{ props.text }}
         </p>
       </div>
-      <p class="text-muted-400 font-sans text-xs">{{ props.time }} ago</p>
+      <p class="text-muted-400 font-sans text-xs">
+        {{ props.time }} ago
+      </p>
     </div>
   </div>
 </template>

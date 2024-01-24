@@ -10,7 +10,7 @@ icon:
 
 ::doc-component-demo
 ---
-title: Message types
+title: Type
 demo: '#examples/message/types.vue'
 ---
 Messages have basic types that can be used to inform users about different types of interactions or events. Use the `type` prop to change the type of the message.
@@ -18,7 +18,7 @@ Messages have basic types that can be used to inform users about different types
 
 ::doc-component-demo
 ---
-title: Message icons
+title: Icon
 demo: '#examples/message/icons.vue'
 ---
 Messages can have icons that symbolize the type of the message. Use the `icon` to enable the message icon.
@@ -26,10 +26,10 @@ Messages can have icons that symbolize the type of the message. Use the `icon` t
 
 ::doc-component-demo
 ---
-title: Message shapes
+title: Radius
 demo: '#examples/message/shapes.vue'
 ---
-Messages can have different shapes. Use the `shape` prop to change the shape of the message.
+Messages can have different radius factors. Use the `rounded` prop to change the radius of the message.
 ::
 
 :doc-component-meta{name="BaseMessage"}

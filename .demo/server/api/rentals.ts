@@ -1,3 +1,26 @@
+interface Rental {
+  id: string
+  picture: string
+  name: string
+  location: string
+  rating: number
+  details: {
+    rooms: number
+    beds: number
+    bathrooms: number
+  }
+  amenities: {
+    parking?: boolean
+    wifi?: boolean
+    heater?: boolean
+    cleaning?: boolean
+    other?: boolean
+    otherThing?: boolean
+    otherCoolThing?: boolean
+    otherGreatCoolThing?: boolean
+  }
+}
+
 export default defineEventHandler(async (event) => {
   const query = getQuery(event)
   const perPage = parseInt((query.perPage as string) || '5', 10)
@@ -6,36 +29,26 @@ export default defineEventHandler(async (event) => {
 
   if (perPage >= 50) {
     // Create an artificial delay
-    await new Promise((resolve) => setTimeout(resolve, 1000))
+    await new Promise(resolve => setTimeout(resolve, 1000))
   }
 
   const data = await getDemoData()
+  const offset = (page - 1) * perPage
+  const filterRe = new RegExp(filter, 'i')
 
   return {
     total: data.length,
-    data: filterDemoData(data, filter, page, perPage),
+    data: !filter
+      ? data.slice(offset, offset + perPage)
+      : data
+        .filter((item) => {
+          return [item.name, item.location].some(item => item.match(filterRe))
+        })
+        .slice(offset, offset + perPage),
   }
 })
 
-function filterDemoData(
-  data: any[],
-  filter: string,
-  page: number,
-  perPage: number,
-) {
-  const offset = (page - 1) * perPage
-  if (!filter) {
-    return data.slice(offset, offset + perPage)
-  }
-  const filterRe = new RegExp(filter, 'i')
-  return data
-    .filter((item) => {
-      return [item.name, item.location].some((item) => item.match(filterRe))
-    })
-    .slice(offset, offset + perPage)
-}
-
-async function getDemoData() {
+async function getDemoData(): Promise<Rental[]> {
   return Promise.resolve([
     {
       id: '1',

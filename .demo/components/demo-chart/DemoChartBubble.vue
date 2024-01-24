@@ -35,7 +35,7 @@ function useDemoBubble() {
     },
   }
 
-  const series = ref([
+  const series = shallowRef([
     {
       name: 'Bubble1',
       data: generateData(new Date('11 Feb 2017 GMT').getTime(), 20, {
@@ -69,14 +69,14 @@ function useDemoBubble() {
   function generateData(
     baseval: number,
     count: number,
-    yrange: { min: number; max: number },
+    yrange: { min: number, max: number },
   ) {
     let i = 0
     const _series = []
     while (i < count) {
       const x = Math.floor(Math.random() * (750 - 1 + 1)) + 1
-      const y =
-        Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min
+      const y
+        = Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min
       const z = Math.floor(Math.random() * (75 - 15 + 1)) + 15
 
       _series.push([x, y, z])

@@ -106,7 +106,7 @@ function useAreaBtcPrice() {
     },
   })
 
-  const series = ref([
+  const series = shallowRef([
     {
       name: 'Expected',
       data: generateDayWiseTimeSeries(0, 18),
@@ -152,7 +152,7 @@ function useRadialEvolution() {
   const type = 'radialBar'
   const height = 220
 
-  const series = ref([54])
+  const series = shallowRef([54])
 
   const options = {
     colors: [primary.value, success.value, info.value],
@@ -249,7 +249,7 @@ function useRadialPopularity() {
     labels: ['(30 days)'],
   }
 
-  const series = ref([67])
+  const series = shallowRef([67])
 
   return {
     type,
@@ -455,7 +455,7 @@ function useRadialPopularity() {
               <div class="mb-6 flex items-center gap-2">
                 <Icon
                   name="cryptocurrency:btc"
-                  class="h-9 w-9 text-orange-400"
+                  class="size-9 text-orange-400"
                 />
                 <div>
                   <BaseHeading

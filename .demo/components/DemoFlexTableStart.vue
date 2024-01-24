@@ -38,7 +38,7 @@ const props = withDefaults(
     <BaseAvatar
       v-if="
         (props.avatar && !props.icon && !props.picture) ||
-        (props.initials && !props.icon && !props.picture)
+          (props.initials && !props.icon && !props.picture)
       "
       :src="props.avatar"
       :badge-src="props.badge"
@@ -51,8 +51,9 @@ const props = withDefaults(
       :icon="props.icon"
       size="sm"
       class="bg-primary-500/20 text-primary-500"
+      color="none"
     >
-      <Icon :name="props.icon" class="h-5 w-5" />
+      <Icon :name="props.icon" class="size-5" />
     </BaseIconBox>
     <div
       v-else-if="props.picture && !props.avatar && !props.icon"
@@ -62,7 +63,7 @@ const props = withDefaults(
         :src="props.picture"
         :alt="props.title"
         class="h-12 w-16 rounded-lg object-cover"
-      />
+      >
     </div>
 
     <div>

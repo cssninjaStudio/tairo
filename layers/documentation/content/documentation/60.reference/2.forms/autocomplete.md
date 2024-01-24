@@ -12,23 +12,69 @@ icon:
 
 ::doc-component-demo
 ---
-title: Autocomplete shapes
+title: Radius
 demo: '#examples/autocomplete/shapes.vue'
 ---
-Autocompletes can have different shapes. The default shape is `rounded` but you can also use `straight`, `curved` or `full` shapes.
+Autocompletes can have different radius factors. The default radius is `sm` but you can also use `md`, `lg` or `full`.
 :::doc-message{type="muted" icon="ion:shapes-outline"}
-Default shape of all :doc-linker{to="BaseAutocomplete"} can be set in your `.app/app.config.ts`.
+Default props of all :doc-linker{to="BaseAutocomplete"} can be set in your `.app/app.config.ts`.
 :::
 ::
 
 
 ::doc-component-demo
 ---
-title: With icon
+title: Size
+demo: '#examples/autocomplete/size.vue'
+---
+Autocompletes can have different sizes. Use the `size` prop to change the size of the autocomplete.
+::
+
+
+::doc-component-demo
+---
+title: Contrast:default+
+demo: '#examples/autocomplete/contrast-default.vue'
+---
+Autocompletes can have different contasts. Use the `contrast` prop to change the contrast of the autocomplete.
+::
+
+
+::doc-component-demo
+---
+title: Contrast:muted
+demo: '#examples/autocomplete/contrast-muted.vue'
+---
+Autocompletes can have different contasts. Use the `contrast` prop to change the contrast of the autocomplete.
+::
+
+
+::doc-component-demo
+---
+title: Contrast:muted+
+demo: '#examples/autocomplete/contrast-muted-contrast.vue'
+---
+Autocompletes can have different contasts. Use the `contrast` prop to change the contrast of the autocomplete.
+::
+
+
+::doc-component-demo
+---
+title: Error
+demo: '#examples/autocomplete/error.vue'
+---
+Autocompletes can have have an error state using the `error` prop. Use the `error` prop to display an error message.
+::
+
+
+::doc-component-demo
+---
+title: Icon
 demo: '#examples/autocomplete/icon.vue'
 ---
 Autocompletes can have a configurable icon on the left side using the `icon` prop. Make sure to pick meaningful icons for your use case.
 ::
+
 
 ::doc-component-demo
 ---
@@ -39,10 +85,36 @@ Clearable autocompletes have a clear icon that appears on the right side using t
 ::
 
 
+::doc-component-demo
+---
+title: Multiple
+demo: '#examples/autocomplete/multiple.vue'
+---
+Autocompletes can be configured to allow multiple values and item selection using the `multiple` prop.
+::
+
 
 ::doc-component-demo
 ---
-title: Floating label
+title: Country:single
+demo: '#examples/autocomplete/country.vue'
+---
+Autocompletes can be used as a country selector using the `items` prop. The `items` prop accepts an array of objects with a `text` and `value` property.
+::
+
+
+::doc-component-demo
+---
+title: Country:multiple
+demo: '#examples/autocomplete/country-multiple.vue'
+---
+Autocompletes can be used as a country selector using the `items` prop. The `items` prop accepts an array of objects with a `text` and `value` property.
+::
+
+
+::doc-component-demo
+---
+title: Label:float
 demo: '#examples/autocomplete/label-float.vue'
 ---
 Autocompletes can have a material design style floating label using the `labelFloat` prop.
@@ -51,24 +123,7 @@ Autocompletes can have a material design style floating label using the `labelFl
 
 ::doc-component-demo
 ---
-title: Small
-demo: '#examples/autocomplete/condensed.vue'
----
-Autocompletes can be displayed in a smaller and more compact way using the `size` prop with the `sm` value.
-::
-
-
-::doc-component-demo
----
-title: Disabled state
-demo: '#examples/autocomplete/disabled.vue'
----
-Autocompletes can be disabled using the `disabled` prop.
-::
-
-::doc-component-demo
----
-title: Loading state
+title: Loading
 demo: '#examples/autocomplete/loading.vue'
 ---
 Autocompletes can be showed in a loading state using the `loading` prop.
@@ -77,21 +132,19 @@ Autocompletes can be showed in a loading state using the `loading` prop.
 
 ::doc-component-demo
 ---
-title: Multiple
-demo: '#examples/autocomplete/multiple.vue'
+title: Disabled
+demo: '#examples/autocomplete/disabled.vue'
 ---
-Autocompletes can be configured to allow multiple value and item selection using the `multiple` prop.
+Autocompletes can be disabled using the `disabled` prop.
 ::
 
 
 :doc-component-meta{name="BaseAutocomplete"}
 
 
-
-
 ::doc-component-demo
 ---
-title: Icon results
+title: Results:icon
 demo: '#examples/autocomplete/icon-result.vue'
 ---
 Autocompletes can render results with icons using the :doc-linker{to="BaseAutocompleteItem"} component. The component accepts an `icon` prop that is displayed in the results list.
@@ -100,7 +153,7 @@ Autocompletes can render results with icons using the :doc-linker{to="BaseAutoco
 
 ::doc-component-demo
 ---
-title: Media results
+title: Results:media
 demo: '#examples/autocomplete/media-result.vue'
 ---
 Autocompletes can render results with images using the :doc-linker{to="BaseAutocompleteItem"} component. The component accepts a `media` prop that is displayed in the results list.

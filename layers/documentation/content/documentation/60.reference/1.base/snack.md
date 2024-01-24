@@ -10,74 +10,58 @@ icon:
 
 ::doc-component-demo
 ---
-title: Default snacks
-demo: '#examples/snack/base.vue'
+title: Size
+demo: '#examples/snack/size.vue'
 ---
-Default snacks are used to display an interactive message to the user. They feature a close button that can trigger an action when clicked.
+Snacks are used to display an interactive message to the user. They feature a close button that can trigger an action when clicked. Snacks can have different sizes. Use the `size` prop to change the size of the snack.
 ::
 
 ::doc-component-demo
 ---
-title: Light snacks
+title: Color:default
 demo: '#examples/snack/base-light.vue'
 ---
-Snacks can be displayed in a light version. Use the `light` prop to display a light snack.
+Snacks default to the light version. Use the `color` prop with the `default` value to display a light snack.
 ::
 
 ::doc-component-demo
 ---
-title: Small snacks
-demo: '#examples/snack/small.vue'
+title: Color:muted
+demo: '#examples/snack/base.vue'
 ---
-Snacks can have a smaller size. Use the `small` prop to display a small snack.
+Snacks have a muted version. Use the `color` prop with the `muted` value to display a muted snack.
 ::
 
 ::doc-component-demo
 ---
-title: Icon snacks
-demo: '#examples/snack/icon.vue'
----
-Snacks can have icons. Use the `icon` prop to display an icon.
-::
-
-::doc-component-demo
----
-title: Light icons
+title: Icon:default
 demo: '#examples/snack/icon-light.vue'
 ---
-Snacks can be displayed in a light version. Use the `light` prop to display a light snack.
+Snacks can have an icon displayed on the left. Use the `icon` prop to display an icon.
 ::
 
 ::doc-component-demo
 ---
-title: Small icons
-demo: '#examples/snack/icon-small.vue'
+title: Icon:muted
+demo: '#examples/snack/icon.vue'
 ---
-Snacks can have a smaller size. Use the `small` prop to display a small snack.
+Snacks can have an icon displayed on the left. Use the `icon` prop to display an icon.
 ::
 
 ::doc-component-demo
 ---
-title: Image snacks
-demo: '#examples/snack/image.vue'
----
-Snacks can have images. Use the `image` prop to display an image.
-::
-
-::doc-component-demo
----
-title: Light images
+title: Image:default
 demo: '#examples/snack/image-light.vue'
 ---
-Snacks can be displayed in a light version. Use the `light` prop to display a light snack.
+Snacks can have an icon displayed on the left. Use the `image` prop to display an image.
 ::
 
 ::doc-component-demo
 ---
-title: Small images
-demo: '#examples/snack/image-small.vue'
+title: Image:muted
+demo: '#examples/snack/image.vue'
 ---
-Snacks can have a smaller size. Use the `small` prop to display a small snack.
+Snacks can have an icon displayed on the left. Use the `image` prop to display an image.
 ::
 
 :doc-component-meta{name="BaseSnack"}

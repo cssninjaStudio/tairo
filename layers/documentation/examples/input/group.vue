@@ -5,7 +5,7 @@
     </BaseButton>
 
     <BaseInput
-      v-model="amount"
+      v-model.number="amount"
       :classes="{
         wrapper: 'w-28',
       }"
@@ -19,9 +19,13 @@
         wrapper: 'w-36',
       }"
     >
-      <option value="With taxes">With taxes</option>
+      <option value="With taxes">
+        With taxes
+      </option>
 
-      <option value="Without taxes">Without taxes</option>
+      <option value="Without taxes">
+        Without taxes
+      </option>
     </BaseSelect>
   </BaseButtonGroup>
 </template>

@@ -88,8 +88,8 @@ const filteredCustomers = computed<Customer[]>(() => {
   return customers
     .filter((item) => {
       return (
-        item.name?.match(new RegExp(search.value, 'i')) ||
-        item.location?.match(new RegExp(search.value, 'i'))
+        item.name?.match(new RegExp(search.value, 'i'))
+        || item.location?.match(new RegExp(search.value, 'i'))
       )
     })
     .splice(0, 4)
@@ -124,7 +124,7 @@ const budget = ref('< 5K')
     <DemoWizardStepTitle />
     <div class="mx-auto flex w-full max-w-sm flex-col gap-3 px-4">
       <!-- Customer -->
-      <BaseCard shape="curved" class="relative z-10 p-6">
+      <BaseCard rounded="lg" class="relative z-10 p-6">
         <div class="mb-4 text-center">
           <h3
             class="text-muted-400 font-sans text-[0.65rem] font-semibold uppercase"
@@ -138,7 +138,7 @@ const budget = ref('< 5K')
               v-if="!itemSelected"
               v-model="search"
               icon="lucide:search"
-              shape="curved"
+              rounded="lg"
               placeholder="ex: Figma, Github, ..."
               :classes="{
                 input: 'h-12 text-base !ps-12',
@@ -162,8 +162,12 @@ const budget = ref('< 5K')
                 </p>
               </div>
               <div class="me-3 ms-auto">
-                <BaseButtonIcon small shape="full" @click="dismissCustomer">
-                  <Icon name="lucide:x" class="h-4 w-4" />
+                <BaseButtonIcon
+                  small
+                  rounded="full"
+                  @click="dismissCustomer"
+                >
+                  <Icon name="lucide:x" class="size-4" />
                 </BaseButtonIcon>
               </div>
             </div>
@@ -204,10 +208,10 @@ const budget = ref('< 5K')
                   <div class="ms-auto">
                     <BaseButtonIcon
                       small
-                      shape="full"
+                      rounded="full"
                       @click="selectCustomer(customer)"
                     >
-                      <Icon name="lucide:plus" class="h-4 w-4" />
+                      <Icon name="lucide:plus" class="size-4" />
                     </BaseButtonIcon>
                   </div>
                 </div>
@@ -217,7 +221,7 @@ const budget = ref('< 5K')
         </div>
       </BaseCard>
       <!-- Time frame -->
-      <BaseCard shape="curved" class="p-6">
+      <BaseCard rounded="lg" class="p-6">
         <div class="mb-4 text-center">
           <h3
             class="text-muted-400 font-sans text-[0.65rem] font-semibold uppercase"
@@ -243,11 +247,11 @@ const budget = ref('< 5K')
                     :value="inputValue"
                     placeholder="Start date"
                     v-on="inputEvents"
-                  />
-                  <div
-                    class="text-muted-400 peer-focus-visible:text-primary-500 absolute start-0 top-0 flex h-10 w-10 items-center justify-center transition-colors duration-300"
                   >
-                    <Icon name="lucide:map-pin" class="h-5 w-5" />
+                  <div
+                    class="text-muted-400 peer-focus-visible:text-primary-500 absolute start-0 top-0 flex size-10 items-center justify-center transition-colors duration-300"
+                  >
+                    <Icon name="lucide:map-pin" class="size-5" />
                   </div>
                 </div>
               </template>
@@ -269,11 +273,11 @@ const budget = ref('< 5K')
                     :value="inputValue"
                     placeholder="End date"
                     v-on="inputEvents"
-                  />
-                  <div
-                    class="text-muted-400 peer-focus-visible:text-primary-500 absolute start-0 top-0 flex h-10 w-10 items-center justify-center transition-colors duration-300"
                   >
-                    <Icon name="lucide:flag" class="h-5 w-5" />
+                  <div
+                    class="text-muted-400 peer-focus-visible:text-primary-500 absolute start-0 top-0 flex size-10 items-center justify-center transition-colors duration-300"
+                  >
+                    <Icon name="lucide:flag" class="size-5" />
                   </div>
                 </div>
               </template>
@@ -282,7 +286,7 @@ const budget = ref('< 5K')
         </div>
       </BaseCard>
       <!-- Budget -->
-      <BaseCard shape="curved" class="p-6">
+      <BaseCard rounded="lg" class="p-6">
         <div class="mb-4 text-center">
           <h3
             class="text-muted-400 font-sans text-[0.65rem] font-semibold uppercase"
@@ -291,33 +295,49 @@ const budget = ref('< 5K')
           </h3>
         </div>
         <div class="flex w-full justify-center gap-3">
-          <BaseRadioHeadless v-model="budget" name="budget" value="< 5K">
+          <BaseRadioHeadless
+            v-model="budget"
+            name="budget"
+            value="< 5K"
+          >
             <BaseButtonAction
-              shape="curved"
+              rounded="lg"
               class="peer-checked:!bg-primary-500 peer-checked:!border-primary-500 peer-checked:shadow-primary-500/20 peer-checked:!text-white peer-checked:shadow-xl"
             >
               <span>&lt; 5K</span>
             </BaseButtonAction>
           </BaseRadioHeadless>
-          <BaseRadioHeadless v-model="budget" name="budget" value="< 30K">
+          <BaseRadioHeadless
+            v-model="budget"
+            name="budget"
+            value="< 30K"
+          >
             <BaseButtonAction
-              shape="curved"
+              rounded="lg"
               class="peer-checked:!bg-primary-500 peer-checked:!border-primary-500 peer-checked:shadow-primary-500/20 peer-checked:!text-white peer-checked:shadow-xl"
             >
               <span>&lt; 30K</span>
             </BaseButtonAction>
           </BaseRadioHeadless>
-          <BaseRadioHeadless v-model="budget" name="budget" value="< 100K">
+          <BaseRadioHeadless
+            v-model="budget"
+            name="budget"
+            value="< 100K"
+          >
             <BaseButtonAction
-              shape="curved"
+              rounded="lg"
               class="peer-checked:!bg-primary-500 peer-checked:!border-primary-500 peer-checked:shadow-primary-500/20 peer-checked:!text-white peer-checked:shadow-xl"
             >
               <span>&lt; 100K</span>
             </BaseButtonAction>
           </BaseRadioHeadless>
-          <BaseRadioHeadless v-model="budget" name="budget" value="100K+">
+          <BaseRadioHeadless
+            v-model="budget"
+            name="budget"
+            value="100K+"
+          >
             <BaseButtonAction
-              shape="curved"
+              rounded="lg"
               class="peer-checked:!bg-primary-500 peer-checked:!border-primary-500 peer-checked:shadow-primary-500/20 peer-checked:!text-white peer-checked:shadow-xl"
             >
               <span>100K+</span>

@@ -21,8 +21,8 @@ definePageMeta({
 
 const VALIDATION_TEXT = {
   TITLE_REQUIRED: 'Event title is required',
-  SHORTDESC_REQUIRED: "Short description can't be empty",
-  LONGDESC_REQUIRED: "Long description can't be empty",
+  SHORTDESC_REQUIRED: 'Short description can\'t be empty',
+  LONGDESC_REQUIRED: 'Long description can\'t be empty',
   OPTION_REQUIRED: 'Please select an option',
 }
 
@@ -34,11 +34,13 @@ const zodSchema = z
       title: z.string().min(5, VALIDATION_TEXT.TITLE_REQUIRED),
       shortDesc: z.string().min(10, VALIDATION_TEXT.SHORTDESC_REQUIRED),
       longDesc: z.string().min(40, VALIDATION_TEXT.LONGDESC_REQUIRED),
-      startDateTime: z.date().nullable(),
-      endDateTime: z.date().nullable(),
       participants: z.array(z.string()).optional(),
       color: z.string(),
       category: z.string(),
+      dates: z.object({
+        start: z.date().nullable(),
+        end: z.date().nullable(),
+      }),
     }),
   })
   .superRefine((data, ctx) => {
@@ -58,18 +60,20 @@ const zodSchema = z
 type FormInput = z.infer<typeof zodSchema>
 
 const validationSchema = toTypedSchema(zodSchema)
-const initialValues = computed<FormInput>(() => ({
+const initialValues = {
   event: {
     title: '',
     shortDesc: '',
     longDesc: '',
-    startDateTime: null,
-    endDateTime: null,
+    dates: {
+      start: new Date(),
+      end: new Date(),
+    },
     participants: [],
     color: '',
     category: '',
   },
-}))
+} satisfies FormInput
 
 const {
   handleSubmit,
@@ -127,7 +131,8 @@ const onSubmit = handleSubmit(
         icon: 'ph:check',
         closable: true,
       })
-    } catch (error: any) {
+    }
+    catch (error: any) {
       // this will set the error on the form
       if (error.message === 'Fake backend validation error') {
         setFieldError('event.title', 'This name is not allowed')
@@ -176,10 +181,10 @@ const onSubmit = handleSubmit(
   },
 )
 
-const dates = ref({
-  start: new Date(),
-  end: new Date(),
-})
+// const dates = ref({
+//   start: new Date(),
+//   end: new Date(),
+// })
 
 const masks = ref({
   input: 'YYYY-MM-DD',
@@ -199,24 +204,31 @@ const people = ref([
   <form
     action=""
     method="POST"
-    @submit.prevent="onSubmit"
     class="relative py-3 sm:mx-auto sm:max-w-xl"
+    @submit.prevent="onSubmit"
   >
-    <BaseCard shape="curved" class="relative px-4 py-10 sm:p-10 md:mx-0">
+    <BaseCard rounded="lg" class="relative px-4 py-10 sm:p-10 md:mx-0">
       <div class="mx-auto max-w-md">
         <div class="flex items-center gap-4">
           <div
-            class="bg-primary-500/20 text-primary-500 flex h-14 w-14 shrink-0 items-center justify-center rounded-full font-sans text-2xl"
+            class="bg-primary-500/20 text-primary-500 flex size-14 shrink-0 items-center justify-center rounded-full font-sans text-2xl"
           >
-            <Icon name="ph:calendar-blank-duotone" class="h-5 w-5" />
+            <Icon name="ph:calendar-blank-duotone" class="size-5" />
           </div>
           <div class="block text-xl font-semibold text-gray-700">
-            <BaseHeading as="h3" size="lg" weight="medium">
+            <BaseHeading
+              as="h3"
+              size="lg"
+              weight="medium"
+            >
               Create an Event
             </BaseHeading>
-            <BaseText size="sm" class="text-muted-400"
-              >Create a new upcoming event.</BaseText
+            <BaseText
+              size="sm"
+              class="text-muted-400"
             >
+              Create a new upcoming event.
+            </BaseText>
           </div>
         </div>
         <div class="divide-y divide-gray-200">
@@ -228,7 +240,7 @@ const people = ref([
               >
                 <BaseInput
                   label="Event title"
-                  shape="curved"
+                  rounded="lg"
                   icon="ph:ticket-duotone"
                   placeholder="Ex: Next team building party"
                   :classes="{
@@ -251,7 +263,7 @@ const people = ref([
               >
                 <BaseInput
                   label="Short description"
-                  shape="curved"
+                  rounded="lg"
                   icon="ph:circles-four-duotone"
                   placeholder="Ex: We will meet to have fun together"
                   :classes="{
@@ -268,77 +280,62 @@ const people = ref([
               </Field>
             </div>
             <div class="col-span-12">
-              <DatePicker
-                v-model.range="dates"
-                :masks="masks"
-                :min-date="new Date()"
-                mode="dateTime"
-                hide-time-header
-                trim-weeks
+              <Field
+                v-slot="{
+                  field,
+                  errorMessage,
+                  handleChange,
+                }"
+                name="event.dates"
               >
-                <template #default="{ inputValue, inputEvents }">
-                  <div class="flex w-full flex-col gap-4 sm:flex-row">
-                    <div class="relative grow">
-                      <Field
-                        v-slot="{
-                          field,
-                          errorMessage,
-                          handleChange,
-                          handleBlur,
-                        }"
-                        name="event.startDateTime"
-                      >
+                <DatePicker
+                  :model-value="field.value"
+                  :model-modifiers="{ range: true }"
+                  :masks="masks"
+                  :min-date="new Date()"
+                  mode="dateTime"
+                  hide-time-header
+                  trim-weeks
+                  @update:model-value="handleChange"
+                >
+                  <template #default="{ inputValue, inputEvents }">
+                    <div class="flex w-full flex-col gap-4 sm:flex-row">
+                      <div class="relative grow">
                         <BaseInput
-                          shape="curved"
+                          rounded="lg"
                           label="Start date"
                           icon="ph:calendar-blank-duotone"
                           :value="inputValue.start"
-                          v-on="inputEvents.start"
                           :classes="{
                             input: '!h-11 !ps-11',
                             icon: '!h-11 !w-11',
                           }"
-                          :model-value="field.value"
                           :error="errorMessage"
                           :disabled="isSubmitting"
                           type="text"
-                          @update:model-value="handleChange"
-                          @blur="handleBlur"
+                          v-on="inputEvents.start"
                         />
-                      </Field>
-                    </div>
-                    <div class="relative grow">
-                      <Field
-                        v-slot="{
-                          field,
-                          errorMessage,
-                          handleChange,
-                          handleBlur,
-                        }"
-                        name="event.endDateTime"
-                      >
+                      </div>
+                      <div class="relative grow">
                         <BaseInput
-                          shape="curved"
+                          rounded="lg"
                           label="End date"
                           icon="ph:calendar-blank-duotone"
                           :value="inputValue.end"
-                          v-on="inputEvents.end"
                           :classes="{
                             input: '!h-11 !ps-11',
                             icon: '!h-11 !w-11',
                           }"
-                          :model-value="field.value"
                           :error="errorMessage"
                           :disabled="isSubmitting"
                           type="text"
-                          @update:model-value="handleChange"
-                          @blur="handleBlur"
+                          v-on="inputEvents.end"
                         />
-                      </Field>
+                      </div>
                     </div>
-                  </div>
-                </template>
-              </DatePicker>
+                  </template>
+                </DatePicker>
+              </Field>
             </div>
             <div class="col-span-12">
               <Field
@@ -347,7 +344,7 @@ const people = ref([
               >
                 <BaseTextarea
                   label="Long description"
-                  shape="curved"
+                  rounded="lg"
                   placeholder="Ex: Some additional details about the event..."
                   rows="5"
                   :model-value="field.value"
@@ -365,7 +362,7 @@ const people = ref([
               >
                 <BaseAutocomplete
                   :items="people"
-                  shape="curved"
+                  rounded="lg"
                   icon="ph:users-duotone"
                   placeholder="Add participants..."
                   label="Participants"
@@ -387,7 +384,7 @@ const people = ref([
                   type="color"
                   list="eventColors"
                   label="Event color"
-                  shape="curved"
+                  rounded="lg"
                   icon="ph:drop-half-duotone"
                   placeholder="Pick an event color..."
                   :classes="{
@@ -401,16 +398,16 @@ const people = ref([
                   @blur="handleBlur"
                 />
                 <datalist id="eventColors">
-                  <option value="#84cc16"></option>
-                  <option value="#22c55e"></option>
-                  <option value="#0ea5e9"></option>
-                  <option value="#6366f1"></option>
-                  <option value="#8b5cf6"></option>
-                  <option value="#d946ef"></option>
-                  <option value="#f43f5e"></option>
-                  <option value="#facc15"></option>
-                  <option value="#fb923c"></option>
-                  <option value="#9ca3af"></option>
+                  <option value="#84cc16" />
+                  <option value="#22c55e" />
+                  <option value="#0ea5e9" />
+                  <option value="#6366f1" />
+                  <option value="#8b5cf6" />
+                  <option value="#d946ef" />
+                  <option value="#f43f5e" />
+                  <option value="#facc15" />
+                  <option value="#fb923c" />
+                  <option value="#9ca3af" />
                 </datalist>
               </Field>
             </div>
@@ -422,7 +419,7 @@ const people = ref([
                 <BaseInput
                   list="eventCategories"
                   label="Event category"
-                  shape="curved"
+                  rounded="lg"
                   icon="ph:ticket-duotone"
                   placeholder="Pick a category..."
                   :classes="{
@@ -436,24 +433,27 @@ const people = ref([
                   @blur="handleBlur"
                 />
                 <datalist id="eventCategories">
-                  <option value="Chrome"></option>
-                  <option value="Firefox"></option>
-                  <option value="Opera"></option>
-                  <option value="Safari"></option>
-                  <option value="Microsoft Edge"></option>
+                  <option value="Chrome" />
+                  <option value="Firefox" />
+                  <option value="Opera" />
+                  <option value="Safari" />
+                  <option value="Microsoft Edge" />
                 </datalist>
               </Field>
             </div>
           </div>
           <div class="flex items-center gap-4 pt-4">
-            <BaseButton shape="curved" class="!h-12 w-full">Cancel</BaseButton>
+            <BaseButton rounded="lg" class="!h-12 w-full">
+              Cancel
+            </BaseButton>
             <BaseButton
               type="submit"
-              shape="curved"
+              rounded="lg"
               color="primary"
               class="!h-12 w-full"
-              >Create</BaseButton
             >
+              Create
+            </BaseButton>
           </div>
         </div>
       </div>

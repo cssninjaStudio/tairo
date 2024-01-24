@@ -1,17 +1,59 @@
 <template>
-  <div class="flex flex-wrap items-end gap-1">
-    <BaseTag shape="rounded" color="default">Label</BaseTag>
+  <div class="flex flex-wrap items-end gap-3">
+    <BaseTag
+      rounded="md"
+      variant="solid"
+      color="default"
+    >
+      Label
+    </BaseTag>
 
-    <BaseTag shape="rounded" color="muted">Label</BaseTag>
+    <BaseTag
+      rounded="md"
+      variant="solid"
+      color="muted"
+    >
+      Label
+    </BaseTag>
 
-    <BaseTag shape="rounded" color="primary">Label</BaseTag>
+    <BaseTag
+      rounded="md"
+      variant="solid"
+      color="primary"
+    >
+      Label
+    </BaseTag>
 
-    <BaseTag shape="rounded" color="success">Label</BaseTag>
+    <BaseTag
+      rounded="md"
+      variant="solid"
+      color="success"
+    >
+      Label
+    </BaseTag>
 
-    <BaseTag shape="rounded" color="info">Label</BaseTag>
+    <BaseTag
+      rounded="md"
+      variant="solid"
+      color="info"
+    >
+      Label
+    </BaseTag>
 
-    <BaseTag shape="rounded" color="warning">Label</BaseTag>
+    <BaseTag
+      rounded="md"
+      variant="solid"
+      color="warning"
+    >
+      Label
+    </BaseTag>
 
-    <BaseTag shape="rounded" color="danger">Label</BaseTag>
+    <BaseTag
+      rounded="md"
+      variant="solid"
+      color="danger"
+    >
+      Label
+    </BaseTag>
   </div>
 </template>

@@ -68,11 +68,19 @@ const members = [
         </BaseParagraph>
       </div>
       <div v-if="props.actions" class="ms-auto flex items-center">
-        <BaseButtonIcon shape="curved" muted class="scale-75">
-          <Icon name="ph:phone-duotone" class="h-5 w-5" />
+        <BaseButtonIcon
+          rounded="lg"
+          muted
+          class="scale-75"
+        >
+          <Icon name="ph:phone-duotone" class="size-5" />
         </BaseButtonIcon>
-        <BaseButtonIcon shape="curved" muted class="scale-75">
-          <Icon name="ph:video-camera-duotone" class="h-5 w-5" />
+        <BaseButtonIcon
+          rounded="lg"
+          muted
+          class="scale-75"
+        >
+          <Icon name="ph:video-camera-duotone" class="size-5" />
         </BaseButtonIcon>
       </div>
     </div>

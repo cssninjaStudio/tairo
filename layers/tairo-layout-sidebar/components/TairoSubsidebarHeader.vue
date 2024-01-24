@@ -12,10 +12,10 @@ const { current, isOpen } = useSidebar()
     </div>
     <button
       type="button"
-      class="text-muted-400 hover:bg-muted-100 hover:text-muted-600 ms-auto flex h-10 w-10 items-center justify-center rounded-full transition-colors duration-300 xl:hidden"
+      class="text-muted-400 hover:bg-muted-100 hover:text-muted-600 ms-auto flex size-10 items-center justify-center rounded-full transition-colors duration-300 xl:hidden"
       @click="isOpen = false"
     >
-      <Icon name="feather:chevron-left" class="h-6 w-6" />
+      <Icon name="feather:chevron-left" class="size-6" />
     </button>
   </div>
 </template>

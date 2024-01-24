@@ -53,14 +53,14 @@ const componentsWithoutPages = computed(() => {
             class="nui-focus group rounded-md"
             :to="component.route?._path"
           >
-            <BaseCard class="flex h-full flex-col px-4 py-8" shape="curved">
+            <BaseCard class="flex h-full flex-col px-4 py-8" rounded="lg">
               <template v-if="component.route?.icon">
                 <img
                   v-if="component.route?.icon?.src"
                   class="h-16 shrink-0 opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
                   :src="component.route?.icon?.src"
                   :alt="component.name + ' Tairo Documentation'"
-                />
+                >
                 <img
                   v-if="component.route?.icon?.src"
                   class="hidden h-16 shrink-0 opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 group-focus:opacity-100 group-focus:grayscale-0 dark:block"
@@ -68,15 +68,14 @@ const componentsWithoutPages = computed(() => {
                     component.route?.icon?.srcDark || component.route?.icon?.src
                   "
                   :alt="component.name + ' Tairo Documentation'"
-                />
+                >
               </template>
               <div class="mt-2 text-center font-sans">
                 <div class="flex h-full grow flex-col justify-between">
                   <span
                     v-if="component?.name"
                     class="text-muted-800 line-clamp-1 block w-full max-w-[240px] text-sm dark:text-white"
-                    >{{ component?.name }}</span
-                  >
+                  >{{ component?.name }}</span>
                   <span
                     class="text-primary-500 font-sans text-xs font-medium opacity-60 transition-opacity duration-300 group-hover:opacity-100 group-focus:opacity-100"
                   >

@@ -18,8 +18,8 @@ const input = ref('')
     <TairoContentWrapper>
       <template #left>
         <BaseInput
-          icon="lucide:search"
           v-model="input"
+          icon="lucide:search"
           placeholder="Filter users..."
           :classes="{
             wrapper: 'w-full sm:w-auto',
@@ -28,9 +28,15 @@ const input = ref('')
         />
       </template>
       <template #right>
-        <BaseButton class="w-full sm:w-32" disabled>Manage</BaseButton>
-        <BaseButton color="primary" class="w-full sm:w-32" disabled>
-          <Icon name="lucide:plus" class="h-4 w-4" />
+        <BaseButton class="w-full sm:w-32" disabled>
+          Manage
+        </BaseButton>
+        <BaseButton
+          color="primary"
+          class="w-full sm:w-32"
+          disabled
+        >
+          <Icon name="lucide:plus" class="size-4" />
           <span>Add User</span>
         </BaseButton>
       </template>
@@ -39,10 +45,10 @@ const input = ref('')
           <BaseCard
             v-for="index in 21"
             :key="index"
-            shape="curved"
+            rounded="lg"
             class="flex items-center gap-3 p-4"
           >
-            <BasePlaceload class="h-12 w-12 shrink-0 rounded-full" />
+            <BasePlaceload class="size-12 shrink-0 rounded-full" />
             <div class="grow space-y-2">
               <BasePlaceload class="h-3 w-4/5 rounded-lg" />
               <BasePlaceload class="h-3 w-3/5 rounded-lg" />

@@ -1,6 +1,10 @@
 <template>
-  <div class="grid gap-4 md:grid-cols-3">
-    <BaseCard shape="straight" color="white-contrast" class="p-6">
+  <div class="grid max-w-3xl gap-4 md:grid-cols-2">
+    <BaseCard
+      color="white"
+      rounded="md"
+      class="p-6"
+    >
       <BaseHeading
         as="h4"
         size="sm"
@@ -11,12 +15,20 @@
         Iam a card
       </BaseHeading>
 
-      <BaseParagraph size="sm" lead="tight" class="text-muted-400">
+      <BaseParagraph
+        size="sm"
+        lead="tight"
+        class="text-muted-400"
+      >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       </BaseParagraph>
     </BaseCard>
 
-    <BaseCard shape="rounded" color="muted" class="p-6">
+    <BaseCard
+      color="white-contrast"
+      rounded="md"
+      class="p-6"
+    >
       <BaseHeading
         as="h4"
         size="sm"
@@ -27,12 +39,20 @@
         Iam a card
       </BaseHeading>
 
-      <BaseParagraph size="sm" lead="tight" class="text-muted-400">
+      <BaseParagraph
+        size="sm"
+        lead="tight"
+        class="text-muted-400"
+      >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       </BaseParagraph>
     </BaseCard>
 
-    <BaseCard shape="curved" color="muted-contrast" class="p-6">
+    <BaseCard
+      color="muted"
+      rounded="md"
+      class="p-6"
+    >
       <BaseHeading
         as="h4"
         size="sm"
@@ -43,7 +63,35 @@
         Iam a card
       </BaseHeading>
 
-      <BaseParagraph size="sm" lead="tight" class="text-muted-400">
+      <BaseParagraph
+        size="sm"
+        lead="tight"
+        class="text-muted-400"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </BaseParagraph>
+    </BaseCard>
+
+    <BaseCard
+      color="muted-contrast"
+      rounded="md"
+      class="p-6"
+    >
+      <BaseHeading
+        as="h4"
+        size="sm"
+        weight="semibold"
+        lead="tight"
+        class="text-muted-800 mb-2 dark:text-white"
+      >
+        Iam a card
+      </BaseHeading>
+
+      <BaseParagraph
+        size="sm"
+        lead="tight"
+        class="text-muted-400"
+      >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       </BaseParagraph>
     </BaseCard>

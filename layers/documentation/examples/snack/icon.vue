@@ -1,13 +1,24 @@
 <template>
   <div class="flex flex-wrap items-end gap-4">
-    <BaseSnack label="React" icon="logos:react" color="muted" />
+    <BaseSnack
+      label="React"
+      color="muted"
+      size="xs"
+      icon="logos:react"
+    />
 
-    <BaseSnack label="Angular" icon="logos:angular-icon" color="muted" />
+    <BaseSnack
+      label="Angular"
+      color="muted"
+      size="sm"
+      icon="logos:angular-icon"
+    />
 
-    <BaseSnack label="Vue" icon="logos:vue" color="muted" />
-
-    <BaseSnack label="Html" icon="logos:html-5" color="muted" />
-
-    <BaseSnack label="Python" icon="logos:python" color="muted" />
+    <BaseSnack
+      label="Vue"
+      color="muted"
+      size="md"
+      icon="logos:vue"
+    />
   </div>
 </template>

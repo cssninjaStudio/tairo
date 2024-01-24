@@ -18,9 +18,13 @@
         </div>
 
         <div class="grid gap-6 sm:grid-cols-4">
-          <BaseRadioHeadless v-model="value" name="radio_custom" value="value_1">
+          <BaseRadioHeadless
+            v-model="value"
+            name="radio_custom"
+            value="value_1"
+          >
             <BaseCard
-              shape="curved"
+              rounded="lg"
               class="peer-checked:!border-success-500 peer-checked:!bg-success-500/10 relative border-2 p-5 peer-checked:[&_.child]:!opacity-100"
             >
               <div class="flex flex-col">
@@ -44,14 +48,18 @@
               </div>
 
               <div class="child absolute end-2 top-3 opacity-0">
-                <Icon name="ph:check-circle-duotone" class="text-success-500 h-7 w-7" />
+                <Icon name="ph:check-circle-duotone" class="text-success-500 size-7" />
               </div>
             </BaseCard>
           </BaseRadioHeadless>
 
-          <BaseRadioHeadless v-model="value" name="radio_custom" value="value_2">
+          <BaseRadioHeadless
+            v-model="value"
+            name="radio_custom"
+            value="value_2"
+          >
             <BaseCard
-              shape="curved"
+              rounded="lg"
               class="peer-checked:!border-success-500 peer-checked:!bg-success-500/10 relative border-2 p-5 peer-checked:[&_.child]:!opacity-100"
             >
               <div class="flex flex-col">
@@ -75,14 +83,18 @@
               </div>
 
               <div class="child absolute end-2 top-3 opacity-0">
-                <Icon name="ph:check-circle-duotone" class="text-success-500 h-7 w-7" />
+                <Icon name="ph:check-circle-duotone" class="text-success-500 size-7" />
               </div>
             </BaseCard>
           </BaseRadioHeadless>
 
-          <BaseRadioHeadless v-model="value" name="radio_custom" value="value_3">
+          <BaseRadioHeadless
+            v-model="value"
+            name="radio_custom"
+            value="value_3"
+          >
             <BaseCard
-              shape="curved"
+              rounded="lg"
               class="peer-checked:!border-success-500 peer-checked:!bg-success-500/10 relative border-2 p-5 peer-checked:[&_.child]:!opacity-100"
             >
               <div class="flex flex-col">
@@ -106,14 +118,18 @@
               </div>
 
               <div class="child absolute end-2 top-3 opacity-0">
-                <Icon name="ph:check-circle-duotone" class="text-success-500 h-7 w-7" />
+                <Icon name="ph:check-circle-duotone" class="text-success-500 size-7" />
               </div>
             </BaseCard>
           </BaseRadioHeadless>
 
-          <BaseRadioHeadless v-model="value" name="radio_custom" value="value_4">
+          <BaseRadioHeadless
+            v-model="value"
+            name="radio_custom"
+            value="value_4"
+          >
             <BaseCard
-              shape="curved"
+              rounded="lg"
               class="peer-checked:!border-success-500 peer-checked:!bg-success-500/10 relative border-2 p-5 peer-checked:[&_.child]:!opacity-100"
             >
               <div class="flex flex-col">
@@ -137,7 +153,7 @@
               </div>
 
               <div class="child absolute end-2 top-3 opacity-0">
-                <Icon name="ph:check-circle-duotone" class="text-success-500 h-7 w-7" />
+                <Icon name="ph:check-circle-duotone" class="text-success-500 size-7" />
               </div>
             </BaseCard>
           </BaseRadioHeadless>

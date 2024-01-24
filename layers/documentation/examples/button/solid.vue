@@ -1,17 +1,35 @@
 <template>
-  <div class="flex flex-wrap items-end gap-4">
-    <BaseButton>Button</BaseButton>
+  <div class="flex flex-wrap items-end gap-2">
+    <BaseButton variant="solid">
+      Button
+    </BaseButton>
 
-    <BaseButton color="primary">Button</BaseButton>
+    <BaseButton variant="solid" color="muted">
+      Button
+    </BaseButton>
 
-    <BaseButton color="success">Button</BaseButton>
+    <BaseButton variant="solid" color="light">
+      Button
+    </BaseButton>
 
-    <BaseButton color="info">Button</BaseButton>
+    <BaseButton variant="solid" color="primary">
+      Button
+    </BaseButton>
 
-    <BaseButton color="warning">Button</BaseButton>
+    <BaseButton variant="solid" color="success">
+      Button
+    </BaseButton>
 
-    <BaseButton color="danger">Button</BaseButton>
+    <BaseButton variant="solid" color="info">
+      Button
+    </BaseButton>
 
-    <BaseButton color="muted">Button</BaseButton>
+    <BaseButton variant="solid" color="warning">
+      Button
+    </BaseButton>
+
+    <BaseButton variant="solid" color="danger">
+      Button
+    </BaseButton>
   </div>
 </template>

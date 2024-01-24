@@ -74,7 +74,7 @@ function useSparkLineOne() {
     colors: [primary.value],
   } as const
 
-  const series = ref([
+  const series = shallowRef([
     {
       name: 'Sales',
       data: [2565, 6126, 4271, 5249, 2245, 4424, 1752, 3996, 976, 2157],
@@ -133,7 +133,7 @@ function useSparkLineTwo() {
     colors: [success.value],
   } as const
 
-  const series = ref([
+  const series = shallowRef([
     {
       name: 'Income',
       data: [12.2, 14.5, 2.5, 47.5, 32.5, 44.5, 14.8, 55.5, 41.3, 69.7],
@@ -194,7 +194,7 @@ function useSparkLineThree() {
     },
   } as const
 
-  const series = ref([
+  const series = shallowRef([
     {
       name: 'New Orders',
       data: [4457, 4533, 7274, 3272, 5876, 3271, 4614, 3553, 4835, 1579],
@@ -255,7 +255,7 @@ function useSparkLineFour() {
     },
   } as const
 
-  const series = ref([
+  const series = shallowRef([
     {
       name: 'Abandonned',
       data: [1412, 725, 427, 655, 145, 325, 197, 584, 424, 651],
@@ -312,7 +312,7 @@ function useAreaCustomers() {
     },
   }
 
-  const series = ref([
+  const series = shallowRef([
     {
       name: 'Returning',
       data: [31, 40, 28, 51, 42, 109, 100],
@@ -374,7 +374,7 @@ function useRadialSalesRevenue() {
     labels: ['Progress'],
   }
 
-  const series = ref([65])
+  const series = shallowRef([65])
 
   return {
     type,
@@ -412,7 +412,7 @@ function useRadialSmallOne() {
     labels: [''],
   }
 
-  const series = ref([31])
+  const series = shallowRef([31])
 
   return {
     type,
@@ -450,7 +450,7 @@ function useRadialSmallTwo() {
     labels: [''],
   }
 
-  const series = ref([53])
+  const series = shallowRef([53])
 
   return {
     type,
@@ -488,7 +488,7 @@ function useRadialSmallThree() {
     labels: [''],
   }
 
-  const series = ref([84])
+  const series = shallowRef([84])
 
   return {
     type,
@@ -562,7 +562,7 @@ function useGaugePersonal() {
     labels: ['Average Results'],
   }
 
-  const series = ref([76])
+  const series = shallowRef([76])
 
   return {
     type,
@@ -577,7 +577,7 @@ function useBarOrders() {
   const type = 'bar'
   const height = 210
 
-  const series = ref<any[]>([])
+  const series = shallowRef<any[]>([])
 
   const options = {
     chart: {
@@ -786,7 +786,7 @@ function useBarOrders() {
             </BaseHeading>
             <Icon
               name="ph:shopping-cart-duotone"
-              class="text-primary-500 h-7 w-7"
+              class="text-primary-500 size-7"
             />
           </div>
           <div class="flex items-center justify-between gap-6 pt-4">
@@ -816,7 +816,7 @@ function useBarOrders() {
             >
               <span>Income</span>
             </BaseHeading>
-            <Icon name="ph:money-duotone" class="text-success-500 h-7 w-7" />
+            <Icon name="ph:money-duotone" class="text-success-500 size-7" />
           </div>
           <div class="flex items-center justify-between gap-6 pt-4">
             <div class="grow">
@@ -845,7 +845,7 @@ function useBarOrders() {
             >
               <span>Orders</span>
             </BaseHeading>
-            <Icon name="ph:package-duotone" class="text-info-500 h-7 w-7" />
+            <Icon name="ph:package-duotone" class="text-info-500 size-7" />
           </div>
           <div class="flex items-center justify-between gap-6 pt-4">
             <div class="grow">
@@ -874,7 +874,7 @@ function useBarOrders() {
             >
               <span>Abandonned</span>
             </BaseHeading>
-            <Icon name="ph:timer-duotone" class="text-danger-500 h-7 w-7" />
+            <Icon name="ph:timer-duotone" class="text-danger-500 size-7" />
           </div>
           <div class="flex items-center justify-between gap-6 pt-4">
             <div class="grow">
@@ -1100,16 +1100,8 @@ function useBarOrders() {
             :attributes="[
               {
                 key: 'today',
-                dot: true,
-                bar: false,
-                content: 'Today',
-                customData: {},
-                event: {},
-                hashcode: 'today',
-                highlight: false,
+                highlight: true,
                 order: 0,
-                pinPage: false,
-                popover: {},
                 dates: [new Date()],
               },
             ]"

@@ -1,8 +1,9 @@
 <script setup lang="ts">
 // eslint-disable vue/no-v-text-v-html-on-component
+import { getMarkdownProcessors } from '~/utils/bundles/markdown/rehype'
 import light from '~/utils/shiki/theme/cssninja-light'
 import dark from '~/utils/shiki/theme/cssninja-dark'
-import { LanguageInput, BuiltinLanguage } from 'shikiji';
+import type { LanguageInput, BuiltinLanguage } from 'shikiji'
 
 const props = withDefaults(
   defineProps<{
@@ -20,7 +21,7 @@ const props = withDefaults(
      *
      * @see https://github.com/shikijs/shiki/blob/main/docs/themes.md#all-themes
      */
-    themes?: { light: any; dark: any }
+    themes?: { light: any, dark: any }
     /**
      * List of languages to highlight code blocks
      *
@@ -44,30 +45,22 @@ const props = withDefaults(
       light,
       dark,
     }),
-    langs: () => ['html', 'vue', 'bash', 'dockerfile', 'json', 'yaml', 'markdown'],
+    langs: () => [
+      'html',
+      'vue',
+      'bash',
+      'dockerfile',
+      'json',
+      'yaml',
+      'markdown',
+      'diff',
+    ],
   },
 )
 
 const processor = shallowRef<any>()
-const colorMode = useColorMode()
 const loaded = ref(false)
 const htmlContent = ref<string>('')
-const isDark = computed({
-  get() {
-    return colorMode.value === 'dark'
-  },
-  set(value) {
-    if (value) {
-      colorMode.preference = 'dark'
-    } else {
-      colorMode.preference = 'light'
-    }
-  },
-})
-const mode = computed(() => {
-  if (props.mode !== undefined) return props.mode
-  return isDark.value ? 'dark' : 'light'
-})
 
 const proseSize = computed(() => {
   switch (props.size) {
@@ -85,23 +78,22 @@ const proseSize = computed(() => {
   }
 })
 
-watchEffect(async () => {
+onNuxtReady(async () => {
   if (processor.value) return
   processor.value = await getMarkdownProcessors(props.themes, props.langs)
 })
 
-watchEffect(async () => {
-  let source = props.source
-  if (!source || !processor.value || htmlContent.value) return
+watch([() => props.source, processor], async ([source, _processor]) => {
+  if (!source || !_processor) return
 
-  const vfile = await processor.value.process(source)
+  const vfile = await _processor.process(source)
   htmlContent.value = vfile.toString()
   loaded.value = true
-})
+}, { immediate: true })
 </script>
 
 <template>
-  <BasePlaceload v-if="!loaded" class="h-24 w-full rounded"></BasePlaceload>
+  <BasePlaceload v-if="!loaded" class="h-24 w-full rounded" />
   <BaseProse
     v-else
     :class="[
@@ -111,10 +103,10 @@ watchEffect(async () => {
       props.fullwidth ? 'max-w-none' : '',
     ]"
   >
-    <div v-html="htmlContent"></div>
+    <!-- eslint-disable-next-line vue/no-v-html -->
+    <div v-html="htmlContent" />
   </BaseProse>
 </template>
-
 
 <style>
 html.dark .shiki,
@@ -128,17 +120,5 @@ html.dark .shiki span {
 .markdown :deep(.shiki) {
   direction: ltr;
   @apply nui-focus;
-}
-.markdown.with-line-number :deep(.shiki code) {
-  counter-reset: step;
-  counter-increment: step 0;
-}
-.markdown.with-line-number :deep(.shiki code .line) {
-  @apply inline w-full;
-}
-.markdown.with-line-number :deep(.shiki code .line::before) {
-  content: counter(step);
-  counter-increment: step;
-  @apply w-4 me-6 inline text-right text-muted-400 dark:text-muted-500;
 }
 </style>

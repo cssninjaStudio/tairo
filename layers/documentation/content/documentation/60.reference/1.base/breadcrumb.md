@@ -10,7 +10,7 @@ icon:
 
 ::doc-component-demo
 ---
-title: Dot separator
+title: Separator:dot
 demo: '#examples/breadcrumb/dot.vue'
 ---
 Breadcrumbs are a useful way to show the user where they are in the application. This example shows a breadcrumb with a `dot` separator.
@@ -18,7 +18,7 @@ Breadcrumbs are a useful way to show the user where they are in the application.
 
 ::doc-component-demo
 ---
-title: Slash separator
+title: Separator:slash
 demo: '#examples/breadcrumb/slash.vue'
 ---
 Breadcrumbs are a useful way to show the user where they are in the application. This example shows a breadcrumb with a `slash` separator.
@@ -26,7 +26,7 @@ Breadcrumbs are a useful way to show the user where they are in the application.
 
 ::doc-component-demo
 ---
-title: Chevron separator
+title: Separator:chevron
 demo: '#examples/breadcrumb/chevron.vue'
 ---
 Breadcrumbs are a useful way to show the user where they are in the application. This example shows a breadcrumb with a `chevron` separator.
@@ -34,7 +34,7 @@ Breadcrumbs are a useful way to show the user where they are in the application.
 
 ::doc-component-demo
 ---
-title: Arrow separator
+title: Separator:arrow
 demo: '#examples/breadcrumb/arrow.vue'
 ---
 Breadcrumbs are a useful way to show the user where they are in the application. This example shows a breadcrumb with a `arrow` separator.

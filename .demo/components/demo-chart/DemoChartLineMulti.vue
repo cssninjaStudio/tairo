@@ -31,10 +31,10 @@ function useDemoLineMulti() {
     legend: {
       tooltipHoverFormatter: function (val: string, opts: any) {
         return (
-          val +
-          ' - ' +
-          opts.w.globals.series[opts.seriesIndex][opts.dataPointIndex] +
-          ''
+          val
+          + ' - '
+          + opts.w.globals.series[opts.seriesIndex][opts.dataPointIndex]
+          + ''
         )
       },
       position: 'top',
@@ -85,7 +85,7 @@ function useDemoLineMulti() {
     },
   }
 
-  const series = [
+  const series = shallowRef([
     {
       name: 'Session Duration',
       data: ref([45, 52, 38, 24, 33, 26, 21, 20, 6, 8, 15, 10]),
@@ -98,7 +98,7 @@ function useDemoLineMulti() {
       name: 'Total Visits',
       data: ref([87, 57, 74, 99, 75, 38, 62, 47, 82, 56, 45, 47]),
     },
-  ]
+  ])
 
   return {
     type,

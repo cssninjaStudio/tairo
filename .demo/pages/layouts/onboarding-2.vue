@@ -24,7 +24,7 @@ const pricingMode = ref('free')
         to="/"
         class="text-muted-400 hover:text-primary-500 dark:text-muted-700 dark:hover:text-primary-500 transition-colors duration-300"
       >
-        <TairoLogo class="h-10 w-10" />
+        <TairoLogo class="size-10" />
       </NuxtLink>
       <div class="flex items-center gap-4">
         <BaseThemeToggle />
@@ -33,12 +33,17 @@ const pricingMode = ref('free')
     <form
       action=""
       method="POST"
-      @submit.prevent
       class="mx-auto max-w-7xl px-4"
+      @submit.prevent
     >
       <div>
         <div class="pt-8 text-center">
-          <BaseHeading tag="h2" size="3xl" weight="medium" class="mb-2">
+          <BaseHeading
+            tag="h2"
+            size="3xl"
+            weight="medium"
+            class="mb-2"
+          >
             Start your Free Trial
           </BaseHeading>
           <BaseParagraph class="text-muted-500 dark:text-muted-400 mb-8">
@@ -57,7 +62,7 @@ const pricingMode = ref('free')
                     value="free"
                   >
                     <BaseCard
-                      shape="curved"
+                      rounded="lg"
                       class="peer-checked:!border-primary-500 relative border-2 p-8 opacity-60 grayscale peer-checked:opacity-100 peer-checked:grayscale-0 peer-checked:[&_.child]:!opacity-100"
                     >
                       <div class="flex flex-col text-center">
@@ -65,10 +70,13 @@ const pricingMode = ref('free')
                           src="/img/illustrations/onboarding/pricing-1.svg"
                           alt="2 factor authentication with email"
                           class="mx-auto mb-3 max-w-[160px]"
-                        />
-                        <BaseHeading size="md" weight="medium"
-                          >Free</BaseHeading
                         >
+                        <BaseHeading
+                          size="md"
+                          weight="medium"
+                        >
+                          Free
+                        </BaseHeading>
                         <BaseParagraph
                           size="xs"
                           lead="snug"
@@ -83,15 +91,14 @@ const pricingMode = ref('free')
                           <BaseText>
                             <span>$0</span>
                             <span class="text-muted-400 text-xs">
-                              /per month</span
-                            >
+                              /per month</span>
                           </BaseText>
                         </div>
                       </div>
                       <div class="child absolute end-2 top-3 opacity-0">
                         <Icon
                           name="ph:check-circle-duotone"
-                          class="text-primary-500 h-7 w-7"
+                          class="text-primary-500 size-7"
                         />
                       </div>
                     </BaseCard>
@@ -102,7 +109,7 @@ const pricingMode = ref('free')
                     value="starter"
                   >
                     <BaseCard
-                      shape="curved"
+                      rounded="lg"
                       class="peer-checked:!border-primary-500 relative border-2 p-8 opacity-60 grayscale peer-checked:opacity-100 peer-checked:grayscale-0 peer-checked:[&_.child]:!opacity-100"
                     >
                       <div class="flex flex-col text-center">
@@ -110,10 +117,13 @@ const pricingMode = ref('free')
                           src="/img/illustrations/onboarding/pricing-2.svg"
                           alt="2 factor authentication with SMS"
                           class="mx-auto mb-3 max-w-[160px]"
-                        />
-                        <BaseHeading size="md" weight="medium"
-                          >Starter</BaseHeading
                         >
+                        <BaseHeading
+                          size="md"
+                          weight="medium"
+                        >
+                          Starter
+                        </BaseHeading>
                         <BaseParagraph
                           size="xs"
                           lead="snug"
@@ -128,15 +138,14 @@ const pricingMode = ref('free')
                           <BaseText>
                             <span>$29</span>
                             <span class="text-muted-400 text-xs">
-                              /per month</span
-                            >
+                              /per month</span>
                           </BaseText>
                         </div>
                       </div>
                       <div class="child absolute end-2 top-3 opacity-0">
                         <Icon
                           name="ph:check-circle-duotone"
-                          class="text-primary-500 h-7 w-7"
+                          class="text-primary-500 size-7"
                         />
                       </div>
                     </BaseCard>
@@ -147,7 +156,7 @@ const pricingMode = ref('free')
                     value="business"
                   >
                     <BaseCard
-                      shape="curved"
+                      rounded="lg"
                       class="peer-checked:!border-primary-500 relative border-2 p-8 opacity-60 grayscale peer-checked:opacity-100 peer-checked:grayscale-0 peer-checked:[&_.child]:!opacity-100"
                     >
                       <div class="flex flex-col text-center">
@@ -155,10 +164,13 @@ const pricingMode = ref('free')
                           src="/img/illustrations/onboarding/pricing-3.svg"
                           alt="2 factor authentication with app"
                           class="mx-auto mb-3 max-w-[160px]"
-                        />
-                        <BaseHeading size="md" weight="medium"
-                          >Business</BaseHeading
                         >
+                        <BaseHeading
+                          size="md"
+                          weight="medium"
+                        >
+                          Business
+                        </BaseHeading>
                         <BaseParagraph
                           size="xs"
                           lead="snug"
@@ -173,15 +185,14 @@ const pricingMode = ref('free')
                           <BaseText>
                             <span>$49</span>
                             <span class="text-muted-400 text-xs">
-                              /per month</span
-                            >
+                              /per month</span>
                           </BaseText>
                         </div>
                       </div>
                       <div class="child absolute end-2 top-3 opacity-0">
                         <Icon
                           name="ph:check-circle-duotone"
-                          class="text-primary-500 h-7 w-7"
+                          class="text-primary-500 size-7"
                         />
                       </div>
                     </BaseCard>
@@ -191,16 +202,18 @@ const pricingMode = ref('free')
                   <BaseButton
                     to="/dashboards"
                     type="button"
-                    shape="curved"
+                    rounded="lg"
                     class="!h-12 w-48"
                     color="primary"
-                    >Confirm</BaseButton
                   >
+                    Confirm
+                  </BaseButton>
                   <NuxtLink
                     to="#"
                     class="text-muted-400 hover:text-primary-500 mt-4 text-xs font-medium underline-offset-4 transition-colors duration-300 hover:underline"
-                    >Learn More</NuxtLink
                   >
+                    Learn More
+                  </NuxtLink>
                 </div>
               </div>
             </div>

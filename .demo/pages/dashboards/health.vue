@@ -57,7 +57,7 @@ function useAreaCondition() {
     },
   }
 
-  const series = ref([
+  const series = shallowRef([
     {
       name: 'Condition (pt)',
       data: [31, 40, 28, 51, 42, 109, 100],
@@ -121,7 +121,7 @@ function useScatterEnergy() {
     },
   }
 
-  const series = ref([
+  const series = shallowRef([
     {
       name: 'Tonic',
       data: generateDayWiseTimeSeries(
@@ -160,13 +160,13 @@ function useScatterEnergy() {
   function generateDayWiseTimeSeries(
     baseval: number,
     count: number,
-    yrange: { min: number; max: number },
+    yrange: { min: number, max: number },
   ) {
     let i = 0
     const series = []
     while (i < count) {
-      const y =
-        Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min
+      const y
+        = Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min
 
       series.push([baseval, y])
       baseval += 86400000
@@ -253,7 +253,7 @@ function useBarOxygen() {
     colors: [primary.value],
   }
 
-  const series = ref([
+  const series = shallowRef([
     {
       name: 'Variation (pt)',
       data: [23, 26, 10, 7, 11, 18, 16],
@@ -303,7 +303,7 @@ function useAreaProgress() {
     },
   } as const
 
-  const series = ref([
+  const series = shallowRef([
     {
       name: 'Progress (pt)',
       data: [31, 40, 28, 51, 42, 109, 100],
@@ -382,7 +382,7 @@ function useGaugePersonal() {
     labels: ['Average Results'],
   }
 
-  const series = ref([76])
+  const series = shallowRef([76])
 
   return {
     type,
@@ -407,7 +407,7 @@ function useGaugePersonal() {
               class="pointer-events-none absolute -start-6 -top-20 sm:-start-10"
               src="/img/illustrations/dashboards/health/doctor.svg"
               alt="Doctor illustration"
-            />
+            >
           </div>
           <div class="mt-6 grow sm:mt-0">
             <div class="text-center sm:text-left">
@@ -496,8 +496,12 @@ function useGaugePersonal() {
       <div class="col-span-6 sm:col-span-3">
         <div class="flex flex-col">
           <div class="mb-3 flex items-center gap-2">
-            <BaseIconBox size="md" class="bg-primary-500/10">
-              <Icon name="ph:drop-duotone" class="text-primary-500 h-5 w-5" />
+            <BaseIconBox
+              size="md"
+              class="bg-primary-500/10"
+              color="none"
+            >
+              <Icon name="ph:drop-duotone" class="text-primary-500 size-5" />
             </BaseIconBox>
             <div class="flex items-center gap-1 font-sans">
               <span class="text-muted-800 dark:text-muted-100 font-semibold">
@@ -528,10 +532,14 @@ function useGaugePersonal() {
       <div class="col-span-6 sm:col-span-3">
         <div class="flex flex-col">
           <div class="mb-3 flex items-center gap-2">
-            <BaseIconBox size="md" class="bg-primary-500/10">
+            <BaseIconBox
+              size="md"
+              class="bg-primary-500/10"
+              color="none"
+            >
               <Icon
                 name="ph:heartbeat-duotone"
-                class="text-primary-500 h-5 w-5"
+                class="text-primary-500 size-5"
               />
             </BaseIconBox>
             <div class="flex items-center gap-1 font-sans">
@@ -563,10 +571,14 @@ function useGaugePersonal() {
       <div class="col-span-6 sm:col-span-3">
         <div class="flex flex-col">
           <div class="mb-3 flex items-center gap-2">
-            <BaseIconBox size="md" class="bg-primary-500/10">
+            <BaseIconBox
+              size="md"
+              class="bg-primary-500/10"
+              color="none"
+            >
               <Icon
                 name="ph:drop-half-bottom-duotone"
-                class="text-primary-500 h-5 w-5"
+                class="text-primary-500 size-5"
               />
             </BaseIconBox>
             <div class="flex items-center gap-1 font-sans">
@@ -598,8 +610,12 @@ function useGaugePersonal() {
       <div class="col-span-6 sm:col-span-3">
         <div class="flex flex-col">
           <div class="mb-3 flex items-center gap-2">
-            <BaseIconBox size="md" class="bg-primary-500/10">
-              <Icon name="ph:gauge-duotone" class="text-primary-500 h-5 w-5" />
+            <BaseIconBox
+              size="md"
+              class="bg-primary-500/10"
+              color="none"
+            >
+              <Icon name="ph:gauge-duotone" class="text-primary-500 size-5" />
             </BaseIconBox>
             <div class="flex items-center gap-1 font-sans">
               <span class="text-muted-800 dark:text-muted-100 font-semibold">
@@ -636,7 +652,7 @@ function useGaugePersonal() {
             <div class="grid grid-cols-12 gap-6">
               <!-- Chart -->
               <div class="col-span-12 sm:col-span-6">
-                <BaseCard shape="curved" class="p-6">
+                <BaseCard rounded="lg" class="p-6">
                   <div class="mb-2 flex items-center justify-between">
                     <BaseHeading
                       as="h3"
@@ -653,7 +669,7 @@ function useGaugePersonal() {
                       size="xs"
                       class="text-muted-400 max-w-[240px]"
                     >
-                      <Icon name="ph:question-duotone" class="h-4 w-4" />
+                      <Icon name="ph:question-duotone" class="size-4" />
                       <span>
                         Your overall condition is very good. Make it even
                         better.
@@ -674,7 +690,7 @@ function useGaugePersonal() {
               </div>
               <!-- Chart -->
               <div class="col-span-12 sm:col-span-6">
-                <BaseCard shape="curved" class="p-6">
+                <BaseCard rounded="lg" class="p-6">
                   <div class="mb-2 flex items-center justify-between">
                     <BaseHeading
                       as="h3"
@@ -691,7 +707,7 @@ function useGaugePersonal() {
                       size="xs"
                       class="text-muted-400 max-w-[240px]"
                     >
-                      <Icon name="ph:question-duotone" class="h-4 w-4" />
+                      <Icon name="ph:question-duotone" class="size-4" />
                       <span>
                         Your energy seems a bit unstable. You can improve it.
                       </span>
@@ -708,7 +724,7 @@ function useGaugePersonal() {
               </div>
               <!-- Chart -->
               <div class="col-span-12 sm:col-span-6">
-                <BaseCard shape="curved" class="p-6">
+                <BaseCard rounded="lg" class="p-6">
                   <div class="mb-2 flex items-center justify-between">
                     <BaseHeading
                       as="h3"
@@ -725,7 +741,7 @@ function useGaugePersonal() {
                       size="xs"
                       class="text-muted-400 max-w-[240px]"
                     >
-                      <Icon name="ph:question-duotone" class="h-4 w-4" />
+                      <Icon name="ph:question-duotone" class="size-4" />
                       <span>
                         Your oxygen seems a bit unstable. You can improve it.
                       </span>
@@ -745,7 +761,7 @@ function useGaugePersonal() {
               </div>
               <!-- Chart -->
               <div class="col-span-12 sm:col-span-6">
-                <BaseCard shape="curved" class="p-6">
+                <BaseCard rounded="lg" class="p-6">
                   <div class="mb-2 flex items-center justify-between">
                     <BaseHeading
                       as="h3"
@@ -762,7 +778,7 @@ function useGaugePersonal() {
                       size="xs"
                       class="text-muted-400 max-w-[240px]"
                     >
-                      <Icon name="ph:question-duotone" class="h-4 w-4" />
+                      <Icon name="ph:question-duotone" class="size-4" />
                       <span>
                         Your overall progress is very good. Make it even better.
                       </span>
@@ -786,27 +802,19 @@ function useGaugePersonal() {
           <div class="ltablet:col-span-3 col-span-12 lg:col-span-3">
             <div class="flex flex-col gap-6">
               <!-- Widget -->
-              <BaseCard class="p-6" shape="curved">
+              <BaseCard class="p-6" rounded="lg">
                 <div class="flex w-full items-center justify-between">
-                  <DemoSearchCompact shape="curved" />
+                  <DemoSearchCompact rounded="lg" />
                 </div>
               </BaseCard>
               <!-- Widget -->
-              <BaseCard shape="curved" class="p-2">
+              <BaseCard rounded="lg" class="p-2">
                 <Calendar
                   :attributes="[
                     {
                       key: 'today',
-                      dot: true,
-                      bar: false,
-                      content: 'Today',
-                      customData: {},
-                      event: {},
-                      hashcode: 'today',
-                      highlight: false,
+                      highlight: true,
                       order: 0,
-                      pinPage: false,
-                      popover: {},
                       dates: [new Date()],
                     },
                   ]"

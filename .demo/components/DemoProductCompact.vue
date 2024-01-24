@@ -6,14 +6,14 @@ const props = withDefaults(
     icon?: string
     image: string
     value?: number
-    shape?: 'straight' | 'rounded' | 'curved'
+    rounded?: 'none' | 'sm' | 'md' | 'lg'
   }>(),
   {
     value: 0,
     icon: undefined,
     title: undefined,
     text: undefined,
-    shape: 'rounded',
+    rounded: 'sm',
   },
 )
 </script>
@@ -24,7 +24,7 @@ const props = withDefaults(
       v-if="props.icon"
       class="absolute -start-2 -top-2 flex items-center justify-center"
     >
-      <Icon :name="props.icon" class="text-muted-400 h-6 w-6" />
+      <Icon :name="props.icon" class="text-muted-400 size-6" />
     </div>
     <div class="absolute -top-2 end-0 flex items-center justify-center">
       <BaseHeading
@@ -43,10 +43,10 @@ const props = withDefaults(
           class="relative z-10 mx-auto max-w-[100px]"
           :src="props.image"
           :alt="props.title"
-        />
+        >
         <div
-          class="bg-primary-500/10 absolute start-1/2 top-1/2 h-20 w-20 -translate-x-1/2 -translate-y-1/2 rounded-full transition-transform duration-300 group-hover:scale-150"
-        ></div>
+          class="bg-primary-500/10 absolute start-1/2 top-1/2 size-20 -translate-x-1/2 -translate-y-1/2 rounded-full transition-transform duration-300 group-hover:scale-150"
+        />
       </div>
     </div>
     <div class="text-center">
@@ -68,7 +68,7 @@ const props = withDefaults(
         class="w-full"
         color="primary"
         icon="lucide:shopping-cart"
-        :shape="props.shape"
+        :rounded="props.rounded"
       >
         <span>Add to Cart</span>
       </BaseButton>

@@ -23,10 +23,14 @@ const props = withDefaults(
       >
         {{ props.label }}
       </BaseHeading>
-      <BaseText v-if="props.sublabel" size="xs" class="text-muted-400">
+      <BaseText
+        v-if="props.sublabel"
+        size="xs"
+        class="text-muted-400"
+      >
         {{ props.sublabel }}
       </BaseText>
     </legend>
-    <slot></slot>
+    <slot />
   </fieldset>
 </template>

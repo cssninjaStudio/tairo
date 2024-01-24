@@ -46,7 +46,7 @@ function useDemoScatter() {
     },
   }
 
-  const series = ref([
+  const series = shallowRef([
     {
       name: 'Team 1',
       data: generateDayWiseTimeSeries(
@@ -107,13 +107,13 @@ function useDemoScatter() {
   function generateDayWiseTimeSeries(
     baseval: number,
     count: number,
-    yrange: { min: number; max: number },
+    yrange: { min: number, max: number },
   ) {
     let i = 0
     const series = []
     while (i < count) {
-      const y =
-        Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min
+      const y
+        = Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min
 
       series.push([baseval, y])
       baseval += 86400000

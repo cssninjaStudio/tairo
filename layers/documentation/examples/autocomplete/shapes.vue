@@ -1,34 +1,42 @@
 <template>
-  <div class="grid gap-6 md:max-w-lg md:grid-cols-2">
+  <div class="grid gap-6 md:max-w-3xl md:grid-cols-3">
     <BaseAutocomplete
       v-model="fields.first"
       :items="frameworks"
-      shape="straight"
-      label="Straight autocomplete"
+      rounded="none"
+      label="Rounded: none"
       placeholder="Ex: javascript"
     />
 
     <BaseAutocomplete
       v-model="fields.second"
       :items="frameworks"
-      shape="rounded"
-      label="Rounded autocomplete"
+      rounded="sm"
+      label="Rounded: sm"
       placeholder="Ex: javascript"
     />
 
     <BaseAutocomplete
-      v-model="fields.thrid"
+      v-model="fields.third"
       :items="frameworks"
-      shape="curved"
-      label="Curved autocomplete"
+      rounded="md"
+      label="Rounded: md"
       placeholder="Ex: javascript"
     />
 
     <BaseAutocomplete
       v-model="fields.fourth"
       :items="frameworks"
-      shape="full"
-      label="Full autocomplete"
+      rounded="lg"
+      label="Rounded: lg"
+      placeholder="Ex: javascript"
+    />
+
+    <BaseAutocomplete
+      v-model="fields.fifth"
+      :items="frameworks"
+      rounded="full"
+      label="Rounded: full"
       placeholder="Ex: javascript"
     />
   </div>
@@ -38,8 +46,9 @@
 const fields = reactive({
   first: '',
   second: '',
-  thrid: '',
+  third: '',
   fourth: '',
+  fifth: '',
 })
 
 const frameworks = ref(['Javascript', 'Nuxt', 'Vue.js', 'React.js', 'Angular', 'Alpine.js'])

@@ -67,13 +67,13 @@ export function useCollapse() {
 
   const menuItems = computed(() => {
     if (
-      app.tairo.collapse?.navigation?.enabled === false ||
-      app.tairo.collapse?.navigation?.items?.length === 0
+      (app.tairo?.collapse?.navigation?.enabled as boolean) === false
+      || app.tairo?.collapse?.navigation?.items?.length === 0
     ) {
       return []
     }
-    return app.tairo.collapse?.navigation?.items?.map(
-      (navigation) =>
+    return app.tairo?.collapse?.navigation?.items?.map(
+      navigation =>
         <TairoCollapseResolvedConfig>{
           ...navigation,
           position: navigation.position ?? 'start',
@@ -85,11 +85,11 @@ export function useCollapse() {
   const isMobileOpen = useState('collapse-mobile-open', () => false)
 
   const header = computed(() => {
-    return app.tairo.collapse?.navigation?.header
+    return app.tairo?.collapse?.navigation?.header
   })
 
   const footer = computed(() => {
-    return app.tairo.collapse?.navigation?.footer
+    return app.tairo?.collapse?.navigation?.footer
   })
 
   function toggle() {
@@ -97,12 +97,13 @@ export function useCollapse() {
     const { lg } = useTailwindBreakpoints()
     if (lg.value) {
       isOpen.value = !isOpen.value
-    } else {
+    }
+    else {
       isMobileOpen.value = !isMobileOpen.value
     }
   }
 
-  if (process.client) {
+  if (import.meta.client) {
     const route = useRoute()
     const { lg, xl } = useTailwindBreakpoints()
     watch(lg, (isLg) => {

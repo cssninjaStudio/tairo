@@ -218,29 +218,29 @@ const videos = [
         </span>
         <div class="flex items-center justify-center gap-2 md:justify-start">
           <BaseButtonIcon small>
-            <Icon name="lucide:plus" class="h-4 w-4" />
+            <Icon name="lucide:plus" class="size-4" />
           </BaseButtonIcon>
           <BaseAvatar
             size="xs"
-            shape="straight"
+            rounded="none"
             mask="blob"
             src="/img/avatars/10.svg"
           />
           <BaseAvatar
             size="xs"
-            shape="straight"
+            rounded="none"
             mask="blob"
             src="/img/avatars/8.svg"
           />
           <BaseAvatar
             size="xs"
-            shape="straight"
+            rounded="none"
             mask="blob"
             src="/img/avatars/5.svg"
           />
           <BaseAvatar
             size="xs"
-            shape="straight"
+            rounded="none"
             mask="blob"
             src="/img/avatars/16.svg"
           />
@@ -260,25 +260,25 @@ const videos = [
         >
           <div class="flex h-full flex-col">
             <div
-              class="bg-muted-200 dark:bg-muted-800 group relative h-full w-full overflow-hidden rounded-2xl"
+              class="bg-muted-200 dark:bg-muted-800 group relative size-full overflow-hidden rounded-2xl"
             >
               <img
                 :src="video.cover"
                 :alt="video.title"
                 class="w-full object-cover object-center"
-              />
+              >
               <div
                 class="absolute inset-x-0 bottom-0 z-10 h-3/5 w-full bg-gradient-to-t from-black transition-all duration-500 ease-in-out group-hover:h-full"
-              ></div>
+              />
               <div
-                class="absolute inset-0 z-20 flex h-full w-full flex-col justify-between"
+                class="absolute inset-0 z-20 flex size-full flex-col justify-between"
               >
                 <div class="ptablet:p-10 p-6">
                   <NuxtLink
                     to="#"
-                    class="group-hover:border-primary-500 text-muted-300 group-hover:text-primary-500 shadow-muted-300/30 dark:shadow-muted-900/20 flex h-14 w-14 items-center justify-center rounded-full border-2 border-transparent bg-white shadow-2xl transition-colors duration-300"
+                    class="group-hover:border-primary-500 text-muted-300 group-hover:text-primary-500 shadow-muted-300/30 dark:shadow-muted-900/20 flex size-14 items-center justify-center rounded-full border-2 border-transparent bg-white shadow-2xl transition-colors duration-300"
                   >
-                    <Icon name="ic:round-play-arrow" class="h-7 w-7" />
+                    <Icon name="ic:round-play-arrow" class="size-7" />
                   </NuxtLink>
                 </div>
                 <div class="ptablet:p-10 p-6">
@@ -318,7 +318,11 @@ const videos = [
                       </BaseParagraph>
                     </div>
                     <div class="ms-auto">
-                      <BaseTag color="primary" shape="full" size="sm">
+                      <BaseTag
+                        color="primary"
+                        rounded="full"
+                        size="sm"
+                      >
                         <span>{{ video.category }}</span>
                       </BaseTag>
                     </div>
@@ -340,25 +344,25 @@ const videos = [
               >
                 <div class="group flex h-full flex-col">
                   <div
-                    class="bg-muted-200 dark:bg-muted-800 relative h-full w-full overflow-hidden rounded-2xl"
+                    class="bg-muted-200 dark:bg-muted-800 relative size-full overflow-hidden rounded-2xl"
                   >
                     <img
                       :src="video.cover"
                       :alt="video.title"
                       class="w-full object-cover object-center"
-                    />
+                    >
                     <div
                       class="absolute inset-x-0 bottom-0 z-10 h-3/5 w-full bg-gradient-to-t from-black transition-all duration-500 ease-in-out group-hover:h-full"
-                    ></div>
+                    />
                     <div
-                      class="absolute inset-0 z-20 flex h-full w-full flex-col justify-between"
+                      class="absolute inset-0 z-20 flex size-full flex-col justify-between"
                     >
                       <div class="p-4">
                         <NuxtLink
                           to="#"
-                          class="group-hover:border-primary-500 text-muted-300 group-hover:text-primary-500 shadow-muted-300/30 dark:shadow-muted-900/20 flex h-10 w-10 items-center justify-center rounded-full border-2 border-transparent bg-white shadow-2xl transition-colors duration-300"
+                          class="group-hover:border-primary-500 text-muted-300 group-hover:text-primary-500 shadow-muted-300/30 dark:shadow-muted-900/20 flex size-10 items-center justify-center rounded-full border-2 border-transparent bg-white shadow-2xl transition-colors duration-300"
                         >
-                          <Icon name="ic:round-play-arrow" class="h-5 w-5" />
+                          <Icon name="ic:round-play-arrow" class="size-5" />
                         </NuxtLink>
                       </div>
                       <div class="p-4">
@@ -400,7 +404,11 @@ const videos = [
                             </BaseParagraph>
                           </div>
                           <div class="ms-auto">
-                            <BaseTag color="primary" shape="full" size="sm">
+                            <BaseTag
+                              color="primary"
+                              rounded="full"
+                              size="sm"
+                            >
                               <span>{{ video.category }}</span>
                             </BaseTag>
                           </div>
@@ -444,8 +452,8 @@ const videos = [
         <div
           class="xs:mt-2 flex items-center justify-center gap-2 md:justify-start"
         >
-          <BaseButton small shape="full">
-            <Icon name="lucide:video" class="h-4 w-4" />
+          <BaseButton small rounded="full">
+            <Icon name="lucide:video" class="size-4" />
             <span>Upload</span>
           </BaseButton>
         </div>
@@ -468,19 +476,19 @@ const videos = [
               :src="video.cover"
               :alt="video.title"
               class="w-full object-cover object-center"
-            />
+            >
             <div
               class="absolute inset-x-0 bottom-0 z-10 h-3/5 w-full bg-gradient-to-t from-black transition-all duration-500 ease-in-out group-hover:h-full"
-            ></div>
+            />
             <div
               class="absolute inset-0 z-20 flex w-full flex-col justify-between"
             >
               <div class="p-4">
                 <NuxtLink
                   to="#"
-                  class="group-hover:border-primary-500 text-muted-300 group-hover:text-primary-500 shadow-muted-300/30 dark:shadow-muted-900/20 flex h-10 w-10 items-center justify-center rounded-full border-2 border-transparent bg-white shadow-2xl transition-colors duration-300"
+                  class="group-hover:border-primary-500 text-muted-300 group-hover:text-primary-500 shadow-muted-300/30 dark:shadow-muted-900/20 flex size-10 items-center justify-center rounded-full border-2 border-transparent bg-white shadow-2xl transition-colors duration-300"
                 >
-                  <Icon name="ic:round-play-arrow" class="h-5 w-5" />
+                  <Icon name="ic:round-play-arrow" class="size-5" />
                 </NuxtLink>
               </div>
               <div class="p-4">
@@ -521,7 +529,11 @@ const videos = [
                     </BaseParagraph>
                   </div>
                   <div class="ms-auto">
-                    <BaseTag color="primary" shape="full" size="sm">
+                    <BaseTag
+                      color="primary"
+                      rounded="full"
+                      size="sm"
+                    >
                       <span>{{ video.category }}</span>
                     </BaseTag>
                   </div>
@@ -535,8 +547,8 @@ const videos = [
 
     <!-- Load more -->
     <div class="my-16 flex items-center justify-center">
-      <BaseButton shape="full" color="default">
-        <Icon name="ph:dots-nine-bold" class="h-4 w-4" />
+      <BaseButton rounded="full" color="default">
+        <Icon name="ph:dots-nine-bold" class="size-4" />
         <span>Load more</span>
       </BaseButton>
     </div>

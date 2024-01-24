@@ -1,5 +1,5 @@
 export default defineEventHandler(async () => {
-  const data = [
+  return [
     {
       id: 13,
       picture: '/demo/avatars/13.jpg',
@@ -654,6 +654,4 @@ export default defineEventHandler(async () => {
       ],
     },
   ]
-
-  return data
 })

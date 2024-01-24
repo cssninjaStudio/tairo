@@ -23,13 +23,13 @@ const props = withDefaults(
     ]"
   >
     <div
-      class="absolute -bottom-5 -end-5 h-[70px] w-[70px] rounded-full bg-white opacity-30 dark:opacity-10"
-    ></div>
+      class="absolute -bottom-5 -end-5 size-[70px] rounded-full bg-white opacity-30 dark:opacity-10"
+    />
     <div class="flex items-center justify-between">
       <div>
         <span>
           <svg
-            class="h-10 w-10"
+            class="size-10"
             :class="props.active ? 'text-white' : 'text-primary-500'"
             width="32"
             height="32"

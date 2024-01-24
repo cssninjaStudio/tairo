@@ -1,5 +1,5 @@
 <template>
-  <BaseProse shape="rounded" class="prose-md">
+  <BaseProse rounded="md" class="prose-md">
     <h1>Typography plugin</h1>
 
     <p class="lead">
@@ -74,7 +74,7 @@
       .
     </p>
 
-    <hr />
+    <hr>
 
     <h2>What to expect from here on out</h2>
 
@@ -124,7 +124,7 @@
       <img
         src="https://images.unsplash.com/photo-1556740758-90de374c12ad?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1000&amp;q=80"
         alt=""
-      />
+      >
 
       <figcaption>
         Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece

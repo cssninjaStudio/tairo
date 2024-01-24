@@ -13,50 +13,66 @@ icon:
 
 ::doc-component-demo
 ---
-title: Straight table
+title: Rounded:none
 demo: '#examples/table/straight.vue'
 ---
-Tables can have different shapes. Use the `shape` prop to change the table's shape.
+Tables can have different radius factors. Use the `rounded` prop to change the table's radius.
 ::
 
 ::doc-component-demo
 ---
-title: Rounded table
+title: Rounded:sm
 demo: '#examples/table/rounded.vue'
 ---
-Tables can have different shapes. Use the `shape` prop to change the table's shape.
+Tables can have different radius factors. Use the `rounded` prop to change the table's radius.
 ::
 
 ::doc-component-demo
 ---
-title: Curved table
+title: Rounded:md
+demo: '#examples/table/smooth.vue'
+---
+Tables can have different radius factors. Use the `rounded` prop to change the table's radius.
+::
+
+::doc-component-demo
+---
+title: Rounded:lg
 demo: '#examples/table/curved.vue'
 ---
-Tables can have different shapes. Use the `shape` prop to change the table's shape.
+Tables can have different radius factors. Use the `rounded` prop to change the table's radius.
 ::
 
 ::doc-component-demo
 ---
-title: Straight media
+title: Media:none
 demo: '#examples/table/media-straight.vue'
 ---
-Tables can have all sorts of media. Use the `shape` prop to change the table's shape.
+Tables can have different radius factors. Use the `rounded` prop to change the table's radius.
 ::
 
 ::doc-component-demo
 ---
-title: Rounded media
+title: Media:sm
 demo: '#examples/table/media-rounded.vue'
 ---
-Tables can have all sorts of media. Use the `shape` prop to change the table's shape.
+Tables can have different radius factors. Use the `rounded` prop to change the table's radius.
 ::
 
 ::doc-component-demo
 ---
-title: Curved media
+title: Media:md
+demo: '#examples/table/media-smooth.vue'
+---
+Tables can have different radius factors. Use the `rounded` prop to change the table's radius.
+::
+
+::doc-component-demo
+---
+title: Media:lg
 demo: '#examples/table/media-curved.vue'
 ---
-Tables can have all sorts of media. Use the `shape` prop to change the table's shape.
+Tables can have different radius factors. Use the `rounded` prop to change the table's radius.
 ::
 
 :doc-component-meta{name="TairoTable"}

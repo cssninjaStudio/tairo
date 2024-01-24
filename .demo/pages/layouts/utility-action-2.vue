@@ -27,7 +27,12 @@ definePageMeta({
               badge-src="/img/stacks/reactjs.svg"
             />
             <div class="mx-auto mb-4 max-w-xs text-center">
-              <BaseHeading as="h2" size="md" weight="medium" class="mt-4">
+              <BaseHeading
+                as="h2"
+                size="md"
+                weight="medium"
+                class="mt-4"
+              >
                 Kendra W. has invited you to the
                 <span class="text-primary-500">Banking Solution Website</span>
                 project.
@@ -77,14 +82,23 @@ definePageMeta({
                 </BaseText>
               </div>
               <div class="mt-6 flex items-center justify-between gap-2">
-                <BaseButton class="w-full">Decline</BaseButton>
-                <BaseButton color="primary" class="w-full">Accept</BaseButton>
+                <BaseButton class="w-full">
+                  Decline
+                </BaseButton>
+                <BaseButton color="primary" class="w-full">
+                  Accept
+                </BaseButton>
               </div>
             </div>
           </div>
           <div>
             <div class="flex flex-col p-8">
-              <BaseHeading tag="h2" size="md" weight="medium" class="mt-4">
+              <BaseHeading
+                tag="h2"
+                size="md"
+                weight="medium"
+                class="mt-4"
+              >
                 Additional Instructions
               </BaseHeading>
               <BaseText
@@ -98,15 +112,19 @@ definePageMeta({
                 <ul class="space-y-6">
                   <li class="flex gap-3">
                     <div
-                      class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 shadow-muted-300/30 dark:shadow-muted-800/20 flex h-9 w-9 items-center justify-center rounded-full border bg-white shadow-xl"
+                      class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 shadow-muted-300/30 dark:shadow-muted-800/20 flex size-9 items-center justify-center rounded-full border bg-white shadow-xl"
                     >
                       <Icon
                         name="lucide:check"
-                        class="text-success-500 h-4 w-4"
+                        class="text-success-500 size-4"
                       />
                     </div>
                     <div>
-                      <BaseHeading as="h3" size="sm" weight="medium">
+                      <BaseHeading
+                        as="h3"
+                        size="sm"
+                        weight="medium"
+                      >
                         Project Summary
                       </BaseHeading>
                       <BaseText
@@ -120,15 +138,19 @@ definePageMeta({
                   </li>
                   <li class="flex gap-3">
                     <div
-                      class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 shadow-muted-300/30 dark:shadow-muted-800/20 flex h-9 w-9 items-center justify-center rounded-full border bg-white shadow-xl"
+                      class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 shadow-muted-300/30 dark:shadow-muted-800/20 flex size-9 items-center justify-center rounded-full border bg-white shadow-xl"
                     >
                       <Icon
                         name="lucide:check"
-                        class="text-success-500 h-4 w-4"
+                        class="text-success-500 size-4"
                       />
                     </div>
                     <div>
-                      <BaseHeading as="h3" size="sm" weight="medium">
+                      <BaseHeading
+                        as="h3"
+                        size="sm"
+                        weight="medium"
+                      >
                         UI Review
                       </BaseHeading>
                       <BaseText
@@ -142,15 +164,19 @@ definePageMeta({
                   </li>
                   <li class="flex gap-3">
                     <div
-                      class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 shadow-muted-300/30 dark:shadow-muted-800/20 flex h-9 w-9 items-center justify-center rounded-full border bg-white shadow-xl"
+                      class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 shadow-muted-300/30 dark:shadow-muted-800/20 flex size-9 items-center justify-center rounded-full border bg-white shadow-xl"
                     >
                       <Icon
                         name="lucide:check"
-                        class="text-success-500 h-4 w-4"
+                        class="text-success-500 size-4"
                       />
                     </div>
                     <div>
-                      <BaseHeading as="h3" size="sm" weight="medium">
+                      <BaseHeading
+                        as="h3"
+                        size="sm"
+                        weight="medium"
+                      >
                         Schedule
                       </BaseHeading>
                       <BaseText

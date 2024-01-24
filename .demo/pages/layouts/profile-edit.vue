@@ -25,7 +25,12 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
             size="md"
           />
           <div class="">
-            <BaseHeading tag="h2" size="md" weight="medium" lead="none">
+            <BaseHeading
+              tag="h2"
+              size="md"
+              weight="medium"
+              lead="none"
+            >
               {{ data?.personalInfo.firstName }}
               {{ data?.personalInfo.lastName }}
             </BaseHeading>
@@ -42,7 +47,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 exact-active-class="!text-primary-500 !bg-primary-500/10"
                 class="text-muted-400 hover:text-muted-600 dark:hover:text-muted-200 hover:bg-muted-50 dark:hover:bg-muted-700/50 flex items-center gap-2 rounded-lg p-3 transition-colors duration-300"
               >
-                <Icon name="ph:user-duotone" class="h-4 w-4" />
+                <Icon name="ph:user-duotone" class="size-4" />
                 <span>General</span>
               </NuxtLink>
             </li>
@@ -52,7 +57,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 exact-active-class="!text-primary-500 !bg-primary-500/10"
                 class="text-muted-400 hover:text-muted-600 dark:hover:text-muted-200 hover:bg-muted-50 dark:hover:bg-muted-700/50 flex items-center gap-2 rounded-lg p-3 transition-colors duration-300"
               >
-                <Icon name="ph:buildings-duotone" class="h-4 w-4" />
+                <Icon name="ph:buildings-duotone" class="size-4" />
                 <span>Experience</span>
               </NuxtLink>
             </li>
@@ -62,7 +67,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 exact-active-class="!text-primary-500 !bg-primary-500/10"
                 class="text-muted-400 hover:text-muted-600 dark:hover:text-muted-200 hover:bg-muted-50 dark:hover:bg-muted-700/50 flex items-center gap-2 rounded-lg p-3 transition-colors duration-300"
               >
-                <Icon name="ph:sketch-logo-duotone" class="h-4 w-4" />
+                <Icon name="ph:sketch-logo-duotone" class="size-4" />
                 <span>Skills & Tools</span>
               </NuxtLink>
             </li>
@@ -72,7 +77,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 exact-active-class="!text-primary-500 !bg-primary-500/10"
                 class="text-muted-400 hover:text-muted-600 dark:hover:text-muted-200 hover:bg-muted-50 dark:hover:bg-muted-700/50 flex items-center gap-2 rounded-lg p-3 transition-colors duration-300"
               >
-                <Icon name="ph:gear-six-duotone" class="h-4 w-4" />
+                <Icon name="ph:gear-six-duotone" class="size-4" />
                 <span>Settings</span>
               </NuxtLink>
             </li>

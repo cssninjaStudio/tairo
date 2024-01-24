@@ -1,19 +1,31 @@
 <template>
-  <TairoTable shape="rounded">
+  <TairoTable rounded="sm">
     <template #header>
       <TairoTableHeading uppercase class="p-4">
         <div class="flex items-center">
-          <BaseCheckbox v-model="selectAll" shape="rounded" class="text-primary-500" />
+          <BaseCheckbox
+            v-model="selectAll"
+            rounded="sm"
+            color="primary"
+          />
         </div>
       </TairoTableHeading>
 
-      <TairoTableHeading uppercase>Collaborator</TairoTableHeading>
+      <TairoTableHeading uppercase>
+        Collaborator
+      </TairoTableHeading>
 
-      <TairoTableHeading uppercase>Expertise</TairoTableHeading>
+      <TairoTableHeading uppercase>
+        Expertise
+      </TairoTableHeading>
 
-      <TairoTableHeading uppercase>Rate</TairoTableHeading>
+      <TairoTableHeading uppercase>
+        Rate
+      </TairoTableHeading>
 
-      <TairoTableHeading uppercase>Status</TairoTableHeading>
+      <TairoTableHeading uppercase>
+        Status
+      </TairoTableHeading>
 
       <TairoTableHeading uppercase class="p-4">
         <span class="sr-only">View</span>
@@ -26,8 +38,8 @@
           <BaseCheckbox
             v-model="selected"
             :value="`table-2-${member.id}`"
-            shape="rounded"
-            class="text-primary-500"
+            rounded="sm"
+            color="primary"
           />
         </div>
       </TairoTableCell>
@@ -46,8 +58,8 @@
         <BaseTag
           v-if="member.status === 'Available'"
           color="success"
-          flavor="pastel"
-          shape="full"
+          variant="pastel"
+          rounded="full"
           class="font-medium"
         >
           {{ member.status }}
@@ -56,8 +68,8 @@
         <BaseTag
           v-else-if="member.status === 'New'"
           color="info"
-          flavor="pastel"
-          shape="full"
+          variant="pastel"
+          rounded="full"
           class="font-medium"
         >
           {{ member.status }}
@@ -66,8 +78,8 @@
         <BaseTag
           v-else-if="member.status === 'Hired'"
           color="warning"
-          flavor="pastel"
-          shape="full"
+          variant="pastel"
+          rounded="full"
           class="font-medium"
         >
           {{ member.status }}

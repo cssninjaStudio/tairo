@@ -11,7 +11,7 @@ icon:
 
 ::doc-component-demo
 ---
-title: Custom radios
+title: Headless
 demo: '#examples/radio-custom/base.vue'
 ---
 Create custom radio buttons using the headless radio element and designing yourself the exterior look of it.

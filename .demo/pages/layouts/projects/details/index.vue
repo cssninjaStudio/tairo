@@ -40,14 +40,18 @@ const { data, pending, error, refresh } = await useFetch(
     query,
   },
 )
-const selectedProject = ref('')
+const selectedProject = ref<NonNullable<typeof data.value>['data'][0]>()
 </script>
 
 <template>
   <div class="mx-auto max-w-2xl">
     <div v-if="!pending && data?.recent.length === 0">
       <div class="bg-muted-200 dark:bg-muted-800/60 rounded-xl p-6">
-        <BaseHeading tag="h4" size="lg" weight="medium">
+        <BaseHeading
+          tag="h4"
+          size="lg"
+          weight="medium"
+        >
           No projects
         </BaseHeading>
         <BaseParagraph size="sm" class="text-muted-400">
@@ -59,9 +63,13 @@ const selectedProject = ref('')
       <div class="my-6 text-center">
         <Icon
           name="ph:square-half-duotone"
-          class="text-primary-500 mx-auto mb-2 h-10 w-10"
+          class="text-primary-500 mx-auto mb-2 size-10"
         />
-        <BaseHeading tag="h4" size="2xl" weight="medium">
+        <BaseHeading
+          tag="h4"
+          size="2xl"
+          weight="medium"
+        >
           Your recent projects
         </BaseHeading>
         <BaseParagraph size="sm" class="text-muted-400">
@@ -71,8 +79,8 @@ const selectedProject = ref('')
           <BaseAutocomplete
             v-model="selectedProject"
             :items="data?.data"
-            :display-value="(item: any) => item.name"
-            shape="curved"
+            :display-value="(item) => item.name"
+            rounded="lg"
             icon="lucide:search"
             placeholder="Search..."
             label="Search projects"
@@ -104,6 +112,11 @@ const selectedProject = ref('')
                     text: `${item.customer.name} | ${item.customer.text}`,
                     media: item.customer.logo,
                   }"
+                  :properties="{
+                    label: 'name',
+                    sublabel: 'text',
+                    media: 'media'
+                  }"
                   :selected="selected"
                 />
               </NuxtLink>
@@ -127,7 +140,7 @@ const selectedProject = ref('')
             :to="`/layouts/projects/details/${item.slug}`"
           >
             <BaseCard
-              shape="curved"
+              rounded="lg"
               elevated-hover
               class="group-hover:!border-primary-500 p-5"
             >
@@ -135,7 +148,7 @@ const selectedProject = ref('')
                 <BaseAvatar
                   :src="item.customer.logo"
                   size="sm"
-                  shape="full"
+                  rounded="full"
                   :data-nui-tooltip="item.name"
                   class="bg-muted-100 dark:bg-muted-700"
                 />
@@ -160,20 +173,20 @@ const selectedProject = ref('')
                     :key="stack.name"
                     :src="stack.icon"
                     size="xxs"
-                    shape="full"
+                    rounded="full"
                     :data-nui-tooltip="stack.name"
                     class="bg-muted-100 dark:bg-muted-700"
                   />
                 </div>
                 <div class="text-muted-400 flex items-center gap-4">
                   <div class="flex items-center gap-1 text-sm">
-                    <Icon name="ph:paperclip-duotone" class="h-4 w-4" />
+                    <Icon name="ph:paperclip-duotone" class="size-4" />
                     <span class="font-sans">
                       {{ item.files.length }}
                     </span>
                   </div>
                   <div class="flex items-center gap-1 text-sm">
-                    <Icon name="ph:users-duotone" class="h-4 w-4" />
+                    <Icon name="ph:users-duotone" class="size-4" />
                     <span class="font-sans">{{ item.team.length }}</span>
                   </div>
                 </div>

@@ -3,29 +3,47 @@
     <template #header>
       <TairoFlexTableHeading type="shrink">
         <div class="flex items-center">
-          <BaseCheckbox v-model="selectAll" shape="straight" class="text-primary-500" />
+          <BaseCheckbox
+            v-model="selectAll"
+            rounded="none"
+            color="primary"
+          />
         </div>
       </TairoFlexTableHeading>
 
-      <TairoFlexTableHeading type="grow">Member</TairoFlexTableHeading>
+      <TairoFlexTableHeading type="grow">
+        Member
+      </TairoFlexTableHeading>
 
-      <TairoFlexTableHeading type="stable">Expertise</TairoFlexTableHeading>
+      <TairoFlexTableHeading type="stable">
+        Expertise
+      </TairoFlexTableHeading>
 
-      <TairoFlexTableHeading type="stable">Rate</TairoFlexTableHeading>
+      <TairoFlexTableHeading type="stable">
+        Rate
+      </TairoFlexTableHeading>
 
-      <TairoFlexTableHeading type="stable">Status</TairoFlexTableHeading>
+      <TairoFlexTableHeading type="stable">
+        Status
+      </TairoFlexTableHeading>
 
-      <TairoFlexTableHeading type="stable">Actions</TairoFlexTableHeading>
+      <TairoFlexTableHeading type="stable">
+        Actions
+      </TairoFlexTableHeading>
     </template>
 
-    <TairoFlexTableRow v-for="member in team" :key="member.id" shape="straight">
+    <TairoFlexTableRow
+      v-for="member in team"
+      :key="member.id"
+      rounded="none"
+    >
       <TairoFlexTableCell type="shrink" data-content="Selection">
         <div class="flex items-center">
           <BaseCheckbox
             v-model="selected"
             :value="`checkbox-${member.id}`"
-            shape="straight"
-            class="text-primary-500"
+            rounded="none"
+            color="primary"
           />
         </div>
       </TairoFlexTableCell>
@@ -46,7 +64,11 @@
         </div>
       </TairoFlexTableCell>
 
-      <TairoFlexTableCell type="stable" data-content="Expertise" light>
+      <TairoFlexTableCell
+        type="stable"
+        data-content="Expertise"
+        light
+      >
         {{ member.expertise }}
       </TairoFlexTableCell>
 
@@ -58,8 +80,8 @@
         <BaseTag
           v-if="member.status === 'Available'"
           color="success"
-          flavor="pastel"
-          shape="full"
+          variant="pastel"
+          rounded="full"
           class="font-medium"
         >
           {{ member.status }}
@@ -68,8 +90,8 @@
         <BaseTag
           v-else-if="member.status === 'New'"
           color="info"
-          flavor="pastel"
-          shape="full"
+          variant="pastel"
+          rounded="full"
           class="font-medium"
         >
           {{ member.status }}
@@ -78,8 +100,8 @@
         <BaseTag
           v-else-if="member.status === 'Hired'"
           color="warning"
-          flavor="pastel"
-          shape="full"
+          variant="pastel"
+          rounded="full"
           class="font-medium"
         >
           {{ member.status }}
@@ -87,7 +109,12 @@
       </TairoFlexTableCell>
 
       <TairoFlexTableCell type="stable" data-content="Actions">
-        <BaseButton color="primary" flavor="outline" shape="straight" class="scale-90">
+        <BaseButton
+          color="primary"
+          variant="outline"
+          rounded="none"
+          class="scale-90"
+        >
           View
         </BaseButton>
       </TairoFlexTableCell>

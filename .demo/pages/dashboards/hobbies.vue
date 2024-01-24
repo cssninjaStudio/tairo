@@ -118,12 +118,12 @@ const popular = [
                 class="h-80 w-full object-cover object-center"
                 src="/img/illustrations/dashboards/hobbies/hobby-1.svg"
                 alt="Hobby cover"
+              >
+              <div
+                class="bg-muted-900 absolute inset-0 z-10 size-full opacity-0 transition-opacity duration-300 group-hover:opacity-50"
               />
               <div
-                class="bg-muted-900 absolute inset-0 z-10 h-full w-full opacity-0 transition-opacity duration-300 group-hover:opacity-50"
-              ></div>
-              <div
-                class="absolute inset-0 z-20 flex h-full w-full flex-col justify-between p-6"
+                class="absolute inset-0 z-20 flex size-full flex-col justify-between p-6"
               >
                 <div class="flex items-center justify-between">
                   <h3
@@ -133,7 +133,7 @@ const popular = [
                   </h3>
                   <Icon
                     name="eos-icons:bootstrapping"
-                    class="h-5 w-5 -translate-y-2 text-white opacity-0 transition-all delay-300 duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+                    class="size-5 -translate-y-2 text-white opacity-0 transition-all delay-300 duration-300 group-hover:translate-y-0 group-hover:opacity-100"
                   />
                 </div>
                 <div class="flex items-center justify-between">
@@ -144,7 +144,7 @@ const popular = [
                   </h3>
                   <Icon
                     name="lucide:arrow-right"
-                    class="h-4 w-4 translate-y-2 text-white opacity-0 transition-all delay-700 duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+                    class="size-4 translate-y-2 text-white opacity-0 transition-all delay-700 duration-300 group-hover:translate-y-0 group-hover:opacity-100"
                   />
                 </div>
               </div>
@@ -160,12 +160,12 @@ const popular = [
                 class="h-80 w-full object-cover object-center"
                 src="/img/illustrations/dashboards/hobbies/hobby-2.svg"
                 alt="Hobby cover"
+              >
+              <div
+                class="bg-muted-900 absolute inset-0 z-10 size-full opacity-0 transition-opacity duration-300 group-hover:opacity-50"
               />
               <div
-                class="bg-muted-900 absolute inset-0 z-10 h-full w-full opacity-0 transition-opacity duration-300 group-hover:opacity-50"
-              ></div>
-              <div
-                class="absolute inset-0 z-20 flex h-full w-full flex-col justify-between p-6"
+                class="absolute inset-0 z-20 flex size-full flex-col justify-between p-6"
               >
                 <div class="flex items-center justify-between">
                   <h3
@@ -175,7 +175,7 @@ const popular = [
                   </h3>
                   <Icon
                     name="fluent-emoji-high-contrast:wheel"
-                    class="h-5 w-5 -translate-y-2 text-white opacity-0 transition-all delay-300 duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+                    class="size-5 -translate-y-2 text-white opacity-0 transition-all delay-300 duration-300 group-hover:translate-y-0 group-hover:opacity-100"
                   />
                 </div>
                 <div class="flex items-center justify-between">
@@ -186,7 +186,7 @@ const popular = [
                   </h3>
                   <Icon
                     name="lucide:arrow-right"
-                    class="h-4 w-4 translate-y-2 text-white opacity-0 transition-all delay-700 duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+                    class="size-4 translate-y-2 text-white opacity-0 transition-all delay-700 duration-300 group-hover:translate-y-0 group-hover:opacity-100"
                   />
                 </div>
               </div>
@@ -202,12 +202,12 @@ const popular = [
                 class="h-80 w-full object-cover object-center"
                 src="/img/illustrations/dashboards/hobbies/hobby-3.svg"
                 alt="Hobby cover"
+              >
+              <div
+                class="bg-muted-900 absolute inset-0 z-10 size-full opacity-0 transition-opacity duration-300 group-hover:opacity-50"
               />
               <div
-                class="bg-muted-900 absolute inset-0 z-10 h-full w-full opacity-0 transition-opacity duration-300 group-hover:opacity-50"
-              ></div>
-              <div
-                class="absolute inset-0 z-20 flex h-full w-full flex-col justify-between p-6"
+                class="absolute inset-0 z-20 flex size-full flex-col justify-between p-6"
               >
                 <div class="flex items-center justify-between">
                   <h3
@@ -217,7 +217,7 @@ const popular = [
                   </h3>
                   <Icon
                     name="fa6-solid:compass"
-                    class="h-5 w-5 -translate-y-2 text-white opacity-0 transition-all delay-300 duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+                    class="size-5 -translate-y-2 text-white opacity-0 transition-all delay-300 duration-300 group-hover:translate-y-0 group-hover:opacity-100"
                   />
                 </div>
                 <div class="flex items-center justify-between">
@@ -228,7 +228,7 @@ const popular = [
                   </h3>
                   <Icon
                     name="lucide:arrow-right"
-                    class="h-4 w-4 translate-y-2 text-white opacity-0 transition-all delay-700 duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+                    class="size-4 translate-y-2 text-white opacity-0 transition-all delay-700 duration-300 group-hover:translate-y-0 group-hover:opacity-100"
                   />
                 </div>
               </div>
@@ -244,12 +244,12 @@ const popular = [
                 class="h-80 w-full object-cover object-center"
                 src="/img/illustrations/dashboards/hobbies/hobby-4.svg"
                 alt="Hobby cover"
+              >
+              <div
+                class="bg-muted-900 absolute inset-0 z-10 size-full opacity-0 transition-opacity duration-300 group-hover:opacity-50"
               />
               <div
-                class="bg-muted-900 absolute inset-0 z-10 h-full w-full opacity-0 transition-opacity duration-300 group-hover:opacity-50"
-              ></div>
-              <div
-                class="absolute inset-0 z-20 flex h-full w-full flex-col justify-between p-6"
+                class="absolute inset-0 z-20 flex size-full flex-col justify-between p-6"
               >
                 <div class="flex items-center justify-between">
                   <h3
@@ -259,7 +259,7 @@ const popular = [
                   </h3>
                   <Icon
                     name="mdi:pickaxe"
-                    class="h-5 w-5 -translate-y-2 text-white opacity-0 transition-all delay-300 duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+                    class="size-5 -translate-y-2 text-white opacity-0 transition-all delay-300 duration-300 group-hover:translate-y-0 group-hover:opacity-100"
                   />
                 </div>
                 <div class="flex items-center justify-between">
@@ -270,7 +270,7 @@ const popular = [
                   </h3>
                   <Icon
                     name="lucide:arrow-right"
-                    class="h-4 w-4 translate-y-2 text-white opacity-0 transition-all delay-700 duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+                    class="size-4 translate-y-2 text-white opacity-0 transition-all delay-700 duration-300 group-hover:translate-y-0 group-hover:opacity-100"
                   />
                 </div>
               </div>
@@ -300,14 +300,14 @@ const popular = [
               <BaseCard
                 v-for="(item, i) in trending"
                 :key="i"
-                shape="curved"
+                rounded="lg"
                 class="flex items-center gap-3 p-3"
               >
                 <div
-                  class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full"
+                  class="flex size-10 shrink-0 items-center justify-center rounded-full"
                   :class="getRandomColor()"
                 >
-                  <Icon :name="item.icon" class="h-5 w-5" />
+                  <Icon :name="item.icon" class="size-5" />
                 </div>
                 <div>
                   <BaseHeading
@@ -326,8 +326,12 @@ const popular = [
                   </BaseParagraph>
                 </div>
                 <div class="ms-auto flex items-center">
-                  <BaseButtonIcon shape="curved" muted class="scale-75">
-                    <Icon name="lucide:arrow-right" class="h-5 w-5" />
+                  <BaseButtonIcon
+                    rounded="lg"
+                    muted
+                    class="scale-75"
+                  >
+                    <Icon name="lucide:arrow-right" class="size-5" />
                   </BaseButtonIcon>
                 </div>
               </BaseCard>
@@ -357,14 +361,14 @@ const popular = [
               <BaseCard
                 v-for="(item, p) in popular"
                 :key="p"
-                shape="curved"
+                rounded="lg"
                 class="flex items-center gap-3 p-3"
               >
                 <div
-                  class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full"
+                  class="flex size-10 shrink-0 items-center justify-center rounded-full"
                   :class="getRandomColor()"
                 >
-                  <Icon :name="item.icon" class="h-5 w-5" />
+                  <Icon :name="item.icon" class="size-5" />
                 </div>
                 <div>
                   <BaseHeading
@@ -383,8 +387,12 @@ const popular = [
                   </BaseParagraph>
                 </div>
                 <div class="ms-auto flex items-center">
-                  <BaseButtonIcon shape="curved" muted class="scale-75">
-                    <Icon name="lucide:arrow-right" class="h-5 w-5" />
+                  <BaseButtonIcon
+                    rounded="lg"
+                    muted
+                    class="scale-75"
+                  >
+                    <Icon name="lucide:arrow-right" class="size-5" />
                   </BaseButtonIcon>
                 </div>
               </BaseCard>
@@ -396,27 +404,19 @@ const popular = [
       <div class="ltablet:col-span-4 col-span-12 lg:col-span-4">
         <div class="flex flex-col gap-6">
           <!-- Widget -->
-          <BaseCard class="p-6" shape="curved">
+          <BaseCard class="p-6" rounded="lg">
             <div class="flex w-full items-center justify-between">
-              <DemoSearchCompact shape="curved" />
+              <DemoSearchCompact rounded="lg" />
             </div>
           </BaseCard>
           <!-- Widget -->
-          <BaseCard shape="curved" class="p-4">
+          <BaseCard rounded="lg" class="p-4">
             <Calendar
               :attributes="[
                 {
                   key: 'today',
-                  dot: true,
-                  bar: false,
-                  content: 'Today',
-                  customData: {},
-                  event: {},
-                  hashcode: 'today',
-                  highlight: false,
+                  highlight: true,
                   order: 0,
-                  pinPage: false,
-                  popover: {},
                   dates: [new Date()],
                 },
               ]"
@@ -429,7 +429,7 @@ const popular = [
             />
           </BaseCard>
           <!-- Widget -->
-          <BaseCard class="p-6" shape="curved">
+          <BaseCard class="p-6" rounded="lg">
             <div class="mb-6">
               <BaseHeading
                 as="h3"
@@ -451,7 +451,7 @@ const popular = [
                   src="/img/illustrations/dashboards/hobbies/landscape-thumb-1.svg"
                   alt="Hello"
                   class="max-w-[48px]"
-                />
+                >
                 <div>
                   <BaseHeading
                     as="h4"
@@ -467,8 +467,12 @@ const popular = [
                   </BaseParagraph>
                 </div>
                 <div class="ms-auto flex items-center">
-                  <BaseButtonIcon shape="curved" muted class="scale-75">
-                    <Icon name="lucide:arrow-right" class="h-5 w-5" />
+                  <BaseButtonIcon
+                    rounded="lg"
+                    muted
+                    class="scale-75"
+                  >
+                    <Icon name="lucide:arrow-right" class="size-5" />
                   </BaseButtonIcon>
                 </div>
               </NuxtLink>
@@ -481,7 +485,7 @@ const popular = [
                   src="/img/illustrations/dashboards/hobbies/landscape-thumb-7.svg"
                   alt="Hello"
                   class="max-w-[48px]"
-                />
+                >
                 <div>
                   <BaseHeading
                     as="h4"
@@ -497,8 +501,12 @@ const popular = [
                   </BaseParagraph>
                 </div>
                 <div class="ms-auto flex items-center">
-                  <BaseButtonIcon shape="curved" muted class="scale-75">
-                    <Icon name="lucide:arrow-right" class="h-5 w-5" />
+                  <BaseButtonIcon
+                    rounded="lg"
+                    muted
+                    class="scale-75"
+                  >
+                    <Icon name="lucide:arrow-right" class="size-5" />
                   </BaseButtonIcon>
                 </div>
               </NuxtLink>
@@ -511,7 +519,7 @@ const popular = [
                   src="/img/illustrations/dashboards/hobbies/landscape-thumb-4.svg"
                   alt="Hello"
                   class="max-w-[48px]"
-                />
+                >
                 <div>
                   <BaseHeading
                     as="h4"
@@ -527,8 +535,12 @@ const popular = [
                   </BaseParagraph>
                 </div>
                 <div class="ms-auto flex items-center">
-                  <BaseButtonIcon shape="curved" muted class="scale-75">
-                    <Icon name="lucide:arrow-right" class="h-5 w-5" />
+                  <BaseButtonIcon
+                    rounded="lg"
+                    muted
+                    class="scale-75"
+                  >
+                    <Icon name="lucide:arrow-right" class="size-5" />
                   </BaseButtonIcon>
                 </div>
               </NuxtLink>

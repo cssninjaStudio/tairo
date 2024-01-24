@@ -48,7 +48,7 @@ function useDemoLine() {
     },
   }
 
-  const series = ref([
+  const series = shallowRef([
     {
       name: 'Sales',
       data: [105, 414, 357, 511, 497, 621, 695, 912, 748],

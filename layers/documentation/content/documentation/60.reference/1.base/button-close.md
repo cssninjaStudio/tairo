@@ -11,29 +11,76 @@ icon:
 
 ::doc-component-demo
 ---
-title: Buttons shapes
+title: Radius
 demo: '#examples/button-close/base.vue'
 ---
-Close buttons are a common part of any application. Close buttons can have different shapes using the `shape` prop.
+Close buttons are a common part of any application. Close buttons can have different radius factors using the `rounded` prop.
 :::doc-message{type="muted" icon="ion:shapes-outline"}
-Default shape of all :doc-linker{to="BaseButtonClose"} can be set in your `.app/app.config.ts`.
+Default props of all :doc-linker{to="BaseButtonClose"} can be set in your `.app/app.config.ts`.
 :::
 ::
 
 ::doc-component-demo
 ---
-title: Primary color
-demo: '#examples/button-close/primary.vue'
+title: Size
+demo: '#examples/button-close/size.vue'
+---
+ Close buttons can have different sizes using the `size` prop.
+::
+
+::doc-component-demo
+---
+title: Color:default
+demo: '#examples/button-close/default.vue'
+---
+Close buttons are a common part of any application. Close buttons can have different colors using the `color` prop.
+::
+
+::doc-component-demo
+---
+title: Color:muted
+demo: '#examples/button-close/muted.vue'
 ---
 Close buttons are a common part of any application. Close buttons can have different colors using the `color` prop.
 ::
 
 
+::doc-component-demo
+---
+title: Color:primary
+demo: '#examples/button-close/primary.vue'
+---
+Close buttons are a common part of any application. Close buttons can have different colors using the `color` prop.
+::
 
 ::doc-component-demo
 ---
-title: Muted color
-demo: '#examples/button-close/muted.vue'
+title: Color:info
+demo: '#examples/button-close/info.vue'
+---
+Close buttons are a common part of any application. Close buttons can have different colors using the `color` prop.
+::
+
+::doc-component-demo
+---
+title: Color:success
+demo: '#examples/button-close/success.vue'
+---
+Close buttons are a common part of any application. Close buttons can have different colors using the `color` prop.
+::
+
+::doc-component-demo
+---
+title: Color:warning
+demo: '#examples/button-close/warning.vue'
+---
+Close buttons are a common part of any application. Close buttons can have different colors using the `color` prop.
+::
+
+::doc-component-demo
+---
+title: Color:danger
+demo: '#examples/button-close/danger.vue'
 ---
 Close buttons are a common part of any application. Close buttons can have different colors using the `color` prop.
 ::

@@ -1,11 +1,11 @@
 <template>
   <div>
     <!-- Content -->
-    <slot name="image"></slot>
+    <slot name="image" />
     <div class="mt-4 text-center">
-      <slot></slot>
+      <slot />
       <div class="mt-4">
-        <slot name="action"></slot>
+        <slot name="action" />
       </div>
     </div>
   </div>

@@ -48,8 +48,8 @@ const filteredPeople = computed(() =>
   query.value === ''
     ? people
     : people.filter((person) => {
-        return person.name.toLowerCase().includes(query.value.toLowerCase())
-      }),
+      return person.name.toLowerCase().includes(query.value.toLowerCase())
+    }),
 )
 </script>
 
@@ -65,15 +65,19 @@ const filteredPeople = computed(() =>
       </h2>
       <button
         type="button"
-        class="text-muted-400 hover:bg-muted-100 hover:text-muted-600 dark:hover:bg-muted-700 flex h-10 w-10 items-center justify-center rounded-full transition-colors duration-300 dark:hover:text-white"
+        class="text-muted-400 hover:bg-muted-100 hover:text-muted-600 dark:hover:bg-muted-700 flex size-10 items-center justify-center rounded-full transition-colors duration-300 dark:hover:text-white"
         @click="close"
       >
-        <Icon name="feather:chevron-left" class="h-6 w-6" />
+        <Icon name="feather:chevron-left" class="size-6" />
       </button>
     </div>
 
     <div class="relative h-[calc(100%_-_64px)] w-full px-10">
-      <Combobox v-model="selectedPerson" class="relative z-10 mt-5" as="div">
+      <Combobox
+        v-model="selectedPerson"
+        class="relative z-10 mt-5"
+        as="div"
+      >
         <div class="group relative">
           <ComboboxInput
             class="border-muted-300 text-muted-600 focus:border-primary-500 focus:shadow-muted-300/50 dark:border-muted-700 dark:bg-muted-800 dark:text-muted-200 dark:placeholder:text-muted-600 dark:focus:border-muted-600 dark:focus:shadow-muted-800/50 h-12 w-full rounded-lg border bg-white py-3 pe-4 ps-10 font-sans text-sm leading-5 !outline-none transition duration-300 focus:shadow-lg"
@@ -82,9 +86,9 @@ const filteredPeople = computed(() =>
             @change="query = $event.target.value"
           />
           <div
-            class="text-muted-400 group-focus-within:text-primary-500 absolute start-0 top-0 flex h-12 w-12 items-center justify-center transition-colors duration-300"
+            class="text-muted-400 group-focus-within:text-primary-500 absolute start-0 top-0 flex size-12 items-center justify-center transition-colors duration-300"
           >
-            <Icon name="feather:search" class="h-5 w-5" />
+            <Icon name="feather:search" class="size-5" />
           </div>
         </div>
 
@@ -116,13 +120,13 @@ const filteredPeople = computed(() =>
                 class="hover:bg-muted-100 dark:hover:bg-muted-700 flex cursor-pointer items-center rounded-lg p-2 transition-colors duration-300"
               >
                 <div
-                  class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
+                  class="relative inline-flex size-9 items-center justify-center rounded-full"
                 >
                   <img
                     :src="person.avatar"
                     class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                     alt=""
-                  />
+                  >
                 </div>
                 <div class="ms-3">
                   <h6
@@ -152,13 +156,13 @@ const filteredPeople = computed(() =>
           <li>
             <NuxtLink to="#" class="flex items-center">
               <div
-                class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
+                class="relative inline-flex size-9 items-center justify-center rounded-full"
               >
                 <img
                   src="/img/avatars/3.svg"
                   class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                   alt=""
-                />
+                >
               </div>
               <div class="ms-3">
                 <h6
@@ -176,13 +180,13 @@ const filteredPeople = computed(() =>
           <li>
             <NuxtLink to="#" class="flex items-center">
               <div
-                class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
+                class="relative inline-flex size-9 items-center justify-center rounded-full"
               >
                 <img
                   src="/img/avatars/18.svg"
                   class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                   alt=""
-                />
+                >
               </div>
               <div class="ms-3">
                 <h6
@@ -200,13 +204,13 @@ const filteredPeople = computed(() =>
           <li>
             <NuxtLink to="#" class="flex items-center">
               <div
-                class="relative inline-flex h-9 w-9 items-center justify-center rounded-full"
+                class="relative inline-flex size-9 items-center justify-center rounded-full"
               >
                 <img
                   src="/img/avatars/11.svg"
                   class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                   alt=""
-                />
+                >
               </div>
               <div class="ms-3">
                 <h6
@@ -235,7 +239,7 @@ const filteredPeople = computed(() =>
           <li>
             <NuxtLink to="#" class="flex items-center">
               <div
-                class="dark:text-muted-50 relative inline-flex h-10 w-10 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-500"
+                class="dark:text-muted-50 relative inline-flex size-10 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-500"
               >
                 <Icon name="feather:chrome" class="" />
               </div>
@@ -245,7 +249,9 @@ const filteredPeople = computed(() =>
                 >
                   Browser Support
                 </h6>
-                <p class="text-muted-400 font-sans text-xs">Blog article</p>
+                <p class="text-muted-400 font-sans text-xs">
+                  Blog article
+                </p>
               </div>
             </NuxtLink>
           </li>
@@ -253,7 +259,7 @@ const filteredPeople = computed(() =>
           <li>
             <NuxtLink to="#" class="flex items-center">
               <div
-                class="bg-warning-100 text-warning-600 dark:bg-warning-500 dark:text-muted-50 relative inline-flex h-10 w-10 items-center justify-center rounded-full"
+                class="bg-warning-100 text-warning-600 dark:bg-warning-500 dark:text-muted-50 relative inline-flex size-10 items-center justify-center rounded-full"
               >
                 <Icon name="feather:tv" class="" />
               </div>
@@ -263,7 +269,9 @@ const filteredPeople = computed(() =>
                 >
                   Twitch new API
                 </h6>
-                <p class="text-muted-400 font-sans text-xs">Blog article</p>
+                <p class="text-muted-400 font-sans text-xs">
+                  Blog article
+                </p>
               </div>
             </NuxtLink>
           </li>
@@ -271,7 +279,7 @@ const filteredPeople = computed(() =>
           <li>
             <NuxtLink to="#" class="flex items-center">
               <div
-                class="bg-primary-100 text-primary-600 dark:bg-primary-500 dark:text-muted-50 relative inline-flex h-10 w-10 items-center justify-center rounded-full"
+                class="bg-primary-100 text-primary-600 dark:bg-primary-500 dark:text-muted-50 relative inline-flex size-10 items-center justify-center rounded-full"
               >
                 <Icon name="feather:twitter" class="" />
               </div>
@@ -281,7 +289,9 @@ const filteredPeople = computed(() =>
                 >
                   Social integrations
                 </h6>
-                <p class="text-muted-400 font-sans text-xs">Blog article</p>
+                <p class="text-muted-400 font-sans text-xs">
+                  Blog article
+                </p>
               </div>
             </NuxtLink>
           </li>

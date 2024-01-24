@@ -57,7 +57,7 @@ export default defineComponent({
         class="hover:text-muted-950 dark:hover:text-white"
         @click="() => copy()"
       >
-        <Icon name="lucide:copy" class="ml-1 inline-block h-3 w-3" />
+        <Icon name="lucide:copy" class="ml-1 inline-block size-3" />
       </button>
     </div>
     <AddonMarkdownRemark

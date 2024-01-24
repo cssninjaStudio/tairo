@@ -49,7 +49,7 @@ const { data, pending, error, refresh } = await useFetch(
         <BaseInput
           v-model="filter"
           icon="lucide:search"
-          shape="curved"
+          rounded="lg"
           placeholder="Filter projects..."
           :classes="{
             wrapper: 'w-full sm:w-auto',
@@ -57,8 +57,12 @@ const { data, pending, error, refresh } = await useFetch(
         />
       </template>
       <template #right>
-        <BaseButton color="primary" class="w-full sm:w-32" shape="curved">
-          <Icon name="lucide:plus" class="h-4 w-4" />
+        <BaseButton
+          color="primary"
+          class="w-full sm:w-32"
+          rounded="lg"
+        >
+          <Icon name="lucide:plus" class="size-4" />
           <span>New</span>
         </BaseButton>
       </template>
@@ -66,7 +70,11 @@ const { data, pending, error, refresh } = await useFetch(
         <div>
           <div v-if="!pending && data?.recent.length === 0">
             <div class="bg-muted-200 dark:bg-muted-800/60 rounded-xl p-6">
-              <BaseHeading tag="h4" size="lg" weight="medium">
+              <BaseHeading
+                tag="h4"
+                size="lg"
+                weight="medium"
+              >
                 Empty history
               </BaseHeading>
               <BaseParagraph size="sm" class="text-muted-400">
@@ -100,7 +108,7 @@ const { data, pending, error, refresh } = await useFetch(
                   :to="`/layouts/projects/details/${item.slug}`"
                 >
                   <BaseCard
-                    shape="curved"
+                    rounded="lg"
                     elevated-hover
                     class="group-hover:!border-primary-500 p-5"
                   >
@@ -108,7 +116,7 @@ const { data, pending, error, refresh } = await useFetch(
                       <BaseAvatar
                         :src="item.customer.logo"
                         size="sm"
-                        shape="straight"
+                        rounded="none"
                         mask="blob"
                         :data-nui-tooltip="item.name"
                         class="bg-muted-100 dark:bg-muted-700"
@@ -134,7 +142,7 @@ const { data, pending, error, refresh } = await useFetch(
                           :key="stack.name"
                           :src="stack.icon"
                           size="xxs"
-                          shape="straight"
+                          rounded="none"
                           mask="blob"
                           :data-nui-tooltip="stack.name"
                           class="bg-muted-100 dark:bg-muted-700"
@@ -142,13 +150,13 @@ const { data, pending, error, refresh } = await useFetch(
                       </div>
                       <div class="text-muted-400 flex items-center gap-4">
                         <div class="flex items-center gap-1 text-sm">
-                          <Icon name="ph:paperclip-duotone" class="h-4 w-4" />
+                          <Icon name="ph:paperclip-duotone" class="size-4" />
                           <span class="font-sans">
                             {{ item.files.length }}
                           </span>
                         </div>
                         <div class="flex items-center gap-1 text-sm">
-                          <Icon name="ph:users-duotone" class="h-4 w-4" />
+                          <Icon name="ph:users-duotone" class="size-4" />
                           <span class="font-sans">{{ item.team.length }}</span>
                         </div>
                       </div>
@@ -170,12 +178,12 @@ const { data, pending, error, refresh } = await useFetch(
                   class="block dark:hidden"
                   src="/img/illustrations/placeholders/flat/placeholder-search-4.svg"
                   alt="Placeholder image"
-                />
+                >
                 <img
                   class="hidden dark:block"
                   src="/img/illustrations/placeholders/flat/placeholder-search-4-dark.svg"
                   alt="Placeholder image"
-                />
+                >
               </template>
             </BasePlaceholderPage>
           </div>
@@ -201,7 +209,7 @@ const { data, pending, error, refresh } = await useFetch(
                 <BaseCard
                   v-for="(item, index) in data?.data"
                   :key="index"
-                  shape="curved"
+                  rounded="lg"
                   elevated-hover
                   class="hover:!border-primary-500"
                 >
@@ -215,13 +223,13 @@ const { data, pending, error, refresh } = await useFetch(
                           :src="item.image"
                           :alt="item.name"
                           class="rounded-lg"
-                        />
+                        >
                       </div>
                       <div class="mb-6 flex gap-2">
                         <BaseAvatar
                           :src="item.customer.logo"
                           size="sm"
-                          shape="straight"
+                          rounded="none"
                           mask="blob"
                           :data-nui-tooltip="item.name"
                           class="bg-muted-100 dark:bg-muted-700"
@@ -248,7 +256,7 @@ const { data, pending, error, refresh } = await useFetch(
                             :key="stack.name"
                             :src="stack.icon"
                             size="xxs"
-                            shape="straight"
+                            rounded="none"
                             mask="blob"
                             :data-nui-tooltip="stack.name"
                             class="bg-muted-100 dark:bg-muted-700"
@@ -256,13 +264,13 @@ const { data, pending, error, refresh } = await useFetch(
                         </div>
                         <div class="text-muted-400 flex items-center gap-4">
                           <div class="flex items-center gap-1 text-sm">
-                            <Icon name="ph:paperclip-duotone" class="h-4 w-4" />
+                            <Icon name="ph:paperclip-duotone" class="size-4" />
                             <span class="font-sans">
                               {{ item.files.length }}
                             </span>
                           </div>
                           <div class="flex items-center gap-1 text-sm">
-                            <Icon name="ph:users-duotone" class="h-4 w-4" />
+                            <Icon name="ph:users-duotone" class="size-4" />
                             <span class="font-sans">
                               {{ item.team.length }}
                             </span>

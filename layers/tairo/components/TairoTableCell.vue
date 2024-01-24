@@ -21,6 +21,6 @@ const props = withDefaults(
       props.spaced ? 'p-4' : 'py-4',
     ]"
   >
-    <slot></slot>
+    <slot />
   </td>
 </template>

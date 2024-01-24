@@ -20,7 +20,8 @@ const props = withDefaults(
 const strokeWidth = computed(() => {
   if (props.size === 'xs' || props.size === 'sm') {
     return '4'
-  } else {
+  }
+  else {
     return '2'
   }
 })
@@ -35,10 +36,10 @@ const strokeWidth = computed(() => {
       props.color === 'primary' && 'text-primary-500',
       props.color === 'warning' && 'text-warning-500',
       props.color === 'danger' && 'text-danger-500',
-      props.size === 'xs' && 'h-8 w-8',
-      props.size === 'sm' && 'h-10 w-10',
-      props.size === 'md' && 'h-12 w-12',
-      props.size === 'lg' && 'h-14 w-14',
+      props.size === 'xs' && 'size-8',
+      props.size === 'sm' && 'size-10',
+      props.size === 'md' && 'size-12',
+      props.size === 'lg' && 'size-14',
     ]"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 52 52"

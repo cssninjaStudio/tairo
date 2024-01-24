@@ -1,10 +1,10 @@
 <script setup lang="ts">
 const props = withDefaults(
   defineProps<{
-    shape?: 'straight' | 'rounded' | 'curved' | 'full'
+    rounded?: 'none' | 'sm' | 'md' | 'lg' | 'full'
   }>(),
   {
-    shape: 'rounded',
+    rounded: 'sm',
   },
 )
 
@@ -56,8 +56,16 @@ const users = [
 
 <template>
   <div class="space-y-6">
-    <div v-for="user in users" :key="user.id" class="flex items-center gap-2">
-      <BaseAvatar :src="user.picture" size="sm" :shape="props.shape" />
+    <div
+      v-for="user in users"
+      :key="user.id"
+      class="flex items-center gap-2"
+    >
+      <BaseAvatar
+        :src="user.picture"
+        size="sm"
+        :rounded="props.rounded"
+      />
       <div>
         <BaseHeading
           as="h3"
@@ -80,8 +88,13 @@ const users = [
         >
           <span>{{ user.progress }}%</span>
         </BaseParagraph>
-        <BaseButtonIcon to="#" muted small :shape="props.shape">
-          <Icon name="lucide:chevron-right" class="h-4 w-4" />
+        <BaseButtonIcon
+          to="#"
+          muted
+          small
+          :rounded="props.rounded"
+        >
+          <Icon name="lucide:chevron-right" class="size-4" />
         </BaseButtonIcon>
       </div>
     </div>

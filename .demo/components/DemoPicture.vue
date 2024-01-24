@@ -31,7 +31,7 @@ const props = withDefaults(
         props.shape === 'rounded' ? 'rounded-md' : '',
         props.shape === 'curved' ? 'rounded-xl' : '',
       ]"
-    />
+    >
     <img
       v-if="props.srcDark"
       :src="$props.srcDark"
@@ -43,7 +43,7 @@ const props = withDefaults(
         props.shape === 'rounded' ? 'rounded-md' : '',
         props.shape === 'curved' ? 'rounded-xl' : '',
       ]"
-    />
+    >
     <div
       v-if="props.loading"
       class="dark absolute inset-x-0 bottom-8 flex items-center justify-center px-6"

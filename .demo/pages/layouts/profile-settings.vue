@@ -16,16 +16,16 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
 
 <template>
   <div class="mx-auto w-full max-w-5xl">
-    <div v-if="!data"></div>
+    <div v-if="!data" />
     <div v-else class="relative w-full">
       <div class="absolute end-0 top-2 z-20">
         <BaseDropdown
-          flavor="context"
+          variant="context"
           label="Dropdown"
           orientation="end"
           size="md"
           class="z-20"
-          shape="curved"
+          rounded="lg"
         >
           <BaseDropdownDivider />
           <BaseDropdownItem
@@ -34,24 +34,36 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
             text="Edit profile"
           >
             <template #start>
-              <Icon name="ph:pencil-duotone" class="me-2 block h-5 w-5" />
+              <Icon name="ph:pencil-duotone" class="me-2 block size-5" />
             </template>
           </BaseDropdownItem>
           <BaseDropdownDivider />
-          <BaseDropdownItem to="#" title="Security" text="Security settings">
+          <BaseDropdownItem
+            to="#"
+            title="Security"
+            text="Security settings"
+          >
             <template #start>
-              <Icon name="ph:lock-duotone" class="me-2 block h-5 w-5" />
+              <Icon name="ph:lock-duotone" class="me-2 block size-5" />
             </template>
           </BaseDropdownItem>
-          <BaseDropdownItem to="#" title="Billing" text="Manage billing">
+          <BaseDropdownItem
+            to="#"
+            title="Billing"
+            text="Manage billing"
+          >
             <template #start>
-              <Icon name="ph:bank-duotone" class="me-2 block h-5 w-5" />
+              <Icon name="ph:bank-duotone" class="me-2 block size-5" />
             </template>
           </BaseDropdownItem>
           <BaseDropdownDivider />
-          <BaseDropdownItem to="#" title="Share" text="Share profile">
+          <BaseDropdownItem
+            to="#"
+            title="Share"
+            text="Share profile"
+          >
             <template #start>
-              <Icon name="ph:link-duotone" class="me-2 block h-5 w-5" />
+              <Icon name="ph:link-duotone" class="me-2 block size-5" />
             </template>
           </BaseDropdownItem>
         </BaseDropdown>
@@ -64,7 +76,12 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
           class="mx-auto"
         />
         <div class="mx-auto w-full max-w-md text-center">
-          <BaseHeading tag="h2" size="xl" weight="medium" class="mt-4">
+          <BaseHeading
+            tag="h2"
+            size="xl"
+            weight="medium"
+            class="mt-4"
+          >
             {{ data?.personalInfo.firstName }} {{ data?.personalInfo.lastName }}
           </BaseHeading>
           <BaseParagraph size="sm" class="text-muted-400 mb-3 mt-1">
@@ -74,18 +91,18 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
             class="divide-muted-200 dark:divide-muted-800 flex items-center justify-center divide-x"
           >
             <div class="text-muted-400 flex h-8 items-center gap-1 px-4">
-              <Icon name="ph:circles-three-duotone" class="h-5 w-5" />
-              <BaseText size="sm"
-                >{{ data?.personalInfo.relations }}+ relations</BaseText
-              >
+              <Icon name="ph:circles-three-duotone" class="size-5" />
+              <BaseText size="sm">
+                {{ data?.personalInfo.relations }}+ relations
+              </BaseText>
             </div>
             <div
               class="text-muted-400 hidden h-8 items-center gap-1 px-4 sm:flex"
             >
-              <Icon name="ph:check-circle-duotone" class="h-5 w-5" />
-              <BaseText size="sm"
-                >{{ data?.personalInfo.projects }} projects</BaseText
-              >
+              <Icon name="ph:check-circle-duotone" class="size-5" />
+              <BaseText size="sm">
+                {{ data?.personalInfo.projects }} projects
+              </BaseText>
             </div>
             <div class="flex h-8 items-center gap-2 px-4">
               <NuxtLink
@@ -94,9 +111,9 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 :to="link.url"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="border-muted-200 hover:border-primary-500 dark:border-muted-700 dark:hover:border-primary-500 dark:bg-muted-800 text-muted-400 hover:text-primary-500 flex h-8 w-8 items-center justify-center rounded-full border bg-white transition-colors duration-300"
+                class="border-muted-200 hover:border-primary-500 dark:border-muted-700 dark:hover:border-primary-500 dark:bg-muted-800 text-muted-400 hover:text-primary-500 flex size-8 items-center justify-center rounded-full border bg-white transition-colors duration-300"
               >
-                <Icon :name="link.icon" class="h-3 w-3" />
+                <Icon :name="link.icon" class="size-3" />
                 <span class="sr-only">{{ link.name }}</span>
               </NuxtLink>
             </div>
@@ -108,7 +125,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
         class="ltablet:grid-cols-5 mx-auto mt-6 grid w-full max-w-4xl grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-5"
       >
         <BaseCard
-          shape="curved"
+          rounded="lg"
           elevated-hover
           class="hover:!border-primary-500 group border-2"
         >
@@ -116,7 +133,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
             <div class="text-center">
               <Icon
                 name="ph:buildings-duotone"
-                class="group-hover:text-primary-500 text-muted-400 h-8 w-8 transition-all duration-300 group-hover:rotate-6"
+                class="group-hover:text-primary-500 text-muted-400 size-8 transition-all duration-300 group-hover:rotate-6"
               />
               <BaseHeading
                 tag="h3"
@@ -133,7 +150,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
           </NuxtLink>
         </BaseCard>
         <BaseCard
-          shape="curved"
+          rounded="lg"
           elevated-hover
           class="hover:!border-primary-500 group border-2"
         >
@@ -141,7 +158,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
             <div class="text-center">
               <Icon
                 name="ph:users-four-duotone"
-                class="group-hover:text-primary-500 text-muted-400 h-8 w-8 transition-all duration-300 group-hover:rotate-6"
+                class="group-hover:text-primary-500 text-muted-400 size-8 transition-all duration-300 group-hover:rotate-6"
               />
               <BaseHeading
                 tag="h3"
@@ -158,7 +175,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
           </NuxtLink>
         </BaseCard>
         <BaseCard
-          shape="curved"
+          rounded="lg"
           elevated-hover
           class="hover:!border-primary-500 group border-2"
         >
@@ -166,7 +183,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
             <div class="text-center">
               <Icon
                 name="ph:briefcase-duotone"
-                class="group-hover:text-primary-500 text-muted-400 h-8 w-8 transition-all duration-300 group-hover:rotate-6"
+                class="group-hover:text-primary-500 text-muted-400 size-8 transition-all duration-300 group-hover:rotate-6"
               />
               <BaseHeading
                 tag="h3"
@@ -183,7 +200,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
           </NuxtLink>
         </BaseCard>
         <BaseCard
-          shape="curved"
+          rounded="lg"
           elevated-hover
           class="hover:!border-primary-500 group border-2"
         >
@@ -191,7 +208,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
             <div class="text-center">
               <Icon
                 name="ph:lock-open-duotone"
-                class="group-hover:text-primary-500 text-muted-400 h-8 w-8 transition-all duration-300 group-hover:rotate-6"
+                class="group-hover:text-primary-500 text-muted-400 size-8 transition-all duration-300 group-hover:rotate-6"
               />
               <BaseHeading
                 tag="h3"
@@ -208,7 +225,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
           </NuxtLink>
         </BaseCard>
         <BaseCard
-          shape="curved"
+          rounded="lg"
           elevated-hover
           class="hover:!border-primary-500 group border-2"
         >
@@ -216,7 +233,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
             <div class="text-center">
               <Icon
                 name="ph:note-duotone"
-                class="group-hover:text-primary-500 text-muted-400 h-8 w-8 transition-all duration-300 group-hover:rotate-6"
+                class="group-hover:text-primary-500 text-muted-400 size-8 transition-all duration-300 group-hover:rotate-6"
               />
               <BaseHeading
                 tag="h3"
@@ -233,7 +250,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
           </NuxtLink>
         </BaseCard>
         <BaseCard
-          shape="curved"
+          rounded="lg"
           elevated-hover
           class="hover:!border-primary-500 group border-2"
         >
@@ -241,7 +258,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
             <div class="text-center">
               <Icon
                 name="ph:upload-duotone"
-                class="group-hover:text-primary-500 text-muted-400 h-8 w-8 transition-all duration-300 group-hover:rotate-6"
+                class="group-hover:text-primary-500 text-muted-400 size-8 transition-all duration-300 group-hover:rotate-6"
               />
               <BaseHeading
                 tag="h3"
@@ -258,7 +275,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
           </NuxtLink>
         </BaseCard>
         <BaseCard
-          shape="curved"
+          rounded="lg"
           elevated-hover
           class="hover:!border-primary-500 group border-2"
         >
@@ -266,7 +283,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
             <div class="text-center">
               <Icon
                 name="ph:credit-card-duotone"
-                class="group-hover:text-primary-500 text-muted-400 h-8 w-8 transition-all duration-300 group-hover:rotate-6"
+                class="group-hover:text-primary-500 text-muted-400 size-8 transition-all duration-300 group-hover:rotate-6"
               />
               <BaseHeading
                 tag="h3"
@@ -283,7 +300,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
           </NuxtLink>
         </BaseCard>
         <BaseCard
-          shape="curved"
+          rounded="lg"
           elevated-hover
           class="hover:!border-primary-500 group border-2"
         >
@@ -291,7 +308,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
             <div class="text-center">
               <Icon
                 name="ph:chat-circle-duotone"
-                class="group-hover:text-primary-500 text-muted-400 h-8 w-8 transition-all duration-300 group-hover:rotate-6"
+                class="group-hover:text-primary-500 text-muted-400 size-8 transition-all duration-300 group-hover:rotate-6"
               />
               <BaseHeading
                 tag="h3"
@@ -308,7 +325,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
           </NuxtLink>
         </BaseCard>
         <BaseCard
-          shape="curved"
+          rounded="lg"
           elevated-hover
           class="hover:!border-primary-500 group border-2"
         >
@@ -316,7 +333,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
             <div class="text-center">
               <Icon
                 name="ph:shield-check-duotone"
-                class="group-hover:text-primary-500 text-muted-400 h-8 w-8 transition-all duration-300 group-hover:rotate-6"
+                class="group-hover:text-primary-500 text-muted-400 size-8 transition-all duration-300 group-hover:rotate-6"
               />
               <BaseHeading
                 tag="h3"
@@ -333,7 +350,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
           </NuxtLink>
         </BaseCard>
         <BaseCard
-          shape="curved"
+          rounded="lg"
           elevated-hover
           class="hover:!border-primary-500 group border-2"
         >
@@ -341,7 +358,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
             <div class="text-center">
               <Icon
                 name="ph:gear-six-duotone"
-                class="group-hover:text-primary-500 text-muted-400 h-8 w-8 transition-all duration-300 group-hover:rotate-6"
+                class="group-hover:text-primary-500 text-muted-400 size-8 transition-all duration-300 group-hover:rotate-6"
               />
               <BaseHeading
                 tag="h3"

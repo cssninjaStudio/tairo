@@ -1,6 +1,6 @@
 <script setup lang="ts">
 defineEmits<{
-  (event: 'close'): void
+  'close': []
 }>()
 
 const route = useRoute()
@@ -21,7 +21,7 @@ const { data: navigation } = await useAsyncData('navigation', () =>
 )
 
 const docNav = computed(
-  () => navigation.value?.find((n) => n._path === '/documentation')?.children,
+  () => navigation.value?.find(n => n._path === '/documentation')?.children,
 )
 </script>
 

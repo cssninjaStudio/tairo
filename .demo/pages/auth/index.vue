@@ -34,11 +34,11 @@ const zodSchema = z.object({
 type FormInput = z.infer<typeof zodSchema>
 
 const validationSchema = toTypedSchema(zodSchema)
-const initialValues = computed<FormInput>(() => ({
+const initialValues = {
   email: '',
   password: '',
   trustDevice: false,
-}))
+} satisfies FormInput
 
 const {
   handleSubmit,
@@ -74,7 +74,8 @@ const onSubmit = handleSubmit(async (values) => {
       }
       setTimeout(resolve, 4000)
     })
-  } catch (error: any) {
+  }
+  catch (error: any) {
     // this will set the error on the form
     if (error.message === 'Fake backend validation error') {
       setFieldError('password', 'Invalid credentials (use "password")')
@@ -98,7 +99,7 @@ const onSubmit = handleSubmit(async (values) => {
             to="/dashboards"
             class="text-muted-400 hover:text-primary-500 flex items-center gap-2 font-sans font-medium transition-colors duration-300"
           >
-            <Icon name="gg:arrow-long-left" class="h-5 w-5" />
+            <Icon name="gg:arrow-long-left" class="size-5" />
             <span>Back to Home</span>
           </NuxtLink>
           <!--Theme button-->
@@ -117,33 +118,33 @@ const onSubmit = handleSubmit(async (values) => {
           <BaseParagraph size="sm" class="text-muted-400 mb-6">
             Login with social media or your credentials
           </BaseParagraph>
-          <!-- 	Social Sign Up Buttons	 -->
+          <!-- Social Sign Up Buttons -->
           <div class="flex flex-wrap justify-between gap-4">
             <!--Google button-->
             <button
               class="dark:bg-muted-700 text-muted-800 border-muted-300 dark:border-muted-600 nui-focus relative inline-flex grow items-center justify-center gap-2 rounded border bg-white px-6 py-4 dark:text-white"
             >
-              <Icon name="logos:google-icon" class="h-5 w-5" />
+              <Icon name="logos:google-icon" class="size-5" />
               <div>Login with Google</div>
             </button>
             <!--Twitter button-->
             <button
               class="bg-muted-200 dark:bg-muted-700 hover:bg-muted-100 dark:hover:bg-muted-600 text-muted-600 dark:text-muted-400 nui-focus w-[calc(50%_-_0.5rem)] cursor-pointer rounded px-5 py-4 text-center transition-colors duration-300 md:w-auto"
             >
-              <Icon name="fa6-brands:twitter" class="mx-auto h-4 w-4" />
+              <Icon name="fa6-brands:twitter" class="mx-auto size-4" />
             </button>
             <!--Linkedin button-->
             <button
               class="bg-muted-200 dark:bg-muted-700 hover:bg-muted-100 dark:hover:bg-muted-600 text-muted-600 dark:text-muted-400 nui-focus w-[calc(50%_-_0.5rem)] cursor-pointer rounded px-5 py-4 text-center transition-colors duration-300 md:w-auto"
             >
-              <Icon name="fa6-brands:linkedin-in" class="mx-auto h-4 w-4" />
+              <Icon name="fa6-brands:linkedin-in" class="mx-auto size-4" />
             </button>
           </div>
-          <!-- 'or' divider		 -->
+          <!-- 'or' divider -->
           <div class="flex-100 mt-8 flex items-center">
             <hr
               class="border-muted-200 dark:border-muted-700 flex-auto border-t-2"
-            />
+            >
             <span
               class="text-muted-600 dark:text-muted-300 px-4 font-sans font-light"
             >
@@ -151,7 +152,7 @@ const onSubmit = handleSubmit(async (values) => {
             </span>
             <hr
               class="border-muted-200 dark:border-muted-700 flex-auto border-t-2"
-            />
+            >
           </div>
         </div>
 
@@ -159,9 +160,9 @@ const onSubmit = handleSubmit(async (values) => {
         <form
           method="POST"
           action=""
-          @submit.prevent="onSubmit"
           class="mt-6"
           novalidate
+          @submit.prevent="onSubmit"
         >
           <div class="mt-5">
             <div>
@@ -215,7 +216,7 @@ const onSubmit = handleSubmit(async (values) => {
                   <BaseCheckbox
                     :model-value="field.value"
                     :disabled="isSubmitting"
-                    shape="rounded"
+                    rounded="sm"
                     label="Trust for 60 days"
                     color="primary"
                     @update:model-value="handleChange"
@@ -271,12 +272,12 @@ const onSubmit = handleSubmit(async (values) => {
       <div class="mx-auto w-full max-w-4xl">
         <!--Media image-->
         <img
-          class="max-w-md mx-auto"
+          class="mx-auto max-w-md"
           src="/img/illustrations/magician.svg"
           alt=""
           width="500"
           height="500"
-        />
+        >
       </div>
     </div>
   </div>

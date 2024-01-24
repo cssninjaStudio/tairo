@@ -10,37 +10,45 @@ icon:
 
 ::doc-component-demo
 ---
-title: Straight shape
+title: Rounded:none
 demo: '#examples/pagination/straight.vue'
 ---
-The pagination component can have different shapes. Use the `shape` prop to change the shape of the pagination.
+The pagination component can have different radius factors. Use the `rounded` prop to change the radius of the pagination.
 :::doc-message{type="muted" icon="ion:shapes-outline"}
-Default shape of all :doc-linker{to="BasePagination"} can be set in your `.app/app.config.ts`.
+Default props of all :doc-linker{to="BasePagination"} can be set in your `.app/app.config.ts`.
 :::
 ::
 
 ::doc-component-demo
 ---
-title: Rounded shape
+title: Rounded:sm
 demo: '#examples/pagination/rounded.vue'
 ---
-The pagination component can have different shapes. Here is an example of a `rounded` pagination.
+The pagination component can have different radius factors. Use the `rounded` prop to change the radius of the pagination. Here is an example of a `rounded:sm` pagination.
 ::
 
 ::doc-component-demo
 ---
-title: Curved shape
+title: Rounded:md
+demo: '#examples/pagination/smooth.vue'
+---
+The pagination component can have different radius factors. Use the `rounded` prop to change the radius of the pagination. Here is an example of a `rounded:md` pagination.
+::
+
+::doc-component-demo
+---
+title: Rounded:lg
 demo: '#examples/pagination/curved.vue'
 ---
-The pagination component can have different shapes. Here is an example of a `curved` pagination.
+The pagination component can have different radius factors. Use the `rounded` prop to change the radius of the pagination. Here is an example of a `rounded:lg` pagination.
 ::
 
 ::doc-component-demo
 ---
-title: Full shape
+title: Rounded:full
 demo: '#examples/pagination/full.vue'
 ---
-The pagination component can have different shapes. Here is an example of a `full` pagination.
+The pagination component can have different radius factors. Use the `rounded` prop to change the radius of the pagination. Here is an example of a `rounded:full` pagination.
 ::
 
 :doc-component-meta{name="BasePagination"}

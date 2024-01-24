@@ -23,7 +23,7 @@
               </span>
             </BaseParagraph>
             <div
-              class="bg-muted-200 dark:bg-muted-700 text-muted-500 dark:text-muted-200 flex h-7 w-7 items-center justify-center rounded-full text-xs"
+              class="bg-muted-200 dark:bg-muted-700 text-muted-500 dark:text-muted-200 flex size-7 items-center justify-center rounded-full text-xs"
             >
               <span>12</span>
             </div>
@@ -39,7 +39,7 @@
               </span>
             </BaseParagraph>
             <div
-              class="bg-muted-200 dark:bg-muted-700 text-muted-500 dark:text-muted-200 flex h-7 w-7 items-center justify-center rounded-full text-xs"
+              class="bg-muted-200 dark:bg-muted-700 text-muted-500 dark:text-muted-200 flex size-7 items-center justify-center rounded-full text-xs"
             >
               <span>31</span>
             </div>
@@ -55,7 +55,7 @@
               </span>
             </BaseParagraph>
             <div
-              class="bg-muted-200 dark:bg-muted-700 text-muted-500 dark:text-muted-200 flex h-7 w-7 items-center justify-center rounded-full text-xs"
+              class="bg-muted-200 dark:bg-muted-700 text-muted-500 dark:text-muted-200 flex size-7 items-center justify-center rounded-full text-xs"
             >
               <span>4</span>
             </div>

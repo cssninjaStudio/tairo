@@ -2,57 +2,64 @@
   <div class="flex flex-wrap items-end gap-4">
     <BaseAvatar
       text="CT"
+      size="xxs"
+      rounded="lg"
+      class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
+    />
+
+    <BaseAvatar
+      text="CT"
       size="xs"
-      shape="curved"
+      rounded="lg"
       class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
     />
 
     <BaseAvatar
       text="CT"
       size="sm"
-      shape="curved"
+      rounded="lg"
       class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
     />
 
     <BaseAvatar
       text="CT"
       size="md"
-      shape="curved"
+      rounded="lg"
       class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
     />
 
     <BaseAvatar
       text="CT"
       size="lg"
-      shape="curved"
+      rounded="lg"
       class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
     />
 
     <BaseAvatar
       text="CT"
       size="xl"
-      shape="curved"
+      rounded="lg"
       class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
     />
 
     <BaseAvatar
       text="CT"
       size="2xl"
-      shape="curved"
+      rounded="lg"
       class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
     />
 
     <BaseAvatar
       text="CT"
       size="3xl"
-      shape="curved"
+      rounded="lg"
       class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
     />
 
     <BaseAvatar
       text="CT"
       size="4xl"
-      shape="curved"
+      rounded="lg"
       class="bg-muted-200 dark:bg-muted-600 text-muted-800 dark:text-muted-300"
     />
   </div>

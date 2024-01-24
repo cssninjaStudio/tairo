@@ -20,20 +20,20 @@ const props = withDefaults(
   <div>
     <div class="relative mb-4">
       <img
-        class="mx-auto h-48 w-48 rounded-full"
+        class="mx-auto size-48 rounded-full"
         :src="props.image"
         :alt="props.title"
-      />
+      >
       <img
-        class="dark:border-muted-800 absolute start-2 top-2 h-14 w-14 rounded-full border-2 border-white"
+        class="dark:border-muted-800 absolute start-2 top-2 size-14 rounded-full border-2 border-white"
         :src="props.badgeSmall"
         :alt="props.title"
-      />
+      >
       <img
-        class="dark:border-muted-800 absolute bottom-2 end-2 h-16 w-16 rounded-full border-2 border-white"
+        class="dark:border-muted-800 absolute bottom-2 end-2 size-16 rounded-full border-2 border-white"
         :src="props.badgeMedium"
         :alt="props.title"
-      />
+      >
     </div>
     <div class="text-center">
       <BaseHeading

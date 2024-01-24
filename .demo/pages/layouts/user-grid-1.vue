@@ -49,7 +49,7 @@ const { data, pending, error, refresh } = await useFetch(
         <BaseInput
           v-model="filter"
           icon="lucide:search"
-          shape="full"
+          rounded="full"
           placeholder="Filter users..."
           :classes="{
             wrapper: 'w-full sm:w-auto',
@@ -57,9 +57,15 @@ const { data, pending, error, refresh } = await useFetch(
         />
       </template>
       <template #right>
-        <BaseButton class="w-full sm:w-32" shape="full">Manage</BaseButton>
-        <BaseButton color="primary" class="w-full sm:w-32" shape="full">
-          <Icon name="lucide:plus" class="h-4 w-4" />
+        <BaseButton class="w-full sm:w-32" rounded="full">
+          Manage
+        </BaseButton>
+        <BaseButton
+          color="primary"
+          class="w-full sm:w-32"
+          rounded="full"
+        >
+          <Icon name="lucide:plus" class="size-4" />
           <span>Add User</span>
         </BaseButton>
       </template>
@@ -74,12 +80,12 @@ const { data, pending, error, refresh } = await useFetch(
                 class="block dark:hidden"
                 src="/img/illustrations/placeholders/flat/placeholder-search-2.svg"
                 alt="Placeholder image"
-              />
+              >
               <img
                 class="hidden dark:block"
                 src="/img/illustrations/placeholders/flat/placeholder-search-2-dark.svg"
                 alt="Placeholder image"
-              />
+              >
             </template>
           </BasePlaceholderPage>
         </div>
@@ -98,7 +104,7 @@ const { data, pending, error, refresh } = await useFetch(
             <BaseCard
               v-for="(item, index) in data?.data"
               :key="index"
-              shape="rounded"
+              rounded="sm"
               elevated-hover
               class="p-6"
             >
@@ -112,7 +118,12 @@ const { data, pending, error, refresh } = await useFetch(
                 />
               </div>
               <div class="text-center">
-                <BaseHeading tag="h3" size="md" weight="medium" lead="none">
+                <BaseHeading
+                  tag="h3"
+                  size="md"
+                  weight="medium"
+                  lead="none"
+                >
                   {{ item.username }}
                 </BaseHeading>
                 <BaseParagraph size="xs" class="text-muted-400">
@@ -122,7 +133,7 @@ const { data, pending, error, refresh } = await useFetch(
               <div class="mb-6 mt-4 flex items-center justify-center gap-3">
                 <BaseAvatar
                   v-for="relation in item.relations.slice(0, 3)"
-                  :key="relation"
+                  :key="relation.id"
                   size="xs"
                   :src="relation.src"
                   :text="relation.text"
@@ -130,12 +141,12 @@ const { data, pending, error, refresh } = await useFetch(
                 />
               </div>
               <div class="flex items-center gap-2">
-                <BaseButton shape="rounded" class="w-full">
-                  <Icon name="ph:user-duotone" class="h-4 w-4" />
+                <BaseButton rounded="sm" class="w-full">
+                  <Icon name="ph:user-duotone" class="size-4" />
                   <span>Profile</span>
                 </BaseButton>
-                <BaseButton shape="rounded" class="w-full">
-                  <Icon name="ph:chat-circle-duotone" class="h-4 w-4" />
+                <BaseButton rounded="sm" class="w-full">
+                  <Icon name="ph:chat-circle-duotone" class="size-4" />
                   <span>Talk</span>
                 </BaseButton>
               </div>
@@ -147,7 +158,7 @@ const { data, pending, error, refresh } = await useFetch(
             :total-items="data?.total ?? 0"
             :item-per-page="perPage"
             :current-page="page"
-            shape="curved"
+            rounded="lg"
           />
         </div>
       </div>

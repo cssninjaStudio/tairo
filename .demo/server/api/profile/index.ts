@@ -1,7 +1,5 @@
 export default defineEventHandler(async () => {
-  const data = await getDemoData()
-
-  return data
+  return await getDemoData()
 })
 
 async function getDemoData() {

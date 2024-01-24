@@ -10,19 +10,19 @@ icon:
 
 ::doc-component-demo
 ---
-title: Card shapes
+title: Radius
 demo: '#examples/card/shapes.vue'
 ---
-Cards are an essential part of any application. Cards can have different shapes using the `shape` prop.
+Cards are an essential part of any application. Cards can have different radius factors using the `rounded` prop.
 :::doc-message{type="muted" icon="ion:shapes-outline"}
-Default shape of all :doc-linker{to="BaseCard"} can be set in your `.app/app.config.ts`.
+Default props of all :doc-linker{to="BaseCard"} can be set in your `.app/app.config.ts`.
 :::
 ::
 
 
 ::doc-component-demo
 ---
-title: Card contrast
+title: Contrast
 demo: '#examples/card/contrast.vue'
 ---
 Cards are an essential part of any application. Cards can have different contrasts using the `color` prop. Contrast types impact both light and dark mode colors.
@@ -48,7 +48,7 @@ Default color of all :doc-linker{to="BaseCard"} can be set in your `.app/app.con
 title: Flat shadow
 demo: '#examples/card/elevation.vue'
 ---
-Cards can be displayed with a flat shadow using the `elevated` prop. 
+Cards can be displayed with a flat shadow using the `shadow="flat"` prop. 
 ::
 
 ::doc-component-demo
@@ -56,7 +56,7 @@ Cards can be displayed with a flat shadow using the `elevated` prop.
 title: Hover shadow
 demo: '#examples/card/elevation-hover.vue'
 ---
-Cards can have a shadow on hover using the `elevated-hover` prop. 
+Cards can have a shadow on hover using the `shadow="hover"` prop. 
 ::
 
 :doc-component-meta{name="BaseCard"}

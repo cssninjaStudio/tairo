@@ -21,7 +21,7 @@ const searchTerms = ref('Ice cream pizza')
         v-model="searchTerms"
         icon="lucide:search"
         placeholder="Search..."
-        shape="full"
+        rounded="full"
         :classes="{
           wrapper: 'w-full',
           input: 'h-12 !ps-12',
@@ -30,9 +30,12 @@ const searchTerms = ref('Ice cream pizza')
       />
     </div>
     <div class="mb-12 mt-2 text-center">
-      <BaseText size="sm" class="text-muted-400"
-        >0 results for "Ice cream pizza"</BaseText
+      <BaseText
+        size="sm"
+        class="text-muted-400"
       >
+        0 results for "Ice cream pizza"
+      </BaseText>
     </div>
     <div>
       <BasePlaceholderPage
@@ -44,12 +47,12 @@ const searchTerms = ref('Ice cream pizza')
             class="block dark:hidden"
             src="/img/illustrations/placeholders/flat/placeholder-search-4.svg"
             alt="Placeholder image"
-          />
+          >
           <img
             class="hidden dark:block"
             src="/img/illustrations/placeholders/flat/placeholder-search-4-dark.svg"
             alt="Placeholder image"
-          />
+          >
         </template>
       </BasePlaceholderPage>
     </div>

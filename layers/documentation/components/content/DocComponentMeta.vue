@@ -12,7 +12,7 @@ const docs = await useDocumentationMeta(() => props.name as any)
 function wrapExternalLinks(string: string) {
   return string.replace(
     /https?:\/\/[^\s)]+/g,
-    (url) =>
+    url =>
       `<a class="text-primary-600 dark:text-primary-400 hover:underline" href="${url}" rel="noopener noreferrer" target="_blank">${url}</a>`,
   )
 }
@@ -22,12 +22,12 @@ function wrapExternalLinks(string: string) {
   <div class="border-muted-200 dark:border-muted-800 mb-10 border-b py-6">
     <div class="mb-4 flex items-center">
       <BaseHeading
+        v-if="docs.meta?.pascalName"
         as="h2"
         size="xl"
         anchor
         weight="medium"
         class="text-muted-800 dark:text-white"
-        v-if="docs.meta?.pascalName"
       >
         <TairoTocAnchor :label="`<${docs.meta?.pascalName}>`" />
       </BaseHeading>
@@ -105,10 +105,14 @@ function wrapExternalLinks(string: string) {
             >
               <div class="grid grid-cols-1 gap-6 px-2 py-4 lg:grid-cols-12">
                 <div class="col-span-1 lg:col-span-3">
-                  <div class="text-left font-semibold">Name</div>
+                  <div class="text-left font-semibold">
+                    Name
+                  </div>
                 </div>
                 <div class="col-span-1 lg:col-span-9">
-                  <div class="text-left font-semibold">Type</div>
+                  <div class="text-left font-semibold">
+                    Type
+                  </div>
                 </div>
               </div>
             </div>
@@ -149,12 +153,16 @@ function wrapExternalLinks(string: string) {
                       :key="tag.name"
                       class="text-muted-400 text-xs"
                     >
-                      <p class="font-semibold">@{{ tag.name }}</p>
+                      <p class="font-semibold">
+                        @{{ tag.name }}
+                      </p>
+                      <!-- eslint-disable vue/no-v-html -->
                       <p
                         v-if="tag.text"
                         class="block"
                         v-html="wrapExternalLinks(tag.text)"
-                      ></p>
+                      />
+                      <!-- eslint-enable vue/no-v-html -->
                     </div>
                   </div>
 
@@ -162,7 +170,7 @@ function wrapExternalLinks(string: string) {
                     v-if="docs.model.required"
                     color="danger"
                     size="sm"
-                    flavor="pastel"
+                    variant="pastel"
                     class="my-2 font-mono"
                   >
                     Required
@@ -184,7 +192,7 @@ function wrapExternalLinks(string: string) {
                       <span class="hidden group-open:inline">Hide example</span>
                       <Icon
                         name="lucide:chevron-down"
-                        class="text-muted-400 h-4 w-4 transition-transform duration-200 group-open:rotate-180"
+                        class="text-muted-400 size-4 transition-transform duration-200 group-open:rotate-180"
                       />
                     </summary>
                     <AddonMarkdownRemark
@@ -225,13 +233,19 @@ function wrapExternalLinks(string: string) {
             >
               <div class="grid grid-cols-1 gap-6 px-2 py-4 lg:grid-cols-12">
                 <div class="col-span-1 lg:col-span-3">
-                  <div class="text-left font-semibold">Name</div>
+                  <div class="text-left font-semibold">
+                    Name
+                  </div>
                 </div>
                 <div class="col-span-1 lg:col-span-5">
-                  <div class="text-left font-semibold">Type</div>
+                  <div class="text-left font-semibold">
+                    Type
+                  </div>
                 </div>
                 <div class="col-span-1 lg:col-span-4">
-                  <div class="text-left font-semibold">Default</div>
+                  <div class="text-left font-semibold">
+                    Default
+                  </div>
                 </div>
               </div>
             </div>
@@ -257,8 +271,8 @@ function wrapExternalLinks(string: string) {
                 </div>
 
                 <div
-                  class="text-muted-400 whitespace-pre-wrap break-words text-left italic"
                   v-if="prop.description"
+                  class="text-muted-400 whitespace-pre-wrap break-words text-left italic"
                 >
                   {{ prop.description }}
                 </div>
@@ -271,12 +285,16 @@ function wrapExternalLinks(string: string) {
                     :key="tag.name"
                     class="text-muted-400 text-xs"
                   >
-                    <p class="font-semibold">@{{ tag.name }}</p>
+                    <p class="font-semibold">
+                      @{{ tag.name }}
+                    </p>
+                    <!-- eslint-disable vue/no-v-html -->
                     <p
                       v-if="tag.text"
                       class="block"
                       v-html="wrapExternalLinks(tag.text)"
-                    ></p>
+                    />
+                    <!-- eslint-enable vue/no-v-html -->
                   </div>
                 </div>
 
@@ -284,7 +302,7 @@ function wrapExternalLinks(string: string) {
                   v-if="prop.required"
                   color="danger"
                   size="sm"
-                  flavor="pastel"
+                  variant="pastel"
                   class="my-2 font-mono"
                 >
                   Required
@@ -317,7 +335,7 @@ function wrapExternalLinks(string: string) {
                     <span class="hidden group-open:inline">Hide example</span>
                     <Icon
                       name="lucide:chevron-down"
-                      class="text-muted-400 h-4 w-4 transition-transform duration-200 group-open:rotate-180"
+                      class="text-muted-400 size-4 transition-transform duration-200 group-open:rotate-180"
                     />
                   </summary>
                   <AddonMarkdownRemark
@@ -357,10 +375,14 @@ function wrapExternalLinks(string: string) {
             >
               <div class="grid grid-cols-1 gap-6 px-2 py-4 lg:grid-cols-12">
                 <div class="col-span-1 lg:col-span-3">
-                  <div class="text-left font-semibold">Name</div>
+                  <div class="text-left font-semibold">
+                    Name
+                  </div>
                 </div>
                 <div class="col-span-1 lg:col-span-9">
-                  <div class="text-left font-semibold">Emitted Value Type</div>
+                  <div class="text-left font-semibold">
+                    Emitted Value Type
+                  </div>
                 </div>
               </div>
             </div>
@@ -380,6 +402,12 @@ function wrapExternalLinks(string: string) {
                     class="text-muted-800 dark:text-muted-100 font-mono font-medium"
                   >
                     <code>@{{ event.name }}</code>
+                    <div
+                      v-if="event.description"
+                      class="text-muted-400 whitespace-pre-wrap break-words text-left italic"
+                    >
+                      {{ event.description }}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -402,7 +430,7 @@ function wrapExternalLinks(string: string) {
                     <span class="hidden group-open:inline">Hide example</span>
                     <Icon
                       name="lucide:chevron-down"
-                      class="text-muted-400 h-4 w-4 transition-transform duration-200 group-open:rotate-180"
+                      class="text-muted-400 size-4 transition-transform duration-200 group-open:rotate-180"
                     />
                   </summary>
                   <AddonMarkdownRemark
@@ -442,10 +470,14 @@ function wrapExternalLinks(string: string) {
             >
               <div class="grid grid-cols-1 gap-6 px-2 py-4 lg:grid-cols-12">
                 <div class="col-span-1 lg:col-span-3">
-                  <div class="text-left font-semibold">Name</div>
+                  <div class="text-left font-semibold">
+                    Name
+                  </div>
                 </div>
                 <div class="col-span-1 lg:col-span-9">
-                  <div class="text-left font-semibold">Slot Prop Type</div>
+                  <div class="text-left font-semibold">
+                    Slot Prop Type
+                  </div>
                 </div>
               </div>
             </div>
@@ -465,6 +497,12 @@ function wrapExternalLinks(string: string) {
                     class="text-muted-800 dark:text-muted-100 font-mono font-medium"
                   >
                     <code>#{{ slot.name }}</code>
+                    <div
+                      v-if="slot.description"
+                      class="text-muted-400 whitespace-pre-wrap break-words text-left italic"
+                    >
+                      {{ slot.description }}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -484,7 +522,7 @@ function wrapExternalLinks(string: string) {
                     <span class="hidden group-open:inline">Hide example</span>
                     <Icon
                       name="lucide:chevron-down"
-                      class="text-muted-400 h-4 w-4 transition-transform duration-200 group-open:rotate-180"
+                      class="text-muted-400 size-4 transition-transform duration-200 group-open:rotate-180"
                     />
                   </summary>
                   <AddonMarkdownRemark
@@ -524,10 +562,14 @@ function wrapExternalLinks(string: string) {
             >
               <div class="grid grid-cols-1 gap-6 px-2 py-4 lg:grid-cols-12">
                 <div class="col-span-1 lg:col-span-3">
-                  <div class="text-left font-semibold">Name</div>
+                  <div class="text-left font-semibold">
+                    Name
+                  </div>
                 </div>
                 <div class="col-span-1 lg:col-span-9">
-                  <div class="text-left font-semibold">Type</div>
+                  <div class="text-left font-semibold">
+                    Type
+                  </div>
                 </div>
               </div>
             </div>
@@ -547,6 +589,12 @@ function wrapExternalLinks(string: string) {
                     class="text-muted-800 dark:text-muted-100 font-mono font-medium"
                   >
                     <code>{{ exposed.name }}</code>
+                    <div
+                      v-if="exposed.description"
+                      class="text-muted-400 whitespace-pre-wrap break-words text-left italic"
+                    >
+                      {{ exposed.description }}
+                    </div>
                   </div>
                 </div>
                 <div
@@ -571,7 +619,7 @@ function wrapExternalLinks(string: string) {
                     <span class="hidden group-open:inline">Hide example</span>
                     <Icon
                       name="lucide:chevron-down"
-                      class="text-muted-400 h-4 w-4 transition-transform duration-200 group-open:rotate-180"
+                      class="text-muted-400 size-4 transition-transform duration-200 group-open:rotate-180"
                     />
                   </summary>
                   <AddonMarkdownRemark

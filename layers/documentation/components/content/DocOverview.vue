@@ -3,7 +3,7 @@
     class="dark:border-muted-800 mb-10 grid gap-4 border-b border-gray-200 pb-10 md:grid-cols-2 xl:gap-8"
   >
     <div>
-      <BaseCard shape="rounded" class="p-8">
+      <BaseCard rounded="sm" class="p-8">
         <div
           class="text-muted-400 hover:text-primary-500 dark:text-muted-600 dark:hover:text-primary-500 mb-7 block transition-colors duration-300"
         >
@@ -29,7 +29,7 @@
           <span class="me-1">Quick start guide</span>
           <Icon
             name="lucide:arrow-right"
-            class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-2"
+            class="size-4 transition-transform duration-300 group-hover:translate-x-2"
           />
         </NuxtLink>
       </BaseCard>
@@ -42,19 +42,19 @@
         class="group flex h-full flex-col"
       >
         <BaseCard
-          shape="rounded"
+          rounded="sm"
           class="group-hover:border-success-500 flex h-full items-center p-8 text-center sm:justify-center sm:p-2"
         >
           <img
             src="/img/logos/brands/nuxt-light.svg"
-            class="block h-6 dark:hidden sm:mx-auto"
+            class="block h-6 sm:mx-auto dark:hidden"
             alt="Nuxt logo"
-          />
+          >
           <img
             src="/img/logos/brands/nuxt-dark.svg"
-            class="hidden h-6 dark:block sm:mx-auto"
+            class="hidden h-6 sm:mx-auto dark:block"
             alt="Nuxt logo"
-          />
+          >
           <BaseHeading
             as="h4"
             size="sm"
@@ -72,19 +72,19 @@
         class="group flex h-full flex-col"
       >
         <BaseCard
-          shape="rounded"
+          rounded="sm"
           class="flex h-full items-center p-8 text-center group-hover:border-sky-500 sm:justify-center sm:p-2"
         >
           <img
             src="/img/logos/brands/tailwindcss-light.svg"
-            class="block h-7 dark:hidden sm:mx-auto"
+            class="block h-7 sm:mx-auto dark:hidden"
             alt="Tailwind CSS logo"
-          />
+          >
           <img
             src="/img/logos/brands/tailwindcss-dark.svg"
-            class="hidden h-7 dark:block sm:mx-auto"
+            class="hidden h-7 sm:mx-auto dark:block"
             alt="Tailwind CSS logo"
-          />
+          >
           <BaseHeading
             as="h4"
             size="sm"
@@ -102,19 +102,19 @@
         class="group flex h-full flex-col"
       >
         <BaseCard
-          shape="rounded"
+          rounded="sm"
           class="flex h-full items-center p-8 text-center group-hover:border-violet-500 sm:justify-center sm:p-2"
         >
           <img
-            src="/img/logos/brands/shuriken-light.svg"
-            class="block h-8 dark:hidden sm:mx-auto"
+            src="/img/logos/brands/shuriken-gradient-light.svg"
+            class="block h-8 sm:mx-auto dark:hidden"
             alt="Shuriken UI logo"
-          />
+          >
           <img
-            src="/img/logos/brands/shuriken-dark.svg"
-            class="hidden h-8 dark:block sm:mx-auto"
+            src="/img/logos/brands/shuriken-gradient-dark.svg"
+            class="hidden h-8 sm:mx-auto dark:block"
             alt="Shuriken UI logo"
-          />
+          >
           <BaseHeading
             as="h4"
             size="sm"
@@ -132,14 +132,14 @@
         class="group flex h-full flex-col"
       >
         <BaseCard
-          shape="rounded"
+          rounded="sm"
           class="flex h-full items-center p-8 text-center group-hover:border-blue-500 sm:justify-center sm:p-2"
         >
           <img
             src="/img/logos/brands/typescript-text.svg"
             class="block h-7 sm:mx-auto"
             alt="Typescript logo"
-          />
+          >
           <BaseHeading
             as="h4"
             size="sm"

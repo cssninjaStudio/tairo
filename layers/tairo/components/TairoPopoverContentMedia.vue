@@ -52,9 +52,12 @@ const props = defineProps<{
           <div class="flex w-full rounded-lg p-2">
             <BaseIconBox
               size="xs"
-              class="bg-indigo-100 text-indigo-500 dark:bg-indigo-600 dark:text-white"
+              variant="pastel"
+              color="primary"
+              rounded="none"
+              mask="blob"
             >
-              <Icon name="ph:house-duotone" class="h-4 w-4" />
+              <Icon name="ph:house-duotone" class="size-4" />
             </BaseIconBox>
             <div class="ms-2">
               <BaseHeading
@@ -87,18 +90,18 @@ const props = defineProps<{
               :src="props.images[0]"
               class="bg-muted-100 h-16 rounded object-cover"
               alt="popover image"
-            />
+            >
             <div class="grid grid-cols-2 gap-x-2">
               <img
                 :src="props.images[1]"
                 class="bg-muted-100 h-12 rounded object-cover"
                 alt="popover image"
-              />
+              >
               <img
                 :src="props.images[2]"
                 class="bg-muted-100 h-12 rounded object-cover"
                 alt="popover image"
-              />
+              >
             </div>
           </div>
         </div>
@@ -106,7 +109,7 @@ const props = defineProps<{
     </div>
     <NuxtLink
       :to="props.to"
-      class="bg-muted-100 dark:bg-muted-800 group flex items-center justify-between rounded-b-lg p-4"
+      class="bg-muted-100 dark:bg-muted-800 group flex items-center justify-between rounded-b-lg p-4 outline-none"
     >
       <div
         class="flow-root rounded-md transition duration-150 ease-in-out focus:outline-none"
@@ -125,12 +128,11 @@ const props = defineProps<{
         </BaseText>
       </div>
       <span class="flex items-center">
-        <NuxtLink
-          to="#"
+        <span
           class="text-primary-500 me-1 font-sans text-sm font-medium underline-offset-4 transition-colors hover:underline"
         >
           {{ props.linkLabel }}
-        </NuxtLink>
+        </span>
       </span>
     </NuxtLink>
   </div>

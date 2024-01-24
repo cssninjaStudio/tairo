@@ -62,17 +62,20 @@ const demoPages = computed(() => {
     for (const route of routes) {
       if (route.children) {
         traverseRoutes(route.children)
-      } else if (route.path.includes(':')) {
+      }
+      else if (route.path.includes(':')) {
         // skip dynamic route
         continue
-      } else if (
-        route.meta?.preview?.title &&
-        searchRe.test(route.meta?.preview?.title)
+      }
+      else if (
+        route.meta?.preview?.title
+        && searchRe.test(route.meta?.preview?.title)
       ) {
         match.push(route)
-      } else if (
-        route.meta?.preview?.description &&
-        searchRe.test(route.meta?.preview?.description)
+      }
+      else if (
+        route.meta?.preview?.description
+        && searchRe.test(route.meta?.preview?.description)
       ) {
         match.push(route)
       }
@@ -118,12 +121,12 @@ const metaKey = useMetaKey()
       <BaseFocusLoop next-keys="ArrowDown" prev-keys="ArrowUp">
         <div class="px-2 pb-2">
           <BaseInput
-            type="search"
-            shape="curved"
-            icon="lucide:search"
             v-model="search"
-            placeholder="Ex: button or analytics..."
             v-focus
+            type="search"
+            rounded="lg"
+            icon="lucide:search"
+            placeholder="Ex: button or analytics..."
             color-focus
           >
             <template #label>
@@ -149,7 +152,11 @@ const metaKey = useMetaKey()
             </span>
           </div>
           <ul>
-            <li v-for="page in contentDocsResults" :key="page?._path" class="">
+            <li
+              v-for="page in contentDocsResults"
+              :key="page?._path"
+              class=""
+            >
               <DemoAppSearchResult
                 :to="page?._path"
                 :search="search"
@@ -171,7 +178,11 @@ const metaKey = useMetaKey()
             </span>
           </div>
           <ul>
-            <li v-for="page in demoPagesResults" :key="page?.name" class="">
+            <li
+              v-for="page in demoPagesResults"
+              :key="page?.name"
+              class=""
+            >
               <DemoAppSearchResult
                 :to="{
                   name: page?.name as string,
@@ -187,9 +198,13 @@ const metaKey = useMetaKey()
       </BaseFocusLoop>
       <div class="flex flex-col items-center py-3 text-center">
         <div class="scale-[0.8]">
-          <BaseText size="xs" weight="medium" class="text-muted-400"
-            >Search by</BaseText
+          <BaseText
+            size="xs"
+            weight="medium"
+            class="text-muted-400"
           >
+            Search by
+          </BaseText>
           <TairoLogoText class="text-muted-400 mx-auto w-20" />
         </div>
       </div>

@@ -14,10 +14,10 @@ const { close } = usePanels()
       </h2>
       <button
         type="button"
-        class="text-muted-400 hover:bg-muted-100 hover:text-muted-600 dark:hover:bg-muted-700 flex h-10 w-10 items-center justify-center rounded-full transition-colors duration-300 dark:hover:text-white"
+        class="text-muted-400 hover:bg-muted-100 hover:text-muted-600 dark:hover:bg-muted-700 flex size-10 items-center justify-center rounded-full transition-colors duration-300 dark:hover:text-white"
         @click="close"
       >
-        <Icon name="feather:chevron-right" class="h-6 w-6" />
+        <Icon name="feather:chevron-right" class="size-6" />
       </button>
     </div>
 
@@ -29,22 +29,22 @@ const { close } = usePanels()
             <input
               type="radio"
               name="language_selection"
-              class="peer absolute start-0 top-0 z-20 h-full w-full cursor-pointer opacity-0"
+              class="peer absolute start-0 top-0 z-20 size-full cursor-pointer opacity-0"
               checked
-            />
+            >
             <div
-              class="border-muted-200 peer-checked:border-primary-500 dark:border-muted-600 flex h-14 w-14 items-center justify-center rounded-full border-2 shadow-lg transition-all duration-300"
+              class="border-muted-200 peer-checked:border-primary-500 dark:border-muted-600 flex size-14 items-center justify-center rounded-full border-2 shadow-lg transition-all duration-300"
             >
               <img
-                class="h-10 w-10 rounded-full"
+                class="size-10 rounded-full"
                 src="/img/icons/flags/united-states-of-america.svg"
                 alt="flag icon"
-              />
+              >
             </div>
             <div
-              class="bg-primary-500 dark:border-muted-800 absolute -end-1 -top-1 hidden h-7 w-7 items-center justify-center rounded-full border-4 border-white text-white peer-checked:flex"
+              class="bg-primary-500 dark:border-muted-800 absolute -end-1 -top-1 hidden size-7 items-center justify-center rounded-full border-4 border-white text-white peer-checked:flex"
             >
-              <Icon name="feather:check" class="h-3 w-3" />
+              <Icon name="feather:check" class="size-3" />
             </div>
           </div>
         </div>
@@ -54,21 +54,21 @@ const { close } = usePanels()
             <input
               type="radio"
               name="language_selection"
-              class="peer absolute start-0 top-0 z-20 h-full w-full cursor-pointer opacity-0"
-            />
+              class="peer absolute start-0 top-0 z-20 size-full cursor-pointer opacity-0"
+            >
             <div
-              class="border-muted-200 peer-checked:border-primary-500 dark:border-muted-600 flex h-14 w-14 items-center justify-center rounded-full border-2 shadow-lg transition-all duration-300"
+              class="border-muted-200 peer-checked:border-primary-500 dark:border-muted-600 flex size-14 items-center justify-center rounded-full border-2 shadow-lg transition-all duration-300"
             >
               <img
-                class="h-10 w-10 rounded-full"
+                class="size-10 rounded-full"
                 src="/img/icons/flags/france.svg"
                 alt="flag icon"
-              />
+              >
             </div>
             <div
-              class="bg-primary-500 dark:border-muted-800 absolute -end-1 -top-1 hidden h-7 w-7 items-center justify-center rounded-full border-4 border-white text-white peer-checked:flex"
+              class="bg-primary-500 dark:border-muted-800 absolute -end-1 -top-1 hidden size-7 items-center justify-center rounded-full border-4 border-white text-white peer-checked:flex"
             >
-              <Icon name="feather:check" class="h-3 w-3" />
+              <Icon name="feather:check" class="size-3" />
             </div>
           </div>
         </div>
@@ -78,21 +78,21 @@ const { close } = usePanels()
             <input
               type="radio"
               name="language_selection"
-              class="peer absolute start-0 top-0 z-20 h-full w-full cursor-pointer opacity-0"
-            />
+              class="peer absolute start-0 top-0 z-20 size-full cursor-pointer opacity-0"
+            >
             <div
-              class="border-muted-200 peer-checked:border-primary-500 dark:border-muted-600 flex h-14 w-14 items-center justify-center rounded-full border-2 shadow-lg transition-all duration-300"
+              class="border-muted-200 peer-checked:border-primary-500 dark:border-muted-600 flex size-14 items-center justify-center rounded-full border-2 shadow-lg transition-all duration-300"
             >
               <img
-                class="h-10 w-10 rounded-full"
+                class="size-10 rounded-full"
                 src="/img/icons/flags/spain.svg"
                 alt="flag icon"
-              />
+              >
             </div>
             <div
-              class="bg-primary-500 dark:border-muted-800 absolute -end-1 -top-1 hidden h-7 w-7 items-center justify-center rounded-full border-4 border-white text-white peer-checked:flex"
+              class="bg-primary-500 dark:border-muted-800 absolute -end-1 -top-1 hidden size-7 items-center justify-center rounded-full border-4 border-white text-white peer-checked:flex"
             >
-              <Icon name="feather:check" class="h-3 w-3" />
+              <Icon name="feather:check" class="size-3" />
             </div>
           </div>
         </div>
@@ -102,21 +102,21 @@ const { close } = usePanels()
             <input
               type="radio"
               name="language_selection"
-              class="peer absolute start-0 top-0 z-20 h-full w-full cursor-pointer opacity-0"
-            />
+              class="peer absolute start-0 top-0 z-20 size-full cursor-pointer opacity-0"
+            >
             <div
-              class="border-muted-200 peer-checked:border-primary-500 dark:border-muted-600 flex h-14 w-14 items-center justify-center rounded-full border-2 shadow-lg transition-all duration-300"
+              class="border-muted-200 peer-checked:border-primary-500 dark:border-muted-600 flex size-14 items-center justify-center rounded-full border-2 shadow-lg transition-all duration-300"
             >
               <img
-                class="h-10 w-10 rounded-full"
+                class="size-10 rounded-full"
                 src="/img/icons/flags/germany.svg"
                 alt="flag icon"
-              />
+              >
             </div>
             <div
-              class="bg-primary-500 dark:border-muted-800 absolute -end-1 -top-1 hidden h-7 w-7 items-center justify-center rounded-full border-4 border-white text-white peer-checked:flex"
+              class="bg-primary-500 dark:border-muted-800 absolute -end-1 -top-1 hidden size-7 items-center justify-center rounded-full border-4 border-white text-white peer-checked:flex"
             >
-              <Icon name="feather:check" class="h-3 w-3" />
+              <Icon name="feather:check" class="size-3" />
             </div>
           </div>
         </div>
@@ -126,21 +126,21 @@ const { close } = usePanels()
             <input
               type="radio"
               name="language_selection"
-              class="peer absolute start-0 top-0 z-20 h-full w-full cursor-pointer opacity-0"
-            />
+              class="peer absolute start-0 top-0 z-20 size-full cursor-pointer opacity-0"
+            >
             <div
-              class="border-muted-200 peer-checked:border-primary-500 dark:border-muted-600 flex h-14 w-14 items-center justify-center rounded-full border-2 shadow-lg transition-all duration-300"
+              class="border-muted-200 peer-checked:border-primary-500 dark:border-muted-600 flex size-14 items-center justify-center rounded-full border-2 shadow-lg transition-all duration-300"
             >
               <img
-                class="h-10 w-10 rounded-full"
+                class="size-10 rounded-full"
                 src="/img/icons/flags/mexico.svg"
                 alt="flag icon"
-              />
+              >
             </div>
             <div
-              class="bg-primary-500 dark:border-muted-800 absolute -end-1 -top-1 hidden h-7 w-7 items-center justify-center rounded-full border-4 border-white text-white peer-checked:flex"
+              class="bg-primary-500 dark:border-muted-800 absolute -end-1 -top-1 hidden size-7 items-center justify-center rounded-full border-4 border-white text-white peer-checked:flex"
             >
-              <Icon name="feather:check" class="h-3 w-3" />
+              <Icon name="feather:check" class="size-3" />
             </div>
           </div>
         </div>
@@ -150,21 +150,21 @@ const { close } = usePanels()
             <input
               type="radio"
               name="language_selection"
-              class="peer absolute start-0 top-0 z-20 h-full w-full cursor-pointer opacity-0"
-            />
+              class="peer absolute start-0 top-0 z-20 size-full cursor-pointer opacity-0"
+            >
             <div
-              class="border-muted-200 peer-checked:border-primary-500 dark:border-muted-600 flex h-14 w-14 items-center justify-center rounded-full border-2 shadow-lg transition-all duration-300"
+              class="border-muted-200 peer-checked:border-primary-500 dark:border-muted-600 flex size-14 items-center justify-center rounded-full border-2 shadow-lg transition-all duration-300"
             >
               <img
-                class="h-10 w-10 rounded-full"
+                class="size-10 rounded-full"
                 src="/img/icons/flags/china.svg"
                 alt="flag icon"
-              />
+              >
             </div>
             <div
-              class="bg-primary-500 dark:border-muted-800 absolute -end-1 -top-1 hidden h-7 w-7 items-center justify-center rounded-full border-4 border-white text-white peer-checked:flex"
+              class="bg-primary-500 dark:border-muted-800 absolute -end-1 -top-1 hidden size-7 items-center justify-center rounded-full border-4 border-white text-white peer-checked:flex"
             >
-              <Icon name="feather:check" class="h-3 w-3" />
+              <Icon name="feather:check" class="size-3" />
             </div>
           </div>
         </div>
@@ -175,12 +175,12 @@ const { close } = usePanels()
           src="/img/illustrations/translation.svg"
           class="mx-auto w-full max-w-[280px] dark:hidden"
           alt="illustration"
-        />
+        >
         <img
           src="/img/illustrations/translation-dark.svg"
           class="mx-auto hidden w-full max-w-[280px] dark:block"
           alt="illustration"
-        />
+        >
       </div>
     </div>
   </div>

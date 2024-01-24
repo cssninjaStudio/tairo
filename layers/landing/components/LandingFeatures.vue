@@ -4,8 +4,9 @@
       <div class="mb-12 max-w-2xl">
         <BaseText
           class="text-primary-500 mb-2 text-[0.65rem] uppercase tracking-wider"
-          >There's more</BaseText
         >
+          There's more
+        </BaseText>
         <BaseHeading
           as="h2"
           size="4xl"
@@ -70,7 +71,7 @@
       <div class="mt-16 flex items-center justify-center">
         <BaseButton
           to="https://go.cssninja.io/buy-tairo"
-          shape="curved"
+          rounded="lg"
           color="primary"
         >
           Get Tairo Dashboard System

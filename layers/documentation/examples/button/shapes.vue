@@ -1,11 +1,23 @@
 <template>
   <div class="flex flex-wrap items-end gap-4">
-    <BaseButton shape="straight">Button</BaseButton>
+    <BaseButton rounded="none">
+      Button
+    </BaseButton>
 
-    <BaseButton shape="rounded">Button</BaseButton>
+    <BaseButton rounded="sm">
+      Button
+    </BaseButton>
 
-    <BaseButton shape="curved">Button</BaseButton>
+    <BaseButton rounded="md">
+      Button
+    </BaseButton>
 
-    <BaseButton shape="full">Button</BaseButton>
+    <BaseButton rounded="lg">
+      Button
+    </BaseButton>
+
+    <BaseButton rounded="full">
+      Button
+    </BaseButton>
   </div>
 </template>

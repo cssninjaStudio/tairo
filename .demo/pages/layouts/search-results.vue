@@ -57,7 +57,7 @@ const filteredResults = computed(() => {
         v-model="searchTerms"
         icon="lucide:search"
         placeholder="Search..."
-        shape="full"
+        rounded="full"
         :classes="{
           wrapper: 'w-full',
           input: 'h-12 !ps-12',
@@ -66,9 +66,12 @@ const filteredResults = computed(() => {
       />
     </div>
     <div class="mb-12 mt-2 text-center">
-      <BaseText size="sm" class="text-muted-400"
-        >78 results for "internal projects"</BaseText
+      <BaseText
+        size="sm"
+        class="text-muted-400"
       >
+        78 results for "internal projects"
+      </BaseText>
     </div>
     <div v-if="results === null">
       <BasePlaceholderPage
@@ -80,12 +83,12 @@ const filteredResults = computed(() => {
             class="block dark:hidden"
             src="/img/illustrations/placeholders/flat/placeholder-search-4.svg"
             alt="Placeholder image"
-          />
+          >
           <img
             class="hidden dark:block"
             src="/img/illustrations/placeholders/flat/placeholder-search-4-dark.svg"
             alt="Placeholder image"
-          />
+          >
         </template>
       </BasePlaceholderPage>
     </div>
@@ -93,7 +96,12 @@ const filteredResults = computed(() => {
       <div class="col-span-12 sm:col-span-4">
         <div class="flex flex-col gap-6">
           <BaseCard class="p-6">
-            <BaseHeading as="h3" weight="medium" size="md" class="mb-4">
+            <BaseHeading
+              as="h3"
+              weight="medium"
+              size="md"
+              class="mb-4"
+            >
               Publication
             </BaseHeading>
             <ul class="space-y-4">
@@ -101,42 +109,53 @@ const filteredResults = computed(() => {
                 <BaseCheckbox
                   v-model="filters.publication.new"
                   color="primary"
-                  shape="full"
+                  rounded="full"
                   label="Newly added"
                   :classes="{
                     label: 'text-xs',
                   }"
                 />
-                <BaseTag shape="full" size="sm">24</BaseTag>
+                <BaseTag rounded="full" size="sm">
+                  24
+                </BaseTag>
               </li>
               <li class="flex items-center justify-between">
                 <BaseCheckbox
                   v-model="filters.publication.updated"
                   color="primary"
-                  shape="full"
+                  rounded="full"
                   label="Recently updated"
                   :classes="{
                     label: 'text-xs',
                   }"
                 />
-                <BaseTag shape="full" size="sm">39</BaseTag>
+                <BaseTag rounded="full" size="sm">
+                  39
+                </BaseTag>
               </li>
               <li class="flex items-center justify-between">
                 <BaseCheckbox
                   v-model="filters.publication.upvoted"
                   color="primary"
-                  shape="full"
+                  rounded="full"
                   label="Upvoted"
                   :classes="{
                     label: 'text-xs',
                   }"
                 />
-                <BaseTag shape="full" size="sm">17</BaseTag>
+                <BaseTag rounded="full" size="sm">
+                  17
+                </BaseTag>
               </li>
             </ul>
           </BaseCard>
           <BaseCard class="p-6">
-            <BaseHeading as="h3" weight="medium" size="md" class="mb-4">
+            <BaseHeading
+              as="h3"
+              weight="medium"
+              size="md"
+              class="mb-4"
+            >
               Topics
             </BaseHeading>
             <ul class="space-y-4">
@@ -144,66 +163,81 @@ const filteredResults = computed(() => {
                 <BaseCheckbox
                   v-model="filters.topics.engineering"
                   color="primary"
-                  shape="full"
+                  rounded="full"
                   label="Engineering"
                   :classes="{
                     label: 'text-xs',
                   }"
                 />
-                <BaseTag shape="full" size="sm">62</BaseTag>
+                <BaseTag rounded="full" size="sm">
+                  62
+                </BaseTag>
               </li>
               <li class="flex items-center justify-between">
                 <BaseCheckbox
                   v-model="filters.topics.software"
                   color="primary"
-                  shape="full"
+                  rounded="full"
                   label="Software"
                   :classes="{
                     label: 'text-xs',
                   }"
                 />
-                <BaseTag shape="full" size="sm">148</BaseTag>
+                <BaseTag rounded="full" size="sm">
+                  148
+                </BaseTag>
               </li>
               <li class="flex items-center justify-between">
                 <BaseCheckbox
                   v-model="filters.topics.business"
                   color="primary"
-                  shape="full"
+                  rounded="full"
                   label="Business"
                   :classes="{
                     label: 'text-xs',
                   }"
                 />
-                <BaseTag shape="full" size="sm">23</BaseTag>
+                <BaseTag rounded="full" size="sm">
+                  23
+                </BaseTag>
               </li>
               <li class="flex items-center justify-between">
                 <BaseCheckbox
                   v-model="filters.topics.management"
                   color="primary"
-                  shape="full"
+                  rounded="full"
                   label="Management"
                   :classes="{
                     label: 'text-xs',
                   }"
                 />
-                <BaseTag shape="full" size="sm">8</BaseTag>
+                <BaseTag rounded="full" size="sm">
+                  8
+                </BaseTag>
               </li>
               <li class="flex items-center justify-between">
                 <BaseCheckbox
                   v-model="filters.topics.hr"
                   color="primary"
-                  shape="full"
+                  rounded="full"
                   label="Human Resources"
                   :classes="{
                     label: 'text-xs',
                   }"
                 />
-                <BaseTag shape="full" size="sm">43</BaseTag>
+                <BaseTag rounded="full" size="sm">
+                  43
+                </BaseTag>
               </li>
             </ul>
           </BaseCard>
           <BaseCard class="p-6">
-            <BaseHeading as="h3" weight="medium" size="md" class="mb-4">
+            <BaseHeading
+              as="h3"
+              weight="medium"
+              size="md"
+              class="mb-4"
+            >
               Result type
             </BaseHeading>
             <ul class="space-y-4">
@@ -211,37 +245,43 @@ const filteredResults = computed(() => {
                 <BaseCheckbox
                   v-model="filters.type.members"
                   color="primary"
-                  shape="full"
+                  rounded="full"
                   label="Members"
                   :classes="{
                     label: 'text-xs',
                   }"
                 />
-                <BaseTag shape="full" size="sm">12</BaseTag>
+                <BaseTag rounded="full" size="sm">
+                  12
+                </BaseTag>
               </li>
               <li class="flex items-center justify-between">
                 <BaseCheckbox
                   v-model="filters.type.projects"
                   color="primary"
-                  shape="full"
+                  rounded="full"
                   label="Projects"
                   :classes="{
                     label: 'text-xs',
                   }"
                 />
-                <BaseTag shape="full" size="sm">54</BaseTag>
+                <BaseTag rounded="full" size="sm">
+                  54
+                </BaseTag>
               </li>
               <li class="flex items-center justify-between">
                 <BaseCheckbox
                   v-model="filters.type.files"
                   color="primary"
-                  shape="full"
+                  rounded="full"
                   label="Files"
                   :classes="{
                     label: 'text-xs',
                   }"
                 />
-                <BaseTag shape="full" size="sm">31</BaseTag>
+                <BaseTag rounded="full" size="sm">
+                  31
+                </BaseTag>
               </li>
             </ul>
           </BaseCard>
@@ -301,7 +341,7 @@ const filteredResults = computed(() => {
           </button>
         </div>
         <div>
-          <div v-if="results.length === 0"></div>
+          <div v-if="results.length === 0" />
           <div v-else class="space-y-4 py-4">
             <BaseCard
               v-for="result in filteredResults"
@@ -312,18 +352,22 @@ const filteredResults = computed(() => {
                 <BaseAvatar v-if="result.type === 'people'" :src="result.src" />
                 <img
                   v-else-if="result.type === 'project'"
-                  class="h-10 w-10 shrink-0 rounded-full object-cover object-center"
+                  class="size-10 shrink-0 rounded-full object-cover object-center"
                   :src="result.src"
                   :alt="result.name"
-                />
+                >
                 <img
                   v-else-if="result.type === 'file'"
-                  class="h-10 w-10 shrink-0"
+                  class="size-10 shrink-0"
                   :src="result.src"
                   :alt="result.name"
-                />
+                >
                 <div>
-                  <BaseHeading as="h3" weight="medium" size="sm">
+                  <BaseHeading
+                    as="h3"
+                    weight="medium"
+                    size="sm"
+                  >
                     {{ result.name }}
                   </BaseHeading>
                   <BaseText size="xs" class="text-muted-400">
@@ -334,7 +378,7 @@ const filteredResults = computed(() => {
                   <BaseButtonIcon
                     v-if="result.type === 'people'"
                     :to="result.url"
-                    shape="full"
+                    rounded="full"
                     size="sm"
                     data-nui-tooltip="View profile"
                   >
@@ -343,7 +387,7 @@ const filteredResults = computed(() => {
                   <BaseButtonIcon
                     v-else-if="result.type === 'project'"
                     :to="result.url"
-                    shape="full"
+                    rounded="full"
                     size="sm"
                     data-nui-tooltip="View project"
                   >
@@ -352,7 +396,7 @@ const filteredResults = computed(() => {
                   <BaseButtonIcon
                     v-else-if="result.type === 'file'"
                     :to="result.url"
-                    shape="full"
+                    rounded="full"
                     size="sm"
                     data-nui-tooltip="Download file"
                   >

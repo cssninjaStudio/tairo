@@ -16,12 +16,12 @@ const selectedFeature = ref()
 const selectedFeatureLatLng = ref()
 const selectedFeatureName = ref('')
 const mapElement = shallowRef<HTMLElement>()
-const geocoderElement = shallowRef<HTMLElement>()
 const popupElement = shallowRef<HTMLElement>()
 const map = shallowRef<Map>()
 const popup = shallowRef<Popup>()
 const geocoder = shallowRef<any>()
 
+// eslint-disable-next-line @typescript-eslint/consistent-type-imports
 let mapboxgl: typeof import('mapbox-gl')
 
 const locations = {
@@ -204,12 +204,10 @@ function loadLayers() {
     type: 'circle',
     source: 'places',
     paint: {
-      'circle-color':
-        colorMode.value === 'dark' ? primary.value : primary.value,
+      'circle-color': primary.value,
       'circle-radius': 6,
       'circle-stroke-width': 2,
-      'circle-stroke-color':
-        colorMode.value === 'dark' ? primary.value : primary.value,
+      'circle-stroke-color': primary.value,
     },
   })
 
@@ -242,14 +240,10 @@ function selectFeature(feature: any) {
   selectedFeature.value = feature
 }
 const config = useRuntimeConfig()
-if (process.dev) {
-  // This block will be removed in production build
-
-  if (!config.public.mapboxToken) {
-    console.warn(
-      'NUXT_PUBLIC_MAPBOX_TOKEN environment variable is not defined, mapbox features are disabled',
-    )
-  }
+if (import.meta.dev && !config.public.mapboxToken) {
+  console.warn(
+    'NUXT_PUBLIC_MAPBOX_TOKEN environment variable is not defined, mapbox features are disabled',
+  )
 }
 
 onMounted(() => {
@@ -258,13 +252,13 @@ onMounted(() => {
   }
 
   Promise.all([
-    import('mapbox-gl').then((m) => m.default),
+    import('mapbox-gl').then(m => m.default),
     import('@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.min.js').then(
-      (m) => m.default,
+      m => m.default,
     ),
   ]).then(([_mapboxgl, MapboxGeocoder]) => {
     mapboxgl = _mapboxgl
-    if (!mapElement.value || !geocoderElement.value) {
+    if (!mapElement.value) {
       return
     }
     // You can set the NUXT_PUBLIC_MAPBOX_TOKEN inside .env file
@@ -298,7 +292,7 @@ onMounted(() => {
       loadingStyles()
     })
 
-    geocoderElement.value.appendChild(geocoder.value.onAdd(map.value))
+    map.value.addControl(geocoder.value, props.reversed ? 'top-left' : 'top-right')
   })
 })
 
@@ -320,8 +314,8 @@ watchEffect(
     // over the copy being pointed to.
     if (selectedFeatureLatLng.value) {
       while (Math.abs(selectedFeatureLatLng.value.lng - coordinates[0]) > 180) {
-        coordinates[0] +=
-          selectedFeatureLatLng.value.lng > coordinates[0] ? 360 : -360
+        coordinates[0]
+          += selectedFeatureLatLng.value.lng > coordinates[0] ? 360 : -360
       }
     }
 
@@ -358,9 +352,10 @@ watch(
     }
 
     if (colorMode.value === 'dark') {
-      map.value.setStyle('mapbox://styles/mapbox/dark-v10')
-    } else {
-      map.value.setStyle('mapbox://styles/mapbox/light-v10')
+      map.value.setStyle('mapbox://styles/mapbox/dark-v11')
+    }
+    else {
+      map.value.setStyle('mapbox://styles/mapbox/light-v11')
     }
   },
 )
@@ -378,22 +373,22 @@ watch(
         <div class="ltablet:flex-col flex h-full justify-between lg:flex-col">
           <div class="ltablet:flex-col flex lg:flex-col">
             <div
-              class="ltablet:w-full flex h-16 w-16 shrink-0 items-center justify-center lg:w-full"
+              class="ltablet:w-full flex size-16 shrink-0 items-center justify-center lg:w-full"
             >
               <NuxtLink to="#" class="flex items-center justify-center">
                 <TairoLogo class="text-primary-600 h-10" />
               </NuxtLink>
             </div>
             <div
-              class="ltablet:w-full flex h-16 w-16 shrink-0 items-center justify-center lg:w-full"
+              class="ltablet:w-full flex size-16 shrink-0 items-center justify-center lg:w-full"
             >
               <a
                 href="#"
-                class="text-muted-400 hover:text-primary-500 hover:bg-primary-500/20 flex h-12 w-12 items-center justify-center rounded-2xl transition-colors duration-300"
+                class="text-muted-400 hover:text-primary-500 hover:bg-primary-500/20 flex size-12 items-center justify-center rounded-2xl transition-colors duration-300"
                 title="Back"
                 @click.prevent="$router.back()"
               >
-                <Icon name="lucide:arrow-left" class="h-5 w-5" />
+                <Icon name="lucide:arrow-left" class="size-5" />
               </a>
             </div>
           </div>
@@ -403,20 +398,20 @@ watch(
             <div class="flex h-16 w-full items-center justify-center">
               <button
                 type="button"
-                class="text-muted-400 hover:text-primary-500 hover:bg-primary-500/20 flex h-12 w-12 items-center justify-center rounded-2xl transition-colors duration-300"
+                class="text-muted-400 hover:text-primary-500 hover:bg-primary-500/20 flex size-12 items-center justify-center rounded-2xl transition-colors duration-300"
                 title="Search"
                 @click="open('search')"
               >
-                <Icon name="ph:magnifying-glass-duotone" class="h-5 w-5" />
+                <Icon name="ph:magnifying-glass-duotone" class="size-5" />
               </button>
             </div>
             <div class="flex h-16 w-full items-center justify-center">
               <NuxtLink
                 to="#"
-                class="text-muted-400 hover:text-primary-500 hover:bg-primary-500/20 flex h-12 w-12 items-center justify-center rounded-2xl transition-colors duration-300"
+                class="text-muted-400 hover:text-primary-500 hover:bg-primary-500/20 flex size-12 items-center justify-center rounded-2xl transition-colors duration-300"
                 title="Settings"
               >
-                <Icon name="ph:gear-six-duotone" class="h-5 w-5" />
+                <Icon name="ph:gear-six-duotone" class="size-5" />
               </NuxtLink>
             </div>
             <div
@@ -435,11 +430,7 @@ watch(
 
       <template v-if="!props.reversed">
         <div class="ltablet:h-auto relative h-96 grow lg:h-auto">
-          <div ref="mapElement" class="absolute inset-0 h-full w-full"></div>
-          <div
-            ref="geocoderElement"
-            class="geocoder absolute inset-x-0 top-6 mx-auto flex items-center justify-center px-6 sm:px-0"
-          ></div>
+          <div ref="mapElement" class="absolute inset-0 size-full" />
           <div
             ref="popupElement"
             style="display: none; visibility: hidden"
@@ -488,7 +479,7 @@ watch(
               v-for="(feature, key) in locations.features"
               :key="key"
               class="cursor-pointer p-6"
-              shape="curved"
+              rounded="lg"
               :class="[
                 selectedFeatureName === feature.properties.name &&
                   'border-primary-500',
@@ -523,17 +514,17 @@ watch(
                 </div>
                 <div class="flex items-center justify-between">
                   <div class="flex gap-1">
-                    <Icon name="uiw:star-on" class="h-3 w-3 text-yellow-400" />
-                    <Icon name="uiw:star-on" class="h-3 w-3 text-yellow-400" />
-                    <Icon name="uiw:star-on" class="h-3 w-3 text-yellow-400" />
-                    <Icon name="uiw:star-on" class="h-3 w-3 text-yellow-400" />
-                    <Icon name="uiw:star-on" class="h-3 w-3 text-yellow-400" />
+                    <Icon name="uiw:star-on" class="size-3 text-yellow-400" />
+                    <Icon name="uiw:star-on" class="size-3 text-yellow-400" />
+                    <Icon name="uiw:star-on" class="size-3 text-yellow-400" />
+                    <Icon name="uiw:star-on" class="size-3 text-yellow-400" />
+                    <Icon name="uiw:star-on" class="size-3 text-yellow-400" />
                   </div>
                   <div class="relative">
                     <div
                       class="text-muted-400 flex items-center gap-1 font-sans text-sm"
                     >
-                      <Icon name="lucide:flag" class="h-4 w-4" />
+                      <Icon name="lucide:flag" class="size-4" />
                       <span class="dark-inverted">
                         {{ feature.properties.distance }} mile
                       </span>
@@ -548,11 +539,10 @@ watch(
 
       <template v-if="props.reversed">
         <div class="ltablet:h-auto relative h-96 grow lg:h-auto">
-          <div ref="mapElement" class="absolute inset-0 h-full w-full"></div>
           <div
-            ref="geocoderElement"
-            class="geocoder absolute inset-x-0 top-6 mx-auto flex items-center justify-center px-6 sm:px-0"
-          ></div>
+            ref="mapElement"
+            class="absolute inset-0 size-full"
+          />
           <div
             ref="popupElement"
             style="display: none; visibility: hidden"

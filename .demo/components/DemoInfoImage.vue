@@ -5,13 +5,13 @@ const props = withDefaults(
     text?: string
     image: string
     imageDark?: string
-    shape?: 'straight' | 'rounded' | 'curved'
+    rounded?: 'none' | 'sm' | 'md' | 'lg'
   }>(),
   {
     title: undefined,
     text: undefined,
     imageDark: undefined,
-    shape: 'rounded',
+    rounded: 'sm',
   },
 )
 </script>
@@ -23,7 +23,7 @@ const props = withDefaults(
       :image-dark="props.imageDark"
       :height="300"
       :width="300"
-      :shape="props.shape"
+      :rounded="props.rounded"
     />
     <div class="mt-3">
       <BaseHeading

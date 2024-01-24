@@ -38,7 +38,11 @@ const leagues = [
       :key="league.id"
       class="flex items-center gap-3"
     >
-      <img :src="league.logo" :alt="league.name" class="h-10 w-10 shrink-0" />
+      <img
+        :src="league.logo"
+        :alt="league.name"
+        class="size-10 shrink-0"
+      >
       <div>
         <BaseHeading
           as="h4"
@@ -59,8 +63,12 @@ const leagues = [
         <span class="text-muted-400 font-sans text-xs">
           {{ league.matches }} matches
         </span>
-        <BaseButtonIcon shape="curved" muted class="scale-75">
-          <Icon name="lucide:arrow-right" class="h-4 w-4" />
+        <BaseButtonIcon
+          rounded="lg"
+          muted
+          class="scale-75"
+        >
+          <Icon name="lucide:arrow-right" class="size-4" />
         </BaseButtonIcon>
       </div>
     </div>

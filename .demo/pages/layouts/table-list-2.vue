@@ -60,10 +60,18 @@ const { data, pending, error, refresh } = await useFetch('/api/products', {
             wrapper: 'w-full sm:w-40',
           }"
         >
-          <option :value="10">10 per page</option>
-          <option :value="25">25 per page</option>
-          <option :value="50">50 per page</option>
-          <option :value="100">100 per page</option>
+          <option :value="10">
+            10 per page
+          </option>
+          <option :value="25">
+            25 per page
+          </option>
+          <option :value="50">
+            50 per page
+          </option>
+          <option :value="100">
+            100 per page
+          </option>
         </BaseSelect>
       </template>
       <div>
@@ -77,26 +85,40 @@ const { data, pending, error, refresh } = await useFetch('/api/products', {
                 class="block dark:hidden"
                 src="/img/illustrations/placeholders/flat/placeholder-search-4.svg"
                 alt="Placeholder image"
-              />
+              >
               <img
                 class="hidden dark:block"
                 src="/img/illustrations/placeholders/flat/placeholder-search-4-dark.svg"
                 alt="Placeholder image"
-              />
+              >
             </template>
           </BasePlaceholderPage>
         </div>
         <div v-else>
           <div class="w-full">
-            <TairoTable shape="rounded">
+            <TairoTable rounded="sm">
               <template #header>
-                <TairoTableHeading uppercase spaced>Product</TairoTableHeading>
-                <TairoTableHeading uppercase spaced>Name</TairoTableHeading>
-                <TairoTableHeading uppercase spaced>Sku</TairoTableHeading>
-                <TairoTableHeading uppercase spaced>Price</TairoTableHeading>
-                <TairoTableHeading uppercase spaced>Stock</TairoTableHeading>
-                <TairoTableHeading uppercase spaced>Category</TairoTableHeading>
-                <TairoTableHeading uppercase spaced>Action</TairoTableHeading>
+                <TairoTableHeading uppercase spaced>
+                  Product
+                </TairoTableHeading>
+                <TairoTableHeading uppercase spaced>
+                  Name
+                </TairoTableHeading>
+                <TairoTableHeading uppercase spaced>
+                  Sku
+                </TairoTableHeading>
+                <TairoTableHeading uppercase spaced>
+                  Price
+                </TairoTableHeading>
+                <TairoTableHeading uppercase spaced>
+                  Stock
+                </TairoTableHeading>
+                <TairoTableHeading uppercase spaced>
+                  Category
+                </TairoTableHeading>
+                <TairoTableHeading uppercase spaced>
+                  Action
+                </TairoTableHeading>
               </template>
 
               <TairoTableRow v-for="item in data?.data" :key="item.id">
@@ -106,7 +128,7 @@ const { data, pending, error, refresh } = await useFetch('/api/products', {
                       :src="item.image"
                       :alt="item.name"
                       class="max-w-[80px]"
-                    />
+                    >
                   </div>
                 </TairoTableCell>
                 <TairoTableCell spaced>
@@ -127,7 +149,9 @@ const { data, pending, error, refresh } = await useFetch('/api/products', {
                   </span>
                 </TairoTableCell>
                 <TairoTableCell spaced>
-                  <BaseButtonAction muted>Manage</BaseButtonAction>
+                  <BaseButtonAction muted>
+                    Manage
+                  </BaseButtonAction>
                 </TairoTableCell>
               </TairoTableRow>
             </TairoTable>
@@ -137,7 +161,7 @@ const { data, pending, error, refresh } = await useFetch('/api/products', {
               :total-items="data?.total ?? 0"
               :item-per-page="perPage"
               :current-page="page"
-              shape="curved"
+              rounded="lg"
             />
           </div>
         </div>

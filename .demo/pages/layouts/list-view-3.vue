@@ -43,14 +43,14 @@ const { data, pending, error, refresh } = await useFetch('/api/jobs', {
   <div>
     <TairoContentWrapperTabbed
       :labels="['Active', 'Inactive']"
-      shape="full"
+      rounded="full"
       reverse
     >
       <template #left>
         <BaseInput
           v-model="filter"
           icon="lucide:search"
-          shape="full"
+          rounded="full"
           placeholder="Filter jobs..."
           :classes="{
             wrapper: 'w-full sm:w-auto',
@@ -69,12 +69,12 @@ const { data, pending, error, refresh } = await useFetch('/api/jobs', {
                   class="block dark:hidden"
                   src="/img/illustrations/placeholders/flat/placeholder-search-3.svg"
                   alt="Placeholder image"
-                />
+                >
                 <img
                   class="hidden dark:block"
                   src="/img/illustrations/placeholders/flat/placeholder-search-3-dark.svg"
                   alt="Placeholder image"
-                />
+                >
               </template>
             </BasePlaceholderPage>
           </div>
@@ -90,7 +90,7 @@ const { data, pending, error, refresh } = await useFetch('/api/jobs', {
               <BaseCard
                 v-for="item in data?.data"
                 :key="item.id"
-                shape="curved"
+                rounded="lg"
                 class="flex flex-col p-5 sm:flex-row sm:items-center"
               >
                 <div
@@ -116,7 +116,7 @@ const { data, pending, error, refresh } = await useFetch('/api/jobs', {
                       <div
                         class="text-muted-400 mt-3 flex items-center gap-1 text-left text-sm sm:mt-0"
                       >
-                        <Icon name="lucide:map-pin" class="h-3 w-3" />
+                        <Icon name="lucide:map-pin" class="size-3" />
                         <span>{{ item.location }}</span>
                       </div>
                       <div class="hidden px-2 sm:block">
@@ -125,7 +125,7 @@ const { data, pending, error, refresh } = await useFetch('/api/jobs', {
                       <div
                         class="text-muted-400 mt-3 flex items-center gap-1 text-left text-sm sm:mt-0"
                       >
-                        <Icon name="lucide:clock" class="h-3 w-3" />
+                        <Icon name="lucide:clock" class="size-3" />
                         <span>{{ item.duration }}</span>
                       </div>
                       <div class="hidden px-2 sm:block">
@@ -134,7 +134,7 @@ const { data, pending, error, refresh } = await useFetch('/api/jobs', {
                       <div
                         class="text-muted-400 mt-3 flex items-center gap-1 text-left text-sm sm:mt-0"
                       >
-                        <Icon name="lucide:check-circle" class="h-3 w-3" />
+                        <Icon name="lucide:check-circle" class="size-3" />
                         <span>{{ item.requirements }}</span>
                       </div>
                     </div>
@@ -145,19 +145,19 @@ const { data, pending, error, refresh } = await useFetch('/api/jobs', {
                 >
                   <BaseButton
                     color="primary"
-                    flavor="outline"
+                    variant="outline"
                     class="w-full sm:w-28"
                   >
                     <span>Apply Now</span>
                   </BaseButton>
                   <BaseButtonIcon
-                    shape="full"
+                    rounded="full"
                     small
                     muted
                     data-nui-tooltip="Add to Bookmarks"
                     class="hidden sm:inline-flex"
                   >
-                    <Icon name="ph:bookmark-duotone" class="h-4 w-4" />
+                    <Icon name="ph:bookmark-duotone" class="size-4" />
                   </BaseButtonIcon>
                 </div>
               </BaseCard>
@@ -169,7 +169,7 @@ const { data, pending, error, refresh } = await useFetch('/api/jobs', {
                 :total-items="100"
                 :current="1"
                 :limit="10"
-                shape="full"
+                rounded="full"
               />
             </div>
           </div>
@@ -185,12 +185,12 @@ const { data, pending, error, refresh } = await useFetch('/api/jobs', {
               class="block dark:hidden"
               src="/img/illustrations/placeholders/flat/placeholder-thinking-canvas.svg"
               alt="Placeholder image"
-            />
+            >
             <img
               class="hidden dark:block"
               src="/img/illustrations/placeholders/flat/placeholder-thinking-canvas-dark.svg"
               alt="Placeholder image"
-            />
+            >
           </template>
         </BasePlaceholderPage>
       </template>

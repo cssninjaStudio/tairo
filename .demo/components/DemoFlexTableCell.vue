@@ -18,6 +18,6 @@ const props = defineProps<{
     >
       {{ props.label }}
     </span>
-    <slot></slot>
+    <slot />
   </div>
 </template>

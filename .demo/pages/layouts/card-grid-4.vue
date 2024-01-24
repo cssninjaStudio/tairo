@@ -46,7 +46,7 @@ const { data, pending, error, refresh } = await useFetch('/api/posts/', {
         <BaseInput
           v-model="filter"
           icon="lucide:search"
-          shape="curved"
+          rounded="lg"
           placeholder="Filter posts..."
           :classes="{
             wrapper: 'w-full sm:w-auto',
@@ -54,9 +54,15 @@ const { data, pending, error, refresh } = await useFetch('/api/posts/', {
         />
       </template>
       <template #right>
-        <BaseButton shape="curved" class="w-full sm:w-28">Home</BaseButton>
-        <BaseButton shape="curved" color="primary" class="w-full sm:w-28">
-          <Icon name="lucide:plus" class="h-4 w-4" />
+        <BaseButton rounded="lg" class="w-full sm:w-28">
+          Home
+        </BaseButton>
+        <BaseButton
+          rounded="lg"
+          color="primary"
+          class="w-full sm:w-28"
+        >
+          <Icon name="lucide:plus" class="size-4" />
           <span>New</span>
         </BaseButton>
       </template>
@@ -71,12 +77,12 @@ const { data, pending, error, refresh } = await useFetch('/api/posts/', {
                 class="block dark:hidden"
                 src="/img/illustrations/placeholders/flat/placeholder-search-6.svg"
                 alt="Placeholder image"
-              />
+              >
               <img
                 class="hidden dark:block"
                 src="/img/illustrations/placeholders/flat/placeholder-search-6-dark.svg"
                 alt="Placeholder image"
-              />
+              >
             </template>
           </BasePlaceholderPage>
         </div>
@@ -95,18 +101,19 @@ const { data, pending, error, refresh } = await useFetch('/api/posts/', {
               <BaseCard
                 v-for="item in data?.data"
                 :key="item.id"
-                shape="curved"
+                rounded="lg"
                 class="group p-3"
               >
                 <div class="relative">
                   <img
                     :src="item.image"
                     class="h-40 w-full rounded-lg object-cover"
-                  />
+                    alt=""
+                  >
                   <BaseTag
-                    shape="full"
+                    rounded="full"
                     color="primary"
-                    flavor="pastel"
+                    variant="pastel"
                     size="sm"
                     class="absolute start-3 top-3 translate-y-1 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
                   >
@@ -144,7 +151,7 @@ const { data, pending, error, refresh } = await useFetch('/api/posts/', {
                       </p>
                     </div>
                     <div class="ms-auto">
-                      <BaseButtonAction to="#" shape="rounded">
+                      <BaseButtonAction to="#" rounded="sm">
                         <Icon name="lucide:edit-3" />
                         <span>Edit</span>
                       </BaseButtonAction>
@@ -159,7 +166,7 @@ const { data, pending, error, refresh } = await useFetch('/api/posts/', {
               :total-items="data?.total ?? 0"
               :item-per-page="perPage"
               :current-page="page"
-              shape="curved"
+              rounded="lg"
             />
           </div>
         </div>

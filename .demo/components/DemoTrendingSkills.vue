@@ -35,9 +35,9 @@ const skills = [
       class="flex items-center gap-3"
     >
       <div
-        class="border-muted-200 dark:border-muted-700 flex h-10 w-10 items-center justify-center rounded-full border"
+        class="border-muted-200 dark:border-muted-700 flex size-10 items-center justify-center rounded-full border"
       >
-        <Icon :name="skill.icon" class="h-5 w-5" />
+        <Icon :name="skill.icon" class="size-5" />
       </div>
       <div>
         <BaseHeading
@@ -56,8 +56,12 @@ const skills = [
         </BaseParagraph>
       </div>
       <div class="ms-auto flex items-center">
-        <BaseButtonIcon shape="curved" muted class="scale-75">
-          <Icon name="lucide:arrow-right" class="h-5 w-5" />
+        <BaseButtonIcon
+          rounded="lg"
+          muted
+          class="scale-75"
+        >
+          <Icon name="lucide:arrow-right" class="size-5" />
         </BaseButtonIcon>
       </div>
     </div>

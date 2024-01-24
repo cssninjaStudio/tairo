@@ -2,6 +2,7 @@
 title: BaseListbox
 components: 
   - BaseListbox
+  - BaseListboxItem
 description: Tairo ships with ready to use listbox select that render different kinds of lists, ranging from text to complex media objects.
 icon:
   src: /img/illustrations/components/listbox-icon.svg
@@ -10,18 +11,76 @@ icon:
 
 ::doc-component-demo
 ---
-title: Listbox shape
+title: Radius
 demo: '#examples/listbox/shapes.vue'
 ---
 The listbox is a component that renders a list of items. It can be used to render a list of text, media or complex objects. The default shape is `rounded`.
 :::doc-message{type="muted" icon="ion:shapes-outline"}
-Default shape of all :doc-linker{to="BaseListbox"} can be set in your `.app/app.config.ts`.
+Default props of all :doc-linker{to="BaseListbox"} can be set in your `.app/app.config.ts`.
 :::
 ::
 
 ::doc-component-demo
 ---
-title: Floating labels
+title: Size
+demo: '#examples/listbox/size.vue'
+---
+The listbox is a component that renders a list of items. It can be used to render a list of text, media or complex objects. The default size is `md`.
+::
+
+::doc-component-demo
+---
+title: Contrast:default+
+demo: '#examples/listbox/contrast-default.vue'
+---
+The listbox can be rendered in different contrast modes. The default contrast mode is `default`. Contrast can affect the color of the text and the background of the element, as well as the light or the dark mode.
+::
+
+::doc-component-demo
+---
+title: Contrast:muted
+demo: '#examples/listbox/contrast-muted.vue'
+---
+The listbox can be rendered in different contrast modes. Contrast can affect the color of the text and the background of the element, as well as the light or the dark mode.
+::
+
+::doc-component-demo
+---
+title: Contrast:muted+
+demo: '#examples/listbox/contrast-muted-contrast.vue'
+---
+The listbox can be rendered in different contrast modes. Contrast can affect the color of the text and the background of the element, as well as the light or the dark mode.
+::
+
+::doc-component-demo
+---
+title: Error
+demo: '#examples/listbox/error.vue'
+---
+The listbox can be shown in an error state using the `error` prop. You can also set a custom error message using the same prop.
+::
+
+::doc-component-demo
+---
+title: Disabled
+demo: '#examples/listbox/disabled.vue'
+---
+Listboxes can be shown in a disabled state using the `disabled` prop.
+::
+
+
+::doc-component-demo
+---
+title: Loading
+demo: '#examples/listbox/loading.vue'
+---
+Listboxes can be shown in a loading state using the `loading` prop.
+::
+
+
+::doc-component-demo
+---
+title: Label:float
 demo: '#examples/listbox/float-label.vue'
 ---
 Listboxes can have a material design style floating label using the `labelFloat` prop.
@@ -34,13 +93,6 @@ demo: '#examples/listbox/sublabels.vue'
 ---
 Listbox items can have a sublabel using the `sublabel` prop of the `properties` object.
 ::
-::doc-component-demo
----
-title: Listbox with media
-demo: '#examples/listbox/media.vue'
----
-Listbox items can have a media using the `media` prop of the `properties` object.
-::
 
 ::doc-component-demo
 ---
@@ -52,23 +104,11 @@ Listbox items can have an icon using the `icon` prop of the `properties` object.
 
 ::doc-component-demo
 ---
-title: Disabled state
-demo: '#examples/listbox/disabled.vue'
+title: Listbox with media
+demo: '#examples/listbox/media.vue'
 ---
-Listboxes can be shown in a disabled state using the `disabled` prop.
+Listbox items can have a media using the `media` prop of the `properties` object.
 ::
-
-
-
-::doc-component-demo
----
-title: Loading state
-demo: '#examples/listbox/loading.vue'
----
-Listboxes can be shown in a loading state using the `loading` prop.
-::
-
-
 
 ::doc-component-demo
 ---
@@ -78,6 +118,5 @@ demo: '#examples/listbox/multiple.vue'
 Listboxes can be used to select multiple items using the `multiple` prop.
 ::
 
-
-
 :doc-component-meta{name="BaseListbox"}
+:doc-component-meta{name="BaseListboxItem"}

@@ -34,10 +34,11 @@ const tooltip = computed(() => {
       pending
         ? 'bg-muted-100 dark:bg-muted-800/60 text-muted-500 cursor-help no-underline'
         : data?._path
-        ? 'nui-mark dark:decoration-primary-100/60 decoration-dotted underline-offset-4'
-        : 'bg-danger-100 dark:bg-danger-800/60 text-danger-500 cursor-help no-underline',
+          ? 'nui-mark dark:decoration-primary-100/60 decoration-dotted underline-offset-4'
+          : 'bg-danger-100 dark:bg-danger-800/60 text-danger-500 cursor-help no-underline',
     ]"
     :data-nui-tooltip="tooltip"
-    >&lt;{{ props.to }}&gt;</NuxtLink
   >
+    &lt;{{ props.to }}&gt;
+  </NuxtLink>
 </template>

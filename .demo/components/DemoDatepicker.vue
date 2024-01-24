@@ -48,7 +48,8 @@ function initDate() {
   let today
   if (selectedDate.value) {
     today = new Date(Date.parse(selectedDate.value))
-  } else {
+  }
+  else {
     today = new Date()
   }
   month.value = today.getMonth()
@@ -97,11 +98,11 @@ function getNoOfDays() {
   // find where to start calendar day of week
   let dayOfWeek = new Date(year.value, month.value).getDay()
   let blankdaysArray = []
-  for (var i = 1; i <= dayOfWeek; i++) {
+  for (let i = 1; i <= dayOfWeek; i++) {
     blankdaysArray.push(i)
   }
   let daysArray = []
-  for (var i = 1; i <= daysInMonth; i++) {
+  for (let i = 1; i <= daysInMonth; i++) {
     daysArray.push(i)
   }
   blankDays.value = blankdaysArray
@@ -112,7 +113,8 @@ function incrementDays() {
   if (month.value == 0) {
     year.value--
     month.value = 12
-  } else {
+  }
+  else {
     month.value--
   }
   getNoOfDays()
@@ -122,7 +124,8 @@ function decrementDays() {
   if (month.value == 11) {
     month.value = 0
     year.value++
-  } else {
+  }
+  else {
     month.value++
   }
   getNoOfDays()
@@ -139,15 +142,19 @@ onMounted(() => {
     class="relative mx-auto w-full pb-5 font-sans"
     :class="props.expanded ? 'max-w-[310px]' : 'max-w-[240px]'"
   >
-    <input type="hidden" name="date" :value="datepickerValue" />
     <input
-      type="text"
-      @click="showDatepicker = !showDatepicker"
+      type="hidden"
+      name="date"
+      :value="datepickerValue"
+    >
+    <input
       v-model="datepickerValue"
+      type="text"
       class="text-muted-600 hidden w-full rounded-lg py-3 pe-10 ps-4 font-medium leading-none shadow-sm focus:outline-none focus:ring focus:ring-blue-600/50"
       placeholder="Select date"
       readonly
-    />
+      @click="showDatepicker = !showDatepicker"
+    >
 
     <div class="w-full">
       <div class="mb-6 flex items-center justify-between">
@@ -164,7 +171,7 @@ onMounted(() => {
             @click="incrementDays"
           >
             <svg
-              class="text-muted-400 inline-flex h-5 w-5"
+              class="text-muted-400 inline-flex size-5"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -183,7 +190,7 @@ onMounted(() => {
             @click="decrementDays"
           >
             <svg
-              class="text-muted-400 inline-flex h-5 w-5"
+              class="text-muted-400 inline-flex size-5"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -216,13 +223,14 @@ onMounted(() => {
           <div
             style="width: 14.28%"
             class="border border-transparent p-1 text-center text-sm"
-          ></div>
+          />
         </template>
         <template v-for="(date, dateIndex) in numberOfDays" :key="dateIndex">
           <div style="width: 14.28%" class="flex items-center justify-center">
             <div
-              @click="getDateValue(date)"
-              class="mx-auto flex h-8 w-8 cursor-pointer items-center justify-center rounded-full text-center text-sm leading-none transition duration-100 ease-in-out"
+              role="button"
+              tabindex="0"
+              class="mx-auto flex size-8 cursor-pointer items-center justify-center rounded-full text-center text-sm leading-none transition duration-100 ease-in-out"
               :class="[
                 isToday(date) === true
                   ? 'bg-primary-100 dark:bg-primary-500/20 text-primary-500'
@@ -234,6 +242,7 @@ onMounted(() => {
                   ? 'bg-primary-500 hover:bg-primary-500/75 text-white'
                   : '',
               ]"
+              @click="getDateValue(date)"
             >
               {{ date }}
             </div>

@@ -1,16 +1,52 @@
 <template>
-  <div class="grid gap-6 md:max-w-lg md:grid-cols-2">
-    <BaseListbox
-      v-model="value"
-      label="Hobbies"
-      :items="hobbies"
-      :properties="{
-        value: 'id',
-        label: 'name',
-        sublabel: 'text',
-        icon: 'icon',
-      }"
-    />
+  <div class="flex max-w-3xl flex-wrap items-end gap-3">
+    <div class="flex-1">
+      <BaseListbox
+        v-model="value"
+        size="sm"
+        rounded="md"
+        label="Hobbies"
+        :items="hobbies"
+        :properties="{
+          value: 'id',
+          label: 'name',
+          sublabel: 'text',
+          icon: 'icon',
+        }"
+      />
+    </div>
+
+    <div class="flex-1">
+      <BaseListbox
+        v-model="value"
+        size="md"
+        rounded="md"
+        label="Hobbies"
+        :items="hobbies"
+        :properties="{
+          value: 'id',
+          label: 'name',
+          sublabel: 'text',
+          icon: 'icon',
+        }"
+      />
+    </div>
+
+    <div class="flex-1">
+      <BaseListbox
+        v-model="value"
+        size="lg"
+        rounded="md"
+        label="Hobbies"
+        :items="hobbies"
+        :properties="{
+          value: 'id',
+          label: 'name',
+          sublabel: 'text',
+          icon: 'icon',
+        }"
+      />
+    </div>
   </div>
 </template>
 

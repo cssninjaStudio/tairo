@@ -13,7 +13,7 @@ const layouts = [
     name: 'collapse',
     title: 'Collapse layout',
     description: 'Collapse sidebar layout',
-    text: "The collapse layout focuses on a single sidebar with a list of menu and submenu links, ideal for smaller apps when you don't have much content.",
+    text: 'The collapse layout focuses on a single sidebar with a list of menu and submenu links, ideal for smaller apps when you don\'t have much content.',
     img: '/img/illustrations/ui/collapse.png',
     imgDark: '/img/illustrations/ui/collapse-dark.png',
     icon: 'ph:sidebar-simple-duotone',
@@ -38,8 +38,9 @@ const activeLayout = ref('sidebar')
       <div class="mb-10 max-w-2xl">
         <BaseText
           class="text-primary-500 mb-2 text-[0.65rem] uppercase tracking-wider"
-          >Multiple Layouts</BaseText
         >
+          Multiple Layouts
+        </BaseText>
         <BaseHeading
           as="h2"
           size="4xl"
@@ -75,7 +76,7 @@ const activeLayout = ref('sidebar')
             >
               <Icon
                 :name="layout.icon"
-                class="h-6 w-6"
+                class="size-6"
                 :class="
                   activeLayout === layout.name
                     ? 'text-primary-500'
@@ -87,8 +88,7 @@ const activeLayout = ref('sidebar')
                 <BaseText
                   size="xs"
                   class="text-muted-500 dark:text-muted-400"
-                  >{{ layout.description }}</BaseText
-                >
+                >{{ layout.description }}</BaseText>
               </span>
             </button>
           </div>
@@ -96,11 +96,11 @@ const activeLayout = ref('sidebar')
         <div class="col-span-12 md:col-span-7">
           <BaseCard
             v-for="(layout, index) in layouts"
+            v-show="activeLayout === layout.name"
             :key="index"
             color="white-contrast"
-            shape="curved"
+            rounded="lg"
             class="relative flex flex-col overflow-hidden rounded-xl text-start"
-            v-show="activeLayout === layout.name"
           >
             <div class="bg-muted-100 dark:bg-muted-900/40 relative">
               <img
@@ -111,7 +111,7 @@ const activeLayout = ref('sidebar')
                 height="384"
                 loading="lazy"
                 decoding="async"
-              />
+              >
               <img
                 :src="layout.imgDark"
                 class="hidden w-full dark:block"
@@ -120,21 +120,23 @@ const activeLayout = ref('sidebar')
                 height="384"
                 loading="lazy"
                 decoding="async"
-              />
+              >
               <NuxtLink
                 to="/documentation/setup/add-a-layout"
                 class="border-muted-200 text-muted-600 dark:text-muted-400 hover:text-primary-500 dark:hover:text-primary-500 hover:border-primary-500 dark:bg-muted-950 dark:border-muted-800 dark:hover:border-primary-500 absolute start-6 top-6 inline-flex items-center gap-1 rounded-full border bg-white px-5 py-2 transition-colors duration-300"
               >
                 <span class="font-sans text-sm">How to use</span>
-                <Icon name="lucide:arrow-right" class="h-3 w-3" />
+                <Icon name="lucide:arrow-right" class="size-3" />
               </NuxtLink>
             </div>
             <div class="relative flex grow flex-col px-8 pb-8 pt-4">
               <div
                 class="absolute -top-8 start-0 z-10 h-6 w-full bg-white blur-md dark:hidden"
-              ></div>
+              />
               <div class="mt-auto space-y-2">
-                <BaseHeading weight="light">{{ layout.title }}</BaseHeading>
+                <BaseHeading weight="light">
+                  {{ layout.title }}
+                </BaseHeading>
                 <BaseParagraph
                   size="sm"
                   class="text-muted-500 dark:text-muted-400"

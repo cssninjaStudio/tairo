@@ -3,6 +3,8 @@ import { toTypedSchema } from '@vee-validate/zod'
 import { Field, useForm } from 'vee-validate'
 import { z } from 'zod'
 
+import { AddonInputPassword } from '#components'
+
 definePageMeta({
   layout: 'empty',
   title: 'Signup',
@@ -24,6 +26,8 @@ const VALIDATION_TEXT = {
   TERMS_REQUIRED: 'You must agree to the terms and conditions',
 }
 
+const passwordRef = ref<InstanceType<typeof AddonInputPassword>>()
+
 // This is the Zod schema for the form input
 // It's used to define the shape that the form data will have
 const zodSchema = z
@@ -36,10 +40,10 @@ const zodSchema = z
   .superRefine((data, ctx) => {
     // This is a custom validation function that will be called
     // before the form is submitted
-    if (data.password.includes(data.email)) {
+    if (passwordRef.value?.validation?.feedback?.warning || passwordRef.value?.validation?.feedback?.suggestions?.length) {
       ctx.addIssue({
         code: z.ZodIssueCode.custom,
-        message: VALIDATION_TEXT.PASSWORD_CONTAINS_EMAIL,
+        message: passwordRef.value?.validation?.feedback?.warning || passwordRef.value.validation.feedback?.suggestions?.[0],
         path: ['password'],
       })
     }
@@ -64,14 +68,14 @@ const zodSchema = z
 type FormInput = z.infer<typeof zodSchema>
 
 const validationSchema = toTypedSchema(zodSchema)
-const initialValues = computed<FormInput>(() => ({
+const initialValues = {
   email: '',
   password: '',
   confirmPassword: '',
   terms: false,
-}))
+} satisfies FormInput
 
-const { handleSubmit, isSubmitting } = useForm({
+const { values, handleSubmit, isSubmitting } = useForm({
   validationSchema,
   initialValues,
 })
@@ -86,7 +90,7 @@ const onSubmit = handleSubmit(async (values) => {
 
   try {
     // fake delay, this will make isSubmitting value to be true
-    await new Promise((resolve) => setTimeout(resolve, 4000))
+    await new Promise(resolve => setTimeout(resolve, 4000))
 
     toaster.clearAll()
     toaster.show({
@@ -96,7 +100,8 @@ const onSubmit = handleSubmit(async (values) => {
       icon: 'ph:user-circle-fill',
       closable: true,
     })
-  } catch (error: any) {
+  }
+  catch (error: any) {
     // handle error
 
     return
@@ -117,7 +122,7 @@ const onSubmit = handleSubmit(async (values) => {
         to="/"
         class="text-muted-400 hover:text-primary-500 dark:text-muted-700 dark:hover:text-primary-500 transition-colors duration-300"
       >
-        <TairoLogo class="h-10 w-10" />
+        <TairoLogo class="size-10" />
       </NuxtLink>
       <div>
         <BaseThemeToggle />
@@ -130,12 +135,16 @@ const onSubmit = handleSubmit(async (values) => {
           <form
             method="POST"
             action=""
-            @submit.prevent="onSubmit"
             class="me-auto ms-auto mt-4 w-full max-w-md"
             novalidate
+            @submit.prevent="onSubmit"
           >
             <div class="text-center">
-              <BaseHeading as="h2" size="3xl" weight="medium">
+              <BaseHeading
+                as="h2"
+                size="3xl"
+                weight="medium"
+              >
                 Welcome to Tairo
               </BaseHeading>
               <BaseParagraph size="sm" class="text-muted-400 mb-6">
@@ -168,11 +177,12 @@ const onSubmit = handleSubmit(async (values) => {
                   v-slot="{ field, errorMessage, handleChange, handleBlur }"
                   name="password"
                 >
-                  <BaseInput
+                  <AddonInputPassword
+                    ref="passwordRef"
                     :model-value="field.value"
                     :error="errorMessage"
                     :disabled="isSubmitting"
-                    type="password"
+                    :user-inputs="[values.email ?? '']"
                     label="Password"
                     placeholder="••••••••••"
                     autocomplete="new-password"
@@ -213,7 +223,7 @@ const onSubmit = handleSubmit(async (values) => {
                       :model-value="field.value"
                       :disabled="isSubmitting"
                       :error="errorMessage"
-                      shape="rounded"
+                      rounded="sm"
                       color="primary"
                       @update:model-value="handleChange"
                       @blur="handleBlur"
@@ -245,7 +255,7 @@ const onSubmit = handleSubmit(async (values) => {
               <div class="mb-6 grid gap-0 sm:grid-cols-3">
                 <hr
                   class="border-muted-200 dark:border-muted-700 mt-3 hidden border-t sm:block"
-                />
+                >
                 <span
                   class="bg-muted-100 dark:bg-muted-900 text-muted-400 relative top-0.5 text-center font-sans text-sm"
                 >
@@ -253,7 +263,7 @@ const onSubmit = handleSubmit(async (values) => {
                 </span>
                 <hr
                   class="border-muted-200 dark:border-muted-700 mt-3 hidden border-t sm:block"
-                />
+                >
               </div>
               <!--Social signup-->
               <div class="grid grid-cols-3 gap-2">
@@ -261,19 +271,19 @@ const onSubmit = handleSubmit(async (values) => {
                   type="button"
                   class="bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-600 text-muted-600 dark:text-muted-400 nui-focus relative inline-flex w-full items-center justify-center rounded px-0 py-3 text-center text-sm font-semibold shadow-sm transition-all duration-300 hover:bg-white"
                 >
-                  <Icon name="fa6-brands:google" class="h-5 w-5" />
+                  <Icon name="fa6-brands:google" class="size-5" />
                 </button>
                 <button
                   type="button"
                   class="bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-600 text-muted-600 dark:text-muted-400 nui-focus relative inline-flex w-full items-center justify-center rounded px-0 py-3 text-center text-sm font-semibold shadow-sm transition-all duration-300 hover:bg-white"
                 >
-                  <Icon name="fa6-brands:twitter" class="h-5 w-5" />
+                  <Icon name="fa6-brands:twitter" class="size-5" />
                 </button>
                 <button
                   type="button"
                   class="bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-600 text-muted-600 dark:text-muted-400 nui-focus relative inline-flex w-full items-center justify-center rounded px-0 py-3 text-center text-sm font-semibold shadow-sm transition-all duration-300 hover:bg-white"
                 >
-                  <Icon name="fa6-brands:linkedin-in" class="h-5 w-5" />
+                  <Icon name="fa6-brands:linkedin-in" class="size-5" />
                 </button>
               </div>
 

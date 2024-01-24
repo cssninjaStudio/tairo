@@ -61,26 +61,43 @@ const totalData = computed(() => {
   <div class="mx-auto max-w-3xl py-10">
     <div class="mb-4 flex items-center justify-between">
       <div>
-        <BaseHeading as="h2" size="xl" weight="medium" lead="none">
+        <BaseHeading
+          as="h2"
+          size="xl"
+          weight="medium"
+          lead="none"
+        >
           Order #ox-81469
         </BaseHeading>
       </div>
       <div class="flex items-center justify-end gap-3">
-        <BaseButtonIcon size="sm" shape="full" data-nui-tooltip="Edit invoice">
-          <Icon name="ph:pencil-duotone" class="h-4 w-4" />
-        </BaseButtonIcon>
-        <BaseButtonIcon size="sm" shape="full" data-nui-tooltip="Send by email">
-          <Icon name="ph:envelope-duotone" class="h-4 w-4" />
-        </BaseButtonIcon>
-        <BaseButtonIcon size="sm" shape="full" data-nui-tooltip="Print invoice">
-          <Icon name="ph:printer-duotone" class="h-4 w-4" />
+        <BaseButtonIcon
+          size="sm"
+          rounded="full"
+          data-nui-tooltip="Edit invoice"
+        >
+          <Icon name="ph:pencil-duotone" class="size-4" />
         </BaseButtonIcon>
         <BaseButtonIcon
           size="sm"
-          shape="full"
+          rounded="full"
+          data-nui-tooltip="Send by email"
+        >
+          <Icon name="ph:envelope-duotone" class="size-4" />
+        </BaseButtonIcon>
+        <BaseButtonIcon
+          size="sm"
+          rounded="full"
+          data-nui-tooltip="Print invoice"
+        >
+          <Icon name="ph:printer-duotone" class="size-4" />
+        </BaseButtonIcon>
+        <BaseButtonIcon
+          size="sm"
+          rounded="full"
           data-nui-tooltip="Download as PDF"
         >
-          <Icon name="ph:download-duotone" class="h-4 w-4" />
+          <Icon name="ph:download-duotone" class="size-4" />
         </BaseButtonIcon>
       </div>
     </div>
@@ -98,7 +115,12 @@ const totalData = computed(() => {
                   size="lg"
                 />
                 <div class="">
-                  <BaseHeading as="h3" size="md" weight="medium" lead="none">
+                  <BaseHeading
+                    as="h3"
+                    size="md"
+                    weight="medium"
+                    lead="none"
+                  >
                     Betty Lopez
                   </BaseHeading>
                   <BaseParagraph size="sm" class="text-muted-400">
@@ -147,9 +169,14 @@ const totalData = computed(() => {
               class="border-muted-200 dark:border-muted-700 flex flex-col justify-between gap-y-8 border-b p-8 sm:flex-row sm:items-center"
             >
               <div class="flex items-center gap-4">
-                <TairoLogo class="text-primary-500 h-12 w-12" />
+                <TairoLogo class="text-primary-500 size-12" />
                 <div class="">
-                  <BaseHeading as="h3" size="md" weight="medium" lead="none">
+                  <BaseHeading
+                    as="h3"
+                    size="md"
+                    weight="medium"
+                    lead="none"
+                  >
                     Tairo
                   </BaseHeading>
                   <BaseParagraph size="xs" class="text-muted-400">
@@ -166,9 +193,15 @@ const totalData = computed(() => {
                   >
                     Address
                   </p>
-                  <p class="text-xs">43 Church street</p>
-                  <p class="text-xs">San Jose de la Herida</p>
-                  <p class="text-xs">CA 91853</p>
+                  <p class="text-xs">
+                    43 Church street
+                  </p>
+                  <p class="text-xs">
+                    San Jose de la Herida
+                  </p>
+                  <p class="text-xs">
+                    CA 91853
+                  </p>
                 </div>
               </div>
             </div>
@@ -236,11 +269,11 @@ const totalData = computed(() => {
                         class="hidden px-3 py-4 text-right text-sm sm:table-cell"
                       >
                         <div class="flex justify-end">
-                          <BaseInput
-                            v-model.number="item.quantity"
-                            type="number"
+                          <BaseInputNumber
+                            v-model="item.quantity"
+                            :min="0"
                             :classes="{
-                              wrapper: 'w-16',
+                              wrapper: 'w-32',
                             }"
                           />
                         </div>

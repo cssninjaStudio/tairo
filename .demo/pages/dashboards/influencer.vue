@@ -294,7 +294,7 @@ const activeTab = ref('tab-1')
     <!-- Header bg -->
     <div
       class="ltablet:h-[410px] dark:bg-muted-800 absolute start-0 top-0 h-[590px] w-full bg-white lg:h-[410px]"
-    ></div>
+    />
     <!-- Header -->
     <div
       class="ltablet:h-64 ltablet:flex-row relative flex h-[460px] w-full flex-col lg:h-64 lg:flex-row"
@@ -317,7 +317,7 @@ const activeTab = ref('tab-1')
             class="ltablet:justify-start flex items-center justify-center gap-2 lg:justify-start"
           >
             <span class="text-muted-800 dark:text-white">Sweet_Mango12</span>
-            <Icon name="uiw:star-on" class="h-4 w-4 text-yellow-400" />
+            <Icon name="uiw:star-on" class="size-4 text-yellow-400" />
           </BaseHeading>
           <span class="text-muted-400 mb-4 block font-sans text-base">
             Clarissa Miller
@@ -375,12 +375,12 @@ const activeTab = ref('tab-1')
           >
             <TairoPopover size="sm">
               <div
-                class="dark:bg-muted-700 shadow-muted-300/40 dark:shadow-muted-900/20 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-xl"
+                class="dark:bg-muted-700 shadow-muted-300/40 dark:shadow-muted-900/20 flex size-10 items-center justify-center rounded-full bg-white shadow-xl"
               >
                 <div
-                  class="bg-danger-500/20 flex h-8 w-8 items-center justify-center rounded-full"
+                  class="bg-danger-500/20 flex size-8 items-center justify-center rounded-full"
                 >
-                  <Icon name="ri:fire-fill" class="text-danger-500 h-5 w-5" />
+                  <Icon name="ri:fire-fill" class="text-danger-500 size-5" />
                 </div>
               </div>
 
@@ -397,12 +397,12 @@ const activeTab = ref('tab-1')
             </TairoPopover>
             <TairoPopover size="sm">
               <div
-                class="dark:bg-muted-700 shadow-muted-300/40 dark:shadow-muted-900/20 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-xl"
+                class="dark:bg-muted-700 shadow-muted-300/40 dark:shadow-muted-900/20 flex size-10 items-center justify-center rounded-full bg-white shadow-xl"
               >
                 <div
-                  class="bg-success-500/20 flex h-8 w-8 items-center justify-center rounded-full"
+                  class="bg-success-500/20 flex size-8 items-center justify-center rounded-full"
                 >
-                  <Icon name="ri:medal-fill" class="text-success-500 h-5 w-5" />
+                  <Icon name="ri:medal-fill" class="text-success-500 size-5" />
                 </div>
               </div>
 
@@ -418,12 +418,12 @@ const activeTab = ref('tab-1')
             </TairoPopover>
             <TairoPopover size="sm">
               <div
-                class="dark:bg-muted-700 shadow-muted-300/40 dark:shadow-muted-900/20 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-xl"
+                class="dark:bg-muted-700 shadow-muted-300/40 dark:shadow-muted-900/20 flex size-10 items-center justify-center rounded-full bg-white shadow-xl"
               >
                 <div
-                  class="flex h-8 w-8 items-center justify-center rounded-full bg-yellow-500/20"
+                  class="bg-warning-500/20 flex size-8 items-center justify-center rounded-full"
                 >
-                  <Icon name="ri:trophy-fill" class="h-5 w-5 text-yellow-500" />
+                  <Icon name="ri:trophy-fill" class="text-warning-500 size-5" />
                 </div>
               </div>
 
@@ -433,7 +433,7 @@ const activeTab = ref('tab-1')
                   subtitle="Hail to the king"
                   text="You have more than 100k followers. You are a champion!"
                   icon="ri:trophy-fill"
-                  icon-color="yellow"
+                  icon-color="warning"
                 />
               </template>
             </TairoPopover>
@@ -447,7 +447,7 @@ const activeTab = ref('tab-1')
         <BaseButton
           class="ltablet:w-auto ltablet:mx-0 mx-auto w-52 lg:mx-0 lg:w-auto"
         >
-          <Icon name="lucide:plus" class="h-4 w-4" />
+          <Icon name="lucide:plus" class="size-4" />
           <span>Add Account</span>
         </BaseButton>
       </div>
@@ -531,8 +531,12 @@ const activeTab = ref('tab-1')
                     >
                       <span>Content Posts (30 days)</span>
                     </BaseParagraph>
-                    <BaseIconBox size="md" class="bg-pink-500/20 text-pink-500">
-                      <Icon name="ri:instagram-fill" class="h-6 w-6" />
+                    <BaseIconBox
+                      size="md"
+                      class="bg-pink-500/20 text-pink-500"
+                      color="none"
+                    >
+                      <Icon name="ri:instagram-fill" class="size-6" />
                     </BaseIconBox>
                   </div>
                   <div class="pb-6 pt-4">
@@ -551,7 +555,7 @@ const activeTab = ref('tab-1')
                     <div
                       class="text-danger-500 flex items-center font-semibold"
                     >
-                      <Icon name="lucide:arrow-down-right" class="h-4 w-4" />
+                      <Icon name="lucide:arrow-down-right" class="size-4" />
                       <span>-4.5%</span>
                     </div>
                     <span class="text-muted-400 text-sm">less than usual</span>
@@ -573,8 +577,9 @@ const activeTab = ref('tab-1')
                     <BaseIconBox
                       size="md"
                       class="bg-primary-500/20 text-primary-500"
+                      color="none"
                     >
-                      <Icon name="ph:users-four-duotone" class="h-6 w-6" />
+                      <Icon name="ph:users-four-duotone" class="size-6" />
                     </BaseIconBox>
                   </div>
                   <div class="pb-6 pt-4">
@@ -593,7 +598,7 @@ const activeTab = ref('tab-1')
                     <div
                       class="text-success-500 flex items-center font-semibold"
                     >
-                      <Icon name="lucide:arrow-up-right" class="h-4 w-4" />
+                      <Icon name="lucide:arrow-up-right" class="size-4" />
                       <span>+9.2%</span>
                     </div>
                     <span class="text-muted-400 text-sm">follower growth</span>
@@ -615,8 +620,9 @@ const activeTab = ref('tab-1')
                     <BaseIconBox
                       size="md"
                       class="bg-emerald-500/20 text-emerald-500"
+                      color="none"
                     >
-                      <Icon name="ph:users-three-duotone" class="h-6 w-6" />
+                      <Icon name="ph:users-three-duotone" class="size-6" />
                     </BaseIconBox>
                   </div>
                   <div class="pb-6 pt-4">
@@ -635,7 +641,7 @@ const activeTab = ref('tab-1')
                     <div
                       class="text-success-500 flex items-center font-semibold"
                     >
-                      <Icon name="lucide:arrow-up-right" class="h-4 w-4" />
+                      <Icon name="lucide:arrow-up-right" class="size-4" />
                       <span>+1.1%</span>
                     </div>
                     <span class="text-muted-400 text-sm">more than usual</span>
@@ -654,8 +660,12 @@ const activeTab = ref('tab-1')
                     >
                       <span>Likes (30 days)</span>
                     </BaseParagraph>
-                    <BaseIconBox size="md" class="bg-pink-500/20 text-pink-500">
-                      <Icon name="ph:heart-duotone" class="h-6 w-6" />
+                    <BaseIconBox
+                      size="md"
+                      class="bg-pink-500/20 text-pink-500"
+                      color="none"
+                    >
+                      <Icon name="ph:heart-duotone" class="size-6" />
                     </BaseIconBox>
                   </div>
                   <div class="pb-6 pt-4">
@@ -674,7 +684,7 @@ const activeTab = ref('tab-1')
                     <div
                       class="text-success-500 flex items-center font-semibold"
                     >
-                      <Icon name="lucide:arrow-up-right" class="h-4 w-4" />
+                      <Icon name="lucide:arrow-up-right" class="size-4" />
                       <span>+25.7%</span>
                     </div>
                     <span class="text-muted-400 text-sm">
@@ -698,8 +708,9 @@ const activeTab = ref('tab-1')
                     <BaseIconBox
                       size="md"
                       class="bg-yellow-500/20 text-yellow-500"
+                      color="none"
                     >
-                      <Icon name="ph:chat-circle-duotone" class="h-6 w-6" />
+                      <Icon name="ph:chat-circle-duotone" class="size-6" />
                     </BaseIconBox>
                   </div>
                   <div class="pb-6 pt-4">
@@ -718,7 +729,7 @@ const activeTab = ref('tab-1')
                     <div
                       class="text-success-500 flex items-center font-semibold"
                     >
-                      <Icon name="lucide:arrow-up-right" class="h-4 w-4" />
+                      <Icon name="lucide:arrow-up-right" class="size-4" />
                       <span>+11.3%</span>
                     </div>
                     <span class="text-muted-400 text-sm">
@@ -739,8 +750,12 @@ const activeTab = ref('tab-1')
                     >
                       <span>Profile views (30 days)</span>
                     </BaseParagraph>
-                    <BaseIconBox size="md" class="bg-lime-500/20 text-lime-500">
-                      <Icon name="ph:user-duotone" class="h-6 w-6" />
+                    <BaseIconBox
+                      size="md"
+                      class="bg-lime-500/20 text-lime-500"
+                      color="none"
+                    >
+                      <Icon name="ph:user-duotone" class="size-6" />
                     </BaseIconBox>
                   </div>
                   <div class="pb-6 pt-4">
@@ -759,7 +774,7 @@ const activeTab = ref('tab-1')
                     <div
                       class="text-success-500 flex items-center font-semibold"
                     >
-                      <Icon name="lucide:arrow-up-right" class="h-4 w-4" />
+                      <Icon name="lucide:arrow-up-right" class="size-4" />
                       <span>+8.5%</span>
                     </div>
                     <span class="text-muted-400 text-sm">
@@ -811,8 +826,12 @@ const activeTab = ref('tab-1')
                     >
                       <span>Content Posts (30 days)</span>
                     </BaseParagraph>
-                    <BaseIconBox size="md" class="bg-sky-500/20 text-sky-500">
-                      <Icon name="fa6-brands:tiktok" class="h-6 w-6" />
+                    <BaseIconBox
+                      size="md"
+                      class="bg-sky-500/20 text-sky-500"
+                      color="none"
+                    >
+                      <Icon name="fa6-brands:tiktok" class="size-6" />
                     </BaseIconBox>
                   </div>
                   <div class="pb-6 pt-4">
@@ -831,7 +850,7 @@ const activeTab = ref('tab-1')
                     <div
                       class="text-success-500 flex items-center font-semibold"
                     >
-                      <Icon name="lucide:arrow-up-right" class="h-4 w-4" />
+                      <Icon name="lucide:arrow-up-right" class="size-4" />
                       <span>+15.5%</span>
                     </div>
                     <span class="text-muted-400 text-sm">more than usual</span>
@@ -853,8 +872,9 @@ const activeTab = ref('tab-1')
                     <BaseIconBox
                       size="md"
                       class="bg-primary-500/20 text-primary-500"
+                      color="none"
                     >
-                      <Icon name="ph:users-four-duotone" class="h-6 w-6" />
+                      <Icon name="ph:users-four-duotone" class="size-6" />
                     </BaseIconBox>
                   </div>
                   <div class="pb-6 pt-4">
@@ -873,7 +893,7 @@ const activeTab = ref('tab-1')
                     <div
                       class="text-success-500 flex items-center font-semibold"
                     >
-                      <Icon name="lucide:arrow-up-right" class="h-4 w-4" />
+                      <Icon name="lucide:arrow-up-right" class="size-4" />
                       <span>+17.2%</span>
                     </div>
                     <span class="text-muted-400 text-sm">follower growth</span>
@@ -895,8 +915,9 @@ const activeTab = ref('tab-1')
                     <BaseIconBox
                       size="md"
                       class="bg-emerald-500/20 text-emerald-500"
+                      color="none"
                     >
-                      <Icon name="ph:users-three-duotone" class="h-6 w-6" />
+                      <Icon name="ph:users-three-duotone" class="size-6" />
                     </BaseIconBox>
                   </div>
                   <div class="pb-6 pt-4">
@@ -915,7 +936,7 @@ const activeTab = ref('tab-1')
                     <div
                       class="text-success-500 flex items-center font-semibold"
                     >
-                      <Icon name="lucide:arrow-up-right" class="h-4 w-4" />
+                      <Icon name="lucide:arrow-up-right" class="size-4" />
                       <span>+0.3%</span>
                     </div>
                     <span class="text-muted-400 text-sm">more than usual</span>
@@ -934,8 +955,12 @@ const activeTab = ref('tab-1')
                     >
                       <span>Likes (30 days)</span>
                     </BaseParagraph>
-                    <BaseIconBox size="md" class="bg-pink-500/20 text-pink-500">
-                      <Icon name="ph:heart-duotone" class="h-6 w-6" />
+                    <BaseIconBox
+                      size="md"
+                      class="bg-pink-500/20 text-pink-500"
+                      color="none"
+                    >
+                      <Icon name="ph:heart-duotone" class="size-6" />
                     </BaseIconBox>
                   </div>
                   <div class="pb-6 pt-4">
@@ -954,7 +979,7 @@ const activeTab = ref('tab-1')
                     <div
                       class="text-success-500 flex items-center font-semibold"
                     >
-                      <Icon name="lucide:arrow-up-right" class="h-4 w-4" />
+                      <Icon name="lucide:arrow-up-right" class="size-4" />
                       <span>+65.7%</span>
                     </div>
                     <span class="text-muted-400 text-sm">
@@ -978,8 +1003,9 @@ const activeTab = ref('tab-1')
                     <BaseIconBox
                       size="md"
                       class="bg-yellow-500/20 text-yellow-500"
+                      color="none"
                     >
-                      <Icon name="ph:chat-circle-duotone" class="h-6 w-6" />
+                      <Icon name="ph:chat-circle-duotone" class="size-6" />
                     </BaseIconBox>
                   </div>
                   <div class="pb-6 pt-4">
@@ -998,7 +1024,7 @@ const activeTab = ref('tab-1')
                     <div
                       class="text-success-500 flex items-center font-semibold"
                     >
-                      <Icon name="lucide:arrow-up-right" class="h-4 w-4" />
+                      <Icon name="lucide:arrow-up-right" class="size-4" />
                       <span>+49.3%</span>
                     </div>
                     <span class="text-muted-400 text-sm">
@@ -1019,8 +1045,12 @@ const activeTab = ref('tab-1')
                     >
                       <span>Profile views (30 days)</span>
                     </BaseParagraph>
-                    <BaseIconBox size="md" class="bg-lime-500/20 text-lime-500">
-                      <Icon name="ph:user-duotone" class="h-6 w-6" />
+                    <BaseIconBox
+                      size="md"
+                      class="bg-lime-500/20 text-lime-500"
+                      color="none"
+                    >
+                      <Icon name="ph:user-duotone" class="size-6" />
                     </BaseIconBox>
                   </div>
                   <div class="pb-6 pt-4">
@@ -1039,7 +1069,7 @@ const activeTab = ref('tab-1')
                     <div
                       class="text-success-500 flex items-center font-semibold"
                     >
-                      <Icon name="lucide:arrow-up-right" class="h-4 w-4" />
+                      <Icon name="lucide:arrow-up-right" class="size-4" />
                       <span>+34.2%</span>
                     </div>
                     <span class="text-muted-400 text-sm">
@@ -1063,10 +1093,10 @@ const activeTab = ref('tab-1')
             :key="index"
             class="relative h-full"
           >
-            <BaseCard shape="curved" class="flex h-full flex-col p-6">
-              <div class="flex h-full w-full flex-col gap-4">
+            <BaseCard rounded="lg" class="flex h-full flex-col p-6">
+              <div class="flex size-full flex-col gap-4">
                 <div :data-nui-tooltip="company.name">
-                  <Icon :name="company.logo" class="h-8 w-8 shrink-0" />
+                  <Icon :name="company.logo" class="size-8 shrink-0" />
                 </div>
                 <div class="flex h-full flex-col">
                   <BaseHeading
@@ -1116,7 +1146,11 @@ const activeTab = ref('tab-1')
                       />
                     </div>
                     <div class="flex gap-2">
-                      <BaseButton shape="curved" color="default" class="w-28">
+                      <BaseButton
+                        rounded="lg"
+                        color="default"
+                        class="w-28"
+                      >
                         Details
                       </BaseButton>
                     </div>

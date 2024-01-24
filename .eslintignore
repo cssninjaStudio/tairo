@@ -1,2 +1,6 @@
-.demo/public/
-layers/documentation/content/**/*.md
+!.app/
+!.demo
+
+public
+*.md
+dist

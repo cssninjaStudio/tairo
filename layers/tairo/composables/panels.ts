@@ -41,7 +41,7 @@ export function usePanels() {
 
   const panels = computed(
     () =>
-      app.tairo?.panels?.map((panel) => ({
+      app.tairo?.panels?.map(panel => ({
         ...panel,
         position: (panel as any).position ?? 'left',
         overlay: (panel as any).overlay ?? true,
@@ -62,7 +62,7 @@ export function usePanels() {
       return undefined
     }
 
-    return panels.value.find((panel) => panel.name === currentName.value)
+    return panels.value.find(panel => panel.name === currentName.value)
   })
 
   function open(name: string, props?: any) {
