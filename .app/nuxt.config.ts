@@ -6,7 +6,7 @@ export default defineNuxtConfig({
      * Alternatively you can use the following:
      * ["gh:cssninjaStudio/tairo/layers/tairo#v1.4.0", {
      *    install: true,
-     *    giget: { auth: process.env.GITHUB_TOKEN },
+     *    giget: { auth: import.meta.env.GITHUB_TOKEN },
      * }]
      *
      * @see https://github.com/unjs/c12#extending-config-layer-from-remote-sources

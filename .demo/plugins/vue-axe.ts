@@ -1,6 +1,6 @@
 /**
  * This plugin loads vue-axe only in dev mode
- * and only if the process.env.ENABLE_A11Y_AXE is set to true.
+ * and only if the import.meta.env.ENABLE_A11Y_AXE is set to true.
  * Note that it should be defined in vite.define key in nuxt.config.ts, not in .env file.
  *
  * It also loads the VueAxePopup component only if vue-axe is loaded.
