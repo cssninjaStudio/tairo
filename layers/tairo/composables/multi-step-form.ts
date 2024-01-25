@@ -1,4 +1,4 @@
-import copy from 'fast-copy'
+import { klona } from 'klona'
 import type { MaybeRefOrGetter, InjectionKey, UnwrapRef } from 'vue'
 
 export interface StepForm<T extends Record<string, any> = Record<string, any>> {
@@ -52,7 +52,7 @@ export function createMultiStepForm<
   const progress = computed(
     () => ((currentStep.value + 1) / totalSteps.value) * 100,
   )
-  const data = ref<T>(copy(initialState.value) as T)
+  const data = ref<T>(klona(initialState.value) as T)
   const loading = ref(false)
   const preview = ref(false)
   const complete = ref(false)
@@ -96,7 +96,7 @@ export function createMultiStepForm<
   }
 
   function reset() {
-    data.value = copy(initialState.value) as UnwrapRef<T>
+    data.value = klona(initialState.value) as UnwrapRef<T>
     preview.value = false
     complete.value = false
   }
