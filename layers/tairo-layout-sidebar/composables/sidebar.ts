@@ -56,15 +56,15 @@ export function useSidebar() {
   const currentName = useState('sidebar-name', () => '')
   const isOpen = useState<boolean | undefined>('sidebar-open', () => undefined)
 
-  const hasSubsidebar = computed(() => {
-    return sidebars.value?.some(sidebar => sidebar.subsidebar?.component)
-  })
-
   const current = computed(() => {
     if (!currentName.value) {
       return undefined
     }
     return sidebars.value?.find(({ title }) => title === currentName.value)
+  })
+
+  const hasSubsidebar = computed(() => {
+    return Boolean(current.value?.subsidebar?.component)
   })
 
   function toggle() {
