@@ -17,7 +17,7 @@
     "@parcel/watcher": "2.4.0",
     "@popperjs/core": "2.11.8",
     "@types/chroma-js": "^2.4.3",
-    "@types/mapbox-gl": "2.7.19",
+    "@types/mapbox-gl": "3.1.0",
     "@vueform/slider": "2.1.10",
     "@vee-validate/zod": "^4.12.4",
     "@zxcvbn-ts/core": "^3.0.4",
