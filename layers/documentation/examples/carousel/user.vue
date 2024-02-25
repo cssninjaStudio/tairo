@@ -1,5 +1,5 @@
 <template>
-  <AddonCarouselTeam :slides-to-show="3" :slides="team" />
+  <AddonCarouselTeam :slides="team" />
 </template>
 
 <script setup lang="ts">
