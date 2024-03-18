@@ -1,7 +1,7 @@
 <template>
   <div class="grid max-w-3xl gap-4 md:grid-cols-2">
     <BaseCard
-      color="white"
+      color="default"
       rounded="md"
       class="p-6"
     >
@@ -25,7 +25,7 @@
     </BaseCard>
 
     <BaseCard
-      color="white-contrast"
+      color="default-contrast"
       rounded="md"
       class="p-6"
     >
