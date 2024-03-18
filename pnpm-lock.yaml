@@ -236,8 +236,8 @@ importers:
         specifier: ^0.3.12
         version: 0.3.12
       '@shuriken-ui/nuxt':
-        specifier: 2.0.1
-        version: 2.0.1(nuxt@3.9.3)
+        specifier: 3.0.1
+        version: 3.0.1(nuxt@3.9.3)
       klona:
         specifier: ^2.0.6
         version: 2.0.6
@@ -2202,15 +2202,15 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@shuriken-ui/nuxt@2.0.1(nuxt@3.9.3):
-    resolution: {integrity: sha512-v0vc+3tGVbTzzo4zLqqLyC9k6bIqTQ6GGFReHibORCLtnWnK5Yxp+EE0quvzbaRKPjKHpGLd9k7iw0g4vWryHQ==}
+  /@shuriken-ui/nuxt@3.0.1(nuxt@3.9.3):
+    resolution: {integrity: sha512-MWAFCDhF5Y3bFPTM64w+E9pBX0LQpeQsv9L0Rw920jlzyKzgKt6csQ6XUKlSn7fpw85EK/RVc3rhlWauV8XjBQ==}
     dependencies:
       '@headlessui-float/vue': 0.13.1(@headlessui/vue@1.7.17)
       '@headlessui/vue': 1.7.17
       '@iconify/vue': 4.1.1
       '@nuxtjs/color-mode': 3.3.2
       '@nuxtjs/tailwindcss': 6.11.0
-      '@shuriken-ui/tailwind': 2.0.1
+      '@shuriken-ui/tailwind': 3.0.0
       '@vueuse/nuxt': 10.7.2(nuxt@3.9.3)
       autoprefixer: 10.4.17(postcss@8.4.33)
       nuxt-icon: 0.6.8(nuxt@3.9.3)
@@ -2225,8 +2225,8 @@ packages:
       - vue
     dev: false
 
-  /@shuriken-ui/tailwind@2.0.1:
-    resolution: {integrity: sha512-MjRO+iw6dMczu+nDQXosNsNiAfR0pOtxhUDEeyd3HRYTcFznEZj37KOasIDMPVCnys6b19wzmEOSC38KXH443Q==}
+  /@shuriken-ui/tailwind@3.0.0:
+    resolution: {integrity: sha512-DGzTyD8QV0pzcZPo7yPVtCqczndc3yhvCVCqR6bHO6u0Nhdz1YNFqF2lP3O4O9TNw6HyeFjWxOmfuTVii2pirg==}
     dependencies:
       '@tailwindcss/container-queries': 0.1.1(tailwindcss@3.4.1)
       '@tailwindcss/typography': 0.5.10(tailwindcss@3.4.1)
