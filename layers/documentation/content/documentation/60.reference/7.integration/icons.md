@@ -8,7 +8,7 @@ components:
 You can use any icon from [https://icones.js.org/](https://icones.js.org/) by using the :doc-linker{to="Icon"} component.
 
 
-:::doc-message{type="muted" icon="simple-icons:nuxtdotjs"}
+:::doc-message{color="muted" icon="simple-icons:nuxtdotjs"}
 This component is provided by the [nuxt-icon](https://github.com/nuxt-modules/icon) module.
 :::
 ::

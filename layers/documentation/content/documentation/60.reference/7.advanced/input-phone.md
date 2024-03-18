@@ -17,7 +17,7 @@ demo: '#examples/input-phone/base.vue'
 Ready to use phone input component with country code dropdown, with validation and formatting.
 The component extend the :doc-linker{to="BaseInput"} component, so you can use all the props and events of the base component.
 
-:::doc-message{type="muted" icon="ri:markdown-fill"}
+:::doc-message{color="muted" icon="ri:markdown-fill"}
 This component uses [libphonenumber-js](https://www.npmjs.com/package/libphonenumber-js) and [country-codes-list](https://www.npmjs.com/package/country-codes-list) 
 to detect and validate the phone input value.
 :::

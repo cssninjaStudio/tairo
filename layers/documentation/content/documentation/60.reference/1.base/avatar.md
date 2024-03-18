@@ -14,7 +14,7 @@ title: Rounded:full
 demo: '#examples/avatar/circle-size.vue'
 ---
 Avatars can have different radius factors. The following example shows avatars using the `rounded` prop. Avatars can also be displayed as groups, using the :doc-linker{to="BaseAvatarGroup"} component.
-:::doc-message{type="muted" icon="ion:shapes-outline"}
+:::doc-message{color="muted" icon="ion:shapes-outline"}
 Default shape of all :doc-linker{to="BaseAvatar"} can be set in your `.app/app.config.ts`.
 :::
 ::

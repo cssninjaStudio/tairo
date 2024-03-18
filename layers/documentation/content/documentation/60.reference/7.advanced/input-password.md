@@ -17,7 +17,7 @@ demo: '#examples/input-password/base.vue'
 Ready to use password input component with validation and formatting.
 The component extend the :doc-linker{to="BaseInput"} component, so you can use all the props and events of the base component.
 
-:::doc-message{type="muted" icon="ri:markdown-fill"}
+:::doc-message{color="muted" icon="ri:markdown-fill"}
 This component uses [zxcvbn-ts](https://github.com/zxcvbn-ts/zxcvbn) to detect and validate the password input strength.
 :::
 ::
