@@ -20,6 +20,13 @@ const props = withDefaults(
     open?: boolean
 
     /**
+     * The HTML tag to use as modal wrapper (e.g. `div`, `form`, etc.).
+     *
+     * @default 'div'
+     */
+    as?: string
+
+    /**
      * The size of the modal.
      */
     size?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl'
@@ -40,6 +47,7 @@ const props = withDefaults(
     }
   }>(),
   {
+    as: 'div',
     size: 'md',
     rounded: 'sm',
     footerAlign: 'end',
@@ -131,7 +139,8 @@ const dialogClasses = computed(() => {
         </TransitionChild>
 
         <div class="fixed inset-0">
-          <div
+          <component
+            :is="props.as ? props.as : as"
             class="flex min-h-full items-center justify-center p-4 text-center"
             :class="props.classes.wrapper"
           >
@@ -165,7 +174,7 @@ const dialogClasses = computed(() => {
                 </div>
               </DialogPanel>
             </TransitionChild>
-          </div>
+          </component>
         </div>
       </Dialog>
     </div>
