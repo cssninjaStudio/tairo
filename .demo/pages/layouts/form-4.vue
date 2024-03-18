@@ -279,7 +279,7 @@ const people = ref([
                 />
               </Field>
             </div>
-            <div class="col-span-12">
+            <div class="relative z-20 col-span-12">
               <Field
                 v-slot="{
                   field,
