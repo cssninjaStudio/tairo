@@ -39,6 +39,11 @@ const navigation = [
         icon: 'ph:shopping-cart-duotone',
         to: '/dashboards/sales',
       },
+      {
+        name: 'Balance dashboard',
+        icon: 'ph:money-duotone',
+        to: '/dashboards/balance',
+      },
     ],
   },
   {
