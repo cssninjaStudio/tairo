@@ -490,6 +490,224 @@ export default defineAppConfig({
         ],
       },
     },
+    iconnav: {
+      navigation: {
+        enabled: true,
+        logo: {
+          component: 'TairoLogo',
+          props: { class: 'text-primary-600 h-10 w-10' },
+        },
+        items: [
+          {
+            name: 'Home',
+            icon: { name: 'ph:gauge-duotone', class: 'w-6 h-6' },
+            activePath: '/dashboards',
+            children: [
+              {
+                name: 'Dashboard',
+                to: '/dashboards',
+                icon: { name: 'ph:house-duotone', class: 'w-4 h-4' },
+              },
+              {
+                name: 'Personal',
+                to: '/dashboards/personal',
+                icon: { name: 'ph:chart-pie-slice-duotone', class: 'w-4 h-4' },
+              },
+              {
+                name: 'Tracking',
+                to: '/dashboards/tracking',
+                icon: { name: 'ph:bank-duotone', class: 'w-4 h-4' },
+              },
+              {
+                name: 'Overview',
+                to: '/dashboards/overview',
+                icon: { name: 'ph:subtract-duotone', class: 'w-4 h-4' },
+              },
+              {
+                name: 'Quickview',
+                to: '/dashboards/quickview',
+                icon: { name: 'ph:circles-three-duotone', class: 'w-4 h-4' },
+              },
+            ],
+          },
+          {
+            name: 'Accounts',
+            icon: { name: 'ph:bank-duotone', class: 'w-6 h-6' },
+            activePath: '/layouts/accounts',
+            children: [
+              {
+                name: 'Balance',
+                to: '/layouts/accounts',
+                icon: { name: 'ph:bank-duotone', class: 'w-4 h-4' },
+              },
+              {
+                name: 'Transactions',
+                to: '/layouts/',
+                icon: {
+                  name: 'ph:arrows-left-right-duotone',
+                  class: 'w-4 h-4',
+                },
+              },
+              {
+                name: 'Payments',
+                to: '/layouts/payments',
+                icon: {
+                  name: 'ph:coins-duotone',
+                  class: 'w-4 h-4',
+                },
+              },
+              {
+                name: 'Cards',
+                to: '/layouts/cards',
+                icon: {
+                  name: 'ph:credit-card-duotone',
+                  class: 'w-4 h-4',
+                },
+              },
+              {
+                name: 'Credit',
+                to: '/layouts/credit',
+                icon: { name: 'ph:rocket-duotone', class: 'w-4 h-4' },
+              },
+            ],
+          },
+          {
+            name: 'Personal',
+            icon: { name: 'ph:user-duotone', class: 'w-6 h-6' },
+            activePath: '/layouts/profile',
+            children: [
+              {
+                name: 'Profile',
+                to: '/layouts/profile',
+                icon: { name: 'ph:user-duotone', class: 'w-4 h-4' },
+              },
+              {
+                name: 'Company',
+                to: '/layouts/company',
+                icon: {
+                  name: 'ph:buildings-duotone',
+                  class: 'w-4 h-4',
+                },
+              },
+              {
+                name: 'Documents',
+                to: '/layouts/documents',
+                icon: {
+                  name: 'ph:note-duotone',
+                  class: 'w-4 h-4',
+                },
+              },
+              {
+                name: 'Vault',
+                to: '/layouts/vault',
+                icon: {
+                  name: 'ph:lock-duotone',
+                  class: 'w-4 h-4',
+                },
+              },
+            ],
+          },
+          {
+            name: 'Settings',
+            icon: { name: 'ph:gear-six-duotone', class: 'w-6 h-6' },
+            to: '/layouts/settings',
+          },
+          {
+            name: 'Customize',
+            icon: { name: 'ph:drop-half-bottom-duotone', class: 'w-6 h-6' },
+            click: () => {
+              const isSwitcherOpen = useState('switcher-open', () => false)
+              isSwitcherOpen.value = true
+            },
+          },
+        ],
+      },
+      circularMenu: {
+        enabled: true,
+        tools: [
+          {
+            component: 'DemoThemeToggle',
+            props: {
+              class: 'ms-auto',
+              disableTransitions: true,
+              inverted: true,
+            },
+          },
+          {
+            component: 'DemoCircularMenuLanguage',
+          },
+          {
+            component: 'DemoCircularMenuNotifications',
+          },
+          {
+            component: 'DemoCircularMenuActivity',
+          },
+        ],
+      },
+      toolbar: {
+        enabled: true,
+        showTitle: true,
+        tools: [
+          {
+            component: 'DemoThemeToggle',
+          },
+          {
+            component: 'DemoToolbarDropdown',
+          },
+          {
+            component: 'DemoToolbarNotifications',
+          },
+          {
+            component: 'DemoAccountMenu',
+            props: {
+              horizontal: true,
+              orientation: 'start',
+            },
+          },
+        ],
+      },
+      footer: {
+        enabled: true,
+        logoSeparator: {
+          component: 'TairoLogo',
+          props: { class: 'text-primary-500 h-7 w-7' },
+        },
+        logo: {
+          component: 'TairoLogoText',
+          props: {
+            class:
+              'text-muted-300 ltablet:mx-0 mx-auto h-4 transition-all duration-200 lg:mx-0',
+          },
+        },
+        copyright: {
+          name: 'Css Ninja',
+          to: 'https://cssninja.io',
+          since: '2018',
+        },
+        links: [
+          {
+            name: 'Demo pages',
+            to: '/demos',
+          },
+          {
+            name: 'Documentation',
+            to: '/documentation',
+          },
+          {
+            name: 'Shuriken UI',
+            to: 'https://github.com/shuriken-ui',
+            rel: 'noopener',
+            target: '_blank',
+          },
+          {
+            name: 'Support',
+            to: 'https://cssninja.io/faq/support',
+            rel: 'noopener',
+            target: '_blank',
+          },
+        ],
+      },
+    },
     panels: [
       {
         name: 'language',

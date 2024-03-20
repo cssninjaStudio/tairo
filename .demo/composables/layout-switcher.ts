@@ -8,6 +8,7 @@ import {
   TairoCollapseLayout,
   TairoSidebarLayout,
   TairoTopnavLayout,
+  TairoIconnavLayout,
 } from '#components'
 
 export function useLayoutSwitcher() {
@@ -26,6 +27,11 @@ export function useLayoutSwitcher() {
       name: 'topnav',
       label: 'Top navigation',
       component: TairoTopnavLayout,
+    },
+    {
+      name: 'iconnav',
+      label: 'Icon top navigation',
+      component: TairoIconnavLayout,
     },
   ] as const
 
