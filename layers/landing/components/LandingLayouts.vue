@@ -84,11 +84,11 @@ const activeLayout = ref('sidebar')
                 "
               />
               <span class="block">
-                <BaseText size="md" lead="tight">{{ layout.title }}</BaseText>
-                <BaseText
+                <BaseParagraph size="md" lead="tight">{{ layout.title }}</BaseParagraph>
+                <BaseParagraph
                   size="xs"
                   class="text-muted-500 dark:text-muted-400"
-                >{{ layout.description }}</BaseText>
+                >{{ layout.description }}</BaseParagraph>
               </span>
             </button>
           </div>
