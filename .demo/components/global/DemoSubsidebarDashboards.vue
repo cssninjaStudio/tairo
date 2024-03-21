@@ -19,6 +19,11 @@ const navigation = [
         icon: 'ph:cactus-duotone',
         to: '/dashboards/personal-3',
       },
+      {
+        name: 'Personal balance',
+        icon: 'ph:money-duotone',
+        to: '/dashboards/balance',
+      },
     ],
   },
   {
@@ -30,6 +35,11 @@ const navigation = [
         to: '/dashboards/analytics',
       },
       {
+        name: 'Overview dashboard',
+        icon: 'ph:projector-screen-chart-duotone',
+        to: '/dashboards/overview',
+      },
+      {
         name: 'Stock dashboard',
         icon: 'ph:coin-duotone',
         to: '/dashboards/stocks',
@@ -38,11 +48,6 @@ const navigation = [
         name: 'Sales dashboard',
         icon: 'ph:shopping-cart-duotone',
         to: '/dashboards/sales',
-      },
-      {
-        name: 'Balance dashboard',
-        icon: 'ph:money-duotone',
-        to: '/dashboards/balance',
       },
     ],
   },
