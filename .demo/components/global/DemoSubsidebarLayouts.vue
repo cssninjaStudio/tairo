@@ -216,8 +216,14 @@ const navigation = [
       },
       {
         name: 'Account rules',
-        icon: 'ph:diamonds-four-duotone',
+        icon: 'ph:gavel-duotone',
         to: '/layouts/accounts/rules',
+        exact: true,
+      },
+      {
+        name: 'Transactions',
+        icon: 'ph:diamonds-four-duotone',
+        to: '/layouts/transactions',
         exact: true,
       },
       {
@@ -230,6 +236,29 @@ const navigation = [
         name: 'Create card',
         icon: 'ph:credit-card-duotone',
         to: '/layouts/card/new',
+        exact: true,
+      },
+    ],
+  },
+  {
+    name: 'Payments',
+    children: [
+      {
+        name: 'Outgoing',
+        icon: 'ph:arrow-right',
+        to: '/layouts/payments',
+        exact: true,
+      },
+      {
+        name: 'Incoming',
+        icon: 'ph:arrow-left',
+        to: '/layouts/payments/incoming',
+        exact: true,
+      },
+      {
+        name: 'Recipients',
+        icon: 'ph:users-duotone',
+        to: '/layouts/payments/recipients',
         exact: true,
       },
     ],
