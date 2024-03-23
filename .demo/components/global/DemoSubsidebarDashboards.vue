@@ -40,6 +40,11 @@ const navigation = [
         to: '/dashboards/overview',
       },
       {
+        name: 'Quickview dashboard',
+        icon: 'ph:app-window-duotone',
+        to: '/dashboards/quickview',
+      },
+      {
         name: 'Stock dashboard',
         icon: 'ph:coin-duotone',
         to: '/dashboards/stocks',
