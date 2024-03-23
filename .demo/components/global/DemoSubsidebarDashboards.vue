@@ -15,7 +15,7 @@ const navigation = [
         to: '/dashboards/personal-2',
       },
       {
-        name: 'Personal V3',
+        name: 'Personal 4',
         icon: 'ph:cactus-duotone',
         to: '/dashboards/personal-3',
       },
@@ -68,6 +68,11 @@ const navigation = [
         name: 'Banking V3',
         icon: 'ph:bank-duotone',
         to: '/dashboards/banking-3',
+      },
+      {
+        name: 'Banking V4',
+        icon: 'ph:bank-duotone',
+        to: '/dashboards/banking-4',
       },
     ],
   },
@@ -175,9 +180,14 @@ const navigation = [
         to: '/dashboards/inbox',
       },
       {
-        name: 'Messaging',
+        name: 'Messaging v1',
         icon: 'ph:chat-circle-duotone',
         to: '/dashboards/messaging',
+      },
+      {
+        name: 'Messaging v2',
+        icon: 'ph:chat-teardrop-duotone',
+        to: '/dashboards/messaging-2',
       },
     ],
   },

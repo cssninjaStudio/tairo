@@ -7,12 +7,12 @@ import '~/assets/css/vcalendar.css'
 definePageMeta({
   title: 'Dashboard',
   preview: {
-    title: 'Dashboard',
-    description: 'For data tracking',
+    title: 'Balance dashboard',
+    description: 'For bank account overview',
     categories: ['dashboards'],
-    src: '/img/screens/dashboards-personal-1.png',
-    srcDark: '/img/screens/dashboards-personal-1-dark.png',
-    order: 1,
+    src: '/img/screens/dashboards-balance.png',
+    srcDark: '/img/screens/dashboards-balance-dark.png',
+    order: 3,
   },
 })
 

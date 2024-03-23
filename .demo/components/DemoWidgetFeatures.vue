@@ -34,10 +34,10 @@ const show = ref(true)
       <div class="relative">
         <BaseCard
           rounded="md"
-          class="flex flex-col gap-4 p-4 sm:flex-row"
+          class="flex flex-col gap-4 p-4 sm:flex-row sm:items-center"
         >
           <div
-            class="bg-muted-100 dark:bg-muted-900 flex w-full shrink-0 items-center justify-center rounded-xl sm:size-48"
+            class="bg-muted-100 dark:bg-muted-900 flex w-full shrink-0 items-center justify-center rounded-xl sm:size-32"
           >
             <img
               src="/img/illustrations/ui/recurring.svg"
@@ -49,13 +49,13 @@ const show = ref(true)
             <BaseHeading
               as="h3"
               weight="medium"
-              size="lg"
+              size="md"
               class="text-muted-800 dark:text-muted-100 mb-2"
             >
               Recurring payments
             </BaseHeading>
             <BaseParagraph
-              size="sm"
+              size="xs"
               class="text-muted-500 dark:text-muted-400 mb-4"
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Bork Idem
@@ -70,10 +70,10 @@ const show = ref(true)
       <div class="relative">
         <BaseCard
           rounded="md"
-          class="flex flex-col gap-4 p-4 sm:flex-row"
+          class="flex flex-col gap-4 p-4 sm:flex-row sm:items-center"
         >
           <div
-            class="bg-muted-200 dark:bg-muted-900 flex w-full shrink-0 items-center justify-center rounded-xl sm:size-48"
+            class="bg-muted-200 dark:bg-muted-900 flex w-full shrink-0 items-center justify-center rounded-xl sm:size-32"
           >
             <img
               src="/img/illustrations/ui/cashback.svg"
@@ -85,13 +85,13 @@ const show = ref(true)
             <BaseHeading
               as="h3"
               weight="medium"
-              size="lg"
+              size="md"
               class="text-muted-800 dark:text-muted-100 mb-2"
             >
               Credit balance
             </BaseHeading>
             <BaseParagraph
-              size="sm"
+              size="xs"
               class="text-muted-500 dark:text-muted-400 mb-4"
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Bork Idem
