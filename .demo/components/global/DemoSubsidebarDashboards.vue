@@ -50,6 +50,11 @@ const navigation = [
         to: '/dashboards/stocks',
       },
       {
+        name: 'Trading dashboard',
+        icon: 'ph:read-cv-logo-duotone',
+        to: '/dashboards/trading',
+      },
+      {
         name: 'Sales dashboard',
         icon: 'ph:shopping-cart-duotone',
         to: '/dashboards/sales',
@@ -78,6 +83,11 @@ const navigation = [
         name: 'Banking V4',
         icon: 'ph:bank-duotone',
         to: '/dashboards/banking-4',
+      },
+      {
+        name: 'Banking V5',
+        icon: 'ph:bank-duotone',
+        to: '/dashboards/banking-5',
       },
     ],
   },
