@@ -93,7 +93,7 @@ function useDemoAreaBalance() {
 
 <template>
   <div
-    class="border-muted-200 dark:border-muted-800 dark:bg-muted-800 border-l bg-white"
+    class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 border-l bg-white"
   >
     <div
       class="border-muted-200 dark:border-muted-700 flex h-20 w-full items-center justify-between border-b px-6"
@@ -110,7 +110,7 @@ function useDemoAreaBalance() {
       <!--Close button-->
       <button
         type="button"
-        class="nui-mask nui-mask-blob hover:bg-muted-100 dark:hover:bg-muted-800 text-muted-700 dark:text-muted-400 flex size-10 cursor-pointer items-center justify-center transition-colors duration-300"
+        class="nui-mask nui-mask-blob hover:bg-muted-100 dark:hover:bg-muted-700 text-muted-700 dark:text-muted-400 flex size-10 cursor-pointer items-center justify-center transition-colors duration-300"
         @click="close"
       >
         <Icon name="lucide:arrow-right" class="size-4" />

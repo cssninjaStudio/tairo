@@ -735,6 +735,11 @@ export default defineAppConfig({
         component: 'DemoPanelAccount',
         size: 'lg',
       },
+      {
+        name: 'card',
+        position: 'right',
+        component: 'DemoPanelCard',
+      },
     ],
     error: {
       logo: {

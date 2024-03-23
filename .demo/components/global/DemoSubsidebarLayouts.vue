@@ -220,6 +220,18 @@ const navigation = [
         to: '/layouts/accounts/rules',
         exact: true,
       },
+      {
+        name: 'Credit cards',
+        icon: 'ph:credit-card-duotone',
+        to: '/layouts/cards',
+        exact: true,
+      },
+      {
+        name: 'Create card',
+        icon: 'ph:credit-card-duotone',
+        to: '/layouts/card/new',
+        exact: true,
+      },
     ],
   },
   {
