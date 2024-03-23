@@ -200,6 +200,29 @@ const navigation = [
     divider: true,
   },
   {
+    name: 'Accounts',
+    children: [
+      {
+        name: 'Accounts list',
+        icon: 'ph:gradient-duotone',
+        to: '/layouts/accounts',
+        exact: true,
+      },
+      {
+        name: 'Linked accounts',
+        icon: 'ph:link-simple-horizontal-duotone',
+        to: '/layouts/accounts/linked',
+        exact: true,
+      },
+      {
+        name: 'Account rules',
+        icon: 'ph:diamonds-four-duotone',
+        to: '/layouts/accounts/rules',
+        exact: true,
+      },
+    ],
+  },
+  {
     name: 'Projects',
     children: [
       {

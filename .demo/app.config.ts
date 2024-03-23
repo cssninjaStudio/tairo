@@ -729,6 +729,12 @@ export default defineAppConfig({
         position: 'right',
         component: 'DemoPanelTask',
       },
+      {
+        name: 'account',
+        position: 'right',
+        component: 'DemoPanelAccount',
+        size: 'lg',
+      },
     ],
     error: {
       logo: {
