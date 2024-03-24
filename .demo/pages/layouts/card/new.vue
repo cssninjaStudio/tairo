@@ -264,7 +264,7 @@ const onSubmit = handleSubmit(
                 </div>
 
                 <div v-if="fieldsWithErrors" class="mt-8">
-                  <BaseMessage type="primary" @close="() => setErrors({})">
+                  <BaseMessage color="primary" @close="() => setErrors({})">
                     This form has {{ fieldsWithErrors }} errors, please check
                     them before submitting
                   </BaseMessage>
@@ -616,7 +616,7 @@ const onSubmit = handleSubmit(
               <BaseButton
                 to="/layouts/cards"
                 color="primary"
-                shape="full"
+                rounded="md"
                 class="w-48"
               >
                 Back to Cards

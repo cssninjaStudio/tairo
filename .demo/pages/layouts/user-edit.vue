@@ -391,7 +391,7 @@ const onSubmit = handleSubmit(
                 <!--Form fields-->
                 <div class="space-y-12">
                   <!--Personal info-->
-                  <ApolluxFormGroup
+                  <TairoFormGroup
                     label="Personal info"
                     sublabel="Basic info about you"
                   >
@@ -522,7 +522,7 @@ const onSubmit = handleSubmit(
                           name="profile.status"
                         >
                           <BaseSelect
-                            shape="rounded"
+                            rounded="md"
                             label="Family Status"
                             :model-value="field.value"
                             :error="errorMessage"
@@ -557,7 +557,7 @@ const onSubmit = handleSubmit(
                           name="profile.birthday.day"
                         >
                           <BaseSelect
-                            shape="rounded"
+                            rounded="md"
                             label="Birthday"
                             :model-value="field.value"
                             :error="errorMessage"
@@ -583,7 +583,7 @@ const onSubmit = handleSubmit(
                           name="profile.birthday.month"
                         >
                           <BaseSelect
-                            shape="rounded"
+                            rounded="md"
                             label="Birth Month"
                             :model-value="field.value"
                             :error="errorMessage"
@@ -675,7 +675,7 @@ const onSubmit = handleSubmit(
                                 @blur="handleBlur"
                               >
                                 <BaseCard
-                                  shape="rounded"
+                                  rounded="md"
                                   class="text-muted-400 peer-checked:!border-primary-500 peer-checked:[&_.child]:!text-primary-500 relative border px-2 py-6 grayscale peer-checked:grayscale-0"
                                 >
                                   <div
@@ -727,7 +727,7 @@ const onSubmit = handleSubmit(
                                 @blur="handleBlur"
                               >
                                 <BaseCard
-                                  shape="rounded"
+                                  rounded="md"
                                   class="text-muted-400 peer-checked:!border-primary-500 peer-checked:[&_.child]:!text-primary-500 relative border px-2 py-6 grayscale peer-checked:grayscale-0"
                                 >
                                   <div
@@ -779,7 +779,7 @@ const onSubmit = handleSubmit(
                                 @blur="handleBlur"
                               >
                                 <BaseCard
-                                  shape="rounded"
+                                  rounded="md"
                                   class="text-muted-400 peer-checked:!border-primary-500 peer-checked:[&_.child]:!text-primary-500 relative border px-2 py-6 grayscale peer-checked:grayscale-0"
                                 >
                                   <div
@@ -816,10 +816,10 @@ const onSubmit = handleSubmit(
                         </div>
                       </div>
                     </div>
-                  </ApolluxFormGroup>
+                  </TairoFormGroup>
 
                   <!--Address info-->
-                  <ApolluxFormGroup
+                  <TairoFormGroup
                     label="Mailing address"
                     sublabel="The address we will use to mail you"
                   >
@@ -948,7 +948,7 @@ const onSubmit = handleSubmit(
                           name="profile.mailingAddress.country"
                         >
                           <BaseSelect
-                            shape="rounded"
+                            rounded="md"
                             label="Country"
                             :model-value="field.value"
                             :error="errorMessage"
@@ -982,10 +982,10 @@ const onSubmit = handleSubmit(
                         </Field>
                       </div>
                     </div>
-                  </ApolluxFormGroup>
+                  </TairoFormGroup>
 
                   <!--Address info-->
-                  <ApolluxFormGroup
+                  <TairoFormGroup
                     label="Legal address"
                     sublabel="Your legal address for billing purposes"
                   >
@@ -1114,7 +1114,7 @@ const onSubmit = handleSubmit(
                           name="profile.legalAddress.country"
                         >
                           <BaseSelect
-                            shape="rounded"
+                            rounded="md"
                             label="Country"
                             :model-value="field.value"
                             :error="errorMessage"
@@ -1148,7 +1148,7 @@ const onSubmit = handleSubmit(
                         </Field>
                       </div>
                     </div>
-                  </ApolluxFormGroup>
+                  </TairoFormGroup>
 
                   <div
                     class="mt-5 flex flex-col-reverse gap-y-4 text-end md:block md:space-x-3"

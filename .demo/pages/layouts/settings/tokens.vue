@@ -20,7 +20,7 @@ definePageMeta({
     >
       <div class="mt-3 flex justify-center">
         <BaseButton
-          shape="full"
+          rounded="md"
           color="primary"
           class="w-40"
         >

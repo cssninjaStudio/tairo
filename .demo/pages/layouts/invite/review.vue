@@ -74,7 +74,7 @@ useHead({
                   {{ request?.firstName }} {{ request?.lastName }}
                   <BaseTag
                     v-if="request.role"
-                    shape="curved"
+                    rounded="lg"
                     class="capitalize"
                     size="sm"
                   >

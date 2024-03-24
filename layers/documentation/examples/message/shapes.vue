@@ -5,7 +5,7 @@
     </BaseMessage>
 
     <BaseMessage
-      type="info"
+      color="info"
       icon
       rounded="md"
     >
@@ -13,7 +13,7 @@
     </BaseMessage>
 
     <BaseMessage
-      type="warning"
+      color="warning"
       icon
       rounded="lg"
     >
@@ -21,7 +21,7 @@
     </BaseMessage>
 
     <BaseMessage
-      type="danger"
+      color="danger"
       icon
       rounded="full"
     >

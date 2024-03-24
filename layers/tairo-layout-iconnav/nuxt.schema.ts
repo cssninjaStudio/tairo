@@ -38,7 +38,7 @@ export default defineNuxtSchema({
         navigation: {
           enabled: true,
           logo: {
-            component: 'ApolluxLogo',
+            component: 'TairoLogo',
             props: {},
           },
           items: {
@@ -100,12 +100,12 @@ export default defineNuxtSchema({
           enabled: true,
 
           logoSeparator: {
-            component: 'ApolluxLogo',
+            component: 'TairoLogo',
             props: {},
           },
 
           logo: {
-            component: 'ApolluxLogoText',
+            component: 'TairoLogoText',
             props: {},
           },
 

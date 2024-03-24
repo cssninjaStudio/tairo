@@ -138,7 +138,7 @@ function setAccount(account: any) {
               <div class="flex items-center justify-center">
                 <BaseButton
                   color="primary"
-                  shape="full"
+                  rounded="md"
                   class="w-32"
                 >
                   Link Account

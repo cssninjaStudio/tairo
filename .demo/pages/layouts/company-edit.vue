@@ -337,7 +337,7 @@ const onSubmit = handleSubmit(
                 <!--Form fields-->
                 <div class="space-y-12">
                   <!--Company info-->
-                  <ApolluxFormGroup
+                  <TairoFormGroup
                     label="Company info"
                     sublabel="Basic info about the company"
                   >
@@ -481,10 +481,10 @@ const onSubmit = handleSubmit(
                         </Field>
                       </div>
                     </div>
-                  </ApolluxFormGroup>
+                  </TairoFormGroup>
 
                   <!--Address info-->
-                  <ApolluxFormGroup
+                  <TairoFormGroup
                     label="Mailing address"
                     sublabel="The address of the company"
                   >
@@ -613,7 +613,7 @@ const onSubmit = handleSubmit(
                           name="profile.mailingAddress.country"
                         >
                           <BaseSelect
-                            shape="rounded"
+                            rounded="md"
                             label="Country"
                             :model-value="field.value"
                             :error="errorMessage"
@@ -647,10 +647,10 @@ const onSubmit = handleSubmit(
                         </Field>
                       </div>
                     </div>
-                  </ApolluxFormGroup>
+                  </TairoFormGroup>
 
                   <!--Address info-->
-                  <ApolluxFormGroup
+                  <TairoFormGroup
                     label="Legal address"
                     sublabel="The legal address of the company"
                   >
@@ -779,7 +779,7 @@ const onSubmit = handleSubmit(
                           name="profile.legalAddress.country"
                         >
                           <BaseSelect
-                            shape="rounded"
+                            rounded="md"
                             label="Country"
                             :model-value="field.value"
                             :error="errorMessage"
@@ -813,7 +813,7 @@ const onSubmit = handleSubmit(
                         </Field>
                       </div>
                     </div>
-                  </ApolluxFormGroup>
+                  </TairoFormGroup>
 
                   <div
                     class="mt-5 flex flex-col-reverse gap-y-4 text-end md:block md:space-x-3"

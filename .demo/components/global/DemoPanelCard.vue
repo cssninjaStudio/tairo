@@ -257,21 +257,21 @@ const daySpentProgress = computed(() => {
               This card was issued on {{ card.creationDate }}
             </BaseParagraph>
             <div class="flex items-center justify-between gap-2">
-              <BaseButton shape="full" size="sm">
+              <BaseButton rounded="md" size="sm">
                 Disable
               </BaseButton>
               <BaseButton
-                flavor="pastel"
+                variant="pastel"
                 color="muted"
-                shape="full"
+                rounded="md"
                 size="sm"
               >
                 Replace
               </BaseButton>
               <BaseButton
-                flavor="pastel"
+                variant="pastel"
                 color="muted"
-                shape="full"
+                rounded="md"
                 size="sm"
               >
                 Cancel

@@ -252,7 +252,7 @@ function statusColor(itemStatus: string) {
                 <td class="p-4">
                   <div class="me-5 flex items-center gap-2 md:me-0">
                     <BaseAvatar
-                      shape="full"
+                      rounded="full"
                       size="xs"
                       :src="item.recipient.photo"
                       class="bg-muted-100 dark:bg-muted-700/60"

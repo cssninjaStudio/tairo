@@ -205,8 +205,8 @@ function useGaugePersonal() {
                 </BaseHeading>
                 <BaseTag
                   color="primary"
-                  flavor="pastel"
-                  shape="curved"
+                  variant="pastel"
+                  rounded="lg"
                   class="text-center"
                 >
                   Up to $10M FDIC insured

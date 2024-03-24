@@ -46,7 +46,7 @@ definePageMeta({
               <div class="mt-auto flex flex-col items-center gap-2 sm:flex-row">
                 <BaseButton
                   to="/layouts/send"
-                  shape="full"
+                  rounded="md"
                   color="primary"
                   class="w-full sm:w-auto"
                 >
@@ -54,7 +54,7 @@ definePageMeta({
                 </BaseButton>
                 <BaseButton
                   to="/layouts/accounts/linked"
-                  shape="full"
+                  rounded="md"
                   class="w-full sm:w-auto"
                 >
                   Link Accounts
@@ -109,7 +109,7 @@ definePageMeta({
               <div class="mt-auto flex items-center gap-2">
                 <BaseButton
                   to="/layouts/send"
-                  shape="full"
+                  rounded="md"
                 >
                   Manage Orders
                 </BaseButton>

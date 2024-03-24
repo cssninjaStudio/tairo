@@ -139,7 +139,7 @@ const { close } = usePanels()
           </div>
           <div>
             <BaseButton
-              shape="full"
+              rounded="md"
               color="primary"
               shadow="hover"
             >

@@ -51,7 +51,7 @@ const amount = ref('')
             </BaseParagraph>
             <div class="flex gap-2">
               <BaseButton
-                shape="full"
+                rounded="md"
                 color="primary"
                 class="w-32"
                 @click="nextStep()"
@@ -59,7 +59,7 @@ const amount = ref('')
                 Continue
               </BaseButton>
               <BaseButton
-                shape="full"
+                rounded="md"
                 color="muted"
                 class="w-32"
                 @click="showFaq = !showFaq"
@@ -196,7 +196,7 @@ const amount = ref('')
           <!--Back button-->
           <div class="mt-10">
             <BaseButton
-              shape="full"
+              rounded="md"
               color="muted"
               class="w-32"
               @click="showFaq = !showFaq"
@@ -295,7 +295,7 @@ const amount = ref('')
             <!--Buttons-->
             <div class="flex gap-2">
               <BaseButton
-                shape="full"
+                rounded="md"
                 color="muted"
                 class="w-32"
                 @click="prevStep()"
@@ -303,7 +303,7 @@ const amount = ref('')
                 Previous
               </BaseButton>
               <BaseButton
-                shape="full"
+                rounded="md"
                 color="primary"
                 class="w-32"
                 @click="nextStep()"
@@ -408,7 +408,7 @@ const amount = ref('')
             <!--Buttons-->
             <div class="flex gap-2">
               <BaseButton
-                shape="full"
+                rounded="md"
                 color="muted"
                 class="w-32"
                 @click="prevStep()"
@@ -416,7 +416,7 @@ const amount = ref('')
                 Previous
               </BaseButton>
               <BaseButton
-                shape="full"
+                rounded="md"
                 color="primary"
                 class="w-32"
                 @click="nextStep()"
@@ -457,7 +457,7 @@ const amount = ref('')
             <BaseButton
               to="/dashboards"
               color="primary"
-              shape="full"
+              rounded="md"
               class="w-48"
             >
               Back to Dahboard

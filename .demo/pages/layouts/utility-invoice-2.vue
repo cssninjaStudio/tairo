@@ -39,7 +39,7 @@ const itemSubtotal = computed(() =>
                 src="/img/logos/companies/amazon.svg"
                 alt="Amazon"
                 size="md"
-                shape="straight"
+                rounded="none"
                 mask="blob"
                 class="bg-muted-100 dark:bg-muted-900"
               />
@@ -162,7 +162,7 @@ const itemSubtotal = computed(() =>
                   </BaseParagraph>
                 </div>
                 <div class="ms-auto">
-                  <BaseButton shape="full">
+                  <BaseButton rounded="md">
                     Customize
                   </BaseButton>
                 </div>
@@ -285,7 +285,7 @@ const itemSubtotal = computed(() =>
                       </BaseHeading>
                       <BaseButtonIcon
                         to="/layouts/card/new"
-                        shape="curved"
+                        rounded="lg"
                         size="sm"
                       >
                         <Icon name="lucide:edit-2" class="size-4" />
@@ -364,7 +364,7 @@ const itemSubtotal = computed(() =>
                         </BaseHeading>
                         <BaseButtonIcon
                           to="/layouts/card/new"
-                          shape="curved"
+                          rounded="lg"
                           size="sm"
                         >
                           <Icon name="lucide:printer" class="size-4" />

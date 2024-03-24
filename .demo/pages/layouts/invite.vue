@@ -37,7 +37,7 @@ const wizardSteps = [
       name: 'Permissions',
       title: 'Assign them a role',
       subtitle:
-        'A team member\'s role determines what they can see and do on your Apollux organization account',
+        'A team member\'s role determines what they can see and do on your Tairo organization account',
     } satisfies StepData,
   },
   {

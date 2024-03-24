@@ -518,7 +518,7 @@ const onSubmit = handleSubmit(
                           name="contact.status"
                         >
                           <BaseSelect
-                            shape="rounded"
+                            rounded="md"
                             label="Status"
                             :model-value="field.value"
                             :error="errorMessage"
@@ -558,7 +558,7 @@ const onSubmit = handleSubmit(
                                 @blur="handleBlur"
                               >
                                 <BaseCard
-                                  shape="rounded"
+                                  rounded="md"
                                   class="text-muted-400 peer-checked:!border-primary-500 peer-checked:[&_.child]:!text-primary-500 relative border px-2 py-6 grayscale peer-checked:grayscale-0"
                                 >
                                   <div
@@ -617,7 +617,7 @@ const onSubmit = handleSubmit(
                                 @blur="handleBlur"
                               >
                                 <BaseCard
-                                  shape="rounded"
+                                  rounded="md"
                                   class="text-muted-400 peer-checked:!border-primary-500 peer-checked:[&_.child]:!text-primary-500 relative border px-2 py-6 grayscale peer-checked:grayscale-0"
                                 >
                                   <div
@@ -685,7 +685,7 @@ const onSubmit = handleSubmit(
                                 @blur="handleBlur"
                               >
                                 <BaseCard
-                                  shape="rounded"
+                                  rounded="md"
                                   class="text-muted-400 peer-checked:!border-primary-500 peer-checked:[&_.child]:!text-primary-500 relative border px-2 py-6 grayscale peer-checked:grayscale-0"
                                 >
                                   <div
@@ -737,7 +737,7 @@ const onSubmit = handleSubmit(
                                 @blur="handleBlur"
                               >
                                 <BaseCard
-                                  shape="rounded"
+                                  rounded="md"
                                   class="text-muted-400 peer-checked:!border-primary-500 peer-checked:[&_.child]:!text-primary-500 relative border px-2 py-6 grayscale peer-checked:grayscale-0"
                                 >
                                   <div
@@ -789,7 +789,7 @@ const onSubmit = handleSubmit(
                                 @blur="handleBlur"
                               >
                                 <BaseCard
-                                  shape="rounded"
+                                  rounded="md"
                                   class="text-muted-400 peer-checked:!border-primary-500 peer-checked:[&_.child]:!text-primary-500 relative border px-2 py-6 grayscale peer-checked:grayscale-0"
                                 >
                                   <div
@@ -936,7 +936,7 @@ const onSubmit = handleSubmit(
                           name="contact.country"
                         >
                           <BaseSelect
-                            shape="rounded"
+                            rounded="md"
                             label="Country"
                             :model-value="field.value"
                             :error="errorMessage"
@@ -1081,7 +1081,7 @@ const onSubmit = handleSubmit(
                           name="contact.paymentMethod"
                         >
                           <BaseSelect
-                            shape="rounded"
+                            rounded="md"
                             label="Payment Method"
                             :model-value="field.value"
                             :error="errorMessage"

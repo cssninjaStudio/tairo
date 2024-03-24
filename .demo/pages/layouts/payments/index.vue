@@ -81,7 +81,7 @@ const scheduled = computed(() => {
           >
             <div class="flex flex-col items-center gap-2 md:flex-row">
               <BaseAvatar
-                shape="full"
+                rounded="full"
                 size="md"
                 :src="item.recipient.logo"
                 class="bg-muted-100 dark:bg-muted-700/60"
@@ -153,7 +153,7 @@ const scheduled = computed(() => {
           >
             <div class="flex flex-col items-center gap-2 md:flex-row">
               <BaseAvatar
-                shape="full"
+                rounded="full"
                 size="md"
                 :src="item.recipient.logo"
                 class="bg-muted-100 dark:bg-muted-700/60"

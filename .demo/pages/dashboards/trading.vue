@@ -806,7 +806,7 @@ function useStockPrice() {
                 </div>
                 <div>
                   <BaseButton
-                    shape="full"
+                    rounded="md"
                     color="primary"
                     class="w-full"
                   >

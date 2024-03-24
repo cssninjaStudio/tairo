@@ -655,14 +655,14 @@ async function submitMessage() {
           <NuxtLink
             to="/"
             class="flex items-center gap-2"
-            aria-label="Go to Apollux homepage"
+            aria-label="Go to Tairo homepage"
           >
-            <ApolluxLogo class="text-muted-800 h-9 dark:text-white" />
-            <ApolluxLogoText class="text-muted-800 h-3 dark:text-white" />
+            <TairoLogo class="text-muted-800 h-9 dark:text-white" />
+            <TairoLogoText class="text-muted-800 h-3 dark:text-white" />
           </NuxtLink>
           <BaseButtonClose
             color="muted"
-            shape="curved"
+            rounded="lg"
             @click="mobileOpen = false"
           />
         </div>
@@ -670,7 +670,7 @@ async function submitMessage() {
           <!--New conversation-->
           <div class="flex h-20 items-center justify-center pe-2">
             <BaseButton
-              shape="full"
+              rounded="full"
               color="primary"
               class="w-full"
             >
@@ -998,7 +998,7 @@ async function submitMessage() {
                     <BaseInput
                       v-model.trim="message"
                       :disabled="messageLoading"
-                      shape="curved"
+                      rounded="lg"
                       :classes="{
                         input: 'pe-10',
                       }"
@@ -1028,7 +1028,7 @@ async function submitMessage() {
                   <BaseButton
                     type="submit"
                     color="primary"
-                    shape="curved"
+                    rounded="lg"
                   >
                     <span>Send</span>
                     <Icon
@@ -1124,7 +1124,7 @@ async function submitMessage() {
                 </div>
               </div>
               <div class="mt-6">
-                <BaseButton shape="curved" class="w-full">
+                <BaseButton rounded="lg" class="w-full">
                   <span>
                     View {{ selectedConversation?.user.name }}'s profile
                   </span>

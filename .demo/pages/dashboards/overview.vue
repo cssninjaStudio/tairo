@@ -236,7 +236,7 @@ definePageMeta({
               <BaseAvatar
                 src="/img/avatars/3.svg"
                 size="md"
-                shape="straight"
+                rounded="none"
                 mask="blob"
                 class="mx-auto mb-2"
               />
@@ -251,7 +251,7 @@ definePageMeta({
               <BaseAvatar
                 src="/img/avatars/8.svg"
                 size="md"
-                shape="straight"
+                rounded="none"
                 mask="blob"
                 class="mx-auto mb-2"
               />
@@ -266,7 +266,7 @@ definePageMeta({
               <BaseAvatar
                 src="/img/avatars/24.svg"
                 size="md"
-                shape="straight"
+                rounded="none"
                 mask="blob"
                 class="mx-auto mb-2"
               />
@@ -281,7 +281,7 @@ definePageMeta({
               <BaseAvatar
                 src="/img/avatars/12.svg"
                 size="md"
-                shape="straight"
+                rounded="none"
                 mask="blob"
                 class="mx-auto mb-2"
               />
@@ -296,7 +296,7 @@ definePageMeta({
               <BaseAvatar
                 src="/img/avatars/13.svg"
                 size="md"
-                shape="straight"
+                rounded="none"
                 mask="blob"
                 class="mx-auto mb-2"
               />

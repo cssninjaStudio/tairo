@@ -131,7 +131,7 @@ function statusColor(itemStatus: string) {
                 :src="data.recipient.picture"
                 :alt="data.recipient.name"
                 size="lg"
-                shape="straight"
+                rounded="none"
                 mask="blob"
                 class="bg-muted-100 dark:bg-muted-900"
               />

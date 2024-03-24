@@ -56,7 +56,7 @@ if (!data.value?.member) {
           :src="data?.member.picture"
           :alt="data?.member.name"
           size="lg"
-          shape="straight"
+          rounded="none"
           mask="blob"
         />
         <div>
@@ -185,7 +185,7 @@ if (!data.value?.member) {
                     <td class="xs:hidden p-4">
                       <BaseButton
                         to="/layouts/cards"
-                        shape="full"
+                        rounded="md"
                         size="sm"
                       >
                         View
