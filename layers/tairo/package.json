@@ -12,6 +12,7 @@
     "@shuriken-ui/nuxt": "3.0.1",
     "klona": "^2.0.6",
     "magic-string": "0.30.5",
+    "fast-copy": "^3.0.1",
     "nuxt": "^3.9.3"
   }
 }

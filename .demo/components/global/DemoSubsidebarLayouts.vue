@@ -261,6 +261,18 @@ const navigation = [
         to: '/layouts/payments/recipients',
         exact: true,
       },
+      {
+        name: 'Send payment',
+        icon: 'ph:paper-plane-right-duotone',
+        to: '/layouts/send',
+        exact: true,
+      },
+      {
+        name: 'Receive payment',
+        icon: 'ph:receipt-duotone',
+        to: '/layouts/receive',
+        exact: true,
+      },
     ],
   },
   {
@@ -291,6 +303,11 @@ const navigation = [
         name: 'Kanban board',
         icon: 'ph:squares-four-duotone',
         to: '/layouts/projects/board',
+      },
+      {
+        name: 'Invite',
+        icon: 'ph:user-plus-duotone',
+        to: '/layouts/invite',
       },
     ],
   },
