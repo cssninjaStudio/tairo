@@ -3,7 +3,7 @@ import { toRef } from '@vueuse/core'
 import copy from 'fast-copy'
 import type { InjectionKey, UnwrapRef } from 'vue'
 
-export interface StepForm<T extends Record<string, any> = Record<string, any>> {
+export interface StepsForm<T extends Record<string, any> = Record<string, any>> {
   meta: T
   to: string
 
@@ -16,7 +16,7 @@ export interface StepperFormConfig<
   D extends Record<string, any> = Record<string, any>,
 > {
   initialState: MaybeRefOrGetter<T>
-  steps: StepForm<D>[]
+  steps: StepsForm<D>[]
 
   onSubmit?: (data: T, ctx: StepperFormContext<T, D>) => Promise<void> | void
 

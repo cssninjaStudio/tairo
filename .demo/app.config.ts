@@ -740,6 +740,12 @@ export default defineAppConfig({
         position: 'right',
         component: 'DemoPanelCard',
       },
+      {
+        name: 'invest',
+        position: 'right',
+        component: 'DemoPanelInvest',
+        size: 'lg',
+      },
     ],
     error: {
       logo: {
