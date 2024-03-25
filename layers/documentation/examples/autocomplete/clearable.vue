@@ -23,6 +23,7 @@
         placeholder="e.g. Nuxt"
         label="Framework"
         clearable
+        :clear-value="''"
       />
     </div>
 
@@ -36,6 +37,7 @@
         placeholder="e.g. Nuxt"
         label="Framework"
         clearable
+        :clear-value="'Javascript'"
       />
     </div>
   </div>
@@ -43,9 +45,9 @@
 
 <script setup lang="ts">
 const fields = reactive({
-  first: '',
+  first: undefined,
   second: '',
-  third: '',
+  third: 'Javascript',
 })
 
 const frameworks = ref(['Javascript', 'Nuxt', 'Vue.js', 'React.js', 'Angular', 'Alpine.js'])
