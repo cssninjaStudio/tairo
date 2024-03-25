@@ -15,9 +15,14 @@ const navigation = [
         to: '/dashboards/personal-2',
       },
       {
-        name: 'Personal V3',
+        name: 'Personal 4',
         icon: 'ph:cactus-duotone',
         to: '/dashboards/personal-3',
+      },
+      {
+        name: 'Personal balance',
+        icon: 'ph:money-duotone',
+        to: '/dashboards/balance',
       },
     ],
   },
@@ -30,9 +35,24 @@ const navigation = [
         to: '/dashboards/analytics',
       },
       {
+        name: 'Overview dashboard',
+        icon: 'ph:projector-screen-chart-duotone',
+        to: '/dashboards/overview',
+      },
+      {
+        name: 'Quickview dashboard',
+        icon: 'ph:app-window-duotone',
+        to: '/dashboards/quickview',
+      },
+      {
         name: 'Stock dashboard',
         icon: 'ph:coin-duotone',
         to: '/dashboards/stocks',
+      },
+      {
+        name: 'Trading dashboard',
+        icon: 'ph:read-cv-logo-duotone',
+        to: '/dashboards/trading',
       },
       {
         name: 'Sales dashboard',
@@ -58,6 +78,16 @@ const navigation = [
         name: 'Banking V3',
         icon: 'ph:bank-duotone',
         to: '/dashboards/banking-3',
+      },
+      {
+        name: 'Banking V4',
+        icon: 'ph:bank-duotone',
+        to: '/dashboards/banking-4',
+      },
+      {
+        name: 'Banking V5',
+        icon: 'ph:bank-duotone',
+        to: '/dashboards/banking-5',
       },
     ],
   },
@@ -165,9 +195,14 @@ const navigation = [
         to: '/dashboards/inbox',
       },
       {
-        name: 'Messaging',
+        name: 'Messaging v1',
         icon: 'ph:chat-circle-duotone',
         to: '/dashboards/messaging',
+      },
+      {
+        name: 'Messaging v2',
+        icon: 'ph:chat-teardrop-duotone',
+        to: '/dashboards/messaging-2',
       },
     ],
   },

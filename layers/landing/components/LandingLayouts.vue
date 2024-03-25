@@ -5,8 +5,8 @@ const layouts = [
     title: 'Sidebar layout',
     description: 'Tairo default layout',
     text: 'The sidebar layout is a double sided navigation layout. It has a sidebar with a list of menu icons and a subsidebar with a list of menu and submenu links',
-    img: '/img/illustrations/ui/sidebar.png',
-    imgDark: '/img/illustrations/ui/sidebar-dark.png',
+    img: '/img/illustrations/ui/sidebar-layout-master.png',
+    imgDark: '/img/illustrations/ui/sidebar-layout-master-dark.png',
     icon: 'ph:sidebar-duotone',
   },
   {
@@ -14,8 +14,8 @@ const layouts = [
     title: 'Collapse layout',
     description: 'Collapse sidebar layout',
     text: 'The collapse layout focuses on a single sidebar with a list of menu and submenu links, ideal for smaller apps when you don\'t have much content.',
-    img: '/img/illustrations/ui/collapse.png',
-    imgDark: '/img/illustrations/ui/collapse-dark.png',
+    img: '/img/illustrations/ui/collapse-layout-master.png',
+    imgDark: '/img/illustrations/ui/collapse-layout-master-dark.png',
     icon: 'ph:sidebar-simple-duotone',
   },
   {
@@ -23,8 +23,17 @@ const layouts = [
     title: 'Topnav layout',
     description: 'Top navigation layout',
     text: 'The topnav layout focuses on a single navbar that offers a smart way to navigate through your pages. It is probably more adapted for smaller apps.',
-    img: '/img/illustrations/ui/topnav.png',
-    imgDark: '/img/illustrations/ui/topnav-dark.png',
+    img: '/img/illustrations/ui/topnav-layout-master.png',
+    imgDark: '/img/illustrations/ui/topnav-layout-master-dark.png',
+    icon: 'ph:app-window-duotone',
+  },
+  {
+    name: 'iconnav',
+    title: 'Iconnav layout',
+    description: 'Icon navigation layout',
+    text: 'The icon nav layout focuses on a double navbar that offers a smart way to navigate through your pages. It is probably more adapted for bigger apps.',
+    img: '/img/illustrations/ui/iconnav-layout-master.png',
+    imgDark: '/img/illustrations/ui/iconnav-layout-master-dark.png',
     icon: 'ph:app-window-duotone',
   },
 ]
@@ -84,11 +93,11 @@ const activeLayout = ref('sidebar')
                 "
               />
               <span class="block">
-                <BaseText size="md" lead="tight">{{ layout.title }}</BaseText>
-                <BaseText
+                <BaseParagraph size="md" lead="tight">{{ layout.title }}</BaseParagraph>
+                <BaseParagraph
                   size="xs"
                   class="text-muted-500 dark:text-muted-400"
-                >{{ layout.description }}</BaseText>
+                >{{ layout.description }}</BaseParagraph>
               </span>
             </button>
           </div>
@@ -98,7 +107,7 @@ const activeLayout = ref('sidebar')
             v-for="(layout, index) in layouts"
             v-show="activeLayout === layout.name"
             :key="index"
-            color="white-contrast"
+            color="default-contrast"
             rounded="lg"
             class="relative flex flex-col overflow-hidden rounded-xl text-start"
           >
@@ -130,9 +139,6 @@ const activeLayout = ref('sidebar')
               </NuxtLink>
             </div>
             <div class="relative flex grow flex-col px-8 pb-8 pt-4">
-              <div
-                class="absolute -top-8 start-0 z-10 h-6 w-full bg-white blur-md dark:hidden"
-              />
               <div class="mt-auto space-y-2">
                 <BaseHeading weight="light">
                   {{ layout.title }}

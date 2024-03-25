@@ -3,11 +3,11 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
 </script>
 
 <template>
-  <div class="group inline-flex items-center justify-center text-right">
+  <div class="group relative z-20 inline-flex items-center justify-center text-end">
     <Menu
       v-slot="{ close }"
       as="div"
-      class="relative size-9 text-left"
+      class="relative z-20 size-9 text-left"
     >
       <MenuButton as="template">
         <button

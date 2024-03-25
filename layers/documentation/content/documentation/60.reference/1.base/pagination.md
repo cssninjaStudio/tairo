@@ -14,7 +14,7 @@ title: Rounded:none
 demo: '#examples/pagination/straight.vue'
 ---
 The pagination component can have different radius factors. Use the `rounded` prop to change the radius of the pagination.
-:::doc-message{type="muted" icon="ion:shapes-outline"}
+:::doc-message{color="muted" icon="ion:shapes-outline"}
 Default props of all :doc-linker{to="BasePagination"} can be set in your `.app/app.config.ts`.
 :::
 ::

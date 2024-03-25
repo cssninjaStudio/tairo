@@ -4,13 +4,13 @@
       variant="button"
       label="Dropdown"
       orientation="start"
-      color="white"
+      color="default"
     >
       <BaseDropdownItem
         to="#"
         title="Profile"
         text="View your profile"
-        color="default"
+        color="primary"
         rounded="sm"
       />
 
@@ -18,7 +18,7 @@
         to="#"
         title="Projects"
         text="View your projects"
-        color="default"
+        color="primary"
         rounded="sm"
       />
 
@@ -26,7 +26,7 @@
         to="#"
         title="Team"
         text="Manage your team"
-        color="default"
+        color="primary"
         rounded="sm"
       />
 
@@ -34,7 +34,7 @@
         to="#"
         title="Settings"
         text="Set your preferences"
-        color="default"
+        color="primary"
         rounded="sm"
       />
     </BaseDropdown>
@@ -43,13 +43,13 @@
       variant="button"
       label="Dropdown"
       orientation="start"
-      color="white-contrast"
+      color="default-contrast"
     >
       <BaseDropdownItem
         to="#"
         title="Profile"
         text="View your profile"
-        color="default"
+        color="primary"
         rounded="sm"
       />
 
@@ -57,7 +57,7 @@
         to="#"
         title="Projects"
         text="View your projects"
-        color="default"
+        color="primary"
         rounded="sm"
       />
 
@@ -65,7 +65,7 @@
         to="#"
         title="Team"
         text="Manage your team"
-        color="default"
+        color="primary"
         rounded="sm"
       />
 
@@ -73,7 +73,7 @@
         to="#"
         title="Settings"
         text="Set your preferences"
-        color="default"
+        color="primary"
         rounded="sm"
       />
     </BaseDropdown>

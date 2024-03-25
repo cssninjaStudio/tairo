@@ -12,7 +12,7 @@ export default defineNuxtConfig({
      * - documentation: contains all /documentation pages
      */
     '../layers/landing',
-    process.env.ENABLE_DOCUMENTATION && '../layers/documentation',
+    import.meta.env.ENABLE_DOCUMENTATION && '../layers/documentation',
 
     /**
      * This extends the base Tairo layer.
@@ -20,7 +20,7 @@ export default defineNuxtConfig({
      * Alternatively you can use the following:
      * ["gh:cssninjaStudio/tairo/layers/tairo#v1.4.0", {
      *    install: true,
-     *    giget: { auth: process.env.GITHUB_TOKEN },
+     *    giget: { auth: import.meta.env.GITHUB_TOKEN },
      * }]
      *
      * @see https://github.com/unjs/c12#extending-config-layer-from-remote-sources
@@ -31,6 +31,7 @@ export default defineNuxtConfig({
     '../layers/tairo-layout-sidebar',
     '../layers/tairo-layout-collapse',
     '../layers/tairo-layout-topnav',
+    '../layers/tairo-layout-iconnav',
     '../layers/tairo',
   ],
 
@@ -51,24 +52,24 @@ export default defineNuxtConfig({
   ],
 
   app: {
-    pageTransition: {
-      mode: 'out-in',
-      enterActiveClass: 'transition-opacity duration-200 ease-out',
-      enterFromClass: 'opacity-0',
-      enterToClass: 'opacity-100',
-      leaveActiveClass: 'transition-opacity duration-75 ease-in',
-      leaveFromClass: 'opacity-100',
-      leaveToClass: 'opacity-0',
-    },
-    layoutTransition: {
-      mode: 'out-in',
-      enterActiveClass: 'transition-opacity duration-200 ease-out',
-      enterFromClass: 'opacity-0',
-      enterToClass: 'opacity-100',
-      leaveActiveClass: 'transition-opacity duration-200 ease-in',
-      leaveFromClass: 'opacity-100',
-      leaveToClass: 'opacity-0',
-    },
+    // pageTransition: {
+    //   mode: 'out-in',
+    //   enterActiveClass: 'transition-opacity duration-200 ease-out',
+    //   enterFromClass: 'opacity-0',
+    //   enterToClass: 'opacity-100',
+    //   leaveActiveClass: 'transition-opacity duration-75 ease-in',
+    //   leaveFromClass: 'opacity-100',
+    //   leaveToClass: 'opacity-0',
+    // },
+    // layoutTransition: {
+    //   mode: 'out-in',
+    //   enterActiveClass: 'transition-opacity duration-200 ease-out',
+    //   enterFromClass: 'opacity-0',
+    //   enterToClass: 'opacity-100',
+    //   leaveActiveClass: 'transition-opacity duration-200 ease-in',
+    //   leaveFromClass: 'opacity-100',
+    //   leaveToClass: 'opacity-0',
+    // },
   },
 
   experimental: {
@@ -104,7 +105,7 @@ export default defineNuxtConfig({
   routeRules: {
     ...demoRules,
     ...landingRules,
-    ...(process.env.ENABLE_DOCUMENTATION ? documentationRules : {}),
+    ...(import.meta.env.ENABLE_DOCUMENTATION ? documentationRules : {}),
   },
 
   // nuxt build configuration
@@ -119,7 +120,7 @@ export default defineNuxtConfig({
   vite: {
     define: {
       // This enables vue-axe to work (used to check a11y - see .demo/plugins/vue-axe.ts)
-      'process.env.ENABLE_A11Y_AXE': process.env.ENABLE_A11Y_AXE,
+      'import.meta.env.ENABLE_A11Y_AXE': import.meta.env.ENABLE_A11Y_AXE,
     },
     build: {
       target: 'esnext',

@@ -2,6 +2,54 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/cssninjaStudio/tairo/compare/v1.3.0...v1.4.0) (2024-01-25)
+
+
+### Features
+
+* add autocomplete country example ([04f87ab](https://github.com/cssninjaStudio/tairo/commit/04f87ab1cee26c245e12f164a2383fbe968a3247))
+* add password input component and dependencies, replacement to TairoPasswordStrength ([96ef32b](https://github.com/cssninjaStudio/tairo/commit/96ef32befb6069a23e561cc0b0e743dc48f87138))
+* Add phone input component and dependencies ([89b542e](https://github.com/cssninjaStudio/tairo/commit/89b542e486985a600dd9c55544e414af93810bc2))
+* add shuriken-gradient.svg and shuriken-gradient-dark.svg logos ([3108bfe](https://github.com/cssninjaStudio/tairo/commit/3108bfe37cbcb34efed6842fbc893b318ae27c38))
+* add workspaces to package.json to support bun ([8775f12](https://github.com/cssninjaStudio/tairo/commit/8775f12ec8370b0028f6ee64f956df2abfeb835d))
+* input number component usage and add related documentation ([6d255c6](https://github.com/cssninjaStudio/tairo/commit/6d255c67a3b24fdc10001b7e77ef39afa71480ed))
+* refactor autocomplete examples ([a1ff47b](https://github.com/cssninjaStudio/tairo/commit/a1ff47b7f6d4d9fd63f1570a3dc486189d5ed4ac))
+* refactor button-action, accordion, avatar and breadcrumb docs ([8a84378](https://github.com/cssninjaStudio/tairo/commit/8a843787b4f20871d15f5525856b078784857398))
+* replace prettier with eslint stylistic ([e8ccae4](https://github.com/cssninjaStudio/tairo/commit/e8ccae4803f5bfba5acbc926c65377d5a7f8b6d9))
+* **TairoPopover:** improve component placement with floating ui ([44b0812](https://github.com/cssninjaStudio/tairo/commit/44b08126cf1a2c6904757750e91023997134b4bf))
+* update avatar and accordion docs ([8d97659](https://github.com/cssninjaStudio/tairo/commit/8d976592c8acbb1e4d9a57f98e3acda55aa34a70))
+* update checkbox docs ([e538b52](https://github.com/cssninjaStudio/tairo/commit/e538b529a24a7a88565cb70f71cb97c3f877c883))
+* update checkbox docs ([e85c4bc](https://github.com/cssninjaStudio/tairo/commit/e85c4bc308fee5ea187a4ca47f2860a9dde2d921))
+* update components doc examples and text ([a97f02d](https://github.com/cssninjaStudio/tairo/commit/a97f02d7bf6b5db7823e5927001190097699bd77))
+* update components documentation ([e3fd6de](https://github.com/cssninjaStudio/tairo/commit/e3fd6deb3700a79bdd9efc7b79cfb9a50baec7cd))
+* update documentation overview ([b4a9bc4](https://github.com/cssninjaStudio/tairo/commit/b4a9bc41e983733db814430caa4d067a43798bb2))
+* update input docs ([59fc40d](https://github.com/cssninjaStudio/tairo/commit/59fc40ded00191e5bb237723e79048f8b994bd24))
+* update input file docs ([d60792b](https://github.com/cssninjaStudio/tairo/commit/d60792bc820855027a13a30ed162d4183d55fcd4))
+* update input number docs ([f253c68](https://github.com/cssninjaStudio/tairo/commit/f253c6838a24582dc18c5edee83422be38603129))
+* update listbox docs ([3879bb8](https://github.com/cssninjaStudio/tairo/commit/3879bb83237324dbfae7cb139454842930e768c9))
+* update Mapbox styles and geocoder placement ([750f8c7](https://github.com/cssninjaStudio/tairo/commit/750f8c7d9a58a531f970cc9f4fe31c682bdb478f))
+* update nuxt configuration files ([8c1b5c0](https://github.com/cssninjaStudio/tairo/commit/8c1b5c0f57388353c2cffaae4d85fe7e015e9215))
+* update nuxt, shuriken-ui and zod ([5740441](https://github.com/cssninjaStudio/tairo/commit/5740441268d1cd9da446c4780277d17428658fd3))
+* update remaining docs pages ([865515d](https://github.com/cssninjaStudio/tairo/commit/865515d4e47ecaaf2d4fb10788de7bd842c07fe1))
+* update to nuxt 3.7 ([6a59a50](https://github.com/cssninjaStudio/tairo/commit/6a59a509a8dab76520488a9a8fa56bded955546b))
+* upgrade to shuriken-ui v2 and nuxt v3.9 ([1a9bf7a](https://github.com/cssninjaStudio/tairo/commit/1a9bf7a67c4e8f5759ab2892ac04806fb9ba5405))
+
+
+### Bug Fixes
+
+* add panel emits demo ([a62b7e5](https://github.com/cssninjaStudio/tairo/commit/a62b7e5717262f21bb46ea762bfcc1d65ee1dcc7))
+* convert charts series to use shallowRef ([c1ae955](https://github.com/cssninjaStudio/tairo/commit/c1ae9554242feda3e3c5624e9dd6ada994abba94))
+* **demo:** new event date picker data binding ([d551932](https://github.com/cssninjaStudio/tairo/commit/d55193272cbb8180963ac7db3913eeea025fcb57))
+* improve server response type ([c553a5f](https://github.com/cssninjaStudio/tairo/commit/c553a5fddd6bb2bb2294c84f6a0fd64b1815ed06))
+* lazyload markdown imports ([b6aac10](https://github.com/cssninjaStudio/tairo/commit/b6aac10669fb0bc8c8151d2d5e239fb0ef222763))
+* markdown rendering reactivity ([af3f870](https://github.com/cssninjaStudio/tairo/commit/af3f87035d505dd30808ca800299fe405ae3b4a8))
+* move unused dependencies from layers to demo ([e66d77f](https://github.com/cssninjaStudio/tairo/commit/e66d77fd4070d217a1544e55fd8c3c36729138d2))
+* null reference errors in app.tairo properties ([9f07449](https://github.com/cssninjaStudio/tairo/commit/9f07449366c9012c279cd47c4d1082c06f0aaff7))
+* page and layout transitions to app configuration ([3f3618b](https://github.com/cssninjaStudio/tairo/commit/3f3618b91b6b2dd44c4f7601db3bd6184339dabf))
+* replace tailwind w/h classes with size ([2005f90](https://github.com/cssninjaStudio/tairo/commit/2005f90bb279688f13448154b3ee19fc7277447c))
+* use BaseCheckbox and BaseIconBox color props ([8d3cf66](https://github.com/cssninjaStudio/tairo/commit/8d3cf661fca8212b6e76e0f7e1ce6589676c6982))
+* use import.meta.env instead of process.env ([8b44bbe](https://github.com/cssninjaStudio/tairo/commit/8b44bbe604d156326a3ec11fb5431732018be2a5))
+
 ## [1.3.0](https://github.com/cssninjaStudio/tairo/compare/v1.2.0...v1.3.0) (2023-09-19)
 
 

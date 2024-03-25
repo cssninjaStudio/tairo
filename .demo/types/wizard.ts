@@ -45,3 +45,55 @@ export interface ProjectStepData {
   title: string
   subtitle: string
 }
+
+export interface StepData {
+  name: string
+  title: string
+  subtitle?: string
+}
+
+export interface PaymentSend {
+  recipient: {
+    name: string
+    picture?: string
+    address: {
+      lineOne: string
+      lineTwo?: string
+      city: string
+      postalCode: string
+      state: string
+      country: string
+    }
+  }
+  amount: number
+  account: {
+    id: number | undefined
+    type: string
+    label: string
+    number: string
+    balance: number
+  }
+  routingNumber: string
+  prefix: string
+  method: string
+}
+
+export interface PaymentReceive {
+  method: string
+  amount: number
+  account: {
+    id: number | undefined
+    type: string
+    label: string
+    number: string
+    balance: number
+  }
+  email?: string
+}
+
+export interface Invite {
+  firstName: string
+  lastName: string
+  email: string
+  role: string
+}

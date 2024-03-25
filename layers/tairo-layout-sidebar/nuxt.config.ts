@@ -1,1 +1,5 @@
-export default defineNuxtConfig({})
+export default defineNuxtConfig({
+  $meta: {
+    name: '@cssninja/tairo-layout-sidebar',
+  },
+})

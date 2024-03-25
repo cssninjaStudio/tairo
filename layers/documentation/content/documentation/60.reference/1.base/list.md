@@ -3,7 +3,7 @@ title: BaseList
 components:
   - BaseList
   - BaseListItem
-description: Apollux provides ready to use typography components such as heading, paragraphs and text, with many customization options.
+description: Tairo provides ready to use typography components such as heading, paragraphs and text, with many customization options.
 icon:
   src: /img/illustrations/components/accordion-icon.svg
   srcDark: /img/illustrations/components/accordion-icon.svg

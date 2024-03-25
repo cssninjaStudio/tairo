@@ -62,5 +62,6 @@ Our online documentation is a great place to learn how to use Tairo.
 We try to keep it mostly up to date, so you can always find the latest information.
 
 - [Access Online Documentation](https://tairo.cssninja.io/documentation)
+- [Access Shuriken UI Documentation](https://shurikenui.com)
 
 > We also have a great [discord community](https://go.cssninja.io/discord) where you can ask questions and show your work.

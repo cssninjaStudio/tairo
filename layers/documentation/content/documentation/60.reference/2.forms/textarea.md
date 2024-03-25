@@ -15,7 +15,7 @@ title: Radius
 demo: '#examples/textarea/shapes.vue'
 ---
 Textareas can have different radius factors. Use the `rounded` prop to change the radius of the textarea component.
-:::doc-message{type="muted" icon="ion:shapes-outline"}
+:::doc-message{color="muted" icon="ion:shapes-outline"}
 Default props of all :doc-linker{to="BaseTextarea"} can be set in your `.app/app.config.ts`.
 :::
 ::

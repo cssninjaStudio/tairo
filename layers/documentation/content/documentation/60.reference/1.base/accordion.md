@@ -34,7 +34,7 @@ demo: '#examples/accordion/shapes.vue'
 
 You can change the shape of the accordion with the `rounded` property.
 
-:::doc-message{type="muted" icon="ion:shapes-outline"}
+:::doc-message{color="muted" icon="ion:shapes-outline"}
 Default props of all :doc-linker{to="BaseAccordion"} can be set in your `.app/app.config.ts`.
 :::
 ::

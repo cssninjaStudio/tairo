@@ -98,6 +98,46 @@ demo: '#examples/dropdown/header.vue'
 Dropdowns menus can have a header. Use the `headerLabel` prop to add a header text to the dropdown menu.
 ::
 
+::doc-component-demo
+---
+title: Checkbox item
+demo: '#examples/dropdown/checkbox-item.vue'
+---
+Dropdowns items can be enhanced into a checkbox wrapping them with a using a `BaseCheckboxHeadless` component as well the `start` item slot prop to add an inner `BaseCheckbox`.
+::
+
+::doc-component-demo
+---
+title: Radio item
+demo: '#examples/dropdown/radio-item.vue'
+---
+Dropdowns items can be enhanced into a radio button wrapping them with a using a `BaseRadioHeadless` component as well the `start` item slot prop to add an inner `BaseRadio`.
+::
+
+::doc-component-demo
+---
+title: Switch item
+demo: '#examples/dropdown/switch-item.vue'
+---
+Dropdowns items can be enhanced into a switch wrapping them with a using a `BaseCheckboxHeadless` component as well the `start` item slot prop to add an inner `BaseSwitchThin`.
+::
+
+::doc-component-demo
+---
+title: Switch ball item
+demo: '#examples/dropdown/switch-ball-item.vue'
+---
+Dropdowns items can be enhanced into a switch wrapping them with a using a `BaseCheckboxHeadless` component as well the `start` item slot prop to add an inner `BaseSwitchBall`.
+::
+
+::doc-component-demo
+---
+title: Search item
+demo: '#examples/dropdown/search-item.vue'
+---
+Dropdowns menus and items can be heavily customized, using wrapping elements, scrolling areas, as well as search and actions.
+::
+
 :doc-component-meta{name="BaseDropdown"}
 :doc-component-meta{name="BaseDropdownItem"}
 :doc-component-meta{name="BaseDropdownDivider"}

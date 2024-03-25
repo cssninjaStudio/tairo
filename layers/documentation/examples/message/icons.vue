@@ -4,15 +4,15 @@
       A successful message.
     </BaseMessage>
 
-    <BaseMessage type="info" icon>
+    <BaseMessage color="info" icon>
       An information message.
     </BaseMessage>
 
-    <BaseMessage type="warning" icon>
+    <BaseMessage color="warning" icon>
       A warning message.
     </BaseMessage>
 
-    <BaseMessage type="danger" icon>
+    <BaseMessage color="danger" icon>
       A destructive message.
     </BaseMessage>
   </div>

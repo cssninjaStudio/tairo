@@ -1,10 +1,7 @@
-<script lang="ts">
-import 'vue3-carousel/dist/carousel.css'
-</script>
-
 <script setup lang="ts">
 import { Carousel, Navigation, Slide } from 'vue3-carousel'
 import type { RouteLocationRaw } from 'vue-router'
+import 'vue3-carousel/dist/carousel.css'
 
 export interface CarouselSlideItem {
   icon?: string
@@ -13,40 +10,77 @@ export interface CarouselSlideItem {
 }
 
 export interface CarouselProps {
-  slidesToShow?: number
   slides: CarouselSlideItem[]
+  carousel?: {
+    // carousel props
+    itemsToShow?: number
+    itemsToScroll?: number
+    wrapAround?: boolean
+    throttle?: number
+    snapAlign?: 'start' | 'end' | 'center' | 'center-even' | 'center-odd'
+    transition?: number
+    breakpoints?: Record<string, any>
+    autoplay?: number
+    pauseAutoplayOnHover?: boolean
+    modelValue?: number
+    mouseDrag?: boolean
+    touchDrag?: boolean
+    dir?: 'rtl' | 'ltr'
+    i18n?: Record<string, any>
+    settings?: Record<string, any>
+
+    // carousel events
+    onBeforeInit?: () => void
+    onInit?: () => void
+    onSlideStart?: (props: {
+      slidingToIndex: number
+      currentSlideIndex: number
+      prevSlideIndex: number
+      slidesCount: number
+    }) => void
+    onLoop?: (props: {
+      currentSlideIndex: number
+      slidingToIndex: number
+    }) => void
+    onUpdateModelValue?: (currentSlideIndex: number) => void
+    onSlideEnd?: (props: {
+      currentSlideIndex: number
+      prevSlideIndex: number
+      slidesCount: number
+    }) => void
+  }
 }
 
 const props = withDefaults(defineProps<CarouselProps>(), {
-  slidesToShow: 7,
   slides: () => [],
+  carousel: () => ({
+    itemsToShow: 7,
+    snapAlign: 'start',
+    breakpoints: {
+      300: {
+        itemsToShow: 2.5,
+        snapAlign: 'start',
+      },
+      768: {
+        itemsToShow: 6,
+        snapAlign: 'start',
+      },
+      900: {
+        itemsToShow: 8,
+        snapAlign: 'start',
+      },
+      1024: {
+        itemsToShow: 7,
+        snapAlign: 'start',
+      },
+    },
+  }),
 })
 </script>
 
 <template>
   <div class="relative">
-    <Carousel
-      :items-to-show="slidesToShow"
-      :slides="props.slides"
-      :breakpoints="{
-        300: {
-          itemsToShow: 2.5,
-          snapAlign: 'start',
-        },
-        768: {
-          itemsToShow: 6,
-          snapAlign: 'start',
-        },
-        900: {
-          itemsToShow: 8,
-          snapAlign: 'start',
-        },
-        1024: {
-          itemsToShow: 7,
-          snapAlign: 'start',
-        },
-      }"
-    >
+    <Carousel v-bind="props.carousel">
       <Slide v-for="(slide, index) in props.slides" :key="index">
         <NuxtLink :to="slide.to" class="cursor-pointer">
           <BaseCard

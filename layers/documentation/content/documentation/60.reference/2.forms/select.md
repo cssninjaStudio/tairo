@@ -15,7 +15,7 @@ title: Radius
 demo: '#examples/select/shapes.vue'
 ---
 The select component can have different shapes. Here is an example of a `rounded` select.
-:::doc-message{type="muted" icon="ion:shapes-outline"}
+:::doc-message{color="muted" icon="ion:shapes-outline"}
 Default props of all :doc-linker{to="BaseSelect"} can be set in your `.app/app.config.ts`.
 :::
 ::

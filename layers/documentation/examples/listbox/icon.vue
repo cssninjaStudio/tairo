@@ -1,5 +1,5 @@
 <template>
-  <div class="flex max-w-3xl flex-wrap items-end gap-3">
+  <div class="flex max-w-4xl flex-col flex-wrap gap-3 md:flex-row md:items-end">
     <div class="flex-1">
       <BaseListbox
         v-model="value"

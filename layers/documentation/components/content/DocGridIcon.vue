@@ -7,12 +7,52 @@ const props = defineProps<{
     | 'success'
     | 'warning'
     | 'danger'
+    | 'yellow'
+    | 'sky'
+    | 'pink'
+    | 'orange'
+    | 'lime'
+    | 'blue'
   to?: string
 }>()
 
 const isExternal = computed(() => {
   return props.to?.startsWith('http')
 })
+
+const iconColor = computed(() => {
+  switch (props.color) {
+    case 'success':
+      return 'bg-success-500/10 text-success-500'
+    case 'primary':
+      return 'bg-primary-500/10 text-primary-500'
+    case 'info':
+      return 'bg-info-500/10 text-info-500'
+    case 'warning':
+      return 'bg-warning-500/10 text-warning-500'
+    case 'danger':
+      return 'bg-danger-500/10 text-danger-500'
+    case 'yellow':
+      return 'bg-yellow-500/10 text-yellow-500'
+    case 'orange':
+      return 'bg-orange-500/10 text-orange-500'
+    case 'sky':
+      return 'bg-sky-500/10 text-sky-500'
+    case 'pink':
+      return 'bg-pink-500/10 text-pink-500'
+    case 'lime':
+      return 'bg-lime-500/10 text-lime-500'
+    case 'blue':
+      return 'bg-blue-500/10 text-blue-500'
+    default:
+      return 'bg-muted-500/10 text-muted-500'
+  }
+})
+
+defineSlots<{
+  default(): any
+  description(): any
+}>()
 </script>
 
 <template>
@@ -22,7 +62,8 @@ const isExternal = computed(() => {
       size="md"
       rounded="none"
       mask="blob"
-      :color="props.color"
+      color="none"
+      :class="iconColor"
       variant="pastel"
     >
       <Icon :name="props.name" class="size-6" />
@@ -42,7 +83,7 @@ const isExternal = computed(() => {
         size="xs"
         class="text-muted-400"
       >
-        <ContentSlot unwrap="p" :use="$slots.description" />
+        <ContentSlot :use="$slots.description" />
       </BaseText>
     </div>
     <div
