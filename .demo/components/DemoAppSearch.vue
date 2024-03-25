@@ -128,16 +128,27 @@ const metaKey = useMetaKey()
             icon="lucide:search"
             placeholder="Ex: button or analytics..."
             color-focus
+            :classes="{
+              label: 'w-full',
+            }"
           >
             <template #label>
               <span class="flex w-full justify-between">
-                <span>Search</span>
-                <span v-if="hasResult" class="text-xs opacity-60">
+                <BaseText weight="medium" size="sm">Search</BaseText>
+                <BaseText
+                  v-if="hasResult"
+                  size="xs"
+                  class="block opacity-60"
+                >
                   navigate with <kbd>↑</kbd> and <kbd>↓</kbd>
-                </span>
-                <span v-else-if="!search" class="text-xs opacity-60">
+                </BaseText>
+                <BaseText
+                  v-else-if="!search"
+                  size="xs"
+                  class="block opacity-60"
+                >
                   press <kbd>{{ metaKey }}</kbd> + <kbd>k</kbd> to open
-                </span>
+                </BaseText>
               </span>
             </template>
           </BaseInput>
