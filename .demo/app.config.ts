@@ -102,7 +102,7 @@ export default defineAppConfig({
           {
             title: 'Settings',
             icon: { name: 'ph:gear-six-duotone', class: 'w-5 h-5' },
-            to: '/layouts/profile-settings',
+            to: '/layouts/settings',
             position: 'end',
           },
           {
