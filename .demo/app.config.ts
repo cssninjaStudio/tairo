@@ -499,41 +499,41 @@ export default defineAppConfig({
         },
         items: [
           {
-            name: 'Home',
+            name: 'Dashboards',
             icon: { name: 'ph:gauge-duotone', class: 'w-6 h-6' },
             activePath: '/dashboards',
             children: [
               {
-                name: 'Dashboard',
+                name: 'Home',
                 to: '/dashboards',
                 icon: { name: 'ph:house-duotone', class: 'w-4 h-4' },
               },
               {
-                name: 'Personal',
-                to: '/dashboards/personal',
+                name: 'Balance',
+                to: '/dashboards/balance',
                 icon: { name: 'ph:chart-pie-slice-duotone', class: 'w-4 h-4' },
-              },
-              {
-                name: 'Tracking',
-                to: '/dashboards/tracking',
-                icon: { name: 'ph:bank-duotone', class: 'w-4 h-4' },
               },
               {
                 name: 'Overview',
                 to: '/dashboards/overview',
-                icon: { name: 'ph:subtract-duotone', class: 'w-4 h-4' },
+                icon: { name: 'ph:circles-three-duotone', class: 'w-4 h-4' },
               },
               {
                 name: 'Quickview',
                 to: '/dashboards/quickview',
-                icon: { name: 'ph:circles-three-duotone', class: 'w-4 h-4' },
+                icon: { name: 'ph:bank-duotone', class: 'w-4 h-4' },
+              },
+              {
+                name: 'Trading',
+                to: '/dashboards/trading',
+                icon: { name: 'ph:subtract-duotone', class: 'w-4 h-4' },
               },
             ],
           },
           {
-            name: 'Accounts',
+            name: 'Banking',
             icon: { name: 'ph:bank-duotone', class: 'w-6 h-6' },
-            activePath: '/layouts/accounts',
+            activePath: '/layouts/',
             children: [
               {
                 name: 'Balance',
@@ -542,7 +542,7 @@ export default defineAppConfig({
               },
               {
                 name: 'Transactions',
-                to: '/layouts/',
+                to: '/layouts/transactions',
                 icon: {
                   name: 'ph:arrows-left-right-duotone',
                   class: 'w-4 h-4',
@@ -569,39 +569,36 @@ export default defineAppConfig({
                 to: '/layouts/credit',
                 icon: { name: 'ph:rocket-duotone', class: 'w-4 h-4' },
               },
+              {
+                name: 'Invest',
+                to: '/layouts/invest',
+                icon: { name: 'ph:globe-hemisphere-west-duotone', class: 'w-4 h-4' },
+              },
             ],
           },
           {
-            name: 'Personal',
-            icon: { name: 'ph:user-duotone', class: 'w-6 h-6' },
-            activePath: '/layouts/profile',
+            name: 'Projects',
+            icon: { name: 'ph:suitcase-duotone', class: 'w-6 h-6' },
+            activePath: '/layouts/projects',
             children: [
               {
-                name: 'Profile',
-                to: '/layouts/profile',
-                icon: { name: 'ph:user-duotone', class: 'w-4 h-4' },
+                name: 'Projects',
+                to: '/layouts/projects',
+                icon: { name: 'ph:suitcase-duotone', class: 'w-4 h-4' },
               },
               {
-                name: 'Company',
-                to: '/layouts/company',
+                name: 'Boards',
+                to: '/layouts/projects/board',
                 icon: {
-                  name: 'ph:buildings-duotone',
+                  name: 'ph:squares-four-duotone',
                   class: 'w-4 h-4',
                 },
               },
               {
-                name: 'Documents',
-                to: '/layouts/documents',
+                name: 'Details',
+                to: '/layouts/projects/details',
                 icon: {
-                  name: 'ph:note-duotone',
-                  class: 'w-4 h-4',
-                },
-              },
-              {
-                name: 'Vault',
-                to: '/layouts/vault',
-                icon: {
-                  name: 'ph:lock-duotone',
+                  name: 'ph:square-half-duotone',
                   class: 'w-4 h-4',
                 },
               },

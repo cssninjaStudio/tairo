@@ -43,7 +43,7 @@
           JS.
         </LandingFeaturesTile>
         <LandingFeaturesTile title="Vite" icon="simple-icons:vite">
-          Vite is a next generation frontend tooling that significantly improves
+          Vite is a next gen frontend tooling that significantly improves
           frontend development.
         </LandingFeaturesTile>
         <LandingFeaturesTile title="Node LTS" icon="teenyicons:nodejs-solid">

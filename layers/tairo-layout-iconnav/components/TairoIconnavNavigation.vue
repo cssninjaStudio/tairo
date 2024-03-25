@@ -8,7 +8,7 @@ const props = withDefaults(
     position: 'fixed' | 'absolute'
   }>(),
   {
-    display: 'expanded-md',
+    display: 'expanded-lg',
     position: 'absolute',
   },
 )
@@ -16,6 +16,8 @@ const isSearchOpen = useState('search-open', () => false)
 const metaKey = useMetaKey()
 const { menuItems, selectedMenuItem } = useIconnav()
 const app = useAppConfig()
+
+const router = useRouter()
 </script>
 
 <template>
@@ -63,7 +65,8 @@ const app = useAppConfig()
               "
               @click="
                 () => {
-                  selectedMenuItem = item
+                  selectedMenuItem = item,
+                  router.push(item.children[0].to)
                 }
               "
             >
