@@ -10,8 +10,8 @@ definePageMeta({
     title: 'Card wizard',
     description: 'For new card creation',
     categories: ['layouts', 'lists'],
-    src: '/img/screens/wizards-card.png',
-    srcDark: '/img/screens/wizards-card-dark.png',
+    src: '/img/screens/layouts-card-new.png',
+    srcDark: '/img/screens/layouts-card-new-dark.png',
     order: 14,
   },
 })

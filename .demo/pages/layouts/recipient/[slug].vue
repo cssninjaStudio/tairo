@@ -3,22 +3,22 @@ definePageMeta({
   title: 'Recipient',
   preview: [
     {
-      title: 'Company details',
-      description: 'For company recipients',
+      title: 'Company recipient',
+      description: 'For company details',
       categories: ['layouts', 'lists', 'details'],
-      src: '/img/screens/layouts-recipients-1.png',
-      srcDark: '/img/screens/layouts-recipients-1-dark.png',
+      src: '/img/screens/layouts-recipient-airbnb.png',
+      srcDark: '/img/screens/layouts-recipient-airbnb-dark.png',
       order: 37,
       params: {
         slug: 'airbnb',
       },
     },
     {
-      title: 'Contact details',
-      description: 'For user recipients',
+      title: 'Contact recipient',
+      description: 'For user details',
       categories: ['layouts', 'lists', 'details'],
-      src: '/img/screens/layouts-recipients-2.png',
-      srcDark: '/img/screens/layouts-recipients-2-dark.png',
+      src: '/img/screens/layouts-recipient-jackie-strauss.png',
+      srcDark: '/img/screens/layouts-recipient-jackie-strauss-dark.png',
       order: 37,
       params: {
         slug: 'jackie-strauss',

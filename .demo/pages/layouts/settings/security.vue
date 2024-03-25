@@ -5,8 +5,8 @@ definePageMeta({
     title: 'Security',
     description: 'For settings management',
     categories: ['layouts', 'settings'],
-    src: '/img/screens/layouts-settings-3.png',
-    srcDark: '/img/screens/layouts-settings-3-dark.png',
+    src: '/img/screens/layouts-settings-security.png',
+    srcDark: '/img/screens/layouts-settings-security-dark.png',
     order: 37,
   },
 })

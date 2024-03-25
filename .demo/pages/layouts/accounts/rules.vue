@@ -5,9 +5,9 @@ definePageMeta({
     title: 'Transfer rules',
     description: 'For account management',
     categories: ['layouts', 'lists'],
-    src: '/img/screens/layouts-transfer-rules.png',
-    srcDark: '/img/screens/layouts-transfer-rules-dark.png',
-    order: 12,
+    src: '/img/screens/layouts-accounts-rules.png',
+    srcDark: '/img/screens/layouts-accounts-rules-dark.png',
+    order: 77,
   },
 })
 

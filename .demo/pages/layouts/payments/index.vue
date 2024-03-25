@@ -5,8 +5,8 @@ definePageMeta({
     title: 'Outgoing payments',
     description: 'For payments management',
     categories: ['layouts', 'lists', 'payments'],
-    src: '/img/screens/layouts-payments-outgoing.png',
-    srcDark: '/img/screens/layouts-payments-outgoing-dark.png',
+    src: '/img/screens/layouts-payments.png',
+    srcDark: '/img/screens/layouts-payments-dark.png',
     order: 80,
   },
 })

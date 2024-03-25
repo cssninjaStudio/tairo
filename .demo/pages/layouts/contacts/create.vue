@@ -9,8 +9,8 @@ definePageMeta({
     title: 'New Contact',
     description: 'For contact creation',
     categories: ['layouts', 'forms'],
-    src: '/img/screens/layouts-contact-create.png',
-    srcDark: '/img/screens/layouts-contact-create-dark.png',
+    src: '/img/screens/layouts-contacts-create.png',
+    srcDark: '/img/screens/layouts-contacts-create-dark.png',
     order: 47,
   },
 })

@@ -8,8 +8,8 @@ definePageMeta({
     title: 'Receive - Step 2',
     description: 'For receiving payments',
     categories: ['layouts', 'lists'],
-    src: '/img/screens/wizards-receive-2.png',
-    srcDark: '/img/screens/wizards-receive-2-dark.png',
+    src: '/img/screens/layouts-receive-transfer.png',
+    srcDark: '/img/screens/layouts-receive-transfer-dark.png',
     order: 16,
   },
 })

@@ -5,8 +5,8 @@ definePageMeta({
     title: 'Invoice',
     description: 'For services and accounting',
     categories: ['layouts'],
-    src: '/img/screens/layouts-invoice.png',
-    srcDark: '/img/screens/layouts-invoice-dark.png',
+    src: '/img/screens/layouts-utility-invoice-2.png',
+    srcDark: '/img/screens/layouts-utility-invoice-2-dark.png',
     order: 8,
   },
 })

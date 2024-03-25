@@ -4,13 +4,13 @@ import { Field, useFieldError, useForm } from 'vee-validate'
 import { z } from 'zod'
 
 definePageMeta({
-  title: 'Edit Profile',
+  title: 'Edit User',
   preview: {
-    title: 'Edit Profile',
-    description: 'For editing your info',
+    title: 'Edit User',
+    description: 'For editing user info',
     categories: ['layouts', 'forms'],
-    src: '/img/screens/layouts-profile-edit.png',
-    srcDark: '/img/screens/layouts-profile-edit-dark.png',
+    src: '/img/screens/layouts-user-edit.png',
+    srcDark: '/img/screens/layouts-user-edit-dark.png',
     order: 31,
   },
 })

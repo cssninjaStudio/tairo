@@ -5,8 +5,8 @@ definePageMeta({
     title: 'Credit form',
     description: 'For credit application',
     categories: ['layouts', 'lists'],
-    src: '/img/screens/layouts-credits.png',
-    srcDark: '/img/screens/layouts-credits-dark.png',
+    src: '/img/screens/layouts-credit.png',
+    srcDark: '/img/screens/layouts-credit-dark.png',
     order: 37,
   },
 })

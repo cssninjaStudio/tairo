@@ -5,8 +5,8 @@ definePageMeta({
     title: 'API Tokens',
     description: 'For settings management',
     categories: ['layouts', 'settings'],
-    src: '/img/screens/layouts-settings-4.png',
-    srcDark: '/img/screens/layouts-settings-4-dark.png',
+    src: '/img/screens/layouts-settings-tokens.png',
+    srcDark: '/img/screens/layouts-settings-tokens-dark.png',
     order: 37,
   },
 })

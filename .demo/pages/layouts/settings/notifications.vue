@@ -5,8 +5,8 @@ definePageMeta({
     title: 'Notifications',
     description: 'For settings management',
     categories: ['layouts', 'settings'],
-    src: '/img/screens/layouts-settings-2.png',
-    srcDark: '/img/screens/layouts-settings-2-dark.png',
+    src: '/img/screens/layouts-settings-notifications.png',
+    srcDark: '/img/screens/layouts-settings-notifications-dark.png',
     order: 37,
   },
 })

@@ -6,8 +6,8 @@ definePageMeta({
     title: 'Recipients',
     description: 'For contacts management',
     categories: ['layouts', 'lists', 'payments'],
-    src: '/img/screens/layouts-recipients.png',
-    srcDark: '/img/screens/layouts-recipients-dark.png',
+    src: '/img/screens/layouts-payments-recipients.png',
+    srcDark: '/img/screens/layouts-payments-recipients-dark.png',
     order: 80,
   },
 })

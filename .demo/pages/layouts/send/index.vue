@@ -8,8 +8,8 @@ definePageMeta({
     title: 'Send - Step 1',
     description: 'For sending payments to people',
     categories: ['layouts', 'wizards', 'forms'],
-    src: '/img/screens/wizards-send-1.png',
-    srcDark: '/img/screens/wizards-send-1-dark.png',
+    src: '/img/screens/layouts-send.png',
+    srcDark: '/img/screens/layouts-send-dark.png',
     order: 18,
   },
 })

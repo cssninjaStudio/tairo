@@ -7,7 +7,7 @@ definePageMeta({
     categories: ['dashboards'],
     src: '/img/screens/dashboards-trading.png',
     srcDark: '/img/screens/dashboards-trading-dark.png',
-    order: 7,
+    order: 5,
   },
 })
 

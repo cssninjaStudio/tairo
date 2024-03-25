@@ -3,12 +3,12 @@ definePageMeta({
   title: 'Messaging',
   layout: 'empty',
   preview: {
-    title: 'Messaging',
+    title: 'Messaging app',
     description: 'For conversations and chats',
     categories: ['dashboards'],
-    src: '/img/screens/dashboards-messaging.png',
-    srcDark: '/img/screens/dashboards-messaging-dark.png',
-    order: 2,
+    src: '/img/screens/dashboards-messaging-2.png',
+    srcDark: '/img/screens/dashboards-messaging-2-dark.png',
+    order: 26,
   },
 })
 

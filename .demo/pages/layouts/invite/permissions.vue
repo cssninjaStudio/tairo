@@ -6,10 +6,10 @@ definePageMeta({
   layout: 'empty',
   preview: {
     title: 'Invite - Step 2',
-    description: 'For iviting people',
+    description: 'For inviting people',
     categories: ['layouts', 'wizards', 'forms'],
-    src: '/img/screens/wizards-invite-2.png',
-    srcDark: '/img/screens/wizards-invite-2-dark.png',
+    src: '/img/screens/layouts-invite-permissions.png',
+    srcDark: '/img/screens/layouts-invite-permissions-dark.png',
     order: 37,
   },
 })

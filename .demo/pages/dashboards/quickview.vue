@@ -5,8 +5,8 @@ definePageMeta({
     title: 'Quickview',
     description: 'For personal use and tracking',
     categories: ['dashboards'],
-    src: '/img/screens/dashboards-quickview.png',
-    srcDark: '/img/screens/dashboards-quickview-dark.png',
+    src: '/img/screens/dashboards-quickviews.png',
+    srcDark: '/img/screens/dashboards-quickviews-dark.png',
     order: 5,
   },
 })

@@ -1,12 +1,12 @@
 <script setup lang="ts">
 definePageMeta({
-  title: 'Profile',
+  title: 'User',
   preview: {
-    title: 'Profile',
-    description: 'For viewing your info',
+    title: 'User',
+    description: 'For viewing user info',
     categories: ['layouts', 'lists'],
-    src: '/img/screens/layouts-profile.png',
-    srcDark: '/img/screens/layouts-profile-dark.png',
+    src: '/img/screens/layouts-user.png',
+    srcDark: '/img/screens/layouts-user-dark.png',
     order: 30,
   },
 })

@@ -2,12 +2,12 @@
 definePageMeta({
   title: 'Tracking',
   preview: {
-    title: 'Tracking',
-    description: 'For personal data tracking',
+    title: 'Banking dashboard v4',
+    description: 'For personal account tracking',
     categories: ['dashboards'],
-    src: '/img/screens/dashboards-personal.png',
-    srcDark: '/img/screens/dashboards-personal-dark.png',
-    order: 4,
+    src: '/img/screens/dashboards-banking-4.png',
+    srcDark: '/img/screens/dashboards-banking-4-dark.png',
+    order: 10,
   },
 })
 

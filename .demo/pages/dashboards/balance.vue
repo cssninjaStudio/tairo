@@ -12,7 +12,7 @@ definePageMeta({
     categories: ['dashboards'],
     src: '/img/screens/dashboards-balance.png',
     srcDark: '/img/screens/dashboards-balance-dark.png',
-    order: 3,
+    order: 5,
   },
 })
 

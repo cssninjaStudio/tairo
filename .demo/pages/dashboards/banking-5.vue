@@ -2,12 +2,12 @@
 definePageMeta({
   title: 'Accounts',
   preview: {
-    title: 'Accounts',
-    description: 'For tracking and quick access',
+    title: 'Banking dashboard v5',
+    description: 'For bank accounts management',
     categories: ['dashboards'],
-    src: '/img/screens/dashboards-tracking.png',
-    srcDark: '/img/screens/dashboards-tracking-dark.png',
-    order: 6,
+    src: '/img/screens/dashboards-banking-5.png',
+    srcDark: '/img/screens/dashboards-banking-5-dark.png',
+    order: 10,
   },
 })
 </script>

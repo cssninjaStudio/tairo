@@ -4,21 +4,21 @@ definePageMeta({
   preview: [
     {
       title: 'Member details',
-      description: 'For viewing Kendra\'s details',
+      description: 'For viewing Maya\'s details',
       categories: ['layouts', 'lists', 'details'],
-      src: '/img/screens/layouts-members-1.png',
-      srcDark: '/img/screens/layouts-members-1-dark.png',
+      src: '/img/screens/layouts-members-maya-rosselini.png',
+      srcDark: '/img/screens/layouts-members-maya-rosselini-dark.png',
       order: 37,
       params: {
-        slug: 'kendra-wilson',
+        slug: 'maya-rosselini',
       },
     },
     {
       title: 'Member details',
       description: 'For viewing John\'s details',
       categories: ['layouts', 'lists', 'details'],
-      src: '/img/screens/layouts-members-2.png',
-      srcDark: '/img/screens/layouts-members-2-dark.png',
+      src: '/img/screens/layouts-members-john-baxter.png',
+      srcDark: '/img/screens/layouts-members-john-baxter-dark.png',
       order: 37,
       params: {
         slug: 'john-baxter',
