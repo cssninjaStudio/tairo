@@ -6,7 +6,7 @@ definePageMeta({
   preview: {
     title: 'Wizard — Step 1',
     description: 'For onboarding and step forms',
-    categories: ['dashboards', 'wizard', 'forms'],
+    categories: ['dashboards', 'wizards', 'forms'],
     src: '/img/screens/wizard-1.png',
     srcDark: '/img/screens/wizard-1-dark.png',
     order: 30,
