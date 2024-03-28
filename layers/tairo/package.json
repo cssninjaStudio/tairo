@@ -13,8 +13,8 @@
     "@shuriken-ui/nuxt": "3.0.6",
     "fast-copy": "^3.0.1",
     "klona": "^2.0.6",
-    "magic-string": "0.30.5",
-    "nuxt": "^3.9.3"
+    "magic-string": "0.30.8",
+    "nuxt": "^3.11.1"
   },
   "devDependencies": {
     "@nuxt/kit": "^3.11.1",

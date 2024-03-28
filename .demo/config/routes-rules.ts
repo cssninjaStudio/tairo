@@ -1,6 +1,7 @@
 import { isProduction } from 'std-env'
+import type { NitroConfig, NitroRouteConfig } from 'nitropack'
 
-const staticAssetsRule = isProduction
+const staticAssetsRule: NitroRouteConfig = isProduction
   ? {
       headers: {
         'Cache-Control': 'public, max-age=31536000',
@@ -8,9 +9,9 @@ const staticAssetsRule = isProduction
     }
   : {}
 
-const staticPageRule = isProduction
+const staticPageRule: NitroRouteConfig = isProduction
   ? {
-      prerender: false,
+      isr: true,
       cache: {
         maxAge: 3600,
         swr: true,
@@ -23,7 +24,7 @@ const staticPageRule = isProduction
     }
   : {}
 
-export const demoRules = {
+export const demoRules: NitroConfig['routeRules'] = {
   '/img/**': staticAssetsRule,
   '/api/**': staticAssetsRule,
   '/dashboards/**': staticPageRule,
@@ -32,12 +33,11 @@ export const demoRules = {
   '/auth/**': staticPageRule,
 }
 
-export const landingRules = {
-  '/_ipx/**': staticAssetsRule,
+export const landingRules: NitroConfig['routeRules'] = {
   '/': staticPageRule,
   '/demos': staticPageRule,
 }
 
-export const documentationRules = {
+export const documentationRules: NitroConfig['routeRules'] = {
   '/documentation/**': staticPageRule,
 }

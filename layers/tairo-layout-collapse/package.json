@@ -9,7 +9,7 @@
     "clean": "rimraf .nuxt .output node_modules"
   },
   "dependencies": {
-    "nuxt": "^3.9.3"
+    "nuxt": "^3.11.1"
   },
   "devDependencies": {
     "@nuxt/schema": "^3.11.1",
