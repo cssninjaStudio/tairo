@@ -1,5 +1,5 @@
 import type { MaybeRefOrGetter } from 'vue'
-import { useCssVar } from '@vueuse/core'
+import { useCssVar, useMediaQuery } from '@vueuse/core'
 
 const rgbRe = /(\d+) (\d+) (\d+)/
 

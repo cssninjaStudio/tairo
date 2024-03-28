@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useIntersectionObserver } from '@vueuse/core'
 import '~/assets/css/apexcharts.css'
 
 const props = defineProps<{

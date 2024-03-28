@@ -1,5 +1,4 @@
 <script setup lang="ts">
-const { x, y } = useWindowScroll()
 const isSearchOpen = useState('search-open', () => false)
 const isMobileOpen = ref(false)
 

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { RouteRecordRaw } from 'vue-router'
+import { onKeyStroke } from '@vueuse/core'
 
 const isMacLike = useIsMacLike()
 const isOpen = useState('search-open', () => false)

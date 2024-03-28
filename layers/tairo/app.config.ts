@@ -1,4 +1,4 @@
-export default defineAppConfig({
+export default {
   tairo: {
     title: 'Tairo',
     error: {
@@ -48,4 +48,4 @@ export default defineAppConfig({
       },
     },
   },
-})
+}

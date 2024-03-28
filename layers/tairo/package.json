@@ -4,15 +4,23 @@
   "version": "0.0.0",
   "type": "module",
   "main": "./nuxt.config.ts",
+  "packageManager": "pnpm@8.14.0",
   "scripts": {
     "clean": "rimraf .nuxt .output node_modules"
   },
   "dependencies": {
     "@cssninja/nuxt-toaster": "^0.3.12",
-    "@shuriken-ui/nuxt": "3.0.4",
+    "@shuriken-ui/nuxt": "3.0.6",
+    "fast-copy": "^3.0.1",
     "klona": "^2.0.6",
     "magic-string": "0.30.5",
-    "fast-copy": "^3.0.1",
     "nuxt": "^3.9.3"
+  },
+  "devDependencies": {
+    "@nuxt/kit": "^3.11.1",
+    "@vueuse/core": "^10.9.0",
+    "defu": "^6.1.4",
+    "vue": "^3.4.21",
+    "vue-router": "^4.3.0"
   }
 }

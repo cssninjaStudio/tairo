@@ -15,16 +15,16 @@
     "layers/*"
   ],
   "scripts": {
-    "dev": "nuxi dev .app --open",
-    "build": "nuxi build .app",
-    "generate": "nuxi generate .app",
-    "demo:dev": "nuxi dev .demo --open",
-    "demo:build": "nuxi build .demo",
+    "dev": "pnpm --filter=app dev",
+    "build": "pnpm --filter=app build",
+    "generate": "pnpm --filter=app generate",
+    "demo:dev": "pnpm --filter=demo dev",
+    "demo:build": "pnpm --filter=demo build",
     "clean:all": "pnpm -r clean && rimraf .nuxt .output node_modules",
     "test": "run-p test:*",
-    "test:tsc-demo": "nuxi typecheck .demo",
+    "test:tsc-demo": "pnpm --filter=demo typecheck",
     "test:lint": "eslint .",
-    "lint": "run-s lint:eslint:fix lint:eslint:fix-demo ",
+    "lint": "run-s lint:eslint:fix lint:eslint:fix-demo",
     "lint:eslint:fix": "eslint --fix .",
     "lint:eslint:fix-demo": "eslint -c layers/documentation/examples/.eslintrc.cjs --fix layers/documentation/examples"
   },

@@ -156,14 +156,14 @@ export default defineNuxtConfig({
         'remark-rehype',
         'unified',
         // useMultiStepForm
-        'fast-copy',
+        // 'fast-copy',
         'vue3-smooth-dnd',
         'splitpanes',
         'mapbox-gl',
         '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.min.js',
         // DocComponentMeta
         // useDocumentationMeta
-        'scule',
+        // 'scule',
         // form validation
         '@vee-validate/zod',
         'vee-validate',

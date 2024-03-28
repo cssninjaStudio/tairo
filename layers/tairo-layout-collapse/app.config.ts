@@ -1,4 +1,4 @@
-export default defineAppConfig({
+export default {
   tairo: {
     collapse: {
       navigation: {
@@ -23,4 +23,4 @@ export default defineAppConfig({
       },
     },
   },
-})
+}
