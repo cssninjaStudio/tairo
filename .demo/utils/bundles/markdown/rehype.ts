@@ -1,4 +1,4 @@
-import type { RehypeShikijiOptions } from 'rehype-shikiji'
+import type { RehypeShikijiOptions } from '@shikijs/rehype'
 
 // this is used to cache the markdown processor
 let processor: ReturnType<typeof createProcessor>
@@ -35,7 +35,7 @@ async function createProcessor(options: RehypeShikijiOptions) {
     import('rehype-raw').then(m => m.default),
     import('rehype-sanitize').then(m => [m.default, m.defaultSchema] as const),
     import('rehype-stringify').then(m => m.default),
-    import('rehype-shikiji').then(m => m.default),
+    import('@shikijs/rehype').then(m => m.default),
     import('remark-gfm').then(m => m.default),
     import('remark-parse').then(m => m.default),
     import('remark-rehype').then(m => m.default),

@@ -132,6 +132,7 @@ export default defineNuxtConfig({
       include: [
         '@headlessui-float/vue',
         'scule',
+        'klona',
         '@vueform/slider',
         'v-calendar',
         // AddonCarouselIcon
@@ -152,13 +153,12 @@ export default defineNuxtConfig({
         'rehype-raw',
         'rehype-sanitize',
         'rehype-stringify',
-        'rehype-shikiji',
+        '@shikijs/rehype',
         'remark-gfm',
         'remark-parse',
         'remark-rehype',
         'unified',
         // useMultiStepForm
-        // 'fast-copy',
         'vue3-smooth-dnd',
         'splitpanes',
         'mapbox-gl',

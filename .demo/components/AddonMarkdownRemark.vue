@@ -3,7 +3,7 @@
 import { getMarkdownProcessors } from '~/utils/bundles/markdown/rehype'
 import light from '~/utils/shiki/theme/cssninja-light'
 import dark from '~/utils/shiki/theme/cssninja-dark'
-import type { LanguageInput, BuiltinLanguage } from 'shikiji'
+import type { LanguageInput, BuiltinLanguage } from 'shiki'
 
 const props = withDefaults(
   defineProps<{

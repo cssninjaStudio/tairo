@@ -11,7 +11,6 @@
   "dependencies": {
     "@cssninja/nuxt-toaster": "^0.3.12",
     "@shuriken-ui/nuxt": "3.0.6",
-    "fast-copy": "^3.0.1",
     "klona": "^2.0.6",
     "magic-string": "0.30.8",
     "nuxt": "^3.11.1"
