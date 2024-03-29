@@ -566,7 +566,11 @@ const onSubmit = handleSubmit(
                             @blur="handleBlur"
                           >
                             <option value="" hidden />
-                            <option v-for="index in 31" :value="index">
+                            <option
+                              v-for="index in 31"
+                              :key="index"
+                              :value="index"
+                            >
                               {{ index }}
                             </option>
                           </BaseSelect>

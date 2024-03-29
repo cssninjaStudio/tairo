@@ -11,7 +11,7 @@ const props = withDefaults(
 )
 
 const emits = defineEmits<{
-  'message': [props: any]
+  message: [props: any]
 }>()
 
 const { close } = usePanels()

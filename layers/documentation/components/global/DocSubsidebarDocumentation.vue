@@ -1,6 +1,6 @@
 <script setup lang="ts">
 defineEmits<{
-  'close': []
+  close: []
 }>()
 
 const route = useRoute()
@@ -35,7 +35,7 @@ const docNav = computed(
       <template v-for="link in docNav" :key="link?._path">
         <div
           v-if="!link.children"
-          class="mb-1 flex min-h-[1.5rem] w-full items-center"
+          class="mb-1 flex min-h-6 w-full items-center"
         >
           <NuxtLink
             :to="link._path"

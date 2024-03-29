@@ -325,7 +325,7 @@ const selectedEventFeatures = computed({
       <!-- scrollable area -->
       <div
         ref="scrollCalendarRef"
-        class="nui-slimscroll relative h-[100vh] w-[1500px] grow space-y-14 overflow-auto lg:w-auto lg:overflow-x-hidden"
+        class="nui-slimscroll relative h-screen w-[1500px] grow space-y-14 overflow-auto lg:w-auto lg:overflow-x-hidden"
       >
         <!-- sticky header -->
         <div
@@ -448,7 +448,7 @@ const selectedEventFeatures = computed({
                   <!-- current time marker -->
                   <div
                     v-if="day.isToday && showNow"
-                    class="pointer-events-none absolute inset-x-0 z-50 h-[1px] bg-red-500 before:block before:size-2 before:-translate-x-full before:translate-y-[-3px] before:rounded-full before:bg-red-600 before:content-['']"
+                    class="pointer-events-none absolute inset-x-0 z-50 h-px bg-red-500 before:block before:size-2 before:-translate-x-full before:translate-y-[-3px] before:rounded-full before:bg-red-600 before:content-['']"
                     :style="{
                       top: `${dateToTop(settings, now, day.date)}px`,
                     }"

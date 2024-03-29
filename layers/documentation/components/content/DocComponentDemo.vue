@@ -131,7 +131,7 @@ async function loadDemo() {
 
     <div
       :class="[
-        condensed ? 'max-w-[640px] pb-6' : 'pb-6',
+        condensed ? 'max-w-screen-sm pb-6' : 'pb-6',
         forceDark ? 'dark' : '',
       ]"
     >

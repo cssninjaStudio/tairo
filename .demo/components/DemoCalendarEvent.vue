@@ -12,16 +12,16 @@ const props = defineProps<{
 }>()
 
 const emits = defineEmits<{
-  'positiondrag': [event: MouseEvent | TouchEvent]
+  positiondrag: [event: MouseEvent | TouchEvent]
 }>()
 
 </script>
 
 <template>
-  <div class="relative flex h-full gap-[1px] p-1">
+  <div class="relative flex h-full gap-px p-1">
     <div
       role="button"
-      class="dnd-drag-handler hover:bg-muted-100 dark:hover:bg-muted-900 m-[1px] flex size-6 shrink-0 cursor-grab items-center justify-center rounded-full text-sm transition-colors duration-75"
+      class="dnd-drag-handler hover:bg-muted-100 dark:hover:bg-muted-900 m-px flex size-6 shrink-0 cursor-grab items-center justify-center rounded-full text-sm transition-colors duration-75"
     >
       <Icon
         name="ph:dots-six-vertical"

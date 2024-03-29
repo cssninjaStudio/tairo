@@ -48,6 +48,21 @@ export default {
     },
   },
 
+  emits: [
+    'before-appear',
+    'appear',
+    'after-appear',
+    'appear-cancelled',
+    'before-enter',
+    'enter',
+    'after-enter',
+    'enter-cancelled',
+    'before-leave',
+    'leave',
+    'after-leave',
+    'leave-cancelled',
+  ],
+
   data() {
     return {
       cachedStyles: null,

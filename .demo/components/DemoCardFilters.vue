@@ -78,7 +78,6 @@ const timeCategoryTo = ref('')
 <template>
   <div class="group relative hidden md:block">
     <Menu
-      v-slot="{ close }"
       as="div"
       class=""
     >
