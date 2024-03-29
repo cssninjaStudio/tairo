@@ -130,6 +130,8 @@ export default defineNuxtConfig({
     // It's also useful to track them usage.
     optimizeDeps: {
       include: [
+        '@headlessui-float/vue',
+        'scule',
         '@vueform/slider',
         'v-calendar',
         // AddonCarouselIcon
