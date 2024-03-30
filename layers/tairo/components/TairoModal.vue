@@ -1,9 +1,3 @@
-<script lang="ts">
-export default {
-  inheritAttrs: false,
-}
-</script>
-
 <script setup lang="ts">
 import {
   Dialog,
@@ -11,6 +5,10 @@ import {
   TransitionChild,
   TransitionRoot,
 } from '@headlessui/vue'
+
+defineOptions({
+  inheritAttrs: false,
+})
 
 const props = withDefaults(
   defineProps<{

@@ -90,6 +90,9 @@ export default defineNuxtConfig({
   typescript: {
     tsConfig: {
       // Here you can customize the generated tsconfig.json file
+      vueCompilerOptions: {
+        target: 3.4,
+      },
     },
   },
 
