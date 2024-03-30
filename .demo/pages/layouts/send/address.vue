@@ -2,8 +2,6 @@
 import type { PaymentSend, StepData } from '../../../types'
 
 definePageMeta({
-  title: 'Send - Step 4',
-  layout: 'empty',
   preview: {
     title: 'Send - Step 4',
     description: 'For sending payments to people',
@@ -13,18 +11,23 @@ definePageMeta({
     order: 21,
   },
 })
+useHead({
+  title: 'Address',
+})
 
 const {
   data: request,
-  currentStep,
+  currentStepId,
   loading,
   getNextStep,
+  handleSubmit,
   getPrevStep,
+  errors,
   steps,
-} = useStepperForm<PaymentSend, StepData>()
-useHead({
-  title: 'Recipient',
-})
+  checkPreviousSteps,
+} = useMultiStepForm<PaymentSend, StepData>()
+
+onBeforeMount(checkPreviousSteps)
 </script>
 
 <template>
@@ -36,13 +39,13 @@ useHead({
         weight="medium"
         class="md:!3xl text-muted-800 dark:text-white"
       >
-        {{ steps[currentStep].meta.title }}
+        {{ steps[currentStepId].meta.title }}
       </BaseHeading>
       <BaseParagraph
         size="sm"
         class="text-muted-500 dark:text-muted-400 max-w-sm"
       >
-        {{ steps[currentStep].meta.subtitle }}
+        {{ steps[currentStepId].meta.subtitle }}
       </BaseParagraph>
     </div>
 
@@ -53,42 +56,55 @@ useHead({
           <div class="relative col-span-2">
             <BaseInput
               v-model="request.recipient.address.lineOne"
+              v-focus
+              :error="errors.fields?.['recipient.address.lineOne']"
               label="Address line 1"
               placeholder="Ex: 29, Santa Monica Railroad"
+              autocomplete="address-line1"
             />
           </div>
           <div class="relative col-span-2">
             <BaseInput
               v-model="request.recipient.address.lineTwo"
+              :error="errors.fields?.['recipient.address.lineTwo']"
               label="Address line 2"
               placeholder="Ex: Block D4, Suite G23"
+              autocomplete="address-line2"
             />
           </div>
           <div class="relative">
             <BaseInput
               v-model="request.recipient.address.city"
+              :error="errors.fields?.['recipient.address.city']"
               label="City"
               placeholder="Ex: Los Angeles"
+              autocomplete="address-level2"
             />
           </div>
           <div class="relative">
             <BaseInput
               v-model="request.recipient.address.postalCode"
+              :error="errors.fields?.['recipient.address.postalCode']"
               label="Postal code"
               placeholder="Ex: 923728"
+              autocomplete="postal-code"
             />
           </div>
           <div class="relative">
             <BaseInput
               v-model="request.recipient.address.state"
+              :error="errors.fields?.['recipient.address.state']"
               label="State"
               placeholder="Ex: California"
+              autocomplete="address-level1"
             />
           </div>
           <div class="relative">
             <BaseSelect
               v-model="request.recipient.address.country"
+              :error="errors.fields?.['recipient.address.country']"
               label="Country"
+              autocomplete="country"
             >
               <option value="United States">
                 United States
@@ -112,7 +128,7 @@ useHead({
 
       <div class="flex gap-4">
         <BaseButton
-          v-if="currentStep > 0"
+          v-if="currentStepId > 0"
           :to="loading ? undefined : getPrevStep()?.to"
           :disabled="!getPrevStep()"
           size="lg"
@@ -121,8 +137,7 @@ useHead({
           <span>Previous</span>
         </BaseButton>
         <BaseButton
-          :to="getNextStep()?.to"
-          :disabled="!getNextStep()"
+          type="submit"
           color="primary"
           size="lg"
           class="w-full"

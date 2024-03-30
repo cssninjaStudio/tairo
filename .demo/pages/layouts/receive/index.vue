@@ -2,29 +2,30 @@
 import type { PaymentReceive, StepData } from '../../../types'
 
 definePageMeta({
-  title: 'Receive - Step 1',
-  layout: 'empty',
   preview: {
     title: 'Receive - Step 1',
     description: 'For receiving payments',
-    categories: ['layouts', 'lists'],
+    categories: ['layouts', 'wizards', 'forms'],
     src: '/img/screens/layouts-receive.png',
     srcDark: '/img/screens/layouts-receive-dark.png',
     order: 15,
   },
 })
-
-const {
-  data: request,
-  currentStep,
-  loading,
-  getNextStep,
-  getPrevStep,
-  steps,
-} = useStepperForm<PaymentReceive, StepData>()
 useHead({
   title: 'Payment method',
 })
+
+const {
+  data: request,
+  currentStepId,
+  loading,
+  getPrevStep,
+  errors,
+  steps,
+  checkPreviousSteps,
+} = useMultiStepForm<PaymentReceive, StepData>()
+
+onBeforeMount(checkPreviousSteps)
 </script>
 
 <template>
@@ -36,13 +37,13 @@ useHead({
         weight="medium"
         class="md:!3xl text-muted-800 dark:text-white"
       >
-        {{ steps[currentStep].meta.title }}
+        {{ steps[currentStepId].meta.title }}
       </BaseHeading>
       <BaseParagraph
         size="sm"
         class="text-muted-500 dark:text-muted-400 max-w-sm"
       >
-        {{ steps[currentStep].meta.subtitle }}
+        {{ steps[currentStepId].meta.subtitle }}
       </BaseParagraph>
     </div>
 
@@ -51,8 +52,10 @@ useHead({
         <!--Radio groups-->
         <BaseRadioHeadless
           v-model="request.method"
-          value="Bank transfer"
+          v-focus="request.method === null || request.method === 'bank_transfer'"
+          value="bank_transfer"
           name="payment_method"
+          class="nui-focus !appearance-none rounded-lg !opacity-100"
         >
           <div
             class="peer-checked:child:scale-1 peer-not-checked:child:scale-0 bg-muted-100 text-muted-100 dark:bg-muted-900 dark:text-muted-900 peer-checked:text-primary-500 absolute start-6 top-1/2 flex size-6 -translate-y-1/2 items-center justify-center rounded-full"
@@ -90,8 +93,10 @@ useHead({
         </BaseRadioHeadless>
         <BaseRadioHeadless
           v-model="request.method"
-          value="Payment link"
+          v-focus="request.method === 'payment_link'"
+          value="payment_link"
           name="payment_method"
+          class="nui-focus !appearance-none rounded-lg !opacity-100"
         >
           <div
             class="peer-checked:child:scale-1 peer-not-checked:child:scale-0 bg-muted-100 text-muted-100 dark:bg-muted-900 dark:text-muted-900 peer-checked:text-primary-500 absolute start-6 top-1/2 flex size-6 -translate-y-1/2 items-center justify-center rounded-full"
@@ -129,8 +134,10 @@ useHead({
         </BaseRadioHeadless>
         <BaseRadioHeadless
           v-model="request.method"
-          value="Wire"
+          v-focus="request.method === 'wire'"
+          value="wire"
           name="payment_method"
+          class="nui-focus !appearance-none rounded-lg !opacity-100"
         >
           <div
             class="peer-checked:child:scale-1 peer-not-checked:child:scale-0 bg-muted-100 text-muted-100 dark:bg-muted-900 dark:text-muted-900 peer-checked:text-primary-500 absolute start-6 top-1/2 flex size-6 -translate-y-1/2 items-center justify-center rounded-full"
@@ -166,11 +173,14 @@ useHead({
             </div>
           </div>
         </BaseRadioHeadless>
+        <span v-if="errors.fields.method" class="nui-input-wrapper">
+          <span class="nui-input-error-text !text-xs">{{ errors.fields.method }}</span>
+        </span>
       </div>
 
       <div class="mt-4 flex gap-4">
         <BaseButton
-          v-if="currentStep > 0"
+          v-if="currentStepId > 0"
           :to="loading ? undefined : getPrevStep()?.to"
           :disabled="!getPrevStep()"
           size="lg"
@@ -179,8 +189,7 @@ useHead({
           <span>Previous</span>
         </BaseButton>
         <BaseButton
-          :to="getNextStep()?.to"
-          :disabled="!getNextStep()"
+          type="submit"
           color="primary"
           size="lg"
           class="w-full"

@@ -12,12 +12,13 @@ definePageMeta({
     order: 33,
   },
 })
-
-const { data: project } = useMultiStepForm<Project, ProjectStepData>()
-
 useHead({
   title: 'Project files',
 })
+
+const { data: project, checkPreviousSteps } = useMultiStepForm<Project, ProjectStepData>()
+
+onBeforeMount(checkPreviousSteps)
 
 const toggled = ref(Boolean(project.value.files?.length))
 </script>

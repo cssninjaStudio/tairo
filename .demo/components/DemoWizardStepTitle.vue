@@ -1,10 +1,7 @@
 <script setup lang="ts">
 import type { Project, ProjectStepData } from '../types'
-const { steps, currentStep } = useMultiStepForm<Project, ProjectStepData>()
 
-const currentStepData = computed(() => {
-  return steps.value.find(step => step.id === currentStep.value)
-})
+const { currentStep } = useMultiStepForm<Project, ProjectStepData>()
 </script>
 
 <template>
@@ -14,10 +11,10 @@ const currentStepData = computed(() => {
       size="2xl"
       class="text-muted-800 dark:text-white"
     >
-      <span>{{ currentStepData?.meta?.title }}</span>
+      <span>{{ currentStep?.meta?.title }}</span>
     </BaseHeading>
     <BaseParagraph size="sm" class="text-muted-500 dark:text-muted-400">
-      <span>{{ currentStepData?.meta?.subtitle }}</span>
+      <span>{{ currentStep?.meta?.subtitle }}</span>
     </BaseParagraph>
   </div>
 </template>

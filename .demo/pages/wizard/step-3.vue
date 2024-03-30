@@ -17,12 +17,13 @@ definePageMeta({
     order: 32,
   },
 })
-
-const { data: project } = useMultiStepForm<Project, ProjectStepData>()
-
 useHead({
   title: 'Project details',
 })
+
+const { data: project, checkPreviousSteps } = useMultiStepForm<Project, ProjectStepData>()
+
+onBeforeMount(checkPreviousSteps)
 
 const customers: Customer[] = [
   {

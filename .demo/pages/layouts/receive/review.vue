@@ -2,30 +2,31 @@
 import type { PaymentReceive, StepData } from '../../../types'
 
 definePageMeta({
-  title: 'Receive - Step 3',
-  layout: 'empty',
   preview: {
     title: 'Receive - Step 3',
     description: 'For receiving payments',
-    categories: ['layouts', 'lists'],
+    categories: ['layouts', 'wizards', 'forms'],
     src: '/img/screens/layouts-receive-review.png',
     srcDark: '/img/screens/layouts-receive-review-dark.png',
     order: 17,
   },
 })
-
-const {
-  data: request,
-  currentStep,
-  loading,
-  complete,
-  getNextStep,
-  getPrevStep,
-  steps,
-} = useStepperForm<PaymentReceive, StepData>()
 useHead({
   title: 'Review',
 })
+
+const {
+  data: request,
+  currentStepId,
+  loading,
+  complete,
+  getPrevStep,
+  steps,
+  checkPreviousSteps,
+} = useMultiStepForm<PaymentReceive, StepData>()
+
+onBeforeMount(checkPreviousSteps)
+
 </script>
 
 <template>
@@ -39,13 +40,13 @@ useHead({
           weight="medium"
           class="md:!3xl text-muted-800 dark:text-white"
         >
-          {{ steps[currentStep].meta.title }}
+          {{ steps[currentStepId].meta.title }}
         </BaseHeading>
         <BaseParagraph
           size="sm"
           class="text-muted-500 dark:text-muted-400 max-w-sm"
         >
-          {{ steps[currentStep].meta.subtitle }}
+          {{ steps[currentStepId].meta.subtitle }}
         </BaseParagraph>
       </div>
 
@@ -83,7 +84,7 @@ useHead({
         </div>
 
         <!--Transfer from-->
-        <div v-if="request.method === 'Bank transfer'">
+        <div v-if="request.method === 'bank_transfer'">
           <BaseParagraph size="xs" class="text-muted-400 mb-1">
             Transfer to
           </BaseParagraph>
@@ -112,7 +113,7 @@ useHead({
         </div>
 
         <!--Send to-->
-        <div v-else-if="request.method === 'Payment link'">
+        <div v-else-if="request.method === 'payment_link'">
           <BaseParagraph size="xs" class="text-muted-400 mb-1">
             Send to
           </BaseParagraph>
@@ -146,13 +147,13 @@ useHead({
                   size="sm"
                   class="text-muted-800 dark:text-muted-200 block capitalize"
                 >
-                  {{ request.account.type }} {{ request.account.label }}
+                  {{ request.account?.type }} {{ request.account?.label }}
                 </BaseText>
                 <BaseText
                   size="xs"
                   class="text-muted-500 dark:text-muted-400 block"
                 >
-                  ${{ request.account.balance.toFixed(2) }}
+                  ${{ request.account?.balance.toFixed(2) }}
                 </BaseText>
               </div>
               <div class="ms-auto pe-4">
@@ -177,7 +178,7 @@ useHead({
         <!--Buttons-->
         <div class="flex gap-4">
           <BaseButton
-            v-if="currentStep > 0"
+            v-if="currentStepId > 0"
             :to="loading ? undefined : getPrevStep()?.to"
             :disabled="!getPrevStep()"
             size="lg"

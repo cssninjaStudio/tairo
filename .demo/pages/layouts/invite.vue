@@ -2,83 +2,63 @@
 import type { Invite, StepData } from '../../types'
 
 definePageMeta({
-  title: 'Invite',
   layout: 'empty',
-  preview: {
-    title: 'Invite',
-    description: 'For generic things',
-    categories: ['layouts', 'lists'],
-    src: '/img/screens/layouts-invite.png',
-    srcDark: '/img/screens/layouts-invite-dark.png',
-    order: 37,
-  },
+})
+useHead({
+  titleTemplate: title => `${title} | Invite - Step ${currentStepId.value + 1}`,
 })
 
 const initialState = ref<Invite>({
   firstName: '',
   lastName: '',
   email: '',
-  role: 'admin',
+  role: null,
 })
-
-const wizardSteps = [
-  {
-    to: '/layouts/invite',
-    meta: {
-      name: 'Email invite',
-      title: 'Who do you want to invite?',
-      subtitle:
-        'Enter the name of the person that you want to invite to your organization',
-    } satisfies StepData,
-  },
-  {
-    to: '/layouts/invite/permissions',
-    meta: {
-      name: 'Permissions',
-      title: 'Assign them a role',
-      subtitle:
-        'A team member\'s role determines what they can see and do on your Tairo organization account',
-    } satisfies StepData,
-  },
-  {
-    to: '/layouts/invite/review',
-    meta: {
-      name: 'Review',
-      title: 'One last look',
-      subtitle:
-        'Make sure everything in the process is correct before sending the invite',
-    } satisfies StepData,
-  },
-]
 
 const toaster = useToaster()
 
-const { handleSubmit, currentStep, progress, complete } = createStepperForm<
-  Invite,
-  StepData
->({
-  initialState: initialState,
-  steps: wizardSteps,
-  onSubmit: async (state, ctx) => {
-    console.log('multi-step-submit', state)
-
-    if (state.firstName === '') {
-      ctx.goToStep(ctx.getStep(0))
-      throw new Error('Please enter a first name')
-    }
-    if (state.lastName === '') {
-      ctx.goToStep(ctx.getStep(0))
-      throw new Error('Please enter a first name')
-    }
-    if (state.email === '') {
-      ctx.goToStep(ctx.getStep(0))
-      throw new Error('Please enter an email address')
-    }
-    if (state.role === '') {
-      ctx.goToStep(ctx.getStep(1))
-      throw new Error('Please select a role')
-    }
-
+const { handleSubmit, currentStepId, goToStep, progress, complete, steps } = provideMultiStepForm({
+  initialState,
+  steps: [
+    {
+      to: '/layouts/invite',
+      meta: {
+        name: 'Email invite',
+        title: 'Who do you want to invite?',
+        subtitle:
+          'Enter the name of the person that you want to invite to your organization',
+      },
+      async validate({ data, setFieldError, resetFieldError }) {
+        resetFieldError(['email', 'firstName', 'lastName'])
+        if (!data.value.email) setFieldError('email', 'Enter user email address')
+        if (!data.value.firstName) setFieldError('firstName', 'Enter user first name')
+        if (!data.value.lastName) setFieldError('lastName', 'Enter user las name')
+      },
+    },
+    {
+      to: '/layouts/invite/permissions',
+      meta: {
+        name: 'Permissions',
+        title: 'Assign them a role',
+        subtitle:
+          'A team member\'s role determines what they can see and do on your Tairo organization account',
+      },
+      async validate({ data, setFieldError, resetFieldError }) {
+        resetFieldError(['role'])
+        if (!data.value.role) setFieldError('role', 'You must choose a role')
+      },
+    },
+    {
+      to: '/layouts/invite/review',
+      meta: {
+        name: 'Review',
+        title: 'One last look',
+        subtitle:
+          'Make sure everything in the process is correct before sending the invite',
+      },
+    },
+  ],
+  onSubmit: async (data, ctx) => {
     // Simulate async request
     await new Promise(resolve => setTimeout(resolve, 4000))
 
@@ -92,8 +72,6 @@ const { handleSubmit, currentStep, progress, complete } = createStepperForm<
     })
   },
   onError: (error) => {
-    console.log('multi-step-error', error)
-
     toaster.clearAll()
     toaster.show({
       title: 'Error',
@@ -103,10 +81,6 @@ const { handleSubmit, currentStep, progress, complete } = createStepperForm<
       closable: true,
     })
   },
-})
-
-useHead({
-  titleTemplate: title => `Invite - Step ${currentStep.value + 1}`,
 })
 </script>
 
@@ -142,36 +116,39 @@ useHead({
                 />
                 <!--Nodes-->
                 <div
-                  v-for="(step, index) in wizardSteps"
+                  v-for="(step, index) in steps"
                   :key="index"
                   class="bg-muted-200 dark:bg-muted-700 relative z-20 flex size-4 items-center justify-center rounded-full"
                 >
                   <span
                     class="bg-primary-500 block size-2 rounded-full transition-transform duration-300"
-                    :class="currentStep >= index ? 'scale-1' : 'scale-0'"
+                    :class="currentStepId >= index ? 'scale-1' : 'scale-0'"
                   />
                 </div>
               </div>
               <div
                 class="relative flex justify-center gap-7 md:flex-col md:justify-between"
               >
-                <div
-                  v-for="(step, index) in wizardSteps"
+                <a
+                  v-for="(step, index) in steps"
                   :key="index"
                   class="h-4 leading-none"
-                  :class="currentStep === index ? '' : 'xs:hidden'"
+                  role="button"
+                  :tabindex="0"
+                  :class="[currentStepId === index ? '' : 'xs:hidden', currentStepId > step.id ? 'nui-link' : 'cursor-default']"
+                  @click.prevent="currentStepId > step.id ? goToStep(step) : () => {}"
                 >
                   <span
                     class="font-heading block text-xs"
                     :class="
-                      currentStep === index
+                      currentStepId === index
                         ? 'text-muted-800 dark:text-muted-100'
                         : 'text-muted-400 dark:text-muted-500'
                     "
                   >
                     {{ step.meta.name }}
                   </span>
-                </div>
+                </a>
               </div>
             </div>
           </div>
@@ -186,7 +163,7 @@ useHead({
               novalidate
               @submit.prevent="handleSubmit"
             >
-              <RouterView />
+              <NuxtPage />
             </form>
           </div>
         </div>

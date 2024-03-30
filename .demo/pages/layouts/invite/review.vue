@@ -2,8 +2,6 @@
 import type { Invite, StepData } from '../../../types'
 
 definePageMeta({
-  title: 'Invite - Step 3',
-  layout: 'empty',
   preview: {
     title: 'Invite - Step 3',
     description: 'For inviting people',
@@ -13,19 +11,21 @@ definePageMeta({
     order: 37,
   },
 })
-
-const {
-  data: request,
-  currentStep,
-  loading,
-  complete,
-  getNextStep,
-  getPrevStep,
-  steps,
-} = useStepperForm<Invite, StepData>()
 useHead({
   title: 'Review',
 })
+
+const {
+  data: request,
+  currentStepId,
+  loading,
+  complete,
+  getPrevStep,
+  steps,
+  checkPreviousSteps,
+} = useMultiStepForm<Invite, StepData>()
+
+onBeforeMount(checkPreviousSteps)
 </script>
 
 <template>
@@ -38,13 +38,13 @@ useHead({
           weight="medium"
           class="md:!3xl text-muted-800 dark:text-white"
         >
-          {{ steps[currentStep].meta.title }}
+          {{ steps[currentStepId].meta.title }}
         </BaseHeading>
         <BaseParagraph
           size="sm"
           class="text-muted-500 dark:text-muted-400 max-w-sm"
         >
-          {{ steps[currentStep].meta.subtitle }}
+          {{ steps[currentStepId].meta.subtitle }}
         </BaseParagraph>
       </div>
 
@@ -281,7 +281,7 @@ useHead({
         <!--Buttons-->
         <div class="flex gap-4">
           <BaseButton
-            v-if="currentStep > 0"
+            v-if="currentStepId > 0"
             :to="loading ? undefined : getPrevStep()?.to"
             :disabled="!getPrevStep()"
             size="lg"

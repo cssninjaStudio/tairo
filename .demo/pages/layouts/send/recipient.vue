@@ -2,8 +2,6 @@
 import type { PaymentSend, StepData } from '../../../types'
 
 definePageMeta({
-  title: 'Send - Step 3',
-  layout: 'empty',
   preview: {
     title: 'Send - Step 3',
     description: 'For sending payments to people',
@@ -13,18 +11,21 @@ definePageMeta({
     order: 20,
   },
 })
+useHead({
+  title: 'Details',
+})
 
 const {
   data: request,
-  currentStep,
+  currentStepId,
   loading,
-  getNextStep,
   getPrevStep,
+  errors,
   steps,
-} = useStepperForm<PaymentSend, StepData>()
-useHead({
-  title: 'Recipient',
-})
+  checkPreviousSteps,
+} = useMultiStepForm<PaymentSend, StepData>()
+
+onBeforeMount(checkPreviousSteps)
 </script>
 
 <template>
@@ -36,13 +37,13 @@ useHead({
         weight="medium"
         class="md:!3xl text-muted-800 dark:text-white"
       >
-        {{ steps[currentStep].meta.title }}
+        {{ steps[currentStepId].meta.title }}
       </BaseHeading>
       <BaseParagraph
         size="sm"
         class="text-muted-500 dark:text-muted-400 max-w-sm"
       >
-        {{ steps[currentStep].meta.subtitle }}
+        {{ steps[currentStepId].meta.subtitle }}
       </BaseParagraph>
     </div>
 
@@ -52,7 +53,8 @@ useHead({
         <div class="grid gap-4 md:grid-cols-2">
           <div class="group relative col-span-2">
             <BaseInput
-              v-model="request.recipient.name"
+              :model-value="request.recipient.name"
+              :error="errors.fields?.['recipient.name']"
               label="Recipient Name"
               icon="ph:user-duotone"
               placeholder="Ex: John Doe"
@@ -65,6 +67,8 @@ useHead({
           <div class="relative">
             <BaseInput
               v-model="request.routingNumber"
+              v-focus
+              :error="errors.fields.routingNumber"
               label="Routing Number"
               placeholder="Ex: 183402022"
             />
@@ -72,6 +76,7 @@ useHead({
           <div class="relative">
             <BaseInput
               v-model="request.prefix"
+              :error="errors.fields.prefix"
               label="Prefix (optional)"
               placeholder="Ex: XCQ23"
             />
@@ -81,7 +86,7 @@ useHead({
 
       <div class="flex gap-4">
         <BaseButton
-          v-if="currentStep > 0"
+          v-if="currentStepId > 0"
           :to="loading ? undefined : getPrevStep()?.to"
           :disabled="!getPrevStep()"
           size="lg"
@@ -90,8 +95,7 @@ useHead({
           <span>Previous</span>
         </BaseButton>
         <BaseButton
-          :to="getNextStep()?.to"
-          :disabled="!getNextStep()"
+          type="submit"
           color="primary"
           size="lg"
           class="w-full"

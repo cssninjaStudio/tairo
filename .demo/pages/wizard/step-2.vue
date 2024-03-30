@@ -12,12 +12,13 @@ definePageMeta({
     order: 31,
   },
 })
-
-const { data: project } = useMultiStepForm<Project, ProjectStepData>()
-
 useHead({
   title: 'Project info',
 })
+
+const { data: project, errors, checkPreviousSteps } = useMultiStepForm<Project, ProjectStepData>()
+
+onBeforeMount(checkPreviousSteps)
 
 const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
 
@@ -89,6 +90,9 @@ watch(inputFile, (value) => {
             </div>
           </div>
         </BaseInputFileHeadless>
+        <span v-if="errors.fields.avatar" class="nui-input-wrapper">
+          <span class="nui-input-error-text">{{ errors.fields.avatar }}</span>
+        </span>
       </div>
 
       <div class="my-4 text-center font-sans">
@@ -102,6 +106,7 @@ watch(inputFile, (value) => {
       <div class="mx-auto flex w-full max-w-sm flex-col gap-3">
         <BaseInput
           v-model="project.name"
+          :error="errors.fields.name"
           rounded="lg"
           placeholder="Project name"
           :classes="{
@@ -110,6 +115,7 @@ watch(inputFile, (value) => {
         />
         <BaseTextarea
           v-model="project.description"
+          :error="errors.fields.description"
           rounded="lg"
           placeholder="Describe your project..."
           autogrow

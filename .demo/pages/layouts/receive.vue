@@ -2,79 +2,71 @@
 import type { PaymentReceive, StepData } from '../../types'
 
 definePageMeta({
-  title: 'Receive',
   layout: 'empty',
-  preview: {
-    title: 'Receive test',
-    description: 'For generic things',
-    categories: ['layouts', 'lists'],
-    src: '/img/screens/layouts-receive.png',
-    srcDark: '/img/screens/layouts-receive-dark.png',
-    order: 37,
-  },
 })
-
 useHead({
-  title: 'Payment Request',
+  titleTemplate: title => `${title} | Receive money - Step ${currentStepId.value + 1}`,
 })
 
 const initialState = ref<PaymentReceive>({
   amount: 0,
-  account: {
-    id: 1,
-    type: 'Checking',
-    label: '**** 4897',
-    number: '1487 3256 54122 4897',
-    balance: 9543.12,
-  },
-  method: 'Bank transfer',
+  account: null,
+  method: null,
   email: '',
 })
 
-const wizardSteps = [
-  {
-    to: '/layouts/receive',
-    meta: {
-      name: 'Payment method',
-      title: 'Select a transfer method',
-      subtitle:
-        'Select on of the available payment methods to proceed with payment',
-    } satisfies StepData,
-  },
-  {
-    to: '/layouts/receive/transfer',
-    meta: {
-      name: 'Transfer details',
-      title: 'Amount to transfer',
-      subtitle: 'Enter the amount that needs to be transferred to your account',
-    } satisfies StepData,
-  },
-  {
-    to: '/layouts/receive/review',
-    meta: {
-      name: 'Review',
-      title: 'Review and send',
-      subtitle:
-        'Make sure everything in the process is correct before sending your request',
-    } satisfies StepData,
-  },
-]
-
 const toaster = useToaster()
 
-const { handleSubmit, currentStep, progress, complete } = createStepperForm<
-  PaymentReceive,
-  StepData
->({
-  initialState: initialState,
-  steps: wizardSteps,
-  onSubmit: async (state, ctx) => {
-    console.log('multi-step-submit', state)
-    if (state.amount === 0) {
-      ctx.goToStep(ctx.getStep(1))
-      throw new Error('Please enter an amount')
-    }
+const { handleSubmit, currentStepId, progress, complete, steps, goToStep } = provideMultiStepForm({
+  initialState,
+  steps: [
+    {
+      to: '/layouts/receive',
+      meta: {
+        name: 'Payment method',
+        title: 'Select a transfer method',
+        subtitle:
+          'Select on of the available payment methods to proceed with payment',
+      },
+      validate({ data, setFieldError, resetFieldError }) {
+        resetFieldError(['method'])
+        if (!data.value?.method) {
+          setFieldError('method', 'Please select a payment method')
+        }
+      },
+    },
+    {
+      to: '/layouts/receive/transfer',
+      meta: {
+        name: 'Transfer details',
+        title: 'Amount to transfer',
+        subtitle: 'Enter the amount that needs to be transferred to your account',
+      },
+      validate({ data, setFieldError, resetFieldError }) {
+        resetFieldError(['account', 'amount', 'email'])
 
+        if (!data.value?.account) {
+          setFieldError('account', 'Please select an account to transfer to')
+        }
+        if (data.value?.amount === 0) {
+          setFieldError('amount', 'Please enter an amount')
+        }
+        if (data.value.method === 'payment_link' && !data.value.email) {
+          setFieldError('email', 'Please enter an email address')
+        }
+      },
+    },
+    {
+      to: '/layouts/receive/review',
+      meta: {
+        name: 'Review',
+        title: 'Review and send',
+        subtitle:
+          'Make sure everything in the process is correct before sending your request',
+      },
+    },
+  ],
+  onSubmit: async (state, ctx) => {
     // Simulate async request
     await new Promise(resolve => setTimeout(resolve, 4000))
 
@@ -88,8 +80,6 @@ const { handleSubmit, currentStep, progress, complete } = createStepperForm<
     })
   },
   onError: (error) => {
-    console.log('multi-step-error', error)
-
     toaster.clearAll()
     toaster.show({
       title: 'Oops!',
@@ -99,10 +89,6 @@ const { handleSubmit, currentStep, progress, complete } = createStepperForm<
       closable: true,
     })
   },
-})
-
-useHead({
-  titleTemplate: title => `Receive money - Step ${currentStep.value + 1}`,
 })
 </script>
 
@@ -141,36 +127,39 @@ useHead({
                 />
                 <!--Nodes-->
                 <div
-                  v-for="(step, index) in wizardSteps"
+                  v-for="(step, index) in steps"
                   :key="index"
                   class="bg-muted-200 dark:bg-muted-700 relative z-20 flex size-4 items-center justify-center rounded-full"
                 >
                   <span
                     class="bg-primary-500 block size-2 rounded-full transition-transform duration-300"
-                    :class="currentStep >= index ? 'scale-1' : 'scale-0'"
+                    :class="currentStepId >= index ? 'scale-1' : 'scale-0'"
                   />
                 </div>
               </div>
               <div
                 class="relative flex justify-center gap-7 md:flex-col md:justify-between"
               >
-                <div
-                  v-for="(step, index) in wizardSteps"
+                <a
+                  v-for="(step, index) in steps"
                   :key="index"
                   class="h-4 leading-none"
-                  :class="currentStep === index ? '' : 'xs:hidden'"
+                  role="button"
+                  :tabindex="0"
+                  :class="[currentStepId === index ? '' : 'xs:hidden', currentStepId > step.id ? 'nui-link' : 'cursor-default']"
+                  @click.prevent="currentStepId > step.id ? goToStep(step) : () => {}"
                 >
                   <span
                     class="font-heading block text-xs"
                     :class="
-                      currentStep === index
+                      currentStepId === index
                         ? 'text-muted-800 dark:text-muted-100'
                         : 'text-muted-400 dark:text-muted-500'
                     "
                   >
-                    {{ step.meta.name }}
+                    {{ step.meta?.name }}
                   </span>
-                </div>
+                </a>
               </div>
             </div>
           </div>
@@ -185,7 +174,7 @@ useHead({
               novalidate
               @submit.prevent="handleSubmit"
             >
-              <RouterView />
+              <NuxtPage />
             </form>
           </div>
         </div>

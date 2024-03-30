@@ -1,7 +1,12 @@
 <script setup lang="ts">
 import type { Project, ProjectStepData } from '../types'
-const { totalSteps, currentStep, loading, complete, getNextStep, getPrevStep }
-  = useMultiStepForm<Project, ProjectStepData>()
+const {
+  totalSteps,
+  currentStepId,
+  loading,
+  complete,
+  getPrevStep,
+} = useMultiStepForm<Project, ProjectStepData>()
 </script>
 
 <template>
@@ -15,7 +20,7 @@ const { totalSteps, currentStep, loading, complete, getNextStep, getPrevStep }
       leave-to-class="translate-y-20 opacity-0"
     >
       <div
-        v-if="currentStep > 0 && !complete"
+        v-if="currentStepId > 0 && !complete"
         class="fixed inset-x-0 bottom-6 z-20 mx-auto w-full max-w-[304px]"
       >
         <BaseCard
@@ -30,9 +35,8 @@ const { totalSteps, currentStep, loading, complete, getNextStep, getPrevStep }
             <span>Previous</span>
           </BaseButton>
           <BaseButton
-            v-if="currentStep < totalSteps - 1"
-            :to="getNextStep()?.to"
-            :disabled="!getNextStep()"
+            v-if="currentStepId < totalSteps - 1"
+            type="submit"
             rounded="lg"
             color="primary"
             class="w-full"

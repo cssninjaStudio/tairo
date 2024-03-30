@@ -72,14 +72,14 @@ export interface PaymentSend {
     label: string
     number: string
     balance: number
-  }
+  } | null
   routingNumber: string
   prefix: string
-  method: string
+  method: string | null
 }
 
 export interface PaymentReceive {
-  method: string
+  method: 'bank_transfer' | 'payment_link' | 'wire' | null
   amount: number
   account: {
     id: number | undefined
@@ -87,7 +87,7 @@ export interface PaymentReceive {
     label: string
     number: string
     balance: number
-  }
+  } | null
   email?: string
 }
 
@@ -95,5 +95,5 @@ export interface Invite {
   firstName: string
   lastName: string
   email: string
-  role: string
+  role: string | null
 }

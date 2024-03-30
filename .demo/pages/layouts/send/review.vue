@@ -2,8 +2,6 @@
 import type { PaymentSend, StepData } from '../../../types'
 
 definePageMeta({
-  title: 'Send - Step 6',
-  layout: 'empty',
   preview: {
     title: 'Send - Step 6',
     description: 'For sending payments to people',
@@ -13,19 +11,22 @@ definePageMeta({
     order: 23,
   },
 })
+useHead({
+  title: 'Review',
+})
 
 const {
   data: request,
-  currentStep,
+  currentStepId,
   loading,
   complete,
   getNextStep,
   getPrevStep,
   steps,
-} = useStepperForm<PaymentSend, StepData>()
-useHead({
-  title: 'Review',
-})
+  checkPreviousSteps,
+} = useMultiStepForm<PaymentSend, StepData>()
+
+onBeforeMount(checkPreviousSteps)
 </script>
 
 <template>
@@ -39,13 +40,13 @@ useHead({
           weight="medium"
           class="md:!3xl text-muted-800 dark:text-white"
         >
-          {{ steps[currentStep].meta.title }}
+          {{ steps[currentStepId].meta.title }}
         </BaseHeading>
         <BaseParagraph
           size="sm"
           class="text-muted-500 dark:text-muted-400 max-w-sm"
         >
-          {{ steps[currentStep].meta.subtitle }}
+          {{ steps[currentStepId].meta.subtitle }}
         </BaseParagraph>
       </div>
 
@@ -197,13 +198,13 @@ useHead({
                   size="sm"
                   class="text-muted-800 dark:text-muted-200 block capitalize"
                 >
-                  {{ request.account.type }} {{ request.account.label }}
+                  {{ request.account?.type }} {{ request.account?.label }}
                 </BaseText>
                 <BaseText
                   size="xs"
                   class="text-muted-500 dark:text-muted-400 block"
                 >
-                  ${{ request.account.balance.toFixed(2) }}
+                  ${{ request.account?.balance.toFixed(2) }}
                 </BaseText>
               </div>
               <div class="ms-auto pe-4">
@@ -228,7 +229,7 @@ useHead({
         <!--Buttons-->
         <div class="flex gap-4">
           <BaseButton
-            v-if="currentStep > 0"
+            v-if="currentStepId > 0"
             :to="loading ? undefined : getPrevStep()?.to"
             :disabled="!getPrevStep()"
             size="lg"

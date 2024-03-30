@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import type { Project, ProjectStepData } from '../types'
-const { steps, currentStep, progress, preview, goToStep } = useMultiStepForm<
+const {
+  steps,
+  currentStep,
+  progress,
+  goToStep,
+} = useMultiStepForm<
   Project,
   ProjectStepData
 >()
-
-const currentStepName = computed(() => {
-  const stepData = steps.value.find(step => step.id === currentStep.value)
-  return stepData?.meta?.name
-})
 
 const target = ref(null)
 const open = ref(false)
@@ -31,10 +31,10 @@ onClickOutside(target, () => (open.value = false))
         </NuxtLink>
         <div class="hidden items-center gap-2 ps-6 font-sans sm:flex">
           <p class="text-muted-500 dark:text-muted-400">
-            Step {{ currentStep + 1 }}:
+            Step {{ currentStep.id + 1 }}:
           </p>
           <h2 class="text-muted-800 font-semibold dark:text-white">
-            {{ currentStepName }}
+            {{ currentStep.meta.name }}
           </h2>
         </div>
         <div ref="target" class="relative hidden sm:block">

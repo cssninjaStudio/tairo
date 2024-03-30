@@ -12,11 +12,13 @@ definePageMeta({
     order: 35,
   },
 })
-
-const { data: project } = useMultiStepForm<Project, ProjectStepData>()
 useHead({
   title: 'Project tools',
 })
+
+const { data: project, checkPreviousSteps } = useMultiStepForm<Project, ProjectStepData>()
+
+onBeforeMount(checkPreviousSteps)
 
 const tools: Tool[] = [
   {

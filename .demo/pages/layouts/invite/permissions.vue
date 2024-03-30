@@ -2,8 +2,6 @@
 import type { Invite, StepData } from '../../../types'
 
 definePageMeta({
-  title: 'Invite - Step 2',
-  layout: 'empty',
   preview: {
     title: 'Invite - Step 2',
     description: 'For inviting people',
@@ -13,18 +11,21 @@ definePageMeta({
     order: 37,
   },
 })
-
-const {
-  data: request,
-  currentStep,
-  loading,
-  getNextStep,
-  getPrevStep,
-  steps,
-} = useStepperForm<Invite, StepData>()
 useHead({
   title: 'Payment method',
 })
+
+const {
+  data: request,
+  currentStepId,
+  loading,
+  errors,
+  getPrevStep,
+  steps,
+  checkPreviousSteps,
+} = useMultiStepForm<Invite, StepData>()
+
+onBeforeMount(checkPreviousSteps)
 </script>
 
 <template>
@@ -36,13 +37,13 @@ useHead({
         weight="medium"
         class="md:!3xl text-muted-800 dark:text-white"
       >
-        {{ steps[currentStep].meta.title }}
+        {{ steps[currentStepId].meta.title }}
       </BaseHeading>
       <BaseParagraph
         size="sm"
         class="text-muted-500 dark:text-muted-400 max-w-sm"
       >
-        {{ steps[currentStep].meta.subtitle }}
+        {{ steps[currentStepId].meta.subtitle }}
       </BaseParagraph>
     </div>
 
@@ -51,8 +52,10 @@ useHead({
         <!--Radio groups-->
         <BaseRadioHeadless
           v-model="request.role"
+          v-focus="request.role === null || request.role === 'admin'"
           value="admin"
           name="role_permissions"
+          class="nui-focus !appearance-none rounded-lg !opacity-100"
         >
           <div
             class="peer-checked:child:scale-1 peer-not-checked:child:scale-0 bg-muted-100 text-muted-100 dark:bg-muted-900 dark:text-muted-900 peer-checked:text-primary-500 absolute start-[1.35rem] top-1/2 flex size-6 -translate-y-1/2 items-center justify-center rounded-full"
@@ -86,8 +89,10 @@ useHead({
         </BaseRadioHeadless>
         <BaseRadioHeadless
           v-model="request.role"
+          v-focus="request.role === 'bookkeeper'"
           value="bookkeeper"
           name="role_permissions"
+          class="nui-focus !appearance-none rounded-lg !opacity-100"
         >
           <div
             class="peer-checked:child:scale-1 peer-not-checked:child:scale-0 bg-muted-100 text-muted-100 dark:bg-muted-900 dark:text-muted-900 peer-checked:text-primary-500 absolute start-[1.35rem] top-1/2 flex size-6 -translate-y-1/2 items-center justify-center rounded-full"
@@ -121,8 +126,10 @@ useHead({
         </BaseRadioHeadless>
         <BaseRadioHeadless
           v-model="request.role"
+          v-focus="request.role === 'cardonly'"
           value="cardonly"
           name="role_permissions"
+          class="nui-focus !appearance-none rounded-lg !opacity-100"
         >
           <div
             class="peer-checked:child:scale-1 peer-not-checked:child:scale-0 bg-muted-100 text-muted-100 dark:bg-muted-900 dark:text-muted-900 peer-checked:text-primary-500 absolute start-[1.35rem] top-1/2 flex size-6 -translate-y-1/2 items-center justify-center rounded-full"
@@ -156,8 +163,10 @@ useHead({
         </BaseRadioHeadless>
         <BaseRadioHeadless
           v-model="request.role"
+          v-focus="request.role === 'custom'"
           value="custom"
           name="role_permissions"
+          class="nui-focus !appearance-none rounded-lg !opacity-100"
         >
           <div
             class="peer-checked:child:scale-1 peer-not-checked:child:scale-0 bg-muted-100 text-muted-100 dark:bg-muted-900 dark:text-muted-900 peer-checked:text-primary-500 absolute start-[1.35rem] top-1/2 flex size-6 -translate-y-1/2 items-center justify-center rounded-full"
@@ -189,11 +198,14 @@ useHead({
             </div>
           </div>
         </BaseRadioHeadless>
+        <span v-if="errors.fields.role" class="nui-input-wrapper">
+          <span class="nui-input-error-text !text-xs">{{ errors.fields.role }}</span>
+        </span>
       </div>
 
       <div class="mt-4 flex gap-4">
         <BaseButton
-          v-if="currentStep > 0"
+          v-if="currentStepId > 0"
           :to="loading ? undefined : getPrevStep()?.to"
           :disabled="!getPrevStep()"
           size="lg"
@@ -202,8 +214,7 @@ useHead({
           <span>Previous</span>
         </BaseButton>
         <BaseButton
-          :to="getNextStep()?.to"
-          :disabled="!getNextStep()"
+          type="submit"
           color="primary"
           size="lg"
           class="w-full"

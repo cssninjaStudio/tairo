@@ -12,22 +12,24 @@ definePageMeta({
     order: 30,
   },
 })
-
-const {
-  getNextStep,
-  data: project,
-  goToStep,
-} = useMultiStepForm<Project, ProjectStepData>()
 useHead({
   title: 'Project type',
 })
 
+const {
+  getNextStep,
+  data: project,
+  handleSubmit,
+  goToStep,
+} = useMultiStepForm<Project, ProjectStepData>()
+
 function onSelectType(type: ProjectType) {
-  const next = getNextStep()
-  if (next) {
-    project.value.type = type
-    goToStep(next)
-  }
+  // const next = getNextStep()
+  // if (next) {
+  project.value.type = type
+  handleSubmit()
+  // goToStep(next)
+  // }
 }
 </script>
 

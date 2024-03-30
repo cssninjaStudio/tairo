@@ -2,29 +2,32 @@
 import type { PaymentReceive, StepData } from '../../../types'
 
 definePageMeta({
-  title: 'Receive - Step 2',
-  layout: 'empty',
   preview: {
     title: 'Receive - Step 2',
     description: 'For receiving payments',
-    categories: ['layouts', 'lists'],
+    categories: ['layouts', 'wizards', 'forms'],
     src: '/img/screens/layouts-receive-transfer.png',
     srcDark: '/img/screens/layouts-receive-transfer-dark.png',
     order: 16,
   },
 })
-
-const {
-  data: request,
-  currentStep,
-  loading,
-  getNextStep,
-  getPrevStep,
-  steps,
-} = useStepperForm<PaymentReceive, StepData>()
 useHead({
   title: 'Transfer details',
 })
+
+const {
+  data: request,
+  currentStepId,
+  loading,
+  getNextStep,
+  getPrevStep,
+  resetFieldError,
+  errors,
+  steps,
+  checkPreviousSteps,
+} = useMultiStepForm<PaymentReceive, StepData>()
+
+onBeforeMount(checkPreviousSteps)
 
 const accounts = ref([
   {
@@ -52,25 +55,17 @@ const accounts = ref([
 
 const expandedRegular = ref(false)
 const expandedInternational = ref(false)
-const target = ref(null)
-const open = ref(false)
-
-function openDropdown() {
-  open.value = true
-}
-
-onClickOutside(target, () => (open.value = false))
 
 function setAccount(account: any) {
   request.value.account = account
-  open.value = false
+  resetFieldError('account')
 }
 </script>
 
 <template>
   <div class="w-full">
     <!--Transfer-->
-    <div v-if="request.method === 'Bank transfer'" class="w-full">
+    <div v-if="request.method === 'bank_transfer'" class="w-full">
       <div class="mb-8 space-y-2">
         <BaseHeading
           as="h2"
@@ -94,6 +89,8 @@ function setAccount(account: any) {
         <div class="relative">
           <BaseInput
             v-model="request.amount"
+            v-focus
+            :error="errors.fields.amount"
             type="number"
             rounded="none"
             icon="lucide:dollar-sign"
@@ -158,83 +155,71 @@ function setAccount(account: any) {
           >
             Transfer to:
           </BaseHeading>
-          <!--Dropdown-->
-          <div ref="target" class="relative z-20 w-full">
-            <button
-              type="button"
-              class="click-blur dark:bg-muted-800 border-muted-200 dark:border-muted-700 w-full rounded-xl border bg-white p-4"
-              @click="openDropdown()"
-            >
-              <span class="flex w-full items-center gap-3 text-start">
-                <TairoLogo class="text-primary-500 size-8" />
-                <div>
-                  <BaseText
-                    size="sm"
-                    class="text-muted-800 dark:text-muted-200 block capitalize"
-                  >
-                    {{ request.account.type }} {{ request.account.label }}
-                  </BaseText>
-                  <BaseText
-                    size="xs"
-                    class="text-muted-500 dark:text-muted-400 block"
-                  >
-                    ${{ request.account.balance.toFixed(2) }}
-                  </BaseText>
-                </div>
-                <Icon
-                  name="lucide:chevron-down"
-                  class="text-muted-400 ms-auto size-4 transition-transform duration-300"
-                  :class="open && 'rotate-180'"
-                />
-              </span>
-            </button>
-            <Transition
-              enter-active-class="transition duration-100 ease-out"
-              enter-from-class="transform scale-95 opacity-0"
-              enter-to-class="transform scale-100 opacity-100"
-              leave-active-class="transition duration-75 ease-in"
-              leave-from-class="transform scale-100 opacity-100"
-              leave-to-class="transform scale-95 opacity-0"
-            >
-              <div
-                v-if="open"
-                class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 shadow-muted-400/10 dark:shadow-muted-800/10 absolute start-0 top-20 w-full rounded-xl border bg-white p-2 shadow-xl"
+
+          <BaseDropdown rounded="lg" :classes="{ menuWrapper: 'w-full [&>div]:right-0', menu: '!w-full' }">
+            <template #button="{ open }">
+              <BaseButton
+                size="xl"
+                rounded="lg"
+                class="!h-auto w-full !p-4"
+                :class="[errors.fields.account ? '!border-danger-500' : '']"
               >
-                <!--Accounts-->
-                <ul>
-                  <li v-for="account in accounts" :key="account.id">
-                    <button
-                      type="button"
-                      class="hover:bg-muted-100 dark:hover:bg-muted-900 group flex w-full items-center gap-3 rounded-lg px-4 py-2 text-start transition-colors duration-300"
-                      @click="setAccount(account)"
+                <span class="flex w-full items-center gap-3 text-start">
+                  <TairoLogo v-if="request.account" class="text-primary-500 size-8" />
+                  <Icon
+                    v-else
+                    name="lucide:wallet"
+                    class="text-muted-500 mx-1 my-2 size-6"
+                  />
+                  <div v-if="request.account">
+                    <BaseText
+                      size="sm"
+                      class="text-muted-800 dark:text-muted-200 block capitalize"
                     >
-                      <TairoLogo
-                        class="text-muted-300 dark:text-muted-700 group-hover:text-primary-500 size-8 transition-colors duration-300"
-                      />
-                      <span class="block">
-                        <span
-                          class="font-heading text-muted-800 dark:text-muted-200 block text-sm capitalize"
-                        >
-                          {{ account.type }} {{ account.label }}
-                        </span>
-                        <span
-                          class="font-heading text-muted-500 dark:text-muted-400 block text-xs"
-                        >
-                          ${{ account.balance.toFixed(2) }}
-                        </span>
-                      </span>
-                    </button>
-                  </li>
-                </ul>
-              </div>
-            </Transition>
-          </div>
+                      {{ request.account?.type }} {{ request.account?.label }}
+                    </BaseText>
+                    <BaseText
+                      size="xs"
+                      class="text-muted-500 dark:text-muted-400 block"
+                    >
+                      ${{ request.account?.balance.toFixed(2) }}
+                    </BaseText>
+                  </div>
+                  <span v-else>
+                    Select an account
+                  </span>
+                  <Icon
+                    name="lucide:chevron-down"
+                    class="text-muted-400 ms-auto size-4 transition-transform duration-300"
+                    :class="open && 'rotate-180'"
+                  />
+                </span>
+              </BaseButton>
+            </template>
+            <BaseDropdownItem
+              v-for="account in accounts.filter((account) => account.id !== request.account?.id)"
+              :key="account.id"
+              :title="`${account.type} ${account.label}`"
+              :text="`$${account.balance.toFixed(2)}`"
+              @click="setAccount(account)"
+            >
+              <template #start>
+                <TairoLogo
+                  class="text-muted-300 dark:text-muted-700 group-hover:text-primary-500 size-8"
+                />
+              </template>
+            </BaseDropdownItem>
+          </BaseDropdown>
+
+          <span v-if="errors.fields.account" class="nui-input-wrapper">
+            <span class="nui-input-error-text !text-xs">{{ errors.fields.account }}</span>
+          </span>
         </div>
       </div>
     </div>
 
     <!--Link-->
-    <div v-else-if="request.method === 'Payment link'" class="w-full">
+    <div v-else-if="request.method === 'payment_link'" class="w-full">
       <div class="mb-8 space-y-2">
         <BaseHeading
           as="h2"
@@ -258,6 +243,8 @@ function setAccount(account: any) {
         <div class="relative">
           <BaseInput
             v-model="request.amount"
+            v-focus
+            :error="errors.fields.amount"
             type="number"
             rounded="none"
             icon="lucide:dollar-sign"
@@ -284,6 +271,7 @@ function setAccount(account: any) {
           <div class="relative">
             <BaseInput
               v-model="request.email"
+              :error="errors.fields.email"
               icon="lucide:mail"
               placeholder="Ex: johndoe@gmail.com"
               :classes="{
@@ -304,81 +292,70 @@ function setAccount(account: any) {
           >
             Transfer to:
           </BaseHeading>
-          <!--Dropdown-->
-          <div ref="target" class="relative z-20 w-full">
-            <button
-              type="button"
-              class="click-blur dark:bg-muted-800 border-muted-200 dark:border-muted-700 w-full rounded-xl border bg-white p-4"
-              @click="openDropdown()"
-            >
-              <span class="flex w-full items-center gap-3 text-start">
-                <TairoLogo class="text-primary-500 size-8" />
-                <div>
-                  <BaseText
-                    size="sm"
-                    class="text-muted-800 dark:text-muted-200 block capitalize"
-                  >
-                    {{ request.account.type }} {{ request.account.label }}
-                  </BaseText>
-                  <BaseText
-                    size="xs"
-                    class="text-muted-500 dark:text-muted-400 block"
-                  >
-                    ${{ request.account.balance.toFixed(2) }}
-                  </BaseText>
-                </div>
-                <Icon
-                  name="lucide:chevron-down"
-                  class="text-muted-400 ms-auto size-4 transition-transform duration-300"
-                  :class="open && 'rotate-180'"
-                />
-              </span>
-            </button>
-            <Transition
-              enter-active-class="transition duration-100 ease-out"
-              enter-from-class="transform scale-95 opacity-0"
-              enter-to-class="transform scale-100 opacity-100"
-              leave-active-class="transition duration-75 ease-in"
-              leave-from-class="transform scale-100 opacity-100"
-              leave-to-class="transform scale-95 opacity-0"
-            >
-              <div
-                v-if="open"
-                class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 shadow-muted-400/10 dark:shadow-muted-800/10 absolute start-0 top-20 w-full rounded-xl border bg-white p-2 shadow-xl"
+
+          <BaseDropdown rounded="lg" :classes="{ menuWrapper: 'w-full [&>div]:right-0', menu: '!w-full' }">
+            <template #button="{ open }">
+              <BaseButton
+                size="xl"
+                rounded="lg"
+                class="!h-auto w-full !p-4"
+                :class="[errors.fields.account ? '!border-danger-500' : '']"
               >
-                <!--Accounts-->
-                <ul>
-                  <li v-for="account in accounts" :key="account.id">
-                    <button
-                      type="button"
-                      class="hover:bg-muted-100 dark:hover:bg-muted-900 group flex w-full items-center gap-3 rounded-lg px-4 py-2 text-start transition-colors duration-300"
-                      @click="setAccount(account)"
+                <span class="flex w-full items-center gap-3 text-start">
+                  <TairoLogo v-if="request.account" class="text-primary-500 size-8" />
+                  <Icon
+                    v-else
+                    name="lucide:wallet"
+                    class="text-muted-500 mx-1 my-2 size-6"
+                  />
+                  <div v-if="request.account">
+                    <BaseText
+                      size="sm"
+                      class="text-muted-800 dark:text-muted-200 block capitalize"
                     >
-                      <TairoLogo class="text-muted-300 dark:text-muted-700 group-hover:text-primary-500 size-8" />
-                      <span class="block">
-                        <span
-                          class="font-heading text-muted-800 dark:text-muted-200 block text-sm capitalize"
-                        >
-                          {{ account.type }} {{ account.label }}
-                        </span>
-                        <span
-                          class="font-heading text-muted-500 dark:text-muted-400 block text-xs"
-                        >
-                          ${{ account.balance.toFixed(2) }}
-                        </span>
-                      </span>
-                    </button>
-                  </li>
-                </ul>
-              </div>
-            </Transition>
-          </div>
+                      {{ request.account?.type }} {{ request.account?.label }}
+                    </BaseText>
+                    <BaseText
+                      size="xs"
+                      class="text-muted-500 dark:text-muted-400 block"
+                    >
+                      ${{ request.account?.balance.toFixed(2) }}
+                    </BaseText>
+                  </div>
+                  <span v-else>
+                    Select an account
+                  </span>
+                  <Icon
+                    name="lucide:chevron-down"
+                    class="text-muted-400 ms-auto size-4 transition-transform duration-300"
+                    :class="open && 'rotate-180'"
+                  />
+                </span>
+              </BaseButton>
+            </template>
+            <BaseDropdownItem
+              v-for="account in accounts.filter((account) => account.id !== request.account?.id)"
+              :key="account.id"
+              :title="`${account.type} ${account.label}`"
+              :text="`$${account.balance.toFixed(2)}`"
+              @click="setAccount(account)"
+            >
+              <template #start>
+                <TairoLogo
+                  class="text-muted-300 dark:text-muted-700 group-hover:text-primary-500 size-8"
+                />
+              </template>
+            </BaseDropdownItem>
+          </BaseDropdown>
+          <span v-if="errors.fields.account" class="nui-input-wrapper">
+            <span class="nui-input-error-text !text-xs">{{ errors.fields.account }}</span>
+          </span>
         </div>
       </div>
     </div>
 
     <!--Wire-->
-    <div v-else-if="request.method === 'Wire'" class="w-full pb-10">
+    <div v-else-if="request.method === 'wire'" class="w-full pb-10">
       <div class="w-full max-w-md">
         <!--Header-->
         <div class="mb-4">
@@ -407,76 +384,65 @@ function setAccount(account: any) {
           </div>
         </div>
         <!--Account-->
-        <div ref="target" class="relative z-20 w-full">
-          <button
-            type="button"
-            class="click-blur dark:bg-muted-800 border-muted-200 dark:border-muted-700 w-full rounded-xl border bg-white p-4"
-            @click="openDropdown()"
-          >
-            <span class="flex w-full items-center gap-3 text-start">
-              <TairoLogo class="text-primary-500 size-8" />
-              <div>
-                <BaseText
-                  size="sm"
-                  class="text-muted-800 dark:text-muted-200 block capitalize"
-                >
-                  {{ request.account.type }} {{ request.account.label }}
-                </BaseText>
-                <BaseText
-                  size="xs"
-                  class="text-muted-500 dark:text-muted-400 block"
-                >
-                  ${{ request.account.balance.toFixed(2) }}
-                </BaseText>
-              </div>
-              <Icon
-                name="lucide:chevron-down"
-                class="text-muted-400 ms-auto size-4 transition-transform duration-300"
-                :class="open && 'rotate-180'"
-              />
-            </span>
-          </button>
-          <Transition
-            enter-active-class="transition duration-100 ease-out"
-            enter-from-class="transform scale-95 opacity-0"
-            enter-to-class="transform scale-100 opacity-100"
-            leave-active-class="transition duration-75 ease-in"
-            leave-from-class="transform scale-100 opacity-100"
-            leave-to-class="transform scale-95 opacity-0"
-          >
-            <div
-              v-if="open"
-              class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 shadow-muted-400/10 dark:shadow-muted-800/10 absolute start-0 top-20 w-full rounded-xl border bg-white p-2 shadow-xl"
+
+        <BaseDropdown rounded="lg" :classes="{ menuWrapper: 'w-full [&>div]:right-0', menu: '!w-full' }">
+          <template #button="{ open }">
+            <BaseButton
+              v-focus
+              size="xl"
+              rounded="lg"
+              class="!h-auto w-full !p-4"
+              :class="[errors.fields.account ? '!border-danger-500' : '']"
             >
-              <!--Accounts-->
-              <ul>
-                <li v-for="account in accounts" :key="account.id">
-                  <button
-                    type="button"
-                    class="hover:bg-muted-100 dark:hover:bg-muted-900 group flex w-full items-center gap-3 rounded-lg px-4 py-2 text-start transition-colors duration-300"
-                    @click="setAccount(account)"
+              <span class="flex w-full items-center gap-3 text-start">
+                <TairoLogo v-if="request.account" class="text-primary-500 size-8" />
+                <Icon
+                  v-else
+                  name="lucide:wallet"
+                  class="text-muted-500 mx-1 my-2 size-6"
+                />
+                <div v-if="request.account">
+                  <BaseText
+                    size="sm"
+                    class="text-muted-800 dark:text-muted-200 block capitalize"
                   >
-                    <TairoLogo
-                      class="text-muted-300 dark:text-muted-700 group-hover:text-primary-500 size-8"
-                    />
-                    <span class="block">
-                      <span
-                        class="font-heading text-muted-800 dark:text-muted-200 block text-sm capitalize"
-                      >
-                        {{ account.type }} {{ account.label }}
-                      </span>
-                      <span
-                        class="font-heading text-muted-500 dark:text-muted-400 block text-xs"
-                      >
-                        ${{ account.balance.toFixed(2) }}
-                      </span>
-                    </span>
-                  </button>
-                </li>
-              </ul>
-            </div>
-          </Transition>
-        </div>
+                    {{ request.account.type }} {{ request.account.label }}
+                  </BaseText>
+                  <BaseText
+                    size="xs"
+                    class="text-muted-500 dark:text-muted-400 block"
+                  >
+                    ${{ request.account.balance.toFixed(2) }}
+                  </BaseText>
+                </div>
+                <span v-else>
+                  Select an account
+                </span>
+                <Icon
+                  name="lucide:chevron-down"
+                  class="text-muted-400 ms-auto size-4 transition-transform duration-300"
+                  :class="open && 'rotate-180'"
+                />
+              </span>
+            </BaseButton>
+          </template>
+          <BaseDropdownItem
+            v-for="account in accounts.filter((account) => account.id !== request.account?.id)"
+            :key="account.id"
+            :title="`${account.type} ${account.label}`"
+            :text="`$${account.balance.toFixed(2)}`"
+            @click="setAccount(account)"
+          >
+            <template #start>
+              <TairoLogo
+                class="text-muted-300 dark:text-muted-700 group-hover:text-primary-500 size-8"
+              />
+            </template>
+          </BaseDropdownItem>
+        </BaseDropdown>
+        <span v-if="errors.fields.account" class="nui-input-wrapper">
+          <span class="nui-input-error-text !text-xs">{{ errors.fields.account }}</span>
+        </span>
 
         <!--Transfer details-->
         <div class="py-6">
@@ -545,7 +511,7 @@ function setAccount(account: any) {
                             size="sm"
                             class="text-muted-800 dark:text-muted-200 block"
                           >
-                            {{ request.account.number }}
+                            {{ request.account?.number }}
                           </BaseText>
                         </div>
                       </li>
@@ -561,7 +527,7 @@ function setAccount(account: any) {
                             size="sm"
                             class="text-muted-800 dark:text-muted-200 block"
                           >
-                            {{ request.account.type }}
+                            {{ request.account?.type }}
                           </BaseText>
                         </div>
                       </li>
@@ -722,7 +688,7 @@ function setAccount(account: any) {
                             size="sm"
                             class="text-muted-800 dark:text-muted-200 block"
                           >
-                            {{ request.account.number }}
+                            {{ request.account?.number }}
                           </BaseText>
                         </div>
                       </li>
@@ -738,7 +704,7 @@ function setAccount(account: any) {
                             size="sm"
                             class="text-muted-800 dark:text-muted-200 block"
                           >
-                            {{ request.account.type }}
+                            {{ request.account?.type }}
                           </BaseText>
                         </div>
                       </li>
@@ -841,7 +807,7 @@ function setAccount(account: any) {
     <!--Buttons-->
     <div class="flex w-full max-w-md gap-4">
       <BaseButton
-        v-if="currentStep > 0"
+        v-if="currentStepId > 0"
         :to="loading ? undefined : getPrevStep()?.to"
         :disabled="!getPrevStep()"
         size="lg"
@@ -850,9 +816,8 @@ function setAccount(account: any) {
         <span>Previous</span>
       </BaseButton>
       <BaseButton
-        v-if="request.method !== 'Wire'"
-        :to="getNextStep()?.to"
-        :disabled="!getNextStep()"
+        v-if="request.method !== 'wire'"
+        type="submit"
         color="primary"
         size="lg"
         class="w-full"

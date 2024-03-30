@@ -2,8 +2,6 @@
 import type { Invite, StepData } from '../../../types'
 
 definePageMeta({
-  title: 'Invite - Step 1',
-  layout: 'empty',
   preview: {
     title: 'Invite - Step 1',
     description: 'For inviting people',
@@ -13,18 +11,21 @@ definePageMeta({
     order: 37,
   },
 })
-
-const {
-  data: request,
-  currentStep,
-  loading,
-  getNextStep,
-  getPrevStep,
-  steps,
-} = useStepperForm<Invite, StepData>()
 useHead({
   title: 'Email invite',
 })
+
+const {
+  data: request,
+  currentStepId,
+  loading,
+  errors,
+  getPrevStep,
+  steps,
+  checkPreviousSteps,
+} = useMultiStepForm<Invite, StepData>()
+
+onBeforeMount(checkPreviousSteps)
 </script>
 
 <template>
@@ -36,13 +37,13 @@ useHead({
         weight="medium"
         class="md:!3xl text-muted-800 dark:text-white"
       >
-        {{ steps[currentStep].meta.title }}
+        {{ steps[currentStepId].meta.title }}
       </BaseHeading>
       <BaseParagraph
         size="sm"
         class="text-muted-500 dark:text-muted-400 max-w-sm"
       >
-        {{ steps[currentStep].meta.subtitle }}
+        {{ steps[currentStepId].meta.subtitle }}
       </BaseParagraph>
     </div>
 
@@ -51,6 +52,8 @@ useHead({
         <div class="col-span-12 sm:col-span-6">
           <BaseInput
             v-model="request.firstName"
+            v-focus
+            :error="errors.fields.firstName"
             label="First name"
             placeholder="Ex: John"
           />
@@ -58,6 +61,7 @@ useHead({
         <div class="col-span-12 sm:col-span-6">
           <BaseInput
             v-model="request.lastName"
+            :error="errors.fields.lastName"
             label="Last name"
             placeholder="Ex: Doe"
           />
@@ -65,6 +69,7 @@ useHead({
         <div class="col-span-12">
           <BaseInput
             v-model="request.email"
+            :error="errors.fields.email"
             label="Email address"
             placeholder="Ex: johndoe@gmail.com"
           />
@@ -73,7 +78,7 @@ useHead({
 
       <div class="mt-6 flex gap-4">
         <BaseButton
-          v-if="currentStep > 0"
+          v-if="currentStepId > 0"
           :to="loading ? undefined : getPrevStep()?.to"
           :disabled="!getPrevStep()"
           size="lg"
@@ -82,8 +87,7 @@ useHead({
           <span>Previous</span>
         </BaseButton>
         <BaseButton
-          :to="getNextStep()?.to"
-          :disabled="!getNextStep()"
+          type="submit"
           color="primary"
           size="lg"
           class="w-full"

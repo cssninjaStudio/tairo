@@ -2,16 +2,10 @@
 import type { PaymentSend, StepData } from '../../types'
 
 definePageMeta({
-  title: 'Send',
   layout: 'empty',
-  preview: {
-    title: 'Send',
-    description: 'For generic things',
-    categories: ['layouts', 'lists'],
-    src: '/img/screens/layouts-send.png',
-    srcDark: '/img/screens/layouts-send-dark.png',
-    order: 37,
-  },
+})
+useHead({
+  titleTemplate: title => `${title} | Send money - Step ${currentStepId.value + 1}`,
 })
 
 const initialState = ref<PaymentSend>({
@@ -28,115 +22,107 @@ const initialState = ref<PaymentSend>({
     },
   },
   amount: 0,
-  account: {
-    id: 1,
-    type: 'Checking',
-    label: '**** 4897',
-    number: '1487 3256 54122 4897',
-    balance: 9543.12,
-  },
+  account: null,
   routingNumber: '',
   prefix: '',
-  method: 'ACH',
+  method: null,
 })
-
-const wizardSteps = [
-  {
-    to: '/layouts/send',
-    meta: {
-      name: 'Recipient',
-      title: 'Who are you paying?',
-      subtitle:
-        'Enter the name of the person or the company your are sending money to',
-    } satisfies StepData,
-  },
-  {
-    to: '/layouts/send/method',
-    meta: {
-      name: 'Payment method',
-      title: 'How do you want to pay?',
-      subtitle:
-        'Select on of the available payment methods to proceed to payment',
-    } satisfies StepData,
-  },
-  {
-    to: '/layouts/send/recipient',
-    meta: {
-      name: 'Recipient details',
-      title: 'Recipient details',
-      subtitle:
-        'Enter the recipient routing details so money can be sent to their account',
-    } satisfies StepData,
-  },
-  {
-    to: '/layouts/send/address',
-    meta: {
-      name: 'Recipient address',
-      title: 'Recipient address',
-      subtitle:
-        'Your recipient needs to have a legal address before you can send them money',
-    } satisfies StepData,
-  },
-  {
-    to: '/layouts/send/amount',
-    meta: {
-      name: 'Amount',
-      title: 'Set an amount to transfer',
-      subtitle:
-        'Enter an amount to transfer. This amount cannot exceed the selected account balance',
-    } satisfies StepData,
-  },
-  {
-    to: '/layouts/send/review',
-    meta: {
-      name: 'Review',
-      title: 'Review and send',
-      subtitle:
-        'Make sure everything in the process is correct before sending the money',
-    } satisfies StepData,
-  },
-]
 
 const toaster = useToaster()
 
-const { handleSubmit, currentStep, progress, complete } = createStepperForm<
-  PaymentSend,
-  StepData
->({
-  initialState: initialState,
-  steps: wizardSteps,
+const { handleSubmit, currentStepId, progress, complete, steps, errors, goToStep } = provideMultiStepForm({
+  initialState,
+  steps: [
+    {
+      to: '/layouts/send',
+      meta: {
+        name: 'Recipient',
+        title: 'Who are you paying?',
+        subtitle:
+          'Enter the name of the person or the company your are sending money to',
+      } satisfies StepData,
+      validate({ data, setFieldError, resetFieldError }) {
+        resetFieldError('recipient.name')
+        if (!data.value.recipient?.name) setFieldError('recipient.name', 'Enter a valid name')
+      },
+    },
+    {
+      to: '/layouts/send/method',
+      meta: {
+        name: 'Payment method',
+        title: 'How do you want to pay?',
+        subtitle:
+          'Select on of the available payment methods to proceed to payment',
+      } satisfies StepData,
+      validate({ data, setFieldError, resetFieldError }) {
+        resetFieldError(['method'])
+        if (!data.value?.method) {
+          setFieldError('method', 'Please select a payment method')
+        }
+      },
+    },
+    {
+      to: '/layouts/send/recipient',
+      meta: {
+        name: 'Recipient details',
+        title: 'Recipient details',
+        subtitle:
+          'Enter the recipient routing details so money can be sent to their account',
+      } satisfies StepData,
+      validate({ data, setFieldError, resetFieldError }) {
+        resetFieldError(['routingNumber'])
+        if (!data.value.routingNumber) setFieldError('routingNumber', 'Enter a valid name')
+      },
+    },
+    {
+      to: '/layouts/send/address',
+      meta: {
+        name: 'Recipient address',
+        title: 'Recipient address',
+        subtitle:
+          'Your recipient needs to have a legal address before you can send them money',
+      } satisfies StepData,
+      validate({ data, setFieldError, resetFieldError }) {
+        resetFieldError([
+          'recipient.address.lineOne',
+          'recipient.address.city',
+          'recipient.address.postalCode',
+        ])
+        if (!data.value.recipient?.address?.lineOne) setFieldError('recipient.address.lineOne', 'Enter an address')
+        if (!data.value.recipient?.address?.city) setFieldError('recipient.address.city', 'Enter a city')
+        if (!data.value.recipient?.address?.postalCode) setFieldError('recipient.address.postalCode', 'Enter a zip code')
+      },
+    },
+    {
+      to: '/layouts/send/amount',
+      meta: {
+        name: 'Amount',
+        title: 'Set an amount to transfer',
+        subtitle:
+          'Enter an amount to transfer. This amount cannot exceed the selected account balance',
+      } satisfies StepData,
+      validate({ data, setFieldError, resetFieldError }) {
+        resetFieldError([
+          'amount',
+          'account',
+        ])
+        if (!data.value.account) setFieldError('account', 'Select an account input')
+
+        if (data.value.amount <= 0) setFieldError('amount', 'Enter a positive amount')
+        else if (data.value.account && data.value.amount > data.value.account.balance) setFieldError('amount', 'Value should be less than balance')
+      },
+    },
+    {
+      to: '/layouts/send/review',
+      meta: {
+        name: 'Review',
+        title: 'Review and send',
+        subtitle:
+          'Make sure everything in the process is correct before sending the money',
+      } satisfies StepData,
+    },
+  ],
   onSubmit: async (state, ctx) => {
-    console.log('multi-step-submit', state)
-
-    if (!state.recipient.name) {
-      ctx.goToStep(ctx.getStep(0))
-      throw new Error('Enter a recipient name')
-    }
-    if (state.routingNumber === '') {
-      ctx.goToStep(ctx.getStep(2))
-      throw new Error('Please provide a routing number')
-    }
-    if (state.recipient.address.lineOne === '') {
-      ctx.goToStep(ctx.getStep(3))
-      throw new Error('Please provide an address')
-    }
-    if (state.recipient.address.city === '') {
-      ctx.goToStep(ctx.getStep(3))
-      throw new Error('This address requires a city')
-    }
-    if (state.recipient.address.postalCode === '') {
-      ctx.goToStep(ctx.getStep(3))
-      throw new Error('This address requires a postal code')
-    }
-    if (state.recipient.address.state === '') {
-      ctx.goToStep(ctx.getStep(3))
-      throw new Error('This address requires a state')
-    }
-    if (state.amount === 0) {
-      ctx.goToStep(ctx.getStep(4))
-      throw new Error('Please enter an amount')
-    }
-
     // Simulate async request
     await new Promise(resolve => setTimeout(resolve, 4000))
 
@@ -150,8 +136,6 @@ const { handleSubmit, currentStep, progress, complete } = createStepperForm<
     })
   },
   onError: (error) => {
-    console.log('multi-step-error', error)
-
     toaster.clearAll()
     toaster.show({
       title: 'Error',
@@ -161,10 +145,6 @@ const { handleSubmit, currentStep, progress, complete } = createStepperForm<
       closable: true,
     })
   },
-})
-
-useHead({
-  titleTemplate: title => `Send money - Step ${currentStep.value + 1}`,
 })
 </script>
 
@@ -200,36 +180,39 @@ useHead({
                 />
                 <!--Nodes-->
                 <div
-                  v-for="(step, index) in wizardSteps"
+                  v-for="(step, index) in steps"
                   :key="index"
                   class="bg-muted-200 dark:bg-muted-700 relative z-20 flex size-4 items-center justify-center rounded-full"
                 >
                   <span
                     class="bg-primary-500 block size-2 rounded-full transition-transform duration-300"
-                    :class="currentStep >= index ? 'scale-1' : 'scale-0'"
+                    :class="currentStepId >= index ? 'scale-1' : 'scale-0'"
                   />
                 </div>
               </div>
               <div
                 class="relative flex justify-center gap-7 md:flex-col md:justify-between"
               >
-                <div
-                  v-for="(step, index) in wizardSteps"
+                <a
+                  v-for="(step, index) in steps"
                   :key="index"
                   class="h-4 leading-none"
-                  :class="currentStep === index ? '' : 'xs:hidden'"
+                  role="button"
+                  :tabindex="0"
+                  :class="[currentStepId === index ? '' : 'xs:hidden', currentStepId > step.id ? 'nui-link' : 'cursor-default']"
+                  @click.prevent="currentStepId > step.id ? goToStep(step) : () => {}"
                 >
                   <span
                     class="font-heading block text-xs"
                     :class="
-                      currentStep === index
+                      currentStepId === index
                         ? 'text-muted-800 dark:text-muted-100'
                         : 'text-muted-400 dark:text-muted-500'
                     "
                   >
                     {{ step.meta.name }}
                   </span>
-                </div>
+                </a>
               </div>
             </div>
           </div>
@@ -244,7 +227,7 @@ useHead({
               novalidate
               @submit.prevent="handleSubmit"
             >
-              <RouterView />
+              <NuxtPage />
             </form>
           </div>
         </div>

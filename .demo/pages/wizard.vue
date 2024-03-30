@@ -4,6 +4,9 @@ import type { Project, ProjectStepData } from '../types'
 definePageMeta({
   layout: 'empty',
 })
+useHead({
+  titleTemplate: title => `${title} | Wizard - Step ${currentStepId.value + 1}`,
+})
 
 const initialState = ref<Project>({
   type: undefined,
@@ -23,88 +26,84 @@ const initialState = ref<Project>({
   budget: '< 5K',
 })
 
-const wizardSteps = [
-  {
-    to: '/wizard',
-    meta: {
-      name: 'Project type',
-      title: 'Select project type',
-      subtitle: 'Select the type of project you want to create',
-    } satisfies ProjectStepData,
-  },
-  {
-    to: '/wizard/step-2',
-    meta: {
-      name: 'Project info',
-      title: 'What is this project about?',
-      subtitle: 'Manage better by adding all relevant project information',
-    } satisfies ProjectStepData,
-  },
-  {
-    to: '/wizard/step-3',
-    meta: {
-      name: 'Project details',
-      title: 'Add more details',
-      subtitle: 'Add useful details to your project. You can edit this later',
-    } satisfies ProjectStepData,
-  },
-  {
-    to: '/wizard/step-4',
-    meta: {
-      name: 'Project files',
-      title: 'Add files to this project',
-      subtitle:
-        'Or you can skip this step. You can always add more files later',
-    } satisfies ProjectStepData,
-  },
-  {
-    to: '/wizard/step-5',
-    meta: {
-      name: 'Team members',
-      title: 'Who will be working on this project?',
-      subtitle: 'Start by adding members to your team',
-    } satisfies ProjectStepData,
-  },
-  {
-    to: '/wizard/step-6',
-    meta: {
-      name: 'Project tools',
-      title: 'What tools will you be using?',
-      subtitle: 'Choose a set of tools that you\'ll be using in this project',
-    } satisfies ProjectStepData,
-  },
-  {
-    to: '/wizard/step-7',
-    meta: {
-      preview: true,
-      name: 'Finish',
-      title: 'Make sure it looks good',
-      subtitle:
-        'You can go back to previous steps if you need to edit anything',
-    } satisfies ProjectStepData,
-  },
-]
-
 const toaster = useToaster()
 
-const { handleSubmit, currentStep } = createMultiStepForm<
-  Project,
-  ProjectStepData
->({
-  initialState: initialState,
-  steps: wizardSteps,
+const { handleSubmit, currentStepId } = provideMultiStepForm({
+  initialState,
+  steps: [
+    {
+      to: '/wizard',
+      meta: {
+        name: 'Project type',
+        title: 'Select project type',
+        subtitle: 'Select the type of project you want to create',
+      },
+      validate({ data, setFieldError, resetFieldError }) {
+        resetFieldError(['type'])
+        if (!data.value.type) {
+          setFieldError('type', 'Please select a type')
+        }
+      },
+    },
+    {
+      to: '/wizard/step-2',
+      meta: {
+        name: 'Project info',
+        title: 'What is this project about?',
+        subtitle: 'Manage better by adding all relevant project information',
+      },
+      validate({ data, setFieldError, resetFieldError }) {
+        resetFieldError(['name'])
+        if (!data.value.name) {
+          setFieldError('name', 'Please enter a project name')
+        }
+      },
+    },
+    {
+      to: '/wizard/step-3',
+      meta: {
+        name: 'Project details',
+        title: 'Add more details',
+        subtitle: 'Add useful details to your project. You can edit this later',
+      },
+    },
+    {
+      to: '/wizard/step-4',
+      meta: {
+        name: 'Project files',
+        title: 'Add files to this project',
+        subtitle:
+          'Or you can skip this step. You can always add more files later',
+      },
+    },
+    {
+      to: '/wizard/step-5',
+      meta: {
+        name: 'Team members',
+        title: 'Who will be working on this project?',
+        subtitle: 'Start by adding members to your team',
+      },
+    },
+    {
+      to: '/wizard/step-6',
+      meta: {
+        name: 'Project tools',
+        title: 'What tools will you be using?',
+        subtitle: 'Choose a set of tools that you\'ll be using in this project',
+      },
+    },
+    {
+      to: '/wizard/step-7',
+      meta: {
+        preview: true,
+        name: 'Finish',
+        title: 'Make sure it looks good',
+        subtitle:
+          'You can go back to previous steps if you need to edit anything',
+      },
+    },
+  ],
   onSubmit: async (state, ctx) => {
-    console.log('multi-step-submit', state)
-
-    if (!state.type) {
-      ctx.goToStep(ctx.getStep(0))
-      throw new Error('Please select a project type')
-    }
-    if (!state.name) {
-      ctx.goToStep(ctx.getStep(1))
-      throw new Error('Enter a project name')
-    }
-
     // Simulate async request
     await new Promise(resolve => setTimeout(resolve, 4000))
 
@@ -118,8 +117,6 @@ const { handleSubmit, currentStep } = createMultiStepForm<
     })
   },
   onError: (error) => {
-    console.log('multi-step-error', error)
-
     toaster.clearAll()
     toaster.show({
       title: 'Oops!',
@@ -129,10 +126,6 @@ const { handleSubmit, currentStep } = createMultiStepForm<
       closable: true,
     })
   },
-})
-
-useHead({
-  titleTemplate: title => `${title} | Wizard - Step ${currentStep.value + 1}`,
 })
 </script>
 
@@ -161,7 +154,7 @@ useHead({
       @submit.prevent="handleSubmit"
     >
       <div class="pb-32 pt-24">
-        <RouterView />
+        <NuxtPage />
       </div>
       <DemoWizardButtons />
     </form>
