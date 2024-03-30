@@ -105,7 +105,7 @@ const isTokens = computed(() => {
 
           <!--Steps column-->
           <div class="md:col-span-9 lg:col-span-9">
-            <RouterView />
+            <NuxtPage />
           </div>
         </div>
       </div>

@@ -99,7 +99,7 @@ const isRecipients = computed(() => {
 
       <!--Tab content-->
       <div class="w-full py-6">
-        <RouterView />
+        <NuxtPage />
       </div>
     </div>
   </div>

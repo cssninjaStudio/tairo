@@ -20,6 +20,14 @@ definePageMeta({
     srcDark: '/img/screens/layouts-subpages-profile-edit-4-dark.png',
     order: 79,
   },
+  pageTransition: {
+    enterActiveClass: 'transition-all duration-500 ease-out',
+    enterFromClass: 'translate-y-20 opacity-0',
+    enterToClass: 'translate-y-0 opacity-100',
+    leaveActiveClass: 'transition-all duration-200 ease-in',
+    leaveFromClass: 'translate-y-0 opacity-100',
+    leaveToClass: 'translate-y-20 opacity-0',
+  },
 })
 
 // This is the Zod schema for the form input

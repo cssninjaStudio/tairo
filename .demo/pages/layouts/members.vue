@@ -115,7 +115,7 @@ const currentMember = ref()
       </div>
       <!--Slug content-->
       <div class="ltablet:col-span-7 col-span-12 lg:col-span-7">
-        <RouterView v-if="currentMember !== undefined" />
+        <NuxtPage v-if="currentMember !== undefined" />
         <BaseCard
           v-else
           rounded="md"
