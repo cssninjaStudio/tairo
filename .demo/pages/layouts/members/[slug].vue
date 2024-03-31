@@ -12,6 +12,7 @@ definePageMeta({
       params: {
         slug: 'maya-rosselini',
       },
+      new: true,
     },
     {
       title: 'Member details',
@@ -23,6 +24,7 @@ definePageMeta({
       params: {
         slug: 'john-baxter',
       },
+      new: true,
     },
   ],
 })
@@ -53,8 +55,8 @@ if (!data.value?.member) {
         class="border-muted-200 dark:border-muted-800 flex gap-4 border-b p-6 sm:p-10"
       >
         <BaseAvatar
-          :src="data?.member.picture"
-          :alt="data?.member.name"
+          :src="data?.member?.picture"
+          :alt="data?.member?.name"
           size="lg"
           rounded="none"
           mask="blob"
@@ -66,24 +68,24 @@ if (!data.value?.member) {
             lead="none"
             class="line-clamp-1"
           >
-            {{ data?.member.name }}
+            {{ data?.member?.name }}
           </BaseHeading>
           <BaseParagraph size="sm" class="text-muted-400 mb-2 line-clamp-1">
-            {{ data?.member.email }}
+            {{ data?.member?.email }}
           </BaseParagraph>
           <BaseTag
             rounded="lg"
             variant="pastel"
             color="primary"
           >
-            {{ data?.member.role.label }}
+            {{ data?.member?.role?.label }}
           </BaseTag>
         </div>
       </div>
       <div class="p-6 sm:p-10">
         <div class="space-y-6">
           <div
-            v-for="role in data?.member.role.details"
+            v-for="role in data?.member?.role?.details"
             :key="role.label"
             class="border-muted-200 dark:border-muted-800 grid grid-cols-12 border-b pb-6"
           >
@@ -135,7 +137,7 @@ if (!data.value?.member) {
                 weight="medium"
                 class="text-muted-800 dark:text-muted-100"
               >
-                {{ data?.member.cards.length }} card{{
+                {{ data?.member?.cards?.length ?? 0 }} card{{
                   data?.member?.cards?.length && data.member.cards.length > 1
                     ? 's'
                     : ''
@@ -146,7 +148,7 @@ if (!data.value?.member) {
               <table class="w-full whitespace-nowrap">
                 <tbody>
                   <tr
-                    v-for="card in data?.member.cards"
+                    v-for="card in data?.member?.cards"
                     :key="card.id"
                     tabindex="0"
                   >

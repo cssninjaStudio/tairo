@@ -9,6 +9,7 @@ definePageMeta({
     src: '/img/screens/dashboards-messaging-2.png',
     srcDark: '/img/screens/dashboards-messaging-2-dark.png',
     order: 26,
+    new: true,
   },
 })
 

@@ -8,6 +8,7 @@ definePageMeta({
     src: '/img/screens/layouts-downloads.png',
     srcDark: '/img/screens/layouts-downloads-dark.png',
     order: 37,
+    new: true,
   },
 })
 

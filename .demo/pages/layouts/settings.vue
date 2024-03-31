@@ -1,15 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
-  title: 'Settings',
   layout: 'empty',
-  preview: {
-    title: 'Settings',
-    description: 'For generic things',
-    categories: ['layouts', 'lists'],
-    src: '/img/screens/layouts-settings.png',
-    srcDark: '/img/screens/layouts-settings-dark.png',
-    order: 37,
-  },
 })
 
 const route = useRoute()

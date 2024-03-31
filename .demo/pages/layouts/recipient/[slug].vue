@@ -12,6 +12,7 @@ definePageMeta({
       params: {
         slug: 'airbnb',
       },
+      new: true,
     },
     {
       title: 'Contact recipient',
@@ -23,6 +24,7 @@ definePageMeta({
       params: {
         slug: 'jackie-strauss',
       },
+      new: true,
     },
   ],
 })

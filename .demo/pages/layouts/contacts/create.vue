@@ -12,6 +12,7 @@ definePageMeta({
     src: '/img/screens/layouts-contacts-create.png',
     srcDark: '/img/screens/layouts-contacts-create-dark.png',
     order: 47,
+    new: true,
   },
 })
 
@@ -127,7 +128,7 @@ const zodSchema = z
 type FormInput = z.infer<typeof zodSchema>
 
 const validationSchema = toTypedSchema(zodSchema)
-const initialValues = computed<FormInput>(() => ({
+const initialValues = {
   avatar: null,
   contact: {
     firstName: '',
@@ -150,7 +151,7 @@ const initialValues = computed<FormInput>(() => ({
     taxId: null,
     paymentMethod: null,
   },
-}))
+} satisfies FormInput
 
 const {
   handleSubmit,

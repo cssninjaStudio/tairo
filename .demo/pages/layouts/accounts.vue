@@ -1,16 +1,4 @@
 <script setup lang="ts">
-definePageMeta({
-  title: 'Accounts',
-  preview: {
-    title: 'Accounts',
-    description: 'For bank account management',
-    categories: ['layouts', 'lists'],
-    src: '/img/screens/layouts-list-view-1.png',
-    srcDark: '/img/screens/layouts-list-view-1-dark.png',
-    order: 75,
-  },
-})
-
 const route = useRoute()
 
 const isAccounts = computed(() => {

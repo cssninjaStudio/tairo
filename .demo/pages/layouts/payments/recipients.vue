@@ -9,6 +9,7 @@ definePageMeta({
     src: '/img/screens/layouts-payments-recipients.png',
     srcDark: '/img/screens/layouts-payments-recipients-dark.png',
     order: 80,
+    new: true,
   },
 })
 
