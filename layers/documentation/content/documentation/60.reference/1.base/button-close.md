@@ -15,7 +15,7 @@ title: Radius
 demo: '#examples/button-close/base.vue'
 ---
 Close buttons are a common part of any application. Close buttons can have different radius factors using the `rounded` prop.
-:::doc-message{color="muted" icon="ion:shapes-outline"}
+:::doc-message{color="muted-contrast" icon="ion:shapes-outline"}
 Default props of all :doc-linker{to="BaseButtonClose"} can be set in your `.app/app.config.ts`.
 :::
 ::

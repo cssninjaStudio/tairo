@@ -16,7 +16,7 @@ title: Radius
 demo: '#examples/autocomplete/shapes.vue'
 ---
 Autocompletes can have different radius factors. The default radius is `sm` but you can also use `md`, `lg` or `full`.
-:::doc-message{color="muted" icon="ion:shapes-outline"}
+:::doc-message{color="muted-contrast" icon="ion:shapes-outline"}
 Default props of all :doc-linker{to="BaseAutocomplete"} can be set in your `.app/app.config.ts`.
 :::
 ::

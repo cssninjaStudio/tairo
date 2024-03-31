@@ -14,7 +14,7 @@ title: Radius
 demo: '#examples/action/shapes.vue'
 ---
 Buttons are an essential part of any application. Actions can have different shapes using the `rounded` prop.
-:::doc-message{color="muted" icon="ion:shapes-outline"}
+:::doc-message{color="muted-contrast" icon="ion:shapes-outline"}
 Default shape of all :doc-linker{to="BaseButtonAction"} can be set in your `.app/app.config.ts`.
 :::
 ::

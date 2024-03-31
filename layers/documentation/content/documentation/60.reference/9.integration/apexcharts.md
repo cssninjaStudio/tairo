@@ -16,7 +16,7 @@ demo: '#examples/apexcharts/base.vue'
 ---
 Tairo ships with the Apexcharts data visualisation library customized for Vue and Nuxt. Use the component to render charts and graphs.
 
-:::doc-message{color="muted" icon="mdi:vuejs"}
+:::doc-message{color="muted-contrast" icon="mdi:vuejs"}
 This component uses the [vue3-apexcharts](https://github.com/apexcharts/vue3-apexcharts) library.
 :::
 ::

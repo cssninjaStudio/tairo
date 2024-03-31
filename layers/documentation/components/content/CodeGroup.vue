@@ -22,7 +22,7 @@ export default defineComponent({
       const slots = context.slots?.default?.() || []
       const tabs = slots?.map?.((slot, index) => {
         return {
-          filename: slot?.props?.filename || `${index}`,
+          filename: slot?.props?.filename,
           language: slot?.props?.language,
           code: slot?.props?.code,
           active: slot?.props?.active || false,
@@ -85,7 +85,7 @@ export default defineComponent({
                             {
                               type: 'button',
                               class: [
-                                'absolute bottom-8 start-0 end-0 mx-auto w-32 z-[3] py-1 px-4 flex items-center justify-center text-sm text-muted-500 hover:text-muted-800 dark:text-muted-400 dark:hover:text-muted-100 rounded-full border border-muted-300 dark:border-muted-700 hover:border-muted-200 dark:hover:border-muted-600 bg-white dark:bg-muted-800 transition-colors duration-300',
+                                'absolute bottom-8 start-0 end-0 mx-auto w-36 z-[3] py-1 px-4 flex items-center justify-center text-sm text-muted-500 hover:text-muted-800 dark:text-muted-400 dark:hover:text-muted-100 rounded-full border border-muted-300 dark:border-muted-700 hover:border-muted-200 dark:hover:border-muted-600 bg-white dark:bg-muted-800 transition-colors duration-300',
                               ],
                               onClick: () => {
                                 expanded.value = !expanded.value
@@ -106,7 +106,7 @@ export default defineComponent({
                           class: [
                             ' text-sm',
                             previewSlot ? 'px-4' : 'px-3',
-                            props.expandable ? 'pt-4 pb-16' : '',
+                            props.expandable ? 'pb-16' : '',
                           ],
                         },
                         // Map slots to content children

@@ -14,7 +14,7 @@ title: Radius
 demo: '#examples/input/shapes.vue'
 ---
 Inputs can be customized to show different shapes. The default shape is `rounded`. You can change the shape of all inputs by setting the `shape` property.
-:::doc-message{color="muted" icon="ion:shapes-outline"}
+:::doc-message{color="muted-contrast" icon="ion:shapes-outline"}
 Default shape of all :doc-linker{to="BaseInput"} can be set in your `.app/app.config.ts`.
 :::
 ::

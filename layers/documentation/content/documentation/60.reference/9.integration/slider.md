@@ -10,7 +10,7 @@ icon:
 Use `@vueform/slider` to render fancy sliders in you forms with or without tooltips, and the ability to merge them.
 
 
-:::doc-message{color="muted" icon="mdi:vuejs"}
+:::doc-message{color="muted-contrast" icon="mdi:vuejs"}
 This component is provided by the [@vueform/slider](https://github.com/vueform/slider) library.
 :::
 ::

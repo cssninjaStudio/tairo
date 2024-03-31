@@ -20,7 +20,7 @@ const activeTab = computed(() => activeTabIndex.value !== undefined ? props.tabs
 </script>
 
 <template>
-  <div class="border-muted-300 dark:border-muted-800 flex gap-2 border-b bg-white" :class="hasPreview ? 'dark:bg-muted-950' : 'dark:bg-muted-800'">
+  <div class="border-muted-300 dark:border-muted-800 dark:bg-muted-950 flex gap-2 border-b bg-white">
     <button
       v-for="(tab, index) in props.tabs"
       :key="index"
@@ -36,11 +36,10 @@ const activeTab = computed(() => activeTabIndex.value !== undefined ? props.tabs
       @keydown.enter.prevent="() => (activeTabIndex = index)"
     >
       <span
-        v-if="tab.filename"
         class="m-1 block rounded-md px-3 py-1"
         :class="[tabs.length > 1 ? 'group-hover/button:bg-muted-100 dark:group-hover/button:bg-muted-900' : '']"
       >
-        {{ tab.filename?.replaceAll('⦋', '[')?.replaceAll('⦌', ']') }}
+        {{ tab.filename?.replaceAll('(', '[')?.replaceAll(')', ']') || '&nbsp;' }}
       </span>
     </button>
 

@@ -102,7 +102,7 @@ title: Masks
 demo: '#examples/iconbox/masks.vue'
 ---
 Icon boxes can be displayed using SVG masks, bringing fancier shapes to your UI. Keep in mind that the `mask` prop is only available for the `none` radius.
-:::doc-message{type="warning" icon="ph:warning-duotone"}
+:::doc-message{color="warning" icon="ph:warning-duotone"}
 Using svg masks will hide any overflow from your Icon box, making it unable to properly display `tooltips` or other attached content.
 :::
 ::

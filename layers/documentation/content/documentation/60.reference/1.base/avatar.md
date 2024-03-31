@@ -14,7 +14,7 @@ title: Rounded:full
 demo: '#examples/avatar/circle-size.vue'
 ---
 Avatars can have different radius factors. The following example shows avatars using the `rounded` prop. Avatars can also be displayed as groups, using the :doc-linker{to="BaseAvatarGroup"} component.
-:::doc-message{color="muted" icon="ion:shapes-outline"}
+:::doc-message{color="muted-contrast" icon="ion:shapes-outline"}
 Default shape of all :doc-linker{to="BaseAvatar"} can be set in your `.app/app.config.ts`.
 :::
 ::
@@ -138,7 +138,7 @@ title: Avatar:mask
 demo: '#examples/avatar/masks.vue'
 ---
 Avatars can be displayed using SVG masks, bringing fancier shapes to your UI. Keep in mind that the `mask` prop is only available for the `none` radius factor.
-:::doc-message{type="warning" icon="ph:warning-duotone"}
+:::doc-message{color="warning" icon="ph:warning-duotone"}
 Using svg masks will hide any overflow from your avatar, making it unable to properly display `badges`, `indicators` or `tooltips`.
 :::
 ::

@@ -14,7 +14,7 @@ title: Radius
 demo: '#examples/card/shapes.vue'
 ---
 Cards are an essential part of any application. Cards can have different radius factors using the `rounded` prop.
-:::doc-message{color="muted" icon="ion:shapes-outline"}
+:::doc-message{color="muted-contrast" icon="ion:shapes-outline"}
 Default props of all :doc-linker{to="BaseCard"} can be set in your `.app/app.config.ts`.
 :::
 ::
@@ -26,7 +26,7 @@ title: Contrast
 demo: '#examples/card/contrast.vue'
 ---
 Cards are an essential part of any application. Cards can have different contrasts using the `color` prop. Contrast types impact both light and dark mode colors.
-:::doc-message{color="muted" icon="ion:shapes-outline"}
+:::doc-message{color="muted-contrast" icon="ion:shapes-outline"}
 Default color of all :doc-linker{to="BaseCard"} can be set in your `.app/app.config.ts`.
 :::
 ::
@@ -37,7 +37,7 @@ title: Card colors
 demo: '#examples/card/colors.vue'
 ---
 Cards are an essential part of any application. Cards can have different colors using the `color` prop. Color types impact both light and dark mode colors.
-:::doc-message{color="muted" icon="ion:shapes-outline"}
+:::doc-message{color="muted-contrast" icon="ion:shapes-outline"}
 Default color of all :doc-linker{to="BaseCard"} can be set in your `.app/app.config.ts`.
 :::
 ::

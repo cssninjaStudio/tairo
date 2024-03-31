@@ -14,7 +14,7 @@ title: Radius
 demo: '#examples/input-number/shapes.vue'
 ---
 Inputs can be customized to show different radius factors. The default shape is `rounded:sm`. You can change the shape of all inputs by setting the `rounded` property.
-:::doc-message{color="muted" icon="ion:shapes-outline"}
+:::doc-message{color="muted-contrast" icon="ion:shapes-outline"}
 Default props of all :doc-linker{to="BaseInputNumber"} can be set in your `.app/app.config.ts`.
 :::
 ::
