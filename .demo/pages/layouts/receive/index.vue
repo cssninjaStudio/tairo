@@ -9,6 +9,7 @@ definePageMeta({
     src: '/img/screens/layouts-receive.png',
     srcDark: '/img/screens/layouts-receive-dark.png',
     order: 15,
+    new: true,
   },
 })
 useHead({

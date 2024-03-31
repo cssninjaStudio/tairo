@@ -8,6 +8,7 @@ definePageMeta({
     src: '/img/screens/dashboards-overview.png',
     srcDark: '/img/screens/dashboards-overview-dark.png',
     order: 5,
+    new: true,
   },
 })
 </script>

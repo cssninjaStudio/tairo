@@ -12,6 +12,7 @@ definePageMeta({
     src: '/img/screens/layouts-company-edit.png',
     srcDark: '/img/screens/layouts-company-edit-dark.png',
     order: 33,
+    new: true,
   },
 })
 
@@ -108,7 +109,7 @@ const zodSchema = z
 type FormInput = z.infer<typeof zodSchema>
 
 const validationSchema = toTypedSchema(zodSchema)
-const initialValues = computed<FormInput>(() => ({
+const initialValues = {
   avatar: null,
   profile: {
     companyName: '',
@@ -134,7 +135,7 @@ const initialValues = computed<FormInput>(() => ({
       country: 'United States',
     },
   },
-}))
+} satisfies FormInput
 
 const {
   handleSubmit,

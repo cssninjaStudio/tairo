@@ -8,6 +8,7 @@ definePageMeta({
     src: '/img/screens/layouts-integrations.png',
     srcDark: '/img/screens/layouts-integrations-dark.png',
     order: 37,
+    new: true,
   },
 })
 </script>

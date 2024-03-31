@@ -1,16 +1,4 @@
 <script setup lang="ts">
-definePageMeta({
-  title: 'Payments',
-  preview: {
-    title: 'Payments',
-    description: 'For generic things',
-    categories: ['layouts', 'lists'],
-    src: '/img/screens/layouts-payments.png',
-    srcDark: '/img/screens/layouts-payments-dark.png',
-    order: 37,
-  },
-})
-
 const route = useRoute()
 
 const isOutgoing = computed(() => {

@@ -13,6 +13,7 @@ definePageMeta({
     src: '/img/screens/layouts-card-new.png',
     srcDark: '/img/screens/layouts-card-new-dark.png',
     order: 14,
+    new: true,
   },
 })
 
@@ -116,7 +117,7 @@ const zodSchema = z
 type FormInput = z.infer<typeof zodSchema>
 
 const validationSchema = toTypedSchema(zodSchema)
-const initialValues = computed<FormInput>(() => ({
+const initialValues = {
   card: {
     owner: 'Maya Rosselini',
     account: {
@@ -131,7 +132,7 @@ const initialValues = computed<FormInput>(() => ({
     dailySpend: null,
     dailyWithdraw: null,
   },
-}))
+} satisfies FormInput
 
 const {
   handleSubmit,

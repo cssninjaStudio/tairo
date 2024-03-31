@@ -8,6 +8,7 @@ definePageMeta({
     src: '/img/screens/dashboards-banking-5.png',
     srcDark: '/img/screens/dashboards-banking-5-dark.png',
     order: 10,
+    new: true,
   },
 })
 </script>

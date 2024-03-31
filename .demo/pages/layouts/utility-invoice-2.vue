@@ -8,6 +8,7 @@ definePageMeta({
     src: '/img/screens/layouts-utility-invoice-2.png',
     srcDark: '/img/screens/layouts-utility-invoice-2-dark.png',
     order: 8,
+    new: true,
   },
 })
 

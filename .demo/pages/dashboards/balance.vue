@@ -13,6 +13,7 @@ definePageMeta({
     src: '/img/screens/dashboards-balance.png',
     srcDark: '/img/screens/dashboards-balance-dark.png',
     order: 5,
+    new: true,
   },
 })
 

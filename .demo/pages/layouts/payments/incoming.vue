@@ -8,6 +8,7 @@ definePageMeta({
     src: '/img/screens/layouts-payments-incoming.png',
     srcDark: '/img/screens/layouts-payments-incoming-dark.png',
     order: 80,
+    new: true,
   },
 })
 const route = useRoute()
