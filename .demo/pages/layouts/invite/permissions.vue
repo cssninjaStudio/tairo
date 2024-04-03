@@ -199,9 +199,9 @@ onBeforeMount(checkPreviousSteps)
             </div>
           </div>
         </BaseRadioHeadless>
-        <span v-if="errors.fields.role" class="nui-input-wrapper">
-          <span class="nui-input-error-text !text-xs">{{ errors.fields.role }}</span>
-        </span>
+        <BaseInputHelpText v-if="errors.fields.role" color="danger">
+          {{ errors.fields.role }}
+        </BaseInputHelpText>
       </div>
 
       <div class="mt-4 flex gap-4">

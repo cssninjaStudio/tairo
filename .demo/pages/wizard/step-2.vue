@@ -90,9 +90,9 @@ watch(inputFile, (value) => {
             </div>
           </div>
         </BaseInputFileHeadless>
-        <span v-if="errors.fields.avatar" class="nui-input-wrapper">
-          <span class="nui-input-error-text">{{ errors.fields.avatar }}</span>
-        </span>
+        <BaseInputHelpText v-if="errors.fields.avatar" color="danger">
+          {{ errors.fields.avatar }}
+        </BaseInputHelpText>
       </div>
 
       <div class="my-4 text-center font-sans">

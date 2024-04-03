@@ -212,9 +212,9 @@ function setAccount(account: any) {
             </BaseDropdownItem>
           </BaseDropdown>
 
-          <span v-if="errors.fields.account" class="nui-input-wrapper">
-            <span class="nui-input-error-text !text-xs">{{ errors.fields.account }}</span>
-          </span>
+          <BaseInputHelpText v-if="errors.fields.account" color="danger">
+            {{ errors.fields.account }}
+          </BaseInputHelpText>
         </div>
       </div>
     </div>
@@ -348,9 +348,9 @@ function setAccount(account: any) {
               </template>
             </BaseDropdownItem>
           </BaseDropdown>
-          <span v-if="errors.fields.account" class="nui-input-wrapper">
-            <span class="nui-input-error-text !text-xs">{{ errors.fields.account }}</span>
-          </span>
+          <BaseInputHelpText v-if="errors.fields.account" color="danger">
+            {{ errors.fields.account }}
+          </BaseInputHelpText>
         </div>
       </div>
     </div>
@@ -441,9 +441,9 @@ function setAccount(account: any) {
             </template>
           </BaseDropdownItem>
         </BaseDropdown>
-        <span v-if="errors.fields.account" class="nui-input-wrapper">
-          <span class="nui-input-error-text !text-xs">{{ errors.fields.account }}</span>
-        </span>
+        <BaseInputHelpText v-if="errors.fields.account" color="danger">
+          {{ errors.fields.account }}
+        </BaseInputHelpText>
 
         <!--Transfer details-->
         <div class="py-6">
