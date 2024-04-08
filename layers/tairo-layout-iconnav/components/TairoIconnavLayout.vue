@@ -6,7 +6,7 @@ const props = withDefaults(
     topnav?: boolean
     toolbar?: boolean
     circularMenu?: boolean
-    display:
+    display?:
       | 'condensed'
       | 'horizontal-scroll'
       | 'expanded-sm'

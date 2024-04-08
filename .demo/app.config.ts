@@ -469,7 +469,7 @@ export default defineAppConfig({
         links: [
           {
             name: 'Demo pages',
-            to: '/demo',
+            to: '/demos',
           },
           {
             name: 'Documentation',
@@ -648,9 +648,9 @@ export default defineAppConfig({
           {
             component: 'DemoThemeToggle',
           },
-          {
-            component: 'DemoToolbarDropdown',
-          },
+          // {
+          //   component: 'DemoToolbarDropdown',
+          // },
           {
             component: 'DemoToolbarNotifications',
           },
