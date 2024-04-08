@@ -6,7 +6,7 @@
         contrast="muted"
         size="sm"
         rounded="md"
-        label="Rounded:md"
+        label="Rounded: md"
         placeholder="Ex: username"
       />
     </div>
@@ -17,7 +17,7 @@
         contrast="muted"
         size="md"
         rounded="md"
-        label="Rounded:md"
+        label="Rounded: md"
         placeholder="Ex: username"
       />
     </div>
@@ -28,7 +28,7 @@
         contrast="muted"
         size="lg"
         rounded="md"
-        label="Rounded:md"
+        label="Rounded: md"
         placeholder="Ex: username"
       />
     </div>

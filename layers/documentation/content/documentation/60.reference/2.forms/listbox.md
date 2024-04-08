@@ -65,7 +65,7 @@ The listbox can be shown in an error state using the `error` prop. You can also 
 title: Disabled
 demo: '#examples/listbox/disabled.vue'
 ---
-Listboxes can be shown in a disabled state using the `disabled` prop.
+Listbox can be shown in a disabled state using the `disabled` prop.
 ::
 
 
@@ -74,7 +74,7 @@ Listboxes can be shown in a disabled state using the `disabled` prop.
 title: Loading
 demo: '#examples/listbox/loading.vue'
 ---
-Listboxes can be shown in a loading state using the `loading` prop.
+Listbox can be shown in a loading state using the `loading` prop.
 ::
 
 
@@ -83,7 +83,7 @@ Listboxes can be shown in a loading state using the `loading` prop.
 title: Label:float
 demo: '#examples/listbox/float-label.vue'
 ---
-Listboxes can have a material design style floating label using the `labelFloat` prop.
+Listbox can have a material design style floating label using the `labelFloat` prop.
 ::
 
 ::doc-component-demo
@@ -115,7 +115,7 @@ Listbox items can have a media using the `media` prop of the `properties` object
 title: Multiple selection
 demo: '#examples/listbox/multiple.vue'
 ---
-Listboxes can be used to select multiple items using the `multiple` prop.
+Listbox can be used to select multiple items using the `multiple` prop.
 ::
 
 :doc-component-meta{name="BaseListbox"}

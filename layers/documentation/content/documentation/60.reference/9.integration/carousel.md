@@ -15,7 +15,7 @@ icon:
 title: User Carousel
 demo: '#examples/carousel/user.vue'
 ---
-Build gorgeous carousels with Tairo using the Vue3 Carousel library. Check out this team carousel example.
+Build gorgeous carousels with Tairo using the Vue Carousel library. Check out this team carousel example.
 
 :::doc-message{color="muted-contrast" icon="mdi:vuejs"}
 This component uses the [vue3-carousel](https://github.com/ismail9k/vue3-carousel) library.
@@ -31,7 +31,7 @@ This component uses the [vue3-carousel](https://github.com/ismail9k/vue3-carouse
 title: Icon Carousel
 demo: '#examples/carousel/icon.vue'
 ---
-Here's another example of a carousel built with Vue3 Carousel. This one is a simple icon carousel.
+Here's another example of a carousel built with Vue Carousel. This one is a simple icon carousel.
 
 :::doc-message{color="muted-contrast" icon="mdi:vuejs"}
 This component uses the [vue3-carousel](https://github.com/ismail9k/vue3-carousel) library.

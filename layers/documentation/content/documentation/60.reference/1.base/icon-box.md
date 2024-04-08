@@ -13,7 +13,7 @@ icon:
 title: Rounded:full
 demo: '#examples/iconbox/full-sizes.vue'
 ---
-Icon boxes can have different sizes and radius factors. Use the `rounded` prop to change the radiusp of the box. You can also use the `size` prop to change the size of the box.
+Icon boxes can have different sizes and radius factors. Use the `rounded` prop to change the radius of the box. You can also use the `size` prop to change the size of the box.
 ::
 
 ::doc-component-demo
@@ -21,7 +21,7 @@ Icon boxes can have different sizes and radius factors. Use the `rounded` prop t
 title: Rounded:lg
 demo: '#examples/iconbox/lg-sizes.vue'
 ---
-Icon boxes can have different sizes and radius factors. Use the `rounded` prop to change the radiusp of the box. You can also use the `size` prop to change the size of the box.
+Icon boxes can have different sizes and radius factors. Use the `rounded` prop to change the radius of the box. You can also use the `size` prop to change the size of the box.
 ::
 
 ::doc-component-demo
@@ -29,7 +29,7 @@ Icon boxes can have different sizes and radius factors. Use the `rounded` prop t
 title: Rounded:md
 demo: '#examples/iconbox/md-sizes.vue'
 ---
-Icon boxes can have different sizes and radius factors. Use the `rounded` prop to change the radiusp of the box. You can also use the `size` prop to change the size of the box.
+Icon boxes can have different sizes and radius factors. Use the `rounded` prop to change the radius of the box. You can also use the `size` prop to change the size of the box.
 ::
 
 ::doc-component-demo
@@ -37,7 +37,7 @@ Icon boxes can have different sizes and radius factors. Use the `rounded` prop t
 title: Rounded:sm
 demo: '#examples/iconbox/sm-sizes.vue'
 ---
-Icon boxes can have different sizes and radius factors. Use the `rounded` prop to change the radiusp of the box. You can also use the `size` prop to change the size of the box.
+Icon boxes can have different sizes and radius factors. Use the `rounded` prop to change the radius of the box. You can also use the `size` prop to change the size of the box.
 ::
 
 ::doc-component-demo
@@ -45,7 +45,7 @@ Icon boxes can have different sizes and radius factors. Use the `rounded` prop t
 title: Rounded:none
 demo: '#examples/iconbox/none-sizes.vue'
 ---
-Icon boxes can have different sizes and radius factors. Use the `rounded` prop to change the radiusp of the box. You can also use the `size` prop to change the size of the box.
+Icon boxes can have different sizes and radius factors. Use the `rounded` prop to change the radius of the box. You can also use the `size` prop to change the size of the box.
 ::
 
 ::doc-component-demo

@@ -57,7 +57,7 @@ Avatars can have different radius factors. The following example shows avatars u
 title: Avatar:circle:dot
 demo: '#examples/avatar/circle-dot.vue'
 ---
-Avatars can have status indicators. Indicators positionning vary depending on the shape of the avatar. Use the `dot` prop to display a status indicator.
+Avatars can have status indicators. Indicators positioning vary depending on the shape of the avatar. Use the `dot` prop to display a status indicator.
 ::
 
 ::doc-component-demo
@@ -65,7 +65,7 @@ Avatars can have status indicators. Indicators positionning vary depending on th
 title: Avatar:curved:dot
 demo: '#examples/avatar/square-dot.vue'
 ---
-Avatars can have status indicators. Indicators positionning vary depending on the shape of the avatar. Use the `dot` prop to display a status indicator.
+Avatars can have status indicators. Indicators positioning vary depending on the shape of the avatar. Use the `dot` prop to display a status indicator.
 ::
 
 ::doc-component-demo
@@ -121,7 +121,7 @@ Fake avatars withstand the same props as regular avatars. You can also use badge
 title: Fake:colors:circle
 demo: '#examples/avatar/circle-fake-colors.vue'
 ---
-Fake avatars background and text color can be customized using Tailwind CSS `bg-*` and `text-*` utilities. Alternatively, you can use the tairo `getRandomColor()` utility function to generate a random color.
+Fake avatars background and text color can be customized using Tailwind CSS `bg-*` and `text-*` utilities. Alternatively, you can use the Tairo `getRandomColor()` utility function to generate a random color.
 ::
 
 ::doc-component-demo

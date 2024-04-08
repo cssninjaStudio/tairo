@@ -5,7 +5,7 @@
         v-model="fields.first"
         size="sm"
         rounded="md"
-        label="Rounded:md"
+        label="Rounded: md"
         placeholder="Ex: username"
       />
     </div>
@@ -15,7 +15,7 @@
         v-model="fields.second"
         size="md"
         rounded="md"
-        label="Rounded:md"
+        label="Rounded: md"
         placeholder="Ex: username"
       />
     </div>
@@ -25,7 +25,7 @@
         v-model="fields.third"
         size="lg"
         rounded="md"
-        label="Rounded:md"
+        label="Rounded: md"
         placeholder="Ex: username"
       />
     </div>

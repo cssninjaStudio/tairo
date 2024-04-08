@@ -10,7 +10,7 @@ icon:
 
 ::doc-component-demo
 ---
-title: Rounded:none
+title: "Rounded: none"
 demo: '#examples/pagination/straight.vue'
 ---
 The pagination component can have different radius factors. Use the `rounded` prop to change the radius of the pagination.

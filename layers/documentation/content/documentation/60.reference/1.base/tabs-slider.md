@@ -13,7 +13,7 @@ icon:
 title: Rounded:none
 demo: '#examples/tabs-slider/rounded-x2.vue'
 ---
-Slider tabs can have diffrerent radius factors. Use the `rounded` prop to change the radius of the tab items.
+Slider tabs can have different radius factors. Use the `rounded` prop to change the radius of the tab items.
 ::
 
 ::doc-component-demo

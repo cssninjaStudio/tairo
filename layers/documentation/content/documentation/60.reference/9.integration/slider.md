@@ -17,7 +17,7 @@ This component is provided by the [@vueform/slider](https://github.com/vueform/s
 
 ::doc-component-demo
 ---
-title: Rounded:none
+title: "Rounded: none"
 demo: '#examples/slider/straight.vue'
 ---
 Check out this example of a straight slider tooltip.
@@ -27,7 +27,7 @@ Check out this example of a straight slider tooltip.
 
 ::doc-component-demo
 ---
-title: Rounded:sm
+title: "Rounded: sm"
 demo: '#examples/slider/rounded.vue'
 ---
 Check out this example of a rounded slider tooltip.
@@ -36,7 +36,7 @@ Check out this example of a rounded slider tooltip.
 
 ::doc-component-demo
 ---
-title: Rounded:md
+title: "Rounded: md"
 demo: '#examples/slider/smooth.vue'
 ---
 Check out this example of a smooth slider tooltip.
@@ -45,7 +45,7 @@ Check out this example of a smooth slider tooltip.
 
 ::doc-component-demo
 ---
-title: Rounded:lg
+title: "Rounded: lg"
 demo: '#examples/slider/curved.vue'
 ---
 Check out this example of a curved slider tooltip.
@@ -54,7 +54,7 @@ Check out this example of a curved slider tooltip.
 
 ::doc-component-demo
 ---
-title: Rounded:full
+title: "Rounded: full"
 demo: '#examples/slider/circle.vue'
 ---
 Check out this example of a circle slider tooltip.

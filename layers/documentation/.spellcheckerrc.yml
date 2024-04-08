@@ -1,0 +1,16 @@
+files:
+  - 'content/**/*.md'
+dictionaries:
+  - dictionary.txt
+plugins:
+  - spell
+  - indefinite-article
+  - repeated-words
+  - syntax-mentions
+  - syntax-urls
+  - frontmatter
+frontmatter-keys:
+  - title
+  - description
+  - alt
+  - label

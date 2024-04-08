@@ -13,7 +13,7 @@ icon:
 title: Animated checkmark
 demo: '#examples/tairo/check-animated.vue'
 ---
-TairoCheckAnimated is a simple animated icon that can be used to show a checkmark animation when a user accomplishes an action. It can be used in a button or in a form to show that the action was successful.
+`TairoCheckAnimated` is a simple animated icon that can be used to show a checkmark animation when a user accomplishes an action. It can be used in a button or in a form to show that the action was successful.
 ::
 
 :doc-component-meta{name="TairoCheckAnimated"}

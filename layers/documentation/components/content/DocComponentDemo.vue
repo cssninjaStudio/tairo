@@ -96,7 +96,7 @@ async function loadDemo() {
     >
       <BaseHeading
         v-if="props.title"
-        as="h2"
+        as="h3"
         size="xl"
         anchor
         weight="medium"
