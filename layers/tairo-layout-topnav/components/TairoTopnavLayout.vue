@@ -1,20 +1,18 @@
 <script setup lang="ts">
 import { useTopnav } from '../composables/topnav'
 
-export type LayoutDisplay =
-  | 'condensed'
-  | 'horizontal-scroll'
-  | 'expanded-sm'
-  | 'expanded-md'
-  | 'expanded-lg'
-  | 'expanded-xl'
-
 const props = withDefaults(
   defineProps<{
     topnav?: boolean
     toolbar?: boolean
     circularMenu?: boolean
-    display?: LayoutDisplay
+    display?:
+      | 'condensed'
+      | 'horizontal-scroll'
+      | 'expanded-sm'
+      | 'expanded-md'
+      | 'expanded-lg'
+      | 'expanded-xl'
   }>(),
   {
     topnav: true,

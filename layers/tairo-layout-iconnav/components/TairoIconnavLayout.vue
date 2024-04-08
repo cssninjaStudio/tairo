@@ -1,20 +1,18 @@
 <script setup lang="ts">
 import { useIconnav } from '../composables/iconnav'
 
-export type LayoutDisplay =
-  | 'condensed'
-  | 'horizontal-scroll'
-  | 'expanded-sm'
-  | 'expanded-md'
-  | 'expanded-lg'
-  | 'expanded-xl'
-
 const props = withDefaults(
   defineProps<{
     topnav?: boolean
     toolbar?: boolean
     circularMenu?: boolean
-    display: LayoutDisplay
+    display:
+      | 'condensed'
+      | 'horizontal-scroll'
+      | 'expanded-sm'
+      | 'expanded-md'
+      | 'expanded-lg'
+      | 'expanded-xl'
   }>(),
   {
     topnav: true,
@@ -30,7 +28,7 @@ const config = useAppConfig().tairo.iconnav
 const { selectedMenuItem } = useIconnav()
 
 const iconnavEnabled = computed(() => {
-  return config?.navigation?.enabled !== false && props.iconnav !== false
+  return config?.navigation?.enabled !== false
 })
 const toolbarEnabled = computed(() => {
   return (

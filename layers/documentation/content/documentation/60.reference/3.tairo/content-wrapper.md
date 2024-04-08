@@ -12,9 +12,16 @@ icon:
 ::doc-component-demo
 ---
 title: Content wrapper
-demo: '#examples/tairo/wrapper.vue'
 ---
 The content wrapper wraps the page content. It provides slots and allows you to control the horizontal flow of the page.
+
+:::doc-image
+---
+src: /img/apps/tairo-layout.png
+srcDark: /img/apps/tairo-layout-dark.png
+---
+:::
+
 ::
 
 :doc-component-meta{name="TairoContentWrapper"}
@@ -22,9 +29,17 @@ The content wrapper wraps the page content. It provides slots and allows you to 
 ::doc-component-demo
 ---
 title: Tabbed wrapper
-demo: '#examples/tairo/wrapper-tabbed.vue'
 ---
 The tabbed wrapper wraps the page content. It provides slots and allows you to nest a second view inside your page.
+
+
+:::doc-image
+---
+src: /img/apps/tairo-layout-tabbed.png
+srcDark: /img/apps/tairo-layout-tabbed-dark.png
+---
+:::
+
 ::
 
 :doc-component-meta{name="TairoContentWrapperTabbed"}

@@ -59,6 +59,13 @@ const [{ data, pending }, { data: tree }] = await Promise.all([
   ),
 ])
 
+if (!data.value) {
+  await navigateTo('/documentation')
+}
+else if (data.value.redirect) {
+  await navigateTo(data.value?.redirect)
+}
+
 watchEffect(() => {
   const title = data.value?.title
   if (pending.value) return
@@ -137,7 +144,7 @@ const metaKey = useMetaKey()
 
     <div class="flex">
       <div class="w-full lg:w-3/4">
-        <ContentRenderer :value="data as any">
+        <ContentRenderer :value="(data as any)">
           <template #empty>
             <DocComponentDemo>
               <div>
@@ -159,7 +166,13 @@ const metaKey = useMetaKey()
         v-if="!pending && data && data.toc !== false"
         class="relative hidden lg:me-6 lg:block lg:w-1/4 xl:me-0"
       >
-        <TairoToc :key="`toc-${data._path}`" />
+        <TairoToc :key="`toc-${data._path}`" class="fixed pb-20 pe-1 ps-20 pt-2">
+          <template #nav-end>
+            <div
+              class="dark:bg-muted-900 bg-muted-100 pointer-events-none fixed bottom-0 z-10 h-20 w-[212px] blur-xl"
+            />
+          </template>
+        </TairoToc>
       </div>
     </div>
   </div>

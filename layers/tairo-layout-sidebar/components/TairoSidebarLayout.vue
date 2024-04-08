@@ -7,7 +7,6 @@ const props = withDefaults(
     subsidebar?: boolean
     toolbar?: boolean
     circularMenu?: boolean
-    condensed?: boolean
     horizontalScroll?: boolean
   }>(),
   {
@@ -21,11 +20,6 @@ const props = withDefaults(
 const app = useAppConfig()
 const { setup, currentName, isOpen, toggle } = useSidebar()
 setup()
-
-onUnmounted(() => {
-  currentName.value = ''
-  isOpen.value = undefined
-})
 
 const sidebarEnabled = computed(() => {
   return (
@@ -45,10 +39,6 @@ const circularMenuEnabled = computed(() => {
 })
 
 const wrapperClass = computed(() => {
-  if (props.condensed) {
-    return 'bg-muted-100 dark:bg-muted-900 relative min-h-screen w-full overflow-x-hidden'
-  }
-
   if (!sidebarEnabled.value) {
     return 'bg-muted-100 dark:bg-muted-900 relative min-h-screen w-full overflow-x-hidden px-4 transition-all duration-300 xl:px-10'
   }
@@ -113,10 +103,8 @@ const wrapperClass = computed(() => {
     <div :class="wrapperClass">
       <div
         :class="[
-          props.condensed && !props.horizontalScroll && 'w-full',
-          !props.condensed && props.horizontalScroll && 'mx-auto w-full',
-          !props.condensed &&
-            !props.horizontalScroll &&
+          props.horizontalScroll && 'mx-auto w-full',
+          !props.horizontalScroll &&
             'mx-auto w-full max-w-7xl',
         ]"
       >

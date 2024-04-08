@@ -56,7 +56,11 @@ await loadDemo()
 watch(info, loadDemo)
 
 async function loadDemo() {
-  if (!info.value.folder || !info.value.file) return
+  if (!info.value.folder || !info.value.file) {
+    exampleComponent.value = null
+    exampleSource.value = ''
+    return
+  }
   demoPending.value = true
 
   // dynamically import the example component and source
@@ -73,6 +77,10 @@ async function loadDemo() {
     ])
     exampleComponent.value = markRaw(compo)
     exampleSource.value = source
+  }
+  catch {
+    exampleComponent.value = null
+    exampleSource.value = ''
   }
   finally {
     demoPending.value = false
@@ -140,7 +148,7 @@ async function loadDemo() {
       >
         <div v-if="'default' in $slots" :class="[hasDemoContent && 'mb-10']">
           <div
-            class="prose prose-primary prose-muted dark:prose-invert prose-th:p-4 prose-td:p-4 prose-table:bg-white dark:prose-table:bg-muted-800 prose-table:border prose-table:border-muted-200 dark:prose-table:border-muted-700 prose-sm prose-p:text-muted-500 dark:prose-p:text-muted-400 prose-a:decoration-from-font prose-a:underline-offset-1"
+            class="prose prose-primary prose-muted dark:prose-invert prose-th:p-4 prose-td:p-4 prose-table:bg-white dark:prose-table:bg-muted-800 prose-table:border prose-table:border-muted-200 prose-tr:border-muted-200 prose-thead:border-muted-200 dark:prose-tr:border-muted-700 dark:prose-thead:border-muted-700 dark:prose-table:border-muted-700 prose-sm prose-p:text-muted-500 dark:prose-p:text-muted-400 prose-a:decoration-from-font prose-a:underline-offset-1"
           >
             <ContentSlot :use="$slots.default" :unwrap="false" />
           </div>
@@ -162,13 +170,17 @@ async function loadDemo() {
                 class="text-muted-400 size-4 transition-transform duration-200 group-open:rotate-180"
               />
             </summary>
-            <AddonMarkdownRemark
-              :source="exampleMarkdown"
-              fullwidth
-              :lines="md ? true : false"
-              class="doc-markdown"
-              :mode="forceDark ? 'dark' : undefined"
-            />
+            <CodeGroup>
+              <code filename="<app>/components/MyComponent.vue" language="vue">
+                <AddonMarkdownRemark
+                  :source="exampleMarkdown"
+                  fullwidth
+                  :lines="md ? true : false"
+                  class="doc-markdown"
+                  :mode="forceDark ? 'dark' : undefined"
+                />
+              </code>
+            </CodeGroup>
           </details>
         </div>
       </div>

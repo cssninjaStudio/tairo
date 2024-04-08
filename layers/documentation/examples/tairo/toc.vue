@@ -1,17 +1,26 @@
 <template>
-  <div class="w-full">
-    <NuxtLink to="#" class="hover:[&>img]:!border-primary-500">
-      <img
-        class="border-muted-200 hover:shadow-muted-300/30 block w-full rounded-lg border transition-all duration-300 hover:shadow-xl dark:hidden"
-        src="/img/apps/tairo-toc.png"
-        alt="Tairo toc"
-      >
+  <div class="relative flex">
+    <div class="flex grow flex-col gap-1">
+      <TairoTocAnchor label="Example Anchor level 1" level="1" />
 
-      <img
-        class="border-muted-700 hover:shadow-muted-800/30 hidden w-full rounded-lg border transition-all duration-300 hover:shadow-xl dark:block"
-        src="/img/apps/tairo-toc-dark.png"
-        alt="Tairo toc dark"
+      <TairoTocAnchor label="Example Anchor level 2" level="2" />
+
+      <TairoTocAnchor label="Example Anchor level 3" level="3" />
+
+      <BaseHeading
+        as="h4"
+        size="sm"
+        weight="medium"
       >
-    </NuxtLink>
+        <TairoTocAnchor
+          label="Example Anchor level 4"
+          level="4"
+          prefix="•"
+          prefix-classes="opacity-30 group-hover/toc:opacity-100 group-focus/toc:opacity-100 group-visible/toc:opacity-100 text-primary-500 absolute -start-3 -top-0.5"
+        />
+      </BaseHeading>
+    </div>
+
+    <TairoToc />
   </div>
 </template>

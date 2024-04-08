@@ -662,7 +662,7 @@ const mergedTree = [
     >
       <div>
         <div class="border-muted-200 dark:border-muted-700 border-b px-8 py-6">
-          <span>Your project ...</span>
+          <span>All your layers ...</span>
         </div>
         <div class="px-8 py-6">
           <BaseTreeSelect
@@ -720,7 +720,7 @@ const mergedTree = [
       </div>
       <div>
         <div class="border-muted-200 dark:border-muted-700 border-b px-8 py-6">
-          <span>... is merged into a unique app!</span>
+          <span>... are merged into a unique app!</span>
         </div>
         <div class="px-8 py-6">
           <BaseTreeSelect

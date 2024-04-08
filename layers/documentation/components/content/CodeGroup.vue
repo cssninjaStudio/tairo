@@ -10,6 +10,7 @@ export default defineComponent({
   },
   setup(props, context) {
     const expanded = ref(false)
+    const wrapperEl = ref<HTMLElement | null>(null)
     const activeTabIndex = ref(0)
     provide('code-group-context', true)
 
@@ -34,6 +35,7 @@ export default defineComponent({
         'div',
         {
           class: 'py-6 nui-code-group',
+          ref: wrapperEl,
         },
         [
           h(
@@ -89,6 +91,13 @@ export default defineComponent({
                               ],
                               onClick: () => {
                                 expanded.value = !expanded.value
+
+                                if (!expanded.value) {
+                                  wrapperEl.value?.scrollIntoView({
+                                    behavior: 'instant',
+                                    block: 'start',
+                                  })
+                                }
                               },
                             },
                             [

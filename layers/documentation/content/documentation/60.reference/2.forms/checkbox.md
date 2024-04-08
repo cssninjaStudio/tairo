@@ -16,7 +16,7 @@ demo: '#examples/checkbox/straight.vue'
 ---
 The checkbox component can have different radius factors. Here is an example of a `rounded:none` checkbox.
 :::doc-message{color="muted-contrast" icon="ion:shapes-outline"}
-Default props of all :doc-linker{to="BaseCheckbox"} can be set in your `.app/app.config.ts`.
+Default props of all :doc-linker{to="BaseCheckbox"} can be set in your `<app>/app.config.ts`.
 :::
 ::
 

@@ -10,13 +10,13 @@
   },
   "dependencies": {
     "@cssninja/nuxt-toaster": "^0.3.12",
-    "@shuriken-ui/nuxt": "3.1.0",
+    "@shuriken-ui/nuxt": "3.1.1",
     "klona": "^2.0.6",
-    "magic-string": "0.30.8",
-    "nuxt": "^3.11.1"
+    "magic-string": "0.30.9",
+    "nuxt": "^3.11.2"
   },
   "devDependencies": {
-    "@nuxt/kit": "^3.11.1",
+    "@nuxt/kit": "^3.11.2",
     "@vueuse/core": "^10.9.0",
     "defu": "^6.1.4",
     "vue": "^3.4.21",

@@ -1,10 +1,15 @@
 <script setup lang="ts">
 import { useIconnav } from '../composables/iconnav'
-import type { LayoutDisplay } from './TairoIconnavLayout.vue'
 
 const props = withDefaults(
   defineProps<{
-    display: LayoutDisplay
+    display:
+      | 'condensed'
+      | 'horizontal-scroll'
+      | 'expanded-sm'
+      | 'expanded-md'
+      | 'expanded-lg'
+      | 'expanded-xl'
     position: 'fixed' | 'absolute'
   }>(),
   {
@@ -66,7 +71,7 @@ const router = useRouter()
               @click="
                 () => {
                   selectedMenuItem = item,
-                  router.push(item.children[0].to)
+                  router.push(item.children?.[0]?.to)
                 }
               "
             >

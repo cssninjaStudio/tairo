@@ -9,8 +9,8 @@
     "clean": "rimraf .nuxt .output node_modules"
   },
   "devDependencies": {
-    "@nuxt/image": "1.4.0",
-    "nuxt": "3.11.1",
+    "@nuxt/image": "1.5.0",
+    "nuxt": "3.11.2",
     "sharp": "0.33.3"
   }
 }

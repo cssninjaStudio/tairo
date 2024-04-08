@@ -175,6 +175,7 @@ export default defineNuxtConfig({
         'zod',
         // calendar app
         'date-fns',
+        'date-fns/locale',
         // profile edit page
         'imask',
       ],

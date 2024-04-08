@@ -22,7 +22,7 @@ const props = defineProps<{
     class="group relative block"
   >
     <div>
-      <NuxtImg
+      <img
         class="border-muted-200 block w-full rounded-lg border motion-safe:transition-opacity motion-safe:duration-200 motion-safe:group-hover:opacity-75"
         :class="props.preview?.srcDark ? 'dark:hidden' : ''"
         :src="props.preview?.src"
@@ -34,7 +34,7 @@ const props = defineProps<{
         loading="lazy"
         decoding="async"
       />
-      <NuxtImg
+      <img
         v-if="props.preview?.srcDark"
         class="border-muted-800 hidden w-full rounded-lg border motion-safe:transition-opacity motion-safe:duration-200 motion-safe:group-hover:opacity-75 dark:block"
         :src="props.preview?.srcDark"

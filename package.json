@@ -32,7 +32,7 @@
     "@stylistic/eslint-plugin": "^1.5.4",
     "@typescript-eslint/eslint-plugin": "7.5.0",
     "eslint": "8.57.0",
-    "eslint-plugin-sonarjs": "^0.25.0",
+    "eslint-plugin-sonarjs": "^0.25.1",
     "eslint-plugin-tailwindcss": "3.15.1",
     "eslint-plugin-vue": "9.24.0",
     "eslint-plugin-vuejs-accessibility": "2.2.1",
@@ -41,8 +41,8 @@
     "rimraf": "5.0.5",
     "std-env": "3.7.0",
     "tailwindcss": "3.4.3",
-    "typescript": "5.4.3",
-    "vue-tsc": "2.0.7"
+    "typescript": "5.4.4",
+    "vue-tsc": "2.0.10"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
