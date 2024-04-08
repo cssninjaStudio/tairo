@@ -1,7 +1,8 @@
 <script setup lang="ts">
 const route = useRoute()
+const router = useRouter()
 const activeAnchor = ref('')
-const toc = ref<any[]>([])
+const toc = useState<any[]>('tairo-toc', () => [])
 
 const ids = computed(() => toc.value.map(({ id }: any) => `#${id}`))
 
@@ -42,7 +43,7 @@ if (import.meta.client) {
 }
 
 function getTocItemClass(item: any) {
-  const classes = []
+  const classes = ['pe-3']
 
   if (item.level > 2) {
     classes.push('ms-3 text-xs')
@@ -53,12 +54,12 @@ function getTocItemClass(item: any) {
   }
   else if (activeIds.value.includes(item.id)) {
     classes.push(
-      'border-primary-400 dark:border-primary-600 text-muted-500 dark:text-muted-400 hover:text-muted-400',
+      'border-primary-400 dark:border-primary-600 text-muted-500 dark:text-muted-400 dark:hover:text-muted-300 hover:text-muted-400',
     )
   }
   else {
     classes.push(
-      'border-muted-200 dark:border-muted-800 text-muted-500 dark:text-muted-400 hover:text-muted-400',
+      'border-muted-200 dark:border-muted-800 text-muted-500 dark:text-muted-400 dark:hover:text-muted-300 hover:text-muted-400',
     )
   }
 
@@ -78,10 +79,23 @@ async function loadTocItemFromDom() {
     }
   })
 }
+
+function focus(id: string) {
+  const el = document.getElementById(id)
+
+  if (el) {
+    el?.focus({ preventScroll: true })
+    el?.scrollIntoView({ behavior: 'smooth' })
+
+    // update hash without using router to avoid scroll handler
+    window.history.pushState({}, '', `#${id}`)
+    activeAnchor.value = id
+  }
+}
 </script>
 
 <template>
-  <div class="fixed flex flex-col justify-between pb-20 pe-1 ps-20 pt-2">
+  <div class="flex flex-col justify-between">
     <div v-if="toc.length" class="w-52">
       <div
         class="font-heading text-muted-800 mb-6 text-xs font-semibold uppercase leading-tight dark:text-white"
@@ -94,18 +108,17 @@ async function loadTocItemFromDom() {
       >
         <ul>
           <li v-for="item in toc" :key="item.id">
-            <NuxtLink
-              :to="`#${item.id}`"
+            <a
+              :href="`#${item.id}`"
               class="block border-e-2 py-1"
               :class="getTocItemClass(item)"
+              @click.prevent="() => focus(item.id)"
             >
               {{ item.label }}
-            </NuxtLink>
+            </a>
           </li>
         </ul>
-        <div
-          class="dark:bg-muted-900 bg-muted-100 pointer-events-none fixed bottom-0 z-10 h-20 w-[212px] blur-xl"
-        />
+        <slot name="nav-end" />
       </nav>
     </div>
   </div>
