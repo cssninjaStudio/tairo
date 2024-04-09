@@ -2,7 +2,7 @@
 import { FocusTrap } from '@headlessui/vue'
 
 const props = defineProps<{
-  src: string
+  src?: string
   srcDark?: string
   zoomSrc?: string
   zoomSrcDark?: string
@@ -176,13 +176,13 @@ onBeforeUnmount(() => {
       @keydown.enter="() => handleClick()"
     >
       <img
-        class="border-muted-200 block w-full border transition-all duration-300 dark:hidden"
+        class="block w-full transition-all duration-300 dark:hidden"
         :src="props.src"
         v-bind="$attrs"
       >
 
       <img
-        class="border-muted-700 hidden w-full border transition-all duration-300 dark:block"
+        class="hidden w-full transition-all duration-300 dark:block"
         :src="props.srcDark || props.src"
         v-bind="$attrs"
       >
@@ -222,14 +222,14 @@ onBeforeUnmount(() => {
         >
           <FocusTrap class="flex size-full items-center justify-center">
             <img
-              class="border-muted-200 nui-focus block max-h-full max-w-full border object-contain dark:hidden"
+              class="nui-focus block max-h-full max-w-full object-contain dark:hidden"
               :src="props.zoomSrc || props.src"
               v-bind="$attrs"
               tabindex="0"
             >
 
             <img
-              class="border-muted-700 nui-focus hidden max-h-full max-w-full border object-contain dark:block"
+              class="nui-focus hidden max-h-full max-w-full object-contain dark:block"
               :src="props.zoomSrcDark || props.srcDark || props.zoomSrc || props.src"
               v-bind="$attrs"
               tabindex="0"
