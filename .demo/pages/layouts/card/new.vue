@@ -42,72 +42,58 @@ const accounts = ref([
   },
 ])
 
-const selectedAccount = ref(accounts.value[0])
-
-const target = ref(null)
-const open = ref(false)
-
-function openDropdown() {
-  open.value = true
-}
-
-onClickOutside(target, () => (open.value = false))
-
-function setAccount(account: any) {
-  selectedAccount.value = account
-  open.value = false
-}
-
 // This is the object that will contain the validation messages
 const VALIDATION_TEXT = {
   DAILY_SPEND_REQUIRED: 'Define a daily spend limit',
   DAILY_WITHDRAW_REQUIRED: 'Define a daily withdrawal limit',
   DAILY_LIMIT: 'You must allow at least $50 to spend daily',
+  ACCOUNT_SELECTION: 'You must select an account',
+  OWNER_SELECTION: 'You must select an owner',
+  BRAND_SELECTION: 'You must select a card brand',
+  TYPE_SELECTION: 'You must select a card type',
 }
 
 // This is the Zod schema for the form input
 // It's used to define the shape that the form data will have
 const zodSchema = z
   .object({
-    card: z.object({
-      owner: z
-        .union([
-          z.literal('Maya Rosselini'),
-          z.literal('Kaleb Wilson'),
-          z.literal('Amber Wilson'),
-          z.literal('Jennifer Wilson'),
-          z.literal('John Baxter'),
-        ]),
-      account: z
-        .object({
-          id: z.number(),
-          number: z.string(),
-          type: z.string(),
-          label: z.string(),
-          balance: z.number(),
-        })
-        .nullable(),
-      brand: z.union([z.literal('mastercard'), z.literal('visa')]).nullable(),
-      type: z.union([z.literal('physical'), z.literal('virtual')]).nullable(),
-      dailySpend: z.number().nullable(),
-      dailyWithdraw: z.number().nullable(),
-    }),
+    owner: z.string().min(1, VALIDATION_TEXT.OWNER_SELECTION),
+    account: z
+      .object({
+        id: z.number(),
+        number: z.string(),
+        type: z.string(),
+        label: z.string(),
+        balance: z.number(),
+      })
+      .nullable(),
+    brand: z.string().min(1, VALIDATION_TEXT.BRAND_SELECTION),
+    type: z.string().min(1, VALIDATION_TEXT.TYPE_SELECTION),
+    dailySpend: z.number(),
+    dailyWithdraw: z.number(),
   })
   .superRefine((data, ctx) => {
     // This is a custom validation function that will be called
     // before the form is submitted
-    if (data.card.dailySpend === null || data.card.dailySpend <= 50) {
+    if (data.account === null) {
       ctx.addIssue({
         code: z.ZodIssueCode.custom,
-        message: VALIDATION_TEXT.DAILY_LIMIT,
-        path: ['card.dailySpend'],
+        message: VALIDATION_TEXT.ACCOUNT_SELECTION,
+        path: ['account'],
       })
     }
-    if (data.card.dailyWithdraw === null || data.card.dailyWithdraw <= 50) {
+    if (data.dailySpend === null || data.dailySpend <= 50) {
       ctx.addIssue({
         code: z.ZodIssueCode.custom,
         message: VALIDATION_TEXT.DAILY_LIMIT,
-        path: ['card.dailyWithdraw'],
+        path: ['dailySpend'],
+      })
+    }
+    if (data.dailyWithdraw === null || data.dailyWithdraw <= 50) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: VALIDATION_TEXT.DAILY_LIMIT,
+        path: ['dailyWithdraw'],
       })
     }
   })
@@ -118,20 +104,12 @@ type FormInput = z.infer<typeof zodSchema>
 
 const validationSchema = toTypedSchema(zodSchema)
 const initialValues = {
-  card: {
-    owner: 'Maya Rosselini',
-    account: {
-      id: 1,
-      number: '1487 3256 54122 4897',
-      type: 'checking',
-      label: '**** 4897',
-      balance: 9543.12,
-    },
-    brand: 'mastercard',
-    type: 'physical',
-    dailySpend: null,
-    dailyWithdraw: null,
-  },
+  owner: '',
+  account: null,
+  brand: '',
+  type: '',
+  dailySpend: 0,
+  dailyWithdraw: 0,
 } satisfies FormInput
 
 const {
@@ -172,7 +150,7 @@ const onSubmit = handleSubmit(
     try {
       // fake delay, this will make isSubmitting value to be true
       await new Promise((resolve, reject) => {
-        if (values.card.dailySpend && values.card.dailySpend > 5000) {
+        if (values.dailySpend && values.dailySpend > 5000) {
           // simulate a backend error
           setTimeout(
             () => reject(new Error('Fake backend validation error')),
@@ -194,7 +172,7 @@ const onSubmit = handleSubmit(
     catch (error: any) {
       // this will set the error on the form
       if (error.message === 'Fake backend validation error') {
-        setFieldError('card.dailySpend', 'The maximum allowed limit is $5000')
+        setFieldError('dailySpend', 'The maximum allowed limit is $5000')
 
         document.documentElement.scrollTo({
           top: 0,
@@ -265,8 +243,8 @@ const onSubmit = handleSubmit(
                 </div>
 
                 <div v-if="fieldsWithErrors" class="mt-8">
-                  <BaseMessage color="primary" @close="() => setErrors({})">
-                    This form has {{ fieldsWithErrors }} errors, please check
+                  <BaseMessage color="warning" @close="() => setErrors({})" icon>
+                    This form has {{ fieldsWithErrors }} errors, please review
                     them before submitting
                   </BaseMessage>
                 </div>
@@ -285,77 +263,64 @@ const onSubmit = handleSubmit(
                       Associated account
                     </BaseHeading>
                     <!--Dropdown-->
-                    <div ref="target" class="relative z-20 w-full">
-                      <button
-                        type="button"
-                        class="click-blur dark:bg-muted-950 border-muted-200 dark:border-muted-800 w-full rounded-xl border bg-white p-4"
-                        @click="openDropdown()"
-                      >
-                        <span class="flex w-full items-center gap-3 text-start">
-                          <TairoLogo class="text-primary-500 size-8" />
-                          <div>
-                            <BaseText
-                              size="sm"
-                              class="text-muted-800 dark:text-muted-200 block capitalize"
-                            >
-                              {{ selectedAccount.type }}
-                              {{ selectedAccount.label }}
-                            </BaseText>
-                            <BaseText
-                              size="xs"
-                              class="text-muted-500 dark:text-muted-400 block"
-                            >
-                              ${{ selectedAccount.balance.toFixed(2) }}
-                            </BaseText>
-                          </div>
-                          <Icon
-                            name="lucide:chevron-down"
-                            class="text-muted-400 ms-auto size-4 transition-transform duration-300"
-                            :class="open && 'rotate-180'"
-                          />
-                        </span>
-                      </button>
-                      <Transition
-                        enter-active-class="transition duration-100 ease-out"
-                        enter-from-class="transform scale-95 opacity-0"
-                        enter-to-class="transform scale-100 opacity-100"
-                        leave-active-class="transition duration-75 ease-in"
-                        leave-from-class="transform scale-100 opacity-100"
-                        leave-to-class="transform scale-95 opacity-0"
-                      >
-                        <div
-                          v-if="open"
-                          class="border-muted-200 dark:border-muted-800 dark:bg-muted-950 shadow-muted-400/10 dark:shadow-muted-800/10 absolute start-0 top-20 w-full rounded-xl border bg-white p-2 shadow-xl"
+                    <BaseDropdown rounded="lg" :classes="{ menuWrapper: 'w-full [&>div]:right-0', menu: '!w-full' }">
+                      <template #button="{ open }">
+                        <BaseButton
+                          size="xl"
+                          rounded="lg"
+                          class="!h-auto w-full !p-4"
+                          :class="[errors.account ? '!border-danger-500' : '']"
                         >
-                          <!--Accounts-->
-                          <ul>
-                            <li v-for="account in accounts" :key="account.id">
-                              <button
-                                type="button"
-                                class="hover:bg-muted-100 dark:hover:bg-muted-900 group flex w-full items-center gap-3 rounded-lg p-2 text-start transition-colors duration-300"
-                                @click="setAccount(account)"
+                          <span class="flex w-full items-center gap-3 text-start">
+                            <TairoLogo v-if="values?.account" class="text-primary-500 size-8" />
+                            <Icon
+                              v-else
+                              name="lucide:wallet"
+                              class="text-muted-500 mx-1 my-2 size-6"
+                            />
+                            <div v-if="values?.account">
+                              <BaseText
+                                size="sm"
+                                class="text-muted-800 dark:text-muted-200 block capitalize"
                               >
-                                <TairoLogo
-                                  class="text-muted-300 dark:text-muted-800 group-hover:text-primary-500 size-8 transition-colors duration-300"
-                                />
-                                <span class="block">
-                                  <span
-                                    class="font-heading text-muted-800 dark:text-muted-200 block text-sm capitalize"
-                                  >
-                                    {{ account.type }} {{ account.label }}
-                                  </span>
-                                  <span
-                                    class="font-heading text-muted-500 dark:text-muted-400 block text-xs"
-                                  >
-                                    ${{ account.balance.toFixed(2) }}
-                                  </span>
-                                </span>
-                              </button>
-                            </li>
-                          </ul>
-                        </div>
-                      </Transition>
-                    </div>
+                                {{ values.account.type }} {{ values.account.label }}
+                              </BaseText>
+                              <BaseText
+                                size="xs"
+                                class="text-muted-500 dark:text-muted-400 block"
+                              >
+                                ${{ values.account.balance?.toFixed(2) }}
+                              </BaseText>
+                            </div>
+                            <span v-else>
+                              Select an account
+                            </span>
+                            <Icon
+                              name="lucide:chevron-down"
+                              class="text-muted-400 ms-auto size-4 transition-transform duration-300"
+                              :class="open && 'rotate-180'"
+                            />
+                          </span>
+                        </BaseButton>
+                      </template>
+                      <BaseDropdownItem
+                        v-for="account in accounts.filter((account) => account.id !== values?.account?.id)"
+                        :key="account.id"
+                        :title="`${account.type} ${account.label}`"
+                        :text="`$${account.balance.toFixed(2)}`"
+                        @click="setFieldValue('account', account)"
+                      >
+                        <template #start>
+                          <TairoLogo
+                            class="text-muted-300 dark:text-muted-700 group-hover:text-primary-500 size-8"
+                          />
+                        </template>
+                      </BaseDropdownItem>
+                    </BaseDropdown>
+
+                    <BaseInputHelpText v-if="errors.account" color="danger">
+                      {{ errors.account }}
+                    </BaseInputHelpText>
                   </div>
                   <!--Field-->
                   <div class="pt-8">
@@ -376,7 +341,7 @@ const onSubmit = handleSubmit(
                           handleChange,
                           handleBlur,
                         }"
-                        name="card.owner"
+                        name="owner"
                       >
                         <BaseSelect
                           :model-value="field.value"
@@ -384,10 +349,8 @@ const onSubmit = handleSubmit(
                           :disabled="isSubmitting"
                           @update:model-value="handleChange"
                           @blur="handleBlur"
+                          placeholder="Select Someone"
                         >
-                          <option value="">
-                            Select Someone
-                          </option>
                           <option value="Maya Rosselini">
                             Maya Rosselini
                           </option>
@@ -426,12 +389,13 @@ const onSubmit = handleSubmit(
                           handleChange,
                           handleBlur,
                         }"
-                        name="card.brand"
+                        name="brand"
                       >
                         <BaseSelect
                           :model-value="field.value"
                           :error="errorMessage"
                           :disabled="isSubmitting"
+                          placeholder="Select a card brand"
                           @update:model-value="handleChange"
                           @blur="handleBlur"
                         >
@@ -464,12 +428,13 @@ const onSubmit = handleSubmit(
                           handleChange,
                           handleBlur,
                         }"
-                        name="card.type"
+                        name="type"
                       >
                         <BaseSelect
                           :model-value="field.value"
                           :error="errorMessage"
                           :disabled="isSubmitting"
+                          placeholder="Select a card type"
                           @update:model-value="handleChange"
                           @blur="handleBlur"
                         >
@@ -502,13 +467,12 @@ const onSubmit = handleSubmit(
                           handleChange,
                           handleBlur,
                         }"
-                        name="card.dailySpend"
+                        name="dailySpend"
                       >
-                        <BaseInput
+                        <BaseInputNumber
                           :model-value="field.value"
                           :error="errorMessage"
                           :disabled="isSubmitting"
-                          type="number"
                           icon="lucide:dollar-sign"
                           placeholder="0.00"
                           @update:model-value="handleChange"
@@ -536,13 +500,12 @@ const onSubmit = handleSubmit(
                           handleChange,
                           handleBlur,
                         }"
-                        name="card.dailyWithdraw"
+                        name="dailyWithdraw"
                       >
-                        <BaseInput
+                        <BaseInputNumber
                           :model-value="field.value"
                           :error="errorMessage"
                           :disabled="isSubmitting"
-                          type="number"
                           icon="lucide:dollar-sign"
                           placeholder="0.00"
                           @update:model-value="handleChange"
@@ -584,9 +547,9 @@ const onSubmit = handleSubmit(
               <div class="sticky top-20">
                 <DemoCreditCardReal
                   status="active"
-                  :name="values.card?.owner"
-                  :number="values.card?.account?.number"
-                  :brand="values.card?.brand"
+                  :name="values?.owner"
+                  :number="values?.account?.number"
+                  :brand="values?.brand"
                   contrast="high"
                 />
               </div>
