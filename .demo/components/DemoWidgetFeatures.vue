@@ -1,10 +1,5 @@
-<script setup lang="ts">
-const show = ref(true)
-</script>
-
 <template>
   <div
-    v-if="show"
     class="bg-muted-200 dark:bg-muted-950/50 rounded-xl p-4 sm:p-6"
   >
     <div class="mb-6 flex items-center justify-between">
@@ -22,12 +17,7 @@ const show = ref(true)
         </BaseParagraph>
       </div>
       <div>
-        <BaseButtonClose
-          size="sm"
-          color="muted"
-          data-nui-tooltip="Hide this"
-          @click="show = !show"
-        />
+        <slot name="actions" />
       </div>
     </div>
     <div class="ltablet:grid-cols-2 grid grid-cols-1 gap-6 lg:grid-cols-2">

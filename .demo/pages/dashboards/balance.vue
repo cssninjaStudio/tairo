@@ -17,6 +17,7 @@ definePageMeta({
   },
 })
 
+const showFeatures = ref(true)
 const gaugePersonal = reactive(useGaugePersonal())
 
 function useGaugePersonal() {
@@ -97,12 +98,27 @@ function useGaugePersonal() {
 <template>
   <div class="grid grid-cols-12 gap-6">
     <div class="col-span-12 lg:col-span-9">
-      <!--CLoseable widget-->
-      <div class="w-full">
-        <!--Features widget-->
-        <DemoWidgetFeatures />
-      </div>
-      <div class="grid grid-cols-12 gap-6 pt-6">
+      <Transition
+        leave-active-class="transition origin-top duration-75 ease-in"
+        leave-from-class="transform scale-y-100 opacity-100"
+        leave-to-class="transform scale-y-0 opacity-0"
+      >
+        <div v-if="showFeatures" class="w-full pb-6">
+          <!--Features widget-->
+          <DemoWidgetFeatures>
+            <template #actions>
+              <BaseButtonClose
+                size="sm"
+                color="muted"
+                data-nui-tooltip="Hide this"
+                @click="showFeatures = false"
+              />
+            </template>
+          </DemoWidgetFeatures>
+        </div>
+      </Transition>
+
+      <div class="grid grid-cols-12 gap-6">
         <!--Grid item-->
         <div class="col-span-12 md:col-span-5">
           <!--Welcome widget-->

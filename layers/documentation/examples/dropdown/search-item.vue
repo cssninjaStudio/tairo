@@ -3,7 +3,7 @@
     <BaseDropdown
       variant="button"
       label="Dropdown"
-      orientation="start"
+      placement="bottom-start"
       size="lg"
     >
       <div class="relative p-2">

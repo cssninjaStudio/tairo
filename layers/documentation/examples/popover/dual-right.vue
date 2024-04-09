@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-wrap items-end justify-end gap-6">
-    <TairoPopover orientation="end">
+    <TairoPopover placement="bottom-end">
       <div class="flex items-center">
         <BaseAvatar src="/img/avatars/2.svg" />
 

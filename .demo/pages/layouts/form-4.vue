@@ -367,6 +367,7 @@ const people = ref([
                   placeholder="Add participants..."
                   label="Participants"
                   multiple
+                  allow-create
                   :model-value="field.value"
                   :error="errorMessage"
                   :disabled="isSubmitting"

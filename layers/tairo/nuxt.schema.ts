@@ -21,6 +21,11 @@ export default defineNuxtSchema({
                 tsType: '\'left\' | \'right\'',
                 $default: 'left',
               },
+              size: {
+                type: 'string',
+                tsType: '\'sm\' | \'md\'',
+                $default: 'sm',
+              },
               component: { type: 'string' },
               props: { type: 'object' },
               overlay: { type: 'boolean', $default: true },

@@ -903,12 +903,14 @@ function useBarOrders() {
             >
               <span>Revenue Overview</span>
             </BaseHeading>
-            <NuxtLink
-              to="#"
-              class="bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline"
+            <BaseButton
+              color="primary"
+              size="sm"
+              variant="pastel"
+              rounded="md"
             >
               Details
-            </NuxtLink>
+            </BaseButton>
           </div>
           <div class="flex gap-8">
             <div>

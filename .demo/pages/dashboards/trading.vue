@@ -748,11 +748,9 @@ function useStockPrice() {
                   >
                     Shares
                   </BaseParagraph>
-                  <div class="max-w-[90px]">
-                    <BaseInput
+                  <div class="max-w-[140px]">
+                    <BaseInputNumber
                       v-model="orderShares"
-                      type="number"
-                      class="w-20"
                       placeholder="0.00"
                     />
                   </div>

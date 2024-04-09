@@ -2,22 +2,22 @@
 const links = [
   {
     name: 'facebook',
-    url: '/',
+    url: '#',
     icon: 'fa6-brands:facebook-f',
   },
   {
     name: 'twitter',
-    url: '/',
+    url: '#',
     icon: 'fa6-brands:twitter',
   },
   {
     name: 'linkedin',
-    url: '/',
+    url: '#',
     icon: 'fa6-brands:linkedin-in',
   },
   {
     name: 'github',
-    url: '/',
+    url: '#',
     icon: 'fa6-brands:github',
   },
 ]

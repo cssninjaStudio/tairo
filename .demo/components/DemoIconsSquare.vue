@@ -12,22 +12,22 @@ const links = [
   {
     title: 'Profile',
     icon: 'ph:user-duotone',
-    url: '/',
+    url: '#',
   },
   {
     title: 'Settings',
     icon: 'ph:gear-six-duotone',
-    url: '/',
+    url: '#',
   },
   {
     title: 'Messages',
     icon: 'ph:chat-circle-duotone',
-    url: '/',
+    url: '#',
   },
   {
     title: 'Tasks',
     icon: 'ph:check-circle-duotone',
-    url: '/',
+    url: '#',
   },
 ]
 </script>

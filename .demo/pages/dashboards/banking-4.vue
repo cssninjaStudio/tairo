@@ -226,7 +226,7 @@ function setAccount(account: any) {
             </BaseHeading>
             <div class="mt-6 flex justify-between gap-3">
               <div
-                class="border-muted-200 peer-checked:border-primary-500 flex size-12 items-center justify-center rounded-full border-2"
+                class="border-muted-200 peer-checked:border-primary-500 dark:border-muted-700 flex size-12 items-center justify-center rounded-full border-2"
               >
                 <BaseButtonIcon rounded="full">
                   <Icon name="lucide:plus" class="size-4" />
@@ -239,7 +239,7 @@ function setAccount(account: any) {
                 data-nui-tooltip="John Baxter"
               >
                 <div
-                  class="border-muted-200 peer-checked:border-primary-500 flex size-12 items-center justify-center rounded-full border-2"
+                  class="border-muted-200 peer-checked:border-primary-500 dark:border-muted-700 flex size-12 items-center justify-center rounded-full border-2"
                 >
                   <BaseAvatar src="/img/avatars/8.svg" size="sm" />
                 </div>
@@ -251,7 +251,7 @@ function setAccount(account: any) {
                 data-nui-tooltip="Amber Wilson"
               >
                 <div
-                  class="border-muted-200 peer-checked:border-primary-500 flex size-12 items-center justify-center rounded-full border-2"
+                  class="border-muted-200 peer-checked:border-primary-500 dark:border-muted-700 flex size-12 items-center justify-center rounded-full border-2"
                 >
                   <BaseAvatar src="/img/avatars/24.svg" size="sm" />
                 </div>
@@ -263,7 +263,7 @@ function setAccount(account: any) {
                 data-nui-tooltip="Kaleb Wilson"
               >
                 <div
-                  class="border-muted-200 peer-checked:border-primary-500 flex size-12 items-center justify-center rounded-full border-2"
+                  class="border-muted-200 peer-checked:border-primary-500 dark:border-muted-700 flex size-12 items-center justify-center rounded-full border-2"
                 >
                   <BaseAvatar src="/img/avatars/3.svg" size="sm" />
                 </div>
@@ -275,7 +275,7 @@ function setAccount(account: any) {
                 data-nui-tooltip="Jennifer Wilson"
               >
                 <div
-                  class="border-muted-200 peer-checked:border-primary-500 flex size-12 items-center justify-center rounded-full border-2"
+                  class="border-muted-200 peer-checked:border-primary-500 dark:border-muted-700 flex size-12 items-center justify-center rounded-full border-2"
                 >
                   <BaseAvatar src="/img/avatars/12.svg" size="sm" />
                 </div>
@@ -356,9 +356,8 @@ function setAccount(account: any) {
             </div>
             <!--Input-->
             <div class="relative">
-              <BaseInput
+              <BaseInputNumber
                 v-model="amount"
-                type="number"
                 icon="lucide:dollar-sign"
                 placeholder="Transfer amount"
               />

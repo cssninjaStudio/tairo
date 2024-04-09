@@ -117,6 +117,7 @@ function openAccountPanel(id: number, accounts: any) {
               to="/layouts/accounts/rules"
               rounded="md"
               size="sm"
+              @click.stop
             >
               <Icon name="lucide:edit-3" class="size-4" />
               <span class="font-heading text-sm">New rule</span>

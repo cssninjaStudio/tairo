@@ -62,10 +62,10 @@ const tasks = ref<string[]>(['Option 0', 'Option 1', 'Option 2'])
     >
       <template #tab-1>
         <div class="mb-2 space-y-6">
-          <div
+          <label
             v-for="task in todos"
             :key="task.id"
-            class="flex items-center gap-3"
+            class="flex items-center gap-3 cursor-pointer text-muted-300"
           >
             <BaseCheckboxAnimated
               v-model="tasks"
@@ -88,15 +88,15 @@ const tasks = ref<string[]>(['Option 0', 'Option 1', 'Option 2'])
                 </span>
               </BaseParagraph>
             </div>
-          </div>
+          </label>
         </div>
       </template>
       <template #tab-2>
         <div class="mb-2 space-y-6">
-          <div
+          <label
             v-for="task in todos"
             :key="task.id"
-            class="flex items-center gap-3"
+            class="flex items-center gap-3 cursor-pointer text-muted-300"
           >
             <BaseCheckboxAnimated
               v-model="tasks"
@@ -129,7 +129,7 @@ const tasks = ref<string[]>(['Option 0', 'Option 1', 'Option 2'])
                 </span>
               </BaseParagraph>
             </div>
-          </div>
+          </label>
         </div>
       </template>
     </DemoTabbedContent>

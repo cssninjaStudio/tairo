@@ -124,7 +124,7 @@ const savedFiles = [
               <BaseDropdown
                 variant="context"
                 label="Dropdown"
-                orientation="end"
+                placement="bottom-end"
                 size="md"
                 class="z-20"
                 rounded="lg"
@@ -217,7 +217,7 @@ const savedFiles = [
               <BaseDropdown
                 variant="context"
                 label="Dropdown"
-                orientation="end"
+                placement="bottom-end"
                 size="md"
                 rounded="lg"
                 class="z-20"

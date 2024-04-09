@@ -3,7 +3,7 @@
     <BaseDropdown
       variant="button"
       label="Dropdown"
-      orientation="start"
+      placement="bottom-start"
     >
       <div
         class="hover:bg-muted-100 dark:hover:bg-muted-800 rounded-md transition-colors duration-300"

@@ -3,14 +3,13 @@
     <BaseDropdown
       variant="button"
       label="Dropdown"
-      orientation="start"
+      placement="bottom-start"
       button-color="default"
     >
       <BaseDropdownItem
         to="#"
         title="Profile"
         text="View your profile"
-        color="default"
         rounded="sm"
       />
 
@@ -18,7 +17,6 @@
         to="#"
         title="Projects"
         text="View your projects"
-        color="default"
         rounded="sm"
       />
 
@@ -26,7 +24,6 @@
         to="#"
         title="Team"
         text="Manage your team"
-        color="default"
         rounded="sm"
       />
 
@@ -34,7 +31,6 @@
         to="#"
         title="Settings"
         text="Set your preferences"
-        color="default"
         rounded="sm"
       />
     </BaseDropdown>
@@ -42,14 +38,13 @@
     <BaseDropdown
       variant="button"
       label="Dropdown"
-      orientation="start"
+      placement="bottom-start"
       button-color="muted"
     >
       <BaseDropdownItem
         to="#"
         title="Profile"
         text="View your profile"
-        color="default"
         rounded="sm"
       />
 
@@ -57,7 +52,6 @@
         to="#"
         title="Projects"
         text="View your projects"
-        color="default"
         rounded="sm"
       />
 
@@ -65,7 +59,6 @@
         to="#"
         title="Team"
         text="Manage your team"
-        color="default"
         rounded="sm"
       />
 
@@ -73,7 +66,6 @@
         to="#"
         title="Settings"
         text="Set your preferences"
-        color="default"
         rounded="sm"
       />
     </BaseDropdown>
@@ -81,14 +73,13 @@
     <BaseDropdown
       variant="button"
       label="Dropdown"
-      orientation="start"
+      placement="bottom-start"
       button-color="primary"
     >
       <BaseDropdownItem
         to="#"
         title="Profile"
         text="View your profile"
-        color="default"
         rounded="sm"
       />
 
@@ -96,7 +87,6 @@
         to="#"
         title="Projects"
         text="View your projects"
-        color="default"
         rounded="sm"
       />
 
@@ -104,7 +94,6 @@
         to="#"
         title="Team"
         text="Manage your team"
-        color="default"
         rounded="sm"
       />
 
@@ -112,7 +101,6 @@
         to="#"
         title="Settings"
         text="Set your preferences"
-        color="default"
         rounded="sm"
       />
     </BaseDropdown>

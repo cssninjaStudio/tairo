@@ -2,22 +2,22 @@
 const links = [
   {
     name: 'Kendra W.',
-    url: '/',
+    url: '#',
     image: '/img/avatars/10.svg',
   },
   {
     name: 'Jake H.',
-    url: '/',
+    url: '#',
     image: '/img/avatars/8.svg',
   },
   {
     name: 'Hermann M.',
-    url: '/',
+    url: '#',
     image: '/img/avatars/16.svg',
   },
   {
     name: 'Clarissa M.',
-    url: '/',
+    url: '#',
     image: '/img/avatars/5.svg',
   },
 ]
@@ -25,18 +25,14 @@ const links = [
 
 <template>
   <div class="flex w-full items-center justify-between gap-3">
-    <NuxtLink
+    <span
       v-for="link in links"
       :key="link.name"
-      :to="link.url"
       class="group flex size-9 items-center justify-center transition-all duration-300"
+      :data-nui-tooltip="link.name"
     >
-      <BaseAvatar
-        :src="link.image"
-        size="xs"
-        class="opacity-60 grayscale transition-all duration-300 group-hover:scale-110 group-hover:opacity-100 group-hover:grayscale-0"
-        :data-nui-tooltip="link.name"
-      />
-    </NuxtLink>
+      <TairoImageZoom class="opacity-60 rounded-full grayscale transition-all duration-300 group-hover:scale-110 group-hover:opacity-100 group-hover:grayscale-0 focus:grayscale-0 group-focus:grayscale-0" :src="link.image" />
+      
+    </span>
   </div>
 </template>

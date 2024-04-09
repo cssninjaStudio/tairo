@@ -264,12 +264,14 @@ function useBarTeamEfficiency() {
               >
                 <span>Current Projects</span>
               </BaseHeading>
-              <NuxtLink
-                to="#"
-                class="bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline"
+              <BaseButton
+                color="primary"
+                size="sm"
+                variant="pastel"
+                rounded="md"
               >
-                View All
-              </NuxtLink>
+                View all
+              </BaseButton>
             </div>
             <DemoProjectListCompact />
           </BaseCard>
@@ -285,12 +287,14 @@ function useBarTeamEfficiency() {
               >
                 <span>Completion</span>
               </BaseHeading>
-              <NuxtLink
-                to="#"
-                class="bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline"
+              <BaseButton
+                color="primary"
+                size="sm"
+                variant="pastel"
+                rounded="md"
               >
                 Reports
-              </NuxtLink>
+              </BaseButton>
             </div>
             <AddonApexcharts v-bind="areaTaskCompletion" />
           </BaseCard>
@@ -306,12 +310,14 @@ function useBarTeamEfficiency() {
               >
                 <span>Team Efficiency</span>
               </BaseHeading>
-              <NuxtLink
-                to="#"
-                class="bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline"
+              <BaseButton
+                color="primary"
+                size="sm"
+                variant="pastel"
+                rounded="md"
               >
                 Reports
-              </NuxtLink>
+              </BaseButton>
             </div>
             <AddonApexcharts v-bind="barTeamEfficiency" />
           </BaseCard>
@@ -334,12 +340,14 @@ function useBarTeamEfficiency() {
               >
                 <span>My Team</span>
               </BaseHeading>
-              <NuxtLink
-                to="#"
-                class="bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline"
+              <BaseButton
+                color="primary"
+                size="sm"
+                variant="pastel"
+                rounded="md"
               >
-                View All
-              </NuxtLink>
+                View all
+              </BaseButton>
             </div>
             <DemoTeamListCompact actions />
           </BaseCard>
@@ -356,12 +364,14 @@ function useBarTeamEfficiency() {
               >
                 <span>Todo Today</span>
               </BaseHeading>
-              <NuxtLink
-                to="#"
-                class="bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline"
+              <BaseButton
+                color="primary"
+                size="sm"
+                variant="pastel"
+                rounded="md"
               >
-                View All
-              </NuxtLink>
+                View all
+              </BaseButton>
             </div>
             <DemoTodoListCompact />
           </BaseCard>

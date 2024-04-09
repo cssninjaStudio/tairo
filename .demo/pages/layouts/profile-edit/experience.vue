@@ -108,7 +108,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                   <BaseDropdown
                     variant="context"
                     label="Dropdown"
-                    orientation="end"
+                    placement="bottom-end"
                     size="md"
                     class="z-20"
                     rounded="lg"

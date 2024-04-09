@@ -2,22 +2,22 @@
 const links = [
   {
     name: 'Activity',
-    url: '/',
+    url: '#',
     icon: 'lucide:activity',
   },
   {
     name: 'Search',
-    url: '/',
+    url: '#',
     icon: 'lucide:search',
   },
   {
     name: 'Files',
-    url: '/',
+    url: '#',
     icon: 'lucide:file-text',
   },
   {
     name: 'Home',
-    url: '/',
+    url: '#',
     icon: 'lucide:home',
   },
 ]

@@ -29,12 +29,14 @@ definePageMeta({
           >
             <span>Members</span>
           </BaseHeading>
-          <NuxtLink
-            to="#"
-            class="bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline"
+          <BaseButton
+            color="primary"
+            size="sm"
+            variant="pastel"
+            rounded="md"
           >
-            View All
-          </NuxtLink>
+            View all
+          </BaseButton>
         </div>
         <DemoUserList />
       </BaseCard>
@@ -54,12 +56,14 @@ definePageMeta({
           >
             <span>Members</span>
           </BaseHeading>
-          <NuxtLink
-            to="#"
-            class="bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline"
+          <BaseButton
+            color="primary"
+            size="sm"
+            variant="pastel"
+            rounded="md"
           >
-            View All
-          </NuxtLink>
+            View all
+          </BaseButton>
         </div>
         <DemoUserList rounded="full" />
       </BaseCard>
@@ -86,12 +90,14 @@ definePageMeta({
           >
             <span>My Tasks</span>
           </BaseHeading>
-          <NuxtLink
-            to="#"
-            class="bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline"
+          <BaseButton
+            color="primary"
+            size="sm"
+            variant="pastel"
+            rounded="md"
           >
-            View All
-          </NuxtLink>
+            View all
+          </BaseButton>
         </div>
         <DemoTodoListCompact color="lime" />
       </BaseCard>
@@ -111,12 +117,14 @@ definePageMeta({
           >
             <span>My Tasks</span>
           </BaseHeading>
-          <NuxtLink
-            to="#"
-            class="bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline"
+          <BaseButton
+            color="primary"
+            size="sm"
+            variant="pastel"
+            rounded="md"
           >
-            View All
-          </NuxtLink>
+            View all
+          </BaseButton>
         </div>
         <DemoTodoListCompact color="sky" />
       </BaseCard>
@@ -143,12 +151,14 @@ definePageMeta({
           >
             <span>Latest comments</span>
           </BaseHeading>
-          <NuxtLink
-            to="#"
-            class="bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline"
+          <BaseButton
+            color="primary"
+            size="sm"
+            variant="pastel"
+            rounded="md"
           >
-            View All
-          </NuxtLink>
+            View all
+          </BaseButton>
         </div>
         <DemoCommentListCompact />
       </BaseCard>
@@ -168,12 +178,14 @@ definePageMeta({
           >
             <span>Topics</span>
           </BaseHeading>
-          <NuxtLink
-            to="#"
-            class="bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline"
+          <BaseButton
+            color="primary"
+            size="sm"
+            variant="pastel"
+            rounded="md"
           >
-            View All
-          </NuxtLink>
+            View all
+          </BaseButton>
         </div>
         <DemoTopicListCompact />
       </BaseCard>
@@ -193,12 +205,14 @@ definePageMeta({
           >
             <span>Topics</span>
           </BaseHeading>
-          <NuxtLink
-            to="#"
-            class="bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline"
+          <BaseButton
+            color="primary"
+            size="sm"
+            variant="pastel"
+            rounded="md"
           >
-            View All
-          </NuxtLink>
+            View all
+          </BaseButton>
         </div>
         <DemoTopicListCompact rounded="full" />
       </BaseCard>
@@ -218,12 +232,14 @@ definePageMeta({
           >
             <span>Timeline</span>
           </BaseHeading>
-          <NuxtLink
-            to="#"
-            class="bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline"
+          <BaseButton
+            color="primary"
+            size="sm"
+            variant="pastel"
+            rounded="md"
           >
-            View All
-          </NuxtLink>
+            View all
+          </BaseButton>
         </div>
         <DemoTimelineCompact rounded="sm" />
       </BaseCard>
@@ -243,12 +259,14 @@ definePageMeta({
           >
             <span>Timeline</span>
           </BaseHeading>
-          <NuxtLink
-            to="#"
-            class="bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline"
+          <BaseButton
+            color="primary"
+            size="sm"
+            variant="pastel"
+            rounded="md"
           >
-            View All
-          </NuxtLink>
+            View all
+          </BaseButton>
         </div>
         <DemoTimelineCompact rounded="lg" />
       </BaseCard>
@@ -268,12 +286,14 @@ definePageMeta({
           >
             <span>Timeline</span>
           </BaseHeading>
-          <NuxtLink
-            to="#"
-            class="bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline"
+          <BaseButton
+            color="primary"
+            size="sm"
+            variant="pastel"
+            rounded="md"
           >
-            View All
-          </NuxtLink>
+            View all
+          </BaseButton>
         </div>
         <DemoTimelineCompact rounded="full" />
       </BaseCard>

@@ -304,7 +304,7 @@ function useBarProfit() {
             <BaseDropdown
               variant="context"
               label="Dropdown"
-              orientation="end"
+              placement="bottom-end"
               class="z-20"
             >
               <BaseDropdownItem
@@ -404,7 +404,7 @@ function useBarProfit() {
             <BaseDropdown
               variant="context"
               label="Dropdown"
-              orientation="end"
+              placement="bottom-end"
               class="z-20"
             >
               <BaseDropdownItem
@@ -500,13 +500,13 @@ function useBarProfit() {
                 class="bg-muted-300 dark:bg-muted-700/60 block size-2 rounded-full"
               />
               <span class="text-muted-400 font-sans text-xs font-medium">
-                Closed to transactions
+                Closed to transactionseee
               </span>
             </div>
             <BaseDropdown
               variant="context"
               label="Dropdown"
-              orientation="end"
+              placement="bottom-end"
               class="z-20"
             >
               <BaseDropdownItem
@@ -609,12 +609,14 @@ function useBarProfit() {
             >
               <span>Trending Stocks</span>
             </BaseHeading>
-            <NuxtLink
-              to="#"
-              class="bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline"
+            <BaseButton
+              color="primary"
+              size="sm"
+              variant="pastel"
+              rounded="md"
             >
-              View All
-            </NuxtLink>
+              View all
+            </BaseButton>
           </div>
           <div class="mb-2 space-y-5">
             <!-- List item -->

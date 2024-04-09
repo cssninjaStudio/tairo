@@ -3,7 +3,7 @@
     <BaseDropdown
       variant="button"
       label="Dropdown"
-      orientation="start"
+      placement="bottom-start"
       color="default"
     >
       <BaseDropdownItem
@@ -42,7 +42,7 @@
     <BaseDropdown
       variant="button"
       label="Dropdown"
-      orientation="start"
+      placement="bottom-start"
       color="default-contrast"
     >
       <BaseDropdownItem
