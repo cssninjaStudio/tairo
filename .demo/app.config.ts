@@ -730,7 +730,7 @@ export default defineAppConfig({
         name: 'account',
         position: 'right',
         component: 'DemoPanelAccount',
-        size: 'lg',
+        size: 'md',
       },
       {
         name: 'card',
@@ -741,7 +741,7 @@ export default defineAppConfig({
         name: 'invest',
         position: 'right',
         component: 'DemoPanelInvest',
-        size: 'lg',
+        size: 'md',
       },
     ],
     error: {

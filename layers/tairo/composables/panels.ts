@@ -1,5 +1,14 @@
 import { defu } from 'defu'
 
+interface Panel {
+  name: string
+  component?: string
+  props?: Record<string, any>
+  position?: 'left' | 'right' | 'top' | 'bottom'
+  size: 'sm' | 'md'
+  overlay?: boolean
+}
+
 /**
  * Composable to manage panels
  *
@@ -39,10 +48,11 @@ import { defu } from 'defu'
 export function usePanels() {
   const app = useAppConfig()
 
-  const panels = computed(
+  const panels = computed<Panel[]>(
     () =>
       app.tairo?.panels?.map(panel => ({
         ...panel,
+        size: (panel as any).size ?? 'sm',
         position: (panel as any).position ?? 'left',
         overlay: (panel as any).overlay ?? true,
       })) ?? [],
@@ -65,12 +75,12 @@ export function usePanels() {
     return panels.value.find(panel => panel.name === currentName.value)
   })
 
-  function open(name: string, props?: any) {
+  function open(name: string, props?: Record<string, any>) {
     const panel = panels.value.find(({ name: panelName }) => panelName === name)
     if (panel) {
-      transitionFrom.value = panel.position
+      transitionFrom.value = panel.position ?? 'left'
       currentName.value = panel.name
-      showOverlay.value = panel.overlay
+      showOverlay.value = !!panel.overlay
 
       // merge props from the panel config and the props passed to the function
       currentProps.value = defu(props ?? {}, (panel as any).props ?? {})
