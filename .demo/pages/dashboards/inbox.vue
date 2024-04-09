@@ -305,7 +305,7 @@ const panelActive = ref(false)
             </div>
 
             <ul
-              class="nui-slimscroll h-[calc(100%_-_64px)] space-y-2 overflow-y-auto px-4 pb-8 sm:px-8"
+              class="nui-slimscroll h-[calc(100dvh_-_64px)] space-y-2 overflow-y-auto px-4 pb-8 sm:px-8"
             >
               <li
                 v-for="message in messages"

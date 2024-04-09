@@ -638,7 +638,7 @@ async function submitMessage() {
     </div>
     <!--Wrapper-->
     <div
-      class="relative z-20 flex h-[calc(100%_-_64px)] w-full flex-row overflow-x-hidden"
+      class="relative z-20 flex h-[calc(100dvh_-_64px)] w-full flex-row overflow-x-hidden"
     >
       <!--Conversations sidebar-->
       <div
@@ -681,7 +681,7 @@ async function submitMessage() {
           </div>
           <!--Conversations list-->
           <div
-            class="nui-slimscroll flex h-[calc(100%_-_160px)] flex-col space-y-1 overflow-y-auto pe-2"
+            class="nui-slimscroll flex h-[calc(100dvh_-_160px)] flex-col space-y-1 overflow-y-auto pe-2"
           >
             <button
               v-for="conversation in conversations"
