@@ -5,6 +5,8 @@ import {
 } from './config/routes-rules'
 
 export default defineNuxtConfig({
+  devtools: { enabled: true, },
+
   extends: [
     /**
      * App layers: these are the layers that contains specific features
@@ -72,6 +74,10 @@ export default defineNuxtConfig({
     // },
   },
 
+  features: {
+    inlineStyles: false,
+  },
+
   experimental: {
     // Write early hints when using node server.
     writeEarlyHints: true,
@@ -79,6 +85,9 @@ export default defineNuxtConfig({
     renderJsonPayloads: true,
     // Render tags in of the head in a more performant way
     headNext: true,
+    // Use the new View Transitions API
+    viewTransition: true,
+
     defaults: {
       useAsyncData: {
         // Use shallowRef in asyncData/fetch data
@@ -124,6 +133,9 @@ export default defineNuxtConfig({
     define: {
       // This enables vue-axe to work (used to check a11y - see .demo/plugins/vue-axe.ts)
       'import.meta.env.ENABLE_A11Y_AXE': import.meta.env.ENABLE_A11Y_AXE,
+      
+      // Enable / disable Options API support. Disabling this will result in smaller bundles, but may affect compatibility with 3rd party libraries if they rely on Options API.
+      __VUE_OPTIONS_API__: false,
     },
     build: {
       target: 'esnext',
