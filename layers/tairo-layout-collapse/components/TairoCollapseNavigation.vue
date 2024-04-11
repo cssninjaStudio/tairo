@@ -38,8 +38,8 @@ const endMenuItems = computed(
     </slot>
     <!--Body-->
     <div
-      class="nui-slimscroll relative flex w-full grow flex-col overflow-y-auto py-6"
-      :class="!isOpen ? 'px-4' : 'px-6'"
+      class=" relative flex w-full grow flex-col py-6"
+      :class="!isOpen ? 'px-4' : 'px-6 nui-slimscroll overflow-y-auto'"
     >
       <!--Menu-->
       <ul v-if="startMenuItems?.length" class="space-y-2">
@@ -59,6 +59,8 @@ const endMenuItems = computed(
           <NuxtLink
             v-else-if="item.to"
             :to="item.to"
+            :data-nui-tooltip="isOpen ? undefined : item.name"
+            data-nui-tooltip-position="end"
             exact-active-class="!bg-primary-500/10 dark:!bg-primary-500/20 !text-primary-500 dark:!text-primary-500"
             class="nui-focus text-muted-500 dark:text-muted-400/80 hover:bg-muted-100 dark:hover:bg-muted-700/60 hover:text-muted-600 dark:hover:text-muted-200 flex cursor-pointer items-center gap-4 rounded-lg py-3 transition-colors duration-300"
             :class="!isOpen ? 'px-1 justify-center' : 'px-4'"
