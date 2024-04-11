@@ -2,6 +2,65 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/cssninjaStudio/tairo/compare/v1.4.0...v1.5.0) (2024-04-11)
+
+
+### 🩹 Bug Fixes
+
+* **AddonCarousel:** allow to define vue3-carousel props and events ([36e0473](https://github.com/cssninjaStudio/tairo/commit/36e04735bbc25330d08303a8ca59001da67f2e74))
+* calendar z index ([fe43e9e](https://github.com/cssninjaStudio/tairo/commit/fe43e9e49f172e293ff4d9cee6d763edca669511))
+* content typos ([45cc0c8](https://github.com/cssninjaStudio/tairo/commit/45cc0c8d53a8ca1229cc536cfe741e830da9c9fe))
+* **demo:** improve panel a11y ([1b67bd6](https://github.com/cssninjaStudio/tairo/commit/1b67bd610bfd1a0fb04bb5b7a999a0dc3bd41fb0))
+* **demo:** proper use of vueform validation in new card form ([4bc4f89](https://github.com/cssninjaStudio/tairo/commit/4bc4f89528c4aa5661c25efb183df22b12fbbecb))
+* **demo:** reuse components and update deprecated props ([fee580e](https://github.com/cssninjaStudio/tairo/commit/fee580e0a55172730bff8bb59a96aeb90d2a2bfc))
+* documentation examples responsiveness ([783cd1a](https://github.com/cssninjaStudio/tairo/commit/783cd1aee873b7642d2d01f9f7eb3fcce234481e))
+* **layer-collapse:** burger menu hydration mismatch ([9c03d3d](https://github.com/cssninjaStudio/tairo/commit/9c03d3da08eabc08161fdf55fe74f6883d6323fb))
+* message icons demo ([1cfeee1](https://github.com/cssninjaStudio/tairo/commit/1cfeee130dc09849a7c929f73c76b1301ab3af87))
+* prop typos ([2109a1d](https://github.com/cssninjaStudio/tairo/commit/2109a1de9795abd8452cfb6a515e5ed04fded27a))
+* search modal text size and layout ([af0fe75](https://github.com/cssninjaStudio/tairo/commit/af0fe756252ae0849d4d2cc6e98437b2e031b117))
+* **TairoToc:** remove fixed styles, add nav-end slot and focus elements on click ([41343c2](https://github.com/cssninjaStudio/tairo/commit/41343c2e36b13a5a0a3e9ffb9f47bec6e2613f9a))
+* use NuxtPage instead of RouterView in page sublayouts ([6edb709](https://github.com/cssninjaStudio/tairo/commit/6edb7094b56518d377d70527621bfcb4a9931926))
+
+
+### 🚀 Features
+
+* add account pages ([93b5fa7](https://github.com/cssninjaStudio/tairo/commit/93b5fa73c739c8fbd45550acce5e6261311fe7ed))
+* add badge to new content in demos page ([ab99def](https://github.com/cssninjaStudio/tairo/commit/ab99def60bc3fbd07d311c6d111a4fc46fb3461d))
+* add balance dashboard ([3fd587f](https://github.com/cssninjaStudio/tairo/commit/3fd587fd00bc4b8ad2ec7365693bd090325aba90))
+* add banking dashboard 4 and messaging v2 ([e554b7c](https://github.com/cssninjaStudio/tairo/commit/e554b7c11ee72213833364509300ba83f4148882))
+* add card pages ([ce79074](https://github.com/cssninjaStudio/tairo/commit/ce79074368d255695c8d58ad4f32714ef2ba0abf))
+* add dropdown with form variations ([75bf19a](https://github.com/cssninjaStudio/tairo/commit/75bf19acbbf1fdf061b38faac846a0ad85b9834c))
+* add Icon nav layer ([c663d7a](https://github.com/cssninjaStudio/tairo/commit/c663d7ac39b3ff0807601954fdf3059af0614424))
+* add new dashboards ([a409c66](https://github.com/cssninjaStudio/tairo/commit/a409c66f536239e5d2f2538967e74030cac8ef8d))
+* add overview dashboard ([25a051b](https://github.com/cssninjaStudio/tairo/commit/25a051b35293855ac6c98d72b3d63d47b4aa4800))
+* add payments and transactions ([fbd1199](https://github.com/cssninjaStudio/tairo/commit/fbd1199fcd6984c2e4a360b5ca6fef72911125c7))
+* add quickview dashboard ([519875c](https://github.com/cssninjaStudio/tairo/commit/519875cefc56f2df781217bd7130ce9eb6bf05d0))
+* add recipient details ([3a52799](https://github.com/cssninjaStudio/tairo/commit/3a527993a6da2313937915109837decc50c16557))
+* add stepper forms ([74eda52](https://github.com/cssninjaStudio/tairo/commit/74eda524e77e8d08f39cb45a0fc482de5275d577))
+* add subpages ([f657b9d](https://github.com/cssninjaStudio/tairo/commit/f657b9d8f8065e8b761162a6a196e334b4ecf271))
+* add TairoImageZoom component ([bc996d3](https://github.com/cssninjaStudio/tairo/commit/bc996d3e585e337863eecd73a95dd22402aada14))
+* add value to v-focus in order to conditionally disable focusing ([7abd7c8](https://github.com/cssninjaStudio/tairo/commit/7abd7c829330a67c0f304f0f9e8536d980e7c4ac))
+* **demo:** disable inline styles and enable view transition api ([405ba13](https://github.com/cssninjaStudio/tairo/commit/405ba13604048ba0bdaabfd7720120ab79297860))
+* **layout-collapse:** add tooltip to navigation items when collapsed ([635a4c3](https://github.com/cssninjaStudio/tairo/commit/635a4c3e508ed987ba0c8f6db6f86e89ad31be6c))
+* make tairo modal wrapper tag customizable ([5deaaf4](https://github.com/cssninjaStudio/tairo/commit/5deaaf47b48deb841158ab343305ae4eff0fc777))
+* **panels:** add 'md' size + teleport panels to body ([e984db1](https://github.com/cssninjaStudio/tairo/commit/e984db176caffee0a588905cfd1ccc8ab0133923))
+* set packageManager field and dependencies in layers for remote ([c26b597](https://github.com/cssninjaStudio/tairo/commit/c26b59791ff4aa654284a77fd65be8c5d2224163))
+* update documentation ([d52278b](https://github.com/cssninjaStudio/tairo/commit/d52278b50d4de4a40aa2dd3fdc6a5f4770a26752))
+* update landing master layouts ([111aeb1](https://github.com/cssninjaStudio/tairo/commit/111aeb1c136cf6156c07eaa5226b56d90d6c73e3))
+* update layers documentation ([55837c9](https://github.com/cssninjaStudio/tairo/commit/55837c93a1326facccf4f840bdcc70da21d33d68))
+* update to nuxt 3.11 ([260fcfa](https://github.com/cssninjaStudio/tairo/commit/260fcfa91668ab8c665686424331d2c560acbdfb))
+* use new BaseInputHelpText component ([0bcb191](https://github.com/cssninjaStudio/tairo/commit/0bcb19163ebba9a656c00a38f7ecf8c8fd51603b))
+* use shiki instead of shikiji ([e5cd43f](https://github.com/cssninjaStudio/tairo/commit/e5cd43f72bc0324ef86858ec95d0355b0c35f19d))
+* **useMultiStepForm:** add validation and documentation ([710e924](https://github.com/cssninjaStudio/tairo/commit/710e9243c123f0b3b32f6cdd2a220836a7f78daf))
+
+
+### 📖 Documentation
+
+* add button to open customization modal ([07c5f31](https://github.com/cssninjaStudio/tairo/commit/07c5f31241cf5cac48a7116f646aef2370d88f32))
+* add spellchecker ([6954728](https://github.com/cssninjaStudio/tairo/commit/6954728b79b0ec2564cee44543a9e0067119e178))
+* **autocomplete:** add allow create item example ([df3a4cb](https://github.com/cssninjaStudio/tairo/commit/df3a4cbe03a6d3ae6bd9aebcc32989724c8a6d91))
+* rework learning path, update examples and components reference ([6f63a28](https://github.com/cssninjaStudio/tairo/commit/6f63a28e19e8ea2d519f346457d43ab826f0aa9c))
+
 ## [1.4.0](https://github.com/cssninjaStudio/tairo/compare/v1.3.0...v1.4.0) (2024-01-25)
 
 
