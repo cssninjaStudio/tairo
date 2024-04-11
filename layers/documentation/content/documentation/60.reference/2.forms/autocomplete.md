@@ -85,6 +85,15 @@ Clearable autocomplete have a clear icon that appears on the right side using th
 ::
 
 
+
+::doc-component-demo
+---
+title: Allow create
+demo: '#examples/autocomplete/allow-create.vue'
+---
+You can allow the user to create new items by setting the `allow-create` prop to `true`. When the user types a new value and presses `Enter`, a new item is created.
+::
+
 ::doc-component-demo
 ---
 title: Multiple
