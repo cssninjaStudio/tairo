@@ -65,7 +65,7 @@ const tasks = ref<string[]>(['Option 0', 'Option 1', 'Option 2'])
           <label
             v-for="task in todos"
             :key="task.id"
-            class="flex items-center gap-3 cursor-pointer text-muted-300"
+            class="text-muted-300 flex cursor-pointer items-center gap-3"
           >
             <BaseCheckboxAnimated
               v-model="tasks"
@@ -96,7 +96,7 @@ const tasks = ref<string[]>(['Option 0', 'Option 1', 'Option 2'])
           <label
             v-for="task in todos"
             :key="task.id"
-            class="flex items-center gap-3 cursor-pointer text-muted-300"
+            class="text-muted-300 flex cursor-pointer items-center gap-3"
           >
             <BaseCheckboxAnimated
               v-model="tasks"

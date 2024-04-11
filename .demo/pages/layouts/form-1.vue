@@ -479,7 +479,7 @@ const onSubmit = handleSubmit(
                     >
                       <BaseCard
                         rounded="sm"
-                        class="text-muted-400 relative border px-2 py-4 nui-card-muted peer-checked:nui-card-primary peer-checked:[&_.child]:!text-primary-500"
+                        class="text-muted-400 nui-card-muted peer-checked:nui-card-primary peer-checked:[&_.child]:!text-primary-500 relative border px-2 py-4"
                         color="none"
                       >
                         <div
@@ -534,7 +534,7 @@ const onSubmit = handleSubmit(
                     >
                       <BaseCard
                         rounded="sm"
-                        class="text-muted-400 relative border px-2 py-4 nui-card-muted peer-checked:nui-card-primary peer-checked:[&_.child]:!text-primary-500"
+                        class="text-muted-400 nui-card-muted peer-checked:nui-card-primary peer-checked:[&_.child]:!text-primary-500 relative border px-2 py-4"
                         color="none"
                       >
                         <div
@@ -589,7 +589,7 @@ const onSubmit = handleSubmit(
                     >
                       <BaseCard
                         rounded="sm"
-                        class="text-muted-400 relative border px-2 py-4 nui-card-muted peer-checked:nui-card-primary peer-checked:[&_.child]:!text-primary-500"
+                        class="text-muted-400 nui-card-muted peer-checked:nui-card-primary peer-checked:[&_.child]:!text-primary-500 relative border px-2 py-4"
                         color="none"
                       >
                         <div

@@ -34,7 +34,7 @@ const activeTab = ref('tab-1')
         >
           <button
             type="button"
-            class="relative nui-focus z-20 flex h-full flex-1 items-center justify-center"
+            class="nui-focus relative z-20 flex h-full flex-1 items-center justify-center"
             :class="activeTab === 'tab-1' ? 'text-white' : 'text-muted-400'"
             @click="activeTab = 'tab-1'"
           >
@@ -42,7 +42,7 @@ const activeTab = ref('tab-1')
           </button>
           <button
             type="button"
-            class="relative nui-focus z-20 flex h-full flex-1 items-center justify-center"
+            class="nui-focus relative z-20 flex h-full flex-1 items-center justify-center"
             :class="activeTab === 'tab-2' ? 'text-white' : 'text-muted-400'"
             @click="activeTab = 'tab-2'"
           >
@@ -50,7 +50,7 @@ const activeTab = ref('tab-1')
           </button>
           <button
             type="button"
-            class="relative nui-focus z-20 flex h-full flex-1 items-center justify-center"
+            class="nui-focus relative z-20 flex h-full flex-1 items-center justify-center"
             :class="activeTab === 'tab-3' ? 'text-white' : 'text-muted-400'"
             @click="activeTab = 'tab-3'"
           >

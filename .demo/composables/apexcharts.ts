@@ -10,6 +10,7 @@ const useApexChartLoaded = () => useState('apex-loaded', () => false)
 const LazyApexCharts = defineAsyncComponent({
   suspensible: false,
   loader: () => {
+    // @ts-ignore
     return import('vue3-apexcharts').then((module) => {
       nextTick(() => {
         useApexChartLoaded().value = true

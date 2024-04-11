@@ -19,7 +19,7 @@ const props = withDefaults(
           props.shape === 'curved' ? 'rounded-lg' : '',
         ]"
       >
-        <TairoImageZoom 
+        <TairoImageZoom
           src="/img/illustrations/dashboards/hobbies/hobby-3.svg"
           alt="Widget image"
           :class="[
@@ -29,7 +29,7 @@ const props = withDefaults(
           ]"
         />
       </div>
-      <div class="absolute start-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+      <div class="pointer-events-none absolute start-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
         <button
           type="button"
           class="border-primary-500 bg-primary-500 dark:group-hover:bg-muted-800 flex size-10 items-center justify-center rounded-full border-2 transition-colors duration-300 group-hover:bg-white"

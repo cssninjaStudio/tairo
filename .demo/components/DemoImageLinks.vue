@@ -31,8 +31,8 @@ const links = [
       class="group flex size-9 items-center justify-center transition-all duration-300"
       :data-nui-tooltip="link.name"
     >
-      <TairoImageZoom class="opacity-60 rounded-full grayscale transition-all duration-300 group-hover:scale-110 group-hover:opacity-100 group-hover:grayscale-0 focus:grayscale-0 group-focus:grayscale-0" :src="link.image" />
-      
+      <TairoImageZoom class="rounded-full opacity-60 grayscale transition-all duration-300 focus:grayscale-0 group-hover:scale-110 group-hover:opacity-100 group-hover:grayscale-0 group-focus:grayscale-0" :src="link.image" />
+
     </span>
   </div>
 </template>

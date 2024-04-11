@@ -1,11 +1,11 @@
-import type { RehypeShikijiOptions } from '@shikijs/rehype'
+import type { RehypeShikiOptions } from '@shikijs/rehype'
 
 // this is used to cache the markdown processor
 let processor: ReturnType<typeof createProcessor>
 
 export function getMarkdownProcessors(
   themes: Record<string, any> = {},
-  langs: RehypeShikijiOptions['langs'] = [],
+  langs: RehypeShikiOptions['langs'] = [],
 ) {
   if (processor) {
     return processor
@@ -19,7 +19,7 @@ export function getMarkdownProcessors(
   return processor
 }
 
-async function createProcessor(options: RehypeShikijiOptions) {
+async function createProcessor(options: RehypeShikiOptions) {
   const [
     rehypeExternalLinks,
     rehypeRaw,

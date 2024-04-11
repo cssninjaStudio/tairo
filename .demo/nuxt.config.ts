@@ -5,7 +5,7 @@ import {
 } from './config/routes-rules'
 
 export default defineNuxtConfig({
-  devtools: { enabled: true, },
+  devtools: { enabled: true },
 
   extends: [
     /**
@@ -133,11 +133,11 @@ export default defineNuxtConfig({
     define: {
       // This enables vue-axe to work (used to check a11y - see .demo/plugins/vue-axe.ts)
       'import.meta.env.ENABLE_A11Y_AXE': import.meta.env.ENABLE_A11Y_AXE,
-      
-      // Enable / disable Options API support. Disabling this will result in smaller bundles, 
+
+      // Enable / disable Options API support. Disabling this will result in smaller bundles,
       // but may affect compatibility with 3rd party libraries if they rely on Options API.
       // Splitplane uses Options API, so we need to enable it.
-      __VUE_OPTIONS_API__: true,
+      '__VUE_OPTIONS_API__': true,
     },
     build: {
       target: 'esnext',

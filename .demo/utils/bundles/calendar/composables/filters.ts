@@ -1,5 +1,6 @@
 import { addDays, startOfDay, startOfWeek, endOfWeek, endOfDay } from 'date-fns'
 
+// @ts-ignore
 import type { Page } from 'v-calendar/dist/types/src/utils/page'
 
 import type { CalendarSettings } from '../types'

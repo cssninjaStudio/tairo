@@ -682,7 +682,7 @@ const onSubmit = handleSubmit(
                                 <BaseCard
                                   rounded="md"
                                   color="none"
-                                  class="text-muted-400 relative border px-2 py-6 nui-card-muted peer-checked:nui-card-primary peer-checked:[&_.child]:!text-primary-500"
+                                  class="text-muted-400 nui-card-muted peer-checked:nui-card-primary peer-checked:[&_.child]:!text-primary-500 relative border px-2 py-6"
                                 >
                                   <div
                                     class="flex w-full flex-col items-center gap-2 text-center"
@@ -734,7 +734,7 @@ const onSubmit = handleSubmit(
                               >
                                 <BaseCard
                                   rounded="md"
-                                  class="text-muted-400 relative border px-2 py-6 nui-card-muted peer-checked:nui-card-primary peer-checked:[&_.child]:!text-primary-500"
+                                  class="text-muted-400 nui-card-muted peer-checked:nui-card-primary peer-checked:[&_.child]:!text-primary-500 relative border px-2 py-6"
                                 >
                                   <div
                                     class="flex w-full flex-col items-center gap-2 text-center"
@@ -786,7 +786,7 @@ const onSubmit = handleSubmit(
                               >
                                 <BaseCard
                                   rounded="md"
-                                  class="text-muted-400 relative border px-2 py-6 nui-card-muted peer-checked:nui-card-primary peer-checked:[&_.child]:!text-primary-500"
+                                  class="text-muted-400 nui-card-muted peer-checked:nui-card-primary peer-checked:[&_.child]:!text-primary-500 relative border px-2 py-6"
                                 >
                                   <div
                                     class="flex w-full flex-col items-center gap-2 text-center"

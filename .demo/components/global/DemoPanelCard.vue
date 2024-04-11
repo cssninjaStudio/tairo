@@ -39,7 +39,7 @@ const daySpentProgress = computed(() => {
         <!--Close button-->
         <button
           type="button"
-          class="nui-mask outline-transparent nui-mask-blob hover:bg-muted-100 focus:bg-muted-100 dark:hover:bg-muted-700 dark:focus:bg-muted-700 text-muted-700 dark:text-muted-400 flex size-10 cursor-pointer items-center justify-center transition-colors duration-300"
+          class="nui-mask nui-mask-blob hover:bg-muted-100 focus:bg-muted-100 dark:hover:bg-muted-700 dark:focus:bg-muted-700 text-muted-700 dark:text-muted-400 flex size-10 cursor-pointer items-center justify-center outline-transparent transition-colors duration-300"
           @click="close"
         >
           <Icon name="lucide:arrow-right" class="size-4" />
@@ -90,7 +90,7 @@ const daySpentProgress = computed(() => {
           <div class="pt-2">
             <button
               type="button"
-              class="mb-3 flex w-full items-center nui-focus"
+              class="nui-focus mb-3 flex w-full items-center"
               @click="detailsExpanded = !detailsExpanded"
             >
               <span

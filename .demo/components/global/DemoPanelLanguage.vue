@@ -27,7 +27,7 @@ onKeyStroke('Escape', close)
         <div class="grid grid-cols-3 py-6">
           <!-- Radio box -->
           <div class="relative my-4 flex items-center justify-center">
-            <div class="relative nui-focus rounded-full">
+            <div class="nui-focus relative rounded-full">
               <input
                 type="radio"
                 name="language_selection"
@@ -52,7 +52,7 @@ onKeyStroke('Escape', close)
           </div>
           <!-- Radio box -->
           <div class="relative my-4 flex items-center justify-center">
-            <div class="relative nui-focus rounded-full">
+            <div class="nui-focus relative rounded-full">
               <input
                 type="radio"
                 name="language_selection"
@@ -76,7 +76,7 @@ onKeyStroke('Escape', close)
           </div>
           <!-- Radio box -->
           <div class="relative my-4 flex items-center justify-center">
-            <div class="relative nui-focus rounded-full">
+            <div class="nui-focus relative rounded-full">
               <input
                 type="radio"
                 name="language_selection"
@@ -100,7 +100,7 @@ onKeyStroke('Escape', close)
           </div>
           <!-- Radio box -->
           <div class="relative my-4 flex items-center justify-center">
-            <div class="relative nui-focus rounded-full">
+            <div class="nui-focus relative rounded-full">
               <input
                 type="radio"
                 name="language_selection"
@@ -124,7 +124,7 @@ onKeyStroke('Escape', close)
           </div>
           <!-- Radio box -->
           <div class="relative my-4 flex items-center justify-center">
-            <div class="relative nui-focus rounded-full">
+            <div class="nui-focus relative rounded-full">
               <input
                 type="radio"
                 name="language_selection"
@@ -148,7 +148,7 @@ onKeyStroke('Escape', close)
           </div>
           <!-- Radio box -->
           <div class="relative my-4 flex items-center justify-center">
-            <div class="relative nui-focus rounded-full">
+            <div class="nui-focus relative rounded-full">
               <input
                 type="radio"
                 name="language_selection"

@@ -24,14 +24,19 @@ const props = withDefaults(
     /**
      * The color of the icon.
      */
-    iconColor?: | 'default'
-    | 'invert'
+    iconColor?: 'default'
+    | 'none'
+    | 'dark'
+    | 'light'
+    | 'muted'
+    | 'black'
     | 'primary'
     | 'info'
     | 'success'
     | 'warning'
     | 'danger'
-    | 'none'
+    | 'default-contrast'
+    | 'muted-contrast'
   }>(),
   {
     iconColor: 'primary',

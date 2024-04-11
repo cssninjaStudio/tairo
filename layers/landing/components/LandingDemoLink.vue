@@ -33,7 +33,7 @@ const props = defineProps<{
         format="webp"
         loading="lazy"
         decoding="async"
-      />
+      >
       <img
         v-if="props.preview?.srcDark"
         class="border-muted-800 hidden w-full rounded-lg border motion-safe:transition-opacity motion-safe:duration-200 motion-safe:group-hover:opacity-75 dark:block"
@@ -45,7 +45,7 @@ const props = defineProps<{
         format="webp"
         loading="lazy"
         decoding="async"
-      />
+      >
       <div class="absolute inset-x-0 -bottom-2 mx-auto max-w-[85%]">
         <BaseCard
           rounded="lg"

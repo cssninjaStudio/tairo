@@ -14,10 +14,11 @@ watch(
   ([panel, value]) => {
     if (panel?.component && value) {
       document.documentElement.style.overflow = 'hidden'
-    } else {
+    }
+    else {
       document.documentElement.style.overflow = ''
     }
-  }
+  },
 )
 
 </script>
@@ -57,7 +58,7 @@ watch(
             class="xs:max-w-full fixed top-0 z-[100] h-full"
             :class="[
               current.position === 'left' ? 'start-0' : 'end-0',
-              
+
               current.size === 'sm' && 'w-96',
               current.size === 'md' && 'w-[460px]',
             ]"

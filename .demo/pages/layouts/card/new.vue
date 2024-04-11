@@ -243,7 +243,11 @@ const onSubmit = handleSubmit(
                 </div>
 
                 <div v-if="fieldsWithErrors" class="mt-8">
-                  <BaseMessage color="warning" @close="() => setErrors({})" icon>
+                  <BaseMessage
+                    color="warning"
+                    icon
+                    @close="() => setErrors({})"
+                  >
                     This form has {{ fieldsWithErrors }} errors, please review
                     them before submitting
                   </BaseMessage>
@@ -347,9 +351,9 @@ const onSubmit = handleSubmit(
                           :model-value="field.value"
                           :error="errorMessage"
                           :disabled="isSubmitting"
+                          placeholder="Select Someone"
                           @update:model-value="handleChange"
                           @blur="handleBlur"
-                          placeholder="Select Someone"
                         >
                           <option value="Maya Rosselini">
                             Maya Rosselini
