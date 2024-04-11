@@ -3,35 +3,35 @@
     <BaseInputNumber
       v-model="fields.first"
       rounded="none"
-      label="Rounded:none"
+      label="Rounded: none"
       placeholder="Ex: username"
     />
 
     <BaseInputNumber
       v-model="fields.second"
       rounded="sm"
-      label="Rounded:sm"
+      label="Rounded: sm"
       placeholder="Ex: username"
     />
 
     <BaseInputNumber
       v-model="fields.third"
       rounded="md"
-      label="Rounded:md"
+      label="Rounded: md"
       placeholder="Ex: username"
     />
 
     <BaseInputNumber
       v-model="fields.fourth"
       rounded="lg"
-      label="Rounded:lg"
+      label="Rounded: lg"
       placeholder="Ex: username"
     />
 
     <BaseInputNumber
       v-model="fields.fifth"
       rounded="full"
-      label="Rounded:full"
+      label="Rounded: full"
       placeholder="Ex: username"
     />
   </div>

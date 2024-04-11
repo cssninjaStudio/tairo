@@ -3,13 +3,12 @@
     <BaseDropdown
       variant="button"
       label="Dropdown"
-      orientation="start"
+      placement="bottom-start"
     >
       <BaseDropdownItem
         to="#"
         title="Lana Jensen"
         text="Software Engineer"
-        color="default"
         rounded="sm"
       >
         <template #start>
@@ -24,7 +23,6 @@
         to="#"
         title="Shawn Miller"
         text="Product Manager"
-        color="default"
         rounded="sm"
       >
         <template #start>
@@ -39,7 +37,6 @@
         to="#"
         title="John Marynski"
         text="Sales Manager"
-        color="default"
         rounded="sm"
       >
         <template #start>
@@ -56,7 +53,6 @@
         to="#"
         title="Garry Porter"
         text="CEO - Founder"
-        color="default"
         rounded="sm"
       >
         <template #start>

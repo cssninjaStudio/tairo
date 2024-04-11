@@ -6,17 +6,19 @@ definePageMeta({
   preview: {
     title: 'Wizard — Step 6',
     description: 'For onboarding and step forms',
-    categories: ['dashboards', 'wizard', 'forms'],
+    categories: ['dashboards', 'wizards', 'forms'],
     src: '/img/screens/wizard-6.png',
     srcDark: '/img/screens/wizard-6-dark.png',
     order: 35,
   },
 })
-
-const { data: project } = useMultiStepForm<Project, ProjectStepData>()
 useHead({
   title: 'Project tools',
 })
+
+const { data: project, checkPreviousSteps } = useMultiStepForm<Project, ProjectStepData>()
+
+onBeforeMount(checkPreviousSteps)
 
 const tools: Tool[] = [
   {

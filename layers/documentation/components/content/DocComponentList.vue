@@ -14,7 +14,7 @@ watchEffect(() => {
   meta.value = Object.keys(componentsMeta ?? {})?.filter((name) => {
     if (!props.prefix) return true
 
-    return name.startsWith(props.prefix)
+    return new RegExp(props.prefix).test(name)
   })
 })
 
@@ -32,6 +32,13 @@ const componentsPagesMap = computed(() => {
 })
 
 // filter components without documentation routes
+const componentsWithPages = computed(() => {
+  return componentsPagesMap.value.filter((c) => {
+    return routesFlat.value.find(
+      (route: any) => route.components?.includes(c.name),
+    )
+  })
+})
 const componentsWithoutPages = computed(() => {
   return componentsPagesMap.value.filter((c) => {
     const route = routesFlat.value.find(
@@ -48,7 +55,7 @@ const componentsWithoutPages = computed(() => {
       <DocLayoutSection>
         <div class="grid gap-4 md:grid-cols-4">
           <NuxtLink
-            v-for="component of componentsPagesMap"
+            v-for="component of componentsWithPages"
             :key="component.name"
             class="nui-focus group rounded-md"
             :to="component.route?._path"
@@ -91,7 +98,7 @@ const componentsWithoutPages = computed(() => {
 
     <div
       v-if="componentsWithoutPages.length"
-      class="flex w-full flex-wrap justify-start gap-2"
+      class="mb-24 flex w-full flex-wrap justify-start gap-2"
     >
       <BaseTag
         v-for="component of componentsWithoutPages"

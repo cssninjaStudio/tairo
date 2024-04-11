@@ -196,19 +196,19 @@ const onSubmit = handleSubmit(
 
 const calendars = [
   {
-    id: 1,
+    id: '1',
     name: 'My Calendar',
     text: 'Your personal calendar',
     icon: 'ph:user-duotone',
   },
   {
-    id: 2,
+    id: '2',
     name: 'Team Calendar',
     text: 'Your team calendar',
     icon: 'ph:users-duotone',
   },
   {
-    id: 3,
+    id: '3',
     name: 'Company calendar',
     text: 'Your company calendar',
     icon: 'ph:buildings-duotone',
@@ -571,6 +571,7 @@ const colorCode = ref('color_code_1')
                     icon: 'icon',
                   }"
                   :model-value="field.value"
+                  :model-modifiers="{ prop: true }"
                   :error="errorMessage"
                   :disabled="isSubmitting"
                   @update:model-value="handleChange"

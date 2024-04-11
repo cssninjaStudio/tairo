@@ -12,9 +12,35 @@ const props = withDefaults(
   },
 )
 
-const selectedCategory = ref('')
-
+const route = useRoute()
 const router = useRouter()
+
+const onlyNew = computed({
+  get() {
+    return Boolean(route.query.new)
+  },
+  set(value) {
+    router.push({
+      query: {
+        ...route.query,
+        new: value ? '1' : undefined,
+      },
+    })
+  },
+})
+const selectedCategory = computed({
+  get() {
+    return route.query.category as string || ''
+  },
+  set(value) {
+    router.push({
+      query: {
+        ...route.query,
+        category: value ? value : undefined,
+      },
+    })
+  },
+})
 
 const demoPages = computed(() => {
   const match: RouteRecordRaw[] = []
@@ -52,6 +78,11 @@ const demoPages = computed(() => {
 
 const categories = computed(() => {
   const categories = new Set<string>()
+  let _demos = demoPages.value
+
+  if (onlyNew.value) {
+    _demos = _demos.filter(page => page.meta?.preview?.new)
+  }
 
   function extractPreview(preview: any) {
     if (!preview) {
@@ -74,7 +105,7 @@ const categories = computed(() => {
     }
   }
 
-  for (const route of demoPages.value) {
+  for (const route of _demos) {
     extractPreview(route.meta?.preview)
   }
   return Array.from(categories).sort((a, b) => {
@@ -83,8 +114,14 @@ const categories = computed(() => {
 })
 
 const filteredDemos = computed(() => {
+  let _demos = demoPages.value
+
+  if (onlyNew.value) {
+    _demos = _demos.filter(page => page.meta?.preview?.new)
+  }
+
   if (selectedCategory.value.length === 0) {
-    return demoPages.value
+    return _demos
   }
 
   function filterPreview(preview: any) {
@@ -110,7 +147,7 @@ const filteredDemos = computed(() => {
     )
   }
 
-  return demoPages.value.filter((page) => {
+  return _demos.filter((page) => {
     return filterPreview(page.meta?.preview)
   })
 })
@@ -151,6 +188,13 @@ const filteredDemos = computed(() => {
           class="ltablet:col-span-2 ltablet:block relative col-span-12 hidden lg:col-span-2 lg:block"
         >
           <ul class="space-y-3 lg:sticky lg:top-28">
+            <li class="pb-4">
+              <BaseSwitchThin
+                v-model="onlyNew"
+                color="primary"
+                label="Only new"
+              />
+            </li>
             <li class="capitalize">
               <BaseRadio
                 v-model="selectedCategory"

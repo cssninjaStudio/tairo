@@ -61,7 +61,7 @@ function onLinkClick() {
 </script>
 
 <template>
-  <li class="group mb-1 min-h-[2rem]">
+  <li class="group mb-1 min-h-8">
     <a
       ref="buttonRef"
       href="#"

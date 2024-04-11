@@ -9,6 +9,14 @@ definePageMeta({
     srcDark: '/img/screens/layouts-subpages-profile-edit-2-dark.png',
     order: 77,
   },
+  pageTransition: {
+    enterActiveClass: 'transition-all duration-500 ease-out',
+    enterFromClass: 'translate-y-20 opacity-0',
+    enterToClass: 'translate-y-0 opacity-100',
+    leaveActiveClass: 'transition-all duration-200 ease-in',
+    leaveFromClass: 'translate-y-0 opacity-100',
+    leaveToClass: 'translate-y-20 opacity-0',
+  },
 })
 
 const { data, pending, error, refresh } = await useFetch('/api/profile')
@@ -100,7 +108,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                   <BaseDropdown
                     variant="context"
                     label="Dropdown"
-                    orientation="end"
+                    placement="bottom-end"
                     size="md"
                     class="z-20"
                     rounded="lg"

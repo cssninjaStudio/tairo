@@ -37,6 +37,7 @@ declare module 'vue-router' {
       src: string
       srcDark?: string
       order?: number
+      new?: boolean
     }
   }
 }

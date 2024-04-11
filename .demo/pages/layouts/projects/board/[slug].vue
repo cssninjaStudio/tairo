@@ -240,7 +240,7 @@ function onDrop(column: ColumnContent, dropResult: any) {
                   tabindex="0"
                   class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 group relative flex cursor-pointer flex-col items-start rounded-lg border bg-white/90 p-4 hover:bg-white"
                   draggable="true"
-                  @click="() => openTaskPanel(task.id, data?.project.tasks)"
+                  @click="() => openTaskPanel(task.id, data?.project?.tasks)"
                 >
                   <div class="relative mb-2">
                     <div

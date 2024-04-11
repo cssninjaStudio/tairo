@@ -6,22 +6,24 @@ definePageMeta({
   preview: {
     title: 'Wizard — Step 7',
     description: 'For onboarding and step forms',
-    categories: ['dashboards', 'wizard', 'forms'],
+    categories: ['dashboards', 'wizards', 'forms'],
     src: '/img/screens/wizard-7.png',
     srcDark: '/img/screens/wizard-7-dark.png',
     order: 36,
   },
+})
+useHead({
+  title: 'Submit project',
 })
 
 const {
   data: project,
   complete,
   getStep,
+  checkPreviousSteps,
 } = useMultiStepForm<Project, ProjectStepData>()
 
-useHead({
-  title: 'Submit project',
-})
+onBeforeMount(checkPreviousSteps)
 
 const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
 </script>
@@ -53,7 +55,7 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
               small
               rounded="full"
               class="hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500 pointer-events-none opacity-0 group-hover:pointer-events-auto group-hover:opacity-100"
-              :to="getStep(1).to"
+              :to="getStep(1)?.to"
             >
               <Icon name="lucide:edit-2" class="pointer-events-none size-3" />
             </BaseButtonIcon>
@@ -77,7 +79,7 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
                     small
                     rounded="full"
                     class="hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500 pointer-events-none opacity-0 group-hover:pointer-events-auto group-hover:opacity-100"
-                    :to="getStep(1).to"
+                    :to="getStep(1)?.to"
                   >
                     <Icon
                       name="lucide:edit-2"
@@ -115,7 +117,7 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
                     small
                     rounded="full"
                     class="hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500 pointer-events-none opacity-0 group-hover:pointer-events-auto group-hover:opacity-100"
-                    :to="getStep(0).to"
+                    :to="getStep(0)?.to"
                   >
                     <Icon
                       name="lucide:edit-2"
@@ -184,7 +186,7 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
                     small
                     rounded="full"
                     class="hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500 pointer-events-none opacity-0 group-hover:pointer-events-auto group-hover:opacity-100"
-                    :to="getStep(2).to"
+                    :to="getStep(2)?.to"
                   >
                     <Icon
                       name="lucide:edit-2"
@@ -232,7 +234,7 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
                     small
                     rounded="full"
                     class="hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500 pointer-events-none opacity-0 group-hover:pointer-events-auto group-hover:opacity-100"
-                    :to="getStep(2).to"
+                    :to="getStep(2)?.to"
                   >
                     <Icon
                       name="lucide:edit-2"
@@ -267,7 +269,7 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
                     small
                     rounded="full"
                     class="hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500 pointer-events-none opacity-0 group-hover:pointer-events-auto group-hover:opacity-100"
-                    :to="getStep(2).to"
+                    :to="getStep(2)?.to"
                   >
                     <Icon
                       name="lucide:edit-2"
@@ -306,7 +308,7 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
                     small
                     rounded="full"
                     class="hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500 pointer-events-none opacity-0 group-hover:pointer-events-auto group-hover:opacity-100"
-                    :to="getStep(3).to"
+                    :to="getStep(3)?.to"
                   >
                     <Icon
                       name="lucide:edit-2"
@@ -341,7 +343,7 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
                     small
                     rounded="full"
                     class="hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500 pointer-events-none opacity-0 group-hover:pointer-events-auto group-hover:opacity-100"
-                    :to="getStep(4).to"
+                    :to="getStep(4)?.to"
                   >
                     <Icon
                       name="lucide:edit-2"
@@ -396,7 +398,7 @@ const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
                     small
                     rounded="full"
                     class="hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500 pointer-events-none opacity-0 group-hover:pointer-events-auto group-hover:opacity-100"
-                    :to="getStep(5).to"
+                    :to="getStep(5)?.to"
                   >
                     <Icon
                       name="lucide:edit-2"

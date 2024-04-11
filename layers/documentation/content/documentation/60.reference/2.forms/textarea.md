@@ -14,9 +14,9 @@ icon:
 title: Radius
 demo: '#examples/textarea/shapes.vue'
 ---
-Textareas can have different radius factors. Use the `rounded` prop to change the radius of the textarea component.
-:::doc-message{type="muted" icon="ion:shapes-outline"}
-Default props of all :doc-linker{to="BaseTextarea"} can be set in your `.app/app.config.ts`.
+Textarea can have different radius factors. Use the `rounded` prop to change the radius of the textarea component.
+:::doc-message{color="muted-contrast" icon="ion:shapes-outline"}
+Default props of all :doc-linker{to="BaseTextarea"} can be set in your `<app>/app.config.ts`.
 :::
 ::
 
@@ -25,7 +25,7 @@ Default props of all :doc-linker{to="BaseTextarea"} can be set in your `.app/app
 title: Contrast:default+
 demo: '#examples/textarea/contrast-default.vue'
 ---
-Textareas can have different contrasts. Use the `contrast` prop to change the contrast of the textarea component.
+Textarea can have different contrasts. Use the `contrast` prop to change the contrast of the textarea component.
 ::
 
 ::doc-component-demo
@@ -33,7 +33,7 @@ Textareas can have different contrasts. Use the `contrast` prop to change the co
 title: Contrast:muted
 demo: '#examples/textarea/contrast-muted.vue'
 ---
-Textareas can have different contrasts. Use the `contrast` prop to change the contrast of the textarea component.
+Textarea can have different contrasts. Use the `contrast` prop to change the contrast of the textarea component.
 ::
 
 ::doc-component-demo
@@ -41,7 +41,7 @@ Textareas can have different contrasts. Use the `contrast` prop to change the co
 title: Contrast:muted+
 demo: '#examples/textarea/contrast-muted-contrast.vue'
 ---
-Textareas can have different contrasts. Use the `contrast` prop to change the contrast of the textarea component.
+Textarea can have different contrasts. Use the `contrast` prop to change the contrast of the textarea component.
 ::
 
 ::doc-component-demo
@@ -49,7 +49,7 @@ Textareas can have different contrasts. Use the `contrast` prop to change the co
 title: Label:float
 demo: '#examples/textarea/label-float.vue'
 ---
-Textareas can have floating labels. Use the `label-float` prop to enable the floating label.
+Textarea can have floating labels. Use the `label-float` prop to enable the floating label.
 ::
 
 ::doc-component-demo
@@ -57,7 +57,7 @@ Textareas can have floating labels. Use the `label-float` prop to enable the flo
 title: Focus
 demo: '#examples/textarea/focus.vue'
 ---
-Textareas can have a primary colored focus. Use the `color-focus` prop to enable the colored focus.
+Textarea can have a primary colored focus. Use the `color-focus` prop to enable the colored focus.
 ::
 
 ::doc-component-demo
@@ -65,7 +65,7 @@ Textareas can have a primary colored focus. Use the `color-focus` prop to enable
 title: Error
 demo: '#examples/textarea/invalid.vue'
 ---
-Textareas can be shown in an error state. Use the `error` prop to show the error and the error message.
+Textarea can be shown in an error state. Use the `error` prop to show the error and the error message.
 ::
 
 ::doc-component-demo
@@ -73,7 +73,7 @@ Textareas can be shown in an error state. Use the `error` prop to show the error
 title: Loading
 demo: '#examples/textarea/loading.vue'
 ---
-Textareas can be shown in a loading state. Use the `loading` prop to enable the loading state.
+Textarea can be shown in a loading state. Use the `loading` prop to enable the loading state.
 ::
 
 ::doc-component-demo
@@ -81,7 +81,7 @@ Textareas can be shown in a loading state. Use the `loading` prop to enable the 
 title: Disabled
 demo: '#examples/textarea/disabled.vue'
 ---
-Textareas can be shown disabled. Use the `disabled` prop to disable the textarea.
+Textarea can be shown disabled. Use the `disabled` prop to disable the textarea.
 ::
 
 ::doc-component-demo
@@ -89,7 +89,7 @@ Textareas can be shown disabled. Use the `disabled` prop to disable the textarea
 title: Custom addons
 demo: '#examples/textarea/addon.vue'
 ---
-Textareas can have custom addons. Use the `addon` slot to add your own custom addons.
+Textarea can have custom addons. Use the `addon` slot to add your own custom addons.
 ::
 
 

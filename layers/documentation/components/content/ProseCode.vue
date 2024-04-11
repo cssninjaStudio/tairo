@@ -28,12 +28,14 @@ export default defineComponent({
       return `\`\`\`${props.language}\n${props.code}\`\`\``
     })
 
+    const inCodeGroup = inject('code-group-context', false)
     const { copy, copied, isSupported } = useClipboard({
       source: () => props.code,
     })
 
     return {
       markdown,
+      inCodeGroup,
       copy,
       copied,
       isSupported,
@@ -45,7 +47,7 @@ export default defineComponent({
 <template>
   <div class="group/prose-code relative">
     <div
-      v-if="filename || isSupported"
+      v-if="!inCodeGroup && (filename || isSupported)"
       class="absolute end-4 top-2 flex items-center gap-1 text-xs opacity-40 transition-opacity duration-200 group-hover/prose-code:opacity-60 dark:group-hover/prose-code:opacity-80"
       :class="[filename && isSupported ? 'start-4 justify-between' : '']"
     >
@@ -65,7 +67,9 @@ export default defineComponent({
       fullwidth
       class="doc-markdown"
       :class="[
-        filename && isSupported ? '[&_.shiki]:pt-8' : '[&_.shiki]:!pe-10',
+        inCodeGroup
+          ? ''
+          : filename && isSupported ? '[&_.shiki]:pt-8' : '[&_.shiki]:!pe-10',
       ]"
       :lines="false"
     />

@@ -6,28 +6,30 @@ definePageMeta({
   preview: {
     title: 'Wizard — Step 1',
     description: 'For onboarding and step forms',
-    categories: ['dashboards', 'wizard', 'forms'],
+    categories: ['dashboards', 'wizards', 'forms'],
     src: '/img/screens/wizard-1.png',
     srcDark: '/img/screens/wizard-1-dark.png',
     order: 30,
   },
 })
-
-const {
-  getNextStep,
-  data: project,
-  goToStep,
-} = useMultiStepForm<Project, ProjectStepData>()
 useHead({
   title: 'Project type',
 })
 
+const {
+  getNextStep,
+  data: project,
+  handleSubmit,
+  goToStep,
+} = useMultiStepForm<Project, ProjectStepData>()
+
 function onSelectType(type: ProjectType) {
-  const next = getNextStep()
-  if (next) {
-    project.value.type = type
-    goToStep(next)
-  }
+  // const next = getNextStep()
+  // if (next) {
+  project.value.type = type
+  handleSubmit()
+  // goToStep(next)
+  // }
 }
 </script>
 

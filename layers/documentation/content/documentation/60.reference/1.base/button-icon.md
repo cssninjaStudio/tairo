@@ -14,8 +14,8 @@ title: Radius
 demo: '#examples/icon-button/shapes.vue'
 ---
 Icon buttons are a quick and visual way to express an action. Icon buttons can have different radius factors using the `rounded` prop.
-:::doc-message{type="muted" icon="ion:shapes-outline"}
-Default props of all :doc-linker{to="BaseButtonIcon"} can be set in your `.app/app.config.ts`.
+:::doc-message{color="muted-contrast" icon="ion:shapes-outline"}
+Default props of all :doc-linker{to="BaseButtonIcon"} can be set in your `<app>/app.config.ts`.
 :::
 ::
 

@@ -12,7 +12,7 @@ definePageMeta({
     categories: ['layouts', 'authentication'],
     src: '/img/screens/auth-login-4.png',
     srcDark: '/img/screens/auth-login-4-dark.png',
-    order: 99,
+    order: 154,
   },
 })
 

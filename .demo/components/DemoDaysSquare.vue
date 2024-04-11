@@ -12,22 +12,22 @@ const days = [
   {
     name: 'Monday',
     date: 22,
-    url: '/',
+    url: '#',
   },
   {
     name: 'Tuesday',
     date: 23,
-    url: '/',
+    url: '#',
   },
   {
     name: 'Wednesday',
     date: 24,
-    url: '/',
+    url: '#',
   },
   {
     name: 'Friday',
     date: 25,
-    url: '/',
+    url: '#',
   },
 ]
 </script>

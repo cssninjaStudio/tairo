@@ -6,6 +6,8 @@ const props = withDefaults(
     expiryYear?: number | string
     expiryMonth?: number | string
     cvc?: number | string
+    centered?: boolean
+    contrast?: 'low' | 'high'
   }>(),
   {
     name: '•••••• ••••••',
@@ -13,13 +15,21 @@ const props = withDefaults(
     expiryYear: '••',
     expiryMonth: '••',
     cvc: '•••',
+    centered: true,
+    contrast: 'low',
   },
 )
 </script>
 
 <template>
   <div
-    class="dark:bg-muted-900 border-muted-200 dark:border-muted-800 shadow-muted-400/10 dark:shadow-muted-800/10 relative mx-auto h-[200px] w-full max-w-[315px] rounded-xl border bg-white p-6 shadow-xl"
+    class="border-muted-200 dark:border-muted-800 shadow-muted-400/10 dark:shadow-muted-800/10 relative h-[200px] w-full max-w-[315px] rounded-xl border bg-white p-6 shadow-xl"
+    :class="[
+      props.centered ? 'mx-auto' : '',
+      props.contrast === 'high' && 'dark:bg-muted-950',
+      props.contrast === 'low' && 'dark:bg-muted-900',
+
+    ]"
   >
     <!--Card content-->
     <div class="flex h-full flex-col gap-3">

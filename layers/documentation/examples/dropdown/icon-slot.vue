@@ -3,13 +3,12 @@
     <BaseDropdown
       variant="button"
       label="Dropdown"
-      orientation="start"
+      placement="bottom-start"
     >
       <BaseDropdownItem
         to="#"
         title="Profile"
         text="View your profile"
-        color="default"
         rounded="sm"
       >
         <template #start>
@@ -21,7 +20,6 @@
         to="#"
         title="Projects"
         text="View your projects"
-        color="default"
         rounded="sm"
       >
         <template #start>
@@ -33,7 +31,6 @@
         to="#"
         title="Team"
         text="Manage your team"
-        color="default"
         rounded="sm"
       >
         <template #start>
@@ -47,7 +44,6 @@
         to="#"
         title="Settings"
         text="Set your preferences"
-        color="default"
         rounded="sm"
       >
         <template #start>

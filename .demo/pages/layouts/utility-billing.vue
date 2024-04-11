@@ -267,7 +267,7 @@ const billingCycles = ref('monthly')
         </BaseRadioHeadless>
       </div>
       <div>
-        <BaseCard rounded="sm" class="p-8">
+        <BaseCard rounded="sm" class="flex h-full flex-col p-8">
           <div class="flex gap-12">
             <TairoLogo class="size-12 shrink-0" :class="planColor" />
             <div>
@@ -295,7 +295,7 @@ const billingCycles = ref('monthly')
               </BaseParagraph>
             </div>
           </div>
-          <div class="my-4">
+          <div class="my-8">
             <BaseParagraph
               size="sm"
               lead="tight"

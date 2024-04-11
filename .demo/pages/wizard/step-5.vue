@@ -11,18 +11,19 @@ definePageMeta({
   preview: {
     title: 'Wizard — Step 5',
     description: 'For onboarding and step forms',
-    categories: ['dashboards', 'wizard', 'forms'],
+    categories: ['dashboards', 'wizards', 'forms'],
     src: '/img/screens/wizard-5.png',
     srcDark: '/img/screens/wizard-5-dark.png',
     order: 34,
   },
 })
-
-const { data: project } = useMultiStepForm<Project, ProjectStepData>()
-
 useHead({
   title: 'Team members',
 })
+
+const { data: project, checkPreviousSteps } = useMultiStepForm<Project, ProjectStepData>()
+
+onBeforeMount(checkPreviousSteps)
 
 const toggled = ref(false)
 

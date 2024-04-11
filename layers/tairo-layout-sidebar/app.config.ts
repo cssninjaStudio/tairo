@@ -1,4 +1,4 @@
-export default defineAppConfig({
+export default {
   tairo: {
     sidebar: {
       circularMenu: {
@@ -22,4 +22,4 @@ export default defineAppConfig({
       },
     },
   },
-})
+}

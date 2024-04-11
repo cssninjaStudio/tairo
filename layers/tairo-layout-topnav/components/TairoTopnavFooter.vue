@@ -1,15 +1,13 @@
 <script setup lang="ts">
-type LayoutDisplay =
-  | 'condensed'
-  | 'horizontal-scroll'
-  | 'expanded-sm'
-  | 'expanded-md'
-  | 'expanded-lg'
-  | 'expanded-xl'
-
 const props = withDefaults(
   defineProps<{
-    display?: LayoutDisplay
+    display?:
+      | 'condensed'
+      | 'horizontal-scroll'
+      | 'expanded-sm'
+      | 'expanded-md'
+      | 'expanded-lg'
+      | 'expanded-xl'
   }>(),
   {
     display: 'expanded-lg',

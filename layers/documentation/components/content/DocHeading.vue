@@ -21,11 +21,8 @@ const props = withDefaults(
     <TairoTocAnchor
       :label="props.label"
       :level="props.level"
-      prefix=""
-    >
-      <template #suffix>
-        <Icon name="lucide:hash" class="mt-[0.33rem] size-4" />
-      </template>
-    </TairoTocAnchor>
+      prefix="•"
+      prefix-classes="opacity-30 group-hover/toc:opacity-100 group-focus/toc:opacity-100 group-visible/toc:opacity-100 text-primary-500 absolute -start-3.5 -top-1"
+    />
   </BaseHeading>
 </template>

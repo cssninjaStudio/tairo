@@ -1,12 +1,12 @@
 <template>
-  <div class="flex max-w-3xl flex-wrap items-end gap-3">
+  <div class="flex max-w-3xl flex-col flex-wrap gap-3 md:flex-row md:items-end">
     <div class="flex-1">
       <BaseInputNumber
         v-model="fields.first"
         contrast="muted"
         size="sm"
         rounded="md"
-        label="Rounded:md"
+        label="Rounded: md"
         placeholder="Ex: username"
       />
     </div>
@@ -17,7 +17,7 @@
         contrast="muted"
         size="md"
         rounded="md"
-        label="Rounded:md"
+        label="Rounded: md"
         placeholder="Ex: username"
       />
     </div>
@@ -28,7 +28,7 @@
         contrast="muted"
         size="lg"
         rounded="md"
-        label="Rounded:md"
+        label="Rounded: md"
         placeholder="Ex: username"
       />
     </div>

@@ -8,12 +8,12 @@ const props = defineProps<{
 
 <template>
   <div
-    class="dark:bg-muted-800 border-muted-200 dark:border-muted-700 group relative mb-4 flex h-full gap-[1px] rounded-lg border bg-white p-4 transition duration-150 ease-out"
+    class="dark:bg-muted-800 border-muted-200 dark:border-muted-700 group relative mb-4 flex h-full gap-px rounded-lg border bg-white p-4 transition duration-150 ease-out"
   >
     <!-- <div class="absolute inset-0 w-1 rounded-ss-lg rounded-es-lg" :class="[categoryTheme[event.category].color]"></div> -->
     <div
       role="button"
-      class="dnd-drag-handler hover:bg-muted-100 dark:hover:bg-muted-900 m-[1px] flex size-6 shrink-0 cursor-grab items-center justify-center rounded-full text-sm transition-colors duration-75"
+      class="dnd-drag-handler hover:bg-muted-100 dark:hover:bg-muted-900 m-px flex size-6 shrink-0 cursor-grab items-center justify-center rounded-full text-sm transition-colors duration-75"
     >
       <Icon
         name="ph:dots-six-vertical"

@@ -14,8 +14,8 @@ definePageMeta({
 const cardInfo = ref({
   name: undefined,
   number: undefined,
-  expiryYear: undefined,
-  expiryMonth: undefined,
+  expiryYear: '',
+  expiryMonth: '',
   cvc: undefined,
 })
 
@@ -151,10 +151,8 @@ const termsApproval = ref(false)
                         <BaseSelect
                           v-model="cardInfo.expiryMonth"
                           label="Exp. month"
+                          placeholder="Month"
                         >
-                          <option value="">
-                            Month
-                          </option>
                           <option value="01">
                             01
                           </option>
@@ -197,10 +195,8 @@ const termsApproval = ref(false)
                         <BaseSelect
                           v-model="cardInfo.expiryYear"
                           label="Exp. year"
+                          placeholder="Year"
                         >
-                          <option value="">
-                            Year
-                          </option>
                           <option value="23">
                             23
                           </option>

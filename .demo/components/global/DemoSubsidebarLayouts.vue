@@ -99,6 +99,21 @@ const navigation = [
         icon: 'ph:article-duotone',
         to: '/layouts/form-6',
       },
+      {
+        name: 'Contact',
+        icon: 'ph:article-duotone',
+        to: '/layouts/contacts/create',
+      },
+      {
+        name: 'Edit user',
+        icon: 'ph:article-duotone',
+        to: '/layouts/user-edit',
+      },
+      {
+        name: 'Edit company',
+        icon: 'ph:article-duotone',
+        to: '/layouts/company-edit',
+      },
     ],
   },
   {
@@ -200,6 +215,106 @@ const navigation = [
     divider: true,
   },
   {
+    name: 'Accounts',
+    children: [
+      {
+        name: 'Accounts list',
+        icon: 'ph:gradient-duotone',
+        to: '/layouts/accounts',
+        exact: true,
+      },
+      {
+        name: 'Linked accounts',
+        icon: 'ph:link-simple-horizontal-duotone',
+        to: '/layouts/accounts/linked',
+        exact: true,
+      },
+      {
+        name: 'Account rules',
+        icon: 'ph:gavel-duotone',
+        to: '/layouts/accounts/rules',
+        exact: true,
+      },
+      {
+        name: 'Transactions',
+        icon: 'ph:diamonds-four-duotone',
+        to: '/layouts/transactions',
+        exact: true,
+      },
+      {
+        name: 'Credit cards',
+        icon: 'ph:credit-card-duotone',
+        to: '/layouts/cards',
+        exact: true,
+      },
+      {
+        name: 'Create card',
+        icon: 'ph:credit-card-duotone',
+        to: '/layouts/card/new',
+        exact: true,
+      },
+      {
+        name: 'Members',
+        icon: 'ph:users-duotone',
+        to: '/layouts/members',
+        exact: false,
+      },
+      {
+        name: 'Investments',
+        icon: 'ph:recycle-duotone',
+        to: '/layouts/invest',
+        exact: true,
+      },
+      {
+        name: 'Credit request',
+        icon: 'ph:folder-simple-dashed-duotone',
+        to: '/layouts/credit',
+        exact: true,
+      },
+      {
+        name: 'Vault security',
+        icon: 'ph:shield-check-duotone',
+        to: '/layouts/vault',
+        exact: true,
+      },
+    ],
+  },
+  {
+    name: 'Payments',
+    children: [
+      {
+        name: 'Outgoing',
+        icon: 'ph:arrow-right',
+        to: '/layouts/payments',
+        exact: true,
+      },
+      {
+        name: 'Incoming',
+        icon: 'ph:arrow-left',
+        to: '/layouts/payments/incoming',
+        exact: true,
+      },
+      {
+        name: 'Recipients',
+        icon: 'ph:users-duotone',
+        to: '/layouts/payments/recipients',
+        exact: true,
+      },
+      {
+        name: 'Send payment',
+        icon: 'ph:paper-plane-right-duotone',
+        to: '/layouts/send',
+        exact: true,
+      },
+      {
+        name: 'Receive payment',
+        icon: 'ph:receipt-duotone',
+        to: '/layouts/receive',
+        exact: true,
+      },
+    ],
+  },
+  {
     name: 'Projects',
     children: [
       {
@@ -227,6 +342,11 @@ const navigation = [
         name: 'Kanban board',
         icon: 'ph:squares-four-duotone',
         to: '/layouts/projects/board',
+      },
+      {
+        name: 'Invite',
+        icon: 'ph:user-plus-duotone',
+        to: '/layouts/invite',
       },
     ],
   },
@@ -286,19 +406,29 @@ const navigation = [
         exact: true,
       },
       {
+        name: 'Profile menus',
+        icon: 'ph:subtract-square-duotone',
+        to: '/layouts/profile-settings',
+      },
+      {
         name: 'Edit profile',
         icon: 'ph:pencil-duotone',
         to: '/layouts/profile-edit',
       },
       {
+        name: 'User',
+        icon: 'ph:user-duotone',
+        to: '/layouts/user',
+      },
+      {
+        name: 'Company',
+        icon: 'ph:buildings-duotone',
+        to: '/layouts/company',
+      },
+      {
         name: 'Notifications',
         icon: 'ph:notification-duotone',
         to: '/layouts/profile-notifications',
-      },
-      {
-        name: 'Settings',
-        icon: 'ph:gear-duotone',
-        to: '/layouts/profile-settings',
       },
       {
         name: 'Search results',
@@ -325,11 +455,36 @@ const navigation = [
         icon: 'ph:lightning-duotone',
         to: '/layouts/utility-action-2',
       },
+      {
+        name: 'Settings',
+        icon: 'ph:gear-six-duotone',
+        to: '/layouts/settings',
+      },
     ],
   },
   {
     name: 'Utility',
     children: [
+      {
+        name: 'Documents',
+        icon: 'ph:sticker-duotone',
+        to: '/layouts/documents',
+      },
+      {
+        name: 'Downloads',
+        icon: 'ph:download-duotone',
+        to: '/layouts/downloads',
+      },
+      {
+        name: 'Integrations',
+        icon: 'ph:rocket-duotone',
+        to: '/layouts/integrations',
+      },
+      {
+        name: 'Offers',
+        icon: 'ph:gift-duotone',
+        to: '/layouts/offers',
+      },
       {
         name: 'Confirm account',
         icon: 'ph:square-logo-duotone',
@@ -341,9 +496,16 @@ const navigation = [
         to: '/layouts/utility-promotion',
       },
       {
-        name: 'Invoice',
+        name: 'Invoice v1',
         icon: 'ph:note-duotone',
         to: '/layouts/utility-invoice',
+        exact: true,
+      },
+      {
+        name: 'Invoice v2',
+        icon: 'ph:note-duotone',
+        to: '/layouts/utility-invoice-2',
+        exact: true,
       },
       {
         name: 'Service status',

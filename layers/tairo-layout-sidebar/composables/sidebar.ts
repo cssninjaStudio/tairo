@@ -155,6 +155,10 @@ export function useSidebar() {
         }
       },
     )
+    onUnmounted(() => {
+      currentName.value = ''
+      isOpen.value = undefined
+    })
   }
 
   return {

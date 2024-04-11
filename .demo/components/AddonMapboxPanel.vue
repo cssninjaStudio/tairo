@@ -460,7 +460,7 @@ watch(
           <TairoSidebarTools />
         </div>
         <div
-          class="ltablet:h-[calc(100%_-_64px)] nui-slimscroll h-[calc(100vh_-_492px)] overflow-y-auto p-6 lg:h-[calc(100%_-_64px)]"
+          class="ltablet:h-[calc(100dvh_-_64px)] nui-slimscroll h-[calc(100vh_-_492px)] overflow-y-auto p-6 lg:h-[calc(100dvh_-_64px)]"
         >
           <!--Title-->
           <BaseHeading

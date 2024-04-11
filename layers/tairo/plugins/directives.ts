@@ -4,8 +4,13 @@ export default defineNuxtPlugin(async (nuxtApp) => {
    *
    * This directive is used to focus an element when it is mounted.
    */
-  nuxtApp.vueApp.directive('focus', {
-    mounted(el: HTMLElement) {
+  nuxtApp.vueApp.directive<HTMLElement, boolean | undefined>('focus', {
+    mounted(el, { value }) {
+      console.log('v-focus?', value)
+      if (value === false) {
+        return
+      }
+
       // If the element is not focusable, find the first focusable child
       if (el && el.tabIndex === -1) {
         const focusable = el.querySelector<HTMLElement>(

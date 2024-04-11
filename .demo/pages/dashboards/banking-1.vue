@@ -150,7 +150,7 @@ const amount = ref<number>(0)
               <BaseDropdown
                 variant="context"
                 label="Dropdown"
-                orientation="end"
+                placement="bottom-end"
                 size="md"
                 class="z-20"
               >
@@ -288,7 +288,7 @@ const amount = ref<number>(0)
               <BaseDropdown
                 variant="context"
                 label="Dropdown"
-                orientation="end"
+                placement="bottom-end"
                 size="md"
                 class="z-20"
               >

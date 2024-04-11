@@ -73,7 +73,7 @@ function openTaskPanel(id: number, tasks: any) {
       <BaseDropdown
         variant="context"
         label="Dropdown"
-        orientation="end"
+        placement="bottom-end"
         size="md"
         class="z-20"
         rounded="lg"
@@ -601,7 +601,7 @@ function openTaskPanel(id: number, tasks: any) {
                 :key="item.id"
                 elevated-hover
                 class="hover:!border-primary-500 flex cursor-pointer flex-col"
-                @click="openTaskPanel(item.id, data?.project.tasks)"
+                @click="openTaskPanel(item.id, data?.project?.tasks)"
               >
                 <div class="flex flex-col items-center p-5 sm:flex-row">
                   <div class="flex flex-col gap-3 sm:flex-row">

@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-wrap items-end justify-end gap-6">
-    <TairoPopover size="sm" orientation="end">
+    <TairoPopover size="sm" placement="bottom-end">
       <span class="text-muted-500 flex items-center">
         <Icon name="lucide:help-circle" class="me-1 size-4" />
 
@@ -19,7 +19,7 @@
       </template>
     </TairoPopover>
 
-    <TairoPopover size="sm" orientation="end">
+    <TairoPopover size="sm" placement="bottom-end">
       <span class="text-muted-500 flex items-center">
         <Icon name="lucide:help-circle" class="me-1 size-4" />
 

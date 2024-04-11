@@ -11,7 +11,7 @@ const props = defineProps<{
     <Menu
       v-slot="{ close }"
       as="div"
-      class="relative size-10 text-left"
+      class="relative z-20 size-10 text-start"
     >
       <MenuButton as="template">
         <button

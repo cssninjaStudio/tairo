@@ -1,4 +1,4 @@
-export default defineAppConfig({
+export default {
   tairo: {
     sidebar: {
       navigation: {
@@ -13,4 +13,4 @@ export default defineAppConfig({
       },
     },
   },
-})
+}

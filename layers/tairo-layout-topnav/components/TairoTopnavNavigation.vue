@@ -1,10 +1,15 @@
 <script setup lang="ts">
 import { useTopnav } from '../composables/topnav'
-import type { LayoutDisplay } from './TairoTopnavLayout.vue'
 
 const props = withDefaults(
   defineProps<{
-    display: LayoutDisplay
+    display:
+      | 'condensed'
+      | 'horizontal-scroll'
+      | 'expanded-sm'
+      | 'expanded-md'
+      | 'expanded-lg'
+      | 'expanded-xl'
     position: 'fixed' | 'absolute'
   }>(),
   {

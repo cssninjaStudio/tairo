@@ -5,6 +5,7 @@ const props = defineProps<{
   name?: RouteRecordName
   preview?: {
     title: string
+    new?: boolean
     description: string
     categories?: string[]
     src: string
@@ -21,8 +22,8 @@ const props = defineProps<{
     class="group relative block"
   >
     <div>
-      <NuxtImg
-        class="border-muted-200 block rounded-lg border motion-safe:transition-opacity motion-safe:duration-200 motion-safe:group-hover:opacity-75"
+      <img
+        class="border-muted-200 block w-full rounded-lg border motion-safe:transition-opacity motion-safe:duration-200 motion-safe:group-hover:opacity-75"
         :class="props.preview?.srcDark ? 'dark:hidden' : ''"
         :src="props.preview?.src"
         :alt="`Tairo - ${props.preview?.title}`"
@@ -33,9 +34,9 @@ const props = defineProps<{
         loading="lazy"
         decoding="async"
       />
-      <NuxtImg
+      <img
         v-if="props.preview?.srcDark"
-        class="border-muted-800 hidden rounded-lg border motion-safe:transition-opacity motion-safe:duration-200 motion-safe:group-hover:opacity-75 dark:block"
+        class="border-muted-800 hidden w-full rounded-lg border motion-safe:transition-opacity motion-safe:duration-200 motion-safe:group-hover:opacity-75 dark:block"
         :src="props.preview?.srcDark"
         :alt="`Tairo - ${props.preview?.title}`"
         height="271"
@@ -77,6 +78,15 @@ const props = defineProps<{
           </div>
         </BaseCard>
       </div>
+      <BaseTag
+        v-if="props.preview?.new"
+        color="danger"
+        rounded="full"
+        shadow="flat"
+        class="absolute end-3 top-3"
+      >
+        New
+      </BaseTag>
     </div>
   </NuxtLink>
 </template>

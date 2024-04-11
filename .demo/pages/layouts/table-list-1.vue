@@ -268,7 +268,7 @@ function toggleAllVisibleSelection() {
                     <BaseDropdown
                       variant="context"
                       label="Dropdown"
-                      orientation="end"
+                      placement="bottom-end"
                       rounded="md"
                     >
                       <BaseDropdownItem

@@ -6,18 +6,19 @@ definePageMeta({
   preview: {
     title: 'Wizard — Step 2',
     description: 'For onboarding and step forms',
-    categories: ['dashboards', 'wizard', 'forms'],
+    categories: ['dashboards', 'wizards', 'forms'],
     src: '/img/screens/wizard-2.png',
     srcDark: '/img/screens/wizard-2-dark.png',
     order: 31,
   },
 })
-
-const { data: project } = useMultiStepForm<Project, ProjectStepData>()
-
 useHead({
   title: 'Project info',
 })
+
+const { data: project, errors, checkPreviousSteps } = useMultiStepForm<Project, ProjectStepData>()
+
+onBeforeMount(checkPreviousSteps)
 
 const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
 
@@ -89,6 +90,9 @@ watch(inputFile, (value) => {
             </div>
           </div>
         </BaseInputFileHeadless>
+        <BaseInputHelpText v-if="errors.fields.avatar" color="danger">
+          {{ errors.fields.avatar }}
+        </BaseInputHelpText>
       </div>
 
       <div class="my-4 text-center font-sans">
@@ -102,6 +106,7 @@ watch(inputFile, (value) => {
       <div class="mx-auto flex w-full max-w-sm flex-col gap-3">
         <BaseInput
           v-model="project.name"
+          :error="errors.fields.name"
           rounded="lg"
           placeholder="Project name"
           :classes="{
@@ -110,6 +115,7 @@ watch(inputFile, (value) => {
         />
         <BaseTextarea
           v-model="project.description"
+          :error="errors.fields.description"
           rounded="lg"
           placeholder="Describe your project..."
           autogrow

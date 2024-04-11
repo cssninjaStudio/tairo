@@ -16,10 +16,37 @@ export async function useDocumentationMeta(
   const model = computed(
     () => meta.value?.meta?.props?.find((prop: any) => prop.name === 'modelValue'),
   )
+  const modelModifiers = computed(
+    () => {
+      const prop = meta.value?.meta?.props?.find((prop: any) => prop.name === 'modelModifiers')
+
+      // input: 'Record<"number" | "trim" | "lazy", true> | undefined'
+      // out: ['number', 'trim', 'lazy']
+      const modifierRe = /"([^"]+)"/gm
+
+      return prop?.type.match(modifierRe)?.map((m: string) => m.replace(/"/g, '')) ?? []
+    },
+  )
   const props = computed(
+    () => {
+      const props = meta.value?.meta?.props?.filter(
+        (prop: any) => !excludedProps.includes(prop.name) && !prop.tags.some((tag: any) => tag.name === 'default'),
+      )
+
+      props.sort((a: any, b: any) => {
+        return a.name.localeCompare(b.name)
+      })
+      props.sort((a: any, b: any) => {
+        return a.required === b.required ? 0 : a.required ? -1 : 1
+      })
+
+      return props
+    },
+  )
+  const configurableProps = computed(
     () =>
       meta.value?.meta?.props?.filter(
-        (prop: any) => !excludedProps.includes(prop.name),
+        (prop: any) => !excludedProps.includes(prop.name) && prop.tags.some((tag: any) => tag.name === 'default'),
       ),
   )
   const events = computed(
@@ -40,7 +67,7 @@ export async function useDocumentationMeta(
               `on${event.name}`.toLowerCase() === item.name?.toLowerCase(),
           ) >= 0
         const isExcluded = item.name?.startsWith('$')
-        const isModel = item.name === 'modelValue'
+        const isModel = item.name === 'modelValue' || item.name === 'modelModifiers'
 
         return !(isProps || isEvent || isExcluded || isModel)
       }),
@@ -57,6 +84,20 @@ export async function useDocumentationMeta(
     )
   })
 
+  function formatPropType(type: string) {
+    const bracketsRe = /^{ (.*) }$/gm
+    const parenthesisRe = /^\((.*)\)/gm
+
+    return type
+      .replaceAll('{ ', '{\n  ')
+      .replaceAll('; ', ';\n  ')
+      .replaceAll('\n  }', '\n}')
+      .replaceAll('" | ', '"\n  | ')
+      .replaceAll('unknown', 'T')
+      .replace(bracketsRe, '(\n  $1\n)')
+      .replace(parenthesisRe, '(\n  $1\n)')
+  }
+
   function renderNoOptions() {
     const code: string[] = ['```vue']
 
@@ -72,13 +113,14 @@ export async function useDocumentationMeta(
 
   function renderModel(prop: ComponentMeta['props'][0]) {
     const code: string[] = ['```vue']
+    const type = prop.type.replaceAll('unknown', 'T')
 
     code.push(`<script setup lang="ts">`)
-    if (prop.type.length > 45) {
+    if (type.length > 45) {
       code.push(
         [
           `// this type is generated to show you all possible values`,
-          `type ${upperFirst(prop.name)}Data = ${prop.type
+          `type ${upperFirst(prop.name)}Data = ${type
             .replace(/{ /g, '{\n ')
             .replace(/; ([a-z])/g, ';\n $1')
             .replace(/; /g, ';\n')}\n\nconst ${prop.name} = ref<${upperFirst(
@@ -89,7 +131,7 @@ export async function useDocumentationMeta(
     }
     else {
       code.push(
-        [`const value = ref<${prop.type}>(${prop.default || ''})`].join('\n'),
+        [`const value = ref<${type}>(${prop.default || ''})`].join('\n'),
       )
     }
 
@@ -184,10 +226,10 @@ export async function useDocumentationMeta(
     code.push('```vue')
     code.push(`<template>`)
 
-    if (slot.type !== '{}') {
+    if (slot.type !== '{}' && slot.type !== 'Record<string, never>') {
       code.push(`  <${name.value}>`)
       code.push(`    <template #${slot.name}="value">`)
-      code.push(`      <!-- Use destruct to keep what you need -->`)
+      code.push(`      <!-- Your content -->`)
       code.push(`      <pre>{{ value }}</pre>`)
       code.push(`    </template>`)
     }
@@ -304,12 +346,15 @@ export async function useDocumentationMeta(
   return reactive({
     meta,
     model,
+    modelModifiers,
     props,
+    configurableProps,
     events,
     slots,
     exposed,
     noOptions,
 
+    formatPropType,
     renderModel,
     renderProperty,
     renderSlot,

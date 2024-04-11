@@ -11,27 +11,27 @@ const props = withDefaults(
 const menu = [
   {
     name: 'Global',
-    url: '/',
+    url: '#',
     icon: 'lucide:circle',
   },
   {
     name: 'Business',
-    url: '/',
+    url: '#',
     icon: 'lucide:briefcase',
   },
   {
     name: 'Entertainment',
-    url: '/',
+    url: '#',
     icon: 'lucide:play',
   },
   {
     name: 'Design',
-    url: '/',
+    url: '#',
     icon: 'lucide:feather',
   },
   {
     name: 'Files',
-    url: '/',
+    url: '#',
     icon: 'lucide:file',
   },
 ]

@@ -33,7 +33,7 @@ function onDropClick() {
     <button
       ref="buttonRef"
       type="button"
-      class="nui-focus group mb-1 mt-8 flex min-h-[1.5rem] w-full items-center justify-between focus-within:outline-0 focus-visible:outline-1"
+      class="nui-focus group mb-1 mt-8 flex min-h-6 w-full items-center justify-between focus-within:outline-0 focus-visible:outline-1"
       @click.stop.prevent="onDropClick"
     >
       <span
@@ -68,7 +68,7 @@ function onDropClick() {
         <li
           v-if="!child.children"
           :key="`link-${child._path}`"
-          class="mb-1 flex min-h-[1.5rem] w-full items-center"
+          class="mb-1 flex min-h-6 w-full items-center"
         >
           <NuxtLink
             :to="child._path"
@@ -95,7 +95,7 @@ function onDropClick() {
             <li
               v-for="nested in child.children"
               :key="nested._path"
-              class="mb-1 flex min-h-[1.5rem] w-full items-center"
+              class="mb-1 flex min-h-6 w-full items-center"
             >
               <NuxtLink
                 :to="nested._path"

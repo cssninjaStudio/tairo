@@ -279,7 +279,7 @@ const people = ref([
                 />
               </Field>
             </div>
-            <div class="col-span-12">
+            <div class="relative z-20 col-span-12">
               <Field
                 v-slot="{
                   field,
@@ -367,6 +367,7 @@ const people = ref([
                   placeholder="Add participants..."
                   label="Participants"
                   multiple
+                  allow-create
                   :model-value="field.value"
                   :error="errorMessage"
                   :disabled="isSubmitting"

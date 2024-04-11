@@ -102,7 +102,7 @@ export default defineAppConfig({
           {
             title: 'Settings',
             icon: { name: 'ph:gear-six-duotone', class: 'w-5 h-5' },
-            to: '/layouts/profile-settings',
+            to: '/layouts/settings',
             position: 'end',
           },
           {
@@ -469,7 +469,222 @@ export default defineAppConfig({
         links: [
           {
             name: 'Demo pages',
-            to: '/demo',
+            to: '/demos',
+          },
+          {
+            name: 'Documentation',
+            to: '/documentation',
+          },
+          {
+            name: 'Shuriken UI',
+            to: 'https://github.com/shuriken-ui',
+            rel: 'noopener',
+            target: '_blank',
+          },
+          {
+            name: 'Support',
+            to: 'https://cssninja.io/faq/support',
+            rel: 'noopener',
+            target: '_blank',
+          },
+        ],
+      },
+    },
+    iconnav: {
+      navigation: {
+        enabled: true,
+        logo: {
+          component: 'TairoLogo',
+          props: { class: 'text-primary-600 h-10 w-10' },
+        },
+        items: [
+          {
+            name: 'Dashboards',
+            icon: { name: 'ph:gauge-duotone', class: 'w-6 h-6' },
+            activePath: '/dashboards',
+            children: [
+              {
+                name: 'Home',
+                to: '/dashboards',
+                icon: { name: 'ph:house-duotone', class: 'w-4 h-4' },
+              },
+              {
+                name: 'Balance',
+                to: '/dashboards/balance',
+                icon: { name: 'ph:chart-pie-slice-duotone', class: 'w-4 h-4' },
+              },
+              {
+                name: 'Overview',
+                to: '/dashboards/overview',
+                icon: { name: 'ph:circles-three-duotone', class: 'w-4 h-4' },
+              },
+              {
+                name: 'Quickview',
+                to: '/dashboards/quickview',
+                icon: { name: 'ph:bank-duotone', class: 'w-4 h-4' },
+              },
+              {
+                name: 'Trading',
+                to: '/dashboards/trading',
+                icon: { name: 'ph:subtract-duotone', class: 'w-4 h-4' },
+              },
+            ],
+          },
+          {
+            name: 'Banking',
+            icon: { name: 'ph:bank-duotone', class: 'w-6 h-6' },
+            activePath: '/layouts/',
+            children: [
+              {
+                name: 'Balance',
+                to: '/layouts/accounts',
+                icon: { name: 'ph:bank-duotone', class: 'w-4 h-4' },
+              },
+              {
+                name: 'Transactions',
+                to: '/layouts/transactions',
+                icon: {
+                  name: 'ph:arrows-left-right-duotone',
+                  class: 'w-4 h-4',
+                },
+              },
+              {
+                name: 'Payments',
+                to: '/layouts/payments',
+                icon: {
+                  name: 'ph:coins-duotone',
+                  class: 'w-4 h-4',
+                },
+              },
+              {
+                name: 'Cards',
+                to: '/layouts/cards',
+                icon: {
+                  name: 'ph:credit-card-duotone',
+                  class: 'w-4 h-4',
+                },
+              },
+              {
+                name: 'Credit',
+                to: '/layouts/credit',
+                icon: { name: 'ph:rocket-duotone', class: 'w-4 h-4' },
+              },
+              {
+                name: 'Invest',
+                to: '/layouts/invest',
+                icon: { name: 'ph:globe-hemisphere-west-duotone', class: 'w-4 h-4' },
+              },
+            ],
+          },
+          {
+            name: 'Projects',
+            icon: { name: 'ph:suitcase-duotone', class: 'w-6 h-6' },
+            activePath: '/layouts/projects',
+            children: [
+              {
+                name: 'Projects',
+                to: '/layouts/projects',
+                icon: { name: 'ph:suitcase-duotone', class: 'w-4 h-4' },
+              },
+              {
+                name: 'Boards',
+                to: '/layouts/projects/board',
+                icon: {
+                  name: 'ph:squares-four-duotone',
+                  class: 'w-4 h-4',
+                },
+              },
+              {
+                name: 'Details',
+                to: '/layouts/projects/details',
+                icon: {
+                  name: 'ph:square-half-duotone',
+                  class: 'w-4 h-4',
+                },
+              },
+            ],
+          },
+          {
+            name: 'Settings',
+            icon: { name: 'ph:gear-six-duotone', class: 'w-6 h-6' },
+            to: '/layouts/settings',
+          },
+          {
+            name: 'Customize',
+            icon: { name: 'ph:drop-half-bottom-duotone', class: 'w-6 h-6' },
+            click: () => {
+              const isSwitcherOpen = useState('switcher-open', () => false)
+              isSwitcherOpen.value = true
+            },
+          },
+        ],
+      },
+      circularMenu: {
+        enabled: true,
+        tools: [
+          {
+            component: 'DemoThemeToggle',
+            props: {
+              class: 'ms-auto',
+              disableTransitions: true,
+              inverted: true,
+            },
+          },
+          {
+            component: 'DemoCircularMenuLanguage',
+          },
+          {
+            component: 'DemoCircularMenuNotifications',
+          },
+          {
+            component: 'DemoCircularMenuActivity',
+          },
+        ],
+      },
+      toolbar: {
+        enabled: true,
+        showTitle: true,
+        tools: [
+          {
+            component: 'DemoThemeToggle',
+          },
+          // {
+          //   component: 'DemoToolbarDropdown',
+          // },
+          {
+            component: 'DemoToolbarNotifications',
+          },
+          {
+            component: 'DemoAccountMenu',
+            props: {
+              horizontal: true,
+              orientation: 'start',
+            },
+          },
+        ],
+      },
+      footer: {
+        enabled: true,
+        logoSeparator: {
+          component: 'TairoLogo',
+          props: { class: 'text-primary-500 h-7 w-7' },
+        },
+        logo: {
+          component: 'TairoLogoText',
+          props: {
+            class:
+              'text-muted-300 ltablet:mx-0 mx-auto h-4 transition-all duration-200 lg:mx-0',
+          },
+        },
+        copyright: {
+          name: 'Css Ninja',
+          to: 'https://cssninja.io',
+          since: '2018',
+        },
+        links: [
+          {
+            name: 'Demo pages',
+            to: '/demos',
           },
           {
             name: 'Documentation',
@@ -510,6 +725,23 @@ export default defineAppConfig({
         name: 'task',
         position: 'right',
         component: 'DemoPanelTask',
+      },
+      {
+        name: 'account',
+        position: 'right',
+        component: 'DemoPanelAccount',
+        size: 'md',
+      },
+      {
+        name: 'card',
+        position: 'right',
+        component: 'DemoPanelCard',
+      },
+      {
+        name: 'invest',
+        position: 'right',
+        component: 'DemoPanelInvest',
+        size: 'md',
       },
     ],
     error: {

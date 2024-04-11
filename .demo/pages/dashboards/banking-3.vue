@@ -410,12 +410,14 @@ function useRadialPopularity() {
                   >
                     <span>BTC Evolution</span>
                   </BaseHeading>
-                  <NuxtLink
-                    to="#"
-                    class="bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline"
+                  <BaseButton
+                    color="primary"
+                    size="sm"
+                    variant="pastel"
+                    rounded="md"
                   >
                     Buy BTC
-                  </NuxtLink>
+                  </BaseButton>
                 </div>
                 <AddonApexcharts v-bind="radialEvolution" />
               </BaseCard>
@@ -433,12 +435,14 @@ function useRadialPopularity() {
                   >
                     <span>BTC Popularity</span>
                   </BaseHeading>
-                  <NuxtLink
-                    to="#"
-                    class="bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline"
+                  <BaseButton
+                    color="primary"
+                    size="sm"
+                    variant="pastel"
+                    rounded="md"
                   >
-                    Buy BTC
-                  </NuxtLink>
+                    Buy BT
+                  </BaseButton>
                 </div>
                 <AddonApexcharts v-bind="radialPopularity" />
               </BaseCard>
@@ -520,12 +524,14 @@ function useRadialPopularity() {
                 >
                   <span>My Team</span>
                 </BaseHeading>
-                <NuxtLink
-                  to="#"
-                  class="bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline"
+                <BaseButton
+                  color="primary"
+                  size="sm"
+                  variant="pastel"
+                  rounded="md"
                 >
-                  View All
-                </NuxtLink>
+                  View all
+                </BaseButton>
               </div>
               <DemoTeamListCompact actions />
             </BaseCard>
@@ -544,12 +550,14 @@ function useRadialPopularity() {
                 >
                   <span>Popular Coins</span>
                 </BaseHeading>
-                <NuxtLink
-                  to="#"
-                  class="bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline"
+                <BaseButton
+                  color="primary"
+                  size="sm"
+                  variant="pastel"
+                  rounded="md"
                 >
-                  View All
-                </NuxtLink>
+                  View all
+                </BaseButton>
               </div>
               <DemoPopularCryptos />
             </BaseCard>
