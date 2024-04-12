@@ -25,8 +25,8 @@ const staticPageRule: NitroRouteConfig = isProduction
   : {}
 
 export const demoRules: NitroConfig['routeRules'] = {
-  '/img/**': staticAssetsRule,
-  '/api/**': staticAssetsRule,
+  // '/img/**': staticAssetsRule,
+  // '/api/**': staticAssetsRule,
   '/dashboards/**': staticPageRule,
   '/layouts/**': staticPageRule,
   '/wizard/**': staticPageRule,
