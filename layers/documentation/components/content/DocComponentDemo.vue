@@ -137,51 +137,48 @@ async function loadDemo() {
       <ContentSlot :use="$slots.grid" />
     </div>
 
-    <div
-      :class="[
-        condensed ? 'max-w-screen-sm pb-6' : 'pb-6',
-        forceDark ? 'dark' : '',
-      ]"
-    >
-      <div
-        class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 relative mb-4 w-full rounded-md border bg-white p-6 transition-all duration-300"
-      >
-        <div v-if="'default' in $slots" :class="[hasDemoContent && 'mb-10']">
-          <div
-            class="prose prose-primary prose-muted dark:prose-invert prose-th:p-4 prose-td:p-4 prose-table:bg-white dark:prose-table:bg-muted-800 prose-table:border prose-table:border-muted-200 prose-tr:border-muted-200 prose-thead:border-muted-200 dark:prose-tr:border-muted-700 dark:prose-thead:border-muted-700 dark:prose-table:border-muted-700 prose-sm prose-p:text-muted-500 dark:prose-p:text-muted-400 prose-a:decoration-from-font prose-a:underline-offset-1"
-          >
-            <ContentSlot :use="$slots.default" :unwrap="false" />
-          </div>
-        </div>
-
-        <div v-if="hasDemoContent" class="flex flex-col gap-4">
-          <div>
-            <component :is="exampleComponent" v-if="exampleComponent" />
-          </div>
-
-          <details v-if="exampleMarkdown && props.code" class="group mt-6">
-            <summary
-              class="nui-focus hover:bg-muted-100 dark:hover:bg-muted-700/70 text-muted-500 dark:text-muted-400 inline-flex cursor-pointer list-none items-center justify-center gap-2 rounded-lg px-2 py-1.5 font-sans text-[0.8rem] transition-all duration-100"
+    <div :class="[forceDark ? 'dark' : '']">
+      <div :class="[condensed ? 'max-w-screen-sm pb-6' : 'pb-6']">
+        <div
+          class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 relative mb-4 w-full rounded-md border bg-white p-6 transition-all duration-300"
+        >
+          <div v-if="'default' in $slots" :class="[hasDemoContent && 'mb-10']">
+            <div
+              class="prose prose-primary prose-muted dark:prose-invert prose-th:p-4 prose-td:p-4 prose-table:bg-white dark:prose-table:bg-muted-800 prose-table:border prose-table:border-muted-200 prose-tr:border-muted-200 prose-thead:border-muted-200 dark:prose-tr:border-muted-700 dark:prose-thead:border-muted-700 dark:prose-table:border-muted-700 prose-sm prose-p:text-muted-500 dark:prose-p:text-muted-400 prose-a:decoration-from-font prose-a:underline-offset-1"
             >
-              <span class="inline group-open:hidden">Show code</span>
-              <span class="hidden group-open:inline">Hide code</span>
-              <Icon
-                name="lucide:chevron-down"
-                class="text-muted-400 size-4 transition-transform duration-200 group-open:rotate-180"
-              />
-            </summary>
-            <CodeGroup>
-              <code filename="<app>/components/MyComponent.vue" language="vue">
-                <AddonMarkdownRemark
-                  :source="exampleMarkdown"
-                  fullwidth
-                  :lines="md ? true : false"
-                  class="doc-markdown"
-                  :mode="forceDark ? 'dark' : undefined"
+              <ContentSlot :use="$slots.default" :unwrap="false" />
+            </div>
+          </div>
+
+          <div v-if="hasDemoContent" class="flex flex-col gap-4">
+            <div>
+              <component :is="exampleComponent" v-if="exampleComponent" />
+            </div>
+
+            <details v-if="exampleMarkdown && props.code" class="group mt-6">
+              <summary
+                class="nui-focus hover:bg-muted-100 dark:hover:bg-muted-700/70 text-muted-500 dark:text-muted-400 inline-flex cursor-pointer list-none items-center justify-center gap-2 rounded-lg px-2 py-1.5 font-sans text-[0.8rem] transition-all duration-100"
+              >
+                <span class="inline group-open:hidden">Show code</span>
+                <span class="hidden group-open:inline">Hide code</span>
+                <Icon
+                  name="lucide:chevron-down"
+                  class="text-muted-400 size-4 transition-transform duration-200 group-open:rotate-180"
                 />
-              </code>
-            </CodeGroup>
-          </details>
+              </summary>
+              <CodeGroup>
+                <code filename="<app>/components/MyComponent.vue" language="vue">
+                  <AddonMarkdownRemark
+                    :source="exampleMarkdown"
+                    fullwidth
+                    :lines="md ? true : false"
+                    class="doc-markdown"
+                    :mode="forceDark ? 'dark' : undefined"
+                  />
+                </code>
+              </CodeGroup>
+            </details>
+          </div>
         </div>
       </div>
     </div>
