@@ -94,15 +94,6 @@ export function useTopnav() {
     selectedMenuItem.value = item
   })
 
-  if (import.meta.client) {
-    const { lg, xl } = useTailwindBreakpoints()
-    /* watch(xl, (isXl) => {
-      if (!isXl) {
-        isOpen.value = false
-      }
-    }) */
-  }
-
   return {
     menuItems,
     activeMenuItem,

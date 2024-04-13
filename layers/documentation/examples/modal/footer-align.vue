@@ -318,8 +318,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-
 const isModalStartOpen = ref(false)
 const isModalEndOpen = ref(false)
 const isModalCenterOpen = ref(false)
