@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.1](https://github.com/cssninjaStudio/tairo/compare/v1.5.0...v1.5.1) (2024-04-15)
+
+
+### 🩹 Bug Fixes
+
+* allow layers usage without shamefully-hoist ([6a3bcea](https://github.com/cssninjaStudio/tairo/commit/6a3bcea2136210f054089d8c88aa0bbaf1689970))
+
+
+### 📖 Documentation
+
+* add dynamic colors section ([fce8ed4](https://github.com/cssninjaStudio/tairo/commit/fce8ed44b8e14723eb5f63e3ca65a6e8fb1b11ce))
+* create content plugin to set tairo layers vesion ([203220a](https://github.com/cssninjaStudio/tairo/commit/203220a3b5633b15584e54424f8692f8569b3f4a))
+* fix force dark preview ([a2e3620](https://github.com/cssninjaStudio/tairo/commit/a2e3620adcc1aa8e78cba70b41f8c4cfb99debfd))
+* simplify install with github layers ([6454c57](https://github.com/cssninjaStudio/tairo/commit/6454c576fd7231193e94be8694ef90b62179e0e3))
+
 ## [1.5.0](https://github.com/cssninjaStudio/tairo/compare/v1.4.0...v1.5.0) (2024-04-11)
 
 
