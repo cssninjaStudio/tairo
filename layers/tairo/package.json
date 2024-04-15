@@ -4,22 +4,15 @@
   "version": "0.0.0",
   "type": "module",
   "main": "./nuxt.config.ts",
-  "packageManager": "pnpm@8.15.6",
   "scripts": {
     "clean": "rimraf .nuxt .output node_modules"
   },
-  "dependencies": {
+  "peerDependencies": {
     "@cssninja/nuxt-toaster": "^0.3.12",
-    "@headlessui-float/vue": "^0.13.3",
-    "@headlessui/vue": "^1.7.19",
-    "@shuriken-ui/nuxt": "^3.1.5",
-    "@vueuse/core": "^10.9.0",
-    "defu": "^6.1.4",
-    "klona": "^2.0.6",
-    "nuxt": "^3.11.2",
-    "tailwindcss": "^3.4.3"
+    "@shuriken-ui/nuxt": "^3.1.5"
   },
   "devDependencies": {
+    "nuxt": "^3.11.2",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   }
