@@ -182,8 +182,8 @@ importers:
         specifier: 10.0.0
         version: 10.0.0
       remark-emoji:
-        specifier: ^4.0.1
-        version: 4.0.1
+        specifier: ^5.0.0
+        version: 5.0.0
       remark-gfm:
         specifier: 4.0.0
         version: 4.0.0
@@ -2631,6 +2631,7 @@ packages:
   /@trysound/sax@0.2.0:
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}
     engines: {node: '>=10.13.0'}
+    requiresBuild: true
 
   /@tufjs/canonical-json@2.0.0:
     resolution: {integrity: sha512-yVtV8zsdo8qFHe+/3kw81dSLyF7D576A5cCFCi4X7B39tWT7SekaEFUnvnWJHz+9qO7qJTah1JbrDjWKqFtdWA==}
@@ -2719,6 +2720,12 @@ packages:
 
   /@types/mdast@4.0.3:
     resolution: {integrity: sha512-LsjtqsyF+d2/yFOYaN22dHZI1Cpwkrj+g06G8+qtUKlhovPW89YhqSnfKtMbkgmEtYpH2gydRNULd6y8mciAFg==}
+    dependencies:
+      '@types/unist': 3.0.2
+    dev: true
+
+  /@types/mdast@4.0.4:
+    resolution: {integrity: sha512-kGaNbPh1k7AFzgpud/gMdvIm5xuECykRR+JnWKQno9TAXVa6WIVCGTPvYGekIDL4uwCZQSYbUxNBSb1aUo79oA==}
     dependencies:
       '@types/unist': 3.0.2
     dev: true
@@ -4500,6 +4507,7 @@ packages:
   /commander@7.2.0:
     resolution: {integrity: sha512-QrWXB+ZQSVPmIWIhtEO9H+gwHaMGYiF5ChvoJ+K9ZGHG/sVsa6yiesAD1GC/x46sET00Xlwo1u49RVVVzvcSkw==}
     engines: {node: '>= 10'}
+    requiresBuild: true
 
   /commander@8.3.0:
     resolution: {integrity: sha512-OkTL9umf+He2DZkUq8f8J9of7yL6RJKI24dVITBmNfZBmri9zYZQrKkuXiKhyfPSu8tUhnVBB1iKXevvnlR4Ww==}
@@ -4635,6 +4643,7 @@ packages:
 
   /css-select@5.1.0:
     resolution: {integrity: sha512-nwoRF1rvRRnnCqqY7updORDsuqKzqYJ28+oSMaJMMgOauh3fvwHqMS7EZpIPqK8GL+g9mKxF1vP/ZjSeNjEVHg==}
+    requiresBuild: true
     dependencies:
       boolbase: 1.0.0
       css-what: 6.1.0
@@ -4660,6 +4669,7 @@ packages:
   /css-what@6.1.0:
     resolution: {integrity: sha512-HTUrgRJ7r4dsZKU6GjmpfRK1O76h97Z8MfS1G0FozR+oF2kG6Vfe8JE6zwrkbxigziPHinCJ+gCPjA9EaBDtRw==}
     engines: {node: '>= 6'}
+    requiresBuild: true
 
   /csscolorparser@1.0.3:
     resolution: {integrity: sha512-umPSgYwZkdFoUrH5hIq5kf0wPSXiro51nPw0j2K/c83KflkPSTBGMz6NJvMB+07VlL0y7VPo6QJcDjcgKTTm3w==}
@@ -4744,6 +4754,7 @@ packages:
   /csso@5.0.5:
     resolution: {integrity: sha512-0LrrStPOdJj+SPCCrGhzryycLjwcgUSHBtxNA8aIDxf0GLsRh1cKYhB00Gd1lDOS4yGH69+SNn13+TWbVHETFQ==}
     engines: {node: ^10 || ^12.20.0 || ^14.13.0 || >=15.0.0, npm: '>=7.0.0'}
+    requiresBuild: true
     dependencies:
       css-tree: 2.2.1
 
@@ -5058,11 +5069,13 @@ packages:
   /domhandler@5.0.3:
     resolution: {integrity: sha512-cgwlv/1iFQiFnU96XXgROh8xTeetsnJiDsTc7TYCLFd9+/WNkIqPTxiM/8pSd8VIrhXGTf1Ny1q1hquVqDJB5w==}
     engines: {node: '>= 4'}
+    requiresBuild: true
     dependencies:
       domelementtype: 2.3.0
 
   /domutils@3.1.0:
     resolution: {integrity: sha512-H78uMmQtI2AhgDJjWeQmHwJJ2bLPD3GMmO7Zja/ZZh84wkm+4ut+IUnUdRa8uCGX88DiVx1j6FRe1XfxEgjEZA==}
+    requiresBuild: true
     dependencies:
       dom-serializer: 2.0.0
       domelementtype: 2.3.0
@@ -7293,7 +7306,7 @@ packages:
   /mdast-util-find-and-replace@3.0.1:
     resolution: {integrity: sha512-SG21kZHGC3XRTSUhtofZkBzZTJNM5ecCi0SK2IMKmSXR8vO3peL+kb1O0z7Zl83jKtutG4k5Wv/W7V3/YHvzPA==}
     dependencies:
-      '@types/mdast': 4.0.3
+      '@types/mdast': 4.0.4
       escape-string-regexp: 5.0.0
       unist-util-is: 6.0.0
       unist-util-visit-parents: 6.0.1
@@ -9983,6 +9996,17 @@ packages:
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dependencies:
       '@types/mdast': 4.0.3
+      emoticon: 4.0.1
+      mdast-util-find-and-replace: 3.0.1
+      node-emoji: 2.1.3
+      unified: 11.0.4
+    dev: true
+
+  /remark-emoji@5.0.0:
+    resolution: {integrity: sha512-LCVYkHja10TXgrpHDB4AGYmYv9GtqiSebjyhK8aihuzJlZvrvkE2cndQmnK40Ch5ez/WtujcrcDa7nXVH6Jwcg==}
+    engines: {node: '>=18'}
+    dependencies:
+      '@types/mdast': 4.0.4
       emoticon: 4.0.1
       mdast-util-find-and-replace: 3.0.1
       node-emoji: 2.1.3
