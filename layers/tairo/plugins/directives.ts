@@ -6,7 +6,6 @@ export default defineNuxtPlugin(async (nuxtApp) => {
    */
   nuxtApp.vueApp.directive<HTMLElement, boolean | undefined>('focus', {
     mounted(el, { value }) {
-      console.log('v-focus?', value)
       if (value === false) {
         return
       }

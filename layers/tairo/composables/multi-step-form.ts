@@ -20,6 +20,7 @@ export interface MultiStepFormConfig<
   initialState: MaybeRefOrGetter<DATA>
   steps: StepForm<DATA, META>[]
 
+  onBeforeSubmit?: (data: DATA, ctx: MultiStepFormContext<DATA, META>) => Promise<void> | void
   onSubmit?: (data: DATA, ctx: MultiStepFormContext<DATA, META>) => Promise<void> | void
   onError?: (
     error: any,
@@ -216,17 +217,20 @@ export function provideMultiStepForm<
       return
     }
 
-    const nextStep = getNextStep()
-
-    // go to the next step if there is one
-    if (nextStep) {
-      await goToStep(nextStep)
-      loading.value = false
-      return
-    }
-
     // submit the form otherwise
     try {
+      if (rules.onBeforeSubmit) {
+        await rules.onBeforeSubmit(data.value as DATA, context)
+      }
+
+      const nextStep = getNextStep()
+
+      // go to the next step if there is one
+      if (nextStep) {
+        await goToStep(nextStep)
+        return
+      }
+
       if (rules.onSubmit) {
         await rules.onSubmit(data.value as DATA, context)
       }
