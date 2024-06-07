@@ -9,7 +9,7 @@
   },
   "peerDependencies": {
     "@cssninja/nuxt-toaster": "^0.3.12",
-    "@shuriken-ui/nuxt": "^3.1.5"
+    "@shuriken-ui/nuxt": "^3.2.1"
   },
   "devDependencies": {
     "nuxt": "^3.11.2",
