@@ -27,7 +27,8 @@ const isSearchOpen = useState('search-open', () => false)
     <!--Mobile button-->
     <button
       type="button"
-      class="nui-mask nui-mask-blob hover:bg-muted-200 dark:hover:bg-muted-800 text-muted-700 dark:text-muted-400 flex size-10 cursor-pointer items-center justify-center transition-colors duration-300 lg:hidden"
+      class="nui-mask nui-mask-blob hover:bg-muted-200 dark:hover:bg-muted-800 text-muted-700 dark:text-muted-400 flex size-10 cursor-pointer items-center justify-center transition-colors duration-300"
+      :class="isMobileOpen && !isOpen ? 'hidden' : 'lg:hidden'"
       @click="isMobileOpen = false"
     >
       <Icon name="lucide:arrow-left" class="size-5" />
