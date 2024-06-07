@@ -95,41 +95,33 @@
 }
 
 .dark .apexcharts-xaxistooltip.apexcharts-xaxistooltip-bottom::before {
-  border-bottom-color: var(--color-muted-700) !important;
   border-bottom-color: rgb(var(--color-muted-700) / 100%) !important;
 }
 
 .dark .apexcharts-xaxistooltip.apexcharts-xaxistooltip-bottom::after {
-  border-bottom-color: var(--color-muted-800) !important;
   border-bottom-color: rgb(var(--color-muted-800) / 100%) !important;
 }
 
 .dark .apexcharts-xaxistooltip.apexcharts-xaxistooltip-top::before {
-  border-top-color: var(--color-muted-700) !important;
   border-top-color: rgb(var(--color-muted-700) / 100%) !important;
 }
 
 .dark .apexcharts-xaxistooltip.apexcharts-xaxistooltip-top::after {
-  border-top-color: var(--color-muted-800) !important;
   border-top-color: rgb(var(--color-muted-800) / 100%) !important;
 }
 
 .dark .apexcharts-yaxistooltip.apexcharts-yaxistooltip-left::before {
-  border-left-color: var(--color-muted-700) !important;
   border-left-color: rgb(var(--color-muted-700) / 100%) !important;
 }
 
 .dark .apexcharts-yaxistooltip.apexcharts-yaxistooltip-left::after {
-  border-left-color: var(--color-muted-800) !important;
   border-left-color: rgb(var(--color-muted-800) / 100%) !important;
 }
 
 .dark .apexcharts-yaxistooltip.apexcharts-yaxistooltip-right::before {
-  border-right-color: var(--color-muted-700) !important;
   border-right-color: rgb(var(--color-muted-700) / 100%) !important;
 }
 
 .dark .apexcharts-yaxistooltip.apexcharts-yaxistooltip-right::after {
-  border-right-color: var(--color-muted-800) !important;
   border-right-color: rgb(var(--color-muted-800) / 100%) !important;
 }
