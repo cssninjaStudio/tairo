@@ -632,7 +632,7 @@ async function submitMessage() {
         />
       </div>
       <div class="flex w-1/2 items-center justify-end gap-4 sm:w-1/5">
-        <DemoThemeSwitch />
+        <BaseThemeSwitch />
         <DemoAccountMenu horizontal />
       </div>
     </div>

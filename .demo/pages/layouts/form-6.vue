@@ -293,7 +293,7 @@ const colorCode = ref('color_code_1')
               />
             </Field>
           </div>
-          <div class="col-span-12 sm:col-span-6">
+          <div class="relative z-10 col-span-12 sm:col-span-6">
             <DatePicker
               v-model.range="dates"
               :masks="masks"
@@ -346,7 +346,7 @@ const colorCode = ref('color_code_1')
               </template>
             </DatePicker>
           </div>
-          <div class="col-span-12 sm:col-span-6">
+          <div class="relative z-10 col-span-12 sm:col-span-6">
             <DatePicker
               v-model.range="dates"
               :masks="masks"
@@ -399,7 +399,7 @@ const colorCode = ref('color_code_1')
               </template>
             </DatePicker>
           </div>
-          <div class="col-span-12">
+          <div class="relative z-0 col-span-12">
             <div class="my-4">
               <label class="nui-label pb-4 text-[0.825rem]">Meeting frequency</label>
               <div class="flex items-center gap-6">

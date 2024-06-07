@@ -414,7 +414,7 @@ export default defineAppConfig({
             component: 'DemoCircularMenuLanguage',
           },
           {
-            component: 'DemoCircularMenuNotifications',
+            component: 'DemoCircularMenuSearch',
           },
           {
             component: 'DemoCircularMenuActivity',
@@ -634,7 +634,7 @@ export default defineAppConfig({
             component: 'DemoCircularMenuLanguage',
           },
           {
-            component: 'DemoCircularMenuNotifications',
+            component: 'DemoCircularMenuSearch',
           },
           {
             component: 'DemoCircularMenuActivity',
@@ -648,9 +648,6 @@ export default defineAppConfig({
           {
             component: 'DemoThemeToggle',
           },
-          // {
-          //   component: 'DemoToolbarDropdown',
-          // },
           {
             component: 'DemoToolbarNotifications',
           },

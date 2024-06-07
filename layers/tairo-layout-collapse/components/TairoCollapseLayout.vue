@@ -104,7 +104,9 @@ const mainClass = computed(() => {
           </TairoCollapseToolbar>
         </slot>
 
-        <slot />
+        <main class="relative z-0">
+          <slot />
+        </main>
       </div>
     </div>
 

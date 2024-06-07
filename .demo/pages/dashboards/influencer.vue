@@ -293,11 +293,11 @@ const activeTab = ref('tab-1')
   <div>
     <!-- Header bg -->
     <div
-      class="ltablet:h-[410px] dark:bg-muted-800 absolute start-0 top-0 h-[590px] w-full bg-white lg:h-[410px]"
+      class="ltablet:h-[410px] dark:bg-muted-800 absolute start-0 top-0 h-[620px] w-full bg-white lg:h-[410px]"
     />
     <!-- Header -->
     <div
-      class="ltablet:h-64 ltablet:flex-row relative flex h-[460px] w-full flex-col lg:h-64 lg:flex-row"
+      class="ltablet:h-64 ltablet:flex-row relative flex h-[490px] w-full flex-col lg:h-64 lg:flex-row"
     >
       <div
         class="ltablet:flex-row relative z-10 flex w-full flex-col gap-6 lg:flex-row"

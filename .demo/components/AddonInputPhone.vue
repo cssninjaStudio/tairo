@@ -339,7 +339,7 @@ const dropdownBorder = computed(() => {
         variant="text"
         :rounded="props.rounded"
         size="lg"
-        class="[&_.nui-text-button]:border-muted-200 text-muted-400 dark:[&_.nui-text-button]:border-muted-800 flex h-full [&_.nui-text-button]:relative [&_.nui-text-button]:z-10 [&_.nui-text-button]:size-full [&_.nui-text-button]:border-e [&_.nui-text-button]:pe-2 [&_.nui-text-button]:ps-4"
+        class="[&_.nui-text-button]:border-muted-200 text-muted-400 dark:[&_.nui-text-button]:border-muted-800 flex h-full [&_.nui-text-button]:relative [&_.nui-text-button]:-top-0.5 [&_.nui-text-button]:z-10 [&_.nui-text-button]:size-full [&_.nui-text-button]:border-e [&_.nui-text-button]:pe-2 [&_.nui-text-button]:ps-4"
         :class="dropdownBorder"
       >
         <template #label>

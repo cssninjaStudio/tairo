@@ -170,7 +170,7 @@ const {
 
 // This is the computed value that will be used to display the current avatar
 const currentAvatar = computed(
-  () => `/img/avatars/default-${values.contact?.gender}.jpg`,
+  () => `/img/avatars/default-${values.contact?.gender ? values.contact?.gender : 'male'}.jpg`,
 )
 
 const success = ref(false)
@@ -315,7 +315,7 @@ const onSubmit = handleSubmit(
                       >
                       <img
                         v-else
-                        :src="currentAvatar"
+                        :src="values.contact?.type === 'person' ? currentAvatar : '/img/avatars/company.svg'"
                         alt="Upload preview"
                         class="bg-muted-200 dark:bg-muted-700/60 size-28 rounded-full object-cover object-center dark:invert"
                       >

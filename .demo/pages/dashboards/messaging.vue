@@ -906,16 +906,16 @@ async function submitMessage() {
                 }"
                 placeholder="Write a message..."
               />
-              <div class="absolute end-2 top-0 flex h-12 items-center gap-1">
+              <div class="absolute end-2 top-0 flex h-10 items-center gap-1">
                 <button
                   type="button"
-                  class="text-muted-400 hover:text-primary-500 flex h-12 w-10 items-center justify-center transition-colors duration-300"
+                  class="text-muted-400 hover:text-primary-500 flex size-10 items-center justify-center transition-colors duration-300"
                 >
                   <Icon name="lucide:smile" class="size-5" />
                 </button>
                 <button
                   type="button"
-                  class="text-muted-400 hover:text-primary-500 flex h-12 w-10 items-center justify-center transition-colors duration-300"
+                  class="text-muted-400 hover:text-primary-500 flex size-10 items-center justify-center transition-colors duration-300"
                 >
                   <Icon name="lucide:paperclip" class="size-5" />
                 </button>

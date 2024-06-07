@@ -418,7 +418,7 @@ const navigation = [
       {
         name: 'User',
         icon: 'ph:user-duotone',
-        to: '/layouts/user',
+        to: '/layouts/user-details',
       },
       {
         name: 'Company',
