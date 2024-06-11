@@ -13,8 +13,8 @@ export default defineNuxtConfig({
      * - landing: contains landing pages
      * - documentation: contains all /documentation pages
      */
-    '../layers/landing',
-    import.meta.env.ENABLE_DOCUMENTATION && '../layers/documentation',
+    // '../layers/landing',
+    // import.meta.env.ENABLE_DOCUMENTATION && '../layers/documentation',
 
     /**
      * This extends the base Tairo layer.

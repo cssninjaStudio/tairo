@@ -13,6 +13,7 @@ export default defineEventHandler(async (event) => {
   const offset = (page - 1) * perPage
   const filterRe = new RegExp(filter, 'i')
 
+
   return {
     total: data.length,
     data: !filter

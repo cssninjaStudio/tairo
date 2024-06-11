@@ -14,5 +14,12 @@
     "generate": "nuxt generate",
     "typecheck": "nuxt typecheck",
     "clean": "rimraf .nuxt .output node_modules"
+  },
+  "dependencies": {
+    "@prisma/client": "5.15.0",
+    "axios": "^1.7.2",
+    "h3": "^1.11.1",
+    "nitropack": "2.9.2",
+    "prisma": "^5.15.0"
   }
 }

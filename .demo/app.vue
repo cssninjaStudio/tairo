@@ -86,7 +86,7 @@ useHead({
 
     <!--
       Vue Axe Popup
-      @see .demo/plugins/vue-axe.client.ts
+      @see .demo/plugins/vue-axe.company.ts
     -->
     <VueAxePopup />
 
