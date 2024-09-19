@@ -1,6 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
-  title: 'Preferences - Integrations',
+  title: 'Integrations',
   preview: {
     title: 'Preferences - Integrations',
     description: 'For account management',

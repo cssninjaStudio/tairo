@@ -565,6 +565,7 @@ export default defineAppConfig({
             click: () => {
               const isSwitcherOpen = useState('switcher-open', () => false)
               isSwitcherOpen.value = true
+              console.log('Customize clicked')
             },
             position: 'end',
           },

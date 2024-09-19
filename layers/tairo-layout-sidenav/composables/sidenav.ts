@@ -7,6 +7,7 @@ export interface TairoSidenavResolvedConfig {
     name: string
     class?: string
   }
+  count?: number
   children?: any[]
   component?: {
     name: string

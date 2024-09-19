@@ -1,6 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
-  title: 'Preferences - Wallet',
+  title: 'Wallet',
   preview: {
     title: 'Preferences - Wallet',
     description: 'For account management',

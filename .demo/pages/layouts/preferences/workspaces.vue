@@ -1,6 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
-  title: 'Preferences - Workspaces',
+  title: 'Workspaces',
   preview: {
     title: 'Preferences - Workspaces',
     description: 'For account management',

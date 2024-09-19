@@ -1,6 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
-  title: 'Preferences - Profile',
+  title: 'Profile',
   preview: {
     title: 'Preferences - Profile',
     description: 'For account management',

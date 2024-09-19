@@ -1,6 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
-  title: 'Preferences - Billing',
+  title: 'Billing',
   preview: {
     title: 'Preferences - Billing',
     description: 'For account management',
