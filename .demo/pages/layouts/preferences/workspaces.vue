@@ -1,4 +1,17 @@
 <script setup lang="ts">
+definePageMeta({
+  title: 'Preferences - Workspaces',
+  preview: {
+    title: 'Preferences - Workspaces',
+    description: 'For account management',
+    categories: ['layouts', 'settings'],
+    src: '/img/screens/layouts-preferences-workspaces.png',
+    srcDark: '/img/screens/layouts-preferences-workspaces-dark.png',
+    order: 85,
+    new: true,
+  },
+})
+
 const selectedWorkspace = ref(0)
 
 const workspaces = [

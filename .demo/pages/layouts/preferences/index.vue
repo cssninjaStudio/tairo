@@ -1,4 +1,17 @@
 <script setup lang="ts">
+definePageMeta({
+  title: 'Preferences - Profile',
+  preview: {
+    title: 'Preferences - Profile',
+    description: 'For account management',
+    categories: ['layouts', 'settings'],
+    src: '/img/screens/layouts-preferences-profile.png',
+    srcDark: '/img/screens/layouts-preferences-profile-dark.png',
+    order: 84,
+    new: true,
+  },
+})
+
 const form = reactive({
   username: 'mayaRD',
   firstName: 'Maya',

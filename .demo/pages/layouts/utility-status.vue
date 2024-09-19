@@ -8,7 +8,7 @@ definePageMeta({
     categories: ['layouts'],
     src: '/img/screens/layouts-utility-status.png',
     srcDark: '/img/screens/layouts-utility-status-dark.png',
-    order: 91,
+    order: 94,
   },
 })
 </script>

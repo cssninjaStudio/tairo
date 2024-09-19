@@ -1,4 +1,17 @@
 <script setup lang="ts">
+definePageMeta({
+  title: 'Preferences - Integrations',
+  preview: {
+    title: 'Preferences - Integrations',
+    description: 'For account management',
+    categories: ['layouts', 'settings'],
+    src: '/img/screens/layouts-preferences-integrations.png',
+    srcDark: '/img/screens/layouts-preferences-integrations-dark.png',
+    order: 87,
+    new: true,
+  },
+})
+
 const integrations = [
   {
     name: 'Mailchimp',

@@ -1,4 +1,17 @@
 <script setup lang="ts">
+definePageMeta({
+  title: 'Preferences - Wallet',
+  preview: {
+    title: 'Preferences - Wallet',
+    description: 'For account management',
+    categories: ['layouts', 'settings'],
+    src: '/img/screens/layouts-preferences-wallet.png',
+    srcDark: '/img/screens/layouts-preferences-wallet-dark.png',
+    order: 86,
+    new: true,
+  },
+})
+
 const selectedBlockchain = ref(0)
 const selectedWallet = ref(0)
 

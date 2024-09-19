@@ -1,4 +1,17 @@
 <script setup lang="ts">
+definePageMeta({
+  title: 'Preferences - Billing',
+  preview: {
+    title: 'Preferences - Billing',
+    description: 'For account management',
+    categories: ['layouts', 'settings'],
+    src: '/img/screens/layouts-preferences-billing.png',
+    srcDark: '/img/screens/layouts-preferences-billing-dark.png',
+    order: 88,
+    new: true,
+  },
+})
+
 const selectedCard = ref(0)
 
 const cards = [
@@ -82,7 +95,7 @@ const transactions = [
         Your next payment is <BaseText size="sm" weight="semibold">
           $59.00 USD
         </BaseText>, to be charged on <BaseText size="sm" weight="semibold">
-          April 08, 2022
+          April 08, 2025
         </BaseText>
       </BaseParagraph>
 
