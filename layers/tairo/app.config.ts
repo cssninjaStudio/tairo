@@ -22,7 +22,7 @@ export default {
         'flex',
         'flex-col',
         'overflow-hidden',
-        'z-[9999]',
+        'z-[99999]',
         'items-start',
         'gap-2',
         'space-y-3',
