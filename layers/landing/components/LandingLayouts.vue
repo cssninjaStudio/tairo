@@ -19,6 +19,15 @@ const layouts = [
     icon: 'ph:sidebar-simple-duotone',
   },
   {
+    name: 'sidenav',
+    title: 'Sidenav layout',
+    description: 'Side navigation layout',
+    text: 'The sidenav layout focuses on a single compact sidebar with a list of menu and submenu links, as well as an additional custom content area.',
+    img: '/img/illustrations/ui/sidenav-layout-master.png',
+    imgDark: '/img/illustrations/ui/sidenav-layout-master-dark.png',
+    icon: 'ph:sidebar-duotone',
+  },
+  {
     name: 'topnav',
     title: 'Topnav layout',
     description: 'Top navigation layout',
