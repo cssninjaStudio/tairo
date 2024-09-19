@@ -330,6 +330,12 @@ importers:
         specifier: ^3.11.2
         version: 3.11.2(@unocss/reset@0.59.2)(eslint@8.57.0)(floating-vue@5.2.2)(typescript@5.4.5)(unocss@0.59.2)(vue-tsc@2.0.13)
 
+  layers/tairo-layout-sidenav:
+    devDependencies:
+      nuxt:
+        specifier: ^3.11.2
+        version: 3.11.2(@unocss/reset@0.59.2)(eslint@8.57.0)(floating-vue@5.2.2)(typescript@5.4.5)(unocss@0.59.2)(vue-tsc@2.0.13)
+
   layers/tairo-layout-topnav:
     devDependencies:
       nuxt:

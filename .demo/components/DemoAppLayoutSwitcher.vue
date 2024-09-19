@@ -200,7 +200,7 @@ function switchMuted(color: (typeof mutedPresets)[number]) {
             </BaseParagraph>
           </div>
           <div
-            class="bg-muted-100 dark:bg-muted-700/40 grid grid-cols-1 gap-4 rounded-xl p-4 sm:grid-cols-2"
+            class="bg-muted-100 dark:bg-muted-700/40 nui-slimscroll grid max-h-[380px] grid-cols-1 gap-4 overflow-y-auto rounded-xl p-4 sm:grid-cols-2"
           >
             <BaseCard
               v-for="layout in layouts"

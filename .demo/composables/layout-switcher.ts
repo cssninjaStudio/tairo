@@ -7,6 +7,7 @@
 import {
   TairoCollapseLayout,
   TairoSidebarLayout,
+  TairoSidenavLayout,
   TairoTopnavLayout,
   TairoIconnavLayout,
 } from '#components'
@@ -22,6 +23,11 @@ export function useLayoutSwitcher() {
       name: 'collapse',
       label: 'Collapse',
       component: TairoCollapseLayout,
+    },
+    {
+      name: 'sidenav',
+      label: 'Side navigation',
+      component: TairoSidenavLayout,
     },
     {
       name: 'topnav',
