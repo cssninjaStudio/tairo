@@ -229,6 +229,11 @@ export default defineAppConfig({
                 to: '/layouts/card-grid-1',
                 icon: { name: 'ph:circles-four-duotone', class: 'w-4 h-4' },
               },
+              {
+                name: 'Preferences',
+                to: '/layouts/preferences',
+                icon: { name: 'ph:sliders-duotone', class: 'w-4 h-4' },
+              },
             ],
           },
           {
@@ -455,6 +460,11 @@ export default defineAppConfig({
                 name: 'Card grid v1',
                 to: '/layouts/card-grid-1',
                 icon: { name: 'ph:circles-four-duotone', class: 'w-4 h-4' },
+              },
+              {
+                name: 'Preferences',
+                to: '/layouts/preferences',
+                icon: { name: 'ph:sliders-duotone', class: 'w-4 h-4' },
               },
             ],
           },

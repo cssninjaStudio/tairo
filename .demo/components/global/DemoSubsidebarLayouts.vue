@@ -460,6 +460,11 @@ const navigation = [
         icon: 'ph:gear-six-duotone',
         to: '/layouts/settings',
       },
+      {
+        name: 'Preferences',
+        icon: 'ph:sliders-duotone',
+        to: '/layouts/preferences',
+      },
     ],
   },
   {
