@@ -68,12 +68,14 @@ function statusColor(itemStatus: string) {
     <div v-else class="mt-7 overflow-x-auto">
       <table class="w-full whitespace-nowrap">
         <thead>
-          <th class="w-1/5" />
-          <th class="w-2/5" />
-          <th />
-          <th />
-          <th />
-          <th />
+          <tr>
+            <th class="w-1/5" />
+            <th class="w-2/5" />
+            <th />
+            <th />
+            <th />
+            <th />
+          </tr>
         </thead>
         <tbody>
           <!--Row-->

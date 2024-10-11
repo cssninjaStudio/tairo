@@ -120,7 +120,7 @@ const wrapperClass = computed(() => {
           </TairoSidebarToolbar>
         </slot>
 
-        <main class="relative z-0">
+        <main class="z-0">
           <slot />
         </main>
       </div>

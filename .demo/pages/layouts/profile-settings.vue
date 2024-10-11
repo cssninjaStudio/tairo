@@ -129,7 +129,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
           elevated-hover
           class="hover:!border-primary-500 group border-2"
         >
-          <NuxtLink to="#" class="block p-6">
+          <NuxtLink to="#" class="block py-6 px-4">
             <div class="text-center">
               <Icon
                 name="ph:buildings-duotone"
@@ -154,7 +154,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
           elevated-hover
           class="hover:!border-primary-500 group border-2"
         >
-          <NuxtLink to="#" class="block p-6">
+          <NuxtLink to="#" class="block py-6 px-4">
             <div class="text-center">
               <Icon
                 name="ph:users-four-duotone"
@@ -179,7 +179,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
           elevated-hover
           class="hover:!border-primary-500 group border-2"
         >
-          <NuxtLink to="#" class="block p-6">
+          <NuxtLink to="#" class="block py-6 px-4">
             <div class="text-center">
               <Icon
                 name="ph:briefcase-duotone"
@@ -204,7 +204,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
           elevated-hover
           class="hover:!border-primary-500 group border-2"
         >
-          <NuxtLink to="#" class="block p-6">
+          <NuxtLink to="#" class="block py-6 px-4">
             <div class="text-center">
               <Icon
                 name="ph:lock-open-duotone"
@@ -229,7 +229,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
           elevated-hover
           class="hover:!border-primary-500 group border-2"
         >
-          <NuxtLink to="#" class="block p-6">
+          <NuxtLink to="#" class="block py-6 px-4">
             <div class="text-center">
               <Icon
                 name="ph:note-duotone"
@@ -254,7 +254,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
           elevated-hover
           class="hover:!border-primary-500 group border-2"
         >
-          <NuxtLink to="#" class="block p-6">
+          <NuxtLink to="#" class="block py-6 px-4">
             <div class="text-center">
               <Icon
                 name="ph:upload-duotone"
@@ -279,7 +279,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
           elevated-hover
           class="hover:!border-primary-500 group border-2"
         >
-          <NuxtLink to="#" class="block p-6">
+          <NuxtLink to="#" class="block py-6 px-4">
             <div class="text-center">
               <Icon
                 name="ph:credit-card-duotone"
@@ -304,7 +304,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
           elevated-hover
           class="hover:!border-primary-500 group border-2"
         >
-          <NuxtLink to="#" class="block p-6">
+          <NuxtLink to="#" class="block py-6 px-4">
             <div class="text-center">
               <Icon
                 name="ph:chat-circle-duotone"
@@ -329,7 +329,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
           elevated-hover
           class="hover:!border-primary-500 group border-2"
         >
-          <NuxtLink to="#" class="block p-6">
+          <NuxtLink to="#" class="block py-6 px-4">
             <div class="text-center">
               <Icon
                 name="ph:shield-check-duotone"
@@ -354,7 +354,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
           elevated-hover
           class="hover:!border-primary-500 group border-2"
         >
-          <NuxtLink to="#" class="block p-6">
+          <NuxtLink to="#" class="block py-6 px-4">
             <div class="text-center">
               <Icon
                 name="ph:gear-six-duotone"

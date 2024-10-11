@@ -87,36 +87,38 @@ function statusColor(itemStatus: string) {
         <div v-else class="mt-7 overflow-x-auto">
           <table class="w-full whitespace-nowrap">
             <thead>
-              <th
-                class="text-muted-400 dark:text-muted-300 px-4 pb-3 text-start font-sans text-xs font-semibold md:w-1/5"
-              >
-                <span>Created</span>
-              </th>
-              <th
-                class="text-muted-400 dark:text-muted-300 px-4 pb-3 text-start font-sans text-xs font-semibold md:w-2/5"
-              >
-                <span>Contact</span>
-              </th>
-              <th
-                class="text-muted-400 dark:text-muted-300 px-4 pb-3 text-start font-sans text-xs font-semibold"
-              >
-                <span>Amount</span>
-              </th>
-              <th
-                class="text-muted-400 dark:text-muted-300 px-4 pb-3 text-start font-sans text-xs font-semibold"
-              >
-                <span>Account</span>
-              </th>
-              <th
-                class="text-muted-400 dark:text-muted-300 px-4 pb-3 text-start font-sans text-xs font-semibold"
-              >
-                <span>Status</span>
-              </th>
-              <th
-                class="text-muted-400 dark:text-muted-300 px-4 pb-3 text-start font-sans text-xs font-semibold"
-              >
-                <span>Actions</span>
-              </th>
+              <tr>
+                <th
+                  class="text-muted-400 dark:text-muted-300 px-4 pb-3 text-start font-sans text-xs font-semibold md:w-1/5"
+                >
+                  <span>Created</span>
+                </th>
+                <th
+                  class="text-muted-400 dark:text-muted-300 px-4 pb-3 text-start font-sans text-xs font-semibold md:w-2/5"
+                >
+                  <span>Contact</span>
+                </th>
+                <th
+                  class="text-muted-400 dark:text-muted-300 px-4 pb-3 text-start font-sans text-xs font-semibold"
+                >
+                  <span>Amount</span>
+                </th>
+                <th
+                  class="text-muted-400 dark:text-muted-300 px-4 pb-3 text-start font-sans text-xs font-semibold"
+                >
+                  <span>Account</span>
+                </th>
+                <th
+                  class="text-muted-400 dark:text-muted-300 px-4 pb-3 text-start font-sans text-xs font-semibold"
+                >
+                  <span>Status</span>
+                </th>
+                <th
+                  class="text-muted-400 dark:text-muted-300 px-4 pb-3 text-start font-sans text-xs font-semibold"
+                >
+                  <span>Actions</span>
+                </th>
+              </tr>
             </thead>
             <tbody>
               <!--Row-->
@@ -204,36 +206,38 @@ function statusColor(itemStatus: string) {
         <div v-else class="mt-7 overflow-x-auto">
           <table class="w-full whitespace-nowrap">
             <thead>
-              <th
-                class="text-muted-400 dark:text-muted-300 px-4 pb-3 text-start font-sans text-xs font-semibold md:w-1/5"
-              >
-                <span>Created</span>
-              </th>
-              <th
-                class="text-muted-400 dark:text-muted-300 px-4 pb-3 text-start font-sans text-xs font-semibold md:w-2/5"
-              >
-                <span>Contact</span>
-              </th>
-              <th
-                class="text-muted-400 dark:text-muted-300 px-4 pb-3 text-start font-sans text-xs font-semibold"
-              >
-                <span>Amount</span>
-              </th>
-              <th
-                class="text-muted-400 dark:text-muted-300 px-4 pb-3 text-start font-sans text-xs font-semibold"
-              >
-                <span>Account</span>
-              </th>
-              <th
-                class="text-muted-400 dark:text-muted-300 px-4 pb-3 text-start font-sans text-xs font-semibold"
-              >
-                <span>Status</span>
-              </th>
-              <th
-                class="text-muted-400 dark:text-muted-300 px-4 pb-3 text-start font-sans text-xs font-semibold"
-              >
-                <span>Actions</span>
-              </th>
+              <tr>
+                <th
+                  class="text-muted-400 dark:text-muted-300 px-4 pb-3 text-start font-sans text-xs font-semibold md:w-1/5"
+                >
+                  <span>Created</span>
+                </th>
+                <th
+                  class="text-muted-400 dark:text-muted-300 px-4 pb-3 text-start font-sans text-xs font-semibold md:w-2/5"
+                >
+                  <span>Contact</span>
+                </th>
+                <th
+                  class="text-muted-400 dark:text-muted-300 px-4 pb-3 text-start font-sans text-xs font-semibold"
+                >
+                  <span>Amount</span>
+                </th>
+                <th
+                  class="text-muted-400 dark:text-muted-300 px-4 pb-3 text-start font-sans text-xs font-semibold"
+                >
+                  <span>Account</span>
+                </th>
+                <th
+                  class="text-muted-400 dark:text-muted-300 px-4 pb-3 text-start font-sans text-xs font-semibold"
+                >
+                  <span>Status</span>
+                </th>
+                <th
+                  class="text-muted-400 dark:text-muted-300 px-4 pb-3 text-start font-sans text-xs font-semibold"
+                >
+                  <span>Actions</span>
+                </th>
+              </tr>
             </thead>
             <tbody>
               <!--Row-->

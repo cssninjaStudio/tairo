@@ -1289,7 +1289,7 @@ async function getDemoData() {
         {
           'id': 12,
           'src': '/img/avatars/16.svg',
-          'badge': '/img/stacks/react.svg',
+          'badge': '/img/stacks/reactjs.svg',
           'role': 'Fullstack Developer',
           'bio': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           'tooltip': 'Hermann M.',

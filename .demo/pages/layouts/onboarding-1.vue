@@ -316,6 +316,7 @@ const validatePin = computed(() => {
           >
             <BaseIconBox
               color="primary"
+              variant="pastel"
               size="lg"
               rounded="full"
               class="mx-auto"
@@ -440,6 +441,7 @@ const validatePin = computed(() => {
                 <BaseIconBox
                   v-else
                   color="primary"
+                  variant="pastel"
                   size="lg"
                   rounded="full"
                   class="mx-auto"
@@ -451,7 +453,7 @@ const validatePin = computed(() => {
                 </BaseIconBox>
               </div>
             </div>
-            <div class="pt-4 text-center">
+            <div class="pt-4 mb-6 text-center">
               <BaseHeading
                 tag="h2"
                 size="3xl"

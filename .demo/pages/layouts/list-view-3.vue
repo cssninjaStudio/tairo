@@ -144,15 +144,13 @@ const { data, pending, error, refresh } = await useFetch('/api/jobs', {
                   class="mt-4 flex items-center justify-end gap-2 sm:ms-auto sm:mt-0"
                 >
                   <BaseButton
-                    color="primary"
-                    variant="outline"
-                    class="w-full sm:w-28"
+                    class="w-full sm:w-24" size="sm"
                   >
-                    <span>Apply Now</span>
+                    <span>Apply</span>
                   </BaseButton>
                   <BaseButtonIcon
                     rounded="full"
-                    small
+                    size="sm"
                     muted
                     data-nui-tooltip="Add to Bookmarks"
                     class="hidden sm:inline-flex"
