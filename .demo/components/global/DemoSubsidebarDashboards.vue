@@ -204,6 +204,16 @@ const navigation = [
         icon: 'ph:chat-teardrop-duotone',
         to: '/dashboards/messaging-2',
       },
+      {
+        name: 'AI Chat v1',
+        icon: 'ph:robot-duotone',
+        to: '/layouts/ai',
+      },
+      {
+        name: 'AI Chat v2',
+        icon: 'ph:robot-duotone',
+        to: '/layouts/ai/ui',
+      },
     ],
   },
   {
