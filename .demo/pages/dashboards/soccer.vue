@@ -315,20 +315,22 @@ const matches = [
                     class="min-w-full table-fixed divide-y divide-slate-200 text-left dark:divide-slate-700"
                   >
                     <thead>
-                      <th class="py-3 font-sans text-xs uppercase">
-                        Time
-                      </th>
-                      <th
-                        class="xs:px-8 py-3 text-center font-sans text-xs uppercase"
-                      >
-                        Match
-                      </th>
-                      <th class="xs:px-4 py-3 font-sans text-xs uppercase">
-                        Stadium
-                      </th>
-                      <th class="xs:px-4 py-3 font-sans text-xs uppercase">
-                        Details
-                      </th>
+                      <tr>
+                        <th class="py-3 font-sans text-xs uppercase">
+                          Time
+                        </th>
+                        <th
+                          class="xs:px-8 py-3 text-center font-sans text-xs uppercase"
+                        >
+                          Match
+                        </th>
+                        <th class="xs:px-4 py-3 font-sans text-xs uppercase">
+                          Stadium
+                        </th>
+                        <th class="xs:px-4 py-3 font-sans text-xs uppercase">
+                          Details
+                        </th>
+                      </tr>
                     </thead>
                     <tbody>
                       <tr v-for="match in matches" :key="match.id">

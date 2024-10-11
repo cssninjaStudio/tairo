@@ -173,53 +173,55 @@ const itemSubtotal = computed(() =>
               >
                 <table class="w-full text-start">
                   <thead>
-                    <th
-                      class="min-w-[200px] px-2 text-start sm:w-1/3 sm:min-w-[auto]"
-                    >
-                      <BaseText
-                        size="xs"
-                        weight="semibold"
-                        class="text-muted-400"
+                    <tr>
+                      <th
+                        class="min-w-[200px] px-2 text-start sm:w-1/3 sm:min-w-[auto]"
                       >
-                        Item Name
-                      </BaseText>
-                    </th>
-                    <th class="min-w-[90px] px-2 text-start sm:min-w-[auto]">
-                      <BaseText
-                        size="xs"
-                        weight="semibold"
-                        class="text-muted-400"
-                      >
-                        Hours
-                      </BaseText>
-                    </th>
-                    <th class="min-w-[120px] px-2 text-start sm:min-w-[auto]">
-                      <BaseText
-                        size="xs"
-                        weight="semibold"
-                        class="text-muted-400"
-                      >
-                        Rate/hr
-                      </BaseText>
-                    </th>
-                    <th class="min-w-[60px] px-2 text-start sm:min-w-[60px]">
-                      <BaseText
-                        size="xs"
-                        weight="semibold"
-                        class="text-muted-400"
-                      >
-                        Tax
-                      </BaseText>
-                    </th>
-                    <th class="min-w-[120px] px-2 text-start sm:min-w-[120px]">
-                      <BaseText
-                        size="xs"
-                        weight="semibold"
-                        class="text-muted-400"
-                      >
-                        Subtotal
-                      </BaseText>
-                    </th>
+                        <BaseText
+                          size="xs"
+                          weight="semibold"
+                          class="text-muted-400"
+                        >
+                          Item Name
+                        </BaseText>
+                      </th>
+                      <th class="min-w-[90px] px-2 text-start sm:min-w-[auto]">
+                        <BaseText
+                          size="xs"
+                          weight="semibold"
+                          class="text-muted-400"
+                        >
+                          Hours
+                        </BaseText>
+                      </th>
+                      <th class="min-w-[120px] px-2 text-start sm:min-w-[auto]">
+                        <BaseText
+                          size="xs"
+                          weight="semibold"
+                          class="text-muted-400"
+                        >
+                          Rate/hr
+                        </BaseText>
+                      </th>
+                      <th class="min-w-[60px] px-2 text-start sm:min-w-[60px]">
+                        <BaseText
+                          size="xs"
+                          weight="semibold"
+                          class="text-muted-400"
+                        >
+                          Tax
+                        </BaseText>
+                      </th>
+                      <th class="min-w-[120px] px-2 text-start sm:min-w-[120px]">
+                        <BaseText
+                          size="xs"
+                          weight="semibold"
+                          class="text-muted-400"
+                        >
+                          Subtotal
+                        </BaseText>
+                      </th>
+                    </tr>
                   </thead>
                   <tbody>
                     <tr>
