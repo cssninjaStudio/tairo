@@ -29,20 +29,20 @@
     "lint:eslint:fix-demo": "eslint -c layers/documentation/examples/.eslintrc.cjs --fix layers/documentation/examples"
   },
   "devDependencies": {
-    "@stylistic/eslint-plugin": "^1.5.4",
-    "@typescript-eslint/eslint-plugin": "7.6.0",
-    "eslint": "8.57.0",
-    "eslint-plugin-sonarjs": "^0.25.1",
-    "eslint-plugin-tailwindcss": "3.15.1",
-    "eslint-plugin-vue": "9.24.1",
-    "eslint-plugin-vuejs-accessibility": "2.2.1",
-    "lint-staged": "15.2.2",
+    "@stylistic/eslint-plugin": "^2.9.0",
+    "@typescript-eslint/eslint-plugin": "8.8.1",
+    "eslint": "9.12.0",
+    "eslint-plugin-sonarjs": "^2.0.3",
+    "eslint-plugin-tailwindcss": "3.17.5",
+    "eslint-plugin-vue": "9.29.0",
+    "eslint-plugin-vuejs-accessibility": "2.4.1",
+    "lint-staged": "15.2.10",
     "npm-run-all": "4.1.5",
-    "rimraf": "5.0.5",
+    "rimraf": "6.0.1",
     "std-env": "3.7.0",
-    "tailwindcss": "3.4.3",
-    "typescript": "5.4.5",
-    "vue-tsc": "2.0.13"
+    "tailwindcss": "3.4.13",
+    "typescript": "5.6.3",
+    "vue-tsc": "2.1.6"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"

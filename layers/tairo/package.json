@@ -12,8 +12,8 @@
     "@shuriken-ui/nuxt": "^3.2.1"
   },
   "devDependencies": {
-    "nuxt": "^3.11.2",
-    "vue": "^3.4.21",
-    "vue-router": "^4.3.0"
+    "nuxt": "^3.13.2",
+    "vue": "^3.5.12",
+    "vue-router": "^4.4.5"
   }
 }
