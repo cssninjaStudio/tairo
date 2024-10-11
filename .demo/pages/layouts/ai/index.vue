@@ -1,6 +1,16 @@
 <script setup lang="ts">
 definePageMeta({
   layout: 'empty',
+  title: 'Tairo GPT',
+  preview: {
+    title: 'AI Interface',
+    description: 'For Ai chat and conversation',
+    categories: ['layouts', 'AI interface'],
+    src: '/img/screens/layouts-ai.png',
+    srcDark: '/img/screens/layouts-ai-dark.png',
+    order: 0,
+    new: true,
+  },
 })
 
 const isOpen = ref(true)
@@ -77,24 +87,28 @@ const archive = [
     <div
       class="bg-muted-100 dark:bg-muted-950 fixed start-0 top-0 z-40 flex h-full w-[260px] flex-col transition-transform duration-300"
       :class="[
-        isOpen ? 'translate-x-0' : 'lg:!-translate-x-full',
-        isMobileOpen ? 'translate-x-0 lg:translate-x-0' : '!-translate-x-full lg:!translate-x-0'
+        isOpen ? 'lg:translate-x-0' : 'lg:!-translate-x-full',
+        isMobileOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
       ]"
     >
       <div class="flex h-16 shrink-0 items-center gap-2 px-4">
-        <div>
+        <div class="lg:hidden">
           <button
             type="button"
-            class="nui-mask nui-mask-blob hover:bg-muted-200 dark:hover:bg-muted-800 flex size-10 items-center justify-center transition-colors duration-300 lg:hidden"
+            class="nui-mask nui-mask-blob hover:bg-muted-200 dark:hover:bg-muted-800 flex size-10 items-center justify-center transition-colors duration-300"
             @click="isMobileOpen = false"
           >
             <Icon name="lucide:x" class="size-5" />
           </button>
         </div>
-        <div data-nui-tooltip="Close Sidebar" data-nui-tooltip-position="end">
+        <div
+          class="hidden lg:block"
+          data-nui-tooltip="Close Sidebar"
+          data-nui-tooltip-position="end"
+        >
           <button
             type="button"
-            class="nui-mask nui-mask-blob hover:bg-muted-200 dark:hover:bg-muted-800 hidden size-10 items-center justify-center transition-colors duration-300 lg:flex"
+            class="nui-mask nui-mask-blob hover:bg-muted-200 dark:hover:bg-muted-800 flex size-10 items-center justify-center transition-colors duration-300"
             @click="isOpen = false"
           >
             <Icon name="solar:siderbar-linear" class="size-5" />
@@ -161,12 +175,12 @@ const archive = [
               </BaseParagraph>
               <ul class="mt-3 space-y-1">
                 <li
-                  v-for="(chat, i) in item.chats"
+                  v-for="(message, i) in item.chats"
                   :key="i"
                   class="group/item relative"
                 >
                   <button type="button" class="text-muted-600 group-hover/item:text-muted-900 dark:text-muted-500 dark:group-hover/item:text-muted-200 group-hover/item:bg-muted-200 dark:group-hover/item:bg-muted-800 flex w-full items-center gap-2 rounded-xl px-3 py-1.5 text-start font-sans text-sm transition-colors duration-300">
-                    <span class="line-clamp-1 pe-4">{{ chat.title }}</span>
+                    <span class="line-clamp-1 pe-4">{{ message.title }}</span>
                   </button>
                   <div class="absolute end-0 top-0">
                     <BaseDropdown
@@ -428,7 +442,10 @@ const archive = [
               <!--Input section-->
               <div class="relative pb-6">
                 <div class="relative h-14 min-h-14">
-                  <textarea placeholder="Message Tairo GPT..." class="placeholder:text-muted-300 dark:placeholder:text-muted-700 nui-focus bg-muted-100 dark:bg-muted-950 relative h-14 min-h-14 w-full rounded-full px-16 leading-[3.5rem]" />
+                  <textarea
+                    placeholder="Message Tairo GPT..."
+                    class="placeholder:text-muted-300 dark:placeholder:text-muted-700 nui-focus bg-muted-100 dark:bg-muted-950 relative h-14 min-h-14 w-full rounded-full px-16 leading-[3.5rem]"
+                  />
                   <button
                     type="button"
                     class="absolute bottom-0 start-0 flex size-14 items-center justify-center"
@@ -436,7 +453,10 @@ const archive = [
                   >
                     <Icon name="solar:paperclip-linear" class="text-muted-500 size-6" />
                   </button>
-                  <button type="button" class="absolute bottom-0 end-0 flex size-14 items-center justify-center">
+                  <button
+                    type="button"
+                    class="absolute bottom-0 end-0 flex size-14 items-center justify-center"
+                  >
                     <span class="bg-muted-900 flex size-10 items-center justify-center rounded-full">
                       <Icon name="mdi:arrow-up" class="size-5 text-white" />
                     </span>
