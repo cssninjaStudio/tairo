@@ -104,36 +104,38 @@ function statusColor(itemStatus: string) {
     <div v-else class="mt-7 overflow-x-auto px-2">
       <table class="w-full whitespace-nowrap">
         <thead>
-          <th
-            class="text-muted-400 dark:text-muted-300 w-1/5 px-4 pb-3 text-start font-sans text-xs font-semibold"
-          >
-            <span>Date</span>
-          </th>
-          <th
-            class="text-muted-400 dark:text-muted-300 w-2/5 px-4 pb-3 text-start font-sans text-xs font-semibold"
-          >
-            <span>To / From</span>
-          </th>
-          <th
-            class="text-muted-400 dark:text-muted-300 px-4 pb-3 text-start font-sans text-xs font-semibold"
-          >
-            <span>Amount</span>
-          </th>
-          <th
-            class="text-muted-400 dark:text-muted-300 px-4 pb-3 text-start font-sans text-xs font-semibold"
-          >
-            <span>Account</span>
-          </th>
-          <th
-            class="text-muted-400 dark:text-muted-300 px-4 pb-3 text-start font-sans text-xs font-semibold"
-          >
-            <span>Status</span>
-          </th>
-          <th
-            class="text-muted-400 dark:text-muted-300 px-4 pb-3 text-start font-sans text-xs font-semibold"
-          >
-            <span>Payment method</span>
-          </th>
+          <tr>
+            <th
+              class="text-muted-400 dark:text-muted-300 w-1/5 px-4 pb-3 text-start font-sans text-xs font-semibold"
+            >
+              <span>Date</span>
+            </th>
+            <th
+              class="text-muted-400 dark:text-muted-300 w-2/5 px-4 pb-3 text-start font-sans text-xs font-semibold"
+            >
+              <span>To / From</span>
+            </th>
+            <th
+              class="text-muted-400 dark:text-muted-300 px-4 pb-3 text-start font-sans text-xs font-semibold"
+            >
+              <span>Amount</span>
+            </th>
+            <th
+              class="text-muted-400 dark:text-muted-300 px-4 pb-3 text-start font-sans text-xs font-semibold"
+            >
+              <span>Account</span>
+            </th>
+            <th
+              class="text-muted-400 dark:text-muted-300 px-4 pb-3 text-start font-sans text-xs font-semibold"
+            >
+              <span>Status</span>
+            </th>
+            <th
+              class="text-muted-400 dark:text-muted-300 px-4 pb-3 text-start font-sans text-xs font-semibold"
+            >
+              <span>Payment method</span>
+            </th>
+          </tr>
         </thead>
         <tbody>
           <!-- Row -->

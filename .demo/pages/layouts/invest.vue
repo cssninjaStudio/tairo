@@ -151,21 +151,23 @@ function useGaugePersonal() {
           <div class="mt-7">
             <table class="w-full whitespace-nowrap">
               <thead>
-                <th
-                  class="text-muted-400 dark:text-muted-300 px-4 pb-3 text-start font-sans text-xs font-semibold md:w-1/5"
-                >
-                  <span>Category</span>
-                </th>
-                <th
-                  class="text-muted-400 dark:text-muted-300 px-4 pb-3 text-start font-sans text-xs font-semibold md:w-3/5"
-                >
-                  <span>Typically spent on</span>
-                </th>
-                <th
-                  class="text-muted-400 dark:text-muted-300 px-4 pb-3 text-end font-sans text-xs font-semibold"
-                >
-                  <span>Funding based on</span>
-                </th>
+                <tr>
+                  <th
+                    class="text-muted-400 dark:text-muted-300 px-4 pb-3 text-start font-sans text-xs font-semibold md:w-1/5"
+                  >
+                    <span>Category</span>
+                  </th>
+                  <th
+                    class="text-muted-400 dark:text-muted-300 px-4 pb-3 text-start font-sans text-xs font-semibold md:w-3/5"
+                  >
+                    <span>Typically spent on</span>
+                  </th>
+                  <th
+                    class="text-muted-400 dark:text-muted-300 px-4 pb-3 text-end font-sans text-xs font-semibold"
+                  >
+                    <span>Funding based on</span>
+                  </th>
+                </tr>
               </thead>
               <tbody>
                 <tr

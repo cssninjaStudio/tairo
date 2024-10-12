@@ -4,24 +4,26 @@
   <div class="mt-7 overflow-x-auto px-2">
     <table class="w-full whitespace-nowrap">
       <thead>
-        <th class="w-1/5 px-4 pb-3">
-          <BasePlaceload class="h-3.5 w-6 rounded" />
-        </th>
-        <th class="w-2/5 px-4 pb-3">
-          <BasePlaceload class="h-3.5 w-14 rounded" />
-        </th>
-        <th class="px-4 pb-3">
-          <BasePlaceload class="h-3.5 w-16 rounded" />
-        </th>
-        <th class="px-4 pb-3">
-          <BasePlaceload class="h-3.5 w-16 rounded" />
-        </th>
-        <th class="px-4 pb-3">
-          <BasePlaceload class="h-3.5 w-12 rounded" />
-        </th>
-        <th class="px-4 pb-3 font-sans text-xs font-semibold">
-          <BasePlaceload class="h-3.5 w-20 rounded" />
-        </th>
+        <tr>
+          <th class="w-1/5 px-4 pb-3">
+            <BasePlaceload class="h-3.5 w-6 rounded" />
+          </th>
+          <th class="w-2/5 px-4 pb-3">
+            <BasePlaceload class="h-3.5 w-14 rounded" />
+          </th>
+          <th class="px-4 pb-3">
+            <BasePlaceload class="h-3.5 w-16 rounded" />
+          </th>
+          <th class="px-4 pb-3">
+            <BasePlaceload class="h-3.5 w-16 rounded" />
+          </th>
+          <th class="px-4 pb-3">
+            <BasePlaceload class="h-3.5 w-12 rounded" />
+          </th>
+          <th class="px-4 pb-3 font-sans text-xs font-semibold">
+            <BasePlaceload class="h-3.5 w-20 rounded" />
+          </th>
+        </tr>
       </thead>
       <tbody>
         <!-- Row -->
