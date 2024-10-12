@@ -1,3 +1,11 @@
+<script setup lang="ts">
+const fields = reactive({
+  first: 0,
+  second: 0,
+  third: 0,
+})
+</script>
+
 <template>
   <div class="flex max-w-3xl flex-col flex-wrap gap-3 md:flex-row md:items-end">
     <div class="flex-1">
@@ -34,11 +42,3 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-const fields = reactive({
-  first: 0,
-  second: 0,
-  third: 0,
-})
-</script>

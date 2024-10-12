@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 const props = defineProps({
   name: {
     type: String,
@@ -25,20 +24,20 @@ const props = defineProps({
     default: 'ease-in-out',
   },
 })
-const emits = defineEmits([
-  'before-appear',
-  'appear',
-  'after-appear',
-  'appear-cancelled',
-  'before-enter',
-  'enter',
-  'after-enter',
-  'enter-cancelled',
-  'before-leave',
-  'leave',
-  'after-leave',
-  'leave-cancelled',
-])
+const emits = defineEmits<{
+  beforeAppear: [el: HTMLElement]
+  appear: [el: HTMLElement, done: () => void]
+  afterAppear: [el: HTMLElement]
+  appearCancelled: [el: HTMLElement]
+  beforeEnter: [el: HTMLElement]
+  enter: [el: HTMLElement, done: () => void]
+  afterEnter: [el: HTMLElement]
+  enterCancelled: [el: HTMLElement]
+  beforeLeave: [el: HTMLElement]
+  leave: []
+  afterLeave: [el: HTMLElement]
+  leaveCancelled: [el: HTMLElement]
+}>()
 
 const cachedStyles = ref<Record<string, string | undefined> | null>(null)
 
@@ -62,7 +61,7 @@ watch(() => props.dimension, () => clearCachedDimensions())
 
 function beforeAppear(el: HTMLElement) {
   // Emit the event to the parent
-  emits('before-appear', el)
+  emits('beforeAppear', el)
 }
 
 function appear(el: HTMLElement, done: () => void) {
@@ -72,17 +71,17 @@ function appear(el: HTMLElement, done: () => void) {
 
 function afterAppear(el: HTMLElement) {
   // Emit the event to the parent
-  emits('after-appear', el)
+  emits('afterAppear', el)
 }
 
 function appearCancelled(el: HTMLElement) {
   // Emit the event to the parent
-  emits('appear-cancelled', el)
+  emits('appearCancelled', el)
 }
 
 function beforeEnter(el: HTMLElement) {
   // Emit the event to the parent
-  emits('before-enter', el)
+  emits('beforeEnter', el)
 }
 
 function enter(el: HTMLElement, done: () => void) {
@@ -107,7 +106,7 @@ function enter(el: HTMLElement, done: () => void) {
   emits('enter', el, done)
 
   // Call done() when the transition ends
-  // to trigger the @after-enter event.
+  // to trigger the @afterEnter event.
   setTimeout(done, props.duration)
 }
 
@@ -119,17 +118,17 @@ function afterEnter(el: HTMLElement) {
   clearCachedDimensions()
 
   // Emit the event to the parent
-  emits('after-enter', el)
+  emits('afterEnter', el)
 }
 
 function enterCancelled(el: HTMLElement) {
   // Emit the event to the parent
-  emits('enter-cancelled', el)
+  emits('enterCancelled', el)
 }
 
 function beforeLeave(el: HTMLElement) {
   // Emit the event to the parent
-  emits('before-leave', el)
+  emits('beforeLeave', el)
 }
 
 function leave(el: HTMLElement, done: () => void) {
@@ -153,7 +152,7 @@ function leave(el: HTMLElement, done: () => void) {
   emits('leave', el, done)
 
   // Call done() when the transition ends
-  // to trigger the @after-leave event.
+  // to trigger the @afterLeave event.
   // This will also cause v-show
   // to reapply 'display: none'.
   setTimeout(done, props.duration)
@@ -167,19 +166,20 @@ function afterLeave(el: HTMLElement) {
   clearCachedDimensions()
 
   // Emit the event to the parent
-  emits('after-leave', el)
+  emits('afterLeave', el)
 }
 
 function leaveCancelled(el: HTMLElement) {
   // Emit the event to the parent
-  emits('leave-cancelled', el)
+  emits('leaveCancelled', el)
 }
 
 function detectAndCacheDimensions(el: HTMLElement) {
   // Cache actual dimensions
   // only once to void invalid values when
   // triggering during a transition
-  if (cachedStyles.value) return
+  if (cachedStyles.value)
+    return
 
   const visibility = el.style.visibility
   const display = el.style.display
@@ -204,7 +204,7 @@ function detectRelevantDimensions(el: HTMLElement) {
   // These properties will be transitioned
   if (props.dimension === 'height') {
     return {
-      height: el.offsetHeight + 'px',
+      height: `${el.offsetHeight}px`,
       paddingTop:
         el.style.paddingTop || getCssValue(el, 'padding-top'),
       paddingBottom:
@@ -214,7 +214,7 @@ function detectRelevantDimensions(el: HTMLElement) {
 
   if (props.dimension === 'width') {
     return {
-      width: el.offsetWidth + 'px',
+      width: `${el.offsetWidth}px`,
       paddingLeft:
         el.style.paddingLeft || getCssValue(el, 'padding-left'),
       paddingRight:
@@ -242,33 +242,33 @@ function unsetOverflow(el: HTMLElement) {
 }
 
 function setClosedDimensions(el: HTMLElement) {
-  if (!cachedStyles.value) return
+  if (!cachedStyles.value)
+    return
   Object.keys(cachedStyles.value).forEach((key) => {
-    // @ts-expect-error
-    el.style[key] = '0'
+    el.style[key as any] = '0'
   })
 }
 
 function setOpenedDimensions(el: HTMLElement) {
-  if (!cachedStyles.value) return
+  if (!cachedStyles.value)
+    return
   Object.keys(cachedStyles.value).forEach((key) => {
-    // @ts-expect-error
-    el.style[key] = cachedStyles.value![key]
+    el.style[key as any] = cachedStyles.value![key]
   })
 }
 
 function unsetDimensions(el: HTMLElement) {
-  if (!cachedStyles.value) return
+  if (!cachedStyles.value)
+    return
   Object.keys(cachedStyles.value).forEach((key) => {
-    // @ts-expect-error
-    el.style[key] = ''
+    el.style[key as any] = ''
   })
 }
 
 function forceRepaint(el: HTMLElement) {
   // Force repaint to make sure the animation is triggered correctly.
   // Thanks: https://markus.oberlehner.net/blog/transition-to-height-auto-with-vue/
-  getComputedStyle(el)[props.dimension as 'height' | 'width']
+  const _style = getComputedStyle(el)[props.dimension as 'height' | 'width']
 }
 
 function getCssValue(el: HTMLElement, style: string) {
@@ -287,7 +287,7 @@ function convertToCssProperty(style: string) {
   for (let i = 0, n = upperChars.length; i < n; i++) {
     style = style.replace(
       new RegExp(upperChars[i]),
-      '-' + upperChars[i].toLowerCase(),
+      `-${upperChars[i].toLowerCase()}`,
     )
   }
 

@@ -1,3 +1,9 @@
+<script setup lang="ts">
+const first = ref('')
+const second = ref('')
+const third = ref('')
+</script>
+
 <template>
   <div class="grid gap-6 md:max-w-lg md:grid-cols-2">
     <BaseSelect
@@ -196,9 +202,3 @@
     </BaseSelect>
   </div>
 </template>
-
-<script setup lang="ts">
-const first = ref('')
-const second = ref('')
-const third = ref('')
-</script>

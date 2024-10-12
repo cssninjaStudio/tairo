@@ -1,4 +1,4 @@
-import { addDays, startOfDay, startOfWeek, endOfWeek, endOfDay } from 'date-fns'
+import { addDays, endOfDay, endOfWeek, startOfDay, startOfWeek } from 'date-fns'
 
 // @ts-ignore
 import type { Page } from 'v-calendar/dist/types/src/utils/page'

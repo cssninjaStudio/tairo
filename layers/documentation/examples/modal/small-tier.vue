@@ -1,3 +1,16 @@
+<script setup lang="ts">
+const isModalOpen = ref(false)
+
+function closeModal() {
+  isModalOpen.value = false
+}
+function openModal() {
+  isModalOpen.value = true
+}
+
+const isModalMdOpen = ref(false)
+</script>
+
 <template>
   <!-- Element to trigger the modal -->
   <div class="flex gap-x-2">
@@ -132,16 +145,3 @@
     </template>
   </TairoModal>
 </template>
-
-<script setup lang="ts">
-const isModalOpen = ref(false)
-
-function closeModal() {
-  isModalOpen.value = false
-}
-function openModal() {
-  isModalOpen.value = true
-}
-
-const isModalMdOpen = ref(false)
-</script>

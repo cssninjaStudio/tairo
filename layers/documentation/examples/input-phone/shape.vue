@@ -1,3 +1,8 @@
+<script lang="ts" setup>
+const phone = ref('+33612345678')
+const country = ref('FR')
+</script>
+
 <template>
   <div class="grid gap-4 sm:grid-cols-2">
     <AddonInputPhone
@@ -36,8 +41,3 @@
     />
   </div>
 </template>
-
-<script lang="ts" setup>
-const phone = ref('+33612345678')
-const country = ref('FR')
-</script>

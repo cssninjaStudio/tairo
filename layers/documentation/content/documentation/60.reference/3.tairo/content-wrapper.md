@@ -32,7 +32,6 @@ title: Tabbed wrapper
 ---
 The tabbed wrapper wraps the page content. It provides slots and allows you to nest a second view inside your page.
 
-
 :::doc-image
 ---
 src: /img/apps/tairo-layout-tabbed.png

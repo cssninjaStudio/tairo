@@ -15,11 +15,11 @@ const isRecipients = computed(() => {
 </script>
 
 <template>
-  <!--Wrapper-->
+  <!-- Wrapper -->
   <div class="w-full pb-24">
-    <!--Header-->
+    <!-- Header -->
     <div class="flex items-center justify-end py-6">
-      <!--Buttons-->
+      <!-- Buttons -->
       <div class="hidden items-center gap-2 md:flex">
         <BaseButton
           to="/layouts/send"
@@ -42,9 +42,9 @@ const isRecipients = computed(() => {
       </div>
     </div>
 
-    <!--Tabs wrapper-->
+    <!-- Tabs wrapper -->
     <div>
-      <!--Tabs-->
+      <!-- Tabs -->
       <div class="flex items-center justify-between overflow-hidden">
         <div
           class="border-muted-200 dark:border-muted-800 xs:overflow-x-auto flex grow gap-x-6 border-b font-sans"
@@ -85,7 +85,7 @@ const isRecipients = computed(() => {
         </div>
       </div>
 
-      <!--Tab content-->
+      <!-- Tab content -->
       <div class="w-full py-6">
         <NuxtPage />
       </div>

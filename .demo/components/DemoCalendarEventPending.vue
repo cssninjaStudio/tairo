@@ -25,26 +25,26 @@ const props = defineProps<{
         <div>
           <div
             class="text-muted-800 dark:text-muted-200 line-clamp-2 font-sans text-sm"
-            :title="event.title"
+            :title="props.event.title"
           >
-            {{ event.title }}
+            {{ props.event.title }}
           </div>
           <div class="text-muted-400 flex items-center gap-1 text-xs">
-            <!-- <div class="w-2 h-2 rounded-sm" :class="[categoryTheme[event.category].color]"></div>
-            <span>{{ categoryTheme[event.category].name }}</span> -->
+            <!-- <div class="w-2 h-2 rounded-sm" :class="[categoryTheme[props.event.category].color]"></div>
+            <span>{{ categoryTheme[props.event.category].name }}</span> -->
             <!-- <span class="text-muted-200">|</span> -->
             <Icon name="ph:clock" class="text-muted-400 size-4" />
-            <span>{{ event.duration }} min</span>
+            <span>{{ props.event.duration }} min</span>
           </div>
         </div>
 
-        <div v-if="event.participants">
+        <div v-if="props.event.participants">
           <BaseAvatarGroup
             :limit="2"
             size="xxs"
             :avatars="
-              event.participants.map((participant) => ({
-                src: participant.photo,
+              props.event.participants.map((participant) => ({
+                'src': participant.photo,
                 'data-nui-tooltip': participant.name,
                 'data-nui-tooltip-position': 'start',
               }))
@@ -57,28 +57,28 @@ const props = defineProps<{
       >
         <div class="flex flex-wrap gap-2">
           <span
-            v-if="event.features?.record"
+            v-if="props.event.features?.record"
             class="text-muted-400"
             data-nui-tooltip="Recorded"
           >
             <Icon name="ph:monitor-play-duotone" class="size-4" />
           </span>
           <span
-            v-if="event.features?.drive"
+            v-if="props.event.features?.drive"
             class="text-muted-400"
             data-nui-tooltip="Document joined"
           >
             <Icon name="ph:note-duotone" class="size-4" />
           </span>
           <span
-            v-if="event.features?.external"
+            v-if="props.event.features?.external"
             class="text-muted-400"
             data-nui-tooltip="External Users"
           >
             <Icon name="ph:lock-open-duotone" class="size-4" />
           </span>
           <span
-            v-if="event.features?.conversation"
+            v-if="props.event.features?.conversation"
             class="text-muted-400"
             data-nui-tooltip="Has comments"
           >
@@ -88,8 +88,8 @@ const props = defineProps<{
         <div>
           <div
             class="size-2 rounded-full"
-            :class="[categoryTheme[event.category].color]"
-            :data-nui-tooltip="categoryTheme[event.category].name"
+            :class="[categoryTheme[props.event.category].color]"
+            :data-nui-tooltip="categoryTheme[props.event.category].name"
             data-nui-tooltip-position="start"
           />
         </div>

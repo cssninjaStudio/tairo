@@ -1,3 +1,8 @@
+<script lang="ts" setup>
+const phone = ref('+33612345678')
+const country = ref('FR')
+</script>
+
 <template>
   <div class="flex flex-wrap gap-4 sm:flex-nowrap">
     <AddonInputPhone
@@ -22,8 +27,3 @@
     />
   </div>
 </template>
-
-<script lang="ts" setup>
-const phone = ref('+33612345678')
-const country = ref('FR')
-</script>

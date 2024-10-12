@@ -2,7 +2,7 @@
 const demoPie = reactive(useDemoPie())
 
 function useDemoPie() {
-  const { primary, info, success, warning, danger } = useTailwindColors()
+  const { primary, info, success, danger } = useTailwindColors()
   const height = 335
   const type = 'pie'
 

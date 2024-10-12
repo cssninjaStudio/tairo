@@ -16,5 +16,4 @@ demo: '#examples/tairo/form-group.vue'
 Use the form group component to hold some form elements together. It is used to show a label and a description for a group of form elements. The form group component is root is an HTML `<fieldset />` element.
 ::
 
-
 :doc-component-meta{name="TairoFormGroup"}

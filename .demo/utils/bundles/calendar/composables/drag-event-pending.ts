@@ -1,5 +1,3 @@
-import { addMinutes, roundToNearestMinutes } from 'date-fns'
-
 import type {
   Awaitable,
   CalendarCustomAttribute,
@@ -7,7 +5,9 @@ import type {
   CalendarSettings,
 } from '../types'
 
-import { topToDate, minutesToHeight } from '../view'
+import { addMinutes, roundToNearestMinutes } from 'date-fns'
+
+import { minutesToHeight, topToDate } from '../view'
 
 export function useDragEventPending(
   settings: CalendarSettings,
@@ -124,7 +124,7 @@ export function useDragEventPending(
 
   return {
     isPendingEventDragging,
-    pendingEventDraggingId: pendingEventDraggingId,
+    pendingEventDraggingId,
     onPendingEventDragStart,
     clearPendingEventDragging,
   }

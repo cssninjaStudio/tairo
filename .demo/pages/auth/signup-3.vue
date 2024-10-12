@@ -1,9 +1,9 @@
 <script setup lang="ts">
+import { AddonInputPassword } from '#components'
 import { toTypedSchema } from '@vee-validate/zod'
 import { Field, useForm } from 'vee-validate'
-import { z } from 'zod'
 
-import { AddonInputPassword } from '#components'
+import { z } from 'zod'
 
 definePageMeta({
   layout: 'empty',
@@ -76,7 +76,7 @@ const toaster = useToaster()
 // This is where you would send the form data to the server
 const onSubmit = handleSubmit(async (values) => {
   // here you have access to the validated form values
-  console.log('auth-success', values)
+  // console.log('auth-success', values)
 
   try {
     // fake delay, this will make isSubmitting value to be true
@@ -120,7 +120,7 @@ const onSubmit = handleSubmit(async (values) => {
     </div>
     <div class="flex w-full items-center justify-center">
       <div class="relative mx-auto w-full max-w-2xl">
-        <!--Avatars-->
+        <!-- Avatars -->
         <img
           class="ltablet:block absolute start-0 top-[30%] hidden size-12 rounded-full object-cover duration-[cubic-bezier(0.86,0,0.07,1)] lg:block"
           src="/img/avatars/1.svg"
@@ -207,7 +207,7 @@ const onSubmit = handleSubmit(async (values) => {
           height="80"
         >
 
-        <!--Form-->
+        <!-- Form -->
         <div class="me-auto ms-auto mt-4 w-full">
           <form
             method="POST"
@@ -346,7 +346,7 @@ const onSubmit = handleSubmit(async (values) => {
                   class="border-muted-200 dark:border-muted-700 mt-3 hidden border-t sm:block"
                 >
               </div>
-              <!--Social signup-->
+              <!-- Social signup -->
               <div class="grid grid-cols-3 gap-2">
                 <button
                   type="button"
@@ -368,7 +368,7 @@ const onSubmit = handleSubmit(async (values) => {
                 </button>
               </div>
 
-              <!--No account link-->
+              <!-- No account link -->
               <p
                 class="text-muted-400 mt-4 flex justify-between font-sans text-sm leading-5"
               >

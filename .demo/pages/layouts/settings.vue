@@ -29,9 +29,9 @@ const isTokens = computed(() => {
     <div class="w-full pb-20 pt-32">
       <div class="mx-auto w-full max-w-6xl px-4">
         <div class="grid w-full gap-8 md:grid-cols-12 md:gap-16">
-          <!--Stepper column-->
+          <!-- Stepper column -->
           <div class="md:col-span-3 lg:col-span-3">
-            <!--Tabs-->
+            <!-- Tabs -->
             <div class="border-muted-200 dark:border-muted-800 h-full border-r">
               <ul class="xs:flex xs:gap-4 -me-0.5 font-sans">
                 <li>
@@ -94,7 +94,7 @@ const isTokens = computed(() => {
             </div>
           </div>
 
-          <!--Steps column-->
+          <!-- Steps column -->
           <div class="md:col-span-9 lg:col-span-9">
             <NuxtPage />
           </div>

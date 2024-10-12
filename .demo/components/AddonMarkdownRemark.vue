@@ -1,9 +1,9 @@
 <script setup lang="ts">
+import type { BuiltinLanguage, LanguageInput } from 'shiki'
 // eslint-disable vue/no-v-text-v-html-on-component
 import { getMarkdownProcessors } from '~/utils/bundles/markdown/rehype'
-import light from '~/utils/shiki/theme/cssninja-light'
 import dark from '~/utils/shiki/theme/cssninja-dark'
-import type { LanguageInput, BuiltinLanguage } from 'shiki'
+import light from '~/utils/shiki/theme/cssninja-light'
 
 const props = withDefaults(
   defineProps<{
@@ -79,12 +79,14 @@ const proseSize = computed(() => {
 })
 
 onNuxtReady(async () => {
-  if (processor.value) return
+  if (processor.value)
+    return
   processor.value = await getMarkdownProcessors(props.themes, props.langs)
 })
 
 watch([() => props.source, processor], async ([source, _processor]) => {
-  if (!source || !_processor) return
+  if (!source || !_processor)
+    return
 
   const vfile = await _processor.process(source)
   htmlContent.value = vfile.toString()
@@ -96,9 +98,8 @@ watch([() => props.source, processor], async ([source, _processor]) => {
   <BasePlaceload v-if="!loaded" class="h-24 w-full rounded" />
   <BaseProse
     v-else
-    :class="[
+    class="markdown" :class="[
       proseSize,
-      'markdown',
       props.lines ? 'with-line-number' : '',
       props.fullwidth ? 'max-w-none' : '',
     ]"

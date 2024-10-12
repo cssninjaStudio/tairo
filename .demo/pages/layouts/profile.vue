@@ -288,7 +288,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                   </div>
                 </div>
               </div>
-              <!--Load more-->
+              <!-- Load more -->
               <div class="py-6">
                 <div class="mx-auto w-full max-w-[240px]">
                   <BaseButton class="w-full">

@@ -124,8 +124,8 @@ const mainClass = computed(() => {
           class="pt-40 md:pt-36"
           :class="[
             props.display === 'condensed' && 'w-full',
-            props.display === 'horizontal-scroll' &&
-              'mx-auto w-full overflow-x-auto',
+            props.display === 'horizontal-scroll'
+              && 'mx-auto w-full overflow-x-auto',
             props.display === 'expanded-sm' && 'mx-auto w-full max-w-5xl',
             props.display === 'expanded-md' && 'mx-auto w-full max-w-6xl',
             props.display === 'expanded-lg' && 'mx-auto w-full max-w-7xl',

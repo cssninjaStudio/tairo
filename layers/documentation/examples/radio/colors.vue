@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const value = ref('pink')
+</script>
+
 <template>
   <div class="grid grid-cols-2 gap-6 md:max-w-lg md:grid-cols-4">
     <BaseRadio
@@ -97,7 +101,3 @@
     />
   </div>
 </template>
-
-<script setup lang="ts">
-const value = ref('pink')
-</script>

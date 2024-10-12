@@ -1,15 +1,3 @@
-<template>
-  <ProseCode
-    :code="code"
-    :language="language"
-    :filename="filename"
-    :highlights="highlights"
-    :meta="meta"
-  >
-    <pre :class="$props.class"><slot /></pre>
-  </ProseCode>
-</template>
-
 <script setup lang="ts">
 defineProps({
   code: {
@@ -38,3 +26,15 @@ defineProps({
   },
 })
 </script>
+
+<template>
+  <ProseCode
+    :code="code"
+    :language="language"
+    :filename="filename"
+    :highlights="highlights"
+    :meta="meta"
+  >
+    <pre :class="$props.class"><slot /></pre>
+  </ProseCode>
+</template>

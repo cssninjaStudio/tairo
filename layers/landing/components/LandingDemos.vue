@@ -36,7 +36,7 @@ const selectedCategory = computed({
     router.push({
       query: {
         ...route.query,
-        category: value ? value : undefined,
+        category: value || undefined,
       },
     })
   },
@@ -68,10 +68,14 @@ const demoPages = computed(() => {
   traverseRoutes(router.options.routes)
 
   return match.sort((a, b) => {
-    if (a.meta?.preview?.order === undefined) return 0
-    if (b.meta?.preview?.order === undefined) return 0
-    if (a.meta.preview?.order < b.meta.preview?.order) return -1
-    if (a.meta.preview?.order > b.meta.preview?.order) return 1
+    if (a.meta?.preview?.order === undefined)
+      return 0
+    if (b.meta?.preview?.order === undefined)
+      return 0
+    if (a.meta.preview?.order < b.meta.preview?.order)
+      return -1
+    if (a.meta.preview?.order > b.meta.preview?.order)
+      return 1
     return 0
   })
 })

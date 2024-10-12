@@ -31,7 +31,7 @@ const props = withDefaults(
 
     ]"
   >
-    <!--Card content-->
+    <!-- Card content -->
     <div class="flex h-full flex-col gap-3">
       <div class="flex items-center gap-2">
         <div class="bg-muted-200 dark:bg-muted-700 size-2 rounded-full" />
@@ -70,7 +70,7 @@ const props = withDefaults(
       </div>
     </div>
 
-    <!--Mastercard-->
+    <!-- Mastercard -->
     <div class="absolute end-5 top-4 flex">
       <div class="-me-2 size-9 rounded-full bg-rose-500/60" />
       <div
@@ -78,7 +78,7 @@ const props = withDefaults(
       />
     </div>
 
-    <!--Logo-->
+    <!-- Logo -->
     <div class="absolute bottom-7 end-5 flex">
       <TairoLogo class="text-primary-500 size-10" />
     </div>

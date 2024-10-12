@@ -1,6 +1,6 @@
-import { customList, type CountryProperty } from 'country-codes-list'
+import { type CountryProperty, customList } from 'country-codes-list'
 
-export type CountryInfo = {
+export interface CountryInfo {
   code: string
   label: string
   labelLocal: string

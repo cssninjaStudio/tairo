@@ -58,7 +58,7 @@ function setAccount(account: any) {
 <template>
   <div class="space-y-6 pb-20 pt-4">
     <div class="grid grid-cols-12 gap-6">
-      <!--Tile-->
+      <!-- Tile -->
       <div class="ltablet:col-span-3 col-span-12 sm:col-span-6 lg:col-span-3">
         <BaseCard
           rounded="md"
@@ -92,7 +92,7 @@ function setAccount(account: any) {
           </div>
         </BaseCard>
       </div>
-      <!--Tile-->
+      <!-- Tile -->
       <div class="ltablet:col-span-3 col-span-12 sm:col-span-6 lg:col-span-3">
         <BaseCard
           rounded="md"
@@ -126,7 +126,7 @@ function setAccount(account: any) {
           </div>
         </BaseCard>
       </div>
-      <!--Tile-->
+      <!-- Tile -->
       <div class="ltablet:col-span-3 col-span-12 sm:col-span-6 lg:col-span-3">
         <BaseCard
           rounded="md"
@@ -161,7 +161,7 @@ function setAccount(account: any) {
           </div>
         </BaseCard>
       </div>
-      <!--Tile-->
+      <!-- Tile -->
       <div class="ltablet:col-span-3 col-span-12 sm:col-span-6 lg:col-span-3">
         <BaseCard
           rounded="md"
@@ -198,9 +198,9 @@ function setAccount(account: any) {
     </div>
     <div class="grid grid-cols-12 gap-6">
       <div class="ltablet:col-span-8 col-span-12 space-y-6 lg:col-span-8">
-        <!--Account balance widget-->
+        <!-- Account balance widget -->
         <DemoWidgetAccountBalance />
-        <!--Transactions widget-->
+        <!-- Transactions widget -->
         <DemoWidgetTransactionCompact />
       </div>
       <form action="" class="ltablet:col-span-4 col-span-12 space-y-6 lg:col-span-4">
@@ -283,7 +283,7 @@ function setAccount(account: any) {
             </div>
           </div>
           <div class="mt-6 space-y-4">
-            <!--Dropdown-->
+            <!-- Dropdown -->
             <div ref="target" class="relative z-20 w-full">
               <button
                 type="button"
@@ -325,7 +325,7 @@ function setAccount(account: any) {
                   v-if="open"
                   class="border-muted-200 dark:border-muted-800 dark:bg-muted-950 shadow-muted-400/10 dark:shadow-muted-800/10 absolute start-0 top-20 w-full rounded-xl border bg-white p-2 shadow-xl"
                 >
-                  <!--Accounts-->
+                  <!-- Accounts -->
                   <ul>
                     <li v-for="account in accounts" :key="account.id">
                       <button
@@ -354,7 +354,7 @@ function setAccount(account: any) {
                 </div>
               </Transition>
             </div>
-            <!--Input-->
+            <!-- Input -->
             <div class="relative">
               <BaseInputNumber
                 v-model="amount"
@@ -374,7 +374,7 @@ function setAccount(account: any) {
             </div>
           </div>
         </BaseCard>
-        <!--Learn more-->
+        <!-- Learn more -->
         <BaseCard
           rounded="md"
           class="relative flex flex-col gap-4 sm:flex-row"

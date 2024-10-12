@@ -1,6 +1,10 @@
 <script lang="ts" setup>
-import type { PhoneNumber, CountryCode } from 'libphonenumber-js/max'
+import type { CountryCode, PhoneNumber } from 'libphonenumber-js/max'
 import type { CountriesInfo } from '~/utils/bundles/countries'
+
+defineOptions({
+  inheritAttrs: false,
+})
 
 const props = withDefaults(defineProps<{
   /**
@@ -58,12 +62,6 @@ const emits = defineEmits<{
   'validation': [state: { valid: boolean, touched: boolean, error: string }]
 }>()
 
-defineOptions({
-  inheritAttrs: false,
-})
-
-const appConfig = useAppConfig()
-
 const vmodel = useVModel(props, 'modelValue', emits, {
   passive: true,
   defaultValue: '',
@@ -109,7 +107,6 @@ const currentCountry = computed(() => {
 
 let parsed: PhoneNumber | undefined
 
-// eslint-disable-next-line @typescript-eslint/consistent-type-imports
 let parser: typeof import('libphonenumber-js/max')['parsePhoneNumber'] | undefined
 
 const internal = ref('')
@@ -150,7 +147,7 @@ const { list, containerProps, wrapperProps, scrollTo } = useVirtualList(
 )
 
 let parsePending = false
-const handleInput = (value: string, touched = true) => {
+function handleInput(value: string, touched = true) {
   internal.value = value ?? ''
   validation.touched = touched
   possibleCountries.value = []
@@ -169,7 +166,8 @@ const handleInput = (value: string, touched = true) => {
 }
 
 function selectCountry(country?: CountryCode | string) {
-  if (props.disabled) return
+  if (props.disabled)
+    return
 
   vcountry.value = country
   handleInput(internal.value, validation.touched)
@@ -320,6 +318,7 @@ const dropdownBorder = computed(() => {
     case 'full':
       return '[&_.nui-text-button]:rounded-s-full'
     case 'none':
+    default:
       return ''
   }
 })
@@ -466,7 +465,7 @@ const dropdownBorder = computed(() => {
         />
         <Icon
           v-else
-          :name="`ph:x`"
+          name="ph:x"
           class="text-danger-500 -mt-0.5"
           :class="iconSize"
         />

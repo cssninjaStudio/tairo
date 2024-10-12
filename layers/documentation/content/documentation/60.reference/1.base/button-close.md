@@ -8,7 +8,6 @@ icon:
   srcDark: /img/illustrations/components/button-close-icon.svg
 ---
 
-
 ::doc-component-demo
 ---
 title: Radius
@@ -43,7 +42,6 @@ demo: '#examples/button-close/muted.vue'
 ---
 Close buttons are a common part of any application. Close buttons can have different colors using the `color` prop.
 ::
-
 
 ::doc-component-demo
 ---
@@ -84,6 +82,5 @@ demo: '#examples/button-close/danger.vue'
 ---
 Close buttons are a common part of any application. Close buttons can have different colors using the `color` prop.
 ::
-
 
 :doc-component-meta{name="BaseButtonClose"}

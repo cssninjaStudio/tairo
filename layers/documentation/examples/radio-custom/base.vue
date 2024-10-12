@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const value = ref('value_1')
+</script>
+
 <template>
   <div class="flex w-full items-end gap-6">
     <form class="mx-auto w-full">
@@ -162,7 +166,3 @@
     </form>
   </div>
 </template>
-
-<script setup lang="ts">
-const value = ref('value_1')
-</script>

@@ -1,3 +1,7 @@
+<script lang="ts" setup>
+const phone = ref('')
+</script>
+
 <template>
   <div class="max-w-md">
     <AddonInputPhone
@@ -7,7 +11,3 @@
     />
   </div>
 </template>
-
-<script lang="ts" setup>
-const phone = ref('')
-</script>

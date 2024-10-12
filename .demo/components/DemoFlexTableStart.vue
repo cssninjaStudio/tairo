@@ -37,8 +37,8 @@ const props = withDefaults(
     </span>
     <BaseAvatar
       v-if="
-        (props.avatar && !props.icon && !props.picture) ||
-          (props.initials && !props.icon && !props.picture)
+        (props.avatar && !props.icon && !props.picture)
+          || (props.initials && !props.icon && !props.picture)
       "
       :src="props.avatar"
       :badge-src="props.badge"

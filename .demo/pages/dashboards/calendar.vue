@@ -1,40 +1,35 @@
 <script setup lang="ts">
 import {
+  addMinutes,
+  endOfDay,
   format,
   isPast,
   isToday,
-  startOfWeek,
-  startOfDay,
-  endOfWeek,
-  endOfDay,
-  addDays,
-  addMinutes,
-  roundToNearestMinutes,
 } from 'date-fns'
 import { Calendar } from 'v-calendar'
 import { Container, Draggable } from 'vue3-smooth-dnd'
 
-import 'v-calendar/dist/style.css'
-import '~/assets/css/vcalendar-weekly.css'
-import '~/assets/css/vcalendar.css'
-
 import {
-  type VCalendarAttribute,
   type CalendarCustomAttribute,
-  type CalendarSettings,
   type CalendarEvent,
-  dateToTop,
-  datesToHeight,
-  topToDate,
+  type CalendarSettings,
   categoryTheme,
+  datesToHeight,
+  dateToTop,
+  topToDate,
   useCalendarEvents,
+  useCreateEvent,
   useDateRange,
-  useNowMarker,
   useDragEvent,
   useDragEventPending,
-  useCreateEvent,
+  useNowMarker,
   useViewPan,
+  type VCalendarAttribute,
 } from '~/utils/bundles/calendar'
+import 'v-calendar/dist/style.css'
+import '~/assets/css/vcalendar-weekly.css'
+
+import '~/assets/css/vcalendar.css'
 
 definePageMeta({
   title: 'Calendar',
@@ -60,9 +55,6 @@ const settings = reactive<CalendarSettings>({
   dayOffsetY: 0,
   weekStartsOn: 0,
 })
-function getChildPayload(index: number) {
-  return pendingEvents.value?.[index - 1]
-}
 
 const { fromDate, toDate, weekdays, onPageChange } = useDateRange(settings)
 const { calendarEvents, pendingEvents } = useCalendarEvents({
@@ -70,6 +62,9 @@ const { calendarEvents, pendingEvents } = useCalendarEvents({
   toDate,
 })
 
+function getChildPayload(index: number) {
+  return pendingEvents.value?.[index - 1]
+}
 const {
   isHeightDragging,
   isPositionDragging,
@@ -84,6 +79,10 @@ const {
   },
 )
 
+const { now, showNow } = useNowMarker(scrollCalendarRef, settings)
+const { isViewPaning, isViewMoved } = useViewPan(scrollCalendarRef, () => {
+  return !(isHeightDragging.value || isPositionDragging.value)
+})
 const { onCalendarClick, clearNew, hasNew } = useCreateEvent(
   settings,
   calendarEvents,
@@ -127,12 +126,6 @@ function onSelectEvent(event: CalendarEvent) {
 
   selectedEventId.value = event.id
 }
-
-const { now, showNow } = useNowMarker(scrollCalendarRef, settings)
-const { isViewPaning, isViewMoved } = useViewPan(scrollCalendarRef, () => {
-  return !(isHeightDragging.value || isPositionDragging.value)
-})
-
 const { isPendingEventDragging, onPendingEventDragStart } = useDragEventPending(
   settings,
   calendarEvents,
@@ -492,11 +485,11 @@ const selectedEventFeatures = computed({
                       class="pointer-events-none absolute end-4 start-4 z-50 rounded-md outline-2 outline-offset-2"
                       :class="{
                         'outline-dashed':
-                          event.customData.id === 'new' &&
-                          event.customData.id === selectedEventId,
-                        outline:
-                          event.customData.id !== 'new' &&
-                          event.customData.id === selectedEventId,
+                          event.customData.id === 'new'
+                          && event.customData.id === selectedEventId,
+                        'outline':
+                          event.customData.id !== 'new'
+                          && event.customData.id === selectedEventId,
                         [categoryTheme[event.customData.category].outline]:
                           event.customData.id === selectedEventId,
                       }"
@@ -553,8 +546,8 @@ const selectedEventFeatures = computed({
                             settings,
                             event.customData.startDate,
                             day.date,
-                          ) +
-                          datesToHeight(
+                          )
+                          + datesToHeight(
                             settings,
                             event.customData.startDate,
                             event.customData.endDate,
@@ -783,7 +776,7 @@ const selectedEventFeatures = computed({
                 ]"
                 :properties="{
                   label: 'name',
-                  media: 'photo'
+                  media: 'photo',
                 }"
                 :display-value="(item: any) => item?.name || ''"
                 dropdown

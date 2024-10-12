@@ -36,7 +36,7 @@
         </div>
       </BaseCard>
     </div>
-    <!--Invest widget-->
+    <!-- Invest widget -->
     <div class="col-span-12 md:col-span-4">
       <BaseCard
         rounded="lg"

@@ -155,9 +155,9 @@ onBeforeMount(checkPreviousSteps)
                   <li class="flex gap-2">
                     <Icon
                       v-if="
-                        request?.role === 'admin' ||
-                          request?.role === 'bookkeeper' ||
-                          request?.role === 'custom'
+                        request?.role === 'admin'
+                          || request?.role === 'bookkeeper'
+                          || request?.role === 'custom'
                       "
                       name="lucide:check"
                       class="text-success-500 relative top-1 size-4 shrink-0"
@@ -233,8 +233,8 @@ onBeforeMount(checkPreviousSteps)
                   <li class="flex gap-2">
                     <Icon
                       v-if="
-                        request?.role === 'admin' ||
-                          request?.role === 'bookkeeper'
+                        request?.role === 'admin'
+                          || request?.role === 'bookkeeper'
                       "
                       name="lucide:check"
                       class="text-success-500 relative top-1 size-4 shrink-0"
@@ -254,9 +254,9 @@ onBeforeMount(checkPreviousSteps)
                   <li class="flex gap-2">
                     <Icon
                       v-if="
-                        request?.role === 'admin' ||
-                          request?.role === 'cardonly' ||
-                          request?.role === 'custom'
+                        request?.role === 'admin'
+                          || request?.role === 'cardonly'
+                          || request?.role === 'custom'
                       "
                       name="lucide:check"
                       class="text-success-500 relative top-1 size-4 shrink-0"
@@ -279,7 +279,7 @@ onBeforeMount(checkPreviousSteps)
           </BaseCard>
         </div>
 
-        <!--Buttons-->
+        <!-- Buttons -->
         <div class="flex gap-4">
           <BaseButton
             v-if="currentStepId > 0"
@@ -304,7 +304,7 @@ onBeforeMount(checkPreviousSteps)
       </div>
     </div>
 
-    <!--Success section-->
+    <!-- Success section -->
     <div v-else>
       <div class="mx-auto w-full max-w-md py-6 text-center">
         <div class="text-primary-500 mx-auto mb-4 size-14">

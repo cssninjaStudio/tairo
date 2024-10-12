@@ -1,3 +1,15 @@
+<script setup lang="ts">
+const options = reactive({
+  first: true,
+  second: true,
+  third: true,
+  fourth: true,
+  fifth: true,
+  sixth: true,
+  seventh: true,
+})
+</script>
+
 <template>
   <BaseFocusLoop
     class="grid grid-cols-2 gap-6 md:max-w-lg md:grid-cols-4"
@@ -51,16 +63,3 @@
     />
   </BaseFocusLoop>
 </template>
-
-<script setup lang="ts">
-const first = ref(false)
-const options = reactive({
-  first: true,
-  second: true,
-  third: true,
-  fourth: true,
-  fifth: true,
-  sixth: true,
-  seventh: true,
-})
-</script>

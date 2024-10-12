@@ -13,7 +13,7 @@ definePageMeta({
 })
 const route = useRoute()
 const router = useRouter()
-const page = computed(() => parseInt((route.query.page as string) ?? '1'))
+const page = computed(() => Number.parseInt((route.query.page as string) ?? '1'))
 
 const filter = ref('')
 const perPage = ref(10)
@@ -76,14 +76,14 @@ function statusColor(itemStatus: string) {
           Received payments
         </h3>
 
-        <!--Placeholder-->
+        <!-- Placeholder -->
         <DemoPlaceholderMinimal
           v-if="completed?.length === 0"
           title="No payments to show"
           description="Yo have no payment requests completed. Please come back later."
         />
 
-        <!--Payments list-->
+        <!-- Payments list -->
         <div v-else class="mt-7 overflow-x-auto">
           <table class="w-full whitespace-nowrap">
             <thead>
@@ -121,7 +121,7 @@ function statusColor(itemStatus: string) {
               </tr>
             </thead>
             <tbody>
-              <!--Row-->
+              <!-- Row -->
               <tr
                 v-for="(item, index) in completed"
                 :key="item.id"
@@ -195,14 +195,14 @@ function statusColor(itemStatus: string) {
           Payment requests
         </h3>
 
-        <!--Placeholder-->
+        <!-- Placeholder -->
         <DemoPlaceholderMinimal
           v-if="active?.length === 0"
           title="No payments requests"
           description="Yo have no payment requests pending. Please come back later."
         />
 
-        <!--Payments list-->
+        <!-- Payments list -->
         <div v-else class="mt-7 overflow-x-auto">
           <table class="w-full whitespace-nowrap">
             <thead>
@@ -240,7 +240,7 @@ function statusColor(itemStatus: string) {
               </tr>
             </thead>
             <tbody>
-              <!--Row-->
+              <!-- Row -->
               <tr
                 v-for="(item, index) in active"
                 :key="item.id"

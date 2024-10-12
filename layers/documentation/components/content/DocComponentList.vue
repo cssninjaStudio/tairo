@@ -12,7 +12,8 @@ const { docRoutes: routesFlat } = await useDocumentationRoutes()
 // filter unwanted components
 watchEffect(() => {
   meta.value = Object.keys(componentsMeta ?? {})?.filter((name) => {
-    if (!props.prefix) return true
+    if (!props.prefix)
+      return true
 
     return new RegExp(props.prefix).test(name)
   })
@@ -66,7 +67,7 @@ const componentsWithoutPages = computed(() => {
                   v-if="component.route?.icon?.src"
                   class="h-16 shrink-0 opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
                   :src="component.route?.icon?.src"
-                  :alt="component.name + ' Tairo Documentation'"
+                  :alt="`${component.name} Tairo Documentation`"
                 >
                 <img
                   v-if="component.route?.icon?.src"
@@ -74,7 +75,7 @@ const componentsWithoutPages = computed(() => {
                   :src="
                     component.route?.icon?.srcDark || component.route?.icon?.src
                   "
-                  :alt="component.name + ' Tairo Documentation'"
+                  :alt="`${component.name} Tairo Documentation`"
                 >
               </template>
               <div class="mt-2 text-center font-sans">

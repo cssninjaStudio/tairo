@@ -123,7 +123,7 @@ function useBarTeamEfficiency() {
     },
     yaxis: {
       labels: {
-        formatter: function (val: string) {
+        formatter(val: string) {
           return val + 70
         },
       },
@@ -133,8 +133,8 @@ function useBarTeamEfficiency() {
     },
     tooltip: {
       y: {
-        formatter: function (val: string) {
-          return val + 'hrs'
+        formatter(val: string) {
+          return `${val}hrs`
         },
       },
     },
@@ -168,7 +168,7 @@ function useBarTeamEfficiency() {
   <div>
     <!-- Grid -->
     <div class="grid grid-cols-12 gap-6">
-      <!--Grid column-->
+      <!-- Grid column -->
       <div class="col-span-12">
         <!-- Header -->
         <BaseCard class="p-5">
@@ -248,7 +248,7 @@ function useBarTeamEfficiency() {
           </div>
         </BaseCard>
       </div>
-      <!--Grid column-->
+      <!-- Grid column -->
       <div class="ltablet:col-span-8 col-span-12 lg:col-span-8">
         <!-- Inner grid -->
         <div class="flex flex-col gap-6">
@@ -323,7 +323,7 @@ function useBarTeamEfficiency() {
           </BaseCard>
         </div>
       </div>
-      <!--Grid column-->
+      <!-- Grid column -->
       <div class="ltablet:col-span-4 col-span-12 lg:col-span-4">
         <!-- Inner grid -->
         <div class="ptablet:grid-cols-2 grid gap-6 lg:flex lg:flex-col">

@@ -18,7 +18,7 @@ const props = withDefaults(
 )
 
 const app = useAppConfig()
-const { setup, currentName, isOpen, toggle } = useSidebar()
+const { setup, isOpen, toggle } = useSidebar()
 setup()
 
 const sidebarEnabled = computed(() => {
@@ -104,8 +104,8 @@ const wrapperClass = computed(() => {
       <div
         :class="[
           props.horizontalScroll && 'mx-auto w-full',
-          !props.horizontalScroll &&
-            'mx-auto w-full max-w-7xl',
+          !props.horizontalScroll
+            && 'mx-auto w-full max-w-7xl',
         ]"
       >
         <slot name="toolbar">

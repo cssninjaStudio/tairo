@@ -68,7 +68,8 @@ else if (data.value.redirect) {
 
 watchEffect(() => {
   const title = data.value?.title
-  if (pending.value) return
+  if (pending.value)
+    return
 
   // setting the title in the route meta will update the page title
   route.meta.title = title || 'Page not found'

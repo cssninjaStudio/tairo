@@ -40,7 +40,6 @@ demo: '#examples/tabs-slider/curved-x3.vue'
 Slider tabs can have curved corners. Use the `shape` prop to display a curved slider.
 ::
 
-
 ::doc-component-demo
 ---
 title: Rounded:full

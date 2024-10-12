@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const route = useRoute()
 const router = useRouter()
-const page = computed(() => parseInt((route.query.page as string) ?? '1'))
+const page = computed(() => Number.parseInt((route.query.page as string) ?? '1'))
 
 const filter = ref('')
 const perPage = ref(10)
@@ -22,7 +22,7 @@ const query = computed(() => {
   }
 })
 
-const { data, pending, error, refresh } = await useFetch('/api/transactions', {
+const { data } = await useFetch('/api/transactions', {
   query,
 })
 
@@ -30,6 +30,7 @@ const outgoing = computed(() => {
   if (data.value?.data.length && data.value?.data.length > 0) {
     return data.value.data.filter(item => item.type === 'out')
   }
+  return []
 })
 
 const total = computed(() => {

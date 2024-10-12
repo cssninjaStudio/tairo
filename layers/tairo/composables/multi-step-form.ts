@@ -1,12 +1,12 @@
+import type { InjectionKey, MaybeRefOrGetter, UnwrapRef } from 'vue'
 import { klona } from 'klona'
-import type { InjectionKey, UnwrapRef, MaybeRefOrGetter } from 'vue'
 
 type WithId<T> = T & { id: number }
 
 export interface StepForm<
   DATA extends Record<string, any> = Record<string, any>,
   META extends Record<string, any> = Record<string, any>,
-  > {
+> {
   meta: META
   to: string
 
@@ -45,18 +45,18 @@ export interface MultiStepFormContext<
   loading: Readonly<Ref<boolean>>
   complete: Readonly<Ref<boolean>>
 
-  getStep(id?: number): WithId<StepForm<DATA, META>> | undefined
-  getNextStep(id?: number): WithId<StepForm<DATA, META>> | null
-  getPrevStep(id?: number): WithId<StepForm<DATA, META>> | null
-  goToStep(step?: WithId<StepForm<DATA, META>>): Promise<void>
-  reset(initialState?: MaybeRefOrGetter<DATA>): void
-  setErrorMessage(message?: string): void
-  setFieldError(field: string, message?: string): void
-  resetFieldError(field?: string | string[]): void
+  getStep: (id?: number) => WithId<StepForm<DATA, META>> | undefined
+  getNextStep: (id?: number) => WithId<StepForm<DATA, META>> | null
+  getPrevStep: (id?: number) => WithId<StepForm<DATA, META>> | null
+  goToStep: (step?: WithId<StepForm<DATA, META>>) => Promise<void>
+  reset: (initialState?: MaybeRefOrGetter<DATA>) => void
+  setErrorMessage: (message?: string) => void
+  setFieldError: (field: string, message?: string) => void
+  resetFieldError: (field?: string | string[]) => void
 
-  validateStep(step?: WithId<StepForm<DATA, META>>): Promise<boolean>
-  handleSubmit(): Promise<void>
-  checkPreviousSteps(): Promise<void>
+  validateStep: (step?: WithId<StepForm<DATA, META>>) => Promise<boolean>
+  handleSubmit: () => Promise<void>
+  checkPreviousSteps: () => Promise<void>
 }
 
 const injectionKey = Symbol('multi-step-form-context') as InjectionKey<MultiStepFormContext>
@@ -90,12 +90,12 @@ export function provideMultiStepForm<
 
   const steps = computed(() => rules.steps.map((step, id) => ({ ...step, id })))
   const totalSteps = computed(() => steps.value.length)
-  const progress = computed(
-    () => ((currentStepId.value + 1) / totalSteps.value) * 100,
-  )
   const currentStepId = computed(() => steps.value.find(
     step => step.to === router.currentRoute.value.path,
   )?.id ?? 0)
+  const progress = computed(
+    () => ((currentStepId.value + 1) / totalSteps.value) * 100,
+  )
   const currentStep = computed(() => steps.value[currentStepId.value])
   const isLastStep = computed(() => currentStepId.value === totalSteps.value - 1)
 
@@ -194,7 +194,8 @@ export function provideMultiStepForm<
 
     while (current < currentStepId.value) {
       const step = getStep(current)
-      if (!step) break
+      if (!step)
+        break
 
       if (!await validateStep(step)) {
         await goToStep(step)
@@ -206,7 +207,8 @@ export function provideMultiStepForm<
   }
 
   async function handleSubmit() {
-    if (loading.value) return
+    if (loading.value)
+      return
 
     loading.value = true
     resetFieldError()

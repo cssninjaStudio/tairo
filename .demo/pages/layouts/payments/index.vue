@@ -14,7 +14,7 @@ definePageMeta({
 
 const route = useRoute()
 const router = useRouter()
-const page = computed(() => parseInt((route.query.page as string) ?? '1'))
+const page = computed(() => Number.parseInt((route.query.page as string) ?? '1'))
 
 const filter = ref('')
 const perPage = ref(10)
@@ -54,7 +54,7 @@ const scheduled = computed(() => {
 <template>
   <div class="mt-6 w-full">
     <div class="space-y-10">
-      <!--Needs approval-->
+      <!-- Needs approval -->
       <div class="w-full">
         <h3
           class="font-heading text-muted-800 dark:text-muted-200 mb-5 text-xl"
@@ -62,19 +62,19 @@ const scheduled = computed(() => {
           Needs approval
         </h3>
 
-        <!--Placeholder-->
+        <!-- Placeholder -->
         <DemoPlaceholderMinimal
           v-if="toApprove?.length === 0"
           title="No pending approvals"
           description="Yo have no payment approvals. Please come back later."
         />
 
-        <!--Payments approval list-->
+        <!-- Payments approval list -->
         <div
           v-else
           class="divide-muted-200 dark:divide-muted-800 mt-3 divide-y"
         >
-          <!--item-->
+          <!-- item -->
           <div
             v-for="item in toApprove"
             :key="item.id"
@@ -126,7 +126,7 @@ const scheduled = computed(() => {
           </div>
         </div>
       </div>
-      <!--Scheduled-->
+      <!-- Scheduled -->
       <div class="w-full">
         <h3
           class="font-heading text-muted-800 dark:text-muted-200 mb-5 text-xl"
@@ -134,19 +134,19 @@ const scheduled = computed(() => {
           Scheduled
         </h3>
 
-        <!--Placeholder-->
+        <!-- Placeholder -->
         <DemoPlaceholderMinimal
           v-if="scheduled?.length === 0"
           title="No scheduled payments"
           description="Yo have no payment scheduled. Please come back later."
         />
 
-        <!--Scheduled payments list-->
+        <!-- Scheduled payments list -->
         <div
           v-else
           class="divide-muted-200 dark:divide-muted-800 mt-3 divide-y"
         >
-          <!--item-->
+          <!-- item -->
           <div
             v-for="item in scheduled"
             :key="item.id"

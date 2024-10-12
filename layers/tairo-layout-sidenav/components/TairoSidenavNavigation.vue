@@ -88,7 +88,7 @@ const isSearchOpen = useState('search-open', () => false)
           </BaseInput>
         </div>
         <div class="nui-slimscroll flex flex-1 flex-col gap-y-2 overflow-y-auto px-4">
-          <!--Menu-->
+          <!-- Menu -->
           <ul class="relative !min-h-[auto] !min-w-[auto]">
             <template v-for="item in startMenuItems" :key="item.name">
               <li v-if="!item.children" class="!overflow-visible">
@@ -185,11 +185,11 @@ const isSearchOpen = useState('search-open', () => false)
               </li>
             </template>
           </ul>
-          <!--Divider-->
+          <!-- Divider -->
           <div class="align-center flex w-full flex-row items-center text-center">
             <div class="border-muted-200 dark:border-muted-800 flex w-full border-t" />
           </div>
-          <!--Recent-->
+          <!-- Recent -->
           <ul class="relative !min-h-[auto] !min-w-[auto]">
             <slot name="center">
               <component
@@ -202,9 +202,9 @@ const isSearchOpen = useState('search-open', () => false)
               />
             </slot>
           </ul>
-          <!--Spacer-->
+          <!-- Spacer -->
           <div class="flex-1" />
-          <!--End Menu-->
+          <!-- End Menu -->
           <ul class="relative !min-h-[auto] !min-w-[auto]">
             <template v-for="item in endMenuItems" :key="item.name">
               <li v-if="!item.children" class="!overflow-visible">
@@ -301,12 +301,12 @@ const isSearchOpen = useState('search-open', () => false)
               </li>
             </template>
           </ul>
-          <!--Divider-->
+          <!-- Divider -->
           <div class="align-center sticky bottom-0 flex w-full flex-row items-center text-center">
             <div class="border-muted-200 dark:border-muted-800 flex w-full border-t" />
           </div>
         </div>
-        <!--Account-->
+        <!-- Account -->
         <div class="flex shrink-0 items-center justify-between gap-x-1.5 px-4">
           <slot name="footer">
             <component

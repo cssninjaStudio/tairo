@@ -9,7 +9,9 @@
  */
 
 export default defineAppConfig({
-  nuxtIcon: {},
+  icon: {
+    mode: 'svg',
+  },
   tairo: {
     title: 'Tairo',
     sidebar: {

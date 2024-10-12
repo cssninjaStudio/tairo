@@ -1,25 +1,3 @@
-<template>
-  <div class="max-w-sm">
-    <BaseAutocomplete
-      v-model="value"
-      :items="people"
-      :display-value="(item: Person) => item.name"
-      :filter-items="filterItems"
-      icon="ph:users-three"
-      rounded="md"
-      placeholder="Search..."
-      label="Assignee"
-      clearable
-      :properties="{
-        value: 'id',
-        label: 'name',
-        sublabel: 'text',
-        media: 'media',
-      }"
-    />
-  </div>
-</template>
-
 <script setup lang="ts">
 interface Person {
   id: number
@@ -75,3 +53,25 @@ function filterItems(query?: string, items?: any[]) {
   })
 }
 </script>
+
+<template>
+  <div class="max-w-sm">
+    <BaseAutocomplete
+      v-model="value"
+      :items="people"
+      :display-value="(item: Person) => item.name"
+      :filter-items="filterItems"
+      icon="ph:users-three"
+      rounded="md"
+      placeholder="Search..."
+      label="Assignee"
+      clearable
+      :properties="{
+        value: 'id',
+        label: 'name',
+        sublabel: 'text',
+        media: 'media',
+      }"
+    />
+  </div>
+</template>

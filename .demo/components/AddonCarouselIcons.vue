@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { Carousel, Navigation, Slide } from 'vue3-carousel'
 import type { RouteLocationRaw } from 'vue-router'
+import { Carousel, Navigation, Slide } from 'vue3-carousel'
 import 'vue3-carousel/dist/carousel.css'
 
 export interface CarouselSlideItem {

@@ -1,3 +1,8 @@
+<script setup lang="ts">
+const amount = ref<number | undefined>(undefined)
+const taxes = ref('With taxes')
+</script>
+
 <template>
   <BaseButtonGroup>
     <BaseButton color="muted">
@@ -29,8 +34,3 @@
     </BaseSelect>
   </BaseButtonGroup>
 </template>
-
-<script setup lang="ts">
-const amount = ref<number | undefined>(undefined)
-const taxes = ref('With taxes')
-</script>

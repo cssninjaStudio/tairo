@@ -1,10 +1,10 @@
 {
-  "private": true,
   "name": "tairo",
-  "version": "1.5.0",
   "type": "module",
+  "version": "1.5.0",
+  "private": true,
+  "packageManager": "pnpm@9.12.1",
   "main": "./nuxt.config.ts",
-  "packageManager": "pnpm@8.15.6",
   "engines": {
     "node": ">=18",
     "pnpm": ">=8"
@@ -24,18 +24,13 @@
     "test": "run-p test:*",
     "test:tsc-demo": "pnpm --filter=demo typecheck",
     "test:lint": "eslint .",
-    "lint": "run-s lint:eslint:fix lint:eslint:fix-demo",
-    "lint:eslint:fix": "eslint --fix .",
-    "lint:eslint:fix-demo": "eslint -c layers/documentation/examples/.eslintrc.cjs --fix layers/documentation/examples"
+    "lint": "eslint --fix ."
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^3.7.3",
     "@stylistic/eslint-plugin": "^2.9.0",
     "@typescript-eslint/eslint-plugin": "8.8.1",
     "eslint": "9.12.0",
-    "eslint-plugin-sonarjs": "^2.0.3",
-    "eslint-plugin-tailwindcss": "3.17.5",
-    "eslint-plugin-vue": "9.29.0",
-    "eslint-plugin-vuejs-accessibility": "2.4.1",
     "lint-staged": "15.2.10",
     "npm-run-all": "4.1.5",
     "rimraf": "6.0.1",
@@ -46,11 +41,6 @@
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
-  },
-  "lint-staged": {
-    "*.(ts|vue)": [
-      "eslint --fix"
-    ]
   },
   "pnpm": {
     "peerDependencyRules": {
@@ -65,5 +55,10 @@
     "patchedDependencies": {
       "smooth-dnd@0.12.1": "patches/smooth-dnd@0.12.1.patch"
     }
+  },
+  "lint-staged": {
+    "*.(ts|vue)": [
+      "eslint --fix"
+    ]
   }
 }

@@ -8,7 +8,6 @@ const { toggle } = useSidebar()
 const { xl } = useTailwindBreakpoints()
 
 function onClick() {
-  console.log('onClick', props.name, xl.value)
   if (xl.value) {
     return
   }

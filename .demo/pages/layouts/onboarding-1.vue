@@ -25,6 +25,10 @@ const email = ref('')
 const tel = ref('')
 const code = ref('')
 
+const validatePin = computed(() => {
+  return input.value.join('') === correctPin.value
+})
+
 function goToStep(n: number) {
   loading.value = true
   const timer = setTimeout(() => {
@@ -85,7 +89,7 @@ function type(event: KeyboardEvent, index: number) {
     return
   }
 
-  if (event.code == 'a' && event.ctrlKey) {
+  if (event.code === 'a' && event.ctrlKey) {
     event.stopPropagation()
     event.preventDefault()
     return
@@ -98,7 +102,7 @@ function type(event: KeyboardEvent, index: number) {
   }
   // check if the PIN is correct
   if (
-    (onlyCheckOnLastFieldInput.value && index == codeLength.value)
+    (onlyCheckOnLastFieldInput.value && index === codeLength.value)
     || !onlyCheckOnLastFieldInput.value
   ) {
     event.stopPropagation()
@@ -118,10 +122,6 @@ function focusField(n: any) {
   }
   inputElements.value[n].focus()
 }
-
-const validatePin = computed(() => {
-  return input.value.join('') == correctPin.value
-})
 </script>
 
 <template>
@@ -484,7 +484,7 @@ const validatePin = computed(() => {
               >
                 <input
                   v-for="i in codeLength"
-                  :key="'pin' + i"
+                  :key="`pin${i}`"
                   :ref="
                     (el) => {
                       inputElements[i] = el as HTMLInputElement
@@ -492,7 +492,7 @@ const validatePin = computed(() => {
                   "
                   v-focus="i === 1"
                   type="text"
-                  :name="'pin' + i"
+                  :name="`pin${i}`"
                   maxlength="1"
                   class="dark:bg-muted-800 unselectable nui-focus inline w-16 select-none rounded-lg bg-white py-5 text-center text-4xl font-bold transition-all"
                   :value="input[i - 1] !== undefined ? input[i - 1] : '-'"

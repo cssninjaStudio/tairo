@@ -14,7 +14,7 @@ definePageMeta({
 
 const route = useRoute()
 const router = useRouter()
-const page = computed(() => parseInt((route.query.page as string) ?? '1'))
+const page = computed(() => Number.parseInt((route.query.page as string) ?? '1'))
 
 const filter = ref('')
 const perPage = ref(20)
@@ -57,7 +57,7 @@ function statusColor(itemStatus: string) {
 
 <template>
   <div class="w-full pb-24">
-    <!--Header-->
+    <!-- Header -->
     <div class="flex items-center justify-between py-6">
       <div>
         <BaseInput
@@ -75,9 +75,9 @@ function statusColor(itemStatus: string) {
     </div>
 
     <div class="w-full">
-      <!--Filters-->
+      <!-- Filters -->
       <div class="flex w-full items-center gap-5">
-        <!--Dropdown-->
+        <!-- Dropdown -->
         <div>
           <DemoTransactionsFilters />
         </div>
@@ -136,7 +136,7 @@ function statusColor(itemStatus: string) {
           </th>
         </thead>
         <tbody>
-          <!--Row-->
+          <!-- Row -->
           <tr
             v-for="(item, index) in data?.data"
             :key="item.id"

@@ -64,8 +64,8 @@ function useLineRevenue() {
     },
     tooltip: {
       y: {
-        formatter: function (val: string) {
-          return '$' + val
+        formatter(val: string) {
+          return `$${val}`
         },
       },
     },
@@ -241,7 +241,7 @@ function useBarSalesProfit() {
     },
     yaxis: {
       labels: {
-        formatter: function (val: string) {
+        formatter(val: string) {
           return val + 70
         },
       },
@@ -251,7 +251,7 @@ function useBarSalesProfit() {
     },
     tooltip: {
       y: {
-        formatter: function (val: string) {
+        formatter(val: string) {
           return val + 70
         },
       },
@@ -561,7 +561,7 @@ function useBarSalesProfit() {
     </div>
     <!-- Grid column -->
     <div class="ltablet:col-span-3 col-span-12 lg:col-span-3">
-      <!--Inner column -->
+      <!-- Inner column -->
       <div
         class="ptablet:grid-cols-2 ltablet:flex ltablet:flex-col grid gap-4 lg:flex lg:flex-col"
       >

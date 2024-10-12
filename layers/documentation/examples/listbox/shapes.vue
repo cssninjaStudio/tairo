@@ -1,3 +1,9 @@
+<script setup lang="ts">
+const value = ref()
+
+const frameworks = ['Javascript', 'Vue.js', 'React.js', 'Angular', 'Alpine.js']
+</script>
+
 <template>
   <div class="grid gap-6 md:max-w-4xl md:grid-cols-3">
     <BaseListbox
@@ -41,9 +47,3 @@
     />
   </div>
 </template>
-
-<script setup lang="ts">
-const value = ref()
-
-const frameworks = ['Javascript', 'Vue.js', 'React.js', 'Angular', 'Alpine.js']
-</script>

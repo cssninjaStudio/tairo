@@ -111,7 +111,7 @@ function useDemoAreaBalance() {
           Account Details
         </BaseHeading>
 
-        <!--Close button-->
+        <!-- Close button -->
         <button
           type="button"
           class="nui-mask nui-mask-blob hover:bg-muted-100 focus:bg-muted-100 dark:hover:bg-muted-700 dark:focus:bg-muted-700 text-muted-700 dark:text-muted-400 flex size-10 cursor-pointer items-center justify-center outline-transparent transition-colors duration-300"
@@ -123,7 +123,7 @@ function useDemoAreaBalance() {
       <div
         class="nui-slimscroll relative h-[calc(100dvh_-_5rem)] w-full overflow-y-auto overflow-x-hidden p-6"
       >
-        <!--Info-->
+        <!-- Info -->
         <div class="flex items-center justify-between">
           <div>
             <BaseHeading
@@ -138,7 +138,7 @@ function useDemoAreaBalance() {
               {{ account.owner.name }}
             </BaseParagraph>
           </div>
-          <!--Balance-->
+          <!-- Balance -->
           <div class="py-6 pe-4 text-end">
             <BaseParagraph size="xs" class="text-muted-400 mb-1">
               Account balance
@@ -152,9 +152,9 @@ function useDemoAreaBalance() {
             </BaseParagraph>
           </div>
         </div>
-        <!--Content-->
+        <!-- Content -->
         <div class="space-y-4 py-6 pe-4">
-          <!--Item-->
+          <!-- Item -->
           <div class="flex items-center justify-between">
             <div class="flex items-center gap-2">
               <div class="bg-muted-500 size-2 rounded-full" />
@@ -173,7 +173,7 @@ function useDemoAreaBalance() {
               {{ account.details.routingNumber }}
             </BaseText>
           </div>
-          <!--Item-->
+          <!-- Item -->
           <div class="flex items-center justify-between">
             <div class="flex items-center gap-2">
               <div class="bg-muted-500 size-2 rounded-full" />
@@ -192,7 +192,7 @@ function useDemoAreaBalance() {
               {{ account.details.accountNumber }}
             </BaseText>
           </div>
-          <!--Item-->
+          <!-- Item -->
           <div class="flex items-center justify-between">
             <div class="flex items-center gap-2">
               <div class="bg-muted-300 size-2 rounded-full" />
@@ -211,7 +211,7 @@ function useDemoAreaBalance() {
               {{ account.details.iban }}
             </BaseText>
           </div>
-          <!--Item-->
+          <!-- Item -->
           <div class="flex items-center justify-between">
             <div class="flex items-center gap-2">
               <div class="bg-muted-200 size-2 rounded-full" />

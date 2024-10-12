@@ -43,7 +43,6 @@ demo: '#examples/avatar/rounded-size.vue'
 Avatars can have different radius factors. The following example shows avatars using the `sm` radius factor. Use the `rounded` prop to change the radius factor of the avatar.
 ::
 
-
 ::doc-component-demo
 ---
 title: Rounded:none
@@ -142,6 +141,5 @@ Avatars can be displayed using SVG masks, bringing fancier shapes to your UI. Ke
 Using svg masks will hide any overflow from your avatar, making it unable to properly display `badges`, `indicators` or `tooltips`.
 :::
 ::
-
 
 :doc-component-meta{name="BaseAvatar"}

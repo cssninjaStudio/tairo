@@ -1,3 +1,13 @@
+<script setup lang="ts">
+const values = reactive({
+  primary: true,
+  info: true,
+  success: true,
+  warning: true,
+  danger: true,
+})
+</script>
+
 <template>
   <BaseFocusLoop class="grid grid-cols-2 gap-6 md:max-w-lg md:grid-cols-4">
     <BaseSwitchThin
@@ -31,13 +41,3 @@
     />
   </BaseFocusLoop>
 </template>
-
-<script setup lang="ts">
-const values = reactive({
-  primary: true,
-  info: true,
-  success: true,
-  warning: true,
-  danger: true,
-})
-</script>

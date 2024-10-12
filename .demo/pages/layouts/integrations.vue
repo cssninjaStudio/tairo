@@ -16,9 +16,9 @@ definePageMeta({
 <template>
   <div class="w-full pb-20">
     <div class="space-y-16">
-      <!--Group-->
+      <!-- Group -->
       <div>
-        <!--Header-->
+        <!-- Header -->
         <div class="border-muted-200 dark:border-muted-800 border-b py-6">
           <BaseHeading
             as="h2"
@@ -32,7 +32,7 @@ definePageMeta({
             Currently active integrations
           </BaseParagraph>
         </div>
-        <!--Content-->
+        <!-- Content -->
         <div class="pt-6">
           <DemoPlaceholderMinimal
             title="No integrations"
@@ -40,9 +40,9 @@ definePageMeta({
           />
         </div>
       </div>
-      <!--Group-->
+      <!-- Group -->
       <div>
-        <!--Header-->
+        <!-- Header -->
         <div class="border-muted-200 dark:border-muted-800 border-b py-6">
           <BaseHeading
             as="h2"
@@ -56,11 +56,11 @@ definePageMeta({
             Available accounting integrations
           </BaseParagraph>
         </div>
-        <!--Content-->
+        <!-- Content -->
         <div
           class="divide-muted-200 dark:divide-muted-800 space-y-8 divide-y pt-6"
         >
-          <!--Item-->
+          <!-- Item -->
           <div class="ltablet:flex-row flex flex-col gap-3 pt-8 lg:flex-row">
             <BaseAvatar
               size="md"
@@ -96,7 +96,7 @@ definePageMeta({
               </BaseButton>
             </div>
           </div>
-          <!--Item-->
+          <!-- Item -->
           <div class="ltablet:flex-row flex flex-col gap-3 pt-8 lg:flex-row">
             <BaseAvatar size="md" src="/img/logos/companies/xero-full.svg" />
             <div class="max-w-lg">
@@ -129,7 +129,7 @@ definePageMeta({
               </BaseButton>
             </div>
           </div>
-          <!--Item-->
+          <!-- Item -->
           <div class="ltablet:flex-row flex flex-col gap-3 pt-8 lg:flex-row">
             <BaseAvatar
               size="md"
@@ -167,9 +167,9 @@ definePageMeta({
           </div>
         </div>
       </div>
-      <!--Group-->
+      <!-- Group -->
       <div>
-        <!--Header-->
+        <!-- Header -->
         <div class="border-muted-200 dark:border-muted-800 border-b py-6">
           <BaseHeading
             as="h2"
@@ -183,11 +183,11 @@ definePageMeta({
             Other available integrations
           </BaseParagraph>
         </div>
-        <!--Content-->
+        <!-- Content -->
         <div
           class="divide-muted-200 dark:divide-muted-800 space-y-8 divide-y pt-6"
         >
-          <!--Item-->
+          <!-- Item -->
           <div class="ltablet:flex-row flex flex-col gap-3 pt-8 lg:flex-row">
             <BaseAvatar size="md" src="/img/logos/companies/zapier-full.svg" />
             <div class="max-w-lg">
@@ -220,7 +220,7 @@ definePageMeta({
               </BaseButton>
             </div>
           </div>
-          <!--Item-->
+          <!-- Item -->
           <div class="ltablet:flex-row flex flex-col gap-3 pt-8 lg:flex-row">
             <BaseAvatar size="md" src="/img/logos/companies/google-full.svg" />
             <div class="max-w-lg">
@@ -253,7 +253,7 @@ definePageMeta({
               </BaseButton>
             </div>
           </div>
-          <!--Item-->
+          <!-- Item -->
           <div class="ltablet:flex-row flex flex-col gap-3 pt-8 lg:flex-row">
             <BaseAvatar size="md" src="/img/logos/companies/stripe-full.svg" />
             <div class="max-w-lg">
@@ -286,7 +286,7 @@ definePageMeta({
               </BaseButton>
             </div>
           </div>
-          <!--Item-->
+          <!-- Item -->
           <div class="ltablet:flex-row flex flex-col gap-3 pt-8 lg:flex-row">
             <BaseAvatar size="md" src="/img/logos/companies/paypal-full.svg" />
             <div class="max-w-lg">

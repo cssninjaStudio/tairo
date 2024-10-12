@@ -14,7 +14,6 @@ const props = defineProps<{
 const emits = defineEmits<{
   positiondrag: [event: MouseEvent | TouchEvent]
 }>()
-
 </script>
 
 <template>
@@ -34,23 +33,23 @@ const emits = defineEmits<{
         <div>
           <div
             class="text-muted-800 dark:text-muted-200 line-clamp-2"
-            :title="event.customData.title"
+            :title="props.event.customData.title"
           >
-            {{ event.customData.title || 'New event' }}
+            {{ props.event.customData.title || 'New event' }}
           </div>
           <div class="text-muted-400">
-            {{ format(event.customData.startDate, 'HH:mm') }} to
-            {{ format(event.customData.endDate, 'HH:mm') }}
+            {{ format(props.event.customData.startDate, 'HH:mm') }} to
+            {{ format(props.event.customData.endDate, 'HH:mm') }}
           </div>
         </div>
 
-        <div v-if="event.customData.participants">
+        <div v-if="props.event.customData.participants">
           <BaseAvatarGroup
             :limit="1"
             size="xxs"
             :avatars="
-              event.customData.participants.map((participant) => ({
-                src: participant.photo,
+              props.event.customData.participants.map((participant) => ({
+                'src': participant.photo,
                 'data-nui-tooltip': participant.name,
                 'data-nui-tooltip-position': 'start',
               }))
@@ -63,28 +62,28 @@ const emits = defineEmits<{
       >
         <div class="flex flex-wrap gap-2">
           <span
-            v-if="event.customData.features?.record"
+            v-if="props.event.customData.features?.record"
             class="text-muted-400"
             data-nui-tooltip="Recorded"
           >
             <Icon name="ph:monitor-play-duotone" class="size-4" />
           </span>
           <span
-            v-if="event.customData.features?.drive"
+            v-if="props.event.customData.features?.drive"
             class="text-muted-400"
             data-nui-tooltip="Document joined"
           >
             <Icon name="ph:note-duotone" class="size-4" />
           </span>
           <span
-            v-if="event.customData.features?.external"
+            v-if="props.event.customData.features?.external"
             class="text-muted-400"
             data-nui-tooltip="External Users"
           >
             <Icon name="ph:lock-open-duotone" class="size-4" />
           </span>
           <span
-            v-if="event.customData.features?.conversation"
+            v-if="props.event.customData.features?.conversation"
             class="text-muted-400"
             data-nui-tooltip="Has comments"
           >
@@ -94,8 +93,8 @@ const emits = defineEmits<{
         <div>
           <div
             class="size-2 rounded-full"
-            :class="[categoryTheme[event.customData.category].color]"
-            :data-nui-tooltip="categoryTheme[event.customData.category].name"
+            :class="[categoryTheme[props.event.customData.category].color]"
+            :data-nui-tooltip="categoryTheme[props.event.customData.category].name"
             data-nui-tooltip-position="start"
           />
         </div>

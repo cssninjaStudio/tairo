@@ -81,14 +81,14 @@ const archive = [
 </script>
 
 <template>
-  <!--Wrapper-->
+  <!-- Wrapper -->
   <div class="bg-muted-white dark:bg-muted-900 h-screen w-full overflow-hidden">
-    <!--Sidebar-->
+    <!-- Sidebar -->
     <div
       class="bg-muted-100 dark:bg-muted-950 fixed start-0 top-0 z-40 flex h-full w-[260px] flex-col transition-transform duration-300"
       :class="[
         isOpen ? 'lg:translate-x-0' : 'lg:!-translate-x-full',
-        isMobileOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
+        isMobileOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0',
       ]"
     >
       <div class="flex h-16 shrink-0 items-center gap-2 px-4">
@@ -259,14 +259,14 @@ const archive = [
         </BaseButton>
       </div>
     </div>
-    <!--Main content-->
+    <!-- Main content -->
     <div class=" h-screen transition-all duration-300" :class="isOpen ? 'w-full lg:w-[calc(100%_-_260px)] lg:ms-[260px]' : 'w-full ms-0'">
       <div class="h-screen px-4">
-        <!--Chat content-->
+        <!-- Chat content -->
         <div class="mx-auto h-screen w-full max-w-3xl">
           <div class="flex h-screen flex-col justify-end">
             <div>
-              <!--Navigation-->
+              <!-- Navigation -->
               <div class="fixed start-0 top-0 px-4 transition-all duration-300" :class="isOpen ? 'w-full lg:ms-[260px] lg:w-[calc(100%_-_260px)]' : 'w-full ms-0'">
                 <div class="flex h-16 w-full items-center justify-between">
                   <div class="flex items-center gap-2">
@@ -284,7 +284,7 @@ const archive = [
                       color="default-contrast"
                       rounded="lg"
                       :classes="{
-                        menu: '!w-80'
+                        menu: '!w-80',
                       }"
                     >
                       <template #button="{ open = false }">
@@ -370,13 +370,13 @@ const archive = [
                   </div>
                 </div>
               </div>
-              <!--Logo section-->
+              <!-- Logo section -->
               <div class="dark:bg-muted-950 border-muted-300 dark:border-muted-800 mx-auto mb-10 flex size-16 items-center justify-center rounded-xl border bg-white">
                 <div class="bg-muted-100 dark:bg-muted-800 flex size-14 items-center justify-center rounded-lg">
                   <TairoLogo class="text-primary-500 size-8" />
                 </div>
               </div>
-              <!--Grid section-->
+              <!-- Grid section -->
               <div class="grid grid-cols-2 gap-4 pb-72 md:grid-cols-4">
                 <div>
                   <BaseCard
@@ -439,7 +439,7 @@ const archive = [
                   </BaseCard>
                 </div>
               </div>
-              <!--Input section-->
+              <!-- Input section -->
               <div class="relative pb-6">
                 <div class="relative h-14 min-h-14">
                   <textarea
@@ -473,7 +473,7 @@ const archive = [
         </div>
       </div>
     </div>
-    <!--Overlay-->
+    <!-- Overlay -->
     <div
       role="button"
       tabindex="0"

@@ -13,8 +13,7 @@ const props = withDefaults(
   <NuxtLink to="#" class="group flex w-full gap-4">
     <div class="relative shrink-0">
       <div
-        :class="[
-          'h-24 w-20 overflow-hidden',
+        class="h-24 w-20 overflow-hidden" :class="[
           props.shape === 'rounded' ? 'rounded' : '',
           props.shape === 'curved' ? 'rounded-lg' : '',
         ]"
@@ -22,8 +21,7 @@ const props = withDefaults(
         <TairoImageZoom
           src="/img/illustrations/dashboards/hobbies/hobby-3.svg"
           alt="Widget image"
-          :class="[
-            'object-cover object-top',
+          class="object-cover object-top" :class="[
             props.shape === 'rounded' ? 'rounded' : '',
             props.shape === 'curved' ? 'rounded-lg' : '',
           ]"

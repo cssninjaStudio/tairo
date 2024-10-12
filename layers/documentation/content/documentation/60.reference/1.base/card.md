@@ -19,7 +19,6 @@ Default props of all :doc-linker{to="BaseCard"} can be set in your `<app>/app.co
 :::
 ::
 
-
 ::doc-component-demo
 ---
 title: Contrast
@@ -42,13 +41,12 @@ Default color of all :doc-linker{to="BaseCard"} can be set in your `<app>/app.co
 :::
 ::
 
-
 ::doc-component-demo
 ---
 title: Flat shadow
 demo: '#examples/card/elevation.vue'
 ---
-Cards can be displayed with a flat shadow using the `shadow="flat"` prop. 
+Cards can be displayed with a flat shadow using the `shadow="flat"` prop.
 ::
 
 ::doc-component-demo
@@ -56,7 +54,7 @@ Cards can be displayed with a flat shadow using the `shadow="flat"` prop.
 title: Hover shadow
 demo: '#examples/card/elevation-hover.vue'
 ---
-Cards can have a shadow on hover using the `shadow="hover"` prop. 
+Cards can have a shadow on hover using the `shadow="hover"` prop.
 ::
 
 :doc-component-meta{name="BaseCard"}

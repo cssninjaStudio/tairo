@@ -520,7 +520,8 @@ onMounted(() => {
 })
 
 function selectConversation(id: number) {
-  if (messageLoading.value) return
+  if (messageLoading.value)
+    return
 
   loading.value = true
   message.value = ''
@@ -542,8 +543,10 @@ function selectConversation(id: number) {
 }
 
 async function submitMessage() {
-  if (!message.value) return
-  if (messageLoading.value) return
+  if (!message.value)
+    return
+  if (messageLoading.value)
+    return
 
   messageLoading.value = true
 
@@ -696,7 +699,7 @@ async function submitMessage() {
               loading ? 'overflow-hidden' : 'overflow-y-auto nui-slimscroll'
             "
           >
-            <!-- Loader-->
+            <!-- Loader -->
             <div
               class="bg-muted-100 dark:bg-muted-900 pointer-events-none absolute inset-0 z-10 size-full p-8 transition-opacity duration-300"
               :class="loading ? 'opacity-100' : 'opacity-0 pointer-events-none'"

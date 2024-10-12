@@ -1,25 +1,3 @@
-<template>
-  <div class="max-w-sm">
-    <BaseAutocomplete
-      v-model="value"
-      :items="hobbies"
-      :display-value="(item: Hobby) => item.name"
-      :filter-items="filterItems"
-      icon="ph:buildings"
-      rounded="md"
-      placeholder="Select a hobby"
-      label="Company"
-      clearable
-      :properties="{
-        value: 'id',
-        label: 'name',
-        sublabel: 'text',
-        icon: 'icon',
-      }"
-    />
-  </div>
-</template>
-
 <script setup lang="ts">
 interface Hobby {
   id: number
@@ -75,3 +53,25 @@ function filterItems(query?: string, items?: any[]) {
   })
 }
 </script>
+
+<template>
+  <div class="max-w-sm">
+    <BaseAutocomplete
+      v-model="value"
+      :items="hobbies"
+      :display-value="(item: Hobby) => item.name"
+      :filter-items="filterItems"
+      icon="ph:buildings"
+      rounded="md"
+      placeholder="Select a hobby"
+      label="Company"
+      clearable
+      :properties="{
+        value: 'id',
+        label: 'name',
+        sublabel: 'text',
+        icon: 'icon',
+      }"
+    />
+  </div>
+</template>

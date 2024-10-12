@@ -17,9 +17,10 @@ onKeyStroke('k', (event) => {
 
 const { data: contentDocs } = useAsyncData(
   () => {
-    if (!search.value) return Promise.resolve([] as any[])
+    if (!search.value)
+      return Promise.resolve([] as any[])
 
-    // @ts-ignore This may be undefined if documentation is disabled
+    // @ts-expect-error This may be undefined if documentation is disabled
     return queryContent()
       .where({
         $and: [
@@ -54,7 +55,8 @@ const { data: contentDocs } = useAsyncData(
 
 const router = useRouter()
 const demoPages = computed(() => {
-  if (!search.value) return []
+  if (!search.value)
+    return []
 
   const match: RouteRecordRaw[] = []
   const searchRe = new RegExp(search.value, 'i')

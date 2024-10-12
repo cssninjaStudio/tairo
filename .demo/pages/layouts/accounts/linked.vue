@@ -14,7 +14,7 @@ definePageMeta({
 
 const route = useRoute()
 const router = useRouter()
-const page = computed(() => parseInt((route.query.page as string) ?? '1'))
+const page = computed(() => Number.parseInt((route.query.page as string) ?? '1'))
 
 const filter = ref('')
 const perPage = ref(45)
@@ -46,7 +46,7 @@ const { data, pending, error, refresh } = await useFetch(
 
 <template>
   <div>
-    <!--Placeholder-->
+    <!-- Placeholder -->
     <DemoPlaceholderMinimal
       v-if="data?.data?.length === 0"
       title="You currently have no linked accounts"

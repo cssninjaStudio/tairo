@@ -3,7 +3,6 @@ const isSearchOpen = useState('search-open', () => false)
 const isMobileOpen = ref(false)
 
 const metaKey = useMetaKey()
-const { open } = usePanels()
 </script>
 
 <template>

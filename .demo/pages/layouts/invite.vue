@@ -1,11 +1,8 @@
 <script setup lang="ts">
-import type { Invite, StepData } from '../../types'
+import type { Invite } from '../../types'
 
 definePageMeta({
   layout: 'empty',
-})
-useHead({
-  titleTemplate: title => `${title} | Invite - Step ${currentStepId.value + 1}`,
 })
 
 const initialState = ref<Invite>({
@@ -30,9 +27,12 @@ const { handleSubmit, currentStepId, goToStep, progress, complete, steps } = pro
       },
       async validate({ data, setFieldError, resetFieldError }) {
         resetFieldError(['email', 'firstName', 'lastName'])
-        if (!data.value.email) setFieldError('email', 'Enter user email address')
-        if (!data.value.firstName) setFieldError('firstName', 'Enter user first name')
-        if (!data.value.lastName) setFieldError('lastName', 'Enter user las name')
+        if (!data.value.email)
+          setFieldError('email', 'Enter user email address')
+        if (!data.value.firstName)
+          setFieldError('firstName', 'Enter user first name')
+        if (!data.value.lastName)
+          setFieldError('lastName', 'Enter user las name')
       },
     },
     {
@@ -45,7 +45,8 @@ const { handleSubmit, currentStepId, goToStep, progress, complete, steps } = pro
       },
       async validate({ data, setFieldError, resetFieldError }) {
         resetFieldError(['role'])
-        if (!data.value.role) setFieldError('role', 'You must choose a role')
+        if (!data.value.role)
+          setFieldError('role', 'You must choose a role')
       },
     },
     {
@@ -82,6 +83,10 @@ const { handleSubmit, currentStepId, goToStep, progress, complete, steps } = pro
     })
   },
 })
+
+useHead({
+  titleTemplate: title => `${title} | Invite - Step ${currentStepId.value + 1}`,
+})
 </script>
 
 <template>
@@ -91,30 +96,30 @@ const { handleSubmit, currentStepId, goToStep, progress, complete, steps } = pro
     <div class="w-full pb-20 pt-32">
       <div class="mx-auto w-full max-w-6xl px-4">
         <div class="grid w-full gap-10 md:grid-cols-12">
-          <!--Stepper column-->
+          <!-- Stepper column -->
           <div :class="complete ? 'hidden' : 'md:col-span-3 lg:col-span-4'">
-            <!--Stepper-->
+            <!-- Stepper -->
             <div
               class="xs:w-full xs:max-w-xs xs:mx-auto flex flex-col gap-4 md:flex-row"
             >
               <div
                 class="xs:max-w-xs xs:mx-auto relative flex justify-between gap-7 md:flex-col"
               >
-                <!--Progress-->
+                <!-- Progress -->
                 <div
                   class="xs:top-1.5 xs:inset-x-0 bg-muted-200 dark:bg-muted-700 absolute start-2 top-2 z-0 mx-auto h-1 w-[calc(100%_-_1rem)] md:h-[calc(100%_-_1rem)] md:w-1 md:-translate-x-1/2"
                 />
-                <!--Vertical progress-->
+                <!-- Vertical progress -->
                 <div
                   class="bg-primary-500 absolute start-2 top-0 z-10 mx-auto hidden w-0.5 -translate-x-1/2 rounded-full transition-all duration-300 md:block"
                   :style="`height: ${progress}%;`"
                 />
-                <!--Horizontal progress (mobile)-->
+                <!-- Horizontal progress (mobile) -->
                 <div
                   class="bg-primary-500 absolute start-1.5 top-[7px] z-10 h-0.5 rounded-full transition-all duration-300 md:hidden"
                   :style="`width: calc(${progress}% - 0.5rem);`"
                 />
-                <!--Nodes-->
+                <!-- Nodes -->
                 <div
                   v-for="(step, index) in steps"
                   :key="index"
@@ -153,7 +158,7 @@ const { handleSubmit, currentStepId, goToStep, progress, complete, steps } = pro
             </div>
           </div>
 
-          <!--Steps column-->
+          <!-- Steps column -->
           <div
             :class="complete ? 'col-span-12' : 'md:col-span-9 lg:col-span-8'"
           >

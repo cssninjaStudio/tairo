@@ -116,7 +116,7 @@ const candidates = [
   <div
     class="ltablet:grid-cols-3 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
   >
-    <!--Grid item-->
+    <!-- Grid item -->
     <div>
       <BaseCard
         class="bg-muted-200 flex h-full flex-col border-0 p-8"
@@ -170,7 +170,7 @@ const candidates = [
         </div>
       </BaseCard>
     </div>
-    <!--Grid item-->
+    <!-- Grid item -->
     <div class="grid grid-cols-2 gap-4">
       <!-- Inner item -->
       <BaseCard rounded="lg" class="flex items-center gap-2 p-3">
@@ -301,7 +301,7 @@ const candidates = [
         </div>
       </div>
     </div>
-    <!--Grid item-->
+    <!-- Grid item -->
     <div>
       <BaseCard class="p-4" rounded="lg">
         <Calendar
@@ -322,7 +322,7 @@ const candidates = [
         />
       </BaseCard>
     </div>
-    <!--Grid item-->
+    <!-- Grid item -->
     <div>
       <BaseCard class="p-6" rounded="lg">
         <!-- Title -->

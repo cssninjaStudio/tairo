@@ -212,7 +212,7 @@ const activePosts = ref('recent')
               </BaseButtonAction>
             </div>
           </div>
-          <!-- Posts-->
+          <!-- Posts -->
           <div class="ptablet:grid ptablet:grid-cols-2 flex flex-col gap-6">
             <!-- Post -->
             <NuxtLink to="#" class="flex flex-col">

@@ -43,9 +43,9 @@ const { handleSubmit, isSubmitting } = useForm({
 const success = ref(false)
 
 // This is where you would send the form data to the server
-const onSubmit = handleSubmit(async (values) => {
+const onSubmit = handleSubmit(async (_values) => {
   // here you have access to the validated form values
-  console.log('recover-success', values)
+  // console.log('recover-success', _values)
 
   try {
     // fake delay, this will make isSubmitting value to be true
@@ -79,7 +79,7 @@ const onSubmit = handleSubmit(async (values) => {
     </div>
     <div class="flex w-full items-center justify-center">
       <div class="relative mx-auto w-full max-w-2xl">
-        <!--Form-->
+        <!-- Form -->
         <div class="me-auto ms-auto mt-4 w-full">
           <div class="me-auto ms-auto mt-4 w-full max-w-md">
             <div class="text-center">
@@ -160,7 +160,7 @@ const onSubmit = handleSubmit(async (values) => {
                     Recover Password
                   </BaseButton>
                 </div>
-                <!--No account link-->
+                <!-- No account link -->
                 <p
                   class="text-muted-400 mt-4 flex justify-between font-sans text-sm leading-5"
                 >

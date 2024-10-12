@@ -31,7 +31,7 @@ onKeyStroke('Escape', close)
           </BaseParagraph>
         </div>
 
-        <!--Close button-->
+        <!-- Close button -->
         <button
           type="button"
           class="nui-mask nui-mask-blob hover:bg-muted-100 focus:bg-muted-100 dark:hover:bg-muted-700 dark:focus:bg-muted-700 text-muted-700 dark:text-muted-400 flex size-10 cursor-pointer items-center justify-center outline-transparent transition-colors duration-300"
@@ -46,7 +46,7 @@ onKeyStroke('Escape', close)
       >
         <div class="py-10">
           <div class="space-y-6">
-            <!--Overview-->
+            <!-- Overview -->
             <div
               class="border-muted-200 dark:border-muted-800 grid grid-cols-12 border-b pb-6"
             >
@@ -72,7 +72,7 @@ onKeyStroke('Escape', close)
                 </ul>
               </div>
             </div>
-            <!--Pros-->
+            <!-- Pros -->
             <div
               class="border-muted-200 dark:border-muted-800 grid grid-cols-12 border-b pb-6"
             >
@@ -98,7 +98,7 @@ onKeyStroke('Escape', close)
                 </ul>
               </div>
             </div>
-            <!--Cons-->
+            <!-- Cons -->
             <div
               class="border-muted-200 dark:border-muted-800 grid grid-cols-12 border-b pb-6"
             >
@@ -125,7 +125,7 @@ onKeyStroke('Escape', close)
               </div>
             </div>
           </div>
-          <!--Provider-->
+          <!-- Provider -->
           <div class="mt-6 flex items-center justify-between">
             <div class="flex items-center gap-2">
               <img

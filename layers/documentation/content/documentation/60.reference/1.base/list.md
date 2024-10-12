@@ -49,6 +49,5 @@ demo: '#examples/list/avatar.vue'
 Use the `BaseListItem` component inside a `BaseList`  to display more complex list layouts. This one uses the `default` slot display an avatar list item.
 ::
 
-
 :doc-component-meta{name="BaseList"}
 :doc-component-meta{name="BaseListItem"}

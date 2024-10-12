@@ -1,3 +1,11 @@
+<script setup lang="ts">
+const isModalStartOpen = ref(false)
+const isModalEndOpen = ref(false)
+const isModalCenterOpen = ref(false)
+const isModalBetweenOpen = ref(false)
+const isModalBodyOpen = ref(false)
+</script>
+
 <template>
   <!-- Element to trigger the modal -->
   <div class="flex gap-x-2">
@@ -316,11 +324,3 @@
     </div>
   </TairoModal>
 </template>
-
-<script setup lang="ts">
-const isModalStartOpen = ref(false)
-const isModalEndOpen = ref(false)
-const isModalCenterOpen = ref(false)
-const isModalBetweenOpen = ref(false)
-const isModalBodyOpen = ref(false)
-</script>

@@ -1,13 +1,5 @@
 <script setup lang="ts">
-import { FocusTrap } from '@headlessui/vue'
-
-import {
-  Combobox,
-  ComboboxInput,
-  ComboboxOption,
-  ComboboxOptions,
-  TransitionRoot,
-} from '@headlessui/vue'
+import { Combobox, ComboboxInput, ComboboxOption, ComboboxOptions, FocusTrap, TransitionRoot } from '@headlessui/vue'
 
 const { close } = usePanels()
 onKeyStroke('Escape', close)

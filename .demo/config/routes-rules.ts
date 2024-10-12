@@ -1,5 +1,5 @@
-import { isProduction } from 'std-env'
 import type { NitroConfig, NitroRouteConfig } from 'nitropack'
+import { isProduction } from 'std-env'
 
 const staticAssetsRule: NitroRouteConfig = isProduction
   ? {

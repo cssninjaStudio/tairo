@@ -60,7 +60,7 @@ const tasks = ref<string[]>(['Option 0', 'Option 1', 'Option 2'])
     >
       <BaseCheckboxAnimated
         v-model="tasks"
-        color="success"
+        :color="props.color"
         :value="`Option ${task.id}`"
       />
       <div>

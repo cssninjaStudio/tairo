@@ -87,9 +87,9 @@ const mainClass = computed(() => {
         :class="[
           props.condensed && !props.horizontalScroll && 'w-full',
           !props.condensed && props.horizontalScroll && 'mx-auto w-full',
-          !props.condensed &&
-            !props.horizontalScroll &&
-            'mx-auto w-full max-w-7xl',
+          !props.condensed
+            && !props.horizontalScroll
+            && 'mx-auto w-full max-w-7xl',
         ]"
       >
         <slot name="toolbar">

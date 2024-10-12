@@ -46,7 +46,6 @@ demo: '#examples/popover/dual-right.vue'
 Popovers can have different alignments and can be used to display help messages. Use the `orientation` prop to change the popover's alignment.
 ::
 
-
 :doc-component-meta{name="TairoPopoverContentDual"}
 
 ::doc-component-demo
@@ -64,8 +63,5 @@ demo: '#examples/popover/media-right.vue'
 ---
 Popovers can have different alignments and can be used to display help messages. Use the `orientation` prop to change the popover's alignment.
 ::
-
-
-
 
 :doc-component-meta{name="TairoPopoverContentMedia"}

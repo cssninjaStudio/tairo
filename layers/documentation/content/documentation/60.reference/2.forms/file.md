@@ -1,13 +1,12 @@
 ---
 title: BaseInputFile
-components: 
+components:
   - BaseInputFile
 description: Use file inputs in your form to allow the user to upload files from their computer. Many customization options are available.
-icon: 
+icon:
   src: /img/illustrations/components/input-file-icon.svg
   srcDark: /img/illustrations/components/input-file-icon.svg
 ---
-
 
 ::doc-component-demo
 ---
@@ -19,7 +18,5 @@ File inputs have default styling, showing the file name and a button to select a
 Default props of all :doc-linker{to="BaseInputFile"} can be set in your `<app>/app.config.ts`.
 :::
 ::
-
-
 
 :doc-component-meta{name="BaseInputFile"}

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const route = useRoute()
 const router = useRouter()
-const page = computed(() => parseInt((route.query.page as string) ?? '1'))
+const page = computed(() => Number.parseInt((route.query.page as string) ?? '1'))
 
 const filter = ref('')
 const perPage = ref(45)
@@ -31,11 +31,11 @@ const currentMember = ref()
 </script>
 
 <template>
-  <!--Wrapper-->
+  <!-- Wrapper -->
   <div class="w-full pb-24">
-    <!--Header-->
+    <!-- Header -->
     <div class="flex items-center justify-end py-6">
-      <!--Buttons-->
+      <!-- Buttons -->
       <div class="hidden items-center gap-2 md:flex">
         <BaseButton
           to="/layouts/invite"
@@ -57,7 +57,7 @@ const currentMember = ref()
       </div>
     </div>
     <div class="grid grid-cols-12 gap-6">
-      <!--Navigation-->
+      <!-- Navigation -->
       <div class="ltablet:col-span-5 col-span-12 lg:col-span-5">
         <ul
           class="ltablet:flex-col ptablet:overflow-x-auto ltablet:overflow-x-hidden flex gap-1 overflow-x-auto lg:flex-col lg:overflow-x-hidden"
@@ -101,7 +101,7 @@ const currentMember = ref()
           </li>
         </ul>
       </div>
-      <!--Slug content-->
+      <!-- Slug content -->
       <div class="ltablet:col-span-7 col-span-12 lg:col-span-7">
         <NuxtPage v-if="currentMember !== undefined" />
         <BaseCard

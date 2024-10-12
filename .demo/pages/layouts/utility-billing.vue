@@ -79,6 +79,8 @@ const planColor = computed(() => {
     case 'enterprise':
       return 'text-primary-500'
   }
+
+  return ''
 })
 
 const cardInfo = ref({

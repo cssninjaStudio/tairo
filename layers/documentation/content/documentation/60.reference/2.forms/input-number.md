@@ -1,6 +1,6 @@
 ---
 title: BaseInputNumber
-components: 
+components:
   - BaseInputNumber
 description: An input dedicated to numeric data. Explore the available options.
 icon:
@@ -51,7 +51,6 @@ demo: '#examples/input-number/contrast-muted.vue'
 Inputs can have different contrasts.  You can change the contrast of an input number by setting the `contrast` property.
 ::
 
-
 ::doc-component-demo
 ---
 title: Icon
@@ -61,7 +60,6 @@ Inputs can have a configurable icon on the left side using the `icon` prop. Make
 
 You can also change icons for increment and decrement buttons using the `icon-decrement` and `icon-increment` props.
 ::
-
 
 ::doc-component-demo
 ---
@@ -73,7 +71,6 @@ You can change the step used by the increment and decrement buttons using the `s
 Defining a `min` and `max` value will prevent the increment and decrement buttons from going beyond these values but will not prevent the user from typing a value outside of the range.
 ::
 
-
 ::doc-component-demo
 ---
 title: Disabled
@@ -82,7 +79,6 @@ demo: '#examples/input-number/disabled.vue'
 Inputs can be shown in a disabled using the `disabled` prop.
 ::
 
-
 ::doc-component-demo
 ---
 title: Loading
@@ -90,6 +86,5 @@ demo: '#examples/input-number/loading.vue'
 ---
 Inputs can be shown in a loading using the `loading` prop.
 ::
-
 
 :doc-component-meta{name="BaseInputNumber"}

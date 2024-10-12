@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       options:
-        description: 'standard-version options'
+        description: standard-version options
   # Allow to be run via webhooks (Dojo will use this)
   repository_dispatch:
     types: [standard-version]
@@ -27,7 +27,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'pnpm'
+          cache: pnpm
 
       # Run "standard-version", which may create a new tag
       - run: |

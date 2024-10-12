@@ -60,8 +60,8 @@ function useIncomeHistory() {
         format: 'dd/MM/yy HH:mm',
       },
       y: {
-        formatter: function (val: number) {
-          return '$' + val
+        formatter(val: number) {
+          return `$${val}`
         },
       },
     },
@@ -111,9 +111,9 @@ const amount = ref<number>(0)
 <template>
   <!-- Grid -->
   <div class="grid gap-4 md:grid-cols-12">
-    <!--Grid column -->
+    <!-- Grid column -->
     <div class="ltablet:col-span-4 col-span-12 lg:col-span-4">
-      <!--Inner column -->
+      <!-- Inner column -->
       <div class="flex flex-col gap-4">
         <BaseCard class="flex flex-col py-6">
           <div class="mb-6 flex items-center justify-between px-6">
@@ -458,7 +458,7 @@ const amount = ref<number>(0)
         </BaseCard>
       </div>
     </div>
-    <!--Grid column -->
+    <!-- Grid column -->
     <div class="ltablet:col-span-8 col-span-12 lg:col-span-8">
       <!-- Sub grid -->
       <div class="grid gap-4 md:grid-cols-12">

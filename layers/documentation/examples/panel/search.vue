@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const { open } = usePanels()
+</script>
+
 <template>
   <div>
     <BaseButton @click="open('search')">
@@ -5,7 +9,3 @@
     </BaseButton>
   </div>
 </template>
-
-<script setup lang="ts">
-const { open } = usePanels()
-</script>

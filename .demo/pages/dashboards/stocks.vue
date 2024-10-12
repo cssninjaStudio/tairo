@@ -38,8 +38,8 @@ function useBarProfit() {
     },
     dataLabels: {
       enabled: true,
-      formatter: function (val: string) {
-        return val + '%'
+      formatter(val: string) {
+        return `${val}%`
       },
       offsetY: -20,
       style: {
@@ -81,8 +81,8 @@ function useBarProfit() {
       },
       labels: {
         show: false,
-        formatter: function (val: string) {
-          return val + '%'
+        formatter(val: string) {
+          return `${val}%`
         },
       },
     },

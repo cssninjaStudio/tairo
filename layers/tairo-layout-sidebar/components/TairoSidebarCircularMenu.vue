@@ -4,10 +4,13 @@ const app = useAppConfig()
 
 const isOpened = ref(false)
 const isScrolled = computed(() => {
-  if (y.value < 60) {
+  return y.value > 60
+})
+
+watch(isScrolled, () => {
+  if (!isScrolled.value) {
     isOpened.value = false
   }
-  return y.value > 60
 })
 
 const toolOffsets = [

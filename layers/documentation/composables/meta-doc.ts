@@ -1,6 +1,6 @@
 import type { MaybeRefOrGetter } from 'vue'
-import { kebabCase, upperFirst } from 'scule'
 import type { ComponentMeta } from 'vue-component-meta'
+import { kebabCase, upperFirst } from 'scule'
 // @ts-ignore - might be not defined if documentation is disabled
 import type { NuxtComponentMetaNames } from '#nuxt-component-meta/types'
 
@@ -22,7 +22,7 @@ export async function useDocumentationMeta(
 
       // input: 'Record<"number" | "trim" | "lazy", true> | undefined'
       // out: ['number', 'trim', 'lazy']
-      const modifierRe = /"([^"]+)"/gm
+      const modifierRe = /"([^"]+)"/g
 
       return prop?.type.match(modifierRe)?.map((m: string) => m.replace(/"/g, '')) ?? []
     },
@@ -85,7 +85,7 @@ export async function useDocumentationMeta(
   })
 
   function formatPropType(type: string) {
-    const bracketsRe = /^{ (.*) }$/gm
+    const bracketsRe = /^\{ (.*) \}$/gm
     const parenthesisRe = /^\((.*)\)/gm
 
     return type
@@ -121,7 +121,7 @@ export async function useDocumentationMeta(
         [
           `// this type is generated to show you all possible values`,
           `type ${upperFirst(prop.name)}Data = ${type
-            .replace(/{ /g, '{\n ')
+            .replace(/\{ /g, '{\n ')
             .replace(/; ([a-z])/g, ';\n $1')
             .replace(/; /g, ';\n')}\n\nconst ${prop.name} = ref<${upperFirst(
             prop.name,
@@ -175,7 +175,7 @@ export async function useDocumentationMeta(
         [
           `// this type is generated to show you all possible values`,
           `type ${upperFirst(prop.name)}Data = ${prop.type
-            .replace(/{ /g, '{\n ')
+            .replace(/\{ /g, '{\n ')
             .replace(/; ([a-z])/g, ';\n $1')
             .replace(/; /g, ';\n')}\n\nconst ${prop.name} = ref<${upperFirst(
             prop.name,
@@ -257,8 +257,7 @@ export async function useDocumentationMeta(
     const code: string[] = []
 
     const handlerName = upperFirst(event.name).replace(/:([a-z])/g, v =>
-      v.replace(':', '').toUpperCase(),
-    )
+      v.replace(':', '').toUpperCase())
     const handlerProps = event.type.startsWith('[')
       ? event.type.slice(1, -1)
       : event.type

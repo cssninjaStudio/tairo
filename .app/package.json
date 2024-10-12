@@ -1,12 +1,7 @@
 {
   "name": "app",
-  "private": true,
   "type": "module",
-  "devDependencies": {
-    "@fontsource-variable/inter": "^5.1.0",
-    "@fontsource-variable/karla": "^5.1.0",
-    "nuxt": "3.13.2"
-  },
+  "private": true,
   "scripts": {
     "prepare": "nuxt prepare",
     "dev": "nuxt dev --open",
@@ -14,5 +9,10 @@
     "generate": "nuxt generate",
     "typecheck": "nuxt typecheck",
     "clean": "rimraf .nuxt .output node_modules"
+  },
+  "devDependencies": {
+    "@fontsource-variable/inter": "^5.1.0",
+    "@fontsource-variable/karla": "^5.1.0",
+    "nuxt": "3.13.2"
   }
 }

@@ -7,7 +7,7 @@ networks:
 services:
   tairo-demo:
     image: digisquad/cssninja.tairo-demo:latest
-    restart: 'unless-stopped'
+    restart: unless-stopped
     networks:
       - cssninja-services
     environment:
@@ -15,15 +15,15 @@ services:
       - NUXT_PUBLIC_MAPBOX_TOKEN=${NUXT_PUBLIC_MAPBOX_TOKEN}
     labels:
       traefik.enable: true
-      traefik.docker.network: 'cssninja-services'
-      traefik.http.routers.tairo-demo.entrypoints: 'http'
+      traefik.docker.network: cssninja-services
+      traefik.http.routers.tairo-demo.entrypoints: http
       traefik.http.routers.tairo-demo.rule: 'Host(`${PUBLIC_HOST}`)'
-      traefik.http.routers.tairo-demo.middlewares: 'https-redirect@file'
+      traefik.http.routers.tairo-demo.middlewares: https-redirect@file
       traefik.http.services.tairo-demo-https.loadbalancer.server.port: 3000
       traefik.http.routers.tairo-demo-https.rule: 'Host(`${PUBLIC_HOST}`)'
       traefik.http.routers.tairo-demo-https.tls: true
-      traefik.http.routers.tairo-demo-https.entrypoints: 'https'
-      traefik.http.routers.tairo-demo-https.tls.certresolver: 'http'
+      traefik.http.routers.tairo-demo-https.entrypoints: https
+      traefik.http.routers.tairo-demo-https.tls.certresolver: http
       traefik.http.routers.tairo-demo-https.middlewares: tairo-middleware@docker
-      #gzip
+      # gzip
       traefik.http.middlewares.tairo-middleware.compress: true

@@ -33,7 +33,7 @@ const EMPTY_COLOR = '0 0 0'
 /**
  * Convert color to RGB values, for use with Tailwind CSS variables.
  */
-export const colorToRgb = (color: string): string => {
+export function colorToRgb(color: string): string {
   if (!color) {
     return EMPTY_COLOR
   }

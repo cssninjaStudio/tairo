@@ -1,3 +1,11 @@
+<script setup lang="ts">
+const value = ref([])
+
+function reset() {
+  value.value = []
+}
+</script>
+
 <template>
   <div class="w-full">
     <form class="mx-auto w-full">
@@ -113,11 +121,3 @@
     </form>
   </div>
 </template>
-
-<script setup lang="ts">
-const value = ref([])
-
-function reset() {
-  value.value = []
-}
-</script>

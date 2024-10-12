@@ -1,6 +1,6 @@
 ---
 title: BaseInput
-components: 
+components:
   - BaseInput
 description: An input is a form element that allows the user to enter text or numeric data from the keyboard. Explore the available options.
 icon:
@@ -19,7 +19,6 @@ Default shape of all :doc-linker{to="BaseInput"} can be set in your `<app>/app.c
 :::
 ::
 
-
 ::doc-component-demo
 ---
 title: Size
@@ -27,7 +26,6 @@ demo: '#examples/input/size.vue'
 ---
 Inputs can have different sizes. The default size is `md`. You can change the size of an input by setting the `size` property.
 ::
-
 
 ::doc-component-demo
 ---
@@ -37,7 +35,6 @@ demo: '#examples/input/contrast-default.vue'
 Inputs can have different contrasts. The default contrast is `default`. You can change the contrast of an input by setting the `contrast` property.
 ::
 
-
 ::doc-component-demo
 ---
 title: Contrast:muted
@@ -45,7 +42,6 @@ demo: '#examples/input/contrast-muted.vue'
 ---
 Inputs can have different contrasts. You can change the contrast of an input by setting the `contrast` property.
 ::
-
 
 ::doc-component-demo
 ---
@@ -55,7 +51,6 @@ demo: '#examples/input/contrast-muted-contrast.vue'
 Inputs can have different contrasts. You can change the contrast of an input by setting the `contrast` property.
 ::
 
-
 ::doc-component-demo
 ---
 title: Icon
@@ -63,7 +58,6 @@ demo: '#examples/input/icon.vue'
 ---
 Inputs can have a configurable icon on the left side using the `icon` prop. Make sure to pick meaningful icons for your use case.
 ::
-
 
 ::doc-component-demo
 ---
@@ -120,7 +114,6 @@ demo: '#examples/input/loading.vue'
 ---
 Inputs can be shown in a loading state using the `loading` prop.
 ::
-
 
 ::doc-component-demo
 ---

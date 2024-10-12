@@ -104,7 +104,7 @@ function useGaugePersonal() {
         leave-to-class="transform scale-y-0 opacity-0"
       >
         <div v-if="showFeatures" class="w-full pb-6">
-          <!--Features widget-->
+          <!-- Features widget -->
           <DemoWidgetFeatures>
             <template #actions>
               <BaseButtonClose
@@ -119,25 +119,25 @@ function useGaugePersonal() {
       </Transition>
 
       <div class="grid grid-cols-12 gap-6">
-        <!--Grid item-->
+        <!-- Grid item -->
         <div class="col-span-12 md:col-span-5">
-          <!--Welcome widget-->
+          <!-- Welcome widget -->
           <DemoWidgetWelcome />
         </div>
         <div class="col-span-12 md:col-span-7">
-          <!--Account balance widget-->
+          <!-- Account balance widget -->
           <DemoWidgetAccountBalance />
         </div>
         <div class="col-span-12 md:col-span-6">
-          <!--Money out widget-->
+          <!-- Money out widget -->
           <DemoWidgetMoneyOut />
         </div>
         <div class="col-span-12 md:col-span-6">
-          <!--Money in widget-->
+          <!-- Money in widget -->
           <DemoWidgetMoneyIn />
         </div>
         <div class="col-span-12 md:col-span-12">
-          <!--Transactions widget-->
+          <!-- Transactions widget -->
           <DemoWidgetTransactionSummary />
         </div>
       </div>

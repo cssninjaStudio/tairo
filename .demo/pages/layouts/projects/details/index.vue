@@ -13,7 +13,7 @@ definePageMeta({
 
 const route = useRoute()
 const router = useRouter()
-const page = computed(() => parseInt((route.query.page as string) ?? '1'))
+const page = computed(() => Number.parseInt((route.query.page as string) ?? '1'))
 
 const filter = ref('')
 const perPage = ref(25)
@@ -115,7 +115,7 @@ const selectedProject = ref<NonNullable<typeof data.value>['data'][0]>()
                   :properties="{
                     label: 'name',
                     sublabel: 'text',
-                    media: 'media'
+                    media: 'media',
                   }"
                   :selected="selected"
                 />

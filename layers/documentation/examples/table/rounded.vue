@@ -1,3 +1,47 @@
+<script setup lang="ts">
+const selected = ref([])
+const selectAll = ref(false)
+
+const team = [
+  {
+    id: 0,
+    src: '/img/avatars/22.svg',
+    name: 'Anna Vrinkof',
+    role: 'UI/UX designer',
+    expertise: 'UX Design',
+    rate: 49,
+    status: 'Available',
+  },
+  {
+    id: 1,
+    src: '/img/avatars/3.svg',
+    name: 'John Cambell',
+    role: 'Sales manager',
+    expertise: 'Management',
+    rate: 74,
+    status: 'Hired',
+  },
+  {
+    id: 2,
+    src: '/img/avatars/9.svg',
+    name: 'Beth Delanoe',
+    role: 'Product designer',
+    expertise: 'Product',
+    rate: 43,
+    status: 'Available',
+  },
+  {
+    id: 3,
+    src: '/img/avatars/14.svg',
+    name: 'Andrew Higgs',
+    role: 'Project manager',
+    expertise: 'Project',
+    rate: 69,
+    status: 'New',
+  },
+]
+</script>
+
 <template>
   <TairoTable rounded="sm">
     <template #header>
@@ -97,47 +141,3 @@
     </TairoTableRow>
   </TairoTable>
 </template>
-
-<script setup lang="ts">
-const selected = ref([])
-const selectAll = ref(false)
-
-const team = [
-  {
-    id: 0,
-    src: '/img/avatars/22.svg',
-    name: 'Anna Vrinkof',
-    role: 'UI/UX designer',
-    expertise: 'UX Design',
-    rate: 49,
-    status: 'Available',
-  },
-  {
-    id: 1,
-    src: '/img/avatars/3.svg',
-    name: 'John Cambell',
-    role: 'Sales manager',
-    expertise: 'Management',
-    rate: 74,
-    status: 'Hired',
-  },
-  {
-    id: 2,
-    src: '/img/avatars/9.svg',
-    name: 'Beth Delanoe',
-    role: 'Product designer',
-    expertise: 'Product',
-    rate: 43,
-    status: 'Available',
-  },
-  {
-    id: 3,
-    src: '/img/avatars/14.svg',
-    name: 'Andrew Higgs',
-    role: 'Project manager',
-    expertise: 'Project',
-    rate: 69,
-    status: 'New',
-  },
-]
-</script>

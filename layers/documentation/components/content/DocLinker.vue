@@ -6,7 +6,8 @@ const props = defineProps<{
 const { pending, data } = useAsyncData(
   `doc-linker-to-${props.to}`,
   () => {
-    if (!props.to) return Promise.resolve(null)
+    if (!props.to)
+      return Promise.resolve(null)
 
     return queryContent()
       .where({
@@ -21,7 +22,8 @@ const { pending, data } = useAsyncData(
 )
 
 const tooltip = computed(() => {
-  if (!data.value?._path) return `Documentation for ${props.to} is missing`
+  if (!data.value?._path)
+    return `Documentation for ${props.to} is missing`
   return `Read ${props.to} docs`
 })
 </script>

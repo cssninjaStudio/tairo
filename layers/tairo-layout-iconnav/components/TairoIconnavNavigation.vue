@@ -20,7 +20,6 @@ const props = withDefaults(
 const isSearchOpen = useState('search-open', () => false)
 const metaKey = useMetaKey()
 const { menuItems, selectedMenuItem } = useIconnav()
-const app = useAppConfig()
 
 const router = useRouter()
 </script>
@@ -38,12 +37,12 @@ const router = useRouter()
       :class="[
         props.display === 'condensed' && 'w-full',
         props.display === 'horizontal-scroll' && 'mx-auto w-full pe-4',
-        props.display === 'expanded-sm' &&
-          'mx-auto w-full max-w-5xl px-4 xl:px-0',
-        props.display === 'expanded-md' &&
-          'mx-auto w-full max-w-6xl px-4 xl:px-0',
-        props.display === 'expanded-lg' &&
-          'mx-auto w-full max-w-7xl px-4 xl:px-0',
+        props.display === 'expanded-sm'
+          && 'mx-auto w-full max-w-5xl px-4 xl:px-0',
+        props.display === 'expanded-md'
+          && 'mx-auto w-full max-w-6xl px-4 xl:px-0',
+        props.display === 'expanded-lg'
+          && 'mx-auto w-full max-w-7xl px-4 xl:px-0',
         props.display === 'expanded-xl' && 'mx-auto w-full px-4 xl:px-0',
       ]"
     >
@@ -65,8 +64,8 @@ const router = useRouter()
               type="button"
               class="group flex flex-col"
               :class="
-                selectedMenuItem?.activePath === item.activePath &&
-                  '[&>div]:!bg-primary-500/10 [&>div]:!text-primary-500 dark:[&>div]:!bg-primary-500/20 [&>p]:!text-primary-500'
+                selectedMenuItem?.activePath === item.activePath
+                  && '[&>div]:!bg-primary-500/10 [&>div]:!text-primary-500 dark:[&>div]:!bg-primary-500/20 [&>p]:!text-primary-500'
               "
               @click="
                 () => {
@@ -137,8 +136,8 @@ const router = useRouter()
           type="button"
           class="group flex flex-col"
           :class="
-            selectedMenuItem?.activePath === item.activePath &&
-              '[&>div]:!bg-primary-500/10 [&>div]:!text-primary-500 [&>p]:!text-primary-500'
+            selectedMenuItem?.activePath === item.activePath
+              && '[&>div]:!bg-primary-500/10 [&>div]:!text-primary-500 [&>p]:!text-primary-500'
           "
           @click="
             () => {
@@ -182,8 +181,8 @@ const router = useRouter()
       class="flex items-center"
       :class="[
         props.display === 'condensed' && 'w-full',
-        props.display === 'horizontal-scroll' &&
-          'mx-auto w-full overflow-x-auto',
+        props.display === 'horizontal-scroll'
+          && 'mx-auto w-full overflow-x-auto',
         props.display === 'expanded-sm' && 'mx-auto w-full max-w-5xl',
         props.display === 'expanded-md' && 'mx-auto w-full max-w-6xl',
         props.display === 'expanded-lg' && 'mx-auto w-full max-w-7xl',

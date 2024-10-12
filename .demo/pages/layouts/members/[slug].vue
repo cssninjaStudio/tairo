@@ -170,14 +170,14 @@ if (!data.value?.member) {
                           <span
                             class="size-2 rounded-full"
                             :class="[
-                              card.cardInfo.status === 'active' &&
-                                'bg-success-500',
-                              card.cardInfo.status === 'disabled' &&
-                                'bg-muted-300 dark:bg-muted-700',
-                              card.cardInfo.status === 'expired' &&
-                                'bg-warning-500',
-                              card.cardInfo.status === 'locked' &&
-                                'bg-danger-500',
+                              card.cardInfo.status === 'active'
+                                && 'bg-success-500',
+                              card.cardInfo.status === 'disabled'
+                                && 'bg-muted-300 dark:bg-muted-700',
+                              card.cardInfo.status === 'expired'
+                                && 'bg-warning-500',
+                              card.cardInfo.status === 'locked'
+                                && 'bg-danger-500',
                             ]"
                           />
                           <span>{{ card.cardInfo.status }}</span>

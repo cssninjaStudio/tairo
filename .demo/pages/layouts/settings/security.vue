@@ -18,9 +18,9 @@ const password = ref(true)
 
 <template>
   <div class="divide-muted-200 dark:divide-muted-800 space-y-20 py-6">
-    <!--Statements-->
+    <!-- Statements -->
     <div class="grid gap-8 md:grid-cols-12">
-      <!--Column-->
+      <!-- Column -->
       <div class="md:col-span-4">
         <BaseHeading
           as="h3"
@@ -35,7 +35,7 @@ const password = ref(true)
           it from time to time.
         </BaseParagraph>
       </div>
-      <!--Column-->
+      <!-- Column -->
       <div class="md:col-span-8">
         <BaseHeading
           as="h3"
@@ -48,7 +48,7 @@ const password = ref(true)
         <div
           class="divide-muted-200 dark:divide-muted-800 flex flex-col divide-y"
         >
-          <!--Item-->
+          <!-- Item -->
           <div class="group">
             <a
               href="#"
@@ -68,7 +68,7 @@ const password = ref(true)
               </BaseText>
             </a>
           </div>
-          <!--Item-->
+          <!-- Item -->
           <div class="group">
             <a
               href="#"
@@ -94,9 +94,9 @@ const password = ref(true)
       </div>
     </div>
 
-    <!--2 Factor-->
+    <!-- 2 Factor -->
     <div class="grid gap-8 md:grid-cols-12">
-      <!--Column-->
+      <!-- Column -->
       <div class="md:col-span-4">
         <BaseHeading
           as="h3"
@@ -111,7 +111,7 @@ const password = ref(true)
           Authenticator) for this account.
         </BaseParagraph>
       </div>
-      <!--Column-->
+      <!-- Column -->
       <div class="md:col-span-8">
         <BaseHeading
           as="h3"
@@ -124,7 +124,7 @@ const password = ref(true)
         <div
           class="divide-muted-200 dark:divide-muted-800 flex flex-col divide-y"
         >
-          <!--Item-->
+          <!-- Item -->
           <div class="group">
             <NuxtLink
               to="#"
@@ -153,7 +153,7 @@ const password = ref(true)
               </BaseText>
             </NuxtLink>
           </div>
-          <!--Item-->
+          <!-- Item -->
           <div class="group">
             <NuxtLink
               to="#"
@@ -182,7 +182,7 @@ const password = ref(true)
               </BaseText>
             </NuxtLink>
           </div>
-          <!--Item-->
+          <!-- Item -->
           <div class="group">
             <NuxtLink
               to="#"
@@ -215,9 +215,9 @@ const password = ref(true)
       </div>
     </div>
 
-    <!--Notifications-->
+    <!-- Notifications -->
     <div class="grid gap-8 md:grid-cols-12">
-      <!--Column-->
+      <!-- Column -->
       <div class="md:col-span-4">
         <BaseHeading
           as="h3"
@@ -232,7 +232,7 @@ const password = ref(true)
           security. Stay safe!
         </BaseParagraph>
       </div>
-      <!--Column-->
+      <!-- Column -->
       <div class="md:col-span-8">
         <BaseHeading
           as="h3"
@@ -245,7 +245,7 @@ const password = ref(true)
         <div
           class="divide-muted-200 dark:divide-muted-800 flex flex-col divide-y"
         >
-          <!--Item-->
+          <!-- Item -->
           <div class="group">
             <div
               class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-50 dark:hover:bg-muted-800 flex items-center gap-2 p-4 text-sm transition-colors duration-300"
@@ -266,7 +266,7 @@ const password = ref(true)
               </div>
             </div>
           </div>
-          <!--Item-->
+          <!-- Item -->
           <div class="group">
             <div
               class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-50 dark:hover:bg-muted-800 flex items-center gap-2 p-4 text-sm transition-colors duration-300"

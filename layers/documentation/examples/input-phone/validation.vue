@@ -1,15 +1,3 @@
-<template>
-  <form class="max-w-md" @submit.prevent="onSubmit">
-    <AddonInputPhone
-      ref="inputRef"
-      v-model="phone"
-      placeholder="Type to try validation"
-      :error="error"
-      @validation="onValidate"
-    />
-  </form>
-</template>
-
 <script lang="ts" setup>
 import { AddonInputPhone } from '#components'
 
@@ -24,6 +12,7 @@ function onSubmit() {
     return
   }
 
+  // eslint-disable-next-line no-alert
   alert(`Selected: ${inputRef.value?.currentCountry?.label}`)
 }
 
@@ -51,3 +40,15 @@ function onValidate(state: { valid: boolean, touched: boolean, error: string }) 
   }
 }
 </script>
+
+<template>
+  <form class="max-w-md" @submit.prevent="onSubmit">
+    <AddonInputPhone
+      ref="inputRef"
+      v-model="phone"
+      placeholder="Type to try validation"
+      :error="error"
+      @validation="onValidate"
+    />
+  </form>
+</template>

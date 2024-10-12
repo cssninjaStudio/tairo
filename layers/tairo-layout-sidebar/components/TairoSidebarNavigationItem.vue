@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useSidebar } from '../composables/sidebar'
 import type { SidebarNavigationItemConfig } from '../types'
+import { useSidebar } from '../composables/sidebar'
 
 const props = defineProps<{
   sidebar: SidebarNavigationItemConfig

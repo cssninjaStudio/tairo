@@ -1,11 +1,8 @@
 <script setup lang="ts">
-import type { Project, ProjectStepData } from '../types'
+import type { Project } from '../types'
 
 definePageMeta({
   layout: 'empty',
-})
-useHead({
-  titleTemplate: title => `${title} | Wizard - Step ${currentStepId.value + 1}`,
 })
 
 const initialState = ref<Project>({
@@ -126,6 +123,9 @@ const { handleSubmit, currentStepId } = provideMultiStepForm({
       closable: true,
     })
   },
+})
+useHead({
+  titleTemplate: title => `${title} | Wizard - Step ${currentStepId.value + 1}`,
 })
 </script>
 

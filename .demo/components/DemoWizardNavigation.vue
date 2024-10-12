@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { Project, ProjectStepData } from '../types'
+
 const {
   steps,
   currentStep,

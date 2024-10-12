@@ -14,7 +14,7 @@ definePageMeta({
 
 const route = useRoute()
 const router = useRouter()
-const page = computed(() => parseInt((route.query.page as string) ?? '1'))
+const page = computed(() => Number.parseInt((route.query.page as string) ?? '1'))
 
 const filter = ref('')
 const perPage = ref(45)
@@ -46,7 +46,7 @@ const { data, pending, error, refresh } = await useFetch(
 
 <template>
   <div>
-    <!--Placeholder-->
+    <!-- Placeholder -->
     <div v-if="data?.data?.length === 0" class="mb-8">
       <p class="font-heading text-muted-500 dark:text-muted-500 text-sm">
         You don't have any active rules
@@ -64,7 +64,7 @@ const { data, pending, error, refresh } = await useFetch(
         <h4 class="font-heading text-muted-500 dark:text-muted-500 text-sm">
           Add a rule
         </h4>
-        <!--Rule-->
+        <!-- Rule -->
         <div class="grid grid-cols-12 gap-8">
           <div class="col-span-5">
             <button
@@ -99,7 +99,7 @@ const { data, pending, error, refresh } = await useFetch(
             </div>
           </div>
         </div>
-        <!--Rule-->
+        <!-- Rule -->
         <div class="grid grid-cols-12 gap-8">
           <div class="col-span-5">
             <button

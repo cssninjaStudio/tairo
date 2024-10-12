@@ -12,7 +12,7 @@ const props = withDefaults(
 const emits = defineEmits<{
   reset: []
 }>()
-const { x, y } = useNinjaWindowScroll()
+const { y } = useNinjaWindowScroll()
 </script>
 
 <template>

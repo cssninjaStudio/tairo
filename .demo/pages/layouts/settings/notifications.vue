@@ -24,9 +24,9 @@ const offers = ref(true)
 
 <template>
   <div class="divide-muted-200 dark:divide-muted-800 space-y-20 py-6">
-    <!--Statements-->
+    <!-- Statements -->
     <div class="grid gap-8 md:grid-cols-12">
-      <!--Column-->
+      <!-- Column -->
       <div class="md:col-span-4">
         <BaseHeading
           as="h3"
@@ -41,7 +41,7 @@ const offers = ref(true)
           transactions on your account.
         </BaseParagraph>
       </div>
-      <!--Column-->
+      <!-- Column -->
       <div class="md:col-span-8">
         <BaseHeading
           as="h3"
@@ -54,7 +54,7 @@ const offers = ref(true)
         <div
           class="divide-muted-200 dark:divide-muted-800 flex flex-col divide-y"
         >
-          <!--Item-->
+          <!-- Item -->
           <div class="group">
             <div
               class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-50 dark:hover:bg-muted-800 flex items-center gap-2 p-4 text-sm transition-colors duration-300"
@@ -75,7 +75,7 @@ const offers = ref(true)
               </div>
             </div>
           </div>
-          <!--Item-->
+          <!-- Item -->
           <div class="group">
             <div
               class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-50 dark:hover:bg-muted-800 flex items-center gap-2 p-4 text-sm transition-colors duration-300"
@@ -96,7 +96,7 @@ const offers = ref(true)
               </div>
             </div>
           </div>
-          <!--Item-->
+          <!-- Item -->
           <div class="group">
             <div
               class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-50 dark:hover:bg-muted-800 flex items-center gap-2 p-4 text-sm transition-colors duration-300"
@@ -117,7 +117,7 @@ const offers = ref(true)
               </div>
             </div>
           </div>
-          <!--Item-->
+          <!-- Item -->
           <div class="group">
             <div
               class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-50 dark:hover:bg-muted-800 flex items-center gap-2 p-4 text-sm transition-colors duration-300"
@@ -138,7 +138,7 @@ const offers = ref(true)
               </div>
             </div>
           </div>
-          <!--Item-->
+          <!-- Item -->
           <div class="group">
             <div
               class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-50 dark:hover:bg-muted-800 flex items-center gap-2 p-4 text-sm transition-colors duration-300"
@@ -163,9 +163,9 @@ const offers = ref(true)
       </div>
     </div>
 
-    <!--Balance-->
+    <!-- Balance -->
     <div class="grid gap-8 md:grid-cols-12">
-      <!--Column-->
+      <!-- Column -->
       <div class="md:col-span-4">
         <BaseHeading
           as="h3"
@@ -180,7 +180,7 @@ const offers = ref(true)
           the amount you set in your account.
         </BaseParagraph>
       </div>
-      <!--Column-->
+      <!-- Column -->
       <div class="md:col-span-8">
         <BaseHeading
           as="h3"
@@ -193,7 +193,7 @@ const offers = ref(true)
         <div
           class="divide-muted-200 dark:divide-muted-800 flex flex-col divide-y"
         >
-          <!--Item-->
+          <!-- Item -->
           <div class="group">
             <div
               class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-50 dark:hover:bg-muted-800 flex items-center gap-2 p-4 text-sm transition-colors duration-300"
@@ -218,9 +218,9 @@ const offers = ref(true)
       </div>
     </div>
 
-    <!--Updates-->
+    <!-- Updates -->
     <div class="grid gap-8 md:grid-cols-12">
-      <!--Column-->
+      <!-- Column -->
       <div class="md:col-span-4">
         <BaseHeading
           as="h3"
@@ -234,7 +234,7 @@ const offers = ref(true)
           Stay up to date on cool new product features or events you might like.
         </BaseParagraph>
       </div>
-      <!--Column-->
+      <!-- Column -->
       <div class="md:col-span-8">
         <BaseHeading
           as="h3"
@@ -247,7 +247,7 @@ const offers = ref(true)
         <div
           class="divide-muted-200 dark:divide-muted-800 flex flex-col divide-y"
         >
-          <!--Item-->
+          <!-- Item -->
           <div class="group">
             <div
               class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-50 dark:hover:bg-muted-800 flex items-center gap-2 p-4 text-sm transition-colors duration-300"
@@ -268,7 +268,7 @@ const offers = ref(true)
               </div>
             </div>
           </div>
-          <!--Item-->
+          <!-- Item -->
           <div class="group">
             <div
               class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-50 dark:hover:bg-muted-800 flex items-center gap-2 p-4 text-sm transition-colors duration-300"

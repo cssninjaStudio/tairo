@@ -102,7 +102,7 @@ const paymentMethods = ref([''])
           class="dark:bg-muted-800 border-muted-200 dark:border-muted-700 shadow-muted-400/20 dark:shadow-muted-800/20 absolute start-0 top-11 grid w-[660px] grid-cols-12 overflow-hidden rounded-lg border bg-white shadow-xl"
         >
           <div class="bg-muted-50 dark:bg-muted-900 col-span-4 space-y-2 p-6">
-            <!--Menu item-->
+            <!-- Menu item -->
             <button
               type="button"
               data-tab="tab-1"
@@ -118,7 +118,7 @@ const paymentMethods = ref([''])
               <span>Creation date</span>
               <Icon name="lucide:chevron-right" class="ms-auto size-4" />
             </button>
-            <!--Menu item-->
+            <!-- Menu item -->
             <button
               type="button"
               data-tab="tab-2"
@@ -134,7 +134,7 @@ const paymentMethods = ref([''])
               <span>Keywords</span>
               <Icon name="lucide:chevron-right" class="ms-auto size-4" />
             </button>
-            <!--Menu item-->
+            <!-- Menu item -->
             <button
               type="button"
               data-tab="tab-3"
@@ -150,7 +150,7 @@ const paymentMethods = ref([''])
               <span>Status</span>
               <Icon name="lucide:chevron-right" class="ms-auto size-4" />
             </button>
-            <!--Menu item-->
+            <!-- Menu item -->
             <button
               type="button"
               data-tab="tab-4"
@@ -166,7 +166,7 @@ const paymentMethods = ref([''])
               <span>Accounts</span>
               <Icon name="lucide:chevron-right" class="ms-auto size-4" />
             </button>
-            <!--Menu item-->
+            <!-- Menu item -->
             <button
               type="button"
               data-tab="tab-5"
@@ -184,9 +184,9 @@ const paymentMethods = ref([''])
             </button>
           </div>
 
-          <!--Filters-->
+          <!-- Filters -->
           <div class="col-span-8 min-h-[350px] p-6">
-            <!--Filter 1-->
+            <!-- Filter 1 -->
             <div v-if="activeFilterTab === 'filter-1'">
               <div class="flex flex-col">
                 <div class="px-3">
@@ -226,9 +226,9 @@ const paymentMethods = ref([''])
                     Or choose a date range
                   </BaseText>
                   <div class="grid grid-cols-2 gap-8">
-                    <!--Calendar group-->
+                    <!-- Calendar group -->
                     <div>
-                      <!--Calendar-->
+                      <!-- Calendar -->
                       <div class="flex flex-col">
                         <div
                           class="mb-2 flex items-center justify-between px-3"
@@ -273,9 +273,9 @@ const paymentMethods = ref([''])
                         </div>
                       </div>
                     </div>
-                    <!--Calendar group-->
+                    <!-- Calendar group -->
                     <div>
-                      <!--Calendar-->
+                      <!-- Calendar -->
                       <div class="flex flex-col">
                         <div
                           class="mb-2 flex items-center justify-between px-3"
@@ -324,7 +324,7 @@ const paymentMethods = ref([''])
                 </div>
               </div>
             </div>
-            <!--Filter 2-->
+            <!-- Filter 2 -->
             <div v-else-if="activeFilterTab === 'filter-2'">
               <div class="flex flex-col">
                 <div class="px-3">
@@ -340,7 +340,7 @@ const paymentMethods = ref([''])
                     class="border-muted-200 dark:border-muted-700 mb-4 mt-6 border-t"
                   >
 
-                  <!--Grid-->
+                  <!-- Grid -->
                   <div class="flex flex-wrap items-center gap-2">
                     <div
                       v-for="keyword in defaultKeywords"
@@ -363,7 +363,7 @@ const paymentMethods = ref([''])
                 </div>
               </div>
             </div>
-            <!--Filter 3-->
+            <!-- Filter 3 -->
             <div v-else-if="activeFilterTab === 'filter-3'">
               <div class="flex flex-col">
                 <div class="px-3">
@@ -391,7 +391,7 @@ const paymentMethods = ref([''])
                   >
 
                   <div class="space-y-4">
-                    <!--Status-->
+                    <!-- Status -->
                     <div>
                       <BaseCheckbox
                         v-model="status"
@@ -428,7 +428,7 @@ const paymentMethods = ref([''])
                 </div>
               </div>
             </div>
-            <!--Filter 4-->
+            <!-- Filter 4 -->
             <div v-else-if="activeFilterTab === 'filter-4'">
               <div class="flex flex-col">
                 <div class="px-3">
@@ -449,7 +449,7 @@ const paymentMethods = ref([''])
                   >
 
                   <div class="space-y-4">
-                    <!--Account-->
+                    <!-- Account -->
                     <div>
                       <BaseCheckbox
                         v-model="accounts"
@@ -470,7 +470,7 @@ const paymentMethods = ref([''])
                 </div>
               </div>
             </div>
-            <!--Filter 5-->
+            <!-- Filter 5 -->
             <div v-else-if="activeFilterTab === 'filter-5'">
               <div class="flex flex-col">
                 <div class="px-3">
@@ -493,7 +493,7 @@ const paymentMethods = ref([''])
                   >
 
                   <div class="space-y-4">
-                    <!--Payment method-->
+                    <!-- Payment method -->
                     <div>
                       <BaseCheckbox
                         v-model="paymentMethods"

@@ -1,3 +1,10 @@
+<script setup lang="ts">
+const fields = reactive({
+  first: undefined as number | undefined,
+  second: undefined as number | undefined,
+})
+</script>
+
 <template>
   <div class="grid gap-6 md:max-w-lg md:grid-cols-2">
     <BaseInputNumber
@@ -23,10 +30,3 @@
     />
   </div>
 </template>
-
-<script setup lang="ts">
-const fields = reactive({
-  first: undefined as number | undefined,
-  second: undefined as number | undefined,
-})
-</script>

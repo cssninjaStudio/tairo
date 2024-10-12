@@ -1,3 +1,8 @@
+<script setup lang="ts">
+const isModal2XlOpen = ref(false)
+const isModal3XlOpen = ref(false)
+</script>
+
 <template>
   <!-- Element to trigger the modal -->
   <div class="flex gap-x-2">
@@ -131,8 +136,3 @@
     </template>
   </TairoModal>
 </template>
-
-<script setup lang="ts">
-const isModal2XlOpen = ref(false)
-const isModal3XlOpen = ref(false)
-</script>

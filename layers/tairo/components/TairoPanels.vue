@@ -20,7 +20,6 @@ watch(
     }
   },
 )
-
 </script>
 
 <template>

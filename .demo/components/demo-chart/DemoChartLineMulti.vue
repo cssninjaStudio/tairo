@@ -29,12 +29,12 @@ function useDemoLineMulti() {
       align: 'left',
     },
     legend: {
-      tooltipHoverFormatter: function (val: string, opts: any) {
+      tooltipHoverFormatter(val: string, opts: any) {
         return (
-          val
-          + ' - '
-          + opts.w.globals.series[opts.seriesIndex][opts.dataPointIndex]
-          + ''
+          `${val
+          } - ${
+            opts.w.globals.series[opts.seriesIndex][opts.dataPointIndex]
+          }`
         )
       },
       position: 'top',

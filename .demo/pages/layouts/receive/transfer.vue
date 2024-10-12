@@ -65,7 +65,7 @@ function setAccount(account: any) {
 
 <template>
   <div class="w-full">
-    <!--Transfer-->
+    <!-- Transfer -->
     <div v-if="request.method === 'bank_transfer'" class="w-full">
       <div class="mb-8 space-y-2">
         <BaseHeading
@@ -86,7 +86,7 @@ function setAccount(account: any) {
       </div>
 
       <div class="w-full max-w-md">
-        <!--Amount input-->
+        <!-- Amount input -->
         <div class="relative">
           <BaseInput
             v-model="request.amount"
@@ -104,7 +104,7 @@ function setAccount(account: any) {
           />
         </div>
 
-        <!--Transfer from-->
+        <!-- Transfer from -->
         <div class="pt-6">
           <BaseHeading
             as="h4"
@@ -115,7 +115,7 @@ function setAccount(account: any) {
             Transfer from:
           </BaseHeading>
 
-          <!--Placeholder-->
+          <!-- Placeholder -->
           <div class="bg-muted-100 dark:bg-muted-800 p-4 text-center">
             <div class="mx-auto w-full max-w-lg">
               <BaseHeading
@@ -146,7 +146,7 @@ function setAccount(account: any) {
           </div>
         </div>
 
-        <!--Transfer account-->
+        <!-- Transfer account -->
         <div class="pb-4 pt-6">
           <BaseHeading
             as="h4"
@@ -219,7 +219,7 @@ function setAccount(account: any) {
       </div>
     </div>
 
-    <!--Link-->
+    <!-- Link -->
     <div v-else-if="request.method === 'payment_link'" class="w-full">
       <div class="mb-8 space-y-2">
         <BaseHeading
@@ -240,7 +240,7 @@ function setAccount(account: any) {
       </div>
 
       <div class="w-full max-w-md">
-        <!--Amount input-->
+        <!-- Amount input -->
         <div class="relative">
           <BaseInput
             v-model="request.amount"
@@ -258,7 +258,7 @@ function setAccount(account: any) {
           />
         </div>
 
-        <!--Send to-->
+        <!-- Send to -->
         <div class="pt-6">
           <BaseHeading
             as="h4"
@@ -283,7 +283,7 @@ function setAccount(account: any) {
           </div>
         </div>
 
-        <!--Transfer account-->
+        <!-- Transfer account -->
         <div class="pb-4 pt-6">
           <BaseHeading
             as="h4"
@@ -355,10 +355,10 @@ function setAccount(account: any) {
       </div>
     </div>
 
-    <!--Wire-->
+    <!-- Wire -->
     <div v-else-if="request.method === 'wire'" class="w-full pb-10">
       <div class="w-full max-w-md">
-        <!--Header-->
+        <!-- Header -->
         <div class="mb-4">
           <div class="space-y-2">
             <BaseHeading
@@ -384,7 +384,7 @@ function setAccount(account: any) {
             </a>
           </div>
         </div>
-        <!--Account-->
+        <!-- Account -->
 
         <BaseDropdown rounded="lg" :classes="{ menuWrapper: 'w-full [&>div]:right-0', menu: '!w-full' }">
           <template #button="{ open }">
@@ -445,11 +445,11 @@ function setAccount(account: any) {
           {{ errors.fields.account }}
         </BaseInputHelpText>
 
-        <!--Transfer details-->
+        <!-- Transfer details -->
         <div class="py-6">
-          <!--Regular collapse-->
+          <!-- Regular collapse -->
           <div class="flex w-full flex-col">
-            <!--Trigger-->
+            <!-- Trigger -->
             <button
               type="button"
               class="border-muted-200 dark:border-muted-900 hover:bg-muted-100 dark:hover:bg-muted-800 flex w-full cursor-pointer items-center justify-between border-y p-4 transition-colors duration-300"
@@ -468,11 +468,11 @@ function setAccount(account: any) {
                 :class="expandedRegular ? 'rotate-180' : ''"
               />
             </button>
-            <!--Content-->
+            <!-- Content -->
             <AddonCollapseTransition>
               <div v-if="expandedRegular" class="w-full p-4">
                 <div class="space-y-6">
-                  <!--Fieldset-->
+                  <!-- Fieldset -->
                   <div>
                     <BaseHeading
                       as="h5"
@@ -482,7 +482,7 @@ function setAccount(account: any) {
                     >
                       Beneficiary
                     </BaseHeading>
-                    <!--List-->
+                    <!-- List -->
                     <ul class="font-heading w-full space-y-3 text-sm">
                       <li>
                         <div class="flex justify-between">
@@ -554,7 +554,7 @@ function setAccount(account: any) {
                       </li>
                     </ul>
                   </div>
-                  <!--Fieldset-->
+                  <!-- Fieldset -->
                   <div>
                     <BaseHeading
                       as="h5"
@@ -564,7 +564,7 @@ function setAccount(account: any) {
                     >
                       Bank details
                     </BaseHeading>
-                    <!--List-->
+                    <!-- List -->
                     <ul class="font-heading w-full space-y-3 text-sm">
                       <li>
                         <div class="flex justify-between">
@@ -624,9 +624,9 @@ function setAccount(account: any) {
               </div>
             </AddonCollapseTransition>
           </div>
-          <!--International collapse-->
+          <!-- International collapse -->
           <div class="flex w-full flex-col">
-            <!--Trigger-->
+            <!-- Trigger -->
             <button
               type="button"
               class="border-muted-200 dark:border-muted-900 hover:bg-muted-100 dark:hover:bg-muted-800 flex w-full cursor-pointer items-center justify-between border-y p-4 transition-colors duration-300"
@@ -645,11 +645,11 @@ function setAccount(account: any) {
                 :class="expandedInternational ? 'rotate-180' : ''"
               />
             </button>
-            <!--Content-->
+            <!-- Content -->
             <AddonCollapseTransition>
               <div v-if="expandedInternational" class="w-full p-4">
                 <div class="space-y-6">
-                  <!--Fieldset-->
+                  <!-- Fieldset -->
                   <div>
                     <BaseHeading
                       as="h5"
@@ -659,7 +659,7 @@ function setAccount(account: any) {
                     >
                       Beneficiary
                     </BaseHeading>
-                    <!--List-->
+                    <!-- List -->
                     <ul class="font-heading w-full space-y-3 text-sm">
                       <li>
                         <div class="flex justify-between">
@@ -731,7 +731,7 @@ function setAccount(account: any) {
                       </li>
                     </ul>
                   </div>
-                  <!--Fieldset-->
+                  <!-- Fieldset -->
                   <div>
                     <BaseHeading
                       as="h5"
@@ -741,7 +741,7 @@ function setAccount(account: any) {
                     >
                       Bank details
                     </BaseHeading>
-                    <!--List-->
+                    <!-- List -->
                     <ul class="font-heading w-full space-y-3 text-sm">
                       <li>
                         <div class="flex justify-between">
@@ -805,7 +805,7 @@ function setAccount(account: any) {
       </div>
     </div>
 
-    <!--Buttons-->
+    <!-- Buttons -->
     <div class="flex w-full max-w-md gap-4">
       <BaseButton
         v-if="currentStepId > 0"

@@ -21,8 +21,18 @@ const banks = ref([
       {
         name: 'Stock value',
         data: [
-          1231.37, 1453.78, 1739.87, 2156.32, 1932.29, 1832.38, 1732.29,
-          1832.29, 1989.39, 1783.29, 2130.39, 2256.39,
+          1231.37,
+          1453.78,
+          1739.87,
+          2156.32,
+          1932.29,
+          1832.38,
+          1732.29,
+          1832.29,
+          1989.39,
+          1783.29,
+          2130.39,
+          2256.39,
         ],
       },
     ],
@@ -35,8 +45,18 @@ const banks = ref([
       {
         name: 'Stock value',
         data: [
-          1200.23, 1405.67, 1653.42, 1950.18, 2301.76, 2714.92, 3196.57,
-          3753.61, 4393.04, 5121.88, 5957.25, 6907.34,
+          1200.23,
+          1405.67,
+          1653.42,
+          1950.18,
+          2301.76,
+          2714.92,
+          3196.57,
+          3753.61,
+          4393.04,
+          5121.88,
+          5957.25,
+          6907.34,
         ],
       },
     ],
@@ -49,8 +69,18 @@ const banks = ref([
       {
         name: 'Stock value',
         data: [
-          1300.45, 1425.67, 1578.93, 1750.21, 1940.56, 2151.99, 2386.56,
-          2646.32, 2933.34, 3249.67, 3597.38, 3979.54,
+          1300.45,
+          1425.67,
+          1578.93,
+          1750.21,
+          1940.56,
+          2151.99,
+          2386.56,
+          2646.32,
+          2933.34,
+          3249.67,
+          3597.38,
+          3979.54,
         ],
       },
     ],
@@ -365,7 +395,7 @@ function useStockPrice() {
                     v-if="open"
                     class="border-muted-200 dark:border-muted-800 dark:bg-muted-950 shadow-muted-400/10 dark:shadow-muted-800/10 absolute start-0 top-14 w-full rounded-xl border bg-white p-2 shadow-xl"
                   >
-                    <!--banks-->
+                    <!-- banks -->
                     <ul>
                       <li v-for="bank in banks" :key="bank.id">
                         <button
@@ -815,7 +845,7 @@ function useStockPrice() {
               </div>
             </BaseCard>
           </div>
-          <!--Learn more-->
+          <!-- Learn more -->
           <BaseCard
             rounded="md"
             class="relative flex flex-col gap-4 sm:flex-row"

@@ -91,10 +91,10 @@ function useGaugePersonal() {
 
 <template>
   <div class="grid grid-cols-12 gap-6">
-    <!--Content-->
+    <!-- Content -->
     <div class="ltablet:col-span-9 col-span-12 lg:col-span-9">
       <div class="w-full">
-        <!--Header-->
+        <!-- Header -->
         <div class="border-muted-200 dark:border-muted-800 border-b py-6">
           <div
             class="flex flex-col items-center gap-3 text-center sm:flex-row sm:text-start"
@@ -155,7 +155,7 @@ function useGaugePersonal() {
             </div>
           </div>
         </div>
-        <!--Box-->
+        <!-- Box -->
         <div class="border-muted-200 dark:border-muted-800 border-b py-6">
           <BaseCard
             rounded="lg"
@@ -216,7 +216,7 @@ function useGaugePersonal() {
             </div>
           </BaseCard>
         </div>
-        <!--About-->
+        <!-- About -->
         <div class="border-muted-200 dark:border-muted-800 border-b py-6">
           <div class="flex items-center gap-3">
             <div>
@@ -241,11 +241,11 @@ function useGaugePersonal() {
             </div>
           </div>
         </div>
-        <!--About-->
+        <!-- About -->
         <div class="border-muted-200 dark:border-muted-800 border-b py-6">
           <DemoWidgetInvest />
         </div>
-        <!--Disclaimer-->
+        <!-- Disclaimer -->
         <div class="py-6">
           <BaseParagraph size="xs" class="text-muted-400">
             Tairo Treasury is offered by Tairo Advisory, LLC, an SEC-registered
@@ -268,7 +268,7 @@ function useGaugePersonal() {
         </div>
       </div>
     </div>
-    <!--Side widgets-->
+    <!-- Side widgets -->
     <div class="ltablet:col-span-3 col-span-12 lg:col-span-3">
       <!-- Column -->
       <div class="relative flex flex-col gap-6">

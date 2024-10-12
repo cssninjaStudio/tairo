@@ -14,7 +14,7 @@ definePageMeta({
 
 const route = useRoute()
 const router = useRouter()
-const page = computed(() => parseInt((route.query.page as string) ?? '1'))
+const page = computed(() => Number.parseInt((route.query.page as string) ?? '1'))
 
 const filter = ref('')
 const perPage = ref(100)
@@ -72,7 +72,7 @@ const development = computed(() => {
 
 <template>
   <div class="w-full pb-24">
-    <!--Header-->
+    <!-- Header -->
     <div class="border-muted-200 dark:border-muted-800 border-b py-6">
       <BaseHeading
         as="h2"
@@ -87,9 +87,9 @@ const development = computed(() => {
       </BaseParagraph>
     </div>
 
-    <!--List-->
+    <!-- List -->
     <div class="space-y-10 py-6">
-      <!--popular offers-->
+      <!-- popular offers -->
       <div class="py-6">
         <div class="mb-6">
           <BaseHeading
@@ -104,7 +104,7 @@ const development = computed(() => {
             Most popular offers among our customers
           </BaseParagraph>
         </div>
-        <!--Grid-->
+        <!-- Grid -->
         <div
           class="ptablet:grid-cols-2 ltablet:grid-cols-3 bg-muted-200 dark:bg-muted-700 grid gap-3 rounded-xl p-6 lg:grid-cols-3"
         >
@@ -120,7 +120,7 @@ const development = computed(() => {
         </div>
       </div>
 
-      <!--recent offers-->
+      <!-- recent offers -->
       <div class="py-6">
         <div class="mb-6">
           <BaseHeading
@@ -135,7 +135,7 @@ const development = computed(() => {
             Recent offers we've just added
           </BaseParagraph>
         </div>
-        <!--Grid-->
+        <!-- Grid -->
         <div
           class="ptablet:grid-cols-2 ltablet:grid-cols-3 bg-muted-200 dark:bg-muted-700 grid gap-3 rounded-xl p-6 lg:grid-cols-3"
         >
@@ -151,7 +151,7 @@ const development = computed(() => {
         </div>
       </div>
 
-      <!--communication offers-->
+      <!-- communication offers -->
       <div class="py-6">
         <div class="mb-6">
           <BaseHeading
@@ -166,7 +166,7 @@ const development = computed(() => {
             Communication related offers
           </BaseParagraph>
         </div>
-        <!--Grid-->
+        <!-- Grid -->
         <div
           class="ptablet:grid-cols-2 ltablet:grid-cols-3 bg-muted-200 dark:bg-muted-700 grid gap-3 rounded-xl p-6 lg:grid-cols-3"
         >
@@ -182,7 +182,7 @@ const development = computed(() => {
         </div>
       </div>
 
-      <!--design offers-->
+      <!-- design offers -->
       <div class="py-6">
         <div class="mb-6">
           <BaseHeading
@@ -197,7 +197,7 @@ const development = computed(() => {
             UX design related offers
           </BaseParagraph>
         </div>
-        <!--Grid-->
+        <!-- Grid -->
         <div
           class="ptablet:grid-cols-2 ltablet:grid-cols-3 bg-muted-200 dark:bg-muted-700 grid gap-3 rounded-xl p-6 lg:grid-cols-3"
         >
@@ -213,7 +213,7 @@ const development = computed(() => {
         </div>
       </div>
 
-      <!--development offers-->
+      <!-- development offers -->
       <div class="py-6">
         <div class="mb-6">
           <BaseHeading
@@ -228,7 +228,7 @@ const development = computed(() => {
             Development related offers
           </BaseParagraph>
         </div>
-        <!--Grid-->
+        <!-- Grid -->
         <div
           class="ptablet:grid-cols-2 ltablet:grid-cols-3 bg-muted-200 dark:bg-muted-700 grid gap-3 rounded-xl p-6 lg:grid-cols-3"
         >

@@ -1,11 +1,3 @@
-<template>
-  <div class="flex flex-col gap-4">
-    <BaseBreadcrumb :items="demoBreadcrumbOne" separator="dot" />
-
-    <BaseBreadcrumb :items="demoBreadcrumbTwo" separator="dot" />
-  </div>
-</template>
-
 <script setup lang="ts">
 const demoBreadcrumbOne = [
   {
@@ -47,3 +39,11 @@ const demoBreadcrumbTwo = [
   },
 ]
 </script>
+
+<template>
+  <div class="flex flex-col gap-4">
+    <BaseBreadcrumb :items="demoBreadcrumbOne" separator="dot" />
+
+    <BaseBreadcrumb :items="demoBreadcrumbTwo" separator="dot" />
+  </div>
+</template>

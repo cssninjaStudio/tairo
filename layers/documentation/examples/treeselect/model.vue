@@ -1,13 +1,3 @@
-<template>
-  <div class="md:max-w-lg">
-    <BaseTreeSelect
-      v-model="value"
-      :children="tree"
-      treeline
-    />
-  </div>
-</template>
-
 <script setup lang="ts">
 const value = ref<any>([])
 
@@ -64,3 +54,13 @@ const tree = [
   },
 ]
 </script>
+
+<template>
+  <div class="md:max-w-lg">
+    <BaseTreeSelect
+      v-model="value"
+      :children="tree"
+      treeline
+    />
+  </div>
+</template>

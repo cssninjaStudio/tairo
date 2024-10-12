@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const value = ref('')
+</script>
+
 <template>
   <div class="grid gap-6 md:max-w-3xl md:grid-cols-2">
     <BaseTextarea
@@ -70,7 +74,3 @@
     </BaseTextarea>
   </div>
 </template>
-
-<script setup lang="ts">
-const value = ref('')
-</script>

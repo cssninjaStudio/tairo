@@ -1,3 +1,18 @@
+<script setup lang="ts">
+import type { CountriesInfo } from '~/utils/bundles/countries'
+
+const countriesMap = shallowRef<CountriesInfo>({})
+const countries = computed(() => Object.values(countriesMap.value))
+const selection = ref('IT')
+
+// lazy load heavy dependencies
+onNuxtReady(() => {
+  import('~/utils/bundles/countries').then(({ getPhoneCountries }) => {
+    countriesMap.value = getPhoneCountries()
+  })
+})
+</script>
+
 <template>
   <div class="md:max-w-lg">
     <BaseAutocomplete
@@ -22,28 +37,13 @@
           const code = item.code.toLowerCase()
 
           return (
-            region.includes(queryLower) ||
-            label.includes(queryLower) ||
-            labelLocal.includes(queryLower) ||
-            code.includes(queryLower)
+            region.includes(queryLower)
+            || label.includes(queryLower)
+            || labelLocal.includes(queryLower)
+            || code.includes(queryLower)
           )
         }).slice(0, 10)
       }"
     />
   </div>
 </template>
-
-<script setup lang="ts">
-import type { CountriesInfo, CountryInfo } from '~/utils/bundles/countries'
-
-const countriesMap = shallowRef<CountriesInfo>({})
-const countries = computed(() => Object.values(countriesMap.value))
-const selection = ref('IT')
-
-// lazy load heavy dependencies
-onNuxtReady(() => {
-  import('~/utils/bundles/countries').then(({ getPhoneCountries }) => {
-    countriesMap.value = getPhoneCountries()
-  })
-})
-</script>

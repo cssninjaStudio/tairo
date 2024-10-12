@@ -14,7 +14,7 @@ definePageMeta({
 
 const route = useRoute()
 const router = useRouter()
-const page = computed(() => parseInt((route.query.page as string) ?? '1'))
+const page = computed(() => Number.parseInt((route.query.page as string) ?? '1'))
 
 const filter = ref('')
 const perPage = ref(45)
@@ -50,7 +50,7 @@ function openCardPanel(id: number, cards: any) {
 
 <template>
   <div class="w-full pb-24">
-    <!--Header-->
+    <!-- Header -->
     <div class="flex items-center justify-between py-6">
       <div>
         <BaseInput
@@ -68,9 +68,9 @@ function openCardPanel(id: number, cards: any) {
     </div>
 
     <div class="w-full">
-      <!--Filters-->
+      <!-- Filters -->
       <div class="flex w-full items-center gap-5">
-        <!--Dropdown-->
+        <!-- Dropdown -->
         <div>
           <DemoCardFilters />
         </div>
@@ -166,8 +166,8 @@ function openCardPanel(id: number, cards: any) {
                     class="size-2 rounded-full"
                     :class="[
                       card.cardInfo.status === 'active' && 'bg-success-500',
-                      card.cardInfo.status === 'disabled' &&
-                        'bg-muted-300 dark:bg-muted-700',
+                      card.cardInfo.status === 'disabled'
+                        && 'bg-muted-300 dark:bg-muted-700',
                       card.cardInfo.status === 'expired' && 'bg-warning-500',
                       card.cardInfo.status === 'locked' && 'bg-danger-500',
                     ]"

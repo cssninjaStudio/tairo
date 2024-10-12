@@ -6,6 +6,10 @@ import {
   TransitionRoot,
 } from '@headlessui/vue'
 
+defineOptions({
+  inheritAttrs: false,
+})
+
 const props = withDefaults(
   defineProps<{
     /**
@@ -55,10 +59,6 @@ const props = withDefaults(
 const emit = defineEmits<{
   close: []
 }>()
-
-defineOptions({
-  inheritAttrs: false,
-})
 
 const dialogClasses = computed(() => {
   const classes = []

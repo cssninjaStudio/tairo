@@ -150,13 +150,12 @@ const toggled = ref(Boolean(project.value.files?.length))
                   </div>
 
                   <div
-                    class="ms-auto w-32 px-4 transition-opacity duration-300"
-                    :class="'opacity-100'"
+                    class="ms-auto w-32 px-4 transition-opacity duration-300 opacity-100"
                   >
                     <BaseProgress
                       :value="0"
                       size="xs"
-                      :color="'success'"
+                      color="success"
                     />
                   </div>
                   <div class="flex gap-2">

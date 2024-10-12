@@ -18,8 +18,8 @@ const props = withDefaults(
     :class="[
       props.type === 'grow' && 'md:grow',
       props.type === 'shrink' && 'md:shrink',
-      props.type === 'stable' &&
-        'sm:w-[90px] md:line-clamp-1 md:w-[110px] md:shrink-0',
+      props.type === 'stable'
+        && 'sm:w-[90px] md:line-clamp-1 md:w-[110px] md:shrink-0',
     ]"
   >
     <slot />

@@ -276,7 +276,7 @@ const itemSubtotal = computed(() =>
               </div>
               <div class="w-full pt-8">
                 <div class="grid grid-cols-1 gap-12 sm:grid-cols-2">
-                  <!--Payment method-->
+                  <!-- Payment method -->
                   <div>
                     <div class="mb-6 flex items-center justify-between">
                       <BaseHeading
@@ -354,7 +354,7 @@ const itemSubtotal = computed(() =>
                       </div>
                     </div>
                   </div>
-                  <!--Total-->
+                  <!-- Total -->
                   <div class="flex h-full flex-col">
                     <div class="mb-6 space-y-2 sm:ps-10">
                       <div class="mb-6 flex items-center justify-between">
@@ -447,7 +447,7 @@ const itemSubtotal = computed(() =>
       </div>
       <div class="ltablet:col-span-4 col-span-12 lg:col-span-4">
         <div class="flex flex-col gap-6">
-          <!--Customer-->
+          <!-- Customer -->
           <BaseCard
             rounded="md"
             elevated
@@ -503,7 +503,7 @@ const itemSubtotal = computed(() =>
               </BaseButton>
             </div>
           </BaseCard>
-          <!--Amount-->
+          <!-- Amount -->
           <BaseCard
             rounded="md"
             class="p-6"
@@ -553,7 +553,7 @@ const itemSubtotal = computed(() =>
               </div>
             </div>
           </BaseCard>
-          <!--Actions-->
+          <!-- Actions -->
           <BaseCard
             rounded="md"
             class="p-6"
@@ -569,7 +569,7 @@ const itemSubtotal = computed(() =>
               </BaseButton>
             </div>
           </BaseCard>
-          <!--Submit-->
+          <!-- Submit -->
           <div>
             <BaseButton
               rounded="md"

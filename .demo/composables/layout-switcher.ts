@@ -6,10 +6,10 @@
 
 import {
   TairoCollapseLayout,
+  TairoIconnavLayout,
   TairoSidebarLayout,
   TairoSidenavLayout,
   TairoTopnavLayout,
-  TairoIconnavLayout,
 } from '#components'
 
 export function useLayoutSwitcher() {

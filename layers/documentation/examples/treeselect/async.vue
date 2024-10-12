@@ -1,20 +1,5 @@
-<template>
-  <div class="md:max-w-lg">
-    <BaseTreeSelect
-      :children="getAsyncTree"
-      treeline
-      :icons="{
-        open: 'lucide:chevron-up',
-        closed: 'lucide:chevron-down',
-        pending: 'svg-spinners:270-ring-with-bg',
-        item: '',
-      }"
-    />
-  </div>
-</template>
-
 <script setup lang="ts">
-const getAsyncTree = async () => {
+async function getAsyncTree() {
   await new Promise(resolve => setTimeout(resolve, 3000))
 
   return [
@@ -76,3 +61,18 @@ const getAsyncTree = async () => {
   ]
 }
 </script>
+
+<template>
+  <div class="md:max-w-lg">
+    <BaseTreeSelect
+      :children="getAsyncTree"
+      treeline
+      :icons="{
+        open: 'lucide:chevron-up',
+        closed: 'lucide:chevron-down',
+        pending: 'svg-spinners:270-ring-with-bg',
+        item: '',
+      }"
+    />
+  </div>
+</template>

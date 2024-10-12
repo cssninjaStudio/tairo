@@ -16,6 +16,11 @@ const props = defineProps<{
   to?: string
 }>()
 
+defineSlots<{
+  default: () => any
+  description: () => any
+}>()
+
 const isExternal = computed(() => {
   return props.to?.startsWith('http')
 })
@@ -48,11 +53,6 @@ const iconColor = computed(() => {
       return 'bg-muted-500/10 text-muted-500'
   }
 })
-
-defineSlots<{
-  default(): any
-  description(): any
-}>()
 </script>
 
 <template>

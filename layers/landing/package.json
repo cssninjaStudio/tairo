@@ -1,10 +1,9 @@
 {
-  "private": true,
   "name": "@cssninja/tairo-landing",
-  "version": "0.0.0",
   "type": "module",
+  "version": "0.0.0",
+  "private": true,
   "main": "./nuxt.config.ts",
-  "packageManager": "pnpm@8.14.0",
   "scripts": {
     "clean": "rimraf .nuxt .output node_modules"
   },

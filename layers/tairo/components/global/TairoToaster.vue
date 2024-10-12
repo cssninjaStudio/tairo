@@ -16,7 +16,7 @@ const props = withDefaults(
 )
 
 const state = useNinjaToasterState()
-const { percent, closeIn, endAt } = useNinjaToasterProgress()
+const { percent } = useNinjaToasterProgress()
 
 const wrapperClasses = computed(() => {
   switch (props.color) {

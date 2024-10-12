@@ -1,11 +1,11 @@
 <script setup lang="ts">
+import colors from 'tailwindcss/colors'
 /**
  * Here we use the useLayoutSwitcher() composable to load available layouts.
  * We also load colors from Tailwind and Shuriken UI.
  * We use the switchColorShades() function to dynamically change the colors.
  */
 import { switchColorShades } from '~/utils/bundles/colors-switcher'
-import colors from 'tailwindcss/colors'
 
 const { layouts, activeLayoutName } = useLayoutSwitcher()
 const route = useRoute()

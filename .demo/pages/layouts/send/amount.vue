@@ -79,7 +79,7 @@ function setAccount(account: any) {
     </div>
 
     <div class="w-full max-w-md">
-      <!--Amount input-->
+      <!-- Amount input -->
       <div class="relative">
         <BaseInput
           v-model="request.amount"
@@ -98,7 +98,7 @@ function setAccount(account: any) {
         />
       </div>
 
-      <!--Transfer account-->
+      <!-- Transfer account -->
       <div class="py-10">
         <h4
           class="font-heading text-muted-600 dark:text-muted-400 mb-4 text-sm"
@@ -166,7 +166,7 @@ function setAccount(account: any) {
         </BaseInputHelpText>
       </div>
 
-      <!--Buttons-->
+      <!-- Buttons -->
       <div class="flex gap-4">
         <BaseButton
           v-if="currentStepId > 0"

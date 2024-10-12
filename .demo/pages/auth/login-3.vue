@@ -44,12 +44,6 @@ const {
   handleSubmit,
   isSubmitting,
   setFieldError,
-  meta,
-  values,
-  errors,
-  resetForm,
-  setFieldValue,
-  setErrors,
 } = useForm({
   validationSchema,
   initialValues,
@@ -61,7 +55,7 @@ const toaster = useToaster()
 // This is where you would send the form data to the server
 const onSubmit = handleSubmit(async (values) => {
   // here you have access to the validated form values
-  console.log('auth-success', values)
+  // console.log('auth-success', values)
 
   try {
     // fake delay, this will make isSubmitting value to be true
@@ -105,7 +99,7 @@ const onSubmit = handleSubmit(async (values) => {
       <div
         class="mx-auto flex size-full max-w-4xl items-center justify-center"
       >
-        <!--Media image-->
+        <!-- Media image -->
         <img
           class="mx-auto max-w-xl"
           src="/img/illustrations/people.svg"
@@ -187,7 +181,7 @@ const onSubmit = handleSubmit(async (values) => {
               </Field>
             </div>
 
-            <!--Remember-->
+            <!-- Remember -->
             <div class="mt-6 flex items-center justify-between">
               <Field
                 v-slot="{ field, handleChange, handleBlur }"
@@ -214,7 +208,7 @@ const onSubmit = handleSubmit(async (values) => {
               </div>
             </div>
 
-            <!--Submit-->
+            <!-- Submit -->
             <div class="mt-6">
               <div class="block w-full rounded-md shadow-sm">
                 <BaseButton
@@ -239,7 +233,7 @@ const onSubmit = handleSubmit(async (values) => {
             <span>Sign In with Google</span>
           </BaseButton>
 
-          <!--No account link-->
+          <!-- No account link -->
           <p
             class="text-muted-400 mt-4 flex justify-between font-sans text-xs leading-5"
           >

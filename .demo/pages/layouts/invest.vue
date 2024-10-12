@@ -14,7 +14,7 @@ definePageMeta({
 
 const route = useRoute()
 const router = useRouter()
-const page = computed(() => parseInt((route.query.page as string) ?? '1'))
+const page = computed(() => Number.parseInt((route.query.page as string) ?? '1'))
 
 const filter = ref('')
 const perPage = ref(45)
@@ -126,14 +126,14 @@ function useGaugePersonal() {
 
 <template>
   <div class="grid grid-cols-12 gap-6">
-    <!--Content-->
+    <!-- Content -->
     <div class="ltablet:col-span-9 col-span-12 lg:col-span-9">
       <div class="w-full max-w-full">
-        <!--Invest widget-->
+        <!-- Invest widget -->
         <DemoWidgetInvest />
-        <!--Content-->
+        <!-- Content -->
         <div class="w-full">
-          <!--Header-->
+          <!-- Header -->
           <div class="border-muted-200 dark:border-muted-800 border-b py-6">
             <BaseHeading
               as="h2"
@@ -147,7 +147,7 @@ function useGaugePersonal() {
               Assess our investment options
             </BaseParagraph>
           </div>
-          <!--Options-->
+          <!-- Options -->
           <div class="mt-7">
             <table class="w-full whitespace-nowrap">
               <thead>
@@ -220,7 +220,7 @@ function useGaugePersonal() {
         </div>
       </div>
     </div>
-    <!--Side widgets-->
+    <!-- Side widgets -->
     <div class="ltablet:col-span-3 col-span-12 lg:col-span-3">
       <!-- Column -->
       <div class="relative flex flex-col gap-6">

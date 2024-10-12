@@ -50,7 +50,7 @@ onBeforeMount(checkPreviousSteps)
 
     <div class="w-full max-w-md">
       <div class="mb-4">
-        <!--Grid-->
+        <!-- Grid -->
         <div class="grid gap-4 md:grid-cols-2">
           <div class="group relative col-span-2">
             <BaseInput

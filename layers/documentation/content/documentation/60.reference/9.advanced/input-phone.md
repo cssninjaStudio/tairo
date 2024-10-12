@@ -1,13 +1,12 @@
 ---
 title: AddonInputPhone
-components: 
+components:
   - AddonInputPhone
 description: International phone number input field with country code dropdown.
 icon:
   src: /img/illustrations/components/markdown-icon.svg
   srcDark: /img/illustrations/components/markdown-icon.svg
 ---
-
 
 ::doc-component-demo
 ---
@@ -18,12 +17,10 @@ Ready to use phone input component with country code dropdown, with validation a
 The component extend the :doc-linker{to="BaseInput"} component, so you can use all the props and events of the base component.
 
 :::doc-message{color="muted-contrast" icon="ri:markdown-fill"}
-This component uses [libphonenumber-js](https://www.npmjs.com/package/libphonenumber-js) and [country-codes-list](https://www.npmjs.com/package/country-codes-list) 
+This component uses [libphonenumber-js](https://www.npmjs.com/package/libphonenumber-js) and [country-codes-list](https://www.npmjs.com/package/country-codes-list)
 to detect and validate the phone input value.
 :::
 ::
-
-
 
 ::doc-component-demo
 ---
@@ -57,7 +54,6 @@ demo: '#examples/input-phone/disabled.vue'
 ---
 ::
 
-
 ::doc-component-demo
 ---
 title: Input Size
@@ -71,6 +67,5 @@ title: Input Shapes
 demo: '#examples/input-phone/shape.vue'
 ---
 ::
-
 
 :doc-component-meta{name="AddonInputPhone"}

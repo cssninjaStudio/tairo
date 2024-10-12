@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const progress = ref(25)
+</script>
+
 <template>
   <div class="max-w-xs space-y-4">
     <BaseProgress
@@ -38,7 +42,3 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-const progress = ref(25)
-</script>

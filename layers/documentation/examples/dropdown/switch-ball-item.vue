@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const model = ref(['value_1'])
+</script>
+
 <template>
   <div class="flex items-end">
     <BaseDropdown
@@ -76,7 +80,3 @@
     </BaseDropdown>
   </div>
 </template>
-
-<script setup lang="ts">
-const model = ref(['value_1'])
-</script>

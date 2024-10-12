@@ -16,12 +16,12 @@ definePageMeta({
 <template>
   <div class="pb-20 pt-6">
     <div class="grid grid-cols-12 gap-6">
-      <!--Cards-->
+      <!-- Cards -->
       <div
         class="ptablet:col-span-5 ltablet:col-span-4 col-span-12 lg:col-span-4"
       >
         <div class="bg-muted-50 dark:bg-muted-950 border-muted-200 dark:border-muted-800 ltablet:p-12 rounded-2xl border p-6 lg:p-12">
-          <!--Header-->
+          <!-- Header -->
           <div class="mb-6 flex items-center justify-between">
             <BaseHeading
               weight="medium"
@@ -37,11 +37,11 @@ definePageMeta({
               <Icon name="lucide:plus" class="size-4" />
             </BaseButtonIcon>
           </div>
-          <!--Cards and accounts-->
+          <!-- Cards and accounts -->
           <div
             class="border-muted-300 dark:border-muted-800 flex flex-col gap-6 border-b pb-10"
           >
-            <!--Card-->
+            <!-- Card -->
             <div class="bg-muted-200 dark:bg-muted-800 mx-auto w-full max-w-[315px] rounded-2xl p-2">
               <DemoCreditCardReal
                 status="active"
@@ -50,7 +50,7 @@ definePageMeta({
                 brand="mastercard"
               />
             </div>
-            <!--Account-->
+            <!-- Account -->
             <NuxtLink
               to="/layouts/accounts"
               class="bg-muted-100 hover:bg-muted-200 dark:bg-muted-950 dark:hover:bg-muted-900 flex items-center rounded-xl p-6 transition-colors duration-300"
@@ -79,7 +79,7 @@ definePageMeta({
                 </div>
               </div>
             </NuxtLink>
-            <!--Account-->
+            <!-- Account -->
             <NuxtLink
               to="/layouts/accounts"
               class="bg-muted-100 hover:bg-muted-200 dark:bg-muted-950 dark:hover:bg-muted-900 flex items-center rounded-xl p-6 transition-colors duration-300"
@@ -109,9 +109,9 @@ definePageMeta({
               </div>
             </NuxtLink>
           </div>
-          <!--Limits-->
+          <!-- Limits -->
           <div class="flex flex-col gap-6 pt-6">
-            <!--Withdrawal-->
+            <!-- Withdrawal -->
             <NuxtLink
               to="/layouts/cards"
               class="hover:bg-muted-100 dark:hover:bg-muted-900 flex items-center gap-3 rounded-2xl p-3 transition-colors duration-200"
@@ -148,7 +148,7 @@ definePageMeta({
                 </BaseButtonIcon>
               </div>
             </NuxtLink>
-            <!--Payment-->
+            <!-- Payment -->
             <NuxtLink
               to="/layouts/cards"
               class="hover:bg-muted-100 dark:hover:bg-muted-900 flex items-center gap-3 rounded-2xl p-3 transition-colors duration-200"
@@ -188,14 +188,14 @@ definePageMeta({
           </div>
         </div>
       </div>
-      <!--Quick transactions-->
+      <!-- Quick transactions -->
       <div
         class="ptablet:col-span-7 ltablet:col-span-8 col-span-12 lg:col-span-8"
       >
         <div
           class="ltablet:p-12 bg-muted-200 dark:bg-muted-950 rounded-2xl p-6 lg:p-12"
         >
-          <!--Header---->
+          <!-- Header ---->
           <div class="mb-6 flex items-center justify-between">
             <BaseHeading
               weight="medium"
@@ -321,7 +321,7 @@ definePageMeta({
             <DemoLinkArrow to="/layouts" />
           </div>
           <div class="space-y-6">
-            <!--Item-->
+            <!-- Item -->
             <div class="flex items-center gap-3">
               <div
                 class="dark:bg-muted-900 border-muted-200 dark:border-muted-800 flex size-12 items-center justify-center rounded-xl border bg-white"
@@ -357,7 +357,7 @@ definePageMeta({
                 </BaseText>
               </div>
             </div>
-            <!--Item-->
+            <!-- Item -->
             <div class="flex items-center gap-3">
               <div
                 class="dark:bg-muted-900 border-muted-200 dark:border-muted-800 flex size-12 items-center justify-center rounded-xl border bg-white"
@@ -393,7 +393,7 @@ definePageMeta({
                 </BaseText>
               </div>
             </div>
-            <!--Item-->
+            <!-- Item -->
             <div class="flex items-center gap-3">
               <div
                 class="dark:bg-muted-900 border-muted-200 dark:border-muted-800 flex size-12 items-center justify-center rounded-xl border bg-white"
@@ -429,7 +429,7 @@ definePageMeta({
                 </BaseText>
               </div>
             </div>
-            <!--Item-->
+            <!-- Item -->
             <div class="flex items-center gap-3">
               <div
                 class="dark:bg-muted-900 border-muted-200 dark:border-muted-800 flex size-12 items-center justify-center rounded-xl border bg-white"
@@ -465,7 +465,7 @@ definePageMeta({
                 </BaseText>
               </div>
             </div>
-            <!--Item-->
+            <!-- Item -->
             <div class="flex items-center gap-3">
               <div
                 class="dark:bg-muted-900 border-muted-200 dark:border-muted-800 flex size-12 items-center justify-center rounded-xl border bg-white"

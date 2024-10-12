@@ -92,15 +92,6 @@ export function useIconnav() {
     selectedMenuItem.value = item
   })
 
-  if (process.client) {
-    const { lg, xl } = useTailwindBreakpoints()
-    /* watch(xl, (isXl) => {
-      if (!isXl) {
-        isOpen.value = false
-      }
-    }) */
-  }
-
   return {
     menuItems,
     activeMenuItem,

@@ -14,7 +14,7 @@ const isSearchOpen = useState('search-open', () => false)
       </slot>
     </div>
 
-    <!--Action button-->
+    <!-- Action button -->
     <button
       type="button"
       class="nui-mask nui-mask-blob hover:bg-muted-200 dark:hover:bg-muted-700/60 text-muted-500 dark:text-muted-400 hidden size-10 cursor-pointer items-center justify-center transition-colors duration-300"
@@ -24,7 +24,7 @@ const isSearchOpen = useState('search-open', () => false)
       <Icon name="lucide:search" class="size-4" />
     </button>
 
-    <!--Mobile button-->
+    <!-- Mobile button -->
     <button
       type="button"
       class="nui-mask nui-mask-blob hover:bg-muted-200 dark:hover:bg-muted-800 text-muted-700 dark:text-muted-400 flex size-10 cursor-pointer items-center justify-center transition-colors duration-300"

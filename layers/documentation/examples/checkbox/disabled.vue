@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const value = ref(true)
+</script>
+
 <template>
   <BaseCheckbox
     v-model="value"
@@ -5,7 +9,3 @@
     label="I'm disabled"
   />
 </template>
-
-<script setup lang="ts">
-const value = ref(true)
-</script>

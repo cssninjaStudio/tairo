@@ -8,7 +8,6 @@ icon:
   srcDark: /img/illustrations/components/radio-icon.svg
 ---
 
-
 ::doc-component-demo
 ---
 title: Color
@@ -17,7 +16,6 @@ demo: '#examples/radio/base.vue'
 Radio inputs can have different colors. Use the `color` prop to change the color of the radio button component.
 ::
 
-
 ::doc-component-demo
 ---
 title: Custom
@@ -25,6 +23,5 @@ demo: '#examples/radio/colors.vue'
 ---
 Radio inputs can have non standard colors. Use the `classes` prop to implement custom color classes from Tailwind CSS.
 ::
-
 
 :doc-component-meta{name="BaseRadio"}

@@ -1,9 +1,9 @@
 <script setup lang="ts">
+import { AddonInputPassword } from '#components'
 import { toTypedSchema } from '@vee-validate/zod'
 import { Field, useForm } from 'vee-validate'
-import { z } from 'zod'
 
-import { AddonInputPassword } from '#components'
+import { z } from 'zod'
 
 definePageMeta({
   layout: 'empty',
@@ -77,9 +77,9 @@ const router = useRouter()
 const toaster = useToaster()
 
 // This is where you would send the form data to the server
-const onSubmit = handleSubmit(async (values) => {
+const onSubmit = handleSubmit(async (_values) => {
   // here you have access to the validated form values
-  console.log('auth-success', values)
+  // console.log('auth-success', values)
 
   try {
     // fake delay, this will make isSubmitting value to be true
@@ -268,7 +268,7 @@ const onSubmit = handleSubmit(async (values) => {
         >
           Create Account
         </BaseButton>
-        <!--No account link-->
+        <!-- No account link -->
         <p
           class="text-muted-400 mt-4 flex justify-between font-sans text-sm leading-5"
         >

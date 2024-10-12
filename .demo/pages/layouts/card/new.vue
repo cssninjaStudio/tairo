@@ -133,6 +133,7 @@ const fieldsWithErrors = computed(() => Object.keys(errors.value).length)
 // Ask the user for confirmation before leaving the page if the form has unsaved changes
 onBeforeRouteLeave(() => {
   if (meta.value.dirty && !success.value) {
+    // eslint-disable-next-line no-alert
     return confirm('You have unsaved changes. Are you sure you want to leave?')
   }
 })
@@ -145,7 +146,7 @@ const onSubmit = handleSubmit(
     success.value = false
 
     // here you have access to the validated form values
-    console.log('card-create-success', values)
+    // console.log('card-create-success', values)
 
     try {
       // fake delay, this will make isSubmitting value to be true
@@ -200,12 +201,12 @@ const onSubmit = handleSubmit(
 
     success.value = true
   },
-  (error) => {
+  (_error) => {
     // this callback is optional and called only if the form has errors
     success.value = false
 
     // here you have access to the error
-    console.log('card-create-error', error)
+    // console.log('card-create-error', error)
 
     // you can use it to scroll to the first error
     document.documentElement.scrollTo({
@@ -229,7 +230,7 @@ const onSubmit = handleSubmit(
             class="ltablet:gap-16 grid w-full gap-8 md:grid-cols-12 lg:gap-16"
             @submit.prevent="onSubmit"
           >
-            <!--Content column-->
+            <!-- Content column -->
             <div class="md:col-span-7 lg:col-span-7">
               <div class="w-full max-w-md">
                 <div class="pb border-muted-200 dark:border-muted-800 border-b">
@@ -256,7 +257,7 @@ const onSubmit = handleSubmit(
                 <div
                   class="divide-muted-200 dark:divide-muted-800 space-y-8 divide-y"
                 >
-                  <!--Field-->
+                  <!-- Field -->
                   <div class="pt-8">
                     <BaseHeading
                       as="h4"
@@ -266,7 +267,7 @@ const onSubmit = handleSubmit(
                     >
                       Associated account
                     </BaseHeading>
-                    <!--Dropdown-->
+                    <!-- Dropdown -->
                     <BaseDropdown rounded="lg" :classes="{ menuWrapper: 'w-full [&>div]:right-0', menu: '!w-full' }">
                       <template #button="{ open }">
                         <BaseButton
@@ -326,7 +327,7 @@ const onSubmit = handleSubmit(
                       {{ errors.account }}
                     </BaseInputHelpText>
                   </div>
-                  <!--Field-->
+                  <!-- Field -->
                   <div class="pt-8">
                     <BaseHeading
                       as="h4"
@@ -336,7 +337,7 @@ const onSubmit = handleSubmit(
                     >
                       Who is this card for?
                     </BaseHeading>
-                    <!--Select-->
+                    <!-- Select -->
                     <div class="relative">
                       <Field
                         v-slot="{
@@ -374,7 +375,7 @@ const onSubmit = handleSubmit(
                       </Field>
                     </div>
                   </div>
-                  <!--Field-->
+                  <!-- Field -->
                   <div class="pt-8">
                     <BaseHeading
                       as="h4"
@@ -384,7 +385,7 @@ const onSubmit = handleSubmit(
                     >
                       What kind of card do you need?
                     </BaseHeading>
-                    <!--Select-->
+                    <!-- Select -->
                     <div class="relative">
                       <Field
                         v-slot="{
@@ -413,7 +414,7 @@ const onSubmit = handleSubmit(
                       </Field>
                     </div>
                   </div>
-                  <!--Field-->
+                  <!-- Field -->
                   <div class="pt-8">
                     <BaseHeading
                       as="h4"
@@ -423,7 +424,7 @@ const onSubmit = handleSubmit(
                     >
                       What type of card is it?
                     </BaseHeading>
-                    <!--Select-->
+                    <!-- Select -->
                     <div class="group relative">
                       <Field
                         v-slot="{
@@ -452,7 +453,7 @@ const onSubmit = handleSubmit(
                       </Field>
                     </div>
                   </div>
-                  <!--Field-->
+                  <!-- Field -->
                   <div class="pt-8">
                     <BaseHeading
                       as="h4"
@@ -462,7 +463,7 @@ const onSubmit = handleSubmit(
                     >
                       What's the daily spend limit?
                     </BaseHeading>
-                    <!--Select-->
+                    <!-- Select -->
                     <div class="relative">
                       <Field
                         v-slot="{
@@ -485,7 +486,7 @@ const onSubmit = handleSubmit(
                       </Field>
                     </div>
                   </div>
-                  <!--Field-->
+                  <!-- Field -->
                   <div class="pt-8">
                     <BaseHeading
                       as="h4"
@@ -495,7 +496,7 @@ const onSubmit = handleSubmit(
                     >
                       What's the daily withdrawal limit?
                     </BaseHeading>
-                    <!--Select-->
+                    <!-- Select -->
                     <div class="relative">
                       <Field
                         v-slot="{
@@ -518,7 +519,7 @@ const onSubmit = handleSubmit(
                       </Field>
                     </div>
                   </div>
-                  <!--Buttons-->
+                  <!-- Buttons -->
                   <div class="flex flex-col-reverse gap-4 py-8 sm:flex-row">
                     <div
                       class="inline-flex h-12 w-full items-center justify-center"
@@ -545,9 +546,9 @@ const onSubmit = handleSubmit(
               </div>
             </div>
 
-            <!--Card column-->
+            <!-- Card column -->
             <div class="relative md:col-span-5 lg:col-span-5">
-              <!--Tabs-->
+              <!-- Tabs -->
               <div class="sticky top-20">
                 <DemoCreditCardReal
                   status="active"
@@ -561,7 +562,7 @@ const onSubmit = handleSubmit(
           </form>
         </div>
 
-        <!--Success section-->
+        <!-- Success section -->
         <div v-else>
           <div class="mx-auto w-full max-w-md py-6 text-center">
             <div class="text-primary-500 mx-auto mb-4 size-14">

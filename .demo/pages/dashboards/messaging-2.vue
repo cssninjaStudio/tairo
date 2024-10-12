@@ -506,10 +506,13 @@ const messageLoading = ref(false)
 const activeConversation = ref(1)
 
 const selectedConversation = computed(() => {
-  mobileOpen.value = false
   return conversations.value.find(
     conversation => conversation.id === activeConversation.value,
   )
+})
+
+watch(selectedConversation, () => {
+  mobileOpen.value = false
 })
 
 onMounted(() => {
@@ -524,7 +527,8 @@ onMounted(() => {
 })
 
 function selectConversation(id: number) {
-  if (messageLoading.value) return
+  if (messageLoading.value)
+    return
 
   loading.value = true
   message.value = ''
@@ -546,8 +550,10 @@ function selectConversation(id: number) {
 }
 
 async function submitMessage() {
-  if (!message.value) return
-  if (messageLoading.value) return
+  if (!message.value)
+    return
+  if (messageLoading.value)
+    return
 
   messageLoading.value = true
 
@@ -581,7 +587,7 @@ async function submitMessage() {
 
 <template>
   <div class="text-muted-800 h-screen antialiased">
-    <!--Header-->
+    <!-- Header -->
     <div
       class="ltablet:z-30 border-muted-200 dark:border-muted-800 dark:bg-muted-950 relative flex h-16 w-full items-center justify-between border-b bg-white px-4 lg:z-30"
       :class="mobileOpen ? 'z-20' : 'z-30'"
@@ -636,11 +642,11 @@ async function submitMessage() {
         <DemoAccountMenu horizontal />
       </div>
     </div>
-    <!--Wrapper-->
+    <!-- Wrapper -->
     <div
       class="relative z-20 flex h-[calc(100dvh_-_64px)] w-full flex-row overflow-x-hidden"
     >
-      <!--Conversations sidebar-->
+      <!-- Conversations sidebar -->
       <div
         class="ltablet:static ltablet:py-4 dark:bg-muted-900 ltablet:dark:bg-muted-950 lg:dark:bg-muted-950 fixed start-0 top-0 z-30 flex h-full w-72 shrink-0 flex-col bg-white ps-4 transition-transform duration-300 lg:static lg:py-4"
         :class="
@@ -649,7 +655,7 @@ async function submitMessage() {
             : '-translate-x-full ltablet:translate-x-0 lg:translate-x-0'
         "
       >
-        <!--Mobile header-->
+        <!-- Mobile header -->
         <div
           class="ltablet:hidden flex h-16 items-center justify-between pe-4 lg:hidden"
         >
@@ -668,7 +674,7 @@ async function submitMessage() {
           />
         </div>
         <div class="ltablet:pe-0 flex h-full flex-col pe-2 lg:pe-0">
-          <!--New conversation-->
+          <!-- New conversation -->
           <div class="flex h-20 items-center justify-center pe-2">
             <BaseButton
               rounded="full"
@@ -679,7 +685,7 @@ async function submitMessage() {
               <span>New Conversation</span>
             </BaseButton>
           </div>
-          <!--Conversations list-->
+          <!-- Conversations list -->
           <div
             class="nui-slimscroll flex h-[calc(100dvh_-_160px)] flex-col space-y-1 overflow-y-auto pe-2"
           >
@@ -715,7 +721,7 @@ async function submitMessage() {
               />
             </button>
           </div>
-          <!--Footer actions-->
+          <!-- Footer actions -->
           <div class="flex h-20 items-center justify-between gap-3 pe-2">
             <NuxtLink
               to="/dashboards"
@@ -763,7 +769,7 @@ async function submitMessage() {
         </div>
       </div>
 
-      <!--Chat body-->
+      <!-- Chat body -->
       <div
         class="dark:bg-muted-950 flex h-full flex-auto flex-col bg-white p-4"
       >
@@ -778,7 +784,7 @@ async function submitMessage() {
                 loading ? 'overflow-hidden' : 'overflow-y-auto nui-slimscroll'
               "
             >
-              <!-- Loader-->
+              <!-- Loader -->
               <div
                 class="bg-muted-100 dark:bg-muted-900 pointer-events-none absolute inset-0 z-10 size-full p-8 transition-opacity duration-300"
                 :class="
@@ -979,7 +985,7 @@ async function submitMessage() {
                 </div>
               </div>
             </div>
-            <!--Compose-->
+            <!-- Compose -->
             <div class="absolute inset-x-0 bottom-4 w-full px-4">
               <form
                 method="POST"
@@ -1043,7 +1049,7 @@ async function submitMessage() {
           </div>
         </div>
       </div>
-      <!--Chat side-->
+      <!-- Chat side -->
       <div
         class="dark:bg-muted-950 hidden w-80 shrink-0 flex-col bg-white py-4 pe-8 ps-4 lg:flex"
       >

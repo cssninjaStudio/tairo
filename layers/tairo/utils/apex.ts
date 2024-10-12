@@ -20,7 +20,7 @@ export function asPercent(val: number): string {
 type WithOptions = (val: number, timestamp: number) => string
 type WithTimeOptions = (val: number, timestamp: number) => string
 
-export function toDate(format: string): WithTimeOptions {
+export function toDate(_format: string): WithTimeOptions {
   return (val, timestamp) => timestamp.toString()
 }
 

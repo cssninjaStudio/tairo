@@ -1,5 +1,4 @@
 <script setup lang="ts">
-/* eslint-disable sonarjs/no-identical-functions */
 import { Calendar } from 'v-calendar'
 
 import 'v-calendar/dist/style.css'
@@ -50,7 +49,7 @@ function useSparkSalesOne() {
     fill: {
       opacity: 1,
     },
-    labels: [...Array(24).keys()].map(n => `2020-10-0${n + 1}`),
+    labels: [...Array.from({ length: 24 }).keys()].map(n => `2020-10-0${n + 1}`),
     yaxis: {
       min: 0,
       labels: {
@@ -89,8 +88,30 @@ function useSparkSalesOne() {
     {
       name: 'Total Sales',
       data: randomizeArray([
-        472, 454, 547, 385, 562, 247, 652, 318, 379, 391, 622, 515, 355, 415,
-        358, 271, 932, 534, 615, 278, 546, 435, 192, 465,
+        472,
+        454,
+        547,
+        385,
+        562,
+        247,
+        652,
+        318,
+        379,
+        391,
+        622,
+        515,
+        355,
+        415,
+        358,
+        271,
+        932,
+        534,
+        615,
+        278,
+        546,
+        435,
+        192,
+        465,
       ]),
     },
   ])
@@ -167,7 +188,7 @@ function useSparkSalesTwo() {
     fill: {
       opacity: 1,
     },
-    labels: [...Array(24).keys()].map(n => `2020-10-0${n + 1}`),
+    labels: [...Array.from({ length: 24 }).keys()].map(n => `2020-10-0${n + 1}`),
     yaxis: {
       min: 0,
       labels: {
@@ -206,8 +227,30 @@ function useSparkSalesTwo() {
     {
       name: 'Total Profit',
       data: randomizeArray([
-        472, 454, 547, 385, 562, 247, 652, 318, 379, 391, 622, 515, 355, 415,
-        358, 271, 932, 534, 615, 278, 546, 435, 192, 465,
+        472,
+        454,
+        547,
+        385,
+        562,
+        247,
+        652,
+        318,
+        379,
+        391,
+        622,
+        515,
+        355,
+        415,
+        358,
+        271,
+        932,
+        534,
+        615,
+        278,
+        546,
+        435,
+        192,
+        465,
       ]),
     },
   ])
@@ -283,7 +326,7 @@ function useSparkSalesThree() {
     fill: {
       opacity: 1,
     },
-    labels: [...Array(24).keys()].map(n => `2020-10-0${n + 1}`),
+    labels: [...Array.from({ length: 24 }).keys()].map(n => `2020-10-0${n + 1}`),
     yaxis: {
       min: 0,
       labels: {
@@ -322,8 +365,30 @@ function useSparkSalesThree() {
     {
       name: 'Total Orders',
       data: randomizeArray([
-        472, 454, 547, 385, 562, 247, 652, 318, 379, 391, 622, 515, 355, 415,
-        358, 271, 932, 534, 615, 278, 546, 435, 192, 465,
+        472,
+        454,
+        547,
+        385,
+        562,
+        247,
+        652,
+        318,
+        379,
+        391,
+        622,
+        515,
+        355,
+        415,
+        358,
+        271,
+        932,
+        534,
+        615,
+        278,
+        546,
+        435,
+        192,
+        465,
       ]),
     },
   ])
@@ -400,7 +465,7 @@ function useSparkSalesFour() {
     fill: {
       opacity: 1,
     },
-    labels: [...Array(24).keys()].map(n => `2020-10-0${n + 1}`),
+    labels: [...Array.from({ length: 24 }).keys()].map(n => `2020-10-0${n + 1}`),
     yaxis: {
       min: 0,
       labels: {
@@ -439,8 +504,30 @@ function useSparkSalesFour() {
     {
       name: 'Consolidated',
       data: randomizeArray([
-        472, 454, 547, 385, 562, 247, 652, 318, 379, 391, 622, 515, 355, 415,
-        358, 271, 932, 534, 615, 278, 546, 435, 192, 465,
+        472,
+        454,
+        547,
+        385,
+        562,
+        247,
+        652,
+        318,
+        379,
+        391,
+        622,
+        515,
+        355,
+        415,
+        358,
+        271,
+        932,
+        534,
+        615,
+        278,
+        546,
+        435,
+        192,
+        465,
       ]),
     },
   ])

@@ -1,9 +1,3 @@
-<template>
-  <div class="md:max-w-lg">
-    <BaseTreeSelect :children="tree" treeline />
-  </div>
-</template>
-
 <script setup lang="ts">
 const tree = [
   {
@@ -58,3 +52,9 @@ const tree = [
   },
 ]
 </script>
+
+<template>
+  <div class="md:max-w-lg">
+    <BaseTreeSelect :children="tree" treeline />
+  </div>
+</template>

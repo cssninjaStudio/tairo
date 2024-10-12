@@ -1,13 +1,12 @@
 ---
 title: Apexcharts
-components: 
+components:
   - AddonApexcharts
 description: Tairo ships with the Apexcharts data visualization library customized for Vue and Nuxt. Use the component to render charts and graphs.
 icon:
   src: /img/illustrations/components/apexcharts-icon.svg
   srcDark: /img/illustrations/components/apexcharts-icon.svg
 ---
-
 
 ::doc-component-demo
 ---

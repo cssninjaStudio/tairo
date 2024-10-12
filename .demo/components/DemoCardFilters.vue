@@ -52,22 +52,10 @@ const months = [
   },
 ]
 
-const defaultKeywords = [
-  'Wallmart',
-  'Credit Card',
-  'Harry\'s LLC',
-  'Expenses',
-  'Income',
-  'Groceries',
-  'Toys',
-  'Restaurant',
-]
-
 const activeFilterTab = ref('filter-1')
 const cardTypes = ref([''])
 const cardholders = ref([''])
 const status = ref([''])
-const accounts = ref([''])
 const spentStart = ref<number>()
 const spentEnd = ref<number>()
 const timeCategory = ref('all')
@@ -104,7 +92,7 @@ const timeCategoryTo = ref('')
           class="dark:bg-muted-800 border-muted-200 dark:border-muted-700 shadow-muted-400/20 dark:shadow-muted-800/20 absolute start-0 top-11 grid w-[660px] grid-cols-12 overflow-hidden rounded-lg border bg-white shadow-xl"
         >
           <div class="bg-muted-50 dark:bg-muted-900 col-span-4 space-y-2 p-6">
-            <!--Menu item-->
+            <!-- Menu item -->
             <button
               type="button"
               data-tab="tab-1"
@@ -120,7 +108,7 @@ const timeCategoryTo = ref('')
               <span>Card type</span>
               <Icon name="lucide:chevron-right" class="ms-auto size-4" />
             </button>
-            <!--Menu item-->
+            <!-- Menu item -->
             <button
               type="button"
               data-tab="tab-2"
@@ -136,7 +124,7 @@ const timeCategoryTo = ref('')
               <span>Cardholder</span>
               <Icon name="lucide:chevron-right" class="ms-auto size-4" />
             </button>
-            <!--Menu item-->
+            <!-- Menu item -->
             <button
               type="button"
               data-tab="tab-3"
@@ -152,7 +140,7 @@ const timeCategoryTo = ref('')
               <span>Status</span>
               <Icon name="lucide:chevron-right" class="ms-auto size-4" />
             </button>
-            <!--Menu item-->
+            <!-- Menu item -->
             <button
               type="button"
               data-tab="tab-4"
@@ -168,7 +156,7 @@ const timeCategoryTo = ref('')
               <span>Spendings</span>
               <Icon name="lucide:chevron-right" class="ms-auto size-4" />
             </button>
-            <!--Menu item-->
+            <!-- Menu item -->
             <button
               type="button"
               data-tab="tab-5"
@@ -186,9 +174,9 @@ const timeCategoryTo = ref('')
             </button>
           </div>
 
-          <!--Filters-->
+          <!-- Filters -->
           <div class="col-span-8 min-h-[350px] p-6">
-            <!--Filter 1-->
+            <!-- Filter 1 -->
             <div v-if="activeFilterTab === 'filter-1'">
               <div class="flex flex-col">
                 <div class="px-3">
@@ -210,7 +198,7 @@ const timeCategoryTo = ref('')
                     class="border-muted-200 dark:border-muted-700 mb-4 mt-6 border-t"
                   >
                   <div class="space-y-4">
-                    <!--types-->
+                    <!-- types -->
                     <div>
                       <BaseCheckbox
                         v-model="cardTypes"
@@ -239,7 +227,7 @@ const timeCategoryTo = ref('')
                 </div>
               </div>
             </div>
-            <!--Filter 2-->
+            <!-- Filter 2 -->
             <div v-else-if="activeFilterTab === 'filter-2'">
               <div class="flex flex-col">
                 <div class="px-3">
@@ -268,7 +256,7 @@ const timeCategoryTo = ref('')
                   >
 
                   <div class="space-y-4">
-                    <!--Cardholders-->
+                    <!-- Cardholders -->
                     <div>
                       <BaseCheckbox
                         v-model="cardholders"
@@ -313,7 +301,7 @@ const timeCategoryTo = ref('')
                 </div>
               </div>
             </div>
-            <!--Filter 3-->
+            <!-- Filter 3 -->
             <div v-else-if="activeFilterTab === 'filter-3'">
               <div class="flex flex-col">
                 <div class="px-3">
@@ -334,7 +322,7 @@ const timeCategoryTo = ref('')
                   >
 
                   <div class="space-y-4">
-                    <!--Status-->
+                    <!-- Status -->
                     <div>
                       <BaseCheckbox
                         v-model="status"
@@ -363,7 +351,7 @@ const timeCategoryTo = ref('')
                 </div>
               </div>
             </div>
-            <!--Filter 4-->
+            <!-- Filter 4 -->
             <div v-else-if="activeFilterTab === 'filter-4'">
               <div class="flex flex-col">
                 <div class="px-3">
@@ -377,7 +365,7 @@ const timeCategoryTo = ref('')
                   >
 
                   <div class="space-y-4">
-                    <!--Account-->
+                    <!-- Account -->
                     <div>
                       <BaseInput
                         v-model="spentStart"
@@ -400,7 +388,7 @@ const timeCategoryTo = ref('')
                 </div>
               </div>
             </div>
-            <!--Filter 5-->
+            <!-- Filter 5 -->
             <div v-else-if="activeFilterTab === 'filter-5'">
               <div class="flex flex-col">
                 <div class="px-3">
@@ -440,9 +428,9 @@ const timeCategoryTo = ref('')
                     Or choose a date range
                   </BaseText>
                   <div class="grid grid-cols-2 gap-8">
-                    <!--Calendar group-->
+                    <!-- Calendar group -->
                     <div>
-                      <!--Calendar-->
+                      <!-- Calendar -->
                       <div class="flex flex-col">
                         <div
                           class="mb-2 flex items-center justify-between px-3"
@@ -487,9 +475,9 @@ const timeCategoryTo = ref('')
                         </div>
                       </div>
                     </div>
-                    <!--Calendar group-->
+                    <!-- Calendar group -->
                     <div>
-                      <!--Calendar-->
+                      <!-- Calendar -->
                       <div class="flex flex-col">
                         <div
                           class="mb-2 flex items-center justify-between px-3"

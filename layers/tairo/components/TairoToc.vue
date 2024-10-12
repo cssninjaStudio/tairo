@@ -1,6 +1,5 @@
 <script setup lang="ts">
 const route = useRoute()
-const router = useRouter()
 const activeAnchor = ref('')
 const toc = useState<any[]>('tairo-toc', () => [])
 
@@ -29,10 +28,10 @@ if (import.meta.client) {
   )
 
   // load toc item from dom
-  const stopPage = nuxtApp.hook('page:finish', (e) => {
+  const stopPage = nuxtApp.hook('page:finish', () => {
     loadTocItemFromDom()
   })
-  const stopTransition = nuxtApp.hook('page:transition:finish', (e) => {
+  const stopTransition = nuxtApp.hook('page:transition:finish', () => {
     loadTocItemFromDom()
   })
 

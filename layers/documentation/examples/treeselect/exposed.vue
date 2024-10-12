@@ -1,28 +1,3 @@
-<template>
-  <div class="md:max-w-lg">
-    <BaseTreeSelect
-      ref="treeSelectRef"
-      v-model="value"
-      :children="tree"
-      treeline
-    />
-
-    <div class="flex gap-2">
-      <BaseButton @click="toggleAll">
-        toggle selection
-      </BaseButton>
-
-      <BaseButton @click="selectAll">
-        select all selection
-      </BaseButton>
-
-      <BaseButton @click="unselectAll">
-        unselect all selection
-      </BaseButton>
-    </div>
-  </div>
-</template>
-
 <script setup lang="ts">
 const value = ref<any[]>([])
 const treeSelectRef = ref<any>(null)
@@ -90,3 +65,28 @@ const tree = ref([
   },
 ])
 </script>
+
+<template>
+  <div class="md:max-w-lg">
+    <BaseTreeSelect
+      ref="treeSelectRef"
+      v-model="value"
+      :children="tree"
+      treeline
+    />
+
+    <div class="flex gap-2">
+      <BaseButton @click="toggleAll">
+        toggle selection
+      </BaseButton>
+
+      <BaseButton @click="selectAll">
+        select all selection
+      </BaseButton>
+
+      <BaseButton @click="unselectAll">
+        unselect all selection
+      </BaseButton>
+    </div>
+  </div>
+</template>

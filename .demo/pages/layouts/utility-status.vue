@@ -100,13 +100,13 @@ definePageMeta({
                     :key="index"
                     class="dark:border-muted-800 group relative h-8 flex-1 shrink-0 cursor-pointer rounded-[2px] border-x border-white"
                     :class="[
-                      index !== 35 &&
-                        index !== 54 &&
-                        'bg-success-500 hover:bg-success-300 transition-colors duration-300',
-                      index === 35 &&
-                        'bg-orange-300 transition-colors duration-300 hover:bg-orange-500',
-                      index === 54 &&
-                        'bg-red-500 transition-colors duration-300 hover:bg-red-300',
+                      index !== 35
+                        && index !== 54
+                        && 'bg-success-500 hover:bg-success-300 transition-colors duration-300',
+                      index === 35
+                        && 'bg-orange-300 transition-colors duration-300 hover:bg-orange-500',
+                      index === 54
+                        && 'bg-red-500 transition-colors duration-300 hover:bg-red-300',
                     ]"
                   >
                     <!-- Popup -->
@@ -182,13 +182,13 @@ definePageMeta({
                     :key="index"
                     class="dark:border-muted-800 relative h-8 flex-1 shrink-0 cursor-pointer rounded-[2px] border-x border-white"
                     :class="[
-                      index !== 35 &&
-                        index !== 54 &&
-                        'bg-success-500 hover:bg-success-300 transition-colors duration-300',
-                      index === 35 &&
-                        'bg-orange-300 transition-colors duration-300 hover:bg-orange-500',
-                      index === 54 &&
-                        'bg-red-500 transition-colors duration-300 hover:bg-red-300',
+                      index !== 35
+                        && index !== 54
+                        && 'bg-success-500 hover:bg-success-300 transition-colors duration-300',
+                      index === 35
+                        && 'bg-orange-300 transition-colors duration-300 hover:bg-orange-500',
+                      index === 54
+                        && 'bg-red-500 transition-colors duration-300 hover:bg-red-300',
                     ]"
                   />
                 </div>
@@ -237,13 +237,13 @@ definePageMeta({
                     :key="index"
                     class="dark:border-muted-800 relative h-8 flex-1 shrink-0 cursor-pointer rounded-[2px] border-x border-white"
                     :class="[
-                      index !== 35 &&
-                        index !== 54 &&
-                        'bg-success-500 hover:bg-success-300 transition-colors duration-300',
-                      index === 35 &&
-                        'bg-orange-300 transition-colors duration-300 hover:bg-orange-500',
-                      index === 54 &&
-                        'bg-red-500 transition-colors duration-300 hover:bg-red-300',
+                      index !== 35
+                        && index !== 54
+                        && 'bg-success-500 hover:bg-success-300 transition-colors duration-300',
+                      index === 35
+                        && 'bg-orange-300 transition-colors duration-300 hover:bg-orange-500',
+                      index === 54
+                        && 'bg-red-500 transition-colors duration-300 hover:bg-red-300',
                     ]"
                   />
                 </div>

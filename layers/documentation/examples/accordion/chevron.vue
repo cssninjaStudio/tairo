@@ -1,13 +1,3 @@
-<template>
-  <div class="md:max-w-lg">
-    <BaseAccordion
-      :items="accordion"
-      exclusive
-      action="chevron"
-    />
-  </div>
-</template>
-
 <script setup lang="ts">
 // demo data for the accordion
 const accordion = ref([
@@ -28,3 +18,13 @@ const accordion = ref([
   },
 ])
 </script>
+
+<template>
+  <div class="md:max-w-lg">
+    <BaseAccordion
+      :items="accordion"
+      exclusive
+      action="chevron"
+    />
+  </div>
+</template>

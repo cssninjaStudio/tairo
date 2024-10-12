@@ -17,7 +17,7 @@ const format = ref('quickbooks')
 
 <template>
   <div class="w-full pb-24">
-    <!--Header-->
+    <!-- Header -->
     <div class="border-muted-200 dark:border-muted-800 border-b py-6">
       <div
         class="flex flex-col items-center gap-3 text-center sm:flex-row sm:text-start"
@@ -60,11 +60,11 @@ const format = ref('quickbooks')
       </div>
     </div>
 
-    <!--Body-->
+    <!-- Body -->
     <div class="divide-muted-200 dark:divide-muted-800 space-y-10 py-6">
-      <!--Transaction-->
+      <!-- Transaction -->
       <div class="grid gap-8 md:grid-cols-12">
-        <!--Column-->
+        <!-- Column -->
         <div class="md:col-span-4">
           <div class="flex gap-3">
             <BaseAvatar
@@ -90,7 +90,7 @@ const format = ref('quickbooks')
             </div>
           </div>
         </div>
-        <!--Column-->
+        <!-- Column -->
         <div class="md:col-span-8">
           <BaseHeading
             as="h4"
@@ -103,7 +103,7 @@ const format = ref('quickbooks')
           <div
             class="divide-muted-200 dark:divide-muted-800 flex flex-col divide-y"
           >
-            <!--Item-->
+            <!-- Item -->
             <div class="group">
               <NuxtLink
                 to="#"
@@ -122,7 +122,7 @@ const format = ref('quickbooks')
                 </BaseText>
               </NuxtLink>
             </div>
-            <!--Item-->
+            <!-- Item -->
             <div class="group">
               <NuxtLink
                 to="#"
@@ -141,7 +141,7 @@ const format = ref('quickbooks')
                 </BaseText>
               </NuxtLink>
             </div>
-            <!--Item-->
+            <!-- Item -->
             <div class="group">
               <NuxtLink
                 to="#"
@@ -160,7 +160,7 @@ const format = ref('quickbooks')
                 </BaseText>
               </NuxtLink>
             </div>
-            <!--Item-->
+            <!-- Item -->
             <div class="group">
               <NuxtLink
                 to="#"
@@ -179,7 +179,7 @@ const format = ref('quickbooks')
                 </BaseText>
               </NuxtLink>
             </div>
-            <!--Item-->
+            <!-- Item -->
             <div class="group">
               <NuxtLink
                 to="#"
@@ -198,7 +198,7 @@ const format = ref('quickbooks')
                 </BaseText>
               </NuxtLink>
             </div>
-            <!--Item-->
+            <!-- Item -->
             <div class="group">
               <NuxtLink
                 to="#"
@@ -217,7 +217,7 @@ const format = ref('quickbooks')
                 </BaseText>
               </NuxtLink>
             </div>
-            <!--Item-->
+            <!-- Item -->
             <div class="group">
               <NuxtLink
                 to="#"

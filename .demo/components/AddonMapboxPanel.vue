@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css'
+import type { FeatureCollection, GeoJsonProperties, Geometry } from 'geojson'
 import type { Map, Popup } from 'mapbox-gl'
-import type { FeatureCollection, Geometry, GeoJsonProperties } from 'geojson'
+import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css'
 import 'mapbox-gl/src/css/mapbox-gl.css'
 
 const props = defineProps<{
@@ -21,7 +21,6 @@ const map = shallowRef<Map>()
 const popup = shallowRef<Popup>()
 const geocoder = shallowRef<any>()
 
-// eslint-disable-next-line @typescript-eslint/consistent-type-imports
 let mapboxgl: typeof import('mapbox-gl')
 
 const locations = {
@@ -307,8 +306,6 @@ watchEffect(
     const { name } = properties
     const coordinates = geometry.coordinates.slice()
 
-    console.log('zooming at: ', properties, coordinates)
-
     // Ensure that if the map is zoomed out such that multiple
     // copies of the feature are visible, the popup appears
     // over the copy being pointed to.
@@ -462,7 +459,7 @@ watch(
         <div
           class="ltablet:h-[calc(100dvh_-_64px)] nui-slimscroll h-[calc(100vh_-_492px)] overflow-y-auto p-6 lg:h-[calc(100dvh_-_64px)]"
         >
-          <!--Title-->
+          <!-- Title -->
           <BaseHeading
             size="xs"
             weight="medium"
@@ -471,7 +468,7 @@ watch(
             <span class="text-muted-400">Recent Locations</span>
           </BaseHeading>
 
-          <!--Map Box-->
+          <!-- Map Box -->
           <div
             class="ptablet:flex-none ptablet:grid ptablet:grid-cols-2 ptablet:pb-10 flex flex-col gap-4"
           >
@@ -481,8 +478,8 @@ watch(
               class="cursor-pointer p-6"
               rounded="lg"
               :class="[
-                selectedFeatureName === feature.properties.name &&
-                  'border-primary-500',
+                selectedFeatureName === feature.properties.name
+                  && 'border-primary-500',
               ]"
               tabindex="0"
               role="button"

@@ -24,7 +24,7 @@
         </th>
       </thead>
       <tbody>
-        <!--Row-->
+        <!-- Row -->
         <tr
           v-for="index in 10"
           :key="index"

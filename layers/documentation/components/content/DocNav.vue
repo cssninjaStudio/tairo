@@ -31,7 +31,8 @@ const { data } = await useAsyncData('doc-page-nav', async () => {
 })
 
 const nav = computed(() => {
-  if (!data.value) return {}
+  if (!data.value)
+    return {}
 
   const [prev, next] = data.value
 

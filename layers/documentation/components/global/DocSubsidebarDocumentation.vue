@@ -17,8 +17,7 @@ function onLinkClick() {
 }
 
 const { data: navigation } = await useAsyncData('navigation', () =>
-  fetchContentNavigation(queryContent('/documentation')),
-)
+  fetchContentNavigation(queryContent('/documentation')))
 
 const docNav = computed(
   () => navigation.value?.find(n => n._path === '/documentation')?.children,

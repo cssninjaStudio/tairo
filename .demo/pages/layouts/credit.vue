@@ -14,10 +14,10 @@ definePageMeta({
 
 const showFaq = ref(false)
 const step = ref(1)
-const nextStep = () => {
+function nextStep() {
   step.value += 1
 }
-const prevStep = () => {
+function prevStep() {
   step.value -= 1
 }
 
@@ -29,12 +29,12 @@ const amount = ref('')
 <template>
   <div class="py-12">
     <div class="flex min-h-[450px] items-center">
-      <!--Step 1-->
+      <!-- Step 1 -->
       <div
         v-if="step === 1"
         class="flex w-full flex-col items-center md:flex-row"
       >
-        <!--Column-->
+        <!-- Column -->
         <div v-if="!showFaq" class="w-full md:w-1/2">
           <div class="max-w-md space-y-3 p-4">
             <BaseHeading
@@ -70,13 +70,13 @@ const amount = ref('')
             </div>
           </div>
         </div>
-        <!--Column-->
+        <!-- Column -->
         <div v-if="!showFaq" class="w-full md:w-1/2">
           <div class="text-primary-500 mx-auto max-w-sm">
             <VectorIllustrationManWondering />
           </div>
         </div>
-        <!--Faq-->
+        <!-- Faq -->
         <div v-else class="w-full">
           <BaseHeading
             as="h3"
@@ -87,9 +87,9 @@ const amount = ref('')
           >
             FAQ
           </BaseHeading>
-          <!--Grid-->
+          <!-- Grid -->
           <div class="grid gap-x-3 gap-y-6 md:grid-cols-3">
-            <!--Grid item-->
+            <!-- Grid item -->
             <div class="space-y-2">
               <BaseHeading
                 as="h4"
@@ -106,7 +106,7 @@ const amount = ref('')
                 ipsum rogavi.
               </BaseParagraph>
             </div>
-            <!--Grid item-->
+            <!-- Grid item -->
             <div class="space-y-2">
               <BaseHeading
                 as="h4"
@@ -125,7 +125,7 @@ const amount = ref('')
                 interrete.
               </BaseParagraph>
             </div>
-            <!--Grid item-->
+            <!-- Grid item -->
             <div class="space-y-2">
               <BaseHeading
                 as="h4"
@@ -142,7 +142,7 @@ const amount = ref('')
                 ipsum rogavi.
               </BaseParagraph>
             </div>
-            <!--Grid item-->
+            <!-- Grid item -->
             <div class="space-y-2">
               <BaseHeading
                 as="h4"
@@ -159,7 +159,7 @@ const amount = ref('')
                 ipsum rogavi.
               </BaseParagraph>
             </div>
-            <!--Grid item-->
+            <!-- Grid item -->
             <div class="space-y-2">
               <BaseHeading
                 as="h4"
@@ -176,7 +176,7 @@ const amount = ref('')
                 ipsum rogavi.
               </BaseParagraph>
             </div>
-            <!--Grid item-->
+            <!-- Grid item -->
             <div class="space-y-2">
               <BaseHeading
                 as="h4"
@@ -194,7 +194,7 @@ const amount = ref('')
               </BaseParagraph>
             </div>
           </div>
-          <!--Back button-->
+          <!-- Back button -->
           <div class="mt-10">
             <BaseButton
               rounded="md"
@@ -208,12 +208,12 @@ const amount = ref('')
         </div>
       </div>
 
-      <!--Step 2-->
+      <!-- Step 2 -->
       <div
         v-else-if="step === 2"
         class="flex w-full flex-col items-center md:flex-row"
       >
-        <!--Column-->
+        <!-- Column -->
         <div class="w-full md:w-1/2">
           <div class="max-w-md space-y-3 p-4">
             <BaseHeading
@@ -229,9 +229,9 @@ const amount = ref('')
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
               optime, secundum naturam affectum esse possit.
             </BaseParagraph>
-            <!--Form-->
+            <!-- Form -->
             <form class="space-y-4 pb-6">
-              <!--Field-->
+              <!-- Field -->
               <BaseInput
                 v-model="fullName"
                 icon="lucide:user"
@@ -239,9 +239,9 @@ const amount = ref('')
                 placeholder="Your complete name"
                 class="w-full"
               />
-              <!--Field group-->
+              <!-- Field group -->
               <div class="grid gap-4 md:grid-cols-2">
-                <!--Field-->
+                <!-- Field -->
                 <div class="relative">
                   <BaseSelect v-model="amount" label="Requested amount">
                     <option value="">
@@ -267,7 +267,7 @@ const amount = ref('')
                     </option>
                   </BaseSelect>
                 </div>
-                <!--Field-->
+                <!-- Field -->
                 <div class="relative">
                   <BaseSelect v-model="amount" label="Requested duration">
                     <option value="">
@@ -293,7 +293,7 @@ const amount = ref('')
               </div>
             </form>
 
-            <!--Buttons-->
+            <!-- Buttons -->
             <div class="flex gap-2">
               <BaseButton
                 rounded="md"
@@ -314,7 +314,7 @@ const amount = ref('')
             </div>
           </div>
         </div>
-        <!--Column-->
+        <!-- Column -->
         <div class="w-full md:w-1/2">
           <div class="text-primary-500 mx-auto max-w-sm">
             <VectorIllustrationTransaction />
@@ -322,12 +322,12 @@ const amount = ref('')
         </div>
       </div>
 
-      <!--Step 3-->
+      <!-- Step 3 -->
       <div
         v-else-if="step === 3"
         class="flex w-full flex-col items-center md:flex-row"
       >
-        <!--Column-->
+        <!-- Column -->
         <div class="w-full md:w-1/2">
           <div class="max-w-md space-y-3 p-4">
             <BaseHeading
@@ -343,10 +343,10 @@ const amount = ref('')
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
               optime, secundum naturam affectum esse possit.
             </BaseParagraph>
-            <!--Download links-->
+            <!-- Download links -->
             <div class="py-5">
               <ul class="space-y-1">
-                <!--Links-->
+                <!-- Links -->
                 <li>
                   <NuxtLink
                     to="#"
@@ -406,7 +406,7 @@ const amount = ref('')
               </ul>
             </div>
 
-            <!--Buttons-->
+            <!-- Buttons -->
             <div class="flex gap-2">
               <BaseButton
                 rounded="md"
@@ -427,7 +427,7 @@ const amount = ref('')
             </div>
           </div>
         </div>
-        <!--Column-->
+        <!-- Column -->
         <div class="w-full md:w-1/2">
           <div class="text-primary-500 mx-auto max-w-sm">
             <VectorIllustrationCreditCard />
@@ -435,7 +435,7 @@ const amount = ref('')
         </div>
       </div>
 
-      <!--Step 4-->
+      <!-- Step 4 -->
       <div v-else-if="step === 4" class="flex w-full items-center">
         <div class="mx-auto w-full max-w-md py-6 text-center">
           <div class="text-primary-500 mx-auto mb-4 size-14">

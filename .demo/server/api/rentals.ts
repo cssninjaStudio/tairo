@@ -23,8 +23,8 @@ interface Rental {
 
 export default defineEventHandler(async (event) => {
   const query = getQuery(event)
-  const perPage = parseInt((query.perPage as string) || '5', 10)
-  const page = parseInt((query.page as string) || '1', 10)
+  const perPage = Number.parseInt((query.perPage as string) || '5', 10)
+  const page = Number.parseInt((query.page as string) || '1', 10)
   const filter = (query.filter as string) || ''
 
   if (perPage >= 50) {

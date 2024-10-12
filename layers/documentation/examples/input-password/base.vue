@@ -1,3 +1,7 @@
+<script lang="ts" setup>
+const password = ref('')
+</script>
+
 <template>
   <div class="max-w-md">
     <AddonInputPassword
@@ -6,7 +10,3 @@
     />
   </div>
 </template>
-
-<script lang="ts" setup>
-const password = ref('')
-</script>

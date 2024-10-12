@@ -1,13 +1,12 @@
 ---
 title: Mapbox
-components: 
+components:
   - AddonMapboxPanel
 description: Tairo ships with a Mapbox integration, allowing you to display maps anywhere you want. Explore the mapbox panel for a concrete example.
 icon:
   src: /img/illustrations/components/map-icon.svg
   srcDark: /img/illustrations/components/map-icon.svg
 ---
-
 
 ::doc-component-demo
 ---

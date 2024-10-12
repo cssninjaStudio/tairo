@@ -1,3 +1,9 @@
+<script setup lang="ts">
+// This is the computed value that will be used to display the current avatar
+const currentAvatar = computed(() => '/img/avatars/10.svg')
+const inputFile = ref<FileList | null>(null)
+</script>
+
 <template>
   <div>
     <form
@@ -53,9 +59,3 @@
     </form>
   </div>
 </template>
-
-<script setup lang="ts">
-// This is the computed value that will be used to display the current avatar
-const currentAvatar = computed(() => '/img/avatars/10.svg')
-const inputFile = ref<FileList | null>(null)
-</script>

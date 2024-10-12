@@ -1,13 +1,12 @@
 ---
 title: BaseTextarea
-components: 
+components:
   - BaseTextarea
 description: A textarea is a form element that allows the user to enter long text data from the keyboard. Explore the available customization options.
 icon:
   src: /img/illustrations/components/textarea-icon.svg
   srcDark: /img/illustrations/components/textarea-icon.svg
 ---
-
 
 ::doc-component-demo
 ---
@@ -91,6 +90,5 @@ demo: '#examples/textarea/addon.vue'
 ---
 Textarea can have custom addons. Use the `addon` slot to add your own custom addons.
 ::
-
 
 :doc-component-meta{name="BaseTextarea"}

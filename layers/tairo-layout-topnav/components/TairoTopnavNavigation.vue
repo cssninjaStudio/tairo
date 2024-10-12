@@ -18,7 +18,6 @@ const props = withDefaults(
   },
 )
 const { menuItems, isMobileOpen } = useTopnav()
-const app = useAppConfig()
 </script>
 
 <template>
@@ -34,12 +33,12 @@ const app = useAppConfig()
       :class="[
         props.display === 'condensed' && 'w-full',
         props.display === 'horizontal-scroll' && 'mx-auto w-full pe-4',
-        props.display === 'expanded-sm' &&
-          'mx-auto w-full max-w-5xl px-4 lg:px-0',
-        props.display === 'expanded-md' &&
-          'mx-auto w-full max-w-6xl px-4 lg:px-0',
-        props.display === 'expanded-lg' &&
-          'mx-auto w-full max-w-7xl px-4 lg:px-0',
+        props.display === 'expanded-sm'
+          && 'mx-auto w-full max-w-5xl px-4 lg:px-0',
+        props.display === 'expanded-md'
+          && 'mx-auto w-full max-w-6xl px-4 lg:px-0',
+        props.display === 'expanded-lg'
+          && 'mx-auto w-full max-w-7xl px-4 lg:px-0',
         props.display === 'expanded-xl' && 'mx-auto w-full px-4 lg:px-0',
       ]"
     >
@@ -72,8 +71,8 @@ const app = useAppConfig()
       class="flex items-center"
       :class="[
         props.display === 'condensed' && 'w-full',
-        props.display === 'horizontal-scroll' &&
-          'mx-auto w-full overflow-x-auto',
+        props.display === 'horizontal-scroll'
+          && 'mx-auto w-full overflow-x-auto',
         props.display === 'expanded-sm' && 'mx-auto w-full max-w-5xl',
         props.display === 'expanded-md' && 'mx-auto w-full max-w-6xl',
         props.display === 'expanded-lg' && 'mx-auto w-full max-w-7xl',

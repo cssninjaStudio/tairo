@@ -55,7 +55,7 @@ const recentChats = [
   },
 ]
 
-const addMessage = () => {
+function addMessage() {
   if (input.value) {
     loading.value = true
     conversation.value.push({
@@ -112,19 +112,19 @@ const addMessage = () => {
   }
 }
 
-const clearMessages = () => {
+function clearMessages() {
   conversation.value = []
 }
 
-const closeUpgrade = () => {
+function closeUpgrade() {
   upgrade.value = false
 }
 </script>
 
 <template>
-  <!--Wrapper-->
+  <!-- Wrapper -->
   <div class="dark:bg-muted-900 flex min-h-screen w-full flex-col bg-white sm:flex-row">
-    <!--Mobile menu-->
+    <!-- Mobile menu -->
     <aside>
       <div class="absolute z-10 flex h-16 items-center ps-3 lg:hidden">
         <button
@@ -137,7 +137,7 @@ const closeUpgrade = () => {
         </button>
       </div>
     </aside>
-    <!--Sidebar-->
+    <!-- Sidebar -->
     <aside
       class="group/sidebar bg-muted-50 dark:bg-muted-950 fixed start-0 top-0 z-30 flex h-full transition-all duration-300 lg:relative lg:h-auto"
       :class="[
@@ -344,7 +344,7 @@ const closeUpgrade = () => {
         </div>
       </div>
     </aside>
-    <!--Main-->
+    <!-- Main -->
     <main class="relative min-h-screen grow">
       <div class="bg-background absolute inset-0 flex justify-center overflow-hidden">
         <div class="absolute inset-0 flex select-none items-center justify-center overflow-hidden sm:p-4">
@@ -364,7 +364,7 @@ const closeUpgrade = () => {
           <div class="absolute end-32 top-[1.35rem] scale-75">
             <BaseThemeSwitch />
           </div>
-          <!--Content-->
+          <!-- Content -->
           <div
             class="absolute z-20 flex min-h-[285px] w-full flex-col items-stretch justify-start sm:min-h-[270px]"
             :class="conversation.length === 0 ? 'top-1/2 -translate-y-1/2' : 'top-0 h-screen'"
@@ -452,7 +452,7 @@ const closeUpgrade = () => {
                 </BaseDropdown>
               </div>
             </div>
-            <!--Header-->
+            <!-- Header -->
             <div v-if="conversation.length === 0" class="mx-auto mb-6 flex max-w-[49rem] flex-col items-center gap-2 px-6">
               <BaseHeading
                 as="h1"
@@ -466,7 +466,7 @@ const closeUpgrade = () => {
                 Generate UI, ask questions, debug, execute code, and much more.
               </h2>
             </div>
-            <!--Conversation-->
+            <!-- Conversation -->
             <div
               v-else
               ref="chatEl"
@@ -580,7 +580,7 @@ const closeUpgrade = () => {
                 </div>
               </div>
             </div>
-            <!--Chat compose-->
+            <!-- Chat compose -->
             <div class="relative inset-x-0 bottom-0 flex items-center">
               <div class="relative z-10 mx-auto flex w-full max-w-[49rem] flex-col px-6">
                 <div class="bg-muted-100 dark:bg-muted-800 text-muted-600 relative rounded-t-xl transition-transform delay-1000 duration-500" :class="upgrade ? 'translate-y-0' : 'translate-y-12'">
@@ -711,7 +711,7 @@ const closeUpgrade = () => {
         </div>
       </div>
     </main>
-    <!--Overlay-->
+    <!-- Overlay -->
     <div
       role="button"
       tabindex="0"

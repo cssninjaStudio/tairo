@@ -20,14 +20,13 @@ export default defineNuxtConfig({
     ],
   },
   hooks: {
-    // @ts-ignore - hook registered by nuxt-tailwind via @shuriken-ui/nuxt
-    'tailwindcss:config'(config) {
+    'tailwindcss:config': function (config) {
       if (Array.isArray(config.content)) {
         // This add examples/ folder to the tailwind content list
         // making it possible to use tailwind classes inside the examples
         config.content.push(
-          fileURLToPath(new URL('./examples', import.meta.url))
-          + '/**/*.{vue,js,ts}',
+          `${fileURLToPath(new URL('./examples', import.meta.url))
+          }/**/*.{vue,js,ts}`,
         )
       }
     },

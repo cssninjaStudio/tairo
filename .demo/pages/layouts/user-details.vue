@@ -15,7 +15,7 @@ definePageMeta({
 
 <template>
   <div class="w-full">
-    <!--Header-->
+    <!-- Header -->
     <div class="border-muted-200 dark:border-muted-800 border-b py-6">
       <div class="flex items-center gap-3">
         <BaseAvatar
@@ -40,11 +40,11 @@ definePageMeta({
         </div>
       </div>
     </div>
-    <!--Content-->
+    <!-- Content -->
     <div class="space-y-10">
-      <!--Section-->
+      <!-- Section -->
       <div class="grid gap-8 pt-6 md:grid-cols-12">
-        <!--Column-->
+        <!-- Column -->
         <div class="md:col-span-5">
           <div class="w-full max-w-xs">
             <BaseHeading
@@ -61,7 +61,7 @@ definePageMeta({
             </BaseParagraph>
           </div>
         </div>
-        <!--Column-->
+        <!-- Column -->
         <div class="md:col-span-7">
           <BaseHeading
             as="h3"
@@ -74,7 +74,7 @@ definePageMeta({
           <div
             class="divide-muted-200 dark:divide-muted-800 flex flex-col divide-y"
           >
-            <!--Item-->
+            <!-- Item -->
             <div class="group">
               <NuxtLink
                 to="/layouts/profile-edit"
@@ -103,7 +103,7 @@ definePageMeta({
                 </BaseText>
               </NuxtLink>
             </div>
-            <!--Item-->
+            <!-- Item -->
             <div class="group">
               <NuxtLink
                 to="/layouts/profile-edit"
@@ -132,7 +132,7 @@ definePageMeta({
                 </BaseText>
               </NuxtLink>
             </div>
-            <!--Item-->
+            <!-- Item -->
             <div class="group">
               <NuxtLink
                 to="/layouts/profile-edit"
@@ -164,9 +164,9 @@ definePageMeta({
           </div>
         </div>
       </div>
-      <!--Section-->
+      <!-- Section -->
       <div class="grid gap-8 pt-6 md:grid-cols-12">
-        <!--Column-->
+        <!-- Column -->
         <div class="md:col-span-5">
           <div class="w-full max-w-xs">
             <BaseHeading
@@ -183,7 +183,7 @@ definePageMeta({
             </BaseParagraph>
           </div>
         </div>
-        <!--Column-->
+        <!-- Column -->
         <div class="md:col-span-7">
           <BaseHeading
             as="h3"
@@ -196,7 +196,7 @@ definePageMeta({
           <div
             class="divide-muted-200 dark:divide-muted-800 flex flex-col divide-y"
           >
-            <!--Item-->
+            <!-- Item -->
             <div class="group">
               <NuxtLink
                 to="/layouts/profile-edit"
@@ -225,7 +225,7 @@ definePageMeta({
                 </BaseText>
               </NuxtLink>
             </div>
-            <!--Item-->
+            <!-- Item -->
             <div class="group">
               <NuxtLink
                 to="/layouts/profile-edit"
@@ -254,7 +254,7 @@ definePageMeta({
                 </BaseText>
               </NuxtLink>
             </div>
-            <!--Item-->
+            <!-- Item -->
             <div class="group">
               <NuxtLink
                 href="/layouts/profile-edit"
@@ -283,7 +283,7 @@ definePageMeta({
                 </BaseText>
               </NuxtLink>
             </div>
-            <!--Item-->
+            <!-- Item -->
             <div class="group">
               <NuxtLink
                 to="/layouts/profile-edit"
@@ -315,9 +315,9 @@ definePageMeta({
           </div>
         </div>
       </div>
-      <!--Section-->
+      <!-- Section -->
       <div class="grid gap-8 pt-6 md:grid-cols-12">
-        <!--Column-->
+        <!-- Column -->
         <div class="md:col-span-5">
           <div class="w-full max-w-xs">
             <BaseHeading
@@ -334,7 +334,7 @@ definePageMeta({
             </BaseParagraph>
           </div>
         </div>
-        <!--Column-->
+        <!-- Column -->
         <div class="md:col-span-7">
           <div
             class="border-muted-200 dark:border-muted-800 border-b px-4 pb-4"
@@ -379,9 +379,9 @@ definePageMeta({
           </div>
         </div>
       </div>
-      <!--Section-->
+      <!-- Section -->
       <div class="grid gap-8 pt-6 md:grid-cols-12">
-        <!--Column-->
+        <!-- Column -->
         <div class="md:col-span-5">
           <div class="w-full max-w-xs">
             <BaseHeading
@@ -398,7 +398,7 @@ definePageMeta({
             </BaseParagraph>
           </div>
         </div>
-        <!--Column-->
+        <!-- Column -->
         <div class="md:col-span-7">
           <div
             class="border-muted-200 dark:border-muted-800 border-b px-4 pb-4"
@@ -443,9 +443,9 @@ definePageMeta({
           </div>
         </div>
       </div>
-      <!--Section-->
+      <!-- Section -->
       <div class="grid gap-8 pt-6 md:grid-cols-12">
-        <!--Column-->
+        <!-- Column -->
         <div class="md:col-span-5">
           <div class="w-full max-w-xs">
             <BaseHeading
@@ -462,7 +462,7 @@ definePageMeta({
             </BaseParagraph>
           </div>
         </div>
-        <!--Column-->
+        <!-- Column -->
         <div class="md:col-span-7">
           <div
             class="border-muted-200 dark:border-muted-800 border-b px-4 pb-4"

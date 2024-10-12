@@ -1,8 +1,11 @@
 <script setup lang="ts">
 import type { Options, OptionsType, ZxcvbnResult } from '@zxcvbn-ts/core'
 
-// eslint-disable-next-line @typescript-eslint/consistent-type-imports
 type LocaleImport = typeof import('@zxcvbn-ts/language-en')
+
+defineOptions({
+  inheritAttrs: false,
+})
 
 const props = withDefaults(defineProps<{
   /**
@@ -43,10 +46,6 @@ const emits = defineEmits<{
   'visibility': [state: boolean]
 }>()
 
-defineOptions({
-  inheritAttrs: false,
-})
-
 const vmodel = useVModel(props, 'modelValue', emits, {
   passive: true,
   defaultValue: '',
@@ -54,7 +53,6 @@ const vmodel = useVModel(props, 'modelValue', emits, {
 
 const showPassword = ref(props.show ?? false)
 
-// eslint-disable-next-line @typescript-eslint/consistent-type-imports
 let zxcvbn: typeof import('@zxcvbn-ts/core').zxcvbnAsync
 let zxcvbnOptions: Options
 let options: OptionsType
@@ -151,6 +149,7 @@ const buttonBorder = computed(() => {
     case 'full':
       return '[&_.nui-text-button]:rounded-s-full'
     case 'none':
+    default:
       return ''
   }
 })
@@ -181,10 +180,7 @@ const buttonBorder = computed(() => {
               class="text-muted-400 dark:text-muted-500 size-4 shrink-0"
             />
             <span
-              class="grow text-xs dark:text-slate-400"
-              :class="[
-                'dark:text-slate-350 font-semibold',
-              ]"
+              class="grow text-xs dark:text-slate-400 dark:text-slate-350 font-semibold"
             >
               {{ validation?.feedback?.warning }}
             </span>
@@ -199,10 +195,7 @@ const buttonBorder = computed(() => {
               class="text-muted-400 dark:text-muted-500 size-4 shrink-0"
             />
             <span
-              class="grow text-xs dark:text-slate-400"
-              :class="[
-                'dark:text-slate-350 font-semibold',
-              ]"
+              class="grow text-xs dark:text-slate-400 dark:text-slate-350 font-semibold"
             >
               {{ suggestion }}
             </span>

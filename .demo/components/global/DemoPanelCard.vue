@@ -36,7 +36,7 @@ const daySpentProgress = computed(() => {
           Card Details
         </BaseHeading>
 
-        <!--Close button-->
+        <!-- Close button -->
         <button
           type="button"
           class="nui-mask nui-mask-blob hover:bg-muted-100 focus:bg-muted-100 dark:hover:bg-muted-700 dark:focus:bg-muted-700 text-muted-700 dark:text-muted-400 flex size-10 cursor-pointer items-center justify-center outline-transparent transition-colors duration-300"
@@ -50,7 +50,7 @@ const daySpentProgress = computed(() => {
         class="nui-slimscroll relative h-[calc(100dvh_-_80px)] w-full overflow-y-auto p-6"
       >
         <div class="mb-3">
-          <!--Info-->
+          <!-- Info -->
           <div class="flex items-center justify-between">
             <div>
               <BaseHeading
@@ -79,14 +79,14 @@ const daySpentProgress = computed(() => {
               </BaseParagraph>
             </div>
           </div>
-          <!--Progress-->
+          <!-- Progress -->
           <BaseProgress
             :value="daySpentProgress"
             size="xs"
             class="my-2"
           />
 
-          <!--Card details-->
+          <!-- Card details -->
           <div class="pt-2">
             <button
               type="button"
@@ -118,12 +118,12 @@ const daySpentProgress = computed(() => {
                 </BaseText>
               </span>
             </button>
-            <!--Collapse-->
+            <!-- Collapse -->
             <div
               v-if="detailsExpanded"
               class="bg-muted-100 dark:bg-muted-900 rounded-xl p-6"
             >
-              <!--Head-->
+              <!-- Head -->
               <div
                 class="border-muted-200 dark:border-muted-700 mb-3 flex items-center justify-between border-b pb-3"
               >
@@ -143,9 +143,9 @@ const daySpentProgress = computed(() => {
                   ${{ (card.limits.spend + card.limits.withdraw).toFixed(2) }}
                 </BaseText>
               </div>
-              <!--Content-->
+              <!-- Content -->
               <div class="space-y-4">
-                <!--Item-->
+                <!-- Item -->
                 <div class="flex items-center justify-between">
                   <div class="flex items-center gap-2">
                     <div class="bg-muted-800 size-2 rounded-full" />
@@ -170,7 +170,7 @@ const daySpentProgress = computed(() => {
                     ${{ card.funds.posted.toFixed(2) }}
                   </BaseText>
                 </div>
-                <!--Item-->
+                <!-- Item -->
                 <div class="flex items-center justify-between">
                   <div class="flex items-center gap-2">
                     <div class="bg-muted-500 size-2 rounded-full" />
@@ -197,7 +197,7 @@ const daySpentProgress = computed(() => {
                     ${{ card.funds.pending.toFixed(2) }}
                   </BaseText>
                 </div>
-                <!--Item-->
+                <!-- Item -->
                 <div class="flex items-center justify-between">
                   <div class="flex items-center gap-2">
                     <div class="bg-muted-300 size-2 rounded-full" />
@@ -224,7 +224,7 @@ const daySpentProgress = computed(() => {
                     ${{ card.funds.unavailable.toFixed(2) }}
                   </BaseText>
                 </div>
-                <!--Item-->
+                <!-- Item -->
                 <div class="flex items-center justify-between">
                   <div class="flex items-center gap-2">
                     <div class="size-2 rounded-full bg-white" />
@@ -248,14 +248,14 @@ const daySpentProgress = computed(() => {
           </div>
 
           <div class="mt-4 w-full space-y-5">
-            <!--Card mockup-->
+            <!-- Card mockup -->
             <DemoCreditCardReal
               :status="card.cardInfo.status"
               :name="card.cardInfo.name"
               :number="card.cardInfo.number"
               :brand="card.cardInfo.brand"
             />
-            <!--Card info / actions-->
+            <!-- Card info / actions -->
             <div class="space-y-4 px-2">
               <BaseParagraph size="xs" class="text-muted-400 text-center">
                 This card was issued on {{ card.creationDate }}
@@ -282,7 +282,7 @@ const daySpentProgress = computed(() => {
                 </BaseButton>
               </div>
             </div>
-            <!--Billing address-->
+            <!-- Billing address -->
             <div class="border-muted-200 dark:border-muted-700 border-t">
               <div class="pt-6">
                 <BaseParagraph size="xs" class="text-muted-400 mb-2">
@@ -299,10 +299,10 @@ const daySpentProgress = computed(() => {
                 </BaseParagraph>
               </div>
             </div>
-            <!--Summary-->
+            <!-- Summary -->
             <div class="border-muted-200 dark:border-muted-700 border-t">
               <div class="space-y-4 py-6">
-                <!--item-->
+                <!-- item -->
                 <div class="flex items-center justify-between">
                   <BaseParagraph
                     size="sm"
@@ -319,7 +319,7 @@ const daySpentProgress = computed(() => {
                     ${{ card.limits.spend.toFixed(2) }}
                   </BaseParagraph>
                 </div>
-                <!--item-->
+                <!-- item -->
                 <div class="flex items-center justify-between">
                   <div>
                     <BaseParagraph
@@ -346,7 +346,7 @@ const daySpentProgress = computed(() => {
                     </BaseParagraph>
                   </div>
                 </div>
-                <!--item-->
+                <!-- item -->
                 <div class="flex items-center justify-between">
                   <BaseParagraph
                     size="sm"
@@ -364,7 +364,7 @@ const daySpentProgress = computed(() => {
                     Checking {{ card.account }}
                   </NuxtLink>
                 </div>
-                <!--item-->
+                <!-- item -->
                 <div class="flex items-center justify-between">
                   <BaseParagraph
                     size="sm"

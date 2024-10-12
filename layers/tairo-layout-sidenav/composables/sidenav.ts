@@ -110,7 +110,7 @@ export function useSidenav() {
 
   if (import.meta.client) {
     const route = useRoute()
-    const { lg, xl } = useTailwindBreakpoints()
+    const { lg } = useTailwindBreakpoints()
     watch(lg, (isLg) => {
       if (isLg) {
         isMobileOpen.value = false

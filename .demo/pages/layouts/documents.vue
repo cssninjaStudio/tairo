@@ -15,7 +15,7 @@ definePageMeta({
 
 <template>
   <div class="w-full pb-24">
-    <!--Header-->
+    <!-- Header -->
     <div class="border-muted-200 dark:border-muted-800 border-b py-6">
       <BaseHeading
         as="h2"
@@ -30,11 +30,11 @@ definePageMeta({
       </BaseParagraph>
     </div>
 
-    <!--Body-->
+    <!-- Body -->
     <div class="divide-muted-200 dark:divide-muted-800 space-y-10 py-6">
-      <!--Statements-->
+      <!-- Statements -->
       <div class="grid gap-8 md:grid-cols-12">
-        <!--Column-->
+        <!-- Column -->
         <div class="md:col-span-4">
           <BaseHeading
             as="h3"
@@ -49,7 +49,7 @@ definePageMeta({
             download a CSV.
           </BaseParagraph>
         </div>
-        <!--Column-->
+        <!-- Column -->
         <div class="md:col-span-8">
           <BaseHeading
             as="h4"
@@ -62,7 +62,7 @@ definePageMeta({
           <div
             class="divide-muted-200 dark:divide-muted-800 flex flex-col divide-y"
           >
-            <!--Item-->
+            <!-- Item -->
             <div class="group">
               <NuxtLink
                 to="#"
@@ -81,7 +81,7 @@ definePageMeta({
                 </BaseText>
               </NuxtLink>
             </div>
-            <!--Item-->
+            <!-- Item -->
             <div class="group">
               <NuxtLink
                 to="#"
@@ -100,7 +100,7 @@ definePageMeta({
                 </BaseText>
               </NuxtLink>
             </div>
-            <!--Item-->
+            <!-- Item -->
             <div class="group">
               <NuxtLink
                 to="#"
@@ -123,9 +123,9 @@ definePageMeta({
         </div>
       </div>
 
-      <!--Documents-->
+      <!-- Documents -->
       <div class="grid gap-8 md:grid-cols-12">
-        <!--Column-->
+        <!-- Column -->
         <div class="md:col-span-4">
           <BaseHeading
             as="h3"
@@ -140,7 +140,7 @@ definePageMeta({
             verifications.
           </BaseParagraph>
         </div>
-        <!--Column-->
+        <!-- Column -->
         <div class="md:col-span-8">
           <BaseHeading
             as="h4"
@@ -153,7 +153,7 @@ definePageMeta({
           <div
             class="divide-muted-200 dark:divide-muted-800 flex flex-col divide-y"
           >
-            <!--Item-->
+            <!-- Item -->
             <div class="group">
               <NuxtLink
                 to="#"
@@ -172,7 +172,7 @@ definePageMeta({
                 </BaseText>
               </NuxtLink>
             </div>
-            <!--Item-->
+            <!-- Item -->
             <div class="group">
               <NuxtLink
                 to="#"

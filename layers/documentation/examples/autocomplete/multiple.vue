@@ -1,3 +1,9 @@
+<script setup lang="ts">
+const value = ref<string[]>(['Nuxt', 'Vue.js'])
+
+const frameworks = ref(['Javascript', 'Nuxt', 'Vue.js', 'React.js', 'Angular', 'Alpine.js'])
+</script>
+
 <template>
   <div class="max-w-sm">
     <BaseAutocomplete
@@ -11,9 +17,3 @@
     />
   </div>
 </template>
-
-<script setup lang="ts">
-const value = ref<string[]>(['Nuxt', 'Vue.js'])
-
-const frameworks = ref(['Javascript', 'Nuxt', 'Vue.js', 'React.js', 'Angular', 'Alpine.js'])
-</script>

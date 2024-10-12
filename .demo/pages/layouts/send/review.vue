@@ -32,7 +32,7 @@ onBeforeMount(checkPreviousSteps)
 
 <template>
   <div class="w-full">
-    <!--Review section-->
+    <!-- Review section -->
     <div v-if="!complete">
       <div class="mb-8 space-y-2">
         <BaseHeading
@@ -52,9 +52,9 @@ onBeforeMount(checkPreviousSteps)
       </div>
 
       <div class="w-full max-w-md space-y-6">
-        <!--Numbers-->
+        <!-- Numbers -->
         <div class="flex items-end justify-between pb-4">
-          <!--Amount-->
+          <!-- Amount -->
           <div class="flex-1">
             <BaseParagraph size="xs" class="text-muted-400 mb-1">
               Transfer amount
@@ -68,7 +68,7 @@ onBeforeMount(checkPreviousSteps)
               ${{ request.amount.toFixed(2) }}
             </BaseHeading>
           </div>
-          <!--Amount-->
+          <!-- Amount -->
           <div class="flex-1 text-end">
             <BaseParagraph size="xs" class="text-muted-400 mb-1">
               Routing number
@@ -93,7 +93,7 @@ onBeforeMount(checkPreviousSteps)
           </div>
         </div>
 
-        <!--Recipient-->
+        <!-- Recipient -->
         <div>
           <p class="font-heading text-muted-400 mb-1 text-xs">
             Recipient
@@ -184,7 +184,7 @@ onBeforeMount(checkPreviousSteps)
           </div>
         </div>
 
-        <!--Account-->
+        <!-- Account -->
         <div>
           <p class="font-heading text-muted-400 mb-1 text-xs">
             Transfer from
@@ -227,7 +227,7 @@ onBeforeMount(checkPreviousSteps)
           </div>
         </div>
 
-        <!--Buttons-->
+        <!-- Buttons -->
         <div class="flex gap-4">
           <BaseButton
             v-if="currentStepId > 0"
@@ -252,7 +252,7 @@ onBeforeMount(checkPreviousSteps)
       </div>
     </div>
 
-    <!--Success section-->
+    <!-- Success section -->
     <div v-else>
       <div class="mx-auto w-full max-w-md py-6 text-center">
         <div class="text-primary-500 mx-auto mb-4 size-14">

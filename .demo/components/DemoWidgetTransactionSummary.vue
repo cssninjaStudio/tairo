@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const route = useRoute()
 const router = useRouter()
-const page = computed(() => parseInt((route.query.page as string) ?? '1'))
+const page = computed(() => Number.parseInt((route.query.page as string) ?? '1'))
 
 const filter = ref('')
 const perPage = ref(10)
@@ -22,7 +22,7 @@ const query = computed(() => {
   }
 })
 
-const { data, pending, error, refresh } = await useFetch('/api/transactions', {
+const { data, pending } = await useFetch('/api/transactions', {
   query,
 })
 
@@ -78,7 +78,7 @@ function statusColor(itemStatus: string) {
           </tr>
         </thead>
         <tbody>
-          <!--Row-->
+          <!-- Row -->
           <tr
             v-for="item in data?.data.slice(0, 8)"
             :key="item.id"

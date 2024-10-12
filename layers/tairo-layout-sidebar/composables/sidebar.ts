@@ -125,7 +125,7 @@ export function useSidebar() {
     // Detect sidebar item on client page change
     // page:finish allow to wait for the page to be fully loaded before detecting the sidebar item
     const nuxtApp = useNuxtApp()
-    const removeHook = nuxtApp.hook('page:finish', (e) => {
+    const removeHook = nuxtApp.hook('page:finish', () => {
       detect()
       removeHook()
     })

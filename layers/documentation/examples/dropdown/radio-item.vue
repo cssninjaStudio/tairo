@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const value = ref('personal')
+</script>
+
 <template>
   <div class="flex items-end">
     <BaseDropdown
@@ -91,7 +95,3 @@
     </BaseDropdown>
   </div>
 </template>
-
-<script setup lang="ts">
-const value = ref('personal')
-</script>

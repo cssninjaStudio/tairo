@@ -482,8 +482,8 @@ function wrapExternalLinks(string: string) {
                     nui: {
                       [docs.meta?.pascalName]: {
                         [prop.name]: prop.tags.find((tag: any) => tag.name === 'default')?.text?.replaceAll('\'', ''),
-                      }
-                    }
+                      },
+                    },
                   }, null, 2)}) */\n\n${docs.formatPropType(prop.type)}\n\`\`\``"
                 />
               </div>

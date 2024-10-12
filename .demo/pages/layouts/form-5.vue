@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { generatePassphrase as _generatePassphrase } from '~/utils/bundles/diceware'
 import Slider from '@vueform/slider'
+import { generatePassphrase as _generatePassphrase } from '~/utils/bundles/diceware'
 import '~/assets/css/slider.css'
 
 definePageMeta({
@@ -57,7 +57,8 @@ const hasChars = computed(() => {
 })
 
 watch([charsLength, charsLower, charsUpper, charsNumeric, charsSymbols], () => {
-  if (!hasChars.value) return
+  if (!hasChars.value)
+    return
 
   generatePassword()
 })
@@ -65,10 +66,14 @@ watch([charsLength, charsLower, charsUpper, charsNumeric, charsSymbols], () => {
 function generatePassword() {
   const dict: string[] = []
 
-  if (charsLower.value) dict.push(chars.value.lower)
-  if (charsUpper.value) dict.push(chars.value.upper)
-  if (charsNumeric.value) dict.push(chars.value.numeric)
-  if (charsSymbols.value) dict.push(chars.value.symbols)
+  if (charsLower.value)
+    dict.push(chars.value.lower)
+  if (charsUpper.value)
+    dict.push(chars.value.upper)
+  if (charsNumeric.value)
+    dict.push(chars.value.numeric)
+  if (charsSymbols.value)
+    dict.push(chars.value.symbols)
 
   password.value = shuffleArray(dict.join('').split(''))
     .join('')
@@ -88,10 +93,9 @@ onMounted(() => {
 })
 
 const { text, copy, copied, isSupported } = useClipboard({ source: password })
-const handleClipboard = () => {
+function handleClipboard() {
   copy(password.value)
   if (copied) {
-    console.log('Text was copied to clipboard!')
     toaster.clearAll()
     toaster.show({
       title: 'Success',
@@ -162,7 +166,7 @@ const handleClipboard = () => {
               :items="[{
                 title: 'Memorable niceware passwords',
                 content: 'passphrase',
-              },{
+              }, {
                 title: 'Password Generator',
                 content: 'password',
               }]"

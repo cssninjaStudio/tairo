@@ -126,8 +126,7 @@ function openTaskPanel(id: number, tasks: any) {
 
     // listen to "message" event emited from panel component
     onMessage: async (message: any) => {
-      console.log('onMessage')
-      console.log(message)
+      // console.log('onMessage', message)
       close()
     },
   })

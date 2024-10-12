@@ -1,16 +1,16 @@
 <script setup lang="ts">
 import { FocusTrap } from '@headlessui/vue'
 
+defineOptions({
+  inheritAttrs: false,
+})
+
 const props = defineProps<{
   src?: string
   srcDark?: string
   zoomSrc?: string
   zoomSrcDark?: string
 }>()
-
-defineOptions({
-  inheritAttrs: false,
-})
 
 const initialSize = ref<{
   top: number
@@ -31,8 +31,9 @@ const isUnzooming = ref(false)
 
 let y = 0
 
-const wheelListener = (event: WheelEvent) => {
-  if (event.ctrlKey) return
+function wheelListener(event: WheelEvent) {
+  if (event.ctrlKey)
+    return
   event.stopPropagation()
 
   y += event.deltaY
@@ -43,15 +44,17 @@ const wheelListener = (event: WheelEvent) => {
   unzoom()
 }
 
-const resizeListener = () => {
-  if (!isZoomed.value) return
-  if (!buttonRef.value) return
+function resizeListener() {
+  if (!isZoomed.value)
+    return
+  if (!buttonRef.value)
+    return
 
   const { top, left, width, height } = buttonRef.value.getBoundingClientRect()
   initialSize.value = { top, left, width, height }
 }
 
-const keydownListener = (event: KeyboardEvent) => {
+function keydownListener(event: KeyboardEvent) {
   if (event.key === 'Escape') {
     event.stopPropagation()
     unzoom()
@@ -59,12 +62,12 @@ const keydownListener = (event: KeyboardEvent) => {
 }
 
 let touchstartScreenY = 0
-const touchstartListener = (event: TouchEvent) => {
+function touchstartListener(event: TouchEvent) {
   event.stopPropagation()
   touchstartScreenY = event.changedTouches[0].screenY
 }
 
-const touchmoveListener = (event: TouchEvent) => {
+function touchmoveListener(event: TouchEvent) {
   event.stopPropagation()
 
   y = touchstartScreenY - event.changedTouches[0].screenY
@@ -77,7 +80,8 @@ const touchmoveListener = (event: TouchEvent) => {
 }
 
 function zoom() {
-  if (isZoomed.value) return
+  if (isZoomed.value)
+    return
 
   isZoomed.value = true
   isUnzooming.value = false
@@ -85,7 +89,8 @@ function zoom() {
   attachZoomEvents()
 }
 function unzoom() {
-  if (!isZoomed.value) return
+  if (!isZoomed.value)
+    return
 
   isZoomed.value = false
   isUnzooming.value = true

@@ -11,7 +11,7 @@ const props = defineProps<{
 
 const target = ref(null)
 const open = ref(false)
-onClickOutside(target, event => (open.value = false))
+onClickOutside(target, () => (open.value = false))
 </script>
 
 <template>
@@ -21,7 +21,7 @@ onClickOutside(target, event => (open.value = false))
     shadow="hover"
     class="p-5"
   >
-    <!--Trigger-->
+    <!-- Trigger -->
     <button
       type="button"
       class="click-blur flex w-full items-center gap-3"

@@ -1,6 +1,6 @@
 ---
 title: BaseListbox
-components: 
+components:
   - BaseListbox
   - BaseListboxItem
 description: Tairo ships with ready to use listbox select that render different kinds of lists, ranging from text to complex media objects.
@@ -68,7 +68,6 @@ demo: '#examples/listbox/disabled.vue'
 Listbox can be shown in a disabled state using the `disabled` prop.
 ::
 
-
 ::doc-component-demo
 ---
 title: Loading
@@ -76,7 +75,6 @@ demo: '#examples/listbox/loading.vue'
 ---
 Listbox can be shown in a loading state using the `loading` prop.
 ::
-
 
 ::doc-component-demo
 ---

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 definePageMeta({
   title: 'Recipients',
   preview: {
@@ -15,7 +14,7 @@ definePageMeta({
 
 const route = useRoute()
 const router = useRouter()
-const page = computed(() => parseInt((route.query.page as string) ?? '1'))
+const page = computed(() => Number.parseInt((route.query.page as string) ?? '1'))
 
 const filter = ref('')
 const perPage = ref(100)
@@ -55,7 +54,7 @@ const companies = computed(() => {
 <template>
   <div class="w-full">
     <div class="space-y-10">
-      <!--Recipients-->
+      <!-- Recipients -->
       <div class="w-full">
         <div class="mb-5 flex items-center gap-4">
           <BaseButtonIcon
@@ -88,7 +87,7 @@ const companies = computed(() => {
             People
           </BaseParagraph>
 
-          <!--Placeholder-->
+          <!-- Placeholder -->
           <DemoPlaceholderMinimal
             v-if="people?.length === 0"
             title="No contacts found"
@@ -96,9 +95,9 @@ const companies = computed(() => {
             transparent
           />
 
-          <!--People-->
+          <!-- People -->
           <div v-else class="grid gap-5 md:grid-cols-3">
-            <!--Grid item-->
+            <!-- Grid item -->
             <NuxtLink
               v-for="item in people"
               :key="item.id"
@@ -149,7 +148,7 @@ const companies = computed(() => {
             Companies
           </BaseParagraph>
 
-          <!--Placeholder-->
+          <!-- Placeholder -->
           <DemoPlaceholderMinimal
             v-if="companies?.length === 0"
             title="No contacts to show"
@@ -157,9 +156,9 @@ const companies = computed(() => {
             transparent
           />
 
-          <!--Companies-->
+          <!-- Companies -->
           <div v-else class="grid gap-5 md:grid-cols-3">
-            <!--Grid item-->
+            <!-- Grid item -->
             <NuxtLink
               v-for="item in companies"
               :key="item.id"

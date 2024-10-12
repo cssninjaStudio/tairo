@@ -109,6 +109,7 @@ const fieldsWithErrors = computed(() => Object.keys(errors.value).length)
 // Ask the user for confirmation before leaving the page if the form has unsaved changes
 onBeforeRouteLeave(() => {
   if (meta.value.dirty) {
+    // eslint-disable-next-line no-alert
     return confirm('You have unsaved changes. Are you sure you want to leave?')
   }
 })
@@ -121,7 +122,7 @@ const onSubmit = handleSubmit(
     success.value = false
 
     // here you have access to the validated form values
-    console.log('meeting-create-success', values)
+    // console.log('meeting-create-success', values)
 
     try {
       // fake delay, this will make isSubmitting value to be true
@@ -179,12 +180,12 @@ const onSubmit = handleSubmit(
       success.value = false
     }, 3000)
   },
-  (error) => {
+  (_error) => {
     // this callback is optional and called only if the form has errors
     success.value = false
 
     // here you have access to the error
-    console.log('meeting-create-error', error)
+    // console.log('meeting-create-error', error)
 
     // you can use it to scroll to the first error
     document.documentElement.scrollTo({
@@ -711,13 +712,12 @@ const colorCode = ref('color_code_1')
                         </div>
 
                         <div
-                          class="ms-auto w-32 px-4 transition-opacity duration-300"
-                          :class="'opacity-100'"
+                          class="ms-auto w-32 px-4 transition-opacity duration-300 opacity-100"
                         >
                           <BaseProgress
                             :value="0"
                             size="xs"
-                            :color="'success'"
+                            color="success"
                           />
                         </div>
                         <div class="flex gap-2">

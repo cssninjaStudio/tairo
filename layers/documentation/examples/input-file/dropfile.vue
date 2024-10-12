@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const uploadedFiles = ref<FileList | null>(null)
+</script>
+
 <template>
   <div class="max-w-xl">
     <BaseFullscreenDropfile
@@ -117,11 +121,11 @@
                 </div>
               </div>
 
-              <div class="ms-auto w-32 px-4 transition-opacity duration-300" :class="'opacity-100'">
+              <div class="ms-auto w-32 px-4 transition-opacity duration-300 opacity-100">
                 <BaseProgress
                   :value="0"
                   size="xs"
-                  :color="'success'"
+                  color="success"
                 />
               </div>
 
@@ -165,7 +169,3 @@
     </BaseInputFileHeadless>
   </div>
 </template>
-
-<script setup lang="ts">
-const uploadedFiles = ref<FileList | null>(null)
-</script>

@@ -1,11 +1,3 @@
-<template>
-  <div>
-    <BaseButton @click="open('task', { task: task })">
-      Open Panel
-    </BaseButton>
-  </div>
-</template>
-
 <script setup lang="ts">
 const { open } = usePanels()
 
@@ -102,3 +94,11 @@ const task = {
   ],
 }
 </script>
+
+<template>
+  <div>
+    <BaseButton @click="open('task', { task })">
+      Open Panel
+    </BaseButton>
+  </div>
+</template>

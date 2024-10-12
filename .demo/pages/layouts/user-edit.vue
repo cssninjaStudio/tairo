@@ -224,6 +224,7 @@ watch(inputFile, (value) => {
 // Ask the user for confirmation before leaving the page if the form has unsaved changes
 onBeforeRouteLeave(() => {
   if (meta.value.dirty) {
+    // eslint-disable-next-line no-alert
     return confirm('You have unsaved changes. Are you sure you want to leave?')
   }
 })
@@ -236,7 +237,7 @@ const onSubmit = handleSubmit(
     success.value = false
 
     // here you have access to the validated form values
-    console.log('profile-edit-success', values)
+    // console.log('profile-edit-success', values)
 
     try {
       // fake delay, this will make isSubmitting value to be true
@@ -294,12 +295,12 @@ const onSubmit = handleSubmit(
       success.value = false
     }, 3000)
   },
-  (error) => {
+  (_error) => {
     // this callback is optional and called only if the form has errors
     success.value = false
 
     // here you have access to the error
-    console.log('profile-edit-error', error)
+    // console.log('profile-edit-error', error)
 
     // you can use it to scroll to the first error
     document.documentElement.scrollTo({
@@ -389,9 +390,9 @@ const onSubmit = handleSubmit(
                     {{ fileError }}
                   </div>
                 </div>
-                <!--Form fields-->
+                <!-- Form fields -->
                 <div class="space-y-12">
-                  <!--Personal info-->
+                  <!-- Personal info -->
                   <TairoFormGroup
                     label="Personal info"
                     sublabel="Basic info about you"
@@ -824,7 +825,7 @@ const onSubmit = handleSubmit(
                     </div>
                   </TairoFormGroup>
 
-                  <!--Address info-->
+                  <!-- Address info -->
                   <TairoFormGroup
                     label="Mailing address"
                     sublabel="The address we will use to mail you"
@@ -990,7 +991,7 @@ const onSubmit = handleSubmit(
                     </div>
                   </TairoFormGroup>
 
-                  <!--Address info-->
+                  <!-- Address info -->
                   <TairoFormGroup
                     label="Legal address"
                     sublabel="Your legal address for billing purposes"

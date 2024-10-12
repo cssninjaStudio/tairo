@@ -1,3 +1,13 @@
+<script setup lang="ts">
+const fields = reactive({
+  first: '',
+  second: '',
+  third: '',
+})
+
+const frameworks = ref(['Javascript', 'Nuxt', 'Vue.js', 'React.js', 'Angular', 'Alpine.js'])
+</script>
+
 <template>
   <div class="flex max-w-3xl flex-col flex-wrap gap-3 md:flex-row md:items-end">
     <div class="flex-1">
@@ -34,13 +44,3 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-const fields = reactive({
-  first: '',
-  second: '',
-  third: '',
-})
-
-const frameworks = ref(['Javascript', 'Nuxt', 'Vue.js', 'React.js', 'Angular', 'Alpine.js'])
-</script>

@@ -25,7 +25,7 @@ const endMenuItems = computed(
         : '-translate-x-full lg:translate-x-0',
     ]"
   >
-    <!--Header-->
+    <!-- Header -->
     <slot name="header">
       <component
         :is="
@@ -36,14 +36,14 @@ const endMenuItems = computed(
         v-if="app.tairo?.collapse?.navigation?.header?.component"
       />
     </slot>
-    <!--Body-->
+    <!-- Body -->
     <div
       class=" relative flex w-full grow flex-col py-6"
       :class="!isOpen ? 'px-4' : 'px-6 nui-slimscroll overflow-y-auto'"
     >
-      <!--Menu-->
+      <!-- Menu -->
       <ul v-if="startMenuItems?.length" class="space-y-2">
-        <!--Menu item-->
+        <!-- Menu item -->
         <li v-for="(item, index) in startMenuItems" :key="index">
           <component
             :is="resolveComponentOrNative(item?.component?.name)"
@@ -94,9 +94,9 @@ const endMenuItems = computed(
         </li>
       </ul>
       <div class="mb-2 grow" />
-      <!--Menu-->
+      <!-- Menu -->
       <ul v-if="endMenuItems?.length" class="space-y-2">
-        <!--Menu item-->
+        <!-- Menu item -->
         <li v-for="(item, index) in endMenuItems" :key="index">
           <component
             :is="resolveComponentOrNative(item?.component?.name)"
@@ -145,7 +145,7 @@ const endMenuItems = computed(
         </li>
       </ul>
     </div>
-    <!--Footer-->
+    <!-- Footer -->
     <slot name="footer">
       <component
         :is="

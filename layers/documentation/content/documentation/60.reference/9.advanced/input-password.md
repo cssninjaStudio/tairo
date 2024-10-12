@@ -1,13 +1,12 @@
 ---
 title: AddonInputPassword
-components: 
+components:
   - AddonInputPassword
 description: Secure password input field with password visibility toggle.
 icon:
   src: /img/illustrations/components/markdown-icon.svg
   srcDark: /img/illustrations/components/markdown-icon.svg
 ---
-
 
 ::doc-component-demo
 ---
@@ -21,7 +20,6 @@ The component extend the :doc-linker{to="BaseInput"} component, so you can use a
 This component uses [zxcvbn-ts](https://github.com/zxcvbn-ts/zxcvbn) to detect and validate the password input strength.
 :::
 ::
-
 
 ::doc-component-demo
 ---

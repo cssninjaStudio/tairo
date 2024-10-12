@@ -1,19 +1,19 @@
-import {
-  isBefore,
-  setMonth,
-  setYear,
-  setDay,
-  addMinutes,
-  differenceInMinutes,
-  roundToNearestMinutes,
-} from 'date-fns'
-
 import type {
   Awaitable,
   CalendarCustomAttribute,
-  CalendarSettings,
   CalendarEvent,
+  CalendarSettings,
 } from '../types'
+
+import {
+  addMinutes,
+  differenceInMinutes,
+  isBefore,
+  roundToNearestMinutes,
+  setDay,
+  setMonth,
+  setYear,
+} from 'date-fns'
 
 import { minutesToHeight, topToDate } from '../view'
 

@@ -1,23 +1,3 @@
-<template>
-  <div class="w-full">
-    <BaseCard class="relative p-6">
-      <div class="mb-6">
-        <BaseHeading
-          as="h3"
-          size="md"
-          weight="semibold"
-          lead="tight"
-          class="text-muted-800 dark:text-white"
-        >
-          <span>BTC Price Chart</span>
-        </BaseHeading>
-      </div>
-
-      <AddonApexcharts v-bind="areaBtcPrice" />
-    </BaseCard>
-  </div>
-</template>
-
 <script setup lang="ts">
 const areaBtcPrice = reactive(useAreaBtcPrice())
 
@@ -96,8 +76,8 @@ function useAreaBtcPrice() {
         format: 'dd MMM yyyy',
       },
       y: {
-        formatter: function (val: number) {
-          return val + '%'
+        formatter(val: number) {
+          return `${val}%`
         },
       },
     },
@@ -146,3 +126,23 @@ function useAreaBtcPrice() {
   }
 }
 </script>
+
+<template>
+  <div class="w-full">
+    <BaseCard class="relative p-6">
+      <div class="mb-6">
+        <BaseHeading
+          as="h3"
+          size="md"
+          weight="semibold"
+          lead="tight"
+          class="text-muted-800 dark:text-white"
+        >
+          <span>BTC Price Chart</span>
+        </BaseHeading>
+      </div>
+
+      <AddonApexcharts v-bind="areaBtcPrice" />
+    </BaseCard>
+  </div>
+</template>

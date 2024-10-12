@@ -50,7 +50,7 @@ onBeforeMount(checkPreviousSteps)
 
     <div class="w-full max-w-md">
       <div class="w-full space-y-4">
-        <!--Radio groups-->
+        <!-- Radio groups -->
         <BaseRadioHeadless
           v-model="request.method"
           v-focus="request.method === null || request.method === 'bank_transfer'"

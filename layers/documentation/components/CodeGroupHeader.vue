@@ -12,11 +12,11 @@ const props = defineProps<{
 }>()
 
 const activeTabIndex = defineModel<number>('activeTabIndex')
+const activeTab = computed(() => activeTabIndex.value !== undefined ? props.tabs[activeTabIndex.value] : null)
 
 const { copy, copied, isSupported } = useClipboard({
   source: () => activeTab.value?.code ?? '',
 })
-const activeTab = computed(() => activeTabIndex.value !== undefined ? props.tabs[activeTabIndex.value] : null)
 </script>
 
 <template>

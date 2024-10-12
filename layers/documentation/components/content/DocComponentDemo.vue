@@ -42,7 +42,7 @@ const exampleMarkdown = computed(() => {
   if (!exampleSource.value) {
     return ''
   }
-  return '```vue\n' + exampleSource.value + '\n```'
+  return `\`\`\`vue\n${exampleSource.value}\n\`\`\``
 })
 
 const hasDemoContent = computed(() =>

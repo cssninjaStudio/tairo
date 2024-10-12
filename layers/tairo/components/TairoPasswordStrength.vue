@@ -15,29 +15,15 @@ const props = withDefaults(
 const hasUpperChar = computed(() => /[A-Z]/.test(props.value) ?? false)
 const hasLowerChar = computed(() => /[a-z]/.test(props.value) ?? false)
 const hasSpecialChar = computed(
-  () => /[!"#$%&'()*+,-./:;<=>?@[\\\]^_`{|}~]/.test(props.value) ?? false,
+  () => /[-!"#$%&'()*+,./:;<=>?@[\\\]^_`{|}~]/.test(props.value) ?? false,
 )
-const hasNumberChar = computed(() => /[0-9]/.test(props.value) ?? false)
+const hasNumberChar = computed(() => /\d/.test(props.value) ?? false)
 const hasMinLength = computed(
-  () => props.value.length >= props.minLength ?? false,
+  () => props.value.length >= props.minLength,
 )
 const hasGoodLength = computed(
-  () => props.value.length >= props.goodLength ?? false,
+  () => props.value.length >= props.goodLength,
 )
-const strength = computed(() => {
-  if (!hasMinLength.value) {
-    return 0
-  }
-
-  return (
-    Number(hasUpperChar.value)
-    + Number(hasLowerChar.value)
-    + Number(hasSpecialChar.value)
-    + Number(hasNumberChar.value)
-    + Number(hasMinLength.value)
-    + Number(hasGoodLength.value)
-  )
-})
 
 const checks = computed(() => [
   {

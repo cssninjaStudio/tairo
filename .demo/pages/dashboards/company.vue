@@ -138,7 +138,7 @@ function useBarSalesProfit() {
     },
     yaxis: {
       labels: {
-        formatter: function (val: string) {
+        formatter(val: string) {
           return val + 70
         },
       },
@@ -148,7 +148,7 @@ function useBarSalesProfit() {
     },
     tooltip: {
       y: {
-        formatter: function (val: string) {
+        formatter(val: string) {
           return val + 70
         },
       },

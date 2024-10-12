@@ -1,5 +1,4 @@
 import { withShurikenUI } from '@shuriken-ui/tailwind'
-import colors from 'tailwindcss/colors'
 
 /**
  * This is the Tailwind config file for the demo.

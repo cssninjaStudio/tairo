@@ -1,13 +1,12 @@
 ---
 title: BaseCheckboxHeadless
-components: 
+components:
   - BaseCheckboxHeadless
 description: Create a custom checkbox using the the base checkbox element and designing yourself the exterior look of it.
-icon: 
+icon:
   src: /img/illustrations/components/checkbox-icon.svg
   srcDark: /img/illustrations/components/checkbox-icon.svg
 ---
-
 
 ::doc-component-demo
 ---
@@ -16,6 +15,5 @@ demo: '#examples/checkbox-custom/base.vue'
 ---
 Create stunning custom checkboxes using the base checkbox element and designing yourself the exterior look of it.
 ::
-
 
 :doc-component-meta{name="BaseCheckboxHeadless"}

@@ -1,5 +1,5 @@
-import { addDays, addHours, addMinutes, roundToNearestMinutes } from 'date-fns'
 import type { CalendarCustomAttribute, CalendarEvent } from '../types'
+import { addDays, addHours, addMinutes, roundToNearestMinutes } from 'date-fns'
 
 interface UseCalendarEventsProps {
   fromDate: MaybeRefOrGetter<Date>

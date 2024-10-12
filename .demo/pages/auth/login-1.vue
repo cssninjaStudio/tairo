@@ -44,12 +44,6 @@ const {
   handleSubmit,
   isSubmitting,
   setFieldError,
-  meta,
-  values,
-  errors,
-  resetForm,
-  setFieldValue,
-  setErrors,
 } = useForm({
   validationSchema,
   initialValues,
@@ -61,7 +55,7 @@ const toaster = useToaster()
 // This is where you would send the form data to the server
 const onSubmit = handleSubmit(async (values) => {
   // here you have access to the validated form values
-  console.log('auth-success', values)
+  // console.log('auth-success', values)
 
   try {
     // fake delay, this will make isSubmitting value to be true
@@ -105,7 +99,7 @@ const onSubmit = handleSubmit(async (values) => {
       <div
         class="mx-auto flex size-full max-w-4xl items-center justify-center"
       >
-        <!--Media image-->
+        <!-- Media image -->
         <img
           class="mx-auto max-w-xl"
           src="/img/illustrations/station.svg"
@@ -119,7 +113,7 @@ const onSubmit = handleSubmit(async (values) => {
       class="relative flex flex-1 flex-col justify-center px-6 py-12 lg:w-2/5 lg:flex-none"
     >
       <div class="dark:bg-muted-800 relative mx-auto w-full max-w-sm bg-white">
-        <!--Nav-->
+        <!-- Nav -->
         <div class="flex w-full items-center justify-between">
           <NuxtLink
             to="/dashboards"
@@ -128,7 +122,7 @@ const onSubmit = handleSubmit(async (values) => {
             <Icon name="gg:arrow-long-left" class="size-5" />
             <span>Back to Home</span>
           </NuxtLink>
-          <!--Theme button-->
+          <!-- Theme button -->
           <BaseThemeToggle />
         </div>
         <div>
@@ -146,20 +140,20 @@ const onSubmit = handleSubmit(async (values) => {
           </BaseParagraph>
           <!-- Social Sign Up Buttons -->
           <div class="flex flex-wrap justify-between gap-4">
-            <!--Google button-->
+            <!-- Google button -->
             <button
               class="dark:bg-muted-700 text-muted-800 border-muted-300 dark:border-muted-600 nui-focus relative inline-flex grow items-center justify-center gap-2 rounded-xl border bg-white px-6 py-4 dark:text-white"
             >
               <Icon name="logos:google-icon" class="size-5" />
               <div>Login with Google</div>
             </button>
-            <!--Twitter button-->
+            <!-- Twitter button -->
             <button
               class="bg-muted-200 dark:bg-muted-700 hover:bg-muted-100 dark:hover:bg-muted-600 text-muted-600 dark:text-muted-400 nui-focus w-[calc(50%_-_0.5rem)] cursor-pointer rounded-xl px-5 py-4 text-center transition-colors duration-300 md:w-auto"
             >
               <Icon name="fa6-brands:twitter" class="mx-auto size-4" />
             </button>
-            <!--Linkedin button-->
+            <!-- Linkedin button -->
             <button
               class="bg-muted-200 dark:bg-muted-700 hover:bg-muted-100 dark:hover:bg-muted-600 text-muted-600 dark:text-muted-400 nui-focus w-[calc(50%_-_0.5rem)] cursor-pointer rounded-xl px-5 py-4 text-center transition-colors duration-300 md:w-auto"
             >
@@ -178,10 +172,10 @@ const onSubmit = handleSubmit(async (values) => {
           </div>
         </div>
 
-        <!--Form section-->
+        <!-- Form section -->
         <div class="mt-6">
           <div class="mt-5">
-            <!--Form-->
+            <!-- Form -->
             <form
               method="POST"
               action=""
@@ -231,7 +225,7 @@ const onSubmit = handleSubmit(async (values) => {
                 </Field>
               </div>
 
-              <!--Remember-->
+              <!-- Remember -->
               <div class="mt-6 flex items-center justify-between">
                 <Field
                   v-slot="{ field, handleChange, handleBlur }"
@@ -258,7 +252,7 @@ const onSubmit = handleSubmit(async (values) => {
                 </div>
               </div>
 
-              <!--Submit-->
+              <!-- Submit -->
               <div class="mt-6">
                 <div class="block w-full rounded-md shadow-sm">
                   <BaseButton
@@ -275,7 +269,7 @@ const onSubmit = handleSubmit(async (values) => {
               </div>
             </form>
 
-            <!--No account link-->
+            <!-- No account link -->
             <p
               class="text-muted-400 mt-4 flex justify-between font-sans text-xs leading-5"
             >

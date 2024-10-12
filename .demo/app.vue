@@ -57,8 +57,8 @@ useHead({
       content: `https://media.cssninja.io/embed/marketplace/product/wide.png?headline=${encodeURIComponent(
         route.meta.description
         || (route.meta.preview
-            ? `${route.meta.preview?.title} - ${route.meta.preview?.description}`
-            : 'Nuxt & Tailwind CSS dashboard system'),
+          ? `${route.meta.preview?.title} - ${route.meta.preview?.description}`
+          : 'Nuxt & Tailwind CSS dashboard system'),
       )}&url=${encodeURIComponent(
         'https://media.cssninja.io/content/products/logos/tairo-text-white.svg',
       )}&previewUrl=${encodeURIComponent(

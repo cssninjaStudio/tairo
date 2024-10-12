@@ -1,3 +1,9 @@
+<script setup lang="ts">
+const firstName = ref('')
+const lastName = ref('')
+const email = ref('')
+</script>
+
 <template>
   <div class="max-w-md">
     <form
@@ -35,9 +41,3 @@
     </form>
   </div>
 </template>
-
-<script setup lang="ts">
-const firstName = ref('')
-const lastName = ref('')
-const email = ref('')
-</script>

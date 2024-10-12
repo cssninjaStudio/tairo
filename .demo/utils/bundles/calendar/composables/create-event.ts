@@ -1,12 +1,12 @@
-import { addMinutes, roundToNearestMinutes } from 'date-fns'
-import { onKeyStroke } from '@vueuse/core'
-
 import type {
   Awaitable,
   CalendarCustomAttribute,
-  CalendarSettings,
   CalendarEvent,
+  CalendarSettings,
 } from '../types'
+import { onKeyStroke } from '@vueuse/core'
+
+import { addMinutes, roundToNearestMinutes } from 'date-fns'
 
 import { topToDate } from '../view'
 

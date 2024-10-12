@@ -1,13 +1,12 @@
 ---
 title: BaseSelect
-components: 
+components:
   - BaseSelect
 description: Use the Tairo select form element when you wan to display a mobile friendly selection box. Explore the available customization options.
 icon:
   src: /img/illustrations/components/select-icon.svg
   srcDark: /img/illustrations/components/select-icon.svg
 ---
-
 
 ::doc-component-demo
 ---
@@ -60,7 +59,6 @@ demo: '#examples/select/group.vue'
 Selects can have option groups using the `optgroup` element to wrap your `options`.
 ::
 
-
 ::doc-component-demo
 ---
 title: Icon
@@ -69,7 +67,6 @@ demo: '#examples/select/icon.vue'
 Selects can have a configurable icon on the left side using the `icon` prop. Make sure to pick meaningful icons for your use case.
 ::
 
-
 ::doc-component-demo
 ---
 title: Error
@@ -77,7 +74,6 @@ demo: '#examples/select/invalid.vue'
 ---
 Selects can be shown in an error state using the `error` prop. Use the same prop to display an error message.
 ::
-
 
 ::doc-component-demo
 ---
@@ -102,6 +98,5 @@ demo: '#examples/select/disabled.vue'
 ---
 Selects can be shown in a disabled state using the `disabled` prop.
 ::
-
 
 :doc-component-meta{name="BaseSelect"}

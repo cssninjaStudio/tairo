@@ -1,6 +1,6 @@
 ---
 title: BaseSwitch
-components: 
+components:
   - BaseSwitchThin
   - BaseSwitchBall
 description: A switch is a binary input that can be either on or off. It is used to toggle between two states. Check out the thin and the ball versions.
@@ -8,7 +8,6 @@ icon:
   src: /img/illustrations/components/switch-thin-icon.svg
   srcDark: /img/illustrations/components/switch-thin-icon.svg
 ---
-
 
 ::doc-component-demo
 ---
@@ -26,9 +25,7 @@ demo: '#examples/switch/thin-sublabel.vue'
 Switches can have a sublabel. use the `sublabel` prop to set the sublabel text and modify the swicth layout.
 ::
 
-
 :doc-component-meta{name="BaseSwitchThin"}
-
 
 ::doc-component-demo
 ---
@@ -45,6 +42,5 @@ demo: '#examples/switch/ball-sublabel.vue'
 ---
 Switches can have a sublabel. use the `sublabel` prop to set the sublabel text and modify the swicth layout.
 ::
-
 
 :doc-component-meta{name="BaseSwitchBall"}

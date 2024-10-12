@@ -92,9 +92,9 @@ function statusColor(itemStatus: string) {
 
 <template>
   <div v-if="data?.recipient" class="pb-20">
-    <!--Header-->
+    <!-- Header -->
     <div class="flex items-center justify-end py-6">
-      <!--Buttons-->
+      <!-- Buttons -->
       <div class="hidden items-center gap-2 md:flex">
         <BaseButton
           to="/layouts/payments/recipients"
@@ -117,10 +117,10 @@ function statusColor(itemStatus: string) {
       </div>
     </div>
     <div class="grid grid-cols-12 gap-6">
-      <!--Info-->
+      <!-- Info -->
       <div class="ltablet:col-span-4 col-span-12 lg:col-span-4">
         <div class="flex flex-col gap-6">
-          <!--Recipient-->
+          <!-- Recipient -->
           <BaseCard
             rounded="md"
             shadow="hover"
@@ -186,7 +186,7 @@ function statusColor(itemStatus: string) {
               </BaseButton>
             </div>
           </BaseCard>
-          <!--Details-->
+          <!-- Details -->
           <BaseCard
             rounded="md"
             shadow="hover"
@@ -209,7 +209,7 @@ function statusColor(itemStatus: string) {
             </div>
 
             <div class="mb-6 space-y-4">
-              <!--Status-->
+              <!-- Status -->
               <div class="flex items-center justify-between">
                 <div class="text-muted-400 flex items-center gap-1">
                   <Icon name="ph:circle-dashed-duotone" class="size-5" />
@@ -228,7 +228,7 @@ function statusColor(itemStatus: string) {
                   {{ data.recipient.status }}
                 </BaseTag>
               </div>
-              <!--Email-->
+              <!-- Email -->
               <div class="flex items-center justify-between">
                 <div class="text-muted-400 flex items-center gap-1">
                   <Icon name="ph:envelope-duotone" class="size-5" />
@@ -244,7 +244,7 @@ function statusColor(itemStatus: string) {
                   {{ data.recipient.email }}
                 </BaseParagraph>
               </div>
-              <!--Phone number-->
+              <!-- Phone number -->
               <div class="flex items-center justify-between">
                 <div class="text-muted-400 flex items-center gap-1">
                   <Icon name="ph:phone-duotone" class="size-5" />
@@ -260,7 +260,7 @@ function statusColor(itemStatus: string) {
                   {{ data.recipient.phoneNumber }}
                 </BaseParagraph>
               </div>
-              <!--Tax ID-->
+              <!-- Tax ID -->
               <div class="flex items-center justify-between">
                 <div class="text-muted-400 flex items-center gap-1">
                   <Icon name="ph:bank-duotone" class="size-5" />
@@ -276,7 +276,7 @@ function statusColor(itemStatus: string) {
                   {{ data.recipient.taxId }}
                 </BaseParagraph>
               </div>
-              <!--Language-->
+              <!-- Language -->
               <div class="flex items-center justify-between">
                 <div class="text-muted-400 flex items-center gap-1">
                   <Icon name="ph:chats-circle-duotone" class="size-5" />
@@ -309,11 +309,11 @@ function statusColor(itemStatus: string) {
           </BaseCard>
         </div>
       </div>
-      <!--Content-->
+      <!-- Content -->
       <div class="ltablet:col-span-8 col-span-12 lg:col-span-8">
-        <!--Grid-->
+        <!-- Grid -->
         <div class="grid grid-cols-12 gap-6">
-          <!--tile-->
+          <!-- tile -->
           <div class="col-span-12 sm:col-span-4">
             <BaseCard
               rounded="md"
@@ -347,7 +347,7 @@ function statusColor(itemStatus: string) {
               </div>
             </BaseCard>
           </div>
-          <!--tile-->
+          <!-- tile -->
           <div class="col-span-12 sm:col-span-4">
             <BaseCard
               rounded="md"
@@ -371,7 +371,7 @@ function statusColor(itemStatus: string) {
               </div>
             </BaseCard>
           </div>
-          <!--tile-->
+          <!-- tile -->
           <div class="col-span-12 sm:col-span-4">
             <BaseCard
               rounded="md"
@@ -395,7 +395,7 @@ function statusColor(itemStatus: string) {
               </div>
             </BaseCard>
           </div>
-          <!--Transactions-->
+          <!-- Transactions -->
           <div class="col-span-12">
             <BaseCard
               rounded="md"
@@ -442,7 +442,7 @@ function statusColor(itemStatus: string) {
                     </tr>
                   </thead>
                   <tbody>
-                    <!--Row-->
+                    <!-- Row -->
                     <tr
                       v-for="item in data?.recipient?.transactions"
                       :key="item.id"

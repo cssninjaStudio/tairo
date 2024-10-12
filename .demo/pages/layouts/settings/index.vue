@@ -18,9 +18,9 @@ const privateMessages = ref(true)
 
 <template>
   <div class="divide-muted-200 dark:divide-muted-800 space-y-20 py-6">
-    <!--Grid-->
+    <!-- Grid -->
     <div class="grid gap-8 md:grid-cols-12">
-      <!--Column-->
+      <!-- Column -->
       <div class="md:col-span-4">
         <BaseHeading
           as="h3"
@@ -35,7 +35,7 @@ const privateMessages = ref(true)
           legal matters.
         </BaseParagraph>
       </div>
-      <!--Column-->
+      <!-- Column -->
       <div class="md:col-span-8">
         <BaseHeading
           as="h3"
@@ -48,7 +48,7 @@ const privateMessages = ref(true)
         <div
           class="divide-muted-200 dark:divide-muted-800 flex flex-col divide-y"
         >
-          <!--Item-->
+          <!-- Item -->
           <div class="group">
             <a
               href="#"
@@ -75,7 +75,7 @@ const privateMessages = ref(true)
               </BaseText>
             </a>
           </div>
-          <!--Item-->
+          <!-- Item -->
           <div class="group">
             <a
               href="#"
@@ -102,7 +102,7 @@ const privateMessages = ref(true)
               </BaseText>
             </a>
           </div>
-          <!--Item-->
+          <!-- Item -->
           <div class="group">
             <a
               href="#"
@@ -133,9 +133,9 @@ const privateMessages = ref(true)
       </div>
     </div>
 
-    <!--Additional info-->
+    <!-- Additional info -->
     <div class="grid gap-8 md:grid-cols-12">
-      <!--Column-->
+      <!-- Column -->
       <div class="md:col-span-4">
         <BaseHeading
           as="h3"
@@ -150,7 +150,7 @@ const privateMessages = ref(true)
           a few checks.
         </BaseParagraph>
       </div>
-      <!--Column-->
+      <!-- Column -->
       <div class="md:col-span-8">
         <BaseHeading
           as="h3"
@@ -163,7 +163,7 @@ const privateMessages = ref(true)
         <div
           class="divide-muted-200 dark:divide-muted-800 flex flex-col divide-y"
         >
-          <!--Item-->
+          <!-- Item -->
           <div class="group">
             <a
               href="#"
@@ -190,7 +190,7 @@ const privateMessages = ref(true)
               </BaseText>
             </a>
           </div>
-          <!--Item-->
+          <!-- Item -->
           <div class="group">
             <a
               href="#"
@@ -217,7 +217,7 @@ const privateMessages = ref(true)
               </BaseText>
             </a>
           </div>
-          <!--Item-->
+          <!-- Item -->
           <div class="group">
             <a
               href="#"
@@ -249,9 +249,9 @@ const privateMessages = ref(true)
       </div>
     </div>
 
-    <!--Privacy-->
+    <!-- Privacy -->
     <div class="grid gap-8 md:grid-cols-12">
-      <!--Column-->
+      <!-- Column -->
       <div class="md:col-span-4">
         <BaseHeading
           as="h3"
@@ -265,7 +265,7 @@ const privateMessages = ref(true)
           Tell us how you woould like us to handle your personal data and information.
         </BaseParagraph>
       </div>
-      <!--Column-->
+      <!-- Column -->
       <div class="md:col-span-8">
         <BaseHeading
           as="h3"
@@ -278,7 +278,7 @@ const privateMessages = ref(true)
         <div
           class="divide-muted-200 dark:divide-muted-800 flex flex-col divide-y"
         >
-          <!--Item-->
+          <!-- Item -->
           <div class="group">
             <div
               class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-50 dark:hover:bg-muted-800 flex items-center gap-2 p-4 text-sm transition-colors duration-300"
@@ -299,7 +299,7 @@ const privateMessages = ref(true)
               </div>
             </div>
           </div>
-          <!--Item-->
+          <!-- Item -->
           <div class="group">
             <div
               class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-50 dark:hover:bg-muted-800 flex items-center gap-2 p-4 text-sm transition-colors duration-300"

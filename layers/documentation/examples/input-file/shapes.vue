@@ -1,3 +1,11 @@
+<script setup lang="ts">
+const first = ref<FileList | null>(null)
+const second = ref<FileList | null>(null)
+const third = ref<FileList | null>(null)
+const fourth = ref<FileList | null>(null)
+const fifth = ref<FileList | null>(null)
+</script>
+
 <template>
   <div class="grid gap-6 md:max-w-4xl md:grid-cols-3">
     <BaseInputFile
@@ -31,11 +39,3 @@
     />
   </div>
 </template>
-
-<script setup lang="ts">
-const first = ref<FileList | null>(null)
-const second = ref<FileList | null>(null)
-const third = ref<FileList | null>(null)
-const fourth = ref<FileList | null>(null)
-const fifth = ref<FileList | null>(null)
-</script>

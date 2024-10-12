@@ -14,7 +14,7 @@ definePageMeta({
 
 const route = useRoute()
 const router = useRouter()
-const page = computed(() => parseInt((route.query.page as string) ?? '1'))
+const page = computed(() => Number.parseInt((route.query.page as string) ?? '1'))
 
 const filter = ref('')
 const perPage = ref(45)
@@ -50,7 +50,7 @@ function openAccountPanel(id: number, accounts: any) {
 
 <template>
   <div class="w-full">
-    <!--Balance-->
+    <!-- Balance -->
     <div class="py-6">
       <p class="font-heading text-muted-400 mb-1 text-xs">
         Global balance
@@ -61,15 +61,15 @@ function openAccountPanel(id: number, accounts: any) {
         $15,389.22
       </h3>
     </div>
-    <!--Placeholder-->
+    <!-- Placeholder -->
     <DemoPlaceholderMinimal
       v-if="data?.data?.length === 0"
       title="No payments to show"
       description="Yo have no payment requests completed. Please come back later."
     />
-    <!--Accounts list-->
+    <!-- Accounts list -->
     <ul v-else class="max-w-2xl">
-      <!--Header-->
+      <!-- Header -->
       <li>
         <div
           class="border-muted-200 dark:border-muted-800 flex w-full max-w-2xl gap-x-4 border-b px-3 py-2"
@@ -87,7 +87,7 @@ function openAccountPanel(id: number, accounts: any) {
           </div>
         </div>
       </li>
-      <!--Account item-->
+      <!-- Account item -->
       <li
         v-for="account in data?.data"
         :key="account.id"
@@ -125,7 +125,7 @@ function openAccountPanel(id: number, accounts: any) {
           </div>
         </div>
       </li>
-      <!--Add account-->
+      <!-- Add account -->
       <li
         class="hover:bg-muted-200 dark:hover:bg-muted-800 cursor-pointer px-3 transition-colors duration-300"
       >

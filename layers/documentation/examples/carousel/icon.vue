@@ -1,7 +1,3 @@
-<template>
-  <AddonCarouselIcons :slides="topics" />
-</template>
-
 <script setup lang="ts">
 const topics = [
   {
@@ -76,3 +72,7 @@ const topics = [
   },
 ]
 </script>
+
+<template>
+  <AddonCarouselIcons :slides="topics" />
+</template>
