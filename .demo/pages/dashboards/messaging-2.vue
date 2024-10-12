@@ -497,7 +497,7 @@ const searchMessages = ref('')
 const selectedOption = ref('chat')
 const mobileOpen = ref(false)
 
-const chatEl = ref<HTMLElement>()
+const chatEl = useTemplateRef<HTMLElement>('chatEl')
 const expanded = ref(false)
 const loading = ref(false)
 const search = ref('')

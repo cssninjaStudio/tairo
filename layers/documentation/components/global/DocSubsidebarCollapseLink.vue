@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { NavItem } from '@nuxt/content/dist/runtime/types'
+import type { NavItem } from '@nuxt/content'
 
 const props = defineProps<{
   link: NavItem
@@ -19,7 +19,7 @@ function onLinkClick() {
   toggle()
 }
 
-const buttonRef = ref<HTMLElement>()
+const buttonRef = useTemplateRef<HTMLElement>('buttonRef')
 function onDropClick() {
   isOpen.value = !isOpen.value
   if (!isOpen.value) {

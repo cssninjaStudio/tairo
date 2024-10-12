@@ -22,7 +22,7 @@ interface Conversation {
   }
 }
 
-const chatEl = ref<HTMLElement>()
+const chatEl = useTemplateRef<HTMLElement>('chatEl')
 const isCollapsed = ref(false)
 const isMobileOpen = ref(false)
 const input = ref('')

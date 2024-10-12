@@ -1,4 +1,5 @@
 export default defineNuxtConfig({
+  compatibilityDate: '2024-04-03',
   extends: [
     /**
      * This extends the base Tairo layer.

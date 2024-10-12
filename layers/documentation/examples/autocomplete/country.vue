@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { CountriesInfo } from '~/utils/bundles/countries'
+import type { CountriesInfo, CountryInfo } from '~/utils/bundles/countries'
 
 const countriesMap = shallowRef<CountriesInfo>({})
 const countries = computed(() => Object.values(countriesMap.value))
@@ -16,7 +16,7 @@ onNuxtReady(() => {
 <template>
   <div class="md:max-w-lg">
     <BaseAutocomplete
-      v-model.prop="selection"
+      v-model.prop="(selection as any)"
       :items="countries"
       icon="lucide:globe-2"
       clearable

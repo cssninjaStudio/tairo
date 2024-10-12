@@ -17,7 +17,7 @@ const twoFaMode = ref('email_address')
 const currentStep = ref(1)
 const codeLength = ref(4)
 const input = ref<Array<number | undefined>>([])
-const inputElements = ref<HTMLInputElement[]>([])
+const inputElements = useTemplateRef<HTMLInputElement[]>('inputElements')
 const correctPin = ref('1234')
 const onlyCheckOnLastFieldInput = ref(true)
 
@@ -120,7 +120,7 @@ function focusField(n: any) {
   if (!n || n > codeLength.value) {
     n = 1
   }
-  inputElements.value[n].focus()
+  inputElements.value?.[n].focus()
 }
 </script>
 
@@ -487,7 +487,9 @@ function focusField(n: any) {
                   :key="`pin${i}`"
                   :ref="
                     (el) => {
-                      inputElements[i] = el as HTMLInputElement
+                      if (inputElements) {
+                        inputElements[i] = el as HTMLInputElement
+                      }
                     }
                   "
                   v-focus="i === 1"

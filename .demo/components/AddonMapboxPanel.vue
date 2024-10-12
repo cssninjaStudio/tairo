@@ -15,8 +15,8 @@ const colorMode = useColorMode()
 const selectedFeature = ref()
 const selectedFeatureLatLng = ref()
 const selectedFeatureName = ref('')
-const mapElement = shallowRef<HTMLElement>()
-const popupElement = shallowRef<HTMLElement>()
+const mapElement = useTemplateRef<HTMLElement>('mapElement')
+const popupElement = useTemplateRef<HTMLElement>('popupElement')
 const map = shallowRef<Map>()
 const popup = shallowRef<Popup>()
 const geocoder = shallowRef<any>()
@@ -203,10 +203,10 @@ function loadLayers() {
     type: 'circle',
     source: 'places',
     paint: {
-      'circle-color': primary.value,
+      'circle-color': primary.value || '',
       'circle-radius': 6,
       'circle-stroke-width': 2,
-      'circle-stroke-color': primary.value,
+      'circle-stroke-color': primary.value || '',
     },
   })
 

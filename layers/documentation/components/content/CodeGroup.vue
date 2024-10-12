@@ -10,7 +10,7 @@ export default defineComponent({
   },
   setup(props, context) {
     const expanded = ref(false)
-    const wrapperEl = ref<HTMLElement | null>(null)
+    const wrapperEl = useTemplateRef<HTMLElement>('wrapperEl')
     const activeTabIndex = ref(0)
     provide('code-group-context', true)
 

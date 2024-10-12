@@ -1,7 +1,7 @@
 import { useEventListener } from '@vueuse/core'
 
 export function useViewPan(
-  container: Ref<HTMLElement | undefined>,
+  container: Ref<HTMLElement | null>,
   canPan: MaybeRefOrGetter<boolean> = true,
 ) {
   const isViewPaning = ref(false)

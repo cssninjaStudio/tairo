@@ -105,7 +105,7 @@ export function provideMultiStepForm<
     currentStepId,
     currentStep,
     isLastStep,
-    data,
+    data: data as Ref<UnwrapRef<DATA>>,
     progress,
     errors: readonly(errors),
     loading: readonly(loading),

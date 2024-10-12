@@ -24,8 +24,8 @@ const initialSize = ref<{
   height: 0,
 })
 
-const modalRef = ref<HTMLElement | null>(null)
-const buttonRef = ref<HTMLElement | null>(null)
+const modalRef = useTemplateRef<HTMLElement>('modalRef')
+const buttonRef = useTemplateRef<HTMLElement>('buttonRef')
 const isZoomed = ref(false)
 const isUnzooming = ref(false)
 

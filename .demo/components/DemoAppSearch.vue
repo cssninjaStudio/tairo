@@ -20,7 +20,7 @@ const { data: contentDocs } = useAsyncData(
     if (!search.value)
       return Promise.resolve([] as any[])
 
-    // @ts-expect-error This may be undefined if documentation is disabled
+    // @ts-ignore This may be undefined if documentation is disabled
     return queryContent()
       .where({
         $and: [

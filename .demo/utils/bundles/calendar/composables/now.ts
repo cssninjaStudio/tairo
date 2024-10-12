@@ -3,7 +3,7 @@ import type { CalendarSettings } from '../types'
 import { dateToTop } from '../view'
 
 export function useNowMarker(
-  container: Ref<HTMLElement | undefined>,
+  container: Ref<HTMLElement | null>,
   settings: CalendarSettings,
 ) {
   // now line

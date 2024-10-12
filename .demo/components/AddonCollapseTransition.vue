@@ -34,7 +34,7 @@ const emits = defineEmits<{
   afterEnter: [el: HTMLElement]
   enterCancelled: [el: HTMLElement]
   beforeLeave: [el: HTMLElement]
-  leave: []
+  leave: [el: HTMLElement, done: () => void]
   afterLeave: [el: HTMLElement]
   leaveCancelled: [el: HTMLElement]
 }>()
@@ -253,7 +253,7 @@ function setOpenedDimensions(el: HTMLElement) {
   if (!cachedStyles.value)
     return
   Object.keys(cachedStyles.value).forEach((key) => {
-    el.style[key as any] = cachedStyles.value![key]
+    el.style[key as any] = cachedStyles.value![key] as string
   })
 }
 

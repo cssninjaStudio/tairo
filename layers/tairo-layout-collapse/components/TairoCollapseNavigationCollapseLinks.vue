@@ -18,7 +18,7 @@ const isActive = computed(() => {
   return route.path.startsWith(props.item.activePath)
 })
 
-const buttonRef = ref<HTMLElement>()
+const buttonRef = useTemplateRef<HTMLElement>('buttonRef')
 const isOpen = ref(isActive.value)
 
 function onDropClick() {

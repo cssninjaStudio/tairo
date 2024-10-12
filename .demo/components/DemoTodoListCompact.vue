@@ -2,13 +2,15 @@
 const props = withDefaults(
   defineProps<{
     color?:
-      | 'success'
+      | 'primary'
       | 'info'
+      | 'success'
       | 'warning'
       | 'danger'
-      | 'primary'
-      | 'lime'
-      | 'sky'
+      | 'muted'
+      | 'light'
+      | 'dark'
+      | 'black'
   }>(),
   {
     color: 'success',

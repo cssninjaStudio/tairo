@@ -11,7 +11,7 @@ const props = defineProps<{
 
 const open = ref(false)
 const route = useRoute()
-const buttonRef = shallowRef<HTMLElement>()
+const buttonRef = useTemplateRef<HTMLElement>('buttonRef')
 
 const hasActiveChild = computed(() => {
   return props.children.some((item) => {

@@ -494,7 +494,7 @@ const conversations = ref([
   },
 ])
 
-const chatEl = ref<HTMLElement>()
+const chatEl = useTemplateRef<HTMLElement>('chatEl')
 const expanded = ref(false)
 const loading = ref(false)
 const search = ref('')

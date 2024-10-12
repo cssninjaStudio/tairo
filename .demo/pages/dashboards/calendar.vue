@@ -44,7 +44,7 @@ definePageMeta({
   },
 })
 
-const scrollCalendarRef = ref<HTMLElement>()
+const scrollCalendarRef = useTemplateRef<HTMLElement>('scrollCalendarRef')
 const showSettings = ref(false)
 const settings = reactive<CalendarSettings>({
   hideWeekends: false,
@@ -731,10 +731,10 @@ const selectedEventFeatures = computed({
                   label: 'label',
                 }"
                 :items="
-                  Object.entries(categoryTheme).map(([key, item]) => ({
+                  (Object.entries(categoryTheme).map(([key, item]) => ({
                     value: key,
                     label: item.name,
-                  }))
+                  })) as any)
                 "
               />
 

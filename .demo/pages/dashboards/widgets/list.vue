@@ -99,7 +99,7 @@ definePageMeta({
             View all
           </BaseButton>
         </div>
-        <DemoTodoListCompact color="lime" />
+        <DemoTodoListCompact color="success" />
       </BaseCard>
     </div>
     <!-- Column -->
@@ -126,7 +126,7 @@ definePageMeta({
             View all
           </BaseButton>
         </div>
-        <DemoTodoListCompact color="sky" />
+        <DemoTodoListCompact color="info" />
       </BaseCard>
     </div>
     <!-- Column -->
