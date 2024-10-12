@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const props = withDefaults(
   defineProps<{
-    error: any
+    error?: any
   }>(),
   {
     /* This is a fake error */

@@ -16,7 +16,7 @@ onNuxtReady(() => {
 <template>
   <div class="md:max-w-lg">
     <BaseAutocomplete
-      v-model.prop="(selection as any)"
+      v-model.prop="selection"
       :items="countries"
       icon="lucide:globe-2"
       clearable

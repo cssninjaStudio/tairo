@@ -55,6 +55,15 @@ importers:
       '@fontsource-variable/karla':
         specifier: ^5.1.0
         version: 5.1.0
+      '@iconify-json/fa6-brands':
+        specifier: ^1.2.1
+        version: 1.2.1
+      '@iconify-json/ph':
+        specifier: ^1.2.1
+        version: 1.2.1
+      '@iconify-json/simple-icons':
+        specifier: ^1.2.7
+        version: 1.2.7
       nuxt:
         specifier: 3.13.2
         version: 3.13.2(@parcel/watcher@2.4.1)(@types/node@22.7.5)(eslint@9.12.0(jiti@2.3.3))(ioredis@5.4.1)(magicast@0.3.5)(meow@9.0.0)(optionator@0.9.4)(rollup@4.24.0)(terser@5.34.1)(typescript@5.6.3)(vite@5.4.8(@types/node@22.7.5)(terser@5.34.1))(vue-tsc@2.1.6(typescript@5.6.3))
@@ -79,6 +88,66 @@ importers:
       '@headlessui/vue':
         specifier: ^1.7.23
         version: 1.7.23(vue@3.5.12(typescript@5.6.3))
+      '@iconify-json/akar-icons':
+        specifier: ^1.2.1
+        version: 1.2.1
+      '@iconify-json/bi':
+        specifier: ^1.2.1
+        version: 1.2.1
+      '@iconify-json/cib':
+        specifier: ^1.2.1
+        version: 1.2.1
+      '@iconify-json/cryptocurrency':
+        specifier: ^1.2.1
+        version: 1.2.1
+      '@iconify-json/fa-brands':
+        specifier: ^1.2.0
+        version: 1.2.0
+      '@iconify-json/feather':
+        specifier: ^1.2.0
+        version: 1.2.0
+      '@iconify-json/gg':
+        specifier: ^1.2.1
+        version: 1.2.1
+      '@iconify-json/guidance':
+        specifier: ^1.2.1
+        version: 1.2.1
+      '@iconify-json/ion':
+        specifier: ^1.2.1
+        version: 1.2.1
+      '@iconify-json/logos':
+        specifier: ^1.2.3
+        version: 1.2.3
+      '@iconify-json/lucide':
+        specifier: ^1.2.8
+        version: 1.2.8
+      '@iconify-json/mdi':
+        specifier: ^1.2.1
+        version: 1.2.1
+      '@iconify-json/mdi-light':
+        specifier: ^1.2.1
+        version: 1.2.1
+      '@iconify-json/pajamas':
+        specifier: ^1.2.3
+        version: 1.2.3
+      '@iconify-json/solar':
+        specifier: ^1.2.1
+        version: 1.2.1
+      '@iconify-json/streamline':
+        specifier: ^1.2.1
+        version: 1.2.1
+      '@iconify-json/teenyicons':
+        specifier: ^1.2.1
+        version: 1.2.1
+      '@iconify-json/token-branded':
+        specifier: ^1.2.1
+        version: 1.2.1
+      '@iconify-json/uiw':
+        specifier: ^1.2.1
+        version: 1.2.1
+      '@iconify-json/vaadin':
+        specifier: ^1.2.0
+        version: 1.2.0
       '@mapbox/mapbox-gl-geocoder':
         specifier: 5.0.2
         version: 5.0.2
@@ -1126,6 +1195,75 @@ packages:
   '@humanwhocodes/retry@0.3.1':
     resolution: {integrity: sha512-JBxkERygn7Bv/GbN5Rv8Ul6LVknS+5Bp6RgDC/O8gEBU/yeH5Ui5C/OlWrTb6qct7LjjfT6Re2NxB0ln0yYybA==}
     engines: {node: '>=18.18'}
+
+  '@iconify-json/akar-icons@1.2.1':
+    resolution: {integrity: sha512-b2qj2P2LxVUSl7vP+/1FDeF5+DL6IpKw5yon+Qszb8rWejKr/uQn6dV9yGE+pGaKkFaxGhPNF75EsCNLmrbm0Q==}
+
+  '@iconify-json/bi@1.2.1':
+    resolution: {integrity: sha512-wsIWb6bcnBkfN8/2puIIE2ul6NYVjclbE/nI7JZsPnfzBamd3NuRFstXQH9Ckkbrw9eiBTNKwHbH90w3UE5QIg==}
+
+  '@iconify-json/cib@1.2.1':
+    resolution: {integrity: sha512-3GaouBPiNevaodcZ3eJi0kxzZYFQxTkR847SNbW+ezGJSQsdO6hsvZQl0HKfla56zFXLaL4Ne/zybT3EtMjwrA==}
+
+  '@iconify-json/cryptocurrency@1.2.1':
+    resolution: {integrity: sha512-z/EjUc2/scd6iWu+at+AAQF0CJ8+Uu1lxjXLZ+h2jk9H0gMnBjsbt7Q4TDtORPokJgSSiwPfHRB+c8lWNdeD8Q==}
+
+  '@iconify-json/fa-brands@1.2.0':
+    resolution: {integrity: sha512-063zve/7GEfzEnlDQycVQbcrx6MD206bmrnWLYaPFvLcPVioN8DGPbOBzpy3/zI2RQFe/T+ZuCB8XWi+AmBR9w==}
+
+  '@iconify-json/fa6-brands@1.2.1':
+    resolution: {integrity: sha512-b/o9bDLZCP8qJV2dydewH+OWrpqmX94b7jHYnqzKaVpbuRRQX/qA9AROsy7rqHYup8fN2fCElQHvm6OYFmjkEA==}
+
+  '@iconify-json/feather@1.2.0':
+    resolution: {integrity: sha512-hIJ8fewd662egMuMn81riaDiOXhrnLeCaxz2WMvrzu0oQlUT6OwGFC3wnPK868PBjxC6Ii2pINVAAzlmtejM9A==}
+
+  '@iconify-json/gg@1.2.1':
+    resolution: {integrity: sha512-ELQiJMsxxz3VREz/LFE68e+qMMyQhZ0rrsAxnMs6ia1A3fA1tZ98yvXNhvgt4wRaiSfnzR4+5QqCVSZuuW8qQQ==}
+
+  '@iconify-json/guidance@1.2.1':
+    resolution: {integrity: sha512-QhlaJs3VxgAaOSEfFTA9oDQN9rPThE17Z8e4g8BzArKdVEO4uPEj9mLRh/rbuX8gfrOk/i9ArtPLsxqcbuV3zg==}
+
+  '@iconify-json/ion@1.2.1':
+    resolution: {integrity: sha512-33jiBdtP8+uBV0KRz8Z9g54QFujzssiT9W6wdNuY61VQM1s3cvoAX89yiczRs4/6b2xJE5vqqvsEJAQPqfY5JA==}
+
+  '@iconify-json/logos@1.2.3':
+    resolution: {integrity: sha512-JLHS5hgZP1b55EONAWNeqBUuriRfRNKWXK4cqYx0PpVaJfIIMiiMxFfvoQiX/bkE9XgkLhcKmDUqL3LXPdXPwQ==}
+
+  '@iconify-json/lucide@1.2.8':
+    resolution: {integrity: sha512-knmDUXky8AAQ0rnGdnBjS1mBr6c0tT7aVbBd7AJcDTcJYvx9XEeyHlabFKG03DaLbOkCy0QHwCYoeZHRDEzOFA==}
+
+  '@iconify-json/mdi-light@1.2.1':
+    resolution: {integrity: sha512-kTs9efbpF5GDcevR9PWCDJQrV1Vfr6RS8KJyGIPM6zxd8AGGAtNCxyACrJ+zeq6K99ZmcTIPr8tlymmPFAxwnw==}
+
+  '@iconify-json/mdi@1.2.1':
+    resolution: {integrity: sha512-dSkQU78gsZV6Yxnq78+LuX7jzeFC/5NAmz7O3rh558GimGFcwMVY/OtqRowIzjqJBmMmWZft7wkFV4TrwRXjlg==}
+
+  '@iconify-json/pajamas@1.2.3':
+    resolution: {integrity: sha512-PptzDXe3ZXWOKb3TuhCXP377E2jaqYapstuR0LMoc5wchpT1C1AaxjJog5LCD5UcI3SJKrF6ZNj7E/pCDr8qfQ==}
+
+  '@iconify-json/ph@1.2.1':
+    resolution: {integrity: sha512-x0DNfwWrS18dbsBYOq3XGiZnGz4CgRyC+YSl/TZvMQiKhIUl1woWqUbMYqqfMNUBzjyk7ulvaRovpRsIlqIf8g==}
+
+  '@iconify-json/simple-icons@1.2.7':
+    resolution: {integrity: sha512-0Qx3jf2AjocJx/6VQOFU5KDINAWH/i+hxPBIePSVJhQVS/W3G1/MZYkOD5yFw/i9+lhBMAEdbfM3bmF6qjnSmg==}
+
+  '@iconify-json/solar@1.2.1':
+    resolution: {integrity: sha512-LA3WZ7HOi5O/sEc2M+BcQNJYNFDnUKP+ZldmNf8kwndnCuFMo+fukt6tSu4BqYRsRgp/Ku4xnys1JGBDi+QtCQ==}
+
+  '@iconify-json/streamline@1.2.1':
+    resolution: {integrity: sha512-hqNodkjyIHBymkFY3zMip0F/D5yw4qXgwMJCaTF3zlbpQMgNJhY3D2ikTFTDVcTHfCSd6EX6enKXj4Rvu+5hnw==}
+
+  '@iconify-json/teenyicons@1.2.1':
+    resolution: {integrity: sha512-PaVv+zrQEO6I/9YfEwxkJfYSrCIWyOoSv/ZOVgETsr0MOqN9k7ecnHF/lPrgpyCLkwLzPX7MyFm3/gmziwjSiw==}
+
+  '@iconify-json/token-branded@1.2.1':
+    resolution: {integrity: sha512-MkvccB5VuGnkNm22NDpT7S8QAamyWx8EDVSekiPHnLewXIPQrtVmSbitL3ePZSbmtrOJMWL5E71Bi+737XMi1w==}
+
+  '@iconify-json/uiw@1.2.1':
+    resolution: {integrity: sha512-q1FyY9N2hkKeisjkHYVoSLv8E9Gg5oHxcVo4VPy4EY7e0RVJAH93dnHyCkTcU4OXp8ExZcgzuevcdldnLQBFjA==}
+
+  '@iconify-json/vaadin@1.2.0':
+    resolution: {integrity: sha512-1PWox5Wm3q0L9AztjtygB6zA3FzEpUVBQx/E00jkMKXqLNaVQXLmhb2rb9nbHy8FeSae0f4cjipKv8KBg3IAmg==}
 
   '@iconify/collections@1.0.470':
     resolution: {integrity: sha512-6N1f1iNMNWvM56pUhcv+0TSP6Apl2VRfejtZH8h9H8fMRiDsROWxeQeEBxI394QnVWrOyoK1XXnNyVbn6xlF6A==}
@@ -7508,6 +7646,98 @@ snapshots:
   '@humanwhocodes/module-importer@1.0.1': {}
 
   '@humanwhocodes/retry@0.3.1': {}
+
+  '@iconify-json/akar-icons@1.2.1':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/bi@1.2.1':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/cib@1.2.1':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/cryptocurrency@1.2.1':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/fa-brands@1.2.0':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/fa6-brands@1.2.1':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/feather@1.2.0':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/gg@1.2.1':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/guidance@1.2.1':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/ion@1.2.1':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/logos@1.2.3':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/lucide@1.2.8':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/mdi-light@1.2.1':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/mdi@1.2.1':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/pajamas@1.2.3':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/ph@1.2.1':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/simple-icons@1.2.7':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/solar@1.2.1':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/streamline@1.2.1':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/teenyicons@1.2.1':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/token-branded@1.2.1':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/uiw@1.2.1':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/vaadin@1.2.0':
+    dependencies:
+      '@iconify/types': 2.0.0
 
   '@iconify/collections@1.0.470':
     dependencies:

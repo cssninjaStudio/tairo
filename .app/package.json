@@ -13,6 +13,9 @@
   "devDependencies": {
     "@fontsource-variable/inter": "^5.1.0",
     "@fontsource-variable/karla": "^5.1.0",
+    "@iconify-json/fa6-brands": "^1.2.1",
+    "@iconify-json/ph": "^1.2.1",
+    "@iconify-json/simple-icons": "^1.2.7",
     "nuxt": "3.13.2"
   }
 }
