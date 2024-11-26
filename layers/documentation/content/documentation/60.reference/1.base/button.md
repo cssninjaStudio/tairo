@@ -16,7 +16,7 @@ demo: '#examples/button/shapes.vue'
 ---
 Buttons are an essential part of any application. Buttons can have different radius factors using the `rounded` prop.
 :::doc-message{color="muted-contrast" icon="ion:shapes-outline"}
-Default props of all :doc-linker{to="BaseButton"} can be set in your `<app>/app.config.ts`.
+Default props of all :doc-linker{to="BaseButton"} can be set in your `<app>/app/app.config.ts`.
 :::
 ::
 

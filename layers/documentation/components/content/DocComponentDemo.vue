@@ -167,7 +167,7 @@ async function loadDemo() {
                 />
               </summary>
               <CodeGroup>
-                <code filename="<app>/components/MyComponent.vue" language="vue">
+                <code filename="<app>/app/components/MyComponent.vue" language="vue">
                   <AddonMarkdownRemark
                     :source="exampleMarkdown"
                     fullwidth

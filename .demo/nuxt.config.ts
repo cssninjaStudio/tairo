@@ -5,7 +5,10 @@ import {
 } from './config/routes-rules'
 
 export default defineNuxtConfig({
-  compatibilityDate: '2024-04-03',
+  compatibilityDate: '2024-11-26',
+  future: {
+    compatibilityVersion: 4,
+  },
   devtools: { enabled: true },
 
   extends: [

@@ -15,7 +15,7 @@ demo: '#examples/tag/size.vue'
 ---
 Tags can have different sizes. Use the `size` prop to change the size of the tag.
 :::doc-message{color="muted-contrast" icon="ion:shapes-outline"}
-Default props of all :doc-linker{to="BaseTag"} can be set in your `<app>/app.config.ts`.
+Default props of all :doc-linker{to="BaseTag"} can be set in your `<app>/app/app.config.ts`.
 :::
 ::
 

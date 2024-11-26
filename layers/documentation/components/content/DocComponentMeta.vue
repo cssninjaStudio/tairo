@@ -69,7 +69,7 @@ function wrapExternalLinks(string: string) {
               </div>
               <div class="col-span-1 lg:col-span-8">
                 <CodeGroup class="[&_.shiki]:my-4">
-                  <code filename="<app>/components/MyComponent.vue" language="vue">
+                  <code filename="<app>/app/components/MyComponent.vue" language="vue">
                     <AddonMarkdownRemark
                       :lines="false"
                       class="max-w-none"
@@ -221,7 +221,7 @@ function wrapExternalLinks(string: string) {
                     </summary>
 
                     <CodeGroup class="[&_.shiki]:my-4">
-                      <code filename="<app>/components/MyComponent.vue" language="vue">
+                      <code filename="<app>/app/components/MyComponent.vue" language="vue">
                         <AddonMarkdownRemark
                           :lines="false"
                           class="max-w-none"
@@ -364,7 +364,7 @@ function wrapExternalLinks(string: string) {
                   </summary>
 
                   <CodeGroup class="[&_.shiki]:my-4">
-                    <code filename="<app>/components/MyComponent.vue" language="vue">
+                    <code filename="<app>/app/components/MyComponent.vue" language="vue">
                       <AddonMarkdownRemark
                         :lines="false"
                         class="max-w-none"
@@ -500,7 +500,7 @@ function wrapExternalLinks(string: string) {
                     />
                   </summary>
                   <CodeGroup class="[&_.shiki]:my-4">
-                    <code filename="<app>/components/MyComponent.vue" language="vue">
+                    <code filename="<app>/app/components/MyComponent.vue" language="vue">
                       <AddonMarkdownRemark
                         :lines="false"
                         class="max-w-none"
@@ -603,7 +603,7 @@ function wrapExternalLinks(string: string) {
                     />
                   </summary>
                   <CodeGroup class="[&_.shiki]:my-4">
-                    <code filename="<app>/components/MyComponent.vue" language="vue">
+                    <code filename="<app>/app/components/MyComponent.vue" language="vue">
                       <AddonMarkdownRemark
                         :lines="false"
                         class="max-w-none"
@@ -703,7 +703,7 @@ function wrapExternalLinks(string: string) {
                     />
                   </summary>
                   <CodeGroup class="[&_.shiki]:my-4">
-                    <code filename="<app>/components/MyComponent.vue" language="vue">
+                    <code filename="<app>/app/components/MyComponent.vue" language="vue">
                       <AddonMarkdownRemark
                         :lines="false"
                         class="max-w-none"
@@ -798,7 +798,7 @@ function wrapExternalLinks(string: string) {
                     />
                   </summary>
                   <CodeGroup class="[&_.shiki]:my-4">
-                    <code filename="<app>/components/MyComponent.vue" language="vue">
+                    <code filename="<app>/app/components/MyComponent.vue" language="vue">
                       <AddonMarkdownRemark
                         :lines="false"
                         class="max-w-none"

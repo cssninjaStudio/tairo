@@ -16,7 +16,7 @@ demo: '#examples/listbox/shapes.vue'
 ---
 The listbox is a component that renders a list of items. It can be used to render a list of text, media or complex objects. The default shape is `rounded`.
 :::doc-message{color="muted-contrast" icon="ion:shapes-outline"}
-Default props of all :doc-linker{to="BaseListbox"} can be set in your `<app>/app.config.ts`.
+Default props of all :doc-linker{to="BaseListbox"} can be set in your `<app>/app/app.config.ts`.
 :::
 ::
 
