@@ -8,8 +8,8 @@
     "clean": "rimraf .nuxt .output node_modules"
   },
   "devDependencies": {
-    "@nuxt/schema": "^3.13.2",
-    "nuxt": "^3.13.2",
-    "vue-router": "^4.4.5"
+    "@nuxt/schema": "^3.14.1592",
+    "nuxt": "^3.14.1592",
+    "vue-router": "^4.5.0"
   }
 }
