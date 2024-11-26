@@ -817,6 +817,9 @@ function wrapExternalLinks(string: string) {
 </template>
 
 <style scoped>
+@import "tailwindcss/theme" theme(reference);
+@import "@shuriken-ui/tailwind/theme.css" theme(reference);
+
 .inline-sample:deep(.shiki) {
   @apply my-0;
 }

@@ -1,0 +1,16 @@
+@import 'tailwindcss';
+@import '@shuriken-ui/tailwind';
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-family-sans: Inter  Variable, sans-serif;
+  --font-family-mono: Fira Code Variable, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace,;
+  --font-family-alt: Karla  Variable, sans-serif;
+  --font-family-heading: var(--font-family-sans);
+
+  --animate-spin-slow: spin 3s linear infinite;
+  --animate-spin-fast: spin 0.65s linear infinite;
+
+  
+}

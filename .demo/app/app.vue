@@ -91,7 +91,7 @@ useHead({
     <VueAxePopup />
 
     <NuxtLayout>
-      <NuxtLoadingIndicator color="rgb(var(--color-primary-500))" />
+      <NuxtLoadingIndicator color="var(--color-primary-500)" />
       <NuxtPage />
     </NuxtLayout>
   </div>

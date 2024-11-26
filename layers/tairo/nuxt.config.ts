@@ -1,4 +1,4 @@
-import exposeColors from './tailwind/plugin-expose-colors'
+// import exposeColors from './tailwind/plugin-expose-colors'
 
 export default defineNuxtConfig({
   $meta: {
@@ -22,10 +22,10 @@ export default defineNuxtConfig({
     import.meta.env?.DEV_SHURIKEN_UI_PATH || '@shuriken-ui/nuxt',
   ],
   modules: ['@cssninja/nuxt-toaster'],
-  tailwindcss: {
-    config: {
-      content: [],
-      plugins: [exposeColors],
-    },
-  },
+  // tailwindcss: {
+  //   config: {
+  //     content: [],
+  //     plugins: [exposeColors],
+  //   },
+  // },
 })

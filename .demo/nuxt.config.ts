@@ -52,61 +52,30 @@ export default defineNuxtConfig({
   ],
 
   css: [
-    '~/assets/css/colors.css',
+    /**
+     * Load local font with @fontsource packages
+     * @see https://fontsource.org/
+     */
     '@fontsource-variable/fira-code/index.css',
     '@fontsource-variable/inter/index.css',
     '@fontsource-variable/karla/index.css',
+    /**
+     * Load Tailwind CSS
+     */
+    '~/assets/tailwind.css',
   ],
 
-  app: {
-    // pageTransition: {
-    //   mode: 'out-in',
-    //   enterActiveClass: 'transition-opacity duration-200 ease-out',
-    //   enterFromClass: 'opacity-0',
-    //   enterToClass: 'opacity-100',
-    //   leaveActiveClass: 'transition-opacity duration-75 ease-in',
-    //   leaveFromClass: 'opacity-100',
-    //   leaveToClass: 'opacity-0',
-    // },
-    // layoutTransition: {
-    //   mode: 'out-in',
-    //   enterActiveClass: 'transition-opacity duration-200 ease-out',
-    //   enterFromClass: 'opacity-0',
-    //   enterToClass: 'opacity-100',
-    //   leaveActiveClass: 'transition-opacity duration-200 ease-in',
-    //   leaveFromClass: 'opacity-100',
-    //   leaveToClass: 'opacity-0',
-    // },
-  },
-
-  features: {
-    inlineStyles: false,
-  },
-
   experimental: {
-    // Write early hints when using node server.
-    writeEarlyHints: true,
-    // Render JSON payloads with support for revivifying complex types.
-    renderJsonPayloads: true,
-    // Render tags in of the head in a more performant way
-    headNext: true,
     // Use the new View Transitions API
     viewTransition: true,
-
-    defaults: {
-      useAsyncData: {
-        // Use shallowRef in asyncData/fetch data
-        deep: false,
-      },
-    },
   },
 
   typescript: {
     tsConfig: {
       // Here you can customize the generated tsconfig.json file
-      vueCompilerOptions: {
-        target: 3.4,
-      },
+      // vueCompilerOptions: {
+      //   target: 3.4,
+      // },
     },
   },
 

@@ -16,6 +16,8 @@
     "@iconify-json/fa6-brands": "^1.2.1",
     "@iconify-json/ph": "^1.2.1",
     "@iconify-json/simple-icons": "^1.2.7",
-    "nuxt": "3.13.2"
+    "@shuriken-ui/tailwind": "4.0.0-alpha.5",
+    "nuxt": "3.13.2",
+    "tailwindcss": "4.0.0-beta.2"
   }
 }

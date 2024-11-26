@@ -1,3 +1,6 @@
+@import "tailwindcss/theme" theme(reference);
+@import "@shuriken-ui/tailwind/theme.css" theme(reference);
+
 .custom-calendar.vc-container {
   @apply rounded-none bg-transparent mt-0 border-0;
 }

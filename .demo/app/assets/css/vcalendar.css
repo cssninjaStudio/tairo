@@ -1,3 +1,6 @@
+@import "tailwindcss/theme" theme(reference);
+@import "@shuriken-ui/tailwind/theme.css" theme(reference);
+
 .vc-pane-container .vc-pane-layout {
   @apply font-sans;
 }
@@ -60,12 +63,14 @@
   @apply -top-2 flex items-center justify-center rounded-xl !text-muted-400 dark:hover:bg-muted-700/40 dark:hover:text-muted-100;
 }
 
+/* 
+@todo: nui-focus is unfound
 .vc-container button,
 .vc-container [role='button'],
 .vc-popover-content button,
 .vc-popover-content [role='button'] {
   @apply nui-focus;
-}
+} */
 
 .vc-pane-container .vc-arrows-container .vc-arrow svg {
   @apply relative -top-0.5 h-5 w-5;
@@ -242,7 +247,12 @@
 }
 
 .vc-time-select-group .vc-base-select select {
-  @apply text-muted-500 dark:text-muted-200 bg-muted-100 dark:bg-muted-700 nui-focus;
+  @apply text-muted-500 dark:text-muted-200 bg-muted-100 dark:bg-muted-700;
+  
+  /**
+  @todo: nui-focus is unfound
+  @apply nui-focus;
+  */
 }
 
 .vc-time-select-group .vc-base-icon {

@@ -1,3 +1,6 @@
+@import "tailwindcss/theme" theme(reference);
+@import "@shuriken-ui/tailwind/theme.css" theme(reference);
+
 .slider-target,
 .slider-target * {
   -webkit-touch-callout: none;

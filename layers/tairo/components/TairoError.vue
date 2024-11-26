@@ -153,6 +153,9 @@ const showStackTrace = ref(true)
 </template>
 
 <style>
+@import "tailwindcss/theme" theme(reference);
+@import "@shuriken-ui/tailwind/theme.css" theme(reference);
+
 .stack {
   @apply text-sm;
 }

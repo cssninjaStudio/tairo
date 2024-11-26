@@ -6,7 +6,7 @@ export default defineNuxtConfig({
     '#examples': fileURLToPath(new URL('./examples', import.meta.url)),
   },
   componentMeta: {
-    metaSources: ['@shuriken-ui/nuxt/component-meta'],
+    // metaSources: ['@shuriken-ui/nuxt/component-meta'],
     exclude: [
       (component: any) => {
         const hasTairoPrefix = component?.pascalName?.startsWith('Tairo')
@@ -19,18 +19,18 @@ export default defineNuxtConfig({
       },
     ],
   },
-  hooks: {
-    'tailwindcss:config': function (config) {
-      if (Array.isArray(config.content)) {
-        // This add examples/ folder to the tailwind content list
-        // making it possible to use tailwind classes inside the examples
-        config.content.push(
-          `${fileURLToPath(new URL('./examples', import.meta.url))
-          }/**/*.{vue,js,ts}`,
-        )
-      }
-    },
-  },
+  // hooks: {
+  //   'tailwindcss:config': function (config) {
+  //     if (Array.isArray(config.content)) {
+  //       // This add examples/ folder to the tailwind content list
+  //       // making it possible to use tailwind classes inside the examples
+  //       config.content.push(
+  //         `${fileURLToPath(new URL('./examples', import.meta.url))
+  //         }/**/*.{vue,js,ts}`,
+  //       )
+  //     }
+  //   },
+  // },
   content: {
     sources: {
       content: {

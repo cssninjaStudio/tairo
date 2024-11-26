@@ -1,3 +1,6 @@
+@import "tailwindcss/theme" theme(reference);
+@import "@shuriken-ui/tailwind/theme.css" theme(reference);
+
 .apexcharts-text,
 .apexcharts-datalabels text,
 .apexcharts-datalabel-value,
@@ -95,33 +98,33 @@
 }
 
 .dark .apexcharts-xaxistooltip.apexcharts-xaxistooltip-bottom::before {
-  border-bottom-color: rgb(var(--color-muted-700) / 100%) !important;
+  border-bottom-color: var(--color-muted-700) !important;
 }
 
 .dark .apexcharts-xaxistooltip.apexcharts-xaxistooltip-bottom::after {
-  border-bottom-color: rgb(var(--color-muted-800) / 100%) !important;
+  border-bottom-color: var(--color-muted-800) !important;
 }
 
 .dark .apexcharts-xaxistooltip.apexcharts-xaxistooltip-top::before {
-  border-top-color: rgb(var(--color-muted-700) / 100%) !important;
+  border-top-color: var(--color-muted-700) !important;
 }
 
 .dark .apexcharts-xaxistooltip.apexcharts-xaxistooltip-top::after {
-  border-top-color: rgb(var(--color-muted-800) / 100%) !important;
+  border-top-color: var(--color-muted-800) !important;
 }
 
 .dark .apexcharts-yaxistooltip.apexcharts-yaxistooltip-left::before {
-  border-left-color: rgb(var(--color-muted-700) / 100%) !important;
+  border-left-color: var(--color-muted-700) !important;
 }
 
 .dark .apexcharts-yaxistooltip.apexcharts-yaxistooltip-left::after {
-  border-left-color: rgb(var(--color-muted-800) / 100%) !important;
+  border-left-color: var(--color-muted-800) !important;
 }
 
 .dark .apexcharts-yaxistooltip.apexcharts-yaxistooltip-right::before {
-  border-right-color: rgb(var(--color-muted-700) / 100%) !important;
+  border-right-color: var(--color-muted-700) !important;
 }
 
 .dark .apexcharts-yaxistooltip.apexcharts-yaxistooltip-right::after {
-  border-right-color: rgb(var(--color-muted-800) / 100%) !important;
+  border-right-color: var(--color-muted-800) !important;
 }

@@ -27,12 +27,16 @@ export default defineNuxtConfig({
     '../layers/tairo',
   ],
 
-  /**
-   * Load local font with @fontsource packages
-   * @see https://fontsource.org/
-   */
   css: [
+    /**
+     * Load local font with @fontsource packages
+     * @see https://fontsource.org/
+     */
     '@fontsource-variable/inter/index.css',
     '@fontsource-variable/karla/index.css',
+    /**
+     * Load Tailwind CSS
+     */
+    '~/assets/tailwind.css',
   ],
 })

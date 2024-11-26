@@ -114,6 +114,9 @@ const props = withDefaults(defineProps<CarouselProps>(), {
 </template>
 
 <style lang="pcss" scoped>
+@import "tailwindcss/theme" theme(reference);
+@import "@shuriken-ui/tailwind/theme.css" theme(reference);
+
 .carousel__slide {
   @apply p-1;
 }
