@@ -1,5 +1,5 @@
-@import "tailwindcss/theme" theme(reference);
-@import "@shuriken-ui/tailwind/theme.css" theme(reference);
+@import 'tailwindcss/theme' theme(reference);
+@import '@shuriken-ui/tailwind/theme.css' theme(reference);
 
 .apexcharts-text,
 .apexcharts-datalabels text,

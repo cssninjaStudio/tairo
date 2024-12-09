@@ -555,8 +555,8 @@ const panelActive = ref(false)
 </template>
 
 <style>
-@import "tailwindcss/theme" theme(reference);
-@import "@shuriken-ui/tailwind/theme.css" theme(reference);
+@import 'tailwindcss/theme' theme(reference);
+@import '@shuriken-ui/tailwind/theme.css' theme(reference);
 
 .splitpanes--vertical > .splitpanes__splitter {
   @apply w-1 bg-muted-100 hover:bg-muted-200 dark:bg-muted-700/50 dark:hover:bg-muted-700 transition-colors duration-100;

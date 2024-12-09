@@ -76,8 +76,8 @@ const strokeWidth = computed(() => {
 </template>
 
 <style scoped>
-@import "tailwindcss/theme" theme(reference);
-@import "@shuriken-ui/tailwind/theme.css" theme(reference);
+@import 'tailwindcss/theme' theme(reference);
+@import '@shuriken-ui/tailwind/theme.css' theme(reference);
 
 .nui-check-animated {
   @apply block rounded-full stroke-current overflow-hidden;

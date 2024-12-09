@@ -4,8 +4,8 @@
 @variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-sans: Inter  Variable, sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace,;
-  --font-alt: Karla  Variable, sans-serif;
+  --font-sans: Inter Variable, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  --font-alt: Karla Variable, sans-serif;
   --font-heading: var(--font-sans);
 }

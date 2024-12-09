@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { FocusTrap, Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
 import { Float } from '@headlessui-float/vue'
+import { FocusTrap, Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
 
 const props = withDefaults(
   defineProps<{

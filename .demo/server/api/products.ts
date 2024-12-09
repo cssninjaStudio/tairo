@@ -18,10 +18,10 @@ export default defineEventHandler(async (event) => {
     data: !filter
       ? data.slice(offset, offset + perPage)
       : data
-        .filter((item) => {
-          return [item.name, item.category].some(item => item.match(filterRe))
-        })
-        .slice(offset, offset + perPage),
+          .filter((item) => {
+            return [item.name, item.category].some(item => item.match(filterRe))
+          })
+          .slice(offset, offset + perPage),
   }
 })
 

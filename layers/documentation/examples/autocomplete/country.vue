@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { CountriesInfo, CountryInfo } from '~/utils/bundles/countries'
+import type { CountriesInfo } from '~/utils/bundles/countries'
 
 const countriesMap = shallowRef<CountriesInfo>({})
 const countries = computed(() => Object.values(countriesMap.value))

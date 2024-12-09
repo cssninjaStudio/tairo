@@ -8,24 +8,24 @@ const { data } = await useAsyncData('doc-page-nav', async () => {
   const prev = !props.prev
     ? Promise.resolve(null)
     : queryContent()
-      .where({
-        _partial: false,
-        _draft: false,
-        _path: props.prev,
-      })
-      .only(['_path', 'title'])
-      .findOne()
+        .where({
+          _partial: false,
+          _draft: false,
+          _path: props.prev,
+        })
+        .only(['_path', 'title'])
+        .findOne()
 
   const next = !props.next
     ? Promise.resolve(null)
     : queryContent()
-      .where({
-        _partial: false,
-        _draft: false,
-        _path: props.next,
-      })
-      .only(['_path', 'title'])
-      .findOne()
+        .where({
+          _partial: false,
+          _draft: false,
+          _path: props.next,
+        })
+        .only(['_path', 'title'])
+        .findOne()
 
   return Promise.all([prev, next])
 })

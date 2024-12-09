@@ -5,6 +5,7 @@
   "private": true,
   "main": "./nuxt.config.ts",
   "scripts": {
+    "prepare": "nuxt prepare",
     "clean": "rimraf .nuxt .output node_modules"
   },
   "devDependencies": {

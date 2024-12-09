@@ -43,8 +43,8 @@ const filteredPeople = computed(() =>
   query.value === ''
     ? people
     : people.filter((person) => {
-      return person.name.toLowerCase().includes(query.value.toLowerCase())
-    }),
+        return person.name.toLowerCase().includes(query.value.toLowerCase())
+      }),
 )
 
 const comboInput = ref(null)

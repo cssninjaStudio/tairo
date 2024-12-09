@@ -1,5 +1,5 @@
-@import "tailwindcss/theme" theme(reference);
-@import "@shuriken-ui/tailwind/theme.css" theme(reference);
+@import 'tailwindcss/theme' theme(reference);
+@import '@shuriken-ui/tailwind/theme.css' theme(reference);
 
 .slider-target,
 .slider-target * {
@@ -73,10 +73,8 @@
   display: none !important;
 }
 .slider-tooltip-drag .slider-active .slider-tooltip,
-.slider-tooltip-drag.slider-state-drag
-  .slider-tooltip:not(.slider-tooltip-hidden),
-.slider-tooltip-focus.slider-focused
-  .slider-tooltip:not(.slider-tooltip-hidden) {
+.slider-tooltip-drag.slider-state-drag .slider-tooltip:not(.slider-tooltip-hidden),
+.slider-tooltip-focus.slider-focused .slider-tooltip:not(.slider-tooltip-hidden) {
   display: block !important;
 }
 .slider-horizontal {
@@ -85,10 +83,7 @@
 .slider-horizontal .slider-handle {
   height: var(--slider-handle-height, 16px);
   right: calc(var(--slider-handle-width, 16px) / 2 * -1);
-  top: calc(
-    var(--slider-handle-height, 16px) / 2 * -1 - var(--slider-height, 6px) / 2 *
-      -1 + -1px
-  );
+  top: calc(var(--slider-handle-height, 16px) / 2 * -1 - var(--slider-height, 6px) / 2 * -1 + -1px);
   width: var(--slider-handle-width, 16px);
 }
 .slider-vertical {
@@ -98,10 +93,7 @@
 .slider-vertical .slider-handle {
   bottom: calc(var(--slider-handle-width, 16px) / 2 * -1);
   height: var(--slider-handle-width, 16px);
-  right: calc(
-    var(--slider-handle-height, 16px) / 2 * -1 - var(--slider-height, 6px) / 2 *
-      -1 + -1px
-  );
+  right: calc(var(--slider-handle-height, 16px) / 2 * -1 - var(--slider-height, 6px) / 2 * -1 + -1px);
   width: var(--slider-handle-height, 16px);
 }
 .slider-txt-dir-rtl.slider-horizontal .slider-handle {
@@ -129,10 +121,7 @@
   background: var(--slider-handle-bg, #fff);
   border: var(--slider-handle-border, 0);
   border-radius: var(--slider-handle-radius, 9999px);
-  box-shadow: var(
-    --slider-handle-shadow,
-    0.5px 0.5px 2px 1px rgba(0, 0, 0, 0.32)
-  );
+  box-shadow: var(--slider-handle-shadow, 0.5px 0.5px 2px 1px rgba(0, 0, 0, 0.32));
   cursor: -webkit-grab;
   cursor: grab;
   height: var(--slider-handle-height, 16px);
@@ -140,16 +129,12 @@
 }
 .slider-handle:focus {
   box-shadow:
-    0 0 0 var(--slider-handle-ring-width, 2px)
-      var(--slider-handle-ring-color, var(--color-primary-500)),
+    0 0 0 var(--slider-handle-ring-width, 2px) var(--slider-handle-ring-color, var(--color-primary-500)),
     var(--slider-handle-shadow, 0.5px 0.5px 2px 1px rgba(0, 0, 0, 0.32));
   outline: none;
 }
 .slider-active {
-  box-shadow: var(
-    --slider-handle-shadow-active,
-    0.5px 0.5px 2px 1px rgba(0, 0, 0, 0.42)
-  );
+  box-shadow: var(--slider-handle-shadow-active, 0.5px 0.5px 2px 1px rgba(0, 0, 0, 0.42));
   cursor: -webkit-grabbing;
   cursor: grabbing;
 }
@@ -182,8 +167,7 @@
 }
 .slider-horizontal .slider-tooltip-top {
   bottom: calc(
-    var(--slider-handle-height, 16px) + var(--slider-tooltip-arrow-size, 5px) +
-      var(--slider-tooltip-distance, 3px)
+    var(--slider-handle-height, 16px) + var(--slider-tooltip-arrow-size, 5px) + var(--slider-tooltip-distance, 3px)
   );
   left: 50%;
   transform: translate(-50%);
@@ -202,8 +186,7 @@
 .slider-horizontal .slider-tooltip-bottom {
   left: 50%;
   top: calc(
-    var(--slider-handle-height, 16px) + var(--slider-tooltip-arrow-size, 5px) +
-      var(--slider-tooltip-distance, 3px)
+    var(--slider-handle-height, 16px) + var(--slider-tooltip-arrow-size, 5px) + var(--slider-tooltip-distance, 3px)
   );
   transform: translate(-50%);
 }
@@ -220,8 +203,7 @@
 }
 .slider-vertical .slider-tooltip-left {
   right: calc(
-    var(--slider-handle-height, 16px) + var(--slider-tooltip-arrow-size, 5px) +
-      var(--slider-tooltip-distance, 3px)
+    var(--slider-handle-height, 16px) + var(--slider-tooltip-arrow-size, 5px) + var(--slider-tooltip-distance, 3px)
   );
   top: 50%;
   transform: translateY(-50%);
@@ -239,8 +221,7 @@
 }
 .slider-vertical .slider-tooltip-right {
   left: calc(
-    var(--slider-handle-height, 16px) + var(--slider-tooltip-arrow-size, 5px) +
-      var(--slider-tooltip-distance, 3px)
+    var(--slider-handle-height, 16px) + var(--slider-tooltip-arrow-size, 5px) + var(--slider-tooltip-distance, 3px)
   );
   top: 50%;
   transform: translateY(-50%);
@@ -262,39 +243,32 @@
 }
 .slider-horizontal .slider-origin > .slider-tooltip-top {
   bottom: calc(
-    var(--slider-tooltip-arrow-size, 5px) + var(--slider-handle-height, 16px) /
-      2 - var(--slider-height, 6px) / 2 + var(--slider-tooltip-distance, 3px) +
-      1px
+    var(--slider-tooltip-arrow-size, 5px) + var(--slider-handle-height, 16px) / 2 - var(--slider-height, 6px) / 2 +
+      var(--slider-tooltip-distance, 3px) + 1px
   );
 }
 .slider-horizontal .slider-origin > .slider-tooltip-bottom {
   top: calc(
-    var(--slider-tooltip-arrow-size, 5px) + var(--slider-handle-height, 16px) /
-      2 - var(--slider-height, 6px) / 2 + var(--slider-tooltip-distance, 3px) +
-      var(--slider-height, 6px) - 1px
+    var(--slider-tooltip-arrow-size, 5px) + var(--slider-handle-height, 16px) / 2 - var(--slider-height, 6px) / 2 +
+      var(--slider-tooltip-distance, 3px) + var(--slider-height, 6px) - 1px
   );
 }
 .slider-vertical .slider-origin > .slider-tooltip {
   top: auto;
   transform: translateY(
-    calc(
-      var(--slider-tooltip-line-height, 1.25rem) * -1 -
-        var(--slider-tooltip-py, 2px) * -1 + 1px
-    )
+    calc(var(--slider-tooltip-line-height, 1.25rem) * -1 - var(--slider-tooltip-py, 2px) * -1 + 1px)
   );
 }
 .slider-vertical .slider-origin > .slider-tooltip-left {
   right: calc(
-    var(--slider-tooltip-arrow-size, 5px) + var(--slider-height, 6px) +
-      var(--slider-handle-height, 16px) / 2 - var(--slider-height, 6px) / 2 +
-      var(--slider-tooltip-distance, 3px) - 1px
+    var(--slider-tooltip-arrow-size, 5px) + var(--slider-height, 6px) + var(--slider-handle-height, 16px) / 2 -
+      var(--slider-height, 6px) / 2 + var(--slider-tooltip-distance, 3px) - 1px
   );
 }
 .slider-vertical .slider-origin > .slider-tooltip-right {
   left: calc(
-    var(--slider-tooltip-arrow-size, 5px) + var(--slider-height, 6px) +
-      var(--slider-handle-height, 16px) / 2 - var(--slider-height, 6px) / 2 +
-      var(--slider-tooltip-distance, 3px) - var(--slider-height, 6px) + 1px
+    var(--slider-tooltip-arrow-size, 5px) + var(--slider-height, 6px) + var(--slider-handle-height, 16px) / 2 -
+      var(--slider-height, 6px) / 2 + var(--slider-tooltip-distance, 3px) - var(--slider-height, 6px) + 1px
   );
 }
 
@@ -382,8 +356,7 @@
 
 .slider-primary .slider-handle:focus {
   box-shadow:
-    0 0 0 var(--slider-handle-ring-width, 2px)
-      var(--slider-handle-ring-color, #6366f1),
+    0 0 0 var(--slider-handle-ring-width, 2px) var(--slider-handle-ring-color, #6366f1),
     var(--slider-handle-shadow, 0.5px 0.5px 2px 1px rgba(0, 0, 0, 0.32));
   outline: none;
 }
@@ -396,8 +369,7 @@
 
 .slider-info .slider-handle:focus {
   box-shadow:
-    0 0 0 var(--slider-handle-ring-width, 2px)
-      var(--slider-handle-ring-color, var(--color-info-500)),
+    0 0 0 var(--slider-handle-ring-width, 2px) var(--slider-handle-ring-color, var(--color-info-500)),
     var(--slider-handle-shadow, 0.5px 0.5px 2px 1px rgba(0, 0, 0, 0.32));
   outline: none;
 }
@@ -410,8 +382,7 @@
 
 .slider-success .slider-handle:focus {
   box-shadow:
-    0 0 0 var(--slider-handle-ring-width, 2px)
-      var(--slider-handle-ring-color, var(--color-success-500)),
+    0 0 0 var(--slider-handle-ring-width, 2px) var(--slider-handle-ring-color, var(--color-success-500)),
     var(--slider-handle-shadow, 0.5px 0.5px 2px 1px rgba(0, 0, 0, 0.32));
   outline: none;
 }
@@ -424,8 +395,7 @@
 
 .slider-warning .slider-handle:focus {
   box-shadow:
-    0 0 0 var(--slider-handle-ring-width, 2px)
-      var(--slider-handle-ring-color, var(--color-warning-500)),
+    0 0 0 var(--slider-handle-ring-width, 2px) var(--slider-handle-ring-color, var(--color-warning-500)),
     var(--slider-handle-shadow, 0.5px 0.5px 2px 1px rgba(0, 0, 0, 0.32));
   outline: none;
 }
@@ -438,8 +408,7 @@
 
 .slider-danger .slider-handle:focus {
   box-shadow:
-    0 0 0 var(--slider-handle-ring-width, 2px)
-      var(--slider-handle-ring-color, var(--color-danger-500)),
+    0 0 0 var(--slider-handle-ring-width, 2px) var(--slider-handle-ring-color, var(--color-danger-500)),
     var(--slider-handle-shadow, 0.5px 0.5px 2px 1px rgba(0, 0, 0, 0.32));
   outline: none;
 }

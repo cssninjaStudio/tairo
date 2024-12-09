@@ -118,8 +118,8 @@ html.dark .shiki span {
 </style>
 
 <style scoped>
-@import "tailwindcss/theme" theme(reference);
-@import "@shuriken-ui/tailwind/theme.css" theme(reference);
+@import 'tailwindcss/theme' theme(reference);
+@import '@shuriken-ui/tailwind/theme.css' theme(reference);
 
 .markdown :deep(.shiki) {
   direction: ltr;

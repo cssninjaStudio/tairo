@@ -133,14 +133,14 @@ export default defineComponent({
                               isTag(slot, 'code') || isTag(slot, 'pre')
                                 ? slot
                                 : h(
-                                  'div',
-                                  {
-                                    class: {
-                                      'preview-canvas': true,
+                                    'div',
+                                    {
+                                      class: {
+                                        'preview-canvas': true,
+                                      },
                                     },
-                                  },
-                                  [(slot.children as any)?.default?.() || slot.children],
-                                ),
+                                    [(slot.children as any)?.default?.() || slot.children],
+                                  ),
                             ],
                           ),
                         ),

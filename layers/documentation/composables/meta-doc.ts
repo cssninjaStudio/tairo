@@ -1,8 +1,8 @@
+// @ts-ignore - might be not defined if documentation is disabled
+import type { NuxtComponentMetaNames } from '#nuxt-component-meta/types'
 import type { MaybeRefOrGetter } from 'vue'
 import type { ComponentMeta } from 'vue-component-meta'
 import { kebabCase, upperFirst } from 'scule'
-// @ts-ignore - might be not defined if documentation is disabled
-import type { NuxtComponentMetaNames } from '#nuxt-component-meta/types'
 
 const excludedProps = ['modelValue', 'modelModifiers']
 
