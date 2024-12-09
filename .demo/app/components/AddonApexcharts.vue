@@ -18,9 +18,9 @@ const target = ref(null)
 const targetIsVisible = ref(false)
 
 // When the target is visible on viewport, load the chart
-const { stop } = useIntersectionObserver(target, ([{ isIntersecting }]) => {
-  if (isIntersecting) {
-    targetIsVisible.value = isIntersecting
+const { stop } = useIntersectionObserver(target, ([entry]) => {
+  if (entry?.isIntersecting) {
+    targetIsVisible.value = entry.isIntersecting
     stop()
   }
 })

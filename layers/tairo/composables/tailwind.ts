@@ -1,26 +1,24 @@
 import type { MaybeRefOrGetter } from 'vue'
 import { useCssVar, useMediaQuery } from '@vueuse/core'
-
-const rgbRe = /(\d+) (\d+) (\d+)/
-
-function convertRGBToHex(color: string) {
-  const [, r, g, b] = color.match(rgbRe) || []
-  const red = Number(r).toString(16)
-  const green = Number(g).toString(16)
-  const blue = Number(b).toString(16)
-  return `#${red}${green}${blue}`
-}
+import Color from 'colorjs.io'
 
 function useCssVarWithRGB(name: MaybeRefOrGetter<string>) {
   if (import.meta.server) {
     return computed(() => 'transparent')
   }
 
-  const color = useCssVar(name, document.documentElement)
+  const color = useCssVar(name, document.documentElement, {
+    observe: true,
+  })
 
   return computed(() => {
-    if (color.value && rgbRe.test(color.value)) {
-      return convertRGBToHex(color.value)
+    if (color.value) {
+      try {
+        return new Color(color.value).to('srgb').toString({ format: 'hex' })
+      }
+      catch {
+        return color.value
+      }
     }
 
     return color.value

@@ -73,7 +73,7 @@ export function useDragEventPending(
         calendarEventsValue[idx] = {
           ...calendarEventsValue[idx],
           customData: {
-            ...calendarEventsValue[idx].customData,
+            ...(calendarEventsValue[idx]?.customData || {} as CalendarEvent),
             startDate: start,
             endDate: end,
           },
@@ -93,8 +93,10 @@ export function useDragEventPending(
 
       if (idx !== -1) {
         const event = calendarEventsValue[idx]
-        calendarEventsValue.splice(idx, 1)
-        await onDragEnd(event)
+        if (event) {
+          calendarEventsValue.splice(idx, 1)
+          await onDragEnd(event)
+        }
       }
 
       setTimeout(() => {

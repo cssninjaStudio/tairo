@@ -6,7 +6,7 @@ export default defineNuxtConfig({
     '#examples': fileURLToPath(new URL('./examples', import.meta.url)),
   },
   componentMeta: {
-    // metaSources: ['@shuriken-ui/nuxt/component-meta'],
+    metaSources: ['@shuriken-ui/nuxt-component-meta'],
     exclude: [
       (component: any) => {
         const hasTairoPrefix = component?.pascalName?.startsWith('Tairo')

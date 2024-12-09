@@ -88,10 +88,10 @@ const countriesFiltered = computed(() => {
 
   return source.filter((country) => {
     return (
-      country.label.toLowerCase().includes(filter.value.toLowerCase())
-      || country.labelLocal.toLowerCase().includes(filter.value.toLowerCase())
-      || country.code.toLowerCase().includes(filter.value.toLowerCase())
-      || country.callingCode
+      country?.label.toLowerCase().includes(filter.value.toLowerCase())
+      || country?.labelLocal.toLowerCase().includes(filter.value.toLowerCase())
+      || country?.code.toLowerCase().includes(filter.value.toLowerCase())
+      || country?.callingCode
         .toLowerCase()
         .includes(filter.value.toLowerCase())
     )
